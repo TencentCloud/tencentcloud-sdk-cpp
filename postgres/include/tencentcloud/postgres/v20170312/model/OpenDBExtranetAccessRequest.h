@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开通Ipv6外网，1：是，0：否
+                     * @return IsIpv6 是否开通Ipv6外网，1：是，0：否
+                     */
+                    int64_t GetIsIpv6() const;
+
+                    /**
+                     * 设置是否开通Ipv6外网，1：是，0：否
+                     * @param IsIpv6 是否开通Ipv6外网，1：是，0：否
+                     */
+                    void SetIsIpv6(const int64_t& _isIpv6);
+
+                    /**
+                     * 判断参数 IsIpv6 是否已赋值
+                     * @return IsIpv6 是否已赋值
+                     */
+                    bool IsIpv6HasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
+
+                    /**
+                     * 是否开通Ipv6外网，1：是，0：否
+                     */
+                    int64_t m_isIpv6;
+                    bool m_isIpv6HasBeenSet;
 
                 };
             }

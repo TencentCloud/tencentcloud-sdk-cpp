@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/aa/v20200224/model/QueryActivityAntiRushRequest.h>
 #include <tencentcloud/aa/v20200224/model/QueryActivityAntiRushResponse.h>
+#include <tencentcloud/aa/v20200224/model/QueryActivityAntiRushAdvancedRequest.h>
+#include <tencentcloud/aa/v20200224/model/QueryActivityAntiRushAdvancedResponse.h>
 
 
 namespace TencentCloud
@@ -42,6 +44,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryActivityAntiRushResponse> QueryActivityAntiRushOutcome;
                 typedef std::future<QueryActivityAntiRushOutcome> QueryActivityAntiRushOutcomeCallable;
                 typedef std::function<void(const AaClient*, const Model::QueryActivityAntiRushRequest&, QueryActivityAntiRushOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryActivityAntiRushAsyncHandler;
+                typedef Outcome<Error, Model::QueryActivityAntiRushAdvancedResponse> QueryActivityAntiRushAdvancedOutcome;
+                typedef std::future<QueryActivityAntiRushAdvancedOutcome> QueryActivityAntiRushAdvancedOutcomeCallable;
+                typedef std::function<void(const AaClient*, const Model::QueryActivityAntiRushAdvancedRequest&, QueryActivityAntiRushAdvancedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryActivityAntiRushAdvancedAsyncHandler;
 
 
 
@@ -53,6 +58,15 @@ namespace TencentCloud
                 QueryActivityAntiRushOutcome QueryActivityAntiRush(const Model::QueryActivityAntiRushRequest &request);
                 void QueryActivityAntiRushAsync(const Model::QueryActivityAntiRushRequest& request, const QueryActivityAntiRushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryActivityAntiRushOutcomeCallable QueryActivityAntiRushCallable(const Model::QueryActivityAntiRushRequest& request);
+
+                /**
+                 *活动防刷高级版，支持对网赚众包、网赚防刷、引流反诈骗场景的检测识别
+                 * @param req QueryActivityAntiRushAdvancedRequest
+                 * @return QueryActivityAntiRushAdvancedOutcome
+                 */
+                QueryActivityAntiRushAdvancedOutcome QueryActivityAntiRushAdvanced(const Model::QueryActivityAntiRushAdvancedRequest &request);
+                void QueryActivityAntiRushAdvancedAsync(const Model::QueryActivityAntiRushAdvancedRequest& request, const QueryActivityAntiRushAdvancedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryActivityAntiRushAdvancedOutcomeCallable QueryActivityAntiRushAdvancedCallable(const Model::QueryActivityAntiRushAdvancedRequest& request);
 
             };
         }

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述实例的网络连接信息
+                * 描述实例的网络连接信息。
                 */
                 class DBInstanceNetInfo : public AbstractModel
                 {
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取Ip
-                     * @return Ip Ip
+                     * 获取IP地址
+                     * @return Ip IP地址
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置Ip
-                     * @param Ip Ip
+                     * 设置IP地址
+                     * @param Ip IP地址
                      */
                     void SetIp(const std::string& _ip);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，1、inner（内网地址）；2、public（外网地址）
-                     * @return NetType 网络类型，1、inner（内网地址）；2、public（外网地址）
+                     * 获取网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；
+                     * @return NetType 网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；
                      */
                     std::string GetNetType() const;
 
                     /**
-                     * 设置网络类型，1、inner（内网地址）；2、public（外网地址）
-                     * @param NetType 网络类型，1、inner（内网地址）；2、public（外网地址）
+                     * 设置网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；
+                     * @param NetType 网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；
                      */
                     void SetNetType(const std::string& _netType);
 
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_addressHasBeenSet;
 
                     /**
-                     * Ip
+                     * IP地址
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
@@ -157,7 +157,7 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 网络类型，1、inner（内网地址）；2、public（外网地址）
+                     * 网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;

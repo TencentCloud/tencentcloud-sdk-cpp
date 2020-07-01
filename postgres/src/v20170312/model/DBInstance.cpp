@@ -47,7 +47,8 @@ DBInstance::DBInstance() :
     m_dBInstanceNetInfoHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_uidHasBeenSet(false)
+    m_uidHasBeenSet(false),
+    m_supportIpv6HasBeenSet(false)
 {
 }
 
@@ -326,6 +327,16 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_uidHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportIpv6") && !value["SupportIpv6"].IsNull())
+    {
+        if (!value["SupportIpv6"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.SupportIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportIpv6 = value["SupportIpv6"].GetUint64();
+        m_supportIpv6HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -546,6 +557,14 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Uid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uid, allocator);
+    }
+
+    if (m_supportIpv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SupportIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportIpv6, allocator);
     }
 
 }
@@ -965,5 +984,21 @@ void DBInstance::SetUid(const uint64_t& _uid)
 bool DBInstance::UidHasBeenSet() const
 {
     return m_uidHasBeenSet;
+}
+
+uint64_t DBInstance::GetSupportIpv6() const
+{
+    return m_supportIpv6;
+}
+
+void DBInstance::SetSupportIpv6(const uint64_t& _supportIpv6)
+{
+    m_supportIpv6 = _supportIpv6;
+    m_supportIpv6HasBeenSet = true;
+}
+
+bool DBInstance::SupportIpv6HasBeenSet() const
+{
+    return m_supportIpv6HasBeenSet;
 }
 

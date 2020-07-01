@@ -83,3 +83,46 @@ AaClient::QueryActivityAntiRushOutcomeCallable AaClient::QueryActivityAntiRushCa
     return task->get_future();
 }
 
+AaClient::QueryActivityAntiRushAdvancedOutcome AaClient::QueryActivityAntiRushAdvanced(const QueryActivityAntiRushAdvancedRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryActivityAntiRushAdvanced");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryActivityAntiRushAdvancedResponse rsp = QueryActivityAntiRushAdvancedResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryActivityAntiRushAdvancedOutcome(rsp);
+        else
+            return QueryActivityAntiRushAdvancedOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryActivityAntiRushAdvancedOutcome(outcome.GetError());
+    }
+}
+
+void AaClient::QueryActivityAntiRushAdvancedAsync(const QueryActivityAntiRushAdvancedRequest& request, const QueryActivityAntiRushAdvancedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryActivityAntiRushAdvanced(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AaClient::QueryActivityAntiRushAdvancedOutcomeCallable AaClient::QueryActivityAntiRushAdvancedCallable(const QueryActivityAntiRushAdvancedRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryActivityAntiRushAdvancedOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryActivityAntiRushAdvanced(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

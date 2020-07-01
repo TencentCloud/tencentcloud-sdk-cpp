@@ -233,6 +233,10 @@
 #include <tencentcloud/dayu/v20180709/model/ModifyL7RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyNetReturnSwitchRequest.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyNetReturnSwitchResponse.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyNewDomainRulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyNewDomainRulesResponse.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyNewL4RuleRequest.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyNewL4RuleResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyResBindDDoSPolicyRequest.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyResBindDDoSPolicyResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyResourceRenewFlagRequest.h>
@@ -566,6 +570,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyNetReturnSwitchResponse> ModifyNetReturnSwitchOutcome;
                 typedef std::future<ModifyNetReturnSwitchOutcome> ModifyNetReturnSwitchOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::ModifyNetReturnSwitchRequest&, ModifyNetReturnSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetReturnSwitchAsyncHandler;
+                typedef Outcome<Error, Model::ModifyNewDomainRulesResponse> ModifyNewDomainRulesOutcome;
+                typedef std::future<ModifyNewDomainRulesOutcome> ModifyNewDomainRulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::ModifyNewDomainRulesRequest&, ModifyNewDomainRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNewDomainRulesAsyncHandler;
+                typedef Outcome<Error, Model::ModifyNewL4RuleResponse> ModifyNewL4RuleOutcome;
+                typedef std::future<ModifyNewL4RuleOutcome> ModifyNewL4RuleOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::ModifyNewL4RuleRequest&, ModifyNewL4RuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNewL4RuleAsyncHandler;
                 typedef Outcome<Error, Model::ModifyResBindDDoSPolicyResponse> ModifyResBindDDoSPolicyOutcome;
                 typedef std::future<ModifyResBindDDoSPolicyOutcome> ModifyResBindDDoSPolicyOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::ModifyResBindDDoSPolicyRequest&, ModifyResBindDDoSPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResBindDDoSPolicyAsyncHandler;
@@ -1520,6 +1530,24 @@ namespace TencentCloud
                 ModifyNetReturnSwitchOutcome ModifyNetReturnSwitch(const Model::ModifyNetReturnSwitchRequest &request);
                 void ModifyNetReturnSwitchAsync(const Model::ModifyNetReturnSwitchRequest& request, const ModifyNetReturnSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNetReturnSwitchOutcomeCallable ModifyNetReturnSwitchCallable(const Model::ModifyNetReturnSwitchRequest& request);
+
+                /**
+                 *修改7层转发规则
+                 * @param req ModifyNewDomainRulesRequest
+                 * @return ModifyNewDomainRulesOutcome
+                 */
+                ModifyNewDomainRulesOutcome ModifyNewDomainRules(const Model::ModifyNewDomainRulesRequest &request);
+                void ModifyNewDomainRulesAsync(const Model::ModifyNewDomainRulesRequest& request, const ModifyNewDomainRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNewDomainRulesOutcomeCallable ModifyNewDomainRulesCallable(const Model::ModifyNewDomainRulesRequest& request);
+
+                /**
+                 *修改4层转发规则
+                 * @param req ModifyNewL4RuleRequest
+                 * @return ModifyNewL4RuleOutcome
+                 */
+                ModifyNewL4RuleOutcome ModifyNewL4Rule(const Model::ModifyNewL4RuleRequest &request);
+                void ModifyNewL4RuleAsync(const Model::ModifyNewL4RuleRequest& request, const ModifyNewL4RuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNewL4RuleOutcomeCallable ModifyNewL4RuleCallable(const Model::ModifyNewL4RuleRequest& request);
 
                 /**
                  *资源实例绑定DDoS高级策略

@@ -461,6 +461,28 @@ namespace TencentCloud
                      */
                     bool HttpsToHttpEnableHasBeenSet() const;
 
+                    /**
+                     * 获取接入端口值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VirtualPort 接入端口值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetVirtualPort() const;
+
+                    /**
+                     * 设置接入端口值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VirtualPort 接入端口值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVirtualPort(const uint64_t& _virtualPort);
+
+                    /**
+                     * 判断参数 VirtualPort 是否已赋值
+                     * @return VirtualPort 是否已赋值
+                     */
+                    bool VirtualPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -600,6 +622,13 @@ namespace TencentCloud
                      */
                     uint64_t m_httpsToHttpEnable;
                     bool m_httpsToHttpEnableHasBeenSet;
+
+                    /**
+                     * 接入端口值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_virtualPort;
+                    bool m_virtualPortHasBeenSet;
 
                 };
             }

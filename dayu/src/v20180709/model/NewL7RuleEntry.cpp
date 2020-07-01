@@ -44,7 +44,8 @@ NewL7RuleEntry::NewL7RuleEntry() :
     m_idHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_httpsToHttpEnableHasBeenSet(false)
+    m_httpsToHttpEnableHasBeenSet(false),
+    m_virtualPortHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,16 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const Value &value)
         m_httpsToHttpEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("VirtualPort") && !value["VirtualPort"].IsNull())
+    {
+        if (!value["VirtualPort"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `NewL7RuleEntry.VirtualPort` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_virtualPort = value["VirtualPort"].GetUint64();
+        m_virtualPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -489,6 +500,14 @@ void NewL7RuleEntry::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "HttpsToHttpEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_httpsToHttpEnable, allocator);
+    }
+
+    if (m_virtualPortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VirtualPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_virtualPort, allocator);
     }
 
 }
@@ -860,5 +879,21 @@ void NewL7RuleEntry::SetHttpsToHttpEnable(const uint64_t& _httpsToHttpEnable)
 bool NewL7RuleEntry::HttpsToHttpEnableHasBeenSet() const
 {
     return m_httpsToHttpEnableHasBeenSet;
+}
+
+uint64_t NewL7RuleEntry::GetVirtualPort() const
+{
+    return m_virtualPort;
+}
+
+void NewL7RuleEntry::SetVirtualPort(const uint64_t& _virtualPort)
+{
+    m_virtualPort = _virtualPort;
+    m_virtualPortHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::VirtualPortHasBeenSet() const
+{
+    return m_virtualPortHasBeenSet;
 }
 

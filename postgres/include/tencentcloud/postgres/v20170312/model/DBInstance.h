@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取SubnetId
-                     * @return SubnetId SubnetId
+                     * 获取子网ID
+                     * @return SubnetId 子网ID
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置SubnetId
-                     * @param SubnetId SubnetId
+                     * 设置子网ID
+                     * @param SubnetId 子网ID
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -174,14 +174,14 @@ namespace TencentCloud
                     bool DBInstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return DBInstanceStatus 实例状态
+                     * 获取实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、readonly（只读）、restarting（重启中）
+                     * @return DBInstanceStatus 实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、readonly（只读）、restarting（重启中）
                      */
                     std::string GetDBInstanceStatus() const;
 
                     /**
-                     * 设置实例状态
-                     * @param DBInstanceStatus 实例状态
+                     * 设置实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、readonly（只读）、restarting（重启中）
+                     * @param DBInstanceStatus 实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、readonly（只读）、restarting（重启中）
                      */
                     void SetDBInstanceStatus(const std::string& _dBInstanceStatus);
 
@@ -515,6 +515,24 @@ namespace TencentCloud
                      */
                     bool UidHasBeenSet() const;
 
+                    /**
+                     * 获取实例是否支持Ipv6，1：支持，0：不支持
+                     * @return SupportIpv6 实例是否支持Ipv6，1：支持，0：不支持
+                     */
+                    uint64_t GetSupportIpv6() const;
+
+                    /**
+                     * 设置实例是否支持Ipv6，1：支持，0：不支持
+                     * @param SupportIpv6 实例是否支持Ipv6，1：支持，0：不支持
+                     */
+                    void SetSupportIpv6(const uint64_t& _supportIpv6);
+
+                    /**
+                     * 判断参数 SupportIpv6 是否已赋值
+                     * @return SupportIpv6 是否已赋值
+                     */
+                    bool SupportIpv6HasBeenSet() const;
+
                 private:
 
                     /**
@@ -542,7 +560,7 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * SubnetId
+                     * 子网ID
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -560,7 +578,7 @@ namespace TencentCloud
                     bool m_dBInstanceNameHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * 实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、readonly（只读）、restarting（重启中）
                      */
                     std::string m_dBInstanceStatus;
                     bool m_dBInstanceStatusHasBeenSet;
@@ -672,6 +690,12 @@ namespace TencentCloud
                      */
                     uint64_t m_uid;
                     bool m_uidHasBeenSet;
+
+                    /**
+                     * 实例是否支持Ipv6，1：支持，0：不支持
+                     */
+                    uint64_t m_supportIpv6;
+                    bool m_supportIpv6HasBeenSet;
 
                 };
             }

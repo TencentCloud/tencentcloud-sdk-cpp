@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 CloseDBExtranetAccessRequest::CloseDBExtranetAccessRequest() :
-    m_dBInstanceIdHasBeenSet(false)
+    m_dBInstanceIdHasBeenSet(false),
+    m_isIpv6HasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string CloseDBExtranetAccessRequest::ToJsonString() const
         string key = "DBInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_dBInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isIpv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isIpv6, allocator);
     }
 
 
@@ -65,6 +74,22 @@ void CloseDBExtranetAccessRequest::SetDBInstanceId(const string& _dBInstanceId)
 bool CloseDBExtranetAccessRequest::DBInstanceIdHasBeenSet() const
 {
     return m_dBInstanceIdHasBeenSet;
+}
+
+int64_t CloseDBExtranetAccessRequest::GetIsIpv6() const
+{
+    return m_isIpv6;
+}
+
+void CloseDBExtranetAccessRequest::SetIsIpv6(const int64_t& _isIpv6)
+{
+    m_isIpv6 = _isIpv6;
+    m_isIpv6HasBeenSet = true;
+}
+
+bool CloseDBExtranetAccessRequest::IsIpv6HasBeenSet() const
+{
+    return m_isIpv6HasBeenSet;
 }
 
 

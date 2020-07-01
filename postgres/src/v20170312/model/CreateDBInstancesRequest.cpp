@@ -38,7 +38,8 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_subnetIdHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_activityIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_needSupportIpv6HasBeenSet(false)
 {
 }
 
@@ -172,6 +173,14 @@ string CreateDBInstancesRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needSupportIpv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedSupportIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needSupportIpv6, allocator);
     }
 
 
@@ -420,6 +429,22 @@ void CreateDBInstancesRequest::SetName(const string& _name)
 bool CreateDBInstancesRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t CreateDBInstancesRequest::GetNeedSupportIpv6() const
+{
+    return m_needSupportIpv6;
+}
+
+void CreateDBInstancesRequest::SetNeedSupportIpv6(const uint64_t& _needSupportIpv6)
+{
+    m_needSupportIpv6 = _needSupportIpv6;
+    m_needSupportIpv6HasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::NeedSupportIpv6HasBeenSet() const
+{
+    return m_needSupportIpv6HasBeenSet;
 }
 
 

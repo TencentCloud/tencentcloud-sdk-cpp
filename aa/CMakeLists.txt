@@ -20,13 +20,35 @@ set(aa_public_header
 
 set(aa_public_header_model
   include/tencentcloud/aa/v20200224/model/QueryActivityAntiRushResponse.h
+  include/tencentcloud/aa/v20200224/model/OutputActivityAntiRushAdvancedValue.h
+  include/tencentcloud/aa/v20200224/model/QQAccountInfo.h
+  include/tencentcloud/aa/v20200224/model/OnlineScamInfo.h
+  include/tencentcloud/aa/v20200224/model/WeChatAccountInfo.h
+  include/tencentcloud/aa/v20200224/model/InputActivityAntiRushAdvanced.h
+  include/tencentcloud/aa/v20200224/model/OtherAccountInfo.h
+  include/tencentcloud/aa/v20200224/model/AccountInfo.h
+  include/tencentcloud/aa/v20200224/model/QueryActivityAntiRushAdvancedResponse.h
+  include/tencentcloud/aa/v20200224/model/SponsorInfo.h
   include/tencentcloud/aa/v20200224/model/QueryActivityAntiRushRequest.h
+  include/tencentcloud/aa/v20200224/model/OutputActivityAntiRushAdvanced.h
+  include/tencentcloud/aa/v20200224/model/QueryActivityAntiRushAdvancedRequest.h
   )
 
 set(aa_src
   src/v20200224/AaClient.cpp
   src/v20200224/model/QueryActivityAntiRushResponse.cpp
+  src/v20200224/model/OutputActivityAntiRushAdvancedValue.cpp
+  src/v20200224/model/QQAccountInfo.cpp
+  src/v20200224/model/OnlineScamInfo.cpp
+  src/v20200224/model/WeChatAccountInfo.cpp
+  src/v20200224/model/InputActivityAntiRushAdvanced.cpp
+  src/v20200224/model/OtherAccountInfo.cpp
+  src/v20200224/model/AccountInfo.cpp
+  src/v20200224/model/QueryActivityAntiRushAdvancedResponse.cpp
+  src/v20200224/model/SponsorInfo.cpp
   src/v20200224/model/QueryActivityAntiRushRequest.cpp
+  src/v20200224/model/OutputActivityAntiRushAdvanced.cpp
+  src/v20200224/model/QueryActivityAntiRushAdvancedRequest.cpp
   )
 
 set(aa_include

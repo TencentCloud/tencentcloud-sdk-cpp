@@ -353,13 +353,21 @@ namespace TencentCloud
 
                     /**
                      * 获取文件状态：Normal：正常，Forbidden：封禁。
+
+*注意：此字段暂不支持。
                      * @return Status 文件状态：Normal：正常，Forbidden：封禁。
+
+*注意：此字段暂不支持。
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置文件状态：Normal：正常，Forbidden：封禁。
+
+*注意：此字段暂不支持。
                      * @param Status 文件状态：Normal：正常，Forbidden：封禁。
+
+*注意：此字段暂不支持。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -473,6 +481,8 @@ namespace TencentCloud
 
                     /**
                      * 文件状态：Normal：正常，Forbidden：封禁。
+
+*注意：此字段暂不支持。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

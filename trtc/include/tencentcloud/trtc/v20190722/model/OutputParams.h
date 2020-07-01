@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取取值范围[0,1]，填1：指定录制文件格式为mp3
-                     * @return RecordAudioOnly 取值范围[0,1]，填1：指定录制文件格式为mp3
+                     * 获取取值范围[0,1]，填0无实际含义; 填1：指定录制文件格式为mp3
+                     * @return RecordAudioOnly 取值范围[0,1]，填0无实际含义; 填1：指定录制文件格式为mp3
                      */
                     uint64_t GetRecordAudioOnly() const;
 
                     /**
-                     * 设置取值范围[0,1]，填1：指定录制文件格式为mp3
-                     * @param RecordAudioOnly 取值范围[0,1]，填1：指定录制文件格式为mp3
+                     * 设置取值范围[0,1]，填0无实际含义; 填1：指定录制文件格式为mp3
+                     * @param RecordAudioOnly 取值范围[0,1]，填0无实际含义; 填1：指定录制文件格式为mp3
                      */
                     void SetRecordAudioOnly(const uint64_t& _recordAudioOnly);
 
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 取值范围[0,1]，填1：指定录制文件格式为mp3
+                     * 取值范围[0,1]，填0无实际含义; 填1：指定录制文件格式为mp3
                      */
                     uint64_t m_recordAudioOnly;
                     bool m_recordAudioOnlyHasBeenSet;

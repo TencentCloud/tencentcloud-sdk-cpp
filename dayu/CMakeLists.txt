@@ -37,6 +37,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/DescribeCCAlarmThresholdResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSNetEvListRequest.h
   include/tencentcloud/dayu/v20180709/model/DeleteNewL4RulesRequest.h
+  include/tencentcloud/dayu/v20180709/model/ModifyNewDomainRulesRequest.h
   include/tencentcloud/dayu/v20180709/model/DDoSAlarmThreshold.h
   include/tencentcloud/dayu/v20180709/model/DescribePolicyCaseResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeResIpListRequest.h
@@ -61,6 +62,8 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/RegionInstanceCount.h
   include/tencentcloud/dayu/v20180709/model/WaterPrintKey.h
   include/tencentcloud/dayu/v20180709/model/CreateNewL7RulesResponse.h
+  include/tencentcloud/dayu/v20180709/model/ModifyNewL4RuleResponse.h
+  include/tencentcloud/dayu/v20180709/model/ModifyNewDomainRulesResponse.h
   include/tencentcloud/dayu/v20180709/model/CreateNewL4RulesResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSUsedStatisResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeBasicCCThresholdRequest.h
@@ -132,6 +135,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/DescribeNewL7RulesErrHealthResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSNetEvListResponse.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCFrequencyRulesStatusResponse.h
+  include/tencentcloud/dayu/v20180709/model/ModifyNewL4RuleRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeL4RulesErrHealthRequest.h
   include/tencentcloud/dayu/v20180709/model/L4RuleSource.h
   include/tencentcloud/dayu/v20180709/model/CreateBasicDDoSAlarmThresholdResponse.h
@@ -294,6 +298,7 @@ set(dayu_src
   src/v20180709/model/DescribeCCAlarmThresholdResponse.cpp
   src/v20180709/model/DescribeDDoSNetEvListRequest.cpp
   src/v20180709/model/DeleteNewL4RulesRequest.cpp
+  src/v20180709/model/ModifyNewDomainRulesRequest.cpp
   src/v20180709/model/DDoSAlarmThreshold.cpp
   src/v20180709/model/DescribePolicyCaseResponse.cpp
   src/v20180709/model/DescribeResIpListRequest.cpp
@@ -318,6 +323,8 @@ set(dayu_src
   src/v20180709/model/RegionInstanceCount.cpp
   src/v20180709/model/WaterPrintKey.cpp
   src/v20180709/model/CreateNewL7RulesResponse.cpp
+  src/v20180709/model/ModifyNewL4RuleResponse.cpp
+  src/v20180709/model/ModifyNewDomainRulesResponse.cpp
   src/v20180709/model/CreateNewL4RulesResponse.cpp
   src/v20180709/model/DescribeDDoSUsedStatisResponse.cpp
   src/v20180709/model/DescribeBasicCCThresholdRequest.cpp
@@ -389,6 +396,7 @@ set(dayu_src
   src/v20180709/model/DescribeNewL7RulesErrHealthResponse.cpp
   src/v20180709/model/DescribeDDoSNetEvListResponse.cpp
   src/v20180709/model/ModifyCCFrequencyRulesStatusResponse.cpp
+  src/v20180709/model/ModifyNewL4RuleRequest.cpp
   src/v20180709/model/DescribeL4RulesErrHealthRequest.cpp
   src/v20180709/model/L4RuleSource.cpp
   src/v20180709/model/CreateBasicDDoSAlarmThresholdResponse.cpp
