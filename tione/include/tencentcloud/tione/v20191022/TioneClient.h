@@ -55,6 +55,8 @@
 #include <tencentcloud/tione/v20191022/model/DescribeNotebookSummaryResponse.h>
 #include <tencentcloud/tione/v20191022/model/DescribeTrainingJobRequest.h>
 #include <tencentcloud/tione/v20191022/model/DescribeTrainingJobResponse.h>
+#include <tencentcloud/tione/v20191022/model/DescribeTrainingJobsRequest.h>
+#include <tencentcloud/tione/v20191022/model/DescribeTrainingJobsResponse.h>
 #include <tencentcloud/tione/v20191022/model/StartNotebookInstanceRequest.h>
 #include <tencentcloud/tione/v20191022/model/StartNotebookInstanceResponse.h>
 #include <tencentcloud/tione/v20191022/model/StopNotebookInstanceRequest.h>
@@ -129,6 +131,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTrainingJobResponse> DescribeTrainingJobOutcome;
                 typedef std::future<DescribeTrainingJobOutcome> DescribeTrainingJobOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingJobRequest&, DescribeTrainingJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingJobAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTrainingJobsResponse> DescribeTrainingJobsOutcome;
+                typedef std::future<DescribeTrainingJobsOutcome> DescribeTrainingJobsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeTrainingJobsRequest&, DescribeTrainingJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingJobsAsyncHandler;
                 typedef Outcome<Error, Model::StartNotebookInstanceResponse> StartNotebookInstanceOutcome;
                 typedef std::future<StartNotebookInstanceOutcome> StartNotebookInstanceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StartNotebookInstanceRequest&, StartNotebookInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartNotebookInstanceAsyncHandler;
@@ -293,6 +298,15 @@ namespace TencentCloud
                 DescribeTrainingJobOutcome DescribeTrainingJob(const Model::DescribeTrainingJobRequest &request);
                 void DescribeTrainingJobAsync(const Model::DescribeTrainingJobRequest& request, const DescribeTrainingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrainingJobOutcomeCallable DescribeTrainingJobCallable(const Model::DescribeTrainingJobRequest& request);
+
+                /**
+                 *查询训练任务列表
+                 * @param req DescribeTrainingJobsRequest
+                 * @return DescribeTrainingJobsOutcome
+                 */
+                DescribeTrainingJobsOutcome DescribeTrainingJobs(const Model::DescribeTrainingJobsRequest &request);
+                void DescribeTrainingJobsAsync(const Model::DescribeTrainingJobsRequest& request, const DescribeTrainingJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrainingJobsOutcomeCallable DescribeTrainingJobsCallable(const Model::DescribeTrainingJobsRequest& request);
 
                 /**
                  *启动Notebook实例

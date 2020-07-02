@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 ChangeAgePicResponse::ChangeAgePicResponse() :
-    m_resultImageHasBeenSet(false)
+    m_resultImageHasBeenSet(false),
+    m_resultUrlHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ChangeAgePicResponse::Deserialize(const string &payload)
         m_resultImageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResultUrl") && !rsp["ResultUrl"].IsNull())
+    {
+        if (!rsp["ResultUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResultUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultUrl = string(rsp["ResultUrl"].GetString());
+        m_resultUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ string ChangeAgePicResponse::GetResultImage() const
 bool ChangeAgePicResponse::ResultImageHasBeenSet() const
 {
     return m_resultImageHasBeenSet;
+}
+
+string ChangeAgePicResponse::GetResultUrl() const
+{
+    return m_resultUrl;
+}
+
+bool ChangeAgePicResponse::ResultUrlHasBeenSet() const
+{
+    return m_resultUrlHasBeenSet;
 }
 
 

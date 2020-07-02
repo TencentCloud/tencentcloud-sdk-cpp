@@ -344,6 +344,24 @@ namespace TencentCloud
                      */
                     bool InstanceNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持IPv6
+                     * @return Ipv6Flag 是否支持IPv6
+                     */
+                    int64_t GetIpv6Flag() const;
+
+                    /**
+                     * 设置是否支持IPv6
+                     * @param Ipv6Flag 是否支持IPv6
+                     */
+                    void SetIpv6Flag(const int64_t& _ipv6Flag);
+
+                    /**
+                     * 判断参数 Ipv6Flag 是否已赋值
+                     * @return Ipv6Flag 是否已赋值
+                     */
+                    bool Ipv6FlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -443,6 +461,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 是否支持IPv6
+                     */
+                    int64_t m_ipv6Flag;
+                    bool m_ipv6FlagHasBeenSet;
 
                 };
             }

@@ -47,6 +47,8 @@
 #include <tencentcloud/tsf/v20180326/model/CreateNamespaceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreatePublicConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreatePublicConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateRepositoryRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateRepositoryResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateServerlessGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateServerlessGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteApplicationRequest.h>
@@ -69,6 +71,8 @@
 #include <tencentcloud/tsf/v20180326/model/DeletePkgsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeletePublicConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeletePublicConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteRepositoryRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteRepositoryResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteServerlessGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteServerlessGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeployContainerGroupRequest.h>
@@ -139,6 +143,10 @@
 #include <tencentcloud/tsf/v20180326/model/DescribePublicConfigsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeReleasedConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeReleasedConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeRepositoriesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeRepositoriesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeRepositoryRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeRepositoryResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeServerlessGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeServerlessGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeServerlessGroupsRequest.h>
@@ -191,6 +199,8 @@
 #include <tencentcloud/tsf/v20180326/model/StopContainerGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/StopGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/StopGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/UpdateRepositoryRequest.h>
+#include <tencentcloud/tsf/v20180326/model/UpdateRepositoryResponse.h>
 
 
 namespace TencentCloud
@@ -241,6 +251,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreatePublicConfigResponse> CreatePublicConfigOutcome;
                 typedef std::future<CreatePublicConfigOutcome> CreatePublicConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreatePublicConfigRequest&, CreatePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePublicConfigAsyncHandler;
+                typedef Outcome<Error, Model::CreateRepositoryResponse> CreateRepositoryOutcome;
+                typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateRepositoryRequest&, CreateRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryAsyncHandler;
                 typedef Outcome<Error, Model::CreateServerlessGroupResponse> CreateServerlessGroupOutcome;
                 typedef std::future<CreateServerlessGroupOutcome> CreateServerlessGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateServerlessGroupRequest&, CreateServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessGroupAsyncHandler;
@@ -274,6 +287,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeletePublicConfigResponse> DeletePublicConfigOutcome;
                 typedef std::future<DeletePublicConfigOutcome> DeletePublicConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeletePublicConfigRequest&, DeletePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePublicConfigAsyncHandler;
+                typedef Outcome<Error, Model::DeleteRepositoryResponse> DeleteRepositoryOutcome;
+                typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DeleteRepositoryRequest&, DeleteRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryAsyncHandler;
                 typedef Outcome<Error, Model::DeleteServerlessGroupResponse> DeleteServerlessGroupOutcome;
                 typedef std::future<DeleteServerlessGroupOutcome> DeleteServerlessGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteServerlessGroupRequest&, DeleteServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServerlessGroupAsyncHandler;
@@ -379,6 +395,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeReleasedConfigResponse> DescribeReleasedConfigOutcome;
                 typedef std::future<DescribeReleasedConfigOutcome> DescribeReleasedConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeReleasedConfigRequest&, DescribeReleasedConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReleasedConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRepositoriesResponse> DescribeRepositoriesOutcome;
+                typedef std::future<DescribeRepositoriesOutcome> DescribeRepositoriesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeRepositoriesRequest&, DescribeRepositoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRepositoriesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRepositoryResponse> DescribeRepositoryOutcome;
+                typedef std::future<DescribeRepositoryOutcome> DescribeRepositoryOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeRepositoryRequest&, DescribeRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRepositoryAsyncHandler;
                 typedef Outcome<Error, Model::DescribeServerlessGroupResponse> DescribeServerlessGroupOutcome;
                 typedef std::future<DescribeServerlessGroupOutcome> DescribeServerlessGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeServerlessGroupRequest&, DescribeServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessGroupAsyncHandler;
@@ -457,6 +479,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StopGroupResponse> StopGroupOutcome;
                 typedef std::future<StopGroupOutcome> StopGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::StopGroupRequest&, StopGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGroupAsyncHandler;
+                typedef Outcome<Error, Model::UpdateRepositoryResponse> UpdateRepositoryOutcome;
+                typedef std::future<UpdateRepositoryOutcome> UpdateRepositoryOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::UpdateRepositoryRequest&, UpdateRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRepositoryAsyncHandler;
 
 
 
@@ -569,6 +594,15 @@ namespace TencentCloud
                 CreatePublicConfigOutcomeCallable CreatePublicConfigCallable(const Model::CreatePublicConfigRequest& request);
 
                 /**
+                 *创建仓库
+                 * @param req CreateRepositoryRequest
+                 * @return CreateRepositoryOutcome
+                 */
+                CreateRepositoryOutcome CreateRepository(const Model::CreateRepositoryRequest &request);
+                void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request);
+
+                /**
                  *创建Serverless部署组
                  * @param req CreateServerlessGroupRequest
                  * @return CreateServerlessGroupOutcome
@@ -667,6 +701,15 @@ namespace TencentCloud
                 DeletePublicConfigOutcome DeletePublicConfig(const Model::DeletePublicConfigRequest &request);
                 void DeletePublicConfigAsync(const Model::DeletePublicConfigRequest& request, const DeletePublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePublicConfigOutcomeCallable DeletePublicConfigCallable(const Model::DeletePublicConfigRequest& request);
+
+                /**
+                 *删除仓库
+                 * @param req DeleteRepositoryRequest
+                 * @return DeleteRepositoryOutcome
+                 */
+                DeleteRepositoryOutcome DeleteRepository(const Model::DeleteRepositoryRequest &request);
+                void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRepositoryOutcomeCallable DeleteRepositoryCallable(const Model::DeleteRepositoryRequest& request);
 
                 /**
                  *删除Serverless部署组
@@ -985,6 +1028,24 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeReleasedConfigOutcomeCallable DescribeReleasedConfigCallable(const Model::DescribeReleasedConfigRequest& request);
 
                 /**
+                 *查询仓库列表
+                 * @param req DescribeRepositoriesRequest
+                 * @return DescribeRepositoriesOutcome
+                 */
+                DescribeRepositoriesOutcome DescribeRepositories(const Model::DescribeRepositoriesRequest &request);
+                void DescribeRepositoriesAsync(const Model::DescribeRepositoriesRequest& request, const DescribeRepositoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRepositoriesOutcomeCallable DescribeRepositoriesCallable(const Model::DescribeRepositoriesRequest& request);
+
+                /**
+                 *查询仓库信息
+                 * @param req DescribeRepositoryRequest
+                 * @return DescribeRepositoryOutcome
+                 */
+                DescribeRepositoryOutcome DescribeRepository(const Model::DescribeRepositoryRequest &request);
+                void DescribeRepositoryAsync(const Model::DescribeRepositoryRequest& request, const DescribeRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRepositoryOutcomeCallable DescribeRepositoryCallable(const Model::DescribeRepositoryRequest& request);
+
+                /**
                  *查询Serverless部署组明细
                  * @param req DescribeServerlessGroupRequest
                  * @return DescribeServerlessGroupOutcome
@@ -1219,6 +1280,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 StopGroupOutcome StopGroup(const Model::StopGroupRequest &request);
                 void StopGroupAsync(const Model::StopGroupRequest& request, const StopGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopGroupOutcomeCallable StopGroupCallable(const Model::StopGroupRequest& request);
+
+                /**
+                 *更新仓库信息
+                 * @param req UpdateRepositoryRequest
+                 * @return UpdateRepositoryOutcome
+                 */
+                UpdateRepositoryOutcome UpdateRepository(const Model::UpdateRepositoryRequest &request);
+                void UpdateRepositoryAsync(const Model::UpdateRepositoryRequest& request, const UpdateRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateRepositoryOutcomeCallable UpdateRepositoryCallable(const Model::UpdateRepositoryRequest& request);
 
             };
         }

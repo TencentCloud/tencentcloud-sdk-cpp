@@ -27,7 +27,8 @@ using namespace std;
 DescribeAgentClientGradeResponse::DescribeAgentClientGradeResponse() :
     m_auditStatusHasBeenSet(false),
     m_authStateHasBeenSet(false),
-    m_clientGradeHasBeenSet(false)
+    m_clientGradeHasBeenSet(false),
+    m_clientTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome DescribeAgentClientGradeResponse::Deserialize(const string &
         m_clientGradeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClientType") && !rsp["ClientType"].IsNull())
+    {
+        if (!rsp["ClientType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ClientType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientType = rsp["ClientType"].GetUint64();
+        m_clientTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +139,16 @@ string DescribeAgentClientGradeResponse::GetClientGrade() const
 bool DescribeAgentClientGradeResponse::ClientGradeHasBeenSet() const
 {
     return m_clientGradeHasBeenSet;
+}
+
+uint64_t DescribeAgentClientGradeResponse::GetClientType() const
+{
+    return m_clientType;
+}
+
+bool DescribeAgentClientGradeResponse::ClientTypeHasBeenSet() const
+{
+    return m_clientTypeHasBeenSet;
 }
 
 

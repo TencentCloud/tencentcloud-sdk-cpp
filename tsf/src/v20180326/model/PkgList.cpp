@@ -23,7 +23,10 @@ using namespace std;
 
 PkgList::PkgList() :
     m_totalCountHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_repositoryIdHasBeenSet(false),
+    m_repositoryTypeHasBeenSet(false),
+    m_repositoryNameHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,36 @@ CoreInternalOutcome PkgList::Deserialize(const Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("RepositoryId") && !value["RepositoryId"].IsNull())
+    {
+        if (!value["RepositoryId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PkgList.RepositoryId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repositoryId = string(value["RepositoryId"].GetString());
+        m_repositoryIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RepositoryType") && !value["RepositoryType"].IsNull())
+    {
+        if (!value["RepositoryType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PkgList.RepositoryType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repositoryType = string(value["RepositoryType"].GetString());
+        m_repositoryTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RepositoryName") && !value["RepositoryName"].IsNull())
+    {
+        if (!value["RepositoryName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PkgList.RepositoryName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repositoryName = string(value["RepositoryName"].GetString());
+        m_repositoryNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -90,6 +123,30 @@ void PkgList::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_repositoryIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_repositoryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_repositoryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_repositoryName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -125,5 +182,53 @@ void PkgList::SetContent(const vector<PkgInfo>& _content)
 bool PkgList::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string PkgList::GetRepositoryId() const
+{
+    return m_repositoryId;
+}
+
+void PkgList::SetRepositoryId(const string& _repositoryId)
+{
+    m_repositoryId = _repositoryId;
+    m_repositoryIdHasBeenSet = true;
+}
+
+bool PkgList::RepositoryIdHasBeenSet() const
+{
+    return m_repositoryIdHasBeenSet;
+}
+
+string PkgList::GetRepositoryType() const
+{
+    return m_repositoryType;
+}
+
+void PkgList::SetRepositoryType(const string& _repositoryType)
+{
+    m_repositoryType = _repositoryType;
+    m_repositoryTypeHasBeenSet = true;
+}
+
+bool PkgList::RepositoryTypeHasBeenSet() const
+{
+    return m_repositoryTypeHasBeenSet;
+}
+
+string PkgList::GetRepositoryName() const
+{
+    return m_repositoryName;
+}
+
+void PkgList::SetRepositoryName(const string& _repositoryName)
+{
+    m_repositoryName = _repositoryName;
+    m_repositoryNameHasBeenSet = true;
+}
+
+bool PkgList::RepositoryNameHasBeenSet() const
+{
+    return m_repositoryNameHasBeenSet;
 }
 

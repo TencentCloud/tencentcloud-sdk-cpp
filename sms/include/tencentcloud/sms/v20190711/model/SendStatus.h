@@ -154,6 +154,24 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取国家码或地区码，例如CN,US等，对于未识别出国家码或者地区码，默认返回DEF,具体支持列表请参考国际/港澳台计费总览。
+                     * @return IsoCode 国家码或地区码，例如CN,US等，对于未识别出国家码或者地区码，默认返回DEF,具体支持列表请参考国际/港澳台计费总览。
+                     */
+                    std::string GetIsoCode() const;
+
+                    /**
+                     * 设置国家码或地区码，例如CN,US等，对于未识别出国家码或者地区码，默认返回DEF,具体支持列表请参考国际/港澳台计费总览。
+                     * @param IsoCode 国家码或地区码，例如CN,US等，对于未识别出国家码或者地区码，默认返回DEF,具体支持列表请参考国际/港澳台计费总览。
+                     */
+                    void SetIsoCode(const std::string& _isoCode);
+
+                    /**
+                     * 判断参数 IsoCode 是否已赋值
+                     * @return IsoCode 是否已赋值
+                     */
+                    bool IsoCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +209,12 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 国家码或地区码，例如CN,US等，对于未识别出国家码或者地区码，默认返回DEF,具体支持列表请参考国际/港澳台计费总览。
+                     */
+                    std::string m_isoCode;
+                    bool m_isoCodeHasBeenSet;
 
                 };
             }

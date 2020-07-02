@@ -65,8 +65,12 @@
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfosRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfosResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DescribeChargeDetailRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DescribeChargeDetailResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyMntMbrBindRelateAcctBankCodeRequest.h>
@@ -81,6 +85,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryAgentStatementsResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryAgentTaxPaymentBatchRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryAgentTaxPaymentBatchResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryAnchorContractInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryAnchorContractInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryApplicationMaterialRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryApplicationMaterialResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBalanceRequest.h>
@@ -123,22 +129,26 @@
 #include <tencentcloud/cpdp/v20190820/model/QuerySmallAmountTransferResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryTradeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryTradeResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/RechargeByThirdPayRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/RechargeByThirdPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RechargeMemberThirdPayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RechargeMemberThirdPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/RefundMemberTransactionRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/RefundMemberTransactionResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillSupportWithdrawRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillSupportWithdrawResponse.h>
-#include <tencentcloud/cpdp/v20190820/model/RevRegisterBillSupportWithdrawRequest.h>
-#include <tencentcloud/cpdp/v20190820/model/RevRegisterBillSupportWithdrawResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RevResigterBillSupportWithdrawRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RevResigterBillSupportWithdrawResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ReviseMbrPropertyRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ReviseMbrPropertyResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RevokeMemberRechargeThirdPayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RevokeMemberRechargeThirdPayResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/RevokeRechargeByThirdPayRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/RevokeRechargeByThirdPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnBindAcctRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UnBindAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnbindRelateAcctRequest.h>
@@ -224,9 +234,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteAgentTaxPaymentInfosResponse> DeleteAgentTaxPaymentInfosOutcome;
                 typedef std::future<DeleteAgentTaxPaymentInfosOutcome> DeleteAgentTaxPaymentInfosOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DeleteAgentTaxPaymentInfosRequest&, DeleteAgentTaxPaymentInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentTaxPaymentInfosAsyncHandler;
+                typedef Outcome<Error, Model::DescribeChargeDetailResponse> DescribeChargeDetailOutcome;
+                typedef std::future<DescribeChargeDetailOutcome> DescribeChargeDetailOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DescribeChargeDetailRequest&, DescribeChargeDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChargeDetailAsyncHandler;
                 typedef Outcome<Error, Model::DownloadBillResponse> DownloadBillOutcome;
                 typedef std::future<DownloadBillOutcome> DownloadBillOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DownloadBillRequest&, DownloadBillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadBillAsyncHandler;
+                typedef Outcome<Error, Model::ExecuteMemberTransactionResponse> ExecuteMemberTransactionOutcome;
+                typedef std::future<ExecuteMemberTransactionOutcome> ExecuteMemberTransactionOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ExecuteMemberTransactionRequest&, ExecuteMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteMemberTransactionAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAgentTaxPaymentInfoResponse> ModifyAgentTaxPaymentInfoOutcome;
                 typedef std::future<ModifyAgentTaxPaymentInfoOutcome> ModifyAgentTaxPaymentInfoOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ModifyAgentTaxPaymentInfoRequest&, ModifyAgentTaxPaymentInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentTaxPaymentInfoAsyncHandler;
@@ -248,6 +264,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryAgentTaxPaymentBatchResponse> QueryAgentTaxPaymentBatchOutcome;
                 typedef std::future<QueryAgentTaxPaymentBatchOutcome> QueryAgentTaxPaymentBatchOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryAgentTaxPaymentBatchRequest&, QueryAgentTaxPaymentBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAgentTaxPaymentBatchAsyncHandler;
+                typedef Outcome<Error, Model::QueryAnchorContractInfoResponse> QueryAnchorContractInfoOutcome;
+                typedef std::future<QueryAnchorContractInfoOutcome> QueryAnchorContractInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryAnchorContractInfoRequest&, QueryAnchorContractInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAnchorContractInfoAsyncHandler;
                 typedef Outcome<Error, Model::QueryApplicationMaterialResponse> QueryApplicationMaterialOutcome;
                 typedef std::future<QueryApplicationMaterialOutcome> QueryApplicationMaterialOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryApplicationMaterialRequest&, QueryApplicationMaterialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryApplicationMaterialAsyncHandler;
@@ -311,21 +330,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryTradeResponse> QueryTradeOutcome;
                 typedef std::future<QueryTradeOutcome> QueryTradeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryTradeRequest&, QueryTradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTradeAsyncHandler;
+                typedef Outcome<Error, Model::RechargeByThirdPayResponse> RechargeByThirdPayOutcome;
+                typedef std::future<RechargeByThirdPayOutcome> RechargeByThirdPayOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::RechargeByThirdPayRequest&, RechargeByThirdPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RechargeByThirdPayAsyncHandler;
                 typedef Outcome<Error, Model::RechargeMemberThirdPayResponse> RechargeMemberThirdPayOutcome;
                 typedef std::future<RechargeMemberThirdPayOutcome> RechargeMemberThirdPayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RechargeMemberThirdPayRequest&, RechargeMemberThirdPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RechargeMemberThirdPayAsyncHandler;
                 typedef Outcome<Error, Model::RefundResponse> RefundOutcome;
                 typedef std::future<RefundOutcome> RefundOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RefundRequest&, RefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundAsyncHandler;
+                typedef Outcome<Error, Model::RefundMemberTransactionResponse> RefundMemberTransactionOutcome;
+                typedef std::future<RefundMemberTransactionOutcome> RefundMemberTransactionOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::RefundMemberTransactionRequest&, RefundMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundMemberTransactionAsyncHandler;
                 typedef Outcome<Error, Model::RegisterBillResponse> RegisterBillOutcome;
                 typedef std::future<RegisterBillOutcome> RegisterBillOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RegisterBillRequest&, RegisterBillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterBillAsyncHandler;
                 typedef Outcome<Error, Model::RegisterBillSupportWithdrawResponse> RegisterBillSupportWithdrawOutcome;
                 typedef std::future<RegisterBillSupportWithdrawOutcome> RegisterBillSupportWithdrawOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RegisterBillSupportWithdrawRequest&, RegisterBillSupportWithdrawOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterBillSupportWithdrawAsyncHandler;
-                typedef Outcome<Error, Model::RevRegisterBillSupportWithdrawResponse> RevRegisterBillSupportWithdrawOutcome;
-                typedef std::future<RevRegisterBillSupportWithdrawOutcome> RevRegisterBillSupportWithdrawOutcomeCallable;
-                typedef std::function<void(const CpdpClient*, const Model::RevRegisterBillSupportWithdrawRequest&, RevRegisterBillSupportWithdrawOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevRegisterBillSupportWithdrawAsyncHandler;
                 typedef Outcome<Error, Model::RevResigterBillSupportWithdrawResponse> RevResigterBillSupportWithdrawOutcome;
                 typedef std::future<RevResigterBillSupportWithdrawOutcome> RevResigterBillSupportWithdrawOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RevResigterBillSupportWithdrawRequest&, RevResigterBillSupportWithdrawOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevResigterBillSupportWithdrawAsyncHandler;
@@ -335,6 +357,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RevokeMemberRechargeThirdPayResponse> RevokeMemberRechargeThirdPayOutcome;
                 typedef std::future<RevokeMemberRechargeThirdPayOutcome> RevokeMemberRechargeThirdPayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RevokeMemberRechargeThirdPayRequest&, RevokeMemberRechargeThirdPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeMemberRechargeThirdPayAsyncHandler;
+                typedef Outcome<Error, Model::RevokeRechargeByThirdPayResponse> RevokeRechargeByThirdPayOutcome;
+                typedef std::future<RevokeRechargeByThirdPayOutcome> RevokeRechargeByThirdPayOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::RevokeRechargeByThirdPayRequest&, RevokeRechargeByThirdPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeRechargeByThirdPayAsyncHandler;
                 typedef Outcome<Error, Model::UnBindAcctResponse> UnBindAcctOutcome;
                 typedef std::future<UnBindAcctOutcome> UnBindAcctOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UnBindAcctRequest&, UnBindAcctOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindAcctAsyncHandler;
@@ -548,6 +573,15 @@ namespace TencentCloud
                 DeleteAgentTaxPaymentInfosOutcomeCallable DeleteAgentTaxPaymentInfosCallable(const Model::DeleteAgentTaxPaymentInfosRequest& request);
 
                 /**
+                 *查询充值明细接口
+                 * @param req DescribeChargeDetailRequest
+                 * @return DescribeChargeDetailOutcome
+                 */
+                DescribeChargeDetailOutcome DescribeChargeDetail(const Model::DescribeChargeDetailRequest &request);
+                void DescribeChargeDetailAsync(const Model::DescribeChargeDetailRequest& request, const DescribeChargeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChargeDetailOutcomeCallable DescribeChargeDetailCallable(const Model::DescribeChargeDetailRequest& request);
+
+                /**
                  *账单下载接口，根据本接口返回的URL地址，在D+1日下载对账单。注意，本接口返回的URL地址有时效，请尽快下载。URL超时时效后，请重新调用本接口再次获取。
                  * @param req DownloadBillRequest
                  * @return DownloadBillOutcome
@@ -555,6 +589,15 @@ namespace TencentCloud
                 DownloadBillOutcome DownloadBill(const Model::DownloadBillRequest &request);
                 void DownloadBillAsync(const Model::DownloadBillRequest& request, const DownloadBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadBillOutcomeCallable DownloadBillCallable(const Model::DownloadBillRequest& request);
+
+                /**
+                 *会员间交易接口
+                 * @param req ExecuteMemberTransactionRequest
+                 * @return ExecuteMemberTransactionOutcome
+                 */
+                ExecuteMemberTransactionOutcome ExecuteMemberTransaction(const Model::ExecuteMemberTransactionRequest &request);
+                void ExecuteMemberTransactionAsync(const Model::ExecuteMemberTransactionRequest& request, const ExecuteMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecuteMemberTransactionOutcomeCallable ExecuteMemberTransactionCallable(const Model::ExecuteMemberTransactionRequest& request);
 
                 /**
                  *直播平台-修改代理商完税信息
@@ -618,6 +661,15 @@ namespace TencentCloud
                 QueryAgentTaxPaymentBatchOutcome QueryAgentTaxPaymentBatch(const Model::QueryAgentTaxPaymentBatchRequest &request);
                 void QueryAgentTaxPaymentBatchAsync(const Model::QueryAgentTaxPaymentBatchRequest& request, const QueryAgentTaxPaymentBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryAgentTaxPaymentBatchOutcomeCallable QueryAgentTaxPaymentBatchCallable(const Model::QueryAgentTaxPaymentBatchRequest& request);
+
+                /**
+                 *直播平台-查询主播签约信息
+                 * @param req QueryAnchorContractInfoRequest
+                 * @return QueryAnchorContractInfoOutcome
+                 */
+                QueryAnchorContractInfoOutcome QueryAnchorContractInfo(const Model::QueryAnchorContractInfoRequest &request);
+                void QueryAnchorContractInfoAsync(const Model::QueryAnchorContractInfoRequest& request, const QueryAnchorContractInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryAnchorContractInfoOutcomeCallable QueryAnchorContractInfoCallable(const Model::QueryAnchorContractInfoRequest& request);
 
                 /**
                  *跨境-成功申报材料查询。查询成功入库的申报材料。
@@ -810,6 +862,15 @@ namespace TencentCloud
                 QueryTradeOutcomeCallable QueryTradeCallable(const Model::QueryTradeRequest& request);
 
                 /**
+                 *会员在途充值(经第三方支付渠道)接口
+                 * @param req RechargeByThirdPayRequest
+                 * @return RechargeByThirdPayOutcome
+                 */
+                RechargeByThirdPayOutcome RechargeByThirdPay(const Model::RechargeByThirdPayRequest &request);
+                void RechargeByThirdPayAsync(const Model::RechargeByThirdPayRequest& request, const RechargeByThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RechargeByThirdPayOutcomeCallable RechargeByThirdPayCallable(const Model::RechargeByThirdPayRequest& request);
+
+                /**
                  *见证宝-会员在途充值(经第三方支付渠道)
                  * @param req RechargeMemberThirdPayRequest
                  * @return RechargeMemberThirdPayOutcome
@@ -828,6 +889,15 @@ namespace TencentCloud
                 RefundOutcomeCallable RefundCallable(const Model::RefundRequest& request);
 
                 /**
+                 *会员间交易退款
+                 * @param req RefundMemberTransactionRequest
+                 * @return RefundMemberTransactionOutcome
+                 */
+                RefundMemberTransactionOutcome RefundMemberTransaction(const Model::RefundMemberTransactionRequest &request);
+                void RefundMemberTransactionAsync(const Model::RefundMemberTransactionRequest& request, const RefundMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefundMemberTransactionOutcomeCallable RefundMemberTransactionCallable(const Model::RefundMemberTransactionRequest& request);
+
+                /**
                  *登记挂账(支持撤销)
                  * @param req RegisterBillRequest
                  * @return RegisterBillOutcome
@@ -844,15 +914,6 @@ namespace TencentCloud
                 RegisterBillSupportWithdrawOutcome RegisterBillSupportWithdraw(const Model::RegisterBillSupportWithdrawRequest &request);
                 void RegisterBillSupportWithdrawAsync(const Model::RegisterBillSupportWithdrawRequest& request, const RegisterBillSupportWithdrawAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RegisterBillSupportWithdrawOutcomeCallable RegisterBillSupportWithdrawCallable(const Model::RegisterBillSupportWithdrawRequest& request);
-
-                /**
-                 *登记挂账撤销。此接口可以实现把RegisterBillSupportWithdraw接口完成的登记挂账进行撤销，即调减普通会员子账户的可提现和可用余额，调增挂账子账户的可用余额。
-                 * @param req RevRegisterBillSupportWithdrawRequest
-                 * @return RevRegisterBillSupportWithdrawOutcome
-                 */
-                RevRegisterBillSupportWithdrawOutcome RevRegisterBillSupportWithdraw(const Model::RevRegisterBillSupportWithdrawRequest &request);
-                void RevRegisterBillSupportWithdrawAsync(const Model::RevRegisterBillSupportWithdrawRequest& request, const RevRegisterBillSupportWithdrawAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RevRegisterBillSupportWithdrawOutcomeCallable RevRegisterBillSupportWithdrawCallable(const Model::RevRegisterBillSupportWithdrawRequest& request);
 
                 /**
                  *登记挂账撤销。此接口可以实现把RegisterBillSupportWithdraw接口完成的登记挂账进行撤销，即调减普通会员子账户的可提现和可用余额，调增挂账子账户的可用余额。
@@ -880,6 +941,15 @@ namespace TencentCloud
                 RevokeMemberRechargeThirdPayOutcome RevokeMemberRechargeThirdPay(const Model::RevokeMemberRechargeThirdPayRequest &request);
                 void RevokeMemberRechargeThirdPayAsync(const Model::RevokeMemberRechargeThirdPayRequest& request, const RevokeMemberRechargeThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RevokeMemberRechargeThirdPayOutcomeCallable RevokeMemberRechargeThirdPayCallable(const Model::RevokeMemberRechargeThirdPayRequest& request);
+
+                /**
+                 *撤销会员在途充值(经第三方支付渠道)接口
+                 * @param req RevokeRechargeByThirdPayRequest
+                 * @return RevokeRechargeByThirdPayOutcome
+                 */
+                RevokeRechargeByThirdPayOutcome RevokeRechargeByThirdPay(const Model::RevokeRechargeByThirdPayRequest &request);
+                void RevokeRechargeByThirdPayAsync(const Model::RevokeRechargeByThirdPayRequest& request, const RevokeRechargeByThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevokeRechargeByThirdPayOutcomeCallable RevokeRechargeByThirdPayCallable(const Model::RevokeRechargeByThirdPayRequest& request);
 
                 /**
                  *商户解除绑定的提现银行卡

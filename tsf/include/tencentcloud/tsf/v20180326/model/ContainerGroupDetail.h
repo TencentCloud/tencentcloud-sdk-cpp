@@ -796,6 +796,50 @@ namespace TencentCloud
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取kubernetes滚动更新策略的MaxSurge参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxSurge kubernetes滚动更新策略的MaxSurge参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMaxSurge() const;
+
+                    /**
+                     * 设置kubernetes滚动更新策略的MaxSurge参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxSurge kubernetes滚动更新策略的MaxSurge参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxSurge(const std::string& _maxSurge);
+
+                    /**
+                     * 判断参数 MaxSurge 是否已赋值
+                     * @return MaxSurge 是否已赋值
+                     */
+                    bool MaxSurgeHasBeenSet() const;
+
+                    /**
+                     * 获取kubernetes滚动更新策略的MaxUnavailable参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxUnavailable kubernetes滚动更新策略的MaxUnavailable参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMaxUnavailable() const;
+
+                    /**
+                     * 设置kubernetes滚动更新策略的MaxUnavailable参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxUnavailable kubernetes滚动更新策略的MaxUnavailable参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxUnavailable(const std::string& _maxUnavailable);
+
+                    /**
+                     * 判断参数 MaxUnavailable 是否已赋值
+                     * @return MaxUnavailable 是否已赋值
+                     */
+                    bool MaxUnavailableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1035,6 +1079,20 @@ namespace TencentCloud
                      */
                     int64_t m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
+
+                    /**
+                     * kubernetes滚动更新策略的MaxSurge参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_maxSurge;
+                    bool m_maxSurgeHasBeenSet;
+
+                    /**
+                     * kubernetes滚动更新策略的MaxUnavailable参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_maxUnavailable;
+                    bool m_maxUnavailableHasBeenSet;
 
                 };
             }

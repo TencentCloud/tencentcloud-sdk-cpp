@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命名空间，每个云产品会有一个命名空间
-                     * @return Namespace 命名空间，每个云产品会有一个命名空间
+                     * 获取命名空间，各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档
+                     * @return Namespace 命名空间，各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间，每个云产品会有一个命名空间
-                     * @param Namespace 命名空间，每个云产品会有一个命名空间
+                     * 设置命名空间，各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档
+                     * @param Namespace 命名空间，各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档
                      */
                     void SetNamespace(const std::string& _namespace);
 
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命名空间，每个云产品会有一个命名空间
+                     * 命名空间，各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

@@ -78,6 +78,18 @@ namespace TencentCloud
                      */
                     bool ClientGradeHasBeenSet() const;
 
+                    /**
+                     * 获取客户类型：1，个人；2，企业；3，其他
+                     * @return ClientType 客户类型：1，个人；2，企业；3，其他
+                     */
+                    uint64_t GetClientType() const;
+
+                    /**
+                     * 判断参数 ClientType 是否已赋值
+                     * @return ClientType 是否已赋值
+                     */
+                    bool ClientTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_clientGrade;
                     bool m_clientGradeHasBeenSet;
+
+                    /**
+                     * 客户类型：1，个人；2，企业；3，其他
+                     */
+                    uint64_t m_clientType;
+                    bool m_clientTypeHasBeenSet;
 
                 };
             }

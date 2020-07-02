@@ -140,6 +140,42 @@ namespace TencentCloud
                      */
                     bool ProfileHasBeenSet() const;
 
+                    /**
+                     * 获取开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     * @return InvoiceChannel 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     */
+                    int64_t GetInvoiceChannel() const;
+
+                    /**
+                     * 设置开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     * @param InvoiceChannel 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     */
+                    void SetInvoiceChannel(const int64_t& _invoiceChannel);
+
+                    /**
+                     * 判断参数 InvoiceChannel 是否已赋值
+                     * @return InvoiceChannel 是否已赋值
+                     */
+                    bool InvoiceChannelHasBeenSet() const;
+
+                    /**
+                     * 获取当渠道为线下渠道时，必填
+                     * @return SellerTaxpayerNum 当渠道为线下渠道时，必填
+                     */
+                    std::string GetSellerTaxpayerNum() const;
+
+                    /**
+                     * 设置当渠道为线下渠道时，必填
+                     * @param SellerTaxpayerNum 当渠道为线下渠道时，必填
+                     */
+                    void SetSellerTaxpayerNum(const std::string& _sellerTaxpayerNum);
+
+                    /**
+                     * 判断参数 SellerTaxpayerNum 是否已赋值
+                     * @return SellerTaxpayerNum 是否已赋值
+                     */
+                    bool SellerTaxpayerNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +209,18 @@ namespace TencentCloud
                      */
                     std::string m_profile;
                     bool m_profileHasBeenSet;
+
+                    /**
+                     * 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     */
+                    int64_t m_invoiceChannel;
+                    bool m_invoiceChannelHasBeenSet;
+
+                    /**
+                     * 当渠道为线下渠道时，必填
+                     */
+                    std::string m_sellerTaxpayerNum;
+                    bool m_sellerTaxpayerNumHasBeenSet;
 
                 };
             }

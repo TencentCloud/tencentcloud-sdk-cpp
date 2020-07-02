@@ -697,6 +697,24 @@ namespace TencentCloud
                      */
                     bool StoreNoHasBeenSet() const;
 
+                    /**
+                     * 获取开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     * @return InvoiceChannel 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     */
+                    int64_t GetInvoiceChannel() const;
+
+                    /**
+                     * 设置开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     * @param InvoiceChannel 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     */
+                    void SetInvoiceChannel(const int64_t& _invoiceChannel);
+
+                    /**
+                     * 判断参数 InvoiceChannel 是否已赋值
+                     * @return InvoiceChannel 是否已赋值
+                     */
+                    bool InvoiceChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -914,6 +932,12 @@ namespace TencentCloud
                      */
                     std::string m_storeNo;
                     bool m_storeNoHasBeenSet;
+
+                    /**
+                     * 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     */
+                    int64_t m_invoiceChannel;
+                    bool m_invoiceChannelHasBeenSet;
 
                 };
             }

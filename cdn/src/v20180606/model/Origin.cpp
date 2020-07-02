@@ -29,7 +29,8 @@ Origin::Origin() :
     m_originPullProtocolHasBeenSet(false),
     m_backupOriginsHasBeenSet(false),
     m_backupOriginTypeHasBeenSet(false),
-    m_backupServerNameHasBeenSet(false)
+    m_backupServerNameHasBeenSet(false),
+    m_basePathHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,16 @@ CoreInternalOutcome Origin::Deserialize(const Value &value)
         m_backupServerNameHasBeenSet = true;
     }
 
+    if (value.HasMember("BasePath") && !value["BasePath"].IsNull())
+    {
+        if (!value["BasePath"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Origin.BasePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_basePath = string(value["BasePath"].GetString());
+        m_basePathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void Origin::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "BackupServerName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_backupServerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_basePathHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BasePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_basePath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void Origin::SetBackupServerName(const string& _backupServerName)
 bool Origin::BackupServerNameHasBeenSet() const
 {
     return m_backupServerNameHasBeenSet;
+}
+
+string Origin::GetBasePath() const
+{
+    return m_basePath;
+}
+
+void Origin::SetBasePath(const string& _basePath)
+{
+    m_basePath = _basePath;
+    m_basePathHasBeenSet = true;
+}
+
+bool Origin::BasePathHasBeenSet() const
+{
+    return m_basePathHasBeenSet;
 }
 

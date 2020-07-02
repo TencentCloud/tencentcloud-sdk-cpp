@@ -87,6 +87,72 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取程序包仓库id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RepositoryId 程序包仓库id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRepositoryId() const;
+
+                    /**
+                     * 设置程序包仓库id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RepositoryId 程序包仓库id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRepositoryId(const std::string& _repositoryId);
+
+                    /**
+                     * 判断参数 RepositoryId 是否已赋值
+                     * @return RepositoryId 是否已赋值
+                     */
+                    bool RepositoryIdHasBeenSet() const;
+
+                    /**
+                     * 获取程序包仓库类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RepositoryType 程序包仓库类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRepositoryType() const;
+
+                    /**
+                     * 设置程序包仓库类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RepositoryType 程序包仓库类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRepositoryType(const std::string& _repositoryType);
+
+                    /**
+                     * 判断参数 RepositoryType 是否已赋值
+                     * @return RepositoryType 是否已赋值
+                     */
+                    bool RepositoryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取程序包仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RepositoryName 程序包仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRepositoryName() const;
+
+                    /**
+                     * 设置程序包仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RepositoryName 程序包仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRepositoryName(const std::string& _repositoryName);
+
+                    /**
+                     * 判断参数 RepositoryName 是否已赋值
+                     * @return RepositoryName 是否已赋值
+                     */
+                    bool RepositoryNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +167,27 @@ namespace TencentCloud
                      */
                     std::vector<PkgInfo> m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 程序包仓库id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_repositoryId;
+                    bool m_repositoryIdHasBeenSet;
+
+                    /**
+                     * 程序包仓库类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_repositoryType;
+                    bool m_repositoryTypeHasBeenSet;
+
+                    /**
+                     * 程序包仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_repositoryName;
+                    bool m_repositoryNameHasBeenSet;
 
                 };
             }

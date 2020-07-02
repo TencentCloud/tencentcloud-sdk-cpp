@@ -29,6 +29,8 @@
 #include <tencentcloud/ic/v20190307/model/DescribeCardResponse.h>
 #include <tencentcloud/ic/v20190307/model/DescribeCardsRequest.h>
 #include <tencentcloud/ic/v20190307/model/DescribeCardsResponse.h>
+#include <tencentcloud/ic/v20190307/model/RenewCardsRequest.h>
+#include <tencentcloud/ic/v20190307/model/RenewCardsResponse.h>
 #include <tencentcloud/ic/v20190307/model/SendMultiSmsRequest.h>
 #include <tencentcloud/ic/v20190307/model/SendMultiSmsResponse.h>
 #include <tencentcloud/ic/v20190307/model/SendSmsRequest.h>
@@ -56,6 +58,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCardsResponse> DescribeCardsOutcome;
                 typedef std::future<DescribeCardsOutcome> DescribeCardsOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::DescribeCardsRequest&, DescribeCardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCardsAsyncHandler;
+                typedef Outcome<Error, Model::RenewCardsResponse> RenewCardsOutcome;
+                typedef std::future<RenewCardsOutcome> RenewCardsOutcomeCallable;
+                typedef std::function<void(const IcClient*, const Model::RenewCardsRequest&, RenewCardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewCardsAsyncHandler;
                 typedef Outcome<Error, Model::SendMultiSmsResponse> SendMultiSmsOutcome;
                 typedef std::future<SendMultiSmsOutcome> SendMultiSmsOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::SendMultiSmsRequest&, SendMultiSmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMultiSmsAsyncHandler;
@@ -91,6 +96,19 @@ namespace TencentCloud
                 DescribeCardsOutcome DescribeCards(const Model::DescribeCardsRequest &request);
                 void DescribeCardsAsync(const Model::DescribeCardsRequest& request, const DescribeCardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCardsOutcomeCallable DescribeCardsCallable(const Model::DescribeCardsRequest& request);
+
+                /**
+                 *批量为卡片续费，此接口建议调用至少间隔10s,如果出现返回deal lock failed相关的错误，请过10s再重试。
+续费的必要条件：
+1、单次续费的卡片不可以超过 100张。
+2、只对单卡续费，不支持池卡
+3、销户和未激活的卡片不支持续费。
+                 * @param req RenewCardsRequest
+                 * @return RenewCardsOutcome
+                 */
+                RenewCardsOutcome RenewCards(const Model::RenewCardsRequest &request);
+                void RenewCardsAsync(const Model::RenewCardsRequest& request, const RenewCardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewCardsOutcomeCallable RenewCardsCallable(const Model::RenewCardsRequest& request);
 
                 /**
                  *群发短信

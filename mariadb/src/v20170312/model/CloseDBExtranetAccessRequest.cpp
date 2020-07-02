@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 CloseDBExtranetAccessRequest::CloseDBExtranetAccessRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_ipv6FlagHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string CloseDBExtranetAccessRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6FlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Flag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ipv6Flag, allocator);
     }
 
 
@@ -65,6 +74,22 @@ void CloseDBExtranetAccessRequest::SetInstanceId(const string& _instanceId)
 bool CloseDBExtranetAccessRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+int64_t CloseDBExtranetAccessRequest::GetIpv6Flag() const
+{
+    return m_ipv6Flag;
+}
+
+void CloseDBExtranetAccessRequest::SetIpv6Flag(const int64_t& _ipv6Flag)
+{
+    m_ipv6Flag = _ipv6Flag;
+    m_ipv6FlagHasBeenSet = true;
+}
+
+bool CloseDBExtranetAccessRequest::Ipv6FlagHasBeenSet() const
+{
+    return m_ipv6FlagHasBeenSet;
 }
 
 

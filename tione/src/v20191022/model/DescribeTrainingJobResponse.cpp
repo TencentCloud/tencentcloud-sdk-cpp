@@ -41,7 +41,9 @@ DescribeTrainingJobResponse::DescribeTrainingJobResponse() :
     m_secondaryStatusHasBeenSet(false),
     m_secondaryStatusTransitionsHasBeenSet(false),
     m_roleNameHasBeenSet(false),
-    m_trainingJobStatusHasBeenSet(false)
+    m_trainingJobStatusHasBeenSet(false),
+    m_logUrlHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -311,6 +313,26 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
         m_trainingJobStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LogUrl") && !rsp["LogUrl"].IsNull())
+    {
+        if (!rsp["LogUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LogUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logUrl = string(rsp["LogUrl"].GetString());
+        m_logUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    {
+        if (!rsp["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -484,6 +506,26 @@ string DescribeTrainingJobResponse::GetTrainingJobStatus() const
 bool DescribeTrainingJobResponse::TrainingJobStatusHasBeenSet() const
 {
     return m_trainingJobStatusHasBeenSet;
+}
+
+string DescribeTrainingJobResponse::GetLogUrl() const
+{
+    return m_logUrl;
+}
+
+bool DescribeTrainingJobResponse::LogUrlHasBeenSet() const
+{
+    return m_logUrlHasBeenSet;
+}
+
+string DescribeTrainingJobResponse::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+bool DescribeTrainingJobResponse::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

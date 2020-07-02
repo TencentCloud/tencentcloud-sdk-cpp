@@ -943,6 +943,49 @@ CpdpClient::DeleteAgentTaxPaymentInfosOutcomeCallable CpdpClient::DeleteAgentTax
     return task->get_future();
 }
 
+CpdpClient::DescribeChargeDetailOutcome CpdpClient::DescribeChargeDetail(const DescribeChargeDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChargeDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChargeDetailResponse rsp = DescribeChargeDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChargeDetailOutcome(rsp);
+        else
+            return DescribeChargeDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChargeDetailOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::DescribeChargeDetailAsync(const DescribeChargeDetailRequest& request, const DescribeChargeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChargeDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::DescribeChargeDetailOutcomeCallable CpdpClient::DescribeChargeDetailCallable(const DescribeChargeDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChargeDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChargeDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::DownloadBillOutcome CpdpClient::DownloadBill(const DownloadBillRequest &request)
 {
     auto outcome = MakeRequest(request, "DownloadBill");
@@ -979,6 +1022,49 @@ CpdpClient::DownloadBillOutcomeCallable CpdpClient::DownloadBillCallable(const D
         [this, request]()
         {
             return this->DownloadBill(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::ExecuteMemberTransactionOutcome CpdpClient::ExecuteMemberTransaction(const ExecuteMemberTransactionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExecuteMemberTransaction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecuteMemberTransactionResponse rsp = ExecuteMemberTransactionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecuteMemberTransactionOutcome(rsp);
+        else
+            return ExecuteMemberTransactionOutcome(o.GetError());
+    }
+    else
+    {
+        return ExecuteMemberTransactionOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ExecuteMemberTransactionAsync(const ExecuteMemberTransactionRequest& request, const ExecuteMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExecuteMemberTransaction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ExecuteMemberTransactionOutcomeCallable CpdpClient::ExecuteMemberTransactionCallable(const ExecuteMemberTransactionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExecuteMemberTransactionOutcome()>>(
+        [this, request]()
+        {
+            return this->ExecuteMemberTransaction(request);
         }
     );
 
@@ -1280,6 +1366,49 @@ CpdpClient::QueryAgentTaxPaymentBatchOutcomeCallable CpdpClient::QueryAgentTaxPa
         [this, request]()
         {
             return this->QueryAgentTaxPaymentBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryAnchorContractInfoOutcome CpdpClient::QueryAnchorContractInfo(const QueryAnchorContractInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryAnchorContractInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryAnchorContractInfoResponse rsp = QueryAnchorContractInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryAnchorContractInfoOutcome(rsp);
+        else
+            return QueryAnchorContractInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryAnchorContractInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryAnchorContractInfoAsync(const QueryAnchorContractInfoRequest& request, const QueryAnchorContractInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryAnchorContractInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryAnchorContractInfoOutcomeCallable CpdpClient::QueryAnchorContractInfoCallable(const QueryAnchorContractInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryAnchorContractInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryAnchorContractInfo(request);
         }
     );
 
@@ -2190,6 +2319,49 @@ CpdpClient::QueryTradeOutcomeCallable CpdpClient::QueryTradeCallable(const Query
     return task->get_future();
 }
 
+CpdpClient::RechargeByThirdPayOutcome CpdpClient::RechargeByThirdPay(const RechargeByThirdPayRequest &request)
+{
+    auto outcome = MakeRequest(request, "RechargeByThirdPay");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RechargeByThirdPayResponse rsp = RechargeByThirdPayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RechargeByThirdPayOutcome(rsp);
+        else
+            return RechargeByThirdPayOutcome(o.GetError());
+    }
+    else
+    {
+        return RechargeByThirdPayOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::RechargeByThirdPayAsync(const RechargeByThirdPayRequest& request, const RechargeByThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RechargeByThirdPay(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::RechargeByThirdPayOutcomeCallable CpdpClient::RechargeByThirdPayCallable(const RechargeByThirdPayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RechargeByThirdPayOutcome()>>(
+        [this, request]()
+        {
+            return this->RechargeByThirdPay(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::RechargeMemberThirdPayOutcome CpdpClient::RechargeMemberThirdPay(const RechargeMemberThirdPayRequest &request)
 {
     auto outcome = MakeRequest(request, "RechargeMemberThirdPay");
@@ -2276,6 +2448,49 @@ CpdpClient::RefundOutcomeCallable CpdpClient::RefundCallable(const RefundRequest
     return task->get_future();
 }
 
+CpdpClient::RefundMemberTransactionOutcome CpdpClient::RefundMemberTransaction(const RefundMemberTransactionRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefundMemberTransaction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefundMemberTransactionResponse rsp = RefundMemberTransactionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefundMemberTransactionOutcome(rsp);
+        else
+            return RefundMemberTransactionOutcome(o.GetError());
+    }
+    else
+    {
+        return RefundMemberTransactionOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::RefundMemberTransactionAsync(const RefundMemberTransactionRequest& request, const RefundMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RefundMemberTransaction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::RefundMemberTransactionOutcomeCallable CpdpClient::RefundMemberTransactionCallable(const RefundMemberTransactionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RefundMemberTransactionOutcome()>>(
+        [this, request]()
+        {
+            return this->RefundMemberTransaction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::RegisterBillOutcome CpdpClient::RegisterBill(const RegisterBillRequest &request)
 {
     auto outcome = MakeRequest(request, "RegisterBill");
@@ -2355,49 +2570,6 @@ CpdpClient::RegisterBillSupportWithdrawOutcomeCallable CpdpClient::RegisterBillS
         [this, request]()
         {
             return this->RegisterBillSupportWithdraw(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CpdpClient::RevRegisterBillSupportWithdrawOutcome CpdpClient::RevRegisterBillSupportWithdraw(const RevRegisterBillSupportWithdrawRequest &request)
-{
-    auto outcome = MakeRequest(request, "RevRegisterBillSupportWithdraw");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RevRegisterBillSupportWithdrawResponse rsp = RevRegisterBillSupportWithdrawResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RevRegisterBillSupportWithdrawOutcome(rsp);
-        else
-            return RevRegisterBillSupportWithdrawOutcome(o.GetError());
-    }
-    else
-    {
-        return RevRegisterBillSupportWithdrawOutcome(outcome.GetError());
-    }
-}
-
-void CpdpClient::RevRegisterBillSupportWithdrawAsync(const RevRegisterBillSupportWithdrawRequest& request, const RevRegisterBillSupportWithdrawAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RevRegisterBillSupportWithdraw(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CpdpClient::RevRegisterBillSupportWithdrawOutcomeCallable CpdpClient::RevRegisterBillSupportWithdrawCallable(const RevRegisterBillSupportWithdrawRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RevRegisterBillSupportWithdrawOutcome()>>(
-        [this, request]()
-        {
-            return this->RevRegisterBillSupportWithdraw(request);
         }
     );
 
@@ -2527,6 +2699,49 @@ CpdpClient::RevokeMemberRechargeThirdPayOutcomeCallable CpdpClient::RevokeMember
         [this, request]()
         {
             return this->RevokeMemberRechargeThirdPay(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::RevokeRechargeByThirdPayOutcome CpdpClient::RevokeRechargeByThirdPay(const RevokeRechargeByThirdPayRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevokeRechargeByThirdPay");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevokeRechargeByThirdPayResponse rsp = RevokeRechargeByThirdPayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevokeRechargeByThirdPayOutcome(rsp);
+        else
+            return RevokeRechargeByThirdPayOutcome(o.GetError());
+    }
+    else
+    {
+        return RevokeRechargeByThirdPayOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::RevokeRechargeByThirdPayAsync(const RevokeRechargeByThirdPayRequest& request, const RevokeRechargeByThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RevokeRechargeByThirdPay(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::RevokeRechargeByThirdPayOutcomeCallable CpdpClient::RevokeRechargeByThirdPayCallable(const RevokeRechargeByThirdPayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RevokeRechargeByThirdPayOutcome()>>(
+        [this, request]()
+        {
+            return this->RevokeRechargeByThirdPay(request);
         }
     );
 

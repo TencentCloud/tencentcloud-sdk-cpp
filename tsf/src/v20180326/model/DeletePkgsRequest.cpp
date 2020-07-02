@@ -25,7 +25,9 @@ using namespace std;
 
 DeletePkgsRequest::DeletePkgsRequest() :
     m_applicationIdHasBeenSet(false),
-    m_pkgIdsHasBeenSet(false)
+    m_pkgIdsHasBeenSet(false),
+    m_repositoryTypeHasBeenSet(false),
+    m_repositoryIdHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,22 @@ string DeletePkgsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_repositoryTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repositoryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repositoryId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -95,6 +113,38 @@ void DeletePkgsRequest::SetPkgIds(const vector<string>& _pkgIds)
 bool DeletePkgsRequest::PkgIdsHasBeenSet() const
 {
     return m_pkgIdsHasBeenSet;
+}
+
+string DeletePkgsRequest::GetRepositoryType() const
+{
+    return m_repositoryType;
+}
+
+void DeletePkgsRequest::SetRepositoryType(const string& _repositoryType)
+{
+    m_repositoryType = _repositoryType;
+    m_repositoryTypeHasBeenSet = true;
+}
+
+bool DeletePkgsRequest::RepositoryTypeHasBeenSet() const
+{
+    return m_repositoryTypeHasBeenSet;
+}
+
+string DeletePkgsRequest::GetRepositoryId() const
+{
+    return m_repositoryId;
+}
+
+void DeletePkgsRequest::SetRepositoryId(const string& _repositoryId)
+{
+    m_repositoryId = _repositoryId;
+    m_repositoryIdHasBeenSet = true;
+}
+
+bool DeletePkgsRequest::RepositoryIdHasBeenSet() const
+{
+    return m_repositoryIdHasBeenSet;
 }
 
 

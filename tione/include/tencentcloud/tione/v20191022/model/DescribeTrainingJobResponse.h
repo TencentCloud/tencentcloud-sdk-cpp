@@ -300,6 +300,32 @@ Stopped：已停止
                      */
                     bool TrainingJobStatusHasBeenSet() const;
 
+                    /**
+                     * 获取训练任务日志链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogUrl 训练任务日志链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogUrl() const;
+
+                    /**
+                     * 判断参数 LogUrl 是否已赋值
+                     * @return LogUrl 是否已赋值
+                     */
+                    bool LogUrlHasBeenSet() const;
+
+                    /**
+                     * 获取训练任务实例ID
+                     * @return InstanceId 训练任务实例ID
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +452,19 @@ Stopped：已停止
                      */
                     std::string m_trainingJobStatus;
                     bool m_trainingJobStatusHasBeenSet;
+
+                    /**
+                     * 训练任务日志链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logUrl;
+                    bool m_logUrlHasBeenSet;
+
+                    /**
+                     * 训练任务实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ BeautifyPicRequest::BeautifyPicRequest() :
     m_whiteningHasBeenSet(false),
     m_smoothingHasBeenSet(false),
     m_faceLiftingHasBeenSet(false),
-    m_eyeEnlargingHasBeenSet(false)
+    m_eyeEnlargingHasBeenSet(false),
+    m_rspImgTypeHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string BeautifyPicRequest::ToJsonString() const
         string key = "EyeEnlarging";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_eyeEnlarging, allocator);
+    }
+
+    if (m_rspImgTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RspImgType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_rspImgType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void BeautifyPicRequest::SetEyeEnlarging(const uint64_t& _eyeEnlarging)
 bool BeautifyPicRequest::EyeEnlargingHasBeenSet() const
 {
     return m_eyeEnlargingHasBeenSet;
+}
+
+string BeautifyPicRequest::GetRspImgType() const
+{
+    return m_rspImgType;
+}
+
+void BeautifyPicRequest::SetRspImgType(const string& _rspImgType)
+{
+    m_rspImgType = _rspImgType;
+    m_rspImgTypeHasBeenSet = true;
+}
+
+bool BeautifyPicRequest::RspImgTypeHasBeenSet() const
+{
+    return m_rspImgTypeHasBeenSet;
 }
 
 

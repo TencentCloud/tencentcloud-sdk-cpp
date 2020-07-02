@@ -366,6 +366,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取Midas环境参数
+                     * @return MidasEnvironment Midas环境参数
+                     */
+                    std::string GetMidasEnvironment() const;
+
+                    /**
+                     * 设置Midas环境参数
+                     * @param MidasEnvironment Midas环境参数
+                     */
+                    void SetMidasEnvironment(const std::string& _midasEnvironment);
+
+                    /**
+                     * 判断参数 MidasEnvironment 是否已赋值
+                     * @return MidasEnvironment 是否已赋值
+                     */
+                    bool MidasEnvironmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -475,6 +493,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * Midas环境参数
+                     */
+                    std::string m_midasEnvironment;
+                    bool m_midasEnvironmentHasBeenSet;
 
                 };
             }

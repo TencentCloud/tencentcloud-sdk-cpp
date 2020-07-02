@@ -438,6 +438,42 @@ namespace TencentCloud
                      */
                     bool IstioMemLimitHasBeenSet() const;
 
+                    /**
+                     * 获取kubernetes滚动更新策略的MaxSurge参数
+                     * @return MaxSurge kubernetes滚动更新策略的MaxSurge参数
+                     */
+                    std::string GetMaxSurge() const;
+
+                    /**
+                     * 设置kubernetes滚动更新策略的MaxSurge参数
+                     * @param MaxSurge kubernetes滚动更新策略的MaxSurge参数
+                     */
+                    void SetMaxSurge(const std::string& _maxSurge);
+
+                    /**
+                     * 判断参数 MaxSurge 是否已赋值
+                     * @return MaxSurge 是否已赋值
+                     */
+                    bool MaxSurgeHasBeenSet() const;
+
+                    /**
+                     * 获取kubernetes滚动更新策略的MaxUnavailable参数
+                     * @return MaxUnavailable kubernetes滚动更新策略的MaxUnavailable参数
+                     */
+                    std::string GetMaxUnavailable() const;
+
+                    /**
+                     * 设置kubernetes滚动更新策略的MaxUnavailable参数
+                     * @param MaxUnavailable kubernetes滚动更新策略的MaxUnavailable参数
+                     */
+                    void SetMaxUnavailable(const std::string& _maxUnavailable);
+
+                    /**
+                     * 判断参数 MaxUnavailable 是否已赋值
+                     * @return MaxUnavailable 是否已赋值
+                     */
+                    bool MaxUnavailableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -571,6 +607,18 @@ namespace TencentCloud
                      */
                     std::string m_istioMemLimit;
                     bool m_istioMemLimitHasBeenSet;
+
+                    /**
+                     * kubernetes滚动更新策略的MaxSurge参数
+                     */
+                    std::string m_maxSurge;
+                    bool m_maxSurgeHasBeenSet;
+
+                    /**
+                     * kubernetes滚动更新策略的MaxUnavailable参数
+                     */
+                    std::string m_maxUnavailable;
+                    bool m_maxUnavailableHasBeenSet;
 
                 };
             }

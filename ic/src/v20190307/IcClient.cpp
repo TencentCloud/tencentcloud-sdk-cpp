@@ -169,6 +169,49 @@ IcClient::DescribeCardsOutcomeCallable IcClient::DescribeCardsCallable(const Des
     return task->get_future();
 }
 
+IcClient::RenewCardsOutcome IcClient::RenewCards(const RenewCardsRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewCards");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewCardsResponse rsp = RenewCardsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewCardsOutcome(rsp);
+        else
+            return RenewCardsOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewCardsOutcome(outcome.GetError());
+    }
+}
+
+void IcClient::RenewCardsAsync(const RenewCardsRequest& request, const RenewCardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewCards(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IcClient::RenewCardsOutcomeCallable IcClient::RenewCardsCallable(const RenewCardsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewCardsOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewCards(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IcClient::SendMultiSmsOutcome IcClient::SendMultiSms(const SendMultiSmsRequest &request)
 {
     auto outcome = MakeRequest(request, "SendMultiSms");

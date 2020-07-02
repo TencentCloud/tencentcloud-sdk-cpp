@@ -58,7 +58,8 @@ CreateInvoiceRequest::CreateInvoiceRequest() :
     m_undoPartHasBeenSet(false),
     m_orderDateHasBeenSet(false),
     m_discountHasBeenSet(false),
-    m_storeNoHasBeenSet(false)
+    m_storeNoHasBeenSet(false),
+    m_invoiceChannelHasBeenSet(false)
 {
 }
 
@@ -354,6 +355,14 @@ string CreateInvoiceRequest::ToJsonString() const
         string key = "StoreNo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_storeNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invoiceChannelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InvoiceChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_invoiceChannel, allocator);
     }
 
 
@@ -922,6 +931,22 @@ void CreateInvoiceRequest::SetStoreNo(const string& _storeNo)
 bool CreateInvoiceRequest::StoreNoHasBeenSet() const
 {
     return m_storeNoHasBeenSet;
+}
+
+int64_t CreateInvoiceRequest::GetInvoiceChannel() const
+{
+    return m_invoiceChannel;
+}
+
+void CreateInvoiceRequest::SetInvoiceChannel(const int64_t& _invoiceChannel)
+{
+    m_invoiceChannel = _invoiceChannel;
+    m_invoiceChannelHasBeenSet = true;
+}
+
+bool CreateInvoiceRequest::InvoiceChannelHasBeenSet() const
+{
+    return m_invoiceChannelHasBeenSet;
 }
 
 

@@ -29,7 +29,8 @@ PkgInfo::PkgInfo() :
     m_pkgDescHasBeenSet(false),
     m_uploadTimeHasBeenSet(false),
     m_md5HasBeenSet(false),
-    m_pkgPubStatusHasBeenSet(false)
+    m_pkgPubStatusHasBeenSet(false),
+    m_pkgBindInfoHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,26 @@ CoreInternalOutcome PkgInfo::Deserialize(const Value &value)
         m_pkgPubStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("PkgBindInfo") && !value["PkgBindInfo"].IsNull())
+    {
+        if (!value["PkgBindInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `PkgInfo.PkgBindInfo` is not array type"));
+
+        const Value &tmpValue = value["PkgBindInfo"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PkgBind item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_pkgBindInfo.push_back(item);
+        }
+        m_pkgBindInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +208,21 @@ void PkgInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "PkgPubStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pkgPubStatus, allocator);
+    }
+
+    if (m_pkgBindInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PkgBindInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_pkgBindInfo.begin(); itr != m_pkgBindInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -318,5 +354,21 @@ void PkgInfo::SetPkgPubStatus(const int64_t& _pkgPubStatus)
 bool PkgInfo::PkgPubStatusHasBeenSet() const
 {
     return m_pkgPubStatusHasBeenSet;
+}
+
+vector<PkgBind> PkgInfo::GetPkgBindInfo() const
+{
+    return m_pkgBindInfo;
+}
+
+void PkgInfo::SetPkgBindInfo(const vector<PkgBind>& _pkgBindInfo)
+{
+    m_pkgBindInfo = _pkgBindInfo;
+    m_pkgBindInfoHasBeenSet = true;
+}
+
+bool PkgInfo::PkgBindInfoHasBeenSet() const
+{
+    return m_pkgBindInfoHasBeenSet;
 }
 

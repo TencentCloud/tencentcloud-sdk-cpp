@@ -25,7 +25,9 @@ using namespace std;
 
 DescribeDownloadInfoRequest::DescribeDownloadInfoRequest() :
     m_applicationIdHasBeenSet(false),
-    m_pkgIdHasBeenSet(false)
+    m_pkgIdHasBeenSet(false),
+    m_repositoryIdHasBeenSet(false),
+    m_repositoryTypeHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,22 @@ string DescribeDownloadInfoRequest::ToJsonString() const
         string key = "PkgId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_pkgId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repositoryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repositoryType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +108,38 @@ void DescribeDownloadInfoRequest::SetPkgId(const string& _pkgId)
 bool DescribeDownloadInfoRequest::PkgIdHasBeenSet() const
 {
     return m_pkgIdHasBeenSet;
+}
+
+string DescribeDownloadInfoRequest::GetRepositoryId() const
+{
+    return m_repositoryId;
+}
+
+void DescribeDownloadInfoRequest::SetRepositoryId(const string& _repositoryId)
+{
+    m_repositoryId = _repositoryId;
+    m_repositoryIdHasBeenSet = true;
+}
+
+bool DescribeDownloadInfoRequest::RepositoryIdHasBeenSet() const
+{
+    return m_repositoryIdHasBeenSet;
+}
+
+string DescribeDownloadInfoRequest::GetRepositoryType() const
+{
+    return m_repositoryType;
+}
+
+void DescribeDownloadInfoRequest::SetRepositoryType(const string& _repositoryType)
+{
+    m_repositoryType = _repositoryType;
+    m_repositoryTypeHasBeenSet = true;
+}
+
+bool DescribeDownloadInfoRequest::RepositoryTypeHasBeenSet() const
+{
+    return m_repositoryTypeHasBeenSet;
 }
 
 

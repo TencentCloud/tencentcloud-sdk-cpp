@@ -45,7 +45,9 @@ DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_istioCpuRequestHasBeenSet(false),
     m_istioCpuLimitHasBeenSet(false),
     m_istioMemRequestHasBeenSet(false),
-    m_istioMemLimitHasBeenSet(false)
+    m_istioMemLimitHasBeenSet(false),
+    m_maxSurgeHasBeenSet(false),
+    m_maxUnavailableHasBeenSet(false)
 {
 }
 
@@ -230,6 +232,22 @@ string DeployContainerGroupRequest::ToJsonString() const
         string key = "IstioMemLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_istioMemLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxSurgeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxSurge";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_maxSurge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxUnavailableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxUnavailable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_maxUnavailable.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -590,6 +608,38 @@ void DeployContainerGroupRequest::SetIstioMemLimit(const string& _istioMemLimit)
 bool DeployContainerGroupRequest::IstioMemLimitHasBeenSet() const
 {
     return m_istioMemLimitHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetMaxSurge() const
+{
+    return m_maxSurge;
+}
+
+void DeployContainerGroupRequest::SetMaxSurge(const string& _maxSurge)
+{
+    m_maxSurge = _maxSurge;
+    m_maxSurgeHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::MaxSurgeHasBeenSet() const
+{
+    return m_maxSurgeHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetMaxUnavailable() const
+{
+    return m_maxUnavailable;
+}
+
+void DeployContainerGroupRequest::SetMaxUnavailable(const string& _maxUnavailable)
+{
+    m_maxUnavailable = _maxUnavailable;
+    m_maxUnavailableHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::MaxUnavailableHasBeenSet() const
+{
+    return m_maxUnavailableHasBeenSet;
 }
 
 

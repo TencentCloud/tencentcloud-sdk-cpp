@@ -208,6 +208,24 @@ namespace TencentCloud
                      */
                     bool BackgroundColorHasBeenSet() const;
 
+                    /**
+                     * 获取混流-输出流背景图片，取值为实时音视频控制台上传的图片ID。
+                     * @return BackgroundImageId 混流-输出流背景图片，取值为实时音视频控制台上传的图片ID。
+                     */
+                    uint64_t GetBackgroundImageId() const;
+
+                    /**
+                     * 设置混流-输出流背景图片，取值为实时音视频控制台上传的图片ID。
+                     * @param BackgroundImageId 混流-输出流背景图片，取值为实时音视频控制台上传的图片ID。
+                     */
+                    void SetBackgroundImageId(const uint64_t& _backgroundImageId);
+
+                    /**
+                     * 判断参数 BackgroundImageId 是否已赋值
+                     * @return BackgroundImageId 是否已赋值
+                     */
+                    bool BackgroundImageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +281,12 @@ namespace TencentCloud
                      */
                     uint64_t m_backgroundColor;
                     bool m_backgroundColorHasBeenSet;
+
+                    /**
+                     * 混流-输出流背景图片，取值为实时音视频控制台上传的图片ID。
+                     */
+                    uint64_t m_backgroundImageId;
+                    bool m_backgroundImageIdHasBeenSet;
 
                 };
             }

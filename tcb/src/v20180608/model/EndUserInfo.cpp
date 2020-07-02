@@ -34,7 +34,8 @@ EndUserInfo::EndUserInfo() :
     m_createTimeHasBeenSet(false),
     m_isAnonymousHasBeenSet(false),
     m_isDisabledHasBeenSet(false),
-    m_hasPasswordHasBeenSet(false)
+    m_hasPasswordHasBeenSet(false),
+    m_userNameHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,16 @@ CoreInternalOutcome EndUserInfo::Deserialize(const Value &value)
         m_hasPasswordHasBeenSet = true;
     }
 
+    if (value.HasMember("UserName") && !value["UserName"].IsNull())
+    {
+        if (!value["UserName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EndUserInfo.UserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userName = string(value["UserName"].GetString());
+        m_userNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +293,14 @@ void EndUserInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "HasPassword";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasPassword, allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -493,5 +512,21 @@ void EndUserInfo::SetHasPassword(const bool& _hasPassword)
 bool EndUserInfo::HasPasswordHasBeenSet() const
 {
     return m_hasPasswordHasBeenSet;
+}
+
+string EndUserInfo::GetUserName() const
+{
+    return m_userName;
+}
+
+void EndUserInfo::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool EndUserInfo::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
 }
 

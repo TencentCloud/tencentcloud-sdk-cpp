@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/PkgBind.h>
 
 
 namespace TencentCloud
@@ -222,6 +223,28 @@ namespace TencentCloud
                      */
                     bool PkgPubStatusHasBeenSet() const;
 
+                    /**
+                     * 获取程序包关联关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PkgBindInfo 程序包关联关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PkgBind> GetPkgBindInfo() const;
+
+                    /**
+                     * 设置程序包关联关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PkgBindInfo 程序包关联关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPkgBindInfo(const std::vector<PkgBind>& _pkgBindInfo);
+
+                    /**
+                     * 判断参数 PkgBindInfo 是否已赋值
+                     * @return PkgBindInfo 是否已赋值
+                     */
+                    bool PkgBindInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +302,13 @@ namespace TencentCloud
                      */
                     int64_t m_pkgPubStatus;
                     bool m_pkgPubStatusHasBeenSet;
+
+                    /**
+                     * 程序包关联关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PkgBind> m_pkgBindInfo;
+                    bool m_pkgBindInfoHasBeenSet;
 
                 };
             }

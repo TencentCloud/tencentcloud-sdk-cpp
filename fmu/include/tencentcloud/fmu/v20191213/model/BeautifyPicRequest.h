@@ -170,6 +170,24 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     bool EyeEnlargingHasBeenSet() const;
 
+                    /**
+                     * 获取返回图像方式（base64 或 url ) ，二选一。url有效期为1天。
+                     * @return RspImgType 返回图像方式（base64 或 url ) ，二选一。url有效期为1天。
+                     */
+                    std::string GetRspImgType() const;
+
+                    /**
+                     * 设置返回图像方式（base64 或 url ) ，二选一。url有效期为1天。
+                     * @param RspImgType 返回图像方式（base64 或 url ) ，二选一。url有效期为1天。
+                     */
+                    void SetRspImgType(const std::string& _rspImgType);
+
+                    /**
+                     * 判断参数 RspImgType 是否已赋值
+                     * @return RspImgType 是否已赋值
+                     */
+                    bool RspImgTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +230,12 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     uint64_t m_eyeEnlarging;
                     bool m_eyeEnlargingHasBeenSet;
+
+                    /**
+                     * 返回图像方式（base64 或 url ) ，二选一。url有效期为1天。
+                     */
+                    std::string m_rspImgType;
+                    bool m_rspImgTypeHasBeenSet;
 
                 };
             }

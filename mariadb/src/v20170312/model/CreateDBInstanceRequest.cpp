@@ -38,7 +38,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_dbVersionIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_ipv6FlagHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,14 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_ipv6FlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Flag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ipv6Flag, allocator);
     }
 
 
@@ -430,6 +439,22 @@ void CreateDBInstanceRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 bool CreateDBInstanceRequest::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+int64_t CreateDBInstanceRequest::GetIpv6Flag() const
+{
+    return m_ipv6Flag;
+}
+
+void CreateDBInstanceRequest::SetIpv6Flag(const int64_t& _ipv6Flag)
+{
+    m_ipv6Flag = _ipv6Flag;
+    m_ipv6FlagHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::Ipv6FlagHasBeenSet() const
+{
+    return m_ipv6FlagHasBeenSet;
 }
 
 

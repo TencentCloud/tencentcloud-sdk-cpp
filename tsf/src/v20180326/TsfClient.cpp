@@ -556,6 +556,49 @@ TsfClient::CreatePublicConfigOutcomeCallable TsfClient::CreatePublicConfigCallab
     return task->get_future();
 }
 
+TsfClient::CreateRepositoryOutcome TsfClient::CreateRepository(const CreateRepositoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRepository");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRepositoryResponse rsp = CreateRepositoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRepositoryOutcome(rsp);
+        else
+            return CreateRepositoryOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRepositoryOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRepository(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateRepositoryOutcomeCallable TsfClient::CreateRepositoryCallable(const CreateRepositoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRepositoryOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRepository(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreateServerlessGroupOutcome TsfClient::CreateServerlessGroup(const CreateServerlessGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateServerlessGroup");
@@ -1022,6 +1065,49 @@ TsfClient::DeletePublicConfigOutcomeCallable TsfClient::DeletePublicConfigCallab
         [this, request]()
         {
             return this->DeletePublicConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DeleteRepositoryOutcome TsfClient::DeleteRepository(const DeleteRepositoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRepository");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRepositoryResponse rsp = DeleteRepositoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRepositoryOutcome(rsp);
+        else
+            return DeleteRepositoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRepositoryOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRepository(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteRepositoryOutcomeCallable TsfClient::DeleteRepositoryCallable(const DeleteRepositoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRepositoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRepository(request);
         }
     );
 
@@ -2534,6 +2620,92 @@ TsfClient::DescribeReleasedConfigOutcomeCallable TsfClient::DescribeReleasedConf
     return task->get_future();
 }
 
+TsfClient::DescribeRepositoriesOutcome TsfClient::DescribeRepositories(const DescribeRepositoriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRepositories");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRepositoriesResponse rsp = DescribeRepositoriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRepositoriesOutcome(rsp);
+        else
+            return DescribeRepositoriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRepositoriesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeRepositoriesAsync(const DescribeRepositoriesRequest& request, const DescribeRepositoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRepositories(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeRepositoriesOutcomeCallable TsfClient::DescribeRepositoriesCallable(const DescribeRepositoriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRepositoriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRepositories(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeRepositoryOutcome TsfClient::DescribeRepository(const DescribeRepositoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRepository");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRepositoryResponse rsp = DescribeRepositoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRepositoryOutcome(rsp);
+        else
+            return DescribeRepositoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRepositoryOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeRepositoryAsync(const DescribeRepositoryRequest& request, const DescribeRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRepository(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeRepositoryOutcomeCallable TsfClient::DescribeRepositoryCallable(const DescribeRepositoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRepositoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRepository(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeServerlessGroupOutcome TsfClient::DescribeServerlessGroup(const DescribeServerlessGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServerlessGroup");
@@ -3645,6 +3817,49 @@ TsfClient::StopGroupOutcomeCallable TsfClient::StopGroupCallable(const StopGroup
         [this, request]()
         {
             return this->StopGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::UpdateRepositoryOutcome TsfClient::UpdateRepository(const UpdateRepositoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateRepository");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateRepositoryResponse rsp = UpdateRepositoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateRepositoryOutcome(rsp);
+        else
+            return UpdateRepositoryOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateRepositoryOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::UpdateRepositoryAsync(const UpdateRepositoryRequest& request, const UpdateRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateRepository(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::UpdateRepositoryOutcomeCallable TsfClient::UpdateRepositoryCallable(const UpdateRepositoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateRepositoryOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateRepository(request);
         }
     );
 

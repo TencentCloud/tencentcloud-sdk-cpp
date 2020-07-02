@@ -28,7 +28,9 @@ QueryInvoiceRequest::QueryInvoiceRequest() :
     m_orderIdHasBeenSet(false),
     m_orderSnHasBeenSet(false),
     m_isRedHasBeenSet(false),
-    m_profileHasBeenSet(false)
+    m_profileHasBeenSet(false),
+    m_invoiceChannelHasBeenSet(false),
+    m_sellerTaxpayerNumHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,22 @@ string QueryInvoiceRequest::ToJsonString() const
         string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invoiceChannelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InvoiceChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_invoiceChannel, allocator);
+    }
+
+    if (m_sellerTaxpayerNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SellerTaxpayerNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sellerTaxpayerNum.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +183,38 @@ void QueryInvoiceRequest::SetProfile(const string& _profile)
 bool QueryInvoiceRequest::ProfileHasBeenSet() const
 {
     return m_profileHasBeenSet;
+}
+
+int64_t QueryInvoiceRequest::GetInvoiceChannel() const
+{
+    return m_invoiceChannel;
+}
+
+void QueryInvoiceRequest::SetInvoiceChannel(const int64_t& _invoiceChannel)
+{
+    m_invoiceChannel = _invoiceChannel;
+    m_invoiceChannelHasBeenSet = true;
+}
+
+bool QueryInvoiceRequest::InvoiceChannelHasBeenSet() const
+{
+    return m_invoiceChannelHasBeenSet;
+}
+
+string QueryInvoiceRequest::GetSellerTaxpayerNum() const
+{
+    return m_sellerTaxpayerNum;
+}
+
+void QueryInvoiceRequest::SetSellerTaxpayerNum(const string& _sellerTaxpayerNum)
+{
+    m_sellerTaxpayerNum = _sellerTaxpayerNum;
+    m_sellerTaxpayerNumHasBeenSet = true;
+}
+
+bool QueryInvoiceRequest::SellerTaxpayerNumHasBeenSet() const
+{
+    return m_sellerTaxpayerNumHasBeenSet;
 }
 
 

@@ -728,6 +728,49 @@ TioneClient::DescribeTrainingJobOutcomeCallable TioneClient::DescribeTrainingJob
     return task->get_future();
 }
 
+TioneClient::DescribeTrainingJobsOutcome TioneClient::DescribeTrainingJobs(const DescribeTrainingJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrainingJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrainingJobsResponse rsp = DescribeTrainingJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrainingJobsOutcome(rsp);
+        else
+            return DescribeTrainingJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrainingJobsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeTrainingJobsAsync(const DescribeTrainingJobsRequest& request, const DescribeTrainingJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrainingJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeTrainingJobsOutcomeCallable TioneClient::DescribeTrainingJobsCallable(const DescribeTrainingJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrainingJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrainingJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::StartNotebookInstanceOutcome TioneClient::StartNotebookInstance(const StartNotebookInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "StartNotebookInstance");

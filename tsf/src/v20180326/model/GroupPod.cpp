@@ -34,7 +34,8 @@ GroupPod::GroupPod() :
     m_createdAtHasBeenSet(false),
     m_serviceInstanceStatusHasBeenSet(false),
     m_instanceAvailableStatusHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false)
+    m_instanceStatusHasBeenSet(false),
+    m_nodeInstanceIdHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,16 @@ CoreInternalOutcome GroupPod::Deserialize(const Value &value)
         m_instanceStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeInstanceId") && !value["NodeInstanceId"].IsNull())
+    {
+        if (!value["NodeInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `GroupPod.NodeInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeInstanceId = string(value["NodeInstanceId"].GetString());
+        m_nodeInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +293,14 @@ void GroupPod::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "InstanceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeInstanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodeInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_nodeInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -493,5 +512,21 @@ void GroupPod::SetInstanceStatus(const string& _instanceStatus)
 bool GroupPod::InstanceStatusHasBeenSet() const
 {
     return m_instanceStatusHasBeenSet;
+}
+
+string GroupPod::GetNodeInstanceId() const
+{
+    return m_nodeInstanceId;
+}
+
+void GroupPod::SetNodeInstanceId(const string& _nodeInstanceId)
+{
+    m_nodeInstanceId = _nodeInstanceId;
+    m_nodeInstanceIdHasBeenSet = true;
+}
+
+bool GroupPod::NodeInstanceIdHasBeenSet() const
+{
+    return m_nodeInstanceIdHasBeenSet;
 }
 

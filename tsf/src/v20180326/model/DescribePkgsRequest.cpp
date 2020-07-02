@@ -29,7 +29,9 @@ DescribePkgsRequest::DescribePkgsRequest() :
     m_orderByHasBeenSet(false),
     m_orderTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_repositoryTypeHasBeenSet(false),
+    m_repositoryIdHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,22 @@ string DescribePkgsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_repositoryTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repositoryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repositoryId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +208,38 @@ void DescribePkgsRequest::SetLimit(const uint64_t& _limit)
 bool DescribePkgsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribePkgsRequest::GetRepositoryType() const
+{
+    return m_repositoryType;
+}
+
+void DescribePkgsRequest::SetRepositoryType(const string& _repositoryType)
+{
+    m_repositoryType = _repositoryType;
+    m_repositoryTypeHasBeenSet = true;
+}
+
+bool DescribePkgsRequest::RepositoryTypeHasBeenSet() const
+{
+    return m_repositoryTypeHasBeenSet;
+}
+
+string DescribePkgsRequest::GetRepositoryId() const
+{
+    return m_repositoryId;
+}
+
+void DescribePkgsRequest::SetRepositoryId(const string& _repositoryId)
+{
+    m_repositoryId = _repositoryId;
+    m_repositoryIdHasBeenSet = true;
+}
+
+bool DescribePkgsRequest::RepositoryIdHasBeenSet() const
+{
+    return m_repositoryIdHasBeenSet;
 }
 
 

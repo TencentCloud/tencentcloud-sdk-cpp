@@ -25,7 +25,8 @@ ZoneInfo::ZoneInfo() :
     m_zoneHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_zoneStateHasBeenSet(false)
+    m_zoneStateHasBeenSet(false),
+    m_zoneSupportIpv6HasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome ZoneInfo::Deserialize(const Value &value)
         m_zoneStateHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneSupportIpv6") && !value["ZoneSupportIpv6"].IsNull())
+    {
+        if (!value["ZoneSupportIpv6"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneSupportIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneSupportIpv6 = value["ZoneSupportIpv6"].GetUint64();
+        m_zoneSupportIpv6HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void ZoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "ZoneState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_zoneState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneSupportIpv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneSupportIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneSupportIpv6, allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void ZoneInfo::SetZoneState(const string& _zoneState)
 bool ZoneInfo::ZoneStateHasBeenSet() const
 {
     return m_zoneStateHasBeenSet;
+}
+
+uint64_t ZoneInfo::GetZoneSupportIpv6() const
+{
+    return m_zoneSupportIpv6;
+}
+
+void ZoneInfo::SetZoneSupportIpv6(const uint64_t& _zoneSupportIpv6)
+{
+    m_zoneSupportIpv6 = _zoneSupportIpv6;
+    m_zoneSupportIpv6HasBeenSet = true;
+}
+
+bool ZoneInfo::ZoneSupportIpv6HasBeenSet() const
+{
+    return m_zoneSupportIpv6HasBeenSet;
 }
 

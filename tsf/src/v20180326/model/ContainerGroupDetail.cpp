@@ -55,7 +55,9 @@ ContainerGroupDetail::ContainerGroupDetail() :
     m_subnetIdHasBeenSet(false),
     m_groupResourceTypeHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false)
+    m_updatedTimeHasBeenSet(false),
+    m_maxSurgeHasBeenSet(false),
+    m_maxUnavailableHasBeenSet(false)
 {
 }
 
@@ -424,6 +426,26 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const Value &value)
         m_updatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxSurge") && !value["MaxSurge"].IsNull())
+    {
+        if (!value["MaxSurge"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ContainerGroupDetail.MaxSurge` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxSurge = string(value["MaxSurge"].GetString());
+        m_maxSurgeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxUnavailable") && !value["MaxUnavailable"].IsNull())
+    {
+        if (!value["MaxUnavailable"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ContainerGroupDetail.MaxUnavailable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxUnavailable = string(value["MaxUnavailable"].GetString());
+        m_maxUnavailableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -715,6 +737,22 @@ void ContainerGroupDetail::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "UpdatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updatedTime, allocator);
+    }
+
+    if (m_maxSurgeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxSurge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_maxSurge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxUnavailableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxUnavailable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_maxUnavailable.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1262,5 +1300,37 @@ void ContainerGroupDetail::SetUpdatedTime(const int64_t& _updatedTime)
 bool ContainerGroupDetail::UpdatedTimeHasBeenSet() const
 {
     return m_updatedTimeHasBeenSet;
+}
+
+string ContainerGroupDetail::GetMaxSurge() const
+{
+    return m_maxSurge;
+}
+
+void ContainerGroupDetail::SetMaxSurge(const string& _maxSurge)
+{
+    m_maxSurge = _maxSurge;
+    m_maxSurgeHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::MaxSurgeHasBeenSet() const
+{
+    return m_maxSurgeHasBeenSet;
+}
+
+string ContainerGroupDetail::GetMaxUnavailable() const
+{
+    return m_maxUnavailable;
+}
+
+void ContainerGroupDetail::SetMaxUnavailable(const string& _maxUnavailable)
+{
+    m_maxUnavailable = _maxUnavailable;
+    m_maxUnavailableHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::MaxUnavailableHasBeenSet() const
+{
+    return m_maxUnavailableHasBeenSet;
 }
 

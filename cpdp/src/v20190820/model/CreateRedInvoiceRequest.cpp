@@ -26,7 +26,8 @@ using namespace std;
 CreateRedInvoiceRequest::CreateRedInvoiceRequest() :
     m_invoicePlatformIdHasBeenSet(false),
     m_invoicesHasBeenSet(false),
-    m_profileHasBeenSet(false)
+    m_profileHasBeenSet(false),
+    m_invoiceChannelHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,14 @@ string CreateRedInvoiceRequest::ToJsonString() const
         string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invoiceChannelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InvoiceChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_invoiceChannel, allocator);
     }
 
 
@@ -122,6 +131,22 @@ void CreateRedInvoiceRequest::SetProfile(const string& _profile)
 bool CreateRedInvoiceRequest::ProfileHasBeenSet() const
 {
     return m_profileHasBeenSet;
+}
+
+int64_t CreateRedInvoiceRequest::GetInvoiceChannel() const
+{
+    return m_invoiceChannel;
+}
+
+void CreateRedInvoiceRequest::SetInvoiceChannel(const int64_t& _invoiceChannel)
+{
+    m_invoiceChannel = _invoiceChannel;
+    m_invoiceChannelHasBeenSet = true;
+}
+
+bool CreateRedInvoiceRequest::InvoiceChannelHasBeenSet() const
+{
+    return m_invoiceChannelHasBeenSet;
 }
 
 

@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool ZoneStateHasBeenSet() const;
 
+                    /**
+                     * 获取该可用区是否支持Ipv6
+                     * @return ZoneSupportIpv6 该可用区是否支持Ipv6
+                     */
+                    uint64_t GetZoneSupportIpv6() const;
+
+                    /**
+                     * 设置该可用区是否支持Ipv6
+                     * @param ZoneSupportIpv6 该可用区是否支持Ipv6
+                     */
+                    void SetZoneSupportIpv6(const uint64_t& _zoneSupportIpv6);
+
+                    /**
+                     * 判断参数 ZoneSupportIpv6 是否已赋值
+                     * @return ZoneSupportIpv6 是否已赋值
+                     */
+                    bool ZoneSupportIpv6HasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_zoneState;
                     bool m_zoneStateHasBeenSet;
+
+                    /**
+                     * 该可用区是否支持Ipv6
+                     */
+                    uint64_t m_zoneSupportIpv6;
+                    bool m_zoneSupportIpv6HasBeenSet;
 
                 };
             }

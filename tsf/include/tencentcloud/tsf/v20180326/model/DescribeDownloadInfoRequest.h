@@ -78,6 +78,42 @@ namespace TencentCloud
                      */
                     bool PkgIdHasBeenSet() const;
 
+                    /**
+                     * 获取程序包仓库ID
+                     * @return RepositoryId 程序包仓库ID
+                     */
+                    std::string GetRepositoryId() const;
+
+                    /**
+                     * 设置程序包仓库ID
+                     * @param RepositoryId 程序包仓库ID
+                     */
+                    void SetRepositoryId(const std::string& _repositoryId);
+
+                    /**
+                     * 判断参数 RepositoryId 是否已赋值
+                     * @return RepositoryId 是否已赋值
+                     */
+                    bool RepositoryIdHasBeenSet() const;
+
+                    /**
+                     * 获取程序包仓库类型
+                     * @return RepositoryType 程序包仓库类型
+                     */
+                    std::string GetRepositoryType() const;
+
+                    /**
+                     * 设置程序包仓库类型
+                     * @param RepositoryType 程序包仓库类型
+                     */
+                    void SetRepositoryType(const std::string& _repositoryType);
+
+                    /**
+                     * 判断参数 RepositoryType 是否已赋值
+                     * @return RepositoryType 是否已赋值
+                     */
+                    bool RepositoryTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +127,18 @@ namespace TencentCloud
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
+
+                    /**
+                     * 程序包仓库ID
+                     */
+                    std::string m_repositoryId;
+                    bool m_repositoryIdHasBeenSet;
+
+                    /**
+                     * 程序包仓库类型
+                     */
+                    std::string m_repositoryType;
+                    bool m_repositoryTypeHasBeenSet;
 
                 };
             }

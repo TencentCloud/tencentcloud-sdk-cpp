@@ -41,7 +41,8 @@ RegisterBillRequest::RegisterBillRequest() :
     m_tranNetMemberCodeHasBeenSet(false),
     m_tranTypeHasBeenSet(false),
     m_reservedMessageHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,14 @@ string RegisterBillRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -490,6 +499,22 @@ void RegisterBillRequest::SetRemark(const string& _remark)
 bool RegisterBillRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string RegisterBillRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void RegisterBillRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool RegisterBillRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

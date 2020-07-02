@@ -61,6 +61,42 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
+                     * 获取可选参数，偏移量，默认 0
+                     * @return Offset 可选参数，偏移量，默认 0
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置可选参数，偏移量，默认 0
+                     * @param Offset 可选参数，偏移量，默认 0
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取可选参数，拉取数量，默认 20
+                     * @return Limit 可选参数，拉取数量，默认 20
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置可选参数，拉取数量，默认 20
+                     * @param Limit 可选参数，拉取数量，默认 20
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
                      * 获取按照 uuid 列表过滤，最大个数为100
                      * @return UUIds 按照 uuid 列表过滤，最大个数为100
                      */
@@ -85,6 +121,18 @@ namespace TencentCloud
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
+
+                    /**
+                     * 可选参数，偏移量，默认 0
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 可选参数，拉取数量，默认 20
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                     /**
                      * 按照 uuid 列表过滤，最大个数为100

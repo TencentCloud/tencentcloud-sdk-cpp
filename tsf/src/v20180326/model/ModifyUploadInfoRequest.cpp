@@ -28,7 +28,9 @@ ModifyUploadInfoRequest::ModifyUploadInfoRequest() :
     m_pkgIdHasBeenSet(false),
     m_resultHasBeenSet(false),
     m_md5HasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_repositoryTypeHasBeenSet(false),
+    m_repositoryIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,22 @@ string ModifyUploadInfoRequest::ToJsonString() const
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_size, allocator);
+    }
+
+    if (m_repositoryTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repositoryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repositoryId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +183,38 @@ void ModifyUploadInfoRequest::SetSize(const uint64_t& _size)
 bool ModifyUploadInfoRequest::SizeHasBeenSet() const
 {
     return m_sizeHasBeenSet;
+}
+
+string ModifyUploadInfoRequest::GetRepositoryType() const
+{
+    return m_repositoryType;
+}
+
+void ModifyUploadInfoRequest::SetRepositoryType(const string& _repositoryType)
+{
+    m_repositoryType = _repositoryType;
+    m_repositoryTypeHasBeenSet = true;
+}
+
+bool ModifyUploadInfoRequest::RepositoryTypeHasBeenSet() const
+{
+    return m_repositoryTypeHasBeenSet;
+}
+
+string ModifyUploadInfoRequest::GetRepositoryId() const
+{
+    return m_repositoryId;
+}
+
+void ModifyUploadInfoRequest::SetRepositoryId(const string& _repositoryId)
+{
+    m_repositoryId = _repositoryId;
+    m_repositoryIdHasBeenSet = true;
+}
+
+bool ModifyUploadInfoRequest::RepositoryIdHasBeenSet() const
+{
+    return m_repositoryIdHasBeenSet;
 }
 
 

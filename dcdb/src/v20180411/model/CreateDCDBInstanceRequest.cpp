@@ -38,7 +38,8 @@ CreateDCDBInstanceRequest::CreateDCDBInstanceRequest() :
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
     m_securityGroupIdHasBeenSet(false),
-    m_instanceNameHasBeenSet(false)
+    m_instanceNameHasBeenSet(false),
+    m_ipv6FlagHasBeenSet(false)
 {
 }
 
@@ -177,6 +178,14 @@ string CreateDCDBInstanceRequest::ToJsonString() const
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6FlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Flag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ipv6Flag, allocator);
     }
 
 
@@ -425,6 +434,22 @@ void CreateDCDBInstanceRequest::SetInstanceName(const string& _instanceName)
 bool CreateDCDBInstanceRequest::InstanceNameHasBeenSet() const
 {
     return m_instanceNameHasBeenSet;
+}
+
+int64_t CreateDCDBInstanceRequest::GetIpv6Flag() const
+{
+    return m_ipv6Flag;
+}
+
+void CreateDCDBInstanceRequest::SetIpv6Flag(const int64_t& _ipv6Flag)
+{
+    m_ipv6Flag = _ipv6Flag;
+    m_ipv6FlagHasBeenSet = true;
+}
+
+bool CreateDCDBInstanceRequest::Ipv6FlagHasBeenSet() const
+{
+    return m_ipv6FlagHasBeenSet;
 }
 
 

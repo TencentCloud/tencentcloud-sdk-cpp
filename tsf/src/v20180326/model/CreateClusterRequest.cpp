@@ -31,7 +31,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_clusterDescHasBeenSet(false),
     m_tsfRegionIdHasBeenSet(false),
     m_tsfZoneIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_clusterVersionHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string CreateClusterRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +249,22 @@ void CreateClusterRequest::SetSubnetId(const string& _subnetId)
 bool CreateClusterRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string CreateClusterRequest::GetClusterVersion() const
+{
+    return m_clusterVersion;
+}
+
+void CreateClusterRequest::SetClusterVersion(const string& _clusterVersion)
+{
+    m_clusterVersion = _clusterVersion;
+    m_clusterVersionHasBeenSet = true;
+}
+
+bool CreateClusterRequest::ClusterVersionHasBeenSet() const
+{
+    return m_clusterVersionHasBeenSet;
 }
 
 

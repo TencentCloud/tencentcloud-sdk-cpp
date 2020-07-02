@@ -26,7 +26,8 @@ using namespace std;
 TryLipstickPicRequest::TryLipstickPicRequest() :
     m_lipColorInfosHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_rspImgTypeHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,14 @@ string TryLipstickPicRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rspImgTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RspImgType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_rspImgType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -122,6 +131,22 @@ void TryLipstickPicRequest::SetUrl(const string& _url)
 bool TryLipstickPicRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string TryLipstickPicRequest::GetRspImgType() const
+{
+    return m_rspImgType;
+}
+
+void TryLipstickPicRequest::SetRspImgType(const string& _rspImgType)
+{
+    m_rspImgType = _rspImgType;
+    m_rspImgTypeHasBeenSet = true;
+}
+
+bool TryLipstickPicRequest::RspImgTypeHasBeenSet() const
+{
+    return m_rspImgTypeHasBeenSet;
 }
 
 

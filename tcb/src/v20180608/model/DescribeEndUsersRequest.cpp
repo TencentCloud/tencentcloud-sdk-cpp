@@ -25,6 +25,8 @@ using namespace std;
 
 DescribeEndUsersRequest::DescribeEndUsersRequest() :
     m_envIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_uUIdsHasBeenSet(false)
 {
 }
@@ -42,6 +44,22 @@ string DescribeEndUsersRequest::ToJsonString() const
         string key = "EnvId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
     if (m_uUIdsHasBeenSet)
@@ -79,6 +97,38 @@ void DescribeEndUsersRequest::SetEnvId(const string& _envId)
 bool DescribeEndUsersRequest::EnvIdHasBeenSet() const
 {
     return m_envIdHasBeenSet;
+}
+
+uint64_t DescribeEndUsersRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeEndUsersRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeEndUsersRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeEndUsersRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeEndUsersRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeEndUsersRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 vector<string> DescribeEndUsersRequest::GetUUIds() const

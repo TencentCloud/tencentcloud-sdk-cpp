@@ -332,6 +332,28 @@ namespace TencentCloud
                      */
                     bool InstanceStatusHasBeenSet() const;
 
+                    /**
+                     * 获取节点实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeInstanceId 节点实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNodeInstanceId() const;
+
+                    /**
+                     * 设置节点实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodeInstanceId 节点实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodeInstanceId(const std::string& _nodeInstanceId);
+
+                    /**
+                     * 判断参数 NodeInstanceId 是否已赋值
+                     * @return NodeInstanceId 是否已赋值
+                     */
+                    bool NodeInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -424,6 +446,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
+
+                    /**
+                     * 节点实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nodeInstanceId;
+                    bool m_nodeInstanceIdHasBeenSet;
 
                 };
             }

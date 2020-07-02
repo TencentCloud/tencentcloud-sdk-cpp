@@ -26,7 +26,8 @@ using namespace std;
 SwapGenderPicRequest::SwapGenderPicRequest() :
     m_genderInfosHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_rspImgTypeHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,14 @@ string SwapGenderPicRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rspImgTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RspImgType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_rspImgType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -122,6 +131,22 @@ void SwapGenderPicRequest::SetUrl(const string& _url)
 bool SwapGenderPicRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string SwapGenderPicRequest::GetRspImgType() const
+{
+    return m_rspImgType;
+}
+
+void SwapGenderPicRequest::SetRspImgType(const string& _rspImgType)
+{
+    m_rspImgType = _rspImgType;
+    m_rspImgTypeHasBeenSet = true;
+}
+
+bool SwapGenderPicRequest::RspImgTypeHasBeenSet() const
+{
+    return m_rspImgTypeHasBeenSet;
 }
 
 

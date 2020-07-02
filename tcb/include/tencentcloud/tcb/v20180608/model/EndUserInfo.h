@@ -280,6 +280,24 @@ namespace TencentCloud
                      */
                     bool HasPasswordHasBeenSet() const;
 
+                    /**
+                     * 获取用户名
+                     * @return UserName 用户名
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置用户名
+                     * @param UserName 用户名
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     */
+                    bool UserNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +377,12 @@ namespace TencentCloud
                      */
                     bool m_hasPassword;
                     bool m_hasPasswordHasBeenSet;
+
+                    /**
+                     * 用户名
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
 
                 };
             }

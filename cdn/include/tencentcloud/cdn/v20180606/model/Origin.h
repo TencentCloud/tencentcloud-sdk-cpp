@@ -313,6 +313,28 @@ ip：IP 列表作为源站
                      */
                     bool BackupServerNameHasBeenSet() const;
 
+                    /**
+                     * 获取回源路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BasePath 回源路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBasePath() const;
+
+                    /**
+                     * 设置回源路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BasePath 回源路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBasePath(const std::string& _basePath);
+
+                    /**
+                     * 判断参数 BasePath 是否已赋值
+                     * @return BasePath 是否已赋值
+                     */
+                    bool BasePathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -391,6 +413,13 @@ ip：IP 列表作为源站
                      */
                     std::string m_backupServerName;
                     bool m_backupServerNameHasBeenSet;
+
+                    /**
+                     * 回源路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_basePath;
+                    bool m_basePathHasBeenSet;
 
                 };
             }

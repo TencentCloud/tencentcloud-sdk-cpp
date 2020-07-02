@@ -28,7 +28,9 @@ DescribeUploadInfoRequest::DescribeUploadInfoRequest() :
     m_pkgNameHasBeenSet(false),
     m_pkgVersionHasBeenSet(false),
     m_pkgTypeHasBeenSet(false),
-    m_pkgDescHasBeenSet(false)
+    m_pkgDescHasBeenSet(false),
+    m_repositoryTypeHasBeenSet(false),
+    m_repositoryIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,22 @@ string DescribeUploadInfoRequest::ToJsonString() const
         string key = "PkgDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_pkgDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repositoryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepositoryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repositoryId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +183,38 @@ void DescribeUploadInfoRequest::SetPkgDesc(const string& _pkgDesc)
 bool DescribeUploadInfoRequest::PkgDescHasBeenSet() const
 {
     return m_pkgDescHasBeenSet;
+}
+
+string DescribeUploadInfoRequest::GetRepositoryType() const
+{
+    return m_repositoryType;
+}
+
+void DescribeUploadInfoRequest::SetRepositoryType(const string& _repositoryType)
+{
+    m_repositoryType = _repositoryType;
+    m_repositoryTypeHasBeenSet = true;
+}
+
+bool DescribeUploadInfoRequest::RepositoryTypeHasBeenSet() const
+{
+    return m_repositoryTypeHasBeenSet;
+}
+
+string DescribeUploadInfoRequest::GetRepositoryId() const
+{
+    return m_repositoryId;
+}
+
+void DescribeUploadInfoRequest::SetRepositoryId(const string& _repositoryId)
+{
+    m_repositoryId = _repositoryId;
+    m_repositoryIdHasBeenSet = true;
+}
+
+bool DescribeUploadInfoRequest::RepositoryIdHasBeenSet() const
+{
+    return m_repositoryIdHasBeenSet;
 }
 
 

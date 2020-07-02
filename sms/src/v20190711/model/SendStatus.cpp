@@ -27,7 +27,8 @@ SendStatus::SendStatus() :
     m_feeHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_isoCodeHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome SendStatus::Deserialize(const Value &value)
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("IsoCode") && !value["IsoCode"].IsNull())
+    {
+        if (!value["IsoCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SendStatus.IsoCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isoCode = string(value["IsoCode"].GetString());
+        m_isoCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void SendStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isoCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsoCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_isoCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void SendStatus::SetMessage(const string& _message)
 bool SendStatus::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+string SendStatus::GetIsoCode() const
+{
+    return m_isoCode;
+}
+
+void SendStatus::SetIsoCode(const string& _isoCode)
+{
+    m_isoCode = _isoCode;
+    m_isoCodeHasBeenSet = true;
+}
+
+bool SendStatus::IsoCodeHasBeenSet() const
+{
+    return m_isoCodeHasBeenSet;
 }
 

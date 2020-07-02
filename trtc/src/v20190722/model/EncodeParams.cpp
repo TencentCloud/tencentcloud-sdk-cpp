@@ -30,7 +30,8 @@ EncodeParams::EncodeParams() :
     m_videoBitrateHasBeenSet(false),
     m_videoFramerateHasBeenSet(false),
     m_videoGopHasBeenSet(false),
-    m_backgroundColorHasBeenSet(false)
+    m_backgroundColorHasBeenSet(false),
+    m_backgroundImageIdHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome EncodeParams::Deserialize(const Value &value)
         m_backgroundColorHasBeenSet = true;
     }
 
+    if (value.HasMember("BackgroundImageId") && !value["BackgroundImageId"].IsNull())
+    {
+        if (!value["BackgroundImageId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `EncodeParams.BackgroundImageId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backgroundImageId = value["BackgroundImageId"].GetUint64();
+        m_backgroundImageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "BackgroundColor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backgroundColor, allocator);
+    }
+
+    if (m_backgroundImageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackgroundImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backgroundImageId, allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void EncodeParams::SetBackgroundColor(const uint64_t& _backgroundColor)
 bool EncodeParams::BackgroundColorHasBeenSet() const
 {
     return m_backgroundColorHasBeenSet;
+}
+
+uint64_t EncodeParams::GetBackgroundImageId() const
+{
+    return m_backgroundImageId;
+}
+
+void EncodeParams::SetBackgroundImageId(const uint64_t& _backgroundImageId)
+{
+    m_backgroundImageId = _backgroundImageId;
+    m_backgroundImageIdHasBeenSet = true;
+}
+
+bool EncodeParams::BackgroundImageIdHasBeenSet() const
+{
+    return m_backgroundImageIdHasBeenSet;
 }
 

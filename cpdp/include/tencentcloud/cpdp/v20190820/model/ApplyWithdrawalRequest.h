@@ -334,6 +334,24 @@ development: 开发环境
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 
+                    /**
+                     * 获取手续费金额
+                     * @return CommissionAmount 手续费金额
+                     */
+                    std::string GetCommissionAmount() const;
+
+                    /**
+                     * 设置手续费金额
+                     * @param CommissionAmount 手续费金额
+                     */
+                    void SetCommissionAmount(const std::string& _commissionAmount);
+
+                    /**
+                     * 判断参数 CommissionAmount 是否已赋值
+                     * @return CommissionAmount 是否已赋值
+                     */
+                    bool CommissionAmountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -429,6 +447,12 @@ development: 开发环境
                      */
                     std::string m_midasEnvironment;
                     bool m_midasEnvironmentHasBeenSet;
+
+                    /**
+                     * 手续费金额
+                     */
+                    std::string m_commissionAmount;
+                    bool m_commissionAmountHasBeenSet;
 
                 };
             }
