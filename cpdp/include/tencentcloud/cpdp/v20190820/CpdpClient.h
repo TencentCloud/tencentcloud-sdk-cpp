@@ -67,6 +67,8 @@
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfosResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DescribeChargeDetailRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DescribeChargeDetailResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DescribeOrderStatusRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DescribeOrderStatusResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionRequest.h>
@@ -237,6 +239,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeChargeDetailResponse> DescribeChargeDetailOutcome;
                 typedef std::future<DescribeChargeDetailOutcome> DescribeChargeDetailOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DescribeChargeDetailRequest&, DescribeChargeDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChargeDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeOrderStatusResponse> DescribeOrderStatusOutcome;
+                typedef std::future<DescribeOrderStatusOutcome> DescribeOrderStatusOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DescribeOrderStatusRequest&, DescribeOrderStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrderStatusAsyncHandler;
                 typedef Outcome<Error, Model::DownloadBillResponse> DownloadBillOutcome;
                 typedef std::future<DownloadBillOutcome> DownloadBillOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DownloadBillRequest&, DownloadBillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadBillAsyncHandler;
@@ -580,6 +585,15 @@ namespace TencentCloud
                 DescribeChargeDetailOutcome DescribeChargeDetail(const Model::DescribeChargeDetailRequest &request);
                 void DescribeChargeDetailAsync(const Model::DescribeChargeDetailRequest& request, const DescribeChargeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeChargeDetailOutcomeCallable DescribeChargeDetailCallable(const Model::DescribeChargeDetailRequest& request);
+
+                /**
+                 *查询单笔订单交易状态
+                 * @param req DescribeOrderStatusRequest
+                 * @return DescribeOrderStatusOutcome
+                 */
+                DescribeOrderStatusOutcome DescribeOrderStatus(const Model::DescribeOrderStatusRequest &request);
+                void DescribeOrderStatusAsync(const Model::DescribeOrderStatusRequest& request, const DescribeOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrderStatusOutcomeCallable DescribeOrderStatusCallable(const Model::DescribeOrderStatusRequest& request);
 
                 /**
                  *账单下载接口，根据本接口返回的URL地址，在D+1日下载对账单。注意，本接口返回的URL地址有时效，请尽快下载。URL超时时效后，请重新调用本接口再次获取。

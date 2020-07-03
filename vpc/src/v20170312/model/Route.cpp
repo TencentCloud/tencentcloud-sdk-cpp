@@ -29,7 +29,9 @@ Route::Route() :
     m_routeDescriptionHasBeenSet(false),
     m_enabledHasBeenSet(false),
     m_routeTypeHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
+    m_routeTableIdHasBeenSet(false),
+    m_destinationIpv6CidrBlockHasBeenSet(false),
+    m_routeItemIdHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,26 @@ CoreInternalOutcome Route::Deserialize(const Value &value)
         m_routeTableIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DestinationIpv6CidrBlock") && !value["DestinationIpv6CidrBlock"].IsNull())
+    {
+        if (!value["DestinationIpv6CidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Route.DestinationIpv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destinationIpv6CidrBlock = string(value["DestinationIpv6CidrBlock"].GetString());
+        m_destinationIpv6CidrBlockHasBeenSet = true;
+    }
+
+    if (value.HasMember("RouteItemId") && !value["RouteItemId"].IsNull())
+    {
+        if (!value["RouteItemId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Route.RouteItemId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeItemId = string(value["RouteItemId"].GetString());
+        m_routeItemIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +209,22 @@ void Route::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "RouteTableId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_routeTableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationIpv6CidrBlockHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DestinationIpv6CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_destinationIpv6CidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routeItemIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RouteItemId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_routeItemId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +356,37 @@ void Route::SetRouteTableId(const string& _routeTableId)
 bool Route::RouteTableIdHasBeenSet() const
 {
     return m_routeTableIdHasBeenSet;
+}
+
+string Route::GetDestinationIpv6CidrBlock() const
+{
+    return m_destinationIpv6CidrBlock;
+}
+
+void Route::SetDestinationIpv6CidrBlock(const string& _destinationIpv6CidrBlock)
+{
+    m_destinationIpv6CidrBlock = _destinationIpv6CidrBlock;
+    m_destinationIpv6CidrBlockHasBeenSet = true;
+}
+
+bool Route::DestinationIpv6CidrBlockHasBeenSet() const
+{
+    return m_destinationIpv6CidrBlockHasBeenSet;
+}
+
+string Route::GetRouteItemId() const
+{
+    return m_routeItemId;
+}
+
+void Route::SetRouteItemId(const string& _routeItemId)
+{
+    m_routeItemId = _routeItemId;
+    m_routeItemIdHasBeenSet = true;
+}
+
+bool Route::RouteItemIdHasBeenSet() const
+{
+    return m_routeItemIdHasBeenSet;
 }
 

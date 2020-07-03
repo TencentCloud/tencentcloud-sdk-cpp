@@ -81,7 +81,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/QuerySingleTransactionStatusRequest.h
   include/tencentcloud/cpdp/v20190820/model/MerchantManagementList.h
   include/tencentcloud/cpdp/v20190820/model/CreateInvoiceResult.h
-  include/tencentcloud/cpdp/v20190820/model/QueryApplicationMaterialResponse.h
+  include/tencentcloud/cpdp/v20190820/model/DescribeOrderStatusRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryMerchantBalanceResult.h
   include/tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryTradeResponse.h
@@ -155,6 +155,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/TransactionItem.h
   include/tencentcloud/cpdp/v20190820/model/CheckAcctResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryReconciliationDocumentResponse.h
+  include/tencentcloud/cpdp/v20190820/model/QueryApplicationMaterialResponse.h
   include/tencentcloud/cpdp/v20190820/model/CreateMerchantResultData.h
   include/tencentcloud/cpdp/v20190820/model/QueryExchangeRateRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryMerchantInfoForManagementRequest.h
@@ -174,6 +175,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/ApplyTradeResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryBankClearResponse.h
   include/tencentcloud/cpdp/v20190820/model/ApplyOutwardOrderResponse.h
+  include/tencentcloud/cpdp/v20190820/model/DescribeOrderStatusResponse.h
   include/tencentcloud/cpdp/v20190820/model/WithdrawCashMembershipResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryApplicationMaterialRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateMerchantResponse.h
@@ -269,7 +271,7 @@ set(cpdp_src
   src/v20190820/model/QuerySingleTransactionStatusRequest.cpp
   src/v20190820/model/MerchantManagementList.cpp
   src/v20190820/model/CreateInvoiceResult.cpp
-  src/v20190820/model/QueryApplicationMaterialResponse.cpp
+  src/v20190820/model/DescribeOrderStatusRequest.cpp
   src/v20190820/model/QueryMerchantBalanceResult.cpp
   src/v20190820/model/QueryCustAcctIdBalanceResponse.cpp
   src/v20190820/model/QueryTradeResponse.cpp
@@ -343,6 +345,7 @@ set(cpdp_src
   src/v20190820/model/TransactionItem.cpp
   src/v20190820/model/CheckAcctResponse.cpp
   src/v20190820/model/QueryReconciliationDocumentResponse.cpp
+  src/v20190820/model/QueryApplicationMaterialResponse.cpp
   src/v20190820/model/CreateMerchantResultData.cpp
   src/v20190820/model/QueryExchangeRateRequest.cpp
   src/v20190820/model/QueryMerchantInfoForManagementRequest.cpp
@@ -362,6 +365,7 @@ set(cpdp_src
   src/v20190820/model/ApplyTradeResponse.cpp
   src/v20190820/model/QueryBankClearResponse.cpp
   src/v20190820/model/ApplyOutwardOrderResponse.cpp
+  src/v20190820/model/DescribeOrderStatusResponse.cpp
   src/v20190820/model/WithdrawCashMembershipResponse.cpp
   src/v20190820/model/QueryApplicationMaterialRequest.cpp
   src/v20190820/model/CreateMerchantResponse.cpp

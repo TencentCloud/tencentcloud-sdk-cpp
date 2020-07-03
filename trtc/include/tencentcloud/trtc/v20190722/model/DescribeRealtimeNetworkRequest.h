@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询开始时间，24小时内，，本地unix时间戳（1588031999s）
-                     * @return StartTime 查询开始时间，24小时内，，本地unix时间戳（1588031999s）
+                     * 获取查询开始时间，24小时内，本地unix时间戳（1588031999s）
+                     * @return StartTime 查询开始时间，24小时内，本地unix时间戳（1588031999s）
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，24小时内，，本地unix时间戳（1588031999s）
-                     * @param StartTime 查询开始时间，24小时内，，本地unix时间戳（1588031999s）
+                     * 设置查询开始时间，24小时内，本地unix时间戳（1588031999s）
+                     * @param StartTime 查询开始时间，24小时内，本地unix时间戳（1588031999s）
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -98,20 +98,20 @@ namespace TencentCloud
 
                     /**
                      * 获取需查询的数据类型
-sendLossRateRaw：上行丢包率；
+sendLossRateRaw：上行丢包率
 recvLossRateRaw：下行丢包率
                      * @return DataType 需查询的数据类型
-sendLossRateRaw：上行丢包率；
+sendLossRateRaw：上行丢包率
 recvLossRateRaw：下行丢包率
                      */
                     std::vector<std::string> GetDataType() const;
 
                     /**
                      * 设置需查询的数据类型
-sendLossRateRaw：上行丢包率；
+sendLossRateRaw：上行丢包率
 recvLossRateRaw：下行丢包率
                      * @param DataType 需查询的数据类型
-sendLossRateRaw：上行丢包率；
+sendLossRateRaw：上行丢包率
 recvLossRateRaw：下行丢包率
                      */
                     void SetDataType(const std::vector<std::string>& _dataType);
@@ -125,7 +125,7 @@ recvLossRateRaw：下行丢包率
                 private:
 
                     /**
-                     * 查询开始时间，24小时内，，本地unix时间戳（1588031999s）
+                     * 查询开始时间，24小时内，本地unix时间戳（1588031999s）
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -144,7 +144,7 @@ recvLossRateRaw：下行丢包率
 
                     /**
                      * 需查询的数据类型
-sendLossRateRaw：上行丢包率；
+sendLossRateRaw：上行丢包率
 recvLossRateRaw：下行丢包率
                      */
                     std::vector<std::string> m_dataType;

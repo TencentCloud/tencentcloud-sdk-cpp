@@ -814,6 +814,49 @@ LiveClient::CreatePullStreamConfigOutcomeCallable LiveClient::CreatePullStreamCo
     return task->get_future();
 }
 
+LiveClient::CreateRecordTaskOutcome LiveClient::CreateRecordTask(const CreateRecordTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRecordTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRecordTaskResponse rsp = CreateRecordTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRecordTaskOutcome(rsp);
+        else
+            return CreateRecordTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRecordTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateRecordTaskAsync(const CreateRecordTaskRequest& request, const CreateRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRecordTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateRecordTaskOutcomeCallable LiveClient::CreateRecordTaskCallable(const CreateRecordTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRecordTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRecordTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DeleteLiveCallbackRuleOutcome LiveClient::DeleteLiveCallbackRule(const DeleteLiveCallbackRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLiveCallbackRule");
@@ -1409,6 +1452,49 @@ LiveClient::DeletePullStreamConfigOutcomeCallable LiveClient::DeletePullStreamCo
         [this, request]()
         {
             return this->DeletePullStreamConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteRecordTaskOutcome LiveClient::DeleteRecordTask(const DeleteRecordTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRecordTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRecordTaskResponse rsp = DeleteRecordTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRecordTaskOutcome(rsp);
+        else
+            return DeleteRecordTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRecordTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteRecordTaskAsync(const DeleteRecordTaskRequest& request, const DeleteRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRecordTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteRecordTaskOutcomeCallable LiveClient::DeleteRecordTaskCallable(const DeleteRecordTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRecordTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRecordTask(request);
         }
     );
 
@@ -4290,6 +4376,49 @@ LiveClient::StopLiveRecordOutcomeCallable LiveClient::StopLiveRecordCallable(con
         [this, request]()
         {
             return this->StopLiveRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::StopRecordTaskOutcome LiveClient::StopRecordTask(const StopRecordTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopRecordTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopRecordTaskResponse rsp = StopRecordTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopRecordTaskOutcome(rsp);
+        else
+            return StopRecordTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return StopRecordTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::StopRecordTaskAsync(const StopRecordTaskRequest& request, const StopRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopRecordTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::StopRecordTaskOutcomeCallable LiveClient::StopRecordTaskCallable(const StopRecordTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopRecordTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->StopRecordTask(request);
         }
     );
 

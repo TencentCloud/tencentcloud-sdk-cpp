@@ -40,6 +40,49 @@ AaClient::AaClient(const Credential &credential, const string &region, const Cli
 }
 
 
+AaClient::ManageMarketingRiskOutcome AaClient::ManageMarketingRisk(const ManageMarketingRiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ManageMarketingRisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ManageMarketingRiskResponse rsp = ManageMarketingRiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ManageMarketingRiskOutcome(rsp);
+        else
+            return ManageMarketingRiskOutcome(o.GetError());
+    }
+    else
+    {
+        return ManageMarketingRiskOutcome(outcome.GetError());
+    }
+}
+
+void AaClient::ManageMarketingRiskAsync(const ManageMarketingRiskRequest& request, const ManageMarketingRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ManageMarketingRisk(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AaClient::ManageMarketingRiskOutcomeCallable AaClient::ManageMarketingRiskCallable(const ManageMarketingRiskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ManageMarketingRiskOutcome()>>(
+        [this, request]()
+        {
+            return this->ManageMarketingRisk(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AaClient::QueryActivityAntiRushOutcome AaClient::QueryActivityAntiRush(const QueryActivityAntiRushRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryActivityAntiRush");

@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool NeedRecordNumHasBeenSet() const;
 
                     /**
-                     * 获取查询指定产品信息
-                     * @return ProductCode 查询指定产品信息
+                     * 获取查询指定产品信息（暂时未开放获取）
+                     * @return ProductCode 查询指定产品信息（暂时未开放获取）
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置查询指定产品信息
-                     * @param ProductCode 查询指定产品信息
+                     * 设置查询指定产品信息（暂时未开放获取）
+                     * @param ProductCode 查询指定产品信息（暂时未开放获取）
                      */
                     void SetProductCode(const std::string& _productCode);
 
@@ -290,7 +290,7 @@ namespace TencentCloud
                     bool m_needRecordNumHasBeenSet;
 
                     /**
-                     * 查询指定产品信息
+                     * 查询指定产品信息（暂时未开放获取）
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;

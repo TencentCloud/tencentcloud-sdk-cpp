@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务名, 必须是以下五个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url)
-                     * @return Service 业务名, 必须是以下五个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url)
+                     * 获取业务名, 必须是以下六个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url,bri_social)
+                     * @return Service 业务名, 必须是以下六个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url,bri_social)
                      */
                     std::string GetService() const;
 
                     /**
-                     * 设置业务名, 必须是以下五个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url)
-                     * @param Service 业务名, 必须是以下五个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url)
+                     * 设置业务名, 必须是以下六个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url,bri_social)
+                     * @param Service 业务名, 必须是以下六个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url,bri_social)
                      */
                     void SetService(const std::string& _service);
 
@@ -191,6 +191,60 @@ namespace TencentCloud
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
+                     * 获取QQ号 (业务名为bri_social时必填, 除非已填Wechat)
+                     * @return QQ QQ号 (业务名为bri_social时必填, 除非已填Wechat)
+                     */
+                    std::string GetQQ() const;
+
+                    /**
+                     * 设置QQ号 (业务名为bri_social时必填, 除非已填Wechat)
+                     * @param QQ QQ号 (业务名为bri_social时必填, 除非已填Wechat)
+                     */
+                    void SetQQ(const std::string& _qQ);
+
+                    /**
+                     * 判断参数 QQ 是否已赋值
+                     * @return QQ 是否已赋值
+                     */
+                    bool QQHasBeenSet() const;
+
+                    /**
+                     * 获取QQ号的可疑标签
+                     * @return QQTag QQ号的可疑标签
+                     */
+                    std::string GetQQTag() const;
+
+                    /**
+                     * 设置QQ号的可疑标签
+                     * @param QQTag QQ号的可疑标签
+                     */
+                    void SetQQTag(const std::string& _qQTag);
+
+                    /**
+                     * 判断参数 QQTag 是否已赋值
+                     * @return QQTag 是否已赋值
+                     */
+                    bool QQTagHasBeenSet() const;
+
+                    /**
+                     * 获取业务场景 (1-注册, 2-登录, 3-发消息)
+                     * @return Scene 业务场景 (1-注册, 2-登录, 3-发消息)
+                     */
+                    std::string GetScene() const;
+
+                    /**
+                     * 设置业务场景 (1-注册, 2-登录, 3-发消息)
+                     * @param Scene 业务场景 (1-注册, 2-登录, 3-发消息)
+                     */
+                    void SetScene(const std::string& _scene);
+
+                    /**
+                     * 判断参数 Scene 是否已赋值
+                     * @return Scene 是否已赋值
+                     */
+                    bool SceneHasBeenSet() const;
+
+                    /**
                      * 获取网址 (业务名为bri_url时必填)
                      * @return Url 网址 (业务名为bri_url时必填)
                      */
@@ -208,10 +262,46 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取微信号 (业务名为bri_social时必填, 除非已填QQ)
+                     * @return Wechat 微信号 (业务名为bri_social时必填, 除非已填QQ)
+                     */
+                    std::string GetWechat() const;
+
+                    /**
+                     * 设置微信号 (业务名为bri_social时必填, 除非已填QQ)
+                     * @param Wechat 微信号 (业务名为bri_social时必填, 除非已填QQ)
+                     */
+                    void SetWechat(const std::string& _wechat);
+
+                    /**
+                     * 判断参数 Wechat 是否已赋值
+                     * @return Wechat 是否已赋值
+                     */
+                    bool WechatHasBeenSet() const;
+
+                    /**
+                     * 获取微信号的可疑标签
+                     * @return WechatTag 微信号的可疑标签
+                     */
+                    std::string GetWechatTag() const;
+
+                    /**
+                     * 设置微信号的可疑标签
+                     * @param WechatTag 微信号的可疑标签
+                     */
+                    void SetWechatTag(const std::string& _wechatTag);
+
+                    /**
+                     * 判断参数 WechatTag 是否已赋值
+                     * @return WechatTag 是否已赋值
+                     */
+                    bool WechatTagHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 业务名, 必须是以下五个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url)
+                     * 业务名, 必须是以下六个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url,bri_social)
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;
@@ -259,10 +349,40 @@ namespace TencentCloud
                     bool m_phoneNumberHasBeenSet;
 
                     /**
+                     * QQ号 (业务名为bri_social时必填, 除非已填Wechat)
+                     */
+                    std::string m_qQ;
+                    bool m_qQHasBeenSet;
+
+                    /**
+                     * QQ号的可疑标签
+                     */
+                    std::string m_qQTag;
+                    bool m_qQTagHasBeenSet;
+
+                    /**
+                     * 业务场景 (1-注册, 2-登录, 3-发消息)
+                     */
+                    std::string m_scene;
+                    bool m_sceneHasBeenSet;
+
+                    /**
                      * 网址 (业务名为bri_url时必填)
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 微信号 (业务名为bri_social时必填, 除非已填QQ)
+                     */
+                    std::string m_wechat;
+                    bool m_wechatHasBeenSet;
+
+                    /**
+                     * 微信号的可疑标签
+                     */
+                    std::string m_wechatTag;
+                    bool m_wechatTagHasBeenSet;
 
                 };
             }

@@ -986,6 +986,49 @@ CpdpClient::DescribeChargeDetailOutcomeCallable CpdpClient::DescribeChargeDetail
     return task->get_future();
 }
 
+CpdpClient::DescribeOrderStatusOutcome CpdpClient::DescribeOrderStatus(const DescribeOrderStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrderStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrderStatusResponse rsp = DescribeOrderStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrderStatusOutcome(rsp);
+        else
+            return DescribeOrderStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrderStatusOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::DescribeOrderStatusAsync(const DescribeOrderStatusRequest& request, const DescribeOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrderStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::DescribeOrderStatusOutcomeCallable CpdpClient::DescribeOrderStatusCallable(const DescribeOrderStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrderStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrderStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::DownloadBillOutcome CpdpClient::DownloadBill(const DownloadBillRequest &request)
 {
     auto outcome = MakeRequest(request, "DownloadBill");

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）。通过 DescribeRoomInformation（查询房间列表）接口获取。
-                     * @return CommId 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）。通过 DescribeRoomInformation（查询房间列表）接口获取。
+                     * 获取通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）
+                     * @return CommId 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）
                      */
                     std::string GetCommId() const;
 
                     /**
-                     * 设置通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）。通过 DescribeRoomInformation（查询房间列表）接口获取。
-                     * @param CommId 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）。通过 DescribeRoomInformation（查询房间列表）接口获取。
+                     * 设置通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）
+                     * @param CommId 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）
                      */
                     void SetCommId(const std::string& _commId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户sdkappid
-                     * @return SdkAppId 用户sdkappid
+                     * 获取用户sdkappid（1400188366）
+                     * @return SdkAppId 用户sdkappid（1400188366）
                      */
                     std::string GetSdkAppId() const;
 
                     /**
-                     * 设置用户sdkappid
-                     * @param SdkAppId 用户sdkappid
+                     * 设置用户sdkappid（1400188366）
+                     * @param SdkAppId 用户sdkappid（1400188366）
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
@@ -205,7 +205,7 @@ bigvHeight：上/下行分辨率高
                 private:
 
                     /**
-                     * 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）。通过 DescribeRoomInformation（查询房间列表）接口获取。
+                     * 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）
                      */
                     std::string m_commId;
                     bool m_commIdHasBeenSet;
@@ -223,7 +223,7 @@ bigvHeight：上/下行分辨率高
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 用户sdkappid
+                     * 用户sdkappid（1400188366）
                      */
                     std::string m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;

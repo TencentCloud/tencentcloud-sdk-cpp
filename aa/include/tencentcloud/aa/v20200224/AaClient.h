@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/aa/v20200224/model/ManageMarketingRiskRequest.h>
+#include <tencentcloud/aa/v20200224/model/ManageMarketingRiskResponse.h>
 #include <tencentcloud/aa/v20200224/model/QueryActivityAntiRushRequest.h>
 #include <tencentcloud/aa/v20200224/model/QueryActivityAntiRushResponse.h>
 #include <tencentcloud/aa/v20200224/model/QueryActivityAntiRushAdvancedRequest.h>
@@ -41,6 +43,9 @@ namespace TencentCloud
                 AaClient(const Credential &credential, const std::string &region);
                 AaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::ManageMarketingRiskResponse> ManageMarketingRiskOutcome;
+                typedef std::future<ManageMarketingRiskOutcome> ManageMarketingRiskOutcomeCallable;
+                typedef std::function<void(const AaClient*, const Model::ManageMarketingRiskRequest&, ManageMarketingRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageMarketingRiskAsyncHandler;
                 typedef Outcome<Error, Model::QueryActivityAntiRushResponse> QueryActivityAntiRushOutcome;
                 typedef std::future<QueryActivityAntiRushOutcome> QueryActivityAntiRushOutcomeCallable;
                 typedef std::function<void(const AaClient*, const Model::QueryActivityAntiRushRequest&, QueryActivityAntiRushOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryActivityAntiRushAsyncHandler;
@@ -49,6 +54,15 @@ namespace TencentCloud
                 typedef std::function<void(const AaClient*, const Model::QueryActivityAntiRushAdvancedRequest&, QueryActivityAntiRushAdvancedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryActivityAntiRushAdvancedAsyncHandler;
 
 
+
+                /**
+                 *活动防刷、注册保护、登录保护等营销产品的高级版本
+                 * @param req ManageMarketingRiskRequest
+                 * @return ManageMarketingRiskOutcome
+                 */
+                ManageMarketingRiskOutcome ManageMarketingRisk(const Model::ManageMarketingRiskRequest &request);
+                void ManageMarketingRiskAsync(const Model::ManageMarketingRiskRequest& request, const ManageMarketingRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ManageMarketingRiskOutcomeCallable ManageMarketingRiskCallable(const Model::ManageMarketingRiskRequest& request);
 
                 /**
                  *腾讯云活动防刷（ActivityAntiRush，AA）是针对电商、O2O、P2P、游戏、支付等行业在促销活动中遇到“羊毛党”恶意刷取优惠福利的行为时，通过防刷引擎，精准识别出“薅羊毛”恶意行为的活动防刷服务，避免了企业被刷带来的巨大经济损失。

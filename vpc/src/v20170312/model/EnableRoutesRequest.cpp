@@ -25,7 +25,8 @@ using namespace std;
 
 EnableRoutesRequest::EnableRoutesRequest() :
     m_routeTableIdHasBeenSet(false),
-    m_routeIdsHasBeenSet(false)
+    m_routeIdsHasBeenSet(false),
+    m_routeItemIdsHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,19 @@ string EnableRoutesRequest::ToJsonString() const
         for (auto itr = m_routeIds.begin(); itr != m_routeIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_routeItemIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RouteItemIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_routeItemIds.begin(); itr != m_routeItemIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -95,6 +109,22 @@ void EnableRoutesRequest::SetRouteIds(const vector<uint64_t>& _routeIds)
 bool EnableRoutesRequest::RouteIdsHasBeenSet() const
 {
     return m_routeIdsHasBeenSet;
+}
+
+vector<string> EnableRoutesRequest::GetRouteItemIds() const
+{
+    return m_routeItemIds;
+}
+
+void EnableRoutesRequest::SetRouteItemIds(const vector<string>& _routeItemIds)
+{
+    m_routeItemIds = _routeItemIds;
+    m_routeItemIdsHasBeenSet = true;
+}
+
+bool EnableRoutesRequest::RouteItemIdsHasBeenSet() const
+{
+    return m_routeItemIdsHasBeenSet;
 }
 
 

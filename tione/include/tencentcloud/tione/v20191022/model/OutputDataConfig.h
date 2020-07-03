@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20191022/model/FileSystemDataSource.h>
 
 
 namespace TencentCloud
@@ -47,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cos桶
+                     * 获取cos输出桶
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosOutputBucket cos桶
+                     * @return CosOutputBucket cos输出桶
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCosOutputBucket() const;
 
                     /**
-                     * 设置cos桶
+                     * 设置cos输出桶
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosOutputBucket cos桶
+                     * @param CosOutputBucket cos输出桶
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCosOutputBucket(const std::string& _cosOutputBucket);
@@ -69,17 +70,17 @@ namespace TencentCloud
                     bool CosOutputBucketHasBeenSet() const;
 
                     /**
-                     * 获取cos文件key
+                     * 获取cos输出key前缀
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosOutputKeyPrefix cos文件key
+                     * @return CosOutputKeyPrefix cos输出key前缀
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCosOutputKeyPrefix() const;
 
                     /**
-                     * 设置cos文件key
+                     * 设置cos输出key前缀
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosOutputKeyPrefix cos文件key
+                     * @param CosOutputKeyPrefix cos输出key前缀
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCosOutputKeyPrefix(const std::string& _cosOutputKeyPrefix);
@@ -90,21 +91,50 @@ namespace TencentCloud
                      */
                     bool CosOutputKeyPrefixHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统输出，如果指定了文件系统，那么Cos输出会被忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileSystemDataSource 文件系统输出，如果指定了文件系统，那么Cos输出会被忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FileSystemDataSource GetFileSystemDataSource() const;
+
+                    /**
+                     * 设置文件系统输出，如果指定了文件系统，那么Cos输出会被忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FileSystemDataSource 文件系统输出，如果指定了文件系统，那么Cos输出会被忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFileSystemDataSource(const FileSystemDataSource& _fileSystemDataSource);
+
+                    /**
+                     * 判断参数 FileSystemDataSource 是否已赋值
+                     * @return FileSystemDataSource 是否已赋值
+                     */
+                    bool FileSystemDataSourceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * cos桶
+                     * cos输出桶
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosOutputBucket;
                     bool m_cosOutputBucketHasBeenSet;
 
                     /**
-                     * cos文件key
+                     * cos输出key前缀
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosOutputKeyPrefix;
                     bool m_cosOutputKeyPrefixHasBeenSet;
+
+                    /**
+                     * 文件系统输出，如果指定了文件系统，那么Cos输出会被忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FileSystemDataSource m_fileSystemDataSource;
+                    bool m_fileSystemDataSourceHasBeenSet;
 
                 };
             }

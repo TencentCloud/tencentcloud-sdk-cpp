@@ -67,8 +67,8 @@ namespace TencentCloud
                     bool IsMatchHasBeenSet() const;
 
                     /**
-                     * 获取人脸识别所用的算法模型版本。
-                     * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * 获取人脸识别所用的算法模型版本，是该 Person 所在的人员库的算法模型版本。在创建人员库时设置，详情可参考[算法模型版本](https://cloud.tencent.com/document/product/867/40042)
+                     * @return FaceModelVersion 人脸识别所用的算法模型版本，是该 Person 所在的人员库的算法模型版本。在创建人员库时设置，详情可参考[算法模型版本](https://cloud.tencent.com/document/product/867/40042)
                      */
                     std::string GetFaceModelVersion() const;
 
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_isMatchHasBeenSet;
 
                     /**
-                     * 人脸识别所用的算法模型版本。
+                     * 人脸识别所用的算法模型版本，是该 Person 所在的人员库的算法模型版本。在创建人员库时设置，详情可参考[算法模型版本](https://cloud.tencent.com/document/product/867/40042)
                      */
                     std::string m_faceModelVersion;
                     bool m_faceModelVersionHasBeenSet;

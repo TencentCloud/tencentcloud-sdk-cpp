@@ -246,6 +246,42 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                      */
                     bool RouteTableIdHasBeenSet() const;
 
+                    /**
+                     * 获取目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+                     * @return DestinationIpv6CidrBlock 目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+                     */
+                    std::string GetDestinationIpv6CidrBlock() const;
+
+                    /**
+                     * 设置目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+                     * @param DestinationIpv6CidrBlock 目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+                     */
+                    void SetDestinationIpv6CidrBlock(const std::string& _destinationIpv6CidrBlock);
+
+                    /**
+                     * 判断参数 DestinationIpv6CidrBlock 是否已赋值
+                     * @return DestinationIpv6CidrBlock 是否已赋值
+                     */
+                    bool DestinationIpv6CidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取路由唯一策略ID。
+                     * @return RouteItemId 路由唯一策略ID。
+                     */
+                    std::string GetRouteItemId() const;
+
+                    /**
+                     * 设置路由唯一策略ID。
+                     * @param RouteItemId 路由唯一策略ID。
+                     */
+                    void SetRouteItemId(const std::string& _routeItemId);
+
+                    /**
+                     * 判断参数 RouteItemId 是否已赋值
+                     * @return RouteItemId 是否已赋值
+                     */
+                    bool RouteItemIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +345,18 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;
+
+                    /**
+                     * 目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+                     */
+                    std::string m_destinationIpv6CidrBlock;
+                    bool m_destinationIpv6CidrBlockHasBeenSet;
+
+                    /**
+                     * 路由唯一策略ID。
+                     */
+                    std::string m_routeItemId;
+                    bool m_routeItemIdHasBeenSet;
 
                 };
             }

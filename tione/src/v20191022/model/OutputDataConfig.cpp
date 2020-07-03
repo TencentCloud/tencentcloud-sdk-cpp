@@ -23,7 +23,8 @@ using namespace std;
 
 OutputDataConfig::OutputDataConfig() :
     m_cosOutputBucketHasBeenSet(false),
-    m_cosOutputKeyPrefixHasBeenSet(false)
+    m_cosOutputKeyPrefixHasBeenSet(false),
+    m_fileSystemDataSourceHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,23 @@ CoreInternalOutcome OutputDataConfig::Deserialize(const Value &value)
         m_cosOutputKeyPrefixHasBeenSet = true;
     }
 
+    if (value.HasMember("FileSystemDataSource") && !value["FileSystemDataSource"].IsNull())
+    {
+        if (!value["FileSystemDataSource"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `OutputDataConfig.FileSystemDataSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fileSystemDataSource.Deserialize(value["FileSystemDataSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fileSystemDataSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +91,15 @@ void OutputDataConfig::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "CosOutputKeyPrefix";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_cosOutputKeyPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSystemDataSourceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FileSystemDataSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_fileSystemDataSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -108,5 +135,21 @@ void OutputDataConfig::SetCosOutputKeyPrefix(const string& _cosOutputKeyPrefix)
 bool OutputDataConfig::CosOutputKeyPrefixHasBeenSet() const
 {
     return m_cosOutputKeyPrefixHasBeenSet;
+}
+
+FileSystemDataSource OutputDataConfig::GetFileSystemDataSource() const
+{
+    return m_fileSystemDataSource;
+}
+
+void OutputDataConfig::SetFileSystemDataSource(const FileSystemDataSource& _fileSystemDataSource)
+{
+    m_fileSystemDataSource = _fileSystemDataSource;
+    m_fileSystemDataSourceHasBeenSet = true;
+}
+
+bool OutputDataConfig::FileSystemDataSourceHasBeenSet() const
+{
+    return m_fileSystemDataSourceHasBeenSet;
 }
 

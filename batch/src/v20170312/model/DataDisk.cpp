@@ -27,7 +27,8 @@ DataDisk::DataDisk() :
     m_diskIdHasBeenSet(false),
     m_deleteWithInstanceHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
-    m_encryptHasBeenSet(false)
+    m_encryptHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome DataDisk::Deserialize(const Value &value)
         m_encryptHasBeenSet = true;
     }
 
+    if (value.HasMember("KmsKeyId") && !value["KmsKeyId"].IsNull())
+    {
+        if (!value["KmsKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DataDisk.KmsKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsKeyId = string(value["KmsKeyId"].GetString());
+        m_kmsKeyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void DataDisk::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Encrypt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_encrypt, allocator);
+    }
+
+    if (m_kmsKeyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KmsKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void DataDisk::SetEncrypt(const bool& _encrypt)
 bool DataDisk::EncryptHasBeenSet() const
 {
     return m_encryptHasBeenSet;
+}
+
+string DataDisk::GetKmsKeyId() const
+{
+    return m_kmsKeyId;
+}
+
+void DataDisk::SetKmsKeyId(const string& _kmsKeyId)
+{
+    m_kmsKeyId = _kmsKeyId;
+    m_kmsKeyIdHasBeenSet = true;
+}
+
+bool DataDisk::KmsKeyIdHasBeenSet() const
+{
+    return m_kmsKeyIdHasBeenSet;
 }
 

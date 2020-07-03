@@ -30,7 +30,12 @@ BRIRequest::BRIRequest() :
     m_ipHasBeenSet(false),
     m_packageNameHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_qQHasBeenSet(false),
+    m_qQTagHasBeenSet(false),
+    m_sceneHasBeenSet(false),
+    m_urlHasBeenSet(false),
+    m_wechatHasBeenSet(false),
+    m_wechatTagHasBeenSet(false)
 {
 }
 
@@ -119,6 +124,36 @@ CoreInternalOutcome BRIRequest::Deserialize(const Value &value)
         m_phoneNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("QQ") && !value["QQ"].IsNull())
+    {
+        if (!value["QQ"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BRIRequest.QQ` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qQ = string(value["QQ"].GetString());
+        m_qQHasBeenSet = true;
+    }
+
+    if (value.HasMember("QQTag") && !value["QQTag"].IsNull())
+    {
+        if (!value["QQTag"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BRIRequest.QQTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qQTag = string(value["QQTag"].GetString());
+        m_qQTagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Scene") && !value["Scene"].IsNull())
+    {
+        if (!value["Scene"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BRIRequest.Scene` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scene = string(value["Scene"].GetString());
+        m_sceneHasBeenSet = true;
+    }
+
     if (value.HasMember("Url") && !value["Url"].IsNull())
     {
         if (!value["Url"].IsString())
@@ -127,6 +162,26 @@ CoreInternalOutcome BRIRequest::Deserialize(const Value &value)
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
+    }
+
+    if (value.HasMember("Wechat") && !value["Wechat"].IsNull())
+    {
+        if (!value["Wechat"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BRIRequest.Wechat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wechat = string(value["Wechat"].GetString());
+        m_wechatHasBeenSet = true;
+    }
+
+    if (value.HasMember("WechatTag") && !value["WechatTag"].IsNull())
+    {
+        if (!value["WechatTag"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BRIRequest.WechatTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wechatTag = string(value["WechatTag"].GetString());
+        m_wechatTagHasBeenSet = true;
     }
 
 
@@ -200,12 +255,52 @@ void BRIRequest::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         value.AddMember(iKey, Value(m_phoneNumber.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_qQHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QQ";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_qQ.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qQTagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QQTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_qQTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Scene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_scene.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_urlHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wechatHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Wechat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_wechat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wechatTagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WechatTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_wechatTag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -339,6 +434,54 @@ bool BRIRequest::PhoneNumberHasBeenSet() const
     return m_phoneNumberHasBeenSet;
 }
 
+string BRIRequest::GetQQ() const
+{
+    return m_qQ;
+}
+
+void BRIRequest::SetQQ(const string& _qQ)
+{
+    m_qQ = _qQ;
+    m_qQHasBeenSet = true;
+}
+
+bool BRIRequest::QQHasBeenSet() const
+{
+    return m_qQHasBeenSet;
+}
+
+string BRIRequest::GetQQTag() const
+{
+    return m_qQTag;
+}
+
+void BRIRequest::SetQQTag(const string& _qQTag)
+{
+    m_qQTag = _qQTag;
+    m_qQTagHasBeenSet = true;
+}
+
+bool BRIRequest::QQTagHasBeenSet() const
+{
+    return m_qQTagHasBeenSet;
+}
+
+string BRIRequest::GetScene() const
+{
+    return m_scene;
+}
+
+void BRIRequest::SetScene(const string& _scene)
+{
+    m_scene = _scene;
+    m_sceneHasBeenSet = true;
+}
+
+bool BRIRequest::SceneHasBeenSet() const
+{
+    return m_sceneHasBeenSet;
+}
+
 string BRIRequest::GetUrl() const
 {
     return m_url;
@@ -353,5 +496,37 @@ void BRIRequest::SetUrl(const string& _url)
 bool BRIRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string BRIRequest::GetWechat() const
+{
+    return m_wechat;
+}
+
+void BRIRequest::SetWechat(const string& _wechat)
+{
+    m_wechat = _wechat;
+    m_wechatHasBeenSet = true;
+}
+
+bool BRIRequest::WechatHasBeenSet() const
+{
+    return m_wechatHasBeenSet;
+}
+
+string BRIRequest::GetWechatTag() const
+{
+    return m_wechatTag;
+}
+
+void BRIRequest::SetWechatTag(const string& _wechatTag)
+{
+    m_wechatTag = _wechatTag;
+    m_wechatTagHasBeenSet = true;
+}
+
+bool BRIRequest::WechatTagHasBeenSet() const
+{
+    return m_wechatTagHasBeenSet;
 }
 

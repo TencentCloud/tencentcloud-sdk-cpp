@@ -59,6 +59,8 @@
 #include <tencentcloud/live/v20180801/model/CreateLiveWatermarkRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/CreatePullStreamConfigRequest.h>
 #include <tencentcloud/live/v20180801/model/CreatePullStreamConfigResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateRecordTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackTemplateRequest.h>
@@ -87,6 +89,8 @@
 #include <tencentcloud/live/v20180801/model/DeleteLiveWatermarkRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/DeletePullStreamConfigRequest.h>
 #include <tencentcloud/live/v20180801/model/DeletePullStreamConfigResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteRecordTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListRequest.h>
@@ -221,6 +225,8 @@
 #include <tencentcloud/live/v20180801/model/ResumeLiveStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/StopLiveRecordRequest.h>
 #include <tencentcloud/live/v20180801/model/StopLiveRecordResponse.h>
+#include <tencentcloud/live/v20180801/model/StopRecordTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/StopRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/UnBindLiveDomainCertRequest.h>
 #include <tencentcloud/live/v20180801/model/UnBindLiveDomainCertResponse.h>
 #include <tencentcloud/live/v20180801/model/UpdateLiveWatermarkRequest.h>
@@ -293,6 +299,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreatePullStreamConfigResponse> CreatePullStreamConfigOutcome;
                 typedef std::future<CreatePullStreamConfigOutcome> CreatePullStreamConfigOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreatePullStreamConfigRequest&, CreatePullStreamConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePullStreamConfigAsyncHandler;
+                typedef Outcome<Error, Model::CreateRecordTaskResponse> CreateRecordTaskOutcome;
+                typedef std::future<CreateRecordTaskOutcome> CreateRecordTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateRecordTaskRequest&, CreateRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordTaskAsyncHandler;
                 typedef Outcome<Error, Model::DeleteLiveCallbackRuleResponse> DeleteLiveCallbackRuleOutcome;
                 typedef std::future<DeleteLiveCallbackRuleOutcome> DeleteLiveCallbackRuleOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteLiveCallbackRuleRequest&, DeleteLiveCallbackRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveCallbackRuleAsyncHandler;
@@ -335,6 +344,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeletePullStreamConfigResponse> DeletePullStreamConfigOutcome;
                 typedef std::future<DeletePullStreamConfigOutcome> DeletePullStreamConfigOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeletePullStreamConfigRequest&, DeletePullStreamConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePullStreamConfigAsyncHandler;
+                typedef Outcome<Error, Model::DeleteRecordTaskResponse> DeleteRecordTaskOutcome;
+                typedef std::future<DeleteRecordTaskOutcome> DeleteRecordTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteRecordTaskRequest&, DeleteRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordTaskAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAllStreamPlayInfoListResponse> DescribeAllStreamPlayInfoListOutcome;
                 typedef std::future<DescribeAllStreamPlayInfoListOutcome> DescribeAllStreamPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeAllStreamPlayInfoListRequest&, DescribeAllStreamPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllStreamPlayInfoListAsyncHandler;
@@ -536,6 +548,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StopLiveRecordResponse> StopLiveRecordOutcome;
                 typedef std::future<StopLiveRecordOutcome> StopLiveRecordOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopLiveRecordRequest&, StopLiveRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLiveRecordAsyncHandler;
+                typedef Outcome<Error, Model::StopRecordTaskResponse> StopRecordTaskOutcome;
+                typedef std::future<StopRecordTaskOutcome> StopRecordTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::StopRecordTaskRequest&, StopRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRecordTaskAsyncHandler;
                 typedef Outcome<Error, Model::UnBindLiveDomainCertResponse> UnBindLiveDomainCertOutcome;
                 typedef std::future<UnBindLiveDomainCertOutcome> UnBindLiveDomainCertOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::UnBindLiveDomainCertRequest&, UnBindLiveDomainCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindLiveDomainCertAsyncHandler;
@@ -549,6 +564,7 @@ namespace TencentCloud
                  *对流设置延播时间
 注意：如果在推流前设置延播，需要提前5分钟设置。
 目前该接口只支持流粒度的，域名及应用粒度功能支持当前开发中。
+使用场景：对重要直播，避免出现突发状况，可通过设置延迟播放，提前做好把控。
 
                  * @param req AddDelayLiveStreamRequest
                  * @return AddDelayLiveStreamOutcome
@@ -741,6 +757,23 @@ namespace TencentCloud
                 CreatePullStreamConfigOutcomeCallable CreatePullStreamConfigCallable(const Model::CreatePullStreamConfigRequest& request);
 
                 /**
+                 *创建一个在指定时间启动、结束的录制任务，并使用指定录制模板ID对应的配置进行录制。
+- 使用前提
+1. 录制文件存放于点播平台，所以用户如需使用录制功能，需首先自行开通点播服务。
+2. 录制文件存放后相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，具体请参考 对应文档。
+- 注意事项
+1. 断流会结束当前录制并生成录制文件。在结束时间到达之前任务仍然有效，期间只要正常推流都会正常录制，与是否多次推、断流无关。
+2. 使用上避免创建时间段相互重叠的录制任务。若同一条流当前存在多个时段重叠的任务，为避免重复录制系统将启动最多3个录制任务。
+3. 创建的录制任务记录在平台侧只保留3个月。
+4. 当前录制任务管理API（CreateRecordTask/StopRecordTask/DeleteRecordTask）与旧API（CreateLiveRecord/StopLiveRecord/DeleteLiveRecord）不兼容，两套接口不能混用。
+                 * @param req CreateRecordTaskRequest
+                 * @return CreateRecordTaskOutcome
+                 */
+                CreateRecordTaskOutcome CreateRecordTask(const Model::CreateRecordTaskRequest &request);
+                void CreateRecordTaskAsync(const Model::CreateRecordTaskRequest& request, const CreateRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRecordTaskOutcomeCallable CreateRecordTaskCallable(const Model::CreateRecordTaskRequest& request);
+
+                /**
                  *删除回调规则。
                  * @param req DeleteLiveCallbackRuleRequest
                  * @return DeleteLiveCallbackRuleOutcome
@@ -866,6 +899,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DeletePullStreamConfigOutcome DeletePullStreamConfig(const Model::DeletePullStreamConfigRequest &request);
                 void DeletePullStreamConfigAsync(const Model::DeletePullStreamConfigRequest& request, const DeletePullStreamConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePullStreamConfigOutcomeCallable DeletePullStreamConfigCallable(const Model::DeletePullStreamConfigRequest& request);
+
+                /**
+                 *删除录制任务配置。删除操作不影响正在运行当中的任务，仅对删除之后新的推流有效。
+                 * @param req DeleteRecordTaskRequest
+                 * @return DeleteRecordTaskOutcome
+                 */
+                DeleteRecordTaskOutcome DeleteRecordTask(const Model::DeleteRecordTaskRequest &request);
+                void DeleteRecordTaskAsync(const Model::DeleteRecordTaskRequest& request, const DeleteRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRecordTaskOutcomeCallable DeleteRecordTaskCallable(const Model::DeleteRecordTaskRequest& request);
 
                 /**
                  *输入某个时间点（1分钟维度），查询该时间点所有流的下行信息。
@@ -1476,6 +1518,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 StopLiveRecordOutcome StopLiveRecord(const Model::StopLiveRecordRequest &request);
                 void StopLiveRecordAsync(const Model::StopLiveRecordRequest& request, const StopLiveRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopLiveRecordOutcomeCallable StopLiveRecordCallable(const Model::StopLiveRecordRequest& request);
+
+                /**
+                 *提前结束录制，并中止运行中的录制任务。任务被成功中止后将不再启动。
+                 * @param req StopRecordTaskRequest
+                 * @return StopRecordTaskOutcome
+                 */
+                StopRecordTaskOutcome StopRecordTask(const Model::StopRecordTaskRequest &request);
+                void StopRecordTaskAsync(const Model::StopRecordTaskRequest& request, const StopRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopRecordTaskOutcomeCallable StopRecordTaskCallable(const Model::StopRecordTaskRequest& request);
 
                 /**
                  *解绑域名证书

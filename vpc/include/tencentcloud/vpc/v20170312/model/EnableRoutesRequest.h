@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取路由策略唯一ID。
-                     * @return RouteIds 路由策略唯一ID。
+                     * 获取路由策略ID。不能和RouteItemIds同时使用。
+                     * @return RouteIds 路由策略ID。不能和RouteItemIds同时使用。
                      */
                     std::vector<uint64_t> GetRouteIds() const;
 
                     /**
-                     * 设置路由策略唯一ID。
-                     * @param RouteIds 路由策略唯一ID。
+                     * 设置路由策略ID。不能和RouteItemIds同时使用。
+                     * @param RouteIds 路由策略ID。不能和RouteItemIds同时使用。
                      */
                     void SetRouteIds(const std::vector<uint64_t>& _routeIds);
 
@@ -77,6 +77,24 @@ namespace TencentCloud
                      * @return RouteIds 是否已赋值
                      */
                     bool RouteIdsHasBeenSet() const;
+
+                    /**
+                     * 获取路由策略唯一ID。不能和RouteIds同时使用。
+                     * @return RouteItemIds 路由策略唯一ID。不能和RouteIds同时使用。
+                     */
+                    std::vector<std::string> GetRouteItemIds() const;
+
+                    /**
+                     * 设置路由策略唯一ID。不能和RouteIds同时使用。
+                     * @param RouteItemIds 路由策略唯一ID。不能和RouteIds同时使用。
+                     */
+                    void SetRouteItemIds(const std::vector<std::string>& _routeItemIds);
+
+                    /**
+                     * 判断参数 RouteItemIds 是否已赋值
+                     * @return RouteItemIds 是否已赋值
+                     */
+                    bool RouteItemIdsHasBeenSet() const;
 
                 private:
 
@@ -87,10 +105,16 @@ namespace TencentCloud
                     bool m_routeTableIdHasBeenSet;
 
                     /**
-                     * 路由策略唯一ID。
+                     * 路由策略ID。不能和RouteItemIds同时使用。
                      */
                     std::vector<uint64_t> m_routeIds;
                     bool m_routeIdsHasBeenSet;
+
+                    /**
+                     * 路由策略唯一ID。不能和RouteIds同时使用。
+                     */
+                    std::vector<std::string> m_routeItemIds;
+                    bool m_routeItemIdsHasBeenSet;
 
                 };
             }

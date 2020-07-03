@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求类型
-                     * @return RequestType 请求类型
+                     * 获取请求类型 此接口固定填：MemberRechargeThirdPayReq
+                     * @return RequestType 请求类型 此接口固定填：MemberRechargeThirdPayReq
                      */
                     std::string GetRequestType() const;
 
                     /**
-                     * 设置请求类型
-                     * @param RequestType 请求类型
+                     * 设置请求类型 此接口固定填：MemberRechargeThirdPayReq
+                     * @param RequestType 请求类型 此接口固定填：MemberRechargeThirdPayReq
                      */
                     void SetRequestType(const std::string& _requestType);
 
@@ -459,7 +459,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求类型
+                     * 请求类型 此接口固定填：MemberRechargeThirdPayReq
                      */
                     std::string m_requestType;
                     bool m_requestTypeHasBeenSet;
