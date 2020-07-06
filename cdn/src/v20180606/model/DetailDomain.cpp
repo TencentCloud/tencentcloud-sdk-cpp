@@ -64,7 +64,8 @@ DetailDomain::DetailDomain() :
     m_awsPrivateAccessHasBeenSet(false),
     m_securityConfigHasBeenSet(false),
     m_imageOptimizationHasBeenSet(false),
-    m_userAgentFilterHasBeenSet(false)
+    m_userAgentFilterHasBeenSet(false),
+    m_accessControlHasBeenSet(false)
 {
 }
 
@@ -720,6 +721,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_userAgentFilterHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessControl") && !value["AccessControl"].IsNull())
+    {
+        if (!value["AccessControl"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.AccessControl` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_accessControl.Deserialize(value["AccessControl"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_accessControlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1100,6 +1118,15 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_userAgentFilter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_accessControlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccessControl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_accessControl.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1791,5 +1818,21 @@ void DetailDomain::SetUserAgentFilter(const UserAgentFilter& _userAgentFilter)
 bool DetailDomain::UserAgentFilterHasBeenSet() const
 {
     return m_userAgentFilterHasBeenSet;
+}
+
+AccessControl DetailDomain::GetAccessControl() const
+{
+    return m_accessControl;
+}
+
+void DetailDomain::SetAccessControl(const AccessControl& _accessControl)
+{
+    m_accessControl = _accessControl;
+    m_accessControlHasBeenSet = true;
+}
+
+bool DetailDomain::AccessControlHasBeenSet() const
+{
+    return m_accessControlHasBeenSet;
 }
 

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/SimpleCacheRule.h>
+#include <tencentcloud/cdn/v20180606/model/Revalidate.h>
 
 
 namespace TencentCloud
@@ -212,6 +213,28 @@ off：关闭
                      */
                     bool CompareMaxAgeHasBeenSet() const;
 
+                    /**
+                     * 获取总是回源站校验
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Revalidate 总是回源站校验
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Revalidate GetRevalidate() const;
+
+                    /**
+                     * 设置总是回源站校验
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Revalidate 总是回源站校验
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRevalidate(const Revalidate& _revalidate);
+
+                    /**
+                     * 判断参数 Revalidate 是否已赋值
+                     * @return Revalidate 是否已赋值
+                     */
+                    bool RevalidateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +284,13 @@ off：关闭
                      */
                     std::string m_compareMaxAge;
                     bool m_compareMaxAgeHasBeenSet;
+
+                    /**
+                     * 总是回源站校验
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Revalidate m_revalidate;
+                    bool m_revalidateHasBeenSet;
 
                 };
             }

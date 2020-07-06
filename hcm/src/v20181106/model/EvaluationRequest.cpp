@@ -30,7 +30,11 @@ EvaluationRequest::EvaluationRequest() :
     m_urlHasBeenSet(false),
     m_supportHorizontalImageHasBeenSet(false),
     m_rejectNonArithmeticImageHasBeenSet(false),
-    m_isAsyncHasBeenSet(false)
+    m_isAsyncHasBeenSet(false),
+    m_enableDispRelatedVerticalHasBeenSet(false),
+    m_enableDispMidresultHasBeenSet(false),
+    m_enablePdfRecognizeHasBeenSet(false),
+    m_pdfPageIndexHasBeenSet(false)
 {
 }
 
@@ -95,6 +99,38 @@ string EvaluationRequest::ToJsonString() const
         string key = "IsAsync";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isAsync, allocator);
+    }
+
+    if (m_enableDispRelatedVerticalHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableDispRelatedVertical";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDispRelatedVertical, allocator);
+    }
+
+    if (m_enableDispMidresultHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableDispMidresult";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDispMidresult, allocator);
+    }
+
+    if (m_enablePdfRecognizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnablePdfRecognize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enablePdfRecognize, allocator);
+    }
+
+    if (m_pdfPageIndexHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PdfPageIndex";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pdfPageIndex, allocator);
     }
 
 
@@ -215,6 +251,70 @@ void EvaluationRequest::SetIsAsync(const int64_t& _isAsync)
 bool EvaluationRequest::IsAsyncHasBeenSet() const
 {
     return m_isAsyncHasBeenSet;
+}
+
+bool EvaluationRequest::GetEnableDispRelatedVertical() const
+{
+    return m_enableDispRelatedVertical;
+}
+
+void EvaluationRequest::SetEnableDispRelatedVertical(const bool& _enableDispRelatedVertical)
+{
+    m_enableDispRelatedVertical = _enableDispRelatedVertical;
+    m_enableDispRelatedVerticalHasBeenSet = true;
+}
+
+bool EvaluationRequest::EnableDispRelatedVerticalHasBeenSet() const
+{
+    return m_enableDispRelatedVerticalHasBeenSet;
+}
+
+bool EvaluationRequest::GetEnableDispMidresult() const
+{
+    return m_enableDispMidresult;
+}
+
+void EvaluationRequest::SetEnableDispMidresult(const bool& _enableDispMidresult)
+{
+    m_enableDispMidresult = _enableDispMidresult;
+    m_enableDispMidresultHasBeenSet = true;
+}
+
+bool EvaluationRequest::EnableDispMidresultHasBeenSet() const
+{
+    return m_enableDispMidresultHasBeenSet;
+}
+
+bool EvaluationRequest::GetEnablePdfRecognize() const
+{
+    return m_enablePdfRecognize;
+}
+
+void EvaluationRequest::SetEnablePdfRecognize(const bool& _enablePdfRecognize)
+{
+    m_enablePdfRecognize = _enablePdfRecognize;
+    m_enablePdfRecognizeHasBeenSet = true;
+}
+
+bool EvaluationRequest::EnablePdfRecognizeHasBeenSet() const
+{
+    return m_enablePdfRecognizeHasBeenSet;
+}
+
+int64_t EvaluationRequest::GetPdfPageIndex() const
+{
+    return m_pdfPageIndex;
+}
+
+void EvaluationRequest::SetPdfPageIndex(const int64_t& _pdfPageIndex)
+{
+    m_pdfPageIndex = _pdfPageIndex;
+    m_pdfPageIndexHasBeenSet = true;
+}
+
+bool EvaluationRequest::PdfPageIndexHasBeenSet() const
+{
+    return m_pdfPageIndexHasBeenSet;
 }
 
 

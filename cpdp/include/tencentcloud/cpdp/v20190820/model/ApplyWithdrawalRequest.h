@@ -352,6 +352,24 @@ development: 开发环境
                      */
                     bool CommissionAmountHasBeenSet() const;
 
+                    /**
+                     * 获取提现单号，长度32字节
+                     * @return WithdrawOrderId 提现单号，长度32字节
+                     */
+                    std::string GetWithdrawOrderId() const;
+
+                    /**
+                     * 设置提现单号，长度32字节
+                     * @param WithdrawOrderId 提现单号，长度32字节
+                     */
+                    void SetWithdrawOrderId(const std::string& _withdrawOrderId);
+
+                    /**
+                     * 判断参数 WithdrawOrderId 是否已赋值
+                     * @return WithdrawOrderId 是否已赋值
+                     */
+                    bool WithdrawOrderIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -453,6 +471,12 @@ development: 开发环境
                      */
                     std::string m_commissionAmount;
                     bool m_commissionAmountHasBeenSet;
+
+                    /**
+                     * 提现单号，长度32字节
+                     */
+                    std::string m_withdrawOrderId;
+                    bool m_withdrawOrderIdHasBeenSet;
 
                 };
             }

@@ -34,7 +34,8 @@ PullUploadRequest::PullUploadRequest() :
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_extInfoHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_subAppIdHasBeenSet(false),
+    m_sourceContextHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string PullUploadRequest::ToJsonString() const
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subAppId, allocator);
+    }
+
+    if (m_sourceContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SourceContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sourceContext.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -315,6 +324,22 @@ void PullUploadRequest::SetSubAppId(const uint64_t& _subAppId)
 bool PullUploadRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+string PullUploadRequest::GetSourceContext() const
+{
+    return m_sourceContext;
+}
+
+void PullUploadRequest::SetSourceContext(const string& _sourceContext)
+{
+    m_sourceContext = _sourceContext;
+    m_sourceContextHasBeenSet = true;
+}
+
+bool PullUploadRequest::SourceContextHasBeenSet() const
+{
+    return m_sourceContextHasBeenSet;
 }
 
 

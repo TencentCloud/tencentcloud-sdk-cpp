@@ -55,6 +55,7 @@
 #include <tencentcloud/cdn/v20180606/model/SecurityConfig.h>
 #include <tencentcloud/cdn/v20180606/model/ImageOptimization.h>
 #include <tencentcloud/cdn/v20180606/model/UserAgentFilter.h>
+#include <tencentcloud/cdn/v20180606/model/AccessControl.h>
 
 
 namespace TencentCloud
@@ -1075,6 +1076,28 @@ global：全球锁定
                      */
                     bool UserAgentFilterHasBeenSet() const;
 
+                    /**
+                     * 获取访问控制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessControl 访问控制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AccessControl GetAccessControl() const;
+
+                    /**
+                     * 设置访问控制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccessControl 访问控制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccessControl(const AccessControl& _accessControl);
+
+                    /**
+                     * 判断参数 AccessControl 是否已赋值
+                     * @return AccessControl 是否已赋值
+                     */
+                    bool AccessControlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1390,6 +1413,13 @@ global：全球锁定
                      */
                     UserAgentFilter m_userAgentFilter;
                     bool m_userAgentFilterHasBeenSet;
+
+                    /**
+                     * 访问控制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AccessControl m_accessControl;
+                    bool m_accessControlHasBeenSet;
 
                 };
             }

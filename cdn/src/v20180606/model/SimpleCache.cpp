@@ -26,7 +26,8 @@ SimpleCache::SimpleCache() :
     m_followOriginHasBeenSet(false),
     m_ignoreCacheControlHasBeenSet(false),
     m_ignoreSetCookieHasBeenSet(false),
-    m_compareMaxAgeHasBeenSet(false)
+    m_compareMaxAgeHasBeenSet(false),
+    m_revalidateHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,23 @@ CoreInternalOutcome SimpleCache::Deserialize(const Value &value)
         m_compareMaxAgeHasBeenSet = true;
     }
 
+    if (value.HasMember("Revalidate") && !value["Revalidate"].IsNull())
+    {
+        if (!value["Revalidate"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `SimpleCache.Revalidate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_revalidate.Deserialize(value["Revalidate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_revalidateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -147,6 +165,15 @@ void SimpleCache::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "CompareMaxAge";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_compareMaxAge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_revalidateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Revalidate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_revalidate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -230,5 +257,21 @@ void SimpleCache::SetCompareMaxAge(const string& _compareMaxAge)
 bool SimpleCache::CompareMaxAgeHasBeenSet() const
 {
     return m_compareMaxAgeHasBeenSet;
+}
+
+Revalidate SimpleCache::GetRevalidate() const
+{
+    return m_revalidate;
+}
+
+void SimpleCache::SetRevalidate(const Revalidate& _revalidate)
+{
+    m_revalidate = _revalidate;
+    m_revalidateHasBeenSet = true;
+}
+
+bool SimpleCache::RevalidateHasBeenSet() const
+{
+    return m_revalidateHasBeenSet;
 }
 

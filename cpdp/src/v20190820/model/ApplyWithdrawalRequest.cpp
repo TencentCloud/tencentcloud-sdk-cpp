@@ -38,7 +38,8 @@ ApplyWithdrawalRequest::ApplyWithdrawalRequest() :
     m_midasSignatureHasBeenSet(false),
     m_encryptTypeHasBeenSet(false),
     m_midasEnvironmentHasBeenSet(false),
-    m_commissionAmountHasBeenSet(false)
+    m_commissionAmountHasBeenSet(false),
+    m_withdrawOrderIdHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,14 @@ string ApplyWithdrawalRequest::ToJsonString() const
         string key = "CommissionAmount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_commissionAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_withdrawOrderIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WithdrawOrderId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_withdrawOrderId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -415,6 +424,22 @@ void ApplyWithdrawalRequest::SetCommissionAmount(const string& _commissionAmount
 bool ApplyWithdrawalRequest::CommissionAmountHasBeenSet() const
 {
     return m_commissionAmountHasBeenSet;
+}
+
+string ApplyWithdrawalRequest::GetWithdrawOrderId() const
+{
+    return m_withdrawOrderId;
+}
+
+void ApplyWithdrawalRequest::SetWithdrawOrderId(const string& _withdrawOrderId)
+{
+    m_withdrawOrderId = _withdrawOrderId;
+    m_withdrawOrderIdHasBeenSet = true;
+}
+
+bool ApplyWithdrawalRequest::WithdrawOrderIdHasBeenSet() const
+{
+    return m_withdrawOrderIdHasBeenSet;
 }
 
 

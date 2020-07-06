@@ -168,6 +168,78 @@ namespace TencentCloud
                      */
                     bool IsAsyncHasBeenSet() const;
 
+                    /**
+                     * 获取是否展开耦合算式中的竖式计算
+                     * @return EnableDispRelatedVertical 是否展开耦合算式中的竖式计算
+                     */
+                    bool GetEnableDispRelatedVertical() const;
+
+                    /**
+                     * 设置是否展开耦合算式中的竖式计算
+                     * @param EnableDispRelatedVertical 是否展开耦合算式中的竖式计算
+                     */
+                    void SetEnableDispRelatedVertical(const bool& _enableDispRelatedVertical);
+
+                    /**
+                     * 判断参数 EnableDispRelatedVertical 是否已赋值
+                     * @return EnableDispRelatedVertical 是否已赋值
+                     */
+                    bool EnableDispRelatedVerticalHasBeenSet() const;
+
+                    /**
+                     * 获取是否展示竖式算式的中间结果和格式控制字符
+                     * @return EnableDispMidresult 是否展示竖式算式的中间结果和格式控制字符
+                     */
+                    bool GetEnableDispMidresult() const;
+
+                    /**
+                     * 设置是否展示竖式算式的中间结果和格式控制字符
+                     * @param EnableDispMidresult 是否展示竖式算式的中间结果和格式控制字符
+                     */
+                    void SetEnableDispMidresult(const bool& _enableDispMidresult);
+
+                    /**
+                     * 判断参数 EnableDispMidresult 是否已赋值
+                     * @return EnableDispMidresult 是否已赋值
+                     */
+                    bool EnableDispMidresultHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启pdf识别，默认开启
+                     * @return EnablePdfRecognize 是否开启pdf识别，默认开启
+                     */
+                    bool GetEnablePdfRecognize() const;
+
+                    /**
+                     * 设置是否开启pdf识别，默认开启
+                     * @param EnablePdfRecognize 是否开启pdf识别，默认开启
+                     */
+                    void SetEnablePdfRecognize(const bool& _enablePdfRecognize);
+
+                    /**
+                     * 判断参数 EnablePdfRecognize 是否已赋值
+                     * @return EnablePdfRecognize 是否已赋值
+                     */
+                    bool EnablePdfRecognizeHasBeenSet() const;
+
+                    /**
+                     * 获取pdf页码，从0开始，默认为0
+                     * @return PdfPageIndex pdf页码，从0开始，默认为0
+                     */
+                    int64_t GetPdfPageIndex() const;
+
+                    /**
+                     * 设置pdf页码，从0开始，默认为0
+                     * @param PdfPageIndex pdf页码，从0开始，默认为0
+                     */
+                    void SetPdfPageIndex(const int64_t& _pdfPageIndex);
+
+                    /**
+                     * 判断参数 PdfPageIndex 是否已赋值
+                     * @return PdfPageIndex 是否已赋值
+                     */
+                    bool PdfPageIndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +283,30 @@ namespace TencentCloud
                      */
                     int64_t m_isAsync;
                     bool m_isAsyncHasBeenSet;
+
+                    /**
+                     * 是否展开耦合算式中的竖式计算
+                     */
+                    bool m_enableDispRelatedVertical;
+                    bool m_enableDispRelatedVerticalHasBeenSet;
+
+                    /**
+                     * 是否展示竖式算式的中间结果和格式控制字符
+                     */
+                    bool m_enableDispMidresult;
+                    bool m_enableDispMidresultHasBeenSet;
+
+                    /**
+                     * 是否开启pdf识别，默认开启
+                     */
+                    bool m_enablePdfRecognize;
+                    bool m_enablePdfRecognizeHasBeenSet;
+
+                    /**
+                     * pdf页码，从0开始，默认为0
+                     */
+                    int64_t m_pdfPageIndex;
+                    bool m_pdfPageIndexHasBeenSet;
 
                 };
             }

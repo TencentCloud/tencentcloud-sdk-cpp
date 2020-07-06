@@ -23,7 +23,12 @@ using namespace std;
 
 CacheKey::CacheKey() :
     m_fullUrlCacheHasBeenSet(false),
-    m_ignoreCaseHasBeenSet(false)
+    m_ignoreCaseHasBeenSet(false),
+    m_queryStringHasBeenSet(false),
+    m_cookieHasBeenSet(false),
+    m_headerHasBeenSet(false),
+    m_cacheTagHasBeenSet(false),
+    m_schemeHasBeenSet(false)
 {
 }
 
@@ -52,6 +57,91 @@ CoreInternalOutcome CacheKey::Deserialize(const Value &value)
         m_ignoreCaseHasBeenSet = true;
     }
 
+    if (value.HasMember("QueryString") && !value["QueryString"].IsNull())
+    {
+        if (!value["QueryString"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CacheKey.QueryString` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_queryString.Deserialize(value["QueryString"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_queryStringHasBeenSet = true;
+    }
+
+    if (value.HasMember("Cookie") && !value["Cookie"].IsNull())
+    {
+        if (!value["Cookie"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CacheKey.Cookie` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cookie.Deserialize(value["Cookie"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cookieHasBeenSet = true;
+    }
+
+    if (value.HasMember("Header") && !value["Header"].IsNull())
+    {
+        if (!value["Header"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CacheKey.Header` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_header.Deserialize(value["Header"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_headerHasBeenSet = true;
+    }
+
+    if (value.HasMember("CacheTag") && !value["CacheTag"].IsNull())
+    {
+        if (!value["CacheTag"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CacheKey.CacheTag` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cacheTag.Deserialize(value["CacheTag"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cacheTagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Scheme") && !value["Scheme"].IsNull())
+    {
+        if (!value["Scheme"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CacheKey.Scheme` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_scheme.Deserialize(value["Scheme"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_schemeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +163,51 @@ void CacheKey::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "IgnoreCase";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_ignoreCase.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryStringHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QueryString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_queryString.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cookieHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cookie";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_cookie.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_headerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Header";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_header.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cacheTagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CacheTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_cacheTag.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_schemeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Scheme";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_scheme.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -108,5 +243,85 @@ void CacheKey::SetIgnoreCase(const string& _ignoreCase)
 bool CacheKey::IgnoreCaseHasBeenSet() const
 {
     return m_ignoreCaseHasBeenSet;
+}
+
+QueryStringKey CacheKey::GetQueryString() const
+{
+    return m_queryString;
+}
+
+void CacheKey::SetQueryString(const QueryStringKey& _queryString)
+{
+    m_queryString = _queryString;
+    m_queryStringHasBeenSet = true;
+}
+
+bool CacheKey::QueryStringHasBeenSet() const
+{
+    return m_queryStringHasBeenSet;
+}
+
+CookieKey CacheKey::GetCookie() const
+{
+    return m_cookie;
+}
+
+void CacheKey::SetCookie(const CookieKey& _cookie)
+{
+    m_cookie = _cookie;
+    m_cookieHasBeenSet = true;
+}
+
+bool CacheKey::CookieHasBeenSet() const
+{
+    return m_cookieHasBeenSet;
+}
+
+HeaderKey CacheKey::GetHeader() const
+{
+    return m_header;
+}
+
+void CacheKey::SetHeader(const HeaderKey& _header)
+{
+    m_header = _header;
+    m_headerHasBeenSet = true;
+}
+
+bool CacheKey::HeaderHasBeenSet() const
+{
+    return m_headerHasBeenSet;
+}
+
+CacheTagKey CacheKey::GetCacheTag() const
+{
+    return m_cacheTag;
+}
+
+void CacheKey::SetCacheTag(const CacheTagKey& _cacheTag)
+{
+    m_cacheTag = _cacheTag;
+    m_cacheTagHasBeenSet = true;
+}
+
+bool CacheKey::CacheTagHasBeenSet() const
+{
+    return m_cacheTagHasBeenSet;
+}
+
+SchemeKey CacheKey::GetScheme() const
+{
+    return m_scheme;
+}
+
+void CacheKey::SetScheme(const SchemeKey& _scheme)
+{
+    m_scheme = _scheme;
+    m_schemeHasBeenSet = true;
+}
+
+bool CacheKey::SchemeHasBeenSet() const
+{
+    return m_schemeHasBeenSet;
 }
 

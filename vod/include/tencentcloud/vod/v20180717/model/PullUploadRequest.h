@@ -43,17 +43,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要拉取的媒体 URL，暂不支持拉取 HLS 和 Dash 格式。
+                     * 获取要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。
 支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。
-                     * @return MediaUrl 要拉取的媒体 URL，暂不支持拉取 HLS 和 Dash 格式。
+                     * @return MediaUrl 要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。
 支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。
                      */
                     std::string GetMediaUrl() const;
 
                     /**
-                     * 设置要拉取的媒体 URL，暂不支持拉取 HLS 和 Dash 格式。
+                     * 设置要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。
 支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。
-                     * @param MediaUrl 要拉取的媒体 URL，暂不支持拉取 HLS 和 Dash 格式。
+                     * @param MediaUrl 要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。
 支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。
                      */
                     void SetMediaUrl(const std::string& _mediaUrl);
@@ -244,10 +244,28 @@ namespace TencentCloud
                      */
                     bool SubAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。
+                     * @return SourceContext 来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。
+                     */
+                    std::string GetSourceContext() const;
+
+                    /**
+                     * 设置来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。
+                     * @param SourceContext 来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。
+                     */
+                    void SetSourceContext(const std::string& _sourceContext);
+
+                    /**
+                     * 判断参数 SourceContext 是否已赋值
+                     * @return SourceContext 是否已赋值
+                     */
+                    bool SourceContextHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 要拉取的媒体 URL，暂不支持拉取 HLS 和 Dash 格式。
+                     * 要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。
 支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。
                      */
                     std::string m_mediaUrl;
@@ -312,6 +330,12 @@ namespace TencentCloud
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * 来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。
+                     */
+                    std::string m_sourceContext;
+                    bool m_sourceContextHasBeenSet;
 
                 };
             }

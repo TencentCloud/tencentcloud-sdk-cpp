@@ -169,7 +169,7 @@ namespace TencentCloud
                 ResumeOnlineRecordOutcomeCallable ResumeOnlineRecordCallable(const Model::ResumeOnlineRecordRequest& request);
 
                 /**
-                 *设置实时录制回调地址
+                 *设置实时录制回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40258
                  * @param req SetOnlineRecordCallbackRequest
                  * @return SetOnlineRecordCallbackOutcome
                  */
@@ -178,7 +178,7 @@ namespace TencentCloud
                 SetOnlineRecordCallbackOutcomeCallable SetOnlineRecordCallbackCallable(const Model::SetOnlineRecordCallbackRequest& request);
 
                 /**
-                 *设置实时录制回调鉴权密钥
+                 *设置实时录制回调鉴权密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257
                  * @param req SetOnlineRecordCallbackKeyRequest
                  * @return SetOnlineRecordCallbackKeyOutcome
                  */
@@ -187,7 +187,7 @@ namespace TencentCloud
                 SetOnlineRecordCallbackKeyOutcomeCallable SetOnlineRecordCallbackKeyCallable(const Model::SetOnlineRecordCallbackKeyRequest& request);
 
                 /**
-                 *设置文档转码回调地址
+                 *设置文档转码回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260
                  * @param req SetTranscodeCallbackRequest
                  * @return SetTranscodeCallbackOutcome
                  */
@@ -196,7 +196,7 @@ namespace TencentCloud
                 SetTranscodeCallbackOutcomeCallable SetTranscodeCallbackCallable(const Model::SetTranscodeCallbackRequest& request);
 
                 /**
-                 *设置文档转码回调鉴权密钥
+                 *设置文档转码回调鉴权密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257
                  * @param req SetTranscodeCallbackKeyRequest
                  * @return SetTranscodeCallbackKeyOutcome
                  */
