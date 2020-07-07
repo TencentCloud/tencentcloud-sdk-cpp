@@ -151,6 +151,24 @@ namespace TencentCloud
                      */
                     bool ResourceTagsHasBeenSet() const;
 
+                    /**
+                     * 获取集群是否开启IPv6功能
+                     * @return Ipv6Enable 集群是否开启IPv6功能
+                     */
+                    int64_t GetIpv6Enable() const;
+
+                    /**
+                     * 设置集群是否开启IPv6功能
+                     * @param Ipv6Enable 集群是否开启IPv6功能
+                     */
+                    void SetIpv6Enable(const int64_t& _ipv6Enable);
+
+                    /**
+                     * 判断参数 Ipv6Enable 是否已赋值
+                     * @return Ipv6Enable 是否已赋值
+                     */
+                    bool Ipv6EnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +206,12 @@ namespace TencentCloud
                      */
                     std::vector<TagInfoUnit> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * 集群是否开启IPv6功能
+                     */
+                    int64_t m_ipv6Enable;
+                    bool m_ipv6EnableHasBeenSet;
 
                 };
             }

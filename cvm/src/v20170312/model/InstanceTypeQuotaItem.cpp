@@ -38,7 +38,10 @@ InstanceTypeQuotaItem::InstanceTypeQuotaItem() :
     m_instanceBandwidthHasBeenSet(false),
     m_instancePpsHasBeenSet(false),
     m_storageBlockAmountHasBeenSet(false),
-    m_cpuTypeHasBeenSet(false)
+    m_cpuTypeHasBeenSet(false),
+    m_gpuHasBeenSet(false),
+    m_fpgaHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -241,6 +244,36 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const Value &value)
         m_cpuTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Gpu") && !value["Gpu"].IsNull())
+    {
+        if (!value["Gpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Gpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpu = value["Gpu"].GetInt64();
+        m_gpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("Fpga") && !value["Fpga"].IsNull())
+    {
+        if (!value["Fpga"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Fpga` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fpga = value["Fpga"].GetInt64();
+        m_fpgaHasBeenSet = true;
+    }
+
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -391,6 +424,30 @@ void InstanceTypeQuotaItem::ToJsonObject(Value &value, Document::AllocatorType& 
         string key = "CpuType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_cpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Gpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gpu, allocator);
+    }
+
+    if (m_fpgaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Fpga";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fpga, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -666,5 +723,53 @@ void InstanceTypeQuotaItem::SetCpuType(const string& _cpuType)
 bool InstanceTypeQuotaItem::CpuTypeHasBeenSet() const
 {
     return m_cpuTypeHasBeenSet;
+}
+
+int64_t InstanceTypeQuotaItem::GetGpu() const
+{
+    return m_gpu;
+}
+
+void InstanceTypeQuotaItem::SetGpu(const int64_t& _gpu)
+{
+    m_gpu = _gpu;
+    m_gpuHasBeenSet = true;
+}
+
+bool InstanceTypeQuotaItem::GpuHasBeenSet() const
+{
+    return m_gpuHasBeenSet;
+}
+
+int64_t InstanceTypeQuotaItem::GetFpga() const
+{
+    return m_fpga;
+}
+
+void InstanceTypeQuotaItem::SetFpga(const int64_t& _fpga)
+{
+    m_fpga = _fpga;
+    m_fpgaHasBeenSet = true;
+}
+
+bool InstanceTypeQuotaItem::FpgaHasBeenSet() const
+{
+    return m_fpgaHasBeenSet;
+}
+
+string InstanceTypeQuotaItem::GetRemark() const
+{
+    return m_remark;
+}
+
+void InstanceTypeQuotaItem::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool InstanceTypeQuotaItem::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 

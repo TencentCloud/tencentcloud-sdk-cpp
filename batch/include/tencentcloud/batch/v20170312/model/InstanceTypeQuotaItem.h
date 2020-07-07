@@ -363,6 +363,60 @@ namespace TencentCloud
                      */
                     bool CpuTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例的GPU数量。
+                     * @return Gpu 实例的GPU数量。
+                     */
+                    int64_t GetGpu() const;
+
+                    /**
+                     * 设置实例的GPU数量。
+                     * @param Gpu 实例的GPU数量。
+                     */
+                    void SetGpu(const int64_t& _gpu);
+
+                    /**
+                     * 判断参数 Gpu 是否已赋值
+                     * @return Gpu 是否已赋值
+                     */
+                    bool GpuHasBeenSet() const;
+
+                    /**
+                     * 获取实例的FPGA数量。
+                     * @return Fpga 实例的FPGA数量。
+                     */
+                    int64_t GetFpga() const;
+
+                    /**
+                     * 设置实例的FPGA数量。
+                     * @param Fpga 实例的FPGA数量。
+                     */
+                    void SetFpga(const int64_t& _fpga);
+
+                    /**
+                     * 判断参数 Fpga 是否已赋值
+                     * @return Fpga 是否已赋值
+                     */
+                    bool FpgaHasBeenSet() const;
+
+                    /**
+                     * 获取实例备注信息。
+                     * @return Remark 实例备注信息。
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置实例备注信息。
+                     * @param Remark 实例备注信息。
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -468,6 +522,24 @@ namespace TencentCloud
                      */
                     std::string m_cpuType;
                     bool m_cpuTypeHasBeenSet;
+
+                    /**
+                     * 实例的GPU数量。
+                     */
+                    int64_t m_gpu;
+                    bool m_gpuHasBeenSet;
+
+                    /**
+                     * 实例的FPGA数量。
+                     */
+                    int64_t m_fpga;
+                    bool m_fpgaHasBeenSet;
+
+                    /**
+                     * 实例备注信息。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                 };
             }

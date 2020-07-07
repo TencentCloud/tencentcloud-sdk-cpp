@@ -115,6 +115,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用Ipv6
+                     * @return Ipv6Enable 是否启用Ipv6
+                     */
+                    int64_t GetIpv6Enable() const;
+
+                    /**
+                     * 设置是否启用Ipv6
+                     * @param Ipv6Enable 是否启用Ipv6
+                     */
+                    void SetIpv6Enable(const int64_t& _ipv6Enable);
+
+                    /**
+                     * 判断参数 Ipv6Enable 是否已赋值
+                     * @return Ipv6Enable 是否已赋值
+                     */
+                    bool Ipv6EnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +158,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 是否启用Ipv6
+                     */
+                    int64_t m_ipv6Enable;
+                    bool m_ipv6EnableHasBeenSet;
 
                 };
             }

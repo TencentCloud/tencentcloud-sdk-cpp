@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool RegionIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持ipv6，0:不支持，1:支持
+                     * @return Ipv6Enable 是否支持ipv6，0:不支持，1:支持
+                     */
+                    uint64_t GetIpv6Enable() const;
+
+                    /**
+                     * 设置是否支持ipv6，0:不支持，1:支持
+                     * @param Ipv6Enable 是否支持ipv6，0:不支持，1:支持
+                     */
+                    void SetIpv6Enable(const uint64_t& _ipv6Enable);
+
+                    /**
+                     * 判断参数 Ipv6Enable 是否已赋值
+                     * @return Ipv6Enable 是否已赋值
+                     */
+                    bool Ipv6EnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     uint64_t m_regionId;
                     bool m_regionIdHasBeenSet;
+
+                    /**
+                     * 是否支持ipv6，0:不支持，1:支持
+                     */
+                    uint64_t m_ipv6Enable;
+                    bool m_ipv6EnableHasBeenSet;
 
                 };
             }

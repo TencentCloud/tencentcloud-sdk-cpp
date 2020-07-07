@@ -143,6 +143,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeProjectSecurityGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRoGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRoGroupsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeRoMinScaleRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeRoMinScaleResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackRangeTimeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackRangeTimeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackTaskDetailRequest.h>
@@ -423,6 +425,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRoGroupsResponse> DescribeRoGroupsOutcome;
                 typedef std::future<DescribeRoGroupsOutcome> DescribeRoGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeRoGroupsRequest&, DescribeRoGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRoMinScaleResponse> DescribeRoMinScaleOutcome;
+                typedef std::future<DescribeRoMinScaleOutcome> DescribeRoMinScaleOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeRoMinScaleRequest&, DescribeRoMinScaleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoMinScaleAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRollbackRangeTimeResponse> DescribeRollbackRangeTimeOutcome;
                 typedef std::future<DescribeRollbackRangeTimeOutcome> DescribeRollbackRangeTimeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeRollbackRangeTimeRequest&, DescribeRollbackRangeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackRangeTimeAsyncHandler;
@@ -1118,6 +1123,15 @@ namespace TencentCloud
                 DescribeRoGroupsOutcome DescribeRoGroups(const Model::DescribeRoGroupsRequest &request);
                 void DescribeRoGroupsAsync(const Model::DescribeRoGroupsRequest& request, const DescribeRoGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRoGroupsOutcomeCallable DescribeRoGroupsCallable(const Model::DescribeRoGroupsRequest& request);
+
+                /**
+                 *本接口(DescribeRoMinScale)用于获取只读实例购买、升级时的最小规格。
+                 * @param req DescribeRoMinScaleRequest
+                 * @return DescribeRoMinScaleOutcome
+                 */
+                DescribeRoMinScaleOutcome DescribeRoMinScale(const Model::DescribeRoMinScaleRequest &request);
+                void DescribeRoMinScaleAsync(const Model::DescribeRoMinScaleRequest& request, const DescribeRoMinScaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoMinScaleOutcomeCallable DescribeRoMinScaleCallable(const Model::DescribeRoMinScaleRequest& request);
 
                 /**
                  *本接口(DescribeRollbackRangeTime)用于查询云数据库实例可回档的时间范围。

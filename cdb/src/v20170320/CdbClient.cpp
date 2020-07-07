@@ -2620,6 +2620,49 @@ CdbClient::DescribeRoGroupsOutcomeCallable CdbClient::DescribeRoGroupsCallable(c
     return task->get_future();
 }
 
+CdbClient::DescribeRoMinScaleOutcome CdbClient::DescribeRoMinScale(const DescribeRoMinScaleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoMinScale");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoMinScaleResponse rsp = DescribeRoMinScaleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoMinScaleOutcome(rsp);
+        else
+            return DescribeRoMinScaleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoMinScaleOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeRoMinScaleAsync(const DescribeRoMinScaleRequest& request, const DescribeRoMinScaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoMinScale(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeRoMinScaleOutcomeCallable CdbClient::DescribeRoMinScaleCallable(const DescribeRoMinScaleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoMinScaleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoMinScale(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeRollbackRangeTimeOutcome CdbClient::DescribeRollbackRangeTime(const DescribeRollbackRangeTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRollbackRangeTime");

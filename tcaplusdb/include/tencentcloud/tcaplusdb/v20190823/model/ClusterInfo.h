@@ -302,6 +302,28 @@ namespace TencentCloud
                      */
                     bool OldPasswordExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取TcaplusDB SDK连接参数，接入ipv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiAccessIpv6 TcaplusDB SDK连接参数，接入ipv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApiAccessIpv6() const;
+
+                    /**
+                     * 设置TcaplusDB SDK连接参数，接入ipv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApiAccessIpv6 TcaplusDB SDK连接参数，接入ipv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApiAccessIpv6(const std::string& _apiAccessIpv6);
+
+                    /**
+                     * 判断参数 ApiAccessIpv6 是否已赋值
+                     * @return ApiAccessIpv6 是否已赋值
+                     */
+                    bool ApiAccessIpv6HasBeenSet() const;
+
                 private:
 
                     /**
@@ -388,6 +410,13 @@ namespace TencentCloud
                      */
                     std::string m_oldPasswordExpireTime;
                     bool m_oldPasswordExpireTimeHasBeenSet;
+
+                    /**
+                     * TcaplusDB SDK连接参数，接入ipv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apiAccessIpv6;
+                    bool m_apiAccessIpv6HasBeenSet;
 
                 };
             }

@@ -175,17 +175,17 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取策略关联操作者主张号
+                     * 获取策略关联操作者主帐号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperateOwnerUin 策略关联操作者主张号
+                     * @return OperateOwnerUin 策略关联操作者主帐号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOperateOwnerUin() const;
 
                     /**
-                     * 设置策略关联操作者主张号
+                     * 设置策略关联操作者主帐号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperateOwnerUin 策略关联操作者主张号
+                     * @param OperateOwnerUin 策略关联操作者主帐号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOperateOwnerUin(const std::string& _operateOwnerUin);
@@ -328,7 +328,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 策略关联操作者主张号
+                     * 策略关联操作者主帐号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operateOwnerUin;

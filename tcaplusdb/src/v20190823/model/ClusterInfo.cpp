@@ -35,7 +35,8 @@ ClusterInfo::ClusterInfo() :
     m_apiAccessIdHasBeenSet(false),
     m_apiAccessIpHasBeenSet(false),
     m_apiAccessPortHasBeenSet(false),
-    m_oldPasswordExpireTimeHasBeenSet(false)
+    m_oldPasswordExpireTimeHasBeenSet(false),
+    m_apiAccessIpv6HasBeenSet(false)
 {
 }
 
@@ -184,6 +185,16 @@ CoreInternalOutcome ClusterInfo::Deserialize(const Value &value)
         m_oldPasswordExpireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApiAccessIpv6") && !value["ApiAccessIpv6"].IsNull())
+    {
+        if (!value["ApiAccessIpv6"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInfo.ApiAccessIpv6` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiAccessIpv6 = string(value["ApiAccessIpv6"].GetString());
+        m_apiAccessIpv6HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +312,14 @@ void ClusterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "OldPasswordExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_oldPasswordExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiAccessIpv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApiAccessIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_apiAccessIpv6.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -528,5 +547,21 @@ void ClusterInfo::SetOldPasswordExpireTime(const string& _oldPasswordExpireTime)
 bool ClusterInfo::OldPasswordExpireTimeHasBeenSet() const
 {
     return m_oldPasswordExpireTimeHasBeenSet;
+}
+
+string ClusterInfo::GetApiAccessIpv6() const
+{
+    return m_apiAccessIpv6;
+}
+
+void ClusterInfo::SetApiAccessIpv6(const string& _apiAccessIpv6)
+{
+    m_apiAccessIpv6 = _apiAccessIpv6;
+    m_apiAccessIpv6HasBeenSet = true;
+}
+
+bool ClusterInfo::ApiAccessIpv6HasBeenSet() const
+{
+    return m_apiAccessIpv6HasBeenSet;
 }
 

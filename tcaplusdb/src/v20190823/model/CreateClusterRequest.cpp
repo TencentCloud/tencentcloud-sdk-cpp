@@ -29,7 +29,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_ipv6EnableHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,14 @@ string CreateClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ipv6EnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Enable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ipv6Enable, allocator);
     }
 
 
@@ -197,6 +206,22 @@ void CreateClusterRequest::SetResourceTags(const vector<TagInfoUnit>& _resourceT
 bool CreateClusterRequest::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+int64_t CreateClusterRequest::GetIpv6Enable() const
+{
+    return m_ipv6Enable;
+}
+
+void CreateClusterRequest::SetIpv6Enable(const int64_t& _ipv6Enable)
+{
+    m_ipv6Enable = _ipv6Enable;
+    m_ipv6EnableHasBeenSet = true;
+}
+
+bool CreateClusterRequest::Ipv6EnableHasBeenSet() const
+{
+    return m_ipv6EnableHasBeenSet;
 }
 
 

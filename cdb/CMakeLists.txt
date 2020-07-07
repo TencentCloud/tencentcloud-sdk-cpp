@@ -27,7 +27,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CreateDBImportJobRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDatabasesRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupConfigRequest.h
-  include/tencentcloud/cdb/v20170320/model/RoVipInfo.h
+  include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateAuditRuleResponse.h
   include/tencentcloud/cdb/v20170320/model/StopDBImportJobRequest.h
   include/tencentcloud/cdb/v20170320/model/RoWeightValue.h
@@ -53,6 +53,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DeleteAuditRuleRequest.h
   include/tencentcloud/cdb/v20170320/model/DeleteParamTemplateResponse.h
   include/tencentcloud/cdb/v20170320/model/ParamInfo.h
+  include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDefaultParamsRequest.h
   include/tencentcloud/cdb/v20170320/model/DBSwitchInfo.h
   include/tencentcloud/cdb/v20170320/model/ModifyNameOrDescByDpIdResponse.h
@@ -201,6 +202,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DatabasePrivilege.h
   include/tencentcloud/cdb/v20170320/model/RoGroupAttr.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditConfigResponse.h
+  include/tencentcloud/cdb/v20170320/model/RoVipInfo.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyAccountDescriptionRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyAccountPasswordRequest.h
@@ -305,7 +307,7 @@ set(cdb_src
   src/v20170320/model/CreateDBImportJobRequest.cpp
   src/v20170320/model/DescribeDatabasesRequest.cpp
   src/v20170320/model/DescribeBackupConfigRequest.cpp
-  src/v20170320/model/RoVipInfo.cpp
+  src/v20170320/model/DescribeRoMinScaleResponse.cpp
   src/v20170320/model/CreateAuditRuleResponse.cpp
   src/v20170320/model/StopDBImportJobRequest.cpp
   src/v20170320/model/RoWeightValue.cpp
@@ -331,6 +333,7 @@ set(cdb_src
   src/v20170320/model/DeleteAuditRuleRequest.cpp
   src/v20170320/model/DeleteParamTemplateResponse.cpp
   src/v20170320/model/ParamInfo.cpp
+  src/v20170320/model/DescribeRoMinScaleRequest.cpp
   src/v20170320/model/DescribeDefaultParamsRequest.cpp
   src/v20170320/model/DBSwitchInfo.cpp
   src/v20170320/model/ModifyNameOrDescByDpIdResponse.cpp
@@ -479,6 +482,7 @@ set(cdb_src
   src/v20170320/model/DatabasePrivilege.cpp
   src/v20170320/model/RoGroupAttr.cpp
   src/v20170320/model/ModifyAuditConfigResponse.cpp
+  src/v20170320/model/RoVipInfo.cpp
   src/v20170320/model/ModifyDBInstanceNameResponse.cpp
   src/v20170320/model/ModifyAccountDescriptionRequest.cpp
   src/v20170320/model/ModifyAccountPasswordRequest.cpp

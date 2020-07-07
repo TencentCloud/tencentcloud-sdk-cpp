@@ -24,7 +24,8 @@ using namespace std;
 RegionInfo::RegionInfo() :
     m_regionNameHasBeenSet(false),
     m_regionAbbrHasBeenSet(false),
-    m_regionIdHasBeenSet(false)
+    m_regionIdHasBeenSet(false),
+    m_ipv6EnableHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome RegionInfo::Deserialize(const Value &value)
         m_regionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6Enable") && !value["Ipv6Enable"].IsNull())
+    {
+        if (!value["Ipv6Enable"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `RegionInfo.Ipv6Enable` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6Enable = value["Ipv6Enable"].GetUint64();
+        m_ipv6EnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void RegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);
+    }
+
+    if (m_ipv6EnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Enable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv6Enable, allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void RegionInfo::SetRegionId(const uint64_t& _regionId)
 bool RegionInfo::RegionIdHasBeenSet() const
 {
     return m_regionIdHasBeenSet;
+}
+
+uint64_t RegionInfo::GetIpv6Enable() const
+{
+    return m_ipv6Enable;
+}
+
+void RegionInfo::SetIpv6Enable(const uint64_t& _ipv6Enable)
+{
+    m_ipv6Enable = _ipv6Enable;
+    m_ipv6EnableHasBeenSet = true;
+}
+
+bool RegionInfo::Ipv6EnableHasBeenSet() const
+{
+    return m_ipv6EnableHasBeenSet;
 }
 

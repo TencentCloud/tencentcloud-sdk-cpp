@@ -27,7 +27,8 @@ DescribeClustersRequest::DescribeClustersRequest() :
     m_clusterIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_ipv6EnableHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,14 @@ string DescribeClustersRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_ipv6EnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Enable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ipv6Enable, allocator);
     }
 
 
@@ -152,6 +161,22 @@ void DescribeClustersRequest::SetLimit(const int64_t& _limit)
 bool DescribeClustersRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeClustersRequest::GetIpv6Enable() const
+{
+    return m_ipv6Enable;
+}
+
+void DescribeClustersRequest::SetIpv6Enable(const int64_t& _ipv6Enable)
+{
+    m_ipv6Enable = _ipv6Enable;
+    m_ipv6EnableHasBeenSet = true;
+}
+
+bool DescribeClustersRequest::Ipv6EnableHasBeenSet() const
+{
+    return m_ipv6EnableHasBeenSet;
 }
 
 

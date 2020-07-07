@@ -39,6 +39,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductRequest.h>
@@ -65,6 +67,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetStudioProductListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyProjectRequest.h>
@@ -113,6 +117,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLoRaGatewayResponse> DeleteLoRaGatewayOutcome;
+                typedef std::future<DeleteLoRaGatewayOutcome> DeleteLoRaGatewayOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteLoRaGatewayRequest&, DeleteLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoRaGatewayAsyncHandler;
                 typedef Outcome<Error, Model::DeleteProjectResponse> DeleteProjectOutcome;
                 typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteProjectRequest&, DeleteProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
@@ -152,6 +159,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListEventHistoryResponse> ListEventHistoryOutcome;
                 typedef std::future<ListEventHistoryOutcome> ListEventHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListEventHistoryRequest&, ListEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEventHistoryAsyncHandler;
+                typedef Outcome<Error, Model::ModifyLoRaGatewayResponse> ModifyLoRaGatewayOutcome;
+                typedef std::future<ModifyLoRaGatewayOutcome> ModifyLoRaGatewayOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyLoRaGatewayRequest&, ModifyLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoRaGatewayAsyncHandler;
                 typedef Outcome<Error, Model::ModifyModelDefinitionResponse> ModifyModelDefinitionOutcome;
                 typedef std::future<ModifyModelDefinitionOutcome> ModifyModelDefinitionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyModelDefinitionRequest&, ModifyModelDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelDefinitionAsyncHandler;
@@ -241,6 +251,15 @@ namespace TencentCloud
                 DeleteDeviceOutcome DeleteDevice(const Model::DeleteDeviceRequest &request);
                 void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request);
+
+                /**
+                 *删除  LoRa 网关的接口
+                 * @param req DeleteLoRaGatewayRequest
+                 * @return DeleteLoRaGatewayOutcome
+                 */
+                DeleteLoRaGatewayOutcome DeleteLoRaGateway(const Model::DeleteLoRaGatewayRequest &request);
+                void DeleteLoRaGatewayAsync(const Model::DeleteLoRaGatewayRequest& request, const DeleteLoRaGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLoRaGatewayOutcomeCallable DeleteLoRaGatewayCallable(const Model::DeleteLoRaGatewayRequest& request);
 
                 /**
                  *提供删除某个项目的能力
@@ -358,6 +377,15 @@ namespace TencentCloud
                 ListEventHistoryOutcome ListEventHistory(const Model::ListEventHistoryRequest &request);
                 void ListEventHistoryAsync(const Model::ListEventHistoryRequest& request, const ListEventHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListEventHistoryOutcomeCallable ListEventHistoryCallable(const Model::ListEventHistoryRequest& request);
+
+                /**
+                 *修改 LoRa 网关信息
+                 * @param req ModifyLoRaGatewayRequest
+                 * @return ModifyLoRaGatewayOutcome
+                 */
+                ModifyLoRaGatewayOutcome ModifyLoRaGateway(const Model::ModifyLoRaGatewayRequest &request);
+                void ModifyLoRaGatewayAsync(const Model::ModifyLoRaGatewayRequest& request, const ModifyLoRaGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLoRaGatewayOutcomeCallable ModifyLoRaGatewayCallable(const Model::ModifyLoRaGatewayRequest& request);
 
                 /**
                  *提供修改产品的数据模板的能力
