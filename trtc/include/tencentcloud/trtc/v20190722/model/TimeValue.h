@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间
-                     * @return Time 时间
+                     * 获取时间，unix时间戳（1590065877s)
+                     * @return Time 时间，unix时间戳（1590065877s)
                      */
                     uint64_t GetTime() const;
 
                     /**
-                     * 设置时间
-                     * @param Time 时间
+                     * 设置时间，unix时间戳（1590065877s)
+                     * @param Time 时间，unix时间戳（1590065877s)
                      */
                     void SetTime(const uint64_t& _time);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取当前时间取值，unix时间戳
-                     * @return Value 当前时间取值，unix时间戳
+                     * 获取当前时间返回参数取值，如（bigvCapFps在1590065877取值为0，则Value：0 ）
+                     * @return Value 当前时间返回参数取值，如（bigvCapFps在1590065877取值为0，则Value：0 ）
                      */
                     double GetValue() const;
 
                     /**
-                     * 设置当前时间取值，unix时间戳
-                     * @param Value 当前时间取值，unix时间戳
+                     * 设置当前时间返回参数取值，如（bigvCapFps在1590065877取值为0，则Value：0 ）
+                     * @param Value 当前时间返回参数取值，如（bigvCapFps在1590065877取值为0，则Value：0 ）
                      */
                     void SetValue(const double& _value);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时间
+                     * 时间，unix时间戳（1590065877s)
                      */
                     uint64_t m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 当前时间取值，unix时间戳
+                     * 当前时间返回参数取值，如（bigvCapFps在1590065877取值为0，则Value：0 ）
                      */
                     double m_value;
                     bool m_valueHasBeenSet;

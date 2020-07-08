@@ -28,7 +28,8 @@ NodeInfo::NodeInfo() :
     m_diskTypeHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
     m_localDiskInfoHasBeenSet(false),
-    m_diskCountHasBeenSet(false)
+    m_diskCountHasBeenSet(false),
+    m_diskEncryptHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,16 @@ CoreInternalOutcome NodeInfo::Deserialize(const Value &value)
         m_diskCountHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskEncrypt") && !value["DiskEncrypt"].IsNull())
+    {
+        if (!value["DiskEncrypt"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `NodeInfo.DiskEncrypt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskEncrypt = value["DiskEncrypt"].GetUint64();
+        m_diskEncryptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -176,6 +187,14 @@ void NodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "DiskCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskCount, allocator);
+    }
+
+    if (m_diskEncryptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskEncrypt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskEncrypt, allocator);
     }
 
 }
@@ -291,5 +310,21 @@ void NodeInfo::SetDiskCount(const uint64_t& _diskCount)
 bool NodeInfo::DiskCountHasBeenSet() const
 {
     return m_diskCountHasBeenSet;
+}
+
+uint64_t NodeInfo::GetDiskEncrypt() const
+{
+    return m_diskEncrypt;
+}
+
+void NodeInfo::SetDiskEncrypt(const uint64_t& _diskEncrypt)
+{
+    m_diskEncrypt = _diskEncrypt;
+    m_diskEncryptHasBeenSet = true;
+}
+
+bool NodeInfo::DiskEncryptHasBeenSet() const
+{
+    return m_diskEncryptHasBeenSet;
 }
 

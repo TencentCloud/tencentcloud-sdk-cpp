@@ -103,9 +103,11 @@ namespace TencentCloud
 
                     /**
                      * 获取状态。包含以下取值：
+<li> 空字符串：初始化中</li>
 <li> NORMAL：正常</li>
 <li> ISOLATE：隔离</li>
                      * @return Status 状态。包含以下取值：
+<li> 空字符串：初始化中</li>
 <li> NORMAL：正常</li>
 <li> ISOLATE：隔离</li>
                      */
@@ -113,9 +115,11 @@ namespace TencentCloud
 
                     /**
                      * 设置状态。包含以下取值：
+<li> 空字符串：初始化中</li>
 <li> NORMAL：正常</li>
 <li> ISOLATE：隔离</li>
                      * @param Status 状态。包含以下取值：
+<li> 空字符串：初始化中</li>
 <li> NORMAL：正常</li>
 <li> ISOLATE：隔离</li>
                      */
@@ -339,6 +343,7 @@ namespace TencentCloud
 
                     /**
                      * 状态。包含以下取值：
+<li> 空字符串：初始化中</li>
 <li> NORMAL：正常</li>
 <li> ISOLATE：隔离</li>
                      */

@@ -43,7 +43,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_kibanaPublicAccessHasBeenSet(false),
     m_kibanaPrivateAccessHasBeenSet(false),
     m_basicSecurityTypeHasBeenSet(false),
-    m_kibanaPrivatePortHasBeenSet(false)
+    m_kibanaPrivatePortHasBeenSet(false),
+    m_scaleTypeHasBeenSet(false)
 {
 }
 
@@ -222,6 +223,14 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "KibanaPrivatePort";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_kibanaPrivatePort, allocator);
+    }
+
+    if (m_scaleTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ScaleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scaleType, allocator);
     }
 
 
@@ -550,6 +559,22 @@ void UpdateInstanceRequest::SetKibanaPrivatePort(const uint64_t& _kibanaPrivateP
 bool UpdateInstanceRequest::KibanaPrivatePortHasBeenSet() const
 {
     return m_kibanaPrivatePortHasBeenSet;
+}
+
+int64_t UpdateInstanceRequest::GetScaleType() const
+{
+    return m_scaleType;
+}
+
+void UpdateInstanceRequest::SetScaleType(const int64_t& _scaleType)
+{
+    m_scaleType = _scaleType;
+    m_scaleTypeHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::ScaleTypeHasBeenSet() const
+{
+    return m_scaleTypeHasBeenSet;
 }
 
 

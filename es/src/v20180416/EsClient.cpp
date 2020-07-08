@@ -341,6 +341,49 @@ EsClient::UpdateInstanceOutcomeCallable EsClient::UpdateInstanceCallable(const U
     return task->get_future();
 }
 
+EsClient::UpdatePluginsOutcome EsClient::UpdatePlugins(const UpdatePluginsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePlugins");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePluginsResponse rsp = UpdatePluginsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePluginsOutcome(rsp);
+        else
+            return UpdatePluginsOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePluginsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpdatePluginsAsync(const UpdatePluginsRequest& request, const UpdatePluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdatePlugins(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::UpdatePluginsOutcomeCallable EsClient::UpdatePluginsCallable(const UpdatePluginsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdatePluginsOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdatePlugins(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::UpgradeInstanceOutcome EsClient::UpgradeInstance(const UpgradeInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "UpgradeInstance");

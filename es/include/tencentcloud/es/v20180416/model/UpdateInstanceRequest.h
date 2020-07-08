@@ -430,6 +430,24 @@ namespace TencentCloud
                      */
                     bool KibanaPrivatePortHasBeenSet() const;
 
+                    /**
+                     * 获取0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启
+                     * @return ScaleType 0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启
+                     */
+                    int64_t GetScaleType() const;
+
+                    /**
+                     * 设置0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启
+                     * @param ScaleType 0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启
+                     */
+                    void SetScaleType(const int64_t& _scaleType);
+
+                    /**
+                     * 判断参数 ScaleType 是否已赋值
+                     * @return ScaleType 是否已赋值
+                     */
+                    bool ScaleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -557,6 +575,12 @@ namespace TencentCloud
                      */
                     uint64_t m_kibanaPrivatePort;
                     bool m_kibanaPrivatePortHasBeenSet;
+
+                    /**
+                     * 0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启
+                     */
+                    int64_t m_scaleType;
+                    bool m_scaleTypeHasBeenSet;
 
                 };
             }

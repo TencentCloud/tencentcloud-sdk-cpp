@@ -79,6 +79,42 @@ namespace TencentCloud
                      */
                     bool ParamListHasBeenSet() const;
 
+                    /**
+                     * 获取模板id，ParamList和TemplateId必须至少传其中之一
+                     * @return TemplateId 模板id，ParamList和TemplateId必须至少传其中之一
+                     */
+                    int64_t GetTemplateId() const;
+
+                    /**
+                     * 设置模板id，ParamList和TemplateId必须至少传其中之一
+                     * @param TemplateId 模板id，ParamList和TemplateId必须至少传其中之一
+                     */
+                    void SetTemplateId(const int64_t& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行；当该值为 1 时，每次只能传一个实例（InstanceIds数量为1）
+                     * @return WaitSwitch 执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行；当该值为 1 时，每次只能传一个实例（InstanceIds数量为1）
+                     */
+                    int64_t GetWaitSwitch() const;
+
+                    /**
+                     * 设置执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行；当该值为 1 时，每次只能传一个实例（InstanceIds数量为1）
+                     * @param WaitSwitch 执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行；当该值为 1 时，每次只能传一个实例（InstanceIds数量为1）
+                     */
+                    void SetWaitSwitch(const int64_t& _waitSwitch);
+
+                    /**
+                     * 判断参数 WaitSwitch 是否已赋值
+                     * @return WaitSwitch 是否已赋值
+                     */
+                    bool WaitSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +128,18 @@ namespace TencentCloud
                      */
                     std::vector<Parameter> m_paramList;
                     bool m_paramListHasBeenSet;
+
+                    /**
+                     * 模板id，ParamList和TemplateId必须至少传其中之一
+                     */
+                    int64_t m_templateId;
+                    bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行；当该值为 1 时，每次只能传一个实例（InstanceIds数量为1）
+                     */
+                    int64_t m_waitSwitch;
+                    bool m_waitSwitchHasBeenSet;
 
                 };
             }

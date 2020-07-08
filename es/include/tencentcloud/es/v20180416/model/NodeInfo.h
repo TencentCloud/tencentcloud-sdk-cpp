@@ -189,6 +189,24 @@ namespace TencentCloud
                      */
                     bool DiskCountHasBeenSet() const;
 
+                    /**
+                     * 获取节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     * @return DiskEncrypt 节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     */
+                    uint64_t GetDiskEncrypt() const;
+
+                    /**
+                     * 设置节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     * @param DiskEncrypt 节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     */
+                    void SetDiskEncrypt(const uint64_t& _diskEncrypt);
+
+                    /**
+                     * 判断参数 DiskEncrypt 是否已赋值
+                     * @return DiskEncrypt 是否已赋值
+                     */
+                    bool DiskEncryptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +254,12 @@ namespace TencentCloud
                      */
                     uint64_t m_diskCount;
                     bool m_diskCountHasBeenSet;
+
+                    /**
+                     * 节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     */
+                    uint64_t m_diskEncrypt;
+                    bool m_diskEncryptHasBeenSet;
 
                 };
             }

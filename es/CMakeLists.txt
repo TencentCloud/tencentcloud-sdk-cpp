@@ -39,12 +39,14 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DeleteInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstancesResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsResponse.h
+  include/tencentcloud/es/v20180416/model/UpdatePluginsResponse.h
   include/tencentcloud/es/v20180416/model/RestartInstanceRequest.h
   include/tencentcloud/es/v20180416/model/ZoneDetail.h
   include/tencentcloud/es/v20180416/model/DescribeInstancesRequest.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/EsDictionaryInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h
+  include/tencentcloud/es/v20180416/model/UpdatePluginsRequest.h
   include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
   include/tencentcloud/es/v20180416/model/EsAcl.h
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
@@ -78,12 +80,14 @@ set(es_src
   src/v20180416/model/DeleteInstanceResponse.cpp
   src/v20180416/model/DescribeInstancesResponse.cpp
   src/v20180416/model/DescribeInstanceLogsResponse.cpp
+  src/v20180416/model/UpdatePluginsResponse.cpp
   src/v20180416/model/RestartInstanceRequest.cpp
   src/v20180416/model/ZoneDetail.cpp
   src/v20180416/model/DescribeInstancesRequest.cpp
   src/v20180416/model/UpdateInstanceRequest.cpp
   src/v20180416/model/EsDictionaryInfo.cpp
   src/v20180416/model/DescribeInstanceOperationsResponse.cpp
+  src/v20180416/model/UpdatePluginsRequest.cpp
   src/v20180416/model/UpgradeLicenseResponse.cpp
   src/v20180416/model/EsAcl.cpp
   src/v20180416/model/MasterNodeInfo.cpp

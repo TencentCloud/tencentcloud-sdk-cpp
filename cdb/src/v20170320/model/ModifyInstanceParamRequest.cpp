@@ -25,7 +25,9 @@ using namespace std;
 
 ModifyInstanceParamRequest::ModifyInstanceParamRequest() :
     m_instanceIdsHasBeenSet(false),
-    m_paramListHasBeenSet(false)
+    m_paramListHasBeenSet(false),
+    m_templateIdHasBeenSet(false),
+    m_waitSwitchHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,22 @@ string ModifyInstanceParamRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_templateId, allocator);
+    }
+
+    if (m_waitSwitchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WaitSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_waitSwitch, allocator);
     }
 
 
@@ -102,6 +120,38 @@ void ModifyInstanceParamRequest::SetParamList(const vector<Parameter>& _paramLis
 bool ModifyInstanceParamRequest::ParamListHasBeenSet() const
 {
     return m_paramListHasBeenSet;
+}
+
+int64_t ModifyInstanceParamRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void ModifyInstanceParamRequest::SetTemplateId(const int64_t& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool ModifyInstanceParamRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
+}
+
+int64_t ModifyInstanceParamRequest::GetWaitSwitch() const
+{
+    return m_waitSwitch;
+}
+
+void ModifyInstanceParamRequest::SetWaitSwitch(const int64_t& _waitSwitch)
+{
+    m_waitSwitch = _waitSwitch;
+    m_waitSwitchHasBeenSet = true;
+}
+
+bool ModifyInstanceParamRequest::WaitSwitchHasBeenSet() const
+{
+    return m_waitSwitchHasBeenSet;
 }
 
 

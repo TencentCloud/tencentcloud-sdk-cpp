@@ -37,6 +37,8 @@
 #include <tencentcloud/es/v20180416/model/RestartInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdatePluginsRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdatePluginsResponse.h>
 #include <tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h>
@@ -76,6 +78,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdateInstanceResponse> UpdateInstanceOutcome;
                 typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateInstanceRequest&, UpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
+                typedef Outcome<Error, Model::UpdatePluginsResponse> UpdatePluginsOutcome;
+                typedef std::future<UpdatePluginsOutcome> UpdatePluginsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdatePluginsRequest&, UpdatePluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePluginsAsyncHandler;
                 typedef Outcome<Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
                 typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
@@ -154,6 +159,15 @@ namespace TencentCloud
                 UpdateInstanceOutcome UpdateInstance(const Model::UpdateInstanceRequest &request);
                 void UpdateInstanceAsync(const Model::UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateInstanceOutcomeCallable UpdateInstanceCallable(const Model::UpdateInstanceRequest& request);
+
+                /**
+                 *变更插件列表
+                 * @param req UpdatePluginsRequest
+                 * @return UpdatePluginsOutcome
+                 */
+                UpdatePluginsOutcome UpdatePlugins(const Model::UpdatePluginsRequest &request);
+                void UpdatePluginsAsync(const Model::UpdatePluginsRequest& request, const UpdatePluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdatePluginsOutcomeCallable UpdatePluginsCallable(const Model::UpdatePluginsRequest& request);
 
                 /**
                  *升级ES集群版本
