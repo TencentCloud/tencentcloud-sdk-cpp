@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cms/v20190321/model/Device.h>
+#include <tencentcloud/cms/v20190321/model/User.h>
 
 
 namespace TencentCloud
@@ -59,6 +61,42 @@ namespace TencentCloud
                      * @return Content 是否已赋值
                      */
                     bool ContentHasBeenSet() const;
+
+                    /**
+                     * 获取设备相关信息
+                     * @return Device 设备相关信息
+                     */
+                    Device GetDevice() const;
+
+                    /**
+                     * 设置设备相关信息
+                     * @param Device 设备相关信息
+                     */
+                    void SetDevice(const Device& _device);
+
+                    /**
+                     * 判断参数 Device 是否已赋值
+                     * @return Device 是否已赋值
+                     */
+                    bool DeviceHasBeenSet() const;
+
+                    /**
+                     * 获取用户相关信息
+                     * @return User 用户相关信息
+                     */
+                    User GetUser() const;
+
+                    /**
+                     * 设置用户相关信息
+                     * @param User 用户相关信息
+                     */
+                    void SetUser(const User& _user);
+
+                    /**
+                     * 判断参数 User 是否已赋值
+                     * @return User 是否已赋值
+                     */
+                    bool UserHasBeenSet() const;
 
                     /**
                      * 获取该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
@@ -121,6 +159,18 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 设备相关信息
+                     */
+                    Device m_device;
+                    bool m_deviceHasBeenSet;
+
+                    /**
+                     * 用户相关信息
+                     */
+                    User m_user;
+                    bool m_userHasBeenSet;
 
                     /**
                      * 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略

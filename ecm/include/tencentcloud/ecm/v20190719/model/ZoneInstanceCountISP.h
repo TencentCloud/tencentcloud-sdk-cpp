@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。
-                     * @return ISP 运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。
+                     * 获取运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。多运营商需要开通白名单，请直接联系腾讯云客服。
+                     * @return ISP 运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。多运营商需要开通白名单，请直接联系腾讯云客服。
                      */
                     std::string GetISP() const;
 
                     /**
-                     * 设置运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。
-                     * @param ISP 运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。
+                     * 设置运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。多运营商需要开通白名单，请直接联系腾讯云客服。
+                     * @param ISP 运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。多运营商需要开通白名单，请直接联系腾讯云客服。
                      */
                     void SetISP(const std::string& _iSP);
 
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。
+                     * 运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。多运营商需要开通白名单，请直接联系腾讯云客服。
                      */
                     std::string m_iSP;
                     bool m_iSPHasBeenSet;

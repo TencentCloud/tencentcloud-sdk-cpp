@@ -259,14 +259,14 @@ namespace TencentCloud
                     bool BankSubAccountNumberHasBeenSet() const;
 
                     /**
-                     * 获取交易手续费
-                     * @return TransFee 交易手续费
+                     * 获取交易手续费，以元为单位
+                     * @return TransFee 交易手续费，以元为单位
                      */
                     std::string GetTransFee() const;
 
                     /**
-                     * 设置交易手续费
-                     * @param TransFee 交易手续费
+                     * 设置交易手续费，以元为单位
+                     * @param TransFee 交易手续费，以元为单位
                      */
                     void SetTransFee(const std::string& _transFee);
 
@@ -531,7 +531,7 @@ namespace TencentCloud
                     bool m_bankSubAccountNumberHasBeenSet;
 
                     /**
-                     * 交易手续费
+                     * 交易手续费，以元为单位
                      */
                     std::string m_transFee;
                     bool m_transFeeHasBeenSet;

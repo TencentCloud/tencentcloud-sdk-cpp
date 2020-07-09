@@ -14,53 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_NLP_V20190408_MODEL_SENTENCESIMILARITYRESPONSE_H_
-#define TENCENTCLOUD_NLP_V20190408_MODEL_SENTENCESIMILARITYRESPONSE_H_
+#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_DELETETOPICSRESPONSE_H_
+#define TENCENTCLOUD_TDMQ_V20200217_MODEL_DELETETOPICSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/TopicRecord.h>
 
 
 namespace TencentCloud
 {
-    namespace Nlp
+    namespace Tdmq
     {
-        namespace V20190408
+        namespace V20200217
         {
             namespace Model
             {
                 /**
-                * SentenceSimilarity返回参数结构体
+                * DeleteTopics返回参数结构体
                 */
-                class SentenceSimilarityResponse : public AbstractModel
+                class DeleteTopicsResponse : public AbstractModel
                 {
                 public:
-                    SentenceSimilarityResponse();
-                    ~SentenceSimilarityResponse() = default;
+                    DeleteTopicsResponse();
+                    ~DeleteTopicsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取两个文本的相似度
-                     * @return Similarity 两个文本的相似度
+                     * 获取被删除的主题数组。
+                     * @return TopicSets 被删除的主题数组。
                      */
-                    double GetSimilarity() const;
+                    std::vector<TopicRecord> GetTopicSets() const;
 
                     /**
-                     * 判断参数 Similarity 是否已赋值
-                     * @return Similarity 是否已赋值
+                     * 判断参数 TopicSets 是否已赋值
+                     * @return TopicSets 是否已赋值
                      */
-                    bool SimilarityHasBeenSet() const;
+                    bool TopicSetsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 两个文本的相似度
+                     * 被删除的主题数组。
                      */
-                    double m_similarity;
-                    bool m_similarityHasBeenSet;
+                    std::vector<TopicRecord> m_topicSets;
+                    bool m_topicSetsHasBeenSet;
 
                 };
             }
@@ -68,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_NLP_V20190408_MODEL_SENTENCESIMILARITYRESPONSE_H_
+#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_DELETETOPICSRESPONSE_H_

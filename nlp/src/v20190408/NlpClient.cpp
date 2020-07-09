@@ -771,49 +771,6 @@ NlpClient::SentenceEmbeddingOutcomeCallable NlpClient::SentenceEmbeddingCallable
     return task->get_future();
 }
 
-NlpClient::SentenceSimilarityOutcome NlpClient::SentenceSimilarity(const SentenceSimilarityRequest &request)
-{
-    auto outcome = MakeRequest(request, "SentenceSimilarity");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SentenceSimilarityResponse rsp = SentenceSimilarityResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SentenceSimilarityOutcome(rsp);
-        else
-            return SentenceSimilarityOutcome(o.GetError());
-    }
-    else
-    {
-        return SentenceSimilarityOutcome(outcome.GetError());
-    }
-}
-
-void NlpClient::SentenceSimilarityAsync(const SentenceSimilarityRequest& request, const SentenceSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SentenceSimilarity(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-NlpClient::SentenceSimilarityOutcomeCallable NlpClient::SentenceSimilarityCallable(const SentenceSimilarityRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<SentenceSimilarityOutcome()>>(
-        [this, request]()
-        {
-            return this->SentenceSimilarity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 NlpClient::SentimentAnalysisOutcome NlpClient::SentimentAnalysis(const SentimentAnalysisRequest &request)
 {
     auto outcome = MakeRequest(request, "SentimentAnalysis");

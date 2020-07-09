@@ -116,9 +116,9 @@ namespace TencentCloud
                     bool PackageTypeHasBeenSet() const;
 
                     /**
-                     * 获取证书办法者名称。
+                     * 获取证书颁发者名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductZhName 证书办法者名称。
+                     * @return ProductZhName 证书颁发者名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProductZhName() const;
@@ -517,7 +517,7 @@ namespace TencentCloud
                     bool m_packageTypeHasBeenSet;
 
                     /**
-                     * 证书办法者名称。
+                     * 证书颁发者名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productZhName;

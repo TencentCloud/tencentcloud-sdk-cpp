@@ -14,22 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/nlp/v20190408/model/SentenceSimilarityResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Nlp::V20190408::Model;
+using namespace TencentCloud::Tdmq::V20200217::Model;
 using namespace rapidjson;
 using namespace std;
 
-SentenceSimilarityResponse::SentenceSimilarityResponse() :
-    m_similarityHasBeenSet(false)
+CreateEnvironmentResponse::CreateEnvironmentResponse() :
+    m_environmentIdHasBeenSet(false),
+    m_msgTTLHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome SentenceSimilarityResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateEnvironmentResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -63,14 +65,34 @@ CoreInternalOutcome SentenceSimilarityResponse::Deserialize(const string &payloa
     }
 
 
-    if (rsp.HasMember("Similarity") && !rsp["Similarity"].IsNull())
+    if (rsp.HasMember("EnvironmentId") && !rsp["EnvironmentId"].IsNull())
     {
-        if (!rsp["Similarity"].IsDouble())
+        if (!rsp["EnvironmentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Similarity` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_similarity = rsp["Similarity"].GetDouble();
-        m_similarityHasBeenSet = true;
+        m_environmentId = string(rsp["EnvironmentId"].GetString());
+        m_environmentIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MsgTTL") && !rsp["MsgTTL"].IsNull())
+    {
+        if (!rsp["MsgTTL"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `MsgTTL` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_msgTTL = rsp["MsgTTL"].GetUint64();
+        m_msgTTLHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Remark") && !rsp["Remark"].IsNull())
+    {
+        if (!rsp["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(rsp["Remark"].GetString());
+        m_remarkHasBeenSet = true;
     }
 
 
@@ -78,14 +100,34 @@ CoreInternalOutcome SentenceSimilarityResponse::Deserialize(const string &payloa
 }
 
 
-double SentenceSimilarityResponse::GetSimilarity() const
+string CreateEnvironmentResponse::GetEnvironmentId() const
 {
-    return m_similarity;
+    return m_environmentId;
 }
 
-bool SentenceSimilarityResponse::SimilarityHasBeenSet() const
+bool CreateEnvironmentResponse::EnvironmentIdHasBeenSet() const
 {
-    return m_similarityHasBeenSet;
+    return m_environmentIdHasBeenSet;
+}
+
+uint64_t CreateEnvironmentResponse::GetMsgTTL() const
+{
+    return m_msgTTL;
+}
+
+bool CreateEnvironmentResponse::MsgTTLHasBeenSet() const
+{
+    return m_msgTTLHasBeenSet;
+}
+
+string CreateEnvironmentResponse::GetRemark() const
+{
+    return m_remark;
+}
+
+bool CreateEnvironmentResponse::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 

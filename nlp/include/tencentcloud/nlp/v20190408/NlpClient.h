@@ -57,8 +57,6 @@
 #include <tencentcloud/nlp/v20190408/model/SearchWordItemsResponse.h>
 #include <tencentcloud/nlp/v20190408/model/SentenceEmbeddingRequest.h>
 #include <tencentcloud/nlp/v20190408/model/SentenceEmbeddingResponse.h>
-#include <tencentcloud/nlp/v20190408/model/SentenceSimilarityRequest.h>
-#include <tencentcloud/nlp/v20190408/model/SentenceSimilarityResponse.h>
 #include <tencentcloud/nlp/v20190408/model/SentimentAnalysisRequest.h>
 #include <tencentcloud/nlp/v20190408/model/SentimentAnalysisResponse.h>
 #include <tencentcloud/nlp/v20190408/model/SimilarWordsRequest.h>
@@ -140,9 +138,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SentenceEmbeddingResponse> SentenceEmbeddingOutcome;
                 typedef std::future<SentenceEmbeddingOutcome> SentenceEmbeddingOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::SentenceEmbeddingRequest&, SentenceEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SentenceEmbeddingAsyncHandler;
-                typedef Outcome<Error, Model::SentenceSimilarityResponse> SentenceSimilarityOutcome;
-                typedef std::future<SentenceSimilarityOutcome> SentenceSimilarityOutcomeCallable;
-                typedef std::function<void(const NlpClient*, const Model::SentenceSimilarityRequest&, SentenceSimilarityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SentenceSimilarityAsyncHandler;
                 typedef Outcome<Error, Model::SentimentAnalysisResponse> SentimentAnalysisOutcome;
                 typedef std::future<SentimentAnalysisOutcome> SentimentAnalysisOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::SentimentAnalysisRequest&, SentimentAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SentimentAnalysisAsyncHandler;
@@ -334,17 +329,6 @@ namespace TencentCloud
                 SentenceEmbeddingOutcome SentenceEmbedding(const Model::SentenceEmbeddingRequest &request);
                 void SentenceEmbeddingAsync(const Model::SentenceEmbeddingRequest& request, const SentenceEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SentenceEmbeddingOutcomeCallable SentenceEmbeddingCallable(const Model::SentenceEmbeddingRequest& request);
-
-                /**
-                 *文本相似度接口能够基于深度学习技术来计算两个输入文本的相似度，相似度数值越大的两个文本在语义上越相似。目前仅支持短文本（不超过500字符）的相似度计算，长文本的相似度计算也即将推出。
-
-鉴于文本相似度是一个应用非常广泛的功能，腾讯知文自然语言处理团队在深度神经网络模型的基础上，专门针对文本相似任务进行了优化，并持续迭代更新。基于文本相似度，可以轻松实现诸如文本去重、相似推荐等功能。
-                 * @param req SentenceSimilarityRequest
-                 * @return SentenceSimilarityOutcome
-                 */
-                SentenceSimilarityOutcome SentenceSimilarity(const Model::SentenceSimilarityRequest &request);
-                void SentenceSimilarityAsync(const Model::SentenceSimilarityRequest& request, const SentenceSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SentenceSimilarityOutcomeCallable SentenceSimilarityCallable(const Model::SentenceSimilarityRequest& request);
 
                 /**
                  *情感分析接口能够对带有情感色彩的主观性文本进行分析、处理、归纳和推理，识别出用户的情感倾向，是积极还是消极，并且提供各自概率。

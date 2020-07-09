@@ -25,6 +25,8 @@ using namespace std;
 
 TextModerationRequest::TextModerationRequest() :
     m_contentHasBeenSet(false),
+    m_deviceHasBeenSet(false),
+    m_userHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
     m_dataIdHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false)
@@ -44,6 +46,24 @@ string TextModerationRequest::ToJsonString() const
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Device";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_device.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "User";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_user.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_bizTypeHasBeenSet)
@@ -92,6 +112,38 @@ void TextModerationRequest::SetContent(const string& _content)
 bool TextModerationRequest::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+Device TextModerationRequest::GetDevice() const
+{
+    return m_device;
+}
+
+void TextModerationRequest::SetDevice(const Device& _device)
+{
+    m_device = _device;
+    m_deviceHasBeenSet = true;
+}
+
+bool TextModerationRequest::DeviceHasBeenSet() const
+{
+    return m_deviceHasBeenSet;
+}
+
+User TextModerationRequest::GetUser() const
+{
+    return m_user;
+}
+
+void TextModerationRequest::SetUser(const User& _user)
+{
+    m_user = _user;
+    m_userHasBeenSet = true;
+}
+
+bool TextModerationRequest::UserHasBeenSet() const
+{
+    return m_userHasBeenSet;
 }
 
 uint64_t TextModerationRequest::GetBizType() const

@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool LibNameHasBeenSet() const;
 
+                    /**
+                     * 获取命中的自定义关键词的类型
+                     * @return Type 命中的自定义关键词的类型
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置命中的自定义关键词的类型
+                     * @param Type 命中的自定义关键词的类型
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_libName;
                     bool m_libNameHasBeenSet;
+
+                    /**
+                     * 命中的自定义关键词的类型
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

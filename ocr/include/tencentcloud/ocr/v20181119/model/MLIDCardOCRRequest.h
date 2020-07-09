@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否返回图片
-                     * @return RetImage 是否返回图片
+                     * 获取是否返回图片，默认false
+                     * @return RetImage 是否返回图片，默认false
                      */
                     bool GetRetImage() const;
 
                     /**
-                     * 设置是否返回图片
-                     * @param RetImage 是否返回图片
+                     * 设置是否返回图片，默认false
+                     * @param RetImage 是否返回图片，默认false
                      */
                     void SetRetImage(const bool& _retImage);
 
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 是否返回图片
+                     * 是否返回图片，默认false
                      */
                     bool m_retImage;
                     bool m_retImageHasBeenSet;

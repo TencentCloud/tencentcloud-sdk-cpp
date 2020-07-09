@@ -241,14 +241,14 @@ namespace TencentCloud
                     bool TransSequenceNumberHasBeenSet() const;
 
                     /**
-                     * 获取申请撤销的手续费金额
-                     * @return TransFee 申请撤销的手续费金额
+                     * 获取申请撤销的手续费金额,以元为单位
+                     * @return TransFee 申请撤销的手续费金额,以元为单位
                      */
                     std::string GetTransFee() const;
 
                     /**
-                     * 设置申请撤销的手续费金额
-                     * @param TransFee 申请撤销的手续费金额
+                     * 设置申请撤销的手续费金额,以元为单位
+                     * @param TransFee 申请撤销的手续费金额,以元为单位
                      */
                     void SetTransFee(const std::string& _transFee);
 
@@ -489,7 +489,7 @@ namespace TencentCloud
                     bool m_transSequenceNumberHasBeenSet;
 
                     /**
-                     * 申请撤销的手续费金额
+                     * 申请撤销的手续费金额,以元为单位
                      */
                     std::string m_transFee;
                     bool m_transFeeHasBeenSet;

@@ -175,14 +175,18 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取素材绑定的标签信息列表。
-                     * @return TagInfoSet 素材绑定的标签信息列表。
+                     * 获取素材绑定的标签信息列表 。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagInfoSet 素材绑定的标签信息列表 。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MaterialTagInfo> GetTagInfoSet() const;
 
                     /**
-                     * 设置素材绑定的标签信息列表。
-                     * @param TagInfoSet 素材绑定的标签信息列表。
+                     * 设置素材绑定的标签信息列表 。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagInfoSet 素材绑定的标签信息列表 。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTagInfoSet(const std::vector<MaterialTagInfo>& _tagInfoSet);
 
@@ -194,17 +198,13 @@ namespace TencentCloud
 
                     /**
                      * 获取素材媒体文件的预览图。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewUrl 素材媒体文件的预览图。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
                      * 设置素材媒体文件的预览图。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param PreviewUrl 素材媒体文件的预览图。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPreviewUrl(const std::string& _previewUrl);
 
@@ -259,14 +259,14 @@ namespace TencentCloud
                     bool m_classPathHasBeenSet;
 
                     /**
-                     * 素材绑定的标签信息列表。
+                     * 素材绑定的标签信息列表 。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MaterialTagInfo> m_tagInfoSet;
                     bool m_tagInfoSetHasBeenSet;
 
                     /**
                      * 素材媒体文件的预览图。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;

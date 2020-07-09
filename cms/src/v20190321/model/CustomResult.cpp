@@ -24,7 +24,8 @@ using namespace std;
 CustomResult::CustomResult() :
     m_keywordsHasBeenSet(false),
     m_libIdHasBeenSet(false),
-    m_libNameHasBeenSet(false)
+    m_libNameHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,16 @@ CoreInternalOutcome CustomResult::Deserialize(const Value &value)
         m_libNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CustomResult.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -100,6 +111,14 @@ void CustomResult::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "LibName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_libName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -151,5 +170,21 @@ void CustomResult::SetLibName(const string& _libName)
 bool CustomResult::LibNameHasBeenSet() const
 {
     return m_libNameHasBeenSet;
+}
+
+string CustomResult::GetType() const
+{
+    return m_type;
+}
+
+void CustomResult::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CustomResult::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

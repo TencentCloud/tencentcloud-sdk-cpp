@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool InSubAccountNumberHasBeenSet() const;
 
                     /**
-                     * 获取计费秘钥
-                     * @return MidasSecretId 计费秘钥
+                     * 获取聚鑫分配的安全ID
+                     * @return MidasSecretId 聚鑫分配的安全ID
                      */
                     std::string GetMidasSecretId() const;
 
                     /**
-                     * 设置计费秘钥
-                     * @param MidasSecretId 计费秘钥
+                     * 设置聚鑫分配的安全ID
+                     * @param MidasSecretId 聚鑫分配的安全ID
                      */
                     void SetMidasSecretId(const std::string& _midasSecretId);
 
@@ -517,7 +517,7 @@ development 开发环境
                     bool m_inSubAccountNumberHasBeenSet;
 
                     /**
-                     * 计费秘钥
+                     * 聚鑫分配的安全ID
                      */
                     std::string m_midasSecretId;
                     bool m_midasSecretIdHasBeenSet;

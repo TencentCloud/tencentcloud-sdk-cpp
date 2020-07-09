@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取交易状态 （（0：成功，1：失败，2：待确认, 5：待处理，6：处理中）
-                     * @return OrderStatus 交易状态 （（0：成功，1：失败，2：待确认, 5：待处理，6：处理中）
+                     * 获取交易状态 （0：成功，1：失败，2：待确认, 5：待处理，6：处理中）
+                     * @return OrderStatus 交易状态 （0：成功，1：失败，2：待确认, 5：待处理，6：处理中）
                      */
                     std::string GetOrderStatus() const;
 
@@ -153,7 +153,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 交易状态 （（0：成功，1：失败，2：待确认, 5：待处理，6：处理中）
+                     * 交易状态 （0：成功，1：失败，2：待确认, 5：待处理，6：处理中）
                      */
                     std::string m_orderStatus;
                     bool m_orderStatusHasBeenSet;

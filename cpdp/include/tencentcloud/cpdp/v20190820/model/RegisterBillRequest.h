@@ -259,14 +259,14 @@ namespace TencentCloud
                     bool TranFeeHasBeenSet() const;
 
                     /**
-                     * 获取挂账金额
-                     * @return OrderAmt 挂账金额
+                     * 获取挂账金额，以元为单位
+                     * @return OrderAmt 挂账金额，以元为单位
                      */
                     std::string GetOrderAmt() const;
 
                     /**
-                     * 设置挂账金额
-                     * @param OrderAmt 挂账金额
+                     * 设置挂账金额，以元为单位
+                     * @param OrderAmt 挂账金额，以元为单位
                      */
                     void SetOrderAmt(const std::string& _orderAmt);
 
@@ -459,7 +459,7 @@ namespace TencentCloud
                     bool m_tranFeeHasBeenSet;
 
                     /**
-                     * 挂账金额
+                     * 挂账金额，以元为单位
                      */
                     std::string m_orderAmt;
                     bool m_orderAmtHasBeenSet;

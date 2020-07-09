@@ -682,7 +682,7 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 DisassociateAddressOutcomeCallable DisassociateAddressCallable(const Model::DisassociateAddressRequest& request);
 
                 /**
-                 *从腾讯云COS导入自定义镜像
+                 *导入自定义镜像，支持 RAW、VHD、QCOW2、VMDK 镜像格式
                  * @param req ImportCustomImageRequest
                  * @return ImportCustomImageOutcome
                  */

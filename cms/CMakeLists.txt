@@ -33,8 +33,10 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/TextSample.h
   include/tencentcloud/cms/v20190321/model/CreateTextSampleResponse.h
   include/tencentcloud/cms/v20190321/model/TextOutputID.h
+  include/tencentcloud/cms/v20190321/model/User.h
   include/tencentcloud/cms/v20190321/model/FileSampleInfo.h
   include/tencentcloud/cms/v20190321/model/DescribeFileSampleRequest.h
+  include/tencentcloud/cms/v20190321/model/Device.h
   include/tencentcloud/cms/v20190321/model/CodeDetect.h
   include/tencentcloud/cms/v20190321/model/ImageTerrorDetect.h
   include/tencentcloud/cms/v20190321/model/DescribeTextSampleResponse.h
@@ -80,8 +82,10 @@ set(cms_src
   src/v20190321/model/TextSample.cpp
   src/v20190321/model/CreateTextSampleResponse.cpp
   src/v20190321/model/TextOutputID.cpp
+  src/v20190321/model/User.cpp
   src/v20190321/model/FileSampleInfo.cpp
   src/v20190321/model/DescribeFileSampleRequest.cpp
+  src/v20190321/model/Device.cpp
   src/v20190321/model/CodeDetect.cpp
   src/v20190321/model/ImageTerrorDetect.cpp
   src/v20190321/model/DescribeTextSampleResponse.cpp

@@ -1,0 +1,129 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_FILTERSUBSCRIPTION_H_
+#define TENCENTCLOUD_TDMQ_V20200217_MODEL_FILTERSUBSCRIPTION_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Tdmq
+    {
+        namespace V20200217
+        {
+            namespace Model
+            {
+                /**
+                * 过滤订阅列表
+                */
+                class FilterSubscription : public AbstractModel
+                {
+                public:
+                    FilterSubscription();
+                    ~FilterSubscription() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取是否仅展示包含真实消费者的订。
+                     * @return ConsumerHasCount 是否仅展示包含真实消费者的订。
+                     */
+                    bool GetConsumerHasCount() const;
+
+                    /**
+                     * 设置是否仅展示包含真实消费者的订。
+                     * @param ConsumerHasCount 是否仅展示包含真实消费者的订。
+                     */
+                    void SetConsumerHasCount(const bool& _consumerHasCount);
+
+                    /**
+                     * 判断参数 ConsumerHasCount 是否已赋值
+                     * @return ConsumerHasCount 是否已赋值
+                     */
+                    bool ConsumerHasCountHasBeenSet() const;
+
+                    /**
+                     * 获取是否仅展示消息堆积的订阅。
+                     * @return ConsumerHasBacklog 是否仅展示消息堆积的订阅。
+                     */
+                    bool GetConsumerHasBacklog() const;
+
+                    /**
+                     * 设置是否仅展示消息堆积的订阅。
+                     * @param ConsumerHasBacklog 是否仅展示消息堆积的订阅。
+                     */
+                    void SetConsumerHasBacklog(const bool& _consumerHasBacklog);
+
+                    /**
+                     * 判断参数 ConsumerHasBacklog 是否已赋值
+                     * @return ConsumerHasBacklog 是否已赋值
+                     */
+                    bool ConsumerHasBacklogHasBeenSet() const;
+
+                    /**
+                     * 获取是否仅展示存在消息超期丢弃的订阅。
+                     * @return ConsumerHasExpired 是否仅展示存在消息超期丢弃的订阅。
+                     */
+                    bool GetConsumerHasExpired() const;
+
+                    /**
+                     * 设置是否仅展示存在消息超期丢弃的订阅。
+                     * @param ConsumerHasExpired 是否仅展示存在消息超期丢弃的订阅。
+                     */
+                    void SetConsumerHasExpired(const bool& _consumerHasExpired);
+
+                    /**
+                     * 判断参数 ConsumerHasExpired 是否已赋值
+                     * @return ConsumerHasExpired 是否已赋值
+                     */
+                    bool ConsumerHasExpiredHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 是否仅展示包含真实消费者的订。
+                     */
+                    bool m_consumerHasCount;
+                    bool m_consumerHasCountHasBeenSet;
+
+                    /**
+                     * 是否仅展示消息堆积的订阅。
+                     */
+                    bool m_consumerHasBacklog;
+                    bool m_consumerHasBacklogHasBeenSet;
+
+                    /**
+                     * 是否仅展示存在消息超期丢弃的订阅。
+                     */
+                    bool m_consumerHasExpired;
+                    bool m_consumerHasExpiredHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_FILTERSUBSCRIPTION_H_
