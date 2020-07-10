@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取素材媒体文件的 URL 地址。
-                     * @return MaterialUrl 素材媒体文件的 URL 地址。
+                     * 获取素材媒体文件的展示 URL 地址。
+                     * @return MaterialUrl 素材媒体文件的展示 URL 地址。
                      */
                     std::string GetMaterialUrl() const;
 
                     /**
-                     * 设置素材媒体文件的 URL 地址。
-                     * @param MaterialUrl 素材媒体文件的 URL 地址。
+                     * 设置素材媒体文件的展示 URL 地址。
+                     * @param MaterialUrl 素材媒体文件的展示 URL 地址。
                      */
                     void SetMaterialUrl(const std::string& _materialUrl);
 
@@ -118,6 +118,42 @@ namespace TencentCloud
                      */
                     bool SizeHasBeenSet() const;
 
+                    /**
+                     * 获取素材媒体文件的原始 URL 地址。
+                     * @return OriginalUrl 素材媒体文件的原始 URL 地址。
+                     */
+                    std::string GetOriginalUrl() const;
+
+                    /**
+                     * 设置素材媒体文件的原始 URL 地址。
+                     * @param OriginalUrl 素材媒体文件的原始 URL 地址。
+                     */
+                    void SetOriginalUrl(const std::string& _originalUrl);
+
+                    /**
+                     * 判断参数 OriginalUrl 是否已赋值
+                     * @return OriginalUrl 是否已赋值
+                     */
+                    bool OriginalUrlHasBeenSet() const;
+
+                    /**
+                     * 获取云点播媒资 FileId。
+                     * @return VodFileId 云点播媒资 FileId。
+                     */
+                    std::string GetVodFileId() const;
+
+                    /**
+                     * 设置云点播媒资 FileId。
+                     * @param VodFileId 云点播媒资 FileId。
+                     */
+                    void SetVodFileId(const std::string& _vodFileId);
+
+                    /**
+                     * 判断参数 VodFileId 是否已赋值
+                     * @return VodFileId 是否已赋值
+                     */
+                    bool VodFileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,7 +169,7 @@ namespace TencentCloud
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 素材媒体文件的 URL 地址。
+                     * 素材媒体文件的展示 URL 地址。
                      */
                     std::string m_materialUrl;
                     bool m_materialUrlHasBeenSet;
@@ -143,6 +179,18 @@ namespace TencentCloud
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
+
+                    /**
+                     * 素材媒体文件的原始 URL 地址。
+                     */
+                    std::string m_originalUrl;
+                    bool m_originalUrlHasBeenSet;
+
+                    /**
+                     * 云点播媒资 FileId。
+                     */
+                    std::string m_vodFileId;
+                    bool m_vodFileIdHasBeenSet;
 
                 };
             }

@@ -393,6 +393,50 @@ namespace TencentCloud
                      */
                     bool BigDealIdHasBeenSet() const;
 
+                    /**
+                     * 获取退费公式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Formula 退费公式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFormula() const;
+
+                    /**
+                     * 设置退费公式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Formula 退费公式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFormula(const std::string& _formula);
+
+                    /**
+                     * 判断参数 Formula 是否已赋值
+                     * @return Formula 是否已赋值
+                     */
+                    bool FormulaHasBeenSet() const;
+
+                    /**
+                     * 获取退费涉及订单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RefReturnDeals 退费涉及订单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRefReturnDeals() const;
+
+                    /**
+                     * 设置退费涉及订单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RefReturnDeals 退费涉及订单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRefReturnDeals(const std::string& _refReturnDeals);
+
+                    /**
+                     * 判断参数 RefReturnDeals 是否已赋值
+                     * @return RefReturnDeals 是否已赋值
+                     */
+                    bool RefReturnDealsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -509,6 +553,20 @@ namespace TencentCloud
                      */
                     std::string m_bigDealId;
                     bool m_bigDealIdHasBeenSet;
+
+                    /**
+                     * 退费公式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_formula;
+                    bool m_formulaHasBeenSet;
+
+                    /**
+                     * 退费涉及订单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_refReturnDeals;
+                    bool m_refReturnDealsHasBeenSet;
 
                 };
             }

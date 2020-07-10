@@ -122,14 +122,14 @@ namespace TencentCloud
                     bool AssociationSetHasBeenSet() const;
 
                     /**
-                     * 获取路由表策略集合。
-                     * @return RouteSet 路由表策略集合。
+                     * 获取IPv4路由策略集合。
+                     * @return RouteSet IPv4路由策略集合。
                      */
                     std::vector<Route> GetRouteSet() const;
 
                     /**
-                     * 设置路由表策略集合。
-                     * @param RouteSet 路由表策略集合。
+                     * 设置IPv4路由策略集合。
+                     * @param RouteSet IPv4路由策略集合。
                      */
                     void SetRouteSet(const std::vector<Route>& _routeSet);
 
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_associationSetHasBeenSet;
 
                     /**
-                     * 路由表策略集合。
+                     * IPv4路由策略集合。
                      */
                     std::vector<Route> m_routeSet;
                     bool m_routeSetHasBeenSet;

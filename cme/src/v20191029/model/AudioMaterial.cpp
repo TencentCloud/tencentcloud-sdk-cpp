@@ -25,7 +25,9 @@ AudioMaterial::AudioMaterial() :
     m_metaDataHasBeenSet(false),
     m_materialUrlHasBeenSet(false),
     m_coverUrlHasBeenSet(false),
-    m_materialStatusHasBeenSet(false)
+    m_materialStatusHasBeenSet(false),
+    m_originalUrlHasBeenSet(false),
+    m_vodFileIdHasBeenSet(false)
 {
 }
 
@@ -88,6 +90,26 @@ CoreInternalOutcome AudioMaterial::Deserialize(const Value &value)
         m_materialStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginalUrl") && !value["OriginalUrl"].IsNull())
+    {
+        if (!value["OriginalUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AudioMaterial.OriginalUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalUrl = string(value["OriginalUrl"].GetString());
+        m_originalUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("VodFileId") && !value["VodFileId"].IsNull())
+    {
+        if (!value["VodFileId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AudioMaterial.VodFileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodFileId = string(value["VodFileId"].GetString());
+        m_vodFileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +149,22 @@ void AudioMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_materialStatus.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_originalUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginalUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_originalUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vodFileIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VodFileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vodFileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -194,5 +232,37 @@ void AudioMaterial::SetMaterialStatus(const MaterialStatus& _materialStatus)
 bool AudioMaterial::MaterialStatusHasBeenSet() const
 {
     return m_materialStatusHasBeenSet;
+}
+
+string AudioMaterial::GetOriginalUrl() const
+{
+    return m_originalUrl;
+}
+
+void AudioMaterial::SetOriginalUrl(const string& _originalUrl)
+{
+    m_originalUrl = _originalUrl;
+    m_originalUrlHasBeenSet = true;
+}
+
+bool AudioMaterial::OriginalUrlHasBeenSet() const
+{
+    return m_originalUrlHasBeenSet;
+}
+
+string AudioMaterial::GetVodFileId() const
+{
+    return m_vodFileId;
+}
+
+void AudioMaterial::SetVodFileId(const string& _vodFileId)
+{
+    m_vodFileId = _vodFileId;
+    m_vodFileIdHasBeenSet = true;
+}
+
+bool AudioMaterial::VodFileIdHasBeenSet() const
+{
+    return m_vodFileIdHasBeenSet;
 }
 

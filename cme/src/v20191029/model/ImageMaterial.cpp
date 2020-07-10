@@ -25,7 +25,9 @@ ImageMaterial::ImageMaterial() :
     m_heightHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_materialUrlHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_originalUrlHasBeenSet(false),
+    m_vodFileIdHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,26 @@ CoreInternalOutcome ImageMaterial::Deserialize(const Value &value)
         m_sizeHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginalUrl") && !value["OriginalUrl"].IsNull())
+    {
+        if (!value["OriginalUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageMaterial.OriginalUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalUrl = string(value["OriginalUrl"].GetString());
+        m_originalUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("VodFileId") && !value["VodFileId"].IsNull())
+    {
+        if (!value["VodFileId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageMaterial.VodFileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodFileId = string(value["VodFileId"].GetString());
+        m_vodFileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +133,22 @@ void ImageMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
+    }
+
+    if (m_originalUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginalUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_originalUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vodFileIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VodFileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vodFileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +216,37 @@ void ImageMaterial::SetSize(const int64_t& _size)
 bool ImageMaterial::SizeHasBeenSet() const
 {
     return m_sizeHasBeenSet;
+}
+
+string ImageMaterial::GetOriginalUrl() const
+{
+    return m_originalUrl;
+}
+
+void ImageMaterial::SetOriginalUrl(const string& _originalUrl)
+{
+    m_originalUrl = _originalUrl;
+    m_originalUrlHasBeenSet = true;
+}
+
+bool ImageMaterial::OriginalUrlHasBeenSet() const
+{
+    return m_originalUrlHasBeenSet;
+}
+
+string ImageMaterial::GetVodFileId() const
+{
+    return m_vodFileId;
+}
+
+void ImageMaterial::SetVodFileId(const string& _vodFileId)
+{
+    m_vodFileId = _vodFileId;
+    m_vodFileIdHasBeenSet = true;
+}
+
+bool ImageMaterial::VodFileIdHasBeenSet() const
+{
+    return m_vodFileIdHasBeenSet;
 }
 

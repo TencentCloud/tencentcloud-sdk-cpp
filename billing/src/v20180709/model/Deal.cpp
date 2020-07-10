@@ -40,7 +40,9 @@ Deal::Deal() :
     m_totalCostHasBeenSet(false),
     m_productCodeHasBeenSet(false),
     m_subProductCodeHasBeenSet(false),
-    m_bigDealIdHasBeenSet(false)
+    m_bigDealIdHasBeenSet(false),
+    m_formulaHasBeenSet(false),
+    m_refReturnDealsHasBeenSet(false)
 {
 }
 
@@ -249,6 +251,26 @@ CoreInternalOutcome Deal::Deserialize(const Value &value)
         m_bigDealIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Formula") && !value["Formula"].IsNull())
+    {
+        if (!value["Formula"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Deal.Formula` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_formula = string(value["Formula"].GetString());
+        m_formulaHasBeenSet = true;
+    }
+
+    if (value.HasMember("RefReturnDeals") && !value["RefReturnDeals"].IsNull())
+    {
+        if (!value["RefReturnDeals"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Deal.RefReturnDeals` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_refReturnDeals = string(value["RefReturnDeals"].GetString());
+        m_refReturnDealsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -413,6 +435,22 @@ void Deal::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "BigDealId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_bigDealId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formulaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Formula";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_formula.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_refReturnDealsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RefReturnDeals";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_refReturnDeals.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -720,5 +758,37 @@ void Deal::SetBigDealId(const string& _bigDealId)
 bool Deal::BigDealIdHasBeenSet() const
 {
     return m_bigDealIdHasBeenSet;
+}
+
+string Deal::GetFormula() const
+{
+    return m_formula;
+}
+
+void Deal::SetFormula(const string& _formula)
+{
+    m_formula = _formula;
+    m_formulaHasBeenSet = true;
+}
+
+bool Deal::FormulaHasBeenSet() const
+{
+    return m_formulaHasBeenSet;
+}
+
+string Deal::GetRefReturnDeals() const
+{
+    return m_refReturnDeals;
+}
+
+void Deal::SetRefReturnDeals(const string& _refReturnDeals)
+{
+    m_refReturnDeals = _refReturnDeals;
+    m_refReturnDealsHasBeenSet = true;
+}
+
+bool Deal::RefReturnDealsHasBeenSet() const
+{
+    return m_refReturnDealsHasBeenSet;
 }
 
