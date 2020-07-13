@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool UserIpHasBeenSet() const;
 
+                    /**
+                     * 获取分组ID
+                     * @return GroupId 分组ID
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置分组ID
+                     * @param GroupId 分组ID
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;
+
+                    /**
+                     * 分组ID
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

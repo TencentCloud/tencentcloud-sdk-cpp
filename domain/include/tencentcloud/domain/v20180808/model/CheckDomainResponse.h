@@ -194,6 +194,18 @@ namespace TencentCloud
                      */
                     bool PeriodHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持北京备案  true 支持  false 不支持
+                     * @return RecordSupport 是否支持北京备案  true 支持  false 不支持
+                     */
+                    bool GetRecordSupport() const;
+
+                    /**
+                     * 判断参数 RecordSupport 是否已赋值
+                     * @return RecordSupport 是否已赋值
+                     */
+                    bool RecordSupportHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +283,12 @@ namespace TencentCloud
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
+
+                    /**
+                     * 是否支持北京备案  true 支持  false 不支持
+                     */
+                    bool m_recordSupport;
+                    bool m_recordSupportHasBeenSet;
 
                 };
             }

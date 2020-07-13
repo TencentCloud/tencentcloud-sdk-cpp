@@ -28,7 +28,8 @@ TrylockWorkerRequest::TrylockWorkerRequest() :
     m_gameIdHasBeenSet(false),
     m_gameRegionHasBeenSet(false),
     m_setNoHasBeenSet(false),
-    m_userIpHasBeenSet(false)
+    m_userIpHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string TrylockWorkerRequest::ToJsonString() const
         string key = "UserIp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_userIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void TrylockWorkerRequest::SetUserIp(const string& _userIp)
 bool TrylockWorkerRequest::UserIpHasBeenSet() const
 {
     return m_userIpHasBeenSet;
+}
+
+string TrylockWorkerRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void TrylockWorkerRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool TrylockWorkerRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

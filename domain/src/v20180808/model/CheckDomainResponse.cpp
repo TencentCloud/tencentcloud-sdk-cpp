@@ -36,7 +36,8 @@ CheckDomainResponse::CheckDomainResponse() :
     m_realPriceHasBeenSet(false),
     m_feeTransferHasBeenSet(false),
     m_feeRestoreHasBeenSet(false),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_recordSupportHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
         m_periodHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecordSupport") && !rsp["RecordSupport"].IsNull())
+    {
+        if (!rsp["RecordSupport"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `RecordSupport` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordSupport = rsp["RecordSupport"].GetBool();
+        m_recordSupportHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,16 @@ uint64_t CheckDomainResponse::GetPeriod() const
 bool CheckDomainResponse::PeriodHasBeenSet() const
 {
     return m_periodHasBeenSet;
+}
+
+bool CheckDomainResponse::GetRecordSupport() const
+{
+    return m_recordSupport;
+}
+
+bool CheckDomainResponse::RecordSupportHasBeenSet() const
+{
+    return m_recordSupportHasBeenSet;
 }
 
 
