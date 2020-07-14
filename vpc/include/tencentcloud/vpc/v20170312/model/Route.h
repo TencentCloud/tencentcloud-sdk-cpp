@@ -141,14 +141,14 @@ CCN：云联网。
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取路由策略ID。
-                     * @return RouteId 路由策略ID。
+                     * 获取路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略。
+                     * @return RouteId 路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略。
                      */
                     uint64_t GetRouteId() const;
 
                     /**
-                     * 设置路由策略ID。
-                     * @param RouteId 路由策略ID。
+                     * 设置路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略。
+                     * @param RouteId 路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略。
                      */
                     void SetRouteId(const uint64_t& _routeId);
 
@@ -313,7 +313,7 @@ CCN：云联网。
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 路由策略ID。
+                     * 路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略。
                      */
                     uint64_t m_routeId;
                     bool m_routeIdHasBeenSet;

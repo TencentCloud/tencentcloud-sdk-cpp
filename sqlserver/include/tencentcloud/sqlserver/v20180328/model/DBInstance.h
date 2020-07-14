@@ -622,6 +622,94 @@ namespace TencentCloud
                      */
                     bool UniqSubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例隔离操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolateOperator 实例隔离操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsolateOperator() const;
+
+                    /**
+                     * 设置实例隔离操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsolateOperator 实例隔离操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsolateOperator(const std::string& _isolateOperator);
+
+                    /**
+                     * 判断参数 IsolateOperator 是否已赋值
+                     * @return IsolateOperator 是否已赋值
+                     */
+                    bool IsolateOperatorHasBeenSet() const;
+
+                    /**
+                     * 获取发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubFlag 发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubFlag() const;
+
+                    /**
+                     * 设置发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubFlag 发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubFlag(const std::string& _subFlag);
+
+                    /**
+                     * 判断参数 SubFlag 是否已赋值
+                     * @return SubFlag 是否已赋值
+                     */
+                    bool SubFlagHasBeenSet() const;
+
+                    /**
+                     * 获取只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ROFlag 只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetROFlag() const;
+
+                    /**
+                     * 设置只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ROFlag 只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetROFlag(const std::string& _rOFlag);
+
+                    /**
+                     * 判断参数 ROFlag 是否已赋值
+                     * @return ROFlag 是否已赋值
+                     */
+                    bool ROFlagHasBeenSet() const;
+
+                    /**
+                     * 获取容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HAFlag 容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHAFlag() const;
+
+                    /**
+                     * 设置容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HAFlag 容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHAFlag(const std::string& _hAFlag);
+
+                    /**
+                     * 判断参数 HAFlag 是否已赋值
+                     * @return HAFlag 是否已赋值
+                     */
+                    bool HAFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -815,6 +903,34 @@ namespace TencentCloud
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
+
+                    /**
+                     * 实例隔离操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isolateOperator;
+                    bool m_isolateOperatorHasBeenSet;
+
+                    /**
+                     * 发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subFlag;
+                    bool m_subFlagHasBeenSet;
+
+                    /**
+                     * 只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rOFlag;
+                    bool m_rOFlagHasBeenSet;
+
+                    /**
+                     * 容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hAFlag;
+                    bool m_hAFlagHasBeenSet;
 
                 };
             }

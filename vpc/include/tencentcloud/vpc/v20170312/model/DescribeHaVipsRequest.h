@@ -67,12 +67,14 @@ namespace TencentCloud
 <li>havip-name - String - `HAVIP`名称。</li>
 <li>vpc-id - String - `HAVIP`所在私有网络`ID`。</li>
 <li>subnet-id - String - `HAVIP`所在子网`ID`。</li>
+<li>vip - String - `HAVIP`的地址`VIP`。</li>
 <li>address-ip - String - `HAVIP`绑定的弹性公网`IP`。</li>
                      * @return Filters 过滤条件，参数不支持同时指定`HaVipIds`和`Filters`。
 <li>havip-id - String - `HAVIP`唯一`ID`，形如：`havip-9o233uri`。</li>
 <li>havip-name - String - `HAVIP`名称。</li>
 <li>vpc-id - String - `HAVIP`所在私有网络`ID`。</li>
 <li>subnet-id - String - `HAVIP`所在子网`ID`。</li>
+<li>vip - String - `HAVIP`的地址`VIP`。</li>
 <li>address-ip - String - `HAVIP`绑定的弹性公网`IP`。</li>
                      */
                     std::vector<Filter> GetFilters() const;
@@ -83,12 +85,14 @@ namespace TencentCloud
 <li>havip-name - String - `HAVIP`名称。</li>
 <li>vpc-id - String - `HAVIP`所在私有网络`ID`。</li>
 <li>subnet-id - String - `HAVIP`所在子网`ID`。</li>
+<li>vip - String - `HAVIP`的地址`VIP`。</li>
 <li>address-ip - String - `HAVIP`绑定的弹性公网`IP`。</li>
                      * @param Filters 过滤条件，参数不支持同时指定`HaVipIds`和`Filters`。
 <li>havip-id - String - `HAVIP`唯一`ID`，形如：`havip-9o233uri`。</li>
 <li>havip-name - String - `HAVIP`名称。</li>
 <li>vpc-id - String - `HAVIP`所在私有网络`ID`。</li>
 <li>subnet-id - String - `HAVIP`所在子网`ID`。</li>
+<li>vip - String - `HAVIP`的地址`VIP`。</li>
 <li>address-ip - String - `HAVIP`绑定的弹性公网`IP`。</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -149,6 +153,7 @@ namespace TencentCloud
 <li>havip-name - String - `HAVIP`名称。</li>
 <li>vpc-id - String - `HAVIP`所在私有网络`ID`。</li>
 <li>subnet-id - String - `HAVIP`所在子网`ID`。</li>
+<li>vip - String - `HAVIP`的地址`VIP`。</li>
 <li>address-ip - String - `HAVIP`绑定的弹性公网`IP`。</li>
                      */
                     std::vector<Filter> m_filters;

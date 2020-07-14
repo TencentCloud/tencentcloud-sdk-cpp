@@ -27,7 +27,8 @@ DownloadBillRequest::DownloadBillRequest() :
     m_stateDateHasBeenSet(false),
     m_midasAppIdHasBeenSet(false),
     m_midasSecretIdHasBeenSet(false),
-    m_midasSignatureHasBeenSet(false)
+    m_midasSignatureHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string DownloadBillRequest::ToJsonString() const
         string key = "MidasSignature";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_midasSignature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void DownloadBillRequest::SetMidasSignature(const string& _midasSignature)
 bool DownloadBillRequest::MidasSignatureHasBeenSet() const
 {
     return m_midasSignatureHasBeenSet;
+}
+
+string DownloadBillRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void DownloadBillRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool DownloadBillRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

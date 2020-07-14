@@ -28,7 +28,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_memoryHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_voucherIdsHasBeenSet(false)
+    m_voucherIdsHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
     }
 
 
@@ -170,6 +179,22 @@ void UpgradeDBInstanceRequest::SetVoucherIds(const vector<string>& _voucherIds)
 bool UpgradeDBInstanceRequest::VoucherIdsHasBeenSet() const
 {
     return m_voucherIdsHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void UpgradeDBInstanceRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 
 

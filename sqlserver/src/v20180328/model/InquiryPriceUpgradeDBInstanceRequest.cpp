@@ -26,7 +26,8 @@ using namespace std;
 InquiryPriceUpgradeDBInstanceRequest::InquiryPriceUpgradeDBInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_storageHasBeenSet(false)
+    m_storageHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string InquiryPriceUpgradeDBInstanceRequest::ToJsonString() const
         string key = "Storage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_storage, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void InquiryPriceUpgradeDBInstanceRequest::SetStorage(const int64_t& _storage)
 bool InquiryPriceUpgradeDBInstanceRequest::StorageHasBeenSet() const
 {
     return m_storageHasBeenSet;
+}
+
+int64_t InquiryPriceUpgradeDBInstanceRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void InquiryPriceUpgradeDBInstanceRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool InquiryPriceUpgradeDBInstanceRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 
 

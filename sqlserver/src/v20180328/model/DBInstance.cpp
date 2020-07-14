@@ -53,7 +53,11 @@ DBInstance::DBInstance() :
     m_typeHasBeenSet(false),
     m_pidHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
-    m_uniqSubnetIdHasBeenSet(false)
+    m_uniqSubnetIdHasBeenSet(false),
+    m_isolateOperatorHasBeenSet(false),
+    m_subFlagHasBeenSet(false),
+    m_rOFlagHasBeenSet(false),
+    m_hAFlagHasBeenSet(false)
 {
 }
 
@@ -382,6 +386,46 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_uniqSubnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IsolateOperator") && !value["IsolateOperator"].IsNull())
+    {
+        if (!value["IsolateOperator"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.IsolateOperator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateOperator = string(value["IsolateOperator"].GetString());
+        m_isolateOperatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubFlag") && !value["SubFlag"].IsNull())
+    {
+        if (!value["SubFlag"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.SubFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subFlag = string(value["SubFlag"].GetString());
+        m_subFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("ROFlag") && !value["ROFlag"].IsNull())
+    {
+        if (!value["ROFlag"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.ROFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rOFlag = string(value["ROFlag"].GetString());
+        m_rOFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("HAFlag") && !value["HAFlag"].IsNull())
+    {
+        if (!value["HAFlag"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.HAFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hAFlag = string(value["HAFlag"].GetString());
+        m_hAFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -643,6 +687,38 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "UniqSubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateOperatorHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsolateOperator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_isolateOperator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rOFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ROFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_rOFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hAFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HAFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_hAFlag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1158,5 +1234,69 @@ void DBInstance::SetUniqSubnetId(const string& _uniqSubnetId)
 bool DBInstance::UniqSubnetIdHasBeenSet() const
 {
     return m_uniqSubnetIdHasBeenSet;
+}
+
+string DBInstance::GetIsolateOperator() const
+{
+    return m_isolateOperator;
+}
+
+void DBInstance::SetIsolateOperator(const string& _isolateOperator)
+{
+    m_isolateOperator = _isolateOperator;
+    m_isolateOperatorHasBeenSet = true;
+}
+
+bool DBInstance::IsolateOperatorHasBeenSet() const
+{
+    return m_isolateOperatorHasBeenSet;
+}
+
+string DBInstance::GetSubFlag() const
+{
+    return m_subFlag;
+}
+
+void DBInstance::SetSubFlag(const string& _subFlag)
+{
+    m_subFlag = _subFlag;
+    m_subFlagHasBeenSet = true;
+}
+
+bool DBInstance::SubFlagHasBeenSet() const
+{
+    return m_subFlagHasBeenSet;
+}
+
+string DBInstance::GetROFlag() const
+{
+    return m_rOFlag;
+}
+
+void DBInstance::SetROFlag(const string& _rOFlag)
+{
+    m_rOFlag = _rOFlag;
+    m_rOFlagHasBeenSet = true;
+}
+
+bool DBInstance::ROFlagHasBeenSet() const
+{
+    return m_rOFlagHasBeenSet;
+}
+
+string DBInstance::GetHAFlag() const
+{
+    return m_hAFlag;
+}
+
+void DBInstance::SetHAFlag(const string& _hAFlag)
+{
+    m_hAFlag = _hAFlag;
+    m_hAFlagHasBeenSet = true;
+}
+
+bool DBInstance::HAFlagHasBeenSet() const
+{
+    return m_hAFlagHasBeenSet;
 }
 

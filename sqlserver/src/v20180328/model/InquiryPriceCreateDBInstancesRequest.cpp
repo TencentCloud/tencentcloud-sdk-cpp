@@ -30,7 +30,10 @@ InquiryPriceCreateDBInstancesRequest::InquiryPriceCreateDBInstancesRequest() :
     m_instanceChargeTypeHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_goodsNumHasBeenSet(false),
-    m_dBVersionHasBeenSet(false)
+    m_dBVersionHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_machineTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,30 @@ string InquiryPriceCreateDBInstancesRequest::ToJsonString() const
         string key = "DBVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_dBVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +242,54 @@ void InquiryPriceCreateDBInstancesRequest::SetDBVersion(const string& _dBVersion
 bool InquiryPriceCreateDBInstancesRequest::DBVersionHasBeenSet() const
 {
     return m_dBVersionHasBeenSet;
+}
+
+int64_t InquiryPriceCreateDBInstancesRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void InquiryPriceCreateDBInstancesRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDBInstancesRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+string InquiryPriceCreateDBInstancesRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void InquiryPriceCreateDBInstancesRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDBInstancesRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+string InquiryPriceCreateDBInstancesRequest::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void InquiryPriceCreateDBInstancesRequest::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDBInstancesRequest::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
 }
 
 

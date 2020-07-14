@@ -36,7 +36,13 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
     m_dBVersionHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_securityGroupListHasBeenSet(false),
+    m_weeklyHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_spanHasBeenSet(false),
+    m_hATypeHasBeenSet(false),
+    m_multiZonesHasBeenSet(false)
 {
 }
 
@@ -154,6 +160,64 @@ string CreateDBInstancesRequest::ToJsonString() const
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_securityGroupListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupList.begin(); itr != m_securityGroupList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_weeklyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Weekly";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_weekly.begin(); itr != m_weekly.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spanHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Span";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_span, allocator);
+    }
+
+    if (m_hATypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HAType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_hAType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiZonesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MultiZones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_multiZones, allocator);
     }
 
 
@@ -370,6 +434,102 @@ void CreateDBInstancesRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 bool CreateDBInstancesRequest::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+vector<string> CreateDBInstancesRequest::GetSecurityGroupList() const
+{
+    return m_securityGroupList;
+}
+
+void CreateDBInstancesRequest::SetSecurityGroupList(const vector<string>& _securityGroupList)
+{
+    m_securityGroupList = _securityGroupList;
+    m_securityGroupListHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::SecurityGroupListHasBeenSet() const
+{
+    return m_securityGroupListHasBeenSet;
+}
+
+vector<int64_t> CreateDBInstancesRequest::GetWeekly() const
+{
+    return m_weekly;
+}
+
+void CreateDBInstancesRequest::SetWeekly(const vector<int64_t>& _weekly)
+{
+    m_weekly = _weekly;
+    m_weeklyHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::WeeklyHasBeenSet() const
+{
+    return m_weeklyHasBeenSet;
+}
+
+string CreateDBInstancesRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void CreateDBInstancesRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+int64_t CreateDBInstancesRequest::GetSpan() const
+{
+    return m_span;
+}
+
+void CreateDBInstancesRequest::SetSpan(const int64_t& _span)
+{
+    m_span = _span;
+    m_spanHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::SpanHasBeenSet() const
+{
+    return m_spanHasBeenSet;
+}
+
+string CreateDBInstancesRequest::GetHAType() const
+{
+    return m_hAType;
+}
+
+void CreateDBInstancesRequest::SetHAType(const string& _hAType)
+{
+    m_hAType = _hAType;
+    m_hATypeHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::HATypeHasBeenSet() const
+{
+    return m_hATypeHasBeenSet;
+}
+
+bool CreateDBInstancesRequest::GetMultiZones() const
+{
+    return m_multiZones;
+}
+
+void CreateDBInstancesRequest::SetMultiZones(const bool& _multiZones)
+{
+    m_multiZones = _multiZones;
+    m_multiZonesHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::MultiZonesHasBeenSet() const
+{
+    return m_multiZonesHasBeenSet;
 }
 
 

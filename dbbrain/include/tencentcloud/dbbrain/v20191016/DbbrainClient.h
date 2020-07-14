@@ -33,6 +33,8 @@
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTopSqlsRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTopSqlsResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTableTimeSeriesRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTableTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesResponse.h>
 
@@ -64,6 +66,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSlowLogTopSqlsResponse> DescribeSlowLogTopSqlsOutcome;
                 typedef std::future<DescribeSlowLogTopSqlsOutcome> DescribeSlowLogTopSqlsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSlowLogTopSqlsRequest&, DescribeSlowLogTopSqlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogTopSqlsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTopSpaceTableTimeSeriesResponse> DescribeTopSpaceTableTimeSeriesOutcome;
+                typedef std::future<DescribeTopSpaceTableTimeSeriesOutcome> DescribeTopSpaceTableTimeSeriesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceTableTimeSeriesRequest&, DescribeTopSpaceTableTimeSeriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceTableTimeSeriesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTopSpaceTablesResponse> DescribeTopSpaceTablesOutcome;
                 typedef std::future<DescribeTopSpaceTablesOutcome> DescribeTopSpaceTablesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceTablesRequest&, DescribeTopSpaceTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceTablesAsyncHandler;
@@ -114,6 +119,15 @@ namespace TencentCloud
                 DescribeSlowLogTopSqlsOutcome DescribeSlowLogTopSqls(const Model::DescribeSlowLogTopSqlsRequest &request);
                 void DescribeSlowLogTopSqlsAsync(const Model::DescribeSlowLogTopSqlsRequest& request, const DescribeSlowLogTopSqlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSlowLogTopSqlsOutcomeCallable DescribeSlowLogTopSqlsCallable(const Model::DescribeSlowLogTopSqlsRequest& request);
+
+                /**
+                 *获取实例占用空间最大的前几张表在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。
+                 * @param req DescribeTopSpaceTableTimeSeriesRequest
+                 * @return DescribeTopSpaceTableTimeSeriesOutcome
+                 */
+                DescribeTopSpaceTableTimeSeriesOutcome DescribeTopSpaceTableTimeSeries(const Model::DescribeTopSpaceTableTimeSeriesRequest &request);
+                void DescribeTopSpaceTableTimeSeriesAsync(const Model::DescribeTopSpaceTableTimeSeriesRequest& request, const DescribeTopSpaceTableTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopSpaceTableTimeSeriesOutcomeCallable DescribeTopSpaceTableTimeSeriesCallable(const Model::DescribeTopSpaceTableTimeSeriesRequest& request);
 
                 /**
                  *获取实例Top表的实时空间统计信息，默认返回按大小排序。

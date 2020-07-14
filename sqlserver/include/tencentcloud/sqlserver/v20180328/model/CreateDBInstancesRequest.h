@@ -276,6 +276,114 @@ namespace TencentCloud
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取安全组列表，填写形如sg-xxx的安全组ID
+                     * @return SecurityGroupList 安全组列表，填写形如sg-xxx的安全组ID
+                     */
+                    std::vector<std::string> GetSecurityGroupList() const;
+
+                    /**
+                     * 设置安全组列表，填写形如sg-xxx的安全组ID
+                     * @param SecurityGroupList 安全组列表，填写形如sg-xxx的安全组ID
+                     */
+                    void SetSecurityGroupList(const std::vector<std::string>& _securityGroupList);
+
+                    /**
+                     * 判断参数 SecurityGroupList 是否已赋值
+                     * @return SecurityGroupList 是否已赋值
+                     */
+                    bool SecurityGroupListHasBeenSet() const;
+
+                    /**
+                     * 获取可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末
+                     * @return Weekly 可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末
+                     */
+                    std::vector<int64_t> GetWeekly() const;
+
+                    /**
+                     * 设置可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末
+                     * @param Weekly 可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末
+                     */
+                    void SetWeekly(const std::vector<int64_t>& _weekly);
+
+                    /**
+                     * 判断参数 Weekly 是否已赋值
+                     * @return Weekly 是否已赋值
+                     */
+                    bool WeeklyHasBeenSet() const;
+
+                    /**
+                     * 获取可维护时间窗配置，每天可维护的开始时间
+                     * @return StartTime 可维护时间窗配置，每天可维护的开始时间
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置可维护时间窗配置，每天可维护的开始时间
+                     * @param StartTime 可维护时间窗配置，每天可维护的开始时间
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取可维护时间窗配置，持续时间，单位：小时
+                     * @return Span 可维护时间窗配置，持续时间，单位：小时
+                     */
+                    int64_t GetSpan() const;
+
+                    /**
+                     * 设置可维护时间窗配置，持续时间，单位：小时
+                     * @param Span 可维护时间窗配置，持续时间，单位：小时
+                     */
+                    void SetSpan(const int64_t& _span);
+
+                    /**
+                     * 判断参数 Span 是否已赋值
+                     * @return Span 是否已赋值
+                     */
+                    bool SpanHasBeenSet() const;
+
+                    /**
+                     * 获取购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL
+                     * @return HAType 购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL
+                     */
+                    std::string GetHAType() const;
+
+                    /**
+                     * 设置购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL
+                     * @param HAType 购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL
+                     */
+                    void SetHAType(const std::string& _hAType);
+
+                    /**
+                     * 判断参数 HAType 是否已赋值
+                     * @return HAType 是否已赋值
+                     */
+                    bool HATypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否跨可用区部署，默认值为false
+                     * @return MultiZones 是否跨可用区部署，默认值为false
+                     */
+                    bool GetMultiZones() const;
+
+                    /**
+                     * 设置是否跨可用区部署，默认值为false
+                     * @param MultiZones 是否跨可用区部署，默认值为false
+                     */
+                    void SetMultiZones(const bool& _multiZones);
+
+                    /**
+                     * 判断参数 MultiZones 是否已赋值
+                     * @return MultiZones 是否已赋值
+                     */
+                    bool MultiZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +463,42 @@ namespace TencentCloud
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 安全组列表，填写形如sg-xxx的安全组ID
+                     */
+                    std::vector<std::string> m_securityGroupList;
+                    bool m_securityGroupListHasBeenSet;
+
+                    /**
+                     * 可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末
+                     */
+                    std::vector<int64_t> m_weekly;
+                    bool m_weeklyHasBeenSet;
+
+                    /**
+                     * 可维护时间窗配置，每天可维护的开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 可维护时间窗配置，持续时间，单位：小时
+                     */
+                    int64_t m_span;
+                    bool m_spanHasBeenSet;
+
+                    /**
+                     * 购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL
+                     */
+                    std::string m_hAType;
+                    bool m_hATypeHasBeenSet;
+
+                    /**
+                     * 是否跨可用区部署，默认值为false
+                     */
+                    bool m_multiZones;
+                    bool m_multiZonesHasBeenSet;
 
                 };
             }

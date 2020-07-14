@@ -1,0 +1,145 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Sqlserver::V20180328::Model;
+using namespace rapidjson;
+using namespace std;
+
+ModifyBackupStrategyRequest::ModifyBackupStrategyRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_backupTypeHasBeenSet(false),
+    m_backupTimeHasBeenSet(false),
+    m_backupDayHasBeenSet(false)
+{
+}
+
+string ModifyBackupStrategyRequest::ToJsonString() const
+{
+    Document d;
+    d.SetObject();
+    Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_backupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupTime, allocator);
+    }
+
+    if (m_backupDayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupDay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupDay, allocator);
+    }
+
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string ModifyBackupStrategyRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ModifyBackupStrategyRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ModifyBackupStrategyRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string ModifyBackupStrategyRequest::GetBackupType() const
+{
+    return m_backupType;
+}
+
+void ModifyBackupStrategyRequest::SetBackupType(const string& _backupType)
+{
+    m_backupType = _backupType;
+    m_backupTypeHasBeenSet = true;
+}
+
+bool ModifyBackupStrategyRequest::BackupTypeHasBeenSet() const
+{
+    return m_backupTypeHasBeenSet;
+}
+
+uint64_t ModifyBackupStrategyRequest::GetBackupTime() const
+{
+    return m_backupTime;
+}
+
+void ModifyBackupStrategyRequest::SetBackupTime(const uint64_t& _backupTime)
+{
+    m_backupTime = _backupTime;
+    m_backupTimeHasBeenSet = true;
+}
+
+bool ModifyBackupStrategyRequest::BackupTimeHasBeenSet() const
+{
+    return m_backupTimeHasBeenSet;
+}
+
+uint64_t ModifyBackupStrategyRequest::GetBackupDay() const
+{
+    return m_backupDay;
+}
+
+void ModifyBackupStrategyRequest::SetBackupDay(const uint64_t& _backupDay)
+{
+    m_backupDay = _backupDay;
+    m_backupDayHasBeenSet = true;
+}
+
+bool ModifyBackupStrategyRequest::BackupDayHasBeenSet() const
+{
+    return m_backupDayHasBeenSet;
+}
+
+

@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool StorageHasBeenSet() const;
 
+                    /**
+                     * 获取实例升级后的CPU核心数，其值不能比当前实例CPU小
+                     * @return Cpu 实例升级后的CPU核心数，其值不能比当前实例CPU小
+                     */
+                    int64_t GetCpu() const;
+
+                    /**
+                     * 设置实例升级后的CPU核心数，其值不能比当前实例CPU小
+                     * @param Cpu 实例升级后的CPU核心数，其值不能比当前实例CPU小
+                     */
+                    void SetCpu(const int64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
+
+                    /**
+                     * 实例升级后的CPU核心数，其值不能比当前实例CPU小
+                     */
+                    int64_t m_cpu;
+                    bool m_cpuHasBeenSet;
 
                 };
             }

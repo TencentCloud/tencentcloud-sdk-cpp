@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool VoucherIdsHasBeenSet() const;
 
+                    /**
+                     * 获取实例升级后的CPU核心数
+                     * @return Cpu 实例升级后的CPU核心数
+                     */
+                    int64_t GetCpu() const;
+
+                    /**
+                     * 设置实例升级后的CPU核心数
+                     * @param Cpu 实例升级后的CPU核心数
+                     */
+                    void SetCpu(const int64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;
+
+                    /**
+                     * 实例升级后的CPU核心数
+                     */
+                    int64_t m_cpu;
+                    bool m_cpuHasBeenSet;
 
                 };
             }
