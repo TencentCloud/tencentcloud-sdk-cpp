@@ -31,6 +31,8 @@ PlayerConfig::PlayerConfig() :
     m_resolutionNameSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_schemeHasBeenSet(false),
     m_commentHasBeenSet(false)
 {
 }
@@ -147,6 +149,26 @@ CoreInternalOutcome PlayerConfig::Deserialize(const Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("Scheme") && !value["Scheme"].IsNull())
+    {
+        if (!value["Scheme"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.Scheme` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheme = string(value["Scheme"].GetString());
+        m_schemeHasBeenSet = true;
+    }
+
     if (value.HasMember("Comment") && !value["Comment"].IsNull())
     {
         if (!value["Comment"].IsString())
@@ -242,6 +264,22 @@ void PlayerConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Scheme";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_scheme.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commentHasBeenSet)
@@ -397,6 +435,38 @@ void PlayerConfig::SetUpdateTime(const string& _updateTime)
 bool PlayerConfig::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string PlayerConfig::GetDomain() const
+{
+    return m_domain;
+}
+
+void PlayerConfig::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool PlayerConfig::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string PlayerConfig::GetScheme() const
+{
+    return m_scheme;
+}
+
+void PlayerConfig::SetScheme(const string& _scheme)
+{
+    m_scheme = _scheme;
+    m_schemeHasBeenSet = true;
+}
+
+bool PlayerConfig::SchemeHasBeenSet() const
+{
+    return m_schemeHasBeenSet;
 }
 
 string PlayerConfig::GetComment() const

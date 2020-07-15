@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_GS_V20191118_MODEL_DESCRIBEWORKERSREQUEST_H_
-#define TENCENTCLOUD_GS_V20191118_MODEL_DESCRIBEWORKERSREQUEST_H_
+#ifndef TENCENTCLOUD_REDIS_V20180412_MODEL_DESCRIBEMAINTENANCEWINDOWREQUEST_H_
+#define TENCENTCLOUD_REDIS_V20180412_MODEL_DESCRIBEMAINTENANCEWINDOWREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,48 +25,48 @@
 
 namespace TencentCloud
 {
-    namespace Gs
+    namespace Redis
     {
-        namespace V20191118
+        namespace V20180412
         {
             namespace Model
             {
                 /**
-                * DescribeWorkers请求参数结构体
+                * DescribeMaintenanceWindow请求参数结构体
                 */
-                class DescribeWorkersRequest : public AbstractModel
+                class DescribeMaintenanceWindowRequest : public AbstractModel
                 {
                 public:
-                    DescribeWorkersRequest();
-                    ~DescribeWorkersRequest() = default;
+                    DescribeMaintenanceWindowRequest();
+                    ~DescribeMaintenanceWindowRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取资源池编号，1表示正式，2表示测试
-                     * @return SetNo 资源池编号，1表示正式，2表示测试
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
                      */
-                    uint64_t GetSetNo() const;
+                    std::string GetInstanceId() const;
 
                     /**
-                     * 设置资源池编号，1表示正式，2表示测试
-                     * @param SetNo 资源池编号，1表示正式，2表示测试
+                     * 设置实例ID
+                     * @param InstanceId 实例ID
                      */
-                    void SetSetNo(const uint64_t& _setNo);
+                    void SetInstanceId(const std::string& _instanceId);
 
                     /**
-                     * 判断参数 SetNo 是否已赋值
-                     * @return SetNo 是否已赋值
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
                      */
-                    bool SetNoHasBeenSet() const;
+                    bool InstanceIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 资源池编号，1表示正式，2表示测试
+                     * 实例ID
                      */
-                    uint64_t m_setNo;
-                    bool m_setNoHasBeenSet;
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }
@@ -74,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_GS_V20191118_MODEL_DESCRIBEWORKERSREQUEST_H_
+#endif // !TENCENTCLOUD_REDIS_V20180412_MODEL_DESCRIBEMAINTENANCEWINDOWREQUEST_H_

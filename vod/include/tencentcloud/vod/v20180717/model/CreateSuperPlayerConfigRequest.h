@@ -63,24 +63,6 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取模板描述信息，长度限制：256 个字符。
-                     * @return Comment 模板描述信息，长度限制：256 个字符。
-                     */
-                    std::string GetComment() const;
-
-                    /**
-                     * 设置模板描述信息，长度限制：256 个字符。
-                     * @param Comment 模板描述信息，长度限制：256 个字符。
-                     */
-                    void SetComment(const std::string& _comment);
-
-                    /**
-                     * 判断参数 Comment 是否已赋值
-                     * @return Comment 是否已赋值
-                     */
-                    bool CommentHasBeenSet() const;
-
-                    /**
                      * 获取播放 DRM 保护的自适应码流开关：
 <li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
@@ -211,6 +193,68 @@ namespace TencentCloud
                     bool ResolutionNamesHasBeenSet() const;
 
                     /**
+                     * 获取播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。
+                     * @return Domain 播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。
+                     * @param Domain 播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取播放时使用的 Scheme。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme。其他可选值：
+<li>HTTP；</li>
+<li>HTTPS。</li>
+                     * @return Scheme 播放时使用的 Scheme。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme。其他可选值：
+<li>HTTP；</li>
+<li>HTTPS。</li>
+                     */
+                    std::string GetScheme() const;
+
+                    /**
+                     * 设置播放时使用的 Scheme。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme。其他可选值：
+<li>HTTP；</li>
+<li>HTTPS。</li>
+                     * @param Scheme 播放时使用的 Scheme。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme。其他可选值：
+<li>HTTP；</li>
+<li>HTTPS。</li>
+                     */
+                    void SetScheme(const std::string& _scheme);
+
+                    /**
+                     * 判断参数 Scheme 是否已赋值
+                     * @return Scheme 是否已赋值
+                     */
+                    bool SchemeHasBeenSet() const;
+
+                    /**
+                     * 获取模板描述信息，长度限制：256 个字符。
+                     * @return Comment 模板描述信息，长度限制：256 个字符。
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 设置模板描述信息，长度限制：256 个字符。
+                     * @param Comment 模板描述信息，长度限制：256 个字符。
+                     */
+                    void SetComment(const std::string& _comment);
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     */
+                    bool CommentHasBeenSet() const;
+
+                    /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      */
@@ -235,12 +279,6 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
-
-                    /**
-                     * 模板描述信息，长度限制：256 个字符。
-                     */
-                    std::string m_comment;
-                    bool m_commentHasBeenSet;
 
                     /**
                      * 播放 DRM 保护的自适应码流开关：
@@ -281,6 +319,26 @@ namespace TencentCloud
                      */
                     std::vector<ResolutionNameInfo> m_resolutionNames;
                     bool m_resolutionNamesHasBeenSet;
+
+                    /**
+                     * 播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * 播放时使用的 Scheme。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme。其他可选值：
+<li>HTTP；</li>
+<li>HTTPS。</li>
+                     */
+                    std::string m_scheme;
+                    bool m_schemeHasBeenSet;
+
+                    /**
+                     * 模板描述信息，长度限制：256 个字符。
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
 
                     /**
                      * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。

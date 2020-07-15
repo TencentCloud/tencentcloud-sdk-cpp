@@ -30,6 +30,8 @@ ModifySuperPlayerConfigRequest::ModifySuperPlayerConfigRequest() :
     m_drmStreamingsInfoHasBeenSet(false),
     m_imageSpriteDefinitionHasBeenSet(false),
     m_resolutionNamesHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_schemeHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
@@ -96,6 +98,22 @@ string ModifySuperPlayerConfigRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Scheme";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_scheme.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commentHasBeenSet)
@@ -216,6 +234,38 @@ void ModifySuperPlayerConfigRequest::SetResolutionNames(const vector<ResolutionN
 bool ModifySuperPlayerConfigRequest::ResolutionNamesHasBeenSet() const
 {
     return m_resolutionNamesHasBeenSet;
+}
+
+string ModifySuperPlayerConfigRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void ModifySuperPlayerConfigRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool ModifySuperPlayerConfigRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string ModifySuperPlayerConfigRequest::GetScheme() const
+{
+    return m_scheme;
+}
+
+void ModifySuperPlayerConfigRequest::SetScheme(const string& _scheme)
+{
+    m_scheme = _scheme;
+    m_schemeHasBeenSet = true;
+}
+
+bool ModifySuperPlayerConfigRequest::SchemeHasBeenSet() const
+{
+    return m_schemeHasBeenSet;
 }
 
 string ModifySuperPlayerConfigRequest::GetComment() const

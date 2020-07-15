@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gs/v20191118/model/QuitQueueResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gs::V20191118::Model;
+using namespace TencentCloud::Redis::V20180412::Model;
 using namespace rapidjson;
 using namespace std;
 
-QuitQueueResponse::QuitQueueResponse()
+UpgradeInstanceVersionResponse::UpgradeInstanceVersionResponse() :
+    m_dealIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome QuitQueueResponse::Deserialize(const string &payload)
+CoreInternalOutcome UpgradeInstanceVersionResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -62,9 +63,29 @@ CoreInternalOutcome QuitQueueResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("DealId") && !rsp["DealId"].IsNull())
+    {
+        if (!rsp["DealId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DealId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealId = string(rsp["DealId"].GetString());
+        m_dealIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string UpgradeInstanceVersionResponse::GetDealId() const
+{
+    return m_dealId;
+}
+
+bool UpgradeInstanceVersionResponse::DealIdHasBeenSet() const
+{
+    return m_dealIdHasBeenSet;
+}
 
 

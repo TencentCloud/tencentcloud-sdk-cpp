@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gs/v20191118/model/ModifyWorkersResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gs::V20191118::Model;
+using namespace TencentCloud::Redis::V20180412::Model;
 using namespace rapidjson;
 using namespace std;
 
-ModifyWorkersResponse::ModifyWorkersResponse()
+DescribeMaintenanceWindowResponse::DescribeMaintenanceWindowResponse() :
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyWorkersResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeMaintenanceWindowResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -62,9 +64,49 @@ CoreInternalOutcome ModifyWorkersResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("StartTime") && !rsp["StartTime"].IsNull())
+    {
+        if (!rsp["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(rsp["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EndTime") && !rsp["EndTime"].IsNull())
+    {
+        if (!rsp["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(rsp["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string DescribeMaintenanceWindowResponse::GetStartTime() const
+{
+    return m_startTime;
+}
+
+bool DescribeMaintenanceWindowResponse::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeMaintenanceWindowResponse::GetEndTime() const
+{
+    return m_endTime;
+}
+
+bool DescribeMaintenanceWindowResponse::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
 
 

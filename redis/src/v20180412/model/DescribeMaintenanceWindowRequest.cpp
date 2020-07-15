@@ -14,33 +14,33 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gs/v20191118/model/DescribeWorkersRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Gs::V20191118::Model;
+using namespace TencentCloud::Redis::V20180412::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeWorkersRequest::DescribeWorkersRequest() :
-    m_setNoHasBeenSet(false)
+DescribeMaintenanceWindowRequest::DescribeMaintenanceWindowRequest() :
+    m_instanceIdHasBeenSet(false)
 {
 }
 
-string DescribeWorkersRequest::ToJsonString() const
+string DescribeMaintenanceWindowRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_setNoHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "SetNo";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_setNo, allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -51,20 +51,20 @@ string DescribeWorkersRequest::ToJsonString() const
 }
 
 
-uint64_t DescribeWorkersRequest::GetSetNo() const
+string DescribeMaintenanceWindowRequest::GetInstanceId() const
 {
-    return m_setNo;
+    return m_instanceId;
 }
 
-void DescribeWorkersRequest::SetSetNo(const uint64_t& _setNo)
+void DescribeMaintenanceWindowRequest::SetInstanceId(const string& _instanceId)
 {
-    m_setNo = _setNo;
-    m_setNoHasBeenSet = true;
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
 }
 
-bool DescribeWorkersRequest::SetNoHasBeenSet() const
+bool DescribeMaintenanceWindowRequest::InstanceIdHasBeenSet() const
 {
-    return m_setNoHasBeenSet;
+    return m_instanceIdHasBeenSet;
 }
 
 

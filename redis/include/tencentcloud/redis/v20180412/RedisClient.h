@@ -75,6 +75,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceShardsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstancesRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstancesResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProductInfoRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProductInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupRequest.h>
@@ -117,6 +119,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceRequest.h>
@@ -131,6 +135,8 @@
 #include <tencentcloud/redis/v20180412/model/SwitchInstanceVipResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionResponse.h>
 
 
 namespace TencentCloud
@@ -223,6 +229,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMaintenanceWindowResponse> DescribeMaintenanceWindowOutcome;
+                typedef std::future<DescribeMaintenanceWindowOutcome> DescribeMaintenanceWindowOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeMaintenanceWindowRequest&, DescribeMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintenanceWindowAsyncHandler;
                 typedef Outcome<Error, Model::DescribeProductInfoResponse> DescribeProductInfoOutcome;
                 typedef std::future<DescribeProductInfoOutcome> DescribeProductInfoOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeProductInfoRequest&, DescribeProductInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductInfoAsyncHandler;
@@ -286,6 +295,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyInstanceParamsResponse> ModifyInstanceParamsOutcome;
                 typedef std::future<ModifyInstanceParamsOutcome> ModifyInstanceParamsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceParamsRequest&, ModifyInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamsAsyncHandler;
+                typedef Outcome<Error, Model::ModifyMaintenanceWindowResponse> ModifyMaintenanceWindowOutcome;
+                typedef std::future<ModifyMaintenanceWindowOutcome> ModifyMaintenanceWindowOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyMaintenanceWindowRequest&, ModifyMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintenanceWindowAsyncHandler;
                 typedef Outcome<Error, Model::ModifyNetworkConfigResponse> ModifyNetworkConfigOutcome;
                 typedef std::future<ModifyNetworkConfigOutcome> ModifyNetworkConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyNetworkConfigRequest&, ModifyNetworkConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkConfigAsyncHandler;
@@ -307,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
                 typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
+                typedef Outcome<Error, Model::UpgradeInstanceVersionResponse> UpgradeInstanceVersionOutcome;
+                typedef std::future<UpgradeInstanceVersionOutcome> UpgradeInstanceVersionOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceVersionRequest&, UpgradeInstanceVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceVersionAsyncHandler;
 
 
 
@@ -545,6 +560,15 @@ namespace TencentCloud
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
+                 *查询实例维护时间窗，在实例需要进行版本升级或者架构升级的时候，会在维护时间窗时间内进行切换
+                 * @param req DescribeMaintenanceWindowRequest
+                 * @return DescribeMaintenanceWindowOutcome
+                 */
+                DescribeMaintenanceWindowOutcome DescribeMaintenanceWindow(const Model::DescribeMaintenanceWindowRequest &request);
+                void DescribeMaintenanceWindowAsync(const Model::DescribeMaintenanceWindowRequest& request, const DescribeMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMaintenanceWindowOutcomeCallable DescribeMaintenanceWindowCallable(const Model::DescribeMaintenanceWindowRequest& request);
+
+                /**
                  *本接口查询指定可用区和实例类型下 Redis 的售卖规格， 如果用户不在购买白名单中，将不能查询该可用区或该类型的售卖规格详情。申请购买某地域白名单可以提交工单
                  * @param req DescribeProductInfoRequest
                  * @return DescribeProductInfoOutcome
@@ -734,6 +758,15 @@ namespace TencentCloud
                 ModifyInstanceParamsOutcomeCallable ModifyInstanceParamsCallable(const Model::ModifyInstanceParamsRequest& request);
 
                 /**
+                 *修改实例维护时间窗时间，需要进行版本升级或者架构升级的实例，会在维护时间窗内进行时间切换。注意：已经发起版本升级或者架构升级的实例，无法修改维护时间窗。
+                 * @param req ModifyMaintenanceWindowRequest
+                 * @return ModifyMaintenanceWindowOutcome
+                 */
+                ModifyMaintenanceWindowOutcome ModifyMaintenanceWindow(const Model::ModifyMaintenanceWindowRequest &request);
+                void ModifyMaintenanceWindowAsync(const Model::ModifyMaintenanceWindowRequest& request, const ModifyMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMaintenanceWindowOutcomeCallable ModifyMaintenanceWindowCallable(const Model::ModifyMaintenanceWindowRequest& request);
+
+                /**
                  *修改实例网络配置
                  * @param req ModifyNetworkConfigRequest
                  * @return ModifyNetworkConfigOutcome
@@ -795,6 +828,15 @@ namespace TencentCloud
                 UpgradeInstanceOutcome UpgradeInstance(const Model::UpgradeInstanceRequest &request);
                 void UpgradeInstanceAsync(const Model::UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeInstanceOutcomeCallable UpgradeInstanceCallable(const Model::UpgradeInstanceRequest& request);
+
+                /**
+                 *将原本实例升级到高版本实例，或者将主从版实例升级到集群版实例
+                 * @param req UpgradeInstanceVersionRequest
+                 * @return UpgradeInstanceVersionOutcome
+                 */
+                UpgradeInstanceVersionOutcome UpgradeInstanceVersion(const Model::UpgradeInstanceVersionRequest &request);
+                void UpgradeInstanceVersionAsync(const Model::UpgradeInstanceVersionRequest& request, const UpgradeInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeInstanceVersionOutcomeCallable UpgradeInstanceVersionCallable(const Model::UpgradeInstanceVersionRequest& request);
 
             };
         }

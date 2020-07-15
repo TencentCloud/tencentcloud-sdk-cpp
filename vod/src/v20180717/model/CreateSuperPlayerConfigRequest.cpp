@@ -25,12 +25,14 @@ using namespace std;
 
 CreateSuperPlayerConfigRequest::CreateSuperPlayerConfigRequest() :
     m_nameHasBeenSet(false),
-    m_commentHasBeenSet(false),
     m_drmSwitchHasBeenSet(false),
     m_adaptiveDynamicStreamingDefinitionHasBeenSet(false),
     m_drmStreamingsInfoHasBeenSet(false),
     m_imageSpriteDefinitionHasBeenSet(false),
     m_resolutionNamesHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_schemeHasBeenSet(false),
+    m_commentHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -48,14 +50,6 @@ string CreateSuperPlayerConfigRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_commentHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Comment";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_drmSwitchHasBeenSet)
@@ -106,6 +100,30 @@ string CreateSuperPlayerConfigRequest::ToJsonString() const
         }
     }
 
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Scheme";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_scheme.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_subAppIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -136,22 +154,6 @@ void CreateSuperPlayerConfigRequest::SetName(const string& _name)
 bool CreateSuperPlayerConfigRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
-}
-
-string CreateSuperPlayerConfigRequest::GetComment() const
-{
-    return m_comment;
-}
-
-void CreateSuperPlayerConfigRequest::SetComment(const string& _comment)
-{
-    m_comment = _comment;
-    m_commentHasBeenSet = true;
-}
-
-bool CreateSuperPlayerConfigRequest::CommentHasBeenSet() const
-{
-    return m_commentHasBeenSet;
 }
 
 string CreateSuperPlayerConfigRequest::GetDrmSwitch() const
@@ -232,6 +234,54 @@ void CreateSuperPlayerConfigRequest::SetResolutionNames(const vector<ResolutionN
 bool CreateSuperPlayerConfigRequest::ResolutionNamesHasBeenSet() const
 {
     return m_resolutionNamesHasBeenSet;
+}
+
+string CreateSuperPlayerConfigRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void CreateSuperPlayerConfigRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool CreateSuperPlayerConfigRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string CreateSuperPlayerConfigRequest::GetScheme() const
+{
+    return m_scheme;
+}
+
+void CreateSuperPlayerConfigRequest::SetScheme(const string& _scheme)
+{
+    m_scheme = _scheme;
+    m_schemeHasBeenSet = true;
+}
+
+bool CreateSuperPlayerConfigRequest::SchemeHasBeenSet() const
+{
+    return m_schemeHasBeenSet;
+}
+
+string CreateSuperPlayerConfigRequest::GetComment() const
+{
+    return m_comment;
+}
+
+void CreateSuperPlayerConfigRequest::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool CreateSuperPlayerConfigRequest::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 
 uint64_t CreateSuperPlayerConfigRequest::GetSubAppId() const

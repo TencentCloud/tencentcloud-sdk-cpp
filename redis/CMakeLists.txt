@@ -26,6 +26,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/RestoreInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/TaskInfoDetail.h
   include/tencentcloud/redis/v20180412/model/SwitchInstanceVipRequest.h
+  include/tencentcloud/redis/v20180412/model/UpgradeInstanceVersionResponse.h
   include/tencentcloud/redis/v20180412/model/CreateInstancesRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyNetworkConfigResponse.h
   include/tencentcloud/redis/v20180412/model/CommandTake.h
@@ -71,6 +72,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/InquiryPriceRenewInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceCreateInstanceResponse.h
+  include/tencentcloud/redis/v20180412/model/InstanceSecurityGroupDetail.h
   include/tencentcloud/redis/v20180412/model/ResetPasswordRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceAccountResponse.h
   include/tencentcloud/redis/v20180412/model/DelayDistribution.h
@@ -79,6 +81,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceBackupsResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceIntegerParam.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTookDistRequest.h
+  include/tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceTextParam.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdTookResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.h
@@ -104,7 +107,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/SecurityGroup.h
   include/tencentcloud/redis/v20180412/model/CreateInstanceAccountRequest.h
   include/tencentcloud/redis/v20180412/model/EnableReplicaReadonlyResponse.h
-  include/tencentcloud/redis/v20180412/model/InstanceSecurityGroupDetail.h
+  include/tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceSecurityGroupResponse.h
   include/tencentcloud/redis/v20180412/model/ProductConf.h
   include/tencentcloud/redis/v20180412/model/InstanceNode.h
@@ -128,14 +131,17 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModfiyInstancePasswordResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceSet.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceRenewInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdTookRequest.h
   include/tencentcloud/redis/v20180412/model/DestroyPrepaidInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyTypeDistRequest.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceCreateInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceParamsRequest.h
   include/tencentcloud/redis/v20180412/model/BigKeyTypeInfo.h
+  include/tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceClusterNode.h
   include/tencentcloud/redis/v20180412/model/EnableReplicaReadonlyRequest.h
+  include/tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceAccountResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyRequest.h
   include/tencentcloud/redis/v20180412/model/DisableReplicaReadonlyRequest.h
@@ -171,6 +177,7 @@ set(redis_src
   src/v20180412/model/RestoreInstanceRequest.cpp
   src/v20180412/model/TaskInfoDetail.cpp
   src/v20180412/model/SwitchInstanceVipRequest.cpp
+  src/v20180412/model/UpgradeInstanceVersionResponse.cpp
   src/v20180412/model/CreateInstancesRequest.cpp
   src/v20180412/model/ModifyNetworkConfigResponse.cpp
   src/v20180412/model/CommandTake.cpp
@@ -216,6 +223,7 @@ set(redis_src
   src/v20180412/model/InquiryPriceRenewInstanceResponse.cpp
   src/v20180412/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20180412/model/InquiryPriceCreateInstanceResponse.cpp
+  src/v20180412/model/InstanceSecurityGroupDetail.cpp
   src/v20180412/model/ResetPasswordRequest.cpp
   src/v20180412/model/ModifyInstanceAccountResponse.cpp
   src/v20180412/model/DelayDistribution.cpp
@@ -224,6 +232,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceBackupsResponse.cpp
   src/v20180412/model/InstanceIntegerParam.cpp
   src/v20180412/model/DescribeInstanceMonitorTookDistRequest.cpp
+  src/v20180412/model/ModifyMaintenanceWindowRequest.cpp
   src/v20180412/model/InstanceTextParam.cpp
   src/v20180412/model/DescribeInstanceMonitorTopNCmdTookResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.cpp
@@ -249,7 +258,7 @@ set(redis_src
   src/v20180412/model/SecurityGroup.cpp
   src/v20180412/model/CreateInstanceAccountRequest.cpp
   src/v20180412/model/EnableReplicaReadonlyResponse.cpp
-  src/v20180412/model/InstanceSecurityGroupDetail.cpp
+  src/v20180412/model/DescribeMaintenanceWindowResponse.cpp
   src/v20180412/model/DescribeInstanceSecurityGroupResponse.cpp
   src/v20180412/model/ProductConf.cpp
   src/v20180412/model/InstanceNode.cpp
@@ -273,14 +282,17 @@ set(redis_src
   src/v20180412/model/ModfiyInstancePasswordResponse.cpp
   src/v20180412/model/InstanceSet.cpp
   src/v20180412/model/InquiryPriceRenewInstanceRequest.cpp
+  src/v20180412/model/ModifyMaintenanceWindowResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorTopNCmdTookRequest.cpp
   src/v20180412/model/DestroyPrepaidInstanceResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorBigKeyTypeDistRequest.cpp
   src/v20180412/model/InquiryPriceCreateInstanceRequest.cpp
   src/v20180412/model/ModifyInstanceParamsRequest.cpp
   src/v20180412/model/BigKeyTypeInfo.cpp
+  src/v20180412/model/DescribeMaintenanceWindowRequest.cpp
   src/v20180412/model/InstanceClusterNode.cpp
   src/v20180412/model/EnableReplicaReadonlyRequest.cpp
+  src/v20180412/model/UpgradeInstanceVersionRequest.cpp
   src/v20180412/model/DescribeInstanceAccountResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorBigKeyRequest.cpp
   src/v20180412/model/DisableReplicaReadonlyRequest.cpp

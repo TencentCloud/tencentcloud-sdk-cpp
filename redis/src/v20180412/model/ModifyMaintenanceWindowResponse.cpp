@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gs/v20191118/model/EnterQueueResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gs::V20191118::Model;
+using namespace TencentCloud::Redis::V20180412::Model;
 using namespace rapidjson;
 using namespace std;
 
-EnterQueueResponse::EnterQueueResponse() :
-    m_rankHasBeenSet(false),
-    m_lockSuccessHasBeenSet(false)
+ModifyMaintenanceWindowResponse::ModifyMaintenanceWindowResponse() :
+    m_statusHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome EnterQueueResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyMaintenanceWindowResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +63,14 @@ CoreInternalOutcome EnterQueueResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Rank") && !rsp["Rank"].IsNull())
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
     {
-        if (!rsp["Rank"].IsUint64())
+        if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Rank` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_rank = rsp["Rank"].GetUint64();
-        m_rankHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("LockSuccess") && !rsp["LockSuccess"].IsNull())
-    {
-        if (!rsp["LockSuccess"].IsBool())
-        {
-            return CoreInternalOutcome(Error("response `LockSuccess` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_lockSuccess = rsp["LockSuccess"].GetBool();
-        m_lockSuccessHasBeenSet = true;
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
     }
 
 
@@ -89,24 +78,14 @@ CoreInternalOutcome EnterQueueResponse::Deserialize(const string &payload)
 }
 
 
-uint64_t EnterQueueResponse::GetRank() const
+string ModifyMaintenanceWindowResponse::GetStatus() const
 {
-    return m_rank;
+    return m_status;
 }
 
-bool EnterQueueResponse::RankHasBeenSet() const
+bool ModifyMaintenanceWindowResponse::StatusHasBeenSet() const
 {
-    return m_rankHasBeenSet;
-}
-
-bool EnterQueueResponse::GetLockSuccess() const
-{
-    return m_lockSuccess;
-}
-
-bool EnterQueueResponse::LockSuccessHasBeenSet() const
-{
-    return m_lockSuccessHasBeenSet;
+    return m_statusHasBeenSet;
 }
 
 

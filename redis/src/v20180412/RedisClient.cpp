@@ -1158,6 +1158,49 @@ RedisClient::DescribeInstancesOutcomeCallable RedisClient::DescribeInstancesCall
     return task->get_future();
 }
 
+RedisClient::DescribeMaintenanceWindowOutcome RedisClient::DescribeMaintenanceWindow(const DescribeMaintenanceWindowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMaintenanceWindow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMaintenanceWindowResponse rsp = DescribeMaintenanceWindowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMaintenanceWindowOutcome(rsp);
+        else
+            return DescribeMaintenanceWindowOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMaintenanceWindowOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeMaintenanceWindowAsync(const DescribeMaintenanceWindowRequest& request, const DescribeMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMaintenanceWindow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeMaintenanceWindowOutcomeCallable RedisClient::DescribeMaintenanceWindowCallable(const DescribeMaintenanceWindowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMaintenanceWindowOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMaintenanceWindow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeProductInfoOutcome RedisClient::DescribeProductInfo(const DescribeProductInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProductInfo");
@@ -2061,6 +2104,49 @@ RedisClient::ModifyInstanceParamsOutcomeCallable RedisClient::ModifyInstancePara
     return task->get_future();
 }
 
+RedisClient::ModifyMaintenanceWindowOutcome RedisClient::ModifyMaintenanceWindow(const ModifyMaintenanceWindowRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMaintenanceWindow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMaintenanceWindowResponse rsp = ModifyMaintenanceWindowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMaintenanceWindowOutcome(rsp);
+        else
+            return ModifyMaintenanceWindowOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMaintenanceWindowOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyMaintenanceWindowAsync(const ModifyMaintenanceWindowRequest& request, const ModifyMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMaintenanceWindow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::ModifyMaintenanceWindowOutcomeCallable RedisClient::ModifyMaintenanceWindowCallable(const ModifyMaintenanceWindowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMaintenanceWindowOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMaintenanceWindow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::ModifyNetworkConfigOutcome RedisClient::ModifyNetworkConfig(const ModifyNetworkConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyNetworkConfig");
@@ -2355,6 +2441,49 @@ RedisClient::UpgradeInstanceOutcomeCallable RedisClient::UpgradeInstanceCallable
         [this, request]()
         {
             return this->UpgradeInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::UpgradeInstanceVersionOutcome RedisClient::UpgradeInstanceVersion(const UpgradeInstanceVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeInstanceVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeInstanceVersionResponse rsp = UpgradeInstanceVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeInstanceVersionOutcome(rsp);
+        else
+            return UpgradeInstanceVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeInstanceVersionOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::UpgradeInstanceVersionAsync(const UpgradeInstanceVersionRequest& request, const UpgradeInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeInstanceVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::UpgradeInstanceVersionOutcomeCallable RedisClient::UpgradeInstanceVersionCallable(const UpgradeInstanceVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeInstanceVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeInstanceVersion(request);
         }
     );
 

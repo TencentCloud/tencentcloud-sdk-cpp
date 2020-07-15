@@ -25,16 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/gs/v20191118/model/CreateSessionRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateSessionResponse.h>
-#include <tencentcloud/gs/v20191118/model/DescribeWorkersRequest.h>
-#include <tencentcloud/gs/v20191118/model/DescribeWorkersResponse.h>
-#include <tencentcloud/gs/v20191118/model/DescribeWorkersInfoRequest.h>
-#include <tencentcloud/gs/v20191118/model/DescribeWorkersInfoResponse.h>
-#include <tencentcloud/gs/v20191118/model/EnterQueueRequest.h>
-#include <tencentcloud/gs/v20191118/model/EnterQueueResponse.h>
-#include <tencentcloud/gs/v20191118/model/ModifyWorkersRequest.h>
-#include <tencentcloud/gs/v20191118/model/ModifyWorkersResponse.h>
-#include <tencentcloud/gs/v20191118/model/QuitQueueRequest.h>
-#include <tencentcloud/gs/v20191118/model/QuitQueueResponse.h>
 #include <tencentcloud/gs/v20191118/model/StopGameRequest.h>
 #include <tencentcloud/gs/v20191118/model/StopGameResponse.h>
 #include <tencentcloud/gs/v20191118/model/TrylockWorkerRequest.h>
@@ -56,21 +46,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateSessionResponse> CreateSessionOutcome;
                 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateSessionRequest&, CreateSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSessionAsyncHandler;
-                typedef Outcome<Error, Model::DescribeWorkersResponse> DescribeWorkersOutcome;
-                typedef std::future<DescribeWorkersOutcome> DescribeWorkersOutcomeCallable;
-                typedef std::function<void(const GsClient*, const Model::DescribeWorkersRequest&, DescribeWorkersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkersAsyncHandler;
-                typedef Outcome<Error, Model::DescribeWorkersInfoResponse> DescribeWorkersInfoOutcome;
-                typedef std::future<DescribeWorkersInfoOutcome> DescribeWorkersInfoOutcomeCallable;
-                typedef std::function<void(const GsClient*, const Model::DescribeWorkersInfoRequest&, DescribeWorkersInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkersInfoAsyncHandler;
-                typedef Outcome<Error, Model::EnterQueueResponse> EnterQueueOutcome;
-                typedef std::future<EnterQueueOutcome> EnterQueueOutcomeCallable;
-                typedef std::function<void(const GsClient*, const Model::EnterQueueRequest&, EnterQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnterQueueAsyncHandler;
-                typedef Outcome<Error, Model::ModifyWorkersResponse> ModifyWorkersOutcome;
-                typedef std::future<ModifyWorkersOutcome> ModifyWorkersOutcomeCallable;
-                typedef std::function<void(const GsClient*, const Model::ModifyWorkersRequest&, ModifyWorkersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkersAsyncHandler;
-                typedef Outcome<Error, Model::QuitQueueResponse> QuitQueueOutcome;
-                typedef std::future<QuitQueueOutcome> QuitQueueOutcomeCallable;
-                typedef std::function<void(const GsClient*, const Model::QuitQueueRequest&, QuitQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuitQueueAsyncHandler;
                 typedef Outcome<Error, Model::StopGameResponse> StopGameOutcome;
                 typedef std::future<StopGameOutcome> StopGameOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::StopGameRequest&, StopGameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGameAsyncHandler;
@@ -88,51 +63,6 @@ namespace TencentCloud
                 CreateSessionOutcome CreateSession(const Model::CreateSessionRequest &request);
                 void CreateSessionAsync(const Model::CreateSessionRequest& request, const CreateSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSessionOutcomeCallable CreateSessionCallable(const Model::CreateSessionRequest& request);
-
-                /**
-                 *查询空闲机器数量
-                 * @param req DescribeWorkersRequest
-                 * @return DescribeWorkersOutcome
-                 */
-                DescribeWorkersOutcome DescribeWorkers(const Model::DescribeWorkersRequest &request);
-                void DescribeWorkersAsync(const Model::DescribeWorkersRequest& request, const DescribeWorkersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWorkersOutcomeCallable DescribeWorkersCallable(const Model::DescribeWorkersRequest& request);
-
-                /**
-                 *获取机器信息
-                 * @param req DescribeWorkersInfoRequest
-                 * @return DescribeWorkersInfoOutcome
-                 */
-                DescribeWorkersInfoOutcome DescribeWorkersInfo(const Model::DescribeWorkersInfoRequest &request);
-                void DescribeWorkersInfoAsync(const Model::DescribeWorkersInfoRequest& request, const DescribeWorkersInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWorkersInfoOutcomeCallable DescribeWorkersInfoCallable(const Model::DescribeWorkersInfoRequest& request);
-
-                /**
-                 *进入排队锁定机器
-                 * @param req EnterQueueRequest
-                 * @return EnterQueueOutcome
-                 */
-                EnterQueueOutcome EnterQueue(const Model::EnterQueueRequest &request);
-                void EnterQueueAsync(const Model::EnterQueueRequest& request, const EnterQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                EnterQueueOutcomeCallable EnterQueueCallable(const Model::EnterQueueRequest& request);
-
-                /**
-                 *修改机器信息
-                 * @param req ModifyWorkersRequest
-                 * @return ModifyWorkersOutcome
-                 */
-                ModifyWorkersOutcome ModifyWorkers(const Model::ModifyWorkersRequest &request);
-                void ModifyWorkersAsync(const Model::ModifyWorkersRequest& request, const ModifyWorkersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyWorkersOutcomeCallable ModifyWorkersCallable(const Model::ModifyWorkersRequest& request);
-
-                /**
-                 *退出排队
-                 * @param req QuitQueueRequest
-                 * @return QuitQueueOutcome
-                 */
-                QuitQueueOutcome QuitQueue(const Model::QuitQueueRequest &request);
-                void QuitQueueAsync(const Model::QuitQueueRequest& request, const QuitQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                QuitQueueOutcomeCallable QuitQueueCallable(const Model::QuitQueueRequest& request);
 
                 /**
                  *强制退出游戏
