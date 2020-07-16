@@ -27,6 +27,7 @@
 #include <tencentcloud/scf/v20180416/model/LayerVersionSimple.h>
 #include <tencentcloud/scf/v20180416/model/DeadLetterConfig.h>
 #include <tencentcloud/scf/v20180416/model/PublicNetConfigIn.h>
+#include <tencentcloud/scf/v20180416/model/CfsConfig.h>
 
 
 namespace TencentCloud
@@ -372,6 +373,24 @@ namespace TencentCloud
                      */
                     bool PublicNetConfigHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统配置参数，用于云函数挂载文件系统
+                     * @return CfsConfig 文件系统配置参数，用于云函数挂载文件系统
+                     */
+                    CfsConfig GetCfsConfig() const;
+
+                    /**
+                     * 设置文件系统配置参数，用于云函数挂载文件系统
+                     * @param CfsConfig 文件系统配置参数，用于云函数挂载文件系统
+                     */
+                    void SetCfsConfig(const CfsConfig& _cfsConfig);
+
+                    /**
+                     * 判断参数 CfsConfig 是否已赋值
+                     * @return CfsConfig 是否已赋值
+                     */
+                    bool CfsConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -481,6 +500,12 @@ namespace TencentCloud
                      */
                     PublicNetConfigIn m_publicNetConfig;
                     bool m_publicNetConfigHasBeenSet;
+
+                    /**
+                     * 文件系统配置参数，用于云函数挂载文件系统
+                     */
+                    CfsConfig m_cfsConfig;
+                    bool m_cfsConfigHasBeenSet;
 
                 };
             }

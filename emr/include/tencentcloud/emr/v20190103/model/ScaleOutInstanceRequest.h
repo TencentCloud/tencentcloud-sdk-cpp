@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
+#include <tencentcloud/emr/v20190103/model/PodSpec.h>
 
 
 namespace TencentCloud
@@ -328,6 +329,42 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群提供的资源
+                     * @return HardwareResourceType 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群提供的资源
+                     */
+                    std::string GetHardwareResourceType() const;
+
+                    /**
+                     * 设置扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群提供的资源
+                     * @param HardwareResourceType 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群提供的资源
+                     */
+                    void SetHardwareResourceType(const std::string& _hardwareResourceType);
+
+                    /**
+                     * 判断参数 HardwareResourceType 是否已赋值
+                     * @return HardwareResourceType 是否已赋值
+                     */
+                    bool HardwareResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取使用Pod资源扩容时，指定的Pod规格以及来源等信息
+                     * @return PodSpec 使用Pod资源扩容时，指定的Pod规格以及来源等信息
+                     */
+                    PodSpec GetPodSpec() const;
+
+                    /**
+                     * 设置使用Pod资源扩容时，指定的Pod规格以及来源等信息
+                     * @param PodSpec 使用Pod资源扩容时，指定的Pod规格以及来源等信息
+                     */
+                    void SetPodSpec(const PodSpec& _podSpec);
+
+                    /**
+                     * 判断参数 PodSpec 是否已赋值
+                     * @return PodSpec 是否已赋值
+                     */
+                    bool PodSpecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +458,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群提供的资源
+                     */
+                    std::string m_hardwareResourceType;
+                    bool m_hardwareResourceTypeHasBeenSet;
+
+                    /**
+                     * 使用Pod资源扩容时，指定的Pod规格以及来源等信息
+                     */
+                    PodSpec m_podSpec;
+                    bool m_podSpecHasBeenSet;
 
                 };
             }

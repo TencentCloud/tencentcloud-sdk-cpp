@@ -28,6 +28,7 @@ set(yunjing_public_header_model
   include/tencentcloud/yunjing/v20180228/model/DescribeAlarmAttributeResponse.h
   include/tencentcloud/yunjing/v20180228/model/DescribeWeeklyReportBruteAttacksResponse.h
   include/tencentcloud/yunjing/v20180228/model/DescribeAgentVulsRequest.h
+  include/tencentcloud/yunjing/v20180228/model/DescribeTagsRequest.h
   include/tencentcloud/yunjing/v20180228/model/AddMachineTagResponse.h
   include/tencentcloud/yunjing/v20180228/model/UsualPlace.h
   include/tencentcloud/yunjing/v20180228/model/DescribeReverseShellRulesRequest.h
@@ -48,7 +49,7 @@ set(yunjing_public_header_model
   include/tencentcloud/yunjing/v20180228/model/DeleteBashEventsResponse.h
   include/tencentcloud/yunjing/v20180228/model/ExportPrivilegeEventsRequest.h
   include/tencentcloud/yunjing/v20180228/model/WeeklyReportMalware.h
-  include/tencentcloud/yunjing/v20180228/model/DescribeBruteAttacksRequest.h
+  include/tencentcloud/yunjing/v20180228/model/CreateBaselineStrategyRequest.h
   include/tencentcloud/yunjing/v20180228/model/DescribeSecurityTrendsRequest.h
   include/tencentcloud/yunjing/v20180228/model/Account.h
   include/tencentcloud/yunjing/v20180228/model/DescribeReverseShellEventsResponse.h
@@ -64,6 +65,7 @@ set(yunjing_public_header_model
   include/tencentcloud/yunjing/v20180228/model/DescribeComponentsRequest.h
   include/tencentcloud/yunjing/v20180228/model/DescribeNonlocalLoginPlacesRequest.h
   include/tencentcloud/yunjing/v20180228/model/DeleteMachineTagRequest.h
+  include/tencentcloud/yunjing/v20180228/model/CreateBaselineStrategyResponse.h
   include/tencentcloud/yunjing/v20180228/model/ReverseShellRule.h
   include/tencentcloud/yunjing/v20180228/model/OpenPortStatistics.h
   include/tencentcloud/yunjing/v20180228/model/EditPrivilegeRuleResponse.h
@@ -132,7 +134,7 @@ set(yunjing_public_header_model
   include/tencentcloud/yunjing/v20180228/model/EditBashRuleRequest.h
   include/tencentcloud/yunjing/v20180228/model/DeletePrivilegeEventsResponse.h
   include/tencentcloud/yunjing/v20180228/model/InquiryPriceOpenProVersionPrepaidResponse.h
-  include/tencentcloud/yunjing/v20180228/model/DescribeMachineInfoResponse.h
+  include/tencentcloud/yunjing/v20180228/model/CloseProVersionRequest.h
   include/tencentcloud/yunjing/v20180228/model/SetBashEventsStatusResponse.h
   include/tencentcloud/yunjing/v20180228/model/DescribeUsualLoginPlacesResponse.h
   include/tencentcloud/yunjing/v20180228/model/DescribeProcessStatisticsResponse.h
@@ -194,7 +196,7 @@ set(yunjing_public_header_model
   include/tencentcloud/yunjing/v20180228/model/SeparateMalwaresResponse.h
   include/tencentcloud/yunjing/v20180228/model/ProcessStatistics.h
   include/tencentcloud/yunjing/v20180228/model/Process.h
-  include/tencentcloud/yunjing/v20180228/model/DescribeTagsRequest.h
+  include/tencentcloud/yunjing/v20180228/model/DescribeBruteAttacksRequest.h
   include/tencentcloud/yunjing/v20180228/model/DescribeVulScanResultRequest.h
   include/tencentcloud/yunjing/v20180228/model/DescribePrivilegeEventsRequest.h
   include/tencentcloud/yunjing/v20180228/model/DescribeWeeklyReportMalwaresResponse.h
@@ -229,7 +231,7 @@ set(yunjing_public_header_model
   include/tencentcloud/yunjing/v20180228/model/DescribeProcessStatisticsRequest.h
   include/tencentcloud/yunjing/v20180228/model/DeleteMachineTagResponse.h
   include/tencentcloud/yunjing/v20180228/model/DescribeHistoryAccountsRequest.h
-  include/tencentcloud/yunjing/v20180228/model/CloseProVersionRequest.h
+  include/tencentcloud/yunjing/v20180228/model/DescribeMachineInfoResponse.h
   include/tencentcloud/yunjing/v20180228/model/OpenProVersionRequest.h
   include/tencentcloud/yunjing/v20180228/model/DeleteBashRulesResponse.h
   include/tencentcloud/yunjing/v20180228/model/IgnoreImpactedHostsResponse.h
@@ -271,6 +273,7 @@ set(yunjing_src
   src/v20180228/model/DescribeAlarmAttributeResponse.cpp
   src/v20180228/model/DescribeWeeklyReportBruteAttacksResponse.cpp
   src/v20180228/model/DescribeAgentVulsRequest.cpp
+  src/v20180228/model/DescribeTagsRequest.cpp
   src/v20180228/model/AddMachineTagResponse.cpp
   src/v20180228/model/UsualPlace.cpp
   src/v20180228/model/DescribeReverseShellRulesRequest.cpp
@@ -291,7 +294,7 @@ set(yunjing_src
   src/v20180228/model/DeleteBashEventsResponse.cpp
   src/v20180228/model/ExportPrivilegeEventsRequest.cpp
   src/v20180228/model/WeeklyReportMalware.cpp
-  src/v20180228/model/DescribeBruteAttacksRequest.cpp
+  src/v20180228/model/CreateBaselineStrategyRequest.cpp
   src/v20180228/model/DescribeSecurityTrendsRequest.cpp
   src/v20180228/model/Account.cpp
   src/v20180228/model/DescribeReverseShellEventsResponse.cpp
@@ -307,6 +310,7 @@ set(yunjing_src
   src/v20180228/model/DescribeComponentsRequest.cpp
   src/v20180228/model/DescribeNonlocalLoginPlacesRequest.cpp
   src/v20180228/model/DeleteMachineTagRequest.cpp
+  src/v20180228/model/CreateBaselineStrategyResponse.cpp
   src/v20180228/model/ReverseShellRule.cpp
   src/v20180228/model/OpenPortStatistics.cpp
   src/v20180228/model/EditPrivilegeRuleResponse.cpp
@@ -375,7 +379,7 @@ set(yunjing_src
   src/v20180228/model/EditBashRuleRequest.cpp
   src/v20180228/model/DeletePrivilegeEventsResponse.cpp
   src/v20180228/model/InquiryPriceOpenProVersionPrepaidResponse.cpp
-  src/v20180228/model/DescribeMachineInfoResponse.cpp
+  src/v20180228/model/CloseProVersionRequest.cpp
   src/v20180228/model/SetBashEventsStatusResponse.cpp
   src/v20180228/model/DescribeUsualLoginPlacesResponse.cpp
   src/v20180228/model/DescribeProcessStatisticsResponse.cpp
@@ -437,7 +441,7 @@ set(yunjing_src
   src/v20180228/model/SeparateMalwaresResponse.cpp
   src/v20180228/model/ProcessStatistics.cpp
   src/v20180228/model/Process.cpp
-  src/v20180228/model/DescribeTagsRequest.cpp
+  src/v20180228/model/DescribeBruteAttacksRequest.cpp
   src/v20180228/model/DescribeVulScanResultRequest.cpp
   src/v20180228/model/DescribePrivilegeEventsRequest.cpp
   src/v20180228/model/DescribeWeeklyReportMalwaresResponse.cpp
@@ -472,7 +476,7 @@ set(yunjing_src
   src/v20180228/model/DescribeProcessStatisticsRequest.cpp
   src/v20180228/model/DeleteMachineTagResponse.cpp
   src/v20180228/model/DescribeHistoryAccountsRequest.cpp
-  src/v20180228/model/CloseProVersionRequest.cpp
+  src/v20180228/model/DescribeMachineInfoResponse.cpp
   src/v20180228/model/OpenProVersionRequest.cpp
   src/v20180228/model/DeleteBashRulesResponse.cpp
   src/v20180228/model/IgnoreImpactedHostsResponse.cpp

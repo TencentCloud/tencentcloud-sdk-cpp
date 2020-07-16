@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/SearchItem.h>
 
 
 namespace TencentCloud
@@ -154,6 +155,42 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取资源类型:支持all/host/pod，默认为all
+                     * @return HardwareResourceType 资源类型:支持all/host/pod，默认为all
+                     */
+                    std::string GetHardwareResourceType() const;
+
+                    /**
+                     * 设置资源类型:支持all/host/pod，默认为all
+                     * @param HardwareResourceType 资源类型:支持all/host/pod，默认为all
+                     */
+                    void SetHardwareResourceType(const std::string& _hardwareResourceType);
+
+                    /**
+                     * 判断参数 HardwareResourceType 是否已赋值
+                     * @return HardwareResourceType 是否已赋值
+                     */
+                    bool HardwareResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取支持搜索的字段
+                     * @return SearchFields 支持搜索的字段
+                     */
+                    std::vector<SearchItem> GetSearchFields() const;
+
+                    /**
+                     * 设置支持搜索的字段
+                     * @param SearchFields 支持搜索的字段
+                     */
+                    void SetSearchFields(const std::vector<SearchItem>& _searchFields);
+
+                    /**
+                     * 判断参数 SearchFields 是否已赋值
+                     * @return SearchFields 是否已赋值
+                     */
+                    bool SearchFieldsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +226,18 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 资源类型:支持all/host/pod，默认为all
+                     */
+                    std::string m_hardwareResourceType;
+                    bool m_hardwareResourceTypeHasBeenSet;
+
+                    /**
+                     * 支持搜索的字段
+                     */
+                    std::vector<SearchItem> m_searchFields;
+                    bool m_searchFieldsHasBeenSet;
 
                 };
             }

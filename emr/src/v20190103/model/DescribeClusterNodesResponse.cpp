@@ -27,7 +27,8 @@ using namespace std;
 DescribeClusterNodesResponse::DescribeClusterNodesResponse() :
     m_totalCntHasBeenSet(false),
     m_nodeListHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
+    m_tagKeysHasBeenSet(false),
+    m_hardwareResourceTypeListHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,19 @@ CoreInternalOutcome DescribeClusterNodesResponse::Deserialize(const string &payl
         m_tagKeysHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HardwareResourceTypeList") && !rsp["HardwareResourceTypeList"].IsNull())
+    {
+        if (!rsp["HardwareResourceTypeList"].IsArray())
+            return CoreInternalOutcome(Error("response `HardwareResourceTypeList` is not array type"));
+
+        const Value &tmpValue = rsp["HardwareResourceTypeList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_hardwareResourceTypeList.push_back((*itr).GetString());
+        }
+        m_hardwareResourceTypeListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -141,6 +155,16 @@ vector<string> DescribeClusterNodesResponse::GetTagKeys() const
 bool DescribeClusterNodesResponse::TagKeysHasBeenSet() const
 {
     return m_tagKeysHasBeenSet;
+}
+
+vector<string> DescribeClusterNodesResponse::GetHardwareResourceTypeList() const
+{
+    return m_hardwareResourceTypeList;
+}
+
+bool DescribeClusterNodesResponse::HardwareResourceTypeListHasBeenSet() const
+{
+    return m_hardwareResourceTypeListHasBeenSet;
 }
 
 

@@ -30,6 +30,7 @@
 #include <tencentcloud/scf/v20180416/model/LayerVersionInfo.h>
 #include <tencentcloud/scf/v20180416/model/DeadLetterConfig.h>
 #include <tencentcloud/scf/v20180416/model/PublicNetConfigOut.h>
+#include <tencentcloud/scf/v20180416/model/CfsConfig.h>
 
 
 namespace TencentCloud
@@ -475,6 +476,48 @@ namespace TencentCloud
                      */
                     bool OnsEnableHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统配置参数，用于云函数挂载文件系统
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CfsConfig 文件系统配置参数，用于云函数挂载文件系统
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CfsConfig GetCfsConfig() const;
+
+                    /**
+                     * 判断参数 CfsConfig 是否已赋值
+                     * @return CfsConfig 是否已赋值
+                     */
+                    bool CfsConfigHasBeenSet() const;
+
+                    /**
+                     * 获取函数的计费状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AvailableStatus 函数的计费状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAvailableStatus() const;
+
+                    /**
+                     * 判断参数 AvailableStatus 是否已赋值
+                     * @return AvailableStatus 是否已赋值
+                     */
+                    bool AvailableStatusHasBeenSet() const;
+
+                    /**
+                     * 获取函数版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Qualifier 函数版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetQualifier() const;
+
+                    /**
+                     * 判断参数 Qualifier 是否已赋值
+                     * @return Qualifier 是否已赋值
+                     */
+                    bool QualifierHasBeenSet() const;
+
                 private:
 
                     /**
@@ -688,6 +731,27 @@ namespace TencentCloud
                      */
                     std::string m_onsEnable;
                     bool m_onsEnableHasBeenSet;
+
+                    /**
+                     * 文件系统配置参数，用于云函数挂载文件系统
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CfsConfig m_cfsConfig;
+                    bool m_cfsConfigHasBeenSet;
+
+                    /**
+                     * 函数的计费状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_availableStatus;
+                    bool m_availableStatusHasBeenSet;
+
+                    /**
+                     * 函数版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_qualifier;
+                    bool m_qualifierHasBeenSet;
 
                 };
             }

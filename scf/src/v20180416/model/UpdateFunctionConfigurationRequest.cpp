@@ -39,7 +39,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_l5EnableHasBeenSet(false),
     m_layersHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
-    m_publicNetConfigHasBeenSet(false)
+    m_publicNetConfigHasBeenSet(false),
+    m_cfsConfigHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,15 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_publicNetConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_cfsConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CfsConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_cfsConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -451,6 +461,22 @@ void UpdateFunctionConfigurationRequest::SetPublicNetConfig(const PublicNetConfi
 bool UpdateFunctionConfigurationRequest::PublicNetConfigHasBeenSet() const
 {
     return m_publicNetConfigHasBeenSet;
+}
+
+CfsConfig UpdateFunctionConfigurationRequest::GetCfsConfig() const
+{
+    return m_cfsConfig;
+}
+
+void UpdateFunctionConfigurationRequest::SetCfsConfig(const CfsConfig& _cfsConfig)
+{
+    m_cfsConfig = _cfsConfig;
+    m_cfsConfigHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::CfsConfigHasBeenSet() const
+{
+    return m_cfsConfigHasBeenSet;
 }
 
 

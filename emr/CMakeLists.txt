@@ -30,6 +30,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/TerminateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/TerminateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/CreateInstanceResponse.h
+  include/tencentcloud/emr/v20190103/model/PodSpec.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/TerminateTasksRequest.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceResponse.h
@@ -46,6 +47,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/COSSettings.h
   include/tencentcloud/emr/v20190103/model/ClusterInstancesInfo.h
   include/tencentcloud/emr/v20190103/model/MultiDisk.h
+  include/tencentcloud/emr/v20190103/model/SearchItem.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/OutterResource.h
   include/tencentcloud/emr/v20190103/model/UpdateInstanceSettings.h
@@ -72,6 +74,7 @@ set(emr_src
   src/v20190103/model/TerminateInstanceRequest.cpp
   src/v20190103/model/TerminateInstanceResponse.cpp
   src/v20190103/model/CreateInstanceResponse.cpp
+  src/v20190103/model/PodSpec.cpp
   src/v20190103/model/InquiryPriceRenewInstanceResponse.cpp
   src/v20190103/model/TerminateTasksRequest.cpp
   src/v20190103/model/InquiryPriceCreateInstanceResponse.cpp
@@ -88,6 +91,7 @@ set(emr_src
   src/v20190103/model/COSSettings.cpp
   src/v20190103/model/ClusterInstancesInfo.cpp
   src/v20190103/model/MultiDisk.cpp
+  src/v20190103/model/SearchItem.cpp
   src/v20190103/model/InquiryPriceScaleOutInstanceResponse.cpp
   src/v20190103/model/OutterResource.cpp
   src/v20190103/model/UpdateInstanceSettings.cpp

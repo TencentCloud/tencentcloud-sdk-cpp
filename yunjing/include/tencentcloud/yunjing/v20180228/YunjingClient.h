@@ -29,6 +29,8 @@
 #include <tencentcloud/yunjing/v20180228/model/AddMachineTagResponse.h>
 #include <tencentcloud/yunjing/v20180228/model/CloseProVersionRequest.h>
 #include <tencentcloud/yunjing/v20180228/model/CloseProVersionResponse.h>
+#include <tencentcloud/yunjing/v20180228/model/CreateBaselineStrategyRequest.h>
+#include <tencentcloud/yunjing/v20180228/model/CreateBaselineStrategyResponse.h>
 #include <tencentcloud/yunjing/v20180228/model/CreateOpenPortTaskRequest.h>
 #include <tencentcloud/yunjing/v20180228/model/CreateOpenPortTaskResponse.h>
 #include <tencentcloud/yunjing/v20180228/model/CreateProcessTaskRequest.h>
@@ -244,6 +246,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CloseProVersionResponse> CloseProVersionOutcome;
                 typedef std::future<CloseProVersionOutcome> CloseProVersionOutcomeCallable;
                 typedef std::function<void(const YunjingClient*, const Model::CloseProVersionRequest&, CloseProVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseProVersionAsyncHandler;
+                typedef Outcome<Error, Model::CreateBaselineStrategyResponse> CreateBaselineStrategyOutcome;
+                typedef std::future<CreateBaselineStrategyOutcome> CreateBaselineStrategyOutcomeCallable;
+                typedef std::function<void(const YunjingClient*, const Model::CreateBaselineStrategyRequest&, CreateBaselineStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBaselineStrategyAsyncHandler;
                 typedef Outcome<Error, Model::CreateOpenPortTaskResponse> CreateOpenPortTaskOutcome;
                 typedef std::future<CreateOpenPortTaskOutcome> CreateOpenPortTaskOutcomeCallable;
                 typedef std::function<void(const YunjingClient*, const Model::CreateOpenPortTaskRequest&, CreateOpenPortTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenPortTaskAsyncHandler;
@@ -561,6 +566,15 @@ namespace TencentCloud
                 CloseProVersionOutcome CloseProVersion(const Model::CloseProVersionRequest &request);
                 void CloseProVersionAsync(const Model::CloseProVersionRequest& request, const CloseProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseProVersionOutcomeCallable CloseProVersionCallable(const Model::CloseProVersionRequest& request);
+
+                /**
+                 *根据策略信息创建基线策略
+                 * @param req CreateBaselineStrategyRequest
+                 * @return CreateBaselineStrategyOutcome
+                 */
+                CreateBaselineStrategyOutcome CreateBaselineStrategy(const Model::CreateBaselineStrategyRequest &request);
+                void CreateBaselineStrategyAsync(const Model::CreateBaselineStrategyRequest& request, const CreateBaselineStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBaselineStrategyOutcomeCallable CreateBaselineStrategyCallable(const Model::CreateBaselineStrategyRequest& request);
 
                 /**
                  *本接口 (CreateOpenPortTask) 用于创建实时获取端口任务。

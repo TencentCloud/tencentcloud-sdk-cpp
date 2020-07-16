@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TagValueHasBeenSet() const;
 
                     /**
-                     * 获取资源六段式描述
-                     * @return Resource 资源六段式描述
+                     * 获取[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
+                     * @return Resource [ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
                      */
                     std::string GetResource() const;
 
                     /**
-                     * 设置资源六段式描述
-                     * @param Resource 资源六段式描述
+                     * 设置[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
+                     * @param Resource [ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
                      */
                     void SetResource(const std::string& _resource);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_tagValueHasBeenSet;
 
                     /**
-                     * 资源六段式描述
+                     * [ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待加入的人员库ID。
-                     * @return GroupId 待加入的人员库ID。
+                     * 获取待加入的人员库ID，取值为创建人员库接口中的GroupId
+                     * @return GroupId 待加入的人员库ID，取值为创建人员库接口中的GroupId
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置待加入的人员库ID。
-                     * @param GroupId 待加入的人员库ID。
+                     * 设置待加入的人员库ID，取值为创建人员库接口中的GroupId
+                     * @param GroupId 待加入的人员库ID，取值为创建人员库接口中的GroupId
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -310,7 +310,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                 private:
 
                     /**
-                     * 待加入的人员库ID。
+                     * 待加入的人员库ID，取值为创建人员库接口中的GroupId
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

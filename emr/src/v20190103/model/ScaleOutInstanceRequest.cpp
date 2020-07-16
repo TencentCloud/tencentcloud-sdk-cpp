@@ -37,7 +37,9 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_softDeployInfoHasBeenSet(false),
     m_serviceNodeInfoHasBeenSet(false),
     m_disasterRecoverGroupIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_hardwareResourceTypeHasBeenSet(false),
+    m_podSpecHasBeenSet(false)
 {
 }
 
@@ -192,6 +194,23 @@ string ScaleOutInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hardwareResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HardwareResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_hardwareResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podSpecHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PodSpec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_podSpec.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -424,6 +443,38 @@ void ScaleOutInstanceRequest::SetTags(const vector<Tag>& _tags)
 bool ScaleOutInstanceRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string ScaleOutInstanceRequest::GetHardwareResourceType() const
+{
+    return m_hardwareResourceType;
+}
+
+void ScaleOutInstanceRequest::SetHardwareResourceType(const string& _hardwareResourceType)
+{
+    m_hardwareResourceType = _hardwareResourceType;
+    m_hardwareResourceTypeHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::HardwareResourceTypeHasBeenSet() const
+{
+    return m_hardwareResourceTypeHasBeenSet;
+}
+
+PodSpec ScaleOutInstanceRequest::GetPodSpec() const
+{
+    return m_podSpec;
+}
+
+void ScaleOutInstanceRequest::SetPodSpec(const PodSpec& _podSpec)
+{
+    m_podSpec = _podSpec;
+    m_podSpecHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::PodSpecHasBeenSet() const
+{
+    return m_podSpecHasBeenSet;
 }
 
 

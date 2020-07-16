@@ -59,7 +59,10 @@ GetFunctionResponse::GetFunctionResponse() :
     m_deadLetterConfigHasBeenSet(false),
     m_addTimeHasBeenSet(false),
     m_publicNetConfigHasBeenSet(false),
-    m_onsEnableHasBeenSet(false)
+    m_onsEnableHasBeenSet(false),
+    m_cfsConfigHasBeenSet(false),
+    m_availableStatusHasBeenSet(false),
+    m_qualifierHasBeenSet(false)
 {
 }
 
@@ -519,6 +522,43 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_onsEnableHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CfsConfig") && !rsp["CfsConfig"].IsNull())
+    {
+        if (!rsp["CfsConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CfsConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cfsConfig.Deserialize(rsp["CfsConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cfsConfigHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AvailableStatus") && !rsp["AvailableStatus"].IsNull())
+    {
+        if (!rsp["AvailableStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AvailableStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_availableStatus = string(rsp["AvailableStatus"].GetString());
+        m_availableStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Qualifier") && !rsp["Qualifier"].IsNull())
+    {
+        if (!rsp["Qualifier"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Qualifier` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualifier = string(rsp["Qualifier"].GetString());
+        m_qualifierHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -872,6 +912,36 @@ string GetFunctionResponse::GetOnsEnable() const
 bool GetFunctionResponse::OnsEnableHasBeenSet() const
 {
     return m_onsEnableHasBeenSet;
+}
+
+CfsConfig GetFunctionResponse::GetCfsConfig() const
+{
+    return m_cfsConfig;
+}
+
+bool GetFunctionResponse::CfsConfigHasBeenSet() const
+{
+    return m_cfsConfigHasBeenSet;
+}
+
+string GetFunctionResponse::GetAvailableStatus() const
+{
+    return m_availableStatus;
+}
+
+bool GetFunctionResponse::AvailableStatusHasBeenSet() const
+{
+    return m_availableStatusHasBeenSet;
+}
+
+string GetFunctionResponse::GetQualifier() const
+{
+    return m_qualifier;
+}
+
+bool GetFunctionResponse::QualifierHasBeenSet() const
+{
+    return m_qualifierHasBeenSet;
 }
 
 

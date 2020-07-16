@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员ID
-                     * @return PersonId 人员ID
+                     * 获取人员ID，取值为创建人员接口中的PersonId
+                     * @return PersonId 人员ID，取值为创建人员接口中的PersonId
                      */
                     std::string GetPersonId() const;
 
                     /**
-                     * 设置人员ID
-                     * @param PersonId 人员ID
+                     * 设置人员ID，取值为创建人员接口中的PersonId
+                     * @param PersonId 人员ID，取值为创建人员接口中的PersonId
                      */
                     void SetPersonId(const std::string& _personId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PersonNameHasBeenSet() const;
 
                     /**
-                     * 获取需要修改的人员性别
-                     * @return Gender 需要修改的人员性别
+                     * 获取需要修改的人员性别，1代表男性，2代表女性
+                     * @return Gender 需要修改的人员性别，1代表男性，2代表女性
                      */
                     int64_t GetGender() const;
 
                     /**
-                     * 设置需要修改的人员性别
-                     * @param Gender 需要修改的人员性别
+                     * 设置需要修改的人员性别，1代表男性，2代表女性
+                     * @param Gender 需要修改的人员性别，1代表男性，2代表女性
                      */
                     void SetGender(const int64_t& _gender);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人员ID
+                     * 人员ID，取值为创建人员接口中的PersonId
                      */
                     std::string m_personId;
                     bool m_personIdHasBeenSet;
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_personNameHasBeenSet;
 
                     /**
-                     * 需要修改的人员性别
+                     * 需要修改的人员性别，1代表男性，2代表女性
                      */
                     int64_t m_gender;
                     bool m_genderHasBeenSet;

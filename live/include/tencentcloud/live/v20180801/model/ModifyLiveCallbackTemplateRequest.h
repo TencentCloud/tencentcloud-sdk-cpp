@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板 ID。
-                     * @return TemplateId 模板 ID。
+                     * 获取DescribeLiveCallbackTemplates接口返回的模板 ID。
+                     * @return TemplateId DescribeLiveCallbackTemplates接口返回的模板 ID。
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板 ID。
-                     * @param TemplateId 模板 ID。
+                     * 设置DescribeLiveCallbackTemplates接口返回的模板 ID。
+                     * @param TemplateId DescribeLiveCallbackTemplates接口返回的模板 ID。
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -211,7 +211,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板 ID。
+                     * DescribeLiveCallbackTemplates接口返回的模板 ID。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

@@ -57,7 +57,8 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_ipHasBeenSet(false),
     m_destroyableHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_autoFlagHasBeenSet(false)
+    m_autoFlagHasBeenSet(false),
+    m_hardwareResourceTypeHasBeenSet(false)
 {
 }
 
@@ -453,6 +454,16 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const Value &value)
         m_autoFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("HardwareResourceType") && !value["HardwareResourceType"].IsNull())
+    {
+        if (!value["HardwareResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NodeHardwareInfo.HardwareResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hardwareResourceType = string(value["HardwareResourceType"].GetString());
+        m_hardwareResourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -761,6 +772,14 @@ void NodeHardwareInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "AutoFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoFlag, allocator);
+    }
+
+    if (m_hardwareResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HardwareResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_hardwareResourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1340,5 +1359,21 @@ void NodeHardwareInfo::SetAutoFlag(const int64_t& _autoFlag)
 bool NodeHardwareInfo::AutoFlagHasBeenSet() const
 {
     return m_autoFlagHasBeenSet;
+}
+
+string NodeHardwareInfo::GetHardwareResourceType() const
+{
+    return m_hardwareResourceType;
+}
+
+void NodeHardwareInfo::SetHardwareResourceType(const string& _hardwareResourceType)
+{
+    m_hardwareResourceType = _hardwareResourceType;
+    m_hardwareResourceTypeHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::HardwareResourceTypeHasBeenSet() const
+{
+    return m_hardwareResourceTypeHasBeenSet;
 }
 

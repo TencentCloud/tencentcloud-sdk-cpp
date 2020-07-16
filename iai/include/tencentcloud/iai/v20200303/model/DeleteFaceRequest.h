@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员ID
-                     * @return PersonId 人员ID
+                     * 获取人员ID，取值为创建人员接口中的PersonId
+                     * @return PersonId 人员ID，取值为创建人员接口中的PersonId
                      */
                     std::string GetPersonId() const;
 
                     /**
-                     * 设置人员ID
-                     * @param PersonId 人员ID
+                     * 设置人员ID，取值为创建人员接口中的PersonId
+                     * @param PersonId 人员ID，取值为创建人员接口中的PersonId
                      */
                     void SetPersonId(const std::string& _personId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取待删除的人脸ID列表
-                     * @return FaceIds 待删除的人脸ID列表
+                     * 获取待删除的人脸ID列表，数组元素取值为增加人脸接口返回的FaceId
+                     * @return FaceIds 待删除的人脸ID列表，数组元素取值为增加人脸接口返回的FaceId
                      */
                     std::vector<std::string> GetFaceIds() const;
 
                     /**
-                     * 设置待删除的人脸ID列表
-                     * @param FaceIds 待删除的人脸ID列表
+                     * 设置待删除的人脸ID列表，数组元素取值为增加人脸接口返回的FaceId
+                     * @param FaceIds 待删除的人脸ID列表，数组元素取值为增加人脸接口返回的FaceId
                      */
                     void SetFaceIds(const std::vector<std::string>& _faceIds);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人员ID
+                     * 人员ID，取值为创建人员接口中的PersonId
                      */
                     std::string m_personId;
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 待删除的人脸ID列表
+                     * 待删除的人脸ID列表，数组元素取值为增加人脸接口返回的FaceId
                      */
                     std::vector<std::string> m_faceIds;
                     bool m_faceIdsHasBeenSet;

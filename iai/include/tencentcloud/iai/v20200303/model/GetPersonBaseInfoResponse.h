@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool PersonNameHasBeenSet() const;
 
                     /**
-                     * 获取人员性别
-                     * @return Gender 人员性别
+                     * 获取人员性别，0代表未填写，1代表男性，2代表女性
+                     * @return Gender 人员性别，0代表未填写，1代表男性，2代表女性
                      */
                     int64_t GetGender() const;
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_personNameHasBeenSet;
 
                     /**
-                     * 人员性别
+                     * 人员性别，0代表未填写，1代表男性，2代表女性
                      */
                     int64_t m_gender;
                     bool m_genderHasBeenSet;

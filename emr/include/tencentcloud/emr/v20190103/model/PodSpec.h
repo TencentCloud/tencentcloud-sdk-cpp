@@ -1,0 +1,201 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_EMR_V20190103_MODEL_PODSPEC_H_
+#define TENCENTCLOUD_EMR_V20190103_MODEL_PODSPEC_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Emr
+    {
+        namespace V20190103
+        {
+            namespace Model
+            {
+                /**
+                * 扩容容器资源时的资源描述
+                */
+                class PodSpec : public AbstractModel
+                {
+                public:
+                    PodSpec();
+                    ~PodSpec() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取外部资源提供者的标识符，例如"cls-a1cd23fa"。
+                     * @return ResourceProviderIdentifier 外部资源提供者的标识符，例如"cls-a1cd23fa"。
+                     */
+                    std::string GetResourceProviderIdentifier() const;
+
+                    /**
+                     * 设置外部资源提供者的标识符，例如"cls-a1cd23fa"。
+                     * @param ResourceProviderIdentifier 外部资源提供者的标识符，例如"cls-a1cd23fa"。
+                     */
+                    void SetResourceProviderIdentifier(const std::string& _resourceProviderIdentifier);
+
+                    /**
+                     * 判断参数 ResourceProviderIdentifier 是否已赋值
+                     * @return ResourceProviderIdentifier 是否已赋值
+                     */
+                    bool ResourceProviderIdentifierHasBeenSet() const;
+
+                    /**
+                     * 获取外部资源提供者类型，例如"tke",当前仅支持"tke"。
+                     * @return ResourceProviderType 外部资源提供者类型，例如"tke",当前仅支持"tke"。
+                     */
+                    std::string GetResourceProviderType() const;
+
+                    /**
+                     * 设置外部资源提供者类型，例如"tke",当前仅支持"tke"。
+                     * @param ResourceProviderType 外部资源提供者类型，例如"tke",当前仅支持"tke"。
+                     */
+                    void SetResourceProviderType(const std::string& _resourceProviderType);
+
+                    /**
+                     * 判断参数 ResourceProviderType 是否已赋值
+                     * @return ResourceProviderType 是否已赋值
+                     */
+                    bool ResourceProviderTypeHasBeenSet() const;
+
+                    /**
+                     * 获取资源的用途，即节点类型，当前仅支持"TASK"。
+                     * @return NodeType 资源的用途，即节点类型，当前仅支持"TASK"。
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置资源的用途，即节点类型，当前仅支持"TASK"。
+                     * @param NodeType 资源的用途，即节点类型，当前仅支持"TASK"。
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取CPU核数。
+                     * @return Cpu CPU核数。
+                     */
+                    uint64_t GetCpu() const;
+
+                    /**
+                     * 设置CPU核数。
+                     * @param Cpu CPU核数。
+                     */
+                    void SetCpu(const uint64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取内存大小，单位为GB。
+                     * @return Memory 内存大小，单位为GB。
+                     */
+                    uint64_t GetMemory() const;
+
+                    /**
+                     * 设置内存大小，单位为GB。
+                     * @param Memory 内存大小，单位为GB。
+                     */
+                    void SetMemory(const uint64_t& _memory);
+
+                    /**
+                     * 判断参数 Memory 是否已赋值
+                     * @return Memory 是否已赋值
+                     */
+                    bool MemoryHasBeenSet() const;
+
+                    /**
+                     * 获取资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。
+                     * @return DataVolumes 资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。
+                     */
+                    std::vector<std::string> GetDataVolumes() const;
+
+                    /**
+                     * 设置资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。
+                     * @param DataVolumes 资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。
+                     */
+                    void SetDataVolumes(const std::vector<std::string>& _dataVolumes);
+
+                    /**
+                     * 判断参数 DataVolumes 是否已赋值
+                     * @return DataVolumes 是否已赋值
+                     */
+                    bool DataVolumesHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 外部资源提供者的标识符，例如"cls-a1cd23fa"。
+                     */
+                    std::string m_resourceProviderIdentifier;
+                    bool m_resourceProviderIdentifierHasBeenSet;
+
+                    /**
+                     * 外部资源提供者类型，例如"tke",当前仅支持"tke"。
+                     */
+                    std::string m_resourceProviderType;
+                    bool m_resourceProviderTypeHasBeenSet;
+
+                    /**
+                     * 资源的用途，即节点类型，当前仅支持"TASK"。
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * CPU核数。
+                     */
+                    uint64_t m_cpu;
+                    bool m_cpuHasBeenSet;
+
+                    /**
+                     * 内存大小，单位为GB。
+                     */
+                    uint64_t m_memory;
+                    bool m_memoryHasBeenSet;
+
+                    /**
+                     * 资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。
+                     */
+                    std::vector<std::string> m_dataVolumes;
+                    bool m_dataVolumesHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_EMR_V20190103_MODEL_PODSPEC_H_

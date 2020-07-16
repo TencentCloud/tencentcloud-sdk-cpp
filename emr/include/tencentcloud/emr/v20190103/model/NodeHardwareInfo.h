@@ -841,6 +841,28 @@ namespace TencentCloud
                      */
                     bool AutoFlagHasBeenSet() const;
 
+                    /**
+                     * 获取资源类型, host/pod
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HardwareResourceType 资源类型, host/pod
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHardwareResourceType() const;
+
+                    /**
+                     * 设置资源类型, host/pod
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HardwareResourceType 资源类型, host/pod
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHardwareResourceType(const std::string& _hardwareResourceType);
+
+                    /**
+                     * 判断参数 HardwareResourceType 是否已赋值
+                     * @return HardwareResourceType 是否已赋值
+                     */
+                    bool HardwareResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1094,6 +1116,13 @@ namespace TencentCloud
                      */
                     int64_t m_autoFlag;
                     bool m_autoFlagHasBeenSet;
+
+                    /**
+                     * 资源类型, host/pod
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hardwareResourceType;
+                    bool m_hardwareResourceTypeHasBeenSet;
 
                 };
             }

@@ -27,7 +27,9 @@ DescribeClusterNodesRequest::DescribeClusterNodesRequest() :
     m_instanceIdHasBeenSet(false),
     m_nodeFlagHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_hardwareResourceTypeHasBeenSet(false),
+    m_searchFieldsHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,29 @@ string DescribeClusterNodesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_hardwareResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HardwareResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_hardwareResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchFieldsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SearchFields";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_searchFields.begin(); itr != m_searchFields.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -140,6 +165,38 @@ void DescribeClusterNodesRequest::SetLimit(const int64_t& _limit)
 bool DescribeClusterNodesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeClusterNodesRequest::GetHardwareResourceType() const
+{
+    return m_hardwareResourceType;
+}
+
+void DescribeClusterNodesRequest::SetHardwareResourceType(const string& _hardwareResourceType)
+{
+    m_hardwareResourceType = _hardwareResourceType;
+    m_hardwareResourceTypeHasBeenSet = true;
+}
+
+bool DescribeClusterNodesRequest::HardwareResourceTypeHasBeenSet() const
+{
+    return m_hardwareResourceTypeHasBeenSet;
+}
+
+vector<SearchItem> DescribeClusterNodesRequest::GetSearchFields() const
+{
+    return m_searchFields;
+}
+
+void DescribeClusterNodesRequest::SetSearchFields(const vector<SearchItem>& _searchFields)
+{
+    m_searchFields = _searchFields;
+    m_searchFieldsHasBeenSet = true;
+}
+
+bool DescribeClusterNodesRequest::SearchFieldsHasBeenSet() const
+{
+    return m_searchFieldsHasBeenSet;
 }
 
 

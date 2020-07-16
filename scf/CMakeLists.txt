@@ -28,7 +28,6 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/LayerVersionInfo.h
   include/tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationResponse.h
   include/tencentcloud/scf/v20180416/model/PublishLayerVersionResponse.h
-  include/tencentcloud/scf/v20180416/model/CreateFunctionResponse.h
   include/tencentcloud/scf/v20180416/model/PublicNetConfigIn.h
   include/tencentcloud/scf/v20180416/model/UpdateAliasRequest.h
   include/tencentcloud/scf/v20180416/model/RoutingConfig.h
@@ -57,6 +56,8 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/CopyFunctionRequest.h
   include/tencentcloud/scf/v20180416/model/DeleteNamespaceResponse.h
   include/tencentcloud/scf/v20180416/model/LayerVersionSimple.h
+  include/tencentcloud/scf/v20180416/model/CfsConfig.h
+  include/tencentcloud/scf/v20180416/model/DeleteNamespaceRequest.h
   include/tencentcloud/scf/v20180416/model/ListFunctionsRequest.h
   include/tencentcloud/scf/v20180416/model/CreateTriggerRequest.h
   include/tencentcloud/scf/v20180416/model/ListLayersResponse.h
@@ -86,13 +87,14 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/UpdateNamespaceRequest.h
   include/tencentcloud/scf/v20180416/model/GetLayerVersionResponse.h
   include/tencentcloud/scf/v20180416/model/FunctionLog.h
+  include/tencentcloud/scf/v20180416/model/CfsInsInfo.h
   include/tencentcloud/scf/v20180416/model/FunctionVersion.h
   include/tencentcloud/scf/v20180416/model/Function.h
   include/tencentcloud/scf/v20180416/model/DeadLetterConfig.h
   include/tencentcloud/scf/v20180416/model/ListVersionByFunctionRequest.h
   include/tencentcloud/scf/v20180416/model/ListFunctionsResponse.h
   include/tencentcloud/scf/v20180416/model/ListTriggersRequest.h
-  include/tencentcloud/scf/v20180416/model/DeleteNamespaceRequest.h
+  include/tencentcloud/scf/v20180416/model/CreateFunctionResponse.h
   include/tencentcloud/scf/v20180416/model/ListAliasesRequest.h
   include/tencentcloud/scf/v20180416/model/EipOutConfig.h
   include/tencentcloud/scf/v20180416/model/Alias.h
@@ -118,7 +120,6 @@ set(scf_src
   src/v20180416/model/LayerVersionInfo.cpp
   src/v20180416/model/UpdateFunctionConfigurationResponse.cpp
   src/v20180416/model/PublishLayerVersionResponse.cpp
-  src/v20180416/model/CreateFunctionResponse.cpp
   src/v20180416/model/PublicNetConfigIn.cpp
   src/v20180416/model/UpdateAliasRequest.cpp
   src/v20180416/model/RoutingConfig.cpp
@@ -147,6 +148,8 @@ set(scf_src
   src/v20180416/model/CopyFunctionRequest.cpp
   src/v20180416/model/DeleteNamespaceResponse.cpp
   src/v20180416/model/LayerVersionSimple.cpp
+  src/v20180416/model/CfsConfig.cpp
+  src/v20180416/model/DeleteNamespaceRequest.cpp
   src/v20180416/model/ListFunctionsRequest.cpp
   src/v20180416/model/CreateTriggerRequest.cpp
   src/v20180416/model/ListLayersResponse.cpp
@@ -176,13 +179,14 @@ set(scf_src
   src/v20180416/model/UpdateNamespaceRequest.cpp
   src/v20180416/model/GetLayerVersionResponse.cpp
   src/v20180416/model/FunctionLog.cpp
+  src/v20180416/model/CfsInsInfo.cpp
   src/v20180416/model/FunctionVersion.cpp
   src/v20180416/model/Function.cpp
   src/v20180416/model/DeadLetterConfig.cpp
   src/v20180416/model/ListVersionByFunctionRequest.cpp
   src/v20180416/model/ListFunctionsResponse.cpp
   src/v20180416/model/ListTriggersRequest.cpp
-  src/v20180416/model/DeleteNamespaceRequest.cpp
+  src/v20180416/model/CreateFunctionResponse.cpp
   src/v20180416/model/ListAliasesRequest.cpp
   src/v20180416/model/EipOutConfig.cpp
   src/v20180416/model/Alias.cpp

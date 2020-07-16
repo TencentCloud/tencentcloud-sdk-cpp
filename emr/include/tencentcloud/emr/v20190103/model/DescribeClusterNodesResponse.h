@@ -83,6 +83,20 @@ namespace TencentCloud
                      */
                     bool TagKeysHasBeenSet() const;
 
+                    /**
+                     * 获取资源类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HardwareResourceTypeList 资源类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetHardwareResourceTypeList() const;
+
+                    /**
+                     * 判断参数 HardwareResourceTypeList 是否已赋值
+                     * @return HardwareResourceTypeList 是否已赋值
+                     */
+                    bool HardwareResourceTypeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
+
+                    /**
+                     * 资源类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_hardwareResourceTypeList;
+                    bool m_hardwareResourceTypeListHasBeenSet;
 
                 };
             }
