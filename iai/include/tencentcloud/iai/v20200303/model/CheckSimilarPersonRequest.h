@@ -45,16 +45,20 @@ namespace TencentCloud
                     /**
                      * 获取待整理的人员库列表。 
 人员库总人数不可超过200万，人员库个数不可超过10个。
+数组元素取值为创建人员库接口中的GroupId
                      * @return GroupIds 待整理的人员库列表。 
 人员库总人数不可超过200万，人员库个数不可超过10个。
+数组元素取值为创建人员库接口中的GroupId
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
                      * 设置待整理的人员库列表。 
 人员库总人数不可超过200万，人员库个数不可超过10个。
+数组元素取值为创建人员库接口中的GroupId
                      * @param GroupIds 待整理的人员库列表。 
 人员库总人数不可超过200万，人员库个数不可超过10个。
+数组元素取值为创建人员库接口中的GroupId
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
 
@@ -95,6 +99,7 @@ namespace TencentCloud
                     /**
                      * 待整理的人员库列表。 
 人员库总人数不可超过200万，人员库个数不可超过10个。
+数组元素取值为创建人员库接口中的GroupId
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;

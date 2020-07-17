@@ -122,13 +122,13 @@ namespace TencentCloud
                      * 获取用户设备号。
                      * @return DeviceId 用户设备号。
                      */
-                    bool GetDeviceId() const;
+                    std::string GetDeviceId() const;
 
                     /**
                      * 设置用户设备号。
                      * @param DeviceId 用户设备号。
                      */
-                    void SetDeviceId(const bool& _deviceId);
+                    void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
@@ -165,7 +165,7 @@ namespace TencentCloud
                     /**
                      * 用户设备号。
                      */
-                    bool m_deviceId;
+                    std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                 };

@@ -31,7 +31,9 @@ LoginWhiteLists::LoginWhiteLists() :
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_machineNameHasBeenSet(false),
-    m_hostIpHasBeenSet(false)
+    m_hostIpHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const Value &value)
         m_hostIpHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoginWhiteLists.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoginWhiteLists.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -242,6 +264,22 @@ void LoginWhiteLists::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "HostIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_hostIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -405,5 +443,37 @@ void LoginWhiteLists::SetHostIp(const string& _hostIp)
 bool LoginWhiteLists::HostIpHasBeenSet() const
 {
     return m_hostIpHasBeenSet;
+}
+
+string LoginWhiteLists::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void LoginWhiteLists::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool LoginWhiteLists::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string LoginWhiteLists::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void LoginWhiteLists::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool LoginWhiteLists::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 

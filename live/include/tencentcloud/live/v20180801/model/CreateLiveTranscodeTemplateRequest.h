@@ -160,13 +160,17 @@ namespace TencentCloud
 
                     /**
                      * 获取宽，默认0。
+范围[0-3000]
                      * @return Width 宽，默认0。
+范围[0-3000]
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置宽，默认0。
+范围[0-3000]
                      * @param Width 宽，默认0。
+范围[0-3000]
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -214,13 +218,17 @@ namespace TencentCloud
 
                     /**
                      * 获取高，默认0。
+范围[0-3000]
                      * @return Height 高，默认0。
+范围[0-3000]
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置高，默认0。
+范围[0-3000]
                      * @param Height 高，默认0。
+范围[0-3000]
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -438,6 +446,7 @@ baseline/main/high。默认baseline
 
                     /**
                      * 宽，默认0。
+范围[0-3000]
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
@@ -456,6 +465,7 @@ baseline/main/high。默认baseline
 
                     /**
                      * 高，默认0。
+范围[0-3000]
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

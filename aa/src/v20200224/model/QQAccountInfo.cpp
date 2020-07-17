@@ -77,11 +77,11 @@ CoreInternalOutcome QQAccountInfo::Deserialize(const Value &value)
 
     if (value.HasMember("DeviceId") && !value["DeviceId"].IsNull())
     {
-        if (!value["DeviceId"].IsBool())
+        if (!value["DeviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QQAccountInfo.DeviceId` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `QQAccountInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_deviceId = value["DeviceId"].GetBool();
+        m_deviceId = string(value["DeviceId"].GetString());
         m_deviceIdHasBeenSet = true;
     }
 
@@ -129,7 +129,7 @@ void QQAccountInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         Value iKey(kStringType);
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_deviceId, allocator);
+        value.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -199,12 +199,12 @@ bool QQAccountInfo::MobilePhoneHasBeenSet() const
     return m_mobilePhoneHasBeenSet;
 }
 
-bool QQAccountInfo::GetDeviceId() const
+string QQAccountInfo::GetDeviceId() const
 {
     return m_deviceId;
 }
 
-void QQAccountInfo::SetDeviceId(const bool& _deviceId)
+void QQAccountInfo::SetDeviceId(const string& _deviceId)
 {
     m_deviceId = _deviceId;
     m_deviceIdHasBeenSet = true;

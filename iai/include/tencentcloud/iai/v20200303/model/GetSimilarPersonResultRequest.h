@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查重任务ID，用于查询、获取查重的进度和结果。
-                     * @return JobId 查重任务ID，用于查询、获取查重的进度和结果。
+                     * 获取查重任务ID，用于查询、获取查重的进度和结果。取值为人员查重接口返回的JobId
+                     * @return JobId 查重任务ID，用于查询、获取查重的进度和结果。取值为人员查重接口返回的JobId
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置查重任务ID，用于查询、获取查重的进度和结果。
-                     * @param JobId 查重任务ID，用于查询、获取查重的进度和结果。
+                     * 设置查重任务ID，用于查询、获取查重的进度和结果。取值为人员查重接口返回的JobId
+                     * @param JobId 查重任务ID，用于查询、获取查重的进度和结果。取值为人员查重接口返回的JobId
                      */
                     void SetJobId(const std::string& _jobId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查重任务ID，用于查询、获取查重的进度和结果。
+                     * 查重任务ID，用于查询、获取查重的进度和结果。取值为人员查重接口返回的JobId
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

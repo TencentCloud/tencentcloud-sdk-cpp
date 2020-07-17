@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 PurgeUrlsCacheRequest::PurgeUrlsCacheRequest() :
-    m_urlsHasBeenSet(false)
+    m_urlsHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,14 @@ string PurgeUrlsCacheRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -70,6 +79,22 @@ void PurgeUrlsCacheRequest::SetUrls(const vector<string>& _urls)
 bool PurgeUrlsCacheRequest::UrlsHasBeenSet() const
 {
     return m_urlsHasBeenSet;
+}
+
+string PurgeUrlsCacheRequest::GetArea() const
+{
+    return m_area;
+}
+
+void PurgeUrlsCacheRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool PurgeUrlsCacheRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

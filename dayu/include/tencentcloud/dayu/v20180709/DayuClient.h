@@ -57,6 +57,8 @@
 #include <tencentcloud/dayu/v20180709/model/CreateNewL4RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateNewL7RulesRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateNewL7RulesResponse.h>
+#include <tencentcloud/dayu/v20180709/model/CreateNewL7RulesUploadRequest.h>
+#include <tencentcloud/dayu/v20180709/model/CreateNewL7RulesUploadResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateUnblockIpRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateUnblockIpResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DeleteCCFrequencyRulesRequest.h>
@@ -306,6 +308,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateNewL7RulesResponse> CreateNewL7RulesOutcome;
                 typedef std::future<CreateNewL7RulesOutcome> CreateNewL7RulesOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateNewL7RulesRequest&, CreateNewL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNewL7RulesAsyncHandler;
+                typedef Outcome<Error, Model::CreateNewL7RulesUploadResponse> CreateNewL7RulesUploadOutcome;
+                typedef std::future<CreateNewL7RulesUploadOutcome> CreateNewL7RulesUploadOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::CreateNewL7RulesUploadRequest&, CreateNewL7RulesUploadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNewL7RulesUploadAsyncHandler;
                 typedef Outcome<Error, Model::CreateUnblockIpResponse> CreateUnblockIpOutcome;
                 typedef std::future<CreateUnblockIpOutcome> CreateUnblockIpOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateUnblockIpRequest&, CreateUnblockIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUnblockIpAsyncHandler;
@@ -737,6 +742,15 @@ namespace TencentCloud
                 CreateNewL7RulesOutcome CreateNewL7Rules(const Model::CreateNewL7RulesRequest &request);
                 void CreateNewL7RulesAsync(const Model::CreateNewL7RulesRequest& request, const CreateNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNewL7RulesOutcomeCallable CreateNewL7RulesCallable(const Model::CreateNewL7RulesRequest& request);
+
+                /**
+                 *批量上传7层转发规则
+                 * @param req CreateNewL7RulesUploadRequest
+                 * @return CreateNewL7RulesUploadOutcome
+                 */
+                CreateNewL7RulesUploadOutcome CreateNewL7RulesUpload(const Model::CreateNewL7RulesUploadRequest &request);
+                void CreateNewL7RulesUploadAsync(const Model::CreateNewL7RulesUploadRequest& request, const CreateNewL7RulesUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNewL7RulesUploadOutcomeCallable CreateNewL7RulesUploadCallable(const Model::CreateNewL7RulesUploadRequest& request);
 
                 /**
                  *IP解封操作

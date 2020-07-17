@@ -29,6 +29,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/DescribeCCEvListRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeTransmitStatisResponse.h
   include/tencentcloud/dayu/v20180709/model/DDosPolicy.h
+  include/tencentcloud/dayu/v20180709/model/ProtocolPort.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSNetTrendRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribePolicyCaseRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeUnBlockStatisRequest.h
@@ -191,7 +192,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSAlarmThresholdRequest.h
   include/tencentcloud/dayu/v20180709/model/DeleteNewL4RulesResponse.h
   include/tencentcloud/dayu/v20180709/model/WaterPrintPolicy.h
-  include/tencentcloud/dayu/v20180709/model/ProtocolPort.h
+  include/tencentcloud/dayu/v20180709/model/CreateNewL7RulesUploadRequest.h
   include/tencentcloud/dayu/v20180709/model/DeleteNewL7RulesResponse.h
   include/tencentcloud/dayu/v20180709/model/DeleteCCSelfDefinePolicyResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSPolicyResponse.h
@@ -201,6 +202,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/CreateNewL7RulesRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyL7RulesRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyElasticLimitResponse.h
+  include/tencentcloud/dayu/v20180709/model/CreateNewL7RulesUploadResponse.h
   include/tencentcloud/dayu/v20180709/model/DDoSAttackSourceRecord.h
   include/tencentcloud/dayu/v20180709/model/CreateUnblockIpResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribePackIndexRequest.h
@@ -290,6 +292,7 @@ set(dayu_src
   src/v20180709/model/DescribeCCEvListRequest.cpp
   src/v20180709/model/DescribeTransmitStatisResponse.cpp
   src/v20180709/model/DDosPolicy.cpp
+  src/v20180709/model/ProtocolPort.cpp
   src/v20180709/model/DescribeDDoSNetTrendRequest.cpp
   src/v20180709/model/DescribePolicyCaseRequest.cpp
   src/v20180709/model/DescribeUnBlockStatisRequest.cpp
@@ -452,7 +455,7 @@ set(dayu_src
   src/v20180709/model/DescribeDDoSAlarmThresholdRequest.cpp
   src/v20180709/model/DeleteNewL4RulesResponse.cpp
   src/v20180709/model/WaterPrintPolicy.cpp
-  src/v20180709/model/ProtocolPort.cpp
+  src/v20180709/model/CreateNewL7RulesUploadRequest.cpp
   src/v20180709/model/DeleteNewL7RulesResponse.cpp
   src/v20180709/model/DeleteCCSelfDefinePolicyResponse.cpp
   src/v20180709/model/DescribeDDoSPolicyResponse.cpp
@@ -462,6 +465,7 @@ set(dayu_src
   src/v20180709/model/CreateNewL7RulesRequest.cpp
   src/v20180709/model/ModifyL7RulesRequest.cpp
   src/v20180709/model/ModifyElasticLimitResponse.cpp
+  src/v20180709/model/CreateNewL7RulesUploadResponse.cpp
   src/v20180709/model/DDoSAttackSourceRecord.cpp
   src/v20180709/model/CreateUnblockIpResponse.cpp
   src/v20180709/model/DescribePackIndexRequest.cpp

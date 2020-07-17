@@ -771,6 +771,49 @@ DayuClient::CreateNewL7RulesOutcomeCallable DayuClient::CreateNewL7RulesCallable
     return task->get_future();
 }
 
+DayuClient::CreateNewL7RulesUploadOutcome DayuClient::CreateNewL7RulesUpload(const CreateNewL7RulesUploadRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNewL7RulesUpload");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNewL7RulesUploadResponse rsp = CreateNewL7RulesUploadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNewL7RulesUploadOutcome(rsp);
+        else
+            return CreateNewL7RulesUploadOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNewL7RulesUploadOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::CreateNewL7RulesUploadAsync(const CreateNewL7RulesUploadRequest& request, const CreateNewL7RulesUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNewL7RulesUpload(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::CreateNewL7RulesUploadOutcomeCallable DayuClient::CreateNewL7RulesUploadCallable(const CreateNewL7RulesUploadRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNewL7RulesUploadOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNewL7RulesUpload(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::CreateUnblockIpOutcome DayuClient::CreateUnblockIp(const CreateUnblockIpRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUnblockIp");

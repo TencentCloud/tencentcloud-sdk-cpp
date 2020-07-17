@@ -29,6 +29,7 @@ TextData::TextData() :
     m_detailResultHasBeenSet(false),
     m_iDHasBeenSet(false),
     m_resHasBeenSet(false),
+    m_riskDetailsHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
     m_evilLabelHasBeenSet(false),
     m_keywordsHasBeenSet(false),
@@ -151,6 +152,26 @@ CoreInternalOutcome TextData::Deserialize(const Value &value)
         }
 
         m_resHasBeenSet = true;
+    }
+
+    if (value.HasMember("RiskDetails") && !value["RiskDetails"].IsNull())
+    {
+        if (!value["RiskDetails"].IsArray())
+            return CoreInternalOutcome(Error("response `TextData.RiskDetails` is not array type"));
+
+        const Value &tmpValue = value["RiskDetails"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RiskDetails item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_riskDetails.push_back(item);
+        }
+        m_riskDetailsHasBeenSet = true;
     }
 
     if (value.HasMember("BizType") && !value["BizType"].IsNull())
@@ -284,6 +305,21 @@ void TextData::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_res.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_riskDetailsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RiskDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_riskDetails.begin(); itr != m_riskDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_bizTypeHasBeenSet)
@@ -444,6 +480,22 @@ void TextData::SetRes(const TextOutputRes& _res)
 bool TextData::ResHasBeenSet() const
 {
     return m_resHasBeenSet;
+}
+
+vector<RiskDetails> TextData::GetRiskDetails() const
+{
+    return m_riskDetails;
+}
+
+void TextData::SetRiskDetails(const vector<RiskDetails>& _riskDetails)
+{
+    m_riskDetails = _riskDetails;
+    m_riskDetailsHasBeenSet = true;
+}
+
+bool TextData::RiskDetailsHasBeenSet() const
+{
+    return m_riskDetailsHasBeenSet;
 }
 
 uint64_t TextData::GetBizType() const

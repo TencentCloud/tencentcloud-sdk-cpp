@@ -45,6 +45,7 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/FileSample.h
   include/tencentcloud/cms/v20190321/model/DescribeFileSampleResponse.h
   include/tencentcloud/cms/v20190321/model/TextOutputRes.h
+  include/tencentcloud/cms/v20190321/model/RiskDetails.h
   include/tencentcloud/cms/v20190321/model/CreateTextSampleRequest.h
   include/tencentcloud/cms/v20190321/model/DeleteFileSampleRequest.h
   include/tencentcloud/cms/v20190321/model/Filter.h
@@ -94,6 +95,7 @@ set(cms_src
   src/v20190321/model/FileSample.cpp
   src/v20190321/model/DescribeFileSampleResponse.cpp
   src/v20190321/model/TextOutputRes.cpp
+  src/v20190321/model/RiskDetails.cpp
   src/v20190321/model/CreateTextSampleRequest.cpp
   src/v20190321/model/DeleteFileSampleRequest.cpp
   src/v20190321/model/Filter.cpp

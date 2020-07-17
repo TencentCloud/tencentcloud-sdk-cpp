@@ -29,6 +29,7 @@
 #include <tencentcloud/cms/v20190321/model/DetailResult.h>
 #include <tencentcloud/cms/v20190321/model/TextOutputID.h>
 #include <tencentcloud/cms/v20190321/model/TextOutputRes.h>
+#include <tencentcloud/cms/v20190321/model/RiskDetails.h>
 
 
 namespace TencentCloud
@@ -206,6 +207,24 @@ namespace TencentCloud
                     bool ResHasBeenSet() const;
 
                     /**
+                     * 获取账号风险检测结果
+                     * @return RiskDetails 账号风险检测结果
+                     */
+                    std::vector<RiskDetails> GetRiskDetails() const;
+
+                    /**
+                     * 设置账号风险检测结果
+                     * @param RiskDetails 账号风险检测结果
+                     */
+                    void SetRiskDetails(const std::vector<RiskDetails>& _riskDetails);
+
+                    /**
+                     * 判断参数 RiskDetails 是否已赋值
+                     * @return RiskDetails 是否已赋值
+                     */
+                    bool RiskDetailsHasBeenSet() const;
+
+                    /**
                      * 获取最终使用的BizType
                      * @return BizType 最终使用的BizType
                      */
@@ -345,6 +364,12 @@ namespace TencentCloud
                      */
                     TextOutputRes m_res;
                     bool m_resHasBeenSet;
+
+                    /**
+                     * 账号风险检测结果
+                     */
+                    std::vector<RiskDetails> m_riskDetails;
+                    bool m_riskDetailsHasBeenSet;
 
                     /**
                      * 最终使用的BizType
