@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本
-                     * @return MongoVersion 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本
+                     * 获取版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
+                     * @return MongoVersion 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
                      */
                     std::string GetMongoVersion() const;
 
                     /**
-                     * 设置版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本
-                     * @param MongoVersion 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本
+                     * 设置版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
+                     * @param MongoVersion 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
                      */
                     void SetMongoVersion(const std::string& _mongoVersion);
 
@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取机器类型，HIO：高IO型；HIO10G：高IO万兆型
-                     * @return MachineCode 机器类型，HIO：高IO型；HIO10G：高IO万兆型
+                     * 获取机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型
+                     * @return MachineCode 机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型
                      */
                     std::string GetMachineCode() const;
 
                     /**
-                     * 设置机器类型，HIO：高IO型；HIO10G：高IO万兆型
-                     * @param MachineCode 机器类型，HIO：高IO型；HIO10G：高IO万兆型
+                     * 设置机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型
+                     * @param MachineCode 机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型
                      */
                     void SetMachineCode(const std::string& _machineCode);
 
@@ -188,14 +188,14 @@ namespace TencentCloud
                     bool MachineCodeHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，REPLSET-副本集，SHARD-分片集群
-                     * @return ClusterType 实例类型，REPLSET-副本集，SHARD-分片集群
+                     * 获取实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点
+                     * @return ClusterType 实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置实例类型，REPLSET-副本集，SHARD-分片集群
-                     * @param ClusterType 实例类型，REPLSET-副本集，SHARD-分片集群
+                     * 设置实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点
+                     * @param ClusterType 实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点
                      */
                     void SetClusterType(const std::string& _clusterType);
 
@@ -206,14 +206,14 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数
-                     * @return ReplicateSetNum 副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数
+                     * 获取副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0
+                     * @return ReplicateSetNum 副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0
                      */
                     uint64_t GetReplicateSetNum() const;
 
                     /**
-                     * 设置副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数
-                     * @param ReplicateSetNum 副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数
+                     * 设置副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0
+                     * @param ReplicateSetNum 副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0
                      */
                     void SetReplicateSetNum(const uint64_t& _replicateSetNum);
 
@@ -331,6 +331,78 @@ namespace TencentCloud
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动选择代金券，可选值为：1 - 是；0 - 否； 默认为0
+                     * @return AutoVoucher 是否自动选择代金券，可选值为：1 - 是；0 - 否； 默认为0
+                     */
+                    uint64_t GetAutoVoucher() const;
+
+                    /**
+                     * 设置是否自动选择代金券，可选值为：1 - 是；0 - 否； 默认为0
+                     * @param AutoVoucher 是否自动选择代金券，可选值为：1 - 是；0 - 否； 默认为0
+                     */
+                    void SetAutoVoucher(const uint64_t& _autoVoucher);
+
+                    /**
+                     * 判断参数 AutoVoucher 是否已赋值
+                     * @return AutoVoucher 是否已赋值
+                     */
+                    bool AutoVoucherHasBeenSet() const;
+
+                    /**
+                     * 获取1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     * @return Clone 1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     */
+                    int64_t GetClone() const;
+
+                    /**
+                     * 设置1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     * @param Clone 1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     */
+                    void SetClone(const int64_t& _clone);
+
+                    /**
+                     * 判断参数 Clone 是否已赋值
+                     * @return Clone 是否已赋值
+                     */
+                    bool CloneHasBeenSet() const;
+
+                    /**
+                     * 获取若是只读，灾备实例，Father必须填写，即主实例ID
+                     * @return Father 若是只读，灾备实例，Father必须填写，即主实例ID
+                     */
+                    std::string GetFather() const;
+
+                    /**
+                     * 设置若是只读，灾备实例，Father必须填写，即主实例ID
+                     * @param Father 若是只读，灾备实例，Father必须填写，即主实例ID
+                     */
+                    void SetFather(const std::string& _father);
+
+                    /**
+                     * 判断参数 Father 是否已赋值
+                     * @return Father 是否已赋值
+                     */
+                    bool FatherHasBeenSet() const;
+
+                    /**
+                     * 获取安全组
+                     * @return SecurityGroup 安全组
+                     */
+                    std::vector<std::string> GetSecurityGroup() const;
+
+                    /**
+                     * 设置安全组
+                     * @param SecurityGroup 安全组
+                     */
+                    void SetSecurityGroup(const std::vector<std::string>& _securityGroup);
+
+                    /**
+                     * 判断参数 SecurityGroup 是否已赋值
+                     * @return SecurityGroup 是否已赋值
+                     */
+                    bool SecurityGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -352,7 +424,7 @@ namespace TencentCloud
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本
+                     * 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
@@ -376,19 +448,19 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 机器类型，HIO：高IO型；HIO10G：高IO万兆型
+                     * 机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型
                      */
                     std::string m_machineCode;
                     bool m_machineCodeHasBeenSet;
 
                     /**
-                     * 实例类型，REPLSET-副本集，SHARD-分片集群
+                     * 实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数
+                     * 副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0
                      */
                     uint64_t m_replicateSetNum;
                     bool m_replicateSetNumHasBeenSet;
@@ -428,6 +500,30 @@ namespace TencentCloud
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 是否自动选择代金券，可选值为：1 - 是；0 - 否； 默认为0
+                     */
+                    uint64_t m_autoVoucher;
+                    bool m_autoVoucherHasBeenSet;
+
+                    /**
+                     * 1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     */
+                    int64_t m_clone;
+                    bool m_cloneHasBeenSet;
+
+                    /**
+                     * 若是只读，灾备实例，Father必须填写，即主实例ID
+                     */
+                    std::string m_father;
+                    bool m_fatherHasBeenSet;
+
+                    /**
+                     * 安全组
+                     */
+                    std::vector<std::string> m_securityGroup;
+                    bool m_securityGroupHasBeenSet;
 
                 };
             }

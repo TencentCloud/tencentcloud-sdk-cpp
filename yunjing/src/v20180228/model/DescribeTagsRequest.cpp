@@ -23,7 +23,9 @@ using namespace TencentCloud::Yunjing::V20180228::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeTagsRequest::DescribeTagsRequest()
+DescribeTagsRequest::DescribeTagsRequest() :
+    m_machineTypeHasBeenSet(false),
+    m_machineRegionHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,22 @@ string DescribeTagsRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_machineTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MachineRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_machineRegion.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +59,37 @@ string DescribeTagsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeTagsRequest::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void DescribeTagsRequest::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool DescribeTagsRequest::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
+}
+
+string DescribeTagsRequest::GetMachineRegion() const
+{
+    return m_machineRegion;
+}
+
+void DescribeTagsRequest::SetMachineRegion(const string& _machineRegion)
+{
+    m_machineRegion = _machineRegion;
+    m_machineRegionHasBeenSet = true;
+}
+
+bool DescribeTagsRequest::MachineRegionHasBeenSet() const
+{
+    return m_machineRegionHasBeenSet;
+}
 
 

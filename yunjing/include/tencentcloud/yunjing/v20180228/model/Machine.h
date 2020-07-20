@@ -291,6 +291,90 @@ namespace TencentCloud
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取基线风险数。
+                     * @return BaselineNum 基线风险数。
+                     */
+                    int64_t GetBaselineNum() const;
+
+                    /**
+                     * 设置基线风险数。
+                     * @param BaselineNum 基线风险数。
+                     */
+                    void SetBaselineNum(const int64_t& _baselineNum);
+
+                    /**
+                     * 判断参数 BaselineNum 是否已赋值
+                     * @return BaselineNum 是否已赋值
+                     */
+                    bool BaselineNumHasBeenSet() const;
+
+                    /**
+                     * 获取网络风险数。
+                     * @return CyberAttackNum 网络风险数。
+                     */
+                    int64_t GetCyberAttackNum() const;
+
+                    /**
+                     * 设置网络风险数。
+                     * @param CyberAttackNum 网络风险数。
+                     */
+                    void SetCyberAttackNum(const int64_t& _cyberAttackNum);
+
+                    /**
+                     * 判断参数 CyberAttackNum 是否已赋值
+                     * @return CyberAttackNum 是否已赋值
+                     */
+                    bool CyberAttackNumHasBeenSet() const;
+
+                    /**
+                     * 获取风险状态。
+<li>SAFE：安全</li>
+<li>RISK：风险</li>
+<li>UNKNOWN：未知</li>
+                     * @return SecurityStatus 风险状态。
+<li>SAFE：安全</li>
+<li>RISK：风险</li>
+<li>UNKNOWN：未知</li>
+                     */
+                    std::string GetSecurityStatus() const;
+
+                    /**
+                     * 设置风险状态。
+<li>SAFE：安全</li>
+<li>RISK：风险</li>
+<li>UNKNOWN：未知</li>
+                     * @param SecurityStatus 风险状态。
+<li>SAFE：安全</li>
+<li>RISK：风险</li>
+<li>UNKNOWN：未知</li>
+                     */
+                    void SetSecurityStatus(const std::string& _securityStatus);
+
+                    /**
+                     * 判断参数 SecurityStatus 是否已赋值
+                     * @return SecurityStatus 是否已赋值
+                     */
+                    bool SecurityStatusHasBeenSet() const;
+
+                    /**
+                     * 获取入侵事件数
+                     * @return InvasionNum 入侵事件数
+                     */
+                    int64_t GetInvasionNum() const;
+
+                    /**
+                     * 设置入侵事件数
+                     * @param InvasionNum 入侵事件数
+                     */
+                    void SetInvasionNum(const int64_t& _invasionNum);
+
+                    /**
+                     * 判断参数 InvasionNum 是否已赋值
+                     * @return InvasionNum 是否已赋值
+                     */
+                    bool InvasionNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +455,33 @@ namespace TencentCloud
                      */
                     std::vector<MachineTag> m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 基线风险数。
+                     */
+                    int64_t m_baselineNum;
+                    bool m_baselineNumHasBeenSet;
+
+                    /**
+                     * 网络风险数。
+                     */
+                    int64_t m_cyberAttackNum;
+                    bool m_cyberAttackNumHasBeenSet;
+
+                    /**
+                     * 风险状态。
+<li>SAFE：安全</li>
+<li>RISK：风险</li>
+<li>UNKNOWN：未知</li>
+                     */
+                    std::string m_securityStatus;
+                    bool m_securityStatusHasBeenSet;
+
+                    /**
+                     * 入侵事件数
+                     */
+                    int64_t m_invasionNum;
+                    bool m_invasionNumHasBeenSet;
 
                 };
             }

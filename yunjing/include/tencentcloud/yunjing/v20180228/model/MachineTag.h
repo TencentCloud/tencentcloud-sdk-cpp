@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取标签ID
+                     * @return TagId 标签ID
+                     */
+                    uint64_t GetTagId() const;
+
+                    /**
+                     * 设置标签ID
+                     * @param TagId 标签ID
+                     */
+                    void SetTagId(const uint64_t& _tagId);
+
+                    /**
+                     * 判断参数 TagId 是否已赋值
+                     * @return TagId 是否已赋值
+                     */
+                    bool TagIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 标签ID
+                     */
+                    uint64_t m_tagId;
+                    bool m_tagIdHasBeenSet;
 
                 };
             }

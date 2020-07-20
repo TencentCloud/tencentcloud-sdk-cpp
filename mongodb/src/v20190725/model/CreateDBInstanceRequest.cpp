@@ -39,7 +39,11 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_subnetIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_autoVoucherHasBeenSet(false),
+    m_cloneHasBeenSet(false),
+    m_fatherHasBeenSet(false),
+    m_securityGroupHasBeenSet(false)
 {
 }
 
@@ -183,6 +187,43 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_autoVoucherHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoVoucher";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoVoucher, allocator);
+    }
+
+    if (m_cloneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Clone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clone, allocator);
+    }
+
+    if (m_fatherHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Father";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_father.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroup.begin(); itr != m_securityGroup.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -447,6 +488,70 @@ void CreateDBInstanceRequest::SetAutoRenewFlag(const uint64_t& _autoRenewFlag)
 bool CreateDBInstanceRequest::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+uint64_t CreateDBInstanceRequest::GetAutoVoucher() const
+{
+    return m_autoVoucher;
+}
+
+void CreateDBInstanceRequest::SetAutoVoucher(const uint64_t& _autoVoucher)
+{
+    m_autoVoucher = _autoVoucher;
+    m_autoVoucherHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::AutoVoucherHasBeenSet() const
+{
+    return m_autoVoucherHasBeenSet;
+}
+
+int64_t CreateDBInstanceRequest::GetClone() const
+{
+    return m_clone;
+}
+
+void CreateDBInstanceRequest::SetClone(const int64_t& _clone)
+{
+    m_clone = _clone;
+    m_cloneHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::CloneHasBeenSet() const
+{
+    return m_cloneHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetFather() const
+{
+    return m_father;
+}
+
+void CreateDBInstanceRequest::SetFather(const string& _father)
+{
+    m_father = _father;
+    m_fatherHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::FatherHasBeenSet() const
+{
+    return m_fatherHasBeenSet;
+}
+
+vector<string> CreateDBInstanceRequest::GetSecurityGroup() const
+{
+    return m_securityGroup;
+}
+
+void CreateDBInstanceRequest::SetSecurityGroup(const vector<string>& _securityGroup)
+{
+    m_securityGroup = _securityGroup;
+    m_securityGroupHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::SecurityGroupHasBeenSet() const
+{
+    return m_securityGroupHasBeenSet;
 }
 
 

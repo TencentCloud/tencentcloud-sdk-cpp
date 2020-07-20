@@ -103,6 +103,66 @@ namespace TencentCloud
                      */
                     bool BaseLinesHasBeenSet() const;
 
+                    /**
+                     * 获取恶意请求统计数据数组。
+                     * @return MaliciousRequests 恶意请求统计数据数组。
+                     */
+                    std::vector<SecurityTrend> GetMaliciousRequests() const;
+
+                    /**
+                     * 判断参数 MaliciousRequests 是否已赋值
+                     * @return MaliciousRequests 是否已赋值
+                     */
+                    bool MaliciousRequestsHasBeenSet() const;
+
+                    /**
+                     * 获取高危命令统计数据数组。
+                     * @return HighRiskBashs 高危命令统计数据数组。
+                     */
+                    std::vector<SecurityTrend> GetHighRiskBashs() const;
+
+                    /**
+                     * 判断参数 HighRiskBashs 是否已赋值
+                     * @return HighRiskBashs 是否已赋值
+                     */
+                    bool HighRiskBashsHasBeenSet() const;
+
+                    /**
+                     * 获取反弹shell统计数据数组。
+                     * @return ReverseShells 反弹shell统计数据数组。
+                     */
+                    std::vector<SecurityTrend> GetReverseShells() const;
+
+                    /**
+                     * 判断参数 ReverseShells 是否已赋值
+                     * @return ReverseShells 是否已赋值
+                     */
+                    bool ReverseShellsHasBeenSet() const;
+
+                    /**
+                     * 获取本地提权统计数据数组。
+                     * @return PrivilegeEscalations 本地提权统计数据数组。
+                     */
+                    std::vector<SecurityTrend> GetPrivilegeEscalations() const;
+
+                    /**
+                     * 判断参数 PrivilegeEscalations 是否已赋值
+                     * @return PrivilegeEscalations 是否已赋值
+                     */
+                    bool PrivilegeEscalationsHasBeenSet() const;
+
+                    /**
+                     * 获取网络攻击统计数据数组。
+                     * @return CyberAttacks 网络攻击统计数据数组。
+                     */
+                    std::vector<SecurityTrend> GetCyberAttacks() const;
+
+                    /**
+                     * 判断参数 CyberAttacks 是否已赋值
+                     * @return CyberAttacks 是否已赋值
+                     */
+                    bool CyberAttacksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +194,36 @@ namespace TencentCloud
                      */
                     std::vector<SecurityTrend> m_baseLines;
                     bool m_baseLinesHasBeenSet;
+
+                    /**
+                     * 恶意请求统计数据数组。
+                     */
+                    std::vector<SecurityTrend> m_maliciousRequests;
+                    bool m_maliciousRequestsHasBeenSet;
+
+                    /**
+                     * 高危命令统计数据数组。
+                     */
+                    std::vector<SecurityTrend> m_highRiskBashs;
+                    bool m_highRiskBashsHasBeenSet;
+
+                    /**
+                     * 反弹shell统计数据数组。
+                     */
+                    std::vector<SecurityTrend> m_reverseShells;
+                    bool m_reverseShellsHasBeenSet;
+
+                    /**
+                     * 本地提权统计数据数组。
+                     */
+                    std::vector<SecurityTrend> m_privilegeEscalations;
+                    bool m_privilegeEscalationsHasBeenSet;
+
+                    /**
+                     * 网络攻击统计数据数组。
+                     */
+                    std::vector<SecurityTrend> m_cyberAttacks;
+                    bool m_cyberAttacksHasBeenSet;
 
                 };
             }

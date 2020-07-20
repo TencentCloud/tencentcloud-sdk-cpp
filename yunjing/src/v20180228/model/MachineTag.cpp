@@ -23,7 +23,8 @@ using namespace std;
 
 MachineTag::MachineTag() :
     m_ridHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tagIdHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome MachineTag::Deserialize(const Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("TagId") && !value["TagId"].IsNull())
+    {
+        if (!value["TagId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `MachineTag.TagId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagId = value["TagId"].GetUint64();
+        m_tagIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void MachineTag::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tagId, allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void MachineTag::SetName(const string& _name)
 bool MachineTag::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t MachineTag::GetTagId() const
+{
+    return m_tagId;
+}
+
+void MachineTag::SetTagId(const uint64_t& _tagId)
+{
+    m_tagId = _tagId;
+    m_tagIdHasBeenSet = true;
+}
+
+bool MachineTag::TagIdHasBeenSet() const
+{
+    return m_tagIdHasBeenSet;
 }
 

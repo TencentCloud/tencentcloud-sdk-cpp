@@ -559,6 +559,28 @@ namespace TencentCloud
                      */
                     bool ActivityIdHasBeenSet() const;
 
+                    /**
+                     * 获取订单过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OverdueTime 订单过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOverdueTime() const;
+
+                    /**
+                     * 设置订单过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OverdueTime 订单过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOverdueTime(const std::string& _overdueTime);
+
+                    /**
+                     * 判断参数 OverdueTime 是否已赋值
+                     * @return OverdueTime 是否已赋值
+                     */
+                    bool OverdueTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -724,6 +746,13 @@ namespace TencentCloud
                      */
                     std::string m_activityId;
                     bool m_activityIdHasBeenSet;
+
+                    /**
+                     * 订单过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_overdueTime;
+                    bool m_overdueTimeHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ SecurityDynamic::SecurityDynamic() :
     m_uuidHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_securityLevelHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome SecurityDynamic::Deserialize(const Value &value)
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityLevel") && !value["SecurityLevel"].IsNull())
+    {
+        if (!value["SecurityLevel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecurityDynamic.SecurityLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityLevel = string(value["SecurityLevel"].GetString());
+        m_securityLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void SecurityDynamic::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityLevelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_securityLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void SecurityDynamic::SetMessage(const string& _message)
 bool SecurityDynamic::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+string SecurityDynamic::GetSecurityLevel() const
+{
+    return m_securityLevel;
+}
+
+void SecurityDynamic::SetSecurityLevel(const string& _securityLevel)
+{
+    m_securityLevel = _securityLevel;
+    m_securityLevelHasBeenSet = true;
+}
+
+bool SecurityDynamic::SecurityLevelHasBeenSet() const
+{
+    return m_securityLevelHasBeenSet;
 }
 

@@ -109,6 +109,42 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取主机安全客户端ID
+                     * @return Uuid 主机安全客户端ID
+                     */
+                    std::string GetUuid() const;
+
+                    /**
+                     * 设置主机安全客户端ID
+                     * @param Uuid 主机安全客户端ID
+                     */
+                    void SetUuid(const std::string& _uuid);
+
+                    /**
+                     * 判断参数 Uuid 是否已赋值
+                     * @return Uuid 是否已赋值
+                     */
+                    bool UuidHasBeenSet() const;
+
+                    /**
+                     * 获取云主机机器ID
+                     * @return Quuid 云主机机器ID
+                     */
+                    std::string GetQuuid() const;
+
+                    /**
+                     * 设置云主机机器ID
+                     * @param Quuid 云主机机器ID
+                     */
+                    void SetQuuid(const std::string& _quuid);
+
+                    /**
+                     * 判断参数 Quuid 是否已赋值
+                     * @return Quuid 是否已赋值
+                     */
+                    bool QuuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -131,6 +167,18 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 主机安全客户端ID
+                     */
+                    std::string m_uuid;
+                    bool m_uuidHasBeenSet;
+
+                    /**
+                     * 云主机机器ID
+                     */
+                    std::string m_quuid;
+                    bool m_quuidHasBeenSet;
 
                 };
             }

@@ -295,6 +295,60 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     * @return Clone 1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     */
+                    int64_t GetClone() const;
+
+                    /**
+                     * 设置1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     * @param Clone 1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     */
+                    void SetClone(const int64_t& _clone);
+
+                    /**
+                     * 判断参数 Clone 是否已赋值
+                     * @return Clone 是否已赋值
+                     */
+                    bool CloneHasBeenSet() const;
+
+                    /**
+                     * 获取父实例Id，当Clone为3或者4时，这个必须填
+                     * @return Father 父实例Id，当Clone为3或者4时，这个必须填
+                     */
+                    std::string GetFather() const;
+
+                    /**
+                     * 设置父实例Id，当Clone为3或者4时，这个必须填
+                     * @param Father 父实例Id，当Clone为3或者4时，这个必须填
+                     */
+                    void SetFather(const std::string& _father);
+
+                    /**
+                     * 判断参数 Father 是否已赋值
+                     * @return Father 是否已赋值
+                     */
+                    bool FatherHasBeenSet() const;
+
+                    /**
+                     * 获取安全组
+                     * @return SecurityGroup 安全组
+                     */
+                    std::vector<std::string> GetSecurityGroup() const;
+
+                    /**
+                     * 设置安全组
+                     * @param SecurityGroup 安全组
+                     */
+                    void SetSecurityGroup(const std::vector<std::string>& _securityGroup);
+
+                    /**
+                     * 判断参数 SecurityGroup 是否已赋值
+                     * @return SecurityGroup 是否已赋值
+                     */
+                    bool SecurityGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +434,24 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 1:正式实例,2:临时实例,3:只读实例，4：灾备实例
+                     */
+                    int64_t m_clone;
+                    bool m_cloneHasBeenSet;
+
+                    /**
+                     * 父实例Id，当Clone为3或者4时，这个必须填
+                     */
+                    std::string m_father;
+                    bool m_fatherHasBeenSet;
+
+                    /**
+                     * 安全组
+                     */
+                    std::vector<std::string> m_securityGroup;
+                    bool m_securityGroupHasBeenSet;
 
                 };
             }

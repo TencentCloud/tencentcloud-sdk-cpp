@@ -138,6 +138,40 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取安全事件等级。
+<li>RISK: 严重</li>
+<li>HIGH: 高危</li>
+<li>NORMAL: 中危</li>
+<li>LOW: 低危</li>
+                     * @return SecurityLevel 安全事件等级。
+<li>RISK: 严重</li>
+<li>HIGH: 高危</li>
+<li>NORMAL: 中危</li>
+<li>LOW: 低危</li>
+                     */
+                    std::string GetSecurityLevel() const;
+
+                    /**
+                     * 设置安全事件等级。
+<li>RISK: 严重</li>
+<li>HIGH: 高危</li>
+<li>NORMAL: 中危</li>
+<li>LOW: 低危</li>
+                     * @param SecurityLevel 安全事件等级。
+<li>RISK: 严重</li>
+<li>HIGH: 高危</li>
+<li>NORMAL: 中危</li>
+<li>LOW: 低危</li>
+                     */
+                    void SetSecurityLevel(const std::string& _securityLevel);
+
+                    /**
+                     * 判断参数 SecurityLevel 是否已赋值
+                     * @return SecurityLevel 是否已赋值
+                     */
+                    bool SecurityLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +202,16 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 安全事件等级。
+<li>RISK: 严重</li>
+<li>HIGH: 高危</li>
+<li>NORMAL: 中危</li>
+<li>LOW: 低危</li>
+                     */
+                    std::string m_securityLevel;
+                    bool m_securityLevelHasBeenSet;
 
                 };
             }

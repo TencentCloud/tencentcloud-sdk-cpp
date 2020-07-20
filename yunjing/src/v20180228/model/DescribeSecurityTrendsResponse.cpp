@@ -29,7 +29,12 @@ DescribeSecurityTrendsResponse::DescribeSecurityTrendsResponse() :
     m_nonLocalLoginPlacesHasBeenSet(false),
     m_bruteAttacksHasBeenSet(false),
     m_vulsHasBeenSet(false),
-    m_baseLinesHasBeenSet(false)
+    m_baseLinesHasBeenSet(false),
+    m_maliciousRequestsHasBeenSet(false),
+    m_highRiskBashsHasBeenSet(false),
+    m_reverseShellsHasBeenSet(false),
+    m_privilegeEscalationsHasBeenSet(false),
+    m_cyberAttacksHasBeenSet(false)
 {
 }
 
@@ -167,6 +172,106 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
         m_baseLinesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaliciousRequests") && !rsp["MaliciousRequests"].IsNull())
+    {
+        if (!rsp["MaliciousRequests"].IsArray())
+            return CoreInternalOutcome(Error("response `MaliciousRequests` is not array type"));
+
+        const Value &tmpValue = rsp["MaliciousRequests"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecurityTrend item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_maliciousRequests.push_back(item);
+        }
+        m_maliciousRequestsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HighRiskBashs") && !rsp["HighRiskBashs"].IsNull())
+    {
+        if (!rsp["HighRiskBashs"].IsArray())
+            return CoreInternalOutcome(Error("response `HighRiskBashs` is not array type"));
+
+        const Value &tmpValue = rsp["HighRiskBashs"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecurityTrend item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_highRiskBashs.push_back(item);
+        }
+        m_highRiskBashsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ReverseShells") && !rsp["ReverseShells"].IsNull())
+    {
+        if (!rsp["ReverseShells"].IsArray())
+            return CoreInternalOutcome(Error("response `ReverseShells` is not array type"));
+
+        const Value &tmpValue = rsp["ReverseShells"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecurityTrend item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_reverseShells.push_back(item);
+        }
+        m_reverseShellsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PrivilegeEscalations") && !rsp["PrivilegeEscalations"].IsNull())
+    {
+        if (!rsp["PrivilegeEscalations"].IsArray())
+            return CoreInternalOutcome(Error("response `PrivilegeEscalations` is not array type"));
+
+        const Value &tmpValue = rsp["PrivilegeEscalations"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecurityTrend item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_privilegeEscalations.push_back(item);
+        }
+        m_privilegeEscalationsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CyberAttacks") && !rsp["CyberAttacks"].IsNull())
+    {
+        if (!rsp["CyberAttacks"].IsArray())
+            return CoreInternalOutcome(Error("response `CyberAttacks` is not array type"));
+
+        const Value &tmpValue = rsp["CyberAttacks"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecurityTrend item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cyberAttacks.push_back(item);
+        }
+        m_cyberAttacksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +325,56 @@ vector<SecurityTrend> DescribeSecurityTrendsResponse::GetBaseLines() const
 bool DescribeSecurityTrendsResponse::BaseLinesHasBeenSet() const
 {
     return m_baseLinesHasBeenSet;
+}
+
+vector<SecurityTrend> DescribeSecurityTrendsResponse::GetMaliciousRequests() const
+{
+    return m_maliciousRequests;
+}
+
+bool DescribeSecurityTrendsResponse::MaliciousRequestsHasBeenSet() const
+{
+    return m_maliciousRequestsHasBeenSet;
+}
+
+vector<SecurityTrend> DescribeSecurityTrendsResponse::GetHighRiskBashs() const
+{
+    return m_highRiskBashs;
+}
+
+bool DescribeSecurityTrendsResponse::HighRiskBashsHasBeenSet() const
+{
+    return m_highRiskBashsHasBeenSet;
+}
+
+vector<SecurityTrend> DescribeSecurityTrendsResponse::GetReverseShells() const
+{
+    return m_reverseShells;
+}
+
+bool DescribeSecurityTrendsResponse::ReverseShellsHasBeenSet() const
+{
+    return m_reverseShellsHasBeenSet;
+}
+
+vector<SecurityTrend> DescribeSecurityTrendsResponse::GetPrivilegeEscalations() const
+{
+    return m_privilegeEscalations;
+}
+
+bool DescribeSecurityTrendsResponse::PrivilegeEscalationsHasBeenSet() const
+{
+    return m_privilegeEscalationsHasBeenSet;
+}
+
+vector<SecurityTrend> DescribeSecurityTrendsResponse::GetCyberAttacks() const
+{
+    return m_cyberAttacks;
+}
+
+bool DescribeSecurityTrendsResponse::CyberAttacksHasBeenSet() const
+{
+    return m_cyberAttacksHasBeenSet;
 }
 
 

@@ -33,7 +33,11 @@ Machine::Machine() :
     m_machineWanIpHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_malwareNumHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_baselineNumHasBeenSet(false),
+    m_cyberAttackNumHasBeenSet(false),
+    m_securityStatusHasBeenSet(false),
+    m_invasionNumHasBeenSet(false)
 {
 }
 
@@ -172,6 +176,46 @@ CoreInternalOutcome Machine::Deserialize(const Value &value)
         m_tagHasBeenSet = true;
     }
 
+    if (value.HasMember("BaselineNum") && !value["BaselineNum"].IsNull())
+    {
+        if (!value["BaselineNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Machine.BaselineNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_baselineNum = value["BaselineNum"].GetInt64();
+        m_baselineNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("CyberAttackNum") && !value["CyberAttackNum"].IsNull())
+    {
+        if (!value["CyberAttackNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Machine.CyberAttackNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cyberAttackNum = value["CyberAttackNum"].GetInt64();
+        m_cyberAttackNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityStatus") && !value["SecurityStatus"].IsNull())
+    {
+        if (!value["SecurityStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Machine.SecurityStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityStatus = string(value["SecurityStatus"].GetString());
+        m_securityStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvasionNum") && !value["InvasionNum"].IsNull())
+    {
+        if (!value["InvasionNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Machine.InvasionNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invasionNum = value["InvasionNum"].GetInt64();
+        m_invasionNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -280,6 +324,38 @@ void Machine::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_baselineNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BaselineNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_baselineNum, allocator);
+    }
+
+    if (m_cyberAttackNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CyberAttackNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cyberAttackNum, allocator);
+    }
+
+    if (m_securityStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_securityStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invasionNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InvasionNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invasionNum, allocator);
     }
 
 }
@@ -475,5 +551,69 @@ void Machine::SetTag(const vector<MachineTag>& _tag)
 bool Machine::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+int64_t Machine::GetBaselineNum() const
+{
+    return m_baselineNum;
+}
+
+void Machine::SetBaselineNum(const int64_t& _baselineNum)
+{
+    m_baselineNum = _baselineNum;
+    m_baselineNumHasBeenSet = true;
+}
+
+bool Machine::BaselineNumHasBeenSet() const
+{
+    return m_baselineNumHasBeenSet;
+}
+
+int64_t Machine::GetCyberAttackNum() const
+{
+    return m_cyberAttackNum;
+}
+
+void Machine::SetCyberAttackNum(const int64_t& _cyberAttackNum)
+{
+    m_cyberAttackNum = _cyberAttackNum;
+    m_cyberAttackNumHasBeenSet = true;
+}
+
+bool Machine::CyberAttackNumHasBeenSet() const
+{
+    return m_cyberAttackNumHasBeenSet;
+}
+
+string Machine::GetSecurityStatus() const
+{
+    return m_securityStatus;
+}
+
+void Machine::SetSecurityStatus(const string& _securityStatus)
+{
+    m_securityStatus = _securityStatus;
+    m_securityStatusHasBeenSet = true;
+}
+
+bool Machine::SecurityStatusHasBeenSet() const
+{
+    return m_securityStatusHasBeenSet;
+}
+
+int64_t Machine::GetInvasionNum() const
+{
+    return m_invasionNum;
+}
+
+void Machine::SetInvasionNum(const int64_t& _invasionNum)
+{
+    m_invasionNum = _invasionNum;
+    m_invasionNumHasBeenSet = true;
+}
+
+bool Machine::InvasionNumHasBeenSet() const
+{
+    return m_invasionNumHasBeenSet;
 }
 

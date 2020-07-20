@@ -45,7 +45,8 @@ AgentDealElem::AgentDealElem() :
     m_projectTypeHasBeenSet(false),
     m_salesUinHasBeenSet(false),
     m_payerModeHasBeenSet(false),
-    m_activityIdHasBeenSet(false)
+    m_activityIdHasBeenSet(false),
+    m_overdueTimeHasBeenSet(false)
 {
 }
 
@@ -301,6 +302,16 @@ CoreInternalOutcome AgentDealElem::Deserialize(const Value &value)
         m_activityIdHasBeenSet = true;
     }
 
+    if (value.HasMember("OverdueTime") && !value["OverdueTime"].IsNull())
+    {
+        if (!value["OverdueTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentDealElem.OverdueTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_overdueTime = string(value["OverdueTime"].GetString());
+        m_overdueTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -499,6 +510,14 @@ void AgentDealElem::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ActivityId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_activityId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_overdueTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OverdueTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_overdueTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -886,5 +905,21 @@ void AgentDealElem::SetActivityId(const string& _activityId)
 bool AgentDealElem::ActivityIdHasBeenSet() const
 {
     return m_activityIdHasBeenSet;
+}
+
+string AgentDealElem::GetOverdueTime() const
+{
+    return m_overdueTime;
+}
+
+void AgentDealElem::SetOverdueTime(const string& _overdueTime)
+{
+    m_overdueTime = _overdueTime;
+    m_overdueTimeHasBeenSet = true;
+}
+
+bool AgentDealElem::OverdueTimeHasBeenSet() const
+{
+    return m_overdueTimeHasBeenSet;
 }
 

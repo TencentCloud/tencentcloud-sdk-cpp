@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取风险关键词
-                     * @return Keywords 风险关键词
+                     * 获取预留字段，暂时不使用
+                     * @return Keywords 预留字段，暂时不使用
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
-                     * 设置风险关键词
-                     * @param Keywords 风险关键词
+                     * 设置预留字段，暂时不使用
+                     * @param Keywords 预留字段，暂时不使用
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
 
@@ -103,7 +103,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 风险关键词
+                     * 预留字段，暂时不使用
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;

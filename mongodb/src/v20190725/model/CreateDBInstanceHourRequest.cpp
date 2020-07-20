@@ -37,7 +37,10 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_subnetIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_cloneHasBeenSet(false),
+    m_fatherHasBeenSet(false),
+    m_securityGroupHasBeenSet(false)
 {
 }
 
@@ -164,6 +167,35 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cloneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Clone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clone, allocator);
+    }
+
+    if (m_fatherHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Father";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_father.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroup.begin(); itr != m_securityGroup.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -397,6 +429,54 @@ void CreateDBInstanceHourRequest::SetTags(const vector<TagInfo>& _tags)
 bool CreateDBInstanceHourRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t CreateDBInstanceHourRequest::GetClone() const
+{
+    return m_clone;
+}
+
+void CreateDBInstanceHourRequest::SetClone(const int64_t& _clone)
+{
+    m_clone = _clone;
+    m_cloneHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::CloneHasBeenSet() const
+{
+    return m_cloneHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetFather() const
+{
+    return m_father;
+}
+
+void CreateDBInstanceHourRequest::SetFather(const string& _father)
+{
+    m_father = _father;
+    m_fatherHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::FatherHasBeenSet() const
+{
+    return m_fatherHasBeenSet;
+}
+
+vector<string> CreateDBInstanceHourRequest::GetSecurityGroup() const
+{
+    return m_securityGroup;
+}
+
+void CreateDBInstanceHourRequest::SetSecurityGroup(const vector<string>& _securityGroup)
+{
+    m_securityGroup = _securityGroup;
+    m_securityGroupHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::SecurityGroupHasBeenSet() const
+{
+    return m_securityGroupHasBeenSet;
 }
 
 

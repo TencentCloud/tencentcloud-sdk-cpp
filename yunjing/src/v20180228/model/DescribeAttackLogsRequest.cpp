@@ -26,7 +26,9 @@ using namespace std;
 DescribeAttackLogsRequest::DescribeAttackLogsRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_uuidHasBeenSet(false),
+    m_quuidHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,22 @@ string DescribeAttackLogsRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_uuidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quuidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Quuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -122,6 +140,38 @@ void DescribeAttackLogsRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeAttackLogsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeAttackLogsRequest::GetUuid() const
+{
+    return m_uuid;
+}
+
+void DescribeAttackLogsRequest::SetUuid(const string& _uuid)
+{
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
+}
+
+bool DescribeAttackLogsRequest::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
+}
+
+string DescribeAttackLogsRequest::GetQuuid() const
+{
+    return m_quuid;
+}
+
+void DescribeAttackLogsRequest::SetQuuid(const string& _quuid)
+{
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
+}
+
+bool DescribeAttackLogsRequest::QuuidHasBeenSet() const
+{
+    return m_quuidHasBeenSet;
 }
 
 
