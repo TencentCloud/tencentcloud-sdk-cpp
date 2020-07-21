@@ -172,6 +172,60 @@ namespace TencentCloud
                      */
                     bool RegionNameHasBeenSet() const;
 
+                    /**
+                     * 获取来源实例名称
+                     * @return InstanceName 来源实例名称
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置来源实例名称
+                     * @param InstanceName 来源实例名称
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取来源实例ID
+                     * @return InstanceId 来源实例ID
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置来源实例ID
+                     * @param InstanceId 来源实例ID
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取来源镜像类型
+                     * @return ImageType 来源镜像类型
+                     */
+                    std::string GetImageType() const;
+
+                    /**
+                     * 设置来源镜像类型
+                     * @param ImageType 来源镜像类型
+                     */
+                    void SetImageType(const std::string& _imageType);
+
+                    /**
+                     * 判断参数 ImageType 是否已赋值
+                     * @return ImageType 是否已赋值
+                     */
+                    bool ImageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +269,24 @@ namespace TencentCloud
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
+
+                    /**
+                     * 来源实例名称
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 来源实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 来源镜像类型
+                     */
+                    std::string m_imageType;
+                    bool m_imageTypeHasBeenSet;
 
                 };
             }

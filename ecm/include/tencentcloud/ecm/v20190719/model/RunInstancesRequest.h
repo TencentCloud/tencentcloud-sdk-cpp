@@ -337,6 +337,24 @@ Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写�
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取系统盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     * @return SystemDiskSize 系统盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     */
+                    uint64_t GetSystemDiskSize() const;
+
+                    /**
+                     * 设置系统盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     * @param SystemDiskSize 系统盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     */
+                    void SetSystemDiskSize(const uint64_t& _systemDiskSize);
+
+                    /**
+                     * 判断参数 SystemDiskSize 是否已赋值
+                     * @return SystemDiskSize 是否已赋值
+                     */
+                    bool SystemDiskSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +450,12 @@ Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写�
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 系统盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     */
+                    uint64_t m_systemDiskSize;
+                    bool m_systemDiskSizeHasBeenSet;
 
                 };
             }

@@ -212,6 +212,49 @@ EcmClient::AttachNetworkInterfaceOutcomeCallable EcmClient::AttachNetworkInterfa
     return task->get_future();
 }
 
+EcmClient::CreateImageOutcome EcmClient::CreateImage(const CreateImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageResponse rsp = CreateImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageOutcome(rsp);
+        else
+            return CreateImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateImageOutcomeCallable EcmClient::CreateImageCallable(const CreateImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateImageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::CreateModuleOutcome EcmClient::CreateModule(const CreateModuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateModule");
@@ -1502,6 +1545,49 @@ EcmClient::DescribeTaskResultOutcomeCallable EcmClient::DescribeTaskResultCallab
     return task->get_future();
 }
 
+EcmClient::DescribeTaskStatusOutcome EcmClient::DescribeTaskStatus(const DescribeTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskStatusResponse rsp = DescribeTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskStatusOutcome(rsp);
+        else
+            return DescribeTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeTaskStatusAsync(const DescribeTaskStatusRequest& request, const DescribeTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeTaskStatusOutcomeCallable EcmClient::DescribeTaskStatusCallable(const DescribeTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeVpcsOutcome EcmClient::DescribeVpcs(const DescribeVpcsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVpcs");
@@ -1925,6 +2011,49 @@ EcmClient::ModifyDefaultSubnetOutcomeCallable EcmClient::ModifyDefaultSubnetCall
         [this, request]()
         {
             return this->ModifyDefaultSubnet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifyImageAttributeOutcome EcmClient::ModifyImageAttribute(const ModifyImageAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyImageAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyImageAttributeResponse rsp = ModifyImageAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyImageAttributeOutcome(rsp);
+        else
+            return ModifyImageAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyImageAttributeOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyImageAttributeAsync(const ModifyImageAttributeRequest& request, const ModifyImageAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyImageAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyImageAttributeOutcomeCallable EcmClient::ModifyImageAttributeCallable(const ModifyImageAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyImageAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyImageAttribute(request);
         }
     );
 

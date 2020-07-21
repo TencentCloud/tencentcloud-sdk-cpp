@@ -31,6 +31,8 @@
 #include <tencentcloud/ecm/v20190719/model/AssociateAddressResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AttachNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AttachNetworkInterfaceResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateImageRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateModuleRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateModuleResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateNetworkInterfaceRequest.h>
@@ -91,6 +93,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeSubnetsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeTaskResultRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeTaskResultResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeTaskStatusRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeTaskStatusResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeVpcsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeVpcsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceRequest.h>
@@ -111,6 +115,8 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyAddressesBandwidthResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyDefaultSubnetRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyDefaultSubnetResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyImageAttributeRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyImageAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleImageRequest.h>
@@ -169,6 +175,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AttachNetworkInterfaceResponse> AttachNetworkInterfaceOutcome;
                 typedef std::future<AttachNetworkInterfaceOutcome> AttachNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AttachNetworkInterfaceRequest&, AttachNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachNetworkInterfaceAsyncHandler;
+                typedef Outcome<Error, Model::CreateImageResponse> CreateImageOutcome;
+                typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::CreateImageRequest&, CreateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAsyncHandler;
                 typedef Outcome<Error, Model::CreateModuleResponse> CreateModuleOutcome;
                 typedef std::future<CreateModuleOutcome> CreateModuleOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateModuleRequest&, CreateModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModuleAsyncHandler;
@@ -259,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
                 typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
+                typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
                 typedef Outcome<Error, Model::DescribeVpcsResponse> DescribeVpcsOutcome;
                 typedef std::future<DescribeVpcsOutcome> DescribeVpcsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeVpcsRequest&, DescribeVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcsAsyncHandler;
@@ -289,6 +301,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyDefaultSubnetResponse> ModifyDefaultSubnetOutcome;
                 typedef std::future<ModifyDefaultSubnetOutcome> ModifyDefaultSubnetOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyDefaultSubnetRequest&, ModifyDefaultSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultSubnetAsyncHandler;
+                typedef Outcome<Error, Model::ModifyImageAttributeResponse> ModifyImageAttributeOutcome;
+                typedef std::future<ModifyImageAttributeOutcome> ModifyImageAttributeOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyImageAttributeRequest&, ModifyImageAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageAttributeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
                 typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
@@ -381,6 +396,15 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 AttachNetworkInterfaceOutcome AttachNetworkInterface(const Model::AttachNetworkInterfaceRequest &request);
                 void AttachNetworkInterfaceAsync(const Model::AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachNetworkInterfaceOutcomeCallable AttachNetworkInterfaceCallable(const Model::AttachNetworkInterfaceRequest& request);
+
+                /**
+                 *本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。
+                 * @param req CreateImageRequest
+                 * @return CreateImageOutcome
+                 */
+                CreateImageOutcome CreateImage(const Model::CreateImageRequest &request);
+                void CreateImageAsync(const Model::CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageOutcomeCallable CreateImageCallable(const Model::CreateImageRequest& request);
 
                 /**
                  *创建模块
@@ -653,6 +677,15 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 DescribeTaskResultOutcomeCallable DescribeTaskResultCallable(const Model::DescribeTaskResultRequest& request);
 
                 /**
+                 *本接口(DescribeTaskStatus)用于获取异步任务状态
+                 * @param req DescribeTaskStatusRequest
+                 * @return DescribeTaskStatusOutcome
+                 */
+                DescribeTaskStatusOutcome DescribeTaskStatus(const Model::DescribeTaskStatusRequest &request);
+                void DescribeTaskStatusAsync(const Model::DescribeTaskStatusRequest& request, const DescribeTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskStatusOutcomeCallable DescribeTaskStatusCallable(const Model::DescribeTaskStatusRequest& request);
+
+                /**
                  *查询私有网络列表
                  * @param req DescribeVpcsRequest
                  * @return DescribeVpcsOutcome
@@ -746,6 +779,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyDefaultSubnetOutcome ModifyDefaultSubnet(const Model::ModifyDefaultSubnetRequest &request);
                 void ModifyDefaultSubnetAsync(const Model::ModifyDefaultSubnetRequest& request, const ModifyDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDefaultSubnetOutcomeCallable ModifyDefaultSubnetCallable(const Model::ModifyDefaultSubnetRequest& request);
+
+                /**
+                 *本接口（ModifyImageAttribute）用于修改镜像属性。
+                 * @param req ModifyImageAttributeRequest
+                 * @return ModifyImageAttributeOutcome
+                 */
+                ModifyImageAttributeOutcome ModifyImageAttribute(const Model::ModifyImageAttributeRequest &request);
+                void ModifyImageAttributeAsync(const Model::ModifyImageAttributeRequest& request, const ModifyImageAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyImageAttributeOutcomeCallable ModifyImageAttributeCallable(const Model::ModifyImageAttributeRequest& request);
 
                 /**
                  *修改实例的属性。

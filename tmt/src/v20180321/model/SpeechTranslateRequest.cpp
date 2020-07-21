@@ -32,7 +32,8 @@ SpeechTranslateRequest::SpeechTranslateRequest() :
     m_isEndHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_transTypeHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string SpeechTranslateRequest::ToJsonString() const
         string key = "Mode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TransType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transType, allocator);
     }
 
 
@@ -265,6 +274,22 @@ void SpeechTranslateRequest::SetMode(const string& _mode)
 bool SpeechTranslateRequest::ModeHasBeenSet() const
 {
     return m_modeHasBeenSet;
+}
+
+int64_t SpeechTranslateRequest::GetTransType() const
+{
+    return m_transType;
+}
+
+void SpeechTranslateRequest::SetTransType(const int64_t& _transType)
+{
+    m_transType = _transType;
+    m_transTypeHasBeenSet = true;
+}
+
+bool SpeechTranslateRequest::TransTypeHasBeenSet() const
+{
+    return m_transTypeHasBeenSet;
 }
 
 

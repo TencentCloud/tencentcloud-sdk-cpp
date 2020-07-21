@@ -299,6 +299,24 @@ namespace TencentCloud
                      */
                     bool SrcImageHasBeenSet() const;
 
+                    /**
+                     * 获取镜像来源类型
+                     * @return ImageSource 镜像来源类型
+                     */
+                    std::string GetImageSource() const;
+
+                    /**
+                     * 设置镜像来源类型
+                     * @param ImageSource 镜像来源类型
+                     */
+                    void SetImageSource(const std::string& _imageSource);
+
+                    /**
+                     * 判断参数 ImageSource 是否已赋值
+                     * @return ImageSource 是否已赋值
+                     */
+                    bool ImageSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +402,12 @@ namespace TencentCloud
                      */
                     SrcImage m_srcImage;
                     bool m_srcImageHasBeenSet;
+
+                    /**
+                     * 镜像来源类型
+                     */
+                    std::string m_imageSource;
+                    bool m_imageSourceHasBeenSet;
 
                 };
             }

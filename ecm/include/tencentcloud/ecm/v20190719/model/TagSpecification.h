@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * TagSpecification
+                * 资源类型的Tag
                 */
                 class TagSpecification : public AbstractModel
                 {

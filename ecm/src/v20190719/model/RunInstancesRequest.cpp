@@ -37,7 +37,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_userDataHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_dataDiskSizeHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_systemDiskSizeHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,14 @@ string RunInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_systemDiskSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SystemDiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_systemDiskSize, allocator);
     }
 
 
@@ -410,6 +419,22 @@ void RunInstancesRequest::SetSecurityGroupIds(const vector<string>& _securityGro
 bool RunInstancesRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+uint64_t RunInstancesRequest::GetSystemDiskSize() const
+{
+    return m_systemDiskSize;
+}
+
+void RunInstancesRequest::SetSystemDiskSize(const uint64_t& _systemDiskSize)
+{
+    m_systemDiskSize = _systemDiskSize;
+    m_systemDiskSizeHasBeenSet = true;
+}
+
+bool RunInstancesRequest::SystemDiskSizeHasBeenSet() const
+{
+    return m_systemDiskSizeHasBeenSet;
 }
 
 

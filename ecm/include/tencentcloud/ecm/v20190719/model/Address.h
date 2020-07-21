@@ -314,6 +314,50 @@ namespace TencentCloud
                      */
                     bool InternetServiceProviderHasBeenSet() const;
 
+                    /**
+                     * 获取带宽上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Bandwidth 带宽上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetBandwidth() const;
+
+                    /**
+                     * 设置带宽上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Bandwidth 带宽上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBandwidth(const uint64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     */
+                    bool BandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取计费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayMode 计费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayMode() const;
+
+                    /**
+                     * 设置计费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayMode 计费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayMode(const std::string& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,6 +447,20 @@ namespace TencentCloud
                      */
                     std::string m_internetServiceProvider;
                     bool m_internetServiceProviderHasBeenSet;
+
+                    /**
+                     * 带宽上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * 计费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool ModeHasBeenSet() const;
 
+                    /**
+                     * 获取该参数已废弃
+                     * @return TransType 该参数已废弃
+                     */
+                    int64_t GetTransType() const;
+
+                    /**
+                     * 设置该参数已废弃
+                     * @param TransType 该参数已废弃
+                     */
+                    void SetTransType(const int64_t& _transType);
+
+                    /**
+                     * 判断参数 TransType 是否已赋值
+                     * @return TransType 是否已赋值
+                     */
+                    bool TransTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
+
+                    /**
+                     * 该参数已废弃
+                     */
+                    int64_t m_transType;
+                    bool m_transTypeHasBeenSet;
 
                 };
             }

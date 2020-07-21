@@ -74,14 +74,17 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/StartInstancesResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateVpcResponse.h
   include/tencentcloud/ecm/v20190719/model/AssistantCidr.h
+  include/tencentcloud/ecm/v20190719/model/DescribeTaskStatusResponse.h
   include/tencentcloud/ecm/v20190719/model/NetworkInterface.h
   include/tencentcloud/ecm/v20190719/model/CreateModuleRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/ReleaseAddressesResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstancesDeniedActionsResponse.h
   include/tencentcloud/ecm/v20190719/model/DisassociateAddressRequest.h
+  include/tencentcloud/ecm/v20190719/model/TaskOutput.h
   include/tencentcloud/ecm/v20190719/model/ModuleCounter.h
   include/tencentcloud/ecm/v20190719/model/ZoneInstanceCountISP.h
+  include/tencentcloud/ecm/v20190719/model/TaskInput.h
   include/tencentcloud/ecm/v20190719/model/StartInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/Tag.h
   include/tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetRequest.h
@@ -119,6 +122,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/PrivateIpAddressSpecification.h
   include/tencentcloud/ecm/v20190719/model/ISPCounter.h
   include/tencentcloud/ecm/v20190719/model/MigratePrivateIpAddressResponse.h
+  include/tencentcloud/ecm/v20190719/model/CreateImageRequest.h
   include/tencentcloud/ecm/v20190719/model/Instance.h
   include/tencentcloud/ecm/v20190719/model/EnhancedService.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstanceVncUrlResponse.h
@@ -130,6 +134,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ModifyVpcAttributeRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribePeakNetworkOverviewResponse.h
   include/tencentcloud/ecm/v20190719/model/AttachNetworkInterfaceResponse.h
+  include/tencentcloud/ecm/v20190719/model/CreateImageResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeBaseOverviewRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNetworkResponse.h
   include/tencentcloud/ecm/v20190719/model/DiskInfo.h
@@ -149,6 +154,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeAddressQuotaResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateSecurityGroupResponse.h
   include/tencentcloud/ecm/v20190719/model/ZoneInstanceInfo.h
+  include/tencentcloud/ecm/v20190719/model/DescribeTaskStatusRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyAddressAttributeRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleImageResponse.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesRequest.h
@@ -172,12 +178,14 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/OperatorAction.h
   include/tencentcloud/ecm/v20190719/model/PeakFamilyInfo.h
   include/tencentcloud/ecm/v20190719/model/DescribePeakBaseOverviewResponse.h
+  include/tencentcloud/ecm/v20190719/model/ModifyImageAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeImageResponse.h
   include/tencentcloud/ecm/v20190719/model/RegionInfo.h
   include/tencentcloud/ecm/v20190719/model/DeleteImageResponse.h
   include/tencentcloud/ecm/v20190719/model/Address.h
   include/tencentcloud/ecm/v20190719/model/DescribeNetworkInterfacesResponse.h
   include/tencentcloud/ecm/v20190719/model/AssignPrivateIpAddressesRequest.h
+  include/tencentcloud/ecm/v20190719/model/ModifyImageAttributeRequest.h
   include/tencentcloud/ecm/v20190719/model/ReleaseAddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateVpcRequest.h
   include/tencentcloud/ecm/v20190719/model/RunSecurityServiceEnabled.h
@@ -252,14 +260,17 @@ set(ecm_src
   src/v20190719/model/StartInstancesResponse.cpp
   src/v20190719/model/CreateVpcResponse.cpp
   src/v20190719/model/AssistantCidr.cpp
+  src/v20190719/model/DescribeTaskStatusResponse.cpp
   src/v20190719/model/NetworkInterface.cpp
   src/v20190719/model/CreateModuleRequest.cpp
   src/v20190719/model/ModifyInstancesAttributeResponse.cpp
   src/v20190719/model/ReleaseAddressesResponse.cpp
   src/v20190719/model/DescribeInstancesDeniedActionsResponse.cpp
   src/v20190719/model/DisassociateAddressRequest.cpp
+  src/v20190719/model/TaskOutput.cpp
   src/v20190719/model/ModuleCounter.cpp
   src/v20190719/model/ZoneInstanceCountISP.cpp
+  src/v20190719/model/TaskInput.cpp
   src/v20190719/model/StartInstancesRequest.cpp
   src/v20190719/model/Tag.cpp
   src/v20190719/model/DescribeDefaultSubnetRequest.cpp
@@ -297,6 +308,7 @@ set(ecm_src
   src/v20190719/model/PrivateIpAddressSpecification.cpp
   src/v20190719/model/ISPCounter.cpp
   src/v20190719/model/MigratePrivateIpAddressResponse.cpp
+  src/v20190719/model/CreateImageRequest.cpp
   src/v20190719/model/Instance.cpp
   src/v20190719/model/EnhancedService.cpp
   src/v20190719/model/DescribeInstanceVncUrlResponse.cpp
@@ -308,6 +320,7 @@ set(ecm_src
   src/v20190719/model/ModifyVpcAttributeRequest.cpp
   src/v20190719/model/DescribePeakNetworkOverviewResponse.cpp
   src/v20190719/model/AttachNetworkInterfaceResponse.cpp
+  src/v20190719/model/CreateImageResponse.cpp
   src/v20190719/model/DescribeBaseOverviewRequest.cpp
   src/v20190719/model/ModifyModuleNetworkResponse.cpp
   src/v20190719/model/DiskInfo.cpp
@@ -327,6 +340,7 @@ set(ecm_src
   src/v20190719/model/DescribeAddressQuotaResponse.cpp
   src/v20190719/model/CreateSecurityGroupResponse.cpp
   src/v20190719/model/ZoneInstanceInfo.cpp
+  src/v20190719/model/DescribeTaskStatusRequest.cpp
   src/v20190719/model/ModifyAddressAttributeRequest.cpp
   src/v20190719/model/ModifyModuleImageResponse.cpp
   src/v20190719/model/ResetInstancesRequest.cpp
@@ -350,12 +364,14 @@ set(ecm_src
   src/v20190719/model/OperatorAction.cpp
   src/v20190719/model/PeakFamilyInfo.cpp
   src/v20190719/model/DescribePeakBaseOverviewResponse.cpp
+  src/v20190719/model/ModifyImageAttributeResponse.cpp
   src/v20190719/model/DescribeImageResponse.cpp
   src/v20190719/model/RegionInfo.cpp
   src/v20190719/model/DeleteImageResponse.cpp
   src/v20190719/model/Address.cpp
   src/v20190719/model/DescribeNetworkInterfacesResponse.cpp
   src/v20190719/model/AssignPrivateIpAddressesRequest.cpp
+  src/v20190719/model/ModifyImageAttributeRequest.cpp
   src/v20190719/model/ReleaseAddressesRequest.cpp
   src/v20190719/model/CreateVpcRequest.cpp
   src/v20190719/model/RunSecurityServiceEnabled.cpp

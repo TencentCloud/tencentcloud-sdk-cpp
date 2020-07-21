@@ -35,7 +35,9 @@ Address::Address() :
     m_isEipDirectConnectionHasBeenSet(false),
     m_addressTypeHasBeenSet(false),
     m_cascadeReleaseHasBeenSet(false),
-    m_internetServiceProviderHasBeenSet(false)
+    m_internetServiceProviderHasBeenSet(false),
+    m_bandwidthHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -184,6 +186,26 @@ CoreInternalOutcome Address::Deserialize(const Value &value)
         m_internetServiceProviderHasBeenSet = true;
     }
 
+    if (value.HasMember("Bandwidth") && !value["Bandwidth"].IsNull())
+    {
+        if (!value["Bandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Address.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidth = value["Bandwidth"].GetUint64();
+        m_bandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Address.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = string(value["PayMode"].GetString());
+        m_payModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +323,22 @@ void Address::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "InternetServiceProvider";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_internetServiceProvider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_payMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -528,5 +566,37 @@ void Address::SetInternetServiceProvider(const string& _internetServiceProvider)
 bool Address::InternetServiceProviderHasBeenSet() const
 {
     return m_internetServiceProviderHasBeenSet;
+}
+
+uint64_t Address::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void Address::SetBandwidth(const uint64_t& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool Address::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
+}
+
+string Address::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void Address::SetPayMode(const string& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool Address::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
 }
 

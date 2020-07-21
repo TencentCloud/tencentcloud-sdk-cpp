@@ -35,7 +35,8 @@ Image::Image() :
     m_platformHasBeenSet(false),
     m_imageOwnerHasBeenSet(false),
     m_imageSizeHasBeenSet(false),
-    m_srcImageHasBeenSet(false)
+    m_srcImageHasBeenSet(false),
+    m_imageSourceHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,16 @@ CoreInternalOutcome Image::Deserialize(const Value &value)
         m_srcImageHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageSource") && !value["ImageSource"].IsNull())
+    {
+        if (!value["ImageSource"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Image.ImageSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageSource = string(value["ImageSource"].GetString());
+        m_imageSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -309,6 +320,14 @@ void Image::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_srcImage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageSourceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_imageSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -536,5 +555,21 @@ void Image::SetSrcImage(const SrcImage& _srcImage)
 bool Image::SrcImageHasBeenSet() const
 {
     return m_srcImageHasBeenSet;
+}
+
+string Image::GetImageSource() const
+{
+    return m_imageSource;
+}
+
+void Image::SetImageSource(const string& _imageSource)
+{
+    m_imageSource = _imageSource;
+    m_imageSourceHasBeenSet = true;
+}
+
+bool Image::ImageSourceHasBeenSet() const
+{
+    return m_imageSourceHasBeenSet;
 }
 

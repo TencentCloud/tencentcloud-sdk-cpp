@@ -28,7 +28,10 @@ SrcImage::SrcImage() :
     m_imageDescriptionHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_regionIDHasBeenSet(false),
-    m_regionNameHasBeenSet(false)
+    m_regionNameHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_imageTypeHasBeenSet(false)
 {
 }
 
@@ -107,6 +110,36 @@ CoreInternalOutcome SrcImage::Deserialize(const Value &value)
         m_regionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceName") && !value["InstanceName"].IsNull())
+    {
+        if (!value["InstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SrcImage.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceName = string(value["InstanceName"].GetString());
+        m_instanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SrcImage.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageType") && !value["ImageType"].IsNull())
+    {
+        if (!value["ImageType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SrcImage.ImageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageType = string(value["ImageType"].GetString());
+        m_imageTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +201,30 @@ void SrcImage::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_regionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_imageType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -283,5 +340,53 @@ void SrcImage::SetRegionName(const string& _regionName)
 bool SrcImage::RegionNameHasBeenSet() const
 {
     return m_regionNameHasBeenSet;
+}
+
+string SrcImage::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void SrcImage::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool SrcImage::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+string SrcImage::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void SrcImage::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool SrcImage::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string SrcImage::GetImageType() const
+{
+    return m_imageType;
+}
+
+void SrcImage::SetImageType(const string& _imageType)
+{
+    m_imageType = _imageType;
+    m_imageTypeHasBeenSet = true;
+}
+
+bool SrcImage::ImageTypeHasBeenSet() const
+{
+    return m_imageTypeHasBeenSet;
 }
 
