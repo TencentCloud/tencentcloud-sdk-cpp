@@ -55,12 +55,16 @@
 #include <tencentcloud/cam/v20190116/model/DeletePolicyVersionResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteRoleRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteRoleResponse.h>
+#include <tencentcloud/cam/v20190116/model/DeleteRolePermissionsBoundaryRequest.h>
+#include <tencentcloud/cam/v20190116/model/DeleteRolePermissionsBoundaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteSAMLProviderRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteSAMLProviderResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteServiceLinkedRoleRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteServiceLinkedRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteUserRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteUserResponse.h>
+#include <tencentcloud/cam/v20190116/model/DeleteUserPermissionsBoundaryRequest.h>
+#include <tencentcloud/cam/v20190116/model/DeleteUserPermissionsBoundaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeRoleListRequest.h>
 #include <tencentcloud/cam/v20190116/model/DescribeRoleListResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h>
@@ -111,6 +115,10 @@
 #include <tencentcloud/cam/v20190116/model/ListUsersResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListUsersForGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListUsersForGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/PutRolePermissionsBoundaryRequest.h>
+#include <tencentcloud/cam/v20190116/model/PutRolePermissionsBoundaryResponse.h>
+#include <tencentcloud/cam/v20190116/model/PutUserPermissionsBoundaryRequest.h>
+#include <tencentcloud/cam/v20190116/model/PutUserPermissionsBoundaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/RemoveUserFromGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/RemoveUserFromGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/SetDefaultPolicyVersionRequest.h>
@@ -193,6 +201,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteRoleResponse> DeleteRoleOutcome;
                 typedef std::future<DeleteRoleOutcome> DeleteRoleOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteRoleRequest&, DeleteRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleAsyncHandler;
+                typedef Outcome<Error, Model::DeleteRolePermissionsBoundaryResponse> DeleteRolePermissionsBoundaryOutcome;
+                typedef std::future<DeleteRolePermissionsBoundaryOutcome> DeleteRolePermissionsBoundaryOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DeleteRolePermissionsBoundaryRequest&, DeleteRolePermissionsBoundaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRolePermissionsBoundaryAsyncHandler;
                 typedef Outcome<Error, Model::DeleteSAMLProviderResponse> DeleteSAMLProviderOutcome;
                 typedef std::future<DeleteSAMLProviderOutcome> DeleteSAMLProviderOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteSAMLProviderRequest&, DeleteSAMLProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSAMLProviderAsyncHandler;
@@ -202,6 +213,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteUserResponse> DeleteUserOutcome;
                 typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
+                typedef Outcome<Error, Model::DeleteUserPermissionsBoundaryResponse> DeleteUserPermissionsBoundaryOutcome;
+                typedef std::future<DeleteUserPermissionsBoundaryOutcome> DeleteUserPermissionsBoundaryOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DeleteUserPermissionsBoundaryRequest&, DeleteUserPermissionsBoundaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserPermissionsBoundaryAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRoleListResponse> DescribeRoleListOutcome;
                 typedef std::future<DescribeRoleListOutcome> DescribeRoleListOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DescribeRoleListRequest&, DescribeRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleListAsyncHandler;
@@ -277,6 +291,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListUsersForGroupResponse> ListUsersForGroupOutcome;
                 typedef std::future<ListUsersForGroupOutcome> ListUsersForGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListUsersForGroupRequest&, ListUsersForGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersForGroupAsyncHandler;
+                typedef Outcome<Error, Model::PutRolePermissionsBoundaryResponse> PutRolePermissionsBoundaryOutcome;
+                typedef std::future<PutRolePermissionsBoundaryOutcome> PutRolePermissionsBoundaryOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::PutRolePermissionsBoundaryRequest&, PutRolePermissionsBoundaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutRolePermissionsBoundaryAsyncHandler;
+                typedef Outcome<Error, Model::PutUserPermissionsBoundaryResponse> PutUserPermissionsBoundaryOutcome;
+                typedef std::future<PutUserPermissionsBoundaryOutcome> PutUserPermissionsBoundaryOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::PutUserPermissionsBoundaryRequest&, PutUserPermissionsBoundaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutUserPermissionsBoundaryAsyncHandler;
                 typedef Outcome<Error, Model::RemoveUserFromGroupResponse> RemoveUserFromGroupOutcome;
                 typedef std::future<RemoveUserFromGroupOutcome> RemoveUserFromGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::RemoveUserFromGroupRequest&, RemoveUserFromGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserFromGroupAsyncHandler;
@@ -455,6 +475,15 @@ namespace TencentCloud
                 DeleteRoleOutcomeCallable DeleteRoleCallable(const Model::DeleteRoleRequest& request);
 
                 /**
+                 *删除角色权限边界
+                 * @param req DeleteRolePermissionsBoundaryRequest
+                 * @return DeleteRolePermissionsBoundaryOutcome
+                 */
+                DeleteRolePermissionsBoundaryOutcome DeleteRolePermissionsBoundary(const Model::DeleteRolePermissionsBoundaryRequest &request);
+                void DeleteRolePermissionsBoundaryAsync(const Model::DeleteRolePermissionsBoundaryRequest& request, const DeleteRolePermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRolePermissionsBoundaryOutcomeCallable DeleteRolePermissionsBoundaryCallable(const Model::DeleteRolePermissionsBoundaryRequest& request);
+
+                /**
                  *删除SAML身份提供商
                  * @param req DeleteSAMLProviderRequest
                  * @return DeleteSAMLProviderOutcome
@@ -480,6 +509,15 @@ namespace TencentCloud
                 DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest &request);
                 void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request);
+
+                /**
+                 *删除用户权限边界
+                 * @param req DeleteUserPermissionsBoundaryRequest
+                 * @return DeleteUserPermissionsBoundaryOutcome
+                 */
+                DeleteUserPermissionsBoundaryOutcome DeleteUserPermissionsBoundary(const Model::DeleteUserPermissionsBoundaryRequest &request);
+                void DeleteUserPermissionsBoundaryAsync(const Model::DeleteUserPermissionsBoundaryRequest& request, const DeleteUserPermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserPermissionsBoundaryOutcomeCallable DeleteUserPermissionsBoundaryCallable(const Model::DeleteUserPermissionsBoundaryRequest& request);
 
                 /**
                  *本接口（DescribeRoleList）用于获取账号下的角色列表。
@@ -705,6 +743,24 @@ namespace TencentCloud
                 ListUsersForGroupOutcome ListUsersForGroup(const Model::ListUsersForGroupRequest &request);
                 void ListUsersForGroupAsync(const Model::ListUsersForGroupRequest& request, const ListUsersForGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListUsersForGroupOutcomeCallable ListUsersForGroupCallable(const Model::ListUsersForGroupRequest& request);
+
+                /**
+                 *设置角色权限边界
+                 * @param req PutRolePermissionsBoundaryRequest
+                 * @return PutRolePermissionsBoundaryOutcome
+                 */
+                PutRolePermissionsBoundaryOutcome PutRolePermissionsBoundary(const Model::PutRolePermissionsBoundaryRequest &request);
+                void PutRolePermissionsBoundaryAsync(const Model::PutRolePermissionsBoundaryRequest& request, const PutRolePermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutRolePermissionsBoundaryOutcomeCallable PutRolePermissionsBoundaryCallable(const Model::PutRolePermissionsBoundaryRequest& request);
+
+                /**
+                 *设置用户权限边界
+                 * @param req PutUserPermissionsBoundaryRequest
+                 * @return PutUserPermissionsBoundaryOutcome
+                 */
+                PutUserPermissionsBoundaryOutcome PutUserPermissionsBoundary(const Model::PutUserPermissionsBoundaryRequest &request);
+                void PutUserPermissionsBoundaryAsync(const Model::PutUserPermissionsBoundaryRequest& request, const PutUserPermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutUserPermissionsBoundaryOutcomeCallable PutUserPermissionsBoundaryCallable(const Model::PutUserPermissionsBoundaryRequest& request);
 
                 /**
                  *从用户组删除用户

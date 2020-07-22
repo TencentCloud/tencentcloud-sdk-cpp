@@ -25,10 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/mongodb/v20190725/model/AssignProjectRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/AssignProjectResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupAccessRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupAccessResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsRequest.h>
@@ -63,6 +67,8 @@
 #include <tencentcloud/mongodb/v20190725/model/RenameInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/RenewDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/RenewDBInstancesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordResponse.h>
 
 
 namespace TencentCloud
@@ -80,12 +86,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AssignProjectResponse> AssignProjectOutcome;
                 typedef std::future<AssignProjectOutcome> AssignProjectOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::AssignProjectRequest&, AssignProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignProjectAsyncHandler;
+                typedef Outcome<Error, Model::CreateBackupDBInstanceResponse> CreateBackupDBInstanceOutcome;
+                typedef std::future<CreateBackupDBInstanceOutcome> CreateBackupDBInstanceOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CreateBackupDBInstanceRequest&, CreateBackupDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupDBInstanceAsyncHandler;
                 typedef Outcome<Error, Model::CreateDBInstanceResponse> CreateDBInstanceOutcome;
                 typedef std::future<CreateDBInstanceOutcome> CreateDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceRequest&, CreateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceAsyncHandler;
                 typedef Outcome<Error, Model::CreateDBInstanceHourResponse> CreateDBInstanceHourOutcome;
                 typedef std::future<CreateDBInstanceHourOutcome> CreateDBInstanceHourOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceHourRequest&, CreateDBInstanceHourOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceHourAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAsyncRequestInfoResponse> DescribeAsyncRequestInfoOutcome;
+                typedef std::future<DescribeAsyncRequestInfoOutcome> DescribeAsyncRequestInfoOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeAsyncRequestInfoRequest&, DescribeAsyncRequestInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncRequestInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBackupAccessResponse> DescribeBackupAccessOutcome;
                 typedef std::future<DescribeBackupAccessOutcome> DescribeBackupAccessOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeBackupAccessRequest&, DescribeBackupAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupAccessAsyncHandler;
@@ -137,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RenewDBInstancesResponse> RenewDBInstancesOutcome;
                 typedef std::future<RenewDBInstancesOutcome> RenewDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::RenewDBInstancesRequest&, RenewDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDBInstancesAsyncHandler;
+                typedef Outcome<Error, Model::ResetDBInstancePasswordResponse> ResetDBInstancePasswordOutcome;
+                typedef std::future<ResetDBInstancePasswordOutcome> ResetDBInstancePasswordOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ResetDBInstancePasswordRequest&, ResetDBInstancePasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDBInstancePasswordAsyncHandler;
 
 
 
@@ -149,6 +164,15 @@ namespace TencentCloud
                 AssignProjectOutcome AssignProject(const Model::AssignProjectRequest &request);
                 void AssignProjectAsync(const Model::AssignProjectRequest& request, const AssignProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssignProjectOutcomeCallable AssignProjectCallable(const Model::AssignProjectRequest& request);
+
+                /**
+                 *备份实例接口
+                 * @param req CreateBackupDBInstanceRequest
+                 * @return CreateBackupDBInstanceOutcome
+                 */
+                CreateBackupDBInstanceOutcome CreateBackupDBInstance(const Model::CreateBackupDBInstanceRequest &request);
+                void CreateBackupDBInstanceAsync(const Model::CreateBackupDBInstanceRequest& request, const CreateBackupDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBackupDBInstanceOutcomeCallable CreateBackupDBInstanceCallable(const Model::CreateBackupDBInstanceRequest& request);
 
                 /**
                  *本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。
@@ -167,6 +191,15 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcome CreateDBInstanceHour(const Model::CreateDBInstanceHourRequest &request);
                 void CreateDBInstanceHourAsync(const Model::CreateDBInstanceHourRequest& request, const CreateDBInstanceHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
+
+                /**
+                 *查询异步任务状态接口
+                 * @param req DescribeAsyncRequestInfoRequest
+                 * @return DescribeAsyncRequestInfoOutcome
+                 */
+                DescribeAsyncRequestInfoOutcome DescribeAsyncRequestInfo(const Model::DescribeAsyncRequestInfoRequest &request);
+                void DescribeAsyncRequestInfoAsync(const Model::DescribeAsyncRequestInfoRequest& request, const DescribeAsyncRequestInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAsyncRequestInfoOutcomeCallable DescribeAsyncRequestInfoCallable(const Model::DescribeAsyncRequestInfoRequest& request);
 
                 /**
                  *本接口（DescribeBackupAccess）用于获取备份文件的下载授权，具体的备份文件信息可通过查询实例备份列表（DescribeDBBackups）接口获取
@@ -320,6 +353,15 @@ namespace TencentCloud
                 RenewDBInstancesOutcome RenewDBInstances(const Model::RenewDBInstancesRequest &request);
                 void RenewDBInstancesAsync(const Model::RenewDBInstancesRequest& request, const RenewDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewDBInstancesOutcomeCallable RenewDBInstancesCallable(const Model::RenewDBInstancesRequest& request);
+
+                /**
+                 *修改实例用户的密码
+                 * @param req ResetDBInstancePasswordRequest
+                 * @return ResetDBInstancePasswordOutcome
+                 */
+                ResetDBInstancePasswordOutcome ResetDBInstancePassword(const Model::ResetDBInstancePasswordRequest &request);
+                void ResetDBInstancePasswordAsync(const Model::ResetDBInstancePasswordRequest& request, const ResetDBInstancePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetDBInstancePasswordOutcomeCallable ResetDBInstancePasswordCallable(const Model::ResetDBInstancePasswordRequest& request);
 
             };
         }

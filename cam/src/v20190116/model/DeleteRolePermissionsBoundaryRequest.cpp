@@ -14,42 +14,42 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/DeleteAuditPolicyRequest.h>
+#include <tencentcloud/cam/v20190116/model/DeleteRolePermissionsBoundaryRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Cam::V20190116::Model;
 using namespace rapidjson;
 using namespace std;
 
-DeleteAuditPolicyRequest::DeleteAuditPolicyRequest() :
-    m_policyIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+DeleteRolePermissionsBoundaryRequest::DeleteRolePermissionsBoundaryRequest() :
+    m_roleIdHasBeenSet(false),
+    m_roleNameHasBeenSet(false)
 {
 }
 
-string DeleteAuditPolicyRequest::ToJsonString() const
+string DeleteRolePermissionsBoundaryRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_policyIdHasBeenSet)
+    if (m_roleIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "PolicyId";
+        string key = "RoleId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_roleId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_instanceIdHasBeenSet)
+    if (m_roleNameHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "InstanceId";
+        string key = "RoleName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_roleName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -60,36 +60,36 @@ string DeleteAuditPolicyRequest::ToJsonString() const
 }
 
 
-string DeleteAuditPolicyRequest::GetPolicyId() const
+string DeleteRolePermissionsBoundaryRequest::GetRoleId() const
 {
-    return m_policyId;
+    return m_roleId;
 }
 
-void DeleteAuditPolicyRequest::SetPolicyId(const string& _policyId)
+void DeleteRolePermissionsBoundaryRequest::SetRoleId(const string& _roleId)
 {
-    m_policyId = _policyId;
-    m_policyIdHasBeenSet = true;
+    m_roleId = _roleId;
+    m_roleIdHasBeenSet = true;
 }
 
-bool DeleteAuditPolicyRequest::PolicyIdHasBeenSet() const
+bool DeleteRolePermissionsBoundaryRequest::RoleIdHasBeenSet() const
 {
-    return m_policyIdHasBeenSet;
+    return m_roleIdHasBeenSet;
 }
 
-string DeleteAuditPolicyRequest::GetInstanceId() const
+string DeleteRolePermissionsBoundaryRequest::GetRoleName() const
 {
-    return m_instanceId;
+    return m_roleName;
 }
 
-void DeleteAuditPolicyRequest::SetInstanceId(const string& _instanceId)
+void DeleteRolePermissionsBoundaryRequest::SetRoleName(const string& _roleName)
 {
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
+    m_roleName = _roleName;
+    m_roleNameHasBeenSet = true;
 }
 
-bool DeleteAuditPolicyRequest::InstanceIdHasBeenSet() const
+bool DeleteRolePermissionsBoundaryRequest::RoleNameHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_roleNameHasBeenSet;
 }
 
 

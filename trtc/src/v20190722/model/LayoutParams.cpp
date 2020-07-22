@@ -24,7 +24,8 @@ using namespace std;
 LayoutParams::LayoutParams() :
     m_templateHasBeenSet(false),
     m_mainVideoUserIdHasBeenSet(false),
-    m_mainVideoStreamTypeHasBeenSet(false)
+    m_mainVideoStreamTypeHasBeenSet(false),
+    m_smallVideoLayoutParamsHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,23 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
         m_mainVideoStreamTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SmallVideoLayoutParams") && !value["SmallVideoLayoutParams"].IsNull())
+    {
+        if (!value["SmallVideoLayoutParams"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `LayoutParams.SmallVideoLayoutParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_smallVideoLayoutParams.Deserialize(value["SmallVideoLayoutParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_smallVideoLayoutParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +110,15 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "MainVideoStreamType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mainVideoStreamType, allocator);
+    }
+
+    if (m_smallVideoLayoutParamsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SmallVideoLayoutParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_smallVideoLayoutParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -143,5 +170,21 @@ void LayoutParams::SetMainVideoStreamType(const uint64_t& _mainVideoStreamType)
 bool LayoutParams::MainVideoStreamTypeHasBeenSet() const
 {
     return m_mainVideoStreamTypeHasBeenSet;
+}
+
+SmallVideoLayoutParams LayoutParams::GetSmallVideoLayoutParams() const
+{
+    return m_smallVideoLayoutParams;
+}
+
+void LayoutParams::SetSmallVideoLayoutParams(const SmallVideoLayoutParams& _smallVideoLayoutParams)
+{
+    m_smallVideoLayoutParams = _smallVideoLayoutParams;
+    m_smallVideoLayoutParamsHasBeenSet = true;
+}
+
+bool LayoutParams::SmallVideoLayoutParamsHasBeenSet() const
+{
+    return m_smallVideoLayoutParamsHasBeenSet;
 }
 

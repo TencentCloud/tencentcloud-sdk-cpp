@@ -728,6 +728,49 @@ CamClient::DeleteRoleOutcomeCallable CamClient::DeleteRoleCallable(const DeleteR
     return task->get_future();
 }
 
+CamClient::DeleteRolePermissionsBoundaryOutcome CamClient::DeleteRolePermissionsBoundary(const DeleteRolePermissionsBoundaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRolePermissionsBoundary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRolePermissionsBoundaryResponse rsp = DeleteRolePermissionsBoundaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRolePermissionsBoundaryOutcome(rsp);
+        else
+            return DeleteRolePermissionsBoundaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRolePermissionsBoundaryOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DeleteRolePermissionsBoundaryAsync(const DeleteRolePermissionsBoundaryRequest& request, const DeleteRolePermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRolePermissionsBoundary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DeleteRolePermissionsBoundaryOutcomeCallable CamClient::DeleteRolePermissionsBoundaryCallable(const DeleteRolePermissionsBoundaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRolePermissionsBoundaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRolePermissionsBoundary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DeleteSAMLProviderOutcome CamClient::DeleteSAMLProvider(const DeleteSAMLProviderRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSAMLProvider");
@@ -850,6 +893,49 @@ CamClient::DeleteUserOutcomeCallable CamClient::DeleteUserCallable(const DeleteU
         [this, request]()
         {
             return this->DeleteUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::DeleteUserPermissionsBoundaryOutcome CamClient::DeleteUserPermissionsBoundary(const DeleteUserPermissionsBoundaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserPermissionsBoundary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserPermissionsBoundaryResponse rsp = DeleteUserPermissionsBoundaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserPermissionsBoundaryOutcome(rsp);
+        else
+            return DeleteUserPermissionsBoundaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserPermissionsBoundaryOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DeleteUserPermissionsBoundaryAsync(const DeleteUserPermissionsBoundaryRequest& request, const DeleteUserPermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteUserPermissionsBoundary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DeleteUserPermissionsBoundaryOutcomeCallable CamClient::DeleteUserPermissionsBoundaryCallable(const DeleteUserPermissionsBoundaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteUserPermissionsBoundaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteUserPermissionsBoundary(request);
         }
     );
 
@@ -1925,6 +2011,92 @@ CamClient::ListUsersForGroupOutcomeCallable CamClient::ListUsersForGroupCallable
         [this, request]()
         {
             return this->ListUsersForGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::PutRolePermissionsBoundaryOutcome CamClient::PutRolePermissionsBoundary(const PutRolePermissionsBoundaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutRolePermissionsBoundary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutRolePermissionsBoundaryResponse rsp = PutRolePermissionsBoundaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutRolePermissionsBoundaryOutcome(rsp);
+        else
+            return PutRolePermissionsBoundaryOutcome(o.GetError());
+    }
+    else
+    {
+        return PutRolePermissionsBoundaryOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::PutRolePermissionsBoundaryAsync(const PutRolePermissionsBoundaryRequest& request, const PutRolePermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutRolePermissionsBoundary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::PutRolePermissionsBoundaryOutcomeCallable CamClient::PutRolePermissionsBoundaryCallable(const PutRolePermissionsBoundaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutRolePermissionsBoundaryOutcome()>>(
+        [this, request]()
+        {
+            return this->PutRolePermissionsBoundary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::PutUserPermissionsBoundaryOutcome CamClient::PutUserPermissionsBoundary(const PutUserPermissionsBoundaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutUserPermissionsBoundary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutUserPermissionsBoundaryResponse rsp = PutUserPermissionsBoundaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutUserPermissionsBoundaryOutcome(rsp);
+        else
+            return PutUserPermissionsBoundaryOutcome(o.GetError());
+    }
+    else
+    {
+        return PutUserPermissionsBoundaryOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::PutUserPermissionsBoundaryAsync(const PutUserPermissionsBoundaryRequest& request, const PutUserPermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutUserPermissionsBoundary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::PutUserPermissionsBoundaryOutcomeCallable CamClient::PutUserPermissionsBoundaryCallable(const PutUserPermissionsBoundaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutUserPermissionsBoundaryOutcome()>>(
+        [this, request]()
+        {
+            return this->PutUserPermissionsBoundary(request);
         }
     );
 

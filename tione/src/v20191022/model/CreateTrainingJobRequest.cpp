@@ -25,10 +25,10 @@ using namespace std;
 
 CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_algorithmSpecificationHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
     m_trainingJobNameHasBeenSet(false),
+    m_inputDataConfigHasBeenSet(false),
     m_stoppingConditionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_hyperParametersHasBeenSet(false),
@@ -51,21 +51,6 @@ string CreateTrainingJobRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_algorithmSpecification.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_inputDataConfigHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "InputDataConfig";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_inputDataConfig.begin(); itr != m_inputDataConfig.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
     if (m_outputDataConfigHasBeenSet)
@@ -92,6 +77,21 @@ string CreateTrainingJobRequest::ToJsonString() const
         string key = "TrainingJobName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_trainingJobName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputDataConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InputDataConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_inputDataConfig.begin(); itr != m_inputDataConfig.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_stoppingConditionHasBeenSet)
@@ -167,22 +167,6 @@ bool CreateTrainingJobRequest::AlgorithmSpecificationHasBeenSet() const
     return m_algorithmSpecificationHasBeenSet;
 }
 
-vector<InputDataConfig> CreateTrainingJobRequest::GetInputDataConfig() const
-{
-    return m_inputDataConfig;
-}
-
-void CreateTrainingJobRequest::SetInputDataConfig(const vector<InputDataConfig>& _inputDataConfig)
-{
-    m_inputDataConfig = _inputDataConfig;
-    m_inputDataConfigHasBeenSet = true;
-}
-
-bool CreateTrainingJobRequest::InputDataConfigHasBeenSet() const
-{
-    return m_inputDataConfigHasBeenSet;
-}
-
 OutputDataConfig CreateTrainingJobRequest::GetOutputDataConfig() const
 {
     return m_outputDataConfig;
@@ -229,6 +213,22 @@ void CreateTrainingJobRequest::SetTrainingJobName(const string& _trainingJobName
 bool CreateTrainingJobRequest::TrainingJobNameHasBeenSet() const
 {
     return m_trainingJobNameHasBeenSet;
+}
+
+vector<InputDataConfig> CreateTrainingJobRequest::GetInputDataConfig() const
+{
+    return m_inputDataConfig;
+}
+
+void CreateTrainingJobRequest::SetInputDataConfig(const vector<InputDataConfig>& _inputDataConfig)
+{
+    m_inputDataConfig = _inputDataConfig;
+    m_inputDataConfigHasBeenSet = true;
+}
+
+bool CreateTrainingJobRequest::InputDataConfigHasBeenSet() const
+{
+    return m_inputDataConfigHasBeenSet;
 }
 
 StoppingCondition CreateTrainingJobRequest::GetStoppingCondition() const

@@ -51,6 +51,8 @@
 #include <tencentcloud/cdb/v20170320/model/CreateDeployGroupResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateParamTemplateRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateParamTemplateResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CreateRoInstanceIpRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CreateRoInstanceIpResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteAccountsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteAccountsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteAuditLogFileRequest.h>
@@ -287,6 +289,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateParamTemplateResponse> CreateParamTemplateOutcome;
                 typedef std::future<CreateParamTemplateOutcome> CreateParamTemplateOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateParamTemplateRequest&, CreateParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateParamTemplateAsyncHandler;
+                typedef Outcome<Error, Model::CreateRoInstanceIpResponse> CreateRoInstanceIpOutcome;
+                typedef std::future<CreateRoInstanceIpOutcome> CreateRoInstanceIpOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CreateRoInstanceIpRequest&, CreateRoInstanceIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoInstanceIpAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAccountsResponse> DeleteAccountsOutcome;
                 typedef std::future<DeleteAccountsOutcome> DeleteAccountsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DeleteAccountsRequest&, DeleteAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountsAsyncHandler;
@@ -703,6 +708,15 @@ namespace TencentCloud
                 CreateParamTemplateOutcome CreateParamTemplate(const Model::CreateParamTemplateRequest &request);
                 void CreateParamTemplateAsync(const Model::CreateParamTemplateRequest& request, const CreateParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateParamTemplateOutcomeCallable CreateParamTemplateCallable(const Model::CreateParamTemplateRequest& request);
+
+                /**
+                 *本接口(CreateRoInstanceIp)用于创建云数据库只读实例的独立VIP。
+                 * @param req CreateRoInstanceIpRequest
+                 * @return CreateRoInstanceIpOutcome
+                 */
+                CreateRoInstanceIpOutcome CreateRoInstanceIp(const Model::CreateRoInstanceIpRequest &request);
+                void CreateRoInstanceIpAsync(const Model::CreateRoInstanceIpRequest& request, const CreateRoInstanceIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoInstanceIpOutcomeCallable CreateRoInstanceIpCallable(const Model::CreateRoInstanceIpRequest& request);
 
                 /**
                  *本接口(DeleteAccounts)用于删除云数据库的账户。

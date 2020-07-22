@@ -14,42 +14,42 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/DeleteAuditPolicyRequest.h>
+#include <tencentcloud/cam/v20190116/model/PutUserPermissionsBoundaryRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Cam::V20190116::Model;
 using namespace rapidjson;
 using namespace std;
 
-DeleteAuditPolicyRequest::DeleteAuditPolicyRequest() :
-    m_policyIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+PutUserPermissionsBoundaryRequest::PutUserPermissionsBoundaryRequest() :
+    m_targetUinHasBeenSet(false),
+    m_policyIdHasBeenSet(false)
 {
 }
 
-string DeleteAuditPolicyRequest::ToJsonString() const
+string PutUserPermissionsBoundaryRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_targetUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TargetUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_targetUin, allocator);
+    }
+
     if (m_policyIdHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "PolicyId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_instanceIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_policyId, allocator);
     }
 
 
@@ -60,36 +60,36 @@ string DeleteAuditPolicyRequest::ToJsonString() const
 }
 
 
-string DeleteAuditPolicyRequest::GetPolicyId() const
+int64_t PutUserPermissionsBoundaryRequest::GetTargetUin() const
+{
+    return m_targetUin;
+}
+
+void PutUserPermissionsBoundaryRequest::SetTargetUin(const int64_t& _targetUin)
+{
+    m_targetUin = _targetUin;
+    m_targetUinHasBeenSet = true;
+}
+
+bool PutUserPermissionsBoundaryRequest::TargetUinHasBeenSet() const
+{
+    return m_targetUinHasBeenSet;
+}
+
+int64_t PutUserPermissionsBoundaryRequest::GetPolicyId() const
 {
     return m_policyId;
 }
 
-void DeleteAuditPolicyRequest::SetPolicyId(const string& _policyId)
+void PutUserPermissionsBoundaryRequest::SetPolicyId(const int64_t& _policyId)
 {
     m_policyId = _policyId;
     m_policyIdHasBeenSet = true;
 }
 
-bool DeleteAuditPolicyRequest::PolicyIdHasBeenSet() const
+bool PutUserPermissionsBoundaryRequest::PolicyIdHasBeenSet() const
 {
     return m_policyIdHasBeenSet;
-}
-
-string DeleteAuditPolicyRequest::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void DeleteAuditPolicyRequest::SetInstanceId(const string& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool DeleteAuditPolicyRequest::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
 }
 
 

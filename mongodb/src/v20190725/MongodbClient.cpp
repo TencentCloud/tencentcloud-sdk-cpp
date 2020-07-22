@@ -83,6 +83,49 @@ MongodbClient::AssignProjectOutcomeCallable MongodbClient::AssignProjectCallable
     return task->get_future();
 }
 
+MongodbClient::CreateBackupDBInstanceOutcome MongodbClient::CreateBackupDBInstance(const CreateBackupDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBackupDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBackupDBInstanceResponse rsp = CreateBackupDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBackupDBInstanceOutcome(rsp);
+        else
+            return CreateBackupDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBackupDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CreateBackupDBInstanceAsync(const CreateBackupDBInstanceRequest& request, const CreateBackupDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBackupDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::CreateBackupDBInstanceOutcomeCallable MongodbClient::CreateBackupDBInstanceCallable(const CreateBackupDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBackupDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBackupDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::CreateDBInstanceOutcome MongodbClient::CreateDBInstance(const CreateDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDBInstance");
@@ -162,6 +205,49 @@ MongodbClient::CreateDBInstanceHourOutcomeCallable MongodbClient::CreateDBInstan
         [this, request]()
         {
             return this->CreateDBInstanceHour(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::DescribeAsyncRequestInfoOutcome MongodbClient::DescribeAsyncRequestInfo(const DescribeAsyncRequestInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAsyncRequestInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAsyncRequestInfoResponse rsp = DescribeAsyncRequestInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAsyncRequestInfoOutcome(rsp);
+        else
+            return DescribeAsyncRequestInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAsyncRequestInfoOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeAsyncRequestInfoAsync(const DescribeAsyncRequestInfoRequest& request, const DescribeAsyncRequestInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAsyncRequestInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeAsyncRequestInfoOutcomeCallable MongodbClient::DescribeAsyncRequestInfoCallable(const DescribeAsyncRequestInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAsyncRequestInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAsyncRequestInfo(request);
         }
     );
 
@@ -893,6 +979,49 @@ MongodbClient::RenewDBInstancesOutcomeCallable MongodbClient::RenewDBInstancesCa
         [this, request]()
         {
             return this->RenewDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::ResetDBInstancePasswordOutcome MongodbClient::ResetDBInstancePassword(const ResetDBInstancePasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetDBInstancePassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetDBInstancePasswordResponse rsp = ResetDBInstancePasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetDBInstancePasswordOutcome(rsp);
+        else
+            return ResetDBInstancePasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetDBInstancePasswordOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ResetDBInstancePasswordAsync(const ResetDBInstancePasswordRequest& request, const ResetDBInstancePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetDBInstancePassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::ResetDBInstancePasswordOutcomeCallable MongodbClient::ResetDBInstancePasswordCallable(const ResetDBInstancePasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetDBInstancePasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetDBInstancePassword(request);
         }
     );
 

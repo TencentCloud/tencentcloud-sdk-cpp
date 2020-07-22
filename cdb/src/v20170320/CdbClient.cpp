@@ -642,6 +642,49 @@ CdbClient::CreateParamTemplateOutcomeCallable CdbClient::CreateParamTemplateCall
     return task->get_future();
 }
 
+CdbClient::CreateRoInstanceIpOutcome CdbClient::CreateRoInstanceIp(const CreateRoInstanceIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoInstanceIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoInstanceIpResponse rsp = CreateRoInstanceIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoInstanceIpOutcome(rsp);
+        else
+            return CreateRoInstanceIpOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoInstanceIpOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::CreateRoInstanceIpAsync(const CreateRoInstanceIpRequest& request, const CreateRoInstanceIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRoInstanceIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::CreateRoInstanceIpOutcomeCallable CdbClient::CreateRoInstanceIpCallable(const CreateRoInstanceIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoInstanceIpOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRoInstanceIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DeleteAccountsOutcome CdbClient::DeleteAccounts(const DeleteAccountsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccounts");

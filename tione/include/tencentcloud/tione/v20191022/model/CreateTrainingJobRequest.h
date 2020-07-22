@@ -22,9 +22,9 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20191022/model/AlgorithmSpecification.h>
-#include <tencentcloud/tione/v20191022/model/InputDataConfig.h>
 #include <tencentcloud/tione/v20191022/model/OutputDataConfig.h>
 #include <tencentcloud/tione/v20191022/model/ResourceConfig.h>
+#include <tencentcloud/tione/v20191022/model/InputDataConfig.h>
 #include <tencentcloud/tione/v20191022/model/StoppingCondition.h>
 #include <tencentcloud/tione/v20191022/model/VpcConfig.h>
 #include <tencentcloud/tione/v20191022/model/EnvConfig.h>
@@ -66,24 +66,6 @@ namespace TencentCloud
                      * @return AlgorithmSpecification 是否已赋值
                      */
                     bool AlgorithmSpecificationHasBeenSet() const;
-
-                    /**
-                     * 获取输入数据配置
-                     * @return InputDataConfig 输入数据配置
-                     */
-                    std::vector<InputDataConfig> GetInputDataConfig() const;
-
-                    /**
-                     * 设置输入数据配置
-                     * @param InputDataConfig 输入数据配置
-                     */
-                    void SetInputDataConfig(const std::vector<InputDataConfig>& _inputDataConfig);
-
-                    /**
-                     * 判断参数 InputDataConfig 是否已赋值
-                     * @return InputDataConfig 是否已赋值
-                     */
-                    bool InputDataConfigHasBeenSet() const;
 
                     /**
                      * 获取输出数据配置
@@ -138,6 +120,24 @@ namespace TencentCloud
                      * @return TrainingJobName 是否已赋值
                      */
                     bool TrainingJobNameHasBeenSet() const;
+
+                    /**
+                     * 获取输入数据配置
+                     * @return InputDataConfig 输入数据配置
+                     */
+                    std::vector<InputDataConfig> GetInputDataConfig() const;
+
+                    /**
+                     * 设置输入数据配置
+                     * @param InputDataConfig 输入数据配置
+                     */
+                    void SetInputDataConfig(const std::vector<InputDataConfig>& _inputDataConfig);
+
+                    /**
+                     * 判断参数 InputDataConfig 是否已赋值
+                     * @return InputDataConfig 是否已赋值
+                     */
+                    bool InputDataConfigHasBeenSet() const;
 
                     /**
                      * 获取中止条件
@@ -238,12 +238,6 @@ namespace TencentCloud
                     bool m_algorithmSpecificationHasBeenSet;
 
                     /**
-                     * 输入数据配置
-                     */
-                    std::vector<InputDataConfig> m_inputDataConfig;
-                    bool m_inputDataConfigHasBeenSet;
-
-                    /**
                      * 输出数据配置
                      */
                     OutputDataConfig m_outputDataConfig;
@@ -260,6 +254,12 @@ namespace TencentCloud
                      */
                     std::string m_trainingJobName;
                     bool m_trainingJobNameHasBeenSet;
+
+                    /**
+                     * 输入数据配置
+                     */
+                    std::vector<InputDataConfig> m_inputDataConfig;
+                    bool m_inputDataConfigHasBeenSet;
 
                     /**
                      * 中止条件

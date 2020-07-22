@@ -127,16 +127,18 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeRoGroupsResponse.h
   include/tencentcloud/cdb/v20170320/model/CloseWanServiceRequest.h
   include/tencentcloud/cdb/v20170320/model/RestartDBInstancesResponse.h
-  include/tencentcloud/cdb/v20170320/model/ParamTemplateInfo.h
+  include/tencentcloud/cdb/v20170320/model/CreateRoInstanceIpResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupSummariesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsRequest.h
+  include/tencentcloud/cdb/v20170320/model/ParamTemplateInfo.h
   include/tencentcloud/cdb/v20170320/model/ModifyAutoRenewFlagResponse.h
   include/tencentcloud/cdb/v20170320/model/DeleteTimeWindowResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewRequest.h
   include/tencentcloud/cdb/v20170320/model/RollbackTask.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupsResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateAuditPolicyRequest.h
+  include/tencentcloud/cdb/v20170320/model/CreateRoInstanceIpRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceParamResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateAuditPolicyResponse.h
@@ -407,16 +409,18 @@ set(cdb_src
   src/v20170320/model/DescribeRoGroupsResponse.cpp
   src/v20170320/model/CloseWanServiceRequest.cpp
   src/v20170320/model/RestartDBInstancesResponse.cpp
-  src/v20170320/model/ParamTemplateInfo.cpp
+  src/v20170320/model/CreateRoInstanceIpResponse.cpp
   src/v20170320/model/DescribeBackupDatabasesResponse.cpp
   src/v20170320/model/DescribeBackupSummariesResponse.cpp
   src/v20170320/model/DescribeInstanceParamRecordsRequest.cpp
+  src/v20170320/model/ParamTemplateInfo.cpp
   src/v20170320/model/ModifyAutoRenewFlagResponse.cpp
   src/v20170320/model/DeleteTimeWindowResponse.cpp
   src/v20170320/model/DescribeBinlogBackupOverviewRequest.cpp
   src/v20170320/model/RollbackTask.cpp
   src/v20170320/model/DescribeBackupsResponse.cpp
   src/v20170320/model/CreateAuditPolicyRequest.cpp
+  src/v20170320/model/CreateRoInstanceIpRequest.cpp
   src/v20170320/model/ModifyInstanceParamResponse.cpp
   src/v20170320/model/DescribeDBImportRecordsResponse.cpp
   src/v20170320/model/CreateAuditPolicyResponse.cpp
