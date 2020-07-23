@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开票平台ID。0：高灯
-                     * @return InvoicePlatformId 开票平台ID。0：高灯
+                     * 获取开票平台ID。0：高灯，1：票易通
+                     * @return InvoicePlatformId 开票平台ID。0：高灯，1：票易通
                      */
                     int64_t GetInvoicePlatformId() const;
 
                     /**
-                     * 设置开票平台ID。0：高灯
-                     * @param InvoicePlatformId 开票平台ID。0：高灯
+                     * 设置开票平台ID。0：高灯，1：票易通
+                     * @param InvoicePlatformId 开票平台ID。0：高灯，1：票易通
                      */
                     void SetInvoicePlatformId(const int64_t& _invoicePlatformId);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool TaxAmountHasBeenSet() const;
 
                     /**
-                     * 获取不含税总金额（单位为分）
-                     * @return AmountWithoutTax 不含税总金额（单位为分）
+                     * 获取不含税总金额（单位为分）。InvoicePlatformId 为1时，传默认值-1
+                     * @return AmountWithoutTax 不含税总金额（单位为分）。InvoicePlatformId 为1时，传默认值-1
                      */
                     int64_t GetAmountWithoutTax() const;
 
                     /**
-                     * 设置不含税总金额（单位为分）
-                     * @param AmountWithoutTax 不含税总金额（单位为分）
+                     * 设置不含税总金额（单位为分）。InvoicePlatformId 为1时，传默认值-1
+                     * @param AmountWithoutTax 不含税总金额（单位为分）。InvoicePlatformId 为1时，传默认值-1
                      */
                     void SetAmountWithoutTax(const int64_t& _amountWithoutTax);
 
@@ -718,7 +718,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开票平台ID。0：高灯
+                     * 开票平台ID。0：高灯，1：票易通
                      */
                     int64_t m_invoicePlatformId;
                     bool m_invoicePlatformIdHasBeenSet;
@@ -754,7 +754,7 @@ namespace TencentCloud
                     bool m_taxAmountHasBeenSet;
 
                     /**
-                     * 不含税总金额（单位为分）
+                     * 不含税总金额（单位为分）。InvoicePlatformId 为1时，传默认值-1
                      */
                     int64_t m_amountWithoutTax;
                     bool m_amountWithoutTaxHasBeenSet;

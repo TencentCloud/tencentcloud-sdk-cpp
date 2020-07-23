@@ -35,6 +35,8 @@
 #include <tencentcloud/ocr/v20181119/model/BusinessCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/CarInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/CarInvoiceOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ClassifyDetectOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h>
@@ -161,6 +163,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CarInvoiceOCRResponse> CarInvoiceOCROutcome;
                 typedef std::future<CarInvoiceOCROutcome> CarInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::CarInvoiceOCRRequest&, CarInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> CarInvoiceOCRAsyncHandler;
+                typedef Outcome<Error, Model::ClassifyDetectOCRResponse> ClassifyDetectOCROutcome;
+                typedef std::future<ClassifyDetectOCROutcome> ClassifyDetectOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ClassifyDetectOCRRequest&, ClassifyDetectOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClassifyDetectOCRAsyncHandler;
                 typedef Outcome<Error, Model::DriverLicenseOCRResponse> DriverLicenseOCROutcome;
                 typedef std::future<DriverLicenseOCROutcome> DriverLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DriverLicenseOCRRequest&, DriverLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DriverLicenseOCRAsyncHandler;
@@ -358,6 +363,16 @@ namespace TencentCloud
                 CarInvoiceOCROutcome CarInvoiceOCR(const Model::CarInvoiceOCRRequest &request);
                 void CarInvoiceOCRAsync(const Model::CarInvoiceOCRRequest& request, const CarInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CarInvoiceOCROutcomeCallable CarInvoiceOCRCallable(const Model::CarInvoiceOCRRequest& request);
+
+                /**
+                 *支持身份证、护照、名片、银行卡、行驶证、驾驶证、港澳台通行证、户口本、港澳台来往内地通行证、港澳台居住证、不动产证、营业执照的智能分类。
+
+                 * @param req ClassifyDetectOCRRequest
+                 * @return ClassifyDetectOCROutcome
+                 */
+                ClassifyDetectOCROutcome ClassifyDetectOCR(const Model::ClassifyDetectOCRRequest &request);
+                void ClassifyDetectOCRAsync(const Model::ClassifyDetectOCRRequest& request, const ClassifyDetectOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClassifyDetectOCROutcomeCallable ClassifyDetectOCRCallable(const Model::ClassifyDetectOCRRequest& request);
 
                 /**
                  *本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。

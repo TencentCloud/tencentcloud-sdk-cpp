@@ -298,6 +298,49 @@ OcrClient::CarInvoiceOCROutcomeCallable OcrClient::CarInvoiceOCRCallable(const C
     return task->get_future();
 }
 
+OcrClient::ClassifyDetectOCROutcome OcrClient::ClassifyDetectOCR(const ClassifyDetectOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "ClassifyDetectOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ClassifyDetectOCRResponse rsp = ClassifyDetectOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ClassifyDetectOCROutcome(rsp);
+        else
+            return ClassifyDetectOCROutcome(o.GetError());
+    }
+    else
+    {
+        return ClassifyDetectOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::ClassifyDetectOCRAsync(const ClassifyDetectOCRRequest& request, const ClassifyDetectOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ClassifyDetectOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::ClassifyDetectOCROutcomeCallable OcrClient::ClassifyDetectOCRCallable(const ClassifyDetectOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ClassifyDetectOCROutcome()>>(
+        [this, request]()
+        {
+            return this->ClassifyDetectOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::DriverLicenseOCROutcome OcrClient::DriverLicenseOCR(const DriverLicenseOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "DriverLicenseOCR");

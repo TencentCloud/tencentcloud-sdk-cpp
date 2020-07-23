@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否仅展示包含真实消费者的订。
-                     * @return ConsumerHasCount 是否仅展示包含真实消费者的订。
+                     * 获取是否仅展示包含真实消费者的订阅。
+                     * @return ConsumerHasCount 是否仅展示包含真实消费者的订阅。
                      */
                     bool GetConsumerHasCount() const;
 
                     /**
-                     * 设置是否仅展示包含真实消费者的订。
-                     * @param ConsumerHasCount 是否仅展示包含真实消费者的订。
+                     * 设置是否仅展示包含真实消费者的订阅。
+                     * @param ConsumerHasCount 是否仅展示包含真实消费者的订阅。
                      */
                     void SetConsumerHasCount(const bool& _consumerHasCount);
 
@@ -103,7 +103,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否仅展示包含真实消费者的订。
+                     * 是否仅展示包含真实消费者的订阅。
                      */
                     bool m_consumerHasCount;
                     bool m_consumerHasCountHasBeenSet;

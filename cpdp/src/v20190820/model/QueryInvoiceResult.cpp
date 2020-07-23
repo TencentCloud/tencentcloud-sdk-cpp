@@ -24,7 +24,8 @@ using namespace std;
 QueryInvoiceResult::QueryInvoiceResult() :
     m_messageHasBeenSet(false),
     m_codeHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_orderHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,23 @@ CoreInternalOutcome QueryInvoiceResult::Deserialize(const Value &value)
         m_dataHasBeenSet = true;
     }
 
+    if (value.HasMember("Order") && !value["Order"].IsNull())
+    {
+        if (!value["Order"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `QueryInvoiceResult.Order` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_order.Deserialize(value["Order"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_orderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -100,6 +118,15 @@ void QueryInvoiceResult::ToJsonObject(Value &value, Document::AllocatorType& all
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_data.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_order.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -151,5 +178,21 @@ void QueryInvoiceResult::SetData(const QueryInvoiceResultData& _data)
 bool QueryInvoiceResult::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+Order QueryInvoiceResult::GetOrder() const
+{
+    return m_order;
+}
+
+void QueryInvoiceResult::SetOrder(const Order& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool QueryInvoiceResult::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
 }
 

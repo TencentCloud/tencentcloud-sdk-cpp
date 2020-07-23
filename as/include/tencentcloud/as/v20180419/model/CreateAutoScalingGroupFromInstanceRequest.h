@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取最大实例数，取值范围为0-2000。
-                     * @return MinSize 最大实例数，取值范围为0-2000。
+                     * 获取最小实例数，取值范围为0-2000。
+                     * @return MinSize 最小实例数，取值范围为0-2000。
                      */
                     int64_t GetMinSize() const;
 
                     /**
-                     * 设置最大实例数，取值范围为0-2000。
-                     * @param MinSize 最大实例数，取值范围为0-2000。
+                     * 设置最小实例数，取值范围为0-2000。
+                     * @param MinSize 最小实例数，取值范围为0-2000。
                      */
                     void SetMinSize(const int64_t& _minSize);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
-                     * 获取最小实例数，取值范围为0-2000。
-                     * @return MaxSize 最小实例数，取值范围为0-2000。
+                     * 获取最大实例数，取值范围为0-2000。
+                     * @return MaxSize 最大实例数，取值范围为0-2000。
                      */
                     int64_t GetMaxSize() const;
 
                     /**
-                     * 设置最小实例数，取值范围为0-2000。
-                     * @param MaxSize 最小实例数，取值范围为0-2000。
+                     * 设置最大实例数，取值范围为0-2000。
+                     * @param MaxSize 最大实例数，取值范围为0-2000。
                      */
                     void SetMaxSize(const int64_t& _maxSize);
 
@@ -165,13 +165,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 最大实例数，取值范围为0-2000。
+                     * 最小实例数，取值范围为0-2000。
                      */
                     int64_t m_minSize;
                     bool m_minSizeHasBeenSet;
 
                     /**
-                     * 最小实例数，取值范围为0-2000。
+                     * 最大实例数，取值范围为0-2000。
                      */
                     int64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;

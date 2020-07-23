@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分区数，必须比原分区数大，不填则不修复分区数，修改分区数仅对非全局顺序消息起效果。
-                     * @return Partitions 分区数，必须比原分区数大，不填则不修复分区数，修改分区数仅对非全局顺序消息起效果。
+                     * 获取分区数
+                     * @return Partitions 分区数
                      */
                     uint64_t GetPartitions() const;
 
@@ -69,7 +69,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分区数，必须比原分区数大，不填则不修复分区数，修改分区数仅对非全局顺序消息起效果。
+                     * 分区数
                      */
                     uint64_t m_partitions;
                     bool m_partitionsHasBeenSet;

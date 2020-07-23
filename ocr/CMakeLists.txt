@@ -21,7 +21,7 @@ set(ocr_public_header
 set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/BusinessCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TextArithmetic.h
-  include/tencentcloud/ocr/v20181119/model/QrcodeImgSize.h
+  include/tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceItem.h
   include/tencentcloud/ocr/v20181119/model/TrainTicketOCRRequest.h
@@ -75,10 +75,11 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VinOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/DutyPaidProofOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TollInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/LicensePlateOCRResponse.h
@@ -92,6 +93,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/BusinessCardInfo.h
   include/tencentcloud/ocr/v20181119/model/TextGeneralHandwriting.h
   include/tencentcloud/ocr/v20181119/model/TableOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/QrcodeImgSize.h
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/ProductDataRecord.h
   include/tencentcloud/ocr/v20181119/model/LicensePlateOCRRequest.h
@@ -135,6 +137,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/ShipInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/InsuranceBillInfo.h
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ClassifyDetectInfo.h
   include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/SealOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TextTable.h
@@ -173,7 +176,7 @@ set(ocr_src
   src/v20181119/OcrClient.cpp
   src/v20181119/model/BusinessCardOCRResponse.cpp
   src/v20181119/model/TextArithmetic.cpp
-  src/v20181119/model/QrcodeImgSize.cpp
+  src/v20181119/model/BankCardOCRRequest.cpp
   src/v20181119/model/CarInvoiceOCRRequest.cpp
   src/v20181119/model/MixedInvoiceItem.cpp
   src/v20181119/model/TrainTicketOCRRequest.cpp
@@ -227,10 +230,11 @@ set(ocr_src
   src/v20181119/model/VinOCRRequest.cpp
   src/v20181119/model/QuotaInvoiceOCRRequest.cpp
   src/v20181119/model/MixedInvoiceOCRResponse.cpp
-  src/v20181119/model/BankCardOCRRequest.cpp
+  src/v20181119/model/ClassifyDetectOCRResponse.cpp
   src/v20181119/model/VehicleLicenseOCRResponse.cpp
   src/v20181119/model/VatInvoiceOCRRequest.cpp
   src/v20181119/model/IDCardOCRResponse.cpp
+  src/v20181119/model/ClassifyDetectOCRRequest.cpp
   src/v20181119/model/DutyPaidProofOCRResponse.cpp
   src/v20181119/model/TollInvoiceOCRRequest.cpp
   src/v20181119/model/LicensePlateOCRResponse.cpp
@@ -244,6 +248,7 @@ set(ocr_src
   src/v20181119/model/BusinessCardInfo.cpp
   src/v20181119/model/TextGeneralHandwriting.cpp
   src/v20181119/model/TableOCRRequest.cpp
+  src/v20181119/model/QrcodeImgSize.cpp
   src/v20181119/model/VehicleRegCertOCRRequest.cpp
   src/v20181119/model/ProductDataRecord.cpp
   src/v20181119/model/LicensePlateOCRRequest.cpp
@@ -287,6 +292,7 @@ set(ocr_src
   src/v20181119/model/ShipInvoiceOCRResponse.cpp
   src/v20181119/model/InsuranceBillInfo.cpp
   src/v20181119/model/VehicleRegCertOCRResponse.cpp
+  src/v20181119/model/ClassifyDetectInfo.cpp
   src/v20181119/model/GeneralAccurateOCRResponse.cpp
   src/v20181119/model/SealOCRRequest.cpp
   src/v20181119/model/TextTable.cpp

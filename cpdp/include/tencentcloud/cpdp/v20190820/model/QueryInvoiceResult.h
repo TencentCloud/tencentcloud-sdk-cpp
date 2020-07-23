@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceResultData.h>
+#include <tencentcloud/cpdp/v20190820/model/Order.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,28 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取订单数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Order 订单数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Order GetOrder() const;
+
+                    /**
+                     * 设置订单数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Order 订单数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrder(const Order& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     */
+                    bool OrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +148,13 @@ namespace TencentCloud
                      */
                     QueryInvoiceResultData m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 订单数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Order m_order;
+                    bool m_orderHasBeenSet;
 
                 };
             }

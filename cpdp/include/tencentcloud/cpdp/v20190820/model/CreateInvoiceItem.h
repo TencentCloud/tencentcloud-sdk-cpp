@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool TaxCodeHasBeenSet() const;
 
                     /**
-                     * 获取不含税商品总价（商品含税价总额/（1+税率））。单位为分
-                     * @return TotalPrice 不含税商品总价（商品含税价总额/（1+税率））。单位为分
+                     * 获取不含税商品总价（商品含税价总额/（1+税率））。InvoicePlatformId 为1时，该金额为含税总金额。单位为分。
+                     * @return TotalPrice 不含税商品总价（商品含税价总额/（1+税率））。InvoicePlatformId 为1时，该金额为含税总金额。单位为分。
                      */
                     int64_t GetTotalPrice() const;
 
                     /**
-                     * 设置不含税商品总价（商品含税价总额/（1+税率））。单位为分
-                     * @param TotalPrice 不含税商品总价（商品含税价总额/（1+税率））。单位为分
+                     * 设置不含税商品总价（商品含税价总额/（1+税率））。InvoicePlatformId 为1时，该金额为含税总金额。单位为分。
+                     * @param TotalPrice 不含税商品总价（商品含税价总额/（1+税率））。InvoicePlatformId 为1时，该金额为含税总金额。单位为分。
                      */
                     void SetTotalPrice(const int64_t& _totalPrice);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取不含税商品单价
-                     * @return Price 不含税商品单价
+                     * 获取不含税商品单价。InvoicePlatformId 为1时，该金额为含税单价。
+                     * @return Price 不含税商品单价。InvoicePlatformId 为1时，该金额为含税单价。
                      */
                     std::string GetPrice() const;
 
                     /**
-                     * 设置不含税商品单价
-                     * @param Price 不含税商品单价
+                     * 设置不含税商品单价。InvoicePlatformId 为1时，该金额为含税单价。
+                     * @param Price 不含税商品单价。InvoicePlatformId 为1时，该金额为含税单价。
                      */
                     void SetPrice(const std::string& _price);
 
@@ -333,7 +333,7 @@ namespace TencentCloud
                     bool m_taxCodeHasBeenSet;
 
                     /**
-                     * 不含税商品总价（商品含税价总额/（1+税率））。单位为分
+                     * 不含税商品总价（商品含税价总额/（1+税率））。InvoicePlatformId 为1时，该金额为含税总金额。单位为分。
                      */
                     int64_t m_totalPrice;
                     bool m_totalPriceHasBeenSet;
@@ -375,7 +375,7 @@ namespace TencentCloud
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 不含税商品单价
+                     * 不含税商品单价。InvoicePlatformId 为1时，该金额为含税单价。
                      */
                     std::string m_price;
                     bool m_priceHasBeenSet;

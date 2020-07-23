@@ -200,6 +200,24 @@ namespace TencentCloud
                      */
                     bool ChannelHasBeenSet() const;
 
+                    /**
+                     * 获取扩展ID
+                     * @return ExtensionId 扩展ID
+                     */
+                    std::string GetExtensionId() const;
+
+                    /**
+                     * 设置扩展ID
+                     * @param ExtensionId 扩展ID
+                     */
+                    void SetExtensionId(const std::string& _extensionId);
+
+                    /**
+                     * 判断参数 ExtensionId 是否已赋值
+                     * @return ExtensionId 是否已赋值
+                     */
+                    bool ExtensionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,6 +269,12 @@ namespace TencentCloud
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
+
+                    /**
+                     * 扩展ID
+                     */
+                    std::string m_extensionId;
+                    bool m_extensionIdHasBeenSet;
 
                 };
             }

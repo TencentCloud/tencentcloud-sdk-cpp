@@ -1631,6 +1631,49 @@ LiveClient::DescribeConcurrentRecordStreamNumOutcomeCallable LiveClient::Describ
     return task->get_future();
 }
 
+LiveClient::DescribeDeliverBandwidthListOutcome LiveClient::DescribeDeliverBandwidthList(const DescribeDeliverBandwidthListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeliverBandwidthList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeliverBandwidthListResponse rsp = DescribeDeliverBandwidthListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeliverBandwidthListOutcome(rsp);
+        else
+            return DescribeDeliverBandwidthListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeliverBandwidthListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeDeliverBandwidthListAsync(const DescribeDeliverBandwidthListRequest& request, const DescribeDeliverBandwidthListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeliverBandwidthList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeDeliverBandwidthListOutcomeCallable LiveClient::DescribeDeliverBandwidthListCallable(const DescribeDeliverBandwidthListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeliverBandwidthListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeliverBandwidthList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeGroupProIspPlayInfoListOutcome LiveClient::DescribeGroupProIspPlayInfoList(const DescribeGroupProIspPlayInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGroupProIspPlayInfoList");
