@@ -33,6 +33,8 @@
 #include <tencentcloud/clb/v20180317/model/BatchModifyTargetWeightResponse.h>
 #include <tencentcloud/clb/v20180317/model/BatchRegisterTargetsRequest.h>
 #include <tencentcloud/clb/v20180317/model/BatchRegisterTargetsResponse.h>
+#include <tencentcloud/clb/v20180317/model/CreateClsLogSetRequest.h>
+#include <tencentcloud/clb/v20180317/model/CreateClsLogSetResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateListenerRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateLoadBalancerRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/clb/v20180317/model/CreateRuleResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateTargetGroupRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateTargetGroupResponse.h>
+#include <tencentcloud/clb/v20180317/model/CreateTopicRequest.h>
+#include <tencentcloud/clb/v20180317/model/CreateTopicResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteListenerRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerRequest.h>
@@ -75,6 +79,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBListenersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBTargetsRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBTargetsResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeClsLogSetRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeClsLogSetResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerListByCertIdRequest.h>
@@ -164,6 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BatchRegisterTargetsResponse> BatchRegisterTargetsOutcome;
                 typedef std::future<BatchRegisterTargetsOutcome> BatchRegisterTargetsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::BatchRegisterTargetsRequest&, BatchRegisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterTargetsAsyncHandler;
+                typedef Outcome<Error, Model::CreateClsLogSetResponse> CreateClsLogSetOutcome;
+                typedef std::future<CreateClsLogSetOutcome> CreateClsLogSetOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::CreateClsLogSetRequest&, CreateClsLogSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClsLogSetAsyncHandler;
                 typedef Outcome<Error, Model::CreateListenerResponse> CreateListenerOutcome;
                 typedef std::future<CreateListenerOutcome> CreateListenerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateListenerRequest&, CreateListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateListenerAsyncHandler;
@@ -179,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateTargetGroupResponse> CreateTargetGroupOutcome;
                 typedef std::future<CreateTargetGroupOutcome> CreateTargetGroupOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateTargetGroupRequest&, CreateTargetGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTargetGroupAsyncHandler;
+                typedef Outcome<Error, Model::CreateTopicResponse> CreateTopicOutcome;
+                typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
                 typedef Outcome<Error, Model::DeleteListenerResponse> DeleteListenerOutcome;
                 typedef std::future<DeleteListenerOutcome> DeleteListenerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteListenerRequest&, DeleteListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteListenerAsyncHandler;
@@ -227,6 +239,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClassicalLBTargetsResponse> DescribeClassicalLBTargetsOutcome;
                 typedef std::future<DescribeClassicalLBTargetsOutcome> DescribeClassicalLBTargetsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeClassicalLBTargetsRequest&, DescribeClassicalLBTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassicalLBTargetsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClsLogSetResponse> DescribeClsLogSetOutcome;
+                typedef std::future<DescribeClsLogSetOutcome> DescribeClsLogSetOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeClsLogSetRequest&, DescribeClsLogSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClsLogSetAsyncHandler;
                 typedef Outcome<Error, Model::DescribeListenersResponse> DescribeListenersOutcome;
                 typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeListenersRequest&, DescribeListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenersAsyncHandler;
@@ -369,6 +384,15 @@ namespace TencentCloud
                 BatchRegisterTargetsOutcomeCallable BatchRegisterTargetsCallable(const Model::BatchRegisterTargetsRequest& request);
 
                 /**
+                 *创建clb专有日志集，此日志集用于存储clb的日志。
+                 * @param req CreateClsLogSetRequest
+                 * @return CreateClsLogSetOutcome
+                 */
+                CreateClsLogSetOutcome CreateClsLogSet(const Model::CreateClsLogSetRequest &request);
+                void CreateClsLogSetAsync(const Model::CreateClsLogSetRequest& request, const CreateClsLogSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateClsLogSetOutcomeCallable CreateClsLogSetCallable(const Model::CreateClsLogSetRequest& request);
+
+                /**
                  *在一个负载均衡实例下创建监听器。
 本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
                  * @param req CreateListenerRequest
@@ -416,6 +440,15 @@ namespace TencentCloud
                 CreateTargetGroupOutcome CreateTargetGroup(const Model::CreateTargetGroupRequest &request);
                 void CreateTargetGroupAsync(const Model::CreateTargetGroupRequest& request, const CreateTargetGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTargetGroupOutcomeCallable CreateTargetGroupCallable(const Model::CreateTargetGroupRequest& request);
+
+                /**
+                 *创建主题，默认开启全文索引和键值索引。如果不存在clb专有日志集，则创建失败。
+                 * @param req CreateTopicRequest
+                 * @return CreateTopicOutcome
+                 */
+                CreateTopicOutcome CreateTopic(const Model::CreateTopicRequest &request);
+                void CreateTopicAsync(const Model::CreateTopicRequest& request, const CreateTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
 
                 /**
                  *本接口用来删除负载均衡实例下的监听器（四层和七层）。
@@ -568,6 +601,15 @@ namespace TencentCloud
                 DescribeClassicalLBTargetsOutcome DescribeClassicalLBTargets(const Model::DescribeClassicalLBTargetsRequest &request);
                 void DescribeClassicalLBTargetsAsync(const Model::DescribeClassicalLBTargetsRequest& request, const DescribeClassicalLBTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClassicalLBTargetsOutcomeCallable DescribeClassicalLBTargetsCallable(const Model::DescribeClassicalLBTargetsRequest& request);
+
+                /**
+                 *获取用户的clb独占日志集。
+                 * @param req DescribeClsLogSetRequest
+                 * @return DescribeClsLogSetOutcome
+                 */
+                DescribeClsLogSetOutcome DescribeClsLogSet(const Model::DescribeClsLogSetRequest &request);
+                void DescribeClsLogSetAsync(const Model::DescribeClsLogSetRequest& request, const DescribeClsLogSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClsLogSetOutcomeCallable DescribeClsLogSetCallable(const Model::DescribeClsLogSetRequest& request);
 
                 /**
                  *DescribeListeners 接口可根据负载均衡器 ID，监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。

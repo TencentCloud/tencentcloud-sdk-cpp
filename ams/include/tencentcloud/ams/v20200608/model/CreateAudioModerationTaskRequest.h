@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取回调签名key，具体可以查看签名文档。
-                     * @return Type 回调签名key，具体可以查看签名文档。
+                     * 获取异步检测结果回调通知接收URL。支持HTTP和HTTPS
+                     * @return Type 异步检测结果回调通知接收URL。支持HTTP和HTTPS
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置回调签名key，具体可以查看签名文档。
-                     * @param Type 回调签名key，具体可以查看签名文档。
+                     * 设置异步检测结果回调通知接收URL。支持HTTP和HTTPS
+                     * @param Type 异步检测结果回调通知接收URL。支持HTTP和HTTPS
                      */
                     void SetType(const std::string& _type);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取异步检测结果回调通知接收URL。支持HTTP和HTTPS
-                     * @return Seed 异步检测结果回调通知接收URL。支持HTTP和HTTPS
+                     * 获取回调签名key，具体可以查看签名文档。
+                     * @return Seed 回调签名key，具体可以查看签名文档。
                      */
                     std::string GetSeed() const;
 
                     /**
-                     * 设置异步检测结果回调通知接收URL。支持HTTP和HTTPS
-                     * @param Seed 异步检测结果回调通知接收URL。支持HTTP和HTTPS
+                     * 设置回调签名key，具体可以查看签名文档。
+                     * @param Seed 回调签名key，具体可以查看签名文档。
                      */
                     void SetSeed(const std::string& _seed);
 
@@ -142,13 +142,13 @@ namespace TencentCloud
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 回调签名key，具体可以查看签名文档。
+                     * 异步检测结果回调通知接收URL。支持HTTP和HTTPS
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 异步检测结果回调通知接收URL。支持HTTP和HTTPS
+                     * 回调签名key，具体可以查看签名文档。
                      */
                     std::string m_seed;
                     bool m_seedHasBeenSet;

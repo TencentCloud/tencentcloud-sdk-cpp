@@ -66,13 +66,31 @@ namespace TencentCloud
 
                     /**
                      * 获取风险类别，RiskAccount，RiskIP, RiskIMEI
-                     * @return Lable 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * @return Label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * @param Label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     */
+                    bool LabelHasBeenSet() const;
+
+                    /**
+                     * 获取预留字段，暂时不用
+                     * @return Lable 预留字段，暂时不用
                      */
                     std::string GetLable() const;
 
                     /**
-                     * 设置风险类别，RiskAccount，RiskIP, RiskIMEI
-                     * @param Lable 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * 设置预留字段，暂时不用
+                     * @param Lable 预留字段，暂时不用
                      */
                     void SetLable(const std::string& _lable);
 
@@ -110,6 +128,12 @@ namespace TencentCloud
 
                     /**
                      * 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
+
+                    /**
+                     * 预留字段，暂时不用
                      */
                     std::string m_lable;
                     bool m_lableHasBeenSet;

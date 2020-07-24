@@ -255,6 +255,49 @@ ClbClient::BatchRegisterTargetsOutcomeCallable ClbClient::BatchRegisterTargetsCa
     return task->get_future();
 }
 
+ClbClient::CreateClsLogSetOutcome ClbClient::CreateClsLogSet(const CreateClsLogSetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClsLogSet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClsLogSetResponse rsp = CreateClsLogSetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClsLogSetOutcome(rsp);
+        else
+            return CreateClsLogSetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClsLogSetOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateClsLogSetAsync(const CreateClsLogSetRequest& request, const CreateClsLogSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClsLogSet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::CreateClsLogSetOutcomeCallable ClbClient::CreateClsLogSetCallable(const CreateClsLogSetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClsLogSetOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClsLogSet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::CreateListenerOutcome ClbClient::CreateListener(const CreateListenerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateListener");
@@ -463,6 +506,49 @@ ClbClient::CreateTargetGroupOutcomeCallable ClbClient::CreateTargetGroupCallable
         [this, request]()
         {
             return this->CreateTargetGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::CreateTopicOutcome ClbClient::CreateTopic(const CreateTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTopicResponse rsp = CreateTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTopicOutcome(rsp);
+        else
+            return CreateTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTopicOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateTopicAsync(const CreateTopicRequest& request, const CreateTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::CreateTopicOutcomeCallable ClbClient::CreateTopicCallable(const CreateTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTopic(request);
         }
     );
 
@@ -1151,6 +1237,49 @@ ClbClient::DescribeClassicalLBTargetsOutcomeCallable ClbClient::DescribeClassica
         [this, request]()
         {
             return this->DescribeClassicalLBTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DescribeClsLogSetOutcome ClbClient::DescribeClsLogSet(const DescribeClsLogSetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClsLogSet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClsLogSetResponse rsp = DescribeClsLogSetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClsLogSetOutcome(rsp);
+        else
+            return DescribeClsLogSetOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClsLogSetOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeClsLogSetAsync(const DescribeClsLogSetRequest& request, const DescribeClsLogSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClsLogSet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeClsLogSetOutcomeCallable ClbClient::DescribeClsLogSetCallable(const DescribeClsLogSetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClsLogSetOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClsLogSet(request);
         }
     );
 

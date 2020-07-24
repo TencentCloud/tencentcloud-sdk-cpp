@@ -294,6 +294,24 @@ namespace TencentCloud
                      */
                     bool ReceiverTypeHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件，告警策略是否已启动或停止
+                     * @return IsOpen 过滤条件，告警策略是否已启动或停止
+                     */
+                    bool GetIsOpen() const;
+
+                    /**
+                     * 设置过滤条件，告警策略是否已启动或停止
+                     * @param IsOpen 过滤条件，告警策略是否已启动或停止
+                     */
+                    void SetIsOpen(const bool& _isOpen);
+
+                    /**
+                     * 判断参数 IsOpen 是否已赋值
+                     * @return IsOpen 是否已赋值
+                     */
+                    bool IsOpenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -379,6 +397,12 @@ namespace TencentCloud
                      */
                     std::string m_receiverType;
                     bool m_receiverTypeHasBeenSet;
+
+                    /**
+                     * 过滤条件，告警策略是否已启动或停止
+                     */
+                    bool m_isOpen;
+                    bool m_isOpenHasBeenSet;
 
                 };
             }

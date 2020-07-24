@@ -37,6 +37,8 @@
 #include <tencentcloud/cms/v20190321/model/DescribeTextSampleResponse.h>
 #include <tencentcloud/cms/v20190321/model/ImageModerationRequest.h>
 #include <tencentcloud/cms/v20190321/model/ImageModerationResponse.h>
+#include <tencentcloud/cms/v20190321/model/ManualReviewRequest.h>
+#include <tencentcloud/cms/v20190321/model/ManualReviewResponse.h>
 #include <tencentcloud/cms/v20190321/model/TextModerationRequest.h>
 #include <tencentcloud/cms/v20190321/model/TextModerationResponse.h>
 
@@ -74,6 +76,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ImageModerationResponse> ImageModerationOutcome;
                 typedef std::future<ImageModerationOutcome> ImageModerationOutcomeCallable;
                 typedef std::function<void(const CmsClient*, const Model::ImageModerationRequest&, ImageModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageModerationAsyncHandler;
+                typedef Outcome<Error, Model::ManualReviewResponse> ManualReviewOutcome;
+                typedef std::future<ManualReviewOutcome> ManualReviewOutcomeCallable;
+                typedef std::function<void(const CmsClient*, const Model::ManualReviewRequest&, ManualReviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManualReviewAsyncHandler;
                 typedef Outcome<Error, Model::TextModerationResponse> TextModerationOutcome;
                 typedef std::future<TextModerationOutcome> TextModerationOutcomeCallable;
                 typedef std::function<void(const CmsClient*, const Model::TextModerationRequest&, TextModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextModerationAsyncHandler;
@@ -154,6 +159,15 @@ namespace TencentCloud
                 ImageModerationOutcome ImageModeration(const Model::ImageModerationRequest &request);
                 void ImageModerationAsync(const Model::ImageModerationRequest& request, const ImageModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImageModerationOutcomeCallable ImageModerationCallable(const Model::ImageModerationRequest& request);
+
+                /**
+                 *人工审核对外接口
+                 * @param req ManualReviewRequest
+                 * @return ManualReviewOutcome
+                 */
+                ManualReviewOutcome ManualReview(const Model::ManualReviewRequest &request);
+                void ManualReviewAsync(const Model::ManualReviewRequest& request, const ManualReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ManualReviewOutcomeCallable ManualReviewCallable(const Model::ManualReviewRequest& request);
 
                 /**
                  *文本内容检测（Text Moderation）服务使用了深度学习技术，识别涉黄、涉政、涉恐等有害内容，同时支持用户配置词库，打击自定义的违规文本。

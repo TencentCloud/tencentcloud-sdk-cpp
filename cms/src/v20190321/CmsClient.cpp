@@ -341,6 +341,49 @@ CmsClient::ImageModerationOutcomeCallable CmsClient::ImageModerationCallable(con
     return task->get_future();
 }
 
+CmsClient::ManualReviewOutcome CmsClient::ManualReview(const ManualReviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "ManualReview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ManualReviewResponse rsp = ManualReviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ManualReviewOutcome(rsp);
+        else
+            return ManualReviewOutcome(o.GetError());
+    }
+    else
+    {
+        return ManualReviewOutcome(outcome.GetError());
+    }
+}
+
+void CmsClient::ManualReviewAsync(const ManualReviewRequest& request, const ManualReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ManualReview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmsClient::ManualReviewOutcomeCallable CmsClient::ManualReviewCallable(const ManualReviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ManualReviewOutcome()>>(
+        [this, request]()
+        {
+            return this->ManualReview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmsClient::TextModerationOutcome CmsClient::TextModeration(const TextModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "TextModeration");

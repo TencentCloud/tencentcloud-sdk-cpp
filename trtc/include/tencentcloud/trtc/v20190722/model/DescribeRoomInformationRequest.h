@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取分页index（不填默认只返回10个）
-                     * @return PageNumber 分页index（不填默认只返回10个）
+                     * 获取分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
+                     * @return PageNumber 分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
                      */
                     std::string GetPageNumber() const;
 
                     /**
-                     * 设置分页index（不填默认只返回10个）
-                     * @param PageNumber 分页index（不填默认只返回10个）
+                     * 设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
+                     * @param PageNumber 分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
                      */
                     void SetPageNumber(const std::string& _pageNumber);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取分页大小（不填默认返回10个,最多不超过100条）
-                     * @return PageSize 分页大小（不填默认返回10个,最多不超过100条）
+                     * 获取分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）
+                     * @return PageSize 分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）
                      */
                     std::string GetPageSize() const;
 
                     /**
-                     * 设置分页大小（不填默认返回10个,最多不超过100条）
-                     * @param PageSize 分页大小（不填默认返回10个,最多不超过100条）
+                     * 设置分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）
+                     * @param PageSize 分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）
                      */
                     void SetPageSize(const std::string& _pageSize);
 
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 分页index（不填默认只返回10个）
+                     * 分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
                      */
                     std::string m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 分页大小（不填默认返回10个,最多不超过100条）
+                     * 分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）
                      */
                     std::string m_pageSize;
                     bool m_pageSizeHasBeenSet;

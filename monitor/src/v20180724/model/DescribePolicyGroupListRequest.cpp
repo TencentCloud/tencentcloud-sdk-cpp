@@ -37,7 +37,8 @@ DescribePolicyGroupListRequest::DescribePolicyGroupListRequest() :
     m_receiverUserListHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_conditionTempGroupIdHasBeenSet(false),
-    m_receiverTypeHasBeenSet(false)
+    m_receiverTypeHasBeenSet(false),
+    m_isOpenHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,14 @@ string DescribePolicyGroupListRequest::ToJsonString() const
         string key = "ReceiverType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_receiverType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOpenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsOpen";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isOpen, allocator);
     }
 
 
@@ -410,6 +419,22 @@ void DescribePolicyGroupListRequest::SetReceiverType(const string& _receiverType
 bool DescribePolicyGroupListRequest::ReceiverTypeHasBeenSet() const
 {
     return m_receiverTypeHasBeenSet;
+}
+
+bool DescribePolicyGroupListRequest::GetIsOpen() const
+{
+    return m_isOpen;
+}
+
+void DescribePolicyGroupListRequest::SetIsOpen(const bool& _isOpen)
+{
+    m_isOpen = _isOpen;
+    m_isOpenHasBeenSet = true;
+}
+
+bool DescribePolicyGroupListRequest::IsOpenHasBeenSet() const
+{
+    return m_isOpenHasBeenSet;
 }
 
 

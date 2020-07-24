@@ -33,6 +33,7 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/TextSample.h
   include/tencentcloud/cms/v20190321/model/CreateTextSampleResponse.h
   include/tencentcloud/cms/v20190321/model/TextOutputID.h
+  include/tencentcloud/cms/v20190321/model/ManualReviewRequest.h
   include/tencentcloud/cms/v20190321/model/User.h
   include/tencentcloud/cms/v20190321/model/FileSampleInfo.h
   include/tencentcloud/cms/v20190321/model/DescribeFileSampleRequest.h
@@ -49,7 +50,9 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/CreateTextSampleRequest.h
   include/tencentcloud/cms/v20190321/model/DeleteFileSampleRequest.h
   include/tencentcloud/cms/v20190321/model/Filter.h
+  include/tencentcloud/cms/v20190321/model/ManualReviewData.h
   include/tencentcloud/cms/v20190321/model/OCRDetect.h
+  include/tencentcloud/cms/v20190321/model/ManualReviewContent.h
   include/tencentcloud/cms/v20190321/model/Coordinate.h
   include/tencentcloud/cms/v20190321/model/Similar.h
   include/tencentcloud/cms/v20190321/model/ImageHotDetect.h
@@ -61,6 +64,7 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/ImageIllegalDetect.h
   include/tencentcloud/cms/v20190321/model/RrectF.h
   include/tencentcloud/cms/v20190321/model/CreateFileSampleResponse.h
+  include/tencentcloud/cms/v20190321/model/ManualReviewResponse.h
   include/tencentcloud/cms/v20190321/model/LogoDetail.h
   include/tencentcloud/cms/v20190321/model/Logo.h
   include/tencentcloud/cms/v20190321/model/PhoneDetect.h
@@ -83,6 +87,7 @@ set(cms_src
   src/v20190321/model/TextSample.cpp
   src/v20190321/model/CreateTextSampleResponse.cpp
   src/v20190321/model/TextOutputID.cpp
+  src/v20190321/model/ManualReviewRequest.cpp
   src/v20190321/model/User.cpp
   src/v20190321/model/FileSampleInfo.cpp
   src/v20190321/model/DescribeFileSampleRequest.cpp
@@ -99,7 +104,9 @@ set(cms_src
   src/v20190321/model/CreateTextSampleRequest.cpp
   src/v20190321/model/DeleteFileSampleRequest.cpp
   src/v20190321/model/Filter.cpp
+  src/v20190321/model/ManualReviewData.cpp
   src/v20190321/model/OCRDetect.cpp
+  src/v20190321/model/ManualReviewContent.cpp
   src/v20190321/model/Coordinate.cpp
   src/v20190321/model/Similar.cpp
   src/v20190321/model/ImageHotDetect.cpp
@@ -111,6 +118,7 @@ set(cms_src
   src/v20190321/model/ImageIllegalDetect.cpp
   src/v20190321/model/RrectF.cpp
   src/v20190321/model/CreateFileSampleResponse.cpp
+  src/v20190321/model/ManualReviewResponse.cpp
   src/v20190321/model/LogoDetail.cpp
   src/v20190321/model/Logo.cpp
   src/v20190321/model/PhoneDetect.cpp

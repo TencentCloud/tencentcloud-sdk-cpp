@@ -23,6 +23,7 @@ using namespace std;
 
 RiskDetails::RiskDetails() :
     m_keywordsHasBeenSet(false),
+    m_labelHasBeenSet(false),
     m_lableHasBeenSet(false),
     m_levelHasBeenSet(false)
 {
@@ -44,6 +45,16 @@ CoreInternalOutcome RiskDetails::Deserialize(const Value &value)
             m_keywords.push_back((*itr).GetString());
         }
         m_keywordsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Label") && !value["Label"].IsNull())
+    {
+        if (!value["Label"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RiskDetails.Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(value["Label"].GetString());
+        m_labelHasBeenSet = true;
     }
 
     if (value.HasMember("Lable") && !value["Lable"].IsNull())
@@ -86,6 +97,14 @@ void RiskDetails::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         }
     }
 
+    if (m_labelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_lableHasBeenSet)
     {
         Value iKey(kStringType);
@@ -119,6 +138,22 @@ void RiskDetails::SetKeywords(const vector<string>& _keywords)
 bool RiskDetails::KeywordsHasBeenSet() const
 {
     return m_keywordsHasBeenSet;
+}
+
+string RiskDetails::GetLabel() const
+{
+    return m_label;
+}
+
+void RiskDetails::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool RiskDetails::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
 }
 
 string RiskDetails::GetLable() const

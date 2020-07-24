@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool JoinTsHasBeenSet() const;
 
                     /**
-                     * 获取用户退房时间
-                     * @return LeaveTs 用户退房时间
+                     * 获取用户退房时间，用户没有退房则返回当前时间
+                     * @return LeaveTs 用户退房时间，用户没有退房则返回当前时间
                      */
                     uint64_t GetLeaveTs() const;
 
                     /**
-                     * 设置用户退房时间
-                     * @param LeaveTs 用户退房时间
+                     * 设置用户退房时间，用户没有退房则返回当前时间
+                     * @param LeaveTs 用户退房时间，用户没有退房则返回当前时间
                      */
                     void SetLeaveTs(const uint64_t& _leaveTs);
 
@@ -211,7 +211,7 @@ namespace TencentCloud
                     bool m_joinTsHasBeenSet;
 
                     /**
-                     * 用户退房时间
+                     * 用户退房时间，用户没有退房则返回当前时间
                      */
                     uint64_t m_leaveTs;
                     bool m_leaveTsHasBeenSet;
