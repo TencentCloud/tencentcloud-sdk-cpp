@@ -80,10 +80,11 @@ sudo make install
 ```
 
 # 使用 C++ SDK 示例
-以下 cvm 产品的 DescribeInstances 接口为例：
+下文以 cvm 产品的 DescribeInstances 接口为例：
 
-```
-#include <iostream>
+### 简化版
+
+```c++
 #include <tencentcloud/core/TencentCloud.h>
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/cvm/v20170312/CvmClient.h>
@@ -91,8 +92,8 @@ sudo make install
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/Instance.h>
 
+#include <iostream>
 #include <string>
-#include <vector>
 
 using namespace TencentCloud;
 using namespace TencentCloud::Cvm::V20170312;
@@ -101,18 +102,13 @@ using namespace std;
 
 int main()
 {
-    // 必须调用初始化函数
     TencentCloud::InitAPI();
 
-    // use the sdk
-
-    string secretId = "<Your-secretId>";
-    string secretKey = "<Your-secertKey>";
+    string secretId = "<your secret id>";
+    string secretKey = "<your secret key>";
     Credential cred = Credential(secretId, secretKey);
 
     DescribeInstancesRequest req = DescribeInstancesRequest();
-    req.SetOffset(0);
-    req.SetLimit(5);
 
     CvmClient cvm_client = CvmClient(cred, "ap-guangzhou");
 
@@ -126,11 +122,89 @@ int main()
     DescribeInstancesResponse rsp = outcome.GetResult();
     cout<<"RequestId="<<rsp.GetRequestId()<<endl;
     cout<<"TotalCount="<<rsp.GetTotalCount()<<endl;
-
-    vector<Instance> instanceSet = rsp.GetInstanceSet();
-    for (auto itr=instanceSet.begin(); itr!=instanceSet.end(); ++itr)
+    if (rsp.InstanceSetHasBeenSet())
     {
-        cout<<(*itr).GetPlacement().GetZone()<<endl;
+        vector<Instance> instanceSet = rsp.GetInstanceSet();
+        for (auto itr=instanceSet.begin(); itr!=instanceSet.end(); ++itr)
+        {
+            cout<<(*itr).GetPlacement().GetZone()<<endl;
+        }
+    }
+
+    TencentCloud::ShutdownAPI();
+
+    return 0;
+}
+```
+
+### 详细版
+
+```C++
+#include <tencentcloud/core/TencentCloud.h>
+#include <tencentcloud/core/profile/HttpProfile.h>
+#include <tencentcloud/core/profile/ClientProfile.h>
+#include <tencentcloud/core/Credential.h>
+#include <tencentcloud/core/NetworkProxy.h>
+#include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cvm/v20170312/CvmClient.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeInstancesRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeInstancesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/Instance.h>
+
+#include <iostream>
+#include <string>
+
+using namespace TencentCloud;
+using namespace TencentCloud::Cvm::V20170312;
+using namespace TencentCloud::Cvm::V20170312::Model;
+using namespace std;
+
+int main()
+{
+    TencentCloud::InitAPI();
+
+    // use the sdk
+    // 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey,此处还需注意密钥对的保密
+    string secretId = "<your secret id>";
+    string secretKey = "<your secret key>";
+    Credential cred = Credential(secretId, secretKey);
+
+    // 实例化一个http选项，可选的，没有特殊需求可以跳过。
+    HttpProfile httpProfile = HttpProfile();
+    httpProfile.SetKeepAlive(true);  // 状态保持，默认是False
+    httpProfile.SetEndpoint("cvm.ap-guangzhou.tencentcloudapi.com");  // 指定接入地域域名(默认就近接入)
+    httpProfile.SetReqTimeout(30);  // 请求超时时间，单位为秒(默认60秒)
+    httpProfile.SetConnectTimeout(30); // 响应超时时间，单位是秒(默认是60秒)
+
+    ClientProfile clientProfile = ClientProfile(httpProfile);
+
+    DescribeInstancesRequest req = DescribeInstancesRequest();
+    req.SetOffset(0);
+    req.SetLimit(5);
+
+    CvmClient cvm_client = CvmClient(cred, "ap-guangzhou", clientProfile);
+
+    // set proxy
+    // NetworkProxy proxy = NetworkProxy(NetworkProxy::Type::HTTP, "localhost.proxy.com", 8080);
+    // cvm_client.SetNetworkProxy(proxy);
+
+    auto outcome = cvm_client.DescribeInstances(req);
+    if (!outcome.IsSuccess())
+    {
+        cout << outcome.GetError().PrintAll() << endl;
+        TencentCloud::ShutdownAPI();
+        return -1;
+    }
+    DescribeInstancesResponse rsp = outcome.GetResult();
+    cout<<"RequestId="<<rsp.GetRequestId()<<endl;
+    cout<<"TotalCount="<<rsp.GetTotalCount()<<endl;
+    if (rsp.InstanceSetHasBeenSet())
+    {
+        vector<Instance> instanceSet = rsp.GetInstanceSet();
+        for (auto itr=instanceSet.begin(); itr!=instanceSet.end(); ++itr)
+        {
+            cout<<(*itr).GetPlacement().GetZone()<<endl;
+        }
     }
 
     TencentCloud::ShutdownAPI();
