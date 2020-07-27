@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 SentenceRecognitionResponse::SentenceRecognitionResponse() :
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_audioDurationHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome SentenceRecognitionResponse::Deserialize(const string &paylo
         m_resultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AudioDuration") && !rsp["AudioDuration"].IsNull())
+    {
+        if (!rsp["AudioDuration"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `AudioDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioDuration = rsp["AudioDuration"].GetInt64();
+        m_audioDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ string SentenceRecognitionResponse::GetResult() const
 bool SentenceRecognitionResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+int64_t SentenceRecognitionResponse::GetAudioDuration() const
+{
+    return m_audioDuration;
+}
+
+bool SentenceRecognitionResponse::AudioDurationHasBeenSet() const
+{
+    return m_audioDurationHasBeenSet;
 }
 
 

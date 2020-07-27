@@ -122,6 +122,24 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取子标签码
+                     * @return SubLabelCode 子标签码
+                     */
+                    std::string GetSubLabelCode() const;
+
+                    /**
+                     * 设置子标签码
+                     * @param SubLabelCode 子标签码
+                     */
+                    void SetSubLabelCode(const std::string& _subLabelCode);
+
+                    /**
+                     * 判断参数 SubLabelCode 是否已赋值
+                     * @return SubLabelCode 是否已赋值
+                     */
+                    bool SubLabelCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +166,12 @@ namespace TencentCloud
                      */
                     double m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 子标签码
+                     */
+                    std::string m_subLabelCode;
+                    bool m_subLabelCodeHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ AudioResultDetailMoanResult::AudioResultDetailMoanResult() :
     m_labelHasBeenSet(false),
     m_scoreHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_subLabelCodeHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome AudioResultDetailMoanResult::Deserialize(const Value &value)
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLabelCode") && !value["SubLabelCode"].IsNull())
+    {
+        if (!value["SubLabelCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AudioResultDetailMoanResult.SubLabelCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subLabelCode = string(value["SubLabelCode"].GetString());
+        m_subLabelCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void AudioResultDetailMoanResult::ToJsonObject(Value &value, Document::Allocator
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_subLabelCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubLabelCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subLabelCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void AudioResultDetailMoanResult::SetEndTime(const double& _endTime)
 bool AudioResultDetailMoanResult::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string AudioResultDetailMoanResult::GetSubLabelCode() const
+{
+    return m_subLabelCode;
+}
+
+void AudioResultDetailMoanResult::SetSubLabelCode(const string& _subLabelCode)
+{
+    m_subLabelCode = _subLabelCode;
+    m_subLabelCodeHasBeenSet = true;
+}
+
+bool AudioResultDetailMoanResult::SubLabelCodeHasBeenSet() const
+{
+    return m_subLabelCodeHasBeenSet;
 }
 

@@ -54,6 +54,18 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取请求的音频时长，单位为ms
+                     * @return AudioDuration 请求的音频时长，单位为ms
+                     */
+                    int64_t GetAudioDuration() const;
+
+                    /**
+                     * 判断参数 AudioDuration 是否已赋值
+                     * @return AudioDuration 是否已赋值
+                     */
+                    bool AudioDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +73,12 @@ namespace TencentCloud
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 请求的音频时长，单位为ms
+                     */
+                    int64_t m_audioDuration;
+                    bool m_audioDurationHasBeenSet;
 
                 };
             }

@@ -35,7 +35,10 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_hotwordIdHasBeenSet(false),
     m_filterDirtyHasBeenSet(false),
     m_filterModalHasBeenSet(false),
-    m_convertNumModeHasBeenSet(false)
+    m_convertNumModeHasBeenSet(false),
+    m_extraHasBeenSet(false),
+    m_speakerDiarizationHasBeenSet(false),
+    m_speakerNumberHasBeenSet(false)
 {
 }
 
@@ -140,6 +143,30 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "ConvertNumMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_convertNumMode, allocator);
+    }
+
+    if (m_extraHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Extra";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_speakerDiarizationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SpeakerDiarization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_speakerDiarization, allocator);
+    }
+
+    if (m_speakerNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SpeakerNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_speakerNumber, allocator);
     }
 
 
@@ -340,6 +367,54 @@ void CreateRecTaskRequest::SetConvertNumMode(const int64_t& _convertNumMode)
 bool CreateRecTaskRequest::ConvertNumModeHasBeenSet() const
 {
     return m_convertNumModeHasBeenSet;
+}
+
+string CreateRecTaskRequest::GetExtra() const
+{
+    return m_extra;
+}
+
+void CreateRecTaskRequest::SetExtra(const string& _extra)
+{
+    m_extra = _extra;
+    m_extraHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::ExtraHasBeenSet() const
+{
+    return m_extraHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetSpeakerDiarization() const
+{
+    return m_speakerDiarization;
+}
+
+void CreateRecTaskRequest::SetSpeakerDiarization(const int64_t& _speakerDiarization)
+{
+    m_speakerDiarization = _speakerDiarization;
+    m_speakerDiarizationHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::SpeakerDiarizationHasBeenSet() const
+{
+    return m_speakerDiarizationHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetSpeakerNumber() const
+{
+    return m_speakerNumber;
+}
+
+void CreateRecTaskRequest::SetSpeakerNumber(const int64_t& _speakerNumber)
+{
+    m_speakerNumber = _speakerNumber;
+    m_speakerNumberHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::SpeakerNumberHasBeenSet() const
+{
+    return m_speakerNumberHasBeenSet;
 }
 
 

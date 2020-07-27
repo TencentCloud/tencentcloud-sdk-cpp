@@ -30,7 +30,8 @@ ImageResultsResultDetail::ImageResultsResultDetail() :
     m_libNameHasBeenSet(false),
     m_keywordsHasBeenSet(false),
     m_suggestionHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_subLabelCodeHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,16 @@ CoreInternalOutcome ImageResultsResultDetail::Deserialize(const Value &value)
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLabelCode") && !value["SubLabelCode"].IsNull())
+    {
+        if (!value["SubLabelCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageResultsResultDetail.SubLabelCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subLabelCode = string(value["SubLabelCode"].GetString());
+        m_subLabelCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -231,6 +242,14 @@ void ImageResultsResultDetail::ToJsonObject(Value &value, Document::AllocatorTyp
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_subLabelCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubLabelCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subLabelCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -378,5 +397,21 @@ void ImageResultsResultDetail::SetScore(const int64_t& _score)
 bool ImageResultsResultDetail::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+string ImageResultsResultDetail::GetSubLabelCode() const
+{
+    return m_subLabelCode;
+}
+
+void ImageResultsResultDetail::SetSubLabelCode(const string& _subLabelCode)
+{
+    m_subLabelCode = _subLabelCode;
+    m_subLabelCodeHasBeenSet = true;
+}
+
+bool ImageResultsResultDetail::SubLabelCodeHasBeenSet() const
+{
+    return m_subLabelCodeHasBeenSet;
 }
 

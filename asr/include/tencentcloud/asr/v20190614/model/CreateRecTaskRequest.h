@@ -165,14 +165,14 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取语音的URL地址，需要公网可下载。长度小于2048字节，当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在一个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
-                     * @return Url 语音的URL地址，需要公网可下载。长度小于2048字节，当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在一个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
+                     * 获取语音的URL地址，需要公网可下载。长度小于2048字节，当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
+                     * @return Url 语音的URL地址，需要公网可下载。长度小于2048字节，当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置语音的URL地址，需要公网可下载。长度小于2048字节，当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在一个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
-                     * @param Url 语音的URL地址，需要公网可下载。长度小于2048字节，当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在一个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
+                     * 设置语音的URL地址，需要公网可下载。长度小于2048字节，当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
+                     * @param Url 语音的URL地址，需要公网可下载。长度小于2048字节，当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -290,6 +290,64 @@ namespace TencentCloud
                      */
                     bool ConvertNumModeHasBeenSet() const;
 
+                    /**
+                     * 获取附加参数
+                     * @return Extra 附加参数
+                     */
+                    std::string GetExtra() const;
+
+                    /**
+                     * 设置附加参数
+                     * @param Extra 附加参数
+                     */
+                    void SetExtra(const std::string& _extra);
+
+                    /**
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
+                     */
+                    bool ExtraHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)
+                     * @return SpeakerDiarization 是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)
+                     */
+                    int64_t GetSpeakerDiarization() const;
+
+                    /**
+                     * 设置是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)
+                     * @param SpeakerDiarization 是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)
+                     */
+                    void SetSpeakerDiarization(const int64_t& _speakerDiarization);
+
+                    /**
+                     * 判断参数 SpeakerDiarization 是否已赋值
+                     * @return SpeakerDiarization 是否已赋值
+                     */
+                    bool SpeakerDiarizationHasBeenSet() const;
+
+                    /**
+                     * 获取话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）
+注：话者分离目前是beta版本，请根据您的需要谨慎使用
+                     * @return SpeakerNumber 话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）
+注：话者分离目前是beta版本，请根据您的需要谨慎使用
+                     */
+                    int64_t GetSpeakerNumber() const;
+
+                    /**
+                     * 设置话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）
+注：话者分离目前是beta版本，请根据您的需要谨慎使用
+                     * @param SpeakerNumber 话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）
+注：话者分离目前是beta版本，请根据您的需要谨慎使用
+                     */
+                    void SetSpeakerNumber(const int64_t& _speakerNumber);
+
+                    /**
+                     * 判断参数 SpeakerNumber 是否已赋值
+                     * @return SpeakerNumber 是否已赋值
+                     */
+                    bool SpeakerNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,7 +389,7 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 语音的URL地址，需要公网可下载。长度小于2048字节，当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在一个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
+                     * 语音的URL地址，需要公网可下载。长度小于2048字节，当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
@@ -371,6 +429,25 @@ namespace TencentCloud
                      */
                     int64_t m_convertNumMode;
                     bool m_convertNumModeHasBeenSet;
+
+                    /**
+                     * 附加参数
+                     */
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
+
+                    /**
+                     * 是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)
+                     */
+                    int64_t m_speakerDiarization;
+                    bool m_speakerDiarizationHasBeenSet;
+
+                    /**
+                     * 话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）
+注：话者分离目前是beta版本，请根据您的需要谨慎使用
+                     */
+                    int64_t m_speakerNumber;
+                    bool m_speakerNumberHasBeenSet;
 
                 };
             }
