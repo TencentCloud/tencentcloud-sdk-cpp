@@ -78,6 +78,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/RegisterTargetsWithClassicalLBRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyDomainAttributesResponse.h
   include/tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersResponse.h
+  include/tencentcloud/clb/v20180317/model/DescribeTargetsResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyListenerRequest.h
   include/tencentcloud/clb/v20180317/model/DeregisterTargetGroupInstancesResponse.h
   include/tencentcloud/clb/v20180317/model/RegisterTargetsRequest.h
@@ -87,6 +88,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DeleteListenerRequest.h
   include/tencentcloud/clb/v20180317/model/ClassicalHealth.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetPortResponse.h
+  include/tencentcloud/clb/v20180317/model/DescribeLoadBalancersDetailRequest.h
   include/tencentcloud/clb/v20180317/model/TargetGroupBackend.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBByInstanceIdRequest.h
   include/tencentcloud/clb/v20180317/model/ManualRewriteResponse.h
@@ -131,7 +133,8 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DeregisterTargetsResponse.h
   include/tencentcloud/clb/v20180317/model/RewriteTarget.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetWeightRequest.h
-  include/tencentcloud/clb/v20180317/model/DescribeTargetsResponse.h
+  include/tencentcloud/clb/v20180317/model/DescribeLoadBalancersDetailResponse.h
+  include/tencentcloud/clb/v20180317/model/LoadBalancerDetail.h
   include/tencentcloud/clb/v20180317/model/BatchModifyTargetWeightRequest.h
   include/tencentcloud/clb/v20180317/model/DeleteRewriteResponse.h
   include/tencentcloud/clb/v20180317/model/BatchTarget.h
@@ -242,6 +245,7 @@ set(clb_src
   src/v20180317/model/RegisterTargetsWithClassicalLBRequest.cpp
   src/v20180317/model/ModifyDomainAttributesResponse.cpp
   src/v20180317/model/ReplaceCertForLoadBalancersResponse.cpp
+  src/v20180317/model/DescribeTargetsResponse.cpp
   src/v20180317/model/ModifyListenerRequest.cpp
   src/v20180317/model/DeregisterTargetGroupInstancesResponse.cpp
   src/v20180317/model/RegisterTargetsRequest.cpp
@@ -251,6 +255,7 @@ set(clb_src
   src/v20180317/model/DeleteListenerRequest.cpp
   src/v20180317/model/ClassicalHealth.cpp
   src/v20180317/model/ModifyTargetPortResponse.cpp
+  src/v20180317/model/DescribeLoadBalancersDetailRequest.cpp
   src/v20180317/model/TargetGroupBackend.cpp
   src/v20180317/model/DescribeClassicalLBByInstanceIdRequest.cpp
   src/v20180317/model/ManualRewriteResponse.cpp
@@ -295,7 +300,8 @@ set(clb_src
   src/v20180317/model/DeregisterTargetsResponse.cpp
   src/v20180317/model/RewriteTarget.cpp
   src/v20180317/model/ModifyTargetWeightRequest.cpp
-  src/v20180317/model/DescribeTargetsResponse.cpp
+  src/v20180317/model/DescribeLoadBalancersDetailResponse.cpp
+  src/v20180317/model/LoadBalancerDetail.cpp
   src/v20180317/model/BatchModifyTargetWeightRequest.cpp
   src/v20180317/model/DeleteRewriteResponse.cpp
   src/v20180317/model/BatchTarget.cpp

@@ -27,6 +27,8 @@
 #include <tencentcloud/kms/v20190118/model/AsymmetricRsaDecryptResponse.h>
 #include <tencentcloud/kms/v20190118/model/AsymmetricSm2DecryptRequest.h>
 #include <tencentcloud/kms/v20190118/model/AsymmetricSm2DecryptResponse.h>
+#include <tencentcloud/kms/v20190118/model/BindCloudResourceRequest.h>
+#include <tencentcloud/kms/v20190118/model/BindCloudResourceResponse.h>
 #include <tencentcloud/kms/v20190118/model/CancelKeyDeletionRequest.h>
 #include <tencentcloud/kms/v20190118/model/CancelKeyDeletionResponse.h>
 #include <tencentcloud/kms/v20190118/model/CreateKeyRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/kms/v20190118/model/ReEncryptResponse.h>
 #include <tencentcloud/kms/v20190118/model/ScheduleKeyDeletionRequest.h>
 #include <tencentcloud/kms/v20190118/model/ScheduleKeyDeletionResponse.h>
+#include <tencentcloud/kms/v20190118/model/UnbindCloudResourceRequest.h>
+#include <tencentcloud/kms/v20190118/model/UnbindCloudResourceResponse.h>
 #include <tencentcloud/kms/v20190118/model/UpdateAliasRequest.h>
 #include <tencentcloud/kms/v20190118/model/UpdateAliasResponse.h>
 #include <tencentcloud/kms/v20190118/model/UpdateKeyDescriptionRequest.h>
@@ -127,6 +131,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AsymmetricSm2DecryptResponse> AsymmetricSm2DecryptOutcome;
                 typedef std::future<AsymmetricSm2DecryptOutcome> AsymmetricSm2DecryptOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::AsymmetricSm2DecryptRequest&, AsymmetricSm2DecryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AsymmetricSm2DecryptAsyncHandler;
+                typedef Outcome<Error, Model::BindCloudResourceResponse> BindCloudResourceOutcome;
+                typedef std::future<BindCloudResourceOutcome> BindCloudResourceOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::BindCloudResourceRequest&, BindCloudResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudResourceAsyncHandler;
                 typedef Outcome<Error, Model::CancelKeyDeletionResponse> CancelKeyDeletionOutcome;
                 typedef std::future<CancelKeyDeletionOutcome> CancelKeyDeletionOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::CancelKeyDeletionRequest&, CancelKeyDeletionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelKeyDeletionAsyncHandler;
@@ -241,6 +248,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ScheduleKeyDeletionResponse> ScheduleKeyDeletionOutcome;
                 typedef std::future<ScheduleKeyDeletionOutcome> ScheduleKeyDeletionOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ScheduleKeyDeletionRequest&, ScheduleKeyDeletionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScheduleKeyDeletionAsyncHandler;
+                typedef Outcome<Error, Model::UnbindCloudResourceResponse> UnbindCloudResourceOutcome;
+                typedef std::future<UnbindCloudResourceOutcome> UnbindCloudResourceOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::UnbindCloudResourceRequest&, UnbindCloudResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindCloudResourceAsyncHandler;
                 typedef Outcome<Error, Model::UpdateAliasResponse> UpdateAliasOutcome;
                 typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::UpdateAliasRequest&, UpdateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAliasAsyncHandler;
@@ -267,6 +277,15 @@ namespace TencentCloud
                 AsymmetricSm2DecryptOutcome AsymmetricSm2Decrypt(const Model::AsymmetricSm2DecryptRequest &request);
                 void AsymmetricSm2DecryptAsync(const Model::AsymmetricSm2DecryptRequest& request, const AsymmetricSm2DecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AsymmetricSm2DecryptOutcomeCallable AsymmetricSm2DecryptCallable(const Model::AsymmetricSm2DecryptRequest& request);
+
+                /**
+                 *记录当前key被哪个云产品的那个资源所使用。如果当前key设置了自动过期，则取消该设置，确保当前key不会自动失效。如果当前关联关系已经创建，也返回成功。
+                 * @param req BindCloudResourceRequest
+                 * @return BindCloudResourceOutcome
+                 */
+                BindCloudResourceOutcome BindCloudResource(const Model::BindCloudResourceRequest &request);
+                void BindCloudResourceAsync(const Model::BindCloudResourceRequest& request, const BindCloudResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindCloudResourceOutcomeCallable BindCloudResourceCallable(const Model::BindCloudResourceRequest& request);
 
                 /**
                  *取消CMK的计划删除操作
@@ -610,6 +629,15 @@ namespace TencentCloud
                 ScheduleKeyDeletionOutcome ScheduleKeyDeletion(const Model::ScheduleKeyDeletionRequest &request);
                 void ScheduleKeyDeletionAsync(const Model::ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ScheduleKeyDeletionOutcomeCallable ScheduleKeyDeletionCallable(const Model::ScheduleKeyDeletionRequest& request);
+
+                /**
+                 *删除指定（key, 资源，云产品）的记录，以表明：指定的云产品的资源已不再使用当前的key。
+                 * @param req UnbindCloudResourceRequest
+                 * @return UnbindCloudResourceOutcome
+                 */
+                UnbindCloudResourceOutcome UnbindCloudResource(const Model::UnbindCloudResourceRequest &request);
+                void UnbindCloudResourceAsync(const Model::UnbindCloudResourceRequest& request, const UnbindCloudResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindCloudResourceOutcomeCallable UnbindCloudResourceCallable(const Model::UnbindCloudResourceRequest& request);
 
                 /**
                  *用于修改CMK的别名。对于处于PendingDelete状态的CMK禁止修改。

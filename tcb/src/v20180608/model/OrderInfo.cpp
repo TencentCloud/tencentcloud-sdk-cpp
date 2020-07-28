@@ -28,7 +28,9 @@ OrderInfo::OrderInfo() :
     m_tranStatusHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_extensionIdHasBeenSet(false),
+    m_resourceReadyHasBeenSet(false)
 {
 }
 
@@ -107,6 +109,26 @@ CoreInternalOutcome OrderInfo::Deserialize(const Value &value)
         m_payModeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtensionId") && !value["ExtensionId"].IsNull())
+    {
+        if (!value["ExtensionId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `OrderInfo.ExtensionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extensionId = string(value["ExtensionId"].GetString());
+        m_extensionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceReady") && !value["ResourceReady"].IsNull())
+    {
+        if (!value["ResourceReady"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `OrderInfo.ResourceReady` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceReady = string(value["ResourceReady"].GetString());
+        m_resourceReadyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +190,22 @@ void OrderInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extensionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtensionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_extensionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceReadyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceReady";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceReady.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -283,5 +321,37 @@ void OrderInfo::SetPayMode(const string& _payMode)
 bool OrderInfo::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+string OrderInfo::GetExtensionId() const
+{
+    return m_extensionId;
+}
+
+void OrderInfo::SetExtensionId(const string& _extensionId)
+{
+    m_extensionId = _extensionId;
+    m_extensionIdHasBeenSet = true;
+}
+
+bool OrderInfo::ExtensionIdHasBeenSet() const
+{
+    return m_extensionIdHasBeenSet;
+}
+
+string OrderInfo::GetResourceReady() const
+{
+    return m_resourceReady;
+}
+
+void OrderInfo::SetResourceReady(const string& _resourceReady)
+{
+    m_resourceReady = _resourceReady;
+    m_resourceReadyHasBeenSet = true;
+}
+
+bool OrderInfo::ResourceReadyHasBeenSet() const
+{
+    return m_resourceReadyHasBeenSet;
 }
 

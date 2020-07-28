@@ -45,10 +45,10 @@ namespace TencentCloud
                     /**
                      * 获取停止操作是否成功。
 true：停止成功
-flase：停止失败
+false：停止失败
                      * @return Result 停止操作是否成功。
 true：停止成功
-flase：停止失败
+false：停止失败
                      */
                     bool GetResult() const;
 
@@ -63,7 +63,7 @@ flase：停止失败
                     /**
                      * 停止操作是否成功。
 true：停止成功
-flase：停止失败
+false：停止失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

@@ -224,6 +224,50 @@ namespace TencentCloud
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取订单绑定的扩展ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtensionId 订单绑定的扩展ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExtensionId() const;
+
+                    /**
+                     * 设置订单绑定的扩展ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtensionId 订单绑定的扩展ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtensionId(const std::string& _extensionId);
+
+                    /**
+                     * 判断参数 ExtensionId 是否已赋值
+                     * @return ExtensionId 是否已赋值
+                     */
+                    bool ExtensionIdHasBeenSet() const;
+
+                    /**
+                     * 获取资源初始化结果(仅当ExtensionId不为空时有效): successful(初始化成功), failed(初始化失败), doing(初始化进行中), init(准备初始化)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceReady 资源初始化结果(仅当ExtensionId不为空时有效): successful(初始化成功), failed(初始化失败), doing(初始化进行中), init(准备初始化)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourceReady() const;
+
+                    /**
+                     * 设置资源初始化结果(仅当ExtensionId不为空时有效): successful(初始化成功), failed(初始化失败), doing(初始化进行中), init(准备初始化)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceReady 资源初始化结果(仅当ExtensionId不为空时有效): successful(初始化成功), failed(初始化失败), doing(初始化进行中), init(准备初始化)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceReady(const std::string& _resourceReady);
+
+                    /**
+                     * 判断参数 ResourceReady 是否已赋值
+                     * @return ResourceReady 是否已赋值
+                     */
+                    bool ResourceReadyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +324,20 @@ namespace TencentCloud
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 订单绑定的扩展ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extensionId;
+                    bool m_extensionIdHasBeenSet;
+
+                    /**
+                     * 资源初始化结果(仅当ExtensionId不为空时有效): successful(初始化成功), failed(初始化失败), doing(初始化进行中), init(准备初始化)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceReady;
+                    bool m_resourceReadyHasBeenSet;
 
                 };
             }

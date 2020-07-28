@@ -126,6 +126,49 @@ KmsClient::AsymmetricSm2DecryptOutcomeCallable KmsClient::AsymmetricSm2DecryptCa
     return task->get_future();
 }
 
+KmsClient::BindCloudResourceOutcome KmsClient::BindCloudResource(const BindCloudResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindCloudResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindCloudResourceResponse rsp = BindCloudResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindCloudResourceOutcome(rsp);
+        else
+            return BindCloudResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return BindCloudResourceOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::BindCloudResourceAsync(const BindCloudResourceRequest& request, const BindCloudResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindCloudResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::BindCloudResourceOutcomeCallable KmsClient::BindCloudResourceCallable(const BindCloudResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindCloudResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->BindCloudResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::CancelKeyDeletionOutcome KmsClient::CancelKeyDeletion(const CancelKeyDeletionRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelKeyDeletion");
@@ -1753,6 +1796,49 @@ KmsClient::ScheduleKeyDeletionOutcomeCallable KmsClient::ScheduleKeyDeletionCall
         [this, request]()
         {
             return this->ScheduleKeyDeletion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::UnbindCloudResourceOutcome KmsClient::UnbindCloudResource(const UnbindCloudResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindCloudResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindCloudResourceResponse rsp = UnbindCloudResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindCloudResourceOutcome(rsp);
+        else
+            return UnbindCloudResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindCloudResourceOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::UnbindCloudResourceAsync(const UnbindCloudResourceRequest& request, const UnbindCloudResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindCloudResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::UnbindCloudResourceOutcomeCallable KmsClient::UnbindCloudResourceCallable(const UnbindCloudResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindCloudResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindCloudResource(request);
         }
     );
 

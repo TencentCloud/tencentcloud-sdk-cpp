@@ -76,9 +76,11 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取业务类型
+                     * 获取业务类型，用于调用识别策略模板；
+（暂未发布功能，敬请期待）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BizType 业务类型
+                     * @return BizType 业务类型，用于调用识别策略模板；
+（暂未发布功能，敬请期待）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBizType() const;
@@ -104,14 +106,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取状态，可选值：
+                     * 获取查询内容审核任务的状态，可选值：
 FINISH 已完成
 PENDING 等待中
 RUNNING 进行中
 ERROR 出错
 CANCELLED 已取消
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态，可选值：
+                     * @return Status 查询内容审核任务的状态，可选值：
 FINISH 已完成
 PENDING 等待中
 RUNNING 进行中
@@ -128,9 +130,9 @@ CANCELLED 已取消
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取类型
+                     * 获取任务类型：可选AUDIO（点播音频），LIVE_AUDIO（直播音频）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 类型
+                     * @return Type 任务类型：可选AUDIO（点播音频），LIVE_AUDIO（直播音频）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetType() const;
@@ -142,17 +144,15 @@ CANCELLED 已取消
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取审核建议
-可选：
-Pass 通过
-Reveiw 建议复审
-Block 确认违规
+                     * 获取智能审核服务对于内容违规类型的等级，可选值：
+Pass 建议通过；
+Reveiw 建议复审；
+Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Suggestion 审核建议
-可选：
-Pass 通过
-Reveiw 建议复审
-Block 确认违规
+                     * @return Suggestion 智能审核服务对于内容违规类型的等级，可选值：
+Pass 建议通过；
+Reveiw 建议复审；
+Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
@@ -164,9 +164,11 @@ Block 确认违规
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取审核结果
+                     * 获取智能审核服务对于内容违规类型的判断，详见返回值列表
+如：Label：Porn（色情）；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Labels 审核结果
+                     * @return Labels 智能审核服务对于内容违规类型的判断，详见返回值列表
+如：Label：Porn（色情）；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskLabel> GetLabels() const;
@@ -178,9 +180,9 @@ Block 确认违规
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取媒体解码信息
+                     * 获取传入媒体的解码信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MediaInfo 媒体解码信息
+                     * @return MediaInfo 传入媒体的解码信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaInfo GetMediaInfo() const;
@@ -192,9 +194,9 @@ Block 确认违规
                     bool MediaInfoHasBeenSet() const;
 
                     /**
-                     * 获取任务信息
+                     * 获取审核任务的信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputInfo 任务信息
+                     * @return InputInfo 审核任务的信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InputInfo GetInputInfo() const;
@@ -206,9 +208,9 @@ Block 确认违规
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取审核任务的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedAt 创建时间
+                     * @return CreatedAt 审核任务的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCreatedAt() const;
@@ -220,9 +222,9 @@ Block 确认违规
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取审核任务的更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedAt 更新时间
+                     * @return UpdatedAt 审核任务的更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpdatedAt() const;
@@ -234,9 +236,9 @@ Block 确认违规
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取在秒后重试
+                     * 获取在N秒后重试
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TryInSeconds 在秒后重试
+                     * @return TryInSeconds 在N秒后重试
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTryInSeconds() const;
@@ -248,9 +250,9 @@ Block 确认违规
                     bool TryInSecondsHasBeenSet() const;
 
                     /**
-                     * 获取音频结果
+                     * 获取视频/音频审核中的音频结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AudioSegments 音频结果
+                     * @return AudioSegments 视频/音频审核中的音频结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioSegments> GetAudioSegments() const;
@@ -262,9 +264,9 @@ Block 确认违规
                     bool AudioSegmentsHasBeenSet() const;
 
                     /**
-                     * 获取图片结果
+                     * 获取视频审核中的图片结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageSegments 图片结果
+                     * @return ImageSegments 视频审核中的图片结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageSegments> GetImageSegments() const;
@@ -292,7 +294,8 @@ Block 确认违规
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 业务类型
+                     * 业务类型，用于调用识别策略模板；
+（暂未发布功能，敬请期待）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bizType;
@@ -306,7 +309,7 @@ Block 确认违规
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 状态，可选值：
+                     * 查询内容审核任务的状态，可选值：
 FINISH 已完成
 PENDING 等待中
 RUNNING 进行中
@@ -318,74 +321,74 @@ CANCELLED 已取消
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 类型
+                     * 任务类型：可选AUDIO（点播音频），LIVE_AUDIO（直播音频）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 审核建议
-可选：
-Pass 通过
-Reveiw 建议复审
-Block 确认违规
+                     * 智能审核服务对于内容违规类型的等级，可选值：
+Pass 建议通过；
+Reveiw 建议复审；
+Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 审核结果
+                     * 智能审核服务对于内容违规类型的判断，详见返回值列表
+如：Label：Porn（色情）；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskLabel> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 媒体解码信息
+                     * 传入媒体的解码信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaInfo m_mediaInfo;
                     bool m_mediaInfoHasBeenSet;
 
                     /**
-                     * 任务信息
+                     * 审核任务的信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 审核任务的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 审核任务的更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 在秒后重试
+                     * 在N秒后重试
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tryInSeconds;
                     bool m_tryInSecondsHasBeenSet;
 
                     /**
-                     * 音频结果
+                     * 视频/音频审核中的音频结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioSegments> m_audioSegments;
                     bool m_audioSegmentsHasBeenSet;
 
                     /**
-                     * 图片结果
+                     * 视频审核中的图片结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageSegments> m_imageSegments;

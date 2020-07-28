@@ -986,6 +986,49 @@ OcrClient::GeneralHandwritingOCROutcomeCallable OcrClient::GeneralHandwritingOCR
     return task->get_future();
 }
 
+OcrClient::HKIDCardOCROutcome OcrClient::HKIDCardOCR(const HKIDCardOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "HKIDCardOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        HKIDCardOCRResponse rsp = HKIDCardOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return HKIDCardOCROutcome(rsp);
+        else
+            return HKIDCardOCROutcome(o.GetError());
+    }
+    else
+    {
+        return HKIDCardOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::HKIDCardOCRAsync(const HKIDCardOCRRequest& request, const HKIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->HKIDCardOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::HKIDCardOCROutcomeCallable OcrClient::HKIDCardOCRCallable(const HKIDCardOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<HKIDCardOCROutcome()>>(
+        [this, request]()
+        {
+            return this->HKIDCardOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::HmtResidentPermitOCROutcome OcrClient::HmtResidentPermitOCR(const HmtResidentPermitOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "HmtResidentPermitOCR");

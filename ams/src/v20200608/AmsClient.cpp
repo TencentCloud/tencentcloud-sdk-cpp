@@ -83,6 +83,92 @@ AmsClient::CreateAudioModerationTaskOutcomeCallable AmsClient::CreateAudioModera
     return task->get_future();
 }
 
+AmsClient::CreateBizConfigOutcome AmsClient::CreateBizConfig(const CreateBizConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBizConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBizConfigResponse rsp = CreateBizConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBizConfigOutcome(rsp);
+        else
+            return CreateBizConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBizConfigOutcome(outcome.GetError());
+    }
+}
+
+void AmsClient::CreateBizConfigAsync(const CreateBizConfigRequest& request, const CreateBizConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBizConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmsClient::CreateBizConfigOutcomeCallable AmsClient::CreateBizConfigCallable(const CreateBizConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBizConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBizConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AmsClient::DescribeBizConfigOutcome AmsClient::DescribeBizConfig(const DescribeBizConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBizConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBizConfigResponse rsp = DescribeBizConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBizConfigOutcome(rsp);
+        else
+            return DescribeBizConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBizConfigOutcome(outcome.GetError());
+    }
+}
+
+void AmsClient::DescribeBizConfigAsync(const DescribeBizConfigRequest& request, const DescribeBizConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBizConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmsClient::DescribeBizConfigOutcomeCallable AmsClient::DescribeBizConfigCallable(const DescribeBizConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBizConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBizConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmsClient::DescribeTaskDetailOutcome AmsClient::DescribeTaskDetail(const DescribeTaskDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskDetail");

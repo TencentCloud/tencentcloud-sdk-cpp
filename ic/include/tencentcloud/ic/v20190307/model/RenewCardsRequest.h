@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool IccidsHasBeenSet() const;
 
                     /**
-                     * 获取续费的周期
-                     * @return RenewNum 续费的周期
+                     * 获取续费的周期（单位：月）
+                     * @return RenewNum 续费的周期（单位：月）
                      */
                     uint64_t GetRenewNum() const;
 
                     /**
-                     * 设置续费的周期
-                     * @param RenewNum 续费的周期
+                     * 设置续费的周期（单位：月）
+                     * @param RenewNum 续费的周期（单位：月）
                      */
                     void SetRenewNum(const uint64_t& _renewNum);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_iccidsHasBeenSet;
 
                     /**
-                     * 续费的周期
+                     * 续费的周期（单位：月）
                      */
                     uint64_t m_renewNum;
                     bool m_renewNumHasBeenSet;

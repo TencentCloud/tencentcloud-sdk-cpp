@@ -565,14 +565,14 @@ namespace TencentCloud
                     bool NeedSmsHasBeenSet() const;
 
                     /**
-                     * 获取服务
-                     * @return Provider 服务
+                     * 获取供应商
+                     * @return Provider 供应商
                      */
                     int64_t GetProvider() const;
 
                     /**
-                     * 设置服务
-                     * @param Provider 服务
+                     * 设置供应商
+                     * @param Provider 供应商
                      */
                     void SetProvider(const int64_t& _provider);
 
@@ -583,17 +583,17 @@ namespace TencentCloud
                     bool ProviderHasBeenSet() const;
 
                     /**
-                     * 获取实名验证(浙江联通)
+                     * 获取实名认证 0:无 1:未实名 2:已实名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CertificationState 实名验证(浙江联通)
+                     * @return CertificationState 实名认证 0:无 1:未实名 2:已实名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetCertificationState() const;
 
                     /**
-                     * 设置实名验证(浙江联通)
+                     * 设置实名认证 0:无 1:未实名 2:已实名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertificationState 实名验证(浙江联通)
+                     * @param CertificationState 实名认证 0:无 1:未实名 2:已实名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCertificationState(const int64_t& _certificationState);
@@ -774,13 +774,13 @@ namespace TencentCloud
                     bool m_needSmsHasBeenSet;
 
                     /**
-                     * 服务
+                     * 供应商
                      */
                     int64_t m_provider;
                     bool m_providerHasBeenSet;
 
                     /**
-                     * 实名验证(浙江联通)
+                     * 实名认证 0:无 1:未实名 2:已实名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_certificationState;

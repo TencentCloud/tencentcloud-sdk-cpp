@@ -1,0 +1,70 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/ams/v20200608/model/DescribeBizConfigRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Ams::V20200608::Model;
+using namespace rapidjson;
+using namespace std;
+
+DescribeBizConfigRequest::DescribeBizConfigRequest() :
+    m_bizTypeHasBeenSet(false)
+{
+}
+
+string DescribeBizConfigRequest::ToJsonString() const
+{
+    Document d;
+    d.SetObject();
+    Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_bizTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BizType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_bizType.c_str(), allocator).Move(), allocator);
+    }
+
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string DescribeBizConfigRequest::GetBizType() const
+{
+    return m_bizType;
+}
+
+void DescribeBizConfigRequest::SetBizType(const string& _bizType)
+{
+    m_bizType = _bizType;
+    m_bizTypeHasBeenSet = true;
+}
+
+bool DescribeBizConfigRequest::BizTypeHasBeenSet() const
+{
+    return m_bizTypeHasBeenSet;
+}
+
+

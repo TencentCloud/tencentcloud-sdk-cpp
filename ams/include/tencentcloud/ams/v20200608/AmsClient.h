@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ams/v20200608/model/CreateAudioModerationTaskRequest.h>
 #include <tencentcloud/ams/v20200608/model/CreateAudioModerationTaskResponse.h>
+#include <tencentcloud/ams/v20200608/model/CreateBizConfigRequest.h>
+#include <tencentcloud/ams/v20200608/model/CreateBizConfigResponse.h>
+#include <tencentcloud/ams/v20200608/model/DescribeBizConfigRequest.h>
+#include <tencentcloud/ams/v20200608/model/DescribeBizConfigResponse.h>
 #include <tencentcloud/ams/v20200608/model/DescribeTaskDetailRequest.h>
 #include <tencentcloud/ams/v20200608/model/DescribeTaskDetailResponse.h>
 
@@ -44,6 +48,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAudioModerationTaskResponse> CreateAudioModerationTaskOutcome;
                 typedef std::future<CreateAudioModerationTaskOutcome> CreateAudioModerationTaskOutcomeCallable;
                 typedef std::function<void(const AmsClient*, const Model::CreateAudioModerationTaskRequest&, CreateAudioModerationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAudioModerationTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateBizConfigResponse> CreateBizConfigOutcome;
+                typedef std::future<CreateBizConfigOutcome> CreateBizConfigOutcomeCallable;
+                typedef std::function<void(const AmsClient*, const Model::CreateBizConfigRequest&, CreateBizConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBizConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBizConfigResponse> DescribeBizConfigOutcome;
+                typedef std::future<DescribeBizConfigOutcome> DescribeBizConfigOutcomeCallable;
+                typedef std::function<void(const AmsClient*, const Model::DescribeBizConfigRequest&, DescribeBizConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizConfigAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const AmsClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
@@ -81,6 +91,27 @@ namespace TencentCloud
                 CreateAudioModerationTaskOutcome CreateAudioModerationTask(const Model::CreateAudioModerationTaskRequest &request);
                 void CreateAudioModerationTaskAsync(const Model::CreateAudioModerationTaskRequest& request, const CreateAudioModerationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAudioModerationTaskOutcomeCallable CreateAudioModerationTaskCallable(const Model::CreateAudioModerationTaskRequest& request);
+
+                /**
+                 *创建业务配置，1个账号最多可以创建20个配置。在创建业务配置之前，你需要以下步骤：
+1. 开通COS存储捅功能，新建存储桶，cms_segments
+2. 授权天御对 cms_segments存储桶对读写权限。
+这个存储桶用来存储 视频转换过程中生成对音频和图片。
+                 * @param req CreateBizConfigRequest
+                 * @return CreateBizConfigOutcome
+                 */
+                CreateBizConfigOutcome CreateBizConfig(const Model::CreateBizConfigRequest &request);
+                void CreateBizConfigAsync(const Model::CreateBizConfigRequest& request, const CreateBizConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBizConfigOutcomeCallable CreateBizConfigCallable(const Model::CreateBizConfigRequest& request);
+
+                /**
+                 *查看单个配置
+                 * @param req DescribeBizConfigRequest
+                 * @return DescribeBizConfigOutcome
+                 */
+                DescribeBizConfigOutcome DescribeBizConfig(const Model::DescribeBizConfigRequest &request);
+                void DescribeBizConfigAsync(const Model::DescribeBizConfigRequest& request, const DescribeBizConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBizConfigOutcomeCallable DescribeBizConfigCallable(const Model::DescribeBizConfigRequest& request);
 
                 /**
                  *查看任务详情

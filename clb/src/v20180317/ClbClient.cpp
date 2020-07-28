@@ -1416,6 +1416,49 @@ ClbClient::DescribeLoadBalancersOutcomeCallable ClbClient::DescribeLoadBalancers
     return task->get_future();
 }
 
+ClbClient::DescribeLoadBalancersDetailOutcome ClbClient::DescribeLoadBalancersDetail(const DescribeLoadBalancersDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoadBalancersDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoadBalancersDetailResponse rsp = DescribeLoadBalancersDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoadBalancersDetailOutcome(rsp);
+        else
+            return DescribeLoadBalancersDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoadBalancersDetailOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeLoadBalancersDetailAsync(const DescribeLoadBalancersDetailRequest& request, const DescribeLoadBalancersDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLoadBalancersDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeLoadBalancersDetailOutcomeCallable ClbClient::DescribeLoadBalancersDetailCallable(const DescribeLoadBalancersDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancersDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLoadBalancersDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeRewriteOutcome ClbClient::DescribeRewrite(const DescribeRewriteRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRewrite");

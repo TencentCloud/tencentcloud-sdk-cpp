@@ -21,7 +21,7 @@ set(ocr_public_header
 set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/BusinessCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TextArithmetic.h
-  include/tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/HKIDCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceItem.h
   include/tencentcloud/ocr/v20181119/model/TrainTicketOCRRequest.h
@@ -55,6 +55,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/InvoiceDetectInfo.h
   include/tencentcloud/ocr/v20181119/model/MainlandPermitOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/PropOwnerCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/FinanBillInfo.h
   include/tencentcloud/ocr/v20181119/model/TrainTicketOCRResponse.h
@@ -83,6 +84,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/DutyPaidProofOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TollInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/LicensePlateOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/HKIDCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/PermitOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h
@@ -176,7 +178,7 @@ set(ocr_src
   src/v20181119/OcrClient.cpp
   src/v20181119/model/BusinessCardOCRResponse.cpp
   src/v20181119/model/TextArithmetic.cpp
-  src/v20181119/model/BankCardOCRRequest.cpp
+  src/v20181119/model/HKIDCardOCRRequest.cpp
   src/v20181119/model/CarInvoiceOCRRequest.cpp
   src/v20181119/model/MixedInvoiceItem.cpp
   src/v20181119/model/TrainTicketOCRRequest.cpp
@@ -210,6 +212,7 @@ set(ocr_src
   src/v20181119/model/InvoiceDetectInfo.cpp
   src/v20181119/model/MainlandPermitOCRRequest.cpp
   src/v20181119/model/EnterpriseLicenseOCRRequest.cpp
+  src/v20181119/model/BankCardOCRRequest.cpp
   src/v20181119/model/PropOwnerCertOCRResponse.cpp
   src/v20181119/model/FinanBillInfo.cpp
   src/v20181119/model/TrainTicketOCRResponse.cpp
@@ -238,6 +241,7 @@ set(ocr_src
   src/v20181119/model/DutyPaidProofOCRResponse.cpp
   src/v20181119/model/TollInvoiceOCRRequest.cpp
   src/v20181119/model/LicensePlateOCRResponse.cpp
+  src/v20181119/model/HKIDCardOCRResponse.cpp
   src/v20181119/model/PermitOCRRequest.cpp
   src/v20181119/model/InvoiceGeneralOCRResponse.cpp
   src/v20181119/model/TaxiInvoiceOCRRequest.cpp

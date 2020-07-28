@@ -94,8 +94,10 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/CancelKeyDeletionResponse.h
   include/tencentcloud/kms/v20190118/model/DisableKeysRequest.h
   include/tencentcloud/kms/v20190118/model/DisableWhiteBoxKeyRequest.h
+  include/tencentcloud/kms/v20190118/model/UnbindCloudResourceRequest.h
   include/tencentcloud/kms/v20190118/model/ListKeyDetailRequest.h
   include/tencentcloud/kms/v20190118/model/EnableKeyRotationResponse.h
+  include/tencentcloud/kms/v20190118/model/BindCloudResourceResponse.h
   include/tencentcloud/kms/v20190118/model/EnableKeysResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsRequest.h
   include/tencentcloud/kms/v20190118/model/EncryptByWhiteBoxRequest.h
@@ -104,9 +106,11 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DisableKeyRequest.h
   include/tencentcloud/kms/v20190118/model/GetKeyRotationStatusRequest.h
   include/tencentcloud/kms/v20190118/model/GetPublicKeyResponse.h
+  include/tencentcloud/kms/v20190118/model/BindCloudResourceRequest.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.h
   include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionRequest.h
+  include/tencentcloud/kms/v20190118/model/UnbindCloudResourceResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DisableKeyRotationRequest.h
   )
@@ -188,8 +192,10 @@ set(kms_src
   src/v20190118/model/CancelKeyDeletionResponse.cpp
   src/v20190118/model/DisableKeysRequest.cpp
   src/v20190118/model/DisableWhiteBoxKeyRequest.cpp
+  src/v20190118/model/UnbindCloudResourceRequest.cpp
   src/v20190118/model/ListKeyDetailRequest.cpp
   src/v20190118/model/EnableKeyRotationResponse.cpp
+  src/v20190118/model/BindCloudResourceResponse.cpp
   src/v20190118/model/EnableKeysResponse.cpp
   src/v20190118/model/DescribeWhiteBoxDeviceFingerprintsRequest.cpp
   src/v20190118/model/EncryptByWhiteBoxRequest.cpp
@@ -198,9 +204,11 @@ set(kms_src
   src/v20190118/model/DisableKeyRequest.cpp
   src/v20190118/model/GetKeyRotationStatusRequest.cpp
   src/v20190118/model/GetPublicKeyResponse.cpp
+  src/v20190118/model/BindCloudResourceRequest.cpp
   src/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.cpp
   src/v20190118/model/UpdateKeyDescriptionRequest.cpp
+  src/v20190118/model/UnbindCloudResourceResponse.cpp
   src/v20190118/model/DescribeKeyResponse.cpp
   src/v20190118/model/DisableKeyRotationRequest.cpp
   )
