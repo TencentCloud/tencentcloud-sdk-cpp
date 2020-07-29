@@ -52,6 +52,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DuplicateImagePersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/Tag.h
   include/tencentcloud/tcr/v20190924/model/DupImageTagResp.h
   include/tencentcloud/tcr/v20190924/model/DescribeImagesResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeRepositoryFilterPersonalRequest.h
@@ -107,6 +108,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeImageManifestsRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyNamespaceRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryAccessPersonalRequest.h
+  include/tencentcloud/tcr/v20190924/model/TagSpecification.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecycleGlobalPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecyclePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/RepositoryInfoResp.h
@@ -203,6 +205,7 @@ set(tcr_src
   src/v20190924/model/DeleteWebhookTriggerResponse.cpp
   src/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.cpp
   src/v20190924/model/DuplicateImagePersonalResponse.cpp
+  src/v20190924/model/Tag.cpp
   src/v20190924/model/DupImageTagResp.cpp
   src/v20190924/model/DescribeImagesResponse.cpp
   src/v20190924/model/DescribeRepositoryFilterPersonalRequest.cpp
@@ -258,6 +261,7 @@ set(tcr_src
   src/v20190924/model/DescribeImageManifestsRequest.cpp
   src/v20190924/model/ModifyNamespaceRequest.cpp
   src/v20190924/model/ModifyRepositoryAccessPersonalRequest.cpp
+  src/v20190924/model/TagSpecification.cpp
   src/v20190924/model/DescribeImageLifecycleGlobalPersonalRequest.cpp
   src/v20190924/model/DescribeImageLifecyclePersonalRequest.cpp
   src/v20190924/model/RepositoryInfoResp.cpp

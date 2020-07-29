@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcr/v20190924/model/TagSpecification.h>
 
 
 namespace TencentCloud
@@ -244,6 +245,28 @@ namespace TencentCloud
                      */
                     bool InternalEndpointHasBeenSet() const;
 
+                    /**
+                     * 获取实例云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagSpecification 实例云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TagSpecification GetTagSpecification() const;
+
+                    /**
+                     * 设置实例云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagSpecification 实例云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagSpecification(const TagSpecification& _tagSpecification);
+
+                    /**
+                     * 判断参数 TagSpecification 是否已赋值
+                     * @return TagSpecification 是否已赋值
+                     */
+                    bool TagSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +334,13 @@ namespace TencentCloud
                      */
                     std::string m_internalEndpoint;
                     bool m_internalEndpointHasBeenSet;
+
+                    /**
+                     * 实例云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TagSpecification m_tagSpecification;
+                    bool m_tagSpecificationHasBeenSet;
 
                 };
             }

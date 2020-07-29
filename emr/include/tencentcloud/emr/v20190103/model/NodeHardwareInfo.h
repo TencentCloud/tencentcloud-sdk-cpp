@@ -138,17 +138,21 @@ namespace TencentCloud
                     bool WanIpHasBeenSet() const;
 
                     /**
-                     * 获取节点类型
+                     * 获取节点类型。0:common节点；1:master节点
+；2:core节点；3:task节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Flag 节点类型
+                     * @return Flag 节点类型。0:common节点；1:master节点
+；2:core节点；3:task节点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetFlag() const;
 
                     /**
-                     * 设置节点类型
+                     * 设置节点类型。0:common节点；1:master节点
+；2:core节点；3:task节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Flag 节点类型
+                     * @param Flag 节点类型。0:common节点；1:master节点
+；2:core节点；3:task节点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFlag(const int64_t& _flag);
@@ -894,7 +898,8 @@ namespace TencentCloud
                     bool m_wanIpHasBeenSet;
 
                     /**
-                     * 节点类型
+                     * 节点类型。0:common节点；1:master节点
+；2:core节点；3:task节点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flag;

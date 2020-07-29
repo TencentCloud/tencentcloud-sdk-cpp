@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StrategyNameHasBeenSet() const;
 
                     /**
-                     * 获取检测周期
-                     * @return ScanCycle 检测周期
+                     * 获取检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.
+                     * @return ScanCycle 检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.
                      */
                     uint64_t GetScanCycle() const;
 
                     /**
-                     * 设置检测周期
-                     * @param ScanCycle 检测周期
+                     * 设置检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.
+                     * @param ScanCycle 检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.
                      */
                     void SetScanCycle(const uint64_t& _scanCycle);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ScanCycleHasBeenSet() const;
 
                     /**
-                     * 获取定期检测时间，该时间下发扫描
-                     * @return ScanAt 定期检测时间，该时间下发扫描
+                     * 获取定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测
+                     * @return ScanAt 定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测
                      */
                     std::string GetScanAt() const;
 
                     /**
-                     * 设置定期检测时间，该时间下发扫描
-                     * @param ScanAt 定期检测时间，该时间下发扫描
+                     * 设置定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测
+                     * @param ScanAt 定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测
                      */
                     void SetScanAt(const std::string& _scanAt);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ScanAtHasBeenSet() const;
 
                     /**
-                     * 获取该策略下选择的基线id数组
-                     * @return CategoryIds 该策略下选择的基线id数组
+                     * 获取该策略下选择的基线id数组. 示例: [1,3,5,7]
+                     * @return CategoryIds 该策略下选择的基线id数组. 示例: [1,3,5,7]
                      */
                     std::vector<uint64_t> GetCategoryIds() const;
 
                     /**
-                     * 设置该策略下选择的基线id数组
-                     * @param CategoryIds 该策略下选择的基线id数组
+                     * 设置该策略下选择的基线id数组. 示例: [1,3,5,7]
+                     * @param CategoryIds 该策略下选择的基线id数组. 示例: [1,3,5,7]
                      */
                     void SetCategoryIds(const std::vector<uint64_t>& _categoryIds);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool IsGlobalHasBeenSet() const;
 
                     /**
-                     * 获取云主机类型：cvm：虚拟主机，bms：裸金属，ecm：边缘计算主机
-                     * @return MachineType 云主机类型：cvm：虚拟主机，bms：裸金属，ecm：边缘计算主机
+                     * 获取云主机类型：“CVM”：虚拟主机，"BMS"：裸金属，"ECM"：边缘计算主机
+                     * @return MachineType 云主机类型：“CVM”：虚拟主机，"BMS"：裸金属，"ECM"：边缘计算主机
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置云主机类型：cvm：虚拟主机，bms：裸金属，ecm：边缘计算主机
-                     * @param MachineType 云主机类型：cvm：虚拟主机，bms：裸金属，ecm：边缘计算主机
+                     * 设置云主机类型：“CVM”：虚拟主机，"BMS"：裸金属，"ECM"：边缘计算主机
+                     * @param MachineType 云主机类型：“CVM”：虚拟主机，"BMS"：裸金属，"ECM"：边缘计算主机
                      */
                     void SetMachineType(const std::string& _machineType);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取主机地域
-                     * @return RegionCode 主机地域
+                     * 获取主机地域. 示例: "ap-bj"
+                     * @return RegionCode 主机地域. 示例: "ap-bj"
                      */
                     std::string GetRegionCode() const;
 
                     /**
-                     * 设置主机地域
-                     * @param RegionCode 主机地域
+                     * 设置主机地域. 示例: "ap-bj"
+                     * @param RegionCode 主机地域. 示例: "ap-bj"
                      */
                     void SetRegionCode(const std::string& _regionCode);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool RegionCodeHasBeenSet() const;
 
                     /**
-                     * 获取主机id数组
-                     * @return Quuids 主机id数组
+                     * 获取主机id数组. 示例: ["quuid1","quuid2"]
+                     * @return Quuids 主机id数组. 示例: ["quuid1","quuid2"]
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
-                     * 设置主机id数组
-                     * @param Quuids 主机id数组
+                     * 设置主机id数组. 示例: ["quuid1","quuid2"]
+                     * @param Quuids 主机id数组. 示例: ["quuid1","quuid2"]
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
 
@@ -195,19 +195,19 @@ namespace TencentCloud
                     bool m_strategyNameHasBeenSet;
 
                     /**
-                     * 检测周期
+                     * 检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.
                      */
                     uint64_t m_scanCycle;
                     bool m_scanCycleHasBeenSet;
 
                     /**
-                     * 定期检测时间，该时间下发扫描
+                     * 定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测
                      */
                     std::string m_scanAt;
                     bool m_scanAtHasBeenSet;
 
                     /**
-                     * 该策略下选择的基线id数组
+                     * 该策略下选择的基线id数组. 示例: [1,3,5,7]
                      */
                     std::vector<uint64_t> m_categoryIds;
                     bool m_categoryIdsHasBeenSet;
@@ -219,19 +219,19 @@ namespace TencentCloud
                     bool m_isGlobalHasBeenSet;
 
                     /**
-                     * 云主机类型：cvm：虚拟主机，bms：裸金属，ecm：边缘计算主机
+                     * 云主机类型：“CVM”：虚拟主机，"BMS"：裸金属，"ECM"：边缘计算主机
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 主机地域
+                     * 主机地域. 示例: "ap-bj"
                      */
                     std::string m_regionCode;
                     bool m_regionCodeHasBeenSet;
 
                     /**
-                     * 主机id数组
+                     * 主机id数组. 示例: ["quuid1","quuid2"]
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;

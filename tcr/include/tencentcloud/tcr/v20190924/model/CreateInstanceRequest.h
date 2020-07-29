@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcr/v20190924/model/TagSpecification.h>
 
 
 namespace TencentCloud
@@ -78,6 +79,24 @@ namespace TencentCloud
                      */
                     bool RegistryTypeHasBeenSet() const;
 
+                    /**
+                     * 获取云标签描述
+                     * @return TagSpecification 云标签描述
+                     */
+                    TagSpecification GetTagSpecification() const;
+
+                    /**
+                     * 设置云标签描述
+                     * @param TagSpecification 云标签描述
+                     */
+                    void SetTagSpecification(const TagSpecification& _tagSpecification);
+
+                    /**
+                     * 判断参数 TagSpecification 是否已赋值
+                     * @return TagSpecification 是否已赋值
+                     */
+                    bool TagSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +110,12 @@ namespace TencentCloud
                      */
                     std::string m_registryType;
                     bool m_registryTypeHasBeenSet;
+
+                    /**
+                     * 云标签描述
+                     */
+                    TagSpecification m_tagSpecification;
+                    bool m_tagSpecificationHasBeenSet;
 
                 };
             }

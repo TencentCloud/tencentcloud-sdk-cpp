@@ -32,7 +32,8 @@ Registry::Registry() :
     m_regionIdHasBeenSet(false),
     m_enableAnonymousHasBeenSet(false),
     m_tokenValidTimeHasBeenSet(false),
-    m_internalEndpointHasBeenSet(false)
+    m_internalEndpointHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,23 @@ CoreInternalOutcome Registry::Deserialize(const Value &value)
         m_internalEndpointHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSpecification") && !value["TagSpecification"].IsNull())
+    {
+        if (!value["TagSpecification"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Registry.TagSpecification` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tagSpecification.Deserialize(value["TagSpecification"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tagSpecificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +262,15 @@ void Registry::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "InternalEndpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_internalEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_tagSpecification.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -423,5 +450,21 @@ void Registry::SetInternalEndpoint(const string& _internalEndpoint)
 bool Registry::InternalEndpointHasBeenSet() const
 {
     return m_internalEndpointHasBeenSet;
+}
+
+TagSpecification Registry::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void Registry::SetTagSpecification(const TagSpecification& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool Registry::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 

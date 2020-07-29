@@ -150,17 +150,17 @@ namespace TencentCloud
 
                     /**
                      * 获取截图间隔，单位s，默认10s。
-范围： 5s ~ 600s。
+范围： 5s ~ 300s。
                      * @return SnapshotInterval 截图间隔，单位s，默认10s。
-范围： 5s ~ 600s。
+范围： 5s ~ 300s。
                      */
                     int64_t GetSnapshotInterval() const;
 
                     /**
                      * 设置截图间隔，单位s，默认10s。
-范围： 5s ~ 600s。
+范围： 5s ~ 300s。
                      * @param SnapshotInterval 截图间隔，单位s，默认10s。
-范围： 5s ~ 600s。
+范围： 5s ~ 300s。
                      */
                     void SetSnapshotInterval(const int64_t& _snapshotInterval);
 
@@ -298,7 +298,7 @@ namespace TencentCloud
 
                     /**
                      * 截图间隔，单位s，默认10s。
-范围： 5s ~ 600s。
+范围： 5s ~ 300s。
                      */
                     int64_t m_snapshotInterval;
                     bool m_snapshotIntervalHasBeenSet;

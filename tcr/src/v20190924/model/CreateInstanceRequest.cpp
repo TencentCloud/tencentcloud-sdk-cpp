@@ -25,7 +25,8 @@ using namespace std;
 
 CreateInstanceRequest::CreateInstanceRequest() :
     m_registryNameHasBeenSet(false),
-    m_registryTypeHasBeenSet(false)
+    m_registryTypeHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,15 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "RegistryType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_registryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_tagSpecification.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -90,6 +100,22 @@ void CreateInstanceRequest::SetRegistryType(const string& _registryType)
 bool CreateInstanceRequest::RegistryTypeHasBeenSet() const
 {
     return m_registryTypeHasBeenSet;
+}
+
+TagSpecification CreateInstanceRequest::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void CreateInstanceRequest::SetTagSpecification(const TagSpecification& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 
 
