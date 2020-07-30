@@ -43,14 +43,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置id。
-                     * @return ConfigId 配置id。
+                     * 获取配置 ID。
+获取来源：
+1. 创建拉流配置接口CreatePullStreamConfig返回的配置 ID。
+2. 通过查询接口DescribePullStreamConfigs获取配置 ID。
+                     * @return ConfigId 配置 ID。
+获取来源：
+1. 创建拉流配置接口CreatePullStreamConfig返回的配置 ID。
+2. 通过查询接口DescribePullStreamConfigs获取配置 ID。
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置配置id。
-                     * @param ConfigId 配置id。
+                     * 设置配置 ID。
+获取来源：
+1. 创建拉流配置接口CreatePullStreamConfig返回的配置 ID。
+2. 通过查询接口DescribePullStreamConfigs获取配置 ID。
+                     * @param ConfigId 配置 ID。
+获取来源：
+1. 创建拉流配置接口CreatePullStreamConfig返回的配置 ID。
+2. 通过查询接口DescribePullStreamConfigs获取配置 ID。
                      */
                     void SetConfigId(const std::string& _configId);
 
@@ -61,14 +73,34 @@ namespace TencentCloud
                     bool ConfigIdHasBeenSet() const;
 
                     /**
-                     * 获取源Url。
-                     * @return FromUrl 源Url。
+                     * 获取源 URL，用于拉流的地址。目前可支持直播流及点播文件。
+注意：
+1. 多个点播 URL 之间使用空格拼接。
+2. 目前上限支持10个 URL。
+3. 支持拉流文件格式：FLV，RTMP，HLS，MP4。
+4. 使用标准三层样式，如：http://test.com/live/stream.flv。
+                     * @return FromUrl 源 URL，用于拉流的地址。目前可支持直播流及点播文件。
+注意：
+1. 多个点播 URL 之间使用空格拼接。
+2. 目前上限支持10个 URL。
+3. 支持拉流文件格式：FLV，RTMP，HLS，MP4。
+4. 使用标准三层样式，如：http://test.com/live/stream.flv。
                      */
                     std::string GetFromUrl() const;
 
                     /**
-                     * 设置源Url。
-                     * @param FromUrl 源Url。
+                     * 设置源 URL，用于拉流的地址。目前可支持直播流及点播文件。
+注意：
+1. 多个点播 URL 之间使用空格拼接。
+2. 目前上限支持10个 URL。
+3. 支持拉流文件格式：FLV，RTMP，HLS，MP4。
+4. 使用标准三层样式，如：http://test.com/live/stream.flv。
+                     * @param FromUrl 源 URL，用于拉流的地址。目前可支持直播流及点播文件。
+注意：
+1. 多个点播 URL 之间使用空格拼接。
+2. 目前上限支持10个 URL。
+3. 支持拉流文件格式：FLV，RTMP，HLS，MP4。
+4. 使用标准三层样式，如：http://test.com/live/stream.flv。
                      */
                     void SetFromUrl(const std::string& _fromUrl);
 
@@ -79,14 +111,22 @@ namespace TencentCloud
                     bool FromUrlHasBeenSet() const;
 
                     /**
-                     * 获取目的Url。
-                     * @return ToUrl 目的Url。
+                     * 获取目的 URL，用于推流的地址，目前限制该目标地址为腾讯域名。
+1. 仅支持 RTMP 协议。
+2. 使用标准三层样式，如：http://test.com/live/stream.flv。
+                     * @return ToUrl 目的 URL，用于推流的地址，目前限制该目标地址为腾讯域名。
+1. 仅支持 RTMP 协议。
+2. 使用标准三层样式，如：http://test.com/live/stream.flv。
                      */
                     std::string GetToUrl() const;
 
                     /**
-                     * 设置目的Url。
-                     * @param ToUrl 目的Url。
+                     * 设置目的 URL，用于推流的地址，目前限制该目标地址为腾讯域名。
+1. 仅支持 RTMP 协议。
+2. 使用标准三层样式，如：http://test.com/live/stream.flv。
+                     * @param ToUrl 目的 URL，用于推流的地址，目前限制该目标地址为腾讯域名。
+1. 仅支持 RTMP 协议。
+2. 使用标准三层样式，如：http://test.com/live/stream.flv。
                      */
                     void SetToUrl(const std::string& _toUrl);
 
@@ -97,32 +137,32 @@ namespace TencentCloud
                     bool ToUrlHasBeenSet() const;
 
                     /**
-                     * 获取区域id：
-1-深圳，
-2-上海，
-3-天津，
+                     * 获取区域 ID：
+1-深圳。
+2-上海。
+3-天津。
 4-中国香港。
 如有改动，需同时传入IspId。
-                     * @return AreaId 区域id：
-1-深圳，
-2-上海，
-3-天津，
+                     * @return AreaId 区域 ID：
+1-深圳。
+2-上海。
+3-天津。
 4-中国香港。
 如有改动，需同时传入IspId。
                      */
                     int64_t GetAreaId() const;
 
                     /**
-                     * 设置区域id：
-1-深圳，
-2-上海，
-3-天津，
+                     * 设置区域 ID：
+1-深圳。
+2-上海。
+3-天津。
 4-中国香港。
 如有改动，需同时传入IspId。
-                     * @param AreaId 区域id：
-1-深圳，
-2-上海，
-3-天津，
+                     * @param AreaId 区域 ID：
+1-深圳。
+2-上海。
+3-天津。
 4-中国香港。
 如有改动，需同时传入IspId。
                      */
@@ -135,14 +175,34 @@ namespace TencentCloud
                     bool AreaIdHasBeenSet() const;
 
                     /**
-                     * 获取运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。如有改动，需同时传入AreaId。
-                     * @return IspId 运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。如有改动，需同时传入AreaId。
+                     * 获取运营商 ID，
+1：电信。
+2：移动。
+3：联通。
+4：其他。
+AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaId。
+                     * @return IspId 运营商 ID，
+1：电信。
+2：移动。
+3：联通。
+4：其他。
+AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaId。
                      */
                     int64_t GetIspId() const;
 
                     /**
-                     * 设置运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。如有改动，需同时传入AreaId。
-                     * @param IspId 运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。如有改动，需同时传入AreaId。
+                     * 设置运营商 ID，
+1：电信。
+2：移动。
+3：联通。
+4：其他。
+AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaId。
+                     * @param IspId 运营商 ID，
+1：电信。
+2：移动。
+3：联通。
+4：其他。
+AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaId。
                      */
                     void SetIspId(const int64_t& _ispId);
 
@@ -231,28 +291,38 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置id。
+                     * 配置 ID。
+获取来源：
+1. 创建拉流配置接口CreatePullStreamConfig返回的配置 ID。
+2. 通过查询接口DescribePullStreamConfigs获取配置 ID。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
 
                     /**
-                     * 源Url。
+                     * 源 URL，用于拉流的地址。目前可支持直播流及点播文件。
+注意：
+1. 多个点播 URL 之间使用空格拼接。
+2. 目前上限支持10个 URL。
+3. 支持拉流文件格式：FLV，RTMP，HLS，MP4。
+4. 使用标准三层样式，如：http://test.com/live/stream.flv。
                      */
                     std::string m_fromUrl;
                     bool m_fromUrlHasBeenSet;
 
                     /**
-                     * 目的Url。
+                     * 目的 URL，用于推流的地址，目前限制该目标地址为腾讯域名。
+1. 仅支持 RTMP 协议。
+2. 使用标准三层样式，如：http://test.com/live/stream.flv。
                      */
                     std::string m_toUrl;
                     bool m_toUrlHasBeenSet;
 
                     /**
-                     * 区域id：
-1-深圳，
-2-上海，
-3-天津，
+                     * 区域 ID：
+1-深圳。
+2-上海。
+3-天津。
 4-中国香港。
 如有改动，需同时传入IspId。
                      */
@@ -260,7 +330,12 @@ namespace TencentCloud
                     bool m_areaIdHasBeenSet;
 
                     /**
-                     * 运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。如有改动，需同时传入AreaId。
+                     * 运营商 ID，
+1：电信。
+2：移动。
+3：联通。
+4：其他。
+AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaId。
                      */
                     int64_t m_ispId;
                     bool m_ispIdHasBeenSet;

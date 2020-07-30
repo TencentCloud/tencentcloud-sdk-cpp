@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool RepositoryNameHasBeenSet() const;
 
                     /**
-                     * 获取仓库类型
-                     * @return RepositoryType 仓库类型
+                     * 获取仓库类型（默认仓库：default，私有仓库：private）
+                     * @return RepositoryType 仓库类型（默认仓库：default，私有仓库：private）
                      */
                     std::string GetRepositoryType() const;
 
                     /**
-                     * 设置仓库类型
-                     * @param RepositoryType 仓库类型
+                     * 设置仓库类型（默认仓库：default，私有仓库：private）
+                     * @param RepositoryType 仓库类型（默认仓库：default，私有仓库：private）
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_repositoryNameHasBeenSet;
 
                     /**
-                     * 仓库类型
+                     * 仓库类型（默认仓库：default，私有仓库：private）
                      */
                     std::string m_repositoryType;
                     bool m_repositoryTypeHasBeenSet;

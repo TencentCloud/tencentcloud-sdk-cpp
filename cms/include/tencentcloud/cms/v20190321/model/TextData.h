@@ -243,6 +243,24 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
+                     * 获取和请求中的DataId一致，原样返回
+                     * @return DataId 和请求中的DataId一致，原样返回
+                     */
+                    std::string GetDataId() const;
+
+                    /**
+                     * 设置和请求中的DataId一致，原样返回
+                     * @param DataId 和请求中的DataId一致，原样返回
+                     */
+                    void SetDataId(const std::string& _dataId);
+
+                    /**
+                     * 判断参数 DataId 是否已赋值
+                     * @return DataId 是否已赋值
+                     */
+                    bool DataIdHasBeenSet() const;
+
+                    /**
                      * 获取恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
                      * @return EvilLabel 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
                      */
@@ -259,6 +277,24 @@ namespace TencentCloud
                      * @return EvilLabel 是否已赋值
                      */
                     bool EvilLabelHasBeenSet() const;
+
+                    /**
+                     * 获取输出的其他信息，不同客户内容不同
+                     * @return Extra 输出的其他信息，不同客户内容不同
+                     */
+                    std::string GetExtra() const;
+
+                    /**
+                     * 设置输出的其他信息，不同客户内容不同
+                     * @param Extra 输出的其他信息，不同客户内容不同
+                     */
+                    void SetExtra(const std::string& _extra);
+
+                    /**
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
+                     */
+                    bool ExtraHasBeenSet() const;
 
                     /**
                      * 获取命中的关键词
@@ -378,10 +414,22 @@ namespace TencentCloud
                     bool m_bizTypeHasBeenSet;
 
                     /**
+                     * 和请求中的DataId一致，原样返回
+                     */
+                    std::string m_dataId;
+                    bool m_dataIdHasBeenSet;
+
+                    /**
                      * 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
                      */
                     std::string m_evilLabel;
                     bool m_evilLabelHasBeenSet;
+
+                    /**
+                     * 输出的其他信息，不同客户内容不同
+                     */
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
 
                     /**
                      * 命中的关键词

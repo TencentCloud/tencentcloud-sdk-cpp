@@ -208,6 +208,42 @@ namespace TencentCloud
                      */
                     bool FreezingHasBeenSet() const;
 
+                    /**
+                     * 获取交易渠道
+                     * @return PayChannel 交易渠道
+                     */
+                    std::string GetPayChannel() const;
+
+                    /**
+                     * 设置交易渠道
+                     * @param PayChannel 交易渠道
+                     */
+                    void SetPayChannel(const std::string& _payChannel);
+
+                    /**
+                     * 判断参数 PayChannel 是否已赋值
+                     * @return PayChannel 是否已赋值
+                     */
+                    bool PayChannelHasBeenSet() const;
+
+                    /**
+                     * 获取扣费模式：trade 包年包月(预付费)，hourh  按量-小时结，hourd 按量-日结，hourm 按量-月结，month 按量-月结
+                     * @return DeductMode 扣费模式：trade 包年包月(预付费)，hourh  按量-小时结，hourd 按量-日结，hourm 按量-月结，month 按量-月结
+                     */
+                    std::string GetDeductMode() const;
+
+                    /**
+                     * 设置扣费模式：trade 包年包月(预付费)，hourh  按量-小时结，hourd 按量-日结，hourm 按量-月结，month 按量-月结
+                     * @param DeductMode 扣费模式：trade 包年包月(预付费)，hourh  按量-小时结，hourd 按量-日结，hourm 按量-月结，month 按量-月结
+                     */
+                    void SetDeductMode(const std::string& _deductMode);
+
+                    /**
+                     * 判断参数 DeductMode 是否已赋值
+                     * @return DeductMode 是否已赋值
+                     */
+                    bool DeductModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +299,18 @@ namespace TencentCloud
                      */
                     int64_t m_freezing;
                     bool m_freezingHasBeenSet;
+
+                    /**
+                     * 交易渠道
+                     */
+                    std::string m_payChannel;
+                    bool m_payChannelHasBeenSet;
+
+                    /**
+                     * 扣费模式：trade 包年包月(预付费)，hourh  按量-小时结，hourd 按量-日结，hourm 按量-月结，month 按量-月结
+                     */
+                    std::string m_deductMode;
+                    bool m_deductModeHasBeenSet;
 
                 };
             }

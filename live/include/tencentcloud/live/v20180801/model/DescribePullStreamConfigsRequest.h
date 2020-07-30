@@ -44,13 +44,17 @@ namespace TencentCloud
 
                     /**
                      * 获取配置 ID。
+获取途径：从 CreatePullStreamConfig 接口返回值获取。
                      * @return ConfigId 配置 ID。
+获取途径：从 CreatePullStreamConfig 接口返回值获取。
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置配置 ID。
+获取途径：从 CreatePullStreamConfig 接口返回值获取。
                      * @param ConfigId 配置 ID。
+获取途径：从 CreatePullStreamConfig 接口返回值获取。
                      */
                     void SetConfigId(const std::string& _configId);
 
@@ -64,6 +68,7 @@ namespace TencentCloud
 
                     /**
                      * 配置 ID。
+获取途径：从 CreatePullStreamConfig 接口返回值获取。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;

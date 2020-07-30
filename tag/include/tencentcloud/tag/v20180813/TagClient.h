@@ -43,6 +43,8 @@
 #include <tencentcloud/tag/v20180813/model/DescribeResourceTagsByTagKeysResponse.h>
 #include <tencentcloud/tag/v20180813/model/DescribeResourcesByTagsRequest.h>
 #include <tencentcloud/tag/v20180813/model/DescribeResourcesByTagsResponse.h>
+#include <tencentcloud/tag/v20180813/model/DescribeResourcesByTagsUnionRequest.h>
+#include <tencentcloud/tag/v20180813/model/DescribeResourcesByTagsUnionResponse.h>
 #include <tencentcloud/tag/v20180813/model/DescribeTagKeysRequest.h>
 #include <tencentcloud/tag/v20180813/model/DescribeTagKeysResponse.h>
 #include <tencentcloud/tag/v20180813/model/DescribeTagValuesRequest.h>
@@ -105,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeResourcesByTagsResponse> DescribeResourcesByTagsOutcome;
                 typedef std::future<DescribeResourcesByTagsOutcome> DescribeResourcesByTagsOutcomeCallable;
                 typedef std::function<void(const TagClient*, const Model::DescribeResourcesByTagsRequest&, DescribeResourcesByTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcesByTagsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeResourcesByTagsUnionResponse> DescribeResourcesByTagsUnionOutcome;
+                typedef std::future<DescribeResourcesByTagsUnionOutcome> DescribeResourcesByTagsUnionOutcomeCallable;
+                typedef std::function<void(const TagClient*, const Model::DescribeResourcesByTagsUnionRequest&, DescribeResourcesByTagsUnionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcesByTagsUnionAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTagKeysResponse> DescribeTagKeysOutcome;
                 typedef std::future<DescribeTagKeysOutcome> DescribeTagKeysOutcomeCallable;
                 typedef std::function<void(const TagClient*, const Model::DescribeTagKeysRequest&, DescribeTagKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagKeysAsyncHandler;
@@ -224,6 +229,15 @@ namespace TencentCloud
                 DescribeResourcesByTagsOutcome DescribeResourcesByTags(const Model::DescribeResourcesByTagsRequest &request);
                 void DescribeResourcesByTagsAsync(const Model::DescribeResourcesByTagsRequest& request, const DescribeResourcesByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResourcesByTagsOutcomeCallable DescribeResourcesByTagsCallable(const Model::DescribeResourcesByTagsRequest& request);
+
+                /**
+                 *通过标签查询资源列表并集
+                 * @param req DescribeResourcesByTagsUnionRequest
+                 * @return DescribeResourcesByTagsUnionOutcome
+                 */
+                DescribeResourcesByTagsUnionOutcome DescribeResourcesByTagsUnion(const Model::DescribeResourcesByTagsUnionRequest &request);
+                void DescribeResourcesByTagsUnionAsync(const Model::DescribeResourcesByTagsUnionRequest& request, const DescribeResourcesByTagsUnionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcesByTagsUnionOutcomeCallable DescribeResourcesByTagsUnionCallable(const Model::DescribeResourcesByTagsUnionRequest& request);
 
                 /**
                  *用于查询已建立的标签列表中的标签键。

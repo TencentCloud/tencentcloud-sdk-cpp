@@ -470,6 +470,49 @@ TagClient::DescribeResourcesByTagsOutcomeCallable TagClient::DescribeResourcesBy
     return task->get_future();
 }
 
+TagClient::DescribeResourcesByTagsUnionOutcome TagClient::DescribeResourcesByTagsUnion(const DescribeResourcesByTagsUnionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourcesByTagsUnion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourcesByTagsUnionResponse rsp = DescribeResourcesByTagsUnionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourcesByTagsUnionOutcome(rsp);
+        else
+            return DescribeResourcesByTagsUnionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourcesByTagsUnionOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::DescribeResourcesByTagsUnionAsync(const DescribeResourcesByTagsUnionRequest& request, const DescribeResourcesByTagsUnionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourcesByTagsUnion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::DescribeResourcesByTagsUnionOutcomeCallable TagClient::DescribeResourcesByTagsUnionCallable(const DescribeResourcesByTagsUnionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourcesByTagsUnionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourcesByTagsUnion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TagClient::DescribeTagKeysOutcome TagClient::DescribeTagKeys(const DescribeTagKeysRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTagKeys");

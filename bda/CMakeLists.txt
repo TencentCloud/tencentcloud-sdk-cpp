@@ -28,6 +28,7 @@ set(bda_public_header_model
   include/tencentcloud/bda/v20200324/model/BodyAttributeInfo.h
   include/tencentcloud/bda/v20200324/model/GetGroupListResponse.h
   include/tencentcloud/bda/v20200324/model/GroupInfo.h
+  include/tencentcloud/bda/v20200324/model/SegmentationOptions.h
   include/tencentcloud/bda/v20200324/model/ModifyGroupRequest.h
   include/tencentcloud/bda/v20200324/model/CreatePersonRequest.h
   include/tencentcloud/bda/v20200324/model/ModifyPersonInfoResponse.h
@@ -35,6 +36,7 @@ set(bda_public_header_model
   include/tencentcloud/bda/v20200324/model/DeleteGroupRequest.h
   include/tencentcloud/bda/v20200324/model/ModifyPersonInfoRequest.h
   include/tencentcloud/bda/v20200324/model/Gender.h
+  include/tencentcloud/bda/v20200324/model/SegmentCustomizedPortraitPicRequest.h
   include/tencentcloud/bda/v20200324/model/CreateGroupRequest.h
   include/tencentcloud/bda/v20200324/model/LowerBodyCloth.h
   include/tencentcloud/bda/v20200324/model/UpperBodyClothTexture.h
@@ -48,6 +50,7 @@ set(bda_public_header_model
   include/tencentcloud/bda/v20200324/model/DetectBodyResponse.h
   include/tencentcloud/bda/v20200324/model/PersonInfo.h
   include/tencentcloud/bda/v20200324/model/Bag.h
+  include/tencentcloud/bda/v20200324/model/SegmentCustomizedPortraitPicResponse.h
   include/tencentcloud/bda/v20200324/model/DetectBodyJointsRequest.h
   include/tencentcloud/bda/v20200324/model/SegmentPortraitPicRequest.h
   include/tencentcloud/bda/v20200324/model/UpperBodyClothColor.h
@@ -82,6 +85,7 @@ set(bda_src
   src/v20200324/model/BodyAttributeInfo.cpp
   src/v20200324/model/GetGroupListResponse.cpp
   src/v20200324/model/GroupInfo.cpp
+  src/v20200324/model/SegmentationOptions.cpp
   src/v20200324/model/ModifyGroupRequest.cpp
   src/v20200324/model/CreatePersonRequest.cpp
   src/v20200324/model/ModifyPersonInfoResponse.cpp
@@ -89,6 +93,7 @@ set(bda_src
   src/v20200324/model/DeleteGroupRequest.cpp
   src/v20200324/model/ModifyPersonInfoRequest.cpp
   src/v20200324/model/Gender.cpp
+  src/v20200324/model/SegmentCustomizedPortraitPicRequest.cpp
   src/v20200324/model/CreateGroupRequest.cpp
   src/v20200324/model/LowerBodyCloth.cpp
   src/v20200324/model/UpperBodyClothTexture.cpp
@@ -102,6 +107,7 @@ set(bda_src
   src/v20200324/model/DetectBodyResponse.cpp
   src/v20200324/model/PersonInfo.cpp
   src/v20200324/model/Bag.cpp
+  src/v20200324/model/SegmentCustomizedPortraitPicResponse.cpp
   src/v20200324/model/DetectBodyJointsRequest.cpp
   src/v20200324/model/SegmentPortraitPicRequest.cpp
   src/v20200324/model/UpperBodyClothColor.cpp

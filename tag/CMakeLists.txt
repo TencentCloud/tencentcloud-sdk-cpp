@@ -30,14 +30,16 @@ set(tag_public_header_model
   include/tencentcloud/tag/v20180813/model/DescribeTagKeysResponse.h
   include/tencentcloud/tag/v20180813/model/DescribeTagValuesRequest.h
   include/tencentcloud/tag/v20180813/model/ModifyResourceTagsRequest.h
+  include/tencentcloud/tag/v20180813/model/DescribeResourcesByTagsUnionRequest.h
   include/tencentcloud/tag/v20180813/model/DescribeTagsResponse.h
   include/tencentcloud/tag/v20180813/model/DescribeResourcesByTagsResponse.h
   include/tencentcloud/tag/v20180813/model/DescribeTagKeysRequest.h
   include/tencentcloud/tag/v20180813/model/DescribeTagsSeqResponse.h
   include/tencentcloud/tag/v20180813/model/DescribeResourceTagsResponse.h
   include/tencentcloud/tag/v20180813/model/DescribeResourceTagsByResourceIdsRequest.h
-  include/tencentcloud/tag/v20180813/model/DescribeTagsSeqRequest.h
+  include/tencentcloud/tag/v20180813/model/DescribeResourcesByTagsUnionResponse.h
   include/tencentcloud/tag/v20180813/model/DescribeResourceTagsByResourceIdsResponse.h
+  include/tencentcloud/tag/v20180813/model/ModifyResourcesTagValueRequest.h
   include/tencentcloud/tag/v20180813/model/TagResource.h
   include/tencentcloud/tag/v20180813/model/AddResourceTagResponse.h
   include/tencentcloud/tag/v20180813/model/ModifyResourcesTagValueResponse.h
@@ -45,7 +47,7 @@ set(tag_public_header_model
   include/tencentcloud/tag/v20180813/model/DescribeTagValuesSeqResponse.h
   include/tencentcloud/tag/v20180813/model/CreateTagRequest.h
   include/tencentcloud/tag/v20180813/model/DescribeResourceTagsByTagKeysResponse.h
-  include/tencentcloud/tag/v20180813/model/ModifyResourcesTagValueRequest.h
+  include/tencentcloud/tag/v20180813/model/DescribeTagsSeqRequest.h
   include/tencentcloud/tag/v20180813/model/DescribeTagValuesResponse.h
   include/tencentcloud/tag/v20180813/model/TagFilter.h
   include/tencentcloud/tag/v20180813/model/Tag.h
@@ -79,14 +81,16 @@ set(tag_src
   src/v20180813/model/DescribeTagKeysResponse.cpp
   src/v20180813/model/DescribeTagValuesRequest.cpp
   src/v20180813/model/ModifyResourceTagsRequest.cpp
+  src/v20180813/model/DescribeResourcesByTagsUnionRequest.cpp
   src/v20180813/model/DescribeTagsResponse.cpp
   src/v20180813/model/DescribeResourcesByTagsResponse.cpp
   src/v20180813/model/DescribeTagKeysRequest.cpp
   src/v20180813/model/DescribeTagsSeqResponse.cpp
   src/v20180813/model/DescribeResourceTagsResponse.cpp
   src/v20180813/model/DescribeResourceTagsByResourceIdsRequest.cpp
-  src/v20180813/model/DescribeTagsSeqRequest.cpp
+  src/v20180813/model/DescribeResourcesByTagsUnionResponse.cpp
   src/v20180813/model/DescribeResourceTagsByResourceIdsResponse.cpp
+  src/v20180813/model/ModifyResourcesTagValueRequest.cpp
   src/v20180813/model/TagResource.cpp
   src/v20180813/model/AddResourceTagResponse.cpp
   src/v20180813/model/ModifyResourcesTagValueResponse.cpp
@@ -94,7 +98,7 @@ set(tag_src
   src/v20180813/model/DescribeTagValuesSeqResponse.cpp
   src/v20180813/model/CreateTagRequest.cpp
   src/v20180813/model/DescribeResourceTagsByTagKeysResponse.cpp
-  src/v20180813/model/ModifyResourcesTagValueRequest.cpp
+  src/v20180813/model/DescribeTagsSeqRequest.cpp
   src/v20180813/model/DescribeTagValuesResponse.cpp
   src/v20180813/model/TagFilter.cpp
   src/v20180813/model/Tag.cpp

@@ -556,6 +556,49 @@ BdaClient::SearchTraceOutcomeCallable BdaClient::SearchTraceCallable(const Searc
     return task->get_future();
 }
 
+BdaClient::SegmentCustomizedPortraitPicOutcome BdaClient::SegmentCustomizedPortraitPic(const SegmentCustomizedPortraitPicRequest &request)
+{
+    auto outcome = MakeRequest(request, "SegmentCustomizedPortraitPic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SegmentCustomizedPortraitPicResponse rsp = SegmentCustomizedPortraitPicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SegmentCustomizedPortraitPicOutcome(rsp);
+        else
+            return SegmentCustomizedPortraitPicOutcome(o.GetError());
+    }
+    else
+    {
+        return SegmentCustomizedPortraitPicOutcome(outcome.GetError());
+    }
+}
+
+void BdaClient::SegmentCustomizedPortraitPicAsync(const SegmentCustomizedPortraitPicRequest& request, const SegmentCustomizedPortraitPicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SegmentCustomizedPortraitPic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BdaClient::SegmentCustomizedPortraitPicOutcomeCallable BdaClient::SegmentCustomizedPortraitPicCallable(const SegmentCustomizedPortraitPicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SegmentCustomizedPortraitPicOutcome()>>(
+        [this, request]()
+        {
+            return this->SegmentCustomizedPortraitPic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BdaClient::SegmentPortraitPicOutcome BdaClient::SegmentPortraitPic(const SegmentPortraitPicRequest &request)
 {
     auto outcome = MakeRequest(request, "SegmentPortraitPic");

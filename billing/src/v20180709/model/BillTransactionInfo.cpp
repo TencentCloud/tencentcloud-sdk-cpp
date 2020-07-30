@@ -30,7 +30,9 @@ BillTransactionInfo::BillTransactionInfo() :
     m_operationTimeHasBeenSet(false),
     m_cashHasBeenSet(false),
     m_incentiveHasBeenSet(false),
-    m_freezingHasBeenSet(false)
+    m_freezingHasBeenSet(false),
+    m_payChannelHasBeenSet(false),
+    m_deductModeHasBeenSet(false)
 {
 }
 
@@ -129,6 +131,26 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const Value &value)
         m_freezingHasBeenSet = true;
     }
 
+    if (value.HasMember("PayChannel") && !value["PayChannel"].IsNull())
+    {
+        if (!value["PayChannel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillTransactionInfo.PayChannel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payChannel = string(value["PayChannel"].GetString());
+        m_payChannelHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeductMode") && !value["DeductMode"].IsNull())
+    {
+        if (!value["DeductMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillTransactionInfo.DeductMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deductMode = string(value["DeductMode"].GetString());
+        m_deductModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +228,22 @@ void BillTransactionInfo::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "Freezing";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_freezing, allocator);
+    }
+
+    if (m_payChannelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayChannel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_payChannel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deductModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeductMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deductMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +391,37 @@ void BillTransactionInfo::SetFreezing(const int64_t& _freezing)
 bool BillTransactionInfo::FreezingHasBeenSet() const
 {
     return m_freezingHasBeenSet;
+}
+
+string BillTransactionInfo::GetPayChannel() const
+{
+    return m_payChannel;
+}
+
+void BillTransactionInfo::SetPayChannel(const string& _payChannel)
+{
+    m_payChannel = _payChannel;
+    m_payChannelHasBeenSet = true;
+}
+
+bool BillTransactionInfo::PayChannelHasBeenSet() const
+{
+    return m_payChannelHasBeenSet;
+}
+
+string BillTransactionInfo::GetDeductMode() const
+{
+    return m_deductMode;
+}
+
+void BillTransactionInfo::SetDeductMode(const string& _deductMode)
+{
+    m_deductMode = _deductMode;
+    m_deductModeHasBeenSet = true;
+}
+
+bool BillTransactionInfo::DeductModeHasBeenSet() const
+{
+    return m_deductModeHasBeenSet;
 }
 

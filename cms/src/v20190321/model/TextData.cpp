@@ -31,7 +31,9 @@ TextData::TextData() :
     m_resHasBeenSet(false),
     m_riskDetailsHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
+    m_dataIdHasBeenSet(false),
     m_evilLabelHasBeenSet(false),
+    m_extraHasBeenSet(false),
     m_keywordsHasBeenSet(false),
     m_scoreHasBeenSet(false),
     m_suggestionHasBeenSet(false)
@@ -184,6 +186,16 @@ CoreInternalOutcome TextData::Deserialize(const Value &value)
         m_bizTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DataId") && !value["DataId"].IsNull())
+    {
+        if (!value["DataId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TextData.DataId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataId = string(value["DataId"].GetString());
+        m_dataIdHasBeenSet = true;
+    }
+
     if (value.HasMember("EvilLabel") && !value["EvilLabel"].IsNull())
     {
         if (!value["EvilLabel"].IsString())
@@ -192,6 +204,16 @@ CoreInternalOutcome TextData::Deserialize(const Value &value)
         }
         m_evilLabel = string(value["EvilLabel"].GetString());
         m_evilLabelHasBeenSet = true;
+    }
+
+    if (value.HasMember("Extra") && !value["Extra"].IsNull())
+    {
+        if (!value["Extra"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TextData.Extra` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extra = string(value["Extra"].GetString());
+        m_extraHasBeenSet = true;
     }
 
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
@@ -330,12 +352,28 @@ void TextData::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         value.AddMember(iKey, m_bizType, allocator);
     }
 
+    if (m_dataIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_dataId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_evilLabelHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "EvilLabel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_evilLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Extra";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keywordsHasBeenSet)
@@ -514,6 +552,22 @@ bool TextData::BizTypeHasBeenSet() const
     return m_bizTypeHasBeenSet;
 }
 
+string TextData::GetDataId() const
+{
+    return m_dataId;
+}
+
+void TextData::SetDataId(const string& _dataId)
+{
+    m_dataId = _dataId;
+    m_dataIdHasBeenSet = true;
+}
+
+bool TextData::DataIdHasBeenSet() const
+{
+    return m_dataIdHasBeenSet;
+}
+
 string TextData::GetEvilLabel() const
 {
     return m_evilLabel;
@@ -528,6 +582,22 @@ void TextData::SetEvilLabel(const string& _evilLabel)
 bool TextData::EvilLabelHasBeenSet() const
 {
     return m_evilLabelHasBeenSet;
+}
+
+string TextData::GetExtra() const
+{
+    return m_extra;
+}
+
+void TextData::SetExtra(const string& _extra)
+{
+    m_extra = _extra;
+    m_extraHasBeenSet = true;
+}
+
+bool TextData::ExtraHasBeenSet() const
+{
+    return m_extraHasBeenSet;
 }
 
 vector<string> TextData::GetKeywords() const

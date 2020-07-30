@@ -47,6 +47,8 @@
 #include <tencentcloud/bda/v20200324/model/ModifyPersonInfoResponse.h>
 #include <tencentcloud/bda/v20200324/model/SearchTraceRequest.h>
 #include <tencentcloud/bda/v20200324/model/SearchTraceResponse.h>
+#include <tencentcloud/bda/v20200324/model/SegmentCustomizedPortraitPicRequest.h>
+#include <tencentcloud/bda/v20200324/model/SegmentCustomizedPortraitPicResponse.h>
 #include <tencentcloud/bda/v20200324/model/SegmentPortraitPicRequest.h>
 #include <tencentcloud/bda/v20200324/model/SegmentPortraitPicResponse.h>
 
@@ -99,6 +101,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SearchTraceResponse> SearchTraceOutcome;
                 typedef std::future<SearchTraceOutcome> SearchTraceOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::SearchTraceRequest&, SearchTraceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchTraceAsyncHandler;
+                typedef Outcome<Error, Model::SegmentCustomizedPortraitPicResponse> SegmentCustomizedPortraitPicOutcome;
+                typedef std::future<SegmentCustomizedPortraitPicOutcome> SegmentCustomizedPortraitPicOutcomeCallable;
+                typedef std::function<void(const BdaClient*, const Model::SegmentCustomizedPortraitPicRequest&, SegmentCustomizedPortraitPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SegmentCustomizedPortraitPicAsyncHandler;
                 typedef Outcome<Error, Model::SegmentPortraitPicResponse> SegmentPortraitPicOutcome;
                 typedef std::future<SegmentPortraitPicOutcome> SegmentPortraitPicOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::SegmentPortraitPicRequest&, SegmentPortraitPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SegmentPortraitPicAsyncHandler;
@@ -241,6 +246,15 @@ namespace TencentCloud
                 SearchTraceOutcome SearchTrace(const Model::SearchTraceRequest &request);
                 void SearchTraceAsync(const Model::SearchTraceRequest& request, const SearchTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchTraceOutcomeCallable SearchTraceCallable(const Model::SearchTraceRequest& request);
+
+                /**
+                 *在前后景分割的基础上优化多分类分割，支持对头发、五官等的分割，既作为换发型、挂件等底层技术，也可用于扣人头、扣人脸等玩法
+                 * @param req SegmentCustomizedPortraitPicRequest
+                 * @return SegmentCustomizedPortraitPicOutcome
+                 */
+                SegmentCustomizedPortraitPicOutcome SegmentCustomizedPortraitPic(const Model::SegmentCustomizedPortraitPicRequest &request);
+                void SegmentCustomizedPortraitPicAsync(const Model::SegmentCustomizedPortraitPicRequest& request, const SegmentCustomizedPortraitPicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SegmentCustomizedPortraitPicOutcomeCallable SegmentCustomizedPortraitPicCallable(const Model::SegmentCustomizedPortraitPicRequest& request);
 
                 /**
                  *识别传入图片中人体的完整轮廓，进行抠像。
