@@ -75,6 +75,10 @@
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundQueryRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundQueryResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyMntMbrBindRelateAcctBankCodeRequest.h>
@@ -255,6 +259,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ExecuteMemberTransactionResponse> ExecuteMemberTransactionOutcome;
                 typedef std::future<ExecuteMemberTransactionOutcome> ExecuteMemberTransactionOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ExecuteMemberTransactionRequest&, ExecuteMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteMemberTransactionAsyncHandler;
+                typedef Outcome<Error, Model::MigrateOrderRefundResponse> MigrateOrderRefundOutcome;
+                typedef std::future<MigrateOrderRefundOutcome> MigrateOrderRefundOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::MigrateOrderRefundRequest&, MigrateOrderRefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MigrateOrderRefundAsyncHandler;
+                typedef Outcome<Error, Model::MigrateOrderRefundQueryResponse> MigrateOrderRefundQueryOutcome;
+                typedef std::future<MigrateOrderRefundQueryOutcome> MigrateOrderRefundQueryOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::MigrateOrderRefundQueryRequest&, MigrateOrderRefundQueryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MigrateOrderRefundQueryAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAgentTaxPaymentInfoResponse> ModifyAgentTaxPaymentInfoOutcome;
                 typedef std::future<ModifyAgentTaxPaymentInfoOutcome> ModifyAgentTaxPaymentInfoOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ModifyAgentTaxPaymentInfoRequest&, ModifyAgentTaxPaymentInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentTaxPaymentInfoAsyncHandler;
@@ -631,6 +641,24 @@ namespace TencentCloud
                 ExecuteMemberTransactionOutcome ExecuteMemberTransaction(const Model::ExecuteMemberTransactionRequest &request);
                 void ExecuteMemberTransactionAsync(const Model::ExecuteMemberTransactionRequest& request, const ExecuteMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExecuteMemberTransactionOutcomeCallable ExecuteMemberTransactionCallable(const Model::ExecuteMemberTransactionRequest& request);
+
+                /**
+                 *山姆聚合支付项目-存量订单退款接口。可以通过本接口将支付款全部或部分退还给付款方，在收到用户退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。
+                 * @param req MigrateOrderRefundRequest
+                 * @return MigrateOrderRefundOutcome
+                 */
+                MigrateOrderRefundOutcome MigrateOrderRefund(const Model::MigrateOrderRefundRequest &request);
+                void MigrateOrderRefundAsync(const Model::MigrateOrderRefundRequest& request, const MigrateOrderRefundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MigrateOrderRefundOutcomeCallable MigrateOrderRefundCallable(const Model::MigrateOrderRefundRequest& request);
+
+                /**
+                 *提交退款申请后，通过调用该接口查询退款状态。退款可能有一定延时。
+                 * @param req MigrateOrderRefundQueryRequest
+                 * @return MigrateOrderRefundQueryOutcome
+                 */
+                MigrateOrderRefundQueryOutcome MigrateOrderRefundQuery(const Model::MigrateOrderRefundQueryRequest &request);
+                void MigrateOrderRefundQueryAsync(const Model::MigrateOrderRefundQueryRequest& request, const MigrateOrderRefundQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MigrateOrderRefundQueryOutcomeCallable MigrateOrderRefundQueryCallable(const Model::MigrateOrderRefundQueryRequest& request);
 
                 /**
                  *直播平台-修改代理商完税信息

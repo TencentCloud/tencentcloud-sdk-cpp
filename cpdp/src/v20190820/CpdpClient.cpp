@@ -1158,6 +1158,92 @@ CpdpClient::ExecuteMemberTransactionOutcomeCallable CpdpClient::ExecuteMemberTra
     return task->get_future();
 }
 
+CpdpClient::MigrateOrderRefundOutcome CpdpClient::MigrateOrderRefund(const MigrateOrderRefundRequest &request)
+{
+    auto outcome = MakeRequest(request, "MigrateOrderRefund");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MigrateOrderRefundResponse rsp = MigrateOrderRefundResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MigrateOrderRefundOutcome(rsp);
+        else
+            return MigrateOrderRefundOutcome(o.GetError());
+    }
+    else
+    {
+        return MigrateOrderRefundOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::MigrateOrderRefundAsync(const MigrateOrderRefundRequest& request, const MigrateOrderRefundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MigrateOrderRefund(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::MigrateOrderRefundOutcomeCallable CpdpClient::MigrateOrderRefundCallable(const MigrateOrderRefundRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MigrateOrderRefundOutcome()>>(
+        [this, request]()
+        {
+            return this->MigrateOrderRefund(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::MigrateOrderRefundQueryOutcome CpdpClient::MigrateOrderRefundQuery(const MigrateOrderRefundQueryRequest &request)
+{
+    auto outcome = MakeRequest(request, "MigrateOrderRefundQuery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MigrateOrderRefundQueryResponse rsp = MigrateOrderRefundQueryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MigrateOrderRefundQueryOutcome(rsp);
+        else
+            return MigrateOrderRefundQueryOutcome(o.GetError());
+    }
+    else
+    {
+        return MigrateOrderRefundQueryOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::MigrateOrderRefundQueryAsync(const MigrateOrderRefundQueryRequest& request, const MigrateOrderRefundQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MigrateOrderRefundQuery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::MigrateOrderRefundQueryOutcomeCallable CpdpClient::MigrateOrderRefundQueryCallable(const MigrateOrderRefundQueryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MigrateOrderRefundQueryOutcome()>>(
+        [this, request]()
+        {
+            return this->MigrateOrderRefundQuery(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::ModifyAgentTaxPaymentInfoOutcome CpdpClient::ModifyAgentTaxPaymentInfo(const ModifyAgentTaxPaymentInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAgentTaxPaymentInfo");
