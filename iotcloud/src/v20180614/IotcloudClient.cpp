@@ -1330,6 +1330,49 @@ IotcloudClient::PublishAsDeviceOutcomeCallable IotcloudClient::PublishAsDeviceCa
     return task->get_future();
 }
 
+IotcloudClient::PublishBroadcastMessageOutcome IotcloudClient::PublishBroadcastMessage(const PublishBroadcastMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "PublishBroadcastMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PublishBroadcastMessageResponse rsp = PublishBroadcastMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PublishBroadcastMessageOutcome(rsp);
+        else
+            return PublishBroadcastMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return PublishBroadcastMessageOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::PublishBroadcastMessageAsync(const PublishBroadcastMessageRequest& request, const PublishBroadcastMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PublishBroadcastMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::PublishBroadcastMessageOutcomeCallable IotcloudClient::PublishBroadcastMessageCallable(const PublishBroadcastMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PublishBroadcastMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->PublishBroadcastMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotcloudClient::PublishMessageOutcome IotcloudClient::PublishMessage(const PublishMessageRequest &request)
 {
     auto outcome = MakeRequest(request, "PublishMessage");
@@ -1366,6 +1409,49 @@ IotcloudClient::PublishMessageOutcomeCallable IotcloudClient::PublishMessageCall
         [this, request]()
         {
             return this->PublishMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotcloudClient::PublishRRPCMessageOutcome IotcloudClient::PublishRRPCMessage(const PublishRRPCMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "PublishRRPCMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PublishRRPCMessageResponse rsp = PublishRRPCMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PublishRRPCMessageOutcome(rsp);
+        else
+            return PublishRRPCMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return PublishRRPCMessageOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::PublishRRPCMessageAsync(const PublishRRPCMessageRequest& request, const PublishRRPCMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PublishRRPCMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::PublishRRPCMessageOutcomeCallable IotcloudClient::PublishRRPCMessageCallable(const PublishRRPCMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PublishRRPCMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->PublishRRPCMessage(request);
         }
     );
 

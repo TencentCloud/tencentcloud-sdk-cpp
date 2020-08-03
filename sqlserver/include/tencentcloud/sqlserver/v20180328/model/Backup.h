@@ -244,6 +244,24 @@ namespace TencentCloud
                      */
                     bool BackupWayHasBeenSet() const;
 
+                    /**
+                     * 获取备份名称，可自定义
+                     * @return BackupName 备份名称，可自定义
+                     */
+                    std::string GetBackupName() const;
+
+                    /**
+                     * 设置备份名称，可自定义
+                     * @param BackupName 备份名称，可自定义
+                     */
+                    void SetBackupName(const std::string& _backupName);
+
+                    /**
+                     * 判断参数 BackupName 是否已赋值
+                     * @return BackupName 是否已赋值
+                     */
+                    bool BackupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +329,12 @@ namespace TencentCloud
                      */
                     int64_t m_backupWay;
                     bool m_backupWayHasBeenSet;
+
+                    /**
+                     * 备份名称，可自定义
+                     */
+                    std::string m_backupName;
+                    bool m_backupNameHasBeenSet;
 
                 };
             }

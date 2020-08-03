@@ -647,6 +647,50 @@ namespace TencentCloud
                      */
                     bool CamRoleNameHasBeenSet() const;
 
+                    /**
+                     * 获取高性能计算集群`ID`。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HpcClusterId 高性能计算集群`ID`。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHpcClusterId() const;
+
+                    /**
+                     * 设置高性能计算集群`ID`。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HpcClusterId 高性能计算集群`ID`。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHpcClusterId(const std::string& _hpcClusterId);
+
+                    /**
+                     * 判断参数 HpcClusterId 是否已赋值
+                     * @return HpcClusterId 是否已赋值
+                     */
+                    bool HpcClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取高性能计算集群`IP`列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RdmaIpAddresses 高性能计算集群`IP`列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetRdmaIpAddresses() const;
+
+                    /**
+                     * 设置高性能计算集群`IP`列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RdmaIpAddresses 高性能计算集群`IP`列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRdmaIpAddresses(const std::vector<std::string>& _rdmaIpAddresses);
+
+                    /**
+                     * 判断参数 RdmaIpAddresses 是否已赋值
+                     * @return RdmaIpAddresses 是否已赋值
+                     */
+                    bool RdmaIpAddressesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -843,6 +887,20 @@ namespace TencentCloud
                      */
                     std::string m_camRoleName;
                     bool m_camRoleNameHasBeenSet;
+
+                    /**
+                     * 高性能计算集群`ID`。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hpcClusterId;
+                    bool m_hpcClusterIdHasBeenSet;
+
+                    /**
+                     * 高性能计算集群`IP`列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_rdmaIpAddresses;
+                    bool m_rdmaIpAddressesHasBeenSet;
 
                 };
             }

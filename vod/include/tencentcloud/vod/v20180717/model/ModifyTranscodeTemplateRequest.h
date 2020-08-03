@@ -100,14 +100,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取模板描述信息，长度限制：256 个字节。
-                     * @return Comment 模板描述信息，长度限制：256 个字节。
+                     * 获取模板描述信息，长度限制：256 个字符。
+                     * @return Comment 模板描述信息，长度限制：256 个字符。
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置模板描述信息，长度限制：256 个字节。
-                     * @param Comment 模板描述信息，长度限制：256 个字节。
+                     * 设置模板描述信息，长度限制：256 个字符。
+                     * @param Comment 模板描述信息，长度限制：256 个字符。
                      */
                     void SetComment(const std::string& _comment);
 
@@ -262,7 +262,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 模板描述信息，长度限制：256 个字节。
+                     * 模板描述信息，长度限制：256 个字符。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;

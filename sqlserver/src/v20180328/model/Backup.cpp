@@ -32,7 +32,8 @@ Backup::Backup() :
     m_statusHasBeenSet(false),
     m_dBsHasBeenSet(false),
     m_strategyHasBeenSet(false),
-    m_backupWayHasBeenSet(false)
+    m_backupWayHasBeenSet(false),
+    m_backupNameHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,16 @@ CoreInternalOutcome Backup::Deserialize(const Value &value)
         m_backupWayHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupName") && !value["BackupName"].IsNull())
+    {
+        if (!value["BackupName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Backup.BackupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupName = string(value["BackupName"].GetString());
+        m_backupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -252,6 +263,14 @@ void Backup::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "BackupWay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backupWay, allocator);
+    }
+
+    if (m_backupNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_backupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -431,5 +450,21 @@ void Backup::SetBackupWay(const int64_t& _backupWay)
 bool Backup::BackupWayHasBeenSet() const
 {
     return m_backupWayHasBeenSet;
+}
+
+string Backup::GetBackupName() const
+{
+    return m_backupName;
+}
+
+void Backup::SetBackupName(const string& _backupName)
+{
+    m_backupName = _backupName;
+    m_backupNameHasBeenSet = true;
+}
+
+bool Backup::BackupNameHasBeenSet() const
+{
+    return m_backupNameHasBeenSet;
 }
 

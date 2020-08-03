@@ -376,6 +376,24 @@ namespace TencentCloud
                      */
                     bool InstanceMarketOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取高性能计算集群ID。
+                     * @return HpcClusterId 高性能计算集群ID。
+                     */
+                    std::string GetHpcClusterId() const;
+
+                    /**
+                     * 设置高性能计算集群ID。
+                     * @param HpcClusterId 高性能计算集群ID。
+                     */
+                    void SetHpcClusterId(const std::string& _hpcClusterId);
+
+                    /**
+                     * 判断参数 HpcClusterId 是否已赋值
+                     * @return HpcClusterId 是否已赋值
+                     */
+                    bool HpcClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +503,12 @@ namespace TencentCloud
                      */
                     InstanceMarketOptionsRequest m_instanceMarketOptions;
                     bool m_instanceMarketOptionsHasBeenSet;
+
+                    /**
+                     * 高性能计算集群ID。
+                     */
+                    std::string m_hpcClusterId;
+                    bool m_hpcClusterIdHasBeenSet;
 
                 };
             }

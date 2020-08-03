@@ -629,6 +629,28 @@ REJECTED:拒绝
                      */
                     bool TencentBackupAddressHasBeenSet() const;
 
+                    /**
+                     * 获取专用通道关联的物理专线是否签署了用户协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SignLaw 专用通道关联的物理专线是否签署了用户协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetSignLaw() const;
+
+                    /**
+                     * 设置专用通道关联的物理专线是否签署了用户协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SignLaw 专用通道关联的物理专线是否签署了用户协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSignLaw(const bool& _signLaw);
+
+                    /**
+                     * 判断参数 SignLaw 是否已赋值
+                     * @return SignLaw 是否已赋值
+                     */
+                    bool SignLawHasBeenSet() const;
+
                 private:
 
                     /**
@@ -817,6 +839,13 @@ REJECTED:拒绝
                      */
                     std::string m_tencentBackupAddress;
                     bool m_tencentBackupAddressHasBeenSet;
+
+                    /**
+                     * 专用通道关联的物理专线是否签署了用户协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_signLaw;
+                    bool m_signLawHasBeenSet;
 
                 };
             }

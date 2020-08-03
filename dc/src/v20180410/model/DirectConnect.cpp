@@ -48,7 +48,8 @@ DirectConnect::DirectConnect() :
     m_accessPointTypeHasBeenSet(false),
     m_idcCityHasBeenSet(false),
     m_chargeStateHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+    m_startTimeHasBeenSet(false),
+    m_signLawHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,16 @@ CoreInternalOutcome DirectConnect::Deserialize(const Value &value)
         m_startTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SignLaw") && !value["SignLaw"].IsNull())
+    {
+        if (!value["SignLaw"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnect.SignLaw` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_signLaw = value["SignLaw"].GetBool();
+        m_signLawHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -565,6 +576,14 @@ void DirectConnect::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signLawHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SignLaw";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_signLaw, allocator);
     }
 
 }
@@ -1000,5 +1019,21 @@ void DirectConnect::SetStartTime(const string& _startTime)
 bool DirectConnect::StartTimeHasBeenSet() const
 {
     return m_startTimeHasBeenSet;
+}
+
+bool DirectConnect::GetSignLaw() const
+{
+    return m_signLaw;
+}
+
+void DirectConnect::SetSignLaw(const bool& _signLaw)
+{
+    m_signLaw = _signLaw;
+    m_signLawHasBeenSet = true;
+}
+
+bool DirectConnect::SignLawHasBeenSet() const
+{
+    return m_signLawHasBeenSet;
 }
 

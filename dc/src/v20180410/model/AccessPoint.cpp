@@ -27,7 +27,8 @@ AccessPoint::AccessPoint() :
     m_stateHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_lineOperatorHasBeenSet(false),
-    m_regionIdHasBeenSet(false)
+    m_regionIdHasBeenSet(false),
+    m_availablePortTypeHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,19 @@ CoreInternalOutcome AccessPoint::Deserialize(const Value &value)
         m_regionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailablePortType") && !value["AvailablePortType"].IsNull())
+    {
+        if (!value["AvailablePortType"].IsArray())
+            return CoreInternalOutcome(Error("response `AccessPoint.AvailablePortType` is not array type"));
+
+        const Value &tmpValue = value["AvailablePortType"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_availablePortType.push_back((*itr).GetString());
+        }
+        m_availablePortTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -157,6 +171,19 @@ void AccessPoint::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_regionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availablePortTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AvailablePortType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_availablePortType.begin(); itr != m_availablePortType.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -256,5 +283,21 @@ void AccessPoint::SetRegionId(const string& _regionId)
 bool AccessPoint::RegionIdHasBeenSet() const
 {
     return m_regionIdHasBeenSet;
+}
+
+vector<string> AccessPoint::GetAvailablePortType() const
+{
+    return m_availablePortType;
+}
+
+void AccessPoint::SetAvailablePortType(const vector<string>& _availablePortType)
+{
+    m_availablePortType = _availablePortType;
+    m_availablePortTypeHasBeenSet = true;
+}
+
+bool AccessPoint::AvailablePortTypeHasBeenSet() const
+{
+    return m_availablePortTypeHasBeenSet;
 }
 

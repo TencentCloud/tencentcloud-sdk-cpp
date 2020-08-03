@@ -36,7 +36,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_sessionContextHasBeenSet(false)
+    m_sessionContextHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -222,6 +223,16 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_sessionContextHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtInfo") && !rsp["ExtInfo"].IsNull())
+    {
+        if (!rsp["ExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extInfo = string(rsp["ExtInfo"].GetString());
+        m_extInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -345,6 +356,16 @@ string DescribeTaskDetailResponse::GetSessionContext() const
 bool DescribeTaskDetailResponse::SessionContextHasBeenSet() const
 {
     return m_sessionContextHasBeenSet;
+}
+
+string DescribeTaskDetailResponse::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+bool DescribeTaskDetailResponse::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 

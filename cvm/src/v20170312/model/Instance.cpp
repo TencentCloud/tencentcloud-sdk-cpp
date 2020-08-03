@@ -52,7 +52,9 @@ Instance::Instance() :
     m_latestOperationRequestIdHasBeenSet(false),
     m_disasterRecoverGroupIdHasBeenSet(false),
     m_iPv6AddressesHasBeenSet(false),
-    m_camRoleNameHasBeenSet(false)
+    m_camRoleNameHasBeenSet(false),
+    m_hpcClusterIdHasBeenSet(false),
+    m_rdmaIpAddressesHasBeenSet(false)
 {
 }
 
@@ -438,6 +440,29 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_camRoleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("HpcClusterId") && !value["HpcClusterId"].IsNull())
+    {
+        if (!value["HpcClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.HpcClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hpcClusterId = string(value["HpcClusterId"].GetString());
+        m_hpcClusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RdmaIpAddresses") && !value["RdmaIpAddresses"].IsNull())
+    {
+        if (!value["RdmaIpAddresses"].IsArray())
+            return CoreInternalOutcome(Error("response `Instance.RdmaIpAddresses` is not array type"));
+
+        const Value &tmpValue = value["RdmaIpAddresses"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_rdmaIpAddresses.push_back((*itr).GetString());
+        }
+        m_rdmaIpAddressesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -730,6 +755,27 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "CamRoleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_camRoleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hpcClusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HpcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_hpcClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rdmaIpAddressesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RdmaIpAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_rdmaIpAddresses.begin(); itr != m_rdmaIpAddresses.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1229,5 +1275,37 @@ void Instance::SetCamRoleName(const string& _camRoleName)
 bool Instance::CamRoleNameHasBeenSet() const
 {
     return m_camRoleNameHasBeenSet;
+}
+
+string Instance::GetHpcClusterId() const
+{
+    return m_hpcClusterId;
+}
+
+void Instance::SetHpcClusterId(const string& _hpcClusterId)
+{
+    m_hpcClusterId = _hpcClusterId;
+    m_hpcClusterIdHasBeenSet = true;
+}
+
+bool Instance::HpcClusterIdHasBeenSet() const
+{
+    return m_hpcClusterIdHasBeenSet;
+}
+
+vector<string> Instance::GetRdmaIpAddresses() const
+{
+    return m_rdmaIpAddresses;
+}
+
+void Instance::SetRdmaIpAddresses(const vector<string>& _rdmaIpAddresses)
+{
+    m_rdmaIpAddresses = _rdmaIpAddresses;
+    m_rdmaIpAddressesHasBeenSet = true;
+}
+
+bool Instance::RdmaIpAddressesHasBeenSet() const
+{
+    return m_rdmaIpAddressesHasBeenSet;
 }
 

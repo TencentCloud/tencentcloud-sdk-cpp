@@ -49,7 +49,8 @@ DirectConnectTunnel::DirectConnectTunnel() :
     m_accessPointTypeHasBeenSet(false),
     m_directConnectGatewayNameHasBeenSet(false),
     m_vpcNameHasBeenSet(false),
-    m_tencentBackupAddressHasBeenSet(false)
+    m_tencentBackupAddressHasBeenSet(false),
+    m_signLawHasBeenSet(false)
 {
 }
 
@@ -365,6 +366,16 @@ CoreInternalOutcome DirectConnectTunnel::Deserialize(const Value &value)
         m_tencentBackupAddressHasBeenSet = true;
     }
 
+    if (value.HasMember("SignLaw") && !value["SignLaw"].IsNull())
+    {
+        if (!value["SignLaw"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.SignLaw` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_signLaw = value["SignLaw"].GetBool();
+        m_signLawHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -609,6 +620,14 @@ void DirectConnectTunnel::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "TencentBackupAddress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_tencentBackupAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signLawHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SignLaw";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_signLaw, allocator);
     }
 
 }
@@ -1060,5 +1079,21 @@ void DirectConnectTunnel::SetTencentBackupAddress(const string& _tencentBackupAd
 bool DirectConnectTunnel::TencentBackupAddressHasBeenSet() const
 {
     return m_tencentBackupAddressHasBeenSet;
+}
+
+bool DirectConnectTunnel::GetSignLaw() const
+{
+    return m_signLaw;
+}
+
+void DirectConnectTunnel::SetSignLaw(const bool& _signLaw)
+{
+    m_signLaw = _signLaw;
+    m_signLawHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::SignLawHasBeenSet() const
+{
+    return m_signLawHasBeenSet;
 }
 

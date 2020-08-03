@@ -41,7 +41,8 @@ InquiryPriceRunInstancesRequest::InquiryPriceRunInstancesRequest() :
     m_clientTokenHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
-    m_instanceMarketOptionsHasBeenSet(false)
+    m_instanceMarketOptionsHasBeenSet(false),
+    m_hpcClusterIdHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,14 @@ string InquiryPriceRunInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_instanceMarketOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_hpcClusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HpcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_hpcClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -517,6 +526,22 @@ void InquiryPriceRunInstancesRequest::SetInstanceMarketOptions(const InstanceMar
 bool InquiryPriceRunInstancesRequest::InstanceMarketOptionsHasBeenSet() const
 {
     return m_instanceMarketOptionsHasBeenSet;
+}
+
+string InquiryPriceRunInstancesRequest::GetHpcClusterId() const
+{
+    return m_hpcClusterId;
+}
+
+void InquiryPriceRunInstancesRequest::SetHpcClusterId(const string& _hpcClusterId)
+{
+    m_hpcClusterId = _hpcClusterId;
+    m_hpcClusterIdHasBeenSet = true;
+}
+
+bool InquiryPriceRunInstancesRequest::HpcClusterIdHasBeenSet() const
+{
+    return m_hpcClusterIdHasBeenSet;
 }
 
 

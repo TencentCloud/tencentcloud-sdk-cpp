@@ -83,8 +83,12 @@
 #include <tencentcloud/iotcloud/v20180614/model/EnableTopicRuleResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishAsDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishAsDeviceResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/PublishBroadcastMessageRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/PublishBroadcastMessageResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishMessageRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishMessageResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/PublishRRPCMessageRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/PublishRRPCMessageResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishToDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishToDeviceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/ReplaceTopicRuleRequest.h>
@@ -203,9 +207,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PublishAsDeviceResponse> PublishAsDeviceOutcome;
                 typedef std::future<PublishAsDeviceOutcome> PublishAsDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::PublishAsDeviceRequest&, PublishAsDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishAsDeviceAsyncHandler;
+                typedef Outcome<Error, Model::PublishBroadcastMessageResponse> PublishBroadcastMessageOutcome;
+                typedef std::future<PublishBroadcastMessageOutcome> PublishBroadcastMessageOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::PublishBroadcastMessageRequest&, PublishBroadcastMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishBroadcastMessageAsyncHandler;
                 typedef Outcome<Error, Model::PublishMessageResponse> PublishMessageOutcome;
                 typedef std::future<PublishMessageOutcome> PublishMessageOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::PublishMessageRequest&, PublishMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishMessageAsyncHandler;
+                typedef Outcome<Error, Model::PublishRRPCMessageResponse> PublishRRPCMessageOutcome;
+                typedef std::future<PublishRRPCMessageOutcome> PublishRRPCMessageOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::PublishRRPCMessageRequest&, PublishRRPCMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishRRPCMessageAsyncHandler;
                 typedef Outcome<Error, Model::PublishToDeviceResponse> PublishToDeviceOutcome;
                 typedef std::future<PublishToDeviceOutcome> PublishToDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::PublishToDeviceRequest&, PublishToDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishToDeviceAsyncHandler;
@@ -501,6 +511,15 @@ namespace TencentCloud
                 PublishAsDeviceOutcomeCallable PublishAsDeviceCallable(const Model::PublishAsDeviceRequest& request);
 
                 /**
+                 *发布广播消息
+                 * @param req PublishBroadcastMessageRequest
+                 * @return PublishBroadcastMessageOutcome
+                 */
+                PublishBroadcastMessageOutcome PublishBroadcastMessage(const Model::PublishBroadcastMessageRequest &request);
+                void PublishBroadcastMessageAsync(const Model::PublishBroadcastMessageRequest& request, const PublishBroadcastMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishBroadcastMessageOutcomeCallable PublishBroadcastMessageCallable(const Model::PublishBroadcastMessageRequest& request);
+
+                /**
                  *本接口（PublishMessage）用于向某个主题发消息。 
                  * @param req PublishMessageRequest
                  * @return PublishMessageOutcome
@@ -508,6 +527,15 @@ namespace TencentCloud
                 PublishMessageOutcome PublishMessage(const Model::PublishMessageRequest &request);
                 void PublishMessageAsync(const Model::PublishMessageRequest& request, const PublishMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PublishMessageOutcomeCallable PublishMessageCallable(const Model::PublishMessageRequest& request);
+
+                /**
+                 *发布RRPC消息
+                 * @param req PublishRRPCMessageRequest
+                 * @return PublishRRPCMessageOutcome
+                 */
+                PublishRRPCMessageOutcome PublishRRPCMessage(const Model::PublishRRPCMessageRequest &request);
+                void PublishRRPCMessageAsync(const Model::PublishRRPCMessageRequest& request, const PublishRRPCMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishRRPCMessageOutcomeCallable PublishRRPCMessageCallable(const Model::PublishRRPCMessageRequest& request);
 
                 /**
                  *服务器端下发消息给lora类型的设备

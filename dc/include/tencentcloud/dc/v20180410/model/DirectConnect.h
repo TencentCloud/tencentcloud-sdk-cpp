@@ -625,6 +625,28 @@ namespace TencentCloud
                      */
                     bool StartTimeHasBeenSet() const;
 
+                    /**
+                     * 获取物理专线是否已签署用户协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SignLaw 物理专线是否已签署用户协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetSignLaw() const;
+
+                    /**
+                     * 设置物理专线是否已签署用户协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SignLaw 物理专线是否已签署用户协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSignLaw(const bool& _signLaw);
+
+                    /**
+                     * 判断参数 SignLaw 是否已赋值
+                     * @return SignLaw 是否已赋值
+                     */
+                    bool SignLawHasBeenSet() const;
+
                 private:
 
                     /**
@@ -811,6 +833,13 @@ namespace TencentCloud
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 物理专线是否已签署用户协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_signLaw;
+                    bool m_signLawHasBeenSet;
 
                 };
             }

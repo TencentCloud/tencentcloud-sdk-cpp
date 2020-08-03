@@ -387,14 +387,26 @@ baseline/main/high。默认baseline
                     bool AiTransCodeHasBeenSet() const;
 
                     /**
-                     * 获取极速高清相比VideoBitrate少多少码率，0.1到0.5
-                     * @return AdaptBitratePercent 极速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * 获取极速高清视频码率压缩比。
+极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)
+
+取值范围：0.0到0.5
+                     * @return AdaptBitratePercent 极速高清视频码率压缩比。
+极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)
+
+取值范围：0.0到0.5
                      */
                     double GetAdaptBitratePercent() const;
 
                     /**
-                     * 设置极速高清相比VideoBitrate少多少码率，0.1到0.5
-                     * @param AdaptBitratePercent 极速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * 设置极速高清视频码率压缩比。
+极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)
+
+取值范围：0.0到0.5
+                     * @param AdaptBitratePercent 极速高清视频码率压缩比。
+极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)
+
+取值范围：0.0到0.5
                      */
                     void SetAdaptBitratePercent(const double& _adaptBitratePercent);
 
@@ -520,7 +532,10 @@ baseline/main/high。默认baseline
                     bool m_aiTransCodeHasBeenSet;
 
                     /**
-                     * 极速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * 极速高清视频码率压缩比。
+极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)
+
+取值范围：0.0到0.5
                      */
                     double m_adaptBitratePercent;
                     bool m_adaptBitratePercentHasBeenSet;

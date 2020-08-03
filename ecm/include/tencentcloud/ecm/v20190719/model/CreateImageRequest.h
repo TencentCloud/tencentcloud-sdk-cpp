@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像名称
-                     * @return ImageName 镜像名称
+                     * 获取镜像名称。
+                     * @return ImageName 镜像名称。
                      */
                     std::string GetImageName() const;
 
                     /**
-                     * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * 设置镜像名称。
+                     * @param ImageName 镜像名称。
                      */
                     void SetImageName(const std::string& _imageName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取镜像描述
-                     * @return ImageDescription 镜像描述
+                     * 获取镜像描述。
+                     * @return ImageDescription 镜像描述。
                      */
                     std::string GetImageDescription() const;
 
                     /**
-                     * 设置镜像描述
-                     * @param ImageDescription 镜像描述
+                     * 设置镜像描述。
+                     * @param ImageDescription 镜像描述。
                      */
                     void SetImageDescription(const std::string& _imageDescription);
 
@@ -129,7 +129,7 @@ FALSE：表示开机状态制作，目前不支持，需要先手动关机
                 private:
 
                     /**
-                     * 镜像名称
+                     * 镜像名称。
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
@@ -141,7 +141,7 @@ FALSE：表示开机状态制作，目前不支持，需要先手动关机
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 镜像描述
+                     * 镜像描述。
                      */
                     std::string m_imageDescription;
                     bool m_imageDescriptionHasBeenSet;
