@@ -31,7 +31,8 @@ CreateNatGatewayRequest::CreateNatGatewayRequest() :
     m_addressCountHasBeenSet(false),
     m_publicIpAddressesHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,14 @@ string CreateNatGatewayRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -252,6 +261,22 @@ void CreateNatGatewayRequest::SetTags(const vector<Tag>& _tags)
 bool CreateNatGatewayRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateNatGatewayRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void CreateNatGatewayRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool CreateNatGatewayRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 
 

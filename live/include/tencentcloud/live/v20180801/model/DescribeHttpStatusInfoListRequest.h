@@ -45,20 +45,16 @@ namespace TencentCloud
                     /**
                      * 获取起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-StartTime不能为3个月前。
                      * @return StartTime 起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-StartTime不能为3个月前。
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-StartTime不能为3个月前。
                      * @param StartTime 起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-StartTime不能为3个月前。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -71,20 +67,20 @@ StartTime不能为3个月前。
                     /**
                      * 获取结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-注：EndTime 和 StartTime 只支持最近1天的数据查询。
+注：最大时间跨度支持1天，支持最近3个月的数据查询。
                      * @return EndTime 结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-注：EndTime 和 StartTime 只支持最近1天的数据查询。
+注：最大时间跨度支持1天，支持最近3个月的数据查询。
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-注：EndTime 和 StartTime 只支持最近1天的数据查询。
+注：最大时间跨度支持1天，支持最近3个月的数据查询。
                      * @param EndTime 结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-注：EndTime 和 StartTime 只支持最近1天的数据查询。
+注：最大时间跨度支持1天，支持最近3个月的数据查询。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -117,7 +113,6 @@ StartTime不能为3个月前。
                     /**
                      * 起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-StartTime不能为3个月前。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -125,7 +120,7 @@ StartTime不能为3个月前。
                     /**
                      * 结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-注：EndTime 和 StartTime 只支持最近1天的数据查询。
+注：最大时间跨度支持1天，支持最近3个月的数据查询。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

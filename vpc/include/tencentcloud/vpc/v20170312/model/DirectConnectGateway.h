@@ -298,6 +298,28 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      */
                     bool EnableBGPCommunityHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的NAT网关ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NatGatewayId 绑定的NAT网关ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNatGatewayId() const;
+
+                    /**
+                     * 设置绑定的NAT网关ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NatGatewayId 绑定的NAT网关ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNatGatewayId(const std::string& _natGatewayId);
+
+                    /**
+                     * 判断参数 NatGatewayId 是否已赋值
+                     * @return NatGatewayId 是否已赋值
+                     */
+                    bool NatGatewayIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +402,13 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      */
                     bool m_enableBGPCommunity;
                     bool m_enableBGPCommunityHasBeenSet;
+
+                    /**
+                     * 绑定的NAT网关ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_natGatewayId;
+                    bool m_natGatewayIdHasBeenSet;
 
                 };
             }

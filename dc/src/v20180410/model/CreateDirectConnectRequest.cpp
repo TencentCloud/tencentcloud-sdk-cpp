@@ -27,9 +27,9 @@ CreateDirectConnectRequest::CreateDirectConnectRequest() :
     m_directConnectNameHasBeenSet(false),
     m_accessPointIdHasBeenSet(false),
     m_lineOperatorHasBeenSet(false),
-    m_locationHasBeenSet(false),
     m_portTypeHasBeenSet(false),
     m_circuitCodeHasBeenSet(false),
+    m_locationHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_redundantDirectConnectIdHasBeenSet(false),
     m_vlanHasBeenSet(false),
@@ -39,7 +39,8 @@ CreateDirectConnectRequest::CreateDirectConnectRequest() :
     m_customerContactMailHasBeenSet(false),
     m_customerContactNumberHasBeenSet(false),
     m_faultReportContactPersonHasBeenSet(false),
-    m_faultReportContactNumberHasBeenSet(false)
+    m_faultReportContactNumberHasBeenSet(false),
+    m_signLawHasBeenSet(false)
 {
 }
 
@@ -74,14 +75,6 @@ string CreateDirectConnectRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_lineOperator.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_locationHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Location";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_location.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_portTypeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -96,6 +89,14 @@ string CreateDirectConnectRequest::ToJsonString() const
         string key = "CircuitCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_circuitCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
@@ -178,6 +179,14 @@ string CreateDirectConnectRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_faultReportContactNumber.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_signLawHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SignLaw";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_signLaw, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -234,22 +243,6 @@ bool CreateDirectConnectRequest::LineOperatorHasBeenSet() const
     return m_lineOperatorHasBeenSet;
 }
 
-string CreateDirectConnectRequest::GetLocation() const
-{
-    return m_location;
-}
-
-void CreateDirectConnectRequest::SetLocation(const string& _location)
-{
-    m_location = _location;
-    m_locationHasBeenSet = true;
-}
-
-bool CreateDirectConnectRequest::LocationHasBeenSet() const
-{
-    return m_locationHasBeenSet;
-}
-
 string CreateDirectConnectRequest::GetPortType() const
 {
     return m_portType;
@@ -280,6 +273,22 @@ void CreateDirectConnectRequest::SetCircuitCode(const string& _circuitCode)
 bool CreateDirectConnectRequest::CircuitCodeHasBeenSet() const
 {
     return m_circuitCodeHasBeenSet;
+}
+
+string CreateDirectConnectRequest::GetLocation() const
+{
+    return m_location;
+}
+
+void CreateDirectConnectRequest::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool CreateDirectConnectRequest::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
 }
 
 int64_t CreateDirectConnectRequest::GetBandwidth() const
@@ -440,6 +449,22 @@ void CreateDirectConnectRequest::SetFaultReportContactNumber(const string& _faul
 bool CreateDirectConnectRequest::FaultReportContactNumberHasBeenSet() const
 {
     return m_faultReportContactNumberHasBeenSet;
+}
+
+bool CreateDirectConnectRequest::GetSignLaw() const
+{
+    return m_signLaw;
+}
+
+void CreateDirectConnectRequest::SetSignLaw(const bool& _signLaw)
+{
+    m_signLaw = _signLaw;
+    m_signLawHasBeenSet = true;
+}
+
+bool CreateDirectConnectRequest::SignLawHasBeenSet() const
+{
+    return m_signLawHasBeenSet;
 }
 
 

@@ -513,6 +513,49 @@ VpcClient::AssociateDhcpIpWithAddressIpOutcomeCallable VpcClient::AssociateDhcpI
     return task->get_future();
 }
 
+VpcClient::AssociateDirectConnectGatewayNatGatewayOutcome VpcClient::AssociateDirectConnectGatewayNatGateway(const AssociateDirectConnectGatewayNatGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateDirectConnectGatewayNatGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateDirectConnectGatewayNatGatewayResponse rsp = AssociateDirectConnectGatewayNatGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateDirectConnectGatewayNatGatewayOutcome(rsp);
+        else
+            return AssociateDirectConnectGatewayNatGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateDirectConnectGatewayNatGatewayOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AssociateDirectConnectGatewayNatGatewayAsync(const AssociateDirectConnectGatewayNatGatewayRequest& request, const AssociateDirectConnectGatewayNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateDirectConnectGatewayNatGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AssociateDirectConnectGatewayNatGatewayOutcomeCallable VpcClient::AssociateDirectConnectGatewayNatGatewayCallable(const AssociateDirectConnectGatewayNatGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateDirectConnectGatewayNatGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateDirectConnectGatewayNatGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::AssociateNatGatewayAddressOutcome VpcClient::AssociateNatGatewayAddress(const AssociateNatGatewayAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateNatGatewayAddress");
@@ -6096,6 +6139,49 @@ VpcClient::DisassociateDhcpIpWithAddressIpOutcomeCallable VpcClient::Disassociat
         [this, request]()
         {
             return this->DisassociateDhcpIpWithAddressIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DisassociateDirectConnectGatewayNatGatewayOutcome VpcClient::DisassociateDirectConnectGatewayNatGateway(const DisassociateDirectConnectGatewayNatGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateDirectConnectGatewayNatGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateDirectConnectGatewayNatGatewayResponse rsp = DisassociateDirectConnectGatewayNatGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateDirectConnectGatewayNatGatewayOutcome(rsp);
+        else
+            return DisassociateDirectConnectGatewayNatGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateDirectConnectGatewayNatGatewayOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DisassociateDirectConnectGatewayNatGatewayAsync(const DisassociateDirectConnectGatewayNatGatewayRequest& request, const DisassociateDirectConnectGatewayNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateDirectConnectGatewayNatGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DisassociateDirectConnectGatewayNatGatewayOutcomeCallable VpcClient::DisassociateDirectConnectGatewayNatGatewayCallable(const DisassociateDirectConnectGatewayNatGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateDirectConnectGatewayNatGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateDirectConnectGatewayNatGateway(request);
         }
     );
 

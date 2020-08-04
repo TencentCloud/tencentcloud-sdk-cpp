@@ -34,7 +34,8 @@ ModifyDirectConnectAttributeRequest::ModifyDirectConnectAttributeRequest() :
     m_customerContactMailHasBeenSet(false),
     m_customerContactNumberHasBeenSet(false),
     m_faultReportContactPersonHasBeenSet(false),
-    m_faultReportContactNumberHasBeenSet(false)
+    m_faultReportContactNumberHasBeenSet(false),
+    m_signLawHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string ModifyDirectConnectAttributeRequest::ToJsonString() const
         string key = "FaultReportContactNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_faultReportContactNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signLawHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SignLaw";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_signLaw, allocator);
     }
 
 
@@ -315,6 +324,22 @@ void ModifyDirectConnectAttributeRequest::SetFaultReportContactNumber(const stri
 bool ModifyDirectConnectAttributeRequest::FaultReportContactNumberHasBeenSet() const
 {
     return m_faultReportContactNumberHasBeenSet;
+}
+
+bool ModifyDirectConnectAttributeRequest::GetSignLaw() const
+{
+    return m_signLaw;
+}
+
+void ModifyDirectConnectAttributeRequest::SetSignLaw(const bool& _signLaw)
+{
+    m_signLaw = _signLaw;
+    m_signLawHasBeenSet = true;
+}
+
+bool ModifyDirectConnectAttributeRequest::SignLawHasBeenSet() const
+{
+    return m_signLawHasBeenSet;
 }
 
 

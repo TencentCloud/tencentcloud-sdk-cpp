@@ -91,14 +91,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。
-                     * @return StatType 统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。
+                     * 获取统计的类型，可选值：”Province”(省份)，”Isp”(运营商)，“CountryOrArea”(国家或地区)。
+                     * @return StatType 统计的类型，可选值：”Province”(省份)，”Isp”(运营商)，“CountryOrArea”(国家或地区)。
                      */
                     std::string GetStatType() const;
 
                     /**
-                     * 设置统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。
-                     * @param StatType 统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。
+                     * 设置统计的类型，可选值：”Province”(省份)，”Isp”(运营商)，“CountryOrArea”(国家或地区)。
+                     * @param StatType 统计的类型，可选值：”Province”(省份)，”Isp”(运营商)，“CountryOrArea”(国家或地区)。
                      */
                     void SetStatType(const std::string& _statType);
 
@@ -109,14 +109,14 @@ namespace TencentCloud
                     bool StatTypeHasBeenSet() const;
 
                     /**
-                     * 获取不填则为总体数据。
-                     * @return PlayDomains 不填则为总体数据。
+                     * 获取播放域名列表，不填则为全部。
+                     * @return PlayDomains 播放域名列表，不填则为全部。
                      */
                     std::vector<std::string> GetPlayDomains() const;
 
                     /**
-                     * 设置不填则为总体数据。
-                     * @param PlayDomains 不填则为总体数据。
+                     * 设置播放域名列表，不填则为全部。
+                     * @param PlayDomains 播放域名列表，不填则为全部。
                      */
                     void SetPlayDomains(const std::vector<std::string>& _playDomains);
 
@@ -216,13 +216,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。
+                     * 统计的类型，可选值：”Province”(省份)，”Isp”(运营商)，“CountryOrArea”(国家或地区)。
                      */
                     std::string m_statType;
                     bool m_statTypeHasBeenSet;
 
                     /**
-                     * 不填则为总体数据。
+                     * 播放域名列表，不填则为全部。
                      */
                     std::vector<std::string> m_playDomains;
                     bool m_playDomainsHasBeenSet;

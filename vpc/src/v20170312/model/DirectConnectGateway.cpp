@@ -33,7 +33,8 @@ DirectConnectGateway::DirectConnectGateway() :
     m_ccnIdHasBeenSet(false),
     m_ccnRouteTypeHasBeenSet(false),
     m_enableBGPHasBeenSet(false),
-    m_enableBGPCommunityHasBeenSet(false)
+    m_enableBGPCommunityHasBeenSet(false),
+    m_natGatewayIdHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const Value &value)
         m_enableBGPCommunityHasBeenSet = true;
     }
 
+    if (value.HasMember("NatGatewayId") && !value["NatGatewayId"].IsNull())
+    {
+        if (!value["NatGatewayId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectGateway.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_natGatewayId = string(value["NatGatewayId"].GetString());
+        m_natGatewayIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +274,14 @@ void DirectConnectGateway::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "EnableBGPCommunity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableBGPCommunity, allocator);
+    }
+
+    if (m_natGatewayIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NatGatewayId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_natGatewayId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -458,5 +477,21 @@ void DirectConnectGateway::SetEnableBGPCommunity(const bool& _enableBGPCommunity
 bool DirectConnectGateway::EnableBGPCommunityHasBeenSet() const
 {
     return m_enableBGPCommunityHasBeenSet;
+}
+
+string DirectConnectGateway::GetNatGatewayId() const
+{
+    return m_natGatewayId;
+}
+
+void DirectConnectGateway::SetNatGatewayId(const string& _natGatewayId)
+{
+    m_natGatewayId = _natGatewayId;
+    m_natGatewayIdHasBeenSet = true;
+}
+
+bool DirectConnectGateway::NatGatewayIdHasBeenSet() const
+{
+    return m_natGatewayIdHasBeenSet;
 }
 

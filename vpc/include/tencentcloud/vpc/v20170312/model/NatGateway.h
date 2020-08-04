@@ -254,6 +254,50 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的专线网关ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DirectConnectGatewayIds 绑定的专线网关ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetDirectConnectGatewayIds() const;
+
+                    /**
+                     * 设置绑定的专线网关ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DirectConnectGatewayIds 绑定的专线网关ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDirectConnectGatewayIds(const std::vector<std::string>& _directConnectGatewayIds);
+
+                    /**
+                     * 判断参数 DirectConnectGatewayIds 是否已赋值
+                     * @return DirectConnectGatewayIds 是否已赋值
+                     */
+                    bool DirectConnectGatewayIdsHasBeenSet() const;
+
+                    /**
+                     * 获取所属子网ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubnetId 所属子网ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置所属子网ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubnetId 所属子网ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,6 +367,20 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 绑定的专线网关ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_directConnectGatewayIds;
+                    bool m_directConnectGatewayIdsHasBeenSet;
+
+                    /**
+                     * 所属子网ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

@@ -45,6 +45,8 @@
 #include <tencentcloud/vpc/v20170312/model/AssociateAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateDhcpIpWithAddressIpRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateDhcpIpWithAddressIpResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AssociateDirectConnectGatewayNatGatewayRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AssociateDirectConnectGatewayNatGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateNatGatewayAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateNatGatewayAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateNetworkAclSubnetsRequest.h>
@@ -305,6 +307,8 @@
 #include <tencentcloud/vpc/v20170312/model/DisassociateAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateDhcpIpWithAddressIpRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateDhcpIpWithAddressIpResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DisassociateDirectConnectGatewayNatGatewayRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DisassociateDirectConnectGatewayNatGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateNatGatewayAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateNatGatewayAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateNetworkAclSubnetsRequest.h>
@@ -496,6 +500,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AssociateDhcpIpWithAddressIpResponse> AssociateDhcpIpWithAddressIpOutcome;
                 typedef std::future<AssociateDhcpIpWithAddressIpOutcome> AssociateDhcpIpWithAddressIpOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AssociateDhcpIpWithAddressIpRequest&, AssociateDhcpIpWithAddressIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateDhcpIpWithAddressIpAsyncHandler;
+                typedef Outcome<Error, Model::AssociateDirectConnectGatewayNatGatewayResponse> AssociateDirectConnectGatewayNatGatewayOutcome;
+                typedef std::future<AssociateDirectConnectGatewayNatGatewayOutcome> AssociateDirectConnectGatewayNatGatewayOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AssociateDirectConnectGatewayNatGatewayRequest&, AssociateDirectConnectGatewayNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateDirectConnectGatewayNatGatewayAsyncHandler;
                 typedef Outcome<Error, Model::AssociateNatGatewayAddressResponse> AssociateNatGatewayAddressOutcome;
                 typedef std::future<AssociateNatGatewayAddressOutcome> AssociateNatGatewayAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AssociateNatGatewayAddressRequest&, AssociateNatGatewayAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateNatGatewayAddressAsyncHandler;
@@ -886,6 +893,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DisassociateDhcpIpWithAddressIpResponse> DisassociateDhcpIpWithAddressIpOutcome;
                 typedef std::future<DisassociateDhcpIpWithAddressIpOutcome> DisassociateDhcpIpWithAddressIpOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisassociateDhcpIpWithAddressIpRequest&, DisassociateDhcpIpWithAddressIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateDhcpIpWithAddressIpAsyncHandler;
+                typedef Outcome<Error, Model::DisassociateDirectConnectGatewayNatGatewayResponse> DisassociateDirectConnectGatewayNatGatewayOutcome;
+                typedef std::future<DisassociateDirectConnectGatewayNatGatewayOutcome> DisassociateDirectConnectGatewayNatGatewayOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DisassociateDirectConnectGatewayNatGatewayRequest&, DisassociateDirectConnectGatewayNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateDirectConnectGatewayNatGatewayAsyncHandler;
                 typedef Outcome<Error, Model::DisassociateNatGatewayAddressResponse> DisassociateNatGatewayAddressOutcome;
                 typedef std::future<DisassociateNatGatewayAddressOutcome> DisassociateNatGatewayAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisassociateNatGatewayAddressRequest&, DisassociateNatGatewayAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateNatGatewayAddressAsyncHandler;
@@ -1226,6 +1236,15 @@ namespace TencentCloud
                 AssociateDhcpIpWithAddressIpOutcome AssociateDhcpIpWithAddressIp(const Model::AssociateDhcpIpWithAddressIpRequest &request);
                 void AssociateDhcpIpWithAddressIpAsync(const Model::AssociateDhcpIpWithAddressIpRequest& request, const AssociateDhcpIpWithAddressIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateDhcpIpWithAddressIpOutcomeCallable AssociateDhcpIpWithAddressIpCallable(const Model::AssociateDhcpIpWithAddressIpRequest& request);
+
+                /**
+                 *将专线网关与NAT网关绑定，专线网关默认路由指向NAT网关
+                 * @param req AssociateDirectConnectGatewayNatGatewayRequest
+                 * @return AssociateDirectConnectGatewayNatGatewayOutcome
+                 */
+                AssociateDirectConnectGatewayNatGatewayOutcome AssociateDirectConnectGatewayNatGateway(const Model::AssociateDirectConnectGatewayNatGatewayRequest &request);
+                void AssociateDirectConnectGatewayNatGatewayAsync(const Model::AssociateDirectConnectGatewayNatGatewayRequest& request, const AssociateDirectConnectGatewayNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateDirectConnectGatewayNatGatewayOutcomeCallable AssociateDirectConnectGatewayNatGatewayCallable(const Model::AssociateDirectConnectGatewayNatGatewayRequest& request);
 
                 /**
                  *本接口(AssociateNatGatewayAddress)用于NAT网关绑定弹性IP（EIP）。
@@ -2537,6 +2556,15 @@ LimitTypes取值范围：
                 DisassociateDhcpIpWithAddressIpOutcome DisassociateDhcpIpWithAddressIp(const Model::DisassociateDhcpIpWithAddressIpRequest &request);
                 void DisassociateDhcpIpWithAddressIpAsync(const Model::DisassociateDhcpIpWithAddressIpRequest& request, const DisassociateDhcpIpWithAddressIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateDhcpIpWithAddressIpOutcomeCallable DisassociateDhcpIpWithAddressIpCallable(const Model::DisassociateDhcpIpWithAddressIpRequest& request);
+
+                /**
+                 *将专线网关与NAT网关解绑，解绑之后，专线网关将不能通过NAT网关访问公网
+                 * @param req DisassociateDirectConnectGatewayNatGatewayRequest
+                 * @return DisassociateDirectConnectGatewayNatGatewayOutcome
+                 */
+                DisassociateDirectConnectGatewayNatGatewayOutcome DisassociateDirectConnectGatewayNatGateway(const Model::DisassociateDirectConnectGatewayNatGatewayRequest &request);
+                void DisassociateDirectConnectGatewayNatGatewayAsync(const Model::DisassociateDirectConnectGatewayNatGatewayRequest& request, const DisassociateDirectConnectGatewayNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateDirectConnectGatewayNatGatewayOutcomeCallable DisassociateDirectConnectGatewayNatGatewayCallable(const Model::DisassociateDirectConnectGatewayNatGatewayRequest& request);
 
                 /**
                  *本接口（DisassociateNatGatewayAddress）用于NAT网关解绑弹性IP。

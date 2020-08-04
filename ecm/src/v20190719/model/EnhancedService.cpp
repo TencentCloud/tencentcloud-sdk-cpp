@@ -23,7 +23,8 @@ using namespace std;
 
 EnhancedService::EnhancedService() :
     m_securityServiceHasBeenSet(false),
-    m_monitorServiceHasBeenSet(false)
+    m_monitorServiceHasBeenSet(false),
+    m_eIPDirectServiceHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,23 @@ CoreInternalOutcome EnhancedService::Deserialize(const Value &value)
         m_monitorServiceHasBeenSet = true;
     }
 
+    if (value.HasMember("EIPDirectService") && !value["EIPDirectService"].IsNull())
+    {
+        if (!value["EIPDirectService"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `EnhancedService.EIPDirectService` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eIPDirectService.Deserialize(value["EIPDirectService"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eIPDirectServiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +107,15 @@ void EnhancedService::ToJsonObject(Value &value, Document::AllocatorType& alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_monitorService.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_eIPDirectServiceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EIPDirectService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_eIPDirectService.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -124,5 +151,21 @@ void EnhancedService::SetMonitorService(const RunMonitorServiceEnabled& _monitor
 bool EnhancedService::MonitorServiceHasBeenSet() const
 {
     return m_monitorServiceHasBeenSet;
+}
+
+RunEIPDirectServiceEnabled EnhancedService::GetEIPDirectService() const
+{
+    return m_eIPDirectService;
+}
+
+void EnhancedService::SetEIPDirectService(const RunEIPDirectServiceEnabled& _eIPDirectService)
+{
+    m_eIPDirectService = _eIPDirectService;
+    m_eIPDirectServiceHasBeenSet = true;
+}
+
+bool EnhancedService::EIPDirectServiceHasBeenSet() const
+{
+    return m_eIPDirectServiceHasBeenSet;
 }
 

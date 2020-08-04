@@ -101,24 +101,6 @@ namespace TencentCloud
                     bool LineOperatorHasBeenSet() const;
 
                     /**
-                     * 获取本地数据中心的地理位置。
-                     * @return Location 本地数据中心的地理位置。
-                     */
-                    std::string GetLocation() const;
-
-                    /**
-                     * 设置本地数据中心的地理位置。
-                     * @param Location 本地数据中心的地理位置。
-                     */
-                    void SetLocation(const std::string& _location);
-
-                    /**
-                     * 判断参数 Location 是否已赋值
-                     * @return Location 是否已赋值
-                     */
-                    bool LocationHasBeenSet() const;
-
-                    /**
                      * 获取物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。
                      * @return PortType 物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。
                      */
@@ -153,6 +135,24 @@ namespace TencentCloud
                      * @return CircuitCode 是否已赋值
                      */
                     bool CircuitCodeHasBeenSet() const;
+
+                    /**
+                     * 获取本地数据中心的地理位置。
+                     * @return Location 本地数据中心的地理位置。
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 设置本地数据中心的地理位置。
+                     * @param Location 本地数据中心的地理位置。
+                     */
+                    void SetLocation(const std::string& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     */
+                    bool LocationHasBeenSet() const;
 
                     /**
                      * 获取物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。
@@ -334,6 +334,24 @@ namespace TencentCloud
                      */
                     bool FaultReportContactNumberHasBeenSet() const;
 
+                    /**
+                     * 获取物理专线申请者是否签署了用户使用协议。默认已签署
+                     * @return SignLaw 物理专线申请者是否签署了用户使用协议。默认已签署
+                     */
+                    bool GetSignLaw() const;
+
+                    /**
+                     * 设置物理专线申请者是否签署了用户使用协议。默认已签署
+                     * @param SignLaw 物理专线申请者是否签署了用户使用协议。默认已签署
+                     */
+                    void SetSignLaw(const bool& _signLaw);
+
+                    /**
+                     * 判断参数 SignLaw 是否已赋值
+                     * @return SignLaw 是否已赋值
+                     */
+                    bool SignLawHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,12 +374,6 @@ namespace TencentCloud
                     bool m_lineOperatorHasBeenSet;
 
                     /**
-                     * 本地数据中心的地理位置。
-                     */
-                    std::string m_location;
-                    bool m_locationHasBeenSet;
-
-                    /**
                      * 物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。
                      */
                     std::string m_portType;
@@ -372,6 +384,12 @@ namespace TencentCloud
                      */
                     std::string m_circuitCode;
                     bool m_circuitCodeHasBeenSet;
+
+                    /**
+                     * 本地数据中心的地理位置。
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
 
                     /**
                      * 物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。
@@ -432,6 +450,12 @@ namespace TencentCloud
                      */
                     std::string m_faultReportContactNumber;
                     bool m_faultReportContactNumberHasBeenSet;
+
+                    /**
+                     * 物理专线申请者是否签署了用户使用协议。默认已签署
+                     */
+                    bool m_signLaw;
+                    bool m_signLawHasBeenSet;
 
                 };
             }

@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool TopIndexHasBeenSet() const;
 
                     /**
-                     * 获取排序指标，可选值包括” AvgFluxPerSecond”，”TotalRequest”（默认）,“TotalFlux”。
-                     * @return OrderParam 排序指标，可选值包括” AvgFluxPerSecond”，”TotalRequest”（默认）,“TotalFlux”。
+                     * 获取排序指标，可选值包括” AvgFluxPerSecond”(按每秒平均流量排序)，”TotalRequest”（默认，按总请求数排序）,“TotalFlux”（按总流量排序）。
+                     * @return OrderParam 排序指标，可选值包括” AvgFluxPerSecond”(按每秒平均流量排序)，”TotalRequest”（默认，按总请求数排序）,“TotalFlux”（按总流量排序）。
                      */
                     std::string GetOrderParam() const;
 
@@ -157,7 +157,7 @@ namespace TencentCloud
                     bool m_topIndexHasBeenSet;
 
                     /**
-                     * 排序指标，可选值包括” AvgFluxPerSecond”，”TotalRequest”（默认）,“TotalFlux”。
+                     * 排序指标，可选值包括” AvgFluxPerSecond”(按每秒平均流量排序)，”TotalRequest”（默认，按总请求数排序）,“TotalFlux”（按总流量排序）。
                      */
                     std::string m_orderParam;
                     bool m_orderParamHasBeenSet;

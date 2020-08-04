@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeDirectConnectsResponse::DescribeDirectConnectsResponse() :
     m_directConnectSetHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_allSignLawHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeDirectConnectsResponse::Deserialize(const string &pa
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AllSignLaw") && !rsp["AllSignLaw"].IsNull())
+    {
+        if (!rsp["AllSignLaw"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `AllSignLaw` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allSignLaw = rsp["AllSignLaw"].GetBool();
+        m_allSignLawHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,16 @@ int64_t DescribeDirectConnectsResponse::GetTotalCount() const
 bool DescribeDirectConnectsResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+bool DescribeDirectConnectsResponse::GetAllSignLaw() const
+{
+    return m_allSignLaw;
+}
+
+bool DescribeDirectConnectsResponse::AllSignLawHasBeenSet() const
+{
+    return m_allSignLawHasBeenSet;
 }
 
 

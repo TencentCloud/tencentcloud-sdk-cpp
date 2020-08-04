@@ -240,6 +240,24 @@ namespace TencentCloud
                      */
                     bool FaultReportContactNumberHasBeenSet() const;
 
+                    /**
+                     * 获取物理专线申请者补签用户使用协议
+                     * @return SignLaw 物理专线申请者补签用户使用协议
+                     */
+                    bool GetSignLaw() const;
+
+                    /**
+                     * 设置物理专线申请者补签用户使用协议
+                     * @param SignLaw 物理专线申请者补签用户使用协议
+                     */
+                    void SetSignLaw(const bool& _signLaw);
+
+                    /**
+                     * 判断参数 SignLaw 是否已赋值
+                     * @return SignLaw 是否已赋值
+                     */
+                    bool SignLawHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +325,12 @@ namespace TencentCloud
                      */
                     std::string m_faultReportContactNumber;
                     bool m_faultReportContactNumberHasBeenSet;
+
+                    /**
+                     * 物理专线申请者补签用户使用协议
+                     */
+                    bool m_signLaw;
+                    bool m_signLawHasBeenSet;
 
                 };
             }

@@ -32,7 +32,9 @@ NatGateway::NatGateway() :
     m_networkStateHasBeenSet(false),
     m_destinationIpPortTranslationNatRuleSetHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_directConnectGatewayIdsHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,29 @@ CoreInternalOutcome NatGateway::Deserialize(const Value &value)
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("DirectConnectGatewayIds") && !value["DirectConnectGatewayIds"].IsNull())
+    {
+        if (!value["DirectConnectGatewayIds"].IsArray())
+            return CoreInternalOutcome(Error("response `NatGateway.DirectConnectGatewayIds` is not array type"));
+
+        const Value &tmpValue = value["DirectConnectGatewayIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_directConnectGatewayIds.push_back((*itr).GetString());
+        }
+        m_directConnectGatewayIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NatGateway.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +303,27 @@ void NatGateway::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_directConnectGatewayIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DirectConnectGatewayIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_directConnectGatewayIds.begin(); itr != m_directConnectGatewayIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +503,37 @@ void NatGateway::SetZone(const string& _zone)
 bool NatGateway::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+vector<string> NatGateway::GetDirectConnectGatewayIds() const
+{
+    return m_directConnectGatewayIds;
+}
+
+void NatGateway::SetDirectConnectGatewayIds(const vector<string>& _directConnectGatewayIds)
+{
+    m_directConnectGatewayIds = _directConnectGatewayIds;
+    m_directConnectGatewayIdsHasBeenSet = true;
+}
+
+bool NatGateway::DirectConnectGatewayIdsHasBeenSet() const
+{
+    return m_directConnectGatewayIdsHasBeenSet;
+}
+
+string NatGateway::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void NatGateway::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool NatGateway::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 

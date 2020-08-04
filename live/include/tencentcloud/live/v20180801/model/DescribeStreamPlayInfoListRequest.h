@@ -133,20 +133,20 @@ namespace TencentCloud
                     /**
                      * 获取推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。
 若不填，则为查询总体播放数据。
-注意：按AppName查询，需要联系客服同学提单支持。
+注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。
                      * @return AppName 推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。
 若不填，则为查询总体播放数据。
-注意：按AppName查询，需要联系客服同学提单支持。
+注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。
 若不填，则为查询总体播放数据。
-注意：按AppName查询，需要联系客服同学提单支持。
+注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。
                      * @param AppName 推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。
 若不填，则为查询总体播放数据。
-注意：按AppName查询，需要联系客服同学提单支持。
+注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                     /**
                      * 推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。
 若不填，则为查询总体播放数据。
-注意：按AppName查询，需要联系客服同学提单支持。
+注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;

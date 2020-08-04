@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ecm/v20190719/model/RunSecurityServiceEnabled.h>
 #include <tencentcloud/ecm/v20190719/model/RunMonitorServiceEnabled.h>
+#include <tencentcloud/ecm/v20190719/model/RunEIPDirectServiceEnabled.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,24 @@ namespace TencentCloud
                      */
                     bool MonitorServiceHasBeenSet() const;
 
+                    /**
+                     * 获取是否开通IP直通。若不指定该参数，则Linux镜像默认开通，windows镜像暂不支持IP直通。
+                     * @return EIPDirectService 是否开通IP直通。若不指定该参数，则Linux镜像默认开通，windows镜像暂不支持IP直通。
+                     */
+                    RunEIPDirectServiceEnabled GetEIPDirectService() const;
+
+                    /**
+                     * 设置是否开通IP直通。若不指定该参数，则Linux镜像默认开通，windows镜像暂不支持IP直通。
+                     * @param EIPDirectService 是否开通IP直通。若不指定该参数，则Linux镜像默认开通，windows镜像暂不支持IP直通。
+                     */
+                    void SetEIPDirectService(const RunEIPDirectServiceEnabled& _eIPDirectService);
+
+                    /**
+                     * 判断参数 EIPDirectService 是否已赋值
+                     * @return EIPDirectService 是否已赋值
+                     */
+                    bool EIPDirectServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +116,12 @@ namespace TencentCloud
                      */
                     RunMonitorServiceEnabled m_monitorService;
                     bool m_monitorServiceHasBeenSet;
+
+                    /**
+                     * 是否开通IP直通。若不指定该参数，则Linux镜像默认开通，windows镜像暂不支持IP直通。
+                     */
+                    RunEIPDirectServiceEnabled m_eIPDirectService;
+                    bool m_eIPDirectServiceHasBeenSet;
 
                 };
             }

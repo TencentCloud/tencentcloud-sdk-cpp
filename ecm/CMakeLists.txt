@@ -19,6 +19,7 @@ set(ecm_public_header
   )
 
 set(ecm_public_header_model
+  include/tencentcloud/ecm/v20190719/model/RunEIPDirectServiceEnabled.h
   include/tencentcloud/ecm/v20190719/model/DescribeTaskResultResponse.h
   include/tencentcloud/ecm/v20190719/model/Ipv6Address.h
   include/tencentcloud/ecm/v20190719/model/DescribePeakBaseOverviewRequest.h
@@ -205,6 +206,7 @@ set(ecm_public_header_model
 
 set(ecm_src
   src/v20190719/EcmClient.cpp
+  src/v20190719/model/RunEIPDirectServiceEnabled.cpp
   src/v20190719/model/DescribeTaskResultResponse.cpp
   src/v20190719/model/Ipv6Address.cpp
   src/v20190719/model/DescribePeakBaseOverviewRequest.cpp

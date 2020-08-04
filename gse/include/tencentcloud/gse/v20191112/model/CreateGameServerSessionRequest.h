@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool MaximumPlayerSessionCountHasBeenSet() const;
 
                     /**
-                     * 获取别名ID
-                     * @return AliasId 别名ID
+                     * 获取别名ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID
+                     * @return AliasId 别名ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID
                      */
                     std::string GetAliasId() const;
 
                     /**
-                     * 设置别名ID
-                     * @param AliasId 别名ID
+                     * 设置别名ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID
+                     * @param AliasId 别名ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID
                      */
                     void SetAliasId(const std::string& _aliasId);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool CreatorIdHasBeenSet() const;
 
                     /**
-                     * 获取舰队ID
-                     * @return FleetId 舰队ID
+                     * 获取舰队ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID
+                     * @return FleetId 舰队ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID
                      */
                     std::string GetFleetId() const;
 
                     /**
-                     * 设置舰队ID
-                     * @param FleetId 舰队ID
+                     * 设置舰队ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID
+                     * @param FleetId 舰队ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID
                      */
                     void SetFleetId(const std::string& _fleetId);
 
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_maximumPlayerSessionCountHasBeenSet;
 
                     /**
-                     * 别名ID
+                     * 别名ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID
                      */
                     std::string m_aliasId;
                     bool m_aliasIdHasBeenSet;
@@ -226,7 +226,7 @@ namespace TencentCloud
                     bool m_creatorIdHasBeenSet;
 
                     /**
-                     * 舰队ID
+                     * 舰队ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID
                      */
                     std::string m_fleetId;
                     bool m_fleetIdHasBeenSet;
