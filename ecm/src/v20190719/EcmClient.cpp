@@ -2104,6 +2104,49 @@ EcmClient::ModifyInstancesAttributeOutcomeCallable EcmClient::ModifyInstancesAtt
     return task->get_future();
 }
 
+EcmClient::ModifyModuleConfigOutcome EcmClient::ModifyModuleConfig(const ModifyModuleConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModuleConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModuleConfigResponse rsp = ModifyModuleConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModuleConfigOutcome(rsp);
+        else
+            return ModifyModuleConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModuleConfigOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyModuleConfigAsync(const ModifyModuleConfigRequest& request, const ModifyModuleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyModuleConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyModuleConfigOutcomeCallable EcmClient::ModifyModuleConfigCallable(const ModifyModuleConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyModuleConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyModuleConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ModifyModuleImageOutcome EcmClient::ModifyModuleImage(const ModifyModuleImageRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyModuleImage");

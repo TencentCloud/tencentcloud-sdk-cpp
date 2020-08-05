@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/apigateway/v20180808/model/ApiIdStatus.h>
 #include <tencentcloud/apigateway/v20180808/model/UsagePlan.h>
+#include <tencentcloud/apigateway/v20180808/model/Tag.h>
 
 
 namespace TencentCloud
@@ -296,6 +297,20 @@ namespace TencentCloud
                      */
                     bool SetIdHasBeenSet() const;
 
+                    /**
+                     * 获取服务绑定的标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 服务绑定的标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -423,6 +438,13 @@ namespace TencentCloud
                      */
                     int64_t m_setId;
                     bool m_setIdHasBeenSet;
+
+                    /**
+                     * 服务绑定的标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

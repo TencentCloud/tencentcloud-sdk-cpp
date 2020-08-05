@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool MessageIdHasBeenSet() const;
 
                     /**
-                     * 获取设备回复的的消息内容，采用base64编码
-                     * @return PayloadBase64 设备回复的的消息内容，采用base64编码
+                     * 获取设备回复的消息内容，采用base64编码
+                     * @return PayloadBase64 设备回复的消息内容，采用base64编码
                      */
                     std::string GetPayloadBase64() const;
 
@@ -75,7 +75,7 @@ namespace TencentCloud
                     bool m_messageIdHasBeenSet;
 
                     /**
-                     * 设备回复的的消息内容，采用base64编码
+                     * 设备回复的消息内容，采用base64编码
                      */
                     std::string m_payloadBase64;
                     bool m_payloadBase64HasBeenSet;

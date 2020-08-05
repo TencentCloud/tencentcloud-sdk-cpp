@@ -334,6 +334,24 @@ namespace TencentCloud
                      */
                     bool CpuHasBeenSet() const;
 
+                    /**
+                     * 获取机型外部代号
+                     * @return DeviceClassCode 机型外部代号
+                     */
+                    std::string GetDeviceClassCode() const;
+
+                    /**
+                     * 设置机型外部代号
+                     * @param DeviceClassCode 机型外部代号
+                     */
+                    void SetDeviceClassCode(const std::string& _deviceClassCode);
+
+                    /**
+                     * 判断参数 DeviceClassCode 是否已赋值
+                     * @return DeviceClassCode 是否已赋值
+                     */
+                    bool DeviceClassCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +449,12 @@ namespace TencentCloud
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;
+
+                    /**
+                     * 机型外部代号
+                     */
+                    std::string m_deviceClassCode;
+                    bool m_deviceClassCodeHasBeenSet;
 
                 };
             }

@@ -37,7 +37,8 @@ DeviceHardwareInfo::DeviceHardwareInfo() :
     m_diskDescriptionHasBeenSet(false),
     m_nicDescriptionHasBeenSet(false),
     m_raidDescriptionHasBeenSet(false),
-    m_cpuHasBeenSet(false)
+    m_cpuHasBeenSet(false),
+    m_deviceClassCodeHasBeenSet(false)
 {
 }
 
@@ -206,6 +207,16 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const Value &value)
         m_cpuHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceClassCode") && !value["DeviceClassCode"].IsNull())
+    {
+        if (!value["DeviceClassCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.DeviceClassCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceClassCode = string(value["DeviceClassCode"].GetString());
+        m_deviceClassCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -339,6 +350,14 @@ void DeviceHardwareInfo::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_deviceClassCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceClassCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deviceClassCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -598,5 +617,21 @@ void DeviceHardwareInfo::SetCpu(const uint64_t& _cpu)
 bool DeviceHardwareInfo::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+string DeviceHardwareInfo::GetDeviceClassCode() const
+{
+    return m_deviceClassCode;
+}
+
+void DeviceHardwareInfo::SetDeviceClassCode(const string& _deviceClassCode)
+{
+    m_deviceClassCode = _deviceClassCode;
+    m_deviceClassCodeHasBeenSet = true;
+}
+
+bool DeviceHardwareInfo::DeviceClassCodeHasBeenSet() const
+{
+    return m_deviceClassCodeHasBeenSet;
 }
 

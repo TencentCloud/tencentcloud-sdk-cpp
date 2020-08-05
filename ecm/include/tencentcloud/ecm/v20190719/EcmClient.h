@@ -119,6 +119,8 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyImageAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyModuleConfigRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyModuleConfigResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleNameRequest.h>
@@ -307,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
                 typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyModuleConfigResponse> ModifyModuleConfigOutcome;
+                typedef std::future<ModifyModuleConfigOutcome> ModifyModuleConfigOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyModuleConfigRequest&, ModifyModuleConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleConfigAsyncHandler;
                 typedef Outcome<Error, Model::ModifyModuleImageResponse> ModifyModuleImageOutcome;
                 typedef std::future<ModifyModuleImageOutcome> ModifyModuleImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyModuleImageRequest&, ModifyModuleImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleImageAsyncHandler;
@@ -797,6 +802,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyInstancesAttributeOutcome ModifyInstancesAttribute(const Model::ModifyInstancesAttributeRequest &request);
                 void ModifyInstancesAttributeAsync(const Model::ModifyInstancesAttributeRequest& request, const ModifyInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstancesAttributeOutcomeCallable ModifyInstancesAttributeCallable(const Model::ModifyInstancesAttributeRequest& request);
+
+                /**
+                 *修改模块配置，已关联实例的模块不支持调整配置。
+                 * @param req ModifyModuleConfigRequest
+                 * @return ModifyModuleConfigOutcome
+                 */
+                ModifyModuleConfigOutcome ModifyModuleConfig(const Model::ModifyModuleConfigRequest &request);
+                void ModifyModuleConfigAsync(const Model::ModifyModuleConfigRequest& request, const ModifyModuleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyModuleConfigOutcomeCallable ModifyModuleConfigCallable(const Model::ModifyModuleConfigRequest& request);
 
                 /**
                  *ModifyModuleImage

@@ -44,7 +44,8 @@ DescribeServiceResponse::DescribeServiceResponse() :
     m_usagePlanListHasBeenSet(false),
     m_ipVersionHasBeenSet(false),
     m_userTypeHasBeenSet(false),
-    m_setIdHasBeenSet(false)
+    m_setIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -308,6 +309,26 @@ CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
         m_setIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
+    {
+        if (!rsp["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+
+        const Value &tmpValue = rsp["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -511,6 +532,16 @@ int64_t DescribeServiceResponse::GetSetId() const
 bool DescribeServiceResponse::SetIdHasBeenSet() const
 {
     return m_setIdHasBeenSet;
+}
+
+vector<Tag> DescribeServiceResponse::GetTags() const
+{
+    return m_tags;
+}
+
+bool DescribeServiceResponse::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

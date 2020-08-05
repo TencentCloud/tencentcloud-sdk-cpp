@@ -66,10 +66,12 @@ namespace TencentCloud
 <li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>
 <li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>
 <li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>
+<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>
                      * @return Filters 过滤条件，参数不支持同时指定NatGatewayIds和Filters。
 <li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>
 <li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>
 <li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>
+<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -78,10 +80,12 @@ namespace TencentCloud
 <li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>
 <li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>
 <li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>
+<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>
                      * @param Filters 过滤条件，参数不支持同时指定NatGatewayIds和Filters。
 <li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>
 <li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>
 <li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>
+<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -140,6 +144,7 @@ namespace TencentCloud
 <li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>
 <li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>
 <li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>
+<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

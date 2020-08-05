@@ -986,6 +986,92 @@ IaiClient::GetSimilarPersonResultOutcomeCallable IaiClient::GetSimilarPersonResu
     return task->get_future();
 }
 
+IaiClient::GetUpgradeGroupFaceModelVersionJobListOutcome IaiClient::GetUpgradeGroupFaceModelVersionJobList(const GetUpgradeGroupFaceModelVersionJobListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetUpgradeGroupFaceModelVersionJobList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetUpgradeGroupFaceModelVersionJobListResponse rsp = GetUpgradeGroupFaceModelVersionJobListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetUpgradeGroupFaceModelVersionJobListOutcome(rsp);
+        else
+            return GetUpgradeGroupFaceModelVersionJobListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetUpgradeGroupFaceModelVersionJobListOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::GetUpgradeGroupFaceModelVersionJobListAsync(const GetUpgradeGroupFaceModelVersionJobListRequest& request, const GetUpgradeGroupFaceModelVersionJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetUpgradeGroupFaceModelVersionJobList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::GetUpgradeGroupFaceModelVersionJobListOutcomeCallable IaiClient::GetUpgradeGroupFaceModelVersionJobListCallable(const GetUpgradeGroupFaceModelVersionJobListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetUpgradeGroupFaceModelVersionJobListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetUpgradeGroupFaceModelVersionJobList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IaiClient::GetUpgradeGroupFaceModelVersionResultOutcome IaiClient::GetUpgradeGroupFaceModelVersionResult(const GetUpgradeGroupFaceModelVersionResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetUpgradeGroupFaceModelVersionResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetUpgradeGroupFaceModelVersionResultResponse rsp = GetUpgradeGroupFaceModelVersionResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetUpgradeGroupFaceModelVersionResultOutcome(rsp);
+        else
+            return GetUpgradeGroupFaceModelVersionResultOutcome(o.GetError());
+    }
+    else
+    {
+        return GetUpgradeGroupFaceModelVersionResultOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::GetUpgradeGroupFaceModelVersionResultAsync(const GetUpgradeGroupFaceModelVersionResultRequest& request, const GetUpgradeGroupFaceModelVersionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetUpgradeGroupFaceModelVersionResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::GetUpgradeGroupFaceModelVersionResultOutcomeCallable IaiClient::GetUpgradeGroupFaceModelVersionResultCallable(const GetUpgradeGroupFaceModelVersionResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetUpgradeGroupFaceModelVersionResultOutcome()>>(
+        [this, request]()
+        {
+            return this->GetUpgradeGroupFaceModelVersionResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IaiClient::ModifyGroupOutcome IaiClient::ModifyGroup(const ModifyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyGroup");
@@ -1280,6 +1366,49 @@ IaiClient::SearchPersonsReturnsByGroupOutcomeCallable IaiClient::SearchPersonsRe
         [this, request]()
         {
             return this->SearchPersonsReturnsByGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IaiClient::UpgradeGroupFaceModelVersionOutcome IaiClient::UpgradeGroupFaceModelVersion(const UpgradeGroupFaceModelVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeGroupFaceModelVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeGroupFaceModelVersionResponse rsp = UpgradeGroupFaceModelVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeGroupFaceModelVersionOutcome(rsp);
+        else
+            return UpgradeGroupFaceModelVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeGroupFaceModelVersionOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::UpgradeGroupFaceModelVersionAsync(const UpgradeGroupFaceModelVersionRequest& request, const UpgradeGroupFaceModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeGroupFaceModelVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::UpgradeGroupFaceModelVersionOutcomeCallable IaiClient::UpgradeGroupFaceModelVersionCallable(const UpgradeGroupFaceModelVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeGroupFaceModelVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeGroupFaceModelVersion(request);
         }
     );
 

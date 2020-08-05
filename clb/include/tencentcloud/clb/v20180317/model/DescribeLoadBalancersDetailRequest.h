@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回负载均衡列表数目，默认20，最大值1000。
-                     * @return Limit 返回负载均衡列表数目，默认20，最大值1000。
+                     * 获取返回负载均衡列表数目，默认20，最大值100。
+                     * @return Limit 返回负载均衡列表数目，默认20，最大值100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回负载均衡列表数目，默认20，最大值1000。
-                     * @param Limit 返回负载均衡列表数目，默认20，最大值1000。
+                     * 设置返回负载均衡列表数目，默认20，最大值100。
+                     * @param Limit 返回负载均衡列表数目，默认20，最大值100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -176,7 +176,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回负载均衡列表数目，默认20，最大值1000。
+                     * 返回负载均衡列表数目，默认20，最大值100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

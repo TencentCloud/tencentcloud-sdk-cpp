@@ -22,8 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 WordItem::WordItem() :
-    m_createTimeHasBeenSet(false),
     m_textHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_posHasBeenSet(false)
 {
 }
@@ -33,16 +33,6 @@ CoreInternalOutcome WordItem::Deserialize(const Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
-    {
-        if (!value["CreateTime"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `WordItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_createTime = string(value["CreateTime"].GetString());
-        m_createTimeHasBeenSet = true;
-    }
-
     if (value.HasMember("Text") && !value["Text"].IsNull())
     {
         if (!value["Text"].IsString())
@@ -51,6 +41,16 @@ CoreInternalOutcome WordItem::Deserialize(const Value &value)
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `WordItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
     }
 
     if (value.HasMember("Pos") && !value["Pos"].IsNull())
@@ -70,20 +70,20 @@ CoreInternalOutcome WordItem::Deserialize(const Value &value)
 void WordItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_createTimeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "CreateTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_textHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_posHasBeenSet)
@@ -96,22 +96,6 @@ void WordItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
 }
 
-
-string WordItem::GetCreateTime() const
-{
-    return m_createTime;
-}
-
-void WordItem::SetCreateTime(const string& _createTime)
-{
-    m_createTime = _createTime;
-    m_createTimeHasBeenSet = true;
-}
-
-bool WordItem::CreateTimeHasBeenSet() const
-{
-    return m_createTimeHasBeenSet;
-}
 
 string WordItem::GetText() const
 {
@@ -127,6 +111,22 @@ void WordItem::SetText(const string& _text)
 bool WordItem::TextHasBeenSet() const
 {
     return m_textHasBeenSet;
+}
+
+string WordItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void WordItem::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool WordItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 
 string WordItem::GetPos() const

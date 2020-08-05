@@ -52,6 +52,7 @@ namespace TencentCloud
 • 16k_zh_video：16k 音视频领域；
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
+• 16k_jp：16k 日语；
                      * @return EngineModelType 引擎模型类型。
 电话场景：
 • 8k_zh：电话 8k 中文普通话通用（可用于双声道音频）；
@@ -61,6 +62,7 @@ namespace TencentCloud
 • 16k_zh_video：16k 音视频领域；
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
+• 16k_jp：16k 日语；
                      */
                     std::string GetEngineModelType() const;
 
@@ -74,6 +76,7 @@ namespace TencentCloud
 • 16k_zh_video：16k 音视频领域；
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
+• 16k_jp：16k 日语；
                      * @param EngineModelType 引擎模型类型。
 电话场景：
 • 8k_zh：电话 8k 中文普通话通用（可用于双声道音频）；
@@ -83,6 +86,7 @@ namespace TencentCloud
 • 16k_zh_video：16k 音视频领域；
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
+• 16k_jp：16k 日语；
                      */
                     void SetEngineModelType(const std::string& _engineModelType);
 
@@ -360,6 +364,7 @@ namespace TencentCloud
 • 16k_zh_video：16k 音视频领域；
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
+• 16k_jp：16k 日语；
                      */
                     std::string m_engineModelType;
                     bool m_engineModelTypeHasBeenSet;

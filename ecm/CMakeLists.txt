@@ -68,6 +68,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeNodeRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateSubnetResponse.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesPasswordRequest.h
+  include/tencentcloud/ecm/v20190719/model/ModifyModuleConfigRequest.h
   include/tencentcloud/ecm/v20190719/model/Area.h
   include/tencentcloud/ecm/v20190719/model/DescribeConfigRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstanceVncUrlRequest.h
@@ -151,6 +152,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/PublicIPAddressInfo.h
   include/tencentcloud/ecm/v20190719/model/TerminateInstancesResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeAddressesRequest.h
+  include/tencentcloud/ecm/v20190719/model/ModifyModuleConfigResponse.h
   include/tencentcloud/ecm/v20190719/model/MigrateNetworkInterfaceRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeAddressQuotaResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateSecurityGroupResponse.h
@@ -255,6 +257,7 @@ set(ecm_src
   src/v20190719/model/DescribeNodeRequest.cpp
   src/v20190719/model/CreateSubnetResponse.cpp
   src/v20190719/model/ResetInstancesPasswordRequest.cpp
+  src/v20190719/model/ModifyModuleConfigRequest.cpp
   src/v20190719/model/Area.cpp
   src/v20190719/model/DescribeConfigRequest.cpp
   src/v20190719/model/DescribeInstanceVncUrlRequest.cpp
@@ -338,6 +341,7 @@ set(ecm_src
   src/v20190719/model/PublicIPAddressInfo.cpp
   src/v20190719/model/TerminateInstancesResponse.cpp
   src/v20190719/model/DescribeAddressesRequest.cpp
+  src/v20190719/model/ModifyModuleConfigResponse.cpp
   src/v20190719/model/MigrateNetworkInterfaceRequest.cpp
   src/v20190719/model/DescribeAddressQuotaResponse.cpp
   src/v20190719/model/CreateSecurityGroupResponse.cpp

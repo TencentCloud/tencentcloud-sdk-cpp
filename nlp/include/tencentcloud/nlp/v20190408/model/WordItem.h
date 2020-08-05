@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取词条创建时间。
-                     * @return CreateTime 词条创建时间。
-                     */
-                    std::string GetCreateTime() const;
-
-                    /**
-                     * 设置词条创建时间。
-                     * @param CreateTime 词条创建时间。
-                     */
-                    void SetCreateTime(const std::string& _createTime);
-
-                    /**
-                     * 判断参数 CreateTime 是否已赋值
-                     * @return CreateTime 是否已赋值
-                     */
-                    bool CreateTimeHasBeenSet() const;
-
-                    /**
                      * 获取词条文本内容。
                      * @return Text 词条文本内容。
                      */
@@ -81,6 +63,24 @@ namespace TencentCloud
                      * @return Text 是否已赋值
                      */
                     bool TextHasBeenSet() const;
+
+                    /**
+                     * 获取词条创建时间。
+                     * @return CreateTime 词条创建时间。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置词条创建时间。
+                     * @param CreateTime 词条创建时间。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取词条的词性。
@@ -103,16 +103,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 词条创建时间。
-                     */
-                    std::string m_createTime;
-                    bool m_createTimeHasBeenSet;
-
-                    /**
                      * 词条文本内容。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
+
+                    /**
+                     * 词条创建时间。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                     /**
                      * 词条的词性。
