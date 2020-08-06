@@ -37,7 +37,8 @@ UpdateNotebookInstanceRequest::UpdateNotebookInstanceRequest() :
     m_disassociateAdditionalCodeRepositoriesHasBeenSet(false),
     m_clsAccessHasBeenSet(false),
     m_autoStoppingHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false)
+    m_stoppingConditionHasBeenSet(false),
+    m_clsConfigHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,15 @@ string UpdateNotebookInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_stoppingCondition.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_clsConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClsConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_clsConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -396,6 +406,22 @@ void UpdateNotebookInstanceRequest::SetStoppingCondition(const StoppingCondition
 bool UpdateNotebookInstanceRequest::StoppingConditionHasBeenSet() const
 {
     return m_stoppingConditionHasBeenSet;
+}
+
+ClsConfig UpdateNotebookInstanceRequest::GetClsConfig() const
+{
+    return m_clsConfig;
+}
+
+void UpdateNotebookInstanceRequest::SetClsConfig(const ClsConfig& _clsConfig)
+{
+    m_clsConfig = _clsConfig;
+    m_clsConfigHasBeenSet = true;
+}
+
+bool UpdateNotebookInstanceRequest::ClsConfigHasBeenSet() const
+{
+    return m_clsConfigHasBeenSet;
 }
 
 

@@ -35,7 +35,8 @@ CreateNotebookInstanceRequest::CreateNotebookInstanceRequest() :
     m_additionalCodeRepositoriesHasBeenSet(false),
     m_clsAccessHasBeenSet(false),
     m_stoppingConditionHasBeenSet(false),
-    m_autoStoppingHasBeenSet(false)
+    m_autoStoppingHasBeenSet(false),
+    m_clsConfigHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,15 @@ string CreateNotebookInstanceRequest::ToJsonString() const
         string key = "AutoStopping";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_autoStopping.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClsConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_clsConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -346,6 +356,22 @@ void CreateNotebookInstanceRequest::SetAutoStopping(const string& _autoStopping)
 bool CreateNotebookInstanceRequest::AutoStoppingHasBeenSet() const
 {
     return m_autoStoppingHasBeenSet;
+}
+
+ClsConfig CreateNotebookInstanceRequest::GetClsConfig() const
+{
+    return m_clsConfig;
+}
+
+void CreateNotebookInstanceRequest::SetClsConfig(const ClsConfig& _clsConfig)
+{
+    m_clsConfig = _clsConfig;
+    m_clsConfigHasBeenSet = true;
+}
+
+bool CreateNotebookInstanceRequest::ClsConfigHasBeenSet() const
+{
+    return m_clsConfigHasBeenSet;
 }
 
 

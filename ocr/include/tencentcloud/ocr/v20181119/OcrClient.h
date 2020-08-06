@@ -107,6 +107,8 @@
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SealOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SealOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRRequest.h>
@@ -273,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ResidenceBookletOCRResponse> ResidenceBookletOCROutcome;
                 typedef std::future<ResidenceBookletOCROutcome> ResidenceBookletOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ResidenceBookletOCRRequest&, ResidenceBookletOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResidenceBookletOCRAsyncHandler;
+                typedef Outcome<Error, Model::RideHailingDriverLicenseOCRResponse> RideHailingDriverLicenseOCROutcome;
+                typedef std::future<RideHailingDriverLicenseOCROutcome> RideHailingDriverLicenseOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RideHailingDriverLicenseOCRRequest&, RideHailingDriverLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RideHailingDriverLicenseOCRAsyncHandler;
                 typedef Outcome<Error, Model::SealOCRResponse> SealOCROutcome;
                 typedef std::future<SealOCROutcome> SealOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SealOCRRequest&, SealOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> SealOCRAsyncHandler;
@@ -483,7 +488,7 @@ namespace TencentCloud
 
 适用于文字较多、版式复杂、对识别准召率要求较高的场景，如试卷试题、网络图片、街景店招牌、法律卷宗等场景。
 
-产品优势：与通用印刷体识别的基础上，提供更高精度的文字识别服务，在文字较多、长串数字、小字、模糊字、倾斜文本等困难场景下，高精度版的准确率和召回率更高。
+产品优势：与通用印刷体识别相比，提供更高精度的文字识别服务，在文字较多、长串数字、小字、模糊字、倾斜文本等困难场景下，高精度版的准确率和召回率更高。
 
 通用印刷体识别不同版本的差异如下：
 <table style="width:715px">
@@ -950,6 +955,17 @@ namespace TencentCloud
                 ResidenceBookletOCROutcome ResidenceBookletOCR(const Model::ResidenceBookletOCRRequest &request);
                 void ResidenceBookletOCRAsync(const Model::ResidenceBookletOCRRequest& request, const ResidenceBookletOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResidenceBookletOCROutcomeCallable ResidenceBookletOCRCallable(const Model::ResidenceBookletOCRRequest& request);
+
+                /**
+                 *本接口支持网约车驾驶证重要字段的自动定位与识别，重点字段的识别准确度达到99%以上。
+
+网约车驾驶证：包括姓名、证号、起始日期、截止日期、发证日期。
+                 * @param req RideHailingDriverLicenseOCRRequest
+                 * @return RideHailingDriverLicenseOCROutcome
+                 */
+                RideHailingDriverLicenseOCROutcome RideHailingDriverLicenseOCR(const Model::RideHailingDriverLicenseOCRRequest &request);
+                void RideHailingDriverLicenseOCRAsync(const Model::RideHailingDriverLicenseOCRRequest& request, const RideHailingDriverLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RideHailingDriverLicenseOCROutcomeCallable RideHailingDriverLicenseOCRCallable(const Model::RideHailingDriverLicenseOCRRequest& request);
 
                 /**
                  *印章识别已支持各类印章，包括发票章，财务章等，适用于公文，票据等场景。

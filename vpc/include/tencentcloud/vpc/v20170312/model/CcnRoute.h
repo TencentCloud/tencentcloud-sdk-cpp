@@ -208,6 +208,78 @@ namespace TencentCloud
                      */
                     bool InstanceUinHasBeenSet() const;
 
+                    /**
+                     * 获取路由的扩展状态
+                     * @return ExtraState 路由的扩展状态
+                     */
+                    std::string GetExtraState() const;
+
+                    /**
+                     * 设置路由的扩展状态
+                     * @param ExtraState 路由的扩展状态
+                     */
+                    void SetExtraState(const std::string& _extraState);
+
+                    /**
+                     * 判断参数 ExtraState 是否已赋值
+                     * @return ExtraState 是否已赋值
+                     */
+                    bool ExtraStateHasBeenSet() const;
+
+                    /**
+                     * 获取是否动态路由
+                     * @return IsBgp 是否动态路由
+                     */
+                    bool GetIsBgp() const;
+
+                    /**
+                     * 设置是否动态路由
+                     * @param IsBgp 是否动态路由
+                     */
+                    void SetIsBgp(const bool& _isBgp);
+
+                    /**
+                     * 判断参数 IsBgp 是否已赋值
+                     * @return IsBgp 是否已赋值
+                     */
+                    bool IsBgpHasBeenSet() const;
+
+                    /**
+                     * 获取路由优先级
+                     * @return RoutePriority 路由优先级
+                     */
+                    uint64_t GetRoutePriority() const;
+
+                    /**
+                     * 设置路由优先级
+                     * @param RoutePriority 路由优先级
+                     */
+                    void SetRoutePriority(const uint64_t& _routePriority);
+
+                    /**
+                     * 判断参数 RoutePriority 是否已赋值
+                     * @return RoutePriority 是否已赋值
+                     */
+                    bool RoutePriorityHasBeenSet() const;
+
+                    /**
+                     * 获取下一跳扩展名称（关联实例的扩展名称）
+                     * @return InstanceExtraName 下一跳扩展名称（关联实例的扩展名称）
+                     */
+                    std::string GetInstanceExtraName() const;
+
+                    /**
+                     * 设置下一跳扩展名称（关联实例的扩展名称）
+                     * @param InstanceExtraName 下一跳扩展名称（关联实例的扩展名称）
+                     */
+                    void SetInstanceExtraName(const std::string& _instanceExtraName);
+
+                    /**
+                     * 判断参数 InstanceExtraName 是否已赋值
+                     * @return InstanceExtraName 是否已赋值
+                     */
+                    bool InstanceExtraNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +335,30 @@ namespace TencentCloud
                      */
                     std::string m_instanceUin;
                     bool m_instanceUinHasBeenSet;
+
+                    /**
+                     * 路由的扩展状态
+                     */
+                    std::string m_extraState;
+                    bool m_extraStateHasBeenSet;
+
+                    /**
+                     * 是否动态路由
+                     */
+                    bool m_isBgp;
+                    bool m_isBgpHasBeenSet;
+
+                    /**
+                     * 路由优先级
+                     */
+                    uint64_t m_routePriority;
+                    bool m_routePriorityHasBeenSet;
+
+                    /**
+                     * 下一跳扩展名称（关联实例的扩展名称）
+                     */
+                    std::string m_instanceExtraName;
+                    bool m_instanceExtraNameHasBeenSet;
 
                 };
             }

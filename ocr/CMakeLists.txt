@@ -103,6 +103,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/TextVehicleBack.h
   include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TollInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/EnglishOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/PassportOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRRequest.h
@@ -129,6 +130,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/FormulaOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/PassportOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/QueryBarCodeRequest.h
   include/tencentcloud/ocr/v20181119/model/ItemCoord.h
   include/tencentcloud/ocr/v20181119/model/OrgCodeCertOCRResponse.h
@@ -260,6 +262,7 @@ set(ocr_src
   src/v20181119/model/TextVehicleBack.cpp
   src/v20181119/model/GeneralEfficientOCRRequest.cpp
   src/v20181119/model/TollInvoiceOCRResponse.cpp
+  src/v20181119/model/RideHailingDriverLicenseOCRResponse.cpp
   src/v20181119/model/EnglishOCRRequest.cpp
   src/v20181119/model/PassportOCRResponse.cpp
   src/v20181119/model/GeneralAccurateOCRRequest.cpp
@@ -286,6 +289,7 @@ set(ocr_src
   src/v20181119/model/FormulaOCRRequest.cpp
   src/v20181119/model/PassportOCRRequest.cpp
   src/v20181119/model/DutyPaidProofOCRRequest.cpp
+  src/v20181119/model/RideHailingDriverLicenseOCRRequest.cpp
   src/v20181119/model/QueryBarCodeRequest.cpp
   src/v20181119/model/ItemCoord.cpp
   src/v20181119/model/OrgCodeCertOCRResponse.cpp

@@ -77,6 +77,8 @@
 #include <tencentcloud/iai/v20200303/model/ModifyPersonBaseInfoResponse.h>
 #include <tencentcloud/iai/v20200303/model/ModifyPersonGroupInfoRequest.h>
 #include <tencentcloud/iai/v20200303/model/ModifyPersonGroupInfoResponse.h>
+#include <tencentcloud/iai/v20200303/model/RevertGroupFaceModelVersionRequest.h>
+#include <tencentcloud/iai/v20200303/model/RevertGroupFaceModelVersionResponse.h>
 #include <tencentcloud/iai/v20200303/model/SearchFacesRequest.h>
 #include <tencentcloud/iai/v20200303/model/SearchFacesResponse.h>
 #include <tencentcloud/iai/v20200303/model/SearchFacesReturnsByGroupRequest.h>
@@ -186,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyPersonGroupInfoResponse> ModifyPersonGroupInfoOutcome;
                 typedef std::future<ModifyPersonGroupInfoOutcome> ModifyPersonGroupInfoOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::ModifyPersonGroupInfoRequest&, ModifyPersonGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPersonGroupInfoAsyncHandler;
+                typedef Outcome<Error, Model::RevertGroupFaceModelVersionResponse> RevertGroupFaceModelVersionOutcome;
+                typedef std::future<RevertGroupFaceModelVersionOutcome> RevertGroupFaceModelVersionOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::RevertGroupFaceModelVersionRequest&, RevertGroupFaceModelVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevertGroupFaceModelVersionAsyncHandler;
                 typedef Outcome<Error, Model::SearchFacesResponse> SearchFacesOutcome;
                 typedef std::future<SearchFacesOutcome> SearchFacesOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::SearchFacesRequest&, SearchFacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchFacesAsyncHandler;
@@ -516,6 +521,19 @@ namespace TencentCloud
                 ModifyPersonGroupInfoOutcome ModifyPersonGroupInfo(const Model::ModifyPersonGroupInfoRequest &request);
                 void ModifyPersonGroupInfoAsync(const Model::ModifyPersonGroupInfoRequest& request, const ModifyPersonGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPersonGroupInfoOutcomeCallable ModifyPersonGroupInfoCallable(const Model::ModifyPersonGroupInfoRequest& request);
+
+                /**
+                 *本接口用于回滚人员库的人脸识别算法模型版本。单个人员库有且仅有一次回滚机会。
+
+回滚操作会在10s内生效，回滚操作中，您对人员库的操作可能会失效。
+
+注：给客户我会写10s内生效，我们实际上越快越好。待讨论。
+                 * @param req RevertGroupFaceModelVersionRequest
+                 * @return RevertGroupFaceModelVersionOutcome
+                 */
+                RevertGroupFaceModelVersionOutcome RevertGroupFaceModelVersion(const Model::RevertGroupFaceModelVersionRequest &request);
+                void RevertGroupFaceModelVersionAsync(const Model::RevertGroupFaceModelVersionRequest& request, const RevertGroupFaceModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevertGroupFaceModelVersionOutcomeCallable RevertGroupFaceModelVersionCallable(const Model::RevertGroupFaceModelVersionRequest& request);
 
                 /**
                  *用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopK 人员，识别结果按照相似度从大到小排序。

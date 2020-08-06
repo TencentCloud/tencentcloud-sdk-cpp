@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/Filter.h>
 
 
 namespace TencentCloud
@@ -60,6 +61,24 @@ namespace TencentCloud
                      */
                     bool RouteTableNameHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件,当前只支持按照单个条件GatewayIP进行过滤（可选）
+                     * @return Filters 过滤条件,当前只支持按照单个条件GatewayIP进行过滤（可选）
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件,当前只支持按照单个条件GatewayIP进行过滤（可选）
+                     * @param Filters 过滤条件,当前只支持按照单个条件GatewayIP进行过滤（可选）
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +86,12 @@ namespace TencentCloud
                      */
                     std::string m_routeTableName;
                     bool m_routeTableNameHasBeenSet;
+
+                    /**
+                     * 过滤条件,当前只支持按照单个条件GatewayIP进行过滤（可选）
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

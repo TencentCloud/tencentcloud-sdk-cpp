@@ -36,7 +36,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_zoneIdHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_vipIspHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -373,6 +382,22 @@ void CreateLoadBalancerRequest::SetTags(const vector<TagInfo>& _tags)
 bool CreateLoadBalancerRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateLoadBalancerRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

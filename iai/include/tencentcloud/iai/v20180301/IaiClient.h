@@ -67,12 +67,18 @@
 #include <tencentcloud/iai/v20180301/model/GetPersonListNumResponse.h>
 #include <tencentcloud/iai/v20180301/model/GetSimilarPersonResultRequest.h>
 #include <tencentcloud/iai/v20180301/model/GetSimilarPersonResultResponse.h>
+#include <tencentcloud/iai/v20180301/model/GetUpgradeGroupFaceModelVersionJobListRequest.h>
+#include <tencentcloud/iai/v20180301/model/GetUpgradeGroupFaceModelVersionJobListResponse.h>
+#include <tencentcloud/iai/v20180301/model/GetUpgradeGroupFaceModelVersionResultRequest.h>
+#include <tencentcloud/iai/v20180301/model/GetUpgradeGroupFaceModelVersionResultResponse.h>
 #include <tencentcloud/iai/v20180301/model/ModifyGroupRequest.h>
 #include <tencentcloud/iai/v20180301/model/ModifyGroupResponse.h>
 #include <tencentcloud/iai/v20180301/model/ModifyPersonBaseInfoRequest.h>
 #include <tencentcloud/iai/v20180301/model/ModifyPersonBaseInfoResponse.h>
 #include <tencentcloud/iai/v20180301/model/ModifyPersonGroupInfoRequest.h>
 #include <tencentcloud/iai/v20180301/model/ModifyPersonGroupInfoResponse.h>
+#include <tencentcloud/iai/v20180301/model/RevertGroupFaceModelVersionRequest.h>
+#include <tencentcloud/iai/v20180301/model/RevertGroupFaceModelVersionResponse.h>
 #include <tencentcloud/iai/v20180301/model/SearchFacesRequest.h>
 #include <tencentcloud/iai/v20180301/model/SearchFacesResponse.h>
 #include <tencentcloud/iai/v20180301/model/SearchFacesReturnsByGroupRequest.h>
@@ -81,6 +87,8 @@
 #include <tencentcloud/iai/v20180301/model/SearchPersonsResponse.h>
 #include <tencentcloud/iai/v20180301/model/SearchPersonsReturnsByGroupRequest.h>
 #include <tencentcloud/iai/v20180301/model/SearchPersonsReturnsByGroupResponse.h>
+#include <tencentcloud/iai/v20180301/model/UpgradeGroupFaceModelVersionRequest.h>
+#include <tencentcloud/iai/v20180301/model/UpgradeGroupFaceModelVersionResponse.h>
 #include <tencentcloud/iai/v20180301/model/VerifyFaceRequest.h>
 #include <tencentcloud/iai/v20180301/model/VerifyFaceResponse.h>
 #include <tencentcloud/iai/v20180301/model/VerifyPersonRequest.h>
@@ -165,6 +173,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetSimilarPersonResultResponse> GetSimilarPersonResultOutcome;
                 typedef std::future<GetSimilarPersonResultOutcome> GetSimilarPersonResultOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::GetSimilarPersonResultRequest&, GetSimilarPersonResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSimilarPersonResultAsyncHandler;
+                typedef Outcome<Error, Model::GetUpgradeGroupFaceModelVersionJobListResponse> GetUpgradeGroupFaceModelVersionJobListOutcome;
+                typedef std::future<GetUpgradeGroupFaceModelVersionJobListOutcome> GetUpgradeGroupFaceModelVersionJobListOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::GetUpgradeGroupFaceModelVersionJobListRequest&, GetUpgradeGroupFaceModelVersionJobListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeGroupFaceModelVersionJobListAsyncHandler;
+                typedef Outcome<Error, Model::GetUpgradeGroupFaceModelVersionResultResponse> GetUpgradeGroupFaceModelVersionResultOutcome;
+                typedef std::future<GetUpgradeGroupFaceModelVersionResultOutcome> GetUpgradeGroupFaceModelVersionResultOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::GetUpgradeGroupFaceModelVersionResultRequest&, GetUpgradeGroupFaceModelVersionResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeGroupFaceModelVersionResultAsyncHandler;
                 typedef Outcome<Error, Model::ModifyGroupResponse> ModifyGroupOutcome;
                 typedef std::future<ModifyGroupOutcome> ModifyGroupOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::ModifyGroupRequest&, ModifyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGroupAsyncHandler;
@@ -174,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyPersonGroupInfoResponse> ModifyPersonGroupInfoOutcome;
                 typedef std::future<ModifyPersonGroupInfoOutcome> ModifyPersonGroupInfoOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::ModifyPersonGroupInfoRequest&, ModifyPersonGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPersonGroupInfoAsyncHandler;
+                typedef Outcome<Error, Model::RevertGroupFaceModelVersionResponse> RevertGroupFaceModelVersionOutcome;
+                typedef std::future<RevertGroupFaceModelVersionOutcome> RevertGroupFaceModelVersionOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::RevertGroupFaceModelVersionRequest&, RevertGroupFaceModelVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevertGroupFaceModelVersionAsyncHandler;
                 typedef Outcome<Error, Model::SearchFacesResponse> SearchFacesOutcome;
                 typedef std::future<SearchFacesOutcome> SearchFacesOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::SearchFacesRequest&, SearchFacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchFacesAsyncHandler;
@@ -186,6 +203,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SearchPersonsReturnsByGroupResponse> SearchPersonsReturnsByGroupOutcome;
                 typedef std::future<SearchPersonsReturnsByGroupOutcome> SearchPersonsReturnsByGroupOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::SearchPersonsReturnsByGroupRequest&, SearchPersonsReturnsByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchPersonsReturnsByGroupAsyncHandler;
+                typedef Outcome<Error, Model::UpgradeGroupFaceModelVersionResponse> UpgradeGroupFaceModelVersionOutcome;
+                typedef std::future<UpgradeGroupFaceModelVersionOutcome> UpgradeGroupFaceModelVersionOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::UpgradeGroupFaceModelVersionRequest&, UpgradeGroupFaceModelVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeGroupFaceModelVersionAsyncHandler;
                 typedef Outcome<Error, Model::VerifyFaceResponse> VerifyFaceOutcome;
                 typedef std::future<VerifyFaceOutcome> VerifyFaceOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::VerifyFaceRequest&, VerifyFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyFaceAsyncHandler;
@@ -456,6 +476,26 @@ namespace TencentCloud
                 GetSimilarPersonResultOutcomeCallable GetSimilarPersonResultCallable(const Model::GetSimilarPersonResultRequest& request);
 
                 /**
+                 *获取人员库升级任务列表
+
+                 * @param req GetUpgradeGroupFaceModelVersionJobListRequest
+                 * @return GetUpgradeGroupFaceModelVersionJobListOutcome
+                 */
+                GetUpgradeGroupFaceModelVersionJobListOutcome GetUpgradeGroupFaceModelVersionJobList(const Model::GetUpgradeGroupFaceModelVersionJobListRequest &request);
+                void GetUpgradeGroupFaceModelVersionJobListAsync(const Model::GetUpgradeGroupFaceModelVersionJobListRequest& request, const GetUpgradeGroupFaceModelVersionJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetUpgradeGroupFaceModelVersionJobListOutcomeCallable GetUpgradeGroupFaceModelVersionJobListCallable(const Model::GetUpgradeGroupFaceModelVersionJobListRequest& request);
+
+                /**
+                 *人员库升级结果查询
+
+                 * @param req GetUpgradeGroupFaceModelVersionResultRequest
+                 * @return GetUpgradeGroupFaceModelVersionResultOutcome
+                 */
+                GetUpgradeGroupFaceModelVersionResultOutcome GetUpgradeGroupFaceModelVersionResult(const Model::GetUpgradeGroupFaceModelVersionResultRequest &request);
+                void GetUpgradeGroupFaceModelVersionResultAsync(const Model::GetUpgradeGroupFaceModelVersionResultRequest& request, const GetUpgradeGroupFaceModelVersionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetUpgradeGroupFaceModelVersionResultOutcomeCallable GetUpgradeGroupFaceModelVersionResultCallable(const Model::GetUpgradeGroupFaceModelVersionResultRequest& request);
+
+                /**
                  *修改人员库名称、备注、自定义描述字段名称。
                  * @param req ModifyGroupRequest
                  * @return ModifyGroupOutcome
@@ -481,6 +521,19 @@ namespace TencentCloud
                 ModifyPersonGroupInfoOutcome ModifyPersonGroupInfo(const Model::ModifyPersonGroupInfoRequest &request);
                 void ModifyPersonGroupInfoAsync(const Model::ModifyPersonGroupInfoRequest& request, const ModifyPersonGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPersonGroupInfoOutcomeCallable ModifyPersonGroupInfoCallable(const Model::ModifyPersonGroupInfoRequest& request);
+
+                /**
+                 *本接口用于回滚人员库的人脸识别算法模型版本。单个人员库有且仅有一次回滚机会。
+
+回滚操作会在10s内生效，回滚操作中，您对人员库的操作可能会失效。
+
+注：给客户我会写10s内生效，我们实际上越快越好。待讨论。
+                 * @param req RevertGroupFaceModelVersionRequest
+                 * @return RevertGroupFaceModelVersionOutcome
+                 */
+                RevertGroupFaceModelVersionOutcome RevertGroupFaceModelVersion(const Model::RevertGroupFaceModelVersionRequest &request);
+                void RevertGroupFaceModelVersionAsync(const Model::RevertGroupFaceModelVersionRequest& request, const RevertGroupFaceModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevertGroupFaceModelVersionOutcomeCallable RevertGroupFaceModelVersionCallable(const Model::RevertGroupFaceModelVersionRequest& request);
 
                 /**
                  *用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopK 人员，识别结果按照相似度从大到小排序。
@@ -561,6 +614,17 @@ namespace TencentCloud
                 SearchPersonsReturnsByGroupOutcome SearchPersonsReturnsByGroup(const Model::SearchPersonsReturnsByGroupRequest &request);
                 void SearchPersonsReturnsByGroupAsync(const Model::SearchPersonsReturnsByGroupRequest& request, const SearchPersonsReturnsByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchPersonsReturnsByGroupOutcomeCallable SearchPersonsReturnsByGroupCallable(const Model::SearchPersonsReturnsByGroupRequest& request);
+
+                /**
+                 *升级人员库。升级过程中，人员库仍然为原算法版本，人员库相关操作仍然支持。升级完成后，人员库为新算法版本。
+单个人员库有且仅支持一次回滚操作。
+注：此处QPS限制为10。
+                 * @param req UpgradeGroupFaceModelVersionRequest
+                 * @return UpgradeGroupFaceModelVersionOutcome
+                 */
+                UpgradeGroupFaceModelVersionOutcome UpgradeGroupFaceModelVersion(const Model::UpgradeGroupFaceModelVersionRequest &request);
+                void UpgradeGroupFaceModelVersionAsync(const Model::UpgradeGroupFaceModelVersionRequest& request, const UpgradeGroupFaceModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeGroupFaceModelVersionOutcomeCallable UpgradeGroupFaceModelVersionCallable(const Model::UpgradeGroupFaceModelVersionRequest& request);
 
                 /**
                  *给定一张人脸图片和一个 PersonId，判断图片中的人和 PersonId 对应的人是否为同一人。PersonId 请参考[人员库管理相关接口](https://cloud.tencent.com/document/product/867/32794)。 

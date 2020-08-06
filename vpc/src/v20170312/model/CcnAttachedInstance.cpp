@@ -31,7 +31,8 @@ CcnAttachedInstance::CcnAttachedInstance() :
     m_cidrBlockHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_attachedTimeHasBeenSet(false),
-    m_ccnUinHasBeenSet(false)
+    m_ccnUinHasBeenSet(false),
+    m_instanceAreaHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,16 @@ CoreInternalOutcome CcnAttachedInstance::Deserialize(const Value &value)
         m_ccnUinHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceArea") && !value["InstanceArea"].IsNull())
+    {
+        if (!value["InstanceArea"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CcnAttachedInstance.InstanceArea` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceArea = string(value["InstanceArea"].GetString());
+        m_instanceAreaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -233,6 +244,14 @@ void CcnAttachedInstance::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "CcnUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_ccnUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceAreaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceArea";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceArea.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -396,5 +415,21 @@ void CcnAttachedInstance::SetCcnUin(const string& _ccnUin)
 bool CcnAttachedInstance::CcnUinHasBeenSet() const
 {
     return m_ccnUinHasBeenSet;
+}
+
+string CcnAttachedInstance::GetInstanceArea() const
+{
+    return m_instanceArea;
+}
+
+void CcnAttachedInstance::SetInstanceArea(const string& _instanceArea)
+{
+    m_instanceArea = _instanceArea;
+    m_instanceAreaHasBeenSet = true;
+}
+
+bool CcnAttachedInstance::InstanceAreaHasBeenSet() const
+{
+    return m_instanceAreaHasBeenSet;
 }
 

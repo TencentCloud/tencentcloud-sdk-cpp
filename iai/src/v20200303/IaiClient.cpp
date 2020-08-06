@@ -1201,6 +1201,49 @@ IaiClient::ModifyPersonGroupInfoOutcomeCallable IaiClient::ModifyPersonGroupInfo
     return task->get_future();
 }
 
+IaiClient::RevertGroupFaceModelVersionOutcome IaiClient::RevertGroupFaceModelVersion(const RevertGroupFaceModelVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevertGroupFaceModelVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevertGroupFaceModelVersionResponse rsp = RevertGroupFaceModelVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevertGroupFaceModelVersionOutcome(rsp);
+        else
+            return RevertGroupFaceModelVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return RevertGroupFaceModelVersionOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::RevertGroupFaceModelVersionAsync(const RevertGroupFaceModelVersionRequest& request, const RevertGroupFaceModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RevertGroupFaceModelVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::RevertGroupFaceModelVersionOutcomeCallable IaiClient::RevertGroupFaceModelVersionCallable(const RevertGroupFaceModelVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RevertGroupFaceModelVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->RevertGroupFaceModelVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IaiClient::SearchFacesOutcome IaiClient::SearchFaces(const SearchFacesRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchFaces");

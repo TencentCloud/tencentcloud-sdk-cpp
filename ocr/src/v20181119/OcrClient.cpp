@@ -1846,6 +1846,49 @@ OcrClient::ResidenceBookletOCROutcomeCallable OcrClient::ResidenceBookletOCRCall
     return task->get_future();
 }
 
+OcrClient::RideHailingDriverLicenseOCROutcome OcrClient::RideHailingDriverLicenseOCR(const RideHailingDriverLicenseOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RideHailingDriverLicenseOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RideHailingDriverLicenseOCRResponse rsp = RideHailingDriverLicenseOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RideHailingDriverLicenseOCROutcome(rsp);
+        else
+            return RideHailingDriverLicenseOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RideHailingDriverLicenseOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RideHailingDriverLicenseOCRAsync(const RideHailingDriverLicenseOCRRequest& request, const RideHailingDriverLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RideHailingDriverLicenseOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RideHailingDriverLicenseOCROutcomeCallable OcrClient::RideHailingDriverLicenseOCRCallable(const RideHailingDriverLicenseOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RideHailingDriverLicenseOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RideHailingDriverLicenseOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::SealOCROutcome OcrClient::SealOCR(const SealOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "SealOCR");

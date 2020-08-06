@@ -45,6 +45,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20191022/model/NotebookLifecycleScriptsSummary.h
   include/tencentcloud/tione/v20191022/model/StopTrainingJobRequest.h
   include/tencentcloud/tione/v20191022/model/UpdateNotebookInstanceResponse.h
+  include/tencentcloud/tione/v20191022/model/ClsConfig.h
   include/tencentcloud/tione/v20191022/model/UpdateNotebookLifecycleScriptRequest.h
   include/tencentcloud/tione/v20191022/model/UpdateNotebookInstanceRequest.h
   include/tencentcloud/tione/v20191022/model/CreatePresignedNotebookInstanceUrlRequest.h
@@ -115,6 +116,7 @@ set(tione_src
   src/v20191022/model/NotebookLifecycleScriptsSummary.cpp
   src/v20191022/model/StopTrainingJobRequest.cpp
   src/v20191022/model/UpdateNotebookInstanceResponse.cpp
+  src/v20191022/model/ClsConfig.cpp
   src/v20191022/model/UpdateNotebookLifecycleScriptRequest.cpp
   src/v20191022/model/UpdateNotebookInstanceRequest.cpp
   src/v20191022/model/CreatePresignedNotebookInstanceUrlRequest.cpp

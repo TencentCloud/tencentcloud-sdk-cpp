@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20191022/model/StoppingCondition.h>
+#include <tencentcloud/tione/v20191022/model/ClsConfig.h>
 
 
 namespace TencentCloud
@@ -319,6 +320,24 @@ namespace TencentCloud
                      */
                     bool AutoStoppingHasBeenSet() const;
 
+                    /**
+                     * 获取接入日志的配置
+                     * @return ClsConfig 接入日志的配置
+                     */
+                    ClsConfig GetClsConfig() const;
+
+                    /**
+                     * 设置接入日志的配置
+                     * @param ClsConfig 接入日志的配置
+                     */
+                    void SetClsConfig(const ClsConfig& _clsConfig);
+
+                    /**
+                     * 判断参数 ClsConfig 是否已赋值
+                     * @return ClsConfig 是否已赋值
+                     */
+                    bool ClsConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +426,12 @@ namespace TencentCloud
                      */
                     std::string m_autoStopping;
                     bool m_autoStoppingHasBeenSet;
+
+                    /**
+                     * 接入日志的配置
+                     */
+                    ClsConfig m_clsConfig;
+                    bool m_clsConfigHasBeenSet;
 
                 };
             }

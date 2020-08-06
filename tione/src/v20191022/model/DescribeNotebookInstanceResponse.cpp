@@ -44,7 +44,8 @@ DescribeNotebookInstanceResponse::DescribeNotebookInstanceResponse() :
     m_clsAccessHasBeenSet(false),
     m_prepayHasBeenSet(false),
     m_deadlineHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false)
+    m_stoppingConditionHasBeenSet(false),
+    m_clsConfigHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,23 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
         m_stoppingConditionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClsConfig") && !rsp["ClsConfig"].IsNull())
+    {
+        if (!rsp["ClsConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ClsConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_clsConfig.Deserialize(rsp["ClsConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_clsConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -495,6 +513,16 @@ StoppingCondition DescribeNotebookInstanceResponse::GetStoppingCondition() const
 bool DescribeNotebookInstanceResponse::StoppingConditionHasBeenSet() const
 {
     return m_stoppingConditionHasBeenSet;
+}
+
+ClsConfig DescribeNotebookInstanceResponse::GetClsConfig() const
+{
+    return m_clsConfig;
+}
+
+bool DescribeNotebookInstanceResponse::ClsConfigHasBeenSet() const
+{
+    return m_clsConfigHasBeenSet;
 }
 
 

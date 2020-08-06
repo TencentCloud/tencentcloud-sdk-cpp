@@ -274,6 +274,24 @@ namespace TencentCloud
                      */
                     bool CcnUinHasBeenSet() const;
 
+                    /**
+                     * 获取关联实例所属的大地域，如: CHINA_MAINLAND
+                     * @return InstanceArea 关联实例所属的大地域，如: CHINA_MAINLAND
+                     */
+                    std::string GetInstanceArea() const;
+
+                    /**
+                     * 设置关联实例所属的大地域，如: CHINA_MAINLAND
+                     * @param InstanceArea 关联实例所属的大地域，如: CHINA_MAINLAND
+                     */
+                    void SetInstanceArea(const std::string& _instanceArea);
+
+                    /**
+                     * 判断参数 InstanceArea 是否已赋值
+                     * @return InstanceArea 是否已赋值
+                     */
+                    bool InstanceAreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +365,12 @@ namespace TencentCloud
                      */
                     std::string m_ccnUin;
                     bool m_ccnUinHasBeenSet;
+
+                    /**
+                     * 关联实例所属的大地域，如: CHINA_MAINLAND
+                     */
+                    std::string m_instanceArea;
+                    bool m_instanceAreaHasBeenSet;
 
                 };
             }

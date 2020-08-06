@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组规则索引号。
-                     * @return PolicyIndex 安全组规则索引号。
+                     * 获取安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。
+                     * @return PolicyIndex 安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。
                      */
                     int64_t GetPolicyIndex() const;
 
                     /**
-                     * 设置安全组规则索引号。
-                     * @param PolicyIndex 安全组规则索引号。
+                     * 设置安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。
+                     * @param PolicyIndex 安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。
                      */
                     void SetPolicyIndex(const int64_t& _policyIndex);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool PolicyIndexHasBeenSet() const;
 
                     /**
-                     * 获取协议, 取值: TCP,UDP, ICMP。
-                     * @return Protocol 协议, 取值: TCP,UDP, ICMP。
+                     * 获取协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。
+                     * @return Protocol 协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议, 取值: TCP,UDP, ICMP。
-                     * @param Protocol 协议, 取值: TCP,UDP, ICMP。
+                     * 设置协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。
+                     * @param Protocol 协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -249,13 +249,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全组规则索引号。
+                     * 安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。
                      */
                     int64_t m_policyIndex;
                     bool m_policyIndexHasBeenSet;
 
                     /**
-                     * 协议, 取值: TCP,UDP, ICMP。
+                     * 协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

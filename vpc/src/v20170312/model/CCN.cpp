@@ -31,7 +31,8 @@ CCN::CCN() :
     m_qosLevelHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_bandwidthLimitTypeHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_routePriorityFlagHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome CCN::Deserialize(const Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("RoutePriorityFlag") && !value["RoutePriorityFlag"].IsNull())
+    {
+        if (!value["RoutePriorityFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `CCN.RoutePriorityFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_routePriorityFlag = value["RoutePriorityFlag"].GetBool();
+        m_routePriorityFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -242,6 +253,14 @@ void CCN::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_routePriorityFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RoutePriorityFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_routePriorityFlag, allocator);
     }
 
 }
@@ -405,5 +424,21 @@ void CCN::SetTagSet(const vector<Tag>& _tagSet)
 bool CCN::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+bool CCN::GetRoutePriorityFlag() const
+{
+    return m_routePriorityFlag;
+}
+
+void CCN::SetRoutePriorityFlag(const bool& _routePriorityFlag)
+{
+    m_routePriorityFlag = _routePriorityFlag;
+    m_routePriorityFlagHasBeenSet = true;
+}
+
+bool CCN::RoutePriorityFlagHasBeenSet() const
+{
+    return m_routePriorityFlagHasBeenSet;
 }
 

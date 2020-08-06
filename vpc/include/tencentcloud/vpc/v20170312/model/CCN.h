@@ -235,6 +235,24 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持云联网路由优先级的功能。False：不支持，True：支持。
+                     * @return RoutePriorityFlag 是否支持云联网路由优先级的功能。False：不支持，True：支持。
+                     */
+                    bool GetRoutePriorityFlag() const;
+
+                    /**
+                     * 设置是否支持云联网路由优先级的功能。False：不支持，True：支持。
+                     * @param RoutePriorityFlag 是否支持云联网路由优先级的功能。False：不支持，True：支持。
+                     */
+                    void SetRoutePriorityFlag(const bool& _routePriorityFlag);
+
+                    /**
+                     * 判断参数 RoutePriorityFlag 是否已赋值
+                     * @return RoutePriorityFlag 是否已赋值
+                     */
+                    bool RoutePriorityFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -298,6 +316,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 是否支持云联网路由优先级的功能。False：不支持，True：支持。
+                     */
+                    bool m_routePriorityFlag;
+                    bool m_routePriorityFlagHasBeenSet;
 
                 };
             }

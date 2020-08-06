@@ -30,7 +30,11 @@ CcnRoute::CcnRoute() :
     m_instanceRegionHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_enabledHasBeenSet(false),
-    m_instanceUinHasBeenSet(false)
+    m_instanceUinHasBeenSet(false),
+    m_extraStateHasBeenSet(false),
+    m_isBgpHasBeenSet(false),
+    m_routePriorityHasBeenSet(false),
+    m_instanceExtraNameHasBeenSet(false)
 {
 }
 
@@ -129,6 +133,46 @@ CoreInternalOutcome CcnRoute::Deserialize(const Value &value)
         m_instanceUinHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtraState") && !value["ExtraState"].IsNull())
+    {
+        if (!value["ExtraState"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CcnRoute.ExtraState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extraState = string(value["ExtraState"].GetString());
+        m_extraStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsBgp") && !value["IsBgp"].IsNull())
+    {
+        if (!value["IsBgp"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `CcnRoute.IsBgp` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isBgp = value["IsBgp"].GetBool();
+        m_isBgpHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoutePriority") && !value["RoutePriority"].IsNull())
+    {
+        if (!value["RoutePriority"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `CcnRoute.RoutePriority` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_routePriority = value["RoutePriority"].GetUint64();
+        m_routePriorityHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceExtraName") && !value["InstanceExtraName"].IsNull())
+    {
+        if (!value["InstanceExtraName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CcnRoute.InstanceExtraName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceExtraName = string(value["InstanceExtraName"].GetString());
+        m_instanceExtraNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +250,38 @@ void CcnRoute::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "InstanceUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_instanceUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraStateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtraState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_extraState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isBgpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsBgp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isBgp, allocator);
+    }
+
+    if (m_routePriorityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RoutePriority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_routePriority, allocator);
+    }
+
+    if (m_instanceExtraNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceExtraName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceExtraName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +429,69 @@ void CcnRoute::SetInstanceUin(const string& _instanceUin)
 bool CcnRoute::InstanceUinHasBeenSet() const
 {
     return m_instanceUinHasBeenSet;
+}
+
+string CcnRoute::GetExtraState() const
+{
+    return m_extraState;
+}
+
+void CcnRoute::SetExtraState(const string& _extraState)
+{
+    m_extraState = _extraState;
+    m_extraStateHasBeenSet = true;
+}
+
+bool CcnRoute::ExtraStateHasBeenSet() const
+{
+    return m_extraStateHasBeenSet;
+}
+
+bool CcnRoute::GetIsBgp() const
+{
+    return m_isBgp;
+}
+
+void CcnRoute::SetIsBgp(const bool& _isBgp)
+{
+    m_isBgp = _isBgp;
+    m_isBgpHasBeenSet = true;
+}
+
+bool CcnRoute::IsBgpHasBeenSet() const
+{
+    return m_isBgpHasBeenSet;
+}
+
+uint64_t CcnRoute::GetRoutePriority() const
+{
+    return m_routePriority;
+}
+
+void CcnRoute::SetRoutePriority(const uint64_t& _routePriority)
+{
+    m_routePriority = _routePriority;
+    m_routePriorityHasBeenSet = true;
+}
+
+bool CcnRoute::RoutePriorityHasBeenSet() const
+{
+    return m_routePriorityHasBeenSet;
+}
+
+string CcnRoute::GetInstanceExtraName() const
+{
+    return m_instanceExtraName;
+}
+
+void CcnRoute::SetInstanceExtraName(const string& _instanceExtraName)
+{
+    m_instanceExtraName = _instanceExtraName;
+    m_instanceExtraNameHasBeenSet = true;
+}
+
+bool CcnRoute::InstanceExtraNameHasBeenSet() const
+{
+    return m_instanceExtraNameHasBeenSet;
 }
 

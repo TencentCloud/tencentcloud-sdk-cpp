@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20191022/model/StoppingCondition.h>
+#include <tencentcloud/tione/v20191022/model/ClsConfig.h>
 
 
 namespace TencentCloud
@@ -337,6 +338,20 @@ Failed: 失败
                      */
                     bool StoppingConditionHasBeenSet() const;
 
+                    /**
+                     * 获取Cls配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClsConfig Cls配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ClsConfig GetClsConfig() const;
+
+                    /**
+                     * 判断参数 ClsConfig 是否已赋值
+                     * @return ClsConfig 是否已赋值
+                     */
+                    bool ClsConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +500,13 @@ Failed: 失败
                      */
                     StoppingCondition m_stoppingCondition;
                     bool m_stoppingConditionHasBeenSet;
+
+                    /**
+                     * Cls配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ClsConfig m_clsConfig;
+                    bool m_clsConfigHasBeenSet;
 
                 };
             }

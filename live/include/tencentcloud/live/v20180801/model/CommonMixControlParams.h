@@ -68,6 +68,28 @@ namespace TencentCloud
                      */
                     bool UseMixCropCenterHasBeenSet() const;
 
+                    /**
+                     * 获取取值范围[0,1]
+填1时，当InputStreamList中个数为1时，且OutputParams.OutputStreamType为1时，不执行取消操作，执行拷贝流操作
+                     * @return AllowCopy 取值范围[0,1]
+填1时，当InputStreamList中个数为1时，且OutputParams.OutputStreamType为1时，不执行取消操作，执行拷贝流操作
+                     */
+                    int64_t GetAllowCopy() const;
+
+                    /**
+                     * 设置取值范围[0,1]
+填1时，当InputStreamList中个数为1时，且OutputParams.OutputStreamType为1时，不执行取消操作，执行拷贝流操作
+                     * @param AllowCopy 取值范围[0,1]
+填1时，当InputStreamList中个数为1时，且OutputParams.OutputStreamType为1时，不执行取消操作，执行拷贝流操作
+                     */
+                    void SetAllowCopy(const int64_t& _allowCopy);
+
+                    /**
+                     * 判断参数 AllowCopy 是否已赋值
+                     * @return AllowCopy 是否已赋值
+                     */
+                    bool AllowCopyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -76,6 +98,13 @@ namespace TencentCloud
                      */
                     int64_t m_useMixCropCenter;
                     bool m_useMixCropCenterHasBeenSet;
+
+                    /**
+                     * 取值范围[0,1]
+填1时，当InputStreamList中个数为1时，且OutputParams.OutputStreamType为1时，不执行取消操作，执行拷贝流操作
+                     */
+                    int64_t m_allowCopy;
+                    bool m_allowCopyHasBeenSet;
 
                 };
             }

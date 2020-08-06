@@ -22,7 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 CommonMixControlParams::CommonMixControlParams() :
-    m_useMixCropCenterHasBeenSet(false)
+    m_useMixCropCenterHasBeenSet(false),
+    m_allowCopyHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,16 @@ CoreInternalOutcome CommonMixControlParams::Deserialize(const Value &value)
         m_useMixCropCenterHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowCopy") && !value["AllowCopy"].IsNull())
+    {
+        if (!value["AllowCopy"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CommonMixControlParams.AllowCopy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowCopy = value["AllowCopy"].GetInt64();
+        m_allowCopyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +65,14 @@ void CommonMixControlParams::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "UseMixCropCenter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useMixCropCenter, allocator);
+    }
+
+    if (m_allowCopyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AllowCopy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowCopy, allocator);
     }
 
 }
@@ -73,5 +92,21 @@ void CommonMixControlParams::SetUseMixCropCenter(const int64_t& _useMixCropCente
 bool CommonMixControlParams::UseMixCropCenterHasBeenSet() const
 {
     return m_useMixCropCenterHasBeenSet;
+}
+
+int64_t CommonMixControlParams::GetAllowCopy() const
+{
+    return m_allowCopy;
+}
+
+void CommonMixControlParams::SetAllowCopy(const int64_t& _allowCopy)
+{
+    m_allowCopy = _allowCopy;
+    m_allowCopyHasBeenSet = true;
+}
+
+bool CommonMixControlParams::AllowCopyHasBeenSet() const
+{
+    return m_allowCopyHasBeenSet;
 }
 
