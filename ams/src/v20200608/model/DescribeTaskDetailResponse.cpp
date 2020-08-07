@@ -39,7 +39,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_updatedAtHasBeenSet(false),
     m_tryInSecondsHasBeenSet(false),
     m_audioSegmentsHasBeenSet(false),
-    m_imageSegmentsHasBeenSet(false)
+    m_imageSegmentsHasBeenSet(false),
+    m_audioTextHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,16 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_imageSegmentsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AudioText") && !rsp["AudioText"].IsNull())
+    {
+        if (!rsp["AudioText"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AudioText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioText = string(rsp["AudioText"].GetString());
+        m_audioTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -424,6 +435,16 @@ vector<ImageSegments> DescribeTaskDetailResponse::GetImageSegments() const
 bool DescribeTaskDetailResponse::ImageSegmentsHasBeenSet() const
 {
     return m_imageSegmentsHasBeenSet;
+}
+
+string DescribeTaskDetailResponse::GetAudioText() const
+{
+    return m_audioText;
+}
+
+bool DescribeTaskDetailResponse::AudioTextHasBeenSet() const
+{
+    return m_audioTextHasBeenSet;
 }
 
 

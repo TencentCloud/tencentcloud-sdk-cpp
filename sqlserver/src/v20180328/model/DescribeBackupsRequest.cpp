@@ -28,7 +28,10 @@ DescribeBackupsRequest::DescribeBackupsRequest() :
     m_endTimeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_backupNameHasBeenSet(false),
+    m_strategyHasBeenSet(false),
+    m_backupWayHasBeenSet(false)
 {
 }
 
@@ -77,6 +80,30 @@ string DescribeBackupsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_backupNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_backupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_strategyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Strategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_strategy, allocator);
+    }
+
+    if (m_backupWayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupWay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupWay, allocator);
     }
 
 
@@ -165,6 +192,54 @@ void DescribeBackupsRequest::SetOffset(const int64_t& _offset)
 bool DescribeBackupsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeBackupsRequest::GetBackupName() const
+{
+    return m_backupName;
+}
+
+void DescribeBackupsRequest::SetBackupName(const string& _backupName)
+{
+    m_backupName = _backupName;
+    m_backupNameHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::BackupNameHasBeenSet() const
+{
+    return m_backupNameHasBeenSet;
+}
+
+int64_t DescribeBackupsRequest::GetStrategy() const
+{
+    return m_strategy;
+}
+
+void DescribeBackupsRequest::SetStrategy(const int64_t& _strategy)
+{
+    m_strategy = _strategy;
+    m_strategyHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::StrategyHasBeenSet() const
+{
+    return m_strategyHasBeenSet;
+}
+
+int64_t DescribeBackupsRequest::GetBackupWay() const
+{
+    return m_backupWay;
+}
+
+void DescribeBackupsRequest::SetBackupWay(const int64_t& _backupWay)
+{
+    m_backupWay = _backupWay;
+    m_backupWayHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::BackupWayHasBeenSet() const
+{
+    return m_backupWayHasBeenSet;
 }
 
 

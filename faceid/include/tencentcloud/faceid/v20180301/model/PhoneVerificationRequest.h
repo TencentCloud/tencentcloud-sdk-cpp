@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool PhoneHasBeenSet() const;
 
+                    /**
+                     * 获取有加密需求的用户，接入传入kms的CiphertextBlob
+                     * @return CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob
+                     */
+                    std::string GetCiphertextBlob() const;
+
+                    /**
+                     * 设置有加密需求的用户，接入传入kms的CiphertextBlob
+                     * @param CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob
+                     */
+                    void SetCiphertextBlob(const std::string& _ciphertextBlob);
+
+                    /**
+                     * 判断参数 CiphertextBlob 是否已赋值
+                     * @return CiphertextBlob 是否已赋值
+                     */
+                    bool CiphertextBlobHasBeenSet() const;
+
+                    /**
+                     * 获取在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个
+                     * @return EncryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个
+                     */
+                    std::vector<std::string> GetEncryptList() const;
+
+                    /**
+                     * 设置在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个
+                     * @param EncryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个
+                     */
+                    void SetEncryptList(const std::vector<std::string>& _encryptList);
+
+                    /**
+                     * 判断参数 EncryptList 是否已赋值
+                     * @return EncryptList 是否已赋值
+                     */
+                    bool EncryptListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
+
+                    /**
+                     * 有加密需求的用户，接入传入kms的CiphertextBlob
+                     */
+                    std::string m_ciphertextBlob;
+                    bool m_ciphertextBlobHasBeenSet;
+
+                    /**
+                     * 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个
+                     */
+                    std::vector<std::string> m_encryptList;
+                    bool m_encryptListHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ using namespace std;
 CreateBackupRequest::CreateBackupRequest() :
     m_strategyHasBeenSet(false),
     m_dBNamesHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_backupNameHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string CreateBackupRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_backupName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -120,6 +129,22 @@ void CreateBackupRequest::SetInstanceId(const string& _instanceId)
 bool CreateBackupRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string CreateBackupRequest::GetBackupName() const
+{
+    return m_backupName;
+}
+
+void CreateBackupRequest::SetBackupName(const string& _backupName)
+{
+    m_backupName = _backupName;
+    m_backupNameHasBeenSet = true;
+}
+
+bool CreateBackupRequest::BackupNameHasBeenSet() const
+{
+    return m_backupNameHasBeenSet;
 }
 
 

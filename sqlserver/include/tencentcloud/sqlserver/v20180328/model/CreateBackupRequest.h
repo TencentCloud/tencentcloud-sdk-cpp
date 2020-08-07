@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取备份名称，若不填则自动生成“实例ID_备份开始时间戳”
+                     * @return BackupName 备份名称，若不填则自动生成“实例ID_备份开始时间戳”
+                     */
+                    std::string GetBackupName() const;
+
+                    /**
+                     * 设置备份名称，若不填则自动生成“实例ID_备份开始时间戳”
+                     * @param BackupName 备份名称，若不填则自动生成“实例ID_备份开始时间戳”
+                     */
+                    void SetBackupName(const std::string& _backupName);
+
+                    /**
+                     * 判断参数 BackupName 是否已赋值
+                     * @return BackupName 是否已赋值
+                     */
+                    bool BackupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 备份名称，若不填则自动生成“实例ID_备份开始时间戳”
+                     */
+                    std::string m_backupName;
+                    bool m_backupNameHasBeenSet;
 
                 };
             }

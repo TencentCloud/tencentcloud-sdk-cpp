@@ -26,7 +26,9 @@ using namespace std;
 PhoneVerificationRequest::PhoneVerificationRequest() :
     m_idCardHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_phoneHasBeenSet(false)
+    m_phoneHasBeenSet(false),
+    m_ciphertextBlobHasBeenSet(false),
+    m_encryptListHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,27 @@ string PhoneVerificationRequest::ToJsonString() const
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_phone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ciphertextBlobHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CiphertextBlob";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_ciphertextBlob.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EncryptList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_encryptList.begin(); itr != m_encryptList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -115,6 +138,38 @@ void PhoneVerificationRequest::SetPhone(const string& _phone)
 bool PhoneVerificationRequest::PhoneHasBeenSet() const
 {
     return m_phoneHasBeenSet;
+}
+
+string PhoneVerificationRequest::GetCiphertextBlob() const
+{
+    return m_ciphertextBlob;
+}
+
+void PhoneVerificationRequest::SetCiphertextBlob(const string& _ciphertextBlob)
+{
+    m_ciphertextBlob = _ciphertextBlob;
+    m_ciphertextBlobHasBeenSet = true;
+}
+
+bool PhoneVerificationRequest::CiphertextBlobHasBeenSet() const
+{
+    return m_ciphertextBlobHasBeenSet;
+}
+
+vector<string> PhoneVerificationRequest::GetEncryptList() const
+{
+    return m_encryptList;
+}
+
+void PhoneVerificationRequest::SetEncryptList(const vector<string>& _encryptList)
+{
+    m_encryptList = _encryptList;
+    m_encryptListHasBeenSet = true;
+}
+
+bool PhoneVerificationRequest::EncryptListHasBeenSet() const
+{
+    return m_encryptListHasBeenSet;
 }
 
 

@@ -55,8 +55,12 @@
 #include <tencentcloud/sqlserver/v20180328/model/DeletePublishSubscribeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeAccountsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeAccountsResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeBackupByFlowIdRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeBackupByFlowIdResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupsResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionZoneRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionZoneResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBSecurityGroupsRequest.h>
@@ -105,6 +109,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyAccountPrivilegeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyAccountRemarkRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyAccountRemarkResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyBackupNameRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyBackupNameResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNameRequest.h>
@@ -209,9 +215,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBackupByFlowIdResponse> DescribeBackupByFlowIdOutcome;
+                typedef std::future<DescribeBackupByFlowIdOutcome> DescribeBackupByFlowIdOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeBackupByFlowIdRequest&, DescribeBackupByFlowIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupByFlowIdAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBackupsResponse> DescribeBackupsOutcome;
                 typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeBackupsRequest&, DescribeBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCrossRegionZoneResponse> DescribeCrossRegionZoneOutcome;
+                typedef std::future<DescribeCrossRegionZoneOutcome> DescribeCrossRegionZoneOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeCrossRegionZoneRequest&, DescribeCrossRegionZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossRegionZoneAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
@@ -284,6 +296,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAccountRemarkResponse> ModifyAccountRemarkOutcome;
                 typedef std::future<ModifyAccountRemarkOutcome> ModifyAccountRemarkOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyAccountRemarkRequest&, ModifyAccountRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountRemarkAsyncHandler;
+                typedef Outcome<Error, Model::ModifyBackupNameResponse> ModifyBackupNameOutcome;
+                typedef std::future<ModifyBackupNameOutcome> ModifyBackupNameOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyBackupNameRequest&, ModifyBackupNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupNameAsyncHandler;
                 typedef Outcome<Error, Model::ModifyBackupStrategyResponse> ModifyBackupStrategyOutcome;
                 typedef std::future<ModifyBackupStrategyOutcome> ModifyBackupStrategyOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyBackupStrategyRequest&, ModifyBackupStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupStrategyAsyncHandler;
@@ -495,6 +510,15 @@ namespace TencentCloud
                 DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
 
                 /**
+                 *本接口(DescribeBackupByFlowId)用于通过备份创建流程的ID查询创建的备份详情，流程ID可从接口CreateBackup中获得。
+                 * @param req DescribeBackupByFlowIdRequest
+                 * @return DescribeBackupByFlowIdOutcome
+                 */
+                DescribeBackupByFlowIdOutcome DescribeBackupByFlowId(const Model::DescribeBackupByFlowIdRequest &request);
+                void DescribeBackupByFlowIdAsync(const Model::DescribeBackupByFlowIdRequest& request, const DescribeBackupByFlowIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupByFlowIdOutcomeCallable DescribeBackupByFlowIdCallable(const Model::DescribeBackupByFlowIdRequest& request);
+
+                /**
                  *本接口(DescribeBackups)用于查询备份列表。
                  * @param req DescribeBackupsRequest
                  * @return DescribeBackupsOutcome
@@ -502,6 +526,15 @@ namespace TencentCloud
                 DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest &request);
                 void DescribeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupsOutcomeCallable DescribeBackupsCallable(const Model::DescribeBackupsRequest& request);
+
+                /**
+                 *本接口(DescribeCrossRegionZone)根据主实例查询备机的容灾地域和可用区。
+                 * @param req DescribeCrossRegionZoneRequest
+                 * @return DescribeCrossRegionZoneOutcome
+                 */
+                DescribeCrossRegionZoneOutcome DescribeCrossRegionZone(const Model::DescribeCrossRegionZoneRequest &request);
+                void DescribeCrossRegionZoneAsync(const Model::DescribeCrossRegionZoneRequest& request, const DescribeCrossRegionZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCrossRegionZoneOutcomeCallable DescribeCrossRegionZoneCallable(const Model::DescribeCrossRegionZoneRequest& request);
 
                 /**
                  *本接口(DescribeDBInstances)用于查询实例列表。
@@ -718,6 +751,15 @@ namespace TencentCloud
                 ModifyAccountRemarkOutcome ModifyAccountRemark(const Model::ModifyAccountRemarkRequest &request);
                 void ModifyAccountRemarkAsync(const Model::ModifyAccountRemarkRequest& request, const ModifyAccountRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAccountRemarkOutcomeCallable ModifyAccountRemarkCallable(const Model::ModifyAccountRemarkRequest& request);
+
+                /**
+                 *本接口(ModifyBackupName)用于修改备份名称。
+                 * @param req ModifyBackupNameRequest
+                 * @return ModifyBackupNameOutcome
+                 */
+                ModifyBackupNameOutcome ModifyBackupName(const Model::ModifyBackupNameRequest &request);
+                void ModifyBackupNameAsync(const Model::ModifyBackupNameRequest& request, const ModifyBackupNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBackupNameOutcomeCallable ModifyBackupNameCallable(const Model::ModifyBackupNameRequest& request);
 
                 /**
                  *本接口（ModifyBackupStrategy）用于修改备份策略

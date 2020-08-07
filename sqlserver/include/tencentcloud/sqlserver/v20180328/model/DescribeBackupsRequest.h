@@ -132,6 +132,60 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取按照备份名称筛选，不填则不筛选此项
+                     * @return BackupName 按照备份名称筛选，不填则不筛选此项
+                     */
+                    std::string GetBackupName() const;
+
+                    /**
+                     * 设置按照备份名称筛选，不填则不筛选此项
+                     * @param BackupName 按照备份名称筛选，不填则不筛选此项
+                     */
+                    void SetBackupName(const std::string& _backupName);
+
+                    /**
+                     * 判断参数 BackupName 是否已赋值
+                     * @return BackupName 是否已赋值
+                     */
+                    bool BackupNameHasBeenSet() const;
+
+                    /**
+                     * 获取按照备份策略筛选，0-实例备份，1-多库备份，不填则不筛选此项
+                     * @return Strategy 按照备份策略筛选，0-实例备份，1-多库备份，不填则不筛选此项
+                     */
+                    int64_t GetStrategy() const;
+
+                    /**
+                     * 设置按照备份策略筛选，0-实例备份，1-多库备份，不填则不筛选此项
+                     * @param Strategy 按照备份策略筛选，0-实例备份，1-多库备份，不填则不筛选此项
+                     */
+                    void SetStrategy(const int64_t& _strategy);
+
+                    /**
+                     * 判断参数 Strategy 是否已赋值
+                     * @return Strategy 是否已赋值
+                     */
+                    bool StrategyHasBeenSet() const;
+
+                    /**
+                     * 获取按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项
+                     * @return BackupWay 按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项
+                     */
+                    int64_t GetBackupWay() const;
+
+                    /**
+                     * 设置按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项
+                     * @param BackupWay 按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项
+                     */
+                    void SetBackupWay(const int64_t& _backupWay);
+
+                    /**
+                     * 判断参数 BackupWay 是否已赋值
+                     * @return BackupWay 是否已赋值
+                     */
+                    bool BackupWayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +217,24 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 按照备份名称筛选，不填则不筛选此项
+                     */
+                    std::string m_backupName;
+                    bool m_backupNameHasBeenSet;
+
+                    /**
+                     * 按照备份策略筛选，0-实例备份，1-多库备份，不填则不筛选此项
+                     */
+                    int64_t m_strategy;
+                    bool m_strategyHasBeenSet;
+
+                    /**
+                     * 按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项
+                     */
+                    int64_t m_backupWay;
+                    bool m_backupWayHasBeenSet;
 
                 };
             }
