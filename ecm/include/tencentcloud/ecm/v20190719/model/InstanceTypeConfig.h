@@ -175,17 +175,17 @@ namespace TencentCloud
                     bool InstanceFamilyTypeConfigHasBeenSet() const;
 
                     /**
-                     * 获取机型额外信息
+                     * 获取机型额外信息 是一个json字符串，如果存在则表示特殊机型，格式如下：{"dataDiskSize":3200,"systemDiskSize":60, "systemDiskSizeShow":"系统盘默认60G","dataDiskSizeShow":"本地NVMe SSD 硬盘3200 GB"}
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtInfo 机型额外信息
+                     * @return ExtInfo 机型额外信息 是一个json字符串，如果存在则表示特殊机型，格式如下：{"dataDiskSize":3200,"systemDiskSize":60, "systemDiskSizeShow":"系统盘默认60G","dataDiskSizeShow":"本地NVMe SSD 硬盘3200 GB"}
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置机型额外信息
+                     * 设置机型额外信息 是一个json字符串，如果存在则表示特殊机型，格式如下：{"dataDiskSize":3200,"systemDiskSize":60, "systemDiskSizeShow":"系统盘默认60G","dataDiskSizeShow":"本地NVMe SSD 硬盘3200 GB"}
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtInfo 机型额外信息
+                     * @param ExtInfo 机型额外信息 是一个json字符串，如果存在则表示特殊机型，格式如下：{"dataDiskSize":3200,"systemDiskSize":60, "systemDiskSizeShow":"系统盘默认60G","dataDiskSizeShow":"本地NVMe SSD 硬盘3200 GB"}
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -241,7 +241,7 @@ namespace TencentCloud
                     bool m_instanceFamilyTypeConfigHasBeenSet;
 
                     /**
-                     * 机型额外信息
+                     * 机型额外信息 是一个json字符串，如果存在则表示特殊机型，格式如下：{"dataDiskSize":3200,"systemDiskSize":60, "systemDiskSizeShow":"系统盘默认60G","dataDiskSizeShow":"本地NVMe SSD 硬盘3200 GB"}
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extInfo;

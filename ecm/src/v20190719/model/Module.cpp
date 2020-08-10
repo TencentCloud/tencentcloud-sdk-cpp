@@ -30,7 +30,9 @@ Module::Module() :
     m_instanceTypeConfigHasBeenSet(false),
     m_defaultImageHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_defaultBandwidthHasBeenSet(false)
+    m_defaultBandwidthHasBeenSet(false),
+    m_tagSetHasBeenSet(false),
+    m_closeIpDirectHasBeenSet(false)
 {
 }
 
@@ -143,6 +145,36 @@ CoreInternalOutcome Module::Deserialize(const Value &value)
         m_defaultBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `Module.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloseIpDirect") && !value["CloseIpDirect"].IsNull())
+    {
+        if (!value["CloseIpDirect"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Module.CloseIpDirect` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_closeIpDirect = value["CloseIpDirect"].GetInt64();
+        m_closeIpDirectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +254,29 @@ void Module::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "DefaultBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultBandwidth, allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_closeIpDirectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CloseIpDirect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_closeIpDirect, allocator);
     }
 
 }
@@ -369,5 +424,37 @@ void Module::SetDefaultBandwidth(const int64_t& _defaultBandwidth)
 bool Module::DefaultBandwidthHasBeenSet() const
 {
     return m_defaultBandwidthHasBeenSet;
+}
+
+vector<Tag> Module::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void Module::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool Module::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
+}
+
+int64_t Module::GetCloseIpDirect() const
+{
+    return m_closeIpDirect;
+}
+
+void Module::SetCloseIpDirect(const int64_t& _closeIpDirect)
+{
+    m_closeIpDirect = _closeIpDirect;
+    m_closeIpDirectHasBeenSet = true;
+}
+
+bool Module::CloseIpDirectHasBeenSet() const
+{
+    return m_closeIpDirectHasBeenSet;
 }
 

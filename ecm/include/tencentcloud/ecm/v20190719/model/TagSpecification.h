@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源类型，目前仅支持"instance"
-                     * @return ResourceType 资源类型，目前仅支持"instance"
+                     * 获取资源类型，目前仅支持"instance"、"module"
+                     * @return ResourceType 资源类型，目前仅支持"instance"、"module"
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型，目前仅支持"instance"
-                     * @param ResourceType 资源类型，目前仅支持"instance"
+                     * 设置资源类型，目前仅支持"instance"、"module"
+                     * @param ResourceType 资源类型，目前仅支持"instance"、"module"
                      */
                     void SetResourceType(const std::string& _resourceType);
 
@@ -86,7 +86,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源类型，目前仅支持"instance"
+                     * 资源类型，目前仅支持"instance"、"module"
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

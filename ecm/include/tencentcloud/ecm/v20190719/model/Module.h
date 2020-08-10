@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ecm/v20190719/model/InstanceTypeConfig.h>
 #include <tencentcloud/ecm/v20190719/model/Image.h>
+#include <tencentcloud/ecm/v20190719/model/Tag.h>
 
 
 namespace TencentCloud
@@ -222,6 +223,46 @@ DELETEFAILED：删除失败
                      */
                     bool DefaultBandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取标签集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagSet 标签集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置标签集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagSet 标签集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     */
+                    bool TagSetHasBeenSet() const;
+
+                    /**
+                     * 获取是否关闭IP直通
+                     * @return CloseIpDirect 是否关闭IP直通
+                     */
+                    int64_t GetCloseIpDirect() const;
+
+                    /**
+                     * 设置是否关闭IP直通
+                     * @param CloseIpDirect 是否关闭IP直通
+                     */
+                    void SetCloseIpDirect(const int64_t& _closeIpDirect);
+
+                    /**
+                     * 判断参数 CloseIpDirect 是否已赋值
+                     * @return CloseIpDirect 是否已赋值
+                     */
+                    bool CloseIpDirectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +321,19 @@ DELETEFAILED：删除失败
                      */
                     int64_t m_defaultBandwidth;
                     bool m_defaultBandwidthHasBeenSet;
+
+                    /**
+                     * 标签集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 是否关闭IP直通
+                     */
+                    int64_t m_closeIpDirect;
+                    bool m_closeIpDirectHasBeenSet;
 
                 };
             }

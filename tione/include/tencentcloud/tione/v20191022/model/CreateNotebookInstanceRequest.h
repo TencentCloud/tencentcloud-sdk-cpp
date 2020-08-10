@@ -251,17 +251,21 @@ namespace TencentCloud
                     bool AdditionalCodeRepositoriesHasBeenSet() const;
 
                     /**
-                     * 获取是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
+                     * 获取已弃用，请使用ClsConfig配置。
+是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
 开启后，Notebook运行的日志会收集到CLS中，CLS会产生费用，请根据需要选择
-                     * @return ClsAccess 是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
+                     * @return ClsAccess 已弃用，请使用ClsConfig配置。
+是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
 开启后，Notebook运行的日志会收集到CLS中，CLS会产生费用，请根据需要选择
                      */
                     std::string GetClsAccess() const;
 
                     /**
-                     * 设置是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
+                     * 设置已弃用，请使用ClsConfig配置。
+是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
 开启后，Notebook运行的日志会收集到CLS中，CLS会产生费用，请根据需要选择
-                     * @param ClsAccess 是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
+                     * @param ClsAccess 已弃用，请使用ClsConfig配置。
+是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
 开启后，Notebook运行的日志会收集到CLS中，CLS会产生费用，请根据需要选择
                      */
                     void SetClsAccess(const std::string& _clsAccess);
@@ -321,14 +325,14 @@ namespace TencentCloud
                     bool AutoStoppingHasBeenSet() const;
 
                     /**
-                     * 获取接入日志的配置
-                     * @return ClsConfig 接入日志的配置
+                     * 获取接入日志的配置，默认接入免费日志
+                     * @return ClsConfig 接入日志的配置，默认接入免费日志
                      */
                     ClsConfig GetClsConfig() const;
 
                     /**
-                     * 设置接入日志的配置
-                     * @param ClsConfig 接入日志的配置
+                     * 设置接入日志的配置，默认接入免费日志
+                     * @param ClsConfig 接入日志的配置，默认接入免费日志
                      */
                     void SetClsConfig(const ClsConfig& _clsConfig);
 
@@ -406,7 +410,8 @@ namespace TencentCloud
                     bool m_additionalCodeRepositoriesHasBeenSet;
 
                     /**
-                     * 是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
+                     * 已弃用，请使用ClsConfig配置。
+是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
 开启后，Notebook运行的日志会收集到CLS中，CLS会产生费用，请根据需要选择
                      */
                     std::string m_clsAccess;
@@ -428,7 +433,7 @@ namespace TencentCloud
                     bool m_autoStoppingHasBeenSet;
 
                     /**
-                     * 接入日志的配置
+                     * 接入日志的配置，默认接入免费日志
                      */
                     ClsConfig m_clsConfig;
                     bool m_clsConfigHasBeenSet;

@@ -293,8 +293,8 @@ namespace TencentCloud
                     bool InstallDependencyHasBeenSet() const;
 
                     /**
-                     * 获取函数状态
-                     * @return Status 函数状态
+                     * 获取函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/47175)
+                     * @return Status 函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/47175)
                      */
                     std::string GetStatus() const;
 
@@ -491,9 +491,9 @@ namespace TencentCloud
                     bool CfsConfigHasBeenSet() const;
 
                     /**
-                     * 获取函数的计费状态
+                     * 获取函数的计费状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.87.BD.E6.95.B0.E8.AE.A1.E8.B4.B9.E7.8A.B6.E6.80.81)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AvailableStatus 函数的计费状态
+                     * @return AvailableStatus 函数的计费状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.87.BD.E6.95.B0.E8.AE.A1.E8.B4.B9.E7.8A.B6.E6.80.81)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAvailableStatus() const;
@@ -517,6 +517,18 @@ namespace TencentCloud
                      * @return Qualifier 是否已赋值
                      */
                     bool QualifierHasBeenSet() const;
+
+                    /**
+                     * 获取函数初始化超时时间
+                     * @return InitTimeout 函数初始化超时时间
+                     */
+                    int64_t GetInitTimeout() const;
+
+                    /**
+                     * 判断参数 InitTimeout 是否已赋值
+                     * @return InitTimeout 是否已赋值
+                     */
+                    bool InitTimeoutHasBeenSet() const;
 
                 private:
 
@@ -641,7 +653,7 @@ namespace TencentCloud
                     bool m_installDependencyHasBeenSet;
 
                     /**
-                     * 函数状态
+                     * 函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/47175)
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -740,7 +752,7 @@ namespace TencentCloud
                     bool m_cfsConfigHasBeenSet;
 
                     /**
-                     * 函数的计费状态
+                     * 函数的计费状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.87.BD.E6.95.B0.E8.AE.A1.E8.B4.B9.E7.8A.B6.E6.80.81)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_availableStatus;
@@ -752,6 +764,12 @@ namespace TencentCloud
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
+
+                    /**
+                     * 函数初始化超时时间
+                     */
+                    int64_t m_initTimeout;
+                    bool m_initTimeoutHasBeenSet;
 
                 };
             }

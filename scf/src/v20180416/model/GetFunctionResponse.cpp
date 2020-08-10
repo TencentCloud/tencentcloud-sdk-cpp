@@ -62,7 +62,8 @@ GetFunctionResponse::GetFunctionResponse() :
     m_onsEnableHasBeenSet(false),
     m_cfsConfigHasBeenSet(false),
     m_availableStatusHasBeenSet(false),
-    m_qualifierHasBeenSet(false)
+    m_qualifierHasBeenSet(false),
+    m_initTimeoutHasBeenSet(false)
 {
 }
 
@@ -559,6 +560,16 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_qualifierHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InitTimeout") && !rsp["InitTimeout"].IsNull())
+    {
+        if (!rsp["InitTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InitTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_initTimeout = rsp["InitTimeout"].GetInt64();
+        m_initTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -942,6 +953,16 @@ string GetFunctionResponse::GetQualifier() const
 bool GetFunctionResponse::QualifierHasBeenSet() const
 {
     return m_qualifierHasBeenSet;
+}
+
+int64_t GetFunctionResponse::GetInitTimeout() const
+{
+    return m_initTimeout;
+}
+
+bool GetFunctionResponse::InitTimeoutHasBeenSet() const
+{
+    return m_initTimeoutHasBeenSet;
 }
 
 

@@ -29,7 +29,9 @@ CreateModuleRequest::CreateModuleRequest() :
     m_defaultImageIdHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_defaultSystemDiskSizeHasBeenSet(false),
-    m_defaultDataDiskSizeHasBeenSet(false)
+    m_defaultDataDiskSizeHasBeenSet(false),
+    m_closeIpDirectHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,29 @@ string CreateModuleRequest::ToJsonString() const
         string key = "DefaultDataDiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultDataDiskSize, allocator);
+    }
+
+    if (m_closeIpDirectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CloseIpDirect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_closeIpDirect, allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSpecification.begin(); itr != m_tagSpecification.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -190,6 +215,38 @@ void CreateModuleRequest::SetDefaultDataDiskSize(const int64_t& _defaultDataDisk
 bool CreateModuleRequest::DefaultDataDiskSizeHasBeenSet() const
 {
     return m_defaultDataDiskSizeHasBeenSet;
+}
+
+bool CreateModuleRequest::GetCloseIpDirect() const
+{
+    return m_closeIpDirect;
+}
+
+void CreateModuleRequest::SetCloseIpDirect(const bool& _closeIpDirect)
+{
+    m_closeIpDirect = _closeIpDirect;
+    m_closeIpDirectHasBeenSet = true;
+}
+
+bool CreateModuleRequest::CloseIpDirectHasBeenSet() const
+{
+    return m_closeIpDirectHasBeenSet;
+}
+
+vector<TagSpecification> CreateModuleRequest::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void CreateModuleRequest::SetTagSpecification(const vector<TagSpecification>& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool CreateModuleRequest::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 
 

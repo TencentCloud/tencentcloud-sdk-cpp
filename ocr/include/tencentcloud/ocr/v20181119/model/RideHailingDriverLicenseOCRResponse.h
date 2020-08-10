@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取证号，对应网约车驾驶证字段：证号、从业资格证号、驾驶员证号、身份证号
-                     * @return LicenseNumber 证号，对应网约车驾驶证字段：证号、从业资格证号、驾驶员证号、身份证号
+                     * 获取证号，对应网约车驾驶证字段：证号/从业资格证号/驾驶员证号/身份证号
+                     * @return LicenseNumber 证号，对应网约车驾驶证字段：证号/从业资格证号/驾驶员证号/身份证号
                      */
                     std::string GetLicenseNumber() const;
 
@@ -79,8 +79,8 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取有效期截止时间，对应网约车驾驶证字段：有效期至、营运期限止
-                     * @return EndDate 有效期截止时间，对应网约车驾驶证字段：有效期至、营运期限止
+                     * 获取有效期截止时间，对应网约车驾驶证字段：有效期至/营运期限止
+                     * @return EndDate 有效期截止时间，对应网约车驾驶证字段：有效期至/营运期限止
                      */
                     std::string GetEndDate() const;
 
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool EndDateHasBeenSet() const;
 
                     /**
-                     * 获取初始发证日期，对应网约车驾驶证字段：初始领证日期、发证日期
-                     * @return ReleaseDate 初始发证日期，对应网约车驾驶证字段：初始领证日期、发证日期
+                     * 获取初始发证日期，对应网约车驾驶证字段：初始领证日期/发证日期
+                     * @return ReleaseDate 初始发证日期，对应网约车驾驶证字段：初始领证日期/发证日期
                      */
                     std::string GetReleaseDate() const;
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 证号，对应网约车驾驶证字段：证号、从业资格证号、驾驶员证号、身份证号
+                     * 证号，对应网约车驾驶证字段：证号/从业资格证号/驾驶员证号/身份证号
                      */
                     std::string m_licenseNumber;
                     bool m_licenseNumberHasBeenSet;
@@ -123,13 +123,13 @@ namespace TencentCloud
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 有效期截止时间，对应网约车驾驶证字段：有效期至、营运期限止
+                     * 有效期截止时间，对应网约车驾驶证字段：有效期至/营运期限止
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
 
                     /**
-                     * 初始发证日期，对应网约车驾驶证字段：初始领证日期、发证日期
+                     * 初始发证日期，对应网约车驾驶证字段：初始领证日期/发证日期
                      */
                     std::string m_releaseDate;
                     bool m_releaseDateHasBeenSet;

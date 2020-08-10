@@ -131,6 +131,10 @@
 #include <tencentcloud/ocr/v20181119/model/VehicleLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VehicleRegCertOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VehicleRegCertOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyBasicBizLicenseRequest.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyBasicBizLicenseResponse.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseRequest.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VinOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VinOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/WaybillOCRRequest.h>
@@ -311,6 +315,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::VehicleRegCertOCRResponse> VehicleRegCertOCROutcome;
                 typedef std::future<VehicleRegCertOCROutcome> VehicleRegCertOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VehicleRegCertOCRRequest&, VehicleRegCertOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VehicleRegCertOCRAsyncHandler;
+                typedef Outcome<Error, Model::VerifyBasicBizLicenseResponse> VerifyBasicBizLicenseOutcome;
+                typedef std::future<VerifyBasicBizLicenseOutcome> VerifyBasicBizLicenseOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::VerifyBasicBizLicenseRequest&, VerifyBasicBizLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyBasicBizLicenseAsyncHandler;
+                typedef Outcome<Error, Model::VerifyBizLicenseResponse> VerifyBizLicenseOutcome;
+                typedef std::future<VerifyBizLicenseOutcome> VerifyBizLicenseOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::VerifyBizLicenseRequest&, VerifyBizLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyBizLicenseAsyncHandler;
                 typedef Outcome<Error, Model::VinOCRResponse> VinOCROutcome;
                 typedef std::future<VinOCROutcome> VinOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VinOCRRequest&, VinOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VinOCRAsyncHandler;
@@ -957,9 +967,7 @@ namespace TencentCloud
                 ResidenceBookletOCROutcomeCallable ResidenceBookletOCRCallable(const Model::ResidenceBookletOCRRequest& request);
 
                 /**
-                 *本接口支持网约车驾驶证重要字段的自动定位与识别，重点字段的识别准确度达到99%以上。
-
-网约车驾驶证：包括姓名、证号、起始日期、截止日期、发证日期。
+                 *本接口支持网约车驾驶证关键字段的识别，包括姓名、证号、起始日期、截止日期、发证日期。
                  * @param req RideHailingDriverLicenseOCRRequest
                  * @return RideHailingDriverLicenseOCROutcome
                  */
@@ -1072,6 +1080,25 @@ namespace TencentCloud
                 VehicleRegCertOCROutcome VehicleRegCertOCR(const Model::VehicleRegCertOCRRequest &request);
                 void VehicleRegCertOCRAsync(const Model::VehicleRegCertOCRRequest& request, const VehicleRegCertOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VehicleRegCertOCROutcomeCallable VehicleRegCertOCRCallable(const Model::VehicleRegCertOCRRequest& request);
+
+                /**
+                 *本接口支持营业执照信息的识别与准确性核验。您可以通过输入营业执照关键字段或传入营业执照图片提供所需的验证信息，接口返回真实的企业工商照面信息及核验结果，包括统一社会信用代码、经营期限、法人姓名、经营状态、经营业务范围、状态信息、原注册号、要核验的工商注册号、工商注册号、要核验的企业名称、企业名称、要核验的注册住址、注册住址、核验结果、注册资本共16个基础字段。
+                 * @param req VerifyBasicBizLicenseRequest
+                 * @return VerifyBasicBizLicenseOutcome
+                 */
+                VerifyBasicBizLicenseOutcome VerifyBasicBizLicense(const Model::VerifyBasicBizLicenseRequest &request);
+                void VerifyBasicBizLicenseAsync(const Model::VerifyBasicBizLicenseRequest& request, const VerifyBasicBizLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyBasicBizLicenseOutcomeCallable VerifyBasicBizLicenseCallable(const Model::VerifyBasicBizLicenseRequest& request);
+
+                /**
+                 *本接口支持营业执照信息的识别与准确性核验，返回的营业执照信息比营业执照识别及核验（基础版）接口更详细。
+您可以通过输入营业执照关键字段或传入营业执照图片提供所需的验证信息，接口返回真实的企业工商照面信息及核验结果，包括统一社会信用代码、组织机构代码、经营期限、法人姓名、经营状态、经营业务范围及方式、注册资金、注册币种、登记机关、开业日期、企业（机构）类型、注销日期、吊销日期、许可经营项目、一般经营项目、核准时间、省、地级市、区/县、住所所在行政区划代码、行业门类代码、行业门类名称、国民经济行业代码、国民经济行业名称、经营（业务）范围、要核验的工商注册号、工商注册号、要核验的企业名称、企业名称、要核验的注册住址、注册住址、核验结果共33个详细字段。
+                 * @param req VerifyBizLicenseRequest
+                 * @return VerifyBizLicenseOutcome
+                 */
+                VerifyBizLicenseOutcome VerifyBizLicense(const Model::VerifyBizLicenseRequest &request);
+                void VerifyBizLicenseAsync(const Model::VerifyBizLicenseRequest& request, const VerifyBizLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyBizLicenseOutcomeCallable VerifyBizLicenseCallable(const Model::VerifyBizLicenseRequest& request);
 
                 /**
                  *本接口支持图片内车辆识别代号（VIN）的检测和识别。

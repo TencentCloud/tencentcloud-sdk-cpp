@@ -167,30 +167,14 @@ namespace TencentCloud
                     bool LayerNameHasBeenSet() const;
 
                     /**
-                     * 获取层的具体版本当前状态，可能取值：
-Active 正常
-Publishing  发布中
-PublishFailed  发布失败
-Deleted 已删除
-                     * @return Status 层的具体版本当前状态，可能取值：
-Active 正常
-Publishing  发布中
-PublishFailed  发布失败
-Deleted 已删除
+                     * 获取层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
+                     * @return Status 层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置层的具体版本当前状态，可能取值：
-Active 正常
-Publishing  发布中
-PublishFailed  发布失败
-Deleted 已删除
-                     * @param Status 层的具体版本当前状态，可能取值：
-Active 正常
-Publishing  发布中
-PublishFailed  发布失败
-Deleted 已删除
+                     * 设置层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
+                     * @param Status 层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
                      */
                     void SetStatus(const std::string& _status);
 
@@ -242,11 +226,7 @@ Deleted 已删除
                     bool m_layerNameHasBeenSet;
 
                     /**
-                     * 层的具体版本当前状态，可能取值：
-Active 正常
-Publishing  发布中
-PublishFailed  发布失败
-Deleted 已删除
+                     * 层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

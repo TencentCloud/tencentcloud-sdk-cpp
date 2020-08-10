@@ -267,14 +267,14 @@ namespace TencentCloud
                     bool DisassociateAdditionalCodeRepositoriesHasBeenSet() const;
 
                     /**
-                     * 获取是否开启CLS日志服务，可取值Enabled/Disabled
-                     * @return ClsAccess 是否开启CLS日志服务，可取值Enabled/Disabled
+                     * 获取已弃用，请使用ClsConfig配置。是否开启CLS日志服务，可取值Enabled/Disabled
+                     * @return ClsAccess 已弃用，请使用ClsConfig配置。是否开启CLS日志服务，可取值Enabled/Disabled
                      */
                     std::string GetClsAccess() const;
 
                     /**
-                     * 设置是否开启CLS日志服务，可取值Enabled/Disabled
-                     * @param ClsAccess 是否开启CLS日志服务，可取值Enabled/Disabled
+                     * 设置已弃用，请使用ClsConfig配置。是否开启CLS日志服务，可取值Enabled/Disabled
+                     * @param ClsAccess 已弃用，请使用ClsConfig配置。是否开启CLS日志服务，可取值Enabled/Disabled
                      */
                     void SetClsAccess(const std::string& _clsAccess);
 
@@ -329,14 +329,14 @@ namespace TencentCloud
                     bool StoppingConditionHasBeenSet() const;
 
                     /**
-                     * 获取接入日志的配置
-                     * @return ClsConfig 接入日志的配置
+                     * 获取接入日志的配置，默认使用免费日志服务。
+                     * @return ClsConfig 接入日志的配置，默认使用免费日志服务。
                      */
                     ClsConfig GetClsConfig() const;
 
                     /**
-                     * 设置接入日志的配置
-                     * @param ClsConfig 接入日志的配置
+                     * 设置接入日志的配置，默认使用免费日志服务。
+                     * @param ClsConfig 接入日志的配置，默认使用免费日志服务。
                      */
                     void SetClsConfig(const ClsConfig& _clsConfig);
 
@@ -421,7 +421,7 @@ namespace TencentCloud
                     bool m_disassociateAdditionalCodeRepositoriesHasBeenSet;
 
                     /**
-                     * 是否开启CLS日志服务，可取值Enabled/Disabled
+                     * 已弃用，请使用ClsConfig配置。是否开启CLS日志服务，可取值Enabled/Disabled
                      */
                     std::string m_clsAccess;
                     bool m_clsAccessHasBeenSet;
@@ -441,7 +441,7 @@ namespace TencentCloud
                     bool m_stoppingConditionHasBeenSet;
 
                     /**
-                     * 接入日志的配置
+                     * 接入日志的配置，默认使用免费日志服务。
                      */
                     ClsConfig m_clsConfig;
                     bool m_clsConfigHasBeenSet;

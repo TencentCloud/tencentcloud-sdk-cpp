@@ -123,6 +123,8 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleConfigResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleImageResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyModuleIpDirectRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyModuleIpDirectResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleNameRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleNameResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleNetworkRequest.h>
@@ -315,6 +317,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyModuleImageResponse> ModifyModuleImageOutcome;
                 typedef std::future<ModifyModuleImageOutcome> ModifyModuleImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyModuleImageRequest&, ModifyModuleImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleImageAsyncHandler;
+                typedef Outcome<Error, Model::ModifyModuleIpDirectResponse> ModifyModuleIpDirectOutcome;
+                typedef std::future<ModifyModuleIpDirectOutcome> ModifyModuleIpDirectOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyModuleIpDirectRequest&, ModifyModuleIpDirectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleIpDirectAsyncHandler;
                 typedef Outcome<Error, Model::ModifyModuleNameResponse> ModifyModuleNameOutcome;
                 typedef std::future<ModifyModuleNameOutcome> ModifyModuleNameOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyModuleNameRequest&, ModifyModuleNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleNameAsyncHandler;
@@ -813,13 +818,22 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyModuleConfigOutcomeCallable ModifyModuleConfigCallable(const Model::ModifyModuleConfigRequest& request);
 
                 /**
-                 *ModifyModuleImage
+                 *修改模块的默认镜像
                  * @param req ModifyModuleImageRequest
                  * @return ModifyModuleImageOutcome
                  */
                 ModifyModuleImageOutcome ModifyModuleImage(const Model::ModifyModuleImageRequest &request);
                 void ModifyModuleImageAsync(const Model::ModifyModuleImageRequest& request, const ModifyModuleImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyModuleImageOutcomeCallable ModifyModuleImageCallable(const Model::ModifyModuleImageRequest& request);
+
+                /**
+                 *修改模块IP直通。
+                 * @param req ModifyModuleIpDirectRequest
+                 * @return ModifyModuleIpDirectOutcome
+                 */
+                ModifyModuleIpDirectOutcome ModifyModuleIpDirect(const Model::ModifyModuleIpDirectRequest &request);
+                void ModifyModuleIpDirectAsync(const Model::ModifyModuleIpDirectRequest& request, const ModifyModuleIpDirectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyModuleIpDirectOutcomeCallable ModifyModuleIpDirectCallable(const Model::ModifyModuleIpDirectRequest& request);
 
                 /**
                  *修改模块名称

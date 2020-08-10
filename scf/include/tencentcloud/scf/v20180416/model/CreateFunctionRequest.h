@@ -391,6 +391,24 @@ namespace TencentCloud
                      */
                     bool CfsConfigHasBeenSet() const;
 
+                    /**
+                     * 获取函数初始化超时时间
+                     * @return InitTimeout 函数初始化超时时间
+                     */
+                    int64_t GetInitTimeout() const;
+
+                    /**
+                     * 设置函数初始化超时时间
+                     * @param InitTimeout 函数初始化超时时间
+                     */
+                    void SetInitTimeout(const int64_t& _initTimeout);
+
+                    /**
+                     * 判断参数 InitTimeout 是否已赋值
+                     * @return InitTimeout 是否已赋值
+                     */
+                    bool InitTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -506,6 +524,12 @@ namespace TencentCloud
                      */
                     CfsConfig m_cfsConfig;
                     bool m_cfsConfigHasBeenSet;
+
+                    /**
+                     * 函数初始化超时时间
+                     */
+                    int64_t m_initTimeout;
+                    bool m_initTimeoutHasBeenSet;
 
                 };
             }

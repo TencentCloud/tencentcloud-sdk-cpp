@@ -41,6 +41,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeSubnetsResponse.h
   include/tencentcloud/ecm/v20190719/model/RunInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstancesResponse.h
+  include/tencentcloud/ecm/v20190719/model/NetworkInterface.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/ecm/v20190719/model/SrcImage.h
   include/tencentcloud/ecm/v20190719/model/InstanceTypeConfig.h
@@ -77,7 +78,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/CreateVpcResponse.h
   include/tencentcloud/ecm/v20190719/model/AssistantCidr.h
   include/tencentcloud/ecm/v20190719/model/DescribeTaskStatusResponse.h
-  include/tencentcloud/ecm/v20190719/model/NetworkInterface.h
+  include/tencentcloud/ecm/v20190719/model/ModifyModuleIpDirectRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateModuleRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/ReleaseAddressesResponse.h
@@ -143,6 +144,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeImportImageOsRequest.h
   include/tencentcloud/ecm/v20190719/model/NetworkInterfaceAttachment.h
   include/tencentcloud/ecm/v20190719/model/StopInstancesResponse.h
+  include/tencentcloud/ecm/v20190719/model/ModifyModuleIpDirectResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNameRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyDefaultSubnetRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstancesRequest.h
@@ -230,6 +232,7 @@ set(ecm_src
   src/v20190719/model/DescribeSubnetsResponse.cpp
   src/v20190719/model/RunInstancesRequest.cpp
   src/v20190719/model/DescribeInstancesResponse.cpp
+  src/v20190719/model/NetworkInterface.cpp
   src/v20190719/model/ResetInstancesPasswordResponse.cpp
   src/v20190719/model/SrcImage.cpp
   src/v20190719/model/InstanceTypeConfig.cpp
@@ -266,7 +269,7 @@ set(ecm_src
   src/v20190719/model/CreateVpcResponse.cpp
   src/v20190719/model/AssistantCidr.cpp
   src/v20190719/model/DescribeTaskStatusResponse.cpp
-  src/v20190719/model/NetworkInterface.cpp
+  src/v20190719/model/ModifyModuleIpDirectRequest.cpp
   src/v20190719/model/CreateModuleRequest.cpp
   src/v20190719/model/ModifyInstancesAttributeResponse.cpp
   src/v20190719/model/ReleaseAddressesResponse.cpp
@@ -332,6 +335,7 @@ set(ecm_src
   src/v20190719/model/DescribeImportImageOsRequest.cpp
   src/v20190719/model/NetworkInterfaceAttachment.cpp
   src/v20190719/model/StopInstancesResponse.cpp
+  src/v20190719/model/ModifyModuleIpDirectResponse.cpp
   src/v20190719/model/ModifyModuleNameRequest.cpp
   src/v20190719/model/ModifyDefaultSubnetRequest.cpp
   src/v20190719/model/DescribeInstancesRequest.cpp

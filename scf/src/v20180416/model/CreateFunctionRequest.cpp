@@ -42,7 +42,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_layersHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
     m_publicNetConfigHasBeenSet(false),
-    m_cfsConfigHasBeenSet(false)
+    m_cfsConfigHasBeenSet(false),
+    m_initTimeoutHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,14 @@ string CreateFunctionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_cfsConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_initTimeoutHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InitTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_initTimeout, allocator);
     }
 
 
@@ -528,6 +537,22 @@ void CreateFunctionRequest::SetCfsConfig(const CfsConfig& _cfsConfig)
 bool CreateFunctionRequest::CfsConfigHasBeenSet() const
 {
     return m_cfsConfigHasBeenSet;
+}
+
+int64_t CreateFunctionRequest::GetInitTimeout() const
+{
+    return m_initTimeout;
+}
+
+void CreateFunctionRequest::SetInitTimeout(const int64_t& _initTimeout)
+{
+    m_initTimeout = _initTimeout;
+    m_initTimeoutHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::InitTimeoutHasBeenSet() const
+{
+    return m_initTimeoutHasBeenSet;
 }
 
 

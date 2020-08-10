@@ -2190,6 +2190,49 @@ EcmClient::ModifyModuleImageOutcomeCallable EcmClient::ModifyModuleImageCallable
     return task->get_future();
 }
 
+EcmClient::ModifyModuleIpDirectOutcome EcmClient::ModifyModuleIpDirect(const ModifyModuleIpDirectRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModuleIpDirect");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModuleIpDirectResponse rsp = ModifyModuleIpDirectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModuleIpDirectOutcome(rsp);
+        else
+            return ModifyModuleIpDirectOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModuleIpDirectOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyModuleIpDirectAsync(const ModifyModuleIpDirectRequest& request, const ModifyModuleIpDirectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyModuleIpDirect(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyModuleIpDirectOutcomeCallable EcmClient::ModifyModuleIpDirectCallable(const ModifyModuleIpDirectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyModuleIpDirectOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyModuleIpDirect(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ModifyModuleNameOutcome EcmClient::ModifyModuleName(const ModifyModuleNameRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyModuleName");

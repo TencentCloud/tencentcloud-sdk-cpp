@@ -29,6 +29,8 @@
 #include <tencentcloud/faceid/v20180301/model/BankCard4EVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/BankCardVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/BankCardVerificationResponse.h>
+#include <tencentcloud/faceid/v20180301/model/CheckIdCardInformationRequest.h>
+#include <tencentcloud/faceid/v20180301/model/CheckIdCardInformationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthRequest.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetActionSequenceRequest.h>
@@ -82,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BankCardVerificationResponse> BankCardVerificationOutcome;
                 typedef std::future<BankCardVerificationOutcome> BankCardVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::BankCardVerificationRequest&, BankCardVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BankCardVerificationAsyncHandler;
+                typedef Outcome<Error, Model::CheckIdCardInformationResponse> CheckIdCardInformationOutcome;
+                typedef std::future<CheckIdCardInformationOutcome> CheckIdCardInformationOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::CheckIdCardInformationRequest&, CheckIdCardInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckIdCardInformationAsyncHandler;
                 typedef Outcome<Error, Model::DetectAuthResponse> DetectAuthOutcome;
                 typedef std::future<DetectAuthOutcome> DetectAuthOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::DetectAuthRequest&, DetectAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectAuthAsyncHandler;
@@ -156,6 +161,15 @@ namespace TencentCloud
                 BankCardVerificationOutcome BankCardVerification(const Model::BankCardVerificationRequest &request);
                 void BankCardVerificationAsync(const Model::BankCardVerificationRequest& request, const BankCardVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BankCardVerificationOutcomeCallable BankCardVerificationCallable(const Model::BankCardVerificationRequest& request);
+
+                /**
+                 *传入身份证人像面照片，识别身份证照片上的信息，并将姓名、身份证号、身份证人像照片与公安权威库的证件照进行比对，是否属于同一个人，从而验证身份证信息的真实性。
+                 * @param req CheckIdCardInformationRequest
+                 * @return CheckIdCardInformationOutcome
+                 */
+                CheckIdCardInformationOutcome CheckIdCardInformation(const Model::CheckIdCardInformationRequest &request);
+                void CheckIdCardInformationAsync(const Model::CheckIdCardInformationRequest& request, const CheckIdCardInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckIdCardInformationOutcomeCallable CheckIdCardInformationCallable(const Model::CheckIdCardInformationRequest& request);
 
                 /**
                  *每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。

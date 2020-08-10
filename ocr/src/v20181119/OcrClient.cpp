@@ -2362,6 +2362,92 @@ OcrClient::VehicleRegCertOCROutcomeCallable OcrClient::VehicleRegCertOCRCallable
     return task->get_future();
 }
 
+OcrClient::VerifyBasicBizLicenseOutcome OcrClient::VerifyBasicBizLicense(const VerifyBasicBizLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyBasicBizLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyBasicBizLicenseResponse rsp = VerifyBasicBizLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyBasicBizLicenseOutcome(rsp);
+        else
+            return VerifyBasicBizLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyBasicBizLicenseOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::VerifyBasicBizLicenseAsync(const VerifyBasicBizLicenseRequest& request, const VerifyBasicBizLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyBasicBizLicense(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::VerifyBasicBizLicenseOutcomeCallable OcrClient::VerifyBasicBizLicenseCallable(const VerifyBasicBizLicenseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyBasicBizLicenseOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyBasicBizLicense(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::VerifyBizLicenseOutcome OcrClient::VerifyBizLicense(const VerifyBizLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyBizLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyBizLicenseResponse rsp = VerifyBizLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyBizLicenseOutcome(rsp);
+        else
+            return VerifyBizLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyBizLicenseOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::VerifyBizLicenseAsync(const VerifyBizLicenseRequest& request, const VerifyBizLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyBizLicense(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::VerifyBizLicenseOutcomeCallable OcrClient::VerifyBizLicenseCallable(const VerifyBizLicenseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyBizLicenseOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyBizLicense(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::VinOCROutcome OcrClient::VinOCR(const VinOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "VinOCR");

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ecm/v20190719/model/TagSpecification.h>
 
 
 namespace TencentCloud
@@ -150,6 +151,50 @@ namespace TencentCloud
                      */
                     bool DefaultDataDiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否关闭IP直通。取值范围：
+1：表示关闭IP直通
+0：表示开通IP直通
+                     * @return CloseIpDirect 是否关闭IP直通。取值范围：
+1：表示关闭IP直通
+0：表示开通IP直通
+                     */
+                    bool GetCloseIpDirect() const;
+
+                    /**
+                     * 设置是否关闭IP直通。取值范围：
+1：表示关闭IP直通
+0：表示开通IP直通
+                     * @param CloseIpDirect 是否关闭IP直通。取值范围：
+1：表示关闭IP直通
+0：表示开通IP直通
+                     */
+                    void SetCloseIpDirect(const bool& _closeIpDirect);
+
+                    /**
+                     * 判断参数 CloseIpDirect 是否已赋值
+                     * @return CloseIpDirect 是否已赋值
+                     */
+                    bool CloseIpDirectHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表。
+                     * @return TagSpecification 标签列表。
+                     */
+                    std::vector<TagSpecification> GetTagSpecification() const;
+
+                    /**
+                     * 设置标签列表。
+                     * @param TagSpecification 标签列表。
+                     */
+                    void SetTagSpecification(const std::vector<TagSpecification>& _tagSpecification);
+
+                    /**
+                     * 判断参数 TagSpecification 是否已赋值
+                     * @return TagSpecification 是否已赋值
+                     */
+                    bool TagSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +232,20 @@ namespace TencentCloud
                      */
                     int64_t m_defaultDataDiskSize;
                     bool m_defaultDataDiskSizeHasBeenSet;
+
+                    /**
+                     * 是否关闭IP直通。取值范围：
+1：表示关闭IP直通
+0：表示开通IP直通
+                     */
+                    bool m_closeIpDirect;
+                    bool m_closeIpDirectHasBeenSet;
+
+                    /**
+                     * 标签列表。
+                     */
+                    std::vector<TagSpecification> m_tagSpecification;
+                    bool m_tagSpecificationHasBeenSet;
 
                 };
             }
