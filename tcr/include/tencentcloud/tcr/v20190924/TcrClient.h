@@ -49,6 +49,8 @@
 #include <tencentcloud/tcr/v20190924/model/CreateWebhookTriggerResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteImageRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteImageResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalRequest.h>
@@ -186,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteApplicationTriggerPersonalResponse> DeleteApplicationTriggerPersonalOutcome;
                 typedef std::future<DeleteApplicationTriggerPersonalOutcome> DeleteApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteApplicationTriggerPersonalRequest&, DeleteApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationTriggerPersonalAsyncHandler;
+                typedef Outcome<Error, Model::DeleteImageResponse> DeleteImageOutcome;
+                typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteImageRequest&, DeleteImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageAsyncHandler;
                 typedef Outcome<Error, Model::DeleteImageLifecycleGlobalPersonalResponse> DeleteImageLifecycleGlobalPersonalOutcome;
                 typedef std::future<DeleteImageLifecycleGlobalPersonalOutcome> DeleteImageLifecycleGlobalPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteImageLifecycleGlobalPersonalRequest&, DeleteImageLifecycleGlobalPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageLifecycleGlobalPersonalAsyncHandler;
@@ -431,6 +436,15 @@ namespace TencentCloud
                 DeleteApplicationTriggerPersonalOutcome DeleteApplicationTriggerPersonal(const Model::DeleteApplicationTriggerPersonalRequest &request);
                 void DeleteApplicationTriggerPersonalAsync(const Model::DeleteApplicationTriggerPersonalRequest& request, const DeleteApplicationTriggerPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteApplicationTriggerPersonalOutcomeCallable DeleteApplicationTriggerPersonalCallable(const Model::DeleteApplicationTriggerPersonalRequest& request);
+
+                /**
+                 *删除指定镜像
+                 * @param req DeleteImageRequest
+                 * @return DeleteImageOutcome
+                 */
+                DeleteImageOutcome DeleteImage(const Model::DeleteImageRequest &request);
+                void DeleteImageAsync(const Model::DeleteImageRequest& request, const DeleteImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImageOutcomeCallable DeleteImageCallable(const Model::DeleteImageRequest& request);
 
                 /**
                  *用于删除个人版全局镜像版本自动清理策略

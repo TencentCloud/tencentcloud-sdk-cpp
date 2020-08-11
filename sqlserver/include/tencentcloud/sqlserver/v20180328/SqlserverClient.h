@@ -27,6 +27,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/CompleteExpansionRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/CompleteExpansionResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/CompleteMigrationRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/CompleteMigrationResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/CreateAccountRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/CreateAccountResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/CreateBackupRequest.h>
@@ -71,6 +73,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeMaintenanceSpanRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeMaintenanceSpanResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeMigrationDatabasesRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeMigrationDatabasesResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeMigrationDetailRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeMigrationDetailResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeMigrationsRequest.h>
@@ -133,6 +137,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeNameResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyReadOnlyGroupDetailsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyReadOnlyGroupDetailsResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/QueryMigrationCheckProcessRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/QueryMigrationCheckProcessResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/RemoveBackupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/RemoveBackupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/RenewDBInstanceRequest.h>
@@ -149,6 +155,10 @@
 #include <tencentcloud/sqlserver/v20180328/model/RollbackInstanceResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/RunMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/RunMigrationResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/StartMigrationCheckRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/StartMigrationCheckResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/StopMigrationRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/StopMigrationResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/TerminateDBInstanceRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/TerminateDBInstanceResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/UpgradeDBInstanceRequest.h>
@@ -173,6 +183,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CompleteExpansionResponse> CompleteExpansionOutcome;
                 typedef std::future<CompleteExpansionOutcome> CompleteExpansionOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::CompleteExpansionRequest&, CompleteExpansionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompleteExpansionAsyncHandler;
+                typedef Outcome<Error, Model::CompleteMigrationResponse> CompleteMigrationOutcome;
+                typedef std::future<CompleteMigrationOutcome> CompleteMigrationOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::CompleteMigrationRequest&, CompleteMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompleteMigrationAsyncHandler;
                 typedef Outcome<Error, Model::CreateAccountResponse> CreateAccountOutcome;
                 typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::CreateAccountRequest&, CreateAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountAsyncHandler;
@@ -239,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeMaintenanceSpanResponse> DescribeMaintenanceSpanOutcome;
                 typedef std::future<DescribeMaintenanceSpanOutcome> DescribeMaintenanceSpanOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeMaintenanceSpanRequest&, DescribeMaintenanceSpanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintenanceSpanAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMigrationDatabasesResponse> DescribeMigrationDatabasesOutcome;
+                typedef std::future<DescribeMigrationDatabasesOutcome> DescribeMigrationDatabasesOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeMigrationDatabasesRequest&, DescribeMigrationDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrationDatabasesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMigrationDetailResponse> DescribeMigrationDetailOutcome;
                 typedef std::future<DescribeMigrationDetailOutcome> DescribeMigrationDetailOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeMigrationDetailRequest&, DescribeMigrationDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrationDetailAsyncHandler;
@@ -332,6 +348,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyReadOnlyGroupDetailsResponse> ModifyReadOnlyGroupDetailsOutcome;
                 typedef std::future<ModifyReadOnlyGroupDetailsOutcome> ModifyReadOnlyGroupDetailsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyReadOnlyGroupDetailsRequest&, ModifyReadOnlyGroupDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReadOnlyGroupDetailsAsyncHandler;
+                typedef Outcome<Error, Model::QueryMigrationCheckProcessResponse> QueryMigrationCheckProcessOutcome;
+                typedef std::future<QueryMigrationCheckProcessOutcome> QueryMigrationCheckProcessOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::QueryMigrationCheckProcessRequest&, QueryMigrationCheckProcessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMigrationCheckProcessAsyncHandler;
                 typedef Outcome<Error, Model::RemoveBackupsResponse> RemoveBackupsOutcome;
                 typedef std::future<RemoveBackupsOutcome> RemoveBackupsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::RemoveBackupsRequest&, RemoveBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveBackupsAsyncHandler;
@@ -356,6 +375,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RunMigrationResponse> RunMigrationOutcome;
                 typedef std::future<RunMigrationOutcome> RunMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::RunMigrationRequest&, RunMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunMigrationAsyncHandler;
+                typedef Outcome<Error, Model::StartMigrationCheckResponse> StartMigrationCheckOutcome;
+                typedef std::future<StartMigrationCheckOutcome> StartMigrationCheckOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::StartMigrationCheckRequest&, StartMigrationCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMigrationCheckAsyncHandler;
+                typedef Outcome<Error, Model::StopMigrationResponse> StopMigrationOutcome;
+                typedef std::future<StopMigrationOutcome> StopMigrationOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::StopMigrationRequest&, StopMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMigrationAsyncHandler;
                 typedef Outcome<Error, Model::TerminateDBInstanceResponse> TerminateDBInstanceOutcome;
                 typedef std::future<TerminateDBInstanceOutcome> TerminateDBInstanceOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::TerminateDBInstanceRequest&, TerminateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDBInstanceAsyncHandler;
@@ -382,6 +407,15 @@ namespace TencentCloud
                 CompleteExpansionOutcome CompleteExpansion(const Model::CompleteExpansionRequest &request);
                 void CompleteExpansionAsync(const Model::CompleteExpansionRequest& request, const CompleteExpansionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CompleteExpansionOutcomeCallable CompleteExpansionCallable(const Model::CompleteExpansionRequest& request);
+
+                /**
+                 *本接口（CompleteMigration）作用是完成一个迁移任务
+                 * @param req CompleteMigrationRequest
+                 * @return CompleteMigrationOutcome
+                 */
+                CompleteMigrationOutcome CompleteMigration(const Model::CompleteMigrationRequest &request);
+                void CompleteMigrationAsync(const Model::CompleteMigrationRequest& request, const CompleteMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CompleteMigrationOutcomeCallable CompleteMigrationCallable(const Model::CompleteMigrationRequest& request);
 
                 /**
                  *本接口（CreateAccount）用于创建实例账号
@@ -580,6 +614,15 @@ namespace TencentCloud
                 DescribeMaintenanceSpanOutcome DescribeMaintenanceSpan(const Model::DescribeMaintenanceSpanRequest &request);
                 void DescribeMaintenanceSpanAsync(const Model::DescribeMaintenanceSpanRequest& request, const DescribeMaintenanceSpanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMaintenanceSpanOutcomeCallable DescribeMaintenanceSpanCallable(const Model::DescribeMaintenanceSpanRequest& request);
+
+                /**
+                 *本接口（DescribeMigrationDatabases）的作用是查询待迁移数据库列表
+                 * @param req DescribeMigrationDatabasesRequest
+                 * @return DescribeMigrationDatabasesOutcome
+                 */
+                DescribeMigrationDatabasesOutcome DescribeMigrationDatabases(const Model::DescribeMigrationDatabasesRequest &request);
+                void DescribeMigrationDatabasesAsync(const Model::DescribeMigrationDatabasesRequest& request, const DescribeMigrationDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMigrationDatabasesOutcomeCallable DescribeMigrationDatabasesCallable(const Model::DescribeMigrationDatabasesRequest& request);
 
                 /**
                  *本接口（DescribeMigrationDetail）用于查询迁移任务的详细情况
@@ -861,6 +904,15 @@ namespace TencentCloud
                 ModifyReadOnlyGroupDetailsOutcomeCallable ModifyReadOnlyGroupDetailsCallable(const Model::ModifyReadOnlyGroupDetailsRequest& request);
 
                 /**
+                 *本接口（QueryMigrationCheckProcess）的作用是查询迁移检查任务的进度，适用于迁移源的类型为TencentDB for SQLServer 的迁移方式
+                 * @param req QueryMigrationCheckProcessRequest
+                 * @return QueryMigrationCheckProcessOutcome
+                 */
+                QueryMigrationCheckProcessOutcome QueryMigrationCheckProcess(const Model::QueryMigrationCheckProcessRequest &request);
+                void QueryMigrationCheckProcessAsync(const Model::QueryMigrationCheckProcessRequest& request, const QueryMigrationCheckProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMigrationCheckProcessOutcomeCallable QueryMigrationCheckProcessCallable(const Model::QueryMigrationCheckProcessRequest& request);
+
+                /**
                  *本接口（RemoveBackups）可以删除用户手动创建的备份文件。待删除的备份策略可以是实例备份，也可以是多库备份。
                  * @param req RemoveBackupsRequest
                  * @return RemoveBackupsOutcome
@@ -931,6 +983,24 @@ namespace TencentCloud
                 RunMigrationOutcome RunMigration(const Model::RunMigrationRequest &request);
                 void RunMigrationAsync(const Model::RunMigrationRequest& request, const RunMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunMigrationOutcomeCallable RunMigrationCallable(const Model::RunMigrationRequest& request);
+
+                /**
+                 *本接口（StartMigrationCheck）的作用是启动一个迁移前的校验任务，适用于迁移源的类型为TencentDB for SQLServer 的迁移方式
+                 * @param req StartMigrationCheckRequest
+                 * @return StartMigrationCheckOutcome
+                 */
+                StartMigrationCheckOutcome StartMigrationCheck(const Model::StartMigrationCheckRequest &request);
+                void StartMigrationCheckAsync(const Model::StartMigrationCheckRequest& request, const StartMigrationCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartMigrationCheckOutcomeCallable StartMigrationCheckCallable(const Model::StartMigrationCheckRequest& request);
+
+                /**
+                 *本接口（StopMigration）作用是中止一个迁移任务
+                 * @param req StopMigrationRequest
+                 * @return StopMigrationOutcome
+                 */
+                StopMigrationOutcome StopMigration(const Model::StopMigrationRequest &request);
+                void StopMigrationAsync(const Model::StopMigrationRequest& request, const StopMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopMigrationOutcomeCallable StopMigrationCallable(const Model::StopMigrationRequest& request);
 
                 /**
                  *本接口(TerminateDBInstance)用于主动销毁按量计费实例。

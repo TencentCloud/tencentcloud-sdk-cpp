@@ -37,7 +37,8 @@ VmGroupSimple::VmGroupSimple() :
     m_namespaceNameHasBeenSet(false),
     m_microserviceTypeHasBeenSet(false),
     m_groupResourceTypeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false)
+    m_updatedTimeHasBeenSet(false),
+    m_deployDescHasBeenSet(false)
 {
 }
 
@@ -206,6 +207,16 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const Value &value)
         m_updatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeployDesc") && !value["DeployDesc"].IsNull())
+    {
+        if (!value["DeployDesc"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VmGroupSimple.DeployDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployDesc = string(value["DeployDesc"].GetString());
+        m_deployDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -339,6 +350,14 @@ void VmGroupSimple::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "UpdatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updatedTime, allocator);
+    }
+
+    if (m_deployDescHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deployDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -598,5 +617,21 @@ void VmGroupSimple::SetUpdatedTime(const int64_t& _updatedTime)
 bool VmGroupSimple::UpdatedTimeHasBeenSet() const
 {
     return m_updatedTimeHasBeenSet;
+}
+
+string VmGroupSimple::GetDeployDesc() const
+{
+    return m_deployDesc;
+}
+
+void VmGroupSimple::SetDeployDesc(const string& _deployDesc)
+{
+    m_deployDesc = _deployDesc;
+    m_deployDescHasBeenSet = true;
+}
+
+bool VmGroupSimple::DeployDescHasBeenSet() const
+{
+    return m_deployDescHasBeenSet;
 }
 

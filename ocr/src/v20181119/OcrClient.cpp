@@ -1889,6 +1889,49 @@ OcrClient::RideHailingDriverLicenseOCROutcomeCallable OcrClient::RideHailingDriv
     return task->get_future();
 }
 
+OcrClient::RideHailingTransportLicenseOCROutcome OcrClient::RideHailingTransportLicenseOCR(const RideHailingTransportLicenseOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RideHailingTransportLicenseOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RideHailingTransportLicenseOCRResponse rsp = RideHailingTransportLicenseOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RideHailingTransportLicenseOCROutcome(rsp);
+        else
+            return RideHailingTransportLicenseOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RideHailingTransportLicenseOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RideHailingTransportLicenseOCRAsync(const RideHailingTransportLicenseOCRRequest& request, const RideHailingTransportLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RideHailingTransportLicenseOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RideHailingTransportLicenseOCROutcomeCallable OcrClient::RideHailingTransportLicenseOCRCallable(const RideHailingTransportLicenseOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RideHailingTransportLicenseOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RideHailingTransportLicenseOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::SealOCROutcome OcrClient::SealOCR(const SealOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "SealOCR");
@@ -2226,6 +2269,49 @@ OcrClient::VatInvoiceOCROutcomeCallable OcrClient::VatInvoiceOCRCallable(const V
         [this, request]()
         {
             return this->VatInvoiceOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::VatInvoiceVerifyOutcome OcrClient::VatInvoiceVerify(const VatInvoiceVerifyRequest &request)
+{
+    auto outcome = MakeRequest(request, "VatInvoiceVerify");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VatInvoiceVerifyResponse rsp = VatInvoiceVerifyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VatInvoiceVerifyOutcome(rsp);
+        else
+            return VatInvoiceVerifyOutcome(o.GetError());
+    }
+    else
+    {
+        return VatInvoiceVerifyOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::VatInvoiceVerifyAsync(const VatInvoiceVerifyRequest& request, const VatInvoiceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VatInvoiceVerify(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::VatInvoiceVerifyOutcomeCallable OcrClient::VatInvoiceVerifyCallable(const VatInvoiceVerifyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VatInvoiceVerifyOutcome()>>(
+        [this, request]()
+        {
+            return this->VatInvoiceVerify(request);
         }
     );
 

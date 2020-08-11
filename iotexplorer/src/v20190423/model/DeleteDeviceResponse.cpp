@@ -24,7 +24,9 @@ using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace rapidjson;
 using namespace std;
 
-DeleteDeviceResponse::DeleteDeviceResponse()
+DeleteDeviceResponse::DeleteDeviceResponse() :
+    m_resultCodeHasBeenSet(false),
+    m_resultMessageHasBeenSet(false)
 {
 }
 
@@ -62,9 +64,49 @@ CoreInternalOutcome DeleteDeviceResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ResultCode") && !rsp["ResultCode"].IsNull())
+    {
+        if (!rsp["ResultCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResultCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultCode = string(rsp["ResultCode"].GetString());
+        m_resultCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResultMessage") && !rsp["ResultMessage"].IsNull())
+    {
+        if (!rsp["ResultMessage"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResultMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultMessage = string(rsp["ResultMessage"].GetString());
+        m_resultMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string DeleteDeviceResponse::GetResultCode() const
+{
+    return m_resultCode;
+}
+
+bool DeleteDeviceResponse::ResultCodeHasBeenSet() const
+{
+    return m_resultCodeHasBeenSet;
+}
+
+string DeleteDeviceResponse::GetResultMessage() const
+{
+    return m_resultMessage;
+}
+
+bool DeleteDeviceResponse::ResultMessageHasBeenSet() const
+{
+    return m_resultMessageHasBeenSet;
+}
 
 

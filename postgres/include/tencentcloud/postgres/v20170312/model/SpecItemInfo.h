@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述一种规格的信息信息
+                * 描述一种规格的信息
                 */
                 class SpecItemInfo : public AbstractModel
                 {

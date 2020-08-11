@@ -118,6 +118,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/CreateNamespaceRequest.h
   include/tencentcloud/tcr/v20190924/model/BatchDeleteRepositoryPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/TriggerInvokeCondition.h
+  include/tencentcloud/tcr/v20190924/model/ValidateRepositoryExistPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/NamespaceIsExistsResp.h
   include/tencentcloud/tcr/v20190924/model/DescribeInstancesRequest.h
   include/tencentcloud/tcr/v20190924/model/Filter.h
@@ -147,6 +148,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerPersonalResp.h
   include/tencentcloud/tcr/v20190924/model/TagInfo.h
   include/tencentcloud/tcr/v20190924/model/CreateRepositoryRequest.h
+  include/tencentcloud/tcr/v20190924/model/DeleteImageResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteNamespaceRequest.h
   include/tencentcloud/tcr/v20190924/model/BatchDeleteImagePersonalRequest.h
@@ -163,7 +165,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/TcrRepositoryInfo.h
   include/tencentcloud/tcr/v20190924/model/TcrInstanceToken.h
   include/tencentcloud/tcr/v20190924/model/DeleteRepositoryRequest.h
-  include/tencentcloud/tcr/v20190924/model/ValidateRepositoryExistPersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/DeleteImageRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/BatchDeleteImagePersonalResponse.h
@@ -271,6 +273,7 @@ set(tcr_src
   src/v20190924/model/CreateNamespaceRequest.cpp
   src/v20190924/model/BatchDeleteRepositoryPersonalRequest.cpp
   src/v20190924/model/TriggerInvokeCondition.cpp
+  src/v20190924/model/ValidateRepositoryExistPersonalResponse.cpp
   src/v20190924/model/NamespaceIsExistsResp.cpp
   src/v20190924/model/DescribeInstancesRequest.cpp
   src/v20190924/model/Filter.cpp
@@ -300,6 +303,7 @@ set(tcr_src
   src/v20190924/model/DescribeApplicationTriggerPersonalResp.cpp
   src/v20190924/model/TagInfo.cpp
   src/v20190924/model/CreateRepositoryRequest.cpp
+  src/v20190924/model/DeleteImageResponse.cpp
   src/v20190924/model/DescribeWebhookTriggerRequest.cpp
   src/v20190924/model/DeleteNamespaceRequest.cpp
   src/v20190924/model/BatchDeleteImagePersonalRequest.cpp
@@ -316,7 +320,7 @@ set(tcr_src
   src/v20190924/model/TcrRepositoryInfo.cpp
   src/v20190924/model/TcrInstanceToken.cpp
   src/v20190924/model/DeleteRepositoryRequest.cpp
-  src/v20190924/model/ValidateRepositoryExistPersonalResponse.cpp
+  src/v20190924/model/DeleteImageRequest.cpp
   src/v20190924/model/CreateRepositoryPersonalResponse.cpp
   src/v20190924/model/CreateApplicationTriggerPersonalResponse.cpp
   src/v20190924/model/BatchDeleteImagePersonalResponse.cpp

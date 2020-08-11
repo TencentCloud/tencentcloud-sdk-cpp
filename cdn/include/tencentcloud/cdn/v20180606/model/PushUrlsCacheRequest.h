@@ -116,6 +116,24 @@ global：预热全球节点
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取填写"middle"或不填充时预热至中间层节点
+                     * @return Layer 填写"middle"或不填充时预热至中间层节点
+                     */
+                    std::string GetLayer() const;
+
+                    /**
+                     * 设置填写"middle"或不填充时预热至中间层节点
+                     * @param Layer 填写"middle"或不填充时预热至中间层节点
+                     */
+                    void SetLayer(const std::string& _layer);
+
+                    /**
+                     * 判断参数 Layer 是否已赋值
+                     * @return Layer 是否已赋值
+                     */
+                    bool LayerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +158,12 @@ global：预热全球节点
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 填写"middle"或不填充时预热至中间层节点
+                     */
+                    std::string m_layer;
+                    bool m_layerHasBeenSet;
 
                 };
             }

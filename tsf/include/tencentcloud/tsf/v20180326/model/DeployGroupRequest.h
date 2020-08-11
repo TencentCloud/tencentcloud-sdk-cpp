@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool StartupParametersHasBeenSet() const;
 
+                    /**
+                     * 获取部署应用描述信息
+                     * @return DeployDesc 部署应用描述信息
+                     */
+                    std::string GetDeployDesc() const;
+
+                    /**
+                     * 设置部署应用描述信息
+                     * @param DeployDesc 部署应用描述信息
+                     */
+                    void SetDeployDesc(const std::string& _deployDesc);
+
+                    /**
+                     * 判断参数 DeployDesc 是否已赋值
+                     * @return DeployDesc 是否已赋值
+                     */
+                    bool DeployDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_startupParameters;
                     bool m_startupParametersHasBeenSet;
+
+                    /**
+                     * 部署应用描述信息
+                     */
+                    std::string m_deployDesc;
+                    bool m_deployDescHasBeenSet;
 
                 };
             }

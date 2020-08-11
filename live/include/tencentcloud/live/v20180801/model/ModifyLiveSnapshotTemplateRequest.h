@@ -208,13 +208,17 @@ namespace TencentCloud
 
                     /**
                      * 获取Cos Bucket名称。
+注：CosBucket参数值不能包含-[appid] 部分。
                      * @return CosBucket Cos Bucket名称。
+注：CosBucket参数值不能包含-[appid] 部分。
                      */
                     std::string GetCosBucket() const;
 
                     /**
                      * 设置Cos Bucket名称。
+注：CosBucket参数值不能包含-[appid] 部分。
                      * @param CosBucket Cos Bucket名称。
+注：CosBucket参数值不能包含-[appid] 部分。
                      */
                     void SetCosBucket(const std::string& _cosBucket);
 
@@ -335,6 +339,7 @@ namespace TencentCloud
 
                     /**
                      * Cos Bucket名称。
+注：CosBucket参数值不能包含-[appid] 部分。
                      */
                     std::string m_cosBucket;
                     bool m_cosBucketHasBeenSet;

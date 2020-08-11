@@ -126,6 +126,49 @@ SqlserverClient::CompleteExpansionOutcomeCallable SqlserverClient::CompleteExpan
     return task->get_future();
 }
 
+SqlserverClient::CompleteMigrationOutcome SqlserverClient::CompleteMigration(const CompleteMigrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CompleteMigration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CompleteMigrationResponse rsp = CompleteMigrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CompleteMigrationOutcome(rsp);
+        else
+            return CompleteMigrationOutcome(o.GetError());
+    }
+    else
+    {
+        return CompleteMigrationOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::CompleteMigrationAsync(const CompleteMigrationRequest& request, const CompleteMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CompleteMigration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::CompleteMigrationOutcomeCallable SqlserverClient::CompleteMigrationCallable(const CompleteMigrationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CompleteMigrationOutcome()>>(
+        [this, request]()
+        {
+            return this->CompleteMigration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::CreateAccountOutcome SqlserverClient::CreateAccount(const CreateAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccount");
@@ -1065,6 +1108,49 @@ SqlserverClient::DescribeMaintenanceSpanOutcomeCallable SqlserverClient::Describ
         [this, request]()
         {
             return this->DescribeMaintenanceSpan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::DescribeMigrationDatabasesOutcome SqlserverClient::DescribeMigrationDatabases(const DescribeMigrationDatabasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMigrationDatabases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMigrationDatabasesResponse rsp = DescribeMigrationDatabasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMigrationDatabasesOutcome(rsp);
+        else
+            return DescribeMigrationDatabasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMigrationDatabasesOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeMigrationDatabasesAsync(const DescribeMigrationDatabasesRequest& request, const DescribeMigrationDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMigrationDatabases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeMigrationDatabasesOutcomeCallable SqlserverClient::DescribeMigrationDatabasesCallable(const DescribeMigrationDatabasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMigrationDatabasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMigrationDatabases(request);
         }
     );
 
@@ -2405,6 +2491,49 @@ SqlserverClient::ModifyReadOnlyGroupDetailsOutcomeCallable SqlserverClient::Modi
     return task->get_future();
 }
 
+SqlserverClient::QueryMigrationCheckProcessOutcome SqlserverClient::QueryMigrationCheckProcess(const QueryMigrationCheckProcessRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMigrationCheckProcess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMigrationCheckProcessResponse rsp = QueryMigrationCheckProcessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMigrationCheckProcessOutcome(rsp);
+        else
+            return QueryMigrationCheckProcessOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMigrationCheckProcessOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::QueryMigrationCheckProcessAsync(const QueryMigrationCheckProcessRequest& request, const QueryMigrationCheckProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryMigrationCheckProcess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::QueryMigrationCheckProcessOutcomeCallable SqlserverClient::QueryMigrationCheckProcessCallable(const QueryMigrationCheckProcessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryMigrationCheckProcessOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryMigrationCheckProcess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::RemoveBackupsOutcome SqlserverClient::RemoveBackups(const RemoveBackupsRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveBackups");
@@ -2742,6 +2871,92 @@ SqlserverClient::RunMigrationOutcomeCallable SqlserverClient::RunMigrationCallab
         [this, request]()
         {
             return this->RunMigration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::StartMigrationCheckOutcome SqlserverClient::StartMigrationCheck(const StartMigrationCheckRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartMigrationCheck");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartMigrationCheckResponse rsp = StartMigrationCheckResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartMigrationCheckOutcome(rsp);
+        else
+            return StartMigrationCheckOutcome(o.GetError());
+    }
+    else
+    {
+        return StartMigrationCheckOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::StartMigrationCheckAsync(const StartMigrationCheckRequest& request, const StartMigrationCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartMigrationCheck(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::StartMigrationCheckOutcomeCallable SqlserverClient::StartMigrationCheckCallable(const StartMigrationCheckRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartMigrationCheckOutcome()>>(
+        [this, request]()
+        {
+            return this->StartMigrationCheck(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::StopMigrationOutcome SqlserverClient::StopMigration(const StopMigrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopMigration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopMigrationResponse rsp = StopMigrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopMigrationOutcome(rsp);
+        else
+            return StopMigrationOutcome(o.GetError());
+    }
+    else
+    {
+        return StopMigrationOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::StopMigrationAsync(const StopMigrationRequest& request, const StopMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopMigration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::StopMigrationOutcomeCallable SqlserverClient::StopMigrationCallable(const StopMigrationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopMigrationOutcome()>>(
+        [this, request]()
+        {
+            return this->StopMigration(request);
         }
     );
 

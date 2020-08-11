@@ -26,7 +26,8 @@ using namespace std;
 DeployGroupRequest::DeployGroupRequest() :
     m_groupIdHasBeenSet(false),
     m_pkgIdHasBeenSet(false),
-    m_startupParametersHasBeenSet(false)
+    m_startupParametersHasBeenSet(false),
+    m_deployDescHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DeployGroupRequest::ToJsonString() const
         string key = "StartupParameters";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_startupParameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployDescHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployDesc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deployDesc.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DeployGroupRequest::SetStartupParameters(const string& _startupParameters)
 bool DeployGroupRequest::StartupParametersHasBeenSet() const
 {
     return m_startupParametersHasBeenSet;
+}
+
+string DeployGroupRequest::GetDeployDesc() const
+{
+    return m_deployDesc;
+}
+
+void DeployGroupRequest::SetDeployDesc(const string& _deployDesc)
+{
+    m_deployDesc = _deployDesc;
+    m_deployDescHasBeenSet = true;
+}
+
+bool DeployGroupRequest::DeployDescHasBeenSet() const
+{
+    return m_deployDescHasBeenSet;
 }
 
 

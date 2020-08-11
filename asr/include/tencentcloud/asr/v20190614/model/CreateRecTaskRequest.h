@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取数据长度，当 SourceType 值为1时必须填写，为0可不写（此数据长度为数据未进行base64编码时的数据长度）。
-                     * @return DataLen 数据长度，当 SourceType 值为1时必须填写，为0可不写（此数据长度为数据未进行base64编码时的数据长度）。
+                     * 获取数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。
+                     * @return DataLen 数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。
                      */
                     uint64_t GetDataLen() const;
 
                     /**
-                     * 设置数据长度，当 SourceType 值为1时必须填写，为0可不写（此数据长度为数据未进行base64编码时的数据长度）。
-                     * @param DataLen 数据长度，当 SourceType 值为1时必须填写，为0可不写（此数据长度为数据未进行base64编码时的数据长度）。
+                     * 设置数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。
+                     * @param DataLen 数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。
                      */
                     void SetDataLen(const uint64_t& _dataLen);
 
@@ -352,6 +352,24 @@ namespace TencentCloud
                      */
                     bool SpeakerNumberHasBeenSet() const;
 
+                    /**
+                     * 获取是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0。
+                     * @return FilterPunc 是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0。
+                     */
+                    int64_t GetFilterPunc() const;
+
+                    /**
+                     * 设置是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0。
+                     * @param FilterPunc 是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0。
+                     */
+                    void SetFilterPunc(const int64_t& _filterPunc);
+
+                    /**
+                     * 判断参数 FilterPunc 是否已赋值
+                     * @return FilterPunc 是否已赋值
+                     */
+                    bool FilterPuncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,7 +424,7 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 数据长度，当 SourceType 值为1时必须填写，为0可不写（此数据长度为数据未进行base64编码时的数据长度）。
+                     * 数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。
                      */
                     uint64_t m_dataLen;
                     bool m_dataLenHasBeenSet;
@@ -453,6 +471,12 @@ namespace TencentCloud
                      */
                     int64_t m_speakerNumber;
                     bool m_speakerNumberHasBeenSet;
+
+                    /**
+                     * 是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0。
+                     */
+                    int64_t m_filterPunc;
+                    bool m_filterPuncHasBeenSet;
 
                 };
             }

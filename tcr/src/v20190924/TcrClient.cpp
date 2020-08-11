@@ -599,6 +599,49 @@ TcrClient::DeleteApplicationTriggerPersonalOutcomeCallable TcrClient::DeleteAppl
     return task->get_future();
 }
 
+TcrClient::DeleteImageOutcome TcrClient::DeleteImage(const DeleteImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImageResponse rsp = DeleteImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImageOutcome(rsp);
+        else
+            return DeleteImageOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImageOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteImageOutcomeCallable TcrClient::DeleteImageCallable(const DeleteImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteImageOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DeleteImageLifecycleGlobalPersonalOutcome TcrClient::DeleteImageLifecycleGlobalPersonal(const DeleteImageLifecycleGlobalPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteImageLifecycleGlobalPersonal");

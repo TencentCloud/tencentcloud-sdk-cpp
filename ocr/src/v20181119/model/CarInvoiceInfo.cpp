@@ -23,7 +23,8 @@ using namespace std;
 
 CarInvoiceInfo::CarInvoiceInfo() :
     m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_rectHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,23 @@ CoreInternalOutcome CarInvoiceInfo::Deserialize(const Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Rect") && !value["Rect"].IsNull())
+    {
+        if (!value["Rect"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CarInvoiceInfo.Rect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rect.Deserialize(value["Rect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +91,15 @@ void CarInvoiceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Rect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_rect.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -108,5 +135,21 @@ void CarInvoiceInfo::SetValue(const string& _value)
 bool CarInvoiceInfo::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+Rect CarInvoiceInfo::GetRect() const
+{
+    return m_rect;
+}
+
+void CarInvoiceInfo::SetRect(const Rect& _rect)
+{
+    m_rect = _rect;
+    m_rectHasBeenSet = true;
+}
+
+bool CarInvoiceInfo::RectHasBeenSet() const
+{
+    return m_rectHasBeenSet;
 }
 

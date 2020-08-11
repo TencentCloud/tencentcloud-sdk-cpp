@@ -58,6 +58,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeContainerGroupDetailResponse.h
   include/tencentcloud/tsf/v20180326/model/SimpleApplication.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigSummaryResponse.h
+  include/tencentcloud/tsf/v20180326/model/HealthCheckSetting.h
   include/tencentcloud/tsf/v20180326/model/DescribeSimpleApplicationsResponse.h
   include/tencentcloud/tsf/v20180326/model/DeleteRepositoryResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigReleaseLogsRequest.h
@@ -70,6 +71,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeConfigsResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeApplicationAttributeResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeApplicationsResponse.h
+  include/tencentcloud/tsf/v20180326/model/VmGroupSimple.h
   include/tencentcloud/tsf/v20180326/model/ModifyContainerReplicasRequest.h
   include/tencentcloud/tsf/v20180326/model/ModifyLaneRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeLanesRequest.h
@@ -138,7 +140,8 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/StartContainerGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/DeleteConfigRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigReleaseLogsResponse.h
-  include/tencentcloud/tsf/v20180326/model/VmGroupSimple.h
+  include/tencentcloud/tsf/v20180326/model/HealthCheckSettings.h
+  include/tencentcloud/tsf/v20180326/model/ServiceSetting.h
   include/tencentcloud/tsf/v20180326/model/ApiResponseDescr.h
   include/tencentcloud/tsf/v20180326/model/DeployServerlessGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/Config.h
@@ -304,6 +307,7 @@ set(tsf_src
   src/v20180326/model/DescribeContainerGroupDetailResponse.cpp
   src/v20180326/model/SimpleApplication.cpp
   src/v20180326/model/DescribePublicConfigSummaryResponse.cpp
+  src/v20180326/model/HealthCheckSetting.cpp
   src/v20180326/model/DescribeSimpleApplicationsResponse.cpp
   src/v20180326/model/DeleteRepositoryResponse.cpp
   src/v20180326/model/DescribePublicConfigReleaseLogsRequest.cpp
@@ -316,6 +320,7 @@ set(tsf_src
   src/v20180326/model/DescribeConfigsResponse.cpp
   src/v20180326/model/DescribeApplicationAttributeResponse.cpp
   src/v20180326/model/DescribeApplicationsResponse.cpp
+  src/v20180326/model/VmGroupSimple.cpp
   src/v20180326/model/ModifyContainerReplicasRequest.cpp
   src/v20180326/model/ModifyLaneRequest.cpp
   src/v20180326/model/DescribeLanesRequest.cpp
@@ -384,7 +389,8 @@ set(tsf_src
   src/v20180326/model/StartContainerGroupRequest.cpp
   src/v20180326/model/DeleteConfigRequest.cpp
   src/v20180326/model/DescribePublicConfigReleaseLogsResponse.cpp
-  src/v20180326/model/VmGroupSimple.cpp
+  src/v20180326/model/HealthCheckSettings.cpp
+  src/v20180326/model/ServiceSetting.cpp
   src/v20180326/model/ApiResponseDescr.cpp
   src/v20180326/model/DeployServerlessGroupRequest.cpp
   src/v20180326/model/Config.cpp

@@ -38,7 +38,8 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_convertNumModeHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_speakerDiarizationHasBeenSet(false),
-    m_speakerNumberHasBeenSet(false)
+    m_speakerNumberHasBeenSet(false),
+    m_filterPuncHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,14 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "SpeakerNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_speakerNumber, allocator);
+    }
+
+    if (m_filterPuncHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FilterPunc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterPunc, allocator);
     }
 
 
@@ -415,6 +424,22 @@ void CreateRecTaskRequest::SetSpeakerNumber(const int64_t& _speakerNumber)
 bool CreateRecTaskRequest::SpeakerNumberHasBeenSet() const
 {
     return m_speakerNumberHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetFilterPunc() const
+{
+    return m_filterPunc;
+}
+
+void CreateRecTaskRequest::SetFilterPunc(const int64_t& _filterPunc)
+{
+    m_filterPunc = _filterPunc;
+    m_filterPuncHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::FilterPuncHasBeenSet() const
+{
+    return m_filterPuncHasBeenSet;
 }
 
 

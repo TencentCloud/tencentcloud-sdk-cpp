@@ -26,7 +26,8 @@ using namespace std;
 PushUrlsCacheRequest::PushUrlsCacheRequest() :
     m_urlsHasBeenSet(false),
     m_userAgentHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_layerHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string PushUrlsCacheRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_layerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Layer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_layer.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -120,6 +129,22 @@ void PushUrlsCacheRequest::SetArea(const string& _area)
 bool PushUrlsCacheRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+string PushUrlsCacheRequest::GetLayer() const
+{
+    return m_layer;
+}
+
+void PushUrlsCacheRequest::SetLayer(const string& _layer)
+{
+    m_layer = _layer;
+    m_layerHasBeenSet = true;
+}
+
+bool PushUrlsCacheRequest::LayerHasBeenSet() const
+{
+    return m_layerHasBeenSet;
 }
 
 

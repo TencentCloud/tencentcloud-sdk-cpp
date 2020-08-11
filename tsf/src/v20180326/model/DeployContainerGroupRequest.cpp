@@ -47,7 +47,10 @@ DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_istioMemRequestHasBeenSet(false),
     m_istioMemLimitHasBeenSet(false),
     m_maxSurgeHasBeenSet(false),
-    m_maxUnavailableHasBeenSet(false)
+    m_maxUnavailableHasBeenSet(false),
+    m_healthCheckSettingsHasBeenSet(false),
+    m_envsHasBeenSet(false),
+    m_serviceSettingHasBeenSet(false)
 {
 }
 
@@ -248,6 +251,39 @@ string DeployContainerGroupRequest::ToJsonString() const
         string key = "MaxUnavailable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_maxUnavailable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthCheckSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_healthCheckSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_envsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Envs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_envs.begin(); itr != m_envs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_serviceSettingHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceSetting";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_serviceSetting.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -640,6 +676,54 @@ void DeployContainerGroupRequest::SetMaxUnavailable(const string& _maxUnavailabl
 bool DeployContainerGroupRequest::MaxUnavailableHasBeenSet() const
 {
     return m_maxUnavailableHasBeenSet;
+}
+
+HealthCheckSettings DeployContainerGroupRequest::GetHealthCheckSettings() const
+{
+    return m_healthCheckSettings;
+}
+
+void DeployContainerGroupRequest::SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings)
+{
+    m_healthCheckSettings = _healthCheckSettings;
+    m_healthCheckSettingsHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::HealthCheckSettingsHasBeenSet() const
+{
+    return m_healthCheckSettingsHasBeenSet;
+}
+
+vector<Env> DeployContainerGroupRequest::GetEnvs() const
+{
+    return m_envs;
+}
+
+void DeployContainerGroupRequest::SetEnvs(const vector<Env>& _envs)
+{
+    m_envs = _envs;
+    m_envsHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::EnvsHasBeenSet() const
+{
+    return m_envsHasBeenSet;
+}
+
+ServiceSetting DeployContainerGroupRequest::GetServiceSetting() const
+{
+    return m_serviceSetting;
+}
+
+void DeployContainerGroupRequest::SetServiceSetting(const ServiceSetting& _serviceSetting)
+{
+    m_serviceSetting = _serviceSetting;
+    m_serviceSettingHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::ServiceSettingHasBeenSet() const
+{
+    return m_serviceSettingHasBeenSet;
 }
 
 

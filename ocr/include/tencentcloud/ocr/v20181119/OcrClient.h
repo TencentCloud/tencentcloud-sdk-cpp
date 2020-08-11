@@ -109,6 +109,8 @@
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SealOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SealOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRRequest.h>
@@ -125,6 +127,8 @@
 #include <tencentcloud/ocr/v20181119/model/TrainTicketOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyRequest.h>
+#include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VehicleLicenseOCRRequest.h>
@@ -282,6 +286,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RideHailingDriverLicenseOCRResponse> RideHailingDriverLicenseOCROutcome;
                 typedef std::future<RideHailingDriverLicenseOCROutcome> RideHailingDriverLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RideHailingDriverLicenseOCRRequest&, RideHailingDriverLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RideHailingDriverLicenseOCRAsyncHandler;
+                typedef Outcome<Error, Model::RideHailingTransportLicenseOCRResponse> RideHailingTransportLicenseOCROutcome;
+                typedef std::future<RideHailingTransportLicenseOCROutcome> RideHailingTransportLicenseOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RideHailingTransportLicenseOCRRequest&, RideHailingTransportLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RideHailingTransportLicenseOCRAsyncHandler;
                 typedef Outcome<Error, Model::SealOCRResponse> SealOCROutcome;
                 typedef std::future<SealOCROutcome> SealOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SealOCRRequest&, SealOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> SealOCRAsyncHandler;
@@ -306,6 +313,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::VatInvoiceOCRResponse> VatInvoiceOCROutcome;
                 typedef std::future<VatInvoiceOCROutcome> VatInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VatInvoiceOCRRequest&, VatInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatInvoiceOCRAsyncHandler;
+                typedef Outcome<Error, Model::VatInvoiceVerifyResponse> VatInvoiceVerifyOutcome;
+                typedef std::future<VatInvoiceVerifyOutcome> VatInvoiceVerifyOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::VatInvoiceVerifyRequest&, VatInvoiceVerifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatInvoiceVerifyAsyncHandler;
                 typedef Outcome<Error, Model::VatRollInvoiceOCRResponse> VatRollInvoiceOCROutcome;
                 typedef std::future<VatRollInvoiceOCROutcome> VatRollInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VatRollInvoiceOCRRequest&, VatRollInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatRollInvoiceOCRAsyncHandler;
@@ -976,6 +986,16 @@ namespace TencentCloud
                 RideHailingDriverLicenseOCROutcomeCallable RideHailingDriverLicenseOCRCallable(const Model::RideHailingDriverLicenseOCRRequest& request);
 
                 /**
+                 *本接口支持网约车运输证关键字段的识别，包括交运管许可字号、车辆所有人、车辆号牌、起始日期、截止日期、发证日期。
+           
+                 * @param req RideHailingTransportLicenseOCRRequest
+                 * @return RideHailingTransportLicenseOCROutcome
+                 */
+                RideHailingTransportLicenseOCROutcome RideHailingTransportLicenseOCR(const Model::RideHailingTransportLicenseOCRRequest &request);
+                void RideHailingTransportLicenseOCRAsync(const Model::RideHailingTransportLicenseOCRRequest& request, const RideHailingTransportLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RideHailingTransportLicenseOCROutcomeCallable RideHailingTransportLicenseOCRCallable(const Model::RideHailingTransportLicenseOCRRequest& request);
+
+                /**
                  *印章识别已支持各类印章，包括发票章，财务章等，适用于公文，票据等场景。
                  * @param req SealOCRRequest
                  * @return SealOCROutcome
@@ -1047,6 +1067,15 @@ namespace TencentCloud
                 VatInvoiceOCROutcome VatInvoiceOCR(const Model::VatInvoiceOCRRequest &request);
                 void VatInvoiceOCRAsync(const Model::VatInvoiceOCRRequest& request, const VatInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VatInvoiceOCROutcomeCallable VatInvoiceOCRCallable(const Model::VatInvoiceOCRRequest& request);
+
+                /**
+                 *本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票。
+                 * @param req VatInvoiceVerifyRequest
+                 * @return VatInvoiceVerifyOutcome
+                 */
+                VatInvoiceVerifyOutcome VatInvoiceVerify(const Model::VatInvoiceVerifyRequest &request);
+                void VatInvoiceVerifyAsync(const Model::VatInvoiceVerifyRequest& request, const VatInvoiceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VatInvoiceVerifyOutcomeCallable VatInvoiceVerifyCallable(const Model::VatInvoiceVerifyRequest& request);
 
                 /**
                  *本接口支持对增值税发票（卷票）的发票代码、发票号码、日期、校验码、合计金额（小写）等关键字段的识别。

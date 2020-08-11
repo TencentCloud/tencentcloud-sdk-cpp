@@ -552,6 +552,28 @@ namespace TencentCloud
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取部署应用描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployDesc 部署应用描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeployDesc() const;
+
+                    /**
+                     * 设置部署应用描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeployDesc 部署应用描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeployDesc(const std::string& _deployDesc);
+
+                    /**
+                     * 判断参数 DeployDesc 是否已赋值
+                     * @return DeployDesc 是否已赋值
+                     */
+                    bool DeployDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -714,6 +736,13 @@ namespace TencentCloud
                      */
                     int64_t m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
+
+                    /**
+                     * 部署应用描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deployDesc;
+                    bool m_deployDescHasBeenSet;
 
                 };
             }

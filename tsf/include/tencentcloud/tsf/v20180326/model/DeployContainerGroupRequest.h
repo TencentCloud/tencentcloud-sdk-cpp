@@ -21,6 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
+#include <tencentcloud/tsf/v20180326/model/Env.h>
+#include <tencentcloud/tsf/v20180326/model/ServiceSetting.h>
 
 
 namespace TencentCloud
@@ -474,6 +477,60 @@ namespace TencentCloud
                      */
                     bool MaxUnavailableHasBeenSet() const;
 
+                    /**
+                     * 获取健康检查配置信息，若不指定该参数，则默认不设置健康检查。
+                     * @return HealthCheckSettings 健康检查配置信息，若不指定该参数，则默认不设置健康检查。
+                     */
+                    HealthCheckSettings GetHealthCheckSettings() const;
+
+                    /**
+                     * 设置健康检查配置信息，若不指定该参数，则默认不设置健康检查。
+                     * @param HealthCheckSettings 健康检查配置信息，若不指定该参数，则默认不设置健康检查。
+                     */
+                    void SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings);
+
+                    /**
+                     * 判断参数 HealthCheckSettings 是否已赋值
+                     * @return HealthCheckSettings 是否已赋值
+                     */
+                    bool HealthCheckSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取部署组应用运行的环境变量。若不指定该参数，则默认不设置额外的环境变量。
+                     * @return Envs 部署组应用运行的环境变量。若不指定该参数，则默认不设置额外的环境变量。
+                     */
+                    std::vector<Env> GetEnvs() const;
+
+                    /**
+                     * 设置部署组应用运行的环境变量。若不指定该参数，则默认不设置额外的环境变量。
+                     * @param Envs 部署组应用运行的环境变量。若不指定该参数，则默认不设置额外的环境变量。
+                     */
+                    void SetEnvs(const std::vector<Env>& _envs);
+
+                    /**
+                     * 判断参数 Envs 是否已赋值
+                     * @return Envs 是否已赋值
+                     */
+                    bool EnvsHasBeenSet() const;
+
+                    /**
+                     * 获取容器部署组的网络设置。
+                     * @return ServiceSetting 容器部署组的网络设置。
+                     */
+                    ServiceSetting GetServiceSetting() const;
+
+                    /**
+                     * 设置容器部署组的网络设置。
+                     * @param ServiceSetting 容器部署组的网络设置。
+                     */
+                    void SetServiceSetting(const ServiceSetting& _serviceSetting);
+
+                    /**
+                     * 判断参数 ServiceSetting 是否已赋值
+                     * @return ServiceSetting 是否已赋值
+                     */
+                    bool ServiceSettingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -619,6 +676,24 @@ namespace TencentCloud
                      */
                     std::string m_maxUnavailable;
                     bool m_maxUnavailableHasBeenSet;
+
+                    /**
+                     * 健康检查配置信息，若不指定该参数，则默认不设置健康检查。
+                     */
+                    HealthCheckSettings m_healthCheckSettings;
+                    bool m_healthCheckSettingsHasBeenSet;
+
+                    /**
+                     * 部署组应用运行的环境变量。若不指定该参数，则默认不设置额外的环境变量。
+                     */
+                    std::vector<Env> m_envs;
+                    bool m_envsHasBeenSet;
+
+                    /**
+                     * 容器部署组的网络设置。
+                     */
+                    ServiceSetting m_serviceSetting;
+                    bool m_serviceSettingHasBeenSet;
 
                 };
             }
