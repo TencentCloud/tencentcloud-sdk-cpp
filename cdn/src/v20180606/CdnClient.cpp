@@ -427,6 +427,49 @@ CdnClient::DescribeCertDomainsOutcomeCallable CdnClient::DescribeCertDomainsCall
     return task->get_future();
 }
 
+CdnClient::DescribeDistrictIspDataOutcome CdnClient::DescribeDistrictIspData(const DescribeDistrictIspDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDistrictIspData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDistrictIspDataResponse rsp = DescribeDistrictIspDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDistrictIspDataOutcome(rsp);
+        else
+            return DescribeDistrictIspDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDistrictIspDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeDistrictIspDataAsync(const DescribeDistrictIspDataRequest& request, const DescribeDistrictIspDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDistrictIspData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeDistrictIspDataOutcomeCallable CdnClient::DescribeDistrictIspDataCallable(const DescribeDistrictIspDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDistrictIspDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDistrictIspData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeDomainsOutcome CdnClient::DescribeDomains(const DescribeDomainsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomains");

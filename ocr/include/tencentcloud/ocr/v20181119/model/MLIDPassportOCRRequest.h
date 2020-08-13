@@ -44,17 +44,13 @@ namespace TencentCloud
 
                     /**
                      * 获取图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
-图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      * @return ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
-图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      */
                     std::string GetImageBase64() const;
 
                     /**
                      * 设置图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
-图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      * @param ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
-图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
@@ -65,14 +61,14 @@ namespace TencentCloud
                     bool ImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取是否返回图片
-                     * @return RetImage 是否返回图片
+                     * 获取是否返回图片，默认false
+                     * @return RetImage 是否返回图片，默认false
                      */
                     bool GetRetImage() const;
 
                     /**
-                     * 设置是否返回图片
-                     * @param RetImage 是否返回图片
+                     * 设置是否返回图片，默认false
+                     * @param RetImage 是否返回图片，默认false
                      */
                     void SetRetImage(const bool& _retImage);
 
@@ -86,13 +82,12 @@ namespace TencentCloud
 
                     /**
                      * 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
-图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
 
                     /**
-                     * 是否返回图片
+                     * 是否返回图片，默认false
                      */
                     bool m_retImage;
                     bool m_retImageHasBeenSet;

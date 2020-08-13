@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境ID
-                     * @return EnvId 环境ID
+                     * 获取环境ID，需要系统自动创建环境时，此字段不传
+                     * @return EnvId 环境ID，需要系统自动创建环境时，此字段不传
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境ID
-                     * @param EnvId 环境ID
+                     * 设置环境ID，需要系统自动创建环境时，此字段不传
+                     * @param EnvId 环境ID，需要系统自动创建环境时，此字段不传
                      */
                     void SetEnvId(const std::string& _envId);
 
@@ -123,24 +123,6 @@ namespace TencentCloud
                     bool FreeQuotaHasBeenSet() const;
 
                     /**
-                     * 获取环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
-                     * @return Alias 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
-                     */
-                    std::string GetAlias() const;
-
-                    /**
-                     * 设置环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
-                     * @param Alias 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
-                     */
-                    void SetAlias(const std::string& _alias);
-
-                    /**
-                     * 判断参数 Alias 是否已赋值
-                     * @return Alias 是否已赋值
-                     */
-                    bool AliasHasBeenSet() const;
-
-                    /**
                      * 获取环境创建来源，取值：
 <li>miniapp</li>
 <li>qcloud</li>
@@ -175,21 +157,39 @@ namespace TencentCloud
                     bool EnvSourceHasBeenSet() const;
 
                     /**
+                     * 获取环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     * @return Alias 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 设置环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     * @param Alias 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     */
+                    void SetAlias(const std::string& _alias);
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     */
+                    bool AliasHasBeenSet() const;
+
+                    /**
                      * 获取如果envsource为miniapp, channel可以为ide或api;
-如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud
+如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework
 和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
                      * @return Channel 如果envsource为miniapp, channel可以为ide或api;
-如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud
+如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework
 和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置如果envsource为miniapp, channel可以为ide或api;
-如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud
+如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework
 和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
                      * @param Channel 如果envsource为miniapp, channel可以为ide或api;
-如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud
+如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework
 和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
                      */
                     void SetChannel(const std::string& _channel);
@@ -221,7 +221,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境ID
+                     * 环境ID，需要系统自动创建环境时，此字段不传
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
@@ -247,12 +247,6 @@ namespace TencentCloud
                     bool m_freeQuotaHasBeenSet;
 
                     /**
-                     * 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
-                     */
-                    std::string m_alias;
-                    bool m_aliasHasBeenSet;
-
-                    /**
                      * 环境创建来源，取值：
 <li>miniapp</li>
 <li>qcloud</li>
@@ -263,8 +257,14 @@ namespace TencentCloud
                     bool m_envSourceHasBeenSet;
 
                     /**
+                     * 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
+
+                    /**
                      * 如果envsource为miniapp, channel可以为ide或api;
-如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud
+如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework
 和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
                      */
                     std::string m_channel;

@@ -346,6 +346,50 @@ namespace TencentCloud
                      */
                     bool TargetGroupHasBeenSet() const;
 
+                    /**
+                     * 获取会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionType 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSessionType() const;
+
+                    /**
+                     * 设置会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionType 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionType(const std::string& _sessionType);
+
+                    /**
+                     * 判断参数 SessionType 是否已赋值
+                     * @return SessionType 是否已赋值
+                     */
+                    bool SessionTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KeepaliveEnable 是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetKeepaliveEnable() const;
+
+                    /**
+                     * 设置是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KeepaliveEnable 是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKeepaliveEnable(const int64_t& _keepaliveEnable);
+
+                    /**
+                     * 判断参数 KeepaliveEnable 是否已赋值
+                     * @return KeepaliveEnable 是否已赋值
+                     */
+                    bool KeepaliveEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -442,6 +486,20 @@ namespace TencentCloud
                      */
                     BasicTargetGroupInfo m_targetGroup;
                     bool m_targetGroupHasBeenSet;
+
+                    /**
+                     * 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionType;
+                    bool m_sessionTypeHasBeenSet;
+
+                    /**
+                     * 是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_keepaliveEnable;
+                    bool m_keepaliveEnableHasBeenSet;
 
                 };
             }

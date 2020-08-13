@@ -25,7 +25,8 @@ Item::Item() :
     m_itemIDHasBeenSet(false),
     m_dataInfoHasBeenSet(false),
     m_albumHasBeenSet(false),
-    m_artistsHasBeenSet(false)
+    m_artistsHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome Item::Deserialize(const Value &value)
         m_artistsHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Item.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -144,6 +155,14 @@ void Item::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -211,5 +230,21 @@ void Item::SetArtists(const vector<Artist>& _artists)
 bool Item::ArtistsHasBeenSet() const
 {
     return m_artistsHasBeenSet;
+}
+
+int64_t Item::GetStatus() const
+{
+    return m_status;
+}
+
+void Item::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool Item::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

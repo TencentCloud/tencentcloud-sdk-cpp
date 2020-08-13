@@ -35,7 +35,9 @@ Listener::Listener() :
     m_createTimeHasBeenSet(false),
     m_endPortHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
-    m_targetGroupHasBeenSet(false)
+    m_targetGroupHasBeenSet(false),
+    m_sessionTypeHasBeenSet(false),
+    m_keepaliveEnableHasBeenSet(false)
 {
 }
 
@@ -215,6 +217,26 @@ CoreInternalOutcome Listener::Deserialize(const Value &value)
         m_targetGroupHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionType") && !value["SessionType"].IsNull())
+    {
+        if (!value["SessionType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Listener.SessionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionType = string(value["SessionType"].GetString());
+        m_sessionTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeepaliveEnable") && !value["KeepaliveEnable"].IsNull())
+    {
+        if (!value["KeepaliveEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Listener.KeepaliveEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_keepaliveEnable = value["KeepaliveEnable"].GetInt64();
+        m_keepaliveEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -342,6 +364,22 @@ void Listener::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_targetGroup.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sessionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sessionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keepaliveEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KeepaliveEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keepaliveEnable, allocator);
     }
 
 }
@@ -569,5 +607,37 @@ void Listener::SetTargetGroup(const BasicTargetGroupInfo& _targetGroup)
 bool Listener::TargetGroupHasBeenSet() const
 {
     return m_targetGroupHasBeenSet;
+}
+
+string Listener::GetSessionType() const
+{
+    return m_sessionType;
+}
+
+void Listener::SetSessionType(const string& _sessionType)
+{
+    m_sessionType = _sessionType;
+    m_sessionTypeHasBeenSet = true;
+}
+
+bool Listener::SessionTypeHasBeenSet() const
+{
+    return m_sessionTypeHasBeenSet;
+}
+
+int64_t Listener::GetKeepaliveEnable() const
+{
+    return m_keepaliveEnable;
+}
+
+void Listener::SetKeepaliveEnable(const int64_t& _keepaliveEnable)
+{
+    m_keepaliveEnable = _keepaliveEnable;
+    m_keepaliveEnableHasBeenSet = true;
+}
+
+bool Listener::KeepaliveEnableHasBeenSet() const
+{
+    return m_keepaliveEnableHasBeenSet;
 }
 

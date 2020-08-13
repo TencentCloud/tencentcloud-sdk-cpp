@@ -40,6 +40,49 @@ IaiClient::IaiClient(const Credential &credential, const string &region, const C
 }
 
 
+IaiClient::AnalyzeDenseLandmarksOutcome IaiClient::AnalyzeDenseLandmarks(const AnalyzeDenseLandmarksRequest &request)
+{
+    auto outcome = MakeRequest(request, "AnalyzeDenseLandmarks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AnalyzeDenseLandmarksResponse rsp = AnalyzeDenseLandmarksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AnalyzeDenseLandmarksOutcome(rsp);
+        else
+            return AnalyzeDenseLandmarksOutcome(o.GetError());
+    }
+    else
+    {
+        return AnalyzeDenseLandmarksOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::AnalyzeDenseLandmarksAsync(const AnalyzeDenseLandmarksRequest& request, const AnalyzeDenseLandmarksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AnalyzeDenseLandmarks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::AnalyzeDenseLandmarksOutcomeCallable IaiClient::AnalyzeDenseLandmarksCallable(const AnalyzeDenseLandmarksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AnalyzeDenseLandmarksOutcome()>>(
+        [this, request]()
+        {
+            return this->AnalyzeDenseLandmarks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IaiClient::AnalyzeFaceOutcome IaiClient::AnalyzeFace(const AnalyzeFaceRequest &request)
 {
     auto outcome = MakeRequest(request, "AnalyzeFace");
@@ -549,6 +592,49 @@ IaiClient::DetectFaceOutcomeCallable IaiClient::DetectFaceCallable(const DetectF
         [this, request]()
         {
             return this->DetectFace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IaiClient::DetectFaceAttributesOutcome IaiClient::DetectFaceAttributes(const DetectFaceAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectFaceAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectFaceAttributesResponse rsp = DetectFaceAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectFaceAttributesOutcome(rsp);
+        else
+            return DetectFaceAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectFaceAttributesOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::DetectFaceAttributesAsync(const DetectFaceAttributesRequest& request, const DetectFaceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectFaceAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::DetectFaceAttributesOutcomeCallable IaiClient::DetectFaceAttributesCallable(const DetectFaceAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectFaceAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectFaceAttributes(request);
         }
     );
 

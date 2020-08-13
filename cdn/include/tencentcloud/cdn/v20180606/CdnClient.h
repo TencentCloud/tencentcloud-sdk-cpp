@@ -41,6 +41,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnIpResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCertDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCertDomainsResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsConfigRequest.h>
@@ -148,6 +150,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCertDomainsResponse> DescribeCertDomainsOutcome;
                 typedef std::future<DescribeCertDomainsOutcome> DescribeCertDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeCertDomainsRequest&, DescribeCertDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertDomainsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDistrictIspDataResponse> DescribeDistrictIspDataOutcome;
+                typedef std::future<DescribeDistrictIspDataOutcome> DescribeDistrictIspDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeDistrictIspDataRequest&, DescribeDistrictIspDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDistrictIspDataAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDomainsResponse> DescribeDomainsOutcome;
                 typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeDomainsRequest&, DescribeDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainsAsyncHandler;
@@ -340,6 +345,16 @@ namespace TencentCloud
                 DescribeCertDomainsOutcome DescribeCertDomains(const Model::DescribeCertDomainsRequest &request);
                 void DescribeCertDomainsAsync(const Model::DescribeCertDomainsRequest& request, const DescribeCertDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCertDomainsOutcomeCallable DescribeCertDomainsCallable(const Model::DescribeCertDomainsRequest& request);
+
+                /**
+                 *查询指定域名的区域、运营商明细数据
+注意事项：接口尚未全量开放，未在内测名单中的账号不支持调用
+                 * @param req DescribeDistrictIspDataRequest
+                 * @return DescribeDistrictIspDataOutcome
+                 */
+                DescribeDistrictIspDataOutcome DescribeDistrictIspData(const Model::DescribeDistrictIspDataRequest &request);
+                void DescribeDistrictIspDataAsync(const Model::DescribeDistrictIspDataRequest& request, const DescribeDistrictIspDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDistrictIspDataOutcomeCallable DescribeDistrictIspDataCallable(const Model::DescribeDistrictIspDataRequest& request);
 
                 /**
                  *DescribeDomains 用于查询内容分发网络加速域名（含境内、境外）基本配置信息，包括项目ID、服务状态，业务类型、创建时间、更新时间等信息。

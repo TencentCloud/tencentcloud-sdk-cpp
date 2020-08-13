@@ -31,6 +31,10 @@
 #include <tencentcloud/ame/v20190916/model/DescribeLyricResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeMusicRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeMusicResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribePackageItemsRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribePackageItemsResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribePackagesRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribePackagesResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeStationsRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeStationsResponse.h>
 #include <tencentcloud/ame/v20190916/model/ReportDataRequest.h>
@@ -61,6 +65,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeMusicResponse> DescribeMusicOutcome;
                 typedef std::future<DescribeMusicOutcome> DescribeMusicOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeMusicRequest&, DescribeMusicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMusicAsyncHandler;
+                typedef Outcome<Error, Model::DescribePackageItemsResponse> DescribePackageItemsOutcome;
+                typedef std::future<DescribePackageItemsOutcome> DescribePackageItemsOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribePackageItemsRequest&, DescribePackageItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageItemsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePackagesResponse> DescribePackagesOutcome;
+                typedef std::future<DescribePackagesOutcome> DescribePackagesOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribePackagesRequest&, DescribePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackagesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeStationsResponse> DescribeStationsOutcome;
                 typedef std::future<DescribeStationsOutcome> DescribeStationsOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeStationsRequest&, DescribeStationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStationsAsyncHandler;
@@ -105,6 +115,24 @@ namespace TencentCloud
                 DescribeMusicOutcome DescribeMusic(const Model::DescribeMusicRequest &request);
                 void DescribeMusicAsync(const Model::DescribeMusicRequest& request, const DescribeMusicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMusicOutcomeCallable DescribeMusicCallable(const Model::DescribeMusicRequest& request);
+
+                /**
+                 *查询曲库包已核验歌曲列表接口
+                 * @param req DescribePackageItemsRequest
+                 * @return DescribePackageItemsOutcome
+                 */
+                DescribePackageItemsOutcome DescribePackageItems(const Model::DescribePackageItemsRequest &request);
+                void DescribePackageItemsAsync(const Model::DescribePackageItemsRequest& request, const DescribePackageItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePackageItemsOutcomeCallable DescribePackageItemsCallable(const Model::DescribePackageItemsRequest& request);
+
+                /**
+                 *查询已购曲库包列表接口
+                 * @param req DescribePackagesRequest
+                 * @return DescribePackagesOutcome
+                 */
+                DescribePackagesOutcome DescribePackages(const Model::DescribePackagesRequest &request);
+                void DescribePackagesAsync(const Model::DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePackagesOutcomeCallable DescribePackagesCallable(const Model::DescribePackagesRequest& request);
 
                 /**
                  *获取素材库列表时使用

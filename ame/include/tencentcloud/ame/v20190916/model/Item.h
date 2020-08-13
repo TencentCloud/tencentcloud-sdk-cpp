@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Item
+                * 歌曲信息
                 */
                 class Item : public AbstractModel
                 {
@@ -133,6 +133,28 @@ namespace TencentCloud
                      */
                     bool ArtistsHasBeenSet() const;
 
+                    /**
+                     * 获取歌曲状态，1:添加进购物车；2:核销进曲库包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 歌曲状态，1:添加进购物车；2:核销进曲库包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置歌曲状态，1:添加进购物车；2:核销进曲库包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 歌曲状态，1:添加进购物车；2:核销进曲库包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +183,13 @@ namespace TencentCloud
                      */
                     std::vector<Artist> m_artists;
                     bool m_artistsHasBeenSet;
+
+                    /**
+                     * 歌曲状态，1:添加进购物车；2:核销进曲库包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

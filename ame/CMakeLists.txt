@@ -21,48 +21,62 @@ set(ame_public_header
 set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/Album.h
   include/tencentcloud/ame/v20190916/model/DescribeMusicResponse.h
-  include/tencentcloud/ame/v20190916/model/ImagePath.h
-  include/tencentcloud/ame/v20190916/model/DataInfo.h
-  include/tencentcloud/ame/v20190916/model/DescribeItemsResponse.h
-  include/tencentcloud/ame/v20190916/model/Music.h
-  include/tencentcloud/ame/v20190916/model/Artist.h
   include/tencentcloud/ame/v20190916/model/DescribeLyricResponse.h
-  include/tencentcloud/ame/v20190916/model/DescribeItemByIdResponse.h
-  include/tencentcloud/ame/v20190916/model/ReportDataResponse.h
-  include/tencentcloud/ame/v20190916/model/DescribeItemsRequest.h
-  include/tencentcloud/ame/v20190916/model/DescribeStationsRequest.h
-  include/tencentcloud/ame/v20190916/model/Item.h
   include/tencentcloud/ame/v20190916/model/Station.h
-  include/tencentcloud/ame/v20190916/model/Lyric.h
-  include/tencentcloud/ame/v20190916/model/DescribeLyricRequest.h
+  include/tencentcloud/ame/v20190916/model/Music.h
   include/tencentcloud/ame/v20190916/model/DescribeStationsResponse.h
-  include/tencentcloud/ame/v20190916/model/ReportDataRequest.h
+  include/tencentcloud/ame/v20190916/model/DescribePackageItemsResponse.h
+  include/tencentcloud/ame/v20190916/model/PackageItem.h
+  include/tencentcloud/ame/v20190916/model/DataInfo.h
+  include/tencentcloud/ame/v20190916/model/Package.h
+  include/tencentcloud/ame/v20190916/model/ReportDataResponse.h
+  include/tencentcloud/ame/v20190916/model/DescribePackageItemsRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeItemByIdRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeMusicRequest.h
+  include/tencentcloud/ame/v20190916/model/UseRange.h
+  include/tencentcloud/ame/v20190916/model/Artist.h
+  include/tencentcloud/ame/v20190916/model/DescribeStationsRequest.h
+  include/tencentcloud/ame/v20190916/model/DescribeItemsRequest.h
+  include/tencentcloud/ame/v20190916/model/Item.h
+  include/tencentcloud/ame/v20190916/model/DescribePackagesRequest.h
+  include/tencentcloud/ame/v20190916/model/ImagePath.h
+  include/tencentcloud/ame/v20190916/model/DescribeItemsResponse.h
+  include/tencentcloud/ame/v20190916/model/DescribeItemByIdResponse.h
+  include/tencentcloud/ame/v20190916/model/DescribePackagesResponse.h
+  include/tencentcloud/ame/v20190916/model/Lyric.h
+  include/tencentcloud/ame/v20190916/model/DescribeLyricRequest.h
+  include/tencentcloud/ame/v20190916/model/ReportDataRequest.h
   )
 
 set(ame_src
   src/v20190916/AmeClient.cpp
   src/v20190916/model/Album.cpp
   src/v20190916/model/DescribeMusicResponse.cpp
-  src/v20190916/model/ImagePath.cpp
-  src/v20190916/model/DataInfo.cpp
-  src/v20190916/model/DescribeItemsResponse.cpp
-  src/v20190916/model/Music.cpp
-  src/v20190916/model/Artist.cpp
   src/v20190916/model/DescribeLyricResponse.cpp
-  src/v20190916/model/DescribeItemByIdResponse.cpp
-  src/v20190916/model/ReportDataResponse.cpp
-  src/v20190916/model/DescribeItemsRequest.cpp
-  src/v20190916/model/DescribeStationsRequest.cpp
-  src/v20190916/model/Item.cpp
   src/v20190916/model/Station.cpp
-  src/v20190916/model/Lyric.cpp
-  src/v20190916/model/DescribeLyricRequest.cpp
+  src/v20190916/model/Music.cpp
   src/v20190916/model/DescribeStationsResponse.cpp
-  src/v20190916/model/ReportDataRequest.cpp
+  src/v20190916/model/DescribePackageItemsResponse.cpp
+  src/v20190916/model/PackageItem.cpp
+  src/v20190916/model/DataInfo.cpp
+  src/v20190916/model/Package.cpp
+  src/v20190916/model/ReportDataResponse.cpp
+  src/v20190916/model/DescribePackageItemsRequest.cpp
   src/v20190916/model/DescribeItemByIdRequest.cpp
   src/v20190916/model/DescribeMusicRequest.cpp
+  src/v20190916/model/UseRange.cpp
+  src/v20190916/model/Artist.cpp
+  src/v20190916/model/DescribeStationsRequest.cpp
+  src/v20190916/model/DescribeItemsRequest.cpp
+  src/v20190916/model/Item.cpp
+  src/v20190916/model/DescribePackagesRequest.cpp
+  src/v20190916/model/ImagePath.cpp
+  src/v20190916/model/DescribeItemsResponse.cpp
+  src/v20190916/model/DescribeItemByIdResponse.cpp
+  src/v20190916/model/DescribePackagesResponse.cpp
+  src/v20190916/model/Lyric.cpp
+  src/v20190916/model/DescribeLyricRequest.cpp
+  src/v20190916/model/ReportDataRequest.cpp
   )
 
 set(ame_include

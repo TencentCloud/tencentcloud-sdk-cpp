@@ -42,7 +42,8 @@ Deal::Deal() :
     m_subProductCodeHasBeenSet(false),
     m_bigDealIdHasBeenSet(false),
     m_formulaHasBeenSet(false),
-    m_refReturnDealsHasBeenSet(false)
+    m_refReturnDealsHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,16 @@ CoreInternalOutcome Deal::Deserialize(const Value &value)
         m_refReturnDealsHasBeenSet = true;
     }
 
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Deal.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = string(value["PayMode"].GetString());
+        m_payModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -451,6 +462,14 @@ void Deal::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "RefReturnDeals";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_refReturnDeals.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_payMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -790,5 +809,21 @@ void Deal::SetRefReturnDeals(const string& _refReturnDeals)
 bool Deal::RefReturnDealsHasBeenSet() const
 {
     return m_refReturnDealsHasBeenSet;
+}
+
+string Deal::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void Deal::SetPayMode(const string& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool Deal::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
 }
 

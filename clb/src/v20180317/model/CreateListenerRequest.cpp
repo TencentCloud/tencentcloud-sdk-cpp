@@ -33,7 +33,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_sessionExpireTimeHasBeenSet(false),
     m_schedulerHasBeenSet(false),
     m_sniSwitchHasBeenSet(false),
-    m_targetTypeHasBeenSet(false)
+    m_targetTypeHasBeenSet(false),
+    m_sessionTypeHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,14 @@ string CreateListenerRequest::ToJsonString() const
         string key = "TargetType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_targetType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -302,6 +311,22 @@ void CreateListenerRequest::SetTargetType(const string& _targetType)
 bool CreateListenerRequest::TargetTypeHasBeenSet() const
 {
     return m_targetTypeHasBeenSet;
+}
+
+string CreateListenerRequest::GetSessionType() const
+{
+    return m_sessionType;
+}
+
+void CreateListenerRequest::SetSessionType(const string& _sessionType)
+{
+    m_sessionType = _sessionType;
+    m_sessionTypeHasBeenSet = true;
+}
+
+bool CreateListenerRequest::SessionTypeHasBeenSet() const
+{
+    return m_sessionTypeHasBeenSet;
 }
 
 

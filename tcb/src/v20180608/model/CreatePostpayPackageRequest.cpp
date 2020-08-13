@@ -28,8 +28,8 @@ CreatePostpayPackageRequest::CreatePostpayPackageRequest() :
     m_wxAppIdHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_freeQuotaHasBeenSet(false),
-    m_aliasHasBeenSet(false),
     m_envSourceHasBeenSet(false),
+    m_aliasHasBeenSet(false),
     m_channelHasBeenSet(false),
     m_extensionIdHasBeenSet(false)
 {
@@ -74,20 +74,20 @@ string CreatePostpayPackageRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_freeQuota.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_aliasHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Alias";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_alias.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_envSourceHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "EnvSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_envSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelHasBeenSet)
@@ -178,22 +178,6 @@ bool CreatePostpayPackageRequest::FreeQuotaHasBeenSet() const
     return m_freeQuotaHasBeenSet;
 }
 
-string CreatePostpayPackageRequest::GetAlias() const
-{
-    return m_alias;
-}
-
-void CreatePostpayPackageRequest::SetAlias(const string& _alias)
-{
-    m_alias = _alias;
-    m_aliasHasBeenSet = true;
-}
-
-bool CreatePostpayPackageRequest::AliasHasBeenSet() const
-{
-    return m_aliasHasBeenSet;
-}
-
 string CreatePostpayPackageRequest::GetEnvSource() const
 {
     return m_envSource;
@@ -208,6 +192,22 @@ void CreatePostpayPackageRequest::SetEnvSource(const string& _envSource)
 bool CreatePostpayPackageRequest::EnvSourceHasBeenSet() const
 {
     return m_envSourceHasBeenSet;
+}
+
+string CreatePostpayPackageRequest::GetAlias() const
+{
+    return m_alias;
+}
+
+void CreatePostpayPackageRequest::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool CreatePostpayPackageRequest::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 
 string CreatePostpayPackageRequest::GetChannel() const

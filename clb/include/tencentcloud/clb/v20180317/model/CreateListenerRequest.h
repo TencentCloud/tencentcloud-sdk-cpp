@@ -228,6 +228,24 @@ namespace TencentCloud
                      */
                     bool TargetTypeHasBeenSet() const;
 
+                    /**
+                     * 获取会话保持类型。不传或传NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
+                     * @return SessionType 会话保持类型。不传或传NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
+                     */
+                    std::string GetSessionType() const;
+
+                    /**
+                     * 设置会话保持类型。不传或传NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
+                     * @param SessionType 会话保持类型。不传或传NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
+                     */
+                    void SetSessionType(const std::string& _sessionType);
+
+                    /**
+                     * 判断参数 SessionType 是否已赋值
+                     * @return SessionType 是否已赋值
+                     */
+                    bool SessionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +308,12 @@ namespace TencentCloud
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
+
+                    /**
+                     * 会话保持类型。不传或传NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
+                     */
+                    std::string m_sessionType;
+                    bool m_sessionTypeHasBeenSet;
 
                 };
             }

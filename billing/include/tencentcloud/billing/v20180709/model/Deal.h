@@ -437,6 +437,24 @@ namespace TencentCloud
                      */
                     bool RefReturnDealsHasBeenSet() const;
 
+                    /**
+                     * 获取付费模式：prePay 预付费 postPay后付费 riPay预留实例
+                     * @return PayMode 付费模式：prePay 预付费 postPay后付费 riPay预留实例
+                     */
+                    std::string GetPayMode() const;
+
+                    /**
+                     * 设置付费模式：prePay 预付费 postPay后付费 riPay预留实例
+                     * @param PayMode 付费模式：prePay 预付费 postPay后付费 riPay预留实例
+                     */
+                    void SetPayMode(const std::string& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -567,6 +585,12 @@ namespace TencentCloud
                      */
                     std::string m_refReturnDeals;
                     bool m_refReturnDealsHasBeenSet;
+
+                    /**
+                     * 付费模式：prePay 预付费 postPay后付费 riPay预留实例
+                     */
+                    std::string m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

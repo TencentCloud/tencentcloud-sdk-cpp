@@ -212,6 +212,92 @@ AmeClient::DescribeMusicOutcomeCallable AmeClient::DescribeMusicCallable(const D
     return task->get_future();
 }
 
+AmeClient::DescribePackageItemsOutcome AmeClient::DescribePackageItems(const DescribePackageItemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePackageItems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePackageItemsResponse rsp = DescribePackageItemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePackageItemsOutcome(rsp);
+        else
+            return DescribePackageItemsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePackageItemsOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribePackageItemsAsync(const DescribePackageItemsRequest& request, const DescribePackageItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePackageItems(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribePackageItemsOutcomeCallable AmeClient::DescribePackageItemsCallable(const DescribePackageItemsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePackageItemsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePackageItems(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AmeClient::DescribePackagesOutcome AmeClient::DescribePackages(const DescribePackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePackagesResponse rsp = DescribePackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePackagesOutcome(rsp);
+        else
+            return DescribePackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePackagesOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribePackagesOutcomeCallable AmeClient::DescribePackagesCallable(const DescribePackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePackages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::DescribeStationsOutcome AmeClient::DescribeStations(const DescribeStationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStations");
