@@ -240,6 +240,24 @@ namespace TencentCloud
                      */
                     bool PdfPageIndexHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回LaTex，默认为0返回普通格式，设置成1返回LaTex格式
+                     * @return LaTex 是否返回LaTex，默认为0返回普通格式，设置成1返回LaTex格式
+                     */
+                    int64_t GetLaTex() const;
+
+                    /**
+                     * 设置是否返回LaTex，默认为0返回普通格式，设置成1返回LaTex格式
+                     * @param LaTex 是否返回LaTex，默认为0返回普通格式，设置成1返回LaTex格式
+                     */
+                    void SetLaTex(const int64_t& _laTex);
+
+                    /**
+                     * 判断参数 LaTex 是否已赋值
+                     * @return LaTex 是否已赋值
+                     */
+                    bool LaTexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +325,12 @@ namespace TencentCloud
                      */
                     int64_t m_pdfPageIndex;
                     bool m_pdfPageIndexHasBeenSet;
+
+                    /**
+                     * 是否返回LaTex，默认为0返回普通格式，设置成1返回LaTex格式
+                     */
+                    int64_t m_laTex;
+                    bool m_laTexHasBeenSet;
 
                 };
             }

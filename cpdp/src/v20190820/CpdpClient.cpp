@@ -900,6 +900,49 @@ CpdpClient::CreateSinglePayOutcomeCallable CpdpClient::CreateSinglePayCallable(c
     return task->get_future();
 }
 
+CpdpClient::CreateTransferBatchOutcome CpdpClient::CreateTransferBatch(const CreateTransferBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTransferBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTransferBatchResponse rsp = CreateTransferBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTransferBatchOutcome(rsp);
+        else
+            return CreateTransferBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTransferBatchOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateTransferBatchAsync(const CreateTransferBatchRequest& request, const CreateTransferBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTransferBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateTransferBatchOutcomeCallable CpdpClient::CreateTransferBatchCallable(const CreateTransferBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTransferBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTransferBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::DeleteAgentTaxPaymentInfoOutcome CpdpClient::DeleteAgentTaxPaymentInfo(const DeleteAgentTaxPaymentInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAgentTaxPaymentInfo");
@@ -2527,6 +2570,92 @@ CpdpClient::QueryTradeOutcomeCallable CpdpClient::QueryTradeCallable(const Query
         [this, request]()
         {
             return this->QueryTrade(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryTransferBatchOutcome CpdpClient::QueryTransferBatch(const QueryTransferBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryTransferBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryTransferBatchResponse rsp = QueryTransferBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryTransferBatchOutcome(rsp);
+        else
+            return QueryTransferBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryTransferBatchOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryTransferBatchAsync(const QueryTransferBatchRequest& request, const QueryTransferBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryTransferBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryTransferBatchOutcomeCallable CpdpClient::QueryTransferBatchCallable(const QueryTransferBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryTransferBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryTransferBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryTransferDetailOutcome CpdpClient::QueryTransferDetail(const QueryTransferDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryTransferDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryTransferDetailResponse rsp = QueryTransferDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryTransferDetailOutcome(rsp);
+        else
+            return QueryTransferDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryTransferDetailOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryTransferDetailAsync(const QueryTransferDetailRequest& request, const QueryTransferDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryTransferDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryTransferDetailOutcomeCallable CpdpClient::QueryTransferDetailCallable(const QueryTransferDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryTransferDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryTransferDetail(request);
         }
     );
 

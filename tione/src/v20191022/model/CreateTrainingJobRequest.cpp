@@ -33,7 +33,8 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_vpcConfigHasBeenSet(false),
     m_hyperParametersHasBeenSet(false),
     m_envConfigHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
+    m_roleNameHasBeenSet(false),
+    m_retryWhenResourceInsufficientHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,14 @@ string CreateTrainingJobRequest::ToJsonString() const
         string key = "RoleName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_roleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryWhenResourceInsufficientHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RetryWhenResourceInsufficient";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_retryWhenResourceInsufficient.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -309,6 +318,22 @@ void CreateTrainingJobRequest::SetRoleName(const string& _roleName)
 bool CreateTrainingJobRequest::RoleNameHasBeenSet() const
 {
     return m_roleNameHasBeenSet;
+}
+
+string CreateTrainingJobRequest::GetRetryWhenResourceInsufficient() const
+{
+    return m_retryWhenResourceInsufficient;
+}
+
+void CreateTrainingJobRequest::SetRetryWhenResourceInsufficient(const string& _retryWhenResourceInsufficient)
+{
+    m_retryWhenResourceInsufficient = _retryWhenResourceInsufficient;
+    m_retryWhenResourceInsufficientHasBeenSet = true;
+}
+
+bool CreateTrainingJobRequest::RetryWhenResourceInsufficientHasBeenSet() const
+{
+    return m_retryWhenResourceInsufficientHasBeenSet;
 }
 
 

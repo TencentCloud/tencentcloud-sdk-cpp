@@ -149,14 +149,14 @@ Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取0表示升级中，1表示升级完毕，2表示回滚完毕。
-                     * @return Status 0表示升级中，1表示升级完毕，2表示回滚完毕。
+                     * 获取0表示升级中，1表示升级完毕，2表示回滚完毕，3表示升级失败。
+                     * @return Status 0表示升级中，1表示升级完毕，2表示回滚完毕，3表示升级失败。
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置0表示升级中，1表示升级完毕，2表示回滚完毕。
-                     * @param Status 0表示升级中，1表示升级完毕，2表示回滚完毕。
+                     * 设置0表示升级中，1表示升级完毕，2表示回滚完毕，3表示升级失败。
+                     * @param Status 0表示升级中，1表示升级完毕，2表示回滚完毕，3表示升级失败。
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -202,7 +202,7 @@ Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 0表示升级中，1表示升级完毕，2表示回滚完毕。
+                     * 0表示升级中，1表示升级完毕，2表示回滚完毕，3表示升级失败。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

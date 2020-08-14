@@ -25,7 +25,8 @@ using namespace std;
 
 DestroyEnvRequest::DestroyEnvRequest() :
     m_envIdHasBeenSet(false),
-    m_isForceHasBeenSet(false)
+    m_isForceHasBeenSet(false),
+    m_bypassCheckHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DestroyEnvRequest::ToJsonString() const
         string key = "IsForce";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isForce, allocator);
+    }
+
+    if (m_bypassCheckHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BypassCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bypassCheck, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DestroyEnvRequest::SetIsForce(const bool& _isForce)
 bool DestroyEnvRequest::IsForceHasBeenSet() const
 {
     return m_isForceHasBeenSet;
+}
+
+bool DestroyEnvRequest::GetBypassCheck() const
+{
+    return m_bypassCheck;
+}
+
+void DestroyEnvRequest::SetBypassCheck(const bool& _bypassCheck)
+{
+    m_bypassCheck = _bypassCheck;
+    m_bypassCheckHasBeenSet = true;
+}
+
+bool DestroyEnvRequest::BypassCheckHasBeenSet() const
+{
+    return m_bypassCheckHasBeenSet;
 }
 
 

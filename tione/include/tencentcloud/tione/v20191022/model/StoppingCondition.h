@@ -68,6 +68,28 @@ namespace TencentCloud
                      */
                     bool MaxRuntimeInSecondsHasBeenSet() const;
 
+                    /**
+                     * 获取最长等待运行时间（秒）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxWaitTimeInSeconds 最长等待运行时间（秒）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMaxWaitTimeInSeconds() const;
+
+                    /**
+                     * 设置最长等待运行时间（秒）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxWaitTimeInSeconds 最长等待运行时间（秒）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxWaitTimeInSeconds(const uint64_t& _maxWaitTimeInSeconds);
+
+                    /**
+                     * 判断参数 MaxWaitTimeInSeconds 是否已赋值
+                     * @return MaxWaitTimeInSeconds 是否已赋值
+                     */
+                    bool MaxWaitTimeInSecondsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -76,6 +98,13 @@ namespace TencentCloud
                      */
                     uint64_t m_maxRuntimeInSeconds;
                     bool m_maxRuntimeInSecondsHasBeenSet;
+
+                    /**
+                     * 最长等待运行时间（秒）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_maxWaitTimeInSeconds;
+                    bool m_maxWaitTimeInSecondsHasBeenSet;
 
                 };
             }

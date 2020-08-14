@@ -38,7 +38,8 @@ FileSystemInfo::FileSystemInfo() :
     m_fsNameHasBeenSet(false),
     m_encryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_bandwidthLimitHasBeenSet(false)
 {
 }
 
@@ -224,6 +225,16 @@ CoreInternalOutcome FileSystemInfo::Deserialize(const Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("BandwidthLimit") && !value["BandwidthLimit"].IsNull())
+    {
+        if (!value["BandwidthLimit"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `FileSystemInfo.BandwidthLimit` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidthLimit = value["BandwidthLimit"].GetDouble();
+        m_bandwidthLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -366,6 +377,14 @@ void FileSystemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_bandwidthLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BandwidthLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bandwidthLimit, allocator);
     }
 
 }
@@ -641,5 +660,21 @@ void FileSystemInfo::SetAppId(const int64_t& _appId)
 bool FileSystemInfo::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+double FileSystemInfo::GetBandwidthLimit() const
+{
+    return m_bandwidthLimit;
+}
+
+void FileSystemInfo::SetBandwidthLimit(const double& _bandwidthLimit)
+{
+    m_bandwidthLimit = _bandwidthLimit;
+    m_bandwidthLimitHasBeenSet = true;
+}
+
+bool FileSystemInfo::BandwidthLimitHasBeenSet() const
+{
+    return m_bandwidthLimitHasBeenSet;
 }
 

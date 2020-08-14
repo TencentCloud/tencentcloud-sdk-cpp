@@ -56,6 +56,7 @@
 #include <tencentcloud/cdn/v20180606/model/ImageOptimization.h>
 #include <tencentcloud/cdn/v20180606/model/UserAgentFilter.h>
 #include <tencentcloud/cdn/v20180606/model/AccessControl.h>
+#include <tencentcloud/cdn/v20180606/model/UrlRedirect.h>
 
 
 namespace TencentCloud
@@ -1098,6 +1099,80 @@ global：全球锁定
                      */
                     bool AccessControlHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持高级配置项
+on：支持
+off：不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Advance 是否支持高级配置项
+on：支持
+off：不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAdvance() const;
+
+                    /**
+                     * 设置是否支持高级配置项
+on：支持
+off：不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Advance 是否支持高级配置项
+on：支持
+off：不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdvance(const std::string& _advance);
+
+                    /**
+                     * 判断参数 Advance 是否已赋值
+                     * @return Advance 是否已赋值
+                     */
+                    bool AdvanceHasBeenSet() const;
+
+                    /**
+                     * 获取URL重定向配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UrlRedirect URL重定向配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UrlRedirect GetUrlRedirect() const;
+
+                    /**
+                     * 设置URL重定向配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UrlRedirect URL重定向配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUrlRedirect(const UrlRedirect& _urlRedirect);
+
+                    /**
+                     * 判断参数 UrlRedirect 是否已赋值
+                     * @return UrlRedirect 是否已赋值
+                     */
+                    bool UrlRedirectHasBeenSet() const;
+
+                    /**
+                     * 获取访问端口配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessPort 访问端口配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetAccessPort() const;
+
+                    /**
+                     * 设置访问端口配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccessPort 访问端口配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccessPort(const std::vector<int64_t>& _accessPort);
+
+                    /**
+                     * 判断参数 AccessPort 是否已赋值
+                     * @return AccessPort 是否已赋值
+                     */
+                    bool AccessPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1420,6 +1495,29 @@ global：全球锁定
                      */
                     AccessControl m_accessControl;
                     bool m_accessControlHasBeenSet;
+
+                    /**
+                     * 是否支持高级配置项
+on：支持
+off：不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_advance;
+                    bool m_advanceHasBeenSet;
+
+                    /**
+                     * URL重定向配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UrlRedirect m_urlRedirect;
+                    bool m_urlRedirectHasBeenSet;
+
+                    /**
+                     * 访问端口配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_accessPort;
+                    bool m_accessPortHasBeenSet;
 
                 };
             }

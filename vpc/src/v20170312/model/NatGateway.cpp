@@ -34,7 +34,8 @@ NatGateway::NatGateway() :
     m_vpcIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_directConnectGatewayIdsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,26 @@ CoreInternalOutcome NatGateway::Deserialize(const Value &value)
         m_subnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `NatGateway.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +345,21 @@ void NatGateway::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -535,5 +571,21 @@ void NatGateway::SetSubnetId(const string& _subnetId)
 bool NatGateway::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+vector<Tag> NatGateway::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void NatGateway::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool NatGateway::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

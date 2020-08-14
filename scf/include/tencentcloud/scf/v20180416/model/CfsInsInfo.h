@@ -155,17 +155,21 @@ namespace TencentCloud
                     bool RemoteMountDirHasBeenSet() const;
 
                     /**
-                     * 获取文件系统ip
+                     * 获取文件系统ip，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpAddress 文件系统ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpAddress 文件系统ip，配置 cfs 时无需填写。
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIpAddress() const;
 
                     /**
-                     * 设置文件系统ip
+                     * 设置文件系统ip，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IpAddress 文件系统ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IpAddress 文件系统ip，配置 cfs 时无需填写。
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIpAddress(const std::string& _ipAddress);
@@ -177,17 +181,21 @@ namespace TencentCloud
                     bool IpAddressHasBeenSet() const;
 
                     /**
-                     * 获取文件系统所在的私有网络id
+                     * 获取文件系统所在的私有网络id，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MountVpcId 文件系统所在的私有网络id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MountVpcId 文件系统所在的私有网络id，配置 cfs 时无需填写。
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMountVpcId() const;
 
                     /**
-                     * 设置文件系统所在的私有网络id
+                     * 设置文件系统所在的私有网络id，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MountVpcId 文件系统所在的私有网络id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MountVpcId 文件系统所在的私有网络id，配置 cfs 时无需填写。
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMountVpcId(const std::string& _mountVpcId);
@@ -199,17 +207,21 @@ namespace TencentCloud
                     bool MountVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统所在私有网络的子网id
+                     * 获取文件系统所在私有网络的子网id，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MountSubnetId 文件系统所在私有网络的子网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MountSubnetId 文件系统所在私有网络的子网id，配置 cfs 时无需填写。
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMountSubnetId() const;
 
                     /**
-                     * 设置文件系统所在私有网络的子网id
+                     * 设置文件系统所在私有网络的子网id，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MountSubnetId 文件系统所在私有网络的子网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MountSubnetId 文件系统所在私有网络的子网id，配置 cfs 时无需填写。
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMountSubnetId(const std::string& _mountSubnetId);
@@ -259,21 +271,24 @@ namespace TencentCloud
                     bool m_remoteMountDirHasBeenSet;
 
                     /**
-                     * 文件系统ip
+                     * 文件系统ip，配置 cfs 时无需填写。
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipAddress;
                     bool m_ipAddressHasBeenSet;
 
                     /**
-                     * 文件系统所在的私有网络id
+                     * 文件系统所在的私有网络id，配置 cfs 时无需填写。
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountVpcId;
                     bool m_mountVpcIdHasBeenSet;
 
                     /**
-                     * 文件系统所在私有网络的子网id
+                     * 文件系统所在私有网络的子网id，配置 cfs 时无需填写。
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountSubnetId;

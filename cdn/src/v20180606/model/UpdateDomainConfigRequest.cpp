@@ -54,7 +54,10 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_areaHasBeenSet(false),
     m_originPullTimeoutHasBeenSet(false),
     m_awsPrivateAccessHasBeenSet(false),
-    m_userAgentFilterHasBeenSet(false)
+    m_userAgentFilterHasBeenSet(false),
+    m_accessControlHasBeenSet(false),
+    m_urlRedirectHasBeenSet(false),
+    m_accessPortHasBeenSet(false)
 {
 }
 
@@ -338,6 +341,37 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_userAgentFilter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_accessControlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccessControl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_accessControl.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_urlRedirectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UrlRedirect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_urlRedirect.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_accessPortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccessPort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_accessPort.begin(); itr != m_accessPort.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -842,6 +876,54 @@ void UpdateDomainConfigRequest::SetUserAgentFilter(const UserAgentFilter& _userA
 bool UpdateDomainConfigRequest::UserAgentFilterHasBeenSet() const
 {
     return m_userAgentFilterHasBeenSet;
+}
+
+AccessControl UpdateDomainConfigRequest::GetAccessControl() const
+{
+    return m_accessControl;
+}
+
+void UpdateDomainConfigRequest::SetAccessControl(const AccessControl& _accessControl)
+{
+    m_accessControl = _accessControl;
+    m_accessControlHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::AccessControlHasBeenSet() const
+{
+    return m_accessControlHasBeenSet;
+}
+
+UrlRedirect UpdateDomainConfigRequest::GetUrlRedirect() const
+{
+    return m_urlRedirect;
+}
+
+void UpdateDomainConfigRequest::SetUrlRedirect(const UrlRedirect& _urlRedirect)
+{
+    m_urlRedirect = _urlRedirect;
+    m_urlRedirectHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::UrlRedirectHasBeenSet() const
+{
+    return m_urlRedirectHasBeenSet;
+}
+
+vector<int64_t> UpdateDomainConfigRequest::GetAccessPort() const
+{
+    return m_accessPort;
+}
+
+void UpdateDomainConfigRequest::SetAccessPort(const vector<int64_t>& _accessPort)
+{
+    m_accessPort = _accessPort;
+    m_accessPortHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::AccessPortHasBeenSet() const
+{
+    return m_accessPortHasBeenSet;
 }
 
 

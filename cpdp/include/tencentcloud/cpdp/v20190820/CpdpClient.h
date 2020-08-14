@@ -63,6 +63,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateSinglePayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateSinglePayResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateTransferBatchRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateTransferBatchResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfoRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfosRequest.h>
@@ -139,6 +141,10 @@
 #include <tencentcloud/cpdp/v20190820/model/QuerySmallAmountTransferResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryTradeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryTradeResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryTransferBatchRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryTransferBatchResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryTransferDetailRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryTransferDetailResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RechargeByThirdPayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RechargeByThirdPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RechargeMemberThirdPayRequest.h>
@@ -241,6 +247,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateSinglePayResponse> CreateSinglePayOutcome;
                 typedef std::future<CreateSinglePayOutcome> CreateSinglePayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateSinglePayRequest&, CreateSinglePayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSinglePayAsyncHandler;
+                typedef Outcome<Error, Model::CreateTransferBatchResponse> CreateTransferBatchOutcome;
+                typedef std::future<CreateTransferBatchOutcome> CreateTransferBatchOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateTransferBatchRequest&, CreateTransferBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransferBatchAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAgentTaxPaymentInfoResponse> DeleteAgentTaxPaymentInfoOutcome;
                 typedef std::future<DeleteAgentTaxPaymentInfoOutcome> DeleteAgentTaxPaymentInfoOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DeleteAgentTaxPaymentInfoRequest&, DeleteAgentTaxPaymentInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentTaxPaymentInfoAsyncHandler;
@@ -355,6 +364,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryTradeResponse> QueryTradeOutcome;
                 typedef std::future<QueryTradeOutcome> QueryTradeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryTradeRequest&, QueryTradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTradeAsyncHandler;
+                typedef Outcome<Error, Model::QueryTransferBatchResponse> QueryTransferBatchOutcome;
+                typedef std::future<QueryTransferBatchOutcome> QueryTransferBatchOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryTransferBatchRequest&, QueryTransferBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTransferBatchAsyncHandler;
+                typedef Outcome<Error, Model::QueryTransferDetailResponse> QueryTransferDetailOutcome;
+                typedef std::future<QueryTransferDetailOutcome> QueryTransferDetailOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryTransferDetailRequest&, QueryTransferDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTransferDetailAsyncHandler;
                 typedef Outcome<Error, Model::RechargeByThirdPayResponse> RechargeByThirdPayOutcome;
                 typedef std::future<RechargeByThirdPayOutcome> RechargeByThirdPayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RechargeByThirdPayRequest&, RechargeByThirdPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RechargeByThirdPayAsyncHandler;
@@ -587,6 +602,15 @@ namespace TencentCloud
                 CreateSinglePayOutcome CreateSinglePay(const Model::CreateSinglePayRequest &request);
                 void CreateSinglePayAsync(const Model::CreateSinglePayRequest& request, const CreateSinglePayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSinglePayOutcomeCallable CreateSinglePayCallable(const Model::CreateSinglePayRequest& request);
+
+                /**
+                 *微信商户发起批量转账
+                 * @param req CreateTransferBatchRequest
+                 * @return CreateTransferBatchOutcome
+                 */
+                CreateTransferBatchOutcome CreateTransferBatch(const Model::CreateTransferBatchRequest &request);
+                void CreateTransferBatchAsync(const Model::CreateTransferBatchRequest& request, const CreateTransferBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTransferBatchOutcomeCallable CreateTransferBatchCallable(const Model::CreateTransferBatchRequest& request);
 
                 /**
                  *直播平台-删除代理商完税信息
@@ -930,6 +954,24 @@ namespace TencentCloud
                 QueryTradeOutcome QueryTrade(const Model::QueryTradeRequest &request);
                 void QueryTradeAsync(const Model::QueryTradeRequest& request, const QueryTradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryTradeOutcomeCallable QueryTradeCallable(const Model::QueryTradeRequest& request);
+
+                /**
+                 *通过商家批次单号或者微信批次号查询批次单
+                 * @param req QueryTransferBatchRequest
+                 * @return QueryTransferBatchOutcome
+                 */
+                QueryTransferBatchOutcome QueryTransferBatch(const Model::QueryTransferBatchRequest &request);
+                void QueryTransferBatchAsync(const Model::QueryTransferBatchRequest& request, const QueryTransferBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryTransferBatchOutcomeCallable QueryTransferBatchCallable(const Model::QueryTransferBatchRequest& request);
+
+                /**
+                 *通过商家或者微信批次明细单号查询明细单
+                 * @param req QueryTransferDetailRequest
+                 * @return QueryTransferDetailOutcome
+                 */
+                QueryTransferDetailOutcome QueryTransferDetail(const Model::QueryTransferDetailRequest &request);
+                void QueryTransferDetailAsync(const Model::QueryTransferDetailRequest& request, const QueryTransferDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryTransferDetailOutcomeCallable QueryTransferDetailCallable(const Model::QueryTransferDetailRequest& request);
 
                 /**
                  *会员在途充值(经第三方支付渠道)接口

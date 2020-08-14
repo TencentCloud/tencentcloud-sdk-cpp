@@ -22,7 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 StoppingCondition::StoppingCondition() :
-    m_maxRuntimeInSecondsHasBeenSet(false)
+    m_maxRuntimeInSecondsHasBeenSet(false),
+    m_maxWaitTimeInSecondsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,16 @@ CoreInternalOutcome StoppingCondition::Deserialize(const Value &value)
         m_maxRuntimeInSecondsHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxWaitTimeInSeconds") && !value["MaxWaitTimeInSeconds"].IsNull())
+    {
+        if (!value["MaxWaitTimeInSeconds"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `StoppingCondition.MaxWaitTimeInSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxWaitTimeInSeconds = value["MaxWaitTimeInSeconds"].GetUint64();
+        m_maxWaitTimeInSecondsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +65,14 @@ void StoppingCondition::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "MaxRuntimeInSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxRuntimeInSeconds, allocator);
+    }
+
+    if (m_maxWaitTimeInSecondsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxWaitTimeInSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxWaitTimeInSeconds, allocator);
     }
 
 }
@@ -73,5 +92,21 @@ void StoppingCondition::SetMaxRuntimeInSeconds(const uint64_t& _maxRuntimeInSeco
 bool StoppingCondition::MaxRuntimeInSecondsHasBeenSet() const
 {
     return m_maxRuntimeInSecondsHasBeenSet;
+}
+
+uint64_t StoppingCondition::GetMaxWaitTimeInSeconds() const
+{
+    return m_maxWaitTimeInSeconds;
+}
+
+void StoppingCondition::SetMaxWaitTimeInSeconds(const uint64_t& _maxWaitTimeInSeconds)
+{
+    m_maxWaitTimeInSeconds = _maxWaitTimeInSeconds;
+    m_maxWaitTimeInSecondsHasBeenSet = true;
+}
+
+bool StoppingCondition::MaxWaitTimeInSecondsHasBeenSet() const
+{
+    return m_maxWaitTimeInSecondsHasBeenSet;
 }
 

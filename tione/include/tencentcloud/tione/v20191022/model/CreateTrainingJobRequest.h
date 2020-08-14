@@ -229,6 +229,28 @@ namespace TencentCloud
                      */
                     bool RoleNameHasBeenSet() const;
 
+                    /**
+                     * 获取在资源不足（ResourceInsufficient）时后台不定时尝试重新创建训练任务。可取值Enabled/Disabled
+默认值为Disabled即不重新尝试。设为Enabled时重新尝试有一定的时间期限，定义在 StoppingCondition 中 MaxWaitTimeInSecond中 ，默认值为1天，超过该期限创建失败。
+                     * @return RetryWhenResourceInsufficient 在资源不足（ResourceInsufficient）时后台不定时尝试重新创建训练任务。可取值Enabled/Disabled
+默认值为Disabled即不重新尝试。设为Enabled时重新尝试有一定的时间期限，定义在 StoppingCondition 中 MaxWaitTimeInSecond中 ，默认值为1天，超过该期限创建失败。
+                     */
+                    std::string GetRetryWhenResourceInsufficient() const;
+
+                    /**
+                     * 设置在资源不足（ResourceInsufficient）时后台不定时尝试重新创建训练任务。可取值Enabled/Disabled
+默认值为Disabled即不重新尝试。设为Enabled时重新尝试有一定的时间期限，定义在 StoppingCondition 中 MaxWaitTimeInSecond中 ，默认值为1天，超过该期限创建失败。
+                     * @param RetryWhenResourceInsufficient 在资源不足（ResourceInsufficient）时后台不定时尝试重新创建训练任务。可取值Enabled/Disabled
+默认值为Disabled即不重新尝试。设为Enabled时重新尝试有一定的时间期限，定义在 StoppingCondition 中 MaxWaitTimeInSecond中 ，默认值为1天，超过该期限创建失败。
+                     */
+                    void SetRetryWhenResourceInsufficient(const std::string& _retryWhenResourceInsufficient);
+
+                    /**
+                     * 判断参数 RetryWhenResourceInsufficient 是否已赋值
+                     * @return RetryWhenResourceInsufficient 是否已赋值
+                     */
+                    bool RetryWhenResourceInsufficientHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +312,13 @@ namespace TencentCloud
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
+
+                    /**
+                     * 在资源不足（ResourceInsufficient）时后台不定时尝试重新创建训练任务。可取值Enabled/Disabled
+默认值为Disabled即不重新尝试。设为Enabled时重新尝试有一定的时间期限，定义在 StoppingCondition 中 MaxWaitTimeInSecond中 ，默认值为1天，超过该期限创建失败。
+                     */
+                    std::string m_retryWhenResourceInsufficient;
+                    bool m_retryWhenResourceInsufficientHasBeenSet;
 
                 };
             }

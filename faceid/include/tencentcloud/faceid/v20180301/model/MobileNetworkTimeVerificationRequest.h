@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取手机号码。不支持电信手机号。
-                     * @return Mobile 手机号码。不支持电信手机号。
+                     * 获取手机号码
+                     * @return Mobile 手机号码
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置手机号码。不支持电信手机号。
-                     * @param Mobile 手机号码。不支持电信手机号。
+                     * 设置手机号码
+                     * @param Mobile 手机号码
                      */
                     void SetMobile(const std::string& _mobile);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 手机号码。不支持电信手机号。
+                     * 手机号码
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;

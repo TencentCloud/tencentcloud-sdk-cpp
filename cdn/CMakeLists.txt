@@ -153,6 +153,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeIpStatusResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataRequest.h
   include/tencentcloud/cdn/v20180606/model/CacheKey.h
+  include/tencentcloud/cdn/v20180606/model/UrlRedirect.h
   include/tencentcloud/cdn/v20180606/model/CookieKey.h
   include/tencentcloud/cdn/v20180606/model/CappingRule.h
   include/tencentcloud/cdn/v20180606/model/ListClsLogTopicsRequest.h
@@ -190,6 +191,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeUrlViolationsResponse.h
   include/tencentcloud/cdn/v20180606/model/IpFilter.h
   include/tencentcloud/cdn/v20180606/model/DescribePurgeTasksResponse.h
+  include/tencentcloud/cdn/v20180606/model/UrlRedirectRule.h
   include/tencentcloud/cdn/v20180606/model/ErrorPageRule.h
   include/tencentcloud/cdn/v20180606/model/DescribeOriginDataResponse.h
   include/tencentcloud/cdn/v20180606/model/PurgeTask.h
@@ -338,6 +340,7 @@ set(cdn_src
   src/v20180606/model/DescribeIpStatusResponse.cpp
   src/v20180606/model/DescribeDistrictIspDataRequest.cpp
   src/v20180606/model/CacheKey.cpp
+  src/v20180606/model/UrlRedirect.cpp
   src/v20180606/model/CookieKey.cpp
   src/v20180606/model/CappingRule.cpp
   src/v20180606/model/ListClsLogTopicsRequest.cpp
@@ -375,6 +378,7 @@ set(cdn_src
   src/v20180606/model/DescribeUrlViolationsResponse.cpp
   src/v20180606/model/IpFilter.cpp
   src/v20180606/model/DescribePurgeTasksResponse.cpp
+  src/v20180606/model/UrlRedirectRule.cpp
   src/v20180606/model/ErrorPageRule.cpp
   src/v20180606/model/DescribeOriginDataResponse.cpp
   src/v20180606/model/PurgeTask.cpp

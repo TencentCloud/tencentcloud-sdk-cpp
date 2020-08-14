@@ -26,7 +26,8 @@ Item::Item() :
     m_itemStringHasBeenSet(false),
     m_itemCoordHasBeenSet(false),
     m_answerHasBeenSet(false),
-    m_expressionTypeHasBeenSet(false)
+    m_expressionTypeHasBeenSet(false),
+    m_itemConfHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,16 @@ CoreInternalOutcome Item::Deserialize(const Value &value)
         m_expressionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ItemConf") && !value["ItemConf"].IsNull())
+    {
+        if (!value["ItemConf"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `Item.ItemConf` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_itemConf = value["ItemConf"].GetDouble();
+        m_itemConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +149,14 @@ void Item::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "ExpressionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_expressionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemConfHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ItemConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_itemConf, allocator);
     }
 
 }
@@ -221,5 +240,21 @@ void Item::SetExpressionType(const string& _expressionType)
 bool Item::ExpressionTypeHasBeenSet() const
 {
     return m_expressionTypeHasBeenSet;
+}
+
+double Item::GetItemConf() const
+{
+    return m_itemConf;
+}
+
+void Item::SetItemConf(const double& _itemConf)
+{
+    m_itemConf = _itemConf;
+    m_itemConfHasBeenSet = true;
+}
+
+bool Item::ItemConfHasBeenSet() const
+{
+    return m_itemConfHasBeenSet;
 }
 

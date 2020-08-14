@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool IsForceHasBeenSet() const;
 
+                    /**
+                     * 获取是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。
+                     * @return BypassCheck 是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。
+                     */
+                    bool GetBypassCheck() const;
+
+                    /**
+                     * 设置是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。
+                     * @param BypassCheck 是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。
+                     */
+                    void SetBypassCheck(const bool& _bypassCheck);
+
+                    /**
+                     * 判断参数 BypassCheck 是否已赋值
+                     * @return BypassCheck 是否已赋值
+                     */
+                    bool BypassCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     bool m_isForce;
                     bool m_isForceHasBeenSet;
+
+                    /**
+                     * 是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。
+                     */
+                    bool m_bypassCheck;
+                    bool m_bypassCheckHasBeenSet;
 
                 };
             }

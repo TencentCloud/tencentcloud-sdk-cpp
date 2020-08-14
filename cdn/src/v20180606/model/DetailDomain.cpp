@@ -65,7 +65,10 @@ DetailDomain::DetailDomain() :
     m_securityConfigHasBeenSet(false),
     m_imageOptimizationHasBeenSet(false),
     m_userAgentFilterHasBeenSet(false),
-    m_accessControlHasBeenSet(false)
+    m_accessControlHasBeenSet(false),
+    m_advanceHasBeenSet(false),
+    m_urlRedirectHasBeenSet(false),
+    m_accessPortHasBeenSet(false)
 {
 }
 
@@ -738,6 +741,46 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_accessControlHasBeenSet = true;
     }
 
+    if (value.HasMember("Advance") && !value["Advance"].IsNull())
+    {
+        if (!value["Advance"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.Advance` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_advance = string(value["Advance"].GetString());
+        m_advanceHasBeenSet = true;
+    }
+
+    if (value.HasMember("UrlRedirect") && !value["UrlRedirect"].IsNull())
+    {
+        if (!value["UrlRedirect"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.UrlRedirect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_urlRedirect.Deserialize(value["UrlRedirect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_urlRedirectHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPort") && !value["AccessPort"].IsNull())
+    {
+        if (!value["AccessPort"].IsArray())
+            return CoreInternalOutcome(Error("response `DetailDomain.AccessPort` is not array type"));
+
+        const Value &tmpValue = value["AccessPort"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_accessPort.push_back((*itr).GetInt64());
+        }
+        m_accessPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1127,6 +1170,36 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_accessControl.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_advanceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Advance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_advance.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlRedirectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UrlRedirect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_urlRedirect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_accessPortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccessPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_accessPort.begin(); itr != m_accessPort.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -1834,5 +1907,53 @@ void DetailDomain::SetAccessControl(const AccessControl& _accessControl)
 bool DetailDomain::AccessControlHasBeenSet() const
 {
     return m_accessControlHasBeenSet;
+}
+
+string DetailDomain::GetAdvance() const
+{
+    return m_advance;
+}
+
+void DetailDomain::SetAdvance(const string& _advance)
+{
+    m_advance = _advance;
+    m_advanceHasBeenSet = true;
+}
+
+bool DetailDomain::AdvanceHasBeenSet() const
+{
+    return m_advanceHasBeenSet;
+}
+
+UrlRedirect DetailDomain::GetUrlRedirect() const
+{
+    return m_urlRedirect;
+}
+
+void DetailDomain::SetUrlRedirect(const UrlRedirect& _urlRedirect)
+{
+    m_urlRedirect = _urlRedirect;
+    m_urlRedirectHasBeenSet = true;
+}
+
+bool DetailDomain::UrlRedirectHasBeenSet() const
+{
+    return m_urlRedirectHasBeenSet;
+}
+
+vector<int64_t> DetailDomain::GetAccessPort() const
+{
+    return m_accessPort;
+}
+
+void DetailDomain::SetAccessPort(const vector<int64_t>& _accessPort)
+{
+    m_accessPort = _accessPort;
+    m_accessPortHasBeenSet = true;
+}
+
+bool DetailDomain::AccessPortHasBeenSet() const
+{
+    return m_accessPortHasBeenSet;
 }
 

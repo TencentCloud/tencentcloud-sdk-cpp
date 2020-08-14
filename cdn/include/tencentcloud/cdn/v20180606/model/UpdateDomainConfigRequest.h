@@ -48,6 +48,8 @@
 #include <tencentcloud/cdn/v20180606/model/OriginPullTimeout.h>
 #include <tencentcloud/cdn/v20180606/model/AwsPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/UserAgentFilter.h>
+#include <tencentcloud/cdn/v20180606/model/AccessControl.h>
+#include <tencentcloud/cdn/v20180606/model/UrlRedirect.h>
 
 
 namespace TencentCloud
@@ -655,6 +657,60 @@ global：全球加速
                      */
                     bool UserAgentFilterHasBeenSet() const;
 
+                    /**
+                     * 获取访问控制
+                     * @return AccessControl 访问控制
+                     */
+                    AccessControl GetAccessControl() const;
+
+                    /**
+                     * 设置访问控制
+                     * @param AccessControl 访问控制
+                     */
+                    void SetAccessControl(const AccessControl& _accessControl);
+
+                    /**
+                     * 判断参数 AccessControl 是否已赋值
+                     * @return AccessControl 是否已赋值
+                     */
+                    bool AccessControlHasBeenSet() const;
+
+                    /**
+                     * 获取URL重定向配置
+                     * @return UrlRedirect URL重定向配置
+                     */
+                    UrlRedirect GetUrlRedirect() const;
+
+                    /**
+                     * 设置URL重定向配置
+                     * @param UrlRedirect URL重定向配置
+                     */
+                    void SetUrlRedirect(const UrlRedirect& _urlRedirect);
+
+                    /**
+                     * 判断参数 UrlRedirect 是否已赋值
+                     * @return UrlRedirect 是否已赋值
+                     */
+                    bool UrlRedirectHasBeenSet() const;
+
+                    /**
+                     * 获取访问端口配置
+                     * @return AccessPort 访问端口配置
+                     */
+                    std::vector<int64_t> GetAccessPort() const;
+
+                    /**
+                     * 设置访问端口配置
+                     * @param AccessPort 访问端口配置
+                     */
+                    void SetAccessPort(const std::vector<int64_t>& _accessPort);
+
+                    /**
+                     * 判断参数 AccessPort 是否已赋值
+                     * @return AccessPort 是否已赋值
+                     */
+                    bool AccessPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -849,6 +905,24 @@ global：全球加速
                      */
                     UserAgentFilter m_userAgentFilter;
                     bool m_userAgentFilterHasBeenSet;
+
+                    /**
+                     * 访问控制
+                     */
+                    AccessControl m_accessControl;
+                    bool m_accessControlHasBeenSet;
+
+                    /**
+                     * URL重定向配置
+                     */
+                    UrlRedirect m_urlRedirect;
+                    bool m_urlRedirectHasBeenSet;
+
+                    /**
+                     * 访问端口配置
+                     */
+                    std::vector<int64_t> m_accessPort;
+                    bool m_accessPortHasBeenSet;
 
                 };
             }

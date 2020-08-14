@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vpc/v20170312/model/NatGatewayAddress.h>
 #include <tencentcloud/vpc/v20170312/model/DestinationIpPortTranslationNatRule.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -298,6 +299,24 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签键值对。
+                     * @return TagSet 标签键值对。
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置标签键值对。
+                     * @param TagSet 标签键值对。
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     */
+                    bool TagSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -381,6 +400,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 标签键值对。
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
 
                 };
             }

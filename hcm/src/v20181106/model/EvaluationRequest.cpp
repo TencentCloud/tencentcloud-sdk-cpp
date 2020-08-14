@@ -34,7 +34,8 @@ EvaluationRequest::EvaluationRequest() :
     m_enableDispRelatedVerticalHasBeenSet(false),
     m_enableDispMidresultHasBeenSet(false),
     m_enablePdfRecognizeHasBeenSet(false),
-    m_pdfPageIndexHasBeenSet(false)
+    m_pdfPageIndexHasBeenSet(false),
+    m_laTexHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string EvaluationRequest::ToJsonString() const
         string key = "PdfPageIndex";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pdfPageIndex, allocator);
+    }
+
+    if (m_laTexHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LaTex";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_laTex, allocator);
     }
 
 
@@ -315,6 +324,22 @@ void EvaluationRequest::SetPdfPageIndex(const int64_t& _pdfPageIndex)
 bool EvaluationRequest::PdfPageIndexHasBeenSet() const
 {
     return m_pdfPageIndexHasBeenSet;
+}
+
+int64_t EvaluationRequest::GetLaTex() const
+{
+    return m_laTex;
+}
+
+void EvaluationRequest::SetLaTex(const int64_t& _laTex)
+{
+    m_laTex = _laTex;
+    m_laTexHasBeenSet = true;
+}
+
+bool EvaluationRequest::LaTexHasBeenSet() const
+{
+    return m_laTexHasBeenSet;
 }
 
 

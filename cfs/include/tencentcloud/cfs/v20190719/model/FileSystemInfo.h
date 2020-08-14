@@ -228,14 +228,14 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取文件系统绑定的预付费存储包（暂未支持）
-                     * @return StorageResourcePkg 文件系统绑定的预付费存储包（暂未支持）
+                     * 获取文件系统绑定的预付费存储包
+                     * @return StorageResourcePkg 文件系统绑定的预付费存储包
                      */
                     std::string GetStorageResourcePkg() const;
 
                     /**
-                     * 设置文件系统绑定的预付费存储包（暂未支持）
-                     * @param StorageResourcePkg 文件系统绑定的预付费存储包（暂未支持）
+                     * 设置文件系统绑定的预付费存储包
+                     * @param StorageResourcePkg 文件系统绑定的预付费存储包
                      */
                     void SetStorageResourcePkg(const std::string& _storageResourcePkg);
 
@@ -353,6 +353,24 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定
+                     * @return BandwidthLimit 文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定
+                     */
+                    double GetBandwidthLimit() const;
+
+                    /**
+                     * 设置文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定
+                     * @param BandwidthLimit 文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定
+                     */
+                    void SetBandwidthLimit(const double& _bandwidthLimit);
+
+                    /**
+                     * 判断参数 BandwidthLimit 是否已赋值
+                     * @return BandwidthLimit 是否已赋值
+                     */
+                    bool BandwidthLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -416,7 +434,7 @@ namespace TencentCloud
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 文件系统绑定的预付费存储包（暂未支持）
+                     * 文件系统绑定的预付费存储包
                      */
                     std::string m_storageResourcePkg;
                     bool m_storageResourcePkgHasBeenSet;
@@ -456,6 +474,12 @@ namespace TencentCloud
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * 文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定
+                     */
+                    double m_bandwidthLimit;
+                    bool m_bandwidthLimitHasBeenSet;
 
                 };
             }

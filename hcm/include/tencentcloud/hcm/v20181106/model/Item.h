@@ -141,6 +141,28 @@ namespace TencentCloud
                      */
                     bool ExpressionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取文本行置信度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ItemConf 文本行置信度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetItemConf() const;
+
+                    /**
+                     * 设置文本行置信度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ItemConf 文本行置信度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetItemConf(const double& _itemConf);
+
+                    /**
+                     * 判断参数 ItemConf 是否已赋值
+                     * @return ItemConf 是否已赋值
+                     */
+                    bool ItemConfHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +195,13 @@ namespace TencentCloud
                      */
                     std::string m_expressionType;
                     bool m_expressionTypeHasBeenSet;
+
+                    /**
+                     * 文本行置信度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_itemConf;
+                    bool m_itemConfHasBeenSet;
 
                 };
             }
