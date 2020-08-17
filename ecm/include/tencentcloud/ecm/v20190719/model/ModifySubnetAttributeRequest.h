@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ecm/v20190719/model/Tag.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,24 @@ namespace TencentCloud
                      */
                     bool EnableBroadcastHasBeenSet() const;
 
+                    /**
+                     * 获取子网的标签键值
+                     * @return Tags 子网的标签键值
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置子网的标签键值
+                     * @param Tags 子网的标签键值
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_enableBroadcast;
                     bool m_enableBroadcastHasBeenSet;
+
+                    /**
+                     * 子网的标签键值
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

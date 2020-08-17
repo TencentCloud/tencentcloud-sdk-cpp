@@ -298,6 +298,116 @@ namespace TencentCloud
                      */
                     bool AssistantCidrSetHasBeenSet() const;
 
+                    /**
+                     * 获取地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Description 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取地域中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionName 地域中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegionName() const;
+
+                    /**
+                     * 设置地域中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegionName 地域中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegionName(const std::string& _regionName);
+
+                    /**
+                     * 判断参数 RegionName 是否已赋值
+                     * @return RegionName 是否已赋值
+                     */
+                    bool RegionNameHasBeenSet() const;
+
+                    /**
+                     * 获取包含子网数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubnetCount 包含子网数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSubnetCount() const;
+
+                    /**
+                     * 设置包含子网数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubnetCount 包含子网数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubnetCount(const uint64_t& _subnetCount);
+
+                    /**
+                     * 判断参数 SubnetCount 是否已赋值
+                     * @return SubnetCount 是否已赋值
+                     */
+                    bool SubnetCountHasBeenSet() const;
+
+                    /**
+                     * 获取包含实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceCount 包含实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetInstanceCount() const;
+
+                    /**
+                     * 设置包含实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceCount 包含实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceCount(const uint64_t& _instanceCount);
+
+                    /**
+                     * 判断参数 InstanceCount 是否已赋值
+                     * @return InstanceCount 是否已赋值
+                     */
+                    bool InstanceCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -381,6 +491,41 @@ namespace TencentCloud
                      */
                     std::vector<AssistantCidr> m_assistantCidrSet;
                     bool m_assistantCidrSetHasBeenSet;
+
+                    /**
+                     * 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 地域中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionName;
+                    bool m_regionNameHasBeenSet;
+
+                    /**
+                     * 包含子网数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_subnetCount;
+                    bool m_subnetCountHasBeenSet;
+
+                    /**
+                     * 包含实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_instanceCount;
+                    bool m_instanceCountHasBeenSet;
 
                 };
             }

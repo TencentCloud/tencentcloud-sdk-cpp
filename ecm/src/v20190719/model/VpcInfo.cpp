@@ -34,7 +34,12 @@ VpcInfo::VpcInfo() :
     m_enableDhcpHasBeenSet(false),
     m_ipv6CidrBlockHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_assistantCidrSetHasBeenSet(false)
+    m_assistantCidrSetHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_regionNameHasBeenSet(false),
+    m_subnetCountHasBeenSet(false),
+    m_instanceCountHasBeenSet(false)
 {
 }
 
@@ -196,6 +201,56 @@ CoreInternalOutcome VpcInfo::Deserialize(const Value &value)
         m_assistantCidrSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VpcInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VpcInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionName") && !value["RegionName"].IsNull())
+    {
+        if (!value["RegionName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VpcInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionName = string(value["RegionName"].GetString());
+        m_regionNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetCount") && !value["SubnetCount"].IsNull())
+    {
+        if (!value["SubnetCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VpcInfo.SubnetCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetCount = value["SubnetCount"].GetUint64();
+        m_subnetCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceCount") && !value["InstanceCount"].IsNull())
+    {
+        if (!value["InstanceCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VpcInfo.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceCount = value["InstanceCount"].GetUint64();
+        m_instanceCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +379,46 @@ void VpcInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_regionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subnetCount, allocator);
+    }
+
+    if (m_instanceCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceCount, allocator);
     }
 
 }
@@ -535,5 +630,85 @@ void VpcInfo::SetAssistantCidrSet(const vector<AssistantCidr>& _assistantCidrSet
 bool VpcInfo::AssistantCidrSetHasBeenSet() const
 {
     return m_assistantCidrSetHasBeenSet;
+}
+
+string VpcInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void VpcInfo::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool VpcInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string VpcInfo::GetDescription() const
+{
+    return m_description;
+}
+
+void VpcInfo::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool VpcInfo::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string VpcInfo::GetRegionName() const
+{
+    return m_regionName;
+}
+
+void VpcInfo::SetRegionName(const string& _regionName)
+{
+    m_regionName = _regionName;
+    m_regionNameHasBeenSet = true;
+}
+
+bool VpcInfo::RegionNameHasBeenSet() const
+{
+    return m_regionNameHasBeenSet;
+}
+
+uint64_t VpcInfo::GetSubnetCount() const
+{
+    return m_subnetCount;
+}
+
+void VpcInfo::SetSubnetCount(const uint64_t& _subnetCount)
+{
+    m_subnetCount = _subnetCount;
+    m_subnetCountHasBeenSet = true;
+}
+
+bool VpcInfo::SubnetCountHasBeenSet() const
+{
+    return m_subnetCountHasBeenSet;
+}
+
+uint64_t VpcInfo::GetInstanceCount() const
+{
+    return m_instanceCount;
+}
+
+void VpcInfo::SetInstanceCount(const uint64_t& _instanceCount)
+{
+    m_instanceCount = _instanceCount;
+    m_instanceCountHasBeenSet = true;
+}
+
+bool VpcInfo::InstanceCountHasBeenSet() const
+{
+    return m_instanceCountHasBeenSet;
 }
 

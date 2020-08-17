@@ -26,7 +26,9 @@ using namespace std;
 ModifyVpcAttributeRequest::ModifyVpcAttributeRequest() :
     m_vpcIdHasBeenSet(false),
     m_ecmRegionHasBeenSet(false),
-    m_vpcNameHasBeenSet(false)
+    m_vpcNameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,29 @@ string ModifyVpcAttributeRequest::ToJsonString() const
         string key = "VpcName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +140,38 @@ void ModifyVpcAttributeRequest::SetVpcName(const string& _vpcName)
 bool ModifyVpcAttributeRequest::VpcNameHasBeenSet() const
 {
     return m_vpcNameHasBeenSet;
+}
+
+vector<Tag> ModifyVpcAttributeRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void ModifyVpcAttributeRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ModifyVpcAttributeRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string ModifyVpcAttributeRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void ModifyVpcAttributeRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ModifyVpcAttributeRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

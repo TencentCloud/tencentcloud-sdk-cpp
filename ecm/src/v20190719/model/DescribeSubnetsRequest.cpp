@@ -24,11 +24,12 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeSubnetsRequest::DescribeSubnetsRequest() :
-    m_ecmRegionHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_ecmRegionHasBeenSet(false),
+    m_sortHasBeenSet(false)
 {
 }
 
@@ -38,14 +39,6 @@ string DescribeSubnetsRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_ecmRegionHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "EcmRegion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ecmRegion.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_subnetIdsHasBeenSet)
     {
@@ -91,6 +84,22 @@ string DescribeSubnetsRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_limit.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_ecmRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EcmRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_ecmRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -98,22 +107,6 @@ string DescribeSubnetsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeSubnetsRequest::GetEcmRegion() const
-{
-    return m_ecmRegion;
-}
-
-void DescribeSubnetsRequest::SetEcmRegion(const string& _ecmRegion)
-{
-    m_ecmRegion = _ecmRegion;
-    m_ecmRegionHasBeenSet = true;
-}
-
-bool DescribeSubnetsRequest::EcmRegionHasBeenSet() const
-{
-    return m_ecmRegionHasBeenSet;
-}
 
 vector<string> DescribeSubnetsRequest::GetSubnetIds() const
 {
@@ -177,6 +170,38 @@ void DescribeSubnetsRequest::SetLimit(const string& _limit)
 bool DescribeSubnetsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeSubnetsRequest::GetEcmRegion() const
+{
+    return m_ecmRegion;
+}
+
+void DescribeSubnetsRequest::SetEcmRegion(const string& _ecmRegion)
+{
+    m_ecmRegion = _ecmRegion;
+    m_ecmRegionHasBeenSet = true;
+}
+
+bool DescribeSubnetsRequest::EcmRegionHasBeenSet() const
+{
+    return m_ecmRegionHasBeenSet;
+}
+
+string DescribeSubnetsRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void DescribeSubnetsRequest::SetSort(const string& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool DescribeSubnetsRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
 }
 
 

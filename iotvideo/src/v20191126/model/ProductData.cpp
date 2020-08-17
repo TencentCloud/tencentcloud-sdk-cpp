@@ -31,7 +31,9 @@ ProductData::ProductData() :
     m_featuresHasBeenSet(false),
     m_productModelHasBeenSet(false),
     m_chipManufactureIdHasBeenSet(false),
-    m_chipIdHasBeenSet(false)
+    m_chipIdHasBeenSet(false),
+    m_productCateHasBeenSet(false),
+    m_productRegionHasBeenSet(false)
 {
 }
 
@@ -143,6 +145,26 @@ CoreInternalOutcome ProductData::Deserialize(const Value &value)
         m_chipIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductCate") && !value["ProductCate"].IsNull())
+    {
+        if (!value["ProductCate"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ProductData.ProductCate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_productCate = value["ProductCate"].GetInt64();
+        m_productCateHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductRegion") && !value["ProductRegion"].IsNull())
+    {
+        if (!value["ProductRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProductData.ProductRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productRegion = string(value["ProductRegion"].GetString());
+        m_productRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -233,6 +255,22 @@ void ProductData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "ChipId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_chipId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productCateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductCate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_productCate, allocator);
+    }
+
+    if (m_productRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_productRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -396,5 +434,37 @@ void ProductData::SetChipId(const string& _chipId)
 bool ProductData::ChipIdHasBeenSet() const
 {
     return m_chipIdHasBeenSet;
+}
+
+int64_t ProductData::GetProductCate() const
+{
+    return m_productCate;
+}
+
+void ProductData::SetProductCate(const int64_t& _productCate)
+{
+    m_productCate = _productCate;
+    m_productCateHasBeenSet = true;
+}
+
+bool ProductData::ProductCateHasBeenSet() const
+{
+    return m_productCateHasBeenSet;
+}
+
+string ProductData::GetProductRegion() const
+{
+    return m_productRegion;
+}
+
+void ProductData::SetProductRegion(const string& _productRegion)
+{
+    m_productRegion = _productRegion;
+    m_productRegionHasBeenSet = true;
+}
+
+bool ProductData::ProductRegionHasBeenSet() const
+{
+    return m_productRegionHasBeenSet;
 }
 

@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取vpc的cidr，只能为10.0.0.0/16，172.16.0.0/16，192.168.0.0/16这三个内网网段内。
-                     * @return CidrBlock vpc的cidr，只能为10.0.0.0/16，172.16.0.0/16，192.168.0.0/16这三个内网网段内。
+                     * 获取vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。
+                     * @return CidrBlock vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置vpc的cidr，只能为10.0.0.0/16，172.16.0.0/16，192.168.0.0/16这三个内网网段内。
-                     * @param CidrBlock vpc的cidr，只能为10.0.0.0/16，172.16.0.0/16，192.168.0.0/16这三个内网网段内。
+                     * 设置vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。
+                     * @param CidrBlock vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool EcmRegionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启组播。true: 开启, false: 不开启。
-                     * @return EnableMulticast 是否开启组播。true: 开启, false: 不开启。
+                     * 获取是否开启组播。true: 开启, false: 不开启。暂不支持
+                     * @return EnableMulticast 是否开启组播。true: 开启, false: 不开启。暂不支持
                      */
                     std::string GetEnableMulticast() const;
 
                     /**
-                     * 设置是否开启组播。true: 开启, false: 不开启。
-                     * @param EnableMulticast 是否开启组播。true: 开启, false: 不开启。
+                     * 设置是否开启组播。true: 开启, false: 不开启。暂不支持
+                     * @param EnableMulticast 是否开启组播。true: 开启, false: 不开启。暂不支持
                      */
                     void SetEnableMulticast(const std::string& _enableMulticast);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool EnableMulticastHasBeenSet() const;
 
                     /**
-                     * 获取DNS地址，最多支持4个
-                     * @return DnsServers DNS地址，最多支持4个
+                     * 获取DNS地址，最多支持4个，暂不支持
+                     * @return DnsServers DNS地址，最多支持4个，暂不支持
                      */
                     std::vector<std::string> GetDnsServers() const;
 
                     /**
-                     * 设置DNS地址，最多支持4个
-                     * @param DnsServers DNS地址，最多支持4个
+                     * 设置DNS地址，最多支持4个，暂不支持
+                     * @param DnsServers DNS地址，最多支持4个，暂不支持
                      */
                     void SetDnsServers(const std::vector<std::string>& _dnsServers);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool DnsServersHasBeenSet() const;
 
                     /**
-                     * 获取域名
-                     * @return DomainName 域名
+                     * 获取域名，暂不支持
+                     * @return DomainName 域名，暂不支持
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置域名
-                     * @param DomainName 域名
+                     * 设置域名，暂不支持
+                     * @param DomainName 域名，暂不支持
                      */
                     void SetDomainName(const std::string& _domainName);
 
@@ -169,6 +169,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取描述信息
+                     * @return Description 描述信息
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置描述信息
+                     * @param Description 描述信息
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,7 +196,7 @@ namespace TencentCloud
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * vpc的cidr，只能为10.0.0.0/16，172.16.0.0/16，192.168.0.0/16这三个内网网段内。
+                     * vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
@@ -190,19 +208,19 @@ namespace TencentCloud
                     bool m_ecmRegionHasBeenSet;
 
                     /**
-                     * 是否开启组播。true: 开启, false: 不开启。
+                     * 是否开启组播。true: 开启, false: 不开启。暂不支持
                      */
                     std::string m_enableMulticast;
                     bool m_enableMulticastHasBeenSet;
 
                     /**
-                     * DNS地址，最多支持4个
+                     * DNS地址，最多支持4个，暂不支持
                      */
                     std::vector<std::string> m_dnsServers;
                     bool m_dnsServersHasBeenSet;
 
                     /**
-                     * 域名
+                     * 域名，暂不支持
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 描述信息
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

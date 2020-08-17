@@ -149,6 +149,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ModifyDefaultSubnetRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeTaskResultRequest.h
+  include/tencentcloud/ecm/v20190719/model/VirtualPrivateCloud.h
   include/tencentcloud/ecm/v20190719/model/AssociateAddressResponse.h
   include/tencentcloud/ecm/v20190719/model/Filter.h
   include/tencentcloud/ecm/v20190719/model/PublicIPAddressInfo.h
@@ -340,6 +341,7 @@ set(ecm_src
   src/v20190719/model/ModifyDefaultSubnetRequest.cpp
   src/v20190719/model/DescribeInstancesRequest.cpp
   src/v20190719/model/DescribeTaskResultRequest.cpp
+  src/v20190719/model/VirtualPrivateCloud.cpp
   src/v20190719/model/AssociateAddressResponse.cpp
   src/v20190719/model/Filter.cpp
   src/v20190719/model/PublicIPAddressInfo.cpp

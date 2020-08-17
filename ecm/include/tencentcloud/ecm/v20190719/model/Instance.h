@@ -31,6 +31,7 @@
 #include <tencentcloud/ecm/v20190719/model/InstanceTypeConfig.h>
 #include <tencentcloud/ecm/v20190719/model/Tag.h>
 #include <tencentcloud/ecm/v20190719/model/DiskInfo.h>
+#include <tencentcloud/ecm/v20190719/model/VirtualPrivateCloud.h>
 
 
 namespace TencentCloud
@@ -671,6 +672,28 @@ PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取VPC属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VirtualPrivateCloud VPC属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VirtualPrivateCloud GetVirtualPrivateCloud() const;
+
+                    /**
+                     * 设置VPC属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VirtualPrivateCloud VPC属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVirtualPrivateCloud(const VirtualPrivateCloud& _virtualPrivateCloud);
+
+                    /**
+                     * 判断参数 VirtualPrivateCloud 是否已赋值
+                     * @return VirtualPrivateCloud 是否已赋值
+                     */
+                    bool VirtualPrivateCloudHasBeenSet() const;
+
                 private:
 
                     /**
@@ -864,6 +887,13 @@ PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * VPC属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VirtualPrivateCloud m_virtualPrivateCloud;
+                    bool m_virtualPrivateCloudHasBeenSet;
 
                 };
             }

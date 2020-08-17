@@ -35,7 +35,12 @@ Subnet::Subnet() :
     m_networkAclIdHasBeenSet(false),
     m_isRemoteVpcSnatHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_zoneNameHasBeenSet(false),
+    m_instanceCountHasBeenSet(false),
+    m_vpcCidrBlockHasBeenSet(false),
+    m_vpcIpv6CidrBlockHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -194,6 +199,56 @@ CoreInternalOutcome Subnet::Deserialize(const Value &value)
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneName") && !value["ZoneName"].IsNull())
+    {
+        if (!value["ZoneName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Subnet.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneName = string(value["ZoneName"].GetString());
+        m_zoneNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceCount") && !value["InstanceCount"].IsNull())
+    {
+        if (!value["InstanceCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Subnet.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceCount = value["InstanceCount"].GetUint64();
+        m_instanceCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcCidrBlock") && !value["VpcCidrBlock"].IsNull())
+    {
+        if (!value["VpcCidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Subnet.VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcCidrBlock = string(value["VpcCidrBlock"].GetString());
+        m_vpcCidrBlockHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcIpv6CidrBlock") && !value["VpcIpv6CidrBlock"].IsNull())
+    {
+        if (!value["VpcIpv6CidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Subnet.VpcIpv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcIpv6CidrBlock = string(value["VpcIpv6CidrBlock"].GetString());
+        m_vpcIpv6CidrBlockHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Subnet.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -318,6 +373,46 @@ void Subnet::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceCount, allocator);
+    }
+
+    if (m_vpcCidrBlockHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcCidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vpcCidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIpv6CidrBlockHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcIpv6CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vpcIpv6CidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -545,5 +640,85 @@ void Subnet::SetZone(const string& _zone)
 bool Subnet::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string Subnet::GetZoneName() const
+{
+    return m_zoneName;
+}
+
+void Subnet::SetZoneName(const string& _zoneName)
+{
+    m_zoneName = _zoneName;
+    m_zoneNameHasBeenSet = true;
+}
+
+bool Subnet::ZoneNameHasBeenSet() const
+{
+    return m_zoneNameHasBeenSet;
+}
+
+uint64_t Subnet::GetInstanceCount() const
+{
+    return m_instanceCount;
+}
+
+void Subnet::SetInstanceCount(const uint64_t& _instanceCount)
+{
+    m_instanceCount = _instanceCount;
+    m_instanceCountHasBeenSet = true;
+}
+
+bool Subnet::InstanceCountHasBeenSet() const
+{
+    return m_instanceCountHasBeenSet;
+}
+
+string Subnet::GetVpcCidrBlock() const
+{
+    return m_vpcCidrBlock;
+}
+
+void Subnet::SetVpcCidrBlock(const string& _vpcCidrBlock)
+{
+    m_vpcCidrBlock = _vpcCidrBlock;
+    m_vpcCidrBlockHasBeenSet = true;
+}
+
+bool Subnet::VpcCidrBlockHasBeenSet() const
+{
+    return m_vpcCidrBlockHasBeenSet;
+}
+
+string Subnet::GetVpcIpv6CidrBlock() const
+{
+    return m_vpcIpv6CidrBlock;
+}
+
+void Subnet::SetVpcIpv6CidrBlock(const string& _vpcIpv6CidrBlock)
+{
+    m_vpcIpv6CidrBlock = _vpcIpv6CidrBlock;
+    m_vpcIpv6CidrBlockHasBeenSet = true;
+}
+
+bool Subnet::VpcIpv6CidrBlockHasBeenSet() const
+{
+    return m_vpcIpv6CidrBlockHasBeenSet;
+}
+
+string Subnet::GetRegion() const
+{
+    return m_region;
+}
+
+void Subnet::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool Subnet::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

@@ -107,6 +107,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/GetKeyRotationStatusRequest.h
   include/tencentcloud/kms/v20190118/model/GetPublicKeyResponse.h
   include/tencentcloud/kms/v20190118/model/BindCloudResourceRequest.h
+  include/tencentcloud/kms/v20190118/model/TagFilter.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.h
   include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionRequest.h
@@ -205,6 +206,7 @@ set(kms_src
   src/v20190118/model/GetKeyRotationStatusRequest.cpp
   src/v20190118/model/GetPublicKeyResponse.cpp
   src/v20190118/model/BindCloudResourceRequest.cpp
+  src/v20190118/model/TagFilter.cpp
   src/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.cpp
   src/v20190118/model/UpdateKeyDescriptionRequest.cpp

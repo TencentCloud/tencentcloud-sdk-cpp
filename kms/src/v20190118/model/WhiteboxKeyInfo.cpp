@@ -32,7 +32,8 @@ WhiteboxKeyInfo::WhiteboxKeyInfo() :
     m_algorithmHasBeenSet(false),
     m_encryptKeyHasBeenSet(false),
     m_decryptKeyHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_deviceFingerprintBindHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const Value &value)
         m_resourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceFingerprintBind") && !value["DeviceFingerprintBind"].IsNull())
+    {
+        if (!value["DeviceFingerprintBind"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.DeviceFingerprintBind` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceFingerprintBind = value["DeviceFingerprintBind"].GetBool();
+        m_deviceFingerprintBindHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +255,14 @@ void WhiteboxKeyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceFingerprintBindHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceFingerprintBind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deviceFingerprintBind, allocator);
     }
 
 }
@@ -423,5 +442,21 @@ void WhiteboxKeyInfo::SetResourceId(const string& _resourceId)
 bool WhiteboxKeyInfo::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+bool WhiteboxKeyInfo::GetDeviceFingerprintBind() const
+{
+    return m_deviceFingerprintBind;
+}
+
+void WhiteboxKeyInfo::SetDeviceFingerprintBind(const bool& _deviceFingerprintBind)
+{
+    m_deviceFingerprintBind = _deviceFingerprintBind;
+    m_deviceFingerprintBindHasBeenSet = true;
+}
+
+bool WhiteboxKeyInfo::DeviceFingerprintBindHasBeenSet() const
+{
+    return m_deviceFingerprintBindHasBeenSet;
 }
 

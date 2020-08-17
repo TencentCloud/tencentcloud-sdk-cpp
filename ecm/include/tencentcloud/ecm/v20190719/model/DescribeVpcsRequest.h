@@ -44,24 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域
-                     * @return EcmRegion 地域
-                     */
-                    std::string GetEcmRegion() const;
-
-                    /**
-                     * 设置地域
-                     * @param EcmRegion 地域
-                     */
-                    void SetEcmRegion(const std::string& _ecmRegion);
-
-                    /**
-                     * 判断参数 EcmRegion 是否已赋值
-                     * @return EcmRegion 是否已赋值
-                     */
-                    bool EcmRegionHasBeenSet() const;
-
-                    /**
                      * 获取VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
                      * @return VpcIds VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
                      */
@@ -81,37 +63,37 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件，参数不支持同时指定VpcIds和Filters。
-vpc-name - String - （过滤条件）VPC实例名称。
-is-default - String - （过滤条件）是否默认VPC。
-vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。
-cidr-block - String - （过滤条件）vpc的cidr。
-tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。
-tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例
+vpc-name - String - VPC实例名称，只支持单值的模糊查询。
+vpc-id - String - VPC实例ID形如：vpc-f49l6u0z。
+cidr-block - String - vpc的cidr，只支持单值的模糊查询。
+region - String - vpc的region。
+tag-key - String -是否必填：否- 按照标签键进行过滤。
+tag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。
                      * @return Filters 过滤条件，参数不支持同时指定VpcIds和Filters。
-vpc-name - String - （过滤条件）VPC实例名称。
-is-default - String - （过滤条件）是否默认VPC。
-vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。
-cidr-block - String - （过滤条件）vpc的cidr。
-tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。
-tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例
+vpc-name - String - VPC实例名称，只支持单值的模糊查询。
+vpc-id - String - VPC实例ID形如：vpc-f49l6u0z。
+cidr-block - String - vpc的cidr，只支持单值的模糊查询。
+region - String - vpc的region。
+tag-key - String -是否必填：否- 按照标签键进行过滤。
+tag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件，参数不支持同时指定VpcIds和Filters。
-vpc-name - String - （过滤条件）VPC实例名称。
-is-default - String - （过滤条件）是否默认VPC。
-vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。
-cidr-block - String - （过滤条件）vpc的cidr。
-tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。
-tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例
+vpc-name - String - VPC实例名称，只支持单值的模糊查询。
+vpc-id - String - VPC实例ID形如：vpc-f49l6u0z。
+cidr-block - String - vpc的cidr，只支持单值的模糊查询。
+region - String - vpc的region。
+tag-key - String -是否必填：否- 按照标签键进行过滤。
+tag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。
                      * @param Filters 过滤条件，参数不支持同时指定VpcIds和Filters。
-vpc-name - String - （过滤条件）VPC实例名称。
-is-default - String - （过滤条件）是否默认VPC。
-vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。
-cidr-block - String - （过滤条件）vpc的cidr。
-tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。
-tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例
+vpc-name - String - VPC实例名称，只支持单值的模糊查询。
+vpc-id - String - VPC实例ID形如：vpc-f49l6u0z。
+cidr-block - String - vpc的cidr，只支持单值的模糊查询。
+region - String - vpc的region。
+tag-key - String -是否必填：否- 按照标签键进行过滤。
+tag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -157,13 +139,43 @@ tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值
                      */
                     bool LimitHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取地域
+                     * @return EcmRegion 地域
+                     */
+                    std::string GetEcmRegion() const;
 
                     /**
-                     * 地域
+                     * 设置地域
+                     * @param EcmRegion 地域
                      */
-                    std::string m_ecmRegion;
-                    bool m_ecmRegionHasBeenSet;
+                    void SetEcmRegion(const std::string& _ecmRegion);
+
+                    /**
+                     * 判断参数 EcmRegion 是否已赋值
+                     * @return EcmRegion 是否已赋值
+                     */
+                    bool EcmRegionHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式：time时间倒序, default按照网络规划排序
+                     * @return Sort 排序方式：time时间倒序, default按照网络规划排序
+                     */
+                    std::string GetSort() const;
+
+                    /**
+                     * 设置排序方式：time时间倒序, default按照网络规划排序
+                     * @param Sort 排序方式：time时间倒序, default按照网络规划排序
+                     */
+                    void SetSort(const std::string& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     */
+                    bool SortHasBeenSet() const;
+
+                private:
 
                     /**
                      * VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
@@ -173,12 +185,12 @@ tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值
 
                     /**
                      * 过滤条件，参数不支持同时指定VpcIds和Filters。
-vpc-name - String - （过滤条件）VPC实例名称。
-is-default - String - （过滤条件）是否默认VPC。
-vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。
-cidr-block - String - （过滤条件）vpc的cidr。
-tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。
-tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例
+vpc-name - String - VPC实例名称，只支持单值的模糊查询。
+vpc-id - String - VPC实例ID形如：vpc-f49l6u0z。
+cidr-block - String - vpc的cidr，只支持单值的模糊查询。
+region - String - vpc的region。
+tag-key - String -是否必填：否- 按照标签键进行过滤。
+tag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -194,6 +206,18 @@ tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 地域
+                     */
+                    std::string m_ecmRegion;
+                    bool m_ecmRegionHasBeenSet;
+
+                    /**
+                     * 排序方式：time时间倒序, default按照网络规划排序
+                     */
+                    std::string m_sort;
+                    bool m_sortHasBeenSet;
 
                 };
             }

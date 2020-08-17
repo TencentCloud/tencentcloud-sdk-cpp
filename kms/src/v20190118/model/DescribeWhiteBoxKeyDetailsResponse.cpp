@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeWhiteBoxKeyDetailsResponse::DescribeWhiteBoxKeyDetailsResponse() :
-    m_keyInfosHasBeenSet(false)
+    m_keyInfosHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeWhiteBoxKeyDetailsResponse::Deserialize(const string
         m_keyInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<WhiteboxKeyInfo> DescribeWhiteBoxKeyDetailsResponse::GetKeyInfos() const
 bool DescribeWhiteBoxKeyDetailsResponse::KeyInfosHasBeenSet() const
 {
     return m_keyInfosHasBeenSet;
+}
+
+uint64_t DescribeWhiteBoxKeyDetailsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeWhiteBoxKeyDetailsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

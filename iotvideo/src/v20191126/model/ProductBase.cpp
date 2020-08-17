@@ -28,7 +28,10 @@ ProductBase::ProductBase() :
     m_productDescriptionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_iotModelRevisionHasBeenSet(false),
-    m_secretKeyHasBeenSet(false)
+    m_secretKeyHasBeenSet(false),
+    m_funcCodeHasBeenSet(false),
+    m_productCateHasBeenSet(false),
+    m_productRegionHasBeenSet(false)
 {
 }
 
@@ -107,6 +110,39 @@ CoreInternalOutcome ProductBase::Deserialize(const Value &value)
         m_secretKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("FuncCode") && !value["FuncCode"].IsNull())
+    {
+        if (!value["FuncCode"].IsArray())
+            return CoreInternalOutcome(Error("response `ProductBase.FuncCode` is not array type"));
+
+        const Value &tmpValue = value["FuncCode"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_funcCode.push_back((*itr).GetString());
+        }
+        m_funcCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductCate") && !value["ProductCate"].IsNull())
+    {
+        if (!value["ProductCate"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ProductBase.ProductCate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_productCate = value["ProductCate"].GetInt64();
+        m_productCateHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductRegion") && !value["ProductRegion"].IsNull())
+    {
+        if (!value["ProductRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProductBase.ProductRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productRegion = string(value["ProductRegion"].GetString());
+        m_productRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +204,35 @@ void ProductBase::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "SecretKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_secretKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_funcCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FuncCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_funcCode.begin(); itr != m_funcCode.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_productCateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductCate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_productCate, allocator);
+    }
+
+    if (m_productRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_productRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -283,5 +348,53 @@ void ProductBase::SetSecretKey(const string& _secretKey)
 bool ProductBase::SecretKeyHasBeenSet() const
 {
     return m_secretKeyHasBeenSet;
+}
+
+vector<string> ProductBase::GetFuncCode() const
+{
+    return m_funcCode;
+}
+
+void ProductBase::SetFuncCode(const vector<string>& _funcCode)
+{
+    m_funcCode = _funcCode;
+    m_funcCodeHasBeenSet = true;
+}
+
+bool ProductBase::FuncCodeHasBeenSet() const
+{
+    return m_funcCodeHasBeenSet;
+}
+
+int64_t ProductBase::GetProductCate() const
+{
+    return m_productCate;
+}
+
+void ProductBase::SetProductCate(const int64_t& _productCate)
+{
+    m_productCate = _productCate;
+    m_productCateHasBeenSet = true;
+}
+
+bool ProductBase::ProductCateHasBeenSet() const
+{
+    return m_productCateHasBeenSet;
+}
+
+string ProductBase::GetProductRegion() const
+{
+    return m_productRegion;
+}
+
+void ProductBase::SetProductRegion(const string& _productRegion)
+{
+    m_productRegion = _productRegion;
+    m_productRegionHasBeenSet = true;
+}
+
+bool ProductBase::ProductRegionHasBeenSet() const
+{
+    return m_productRegionHasBeenSet;
 }
 

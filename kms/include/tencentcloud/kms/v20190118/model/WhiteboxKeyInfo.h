@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否有设备指纹与当前密钥绑定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceFingerprintBind 是否有设备指纹与当前密钥绑定
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDeviceFingerprintBind() const;
+
+                    /**
+                     * 设置是否有设备指纹与当前密钥绑定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeviceFingerprintBind 是否有设备指纹与当前密钥绑定
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeviceFingerprintBind(const bool& _deviceFingerprintBind);
+
+                    /**
+                     * 判断参数 DeviceFingerprintBind 是否已赋值
+                     * @return DeviceFingerprintBind 是否已赋值
+                     */
+                    bool DeviceFingerprintBindHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +333,13 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 是否有设备指纹与当前密钥绑定
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_deviceFingerprintBind;
+                    bool m_deviceFingerprintBindHasBeenSet;
 
                 };
             }

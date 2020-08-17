@@ -30,7 +30,8 @@ CreateVpcRequest::CreateVpcRequest() :
     m_enableMulticastHasBeenSet(false),
     m_dnsServersHasBeenSet(false),
     m_domainNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,14 @@ string CreateVpcRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -227,6 +236,22 @@ void CreateVpcRequest::SetTags(const vector<Tag>& _tags)
 bool CreateVpcRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateVpcRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateVpcRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateVpcRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

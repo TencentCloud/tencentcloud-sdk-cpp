@@ -25,11 +25,13 @@ using namespace std;
 
 CreateProductRequest::CreateProductRequest() :
     m_productModelHasBeenSet(false),
-    m_featuresHasBeenSet(false),
     m_productNameHasBeenSet(false),
     m_productDescriptionHasBeenSet(false),
+    m_featuresHasBeenSet(false),
     m_chipManufactureIdHasBeenSet(false),
-    m_chipIdHasBeenSet(false)
+    m_chipIdHasBeenSet(false),
+    m_productRegionHasBeenSet(false),
+    m_productCateHasBeenSet(false)
 {
 }
 
@@ -48,19 +50,6 @@ string CreateProductRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_productModel.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_featuresHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Features";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_features.begin(); itr != m_features.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_productNameHasBeenSet)
     {
         Value iKey(kStringType);
@@ -77,6 +66,19 @@ string CreateProductRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_productDescription.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_featuresHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Features";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_features.begin(); itr != m_features.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_chipManufactureIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -91,6 +93,22 @@ string CreateProductRequest::ToJsonString() const
         string key = "ChipId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_chipId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_productRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productCateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductCate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_productCate, allocator);
     }
 
 
@@ -115,22 +133,6 @@ void CreateProductRequest::SetProductModel(const string& _productModel)
 bool CreateProductRequest::ProductModelHasBeenSet() const
 {
     return m_productModelHasBeenSet;
-}
-
-vector<string> CreateProductRequest::GetFeatures() const
-{
-    return m_features;
-}
-
-void CreateProductRequest::SetFeatures(const vector<string>& _features)
-{
-    m_features = _features;
-    m_featuresHasBeenSet = true;
-}
-
-bool CreateProductRequest::FeaturesHasBeenSet() const
-{
-    return m_featuresHasBeenSet;
 }
 
 string CreateProductRequest::GetProductName() const
@@ -165,6 +167,22 @@ bool CreateProductRequest::ProductDescriptionHasBeenSet() const
     return m_productDescriptionHasBeenSet;
 }
 
+vector<string> CreateProductRequest::GetFeatures() const
+{
+    return m_features;
+}
+
+void CreateProductRequest::SetFeatures(const vector<string>& _features)
+{
+    m_features = _features;
+    m_featuresHasBeenSet = true;
+}
+
+bool CreateProductRequest::FeaturesHasBeenSet() const
+{
+    return m_featuresHasBeenSet;
+}
+
 string CreateProductRequest::GetChipManufactureId() const
 {
     return m_chipManufactureId;
@@ -195,6 +213,38 @@ void CreateProductRequest::SetChipId(const string& _chipId)
 bool CreateProductRequest::ChipIdHasBeenSet() const
 {
     return m_chipIdHasBeenSet;
+}
+
+string CreateProductRequest::GetProductRegion() const
+{
+    return m_productRegion;
+}
+
+void CreateProductRequest::SetProductRegion(const string& _productRegion)
+{
+    m_productRegion = _productRegion;
+    m_productRegionHasBeenSet = true;
+}
+
+bool CreateProductRequest::ProductRegionHasBeenSet() const
+{
+    return m_productRegionHasBeenSet;
+}
+
+uint64_t CreateProductRequest::GetProductCate() const
+{
+    return m_productCate;
+}
+
+void CreateProductRequest::SetProductCate(const uint64_t& _productCate)
+{
+    m_productCate = _productCate;
+    m_productCateHasBeenSet = true;
+}
+
+bool CreateProductRequest::ProductCateHasBeenSet() const
+{
+    return m_productCateHasBeenSet;
 }
 
 

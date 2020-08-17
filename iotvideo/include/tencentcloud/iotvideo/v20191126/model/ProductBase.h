@@ -172,6 +172,120 @@ namespace TencentCloud
                      */
                     bool SecretKeyHasBeenSet() const;
 
+                    /**
+                     * 获取设备功能码
+ypsxth : 音频双向通话;	
+spdxth : 视频单向通话(监控);
+NVR0824 : NVR设备,大于8路，小于等于24路;
+WifiKeepalive : Wifi保活(低功耗产品);
+Alexa : Alexa接入;
+Google : Google接入;
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FuncCode 设备功能码
+ypsxth : 音频双向通话;	
+spdxth : 视频单向通话(监控);
+NVR0824 : NVR设备,大于8路，小于等于24路;
+WifiKeepalive : Wifi保活(低功耗产品);
+Alexa : Alexa接入;
+Google : Google接入;
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetFuncCode() const;
+
+                    /**
+                     * 设置设备功能码
+ypsxth : 音频双向通话;	
+spdxth : 视频单向通话(监控);
+NVR0824 : NVR设备,大于8路，小于等于24路;
+WifiKeepalive : Wifi保活(低功耗产品);
+Alexa : Alexa接入;
+Google : Google接入;
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FuncCode 设备功能码
+ypsxth : 音频双向通话;	
+spdxth : 视频单向通话(监控);
+NVR0824 : NVR设备,大于8路，小于等于24路;
+WifiKeepalive : Wifi保活(低功耗产品);
+Alexa : Alexa接入;
+Google : Google接入;
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFuncCode(const std::vector<std::string>& _funcCode);
+
+                    /**
+                     * 判断参数 FuncCode 是否已赋值
+                     * @return FuncCode 是否已赋值
+                     */
+                    bool FuncCodeHasBeenSet() const;
+
+                    /**
+                     * 获取产品类别，0 : 普通视频设备；1 : NVR设备
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductCate 产品类别，0 : 普通视频设备；1 : NVR设备
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProductCate() const;
+
+                    /**
+                     * 设置产品类别，0 : 普通视频设备；1 : NVR设备
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductCate 产品类别，0 : 普通视频设备；1 : NVR设备
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductCate(const int64_t& _productCate);
+
+                    /**
+                     * 判断参数 ProductCate 是否已赋值
+                     * @return ProductCate 是否已赋值
+                     */
+                    bool ProductCateHasBeenSet() const;
+
+                    /**
+                     * 获取产品地域
+China-Mainland（中国大陆）
+China-Hong Kong, Macao and Taiwan（港澳台地区）
+America（美国）
+Europe（欧洲）
+India（印度）
+Other-Overseas（其他境外地区）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductRegion 产品地域
+China-Mainland（中国大陆）
+China-Hong Kong, Macao and Taiwan（港澳台地区）
+America（美国）
+Europe（欧洲）
+India（印度）
+Other-Overseas（其他境外地区）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductRegion() const;
+
+                    /**
+                     * 设置产品地域
+China-Mainland（中国大陆）
+China-Hong Kong, Macao and Taiwan（港澳台地区）
+America（美国）
+Europe（欧洲）
+India（印度）
+Other-Overseas（其他境外地区）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductRegion 产品地域
+China-Mainland（中国大陆）
+China-Hong Kong, Macao and Taiwan（港澳台地区）
+America（美国）
+Europe（欧洲）
+India（印度）
+Other-Overseas（其他境外地区）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductRegion(const std::string& _productRegion);
+
+                    /**
+                     * 判断参数 ProductRegion 是否已赋值
+                     * @return ProductRegion 是否已赋值
+                     */
+                    bool ProductRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +329,39 @@ namespace TencentCloud
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;
+
+                    /**
+                     * 设备功能码
+ypsxth : 音频双向通话;	
+spdxth : 视频单向通话(监控);
+NVR0824 : NVR设备,大于8路，小于等于24路;
+WifiKeepalive : Wifi保活(低功耗产品);
+Alexa : Alexa接入;
+Google : Google接入;
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_funcCode;
+                    bool m_funcCodeHasBeenSet;
+
+                    /**
+                     * 产品类别，0 : 普通视频设备；1 : NVR设备
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_productCate;
+                    bool m_productCateHasBeenSet;
+
+                    /**
+                     * 产品地域
+China-Mainland（中国大陆）
+China-Hong Kong, Macao and Taiwan（港澳台地区）
+America（美国）
+Europe（欧洲）
+India（印度）
+Other-Overseas（其他境外地区）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productRegion;
+                    bool m_productRegionHasBeenSet;
 
                 };
             }

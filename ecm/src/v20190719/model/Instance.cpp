@@ -46,7 +46,8 @@ Instance::Instance() :
     m_systemDiskHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
     m_newFlagHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_virtualPrivateCloudHasBeenSet(false)
 {
 }
 
@@ -370,6 +371,23 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_securityGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("VirtualPrivateCloud") && !value["VirtualPrivateCloud"].IsNull())
+    {
+        if (!value["VirtualPrivateCloud"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Instance.VirtualPrivateCloud` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_virtualPrivateCloud.Deserialize(value["VirtualPrivateCloud"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_virtualPrivateCloudHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -600,6 +618,15 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_virtualPrivateCloudHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VirtualPrivateCloud";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_virtualPrivateCloud.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1003,5 +1030,21 @@ void Instance::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
 bool Instance::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+VirtualPrivateCloud Instance::GetVirtualPrivateCloud() const
+{
+    return m_virtualPrivateCloud;
+}
+
+void Instance::SetVirtualPrivateCloud(const VirtualPrivateCloud& _virtualPrivateCloud)
+{
+    m_virtualPrivateCloud = _virtualPrivateCloud;
+    m_virtualPrivateCloudHasBeenSet = true;
+}
+
+bool Instance::VirtualPrivateCloudHasBeenSet() const
+{
+    return m_virtualPrivateCloudHasBeenSet;
 }
 

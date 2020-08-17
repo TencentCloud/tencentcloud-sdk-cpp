@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool ProductModelHasBeenSet() const;
 
                     /**
-                     * 获取设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）
-                     * @return Features 设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）
-                     */
-                    std::vector<std::string> GetFeatures() const;
-
-                    /**
-                     * 设置设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）
-                     * @param Features 设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）
-                     */
-                    void SetFeatures(const std::vector<std::string>& _features);
-
-                    /**
-                     * 判断参数 Features 是否已赋值
-                     * @return Features 是否已赋值
-                     */
-                    bool FeaturesHasBeenSet() const;
-
-                    /**
                      * 获取产品名称
 仅支持中文、英文、数字、下划线，不超过32个字符
                      * @return ProductName 产品名称
@@ -123,6 +105,24 @@ namespace TencentCloud
                     bool ProductDescriptionHasBeenSet() const;
 
                     /**
+                     * 获取设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）
+                     * @return Features 设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）
+                     */
+                    std::vector<std::string> GetFeatures() const;
+
+                    /**
+                     * 设置设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）
+                     * @param Features 设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）
+                     */
+                    void SetFeatures(const std::vector<std::string>& _features);
+
+                    /**
+                     * 判断参数 Features 是否已赋值
+                     * @return Features 是否已赋值
+                     */
+                    bool FeaturesHasBeenSet() const;
+
+                    /**
                      * 获取主芯片产商ID
                      * @return ChipManufactureId 主芯片产商ID
                      */
@@ -158,6 +158,66 @@ namespace TencentCloud
                      */
                     bool ChipIdHasBeenSet() const;
 
+                    /**
+                     * 获取地域：
+China-Mainland（中国大陆）
+China-Hong Kong, Macao and Taiwan（港澳台地区）
+America（美国）
+Europe（欧洲）
+India（印度）
+Other-Overseas（其他境外地区）
+                     * @return ProductRegion 地域：
+China-Mainland（中国大陆）
+China-Hong Kong, Macao and Taiwan（港澳台地区）
+America（美国）
+Europe（欧洲）
+India（印度）
+Other-Overseas（其他境外地区）
+                     */
+                    std::string GetProductRegion() const;
+
+                    /**
+                     * 设置地域：
+China-Mainland（中国大陆）
+China-Hong Kong, Macao and Taiwan（港澳台地区）
+America（美国）
+Europe（欧洲）
+India（印度）
+Other-Overseas（其他境外地区）
+                     * @param ProductRegion 地域：
+China-Mainland（中国大陆）
+China-Hong Kong, Macao and Taiwan（港澳台地区）
+America（美国）
+Europe（欧洲）
+India（印度）
+Other-Overseas（其他境外地区）
+                     */
+                    void SetProductRegion(const std::string& _productRegion);
+
+                    /**
+                     * 判断参数 ProductRegion 是否已赋值
+                     * @return ProductRegion 是否已赋值
+                     */
+                    bool ProductRegionHasBeenSet() const;
+
+                    /**
+                     * 获取设备类型, 0-普通视频设备，1-NVR设备
+                     * @return ProductCate 设备类型, 0-普通视频设备，1-NVR设备
+                     */
+                    uint64_t GetProductCate() const;
+
+                    /**
+                     * 设置设备类型, 0-普通视频设备，1-NVR设备
+                     * @param ProductCate 设备类型, 0-普通视频设备，1-NVR设备
+                     */
+                    void SetProductCate(const uint64_t& _productCate);
+
+                    /**
+                     * 判断参数 ProductCate 是否已赋值
+                     * @return ProductCate 是否已赋值
+                     */
+                    bool ProductCateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,12 +225,6 @@ namespace TencentCloud
                      */
                     std::string m_productModel;
                     bool m_productModelHasBeenSet;
-
-                    /**
-                     * 设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）
-                     */
-                    std::vector<std::string> m_features;
-                    bool m_featuresHasBeenSet;
 
                     /**
                      * 产品名称
@@ -187,6 +241,12 @@ namespace TencentCloud
                     bool m_productDescriptionHasBeenSet;
 
                     /**
+                     * 设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）
+                     */
+                    std::vector<std::string> m_features;
+                    bool m_featuresHasBeenSet;
+
+                    /**
                      * 主芯片产商ID
                      */
                     std::string m_chipManufactureId;
@@ -197,6 +257,24 @@ namespace TencentCloud
                      */
                     std::string m_chipId;
                     bool m_chipIdHasBeenSet;
+
+                    /**
+                     * 地域：
+China-Mainland（中国大陆）
+China-Hong Kong, Macao and Taiwan（港澳台地区）
+America（美国）
+Europe（欧洲）
+India（印度）
+Other-Overseas（其他境外地区）
+                     */
+                    std::string m_productRegion;
+                    bool m_productRegionHasBeenSet;
+
+                    /**
+                     * 设备类型, 0-普通视频设备，1-NVR设备
+                     */
+                    uint64_t m_productCate;
+                    bool m_productCateHasBeenSet;
 
                 };
             }

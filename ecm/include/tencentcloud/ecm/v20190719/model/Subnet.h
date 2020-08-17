@@ -303,6 +303,116 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取可用区名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneName 可用区名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZoneName() const;
+
+                    /**
+                     * 设置可用区名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneName 可用区名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneName(const std::string& _zoneName);
+
+                    /**
+                     * 判断参数 ZoneName 是否已赋值
+                     * @return ZoneName 是否已赋值
+                     */
+                    bool ZoneNameHasBeenSet() const;
+
+                    /**
+                     * 获取实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceCount 实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetInstanceCount() const;
+
+                    /**
+                     * 设置实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceCount 实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceCount(const uint64_t& _instanceCount);
+
+                    /**
+                     * 判断参数 InstanceCount 是否已赋值
+                     * @return InstanceCount 是否已赋值
+                     */
+                    bool InstanceCountHasBeenSet() const;
+
+                    /**
+                     * 获取VPC的 IPv4 CIDR。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcCidrBlock VPC的 IPv4 CIDR。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcCidrBlock() const;
+
+                    /**
+                     * 设置VPC的 IPv4 CIDR。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcCidrBlock VPC的 IPv4 CIDR。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcCidrBlock(const std::string& _vpcCidrBlock);
+
+                    /**
+                     * 判断参数 VpcCidrBlock 是否已赋值
+                     * @return VpcCidrBlock 是否已赋值
+                     */
+                    bool VpcCidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取VPC的 IPv6 CIDR。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcIpv6CidrBlock VPC的 IPv6 CIDR。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcIpv6CidrBlock() const;
+
+                    /**
+                     * 设置VPC的 IPv6 CIDR。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcIpv6CidrBlock VPC的 IPv6 CIDR。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcIpv6CidrBlock(const std::string& _vpcIpv6CidrBlock);
+
+                    /**
+                     * 判断参数 VpcIpv6CidrBlock 是否已赋值
+                     * @return VpcIpv6CidrBlock 是否已赋值
+                     */
+                    bool VpcIpv6CidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -389,6 +499,41 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 可用区名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneName;
+                    bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_instanceCount;
+                    bool m_instanceCountHasBeenSet;
+
+                    /**
+                     * VPC的 IPv4 CIDR。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcCidrBlock;
+                    bool m_vpcCidrBlockHasBeenSet;
+
+                    /**
+                     * VPC的 IPv6 CIDR。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcIpv6CidrBlock;
+                    bool m_vpcIpv6CidrBlockHasBeenSet;
+
+                    /**
+                     * 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }
