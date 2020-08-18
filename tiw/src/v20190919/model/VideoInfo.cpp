@@ -29,7 +29,9 @@ VideoInfo::VideoInfo() :
     m_videoUrlHasBeenSet(false),
     m_videoIdHasBeenSet(false),
     m_videoTypeHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_widthHasBeenSet(false),
+    m_heightHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,26 @@ CoreInternalOutcome VideoInfo::Deserialize(const Value &value)
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Width") && !value["Width"].IsNull())
+    {
+        if (!value["Width"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `VideoInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_width = value["Width"].GetInt64();
+        m_widthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Height") && !value["Height"].IsNull())
+    {
+        if (!value["Height"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `VideoInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_height = value["Height"].GetInt64();
+        m_heightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +209,22 @@ void VideoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_widthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Width";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_width, allocator);
+    }
+
+    if (m_heightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Height";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_height, allocator);
     }
 
 }
@@ -318,5 +356,37 @@ void VideoInfo::SetUserId(const string& _userId)
 bool VideoInfo::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+int64_t VideoInfo::GetWidth() const
+{
+    return m_width;
+}
+
+void VideoInfo::SetWidth(const int64_t& _width)
+{
+    m_width = _width;
+    m_widthHasBeenSet = true;
+}
+
+bool VideoInfo::WidthHasBeenSet() const
+{
+    return m_widthHasBeenSet;
+}
+
+int64_t VideoInfo::GetHeight() const
+{
+    return m_height;
+}
+
+void VideoInfo::SetHeight(const int64_t& _height)
+{
+    m_height = _height;
+    m_heightHasBeenSet = true;
+}
+
+bool VideoInfo::HeightHasBeenSet() const
+{
+    return m_heightHasBeenSet;
 }
 

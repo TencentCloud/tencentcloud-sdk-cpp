@@ -60,7 +60,12 @@ DCDBInstanceInfo::DCDBInstanceInfo() :
     m_lockerHasBeenSet(false),
     m_wanStatusHasBeenSet(false),
     m_isAuditSupportedHasBeenSet(false),
-    m_cpuHasBeenSet(false)
+    m_cpuHasBeenSet(false),
+    m_ipv6FlagHasBeenSet(false),
+    m_vipv6HasBeenSet(false),
+    m_wanVipv6HasBeenSet(false),
+    m_wanPortIpv6HasBeenSet(false),
+    m_wanStatusIpv6HasBeenSet(false)
 {
 }
 
@@ -469,6 +474,56 @@ CoreInternalOutcome DCDBInstanceInfo::Deserialize(const Value &value)
         m_cpuHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6Flag") && !value["Ipv6Flag"].IsNull())
+    {
+        if (!value["Ipv6Flag"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DCDBInstanceInfo.Ipv6Flag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6Flag = value["Ipv6Flag"].GetUint64();
+        m_ipv6FlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vipv6") && !value["Vipv6"].IsNull())
+    {
+        if (!value["Vipv6"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DCDBInstanceInfo.Vipv6` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vipv6 = string(value["Vipv6"].GetString());
+        m_vipv6HasBeenSet = true;
+    }
+
+    if (value.HasMember("WanVipv6") && !value["WanVipv6"].IsNull())
+    {
+        if (!value["WanVipv6"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DCDBInstanceInfo.WanVipv6` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wanVipv6 = string(value["WanVipv6"].GetString());
+        m_wanVipv6HasBeenSet = true;
+    }
+
+    if (value.HasMember("WanPortIpv6") && !value["WanPortIpv6"].IsNull())
+    {
+        if (!value["WanPortIpv6"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DCDBInstanceInfo.WanPortIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wanPortIpv6 = value["WanPortIpv6"].GetUint64();
+        m_wanPortIpv6HasBeenSet = true;
+    }
+
+    if (value.HasMember("WanStatusIpv6") && !value["WanStatusIpv6"].IsNull())
+    {
+        if (!value["WanStatusIpv6"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DCDBInstanceInfo.WanStatusIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wanStatusIpv6 = value["WanStatusIpv6"].GetUint64();
+        m_wanStatusIpv6HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -793,6 +848,46 @@ void DCDBInstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_ipv6FlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Flag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv6Flag, allocator);
+    }
+
+    if (m_vipv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Vipv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vipv6.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wanVipv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WanVipv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_wanVipv6.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wanPortIpv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WanPortIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wanPortIpv6, allocator);
+    }
+
+    if (m_wanStatusIpv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WanStatusIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wanStatusIpv6, allocator);
     }
 
 }
@@ -1420,5 +1515,85 @@ void DCDBInstanceInfo::SetCpu(const uint64_t& _cpu)
 bool DCDBInstanceInfo::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+uint64_t DCDBInstanceInfo::GetIpv6Flag() const
+{
+    return m_ipv6Flag;
+}
+
+void DCDBInstanceInfo::SetIpv6Flag(const uint64_t& _ipv6Flag)
+{
+    m_ipv6Flag = _ipv6Flag;
+    m_ipv6FlagHasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::Ipv6FlagHasBeenSet() const
+{
+    return m_ipv6FlagHasBeenSet;
+}
+
+string DCDBInstanceInfo::GetVipv6() const
+{
+    return m_vipv6;
+}
+
+void DCDBInstanceInfo::SetVipv6(const string& _vipv6)
+{
+    m_vipv6 = _vipv6;
+    m_vipv6HasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::Vipv6HasBeenSet() const
+{
+    return m_vipv6HasBeenSet;
+}
+
+string DCDBInstanceInfo::GetWanVipv6() const
+{
+    return m_wanVipv6;
+}
+
+void DCDBInstanceInfo::SetWanVipv6(const string& _wanVipv6)
+{
+    m_wanVipv6 = _wanVipv6;
+    m_wanVipv6HasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::WanVipv6HasBeenSet() const
+{
+    return m_wanVipv6HasBeenSet;
+}
+
+uint64_t DCDBInstanceInfo::GetWanPortIpv6() const
+{
+    return m_wanPortIpv6;
+}
+
+void DCDBInstanceInfo::SetWanPortIpv6(const uint64_t& _wanPortIpv6)
+{
+    m_wanPortIpv6 = _wanPortIpv6;
+    m_wanPortIpv6HasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::WanPortIpv6HasBeenSet() const
+{
+    return m_wanPortIpv6HasBeenSet;
+}
+
+uint64_t DCDBInstanceInfo::GetWanStatusIpv6() const
+{
+    return m_wanStatusIpv6;
+}
+
+void DCDBInstanceInfo::SetWanStatusIpv6(const uint64_t& _wanStatusIpv6)
+{
+    m_wanStatusIpv6 = _wanStatusIpv6;
+    m_wanStatusIpv6HasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::WanStatusIpv6HasBeenSet() const
+{
+    return m_wanStatusIpv6HasBeenSet;
 }
 

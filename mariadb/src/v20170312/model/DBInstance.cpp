@@ -60,7 +60,14 @@ DBInstance::DBInstance() :
     m_isAuditSupportedHasBeenSet(false),
     m_machineHasBeenSet(false),
     m_isEncryptSupportedHasBeenSet(false),
-    m_cpuHasBeenSet(false)
+    m_cpuHasBeenSet(false),
+    m_ipv6FlagHasBeenSet(false),
+    m_vipv6HasBeenSet(false),
+    m_wanVipv6HasBeenSet(false),
+    m_wanPortIpv6HasBeenSet(false),
+    m_wanStatusIpv6HasBeenSet(false),
+    m_dbEngineHasBeenSet(false),
+    m_dbVersionHasBeenSet(false)
 {
 }
 
@@ -459,6 +466,76 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_cpuHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6Flag") && !value["Ipv6Flag"].IsNull())
+    {
+        if (!value["Ipv6Flag"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.Ipv6Flag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6Flag = value["Ipv6Flag"].GetUint64();
+        m_ipv6FlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vipv6") && !value["Vipv6"].IsNull())
+    {
+        if (!value["Vipv6"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.Vipv6` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vipv6 = string(value["Vipv6"].GetString());
+        m_vipv6HasBeenSet = true;
+    }
+
+    if (value.HasMember("WanVipv6") && !value["WanVipv6"].IsNull())
+    {
+        if (!value["WanVipv6"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.WanVipv6` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wanVipv6 = string(value["WanVipv6"].GetString());
+        m_wanVipv6HasBeenSet = true;
+    }
+
+    if (value.HasMember("WanPortIpv6") && !value["WanPortIpv6"].IsNull())
+    {
+        if (!value["WanPortIpv6"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.WanPortIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wanPortIpv6 = value["WanPortIpv6"].GetUint64();
+        m_wanPortIpv6HasBeenSet = true;
+    }
+
+    if (value.HasMember("WanStatusIpv6") && !value["WanStatusIpv6"].IsNull())
+    {
+        if (!value["WanStatusIpv6"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.WanStatusIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wanStatusIpv6 = value["WanStatusIpv6"].GetUint64();
+        m_wanStatusIpv6HasBeenSet = true;
+    }
+
+    if (value.HasMember("DbEngine") && !value["DbEngine"].IsNull())
+    {
+        if (!value["DbEngine"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.DbEngine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbEngine = string(value["DbEngine"].GetString());
+        m_dbEngineHasBeenSet = true;
+    }
+
+    if (value.HasMember("DbVersion") && !value["DbVersion"].IsNull())
+    {
+        if (!value["DbVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.DbVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbVersion = string(value["DbVersion"].GetString());
+        m_dbVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -776,6 +853,62 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_ipv6FlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Flag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv6Flag, allocator);
+    }
+
+    if (m_vipv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Vipv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vipv6.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wanVipv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WanVipv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_wanVipv6.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wanPortIpv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WanPortIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wanPortIpv6, allocator);
+    }
+
+    if (m_wanStatusIpv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WanStatusIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wanStatusIpv6, allocator);
+    }
+
+    if (m_dbEngineHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DbEngine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_dbEngine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DbVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_dbVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1403,5 +1536,117 @@ void DBInstance::SetCpu(const int64_t& _cpu)
 bool DBInstance::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+uint64_t DBInstance::GetIpv6Flag() const
+{
+    return m_ipv6Flag;
+}
+
+void DBInstance::SetIpv6Flag(const uint64_t& _ipv6Flag)
+{
+    m_ipv6Flag = _ipv6Flag;
+    m_ipv6FlagHasBeenSet = true;
+}
+
+bool DBInstance::Ipv6FlagHasBeenSet() const
+{
+    return m_ipv6FlagHasBeenSet;
+}
+
+string DBInstance::GetVipv6() const
+{
+    return m_vipv6;
+}
+
+void DBInstance::SetVipv6(const string& _vipv6)
+{
+    m_vipv6 = _vipv6;
+    m_vipv6HasBeenSet = true;
+}
+
+bool DBInstance::Vipv6HasBeenSet() const
+{
+    return m_vipv6HasBeenSet;
+}
+
+string DBInstance::GetWanVipv6() const
+{
+    return m_wanVipv6;
+}
+
+void DBInstance::SetWanVipv6(const string& _wanVipv6)
+{
+    m_wanVipv6 = _wanVipv6;
+    m_wanVipv6HasBeenSet = true;
+}
+
+bool DBInstance::WanVipv6HasBeenSet() const
+{
+    return m_wanVipv6HasBeenSet;
+}
+
+uint64_t DBInstance::GetWanPortIpv6() const
+{
+    return m_wanPortIpv6;
+}
+
+void DBInstance::SetWanPortIpv6(const uint64_t& _wanPortIpv6)
+{
+    m_wanPortIpv6 = _wanPortIpv6;
+    m_wanPortIpv6HasBeenSet = true;
+}
+
+bool DBInstance::WanPortIpv6HasBeenSet() const
+{
+    return m_wanPortIpv6HasBeenSet;
+}
+
+uint64_t DBInstance::GetWanStatusIpv6() const
+{
+    return m_wanStatusIpv6;
+}
+
+void DBInstance::SetWanStatusIpv6(const uint64_t& _wanStatusIpv6)
+{
+    m_wanStatusIpv6 = _wanStatusIpv6;
+    m_wanStatusIpv6HasBeenSet = true;
+}
+
+bool DBInstance::WanStatusIpv6HasBeenSet() const
+{
+    return m_wanStatusIpv6HasBeenSet;
+}
+
+string DBInstance::GetDbEngine() const
+{
+    return m_dbEngine;
+}
+
+void DBInstance::SetDbEngine(const string& _dbEngine)
+{
+    m_dbEngine = _dbEngine;
+    m_dbEngineHasBeenSet = true;
+}
+
+bool DBInstance::DbEngineHasBeenSet() const
+{
+    return m_dbEngineHasBeenSet;
+}
+
+string DBInstance::GetDbVersion() const
+{
+    return m_dbVersion;
+}
+
+void DBInstance::SetDbVersion(const string& _dbVersion)
+{
+    m_dbVersion = _dbVersion;
+    m_dbVersionHasBeenSet = true;
+}
+
+bool DBInstance::DbVersionHasBeenSet() const
+{
+    return m_dbVersionHasBeenSet;
 }
 

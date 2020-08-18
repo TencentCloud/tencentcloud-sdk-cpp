@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool ProfileHasBeenSet() const;
 
+                    /**
+                     * 获取退款原因
+                     * @return RefundReason 退款原因
+                     */
+                    std::string GetRefundReason() const;
+
+                    /**
+                     * 设置退款原因
+                     * @param RefundReason 退款原因
+                     */
+                    void SetRefundReason(const std::string& _refundReason);
+
+                    /**
+                     * 判断参数 RefundReason 是否已赋值
+                     * @return RefundReason 是否已赋值
+                     */
+                    bool RefundReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_profile;
                     bool m_profileHasBeenSet;
+
+                    /**
+                     * 退款原因
+                     */
+                    std::string m_refundReason;
+                    bool m_refundReasonHasBeenSet;
 
                 };
             }

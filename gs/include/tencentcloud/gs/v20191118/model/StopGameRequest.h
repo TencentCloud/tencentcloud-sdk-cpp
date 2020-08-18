@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取用于多人游戏，游戏主机用户ID
+                     * @return HostUserId 用于多人游戏，游戏主机用户ID
+                     */
+                    std::string GetHostUserId() const;
+
+                    /**
+                     * 设置用于多人游戏，游戏主机用户ID
+                     * @param HostUserId 用于多人游戏，游戏主机用户ID
+                     */
+                    void SetHostUserId(const std::string& _hostUserId);
+
+                    /**
+                     * 判断参数 HostUserId 是否已赋值
+                     * @return HostUserId 是否已赋值
+                     */
+                    bool HostUserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 用于多人游戏，游戏主机用户ID
+                     */
+                    std::string m_hostUserId;
+                    bool m_hostUserIdHasBeenSet;
 
                 };
             }

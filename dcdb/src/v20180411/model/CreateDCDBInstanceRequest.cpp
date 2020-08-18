@@ -39,7 +39,8 @@ CreateDCDBInstanceRequest::CreateDCDBInstanceRequest() :
     m_voucherIdsHasBeenSet(false),
     m_securityGroupIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_ipv6FlagHasBeenSet(false)
+    m_ipv6FlagHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,21 @@ string CreateDCDBInstanceRequest::ToJsonString() const
         string key = "Ipv6Flag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ipv6Flag, allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -450,6 +466,22 @@ void CreateDCDBInstanceRequest::SetIpv6Flag(const int64_t& _ipv6Flag)
 bool CreateDCDBInstanceRequest::Ipv6FlagHasBeenSet() const
 {
     return m_ipv6FlagHasBeenSet;
+}
+
+vector<ResourceTag> CreateDCDBInstanceRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateDCDBInstanceRequest::SetResourceTags(const vector<ResourceTag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateDCDBInstanceRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

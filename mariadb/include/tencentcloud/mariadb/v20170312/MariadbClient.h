@@ -79,6 +79,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeSqlLogsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/FlushBinlogRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/FlushBinlogResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/InitDBInstancesRequest.h>
@@ -203,6 +205,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUpgradePriceResponse> DescribeUpgradePriceOutcome;
                 typedef std::future<DescribeUpgradePriceOutcome> DescribeUpgradePriceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeUpgradePriceRequest&, DescribeUpgradePriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradePriceAsyncHandler;
+                typedef Outcome<Error, Model::FlushBinlogResponse> FlushBinlogOutcome;
+                typedef std::future<FlushBinlogOutcome> FlushBinlogOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::FlushBinlogRequest&, FlushBinlogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlushBinlogAsyncHandler;
                 typedef Outcome<Error, Model::GrantAccountPrivilegesResponse> GrantAccountPrivilegesOutcome;
                 typedef std::future<GrantAccountPrivilegesOutcome> GrantAccountPrivilegesOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::GrantAccountPrivilegesRequest&, GrantAccountPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GrantAccountPrivilegesAsyncHandler;
@@ -499,6 +504,15 @@ namespace TencentCloud
                 DescribeUpgradePriceOutcome DescribeUpgradePrice(const Model::DescribeUpgradePriceRequest &request);
                 void DescribeUpgradePriceAsync(const Model::DescribeUpgradePriceRequest& request, const DescribeUpgradePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUpgradePriceOutcomeCallable DescribeUpgradePriceCallable(const Model::DescribeUpgradePriceRequest& request);
+
+                /**
+                 *相当于在mysqld中执行flush logs，完成切分的binlog将展示在实例控制台binlog列表里。
+                 * @param req FlushBinlogRequest
+                 * @return FlushBinlogOutcome
+                 */
+                FlushBinlogOutcome FlushBinlog(const Model::FlushBinlogRequest &request);
+                void FlushBinlogAsync(const Model::FlushBinlogRequest& request, const FlushBinlogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FlushBinlogOutcomeCallable FlushBinlogCallable(const Model::FlushBinlogRequest& request);
 
                 /**
                  *本接口（GrantAccountPrivileges）用于给云数据库账号赋权。

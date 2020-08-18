@@ -39,6 +39,8 @@
 #include <tencentcloud/cfs/v20190719/model/DeleteMountTargetResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAvailableZoneInfoRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAvailableZoneInfoResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemClientsRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemClientsResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemsRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemsResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeCfsPGroupsRequest.h>
@@ -99,6 +101,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAvailableZoneInfoResponse> DescribeAvailableZoneInfoOutcome;
                 typedef std::future<DescribeAvailableZoneInfoOutcome> DescribeAvailableZoneInfoOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeAvailableZoneInfoRequest&, DescribeAvailableZoneInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableZoneInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCfsFileSystemClientsResponse> DescribeCfsFileSystemClientsOutcome;
+                typedef std::future<DescribeCfsFileSystemClientsOutcome> DescribeCfsFileSystemClientsOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DescribeCfsFileSystemClientsRequest&, DescribeCfsFileSystemClientsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfsFileSystemClientsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCfsFileSystemsResponse> DescribeCfsFileSystemsOutcome;
                 typedef std::future<DescribeCfsFileSystemsOutcome> DescribeCfsFileSystemsOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeCfsFileSystemsRequest&, DescribeCfsFileSystemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfsFileSystemsAsyncHandler;
@@ -206,6 +211,15 @@ namespace TencentCloud
                 DescribeAvailableZoneInfoOutcome DescribeAvailableZoneInfo(const Model::DescribeAvailableZoneInfoRequest &request);
                 void DescribeAvailableZoneInfoAsync(const Model::DescribeAvailableZoneInfoRequest& request, const DescribeAvailableZoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAvailableZoneInfoOutcomeCallable DescribeAvailableZoneInfoCallable(const Model::DescribeAvailableZoneInfoRequest& request);
+
+                /**
+                 *查询挂载该文件系统的客户端。此功能需要客户端安装CFS监控插件。
+                 * @param req DescribeCfsFileSystemClientsRequest
+                 * @return DescribeCfsFileSystemClientsOutcome
+                 */
+                DescribeCfsFileSystemClientsOutcome DescribeCfsFileSystemClients(const Model::DescribeCfsFileSystemClientsRequest &request);
+                void DescribeCfsFileSystemClientsAsync(const Model::DescribeCfsFileSystemClientsRequest& request, const DescribeCfsFileSystemClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfsFileSystemClientsOutcomeCallable DescribeCfsFileSystemClientsCallable(const Model::DescribeCfsFileSystemClientsRequest& request);
 
                 /**
                  *本接口（DescribeCfsFileSystems）用于查询文件系统

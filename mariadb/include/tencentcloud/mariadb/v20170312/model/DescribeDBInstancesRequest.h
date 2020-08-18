@@ -312,6 +312,24 @@ namespace TencentCloud
                      */
                     bool ExclusterIdsHasBeenSet() const;
 
+                    /**
+                     * 获取按标签key查询
+                     * @return TagKeys 按标签key查询
+                     */
+                    std::vector<std::string> GetTagKeys() const;
+
+                    /**
+                     * 设置按标签key查询
+                     * @param TagKeys 按标签key查询
+                     */
+                    void SetTagKeys(const std::vector<std::string>& _tagKeys);
+
+                    /**
+                     * 判断参数 TagKeys 是否已赋值
+                     * @return TagKeys 是否已赋值
+                     */
+                    bool TagKeysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,6 +421,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_exclusterIds;
                     bool m_exclusterIdsHasBeenSet;
+
+                    /**
+                     * 按标签key查询
+                     */
+                    std::vector<std::string> m_tagKeys;
+                    bool m_tagKeysHasBeenSet;
 
                 };
             }

@@ -241,14 +241,14 @@ namespace TencentCloud
                     bool MinBitrateHasBeenSet() const;
 
                     /**
-                     * 获取帧率，可设置为30、45或60
-                     * @return Fps 帧率，可设置为30、45或60
+                     * 获取帧率，可设置为30、45、60、90、120、144
+                     * @return Fps 帧率，可设置为30、45、60、90、120、144
                      */
                     uint64_t GetFps() const;
 
                     /**
-                     * 设置帧率，可设置为30、45或60
-                     * @param Fps 帧率，可设置为30、45或60
+                     * 设置帧率，可设置为30、45、60、90、120、144
+                     * @param Fps 帧率，可设置为30、45、60、90、120、144
                      */
                     void SetFps(const uint64_t& _fps);
 
@@ -293,6 +293,24 @@ namespace TencentCloud
                      * @return Optimization 是否已赋值
                      */
                     bool OptimizationHasBeenSet() const;
+
+                    /**
+                     * 获取用于多人游戏，游戏主机用户ID
+                     * @return HostUserId 用于多人游戏，游戏主机用户ID
+                     */
+                    std::string GetHostUserId() const;
+
+                    /**
+                     * 设置用于多人游戏，游戏主机用户ID
+                     * @param HostUserId 用于多人游戏，游戏主机用户ID
+                     */
+                    void SetHostUserId(const std::string& _hostUserId);
+
+                    /**
+                     * 判断参数 HostUserId 是否已赋值
+                     * @return HostUserId 是否已赋值
+                     */
+                    bool HostUserIdHasBeenSet() const;
 
                 private:
 
@@ -363,7 +381,7 @@ namespace TencentCloud
                     bool m_minBitrateHasBeenSet;
 
                     /**
-                     * 帧率，可设置为30、45或60
+                     * 帧率，可设置为30、45、60、90、120、144
                      */
                     uint64_t m_fps;
                     bool m_fpsHasBeenSet;
@@ -379,6 +397,12 @@ namespace TencentCloud
                      */
                     uint64_t m_optimization;
                     bool m_optimizationHasBeenSet;
+
+                    /**
+                     * 用于多人游戏，游戏主机用户ID
+                     */
+                    std::string m_hostUserId;
+                    bool m_hostUserIdHasBeenSet;
 
                 };
             }

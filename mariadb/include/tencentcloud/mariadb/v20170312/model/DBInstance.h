@@ -760,6 +760,160 @@ namespace TencentCloud
                      */
                     bool CpuHasBeenSet() const;
 
+                    /**
+                     * 获取实例IPv6标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6Flag 实例IPv6标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIpv6Flag() const;
+
+                    /**
+                     * 设置实例IPv6标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Ipv6Flag 实例IPv6标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpv6Flag(const uint64_t& _ipv6Flag);
+
+                    /**
+                     * 判断参数 Ipv6Flag 是否已赋值
+                     * @return Ipv6Flag 是否已赋值
+                     */
+                    bool Ipv6FlagHasBeenSet() const;
+
+                    /**
+                     * 获取内网IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Vipv6 内网IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVipv6() const;
+
+                    /**
+                     * 设置内网IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Vipv6 内网IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVipv6(const std::string& _vipv6);
+
+                    /**
+                     * 判断参数 Vipv6 是否已赋值
+                     * @return Vipv6 是否已赋值
+                     */
+                    bool Vipv6HasBeenSet() const;
+
+                    /**
+                     * 获取外网IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WanVipv6 外网IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWanVipv6() const;
+
+                    /**
+                     * 设置外网IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WanVipv6 外网IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWanVipv6(const std::string& _wanVipv6);
+
+                    /**
+                     * 判断参数 WanVipv6 是否已赋值
+                     * @return WanVipv6 是否已赋值
+                     */
+                    bool WanVipv6HasBeenSet() const;
+
+                    /**
+                     * 获取外网IPv6端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WanPortIpv6 外网IPv6端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetWanPortIpv6() const;
+
+                    /**
+                     * 设置外网IPv6端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WanPortIpv6 外网IPv6端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWanPortIpv6(const uint64_t& _wanPortIpv6);
+
+                    /**
+                     * 判断参数 WanPortIpv6 是否已赋值
+                     * @return WanPortIpv6 是否已赋值
+                     */
+                    bool WanPortIpv6HasBeenSet() const;
+
+                    /**
+                     * 获取外网IPv6状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WanStatusIpv6 外网IPv6状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetWanStatusIpv6() const;
+
+                    /**
+                     * 设置外网IPv6状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WanStatusIpv6 外网IPv6状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWanStatusIpv6(const uint64_t& _wanStatusIpv6);
+
+                    /**
+                     * 判断参数 WanStatusIpv6 是否已赋值
+                     * @return WanStatusIpv6 是否已赋值
+                     */
+                    bool WanStatusIpv6HasBeenSet() const;
+
+                    /**
+                     * 获取数据库引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbEngine 数据库引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDbEngine() const;
+
+                    /**
+                     * 设置数据库引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DbEngine 数据库引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDbEngine(const std::string& _dbEngine);
+
+                    /**
+                     * 判断参数 DbEngine 是否已赋值
+                     * @return DbEngine 是否已赋值
+                     */
+                    bool DbEngineHasBeenSet() const;
+
+                    /**
+                     * 获取数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbVersion 数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDbVersion() const;
+
+                    /**
+                     * 设置数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DbVersion 数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDbVersion(const std::string& _dbVersion);
+
+                    /**
+                     * 判断参数 DbVersion 是否已赋值
+                     * @return DbVersion 是否已赋值
+                     */
+                    bool DbVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -998,6 +1152,55 @@ namespace TencentCloud
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
+
+                    /**
+                     * 实例IPv6标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ipv6Flag;
+                    bool m_ipv6FlagHasBeenSet;
+
+                    /**
+                     * 内网IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vipv6;
+                    bool m_vipv6HasBeenSet;
+
+                    /**
+                     * 外网IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wanVipv6;
+                    bool m_wanVipv6HasBeenSet;
+
+                    /**
+                     * 外网IPv6端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_wanPortIpv6;
+                    bool m_wanPortIpv6HasBeenSet;
+
+                    /**
+                     * 外网IPv6状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_wanStatusIpv6;
+                    bool m_wanStatusIpv6HasBeenSet;
+
+                    /**
+                     * 数据库引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbEngine;
+                    bool m_dbEngineHasBeenSet;
+
+                    /**
+                     * 数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbVersion;
+                    bool m_dbVersionHasBeenSet;
 
                 };
             }

@@ -53,6 +53,8 @@
 #include <tencentcloud/iotcloud/v20180614/model/DeleteProductResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DeleteTopicRuleRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DeleteTopicRuleResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeAllDevicesRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeAllDevicesResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceClientKeyRequest.h>
@@ -162,6 +164,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteTopicRuleResponse> DeleteTopicRuleOutcome;
                 typedef std::future<DeleteTopicRuleOutcome> DeleteTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DeleteTopicRuleRequest&, DeleteTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicRuleAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAllDevicesResponse> DescribeAllDevicesOutcome;
+                typedef std::future<DescribeAllDevicesOutcome> DescribeAllDevicesOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeAllDevicesRequest&, DescribeAllDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllDevicesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
                 typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
@@ -376,6 +381,15 @@ namespace TencentCloud
                 DeleteTopicRuleOutcomeCallable DeleteTopicRuleCallable(const Model::DeleteTopicRuleRequest& request);
 
                 /**
+                 *查询所有设备列表
+                 * @param req DescribeAllDevicesRequest
+                 * @return DescribeAllDevicesOutcome
+                 */
+                DescribeAllDevicesOutcome DescribeAllDevices(const Model::DescribeAllDevicesRequest &request);
+                void DescribeAllDevicesAsync(const Model::DescribeAllDevicesRequest& request, const DescribeAllDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllDevicesOutcomeCallable DescribeAllDevicesCallable(const Model::DescribeAllDevicesRequest& request);
+
+                /**
                  *本接口（DescribeDevice）用于查看设备信息
                  * @param req DescribeDeviceRequest
                  * @return DescribeDeviceOutcome
@@ -412,7 +426,7 @@ namespace TencentCloud
                 DescribeDevicesOutcomeCallable DescribeDevicesCallable(const Model::DescribeDevicesRequest& request);
 
                 /**
-                 *获取lora类型设备的详细信息
+                 *获取lora类型设备的详细信息 
                  * @param req DescribeLoraDeviceRequest
                  * @return DescribeLoraDeviceOutcome
                  */

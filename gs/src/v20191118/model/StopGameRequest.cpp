@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 StopGameRequest::StopGameRequest() :
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_hostUserIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string StopGameRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostUserIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HostUserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_hostUserId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void StopGameRequest::SetUserId(const string& _userId)
 bool StopGameRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string StopGameRequest::GetHostUserId() const
+{
+    return m_hostUserId;
+}
+
+void StopGameRequest::SetHostUserId(const string& _hostUserId)
+{
+    m_hostUserId = _hostUserId;
+    m_hostUserIdHasBeenSet = true;
+}
+
+bool StopGameRequest::HostUserIdHasBeenSet() const
+{
+    return m_hostUserIdHasBeenSet;
 }
 
 

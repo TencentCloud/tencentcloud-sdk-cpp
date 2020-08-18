@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mariadb/v20170312/model/ResourceTag.h>
 
 
 namespace TencentCloud
@@ -342,6 +343,24 @@ namespace TencentCloud
                      */
                     bool Ipv6FlagHasBeenSet() const;
 
+                    /**
+                     * 获取标签键值对数组
+                     * @return ResourceTags 标签键值对数组
+                     */
+                    std::vector<ResourceTag> GetResourceTags() const;
+
+                    /**
+                     * 设置标签键值对数组
+                     * @param ResourceTags 标签键值对数组
+                     */
+                    void SetResourceTags(const std::vector<ResourceTag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -442,6 +461,12 @@ namespace TencentCloud
                      */
                     int64_t m_ipv6Flag;
                     bool m_ipv6FlagHasBeenSet;
+
+                    /**
+                     * 标签键值对数组
+                     */
+                    std::vector<ResourceTag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

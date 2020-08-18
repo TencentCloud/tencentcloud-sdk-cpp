@@ -384,6 +384,49 @@ CfsClient::DescribeAvailableZoneInfoOutcomeCallable CfsClient::DescribeAvailable
     return task->get_future();
 }
 
+CfsClient::DescribeCfsFileSystemClientsOutcome CfsClient::DescribeCfsFileSystemClients(const DescribeCfsFileSystemClientsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfsFileSystemClients");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfsFileSystemClientsResponse rsp = DescribeCfsFileSystemClientsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfsFileSystemClientsOutcome(rsp);
+        else
+            return DescribeCfsFileSystemClientsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfsFileSystemClientsOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DescribeCfsFileSystemClientsAsync(const DescribeCfsFileSystemClientsRequest& request, const DescribeCfsFileSystemClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCfsFileSystemClients(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::DescribeCfsFileSystemClientsOutcomeCallable CfsClient::DescribeCfsFileSystemClientsCallable(const DescribeCfsFileSystemClientsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCfsFileSystemClientsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCfsFileSystemClients(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfsClient::DescribeCfsFileSystemsOutcome CfsClient::DescribeCfsFileSystems(const DescribeCfsFileSystemsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCfsFileSystems");

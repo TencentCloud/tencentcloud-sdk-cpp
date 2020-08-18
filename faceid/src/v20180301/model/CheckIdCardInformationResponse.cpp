@@ -35,7 +35,8 @@ CheckIdCardInformationResponse::CheckIdCardInformationResponse() :
     m_addressHasBeenSet(false),
     m_idNumHasBeenSet(false),
     m_portraitHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+    m_warningsHasBeenSet(false),
+    m_qualityHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
         m_warningsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Quality") && !rsp["Quality"].IsNull())
+    {
+        if (!rsp["Quality"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `Quality` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_quality = rsp["Quality"].GetDouble();
+        m_qualityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +307,16 @@ string CheckIdCardInformationResponse::GetWarnings() const
 bool CheckIdCardInformationResponse::WarningsHasBeenSet() const
 {
     return m_warningsHasBeenSet;
+}
+
+double CheckIdCardInformationResponse::GetQuality() const
+{
+    return m_quality;
+}
+
+bool CheckIdCardInformationResponse::QualityHasBeenSet() const
+{
+    return m_qualityHasBeenSet;
 }
 
 

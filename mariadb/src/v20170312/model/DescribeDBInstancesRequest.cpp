@@ -38,7 +38,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_originSerialIdsHasBeenSet(false),
     m_isFilterExclusterHasBeenSet(false),
     m_exclusterTypeHasBeenSet(false),
-    m_exclusterIdsHasBeenSet(false)
+    m_exclusterIdsHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,19 @@ string DescribeDBInstancesRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_exclusterIds.begin(); itr != m_exclusterIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagKeysHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagKeys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagKeys.begin(); itr != m_tagKeys.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -435,6 +449,22 @@ void DescribeDBInstancesRequest::SetExclusterIds(const vector<string>& _excluste
 bool DescribeDBInstancesRequest::ExclusterIdsHasBeenSet() const
 {
     return m_exclusterIdsHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetTagKeys() const
+{
+    return m_tagKeys;
+}
+
+void DescribeDBInstancesRequest::SetTagKeys(const vector<string>& _tagKeys)
+{
+    m_tagKeys = _tagKeys;
+    m_tagKeysHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::TagKeysHasBeenSet() const
+{
+    return m_tagKeysHasBeenSet;
 }
 
 

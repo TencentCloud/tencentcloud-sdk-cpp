@@ -19,9 +19,10 @@ set(cfs_public_header
   )
 
 set(cfs_public_header_model
-  include/tencentcloud/cfs/v20190719/model/DeleteCfsFileSystemRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsFileSystemResponse.h
+  include/tencentcloud/cfs/v20190719/model/AvailableZone.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsRuleRequest.h
+  include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemsRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteMountTargetRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsRuleRequest.h
   include/tencentcloud/cfs/v20190719/model/PGroup.h
@@ -29,19 +30,21 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemNameResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemNameRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsPGroupsResponse.h
-  include/tencentcloud/cfs/v20190719/model/UpdateCfsPGroupRequest.h
+  include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemClientsResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteMountTargetResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeMountTargetsResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsRuleResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsRuleRequest.h
+  include/tencentcloud/cfs/v20190719/model/UpdateCfsPGroupRequest.h
   include/tencentcloud/cfs/v20190719/model/MountInfo.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsRuleResponse.h
+  include/tencentcloud/cfs/v20190719/model/FileSystemClient.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemsResponse.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsFileSystemResponse.h
   include/tencentcloud/cfs/v20190719/model/FileSystemInfo.h
   include/tencentcloud/cfs/v20190719/model/TagInfo.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsPGroupsRequest.h
-  include/tencentcloud/cfs/v20190719/model/AvailableZone.h
+  include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemClientsRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsPGroupRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsPGroupResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemSizeLimitResponse.h
@@ -63,7 +66,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DeleteCfsPGroupRequest.h
   include/tencentcloud/cfs/v20190719/model/AvailableType.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemSizeLimitRequest.h
-  include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemsRequest.h
+  include/tencentcloud/cfs/v20190719/model/DeleteCfsFileSystemRequest.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsPGroupResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsRulesResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemPGroupResponse.h
@@ -71,9 +74,10 @@ set(cfs_public_header_model
 
 set(cfs_src
   src/v20190719/CfsClient.cpp
-  src/v20190719/model/DeleteCfsFileSystemRequest.cpp
   src/v20190719/model/DeleteCfsFileSystemResponse.cpp
+  src/v20190719/model/AvailableZone.cpp
   src/v20190719/model/UpdateCfsRuleRequest.cpp
+  src/v20190719/model/DescribeCfsFileSystemsRequest.cpp
   src/v20190719/model/DeleteMountTargetRequest.cpp
   src/v20190719/model/CreateCfsRuleRequest.cpp
   src/v20190719/model/PGroup.cpp
@@ -81,19 +85,21 @@ set(cfs_src
   src/v20190719/model/UpdateCfsFileSystemNameResponse.cpp
   src/v20190719/model/UpdateCfsFileSystemNameRequest.cpp
   src/v20190719/model/DescribeCfsPGroupsResponse.cpp
-  src/v20190719/model/UpdateCfsPGroupRequest.cpp
+  src/v20190719/model/DescribeCfsFileSystemClientsResponse.cpp
   src/v20190719/model/DeleteMountTargetResponse.cpp
   src/v20190719/model/DescribeMountTargetsResponse.cpp
   src/v20190719/model/DeleteCfsRuleResponse.cpp
   src/v20190719/model/DeleteCfsRuleRequest.cpp
+  src/v20190719/model/UpdateCfsPGroupRequest.cpp
   src/v20190719/model/MountInfo.cpp
   src/v20190719/model/UpdateCfsRuleResponse.cpp
+  src/v20190719/model/FileSystemClient.cpp
   src/v20190719/model/DescribeCfsFileSystemsResponse.cpp
   src/v20190719/model/CreateCfsFileSystemResponse.cpp
   src/v20190719/model/FileSystemInfo.cpp
   src/v20190719/model/TagInfo.cpp
   src/v20190719/model/DescribeCfsPGroupsRequest.cpp
-  src/v20190719/model/AvailableZone.cpp
+  src/v20190719/model/DescribeCfsFileSystemClientsRequest.cpp
   src/v20190719/model/CreateCfsPGroupRequest.cpp
   src/v20190719/model/DeleteCfsPGroupResponse.cpp
   src/v20190719/model/UpdateCfsFileSystemSizeLimitResponse.cpp
@@ -115,7 +121,7 @@ set(cfs_src
   src/v20190719/model/DeleteCfsPGroupRequest.cpp
   src/v20190719/model/AvailableType.cpp
   src/v20190719/model/UpdateCfsFileSystemSizeLimitRequest.cpp
-  src/v20190719/model/DescribeCfsFileSystemsRequest.cpp
+  src/v20190719/model/DeleteCfsFileSystemRequest.cpp
   src/v20190719/model/UpdateCfsPGroupResponse.cpp
   src/v20190719/model/DescribeCfsRulesResponse.cpp
   src/v20190719/model/UpdateCfsFileSystemPGroupResponse.cpp

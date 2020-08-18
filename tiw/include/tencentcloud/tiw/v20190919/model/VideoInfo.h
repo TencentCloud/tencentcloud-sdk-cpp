@@ -210,6 +210,42 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取视频分辨率的宽
+                     * @return Width 视频分辨率的宽
+                     */
+                    int64_t GetWidth() const;
+
+                    /**
+                     * 设置视频分辨率的宽
+                     * @param Width 视频分辨率的宽
+                     */
+                    void SetWidth(const int64_t& _width);
+
+                    /**
+                     * 判断参数 Width 是否已赋值
+                     * @return Width 是否已赋值
+                     */
+                    bool WidthHasBeenSet() const;
+
+                    /**
+                     * 获取视频分辨率的高
+                     * @return Height 视频分辨率的高
+                     */
+                    int64_t GetHeight() const;
+
+                    /**
+                     * 设置视频分辨率的高
+                     * @param Height 视频分辨率的高
+                     */
+                    void SetHeight(const int64_t& _height);
+
+                    /**
+                     * 判断参数 Height 是否已赋值
+                     * @return Height 是否已赋值
+                     */
+                    bool HeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +300,18 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 视频分辨率的宽
+                     */
+                    int64_t m_width;
+                    bool m_widthHasBeenSet;
+
+                    /**
+                     * 视频分辨率的高
+                     */
+                    int64_t m_height;
+                    bool m_heightHasBeenSet;
 
                 };
             }

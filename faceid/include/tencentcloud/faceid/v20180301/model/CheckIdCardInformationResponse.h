@@ -171,6 +171,7 @@ namespace TencentCloud
 -9105 身份证框内遮挡告警，
 -9104 临时身份证告警，
 -9106 身份证 PS 告警。
+-8001 图片模糊告警
 多个会 |  隔开如 "-9101|-9106|-9104"
                      * @return Warnings 告警信息，当在Config中配置了告警信息会停止人像比对，Result返回错误（FailedOperation.OcrWarningOccurred）并有此告警信息，Code 告警码列表和释义：
 
@@ -180,6 +181,7 @@ namespace TencentCloud
 -9105 身份证框内遮挡告警，
 -9104 临时身份证告警，
 -9106 身份证 PS 告警。
+-8001 图片模糊告警
 多个会 |  隔开如 "-9101|-9106|-9104"
                      */
                     std::string GetWarnings() const;
@@ -189,6 +191,18 @@ namespace TencentCloud
                      * @return Warnings 是否已赋值
                      */
                     bool WarningsHasBeenSet() const;
+
+                    /**
+                     * 获取图片质量分数，当请求Config中配置图片模糊告警该参数才有意义，取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。
+                     * @return Quality 图片质量分数，当请求Config中配置图片模糊告警该参数才有意义，取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。
+                     */
+                    double GetQuality() const;
+
+                    /**
+                     * 判断参数 Quality 是否已赋值
+                     * @return Quality 是否已赋值
+                     */
+                    bool QualityHasBeenSet() const;
 
                 private:
 
@@ -261,10 +275,17 @@ namespace TencentCloud
 -9105 身份证框内遮挡告警，
 -9104 临时身份证告警，
 -9106 身份证 PS 告警。
+-8001 图片模糊告警
 多个会 |  隔开如 "-9101|-9106|-9104"
                      */
                     std::string m_warnings;
                     bool m_warningsHasBeenSet;
+
+                    /**
+                     * 图片质量分数，当请求Config中配置图片模糊告警该参数才有意义，取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。
+                     */
+                    double m_quality;
+                    bool m_qualityHasBeenSet;
 
                 };
             }

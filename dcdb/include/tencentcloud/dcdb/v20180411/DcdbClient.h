@@ -71,6 +71,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeShardSpecResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeSqlLogsRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeSqlLogsResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/FlushBinlogRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/FlushBinlogResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/GrantAccountPrivilegesRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/InitDCDBInstancesRequest.h>
@@ -177,6 +179,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSqlLogsResponse> DescribeSqlLogsOutcome;
                 typedef std::future<DescribeSqlLogsOutcome> DescribeSqlLogsOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeSqlLogsRequest&, DescribeSqlLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlLogsAsyncHandler;
+                typedef Outcome<Error, Model::FlushBinlogResponse> FlushBinlogOutcome;
+                typedef std::future<FlushBinlogOutcome> FlushBinlogOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::FlushBinlogRequest&, FlushBinlogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlushBinlogAsyncHandler;
                 typedef Outcome<Error, Model::GrantAccountPrivilegesResponse> GrantAccountPrivilegesOutcome;
                 typedef std::future<GrantAccountPrivilegesOutcome> GrantAccountPrivilegesOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::GrantAccountPrivilegesRequest&, GrantAccountPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GrantAccountPrivilegesAsyncHandler;
@@ -428,6 +433,15 @@ namespace TencentCloud
                 DescribeSqlLogsOutcome DescribeSqlLogs(const Model::DescribeSqlLogsRequest &request);
                 void DescribeSqlLogsAsync(const Model::DescribeSqlLogsRequest& request, const DescribeSqlLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSqlLogsOutcomeCallable DescribeSqlLogsCallable(const Model::DescribeSqlLogsRequest& request);
+
+                /**
+                 *相当于在所有分片的mysqld中执行flush logs，完成切分的binlog将展示在各个分片控制台binlog列表里。
+                 * @param req FlushBinlogRequest
+                 * @return FlushBinlogOutcome
+                 */
+                FlushBinlogOutcome FlushBinlog(const Model::FlushBinlogRequest &request);
+                void FlushBinlogAsync(const Model::FlushBinlogRequest& request, const FlushBinlogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FlushBinlogOutcomeCallable FlushBinlogCallable(const Model::FlushBinlogRequest& request);
 
                 /**
                  *本接口（GrantAccountPrivileges）用于给云数据库账号赋权。

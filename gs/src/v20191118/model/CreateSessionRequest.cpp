@@ -37,7 +37,8 @@ CreateSessionRequest::CreateSessionRequest() :
     m_minBitrateHasBeenSet(false),
     m_fpsHasBeenSet(false),
     m_userIpHasBeenSet(false),
-    m_optimizationHasBeenSet(false)
+    m_optimizationHasBeenSet(false),
+    m_hostUserIdHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,14 @@ string CreateSessionRequest::ToJsonString() const
         string key = "Optimization";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_optimization, allocator);
+    }
+
+    if (m_hostUserIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HostUserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_hostUserId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -390,6 +399,22 @@ void CreateSessionRequest::SetOptimization(const uint64_t& _optimization)
 bool CreateSessionRequest::OptimizationHasBeenSet() const
 {
     return m_optimizationHasBeenSet;
+}
+
+string CreateSessionRequest::GetHostUserId() const
+{
+    return m_hostUserId;
+}
+
+void CreateSessionRequest::SetHostUserId(const string& _hostUserId)
+{
+    m_hostUserId = _hostUserId;
+    m_hostUserIdHasBeenSet = true;
+}
+
+bool CreateSessionRequest::HostUserIdHasBeenSet() const
+{
+    return m_hostUserIdHasBeenSet;
 }
 
 

@@ -31,7 +31,8 @@ MigrateOrderRefundRequest::MigrateOrderRefundRequest() :
     m_refundAmtHasBeenSet(false),
     m_thirdChannelOrderIdHasBeenSet(false),
     m_payAmtHasBeenSet(false),
-    m_profileHasBeenSet(false)
+    m_profileHasBeenSet(false),
+    m_refundReasonHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string MigrateOrderRefundRequest::ToJsonString() const
         string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_refundReasonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RefundReason";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_refundReason.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +249,22 @@ void MigrateOrderRefundRequest::SetProfile(const string& _profile)
 bool MigrateOrderRefundRequest::ProfileHasBeenSet() const
 {
     return m_profileHasBeenSet;
+}
+
+string MigrateOrderRefundRequest::GetRefundReason() const
+{
+    return m_refundReason;
+}
+
+void MigrateOrderRefundRequest::SetRefundReason(const string& _refundReason)
+{
+    m_refundReason = _refundReason;
+    m_refundReasonHasBeenSet = true;
+}
+
+bool MigrateOrderRefundRequest::RefundReasonHasBeenSet() const
+{
+    return m_refundReasonHasBeenSet;
 }
 
 
