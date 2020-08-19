@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TKE_V20180525_MODEL_INSTANCEEXTRAARGS_H_
-#define TENCENTCLOUD_TKE_V20180525_MODEL_INSTANCEEXTRAARGS_H_
+#ifndef TENCENTCLOUD_EMR_V20190103_MODEL_HOSTVOLUMECONTEXT_H_
+#define TENCENTCLOUD_EMR_V20190103_MODEL_HOSTVOLUMECONTEXT_H_
 
 #include <string>
 #include <vector>
@@ -28,54 +28,54 @@
 
 namespace TencentCloud
 {
-    namespace Tke
+    namespace Emr
     {
-        namespace V20180525
+        namespace V20190103
         {
             namespace Model
             {
                 /**
-                * 节点自定义参数
+                * Pod HostPath挂载方式描述
                 */
-                class InstanceExtraArgs : public AbstractModel
+                class HostVolumeContext : public AbstractModel
                 {
                 public:
-                    InstanceExtraArgs();
-                    ~InstanceExtraArgs() = default;
+                    HostVolumeContext();
+                    ~HostVolumeContext() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取kubelet自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["root-dir=/var/lib/kubelet","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
+                     * 获取Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Kubelet kubelet自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["root-dir=/var/lib/kubelet","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
+                     * @return VolumePath Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<std::string> GetKubelet() const;
+                    std::string GetVolumePath() const;
 
                     /**
-                     * 设置kubelet自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["root-dir=/var/lib/kubelet","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
+                     * 设置Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Kubelet kubelet自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["root-dir=/var/lib/kubelet","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
+                     * @param VolumePath Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetKubelet(const std::vector<std::string>& _kubelet);
+                    void SetVolumePath(const std::string& _volumePath);
 
                     /**
-                     * 判断参数 Kubelet 是否已赋值
-                     * @return Kubelet 是否已赋值
+                     * 判断参数 VolumePath 是否已赋值
+                     * @return VolumePath 是否已赋值
                      */
-                    bool KubeletHasBeenSet() const;
+                    bool VolumePathHasBeenSet() const;
 
                 private:
 
                     /**
-                     * kubelet自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["root-dir=/var/lib/kubelet","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
+                     * Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<std::string> m_kubelet;
-                    bool m_kubeletHasBeenSet;
+                    std::string m_volumePath;
+                    bool m_volumePathHasBeenSet;
 
                 };
             }
@@ -83,4 +83,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TKE_V20180525_MODEL_INSTANCEEXTRAARGS_H_
+#endif // !TENCENTCLOUD_EMR_V20190103_MODEL_HOSTVOLUMECONTEXT_H_

@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool ProtocolsHasBeenSet() const;
 
                     /**
-                     * 获取存储类型。可选值有 SD 标准型存储、HP性能型存储
-                     * @return Type 存储类型。可选值有 SD 标准型存储、HP性能型存储
+                     * 获取存储类型。返回值中 SD 为标准型存储、HP 为性能型存储
+                     * @return Type 存储类型。返回值中 SD 为标准型存储、HP 为性能型存储
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置存储类型。可选值有 SD 标准型存储、HP性能型存储
-                     * @param Type 存储类型。可选值有 SD 标准型存储、HP性能型存储
+                     * 设置存储类型。返回值中 SD 为标准型存储、HP 为性能型存储
+                     * @param Type 存储类型。返回值中 SD 为标准型存储、HP 为性能型存储
                      */
                     void SetType(const std::string& _type);
 
@@ -82,6 +82,24 @@ namespace TencentCloud
                      * @return Type 是否已赋值
                      */
                     bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持预付费。返回值中 true 为支持、false 为不支持
+                     * @return Prepayment 是否支持预付费。返回值中 true 为支持、false 为不支持
+                     */
+                    bool GetPrepayment() const;
+
+                    /**
+                     * 设置是否支持预付费。返回值中 true 为支持、false 为不支持
+                     * @param Prepayment 是否支持预付费。返回值中 true 为支持、false 为不支持
+                     */
+                    void SetPrepayment(const bool& _prepayment);
+
+                    /**
+                     * 判断参数 Prepayment 是否已赋值
+                     * @return Prepayment 是否已赋值
+                     */
+                    bool PrepaymentHasBeenSet() const;
 
                 private:
 
@@ -92,10 +110,16 @@ namespace TencentCloud
                     bool m_protocolsHasBeenSet;
 
                     /**
-                     * 存储类型。可选值有 SD 标准型存储、HP性能型存储
+                     * 存储类型。返回值中 SD 为标准型存储、HP 为性能型存储
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 是否支持预付费。返回值中 true 为支持、false 为不支持
+                     */
+                    bool m_prepayment;
+                    bool m_prepaymentHasBeenSet;
 
                 };
             }

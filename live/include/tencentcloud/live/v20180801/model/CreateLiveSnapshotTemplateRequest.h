@@ -230,13 +230,25 @@ namespace TencentCloud
 
                     /**
                      * 获取Cos Bucket文件夹前缀。
+如不传，实际按默认值
+/{Year}-{Month}-{Day}
+生效
                      * @return CosPrefix Cos Bucket文件夹前缀。
+如不传，实际按默认值
+/{Year}-{Month}-{Day}
+生效
                      */
                     std::string GetCosPrefix() const;
 
                     /**
                      * 设置Cos Bucket文件夹前缀。
+如不传，实际按默认值
+/{Year}-{Month}-{Day}
+生效
                      * @param CosPrefix Cos Bucket文件夹前缀。
+如不传，实际按默认值
+/{Year}-{Month}-{Day}
+生效
                      */
                     void SetCosPrefix(const std::string& _cosPrefix);
 
@@ -248,13 +260,25 @@ namespace TencentCloud
 
                     /**
                      * 获取Cos 文件名称。
+如不传，实际按默认值
+{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}
+生效
                      * @return CosFileName Cos 文件名称。
+如不传，实际按默认值
+{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}
+生效
                      */
                     std::string GetCosFileName() const;
 
                     /**
                      * 设置Cos 文件名称。
+如不传，实际按默认值
+{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}
+生效
                      * @param CosFileName Cos 文件名称。
+如不传，实际按默认值
+{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}
+生效
                      */
                     void SetCosFileName(const std::string& _cosFileName);
 
@@ -328,12 +352,18 @@ namespace TencentCloud
 
                     /**
                      * Cos Bucket文件夹前缀。
+如不传，实际按默认值
+/{Year}-{Month}-{Day}
+生效
                      */
                     std::string m_cosPrefix;
                     bool m_cosPrefixHasBeenSet;
 
                     /**
                      * Cos 文件名称。
+如不传，实际按默认值
+{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}
+生效
                      */
                     std::string m_cosFileName;
                     bool m_cosFileNameHasBeenSet;

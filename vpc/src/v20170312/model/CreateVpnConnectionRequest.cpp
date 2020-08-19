@@ -31,7 +31,8 @@ CreateVpnConnectionRequest::CreateVpnConnectionRequest() :
     m_preShareKeyHasBeenSet(false),
     m_securityPolicyDatabasesHasBeenSet(false),
     m_iKEOptionsSpecificationHasBeenSet(false),
-    m_iPSECOptionsSpecificationHasBeenSet(false)
+    m_iPSECOptionsSpecificationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,21 @@ string CreateVpnConnectionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_iPSECOptionsSpecification.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -249,6 +265,22 @@ void CreateVpnConnectionRequest::SetIPSECOptionsSpecification(const IPSECOptions
 bool CreateVpnConnectionRequest::IPSECOptionsSpecificationHasBeenSet() const
 {
     return m_iPSECOptionsSpecificationHasBeenSet;
+}
+
+vector<Tag> CreateVpnConnectionRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateVpnConnectionRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateVpnConnectionRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

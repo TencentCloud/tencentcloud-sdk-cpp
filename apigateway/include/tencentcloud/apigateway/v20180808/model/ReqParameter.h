@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取API 的前端参数位置，如 head。目前支持 head、query、path。
-                     * @return Position API 的前端参数位置，如 head。目前支持 head、query、path。
+                     * 获取API 的前端参数位置，如 header。目前支持 header、query、path。
+                     * @return Position API 的前端参数位置，如 header。目前支持 header、query、path。
                      */
                     std::string GetPosition() const;
 
                     /**
-                     * 设置API 的前端参数位置，如 head。目前支持 head、query、path。
-                     * @param Position API 的前端参数位置，如 head。目前支持 head、query、path。
+                     * 设置API 的前端参数位置，如 header。目前支持 header、query、path。
+                     * @param Position API 的前端参数位置，如 header。目前支持 header、query、path。
                      */
                     void SetPosition(const std::string& _position);
 
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * API 的前端参数位置，如 head。目前支持 head、query、path。
+                     * API 的前端参数位置，如 header。目前支持 header、query、path。
                      */
                     std::string m_position;
                     bool m_positionHasBeenSet;

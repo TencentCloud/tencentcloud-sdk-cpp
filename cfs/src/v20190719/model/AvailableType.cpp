@@ -23,7 +23,8 @@ using namespace std;
 
 AvailableType::AvailableType() :
     m_protocolsHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_prepaymentHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome AvailableType::Deserialize(const Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("Prepayment") && !value["Prepayment"].IsNull())
+    {
+        if (!value["Prepayment"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `AvailableType.Prepayment` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_prepayment = value["Prepayment"].GetBool();
+        m_prepaymentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -90,6 +101,14 @@ void AvailableType::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_prepaymentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Prepayment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_prepayment, allocator);
     }
 
 }
@@ -125,5 +144,21 @@ void AvailableType::SetType(const string& _type)
 bool AvailableType::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+bool AvailableType::GetPrepayment() const
+{
+    return m_prepayment;
+}
+
+void AvailableType::SetPrepayment(const bool& _prepayment)
+{
+    m_prepayment = _prepayment;
+    m_prepaymentHasBeenSet = true;
+}
+
+bool AvailableType::PrepaymentHasBeenSet() const
+{
+    return m_prepaymentHasBeenSet;
 }
 

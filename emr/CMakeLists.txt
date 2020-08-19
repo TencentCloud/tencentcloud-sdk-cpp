@@ -28,12 +28,14 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/Resource.h
   include/tencentcloud/emr/v20190103/model/TerminateInstanceRequest.h
+  include/tencentcloud/emr/v20190103/model/PodVolume.h
   include/tencentcloud/emr/v20190103/model/TerminateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/CreateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/PodSpec.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/TerminateTasksRequest.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceResponse.h
+  include/tencentcloud/emr/v20190103/model/HostVolumeContext.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h
   include/tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h
   include/tencentcloud/emr/v20190103/model/CreateInstanceRequest.h
@@ -56,6 +58,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/NodeHardwareInfo.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/NewResourceSpec.h
+  include/tencentcloud/emr/v20190103/model/PersistentVolumeContext.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/CdbInfo.h
   include/tencentcloud/emr/v20190103/model/ScaleOutInstanceRequest.h
@@ -72,12 +75,14 @@ set(emr_src
   src/v20190103/model/InquiryPriceCreateInstanceRequest.cpp
   src/v20190103/model/Resource.cpp
   src/v20190103/model/TerminateInstanceRequest.cpp
+  src/v20190103/model/PodVolume.cpp
   src/v20190103/model/TerminateInstanceResponse.cpp
   src/v20190103/model/CreateInstanceResponse.cpp
   src/v20190103/model/PodSpec.cpp
   src/v20190103/model/InquiryPriceRenewInstanceResponse.cpp
   src/v20190103/model/TerminateTasksRequest.cpp
   src/v20190103/model/InquiryPriceCreateInstanceResponse.cpp
+  src/v20190103/model/HostVolumeContext.cpp
   src/v20190103/model/DescribeClusterNodesRequest.cpp
   src/v20190103/model/PreExecuteFileSettings.cpp
   src/v20190103/model/CreateInstanceRequest.cpp
@@ -100,6 +105,7 @@ set(emr_src
   src/v20190103/model/NodeHardwareInfo.cpp
   src/v20190103/model/InquiryPriceUpdateInstanceResponse.cpp
   src/v20190103/model/NewResourceSpec.cpp
+  src/v20190103/model/PersistentVolumeContext.cpp
   src/v20190103/model/InquiryPriceRenewInstanceRequest.cpp
   src/v20190103/model/CdbInfo.cpp
   src/v20190103/model/ScaleOutInstanceRequest.cpp

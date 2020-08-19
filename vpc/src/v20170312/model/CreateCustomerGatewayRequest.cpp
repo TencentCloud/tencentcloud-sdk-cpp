@@ -25,7 +25,8 @@ using namespace std;
 
 CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() :
     m_customerGatewayNameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
+    m_ipAddressHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,21 @@ string CreateCustomerGatewayRequest::ToJsonString() const
         string key = "IpAddress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_ipAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -90,6 +106,22 @@ void CreateCustomerGatewayRequest::SetIpAddress(const string& _ipAddress)
 bool CreateCustomerGatewayRequest::IpAddressHasBeenSet() const
 {
     return m_ipAddressHasBeenSet;
+}
+
+vector<Tag> CreateCustomerGatewayRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateCustomerGatewayRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateCustomerGatewayRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

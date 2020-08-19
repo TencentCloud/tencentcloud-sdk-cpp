@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/PodVolume.h>
 
 
 namespace TencentCloud
@@ -137,14 +138,14 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。
-                     * @return DataVolumes 资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。
+                     * 获取资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。弃用
+                     * @return DataVolumes 资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。弃用
                      */
                     std::vector<std::string> GetDataVolumes() const;
 
                     /**
-                     * 设置资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。
-                     * @param DataVolumes 资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。
+                     * 设置资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。弃用
+                     * @param DataVolumes 资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。弃用
                      */
                     void SetDataVolumes(const std::vector<std::string>& _dataVolumes);
 
@@ -153,6 +154,42 @@ namespace TencentCloud
                      * @return DataVolumes 是否已赋值
                      */
                     bool DataVolumesHasBeenSet() const;
+
+                    /**
+                     * 获取Eks集群-CPU类型，当前支持"intel"和"amd"
+                     * @return CpuType Eks集群-CPU类型，当前支持"intel"和"amd"
+                     */
+                    std::string GetCpuType() const;
+
+                    /**
+                     * 设置Eks集群-CPU类型，当前支持"intel"和"amd"
+                     * @param CpuType Eks集群-CPU类型，当前支持"intel"和"amd"
+                     */
+                    void SetCpuType(const std::string& _cpuType);
+
+                    /**
+                     * 判断参数 CpuType 是否已赋值
+                     * @return CpuType 是否已赋值
+                     */
+                    bool CpuTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Pod节点数据目录挂载信息。
+                     * @return PodVolumes Pod节点数据目录挂载信息。
+                     */
+                    std::vector<PodVolume> GetPodVolumes() const;
+
+                    /**
+                     * 设置Pod节点数据目录挂载信息。
+                     * @param PodVolumes Pod节点数据目录挂载信息。
+                     */
+                    void SetPodVolumes(const std::vector<PodVolume>& _podVolumes);
+
+                    /**
+                     * 判断参数 PodVolumes 是否已赋值
+                     * @return PodVolumes 是否已赋值
+                     */
+                    bool PodVolumesHasBeenSet() const;
 
                 private:
 
@@ -187,10 +224,22 @@ namespace TencentCloud
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。
+                     * 资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。弃用
                      */
                     std::vector<std::string> m_dataVolumes;
                     bool m_dataVolumesHasBeenSet;
+
+                    /**
+                     * Eks集群-CPU类型，当前支持"intel"和"amd"
+                     */
+                    std::string m_cpuType;
+                    bool m_cpuTypeHasBeenSet;
+
+                    /**
+                     * Pod节点数据目录挂载信息。
+                     */
+                    std::vector<PodVolume> m_podVolumes;
+                    bool m_podVolumesHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ CreateLiveCallbackTemplateRequest::CreateLiveCallbackTemplateRequest() :
     m_recordNotifyUrlHasBeenSet(false),
     m_snapshotNotifyUrlHasBeenSet(false),
     m_pornCensorshipNotifyUrlHasBeenSet(false),
-    m_callbackKeyHasBeenSet(false)
+    m_callbackKeyHasBeenSet(false),
+    m_streamMixNotifyUrlHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string CreateLiveCallbackTemplateRequest::ToJsonString() const
         string key = "CallbackKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_callbackKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_streamMixNotifyUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StreamMixNotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_streamMixNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +249,22 @@ void CreateLiveCallbackTemplateRequest::SetCallbackKey(const string& _callbackKe
 bool CreateLiveCallbackTemplateRequest::CallbackKeyHasBeenSet() const
 {
     return m_callbackKeyHasBeenSet;
+}
+
+string CreateLiveCallbackTemplateRequest::GetStreamMixNotifyUrl() const
+{
+    return m_streamMixNotifyUrl;
+}
+
+void CreateLiveCallbackTemplateRequest::SetStreamMixNotifyUrl(const string& _streamMixNotifyUrl)
+{
+    m_streamMixNotifyUrl = _streamMixNotifyUrl;
+    m_streamMixNotifyUrlHasBeenSet = true;
+}
+
+bool CreateLiveCallbackTemplateRequest::StreamMixNotifyUrlHasBeenSet() const
+{
+    return m_streamMixNotifyUrlHasBeenSet;
 }
 
 

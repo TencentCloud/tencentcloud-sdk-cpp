@@ -209,6 +209,60 @@ namespace TencentCloud
                      */
                     bool KubeProxyModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启审计开关
+                     * @return AuditEnabled 是否开启审计开关
+                     */
+                    bool GetAuditEnabled() const;
+
+                    /**
+                     * 设置是否开启审计开关
+                     * @param AuditEnabled 是否开启审计开关
+                     */
+                    void SetAuditEnabled(const bool& _auditEnabled);
+
+                    /**
+                     * 判断参数 AuditEnabled 是否已赋值
+                     * @return AuditEnabled 是否已赋值
+                     */
+                    bool AuditEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取审计日志上传到的logset日志集
+                     * @return AuditLogsetId 审计日志上传到的logset日志集
+                     */
+                    std::string GetAuditLogsetId() const;
+
+                    /**
+                     * 设置审计日志上传到的logset日志集
+                     * @param AuditLogsetId 审计日志上传到的logset日志集
+                     */
+                    void SetAuditLogsetId(const std::string& _auditLogsetId);
+
+                    /**
+                     * 判断参数 AuditLogsetId 是否已赋值
+                     * @return AuditLogsetId 是否已赋值
+                     */
+                    bool AuditLogsetIdHasBeenSet() const;
+
+                    /**
+                     * 获取审计日志上传到的topic
+                     * @return AuditLogTopicId 审计日志上传到的topic
+                     */
+                    std::string GetAuditLogTopicId() const;
+
+                    /**
+                     * 设置审计日志上传到的topic
+                     * @param AuditLogTopicId 审计日志上传到的topic
+                     */
+                    void SetAuditLogTopicId(const std::string& _auditLogTopicId);
+
+                    /**
+                     * 判断参数 AuditLogTopicId 是否已赋值
+                     * @return AuditLogTopicId 是否已赋值
+                     */
+                    bool AuditLogTopicIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +318,24 @@ namespace TencentCloud
                      */
                     std::string m_kubeProxyMode;
                     bool m_kubeProxyModeHasBeenSet;
+
+                    /**
+                     * 是否开启审计开关
+                     */
+                    bool m_auditEnabled;
+                    bool m_auditEnabledHasBeenSet;
+
+                    /**
+                     * 审计日志上传到的logset日志集
+                     */
+                    std::string m_auditLogsetId;
+                    bool m_auditLogsetIdHasBeenSet;
+
+                    /**
+                     * 审计日志上传到的topic
+                     */
+                    std::string m_auditLogTopicId;
+                    bool m_auditLogTopicIdHasBeenSet;
 
                 };
             }

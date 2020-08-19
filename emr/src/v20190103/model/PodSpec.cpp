@@ -27,7 +27,9 @@ PodSpec::PodSpec() :
     m_nodeTypeHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_dataVolumesHasBeenSet(false)
+    m_dataVolumesHasBeenSet(false),
+    m_cpuTypeHasBeenSet(false),
+    m_podVolumesHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,36 @@ CoreInternalOutcome PodSpec::Deserialize(const Value &value)
         m_dataVolumesHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuType") && !value["CpuType"].IsNull())
+    {
+        if (!value["CpuType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PodSpec.CpuType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuType = string(value["CpuType"].GetString());
+        m_cpuTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodVolumes") && !value["PodVolumes"].IsNull())
+    {
+        if (!value["PodVolumes"].IsArray())
+            return CoreInternalOutcome(Error("response `PodSpec.PodVolumes` is not array type"));
+
+        const Value &tmpValue = value["PodVolumes"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PodVolume item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_podVolumes.push_back(item);
+        }
+        m_podVolumesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +188,29 @@ void PodSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         for (auto itr = m_dataVolumes.begin(); itr != m_dataVolumes.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cpuTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CpuType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podVolumesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PodVolumes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_podVolumes.begin(); itr != m_podVolumes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -256,5 +311,37 @@ void PodSpec::SetDataVolumes(const vector<string>& _dataVolumes)
 bool PodSpec::DataVolumesHasBeenSet() const
 {
     return m_dataVolumesHasBeenSet;
+}
+
+string PodSpec::GetCpuType() const
+{
+    return m_cpuType;
+}
+
+void PodSpec::SetCpuType(const string& _cpuType)
+{
+    m_cpuType = _cpuType;
+    m_cpuTypeHasBeenSet = true;
+}
+
+bool PodSpec::CpuTypeHasBeenSet() const
+{
+    return m_cpuTypeHasBeenSet;
+}
+
+vector<PodVolume> PodSpec::GetPodVolumes() const
+{
+    return m_podVolumes;
+}
+
+void PodSpec::SetPodVolumes(const vector<PodVolume>& _podVolumes)
+{
+    m_podVolumes = _podVolumes;
+    m_podVolumesHasBeenSet = true;
+}
+
+bool PodSpec::PodVolumesHasBeenSet() const
+{
+    return m_podVolumesHasBeenSet;
 }
 

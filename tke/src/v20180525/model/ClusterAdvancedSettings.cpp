@@ -30,7 +30,10 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_networkTypeHasBeenSet(false),
     m_isNonStaticIpModeHasBeenSet(false),
     m_deletionProtectionHasBeenSet(false),
-    m_kubeProxyModeHasBeenSet(false)
+    m_kubeProxyModeHasBeenSet(false),
+    m_auditEnabledHasBeenSet(false),
+    m_auditLogsetIdHasBeenSet(false),
+    m_auditLogTopicIdHasBeenSet(false)
 {
 }
 
@@ -136,6 +139,36 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
         m_kubeProxyModeHasBeenSet = true;
     }
 
+    if (value.HasMember("AuditEnabled") && !value["AuditEnabled"].IsNull())
+    {
+        if (!value["AuditEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.AuditEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_auditEnabled = value["AuditEnabled"].GetBool();
+        m_auditEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuditLogsetId") && !value["AuditLogsetId"].IsNull())
+    {
+        if (!value["AuditLogsetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.AuditLogsetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_auditLogsetId = string(value["AuditLogsetId"].GetString());
+        m_auditLogsetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuditLogTopicId") && !value["AuditLogTopicId"].IsNull())
+    {
+        if (!value["AuditLogTopicId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.AuditLogTopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_auditLogTopicId = string(value["AuditLogTopicId"].GetString());
+        m_auditLogTopicIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -214,6 +247,30 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
         string key = "KubeProxyMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_kubeProxyMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_auditEnabledHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AuditEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_auditEnabled, allocator);
+    }
+
+    if (m_auditLogsetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AuditLogsetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_auditLogsetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_auditLogTopicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AuditLogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_auditLogTopicId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -361,5 +418,53 @@ void ClusterAdvancedSettings::SetKubeProxyMode(const string& _kubeProxyMode)
 bool ClusterAdvancedSettings::KubeProxyModeHasBeenSet() const
 {
     return m_kubeProxyModeHasBeenSet;
+}
+
+bool ClusterAdvancedSettings::GetAuditEnabled() const
+{
+    return m_auditEnabled;
+}
+
+void ClusterAdvancedSettings::SetAuditEnabled(const bool& _auditEnabled)
+{
+    m_auditEnabled = _auditEnabled;
+    m_auditEnabledHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::AuditEnabledHasBeenSet() const
+{
+    return m_auditEnabledHasBeenSet;
+}
+
+string ClusterAdvancedSettings::GetAuditLogsetId() const
+{
+    return m_auditLogsetId;
+}
+
+void ClusterAdvancedSettings::SetAuditLogsetId(const string& _auditLogsetId)
+{
+    m_auditLogsetId = _auditLogsetId;
+    m_auditLogsetIdHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::AuditLogsetIdHasBeenSet() const
+{
+    return m_auditLogsetIdHasBeenSet;
+}
+
+string ClusterAdvancedSettings::GetAuditLogTopicId() const
+{
+    return m_auditLogTopicId;
+}
+
+void ClusterAdvancedSettings::SetAuditLogTopicId(const string& _auditLogTopicId)
+{
+    m_auditLogTopicId = _auditLogTopicId;
+    m_auditLogTopicIdHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::AuditLogTopicIdHasBeenSet() const
+{
+    return m_auditLogTopicIdHasBeenSet;
 }
 
