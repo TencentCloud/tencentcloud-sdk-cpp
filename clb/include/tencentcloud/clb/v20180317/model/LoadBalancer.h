@@ -901,17 +901,17 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool IPv6ModeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SnatPro
+                     * 获取是否开启SnatPro。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnatPro 是否开启SnatPro
+                     * @return SnatPro 是否开启SnatPro。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetSnatPro() const;
 
                     /**
-                     * 设置是否开启SnatPro
+                     * 设置是否开启SnatPro。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnatPro 是否开启SnatPro
+                     * @param SnatPro 是否开启SnatPro。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSnatPro(const bool& _snatPro);
@@ -923,17 +923,17 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool SnatProHasBeenSet() const;
 
                     /**
-                     * 获取开启SnatPro负载均衡后，SnatIp列表
+                     * 获取开启SnatPro负载均衡后，SnatIp列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnatIps 开启SnatPro负载均衡后，SnatIp列表
+                     * @return SnatIps 开启SnatPro负载均衡后，SnatIp列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SnatIp> GetSnatIps() const;
 
                     /**
-                     * 设置开启SnatPro负载均衡后，SnatIp列表
+                     * 设置开启SnatPro负载均衡后，SnatIp列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnatIps 开启SnatPro负载均衡后，SnatIp列表
+                     * @param SnatIps 开启SnatPro负载均衡后，SnatIp列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSnatIps(const std::vector<SnatIp>& _snatIps);
@@ -1031,6 +1031,50 @@ OPEN：公网属性， INTERNAL：内网属性。
                      * @return LocalBgp 是否已赋值
                      */
                     bool LocalBgpHasBeenSet() const;
+
+                    /**
+                     * 获取7层独占标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterTag 7层独占标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterTag() const;
+
+                    /**
+                     * 设置7层独占标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterTag 7层独占标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterTag(const std::string& _clusterTag);
+
+                    /**
+                     * 判断参数 ClusterTag 是否已赋值
+                     * @return ClusterTag 是否已赋值
+                     */
+                    bool ClusterTagHasBeenSet() const;
+
+                    /**
+                     * 获取开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MixIpTarget 开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetMixIpTarget() const;
+
+                    /**
+                     * 设置开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MixIpTarget 开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMixIpTarget(const bool& _mixIpTarget);
+
+                    /**
+                     * 判断参数 MixIpTarget 是否已赋值
+                     * @return MixIpTarget 是否已赋值
+                     */
+                    bool MixIpTargetHasBeenSet() const;
 
                 private:
 
@@ -1305,14 +1349,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_iPv6ModeHasBeenSet;
 
                     /**
-                     * 是否开启SnatPro
+                     * 是否开启SnatPro。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_snatPro;
                     bool m_snatProHasBeenSet;
 
                     /**
-                     * 开启SnatPro负载均衡后，SnatIp列表
+                     * 开启SnatPro负载均衡后，SnatIp列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SnatIp> m_snatIps;
@@ -1345,6 +1389,20 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool m_localBgp;
                     bool m_localBgpHasBeenSet;
+
+                    /**
+                     * 7层独占标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterTag;
+                    bool m_clusterTagHasBeenSet;
+
+                    /**
+                     * 开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_mixIpTarget;
+                    bool m_mixIpTargetHasBeenSet;
 
                 };
             }

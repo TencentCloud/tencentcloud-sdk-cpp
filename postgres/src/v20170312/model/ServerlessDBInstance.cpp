@@ -35,7 +35,8 @@ ServerlessDBInstance::ServerlessDBInstance() :
     m_createTimeHasBeenSet(false),
     m_dBInstanceNetInfoHasBeenSet(false),
     m_dBAccountSetHasBeenSet(false),
-    m_dBDatabaseListHasBeenSet(false)
+    m_dBDatabaseListHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -207,6 +208,26 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const Value &value)
         m_dBDatabaseListHasBeenSet = true;
     }
 
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Error("response `ServerlessDBInstance.TagList` is not array type"));
+
+        const Value &tmpValue = value["TagList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -342,6 +363,21 @@ void ServerlessDBInstance::ToJsonObject(Value &value, Document::AllocatorType& a
         for (auto itr = m_dBDatabaseList.begin(); itr != m_dBDatabaseList.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -570,5 +606,21 @@ void ServerlessDBInstance::SetDBDatabaseList(const vector<string>& _dBDatabaseLi
 bool ServerlessDBInstance::DBDatabaseListHasBeenSet() const
 {
     return m_dBDatabaseListHasBeenSet;
+}
+
+vector<Tag> ServerlessDBInstance::GetTagList() const
+{
+    return m_tagList;
+}
+
+void ServerlessDBInstance::SetTagList(const vector<Tag>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool ServerlessDBInstance::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 

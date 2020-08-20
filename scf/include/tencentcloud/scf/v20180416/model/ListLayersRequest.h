@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool CompatibleRuntimeHasBeenSet() const;
 
                     /**
-                     * 获取Offset
-                     * @return Offset Offset
+                     * 获取偏移位置
+                     * @return Offset 偏移位置
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置Offset
-                     * @param Offset Offset
+                     * 设置偏移位置
+                     * @param Offset 偏移位置
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Limit
-                     * @return Limit Limit
+                     * 获取查询数目限制
+                     * @return Limit 查询数目限制
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置Limit
-                     * @param Limit Limit
+                     * 设置查询数目限制
+                     * @param Limit 查询数目限制
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -123,13 +123,13 @@ namespace TencentCloud
                     bool m_compatibleRuntimeHasBeenSet;
 
                     /**
-                     * Offset
+                     * 偏移位置
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Limit
+                     * 查询数目限制
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

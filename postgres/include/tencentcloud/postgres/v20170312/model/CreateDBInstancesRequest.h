@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/postgres/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -330,6 +331,24 @@ namespace TencentCloud
                      */
                     bool NeedSupportIpv6HasBeenSet() const;
 
+                    /**
+                     * 获取实例需要绑定的Tag信息，默认为空
+                     * @return TagList 实例需要绑定的Tag信息，默认为空
+                     */
+                    std::vector<Tag> GetTagList() const;
+
+                    /**
+                     * 设置实例需要绑定的Tag信息，默认为空
+                     * @param TagList 实例需要绑定的Tag信息，默认为空
+                     */
+                    void SetTagList(const std::vector<Tag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +446,12 @@ namespace TencentCloud
                      */
                     uint64_t m_needSupportIpv6;
                     bool m_needSupportIpv6HasBeenSet;
+
+                    /**
+                     * 实例需要绑定的Tag信息，默认为空
+                     */
+                    std::vector<Tag> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

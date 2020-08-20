@@ -23,7 +23,8 @@ using namespace std;
 
 BusinessCardInfo::BusinessCardInfo() :
     m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_itemCoordHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,23 @@ CoreInternalOutcome BusinessCardInfo::Deserialize(const Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("ItemCoord") && !value["ItemCoord"].IsNull())
+    {
+        if (!value["ItemCoord"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BusinessCardInfo.ItemCoord` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_itemCoord.Deserialize(value["ItemCoord"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_itemCoordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +91,15 @@ void BusinessCardInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemCoordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ItemCoord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_itemCoord.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -108,5 +135,21 @@ void BusinessCardInfo::SetValue(const string& _value)
 bool BusinessCardInfo::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+ItemCoord BusinessCardInfo::GetItemCoord() const
+{
+    return m_itemCoord;
+}
+
+void BusinessCardInfo::SetItemCoord(const ItemCoord& _itemCoord)
+{
+    m_itemCoord = _itemCoord;
+    m_itemCoordHasBeenSet = true;
+}
+
+bool BusinessCardInfo::ItemCoordHasBeenSet() const
+{
+    return m_itemCoordHasBeenSet;
 }
 

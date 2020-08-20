@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/postgres/v20170312/model/ServerlessDBInstanceNetInfo.h>
 #include <tencentcloud/postgres/v20170312/model/ServerlessDBAccount.h>
+#include <tencentcloud/postgres/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -159,17 +160,17 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取projectId
+                     * 获取项目id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId projectId
+                     * @return ProjectId 项目id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置projectId
+                     * 设置项目id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId projectId
+                     * @param ProjectId 项目id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -181,17 +182,17 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取VpcId
+                     * 获取私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcId VpcId
+                     * @return VpcId 私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VpcId
+                     * 设置私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId VpcId
+                     * @param VpcId 私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -356,6 +357,28 @@ namespace TencentCloud
                      */
                     bool DBDatabaseListHasBeenSet() const;
 
+                    /**
+                     * 获取实例绑定的标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagList 实例绑定的标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTagList() const;
+
+                    /**
+                     * 设置实例绑定的标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagList 实例绑定的标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagList(const std::vector<Tag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,14 +417,14 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * projectId
+                     * 项目id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * VpcId
+                     * 私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
@@ -455,6 +478,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_dBDatabaseList;
                     bool m_dBDatabaseListHasBeenSet;
+
+                    /**
+                     * 实例绑定的标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

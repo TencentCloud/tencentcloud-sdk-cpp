@@ -32,7 +32,8 @@ MLIDCardOCRResponse::MLIDCardOCRResponse() :
     m_warnHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_advancedInfoHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_birthdayHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome MLIDCardOCRResponse::Deserialize(const string &payload)
         m_typeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Birthday") && !rsp["Birthday"].IsNull())
+    {
+        if (!rsp["Birthday"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Birthday` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_birthday = string(rsp["Birthday"].GetString());
+        m_birthdayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -236,6 +247,16 @@ string MLIDCardOCRResponse::GetType() const
 bool MLIDCardOCRResponse::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string MLIDCardOCRResponse::GetBirthday() const
+{
+    return m_birthday;
+}
+
+bool MLIDCardOCRResponse::BirthdayHasBeenSet() const
+{
+    return m_birthdayHasBeenSet;
 }
 
 

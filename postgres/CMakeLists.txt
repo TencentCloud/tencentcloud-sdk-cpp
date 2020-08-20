@@ -68,6 +68,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/Filter.h
   include/tencentcloud/postgres/v20170312/model/RenewInstanceRequest.h
+  include/tencentcloud/postgres/v20170312/model/Tag.h
   include/tencentcloud/postgres/v20170312/model/PgDeal.h
   include/tencentcloud/postgres/v20170312/model/DescribeRegionsResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDatabasesRequest.h
@@ -155,6 +156,7 @@ set(postgres_src
   src/v20170312/model/OpenDBExtranetAccessResponse.cpp
   src/v20170312/model/Filter.cpp
   src/v20170312/model/RenewInstanceRequest.cpp
+  src/v20170312/model/Tag.cpp
   src/v20170312/model/PgDeal.cpp
   src/v20170312/model/DescribeRegionsResponse.cpp
   src/v20170312/model/DescribeDatabasesRequest.cpp

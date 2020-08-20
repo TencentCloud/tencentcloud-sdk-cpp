@@ -608,7 +608,7 @@ namespace TencentCloud
                 DescribeClassicalLBTargetsOutcomeCallable DescribeClassicalLBTargetsCallable(const Model::DescribeClassicalLBTargetsRequest& request);
 
                 /**
-                 *获取用户的clb独占日志集。
+                 *获取用户的clb专有日志集
                  * @param req DescribeClsLogSetRequest
                  * @return DescribeClsLogSetOutcome
                  */

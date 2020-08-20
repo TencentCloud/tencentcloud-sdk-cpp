@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。
-                     * @return Filters 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。
+                     * 获取过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。
+                     * @return Filters 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。
-                     * @param Filters 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。
+                     * 设置过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。
+                     * @param Filters 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。
+                     * 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

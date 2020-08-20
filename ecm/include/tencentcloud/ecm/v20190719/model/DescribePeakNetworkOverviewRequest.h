@@ -81,17 +81,17 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-region    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。
+region    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。注意 region 填上需要查询ecm region才能返回数据。
                      * @return Filters 过滤条件。
-region    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。
+region    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。注意 region 填上需要查询ecm region才能返回数据。
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-region    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。
+region    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。注意 region 填上需要查询ecm region才能返回数据。
                      * @param Filters 过滤条件。
-region    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。
+region    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。注意 region 填上需要查询ecm region才能返回数据。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -117,7 +117,7 @@ region    String      是否必填：否     （过滤条件）按照region过�
 
                     /**
                      * 过滤条件。
-region    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。
+region    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。注意 region 填上需要查询ecm region才能返回数据。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -22,6 +22,7 @@ using namespace rapidjson;
 using namespace std;
 
 VideoEditProjectOutput::VideoEditProjectOutput() :
+    m_materialIdHasBeenSet(false),
     m_vodFileIdHasBeenSet(false),
     m_uRLHasBeenSet(false),
     m_metaDataHasBeenSet(false)
@@ -32,6 +33,16 @@ CoreInternalOutcome VideoEditProjectOutput::Deserialize(const Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("MaterialId") && !value["MaterialId"].IsNull())
+    {
+        if (!value["MaterialId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VideoEditProjectOutput.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_materialId = string(value["MaterialId"].GetString());
+        m_materialIdHasBeenSet = true;
+    }
 
     if (value.HasMember("VodFileId") && !value["VodFileId"].IsNull())
     {
@@ -77,6 +88,14 @@ CoreInternalOutcome VideoEditProjectOutput::Deserialize(const Value &value)
 void VideoEditProjectOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
+    if (m_materialIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaterialId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_materialId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_vodFileIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -104,6 +123,22 @@ void VideoEditProjectOutput::ToJsonObject(Value &value, Document::AllocatorType&
 
 }
 
+
+string VideoEditProjectOutput::GetMaterialId() const
+{
+    return m_materialId;
+}
+
+void VideoEditProjectOutput::SetMaterialId(const string& _materialId)
+{
+    m_materialId = _materialId;
+    m_materialIdHasBeenSet = true;
+}
+
+bool VideoEditProjectOutput::MaterialIdHasBeenSet() const
+{
+    return m_materialIdHasBeenSet;
+}
 
 string VideoEditProjectOutput::GetVodFileId() const
 {

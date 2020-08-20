@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/postgres/v20170312/model/DBInstanceNetInfo.h>
+#include <tencentcloud/postgres/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -533,6 +534,28 @@ namespace TencentCloud
                      */
                     bool SupportIpv6HasBeenSet() const;
 
+                    /**
+                     * 获取实例绑定的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagList 实例绑定的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTagList() const;
+
+                    /**
+                     * 设置实例绑定的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagList 实例绑定的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagList(const std::vector<Tag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -696,6 +719,13 @@ namespace TencentCloud
                      */
                     uint64_t m_supportIpv6;
                     bool m_supportIpv6HasBeenSet;
+
+                    /**
+                     * 实例绑定的标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

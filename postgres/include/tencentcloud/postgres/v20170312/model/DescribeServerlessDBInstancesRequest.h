@@ -97,6 +97,42 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取排序指标，目前支持实例创建时间CreateTime
+                     * @return OrderBy 排序指标，目前支持实例创建时间CreateTime
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置排序指标，目前支持实例创建时间CreateTime
+                     * @param OrderBy 排序指标，目前支持实例创建时间CreateTime
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式，包括升序、降序
+                     * @return OrderByType 排序方式，包括升序、降序
+                     */
+                    std::string GetOrderByType() const;
+
+                    /**
+                     * 设置排序方式，包括升序、降序
+                     * @param OrderByType 排序方式，包括升序、降序
+                     */
+                    void SetOrderByType(const std::string& _orderByType);
+
+                    /**
+                     * 判断参数 OrderByType 是否已赋值
+                     * @return OrderByType 是否已赋值
+                     */
+                    bool OrderByTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +152,18 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 排序指标，目前支持实例创建时间CreateTime
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 排序方式，包括升序、降序
+                     */
+                    std::string m_orderByType;
+                    bool m_orderByTypeHasBeenSet;
 
                 };
             }

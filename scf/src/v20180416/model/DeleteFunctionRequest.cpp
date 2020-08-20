@@ -25,7 +25,8 @@ using namespace std;
 
 DeleteFunctionRequest::DeleteFunctionRequest() :
     m_functionNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_qualifierHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DeleteFunctionRequest::ToJsonString() const
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualifierHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Qualifier";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_qualifier.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DeleteFunctionRequest::SetNamespace(const string& _namespace)
 bool DeleteFunctionRequest::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+string DeleteFunctionRequest::GetQualifier() const
+{
+    return m_qualifier;
+}
+
+void DeleteFunctionRequest::SetQualifier(const string& _qualifier)
+{
+    m_qualifier = _qualifier;
+    m_qualifierHasBeenSet = true;
+}
+
+bool DeleteFunctionRequest::QualifierHasBeenSet() const
+{
+    return m_qualifierHasBeenSet;
 }
 
 

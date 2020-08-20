@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取扩展字段:
+                     * 获取扩展字段：
 {
     ID:{
         Confidence:0.9999
@@ -130,7 +130,7 @@ namespace TencentCloud
         Confidence:0.9996
     }
 }
-                     * @return AdvancedInfo 扩展字段:
+                     * @return AdvancedInfo 扩展字段：
 {
     ID:{
         Confidence:0.9999
@@ -171,6 +171,18 @@ IKAD   劳工证
                      * @return Type 是否已赋值
                      */
                     bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取出生日期（目前该字段仅支持IKAD劳工证）
+                     * @return Birthday 出生日期（目前该字段仅支持IKAD劳工证）
+                     */
+                    std::string GetBirthday() const;
+
+                    /**
+                     * 判断参数 Birthday 是否已赋值
+                     * @return Birthday 是否已赋值
+                     */
+                    bool BirthdayHasBeenSet() const;
 
                 private:
 
@@ -214,7 +226,7 @@ IKAD   劳工证
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 扩展字段:
+                     * 扩展字段：
 {
     ID:{
         Confidence:0.9999
@@ -238,6 +250,12 @@ IKAD   劳工证
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 出生日期（目前该字段仅支持IKAD劳工证）
+                     */
+                    std::string m_birthday;
+                    bool m_birthdayHasBeenSet;
 
                 };
             }

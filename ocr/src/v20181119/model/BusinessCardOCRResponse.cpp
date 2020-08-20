@@ -26,7 +26,8 @@ using namespace std;
 
 BusinessCardOCRResponse::BusinessCardOCRResponse() :
     m_businessCardInfosHasBeenSet(false),
-    m_retImageBase64HasBeenSet(false)
+    m_retImageBase64HasBeenSet(false),
+    m_angleHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome BusinessCardOCRResponse::Deserialize(const string &payload)
         m_retImageBase64HasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
+    {
+        if (!rsp["Angle"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `Angle` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angle = rsp["Angle"].GetDouble();
+        m_angleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,16 @@ string BusinessCardOCRResponse::GetRetImageBase64() const
 bool BusinessCardOCRResponse::RetImageBase64HasBeenSet() const
 {
     return m_retImageBase64HasBeenSet;
+}
+
+double BusinessCardOCRResponse::GetAngle() const
+{
+    return m_angle;
+}
+
+bool BusinessCardOCRResponse::AngleHasBeenSet() const
+{
+    return m_angleHasBeenSet;
 }
 
 

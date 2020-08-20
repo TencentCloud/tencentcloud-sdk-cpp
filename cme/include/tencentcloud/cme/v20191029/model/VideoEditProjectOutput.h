@@ -48,6 +48,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。
+                     * @return MaterialId 导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。
+                     */
+                    std::string GetMaterialId() const;
+
+                    /**
+                     * 设置导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。
+                     * @param MaterialId 导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。
+                     */
+                    void SetMaterialId(const std::string& _materialId);
+
+                    /**
+                     * 判断参数 MaterialId 是否已赋值
+                     * @return MaterialId 是否已赋值
+                     */
+                    bool MaterialIdHasBeenSet() const;
+
+                    /**
                      * 获取云点播媒资 FileId。
                      * @return VodFileId 云点播媒资 FileId。
                      */
@@ -106,6 +124,12 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。
+                     */
+                    std::string m_materialId;
+                    bool m_materialIdHasBeenSet;
 
                     /**
                      * 云点播媒资 FileId。

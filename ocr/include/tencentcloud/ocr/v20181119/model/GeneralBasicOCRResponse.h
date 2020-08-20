@@ -79,6 +79,18 @@ namespace TencentCloud
                      */
                     bool AngelHasBeenSet() const;
 
+                    /**
+                     * 获取图片为PDF时，返回PDF的总页数，默认为0
+                     * @return PdfPageSize 图片为PDF时，返回PDF的总页数，默认为0
+                     */
+                    int64_t GetPdfPageSize() const;
+
+                    /**
+                     * 判断参数 PdfPageSize 是否已赋值
+                     * @return PdfPageSize 是否已赋值
+                     */
+                    bool PdfPageSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +110,12 @@ namespace TencentCloud
                      */
                     double m_angel;
                     bool m_angelHasBeenSet;
+
+                    /**
+                     * 图片为PDF时，返回PDF的总页数，默认为0
+                     */
+                    int64_t m_pdfPageSize;
+                    bool m_pdfPageSizeHasBeenSet;
 
                 };
             }

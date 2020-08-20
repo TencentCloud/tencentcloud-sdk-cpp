@@ -48,7 +48,8 @@ DBInstance::DBInstance() :
     m_typeHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uidHasBeenSet(false),
-    m_supportIpv6HasBeenSet(false)
+    m_supportIpv6HasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,26 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_supportIpv6HasBeenSet = true;
     }
 
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Error("response `DBInstance.TagList` is not array type"));
+
+        const Value &tmpValue = value["TagList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -565,6 +586,21 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "SupportIpv6";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportIpv6, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1000,5 +1036,21 @@ void DBInstance::SetSupportIpv6(const uint64_t& _supportIpv6)
 bool DBInstance::SupportIpv6HasBeenSet() const
 {
     return m_supportIpv6HasBeenSet;
+}
+
+vector<Tag> DBInstance::GetTagList() const
+{
+    return m_tagList;
+}
+
+void DBInstance::SetTagList(const vector<Tag>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool DBInstance::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 

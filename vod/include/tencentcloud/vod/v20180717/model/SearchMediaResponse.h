@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件信息列表，只包含基础信息（BasicInfo）。
+                     * 获取媒体文件信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MediaInfoSet 媒体文件信息列表，只包含基础信息（BasicInfo）。
+                     * @return MediaInfoSet 媒体文件信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaInfo> GetMediaInfoSet() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 媒体文件信息列表，只包含基础信息（BasicInfo）。
+                     * 媒体文件信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaInfo> m_mediaInfoSet;

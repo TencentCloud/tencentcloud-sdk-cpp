@@ -27,7 +27,9 @@ GeneralBasicOCRRequest::GeneralBasicOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_sceneHasBeenSet(false),
-    m_languageTypeHasBeenSet(false)
+    m_languageTypeHasBeenSet(false),
+    m_isPdfHasBeenSet(false),
+    m_pdfPageNumberHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,22 @@ string GeneralBasicOCRRequest::ToJsonString() const
         string key = "LanguageType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_languageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPdfHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsPdf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPdf, allocator);
+    }
+
+    if (m_pdfPageNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PdfPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pdfPageNumber, allocator);
     }
 
 
@@ -140,6 +158,38 @@ void GeneralBasicOCRRequest::SetLanguageType(const string& _languageType)
 bool GeneralBasicOCRRequest::LanguageTypeHasBeenSet() const
 {
     return m_languageTypeHasBeenSet;
+}
+
+bool GeneralBasicOCRRequest::GetIsPdf() const
+{
+    return m_isPdf;
+}
+
+void GeneralBasicOCRRequest::SetIsPdf(const bool& _isPdf)
+{
+    m_isPdf = _isPdf;
+    m_isPdfHasBeenSet = true;
+}
+
+bool GeneralBasicOCRRequest::IsPdfHasBeenSet() const
+{
+    return m_isPdfHasBeenSet;
+}
+
+uint64_t GeneralBasicOCRRequest::GetPdfPageNumber() const
+{
+    return m_pdfPageNumber;
+}
+
+void GeneralBasicOCRRequest::SetPdfPageNumber(const uint64_t& _pdfPageNumber)
+{
+    m_pdfPageNumber = _pdfPageNumber;
+    m_pdfPageNumberHasBeenSet = true;
+}
+
+bool GeneralBasicOCRRequest::PdfPageNumberHasBeenSet() const
+{
+    return m_pdfPageNumberHasBeenSet;
 }
 
 

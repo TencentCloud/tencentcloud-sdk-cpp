@@ -66,7 +66,9 @@ LoadBalancer::LoadBalancer() :
     m_slaTypeHasBeenSet(false),
     m_isBlockHasBeenSet(false),
     m_isBlockTimeHasBeenSet(false),
-    m_localBgpHasBeenSet(false)
+    m_localBgpHasBeenSet(false),
+    m_clusterTagHasBeenSet(false),
+    m_mixIpTargetHasBeenSet(false)
 {
 }
 
@@ -603,6 +605,26 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_localBgpHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterTag") && !value["ClusterTag"].IsNull())
+    {
+        if (!value["ClusterTag"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.ClusterTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterTag = string(value["ClusterTag"].GetString());
+        m_clusterTagHasBeenSet = true;
+    }
+
+    if (value.HasMember("MixIpTarget") && !value["MixIpTarget"].IsNull())
+    {
+        if (!value["MixIpTarget"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.MixIpTarget` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mixIpTarget = value["MixIpTarget"].GetBool();
+        m_mixIpTargetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1005,6 +1027,22 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "LocalBgp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_localBgp, allocator);
+    }
+
+    if (m_clusterTagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clusterTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mixIpTargetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MixIpTarget";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mixIpTarget, allocator);
     }
 
 }
@@ -1728,5 +1766,37 @@ void LoadBalancer::SetLocalBgp(const bool& _localBgp)
 bool LoadBalancer::LocalBgpHasBeenSet() const
 {
     return m_localBgpHasBeenSet;
+}
+
+string LoadBalancer::GetClusterTag() const
+{
+    return m_clusterTag;
+}
+
+void LoadBalancer::SetClusterTag(const string& _clusterTag)
+{
+    m_clusterTag = _clusterTag;
+    m_clusterTagHasBeenSet = true;
+}
+
+bool LoadBalancer::ClusterTagHasBeenSet() const
+{
+    return m_clusterTagHasBeenSet;
+}
+
+bool LoadBalancer::GetMixIpTarget() const
+{
+    return m_mixIpTarget;
+}
+
+void LoadBalancer::SetMixIpTarget(const bool& _mixIpTarget)
+{
+    m_mixIpTarget = _mixIpTarget;
+    m_mixIpTargetHasBeenSet = true;
+}
+
+bool LoadBalancer::MixIpTargetHasBeenSet() const
+{
+    return m_mixIpTargetHasBeenSet;
 }
 

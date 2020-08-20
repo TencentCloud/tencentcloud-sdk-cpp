@@ -30,7 +30,8 @@ CreateServerlessDBInstanceRequest::CreateServerlessDBInstanceRequest() :
     m_dBCharsetHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,21 @@ string CreateServerlessDBInstanceRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -215,6 +231,22 @@ void CreateServerlessDBInstanceRequest::SetSubnetId(const string& _subnetId)
 bool CreateServerlessDBInstanceRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+vector<Tag> CreateServerlessDBInstanceRequest::GetTagList() const
+{
+    return m_tagList;
+}
+
+void CreateServerlessDBInstanceRequest::SetTagList(const vector<Tag>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool CreateServerlessDBInstanceRequest::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 
 

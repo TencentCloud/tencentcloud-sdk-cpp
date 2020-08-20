@@ -26,7 +26,9 @@ using namespace std;
 DescribeServerlessDBInstancesRequest::DescribeServerlessDBInstancesRequest() :
     m_filterHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_orderByTypeHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,22 @@ string DescribeServerlessDBInstancesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderByType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderByType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -122,6 +140,38 @@ void DescribeServerlessDBInstancesRequest::SetOffset(const uint64_t& _offset)
 bool DescribeServerlessDBInstancesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeServerlessDBInstancesRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeServerlessDBInstancesRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeServerlessDBInstancesRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+string DescribeServerlessDBInstancesRequest::GetOrderByType() const
+{
+    return m_orderByType;
+}
+
+void DescribeServerlessDBInstancesRequest::SetOrderByType(const string& _orderByType)
+{
+    m_orderByType = _orderByType;
+    m_orderByTypeHasBeenSet = true;
+}
+
+bool DescribeServerlessDBInstancesRequest::OrderByTypeHasBeenSet() const
+{
+    return m_orderByTypeHasBeenSet;
 }
 
 

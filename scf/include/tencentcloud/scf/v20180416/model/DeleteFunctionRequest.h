@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取函数版本
+                     * @return Qualifier 函数版本
+                     */
+                    std::string GetQualifier() const;
+
+                    /**
+                     * 设置函数版本
+                     * @param Qualifier 函数版本
+                     */
+                    void SetQualifier(const std::string& _qualifier);
+
+                    /**
+                     * 判断参数 Qualifier 是否已赋值
+                     * @return Qualifier 是否已赋值
+                     */
+                    bool QualifierHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 函数版本
+                     */
+                    std::string m_qualifier;
+                    bool m_qualifierHasBeenSet;
 
                 };
             }

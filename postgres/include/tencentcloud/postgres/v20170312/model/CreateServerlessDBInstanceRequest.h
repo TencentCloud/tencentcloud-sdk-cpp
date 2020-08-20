@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/postgres/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -168,6 +169,24 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例需要绑定的标签数组信息
+                     * @return TagList 实例需要绑定的标签数组信息
+                     */
+                    std::vector<Tag> GetTagList() const;
+
+                    /**
+                     * 设置实例需要绑定的标签数组信息
+                     * @param TagList 实例需要绑定的标签数组信息
+                     */
+                    void SetTagList(const std::vector<Tag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 实例需要绑定的标签数组信息
+                     */
+                    std::vector<Tag> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

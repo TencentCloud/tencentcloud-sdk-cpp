@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/ItemCoord.h>
 
 
 namespace TencentCloud
@@ -86,6 +87,24 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @return ItemCoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    ItemCoord GetItemCoord() const;
+
+                    /**
+                     * 设置文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @param ItemCoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    void SetItemCoord(const ItemCoord& _itemCoord);
+
+                    /**
+                     * 判断参数 ItemCoord 是否已赋值
+                     * @return ItemCoord 是否已赋值
+                     */
+                    bool ItemCoordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +119,12 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    ItemCoord m_itemCoord;
+                    bool m_itemCoordHasBeenSet;
 
                 };
             }
