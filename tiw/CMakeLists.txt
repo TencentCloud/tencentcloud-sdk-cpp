@@ -21,6 +21,7 @@ set(tiw_public_header
 set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/Canvas.h
   include/tencentcloud/tiw/v20190919/model/LayoutParams.h
+  include/tencentcloud/tiw/v20190919/model/StreamControl.h
   include/tencentcloud/tiw/v20190919/model/ResumeOnlineRecordResponse.h
   include/tencentcloud/tiw/v20190919/model/StartOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackRequest.h
@@ -50,6 +51,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/ResumeOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackRequest.h
+  include/tencentcloud/tiw/v20190919/model/RecordControl.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/MixStream.h
   include/tencentcloud/tiw/v20190919/model/OmittedDuration.h
@@ -60,6 +62,7 @@ set(tiw_src
   src/v20190919/TiwClient.cpp
   src/v20190919/model/Canvas.cpp
   src/v20190919/model/LayoutParams.cpp
+  src/v20190919/model/StreamControl.cpp
   src/v20190919/model/ResumeOnlineRecordResponse.cpp
   src/v20190919/model/StartOnlineRecordRequest.cpp
   src/v20190919/model/DescribeOnlineRecordCallbackRequest.cpp
@@ -89,6 +92,7 @@ set(tiw_src
   src/v20190919/model/ResumeOnlineRecordRequest.cpp
   src/v20190919/model/DescribeTranscodeCallbackResponse.cpp
   src/v20190919/model/SetTranscodeCallbackRequest.cpp
+  src/v20190919/model/RecordControl.cpp
   src/v20190919/model/SetOnlineRecordCallbackRequest.cpp
   src/v20190919/model/MixStream.cpp
   src/v20190919/model/OmittedDuration.cpp

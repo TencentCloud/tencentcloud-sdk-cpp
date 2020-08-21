@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tms/v20200713/model/AccountTipoffAccessRequest.h>
+#include <tencentcloud/tms/v20200713/model/AccountTipoffAccessResponse.h>
 #include <tencentcloud/tms/v20200713/model/TextModerationRequest.h>
 #include <tencentcloud/tms/v20200713/model/TextModerationResponse.h>
 
@@ -39,11 +41,23 @@ namespace TencentCloud
                 TmsClient(const Credential &credential, const std::string &region);
                 TmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AccountTipoffAccessResponse> AccountTipoffAccessOutcome;
+                typedef std::future<AccountTipoffAccessOutcome> AccountTipoffAccessOutcomeCallable;
+                typedef std::function<void(const TmsClient*, const Model::AccountTipoffAccessRequest&, AccountTipoffAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AccountTipoffAccessAsyncHandler;
                 typedef Outcome<Error, Model::TextModerationResponse> TextModerationOutcome;
                 typedef std::future<TextModerationOutcome> TextModerationOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::TextModerationRequest&, TextModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextModerationAsyncHandler;
 
 
+
+                /**
+                 *举报恶意账号
+                 * @param req AccountTipoffAccessRequest
+                 * @return AccountTipoffAccessOutcome
+                 */
+                AccountTipoffAccessOutcome AccountTipoffAccess(const Model::AccountTipoffAccessRequest &request);
+                void AccountTipoffAccessAsync(const Model::AccountTipoffAccessRequest& request, const AccountTipoffAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AccountTipoffAccessOutcomeCallable AccountTipoffAccessCallable(const Model::AccountTipoffAccessRequest& request);
 
                 /**
                  *文本内容检测（Text Moderation）服务使用了深度学习技术，识别涉黄、涉政、涉恐等有害内容，同时支持用户配置词库，打击自定义的违规文本。

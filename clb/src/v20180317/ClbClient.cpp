@@ -1459,6 +1459,49 @@ ClbClient::DescribeLoadBalancersDetailOutcomeCallable ClbClient::DescribeLoadBal
     return task->get_future();
 }
 
+ClbClient::DescribeQuotaOutcome ClbClient::DescribeQuota(const DescribeQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQuotaResponse rsp = DescribeQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQuotaOutcome(rsp);
+        else
+            return DescribeQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQuotaOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeQuotaAsync(const DescribeQuotaRequest& request, const DescribeQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeQuotaOutcomeCallable ClbClient::DescribeQuotaCallable(const DescribeQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeRewriteOutcome ClbClient::DescribeRewrite(const DescribeRewriteRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRewrite");

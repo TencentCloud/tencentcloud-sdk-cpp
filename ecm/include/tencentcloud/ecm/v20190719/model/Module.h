@@ -263,6 +263,24 @@ DELETEFAILED：删除失败
                      */
                     bool CloseIpDirectHasBeenSet() const;
 
+                    /**
+                     * 获取默认安全组id列表
+                     * @return SecurityGroupIds 默认安全组id列表
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置默认安全组id列表
+                     * @param SecurityGroupIds 默认安全组id列表
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -334,6 +352,12 @@ DELETEFAILED：删除失败
                      */
                     int64_t m_closeIpDirect;
                     bool m_closeIpDirectHasBeenSet;
+
+                    /**
+                     * 默认安全组id列表
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

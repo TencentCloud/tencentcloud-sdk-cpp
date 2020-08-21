@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取值数组
-                     * @return Data 值数组
+                     * 获取值数组，攻击流量带宽单位为Mbps，包速率单位为pps
+                     * @return Data 值数组，攻击流量带宽单位为Mbps，包速率单位为pps
                      */
                     std::vector<uint64_t> GetData() const;
 
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 值数组
+                     * 值数组，攻击流量带宽单位为Mbps，包速率单位为pps
                      */
                     std::vector<uint64_t> m_data;
                     bool m_dataHasBeenSet;

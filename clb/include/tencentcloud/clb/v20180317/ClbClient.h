@@ -89,6 +89,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersDetailRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersDetailResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeQuotaRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeQuotaResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeRewriteResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTargetGroupInstancesRequest.h>
@@ -256,6 +258,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeLoadBalancersDetailResponse> DescribeLoadBalancersDetailOutcome;
                 typedef std::future<DescribeLoadBalancersDetailOutcome> DescribeLoadBalancersDetailOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeLoadBalancersDetailRequest&, DescribeLoadBalancersDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancersDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeQuotaResponse> DescribeQuotaOutcome;
+                typedef std::future<DescribeQuotaOutcome> DescribeQuotaOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeQuotaRequest&, DescribeQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRewriteResponse> DescribeRewriteOutcome;
                 typedef std::future<DescribeRewriteOutcome> DescribeRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeRewriteRequest&, DescribeRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRewriteAsyncHandler;
@@ -652,6 +657,15 @@ namespace TencentCloud
                 DescribeLoadBalancersDetailOutcome DescribeLoadBalancersDetail(const Model::DescribeLoadBalancersDetailRequest &request);
                 void DescribeLoadBalancersDetailAsync(const Model::DescribeLoadBalancersDetailRequest& request, const DescribeLoadBalancersDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLoadBalancersDetailOutcomeCallable DescribeLoadBalancersDetailCallable(const Model::DescribeLoadBalancersDetailRequest& request);
+
+                /**
+                 *查询用户当前地域下的各项配额
+                 * @param req DescribeQuotaRequest
+                 * @return DescribeQuotaOutcome
+                 */
+                DescribeQuotaOutcome DescribeQuota(const Model::DescribeQuotaRequest &request);
+                void DescribeQuotaAsync(const Model::DescribeQuotaRequest& request, const DescribeQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQuotaOutcomeCallable DescribeQuotaCallable(const Model::DescribeQuotaRequest& request);
 
                 /**
                  *DescribeRewrite 接口可根据负载均衡实例ID，查询一个负载均衡实例下转发规则的重定向关系。如果不指定监听器ID或转发规则ID，则返回该负载均衡实例下的所有重定向关系。

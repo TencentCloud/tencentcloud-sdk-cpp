@@ -19,49 +19,55 @@ set(lighthouse_public_header
   )
 
 set(lighthouse_public_header_model
-  include/tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/LoginSettings.h
+  include/tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/Instance.h
+  include/tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/Blueprint.h
+  include/tencentcloud/lighthouse/v20200324/model/Price.h
+  include/tencentcloud/lighthouse/v20200324/model/Bundle.h
+  include/tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InstancePrice.h
   include/tencentcloud/lighthouse/v20200324/model/SystemDisk.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/Price.h
-  include/tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/LoginSettings.h
-  include/tencentcloud/lighthouse/v20200324/model/Bundle.h
-  include/tencentcloud/lighthouse/v20200324/model/InternetAccessible.h
   include/tencentcloud/lighthouse/v20200324/model/Filter.h
-  include/tencentcloud/lighthouse/v20200324/model/Instance.h
-  include/tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/InternetAccessible.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h
   )
 
 set(lighthouse_src
   src/v20200324/LighthouseClient.cpp
-  src/v20200324/model/StopInstancesResponse.cpp
+  src/v20200324/model/DescribeBlueprintsResponse.cpp
+  src/v20200324/model/LoginSettings.cpp
+  src/v20200324/model/StartInstancesResponse.cpp
+  src/v20200324/model/Instance.cpp
+  src/v20200324/model/RebootInstancesResponse.cpp
+  src/v20200324/model/StopInstancesRequest.cpp
+  src/v20200324/model/Blueprint.cpp
+  src/v20200324/model/Price.cpp
+  src/v20200324/model/Bundle.cpp
+  src/v20200324/model/StartInstancesRequest.cpp
+  src/v20200324/model/DescribeBlueprintsRequest.cpp
+  src/v20200324/model/DescribeInstancesResponse.cpp
   src/v20200324/model/InstancePrice.cpp
   src/v20200324/model/SystemDisk.cpp
   src/v20200324/model/ResetInstanceRequest.cpp
   src/v20200324/model/DescribeBundlesResponse.cpp
   src/v20200324/model/DescribeInstancesRequest.cpp
-  src/v20200324/model/Price.cpp
-  src/v20200324/model/StartInstancesResponse.cpp
-  src/v20200324/model/LoginSettings.cpp
-  src/v20200324/model/Bundle.cpp
-  src/v20200324/model/InternetAccessible.cpp
   src/v20200324/model/Filter.cpp
-  src/v20200324/model/Instance.cpp
-  src/v20200324/model/StartInstancesRequest.cpp
-  src/v20200324/model/StopInstancesRequest.cpp
-  src/v20200324/model/RebootInstancesResponse.cpp
   src/v20200324/model/ResetInstanceResponse.cpp
-  src/v20200324/model/DescribeInstancesResponse.cpp
   src/v20200324/model/RebootInstancesRequest.cpp
+  src/v20200324/model/StopInstancesResponse.cpp
+  src/v20200324/model/InternetAccessible.cpp
   src/v20200324/model/DescribeBundlesRequest.cpp
   )
 

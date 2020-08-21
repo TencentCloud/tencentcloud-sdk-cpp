@@ -169,6 +169,49 @@ EcmClient::AssociateAddressOutcomeCallable EcmClient::AssociateAddressCallable(c
     return task->get_future();
 }
 
+EcmClient::AssociateSecurityGroupsOutcome EcmClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateSecurityGroupsResponse rsp = AssociateSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateSecurityGroupsOutcome(rsp);
+        else
+            return AssociateSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AssociateSecurityGroupsAsync(const AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AssociateSecurityGroupsOutcomeCallable EcmClient::AssociateSecurityGroupsCallable(const AssociateSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::AttachNetworkInterfaceOutcome EcmClient::AttachNetworkInterface(const AttachNetworkInterfaceRequest &request)
 {
     auto outcome = MakeRequest(request, "AttachNetworkInterface");
@@ -384,6 +427,49 @@ EcmClient::CreateSecurityGroupOutcomeCallable EcmClient::CreateSecurityGroupCall
     return task->get_future();
 }
 
+EcmClient::CreateSecurityGroupPoliciesOutcome EcmClient::CreateSecurityGroupPolicies(const CreateSecurityGroupPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSecurityGroupPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSecurityGroupPoliciesResponse rsp = CreateSecurityGroupPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSecurityGroupPoliciesOutcome(rsp);
+        else
+            return CreateSecurityGroupPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSecurityGroupPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateSecurityGroupPoliciesAsync(const CreateSecurityGroupPoliciesRequest& request, const CreateSecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSecurityGroupPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateSecurityGroupPoliciesOutcomeCallable EcmClient::CreateSecurityGroupPoliciesCallable(const CreateSecurityGroupPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSecurityGroupPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSecurityGroupPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::CreateSubnetOutcome EcmClient::CreateSubnet(const CreateSubnetRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSubnet");
@@ -592,6 +678,92 @@ EcmClient::DeleteNetworkInterfaceOutcomeCallable EcmClient::DeleteNetworkInterfa
         [this, request]()
         {
             return this->DeleteNetworkInterface(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteSecurityGroupOutcome EcmClient::DeleteSecurityGroup(const DeleteSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSecurityGroupResponse rsp = DeleteSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSecurityGroupOutcome(rsp);
+        else
+            return DeleteSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteSecurityGroupAsync(const DeleteSecurityGroupRequest& request, const DeleteSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteSecurityGroupOutcomeCallable EcmClient::DeleteSecurityGroupCallable(const DeleteSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteSecurityGroupPoliciesOutcome EcmClient::DeleteSecurityGroupPolicies(const DeleteSecurityGroupPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSecurityGroupPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSecurityGroupPoliciesResponse rsp = DeleteSecurityGroupPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSecurityGroupPoliciesOutcome(rsp);
+        else
+            return DeleteSecurityGroupPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSecurityGroupPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteSecurityGroupPoliciesAsync(const DeleteSecurityGroupPoliciesRequest& request, const DeleteSecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSecurityGroupPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteSecurityGroupPoliciesOutcomeCallable EcmClient::DeleteSecurityGroupPoliciesCallable(const DeleteSecurityGroupPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSecurityGroupPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSecurityGroupPolicies(request);
         }
     );
 
@@ -1459,6 +1631,178 @@ EcmClient::DescribePeakNetworkOverviewOutcomeCallable EcmClient::DescribePeakNet
     return task->get_future();
 }
 
+EcmClient::DescribeSecurityGroupAssociationStatisticsOutcome EcmClient::DescribeSecurityGroupAssociationStatistics(const DescribeSecurityGroupAssociationStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityGroupAssociationStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityGroupAssociationStatisticsResponse rsp = DescribeSecurityGroupAssociationStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityGroupAssociationStatisticsOutcome(rsp);
+        else
+            return DescribeSecurityGroupAssociationStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityGroupAssociationStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeSecurityGroupAssociationStatisticsAsync(const DescribeSecurityGroupAssociationStatisticsRequest& request, const DescribeSecurityGroupAssociationStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityGroupAssociationStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeSecurityGroupAssociationStatisticsOutcomeCallable EcmClient::DescribeSecurityGroupAssociationStatisticsCallable(const DescribeSecurityGroupAssociationStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupAssociationStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityGroupAssociationStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeSecurityGroupLimitsOutcome EcmClient::DescribeSecurityGroupLimits(const DescribeSecurityGroupLimitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityGroupLimits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityGroupLimitsResponse rsp = DescribeSecurityGroupLimitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityGroupLimitsOutcome(rsp);
+        else
+            return DescribeSecurityGroupLimitsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityGroupLimitsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeSecurityGroupLimitsAsync(const DescribeSecurityGroupLimitsRequest& request, const DescribeSecurityGroupLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityGroupLimits(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeSecurityGroupLimitsOutcomeCallable EcmClient::DescribeSecurityGroupLimitsCallable(const DescribeSecurityGroupLimitsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupLimitsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityGroupLimits(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeSecurityGroupPoliciesOutcome EcmClient::DescribeSecurityGroupPolicies(const DescribeSecurityGroupPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityGroupPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityGroupPoliciesResponse rsp = DescribeSecurityGroupPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityGroupPoliciesOutcome(rsp);
+        else
+            return DescribeSecurityGroupPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityGroupPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeSecurityGroupPoliciesAsync(const DescribeSecurityGroupPoliciesRequest& request, const DescribeSecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityGroupPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeSecurityGroupPoliciesOutcomeCallable EcmClient::DescribeSecurityGroupPoliciesCallable(const DescribeSecurityGroupPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityGroupPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeSecurityGroupsOutcome EcmClient::DescribeSecurityGroups(const DescribeSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityGroupsResponse rsp = DescribeSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityGroupsOutcome(rsp);
+        else
+            return DescribeSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeSecurityGroupsAsync(const DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeSecurityGroupsOutcomeCallable EcmClient::DescribeSecurityGroupsCallable(const DescribeSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeSubnetsOutcome EcmClient::DescribeSubnets(const DescribeSubnetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubnets");
@@ -1710,6 +2054,49 @@ EcmClient::DisassociateAddressOutcomeCallable EcmClient::DisassociateAddressCall
         [this, request]()
         {
             return this->DisassociateAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DisassociateSecurityGroupsOutcome EcmClient::DisassociateSecurityGroups(const DisassociateSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateSecurityGroupsResponse rsp = DisassociateSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateSecurityGroupsOutcome(rsp);
+        else
+            return DisassociateSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DisassociateSecurityGroupsAsync(const DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DisassociateSecurityGroupsOutcomeCallable EcmClient::DisassociateSecurityGroupsCallable(const DisassociateSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateSecurityGroups(request);
         }
     );
 
@@ -2319,6 +2706,135 @@ EcmClient::ModifyModuleNetworkOutcomeCallable EcmClient::ModifyModuleNetworkCall
     return task->get_future();
 }
 
+EcmClient::ModifyModuleSecurityGroupsOutcome EcmClient::ModifyModuleSecurityGroups(const ModifyModuleSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModuleSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModuleSecurityGroupsResponse rsp = ModifyModuleSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModuleSecurityGroupsOutcome(rsp);
+        else
+            return ModifyModuleSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModuleSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyModuleSecurityGroupsAsync(const ModifyModuleSecurityGroupsRequest& request, const ModifyModuleSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyModuleSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyModuleSecurityGroupsOutcomeCallable EcmClient::ModifyModuleSecurityGroupsCallable(const ModifyModuleSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyModuleSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyModuleSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifySecurityGroupAttributeOutcome EcmClient::ModifySecurityGroupAttribute(const ModifySecurityGroupAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecurityGroupAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecurityGroupAttributeResponse rsp = ModifySecurityGroupAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecurityGroupAttributeOutcome(rsp);
+        else
+            return ModifySecurityGroupAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecurityGroupAttributeOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifySecurityGroupAttributeAsync(const ModifySecurityGroupAttributeRequest& request, const ModifySecurityGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecurityGroupAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifySecurityGroupAttributeOutcomeCallable EcmClient::ModifySecurityGroupAttributeCallable(const ModifySecurityGroupAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecurityGroupAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecurityGroupAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifySecurityGroupPoliciesOutcome EcmClient::ModifySecurityGroupPolicies(const ModifySecurityGroupPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecurityGroupPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecurityGroupPoliciesResponse rsp = ModifySecurityGroupPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecurityGroupPoliciesOutcome(rsp);
+        else
+            return ModifySecurityGroupPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecurityGroupPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifySecurityGroupPoliciesAsync(const ModifySecurityGroupPoliciesRequest& request, const ModifySecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecurityGroupPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifySecurityGroupPoliciesOutcomeCallable EcmClient::ModifySecurityGroupPoliciesCallable(const ModifySecurityGroupPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecurityGroupPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecurityGroupPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ModifySubnetAttributeOutcome EcmClient::ModifySubnetAttribute(const ModifySubnetAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySubnetAttribute");
@@ -2527,6 +3043,49 @@ EcmClient::RemovePrivateIpAddressesOutcomeCallable EcmClient::RemovePrivateIpAdd
         [this, request]()
         {
             return this->RemovePrivateIpAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ReplaceSecurityGroupPolicyOutcome EcmClient::ReplaceSecurityGroupPolicy(const ReplaceSecurityGroupPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceSecurityGroupPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceSecurityGroupPolicyResponse rsp = ReplaceSecurityGroupPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceSecurityGroupPolicyOutcome(rsp);
+        else
+            return ReplaceSecurityGroupPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceSecurityGroupPolicyOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ReplaceSecurityGroupPolicyAsync(const ReplaceSecurityGroupPolicyRequest& request, const ReplaceSecurityGroupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceSecurityGroupPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ReplaceSecurityGroupPolicyOutcomeCallable EcmClient::ReplaceSecurityGroupPolicyCallable(const ReplaceSecurityGroupPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceSecurityGroupPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceSecurityGroupPolicy(request);
         }
     );
 

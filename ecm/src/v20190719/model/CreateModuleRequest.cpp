@@ -31,7 +31,8 @@ CreateModuleRequest::CreateModuleRequest() :
     m_defaultSystemDiskSizeHasBeenSet(false),
     m_defaultDataDiskSizeHasBeenSet(false),
     m_closeIpDirectHasBeenSet(false),
-    m_tagSpecificationHasBeenSet(false)
+    m_tagSpecificationHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,19 @@ string CreateModuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_securityGroupsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroups";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroups.begin(); itr != m_securityGroups.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -247,6 +261,22 @@ void CreateModuleRequest::SetTagSpecification(const vector<TagSpecification>& _t
 bool CreateModuleRequest::TagSpecificationHasBeenSet() const
 {
     return m_tagSpecificationHasBeenSet;
+}
+
+vector<string> CreateModuleRequest::GetSecurityGroups() const
+{
+    return m_securityGroups;
+}
+
+void CreateModuleRequest::SetSecurityGroups(const vector<string>& _securityGroups)
+{
+    m_securityGroups = _securityGroups;
+    m_securityGroupsHasBeenSet = true;
+}
+
+bool CreateModuleRequest::SecurityGroupsHasBeenSet() const
+{
+    return m_securityGroupsHasBeenSet;
 }
 
 

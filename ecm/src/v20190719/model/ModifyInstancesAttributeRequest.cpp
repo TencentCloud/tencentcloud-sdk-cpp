@@ -25,7 +25,8 @@ using namespace std;
 
 ModifyInstancesAttributeRequest::ModifyInstancesAttributeRequest() :
     m_instanceIdSetHasBeenSet(false),
-    m_instanceNameHasBeenSet(false)
+    m_instanceNameHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,19 @@ string ModifyInstancesAttributeRequest::ToJsonString() const
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroups";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroups.begin(); itr != m_securityGroups.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -95,6 +109,22 @@ void ModifyInstancesAttributeRequest::SetInstanceName(const string& _instanceNam
 bool ModifyInstancesAttributeRequest::InstanceNameHasBeenSet() const
 {
     return m_instanceNameHasBeenSet;
+}
+
+vector<string> ModifyInstancesAttributeRequest::GetSecurityGroups() const
+{
+    return m_securityGroups;
+}
+
+void ModifyInstancesAttributeRequest::SetSecurityGroups(const vector<string>& _securityGroups)
+{
+    m_securityGroups = _securityGroups;
+    m_securityGroupsHasBeenSet = true;
+}
+
+bool ModifyInstancesAttributeRequest::SecurityGroupsHasBeenSet() const
+{
+    return m_securityGroupsHasBeenSet;
 }
 
 

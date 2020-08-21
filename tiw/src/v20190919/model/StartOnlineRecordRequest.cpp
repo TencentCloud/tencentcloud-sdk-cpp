@@ -33,7 +33,8 @@ StartOnlineRecordRequest::StartOnlineRecordRequest() :
     m_whiteboardHasBeenSet(false),
     m_mixStreamHasBeenSet(false),
     m_extrasHasBeenSet(false),
-    m_audioFileNeededHasBeenSet(false)
+    m_audioFileNeededHasBeenSet(false),
+    m_recordControlHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,15 @@ string StartOnlineRecordRequest::ToJsonString() const
         string key = "AudioFileNeeded";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_audioFileNeeded, allocator);
+    }
+
+    if (m_recordControlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RecordControl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_recordControl.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -298,6 +308,22 @@ void StartOnlineRecordRequest::SetAudioFileNeeded(const bool& _audioFileNeeded)
 bool StartOnlineRecordRequest::AudioFileNeededHasBeenSet() const
 {
     return m_audioFileNeededHasBeenSet;
+}
+
+RecordControl StartOnlineRecordRequest::GetRecordControl() const
+{
+    return m_recordControl;
+}
+
+void StartOnlineRecordRequest::SetRecordControl(const RecordControl& _recordControl)
+{
+    m_recordControl = _recordControl;
+    m_recordControlHasBeenSet = true;
+}
+
+bool StartOnlineRecordRequest::RecordControlHasBeenSet() const
+{
+    return m_recordControlHasBeenSet;
 }
 
 

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h>
@@ -49,6 +51,9 @@ namespace TencentCloud
                 LighthouseClient(const Credential &credential, const std::string &region);
                 LighthouseClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::DescribeBlueprintsResponse> DescribeBlueprintsOutcome;
+                typedef std::future<DescribeBlueprintsOutcome> DescribeBlueprintsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintsRequest&, DescribeBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBundlesResponse> DescribeBundlesOutcome;
                 typedef std::future<DescribeBundlesOutcome> DescribeBundlesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBundlesRequest&, DescribeBundlesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBundlesAsyncHandler;
@@ -71,6 +76,15 @@ namespace TencentCloud
 
 
                 /**
+                 *本接口（DescribeBlueprints）用于查询镜像信息。
+                 * @param req DescribeBlueprintsRequest
+                 * @return DescribeBlueprintsOutcome
+                 */
+                DescribeBlueprintsOutcome DescribeBlueprints(const Model::DescribeBlueprintsRequest &request);
+                void DescribeBlueprintsAsync(const Model::DescribeBlueprintsRequest& request, const DescribeBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlueprintsOutcomeCallable DescribeBlueprintsCallable(const Model::DescribeBlueprintsRequest& request);
+
+                /**
                  *本接口（DescribeBundles）用于查询套餐信息。
                  * @param req DescribeBundlesRequest
                  * @return DescribeBundlesOutcome
@@ -83,7 +97,7 @@ namespace TencentCloud
                  *本接口（DescribeInstances）用于查询一个或多个实例的详细信息。
 
 * 可以根据实例 ID、实例名称或者实例的内网 IP 查询实例的详细信息。
-* 过滤信息详细请见过滤器 Filters 。
+* 过滤信息详细请见过滤器 [Filters](https://cloud.tencent.com/document/product/1207/47576#Filter) 。
 * 如果参数为空，返回当前用户一定数量（Limit 所指定的数量，默认为 20）的实例。
 * 支持查询实例的最新操作（LatestOperation）以及最新操作状态（LatestOperationState）。
                  * @param req DescribeInstancesRequest

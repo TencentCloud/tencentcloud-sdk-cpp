@@ -24,7 +24,8 @@ using namespace std;
 StreamLayout::StreamLayout() :
     m_layoutParamsHasBeenSet(false),
     m_inputStreamIdHasBeenSet(false),
-    m_backgroundColorHasBeenSet(false)
+    m_backgroundColorHasBeenSet(false),
+    m_fillModeHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,16 @@ CoreInternalOutcome StreamLayout::Deserialize(const Value &value)
         m_backgroundColorHasBeenSet = true;
     }
 
+    if (value.HasMember("FillMode") && !value["FillMode"].IsNull())
+    {
+        if (!value["FillMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `StreamLayout.FillMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fillMode = value["FillMode"].GetInt64();
+        m_fillModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -100,6 +111,14 @@ void StreamLayout::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "BackgroundColor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_backgroundColor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fillModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fillMode, allocator);
     }
 
 }
@@ -151,5 +170,21 @@ void StreamLayout::SetBackgroundColor(const string& _backgroundColor)
 bool StreamLayout::BackgroundColorHasBeenSet() const
 {
     return m_backgroundColorHasBeenSet;
+}
+
+int64_t StreamLayout::GetFillMode() const
+{
+    return m_fillMode;
+}
+
+void StreamLayout::SetFillMode(const int64_t& _fillMode)
+{
+    m_fillMode = _fillMode;
+    m_fillModeHasBeenSet = true;
+}
+
+bool StreamLayout::FillModeHasBeenSet() const
+{
+    return m_fillModeHasBeenSet;
 }
 

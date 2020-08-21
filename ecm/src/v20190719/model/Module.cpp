@@ -32,7 +32,8 @@ Module::Module() :
     m_createTimeHasBeenSet(false),
     m_defaultBandwidthHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_closeIpDirectHasBeenSet(false)
+    m_closeIpDirectHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,19 @@ CoreInternalOutcome Module::Deserialize(const Value &value)
         m_closeIpDirectHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Error("response `Module.SecurityGroupIds` is not array type"));
+
+        const Value &tmpValue = value["SecurityGroupIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +291,19 @@ void Module::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "CloseIpDirect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_closeIpDirect, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -456,5 +483,21 @@ void Module::SetCloseIpDirect(const int64_t& _closeIpDirect)
 bool Module::CloseIpDirectHasBeenSet() const
 {
     return m_closeIpDirectHasBeenSet;
+}
+
+vector<string> Module::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void Module::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool Module::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 

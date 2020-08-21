@@ -29,6 +29,8 @@
 #include <tencentcloud/ecm/v20190719/model/AssignPrivateIpAddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AssociateAddressRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AssociateAddressResponse.h>
+#include <tencentcloud/ecm/v20190719/model/AssociateSecurityGroupsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AttachNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AttachNetworkInterfaceResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateImageRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/ecm/v20190719/model/CreateNetworkInterfaceResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateSecurityGroupRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateSecurityGroupResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateSecurityGroupPoliciesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateSecurityGroupPoliciesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateSubnetRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateSubnetResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateVpcRequest.h>
@@ -49,6 +53,10 @@
 #include <tencentcloud/ecm/v20190719/model/DeleteModuleResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteNetworkInterfaceResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteSecurityGroupRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteSecurityGroupResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteSecurityGroupPoliciesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteSecurityGroupPoliciesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteSubnetRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteSubnetResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteVpcRequest.h>
@@ -89,6 +97,14 @@
 #include <tencentcloud/ecm/v20190719/model/DescribePeakBaseOverviewResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePeakNetworkOverviewRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePeakNetworkOverviewResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupAssociationStatisticsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupAssociationStatisticsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupLimitsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupLimitsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupPoliciesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupPoliciesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSubnetsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSubnetsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeTaskResultRequest.h>
@@ -101,6 +117,8 @@
 #include <tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateAddressRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateAddressResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DisassociateSecurityGroupsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DisassociateSecurityGroupsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ImportCustomImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ImportCustomImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ImportImageRequest.h>
@@ -129,6 +147,12 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleNameResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleNetworkRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleNetworkResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyModuleSecurityGroupsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyModuleSecurityGroupsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifySecurityGroupAttributeRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifySecurityGroupAttributeResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifySecurityGroupPoliciesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifySecurityGroupPoliciesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifySubnetAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifySubnetAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyVpcAttributeRequest.h>
@@ -139,6 +163,8 @@
 #include <tencentcloud/ecm/v20190719/model/ReleaseAddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ReplaceSecurityGroupPolicyRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ReplaceSecurityGroupPolicyResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ResetInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ResetInstancesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ResetInstancesMaxBandwidthRequest.h>
@@ -176,6 +202,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AssociateAddressResponse> AssociateAddressOutcome;
                 typedef std::future<AssociateAddressOutcome> AssociateAddressOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AssociateAddressRequest&, AssociateAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateAddressAsyncHandler;
+                typedef Outcome<Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
+                typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::AttachNetworkInterfaceResponse> AttachNetworkInterfaceOutcome;
                 typedef std::future<AttachNetworkInterfaceOutcome> AttachNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AttachNetworkInterfaceRequest&, AttachNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachNetworkInterfaceAsyncHandler;
@@ -191,6 +220,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateSecurityGroupResponse> CreateSecurityGroupOutcome;
                 typedef std::future<CreateSecurityGroupOutcome> CreateSecurityGroupOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateSecurityGroupRequest&, CreateSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityGroupAsyncHandler;
+                typedef Outcome<Error, Model::CreateSecurityGroupPoliciesResponse> CreateSecurityGroupPoliciesOutcome;
+                typedef std::future<CreateSecurityGroupPoliciesOutcome> CreateSecurityGroupPoliciesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::CreateSecurityGroupPoliciesRequest&, CreateSecurityGroupPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityGroupPoliciesAsyncHandler;
                 typedef Outcome<Error, Model::CreateSubnetResponse> CreateSubnetOutcome;
                 typedef std::future<CreateSubnetOutcome> CreateSubnetOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateSubnetRequest&, CreateSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubnetAsyncHandler;
@@ -206,6 +238,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteNetworkInterfaceResponse> DeleteNetworkInterfaceOutcome;
                 typedef std::future<DeleteNetworkInterfaceOutcome> DeleteNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DeleteNetworkInterfaceRequest&, DeleteNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkInterfaceAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSecurityGroupResponse> DeleteSecurityGroupOutcome;
+                typedef std::future<DeleteSecurityGroupOutcome> DeleteSecurityGroupOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DeleteSecurityGroupRequest&, DeleteSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSecurityGroupPoliciesResponse> DeleteSecurityGroupPoliciesOutcome;
+                typedef std::future<DeleteSecurityGroupPoliciesOutcome> DeleteSecurityGroupPoliciesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DeleteSecurityGroupPoliciesRequest&, DeleteSecurityGroupPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupPoliciesAsyncHandler;
                 typedef Outcome<Error, Model::DeleteSubnetResponse> DeleteSubnetOutcome;
                 typedef std::future<DeleteSubnetOutcome> DeleteSubnetOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DeleteSubnetRequest&, DeleteSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSubnetAsyncHandler;
@@ -266,6 +304,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePeakNetworkOverviewResponse> DescribePeakNetworkOverviewOutcome;
                 typedef std::future<DescribePeakNetworkOverviewOutcome> DescribePeakNetworkOverviewOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribePeakNetworkOverviewRequest&, DescribePeakNetworkOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePeakNetworkOverviewAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSecurityGroupAssociationStatisticsResponse> DescribeSecurityGroupAssociationStatisticsOutcome;
+                typedef std::future<DescribeSecurityGroupAssociationStatisticsOutcome> DescribeSecurityGroupAssociationStatisticsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeSecurityGroupAssociationStatisticsRequest&, DescribeSecurityGroupAssociationStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupAssociationStatisticsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSecurityGroupLimitsResponse> DescribeSecurityGroupLimitsOutcome;
+                typedef std::future<DescribeSecurityGroupLimitsOutcome> DescribeSecurityGroupLimitsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeSecurityGroupLimitsRequest&, DescribeSecurityGroupLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupLimitsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSecurityGroupPoliciesResponse> DescribeSecurityGroupPoliciesOutcome;
+                typedef std::future<DescribeSecurityGroupPoliciesOutcome> DescribeSecurityGroupPoliciesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeSecurityGroupPoliciesRequest&, DescribeSecurityGroupPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupPoliciesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSecurityGroupsResponse> DescribeSecurityGroupsOutcome;
+                typedef std::future<DescribeSecurityGroupsOutcome> DescribeSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeSecurityGroupsRequest&, DescribeSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSubnetsResponse> DescribeSubnetsOutcome;
                 typedef std::future<DescribeSubnetsOutcome> DescribeSubnetsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeSubnetsRequest&, DescribeSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetsAsyncHandler;
@@ -284,6 +334,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DisassociateAddressResponse> DisassociateAddressOutcome;
                 typedef std::future<DisassociateAddressOutcome> DisassociateAddressOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DisassociateAddressRequest&, DisassociateAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateAddressAsyncHandler;
+                typedef Outcome<Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
+                typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::ImportCustomImageResponse> ImportCustomImageOutcome;
                 typedef std::future<ImportCustomImageOutcome> ImportCustomImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ImportCustomImageRequest&, ImportCustomImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportCustomImageAsyncHandler;
@@ -326,6 +379,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyModuleNetworkResponse> ModifyModuleNetworkOutcome;
                 typedef std::future<ModifyModuleNetworkOutcome> ModifyModuleNetworkOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyModuleNetworkRequest&, ModifyModuleNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleNetworkAsyncHandler;
+                typedef Outcome<Error, Model::ModifyModuleSecurityGroupsResponse> ModifyModuleSecurityGroupsOutcome;
+                typedef std::future<ModifyModuleSecurityGroupsOutcome> ModifyModuleSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyModuleSecurityGroupsRequest&, ModifyModuleSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::ModifySecurityGroupAttributeResponse> ModifySecurityGroupAttributeOutcome;
+                typedef std::future<ModifySecurityGroupAttributeOutcome> ModifySecurityGroupAttributeOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifySecurityGroupAttributeRequest&, ModifySecurityGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifySecurityGroupPoliciesResponse> ModifySecurityGroupPoliciesOutcome;
+                typedef std::future<ModifySecurityGroupPoliciesOutcome> ModifySecurityGroupPoliciesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifySecurityGroupPoliciesRequest&, ModifySecurityGroupPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupPoliciesAsyncHandler;
                 typedef Outcome<Error, Model::ModifySubnetAttributeResponse> ModifySubnetAttributeOutcome;
                 typedef std::future<ModifySubnetAttributeOutcome> ModifySubnetAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifySubnetAttributeRequest&, ModifySubnetAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubnetAttributeAsyncHandler;
@@ -341,6 +403,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RemovePrivateIpAddressesResponse> RemovePrivateIpAddressesOutcome;
                 typedef std::future<RemovePrivateIpAddressesOutcome> RemovePrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::RemovePrivateIpAddressesRequest&, RemovePrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemovePrivateIpAddressesAsyncHandler;
+                typedef Outcome<Error, Model::ReplaceSecurityGroupPolicyResponse> ReplaceSecurityGroupPolicyOutcome;
+                typedef std::future<ReplaceSecurityGroupPolicyOutcome> ReplaceSecurityGroupPolicyOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ReplaceSecurityGroupPolicyRequest&, ReplaceSecurityGroupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceSecurityGroupPolicyAsyncHandler;
                 typedef Outcome<Error, Model::ResetInstancesResponse> ResetInstancesOutcome;
                 typedef std::future<ResetInstancesOutcome> ResetInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ResetInstancesRequest&, ResetInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesAsyncHandler;
@@ -399,6 +464,15 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 AssociateAddressOutcomeCallable AssociateAddressCallable(const Model::AssociateAddressRequest& request);
 
                 /**
+                 *绑定安全组
+                 * @param req AssociateSecurityGroupsRequest
+                 * @return AssociateSecurityGroupsOutcome
+                 */
+                AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
+                void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
+
+                /**
                  *弹性网卡绑定云主机
                  * @param req AttachNetworkInterfaceRequest
                  * @return AttachNetworkInterfaceOutcome
@@ -444,6 +518,26 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 CreateSecurityGroupOutcomeCallable CreateSecurityGroupCallable(const Model::CreateSecurityGroupRequest& request);
 
                 /**
+                 *在 SecurityGroupPolicySet 参数中：
+
+Version 安全组规则版本号，用户每次更新安全规则版本会自动加1，防止您更新的路由规则已过期，不填不考虑冲突。
+在创建出站和入站规则（Egress 和 Ingress）时：
+Protocol 字段支持输入TCP, UDP, ICMP, ICMPV6, GRE, ALL。
+CidrBlock 字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果 CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。
+Ipv6CidrBlock 字段允许输入符合IPv6 cidr格式标准的任意字符串。(展开)在基础网络中，如果Ipv6CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。
+SecurityGroupId 字段允许输入与待修改的安全组位于相同项目中的安全组 ID，包括这个安全组 ID 本身，代表安全组下所有云服务器的内网 IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个 ID 所关联的云服务器变化而变化，不需要重新修改。
+Port 字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当 Protocol 字段是 TCP 或 UDP 时，Port 字段才被接受，即 Protocol 字段不是 TCP 或 UDP 时，Protocol 和 Port 排他关系，不允许同时输入，否则会接口报错。
+Action 字段只允许输入 ACCEPT 或 DROP。
+CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系，不允许同时输入，Protocol + Port 和 ServiceTemplate 二者是排他关系，不允许同时输入。
+一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。
+                 * @param req CreateSecurityGroupPoliciesRequest
+                 * @return CreateSecurityGroupPoliciesOutcome
+                 */
+                CreateSecurityGroupPoliciesOutcome CreateSecurityGroupPolicies(const Model::CreateSecurityGroupPoliciesRequest &request);
+                void CreateSecurityGroupPoliciesAsync(const Model::CreateSecurityGroupPoliciesRequest& request, const CreateSecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityGroupPoliciesOutcomeCallable CreateSecurityGroupPoliciesCallable(const Model::CreateSecurityGroupPoliciesRequest& request);
+
+                /**
                  *创建子网，若创建成功，则此子网会成为此可用区的默认子网。
                  * @param req CreateSubnetRequest
                  * @return CreateSubnetOutcome
@@ -487,6 +581,26 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 DeleteNetworkInterfaceOutcome DeleteNetworkInterface(const Model::DeleteNetworkInterfaceRequest &request);
                 void DeleteNetworkInterfaceAsync(const Model::DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNetworkInterfaceOutcomeCallable DeleteNetworkInterfaceCallable(const Model::DeleteNetworkInterfaceRequest& request);
+
+                /**
+                 *只有当前账号下的安全组允许被删除。
+安全组实例ID如果在其他安全组的规则中被引用，则无法直接删除。这种情况下，需要先进行规则修改，再删除安全组。
+删除的安全组无法再找回，请谨慎调用。
+                 * @param req DeleteSecurityGroupRequest
+                 * @return DeleteSecurityGroupOutcome
+                 */
+                DeleteSecurityGroupOutcome DeleteSecurityGroup(const Model::DeleteSecurityGroupRequest &request);
+                void DeleteSecurityGroupAsync(const Model::DeleteSecurityGroupRequest& request, const DeleteSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityGroupOutcomeCallable DeleteSecurityGroupCallable(const Model::DeleteSecurityGroupRequest& request);
+
+                /**
+                 *SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。
+                 * @param req DeleteSecurityGroupPoliciesRequest
+                 * @return DeleteSecurityGroupPoliciesOutcome
+                 */
+                DeleteSecurityGroupPoliciesOutcome DeleteSecurityGroupPolicies(const Model::DeleteSecurityGroupPoliciesRequest &request);
+                void DeleteSecurityGroupPoliciesAsync(const Model::DeleteSecurityGroupPoliciesRequest& request, const DeleteSecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityGroupPoliciesOutcomeCallable DeleteSecurityGroupPoliciesCallable(const Model::DeleteSecurityGroupPoliciesRequest& request);
 
                 /**
                  *删除子网，若子网为可用区下的默认子网，则默认子网会回退到系统自动创建的默认子网，非用户最新创建的子网。若默认子网不满足需求，可调用设置默认子网接口设置。
@@ -669,6 +783,42 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 DescribePeakNetworkOverviewOutcomeCallable DescribePeakNetworkOverviewCallable(const Model::DescribePeakNetworkOverviewRequest& request);
 
                 /**
+                 *查询安全组关联实例统计
+                 * @param req DescribeSecurityGroupAssociationStatisticsRequest
+                 * @return DescribeSecurityGroupAssociationStatisticsOutcome
+                 */
+                DescribeSecurityGroupAssociationStatisticsOutcome DescribeSecurityGroupAssociationStatistics(const Model::DescribeSecurityGroupAssociationStatisticsRequest &request);
+                void DescribeSecurityGroupAssociationStatisticsAsync(const Model::DescribeSecurityGroupAssociationStatisticsRequest& request, const DescribeSecurityGroupAssociationStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityGroupAssociationStatisticsOutcomeCallable DescribeSecurityGroupAssociationStatisticsCallable(const Model::DescribeSecurityGroupAssociationStatisticsRequest& request);
+
+                /**
+                 *查询用户安全组配额
+                 * @param req DescribeSecurityGroupLimitsRequest
+                 * @return DescribeSecurityGroupLimitsOutcome
+                 */
+                DescribeSecurityGroupLimitsOutcome DescribeSecurityGroupLimits(const Model::DescribeSecurityGroupLimitsRequest &request);
+                void DescribeSecurityGroupLimitsAsync(const Model::DescribeSecurityGroupLimitsRequest& request, const DescribeSecurityGroupLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityGroupLimitsOutcomeCallable DescribeSecurityGroupLimitsCallable(const Model::DescribeSecurityGroupLimitsRequest& request);
+
+                /**
+                 *查询安全组规则
+                 * @param req DescribeSecurityGroupPoliciesRequest
+                 * @return DescribeSecurityGroupPoliciesOutcome
+                 */
+                DescribeSecurityGroupPoliciesOutcome DescribeSecurityGroupPolicies(const Model::DescribeSecurityGroupPoliciesRequest &request);
+                void DescribeSecurityGroupPoliciesAsync(const Model::DescribeSecurityGroupPoliciesRequest& request, const DescribeSecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityGroupPoliciesOutcomeCallable DescribeSecurityGroupPoliciesCallable(const Model::DescribeSecurityGroupPoliciesRequest& request);
+
+                /**
+                 *查看安全组
+                 * @param req DescribeSecurityGroupsRequest
+                 * @return DescribeSecurityGroupsOutcome
+                 */
+                DescribeSecurityGroupsOutcome DescribeSecurityGroups(const Model::DescribeSecurityGroupsRequest &request);
+                void DescribeSecurityGroupsAsync(const Model::DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityGroupsOutcomeCallable DescribeSecurityGroupsCallable(const Model::DescribeSecurityGroupsRequest& request);
+
+                /**
                  *查询子网列表
                  * @param req DescribeSubnetsRequest
                  * @return DescribeSubnetsOutcome
@@ -723,6 +873,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 DisassociateAddressOutcome DisassociateAddress(const Model::DisassociateAddressRequest &request);
                 void DisassociateAddressAsync(const Model::DisassociateAddressRequest& request, const DisassociateAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateAddressOutcomeCallable DisassociateAddressCallable(const Model::DisassociateAddressRequest& request);
+
+                /**
+                 *解绑安全组
+                 * @param req DisassociateSecurityGroupsRequest
+                 * @return DisassociateSecurityGroupsOutcome
+                 */
+                DisassociateSecurityGroupsOutcome DisassociateSecurityGroups(const Model::DisassociateSecurityGroupsRequest &request);
+                void DisassociateSecurityGroupsAsync(const Model::DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
 
                 /**
                  *导入自定义镜像，支持 RAW、VHD、QCOW2、VMDK 镜像格式
@@ -854,6 +1013,33 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyModuleNetworkOutcomeCallable ModifyModuleNetworkCallable(const Model::ModifyModuleNetworkRequest& request);
 
                 /**
+                 *修改模块默认安全组
+                 * @param req ModifyModuleSecurityGroupsRequest
+                 * @return ModifyModuleSecurityGroupsOutcome
+                 */
+                ModifyModuleSecurityGroupsOutcome ModifyModuleSecurityGroups(const Model::ModifyModuleSecurityGroupsRequest &request);
+                void ModifyModuleSecurityGroupsAsync(const Model::ModifyModuleSecurityGroupsRequest& request, const ModifyModuleSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyModuleSecurityGroupsOutcomeCallable ModifyModuleSecurityGroupsCallable(const Model::ModifyModuleSecurityGroupsRequest& request);
+
+                /**
+                 *修改安全组属性
+                 * @param req ModifySecurityGroupAttributeRequest
+                 * @return ModifySecurityGroupAttributeOutcome
+                 */
+                ModifySecurityGroupAttributeOutcome ModifySecurityGroupAttribute(const Model::ModifySecurityGroupAttributeRequest &request);
+                void ModifySecurityGroupAttributeAsync(const Model::ModifySecurityGroupAttributeRequest& request, const ModifySecurityGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityGroupAttributeOutcomeCallable ModifySecurityGroupAttributeCallable(const Model::ModifySecurityGroupAttributeRequest& request);
+
+                /**
+                 *修改安全组出站和入站规则
+                 * @param req ModifySecurityGroupPoliciesRequest
+                 * @return ModifySecurityGroupPoliciesOutcome
+                 */
+                ModifySecurityGroupPoliciesOutcome ModifySecurityGroupPolicies(const Model::ModifySecurityGroupPoliciesRequest &request);
+                void ModifySecurityGroupPoliciesAsync(const Model::ModifySecurityGroupPoliciesRequest& request, const ModifySecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityGroupPoliciesOutcomeCallable ModifySecurityGroupPoliciesCallable(const Model::ModifySecurityGroupPoliciesRequest& request);
+
+                /**
                  *修改子网属性
                  * @param req ModifySubnetAttributeRequest
                  * @return ModifySubnetAttributeOutcome
@@ -900,6 +1086,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 RemovePrivateIpAddressesOutcome RemovePrivateIpAddresses(const Model::RemovePrivateIpAddressesRequest &request);
                 void RemovePrivateIpAddressesAsync(const Model::RemovePrivateIpAddressesRequest& request, const RemovePrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemovePrivateIpAddressesOutcomeCallable RemovePrivateIpAddressesCallable(const Model::RemovePrivateIpAddressesRequest& request);
+
+                /**
+                 *替换单条安全组路由规则, 单个请求中只能替换单个方向的一条规则, 必须要指定索引（PolicyIndex）。
+                 * @param req ReplaceSecurityGroupPolicyRequest
+                 * @return ReplaceSecurityGroupPolicyOutcome
+                 */
+                ReplaceSecurityGroupPolicyOutcome ReplaceSecurityGroupPolicy(const Model::ReplaceSecurityGroupPolicyRequest &request);
+                void ReplaceSecurityGroupPolicyAsync(const Model::ReplaceSecurityGroupPolicyRequest& request, const ReplaceSecurityGroupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceSecurityGroupPolicyOutcomeCallable ReplaceSecurityGroupPolicyCallable(const Model::ReplaceSecurityGroupPolicyRequest& request);
 
                 /**
                  *重装实例，若指定了ImageId参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装；若未指定密码，则密码通过站内信形式随后发送。

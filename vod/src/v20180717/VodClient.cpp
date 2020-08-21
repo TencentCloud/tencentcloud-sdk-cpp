@@ -1846,6 +1846,49 @@ VodClient::DescribeCDNUsageDataOutcomeCallable VodClient::DescribeCDNUsageDataCa
     return task->get_future();
 }
 
+VodClient::DescribeCdnLogsOutcome VodClient::DescribeCdnLogs(const DescribeCdnLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCdnLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCdnLogsResponse rsp = DescribeCdnLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCdnLogsOutcome(rsp);
+        else
+            return DescribeCdnLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCdnLogsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeCdnLogsAsync(const DescribeCdnLogsRequest& request, const DescribeCdnLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCdnLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeCdnLogsOutcomeCallable VodClient::DescribeCdnLogsCallable(const DescribeCdnLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCdnLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCdnLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeContentReviewTemplatesOutcome VodClient::DescribeContentReviewTemplates(const DescribeContentReviewTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContentReviewTemplates");

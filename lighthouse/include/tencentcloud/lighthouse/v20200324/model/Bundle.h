@@ -85,13 +85,21 @@ namespace TencentCloud
 
                     /**
                      * 获取系统盘类型。
+取值范围： 
+<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
                      * @return SystemDiskType 系统盘类型。
+取值范围： 
+<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
                      */
                     std::string GetSystemDiskType() const;
 
                     /**
                      * 设置系统盘类型。
+取值范围： 
+<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
                      * @param SystemDiskType 系统盘类型。
+取值范围： 
+<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
                      */
                     void SetSystemDiskType(const std::string& _systemDiskType);
 
@@ -279,6 +287,8 @@ namespace TencentCloud
 
                     /**
                      * 系统盘类型。
+取值范围： 
+<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
                      */
                     std::string m_systemDiskType;
                     bool m_systemDiskTypeHasBeenSet;

@@ -40,6 +40,49 @@ LighthouseClient::LighthouseClient(const Credential &credential, const string &r
 }
 
 
+LighthouseClient::DescribeBlueprintsOutcome LighthouseClient::DescribeBlueprints(const DescribeBlueprintsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlueprints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlueprintsResponse rsp = DescribeBlueprintsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlueprintsOutcome(rsp);
+        else
+            return DescribeBlueprintsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlueprintsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeBlueprintsAsync(const DescribeBlueprintsRequest& request, const DescribeBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBlueprints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeBlueprintsOutcomeCallable LighthouseClient::DescribeBlueprintsCallable(const DescribeBlueprintsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBlueprintsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBlueprints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DescribeBundlesOutcome LighthouseClient::DescribeBundles(const DescribeBundlesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBundles");

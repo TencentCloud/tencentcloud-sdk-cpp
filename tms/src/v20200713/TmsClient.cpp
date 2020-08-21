@@ -40,6 +40,49 @@ TmsClient::TmsClient(const Credential &credential, const string &region, const C
 }
 
 
+TmsClient::AccountTipoffAccessOutcome TmsClient::AccountTipoffAccess(const AccountTipoffAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "AccountTipoffAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AccountTipoffAccessResponse rsp = AccountTipoffAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AccountTipoffAccessOutcome(rsp);
+        else
+            return AccountTipoffAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return AccountTipoffAccessOutcome(outcome.GetError());
+    }
+}
+
+void TmsClient::AccountTipoffAccessAsync(const AccountTipoffAccessRequest& request, const AccountTipoffAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AccountTipoffAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TmsClient::AccountTipoffAccessOutcomeCallable TmsClient::AccountTipoffAccessCallable(const AccountTipoffAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AccountTipoffAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->AccountTipoffAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TmsClient::TextModerationOutcome TmsClient::TextModeration(const TextModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "TextModeration");

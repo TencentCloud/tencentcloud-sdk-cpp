@@ -22,9 +22,12 @@ set(tms_public_header_model
   include/tencentcloud/tms/v20200713/model/RiskDetails.h
   include/tencentcloud/tms/v20200713/model/TextModerationRequest.h
   include/tencentcloud/tms/v20200713/model/DetailResults.h
-  include/tencentcloud/tms/v20200713/model/User.h
+  include/tencentcloud/tms/v20200713/model/AccountTipoffAccessRequest.h
   include/tencentcloud/tms/v20200713/model/Device.h
+  include/tencentcloud/tms/v20200713/model/TipoffResponse.h
+  include/tencentcloud/tms/v20200713/model/AccountTipoffAccessResponse.h
   include/tencentcloud/tms/v20200713/model/TextModerationResponse.h
+  include/tencentcloud/tms/v20200713/model/User.h
   )
 
 set(tms_src
@@ -32,9 +35,12 @@ set(tms_src
   src/v20200713/model/RiskDetails.cpp
   src/v20200713/model/TextModerationRequest.cpp
   src/v20200713/model/DetailResults.cpp
-  src/v20200713/model/User.cpp
+  src/v20200713/model/AccountTipoffAccessRequest.cpp
   src/v20200713/model/Device.cpp
+  src/v20200713/model/TipoffResponse.cpp
+  src/v20200713/model/AccountTipoffAccessResponse.cpp
   src/v20200713/model/TextModerationResponse.cpp
+  src/v20200713/model/User.cpp
   )
 
 set(tms_include

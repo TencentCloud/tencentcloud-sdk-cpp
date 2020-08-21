@@ -24,6 +24,7 @@
 #include <tencentcloud/tiw/v20190919/model/Concat.h>
 #include <tencentcloud/tiw/v20190919/model/Whiteboard.h>
 #include <tencentcloud/tiw/v20190919/model/MixStream.h>
+#include <tencentcloud/tiw/v20190919/model/RecordControl.h>
 
 
 namespace TencentCloud
@@ -122,14 +123,14 @@ namespace TencentCloud
                     bool RecordUserSigHasBeenSet() const;
 
                     /**
-                     * 获取白板的 IM 群组 Id，默认同房间号
-                     * @return GroupId 白板的 IM 群组 Id，默认同房间号
+                     * 获取（已废弃，设置无效）白板的 IM 群组 Id，默认同房间号
+                     * @return GroupId （已废弃，设置无效）白板的 IM 群组 Id，默认同房间号
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置白板的 IM 群组 Id，默认同房间号
-                     * @param GroupId 白板的 IM 群组 Id，默认同房间号
+                     * 设置（已废弃，设置无效）白板的 IM 群组 Id，默认同房间号
+                     * @param GroupId （已废弃，设置无效）白板的 IM 群组 Id，默认同房间号
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -249,6 +250,24 @@ MIX_STREAM - 混流功能
                      */
                     bool AudioFileNeededHasBeenSet() const;
 
+                    /**
+                     * 获取实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
+                     * @return RecordControl 实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
+                     */
+                    RecordControl GetRecordControl() const;
+
+                    /**
+                     * 设置实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
+                     * @param RecordControl 实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
+                     */
+                    void SetRecordControl(const RecordControl& _recordControl);
+
+                    /**
+                     * 判断参数 RecordControl 是否已赋值
+                     * @return RecordControl 是否已赋值
+                     */
+                    bool RecordControlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -277,7 +296,7 @@ MIX_STREAM - 混流功能
                     bool m_recordUserSigHasBeenSet;
 
                     /**
-                     * 白板的 IM 群组 Id，默认同房间号
+                     * （已废弃，设置无效）白板的 IM 群组 Id，默认同房间号
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -316,6 +335,12 @@ MIX_STREAM - 混流功能
                      */
                     bool m_audioFileNeeded;
                     bool m_audioFileNeededHasBeenSet;
+
+                    /**
+                     * 实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
+                     */
+                    RecordControl m_recordControl;
+                    bool m_recordControlHasBeenSet;
 
                 };
             }
