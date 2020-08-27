@@ -814,6 +814,49 @@ VpcClient::AttachNetworkInterfaceOutcomeCallable VpcClient::AttachNetworkInterfa
     return task->get_future();
 }
 
+VpcClient::AuditCrossBorderComplianceOutcome VpcClient::AuditCrossBorderCompliance(const AuditCrossBorderComplianceRequest &request)
+{
+    auto outcome = MakeRequest(request, "AuditCrossBorderCompliance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AuditCrossBorderComplianceResponse rsp = AuditCrossBorderComplianceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AuditCrossBorderComplianceOutcome(rsp);
+        else
+            return AuditCrossBorderComplianceOutcome(o.GetError());
+    }
+    else
+    {
+        return AuditCrossBorderComplianceOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AuditCrossBorderComplianceAsync(const AuditCrossBorderComplianceRequest& request, const AuditCrossBorderComplianceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AuditCrossBorderCompliance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AuditCrossBorderComplianceOutcomeCallable VpcClient::AuditCrossBorderComplianceCallable(const AuditCrossBorderComplianceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AuditCrossBorderComplianceOutcome()>>(
+        [this, request]()
+        {
+            return this->AuditCrossBorderCompliance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CheckAssistantCidrOutcome VpcClient::CheckAssistantCidr(const CheckAssistantCidrRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckAssistantCidr");
@@ -4032,6 +4075,49 @@ VpcClient::DescribeClassicLinkInstancesOutcomeCallable VpcClient::DescribeClassi
         [this, request]()
         {
             return this->DescribeClassicLinkInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeCrossBorderComplianceOutcome VpcClient::DescribeCrossBorderCompliance(const DescribeCrossBorderComplianceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCrossBorderCompliance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCrossBorderComplianceResponse rsp = DescribeCrossBorderComplianceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCrossBorderComplianceOutcome(rsp);
+        else
+            return DescribeCrossBorderComplianceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCrossBorderComplianceOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCrossBorderComplianceAsync(const DescribeCrossBorderComplianceRequest& request, const DescribeCrossBorderComplianceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCrossBorderCompliance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeCrossBorderComplianceOutcomeCallable VpcClient::DescribeCrossBorderComplianceCallable(const DescribeCrossBorderComplianceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCrossBorderComplianceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCrossBorderCompliance(request);
         }
     );
 

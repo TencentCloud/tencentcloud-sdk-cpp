@@ -250,7 +250,7 @@ namespace TencentCloud
                 CreateLinkOutcomeCallable CreateLinkCallable(const Model::CreateLinkRequest& request);
 
                 /**
-                 *创建云剪的编辑项目，支持创建视频剪辑及直播剪辑两大类项目。
+                 *创建云剪的编辑项目，支持创建视频剪辑、直播剪辑及导播台项目。
 
                  * @param req CreateProjectRequest
                  * @return CreateProjectOutcome

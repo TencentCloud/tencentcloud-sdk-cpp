@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TriggerNameHasBeenSet() const;
 
                     /**
-                     * 获取触发器类型，目前支持 cos 、cmq、 timer、 ckafka类型
-                     * @return Type 触发器类型，目前支持 cos 、cmq、 timer、 ckafka类型
+                     * 获取触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型
+                     * @return Type 触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置触发器类型，目前支持 cos 、cmq、 timer、 ckafka类型
-                     * @param Type 触发器类型，目前支持 cos 、cmq、 timer、 ckafka类型
+                     * 设置触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型
+                     * @param Type 触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型
                      */
                     void SetType(const std::string& _type);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_triggerNameHasBeenSet;
 
                     /**
-                     * 触发器类型，目前支持 cos 、cmq、 timer、 ckafka类型
+                     * 触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

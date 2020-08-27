@@ -37,6 +37,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DeleteTeamRequest.h
   include/tencentcloud/cme/v20191029/model/ModifyMaterialResponse.h
   include/tencentcloud/cme/v20191029/model/LinkMaterial.h
+  include/tencentcloud/cme/v20191029/model/SwitcherProjectInput.h
   include/tencentcloud/cme/v20191029/model/FlattenListMediaRequest.h
   include/tencentcloud/cme/v20191029/model/AudioMaterial.h
   include/tencentcloud/cme/v20191029/model/AddMemberInfo.h
@@ -65,6 +66,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/CreateClassRequest.h
   include/tencentcloud/cme/v20191029/model/DescribeMaterialsResponse.h
   include/tencentcloud/cme/v20191029/model/GrantResourceAuthorizationResponse.h
+  include/tencentcloud/cme/v20191029/model/SwitcherPgmOutputConfig.h
   include/tencentcloud/cme/v20191029/model/CMEExportInfo.h
   include/tencentcloud/cme/v20191029/model/ImportMediaToProjectRequest.h
   include/tencentcloud/cme/v20191029/model/VODExportInfo.h
@@ -145,6 +147,7 @@ set(cme_src
   src/v20191029/model/DeleteTeamRequest.cpp
   src/v20191029/model/ModifyMaterialResponse.cpp
   src/v20191029/model/LinkMaterial.cpp
+  src/v20191029/model/SwitcherProjectInput.cpp
   src/v20191029/model/FlattenListMediaRequest.cpp
   src/v20191029/model/AudioMaterial.cpp
   src/v20191029/model/AddMemberInfo.cpp
@@ -173,6 +176,7 @@ set(cme_src
   src/v20191029/model/CreateClassRequest.cpp
   src/v20191029/model/DescribeMaterialsResponse.cpp
   src/v20191029/model/GrantResourceAuthorizationResponse.cpp
+  src/v20191029/model/SwitcherPgmOutputConfig.cpp
   src/v20191029/model/CMEExportInfo.cpp
   src/v20191029/model/ImportMediaToProjectRequest.cpp
   src/v20191029/model/VODExportInfo.cpp

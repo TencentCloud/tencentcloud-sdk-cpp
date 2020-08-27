@@ -25,7 +25,8 @@ LayoutParams::LayoutParams() :
     m_templateHasBeenSet(false),
     m_mainVideoUserIdHasBeenSet(false),
     m_mainVideoStreamTypeHasBeenSet(false),
-    m_smallVideoLayoutParamsHasBeenSet(false)
+    m_smallVideoLayoutParamsHasBeenSet(false),
+    m_mainVideoRightAlignHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,16 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
         m_smallVideoLayoutParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("MainVideoRightAlign") && !value["MainVideoRightAlign"].IsNull())
+    {
+        if (!value["MainVideoRightAlign"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `LayoutParams.MainVideoRightAlign` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mainVideoRightAlign = value["MainVideoRightAlign"].GetUint64();
+        m_mainVideoRightAlignHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -119,6 +130,14 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_smallVideoLayoutParams.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mainVideoRightAlignHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MainVideoRightAlign";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mainVideoRightAlign, allocator);
     }
 
 }
@@ -186,5 +205,21 @@ void LayoutParams::SetSmallVideoLayoutParams(const SmallVideoLayoutParams& _smal
 bool LayoutParams::SmallVideoLayoutParamsHasBeenSet() const
 {
     return m_smallVideoLayoutParamsHasBeenSet;
+}
+
+uint64_t LayoutParams::GetMainVideoRightAlign() const
+{
+    return m_mainVideoRightAlign;
+}
+
+void LayoutParams::SetMainVideoRightAlign(const uint64_t& _mainVideoRightAlign)
+{
+    m_mainVideoRightAlign = _mainVideoRightAlign;
+    m_mainVideoRightAlignHasBeenSet = true;
+}
+
+bool LayoutParams::MainVideoRightAlignHasBeenSet() const
+{
+    return m_mainVideoRightAlignHasBeenSet;
 }
 

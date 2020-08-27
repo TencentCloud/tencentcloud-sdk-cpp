@@ -25,12 +25,18 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/fmu/v20191213/model/BeautifyPicRequest.h>
 #include <tencentcloud/fmu/v20191213/model/BeautifyPicResponse.h>
+#include <tencentcloud/fmu/v20191213/model/BeautifyVideoRequest.h>
+#include <tencentcloud/fmu/v20191213/model/BeautifyVideoResponse.h>
+#include <tencentcloud/fmu/v20191213/model/CancelBeautifyVideoJobRequest.h>
+#include <tencentcloud/fmu/v20191213/model/CancelBeautifyVideoJobResponse.h>
 #include <tencentcloud/fmu/v20191213/model/CreateModelRequest.h>
 #include <tencentcloud/fmu/v20191213/model/CreateModelResponse.h>
 #include <tencentcloud/fmu/v20191213/model/DeleteModelRequest.h>
 #include <tencentcloud/fmu/v20191213/model/DeleteModelResponse.h>
 #include <tencentcloud/fmu/v20191213/model/GetModelListRequest.h>
 #include <tencentcloud/fmu/v20191213/model/GetModelListResponse.h>
+#include <tencentcloud/fmu/v20191213/model/QueryBeautifyVideoJobRequest.h>
+#include <tencentcloud/fmu/v20191213/model/QueryBeautifyVideoJobResponse.h>
 #include <tencentcloud/fmu/v20191213/model/TryLipstickPicRequest.h>
 #include <tencentcloud/fmu/v20191213/model/TryLipstickPicResponse.h>
 
@@ -50,6 +56,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BeautifyPicResponse> BeautifyPicOutcome;
                 typedef std::future<BeautifyPicOutcome> BeautifyPicOutcomeCallable;
                 typedef std::function<void(const FmuClient*, const Model::BeautifyPicRequest&, BeautifyPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BeautifyPicAsyncHandler;
+                typedef Outcome<Error, Model::BeautifyVideoResponse> BeautifyVideoOutcome;
+                typedef std::future<BeautifyVideoOutcome> BeautifyVideoOutcomeCallable;
+                typedef std::function<void(const FmuClient*, const Model::BeautifyVideoRequest&, BeautifyVideoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BeautifyVideoAsyncHandler;
+                typedef Outcome<Error, Model::CancelBeautifyVideoJobResponse> CancelBeautifyVideoJobOutcome;
+                typedef std::future<CancelBeautifyVideoJobOutcome> CancelBeautifyVideoJobOutcomeCallable;
+                typedef std::function<void(const FmuClient*, const Model::CancelBeautifyVideoJobRequest&, CancelBeautifyVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelBeautifyVideoJobAsyncHandler;
                 typedef Outcome<Error, Model::CreateModelResponse> CreateModelOutcome;
                 typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
                 typedef std::function<void(const FmuClient*, const Model::CreateModelRequest&, CreateModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelAsyncHandler;
@@ -59,6 +71,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetModelListResponse> GetModelListOutcome;
                 typedef std::future<GetModelListOutcome> GetModelListOutcomeCallable;
                 typedef std::function<void(const FmuClient*, const Model::GetModelListRequest&, GetModelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetModelListAsyncHandler;
+                typedef Outcome<Error, Model::QueryBeautifyVideoJobResponse> QueryBeautifyVideoJobOutcome;
+                typedef std::future<QueryBeautifyVideoJobOutcome> QueryBeautifyVideoJobOutcomeCallable;
+                typedef std::function<void(const FmuClient*, const Model::QueryBeautifyVideoJobRequest&, QueryBeautifyVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBeautifyVideoJobAsyncHandler;
                 typedef Outcome<Error, Model::TryLipstickPicResponse> TryLipstickPicOutcome;
                 typedef std::future<TryLipstickPicOutcome> TryLipstickPicOutcomeCallable;
                 typedef std::function<void(const FmuClient*, const Model::TryLipstickPicRequest&, TryLipstickPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TryLipstickPicAsyncHandler;
@@ -73,6 +88,24 @@ namespace TencentCloud
                 BeautifyPicOutcome BeautifyPic(const Model::BeautifyPicRequest &request);
                 void BeautifyPicAsync(const Model::BeautifyPicRequest& request, const BeautifyPicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BeautifyPicOutcomeCallable BeautifyPicCallable(const Model::BeautifyPicRequest& request);
+
+                /**
+                 *视频美颜
+                 * @param req BeautifyVideoRequest
+                 * @return BeautifyVideoOutcome
+                 */
+                BeautifyVideoOutcome BeautifyVideo(const Model::BeautifyVideoRequest &request);
+                void BeautifyVideoAsync(const Model::BeautifyVideoRequest& request, const BeautifyVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BeautifyVideoOutcomeCallable BeautifyVideoCallable(const Model::BeautifyVideoRequest& request);
+
+                /**
+                 *撤销视频美颜任务请求
+                 * @param req CancelBeautifyVideoJobRequest
+                 * @return CancelBeautifyVideoJobOutcome
+                 */
+                CancelBeautifyVideoJobOutcome CancelBeautifyVideoJob(const Model::CancelBeautifyVideoJobRequest &request);
+                void CancelBeautifyVideoJobAsync(const Model::CancelBeautifyVideoJobRequest& request, const CancelBeautifyVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelBeautifyVideoJobOutcomeCallable CancelBeautifyVideoJobCallable(const Model::CancelBeautifyVideoJobRequest& request);
 
                 /**
                  *在使用LUT素材的modelid实现试唇色前，您需要先上传 LUT 格式的cube文件注册唇色ID。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。
@@ -103,6 +136,15 @@ namespace TencentCloud
                 GetModelListOutcome GetModelList(const Model::GetModelListRequest &request);
                 void GetModelListAsync(const Model::GetModelListRequest& request, const GetModelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetModelListOutcomeCallable GetModelListCallable(const Model::GetModelListRequest& request);
+
+                /**
+                 *查询视频美颜处理进度
+                 * @param req QueryBeautifyVideoJobRequest
+                 * @return QueryBeautifyVideoJobOutcome
+                 */
+                QueryBeautifyVideoJobOutcome QueryBeautifyVideoJob(const Model::QueryBeautifyVideoJobRequest &request);
+                void QueryBeautifyVideoJobAsync(const Model::QueryBeautifyVideoJobRequest& request, const QueryBeautifyVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryBeautifyVideoJobOutcomeCallable QueryBeautifyVideoJobCallable(const Model::QueryBeautifyVideoJobRequest& request);
 
                 /**
                  *对图片中的人脸嘴唇进行着色，最多支持同时对一张图中的3张人脸进行试唇色。

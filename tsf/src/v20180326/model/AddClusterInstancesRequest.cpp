@@ -31,7 +31,8 @@ AddClusterInstancesRequest::AddClusterInstancesRequest() :
     m_passwordHasBeenSet(false),
     m_keyIdHasBeenSet(false),
     m_sgIdHasBeenSet(false),
-    m_instanceImportModeHasBeenSet(false)
+    m_instanceImportModeHasBeenSet(false),
+    m_osCustomizeTypeHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,14 @@ string AddClusterInstancesRequest::ToJsonString() const
         string key = "InstanceImportMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceImportMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osCustomizeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OsCustomizeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -245,6 +254,22 @@ void AddClusterInstancesRequest::SetInstanceImportMode(const string& _instanceIm
 bool AddClusterInstancesRequest::InstanceImportModeHasBeenSet() const
 {
     return m_instanceImportModeHasBeenSet;
+}
+
+string AddClusterInstancesRequest::GetOsCustomizeType() const
+{
+    return m_osCustomizeType;
+}
+
+void AddClusterInstancesRequest::SetOsCustomizeType(const string& _osCustomizeType)
+{
+    m_osCustomizeType = _osCustomizeType;
+    m_osCustomizeTypeHasBeenSet = true;
+}
+
+bool AddClusterInstancesRequest::OsCustomizeTypeHasBeenSet() const
+{
+    return m_osCustomizeTypeHasBeenSet;
 }
 
 

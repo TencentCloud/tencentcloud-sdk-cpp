@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定NAT网关的弹性IP数组。
-                     * @return PublicIpAddresses 绑定NAT网关的弹性IP数组。
+                     * 获取待解绑NAT网关的弹性IP数组。
+                     * @return PublicIpAddresses 待解绑NAT网关的弹性IP数组。
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
-                     * 设置绑定NAT网关的弹性IP数组。
-                     * @param PublicIpAddresses 绑定NAT网关的弹性IP数组。
+                     * 设置待解绑NAT网关的弹性IP数组。
+                     * @param PublicIpAddresses 待解绑NAT网关的弹性IP数组。
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_natGatewayIdHasBeenSet;
 
                     /**
-                     * 绑定NAT网关的弹性IP数组。
+                     * 待解绑NAT网关的弹性IP数组。
                      */
                     std::vector<std::string> m_publicIpAddresses;
                     bool m_publicIpAddressesHasBeenSet;

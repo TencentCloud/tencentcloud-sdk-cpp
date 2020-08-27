@@ -65,6 +65,28 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
+                     * 获取按帧标签名称的分类列表，CategorySet.N 表示第 N+1级分类。
+比如 Tag 为“塔楼”时，CategorySet 包含两个元素：CategorySet.0 为“场景”，CategorySet.1为 “建筑”，表示按帧标签为“塔楼”，且第1级分类是“场景”，第2级分类是“建筑”。
+                     * @return CategorySet 按帧标签名称的分类列表，CategorySet.N 表示第 N+1级分类。
+比如 Tag 为“塔楼”时，CategorySet 包含两个元素：CategorySet.0 为“场景”，CategorySet.1为 “建筑”，表示按帧标签为“塔楼”，且第1级分类是“场景”，第2级分类是“建筑”。
+                     */
+                    std::vector<std::string> GetCategorySet() const;
+
+                    /**
+                     * 设置按帧标签名称的分类列表，CategorySet.N 表示第 N+1级分类。
+比如 Tag 为“塔楼”时，CategorySet 包含两个元素：CategorySet.0 为“场景”，CategorySet.1为 “建筑”，表示按帧标签为“塔楼”，且第1级分类是“场景”，第2级分类是“建筑”。
+                     * @param CategorySet 按帧标签名称的分类列表，CategorySet.N 表示第 N+1级分类。
+比如 Tag 为“塔楼”时，CategorySet 包含两个元素：CategorySet.0 为“场景”，CategorySet.1为 “建筑”，表示按帧标签为“塔楼”，且第1级分类是“场景”，第2级分类是“建筑”。
+                     */
+                    void SetCategorySet(const std::vector<std::string>& _categorySet);
+
+                    /**
+                     * 判断参数 CategorySet 是否已赋值
+                     * @return CategorySet 是否已赋值
+                     */
+                    bool CategorySetHasBeenSet() const;
+
+                    /**
                      * 获取按帧标签的可信度，取值范围是 0 到 100。
                      * @return Confidence 按帧标签的可信度，取值范围是 0 到 100。
                      */
@@ -89,6 +111,13 @@ namespace TencentCloud
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 按帧标签名称的分类列表，CategorySet.N 表示第 N+1级分类。
+比如 Tag 为“塔楼”时，CategorySet 包含两个元素：CategorySet.0 为“场景”，CategorySet.1为 “建筑”，表示按帧标签为“塔楼”，且第1级分类是“场景”，第2级分类是“建筑”。
+                     */
+                    std::vector<std::string> m_categorySet;
+                    bool m_categorySetHasBeenSet;
 
                     /**
                      * 按帧标签的可信度，取值范围是 0 到 100。

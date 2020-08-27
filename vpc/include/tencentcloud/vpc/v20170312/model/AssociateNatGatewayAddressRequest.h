@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool AddressCountHasBeenSet() const;
 
                     /**
-                     * 获取绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。。
-                     * @return PublicIpAddresses 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。。
+                     * 获取绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
+                     * @return PublicIpAddresses 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
-                     * 设置绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。。
-                     * @param PublicIpAddresses 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。。
+                     * 设置绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
+                     * @param PublicIpAddresses 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PublicIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取弹性IP可以区，自动分配弹性IP时传递。
-                     * @return Zone 弹性IP可以区，自动分配弹性IP时传递。
+                     * 获取弹性IP可用区，自动分配弹性IP时传递。
+                     * @return Zone 弹性IP可用区，自动分配弹性IP时传递。
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置弹性IP可以区，自动分配弹性IP时传递。
-                     * @param Zone 弹性IP可以区，自动分配弹性IP时传递。
+                     * 设置弹性IP可用区，自动分配弹性IP时传递。
+                     * @param Zone 弹性IP可用区，自动分配弹性IP时传递。
                      */
                     void SetZone(const std::string& _zone);
 
@@ -129,13 +129,13 @@ namespace TencentCloud
                     bool m_addressCountHasBeenSet;
 
                     /**
-                     * 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。。
+                     * 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
                      */
                     std::vector<std::string> m_publicIpAddresses;
                     bool m_publicIpAddressesHasBeenSet;
 
                     /**
-                     * 弹性IP可以区，自动分配弹性IP时传递。
+                     * 弹性IP可用区，自动分配弹性IP时传递。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

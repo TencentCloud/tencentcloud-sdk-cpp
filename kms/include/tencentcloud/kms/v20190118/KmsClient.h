@@ -89,6 +89,8 @@
 #include <tencentcloud/kms/v20190118/model/GetParametersForImportResponse.h>
 #include <tencentcloud/kms/v20190118/model/GetPublicKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/GetPublicKeyResponse.h>
+#include <tencentcloud/kms/v20190118/model/GetRegionsRequest.h>
+#include <tencentcloud/kms/v20190118/model/GetRegionsResponse.h>
 #include <tencentcloud/kms/v20190118/model/GetServiceStatusRequest.h>
 #include <tencentcloud/kms/v20190118/model/GetServiceStatusResponse.h>
 #include <tencentcloud/kms/v20190118/model/ImportKeyMaterialRequest.h>
@@ -224,6 +226,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetPublicKeyResponse> GetPublicKeyOutcome;
                 typedef std::future<GetPublicKeyOutcome> GetPublicKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::GetPublicKeyRequest&, GetPublicKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPublicKeyAsyncHandler;
+                typedef Outcome<Error, Model::GetRegionsResponse> GetRegionsOutcome;
+                typedef std::future<GetRegionsOutcome> GetRegionsOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::GetRegionsRequest&, GetRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRegionsAsyncHandler;
                 typedef Outcome<Error, Model::GetServiceStatusResponse> GetServiceStatusOutcome;
                 typedef std::future<GetServiceStatusOutcome> GetServiceStatusOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::GetServiceStatusRequest&, GetServiceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceStatusAsyncHandler;
@@ -556,6 +561,15 @@ namespace TencentCloud
                 GetPublicKeyOutcome GetPublicKey(const Model::GetPublicKeyRequest &request);
                 void GetPublicKeyAsync(const Model::GetPublicKeyRequest& request, const GetPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetPublicKeyOutcomeCallable GetPublicKeyCallable(const Model::GetPublicKeyRequest& request);
+
+                /**
+                 *获取支持的地域列表
+                 * @param req GetRegionsRequest
+                 * @return GetRegionsOutcome
+                 */
+                GetRegionsOutcome GetRegions(const Model::GetRegionsRequest &request);
+                void GetRegionsAsync(const Model::GetRegionsRequest& request, const GetRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRegionsOutcomeCallable GetRegionsCallable(const Model::GetRegionsRequest& request);
 
                 /**
                  *用于查询该用户是否已开通KMS服务

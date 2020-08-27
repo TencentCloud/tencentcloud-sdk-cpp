@@ -862,6 +862,50 @@ namespace TencentCloud
                      */
                     bool RemainBandwidthDurationHasBeenSet() const;
 
+                    /**
+                     * 获取Tendis实例的磁盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskSize Tendis实例的磁盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDiskSize() const;
+
+                    /**
+                     * 设置Tendis实例的磁盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiskSize Tendis实例的磁盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiskSize(const int64_t& _diskSize);
+
+                    /**
+                     * 判断参数 DiskSize 是否已赋值
+                     * @return DiskSize 是否已赋值
+                     */
+                    bool DiskSizeHasBeenSet() const;
+
+                    /**
+                     * 获取监控版本: 1m-分钟粒度监控，5s-5秒粒度监控
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MonitorVersion 监控版本: 1m-分钟粒度监控，5s-5秒粒度监控
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMonitorVersion() const;
+
+                    /**
+                     * 设置监控版本: 1m-分钟粒度监控，5s-5秒粒度监控
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MonitorVersion 监控版本: 1m-分钟粒度监控，5s-5秒粒度监控
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMonitorVersion(const std::string& _monitorVersion);
+
+                    /**
+                     * 判断参数 MonitorVersion 是否已赋值
+                     * @return MonitorVersion 是否已赋值
+                     */
+                    bool MonitorVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1131,6 +1175,20 @@ namespace TencentCloud
                      */
                     std::string m_remainBandwidthDuration;
                     bool m_remainBandwidthDurationHasBeenSet;
+
+                    /**
+                     * Tendis实例的磁盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_diskSize;
+                    bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * 监控版本: 1m-分钟粒度监控，5s-5秒粒度监控
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_monitorVersion;
+                    bool m_monitorVersionHasBeenSet;
 
                 };
             }

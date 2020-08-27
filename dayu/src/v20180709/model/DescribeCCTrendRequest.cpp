@@ -30,7 +30,8 @@ DescribeCCTrendRequest::DescribeCCTrendRequest() :
     m_periodHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string DescribeCCTrendRequest::ToJsonString() const
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void DescribeCCTrendRequest::SetId(const string& _id)
 bool DescribeCCTrendRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string DescribeCCTrendRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void DescribeCCTrendRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DescribeCCTrendRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 

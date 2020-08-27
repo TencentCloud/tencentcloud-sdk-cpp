@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/Entity.h>
+#include <tencentcloud/cme/v20191029/model/SwitcherProjectInput.h>
 
 
 namespace TencentCloud
@@ -64,16 +65,20 @@ namespace TencentCloud
                     /**
                      * 获取项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
                      * @return Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
                      * @param Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
                      */
                     void SetCategory(const std::string& _category);
 
@@ -145,6 +150,42 @@ namespace TencentCloud
                      */
                     bool OwnerHasBeenSet() const;
 
+                    /**
+                     * 获取项目描述信息。
+                     * @return Description 项目描述信息。
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置项目描述信息。
+                     * @param Description 项目描述信息。
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取导播台信息，仅当项目类型为 SWITCHER 时有效。
+                     * @return SwitcherProjectInput 导播台信息，仅当项目类型为 SWITCHER 时有效。
+                     */
+                    SwitcherProjectInput GetSwitcherProjectInput() const;
+
+                    /**
+                     * 设置导播台信息，仅当项目类型为 SWITCHER 时有效。
+                     * @param SwitcherProjectInput 导播台信息，仅当项目类型为 SWITCHER 时有效。
+                     */
+                    void SetSwitcherProjectInput(const SwitcherProjectInput& _switcherProjectInput);
+
+                    /**
+                     * 判断参数 SwitcherProjectInput 是否已赋值
+                     * @return SwitcherProjectInput 是否已赋值
+                     */
+                    bool SwitcherProjectInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +197,7 @@ namespace TencentCloud
                     /**
                      * 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
@@ -179,6 +221,18 @@ namespace TencentCloud
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
+
+                    /**
+                     * 项目描述信息。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 导播台信息，仅当项目类型为 SWITCHER 时有效。
+                     */
+                    SwitcherProjectInput m_switcherProjectInput;
+                    bool m_switcherProjectInputHasBeenSet;
 
                 };
             }

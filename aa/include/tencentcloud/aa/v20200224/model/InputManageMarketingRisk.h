@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/aa/v20200224/model/AccountInfo.h>
 #include <tencentcloud/aa/v20200224/model/CrowdAntiRushInfo.h>
+#include <tencentcloud/aa/v20200224/model/InputDetails.h>
 
 
 namespace TencentCloud
@@ -67,40 +68,6 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取场景类型。
-1：活动防刷
-2：登录保护
-3：注册保护
-4：活动防刷高级版（网赚）
-                     * @return SceneType 场景类型。
-1：活动防刷
-2：登录保护
-3：注册保护
-4：活动防刷高级版（网赚）
-                     */
-                    int64_t GetSceneType() const;
-
-                    /**
-                     * 设置场景类型。
-1：活动防刷
-2：登录保护
-3：注册保护
-4：活动防刷高级版（网赚）
-                     * @param SceneType 场景类型。
-1：活动防刷
-2：登录保护
-3：注册保护
-4：活动防刷高级版（网赚）
-                     */
-                    void SetSceneType(const int64_t& _sceneType);
-
-                    /**
-                     * 判断参数 SceneType 是否已赋值
-                     * @return SceneType 是否已赋值
-                     */
-                    bool SceneTypeHasBeenSet() const;
-
-                    /**
                      * 获取登录来源的外网IP
                      * @return UserIp 登录来源的外网IP
                      */
@@ -135,6 +102,40 @@ namespace TencentCloud
                      * @return PostTime 是否已赋值
                      */
                     bool PostTimeHasBeenSet() const;
+
+                    /**
+                     * 获取场景类型。(后续不再支持，请使用SceneCode字段)
+1：活动防刷
+2：登录保护
+3：注册保护
+4：活动防刷高级版（网赚）
+                     * @return SceneType 场景类型。(后续不再支持，请使用SceneCode字段)
+1：活动防刷
+2：登录保护
+3：注册保护
+4：活动防刷高级版（网赚）
+                     */
+                    int64_t GetSceneType() const;
+
+                    /**
+                     * 设置场景类型。(后续不再支持，请使用SceneCode字段)
+1：活动防刷
+2：登录保护
+3：注册保护
+4：活动防刷高级版（网赚）
+                     * @param SceneType 场景类型。(后续不再支持，请使用SceneCode字段)
+1：活动防刷
+2：登录保护
+3：注册保护
+4：活动防刷高级版（网赚）
+                     */
+                    void SetSceneType(const int64_t& _sceneType);
+
+                    /**
+                     * 判断参数 SceneType 是否已赋值
+                     * @return SceneType 是否已赋值
+                     */
+                    bool SceneTypeHasBeenSet() const;
 
                     /**
                      * 获取用户唯一标识。
@@ -396,6 +397,42 @@ namespace TencentCloud
                      */
                     bool CrowdAntiRushHasBeenSet() const;
 
+                    /**
+                     * 获取场景Code，控制台上获取
+                     * @return SceneCode 场景Code，控制台上获取
+                     */
+                    std::string GetSceneCode() const;
+
+                    /**
+                     * 设置场景Code，控制台上获取
+                     * @param SceneCode 场景Code，控制台上获取
+                     */
+                    void SetSceneCode(const std::string& _sceneCode);
+
+                    /**
+                     * 判断参数 SceneCode 是否已赋值
+                     * @return SceneCode 是否已赋值
+                     */
+                    bool SceneCodeHasBeenSet() const;
+
+                    /**
+                     * 获取详细信息
+                     * @return Details 详细信息
+                     */
+                    std::vector<InputDetails> GetDetails() const;
+
+                    /**
+                     * 设置详细信息
+                     * @param Details 详细信息
+                     */
+                    void SetDetails(const std::vector<InputDetails>& _details);
+
+                    /**
+                     * 判断参数 Details 是否已赋值
+                     * @return Details 是否已赋值
+                     */
+                    bool DetailsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,16 +440,6 @@ namespace TencentCloud
                      */
                     AccountInfo m_account;
                     bool m_accountHasBeenSet;
-
-                    /**
-                     * 场景类型。
-1：活动防刷
-2：登录保护
-3：注册保护
-4：活动防刷高级版（网赚）
-                     */
-                    int64_t m_sceneType;
-                    bool m_sceneTypeHasBeenSet;
 
                     /**
                      * 登录来源的外网IP
@@ -425,6 +452,16 @@ namespace TencentCloud
                      */
                     uint64_t m_postTime;
                     bool m_postTimeHasBeenSet;
+
+                    /**
+                     * 场景类型。(后续不再支持，请使用SceneCode字段)
+1：活动防刷
+2：登录保护
+3：注册保护
+4：活动防刷高级版（网赚）
+                     */
+                    int64_t m_sceneType;
+                    bool m_sceneTypeHasBeenSet;
 
                     /**
                      * 用户唯一标识。
@@ -511,6 +548,18 @@ namespace TencentCloud
                      */
                     CrowdAntiRushInfo m_crowdAntiRush;
                     bool m_crowdAntiRushHasBeenSet;
+
+                    /**
+                     * 场景Code，控制台上获取
+                     */
+                    std::string m_sceneCode;
+                    bool m_sceneCodeHasBeenSet;
+
+                    /**
+                     * 详细信息
+                     */
+                    std::vector<InputDetails> m_details;
+                    bool m_detailsHasBeenSet;
 
                 };
             }

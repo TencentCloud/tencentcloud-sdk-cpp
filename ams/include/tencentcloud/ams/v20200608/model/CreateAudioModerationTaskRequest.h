@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取异步检测结果回调通知接收URL。支持HTTP和HTTPS
-                     * @return Type 异步检测结果回调通知接收URL。支持HTTP和HTTPS
+                     * 获取审核类型，这里可选：AUDIO (点播音频)和 LIVE_AUDIO（直播音频）
+                     * @return Type 审核类型，这里可选：AUDIO (点播音频)和 LIVE_AUDIO（直播音频）
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置异步检测结果回调通知接收URL。支持HTTP和HTTPS
-                     * @param Type 异步检测结果回调通知接收URL。支持HTTP和HTTPS
+                     * 设置审核类型，这里可选：AUDIO (点播音频)和 LIVE_AUDIO（直播音频）
+                     * @param Type 审核类型，这里可选：AUDIO (点播音频)和 LIVE_AUDIO（直播音频）
                      */
                     void SetType(const std::string& _type);
 
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 异步检测结果回调通知接收URL。支持HTTP和HTTPS
+                     * 审核类型，这里可选：AUDIO (点播音频)和 LIVE_AUDIO（直播音频）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

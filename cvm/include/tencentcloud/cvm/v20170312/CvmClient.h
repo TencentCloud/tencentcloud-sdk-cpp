@@ -79,6 +79,8 @@
 #include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesOfferingsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesOfferingsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeSpotTypeConfigRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeSpotTypeConfigResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeZoneInstanceConfigInfosRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeZoneInstanceConfigInfosResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeZonesRequest.h>
@@ -251,6 +253,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeReservedInstancesOfferingsResponse> DescribeReservedInstancesOfferingsOutcome;
                 typedef std::future<DescribeReservedInstancesOfferingsOutcome> DescribeReservedInstancesOfferingsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeReservedInstancesOfferingsRequest&, DescribeReservedInstancesOfferingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedInstancesOfferingsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSpotTypeConfigResponse> DescribeSpotTypeConfigOutcome;
+                typedef std::future<DescribeSpotTypeConfigOutcome> DescribeSpotTypeConfigOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeSpotTypeConfigRequest&, DescribeSpotTypeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpotTypeConfigAsyncHandler;
                 typedef Outcome<Error, Model::DescribeZoneInstanceConfigInfosResponse> DescribeZoneInstanceConfigInfosOutcome;
                 typedef std::future<DescribeZoneInstanceConfigInfosOutcome> DescribeZoneInstanceConfigInfosOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeZoneInstanceConfigInfosRequest&, DescribeZoneInstanceConfigInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneInstanceConfigInfosAsyncHandler;
@@ -670,6 +675,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeReservedInstancesOfferingsOutcome DescribeReservedInstancesOfferings(const Model::DescribeReservedInstancesOfferingsRequest &request);
                 void DescribeReservedInstancesOfferingsAsync(const Model::DescribeReservedInstancesOfferingsRequest& request, const DescribeReservedInstancesOfferingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReservedInstancesOfferingsOutcomeCallable DescribeReservedInstancesOfferingsCallable(const Model::DescribeReservedInstancesOfferingsRequest& request);
+
+                /**
+                 *查询用户可购买的竞价机型信息列表
+                 * @param req DescribeSpotTypeConfigRequest
+                 * @return DescribeSpotTypeConfigOutcome
+                 */
+                DescribeSpotTypeConfigOutcome DescribeSpotTypeConfig(const Model::DescribeSpotTypeConfigRequest &request);
+                void DescribeSpotTypeConfigAsync(const Model::DescribeSpotTypeConfigRequest& request, const DescribeSpotTypeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSpotTypeConfigOutcomeCallable DescribeSpotTypeConfigCallable(const Model::DescribeSpotTypeConfigRequest& request);
 
                 /**
                  *本接口(DescribeZoneInstanceConfigInfos) 获取可用区的机型信息。

@@ -62,6 +62,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesVpcAttributeResponse.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesTypeRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeSpotTypeConfigResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceVncUrlRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyImageSharePermissionRequest.h
@@ -89,7 +90,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/CreateImageResponse.h
   include/tencentcloud/cvm/v20170312/model/StopInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/InstanceMarketOptionsRequest.h
-  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImageSharePermissionResponse.h
   include/tencentcloud/cvm/v20170312/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesRequest.h
   include/tencentcloud/cvm/v20170312/model/Image.h
@@ -130,7 +131,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DisasterRecoverGroup.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstanceResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceTypeConfigsRequest.h
-  include/tencentcloud/cvm/v20170312/model/DescribeImageSharePermissionResponse.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyHostsAttributeResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.h
   include/tencentcloud/cvm/v20170312/model/StartInstancesResponse.h
@@ -154,6 +155,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ImportImageResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.h
   include/tencentcloud/cvm/v20170312/model/RebootInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeSpotTypeConfigRequest.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesTypeResponse.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstancesOffering.h
   include/tencentcloud/cvm/v20170312/model/OsVersion.h
@@ -239,6 +241,7 @@ set(cvm_src
   src/v20170312/model/ModifyInstancesVpcAttributeResponse.cpp
   src/v20170312/model/InquiryPriceResetInstancesTypeRequest.cpp
   src/v20170312/model/DescribeInstancesOperationLimitRequest.cpp
+  src/v20170312/model/DescribeSpotTypeConfigResponse.cpp
   src/v20170312/model/ModifyInstancesChargeTypeRequest.cpp
   src/v20170312/model/DescribeInstanceVncUrlRequest.cpp
   src/v20170312/model/ModifyImageSharePermissionRequest.cpp
@@ -266,7 +269,7 @@ set(cvm_src
   src/v20170312/model/CreateImageResponse.cpp
   src/v20170312/model/StopInstancesResponse.cpp
   src/v20170312/model/InstanceMarketOptionsRequest.cpp
-  src/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.cpp
+  src/v20170312/model/DescribeImageSharePermissionResponse.cpp
   src/v20170312/model/ResetInstancesPasswordResponse.cpp
   src/v20170312/model/InquiryPriceRunInstancesRequest.cpp
   src/v20170312/model/Image.cpp
@@ -307,7 +310,7 @@ set(cvm_src
   src/v20170312/model/DisasterRecoverGroup.cpp
   src/v20170312/model/InquiryPriceResetInstanceResponse.cpp
   src/v20170312/model/DescribeInstanceTypeConfigsRequest.cpp
-  src/v20170312/model/DescribeImageSharePermissionResponse.cpp
+  src/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.cpp
   src/v20170312/model/ModifyHostsAttributeResponse.cpp
   src/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.cpp
   src/v20170312/model/StartInstancesResponse.cpp
@@ -331,6 +334,7 @@ set(cvm_src
   src/v20170312/model/ImportImageResponse.cpp
   src/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.cpp
   src/v20170312/model/RebootInstancesResponse.cpp
+  src/v20170312/model/DescribeSpotTypeConfigRequest.cpp
   src/v20170312/model/InquiryPriceResetInstancesTypeResponse.cpp
   src/v20170312/model/ReservedInstancesOffering.cpp
   src/v20170312/model/OsVersion.cpp

@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool InstanceImportModeHasBeenSet() const;
 
+                    /**
+                     * 获取镜像定制类型
+                     * @return OsCustomizeType 镜像定制类型
+                     */
+                    std::string GetOsCustomizeType() const;
+
+                    /**
+                     * 设置镜像定制类型
+                     * @param OsCustomizeType 镜像定制类型
+                     */
+                    void SetOsCustomizeType(const std::string& _osCustomizeType);
+
+                    /**
+                     * 判断参数 OsCustomizeType 是否已赋值
+                     * @return OsCustomizeType 是否已赋值
+                     */
+                    bool OsCustomizeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceImportMode;
                     bool m_instanceImportModeHasBeenSet;
+
+                    /**
+                     * 镜像定制类型
+                     */
+                    std::string m_osCustomizeType;
+                    bool m_osCustomizeTypeHasBeenSet;
 
                 };
             }

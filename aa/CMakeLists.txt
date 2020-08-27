@@ -32,11 +32,12 @@ set(aa_public_header_model
   include/tencentcloud/aa/v20200224/model/AccountInfo.h
   include/tencentcloud/aa/v20200224/model/QueryActivityAntiRushAdvancedResponse.h
   include/tencentcloud/aa/v20200224/model/ManageMarketingRiskResponse.h
+  include/tencentcloud/aa/v20200224/model/WeChatAccountInfo.h
   include/tencentcloud/aa/v20200224/model/SponsorInfo.h
   include/tencentcloud/aa/v20200224/model/QueryActivityAntiRushRequest.h
-  include/tencentcloud/aa/v20200224/model/OutputActivityAntiRushAdvanced.h
+  include/tencentcloud/aa/v20200224/model/InputDetails.h
   include/tencentcloud/aa/v20200224/model/OutputManageMarketingRiskValue.h
-  include/tencentcloud/aa/v20200224/model/WeChatAccountInfo.h
+  include/tencentcloud/aa/v20200224/model/OutputActivityAntiRushAdvanced.h
   include/tencentcloud/aa/v20200224/model/QueryActivityAntiRushAdvancedRequest.h
   )
 
@@ -55,11 +56,12 @@ set(aa_src
   src/v20200224/model/AccountInfo.cpp
   src/v20200224/model/QueryActivityAntiRushAdvancedResponse.cpp
   src/v20200224/model/ManageMarketingRiskResponse.cpp
+  src/v20200224/model/WeChatAccountInfo.cpp
   src/v20200224/model/SponsorInfo.cpp
   src/v20200224/model/QueryActivityAntiRushRequest.cpp
-  src/v20200224/model/OutputActivityAntiRushAdvanced.cpp
+  src/v20200224/model/InputDetails.cpp
   src/v20200224/model/OutputManageMarketingRiskValue.cpp
-  src/v20200224/model/WeChatAccountInfo.cpp
+  src/v20200224/model/OutputActivityAntiRushAdvanced.cpp
   src/v20200224/model/QueryActivityAntiRushAdvancedRequest.cpp
   )
 

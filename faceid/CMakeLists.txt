@@ -22,11 +22,12 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/DetectInfoVideoData.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedRequest.h
   include/tencentcloud/faceid/v20180301/model/LivenessRequest.h
-  include/tencentcloud/faceid/v20180301/model/LivenessCompareResponse.h
+  include/tencentcloud/faceid/v20180301/model/CheckBankCardInformationRequest.h
   include/tencentcloud/faceid/v20180301/model/MobileNetworkTimeVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetLiveCodeRequest.h
   include/tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCardVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/CheckBankCardInformationResponse.h
   include/tencentcloud/faceid/v20180301/model/DetectInfoBestFrame.h
   include/tencentcloud/faceid/v20180301/model/CheckIdCardInformationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedResponse.h
@@ -55,6 +56,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/ImageRecognitionResponse.h
   include/tencentcloud/faceid/v20180301/model/GetActionSequenceRequest.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoResponse.h
+  include/tencentcloud/faceid/v20180301/model/LivenessCompareResponse.h
   include/tencentcloud/faceid/v20180301/model/GetLiveCodeResponse.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCard2EVerificationResponse.h
@@ -69,11 +71,12 @@ set(faceid_src
   src/v20180301/model/DetectInfoVideoData.cpp
   src/v20180301/model/GetDetectInfoEnhancedRequest.cpp
   src/v20180301/model/LivenessRequest.cpp
-  src/v20180301/model/LivenessCompareResponse.cpp
+  src/v20180301/model/CheckBankCardInformationRequest.cpp
   src/v20180301/model/MobileNetworkTimeVerificationResponse.cpp
   src/v20180301/model/GetLiveCodeRequest.cpp
   src/v20180301/model/IdCardVerificationRequest.cpp
   src/v20180301/model/BankCardVerificationRequest.cpp
+  src/v20180301/model/CheckBankCardInformationResponse.cpp
   src/v20180301/model/DetectInfoBestFrame.cpp
   src/v20180301/model/CheckIdCardInformationResponse.cpp
   src/v20180301/model/GetDetectInfoEnhancedResponse.cpp
@@ -102,6 +105,7 @@ set(faceid_src
   src/v20180301/model/ImageRecognitionResponse.cpp
   src/v20180301/model/GetActionSequenceRequest.cpp
   src/v20180301/model/GetDetectInfoResponse.cpp
+  src/v20180301/model/LivenessCompareResponse.cpp
   src/v20180301/model/GetLiveCodeResponse.cpp
   src/v20180301/model/GetDetectInfoRequest.cpp
   src/v20180301/model/BankCard2EVerificationResponse.cpp

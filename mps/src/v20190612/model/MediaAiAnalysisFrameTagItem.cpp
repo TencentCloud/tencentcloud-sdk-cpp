@@ -23,6 +23,7 @@ using namespace std;
 
 MediaAiAnalysisFrameTagItem::MediaAiAnalysisFrameTagItem() :
     m_tagHasBeenSet(false),
+    m_categorySetHasBeenSet(false),
     m_confidenceHasBeenSet(false)
 {
 }
@@ -40,6 +41,19 @@ CoreInternalOutcome MediaAiAnalysisFrameTagItem::Deserialize(const Value &value)
         }
         m_tag = string(value["Tag"].GetString());
         m_tagHasBeenSet = true;
+    }
+
+    if (value.HasMember("CategorySet") && !value["CategorySet"].IsNull())
+    {
+        if (!value["CategorySet"].IsArray())
+            return CoreInternalOutcome(Error("response `MediaAiAnalysisFrameTagItem.CategorySet` is not array type"));
+
+        const Value &tmpValue = value["CategorySet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_categorySet.push_back((*itr).GetString());
+        }
+        m_categorySetHasBeenSet = true;
     }
 
     if (value.HasMember("Confidence") && !value["Confidence"].IsNull())
@@ -67,6 +81,19 @@ void MediaAiAnalysisFrameTagItem::ToJsonObject(Value &value, Document::Allocator
         value.AddMember(iKey, Value(m_tag.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_categorySetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CategorySet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_categorySet.begin(); itr != m_categorySet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_confidenceHasBeenSet)
     {
         Value iKey(kStringType);
@@ -92,6 +119,22 @@ void MediaAiAnalysisFrameTagItem::SetTag(const string& _tag)
 bool MediaAiAnalysisFrameTagItem::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+vector<string> MediaAiAnalysisFrameTagItem::GetCategorySet() const
+{
+    return m_categorySet;
+}
+
+void MediaAiAnalysisFrameTagItem::SetCategorySet(const vector<string>& _categorySet)
+{
+    m_categorySet = _categorySet;
+    m_categorySetHasBeenSet = true;
+}
+
+bool MediaAiAnalysisFrameTagItem::CategorySetHasBeenSet() const
+{
+    return m_categorySetHasBeenSet;
 }
 
 double MediaAiAnalysisFrameTagItem::GetConfidence() const

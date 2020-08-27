@@ -23,9 +23,9 @@ using namespace std;
 
 InputManageMarketingRisk::InputManageMarketingRisk() :
     m_accountHasBeenSet(false),
-    m_sceneTypeHasBeenSet(false),
     m_userIpHasBeenSet(false),
     m_postTimeHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_deviceTokenHasBeenSet(false),
     m_deviceBusinessIdHasBeenSet(false),
@@ -39,7 +39,9 @@ InputManageMarketingRisk::InputManageMarketingRisk() :
     m_xForwardedForHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_vendorIdHasBeenSet(false),
-    m_crowdAntiRushHasBeenSet(false)
+    m_crowdAntiRushHasBeenSet(false),
+    m_sceneCodeHasBeenSet(false),
+    m_detailsHasBeenSet(false)
 {
 }
 
@@ -65,16 +67,6 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const Value &value)
         m_accountHasBeenSet = true;
     }
 
-    if (value.HasMember("SceneType") && !value["SceneType"].IsNull())
-    {
-        if (!value["SceneType"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.SceneType` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_sceneType = value["SceneType"].GetInt64();
-        m_sceneTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("UserIp") && !value["UserIp"].IsNull())
     {
         if (!value["UserIp"].IsString())
@@ -93,6 +85,16 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const Value &value)
         }
         m_postTime = value["PostTime"].GetUint64();
         m_postTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SceneType") && !value["SceneType"].IsNull())
+    {
+        if (!value["SceneType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.SceneType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneType = value["SceneType"].GetInt64();
+        m_sceneTypeHasBeenSet = true;
     }
 
     if (value.HasMember("UserId") && !value["UserId"].IsNull())
@@ -242,6 +244,36 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const Value &value)
         m_crowdAntiRushHasBeenSet = true;
     }
 
+    if (value.HasMember("SceneCode") && !value["SceneCode"].IsNull())
+    {
+        if (!value["SceneCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.SceneCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneCode = string(value["SceneCode"].GetString());
+        m_sceneCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Details") && !value["Details"].IsNull())
+    {
+        if (!value["Details"].IsArray())
+            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.Details` is not array type"));
+
+        const Value &tmpValue = value["Details"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InputDetails item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_details.push_back(item);
+        }
+        m_detailsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,14 +290,6 @@ void InputManageMarketingRisk::ToJsonObject(Value &value, Document::AllocatorTyp
         m_account.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_sceneTypeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "SceneType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_sceneType, allocator);
-    }
-
     if (m_userIpHasBeenSet)
     {
         Value iKey(kStringType);
@@ -280,6 +304,14 @@ void InputManageMarketingRisk::ToJsonObject(Value &value, Document::AllocatorTyp
         string key = "PostTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_postTime, allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sceneType, allocator);
     }
 
     if (m_userIdHasBeenSet)
@@ -395,6 +427,29 @@ void InputManageMarketingRisk::ToJsonObject(Value &value, Document::AllocatorTyp
         m_crowdAntiRush.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_sceneCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SceneCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sceneCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detailsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Details";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_details.begin(); itr != m_details.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -412,22 +467,6 @@ void InputManageMarketingRisk::SetAccount(const AccountInfo& _account)
 bool InputManageMarketingRisk::AccountHasBeenSet() const
 {
     return m_accountHasBeenSet;
-}
-
-int64_t InputManageMarketingRisk::GetSceneType() const
-{
-    return m_sceneType;
-}
-
-void InputManageMarketingRisk::SetSceneType(const int64_t& _sceneType)
-{
-    m_sceneType = _sceneType;
-    m_sceneTypeHasBeenSet = true;
-}
-
-bool InputManageMarketingRisk::SceneTypeHasBeenSet() const
-{
-    return m_sceneTypeHasBeenSet;
 }
 
 string InputManageMarketingRisk::GetUserIp() const
@@ -460,6 +499,22 @@ void InputManageMarketingRisk::SetPostTime(const uint64_t& _postTime)
 bool InputManageMarketingRisk::PostTimeHasBeenSet() const
 {
     return m_postTimeHasBeenSet;
+}
+
+int64_t InputManageMarketingRisk::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void InputManageMarketingRisk::SetSceneType(const int64_t& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool InputManageMarketingRisk::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
 }
 
 string InputManageMarketingRisk::GetUserId() const
@@ -684,5 +739,37 @@ void InputManageMarketingRisk::SetCrowdAntiRush(const CrowdAntiRushInfo& _crowdA
 bool InputManageMarketingRisk::CrowdAntiRushHasBeenSet() const
 {
     return m_crowdAntiRushHasBeenSet;
+}
+
+string InputManageMarketingRisk::GetSceneCode() const
+{
+    return m_sceneCode;
+}
+
+void InputManageMarketingRisk::SetSceneCode(const string& _sceneCode)
+{
+    m_sceneCode = _sceneCode;
+    m_sceneCodeHasBeenSet = true;
+}
+
+bool InputManageMarketingRisk::SceneCodeHasBeenSet() const
+{
+    return m_sceneCodeHasBeenSet;
+}
+
+vector<InputDetails> InputManageMarketingRisk::GetDetails() const
+{
+    return m_details;
+}
+
+void InputManageMarketingRisk::SetDetails(const vector<InputDetails>& _details)
+{
+    m_details = _details;
+    m_detailsHasBeenSet = true;
+}
+
+bool InputManageMarketingRisk::DetailsHasBeenSet() const
+{
+    return m_detailsHasBeenSet;
 }
 

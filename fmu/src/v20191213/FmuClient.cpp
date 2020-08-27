@@ -83,6 +83,92 @@ FmuClient::BeautifyPicOutcomeCallable FmuClient::BeautifyPicCallable(const Beaut
     return task->get_future();
 }
 
+FmuClient::BeautifyVideoOutcome FmuClient::BeautifyVideo(const BeautifyVideoRequest &request)
+{
+    auto outcome = MakeRequest(request, "BeautifyVideo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BeautifyVideoResponse rsp = BeautifyVideoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BeautifyVideoOutcome(rsp);
+        else
+            return BeautifyVideoOutcome(o.GetError());
+    }
+    else
+    {
+        return BeautifyVideoOutcome(outcome.GetError());
+    }
+}
+
+void FmuClient::BeautifyVideoAsync(const BeautifyVideoRequest& request, const BeautifyVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BeautifyVideo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FmuClient::BeautifyVideoOutcomeCallable FmuClient::BeautifyVideoCallable(const BeautifyVideoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BeautifyVideoOutcome()>>(
+        [this, request]()
+        {
+            return this->BeautifyVideo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FmuClient::CancelBeautifyVideoJobOutcome FmuClient::CancelBeautifyVideoJob(const CancelBeautifyVideoJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelBeautifyVideoJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelBeautifyVideoJobResponse rsp = CancelBeautifyVideoJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelBeautifyVideoJobOutcome(rsp);
+        else
+            return CancelBeautifyVideoJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelBeautifyVideoJobOutcome(outcome.GetError());
+    }
+}
+
+void FmuClient::CancelBeautifyVideoJobAsync(const CancelBeautifyVideoJobRequest& request, const CancelBeautifyVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelBeautifyVideoJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FmuClient::CancelBeautifyVideoJobOutcomeCallable FmuClient::CancelBeautifyVideoJobCallable(const CancelBeautifyVideoJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelBeautifyVideoJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelBeautifyVideoJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FmuClient::CreateModelOutcome FmuClient::CreateModel(const CreateModelRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateModel");
@@ -205,6 +291,49 @@ FmuClient::GetModelListOutcomeCallable FmuClient::GetModelListCallable(const Get
         [this, request]()
         {
             return this->GetModelList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FmuClient::QueryBeautifyVideoJobOutcome FmuClient::QueryBeautifyVideoJob(const QueryBeautifyVideoJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryBeautifyVideoJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryBeautifyVideoJobResponse rsp = QueryBeautifyVideoJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryBeautifyVideoJobOutcome(rsp);
+        else
+            return QueryBeautifyVideoJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryBeautifyVideoJobOutcome(outcome.GetError());
+    }
+}
+
+void FmuClient::QueryBeautifyVideoJobAsync(const QueryBeautifyVideoJobRequest& request, const QueryBeautifyVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryBeautifyVideoJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FmuClient::QueryBeautifyVideoJobOutcomeCallable FmuClient::QueryBeautifyVideoJobCallable(const QueryBeautifyVideoJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryBeautifyVideoJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryBeautifyVideoJob(request);
         }
     );
 

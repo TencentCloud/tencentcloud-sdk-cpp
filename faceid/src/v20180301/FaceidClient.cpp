@@ -169,6 +169,49 @@ FaceidClient::BankCardVerificationOutcomeCallable FaceidClient::BankCardVerifica
     return task->get_future();
 }
 
+FaceidClient::CheckBankCardInformationOutcome FaceidClient::CheckBankCardInformation(const CheckBankCardInformationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckBankCardInformation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckBankCardInformationResponse rsp = CheckBankCardInformationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckBankCardInformationOutcome(rsp);
+        else
+            return CheckBankCardInformationOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckBankCardInformationOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::CheckBankCardInformationAsync(const CheckBankCardInformationRequest& request, const CheckBankCardInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckBankCardInformation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::CheckBankCardInformationOutcomeCallable FaceidClient::CheckBankCardInformationCallable(const CheckBankCardInformationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckBankCardInformationOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckBankCardInformation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::CheckIdCardInformationOutcome FaceidClient::CheckIdCardInformation(const CheckIdCardInformationRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckIdCardInformation");

@@ -300,14 +300,14 @@ namespace TencentCloud
                     bool CentralAxisHasBeenSet() const;
 
                     /**
-                     * 获取下轮廓的 XX 个点。
-                     * @return Chin 下轮廓的 XX 个点。
+                     * 获取下巴轮廓的 XX 个点。
+                     * @return Chin 下巴轮廓的 XX 个点。
                      */
                     std::vector<Point> GetChin() const;
 
                     /**
-                     * 设置下轮廓的 XX 个点。
-                     * @param Chin 下轮廓的 XX 个点。
+                     * 设置下巴轮廓的 XX 个点。
+                     * @param Chin 下巴轮廓的 XX 个点。
                      */
                     void SetChin(const std::vector<Point>& _chin);
 
@@ -458,7 +458,7 @@ namespace TencentCloud
                     bool m_centralAxisHasBeenSet;
 
                     /**
-                     * 下轮廓的 XX 个点。
+                     * 下巴轮廓的 XX 个点。
                      */
                     std::vector<Point> m_chin;
                     bool m_chinHasBeenSet;

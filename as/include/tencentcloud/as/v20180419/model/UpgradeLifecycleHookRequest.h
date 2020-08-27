@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool HeartbeatTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取弹性伸缩向通知目标发送的附加信息，默认值为''
-                     * @return NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为''
+                     * 获取弹性伸缩向通知目标发送的附加信息，默认值为空字符串""
+                     * @return NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为空字符串""
                      */
                     std::string GetNotificationMetadata() const;
 
                     /**
-                     * 设置弹性伸缩向通知目标发送的附加信息，默认值为''
-                     * @param NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为''
+                     * 设置弹性伸缩向通知目标发送的附加信息，默认值为空字符串""
+                     * @param NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为空字符串""
                      */
                     void SetNotificationMetadata(const std::string& _notificationMetadata);
 
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_heartbeatTimeoutHasBeenSet;
 
                     /**
-                     * 弹性伸缩向通知目标发送的附加信息，默认值为''
+                     * 弹性伸缩向通知目标发送的附加信息，默认值为空字符串""
                      */
                     std::string m_notificationMetadata;
                     bool m_notificationMetadataHasBeenSet;

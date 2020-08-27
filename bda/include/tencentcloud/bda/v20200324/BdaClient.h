@@ -248,7 +248,7 @@ namespace TencentCloud
                 SearchTraceOutcomeCallable SearchTraceCallable(const Model::SearchTraceRequest& request);
 
                 /**
-                 *在前后景分割的基础上优化多分类分割，支持对头发、五官等的分割，既作为换发型、挂件等底层技术，也可用于扣人头、扣人脸等玩法
+                 *在前后景分割的基础上优化多分类分割，支持对头发、五官等的分割，既作为换发型、挂件等底层技术，也可用于抠人头、抠人脸等玩法
                  * @param req SegmentCustomizedPortraitPicRequest
                  * @return SegmentCustomizedPortraitPicOutcome
                  */

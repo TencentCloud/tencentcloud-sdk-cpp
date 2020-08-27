@@ -420,6 +420,24 @@ namespace TencentCloud
                      */
                     bool TypeListHasBeenSet() const;
 
+                    /**
+                     * 获取内部参数，用户可忽略
+                     * @return MonitorVersion 内部参数，用户可忽略
+                     */
+                    std::string GetMonitorVersion() const;
+
+                    /**
+                     * 设置内部参数，用户可忽略
+                     * @param MonitorVersion 内部参数，用户可忽略
+                     */
+                    void SetMonitorVersion(const std::string& _monitorVersion);
+
+                    /**
+                     * 判断参数 MonitorVersion 是否已赋值
+                     * @return MonitorVersion 是否已赋值
+                     */
+                    bool MonitorVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -547,6 +565,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_typeList;
                     bool m_typeListHasBeenSet;
+
+                    /**
+                     * 内部参数，用户可忽略
+                     */
+                    std::string m_monitorVersion;
+                    bool m_monitorVersionHasBeenSet;
 
                 };
             }

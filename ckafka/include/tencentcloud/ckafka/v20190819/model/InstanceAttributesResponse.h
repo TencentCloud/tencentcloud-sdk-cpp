@@ -541,6 +541,28 @@ namespace TencentCloud
                      */
                     bool CvmHasBeenSet() const;
 
+                    /**
+                     * 获取类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceType 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceType 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -704,6 +726,13 @@ namespace TencentCloud
                      */
                     int64_t m_cvm;
                     bool m_cvmHasBeenSet;
+
+                    /**
+                     * 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

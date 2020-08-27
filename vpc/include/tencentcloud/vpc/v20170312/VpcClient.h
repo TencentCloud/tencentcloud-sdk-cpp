@@ -59,6 +59,8 @@
 #include <tencentcloud/vpc/v20170312/model/AttachClassicLinkVpcResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AttachNetworkInterfaceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AttachNetworkInterfaceResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AuditCrossBorderComplianceRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AuditCrossBorderComplianceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckAssistantCidrRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CheckAssistantCidrResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckDefaultSubnetRequest.h>
@@ -209,6 +211,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeClassicLinkInstancesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeClassicLinkInstancesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderComplianceRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderComplianceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewayVendorsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewayVendorsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewaysRequest.h>
@@ -521,6 +525,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AttachNetworkInterfaceResponse> AttachNetworkInterfaceOutcome;
                 typedef std::future<AttachNetworkInterfaceOutcome> AttachNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AttachNetworkInterfaceRequest&, AttachNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachNetworkInterfaceAsyncHandler;
+                typedef Outcome<Error, Model::AuditCrossBorderComplianceResponse> AuditCrossBorderComplianceOutcome;
+                typedef std::future<AuditCrossBorderComplianceOutcome> AuditCrossBorderComplianceOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AuditCrossBorderComplianceRequest&, AuditCrossBorderComplianceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuditCrossBorderComplianceAsyncHandler;
                 typedef Outcome<Error, Model::CheckAssistantCidrResponse> CheckAssistantCidrOutcome;
                 typedef std::future<CheckAssistantCidrOutcome> CheckAssistantCidrOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CheckAssistantCidrRequest&, CheckAssistantCidrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAssistantCidrAsyncHandler;
@@ -746,6 +753,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClassicLinkInstancesResponse> DescribeClassicLinkInstancesOutcome;
                 typedef std::future<DescribeClassicLinkInstancesOutcome> DescribeClassicLinkInstancesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeClassicLinkInstancesRequest&, DescribeClassicLinkInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassicLinkInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCrossBorderComplianceResponse> DescribeCrossBorderComplianceOutcome;
+                typedef std::future<DescribeCrossBorderComplianceOutcome> DescribeCrossBorderComplianceOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeCrossBorderComplianceRequest&, DescribeCrossBorderComplianceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBorderComplianceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCustomerGatewayVendorsResponse> DescribeCustomerGatewayVendorsOutcome;
                 typedef std::future<DescribeCustomerGatewayVendorsOutcome> DescribeCustomerGatewayVendorsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeCustomerGatewayVendorsRequest&, DescribeCustomerGatewayVendorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerGatewayVendorsAsyncHandler;
@@ -1306,6 +1316,18 @@ namespace TencentCloud
                 AttachNetworkInterfaceOutcome AttachNetworkInterface(const Model::AttachNetworkInterfaceRequest &request);
                 void AttachNetworkInterfaceAsync(const Model::AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachNetworkInterfaceOutcomeCallable AttachNetworkInterfaceCallable(const Model::AttachNetworkInterfaceRequest& request);
+
+                /**
+                 *本接口用于服务商操作跨境专线合规化资质审批。
+* 服务商只能操作提交到本服务商的审批单，后台会校验身份。即只授权给服务商的`APPID` 调用本接口。
+* 只有当审批单为 `PENDING` 状态时，才能审批操作。
+* `APPROVED` 状态的审批单，可以再次操作为 `DENY`；`DENY` 状态的审批单，也可以再次操作为 `APPROVED`。
+                 * @param req AuditCrossBorderComplianceRequest
+                 * @return AuditCrossBorderComplianceOutcome
+                 */
+                AuditCrossBorderComplianceOutcome AuditCrossBorderCompliance(const Model::AuditCrossBorderComplianceRequest &request);
+                void AuditCrossBorderComplianceAsync(const Model::AuditCrossBorderComplianceRequest& request, const AuditCrossBorderComplianceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AuditCrossBorderComplianceOutcomeCallable AuditCrossBorderComplianceCallable(const Model::AuditCrossBorderComplianceRequest& request);
 
                 /**
                  *本接口(CheckAssistantCidr)用于检查辅助CIDR是否与存量路由、对等连接（对端VPC的CIDR）等资源存在冲突。如果存在重叠，则返回重叠的资源。（接口灰度中，如需使用请提工单。）
@@ -2076,6 +2098,16 @@ namespace TencentCloud
                 DescribeClassicLinkInstancesOutcome DescribeClassicLinkInstances(const Model::DescribeClassicLinkInstancesRequest &request);
                 void DescribeClassicLinkInstancesAsync(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClassicLinkInstancesOutcomeCallable DescribeClassicLinkInstancesCallable(const Model::DescribeClassicLinkInstancesRequest& request);
+
+                /**
+                 *本接口用于查询用户创建跨境专线合规化资质审批单。
+服务商可以查询服务名下的任意 `APPID` 创建的审批单；非服务商，只能查询自己审批单。
+                 * @param req DescribeCrossBorderComplianceRequest
+                 * @return DescribeCrossBorderComplianceOutcome
+                 */
+                DescribeCrossBorderComplianceOutcome DescribeCrossBorderCompliance(const Model::DescribeCrossBorderComplianceRequest &request);
+                void DescribeCrossBorderComplianceAsync(const Model::DescribeCrossBorderComplianceRequest& request, const DescribeCrossBorderComplianceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCrossBorderComplianceOutcomeCallable DescribeCrossBorderComplianceCallable(const Model::DescribeCrossBorderComplianceRequest& request);
 
                 /**
                  *本接口（DescribeCustomerGatewayVendors）用于查询可支持的对端网关厂商信息。

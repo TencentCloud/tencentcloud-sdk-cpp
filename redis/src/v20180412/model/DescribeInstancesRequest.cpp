@@ -44,7 +44,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_billingModeHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_searchKeysHasBeenSet(false),
-    m_typeListHasBeenSet(false)
+    m_typeListHasBeenSet(false),
+    m_monitorVersionHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,14 @@ string DescribeInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_monitorVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MonitorVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_monitorVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -615,6 +624,22 @@ void DescribeInstancesRequest::SetTypeList(const vector<int64_t>& _typeList)
 bool DescribeInstancesRequest::TypeListHasBeenSet() const
 {
     return m_typeListHasBeenSet;
+}
+
+string DescribeInstancesRequest::GetMonitorVersion() const
+{
+    return m_monitorVersion;
+}
+
+void DescribeInstancesRequest::SetMonitorVersion(const string& _monitorVersion)
+{
+    m_monitorVersion = _monitorVersion;
+    m_monitorVersionHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::MonitorVersionHasBeenSet() const
+{
+    return m_monitorVersionHasBeenSet;
 }
 
 

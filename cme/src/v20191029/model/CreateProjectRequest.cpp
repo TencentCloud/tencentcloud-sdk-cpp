@@ -28,7 +28,9 @@ CreateProjectRequest::CreateProjectRequest() :
     m_categoryHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_aspectRatioHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+    m_ownerHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_switcherProjectInputHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,23 @@ string CreateProjectRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_owner.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_switcherProjectInputHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SwitcherProjectInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_switcherProjectInput.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -166,6 +185,38 @@ void CreateProjectRequest::SetOwner(const Entity& _owner)
 bool CreateProjectRequest::OwnerHasBeenSet() const
 {
     return m_ownerHasBeenSet;
+}
+
+string CreateProjectRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateProjectRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateProjectRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+SwitcherProjectInput CreateProjectRequest::GetSwitcherProjectInput() const
+{
+    return m_switcherProjectInput;
+}
+
+void CreateProjectRequest::SetSwitcherProjectInput(const SwitcherProjectInput& _switcherProjectInput)
+{
+    m_switcherProjectInput = _switcherProjectInput;
+    m_switcherProjectInputHasBeenSet = true;
+}
+
+bool CreateProjectRequest::SwitcherProjectInputHasBeenSet() const
+{
+    return m_switcherProjectInputHasBeenSet;
 }
 
 

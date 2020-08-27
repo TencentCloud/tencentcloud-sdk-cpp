@@ -1459,6 +1459,49 @@ KmsClient::GetPublicKeyOutcomeCallable KmsClient::GetPublicKeyCallable(const Get
     return task->get_future();
 }
 
+KmsClient::GetRegionsOutcome KmsClient::GetRegions(const GetRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRegionsResponse rsp = GetRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRegionsOutcome(rsp);
+        else
+            return GetRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRegionsOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::GetRegionsAsync(const GetRegionsRequest& request, const GetRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::GetRegionsOutcomeCallable KmsClient::GetRegionsCallable(const GetRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->GetRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::GetServiceStatusOutcome KmsClient::GetServiceStatus(const GetServiceStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "GetServiceStatus");

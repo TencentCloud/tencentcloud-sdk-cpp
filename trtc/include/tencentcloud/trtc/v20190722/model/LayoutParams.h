@@ -119,6 +119,24 @@ namespace TencentCloud
                      */
                     bool SmallVideoLayoutParamsHasBeenSet() const;
 
+                    /**
+                     * 获取屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。
+                     * @return MainVideoRightAlign 屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。
+                     */
+                    uint64_t GetMainVideoRightAlign() const;
+
+                    /**
+                     * 设置屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。
+                     * @param MainVideoRightAlign 屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。
+                     */
+                    void SetMainVideoRightAlign(const uint64_t& _mainVideoRightAlign);
+
+                    /**
+                     * 判断参数 MainVideoRightAlign 是否已赋值
+                     * @return MainVideoRightAlign 是否已赋值
+                     */
+                    bool MainVideoRightAlignHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +162,12 @@ namespace TencentCloud
                      */
                     SmallVideoLayoutParams m_smallVideoLayoutParams;
                     bool m_smallVideoLayoutParamsHasBeenSet;
+
+                    /**
+                     * 屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。
+                     */
+                    uint64_t m_mainVideoRightAlign;
+                    bool m_mainVideoRightAlignHasBeenSet;
 
                 };
             }

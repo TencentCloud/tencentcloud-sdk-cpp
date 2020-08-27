@@ -47,7 +47,8 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_zoneIdsHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_maxGroupNumHasBeenSet(false),
-    m_cvmHasBeenSet(false)
+    m_cvmHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -346,6 +347,16 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const Value &value)
         m_cvmHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceAttributesResponse.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -579,6 +590,14 @@ void InstanceAttributesResponse::ToJsonObject(Value &value, Document::AllocatorT
         string key = "Cvm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cvm, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -998,5 +1017,21 @@ void InstanceAttributesResponse::SetCvm(const int64_t& _cvm)
 bool InstanceAttributesResponse::CvmHasBeenSet() const
 {
     return m_cvmHasBeenSet;
+}
+
+string InstanceAttributesResponse::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void InstanceAttributesResponse::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

@@ -64,7 +64,9 @@ InstanceSet::InstanceSet() :
     m_passwordFreeHasBeenSet(false),
     m_readOnlyHasBeenSet(false),
     m_vip6HasBeenSet(false),
-    m_remainBandwidthDurationHasBeenSet(false)
+    m_remainBandwidthDurationHasBeenSet(false),
+    m_diskSizeHasBeenSet(false),
+    m_monitorVersionHasBeenSet(false)
 {
 }
 
@@ -526,6 +528,26 @@ CoreInternalOutcome InstanceSet::Deserialize(const Value &value)
         m_remainBandwidthDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskSize") && !value["DiskSize"].IsNull())
+    {
+        if (!value["DiskSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskSize = value["DiskSize"].GetInt64();
+        m_diskSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorVersion") && !value["MonitorVersion"].IsNull())
+    {
+        if (!value["MonitorVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.MonitorVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorVersion = string(value["MonitorVersion"].GetString());
+        m_monitorVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -894,6 +916,22 @@ void InstanceSet::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "RemainBandwidthDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_remainBandwidthDuration.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_monitorVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MonitorVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_monitorVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1585,5 +1623,37 @@ void InstanceSet::SetRemainBandwidthDuration(const string& _remainBandwidthDurat
 bool InstanceSet::RemainBandwidthDurationHasBeenSet() const
 {
     return m_remainBandwidthDurationHasBeenSet;
+}
+
+int64_t InstanceSet::GetDiskSize() const
+{
+    return m_diskSize;
+}
+
+void InstanceSet::SetDiskSize(const int64_t& _diskSize)
+{
+    m_diskSize = _diskSize;
+    m_diskSizeHasBeenSet = true;
+}
+
+bool InstanceSet::DiskSizeHasBeenSet() const
+{
+    return m_diskSizeHasBeenSet;
+}
+
+string InstanceSet::GetMonitorVersion() const
+{
+    return m_monitorVersion;
+}
+
+void InstanceSet::SetMonitorVersion(const string& _monitorVersion)
+{
+    m_monitorVersion = _monitorVersion;
+    m_monitorVersionHasBeenSet = true;
+}
+
+bool InstanceSet::MonitorVersionHasBeenSet() const
+{
+    return m_monitorVersionHasBeenSet;
 }
 
