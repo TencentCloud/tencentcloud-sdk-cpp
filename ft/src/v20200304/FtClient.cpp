@@ -83,6 +83,49 @@ FtClient::ChangeAgePicOutcomeCallable FtClient::ChangeAgePicCallable(const Chang
     return task->get_future();
 }
 
+FtClient::FaceCartoonPicOutcome FtClient::FaceCartoonPic(const FaceCartoonPicRequest &request)
+{
+    auto outcome = MakeRequest(request, "FaceCartoonPic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FaceCartoonPicResponse rsp = FaceCartoonPicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FaceCartoonPicOutcome(rsp);
+        else
+            return FaceCartoonPicOutcome(o.GetError());
+    }
+    else
+    {
+        return FaceCartoonPicOutcome(outcome.GetError());
+    }
+}
+
+void FtClient::FaceCartoonPicAsync(const FaceCartoonPicRequest& request, const FaceCartoonPicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FaceCartoonPic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FtClient::FaceCartoonPicOutcomeCallable FtClient::FaceCartoonPicCallable(const FaceCartoonPicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FaceCartoonPicOutcome()>>(
+        [this, request]()
+        {
+            return this->FaceCartoonPic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FtClient::SwapGenderPicOutcome FtClient::SwapGenderPic(const SwapGenderPicRequest &request)
 {
     auto outcome = MakeRequest(request, "SwapGenderPic");

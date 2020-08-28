@@ -61,6 +61,8 @@
 #include <tencentcloud/dts/v20180330/model/IsolateSubscribeResponse.h>
 #include <tencentcloud/dts/v20180330/model/ModifyMigrateJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/ModifyMigrateJobResponse.h>
+#include <tencentcloud/dts/v20180330/model/ModifySubscribeAutoRenewFlagRequest.h>
+#include <tencentcloud/dts/v20180330/model/ModifySubscribeAutoRenewFlagResponse.h>
 #include <tencentcloud/dts/v20180330/model/ModifySubscribeConsumeTimeRequest.h>
 #include <tencentcloud/dts/v20180330/model/ModifySubscribeConsumeTimeResponse.h>
 #include <tencentcloud/dts/v20180330/model/ModifySubscribeNameRequest.h>
@@ -154,6 +156,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyMigrateJobResponse> ModifyMigrateJobOutcome;
                 typedef std::future<ModifyMigrateJobOutcome> ModifyMigrateJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifyMigrateJobRequest&, ModifyMigrateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrateJobAsyncHandler;
+                typedef Outcome<Error, Model::ModifySubscribeAutoRenewFlagResponse> ModifySubscribeAutoRenewFlagOutcome;
+                typedef std::future<ModifySubscribeAutoRenewFlagOutcome> ModifySubscribeAutoRenewFlagOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ModifySubscribeAutoRenewFlagRequest&, ModifySubscribeAutoRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscribeAutoRenewFlagAsyncHandler;
                 typedef Outcome<Error, Model::ModifySubscribeConsumeTimeResponse> ModifySubscribeConsumeTimeOutcome;
                 typedef std::future<ModifySubscribeConsumeTimeOutcome> ModifySubscribeConsumeTimeOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifySubscribeConsumeTimeRequest&, ModifySubscribeConsumeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscribeConsumeTimeAsyncHandler;
@@ -380,6 +385,15 @@ namespace TencentCloud
                 ModifyMigrateJobOutcome ModifyMigrateJob(const Model::ModifyMigrateJobRequest &request);
                 void ModifyMigrateJobAsync(const Model::ModifyMigrateJobRequest& request, const ModifyMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMigrateJobOutcomeCallable ModifyMigrateJobCallable(const Model::ModifyMigrateJobRequest& request);
+
+                /**
+                 *修改订阅实例自动续费标识
+                 * @param req ModifySubscribeAutoRenewFlagRequest
+                 * @return ModifySubscribeAutoRenewFlagOutcome
+                 */
+                ModifySubscribeAutoRenewFlagOutcome ModifySubscribeAutoRenewFlag(const Model::ModifySubscribeAutoRenewFlagRequest &request);
+                void ModifySubscribeAutoRenewFlagAsync(const Model::ModifySubscribeAutoRenewFlagRequest& request, const ModifySubscribeAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySubscribeAutoRenewFlagOutcomeCallable ModifySubscribeAutoRenewFlagCallable(const Model::ModifySubscribeAutoRenewFlagRequest& request);
 
                 /**
                  *本接口(ModifySubscribeConsumeTime)用于修改数据订阅通道的消费时间点

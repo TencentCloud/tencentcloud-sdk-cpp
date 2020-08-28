@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/yunjing/v20180228/model/MachineTag.h>
+#include <tencentcloud/yunjing/v20180228/model/RegionInfo.h>
 
 
 namespace TencentCloud
@@ -375,6 +376,24 @@ namespace TencentCloud
                      */
                     bool InvasionNumHasBeenSet() const;
 
+                    /**
+                     * 获取地域信息
+                     * @return RegionInfo 地域信息
+                     */
+                    RegionInfo GetRegionInfo() const;
+
+                    /**
+                     * 设置地域信息
+                     * @param RegionInfo 地域信息
+                     */
+                    void SetRegionInfo(const RegionInfo& _regionInfo);
+
+                    /**
+                     * 判断参数 RegionInfo 是否已赋值
+                     * @return RegionInfo 是否已赋值
+                     */
+                    bool RegionInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -482,6 +501,12 @@ namespace TencentCloud
                      */
                     int64_t m_invasionNum;
                     bool m_invasionNumHasBeenSet;
+
+                    /**
+                     * 地域信息
+                     */
+                    RegionInfo m_regionInfo;
+                    bool m_regionInfoHasBeenSet;
 
                 };
             }

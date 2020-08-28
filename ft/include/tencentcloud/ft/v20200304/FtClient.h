@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ft/v20200304/model/ChangeAgePicRequest.h>
 #include <tencentcloud/ft/v20200304/model/ChangeAgePicResponse.h>
+#include <tencentcloud/ft/v20200304/model/FaceCartoonPicRequest.h>
+#include <tencentcloud/ft/v20200304/model/FaceCartoonPicResponse.h>
 #include <tencentcloud/ft/v20200304/model/SwapGenderPicRequest.h>
 #include <tencentcloud/ft/v20200304/model/SwapGenderPicResponse.h>
 
@@ -44,6 +46,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ChangeAgePicResponse> ChangeAgePicOutcome;
                 typedef std::future<ChangeAgePicOutcome> ChangeAgePicOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::ChangeAgePicRequest&, ChangeAgePicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeAgePicAsyncHandler;
+                typedef Outcome<Error, Model::FaceCartoonPicResponse> FaceCartoonPicOutcome;
+                typedef std::future<FaceCartoonPicOutcome> FaceCartoonPicOutcomeCallable;
+                typedef std::function<void(const FtClient*, const Model::FaceCartoonPicRequest&, FaceCartoonPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FaceCartoonPicAsyncHandler;
                 typedef Outcome<Error, Model::SwapGenderPicResponse> SwapGenderPicOutcome;
                 typedef std::future<SwapGenderPicOutcome> SwapGenderPicOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::SwapGenderPicRequest&, SwapGenderPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwapGenderPicAsyncHandler;
@@ -58,6 +63,15 @@ namespace TencentCloud
                 ChangeAgePicOutcome ChangeAgePic(const Model::ChangeAgePicRequest &request);
                 void ChangeAgePicAsync(const Model::ChangeAgePicRequest& request, const ChangeAgePicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChangeAgePicOutcomeCallable ChangeAgePicCallable(const Model::ChangeAgePicRequest& request);
+
+                /**
+                 *人像动漫化
+                 * @param req FaceCartoonPicRequest
+                 * @return FaceCartoonPicOutcome
+                 */
+                FaceCartoonPicOutcome FaceCartoonPic(const Model::FaceCartoonPicRequest &request);
+                void FaceCartoonPicAsync(const Model::FaceCartoonPicRequest& request, const FaceCartoonPicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FaceCartoonPicOutcomeCallable FaceCartoonPicCallable(const Model::FaceCartoonPicRequest& request);
 
                 /**
                  *用户上传一张人脸图片，基于人脸编辑与生成算法，输出一张人脸性别转换的图片。男变女可实现美颜、淡妆、加刘海和长发的效果；女变男可实现加胡须、变短发的效果。 

@@ -28,7 +28,8 @@ CreateSubscribeRequest::CreateSubscribeRequest() :
     m_payTypeHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_countHasBeenSet(false),
-    m_autoRenewHasBeenSet(false)
+    m_autoRenewHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,21 @@ string CreateSubscribeRequest::ToJsonString() const
         string key = "AutoRenew";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenew, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -165,6 +181,22 @@ void CreateSubscribeRequest::SetAutoRenew(const int64_t& _autoRenew)
 bool CreateSubscribeRequest::AutoRenewHasBeenSet() const
 {
     return m_autoRenewHasBeenSet;
+}
+
+vector<TagItem> CreateSubscribeRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateSubscribeRequest::SetTags(const vector<TagItem>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateSubscribeRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

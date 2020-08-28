@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20180330/model/SubscribeObject.h>
+#include <tencentcloud/dts/v20180330/model/TagItem.h>
 
 
 namespace TencentCloud
@@ -331,6 +332,34 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取订阅实例的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 订阅实例的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagItem> GetTags() const;
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费标识,0-不自动续费，1-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenewFlag 自动续费标识,0-不自动续费，1-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -476,6 +505,20 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 订阅实例的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagItem> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 自动续费标识,0-不自动续费，1-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
 
                 };
             }

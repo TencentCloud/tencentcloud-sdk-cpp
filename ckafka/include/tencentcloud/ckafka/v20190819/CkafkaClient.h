@@ -71,6 +71,12 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicDetailResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchMessageListByTimestampRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchMessageListByTimestampResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyGroupOffsetsRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyGroupOffsetsResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesRequest.h>
@@ -165,6 +171,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
+                typedef Outcome<Error, Model::FetchMessageByOffsetResponse> FetchMessageByOffsetOutcome;
+                typedef std::future<FetchMessageByOffsetOutcome> FetchMessageByOffsetOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::FetchMessageByOffsetRequest&, FetchMessageByOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchMessageByOffsetAsyncHandler;
+                typedef Outcome<Error, Model::FetchMessageListByOffsetResponse> FetchMessageListByOffsetOutcome;
+                typedef std::future<FetchMessageListByOffsetOutcome> FetchMessageListByOffsetOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::FetchMessageListByOffsetRequest&, FetchMessageListByOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchMessageListByOffsetAsyncHandler;
+                typedef Outcome<Error, Model::FetchMessageListByTimestampResponse> FetchMessageListByTimestampOutcome;
+                typedef std::future<FetchMessageListByTimestampOutcome> FetchMessageListByTimestampOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::FetchMessageListByTimestampRequest&, FetchMessageListByTimestampOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchMessageListByTimestampAsyncHandler;
                 typedef Outcome<Error, Model::ModifyGroupOffsetsResponse> ModifyGroupOffsetsOutcome;
                 typedef std::future<ModifyGroupOffsetsOutcome> ModifyGroupOffsetsOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyGroupOffsetsRequest&, ModifyGroupOffsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGroupOffsetsAsyncHandler;
@@ -397,6 +412,33 @@ namespace TencentCloud
                 DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest &request);
                 void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request);
+
+                /**
+                 *根据指定offset位置的消息
+                 * @param req FetchMessageByOffsetRequest
+                 * @return FetchMessageByOffsetOutcome
+                 */
+                FetchMessageByOffsetOutcome FetchMessageByOffset(const Model::FetchMessageByOffsetRequest &request);
+                void FetchMessageByOffsetAsync(const Model::FetchMessageByOffsetRequest& request, const FetchMessageByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FetchMessageByOffsetOutcomeCallable FetchMessageByOffsetCallable(const Model::FetchMessageByOffsetRequest& request);
+
+                /**
+                 *根据位点查询消息列表
+                 * @param req FetchMessageListByOffsetRequest
+                 * @return FetchMessageListByOffsetOutcome
+                 */
+                FetchMessageListByOffsetOutcome FetchMessageListByOffset(const Model::FetchMessageListByOffsetRequest &request);
+                void FetchMessageListByOffsetAsync(const Model::FetchMessageListByOffsetRequest& request, const FetchMessageListByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FetchMessageListByOffsetOutcomeCallable FetchMessageListByOffsetCallable(const Model::FetchMessageListByOffsetRequest& request);
+
+                /**
+                 *根据时间戳查询消息列表
+                 * @param req FetchMessageListByTimestampRequest
+                 * @return FetchMessageListByTimestampOutcome
+                 */
+                FetchMessageListByTimestampOutcome FetchMessageListByTimestamp(const Model::FetchMessageListByTimestampRequest &request);
+                void FetchMessageListByTimestampAsync(const Model::FetchMessageListByTimestampRequest& request, const FetchMessageListByTimestampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FetchMessageListByTimestampOutcomeCallable FetchMessageListByTimestampCallable(const Model::FetchMessageListByTimestampRequest& request);
 
                 /**
                  *设置Groups 消费分组offset

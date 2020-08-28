@@ -37,7 +37,8 @@ Machine::Machine() :
     m_baselineNumHasBeenSet(false),
     m_cyberAttackNumHasBeenSet(false),
     m_securityStatusHasBeenSet(false),
-    m_invasionNumHasBeenSet(false)
+    m_invasionNumHasBeenSet(false),
+    m_regionInfoHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,23 @@ CoreInternalOutcome Machine::Deserialize(const Value &value)
         m_invasionNumHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionInfo") && !value["RegionInfo"].IsNull())
+    {
+        if (!value["RegionInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Machine.RegionInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_regionInfo.Deserialize(value["RegionInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_regionInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -356,6 +374,15 @@ void Machine::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "InvasionNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_invasionNum, allocator);
+    }
+
+    if (m_regionInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_regionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -615,5 +642,21 @@ void Machine::SetInvasionNum(const int64_t& _invasionNum)
 bool Machine::InvasionNumHasBeenSet() const
 {
     return m_invasionNumHasBeenSet;
+}
+
+RegionInfo Machine::GetRegionInfo() const
+{
+    return m_regionInfo;
+}
+
+void Machine::SetRegionInfo(const RegionInfo& _regionInfo)
+{
+    m_regionInfo = _regionInfo;
+    m_regionInfoHasBeenSet = true;
+}
+
+bool Machine::RegionInfoHasBeenSet() const
+{
+    return m_regionInfoHasBeenSet;
 }
 

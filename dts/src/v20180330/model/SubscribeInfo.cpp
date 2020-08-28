@@ -42,7 +42,9 @@ SubscribeInfo::SubscribeInfo() :
     m_uniqVpcIdHasBeenSet(false),
     m_uniqSubnetIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_sdkConsumedTimeHasBeenSet(false)
+    m_sdkConsumedTimeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -261,6 +263,36 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const Value &value)
         m_sdkConsumedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `SubscribeInfo.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
+    {
+        if (!value["AutoRenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `SubscribeInfo.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -434,6 +466,29 @@ void SubscribeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "SdkConsumedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_sdkConsumedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
 }
@@ -773,5 +828,37 @@ void SubscribeInfo::SetSdkConsumedTime(const string& _sdkConsumedTime)
 bool SubscribeInfo::SdkConsumedTimeHasBeenSet() const
 {
     return m_sdkConsumedTimeHasBeenSet;
+}
+
+vector<TagItem> SubscribeInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void SubscribeInfo::SetTags(const vector<TagItem>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool SubscribeInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+int64_t SubscribeInfo::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void SubscribeInfo::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool SubscribeInfo::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 

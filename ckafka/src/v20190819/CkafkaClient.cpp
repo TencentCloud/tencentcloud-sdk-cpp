@@ -1072,6 +1072,135 @@ CkafkaClient::DescribeUserOutcomeCallable CkafkaClient::DescribeUserCallable(con
     return task->get_future();
 }
 
+CkafkaClient::FetchMessageByOffsetOutcome CkafkaClient::FetchMessageByOffset(const FetchMessageByOffsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "FetchMessageByOffset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FetchMessageByOffsetResponse rsp = FetchMessageByOffsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FetchMessageByOffsetOutcome(rsp);
+        else
+            return FetchMessageByOffsetOutcome(o.GetError());
+    }
+    else
+    {
+        return FetchMessageByOffsetOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::FetchMessageByOffsetAsync(const FetchMessageByOffsetRequest& request, const FetchMessageByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FetchMessageByOffset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::FetchMessageByOffsetOutcomeCallable CkafkaClient::FetchMessageByOffsetCallable(const FetchMessageByOffsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FetchMessageByOffsetOutcome()>>(
+        [this, request]()
+        {
+            return this->FetchMessageByOffset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::FetchMessageListByOffsetOutcome CkafkaClient::FetchMessageListByOffset(const FetchMessageListByOffsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "FetchMessageListByOffset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FetchMessageListByOffsetResponse rsp = FetchMessageListByOffsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FetchMessageListByOffsetOutcome(rsp);
+        else
+            return FetchMessageListByOffsetOutcome(o.GetError());
+    }
+    else
+    {
+        return FetchMessageListByOffsetOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::FetchMessageListByOffsetAsync(const FetchMessageListByOffsetRequest& request, const FetchMessageListByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FetchMessageListByOffset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::FetchMessageListByOffsetOutcomeCallable CkafkaClient::FetchMessageListByOffsetCallable(const FetchMessageListByOffsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FetchMessageListByOffsetOutcome()>>(
+        [this, request]()
+        {
+            return this->FetchMessageListByOffset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::FetchMessageListByTimestampOutcome CkafkaClient::FetchMessageListByTimestamp(const FetchMessageListByTimestampRequest &request)
+{
+    auto outcome = MakeRequest(request, "FetchMessageListByTimestamp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FetchMessageListByTimestampResponse rsp = FetchMessageListByTimestampResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FetchMessageListByTimestampOutcome(rsp);
+        else
+            return FetchMessageListByTimestampOutcome(o.GetError());
+    }
+    else
+    {
+        return FetchMessageListByTimestampOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::FetchMessageListByTimestampAsync(const FetchMessageListByTimestampRequest& request, const FetchMessageListByTimestampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FetchMessageListByTimestamp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::FetchMessageListByTimestampOutcomeCallable CkafkaClient::FetchMessageListByTimestampCallable(const FetchMessageListByTimestampRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FetchMessageListByTimestampOutcome()>>(
+        [this, request]()
+        {
+            return this->FetchMessageListByTimestamp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::ModifyGroupOffsetsOutcome CkafkaClient::ModifyGroupOffsets(const ModifyGroupOffsetsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyGroupOffsets");

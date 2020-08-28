@@ -34,7 +34,8 @@ DescribeSubscribesRequest::DescribeSubscribesRequest() :
     m_subsStatusHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_orderDirectionHasBeenSet(false)
+    m_orderDirectionHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,21 @@ string DescribeSubscribesRequest::ToJsonString() const
         string key = "OrderDirection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_orderDirection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagFiltersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -325,6 +341,22 @@ void DescribeSubscribesRequest::SetOrderDirection(const string& _orderDirection)
 bool DescribeSubscribesRequest::OrderDirectionHasBeenSet() const
 {
     return m_orderDirectionHasBeenSet;
+}
+
+vector<TagFilter> DescribeSubscribesRequest::GetTagFilters() const
+{
+    return m_tagFilters;
+}
+
+void DescribeSubscribesRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
+{
+    m_tagFilters = _tagFilters;
+    m_tagFiltersHasBeenSet = true;
+}
+
+bool DescribeSubscribesRequest::TagFiltersHasBeenSet() const
+{
+    return m_tagFiltersHasBeenSet;
 }
 
 

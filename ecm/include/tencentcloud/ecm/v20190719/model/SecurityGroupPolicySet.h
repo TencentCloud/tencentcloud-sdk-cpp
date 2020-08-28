@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取出站规则。
-                     * @return Egress 出站规则。
+                     * 获取出站规则。其中出站规则和入站规则必须选一个。
+                     * @return Egress 出站规则。其中出站规则和入站规则必须选一个。
                      */
                     std::vector<SecurityGroupPolicy> GetEgress() const;
 
                     /**
-                     * 设置出站规则。
-                     * @param Egress 出站规则。
+                     * 设置出站规则。其中出站规则和入站规则必须选一个。
+                     * @param Egress 出站规则。其中出站规则和入站规则必须选一个。
                      */
                     void SetEgress(const std::vector<SecurityGroupPolicy>& _egress);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool EgressHasBeenSet() const;
 
                     /**
-                     * 获取入站规则。
-                     * @return Ingress 入站规则。
+                     * 获取入站规则。其中出站规则和入站规则必须选一个。
+                     * @return Ingress 入站规则。其中出站规则和入站规则必须选一个。
                      */
                     std::vector<SecurityGroupPolicy> GetIngress() const;
 
                     /**
-                     * 设置入站规则。
-                     * @param Ingress 入站规则。
+                     * 设置入站规则。其中出站规则和入站规则必须选一个。
+                     * @param Ingress 入站规则。其中出站规则和入站规则必须选一个。
                      */
                     void SetIngress(const std::vector<SecurityGroupPolicy>& _ingress);
 
@@ -110,13 +110,13 @@ namespace TencentCloud
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 出站规则。
+                     * 出站规则。其中出站规则和入站规则必须选一个。
                      */
                     std::vector<SecurityGroupPolicy> m_egress;
                     bool m_egressHasBeenSet;
 
                     /**
-                     * 入站规则。
+                     * 入站规则。其中出站规则和入站规则必须选一个。
                      */
                     std::vector<SecurityGroupPolicy> m_ingress;
                     bool m_ingressHasBeenSet;

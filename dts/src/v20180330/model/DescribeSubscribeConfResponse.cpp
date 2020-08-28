@@ -48,7 +48,9 @@ DescribeSubscribeConfResponse::DescribeSubscribeConfResponse() :
     m_subscribeObjectTypeHasBeenSet(false),
     m_subscribeObjectsHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -336,6 +338,36 @@ CoreInternalOutcome DescribeSubscribeConfResponse::Deserialize(const string &pay
         m_regionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
+    {
+        if (!rsp["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+
+        const Value &tmpValue = rsp["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoRenewFlag") && !rsp["AutoRenewFlag"].IsNull())
+    {
+        if (!rsp["AutoRenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = rsp["AutoRenewFlag"].GetInt64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -579,6 +611,26 @@ string DescribeSubscribeConfResponse::GetRegion() const
 bool DescribeSubscribeConfResponse::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+vector<TagItem> DescribeSubscribeConfResponse::GetTags() const
+{
+    return m_tags;
+}
+
+bool DescribeSubscribeConfResponse::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+int64_t DescribeSubscribeConfResponse::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+bool DescribeSubscribeConfResponse::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 
 

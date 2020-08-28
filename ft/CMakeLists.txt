@@ -26,6 +26,8 @@ set(ft_public_header_model
   include/tencentcloud/ft/v20200304/model/ChangeAgePicResponse.h
   include/tencentcloud/ft/v20200304/model/FaceRect.h
   include/tencentcloud/ft/v20200304/model/ChangeAgePicRequest.h
+  include/tencentcloud/ft/v20200304/model/FaceCartoonPicRequest.h
+  include/tencentcloud/ft/v20200304/model/FaceCartoonPicResponse.h
   )
 
 set(ft_src
@@ -37,6 +39,8 @@ set(ft_src
   src/v20200304/model/ChangeAgePicResponse.cpp
   src/v20200304/model/FaceRect.cpp
   src/v20200304/model/ChangeAgePicRequest.cpp
+  src/v20200304/model/FaceCartoonPicRequest.cpp
+  src/v20200304/model/FaceCartoonPicResponse.cpp
   )
 
 set(ft_include

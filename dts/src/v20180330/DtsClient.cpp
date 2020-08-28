@@ -857,6 +857,49 @@ DtsClient::ModifyMigrateJobOutcomeCallable DtsClient::ModifyMigrateJobCallable(c
     return task->get_future();
 }
 
+DtsClient::ModifySubscribeAutoRenewFlagOutcome DtsClient::ModifySubscribeAutoRenewFlag(const ModifySubscribeAutoRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySubscribeAutoRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySubscribeAutoRenewFlagResponse rsp = ModifySubscribeAutoRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySubscribeAutoRenewFlagOutcome(rsp);
+        else
+            return ModifySubscribeAutoRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySubscribeAutoRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifySubscribeAutoRenewFlagAsync(const ModifySubscribeAutoRenewFlagRequest& request, const ModifySubscribeAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySubscribeAutoRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ModifySubscribeAutoRenewFlagOutcomeCallable DtsClient::ModifySubscribeAutoRenewFlagCallable(const ModifySubscribeAutoRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySubscribeAutoRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySubscribeAutoRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::ModifySubscribeConsumeTimeOutcome DtsClient::ModifySubscribeConsumeTime(const ModifySubscribeConsumeTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySubscribeConsumeTime");

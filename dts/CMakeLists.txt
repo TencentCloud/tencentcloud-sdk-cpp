@@ -65,6 +65,8 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20180330/model/DescribeAsyncRequestInfoResponse.h
   include/tencentcloud/dts/v20180330/model/CompleteMigrateJobRequest.h
   include/tencentcloud/dts/v20180330/model/ResetSubscribeRequest.h
+  include/tencentcloud/dts/v20180330/model/TagItem.h
+  include/tencentcloud/dts/v20180330/model/TagFilter.h
   include/tencentcloud/dts/v20180330/model/ModifySubscribeConsumeTimeRequest.h
   include/tencentcloud/dts/v20180330/model/SwitchDrToMasterResponse.h
   include/tencentcloud/dts/v20180330/model/ModifyMigrateJobResponse.h
@@ -72,11 +74,13 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20180330/model/DescribeSyncJobsRequest.h
   include/tencentcloud/dts/v20180330/model/DescribeMigrateJobsRequest.h
   include/tencentcloud/dts/v20180330/model/SyncDetailInfo.h
+  include/tencentcloud/dts/v20180330/model/ModifySubscribeAutoRenewFlagResponse.h
   include/tencentcloud/dts/v20180330/model/StopMigrateJobResponse.h
   include/tencentcloud/dts/v20180330/model/SyncOption.h
   include/tencentcloud/dts/v20180330/model/OfflineIsolatedSubscribeResponse.h
   include/tencentcloud/dts/v20180330/model/SyncStepDetailInfo.h
   include/tencentcloud/dts/v20180330/model/IsolateSubscribeRequest.h
+  include/tencentcloud/dts/v20180330/model/ModifySubscribeAutoRenewFlagRequest.h
   include/tencentcloud/dts/v20180330/model/DeleteSyncJobResponse.h
   include/tencentcloud/dts/v20180330/model/CreateSyncCheckJobRequest.h
   include/tencentcloud/dts/v20180330/model/ModifySyncJobRequest.h
@@ -146,6 +150,8 @@ set(dts_src
   src/v20180330/model/DescribeAsyncRequestInfoResponse.cpp
   src/v20180330/model/CompleteMigrateJobRequest.cpp
   src/v20180330/model/ResetSubscribeRequest.cpp
+  src/v20180330/model/TagItem.cpp
+  src/v20180330/model/TagFilter.cpp
   src/v20180330/model/ModifySubscribeConsumeTimeRequest.cpp
   src/v20180330/model/SwitchDrToMasterResponse.cpp
   src/v20180330/model/ModifyMigrateJobResponse.cpp
@@ -153,11 +159,13 @@ set(dts_src
   src/v20180330/model/DescribeSyncJobsRequest.cpp
   src/v20180330/model/DescribeMigrateJobsRequest.cpp
   src/v20180330/model/SyncDetailInfo.cpp
+  src/v20180330/model/ModifySubscribeAutoRenewFlagResponse.cpp
   src/v20180330/model/StopMigrateJobResponse.cpp
   src/v20180330/model/SyncOption.cpp
   src/v20180330/model/OfflineIsolatedSubscribeResponse.cpp
   src/v20180330/model/SyncStepDetailInfo.cpp
   src/v20180330/model/IsolateSubscribeRequest.cpp
+  src/v20180330/model/ModifySubscribeAutoRenewFlagRequest.cpp
   src/v20180330/model/DeleteSyncJobResponse.cpp
   src/v20180330/model/CreateSyncCheckJobRequest.cpp
   src/v20180330/model/ModifySyncJobRequest.cpp
