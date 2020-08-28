@@ -179,6 +179,11 @@ int main()
     ClientProfile clientProfile = ClientProfile(httpProfile);
 
     DescribeInstancesRequest req = DescribeInstancesRequest();
+   
+    Filter respFilter;
+    respFilter.SetName("zone");
+    respFilter.SetValues({ "ap-guangzhou-1", "ap-guangzhou-2" });
+    req.SetFilters({ respFilter });
     req.SetOffset(0);
     req.SetLimit(5);
 
