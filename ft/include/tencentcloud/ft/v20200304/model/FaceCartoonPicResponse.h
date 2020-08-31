@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool ResultImageHasBeenSet() const;
 
                     /**
-                     * 获取RspImgType 为 url 时，返回处理后的图片 url 数据。(暂时不支持)
-                     * @return ResultUrl RspImgType 为 url 时，返回处理后的图片 url 数据。(暂时不支持)
+                     * 获取RspImgType 为 url 时，返回处理后的图片 url 数据。(默认为base64)
+                     * @return ResultUrl RspImgType 为 url 时，返回处理后的图片 url 数据。(默认为base64)
                      */
                     std::string GetResultUrl() const;
 
@@ -75,7 +75,7 @@ namespace TencentCloud
                     bool m_resultImageHasBeenSet;
 
                     /**
-                     * RspImgType 为 url 时，返回处理后的图片 url 数据。(暂时不支持)
+                     * RspImgType 为 url 时，返回处理后的图片 url 数据。(默认为base64)
                      */
                     std::string m_resultUrl;
                     bool m_resultUrlHasBeenSet;

@@ -38,10 +38,10 @@ InputManageMarketingRisk::InputManageMarketingRisk() :
     m_userAgentHasBeenSet(false),
     m_xForwardedForHasBeenSet(false),
     m_macAddressHasBeenSet(false),
-    m_vendorIdHasBeenSet(false),
     m_crowdAntiRushHasBeenSet(false),
     m_sceneCodeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false)
 {
 }
 
@@ -217,16 +217,6 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const Value &value)
         m_macAddressHasBeenSet = true;
     }
 
-    if (value.HasMember("VendorId") && !value["VendorId"].IsNull())
-    {
-        if (!value["VendorId"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.VendorId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_vendorId = string(value["VendorId"].GetString());
-        m_vendorIdHasBeenSet = true;
-    }
-
     if (value.HasMember("CrowdAntiRush") && !value["CrowdAntiRush"].IsNull())
     {
         if (!value["CrowdAntiRush"].IsObject())
@@ -272,6 +262,16 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const Value &value)
             m_details.push_back(item);
         }
         m_detailsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceType") && !value["DeviceType"].IsNull())
+    {
+        if (!value["DeviceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.DeviceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceType = value["DeviceType"].GetInt64();
+        m_deviceTypeHasBeenSet = true;
     }
 
 
@@ -410,14 +410,6 @@ void InputManageMarketingRisk::ToJsonObject(Value &value, Document::AllocatorTyp
         value.AddMember(iKey, Value(m_macAddress.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_vendorIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "VendorId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vendorId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_crowdAntiRushHasBeenSet)
     {
         Value iKey(kStringType);
@@ -448,6 +440,14 @@ void InputManageMarketingRisk::ToJsonObject(Value &value, Document::AllocatorTyp
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deviceType, allocator);
     }
 
 }
@@ -709,22 +709,6 @@ bool InputManageMarketingRisk::MacAddressHasBeenSet() const
     return m_macAddressHasBeenSet;
 }
 
-string InputManageMarketingRisk::GetVendorId() const
-{
-    return m_vendorId;
-}
-
-void InputManageMarketingRisk::SetVendorId(const string& _vendorId)
-{
-    m_vendorId = _vendorId;
-    m_vendorIdHasBeenSet = true;
-}
-
-bool InputManageMarketingRisk::VendorIdHasBeenSet() const
-{
-    return m_vendorIdHasBeenSet;
-}
-
 CrowdAntiRushInfo InputManageMarketingRisk::GetCrowdAntiRush() const
 {
     return m_crowdAntiRush;
@@ -771,5 +755,21 @@ void InputManageMarketingRisk::SetDetails(const vector<InputDetails>& _details)
 bool InputManageMarketingRisk::DetailsHasBeenSet() const
 {
     return m_detailsHasBeenSet;
+}
+
+int64_t InputManageMarketingRisk::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void InputManageMarketingRisk::SetDeviceType(const int64_t& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool InputManageMarketingRisk::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 

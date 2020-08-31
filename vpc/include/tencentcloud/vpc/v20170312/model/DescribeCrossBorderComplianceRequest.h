@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool UniformSocialCreditCodeHasBeenSet() const;
 
                     /**
-                     * 获取（模糊查询）法人。
-                     * @return LegalPerson （模糊查询）法人。
+                     * 获取（模糊查询）法定代表人。
+                     * @return LegalPerson （模糊查询）法定代表人。
                      */
                     std::string GetLegalPerson() const;
 
                     /**
-                     * 设置（模糊查询）法人。
-                     * @param LegalPerson （模糊查询）法人。
+                     * 设置（模糊查询）法定代表人。
+                     * @param LegalPerson （模糊查询）法定代表人。
                      */
                     void SetLegalPerson(const std::string& _legalPerson);
 
@@ -277,14 +277,14 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取（精确匹配）服务开始时间。
-                     * @return ServiceStartDate （精确匹配）服务开始时间。
+                     * 获取（精确匹配）服务开始日期，如：`2020-07-28`。
+                     * @return ServiceStartDate （精确匹配）服务开始日期，如：`2020-07-28`。
                      */
                     std::string GetServiceStartDate() const;
 
                     /**
-                     * 设置（精确匹配）服务开始时间。
-                     * @param ServiceStartDate （精确匹配）服务开始时间。
+                     * 设置（精确匹配）服务开始日期，如：`2020-07-28`。
+                     * @param ServiceStartDate （精确匹配）服务开始日期，如：`2020-07-28`。
                      */
                     void SetServiceStartDate(const std::string& _serviceStartDate);
 
@@ -295,14 +295,14 @@ namespace TencentCloud
                     bool ServiceStartDateHasBeenSet() const;
 
                     /**
-                     * 获取（精确匹配）服务开始时间。
-                     * @return ServiceEndDate （精确匹配）服务开始时间。
+                     * 获取（精确匹配）服务结束日期，如：`2021-07-28`。
+                     * @return ServiceEndDate （精确匹配）服务结束日期，如：`2021-07-28`。
                      */
                     std::string GetServiceEndDate() const;
 
                     /**
-                     * 设置（精确匹配）服务开始时间。
-                     * @param ServiceEndDate （精确匹配）服务开始时间。
+                     * 设置（精确匹配）服务结束日期，如：`2021-07-28`。
+                     * @param ServiceEndDate （精确匹配）服务结束日期，如：`2021-07-28`。
                      */
                     void SetServiceEndDate(const std::string& _serviceEndDate);
 
@@ -357,7 +357,7 @@ namespace TencentCloud
                     bool m_uniformSocialCreditCodeHasBeenSet;
 
                     /**
-                     * （模糊查询）法人。
+                     * （模糊查询）法定代表人。
                      */
                     std::string m_legalPerson;
                     bool m_legalPersonHasBeenSet;
@@ -411,13 +411,13 @@ namespace TencentCloud
                     bool m_emailHasBeenSet;
 
                     /**
-                     * （精确匹配）服务开始时间。
+                     * （精确匹配）服务开始日期，如：`2020-07-28`。
                      */
                     std::string m_serviceStartDate;
                     bool m_serviceStartDateHasBeenSet;
 
                     /**
-                     * （精确匹配）服务开始时间。
+                     * （精确匹配）服务结束日期，如：`2021-07-28`。
                      */
                     std::string m_serviceEndDate;
                     bool m_serviceEndDateHasBeenSet;

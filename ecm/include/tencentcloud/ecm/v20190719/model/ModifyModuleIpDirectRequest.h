@@ -62,21 +62,21 @@ namespace TencentCloud
 
                     /**
                      * 获取是否关闭IP直通。取值范围：
-1：表示关闭IP直通
-0：表示开通IP直通
+true：表示关闭IP直通
+false：表示开通IP直通
                      * @return CloseIpDirect 是否关闭IP直通。取值范围：
-1：表示关闭IP直通
-0：表示开通IP直通
+true：表示关闭IP直通
+false：表示开通IP直通
                      */
                     bool GetCloseIpDirect() const;
 
                     /**
                      * 设置是否关闭IP直通。取值范围：
-1：表示关闭IP直通
-0：表示开通IP直通
+true：表示关闭IP直通
+false：表示开通IP直通
                      * @param CloseIpDirect 是否关闭IP直通。取值范围：
-1：表示关闭IP直通
-0：表示开通IP直通
+true：表示关闭IP直通
+false：表示开通IP直通
                      */
                     void SetCloseIpDirect(const bool& _closeIpDirect);
 
@@ -96,8 +96,8 @@ namespace TencentCloud
 
                     /**
                      * 是否关闭IP直通。取值范围：
-1：表示关闭IP直通
-0：表示开通IP直通
+true：表示关闭IP直通
+false：表示开通IP直通
                      */
                     bool m_closeIpDirect;
                     bool m_closeIpDirectHasBeenSet;

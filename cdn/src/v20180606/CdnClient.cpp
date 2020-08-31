@@ -126,6 +126,49 @@ CdnClient::CreateClsLogTopicOutcomeCallable CdnClient::CreateClsLogTopicCallable
     return task->get_future();
 }
 
+CdnClient::CreateScdnLogTaskOutcome CdnClient::CreateScdnLogTask(const CreateScdnLogTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScdnLogTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScdnLogTaskResponse rsp = CreateScdnLogTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScdnLogTaskOutcome(rsp);
+        else
+            return CreateScdnLogTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScdnLogTaskOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::CreateScdnLogTaskAsync(const CreateScdnLogTaskRequest& request, const CreateScdnLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateScdnLogTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::CreateScdnLogTaskOutcomeCallable CdnClient::CreateScdnLogTaskCallable(const CreateScdnLogTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateScdnLogTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateScdnLogTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DeleteCdnDomainOutcome CdnClient::DeleteCdnDomain(const DeleteCdnDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCdnDomain");
@@ -1022,6 +1065,49 @@ CdnClient::DescribeReportDataOutcomeCallable CdnClient::DescribeReportDataCallab
         [this, request]()
         {
             return this->DescribeReportData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::DescribeScdnTopDataOutcome CdnClient::DescribeScdnTopData(const DescribeScdnTopDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScdnTopData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScdnTopDataResponse rsp = DescribeScdnTopDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScdnTopDataOutcome(rsp);
+        else
+            return DescribeScdnTopDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScdnTopDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeScdnTopDataAsync(const DescribeScdnTopDataRequest& request, const DescribeScdnTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScdnTopData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeScdnTopDataOutcomeCallable CdnClient::DescribeScdnTopDataCallable(const DescribeScdnTopDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScdnTopDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScdnTopData(request);
         }
     );
 

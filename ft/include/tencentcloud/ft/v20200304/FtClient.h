@@ -23,10 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ft/v20200304/model/CancelFaceMorphJobRequest.h>
+#include <tencentcloud/ft/v20200304/model/CancelFaceMorphJobResponse.h>
 #include <tencentcloud/ft/v20200304/model/ChangeAgePicRequest.h>
 #include <tencentcloud/ft/v20200304/model/ChangeAgePicResponse.h>
 #include <tencentcloud/ft/v20200304/model/FaceCartoonPicRequest.h>
 #include <tencentcloud/ft/v20200304/model/FaceCartoonPicResponse.h>
+#include <tencentcloud/ft/v20200304/model/MorphFaceRequest.h>
+#include <tencentcloud/ft/v20200304/model/MorphFaceResponse.h>
+#include <tencentcloud/ft/v20200304/model/QueryFaceMorphJobRequest.h>
+#include <tencentcloud/ft/v20200304/model/QueryFaceMorphJobResponse.h>
 #include <tencentcloud/ft/v20200304/model/SwapGenderPicRequest.h>
 #include <tencentcloud/ft/v20200304/model/SwapGenderPicResponse.h>
 
@@ -43,17 +49,35 @@ namespace TencentCloud
                 FtClient(const Credential &credential, const std::string &region);
                 FtClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CancelFaceMorphJobResponse> CancelFaceMorphJobOutcome;
+                typedef std::future<CancelFaceMorphJobOutcome> CancelFaceMorphJobOutcomeCallable;
+                typedef std::function<void(const FtClient*, const Model::CancelFaceMorphJobRequest&, CancelFaceMorphJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelFaceMorphJobAsyncHandler;
                 typedef Outcome<Error, Model::ChangeAgePicResponse> ChangeAgePicOutcome;
                 typedef std::future<ChangeAgePicOutcome> ChangeAgePicOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::ChangeAgePicRequest&, ChangeAgePicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeAgePicAsyncHandler;
                 typedef Outcome<Error, Model::FaceCartoonPicResponse> FaceCartoonPicOutcome;
                 typedef std::future<FaceCartoonPicOutcome> FaceCartoonPicOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::FaceCartoonPicRequest&, FaceCartoonPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FaceCartoonPicAsyncHandler;
+                typedef Outcome<Error, Model::MorphFaceResponse> MorphFaceOutcome;
+                typedef std::future<MorphFaceOutcome> MorphFaceOutcomeCallable;
+                typedef std::function<void(const FtClient*, const Model::MorphFaceRequest&, MorphFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MorphFaceAsyncHandler;
+                typedef Outcome<Error, Model::QueryFaceMorphJobResponse> QueryFaceMorphJobOutcome;
+                typedef std::future<QueryFaceMorphJobOutcome> QueryFaceMorphJobOutcomeCallable;
+                typedef std::function<void(const FtClient*, const Model::QueryFaceMorphJobRequest&, QueryFaceMorphJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFaceMorphJobAsyncHandler;
                 typedef Outcome<Error, Model::SwapGenderPicResponse> SwapGenderPicOutcome;
                 typedef std::future<SwapGenderPicOutcome> SwapGenderPicOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::SwapGenderPicRequest&, SwapGenderPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwapGenderPicAsyncHandler;
 
 
+
+                /**
+                 *撤销人像渐变任务请求
+                 * @param req CancelFaceMorphJobRequest
+                 * @return CancelFaceMorphJobOutcome
+                 */
+                CancelFaceMorphJobOutcome CancelFaceMorphJob(const Model::CancelFaceMorphJobRequest &request);
+                void CancelFaceMorphJobAsync(const Model::CancelFaceMorphJobRequest& request, const CancelFaceMorphJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelFaceMorphJobOutcomeCallable CancelFaceMorphJobCallable(const Model::CancelFaceMorphJobRequest& request);
 
                 /**
                  *用户上传一张人脸图片，基于人脸编辑与生成算法，输出一张人脸变老或变年轻的图片，支持实现人脸不同年龄的变化。
@@ -72,6 +96,24 @@ namespace TencentCloud
                 FaceCartoonPicOutcome FaceCartoonPic(const Model::FaceCartoonPicRequest &request);
                 void FaceCartoonPicAsync(const Model::FaceCartoonPicRequest& request, const FaceCartoonPicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FaceCartoonPicOutcomeCallable FaceCartoonPicCallable(const Model::FaceCartoonPicRequest& request);
+
+                /**
+                 *用户上传2-5张人脸照片，输出一段人脸变换特效视频
+                 * @param req MorphFaceRequest
+                 * @return MorphFaceOutcome
+                 */
+                MorphFaceOutcome MorphFace(const Model::MorphFaceRequest &request);
+                void MorphFaceAsync(const Model::MorphFaceRequest& request, const MorphFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MorphFaceOutcomeCallable MorphFaceCallable(const Model::MorphFaceRequest& request);
+
+                /**
+                 *查询人像渐变处理进度
+                 * @param req QueryFaceMorphJobRequest
+                 * @return QueryFaceMorphJobOutcome
+                 */
+                QueryFaceMorphJobOutcome QueryFaceMorphJob(const Model::QueryFaceMorphJobRequest &request);
+                void QueryFaceMorphJobAsync(const Model::QueryFaceMorphJobRequest& request, const QueryFaceMorphJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFaceMorphJobOutcomeCallable QueryFaceMorphJobCallable(const Model::QueryFaceMorphJobRequest& request);
 
                 /**
                  *用户上传一张人脸图片，基于人脸编辑与生成算法，输出一张人脸性别转换的图片。男变女可实现美颜、淡妆、加刘海和长发的效果；女变男可实现加胡须、变短发的效果。 

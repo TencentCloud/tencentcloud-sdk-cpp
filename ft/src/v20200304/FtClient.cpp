@@ -40,6 +40,49 @@ FtClient::FtClient(const Credential &credential, const string &region, const Cli
 }
 
 
+FtClient::CancelFaceMorphJobOutcome FtClient::CancelFaceMorphJob(const CancelFaceMorphJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelFaceMorphJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelFaceMorphJobResponse rsp = CancelFaceMorphJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelFaceMorphJobOutcome(rsp);
+        else
+            return CancelFaceMorphJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelFaceMorphJobOutcome(outcome.GetError());
+    }
+}
+
+void FtClient::CancelFaceMorphJobAsync(const CancelFaceMorphJobRequest& request, const CancelFaceMorphJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelFaceMorphJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FtClient::CancelFaceMorphJobOutcomeCallable FtClient::CancelFaceMorphJobCallable(const CancelFaceMorphJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelFaceMorphJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelFaceMorphJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FtClient::ChangeAgePicOutcome FtClient::ChangeAgePic(const ChangeAgePicRequest &request)
 {
     auto outcome = MakeRequest(request, "ChangeAgePic");
@@ -119,6 +162,92 @@ FtClient::FaceCartoonPicOutcomeCallable FtClient::FaceCartoonPicCallable(const F
         [this, request]()
         {
             return this->FaceCartoonPic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FtClient::MorphFaceOutcome FtClient::MorphFace(const MorphFaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "MorphFace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MorphFaceResponse rsp = MorphFaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MorphFaceOutcome(rsp);
+        else
+            return MorphFaceOutcome(o.GetError());
+    }
+    else
+    {
+        return MorphFaceOutcome(outcome.GetError());
+    }
+}
+
+void FtClient::MorphFaceAsync(const MorphFaceRequest& request, const MorphFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MorphFace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FtClient::MorphFaceOutcomeCallable FtClient::MorphFaceCallable(const MorphFaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MorphFaceOutcome()>>(
+        [this, request]()
+        {
+            return this->MorphFace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FtClient::QueryFaceMorphJobOutcome FtClient::QueryFaceMorphJob(const QueryFaceMorphJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFaceMorphJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFaceMorphJobResponse rsp = QueryFaceMorphJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFaceMorphJobOutcome(rsp);
+        else
+            return QueryFaceMorphJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFaceMorphJobOutcome(outcome.GetError());
+    }
+}
+
+void FtClient::QueryFaceMorphJobAsync(const QueryFaceMorphJobRequest& request, const QueryFaceMorphJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFaceMorphJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FtClient::QueryFaceMorphJobOutcomeCallable FtClient::QueryFaceMorphJobCallable(const QueryFaceMorphJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFaceMorphJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFaceMorphJob(request);
         }
     );
 

@@ -362,24 +362,6 @@ namespace TencentCloud
                     bool MacAddressHasBeenSet() const;
 
                     /**
-                     * 获取手机制造商ID，如果手机注册，请带上此信息。
-                     * @return VendorId 手机制造商ID，如果手机注册，请带上此信息。
-                     */
-                    std::string GetVendorId() const;
-
-                    /**
-                     * 设置手机制造商ID，如果手机注册，请带上此信息。
-                     * @param VendorId 手机制造商ID，如果手机注册，请带上此信息。
-                     */
-                    void SetVendorId(const std::string& _vendorId);
-
-                    /**
-                     * 判断参数 VendorId 是否已赋值
-                     * @return VendorId 是否已赋值
-                     */
-                    bool VendorIdHasBeenSet() const;
-
-                    /**
                      * 获取网赚防刷相关信息。SceneType为4时填写。
                      * @return CrowdAntiRush 网赚防刷相关信息。SceneType为4时填写。
                      */
@@ -432,6 +414,32 @@ namespace TencentCloud
                      * @return Details 是否已赋值
                      */
                     bool DetailsHasBeenSet() const;
+
+                    /**
+                     * 获取设备类型：
+1：Android
+2：IOS
+                     * @return DeviceType 设备类型：
+1：Android
+2：IOS
+                     */
+                    int64_t GetDeviceType() const;
+
+                    /**
+                     * 设置设备类型：
+1：Android
+2：IOS
+                     * @param DeviceType 设备类型：
+1：Android
+2：IOS
+                     */
+                    void SetDeviceType(const int64_t& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     */
+                    bool DeviceTypeHasBeenSet() const;
 
                 private:
 
@@ -538,12 +546,6 @@ namespace TencentCloud
                     bool m_macAddressHasBeenSet;
 
                     /**
-                     * 手机制造商ID，如果手机注册，请带上此信息。
-                     */
-                    std::string m_vendorId;
-                    bool m_vendorIdHasBeenSet;
-
-                    /**
                      * 网赚防刷相关信息。SceneType为4时填写。
                      */
                     CrowdAntiRushInfo m_crowdAntiRush;
@@ -560,6 +562,14 @@ namespace TencentCloud
                      */
                     std::vector<InputDetails> m_details;
                     bool m_detailsHasBeenSet;
+
+                    /**
+                     * 设备类型：
+1：Android
+2：IOS
+                     */
+                    int64_t m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                 };
             }

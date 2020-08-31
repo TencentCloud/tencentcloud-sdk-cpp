@@ -27,6 +27,8 @@
 #include <tencentcloud/cdn/v20180606/model/AddCdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateClsLogTopicRequest.h>
 #include <tencentcloud/cdn/v20180606/model/CreateClsLogTopicResponse.h>
+#include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskRequest.h>
+#include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteCdnDomainRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteCdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteClsLogTopicRequest.h>
@@ -69,6 +71,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribePushTasksResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeScdnTopDataRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeScdnTopDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeUrlViolationsRequest.h>
@@ -129,6 +133,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateClsLogTopicResponse> CreateClsLogTopicOutcome;
                 typedef std::future<CreateClsLogTopicOutcome> CreateClsLogTopicOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::CreateClsLogTopicRequest&, CreateClsLogTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClsLogTopicAsyncHandler;
+                typedef Outcome<Error, Model::CreateScdnLogTaskResponse> CreateScdnLogTaskOutcome;
+                typedef std::future<CreateScdnLogTaskOutcome> CreateScdnLogTaskOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::CreateScdnLogTaskRequest&, CreateScdnLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScdnLogTaskAsyncHandler;
                 typedef Outcome<Error, Model::DeleteCdnDomainResponse> DeleteCdnDomainOutcome;
                 typedef std::future<DeleteCdnDomainOutcome> DeleteCdnDomainOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DeleteCdnDomainRequest&, DeleteCdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCdnDomainAsyncHandler;
@@ -192,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeReportDataResponse> DescribeReportDataOutcome;
                 typedef std::future<DescribeReportDataOutcome> DescribeReportDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeReportDataRequest&, DescribeReportDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportDataAsyncHandler;
+                typedef Outcome<Error, Model::DescribeScdnTopDataResponse> DescribeScdnTopDataOutcome;
+                typedef std::future<DescribeScdnTopDataOutcome> DescribeScdnTopDataOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeScdnTopDataRequest&, DescribeScdnTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnTopDataAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTrafficPackagesResponse> DescribeTrafficPackagesOutcome;
                 typedef std::future<DescribeTrafficPackagesOutcome> DescribeTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeTrafficPackagesRequest&, DescribeTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficPackagesAsyncHandler;
@@ -272,6 +282,15 @@ namespace TencentCloud
                 CreateClsLogTopicOutcome CreateClsLogTopic(const Model::CreateClsLogTopicRequest &request);
                 void CreateClsLogTopicAsync(const Model::CreateClsLogTopicRequest& request, const CreateClsLogTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClsLogTopicOutcomeCallable CreateClsLogTopicCallable(const Model::CreateClsLogTopicRequest& request);
+
+                /**
+                 *CreateScdnLogTask 用于创建事件日志任务
+                 * @param req CreateScdnLogTaskRequest
+                 * @return CreateScdnLogTaskOutcome
+                 */
+                CreateScdnLogTaskOutcome CreateScdnLogTask(const Model::CreateScdnLogTaskRequest &request);
+                void CreateScdnLogTaskAsync(const Model::CreateScdnLogTaskRequest& request, const CreateScdnLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateScdnLogTaskOutcomeCallable CreateScdnLogTaskCallable(const Model::CreateScdnLogTaskRequest& request);
 
                 /**
                  *DeleteCdnDomain 用于删除指定加速域名
@@ -486,6 +505,15 @@ namespace TencentCloud
                 DescribeReportDataOutcome DescribeReportData(const Model::DescribeReportDataRequest &request);
                 void DescribeReportDataAsync(const Model::DescribeReportDataRequest& request, const DescribeReportDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReportDataOutcomeCallable DescribeReportDataCallable(const Model::DescribeReportDataRequest& request);
+
+                /**
+                 *获取SCDN的Top数据
+                 * @param req DescribeScdnTopDataRequest
+                 * @return DescribeScdnTopDataOutcome
+                 */
+                DescribeScdnTopDataOutcome DescribeScdnTopData(const Model::DescribeScdnTopDataRequest &request);
+                void DescribeScdnTopDataAsync(const Model::DescribeScdnTopDataRequest& request, const DescribeScdnTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScdnTopDataOutcomeCallable DescribeScdnTopDataCallable(const Model::DescribeScdnTopDataRequest& request);
 
                 /**
                  *DescribeTrafficPackages 用于查询中国境内 CDN 流量包详情。

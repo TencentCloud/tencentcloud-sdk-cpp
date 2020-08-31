@@ -19,28 +19,44 @@ set(ft_public_header
   )
 
 set(ft_public_header_model
-  include/tencentcloud/ft/v20200304/model/SwapGenderPicRequest.h
+  include/tencentcloud/ft/v20200304/model/QueryFaceMorphJobResponse.h
+  include/tencentcloud/ft/v20200304/model/CancelFaceMorphJobResponse.h
   include/tencentcloud/ft/v20200304/model/AgeInfo.h
-  include/tencentcloud/ft/v20200304/model/GenderInfo.h
-  include/tencentcloud/ft/v20200304/model/SwapGenderPicResponse.h
-  include/tencentcloud/ft/v20200304/model/ChangeAgePicResponse.h
   include/tencentcloud/ft/v20200304/model/FaceRect.h
+  include/tencentcloud/ft/v20200304/model/GenderInfo.h
+  include/tencentcloud/ft/v20200304/model/SwapGenderPicRequest.h
+  include/tencentcloud/ft/v20200304/model/GradientInfo.h
+  include/tencentcloud/ft/v20200304/model/SwapGenderPicResponse.h
+  include/tencentcloud/ft/v20200304/model/FaceMorphOutput.h
+  include/tencentcloud/ft/v20200304/model/MorphFaceRequest.h
+  include/tencentcloud/ft/v20200304/model/ChangeAgePicResponse.h
   include/tencentcloud/ft/v20200304/model/ChangeAgePicRequest.h
+  include/tencentcloud/ft/v20200304/model/CancelFaceMorphJobRequest.h
   include/tencentcloud/ft/v20200304/model/FaceCartoonPicRequest.h
+  include/tencentcloud/ft/v20200304/model/QueryFaceMorphJobRequest.h
   include/tencentcloud/ft/v20200304/model/FaceCartoonPicResponse.h
+  include/tencentcloud/ft/v20200304/model/MorphFaceResponse.h
   )
 
 set(ft_src
   src/v20200304/FtClient.cpp
-  src/v20200304/model/SwapGenderPicRequest.cpp
+  src/v20200304/model/QueryFaceMorphJobResponse.cpp
+  src/v20200304/model/CancelFaceMorphJobResponse.cpp
   src/v20200304/model/AgeInfo.cpp
-  src/v20200304/model/GenderInfo.cpp
-  src/v20200304/model/SwapGenderPicResponse.cpp
-  src/v20200304/model/ChangeAgePicResponse.cpp
   src/v20200304/model/FaceRect.cpp
+  src/v20200304/model/GenderInfo.cpp
+  src/v20200304/model/SwapGenderPicRequest.cpp
+  src/v20200304/model/GradientInfo.cpp
+  src/v20200304/model/SwapGenderPicResponse.cpp
+  src/v20200304/model/FaceMorphOutput.cpp
+  src/v20200304/model/MorphFaceRequest.cpp
+  src/v20200304/model/ChangeAgePicResponse.cpp
   src/v20200304/model/ChangeAgePicRequest.cpp
+  src/v20200304/model/CancelFaceMorphJobRequest.cpp
   src/v20200304/model/FaceCartoonPicRequest.cpp
+  src/v20200304/model/QueryFaceMorphJobRequest.cpp
   src/v20200304/model/FaceCartoonPicResponse.cpp
+  src/v20200304/model/MorphFaceResponse.cpp
   )
 
 set(ft_include

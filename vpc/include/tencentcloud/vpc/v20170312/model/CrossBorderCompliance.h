@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 跨境专线合规化审批单
+                * 合规化审批单
                 */
                 class CrossBorderCompliance : public AbstractModel
                 {
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool UniformSocialCreditCodeHasBeenSet() const;
 
                     /**
-                     * 获取法人。
-                     * @return LegalPerson 法人。
+                     * 获取法定代表人。
+                     * @return LegalPerson 法定代表人。
                      */
                     std::string GetLegalPerson() const;
 
                     /**
-                     * 设置法人。
-                     * @param LegalPerson 法人。
+                     * 设置法定代表人。
+                     * @param LegalPerson 法定代表人。
                      */
                     void SetLegalPerson(const std::string& _legalPerson);
 
@@ -317,14 +317,14 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取跨境专线服务受理单。
-                     * @return ServiceHandlingForm 跨境专线服务受理单。
+                     * 获取服务受理单。
+                     * @return ServiceHandlingForm 服务受理单。
                      */
                     std::string GetServiceHandlingForm() const;
 
                     /**
-                     * 设置跨境专线服务受理单。
-                     * @param ServiceHandlingForm 跨境专线服务受理单。
+                     * 设置服务受理单。
+                     * @param ServiceHandlingForm 服务受理单。
                      */
                     void SetServiceHandlingForm(const std::string& _serviceHandlingForm);
 
@@ -469,7 +469,7 @@ namespace TencentCloud
                     bool m_uniformSocialCreditCodeHasBeenSet;
 
                     /**
-                     * 法人。
+                     * 法定代表人。
                      */
                     std::string m_legalPerson;
                     bool m_legalPersonHasBeenSet;
@@ -535,7 +535,7 @@ namespace TencentCloud
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 跨境专线服务受理单。
+                     * 服务受理单。
                      */
                     std::string m_serviceHandlingForm;
                     bool m_serviceHandlingFormHasBeenSet;
