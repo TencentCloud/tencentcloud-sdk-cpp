@@ -23,12 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/kms/v20190118/model/ArchiveKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/ArchiveKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/AsymmetricRsaDecryptRequest.h>
 #include <tencentcloud/kms/v20190118/model/AsymmetricRsaDecryptResponse.h>
 #include <tencentcloud/kms/v20190118/model/AsymmetricSm2DecryptRequest.h>
 #include <tencentcloud/kms/v20190118/model/AsymmetricSm2DecryptResponse.h>
 #include <tencentcloud/kms/v20190118/model/BindCloudResourceRequest.h>
 #include <tencentcloud/kms/v20190118/model/BindCloudResourceResponse.h>
+#include <tencentcloud/kms/v20190118/model/CancelKeyArchiveRequest.h>
+#include <tencentcloud/kms/v20190118/model/CancelKeyArchiveResponse.h>
 #include <tencentcloud/kms/v20190118/model/CancelKeyDeletionRequest.h>
 #include <tencentcloud/kms/v20190118/model/CancelKeyDeletionResponse.h>
 #include <tencentcloud/kms/v20190118/model/CreateKeyRequest.h>
@@ -127,6 +131,9 @@ namespace TencentCloud
                 KmsClient(const Credential &credential, const std::string &region);
                 KmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::ArchiveKeyResponse> ArchiveKeyOutcome;
+                typedef std::future<ArchiveKeyOutcome> ArchiveKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::ArchiveKeyRequest&, ArchiveKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ArchiveKeyAsyncHandler;
                 typedef Outcome<Error, Model::AsymmetricRsaDecryptResponse> AsymmetricRsaDecryptOutcome;
                 typedef std::future<AsymmetricRsaDecryptOutcome> AsymmetricRsaDecryptOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::AsymmetricRsaDecryptRequest&, AsymmetricRsaDecryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AsymmetricRsaDecryptAsyncHandler;
@@ -136,6 +143,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BindCloudResourceResponse> BindCloudResourceOutcome;
                 typedef std::future<BindCloudResourceOutcome> BindCloudResourceOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::BindCloudResourceRequest&, BindCloudResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudResourceAsyncHandler;
+                typedef Outcome<Error, Model::CancelKeyArchiveResponse> CancelKeyArchiveOutcome;
+                typedef std::future<CancelKeyArchiveOutcome> CancelKeyArchiveOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::CancelKeyArchiveRequest&, CancelKeyArchiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelKeyArchiveAsyncHandler;
                 typedef Outcome<Error, Model::CancelKeyDeletionResponse> CancelKeyDeletionOutcome;
                 typedef std::future<CancelKeyDeletionOutcome> CancelKeyDeletionOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::CancelKeyDeletionRequest&, CancelKeyDeletionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelKeyDeletionAsyncHandler;
@@ -266,6 +276,15 @@ namespace TencentCloud
 
 
                 /**
+                 *对密钥进行归档，被归档的密钥只能用于解密，不能加密
+                 * @param req ArchiveKeyRequest
+                 * @return ArchiveKeyOutcome
+                 */
+                ArchiveKeyOutcome ArchiveKey(const Model::ArchiveKeyRequest &request);
+                void ArchiveKeyAsync(const Model::ArchiveKeyRequest& request, const ArchiveKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ArchiveKeyOutcomeCallable ArchiveKeyCallable(const Model::ArchiveKeyRequest& request);
+
+                /**
                  *使用指定的RSA非对称密钥的私钥进行数据解密，密文必须是使用对应公钥加密的。处于Enabled 状态的非对称密钥才能进行解密操作。
                  * @param req AsymmetricRsaDecryptRequest
                  * @return AsymmetricRsaDecryptOutcome
@@ -291,6 +310,15 @@ namespace TencentCloud
                 BindCloudResourceOutcome BindCloudResource(const Model::BindCloudResourceRequest &request);
                 void BindCloudResourceAsync(const Model::BindCloudResourceRequest& request, const BindCloudResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindCloudResourceOutcomeCallable BindCloudResourceCallable(const Model::BindCloudResourceRequest& request);
+
+                /**
+                 *取消密钥归档，取消后密钥的状态变为Enabled。
+                 * @param req CancelKeyArchiveRequest
+                 * @return CancelKeyArchiveOutcome
+                 */
+                CancelKeyArchiveOutcome CancelKeyArchive(const Model::CancelKeyArchiveRequest &request);
+                void CancelKeyArchiveAsync(const Model::CancelKeyArchiveRequest& request, const CancelKeyArchiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelKeyArchiveOutcomeCallable CancelKeyArchiveCallable(const Model::CancelKeyArchiveRequest& request);
 
                 /**
                  *取消CMK的计划删除操作

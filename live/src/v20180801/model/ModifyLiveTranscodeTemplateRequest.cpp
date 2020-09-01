@@ -41,7 +41,8 @@ ModifyLiveTranscodeTemplateRequest::ModifyLiveTranscodeTemplateRequest() :
     m_bitrateToOrigHasBeenSet(false),
     m_heightToOrigHasBeenSet(false),
     m_fpsToOrigHasBeenSet(false),
-    m_adaptBitratePercentHasBeenSet(false)
+    m_adaptBitratePercentHasBeenSet(false),
+    m_shortEdgeAsHeightHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,14 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
         string key = "AdaptBitratePercent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_adaptBitratePercent, allocator);
+    }
+
+    if (m_shortEdgeAsHeightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ShortEdgeAsHeight";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_shortEdgeAsHeight, allocator);
     }
 
 
@@ -490,6 +499,22 @@ void ModifyLiveTranscodeTemplateRequest::SetAdaptBitratePercent(const double& _a
 bool ModifyLiveTranscodeTemplateRequest::AdaptBitratePercentHasBeenSet() const
 {
     return m_adaptBitratePercentHasBeenSet;
+}
+
+int64_t ModifyLiveTranscodeTemplateRequest::GetShortEdgeAsHeight() const
+{
+    return m_shortEdgeAsHeight;
+}
+
+void ModifyLiveTranscodeTemplateRequest::SetShortEdgeAsHeight(const int64_t& _shortEdgeAsHeight)
+{
+    m_shortEdgeAsHeight = _shortEdgeAsHeight;
+    m_shortEdgeAsHeightHasBeenSet = true;
+}
+
+bool ModifyLiveTranscodeTemplateRequest::ShortEdgeAsHeightHasBeenSet() const
+{
+    return m_shortEdgeAsHeightHasBeenSet;
 }
 
 

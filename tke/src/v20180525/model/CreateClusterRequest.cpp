@@ -31,7 +31,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_clusterAdvancedSettingsHasBeenSet(false),
     m_instanceAdvancedSettingsHasBeenSet(false),
     m_existedInstancesForNodeHasBeenSet(false),
-    m_instanceDataDiskMountSettingsHasBeenSet(false)
+    m_instanceDataDiskMountSettingsHasBeenSet(false),
+    m_extensionAddonsHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,21 @@ string CreateClusterRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_instanceDataDiskMountSettings.begin(); itr != m_instanceDataDiskMountSettings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_extensionAddonsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtensionAddons";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extensionAddons.begin(); itr != m_extensionAddons.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -265,6 +281,22 @@ void CreateClusterRequest::SetInstanceDataDiskMountSettings(const vector<Instanc
 bool CreateClusterRequest::InstanceDataDiskMountSettingsHasBeenSet() const
 {
     return m_instanceDataDiskMountSettingsHasBeenSet;
+}
+
+vector<ExtensionAddon> CreateClusterRequest::GetExtensionAddons() const
+{
+    return m_extensionAddons;
+}
+
+void CreateClusterRequest::SetExtensionAddons(const vector<ExtensionAddon>& _extensionAddons)
+{
+    m_extensionAddons = _extensionAddons;
+    m_extensionAddonsHasBeenSet = true;
+}
+
+bool CreateClusterRequest::ExtensionAddonsHasBeenSet() const
+{
+    return m_extensionAddonsHasBeenSet;
 }
 
 

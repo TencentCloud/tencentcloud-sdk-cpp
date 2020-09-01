@@ -127,14 +127,14 @@ Default-默认不修改
                     bool SgIdsHasBeenSet() const;
 
                     /**
-                     * 获取VpcId
-                     * @return VpcId VpcId
+                     * 获取虚拟专网Id
+                     * @return VpcId 虚拟专网Id
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VpcId
-                     * @param VpcId VpcId
+                     * 设置虚拟专网Id
+                     * @param VpcId 虚拟专网Id
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -192,7 +192,7 @@ Default-默认不修改
                     bool m_sgIdsHasBeenSet;
 
                     /**
-                     * VpcId
+                     * 虚拟专网Id
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

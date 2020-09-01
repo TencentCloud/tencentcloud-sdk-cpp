@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_CACHE_H_
-#define TENCENTCLOUD_CDN_V20180606_MODEL_CACHE_H_
+#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_RULEQUERYSTRING_H_
+#define TENCENTCLOUD_CDN_V20180606_MODEL_RULEQUERYSTRING_H_
 
 #include <string>
 #include <vector>
@@ -24,9 +24,6 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cdn/v20180606/model/SimpleCache.h>
-#include <tencentcloud/cdn/v20180606/model/AdvancedCache.h>
-#include <tencentcloud/cdn/v20180606/model/RuleCache.h>
 
 
 namespace TencentCloud
@@ -38,107 +35,105 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 节点缓存过期时间配置，分为以下两种：
-+ 基础版缓存过期规则配置
-+ 高级版缓存过期规则配置
+                * 路径保留参数配置
                 */
-                class Cache : public AbstractModel
+                class RuleQueryString : public AbstractModel
                 {
                 public:
-                    Cache();
-                    ~Cache() = default;
+                    RuleQueryString();
+                    ~RuleQueryString() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取基础缓存过期时间配置
+                     * 获取on | off CacheKey是否由QueryString组成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SimpleCache 基础缓存过期时间配置
+                     * @return Switch on | off CacheKey是否由QueryString组成
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    SimpleCache GetSimpleCache() const;
+                    std::string GetSwitch() const;
 
                     /**
-                     * 设置基础缓存过期时间配置
+                     * 设置on | off CacheKey是否由QueryString组成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SimpleCache 基础缓存过期时间配置
+                     * @param Switch on | off CacheKey是否由QueryString组成
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetSimpleCache(const SimpleCache& _simpleCache);
+                    void SetSwitch(const std::string& _switch);
 
                     /**
-                     * 判断参数 SimpleCache 是否已赋值
-                     * @return SimpleCache 是否已赋值
+                     * 判断参数 Switch 是否已赋值
+                     * @return Switch 是否已赋值
                      */
-                    bool SimpleCacheHasBeenSet() const;
+                    bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取高级缓存过期时间配置（功能灰度中，尚未全量）
+                     * 获取includeCustom 包含部分url参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdvancedCache 高级缓存过期时间配置（功能灰度中，尚未全量）
+                     * @return Action includeCustom 包含部分url参数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    AdvancedCache GetAdvancedCache() const;
+                    std::string GetAction() const;
 
                     /**
-                     * 设置高级缓存过期时间配置（功能灰度中，尚未全量）
+                     * 设置includeCustom 包含部分url参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdvancedCache 高级缓存过期时间配置（功能灰度中，尚未全量）
+                     * @param Action includeCustom 包含部分url参数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetAdvancedCache(const AdvancedCache& _advancedCache);
+                    void SetAction(const std::string& _action);
 
                     /**
-                     * 判断参数 AdvancedCache 是否已赋值
-                     * @return AdvancedCache 是否已赋值
+                     * 判断参数 Action 是否已赋值
+                     * @return Action 是否已赋值
                      */
-                    bool AdvancedCacheHasBeenSet() const;
+                    bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取高级路径缓存配置
+                     * 获取使用/排除的url参数数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleCache 高级路径缓存配置
+                     * @return Value 使用/排除的url参数数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<RuleCache> GetRuleCache() const;
+                    std::string GetValue() const;
 
                     /**
-                     * 设置高级路径缓存配置
+                     * 设置使用/排除的url参数数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleCache 高级路径缓存配置
+                     * @param Value 使用/排除的url参数数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetRuleCache(const std::vector<RuleCache>& _ruleCache);
+                    void SetValue(const std::string& _value);
 
                     /**
-                     * 判断参数 RuleCache 是否已赋值
-                     * @return RuleCache 是否已赋值
+                     * 判断参数 Value 是否已赋值
+                     * @return Value 是否已赋值
                      */
-                    bool RuleCacheHasBeenSet() const;
+                    bool ValueHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 基础缓存过期时间配置
+                     * on | off CacheKey是否由QueryString组成
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    SimpleCache m_simpleCache;
-                    bool m_simpleCacheHasBeenSet;
+                    std::string m_switch;
+                    bool m_switchHasBeenSet;
 
                     /**
-                     * 高级缓存过期时间配置（功能灰度中，尚未全量）
+                     * includeCustom 包含部分url参数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    AdvancedCache m_advancedCache;
-                    bool m_advancedCacheHasBeenSet;
+                    std::string m_action;
+                    bool m_actionHasBeenSet;
 
                     /**
-                     * 高级路径缓存配置
+                     * 使用/排除的url参数数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<RuleCache> m_ruleCache;
-                    bool m_ruleCacheHasBeenSet;
+                    std::string m_value;
+                    bool m_valueHasBeenSet;
 
                 };
             }
@@ -146,4 +141,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_CACHE_H_
+#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_RULEQUERYSTRING_H_

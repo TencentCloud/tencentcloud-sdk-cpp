@@ -255,6 +255,49 @@ CaptchaClient::DescribeCaptchaResultOutcomeCallable CaptchaClient::DescribeCaptc
     return task->get_future();
 }
 
+CaptchaClient::DescribeCaptchaTicketDataOutcome CaptchaClient::DescribeCaptchaTicketData(const DescribeCaptchaTicketDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaTicketData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaTicketDataResponse rsp = DescribeCaptchaTicketDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaTicketDataOutcome(rsp);
+        else
+            return DescribeCaptchaTicketDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaTicketDataOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaTicketDataAsync(const DescribeCaptchaTicketDataRequest& request, const DescribeCaptchaTicketDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaTicketData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaTicketDataOutcomeCallable CaptchaClient::DescribeCaptchaTicketDataCallable(const DescribeCaptchaTicketDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaTicketDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaTicketData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CaptchaClient::DescribeCaptchaUserAllAppIdOutcome CaptchaClient::DescribeCaptchaUserAllAppId(const DescribeCaptchaUserAllAppIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCaptchaUserAllAppId");

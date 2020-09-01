@@ -116,6 +116,24 @@ namespace TencentCloud
                      */
                     bool RspImgTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否取消全图动漫化效果。
+                     * @return DisableGlobalEffect 是否取消全图动漫化效果。
+                     */
+                    std::string GetDisableGlobalEffect() const;
+
+                    /**
+                     * 设置是否取消全图动漫化效果。
+                     * @param DisableGlobalEffect 是否取消全图动漫化效果。
+                     */
+                    void SetDisableGlobalEffect(const std::string& _disableGlobalEffect);
+
+                    /**
+                     * 判断参数 DisableGlobalEffect 是否已赋值
+                     * @return DisableGlobalEffect 是否已赋值
+                     */
+                    bool DisableGlobalEffectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;
+
+                    /**
+                     * 是否取消全图动漫化效果。
+                     */
+                    std::string m_disableGlobalEffect;
+                    bool m_disableGlobalEffectHasBeenSet;
 
                 };
             }

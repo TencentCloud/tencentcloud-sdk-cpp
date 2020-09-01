@@ -40,6 +40,49 @@ KmsClient::KmsClient(const Credential &credential, const string &region, const C
 }
 
 
+KmsClient::ArchiveKeyOutcome KmsClient::ArchiveKey(const ArchiveKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ArchiveKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ArchiveKeyResponse rsp = ArchiveKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ArchiveKeyOutcome(rsp);
+        else
+            return ArchiveKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return ArchiveKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::ArchiveKeyAsync(const ArchiveKeyRequest& request, const ArchiveKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ArchiveKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::ArchiveKeyOutcomeCallable KmsClient::ArchiveKeyCallable(const ArchiveKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ArchiveKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->ArchiveKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::AsymmetricRsaDecryptOutcome KmsClient::AsymmetricRsaDecrypt(const AsymmetricRsaDecryptRequest &request)
 {
     auto outcome = MakeRequest(request, "AsymmetricRsaDecrypt");
@@ -162,6 +205,49 @@ KmsClient::BindCloudResourceOutcomeCallable KmsClient::BindCloudResourceCallable
         [this, request]()
         {
             return this->BindCloudResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::CancelKeyArchiveOutcome KmsClient::CancelKeyArchive(const CancelKeyArchiveRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelKeyArchive");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelKeyArchiveResponse rsp = CancelKeyArchiveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelKeyArchiveOutcome(rsp);
+        else
+            return CancelKeyArchiveOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelKeyArchiveOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::CancelKeyArchiveAsync(const CancelKeyArchiveRequest& request, const CancelKeyArchiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelKeyArchive(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::CancelKeyArchiveOutcomeCallable KmsClient::CancelKeyArchiveCallable(const CancelKeyArchiveRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelKeyArchiveOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelKeyArchive(request);
         }
     );
 

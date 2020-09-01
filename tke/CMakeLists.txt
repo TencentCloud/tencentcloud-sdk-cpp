@@ -49,6 +49,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointVipResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterRoutesResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClustersRequest.h
+  include/tencentcloud/tke/v20180525/model/ExtensionAddon.h
   include/tencentcloud/tke/v20180525/model/RegionInstance.h
   include/tencentcloud/tke/v20180525/model/Label.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipResponse.h
@@ -148,6 +149,7 @@ set(tke_src
   src/v20180525/model/CreateClusterEndpointVipResponse.cpp
   src/v20180525/model/DescribeClusterRoutesResponse.cpp
   src/v20180525/model/DescribeClustersRequest.cpp
+  src/v20180525/model/ExtensionAddon.cpp
   src/v20180525/model/RegionInstance.cpp
   src/v20180525/model/Label.cpp
   src/v20180525/model/DeleteClusterEndpointVipResponse.cpp

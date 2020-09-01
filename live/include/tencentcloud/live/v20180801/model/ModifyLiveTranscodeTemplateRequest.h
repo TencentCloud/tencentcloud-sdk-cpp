@@ -61,18 +61,22 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取视频编码：
-h264/h265。
-                     * @return Vcodec 视频编码：
-h264/h265。
+                     * 获取视频编码：h264/h265/origin，默认h264。
+
+origin: 保持原始编码格式
+                     * @return Vcodec 视频编码：h264/h265/origin，默认h264。
+
+origin: 保持原始编码格式
                      */
                     std::string GetVcodec() const;
 
                     /**
-                     * 设置视频编码：
-h264/h265。
-                     * @param Vcodec 视频编码：
-h264/h265。
+                     * 设置视频编码：h264/h265/origin，默认h264。
+
+origin: 保持原始编码格式
+                     * @param Vcodec 视频编码：h264/h265/origin，默认h264。
+
+origin: 保持原始编码格式
                      */
                     void SetVcodec(const std::string& _vcodec);
 
@@ -83,18 +87,18 @@ h264/h265。
                     bool VcodecHasBeenSet() const;
 
                     /**
-                     * 获取音频编码：
-aac/mp3。
-                     * @return Acodec 音频编码：
-aac/mp3。
+                     * 获取音频编码：aac，默认aac。
+注意：当前该参数未生效，待后续支持！
+                     * @return Acodec 音频编码：aac，默认aac。
+注意：当前该参数未生效，待后续支持！
                      */
                     std::string GetAcodec() const;
 
                     /**
-                     * 设置音频编码：
-aac/mp3。
-                     * @param Acodec 音频编码：
-aac/mp3。
+                     * 设置音频编码：aac，默认aac。
+注意：当前该参数未生效，待后续支持！
+                     * @param Acodec 音频编码：aac，默认aac。
+注意：当前该参数未生效，待后续支持！
                      */
                     void SetAcodec(const std::string& _acodec);
 
@@ -146,17 +150,17 @@ aac/mp3。
 
                     /**
                      * 获取视频码率。范围：100kbps - 8000kbps。
-注意：码率必须是100的倍数。
+注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
                      * @return VideoBitrate 视频码率。范围：100kbps - 8000kbps。
-注意：码率必须是100的倍数。
+注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
                      */
                     int64_t GetVideoBitrate() const;
 
                     /**
                      * 设置视频码率。范围：100kbps - 8000kbps。
-注意：码率必须是100的倍数。
+注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
                      * @param VideoBitrate 视频码率。范围：100kbps - 8000kbps。
-注意：码率必须是100的倍数。
+注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
                      */
                     void SetVideoBitrate(const int64_t& _videoBitrate);
 
@@ -168,13 +172,17 @@ aac/mp3。
 
                     /**
                      * 获取宽。0-3000。
+数值必须是2的倍数，0是原始宽度
                      * @return Width 宽。0-3000。
+数值必须是2的倍数，0是原始宽度
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置宽。0-3000。
+数值必须是2的倍数，0是原始宽度
                      * @param Width 宽。0-3000。
+数值必须是2的倍数，0是原始宽度
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -222,13 +230,17 @@ aac/mp3。
 
                     /**
                      * 获取高。0-3000。
+数值必须是2的倍数，0是原始宽度
                      * @return Height 高。0-3000。
+数值必须是2的倍数，0是原始宽度
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置高。0-3000。
+数值必须是2的倍数，0是原始宽度
                      * @param Height 高。0-3000。
+数值必须是2的倍数，0是原始宽度
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -239,14 +251,18 @@ aac/mp3。
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取帧率。0-200。
-                     * @return Fps 帧率。0-200。
+                     * 获取帧率，默认0。
+范围0-60
+                     * @return Fps 帧率，默认0。
+范围0-60
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置帧率。0-200。
-                     * @param Fps 帧率。0-200。
+                     * 设置帧率，默认0。
+范围0-60
+                     * @param Fps 帧率，默认0。
+范围0-60
                      */
                     void SetFps(const int64_t& _fps);
 
@@ -257,14 +273,18 @@ aac/mp3。
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取关键帧间隔，单位：秒。0-50。
-                     * @return Gop 关键帧间隔，单位：秒。0-50。
+                     * 获取关键帧间隔，单位：秒。
+范围2-6
+                     * @return Gop 关键帧间隔，单位：秒。
+范围2-6
                      */
                     int64_t GetGop() const;
 
                     /**
-                     * 设置关键帧间隔，单位：秒。0-50。
-                     * @param Gop 关键帧间隔，单位：秒。0-50。
+                     * 设置关键帧间隔，单位：秒。
+范围2-6
+                     * @param Gop 关键帧间隔，单位：秒。
+范围2-6
                      */
                     void SetGop(const int64_t& _gop);
 
@@ -275,18 +295,18 @@ aac/mp3。
                     bool GopHasBeenSet() const;
 
                     /**
-                     * 获取旋转角度。
-0 90 180 270。
-                     * @return Rotate 旋转角度。
-0 90 180 270。
+                     * 获取旋转角度，默认0。
+可取值：0，90，180，270
+                     * @return Rotate 旋转角度，默认0。
+可取值：0，90，180，270
                      */
                     int64_t GetRotate() const;
 
                     /**
-                     * 设置旋转角度。
-0 90 180 270。
-                     * @param Rotate 旋转角度。
-0 90 180 270。
+                     * 设置旋转角度，默认0。
+可取值：0，90，180，270
+                     * @param Rotate 旋转角度，默认0。
+可取值：0，90，180，270
                      */
                     void SetRotate(const int64_t& _rotate);
 
@@ -402,6 +422,24 @@ baseline/main/high。
                      */
                     bool AdaptBitratePercentHasBeenSet() const;
 
+                    /**
+                     * 获取是否以短边作为高度，0：否，1：是。默认0。
+                     * @return ShortEdgeAsHeight 是否以短边作为高度，0：否，1：是。默认0。
+                     */
+                    int64_t GetShortEdgeAsHeight() const;
+
+                    /**
+                     * 设置是否以短边作为高度，0：否，1：是。默认0。
+                     * @param ShortEdgeAsHeight 是否以短边作为高度，0：否，1：是。默认0。
+                     */
+                    void SetShortEdgeAsHeight(const int64_t& _shortEdgeAsHeight);
+
+                    /**
+                     * 判断参数 ShortEdgeAsHeight 是否已赋值
+                     * @return ShortEdgeAsHeight 是否已赋值
+                     */
+                    bool ShortEdgeAsHeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -411,15 +449,16 @@ baseline/main/high。
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 视频编码：
-h264/h265。
+                     * 视频编码：h264/h265/origin，默认h264。
+
+origin: 保持原始编码格式
                      */
                     std::string m_vcodec;
                     bool m_vcodecHasBeenSet;
 
                     /**
-                     * 音频编码：
-aac/mp3。
+                     * 音频编码：aac，默认aac。
+注意：当前该参数未生效，待后续支持！
                      */
                     std::string m_acodec;
                     bool m_acodecHasBeenSet;
@@ -439,13 +478,14 @@ aac/mp3。
 
                     /**
                      * 视频码率。范围：100kbps - 8000kbps。
-注意：码率必须是100的倍数。
+注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
                      */
                     int64_t m_videoBitrate;
                     bool m_videoBitrateHasBeenSet;
 
                     /**
                      * 宽。0-3000。
+数值必须是2的倍数，0是原始宽度
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
@@ -464,25 +504,28 @@ aac/mp3。
 
                     /**
                      * 高。0-3000。
+数值必须是2的倍数，0是原始宽度
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 帧率。0-200。
+                     * 帧率，默认0。
+范围0-60
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 关键帧间隔，单位：秒。0-50。
+                     * 关键帧间隔，单位：秒。
+范围2-6
                      */
                     int64_t m_gop;
                     bool m_gopHasBeenSet;
 
                     /**
-                     * 旋转角度。
-0 90 180 270。
+                     * 旋转角度，默认0。
+可取值：0，90，180，270
                      */
                     int64_t m_rotate;
                     bool m_rotateHasBeenSet;
@@ -520,6 +563,12 @@ baseline/main/high。
                      */
                     double m_adaptBitratePercent;
                     bool m_adaptBitratePercentHasBeenSet;
+
+                    /**
+                     * 是否以短边作为高度，0：否，1：是。默认0。
+                     */
+                    int64_t m_shortEdgeAsHeight;
+                    bool m_shortEdgeAsHeightHasBeenSet;
 
                 };
             }

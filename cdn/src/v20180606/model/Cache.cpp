@@ -23,7 +23,8 @@ using namespace std;
 
 Cache::Cache() :
     m_simpleCacheHasBeenSet(false),
-    m_advancedCacheHasBeenSet(false)
+    m_advancedCacheHasBeenSet(false),
+    m_ruleCacheHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,26 @@ CoreInternalOutcome Cache::Deserialize(const Value &value)
         m_advancedCacheHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleCache") && !value["RuleCache"].IsNull())
+    {
+        if (!value["RuleCache"].IsArray())
+            return CoreInternalOutcome(Error("response `Cache.RuleCache` is not array type"));
+
+        const Value &tmpValue = value["RuleCache"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RuleCache item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleCache.push_back(item);
+        }
+        m_ruleCacheHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +110,21 @@ void Cache::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_advancedCache.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ruleCacheHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RuleCache";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleCache.begin(); itr != m_ruleCache.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -124,5 +160,21 @@ void Cache::SetAdvancedCache(const AdvancedCache& _advancedCache)
 bool Cache::AdvancedCacheHasBeenSet() const
 {
     return m_advancedCacheHasBeenSet;
+}
+
+vector<RuleCache> Cache::GetRuleCache() const
+{
+    return m_ruleCache;
+}
+
+void Cache::SetRuleCache(const vector<RuleCache>& _ruleCache)
+{
+    m_ruleCache = _ruleCache;
+    m_ruleCacheHasBeenSet = true;
+}
+
+bool Cache::RuleCacheHasBeenSet() const
+{
+    return m_ruleCacheHasBeenSet;
 }
 

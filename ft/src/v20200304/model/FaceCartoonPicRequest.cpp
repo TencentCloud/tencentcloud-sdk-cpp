@@ -26,7 +26,8 @@ using namespace std;
 FaceCartoonPicRequest::FaceCartoonPicRequest() :
     m_imageHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_rspImgTypeHasBeenSet(false)
+    m_rspImgTypeHasBeenSet(false),
+    m_disableGlobalEffectHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string FaceCartoonPicRequest::ToJsonString() const
         string key = "RspImgType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_rspImgType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableGlobalEffectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DisableGlobalEffect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_disableGlobalEffect.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void FaceCartoonPicRequest::SetRspImgType(const string& _rspImgType)
 bool FaceCartoonPicRequest::RspImgTypeHasBeenSet() const
 {
     return m_rspImgTypeHasBeenSet;
+}
+
+string FaceCartoonPicRequest::GetDisableGlobalEffect() const
+{
+    return m_disableGlobalEffect;
+}
+
+void FaceCartoonPicRequest::SetDisableGlobalEffect(const string& _disableGlobalEffect)
+{
+    m_disableGlobalEffect = _disableGlobalEffect;
+    m_disableGlobalEffectHasBeenSet = true;
+}
+
+bool FaceCartoonPicRequest::DisableGlobalEffectHasBeenSet() const
+{
+    return m_disableGlobalEffectHasBeenSet;
 }
 
 

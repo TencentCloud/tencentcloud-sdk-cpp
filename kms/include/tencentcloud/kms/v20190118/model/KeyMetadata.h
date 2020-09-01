@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport
-                     * @return KeyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport
+                     * 获取CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
+                     * @return KeyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
                      */
                     std::string GetKeyState() const;
 
                     /**
-                     * 设置CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport
-                     * @param KeyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport
+                     * 设置CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
+                     * @param KeyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
                      */
                     void SetKeyState(const std::string& _keyState);
 
@@ -355,7 +355,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport
+                     * CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
                      */
                     std::string m_keyState;
                     bool m_keyStateHasBeenSet;

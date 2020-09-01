@@ -33,6 +33,8 @@
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaOperDataResponse.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaResultRequest.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaResultResponse.h>
+#include <tencentcloud/captcha/v20190722/model/DescribeCaptchaTicketDataRequest.h>
+#include <tencentcloud/captcha/v20190722/model/DescribeCaptchaTicketDataResponse.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaUserAllAppIdRequest.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaUserAllAppIdResponse.h>
 #include <tencentcloud/captcha/v20190722/model/UpdateCaptchaAppIdInfoRequest.h>
@@ -66,6 +68,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCaptchaResultResponse> DescribeCaptchaResultOutcome;
                 typedef std::future<DescribeCaptchaResultOutcome> DescribeCaptchaResultOutcomeCallable;
                 typedef std::function<void(const CaptchaClient*, const Model::DescribeCaptchaResultRequest&, DescribeCaptchaResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaResultAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCaptchaTicketDataResponse> DescribeCaptchaTicketDataOutcome;
+                typedef std::future<DescribeCaptchaTicketDataOutcome> DescribeCaptchaTicketDataOutcomeCallable;
+                typedef std::function<void(const CaptchaClient*, const Model::DescribeCaptchaTicketDataRequest&, DescribeCaptchaTicketDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaTicketDataAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCaptchaUserAllAppIdResponse> DescribeCaptchaUserAllAppIdOutcome;
                 typedef std::future<DescribeCaptchaUserAllAppIdOutcome> DescribeCaptchaUserAllAppIdOutcomeCallable;
                 typedef std::function<void(const CaptchaClient*, const Model::DescribeCaptchaUserAllAppIdRequest&, DescribeCaptchaUserAllAppIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaUserAllAppIdAsyncHandler;
@@ -119,6 +124,15 @@ namespace TencentCloud
                 DescribeCaptchaResultOutcome DescribeCaptchaResult(const Model::DescribeCaptchaResultRequest &request);
                 void DescribeCaptchaResultAsync(const Model::DescribeCaptchaResultRequest& request, const DescribeCaptchaResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCaptchaResultOutcomeCallable DescribeCaptchaResultCallable(const Model::DescribeCaptchaResultRequest& request);
+
+                /**
+                 *验证码控制台票据验证信息
+                 * @param req DescribeCaptchaTicketDataRequest
+                 * @return DescribeCaptchaTicketDataOutcome
+                 */
+                DescribeCaptchaTicketDataOutcome DescribeCaptchaTicketData(const Model::DescribeCaptchaTicketDataRequest &request);
+                void DescribeCaptchaTicketDataAsync(const Model::DescribeCaptchaTicketDataRequest& request, const DescribeCaptchaTicketDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCaptchaTicketDataOutcomeCallable DescribeCaptchaTicketDataCallable(const Model::DescribeCaptchaTicketDataRequest& request);
 
                 /**
                  *安全验证码获取用户注册所有APPId和应用名称

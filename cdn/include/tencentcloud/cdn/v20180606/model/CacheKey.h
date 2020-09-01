@@ -29,6 +29,7 @@
 #include <tencentcloud/cdn/v20180606/model/HeaderKey.h>
 #include <tencentcloud/cdn/v20180606/model/CacheTagKey.h>
 #include <tencentcloud/cdn/v20180606/model/SchemeKey.h>
+#include <tencentcloud/cdn/v20180606/model/KeyRule.h>
 
 
 namespace TencentCloud
@@ -209,6 +210,28 @@ off：关闭全路径缓存（即开启参数过滤）
                      */
                     bool SchemeHasBeenSet() const;
 
+                    /**
+                     * 获取分路径缓存键配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KeyRules 分路径缓存键配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyRule> GetKeyRules() const;
+
+                    /**
+                     * 设置分路径缓存键配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KeyRules 分路径缓存键配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKeyRules(const std::vector<KeyRule>& _keyRules);
+
+                    /**
+                     * 判断参数 KeyRules 是否已赋值
+                     * @return KeyRules 是否已赋值
+                     */
+                    bool KeyRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +283,13 @@ off：关闭全路径缓存（即开启参数过滤）
                      */
                     SchemeKey m_scheme;
                     bool m_schemeHasBeenSet;
+
+                    /**
+                     * 分路径缓存键配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyRule> m_keyRules;
+                    bool m_keyRulesHasBeenSet;
 
                 };
             }

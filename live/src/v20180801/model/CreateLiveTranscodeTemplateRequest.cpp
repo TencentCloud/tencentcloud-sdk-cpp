@@ -26,9 +26,9 @@ using namespace std;
 CreateLiveTranscodeTemplateRequest::CreateLiveTranscodeTemplateRequest() :
     m_templateNameHasBeenSet(false),
     m_videoBitrateHasBeenSet(false),
-    m_vcodecHasBeenSet(false),
     m_acodecHasBeenSet(false),
     m_audioBitrateHasBeenSet(false),
+    m_vcodecHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_needVideoHasBeenSet(false),
@@ -42,7 +42,8 @@ CreateLiveTranscodeTemplateRequest::CreateLiveTranscodeTemplateRequest() :
     m_heightToOrigHasBeenSet(false),
     m_fpsToOrigHasBeenSet(false),
     m_aiTransCodeHasBeenSet(false),
-    m_adaptBitratePercentHasBeenSet(false)
+    m_adaptBitratePercentHasBeenSet(false),
+    m_shortEdgeAsHeightHasBeenSet(false)
 {
 }
 
@@ -69,14 +70,6 @@ string CreateLiveTranscodeTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_videoBitrate, allocator);
     }
 
-    if (m_vcodecHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Vcodec";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_vcodec.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_acodecHasBeenSet)
     {
         Value iKey(kStringType);
@@ -91,6 +84,14 @@ string CreateLiveTranscodeTemplateRequest::ToJsonString() const
         string key = "AudioBitrate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_audioBitrate, allocator);
+    }
+
+    if (m_vcodecHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Vcodec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_vcodec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -205,6 +206,14 @@ string CreateLiveTranscodeTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_adaptBitratePercent, allocator);
     }
 
+    if (m_shortEdgeAsHeightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ShortEdgeAsHeight";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_shortEdgeAsHeight, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -245,22 +254,6 @@ bool CreateLiveTranscodeTemplateRequest::VideoBitrateHasBeenSet() const
     return m_videoBitrateHasBeenSet;
 }
 
-string CreateLiveTranscodeTemplateRequest::GetVcodec() const
-{
-    return m_vcodec;
-}
-
-void CreateLiveTranscodeTemplateRequest::SetVcodec(const string& _vcodec)
-{
-    m_vcodec = _vcodec;
-    m_vcodecHasBeenSet = true;
-}
-
-bool CreateLiveTranscodeTemplateRequest::VcodecHasBeenSet() const
-{
-    return m_vcodecHasBeenSet;
-}
-
 string CreateLiveTranscodeTemplateRequest::GetAcodec() const
 {
     return m_acodec;
@@ -291,6 +284,22 @@ void CreateLiveTranscodeTemplateRequest::SetAudioBitrate(const int64_t& _audioBi
 bool CreateLiveTranscodeTemplateRequest::AudioBitrateHasBeenSet() const
 {
     return m_audioBitrateHasBeenSet;
+}
+
+string CreateLiveTranscodeTemplateRequest::GetVcodec() const
+{
+    return m_vcodec;
+}
+
+void CreateLiveTranscodeTemplateRequest::SetVcodec(const string& _vcodec)
+{
+    m_vcodec = _vcodec;
+    m_vcodecHasBeenSet = true;
+}
+
+bool CreateLiveTranscodeTemplateRequest::VcodecHasBeenSet() const
+{
+    return m_vcodecHasBeenSet;
 }
 
 string CreateLiveTranscodeTemplateRequest::GetDescription() const
@@ -515,6 +524,22 @@ void CreateLiveTranscodeTemplateRequest::SetAdaptBitratePercent(const double& _a
 bool CreateLiveTranscodeTemplateRequest::AdaptBitratePercentHasBeenSet() const
 {
     return m_adaptBitratePercentHasBeenSet;
+}
+
+int64_t CreateLiveTranscodeTemplateRequest::GetShortEdgeAsHeight() const
+{
+    return m_shortEdgeAsHeight;
+}
+
+void CreateLiveTranscodeTemplateRequest::SetShortEdgeAsHeight(const int64_t& _shortEdgeAsHeight)
+{
+    m_shortEdgeAsHeight = _shortEdgeAsHeight;
+    m_shortEdgeAsHeightHasBeenSet = true;
+}
+
+bool CreateLiveTranscodeTemplateRequest::ShortEdgeAsHeightHasBeenSet() const
+{
+    return m_shortEdgeAsHeightHasBeenSet;
 }
 
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_CACHE_H_
-#define TENCENTCLOUD_CDN_V20180606_MODEL_CACHE_H_
+#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_RULECACHECONFIG_H_
+#define TENCENTCLOUD_CDN_V20180606_MODEL_RULECACHECONFIG_H_
 
 #include <string>
 #include <vector>
@@ -24,9 +24,9 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cdn/v20180606/model/SimpleCache.h>
-#include <tencentcloud/cdn/v20180606/model/AdvancedCache.h>
-#include <tencentcloud/cdn/v20180606/model/RuleCache.h>
+#include <tencentcloud/cdn/v20180606/model/CacheConfigCache.h>
+#include <tencentcloud/cdn/v20180606/model/CacheConfigNoCache.h>
+#include <tencentcloud/cdn/v20180606/model/CacheConfigFollowOrigin.h>
 
 
 namespace TencentCloud
@@ -38,107 +38,105 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 节点缓存过期时间配置，分为以下两种：
-+ 基础版缓存过期规则配置
-+ 高级版缓存过期规则配置
+                * 路径缓存缓存配置（三种缓存模式中选取一种）
                 */
-                class Cache : public AbstractModel
+                class RuleCacheConfig : public AbstractModel
                 {
                 public:
-                    Cache();
-                    ~Cache() = default;
+                    RuleCacheConfig();
+                    ~RuleCacheConfig() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取基础缓存过期时间配置
+                     * 获取缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SimpleCache 基础缓存过期时间配置
+                     * @return Cache 缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    SimpleCache GetSimpleCache() const;
+                    CacheConfigCache GetCache() const;
 
                     /**
-                     * 设置基础缓存过期时间配置
+                     * 设置缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SimpleCache 基础缓存过期时间配置
+                     * @param Cache 缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetSimpleCache(const SimpleCache& _simpleCache);
+                    void SetCache(const CacheConfigCache& _cache);
 
                     /**
-                     * 判断参数 SimpleCache 是否已赋值
-                     * @return SimpleCache 是否已赋值
+                     * 判断参数 Cache 是否已赋值
+                     * @return Cache 是否已赋值
                      */
-                    bool SimpleCacheHasBeenSet() const;
+                    bool CacheHasBeenSet() const;
 
                     /**
-                     * 获取高级缓存过期时间配置（功能灰度中，尚未全量）
+                     * 获取不缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdvancedCache 高级缓存过期时间配置（功能灰度中，尚未全量）
+                     * @return NoCache 不缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    AdvancedCache GetAdvancedCache() const;
+                    CacheConfigNoCache GetNoCache() const;
 
                     /**
-                     * 设置高级缓存过期时间配置（功能灰度中，尚未全量）
+                     * 设置不缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdvancedCache 高级缓存过期时间配置（功能灰度中，尚未全量）
+                     * @param NoCache 不缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetAdvancedCache(const AdvancedCache& _advancedCache);
+                    void SetNoCache(const CacheConfigNoCache& _noCache);
 
                     /**
-                     * 判断参数 AdvancedCache 是否已赋值
-                     * @return AdvancedCache 是否已赋值
+                     * 判断参数 NoCache 是否已赋值
+                     * @return NoCache 是否已赋值
                      */
-                    bool AdvancedCacheHasBeenSet() const;
+                    bool NoCacheHasBeenSet() const;
 
                     /**
-                     * 获取高级路径缓存配置
+                     * 获取遵循源站配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleCache 高级路径缓存配置
+                     * @return FollowOrigin 遵循源站配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<RuleCache> GetRuleCache() const;
+                    CacheConfigFollowOrigin GetFollowOrigin() const;
 
                     /**
-                     * 设置高级路径缓存配置
+                     * 设置遵循源站配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleCache 高级路径缓存配置
+                     * @param FollowOrigin 遵循源站配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetRuleCache(const std::vector<RuleCache>& _ruleCache);
+                    void SetFollowOrigin(const CacheConfigFollowOrigin& _followOrigin);
 
                     /**
-                     * 判断参数 RuleCache 是否已赋值
-                     * @return RuleCache 是否已赋值
+                     * 判断参数 FollowOrigin 是否已赋值
+                     * @return FollowOrigin 是否已赋值
                      */
-                    bool RuleCacheHasBeenSet() const;
+                    bool FollowOriginHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 基础缓存过期时间配置
+                     * 缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    SimpleCache m_simpleCache;
-                    bool m_simpleCacheHasBeenSet;
+                    CacheConfigCache m_cache;
+                    bool m_cacheHasBeenSet;
 
                     /**
-                     * 高级缓存过期时间配置（功能灰度中，尚未全量）
+                     * 不缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    AdvancedCache m_advancedCache;
-                    bool m_advancedCacheHasBeenSet;
+                    CacheConfigNoCache m_noCache;
+                    bool m_noCacheHasBeenSet;
 
                     /**
-                     * 高级路径缓存配置
+                     * 遵循源站配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<RuleCache> m_ruleCache;
-                    bool m_ruleCacheHasBeenSet;
+                    CacheConfigFollowOrigin m_followOrigin;
+                    bool m_followOriginHasBeenSet;
 
                 };
             }
@@ -146,4 +144,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_CACHE_H_
+#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_RULECACHECONFIG_H_

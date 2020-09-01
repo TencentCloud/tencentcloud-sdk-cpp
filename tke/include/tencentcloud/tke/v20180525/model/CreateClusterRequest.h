@@ -28,6 +28,7 @@
 #include <tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h>
 #include <tencentcloud/tke/v20180525/model/ExistedInstancesForNode.h>
 #include <tencentcloud/tke/v20180525/model/InstanceDataDiskMountSetting.h>
+#include <tencentcloud/tke/v20180525/model/ExtensionAddon.h>
 
 
 namespace TencentCloud
@@ -193,6 +194,24 @@ namespace TencentCloud
                      */
                     bool InstanceDataDiskMountSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取需要安装的扩展组件信息
+                     * @return ExtensionAddons 需要安装的扩展组件信息
+                     */
+                    std::vector<ExtensionAddon> GetExtensionAddons() const;
+
+                    /**
+                     * 设置需要安装的扩展组件信息
+                     * @param ExtensionAddons 需要安装的扩展组件信息
+                     */
+                    void SetExtensionAddons(const std::vector<ExtensionAddon>& _extensionAddons);
+
+                    /**
+                     * 判断参数 ExtensionAddons 是否已赋值
+                     * @return ExtensionAddons 是否已赋值
+                     */
+                    bool ExtensionAddonsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +261,12 @@ namespace TencentCloud
                      */
                     std::vector<InstanceDataDiskMountSetting> m_instanceDataDiskMountSettings;
                     bool m_instanceDataDiskMountSettingsHasBeenSet;
+
+                    /**
+                     * 需要安装的扩展组件信息
+                     */
+                    std::vector<ExtensionAddon> m_extensionAddons;
+                    bool m_extensionAddonsHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ CacheKey::CacheKey() :
     m_cookieHasBeenSet(false),
     m_headerHasBeenSet(false),
     m_cacheTagHasBeenSet(false),
-    m_schemeHasBeenSet(false)
+    m_schemeHasBeenSet(false),
+    m_keyRulesHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,26 @@ CoreInternalOutcome CacheKey::Deserialize(const Value &value)
         m_schemeHasBeenSet = true;
     }
 
+    if (value.HasMember("KeyRules") && !value["KeyRules"].IsNull())
+    {
+        if (!value["KeyRules"].IsArray())
+            return CoreInternalOutcome(Error("response `CacheKey.KeyRules` is not array type"));
+
+        const Value &tmpValue = value["KeyRules"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_keyRules.push_back(item);
+        }
+        m_keyRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -208,6 +229,21 @@ void CacheKey::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_scheme.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_keyRulesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KeyRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_keyRules.begin(); itr != m_keyRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -323,5 +359,21 @@ void CacheKey::SetScheme(const SchemeKey& _scheme)
 bool CacheKey::SchemeHasBeenSet() const
 {
     return m_schemeHasBeenSet;
+}
+
+vector<KeyRule> CacheKey::GetKeyRules() const
+{
+    return m_keyRules;
+}
+
+void CacheKey::SetKeyRules(const vector<KeyRule>& _keyRules)
+{
+    m_keyRules = _keyRules;
+    m_keyRulesHasBeenSet = true;
+}
+
+bool CacheKey::KeyRulesHasBeenSet() const
+{
+    return m_keyRulesHasBeenSet;
 }
 
