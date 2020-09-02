@@ -317,6 +317,68 @@ namespace TencentCloud
                      */
                     bool InternetServiceProviderHasBeenSet() const;
 
+                    /**
+                     * 获取是否本地带宽EIP
+                     * @return LocalBgp 是否本地带宽EIP
+                     */
+                    bool GetLocalBgp() const;
+
+                    /**
+                     * 设置是否本地带宽EIP
+                     * @param LocalBgp 是否本地带宽EIP
+                     */
+                    void SetLocalBgp(const bool& _localBgp);
+
+                    /**
+                     * 判断参数 LocalBgp 是否已赋值
+                     * @return LocalBgp 是否已赋值
+                     */
+                    bool LocalBgpHasBeenSet() const;
+
+                    /**
+                     * 获取弹性公网IP的带宽值。注意，非带宽上移账户的弹性公网IP没有带宽属性，值为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Bandwidth 弹性公网IP的带宽值。注意，非带宽上移账户的弹性公网IP没有带宽属性，值为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetBandwidth() const;
+
+                    /**
+                     * 设置弹性公网IP的带宽值。注意，非带宽上移账户的弹性公网IP没有带宽属性，值为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Bandwidth 弹性公网IP的带宽值。注意，非带宽上移账户的弹性公网IP没有带宽属性，值为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBandwidth(const uint64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     */
+                    bool BandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取弹性公网IP的网络计费模式。注意，非带宽上移账户的弹性公网IP没有网络计费模式属性，值为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternetChargeType 弹性公网IP的网络计费模式。注意，非带宽上移账户的弹性公网IP没有网络计费模式属性，值为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInternetChargeType() const;
+
+                    /**
+                     * 设置弹性公网IP的网络计费模式。注意，非带宽上移账户的弹性公网IP没有网络计费模式属性，值为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InternetChargeType 弹性公网IP的网络计费模式。注意，非带宽上移账户的弹性公网IP没有网络计费模式属性，值为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInternetChargeType(const std::string& _internetChargeType);
+
+                    /**
+                     * 判断参数 InternetChargeType 是否已赋值
+                     * @return InternetChargeType 是否已赋值
+                     */
+                    bool InternetChargeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -408,6 +470,26 @@ namespace TencentCloud
                      */
                     std::string m_internetServiceProvider;
                     bool m_internetServiceProviderHasBeenSet;
+
+                    /**
+                     * 是否本地带宽EIP
+                     */
+                    bool m_localBgp;
+                    bool m_localBgpHasBeenSet;
+
+                    /**
+                     * 弹性公网IP的带宽值。注意，非带宽上移账户的弹性公网IP没有带宽属性，值为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * 弹性公网IP的网络计费模式。注意，非带宽上移账户的弹性公网IP没有网络计费模式属性，值为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_internetChargeType;
+                    bool m_internetChargeTypeHasBeenSet;
 
                 };
             }

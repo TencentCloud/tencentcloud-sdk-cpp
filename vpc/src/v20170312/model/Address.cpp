@@ -36,7 +36,10 @@ Address::Address() :
     m_addressTypeHasBeenSet(false),
     m_cascadeReleaseHasBeenSet(false),
     m_eipAlgTypeHasBeenSet(false),
-    m_internetServiceProviderHasBeenSet(false)
+    m_internetServiceProviderHasBeenSet(false),
+    m_localBgpHasBeenSet(false),
+    m_bandwidthHasBeenSet(false),
+    m_internetChargeTypeHasBeenSet(false)
 {
 }
 
@@ -202,6 +205,36 @@ CoreInternalOutcome Address::Deserialize(const Value &value)
         m_internetServiceProviderHasBeenSet = true;
     }
 
+    if (value.HasMember("LocalBgp") && !value["LocalBgp"].IsNull())
+    {
+        if (!value["LocalBgp"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Address.LocalBgp` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_localBgp = value["LocalBgp"].GetBool();
+        m_localBgpHasBeenSet = true;
+    }
+
+    if (value.HasMember("Bandwidth") && !value["Bandwidth"].IsNull())
+    {
+        if (!value["Bandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Address.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidth = value["Bandwidth"].GetUint64();
+        m_bandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("InternetChargeType") && !value["InternetChargeType"].IsNull())
+    {
+        if (!value["InternetChargeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Address.InternetChargeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internetChargeType = string(value["InternetChargeType"].GetString());
+        m_internetChargeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -328,6 +361,30 @@ void Address::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "InternetServiceProvider";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_internetServiceProvider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_localBgpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LocalBgp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_localBgp, allocator);
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_internetChargeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_internetChargeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -571,5 +628,53 @@ void Address::SetInternetServiceProvider(const string& _internetServiceProvider)
 bool Address::InternetServiceProviderHasBeenSet() const
 {
     return m_internetServiceProviderHasBeenSet;
+}
+
+bool Address::GetLocalBgp() const
+{
+    return m_localBgp;
+}
+
+void Address::SetLocalBgp(const bool& _localBgp)
+{
+    m_localBgp = _localBgp;
+    m_localBgpHasBeenSet = true;
+}
+
+bool Address::LocalBgpHasBeenSet() const
+{
+    return m_localBgpHasBeenSet;
+}
+
+uint64_t Address::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void Address::SetBandwidth(const uint64_t& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool Address::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
+}
+
+string Address::GetInternetChargeType() const
+{
+    return m_internetChargeType;
+}
+
+void Address::SetInternetChargeType(const string& _internetChargeType)
+{
+    m_internetChargeType = _internetChargeType;
+    m_internetChargeTypeHasBeenSet = true;
+}
+
+bool Address::InternetChargeTypeHasBeenSet() const
+{
+    return m_internetChargeTypeHasBeenSet;
 }
 
