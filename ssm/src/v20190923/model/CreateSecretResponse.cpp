@@ -26,7 +26,9 @@ using namespace std;
 
 CreateSecretResponse::CreateSecretResponse() :
     m_secretNameHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_tagCodeHasBeenSet(false),
+    m_tagMsgHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome CreateSecretResponse::Deserialize(const string &payload)
         m_versionIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TagCode") && !rsp["TagCode"].IsNull())
+    {
+        if (!rsp["TagCode"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TagCode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagCode = rsp["TagCode"].GetUint64();
+        m_tagCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TagMsg") && !rsp["TagMsg"].IsNull())
+    {
+        if (!rsp["TagMsg"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TagMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagMsg = string(rsp["TagMsg"].GetString());
+        m_tagMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,26 @@ string CreateSecretResponse::GetVersionId() const
 bool CreateSecretResponse::VersionIdHasBeenSet() const
 {
     return m_versionIdHasBeenSet;
+}
+
+uint64_t CreateSecretResponse::GetTagCode() const
+{
+    return m_tagCode;
+}
+
+bool CreateSecretResponse::TagCodeHasBeenSet() const
+{
+    return m_tagCodeHasBeenSet;
+}
+
+string CreateSecretResponse::GetTagMsg() const
+{
+    return m_tagMsg;
+}
+
+bool CreateSecretResponse::TagMsgHasBeenSet() const
+{
+    return m_tagMsgHasBeenSet;
 }
 
 

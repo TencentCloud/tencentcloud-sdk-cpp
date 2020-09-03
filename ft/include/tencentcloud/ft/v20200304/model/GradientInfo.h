@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片2s
-                     * @return Tempo 图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片2s
+                     * 获取图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。
+                     * @return Tempo 图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。
                      */
                     double GetTempo() const;
 
                     /**
-                     * 设置图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片2s
-                     * @param Tempo 图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片2s
+                     * 设置图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。
+                     * @param Tempo 图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。
                      */
                     void SetTempo(const double& _tempo);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TempoHasBeenSet() const;
 
                     /**
-                     * 获取人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s
-                     * @return MorphTime 人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s
+                     * 获取人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。
+                     * @return MorphTime 人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。
                      */
                     double GetMorphTime() const;
 
                     /**
-                     * 设置人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s
-                     * @param MorphTime 人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s
+                     * 设置人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。
+                     * @param MorphTime 人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。
                      */
                     void SetMorphTime(const double& _morphTime);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片2s
+                     * 图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。
                      */
                     double m_tempo;
                     bool m_tempoHasBeenSet;
 
                     /**
-                     * 人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s
+                     * 人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。
                      */
                     double m_morphTime;
                     bool m_morphTimeHasBeenSet;

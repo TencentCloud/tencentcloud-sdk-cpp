@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ssm/v20190923/model/Tag.h>
 
 
 namespace TencentCloud
@@ -150,6 +151,24 @@ namespace TencentCloud
                      */
                     bool SecretStringHasBeenSet() const;
 
+                    /**
+                     * 获取标签列表
+                     * @return Tags 标签列表
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签列表
+                     * @param Tags 标签列表
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +206,12 @@ namespace TencentCloud
                      */
                     std::string m_secretString;
                     bool m_secretStringHasBeenSet;
+
+                    /**
+                     * 标签列表
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

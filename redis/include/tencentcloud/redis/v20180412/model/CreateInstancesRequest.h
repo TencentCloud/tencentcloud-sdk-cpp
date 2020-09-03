@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例所属的可用区ID
-                     * @return ZoneId 实例所属的可用区ID
+                     * 获取实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     * @return ZoneId 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置实例所属的可用区ID
-                     * @param ZoneId 实例所属的可用区ID
+                     * 设置实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     * @param ZoneId 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），
-                     * @return TypeId 实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），
+                     * 获取实例类型：2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）。
+                     * @return TypeId 实例类型：2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）。
                      */
                     uint64_t GetTypeId() const;
 
                     /**
-                     * 设置实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），
-                     * @param TypeId 实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），
+                     * 设置实例类型：2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）。
+                     * @param TypeId 实例类型：2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）。
                      */
                     void SetTypeId(const uint64_t& _typeId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TypeIdHasBeenSet() const;
 
                     /**
-                     * 获取实例容量，单位MB， 取值大小以 查询售卖规格接口返回的规格为准
-                     * @return MemSize 实例容量，单位MB， 取值大小以 查询售卖规格接口返回的规格为准
+                     * 获取实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+                     * @return MemSize 实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
                      */
                     uint64_t GetMemSize() const;
 
                     /**
-                     * 设置实例容量，单位MB， 取值大小以 查询售卖规格接口返回的规格为准
-                     * @param MemSize 实例容量，单位MB， 取值大小以 查询售卖规格接口返回的规格为准
+                     * 设置实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+                     * @param MemSize 实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
                      */
                     void SetMemSize(const uint64_t& _memSize);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取实例数量，单次购买实例数量以 查询售卖规格接口返回的规格为准
-                     * @return GoodsNum 实例数量，单次购买实例数量以 查询售卖规格接口返回的规格为准
+                     * 获取实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+                     * @return GoodsNum 实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
                      */
                     uint64_t GetGoodsNum() const;
 
                     /**
-                     * 设置实例数量，单次购买实例数量以 查询售卖规格接口返回的规格为准
-                     * @param GoodsNum 实例数量，单次购买实例数量以 查询售卖规格接口返回的规格为准
+                     * 设置实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+                     * @param GoodsNum 实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
                      */
                     void SetGoodsNum(const uint64_t& _goodsNum);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]
-                     * @return Period 购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]
+                     * 获取购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * @return Period 购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]
-                     * @param Period 购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]
+                     * 设置购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * @param Period 购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
                      */
                     void SetPeriod(const uint64_t& _period);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk
-                     * @return VpcId 私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk
+                     * 获取私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk。
+                     * @return VpcId 私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk
-                     * @param VpcId 私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk
+                     * 设置私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk。
+                     * @param VpcId 私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2
-                     * @return SubnetId 基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2
+                     * 获取基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2。
+                     * @return SubnetId 基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2
-                     * @param SubnetId 基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2
+                     * 设置基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2。
+                     * @param SubnetId 基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准
-                     * @return ProjectId 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准
+                     * 获取项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
+                     * @return ProjectId 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准
-                     * @param ProjectId 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准
+                     * 设置项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
+                     * @param ProjectId 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费
-                     * @return AutoRenew 自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费
+                     * 获取自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费。
+                     * @return AutoRenew 自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费。
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
-                     * 设置自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费
-                     * @param AutoRenew 自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费
+                     * 设置自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费。
+                     * @param AutoRenew 自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费。
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
 
@@ -241,14 +241,14 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取安全组id数组
-                     * @return SecurityGroupIdList 安全组id数组
+                     * 获取安全组id数组。
+                     * @return SecurityGroupIdList 安全组id数组。
                      */
                     std::vector<std::string> GetSecurityGroupIdList() const;
 
                     /**
-                     * 设置安全组id数组
-                     * @param SecurityGroupIdList 安全组id数组
+                     * 设置安全组id数组。
+                     * @param SecurityGroupIdList 安全组id数组。
                      */
                     void SetSecurityGroupIdList(const std::vector<std::string>& _securityGroupIdList);
 
@@ -259,14 +259,14 @@ namespace TencentCloud
                     bool SecurityGroupIdListHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义的端口 不填则默认为6379，范围[1024,65535]
-                     * @return VPort 用户自定义的端口 不填则默认为6379，范围[1024,65535]
+                     * 获取用户自定义的端口 不填则默认为6379，范围[1024,65535]。
+                     * @return VPort 用户自定义的端口 不填则默认为6379，范围[1024,65535]。
                      */
                     uint64_t GetVPort() const;
 
                     /**
-                     * 设置用户自定义的端口 不填则默认为6379，范围[1024,65535]
-                     * @param VPort 用户自定义的端口 不填则默认为6379，范围[1024,65535]
+                     * 设置用户自定义的端口 不填则默认为6379，范围[1024,65535]。
+                     * @param VPort 用户自定义的端口 不填则默认为6379，范围[1024,65535]。
                      */
                     void SetVPort(const uint64_t& _vPort);
 
@@ -277,14 +277,14 @@ namespace TencentCloud
                     bool VPortHasBeenSet() const;
 
                     /**
-                     * 获取实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]
-                     * @return RedisShardNum 实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]
+                     * 获取实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]。
+                     * @return RedisShardNum 实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]。
                      */
                     int64_t GetRedisShardNum() const;
 
                     /**
-                     * 设置实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]
-                     * @param RedisShardNum 实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]
+                     * 设置实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]。
+                     * @param RedisShardNum 实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]。
                      */
                     void SetRedisShardNum(const int64_t& _redisShardNum);
 
@@ -313,14 +313,14 @@ namespace TencentCloud
                     bool RedisReplicasNumHasBeenSet() const;
 
                     /**
-                     * 获取是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2.
-                     * @return ReplicasReadonly 是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2.
+                     * 获取是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2。
+                     * @return ReplicasReadonly 是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2。
                      */
                     bool GetReplicasReadonly() const;
 
                     /**
-                     * 设置是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2.
-                     * @param ReplicasReadonly 是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2.
+                     * 设置是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2。
+                     * @param ReplicasReadonly 是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2。
                      */
                     void SetReplicasReadonly(const bool& _replicasReadonly);
 
@@ -331,14 +331,14 @@ namespace TencentCloud
                     bool ReplicasReadonlyHasBeenSet() const;
 
                     /**
-                     * 获取实例名称，长度小于60的中文/英文/数字/"-"/"_"
-                     * @return InstanceName 实例名称，长度小于60的中文/英文/数字/"-"/"_"
+                     * 获取实例名称，长度小于60的中文/英文/数字/"-"/"_"。
+                     * @return InstanceName 实例名称，长度小于60的中文/英文/数字/"-"/"_"。
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称，长度小于60的中文/英文/数字/"-"/"_"
-                     * @param InstanceName 实例名称，长度小于60的中文/英文/数字/"-"/"_"
+                     * 设置实例名称，长度小于60的中文/英文/数字/"-"/"_"。
+                     * @param InstanceName 实例名称，长度小于60的中文/英文/数字/"-"/"_"。
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -369,31 +369,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例所属的可用区ID
+                     * 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），
+                     * 实例类型：2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）。
                      */
                     uint64_t m_typeId;
                     bool m_typeIdHasBeenSet;
 
                     /**
-                     * 实例容量，单位MB， 取值大小以 查询售卖规格接口返回的规格为准
+                     * 实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
                      */
                     uint64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * 实例数量，单次购买实例数量以 查询售卖规格接口返回的规格为准
+                     * 实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
                      */
                     uint64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * 购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]
+                     * 购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
@@ -411,43 +411,43 @@ namespace TencentCloud
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk
+                     * 私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2
+                     * 基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准
+                     * 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费
+                     * 自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费。
                      */
                     uint64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 安全组id数组
+                     * 安全组id数组。
                      */
                     std::vector<std::string> m_securityGroupIdList;
                     bool m_securityGroupIdListHasBeenSet;
 
                     /**
-                     * 用户自定义的端口 不填则默认为6379，范围[1024,65535]
+                     * 用户自定义的端口 不填则默认为6379，范围[1024,65535]。
                      */
                     uint64_t m_vPort;
                     bool m_vPortHasBeenSet;
 
                     /**
-                     * 实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]
+                     * 实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]。
                      */
                     int64_t m_redisShardNum;
                     bool m_redisShardNumHasBeenSet;
@@ -459,13 +459,13 @@ namespace TencentCloud
                     bool m_redisReplicasNumHasBeenSet;
 
                     /**
-                     * 是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2.
+                     * 是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2。
                      */
                     bool m_replicasReadonly;
                     bool m_replicasReadonlyHasBeenSet;
 
                     /**
-                     * 实例名称，长度小于60的中文/英文/数字/"-"/"_"
+                     * 实例名称，长度小于60的中文/英文/数字/"-"/"_"。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

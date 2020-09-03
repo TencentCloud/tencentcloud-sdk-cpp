@@ -134,14 +134,14 @@ Url、Image必须提供一个，如果都提供，只使用 Url。图片存储�
                     bool GradientInfosHasBeenSet() const;
 
                     /**
-                     * 获取视频帧率，取值[1,60]。默认10
-                     * @return Fps 视频帧率，取值[1,60]。默认10
+                     * 获取视频帧率，取值[1,25]。默认10
+                     * @return Fps 视频帧率，取值[1,25]。默认10
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置视频帧率，取值[1,60]。默认10
-                     * @param Fps 视频帧率，取值[1,60]。默认10
+                     * 设置视频帧率，取值[1,25]。默认10
+                     * @param Fps 视频帧率，取值[1,25]。默认10
                      */
                     void SetFps(const int64_t& _fps);
 
@@ -235,7 +235,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。图片存储�
                     bool m_gradientInfosHasBeenSet;
 
                     /**
-                     * 视频帧率，取值[1,60]。默认10
+                     * 视频帧率，取值[1,25]。默认10
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标实例类型，同CreateInstances接口的Type，即实例要变更的目标类型
-                     * @return TargetInstanceType 目标实例类型，同CreateInstances接口的Type，即实例要变更的目标类型
+                     * 获取目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型
+                     * @return TargetInstanceType 目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型
                      */
                     std::string GetTargetInstanceType() const;
 
                     /**
-                     * 设置目标实例类型，同CreateInstances接口的Type，即实例要变更的目标类型
-                     * @param TargetInstanceType 目标实例类型，同CreateInstances接口的Type，即实例要变更的目标类型
+                     * 设置目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型
+                     * @param TargetInstanceType 目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型
                      */
                     void SetTargetInstanceType(const std::string& _targetInstanceType);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标实例类型，同CreateInstances接口的Type，即实例要变更的目标类型
+                     * 目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型
                      */
                     std::string m_targetInstanceType;
                     bool m_targetInstanceTypeHasBeenSet;

@@ -362,7 +362,7 @@ namespace TencentCloud
                 CreateInstanceAccountOutcomeCallable CreateInstanceAccountCallable(const Model::CreateInstanceAccountRequest& request);
 
                 /**
-                 *创建redis实例
+                 *本接口(CreateInstances)用于创建redis实例。
                  * @param req CreateInstancesRequest
                  * @return CreateInstancesOutcome
                  */
@@ -749,7 +749,7 @@ namespace TencentCloud
                 ModifyInstanceAccountOutcomeCallable ModifyInstanceAccountCallable(const Model::ModifyInstanceAccountRequest& request);
 
                 /**
-                 *修改实例参数
+                 *本接口(ModifyInstanceParams)用于修改实例参数。
                  * @param req ModifyInstanceParamsRequest
                  * @return ModifyInstanceParamsOutcome
                  */

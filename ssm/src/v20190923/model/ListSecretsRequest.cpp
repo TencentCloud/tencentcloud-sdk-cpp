@@ -28,7 +28,8 @@ ListSecretsRequest::ListSecretsRequest() :
     m_limitHasBeenSet(false),
     m_orderTypeHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_searchSecretNameHasBeenSet(false)
+    m_searchSecretNameHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,21 @@ string ListSecretsRequest::ToJsonString() const
         string key = "SearchSecretName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_searchSecretName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagFiltersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -165,6 +181,22 @@ void ListSecretsRequest::SetSearchSecretName(const string& _searchSecretName)
 bool ListSecretsRequest::SearchSecretNameHasBeenSet() const
 {
     return m_searchSecretNameHasBeenSet;
+}
+
+vector<TagFilter> ListSecretsRequest::GetTagFilters() const
+{
+    return m_tagFilters;
+}
+
+void ListSecretsRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
+{
+    m_tagFilters = _tagFilters;
+    m_tagFiltersHasBeenSet = true;
+}
+
+bool ListSecretsRequest::TagFiltersHasBeenSet() const
+{
+    return m_tagFiltersHasBeenSet;
 }
 
 

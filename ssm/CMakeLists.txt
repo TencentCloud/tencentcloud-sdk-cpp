@@ -39,6 +39,7 @@ set(ssm_public_header_model
   include/tencentcloud/ssm/v20190923/model/EnableSecretResponse.h
   include/tencentcloud/ssm/v20190923/model/UpdateSecretRequest.h
   include/tencentcloud/ssm/v20190923/model/VersionInfo.h
+  include/tencentcloud/ssm/v20190923/model/TagFilter.h
   include/tencentcloud/ssm/v20190923/model/PutSecretValueRequest.h
   include/tencentcloud/ssm/v20190923/model/GetSecretValueRequest.h
   include/tencentcloud/ssm/v20190923/model/GetServiceStatusResponse.h
@@ -47,6 +48,7 @@ set(ssm_public_header_model
   include/tencentcloud/ssm/v20190923/model/PutSecretValueResponse.h
   include/tencentcloud/ssm/v20190923/model/DeleteSecretResponse.h
   include/tencentcloud/ssm/v20190923/model/DisableSecretRequest.h
+  include/tencentcloud/ssm/v20190923/model/Tag.h
   include/tencentcloud/ssm/v20190923/model/ListSecretsResponse.h
   include/tencentcloud/ssm/v20190923/model/EnableSecretRequest.h
   include/tencentcloud/ssm/v20190923/model/GetServiceStatusRequest.h
@@ -75,6 +77,7 @@ set(ssm_src
   src/v20190923/model/EnableSecretResponse.cpp
   src/v20190923/model/UpdateSecretRequest.cpp
   src/v20190923/model/VersionInfo.cpp
+  src/v20190923/model/TagFilter.cpp
   src/v20190923/model/PutSecretValueRequest.cpp
   src/v20190923/model/GetSecretValueRequest.cpp
   src/v20190923/model/GetServiceStatusResponse.cpp
@@ -83,6 +86,7 @@ set(ssm_src
   src/v20190923/model/PutSecretValueResponse.cpp
   src/v20190923/model/DeleteSecretResponse.cpp
   src/v20190923/model/DisableSecretRequest.cpp
+  src/v20190923/model/Tag.cpp
   src/v20190923/model/ListSecretsResponse.cpp
   src/v20190923/model/EnableSecretRequest.cpp
   src/v20190923/model/GetServiceStatusRequest.cpp
