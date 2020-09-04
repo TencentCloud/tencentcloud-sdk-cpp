@@ -25,7 +25,9 @@ using namespace std;
 
 RestoreInstanceRequest::RestoreInstanceRequest() :
     m_instanceIdHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
+    m_backupIdHasBeenSet(false),
+    m_targetInstanceIdHasBeenSet(false),
+    m_renameRestoreHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,29 @@ string RestoreInstanceRequest::ToJsonString() const
         string key = "BackupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupId, allocator);
+    }
+
+    if (m_targetInstanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TargetInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_targetInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renameRestoreHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RenameRestore";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_renameRestore.begin(); itr != m_renameRestore.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -90,6 +115,38 @@ void RestoreInstanceRequest::SetBackupId(const int64_t& _backupId)
 bool RestoreInstanceRequest::BackupIdHasBeenSet() const
 {
     return m_backupIdHasBeenSet;
+}
+
+string RestoreInstanceRequest::GetTargetInstanceId() const
+{
+    return m_targetInstanceId;
+}
+
+void RestoreInstanceRequest::SetTargetInstanceId(const string& _targetInstanceId)
+{
+    m_targetInstanceId = _targetInstanceId;
+    m_targetInstanceIdHasBeenSet = true;
+}
+
+bool RestoreInstanceRequest::TargetInstanceIdHasBeenSet() const
+{
+    return m_targetInstanceIdHasBeenSet;
+}
+
+vector<RenameRestoreDatabase> RestoreInstanceRequest::GetRenameRestore() const
+{
+    return m_renameRestore;
+}
+
+void RestoreInstanceRequest::SetRenameRestore(const vector<RenameRestoreDatabase>& _renameRestore)
+{
+    m_renameRestore = _renameRestore;
+    m_renameRestoreHasBeenSet = true;
+}
+
+bool RestoreInstanceRequest::RenameRestoreHasBeenSet() const
+{
+    return m_renameRestoreHasBeenSet;
 }
 
 

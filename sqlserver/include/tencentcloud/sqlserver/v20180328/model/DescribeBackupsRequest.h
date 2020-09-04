@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool BackupWayHasBeenSet() const;
 
+                    /**
+                     * 获取按照备份ID筛选，不填则不筛选此项
+                     * @return BackupId 按照备份ID筛选，不填则不筛选此项
+                     */
+                    uint64_t GetBackupId() const;
+
+                    /**
+                     * 设置按照备份ID筛选，不填则不筛选此项
+                     * @param BackupId 按照备份ID筛选，不填则不筛选此项
+                     */
+                    void SetBackupId(const uint64_t& _backupId);
+
+                    /**
+                     * 判断参数 BackupId 是否已赋值
+                     * @return BackupId 是否已赋值
+                     */
+                    bool BackupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     int64_t m_backupWay;
                     bool m_backupWayHasBeenSet;
+
+                    /**
+                     * 按照备份ID筛选，不填则不筛选此项
+                     */
+                    uint64_t m_backupId;
+                    bool m_backupIdHasBeenSet;
 
                 };
             }

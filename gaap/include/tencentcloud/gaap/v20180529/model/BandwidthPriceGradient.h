@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool BandwidthUnitPriceHasBeenSet() const;
 
+                    /**
+                     * 获取带宽折扣价，单位：元/Mbps/天。
+                     * @return DiscountBandwidthUnitPrice 带宽折扣价，单位：元/Mbps/天。
+                     */
+                    double GetDiscountBandwidthUnitPrice() const;
+
+                    /**
+                     * 设置带宽折扣价，单位：元/Mbps/天。
+                     * @param DiscountBandwidthUnitPrice 带宽折扣价，单位：元/Mbps/天。
+                     */
+                    void SetDiscountBandwidthUnitPrice(const double& _discountBandwidthUnitPrice);
+
+                    /**
+                     * 判断参数 DiscountBandwidthUnitPrice 是否已赋值
+                     * @return DiscountBandwidthUnitPrice 是否已赋值
+                     */
+                    bool DiscountBandwidthUnitPriceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     double m_bandwidthUnitPrice;
                     bool m_bandwidthUnitPriceHasBeenSet;
+
+                    /**
+                     * 带宽折扣价，单位：元/Mbps/天。
+                     */
+                    double m_discountBandwidthUnitPrice;
+                    bool m_discountBandwidthUnitPriceHasBeenSet;
 
                 };
             }

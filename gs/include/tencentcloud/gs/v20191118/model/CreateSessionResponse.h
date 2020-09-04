@@ -54,6 +54,18 @@ namespace TencentCloud
                      */
                     bool ServerSessionHasBeenSet() const;
 
+                    /**
+                     * 获取【多人游戏】角色编号；比如Player1、Player2、Viewer1
+                     * @return RoleNumber 【多人游戏】角色编号；比如Player1、Player2、Viewer1
+                     */
+                    std::string GetRoleNumber() const;
+
+                    /**
+                     * 判断参数 RoleNumber 是否已赋值
+                     * @return RoleNumber 是否已赋值
+                     */
+                    bool RoleNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +73,12 @@ namespace TencentCloud
                      */
                     std::string m_serverSession;
                     bool m_serverSessionHasBeenSet;
+
+                    /**
+                     * 【多人游戏】角色编号；比如Player1、Player2、Viewer1
+                     */
+                    std::string m_roleNumber;
+                    bool m_roleNumberHasBeenSet;
 
                 };
             }

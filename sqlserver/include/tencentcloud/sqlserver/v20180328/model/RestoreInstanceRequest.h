@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/sqlserver/v20180328/model/RenameRestoreDatabase.h>
 
 
 namespace TencentCloud
@@ -78,6 +79,42 @@ namespace TencentCloud
                      */
                     bool BackupIdHasBeenSet() const;
 
+                    /**
+                     * 获取备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID
+                     * @return TargetInstanceId 备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID
+                     */
+                    std::string GetTargetInstanceId() const;
+
+                    /**
+                     * 设置备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID
+                     * @param TargetInstanceId 备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID
+                     */
+                    void SetTargetInstanceId(const std::string& _targetInstanceId);
+
+                    /**
+                     * 判断参数 TargetInstanceId 是否已赋值
+                     * @return TargetInstanceId 是否已赋值
+                     */
+                    bool TargetInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。
+                     * @return RenameRestore 按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。
+                     */
+                    std::vector<RenameRestoreDatabase> GetRenameRestore() const;
+
+                    /**
+                     * 设置按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。
+                     * @param RenameRestore 按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。
+                     */
+                    void SetRenameRestore(const std::vector<RenameRestoreDatabase>& _renameRestore);
+
+                    /**
+                     * 判断参数 RenameRestore 是否已赋值
+                     * @return RenameRestore 是否已赋值
+                     */
+                    bool RenameRestoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +128,18 @@ namespace TencentCloud
                      */
                     int64_t m_backupId;
                     bool m_backupIdHasBeenSet;
+
+                    /**
+                     * 备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID
+                     */
+                    std::string m_targetInstanceId;
+                    bool m_targetInstanceIdHasBeenSet;
+
+                    /**
+                     * 按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。
+                     */
+                    std::vector<RenameRestoreDatabase> m_renameRestore;
+                    bool m_renameRestoreHasBeenSet;
 
                 };
             }

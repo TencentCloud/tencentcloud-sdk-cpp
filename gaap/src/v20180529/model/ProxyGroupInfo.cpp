@@ -30,7 +30,8 @@ ProxyGroupInfo::ProxyGroupInfo() :
     m_statusHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_proxyTypeHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome ProxyGroupInfo::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyType") && !value["ProxyType"].IsNull())
+    {
+        if (!value["ProxyType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ProxyGroupInfo.ProxyType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyType = value["ProxyType"].GetUint64();
+        m_proxyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -231,6 +242,14 @@ void ProxyGroupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_proxyTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProxyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proxyType, allocator);
     }
 
 }
@@ -378,5 +397,21 @@ void ProxyGroupInfo::SetCreateTime(const uint64_t& _createTime)
 bool ProxyGroupInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t ProxyGroupInfo::GetProxyType() const
+{
+    return m_proxyType;
+}
+
+void ProxyGroupInfo::SetProxyType(const uint64_t& _proxyType)
+{
+    m_proxyType = _proxyType;
+    m_proxyTypeHasBeenSet = true;
+}
+
+bool ProxyGroupInfo::ProxyTypeHasBeenSet() const
+{
+    return m_proxyTypeHasBeenSet;
 }
 

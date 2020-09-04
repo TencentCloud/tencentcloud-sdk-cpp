@@ -60,6 +60,60 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取备份方式，当前支持：0-逻辑备份，1-物理备份，2-所有备份。默认为逻辑备份。
+                     * @return BackupMethod 备份方式，当前支持：0-逻辑备份，1-物理备份，2-所有备份。默认为逻辑备份。
+                     */
+                    int64_t GetBackupMethod() const;
+
+                    /**
+                     * 设置备份方式，当前支持：0-逻辑备份，1-物理备份，2-所有备份。默认为逻辑备份。
+                     * @param BackupMethod 备份方式，当前支持：0-逻辑备份，1-物理备份，2-所有备份。默认为逻辑备份。
+                     */
+                    void SetBackupMethod(const int64_t& _backupMethod);
+
+                    /**
+                     * 判断参数 BackupMethod 是否已赋值
+                     * @return BackupMethod 是否已赋值
+                     */
+                    bool BackupMethodHasBeenSet() const;
+
+                    /**
+                     * 获取分页大小，最大值为100，不设置默认查询所有。
+                     * @return Limit 分页大小，最大值为100，不设置默认查询所有。
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置分页大小，最大值为100，不设置默认查询所有。
+                     * @param Limit 分页大小，最大值为100，不设置默认查询所有。
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页偏移量，最小值为0，默认值为0。
+                     * @return Offset 分页偏移量，最小值为0，默认值为0。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置分页偏移量，最小值为0，默认值为0。
+                     * @param Offset 分页偏移量，最小值为0，默认值为0。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +121,24 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 备份方式，当前支持：0-逻辑备份，1-物理备份，2-所有备份。默认为逻辑备份。
+                     */
+                    int64_t m_backupMethod;
+                    bool m_backupMethodHasBeenSet;
+
+                    /**
+                     * 分页大小，最大值为100，不设置默认查询所有。
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页偏移量，最小值为0，默认值为0。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

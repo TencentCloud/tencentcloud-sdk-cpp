@@ -117,6 +117,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/CreateDBRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeProjectSecurityGroupsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/SecurityGroup.h
+  include/tencentcloud/sqlserver/v20180328/model/RenameRestoreDatabase.h
   include/tencentcloud/sqlserver/v20180328/model/ReadOnlyInstance.h
   include/tencentcloud/sqlserver/v20180328/model/InquiryPriceUpgradeDBInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBRemarkRequest.h
@@ -296,6 +297,7 @@ set(sqlserver_src
   src/v20180328/model/CreateDBRequest.cpp
   src/v20180328/model/DescribeProjectSecurityGroupsRequest.cpp
   src/v20180328/model/SecurityGroup.cpp
+  src/v20180328/model/RenameRestoreDatabase.cpp
   src/v20180328/model/ReadOnlyInstance.cpp
   src/v20180328/model/InquiryPriceUpgradeDBInstanceRequest.cpp
   src/v20180328/model/ModifyDBRemarkRequest.cpp

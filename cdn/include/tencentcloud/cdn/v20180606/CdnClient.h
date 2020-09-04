@@ -29,6 +29,8 @@
 #include <tencentcloud/cdn/v20180606/model/CreateClsLogTopicResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskRequest.h>
 #include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskResponse.h>
+#include <tencentcloud/cdn/v20180606/model/CreateVerifyRecordRequest.h>
+#include <tencentcloud/cdn/v20180606/model/CreateVerifyRecordResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteCdnDomainRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteCdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteClsLogTopicRequest.h>
@@ -113,6 +115,8 @@
 #include <tencentcloud/cdn/v20180606/model/UpdateImageConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/UpdatePayTypeRequest.h>
 #include <tencentcloud/cdn/v20180606/model/UpdatePayTypeResponse.h>
+#include <tencentcloud/cdn/v20180606/model/VerifyDomainRecordRequest.h>
+#include <tencentcloud/cdn/v20180606/model/VerifyDomainRecordResponse.h>
 
 
 namespace TencentCloud
@@ -136,6 +140,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateScdnLogTaskResponse> CreateScdnLogTaskOutcome;
                 typedef std::future<CreateScdnLogTaskOutcome> CreateScdnLogTaskOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::CreateScdnLogTaskRequest&, CreateScdnLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScdnLogTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateVerifyRecordResponse> CreateVerifyRecordOutcome;
+                typedef std::future<CreateVerifyRecordOutcome> CreateVerifyRecordOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::CreateVerifyRecordRequest&, CreateVerifyRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVerifyRecordAsyncHandler;
                 typedef Outcome<Error, Model::DeleteCdnDomainResponse> DeleteCdnDomainOutcome;
                 typedef std::future<DeleteCdnDomainOutcome> DeleteCdnDomainOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DeleteCdnDomainRequest&, DeleteCdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCdnDomainAsyncHandler;
@@ -262,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdatePayTypeResponse> UpdatePayTypeOutcome;
                 typedef std::future<UpdatePayTypeOutcome> UpdatePayTypeOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::UpdatePayTypeRequest&, UpdatePayTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePayTypeAsyncHandler;
+                typedef Outcome<Error, Model::VerifyDomainRecordResponse> VerifyDomainRecordOutcome;
+                typedef std::future<VerifyDomainRecordOutcome> VerifyDomainRecordOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::VerifyDomainRecordRequest&, VerifyDomainRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainRecordAsyncHandler;
 
 
 
@@ -291,6 +301,15 @@ namespace TencentCloud
                 CreateScdnLogTaskOutcome CreateScdnLogTask(const Model::CreateScdnLogTaskRequest &request);
                 void CreateScdnLogTaskAsync(const Model::CreateScdnLogTaskRequest& request, const CreateScdnLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateScdnLogTaskOutcomeCallable CreateScdnLogTaskCallable(const Model::CreateScdnLogTaskRequest& request);
+
+                /**
+                 *生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权
+                 * @param req CreateVerifyRecordRequest
+                 * @return CreateVerifyRecordOutcome
+                 */
+                CreateVerifyRecordOutcome CreateVerifyRecord(const Model::CreateVerifyRecordRequest &request);
+                void CreateVerifyRecordAsync(const Model::CreateVerifyRecordRequest& request, const CreateVerifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVerifyRecordOutcomeCallable CreateVerifyRecordCallable(const Model::CreateVerifyRecordRequest& request);
 
                 /**
                  *DeleteCdnDomain 用于删除指定加速域名
@@ -710,6 +729,15 @@ namespace TencentCloud
                 UpdatePayTypeOutcome UpdatePayType(const Model::UpdatePayTypeRequest &request);
                 void UpdatePayTypeAsync(const Model::UpdatePayTypeRequest& request, const UpdatePayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdatePayTypeOutcomeCallable UpdatePayTypeCallable(const Model::UpdatePayTypeRequest& request);
+
+                /**
+                 *验证域名解析值
+                 * @param req VerifyDomainRecordRequest
+                 * @return VerifyDomainRecordOutcome
+                 */
+                VerifyDomainRecordOutcome VerifyDomainRecord(const Model::VerifyDomainRecordRequest &request);
+                void VerifyDomainRecordAsync(const Model::VerifyDomainRecordRequest& request, const VerifyDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyDomainRecordOutcomeCallable VerifyDomainRecordCallable(const Model::VerifyDomainRecordRequest& request);
 
             };
         }

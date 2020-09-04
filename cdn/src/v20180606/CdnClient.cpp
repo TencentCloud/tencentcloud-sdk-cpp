@@ -169,6 +169,49 @@ CdnClient::CreateScdnLogTaskOutcomeCallable CdnClient::CreateScdnLogTaskCallable
     return task->get_future();
 }
 
+CdnClient::CreateVerifyRecordOutcome CdnClient::CreateVerifyRecord(const CreateVerifyRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVerifyRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVerifyRecordResponse rsp = CreateVerifyRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVerifyRecordOutcome(rsp);
+        else
+            return CreateVerifyRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVerifyRecordOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::CreateVerifyRecordAsync(const CreateVerifyRecordRequest& request, const CreateVerifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVerifyRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::CreateVerifyRecordOutcomeCallable CdnClient::CreateVerifyRecordCallable(const CreateVerifyRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVerifyRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVerifyRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DeleteCdnDomainOutcome CdnClient::DeleteCdnDomain(const DeleteCdnDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCdnDomain");
@@ -1968,6 +2011,49 @@ CdnClient::UpdatePayTypeOutcomeCallable CdnClient::UpdatePayTypeCallable(const U
         [this, request]()
         {
             return this->UpdatePayType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::VerifyDomainRecordOutcome CdnClient::VerifyDomainRecord(const VerifyDomainRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyDomainRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyDomainRecordResponse rsp = VerifyDomainRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyDomainRecordOutcome(rsp);
+        else
+            return VerifyDomainRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyDomainRecordOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::VerifyDomainRecordAsync(const VerifyDomainRecordRequest& request, const VerifyDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyDomainRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::VerifyDomainRecordOutcomeCallable CdnClient::VerifyDomainRecordCallable(const VerifyDomainRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyDomainRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyDomainRecord(request);
         }
     );
 

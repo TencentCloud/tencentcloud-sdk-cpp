@@ -31,7 +31,8 @@ DescribeBackupsRequest::DescribeBackupsRequest() :
     m_offsetHasBeenSet(false),
     m_backupNameHasBeenSet(false),
     m_strategyHasBeenSet(false),
-    m_backupWayHasBeenSet(false)
+    m_backupWayHasBeenSet(false),
+    m_backupIdHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string DescribeBackupsRequest::ToJsonString() const
         string key = "BackupWay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupWay, allocator);
+    }
+
+    if (m_backupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupId, allocator);
     }
 
 
@@ -240,6 +249,22 @@ void DescribeBackupsRequest::SetBackupWay(const int64_t& _backupWay)
 bool DescribeBackupsRequest::BackupWayHasBeenSet() const
 {
     return m_backupWayHasBeenSet;
+}
+
+uint64_t DescribeBackupsRequest::GetBackupId() const
+{
+    return m_backupId;
+}
+
+void DescribeBackupsRequest::SetBackupId(const uint64_t& _backupId)
+{
+    m_backupId = _backupId;
+    m_backupIdHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::BackupIdHasBeenSet() const
+{
+    return m_backupIdHasBeenSet;
 }
 
 

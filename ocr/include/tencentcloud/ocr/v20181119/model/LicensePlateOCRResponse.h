@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/Rect.h>
 
 
 namespace TencentCloud
@@ -66,6 +67,18 @@ namespace TencentCloud
                      */
                     bool ConfidenceHasBeenSet() const;
 
+                    /**
+                     * 获取文本行在原图片中的像素坐标框。
+                     * @return Rect 文本行在原图片中的像素坐标框。
+                     */
+                    Rect GetRect() const;
+
+                    /**
+                     * 判断参数 Rect 是否已赋值
+                     * @return Rect 是否已赋值
+                     */
+                    bool RectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +92,12 @@ namespace TencentCloud
                      */
                     int64_t m_confidence;
                     bool m_confidenceHasBeenSet;
+
+                    /**
+                     * 文本行在原图片中的像素坐标框。
+                     */
+                    Rect m_rect;
+                    bool m_rectHasBeenSet;
 
                 };
             }

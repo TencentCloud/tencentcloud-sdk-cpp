@@ -37,6 +37,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupAccessResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeCurrentOpRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeCurrentOpResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBBackupsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBBackupsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceDealRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceRenewDBInstancesResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/IsolateDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/IsolateDBInstanceResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/KillOpsRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/KillOpsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceRequest.h>
@@ -104,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClientConnectionsResponse> DescribeClientConnectionsOutcome;
                 typedef std::future<DescribeClientConnectionsOutcome> DescribeClientConnectionsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeClientConnectionsRequest&, DescribeClientConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientConnectionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCurrentOpResponse> DescribeCurrentOpOutcome;
+                typedef std::future<DescribeCurrentOpOutcome> DescribeCurrentOpOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeCurrentOpRequest&, DescribeCurrentOpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurrentOpAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBBackupsResponse> DescribeDBBackupsOutcome;
                 typedef std::future<DescribeDBBackupsOutcome> DescribeDBBackupsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBBackupsRequest&, DescribeDBBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBBackupsAsyncHandler;
@@ -137,6 +144,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::IsolateDBInstanceResponse> IsolateDBInstanceOutcome;
                 typedef std::future<IsolateDBInstanceOutcome> IsolateDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::IsolateDBInstanceRequest&, IsolateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDBInstanceAsyncHandler;
+                typedef Outcome<Error, Model::KillOpsResponse> KillOpsOutcome;
+                typedef std::future<KillOpsOutcome> KillOpsOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::KillOpsRequest&, KillOpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillOpsAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDBInstanceSpecResponse> ModifyDBInstanceSpecOutcome;
                 typedef std::future<ModifyDBInstanceSpecOutcome> ModifyDBInstanceSpecOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyDBInstanceSpecRequest&, ModifyDBInstanceSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSpecAsyncHandler;
@@ -220,7 +230,16 @@ namespace TencentCloud
                 DescribeClientConnectionsOutcomeCallable DescribeClientConnectionsCallable(const Model::DescribeClientConnectionsRequest& request);
 
                 /**
-                 *本接口（DescribeDBBackups）用于查询实例备份列表，目前只支持7天内的备份查询。
+                 *本接口(DescribeCurrentOp)用于查询MongoDB云数据库实例的当前正在执行的操作。
+                 * @param req DescribeCurrentOpRequest
+                 * @return DescribeCurrentOpOutcome
+                 */
+                DescribeCurrentOpOutcome DescribeCurrentOp(const Model::DescribeCurrentOpRequest &request);
+                void DescribeCurrentOpAsync(const Model::DescribeCurrentOpRequest& request, const DescribeCurrentOpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCurrentOpOutcomeCallable DescribeCurrentOpCallable(const Model::DescribeCurrentOpRequest& request);
+
+                /**
+                 *本接口（DescribeDBBackups）用于查询实例备份列表，目前只支持查询7天内的备份记录。
                  * @param req DescribeDBBackupsRequest
                  * @return DescribeDBBackupsOutcome
                  */
@@ -317,6 +336,15 @@ namespace TencentCloud
                 IsolateDBInstanceOutcome IsolateDBInstance(const Model::IsolateDBInstanceRequest &request);
                 void IsolateDBInstanceAsync(const Model::IsolateDBInstanceRequest& request, const IsolateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 IsolateDBInstanceOutcomeCallable IsolateDBInstanceCallable(const Model::IsolateDBInstanceRequest& request);
+
+                /**
+                 *本接口(KillOps)用于终止MongoDB云数据库实例上执行的特定操作。
+                 * @param req KillOpsRequest
+                 * @return KillOpsOutcome
+                 */
+                KillOpsOutcome KillOps(const Model::KillOpsRequest &request);
+                void KillOpsAsync(const Model::KillOpsRequest& request, const KillOpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                KillOpsOutcomeCallable KillOpsCallable(const Model::KillOpsRequest& request);
 
                 /**
                  *本接口(ModifyDBInstanceSpec)用于调整MongoDB云数据库实例配置。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。

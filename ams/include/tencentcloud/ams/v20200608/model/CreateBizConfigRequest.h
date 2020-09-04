@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务ID
-                     * @return BizType 业务ID
+                     * 获取业务类型，仅限英文字母、数字和下划线（_）组成，长度不超过8位
+                     * @return BizType 业务类型，仅限英文字母、数字和下划线（_）组成，长度不超过8位
                      */
                     std::string GetBizType() const;
 
                     /**
-                     * 设置业务ID
-                     * @param BizType 业务ID
+                     * 设置业务类型，仅限英文字母、数字和下划线（_）组成，长度不超过8位
+                     * @param BizType 业务类型，仅限英文字母、数字和下划线（_）组成，长度不超过8位
                      */
                     void SetBizType(const std::string& _bizType);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取审核分类信息
-                     * @return MediaModeration 审核分类信息
+                     * 获取配置信息，
+                     * @return MediaModeration 配置信息，
                      */
                     MediaModerationConfig GetMediaModeration() const;
 
                     /**
-                     * 设置审核分类信息
-                     * @param MediaModeration 审核分类信息
+                     * 设置配置信息，
+                     * @param MediaModeration 配置信息，
                      */
                     void SetMediaModeration(const MediaModerationConfig& _mediaModeration);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool MediaModerationHasBeenSet() const;
 
                     /**
-                     * 获取页面名称
-                     * @return BizName 页面名称
+                     * 获取业务名称，用于标识业务场景，长度不超过32位
+                     * @return BizName 业务名称，用于标识业务场景，长度不超过32位
                      */
                     std::string GetBizName() const;
 
                     /**
-                     * 设置页面名称
-                     * @param BizName 页面名称
+                     * 设置业务名称，用于标识业务场景，长度不超过32位
+                     * @param BizName 业务名称，用于标识业务场景，长度不超过32位
                      */
                     void SetBizName(const std::string& _bizName);
 
@@ -118,19 +118,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务ID
+                     * 业务类型，仅限英文字母、数字和下划线（_）组成，长度不超过8位
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 审核分类信息
+                     * 配置信息，
                      */
                     MediaModerationConfig m_mediaModeration;
                     bool m_mediaModerationHasBeenSet;
 
                     /**
-                     * 页面名称
+                     * 业务名称，用于标识业务场景，长度不超过32位
                      */
                     std::string m_bizName;
                     bool m_bizNameHasBeenSet;

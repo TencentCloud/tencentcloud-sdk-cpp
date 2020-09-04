@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeRealServerStatisticsResponse::DescribeRealServerStatisticsResponse() :
-    m_statisticsDataHasBeenSet(false)
+    m_statisticsDataHasBeenSet(false),
+    m_rsStatisticsDataHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome DescribeRealServerStatisticsResponse::Deserialize(const stri
         m_statisticsDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RsStatisticsData") && !rsp["RsStatisticsData"].IsNull())
+    {
+        if (!rsp["RsStatisticsData"].IsArray())
+            return CoreInternalOutcome(Error("response `RsStatisticsData` is not array type"));
+
+        const Value &tmpValue = rsp["RsStatisticsData"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MetricStatisticsInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_rsStatisticsData.push_back(item);
+        }
+        m_rsStatisticsDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +117,16 @@ vector<StatisticsDataInfo> DescribeRealServerStatisticsResponse::GetStatisticsDa
 bool DescribeRealServerStatisticsResponse::StatisticsDataHasBeenSet() const
 {
     return m_statisticsDataHasBeenSet;
+}
+
+vector<MetricStatisticsInfo> DescribeRealServerStatisticsResponse::GetRsStatisticsData() const
+{
+    return m_rsStatisticsData;
+}
+
+bool DescribeRealServerStatisticsResponse::RsStatisticsDataHasBeenSet() const
+{
+    return m_rsStatisticsDataHasBeenSet;
 }
 
 

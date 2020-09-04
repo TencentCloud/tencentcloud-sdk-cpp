@@ -20,6 +20,7 @@ set(redis_public_header
 
 set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h
+  include/tencentcloud/redis/v20180412/model/EnableReplicaReadonlyRequest.h
   include/tencentcloud/redis/v20180412/model/RedisBackupSet.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigResponse.h
@@ -42,6 +43,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceEnumParam.h
   include/tencentcloud/redis/v20180412/model/Account.h
+  include/tencentcloud/redis/v20180412/model/InstanceProxySlowlogDetail.h
   include/tencentcloud/redis/v20180412/model/SecurityGroupsInboundAndOutbound.h
   include/tencentcloud/redis/v20180412/model/ResetPasswordResponse.h
   include/tencentcloud/redis/v20180412/model/ClearInstanceRequest.h
@@ -140,7 +142,8 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/BigKeyTypeInfo.h
   include/tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceClusterNode.h
-  include/tencentcloud/redis/v20180412/model/EnableReplicaReadonlyRequest.h
+  include/tencentcloud/redis/v20180412/model/DescribeProxySlowLogRequest.h
+  include/tencentcloud/redis/v20180412/model/DescribeProxySlowLogResponse.h
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceAccountResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyRequest.h
@@ -171,6 +174,7 @@ set(redis_public_header_model
 set(redis_src
   src/v20180412/RedisClient.cpp
   src/v20180412/model/ModifyInstanceParamsResponse.cpp
+  src/v20180412/model/EnableReplicaReadonlyRequest.cpp
   src/v20180412/model/RedisBackupSet.cpp
   src/v20180412/model/DescribeInstanceMonitorTopNCmdResponse.cpp
   src/v20180412/model/ModifyAutoBackupConfigResponse.cpp
@@ -193,6 +197,7 @@ set(redis_src
   src/v20180412/model/DescribeInstancesResponse.cpp
   src/v20180412/model/InstanceEnumParam.cpp
   src/v20180412/model/Account.cpp
+  src/v20180412/model/InstanceProxySlowlogDetail.cpp
   src/v20180412/model/SecurityGroupsInboundAndOutbound.cpp
   src/v20180412/model/ResetPasswordResponse.cpp
   src/v20180412/model/ClearInstanceRequest.cpp
@@ -291,7 +296,8 @@ set(redis_src
   src/v20180412/model/BigKeyTypeInfo.cpp
   src/v20180412/model/DescribeMaintenanceWindowRequest.cpp
   src/v20180412/model/InstanceClusterNode.cpp
-  src/v20180412/model/EnableReplicaReadonlyRequest.cpp
+  src/v20180412/model/DescribeProxySlowLogRequest.cpp
+  src/v20180412/model/DescribeProxySlowLogResponse.cpp
   src/v20180412/model/UpgradeInstanceVersionRequest.cpp
   src/v20180412/model/DescribeInstanceAccountResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorBigKeyRequest.cpp

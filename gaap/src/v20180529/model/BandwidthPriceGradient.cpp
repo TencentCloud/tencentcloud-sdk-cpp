@@ -23,7 +23,8 @@ using namespace std;
 
 BandwidthPriceGradient::BandwidthPriceGradient() :
     m_bandwidthRangeHasBeenSet(false),
-    m_bandwidthUnitPriceHasBeenSet(false)
+    m_bandwidthUnitPriceHasBeenSet(false),
+    m_discountBandwidthUnitPriceHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,16 @@ CoreInternalOutcome BandwidthPriceGradient::Deserialize(const Value &value)
         m_bandwidthUnitPriceHasBeenSet = true;
     }
 
+    if (value.HasMember("DiscountBandwidthUnitPrice") && !value["DiscountBandwidthUnitPrice"].IsNull())
+    {
+        if (!value["DiscountBandwidthUnitPrice"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `BandwidthPriceGradient.DiscountBandwidthUnitPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountBandwidthUnitPrice = value["DiscountBandwidthUnitPrice"].GetDouble();
+        m_discountBandwidthUnitPriceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -81,6 +92,14 @@ void BandwidthPriceGradient::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "BandwidthUnitPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidthUnitPrice, allocator);
+    }
+
+    if (m_discountBandwidthUnitPriceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiscountBandwidthUnitPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_discountBandwidthUnitPrice, allocator);
     }
 
 }
@@ -116,5 +135,21 @@ void BandwidthPriceGradient::SetBandwidthUnitPrice(const double& _bandwidthUnitP
 bool BandwidthPriceGradient::BandwidthUnitPriceHasBeenSet() const
 {
     return m_bandwidthUnitPriceHasBeenSet;
+}
+
+double BandwidthPriceGradient::GetDiscountBandwidthUnitPrice() const
+{
+    return m_discountBandwidthUnitPrice;
+}
+
+void BandwidthPriceGradient::SetDiscountBandwidthUnitPrice(const double& _discountBandwidthUnitPrice)
+{
+    m_discountBandwidthUnitPrice = _discountBandwidthUnitPrice;
+    m_discountBandwidthUnitPriceHasBeenSet = true;
+}
+
+bool BandwidthPriceGradient::DiscountBandwidthUnitPriceHasBeenSet() const
+{
+    return m_discountBandwidthUnitPriceHasBeenSet;
 }
 

@@ -24,7 +24,10 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeDBBackupsRequest::DescribeDBBackupsRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_backupMethodHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -41,6 +44,30 @@ string DescribeDBBackupsRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupMethodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupMethod, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -65,6 +92,54 @@ void DescribeDBBackupsRequest::SetInstanceId(const string& _instanceId)
 bool DescribeDBBackupsRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+int64_t DescribeDBBackupsRequest::GetBackupMethod() const
+{
+    return m_backupMethod;
+}
+
+void DescribeDBBackupsRequest::SetBackupMethod(const int64_t& _backupMethod)
+{
+    m_backupMethod = _backupMethod;
+    m_backupMethodHasBeenSet = true;
+}
+
+bool DescribeDBBackupsRequest::BackupMethodHasBeenSet() const
+{
+    return m_backupMethodHasBeenSet;
+}
+
+uint64_t DescribeDBBackupsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeDBBackupsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeDBBackupsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeDBBackupsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeDBBackupsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeDBBackupsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

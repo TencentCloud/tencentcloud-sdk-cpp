@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool GameIdHasBeenSet() const;
 
                     /**
-                     * 获取游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等
-                     * @return GameRegion 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等
+                     * 获取游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等
+                     * @return GameRegion 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等
                      */
                     std::string GetGameRegion() const;
 
                     /**
-                     * 设置游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等
-                     * @param GameRegion 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等
+                     * 设置游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等
+                     * @param GameRegion 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等
                      */
                     void SetGameRegion(const std::string& _gameRegion);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取资源池编号，1表示正式，2表示测试
-                     * @return SetNo 资源池编号，1表示正式，2表示测试
+                     * 获取【将废弃】资源池编号，比如1表示正式，2表示测试
+                     * @return SetNo 【将废弃】资源池编号，比如1表示正式，2表示测试
                      */
                     uint64_t GetSetNo() const;
 
                     /**
-                     * 设置资源池编号，1表示正式，2表示测试
-                     * @param SetNo 资源池编号，1表示正式，2表示测试
+                     * 设置【将废弃】资源池编号，比如1表示正式，2表示测试
+                     * @param SetNo 【将废弃】资源池编号，比如1表示正式，2表示测试
                      */
                     void SetSetNo(const uint64_t& _setNo);
 
@@ -295,14 +295,14 @@ namespace TencentCloud
                     bool OptimizationHasBeenSet() const;
 
                     /**
-                     * 获取用于多人游戏，游戏主机用户ID
-                     * @return HostUserId 用于多人游戏，游戏主机用户ID
+                     * 获取【多人云游】游戏主机用户ID
+                     * @return HostUserId 【多人云游】游戏主机用户ID
                      */
                     std::string GetHostUserId() const;
 
                     /**
-                     * 设置用于多人游戏，游戏主机用户ID
-                     * @param HostUserId 用于多人游戏，游戏主机用户ID
+                     * 设置【多人云游】游戏主机用户ID
+                     * @param HostUserId 【多人云游】游戏主机用户ID
                      */
                     void SetHostUserId(const std::string& _hostUserId);
 
@@ -311,6 +311,24 @@ namespace TencentCloud
                      * @return HostUserId 是否已赋值
                      */
                     bool HostUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取【多人云游】角色；Player表示玩家；Viewer表示观察者
+                     * @return Role 【多人云游】角色；Player表示玩家；Viewer表示观察者
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置【多人云游】角色；Player表示玩家；Viewer表示观察者
+                     * @param Role 【多人云游】角色；Player表示玩家；Viewer表示观察者
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     */
+                    bool RoleHasBeenSet() const;
 
                 private:
 
@@ -333,7 +351,7 @@ namespace TencentCloud
                     bool m_gameIdHasBeenSet;
 
                     /**
-                     * 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等
+                     * 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等
                      */
                     std::string m_gameRegion;
                     bool m_gameRegionHasBeenSet;
@@ -357,7 +375,7 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 资源池编号，1表示正式，2表示测试
+                     * 【将废弃】资源池编号，比如1表示正式，2表示测试
                      */
                     uint64_t m_setNo;
                     bool m_setNoHasBeenSet;
@@ -399,10 +417,16 @@ namespace TencentCloud
                     bool m_optimizationHasBeenSet;
 
                     /**
-                     * 用于多人游戏，游戏主机用户ID
+                     * 【多人云游】游戏主机用户ID
                      */
                     std::string m_hostUserId;
                     bool m_hostUserIdHasBeenSet;
+
+                    /**
+                     * 【多人云游】角色；Player表示玩家；Viewer表示观察者
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
 
                 };
             }

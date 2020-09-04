@@ -26,7 +26,8 @@ using namespace std;
 
 LicensePlateOCRResponse::LicensePlateOCRResponse() :
     m_numberHasBeenSet(false),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_rectHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,23 @@ CoreInternalOutcome LicensePlateOCRResponse::Deserialize(const string &payload)
         m_confidenceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Rect") && !rsp["Rect"].IsNull())
+    {
+        if (!rsp["Rect"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Rect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rect.Deserialize(rsp["Rect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,16 @@ int64_t LicensePlateOCRResponse::GetConfidence() const
 bool LicensePlateOCRResponse::ConfidenceHasBeenSet() const
 {
     return m_confidenceHasBeenSet;
+}
+
+Rect LicensePlateOCRResponse::GetRect() const
+{
+    return m_rect;
+}
+
+bool LicensePlateOCRResponse::RectHasBeenSet() const
+{
+    return m_rectHasBeenSet;
 }
 
 

@@ -50,6 +50,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/AccessControl.h
   include/tencentcloud/cdn/v20180606/model/DeleteCdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribePayTypeResponse.h
+  include/tencentcloud/cdn/v20180606/model/VerifyDomainRecordResponse.h
   include/tencentcloud/cdn/v20180606/model/ListTopDataRequest.h
   include/tencentcloud/cdn/v20180606/model/ListClsTopicDomainsRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsResponse.h
@@ -138,6 +139,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/IpFreqLimit.h
   include/tencentcloud/cdn/v20180606/model/CreateClsLogTopicRequest.h
   include/tencentcloud/cdn/v20180606/model/CacheOptResult.h
+  include/tencentcloud/cdn/v20180606/model/CreateVerifyRecordResponse.h
   include/tencentcloud/cdn/v20180606/model/StopCdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeMapInfoResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesResponse.h
@@ -164,11 +166,13 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/UrlRedirect.h
   include/tencentcloud/cdn/v20180606/model/DownstreamCapping.h
   include/tencentcloud/cdn/v20180606/model/CookieKey.h
+  include/tencentcloud/cdn/v20180606/model/VerifyDomainRecordRequest.h
   include/tencentcloud/cdn/v20180606/model/KeyRule.h
   include/tencentcloud/cdn/v20180606/model/CappingRule.h
   include/tencentcloud/cdn/v20180606/model/ListClsLogTopicsRequest.h
   include/tencentcloud/cdn/v20180606/model/Seo.h
   include/tencentcloud/cdn/v20180606/model/BandwidthAlert.h
+  include/tencentcloud/cdn/v20180606/model/CreateVerifyRecordRequest.h
   include/tencentcloud/cdn/v20180606/model/ClsLogObject.h
   include/tencentcloud/cdn/v20180606/model/RegionMapRelation.h
   include/tencentcloud/cdn/v20180606/model/PurgePathCacheRequest.h
@@ -251,6 +255,7 @@ set(cdn_src
   src/v20180606/model/AccessControl.cpp
   src/v20180606/model/DeleteCdnDomainRequest.cpp
   src/v20180606/model/DescribePayTypeResponse.cpp
+  src/v20180606/model/VerifyDomainRecordResponse.cpp
   src/v20180606/model/ListTopDataRequest.cpp
   src/v20180606/model/ListClsTopicDomainsRequest.cpp
   src/v20180606/model/DescribeDomainsResponse.cpp
@@ -339,6 +344,7 @@ set(cdn_src
   src/v20180606/model/IpFreqLimit.cpp
   src/v20180606/model/CreateClsLogTopicRequest.cpp
   src/v20180606/model/CacheOptResult.cpp
+  src/v20180606/model/CreateVerifyRecordResponse.cpp
   src/v20180606/model/StopCdnDomainRequest.cpp
   src/v20180606/model/DescribeMapInfoResponse.cpp
   src/v20180606/model/DescribeTrafficPackagesResponse.cpp
@@ -365,11 +371,13 @@ set(cdn_src
   src/v20180606/model/UrlRedirect.cpp
   src/v20180606/model/DownstreamCapping.cpp
   src/v20180606/model/CookieKey.cpp
+  src/v20180606/model/VerifyDomainRecordRequest.cpp
   src/v20180606/model/KeyRule.cpp
   src/v20180606/model/CappingRule.cpp
   src/v20180606/model/ListClsLogTopicsRequest.cpp
   src/v20180606/model/Seo.cpp
   src/v20180606/model/BandwidthAlert.cpp
+  src/v20180606/model/CreateVerifyRecordRequest.cpp
   src/v20180606/model/ClsLogObject.cpp
   src/v20180606/model/RegionMapRelation.cpp
   src/v20180606/model/PurgePathCacheRequest.cpp

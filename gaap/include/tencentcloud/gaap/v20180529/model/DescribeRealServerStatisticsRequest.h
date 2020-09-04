@@ -79,6 +79,24 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
+                     * 获取L7层规则ID
+                     * @return RuleId L7层规则ID
+                     */
+                    std::string GetRuleId() const;
+
+                    /**
+                     * 设置L7层规则ID
+                     * @param RuleId L7层规则ID
+                     */
+                    void SetRuleId(const std::string& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     */
+                    bool RuleIdHasBeenSet() const;
+
+                    /**
                      * 获取统计时长，单位：小时。仅支持最近1,3,6,12,24小时的统计查询
                      * @return WithinTime 统计时长，单位：小时。仅支持最近1,3,6,12,24小时的统计查询
                      */
@@ -97,22 +115,58 @@ namespace TencentCloud
                     bool WithinTimeHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return RuleId 规则ID
+                     * 获取统计开始时间(2020-08-19 00:00:00)
+                     * @return StartTime 统计开始时间(2020-08-19 00:00:00)
                      */
-                    std::string GetRuleId() const;
+                    std::string GetStartTime() const;
 
                     /**
-                     * 设置规则ID
-                     * @param RuleId 规则ID
+                     * 设置统计开始时间(2020-08-19 00:00:00)
+                     * @param StartTime 统计开始时间(2020-08-19 00:00:00)
                      */
-                    void SetRuleId(const std::string& _ruleId);
+                    void SetStartTime(const std::string& _startTime);
 
                     /**
-                     * 判断参数 RuleId 是否已赋值
-                     * @return RuleId 是否已赋值
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
                      */
-                    bool RuleIdHasBeenSet() const;
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取统计结束时间(2020-08-19 23:59:59)
+                     * @return EndTime 统计结束时间(2020-08-19 23:59:59)
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置统计结束时间(2020-08-19 23:59:59)
+                     * @param EndTime 统计结束时间(2020-08-19 23:59:59)
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取统计的数据粒度，单位：秒，仅支持1分钟-60和5分钟-300粒度
+                     * @return Granularity 统计的数据粒度，单位：秒，仅支持1分钟-60和5分钟-300粒度
+                     */
+                    uint64_t GetGranularity() const;
+
+                    /**
+                     * 设置统计的数据粒度，单位：秒，仅支持1分钟-60和5分钟-300粒度
+                     * @param Granularity 统计的数据粒度，单位：秒，仅支持1分钟-60和5分钟-300粒度
+                     */
+                    void SetGranularity(const uint64_t& _granularity);
+
+                    /**
+                     * 判断参数 Granularity 是否已赋值
+                     * @return Granularity 是否已赋值
+                     */
+                    bool GranularityHasBeenSet() const;
 
                 private:
 
@@ -129,16 +183,34 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
+                     * L7层规则ID
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
+
+                    /**
                      * 统计时长，单位：小时。仅支持最近1,3,6,12,24小时的统计查询
                      */
                     uint64_t m_withinTime;
                     bool m_withinTimeHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * 统计开始时间(2020-08-19 00:00:00)
                      */
-                    std::string m_ruleId;
-                    bool m_ruleIdHasBeenSet;
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 统计结束时间(2020-08-19 23:59:59)
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 统计的数据粒度，单位：秒，仅支持1分钟-60和5分钟-300粒度
+                     */
+                    uint64_t m_granularity;
+                    bool m_granularityHasBeenSet;
 
                 };
             }

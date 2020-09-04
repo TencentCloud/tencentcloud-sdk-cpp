@@ -246,6 +246,28 @@ MOVING表示通道迁移中。
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取通道组是否包含微软通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxyType 通道组是否包含微软通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetProxyType() const;
+
+                    /**
+                     * 设置通道组是否包含微软通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProxyType 通道组是否包含微软通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProxyType(const uint64_t& _proxyType);
+
+                    /**
+                     * 判断参数 ProxyType 是否已赋值
+                     * @return ProxyType 是否已赋值
+                     */
+                    bool ProxyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +332,13 @@ MOVING表示通道迁移中。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 通道组是否包含微软通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_proxyType;
+                    bool m_proxyTypeHasBeenSet;
 
                 };
             }

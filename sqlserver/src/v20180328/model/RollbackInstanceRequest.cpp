@@ -27,7 +27,9 @@ RollbackInstanceRequest::RollbackInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_dBsHasBeenSet(false),
-    m_timeHasBeenSet(false)
+    m_timeHasBeenSet(false),
+    m_targetInstanceIdHasBeenSet(false),
+    m_renameRestoreHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,29 @@ string RollbackInstanceRequest::ToJsonString() const
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_time.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetInstanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TargetInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_targetInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renameRestoreHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RenameRestore";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_renameRestore.begin(); itr != m_renameRestore.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -145,6 +170,38 @@ void RollbackInstanceRequest::SetTime(const string& _time)
 bool RollbackInstanceRequest::TimeHasBeenSet() const
 {
     return m_timeHasBeenSet;
+}
+
+string RollbackInstanceRequest::GetTargetInstanceId() const
+{
+    return m_targetInstanceId;
+}
+
+void RollbackInstanceRequest::SetTargetInstanceId(const string& _targetInstanceId)
+{
+    m_targetInstanceId = _targetInstanceId;
+    m_targetInstanceIdHasBeenSet = true;
+}
+
+bool RollbackInstanceRequest::TargetInstanceIdHasBeenSet() const
+{
+    return m_targetInstanceIdHasBeenSet;
+}
+
+vector<RenameRestoreDatabase> RollbackInstanceRequest::GetRenameRestore() const
+{
+    return m_renameRestore;
+}
+
+void RollbackInstanceRequest::SetRenameRestore(const vector<RenameRestoreDatabase>& _renameRestore)
+{
+    m_renameRestore = _renameRestore;
+    m_renameRestoreHasBeenSet = true;
+}
+
+bool RollbackInstanceRequest::RenameRestoreHasBeenSet() const
+{
+    return m_renameRestoreHasBeenSet;
 }
 
 

@@ -29,7 +29,9 @@ DescribeCallDetailRequest::DescribeCallDetailRequest() :
     m_endTimeHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
     m_userIdsHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
+    m_dataTypeHasBeenSet(false),
+    m_pageNumberHasBeenSet(false),
+    m_pageSizeHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,22 @@ string DescribeCallDetailRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_pageNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_pageNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_pageSize.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -200,6 +218,38 @@ void DescribeCallDetailRequest::SetDataType(const vector<string>& _dataType)
 bool DescribeCallDetailRequest::DataTypeHasBeenSet() const
 {
     return m_dataTypeHasBeenSet;
+}
+
+string DescribeCallDetailRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void DescribeCallDetailRequest::SetPageNumber(const string& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool DescribeCallDetailRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
+}
+
+string DescribeCallDetailRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeCallDetailRequest::SetPageSize(const string& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeCallDetailRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
 }
 
 

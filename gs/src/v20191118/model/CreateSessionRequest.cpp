@@ -38,7 +38,8 @@ CreateSessionRequest::CreateSessionRequest() :
     m_fpsHasBeenSet(false),
     m_userIpHasBeenSet(false),
     m_optimizationHasBeenSet(false),
-    m_hostUserIdHasBeenSet(false)
+    m_hostUserIdHasBeenSet(false),
+    m_roleHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,14 @@ string CreateSessionRequest::ToJsonString() const
         string key = "HostUserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_hostUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -415,6 +424,22 @@ void CreateSessionRequest::SetHostUserId(const string& _hostUserId)
 bool CreateSessionRequest::HostUserIdHasBeenSet() const
 {
     return m_hostUserIdHasBeenSet;
+}
+
+string CreateSessionRequest::GetRole() const
+{
+    return m_role;
+}
+
+void CreateSessionRequest::SetRole(const string& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool CreateSessionRequest::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
 }
 
 

@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 CreateSessionResponse::CreateSessionResponse() :
-    m_serverSessionHasBeenSet(false)
+    m_serverSessionHasBeenSet(false),
+    m_roleNumberHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CreateSessionResponse::Deserialize(const string &payload)
         m_serverSessionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RoleNumber") && !rsp["RoleNumber"].IsNull())
+    {
+        if (!rsp["RoleNumber"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RoleNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleNumber = string(rsp["RoleNumber"].GetString());
+        m_roleNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ string CreateSessionResponse::GetServerSession() const
 bool CreateSessionResponse::ServerSessionHasBeenSet() const
 {
     return m_serverSessionHasBeenSet;
+}
+
+string CreateSessionResponse::GetRoleNumber() const
+{
+    return m_roleNumber;
+}
+
+bool CreateSessionResponse::RoleNumberHasBeenSet() const
+{
+    return m_roleNumberHasBeenSet;
 }
 
 

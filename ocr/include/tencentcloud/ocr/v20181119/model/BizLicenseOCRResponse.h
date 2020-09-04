@@ -162,6 +162,38 @@ namespace TencentCloud
                      */
                     bool SetDateHasBeenSet() const;
 
+                    /**
+                     * 获取Code 告警码列表和释义：
+-20001 非营业执照
+注：告警码可以同时存在多个
+                     * @return RecognizeWarnCode Code 告警码列表和释义：
+-20001 非营业执照
+注：告警码可以同时存在多个
+                     */
+                    std::vector<int64_t> GetRecognizeWarnCode() const;
+
+                    /**
+                     * 判断参数 RecognizeWarnCode 是否已赋值
+                     * @return RecognizeWarnCode 是否已赋值
+                     */
+                    bool RecognizeWarnCodeHasBeenSet() const;
+
+                    /**
+                     * 获取告警码说明：
+OCR_WARNING_TPYE_NOT_MATCH 非营业执照
+注：告警信息可以同时存在多个
+                     * @return RecognizeWarnMsg 告警码说明：
+OCR_WARNING_TPYE_NOT_MATCH 非营业执照
+注：告警信息可以同时存在多个
+                     */
+                    std::vector<std::string> GetRecognizeWarnMsg() const;
+
+                    /**
+                     * 判断参数 RecognizeWarnMsg 是否已赋值
+                     * @return RecognizeWarnMsg 是否已赋值
+                     */
+                    bool RecognizeWarnMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -223,6 +255,22 @@ namespace TencentCloud
                      */
                     std::string m_setDate;
                     bool m_setDateHasBeenSet;
+
+                    /**
+                     * Code 告警码列表和释义：
+-20001 非营业执照
+注：告警码可以同时存在多个
+                     */
+                    std::vector<int64_t> m_recognizeWarnCode;
+                    bool m_recognizeWarnCodeHasBeenSet;
+
+                    /**
+                     * 告警码说明：
+OCR_WARNING_TPYE_NOT_MATCH 非营业执照
+注：告警信息可以同时存在多个
+                     */
+                    std::vector<std::string> m_recognizeWarnMsg;
+                    bool m_recognizeWarnMsgHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/sqlserver/v20180328/model/MigrateSource.h>
 #include <tencentcloud/sqlserver/v20180328/model/MigrateTarget.h>
 #include <tencentcloud/sqlserver/v20180328/model/MigrateDB.h>
+#include <tencentcloud/sqlserver/v20180328/model/RenameRestoreDatabase.h>
 
 
 namespace TencentCloud
@@ -153,6 +154,24 @@ namespace TencentCloud
                      */
                     bool MigrateDBSetHasBeenSet() const;
 
+                    /**
+                     * 获取按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。SourceType=5的情况下有效。
+                     * @return RenameRestore 按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。SourceType=5的情况下有效。
+                     */
+                    std::vector<RenameRestoreDatabase> GetRenameRestore() const;
+
+                    /**
+                     * 设置按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。SourceType=5的情况下有效。
+                     * @param RenameRestore 按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。SourceType=5的情况下有效。
+                     */
+                    void SetRenameRestore(const std::vector<RenameRestoreDatabase>& _renameRestore);
+
+                    /**
+                     * 判断参数 RenameRestore 是否已赋值
+                     * @return RenameRestore 是否已赋值
+                     */
+                    bool RenameRestoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -190,6 +209,12 @@ namespace TencentCloud
                      */
                     std::vector<MigrateDB> m_migrateDBSet;
                     bool m_migrateDBSetHasBeenSet;
+
+                    /**
+                     * 按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。SourceType=5的情况下有效。
+                     */
+                    std::vector<RenameRestoreDatabase> m_renameRestore;
+                    bool m_renameRestoreHasBeenSet;
 
                 };
             }

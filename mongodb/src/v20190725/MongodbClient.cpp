@@ -341,6 +341,49 @@ MongodbClient::DescribeClientConnectionsOutcomeCallable MongodbClient::DescribeC
     return task->get_future();
 }
 
+MongodbClient::DescribeCurrentOpOutcome MongodbClient::DescribeCurrentOp(const DescribeCurrentOpRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCurrentOp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCurrentOpResponse rsp = DescribeCurrentOpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCurrentOpOutcome(rsp);
+        else
+            return DescribeCurrentOpOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCurrentOpOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeCurrentOpAsync(const DescribeCurrentOpRequest& request, const DescribeCurrentOpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCurrentOp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeCurrentOpOutcomeCallable MongodbClient::DescribeCurrentOpCallable(const DescribeCurrentOpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCurrentOpOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCurrentOp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeDBBackupsOutcome MongodbClient::DescribeDBBackups(const DescribeDBBackupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBBackups");
@@ -807,6 +850,49 @@ MongodbClient::IsolateDBInstanceOutcomeCallable MongodbClient::IsolateDBInstance
         [this, request]()
         {
             return this->IsolateDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::KillOpsOutcome MongodbClient::KillOps(const KillOpsRequest &request)
+{
+    auto outcome = MakeRequest(request, "KillOps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        KillOpsResponse rsp = KillOpsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return KillOpsOutcome(rsp);
+        else
+            return KillOpsOutcome(o.GetError());
+    }
+    else
+    {
+        return KillOpsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::KillOpsAsync(const KillOpsRequest& request, const KillOpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->KillOps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::KillOpsOutcomeCallable MongodbClient::KillOpsCallable(const KillOpsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<KillOpsOutcome()>>(
+        [this, request]()
+        {
+            return this->KillOps(request);
         }
     );
 

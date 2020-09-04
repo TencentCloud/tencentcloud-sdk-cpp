@@ -34,7 +34,9 @@ BizLicenseOCRResponse::BizLicenseOCRResponse() :
     m_typeHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_composingFormHasBeenSet(false),
-    m_setDateHasBeenSet(false)
+    m_setDateHasBeenSet(false),
+    m_recognizeWarnCodeHasBeenSet(false),
+    m_recognizeWarnMsgHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,32 @@ CoreInternalOutcome BizLicenseOCRResponse::Deserialize(const string &payload)
         m_setDateHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecognizeWarnCode") && !rsp["RecognizeWarnCode"].IsNull())
+    {
+        if (!rsp["RecognizeWarnCode"].IsArray())
+            return CoreInternalOutcome(Error("response `RecognizeWarnCode` is not array type"));
+
+        const Value &tmpValue = rsp["RecognizeWarnCode"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_recognizeWarnCode.push_back((*itr).GetInt64());
+        }
+        m_recognizeWarnCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RecognizeWarnMsg") && !rsp["RecognizeWarnMsg"].IsNull())
+    {
+        if (!rsp["RecognizeWarnMsg"].IsArray())
+            return CoreInternalOutcome(Error("response `RecognizeWarnMsg` is not array type"));
+
+        const Value &tmpValue = rsp["RecognizeWarnMsg"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_recognizeWarnMsg.push_back((*itr).GetString());
+        }
+        m_recognizeWarnMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -275,6 +303,26 @@ string BizLicenseOCRResponse::GetSetDate() const
 bool BizLicenseOCRResponse::SetDateHasBeenSet() const
 {
     return m_setDateHasBeenSet;
+}
+
+vector<int64_t> BizLicenseOCRResponse::GetRecognizeWarnCode() const
+{
+    return m_recognizeWarnCode;
+}
+
+bool BizLicenseOCRResponse::RecognizeWarnCodeHasBeenSet() const
+{
+    return m_recognizeWarnCodeHasBeenSet;
+}
+
+vector<string> BizLicenseOCRResponse::GetRecognizeWarnMsg() const
+{
+    return m_recognizeWarnMsg;
+}
+
+bool BizLicenseOCRResponse::RecognizeWarnMsgHasBeenSet() const
+{
+    return m_recognizeWarnMsgHasBeenSet;
 }
 
 

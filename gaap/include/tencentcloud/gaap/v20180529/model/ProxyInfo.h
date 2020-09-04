@@ -586,6 +586,28 @@ UNKNOWN表示未知状态。
                      */
                     bool ModifyConfigTimeHasBeenSet() const;
 
+                    /**
+                     * 获取通道类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxyType 通道类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetProxyType() const;
+
+                    /**
+                     * 设置通道类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProxyType 通道类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProxyType(const uint64_t& _proxyType);
+
+                    /**
+                     * 判断参数 ProxyType 是否已赋值
+                     * @return ProxyType 是否已赋值
+                     */
+                    bool ProxyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -759,6 +781,13 @@ UNKNOWN表示未知状态。
                      */
                     uint64_t m_modifyConfigTime;
                     bool m_modifyConfigTimeHasBeenSet;
+
+                    /**
+                     * 通道类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_proxyType;
+                    bool m_proxyTypeHasBeenSet;
 
                 };
             }

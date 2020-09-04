@@ -1330,6 +1330,49 @@ RedisClient::DescribeProjectSecurityGroupsOutcomeCallable RedisClient::DescribeP
     return task->get_future();
 }
 
+RedisClient::DescribeProxySlowLogOutcome RedisClient::DescribeProxySlowLog(const DescribeProxySlowLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProxySlowLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProxySlowLogResponse rsp = DescribeProxySlowLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProxySlowLogOutcome(rsp);
+        else
+            return DescribeProxySlowLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProxySlowLogOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeProxySlowLogAsync(const DescribeProxySlowLogRequest& request, const DescribeProxySlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProxySlowLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeProxySlowLogOutcomeCallable RedisClient::DescribeProxySlowLogCallable(const DescribeProxySlowLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProxySlowLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProxySlowLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeSlowLogOutcome RedisClient::DescribeSlowLog(const DescribeSlowLogRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSlowLog");

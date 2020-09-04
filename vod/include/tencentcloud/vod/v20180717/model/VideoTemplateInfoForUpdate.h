@@ -81,17 +81,17 @@ namespace TencentCloud
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取视频帧率，取值范围：[0, 60]，单位：Hz。
+                     * 获取视频帧率，取值范围：[0, 100]，单位：Hz。
 当取值为 0，表示帧率和原始视频保持一致。
-                     * @return Fps 视频帧率，取值范围：[0, 60]，单位：Hz。
+                     * @return Fps 视频帧率，取值范围：[0, 100]，单位：Hz。
 当取值为 0，表示帧率和原始视频保持一致。
                      */
                     uint64_t GetFps() const;
 
                     /**
-                     * 设置视频帧率，取值范围：[0, 60]，单位：Hz。
+                     * 设置视频帧率，取值范围：[0, 100]，单位：Hz。
 当取值为 0，表示帧率和原始视频保持一致。
-                     * @param Fps 视频帧率，取值范围：[0, 60]，单位：Hz。
+                     * @param Fps 视频帧率，取值范围：[0, 100]，单位：Hz。
 当取值为 0，表示帧率和原始视频保持一致。
                      */
                     void SetFps(const uint64_t& _fps);
@@ -245,7 +245,7 @@ namespace TencentCloud
                     bool m_codecHasBeenSet;
 
                     /**
-                     * 视频帧率，取值范围：[0, 60]，单位：Hz。
+                     * 视频帧率，取值范围：[0, 100]，单位：Hz。
 当取值为 0，表示帧率和原始视频保持一致。
                      */
                     uint64_t m_fps;

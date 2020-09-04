@@ -29,7 +29,8 @@ CreateMigrationRequest::CreateMigrationRequest() :
     m_sourceTypeHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_targetHasBeenSet(false),
-    m_migrateDBSetHasBeenSet(false)
+    m_migrateDBSetHasBeenSet(false),
+    m_renameRestoreHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,21 @@ string CreateMigrationRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_migrateDBSet.begin(); itr != m_migrateDBSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_renameRestoreHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RenameRestore";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_renameRestore.begin(); itr != m_renameRestore.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -199,6 +215,22 @@ void CreateMigrationRequest::SetMigrateDBSet(const vector<MigrateDB>& _migrateDB
 bool CreateMigrationRequest::MigrateDBSetHasBeenSet() const
 {
     return m_migrateDBSetHasBeenSet;
+}
+
+vector<RenameRestoreDatabase> CreateMigrationRequest::GetRenameRestore() const
+{
+    return m_renameRestore;
+}
+
+void CreateMigrationRequest::SetRenameRestore(const vector<RenameRestoreDatabase>& _renameRestore)
+{
+    m_renameRestore = _renameRestore;
+    m_renameRestoreHasBeenSet = true;
+}
+
+bool CreateMigrationRequest::RenameRestoreHasBeenSet() const
+{
+    return m_renameRestoreHasBeenSet;
 }
 
 

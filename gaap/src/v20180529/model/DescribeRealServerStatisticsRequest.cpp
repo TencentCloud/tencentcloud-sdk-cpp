@@ -26,8 +26,11 @@ using namespace std;
 DescribeRealServerStatisticsRequest::DescribeRealServerStatisticsRequest() :
     m_realServerIdHasBeenSet(false),
     m_listenerIdHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
     m_withinTimeHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_granularityHasBeenSet(false)
 {
 }
 
@@ -54,6 +57,14 @@ string DescribeRealServerStatisticsRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_ruleIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_withinTimeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -62,12 +73,28 @@ string DescribeRealServerStatisticsRequest::ToJsonString() const
         d.AddMember(iKey, m_withinTime, allocator);
     }
 
-    if (m_ruleIdHasBeenSet)
+    if (m_startTimeHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "RuleId";
+        string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ruleId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_granularityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Granularity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_granularity, allocator);
     }
 
 
@@ -110,6 +137,22 @@ bool DescribeRealServerStatisticsRequest::ListenerIdHasBeenSet() const
     return m_listenerIdHasBeenSet;
 }
 
+string DescribeRealServerStatisticsRequest::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void DescribeRealServerStatisticsRequest::SetRuleId(const string& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool DescribeRealServerStatisticsRequest::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
+}
+
 uint64_t DescribeRealServerStatisticsRequest::GetWithinTime() const
 {
     return m_withinTime;
@@ -126,20 +169,52 @@ bool DescribeRealServerStatisticsRequest::WithinTimeHasBeenSet() const
     return m_withinTimeHasBeenSet;
 }
 
-string DescribeRealServerStatisticsRequest::GetRuleId() const
+string DescribeRealServerStatisticsRequest::GetStartTime() const
 {
-    return m_ruleId;
+    return m_startTime;
 }
 
-void DescribeRealServerStatisticsRequest::SetRuleId(const string& _ruleId)
+void DescribeRealServerStatisticsRequest::SetStartTime(const string& _startTime)
 {
-    m_ruleId = _ruleId;
-    m_ruleIdHasBeenSet = true;
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
 }
 
-bool DescribeRealServerStatisticsRequest::RuleIdHasBeenSet() const
+bool DescribeRealServerStatisticsRequest::StartTimeHasBeenSet() const
 {
-    return m_ruleIdHasBeenSet;
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeRealServerStatisticsRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeRealServerStatisticsRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeRealServerStatisticsRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+uint64_t DescribeRealServerStatisticsRequest::GetGranularity() const
+{
+    return m_granularity;
+}
+
+void DescribeRealServerStatisticsRequest::SetGranularity(const uint64_t& _granularity)
+{
+    m_granularity = _granularity;
+    m_granularityHasBeenSet = true;
+}
+
+bool DescribeRealServerStatisticsRequest::GranularityHasBeenSet() const
+{
+    return m_granularityHasBeenSet;
 }
 
 

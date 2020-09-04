@@ -46,7 +46,8 @@ ProxyInfo::ProxyInfo() :
     m_supportSecurityHasBeenSet(false),
     m_billingTypeHasBeenSet(false),
     m_relatedGlobalDomainsHasBeenSet(false),
-    m_modifyConfigTimeHasBeenSet(false)
+    m_modifyConfigTimeHasBeenSet(false),
+    m_proxyTypeHasBeenSet(false)
 {
 }
 
@@ -335,6 +336,16 @@ CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
         m_modifyConfigTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyType") && !value["ProxyType"].IsNull())
+    {
+        if (!value["ProxyType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ProxyInfo.ProxyType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyType = value["ProxyType"].GetUint64();
+        m_proxyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -559,6 +570,14 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "ModifyConfigTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modifyConfigTime, allocator);
+    }
+
+    if (m_proxyTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProxyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proxyType, allocator);
     }
 
 }
@@ -962,5 +981,21 @@ void ProxyInfo::SetModifyConfigTime(const uint64_t& _modifyConfigTime)
 bool ProxyInfo::ModifyConfigTimeHasBeenSet() const
 {
     return m_modifyConfigTimeHasBeenSet;
+}
+
+uint64_t ProxyInfo::GetProxyType() const
+{
+    return m_proxyType;
+}
+
+void ProxyInfo::SetProxyType(const uint64_t& _proxyType)
+{
+    m_proxyType = _proxyType;
+    m_proxyTypeHasBeenSet = true;
+}
+
+bool ProxyInfo::ProxyTypeHasBeenSet() const
+{
+    return m_proxyTypeHasBeenSet;
 }
 

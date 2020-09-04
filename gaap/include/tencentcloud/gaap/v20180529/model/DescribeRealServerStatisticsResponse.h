@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/gaap/v20180529/model/StatisticsDataInfo.h>
+#include <tencentcloud/gaap/v20180529/model/MetricStatisticsInfo.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源站状态统计数据
-                     * @return StatisticsData 源站状态统计数据
+                     * 获取指定监听器的源站状态统计数据
+                     * @return StatisticsData 指定监听器的源站状态统计数据
                      */
                     std::vector<StatisticsDataInfo> GetStatisticsData() const;
 
@@ -55,13 +56,31 @@ namespace TencentCloud
                      */
                     bool StatisticsDataHasBeenSet() const;
 
+                    /**
+                     * 获取多个源站状态统计数据
+                     * @return RsStatisticsData 多个源站状态统计数据
+                     */
+                    std::vector<MetricStatisticsInfo> GetRsStatisticsData() const;
+
+                    /**
+                     * 判断参数 RsStatisticsData 是否已赋值
+                     * @return RsStatisticsData 是否已赋值
+                     */
+                    bool RsStatisticsDataHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 源站状态统计数据
+                     * 指定监听器的源站状态统计数据
                      */
                     std::vector<StatisticsDataInfo> m_statisticsData;
                     bool m_statisticsDataHasBeenSet;
+
+                    /**
+                     * 多个源站状态统计数据
+                     */
+                    std::vector<MetricStatisticsInfo> m_rsStatisticsData;
+                    bool m_rsStatisticsDataHasBeenSet;
 
                 };
             }
