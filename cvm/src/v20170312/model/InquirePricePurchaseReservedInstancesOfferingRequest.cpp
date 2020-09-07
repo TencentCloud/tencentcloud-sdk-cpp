@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingRequest.h>
+#include <tencentcloud/cvm/v20170312/model/InquirePricePurchaseReservedInstancesOfferingRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,7 +23,7 @@ using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace rapidjson;
 using namespace std;
 
-PurchaseReservedInstancesOfferingRequest::PurchaseReservedInstancesOfferingRequest() :
+InquirePricePurchaseReservedInstancesOfferingRequest::InquirePricePurchaseReservedInstancesOfferingRequest() :
     m_instanceCountHasBeenSet(false),
     m_reservedInstancesOfferingIdHasBeenSet(false),
     m_dryRunHasBeenSet(false),
@@ -32,7 +32,7 @@ PurchaseReservedInstancesOfferingRequest::PurchaseReservedInstancesOfferingReque
 {
 }
 
-string PurchaseReservedInstancesOfferingRequest::ToJsonString() const
+string InquirePricePurchaseReservedInstancesOfferingRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
@@ -87,82 +87,82 @@ string PurchaseReservedInstancesOfferingRequest::ToJsonString() const
 }
 
 
-int64_t PurchaseReservedInstancesOfferingRequest::GetInstanceCount() const
+uint64_t InquirePricePurchaseReservedInstancesOfferingRequest::GetInstanceCount() const
 {
     return m_instanceCount;
 }
 
-void PurchaseReservedInstancesOfferingRequest::SetInstanceCount(const int64_t& _instanceCount)
+void InquirePricePurchaseReservedInstancesOfferingRequest::SetInstanceCount(const uint64_t& _instanceCount)
 {
     m_instanceCount = _instanceCount;
     m_instanceCountHasBeenSet = true;
 }
 
-bool PurchaseReservedInstancesOfferingRequest::InstanceCountHasBeenSet() const
+bool InquirePricePurchaseReservedInstancesOfferingRequest::InstanceCountHasBeenSet() const
 {
     return m_instanceCountHasBeenSet;
 }
 
-string PurchaseReservedInstancesOfferingRequest::GetReservedInstancesOfferingId() const
+string InquirePricePurchaseReservedInstancesOfferingRequest::GetReservedInstancesOfferingId() const
 {
     return m_reservedInstancesOfferingId;
 }
 
-void PurchaseReservedInstancesOfferingRequest::SetReservedInstancesOfferingId(const string& _reservedInstancesOfferingId)
+void InquirePricePurchaseReservedInstancesOfferingRequest::SetReservedInstancesOfferingId(const string& _reservedInstancesOfferingId)
 {
     m_reservedInstancesOfferingId = _reservedInstancesOfferingId;
     m_reservedInstancesOfferingIdHasBeenSet = true;
 }
 
-bool PurchaseReservedInstancesOfferingRequest::ReservedInstancesOfferingIdHasBeenSet() const
+bool InquirePricePurchaseReservedInstancesOfferingRequest::ReservedInstancesOfferingIdHasBeenSet() const
 {
     return m_reservedInstancesOfferingIdHasBeenSet;
 }
 
-bool PurchaseReservedInstancesOfferingRequest::GetDryRun() const
+bool InquirePricePurchaseReservedInstancesOfferingRequest::GetDryRun() const
 {
     return m_dryRun;
 }
 
-void PurchaseReservedInstancesOfferingRequest::SetDryRun(const bool& _dryRun)
+void InquirePricePurchaseReservedInstancesOfferingRequest::SetDryRun(const bool& _dryRun)
 {
     m_dryRun = _dryRun;
     m_dryRunHasBeenSet = true;
 }
 
-bool PurchaseReservedInstancesOfferingRequest::DryRunHasBeenSet() const
+bool InquirePricePurchaseReservedInstancesOfferingRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
 }
 
-string PurchaseReservedInstancesOfferingRequest::GetClientToken() const
+string InquirePricePurchaseReservedInstancesOfferingRequest::GetClientToken() const
 {
     return m_clientToken;
 }
 
-void PurchaseReservedInstancesOfferingRequest::SetClientToken(const string& _clientToken)
+void InquirePricePurchaseReservedInstancesOfferingRequest::SetClientToken(const string& _clientToken)
 {
     m_clientToken = _clientToken;
     m_clientTokenHasBeenSet = true;
 }
 
-bool PurchaseReservedInstancesOfferingRequest::ClientTokenHasBeenSet() const
+bool InquirePricePurchaseReservedInstancesOfferingRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
 }
 
-string PurchaseReservedInstancesOfferingRequest::GetReservedInstanceName() const
+string InquirePricePurchaseReservedInstancesOfferingRequest::GetReservedInstanceName() const
 {
     return m_reservedInstanceName;
 }
 
-void PurchaseReservedInstancesOfferingRequest::SetReservedInstanceName(const string& _reservedInstanceName)
+void InquirePricePurchaseReservedInstancesOfferingRequest::SetReservedInstanceName(const string& _reservedInstanceName)
 {
     m_reservedInstanceName = _reservedInstanceName;
     m_reservedInstanceNameHasBeenSet = true;
 }
 
-bool PurchaseReservedInstancesOfferingRequest::ReservedInstanceNameHasBeenSet() const
+bool InquirePricePurchaseReservedInstancesOfferingRequest::ReservedInstanceNameHasBeenSet() const
 {
     return m_reservedInstanceNameHasBeenSet;
 }

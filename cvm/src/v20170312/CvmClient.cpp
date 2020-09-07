@@ -1201,6 +1201,49 @@ CvmClient::DescribeReservedInstancesOutcomeCallable CvmClient::DescribeReservedI
     return task->get_future();
 }
 
+CvmClient::DescribeReservedInstancesConfigInfosOutcome CvmClient::DescribeReservedInstancesConfigInfos(const DescribeReservedInstancesConfigInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReservedInstancesConfigInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReservedInstancesConfigInfosResponse rsp = DescribeReservedInstancesConfigInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReservedInstancesConfigInfosOutcome(rsp);
+        else
+            return DescribeReservedInstancesConfigInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReservedInstancesConfigInfosOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeReservedInstancesConfigInfosAsync(const DescribeReservedInstancesConfigInfosRequest& request, const DescribeReservedInstancesConfigInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReservedInstancesConfigInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeReservedInstancesConfigInfosOutcomeCallable CvmClient::DescribeReservedInstancesConfigInfosCallable(const DescribeReservedInstancesConfigInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReservedInstancesConfigInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReservedInstancesConfigInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DescribeReservedInstancesOfferingsOutcome CvmClient::DescribeReservedInstancesOfferings(const DescribeReservedInstancesOfferingsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeReservedInstancesOfferings");
@@ -1538,6 +1581,49 @@ CvmClient::ImportKeyPairOutcomeCallable CvmClient::ImportKeyPairCallable(const I
         [this, request]()
         {
             return this->ImportKeyPair(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::InquirePricePurchaseReservedInstancesOfferingOutcome CvmClient::InquirePricePurchaseReservedInstancesOffering(const InquirePricePurchaseReservedInstancesOfferingRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePricePurchaseReservedInstancesOffering");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePricePurchaseReservedInstancesOfferingResponse rsp = InquirePricePurchaseReservedInstancesOfferingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePricePurchaseReservedInstancesOfferingOutcome(rsp);
+        else
+            return InquirePricePurchaseReservedInstancesOfferingOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePricePurchaseReservedInstancesOfferingOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::InquirePricePurchaseReservedInstancesOfferingAsync(const InquirePricePurchaseReservedInstancesOfferingRequest& request, const InquirePricePurchaseReservedInstancesOfferingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePricePurchaseReservedInstancesOffering(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::InquirePricePurchaseReservedInstancesOfferingOutcomeCallable CvmClient::InquirePricePurchaseReservedInstancesOfferingCallable(const InquirePricePurchaseReservedInstancesOfferingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePricePurchaseReservedInstancesOfferingOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePricePurchaseReservedInstancesOffering(request);
         }
     );
 

@@ -65,18 +65,18 @@ namespace TencentCloud
                     bool ReservedInstancesIdHasBeenSet() const;
 
                     /**
-                     * 获取预留实例计费的类型。形如：S3.MEDIUM4。
-返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费类型列表</a>
-                     * @return InstanceType 预留实例计费的类型。形如：S3.MEDIUM4。
-返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费类型列表</a>
+                     * 获取预留实例计费的规格。形如：S3.MEDIUM4。
+返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费规格列表</a>
+                     * @return InstanceType 预留实例计费的规格。形如：S3.MEDIUM4。
+返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费规格列表</a>
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置预留实例计费的类型。形如：S3.MEDIUM4。
-返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费类型列表</a>
-                     * @param InstanceType 预留实例计费的类型。形如：S3.MEDIUM4。
-返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费类型列表</a>
+                     * 设置预留实例计费的规格。形如：S3.MEDIUM4。
+返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费规格列表</a>
+                     * @param InstanceType 预留实例计费的规格。形如：S3.MEDIUM4。
+返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费规格列表</a>
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
@@ -272,6 +272,28 @@ namespace TencentCloud
                      */
                     bool OfferingTypeHasBeenSet() const;
 
+                    /**
+                     * 获取预留实例计费的类型。形如：S3。
+返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费类型列表</a>
+                     * @return InstanceFamily 预留实例计费的类型。形如：S3。
+返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费类型列表</a>
+                     */
+                    std::string GetInstanceFamily() const;
+
+                    /**
+                     * 设置预留实例计费的类型。形如：S3。
+返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费类型列表</a>
+                     * @param InstanceFamily 预留实例计费的类型。形如：S3。
+返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费类型列表</a>
+                     */
+                    void SetInstanceFamily(const std::string& _instanceFamily);
+
+                    /**
+                     * 判断参数 InstanceFamily 是否已赋值
+                     * @return InstanceFamily 是否已赋值
+                     */
+                    bool InstanceFamilyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -281,8 +303,8 @@ namespace TencentCloud
                     bool m_reservedInstancesIdHasBeenSet;
 
                     /**
-                     * 预留实例计费的类型。形如：S3.MEDIUM4。
-返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费类型列表</a>
+                     * 预留实例计费的规格。形如：S3.MEDIUM4。
+返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费规格列表</a>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -346,6 +368,13 @@ namespace TencentCloud
                      */
                     std::string m_offeringType;
                     bool m_offeringTypeHasBeenSet;
+
+                    /**
+                     * 预留实例计费的类型。形如：S3。
+返回项：<a href="https://cloud.tencent.com/document/product/213/11518">预留实例计费类型列表</a>
+                     */
+                    std::string m_instanceFamily;
+                    bool m_instanceFamilyHasBeenSet;
 
                 };
             }

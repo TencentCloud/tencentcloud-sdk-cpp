@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CVM_V20170312_MODEL_PURCHASERESERVEDINSTANCESOFFERINGREQUEST_H_
-#define TENCENTCLOUD_CVM_V20170312_MODEL_PURCHASERESERVEDINSTANCESOFFERINGREQUEST_H_
+#ifndef TENCENTCLOUD_CVM_V20170312_MODEL_INQUIREPRICEPURCHASERESERVEDINSTANCESOFFERINGREQUEST_H_
+#define TENCENTCLOUD_CVM_V20170312_MODEL_INQUIREPRICEPURCHASERESERVEDINSTANCESOFFERINGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,13 +32,13 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * PurchaseReservedInstancesOffering请求参数结构体
+                * InquirePricePurchaseReservedInstancesOffering请求参数结构体
                 */
-                class PurchaseReservedInstancesOfferingRequest : public AbstractModel
+                class InquirePricePurchaseReservedInstancesOfferingRequest : public AbstractModel
                 {
                 public:
-                    PurchaseReservedInstancesOfferingRequest();
-                    ~PurchaseReservedInstancesOfferingRequest() = default;
+                    InquirePricePurchaseReservedInstancesOfferingRequest();
+                    ~InquirePricePurchaseReservedInstancesOfferingRequest() = default;
                     std::string ToJsonString() const;
 
 
@@ -46,13 +46,13 @@ namespace TencentCloud
                      * 获取购买预留实例计费数量
                      * @return InstanceCount 购买预留实例计费数量
                      */
-                    int64_t GetInstanceCount() const;
+                    uint64_t GetInstanceCount() const;
 
                     /**
                      * 设置购买预留实例计费数量
                      * @param InstanceCount 购买预留实例计费数量
                      */
-                    void SetInstanceCount(const int64_t& _instanceCount);
+                    void SetInstanceCount(const uint64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
@@ -137,7 +137,7 @@ namespace TencentCloud
                     /**
                      * 购买预留实例计费数量
                      */
-                    int64_t m_instanceCount;
+                    uint64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
@@ -170,4 +170,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CVM_V20170312_MODEL_PURCHASERESERVEDINSTANCESOFFERINGREQUEST_H_
+#endif // !TENCENTCLOUD_CVM_V20170312_MODEL_INQUIREPRICEPURCHASERESERVEDINSTANCESOFFERINGREQUEST_H_

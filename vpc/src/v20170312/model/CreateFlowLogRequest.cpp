@@ -30,7 +30,8 @@ CreateFlowLogRequest::CreateFlowLogRequest() :
     m_resourceIdHasBeenSet(false),
     m_trafficTypeHasBeenSet(false),
     m_cloudLogIdHasBeenSet(false),
-    m_flowLogDescriptionHasBeenSet(false)
+    m_flowLogDescriptionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,21 @@ string CreateFlowLogRequest::ToJsonString() const
         string key = "FlowLogDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_flowLogDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -215,6 +231,22 @@ void CreateFlowLogRequest::SetFlowLogDescription(const string& _flowLogDescripti
 bool CreateFlowLogRequest::FlowLogDescriptionHasBeenSet() const
 {
     return m_flowLogDescriptionHasBeenSet;
+}
+
+vector<Tag> CreateFlowLogRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateFlowLogRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateFlowLogRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

@@ -32,7 +32,8 @@ ReservedInstances::ReservedInstances() :
     m_productDescriptionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_currencyCodeHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false)
+    m_offeringTypeHasBeenSet(false),
+    m_instanceFamilyHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome ReservedInstances::Deserialize(const Value &value)
         m_offeringTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceFamily") && !value["InstanceFamily"].IsNull())
+    {
+        if (!value["InstanceFamily"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ReservedInstances.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceFamily = string(value["InstanceFamily"].GetString());
+        m_instanceFamilyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +255,14 @@ void ReservedInstances::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "OfferingType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_offeringType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceFamilyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceFamily";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceFamily.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -423,5 +442,21 @@ void ReservedInstances::SetOfferingType(const string& _offeringType)
 bool ReservedInstances::OfferingTypeHasBeenSet() const
 {
     return m_offeringTypeHasBeenSet;
+}
+
+string ReservedInstances::GetInstanceFamily() const
+{
+    return m_instanceFamily;
+}
+
+void ReservedInstances::SetInstanceFamily(const string& _instanceFamily)
+{
+    m_instanceFamily = _instanceFamily;
+    m_instanceFamilyHasBeenSet = true;
+}
+
+bool ReservedInstances::InstanceFamilyHasBeenSet() const
+{
+    return m_instanceFamilyHasBeenSet;
 }
 
