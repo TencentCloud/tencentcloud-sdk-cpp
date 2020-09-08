@@ -900,6 +900,49 @@ TkeClient::DescribeClusterInstancesOutcomeCallable TkeClient::DescribeClusterIns
     return task->get_future();
 }
 
+TkeClient::DescribeClusterKubeconfigOutcome TkeClient::DescribeClusterKubeconfig(const DescribeClusterKubeconfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterKubeconfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterKubeconfigResponse rsp = DescribeClusterKubeconfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterKubeconfigOutcome(rsp);
+        else
+            return DescribeClusterKubeconfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterKubeconfigOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterKubeconfigAsync(const DescribeClusterKubeconfigRequest& request, const DescribeClusterKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterKubeconfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterKubeconfigOutcomeCallable TkeClient::DescribeClusterKubeconfigCallable(const DescribeClusterKubeconfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterKubeconfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterKubeconfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClusterRouteTablesOutcome TkeClient::DescribeClusterRouteTables(const DescribeClusterRouteTablesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterRouteTables");

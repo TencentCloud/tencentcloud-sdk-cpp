@@ -23,6 +23,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterSecurityResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterSecurityRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusResponse.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPRequest.h
@@ -59,6 +60,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterCIDRSettings.h
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointVipRequest.h
   include/tencentcloud/tke/v20180525/model/ExistedInstance.h
@@ -123,6 +125,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterSecurityResponse.cpp
   src/v20180525/model/DescribeClusterSecurityRequest.cpp
   src/v20180525/model/DeleteClusterInstancesResponse.cpp
+  src/v20180525/model/DescribeClusterKubeconfigResponse.cpp
   src/v20180525/model/CreateClusterRouteRequest.cpp
   src/v20180525/model/DescribeClusterEndpointVipStatusResponse.cpp
   src/v20180525/model/ModifyClusterEndpointSPRequest.cpp
@@ -159,6 +162,7 @@ set(tke_src
   src/v20180525/model/ModifyClusterAsGroupAttributeResponse.cpp
   src/v20180525/model/CreateClusterInstancesRequest.cpp
   src/v20180525/model/DescribeClusterRouteTablesResponse.cpp
+  src/v20180525/model/DescribeClusterKubeconfigRequest.cpp
   src/v20180525/model/ClusterCIDRSettings.cpp
   src/v20180525/model/CreateClusterEndpointVipRequest.cpp
   src/v20180525/model/ExistedInstance.cpp

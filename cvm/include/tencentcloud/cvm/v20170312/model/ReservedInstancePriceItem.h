@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 基于付费类型的预留实例相关价格信息
+                * 基于付费类型的预留实例相关价格信息。预留实例当前只针对国际站白名单用户开放。
                 */
                 class ReservedInstancePriceItem : public AbstractModel
                 {

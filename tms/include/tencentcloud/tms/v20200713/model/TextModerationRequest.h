@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户相关信息
-                     * @return User 用户相关信息
+                     * 获取账号相关信息字段，填入后可识别违规风险账号。
+                     * @return User 账号相关信息字段，填入后可识别违规风险账号。
                      */
                     User GetUser() const;
 
                     /**
-                     * 设置用户相关信息
-                     * @param User 用户相关信息
+                     * 设置账号相关信息字段，填入后可识别违规风险账号。
+                     * @param User 账号相关信息字段，填入后可识别违规风险账号。
                      */
                     void SetUser(const User& _user);
 
@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取设备相关信息
-                     * @return Device 设备相关信息
+                     * 获取设备相关信息字段，填入后可识别违规风险设备。
+                     * @return Device 设备相关信息字段，填入后可识别违规风险设备。
                      */
                     Device GetDevice() const;
 
                     /**
-                     * 设置设备相关信息
-                     * @param Device 设备相关信息
+                     * 设置设备相关信息字段，填入后可识别违规风险设备。
+                     * @param Device 设备相关信息字段，填入后可识别违规风险设备。
                      */
                     void SetDevice(const Device& _device);
 
@@ -155,13 +155,13 @@ namespace TencentCloud
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 用户相关信息
+                     * 账号相关信息字段，填入后可识别违规风险账号。
                      */
                     User m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 设备相关信息
+                     * 设备相关信息字段，填入后可识别违规风险设备。
                      */
                     Device m_device;
                     bool m_deviceHasBeenSet;

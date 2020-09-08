@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且不能超过从当前时刻开始24小时之内的时间。
-                     * @return EndTime 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且不能超过从当前时刻开始24小时之内的时间。
+                     * 获取录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且EndTime - StartTime不能超过24小时。
+                     * @return EndTime 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且EndTime - StartTime不能超过24小时。
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且不能超过从当前时刻开始24小时之内的时间。
-                     * @param EndTime 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且不能超过从当前时刻开始24小时之内的时间。
+                     * 设置录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且EndTime - StartTime不能超过24小时。
+                     * @param EndTime 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且EndTime - StartTime不能超过24小时。
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始24小时之内的时间。
-                     * @return StartTime 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始24小时之内的时间。
+                     * 获取录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始6天之内的时间。
+                     * @return StartTime 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始6天之内的时间。
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始24小时之内的时间。
-                     * @param StartTime 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始24小时之内的时间。
+                     * 设置录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始6天之内的时间。
+                     * @param StartTime 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始6天之内的时间。
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -177,14 +177,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取扩展字段，默认空。
-                     * @return Extension 扩展字段，默认空。
+                     * 获取扩展字段，暂无定义。默认为空。
+                     * @return Extension 扩展字段，暂无定义。默认为空。
                      */
                     std::string GetExtension() const;
 
                     /**
-                     * 设置扩展字段，默认空。
-                     * @param Extension 扩展字段，默认空。
+                     * 设置扩展字段，暂无定义。默认为空。
+                     * @param Extension 扩展字段，暂无定义。默认为空。
                      */
                     void SetExtension(const std::string& _extension);
 
@@ -215,13 +215,13 @@ namespace TencentCloud
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且不能超过从当前时刻开始24小时之内的时间。
+                     * 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且EndTime - StartTime不能超过24小时。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始24小时之内的时间。
+                     * 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始6天之内的时间。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -241,7 +241,7 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 扩展字段，默认空。
+                     * 扩展字段，暂无定义。默认为空。
                      */
                     std::string m_extension;
                     bool m_extensionHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最终使用的BizType
-                     * @return BizType 最终使用的BizType
+                     * 获取您在入参时所填入的Biztype参数。 -- 该字段暂未开放。
+                     * @return BizType 您在入参时所填入的Biztype参数。 -- 该字段暂未开放。
                      */
                     std::string GetBizType() const;
 
@@ -57,8 +57,10 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否恶意 0：正常 1：可疑
-                     * @return EvilFlag 是否恶意 0：正常 1：可疑
+                     * 获取数据是否属于恶意类型。
+ 0：正常 1：可疑
+                     * @return EvilFlag 数据是否属于恶意类型。
+ 0：正常 1：可疑
                      */
                     int64_t GetEvilFlag() const;
 
@@ -69,8 +71,10 @@ namespace TencentCloud
                     bool EvilFlagHasBeenSet() const;
 
                     /**
-                     * 获取恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
-                     * @return Label 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     * 获取机器识别后判断违规所属类型。
+Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     * @return Label 机器识别后判断违规所属类型。
+Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
                      */
                     std::string GetLabel() const;
 
@@ -81,8 +85,10 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取建议值,Block：打击,Review：待复审,Normal：正常
-                     * @return Suggestion 建议值,Block：打击,Review：待复审,Normal：正常
+                     * 获取建议您拿到判断结果后的执行操作。
+Block：建议打击，Review：建议复审，Normal：建议通过。
+                     * @return Suggestion 建议您拿到判断结果后的执行操作。
+Block：建议打击，Review：建议复审，Normal：建议通过。
                      */
                     std::string GetSuggestion() const;
 
@@ -93,9 +99,11 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取命中的关键词
+                     * 获取文本命中的关键词信息，用于提示您文本违规的具体原因，可能会返回多个命中的关键词。（如：加我微信）
+如返回值为空，Score不为空，即识别结果（Label）是来自于语义模型判断的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Keywords 命中的关键词
+                     * @return Keywords 文本命中的关键词信息，用于提示您文本违规的具体原因，可能会返回多个命中的关键词。（如：加我微信）
+如返回值为空，Score不为空，即识别结果（Label）是来自于语义模型判断的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetKeywords() const;
@@ -107,8 +115,10 @@ namespace TencentCloud
                     bool KeywordsHasBeenSet() const;
 
                     /**
-                     * 获取命中的模型分值
-                     * @return Score 命中的模型分值
+                     * 获取机器判断当前分类的置信度，取值范围：0.00~100.00。分数越高，表示越有可能属于当前分类。
+（如：色情 99.99，则该样本属于色情的置信度非常高。）
+                     * @return Score 机器判断当前分类的置信度，取值范围：0.00~100.00。分数越高，表示越有可能属于当前分类。
+（如：色情 99.99，则该样本属于色情的置信度非常高。）
                      */
                     int64_t GetScore() const;
 
@@ -119,9 +129,9 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取返回的详细结果
+                     * 获取接口识别样本后返回的详细结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DetailResults 返回的详细结果
+                     * @return DetailResults 接口识别样本后返回的详细结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DetailResults> GetDetailResults() const;
@@ -133,9 +143,9 @@ namespace TencentCloud
                     bool DetailResultsHasBeenSet() const;
 
                     /**
-                     * 获取账号风险检测结果
+                     * 获取接口识别样本中存在违规账号风险的检测结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RiskDetails 账号风险检测结果
+                     * @return RiskDetails 接口识别样本中存在违规账号风险的检测结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RiskDetails> GetRiskDetails() const;
@@ -147,9 +157,9 @@ namespace TencentCloud
                     bool RiskDetailsHasBeenSet() const;
 
                     /**
-                     * 获取预留字段，不同客户返回结果不同
+                     * 获取扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Extra 预留字段，不同客户返回结果不同
+                     * @return Extra 扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetExtra() const;
@@ -163,58 +173,63 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 最终使用的BizType
+                     * 您在入参时所填入的Biztype参数。 -- 该字段暂未开放。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 是否恶意 0：正常 1：可疑
+                     * 数据是否属于恶意类型。
+ 0：正常 1：可疑
                      */
                     int64_t m_evilFlag;
                     bool m_evilFlagHasBeenSet;
 
                     /**
-                     * 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     * 机器识别后判断违规所属类型。
+Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 建议值,Block：打击,Review：待复审,Normal：正常
+                     * 建议您拿到判断结果后的执行操作。
+Block：建议打击，Review：建议复审，Normal：建议通过。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 命中的关键词
+                     * 文本命中的关键词信息，用于提示您文本违规的具体原因，可能会返回多个命中的关键词。（如：加我微信）
+如返回值为空，Score不为空，即识别结果（Label）是来自于语义模型判断的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;
 
                     /**
-                     * 命中的模型分值
+                     * 机器判断当前分类的置信度，取值范围：0.00~100.00。分数越高，表示越有可能属于当前分类。
+（如：色情 99.99，则该样本属于色情的置信度非常高。）
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 返回的详细结果
+                     * 接口识别样本后返回的详细结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DetailResults> m_detailResults;
                     bool m_detailResultsHasBeenSet;
 
                     /**
-                     * 账号风险检测结果
+                     * 接口识别样本中存在违规账号风险的检测结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RiskDetails> m_riskDetails;
                     bool m_riskDetailsHasBeenSet;
 
                     /**
-                     * 预留字段，不同客户返回结果不同
+                     * 扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extra;

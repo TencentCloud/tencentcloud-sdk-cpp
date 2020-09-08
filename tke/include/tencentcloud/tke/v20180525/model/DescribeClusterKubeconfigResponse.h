@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LIVE_V20180801_MODEL_CREATERECORDTASKRESPONSE_H_
-#define TENCENTCLOUD_LIVE_V20180801_MODEL_CREATERECORDTASKRESPONSE_H_
+#ifndef TENCENTCLOUD_TKE_V20180525_MODEL_DESCRIBECLUSTERKUBECONFIGRESPONSE_H_
+#define TENCENTCLOUD_TKE_V20180525_MODEL_DESCRIBECLUSTERKUBECONFIGRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,42 +25,42 @@
 
 namespace TencentCloud
 {
-    namespace Live
+    namespace Tke
     {
-        namespace V20180801
+        namespace V20180525
         {
             namespace Model
             {
                 /**
-                * CreateRecordTask返回参数结构体
+                * DescribeClusterKubeconfig返回参数结构体
                 */
-                class CreateRecordTaskResponse : public AbstractModel
+                class DescribeClusterKubeconfigResponse : public AbstractModel
                 {
                 public:
-                    CreateRecordTaskResponse();
-                    ~CreateRecordTaskResponse() = default;
+                    DescribeClusterKubeconfigResponse();
+                    ~DescribeClusterKubeconfigResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。
-                     * @return TaskId 任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。
+                     * 获取子账户kubeconfig文件，可用于直接访问集群kube-apiserver
+                     * @return Kubeconfig 子账户kubeconfig文件，可用于直接访问集群kube-apiserver
                      */
-                    std::string GetTaskId() const;
+                    std::string GetKubeconfig() const;
 
                     /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
+                     * 判断参数 Kubeconfig 是否已赋值
+                     * @return Kubeconfig 是否已赋值
                      */
-                    bool TaskIdHasBeenSet() const;
+                    bool KubeconfigHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。
+                     * 子账户kubeconfig文件，可用于直接访问集群kube-apiserver
                      */
-                    std::string m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    std::string m_kubeconfig;
+                    bool m_kubeconfigHasBeenSet;
 
                 };
             }
@@ -68,4 +68,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LIVE_V20180801_MODEL_CREATERECORDTASKRESPONSE_H_
+#endif // !TENCENTCLOUD_TKE_V20180525_MODEL_DESCRIBECLUSTERKUBECONFIGRESPONSE_H_

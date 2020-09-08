@@ -63,6 +63,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRoutesRequest.h>
@@ -159,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClusterInstancesResponse> DescribeClusterInstancesOutcome;
                 typedef std::future<DescribeClusterInstancesOutcome> DescribeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterInstancesRequest&, DescribeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterKubeconfigResponse> DescribeClusterKubeconfigOutcome;
+                typedef std::future<DescribeClusterKubeconfigOutcome> DescribeClusterKubeconfigOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterKubeconfigRequest&, DescribeClusterKubeconfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterKubeconfigAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClusterRouteTablesResponse> DescribeClusterRouteTablesOutcome;
                 typedef std::future<DescribeClusterRouteTablesOutcome> DescribeClusterRouteTablesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterRouteTablesRequest&, DescribeClusterRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterRouteTablesAsyncHandler;
@@ -374,6 +379,15 @@ namespace TencentCloud
                 DescribeClusterInstancesOutcome DescribeClusterInstances(const Model::DescribeClusterInstancesRequest &request);
                 void DescribeClusterInstancesAsync(const Model::DescribeClusterInstancesRequest& request, const DescribeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterInstancesOutcomeCallable DescribeClusterInstancesCallable(const Model::DescribeClusterInstancesRequest& request);
+
+                /**
+                 *获取集群的kubeconfig文件，不同子账户获取自己的kubeconfig文件，该文件中有每个子账户自己的kube-apiserver的客户端证书，默认首次调此接口时候创建客户端证书，时效20年，未授予任何权限，如果是集群所有者或者主账户，则默认是cluster-admin权限。
+                 * @param req DescribeClusterKubeconfigRequest
+                 * @return DescribeClusterKubeconfigOutcome
+                 */
+                DescribeClusterKubeconfigOutcome DescribeClusterKubeconfig(const Model::DescribeClusterKubeconfigRequest &request);
+                void DescribeClusterKubeconfigAsync(const Model::DescribeClusterKubeconfigRequest& request, const DescribeClusterKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterKubeconfigOutcomeCallable DescribeClusterKubeconfigCallable(const Model::DescribeClusterKubeconfigRequest& request);
 
                 /**
                  *查询集群路由表
