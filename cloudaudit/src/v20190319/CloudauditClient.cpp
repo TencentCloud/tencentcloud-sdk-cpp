@@ -384,6 +384,49 @@ CloudauditClient::ListCosEnableRegionOutcomeCallable CloudauditClient::ListCosEn
     return task->get_future();
 }
 
+CloudauditClient::ListKeyAliasByRegionOutcome CloudauditClient::ListKeyAliasByRegion(const ListKeyAliasByRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListKeyAliasByRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListKeyAliasByRegionResponse rsp = ListKeyAliasByRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListKeyAliasByRegionOutcome(rsp);
+        else
+            return ListKeyAliasByRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return ListKeyAliasByRegionOutcome(outcome.GetError());
+    }
+}
+
+void CloudauditClient::ListKeyAliasByRegionAsync(const ListKeyAliasByRegionRequest& request, const ListKeyAliasByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListKeyAliasByRegion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudauditClient::ListKeyAliasByRegionOutcomeCallable CloudauditClient::ListKeyAliasByRegionCallable(const ListKeyAliasByRegionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListKeyAliasByRegionOutcome()>>(
+        [this, request]()
+        {
+            return this->ListKeyAliasByRegion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CloudauditClient::LookUpEventsOutcome CloudauditClient::LookUpEvents(const LookUpEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "LookUpEvents");

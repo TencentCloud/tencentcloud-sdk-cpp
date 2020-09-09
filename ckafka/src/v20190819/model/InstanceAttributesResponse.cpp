@@ -48,7 +48,8 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_versionHasBeenSet(false),
     m_maxGroupNumHasBeenSet(false),
     m_cvmHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_featuresHasBeenSet(false)
 {
 }
 
@@ -357,6 +358,19 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const Value &value)
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Features") && !value["Features"].IsNull())
+    {
+        if (!value["Features"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceAttributesResponse.Features` is not array type"));
+
+        const Value &tmpValue = value["Features"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_features.push_back((*itr).GetString());
+        }
+        m_featuresHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -598,6 +612,19 @@ void InstanceAttributesResponse::ToJsonObject(Value &value, Document::AllocatorT
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_featuresHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Features";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_features.begin(); itr != m_features.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1033,5 +1060,21 @@ void InstanceAttributesResponse::SetInstanceType(const string& _instanceType)
 bool InstanceAttributesResponse::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+vector<string> InstanceAttributesResponse::GetFeatures() const
+{
+    return m_features;
+}
+
+void InstanceAttributesResponse::SetFeatures(const vector<string>& _features)
+{
+    m_features = _features;
+    m_featuresHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::FeaturesHasBeenSet() const
+{
+    return m_featuresHasBeenSet;
 }
 

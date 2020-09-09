@@ -25,9 +25,9 @@ using namespace std;
 
 DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_groupIdHasBeenSet(false),
-    m_serverHasBeenSet(false),
     m_tagNameHasBeenSet(false),
     m_instanceNumHasBeenSet(false),
+    m_serverHasBeenSet(false),
     m_reponameHasBeenSet(false),
     m_cpuLimitHasBeenSet(false),
     m_memLimitHasBeenSet(false),
@@ -69,14 +69,6 @@ string DeployContainerGroupRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_serverHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Server";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_server.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_tagNameHasBeenSet)
     {
         Value iKey(kStringType);
@@ -91,6 +83,14 @@ string DeployContainerGroupRequest::ToJsonString() const
         string key = "InstanceNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_instanceNum, allocator);
+    }
+
+    if (m_serverHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Server";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_server.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reponameHasBeenSet)
@@ -310,22 +310,6 @@ bool DeployContainerGroupRequest::GroupIdHasBeenSet() const
     return m_groupIdHasBeenSet;
 }
 
-string DeployContainerGroupRequest::GetServer() const
-{
-    return m_server;
-}
-
-void DeployContainerGroupRequest::SetServer(const string& _server)
-{
-    m_server = _server;
-    m_serverHasBeenSet = true;
-}
-
-bool DeployContainerGroupRequest::ServerHasBeenSet() const
-{
-    return m_serverHasBeenSet;
-}
-
 string DeployContainerGroupRequest::GetTagName() const
 {
     return m_tagName;
@@ -356,6 +340,22 @@ void DeployContainerGroupRequest::SetInstanceNum(const int64_t& _instanceNum)
 bool DeployContainerGroupRequest::InstanceNumHasBeenSet() const
 {
     return m_instanceNumHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetServer() const
+{
+    return m_server;
+}
+
+void DeployContainerGroupRequest::SetServer(const string& _server)
+{
+    m_server = _server;
+    m_serverHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::ServerHasBeenSet() const
+{
+    return m_serverHasBeenSet;
 }
 
 string DeployContainerGroupRequest::GetReponame() const

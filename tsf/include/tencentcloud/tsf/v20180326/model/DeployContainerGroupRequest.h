@@ -64,24 +64,6 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取镜像server
-                     * @return Server 镜像server
-                     */
-                    std::string GetServer() const;
-
-                    /**
-                     * 设置镜像server
-                     * @param Server 镜像server
-                     */
-                    void SetServer(const std::string& _server);
-
-                    /**
-                     * 判断参数 Server 是否已赋值
-                     * @return Server 是否已赋值
-                     */
-                    bool ServerHasBeenSet() const;
-
-                    /**
                      * 获取镜像版本名称,如v1
                      * @return TagName 镜像版本名称,如v1
                      */
@@ -116,6 +98,24 @@ namespace TencentCloud
                      * @return InstanceNum 是否已赋值
                      */
                     bool InstanceNumHasBeenSet() const;
+
+                    /**
+                     * 获取镜像server
+                     * @return Server 镜像server
+                     */
+                    std::string GetServer() const;
+
+                    /**
+                     * 设置镜像server
+                     * @param Server 镜像server
+                     */
+                    void SetServer(const std::string& _server);
+
+                    /**
+                     * 判断参数 Server 是否已赋值
+                     * @return Server 是否已赋值
+                     */
+                    bool ServerHasBeenSet() const;
 
                     /**
                      * 获取旧版镜像名，如/tsf/nginx
@@ -540,12 +540,6 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 镜像server
-                     */
-                    std::string m_server;
-                    bool m_serverHasBeenSet;
-
-                    /**
                      * 镜像版本名称,如v1
                      */
                     std::string m_tagName;
@@ -556,6 +550,12 @@ namespace TencentCloud
                      */
                     int64_t m_instanceNum;
                     bool m_instanceNumHasBeenSet;
+
+                    /**
+                     * 镜像server
+                     */
+                    std::string m_server;
+                    bool m_serverHasBeenSet;
 
                     /**
                      * 旧版镜像名，如/tsf/nginx

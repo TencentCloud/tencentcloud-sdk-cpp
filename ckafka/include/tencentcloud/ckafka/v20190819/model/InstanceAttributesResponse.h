@@ -563,6 +563,28 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Features 表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetFeatures() const;
+
+                    /**
+                     * 设置表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Features 表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFeatures(const std::vector<std::string>& _features);
+
+                    /**
+                     * 判断参数 Features 是否已赋值
+                     * @return Features 是否已赋值
+                     */
+                    bool FeaturesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -733,6 +755,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_features;
+                    bool m_featuresHasBeenSet;
 
                 };
             }

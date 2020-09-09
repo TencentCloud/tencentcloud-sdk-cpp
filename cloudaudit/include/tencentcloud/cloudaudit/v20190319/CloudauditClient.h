@@ -39,6 +39,8 @@
 #include <tencentcloud/cloudaudit/v20190319/model/ListCmqEnableRegionResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/ListCosEnableRegionRequest.h>
 #include <tencentcloud/cloudaudit/v20190319/model/ListCosEnableRegionResponse.h>
+#include <tencentcloud/cloudaudit/v20190319/model/ListKeyAliasByRegionRequest.h>
+#include <tencentcloud/cloudaudit/v20190319/model/ListKeyAliasByRegionResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/LookUpEventsRequest.h>
 #include <tencentcloud/cloudaudit/v20190319/model/LookUpEventsResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/StartLoggingRequest.h>
@@ -85,6 +87,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListCosEnableRegionResponse> ListCosEnableRegionOutcome;
                 typedef std::future<ListCosEnableRegionOutcome> ListCosEnableRegionOutcomeCallable;
                 typedef std::function<void(const CloudauditClient*, const Model::ListCosEnableRegionRequest&, ListCosEnableRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListCosEnableRegionAsyncHandler;
+                typedef Outcome<Error, Model::ListKeyAliasByRegionResponse> ListKeyAliasByRegionOutcome;
+                typedef std::future<ListKeyAliasByRegionOutcome> ListKeyAliasByRegionOutcomeCallable;
+                typedef std::function<void(const CloudauditClient*, const Model::ListKeyAliasByRegionRequest&, ListKeyAliasByRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListKeyAliasByRegionAsyncHandler;
                 typedef Outcome<Error, Model::LookUpEventsResponse> LookUpEventsOutcome;
                 typedef std::future<LookUpEventsOutcome> LookUpEventsOutcomeCallable;
                 typedef std::function<void(const CloudauditClient*, const Model::LookUpEventsRequest&, LookUpEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LookUpEventsAsyncHandler;
@@ -175,6 +180,15 @@ namespace TencentCloud
                 ListCosEnableRegionOutcome ListCosEnableRegion(const Model::ListCosEnableRegionRequest &request);
                 void ListCosEnableRegionAsync(const Model::ListCosEnableRegionRequest& request, const ListCosEnableRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListCosEnableRegionOutcomeCallable ListCosEnableRegionCallable(const Model::ListCosEnableRegionRequest& request);
+
+                /**
+                 *根据地域获取KMS密钥别名
+                 * @param req ListKeyAliasByRegionRequest
+                 * @return ListKeyAliasByRegionOutcome
+                 */
+                ListKeyAliasByRegionOutcome ListKeyAliasByRegion(const Model::ListKeyAliasByRegionRequest &request);
+                void ListKeyAliasByRegionAsync(const Model::ListKeyAliasByRegionRequest& request, const ListKeyAliasByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListKeyAliasByRegionOutcomeCallable ListKeyAliasByRegionCallable(const Model::ListKeyAliasByRegionRequest& request);
 
                 /**
                  *用于对操作日志进行检索，便于用户进行查询相关的操作信息。
