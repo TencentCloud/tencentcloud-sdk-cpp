@@ -37,6 +37,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClustersRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClustersResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/OfflineInstanceRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/OfflineInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h>
@@ -96,6 +100,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceDetailResponse> DescribeInstanceDetailOutcome;
+                typedef std::future<DescribeInstanceDetailOutcome> DescribeInstanceDetailOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceDetailRequest&, DescribeInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDetailAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstanceSpecsResponse> DescribeInstanceSpecsOutcome;
                 typedef std::future<DescribeInstanceSpecsOutcome> DescribeInstanceSpecsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceSpecsRequest&, DescribeInstanceSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSpecsAsyncHandler;
@@ -126,6 +133,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::OfflineClusterResponse> OfflineClusterOutcome;
                 typedef std::future<OfflineClusterOutcome> OfflineClusterOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OfflineClusterRequest&, OfflineClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineClusterAsyncHandler;
+                typedef Outcome<Error, Model::OfflineInstanceResponse> OfflineInstanceOutcome;
+                typedef std::future<OfflineInstanceOutcome> OfflineInstanceOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::OfflineInstanceRequest&, OfflineInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineInstanceAsyncHandler;
                 typedef Outcome<Error, Model::SetRenewFlagResponse> SetRenewFlagOutcome;
                 typedef std::future<SetRenewFlagOutcome> SetRenewFlagOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SetRenewFlagRequest&, SetRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetRenewFlagAsyncHandler;
@@ -199,6 +209,15 @@ namespace TencentCloud
                 DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
 
                 /**
+                 *本接口(DescribeInstanceDetail)用于查询实例详情。
+                 * @param req DescribeInstanceDetailRequest
+                 * @return DescribeInstanceDetailOutcome
+                 */
+                DescribeInstanceDetailOutcome DescribeInstanceDetail(const Model::DescribeInstanceDetailRequest &request);
+                void DescribeInstanceDetailAsync(const Model::DescribeInstanceDetailRequest& request, const DescribeInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceDetailOutcomeCallable DescribeInstanceDetailCallable(const Model::DescribeInstanceDetailRequest& request);
+
+                /**
                  *本接口（DescribeInstanceSpecs）用于查询实例规格
                  * @param req DescribeInstanceSpecsRequest
                  * @return DescribeInstanceSpecsOutcome
@@ -244,7 +263,7 @@ namespace TencentCloud
                 IsolateClusterOutcomeCallable IsolateClusterCallable(const Model::IsolateClusterRequest& request);
 
                 /**
-                 *本接口(IsolateInstance)用于隔离实例访问。
+                 *本接口(IsolateInstance)用于隔离实例。
                  * @param req IsolateInstanceRequest
                  * @return IsolateInstanceOutcome
                  */
@@ -287,6 +306,15 @@ namespace TencentCloud
                 OfflineClusterOutcome OfflineCluster(const Model::OfflineClusterRequest &request);
                 void OfflineClusterAsync(const Model::OfflineClusterRequest& request, const OfflineClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OfflineClusterOutcomeCallable OfflineClusterCallable(const Model::OfflineClusterRequest& request);
+
+                /**
+                 *下线实例
+                 * @param req OfflineInstanceRequest
+                 * @return OfflineInstanceOutcome
+                 */
+                OfflineInstanceOutcome OfflineInstance(const Model::OfflineInstanceRequest &request);
+                void OfflineInstanceAsync(const Model::OfflineInstanceRequest& request, const OfflineInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OfflineInstanceOutcomeCallable OfflineInstanceCallable(const Model::OfflineInstanceRequest& request);
 
                 /**
                  *SetRenewFlag设置实例的自动续费功能

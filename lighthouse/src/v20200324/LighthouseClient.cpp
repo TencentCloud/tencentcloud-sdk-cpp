@@ -40,6 +40,92 @@ LighthouseClient::LighthouseClient(const Credential &credential, const string &r
 }
 
 
+LighthouseClient::CreateFirewallRulesOutcome LighthouseClient::CreateFirewallRules(const CreateFirewallRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFirewallRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFirewallRulesResponse rsp = CreateFirewallRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFirewallRulesOutcome(rsp);
+        else
+            return CreateFirewallRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFirewallRulesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::CreateFirewallRulesAsync(const CreateFirewallRulesRequest& request, const CreateFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFirewallRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::CreateFirewallRulesOutcomeCallable LighthouseClient::CreateFirewallRulesCallable(const CreateFirewallRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFirewallRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFirewallRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DeleteFirewallRulesOutcome LighthouseClient::DeleteFirewallRules(const DeleteFirewallRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFirewallRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFirewallRulesResponse rsp = DeleteFirewallRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFirewallRulesOutcome(rsp);
+        else
+            return DeleteFirewallRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFirewallRulesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DeleteFirewallRulesAsync(const DeleteFirewallRulesRequest& request, const DeleteFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFirewallRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DeleteFirewallRulesOutcomeCallable LighthouseClient::DeleteFirewallRulesCallable(const DeleteFirewallRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFirewallRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFirewallRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DescribeBlueprintsOutcome LighthouseClient::DescribeBlueprints(const DescribeBlueprintsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBlueprints");
@@ -119,6 +205,49 @@ LighthouseClient::DescribeBundlesOutcomeCallable LighthouseClient::DescribeBundl
         [this, request]()
         {
             return this->DescribeBundles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeFirewallRulesOutcome LighthouseClient::DescribeFirewallRules(const DescribeFirewallRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirewallRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirewallRulesResponse rsp = DescribeFirewallRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirewallRulesOutcome(rsp);
+        else
+            return DescribeFirewallRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirewallRulesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeFirewallRulesAsync(const DescribeFirewallRulesRequest& request, const DescribeFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirewallRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeFirewallRulesOutcomeCallable LighthouseClient::DescribeFirewallRulesCallable(const DescribeFirewallRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirewallRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirewallRules(request);
         }
     );
 

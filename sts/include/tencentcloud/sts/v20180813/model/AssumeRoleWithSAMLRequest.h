@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool RoleSessionNameHasBeenSet() const;
 
                     /**
-                     * 获取指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 7200 秒
-                     * @return DurationSeconds 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 7200 秒
+                     * 获取指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
+                     * @return DurationSeconds 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
                      */
                     uint64_t GetDurationSeconds() const;
 
                     /**
-                     * 设置指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 7200 秒
-                     * @param DurationSeconds 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 7200 秒
+                     * 设置指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
+                     * @param DurationSeconds 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
                      */
                     void SetDurationSeconds(const uint64_t& _durationSeconds);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_roleSessionNameHasBeenSet;
 
                     /**
-                     * 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 7200 秒
+                     * 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
                      */
                     uint64_t m_durationSeconds;
                     bool m_durationSecondsHasBeenSet;

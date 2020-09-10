@@ -359,14 +359,22 @@ baseline/main/high。默认baseline
                     bool ProfileHasBeenSet() const;
 
                     /**
-                     * 获取是否不超过原始码率，0：否，1：是。默认0。
-                     * @return BitrateToOrig 是否不超过原始码率，0：否，1：是。默认0。
+                     * 获取当设置的码率>原始码率时，是否以原始码率为准。
+0：否， 1：是
+默认 0。
+                     * @return BitrateToOrig 当设置的码率>原始码率时，是否以原始码率为准。
+0：否， 1：是
+默认 0。
                      */
                     int64_t GetBitrateToOrig() const;
 
                     /**
-                     * 设置是否不超过原始码率，0：否，1：是。默认0。
-                     * @param BitrateToOrig 是否不超过原始码率，0：否，1：是。默认0。
+                     * 设置当设置的码率>原始码率时，是否以原始码率为准。
+0：否， 1：是
+默认 0。
+                     * @param BitrateToOrig 当设置的码率>原始码率时，是否以原始码率为准。
+0：否， 1：是
+默认 0。
                      */
                     void SetBitrateToOrig(const int64_t& _bitrateToOrig);
 
@@ -377,14 +385,22 @@ baseline/main/high。默认baseline
                     bool BitrateToOrigHasBeenSet() const;
 
                     /**
-                     * 获取是否不超过原始高，0：否，1：是。默认0。
-                     * @return HeightToOrig 是否不超过原始高，0：否，1：是。默认0。
+                     * 获取当设置的高度>原始高度时，是否以原始高度为准。
+0：否， 1：是
+默认 0。
+                     * @return HeightToOrig 当设置的高度>原始高度时，是否以原始高度为准。
+0：否， 1：是
+默认 0。
                      */
                     int64_t GetHeightToOrig() const;
 
                     /**
-                     * 设置是否不超过原始高，0：否，1：是。默认0。
-                     * @param HeightToOrig 是否不超过原始高，0：否，1：是。默认0。
+                     * 设置当设置的高度>原始高度时，是否以原始高度为准。
+0：否， 1：是
+默认 0。
+                     * @param HeightToOrig 当设置的高度>原始高度时，是否以原始高度为准。
+0：否， 1：是
+默认 0。
                      */
                     void SetHeightToOrig(const int64_t& _heightToOrig);
 
@@ -395,14 +411,22 @@ baseline/main/high。默认baseline
                     bool HeightToOrigHasBeenSet() const;
 
                     /**
-                     * 获取是否不超过原始帧率，0：否，1：是。默认0。
-                     * @return FpsToOrig 是否不超过原始帧率，0：否，1：是。默认0。
+                     * 获取当设置的帧率>原始帧率时，是否以原始帧率为准。
+0：否， 1：是
+默认 0。
+                     * @return FpsToOrig 当设置的帧率>原始帧率时，是否以原始帧率为准。
+0：否， 1：是
+默认 0。
                      */
                     int64_t GetFpsToOrig() const;
 
                     /**
-                     * 设置是否不超过原始帧率，0：否，1：是。默认0。
-                     * @param FpsToOrig 是否不超过原始帧率，0：否，1：是。默认0。
+                     * 设置当设置的帧率>原始帧率时，是否以原始帧率为准。
+0：否， 1：是
+默认 0。
+                     * @param FpsToOrig 当设置的帧率>原始帧率时，是否以原始帧率为准。
+0：否， 1：是
+默认 0。
                      */
                     void SetFpsToOrig(const int64_t& _fpsToOrig);
 
@@ -581,19 +605,25 @@ baseline/main/high。默认baseline
                     bool m_profileHasBeenSet;
 
                     /**
-                     * 是否不超过原始码率，0：否，1：是。默认0。
+                     * 当设置的码率>原始码率时，是否以原始码率为准。
+0：否， 1：是
+默认 0。
                      */
                     int64_t m_bitrateToOrig;
                     bool m_bitrateToOrigHasBeenSet;
 
                     /**
-                     * 是否不超过原始高，0：否，1：是。默认0。
+                     * 当设置的高度>原始高度时，是否以原始高度为准。
+0：否， 1：是
+默认 0。
                      */
                     int64_t m_heightToOrig;
                     bool m_heightToOrigHasBeenSet;
 
                     /**
-                     * 是否不超过原始帧率，0：否，1：是。默认0。
+                     * 当设置的帧率>原始帧率时，是否以原始帧率为准。
+0：否， 1：是
+默认 0。
                      */
                     int64_t m_fpsToOrig;
                     bool m_fpsToOrigHasBeenSet;

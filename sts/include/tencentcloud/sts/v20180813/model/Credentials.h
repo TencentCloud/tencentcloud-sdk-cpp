@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取token
-                     * @return Token token
+                     * 获取token。token长度和绑定的策略有关，最长不超过4096字节。
+                     * @return Token token。token长度和绑定的策略有关，最长不超过4096字节。
                      */
                     std::string GetToken() const;
 
                     /**
-                     * 设置token
-                     * @param Token token
+                     * 设置token。token长度和绑定的策略有关，最长不超过4096字节。
+                     * @param Token token。token长度和绑定的策略有关，最长不超过4096字节。
                      */
                     void SetToken(const std::string& _token);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TokenHasBeenSet() const;
 
                     /**
-                     * 获取临时证书密钥ID
-                     * @return TmpSecretId 临时证书密钥ID
+                     * 获取临时证书密钥ID。最长不超过1024字节。
+                     * @return TmpSecretId 临时证书密钥ID。最长不超过1024字节。
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
-                     * 设置临时证书密钥ID
-                     * @param TmpSecretId 临时证书密钥ID
+                     * 设置临时证书密钥ID。最长不超过1024字节。
+                     * @param TmpSecretId 临时证书密钥ID。最长不超过1024字节。
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
-                     * 获取临时证书密钥Key
-                     * @return TmpSecretKey 临时证书密钥Key
+                     * 获取临时证书密钥Key。最长不超过1024字节。
+                     * @return TmpSecretKey 临时证书密钥Key。最长不超过1024字节。
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
-                     * 设置临时证书密钥Key
-                     * @param TmpSecretKey 临时证书密钥Key
+                     * 设置临时证书密钥Key。最长不超过1024字节。
+                     * @param TmpSecretKey 临时证书密钥Key。最长不超过1024字节。
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
 
@@ -103,19 +103,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * token
+                     * token。token长度和绑定的策略有关，最长不超过4096字节。
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;
 
                     /**
-                     * 临时证书密钥ID
+                     * 临时证书密钥ID。最长不超过1024字节。
                      */
                     std::string m_tmpSecretId;
                     bool m_tmpSecretIdHasBeenSet;
 
                     /**
-                     * 临时证书密钥Key
+                     * 临时证书密钥Key。最长不超过1024字节。
                      */
                     std::string m_tmpSecretKey;
                     bool m_tmpSecretKeyHasBeenSet;

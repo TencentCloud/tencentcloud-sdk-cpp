@@ -341,6 +341,49 @@ CynosdbClient::DescribeClustersOutcomeCallable CynosdbClient::DescribeClustersCa
     return task->get_future();
 }
 
+CynosdbClient::DescribeInstanceDetailOutcome CynosdbClient::DescribeInstanceDetail(const DescribeInstanceDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceDetailResponse rsp = DescribeInstanceDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceDetailOutcome(rsp);
+        else
+            return DescribeInstanceDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceDetailOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeInstanceDetailAsync(const DescribeInstanceDetailRequest& request, const DescribeInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeInstanceDetailOutcomeCallable CynosdbClient::DescribeInstanceDetailCallable(const DescribeInstanceDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeInstanceSpecsOutcome CynosdbClient::DescribeInstanceSpecs(const DescribeInstanceSpecsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceSpecs");
@@ -764,6 +807,49 @@ CynosdbClient::OfflineClusterOutcomeCallable CynosdbClient::OfflineClusterCallab
         [this, request]()
         {
             return this->OfflineCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::OfflineInstanceOutcome CynosdbClient::OfflineInstance(const OfflineInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OfflineInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OfflineInstanceResponse rsp = OfflineInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OfflineInstanceOutcome(rsp);
+        else
+            return OfflineInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return OfflineInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::OfflineInstanceAsync(const OfflineInstanceRequest& request, const OfflineInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OfflineInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::OfflineInstanceOutcomeCallable CynosdbClient::OfflineInstanceCallable(const OfflineInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OfflineInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->OfflineInstance(request);
         }
     );
 

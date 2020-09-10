@@ -23,10 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h>
@@ -51,12 +57,21 @@ namespace TencentCloud
                 LighthouseClient(const Credential &credential, const std::string &region);
                 LighthouseClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateFirewallRulesResponse> CreateFirewallRulesOutcome;
+                typedef std::future<CreateFirewallRulesOutcome> CreateFirewallRulesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateFirewallRulesRequest&, CreateFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallRulesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteFirewallRulesResponse> DeleteFirewallRulesOutcome;
+                typedef std::future<DeleteFirewallRulesOutcome> DeleteFirewallRulesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DeleteFirewallRulesRequest&, DeleteFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallRulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBlueprintsResponse> DescribeBlueprintsOutcome;
                 typedef std::future<DescribeBlueprintsOutcome> DescribeBlueprintsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintsRequest&, DescribeBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBundlesResponse> DescribeBundlesOutcome;
                 typedef std::future<DescribeBundlesOutcome> DescribeBundlesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBundlesRequest&, DescribeBundlesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBundlesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFirewallRulesResponse> DescribeFirewallRulesOutcome;
+                typedef std::future<DescribeFirewallRulesOutcome> DescribeFirewallRulesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallRulesRequest&, DescribeFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallRulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
@@ -76,6 +91,32 @@ namespace TencentCloud
 
 
                 /**
+                 *本接口（CreateFirewallRules）用于在实例上添加防火墙规则。
+
+* Protocol 字段支持输入 TCP，UDP，或 ALL。
+
+* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。
+                 * @param req CreateFirewallRulesRequest
+                 * @return CreateFirewallRulesOutcome
+                 */
+                CreateFirewallRulesOutcome CreateFirewallRules(const Model::CreateFirewallRulesRequest &request);
+                void CreateFirewallRulesAsync(const Model::CreateFirewallRulesRequest& request, const CreateFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFirewallRulesOutcomeCallable CreateFirewallRulesCallable(const Model::CreateFirewallRulesRequest& request);
+
+                /**
+                 *本接口（DeleteFirewallRules）用于删除实例的防火墙规则。
+
+* Protocol 字段支持输入 TCP，UDP，或 ALL。
+
+* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。
+                 * @param req DeleteFirewallRulesRequest
+                 * @return DeleteFirewallRulesOutcome
+                 */
+                DeleteFirewallRulesOutcome DeleteFirewallRules(const Model::DeleteFirewallRulesRequest &request);
+                void DeleteFirewallRulesAsync(const Model::DeleteFirewallRulesRequest& request, const DeleteFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFirewallRulesOutcomeCallable DeleteFirewallRulesCallable(const Model::DeleteFirewallRulesRequest& request);
+
+                /**
                  *本接口（DescribeBlueprints）用于查询镜像信息。
                  * @param req DescribeBlueprintsRequest
                  * @return DescribeBlueprintsOutcome
@@ -92,6 +133,15 @@ namespace TencentCloud
                 DescribeBundlesOutcome DescribeBundles(const Model::DescribeBundlesRequest &request);
                 void DescribeBundlesAsync(const Model::DescribeBundlesRequest& request, const DescribeBundlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBundlesOutcomeCallable DescribeBundlesCallable(const Model::DescribeBundlesRequest& request);
+
+                /**
+                 *本接口（DescribeFirewallRules）用于查询实例的防火墙规则。
+                 * @param req DescribeFirewallRulesRequest
+                 * @return DescribeFirewallRulesOutcome
+                 */
+                DescribeFirewallRulesOutcome DescribeFirewallRules(const Model::DescribeFirewallRulesRequest &request);
+                void DescribeFirewallRulesAsync(const Model::DescribeFirewallRulesRequest& request, const DescribeFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirewallRulesOutcomeCallable DescribeFirewallRulesCallable(const Model::DescribeFirewallRulesRequest& request);
 
                 /**
                  *本接口（DescribeInstances）用于查询一个或多个实例的详细信息。
