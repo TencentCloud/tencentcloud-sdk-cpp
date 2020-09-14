@@ -43,18 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，
-当前时间 和 开始时间 间隔不超过30天。
-                     * @return StartTime 开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，
-当前时间 和 开始时间 间隔不超过30天。
+                     * 获取开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS
+                     * @return StartTime 开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，
-当前时间 和 开始时间 间隔不超过30天。
-                     * @param StartTime 开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，
-当前时间 和 开始时间 间隔不超过30天。
+                     * 设置开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS
+                     * @param StartTime 开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -66,17 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，
-结束时间 和 开始时间  必须在同一天内。
+结束时间 和 开始时间  必须在同一天内，支持距当前时间30天内的数据查询。
                      * @return EndTime 结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，
-结束时间 和 开始时间  必须在同一天内。
+结束时间 和 开始时间  必须在同一天内，支持距当前时间30天内的数据查询。
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，
-结束时间 和 开始时间  必须在同一天内。
+结束时间 和 开始时间  必须在同一天内，支持距当前时间30天内的数据查询。
                      * @param EndTime 结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，
-结束时间 和 开始时间  必须在同一天内。
+结束时间 和 开始时间  必须在同一天内，支持距当前时间30天内的数据查询。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -159,15 +155,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，
-当前时间 和 开始时间 间隔不超过30天。
+                     * 开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，
-结束时间 和 开始时间  必须在同一天内。
+结束时间 和 开始时间  必须在同一天内，支持距当前时间30天内的数据查询。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

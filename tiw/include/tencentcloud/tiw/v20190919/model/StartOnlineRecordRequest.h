@@ -83,18 +83,18 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取用于实时录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。
-该ID必须是一个单独的未在SDK中使用的ID，实时录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。
-                     * @return RecordUserId 用于实时录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。
-该ID必须是一个单独的未在SDK中使用的ID，实时录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。
+                     * 获取用于录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。
+该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。
+                     * @return RecordUserId 用于录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。
+该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。
                      */
                     std::string GetRecordUserId() const;
 
                     /**
-                     * 设置用于实时录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。
-该ID必须是一个单独的未在SDK中使用的ID，实时录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。
-                     * @param RecordUserId 用于实时录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。
-该ID必须是一个单独的未在SDK中使用的ID，实时录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。
+                     * 设置用于录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。
+该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。
+                     * @param RecordUserId 用于录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。
+该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。
                      */
                     void SetRecordUserId(const std::string& _recordUserId);
 
@@ -141,14 +141,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取实时录制视频拼接参数
-                     * @return Concat 实时录制视频拼接参数
+                     * 获取录制视频拼接参数
+                     * @return Concat 录制视频拼接参数
                      */
                     Concat GetConcat() const;
 
                     /**
-                     * 设置实时录制视频拼接参数
-                     * @param Concat 实时录制视频拼接参数
+                     * 设置录制视频拼接参数
+                     * @param Concat 录制视频拼接参数
                      */
                     void SetConcat(const Concat& _concat);
 
@@ -159,14 +159,14 @@ namespace TencentCloud
                     bool ConcatHasBeenSet() const;
 
                     /**
-                     * 获取实时录制白板参数，例如白板宽高等
-                     * @return Whiteboard 实时录制白板参数，例如白板宽高等
+                     * 获取录制白板参数，例如白板宽高等
+                     * @return Whiteboard 录制白板参数，例如白板宽高等
                      */
                     Whiteboard GetWhiteboard() const;
 
                     /**
-                     * 设置实时录制白板参数，例如白板宽高等
-                     * @param Whiteboard 实时录制白板参数，例如白板宽高等
+                     * 设置录制白板参数，例如白板宽高等
+                     * @param Whiteboard 录制白板参数，例如白板宽高等
                      */
                     void SetWhiteboard(const Whiteboard& _whiteboard);
 
@@ -177,11 +177,11 @@ namespace TencentCloud
                     bool WhiteboardHasBeenSet() const;
 
                     /**
-                     * 获取实时录制混流参数
+                     * 获取录制混流参数
 特别说明：
 1. 混流功能需要根据额外开通， 请联系腾讯云互动白板客服人员
 2. 使用混流功能，必须提供 Extras 参数，且 Extras 参数中必须包含 "MIX_STREAM"
-                     * @return MixStream 实时录制混流参数
+                     * @return MixStream 录制混流参数
 特别说明：
 1. 混流功能需要根据额外开通， 请联系腾讯云互动白板客服人员
 2. 使用混流功能，必须提供 Extras 参数，且 Extras 参数中必须包含 "MIX_STREAM"
@@ -189,11 +189,11 @@ namespace TencentCloud
                     MixStream GetMixStream() const;
 
                     /**
-                     * 设置实时录制混流参数
+                     * 设置录制混流参数
 特别说明：
 1. 混流功能需要根据额外开通， 请联系腾讯云互动白板客服人员
 2. 使用混流功能，必须提供 Extras 参数，且 Extras 参数中必须包含 "MIX_STREAM"
-                     * @param MixStream 实时录制混流参数
+                     * @param MixStream 录制混流参数
 特别说明：
 1. 混流功能需要根据额外开通， 请联系腾讯云互动白板客服人员
 2. 使用混流功能，必须提供 Extras 参数，且 Extras 参数中必须包含 "MIX_STREAM"
@@ -251,14 +251,14 @@ MIX_STREAM - 混流功能
                     bool AudioFileNeededHasBeenSet() const;
 
                     /**
-                     * 获取实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
-                     * @return RecordControl 实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
+                     * 获取录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
+                     * @return RecordControl 录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
                      */
                     RecordControl GetRecordControl() const;
 
                     /**
-                     * 设置实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
-                     * @param RecordControl 实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
+                     * 设置录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
+                     * @param RecordControl 录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
                      */
                     void SetRecordControl(const RecordControl& _recordControl);
 
@@ -267,6 +267,62 @@ MIX_STREAM - 混流功能
                      * @return RecordControl 是否已赋值
                      */
                     bool RecordControlHasBeenSet() const;
+
+                    /**
+                     * 获取录制模式
+
+REALTIME_MODE - 实时录制模式（默认）
+VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通）
+                     * @return RecordMode 录制模式
+
+REALTIME_MODE - 实时录制模式（默认）
+VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通）
+                     */
+                    std::string GetRecordMode() const;
+
+                    /**
+                     * 设置录制模式
+
+REALTIME_MODE - 实时录制模式（默认）
+VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通）
+                     * @param RecordMode 录制模式
+
+REALTIME_MODE - 实时录制模式（默认）
+VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通）
+                     */
+                    void SetRecordMode(const std::string& _recordMode);
+
+                    /**
+                     * 判断参数 RecordMode 是否已赋值
+                     * @return RecordMode 是否已赋值
+                     */
+                    bool RecordModeHasBeenSet() const;
+
+                    /**
+                     * 获取聊天群组ID，此字段仅适用于`视频生成模式`
+
+在`视频生成模式`下，默认会记录白板群组内的非白板信令消息，如果指定了`ChatGroupId`，则会记录指定群ID的聊天消息。
+                     * @return ChatGroupId 聊天群组ID，此字段仅适用于`视频生成模式`
+
+在`视频生成模式`下，默认会记录白板群组内的非白板信令消息，如果指定了`ChatGroupId`，则会记录指定群ID的聊天消息。
+                     */
+                    std::string GetChatGroupId() const;
+
+                    /**
+                     * 设置聊天群组ID，此字段仅适用于`视频生成模式`
+
+在`视频生成模式`下，默认会记录白板群组内的非白板信令消息，如果指定了`ChatGroupId`，则会记录指定群ID的聊天消息。
+                     * @param ChatGroupId 聊天群组ID，此字段仅适用于`视频生成模式`
+
+在`视频生成模式`下，默认会记录白板群组内的非白板信令消息，如果指定了`ChatGroupId`，则会记录指定群ID的聊天消息。
+                     */
+                    void SetChatGroupId(const std::string& _chatGroupId);
+
+                    /**
+                     * 判断参数 ChatGroupId 是否已赋值
+                     * @return ChatGroupId 是否已赋值
+                     */
+                    bool ChatGroupIdHasBeenSet() const;
 
                 private:
 
@@ -283,8 +339,8 @@ MIX_STREAM - 混流功能
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 用于实时录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。
-该ID必须是一个单独的未在SDK中使用的ID，实时录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。
+                     * 用于录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。
+该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。
                      */
                     std::string m_recordUserId;
                     bool m_recordUserIdHasBeenSet;
@@ -302,19 +358,19 @@ MIX_STREAM - 混流功能
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 实时录制视频拼接参数
+                     * 录制视频拼接参数
                      */
                     Concat m_concat;
                     bool m_concatHasBeenSet;
 
                     /**
-                     * 实时录制白板参数，例如白板宽高等
+                     * 录制白板参数，例如白板宽高等
                      */
                     Whiteboard m_whiteboard;
                     bool m_whiteboardHasBeenSet;
 
                     /**
-                     * 实时录制混流参数
+                     * 录制混流参数
 特别说明：
 1. 混流功能需要根据额外开通， 请联系腾讯云互动白板客服人员
 2. 使用混流功能，必须提供 Extras 参数，且 Extras 参数中必须包含 "MIX_STREAM"
@@ -337,10 +393,27 @@ MIX_STREAM - 混流功能
                     bool m_audioFileNeededHasBeenSet;
 
                     /**
-                     * 实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
+                     * 录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等
                      */
                     RecordControl m_recordControl;
                     bool m_recordControlHasBeenSet;
+
+                    /**
+                     * 录制模式
+
+REALTIME_MODE - 实时录制模式（默认）
+VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通）
+                     */
+                    std::string m_recordMode;
+                    bool m_recordModeHasBeenSet;
+
+                    /**
+                     * 聊天群组ID，此字段仅适用于`视频生成模式`
+
+在`视频生成模式`下，默认会记录白板群组内的非白板信令消息，如果指定了`ChatGroupId`，则会记录指定群ID的聊天消息。
+                     */
+                    std::string m_chatGroupId;
+                    bool m_chatGroupIdHasBeenSet;
 
                 };
             }

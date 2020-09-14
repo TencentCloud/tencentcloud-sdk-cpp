@@ -53,7 +53,8 @@ AddCdnDomainRequest::AddCdnDomainRequest() :
     m_ipv6HasBeenSet(false),
     m_specificConfigHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_originPullTimeoutHasBeenSet(false)
+    m_originPullTimeoutHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -328,6 +329,21 @@ string AddCdnDomainRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_originPullTimeout.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -816,6 +832,22 @@ void AddCdnDomainRequest::SetOriginPullTimeout(const OriginPullTimeout& _originP
 bool AddCdnDomainRequest::OriginPullTimeoutHasBeenSet() const
 {
     return m_originPullTimeoutHasBeenSet;
+}
+
+vector<Tag> AddCdnDomainRequest::GetTag() const
+{
+    return m_tag;
+}
+
+void AddCdnDomainRequest::SetTag(const vector<Tag>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool AddCdnDomainRequest::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 
 

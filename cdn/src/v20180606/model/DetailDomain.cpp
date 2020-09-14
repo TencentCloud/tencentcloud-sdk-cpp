@@ -68,7 +68,8 @@ DetailDomain::DetailDomain() :
     m_accessControlHasBeenSet(false),
     m_advanceHasBeenSet(false),
     m_urlRedirectHasBeenSet(false),
-    m_accessPortHasBeenSet(false)
+    m_accessPortHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -781,6 +782,26 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_accessPortHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsArray())
+            return CoreInternalOutcome(Error("response `DetailDomain.Tag` is not array type"));
+
+        const Value &tmpValue = value["Tag"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tag.push_back(item);
+        }
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1199,6 +1220,21 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
         for (auto itr = m_accessPort.begin(); itr != m_accessPort.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -1955,5 +1991,21 @@ void DetailDomain::SetAccessPort(const vector<int64_t>& _accessPort)
 bool DetailDomain::AccessPortHasBeenSet() const
 {
     return m_accessPortHasBeenSet;
+}
+
+vector<Tag> DetailDomain::GetTag() const
+{
+    return m_tag;
+}
+
+void DetailDomain::SetTag(const vector<Tag>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool DetailDomain::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

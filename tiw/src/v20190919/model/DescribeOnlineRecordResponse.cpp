@@ -36,7 +36,8 @@ DescribeOnlineRecordResponse::DescribeOnlineRecordResponse() :
     m_totalTimeHasBeenSet(false),
     m_exceptionCntHasBeenSet(false),
     m_omittedDurationsHasBeenSet(false),
-    m_videoInfosHasBeenSet(false)
+    m_videoInfosHasBeenSet(false),
+    m_replayUrlHasBeenSet(false)
 {
 }
 
@@ -214,6 +215,16 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
         m_videoInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ReplayUrl") && !rsp["ReplayUrl"].IsNull())
+    {
+        if (!rsp["ReplayUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ReplayUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_replayUrl = string(rsp["ReplayUrl"].GetString());
+        m_replayUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -337,6 +348,16 @@ vector<VideoInfo> DescribeOnlineRecordResponse::GetVideoInfos() const
 bool DescribeOnlineRecordResponse::VideoInfosHasBeenSet() const
 {
     return m_videoInfosHasBeenSet;
+}
+
+string DescribeOnlineRecordResponse::GetReplayUrl() const
+{
+    return m_replayUrl;
+}
+
+bool DescribeOnlineRecordResponse::ReplayUrlHasBeenSet() const
+{
+    return m_replayUrlHasBeenSet;
 }
 
 

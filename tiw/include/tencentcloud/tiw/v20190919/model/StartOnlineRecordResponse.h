@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实时录制的任务Id
-                     * @return TaskId 实时录制的任务Id
+                     * 获取录制任务Id
+                     * @return TaskId 录制任务Id
                      */
                     std::string GetTaskId() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实时录制的任务Id
+                     * 录制任务Id
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

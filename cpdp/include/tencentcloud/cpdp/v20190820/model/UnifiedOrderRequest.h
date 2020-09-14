@@ -481,6 +481,42 @@ development: 开发环境
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 
+                    /**
+                     * 获取微信商户应用ID
+                     * @return WxAppId 微信商户应用ID
+                     */
+                    std::string GetWxAppId() const;
+
+                    /**
+                     * 设置微信商户应用ID
+                     * @param WxAppId 微信商户应用ID
+                     */
+                    void SetWxAppId(const std::string& _wxAppId);
+
+                    /**
+                     * 判断参数 WxAppId 是否已赋值
+                     * @return WxAppId 是否已赋值
+                     */
+                    bool WxAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取微信商户子应用ID
+                     * @return WxSubAppId 微信商户子应用ID
+                     */
+                    std::string GetWxSubAppId() const;
+
+                    /**
+                     * 设置微信商户子应用ID
+                     * @param WxSubAppId 微信商户子应用ID
+                     */
+                    void SetWxSubAppId(const std::string& _wxSubAppId);
+
+                    /**
+                     * 判断参数 WxSubAppId 是否已赋值
+                     * @return WxSubAppId 是否已赋值
+                     */
+                    bool WxSubAppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -626,6 +662,18 @@ development: 开发环境
                      */
                     std::string m_midasEnvironment;
                     bool m_midasEnvironmentHasBeenSet;
+
+                    /**
+                     * 微信商户应用ID
+                     */
+                    std::string m_wxAppId;
+                    bool m_wxAppIdHasBeenSet;
+
+                    /**
+                     * 微信商户子应用ID
+                     */
+                    std::string m_wxSubAppId;
+                    bool m_wxSubAppIdHasBeenSet;
 
                 };
             }

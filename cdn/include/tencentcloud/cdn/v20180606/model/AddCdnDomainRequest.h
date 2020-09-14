@@ -47,6 +47,7 @@
 #include <tencentcloud/cdn/v20180606/model/Ipv6.h>
 #include <tencentcloud/cdn/v20180606/model/SpecificConfig.h>
 #include <tencentcloud/cdn/v20180606/model/OriginPullTimeout.h>
+#include <tencentcloud/cdn/v20180606/model/Tag.h>
 
 
 namespace TencentCloud
@@ -640,6 +641,24 @@ global：全球加速
                      */
                     bool OriginPullTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取标签配置
+                     * @return Tag 标签配置
+                     */
+                    std::vector<Tag> GetTag() const;
+
+                    /**
+                     * 设置标签配置
+                     * @param Tag 标签配置
+                     */
+                    void SetTag(const std::vector<Tag>& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -829,6 +848,12 @@ global：全球加速
                      */
                     OriginPullTimeout m_originPullTimeout;
                     bool m_originPullTimeoutHasBeenSet;
+
+                    /**
+                     * 标签配置
+                     */
+                    std::vector<Tag> m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

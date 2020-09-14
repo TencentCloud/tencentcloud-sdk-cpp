@@ -57,6 +57,7 @@
 #include <tencentcloud/cdn/v20180606/model/UserAgentFilter.h>
 #include <tencentcloud/cdn/v20180606/model/AccessControl.h>
 #include <tencentcloud/cdn/v20180606/model/UrlRedirect.h>
+#include <tencentcloud/cdn/v20180606/model/Tag.h>
 
 
 namespace TencentCloud
@@ -1173,6 +1174,28 @@ off：不支持
                      */
                     bool AccessPortHasBeenSet() const;
 
+                    /**
+                     * 获取标签配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tag 标签配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTag() const;
+
+                    /**
+                     * 设置标签配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tag 标签配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTag(const std::vector<Tag>& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1518,6 +1541,13 @@ off：不支持
                      */
                     std::vector<int64_t> m_accessPort;
                     bool m_accessPortHasBeenSet;
+
+                    /**
+                     * 标签配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

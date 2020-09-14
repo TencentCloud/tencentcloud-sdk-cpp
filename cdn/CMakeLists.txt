@@ -88,7 +88,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/OverseaConfig.h
   include/tencentcloud/cdn/v20180606/model/AddCdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/UserAgentFilterRule.h
-  include/tencentcloud/cdn/v20180606/model/TopDetailData.h
+  include/tencentcloud/cdn/v20180606/model/Tag.h
   include/tencentcloud/cdn/v20180606/model/CacheConfigFollowOrigin.h
   include/tencentcloud/cdn/v20180606/model/MaxAgeRule.h
   include/tencentcloud/cdn/v20180606/model/DescribePayTypeRequest.h
@@ -185,6 +185,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/TimestampData.h
   include/tencentcloud/cdn/v20180606/model/StartCdnDomainResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribePushQuotaRequest.h
+  include/tencentcloud/cdn/v20180606/model/TopDetailData.h
   include/tencentcloud/cdn/v20180606/model/ResponseHeaderCache.h
   include/tencentcloud/cdn/v20180606/model/ResourceBillingData.h
   include/tencentcloud/cdn/v20180606/model/Sort.h
@@ -293,7 +294,7 @@ set(cdn_src
   src/v20180606/model/OverseaConfig.cpp
   src/v20180606/model/AddCdnDomainRequest.cpp
   src/v20180606/model/UserAgentFilterRule.cpp
-  src/v20180606/model/TopDetailData.cpp
+  src/v20180606/model/Tag.cpp
   src/v20180606/model/CacheConfigFollowOrigin.cpp
   src/v20180606/model/MaxAgeRule.cpp
   src/v20180606/model/DescribePayTypeRequest.cpp
@@ -390,6 +391,7 @@ set(cdn_src
   src/v20180606/model/TimestampData.cpp
   src/v20180606/model/StartCdnDomainResponse.cpp
   src/v20180606/model/DescribePushQuotaRequest.cpp
+  src/v20180606/model/TopDetailData.cpp
   src/v20180606/model/ResponseHeaderCache.cpp
   src/v20180606/model/ResourceBillingData.cpp
   src/v20180606/model/Sort.cpp

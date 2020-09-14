@@ -204,6 +204,20 @@ namespace TencentCloud
                      */
                     bool VideoInfosHasBeenSet() const;
 
+                    /**
+                     * 获取回放URL，需配合信令播放器使用。此字段仅适用于`视频生成模式`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplayUrl 回放URL，需配合信令播放器使用。此字段仅适用于`视频生成模式`
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetReplayUrl() const;
+
+                    /**
+                     * 判断参数 ReplayUrl 是否已赋值
+                     * @return ReplayUrl 是否已赋值
+                     */
+                    bool ReplayUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,6 +299,13 @@ namespace TencentCloud
                      */
                     std::vector<VideoInfo> m_videoInfos;
                     bool m_videoInfosHasBeenSet;
+
+                    /**
+                     * 回放URL，需配合信令播放器使用。此字段仅适用于`视频生成模式`
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_replayUrl;
+                    bool m_replayUrlHasBeenSet;
 
                 };
             }
