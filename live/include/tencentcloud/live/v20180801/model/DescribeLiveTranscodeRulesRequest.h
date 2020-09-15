@@ -42,7 +42,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取要筛选的模板ID数组。
+                     * @return TemplateIds 要筛选的模板ID数组。
+                     */
+                    std::vector<int64_t> GetTemplateIds() const;
+
+                    /**
+                     * 设置要筛选的模板ID数组。
+                     * @param TemplateIds 要筛选的模板ID数组。
+                     */
+                    void SetTemplateIds(const std::vector<int64_t>& _templateIds);
+
+                    /**
+                     * 判断参数 TemplateIds 是否已赋值
+                     * @return TemplateIds 是否已赋值
+                     */
+                    bool TemplateIdsHasBeenSet() const;
+
+                    /**
+                     * 获取要筛选的域名数组。
+                     * @return DomainNames 要筛选的域名数组。
+                     */
+                    std::vector<std::string> GetDomainNames() const;
+
+                    /**
+                     * 设置要筛选的域名数组。
+                     * @param DomainNames 要筛选的域名数组。
+                     */
+                    void SetDomainNames(const std::vector<std::string>& _domainNames);
+
+                    /**
+                     * 判断参数 DomainNames 是否已赋值
+                     * @return DomainNames 是否已赋值
+                     */
+                    bool DomainNamesHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 要筛选的模板ID数组。
+                     */
+                    std::vector<int64_t> m_templateIds;
+                    bool m_templateIdsHasBeenSet;
+
+                    /**
+                     * 要筛选的域名数组。
+                     */
+                    std::vector<std::string> m_domainNames;
+                    bool m_domainNamesHasBeenSet;
 
                 };
             }

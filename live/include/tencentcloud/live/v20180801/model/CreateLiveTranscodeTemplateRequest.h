@@ -73,17 +73,21 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取视频码率。范围：100-8000。
+                     * 获取视频码率。范围：0kbps - 8000kbps。
+0为保持原始码率。
 注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
-                     * @return VideoBitrate 视频码率。范围：100-8000。
+                     * @return VideoBitrate 视频码率。范围：0kbps - 8000kbps。
+0为保持原始码率。
 注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
                      */
                     int64_t GetVideoBitrate() const;
 
                     /**
-                     * 设置视频码率。范围：100-8000。
+                     * 设置视频码率。范围：0kbps - 8000kbps。
+0为保持原始码率。
 注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
-                     * @param VideoBitrate 视频码率。范围：100-8000。
+                     * @param VideoBitrate 视频码率。范围：0kbps - 8000kbps。
+0为保持原始码率。
 注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
                      */
                     void SetVideoBitrate(const int64_t& _videoBitrate);
@@ -272,17 +276,17 @@ origin: 保持原始编码格式
 
                     /**
                      * 获取帧率，默认0。
-范围0-60
+范围0-60fps
                      * @return Fps 帧率，默认0。
-范围0-60
+范围0-60fps
                      */
                     int64_t GetFps() const;
 
                     /**
                      * 设置帧率，默认0。
-范围0-60
+范围0-60fps
                      * @param Fps 帧率，默认0。
-范围0-60
+范围0-60fps
                      */
                     void SetFps(const int64_t& _fps);
 
@@ -293,17 +297,21 @@ origin: 保持原始编码格式
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取关键帧间隔，单位：秒。默认原始的间隔
+                     * 获取关键帧间隔，单位：秒。
+默认原始的间隔
 范围2-6
-                     * @return Gop 关键帧间隔，单位：秒。默认原始的间隔
+                     * @return Gop 关键帧间隔，单位：秒。
+默认原始的间隔
 范围2-6
                      */
                     int64_t GetGop() const;
 
                     /**
-                     * 设置关键帧间隔，单位：秒。默认原始的间隔
+                     * 设置关键帧间隔，单位：秒。
+默认原始的间隔
 范围2-6
-                     * @param Gop 关键帧间隔，单位：秒。默认原始的间隔
+                     * @param Gop 关键帧间隔，单位：秒。
+默认原始的间隔
 范围2-6
                      */
                     void SetGop(const int64_t& _gop);
@@ -514,7 +522,8 @@ baseline/main/high。默认baseline
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 视频码率。范围：100-8000。
+                     * 视频码率。范围：0kbps - 8000kbps。
+0为保持原始码率。
 注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
                      */
                     int64_t m_videoBitrate;
@@ -578,13 +587,14 @@ origin: 保持原始编码格式
 
                     /**
                      * 帧率，默认0。
-范围0-60
+范围0-60fps
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 关键帧间隔，单位：秒。默认原始的间隔
+                     * 关键帧间隔，单位：秒。
+默认原始的间隔
 范围2-6
                      */
                     int64_t m_gop;

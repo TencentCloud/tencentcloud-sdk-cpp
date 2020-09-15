@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/iotcloud/v20180614/model/BindDevicesRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/BindDevicesResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/CancelDeviceFirmwareTaskRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/CancelDeviceFirmwareTaskResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/CancelTaskRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/CancelTaskResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateDeviceRequest.h>
@@ -63,6 +65,18 @@
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceShadowResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDevicesRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDevicesResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTaskRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTaskResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTaskDevicesRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTaskDevicesResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTaskDistributionRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTaskDistributionResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTaskStatisticsRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTaskStatisticsResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTasksRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeFirmwareTasksResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeLoraDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeLoraDeviceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeMultiDevTaskRequest.h>
@@ -81,6 +95,8 @@
 #include <tencentcloud/iotcloud/v20180614/model/DescribeTasksResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DisableTopicRuleRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DisableTopicRuleResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/EditFirmwareRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/EditFirmwareResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/EnableTopicRuleRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/EnableTopicRuleResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishAsDeviceRequest.h>
@@ -97,6 +113,8 @@
 #include <tencentcloud/iotcloud/v20180614/model/ReplaceTopicRuleResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/ResetDeviceStateRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/ResetDeviceStateResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/RetryDeviceFirmwareTaskRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/RetryDeviceFirmwareTaskResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UnbindDevicesRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/UnbindDevicesResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceAvailableStateRequest.h>
@@ -105,6 +123,8 @@
 #include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceShadowResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateTopicPolicyRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateTopicPolicyResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/UploadFirmwareRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/UploadFirmwareResponse.h>
 
 
 namespace TencentCloud
@@ -122,6 +142,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BindDevicesResponse> BindDevicesOutcome;
                 typedef std::future<BindDevicesOutcome> BindDevicesOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::BindDevicesRequest&, BindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDevicesAsyncHandler;
+                typedef Outcome<Error, Model::CancelDeviceFirmwareTaskResponse> CancelDeviceFirmwareTaskOutcome;
+                typedef std::future<CancelDeviceFirmwareTaskOutcome> CancelDeviceFirmwareTaskOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::CancelDeviceFirmwareTaskRequest&, CancelDeviceFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelDeviceFirmwareTaskAsyncHandler;
                 typedef Outcome<Error, Model::CancelTaskResponse> CancelTaskOutcome;
                 typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
@@ -179,6 +202,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDevicesResponse> DescribeDevicesOutcome;
                 typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeDevicesRequest&, DescribeDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFirmwareResponse> DescribeFirmwareOutcome;
+                typedef std::future<DescribeFirmwareOutcome> DescribeFirmwareOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeFirmwareRequest&, DescribeFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFirmwareTaskResponse> DescribeFirmwareTaskOutcome;
+                typedef std::future<DescribeFirmwareTaskOutcome> DescribeFirmwareTaskOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeFirmwareTaskRequest&, DescribeFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFirmwareTaskDevicesResponse> DescribeFirmwareTaskDevicesOutcome;
+                typedef std::future<DescribeFirmwareTaskDevicesOutcome> DescribeFirmwareTaskDevicesOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeFirmwareTaskDevicesRequest&, DescribeFirmwareTaskDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskDevicesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFirmwareTaskDistributionResponse> DescribeFirmwareTaskDistributionOutcome;
+                typedef std::future<DescribeFirmwareTaskDistributionOutcome> DescribeFirmwareTaskDistributionOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeFirmwareTaskDistributionRequest&, DescribeFirmwareTaskDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskDistributionAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFirmwareTaskStatisticsResponse> DescribeFirmwareTaskStatisticsOutcome;
+                typedef std::future<DescribeFirmwareTaskStatisticsOutcome> DescribeFirmwareTaskStatisticsOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeFirmwareTaskStatisticsRequest&, DescribeFirmwareTaskStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskStatisticsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFirmwareTasksResponse> DescribeFirmwareTasksOutcome;
+                typedef std::future<DescribeFirmwareTasksOutcome> DescribeFirmwareTasksOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeFirmwareTasksRequest&, DescribeFirmwareTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTasksAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLoraDeviceResponse> DescribeLoraDeviceOutcome;
                 typedef std::future<DescribeLoraDeviceOutcome> DescribeLoraDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeLoraDeviceRequest&, DescribeLoraDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoraDeviceAsyncHandler;
@@ -206,6 +247,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DisableTopicRuleResponse> DisableTopicRuleOutcome;
                 typedef std::future<DisableTopicRuleOutcome> DisableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DisableTopicRuleRequest&, DisableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableTopicRuleAsyncHandler;
+                typedef Outcome<Error, Model::EditFirmwareResponse> EditFirmwareOutcome;
+                typedef std::future<EditFirmwareOutcome> EditFirmwareOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::EditFirmwareRequest&, EditFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditFirmwareAsyncHandler;
                 typedef Outcome<Error, Model::EnableTopicRuleResponse> EnableTopicRuleOutcome;
                 typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::EnableTopicRuleRequest&, EnableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTopicRuleAsyncHandler;
@@ -230,6 +274,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ResetDeviceStateResponse> ResetDeviceStateOutcome;
                 typedef std::future<ResetDeviceStateOutcome> ResetDeviceStateOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::ResetDeviceStateRequest&, ResetDeviceStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDeviceStateAsyncHandler;
+                typedef Outcome<Error, Model::RetryDeviceFirmwareTaskResponse> RetryDeviceFirmwareTaskOutcome;
+                typedef std::future<RetryDeviceFirmwareTaskOutcome> RetryDeviceFirmwareTaskOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::RetryDeviceFirmwareTaskRequest&, RetryDeviceFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryDeviceFirmwareTaskAsyncHandler;
                 typedef Outcome<Error, Model::UnbindDevicesResponse> UnbindDevicesOutcome;
                 typedef std::future<UnbindDevicesOutcome> UnbindDevicesOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UnbindDevicesRequest&, UnbindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDevicesAsyncHandler;
@@ -242,6 +289,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdateTopicPolicyResponse> UpdateTopicPolicyOutcome;
                 typedef std::future<UpdateTopicPolicyOutcome> UpdateTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UpdateTopicPolicyRequest&, UpdateTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTopicPolicyAsyncHandler;
+                typedef Outcome<Error, Model::UploadFirmwareResponse> UploadFirmwareOutcome;
+                typedef std::future<UploadFirmwareOutcome> UploadFirmwareOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
 
 
 
@@ -253,6 +303,15 @@ namespace TencentCloud
                 BindDevicesOutcome BindDevices(const Model::BindDevicesRequest &request);
                 void BindDevicesAsync(const Model::BindDevicesRequest& request, const BindDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindDevicesOutcomeCallable BindDevicesCallable(const Model::BindDevicesRequest& request);
+
+                /**
+                 *取消设备升级任务
+                 * @param req CancelDeviceFirmwareTaskRequest
+                 * @return CancelDeviceFirmwareTaskOutcome
+                 */
+                CancelDeviceFirmwareTaskOutcome CancelDeviceFirmwareTask(const Model::CancelDeviceFirmwareTaskRequest &request);
+                void CancelDeviceFirmwareTaskAsync(const Model::CancelDeviceFirmwareTaskRequest& request, const CancelDeviceFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelDeviceFirmwareTaskOutcomeCallable CancelDeviceFirmwareTaskCallable(const Model::CancelDeviceFirmwareTaskRequest& request);
 
                 /**
                  *本接口（CancelTask）用于取消一个未被调度的任务。 
@@ -426,6 +485,60 @@ namespace TencentCloud
                 DescribeDevicesOutcomeCallable DescribeDevicesCallable(const Model::DescribeDevicesRequest& request);
 
                 /**
+                 *查询固件信息
+                 * @param req DescribeFirmwareRequest
+                 * @return DescribeFirmwareOutcome
+                 */
+                DescribeFirmwareOutcome DescribeFirmware(const Model::DescribeFirmwareRequest &request);
+                void DescribeFirmwareAsync(const Model::DescribeFirmwareRequest& request, const DescribeFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareOutcomeCallable DescribeFirmwareCallable(const Model::DescribeFirmwareRequest& request);
+
+                /**
+                 *查询固件升级任务列表
+                 * @param req DescribeFirmwareTaskRequest
+                 * @return DescribeFirmwareTaskOutcome
+                 */
+                DescribeFirmwareTaskOutcome DescribeFirmwareTask(const Model::DescribeFirmwareTaskRequest &request);
+                void DescribeFirmwareTaskAsync(const Model::DescribeFirmwareTaskRequest& request, const DescribeFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareTaskOutcomeCallable DescribeFirmwareTaskCallable(const Model::DescribeFirmwareTaskRequest& request);
+
+                /**
+                 *查询固件升级任务的设备列表
+                 * @param req DescribeFirmwareTaskDevicesRequest
+                 * @return DescribeFirmwareTaskDevicesOutcome
+                 */
+                DescribeFirmwareTaskDevicesOutcome DescribeFirmwareTaskDevices(const Model::DescribeFirmwareTaskDevicesRequest &request);
+                void DescribeFirmwareTaskDevicesAsync(const Model::DescribeFirmwareTaskDevicesRequest& request, const DescribeFirmwareTaskDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareTaskDevicesOutcomeCallable DescribeFirmwareTaskDevicesCallable(const Model::DescribeFirmwareTaskDevicesRequest& request);
+
+                /**
+                 *查询固件升级任务状态分布
+                 * @param req DescribeFirmwareTaskDistributionRequest
+                 * @return DescribeFirmwareTaskDistributionOutcome
+                 */
+                DescribeFirmwareTaskDistributionOutcome DescribeFirmwareTaskDistribution(const Model::DescribeFirmwareTaskDistributionRequest &request);
+                void DescribeFirmwareTaskDistributionAsync(const Model::DescribeFirmwareTaskDistributionRequest& request, const DescribeFirmwareTaskDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareTaskDistributionOutcomeCallable DescribeFirmwareTaskDistributionCallable(const Model::DescribeFirmwareTaskDistributionRequest& request);
+
+                /**
+                 *查询固件升级任务统计信息
+                 * @param req DescribeFirmwareTaskStatisticsRequest
+                 * @return DescribeFirmwareTaskStatisticsOutcome
+                 */
+                DescribeFirmwareTaskStatisticsOutcome DescribeFirmwareTaskStatistics(const Model::DescribeFirmwareTaskStatisticsRequest &request);
+                void DescribeFirmwareTaskStatisticsAsync(const Model::DescribeFirmwareTaskStatisticsRequest& request, const DescribeFirmwareTaskStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareTaskStatisticsOutcomeCallable DescribeFirmwareTaskStatisticsCallable(const Model::DescribeFirmwareTaskStatisticsRequest& request);
+
+                /**
+                 *查询固件升级任务列表
+                 * @param req DescribeFirmwareTasksRequest
+                 * @return DescribeFirmwareTasksOutcome
+                 */
+                DescribeFirmwareTasksOutcome DescribeFirmwareTasks(const Model::DescribeFirmwareTasksRequest &request);
+                void DescribeFirmwareTasksAsync(const Model::DescribeFirmwareTasksRequest& request, const DescribeFirmwareTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareTasksOutcomeCallable DescribeFirmwareTasksCallable(const Model::DescribeFirmwareTasksRequest& request);
+
+                /**
                  *获取lora类型设备的详细信息 
                  * @param req DescribeLoraDeviceRequest
                  * @return DescribeLoraDeviceOutcome
@@ -507,6 +620,15 @@ namespace TencentCloud
                 DisableTopicRuleOutcomeCallable DisableTopicRuleCallable(const Model::DisableTopicRuleRequest& request);
 
                 /**
+                 *编辑固件信息
+                 * @param req EditFirmwareRequest
+                 * @return EditFirmwareOutcome
+                 */
+                EditFirmwareOutcome EditFirmware(const Model::EditFirmwareRequest &request);
+                void EditFirmwareAsync(const Model::EditFirmwareRequest& request, const EditFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EditFirmwareOutcomeCallable EditFirmwareCallable(const Model::EditFirmwareRequest& request);
+
+                /**
                  *本接口（EnableTopicRule）用于启用规则 
                  * @param req EnableTopicRuleRequest
                  * @return EnableTopicRuleOutcome
@@ -579,6 +701,15 @@ namespace TencentCloud
                 ResetDeviceStateOutcomeCallable ResetDeviceStateCallable(const Model::ResetDeviceStateRequest& request);
 
                 /**
+                 *重试设备升级任务
+                 * @param req RetryDeviceFirmwareTaskRequest
+                 * @return RetryDeviceFirmwareTaskOutcome
+                 */
+                RetryDeviceFirmwareTaskOutcome RetryDeviceFirmwareTask(const Model::RetryDeviceFirmwareTaskRequest &request);
+                void RetryDeviceFirmwareTaskAsync(const Model::RetryDeviceFirmwareTaskRequest& request, const RetryDeviceFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RetryDeviceFirmwareTaskOutcomeCallable RetryDeviceFirmwareTaskCallable(const Model::RetryDeviceFirmwareTaskRequest& request);
+
+                /**
                  *本接口（UnbindDevices）用于网关设备批量解绑子设备
                  * @param req UnbindDevicesRequest
                  * @return UnbindDevicesOutcome
@@ -613,6 +744,15 @@ namespace TencentCloud
                 UpdateTopicPolicyOutcome UpdateTopicPolicy(const Model::UpdateTopicPolicyRequest &request);
                 void UpdateTopicPolicyAsync(const Model::UpdateTopicPolicyRequest& request, const UpdateTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateTopicPolicyOutcomeCallable UpdateTopicPolicyCallable(const Model::UpdateTopicPolicyRequest& request);
+
+                /**
+                 *本接口（UploadFirmware）用于上传设备固件信息 
+                 * @param req UploadFirmwareRequest
+                 * @return UploadFirmwareOutcome
+                 */
+                UploadFirmwareOutcome UploadFirmware(const Model::UploadFirmwareRequest &request);
+                void UploadFirmwareAsync(const Model::UploadFirmwareRequest& request, const UploadFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadFirmwareOutcomeCallable UploadFirmwareCallable(const Model::UploadFirmwareRequest& request);
 
             };
         }

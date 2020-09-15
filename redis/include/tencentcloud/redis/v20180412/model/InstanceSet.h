@@ -373,14 +373,14 @@ namespace TencentCloud
                     bool EngineHasBeenSet() const;
 
                     /**
-                     * 获取产品类型：Redis2.8集群版、Redis2.8主从版、Redis3.2主从版（CKV主从版）、Redis3.2集群版（CKV集群版）、Redis2.8单机版、Redis4.0集群版
-                     * @return ProductType 产品类型：Redis2.8集群版、Redis2.8主从版、Redis3.2主从版（CKV主从版）、Redis3.2集群版（CKV集群版）、Redis2.8单机版、Redis4.0集群版
+                     * 获取产品类型：standalone – 标准版，cluster – 集群版
+                     * @return ProductType 产品类型：standalone – 标准版，cluster – 集群版
                      */
                     std::string GetProductType() const;
 
                     /**
-                     * 设置产品类型：Redis2.8集群版、Redis2.8主从版、Redis3.2主从版（CKV主从版）、Redis3.2集群版（CKV集群版）、Redis2.8单机版、Redis4.0集群版
-                     * @param ProductType 产品类型：Redis2.8集群版、Redis2.8主从版、Redis3.2主从版（CKV主从版）、Redis3.2集群版（CKV集群版）、Redis2.8单机版、Redis4.0集群版
+                     * 设置产品类型：standalone – 标准版，cluster – 集群版
+                     * @param ProductType 产品类型：standalone – 标准版，cluster – 集群版
                      */
                     void SetProductType(const std::string& _productType);
 
@@ -1017,7 +1017,7 @@ namespace TencentCloud
                     bool m_engineHasBeenSet;
 
                     /**
-                     * 产品类型：Redis2.8集群版、Redis2.8主从版、Redis3.2主从版（CKV主从版）、Redis3.2集群版（CKV集群版）、Redis2.8单机版、Redis4.0集群版
+                     * 产品类型：standalone – 标准版，cluster – 集群版
                      */
                     std::string m_productType;
                     bool m_productTypeHasBeenSet;

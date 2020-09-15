@@ -45,6 +45,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsRequest.h>
@@ -118,6 +120,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstanceSpecsResponse> DescribeInstanceSpecsOutcome;
                 typedef std::future<DescribeInstanceSpecsOutcome> DescribeInstanceSpecsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceSpecsRequest&, DescribeInstanceSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSpecsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
+                typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMaintainPeriodResponse> DescribeMaintainPeriodOutcome;
                 typedef std::future<DescribeMaintainPeriodOutcome> DescribeMaintainPeriodOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeMaintainPeriodRequest&, DescribeMaintainPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintainPeriodAsyncHandler;
@@ -258,6 +263,15 @@ namespace TencentCloud
                 DescribeInstanceSpecsOutcome DescribeInstanceSpecs(const Model::DescribeInstanceSpecsRequest &request);
                 void DescribeInstanceSpecsAsync(const Model::DescribeInstanceSpecsRequest& request, const DescribeInstanceSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceSpecsOutcomeCallable DescribeInstanceSpecsCallable(const Model::DescribeInstanceSpecsRequest& request);
+
+                /**
+                 *本接口(DescribeInstances)用于查询实例列表。
+                 * @param req DescribeInstancesRequest
+                 * @return DescribeInstancesOutcome
+                 */
+                DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
+                void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
                  *查询实例维护时间窗

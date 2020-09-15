@@ -109,6 +109,28 @@ namespace TencentCloud
                      */
                     bool PartitionOffsetHasBeenSet() const;
 
+                    /**
+                     * 获取订阅的主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicId 订阅的主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTopicId() const;
+
+                    /**
+                     * 设置订阅的主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TopicId 订阅的主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTopicId(const std::string& _topicId);
+
+                    /**
+                     * 判断参数 TopicId 是否已赋值
+                     * @return TopicId 是否已赋值
+                     */
+                    bool TopicIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -130,6 +152,13 @@ namespace TencentCloud
                      */
                     std::vector<PartitionOffset> m_partitionOffset;
                     bool m_partitionOffsetHasBeenSet;
+
+                    /**
+                     * 订阅的主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicId;
+                    bool m_topicIdHasBeenSet;
 
                 };
             }

@@ -384,6 +384,49 @@ TcbClient::DescribeAuthDomainsOutcomeCallable TcbClient::DescribeAuthDomainsCall
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseBuildServiceOutcome TcbClient::DescribeCloudBaseBuildService(const DescribeCloudBaseBuildServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseBuildService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseBuildServiceResponse rsp = DescribeCloudBaseBuildServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseBuildServiceOutcome(rsp);
+        else
+            return DescribeCloudBaseBuildServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseBuildServiceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseBuildServiceAsync(const DescribeCloudBaseBuildServiceRequest& request, const DescribeCloudBaseBuildServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseBuildService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseBuildServiceOutcomeCallable TcbClient::DescribeCloudBaseBuildServiceCallable(const DescribeCloudBaseBuildServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseBuildServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseBuildService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeDatabaseACLOutcome TcbClient::DescribeDatabaseACL(const DescribeDatabaseACLRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabaseACL");

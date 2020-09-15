@@ -23,7 +23,9 @@ using namespace TencentCloud::Live::V20180801::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeLiveTranscodeRulesRequest::DescribeLiveTranscodeRulesRequest()
+DescribeLiveTranscodeRulesRequest::DescribeLiveTranscodeRulesRequest() :
+    m_templateIdsHasBeenSet(false),
+    m_domainNamesHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,32 @@ string DescribeLiveTranscodeRulesRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_templateIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TemplateIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_templateIds.begin(); itr != m_templateIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_domainNamesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DomainNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_domainNames.begin(); itr != m_domainNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +69,37 @@ string DescribeLiveTranscodeRulesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<int64_t> DescribeLiveTranscodeRulesRequest::GetTemplateIds() const
+{
+    return m_templateIds;
+}
+
+void DescribeLiveTranscodeRulesRequest::SetTemplateIds(const vector<int64_t>& _templateIds)
+{
+    m_templateIds = _templateIds;
+    m_templateIdsHasBeenSet = true;
+}
+
+bool DescribeLiveTranscodeRulesRequest::TemplateIdsHasBeenSet() const
+{
+    return m_templateIdsHasBeenSet;
+}
+
+vector<string> DescribeLiveTranscodeRulesRequest::GetDomainNames() const
+{
+    return m_domainNames;
+}
+
+void DescribeLiveTranscodeRulesRequest::SetDomainNames(const vector<string>& _domainNames)
+{
+    m_domainNames = _domainNames;
+    m_domainNamesHasBeenSet = true;
+}
+
+bool DescribeLiveTranscodeRulesRequest::DomainNamesHasBeenSet() const
+{
+    return m_domainNamesHasBeenSet;
+}
 
 

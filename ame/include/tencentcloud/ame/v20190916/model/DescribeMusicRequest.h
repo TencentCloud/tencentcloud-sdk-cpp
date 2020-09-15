@@ -79,14 +79,18 @@ namespace TencentCloud
                     bool IdentityIdHasBeenSet() const;
 
                     /**
-                     * 获取填 MP3-64K-FTD-P 获取歌曲热门片段
-                     * @return SubItemType 填 MP3-64K-FTD-P 获取歌曲热门片段
+                     * 获取基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。
+高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。
+                     * @return SubItemType 基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。
+高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。
                      */
                     std::string GetSubItemType() const;
 
                     /**
-                     * 设置填 MP3-64K-FTD-P 获取歌曲热门片段
-                     * @param SubItemType 填 MP3-64K-FTD-P 获取歌曲热门片段
+                     * 设置基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。
+高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。
+                     * @param SubItemType 基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。
+高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。
                      */
                     void SetSubItemType(const std::string& _subItemType);
 
@@ -133,7 +137,8 @@ Values:Y , N(default)
                     bool m_identityIdHasBeenSet;
 
                     /**
-                     * 填 MP3-64K-FTD-P 获取歌曲热门片段
+                     * 基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。
+高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。
                      */
                     std::string m_subItemType;
                     bool m_subItemTypeHasBeenSet;

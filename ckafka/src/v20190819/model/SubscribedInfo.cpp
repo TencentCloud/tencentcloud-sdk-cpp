@@ -24,7 +24,8 @@ using namespace std;
 SubscribedInfo::SubscribedInfo() :
     m_topicNameHasBeenSet(false),
     m_partitionHasBeenSet(false),
-    m_partitionOffsetHasBeenSet(false)
+    m_partitionOffsetHasBeenSet(false),
+    m_topicIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome SubscribedInfo::Deserialize(const Value &value)
         m_partitionOffsetHasBeenSet = true;
     }
 
+    if (value.HasMember("TopicId") && !value["TopicId"].IsNull())
+    {
+        if (!value["TopicId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubscribedInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicId = string(value["TopicId"].GetString());
+        m_topicIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,14 @@ void SubscribedInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_topicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -168,5 +187,21 @@ void SubscribedInfo::SetPartitionOffset(const vector<PartitionOffset>& _partitio
 bool SubscribedInfo::PartitionOffsetHasBeenSet() const
 {
     return m_partitionOffsetHasBeenSet;
+}
+
+string SubscribedInfo::GetTopicId() const
+{
+    return m_topicId;
+}
+
+void SubscribedInfo::SetTopicId(const string& _topicId)
+{
+    m_topicId = _topicId;
+    m_topicIdHasBeenSet = true;
+}
+
+bool SubscribedInfo::TopicIdHasBeenSet() const
+{
+    return m_topicIdHasBeenSet;
 }
 

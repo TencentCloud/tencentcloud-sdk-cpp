@@ -41,7 +41,8 @@ TemplateInfo::TemplateInfo() :
     m_templateNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_aiTransCodeHasBeenSet(false),
-    m_adaptBitratePercentHasBeenSet(false)
+    m_adaptBitratePercentHasBeenSet(false),
+    m_shortEdgeAsHeightHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const Value &value)
         m_adaptBitratePercentHasBeenSet = true;
     }
 
+    if (value.HasMember("ShortEdgeAsHeight") && !value["ShortEdgeAsHeight"].IsNull())
+    {
+        if (!value["ShortEdgeAsHeight"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TemplateInfo.ShortEdgeAsHeight` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shortEdgeAsHeight = value["ShortEdgeAsHeight"].GetInt64();
+        m_shortEdgeAsHeightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -415,6 +426,14 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "AdaptBitratePercent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_adaptBitratePercent, allocator);
+    }
+
+    if (m_shortEdgeAsHeightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ShortEdgeAsHeight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shortEdgeAsHeight, allocator);
     }
 
 }
@@ -738,5 +757,21 @@ void TemplateInfo::SetAdaptBitratePercent(const double& _adaptBitratePercent)
 bool TemplateInfo::AdaptBitratePercentHasBeenSet() const
 {
     return m_adaptBitratePercentHasBeenSet;
+}
+
+int64_t TemplateInfo::GetShortEdgeAsHeight() const
+{
+    return m_shortEdgeAsHeight;
+}
+
+void TemplateInfo::SetShortEdgeAsHeight(const int64_t& _shortEdgeAsHeight)
+{
+    m_shortEdgeAsHeight = _shortEdgeAsHeight;
+    m_shortEdgeAsHeightHasBeenSet = true;
+}
+
+bool TemplateInfo::ShortEdgeAsHeightHasBeenSet() const
+{
+    return m_shortEdgeAsHeightHasBeenSet;
 }
 
