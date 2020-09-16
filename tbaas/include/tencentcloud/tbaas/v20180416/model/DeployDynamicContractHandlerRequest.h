@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取操作名，固定字段：deploy_by_dynamic_contract
-                     * @return Operation 操作名，固定字段：deploy_by_dynamic_contract
+                     * 获取操作名，固定字段：deploy_dynamic_contract
+                     * @return Operation 操作名，固定字段：deploy_dynamic_contract
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置操作名，固定字段：deploy_by_dynamic_contract
-                     * @param Operation 操作名，固定字段：deploy_by_dynamic_contract
+                     * 设置操作名，固定字段：deploy_dynamic_contract
+                     * @param Operation 操作名，固定字段：deploy_dynamic_contract
                      */
                     void SetOperation(const std::string& _operation);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 操作名，固定字段：deploy_by_dynamic_contract
+                     * 操作名，固定字段：deploy_dynamic_contract
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;

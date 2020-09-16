@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool BlockNumHasBeenSet() const;
 
                     /**
-                     * 获取区块Hash数值
-                     * @return DataHash 区块Hash数值
+                     * 获取区块数据Hash数值
+                     * @return DataHash 区块数据Hash数值
                      */
                     std::string GetDataHash() const;
 
                     /**
-                     * 设置区块Hash数值
-                     * @param DataHash 区块Hash数值
+                     * 设置区块数据Hash数值
+                     * @param DataHash 区块数据Hash数值
                      */
                     void SetDataHash(const std::string& _dataHash);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool BlockIdHasBeenSet() const;
 
                     /**
-                     * 获取前一个区块Hash（未使用）,与区块Hash数值一致
-                     * @return PreHash 前一个区块Hash（未使用）,与区块Hash数值一致
+                     * 获取前一个区块Hash
+                     * @return PreHash 前一个区块Hash
                      */
                     std::string GetPreHash() const;
 
                     /**
-                     * 设置前一个区块Hash（未使用）,与区块Hash数值一致
-                     * @param PreHash 前一个区块Hash（未使用）,与区块Hash数值一致
+                     * 设置前一个区块Hash
+                     * @param PreHash 前一个区块Hash
                      */
                     void SetPreHash(const std::string& _preHash);
 
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_blockNumHasBeenSet;
 
                     /**
-                     * 区块Hash数值
+                     * 区块数据Hash数值
                      */
                     std::string m_dataHash;
                     bool m_dataHashHasBeenSet;
@@ -157,7 +157,7 @@ namespace TencentCloud
                     bool m_blockIdHasBeenSet;
 
                     /**
-                     * 前一个区块Hash（未使用）,与区块Hash数值一致
+                     * 前一个区块Hash
                      */
                     std::string m_preHash;
                     bool m_preHashHasBeenSet;

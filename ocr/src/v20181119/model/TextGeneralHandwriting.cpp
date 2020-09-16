@@ -25,7 +25,8 @@ TextGeneralHandwriting::TextGeneralHandwriting() :
     m_detectedTextHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_polygonHasBeenSet(false),
-    m_advancedInfoHasBeenSet(false)
+    m_advancedInfoHasBeenSet(false),
+    m_wordPolygonHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,26 @@ CoreInternalOutcome TextGeneralHandwriting::Deserialize(const Value &value)
         m_advancedInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("WordPolygon") && !value["WordPolygon"].IsNull())
+    {
+        if (!value["WordPolygon"].IsArray())
+            return CoreInternalOutcome(Error("response `TextGeneralHandwriting.WordPolygon` is not array type"));
+
+        const Value &tmpValue = value["WordPolygon"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Polygon item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_wordPolygon.push_back(item);
+        }
+        m_wordPolygonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +149,21 @@ void TextGeneralHandwriting::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "AdvancedInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wordPolygonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WordPolygon";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_wordPolygon.begin(); itr != m_wordPolygon.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -195,5 +231,21 @@ void TextGeneralHandwriting::SetAdvancedInfo(const string& _advancedInfo)
 bool TextGeneralHandwriting::AdvancedInfoHasBeenSet() const
 {
     return m_advancedInfoHasBeenSet;
+}
+
+vector<Polygon> TextGeneralHandwriting::GetWordPolygon() const
+{
+    return m_wordPolygon;
+}
+
+void TextGeneralHandwriting::SetWordPolygon(const vector<Polygon>& _wordPolygon)
+{
+    m_wordPolygon = _wordPolygon;
+    m_wordPolygonHasBeenSet = true;
+}
+
+bool TextGeneralHandwriting::WordPolygonHasBeenSet() const
+{
+    return m_wordPolygonHasBeenSet;
 }
 

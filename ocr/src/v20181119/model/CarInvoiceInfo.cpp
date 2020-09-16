@@ -24,7 +24,8 @@ using namespace std;
 CarInvoiceInfo::CarInvoiceInfo() :
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_rectHasBeenSet(false)
+    m_rectHasBeenSet(false),
+    m_polygonHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,23 @@ CoreInternalOutcome CarInvoiceInfo::Deserialize(const Value &value)
         m_rectHasBeenSet = true;
     }
 
+    if (value.HasMember("Polygon") && !value["Polygon"].IsNull())
+    {
+        if (!value["Polygon"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CarInvoiceInfo.Polygon` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_polygon.Deserialize(value["Polygon"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_polygonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -100,6 +118,15 @@ void CarInvoiceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_rect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_polygonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Polygon";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_polygon.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -151,5 +178,21 @@ void CarInvoiceInfo::SetRect(const Rect& _rect)
 bool CarInvoiceInfo::RectHasBeenSet() const
 {
     return m_rectHasBeenSet;
+}
+
+Polygon CarInvoiceInfo::GetPolygon() const
+{
+    return m_polygon;
+}
+
+void CarInvoiceInfo::SetPolygon(const Polygon& _polygon)
+{
+    m_polygon = _polygon;
+    m_polygonHasBeenSet = true;
+}
+
+bool CarInvoiceInfo::PolygonHasBeenSet() const
+{
+    return m_polygonHasBeenSet;
 }
 

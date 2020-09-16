@@ -23,7 +23,8 @@ using namespace std;
 
 TextVatInvoice::TextVatInvoice() :
     m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_polygonHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,23 @@ CoreInternalOutcome TextVatInvoice::Deserialize(const Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Polygon") && !value["Polygon"].IsNull())
+    {
+        if (!value["Polygon"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TextVatInvoice.Polygon` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_polygon.Deserialize(value["Polygon"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_polygonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +91,15 @@ void TextVatInvoice::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polygonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Polygon";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_polygon.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -108,5 +135,21 @@ void TextVatInvoice::SetValue(const string& _value)
 bool TextVatInvoice::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+Polygon TextVatInvoice::GetPolygon() const
+{
+    return m_polygon;
+}
+
+void TextVatInvoice::SetPolygon(const Polygon& _polygon)
+{
+    m_polygon = _polygon;
+    m_polygonHasBeenSet = true;
+}
+
+bool TextVatInvoice::PolygonHasBeenSet() const
+{
+    return m_polygonHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ using namespace std;
 GeneralHandwritingOCRRequest::GeneralHandwritingOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_sceneHasBeenSet(false)
+    m_sceneHasBeenSet(false),
+    m_enableWordPolygonHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string GeneralHandwritingOCRRequest::ToJsonString() const
         string key = "Scene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_scene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableWordPolygonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableWordPolygon";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableWordPolygon, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void GeneralHandwritingOCRRequest::SetScene(const string& _scene)
 bool GeneralHandwritingOCRRequest::SceneHasBeenSet() const
 {
     return m_sceneHasBeenSet;
+}
+
+bool GeneralHandwritingOCRRequest::GetEnableWordPolygon() const
+{
+    return m_enableWordPolygon;
+}
+
+void GeneralHandwritingOCRRequest::SetEnableWordPolygon(const bool& _enableWordPolygon)
+{
+    m_enableWordPolygon = _enableWordPolygon;
+    m_enableWordPolygonHasBeenSet = true;
+}
+
+bool GeneralHandwritingOCRRequest::EnableWordPolygonHasBeenSet() const
+{
+    return m_enableWordPolygonHasBeenSet;
 }
 
 

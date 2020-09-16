@@ -128,6 +128,24 @@ namespace TencentCloud
                      */
                     bool SceneHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启单字的四点定位坐标输出，默认值为false。
+                     * @return EnableWordPolygon 是否开启单字的四点定位坐标输出，默认值为false。
+                     */
+                    bool GetEnableWordPolygon() const;
+
+                    /**
+                     * 设置是否开启单字的四点定位坐标输出，默认值为false。
+                     * @param EnableWordPolygon 是否开启单字的四点定位坐标输出，默认值为false。
+                     */
+                    void SetEnableWordPolygon(const bool& _enableWordPolygon);
+
+                    /**
+                     * 判断参数 EnableWordPolygon 是否已赋值
+                     * @return EnableWordPolygon 是否已赋值
+                     */
+                    bool EnableWordPolygonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
+
+                    /**
+                     * 是否开启单字的四点定位坐标输出，默认值为false。
+                     */
+                    bool m_enableWordPolygon;
+                    bool m_enableWordPolygonHasBeenSet;
 
                 };
             }

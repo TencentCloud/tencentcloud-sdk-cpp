@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Rect.h>
+#include <tencentcloud/ocr/v20181119/model/Polygon.h>
 
 
 namespace TencentCloud
@@ -84,14 +85,14 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取文本行在旋转纠正之后的图像中的像素坐标。
-                     * @return Rect 文本行在旋转纠正之后的图像中的像素坐标。
+                     * 获取字段在旋转纠正之后的图像中的像素坐标。
+                     * @return Rect 字段在旋转纠正之后的图像中的像素坐标。
                      */
                     Rect GetRect() const;
 
                     /**
-                     * 设置文本行在旋转纠正之后的图像中的像素坐标。
-                     * @param Rect 文本行在旋转纠正之后的图像中的像素坐标。
+                     * 设置字段在旋转纠正之后的图像中的像素坐标。
+                     * @param Rect 字段在旋转纠正之后的图像中的像素坐标。
                      */
                     void SetRect(const Rect& _rect);
 
@@ -100,6 +101,32 @@ namespace TencentCloud
                      * @return Rect 是否已赋值
                      */
                     bool RectHasBeenSet() const;
+
+                    /**
+                     * 获取字段在原图中的中的四点坐标。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Polygon 字段在原图中的中的四点坐标。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Polygon GetPolygon() const;
+
+                    /**
+                     * 设置字段在原图中的中的四点坐标。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Polygon 字段在原图中的中的四点坐标。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPolygon(const Polygon& _polygon);
+
+                    /**
+                     * 判断参数 Polygon 是否已赋值
+                     * @return Polygon 是否已赋值
+                     */
+                    bool PolygonHasBeenSet() const;
 
                 private:
 
@@ -116,10 +143,18 @@ namespace TencentCloud
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 文本行在旋转纠正之后的图像中的像素坐标。
+                     * 字段在旋转纠正之后的图像中的像素坐标。
                      */
                     Rect m_rect;
                     bool m_rectHasBeenSet;
+
+                    /**
+                     * 字段在原图中的中的四点坐标。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Polygon m_polygon;
+                    bool m_polygonHasBeenSet;
 
                 };
             }

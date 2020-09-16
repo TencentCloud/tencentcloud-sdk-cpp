@@ -986,6 +986,49 @@ CamClient::DescribeRoleListOutcomeCallable CamClient::DescribeRoleListCallable(c
     return task->get_future();
 }
 
+CamClient::DescribeSafeAuthFlagOutcome CamClient::DescribeSafeAuthFlag(const DescribeSafeAuthFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSafeAuthFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSafeAuthFlagResponse rsp = DescribeSafeAuthFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSafeAuthFlagOutcome(rsp);
+        else
+            return DescribeSafeAuthFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSafeAuthFlagOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DescribeSafeAuthFlagAsync(const DescribeSafeAuthFlagRequest& request, const DescribeSafeAuthFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSafeAuthFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DescribeSafeAuthFlagOutcomeCallable CamClient::DescribeSafeAuthFlagCallable(const DescribeSafeAuthFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSafeAuthFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSafeAuthFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DetachGroupPolicyOutcome CamClient::DetachGroupPolicy(const DetachGroupPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DetachGroupPolicy");

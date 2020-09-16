@@ -67,6 +67,8 @@
 #include <tencentcloud/cam/v20190116/model/DeleteUserPermissionsBoundaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeRoleListRequest.h>
 #include <tencentcloud/cam/v20190116/model/DescribeRoleListResponse.h>
+#include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagRequest.h>
+#include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/DetachGroupPolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachRolePolicyRequest.h>
@@ -219,6 +221,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRoleListResponse> DescribeRoleListOutcome;
                 typedef std::future<DescribeRoleListOutcome> DescribeRoleListOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DescribeRoleListRequest&, DescribeRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSafeAuthFlagResponse> DescribeSafeAuthFlagOutcome;
+                typedef std::future<DescribeSafeAuthFlagOutcome> DescribeSafeAuthFlagOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DescribeSafeAuthFlagRequest&, DescribeSafeAuthFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafeAuthFlagAsyncHandler;
                 typedef Outcome<Error, Model::DetachGroupPolicyResponse> DetachGroupPolicyOutcome;
                 typedef std::future<DetachGroupPolicyOutcome> DetachGroupPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DetachGroupPolicyRequest&, DetachGroupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachGroupPolicyAsyncHandler;
@@ -527,6 +532,15 @@ namespace TencentCloud
                 DescribeRoleListOutcome DescribeRoleList(const Model::DescribeRoleListRequest &request);
                 void DescribeRoleListAsync(const Model::DescribeRoleListRequest& request, const DescribeRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRoleListOutcomeCallable DescribeRoleListCallable(const Model::DescribeRoleListRequest& request);
+
+                /**
+                 *查询安全设置
+                 * @param req DescribeSafeAuthFlagRequest
+                 * @return DescribeSafeAuthFlagOutcome
+                 */
+                DescribeSafeAuthFlagOutcome DescribeSafeAuthFlag(const Model::DescribeSafeAuthFlagRequest &request);
+                void DescribeSafeAuthFlagAsync(const Model::DescribeSafeAuthFlagRequest& request, const DescribeSafeAuthFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSafeAuthFlagOutcomeCallable DescribeSafeAuthFlagCallable(const Model::DescribeSafeAuthFlagRequest& request);
 
                 /**
                  *本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。

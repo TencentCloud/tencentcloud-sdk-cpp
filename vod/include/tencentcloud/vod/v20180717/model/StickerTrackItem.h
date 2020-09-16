@@ -48,14 +48,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取贴图素材的媒体文件来源。可以是点播的文件 ID，也可以是其它文件的 URL。
-                     * @return SourceMedia 贴图素材的媒体文件来源。可以是点播的文件 ID，也可以是其它文件的 URL。
+                     * 获取贴图片段的媒体素材来源，可以是：
+<li>点播的媒体文件 ID；</li>
+<li>其他媒体文件的下载 URL。</li>
+注意：当使用其他媒体文件的下载 URL 作为素材来源，且开启了访问控制（如防盗链）时，需要在 URL 携带访问控制参数（如防盗链签名）。
+                     * @return SourceMedia 贴图片段的媒体素材来源，可以是：
+<li>点播的媒体文件 ID；</li>
+<li>其他媒体文件的下载 URL。</li>
+注意：当使用其他媒体文件的下载 URL 作为素材来源，且开启了访问控制（如防盗链）时，需要在 URL 携带访问控制参数（如防盗链签名）。
                      */
                     std::string GetSourceMedia() const;
 
                     /**
-                     * 设置贴图素材的媒体文件来源。可以是点播的文件 ID，也可以是其它文件的 URL。
-                     * @param SourceMedia 贴图素材的媒体文件来源。可以是点播的文件 ID，也可以是其它文件的 URL。
+                     * 设置贴图片段的媒体素材来源，可以是：
+<li>点播的媒体文件 ID；</li>
+<li>其他媒体文件的下载 URL。</li>
+注意：当使用其他媒体文件的下载 URL 作为素材来源，且开启了访问控制（如防盗链）时，需要在 URL 携带访问控制参数（如防盗链签名）。
+                     * @param SourceMedia 贴图片段的媒体素材来源，可以是：
+<li>点播的媒体文件 ID；</li>
+<li>其他媒体文件的下载 URL。</li>
+注意：当使用其他媒体文件的下载 URL 作为素材来源，且开启了访问控制（如防盗链）时，需要在 URL 携带访问控制参数（如防盗链签名）。
                      */
                     void SetSourceMedia(const std::string& _sourceMedia);
 
@@ -280,7 +292,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 贴图素材的媒体文件来源。可以是点播的文件 ID，也可以是其它文件的 URL。
+                     * 贴图片段的媒体素材来源，可以是：
+<li>点播的媒体文件 ID；</li>
+<li>其他媒体文件的下载 URL。</li>
+注意：当使用其他媒体文件的下载 URL 作为素材来源，且开启了访问控制（如防盗链）时，需要在 URL 携带访问控制参数（如防盗链签名）。
                      */
                     std::string m_sourceMedia;
                     bool m_sourceMediaHasBeenSet;

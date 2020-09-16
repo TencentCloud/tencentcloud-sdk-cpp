@@ -25,7 +25,9 @@ using namespace std;
 
 VatInvoiceOCRRequest::VatInvoiceOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_isPdfHasBeenSet(false),
+    m_pdfPageNumberHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,22 @@ string VatInvoiceOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPdfHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsPdf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPdf, allocator);
+    }
+
+    if (m_pdfPageNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PdfPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pdfPageNumber, allocator);
     }
 
 
@@ -90,6 +108,38 @@ void VatInvoiceOCRRequest::SetImageUrl(const string& _imageUrl)
 bool VatInvoiceOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool VatInvoiceOCRRequest::GetIsPdf() const
+{
+    return m_isPdf;
+}
+
+void VatInvoiceOCRRequest::SetIsPdf(const bool& _isPdf)
+{
+    m_isPdf = _isPdf;
+    m_isPdfHasBeenSet = true;
+}
+
+bool VatInvoiceOCRRequest::IsPdfHasBeenSet() const
+{
+    return m_isPdfHasBeenSet;
+}
+
+uint64_t VatInvoiceOCRRequest::GetPdfPageNumber() const
+{
+    return m_pdfPageNumber;
+}
+
+void VatInvoiceOCRRequest::SetPdfPageNumber(const uint64_t& _pdfPageNumber)
+{
+    m_pdfPageNumber = _pdfPageNumber;
+    m_pdfPageNumberHasBeenSet = true;
+}
+
+bool VatInvoiceOCRRequest::PdfPageNumberHasBeenSet() const
+{
+    return m_pdfPageNumberHasBeenSet;
 }
 
 

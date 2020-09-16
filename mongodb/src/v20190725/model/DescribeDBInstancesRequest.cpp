@@ -36,7 +36,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_orderByHasBeenSet(false),
     m_orderByTypeHasBeenSet(false),
     m_projectIdsHasBeenSet(false),
-    m_searchKeyHasBeenSet(false)
+    m_searchKeyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,15 @@ string DescribeDBInstancesRequest::ToJsonString() const
         string key = "SearchKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_searchKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_tags.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -380,6 +390,22 @@ void DescribeDBInstancesRequest::SetSearchKey(const string& _searchKey)
 bool DescribeDBInstancesRequest::SearchKeyHasBeenSet() const
 {
     return m_searchKeyHasBeenSet;
+}
+
+TagInfo DescribeDBInstancesRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeDBInstancesRequest::SetTags(const TagInfo& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

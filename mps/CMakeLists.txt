@@ -63,6 +63,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ParseLiveStreamProcessNotificationResponse.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h
   include/tencentcloud/mps/v20190612/model/AudioTemplateInfo.h
+  include/tencentcloud/mps/v20190612/model/ExecuteFunctionResponse.h
   include/tencentcloud/mps/v20190612/model/CoverConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/AIRecognitionTemplateItem.h
   include/tencentcloud/mps/v20190612/model/AiReviewPornAsrTaskInput.h
@@ -329,6 +330,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeWatermarkTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/CreateAnimatedGraphicsTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/FrameTagConfigureInfo.h
+  include/tencentcloud/mps/v20190612/model/ExecuteFunctionRequest.h
   include/tencentcloud/mps/v20190612/model/ModifyPersonSampleResponse.h
   include/tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/MediaTranscodeItem.h
@@ -419,6 +421,7 @@ set(mps_src
   src/v20190612/model/ParseLiveStreamProcessNotificationResponse.cpp
   src/v20190612/model/AiRecognitionTaskInput.cpp
   src/v20190612/model/AudioTemplateInfo.cpp
+  src/v20190612/model/ExecuteFunctionResponse.cpp
   src/v20190612/model/CoverConfigureInfo.cpp
   src/v20190612/model/AIRecognitionTemplateItem.cpp
   src/v20190612/model/AiReviewPornAsrTaskInput.cpp
@@ -685,6 +688,7 @@ set(mps_src
   src/v20190612/model/DescribeWatermarkTemplatesResponse.cpp
   src/v20190612/model/CreateAnimatedGraphicsTemplateRequest.cpp
   src/v20190612/model/FrameTagConfigureInfo.cpp
+  src/v20190612/model/ExecuteFunctionRequest.cpp
   src/v20190612/model/ModifyPersonSampleResponse.cpp
   src/v20190612/model/DeleteTranscodeTemplateResponse.cpp
   src/v20190612/model/MediaTranscodeItem.cpp

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mongodb/v20190725/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -97,14 +98,14 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-实例已过期
-                     * @return Status 实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-实例已过期
+                     * 获取实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-已隔离（包年包月实例），-3-已隔离（按量计费实例）
+                     * @return Status 实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-已隔离（包年包月实例），-3-已隔离（按量计费实例）
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
-                     * 设置实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-实例已过期
-                     * @param Status 实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-实例已过期
+                     * 设置实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-已隔离（包年包月实例），-3-已隔离（按量计费实例）
+                     * @param Status 实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-已隔离（包年包月实例），-3-已隔离（按量计费实例）
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
 
@@ -259,14 +260,14 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键词，支持实例Id、实例名称、完整IP
-                     * @return SearchKey 搜索关键词，支持实例Id、实例名称、完整IP
+                     * 获取搜索关键词，支持实例ID、实例名称、完整IP
+                     * @return SearchKey 搜索关键词，支持实例ID、实例名称、完整IP
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置搜索关键词，支持实例Id、实例名称、完整IP
-                     * @param SearchKey 搜索关键词，支持实例Id、实例名称、完整IP
+                     * 设置搜索关键词，支持实例ID、实例名称、完整IP
+                     * @param SearchKey 搜索关键词，支持实例ID、实例名称、完整IP
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
@@ -275,6 +276,24 @@ namespace TencentCloud
                      * @return SearchKey 是否已赋值
                      */
                     bool SearchKeyHasBeenSet() const;
+
+                    /**
+                     * 获取Tag信息
+                     * @return Tags Tag信息
+                     */
+                    TagInfo GetTags() const;
+
+                    /**
+                     * 设置Tag信息
+                     * @param Tags Tag信息
+                     */
+                    void SetTags(const TagInfo& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
 
                 private:
 
@@ -297,7 +316,7 @@ namespace TencentCloud
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-实例已过期
+                     * 实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-已隔离（包年包月实例），-3-已隔离（按量计费实例）
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;
@@ -351,10 +370,16 @@ namespace TencentCloud
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 搜索关键词，支持实例Id、实例名称、完整IP
+                     * 搜索关键词，支持实例ID、实例名称、完整IP
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
+
+                    /**
+                     * Tag信息
+                     */
+                    TagInfo m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

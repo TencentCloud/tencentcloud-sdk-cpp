@@ -26,7 +26,8 @@ using namespace std;
 
 VatInvoiceOCRResponse::VatInvoiceOCRResponse() :
     m_vatInvoiceInfosHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_pdfPageSizeHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome VatInvoiceOCRResponse::Deserialize(const string &payload)
         m_itemsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PdfPageSize") && !rsp["PdfPageSize"].IsNull())
+    {
+        if (!rsp["PdfPageSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PdfPageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pdfPageSize = rsp["PdfPageSize"].GetInt64();
+        m_pdfPageSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,16 @@ vector<VatInvoiceItem> VatInvoiceOCRResponse::GetItems() const
 bool VatInvoiceOCRResponse::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+int64_t VatInvoiceOCRResponse::GetPdfPageSize() const
+{
+    return m_pdfPageSize;
+}
+
+bool VatInvoiceOCRResponse::PdfPageSizeHasBeenSet() const
+{
+    return m_pdfPageSizeHasBeenSet;
 }
 
 

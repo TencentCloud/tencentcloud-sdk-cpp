@@ -24,7 +24,8 @@ using namespace std;
 CaptchaUserAllAppId::CaptchaUserAllAppId() :
     m_captchaAppIdHasBeenSet(false),
     m_appNameHasBeenSet(false),
-    m_tcAppIdHasBeenSet(false)
+    m_tcAppIdHasBeenSet(false),
+    m_channelInfoHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome CaptchaUserAllAppId::Deserialize(const Value &value)
         m_tcAppIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelInfo") && !value["ChannelInfo"].IsNull())
+    {
+        if (!value["ChannelInfo"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CaptchaUserAllAppId.ChannelInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelInfo = string(value["ChannelInfo"].GetString());
+        m_channelInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void CaptchaUserAllAppId::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "TcAppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tcAppId, allocator);
+    }
+
+    if (m_channelInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ChannelInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_channelInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void CaptchaUserAllAppId::SetTcAppId(const int64_t& _tcAppId)
 bool CaptchaUserAllAppId::TcAppIdHasBeenSet() const
 {
     return m_tcAppIdHasBeenSet;
+}
+
+string CaptchaUserAllAppId::GetChannelInfo() const
+{
+    return m_channelInfo;
+}
+
+void CaptchaUserAllAppId::SetChannelInfo(const string& _channelInfo)
+{
+    m_channelInfo = _channelInfo;
+    m_channelInfoHasBeenSet = true;
+}
+
+bool CaptchaUserAllAppId::ChannelInfoHasBeenSet() const
+{
+    return m_channelInfoHasBeenSet;
 }
 

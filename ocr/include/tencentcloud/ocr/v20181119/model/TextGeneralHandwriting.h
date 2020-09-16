@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Coord.h>
+#include <tencentcloud/ocr/v20181119/model/Polygon.h>
 
 
 namespace TencentCloud
@@ -127,6 +128,28 @@ namespace TencentCloud
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
+                    /**
+                     * 获取字的坐标数组，以四个顶点坐标表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WordPolygon 字的坐标数组，以四个顶点坐标表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Polygon> GetWordPolygon() const;
+
+                    /**
+                     * 设置字的坐标数组，以四个顶点坐标表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WordPolygon 字的坐标数组，以四个顶点坐标表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWordPolygon(const std::vector<Polygon>& _wordPolygon);
+
+                    /**
+                     * 判断参数 WordPolygon 是否已赋值
+                     * @return WordPolygon 是否已赋值
+                     */
+                    bool WordPolygonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +177,13 @@ namespace TencentCloud
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
+
+                    /**
+                     * 字的坐标数组，以四个顶点坐标表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Polygon> m_wordPolygon;
+                    bool m_wordPolygonHasBeenSet;
 
                 };
             }

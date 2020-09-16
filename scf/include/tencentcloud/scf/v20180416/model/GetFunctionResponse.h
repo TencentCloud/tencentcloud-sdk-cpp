@@ -31,6 +31,7 @@
 #include <tencentcloud/scf/v20180416/model/DeadLetterConfig.h>
 #include <tencentcloud/scf/v20180416/model/PublicNetConfigOut.h>
 #include <tencentcloud/scf/v20180416/model/CfsConfig.h>
+#include <tencentcloud/scf/v20180416/model/StatusReason.h>
 
 
 namespace TencentCloud
@@ -530,6 +531,20 @@ namespace TencentCloud
                      */
                     bool InitTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取函数状态失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusReasons 函数状态失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<StatusReason> GetStatusReasons() const;
+
+                    /**
+                     * 判断参数 StatusReasons 是否已赋值
+                     * @return StatusReasons 是否已赋值
+                     */
+                    bool StatusReasonsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -770,6 +785,13 @@ namespace TencentCloud
                      */
                     int64_t m_initTimeout;
                     bool m_initTimeoutHasBeenSet;
+
+                    /**
+                     * 函数状态失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<StatusReason> m_statusReasons;
+                    bool m_statusReasonsHasBeenSet;
 
                 };
             }

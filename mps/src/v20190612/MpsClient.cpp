@@ -1975,6 +1975,49 @@ MpsClient::EnableWorkflowOutcomeCallable MpsClient::EnableWorkflowCallable(const
     return task->get_future();
 }
 
+MpsClient::ExecuteFunctionOutcome MpsClient::ExecuteFunction(const ExecuteFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExecuteFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecuteFunctionResponse rsp = ExecuteFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecuteFunctionOutcome(rsp);
+        else
+            return ExecuteFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return ExecuteFunctionOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ExecuteFunctionAsync(const ExecuteFunctionRequest& request, const ExecuteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExecuteFunction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ExecuteFunctionOutcomeCallable MpsClient::ExecuteFunctionCallable(const ExecuteFunctionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExecuteFunctionOutcome()>>(
+        [this, request]()
+        {
+            return this->ExecuteFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::ManageTaskOutcome MpsClient::ManageTask(const ManageTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "ManageTask");

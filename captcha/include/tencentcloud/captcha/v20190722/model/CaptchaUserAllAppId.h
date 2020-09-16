@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool TcAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取渠道信息
+                     * @return ChannelInfo 渠道信息
+                     */
+                    std::string GetChannelInfo() const;
+
+                    /**
+                     * 设置渠道信息
+                     * @param ChannelInfo 渠道信息
+                     */
+                    void SetChannelInfo(const std::string& _channelInfo);
+
+                    /**
+                     * 判断参数 ChannelInfo 是否已赋值
+                     * @return ChannelInfo 是否已赋值
+                     */
+                    bool ChannelInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     int64_t m_tcAppId;
                     bool m_tcAppIdHasBeenSet;
+
+                    /**
+                     * 渠道信息
+                     */
+                    std::string m_channelInfo;
+                    bool m_channelInfoHasBeenSet;
 
                 };
             }

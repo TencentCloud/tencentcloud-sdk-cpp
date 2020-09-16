@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/Polygon.h>
 
 
 namespace TencentCloud
@@ -82,6 +83,32 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取字段在原图中的中的四点坐标。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Polygon 字段在原图中的中的四点坐标。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Polygon GetPolygon() const;
+
+                    /**
+                     * 设置字段在原图中的中的四点坐标。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Polygon 字段在原图中的中的四点坐标。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPolygon(const Polygon& _polygon);
+
+                    /**
+                     * 判断参数 Polygon 是否已赋值
+                     * @return Polygon 是否已赋值
+                     */
+                    bool PolygonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +122,14 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 字段在原图中的中的四点坐标。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Polygon m_polygon;
+                    bool m_polygonHasBeenSet;
 
                 };
             }

@@ -144,6 +144,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/GeneralFastOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/Polygon.h
   include/tencentcloud/ocr/v20181119/model/ShipInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/InsuranceBillInfo.h
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRResponse.h
@@ -313,6 +314,7 @@ set(ocr_src
   src/v20181119/model/ResidenceBookletOCRResponse.cpp
   src/v20181119/model/CarInvoiceOCRResponse.cpp
   src/v20181119/model/GeneralFastOCRRequest.cpp
+  src/v20181119/model/Polygon.cpp
   src/v20181119/model/ShipInvoiceOCRResponse.cpp
   src/v20181119/model/InsuranceBillInfo.cpp
   src/v20181119/model/VehicleRegCertOCRResponse.cpp

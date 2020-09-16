@@ -21,6 +21,7 @@ set(scf_public_header
 set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/AccessInfo.h
   include/tencentcloud/scf/v20180416/model/Trigger.h
+  include/tencentcloud/scf/v20180416/model/ListTriggersResponse.h
   include/tencentcloud/scf/v20180416/model/ListAliasesResponse.h
   include/tencentcloud/scf/v20180416/model/DeleteLayerVersionResponse.h
   include/tencentcloud/scf/v20180416/model/GetAliasResponse.h
@@ -50,7 +51,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/PublicNetConfigOut.h
   include/tencentcloud/scf/v20180416/model/UpdateFunctionCodeRequest.h
   include/tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationRequest.h
-  include/tencentcloud/scf/v20180416/model/ListTriggersResponse.h
+  include/tencentcloud/scf/v20180416/model/StatusReason.h
   include/tencentcloud/scf/v20180416/model/UpdateNamespaceResponse.h
   include/tencentcloud/scf/v20180416/model/ListLayersRequest.h
   include/tencentcloud/scf/v20180416/model/CopyFunctionRequest.h
@@ -113,6 +114,7 @@ set(scf_src
   src/v20180416/ScfClient.cpp
   src/v20180416/model/AccessInfo.cpp
   src/v20180416/model/Trigger.cpp
+  src/v20180416/model/ListTriggersResponse.cpp
   src/v20180416/model/ListAliasesResponse.cpp
   src/v20180416/model/DeleteLayerVersionResponse.cpp
   src/v20180416/model/GetAliasResponse.cpp
@@ -142,7 +144,7 @@ set(scf_src
   src/v20180416/model/PublicNetConfigOut.cpp
   src/v20180416/model/UpdateFunctionCodeRequest.cpp
   src/v20180416/model/UpdateFunctionConfigurationRequest.cpp
-  src/v20180416/model/ListTriggersResponse.cpp
+  src/v20180416/model/StatusReason.cpp
   src/v20180416/model/UpdateNamespaceResponse.cpp
   src/v20180416/model/ListLayersRequest.cpp
   src/v20180416/model/CopyFunctionRequest.cpp

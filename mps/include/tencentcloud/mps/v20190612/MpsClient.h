@@ -113,6 +113,8 @@
 #include <tencentcloud/mps/v20190612/model/EditMediaResponse.h>
 #include <tencentcloud/mps/v20190612/model/EnableWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/EnableWorkflowResponse.h>
+#include <tencentcloud/mps/v20190612/model/ExecuteFunctionRequest.h>
+#include <tencentcloud/mps/v20190612/model/ExecuteFunctionResponse.h>
 #include <tencentcloud/mps/v20190612/model/ManageTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/ManageTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyAIAnalysisTemplateRequest.h>
@@ -298,6 +300,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EnableWorkflowResponse> EnableWorkflowOutcome;
                 typedef std::future<EnableWorkflowOutcome> EnableWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::EnableWorkflowRequest&, EnableWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableWorkflowAsyncHandler;
+                typedef Outcome<Error, Model::ExecuteFunctionResponse> ExecuteFunctionOutcome;
+                typedef std::future<ExecuteFunctionOutcome> ExecuteFunctionOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ExecuteFunctionRequest&, ExecuteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteFunctionAsyncHandler;
                 typedef Outcome<Error, Model::ManageTaskResponse> ManageTaskOutcome;
                 typedef std::future<ManageTaskOutcome> ManageTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ManageTaskRequest&, ManageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageTaskAsyncHandler;
@@ -778,6 +783,15 @@ namespace TencentCloud
                 EnableWorkflowOutcome EnableWorkflow(const Model::EnableWorkflowRequest &request);
                 void EnableWorkflowAsync(const Model::EnableWorkflowRequest& request, const EnableWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableWorkflowOutcomeCallable EnableWorkflowCallable(const Model::EnableWorkflowRequest& request);
+
+                /**
+                 *本接口仅用于定制开发的特殊场景，除非云视频处理客服人员主动告知您需要使用本接口，其它情况请勿调用。
+                 * @param req ExecuteFunctionRequest
+                 * @return ExecuteFunctionOutcome
+                 */
+                ExecuteFunctionOutcome ExecuteFunction(const Model::ExecuteFunctionRequest &request);
+                void ExecuteFunctionAsync(const Model::ExecuteFunctionRequest& request, const ExecuteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecuteFunctionOutcomeCallable ExecuteFunctionCallable(const Model::ExecuteFunctionRequest& request);
 
                 /**
                  *对已发起的任务进行管理。

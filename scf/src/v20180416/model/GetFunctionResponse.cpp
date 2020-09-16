@@ -63,7 +63,8 @@ GetFunctionResponse::GetFunctionResponse() :
     m_cfsConfigHasBeenSet(false),
     m_availableStatusHasBeenSet(false),
     m_qualifierHasBeenSet(false),
-    m_initTimeoutHasBeenSet(false)
+    m_initTimeoutHasBeenSet(false),
+    m_statusReasonsHasBeenSet(false)
 {
 }
 
@@ -570,6 +571,26 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_initTimeoutHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StatusReasons") && !rsp["StatusReasons"].IsNull())
+    {
+        if (!rsp["StatusReasons"].IsArray())
+            return CoreInternalOutcome(Error("response `StatusReasons` is not array type"));
+
+        const Value &tmpValue = rsp["StatusReasons"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StatusReason item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_statusReasons.push_back(item);
+        }
+        m_statusReasonsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -963,6 +984,16 @@ int64_t GetFunctionResponse::GetInitTimeout() const
 bool GetFunctionResponse::InitTimeoutHasBeenSet() const
 {
     return m_initTimeoutHasBeenSet;
+}
+
+vector<StatusReason> GetFunctionResponse::GetStatusReasons() const
+{
+    return m_statusReasons;
+}
+
+bool GetFunctionResponse::StatusReasonsHasBeenSet() const
+{
+    return m_statusReasonsHasBeenSet;
 }
 
 
