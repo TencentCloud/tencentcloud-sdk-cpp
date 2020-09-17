@@ -83,6 +83,92 @@ IeClient::CreateEditingTaskOutcomeCallable IeClient::CreateEditingTaskCallable(c
     return task->get_future();
 }
 
+IeClient::CreateMediaQualityRestorationTaskOutcome IeClient::CreateMediaQualityRestorationTask(const CreateMediaQualityRestorationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMediaQualityRestorationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMediaQualityRestorationTaskResponse rsp = CreateMediaQualityRestorationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMediaQualityRestorationTaskOutcome(rsp);
+        else
+            return CreateMediaQualityRestorationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMediaQualityRestorationTaskOutcome(outcome.GetError());
+    }
+}
+
+void IeClient::CreateMediaQualityRestorationTaskAsync(const CreateMediaQualityRestorationTaskRequest& request, const CreateMediaQualityRestorationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMediaQualityRestorationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IeClient::CreateMediaQualityRestorationTaskOutcomeCallable IeClient::CreateMediaQualityRestorationTaskCallable(const CreateMediaQualityRestorationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMediaQualityRestorationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMediaQualityRestorationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IeClient::CreateQualityControlTaskOutcome IeClient::CreateQualityControlTask(const CreateQualityControlTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateQualityControlTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateQualityControlTaskResponse rsp = CreateQualityControlTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateQualityControlTaskOutcome(rsp);
+        else
+            return CreateQualityControlTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateQualityControlTaskOutcome(outcome.GetError());
+    }
+}
+
+void IeClient::CreateQualityControlTaskAsync(const CreateQualityControlTaskRequest& request, const CreateQualityControlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateQualityControlTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IeClient::CreateQualityControlTaskOutcomeCallable IeClient::CreateQualityControlTaskCallable(const CreateQualityControlTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateQualityControlTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateQualityControlTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IeClient::DescribeEditingTaskResultOutcome IeClient::DescribeEditingTaskResult(const DescribeEditingTaskResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEditingTaskResult");
@@ -119,6 +205,135 @@ IeClient::DescribeEditingTaskResultOutcomeCallable IeClient::DescribeEditingTask
         [this, request]()
         {
             return this->DescribeEditingTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IeClient::DescribeMediaQualityRestorationTaskRusultOutcome IeClient::DescribeMediaQualityRestorationTaskRusult(const DescribeMediaQualityRestorationTaskRusultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMediaQualityRestorationTaskRusult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMediaQualityRestorationTaskRusultResponse rsp = DescribeMediaQualityRestorationTaskRusultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMediaQualityRestorationTaskRusultOutcome(rsp);
+        else
+            return DescribeMediaQualityRestorationTaskRusultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMediaQualityRestorationTaskRusultOutcome(outcome.GetError());
+    }
+}
+
+void IeClient::DescribeMediaQualityRestorationTaskRusultAsync(const DescribeMediaQualityRestorationTaskRusultRequest& request, const DescribeMediaQualityRestorationTaskRusultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMediaQualityRestorationTaskRusult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IeClient::DescribeMediaQualityRestorationTaskRusultOutcomeCallable IeClient::DescribeMediaQualityRestorationTaskRusultCallable(const DescribeMediaQualityRestorationTaskRusultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMediaQualityRestorationTaskRusultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMediaQualityRestorationTaskRusult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IeClient::DescribeQualityControlTaskResultOutcome IeClient::DescribeQualityControlTaskResult(const DescribeQualityControlTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQualityControlTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQualityControlTaskResultResponse rsp = DescribeQualityControlTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQualityControlTaskResultOutcome(rsp);
+        else
+            return DescribeQualityControlTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQualityControlTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void IeClient::DescribeQualityControlTaskResultAsync(const DescribeQualityControlTaskResultRequest& request, const DescribeQualityControlTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeQualityControlTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IeClient::DescribeQualityControlTaskResultOutcomeCallable IeClient::DescribeQualityControlTaskResultCallable(const DescribeQualityControlTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeQualityControlTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeQualityControlTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IeClient::StopMediaQualityRestorationTaskOutcome IeClient::StopMediaQualityRestorationTask(const StopMediaQualityRestorationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopMediaQualityRestorationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopMediaQualityRestorationTaskResponse rsp = StopMediaQualityRestorationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopMediaQualityRestorationTaskOutcome(rsp);
+        else
+            return StopMediaQualityRestorationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return StopMediaQualityRestorationTaskOutcome(outcome.GetError());
+    }
+}
+
+void IeClient::StopMediaQualityRestorationTaskAsync(const StopMediaQualityRestorationTaskRequest& request, const StopMediaQualityRestorationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopMediaQualityRestorationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IeClient::StopMediaQualityRestorationTaskOutcomeCallable IeClient::StopMediaQualityRestorationTaskCallable(const StopMediaQualityRestorationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopMediaQualityRestorationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->StopMediaQualityRestorationTask(request);
         }
     );
 

@@ -35,6 +35,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeInstancesResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/RestartNodesRequest.h>
+#include <tencentcloud/es/v20180416/model/RestartNodesResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdatePluginsRequest.h>
@@ -75,6 +77,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RestartInstanceResponse> RestartInstanceOutcome;
                 typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartInstanceRequest&, RestartInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
+                typedef Outcome<Error, Model::RestartNodesResponse> RestartNodesOutcome;
+                typedef std::future<RestartNodesOutcome> RestartNodesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::RestartNodesRequest&, RestartNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartNodesAsyncHandler;
                 typedef Outcome<Error, Model::UpdateInstanceResponse> UpdateInstanceOutcome;
                 typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateInstanceRequest&, UpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
@@ -143,6 +148,15 @@ namespace TencentCloud
                 RestartInstanceOutcome RestartInstance(const Model::RestartInstanceRequest &request);
                 void RestartInstanceAsync(const Model::RestartInstanceRequest& request, const RestartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartInstanceOutcomeCallable RestartInstanceCallable(const Model::RestartInstanceRequest& request);
+
+                /**
+                 *用于重启集群节点
+                 * @param req RestartNodesRequest
+                 * @return RestartNodesOutcome
+                 */
+                RestartNodesOutcome RestartNodes(const Model::RestartNodesRequest &request);
+                void RestartNodesAsync(const Model::RestartNodesRequest& request, const RestartNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartNodesOutcomeCallable RestartNodesCallable(const Model::RestartNodesRequest& request);
 
                 /**
                  *对集群进行节点规格变更，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：

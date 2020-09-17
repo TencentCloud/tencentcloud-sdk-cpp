@@ -1053,6 +1053,28 @@ namespace TencentCloud
                      */
                     bool SecurityTypeHasBeenSet() const;
 
+                    /**
+                     * 获取场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneType 场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSceneType() const;
+
+                    /**
+                     * 设置场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SceneType 场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSceneType(const int64_t& _sceneType);
+
+                    /**
+                     * 判断参数 SceneType 是否已赋值
+                     * @return SceneType 是否已赋值
+                     */
+                    bool SceneTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1382,6 +1404,13 @@ namespace TencentCloud
                      */
                     uint64_t m_securityType;
                     bool m_securityTypeHasBeenSet;
+
+                    /**
+                     * 场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sceneType;
+                    bool m_sceneTypeHasBeenSet;
 
                 };
             }

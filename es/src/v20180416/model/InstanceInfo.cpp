@@ -73,7 +73,8 @@ InstanceInfo::InstanceInfo() :
     m_kibanaPrivateUrlHasBeenSet(false),
     m_kibanaPublicAccessHasBeenSet(false),
     m_kibanaPrivateAccessHasBeenSet(false),
-    m_securityTypeHasBeenSet(false)
+    m_securityTypeHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false)
 {
 }
 
@@ -667,6 +668,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const Value &value)
         m_securityTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SceneType") && !value["SceneType"].IsNull())
+    {
+        if (!value["SceneType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.SceneType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneType = value["SceneType"].GetInt64();
+        m_sceneTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1114,6 +1125,14 @@ void InstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "SecurityType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_securityType, allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sceneType, allocator);
     }
 
 }
@@ -1949,5 +1968,21 @@ void InstanceInfo::SetSecurityType(const uint64_t& _securityType)
 bool InstanceInfo::SecurityTypeHasBeenSet() const
 {
     return m_securityTypeHasBeenSet;
+}
+
+int64_t InstanceInfo::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void InstanceInfo::SetSceneType(const int64_t& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
 }
 

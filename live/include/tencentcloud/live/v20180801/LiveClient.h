@@ -93,6 +93,8 @@
 #include <tencentcloud/live/v20180801/model/DeleteRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumRequest.h>
@@ -352,6 +354,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAllStreamPlayInfoListResponse> DescribeAllStreamPlayInfoListOutcome;
                 typedef std::future<DescribeAllStreamPlayInfoListOutcome> DescribeAllStreamPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeAllStreamPlayInfoListRequest&, DescribeAllStreamPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllStreamPlayInfoListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAreaBillBandwidthAndFluxListResponse> DescribeAreaBillBandwidthAndFluxListOutcome;
+                typedef std::future<DescribeAreaBillBandwidthAndFluxListOutcome> DescribeAreaBillBandwidthAndFluxListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAreaBillBandwidthAndFluxListRequest&, DescribeAreaBillBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBillBandwidthAndFluxListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBillBandwidthAndFluxListResponse> DescribeBillBandwidthAndFluxListOutcome;
                 typedef std::future<DescribeBillBandwidthAndFluxListOutcome> DescribeBillBandwidthAndFluxListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeBillBandwidthAndFluxListRequest&, DescribeBillBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillBandwidthAndFluxListAsyncHandler;
@@ -924,6 +929,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeAllStreamPlayInfoListOutcome DescribeAllStreamPlayInfoList(const Model::DescribeAllStreamPlayInfoListRequest &request);
                 void DescribeAllStreamPlayInfoListAsync(const Model::DescribeAllStreamPlayInfoListRequest& request, const DescribeAllStreamPlayInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAllStreamPlayInfoListOutcomeCallable DescribeAllStreamPlayInfoListCallable(const Model::DescribeAllStreamPlayInfoListRequest& request);
+
+                /**
+                 *海外分区直播计费带宽和流量数据查询。
+                 * @param req DescribeAreaBillBandwidthAndFluxListRequest
+                 * @return DescribeAreaBillBandwidthAndFluxListOutcome
+                 */
+                DescribeAreaBillBandwidthAndFluxListOutcome DescribeAreaBillBandwidthAndFluxList(const Model::DescribeAreaBillBandwidthAndFluxListRequest &request);
+                void DescribeAreaBillBandwidthAndFluxListAsync(const Model::DescribeAreaBillBandwidthAndFluxListRequest& request, const DescribeAreaBillBandwidthAndFluxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAreaBillBandwidthAndFluxListOutcomeCallable DescribeAreaBillBandwidthAndFluxListCallable(const Model::DescribeAreaBillBandwidthAndFluxListRequest& request);
 
                 /**
                  *直播计费带宽和流量数据查询。

@@ -33,8 +33,18 @@
 #include <tencentcloud/ecm/v20190719/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AttachNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AttachNetworkInterfaceResponse.h>
+#include <tencentcloud/ecm/v20190719/model/BatchDeregisterTargetsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/BatchDeregisterTargetsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/BatchModifyTargetWeightRequest.h>
+#include <tencentcloud/ecm/v20190719/model/BatchModifyTargetWeightResponse.h>
+#include <tencentcloud/ecm/v20190719/model/BatchRegisterTargetsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/BatchRegisterTargetsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateImageResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateListenerRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateListenerResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateLoadBalancerRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateLoadBalancerResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateModuleRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateModuleResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateNetworkInterfaceRequest.h>
@@ -49,6 +59,12 @@
 #include <tencentcloud/ecm/v20190719/model/CreateVpcResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteImageResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteListenerRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteListenerResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteLoadBalancerRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteLoadBalancerResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteLoadBalancerListenersRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteLoadBalancerListenersResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteModuleRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteModuleResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteNetworkInterfaceRequest.h>
@@ -85,6 +101,12 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeInstancesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstancesDeniedActionsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstancesDeniedActionsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeListenersRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeListenersResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeLoadBalanceTaskStatusRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeLoadBalanceTaskStatusResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeLoadBalancersRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeLoadBalancersResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeModuleRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeModuleResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeModuleDetailRequest.h>
@@ -107,6 +129,10 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSubnetsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSubnetsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeTargetHealthRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeTargetHealthResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeTargetsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeTargetsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeTaskResultRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeTaskStatusRequest.h>
@@ -137,6 +163,10 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyImageAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyListenerRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyListenerResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyLoadBalancerAttributesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyLoadBalancerAttributesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleConfigRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleConfigResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleImageRequest.h>
@@ -155,6 +185,10 @@
 #include <tencentcloud/ecm/v20190719/model/ModifySecurityGroupPoliciesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifySubnetAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifySubnetAttributeResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyTargetPortRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyTargetPortResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyTargetWeightRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyTargetWeightResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyVpcAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyVpcAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/RebootInstancesRequest.h>
@@ -208,9 +242,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AttachNetworkInterfaceResponse> AttachNetworkInterfaceOutcome;
                 typedef std::future<AttachNetworkInterfaceOutcome> AttachNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AttachNetworkInterfaceRequest&, AttachNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachNetworkInterfaceAsyncHandler;
+                typedef Outcome<Error, Model::BatchDeregisterTargetsResponse> BatchDeregisterTargetsOutcome;
+                typedef std::future<BatchDeregisterTargetsOutcome> BatchDeregisterTargetsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::BatchDeregisterTargetsRequest&, BatchDeregisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeregisterTargetsAsyncHandler;
+                typedef Outcome<Error, Model::BatchModifyTargetWeightResponse> BatchModifyTargetWeightOutcome;
+                typedef std::future<BatchModifyTargetWeightOutcome> BatchModifyTargetWeightOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::BatchModifyTargetWeightRequest&, BatchModifyTargetWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyTargetWeightAsyncHandler;
+                typedef Outcome<Error, Model::BatchRegisterTargetsResponse> BatchRegisterTargetsOutcome;
+                typedef std::future<BatchRegisterTargetsOutcome> BatchRegisterTargetsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::BatchRegisterTargetsRequest&, BatchRegisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterTargetsAsyncHandler;
                 typedef Outcome<Error, Model::CreateImageResponse> CreateImageOutcome;
                 typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateImageRequest&, CreateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAsyncHandler;
+                typedef Outcome<Error, Model::CreateListenerResponse> CreateListenerOutcome;
+                typedef std::future<CreateListenerOutcome> CreateListenerOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::CreateListenerRequest&, CreateListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateListenerAsyncHandler;
+                typedef Outcome<Error, Model::CreateLoadBalancerResponse> CreateLoadBalancerOutcome;
+                typedef std::future<CreateLoadBalancerOutcome> CreateLoadBalancerOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::CreateLoadBalancerRequest&, CreateLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoadBalancerAsyncHandler;
                 typedef Outcome<Error, Model::CreateModuleResponse> CreateModuleOutcome;
                 typedef std::future<CreateModuleOutcome> CreateModuleOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateModuleRequest&, CreateModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModuleAsyncHandler;
@@ -232,6 +281,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteImageResponse> DeleteImageOutcome;
                 typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DeleteImageRequest&, DeleteImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageAsyncHandler;
+                typedef Outcome<Error, Model::DeleteListenerResponse> DeleteListenerOutcome;
+                typedef std::future<DeleteListenerOutcome> DeleteListenerOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DeleteListenerRequest&, DeleteListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteListenerAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLoadBalancerResponse> DeleteLoadBalancerOutcome;
+                typedef std::future<DeleteLoadBalancerOutcome> DeleteLoadBalancerOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DeleteLoadBalancerRequest&, DeleteLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoadBalancerAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLoadBalancerListenersResponse> DeleteLoadBalancerListenersOutcome;
+                typedef std::future<DeleteLoadBalancerListenersOutcome> DeleteLoadBalancerListenersOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DeleteLoadBalancerListenersRequest&, DeleteLoadBalancerListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoadBalancerListenersAsyncHandler;
                 typedef Outcome<Error, Model::DeleteModuleResponse> DeleteModuleOutcome;
                 typedef std::future<DeleteModuleOutcome> DeleteModuleOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DeleteModuleRequest&, DeleteModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModuleAsyncHandler;
@@ -286,6 +344,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesDeniedActionsResponse> DescribeInstancesDeniedActionsOutcome;
                 typedef std::future<DescribeInstancesDeniedActionsOutcome> DescribeInstancesDeniedActionsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeInstancesDeniedActionsRequest&, DescribeInstancesDeniedActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesDeniedActionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeListenersResponse> DescribeListenersOutcome;
+                typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeListenersRequest&, DescribeListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLoadBalanceTaskStatusResponse> DescribeLoadBalanceTaskStatusOutcome;
+                typedef std::future<DescribeLoadBalanceTaskStatusOutcome> DescribeLoadBalanceTaskStatusOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeLoadBalanceTaskStatusRequest&, DescribeLoadBalanceTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalanceTaskStatusAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLoadBalancersResponse> DescribeLoadBalancersOutcome;
+                typedef std::future<DescribeLoadBalancersOutcome> DescribeLoadBalancersOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeLoadBalancersRequest&, DescribeLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancersAsyncHandler;
                 typedef Outcome<Error, Model::DescribeModuleResponse> DescribeModuleOutcome;
                 typedef std::future<DescribeModuleOutcome> DescribeModuleOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeModuleRequest&, DescribeModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModuleAsyncHandler;
@@ -319,6 +386,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSubnetsResponse> DescribeSubnetsOutcome;
                 typedef std::future<DescribeSubnetsOutcome> DescribeSubnetsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeSubnetsRequest&, DescribeSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTargetHealthResponse> DescribeTargetHealthOutcome;
+                typedef std::future<DescribeTargetHealthOutcome> DescribeTargetHealthOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeTargetHealthRequest&, DescribeTargetHealthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetHealthAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTargetsResponse> DescribeTargetsOutcome;
+                typedef std::future<DescribeTargetsOutcome> DescribeTargetsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeTargetsRequest&, DescribeTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
                 typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
@@ -364,6 +437,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
                 typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyListenerResponse> ModifyListenerOutcome;
+                typedef std::future<ModifyListenerOutcome> ModifyListenerOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyListenerRequest&, ModifyListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyListenerAsyncHandler;
+                typedef Outcome<Error, Model::ModifyLoadBalancerAttributesResponse> ModifyLoadBalancerAttributesOutcome;
+                typedef std::future<ModifyLoadBalancerAttributesOutcome> ModifyLoadBalancerAttributesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyLoadBalancerAttributesRequest&, ModifyLoadBalancerAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerAttributesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyModuleConfigResponse> ModifyModuleConfigOutcome;
                 typedef std::future<ModifyModuleConfigOutcome> ModifyModuleConfigOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyModuleConfigRequest&, ModifyModuleConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleConfigAsyncHandler;
@@ -391,6 +470,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifySubnetAttributeResponse> ModifySubnetAttributeOutcome;
                 typedef std::future<ModifySubnetAttributeOutcome> ModifySubnetAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifySubnetAttributeRequest&, ModifySubnetAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubnetAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTargetPortResponse> ModifyTargetPortOutcome;
+                typedef std::future<ModifyTargetPortOutcome> ModifyTargetPortOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyTargetPortRequest&, ModifyTargetPortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTargetPortAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTargetWeightResponse> ModifyTargetWeightOutcome;
+                typedef std::future<ModifyTargetWeightOutcome> ModifyTargetWeightOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyTargetWeightRequest&, ModifyTargetWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTargetWeightAsyncHandler;
                 typedef Outcome<Error, Model::ModifyVpcAttributeResponse> ModifyVpcAttributeOutcome;
                 typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyVpcAttributeRequest&, ModifyVpcAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcAttributeAsyncHandler;
@@ -482,6 +567,33 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 AttachNetworkInterfaceOutcomeCallable AttachNetworkInterfaceCallable(const Model::AttachNetworkInterfaceRequest& request);
 
                 /**
+                 *批量解绑后端服务。
+                 * @param req BatchDeregisterTargetsRequest
+                 * @return BatchDeregisterTargetsOutcome
+                 */
+                BatchDeregisterTargetsOutcome BatchDeregisterTargets(const Model::BatchDeregisterTargetsRequest &request);
+                void BatchDeregisterTargetsAsync(const Model::BatchDeregisterTargetsRequest& request, const BatchDeregisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchDeregisterTargetsOutcomeCallable BatchDeregisterTargetsCallable(const Model::BatchDeregisterTargetsRequest& request);
+
+                /**
+                 *批量修改监听器绑定的后端机器的转发权重。
+                 * @param req BatchModifyTargetWeightRequest
+                 * @return BatchModifyTargetWeightOutcome
+                 */
+                BatchModifyTargetWeightOutcome BatchModifyTargetWeight(const Model::BatchModifyTargetWeightRequest &request);
+                void BatchModifyTargetWeightAsync(const Model::BatchModifyTargetWeightRequest& request, const BatchModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchModifyTargetWeightOutcomeCallable BatchModifyTargetWeightCallable(const Model::BatchModifyTargetWeightRequest& request);
+
+                /**
+                 *批量绑定后端目标。
+                 * @param req BatchRegisterTargetsRequest
+                 * @return BatchRegisterTargetsOutcome
+                 */
+                BatchRegisterTargetsOutcome BatchRegisterTargets(const Model::BatchRegisterTargetsRequest &request);
+                void BatchRegisterTargetsAsync(const Model::BatchRegisterTargetsRequest& request, const BatchRegisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchRegisterTargetsOutcomeCallable BatchRegisterTargetsCallable(const Model::BatchRegisterTargetsRequest& request);
+
+                /**
                  *本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。
                  * @param req CreateImageRequest
                  * @return CreateImageOutcome
@@ -489,6 +601,24 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 CreateImageOutcome CreateImage(const Model::CreateImageRequest &request);
                 void CreateImageAsync(const Model::CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateImageOutcomeCallable CreateImageCallable(const Model::CreateImageRequest& request);
+
+                /**
+                 *创建负载均衡监听器。
+                 * @param req CreateListenerRequest
+                 * @return CreateListenerOutcome
+                 */
+                CreateListenerOutcome CreateListener(const Model::CreateListenerRequest &request);
+                void CreateListenerAsync(const Model::CreateListenerRequest& request, const CreateListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateListenerOutcomeCallable CreateListenerCallable(const Model::CreateListenerRequest& request);
+
+                /**
+                 *购买负载均衡实例。
+                 * @param req CreateLoadBalancerRequest
+                 * @return CreateLoadBalancerOutcome
+                 */
+                CreateLoadBalancerOutcome CreateLoadBalancer(const Model::CreateLoadBalancerRequest &request);
+                void CreateLoadBalancerAsync(const Model::CreateLoadBalancerRequest& request, const CreateLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLoadBalancerOutcomeCallable CreateLoadBalancerCallable(const Model::CreateLoadBalancerRequest& request);
 
                 /**
                  *创建模块
@@ -563,6 +693,33 @@ CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系
                 DeleteImageOutcome DeleteImage(const Model::DeleteImageRequest &request);
                 void DeleteImageAsync(const Model::DeleteImageRequest& request, const DeleteImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteImageOutcomeCallable DeleteImageCallable(const Model::DeleteImageRequest& request);
+
+                /**
+                 *删除负载均衡监听器。
+                 * @param req DeleteListenerRequest
+                 * @return DeleteListenerOutcome
+                 */
+                DeleteListenerOutcome DeleteListener(const Model::DeleteListenerRequest &request);
+                void DeleteListenerAsync(const Model::DeleteListenerRequest& request, const DeleteListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteListenerOutcomeCallable DeleteListenerCallable(const Model::DeleteListenerRequest& request);
+
+                /**
+                 *删除负载均衡实例。
+                 * @param req DeleteLoadBalancerRequest
+                 * @return DeleteLoadBalancerOutcome
+                 */
+                DeleteLoadBalancerOutcome DeleteLoadBalancer(const Model::DeleteLoadBalancerRequest &request);
+                void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLoadBalancerOutcomeCallable DeleteLoadBalancerCallable(const Model::DeleteLoadBalancerRequest& request);
+
+                /**
+                 *删除负载均衡多个监听器
+                 * @param req DeleteLoadBalancerListenersRequest
+                 * @return DeleteLoadBalancerListenersOutcome
+                 */
+                DeleteLoadBalancerListenersOutcome DeleteLoadBalancerListeners(const Model::DeleteLoadBalancerListenersRequest &request);
+                void DeleteLoadBalancerListenersAsync(const Model::DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLoadBalancerListenersOutcomeCallable DeleteLoadBalancerListenersCallable(const Model::DeleteLoadBalancerListenersRequest& request);
 
                 /**
                  *删除业务模块
@@ -729,6 +886,33 @@ CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系
                 DescribeInstancesDeniedActionsOutcomeCallable DescribeInstancesDeniedActionsCallable(const Model::DescribeInstancesDeniedActionsRequest& request);
 
                 /**
+                 *查询负载均衡的监听器列表。
+                 * @param req DescribeListenersRequest
+                 * @return DescribeListenersOutcome
+                 */
+                DescribeListenersOutcome DescribeListeners(const Model::DescribeListenersRequest &request);
+                void DescribeListenersAsync(const Model::DescribeListenersRequest& request, const DescribeListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeListenersOutcomeCallable DescribeListenersCallable(const Model::DescribeListenersRequest& request);
+
+                /**
+                 *查询负载均衡相关的任务状态
+                 * @param req DescribeLoadBalanceTaskStatusRequest
+                 * @return DescribeLoadBalanceTaskStatusOutcome
+                 */
+                DescribeLoadBalanceTaskStatusOutcome DescribeLoadBalanceTaskStatus(const Model::DescribeLoadBalanceTaskStatusRequest &request);
+                void DescribeLoadBalanceTaskStatusAsync(const Model::DescribeLoadBalanceTaskStatusRequest& request, const DescribeLoadBalanceTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoadBalanceTaskStatusOutcomeCallable DescribeLoadBalanceTaskStatusCallable(const Model::DescribeLoadBalanceTaskStatusRequest& request);
+
+                /**
+                 *查询负载均衡实例列表。
+                 * @param req DescribeLoadBalancersRequest
+                 * @return DescribeLoadBalancersOutcome
+                 */
+                DescribeLoadBalancersOutcome DescribeLoadBalancers(const Model::DescribeLoadBalancersRequest &request);
+                void DescribeLoadBalancersAsync(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoadBalancersOutcomeCallable DescribeLoadBalancersCallable(const Model::DescribeLoadBalancersRequest& request);
+
+                /**
                  *获取模块列表
                  * @param req DescribeModuleRequest
                  * @return DescribeModuleOutcome
@@ -826,6 +1010,24 @@ CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系
                 DescribeSubnetsOutcome DescribeSubnets(const Model::DescribeSubnetsRequest &request);
                 void DescribeSubnetsAsync(const Model::DescribeSubnetsRequest& request, const DescribeSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSubnetsOutcomeCallable DescribeSubnetsCallable(const Model::DescribeSubnetsRequest& request);
+
+                /**
+                 *获取负载均衡后端服务的健康检查状态。
+                 * @param req DescribeTargetHealthRequest
+                 * @return DescribeTargetHealthOutcome
+                 */
+                DescribeTargetHealthOutcome DescribeTargetHealth(const Model::DescribeTargetHealthRequest &request);
+                void DescribeTargetHealthAsync(const Model::DescribeTargetHealthRequest& request, const DescribeTargetHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTargetHealthOutcomeCallable DescribeTargetHealthCallable(const Model::DescribeTargetHealthRequest& request);
+
+                /**
+                 *查询负载均衡绑定的后端服务列表。
+                 * @param req DescribeTargetsRequest
+                 * @return DescribeTargetsOutcome
+                 */
+                DescribeTargetsOutcome DescribeTargets(const Model::DescribeTargetsRequest &request);
+                void DescribeTargetsAsync(const Model::DescribeTargetsRequest& request, const DescribeTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTargetsOutcomeCallable DescribeTargetsCallable(const Model::DescribeTargetsRequest& request);
 
                 /**
                  *查询EIP异步任务执行结果
@@ -968,6 +1170,24 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyInstancesAttributeOutcomeCallable ModifyInstancesAttributeCallable(const Model::ModifyInstancesAttributeRequest& request);
 
                 /**
+                 *修改负载均衡监听器属性。
+                 * @param req ModifyListenerRequest
+                 * @return ModifyListenerOutcome
+                 */
+                ModifyListenerOutcome ModifyListener(const Model::ModifyListenerRequest &request);
+                void ModifyListenerAsync(const Model::ModifyListenerRequest& request, const ModifyListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyListenerOutcomeCallable ModifyListenerCallable(const Model::ModifyListenerRequest& request);
+
+                /**
+                 *修改负载均衡实例的属性。
+                 * @param req ModifyLoadBalancerAttributesRequest
+                 * @return ModifyLoadBalancerAttributesOutcome
+                 */
+                ModifyLoadBalancerAttributesOutcome ModifyLoadBalancerAttributes(const Model::ModifyLoadBalancerAttributesRequest &request);
+                void ModifyLoadBalancerAttributesAsync(const Model::ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLoadBalancerAttributesOutcomeCallable ModifyLoadBalancerAttributesCallable(const Model::ModifyLoadBalancerAttributesRequest& request);
+
+                /**
                  *修改模块配置，已关联实例的模块不支持调整配置。
                  * @param req ModifyModuleConfigRequest
                  * @return ModifyModuleConfigOutcome
@@ -1047,6 +1267,24 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifySubnetAttributeOutcome ModifySubnetAttribute(const Model::ModifySubnetAttributeRequest &request);
                 void ModifySubnetAttributeAsync(const Model::ModifySubnetAttributeRequest& request, const ModifySubnetAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySubnetAttributeOutcomeCallable ModifySubnetAttributeCallable(const Model::ModifySubnetAttributeRequest& request);
+
+                /**
+                 *修改监听器绑定的后端机器的端口。
+                 * @param req ModifyTargetPortRequest
+                 * @return ModifyTargetPortOutcome
+                 */
+                ModifyTargetPortOutcome ModifyTargetPort(const Model::ModifyTargetPortRequest &request);
+                void ModifyTargetPortAsync(const Model::ModifyTargetPortRequest& request, const ModifyTargetPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTargetPortOutcomeCallable ModifyTargetPortCallable(const Model::ModifyTargetPortRequest& request);
+
+                /**
+                 *修改监听器绑定的后端机器的转发权重。
+                 * @param req ModifyTargetWeightRequest
+                 * @return ModifyTargetWeightOutcome
+                 */
+                ModifyTargetWeightOutcome ModifyTargetWeight(const Model::ModifyTargetWeightRequest &request);
+                void ModifyTargetWeightAsync(const Model::ModifyTargetWeightRequest& request, const ModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTargetWeightOutcomeCallable ModifyTargetWeightCallable(const Model::ModifyTargetWeightRequest& request);
 
                 /**
                  *修改私有网络（VPC）的相关属性

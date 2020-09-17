@@ -105,6 +105,8 @@
 #include <tencentcloud/ocr/v20181119/model/QueryBarCodeResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h>
@@ -280,6 +282,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QuotaInvoiceOCRResponse> QuotaInvoiceOCROutcome;
                 typedef std::future<QuotaInvoiceOCROutcome> QuotaInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuotaInvoiceOCRRequest&, QuotaInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuotaInvoiceOCRAsyncHandler;
+                typedef Outcome<Error, Model::RecognizeThaiIDCardOCRResponse> RecognizeThaiIDCardOCROutcome;
+                typedef std::future<RecognizeThaiIDCardOCROutcome> RecognizeThaiIDCardOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeThaiIDCardOCRRequest&, RecognizeThaiIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeThaiIDCardOCRAsyncHandler;
                 typedef Outcome<Error, Model::ResidenceBookletOCRResponse> ResidenceBookletOCROutcome;
                 typedef std::future<ResidenceBookletOCROutcome> ResidenceBookletOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ResidenceBookletOCRRequest&, ResidenceBookletOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResidenceBookletOCRAsyncHandler;
@@ -966,6 +971,17 @@ namespace TencentCloud
                 QuotaInvoiceOCROutcome QuotaInvoiceOCR(const Model::QuotaInvoiceOCRRequest &request);
                 void QuotaInvoiceOCRAsync(const Model::QuotaInvoiceOCRRequest& request, const QuotaInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QuotaInvoiceOCROutcomeCallable QuotaInvoiceOCRCallable(const Model::QuotaInvoiceOCRRequest& request);
+
+                /**
+                 *本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码。
+本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)
+
+                 * @param req RecognizeThaiIDCardOCRRequest
+                 * @return RecognizeThaiIDCardOCROutcome
+                 */
+                RecognizeThaiIDCardOCROutcome RecognizeThaiIDCardOCR(const Model::RecognizeThaiIDCardOCRRequest &request);
+                void RecognizeThaiIDCardOCRAsync(const Model::RecognizeThaiIDCardOCRRequest& request, const RecognizeThaiIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeThaiIDCardOCROutcomeCallable RecognizeThaiIDCardOCRCallable(const Model::RecognizeThaiIDCardOCRRequest& request);
 
                 /**
                  *本接口支持居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等。

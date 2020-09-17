@@ -44,7 +44,9 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_kibanaPrivateAccessHasBeenSet(false),
     m_basicSecurityTypeHasBeenSet(false),
     m_kibanaPrivatePortHasBeenSet(false),
-    m_scaleTypeHasBeenSet(false)
+    m_scaleTypeHasBeenSet(false),
+    m_multiZoneInfoHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false)
 {
 }
 
@@ -231,6 +233,29 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "ScaleType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_scaleType, allocator);
+    }
+
+    if (m_multiZoneInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MultiZoneInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiZoneInfo.begin(); itr != m_multiZoneInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sceneType, allocator);
     }
 
 
@@ -575,6 +600,38 @@ void UpdateInstanceRequest::SetScaleType(const int64_t& _scaleType)
 bool UpdateInstanceRequest::ScaleTypeHasBeenSet() const
 {
     return m_scaleTypeHasBeenSet;
+}
+
+vector<ZoneDetail> UpdateInstanceRequest::GetMultiZoneInfo() const
+{
+    return m_multiZoneInfo;
+}
+
+void UpdateInstanceRequest::SetMultiZoneInfo(const vector<ZoneDetail>& _multiZoneInfo)
+{
+    m_multiZoneInfo = _multiZoneInfo;
+    m_multiZoneInfoHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::MultiZoneInfoHasBeenSet() const
+{
+    return m_multiZoneInfoHasBeenSet;
+}
+
+int64_t UpdateInstanceRequest::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void UpdateInstanceRequest::SetSceneType(const int64_t& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
 }
 
 

@@ -28,7 +28,8 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_esVersionHasBeenSet(false),
     m_checkOnlyHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
-    m_basicSecurityTypeHasBeenSet(false)
+    m_basicSecurityTypeHasBeenSet(false),
+    m_upgradeModeHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string UpgradeInstanceRequest::ToJsonString() const
         string key = "BasicSecurityType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_basicSecurityType, allocator);
+    }
+
+    if (m_upgradeModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpgradeMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_upgradeMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void UpgradeInstanceRequest::SetBasicSecurityType(const uint64_t& _basicSecurity
 bool UpgradeInstanceRequest::BasicSecurityTypeHasBeenSet() const
 {
     return m_basicSecurityTypeHasBeenSet;
+}
+
+string UpgradeInstanceRequest::GetUpgradeMode() const
+{
+    return m_upgradeMode;
+}
+
+void UpgradeInstanceRequest::SetUpgradeMode(const string& _upgradeMode)
+{
+    m_upgradeMode = _upgradeMode;
+    m_upgradeModeHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::UpgradeModeHasBeenSet() const
+{
+    return m_upgradeModeHasBeenSet;
 }
 
 

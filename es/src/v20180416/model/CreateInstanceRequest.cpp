@@ -50,7 +50,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_licenseTypeHasBeenSet(false),
     m_nodeInfoListHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_basicSecurityTypeHasBeenSet(false)
+    m_basicSecurityTypeHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false)
 {
 }
 
@@ -301,6 +302,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "BasicSecurityType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_basicSecurityType, allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sceneType, allocator);
     }
 
 
@@ -741,6 +750,22 @@ void CreateInstanceRequest::SetBasicSecurityType(const uint64_t& _basicSecurityT
 bool CreateInstanceRequest::BasicSecurityTypeHasBeenSet() const
 {
     return m_basicSecurityTypeHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void CreateInstanceRequest::SetSceneType(const int64_t& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
 }
 
 

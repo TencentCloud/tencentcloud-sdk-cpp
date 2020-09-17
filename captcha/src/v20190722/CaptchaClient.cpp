@@ -169,6 +169,135 @@ CaptchaClient::DescribeCaptchaDataSumOutcomeCallable CaptchaClient::DescribeCapt
     return task->get_future();
 }
 
+CaptchaClient::DescribeCaptchaMiniDataOutcome CaptchaClient::DescribeCaptchaMiniData(const DescribeCaptchaMiniDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaMiniData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaMiniDataResponse rsp = DescribeCaptchaMiniDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaMiniDataOutcome(rsp);
+        else
+            return DescribeCaptchaMiniDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaMiniDataOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaMiniDataAsync(const DescribeCaptchaMiniDataRequest& request, const DescribeCaptchaMiniDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaMiniData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaMiniDataOutcomeCallable CaptchaClient::DescribeCaptchaMiniDataCallable(const DescribeCaptchaMiniDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaMiniDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaMiniData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CaptchaClient::DescribeCaptchaMiniDataSumOutcome CaptchaClient::DescribeCaptchaMiniDataSum(const DescribeCaptchaMiniDataSumRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaMiniDataSum");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaMiniDataSumResponse rsp = DescribeCaptchaMiniDataSumResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaMiniDataSumOutcome(rsp);
+        else
+            return DescribeCaptchaMiniDataSumOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaMiniDataSumOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaMiniDataSumAsync(const DescribeCaptchaMiniDataSumRequest& request, const DescribeCaptchaMiniDataSumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaMiniDataSum(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaMiniDataSumOutcomeCallable CaptchaClient::DescribeCaptchaMiniDataSumCallable(const DescribeCaptchaMiniDataSumRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaMiniDataSumOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaMiniDataSum(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CaptchaClient::DescribeCaptchaMiniOperDataOutcome CaptchaClient::DescribeCaptchaMiniOperData(const DescribeCaptchaMiniOperDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaMiniOperData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaMiniOperDataResponse rsp = DescribeCaptchaMiniOperDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaMiniOperDataOutcome(rsp);
+        else
+            return DescribeCaptchaMiniOperDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaMiniOperDataOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaMiniOperDataAsync(const DescribeCaptchaMiniOperDataRequest& request, const DescribeCaptchaMiniOperDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaMiniOperData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaMiniOperDataOutcomeCallable CaptchaClient::DescribeCaptchaMiniOperDataCallable(const DescribeCaptchaMiniOperDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaMiniOperDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaMiniOperData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CaptchaClient::DescribeCaptchaOperDataOutcome CaptchaClient::DescribeCaptchaOperData(const DescribeCaptchaOperDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCaptchaOperData");

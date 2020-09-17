@@ -30,7 +30,8 @@ Blueprint::Blueprint() :
     m_platformHasBeenSet(false),
     m_platformTypeHasBeenSet(false),
     m_blueprintTypeHasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_requiredSystemDiskSizeHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome Blueprint::Deserialize(const Value &value)
         m_imageUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("RequiredSystemDiskSize") && !value["RequiredSystemDiskSize"].IsNull())
+    {
+        if (!value["RequiredSystemDiskSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Blueprint.RequiredSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_requiredSystemDiskSize = value["RequiredSystemDiskSize"].GetInt64();
+        m_requiredSystemDiskSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void Blueprint::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requiredSystemDiskSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RequiredSystemDiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_requiredSystemDiskSize, allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void Blueprint::SetImageUrl(const string& _imageUrl)
 bool Blueprint::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+int64_t Blueprint::GetRequiredSystemDiskSize() const
+{
+    return m_requiredSystemDiskSize;
+}
+
+void Blueprint::SetRequiredSystemDiskSize(const int64_t& _requiredSystemDiskSize)
+{
+    m_requiredSystemDiskSize = _requiredSystemDiskSize;
+    m_requiredSystemDiskSizeHasBeenSet = true;
+}
+
+bool Blueprint::RequiredSystemDiskSizeHasBeenSet() const
+{
+    return m_requiredSystemDiskSizeHasBeenSet;
 }
 

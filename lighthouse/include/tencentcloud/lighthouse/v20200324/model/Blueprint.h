@@ -208,6 +208,24 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取镜像所需系统盘大小
+                     * @return RequiredSystemDiskSize 镜像所需系统盘大小
+                     */
+                    int64_t GetRequiredSystemDiskSize() const;
+
+                    /**
+                     * 设置镜像所需系统盘大小
+                     * @param RequiredSystemDiskSize 镜像所需系统盘大小
+                     */
+                    void SetRequiredSystemDiskSize(const int64_t& _requiredSystemDiskSize);
+
+                    /**
+                     * 判断参数 RequiredSystemDiskSize 是否已赋值
+                     * @return RequiredSystemDiskSize 是否已赋值
+                     */
+                    bool RequiredSystemDiskSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +281,12 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 镜像所需系统盘大小
+                     */
+                    int64_t m_requiredSystemDiskSize;
+                    bool m_requiredSystemDiskSizeHasBeenSet;
 
                 };
             }

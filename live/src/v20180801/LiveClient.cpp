@@ -1545,6 +1545,49 @@ LiveClient::DescribeAllStreamPlayInfoListOutcomeCallable LiveClient::DescribeAll
     return task->get_future();
 }
 
+LiveClient::DescribeAreaBillBandwidthAndFluxListOutcome LiveClient::DescribeAreaBillBandwidthAndFluxList(const DescribeAreaBillBandwidthAndFluxListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAreaBillBandwidthAndFluxList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAreaBillBandwidthAndFluxListResponse rsp = DescribeAreaBillBandwidthAndFluxListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAreaBillBandwidthAndFluxListOutcome(rsp);
+        else
+            return DescribeAreaBillBandwidthAndFluxListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAreaBillBandwidthAndFluxListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAreaBillBandwidthAndFluxListAsync(const DescribeAreaBillBandwidthAndFluxListRequest& request, const DescribeAreaBillBandwidthAndFluxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAreaBillBandwidthAndFluxList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeAreaBillBandwidthAndFluxListOutcomeCallable LiveClient::DescribeAreaBillBandwidthAndFluxListCallable(const DescribeAreaBillBandwidthAndFluxListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAreaBillBandwidthAndFluxListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAreaBillBandwidthAndFluxList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeBillBandwidthAndFluxListOutcome LiveClient::DescribeBillBandwidthAndFluxList(const DescribeBillBandwidthAndFluxListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillBandwidthAndFluxList");

@@ -255,6 +255,135 @@ EcmClient::AttachNetworkInterfaceOutcomeCallable EcmClient::AttachNetworkInterfa
     return task->get_future();
 }
 
+EcmClient::BatchDeregisterTargetsOutcome EcmClient::BatchDeregisterTargets(const BatchDeregisterTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDeregisterTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDeregisterTargetsResponse rsp = BatchDeregisterTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDeregisterTargetsOutcome(rsp);
+        else
+            return BatchDeregisterTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDeregisterTargetsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::BatchDeregisterTargetsAsync(const BatchDeregisterTargetsRequest& request, const BatchDeregisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchDeregisterTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::BatchDeregisterTargetsOutcomeCallable EcmClient::BatchDeregisterTargetsCallable(const BatchDeregisterTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchDeregisterTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchDeregisterTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::BatchModifyTargetWeightOutcome EcmClient::BatchModifyTargetWeight(const BatchModifyTargetWeightRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchModifyTargetWeight");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchModifyTargetWeightResponse rsp = BatchModifyTargetWeightResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchModifyTargetWeightOutcome(rsp);
+        else
+            return BatchModifyTargetWeightOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchModifyTargetWeightOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::BatchModifyTargetWeightAsync(const BatchModifyTargetWeightRequest& request, const BatchModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchModifyTargetWeight(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::BatchModifyTargetWeightOutcomeCallable EcmClient::BatchModifyTargetWeightCallable(const BatchModifyTargetWeightRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchModifyTargetWeightOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchModifyTargetWeight(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::BatchRegisterTargetsOutcome EcmClient::BatchRegisterTargets(const BatchRegisterTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchRegisterTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchRegisterTargetsResponse rsp = BatchRegisterTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchRegisterTargetsOutcome(rsp);
+        else
+            return BatchRegisterTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchRegisterTargetsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::BatchRegisterTargetsAsync(const BatchRegisterTargetsRequest& request, const BatchRegisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchRegisterTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::BatchRegisterTargetsOutcomeCallable EcmClient::BatchRegisterTargetsCallable(const BatchRegisterTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchRegisterTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchRegisterTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::CreateImageOutcome EcmClient::CreateImage(const CreateImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateImage");
@@ -291,6 +420,92 @@ EcmClient::CreateImageOutcomeCallable EcmClient::CreateImageCallable(const Creat
         [this, request]()
         {
             return this->CreateImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::CreateListenerOutcome EcmClient::CreateListener(const CreateListenerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateListener");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateListenerResponse rsp = CreateListenerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateListenerOutcome(rsp);
+        else
+            return CreateListenerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateListenerOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateListenerAsync(const CreateListenerRequest& request, const CreateListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateListener(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateListenerOutcomeCallable EcmClient::CreateListenerCallable(const CreateListenerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateListenerOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateListener(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::CreateLoadBalancerOutcome EcmClient::CreateLoadBalancer(const CreateLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLoadBalancerResponse rsp = CreateLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLoadBalancerOutcome(rsp);
+        else
+            return CreateLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const CreateLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateLoadBalancerOutcomeCallable EcmClient::CreateLoadBalancerCallable(const CreateLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLoadBalancer(request);
         }
     );
 
@@ -592,6 +807,135 @@ EcmClient::DeleteImageOutcomeCallable EcmClient::DeleteImageCallable(const Delet
         [this, request]()
         {
             return this->DeleteImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteListenerOutcome EcmClient::DeleteListener(const DeleteListenerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteListener");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteListenerResponse rsp = DeleteListenerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteListenerOutcome(rsp);
+        else
+            return DeleteListenerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteListenerOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteListenerAsync(const DeleteListenerRequest& request, const DeleteListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteListener(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteListenerOutcomeCallable EcmClient::DeleteListenerCallable(const DeleteListenerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteListenerOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteListener(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteLoadBalancerOutcome EcmClient::DeleteLoadBalancer(const DeleteLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLoadBalancerResponse rsp = DeleteLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLoadBalancerOutcome(rsp);
+        else
+            return DeleteLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteLoadBalancerOutcomeCallable EcmClient::DeleteLoadBalancerCallable(const DeleteLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLoadBalancer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteLoadBalancerListenersOutcome EcmClient::DeleteLoadBalancerListeners(const DeleteLoadBalancerListenersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLoadBalancerListeners");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLoadBalancerListenersResponse rsp = DeleteLoadBalancerListenersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLoadBalancerListenersOutcome(rsp);
+        else
+            return DeleteLoadBalancerListenersOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLoadBalancerListenersOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteLoadBalancerListenersAsync(const DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLoadBalancerListeners(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteLoadBalancerListenersOutcomeCallable EcmClient::DeleteLoadBalancerListenersCallable(const DeleteLoadBalancerListenersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerListenersOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLoadBalancerListeners(request);
         }
     );
 
@@ -1373,6 +1717,135 @@ EcmClient::DescribeInstancesDeniedActionsOutcomeCallable EcmClient::DescribeInst
     return task->get_future();
 }
 
+EcmClient::DescribeListenersOutcome EcmClient::DescribeListeners(const DescribeListenersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeListeners");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeListenersResponse rsp = DescribeListenersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeListenersOutcome(rsp);
+        else
+            return DescribeListenersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeListenersOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeListenersAsync(const DescribeListenersRequest& request, const DescribeListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeListeners(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeListenersOutcomeCallable EcmClient::DescribeListenersCallable(const DescribeListenersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeListenersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeListeners(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeLoadBalanceTaskStatusOutcome EcmClient::DescribeLoadBalanceTaskStatus(const DescribeLoadBalanceTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoadBalanceTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoadBalanceTaskStatusResponse rsp = DescribeLoadBalanceTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoadBalanceTaskStatusOutcome(rsp);
+        else
+            return DescribeLoadBalanceTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoadBalanceTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeLoadBalanceTaskStatusAsync(const DescribeLoadBalanceTaskStatusRequest& request, const DescribeLoadBalanceTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLoadBalanceTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeLoadBalanceTaskStatusOutcomeCallable EcmClient::DescribeLoadBalanceTaskStatusCallable(const DescribeLoadBalanceTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLoadBalanceTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLoadBalanceTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeLoadBalancersOutcome EcmClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoadBalancers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoadBalancersResponse rsp = DescribeLoadBalancersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoadBalancersOutcome(rsp);
+        else
+            return DescribeLoadBalancersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoadBalancersOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLoadBalancers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeLoadBalancersOutcomeCallable EcmClient::DescribeLoadBalancersCallable(const DescribeLoadBalancersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLoadBalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeModuleOutcome EcmClient::DescribeModule(const DescribeModuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeModule");
@@ -1839,6 +2312,92 @@ EcmClient::DescribeSubnetsOutcomeCallable EcmClient::DescribeSubnetsCallable(con
         [this, request]()
         {
             return this->DescribeSubnets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeTargetHealthOutcome EcmClient::DescribeTargetHealth(const DescribeTargetHealthRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTargetHealth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTargetHealthResponse rsp = DescribeTargetHealthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTargetHealthOutcome(rsp);
+        else
+            return DescribeTargetHealthOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTargetHealthOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeTargetHealthAsync(const DescribeTargetHealthRequest& request, const DescribeTargetHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTargetHealth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeTargetHealthOutcomeCallable EcmClient::DescribeTargetHealthCallable(const DescribeTargetHealthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTargetHealthOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTargetHealth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeTargetsOutcome EcmClient::DescribeTargets(const DescribeTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTargetsResponse rsp = DescribeTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTargetsOutcome(rsp);
+        else
+            return DescribeTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTargetsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeTargetsAsync(const DescribeTargetsRequest& request, const DescribeTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeTargetsOutcomeCallable EcmClient::DescribeTargetsCallable(const DescribeTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTargets(request);
         }
     );
 
@@ -2491,6 +3050,92 @@ EcmClient::ModifyInstancesAttributeOutcomeCallable EcmClient::ModifyInstancesAtt
     return task->get_future();
 }
 
+EcmClient::ModifyListenerOutcome EcmClient::ModifyListener(const ModifyListenerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyListener");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyListenerResponse rsp = ModifyListenerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyListenerOutcome(rsp);
+        else
+            return ModifyListenerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyListenerOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyListenerAsync(const ModifyListenerRequest& request, const ModifyListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyListener(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyListenerOutcomeCallable EcmClient::ModifyListenerCallable(const ModifyListenerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyListenerOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyListener(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifyLoadBalancerAttributesOutcome EcmClient::ModifyLoadBalancerAttributes(const ModifyLoadBalancerAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLoadBalancerAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLoadBalancerAttributesResponse rsp = ModifyLoadBalancerAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLoadBalancerAttributesOutcome(rsp);
+        else
+            return ModifyLoadBalancerAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLoadBalancerAttributesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyLoadBalancerAttributesAsync(const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLoadBalancerAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyLoadBalancerAttributesOutcomeCallable EcmClient::ModifyLoadBalancerAttributesCallable(const ModifyLoadBalancerAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLoadBalancerAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ModifyModuleConfigOutcome EcmClient::ModifyModuleConfig(const ModifyModuleConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyModuleConfig");
@@ -2871,6 +3516,92 @@ EcmClient::ModifySubnetAttributeOutcomeCallable EcmClient::ModifySubnetAttribute
         [this, request]()
         {
             return this->ModifySubnetAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifyTargetPortOutcome EcmClient::ModifyTargetPort(const ModifyTargetPortRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTargetPort");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTargetPortResponse rsp = ModifyTargetPortResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTargetPortOutcome(rsp);
+        else
+            return ModifyTargetPortOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTargetPortOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyTargetPortAsync(const ModifyTargetPortRequest& request, const ModifyTargetPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTargetPort(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyTargetPortOutcomeCallable EcmClient::ModifyTargetPortCallable(const ModifyTargetPortRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTargetPortOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTargetPort(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifyTargetWeightOutcome EcmClient::ModifyTargetWeight(const ModifyTargetWeightRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTargetWeight");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTargetWeightResponse rsp = ModifyTargetWeightResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTargetWeightOutcome(rsp);
+        else
+            return ModifyTargetWeightOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTargetWeightOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyTargetWeightAsync(const ModifyTargetWeightRequest& request, const ModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTargetWeight(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyTargetWeightOutcomeCallable EcmClient::ModifyTargetWeightCallable(const ModifyTargetWeightRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTargetWeightOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTargetWeight(request);
         }
     );
 

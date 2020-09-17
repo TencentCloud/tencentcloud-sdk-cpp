@@ -203,14 +203,14 @@ bigvHeight：上/下行分辨率高
                     bool DataTypeHasBeenSet() const;
 
                     /**
-                     * 获取只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
-                     * @return PageNumber 只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
+                     * 获取只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
+                     * @return PageNumber 只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
                      */
                     std::string GetPageNumber() const;
 
                     /**
-                     * 设置只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
-                     * @param PageNumber 只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
+                     * 设置只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
+                     * @param PageNumber 只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
                      */
                     void SetPageNumber(const std::string& _pageNumber);
 
@@ -221,14 +221,14 @@ bigvHeight：上/下行分辨率高
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,最大不超过100）
-                     * @return PageSize 只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,最大不超过100）
+                     * 获取只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）
+                     * @return PageSize 只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）
                      */
                     std::string GetPageSize() const;
 
                     /**
-                     * 设置只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,最大不超过100）
-                     * @param PageSize 只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,最大不超过100）
+                     * 设置只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）
+                     * @param PageSize 只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）
                      */
                     void SetPageSize(const std::string& _pageSize);
 
@@ -290,13 +290,13 @@ bigvHeight：上/下行分辨率高
                     bool m_dataTypeHasBeenSet;
 
                     /**
-                     * 只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
+                     * 只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
                      */
                     std::string m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,最大不超过100）
+                     * 只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）
                      */
                     std::string m_pageSize;
                     bool m_pageSizeHasBeenSet;

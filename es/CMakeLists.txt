@@ -46,12 +46,14 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/EsDictionaryInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h
+  include/tencentcloud/es/v20180416/model/RestartNodesRequest.h
   include/tencentcloud/es/v20180416/model/UpdatePluginsRequest.h
   include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
   include/tencentcloud/es/v20180416/model/EsAcl.h
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
   include/tencentcloud/es/v20180416/model/DeleteInstanceRequest.h
   include/tencentcloud/es/v20180416/model/SubTaskDetail.h
+  include/tencentcloud/es/v20180416/model/RestartNodesResponse.h
   include/tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h
@@ -87,12 +89,14 @@ set(es_src
   src/v20180416/model/UpdateInstanceRequest.cpp
   src/v20180416/model/EsDictionaryInfo.cpp
   src/v20180416/model/DescribeInstanceOperationsResponse.cpp
+  src/v20180416/model/RestartNodesRequest.cpp
   src/v20180416/model/UpdatePluginsRequest.cpp
   src/v20180416/model/UpgradeLicenseResponse.cpp
   src/v20180416/model/EsAcl.cpp
   src/v20180416/model/MasterNodeInfo.cpp
   src/v20180416/model/DeleteInstanceRequest.cpp
   src/v20180416/model/SubTaskDetail.cpp
+  src/v20180416/model/RestartNodesResponse.cpp
   src/v20180416/model/UpgradeInstanceResponse.cpp
   src/v20180416/model/UpdateInstanceResponse.cpp
   src/v20180416/model/UpgradeInstanceRequest.cpp

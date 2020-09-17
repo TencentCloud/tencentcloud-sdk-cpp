@@ -137,6 +137,24 @@ namespace TencentCloud
                      */
                     bool MainVideoRightAlignHasBeenSet() const;
 
+                    /**
+                     * 获取悬浮模板、九宫格、屏幕分享模板有效。设置此参数后，输出流混合此参数中包含用户的音视频，以及其他用户的纯音频。最多可设置16个用户。
+                     * @return MixVideoUids 悬浮模板、九宫格、屏幕分享模板有效。设置此参数后，输出流混合此参数中包含用户的音视频，以及其他用户的纯音频。最多可设置16个用户。
+                     */
+                    std::vector<std::string> GetMixVideoUids() const;
+
+                    /**
+                     * 设置悬浮模板、九宫格、屏幕分享模板有效。设置此参数后，输出流混合此参数中包含用户的音视频，以及其他用户的纯音频。最多可设置16个用户。
+                     * @param MixVideoUids 悬浮模板、九宫格、屏幕分享模板有效。设置此参数后，输出流混合此参数中包含用户的音视频，以及其他用户的纯音频。最多可设置16个用户。
+                     */
+                    void SetMixVideoUids(const std::vector<std::string>& _mixVideoUids);
+
+                    /**
+                     * 判断参数 MixVideoUids 是否已赋值
+                     * @return MixVideoUids 是否已赋值
+                     */
+                    bool MixVideoUidsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +186,12 @@ namespace TencentCloud
                      */
                     uint64_t m_mainVideoRightAlign;
                     bool m_mainVideoRightAlignHasBeenSet;
+
+                    /**
+                     * 悬浮模板、九宫格、屏幕分享模板有效。设置此参数后，输出流混合此参数中包含用户的音视频，以及其他用户的纯音频。最多可设置16个用户。
+                     */
+                    std::vector<std::string> m_mixVideoUids;
+                    bool m_mixVideoUidsHasBeenSet;
 
                 };
             }

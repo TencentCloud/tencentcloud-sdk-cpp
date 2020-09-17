@@ -563,6 +563,24 @@ namespace TencentCloud
                      */
                     bool BasicSecurityTypeHasBeenSet() const;
 
+                    /**
+                     * 获取场景化模板类型 0：不启用 1：通用 2：日志 3：搜索
+                     * @return SceneType 场景化模板类型 0：不启用 1：通用 2：日志 3：搜索
+                     */
+                    int64_t GetSceneType() const;
+
+                    /**
+                     * 设置场景化模板类型 0：不启用 1：通用 2：日志 3：搜索
+                     * @param SceneType 场景化模板类型 0：不启用 1：通用 2：日志 3：搜索
+                     */
+                    void SetSceneType(const int64_t& _sceneType);
+
+                    /**
+                     * 判断参数 SceneType 是否已赋值
+                     * @return SceneType 是否已赋值
+                     */
+                    bool SceneTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -734,6 +752,12 @@ namespace TencentCloud
                      */
                     uint64_t m_basicSecurityType;
                     bool m_basicSecurityTypeHasBeenSet;
+
+                    /**
+                     * 场景化模板类型 0：不启用 1：通用 2：日志 3：搜索
+                     */
+                    int64_t m_sceneType;
+                    bool m_sceneTypeHasBeenSet;
 
                 };
             }

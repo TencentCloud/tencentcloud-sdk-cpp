@@ -1803,6 +1803,49 @@ OcrClient::QuotaInvoiceOCROutcomeCallable OcrClient::QuotaInvoiceOCRCallable(con
     return task->get_future();
 }
 
+OcrClient::RecognizeThaiIDCardOCROutcome OcrClient::RecognizeThaiIDCardOCR(const RecognizeThaiIDCardOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeThaiIDCardOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeThaiIDCardOCRResponse rsp = RecognizeThaiIDCardOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeThaiIDCardOCROutcome(rsp);
+        else
+            return RecognizeThaiIDCardOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeThaiIDCardOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeThaiIDCardOCRAsync(const RecognizeThaiIDCardOCRRequest& request, const RecognizeThaiIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeThaiIDCardOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeThaiIDCardOCROutcomeCallable OcrClient::RecognizeThaiIDCardOCRCallable(const RecognizeThaiIDCardOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeThaiIDCardOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeThaiIDCardOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::ResidenceBookletOCROutcome OcrClient::ResidenceBookletOCR(const ResidenceBookletOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "ResidenceBookletOCR");

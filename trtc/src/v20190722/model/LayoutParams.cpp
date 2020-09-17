@@ -26,7 +26,8 @@ LayoutParams::LayoutParams() :
     m_mainVideoUserIdHasBeenSet(false),
     m_mainVideoStreamTypeHasBeenSet(false),
     m_smallVideoLayoutParamsHasBeenSet(false),
-    m_mainVideoRightAlignHasBeenSet(false)
+    m_mainVideoRightAlignHasBeenSet(false),
+    m_mixVideoUidsHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,19 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
         m_mainVideoRightAlignHasBeenSet = true;
     }
 
+    if (value.HasMember("MixVideoUids") && !value["MixVideoUids"].IsNull())
+    {
+        if (!value["MixVideoUids"].IsArray())
+            return CoreInternalOutcome(Error("response `LayoutParams.MixVideoUids` is not array type"));
+
+        const Value &tmpValue = value["MixVideoUids"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_mixVideoUids.push_back((*itr).GetString());
+        }
+        m_mixVideoUidsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +152,19 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "MainVideoRightAlign";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mainVideoRightAlign, allocator);
+    }
+
+    if (m_mixVideoUidsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MixVideoUids";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_mixVideoUids.begin(); itr != m_mixVideoUids.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -221,5 +248,21 @@ void LayoutParams::SetMainVideoRightAlign(const uint64_t& _mainVideoRightAlign)
 bool LayoutParams::MainVideoRightAlignHasBeenSet() const
 {
     return m_mainVideoRightAlignHasBeenSet;
+}
+
+vector<string> LayoutParams::GetMixVideoUids() const
+{
+    return m_mixVideoUids;
+}
+
+void LayoutParams::SetMixVideoUids(const vector<string>& _mixVideoUids)
+{
+    m_mixVideoUids = _mixVideoUids;
+    m_mixVideoUidsHasBeenSet = true;
+}
+
+bool LayoutParams::MixVideoUidsHasBeenSet() const
+{
+    return m_mixVideoUidsHasBeenSet;
 }
 
