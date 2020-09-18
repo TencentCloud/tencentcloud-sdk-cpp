@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ASR_V20190614_MODEL_GETASRVOCABLISTREQUEST_H_
-#define TENCENTCLOUD_ASR_V20190614_MODEL_GETASRVOCABLISTREQUEST_H_
+#ifndef TENCENTCLOUD_ASR_V20190614_MODEL_GETCUSTOMIZATIONLISTREQUEST_H_
+#define TENCENTCLOUD_ASR_V20190614_MODEL_GETCUSTOMIZATIONLISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,13 +32,13 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * GetAsrVocabList请求参数结构体
+                * GetCustomizationList请求参数结构体
                 */
-                class GetAsrVocabListRequest : public AbstractModel
+                class GetCustomizationListRequest : public AbstractModel
                 {
                 public:
-                    GetAsrVocabListRequest();
-                    ~GetAsrVocabListRequest() = default;
+                    GetCustomizationListRequest();
+                    ~GetCustomizationListRequest() = default;
                     std::string ToJsonString() const;
 
 
@@ -61,32 +61,14 @@ namespace TencentCloud
                     bool TagInfosHasBeenSet() const;
 
                     /**
-                     * 获取分页Offset
-                     * @return Offset 分页Offset
-                     */
-                    uint64_t GetOffset() const;
-
-                    /**
-                     * 设置分页Offset
-                     * @param Offset 分页Offset
-                     */
-                    void SetOffset(const uint64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
-                     * 获取分页Limit
-                     * @return Limit 分页Limit
+                     * 获取分页大小
+                     * @return Limit 分页大小
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页Limit
-                     * @param Limit 分页Limit
+                     * 设置分页大小
+                     * @param Limit 分页大小
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return Limit 是否已赋值
                      */
                     bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页offset
+                     * @return Offset 分页offset
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置分页offset
+                     * @param Offset 分页offset
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
 
                 private:
 
@@ -105,16 +105,16 @@ namespace TencentCloud
                     bool m_tagInfosHasBeenSet;
 
                     /**
-                     * 分页Offset
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
-
-                    /**
-                     * 分页Limit
+                     * 分页大小
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页offset
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }
@@ -122,4 +122,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ASR_V20190614_MODEL_GETASRVOCABLISTREQUEST_H_
+#endif // !TENCENTCLOUD_ASR_V20190614_MODEL_GETCUSTOMIZATIONLISTREQUEST_H_

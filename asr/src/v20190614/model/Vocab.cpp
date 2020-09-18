@@ -28,7 +28,8 @@ Vocab::Vocab() :
     m_wordWeightsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_tagInfosHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,19 @@ CoreInternalOutcome Vocab::Deserialize(const Value &value)
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("TagInfos") && !value["TagInfos"].IsNull())
+    {
+        if (!value["TagInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `Vocab.TagInfos` is not array type"));
+
+        const Value &tmpValue = value["TagInfos"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tagInfos.push_back((*itr).GetString());
+        }
+        m_tagInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -185,6 +199,19 @@ void Vocab::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
+    }
+
+    if (m_tagInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagInfos.begin(); itr != m_tagInfos.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -300,5 +327,21 @@ void Vocab::SetState(const int64_t& _state)
 bool Vocab::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+vector<string> Vocab::GetTagInfos() const
+{
+    return m_tagInfos;
+}
+
+void Vocab::SetTagInfos(const vector<string>& _tagInfos)
+{
+    m_tagInfos = _tagInfos;
+    m_tagInfosHasBeenSet = true;
+}
+
+bool Vocab::TagInfosHasBeenSet() const
+{
+    return m_tagInfosHasBeenSet;
 }
 

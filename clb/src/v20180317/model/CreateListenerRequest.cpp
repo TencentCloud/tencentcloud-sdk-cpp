@@ -34,7 +34,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_schedulerHasBeenSet(false),
     m_sniSwitchHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
-    m_sessionTypeHasBeenSet(false)
+    m_sessionTypeHasBeenSet(false),
+    m_keepaliveEnableHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,14 @@ string CreateListenerRequest::ToJsonString() const
         string key = "SessionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_sessionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keepaliveEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KeepaliveEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_keepaliveEnable, allocator);
     }
 
 
@@ -327,6 +336,22 @@ void CreateListenerRequest::SetSessionType(const string& _sessionType)
 bool CreateListenerRequest::SessionTypeHasBeenSet() const
 {
     return m_sessionTypeHasBeenSet;
+}
+
+int64_t CreateListenerRequest::GetKeepaliveEnable() const
+{
+    return m_keepaliveEnable;
+}
+
+void CreateListenerRequest::SetKeepaliveEnable(const int64_t& _keepaliveEnable)
+{
+    m_keepaliveEnable = _keepaliveEnable;
+    m_keepaliveEnableHasBeenSet = true;
+}
+
+bool CreateListenerRequest::KeepaliveEnableHasBeenSet() const
+{
+    return m_keepaliveEnableHasBeenSet;
 }
 
 

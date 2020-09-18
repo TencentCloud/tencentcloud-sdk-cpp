@@ -37,6 +37,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/GetGroupListRequest.h
   include/tencentcloud/iai/v20200303/model/GetUpgradeGroupFaceModelVersionJobListRequest.h
   include/tencentcloud/iai/v20200303/model/GetUpgradeGroupFaceModelVersionResultResponse.h
+  include/tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateResponse.h
   include/tencentcloud/iai/v20200303/model/AnalyzeFaceRequest.h
   include/tencentcloud/iai/v20200303/model/CreatePersonResponse.h
   include/tencentcloud/iai/v20200303/model/SearchFacesResponse.h
@@ -86,6 +87,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/FaceAttributesInfo.h
   include/tencentcloud/iai/v20200303/model/VerifyPersonRequest.h
   include/tencentcloud/iai/v20200303/model/ModifyPersonBaseInfoRequest.h
+  include/tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateRequest.h
   include/tencentcloud/iai/v20200303/model/JobIdInfo.h
   include/tencentcloud/iai/v20200303/model/FaceDetailInfo.h
   include/tencentcloud/iai/v20200303/model/SearchFacesRequest.h
@@ -248,6 +250,7 @@ set(iai_src
   src/v20200303/model/GetGroupListRequest.cpp
   src/v20200303/model/GetUpgradeGroupFaceModelVersionJobListRequest.cpp
   src/v20200303/model/GetUpgradeGroupFaceModelVersionResultResponse.cpp
+  src/v20200303/model/DetectLiveFaceAccurateResponse.cpp
   src/v20200303/model/AnalyzeFaceRequest.cpp
   src/v20200303/model/CreatePersonResponse.cpp
   src/v20200303/model/SearchFacesResponse.cpp
@@ -297,6 +300,7 @@ set(iai_src
   src/v20200303/model/FaceAttributesInfo.cpp
   src/v20200303/model/VerifyPersonRequest.cpp
   src/v20200303/model/ModifyPersonBaseInfoRequest.cpp
+  src/v20200303/model/DetectLiveFaceAccurateRequest.cpp
   src/v20200303/model/JobIdInfo.cpp
   src/v20200303/model/FaceDetailInfo.cpp
   src/v20200303/model/SearchFacesRequest.cpp

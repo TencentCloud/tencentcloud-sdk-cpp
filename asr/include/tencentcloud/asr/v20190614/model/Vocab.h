@@ -173,6 +173,28 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagInfos 标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetTagInfos() const;
+
+                    /**
+                     * 设置标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagInfos 标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagInfos(const std::vector<std::string>& _tagInfos);
+
+                    /**
+                     * 判断参数 TagInfos 是否已赋值
+                     * @return TagInfos 是否已赋值
+                     */
+                    bool TagInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +238,13 @@ namespace TencentCloud
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * 标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_tagInfos;
+                    bool m_tagInfosHasBeenSet;
 
                 };
             }

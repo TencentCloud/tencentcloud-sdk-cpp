@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/asr/v20190614/model/GetAsrVocabListResponse.h>
+#include <tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniResultResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Asr::V20190614::Model;
+using namespace TencentCloud::Captcha::V20190722::Model;
 using namespace rapidjson;
 using namespace std;
 
-GetAsrVocabListResponse::GetAsrVocabListResponse() :
-    m_vocabListHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+DescribeCaptchaMiniResultResponse::DescribeCaptchaMiniResultResponse() :
+    m_captchaCodeHasBeenSet(false),
+    m_captchaMsgHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome GetAsrVocabListResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeCaptchaMiniResultResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,34 +64,24 @@ CoreInternalOutcome GetAsrVocabListResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("VocabList") && !rsp["VocabList"].IsNull())
+    if (rsp.HasMember("CaptchaCode") && !rsp["CaptchaCode"].IsNull())
     {
-        if (!rsp["VocabList"].IsArray())
-            return CoreInternalOutcome(Error("response `VocabList` is not array type"));
-
-        const Value &tmpValue = rsp["VocabList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["CaptchaCode"].IsInt64())
         {
-            Vocab item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_vocabList.push_back(item);
+            return CoreInternalOutcome(Error("response `CaptchaCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_vocabListHasBeenSet = true;
+        m_captchaCode = rsp["CaptchaCode"].GetInt64();
+        m_captchaCodeHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("CaptchaMsg") && !rsp["CaptchaMsg"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["CaptchaMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CaptchaMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
+        m_captchaMsg = string(rsp["CaptchaMsg"].GetString());
+        m_captchaMsgHasBeenSet = true;
     }
 
 
@@ -99,24 +89,24 @@ CoreInternalOutcome GetAsrVocabListResponse::Deserialize(const string &payload)
 }
 
 
-vector<Vocab> GetAsrVocabListResponse::GetVocabList() const
+int64_t DescribeCaptchaMiniResultResponse::GetCaptchaCode() const
 {
-    return m_vocabList;
+    return m_captchaCode;
 }
 
-bool GetAsrVocabListResponse::VocabListHasBeenSet() const
+bool DescribeCaptchaMiniResultResponse::CaptchaCodeHasBeenSet() const
 {
-    return m_vocabListHasBeenSet;
+    return m_captchaCodeHasBeenSet;
 }
 
-uint64_t GetAsrVocabListResponse::GetTotalCount() const
+string DescribeCaptchaMiniResultResponse::GetCaptchaMsg() const
 {
-    return m_totalCount;
+    return m_captchaMsg;
 }
 
-bool GetAsrVocabListResponse::TotalCountHasBeenSet() const
+bool DescribeCaptchaMiniResultResponse::CaptchaMsgHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
+    return m_captchaMsgHasBeenSet;
 }
 
 

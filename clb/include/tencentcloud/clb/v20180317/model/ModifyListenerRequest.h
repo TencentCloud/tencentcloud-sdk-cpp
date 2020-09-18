@@ -192,6 +192,24 @@ namespace TencentCloud
                      */
                     bool SniSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     */
+                    int64_t GetKeepaliveEnable() const;
+
+                    /**
+                     * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     * @param KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     */
+                    void SetKeepaliveEnable(const int64_t& _keepaliveEnable);
+
+                    /**
+                     * 判断参数 KeepaliveEnable 是否已赋值
+                     * @return KeepaliveEnable 是否已赋值
+                     */
+                    bool KeepaliveEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +260,12 @@ namespace TencentCloud
                      */
                     int64_t m_sniSwitch;
                     bool m_sniSwitchHasBeenSet;
+
+                    /**
+                     * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     */
+                    int64_t m_keepaliveEnable;
+                    bool m_keepaliveEnableHasBeenSet;
 
                 };
             }

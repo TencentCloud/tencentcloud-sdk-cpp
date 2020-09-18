@@ -341,6 +341,49 @@ AsrClient::GetAsrVocabListOutcomeCallable AsrClient::GetAsrVocabListCallable(con
     return task->get_future();
 }
 
+AsrClient::GetCustomizationListOutcome AsrClient::GetCustomizationList(const GetCustomizationListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCustomizationList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCustomizationListResponse rsp = GetCustomizationListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCustomizationListOutcome(rsp);
+        else
+            return GetCustomizationListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCustomizationListOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::GetCustomizationListAsync(const GetCustomizationListRequest& request, const GetCustomizationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCustomizationList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::GetCustomizationListOutcomeCallable AsrClient::GetCustomizationListCallable(const GetCustomizationListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCustomizationListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCustomizationList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::SentenceRecognitionOutcome AsrClient::SentenceRecognition(const SentenceRecognitionRequest &request)
 {
     auto outcome = MakeRequest(request, "SentenceRecognition");

@@ -37,7 +37,8 @@ SentenceRecognitionRequest::SentenceRecognitionRequest() :
     m_filterDirtyHasBeenSet(false),
     m_filterModalHasBeenSet(false),
     m_filterPuncHasBeenSet(false),
-    m_convertNumModeHasBeenSet(false)
+    m_convertNumModeHasBeenSet(false),
+    m_wordInfoHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,14 @@ string SentenceRecognitionRequest::ToJsonString() const
         string key = "ConvertNumMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_convertNumMode, allocator);
+    }
+
+    if (m_wordInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WordInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_wordInfo, allocator);
     }
 
 
@@ -390,6 +399,22 @@ void SentenceRecognitionRequest::SetConvertNumMode(const int64_t& _convertNumMod
 bool SentenceRecognitionRequest::ConvertNumModeHasBeenSet() const
 {
     return m_convertNumModeHasBeenSet;
+}
+
+int64_t SentenceRecognitionRequest::GetWordInfo() const
+{
+    return m_wordInfo;
+}
+
+void SentenceRecognitionRequest::SetWordInfo(const int64_t& _wordInfo)
+{
+    m_wordInfo = _wordInfo;
+    m_wordInfoHasBeenSet = true;
+}
+
+bool SentenceRecognitionRequest::WordInfoHasBeenSet() const
+{
+    return m_wordInfoHasBeenSet;
 }
 
 

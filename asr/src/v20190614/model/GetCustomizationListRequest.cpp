@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/asr/v20190614/model/GetAsrVocabListRequest.h>
+#include <tencentcloud/asr/v20190614/model/GetCustomizationListRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,14 +23,14 @@ using namespace TencentCloud::Asr::V20190614::Model;
 using namespace rapidjson;
 using namespace std;
 
-GetAsrVocabListRequest::GetAsrVocabListRequest() :
+GetCustomizationListRequest::GetCustomizationListRequest() :
     m_tagInfosHasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
-string GetAsrVocabListRequest::ToJsonString() const
+string GetCustomizationListRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
@@ -50,20 +50,20 @@ string GetAsrVocabListRequest::ToJsonString() const
         }
     }
 
-    if (m_offsetHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
     if (m_limitHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -74,52 +74,52 @@ string GetAsrVocabListRequest::ToJsonString() const
 }
 
 
-vector<string> GetAsrVocabListRequest::GetTagInfos() const
+vector<string> GetCustomizationListRequest::GetTagInfos() const
 {
     return m_tagInfos;
 }
 
-void GetAsrVocabListRequest::SetTagInfos(const vector<string>& _tagInfos)
+void GetCustomizationListRequest::SetTagInfos(const vector<string>& _tagInfos)
 {
     m_tagInfos = _tagInfos;
     m_tagInfosHasBeenSet = true;
 }
 
-bool GetAsrVocabListRequest::TagInfosHasBeenSet() const
+bool GetCustomizationListRequest::TagInfosHasBeenSet() const
 {
     return m_tagInfosHasBeenSet;
 }
 
-uint64_t GetAsrVocabListRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void GetAsrVocabListRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool GetAsrVocabListRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
-uint64_t GetAsrVocabListRequest::GetLimit() const
+uint64_t GetCustomizationListRequest::GetLimit() const
 {
     return m_limit;
 }
 
-void GetAsrVocabListRequest::SetLimit(const uint64_t& _limit)
+void GetCustomizationListRequest::SetLimit(const uint64_t& _limit)
 {
     m_limit = _limit;
     m_limitHasBeenSet = true;
 }
 
-bool GetAsrVocabListRequest::LimitHasBeenSet() const
+bool GetCustomizationListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+uint64_t GetCustomizationListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void GetCustomizationListRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool GetCustomizationListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

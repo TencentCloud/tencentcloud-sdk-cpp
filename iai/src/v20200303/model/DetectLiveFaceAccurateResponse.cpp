@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/asr/v20190614/model/GetAsrVocabListResponse.h>
+#include <tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Asr::V20190614::Model;
+using namespace TencentCloud::Iai::V20200303::Model;
 using namespace rapidjson;
 using namespace std;
 
-GetAsrVocabListResponse::GetAsrVocabListResponse() :
-    m_vocabListHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+DetectLiveFaceAccurateResponse::DetectLiveFaceAccurateResponse() :
+    m_scoreHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome GetAsrVocabListResponse::Deserialize(const string &payload)
+CoreInternalOutcome DetectLiveFaceAccurateResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,34 +64,24 @@ CoreInternalOutcome GetAsrVocabListResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("VocabList") && !rsp["VocabList"].IsNull())
+    if (rsp.HasMember("Score") && !rsp["Score"].IsNull())
     {
-        if (!rsp["VocabList"].IsArray())
-            return CoreInternalOutcome(Error("response `VocabList` is not array type"));
-
-        const Value &tmpValue = rsp["VocabList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Score"].IsDouble())
         {
-            Vocab item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_vocabList.push_back(item);
+            return CoreInternalOutcome(Error("response `Score` IsDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_vocabListHasBeenSet = true;
+        m_score = rsp["Score"].GetDouble();
+        m_scoreHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["FaceModelVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
     }
 
 
@@ -99,24 +89,24 @@ CoreInternalOutcome GetAsrVocabListResponse::Deserialize(const string &payload)
 }
 
 
-vector<Vocab> GetAsrVocabListResponse::GetVocabList() const
+double DetectLiveFaceAccurateResponse::GetScore() const
 {
-    return m_vocabList;
+    return m_score;
 }
 
-bool GetAsrVocabListResponse::VocabListHasBeenSet() const
+bool DetectLiveFaceAccurateResponse::ScoreHasBeenSet() const
 {
-    return m_vocabListHasBeenSet;
+    return m_scoreHasBeenSet;
 }
 
-uint64_t GetAsrVocabListResponse::GetTotalCount() const
+string DetectLiveFaceAccurateResponse::GetFaceModelVersion() const
 {
-    return m_totalCount;
+    return m_faceModelVersion;
 }
 
-bool GetAsrVocabListResponse::TotalCountHasBeenSet() const
+bool DetectLiveFaceAccurateResponse::FaceModelVersionHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
+    return m_faceModelVersionHasBeenSet;
 }
 
 

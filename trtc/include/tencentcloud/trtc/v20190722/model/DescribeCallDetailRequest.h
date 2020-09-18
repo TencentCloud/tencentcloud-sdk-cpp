@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户sdkappid（1400188366）
-                     * @return SdkAppId 用户sdkappid（1400188366）
+                     * 获取用户SDKAppID（1400188366）
+                     * @return SdkAppId 用户SDKAppID（1400188366）
                      */
                     std::string GetSdkAppId() const;
 
                     /**
-                     * 设置用户sdkappid（1400188366）
-                     * @param SdkAppId 用户sdkappid（1400188366）
+                     * 设置用户SDKAppID（1400188366）
+                     * @param SdkAppId 用户SDKAppID（1400188366）
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
@@ -203,14 +203,14 @@ bigvHeight：上/下行分辨率高
                     bool DataTypeHasBeenSet() const;
 
                     /**
-                     * 获取只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
-                     * @return PageNumber 只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
+                     * 获取设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
+                     * @return PageNumber 设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
                      */
                     std::string GetPageNumber() const;
 
                     /**
-                     * 设置只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
-                     * @param PageNumber 只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
+                     * 设置设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
+                     * @param PageNumber 设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
                      */
                     void SetPageNumber(const std::string& _pageNumber);
 
@@ -221,14 +221,14 @@ bigvHeight：上/下行分辨率高
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）
-                     * @return PageSize 只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）
+                     * 获取设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）
+                     * @return PageSize 设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）
                      */
                     std::string GetPageSize() const;
 
                     /**
-                     * 设置只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）
-                     * @param PageSize 只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）
+                     * 设置设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）
+                     * @param PageSize 设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）
                      */
                     void SetPageSize(const std::string& _pageSize);
 
@@ -259,7 +259,7 @@ bigvHeight：上/下行分辨率高
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 用户sdkappid（1400188366）
+                     * 用户SDKAppID（1400188366）
                      */
                     std::string m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
@@ -290,13 +290,13 @@ bigvHeight：上/下行分辨率高
                     bool m_dataTypeHasBeenSet;
 
                     /**
-                     * 只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
+                     * 设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
                      */
                     std::string m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）
+                     * 设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）
                      */
                     std::string m_pageSize;
                     bool m_pageSizeHasBeenSet;

@@ -31,7 +31,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_healthCheckHasBeenSet(false),
     m_certificateHasBeenSet(false),
     m_schedulerHasBeenSet(false),
-    m_sniSwitchHasBeenSet(false)
+    m_sniSwitchHasBeenSet(false),
+    m_keepaliveEnableHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "SniSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sniSwitch, allocator);
+    }
+
+    if (m_keepaliveEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KeepaliveEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_keepaliveEnable, allocator);
     }
 
 
@@ -242,6 +251,22 @@ void ModifyListenerRequest::SetSniSwitch(const int64_t& _sniSwitch)
 bool ModifyListenerRequest::SniSwitchHasBeenSet() const
 {
     return m_sniSwitchHasBeenSet;
+}
+
+int64_t ModifyListenerRequest::GetKeepaliveEnable() const
+{
+    return m_keepaliveEnable;
+}
+
+void ModifyListenerRequest::SetKeepaliveEnable(const int64_t& _keepaliveEnable)
+{
+    m_keepaliveEnable = _keepaliveEnable;
+    m_keepaliveEnableHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::KeepaliveEnableHasBeenSet() const
+{
+    return m_keepaliveEnableHasBeenSet;
 }
 
 

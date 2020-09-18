@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/asr/v20190614/model/SentenceWord.h>
 
 
 namespace TencentCloud
@@ -66,6 +67,34 @@ namespace TencentCloud
                      */
                     bool AudioDurationHasBeenSet() const;
 
+                    /**
+                     * 获取词时间戳列表的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WordSize 词时间戳列表的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetWordSize() const;
+
+                    /**
+                     * 判断参数 WordSize 是否已赋值
+                     * @return WordSize 是否已赋值
+                     */
+                    bool WordSizeHasBeenSet() const;
+
+                    /**
+                     * 获取词时间戳列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WordList 词时间戳列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SentenceWord> GetWordList() const;
+
+                    /**
+                     * 判断参数 WordList 是否已赋值
+                     * @return WordList 是否已赋值
+                     */
+                    bool WordListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +108,20 @@ namespace TencentCloud
                      */
                     int64_t m_audioDuration;
                     bool m_audioDurationHasBeenSet;
+
+                    /**
+                     * 词时间戳列表的长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_wordSize;
+                    bool m_wordSizeHasBeenSet;
+
+                    /**
+                     * 词时间戳列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SentenceWord> m_wordList;
+                    bool m_wordListHasBeenSet;
 
                 };
             }

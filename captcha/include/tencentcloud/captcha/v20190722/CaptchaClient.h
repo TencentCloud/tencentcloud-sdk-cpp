@@ -35,6 +35,8 @@
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniDataSumResponse.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniOperDataRequest.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniOperDataResponse.h>
+#include <tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniResultRequest.h>
+#include <tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniResultResponse.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaOperDataRequest.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaOperDataResponse.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaResultRequest.h>
@@ -77,6 +79,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCaptchaMiniOperDataResponse> DescribeCaptchaMiniOperDataOutcome;
                 typedef std::future<DescribeCaptchaMiniOperDataOutcome> DescribeCaptchaMiniOperDataOutcomeCallable;
                 typedef std::function<void(const CaptchaClient*, const Model::DescribeCaptchaMiniOperDataRequest&, DescribeCaptchaMiniOperDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaMiniOperDataAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCaptchaMiniResultResponse> DescribeCaptchaMiniResultOutcome;
+                typedef std::future<DescribeCaptchaMiniResultOutcome> DescribeCaptchaMiniResultOutcomeCallable;
+                typedef std::function<void(const CaptchaClient*, const Model::DescribeCaptchaMiniResultRequest&, DescribeCaptchaMiniResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaMiniResultAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCaptchaOperDataResponse> DescribeCaptchaOperDataOutcome;
                 typedef std::future<DescribeCaptchaOperDataOutcome> DescribeCaptchaOperDataOutcomeCallable;
                 typedef std::function<void(const CaptchaClient*, const Model::DescribeCaptchaOperDataRequest&, DescribeCaptchaOperDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaOperDataAsyncHandler;
@@ -148,6 +153,15 @@ namespace TencentCloud
                 DescribeCaptchaMiniOperDataOutcome DescribeCaptchaMiniOperData(const Model::DescribeCaptchaMiniOperDataRequest &request);
                 void DescribeCaptchaMiniOperDataAsync(const Model::DescribeCaptchaMiniOperDataRequest& request, const DescribeCaptchaMiniOperDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCaptchaMiniOperDataOutcomeCallable DescribeCaptchaMiniOperDataCallable(const Model::DescribeCaptchaMiniOperDataRequest& request);
+
+                /**
+                 *核查验证码小程序插件票据结果（内测中）
+                 * @param req DescribeCaptchaMiniResultRequest
+                 * @return DescribeCaptchaMiniResultOutcome
+                 */
+                DescribeCaptchaMiniResultOutcome DescribeCaptchaMiniResult(const Model::DescribeCaptchaMiniResultRequest &request);
+                void DescribeCaptchaMiniResultAsync(const Model::DescribeCaptchaMiniResultRequest& request, const DescribeCaptchaMiniResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCaptchaMiniResultOutcomeCallable DescribeCaptchaMiniResultCallable(const Model::DescribeCaptchaMiniResultRequest& request);
 
                 /**
                  *安全验证码用户操作数据查询，验证码加载耗时type = 1 、拦截情况type = 2、 一周通过平均尝试次数 type = 3、尝试次数分布 type = 4

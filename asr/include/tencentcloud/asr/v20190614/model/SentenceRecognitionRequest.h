@@ -81,6 +81,7 @@ namespace TencentCloud
                     /**
                      * 获取引擎模型类型。
 电话场景：
+• 8k_en：电话 8k 英语；
 • 8k_zh：电话 8k 中文普通话通用；
 非电话场景：
 • 16k_zh：16k 中文普通话通用；
@@ -88,12 +89,19 @@ namespace TencentCloud
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
 •16k_wuu-SH：16k 上海话方言。
+• 16k_ca：16k 粤语；
+• 16k_ja：16k 日语；
+•16k_wuu-SH：16k 上海话方言。
                      * @return EngSerViceType 引擎模型类型。
 电话场景：
+• 8k_en：电话 8k 英语；
 • 8k_zh：电话 8k 中文普通话通用；
 非电话场景：
 • 16k_zh：16k 中文普通话通用；
 • 16k_en：16k 英语；
+• 16k_ca：16k 粤语；
+• 16k_ja：16k 日语；
+•16k_wuu-SH：16k 上海话方言。
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
 •16k_wuu-SH：16k 上海话方言。
@@ -103,6 +111,7 @@ namespace TencentCloud
                     /**
                      * 设置引擎模型类型。
 电话场景：
+• 8k_en：电话 8k 英语；
 • 8k_zh：电话 8k 中文普通话通用；
 非电话场景：
 • 16k_zh：16k 中文普通话通用；
@@ -110,12 +119,19 @@ namespace TencentCloud
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
 •16k_wuu-SH：16k 上海话方言。
+• 16k_ca：16k 粤语；
+• 16k_ja：16k 日语；
+•16k_wuu-SH：16k 上海话方言。
                      * @param EngSerViceType 引擎模型类型。
 电话场景：
+• 8k_en：电话 8k 英语；
 • 8k_zh：电话 8k 中文普通话通用；
 非电话场景：
 • 16k_zh：16k 中文普通话通用；
 • 16k_en：16k 英语；
+• 16k_ca：16k 粤语；
+• 16k_ja：16k 日语；
+•16k_wuu-SH：16k 上海话方言。
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
 •16k_wuu-SH：16k 上海话方言。
@@ -326,6 +342,24 @@ namespace TencentCloud
                      */
                     bool ConvertNumModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH
+                     * @return WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH
+                     */
+                    int64_t GetWordInfo() const;
+
+                    /**
+                     * 设置是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH
+                     * @param WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH
+                     */
+                    void SetWordInfo(const int64_t& _wordInfo);
+
+                    /**
+                     * 判断参数 WordInfo 是否已赋值
+                     * @return WordInfo 是否已赋值
+                     */
+                    bool WordInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -343,10 +377,14 @@ namespace TencentCloud
                     /**
                      * 引擎模型类型。
 电话场景：
+• 8k_en：电话 8k 英语；
 • 8k_zh：电话 8k 中文普通话通用；
 非电话场景：
 • 16k_zh：16k 中文普通话通用；
 • 16k_en：16k 英语；
+• 16k_ca：16k 粤语；
+• 16k_ja：16k 日语；
+•16k_wuu-SH：16k 上海话方言。
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
 •16k_wuu-SH：16k 上海话方言。
@@ -419,6 +457,12 @@ namespace TencentCloud
                      */
                     int64_t m_convertNumMode;
                     bool m_convertNumModeHasBeenSet;
+
+                    /**
+                     * 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH
+                     */
+                    int64_t m_wordInfo;
+                    bool m_wordInfoHasBeenSet;
 
                 };
             }

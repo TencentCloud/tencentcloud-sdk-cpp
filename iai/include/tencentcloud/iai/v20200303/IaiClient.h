@@ -53,6 +53,8 @@
 #include <tencentcloud/iai/v20200303/model/DetectFaceAttributesResponse.h>
 #include <tencentcloud/iai/v20200303/model/DetectLiveFaceRequest.h>
 #include <tencentcloud/iai/v20200303/model/DetectLiveFaceResponse.h>
+#include <tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateRequest.h>
+#include <tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateResponse.h>
 #include <tencentcloud/iai/v20200303/model/EstimateCheckSimilarPersonCostTimeRequest.h>
 #include <tencentcloud/iai/v20200303/model/EstimateCheckSimilarPersonCostTimeResponse.h>
 #include <tencentcloud/iai/v20200303/model/GetCheckSimilarPersonJobIdListRequest.h>
@@ -156,6 +158,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetectLiveFaceResponse> DetectLiveFaceOutcome;
                 typedef std::future<DetectLiveFaceOutcome> DetectLiveFaceOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::DetectLiveFaceRequest&, DetectLiveFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLiveFaceAsyncHandler;
+                typedef Outcome<Error, Model::DetectLiveFaceAccurateResponse> DetectLiveFaceAccurateOutcome;
+                typedef std::future<DetectLiveFaceAccurateOutcome> DetectLiveFaceAccurateOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::DetectLiveFaceAccurateRequest&, DetectLiveFaceAccurateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLiveFaceAccurateAsyncHandler;
                 typedef Outcome<Error, Model::EstimateCheckSimilarPersonCostTimeResponse> EstimateCheckSimilarPersonCostTimeOutcome;
                 typedef std::future<EstimateCheckSimilarPersonCostTimeOutcome> EstimateCheckSimilarPersonCostTimeOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::EstimateCheckSimilarPersonCostTimeRequest&, EstimateCheckSimilarPersonCostTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstimateCheckSimilarPersonCostTimeAsyncHandler;
@@ -435,6 +440,17 @@ namespace TencentCloud
                 DetectLiveFaceOutcome DetectLiveFace(const Model::DetectLiveFaceRequest &request);
                 void DetectLiveFaceAsync(const Model::DetectLiveFaceRequest& request, const DetectLiveFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectLiveFaceOutcomeCallable DetectLiveFaceCallable(const Model::DetectLiveFaceRequest& request);
+
+                /**
+                 *人脸静态活体检测（高精度版）可用于对用户上传的静态图片进行防翻拍活体检测，以判断是否是翻拍图片。
+
+相比现有静态活体检测服务，高精度版在维持高真人通过率的前提下，增强了对高清屏幕、裁剪纸片、3D面具等攻击的防御能力，攻击拦截率约为业内同类型产品形态4-5倍。同时支持多场景人脸核验，满足移动端、PC端各类型场景的图片活体检验需求，适用于各个行业不同的活体检验应用。
+                 * @param req DetectLiveFaceAccurateRequest
+                 * @return DetectLiveFaceAccurateOutcome
+                 */
+                DetectLiveFaceAccurateOutcome DetectLiveFaceAccurate(const Model::DetectLiveFaceAccurateRequest &request);
+                void DetectLiveFaceAccurateAsync(const Model::DetectLiveFaceAccurateRequest& request, const DetectLiveFaceAccurateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectLiveFaceAccurateOutcomeCallable DetectLiveFaceAccurateCallable(const Model::DetectLiveFaceAccurateRequest& request);
 
                 /**
                  *获取若要开始一个人员查重任务，这个任务结束的预估时间。

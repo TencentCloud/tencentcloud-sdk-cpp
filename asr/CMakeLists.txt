@@ -24,6 +24,7 @@ set(asr_public_header_model
   include/tencentcloud/asr/v20190614/model/HotWord.h
   include/tencentcloud/asr/v20190614/model/GetAsrVocabRequest.h
   include/tencentcloud/asr/v20190614/model/DescribeTaskStatusResponse.h
+  include/tencentcloud/asr/v20190614/model/SentenceWord.h
   include/tencentcloud/asr/v20190614/model/DownloadAsrVocabResponse.h
   include/tencentcloud/asr/v20190614/model/CreateRecTaskResponse.h
   include/tencentcloud/asr/v20190614/model/UpdateAsrVocabResponse.h
@@ -37,8 +38,11 @@ set(asr_public_header_model
   include/tencentcloud/asr/v20190614/model/Task.h
   include/tencentcloud/asr/v20190614/model/TaskStatus.h
   include/tencentcloud/asr/v20190614/model/DeleteAsrVocabRequest.h
+  include/tencentcloud/asr/v20190614/model/GetCustomizationListRequest.h
   include/tencentcloud/asr/v20190614/model/SentenceRecognitionRequest.h
+  include/tencentcloud/asr/v20190614/model/Model.h
   include/tencentcloud/asr/v20190614/model/CreateAsrVocabRequest.h
+  include/tencentcloud/asr/v20190614/model/GetCustomizationListResponse.h
   include/tencentcloud/asr/v20190614/model/UpdateAsrVocabRequest.h
   include/tencentcloud/asr/v20190614/model/CreateAsrVocabResponse.h
   include/tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h
@@ -54,6 +58,7 @@ set(asr_src
   src/v20190614/model/HotWord.cpp
   src/v20190614/model/GetAsrVocabRequest.cpp
   src/v20190614/model/DescribeTaskStatusResponse.cpp
+  src/v20190614/model/SentenceWord.cpp
   src/v20190614/model/DownloadAsrVocabResponse.cpp
   src/v20190614/model/CreateRecTaskResponse.cpp
   src/v20190614/model/UpdateAsrVocabResponse.cpp
@@ -67,8 +72,11 @@ set(asr_src
   src/v20190614/model/Task.cpp
   src/v20190614/model/TaskStatus.cpp
   src/v20190614/model/DeleteAsrVocabRequest.cpp
+  src/v20190614/model/GetCustomizationListRequest.cpp
   src/v20190614/model/SentenceRecognitionRequest.cpp
+  src/v20190614/model/Model.cpp
   src/v20190614/model/CreateAsrVocabRequest.cpp
+  src/v20190614/model/GetCustomizationListResponse.cpp
   src/v20190614/model/UpdateAsrVocabRequest.cpp
   src/v20190614/model/CreateAsrVocabResponse.cpp
   src/v20190614/model/SentenceRecognitionResponse.cpp

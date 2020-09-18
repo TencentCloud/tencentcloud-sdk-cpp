@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ASR_V20190614_MODEL_GETASRVOCABLISTRESPONSE_H_
-#define TENCENTCLOUD_ASR_V20190614_MODEL_GETASRVOCABLISTRESPONSE_H_
+#ifndef TENCENTCLOUD_ASR_V20190614_MODEL_GETCUSTOMIZATIONLISTRESPONSE_H_
+#define TENCENTCLOUD_ASR_V20190614_MODEL_GETCUSTOMIZATIONLISTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/asr/v20190614/model/Vocab.h>
+#include <tencentcloud/asr/v20190614/model/Model.h>
 
 
 namespace TencentCloud
@@ -33,31 +33,35 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * GetAsrVocabList返回参数结构体
+                * GetCustomizationList返回参数结构体
                 */
-                class GetAsrVocabListResponse : public AbstractModel
+                class GetCustomizationListResponse : public AbstractModel
                 {
                 public:
-                    GetAsrVocabListResponse();
-                    ~GetAsrVocabListResponse() = default;
+                    GetCustomizationListResponse();
+                    ~GetCustomizationListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取热词表列表
-                     * @return VocabList 热词表列表
+                     * 获取自学习模型数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data 自学习模型数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<Vocab> GetVocabList() const;
+                    std::vector<Model> GetData() const;
 
                     /**
-                     * 判断参数 VocabList 是否已赋值
-                     * @return VocabList 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      */
-                    bool VocabListHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                     /**
-                     * 获取热词列表总数
-                     * @return TotalCount 热词列表总数
+                     * 获取自学习模型总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 自学习模型总量
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetTotalCount() const;
 
@@ -70,13 +74,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 热词表列表
+                     * 自学习模型数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<Vocab> m_vocabList;
-                    bool m_vocabListHasBeenSet;
+                    std::vector<Model> m_data;
+                    bool m_dataHasBeenSet;
 
                     /**
-                     * 热词列表总数
+                     * 自学习模型总量
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
@@ -87,4 +93,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ASR_V20190614_MODEL_GETASRVOCABLISTRESPONSE_H_
+#endif // !TENCENTCLOUD_ASR_V20190614_MODEL_GETCUSTOMIZATIONLISTRESPONSE_H_

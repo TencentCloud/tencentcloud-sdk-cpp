@@ -49,8 +49,10 @@ set(captcha_public_header_model
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaAppIdInfoResponse.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaUserAllAppIdResponse.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataRequest.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniResultRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaTicketDataResponse.h
   include/tencentcloud/captcha/v20190722/model/CaptchaTicketDataRes.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniResultResponse.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniDataRequest.h
   )
 
@@ -86,8 +88,10 @@ set(captcha_src
   src/v20190722/model/DescribeCaptchaAppIdInfoResponse.cpp
   src/v20190722/model/DescribeCaptchaUserAllAppIdResponse.cpp
   src/v20190722/model/DescribeCaptchaDataRequest.cpp
+  src/v20190722/model/DescribeCaptchaMiniResultRequest.cpp
   src/v20190722/model/DescribeCaptchaTicketDataResponse.cpp
   src/v20190722/model/CaptchaTicketDataRes.cpp
+  src/v20190722/model/DescribeCaptchaMiniResultResponse.cpp
   src/v20190722/model/DescribeCaptchaMiniDataRequest.cpp
   )
 

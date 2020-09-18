@@ -37,6 +37,8 @@
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabListRequest.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabListResponse.h>
+#include <tencentcloud/asr/v20190614/model/GetCustomizationListRequest.h>
+#include <tencentcloud/asr/v20190614/model/GetCustomizationListResponse.h>
 #include <tencentcloud/asr/v20190614/model/SentenceRecognitionRequest.h>
 #include <tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h>
 #include <tencentcloud/asr/v20190614/model/SetVocabStateRequest.h>
@@ -78,6 +80,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetAsrVocabListResponse> GetAsrVocabListOutcome;
                 typedef std::future<GetAsrVocabListOutcome> GetAsrVocabListOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::GetAsrVocabListRequest&, GetAsrVocabListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAsrVocabListAsyncHandler;
+                typedef Outcome<Error, Model::GetCustomizationListResponse> GetCustomizationListOutcome;
+                typedef std::future<GetCustomizationListOutcome> GetCustomizationListOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::GetCustomizationListRequest&, GetCustomizationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomizationListAsyncHandler;
                 typedef Outcome<Error, Model::SentenceRecognitionResponse> SentenceRecognitionOutcome;
                 typedef std::future<SentenceRecognitionOutcome> SentenceRecognitionOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::SentenceRecognitionRequest&, SentenceRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SentenceRecognitionAsyncHandler;
@@ -171,6 +176,15 @@ namespace TencentCloud
                 GetAsrVocabListOutcome GetAsrVocabList(const Model::GetAsrVocabListRequest &request);
                 void GetAsrVocabListAsync(const Model::GetAsrVocabListRequest& request, const GetAsrVocabListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetAsrVocabListOutcomeCallable GetAsrVocabListCallable(const Model::GetAsrVocabListRequest& request);
+
+                /**
+                 *查询自学习模型列表
+                 * @param req GetCustomizationListRequest
+                 * @return GetCustomizationListOutcome
+                 */
+                GetCustomizationListOutcome GetCustomizationList(const Model::GetCustomizationListRequest &request);
+                void GetCustomizationListAsync(const Model::GetCustomizationListRequest& request, const GetCustomizationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCustomizationListOutcomeCallable GetCustomizationListCallable(const Model::GetCustomizationListRequest& request);
 
                 /**
                  *本接口用于对60秒之内的短音频文件进行识别。

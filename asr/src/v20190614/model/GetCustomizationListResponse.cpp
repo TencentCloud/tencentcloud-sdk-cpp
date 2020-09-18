@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h>
+#include <tencentcloud/asr/v20190614/model/GetCustomizationListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -24,15 +24,13 @@ using namespace TencentCloud::Asr::V20190614::Model;
 using namespace rapidjson;
 using namespace std;
 
-SentenceRecognitionResponse::SentenceRecognitionResponse() :
-    m_resultHasBeenSet(false),
-    m_audioDurationHasBeenSet(false),
-    m_wordSizeHasBeenSet(false),
-    m_wordListHasBeenSet(false)
+GetCustomizationListResponse::GetCustomizationListResponse() :
+    m_dataHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome SentenceRecognitionResponse::Deserialize(const string &payload)
+CoreInternalOutcome GetCustomizationListResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -66,54 +64,34 @@ CoreInternalOutcome SentenceRecognitionResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Result"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_result = string(rsp["Result"].GetString());
-        m_resultHasBeenSet = true;
-    }
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Error("response `Data` is not array type"));
 
-    if (rsp.HasMember("AudioDuration") && !rsp["AudioDuration"].IsNull())
-    {
-        if (!rsp["AudioDuration"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `AudioDuration` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_audioDuration = rsp["AudioDuration"].GetInt64();
-        m_audioDurationHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("WordSize") && !rsp["WordSize"].IsNull())
-    {
-        if (!rsp["WordSize"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `WordSize` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_wordSize = rsp["WordSize"].GetInt64();
-        m_wordSizeHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("WordList") && !rsp["WordList"].IsNull())
-    {
-        if (!rsp["WordList"].IsArray())
-            return CoreInternalOutcome(Error("response `WordList` is not array type"));
-
-        const Value &tmpValue = rsp["WordList"];
+        const Value &tmpValue = rsp["Data"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            SentenceWord item;
+            Model item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_wordList.push_back(item);
+            m_data.push_back(item);
         }
-        m_wordListHasBeenSet = true;
+        m_dataHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
 
@@ -121,44 +99,24 @@ CoreInternalOutcome SentenceRecognitionResponse::Deserialize(const string &paylo
 }
 
 
-string SentenceRecognitionResponse::GetResult() const
+vector<Model> GetCustomizationListResponse::GetData() const
 {
-    return m_result;
+    return m_data;
 }
 
-bool SentenceRecognitionResponse::ResultHasBeenSet() const
+bool GetCustomizationListResponse::DataHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
-int64_t SentenceRecognitionResponse::GetAudioDuration() const
+uint64_t GetCustomizationListResponse::GetTotalCount() const
 {
-    return m_audioDuration;
+    return m_totalCount;
 }
 
-bool SentenceRecognitionResponse::AudioDurationHasBeenSet() const
+bool GetCustomizationListResponse::TotalCountHasBeenSet() const
 {
-    return m_audioDurationHasBeenSet;
-}
-
-int64_t SentenceRecognitionResponse::GetWordSize() const
-{
-    return m_wordSize;
-}
-
-bool SentenceRecognitionResponse::WordSizeHasBeenSet() const
-{
-    return m_wordSizeHasBeenSet;
-}
-
-vector<SentenceWord> SentenceRecognitionResponse::GetWordList() const
-{
-    return m_wordList;
-}
-
-bool SentenceRecognitionResponse::WordListHasBeenSet() const
-{
-    return m_wordListHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
 
