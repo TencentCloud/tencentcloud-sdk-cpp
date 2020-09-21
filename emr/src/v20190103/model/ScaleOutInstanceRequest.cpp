@@ -39,7 +39,10 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_disasterRecoverGroupIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_hardwareResourceTypeHasBeenSet(false),
-    m_podSpecHasBeenSet(false)
+    m_podSpecHasBeenSet(false),
+    m_clickHouseClusterNameHasBeenSet(false),
+    m_clickHouseClusterTypeHasBeenSet(false),
+    m_yarnNodeLabelHasBeenSet(false)
 {
 }
 
@@ -211,6 +214,30 @@ string ScaleOutInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_podSpec.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_clickHouseClusterNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClickHouseClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clickHouseClusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clickHouseClusterTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClickHouseClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clickHouseClusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_yarnNodeLabelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "YarnNodeLabel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_yarnNodeLabel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -475,6 +502,54 @@ void ScaleOutInstanceRequest::SetPodSpec(const PodSpec& _podSpec)
 bool ScaleOutInstanceRequest::PodSpecHasBeenSet() const
 {
     return m_podSpecHasBeenSet;
+}
+
+string ScaleOutInstanceRequest::GetClickHouseClusterName() const
+{
+    return m_clickHouseClusterName;
+}
+
+void ScaleOutInstanceRequest::SetClickHouseClusterName(const string& _clickHouseClusterName)
+{
+    m_clickHouseClusterName = _clickHouseClusterName;
+    m_clickHouseClusterNameHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ClickHouseClusterNameHasBeenSet() const
+{
+    return m_clickHouseClusterNameHasBeenSet;
+}
+
+string ScaleOutInstanceRequest::GetClickHouseClusterType() const
+{
+    return m_clickHouseClusterType;
+}
+
+void ScaleOutInstanceRequest::SetClickHouseClusterType(const string& _clickHouseClusterType)
+{
+    m_clickHouseClusterType = _clickHouseClusterType;
+    m_clickHouseClusterTypeHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ClickHouseClusterTypeHasBeenSet() const
+{
+    return m_clickHouseClusterTypeHasBeenSet;
+}
+
+string ScaleOutInstanceRequest::GetYarnNodeLabel() const
+{
+    return m_yarnNodeLabel;
+}
+
+void ScaleOutInstanceRequest::SetYarnNodeLabel(const string& _yarnNodeLabel)
+{
+    m_yarnNodeLabel = _yarnNodeLabel;
+    m_yarnNodeLabelHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::YarnNodeLabelHasBeenSet() const
+{
+    return m_yarnNodeLabelHasBeenSet;
 }
 
 

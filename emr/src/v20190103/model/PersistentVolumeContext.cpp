@@ -23,7 +23,8 @@ using namespace std;
 
 PersistentVolumeContext::PersistentVolumeContext() :
     m_diskSizeHasBeenSet(false),
-    m_diskTypeHasBeenSet(false)
+    m_diskTypeHasBeenSet(false),
+    m_diskNumHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome PersistentVolumeContext::Deserialize(const Value &value)
         m_diskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskNum") && !value["DiskNum"].IsNull())
+    {
+        if (!value["DiskNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PersistentVolumeContext.DiskNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskNum = value["DiskNum"].GetInt64();
+        m_diskNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void PersistentVolumeContext::ToJsonObject(Value &value, Document::AllocatorType
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_diskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskNum, allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void PersistentVolumeContext::SetDiskType(const string& _diskType)
 bool PersistentVolumeContext::DiskTypeHasBeenSet() const
 {
     return m_diskTypeHasBeenSet;
+}
+
+int64_t PersistentVolumeContext::GetDiskNum() const
+{
+    return m_diskNum;
+}
+
+void PersistentVolumeContext::SetDiskNum(const int64_t& _diskNum)
+{
+    m_diskNum = _diskNum;
+    m_diskNumHasBeenSet = true;
+}
+
+bool PersistentVolumeContext::DiskNumHasBeenSet() const
+{
+    return m_diskNumHasBeenSet;
 }
 

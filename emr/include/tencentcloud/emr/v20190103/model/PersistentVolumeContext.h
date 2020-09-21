@@ -90,6 +90,28 @@ namespace TencentCloud
                      */
                     bool DiskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取磁盘数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskNum 磁盘数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDiskNum() const;
+
+                    /**
+                     * 设置磁盘数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiskNum 磁盘数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiskNum(const int64_t& _diskNum);
+
+                    /**
+                     * 判断参数 DiskNum 是否已赋值
+                     * @return DiskNum 是否已赋值
+                     */
+                    bool DiskNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +127,13 @@ namespace TencentCloud
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * 磁盘数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_diskNum;
+                    bool m_diskNumHasBeenSet;
 
                 };
             }

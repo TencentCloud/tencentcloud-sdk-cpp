@@ -365,6 +365,60 @@ namespace TencentCloud
                      */
                     bool PodSpecHasBeenSet() const;
 
+                    /**
+                     * 获取使用clickhouse集群扩容时，选择的机器分组名称
+                     * @return ClickHouseClusterName 使用clickhouse集群扩容时，选择的机器分组名称
+                     */
+                    std::string GetClickHouseClusterName() const;
+
+                    /**
+                     * 设置使用clickhouse集群扩容时，选择的机器分组名称
+                     * @param ClickHouseClusterName 使用clickhouse集群扩容时，选择的机器分组名称
+                     */
+                    void SetClickHouseClusterName(const std::string& _clickHouseClusterName);
+
+                    /**
+                     * 判断参数 ClickHouseClusterName 是否已赋值
+                     * @return ClickHouseClusterName 是否已赋值
+                     */
+                    bool ClickHouseClusterNameHasBeenSet() const;
+
+                    /**
+                     * 获取使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组
+                     * @return ClickHouseClusterType 使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组
+                     */
+                    std::string GetClickHouseClusterType() const;
+
+                    /**
+                     * 设置使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组
+                     * @param ClickHouseClusterType 使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组
+                     */
+                    void SetClickHouseClusterType(const std::string& _clickHouseClusterType);
+
+                    /**
+                     * 判断参数 ClickHouseClusterType 是否已赋值
+                     * @return ClickHouseClusterType 是否已赋值
+                     */
+                    bool ClickHouseClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取规则扩容指定 yarn node label
+                     * @return YarnNodeLabel 规则扩容指定 yarn node label
+                     */
+                    std::string GetYarnNodeLabel() const;
+
+                    /**
+                     * 设置规则扩容指定 yarn node label
+                     * @param YarnNodeLabel 规则扩容指定 yarn node label
+                     */
+                    void SetYarnNodeLabel(const std::string& _yarnNodeLabel);
+
+                    /**
+                     * 判断参数 YarnNodeLabel 是否已赋值
+                     * @return YarnNodeLabel 是否已赋值
+                     */
+                    bool YarnNodeLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -470,6 +524,24 @@ namespace TencentCloud
                      */
                     PodSpec m_podSpec;
                     bool m_podSpecHasBeenSet;
+
+                    /**
+                     * 使用clickhouse集群扩容时，选择的机器分组名称
+                     */
+                    std::string m_clickHouseClusterName;
+                    bool m_clickHouseClusterNameHasBeenSet;
+
+                    /**
+                     * 使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组
+                     */
+                    std::string m_clickHouseClusterType;
+                    bool m_clickHouseClusterTypeHasBeenSet;
+
+                    /**
+                     * 规则扩容指定 yarn node label
+                     */
+                    std::string m_yarnNodeLabel;
+                    bool m_yarnNodeLabelHasBeenSet;
 
                 };
             }

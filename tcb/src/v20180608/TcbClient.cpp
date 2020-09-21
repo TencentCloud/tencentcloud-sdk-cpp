@@ -427,6 +427,49 @@ TcbClient::DescribeCloudBaseBuildServiceOutcomeCallable TcbClient::DescribeCloud
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseRunVersionSnapshotOutcome TcbClient::DescribeCloudBaseRunVersionSnapshot(const DescribeCloudBaseRunVersionSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunVersionSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunVersionSnapshotResponse rsp = DescribeCloudBaseRunVersionSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunVersionSnapshotOutcome(rsp);
+        else
+            return DescribeCloudBaseRunVersionSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunVersionSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunVersionSnapshotAsync(const DescribeCloudBaseRunVersionSnapshotRequest& request, const DescribeCloudBaseRunVersionSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunVersionSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunVersionSnapshotOutcomeCallable TcbClient::DescribeCloudBaseRunVersionSnapshotCallable(const DescribeCloudBaseRunVersionSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunVersionSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunVersionSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeDatabaseACLOutcome TcbClient::DescribeDatabaseACL(const DescribeDatabaseACLRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabaseACL");

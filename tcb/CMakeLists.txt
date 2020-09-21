@@ -26,7 +26,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUserLoginStatisticRequest.h
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
-  include/tencentcloud/tcb/v20180608/model/LoginStatistic.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.h
   include/tencentcloud/tcb/v20180608/model/KVPair.h
   include/tencentcloud/tcb/v20180608/model/FunctionInfo.h
   include/tencentcloud/tcb/v20180608/model/CreatePostpayPackageResponse.h
@@ -35,9 +35,11 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeEndUsersResponse.h
   include/tencentcloud/tcb/v20180608/model/AuthDomain.h
   include/tencentcloud/tcb/v20180608/model/LogServiceInfo.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUserStatisticResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoResponse.h
   include/tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h
@@ -49,41 +51,45 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUserStatisticRequest.h
   include/tencentcloud/tcb/v20180608/model/PackageFreeQuotaInfo.h
-  include/tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaResponse.h
+  include/tencentcloud/tcb/v20180608/model/CloudBaseCodeRepoDetail.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h
   include/tencentcloud/tcb/v20180608/model/StaticStorageInfo.h
-  include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoResponse.h
+  include/tencentcloud/tcb/v20180608/model/CloudRunServiceSimpleVersionSnapshot.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/CreatePostpayPackageRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaRequest.h
   include/tencentcloud/tcb/v20180608/model/DatabasesInfo.h
+  include/tencentcloud/tcb/v20180608/model/LoginStatistic.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUserLoginStatisticResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h
   include/tencentcloud/tcb/v20180608/model/ReinstateEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h
+  include/tencentcloud/tcb/v20180608/model/PlatformStatistic.h
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteEndUserResponse.h
   include/tencentcloud/tcb/v20180608/model/EnvBillingInfoItem.h
-  include/tencentcloud/tcb/v20180608/model/PlatformStatistic.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaResponse.h
+  include/tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEndUserRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h
   include/tencentcloud/tcb/v20180608/model/EnvInfo.h
-  include/tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h
+  include/tencentcloud/tcb/v20180608/model/CloudBaseRunImageInfo.h
   include/tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyEndUserResponse.h
   include/tencentcloud/tcb/v20180608/model/EndUserInfo.h
-  include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteEndUserRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h
-  include/tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h
+  include/tencentcloud/tcb/v20180608/model/CloudBaseCodeRepoName.h
   include/tencentcloud/tcb/v20180608/model/OrderInfo.h
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainRequest.h
+  include/tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h
   )
 
 set(tcb_src
@@ -95,7 +101,7 @@ set(tcb_src
   src/v20180608/model/CheckTcbServiceResponse.cpp
   src/v20180608/model/DescribeEndUserLoginStatisticRequest.cpp
   src/v20180608/model/StorageInfo.cpp
-  src/v20180608/model/LoginStatistic.cpp
+  src/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.cpp
   src/v20180608/model/KVPair.cpp
   src/v20180608/model/FunctionInfo.cpp
   src/v20180608/model/CreatePostpayPackageResponse.cpp
@@ -104,9 +110,11 @@ set(tcb_src
   src/v20180608/model/DescribeEndUsersResponse.cpp
   src/v20180608/model/AuthDomain.cpp
   src/v20180608/model/LogServiceInfo.cpp
+  src/v20180608/model/DescribeEnvLimitResponse.cpp
   src/v20180608/model/CreateStaticStoreRequest.cpp
   src/v20180608/model/CommonServiceAPIResponse.cpp
   src/v20180608/model/DescribeEndUserStatisticResponse.cpp
+  src/v20180608/model/DescribeExtraPkgBillingInfoResponse.cpp
   src/v20180608/model/ReinstateEnvResponse.cpp
   src/v20180608/model/DescribePostpayPackageFreeQuotasRequest.cpp
   src/v20180608/model/CreateAuthDomainResponse.cpp
@@ -118,41 +126,45 @@ set(tcb_src
   src/v20180608/model/DescribeCloudBaseBuildServiceRequest.cpp
   src/v20180608/model/DescribeEndUserStatisticRequest.cpp
   src/v20180608/model/PackageFreeQuotaInfo.cpp
-  src/v20180608/model/DescribeEnvFreeQuotaResponse.cpp
+  src/v20180608/model/CloudBaseCodeRepoDetail.cpp
   src/v20180608/model/CheckTcbServiceRequest.cpp
   src/v20180608/model/ModifyDatabaseACLResponse.cpp
   src/v20180608/model/StaticStorageInfo.cpp
-  src/v20180608/model/DescribeExtraPkgBillingInfoResponse.cpp
+  src/v20180608/model/CloudRunServiceSimpleVersionSnapshot.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoRequest.cpp
   src/v20180608/model/CreatePostpayPackageRequest.cpp
   src/v20180608/model/DescribeEnvFreeQuotaRequest.cpp
   src/v20180608/model/DatabasesInfo.cpp
+  src/v20180608/model/LoginStatistic.cpp
   src/v20180608/model/DescribeAuthDomainsRequest.cpp
   src/v20180608/model/DescribeEndUserLoginStatisticResponse.cpp
   src/v20180608/model/DescribeAuthDomainsResponse.cpp
   src/v20180608/model/ReinstateEnvRequest.cpp
   src/v20180608/model/DescribeDatabaseACLRequest.cpp
+  src/v20180608/model/PlatformStatistic.cpp
   src/v20180608/model/CreateHostingDomainRequest.cpp
   src/v20180608/model/DestroyStaticStoreResponse.cpp
   src/v20180608/model/DeleteEndUserResponse.cpp
   src/v20180608/model/EnvBillingInfoItem.cpp
-  src/v20180608/model/PlatformStatistic.cpp
+  src/v20180608/model/DescribeEnvFreeQuotaResponse.cpp
+  src/v20180608/model/ModifyEnvResponse.cpp
   src/v20180608/model/ModifyEndUserRequest.cpp
   src/v20180608/model/DescribeDatabaseACLResponse.cpp
   src/v20180608/model/EnvInfo.cpp
-  src/v20180608/model/DestroyEnvRequest.cpp
+  src/v20180608/model/CloudBaseRunImageInfo.cpp
   src/v20180608/model/DestroyEnvResponse.cpp
   src/v20180608/model/ModifyDatabaseACLRequest.cpp
   src/v20180608/model/DestroyStaticStoreRequest.cpp
   src/v20180608/model/ModifyEndUserResponse.cpp
   src/v20180608/model/EndUserInfo.cpp
-  src/v20180608/model/DescribeEnvLimitResponse.cpp
+  src/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.cpp
   src/v20180608/model/DescribePostpayPackageFreeQuotasResponse.cpp
   src/v20180608/model/DeleteEndUserRequest.cpp
   src/v20180608/model/DescribeEnvsResponse.cpp
-  src/v20180608/model/ModifyEnvResponse.cpp
+  src/v20180608/model/CloudBaseCodeRepoName.cpp
   src/v20180608/model/OrderInfo.cpp
   src/v20180608/model/CreateAuthDomainRequest.cpp
+  src/v20180608/model/DestroyEnvRequest.cpp
   )
 
 set(tcb_include

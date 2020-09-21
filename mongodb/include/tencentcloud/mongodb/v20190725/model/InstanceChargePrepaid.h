@@ -48,13 +48,17 @@ namespace TencentCloud
 
                     /**
                      * 获取购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。
+（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）
                      * @return Period 购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。
+（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。
+（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）
                      * @param Period 购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。
+（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）
                      */
                     void SetPeriod(const int64_t& _period);
 
@@ -71,12 +75,14 @@ NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费
 DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）
                      * @return RenewFlag 自动续费标识。取值范围：
 NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
 NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费
 DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）
                      */
                     std::string GetRenewFlag() const;
 
@@ -87,12 +93,14 @@ NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费
 DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）
                      * @param RenewFlag 自动续费标识。取值范围：
 NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
 NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费
 DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
@@ -106,6 +114,7 @@ DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
 
                     /**
                      * 购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。
+（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
@@ -117,6 +126,7 @@ NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费
 DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
