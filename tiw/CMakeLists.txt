@@ -21,15 +21,22 @@ set(tiw_public_header
 set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/Canvas.h
   include/tencentcloud/tiw/v20190919/model/LayoutParams.h
+  include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/StreamControl.h
+  include/tencentcloud/tiw/v20190919/model/StopOnlineRecordResponse.h
+  include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyRequest.h
+  include/tencentcloud/tiw/v20190919/model/OmittedDuration.h
+  include/tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/ResumeOnlineRecordResponse.h
+  include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/StartOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/StopOnlineRecordRequest.h
-  include/tencentcloud/tiw/v20190919/model/StreamLayout.h
+  include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyResponse.h
   include/tencentcloud/tiw/v20190919/model/CreateTranscodeResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskResponse.h
   include/tencentcloud/tiw/v20190919/model/VideoInfo.h
   include/tencentcloud/tiw/v20190919/model/CustomLayout.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyResponse.h
@@ -37,16 +44,19 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/StartOnlineRecordResponse.h
   include/tencentcloud/tiw/v20190919/model/Whiteboard.h
-  include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskRequest.h
+  include/tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskResponse.h
+  include/tencentcloud/tiw/v20190919/model/PauseOnlineRecordResponse.h
   include/tencentcloud/tiw/v20190919/model/CreateTranscodeRequest.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyResponse.h
-  include/tencentcloud/tiw/v20190919/model/PauseOnlineRecordResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordResponse.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h
+  include/tencentcloud/tiw/v20190919/model/StreamLayout.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyRequest.h
-  include/tencentcloud/tiw/v20190919/model/StopOnlineRecordResponse.h
+  include/tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/ResumeOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackResponse.h
@@ -54,7 +64,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/RecordControl.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/MixStream.h
-  include/tencentcloud/tiw/v20190919/model/OmittedDuration.h
+  include/tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/PauseOnlineRecordRequest.h
   )
 
@@ -62,15 +72,22 @@ set(tiw_src
   src/v20190919/TiwClient.cpp
   src/v20190919/model/Canvas.cpp
   src/v20190919/model/LayoutParams.cpp
+  src/v20190919/model/SetVideoGenerationTaskCallbackRequest.cpp
   src/v20190919/model/StreamControl.cpp
+  src/v20190919/model/StopOnlineRecordResponse.cpp
+  src/v20190919/model/SetVideoGenerationTaskCallbackKeyRequest.cpp
+  src/v20190919/model/OmittedDuration.cpp
+  src/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.cpp
   src/v20190919/model/ResumeOnlineRecordResponse.cpp
+  src/v20190919/model/SetVideoGenerationTaskCallbackResponse.cpp
   src/v20190919/model/StartOnlineRecordRequest.cpp
   src/v20190919/model/DescribeOnlineRecordCallbackRequest.cpp
   src/v20190919/model/DescribeOnlineRecordCallbackResponse.cpp
   src/v20190919/model/SetTranscodeCallbackResponse.cpp
   src/v20190919/model/StopOnlineRecordRequest.cpp
-  src/v20190919/model/StreamLayout.cpp
+  src/v20190919/model/SetVideoGenerationTaskCallbackKeyResponse.cpp
   src/v20190919/model/CreateTranscodeResponse.cpp
+  src/v20190919/model/DescribeVideoGenerationTaskResponse.cpp
   src/v20190919/model/VideoInfo.cpp
   src/v20190919/model/CustomLayout.cpp
   src/v20190919/model/SetTranscodeCallbackKeyResponse.cpp
@@ -78,16 +95,19 @@ set(tiw_src
   src/v20190919/model/DescribeOnlineRecordRequest.cpp
   src/v20190919/model/StartOnlineRecordResponse.cpp
   src/v20190919/model/Whiteboard.cpp
-  src/v20190919/model/DescribeOnlineRecordResponse.cpp
+  src/v20190919/model/DescribeVideoGenerationTaskRequest.cpp
+  src/v20190919/model/CreateVideoGenerationTaskResponse.cpp
+  src/v20190919/model/PauseOnlineRecordResponse.cpp
   src/v20190919/model/CreateTranscodeRequest.cpp
   src/v20190919/model/SetOnlineRecordCallbackKeyResponse.cpp
-  src/v20190919/model/PauseOnlineRecordResponse.cpp
+  src/v20190919/model/DescribeOnlineRecordResponse.cpp
   src/v20190919/model/SetTranscodeCallbackKeyRequest.cpp
   src/v20190919/model/DescribeTranscodeRequest.cpp
   src/v20190919/model/DescribeTranscodeResponse.cpp
+  src/v20190919/model/StreamLayout.cpp
   src/v20190919/model/SetOnlineRecordCallbackResponse.cpp
   src/v20190919/model/SetOnlineRecordCallbackKeyRequest.cpp
-  src/v20190919/model/StopOnlineRecordResponse.cpp
+  src/v20190919/model/CreateVideoGenerationTaskRequest.cpp
   src/v20190919/model/DescribeTranscodeCallbackRequest.cpp
   src/v20190919/model/ResumeOnlineRecordRequest.cpp
   src/v20190919/model/DescribeTranscodeCallbackResponse.cpp
@@ -95,7 +115,7 @@ set(tiw_src
   src/v20190919/model/RecordControl.cpp
   src/v20190919/model/SetOnlineRecordCallbackRequest.cpp
   src/v20190919/model/MixStream.cpp
-  src/v20190919/model/OmittedDuration.cpp
+  src/v20190919/model/DescribeVideoGenerationTaskCallbackRequest.cpp
   src/v20190919/model/PauseOnlineRecordRequest.cpp
   )
 

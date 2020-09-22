@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetResponse.h>
+#include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ckafka::V20190819::Model;
+using namespace TencentCloud::Tiw::V20190919::Model;
 using namespace rapidjson;
 using namespace std;
 
-FetchMessageListByOffsetResponse::FetchMessageListByOffsetResponse() :
-    m_resultHasBeenSet(false)
+SetVideoGenerationTaskCallbackKeyResponse::SetVideoGenerationTaskCallbackKeyResponse()
 {
 }
 
-CoreInternalOutcome FetchMessageListByOffsetResponse::Deserialize(const string &payload)
+CoreInternalOutcome SetVideoGenerationTaskCallbackKeyResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -63,39 +62,9 @@ CoreInternalOutcome FetchMessageListByOffsetResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
-    {
-        if (!rsp["Result"].IsArray())
-            return CoreInternalOutcome(Error("response `Result` is not array type"));
-
-        const Value &tmpValue = rsp["Result"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            ConsumerRecord item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_result.push_back(item);
-        }
-        m_resultHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-vector<ConsumerRecord> FetchMessageListByOffsetResponse::GetResult() const
-{
-    return m_result;
-}
-
-bool FetchMessageListByOffsetResponse::ResultHasBeenSet() const
-{
-    return m_resultHasBeenSet;
-}
 
 

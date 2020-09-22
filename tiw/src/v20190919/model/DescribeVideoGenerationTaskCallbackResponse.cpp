@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ckafka/v20190819/model/FetchMessageListByTimestampResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ckafka::V20190819::Model;
+using namespace TencentCloud::Tiw::V20190919::Model;
 using namespace rapidjson;
 using namespace std;
 
-FetchMessageListByTimestampResponse::FetchMessageListByTimestampResponse() :
-    m_resultHasBeenSet(false)
+DescribeVideoGenerationTaskCallbackResponse::DescribeVideoGenerationTaskCallbackResponse() :
+    m_callbackHasBeenSet(false),
+    m_callbackKeyHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome FetchMessageListByTimestampResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeVideoGenerationTaskCallbackResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -63,24 +64,24 @@ CoreInternalOutcome FetchMessageListByTimestampResponse::Deserialize(const strin
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("Callback") && !rsp["Callback"].IsNull())
     {
-        if (!rsp["Result"].IsArray())
-            return CoreInternalOutcome(Error("response `Result` is not array type"));
-
-        const Value &tmpValue = rsp["Result"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Callback"].IsString())
         {
-            ConsumerRecord item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_result.push_back(item);
+            return CoreInternalOutcome(Error("response `Callback` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_resultHasBeenSet = true;
+        m_callback = string(rsp["Callback"].GetString());
+        m_callbackHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CallbackKey") && !rsp["CallbackKey"].IsNull())
+    {
+        if (!rsp["CallbackKey"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CallbackKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackKey = string(rsp["CallbackKey"].GetString());
+        m_callbackKeyHasBeenSet = true;
     }
 
 
@@ -88,14 +89,24 @@ CoreInternalOutcome FetchMessageListByTimestampResponse::Deserialize(const strin
 }
 
 
-vector<ConsumerRecord> FetchMessageListByTimestampResponse::GetResult() const
+string DescribeVideoGenerationTaskCallbackResponse::GetCallback() const
 {
-    return m_result;
+    return m_callback;
 }
 
-bool FetchMessageListByTimestampResponse::ResultHasBeenSet() const
+bool DescribeVideoGenerationTaskCallbackResponse::CallbackHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_callbackHasBeenSet;
+}
+
+string DescribeVideoGenerationTaskCallbackResponse::GetCallbackKey() const
+{
+    return m_callbackKey;
+}
+
+bool DescribeVideoGenerationTaskCallbackResponse::CallbackKeyHasBeenSet() const
+{
+    return m_callbackKeyHasBeenSet;
 }
 
 

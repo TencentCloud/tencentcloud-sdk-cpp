@@ -14,54 +14,53 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CKAFKA_V20190819_MODEL_FETCHMESSAGELISTBYOFFSETRESPONSE_H_
-#define TENCENTCLOUD_CKAFKA_V20190819_MODEL_FETCHMESSAGELISTBYOFFSETRESPONSE_H_
+#ifndef TENCENTCLOUD_TIW_V20190919_MODEL_CREATEVIDEOGENERATIONTASKRESPONSE_H_
+#define TENCENTCLOUD_TIW_V20190919_MODEL_CREATEVIDEOGENERATIONTASKRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ckafka/v20190819/model/ConsumerRecord.h>
 
 
 namespace TencentCloud
 {
-    namespace Ckafka
+    namespace Tiw
     {
-        namespace V20190819
+        namespace V20190919
         {
             namespace Model
             {
                 /**
-                * FetchMessageListByOffset返回参数结构体
+                * CreateVideoGenerationTask返回参数结构体
                 */
-                class FetchMessageListByOffsetResponse : public AbstractModel
+                class CreateVideoGenerationTaskResponse : public AbstractModel
                 {
                 public:
-                    FetchMessageListByOffsetResponse();
-                    ~FetchMessageListByOffsetResponse() = default;
+                    CreateVideoGenerationTaskResponse();
+                    ~CreateVideoGenerationTaskResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取返回结果
-                     * @return Result 返回结果
+                     * 获取视频生成的任务Id
+                     * @return TaskId 视频生成的任务Id
                      */
-                    std::vector<ConsumerRecord> GetResult() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      */
-                    bool ResultHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 返回结果
+                     * 视频生成的任务Id
                      */
-                    std::vector<ConsumerRecord> m_result;
-                    bool m_resultHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -69,4 +68,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CKAFKA_V20190819_MODEL_FETCHMESSAGELISTBYOFFSETRESPONSE_H_
+#endif // !TENCENTCLOUD_TIW_V20190919_MODEL_CREATEVIDEOGENERATIONTASKRESPONSE_H_

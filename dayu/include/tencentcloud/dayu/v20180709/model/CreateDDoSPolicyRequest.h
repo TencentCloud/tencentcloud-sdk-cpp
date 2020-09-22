@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool PortLimitsHasBeenSet() const;
 
                     /**
-                     * 获取IP黑白名单，当没有IP黑白名单时填空数组
-                     * @return IpAllowDenys IP黑白名单，当没有IP黑白名单时填空数组
+                     * 获取请求源IP黑白名单，当没有IP黑白名单时填空数组
+                     * @return IpAllowDenys 请求源IP黑白名单，当没有IP黑白名单时填空数组
                      */
                     std::vector<IpBlackWhite> GetIpAllowDenys() const;
 
                     /**
-                     * 设置IP黑白名单，当没有IP黑白名单时填空数组
-                     * @param IpAllowDenys IP黑白名单，当没有IP黑白名单时填空数组
+                     * 设置请求源IP黑白名单，当没有IP黑白名单时填空数组
+                     * @param IpAllowDenys 请求源IP黑白名单，当没有IP黑白名单时填空数组
                      */
                     void SetIpAllowDenys(const std::vector<IpBlackWhite>& _ipAllowDenys);
 
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_portLimitsHasBeenSet;
 
                     /**
-                     * IP黑白名单，当没有IP黑白名单时填空数组
+                     * 请求源IP黑白名单，当没有IP黑白名单时填空数组
                      */
                     std::vector<IpBlackWhite> m_ipAllowDenys;
                     bool m_ipAllowDenysHasBeenSet;

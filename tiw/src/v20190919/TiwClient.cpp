@@ -83,6 +83,49 @@ TiwClient::CreateTranscodeOutcomeCallable TiwClient::CreateTranscodeCallable(con
     return task->get_future();
 }
 
+TiwClient::CreateVideoGenerationTaskOutcome TiwClient::CreateVideoGenerationTask(const CreateVideoGenerationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVideoGenerationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVideoGenerationTaskResponse rsp = CreateVideoGenerationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVideoGenerationTaskOutcome(rsp);
+        else
+            return CreateVideoGenerationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVideoGenerationTaskOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::CreateVideoGenerationTaskAsync(const CreateVideoGenerationTaskRequest& request, const CreateVideoGenerationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVideoGenerationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::CreateVideoGenerationTaskOutcomeCallable TiwClient::CreateVideoGenerationTaskCallable(const CreateVideoGenerationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVideoGenerationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVideoGenerationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::DescribeOnlineRecordOutcome TiwClient::DescribeOnlineRecord(const DescribeOnlineRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOnlineRecord");
@@ -248,6 +291,92 @@ TiwClient::DescribeTranscodeCallbackOutcomeCallable TiwClient::DescribeTranscode
         [this, request]()
         {
             return this->DescribeTranscodeCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeVideoGenerationTaskOutcome TiwClient::DescribeVideoGenerationTask(const DescribeVideoGenerationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoGenerationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoGenerationTaskResponse rsp = DescribeVideoGenerationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoGenerationTaskOutcome(rsp);
+        else
+            return DescribeVideoGenerationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoGenerationTaskOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeVideoGenerationTaskAsync(const DescribeVideoGenerationTaskRequest& request, const DescribeVideoGenerationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoGenerationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeVideoGenerationTaskOutcomeCallable TiwClient::DescribeVideoGenerationTaskCallable(const DescribeVideoGenerationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoGenerationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoGenerationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeVideoGenerationTaskCallbackOutcome TiwClient::DescribeVideoGenerationTaskCallback(const DescribeVideoGenerationTaskCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoGenerationTaskCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoGenerationTaskCallbackResponse rsp = DescribeVideoGenerationTaskCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoGenerationTaskCallbackOutcome(rsp);
+        else
+            return DescribeVideoGenerationTaskCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoGenerationTaskCallbackOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeVideoGenerationTaskCallbackAsync(const DescribeVideoGenerationTaskCallbackRequest& request, const DescribeVideoGenerationTaskCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoGenerationTaskCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeVideoGenerationTaskCallbackOutcomeCallable TiwClient::DescribeVideoGenerationTaskCallbackCallable(const DescribeVideoGenerationTaskCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoGenerationTaskCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoGenerationTaskCallback(request);
         }
     );
 
@@ -506,6 +635,92 @@ TiwClient::SetTranscodeCallbackKeyOutcomeCallable TiwClient::SetTranscodeCallbac
         [this, request]()
         {
             return this->SetTranscodeCallbackKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::SetVideoGenerationTaskCallbackOutcome TiwClient::SetVideoGenerationTaskCallback(const SetVideoGenerationTaskCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetVideoGenerationTaskCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetVideoGenerationTaskCallbackResponse rsp = SetVideoGenerationTaskCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetVideoGenerationTaskCallbackOutcome(rsp);
+        else
+            return SetVideoGenerationTaskCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return SetVideoGenerationTaskCallbackOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::SetVideoGenerationTaskCallbackAsync(const SetVideoGenerationTaskCallbackRequest& request, const SetVideoGenerationTaskCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetVideoGenerationTaskCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::SetVideoGenerationTaskCallbackOutcomeCallable TiwClient::SetVideoGenerationTaskCallbackCallable(const SetVideoGenerationTaskCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetVideoGenerationTaskCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->SetVideoGenerationTaskCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::SetVideoGenerationTaskCallbackKeyOutcome TiwClient::SetVideoGenerationTaskCallbackKey(const SetVideoGenerationTaskCallbackKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetVideoGenerationTaskCallbackKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetVideoGenerationTaskCallbackKeyResponse rsp = SetVideoGenerationTaskCallbackKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetVideoGenerationTaskCallbackKeyOutcome(rsp);
+        else
+            return SetVideoGenerationTaskCallbackKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return SetVideoGenerationTaskCallbackKeyOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::SetVideoGenerationTaskCallbackKeyAsync(const SetVideoGenerationTaskCallbackKeyRequest& request, const SetVideoGenerationTaskCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetVideoGenerationTaskCallbackKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::SetVideoGenerationTaskCallbackKeyOutcomeCallable TiwClient::SetVideoGenerationTaskCallbackKeyCallable(const SetVideoGenerationTaskCallbackKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetVideoGenerationTaskCallbackKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->SetVideoGenerationTaskCallbackKey(request);
         }
     );
 

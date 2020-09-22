@@ -46,6 +46,7 @@ RunInstancesRequest::RunInstancesRequest() :
     m_instanceMarketOptionsHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_dryRunHasBeenSet(false),
+    m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false)
 {
 }
@@ -264,6 +265,14 @@ string RunInstancesRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_camRoleNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CamRoleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_camRoleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hpcClusterIdHasBeenSet)
@@ -632,6 +641,22 @@ void RunInstancesRequest::SetDryRun(const bool& _dryRun)
 bool RunInstancesRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+string RunInstancesRequest::GetCamRoleName() const
+{
+    return m_camRoleName;
+}
+
+void RunInstancesRequest::SetCamRoleName(const string& _camRoleName)
+{
+    m_camRoleName = _camRoleName;
+    m_camRoleNameHasBeenSet = true;
+}
+
+bool RunInstancesRequest::CamRoleNameHasBeenSet() const
+{
+    return m_camRoleNameHasBeenSet;
 }
 
 string RunInstancesRequest::GetHpcClusterId() const

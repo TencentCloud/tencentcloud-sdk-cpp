@@ -25,7 +25,8 @@ AttachEntityOfPolicy::AttachEntityOfPolicy() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_uinHasBeenSet(false),
-    m_relatedTypeHasBeenSet(false)
+    m_relatedTypeHasBeenSet(false),
+    m_attachmentTimeHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome AttachEntityOfPolicy::Deserialize(const Value &value)
         m_relatedTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AttachmentTime") && !value["AttachmentTime"].IsNull())
+    {
+        if (!value["AttachmentTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AttachEntityOfPolicy.AttachmentTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_attachmentTime = string(value["AttachmentTime"].GetString());
+        m_attachmentTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void AttachEntityOfPolicy::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "RelatedType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_relatedType, allocator);
+    }
+
+    if (m_attachmentTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachmentTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_attachmentTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void AttachEntityOfPolicy::SetRelatedType(const uint64_t& _relatedType)
 bool AttachEntityOfPolicy::RelatedTypeHasBeenSet() const
 {
     return m_relatedTypeHasBeenSet;
+}
+
+string AttachEntityOfPolicy::GetAttachmentTime() const
+{
+    return m_attachmentTime;
+}
+
+void AttachEntityOfPolicy::SetAttachmentTime(const string& _attachmentTime)
+{
+    m_attachmentTime = _attachmentTime;
+    m_attachmentTimeHasBeenSet = true;
+}
+
+bool AttachEntityOfPolicy::AttachmentTimeHasBeenSet() const
+{
+    return m_attachmentTimeHasBeenSet;
 }
 

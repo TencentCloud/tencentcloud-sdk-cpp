@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h>
+#include <tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ckafka::V20190819::Model;
+using namespace TencentCloud::Tiw::V20190919::Model;
 using namespace rapidjson;
 using namespace std;
 
-FetchMessageByOffsetResponse::FetchMessageByOffsetResponse() :
-    m_resultHasBeenSet(false)
+CreateVideoGenerationTaskResponse::CreateVideoGenerationTaskResponse() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome FetchMessageByOffsetResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateVideoGenerationTaskResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -63,21 +63,14 @@ CoreInternalOutcome FetchMessageByOffsetResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["Result"].IsObject())
+        if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_resultHasBeenSet = true;
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
     }
 
 
@@ -85,14 +78,14 @@ CoreInternalOutcome FetchMessageByOffsetResponse::Deserialize(const string &payl
 }
 
 
-ConsumerRecord FetchMessageByOffsetResponse::GetResult() const
+string CreateVideoGenerationTaskResponse::GetTaskId() const
 {
-    return m_result;
+    return m_taskId;
 }
 
-bool FetchMessageByOffsetResponse::ResultHasBeenSet() const
+bool CreateVideoGenerationTaskResponse::TaskIdHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

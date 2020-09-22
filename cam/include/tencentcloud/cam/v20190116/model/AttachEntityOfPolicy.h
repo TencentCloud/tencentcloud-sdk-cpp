@@ -126,6 +126,28 @@ namespace TencentCloud
                      */
                     bool RelatedTypeHasBeenSet() const;
 
+                    /**
+                     * 获取策略关联时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttachmentTime 策略关联时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAttachmentTime() const;
+
+                    /**
+                     * 设置策略关联时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttachmentTime 策略关联时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttachmentTime(const std::string& _attachmentTime);
+
+                    /**
+                     * 判断参数 AttachmentTime 是否已赋值
+                     * @return AttachmentTime 是否已赋值
+                     */
+                    bool AttachmentTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +175,13 @@ namespace TencentCloud
                      */
                     uint64_t m_relatedType;
                     bool m_relatedTypeHasBeenSet;
+
+                    /**
+                     * 策略关联时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_attachmentTime;
+                    bool m_attachmentTimeHasBeenSet;
 
                 };
             }

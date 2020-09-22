@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ReportedAccountHasBeenSet() const;
 
                     /**
-                     * 获取被举报账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)
-                     * @return ReportedAccountType 被举报账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)
+                     * 获取被举报账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)
+                     * @return ReportedAccountType 被举报账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)
                      */
                     int64_t GetReportedAccountType() const;
 
                     /**
-                     * 设置被举报账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)
-                     * @param ReportedAccountType 被举报账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)
+                     * 设置被举报账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)
+                     * @param ReportedAccountType 被举报账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)
                      */
                     void SetReportedAccountType(const int64_t& _reportedAccountType);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool SenderAccountHasBeenSet() const;
 
                     /**
-                     * 获取举报者账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)
-                     * @return SenderAccountType 举报者账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)
+                     * 获取举报者账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)
+                     * @return SenderAccountType 举报者账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)
                      */
                     int64_t GetSenderAccountType() const;
 
                     /**
-                     * 设置举报者账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)
-                     * @param SenderAccountType 举报者账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)
+                     * 设置举报者账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)
+                     * @param SenderAccountType 举报者账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)
                      */
                     void SetSenderAccountType(const int64_t& _senderAccountType);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_reportedAccountHasBeenSet;
 
                     /**
-                     * 被举报账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)
+                     * 被举报账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)
                      */
                     int64_t m_reportedAccountType;
                     bool m_reportedAccountTypeHasBeenSet;
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_senderAccountHasBeenSet;
 
                     /**
-                     * 举报者账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)
+                     * 举报者账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)
                      */
                     int64_t m_senderAccountType;
                     bool m_senderAccountTypeHasBeenSet;

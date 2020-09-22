@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tiw/v20190919/model/CreateTranscodeRequest.h>
 #include <tencentcloud/tiw/v20190919/model/CreateTranscodeResponse.h>
+#include <tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskRequest.h>
+#include <tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackRequest.h>
@@ -33,6 +35,10 @@
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/PauseOnlineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/PauseOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/ResumeOnlineRecordRequest.h>
@@ -45,6 +51,10 @@
 #include <tencentcloud/tiw/v20190919/model/SetTranscodeCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyRequest.h>
 #include <tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyResponse.h>
+#include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackRequest.h>
+#include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackResponse.h>
+#include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyRequest.h>
+#include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyResponse.h>
 #include <tencentcloud/tiw/v20190919/model/StartOnlineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/StartOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/StopOnlineRecordRequest.h>
@@ -66,6 +76,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateTranscodeResponse> CreateTranscodeOutcome;
                 typedef std::future<CreateTranscodeOutcome> CreateTranscodeOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::CreateTranscodeRequest&, CreateTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTranscodeAsyncHandler;
+                typedef Outcome<Error, Model::CreateVideoGenerationTaskResponse> CreateVideoGenerationTaskOutcome;
+                typedef std::future<CreateVideoGenerationTaskOutcome> CreateVideoGenerationTaskOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::CreateVideoGenerationTaskRequest&, CreateVideoGenerationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoGenerationTaskAsyncHandler;
                 typedef Outcome<Error, Model::DescribeOnlineRecordResponse> DescribeOnlineRecordOutcome;
                 typedef std::future<DescribeOnlineRecordOutcome> DescribeOnlineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeOnlineRecordRequest&, DescribeOnlineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOnlineRecordAsyncHandler;
@@ -78,6 +91,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTranscodeCallbackResponse> DescribeTranscodeCallbackOutcome;
                 typedef std::future<DescribeTranscodeCallbackOutcome> DescribeTranscodeCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeTranscodeCallbackRequest&, DescribeTranscodeCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeCallbackAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVideoGenerationTaskResponse> DescribeVideoGenerationTaskOutcome;
+                typedef std::future<DescribeVideoGenerationTaskOutcome> DescribeVideoGenerationTaskOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeVideoGenerationTaskRequest&, DescribeVideoGenerationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoGenerationTaskAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVideoGenerationTaskCallbackResponse> DescribeVideoGenerationTaskCallbackOutcome;
+                typedef std::future<DescribeVideoGenerationTaskCallbackOutcome> DescribeVideoGenerationTaskCallbackOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeVideoGenerationTaskCallbackRequest&, DescribeVideoGenerationTaskCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoGenerationTaskCallbackAsyncHandler;
                 typedef Outcome<Error, Model::PauseOnlineRecordResponse> PauseOnlineRecordOutcome;
                 typedef std::future<PauseOnlineRecordOutcome> PauseOnlineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::PauseOnlineRecordRequest&, PauseOnlineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseOnlineRecordAsyncHandler;
@@ -96,6 +115,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SetTranscodeCallbackKeyResponse> SetTranscodeCallbackKeyOutcome;
                 typedef std::future<SetTranscodeCallbackKeyOutcome> SetTranscodeCallbackKeyOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::SetTranscodeCallbackKeyRequest&, SetTranscodeCallbackKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTranscodeCallbackKeyAsyncHandler;
+                typedef Outcome<Error, Model::SetVideoGenerationTaskCallbackResponse> SetVideoGenerationTaskCallbackOutcome;
+                typedef std::future<SetVideoGenerationTaskCallbackOutcome> SetVideoGenerationTaskCallbackOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::SetVideoGenerationTaskCallbackRequest&, SetVideoGenerationTaskCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVideoGenerationTaskCallbackAsyncHandler;
+                typedef Outcome<Error, Model::SetVideoGenerationTaskCallbackKeyResponse> SetVideoGenerationTaskCallbackKeyOutcome;
+                typedef std::future<SetVideoGenerationTaskCallbackKeyOutcome> SetVideoGenerationTaskCallbackKeyOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::SetVideoGenerationTaskCallbackKeyRequest&, SetVideoGenerationTaskCallbackKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVideoGenerationTaskCallbackKeyAsyncHandler;
                 typedef Outcome<Error, Model::StartOnlineRecordResponse> StartOnlineRecordOutcome;
                 typedef std::future<StartOnlineRecordOutcome> StartOnlineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::StartOnlineRecordRequest&, StartOnlineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartOnlineRecordAsyncHandler;
@@ -113,6 +138,15 @@ namespace TencentCloud
                 CreateTranscodeOutcome CreateTranscode(const Model::CreateTranscodeRequest &request);
                 void CreateTranscodeAsync(const Model::CreateTranscodeRequest& request, const CreateTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTranscodeOutcomeCallable CreateTranscodeCallable(const Model::CreateTranscodeRequest& request);
+
+                /**
+                 *创建视频生成任务
+                 * @param req CreateVideoGenerationTaskRequest
+                 * @return CreateVideoGenerationTaskOutcome
+                 */
+                CreateVideoGenerationTaskOutcome CreateVideoGenerationTask(const Model::CreateVideoGenerationTaskRequest &request);
+                void CreateVideoGenerationTaskAsync(const Model::CreateVideoGenerationTaskRequest& request, const CreateVideoGenerationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoGenerationTaskOutcomeCallable CreateVideoGenerationTaskCallable(const Model::CreateVideoGenerationTaskRequest& request);
 
                 /**
                  *查询录制任务状态与结果
@@ -149,6 +183,24 @@ namespace TencentCloud
                 DescribeTranscodeCallbackOutcome DescribeTranscodeCallback(const Model::DescribeTranscodeCallbackRequest &request);
                 void DescribeTranscodeCallbackAsync(const Model::DescribeTranscodeCallbackRequest& request, const DescribeTranscodeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTranscodeCallbackOutcomeCallable DescribeTranscodeCallbackCallable(const Model::DescribeTranscodeCallbackRequest& request);
+
+                /**
+                 *查询录制视频生成任务状态与结果
+                 * @param req DescribeVideoGenerationTaskRequest
+                 * @return DescribeVideoGenerationTaskOutcome
+                 */
+                DescribeVideoGenerationTaskOutcome DescribeVideoGenerationTask(const Model::DescribeVideoGenerationTaskRequest &request);
+                void DescribeVideoGenerationTaskAsync(const Model::DescribeVideoGenerationTaskRequest& request, const DescribeVideoGenerationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoGenerationTaskOutcomeCallable DescribeVideoGenerationTaskCallable(const Model::DescribeVideoGenerationTaskRequest& request);
+
+                /**
+                 *查询录制视频生成回调地址
+                 * @param req DescribeVideoGenerationTaskCallbackRequest
+                 * @return DescribeVideoGenerationTaskCallbackOutcome
+                 */
+                DescribeVideoGenerationTaskCallbackOutcome DescribeVideoGenerationTaskCallback(const Model::DescribeVideoGenerationTaskCallbackRequest &request);
+                void DescribeVideoGenerationTaskCallbackAsync(const Model::DescribeVideoGenerationTaskCallbackRequest& request, const DescribeVideoGenerationTaskCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoGenerationTaskCallbackOutcomeCallable DescribeVideoGenerationTaskCallbackCallable(const Model::DescribeVideoGenerationTaskCallbackRequest& request);
 
                 /**
                  *暂停实时录制
@@ -203,6 +255,24 @@ namespace TencentCloud
                 SetTranscodeCallbackKeyOutcome SetTranscodeCallbackKey(const Model::SetTranscodeCallbackKeyRequest &request);
                 void SetTranscodeCallbackKeyAsync(const Model::SetTranscodeCallbackKeyRequest& request, const SetTranscodeCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetTranscodeCallbackKeyOutcomeCallable SetTranscodeCallbackKeyCallable(const Model::SetTranscodeCallbackKeyRequest& request);
+
+                /**
+                 *设置录制视频生成回调地址
+                 * @param req SetVideoGenerationTaskCallbackRequest
+                 * @return SetVideoGenerationTaskCallbackOutcome
+                 */
+                SetVideoGenerationTaskCallbackOutcome SetVideoGenerationTaskCallback(const Model::SetVideoGenerationTaskCallbackRequest &request);
+                void SetVideoGenerationTaskCallbackAsync(const Model::SetVideoGenerationTaskCallbackRequest& request, const SetVideoGenerationTaskCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetVideoGenerationTaskCallbackOutcomeCallable SetVideoGenerationTaskCallbackCallable(const Model::SetVideoGenerationTaskCallbackRequest& request);
+
+                /**
+                 *设置视频生成回调鉴权密钥
+                 * @param req SetVideoGenerationTaskCallbackKeyRequest
+                 * @return SetVideoGenerationTaskCallbackKeyOutcome
+                 */
+                SetVideoGenerationTaskCallbackKeyOutcome SetVideoGenerationTaskCallbackKey(const Model::SetVideoGenerationTaskCallbackKeyRequest &request);
+                void SetVideoGenerationTaskCallbackKeyAsync(const Model::SetVideoGenerationTaskCallbackKeyRequest& request, const SetVideoGenerationTaskCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetVideoGenerationTaskCallbackKeyOutcomeCallable SetVideoGenerationTaskCallbackKeyCallable(const Model::SetVideoGenerationTaskCallbackKeyRequest& request);
 
                 /**
                  *发起一个实时录制任务

@@ -106,14 +106,14 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>
-                     * @return EsConfig 配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>
+                     * 获取配置项（JSON格式字符串）
+                     * @return EsConfig 配置项（JSON格式字符串）
                      */
                     std::string GetEsConfig() const;
 
                     /**
-                     * 设置配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>
-                     * @param EsConfig 配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>
+                     * 设置配置项（JSON格式字符串）
+                     * @param EsConfig 配置项（JSON格式字符串）
                      */
                     void SetEsConfig(const std::string& _esConfig);
 
@@ -507,7 +507,7 @@ namespace TencentCloud
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>
+                     * 配置项（JSON格式字符串）
                      */
                     std::string m_esConfig;
                     bool m_esConfigHasBeenSet;
