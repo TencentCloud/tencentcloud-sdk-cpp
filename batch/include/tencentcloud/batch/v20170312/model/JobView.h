@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/batch/v20170312/model/Placement.h>
 #include <tencentcloud/batch/v20170312/model/TaskMetrics.h>
+#include <tencentcloud/batch/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -200,6 +201,28 @@ namespace TencentCloud
                      */
                     bool TaskMetricsHasBeenSet() const;
 
+                    /**
+                     * 获取作业绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 作业绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置作业绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 作业绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,6 +274,13 @@ namespace TencentCloud
                      */
                     TaskMetrics m_taskMetrics;
                     bool m_taskMetricsHasBeenSet;
+
+                    /**
+                     * 作业绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

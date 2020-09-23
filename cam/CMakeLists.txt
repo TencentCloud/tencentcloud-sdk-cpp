@@ -145,6 +145,8 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListEntitiesForPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/AddUserToGroupResponse.h
   include/tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagCollResponse.h
+  include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagCollRequest.h
   include/tencentcloud/cam/v20190116/model/PutRolePermissionsBoundaryResponse.h
   include/tencentcloud/cam/v20190116/model/SetMfaFlagRequest.h
   include/tencentcloud/cam/v20190116/model/ListCollaboratorsResponse.h
@@ -283,6 +285,8 @@ set(cam_src
   src/v20190116/model/ListEntitiesForPolicyResponse.cpp
   src/v20190116/model/AddUserToGroupResponse.cpp
   src/v20190116/model/AttachUserPolicyResponse.cpp
+  src/v20190116/model/DescribeSafeAuthFlagCollResponse.cpp
+  src/v20190116/model/DescribeSafeAuthFlagCollRequest.cpp
   src/v20190116/model/PutRolePermissionsBoundaryResponse.cpp
   src/v20190116/model/SetMfaFlagRequest.cpp
   src/v20190116/model/ListCollaboratorsResponse.cpp

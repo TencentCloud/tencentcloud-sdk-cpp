@@ -128,6 +128,7 @@ namespace TencentCloud
 "KILLED" - 已终止；
 "REMOVED" - 已删除；
 "PAUSED" - 已暂停。
+"WAITING" - 等待中（可撤销）
                      * @return TaskStatus 实例任务状态，可能的值包括：
 "UNDEFINED" - 未定义；
 "INITIAL" - 初始化；
@@ -137,6 +138,7 @@ namespace TencentCloud
 "KILLED" - 已终止；
 "REMOVED" - 已删除；
 "PAUSED" - 已暂停。
+"WAITING" - 等待中（可撤销）
                      */
                     std::string GetTaskStatus() const;
 
@@ -150,6 +152,7 @@ namespace TencentCloud
 "KILLED" - 已终止；
 "REMOVED" - 已删除；
 "PAUSED" - 已暂停。
+"WAITING" - 等待中（可撤销）
                      * @param TaskStatus 实例任务状态，可能的值包括：
 "UNDEFINED" - 未定义；
 "INITIAL" - 初始化；
@@ -159,6 +162,7 @@ namespace TencentCloud
 "KILLED" - 已终止；
 "REMOVED" - 已删除；
 "PAUSED" - 已暂停。
+"WAITING" - 等待中（可撤销）
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
 
@@ -346,6 +350,7 @@ namespace TencentCloud
 "KILLED" - 已终止；
 "REMOVED" - 已删除；
 "PAUSED" - 已暂停。
+"WAITING" - 等待中（可撤销）
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;

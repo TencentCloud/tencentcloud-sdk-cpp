@@ -44,7 +44,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/AddInstancesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/Tag.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstanceDetail.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsResponse.h
@@ -62,6 +62,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/QueryFilter.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstance.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAccountsResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailResponse.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeRequest.h
@@ -112,7 +113,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClusterInstanceGrpsResponse.cpp
   src/v20190107/model/AddInstancesRequest.cpp
   src/v20190107/model/DescribeClusterDetailRequest.cpp
-  src/v20190107/model/UpgradeInstanceRequest.cpp
+  src/v20190107/model/Tag.cpp
   src/v20190107/model/DescribeProjectSecurityGroupsResponse.cpp
   src/v20190107/model/CynosdbInstanceDetail.cpp
   src/v20190107/model/DescribeDBSecurityGroupsResponse.cpp
@@ -130,6 +131,7 @@ set(cynosdb_src
   src/v20190107/model/QueryFilter.cpp
   src/v20190107/model/CynosdbInstance.cpp
   src/v20190107/model/DescribeAccountsResponse.cpp
+  src/v20190107/model/UpgradeInstanceRequest.cpp
   src/v20190107/model/DescribeInstanceDetailResponse.cpp
   src/v20190107/model/OfflineInstanceRequest.cpp
   src/v20190107/model/DescribeRollbackTimeRangeRequest.cpp

@@ -28,6 +28,7 @@
 #include <tencentcloud/batch/v20170312/model/Authentication.h>
 #include <tencentcloud/batch/v20170312/model/InputMapping.h>
 #include <tencentcloud/batch/v20170312/model/Notification.h>
+#include <tencentcloud/batch/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -230,6 +231,24 @@ namespace TencentCloud
                      */
                     bool ResourceMaxRetryCountHasBeenSet() const;
 
+                    /**
+                     * 获取标签列表。通过指定该参数可以支持绑定标签到黑石计算环境。每个黑石计算环境最多绑定10个标签。
+                     * @return Tags 标签列表。通过指定该参数可以支持绑定标签到黑石计算环境。每个黑石计算环境最多绑定10个标签。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签列表。通过指定该参数可以支持绑定标签到黑石计算环境。每个黑石计算环境最多绑定10个标签。
+                     * @param Tags 标签列表。通过指定该参数可以支持绑定标签到黑石计算环境。每个黑石计算环境最多绑定10个标签。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +310,12 @@ namespace TencentCloud
                      */
                     int64_t m_resourceMaxRetryCount;
                     bool m_resourceMaxRetryCountHasBeenSet;
+
+                    /**
+                     * 标签列表。通过指定该参数可以支持绑定标签到黑石计算环境。每个黑石计算环境最多绑定10个标签。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

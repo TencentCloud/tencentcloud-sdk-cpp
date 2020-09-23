@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/Addr.h>
 #include <tencentcloud/cynosdb/v20190107/model/ClusterInstanceDetail.h>
+#include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 
 
 namespace TencentCloud
@@ -444,6 +445,24 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取实例绑定的tag数组信息
+                     * @return ResourceTags 实例绑定的tag数组信息
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 设置实例绑定的tag数组信息
+                     * @param ResourceTags 实例绑定的tag数组信息
+                     */
+                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -577,6 +596,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 实例绑定的tag数组信息
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

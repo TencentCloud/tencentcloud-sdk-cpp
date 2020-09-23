@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取国际/港澳台短信 senderid，国内短信填空，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)。
-                     * @return SenderId 国际/港澳台短信 senderid，国内短信填空，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)。
+                     * 获取国内短信无senderid，无需填写该项；若需开通国际/港澳台短信senderid，请联系smshelper。
+                     * @return SenderId 国内短信无senderid，无需填写该项；若需开通国际/港澳台短信senderid，请联系smshelper。
                      */
                     std::string GetSenderId() const;
 
                     /**
-                     * 设置国际/港澳台短信 senderid，国内短信填空，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)。
-                     * @param SenderId 国际/港澳台短信 senderid，国内短信填空，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)。
+                     * 设置国内短信无senderid，无需填写该项；若需开通国际/港澳台短信senderid，请联系smshelper。
+                     * @param SenderId 国内短信无senderid，无需填写该项；若需开通国际/港澳台短信senderid，请联系smshelper。
                      */
                     void SetSenderId(const std::string& _senderId);
 
@@ -236,7 +236,7 @@ namespace TencentCloud
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * 国际/港澳台短信 senderid，国内短信填空，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)。
+                     * 国内短信无senderid，无需填写该项；若需开通国际/港澳台短信senderid，请联系smshelper。
                      */
                     std::string m_senderId;
                     bool m_senderIdHasBeenSet;

@@ -30,7 +30,8 @@ DescribeJobSubmitInfoResponse::DescribeJobSubmitInfoResponse() :
     m_jobDescriptionHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_tasksHasBeenSet(false),
-    m_dependencesHasBeenSet(false)
+    m_dependencesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,26 @@ CoreInternalOutcome DescribeJobSubmitInfoResponse::Deserialize(const string &pay
         m_dependencesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
+    {
+        if (!rsp["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+
+        const Value &tmpValue = rsp["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +232,16 @@ vector<Dependence> DescribeJobSubmitInfoResponse::GetDependences() const
 bool DescribeJobSubmitInfoResponse::DependencesHasBeenSet() const
 {
     return m_dependencesHasBeenSet;
+}
+
+vector<Tag> DescribeJobSubmitInfoResponse::GetTags() const
+{
+    return m_tags;
+}
+
+bool DescribeJobSubmitInfoResponse::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

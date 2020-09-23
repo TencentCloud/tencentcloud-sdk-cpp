@@ -257,7 +257,7 @@ namespace TencentCloud
                 SegmentCustomizedPortraitPicOutcomeCallable SegmentCustomizedPortraitPicCallable(const Model::SegmentCustomizedPortraitPicRequest& request);
 
                 /**
-                 *识别传入图片中人体的完整轮廓，进行抠像。
+                 *即二分类人像分割，识别传入图片中人体的完整轮廓，进行抠像。
 
                  * @param req SegmentPortraitPicRequest
                  * @return SegmentPortraitPicOutcome

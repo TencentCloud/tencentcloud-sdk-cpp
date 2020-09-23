@@ -83,6 +83,49 @@ AsrClient::CreateAsrVocabOutcomeCallable AsrClient::CreateAsrVocabCallable(const
     return task->get_future();
 }
 
+AsrClient::CreateCustomizationOutcome AsrClient::CreateCustomization(const CreateCustomizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomizationResponse rsp = CreateCustomizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomizationOutcome(rsp);
+        else
+            return CreateCustomizationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomizationOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::CreateCustomizationAsync(const CreateCustomizationRequest& request, const CreateCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::CreateCustomizationOutcomeCallable AsrClient::CreateCustomizationCallable(const CreateCustomizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomizationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::CreateRecTaskOutcome AsrClient::CreateRecTask(const CreateRecTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRecTask");
@@ -169,6 +212,49 @@ AsrClient::DeleteAsrVocabOutcomeCallable AsrClient::DeleteAsrVocabCallable(const
     return task->get_future();
 }
 
+AsrClient::DeleteCustomizationOutcome AsrClient::DeleteCustomization(const DeleteCustomizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomizationResponse rsp = DeleteCustomizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomizationOutcome(rsp);
+        else
+            return DeleteCustomizationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomizationOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::DeleteCustomizationAsync(const DeleteCustomizationRequest& request, const DeleteCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCustomization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::DeleteCustomizationOutcomeCallable AsrClient::DeleteCustomizationCallable(const DeleteCustomizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCustomizationOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCustomization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::DescribeTaskStatusOutcome AsrClient::DescribeTaskStatus(const DescribeTaskStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskStatus");
@@ -248,6 +334,49 @@ AsrClient::DownloadAsrVocabOutcomeCallable AsrClient::DownloadAsrVocabCallable(c
         [this, request]()
         {
             return this->DownloadAsrVocab(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::DownloadCustomizationOutcome AsrClient::DownloadCustomization(const DownloadCustomizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadCustomization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadCustomizationResponse rsp = DownloadCustomizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadCustomizationOutcome(rsp);
+        else
+            return DownloadCustomizationOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadCustomizationOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::DownloadCustomizationAsync(const DownloadCustomizationRequest& request, const DownloadCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadCustomization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::DownloadCustomizationOutcomeCallable AsrClient::DownloadCustomizationCallable(const DownloadCustomizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadCustomizationOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadCustomization(request);
         }
     );
 
@@ -377,6 +506,92 @@ AsrClient::GetCustomizationListOutcomeCallable AsrClient::GetCustomizationListCa
         [this, request]()
         {
             return this->GetCustomizationList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::ModifyCustomizationOutcome AsrClient::ModifyCustomization(const ModifyCustomizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomizationResponse rsp = ModifyCustomizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomizationOutcome(rsp);
+        else
+            return ModifyCustomizationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomizationOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::ModifyCustomizationAsync(const ModifyCustomizationRequest& request, const ModifyCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::ModifyCustomizationOutcomeCallable AsrClient::ModifyCustomizationCallable(const ModifyCustomizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomizationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::ModifyCustomizationStateOutcome AsrClient::ModifyCustomizationState(const ModifyCustomizationStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomizationState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomizationStateResponse rsp = ModifyCustomizationStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomizationStateOutcome(rsp);
+        else
+            return ModifyCustomizationStateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomizationStateOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::ModifyCustomizationStateAsync(const ModifyCustomizationStateRequest& request, const ModifyCustomizationStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomizationState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::ModifyCustomizationStateOutcomeCallable AsrClient::ModifyCustomizationStateCallable(const ModifyCustomizationStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomizationStateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomizationState(request);
         }
     );
 

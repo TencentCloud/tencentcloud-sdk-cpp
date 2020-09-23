@@ -43,7 +43,8 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_vipHasBeenSet(false),
     m_vportHasBeenSet(false),
     m_projectIDHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,26 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const Value &value)
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceTags") && !value["ResourceTags"].IsNull())
+    {
+        if (!value["ResourceTags"].IsArray())
+            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.ResourceTags` is not array type"));
+
+        const Value &tmpValue = value["ResourceTags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceTags.push_back(item);
+        }
+        m_resourceTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -487,6 +508,21 @@ void CynosdbClusterDetail::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -842,5 +878,21 @@ void CynosdbClusterDetail::SetZone(const string& _zone)
 bool CynosdbClusterDetail::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+vector<Tag> CynosdbClusterDetail::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CynosdbClusterDetail::SetResourceTags(const vector<Tag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 

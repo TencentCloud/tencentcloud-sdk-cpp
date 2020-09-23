@@ -31,7 +31,8 @@ ComputeEnvView::ComputeEnvView() :
     m_desiredComputeNodeCountHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_nextActionHasBeenSet(false),
-    m_attachedComputeNodeCountHasBeenSet(false)
+    m_attachedComputeNodeCountHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,26 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const Value &value)
         m_attachedComputeNodeCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `ComputeEnvView.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +262,21 @@ void ComputeEnvView::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "AttachedComputeNodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_attachedComputeNodeCount, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -404,5 +440,21 @@ void ComputeEnvView::SetAttachedComputeNodeCount(const uint64_t& _attachedComput
 bool ComputeEnvView::AttachedComputeNodeCountHasBeenSet() const
 {
     return m_attachedComputeNodeCountHasBeenSet;
+}
+
+vector<Tag> ComputeEnvView::GetTags() const
+{
+    return m_tags;
+}
+
+void ComputeEnvView::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ComputeEnvView::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

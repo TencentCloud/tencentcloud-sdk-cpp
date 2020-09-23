@@ -29,7 +29,8 @@ JobView::JobView() :
     m_placementHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_taskMetricsHasBeenSet(false)
+    m_taskMetricsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,26 @@ CoreInternalOutcome JobView::Deserialize(const Value &value)
         m_taskMetricsHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `JobView.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +224,21 @@ void JobView::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_taskMetrics.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -334,5 +370,21 @@ void JobView::SetTaskMetrics(const TaskMetrics& _taskMetrics)
 bool JobView::TaskMetricsHasBeenSet() const
 {
     return m_taskMetricsHasBeenSet;
+}
+
+vector<Tag> JobView::GetTags() const
+{
+    return m_tags;
+}
+
+void JobView::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool JobView::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

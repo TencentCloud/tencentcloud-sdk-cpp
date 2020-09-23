@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 
 
 namespace TencentCloud
@@ -548,6 +549,24 @@ timeRollback，时间点回档
                      */
                     bool OrderSourceHasBeenSet() const;
 
+                    /**
+                     * 获取集群创建需要绑定的tag数组信息
+                     * @return ResourceTags 集群创建需要绑定的tag数组信息
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 设置集群创建需要绑定的tag数组信息
+                     * @param ResourceTags 集群创建需要绑定的tag数组信息
+                     */
+                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -716,6 +735,12 @@ timeRollback，时间点回档
                      */
                     std::string m_orderSource;
                     bool m_orderSourceHasBeenSet;
+
+                    /**
+                     * 集群创建需要绑定的tag数组信息
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

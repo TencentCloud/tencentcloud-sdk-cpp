@@ -65,17 +65,17 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取建议值,Block：打击,Review：待复审,Normal：正常
+                     * 获取建议值,Block：打击,Review：待复审,Pass：正常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Suggestion 建议值,Block：打击,Review：待复审,Normal：正常
+                     * @return Suggestion 建议值,Block：打击,Review：待复审,Pass：正常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置建议值,Block：打击,Review：待复审,Normal：正常
+                     * 设置建议值,Block：打击,Review：待复审,Pass：正常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 建议值,Block：打击,Review：待复审,Normal：正常
+                     * @param Suggestion 建议值,Block：打击,Review：待复审,Pass：正常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 建议值,Block：打击,Review：待复审,Normal：正常
+                     * 建议值,Block：打击,Review：待复审,Pass：正常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;

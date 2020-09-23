@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/batch/v20170312/model/Task.h>
 #include <tencentcloud/batch/v20170312/model/Dependence.h>
+#include <tencentcloud/batch/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -116,6 +117,20 @@ namespace TencentCloud
                      */
                     bool DependencesHasBeenSet() const;
 
+                    /**
+                     * 获取作业绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 作业绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +168,13 @@ namespace TencentCloud
                      */
                     std::vector<Dependence> m_dependences;
                     bool m_dependencesHasBeenSet;
+
+                    /**
+                     * 作业绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

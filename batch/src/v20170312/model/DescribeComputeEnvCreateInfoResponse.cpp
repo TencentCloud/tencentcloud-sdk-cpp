@@ -34,7 +34,8 @@ DescribeComputeEnvCreateInfoResponse::DescribeComputeEnvCreateInfoResponse() :
     m_inputMappingsHasBeenSet(false),
     m_authenticationsHasBeenSet(false),
     m_notificationsHasBeenSet(false),
-    m_desiredComputeNodeCountHasBeenSet(false)
+    m_desiredComputeNodeCountHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -219,6 +220,26 @@ CoreInternalOutcome DescribeComputeEnvCreateInfoResponse::Deserialize(const stri
         m_desiredComputeNodeCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
+    {
+        if (!rsp["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+
+        const Value &tmpValue = rsp["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -322,6 +343,16 @@ int64_t DescribeComputeEnvCreateInfoResponse::GetDesiredComputeNodeCount() const
 bool DescribeComputeEnvCreateInfoResponse::DesiredComputeNodeCountHasBeenSet() const
 {
     return m_desiredComputeNodeCountHasBeenSet;
+}
+
+vector<Tag> DescribeComputeEnvCreateInfoResponse::GetTags() const
+{
+    return m_tags;
+}
+
+bool DescribeComputeEnvCreateInfoResponse::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

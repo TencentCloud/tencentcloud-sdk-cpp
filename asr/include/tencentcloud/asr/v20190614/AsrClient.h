@@ -25,20 +25,30 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/asr/v20190614/model/CreateAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/CreateAsrVocabResponse.h>
+#include <tencentcloud/asr/v20190614/model/CreateCustomizationRequest.h>
+#include <tencentcloud/asr/v20190614/model/CreateCustomizationResponse.h>
 #include <tencentcloud/asr/v20190614/model/CreateRecTaskRequest.h>
 #include <tencentcloud/asr/v20190614/model/CreateRecTaskResponse.h>
 #include <tencentcloud/asr/v20190614/model/DeleteAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/DeleteAsrVocabResponse.h>
+#include <tencentcloud/asr/v20190614/model/DeleteCustomizationRequest.h>
+#include <tencentcloud/asr/v20190614/model/DeleteCustomizationResponse.h>
 #include <tencentcloud/asr/v20190614/model/DescribeTaskStatusRequest.h>
 #include <tencentcloud/asr/v20190614/model/DescribeTaskStatusResponse.h>
 #include <tencentcloud/asr/v20190614/model/DownloadAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/DownloadAsrVocabResponse.h>
+#include <tencentcloud/asr/v20190614/model/DownloadCustomizationRequest.h>
+#include <tencentcloud/asr/v20190614/model/DownloadCustomizationResponse.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabListRequest.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabListResponse.h>
 #include <tencentcloud/asr/v20190614/model/GetCustomizationListRequest.h>
 #include <tencentcloud/asr/v20190614/model/GetCustomizationListResponse.h>
+#include <tencentcloud/asr/v20190614/model/ModifyCustomizationRequest.h>
+#include <tencentcloud/asr/v20190614/model/ModifyCustomizationResponse.h>
+#include <tencentcloud/asr/v20190614/model/ModifyCustomizationStateRequest.h>
+#include <tencentcloud/asr/v20190614/model/ModifyCustomizationStateResponse.h>
 #include <tencentcloud/asr/v20190614/model/SentenceRecognitionRequest.h>
 #include <tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h>
 #include <tencentcloud/asr/v20190614/model/SetVocabStateRequest.h>
@@ -62,18 +72,27 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAsrVocabResponse> CreateAsrVocabOutcome;
                 typedef std::future<CreateAsrVocabOutcome> CreateAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::CreateAsrVocabRequest&, CreateAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsrVocabAsyncHandler;
+                typedef Outcome<Error, Model::CreateCustomizationResponse> CreateCustomizationOutcome;
+                typedef std::future<CreateCustomizationOutcome> CreateCustomizationOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::CreateCustomizationRequest&, CreateCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomizationAsyncHandler;
                 typedef Outcome<Error, Model::CreateRecTaskResponse> CreateRecTaskOutcome;
                 typedef std::future<CreateRecTaskOutcome> CreateRecTaskOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::CreateRecTaskRequest&, CreateRecTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecTaskAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAsrVocabResponse> DeleteAsrVocabOutcome;
                 typedef std::future<DeleteAsrVocabOutcome> DeleteAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::DeleteAsrVocabRequest&, DeleteAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAsrVocabAsyncHandler;
+                typedef Outcome<Error, Model::DeleteCustomizationResponse> DeleteCustomizationOutcome;
+                typedef std::future<DeleteCustomizationOutcome> DeleteCustomizationOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::DeleteCustomizationRequest&, DeleteCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomizationAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
                 typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
                 typedef Outcome<Error, Model::DownloadAsrVocabResponse> DownloadAsrVocabOutcome;
                 typedef std::future<DownloadAsrVocabOutcome> DownloadAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::DownloadAsrVocabRequest&, DownloadAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadAsrVocabAsyncHandler;
+                typedef Outcome<Error, Model::DownloadCustomizationResponse> DownloadCustomizationOutcome;
+                typedef std::future<DownloadCustomizationOutcome> DownloadCustomizationOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::DownloadCustomizationRequest&, DownloadCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadCustomizationAsyncHandler;
                 typedef Outcome<Error, Model::GetAsrVocabResponse> GetAsrVocabOutcome;
                 typedef std::future<GetAsrVocabOutcome> GetAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::GetAsrVocabRequest&, GetAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAsrVocabAsyncHandler;
@@ -83,6 +102,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetCustomizationListResponse> GetCustomizationListOutcome;
                 typedef std::future<GetCustomizationListOutcome> GetCustomizationListOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::GetCustomizationListRequest&, GetCustomizationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomizationListAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCustomizationResponse> ModifyCustomizationOutcome;
+                typedef std::future<ModifyCustomizationOutcome> ModifyCustomizationOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::ModifyCustomizationRequest&, ModifyCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomizationAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCustomizationStateResponse> ModifyCustomizationStateOutcome;
+                typedef std::future<ModifyCustomizationStateOutcome> ModifyCustomizationStateOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::ModifyCustomizationStateRequest&, ModifyCustomizationStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomizationStateAsyncHandler;
                 typedef Outcome<Error, Model::SentenceRecognitionResponse> SentenceRecognitionOutcome;
                 typedef std::future<SentenceRecognitionOutcome> SentenceRecognitionOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::SentenceRecognitionRequest&, SentenceRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SentenceRecognitionAsyncHandler;
@@ -108,6 +133,15 @@ namespace TencentCloud
                 CreateAsrVocabOutcome CreateAsrVocab(const Model::CreateAsrVocabRequest &request);
                 void CreateAsrVocabAsync(const Model::CreateAsrVocabRequest& request, const CreateAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAsrVocabOutcomeCallable CreateAsrVocabCallable(const Model::CreateAsrVocabRequest& request);
+
+                /**
+                 *用户使用该接口可以创建自学习模型，以供识别调用
+                 * @param req CreateCustomizationRequest
+                 * @return CreateCustomizationOutcome
+                 */
+                CreateCustomizationOutcome CreateCustomization(const Model::CreateCustomizationRequest &request);
+                void CreateCustomizationAsync(const Model::CreateCustomizationRequest& request, const CreateCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomizationOutcomeCallable CreateCustomizationCallable(const Model::CreateCustomizationRequest& request);
 
                 /**
                  *本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果。
@@ -138,6 +172,15 @@ namespace TencentCloud
                 DeleteAsrVocabOutcomeCallable DeleteAsrVocabCallable(const Model::DeleteAsrVocabRequest& request);
 
                 /**
+                 *用户通过该接口可以删除自学习模型
+                 * @param req DeleteCustomizationRequest
+                 * @return DeleteCustomizationOutcome
+                 */
+                DeleteCustomizationOutcome DeleteCustomization(const Model::DeleteCustomizationRequest &request);
+                void DeleteCustomizationAsync(const Model::DeleteCustomizationRequest& request, const DeleteCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomizationOutcomeCallable DeleteCustomizationCallable(const Model::DeleteCustomizationRequest& request);
+
+                /**
                  *在调用录音文件识别请求接口后，有回调和轮询两种方式获取识别结果。
 <br>• 当采用回调方式时，识别完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见[ 录音识别结果回调 ](https://cloud.tencent.com/document/product/1093/37139#callback)。
 <br>• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。
@@ -159,6 +202,15 @@ namespace TencentCloud
                 DownloadAsrVocabOutcome DownloadAsrVocab(const Model::DownloadAsrVocabRequest &request);
                 void DownloadAsrVocabAsync(const Model::DownloadAsrVocabRequest& request, const DownloadAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadAsrVocabOutcomeCallable DownloadAsrVocabCallable(const Model::DownloadAsrVocabRequest& request);
+
+                /**
+                 *用户通过该接口可以下载自学习模型的语料
+                 * @param req DownloadCustomizationRequest
+                 * @return DownloadCustomizationOutcome
+                 */
+                DownloadCustomizationOutcome DownloadCustomization(const Model::DownloadCustomizationRequest &request);
+                void DownloadCustomizationAsync(const Model::DownloadCustomizationRequest& request, const DownloadCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadCustomizationOutcomeCallable DownloadCustomizationCallable(const Model::DownloadCustomizationRequest& request);
 
                 /**
                  *用户根据词表的ID可以获取对应的热词表信息
@@ -186,6 +238,24 @@ namespace TencentCloud
                 GetCustomizationListOutcome GetCustomizationList(const Model::GetCustomizationListRequest &request);
                 void GetCustomizationListAsync(const Model::GetCustomizationListRequest& request, const GetCustomizationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetCustomizationListOutcomeCallable GetCustomizationListCallable(const Model::GetCustomizationListRequest& request);
+
+                /**
+                 *用户通过该接口可以更新自学习模型，如模型名称、模型类型、模型语料。
+                 * @param req ModifyCustomizationRequest
+                 * @return ModifyCustomizationOutcome
+                 */
+                ModifyCustomizationOutcome ModifyCustomization(const Model::ModifyCustomizationRequest &request);
+                void ModifyCustomizationAsync(const Model::ModifyCustomizationRequest& request, const ModifyCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomizationOutcomeCallable ModifyCustomizationCallable(const Model::ModifyCustomizationRequest& request);
+
+                /**
+                 *通过该接口，用户可以修改自学习模型状态，上下线自学习模型
+                 * @param req ModifyCustomizationStateRequest
+                 * @return ModifyCustomizationStateOutcome
+                 */
+                ModifyCustomizationStateOutcome ModifyCustomizationState(const Model::ModifyCustomizationStateRequest &request);
+                void ModifyCustomizationStateAsync(const Model::ModifyCustomizationStateRequest& request, const ModifyCustomizationStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomizationStateOutcomeCallable ModifyCustomizationStateCallable(const Model::ModifyCustomizationStateRequest& request);
 
                 /**
                  *本接口用于对60秒之内的短音频文件进行识别。

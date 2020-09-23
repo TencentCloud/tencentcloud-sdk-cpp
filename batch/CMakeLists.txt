@@ -42,6 +42,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/TaskInstanceLog.h
   include/tencentcloud/batch/v20170312/model/MountDataDisk.h
   include/tencentcloud/batch/v20170312/model/TaskView.h
+  include/tencentcloud/batch/v20170312/model/Tag.h
   include/tencentcloud/batch/v20170312/model/Externals.h
   include/tencentcloud/batch/v20170312/model/OsInfo.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvResponse.h
@@ -166,6 +167,7 @@ set(batch_src
   src/v20170312/model/TaskInstanceLog.cpp
   src/v20170312/model/MountDataDisk.cpp
   src/v20170312/model/TaskView.cpp
+  src/v20170312/model/Tag.cpp
   src/v20170312/model/Externals.cpp
   src/v20170312/model/OsInfo.cpp
   src/v20170312/model/DescribeComputeEnvResponse.cpp

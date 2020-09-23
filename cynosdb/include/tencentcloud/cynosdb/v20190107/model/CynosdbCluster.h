@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
+#include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 
 
 namespace TencentCloud
@@ -497,6 +498,24 @@ namespace TencentCloud
                      */
                     bool TasksHasBeenSet() const;
 
+                    /**
+                     * 获取集群绑定的tag数组
+                     * @return ResourceTags 集群绑定的tag数组
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 设置集群绑定的tag数组
+                     * @param ResourceTags 集群绑定的tag数组
+                     */
+                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -648,6 +667,12 @@ namespace TencentCloud
                      */
                     std::vector<ObjectTask> m_tasks;
                     bool m_tasksHasBeenSet;
+
+                    /**
+                     * 集群绑定的tag数组
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

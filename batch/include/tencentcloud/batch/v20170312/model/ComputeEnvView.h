@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/batch/v20170312/model/Placement.h>
 #include <tencentcloud/batch/v20170312/model/ComputeNodeMetrics.h>
+#include <tencentcloud/batch/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -228,6 +229,28 @@ namespace TencentCloud
                      */
                     bool AttachedComputeNodeCountHasBeenSet() const;
 
+                    /**
+                     * 获取计算环境绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 计算环境绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置计算环境绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 计算环境绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +312,13 @@ namespace TencentCloud
                      */
                     uint64_t m_attachedComputeNodeCount;
                     bool m_attachedComputeNodeCountHasBeenSet;
+
+                    /**
+                     * 计算环境绑定的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

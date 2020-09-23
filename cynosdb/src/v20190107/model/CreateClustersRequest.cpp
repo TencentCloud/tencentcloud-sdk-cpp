@@ -50,7 +50,8 @@ CreateClustersRequest::CreateClustersRequest() :
     m_autoRenewFlagHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_haCountHasBeenSet(false),
-    m_orderSourceHasBeenSet(false)
+    m_orderSourceHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -275,6 +276,21 @@ string CreateClustersRequest::ToJsonString() const
         string key = "OrderSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_orderSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -715,6 +731,22 @@ void CreateClustersRequest::SetOrderSource(const string& _orderSource)
 bool CreateClustersRequest::OrderSourceHasBeenSet() const
 {
     return m_orderSourceHasBeenSet;
+}
+
+vector<Tag> CreateClustersRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateClustersRequest::SetResourceTags(const vector<Tag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateClustersRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

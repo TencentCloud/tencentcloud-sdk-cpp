@@ -36,6 +36,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskListResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/TendisNodes.h
   include/tencentcloud/redis/v20180412/model/RenewInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsResponse.h
@@ -63,6 +64,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInfoResponse.h
   include/tencentcloud/redis/v20180412/model/DestroyPostpaidInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceResponse.h
+  include/tencentcloud/redis/v20180412/model/ProxyNodes.h
   include/tencentcloud/redis/v20180412/model/TradeDealDetail.h
   include/tencentcloud/redis/v20180412/model/SourceInfo.h
   include/tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.h
@@ -93,6 +95,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DisableReplicaReadonlyResponse.h
   include/tencentcloud/redis/v20180412/model/CreateInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h
+  include/tencentcloud/redis/v20180412/model/RedisNodes.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyNetworkConfigRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceSecurityGroupRequest.h
@@ -140,6 +143,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/InquiryPriceCreateInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceParamsRequest.h
   include/tencentcloud/redis/v20180412/model/BigKeyTypeInfo.h
+  include/tencentcloud/redis/v20180412/model/DescribeInstanceNodeInfoRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceClusterNode.h
   include/tencentcloud/redis/v20180412/model/DescribeProxySlowLogRequest.h
@@ -163,6 +167,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/InstanceClusterShard.h
   include/tencentcloud/redis/v20180412/model/ZoneCapacityConf.h
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/DescribeInstanceNodeInfoResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorHotKeyResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceParam.h
@@ -190,6 +195,7 @@ set(redis_src
   src/v20180412/model/AssociateSecurityGroupsRequest.cpp
   src/v20180412/model/DescribeTaskListResponse.cpp
   src/v20180412/model/ModifyInstanceRequest.cpp
+  src/v20180412/model/TendisNodes.cpp
   src/v20180412/model/RenewInstanceResponse.cpp
   src/v20180412/model/DescribeSlowLogResponse.cpp
   src/v20180412/model/DescribeDBSecurityGroupsResponse.cpp
@@ -217,6 +223,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceDTSInfoResponse.cpp
   src/v20180412/model/DestroyPostpaidInstanceResponse.cpp
   src/v20180412/model/ModifyInstanceResponse.cpp
+  src/v20180412/model/ProxyNodes.cpp
   src/v20180412/model/TradeDealDetail.cpp
   src/v20180412/model/SourceInfo.cpp
   src/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.cpp
@@ -247,6 +254,7 @@ set(redis_src
   src/v20180412/model/DisableReplicaReadonlyResponse.cpp
   src/v20180412/model/CreateInstancesResponse.cpp
   src/v20180412/model/DescribeTaskInfoRequest.cpp
+  src/v20180412/model/RedisNodes.cpp
   src/v20180412/model/DescribeInstanceMonitorTopNCmdRequest.cpp
   src/v20180412/model/ModifyNetworkConfigRequest.cpp
   src/v20180412/model/DescribeInstanceSecurityGroupRequest.cpp
@@ -294,6 +302,7 @@ set(redis_src
   src/v20180412/model/InquiryPriceCreateInstanceRequest.cpp
   src/v20180412/model/ModifyInstanceParamsRequest.cpp
   src/v20180412/model/BigKeyTypeInfo.cpp
+  src/v20180412/model/DescribeInstanceNodeInfoRequest.cpp
   src/v20180412/model/DescribeMaintenanceWindowRequest.cpp
   src/v20180412/model/InstanceClusterNode.cpp
   src/v20180412/model/DescribeProxySlowLogRequest.cpp
@@ -317,6 +326,7 @@ set(redis_src
   src/v20180412/model/InstanceClusterShard.cpp
   src/v20180412/model/ZoneCapacityConf.cpp
   src/v20180412/model/UpgradeInstanceRequest.cpp
+  src/v20180412/model/DescribeInstanceNodeInfoResponse.cpp
   src/v20180412/model/DescribeProjectSecurityGroupResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorHotKeyResponse.cpp
   src/v20180412/model/InstanceParam.cpp

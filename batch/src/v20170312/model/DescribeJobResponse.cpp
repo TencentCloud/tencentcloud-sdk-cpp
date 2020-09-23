@@ -36,7 +36,8 @@ DescribeJobResponse::DescribeJobResponse() :
     m_dependenceSetHasBeenSet(false),
     m_taskMetricsHasBeenSet(false),
     m_taskInstanceMetricsHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
+    m_stateReasonHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -228,6 +229,26 @@ CoreInternalOutcome DescribeJobResponse::Deserialize(const string &payload)
         m_stateReasonHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
+    {
+        if (!rsp["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+
+        const Value &tmpValue = rsp["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -351,6 +372,16 @@ string DescribeJobResponse::GetStateReason() const
 bool DescribeJobResponse::StateReasonHasBeenSet() const
 {
     return m_stateReasonHasBeenSet;
+}
+
+vector<Tag> DescribeJobResponse::GetTags() const
+{
+    return m_tags;
+}
+
+bool DescribeJobResponse::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

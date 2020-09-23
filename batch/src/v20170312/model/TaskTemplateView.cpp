@@ -26,7 +26,8 @@ TaskTemplateView::TaskTemplateView() :
     m_taskTemplateNameHasBeenSet(false),
     m_taskTemplateDescriptionHasBeenSet(false),
     m_taskTemplateInfoHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,26 @@ CoreInternalOutcome TaskTemplateView::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `TaskTemplateView.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +159,21 @@ void TaskTemplateView::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -221,5 +257,21 @@ void TaskTemplateView::SetCreateTime(const string& _createTime)
 bool TaskTemplateView::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+vector<Tag> TaskTemplateView::GetTags() const
+{
+    return m_tags;
+}
+
+void TaskTemplateView::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool TaskTemplateView::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
