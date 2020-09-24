@@ -20,10 +20,14 @@ set(lighthouse_public_header
 
 set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/LoginSettings.h
+  include/tencentcloud/lighthouse/v20200324/model/InstanceTrafficPackage.h
   include/tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/Instance.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/TrafficPackage.h
   include/tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/Blueprint.h
@@ -55,10 +59,14 @@ set(lighthouse_public_header_model
 set(lighthouse_src
   src/v20200324/LighthouseClient.cpp
   src/v20200324/model/DescribeBlueprintsResponse.cpp
+  src/v20200324/model/DescribeInstancesTrafficPackagesRequest.cpp
   src/v20200324/model/DeleteFirewallRulesRequest.cpp
   src/v20200324/model/LoginSettings.cpp
+  src/v20200324/model/InstanceTrafficPackage.cpp
   src/v20200324/model/StartInstancesResponse.cpp
   src/v20200324/model/Instance.cpp
+  src/v20200324/model/DescribeInstancesTrafficPackagesResponse.cpp
+  src/v20200324/model/TrafficPackage.cpp
   src/v20200324/model/RebootInstancesResponse.cpp
   src/v20200324/model/DescribeBundlesRequest.cpp
   src/v20200324/model/Blueprint.cpp

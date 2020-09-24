@@ -31,7 +31,8 @@ CreatePostpayPackageRequest::CreatePostpayPackageRequest() :
     m_envSourceHasBeenSet(false),
     m_aliasHasBeenSet(false),
     m_channelHasBeenSet(false),
-    m_extensionIdHasBeenSet(false)
+    m_extensionIdHasBeenSet(false),
+    m_flagHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string CreatePostpayPackageRequest::ToJsonString() const
         string key = "ExtensionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_extensionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Flag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_flag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +249,22 @@ void CreatePostpayPackageRequest::SetExtensionId(const string& _extensionId)
 bool CreatePostpayPackageRequest::ExtensionIdHasBeenSet() const
 {
     return m_extensionIdHasBeenSet;
+}
+
+string CreatePostpayPackageRequest::GetFlag() const
+{
+    return m_flag;
+}
+
+void CreatePostpayPackageRequest::SetFlag(const string& _flag)
+{
+    m_flag = _flag;
+    m_flagHasBeenSet = true;
+}
+
+bool CreatePostpayPackageRequest::FlagHasBeenSet() const
+{
+    return m_flagHasBeenSet;
 }
 
 

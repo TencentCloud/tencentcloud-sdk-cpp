@@ -531,6 +531,24 @@ namespace TencentCloud
                      */
                     bool ServiceSettingHasBeenSet() const;
 
+                    /**
+                     * 获取是否部署 agent 容器。若不指定该参数，则默认不部署 agent 容器。
+                     * @return DeployAgent 是否部署 agent 容器。若不指定该参数，则默认不部署 agent 容器。
+                     */
+                    bool GetDeployAgent() const;
+
+                    /**
+                     * 设置是否部署 agent 容器。若不指定该参数，则默认不部署 agent 容器。
+                     * @param DeployAgent 是否部署 agent 容器。若不指定该参数，则默认不部署 agent 容器。
+                     */
+                    void SetDeployAgent(const bool& _deployAgent);
+
+                    /**
+                     * 判断参数 DeployAgent 是否已赋值
+                     * @return DeployAgent 是否已赋值
+                     */
+                    bool DeployAgentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -694,6 +712,12 @@ namespace TencentCloud
                      */
                     ServiceSetting m_serviceSetting;
                     bool m_serviceSettingHasBeenSet;
+
+                    /**
+                     * 是否部署 agent 容器。若不指定该参数，则默认不部署 agent 容器。
+                     */
+                    bool m_deployAgent;
+                    bool m_deployAgentHasBeenSet;
 
                 };
             }

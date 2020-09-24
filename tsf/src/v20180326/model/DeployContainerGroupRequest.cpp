@@ -50,7 +50,8 @@ DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_maxUnavailableHasBeenSet(false),
     m_healthCheckSettingsHasBeenSet(false),
     m_envsHasBeenSet(false),
-    m_serviceSettingHasBeenSet(false)
+    m_serviceSettingHasBeenSet(false),
+    m_deployAgentHasBeenSet(false)
 {
 }
 
@@ -284,6 +285,14 @@ string DeployContainerGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_serviceSetting.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_deployAgentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployAgent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deployAgent, allocator);
     }
 
 
@@ -724,6 +733,22 @@ void DeployContainerGroupRequest::SetServiceSetting(const ServiceSetting& _servi
 bool DeployContainerGroupRequest::ServiceSettingHasBeenSet() const
 {
     return m_serviceSettingHasBeenSet;
+}
+
+bool DeployContainerGroupRequest::GetDeployAgent() const
+{
+    return m_deployAgent;
+}
+
+void DeployContainerGroupRequest::SetDeployAgent(const bool& _deployAgent)
+{
+    m_deployAgent = _deployAgent;
+    m_deployAgentHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::DeployAgentHasBeenSet() const
+{
+    return m_deployAgentHasBeenSet;
 }
 
 

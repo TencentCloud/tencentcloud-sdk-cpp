@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取验证码类型，9：滑块验证码
-                     * @return CaptchaType 验证码类型，9：滑块验证码
+                     * 获取固定填值：9（滑块验证码）
+                     * @return CaptchaType 固定填值：9（滑块验证码）
                      */
                     uint64_t GetCaptchaType() const;
 
                     /**
-                     * 设置验证码类型，9：滑块验证码
-                     * @param CaptchaType 验证码类型，9：滑块验证码
+                     * 设置固定填值：9（滑块验证码）
+                     * @param CaptchaType 固定填值：9（滑块验证码）
                      */
                     void SetCaptchaType(const uint64_t& _captchaType);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取验证码应用ID
-                     * @return CaptchaAppId 验证码应用ID
+                     * 获取验证码应用APPID
+                     * @return CaptchaAppId 验证码应用APPID
                      */
                     uint64_t GetCaptchaAppId() const;
 
                     /**
-                     * 设置验证码应用ID
-                     * @param CaptchaAppId 验证码应用ID
+                     * 设置验证码应用APPID
+                     * @param CaptchaAppId 验证码应用APPID
                      */
                     void SetCaptchaAppId(const uint64_t& _captchaAppId);
 
@@ -207,7 +207,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 验证码类型，9：滑块验证码
+                     * 固定填值：9（滑块验证码）
                      */
                     uint64_t m_captchaType;
                     bool m_captchaTypeHasBeenSet;
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * 验证码应用ID
+                     * 验证码应用APPID
                      */
                     uint64_t m_captchaAppId;
                     bool m_captchaAppIdHasBeenSet;

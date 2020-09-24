@@ -126,6 +126,49 @@ FacefusionClient::FaceFusionOutcomeCallable FacefusionClient::FaceFusionCallable
     return task->get_future();
 }
 
+FacefusionClient::FaceFusionLiteOutcome FacefusionClient::FaceFusionLite(const FaceFusionLiteRequest &request)
+{
+    auto outcome = MakeRequest(request, "FaceFusionLite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FaceFusionLiteResponse rsp = FaceFusionLiteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FaceFusionLiteOutcome(rsp);
+        else
+            return FaceFusionLiteOutcome(o.GetError());
+    }
+    else
+    {
+        return FaceFusionLiteOutcome(outcome.GetError());
+    }
+}
+
+void FacefusionClient::FaceFusionLiteAsync(const FaceFusionLiteRequest& request, const FaceFusionLiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FaceFusionLite(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FacefusionClient::FaceFusionLiteOutcomeCallable FacefusionClient::FaceFusionLiteCallable(const FaceFusionLiteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FaceFusionLiteOutcome()>>(
+        [this, request]()
+        {
+            return this->FaceFusionLite(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FacefusionClient::FuseFaceOutcome FacefusionClient::FuseFace(const FuseFaceRequest &request)
 {
     auto outcome = MakeRequest(request, "FuseFace");

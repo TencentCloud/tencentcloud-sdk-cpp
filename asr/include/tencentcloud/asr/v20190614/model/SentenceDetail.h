@@ -179,6 +179,28 @@ namespace TencentCloud
                      */
                     bool WordsHasBeenSet() const;
 
+                    /**
+                     * 获取单句语速
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpeechSpeed 单句语速
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetSpeechSpeed() const;
+
+                    /**
+                     * 设置单句语速
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SpeechSpeed 单句语速
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSpeechSpeed(const double& _speechSpeed);
+
+                    /**
+                     * 判断参数 SpeechSpeed 是否已赋值
+                     * @return SpeechSpeed 是否已赋值
+                     */
+                    bool SpeechSpeedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +244,13 @@ namespace TencentCloud
                      */
                     std::vector<SentenceWords> m_words;
                     bool m_wordsHasBeenSet;
+
+                    /**
+                     * 单句语速
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_speechSpeed;
+                    bool m_speechSpeedHasBeenSet;
 
                 };
             }

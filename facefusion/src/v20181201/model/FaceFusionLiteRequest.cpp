@@ -1,0 +1,202 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/facefusion/v20181201/model/FaceFusionLiteRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Facefusion::V20181201::Model;
+using namespace rapidjson;
+using namespace std;
+
+FaceFusionLiteRequest::FaceFusionLiteRequest() :
+    m_projectIdHasBeenSet(false),
+    m_modelIdHasBeenSet(false),
+    m_mergeInfosHasBeenSet(false),
+    m_rspImgTypeHasBeenSet(false),
+    m_celebrityIdentifyHasBeenSet(false),
+    m_engineHasBeenSet(false)
+{
+}
+
+string FaceFusionLiteRequest::ToJsonString() const
+{
+    Document d;
+    d.SetObject();
+    Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_projectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_modelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mergeInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MergeInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_mergeInfos.begin(); itr != m_mergeInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_rspImgTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RspImgType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_rspImgType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_celebrityIdentifyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CelebrityIdentify";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_celebrityIdentify, allocator);
+    }
+
+    if (m_engineHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Engine";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_engine.c_str(), allocator).Move(), allocator);
+    }
+
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string FaceFusionLiteRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void FaceFusionLiteRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool FaceFusionLiteRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string FaceFusionLiteRequest::GetModelId() const
+{
+    return m_modelId;
+}
+
+void FaceFusionLiteRequest::SetModelId(const string& _modelId)
+{
+    m_modelId = _modelId;
+    m_modelIdHasBeenSet = true;
+}
+
+bool FaceFusionLiteRequest::ModelIdHasBeenSet() const
+{
+    return m_modelIdHasBeenSet;
+}
+
+vector<MergeInfo> FaceFusionLiteRequest::GetMergeInfos() const
+{
+    return m_mergeInfos;
+}
+
+void FaceFusionLiteRequest::SetMergeInfos(const vector<MergeInfo>& _mergeInfos)
+{
+    m_mergeInfos = _mergeInfos;
+    m_mergeInfosHasBeenSet = true;
+}
+
+bool FaceFusionLiteRequest::MergeInfosHasBeenSet() const
+{
+    return m_mergeInfosHasBeenSet;
+}
+
+string FaceFusionLiteRequest::GetRspImgType() const
+{
+    return m_rspImgType;
+}
+
+void FaceFusionLiteRequest::SetRspImgType(const string& _rspImgType)
+{
+    m_rspImgType = _rspImgType;
+    m_rspImgTypeHasBeenSet = true;
+}
+
+bool FaceFusionLiteRequest::RspImgTypeHasBeenSet() const
+{
+    return m_rspImgTypeHasBeenSet;
+}
+
+int64_t FaceFusionLiteRequest::GetCelebrityIdentify() const
+{
+    return m_celebrityIdentify;
+}
+
+void FaceFusionLiteRequest::SetCelebrityIdentify(const int64_t& _celebrityIdentify)
+{
+    m_celebrityIdentify = _celebrityIdentify;
+    m_celebrityIdentifyHasBeenSet = true;
+}
+
+bool FaceFusionLiteRequest::CelebrityIdentifyHasBeenSet() const
+{
+    return m_celebrityIdentifyHasBeenSet;
+}
+
+string FaceFusionLiteRequest::GetEngine() const
+{
+    return m_engine;
+}
+
+void FaceFusionLiteRequest::SetEngine(const string& _engine)
+{
+    m_engine = _engine;
+    m_engineHasBeenSet = true;
+}
+
+bool FaceFusionLiteRequest::EngineHasBeenSet() const
+{
+    return m_engineHasBeenSet;
+}
+
+

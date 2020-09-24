@@ -27,6 +27,8 @@
 #include <tencentcloud/facefusion/v20181201/model/DescribeMaterialListResponse.h>
 #include <tencentcloud/facefusion/v20181201/model/FaceFusionRequest.h>
 #include <tencentcloud/facefusion/v20181201/model/FaceFusionResponse.h>
+#include <tencentcloud/facefusion/v20181201/model/FaceFusionLiteRequest.h>
+#include <tencentcloud/facefusion/v20181201/model/FaceFusionLiteResponse.h>
 #include <tencentcloud/facefusion/v20181201/model/FuseFaceRequest.h>
 #include <tencentcloud/facefusion/v20181201/model/FuseFaceResponse.h>
 
@@ -49,6 +51,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::FaceFusionResponse> FaceFusionOutcome;
                 typedef std::future<FaceFusionOutcome> FaceFusionOutcomeCallable;
                 typedef std::function<void(const FacefusionClient*, const Model::FaceFusionRequest&, FaceFusionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FaceFusionAsyncHandler;
+                typedef Outcome<Error, Model::FaceFusionLiteResponse> FaceFusionLiteOutcome;
+                typedef std::future<FaceFusionLiteOutcome> FaceFusionLiteOutcomeCallable;
+                typedef std::function<void(const FacefusionClient*, const Model::FaceFusionLiteRequest&, FaceFusionLiteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FaceFusionLiteAsyncHandler;
                 typedef Outcome<Error, Model::FuseFaceResponse> FuseFaceOutcome;
                 typedef std::future<FuseFaceOutcome> FuseFaceOutcomeCallable;
                 typedef std::function<void(const FacefusionClient*, const Model::FuseFaceRequest&, FuseFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FuseFaceAsyncHandler;
@@ -74,6 +79,15 @@ namespace TencentCloud
                 FaceFusionOutcome FaceFusion(const Model::FaceFusionRequest &request);
                 void FaceFusionAsync(const Model::FaceFusionRequest& request, const FaceFusionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FaceFusionOutcomeCallable FaceFusionCallable(const Model::FaceFusionRequest& request);
+
+                /**
+                 *人脸融合活动专用版
+                 * @param req FaceFusionLiteRequest
+                 * @return FaceFusionLiteOutcome
+                 */
+                FaceFusionLiteOutcome FaceFusionLite(const Model::FaceFusionLiteRequest &request);
+                void FaceFusionLiteAsync(const Model::FaceFusionLiteRequest& request, const FaceFusionLiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FaceFusionLiteOutcomeCallable FaceFusionLiteCallable(const Model::FaceFusionLiteRequest& request);
 
                 /**
                  *本接口用于单脸、多脸融合，用户上传人脸图片，获取与模板融合后的人脸图片。查看 <a href="https://cloud.tencent.com/document/product/670/38247" target="_blank">选脸融合接入指引</a>。

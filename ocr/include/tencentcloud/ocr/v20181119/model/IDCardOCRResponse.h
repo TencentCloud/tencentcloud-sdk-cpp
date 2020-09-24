@@ -153,7 +153,8 @@ WarnInfos，告警信息，Code 告警码列表和释义：
 -9103	身份证翻拍告警，
 -9105	身份证框内遮挡告警，
 -9104	临时身份证告警，
--9106	身份证 PS 告警。
+-9106	身份证 PS 告警，
+-9107       身份证反光告警。
                      * @return AdvancedInfo 扩展信息，不请求则不返回，具体输入参考示例3和示例4。
 IdCard，裁剪后身份证照片的base64编码，请求 Config.CropIdCard 时返回；
 Portrait，身份证头像照片的base64编码，请求 Config.CropPortrait 时返回；
@@ -168,7 +169,8 @@ WarnInfos，告警信息，Code 告警码列表和释义：
 -9103	身份证翻拍告警，
 -9105	身份证框内遮挡告警，
 -9104	临时身份证告警，
--9106	身份证 PS 告警。
+-9106	身份证 PS 告警，
+-9107       身份证反光告警。
                      */
                     std::string GetAdvancedInfo() const;
 
@@ -243,7 +245,8 @@ WarnInfos，告警信息，Code 告警码列表和释义：
 -9103	身份证翻拍告警，
 -9105	身份证框内遮挡告警，
 -9104	临时身份证告警，
--9106	身份证 PS 告警。
+-9106	身份证 PS 告警，
+-9107       身份证反光告警。
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;

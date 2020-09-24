@@ -28,6 +28,7 @@
 #include <tencentcloud/scf/v20180416/model/DeadLetterConfig.h>
 #include <tencentcloud/scf/v20180416/model/PublicNetConfigIn.h>
 #include <tencentcloud/scf/v20180416/model/CfsConfig.h>
+#include <tencentcloud/scf/v20180416/model/Tag.h>
 
 
 namespace TencentCloud
@@ -409,6 +410,24 @@ namespace TencentCloud
                      */
                     bool InitTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取函数 Tag 参数，以键值对数组形式传入
+                     * @return Tags 函数 Tag 参数，以键值对数组形式传入
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置函数 Tag 参数，以键值对数组形式传入
+                     * @param Tags 函数 Tag 参数，以键值对数组形式传入
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -530,6 +549,12 @@ namespace TencentCloud
                      */
                     int64_t m_initTimeout;
                     bool m_initTimeoutHasBeenSet;
+
+                    /**
+                     * 函数 Tag 参数，以键值对数组形式传入
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

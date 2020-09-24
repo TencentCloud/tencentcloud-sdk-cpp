@@ -212,6 +212,92 @@ MonitorClient::DescribeAccidentEventListOutcomeCallable MonitorClient::DescribeA
     return task->get_future();
 }
 
+MonitorClient::DescribeAlarmHistoriesOutcome MonitorClient::DescribeAlarmHistories(const DescribeAlarmHistoriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmHistories");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmHistoriesResponse rsp = DescribeAlarmHistoriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmHistoriesOutcome(rsp);
+        else
+            return DescribeAlarmHistoriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmHistoriesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmHistoriesAsync(const DescribeAlarmHistoriesRequest& request, const DescribeAlarmHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmHistories(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAlarmHistoriesOutcomeCallable MonitorClient::DescribeAlarmHistoriesCallable(const DescribeAlarmHistoriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmHistoriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmHistories(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeAllNamespacesOutcome MonitorClient::DescribeAllNamespaces(const DescribeAllNamespacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAllNamespaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAllNamespacesResponse rsp = DescribeAllNamespacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAllNamespacesOutcome(rsp);
+        else
+            return DescribeAllNamespacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAllNamespacesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAllNamespacesAsync(const DescribeAllNamespacesRequest& request, const DescribeAllNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAllNamespaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAllNamespacesOutcomeCallable MonitorClient::DescribeAllNamespacesCallable(const DescribeAllNamespacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAllNamespacesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAllNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeBaseMetricsOutcome MonitorClient::DescribeBaseMetrics(const DescribeBaseMetricsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBaseMetrics");

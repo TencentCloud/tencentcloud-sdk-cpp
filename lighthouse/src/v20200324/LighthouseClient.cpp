@@ -298,6 +298,49 @@ LighthouseClient::DescribeInstancesOutcomeCallable LighthouseClient::DescribeIns
     return task->get_future();
 }
 
+LighthouseClient::DescribeInstancesTrafficPackagesOutcome LighthouseClient::DescribeInstancesTrafficPackages(const DescribeInstancesTrafficPackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesTrafficPackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesTrafficPackagesResponse rsp = DescribeInstancesTrafficPackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesTrafficPackagesOutcome(rsp);
+        else
+            return DescribeInstancesTrafficPackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesTrafficPackagesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeInstancesTrafficPackagesAsync(const DescribeInstancesTrafficPackagesRequest& request, const DescribeInstancesTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesTrafficPackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeInstancesTrafficPackagesOutcomeCallable LighthouseClient::DescribeInstancesTrafficPackagesCallable(const DescribeInstancesTrafficPackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesTrafficPackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesTrafficPackages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::RebootInstancesOutcome LighthouseClient::RebootInstances(const RebootInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RebootInstances");

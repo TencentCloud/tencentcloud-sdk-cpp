@@ -200,6 +200,28 @@ namespace TencentCloud
                      */
                     bool RunInstanceCountHasBeenSet() const;
 
+                    /**
+                     * 获取微服务的离线实例数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CriticalInstanceCount 微服务的离线实例数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCriticalInstanceCount() const;
+
+                    /**
+                     * 设置微服务的离线实例数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CriticalInstanceCount 微服务的离线实例数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCriticalInstanceCount(const int64_t& _criticalInstanceCount);
+
+                    /**
+                     * 判断参数 CriticalInstanceCount 是否已赋值
+                     * @return CriticalInstanceCount 是否已赋值
+                     */
+                    bool CriticalInstanceCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +272,13 @@ namespace TencentCloud
                      */
                     int64_t m_runInstanceCount;
                     bool m_runInstanceCountHasBeenSet;
+
+                    /**
+                     * 微服务的离线实例数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_criticalInstanceCount;
+                    bool m_criticalInstanceCountHasBeenSet;
 
                 };
             }

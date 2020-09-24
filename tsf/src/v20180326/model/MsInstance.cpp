@@ -41,7 +41,12 @@ MsInstance::MsInstance() :
     m_healthCheckUrlHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
     m_applicationPackageVersionHasBeenSet(false),
-    m_applicationTypeHasBeenSet(false)
+    m_applicationTypeHasBeenSet(false),
+    m_serviceStatusHasBeenSet(false),
+    m_registrationTimeHasBeenSet(false),
+    m_lastHeartbeatTimeHasBeenSet(false),
+    m_registrationIdHasBeenSet(false),
+    m_hiddenStatusHasBeenSet(false)
 {
 }
 
@@ -250,6 +255,56 @@ CoreInternalOutcome MsInstance::Deserialize(const Value &value)
         m_applicationTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceStatus") && !value["ServiceStatus"].IsNull())
+    {
+        if (!value["ServiceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MsInstance.ServiceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceStatus = string(value["ServiceStatus"].GetString());
+        m_serviceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegistrationTime") && !value["RegistrationTime"].IsNull())
+    {
+        if (!value["RegistrationTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `MsInstance.RegistrationTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_registrationTime = value["RegistrationTime"].GetInt64();
+        m_registrationTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastHeartbeatTime") && !value["LastHeartbeatTime"].IsNull())
+    {
+        if (!value["LastHeartbeatTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `MsInstance.LastHeartbeatTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastHeartbeatTime = value["LastHeartbeatTime"].GetInt64();
+        m_lastHeartbeatTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegistrationId") && !value["RegistrationId"].IsNull())
+    {
+        if (!value["RegistrationId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `MsInstance.RegistrationId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_registrationId = value["RegistrationId"].GetInt64();
+        m_registrationIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("HiddenStatus") && !value["HiddenStatus"].IsNull())
+    {
+        if (!value["HiddenStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MsInstance.HiddenStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hiddenStatus = string(value["HiddenStatus"].GetString());
+        m_hiddenStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -415,6 +470,46 @@ void MsInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "ApplicationType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_applicationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serviceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registrationTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegistrationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_registrationTime, allocator);
+    }
+
+    if (m_lastHeartbeatTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LastHeartbeatTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastHeartbeatTime, allocator);
+    }
+
+    if (m_registrationIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegistrationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_registrationId, allocator);
+    }
+
+    if (m_hiddenStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HiddenStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_hiddenStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -738,5 +833,85 @@ void MsInstance::SetApplicationType(const string& _applicationType)
 bool MsInstance::ApplicationTypeHasBeenSet() const
 {
     return m_applicationTypeHasBeenSet;
+}
+
+string MsInstance::GetServiceStatus() const
+{
+    return m_serviceStatus;
+}
+
+void MsInstance::SetServiceStatus(const string& _serviceStatus)
+{
+    m_serviceStatus = _serviceStatus;
+    m_serviceStatusHasBeenSet = true;
+}
+
+bool MsInstance::ServiceStatusHasBeenSet() const
+{
+    return m_serviceStatusHasBeenSet;
+}
+
+int64_t MsInstance::GetRegistrationTime() const
+{
+    return m_registrationTime;
+}
+
+void MsInstance::SetRegistrationTime(const int64_t& _registrationTime)
+{
+    m_registrationTime = _registrationTime;
+    m_registrationTimeHasBeenSet = true;
+}
+
+bool MsInstance::RegistrationTimeHasBeenSet() const
+{
+    return m_registrationTimeHasBeenSet;
+}
+
+int64_t MsInstance::GetLastHeartbeatTime() const
+{
+    return m_lastHeartbeatTime;
+}
+
+void MsInstance::SetLastHeartbeatTime(const int64_t& _lastHeartbeatTime)
+{
+    m_lastHeartbeatTime = _lastHeartbeatTime;
+    m_lastHeartbeatTimeHasBeenSet = true;
+}
+
+bool MsInstance::LastHeartbeatTimeHasBeenSet() const
+{
+    return m_lastHeartbeatTimeHasBeenSet;
+}
+
+int64_t MsInstance::GetRegistrationId() const
+{
+    return m_registrationId;
+}
+
+void MsInstance::SetRegistrationId(const int64_t& _registrationId)
+{
+    m_registrationId = _registrationId;
+    m_registrationIdHasBeenSet = true;
+}
+
+bool MsInstance::RegistrationIdHasBeenSet() const
+{
+    return m_registrationIdHasBeenSet;
+}
+
+string MsInstance::GetHiddenStatus() const
+{
+    return m_hiddenStatus;
+}
+
+void MsInstance::SetHiddenStatus(const string& _hiddenStatus)
+{
+    m_hiddenStatus = _hiddenStatus;
+    m_hiddenStatusHasBeenSet = true;
+}
+
+bool MsInstance::HiddenStatusHasBeenSet() const
+{
+    return m_hiddenStatusHasBeenSet;
 }
 

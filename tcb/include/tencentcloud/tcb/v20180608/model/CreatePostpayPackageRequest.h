@@ -157,14 +157,14 @@ namespace TencentCloud
                     bool EnvSourceHasBeenSet() const;
 
                     /**
-                     * 获取环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
-                     * @return Alias 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     * 获取环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符
+                     * @return Alias 环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
-                     * @param Alias 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     * 设置环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符
+                     * @param Alias 环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符
                      */
                     void SetAlias(const std::string& _alias);
 
@@ -218,6 +218,32 @@ namespace TencentCloud
                      */
                     bool ExtensionIdHasBeenSet() const;
 
+                    /**
+                     * 获取订单标记。建议使用方统一转大小写之后再判断。
+<li>QuickStart：快速启动来源</li>
+<li>Activity：活动来源</li>
+                     * @return Flag 订单标记。建议使用方统一转大小写之后再判断。
+<li>QuickStart：快速启动来源</li>
+<li>Activity：活动来源</li>
+                     */
+                    std::string GetFlag() const;
+
+                    /**
+                     * 设置订单标记。建议使用方统一转大小写之后再判断。
+<li>QuickStart：快速启动来源</li>
+<li>Activity：活动来源</li>
+                     * @param Flag 订单标记。建议使用方统一转大小写之后再判断。
+<li>QuickStart：快速启动来源</li>
+<li>Activity：活动来源</li>
+                     */
+                    void SetFlag(const std::string& _flag);
+
+                    /**
+                     * 判断参数 Flag 是否已赋值
+                     * @return Flag 是否已赋值
+                     */
+                    bool FlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -257,7 +283,7 @@ namespace TencentCloud
                     bool m_envSourceHasBeenSet;
 
                     /**
-                     * 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     * 环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
@@ -275,6 +301,14 @@ namespace TencentCloud
                      */
                     std::string m_extensionId;
                     bool m_extensionIdHasBeenSet;
+
+                    /**
+                     * 订单标记。建议使用方统一转大小写之后再判断。
+<li>QuickStart：快速启动来源</li>
+<li>Activity：活动来源</li>
+                     */
+                    std::string m_flag;
+                    bool m_flagHasBeenSet;
 
                 };
             }

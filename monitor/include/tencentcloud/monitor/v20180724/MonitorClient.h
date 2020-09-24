@@ -31,6 +31,10 @@
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAccidentEventListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAccidentEventListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmHistoriesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmHistoriesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAllNamespacesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAllNamespacesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeBaseMetricsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeBaseMetricsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeBasicAlarmListRequest.h>
@@ -87,6 +91,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAccidentEventListResponse> DescribeAccidentEventListOutcome;
                 typedef std::future<DescribeAccidentEventListOutcome> DescribeAccidentEventListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAccidentEventListRequest&, DescribeAccidentEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccidentEventListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAlarmHistoriesResponse> DescribeAlarmHistoriesOutcome;
+                typedef std::future<DescribeAlarmHistoriesOutcome> DescribeAlarmHistoriesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmHistoriesRequest&, DescribeAlarmHistoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmHistoriesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAllNamespacesResponse> DescribeAllNamespacesOutcome;
+                typedef std::future<DescribeAllNamespacesOutcome> DescribeAllNamespacesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAllNamespacesRequest&, DescribeAllNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllNamespacesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBaseMetricsResponse> DescribeBaseMetricsOutcome;
                 typedef std::future<DescribeBaseMetricsOutcome> DescribeBaseMetricsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeBaseMetricsRequest&, DescribeBaseMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaseMetricsAsyncHandler;
@@ -170,6 +180,24 @@ namespace TencentCloud
                 DescribeAccidentEventListOutcome DescribeAccidentEventList(const Model::DescribeAccidentEventListRequest &request);
                 void DescribeAccidentEventListAsync(const Model::DescribeAccidentEventListRequest& request, const DescribeAccidentEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccidentEventListOutcomeCallable DescribeAccidentEventListCallable(const Model::DescribeAccidentEventListRequest& request);
+
+                /**
+                 *告警2.0-告警历史列表
+                 * @param req DescribeAlarmHistoriesRequest
+                 * @return DescribeAlarmHistoriesOutcome
+                 */
+                DescribeAlarmHistoriesOutcome DescribeAlarmHistories(const Model::DescribeAlarmHistoriesRequest &request);
+                void DescribeAlarmHistoriesAsync(const Model::DescribeAlarmHistoriesRequest& request, const DescribeAlarmHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmHistoriesOutcomeCallable DescribeAlarmHistoriesCallable(const Model::DescribeAlarmHistoriesRequest& request);
+
+                /**
+                 *拉取所有名字空间
+                 * @param req DescribeAllNamespacesRequest
+                 * @return DescribeAllNamespacesOutcome
+                 */
+                DescribeAllNamespacesOutcome DescribeAllNamespaces(const Model::DescribeAllNamespacesRequest &request);
+                void DescribeAllNamespacesAsync(const Model::DescribeAllNamespacesRequest& request, const DescribeAllNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllNamespacesOutcomeCallable DescribeAllNamespacesCallable(const Model::DescribeAllNamespacesRequest& request);
 
                 /**
                  *获取基础指标详情

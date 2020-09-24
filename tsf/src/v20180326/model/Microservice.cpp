@@ -28,7 +28,8 @@ Microservice::Microservice() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_runInstanceCountHasBeenSet(false)
+    m_runInstanceCountHasBeenSet(false),
+    m_criticalInstanceCountHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome Microservice::Deserialize(const Value &value)
         m_runInstanceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("CriticalInstanceCount") && !value["CriticalInstanceCount"].IsNull())
+    {
+        if (!value["CriticalInstanceCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Microservice.CriticalInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_criticalInstanceCount = value["CriticalInstanceCount"].GetInt64();
+        m_criticalInstanceCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void Microservice::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "RunInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runInstanceCount, allocator);
+    }
+
+    if (m_criticalInstanceCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CriticalInstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_criticalInstanceCount, allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void Microservice::SetRunInstanceCount(const int64_t& _runInstanceCount)
 bool Microservice::RunInstanceCountHasBeenSet() const
 {
     return m_runInstanceCountHasBeenSet;
+}
+
+int64_t Microservice::GetCriticalInstanceCount() const
+{
+    return m_criticalInstanceCount;
+}
+
+void Microservice::SetCriticalInstanceCount(const int64_t& _criticalInstanceCount)
+{
+    m_criticalInstanceCount = _criticalInstanceCount;
+    m_criticalInstanceCountHasBeenSet = true;
+}
+
+bool Microservice::CriticalInstanceCountHasBeenSet() const
+{
+    return m_criticalInstanceCountHasBeenSet;
 }
 

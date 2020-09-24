@@ -486,6 +486,116 @@ namespace TencentCloud
                      */
                     bool ApplicationTypeHasBeenSet() const;
 
+                    /**
+                     * 获取服务状态，passing 在线，critical 离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceStatus 服务状态，passing 在线，critical 离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetServiceStatus() const;
+
+                    /**
+                     * 设置服务状态，passing 在线，critical 离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServiceStatus 服务状态，passing 在线，critical 离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServiceStatus(const std::string& _serviceStatus);
+
+                    /**
+                     * 判断参数 ServiceStatus 是否已赋值
+                     * @return ServiceStatus 是否已赋值
+                     */
+                    bool ServiceStatusHasBeenSet() const;
+
+                    /**
+                     * 获取注册时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegistrationTime 注册时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRegistrationTime() const;
+
+                    /**
+                     * 设置注册时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegistrationTime 注册时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegistrationTime(const int64_t& _registrationTime);
+
+                    /**
+                     * 判断参数 RegistrationTime 是否已赋值
+                     * @return RegistrationTime 是否已赋值
+                     */
+                    bool RegistrationTimeHasBeenSet() const;
+
+                    /**
+                     * 获取上次心跳时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastHeartbeatTime 上次心跳时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetLastHeartbeatTime() const;
+
+                    /**
+                     * 设置上次心跳时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LastHeartbeatTime 上次心跳时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLastHeartbeatTime(const int64_t& _lastHeartbeatTime);
+
+                    /**
+                     * 判断参数 LastHeartbeatTime 是否已赋值
+                     * @return LastHeartbeatTime 是否已赋值
+                     */
+                    bool LastHeartbeatTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例注册id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegistrationId 实例注册id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRegistrationId() const;
+
+                    /**
+                     * 设置实例注册id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegistrationId 实例注册id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegistrationId(const int64_t& _registrationId);
+
+                    /**
+                     * 判断参数 RegistrationId 是否已赋值
+                     * @return RegistrationId 是否已赋值
+                     */
+                    bool RegistrationIdHasBeenSet() const;
+
+                    /**
+                     * 获取屏蔽状态，hidden 为屏蔽，unhidden 为未屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HiddenStatus 屏蔽状态，hidden 为屏蔽，unhidden 为未屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHiddenStatus() const;
+
+                    /**
+                     * 设置屏蔽状态，hidden 为屏蔽，unhidden 为未屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HiddenStatus 屏蔽状态，hidden 为屏蔽，unhidden 为未屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHiddenStatus(const std::string& _hiddenStatus);
+
+                    /**
+                     * 判断参数 HiddenStatus 是否已赋值
+                     * @return HiddenStatus 是否已赋值
+                     */
+                    bool HiddenStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -627,6 +737,41 @@ namespace TencentCloud
                      */
                     std::string m_applicationType;
                     bool m_applicationTypeHasBeenSet;
+
+                    /**
+                     * 服务状态，passing 在线，critical 离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serviceStatus;
+                    bool m_serviceStatusHasBeenSet;
+
+                    /**
+                     * 注册时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_registrationTime;
+                    bool m_registrationTimeHasBeenSet;
+
+                    /**
+                     * 上次心跳时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_lastHeartbeatTime;
+                    bool m_lastHeartbeatTimeHasBeenSet;
+
+                    /**
+                     * 实例注册id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_registrationId;
+                    bool m_registrationIdHasBeenSet;
+
+                    /**
+                     * 屏蔽状态，hidden 为屏蔽，unhidden 为未屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hiddenStatus;
+                    bool m_hiddenStatusHasBeenSet;
 
                 };
             }

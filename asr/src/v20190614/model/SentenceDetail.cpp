@@ -27,7 +27,8 @@ SentenceDetail::SentenceDetail() :
     m_startMsHasBeenSet(false),
     m_endMsHasBeenSet(false),
     m_wordsNumHasBeenSet(false),
-    m_wordsHasBeenSet(false)
+    m_wordsHasBeenSet(false),
+    m_speechSpeedHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome SentenceDetail::Deserialize(const Value &value)
         m_wordsHasBeenSet = true;
     }
 
+    if (value.HasMember("SpeechSpeed") && !value["SpeechSpeed"].IsNull())
+    {
+        if (!value["SpeechSpeed"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `SentenceDetail.SpeechSpeed` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_speechSpeed = value["SpeechSpeed"].GetDouble();
+        m_speechSpeedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -166,6 +177,14 @@ void SentenceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_speechSpeedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SpeechSpeed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_speechSpeed, allocator);
     }
 
 }
@@ -265,5 +284,21 @@ void SentenceDetail::SetWords(const vector<SentenceWords>& _words)
 bool SentenceDetail::WordsHasBeenSet() const
 {
     return m_wordsHasBeenSet;
+}
+
+double SentenceDetail::GetSpeechSpeed() const
+{
+    return m_speechSpeed;
+}
+
+void SentenceDetail::SetSpeechSpeed(const double& _speechSpeed)
+{
+    m_speechSpeed = _speechSpeed;
+    m_speechSpeedHasBeenSet = true;
+}
+
+bool SentenceDetail::SpeechSpeedHasBeenSet() const
+{
+    return m_speechSpeedHasBeenSet;
 }
 

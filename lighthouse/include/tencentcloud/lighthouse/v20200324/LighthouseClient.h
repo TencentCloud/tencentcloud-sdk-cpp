@@ -35,6 +35,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h>
@@ -75,6 +77,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstancesTrafficPackagesResponse> DescribeInstancesTrafficPackagesOutcome;
+                typedef std::future<DescribeInstancesTrafficPackagesOutcome> DescribeInstancesTrafficPackagesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesTrafficPackagesRequest&, DescribeInstancesTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesTrafficPackagesAsyncHandler;
                 typedef Outcome<Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
@@ -156,6 +161,15 @@ namespace TencentCloud
                 DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
                 void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *本接口（DescribeInstancesTrafficPackages）用于查询一个或多个实例的流量包详情。
+                 * @param req DescribeInstancesTrafficPackagesRequest
+                 * @return DescribeInstancesTrafficPackagesOutcome
+                 */
+                DescribeInstancesTrafficPackagesOutcome DescribeInstancesTrafficPackages(const Model::DescribeInstancesTrafficPackagesRequest &request);
+                void DescribeInstancesTrafficPackagesAsync(const Model::DescribeInstancesTrafficPackagesRequest& request, const DescribeInstancesTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesTrafficPackagesOutcomeCallable DescribeInstancesTrafficPackagesCallable(const Model::DescribeInstancesTrafficPackagesRequest& request);
 
                 /**
                  *本接口（RebootInstances）用于重启实例。

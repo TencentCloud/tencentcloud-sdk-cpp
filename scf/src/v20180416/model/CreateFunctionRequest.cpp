@@ -43,7 +43,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_deadLetterConfigHasBeenSet(false),
     m_publicNetConfigHasBeenSet(false),
     m_cfsConfigHasBeenSet(false),
-    m_initTimeoutHasBeenSet(false)
+    m_initTimeoutHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -225,6 +226,21 @@ string CreateFunctionRequest::ToJsonString() const
         string key = "InitTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_initTimeout, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -553,6 +569,22 @@ void CreateFunctionRequest::SetInitTimeout(const int64_t& _initTimeout)
 bool CreateFunctionRequest::InitTimeoutHasBeenSet() const
 {
     return m_initTimeoutHasBeenSet;
+}
+
+vector<Tag> CreateFunctionRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateFunctionRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 
