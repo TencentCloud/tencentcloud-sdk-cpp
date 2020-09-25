@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性名称
-                     * @return Key 属性名称
+                     * 获取属性名称，最大长度不超过32个ASCII字符
+                     * @return Key 属性名称，最大长度不超过32个ASCII字符
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置属性名称
-                     * @param Key 属性名称
+                     * 设置属性名称，最大长度不超过32个ASCII字符
+                     * @param Key 属性名称，最大长度不超过32个ASCII字符
                      */
                     void SetKey(const std::string& _key);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取属性值
-                     * @return Value 属性值
+                     * 获取属性值，最大长度不超过96个ASCII字符
+                     * @return Value 属性值，最大长度不超过96个ASCII字符
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置属性值
-                     * @param Value 属性值
+                     * 设置属性值，最大长度不超过96个ASCII字符
+                     * @param Value 属性值，最大长度不超过96个ASCII字符
                      */
                     void SetValue(const std::string& _value);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性名称
+                     * 属性名称，最大长度不超过32个ASCII字符
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 属性值
+                     * 属性值，最大长度不超过96个ASCII字符
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

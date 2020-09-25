@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取动态扩缩容配置
+                     * 获取动态扩缩容配置策略数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScalingPolicies 动态扩缩容配置
+                     * @return ScalingPolicies 动态扩缩容配置策略数组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScalingPolicy> GetScalingPolicies() const;
@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool ScalingPoliciesHasBeenSet() const;
 
                     /**
-                     * 获取返回总数
+                     * 获取动态扩缩容配置策略总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 返回总数
+                     * @return TotalCount 动态扩缩容配置策略总数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetTotalCount() const;
@@ -74,14 +74,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 动态扩缩容配置
+                     * 动态扩缩容配置策略数组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScalingPolicy> m_scalingPolicies;
                     bool m_scalingPoliciesHasBeenSet;
 
                     /**
-                     * 返回总数
+                     * 动态扩缩容配置策略总数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;

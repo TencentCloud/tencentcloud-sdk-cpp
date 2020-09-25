@@ -68,6 +68,28 @@ namespace TencentCloud
                      */
                     bool DestinationArnHasBeenSet() const;
 
+                    /**
+                     * 获取服务部署组目的的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FleetStatus 服务部署组目的的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFleetStatus() const;
+
+                    /**
+                     * 设置服务部署组目的的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FleetStatus 服务部署组目的的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFleetStatus(const std::string& _fleetStatus);
+
+                    /**
+                     * 判断参数 FleetStatus 是否已赋值
+                     * @return FleetStatus 是否已赋值
+                     */
+                    bool FleetStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -76,6 +98,13 @@ namespace TencentCloud
                      */
                     std::string m_destinationArn;
                     bool m_destinationArnHasBeenSet;
+
+                    /**
+                     * 服务部署组目的的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fleetStatus;
+                    bool m_fleetStatusHasBeenSet;
 
                 };
             }

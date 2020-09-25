@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取游戏服务器会话ID
-                     * @return GameServerSessionId 游戏服务器会话ID
+                     * 获取游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * @return GameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      */
                     std::string GetGameServerSessionId() const;
 
                     /**
-                     * 设置游戏服务器会话ID
-                     * @param GameServerSessionId 游戏服务器会话ID
+                     * 设置游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * @param GameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      */
                     void SetGameServerSessionId(const std::string& _gameServerSessionId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool GameServerSessionIdHasBeenSet() const;
 
                     /**
-                     * 获取玩家ID
-                     * @return PlayerId 玩家ID
+                     * 获取玩家ID，最大长度1024个ASCII字符
+                     * @return PlayerId 玩家ID，最大长度1024个ASCII字符
                      */
                     std::string GetPlayerId() const;
 
                     /**
-                     * 设置玩家ID
-                     * @param PlayerId 玩家ID
+                     * 设置玩家ID，最大长度1024个ASCII字符
+                     * @param PlayerId 玩家ID，最大长度1024个ASCII字符
                      */
                     void SetPlayerId(const std::string& _playerId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PlayerIdHasBeenSet() const;
 
                     /**
-                     * 获取玩家自定义信息
-                     * @return PlayerData 玩家自定义信息
+                     * 获取玩家自定义数据，最大长度2048个ASCII字符
+                     * @return PlayerData 玩家自定义数据，最大长度2048个ASCII字符
                      */
                     std::string GetPlayerData() const;
 
                     /**
-                     * 设置玩家自定义信息
-                     * @param PlayerData 玩家自定义信息
+                     * 设置玩家自定义数据，最大长度2048个ASCII字符
+                     * @param PlayerData 玩家自定义数据，最大长度2048个ASCII字符
                      */
                     void SetPlayerData(const std::string& _playerData);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 游戏服务器会话ID
+                     * 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      */
                     std::string m_gameServerSessionId;
                     bool m_gameServerSessionIdHasBeenSet;
 
                     /**
-                     * 玩家ID
+                     * 玩家ID，最大长度1024个ASCII字符
                      */
                     std::string m_playerId;
                     bool m_playerIdHasBeenSet;
 
                     /**
-                     * 玩家自定义信息
+                     * 玩家自定义数据，最大长度2048个ASCII字符
                      */
                     std::string m_playerData;
                     bool m_playerDataHasBeenSet;

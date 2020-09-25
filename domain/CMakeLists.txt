@@ -20,19 +20,25 @@ set(domain_public_header
 
 set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/CheckDomainResponse.h
-  include/tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h
-  include/tencentcloud/domain/v20180808/model/CheckDomainRequest.h
   include/tencentcloud/domain/v20180808/model/PriceInfo.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainPriceListRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoResponse.h
+  include/tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoRequest.h
+  include/tencentcloud/domain/v20180808/model/DomainBaseInfo.h
+  include/tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h
+  include/tencentcloud/domain/v20180808/model/CheckDomainRequest.h
   )
 
 set(domain_src
   src/v20180808/DomainClient.cpp
   src/v20180808/model/CheckDomainResponse.cpp
-  src/v20180808/model/DescribeDomainPriceListResponse.cpp
-  src/v20180808/model/CheckDomainRequest.cpp
   src/v20180808/model/PriceInfo.cpp
   src/v20180808/model/DescribeDomainPriceListRequest.cpp
+  src/v20180808/model/DescribeDomainBaseInfoResponse.cpp
+  src/v20180808/model/DescribeDomainBaseInfoRequest.cpp
+  src/v20180808/model/DomainBaseInfo.cpp
+  src/v20180808/model/DescribeDomainPriceListResponse.cpp
+  src/v20180808/model/CheckDomainRequest.cpp
   )
 
 set(domain_include

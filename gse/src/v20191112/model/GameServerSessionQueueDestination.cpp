@@ -22,7 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 GameServerSessionQueueDestination::GameServerSessionQueueDestination() :
-    m_destinationArnHasBeenSet(false)
+    m_destinationArnHasBeenSet(false),
+    m_fleetStatusHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,16 @@ CoreInternalOutcome GameServerSessionQueueDestination::Deserialize(const Value &
         m_destinationArnHasBeenSet = true;
     }
 
+    if (value.HasMember("FleetStatus") && !value["FleetStatus"].IsNull())
+    {
+        if (!value["FleetStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `GameServerSessionQueueDestination.FleetStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fleetStatus = string(value["FleetStatus"].GetString());
+        m_fleetStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +65,14 @@ void GameServerSessionQueueDestination::ToJsonObject(Value &value, Document::All
         string key = "DestinationArn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_destinationArn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fleetStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FleetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fleetStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -73,5 +92,21 @@ void GameServerSessionQueueDestination::SetDestinationArn(const string& _destina
 bool GameServerSessionQueueDestination::DestinationArnHasBeenSet() const
 {
     return m_destinationArnHasBeenSet;
+}
+
+string GameServerSessionQueueDestination::GetFleetStatus() const
+{
+    return m_fleetStatus;
+}
+
+void GameServerSessionQueueDestination::SetFleetStatus(const string& _fleetStatus)
+{
+    m_fleetStatus = _fleetStatus;
+    m_fleetStatusHasBeenSet = true;
+}
+
+bool GameServerSessionQueueDestination::FleetStatusHasBeenSet() const
+{
+    return m_fleetStatusHasBeenSet;
 }
 

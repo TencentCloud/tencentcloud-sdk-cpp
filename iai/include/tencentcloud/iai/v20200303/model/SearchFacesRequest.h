@@ -43,14 +43,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId
-                     * @return GroupIds 希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId
+                     * 获取希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId。
+不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。
+                     * @return GroupIds 希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId。
+不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 设置希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId
-                     * @param GroupIds 希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId
+                     * 设置希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId。
+不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。
+                     * @param GroupIds 希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId。
+不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
 
@@ -297,7 +301,8 @@ MaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要�
                 private:
 
                     /**
-                     * 希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId
+                     * 希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId。
+不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;

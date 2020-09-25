@@ -23,7 +23,7 @@ using namespace std;
 
 AddressChargePrepaid::AddressChargePrepaid() :
     m_periodHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -42,14 +42,14 @@ CoreInternalOutcome AddressChargePrepaid::Deserialize(const Value &value)
         m_periodHasBeenSet = true;
     }
 
-    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
     {
-        if (!value["RenewFlag"].IsString())
+        if (!value["AutoRenewFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AddressChargePrepaid.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AddressChargePrepaid.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_renewFlag = string(value["RenewFlag"].GetString());
-        m_renewFlagHasBeenSet = true;
+        m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
+        m_autoRenewFlagHasBeenSet = true;
     }
 
 
@@ -67,12 +67,12 @@ void AddressChargePrepaid::ToJsonObject(Value &value, Document::AllocatorType& a
         value.AddMember(iKey, m_period, allocator);
     }
 
-    if (m_renewFlagHasBeenSet)
+    if (m_autoRenewFlagHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "RenewFlag";
+        string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_renewFlag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
 }
@@ -94,19 +94,19 @@ bool AddressChargePrepaid::PeriodHasBeenSet() const
     return m_periodHasBeenSet;
 }
 
-string AddressChargePrepaid::GetRenewFlag() const
+int64_t AddressChargePrepaid::GetAutoRenewFlag() const
 {
-    return m_renewFlag;
+    return m_autoRenewFlag;
 }
 
-void AddressChargePrepaid::SetRenewFlag(const string& _renewFlag)
+void AddressChargePrepaid::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 {
-    m_renewFlag = _renewFlag;
-    m_renewFlagHasBeenSet = true;
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
 }
 
-bool AddressChargePrepaid::RenewFlagHasBeenSet() const
+bool AddressChargePrepaid::AutoRenewFlagHasBeenSet() const
 {
-    return m_renewFlagHasBeenSet;
+    return m_autoRenewFlagHasBeenSet;
 }
 

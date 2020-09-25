@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取游戏服务器会话队列数组
-                     * @return Names 游戏服务器会话队列数组
+                     * 获取游戏服务器会话队列名称数组，单个名字长度1~128
+                     * @return Names 游戏服务器会话队列名称数组，单个名字长度1~128
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
-                     * 设置游戏服务器会话队列数组
-                     * @param Names 游戏服务器会话队列数组
+                     * 设置游戏服务器会话队列名称数组，单个名字长度1~128
+                     * @param Names 游戏服务器会话队列名称数组，单个名字长度1~128
                      */
                     void SetNames(const std::vector<std::string>& _names);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool NamesHasBeenSet() const;
 
                     /**
-                     * 获取要返回的最大结果数
-                     * @return Limit 要返回的最大结果数
+                     * 获取结果返回最大数量，最小值0，最大值100
+                     * @return Limit 结果返回最大数量，最小值0，最大值100
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置要返回的最大结果数
-                     * @param Limit 要返回的最大结果数
+                     * 设置结果返回最大数量，最小值0，最大值100
+                     * @param Limit 结果返回最大数量，最小值0，最大值100
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移
-                     * @return Offset 偏移
+                     * 获取返回结果偏移，最小值0
+                     * @return Offset 返回结果偏移，最小值0
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移
-                     * @param Offset 偏移
+                     * 设置返回结果偏移，最小值0
+                     * @param Offset 返回结果偏移，最小值0
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 游戏服务器会话队列数组
+                     * 游戏服务器会话队列名称数组，单个名字长度1~128
                      */
                     std::vector<std::string> m_names;
                     bool m_namesHasBeenSet;
 
                     /**
-                     * 要返回的最大结果数
+                     * 结果返回最大数量，最小值0，最大值100
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移
+                     * 返回结果偏移，最小值0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

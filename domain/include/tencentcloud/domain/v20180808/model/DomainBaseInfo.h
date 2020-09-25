@@ -1,0 +1,511 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_DOMAIN_V20180808_MODEL_DOMAINBASEINFO_H_
+#define TENCENTCLOUD_DOMAIN_V20180808_MODEL_DOMAINBASEINFO_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Domain
+    {
+        namespace V20180808
+        {
+            namespace Model
+            {
+                /**
+                * 获取域名基础信息
+                */
+                class DomainBaseInfo : public AbstractModel
+                {
+                public:
+                    DomainBaseInfo();
+                    ~DomainBaseInfo() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取域名资源ID。
+                     * @return DomainId 域名资源ID。
+                     */
+                    std::string GetDomainId() const;
+
+                    /**
+                     * 设置域名资源ID。
+                     * @param DomainId 域名资源ID。
+                     */
+                    void SetDomainId(const std::string& _domainId);
+
+                    /**
+                     * 判断参数 DomainId 是否已赋值
+                     * @return DomainId 是否已赋值
+                     */
+                    bool DomainIdHasBeenSet() const;
+
+                    /**
+                     * 获取域名名称。
+                     * @return DomainName 域名名称。
+                     */
+                    std::string GetDomainName() const;
+
+                    /**
+                     * 设置域名名称。
+                     * @param DomainName 域名名称。
+                     */
+                    void SetDomainName(const std::string& _domainName);
+
+                    /**
+                     * 判断参数 DomainName 是否已赋值
+                     * @return DomainName 是否已赋值
+                     */
+                    bool DomainNameHasBeenSet() const;
+
+                    /**
+                     * 获取域名实名认证状态。
+NotUpload：未实名认证
+InAudit：实名审核中
+Approved：实名审核通过
+Reject：实名审核失败
+                     * @return RealNameAuditStatus 域名实名认证状态。
+NotUpload：未实名认证
+InAudit：实名审核中
+Approved：实名审核通过
+Reject：实名审核失败
+                     */
+                    std::string GetRealNameAuditStatus() const;
+
+                    /**
+                     * 设置域名实名认证状态。
+NotUpload：未实名认证
+InAudit：实名审核中
+Approved：实名审核通过
+Reject：实名审核失败
+                     * @param RealNameAuditStatus 域名实名认证状态。
+NotUpload：未实名认证
+InAudit：实名审核中
+Approved：实名审核通过
+Reject：实名审核失败
+                     */
+                    void SetRealNameAuditStatus(const std::string& _realNameAuditStatus);
+
+                    /**
+                     * 判断参数 RealNameAuditStatus 是否已赋值
+                     * @return RealNameAuditStatus 是否已赋值
+                     */
+                    bool RealNameAuditStatusHasBeenSet() const;
+
+                    /**
+                     * 获取域名实名认证不通过原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RealNameAuditUnpassReason 域名实名认证不通过原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRealNameAuditUnpassReason() const;
+
+                    /**
+                     * 设置域名实名认证不通过原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RealNameAuditUnpassReason 域名实名认证不通过原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRealNameAuditUnpassReason(const std::string& _realNameAuditUnpassReason);
+
+                    /**
+                     * 判断参数 RealNameAuditUnpassReason 是否已赋值
+                     * @return RealNameAuditUnpassReason 是否已赋值
+                     */
+                    bool RealNameAuditUnpassReasonHasBeenSet() const;
+
+                    /**
+                     * 获取域名命名审核状态。
+NotAudit：命名审核未上传
+Pending：命名审核待上传
+Auditing：域名命名审核中
+Approved：域名命名审核通过
+Rejected：域名命名审核拒绝
+                     * @return DomainNameAuditStatus 域名命名审核状态。
+NotAudit：命名审核未上传
+Pending：命名审核待上传
+Auditing：域名命名审核中
+Approved：域名命名审核通过
+Rejected：域名命名审核拒绝
+                     */
+                    std::string GetDomainNameAuditStatus() const;
+
+                    /**
+                     * 设置域名命名审核状态。
+NotAudit：命名审核未上传
+Pending：命名审核待上传
+Auditing：域名命名审核中
+Approved：域名命名审核通过
+Rejected：域名命名审核拒绝
+                     * @param DomainNameAuditStatus 域名命名审核状态。
+NotAudit：命名审核未上传
+Pending：命名审核待上传
+Auditing：域名命名审核中
+Approved：域名命名审核通过
+Rejected：域名命名审核拒绝
+                     */
+                    void SetDomainNameAuditStatus(const std::string& _domainNameAuditStatus);
+
+                    /**
+                     * 判断参数 DomainNameAuditStatus 是否已赋值
+                     * @return DomainNameAuditStatus 是否已赋值
+                     */
+                    bool DomainNameAuditStatusHasBeenSet() const;
+
+                    /**
+                     * 获取域名命名审核不通过原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DomainNameAuditUnpassReason 域名命名审核不通过原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDomainNameAuditUnpassReason() const;
+
+                    /**
+                     * 设置域名命名审核不通过原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DomainNameAuditUnpassReason 域名命名审核不通过原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDomainNameAuditUnpassReason(const std::string& _domainNameAuditUnpassReason);
+
+                    /**
+                     * 判断参数 DomainNameAuditUnpassReason 是否已赋值
+                     * @return DomainNameAuditUnpassReason 是否已赋值
+                     */
+                    bool DomainNameAuditUnpassReasonHasBeenSet() const;
+
+                    /**
+                     * 获取注册时间。
+                     * @return CreationDate 注册时间。
+                     */
+                    std::string GetCreationDate() const;
+
+                    /**
+                     * 设置注册时间。
+                     * @param CreationDate 注册时间。
+                     */
+                    void SetCreationDate(const std::string& _creationDate);
+
+                    /**
+                     * 判断参数 CreationDate 是否已赋值
+                     * @return CreationDate 是否已赋值
+                     */
+                    bool CreationDateHasBeenSet() const;
+
+                    /**
+                     * 获取到期时间
+                     * @return ExpirationDate 到期时间
+                     */
+                    std::string GetExpirationDate() const;
+
+                    /**
+                     * 设置到期时间
+                     * @param ExpirationDate 到期时间
+                     */
+                    void SetExpirationDate(const std::string& _expirationDate);
+
+                    /**
+                     * 判断参数 ExpirationDate 是否已赋值
+                     * @return ExpirationDate 是否已赋值
+                     */
+                    bool ExpirationDateHasBeenSet() const;
+
+                    /**
+                     * 获取域名状态。
+ok：正常
+serverHold：注册局暂停解析 
+clientHold：注册商暂停解析
+pendingTransfer：转移中
+renewingPeriod：续费期
+redemptionPeriod：偿还期
+pendingDelete：删除期
+serverTransferProhibited：注册局禁止转移
+serverUpdateProhibited：注册局禁止更新
+serverDeleteProhibited：注册局禁止删除
+clientTransferProhibited：注册商禁止转移
+clientUpdateProhibited：注册商禁止更新
+clientDeleteProhibited：注册商禁止删除
+                     * @return DomainStatus 域名状态。
+ok：正常
+serverHold：注册局暂停解析 
+clientHold：注册商暂停解析
+pendingTransfer：转移中
+renewingPeriod：续费期
+redemptionPeriod：偿还期
+pendingDelete：删除期
+serverTransferProhibited：注册局禁止转移
+serverUpdateProhibited：注册局禁止更新
+serverDeleteProhibited：注册局禁止删除
+clientTransferProhibited：注册商禁止转移
+clientUpdateProhibited：注册商禁止更新
+clientDeleteProhibited：注册商禁止删除
+                     */
+                    std::vector<std::string> GetDomainStatus() const;
+
+                    /**
+                     * 设置域名状态。
+ok：正常
+serverHold：注册局暂停解析 
+clientHold：注册商暂停解析
+pendingTransfer：转移中
+renewingPeriod：续费期
+redemptionPeriod：偿还期
+pendingDelete：删除期
+serverTransferProhibited：注册局禁止转移
+serverUpdateProhibited：注册局禁止更新
+serverDeleteProhibited：注册局禁止删除
+clientTransferProhibited：注册商禁止转移
+clientUpdateProhibited：注册商禁止更新
+clientDeleteProhibited：注册商禁止删除
+                     * @param DomainStatus 域名状态。
+ok：正常
+serverHold：注册局暂停解析 
+clientHold：注册商暂停解析
+pendingTransfer：转移中
+renewingPeriod：续费期
+redemptionPeriod：偿还期
+pendingDelete：删除期
+serverTransferProhibited：注册局禁止转移
+serverUpdateProhibited：注册局禁止更新
+serverDeleteProhibited：注册局禁止删除
+clientTransferProhibited：注册商禁止转移
+clientUpdateProhibited：注册商禁止更新
+clientDeleteProhibited：注册商禁止删除
+                     */
+                    void SetDomainStatus(const std::vector<std::string>& _domainStatus);
+
+                    /**
+                     * 判断参数 DomainStatus 是否已赋值
+                     * @return DomainStatus 是否已赋值
+                     */
+                    bool DomainStatusHasBeenSet() const;
+
+                    /**
+                     * 获取域名购买状态。
+ok：正常
+RegisterPending：待注册
+RegisterDoing：注册中
+RegisterFailed：注册失败
+AboutToExpire: 即将过期
+RenewPending：已进入续费期，需要进行续费
+RenewDoing：续费中
+RedemptionPending：已进入赎回期，需要进行续费
+RedemptionDoing：赎回中
+TransferPending：待转入中
+TransferTransing：转入中
+TransferFailed：转入失败
+                     * @return BuyStatus 域名购买状态。
+ok：正常
+RegisterPending：待注册
+RegisterDoing：注册中
+RegisterFailed：注册失败
+AboutToExpire: 即将过期
+RenewPending：已进入续费期，需要进行续费
+RenewDoing：续费中
+RedemptionPending：已进入赎回期，需要进行续费
+RedemptionDoing：赎回中
+TransferPending：待转入中
+TransferTransing：转入中
+TransferFailed：转入失败
+                     */
+                    std::string GetBuyStatus() const;
+
+                    /**
+                     * 设置域名购买状态。
+ok：正常
+RegisterPending：待注册
+RegisterDoing：注册中
+RegisterFailed：注册失败
+AboutToExpire: 即将过期
+RenewPending：已进入续费期，需要进行续费
+RenewDoing：续费中
+RedemptionPending：已进入赎回期，需要进行续费
+RedemptionDoing：赎回中
+TransferPending：待转入中
+TransferTransing：转入中
+TransferFailed：转入失败
+                     * @param BuyStatus 域名购买状态。
+ok：正常
+RegisterPending：待注册
+RegisterDoing：注册中
+RegisterFailed：注册失败
+AboutToExpire: 即将过期
+RenewPending：已进入续费期，需要进行续费
+RenewDoing：续费中
+RedemptionPending：已进入赎回期，需要进行续费
+RedemptionDoing：赎回中
+TransferPending：待转入中
+TransferTransing：转入中
+TransferFailed：转入失败
+                     */
+                    void SetBuyStatus(const std::string& _buyStatus);
+
+                    /**
+                     * 判断参数 BuyStatus 是否已赋值
+                     * @return BuyStatus 是否已赋值
+                     */
+                    bool BuyStatusHasBeenSet() const;
+
+                    /**
+                     * 获取注册类型
+epp （腾讯云自有域名）
+xinnet (新网域名)
+                     * @return RegistrarType 注册类型
+epp （腾讯云自有域名）
+xinnet (新网域名)
+                     */
+                    std::string GetRegistrarType() const;
+
+                    /**
+                     * 设置注册类型
+epp （腾讯云自有域名）
+xinnet (新网域名)
+                     * @param RegistrarType 注册类型
+epp （腾讯云自有域名）
+xinnet (新网域名)
+                     */
+                    void SetRegistrarType(const std::string& _registrarType);
+
+                    /**
+                     * 判断参数 RegistrarType 是否已赋值
+                     * @return RegistrarType 是否已赋值
+                     */
+                    bool RegistrarTypeHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 域名资源ID。
+                     */
+                    std::string m_domainId;
+                    bool m_domainIdHasBeenSet;
+
+                    /**
+                     * 域名名称。
+                     */
+                    std::string m_domainName;
+                    bool m_domainNameHasBeenSet;
+
+                    /**
+                     * 域名实名认证状态。
+NotUpload：未实名认证
+InAudit：实名审核中
+Approved：实名审核通过
+Reject：实名审核失败
+                     */
+                    std::string m_realNameAuditStatus;
+                    bool m_realNameAuditStatusHasBeenSet;
+
+                    /**
+                     * 域名实名认证不通过原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_realNameAuditUnpassReason;
+                    bool m_realNameAuditUnpassReasonHasBeenSet;
+
+                    /**
+                     * 域名命名审核状态。
+NotAudit：命名审核未上传
+Pending：命名审核待上传
+Auditing：域名命名审核中
+Approved：域名命名审核通过
+Rejected：域名命名审核拒绝
+                     */
+                    std::string m_domainNameAuditStatus;
+                    bool m_domainNameAuditStatusHasBeenSet;
+
+                    /**
+                     * 域名命名审核不通过原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_domainNameAuditUnpassReason;
+                    bool m_domainNameAuditUnpassReasonHasBeenSet;
+
+                    /**
+                     * 注册时间。
+                     */
+                    std::string m_creationDate;
+                    bool m_creationDateHasBeenSet;
+
+                    /**
+                     * 到期时间
+                     */
+                    std::string m_expirationDate;
+                    bool m_expirationDateHasBeenSet;
+
+                    /**
+                     * 域名状态。
+ok：正常
+serverHold：注册局暂停解析 
+clientHold：注册商暂停解析
+pendingTransfer：转移中
+renewingPeriod：续费期
+redemptionPeriod：偿还期
+pendingDelete：删除期
+serverTransferProhibited：注册局禁止转移
+serverUpdateProhibited：注册局禁止更新
+serverDeleteProhibited：注册局禁止删除
+clientTransferProhibited：注册商禁止转移
+clientUpdateProhibited：注册商禁止更新
+clientDeleteProhibited：注册商禁止删除
+                     */
+                    std::vector<std::string> m_domainStatus;
+                    bool m_domainStatusHasBeenSet;
+
+                    /**
+                     * 域名购买状态。
+ok：正常
+RegisterPending：待注册
+RegisterDoing：注册中
+RegisterFailed：注册失败
+AboutToExpire: 即将过期
+RenewPending：已进入续费期，需要进行续费
+RenewDoing：续费中
+RedemptionPending：已进入赎回期，需要进行续费
+RedemptionDoing：赎回中
+TransferPending：待转入中
+TransferTransing：转入中
+TransferFailed：转入失败
+                     */
+                    std::string m_buyStatus;
+                    bool m_buyStatusHasBeenSet;
+
+                    /**
+                     * 注册类型
+epp （腾讯云自有域名）
+xinnet (新网域名)
+                     */
+                    std::string m_registrarType;
+                    bool m_registrarTypeHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_DOMAIN_V20180808_MODEL_DOMAINBASEINFO_H_

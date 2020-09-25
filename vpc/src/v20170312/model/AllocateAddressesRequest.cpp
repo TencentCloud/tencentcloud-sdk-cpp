@@ -28,6 +28,7 @@ AllocateAddressesRequest::AllocateAddressesRequest() :
     m_internetServiceProviderHasBeenSet(false),
     m_internetChargeTypeHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
+    m_addressChargePrepaidHasBeenSet(false),
     m_addressTypeHasBeenSet(false),
     m_anycastZoneHasBeenSet(false),
     m_applicableForCLBHasBeenSet(false),
@@ -73,6 +74,15 @@ string AllocateAddressesRequest::ToJsonString() const
         string key = "InternetMaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
+    }
+
+    if (m_addressChargePrepaidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AddressChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_addressChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_addressTypeHasBeenSet)
@@ -192,6 +202,22 @@ void AllocateAddressesRequest::SetInternetMaxBandwidthOut(const int64_t& _intern
 bool AllocateAddressesRequest::InternetMaxBandwidthOutHasBeenSet() const
 {
     return m_internetMaxBandwidthOutHasBeenSet;
+}
+
+AddressChargePrepaid AllocateAddressesRequest::GetAddressChargePrepaid() const
+{
+    return m_addressChargePrepaid;
+}
+
+void AllocateAddressesRequest::SetAddressChargePrepaid(const AddressChargePrepaid& _addressChargePrepaid)
+{
+    m_addressChargePrepaid = _addressChargePrepaid;
+    m_addressChargePrepaidHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::AddressChargePrepaidHasBeenSet() const
+{
+    return m_addressChargePrepaidHasBeenSet;
 }
 
 string AllocateAddressesRequest::GetAddressType() const

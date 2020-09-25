@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取游戏服务器会话ID
-                     * @return GameServerSessionId 游戏服务器会话ID
+                     * 获取游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * @return GameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      */
                     std::string GetGameServerSessionId() const;
 
                     /**
-                     * 设置游戏服务器会话ID
-                     * @param GameServerSessionId 游戏服务器会话ID
+                     * 设置游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * @param GameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      */
                     void SetGameServerSessionId(const std::string& _gameServerSessionId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool GameServerSessionIdHasBeenSet() const;
 
                     /**
-                     * 获取最大玩家数量
-                     * @return MaximumPlayerSessionCount 最大玩家数量
+                     * 获取最大玩家数量，最小值不小于0
+                     * @return MaximumPlayerSessionCount 最大玩家数量，最小值不小于0
                      */
                     uint64_t GetMaximumPlayerSessionCount() const;
 
                     /**
-                     * 设置最大玩家数量
-                     * @param MaximumPlayerSessionCount 最大玩家数量
+                     * 设置最大玩家数量，最小值不小于0
+                     * @param MaximumPlayerSessionCount 最大玩家数量，最小值不小于0
                      */
                     void SetMaximumPlayerSessionCount(const uint64_t& _maximumPlayerSessionCount);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool MaximumPlayerSessionCountHasBeenSet() const;
 
                     /**
-                     * 获取游戏服务器会话名称
-                     * @return Name 游戏服务器会话名称
+                     * 获取游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
+                     * @return Name 游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置游戏服务器会话名称
-                     * @param Name 游戏服务器会话名称
+                     * 设置游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
+                     * @param Name 游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
                      */
                     void SetName(const std::string& _name);
 
@@ -135,19 +135,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 游戏服务器会话ID
+                     * 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      */
                     std::string m_gameServerSessionId;
                     bool m_gameServerSessionIdHasBeenSet;
 
                     /**
-                     * 最大玩家数量
+                     * 最大玩家数量，最小值不小于0
                      */
                     uint64_t m_maximumPlayerSessionCount;
                     bool m_maximumPlayerSessionCountHasBeenSet;
 
                     /**
-                     * 游戏服务器会话名称
+                     * 游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

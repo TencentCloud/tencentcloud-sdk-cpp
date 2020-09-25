@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool GameServerSessionsHasBeenSet() const;
 
                     /**
-                     * 获取页偏移，用于查询下一页
+                     * 获取页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NextToken 页偏移，用于查询下一页
+                     * @return NextToken 页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNextToken() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_gameServerSessionsHasBeenSet;
 
                     /**
-                     * 页偏移，用于查询下一页
+                     * 页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextToken;

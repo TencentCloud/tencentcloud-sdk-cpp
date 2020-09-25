@@ -111,6 +111,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeCdnLogsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeEventsStateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeEventsStateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosRequest.h>
@@ -355,6 +357,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeContentReviewTemplatesResponse> DescribeContentReviewTemplatesOutcome;
                 typedef std::future<DescribeContentReviewTemplatesOutcome> DescribeContentReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeContentReviewTemplatesRequest&, DescribeContentReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentReviewTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEventsStateResponse> DescribeEventsStateOutcome;
+                typedef std::future<DescribeEventsStateOutcome> DescribeEventsStateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeEventsStateRequest&, DescribeEventsStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsStateAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImageSpriteTemplatesResponse> DescribeImageSpriteTemplatesOutcome;
                 typedef std::future<DescribeImageSpriteTemplatesOutcome> DescribeImageSpriteTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeImageSpriteTemplatesRequest&, DescribeImageSpriteTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSpriteTemplatesAsyncHandler;
@@ -925,6 +930,16 @@ namespace TencentCloud
                 DescribeContentReviewTemplatesOutcome DescribeContentReviewTemplates(const Model::DescribeContentReviewTemplatesRequest &request);
                 void DescribeContentReviewTemplatesAsync(const Model::DescribeContentReviewTemplatesRequest& request, const DescribeContentReviewTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeContentReviewTemplatesOutcomeCallable DescribeContentReviewTemplatesCallable(const Model::DescribeContentReviewTemplatesRequest& request);
+
+                /**
+                 ** 该接口用于业务服务器获取 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) 事件通知的状态。
+
+                 * @param req DescribeEventsStateRequest
+                 * @return DescribeEventsStateOutcome
+                 */
+                DescribeEventsStateOutcome DescribeEventsState(const Model::DescribeEventsStateRequest &request);
+                void DescribeEventsStateAsync(const Model::DescribeEventsStateRequest& request, const DescribeEventsStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventsStateOutcomeCallable DescribeEventsStateCallable(const Model::DescribeEventsStateRequest& request);
 
                 /**
                  *查询雪碧图模板，支持根据条件，分页查询。

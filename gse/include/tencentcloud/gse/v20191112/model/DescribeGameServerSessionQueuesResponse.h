@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool GameServerSessionQueuesHasBeenSet() const;
 
                     /**
-                     * 获取总数
-                     * @return TotalCount 总数
+                     * 获取游戏服务器会话队列总数
+                     * @return TotalCount 游戏服务器会话队列总数
                      */
                     uint64_t GetTotalCount() const;
 
@@ -79,7 +79,7 @@ namespace TencentCloud
                     bool m_gameServerSessionQueuesHasBeenSet;
 
                     /**
-                     * 总数
+                     * 游戏服务器会话队列总数
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

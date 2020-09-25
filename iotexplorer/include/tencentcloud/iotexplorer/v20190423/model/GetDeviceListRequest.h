@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取设备固件版本号，若不带此参数会返回所有固件版本的设备。传"None-FirmwareVersion"查询无版本号的设备
+                     * @return FirmwareVersion 设备固件版本号，若不带此参数会返回所有固件版本的设备。传"None-FirmwareVersion"查询无版本号的设备
+                     */
+                    std::string GetFirmwareVersion() const;
+
+                    /**
+                     * 设置设备固件版本号，若不带此参数会返回所有固件版本的设备。传"None-FirmwareVersion"查询无版本号的设备
+                     * @param FirmwareVersion 设备固件版本号，若不带此参数会返回所有固件版本的设备。传"None-FirmwareVersion"查询无版本号的设备
+                     */
+                    void SetFirmwareVersion(const std::string& _firmwareVersion);
+
+                    /**
+                     * 判断参数 FirmwareVersion 是否已赋值
+                     * @return FirmwareVersion 是否已赋值
+                     */
+                    bool FirmwareVersionHasBeenSet() const;
+
+                    /**
+                     * 获取需要过滤的设备名称
+                     * @return DeviceName 需要过滤的设备名称
+                     */
+                    std::string GetDeviceName() const;
+
+                    /**
+                     * 设置需要过滤的设备名称
+                     * @param DeviceName 需要过滤的设备名称
+                     */
+                    void SetDeviceName(const std::string& _deviceName);
+
+                    /**
+                     * 判断参数 DeviceName 是否已赋值
+                     * @return DeviceName 是否已赋值
+                     */
+                    bool DeviceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 设备固件版本号，若不带此参数会返回所有固件版本的设备。传"None-FirmwareVersion"查询无版本号的设备
+                     */
+                    std::string m_firmwareVersion;
+                    bool m_firmwareVersionHasBeenSet;
+
+                    /**
+                     * 需要过滤的设备名称
+                     */
+                    std::string m_deviceName;
+                    bool m_deviceNameHasBeenSet;
 
                 };
             }

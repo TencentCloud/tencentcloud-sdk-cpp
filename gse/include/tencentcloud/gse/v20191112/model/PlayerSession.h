@@ -105,14 +105,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取游戏服务器会话ID
-                     * @return GameServerSessionId 游戏服务器会话ID
+                     * 获取游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * @return GameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      */
                     std::string GetGameServerSessionId() const;
 
                     /**
-                     * 设置游戏服务器会话ID
-                     * @param GameServerSessionId 游戏服务器会话ID
+                     * 设置游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * @param GameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      */
                     void SetGameServerSessionId(const std::string& _gameServerSessionId);
 
@@ -141,17 +141,17 @@ namespace TencentCloud
                     bool IpAddressHasBeenSet() const;
 
                     /**
-                     * 获取玩家相关信息
+                     * 获取玩家自定义数据，最大长度2048个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PlayerData 玩家相关信息
+                     * @return PlayerData 玩家自定义数据，最大长度2048个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPlayerData() const;
 
                     /**
-                     * 设置玩家相关信息
+                     * 设置玩家自定义数据，最大长度2048个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlayerData 玩家相关信息
+                     * @param PlayerData 玩家自定义数据，最大长度2048个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPlayerData(const std::string& _playerData);
@@ -163,17 +163,17 @@ namespace TencentCloud
                     bool PlayerDataHasBeenSet() const;
 
                     /**
-                     * 获取玩家ID
+                     * 获取玩家ID，最大长度1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PlayerId 玩家ID
+                     * @return PlayerId 玩家ID，最大长度1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPlayerId() const;
 
                     /**
-                     * 设置玩家ID
+                     * 设置玩家ID，最大长度1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlayerId 玩家ID
+                     * @param PlayerId 玩家ID，最大长度1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPlayerId(const std::string& _playerId);
@@ -203,14 +203,14 @@ namespace TencentCloud
                     bool PlayerSessionIdHasBeenSet() const;
 
                     /**
-                     * 获取端口号
-                     * @return Port 端口号
+                     * 获取端口号，最小值不小于1，最大值不超过60000
+                     * @return Port 端口号，最小值不小于1，最大值不超过60000
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置端口号
-                     * @param Port 端口号
+                     * 设置端口号，最小值不小于1，最大值不超过60000
+                     * @param Port 端口号，最小值不小于1，最大值不超过60000
                      */
                     void SetPort(const uint64_t& _port);
 
@@ -221,14 +221,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取玩家会话的状态
-                     * @return Status 玩家会话的状态
+                     * 获取玩家会话的状态（RESERVED = 1,ACTIVE = 2,COMPLETED = 3,TIMEDOUT = 4）
+                     * @return Status 玩家会话的状态（RESERVED = 1,ACTIVE = 2,COMPLETED = 3,TIMEDOUT = 4）
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置玩家会话的状态
-                     * @param Status 玩家会话的状态
+                     * 设置玩家会话的状态（RESERVED = 1,ACTIVE = 2,COMPLETED = 3,TIMEDOUT = 4）
+                     * @param Status 玩家会话的状态（RESERVED = 1,ACTIVE = 2,COMPLETED = 3,TIMEDOUT = 4）
                      */
                     void SetStatus(const std::string& _status);
 
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 游戏服务器会话ID
+                     * 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      */
                     std::string m_gameServerSessionId;
                     bool m_gameServerSessionIdHasBeenSet;
@@ -294,14 +294,14 @@ namespace TencentCloud
                     bool m_ipAddressHasBeenSet;
 
                     /**
-                     * 玩家相关信息
+                     * 玩家自定义数据，最大长度2048个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_playerData;
                     bool m_playerDataHasBeenSet;
 
                     /**
-                     * 玩家ID
+                     * 玩家ID，最大长度1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_playerId;
@@ -314,13 +314,13 @@ namespace TencentCloud
                     bool m_playerSessionIdHasBeenSet;
 
                     /**
-                     * 端口号
+                     * 端口号，最小值不小于1，最大值不超过60000
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 玩家会话的状态
+                     * 玩家会话的状态（RESERVED = 1,ACTIVE = 2,COMPLETED = 3,TIMEDOUT = 4）
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

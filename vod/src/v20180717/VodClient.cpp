@@ -1932,6 +1932,49 @@ VodClient::DescribeContentReviewTemplatesOutcomeCallable VodClient::DescribeCont
     return task->get_future();
 }
 
+VodClient::DescribeEventsStateOutcome VodClient::DescribeEventsState(const DescribeEventsStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEventsState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventsStateResponse rsp = DescribeEventsStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventsStateOutcome(rsp);
+        else
+            return DescribeEventsStateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventsStateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeEventsStateAsync(const DescribeEventsStateRequest& request, const DescribeEventsStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEventsState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeEventsStateOutcomeCallable VodClient::DescribeEventsStateCallable(const DescribeEventsStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEventsStateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEventsState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeImageSpriteTemplatesOutcome VodClient::DescribeImageSpriteTemplates(const DescribeImageSpriteTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImageSpriteTemplates");

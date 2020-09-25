@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取基于规则的扩缩容配置
-                     * @return FleetId 基于规则的扩缩容配置
+                     * 获取基于规则的扩缩容配置服务部署ID
+                     * @return FleetId 基于规则的扩缩容配置服务部署ID
                      */
                     std::string GetFleetId() const;
 
                     /**
-                     * 设置基于规则的扩缩容配置
-                     * @param FleetId 基于规则的扩缩容配置
+                     * 设置基于规则的扩缩容配置服务部署ID
+                     * @param FleetId 基于规则的扩缩容配置服务部署ID
                      */
                     void SetFleetId(const std::string& _fleetId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取策略名称
+                     * @return Name 策略名称
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param Name 名称
+                     * 设置策略名称
+                     * @param Name 策略名称
                      */
                     void SetName(const std::string& _name);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取调整值
-                     * @return ScalingAdjustment 调整值
+                     * 获取扩缩容调整值
+                     * @return ScalingAdjustment 扩缩容调整值
                      */
                     int64_t GetScalingAdjustment() const;
 
                     /**
-                     * 设置调整值
-                     * @param ScalingAdjustment 调整值
+                     * 设置扩缩容调整值
+                     * @param ScalingAdjustment 扩缩容调整值
                      */
                     void SetScalingAdjustment(const int64_t& _scalingAdjustment);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool ScalingAdjustmentHasBeenSet() const;
 
                     /**
-                     * 获取调整类型
-                     * @return ScalingAdjustmentType 调整类型
+                     * 获取扩缩容调整类型
+                     * @return ScalingAdjustmentType 扩缩容调整类型
                      */
                     std::string GetScalingAdjustmentType() const;
 
                     /**
-                     * 设置调整类型
-                     * @param ScalingAdjustmentType 调整类型
+                     * 设置扩缩容调整类型
+                     * @param ScalingAdjustmentType 扩缩容调整类型
                      */
                     void SetScalingAdjustmentType(const std::string& _scalingAdjustmentType);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool ScalingAdjustmentTypeHasBeenSet() const;
 
                     /**
-                     * 获取指标阈值
-                     * @return Threshold 指标阈值
+                     * 获取扩缩容指标阈值
+                     * @return Threshold 扩缩容指标阈值
                      */
                     double GetThreshold() const;
 
                     /**
-                     * 设置指标阈值
-                     * @param Threshold 指标阈值
+                     * 设置扩缩容指标阈值
+                     * @param Threshold 扩缩容指标阈值
                      */
                     void SetThreshold(const double& _threshold);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool ThresholdHasBeenSet() const;
 
                     /**
-                     * 获取比较符
-                     * @return ComparisonOperator 比较符
+                     * 获取策略比较符，取值：>,>=,<,<=
+                     * @return ComparisonOperator 策略比较符，取值：>,>=,<,<=
                      */
                     std::string GetComparisonOperator() const;
 
                     /**
-                     * 设置比较符
-                     * @param ComparisonOperator 比较符
+                     * 设置策略比较符，取值：>,>=,<,<=
+                     * @param ComparisonOperator 策略比较符，取值：>,>=,<,<=
                      */
                     void SetComparisonOperator(const std::string& _comparisonOperator);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool ComparisonOperatorHasBeenSet() const;
 
                     /**
-                     * 获取时间长度（分钟）
-                     * @return EvaluationPeriods 时间长度（分钟）
+                     * 获取持续时间长度（分钟）
+                     * @return EvaluationPeriods 持续时间长度（分钟）
                      */
                     int64_t GetEvaluationPeriods() const;
 
                     /**
-                     * 设置时间长度（分钟）
-                     * @param EvaluationPeriods 时间长度（分钟）
+                     * 设置持续时间长度（分钟）
+                     * @param EvaluationPeriods 持续时间长度（分钟）
                      */
                     void SetEvaluationPeriods(const int64_t& _evaluationPeriods);
 
@@ -188,14 +188,14 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取策略类型
-                     * @return PolicyType 策略类型
+                     * 获取策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略
+                     * @return PolicyType 策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略
                      */
                     std::string GetPolicyType() const;
 
                     /**
-                     * 设置策略类型
-                     * @param PolicyType 策略类型
+                     * 设置策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略
+                     * @param PolicyType 策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略
                      */
                     void SetPolicyType(const std::string& _policyType);
 
@@ -226,43 +226,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 基于规则的扩缩容配置
+                     * 基于规则的扩缩容配置服务部署ID
                      */
                     std::string m_fleetId;
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 名称
+                     * 策略名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 调整值
+                     * 扩缩容调整值
                      */
                     int64_t m_scalingAdjustment;
                     bool m_scalingAdjustmentHasBeenSet;
 
                     /**
-                     * 调整类型
+                     * 扩缩容调整类型
                      */
                     std::string m_scalingAdjustmentType;
                     bool m_scalingAdjustmentTypeHasBeenSet;
 
                     /**
-                     * 指标阈值
+                     * 扩缩容指标阈值
                      */
                     double m_threshold;
                     bool m_thresholdHasBeenSet;
 
                     /**
-                     * 比较符
+                     * 策略比较符，取值：>,>=,<,<=
                      */
                     std::string m_comparisonOperator;
                     bool m_comparisonOperatorHasBeenSet;
 
                     /**
-                     * 时间长度（分钟）
+                     * 持续时间长度（分钟）
                      */
                     int64_t m_evaluationPeriods;
                     bool m_evaluationPeriodsHasBeenSet;
@@ -274,7 +274,7 @@ namespace TencentCloud
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 策略类型
+                     * 策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;

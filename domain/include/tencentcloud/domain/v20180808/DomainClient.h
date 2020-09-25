@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/domain/v20180808/model/CheckDomainRequest.h>
 #include <tencentcloud/domain/v20180808/model/CheckDomainResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h>
 
@@ -44,6 +46,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CheckDomainResponse> CheckDomainOutcome;
                 typedef std::future<CheckDomainOutcome> CheckDomainOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CheckDomainRequest&, CheckDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDomainBaseInfoResponse> DescribeDomainBaseInfoOutcome;
+                typedef std::future<DescribeDomainBaseInfoOutcome> DescribeDomainBaseInfoOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeDomainBaseInfoRequest&, DescribeDomainBaseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainBaseInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDomainPriceListResponse> DescribeDomainPriceListOutcome;
                 typedef std::future<DescribeDomainPriceListOutcome> DescribeDomainPriceListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeDomainPriceListRequest&, DescribeDomainPriceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainPriceListAsyncHandler;
@@ -58,6 +63,18 @@ namespace TencentCloud
                 CheckDomainOutcome CheckDomain(const Model::CheckDomainRequest &request);
                 void CheckDomainAsync(const Model::CheckDomainRequest& request, const CheckDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckDomainOutcomeCallable CheckDomainCallable(const Model::CheckDomainRequest& request);
+
+                /**
+                 *本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。
+
+默认接口请求频率限制：20次/秒。
+
+                 * @param req DescribeDomainBaseInfoRequest
+                 * @return DescribeDomainBaseInfoOutcome
+                 */
+                DescribeDomainBaseInfoOutcome DescribeDomainBaseInfo(const Model::DescribeDomainBaseInfoRequest &request);
+                void DescribeDomainBaseInfoAsync(const Model::DescribeDomainBaseInfoRequest& request, const DescribeDomainBaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainBaseInfoOutcomeCallable DescribeDomainBaseInfoCallable(const Model::DescribeDomainBaseInfoRequest& request);
 
                 /**
                  *按照域名后缀获取对应的价格列表

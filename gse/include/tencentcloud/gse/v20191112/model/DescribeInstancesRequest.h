@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取CVM实例ID
+                     * @return InstanceId CVM实例ID
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置CVM实例ID
+                     * @param InstanceId CVM实例ID
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取结果返回最大数量
-                     * @return Offset 结果返回最大数量
+                     * 获取结果返回最大数量，最小值0，最大值100
+                     * @return Offset 结果返回最大数量，最小值0，最大值100
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置结果返回最大数量
-                     * @param Offset 结果返回最大数量
+                     * 设置结果返回最大数量，最小值0，最大值100
+                     * @param Offset 结果返回最大数量，最小值0，最大值100
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回结果偏移
-                     * @return Limit 返回结果偏移
+                     * 获取返回结果偏移，最小值0
+                     * @return Limit 返回结果偏移，最小值0
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回结果偏移
-                     * @param Limit 返回结果偏移
+                     * 设置返回结果偏移，最小值0
+                     * @param Limit 返回结果偏移，最小值0
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -123,19 +123,19 @@ namespace TencentCloud
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * CVM实例ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 结果返回最大数量
+                     * 结果返回最大数量，最小值0，最大值100
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回结果偏移
+                     * 返回结果偏移，最小值0
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

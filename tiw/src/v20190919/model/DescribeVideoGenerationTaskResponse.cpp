@@ -31,7 +31,8 @@ DescribeVideoGenerationTaskResponse::DescribeVideoGenerationTaskResponse() :
     m_progressHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_totalTimeHasBeenSet(false),
-    m_videoInfosHasBeenSet(false)
+    m_videoInfosHasBeenSet(false),
+    m_videoInfoListHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,26 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
         m_videoInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VideoInfoList") && !rsp["VideoInfoList"].IsNull())
+    {
+        if (!rsp["VideoInfoList"].IsArray())
+            return CoreInternalOutcome(Error("response `VideoInfoList` is not array type"));
+
+        const Value &tmpValue = rsp["VideoInfoList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VideoInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_videoInfoList.push_back(item);
+        }
+        m_videoInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -219,6 +240,16 @@ VideoInfo DescribeVideoGenerationTaskResponse::GetVideoInfos() const
 bool DescribeVideoGenerationTaskResponse::VideoInfosHasBeenSet() const
 {
     return m_videoInfosHasBeenSet;
+}
+
+vector<VideoInfo> DescribeVideoGenerationTaskResponse::GetVideoInfoList() const
+{
+    return m_videoInfoList;
+}
+
+bool DescribeVideoGenerationTaskResponse::VideoInfoListHasBeenSet() const
+{
+    return m_videoInfoListHasBeenSet;
 }
 
 

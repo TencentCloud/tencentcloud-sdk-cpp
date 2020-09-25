@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最大玩家数量
-                     * @return MaximumPlayerSessionCount 最大玩家数量
+                     * 获取最大玩家数量，最小值不小于0
+                     * @return MaximumPlayerSessionCount 最大玩家数量，最小值不小于0
                      */
                     uint64_t GetMaximumPlayerSessionCount() const;
 
                     /**
-                     * 设置最大玩家数量
-                     * @param MaximumPlayerSessionCount 最大玩家数量
+                     * 设置最大玩家数量，最小值不小于0
+                     * @param MaximumPlayerSessionCount 最大玩家数量，最小值不小于0
                      */
                     void SetMaximumPlayerSessionCount(const uint64_t& _maximumPlayerSessionCount);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool AliasIdHasBeenSet() const;
 
                     /**
-                     * 获取创建者ID
-                     * @return CreatorId 创建者ID
+                     * 获取创建者ID，最大长度不超过1024个ASCII字符
+                     * @return CreatorId 创建者ID，最大长度不超过1024个ASCII字符
                      */
                     std::string GetCreatorId() const;
 
                     /**
-                     * 设置创建者ID
-                     * @param CreatorId 创建者ID
+                     * 设置创建者ID，最大长度不超过1024个ASCII字符
+                     * @param CreatorId 创建者ID，最大长度不超过1024个ASCII字符
                      */
                     void SetCreatorId(const std::string& _creatorId);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取游戏属性
-                     * @return GameProperties 游戏属性
+                     * 获取游戏属性，最大长度不超过16组
+                     * @return GameProperties 游戏属性，最大长度不超过16组
                      */
                     std::vector<GameProperty> GetGameProperties() const;
 
                     /**
-                     * 设置游戏属性
-                     * @param GameProperties 游戏属性
+                     * 设置游戏属性，最大长度不超过16组
+                     * @param GameProperties 游戏属性，最大长度不超过16组
                      */
                     void SetGameProperties(const std::vector<GameProperty>& _gameProperties);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool GamePropertiesHasBeenSet() const;
 
                     /**
-                     * 获取游戏服务器会话属性详情
-                     * @return GameServerSessionData 游戏服务器会话属性详情
+                     * 获取游戏服务器会话属性详情，最大长度不超过4096个ASCII字符
+                     * @return GameServerSessionData 游戏服务器会话属性详情，最大长度不超过4096个ASCII字符
                      */
                     std::string GetGameServerSessionData() const;
 
                     /**
-                     * 设置游戏服务器会话属性详情
-                     * @param GameServerSessionData 游戏服务器会话属性详情
+                     * 设置游戏服务器会话属性详情，最大长度不超过4096个ASCII字符
+                     * @param GameServerSessionData 游戏服务器会话属性详情，最大长度不超过4096个ASCII字符
                      */
                     void SetGameServerSessionData(const std::string& _gameServerSessionData);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool GameServerSessionDataHasBeenSet() const;
 
                     /**
-                     * 获取游戏服务器会话自定义ID
-                     * @return GameServerSessionId 游戏服务器会话自定义ID
+                     * 获取游戏服务器会话自定义ID，最大长度不超过4096个ASCII字符
+                     * @return GameServerSessionId 游戏服务器会话自定义ID，最大长度不超过4096个ASCII字符
                      */
                     std::string GetGameServerSessionId() const;
 
                     /**
-                     * 设置游戏服务器会话自定义ID
-                     * @param GameServerSessionId 游戏服务器会话自定义ID
+                     * 设置游戏服务器会话自定义ID，最大长度不超过4096个ASCII字符
+                     * @param GameServerSessionId 游戏服务器会话自定义ID，最大长度不超过4096个ASCII字符
                      */
                     void SetGameServerSessionId(const std::string& _gameServerSessionId);
 
@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool GameServerSessionIdHasBeenSet() const;
 
                     /**
-                     * 获取幂等token
-                     * @return IdempotencyToken 幂等token
+                     * 获取幂等token，最大长度不超过48个ASCII字符
+                     * @return IdempotencyToken 幂等token，最大长度不超过48个ASCII字符
                      */
                     std::string GetIdempotencyToken() const;
 
                     /**
-                     * 设置幂等token
-                     * @param IdempotencyToken 幂等token
+                     * 设置幂等token，最大长度不超过48个ASCII字符
+                     * @param IdempotencyToken 幂等token，最大长度不超过48个ASCII字符
                      */
                     void SetIdempotencyToken(const std::string& _idempotencyToken);
 
@@ -188,14 +188,14 @@ namespace TencentCloud
                     bool IdempotencyTokenHasBeenSet() const;
 
                     /**
-                     * 获取游戏服务器会话名称
-                     * @return Name 游戏服务器会话名称
+                     * 获取游戏服务器会话名称，最大长度不超过1024个ASCII字符
+                     * @return Name 游戏服务器会话名称，最大长度不超过1024个ASCII字符
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置游戏服务器会话名称
-                     * @param Name 游戏服务器会话名称
+                     * 设置游戏服务器会话名称，最大长度不超过1024个ASCII字符
+                     * @param Name 游戏服务器会话名称，最大长度不超过1024个ASCII字符
                      */
                     void SetName(const std::string& _name);
 
@@ -208,7 +208,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 最大玩家数量
+                     * 最大玩家数量，最小值不小于0
                      */
                     uint64_t m_maximumPlayerSessionCount;
                     bool m_maximumPlayerSessionCountHasBeenSet;
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_aliasIdHasBeenSet;
 
                     /**
-                     * 创建者ID
+                     * 创建者ID，最大长度不超过1024个ASCII字符
                      */
                     std::string m_creatorId;
                     bool m_creatorIdHasBeenSet;
@@ -232,31 +232,31 @@ namespace TencentCloud
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 游戏属性
+                     * 游戏属性，最大长度不超过16组
                      */
                     std::vector<GameProperty> m_gameProperties;
                     bool m_gamePropertiesHasBeenSet;
 
                     /**
-                     * 游戏服务器会话属性详情
+                     * 游戏服务器会话属性详情，最大长度不超过4096个ASCII字符
                      */
                     std::string m_gameServerSessionData;
                     bool m_gameServerSessionDataHasBeenSet;
 
                     /**
-                     * 游戏服务器会话自定义ID
+                     * 游戏服务器会话自定义ID，最大长度不超过4096个ASCII字符
                      */
                     std::string m_gameServerSessionId;
                     bool m_gameServerSessionIdHasBeenSet;
 
                     /**
-                     * 幂等token
+                     * 幂等token，最大长度不超过48个ASCII字符
                      */
                     std::string m_idempotencyToken;
                     bool m_idempotencyTokenHasBeenSet;
 
                     /**
-                     * 游戏服务器会话名称
+                     * 游戏服务器会话名称，最大长度不超过1024个ASCII字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

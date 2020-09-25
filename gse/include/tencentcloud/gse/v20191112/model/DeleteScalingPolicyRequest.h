@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取策略名称
+                     * @return Name 策略名称
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param Name 名称
+                     * 设置策略名称
+                     * @param Name 策略名称
                      */
                     void SetName(const std::string& _name);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 名称
+                     * 策略名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

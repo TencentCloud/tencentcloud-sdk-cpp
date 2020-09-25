@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取状态过滤条件
-                     * @return StatusFilter 状态过滤条件
+                     * 获取状态过滤条件，取值：ACTIVE表示活跃
+                     * @return StatusFilter 状态过滤条件，取值：ACTIVE表示活跃
                      */
                     std::string GetStatusFilter() const;
 
                     /**
-                     * 设置状态过滤条件
-                     * @param StatusFilter 状态过滤条件
+                     * 设置状态过滤条件，取值：ACTIVE表示活跃
+                     * @param StatusFilter 状态过滤条件，取值：ACTIVE表示活跃
                      */
                     void SetStatusFilter(const std::string& _statusFilter);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StatusFilterHasBeenSet() const;
 
                     /**
-                     * 获取结果返回最大数量
-                     * @return Offset 结果返回最大数量
+                     * 获取返回结果偏移，最小值0
+                     * @return Offset 返回结果偏移，最小值0
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置结果返回最大数量
-                     * @param Offset 结果返回最大数量
+                     * 设置返回结果偏移，最小值0
+                     * @param Offset 返回结果偏移，最小值0
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回结果偏移
-                     * @return Limit 返回结果偏移
+                     * 获取结果返回最大数量，最小值0，最大值100
+                     * @return Limit 结果返回最大数量，最小值0，最大值100
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回结果偏移
-                     * @param Limit 返回结果偏移
+                     * 设置结果返回最大数量，最小值0，最大值100
+                     * @param Limit 结果返回最大数量，最小值0，最大值100
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -123,19 +123,19 @@ namespace TencentCloud
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 状态过滤条件
+                     * 状态过滤条件，取值：ACTIVE表示活跃
                      */
                     std::string m_statusFilter;
                     bool m_statusFilterHasBeenSet;
 
                     /**
-                     * 结果返回最大数量
+                     * 返回结果偏移，最小值0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回结果偏移
+                     * 结果返回最大数量，最小值0，最大值100
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

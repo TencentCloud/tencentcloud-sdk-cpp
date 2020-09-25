@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取录制视频生成进度（0-100，100表示视频生成完成 ）
-                     * @return Progress 录制视频生成进度（0-100，100表示视频生成完成 ）
+                     * 获取已废弃
+                     * @return Progress 已废弃
                      */
                     int64_t GetProgress() const;
 
@@ -122,8 +122,8 @@ namespace TencentCloud
                     bool TotalTimeHasBeenSet() const;
 
                     /**
-                     * 获取录制视频生成列表
-                     * @return VideoInfos 录制视频生成列表
+                     * 获取已废弃，请使用`VideoInfoList`参数
+                     * @return VideoInfos 已废弃，请使用`VideoInfoList`参数
                      */
                     VideoInfo GetVideoInfos() const;
 
@@ -132,6 +132,18 @@ namespace TencentCloud
                      * @return VideoInfos 是否已赋值
                      */
                     bool VideoInfosHasBeenSet() const;
+
+                    /**
+                     * 获取录制视频生成视频列表
+                     * @return VideoInfoList 录制视频生成视频列表
+                     */
+                    std::vector<VideoInfo> GetVideoInfoList() const;
+
+                    /**
+                     * 判断参数 VideoInfoList 是否已赋值
+                     * @return VideoInfoList 是否已赋值
+                     */
+                    bool VideoInfoListHasBeenSet() const;
 
                 private:
 
@@ -154,7 +166,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 录制视频生成进度（0-100，100表示视频生成完成 ）
+                     * 已废弃
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
@@ -175,10 +187,16 @@ namespace TencentCloud
                     bool m_totalTimeHasBeenSet;
 
                     /**
-                     * 录制视频生成列表
+                     * 已废弃，请使用`VideoInfoList`参数
                      */
                     VideoInfo m_videoInfos;
                     bool m_videoInfosHasBeenSet;
+
+                    /**
+                     * 录制视频生成视频列表
+                     */
+                    std::vector<VideoInfo> m_videoInfoList;
+                    bool m_videoInfoListHasBeenSet;
 
                 };
             }

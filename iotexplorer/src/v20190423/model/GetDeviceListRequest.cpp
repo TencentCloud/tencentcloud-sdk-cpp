@@ -26,7 +26,9 @@ using namespace std;
 GetDeviceListRequest::GetDeviceListRequest() :
     m_productIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_firmwareVersionHasBeenSet(false),
+    m_deviceNameHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string GetDeviceListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_firmwareVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FirmwareVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_firmwareVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +133,38 @@ void GetDeviceListRequest::SetLimit(const int64_t& _limit)
 bool GetDeviceListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string GetDeviceListRequest::GetFirmwareVersion() const
+{
+    return m_firmwareVersion;
+}
+
+void GetDeviceListRequest::SetFirmwareVersion(const string& _firmwareVersion)
+{
+    m_firmwareVersion = _firmwareVersion;
+    m_firmwareVersionHasBeenSet = true;
+}
+
+bool GetDeviceListRequest::FirmwareVersionHasBeenSet() const
+{
+    return m_firmwareVersionHasBeenSet;
+}
+
+string GetDeviceListRequest::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void GetDeviceListRequest::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool GetDeviceListRequest::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
 }
 
 

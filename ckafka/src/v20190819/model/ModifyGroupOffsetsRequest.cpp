@@ -30,7 +30,8 @@ ModifyGroupOffsetsRequest::ModifyGroupOffsetsRequest() :
     m_topicsHasBeenSet(false),
     m_shiftHasBeenSet(false),
     m_shiftTimestampHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_partitionsHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,19 @@ string ModifyGroupOffsetsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_partitionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Partitions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_partitions.begin(); itr != m_partitions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -220,6 +234,22 @@ void ModifyGroupOffsetsRequest::SetOffset(const int64_t& _offset)
 bool ModifyGroupOffsetsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+vector<int64_t> ModifyGroupOffsetsRequest::GetPartitions() const
+{
+    return m_partitions;
+}
+
+void ModifyGroupOffsetsRequest::SetPartitions(const vector<int64_t>& _partitions)
+{
+    m_partitions = _partitions;
+    m_partitionsHasBeenSet = true;
+}
+
+bool ModifyGroupOffsetsRequest::PartitionsHasBeenSet() const
+{
+    return m_partitionsHasBeenSet;
 }
 
 

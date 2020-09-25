@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取待删除对象实例的唯一id列表
-                     * @return UniqueId 待删除对象实例的唯一id列表
+                     * 获取待删除对象实例的唯一id列表，UniqueId从调用[获取已绑定对象列表接口](https://cloud.tencent.com/document/api/248/40570)的出参的List中得到
+                     * @return UniqueId 待删除对象实例的唯一id列表，UniqueId从调用[获取已绑定对象列表接口](https://cloud.tencent.com/document/api/248/40570)的出参的List中得到
                      */
                     std::vector<std::string> GetUniqueId() const;
 
                     /**
-                     * 设置待删除对象实例的唯一id列表
-                     * @param UniqueId 待删除对象实例的唯一id列表
+                     * 设置待删除对象实例的唯一id列表，UniqueId从调用[获取已绑定对象列表接口](https://cloud.tencent.com/document/api/248/40570)的出参的List中得到
+                     * @param UniqueId 待删除对象实例的唯一id列表，UniqueId从调用[获取已绑定对象列表接口](https://cloud.tencent.com/document/api/248/40570)的出参的List中得到
                      */
                     void SetUniqueId(const std::vector<std::string>& _uniqueId);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 待删除对象实例的唯一id列表
+                     * 待删除对象实例的唯一id列表，UniqueId从调用[获取已绑定对象列表接口](https://cloud.tencent.com/document/api/248/40570)的出参的List中得到
                      */
                     std::vector<std::string> m_uniqueId;
                     bool m_uniqueIdHasBeenSet;
