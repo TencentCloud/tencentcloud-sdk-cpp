@@ -247,14 +247,14 @@ namespace TencentCloud
                     bool SessionTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
-                     * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭
+                     * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭
                      */
                     int64_t GetKeepaliveEnable() const;
 
                     /**
-                     * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
-                     * @param KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭
+                     * @param KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭
                      */
                     void SetKeepaliveEnable(const int64_t& _keepaliveEnable);
 
@@ -334,7 +334,7 @@ namespace TencentCloud
                     bool m_sessionTypeHasBeenSet;
 
                     /**
-                     * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭
                      */
                     int64_t m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;

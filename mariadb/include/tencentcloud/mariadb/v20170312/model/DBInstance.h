@@ -914,6 +914,72 @@ namespace TencentCloud
                      */
                     bool DbVersionHasBeenSet() const;
 
+                    /**
+                     * 获取DCN标志，0-无，1-主实例，2-灾备实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DcnFlag DCN标志，0-无，1-主实例，2-灾备实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDcnFlag() const;
+
+                    /**
+                     * 设置DCN标志，0-无，1-主实例，2-灾备实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DcnFlag DCN标志，0-无，1-主实例，2-灾备实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDcnFlag(const int64_t& _dcnFlag);
+
+                    /**
+                     * 判断参数 DcnFlag 是否已赋值
+                     * @return DcnFlag 是否已赋值
+                     */
+                    bool DcnFlagHasBeenSet() const;
+
+                    /**
+                     * 获取DCN状态，0-无，1-创建中，2-同步中，3-已断开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DcnStatus DCN状态，0-无，1-创建中，2-同步中，3-已断开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDcnStatus() const;
+
+                    /**
+                     * 设置DCN状态，0-无，1-创建中，2-同步中，3-已断开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DcnStatus DCN状态，0-无，1-创建中，2-同步中，3-已断开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDcnStatus(const int64_t& _dcnStatus);
+
+                    /**
+                     * 判断参数 DcnStatus 是否已赋值
+                     * @return DcnStatus 是否已赋值
+                     */
+                    bool DcnStatusHasBeenSet() const;
+
+                    /**
+                     * 获取DCN灾备实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DcnDstNum DCN灾备实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDcnDstNum() const;
+
+                    /**
+                     * 设置DCN灾备实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DcnDstNum DCN灾备实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDcnDstNum(const int64_t& _dcnDstNum);
+
+                    /**
+                     * 判断参数 DcnDstNum 是否已赋值
+                     * @return DcnDstNum 是否已赋值
+                     */
+                    bool DcnDstNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1201,6 +1267,27 @@ namespace TencentCloud
                      */
                     std::string m_dbVersion;
                     bool m_dbVersionHasBeenSet;
+
+                    /**
+                     * DCN标志，0-无，1-主实例，2-灾备实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dcnFlag;
+                    bool m_dcnFlagHasBeenSet;
+
+                    /**
+                     * DCN状态，0-无，1-创建中，2-同步中，3-已断开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dcnStatus;
+                    bool m_dcnStatusHasBeenSet;
+
+                    /**
+                     * DCN灾备实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dcnDstNum;
+                    bool m_dcnDstNumHasBeenSet;
 
                 };
             }

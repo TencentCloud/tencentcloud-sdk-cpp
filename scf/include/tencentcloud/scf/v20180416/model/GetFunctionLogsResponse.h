@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取日志服务分页参数
-                     * @return SearchContext 日志服务分页参数
+                     * 获取该字段已下线
+                     * @return SearchContext 该字段已下线
                      */
                     LogSearchContext GetSearchContext() const;
 
@@ -95,7 +95,7 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 日志服务分页参数
+                     * 该字段已下线
                      */
                     LogSearchContext m_searchContext;
                     bool m_searchContextHasBeenSet;

@@ -65,7 +65,10 @@ DCDBInstanceInfo::DCDBInstanceInfo() :
     m_vipv6HasBeenSet(false),
     m_wanVipv6HasBeenSet(false),
     m_wanPortIpv6HasBeenSet(false),
-    m_wanStatusIpv6HasBeenSet(false)
+    m_wanStatusIpv6HasBeenSet(false),
+    m_dcnFlagHasBeenSet(false),
+    m_dcnStatusHasBeenSet(false),
+    m_dcnDstNumHasBeenSet(false)
 {
 }
 
@@ -524,6 +527,36 @@ CoreInternalOutcome DCDBInstanceInfo::Deserialize(const Value &value)
         m_wanStatusIpv6HasBeenSet = true;
     }
 
+    if (value.HasMember("DcnFlag") && !value["DcnFlag"].IsNull())
+    {
+        if (!value["DcnFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DCDBInstanceInfo.DcnFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dcnFlag = value["DcnFlag"].GetInt64();
+        m_dcnFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("DcnStatus") && !value["DcnStatus"].IsNull())
+    {
+        if (!value["DcnStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DCDBInstanceInfo.DcnStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dcnStatus = value["DcnStatus"].GetInt64();
+        m_dcnStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DcnDstNum") && !value["DcnDstNum"].IsNull())
+    {
+        if (!value["DcnDstNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DCDBInstanceInfo.DcnDstNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dcnDstNum = value["DcnDstNum"].GetInt64();
+        m_dcnDstNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -888,6 +921,30 @@ void DCDBInstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "WanStatusIpv6";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wanStatusIpv6, allocator);
+    }
+
+    if (m_dcnFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DcnFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dcnFlag, allocator);
+    }
+
+    if (m_dcnStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DcnStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dcnStatus, allocator);
+    }
+
+    if (m_dcnDstNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DcnDstNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dcnDstNum, allocator);
     }
 
 }
@@ -1595,5 +1652,53 @@ void DCDBInstanceInfo::SetWanStatusIpv6(const uint64_t& _wanStatusIpv6)
 bool DCDBInstanceInfo::WanStatusIpv6HasBeenSet() const
 {
     return m_wanStatusIpv6HasBeenSet;
+}
+
+int64_t DCDBInstanceInfo::GetDcnFlag() const
+{
+    return m_dcnFlag;
+}
+
+void DCDBInstanceInfo::SetDcnFlag(const int64_t& _dcnFlag)
+{
+    m_dcnFlag = _dcnFlag;
+    m_dcnFlagHasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::DcnFlagHasBeenSet() const
+{
+    return m_dcnFlagHasBeenSet;
+}
+
+int64_t DCDBInstanceInfo::GetDcnStatus() const
+{
+    return m_dcnStatus;
+}
+
+void DCDBInstanceInfo::SetDcnStatus(const int64_t& _dcnStatus)
+{
+    m_dcnStatus = _dcnStatus;
+    m_dcnStatusHasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::DcnStatusHasBeenSet() const
+{
+    return m_dcnStatusHasBeenSet;
+}
+
+int64_t DCDBInstanceInfo::GetDcnDstNum() const
+{
+    return m_dcnDstNum;
+}
+
+void DCDBInstanceInfo::SetDcnDstNum(const int64_t& _dcnDstNum)
+{
+    m_dcnDstNum = _dcnDstNum;
+    m_dcnDstNumHasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::DcnDstNumHasBeenSet() const
+{
+    return m_dcnDstNumHasBeenSet;
 }
 

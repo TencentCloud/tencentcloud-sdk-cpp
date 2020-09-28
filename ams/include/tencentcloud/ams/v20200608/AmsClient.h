@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ams/v20200608/model/CancelTaskRequest.h>
+#include <tencentcloud/ams/v20200608/model/CancelTaskResponse.h>
 #include <tencentcloud/ams/v20200608/model/CreateAudioModerationTaskRequest.h>
 #include <tencentcloud/ams/v20200608/model/CreateAudioModerationTaskResponse.h>
 #include <tencentcloud/ams/v20200608/model/CreateBizConfigRequest.h>
@@ -45,6 +47,9 @@ namespace TencentCloud
                 AmsClient(const Credential &credential, const std::string &region);
                 AmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CancelTaskResponse> CancelTaskOutcome;
+                typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
+                typedef std::function<void(const AmsClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateAudioModerationTaskResponse> CreateAudioModerationTaskOutcome;
                 typedef std::future<CreateAudioModerationTaskOutcome> CreateAudioModerationTaskOutcomeCallable;
                 typedef std::function<void(const AmsClient*, const Model::CreateAudioModerationTaskRequest&, CreateAudioModerationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAudioModerationTaskAsyncHandler;
@@ -59,6 +64,15 @@ namespace TencentCloud
                 typedef std::function<void(const AmsClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
 
 
+
+                /**
+                 *取消任务
+                 * @param req CancelTaskRequest
+                 * @return CancelTaskOutcome
+                 */
+                CancelTaskOutcome CancelTask(const Model::CancelTaskRequest &request);
+                void CancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelTaskOutcomeCallable CancelTaskCallable(const Model::CancelTaskRequest& request);
 
                 /**
                  *本接口（Audio Moderation）用于提交音频内容（包括音频文件或流地址）进行智能审核任务，使用前请您登陆控制台开通音频内容安全服务。
@@ -96,7 +110,7 @@ namespace TencentCloud
                  *创建业务配置，1个账号最多可以创建20个配置，可定义音频审核的场景，如色情、谩骂等，
 
 在创建业务配置之前，你需要以下步骤：
-1. 开通COS存储捅功能，新建存储桶，例如 cms_segments，用来存储 视频转换过程中生成对音频和图片。
+1. 开通COS存储桶功能，新建存储桶，例如 cms_segments，用来存储 视频转换过程中生成对音频和图片。
 2. 然后在COS控制台，授权天御内容安全主账号 对 cms_segments 存储桶对读写权限。具体授权操作，参考https://cloud.tencent.com/document/product/436/38648
 
                  * @param req CreateBizConfigRequest

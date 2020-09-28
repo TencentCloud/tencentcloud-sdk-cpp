@@ -67,7 +67,10 @@ DBInstance::DBInstance() :
     m_wanPortIpv6HasBeenSet(false),
     m_wanStatusIpv6HasBeenSet(false),
     m_dbEngineHasBeenSet(false),
-    m_dbVersionHasBeenSet(false)
+    m_dbVersionHasBeenSet(false),
+    m_dcnFlagHasBeenSet(false),
+    m_dcnStatusHasBeenSet(false),
+    m_dcnDstNumHasBeenSet(false)
 {
 }
 
@@ -536,6 +539,36 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_dbVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("DcnFlag") && !value["DcnFlag"].IsNull())
+    {
+        if (!value["DcnFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.DcnFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dcnFlag = value["DcnFlag"].GetInt64();
+        m_dcnFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("DcnStatus") && !value["DcnStatus"].IsNull())
+    {
+        if (!value["DcnStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.DcnStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dcnStatus = value["DcnStatus"].GetInt64();
+        m_dcnStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DcnDstNum") && !value["DcnDstNum"].IsNull())
+    {
+        if (!value["DcnDstNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.DcnDstNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dcnDstNum = value["DcnDstNum"].GetInt64();
+        m_dcnDstNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -909,6 +942,30 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "DbVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_dbVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dcnFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DcnFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dcnFlag, allocator);
+    }
+
+    if (m_dcnStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DcnStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dcnStatus, allocator);
+    }
+
+    if (m_dcnDstNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DcnDstNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dcnDstNum, allocator);
     }
 
 }
@@ -1648,5 +1705,53 @@ void DBInstance::SetDbVersion(const string& _dbVersion)
 bool DBInstance::DbVersionHasBeenSet() const
 {
     return m_dbVersionHasBeenSet;
+}
+
+int64_t DBInstance::GetDcnFlag() const
+{
+    return m_dcnFlag;
+}
+
+void DBInstance::SetDcnFlag(const int64_t& _dcnFlag)
+{
+    m_dcnFlag = _dcnFlag;
+    m_dcnFlagHasBeenSet = true;
+}
+
+bool DBInstance::DcnFlagHasBeenSet() const
+{
+    return m_dcnFlagHasBeenSet;
+}
+
+int64_t DBInstance::GetDcnStatus() const
+{
+    return m_dcnStatus;
+}
+
+void DBInstance::SetDcnStatus(const int64_t& _dcnStatus)
+{
+    m_dcnStatus = _dcnStatus;
+    m_dcnStatusHasBeenSet = true;
+}
+
+bool DBInstance::DcnStatusHasBeenSet() const
+{
+    return m_dcnStatusHasBeenSet;
+}
+
+int64_t DBInstance::GetDcnDstNum() const
+{
+    return m_dcnDstNum;
+}
+
+void DBInstance::SetDcnDstNum(const int64_t& _dcnDstNum)
+{
+    m_dcnDstNum = _dcnDstNum;
+    m_dcnDstNumHasBeenSet = true;
+}
+
+bool DBInstance::DcnDstNumHasBeenSet() const
+{
+    return m_dcnDstNumHasBeenSet;
 }
 

@@ -38,7 +38,8 @@ DescribeDCDBInstancesRequest::DescribeDCDBInstancesRequest() :
     m_exclusterTypeHasBeenSet(false),
     m_isFilterExclusterHasBeenSet(false),
     m_exclusterIdsHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
+    m_tagKeysHasBeenSet(false),
+    m_filterInstanceTypeHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,14 @@ string DescribeDCDBInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_filterInstanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FilterInstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_filterInstanceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -435,6 +444,22 @@ void DescribeDCDBInstancesRequest::SetTagKeys(const vector<string>& _tagKeys)
 bool DescribeDCDBInstancesRequest::TagKeysHasBeenSet() const
 {
     return m_tagKeysHasBeenSet;
+}
+
+string DescribeDCDBInstancesRequest::GetFilterInstanceType() const
+{
+    return m_filterInstanceType;
+}
+
+void DescribeDCDBInstancesRequest::SetFilterInstanceType(const string& _filterInstanceType)
+{
+    m_filterInstanceType = _filterInstanceType;
+    m_filterInstanceTypeHasBeenSet = true;
+}
+
+bool DescribeDCDBInstancesRequest::FilterInstanceTypeHasBeenSet() const
+{
+    return m_filterInstanceTypeHasBeenSet;
 }
 
 

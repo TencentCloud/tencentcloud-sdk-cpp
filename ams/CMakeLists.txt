@@ -27,6 +27,7 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20200608/model/CreateBizConfigRequest.h
   include/tencentcloud/ams/v20200608/model/DescribeBizConfigRequest.h
   include/tencentcloud/ams/v20200608/model/TaskResult.h
+  include/tencentcloud/ams/v20200608/model/CancelTaskRequest.h
   include/tencentcloud/ams/v20200608/model/DescribeTaskDetailResponse.h
   include/tencentcloud/ams/v20200608/model/CreateAudioModerationTaskRequest.h
   include/tencentcloud/ams/v20200608/model/CreateBizConfigResponse.h
@@ -37,6 +38,7 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20200608/model/InputInfo.h
   include/tencentcloud/ams/v20200608/model/AudioResultDetailLanguageResult.h
   include/tencentcloud/ams/v20200608/model/FileOutput.h
+  include/tencentcloud/ams/v20200608/model/CancelTaskResponse.h
   include/tencentcloud/ams/v20200608/model/AudioResultDetailTextResult.h
   include/tencentcloud/ams/v20200608/model/AudioResult.h
   include/tencentcloud/ams/v20200608/model/AudioResultDetailMoanResult.h
@@ -58,6 +60,7 @@ set(ams_src
   src/v20200608/model/CreateBizConfigRequest.cpp
   src/v20200608/model/DescribeBizConfigRequest.cpp
   src/v20200608/model/TaskResult.cpp
+  src/v20200608/model/CancelTaskRequest.cpp
   src/v20200608/model/DescribeTaskDetailResponse.cpp
   src/v20200608/model/CreateAudioModerationTaskRequest.cpp
   src/v20200608/model/CreateBizConfigResponse.cpp
@@ -68,6 +71,7 @@ set(ams_src
   src/v20200608/model/InputInfo.cpp
   src/v20200608/model/AudioResultDetailLanguageResult.cpp
   src/v20200608/model/FileOutput.cpp
+  src/v20200608/model/CancelTaskResponse.cpp
   src/v20200608/model/AudioResultDetailTextResult.cpp
   src/v20200608/model/AudioResult.cpp
   src/v20200608/model/AudioResultDetailMoanResult.cpp

@@ -25,7 +25,8 @@ DeviceDiskInfo::DeviceDiskInfo() :
     m_ioRatioPerSecHasBeenSet(false),
     m_ioWaitTimeHasBeenSet(false),
     m_readHasBeenSet(false),
-    m_writeHasBeenSet(false)
+    m_writeHasBeenSet(false),
+    m_capacityRatioHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,19 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const Value &value)
         m_writeHasBeenSet = true;
     }
 
+    if (value.HasMember("CapacityRatio") && !value["CapacityRatio"].IsNull())
+    {
+        if (!value["CapacityRatio"].IsArray())
+            return CoreInternalOutcome(Error("response `DeviceDiskInfo.CapacityRatio` is not array type"));
+
+        const Value &tmpValue = value["CapacityRatio"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_capacityRatio.push_back((*itr).GetInt64());
+        }
+        m_capacityRatioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -140,6 +154,19 @@ void DeviceDiskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         value.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_write.begin(); itr != m_write.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_capacityRatioHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CapacityRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_capacityRatio.begin(); itr != m_capacityRatio.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
         }
@@ -210,5 +237,21 @@ void DeviceDiskInfo::SetWrite(const vector<int64_t>& _write)
 bool DeviceDiskInfo::WriteHasBeenSet() const
 {
     return m_writeHasBeenSet;
+}
+
+vector<int64_t> DeviceDiskInfo::GetCapacityRatio() const
+{
+    return m_capacityRatio;
+}
+
+void DeviceDiskInfo::SetCapacityRatio(const vector<int64_t>& _capacityRatio)
+{
+    m_capacityRatio = _capacityRatio;
+    m_capacityRatioHasBeenSet = true;
+}
+
+bool DeviceDiskInfo::CapacityRatioHasBeenSet() const
+{
+    return m_capacityRatioHasBeenSet;
 }
 

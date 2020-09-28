@@ -75,6 +75,8 @@
 #include <tencentcloud/tsf/v20180326/model/DeleteRepositoryResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteServerlessGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteServerlessGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteTaskRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeployContainerGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeployContainerGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeployGroupRequest.h>
@@ -293,6 +295,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteServerlessGroupResponse> DeleteServerlessGroupOutcome;
                 typedef std::future<DeleteServerlessGroupOutcome> DeleteServerlessGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteServerlessGroupRequest&, DeleteServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServerlessGroupAsyncHandler;
+                typedef Outcome<Error, Model::DeleteTaskResponse> DeleteTaskOutcome;
+                typedef std::future<DeleteTaskOutcome> DeleteTaskOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DeleteTaskRequest&, DeleteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTaskAsyncHandler;
                 typedef Outcome<Error, Model::DeployContainerGroupResponse> DeployContainerGroupOutcome;
                 typedef std::future<DeployContainerGroupOutcome> DeployContainerGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeployContainerGroupRequest&, DeployContainerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployContainerGroupAsyncHandler;
@@ -719,6 +724,15 @@ namespace TencentCloud
                 DeleteServerlessGroupOutcome DeleteServerlessGroup(const Model::DeleteServerlessGroupRequest &request);
                 void DeleteServerlessGroupAsync(const Model::DeleteServerlessGroupRequest& request, const DeleteServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteServerlessGroupOutcomeCallable DeleteServerlessGroupCallable(const Model::DeleteServerlessGroupRequest& request);
+
+                /**
+                 *删除任务
+                 * @param req DeleteTaskRequest
+                 * @return DeleteTaskOutcome
+                 */
+                DeleteTaskOutcome DeleteTask(const Model::DeleteTaskRequest &request);
+                void DeleteTaskAsync(const Model::DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTaskOutcomeCallable DeleteTaskCallable(const Model::DeleteTaskRequest& request);
 
                 /**
                  *部署容器应用

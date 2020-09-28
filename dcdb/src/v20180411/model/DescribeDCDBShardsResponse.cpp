@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeDCDBShardsResponse::DescribeDCDBShardsResponse() :
     m_totalCountHasBeenSet(false),
-    m_shardsHasBeenSet(false)
+    m_shardsHasBeenSet(false),
+    m_dcnFlagHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeDCDBShardsResponse::Deserialize(const string &payloa
         m_shardsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DcnFlag") && !rsp["DcnFlag"].IsNull())
+    {
+        if (!rsp["DcnFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DcnFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dcnFlag = rsp["DcnFlag"].GetInt64();
+        m_dcnFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,16 @@ vector<DCDBShardInfo> DescribeDCDBShardsResponse::GetShards() const
 bool DescribeDCDBShardsResponse::ShardsHasBeenSet() const
 {
     return m_shardsHasBeenSet;
+}
+
+int64_t DescribeDCDBShardsResponse::GetDcnFlag() const
+{
+    return m_dcnFlag;
+}
+
+bool DescribeDCDBShardsResponse::DcnFlagHasBeenSet() const
+{
+    return m_dcnFlagHasBeenSet;
 }
 
 

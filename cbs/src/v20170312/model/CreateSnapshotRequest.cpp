@@ -25,7 +25,8 @@ using namespace std;
 
 CreateSnapshotRequest::CreateSnapshotRequest() :
     m_diskIdHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false)
+    m_snapshotNameHasBeenSet(false),
+    m_deadlineHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateSnapshotRequest::ToJsonString() const
         string key = "SnapshotName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_snapshotName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deadlineHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deadline.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateSnapshotRequest::SetSnapshotName(const string& _snapshotName)
 bool CreateSnapshotRequest::SnapshotNameHasBeenSet() const
 {
     return m_snapshotNameHasBeenSet;
+}
+
+string CreateSnapshotRequest::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void CreateSnapshotRequest::SetDeadline(const string& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool CreateSnapshotRequest::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
 }
 
 

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取包月带宽起始时间
-                     * @return StartTime 包月带宽起始时间
+                     * 获取包月带宽起始时间(已废弃，输入无效)
+                     * @return StartTime 包月带宽起始时间(已废弃，输入无效)
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置包月带宽起始时间
-                     * @param StartTime 包月带宽起始时间
+                     * 设置包月带宽起始时间(已废弃，输入无效)
+                     * @param StartTime 包月带宽起始时间(已废弃，输入无效)
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取包月带宽结束时间
-                     * @return EndTime 包月带宽结束时间
+                     * 获取包月带宽结束时间(已废弃，输入无效)
+                     * @return EndTime 包月带宽结束时间(已废弃，输入无效)
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置包月带宽结束时间
-                     * @param EndTime 包月带宽结束时间
+                     * 设置包月带宽结束时间(已废弃，输入无效)
+                     * @param EndTime 包月带宽结束时间(已废弃，输入无效)
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -129,13 +129,13 @@ namespace TencentCloud
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * 包月带宽起始时间
+                     * 包月带宽起始时间(已废弃，输入无效)
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 包月带宽结束时间
+                     * 包月带宽结束时间(已废弃，输入无效)
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

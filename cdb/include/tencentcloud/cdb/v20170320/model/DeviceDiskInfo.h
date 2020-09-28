@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool WriteHasBeenSet() const;
 
+                    /**
+                     * 获取磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量
+                     * @return CapacityRatio 磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量
+                     */
+                    std::vector<int64_t> GetCapacityRatio() const;
+
+                    /**
+                     * 设置磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量
+                     * @param CapacityRatio 磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量
+                     */
+                    void SetCapacityRatio(const std::vector<int64_t>& _capacityRatio);
+
+                    /**
+                     * 判断参数 CapacityRatio 是否已赋值
+                     * @return CapacityRatio 是否已赋值
+                     */
+                    bool CapacityRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_write;
                     bool m_writeHasBeenSet;
+
+                    /**
+                     * 磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量
+                     */
+                    std::vector<int64_t> m_capacityRatio;
+                    bool m_capacityRatioHasBeenSet;
 
                 };
             }

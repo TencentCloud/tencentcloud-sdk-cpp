@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始端口号
-                     * @return FromPort 起始端口号
+                     * 获取起始端口号，最小值1025
+                     * @return FromPort 起始端口号，最小值1025
                      */
                     uint64_t GetFromPort() const;
 
                     /**
-                     * 设置起始端口号
-                     * @param FromPort 起始端口号
+                     * 设置起始端口号，最小值1025
+                     * @param FromPort 起始端口号，最小值1025
                      */
                     void SetFromPort(const uint64_t& _fromPort);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取终止端口号
-                     * @return ToPort 终止端口号
+                     * 获取终止端口号，最大值60000
+                     * @return ToPort 终止端口号，最大值60000
                      */
                     uint64_t GetToPort() const;
 
                     /**
-                     * 设置终止端口号
-                     * @param ToPort 终止端口号
+                     * 设置终止端口号，最大值60000
+                     * @param ToPort 终止端口号，最大值60000
                      */
                     void SetToPort(const uint64_t& _toPort);
 
@@ -121,7 +121,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始端口号
+                     * 起始端口号，最小值1025
                      */
                     uint64_t m_fromPort;
                     bool m_fromPortHasBeenSet;
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 终止端口号
+                     * 终止端口号，最大值60000
                      */
                     uint64_t m_toPort;
                     bool m_toPortHasBeenSet;

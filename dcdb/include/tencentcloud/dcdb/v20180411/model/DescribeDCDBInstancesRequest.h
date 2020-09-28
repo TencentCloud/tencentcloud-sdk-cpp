@@ -312,6 +312,24 @@ namespace TencentCloud
                      */
                     bool TagKeysHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型过滤，1-独享实例，2-主实例，3-灾备实例，多个按逗号分隔
+                     * @return FilterInstanceType 实例类型过滤，1-独享实例，2-主实例，3-灾备实例，多个按逗号分隔
+                     */
+                    std::string GetFilterInstanceType() const;
+
+                    /**
+                     * 设置实例类型过滤，1-独享实例，2-主实例，3-灾备实例，多个按逗号分隔
+                     * @param FilterInstanceType 实例类型过滤，1-独享实例，2-主实例，3-灾备实例，多个按逗号分隔
+                     */
+                    void SetFilterInstanceType(const std::string& _filterInstanceType);
+
+                    /**
+                     * 判断参数 FilterInstanceType 是否已赋值
+                     * @return FilterInstanceType 是否已赋值
+                     */
+                    bool FilterInstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,6 +421,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
+
+                    /**
+                     * 实例类型过滤，1-独享实例，2-主实例，3-灾备实例，多个按逗号分隔
+                     */
+                    std::string m_filterInstanceType;
+                    bool m_filterInstanceTypeHasBeenSet;
 
                 };
             }

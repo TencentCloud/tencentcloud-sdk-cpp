@@ -39,7 +39,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_isFilterExclusterHasBeenSet(false),
     m_exclusterTypeHasBeenSet(false),
     m_exclusterIdsHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
+    m_tagKeysHasBeenSet(false),
+    m_filterInstanceTypeHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,14 @@ string DescribeDBInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_filterInstanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FilterInstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_filterInstanceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -465,6 +474,22 @@ void DescribeDBInstancesRequest::SetTagKeys(const vector<string>& _tagKeys)
 bool DescribeDBInstancesRequest::TagKeysHasBeenSet() const
 {
     return m_tagKeysHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetFilterInstanceType() const
+{
+    return m_filterInstanceType;
+}
+
+void DescribeDBInstancesRequest::SetFilterInstanceType(const string& _filterInstanceType)
+{
+    m_filterInstanceType = _filterInstanceType;
+    m_filterInstanceTypeHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::FilterInstanceTypeHasBeenSet() const
+{
+    return m_filterInstanceTypeHasBeenSet;
 }
 
 

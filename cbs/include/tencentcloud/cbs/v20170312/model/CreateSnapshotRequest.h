@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool SnapshotNameHasBeenSet() const;
 
+                    /**
+                     * 获取快照的到期时间，到期后该快照将会自动删除
+                     * @return Deadline 快照的到期时间，到期后该快照将会自动删除
+                     */
+                    std::string GetDeadline() const;
+
+                    /**
+                     * 设置快照的到期时间，到期后该快照将会自动删除
+                     * @param Deadline 快照的到期时间，到期后该快照将会自动删除
+                     */
+                    void SetDeadline(const std::string& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     */
+                    bool DeadlineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;
+
+                    /**
+                     * 快照的到期时间，到期后该快照将会自动删除
+                     */
+                    std::string m_deadline;
+                    bool m_deadlineHasBeenSet;
 
                 };
             }

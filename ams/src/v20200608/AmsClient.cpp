@@ -40,6 +40,49 @@ AmsClient::AmsClient(const Credential &credential, const string &region, const C
 }
 
 
+AmsClient::CancelTaskOutcome AmsClient::CancelTask(const CancelTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelTaskResponse rsp = CancelTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelTaskOutcome(rsp);
+        else
+            return CancelTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelTaskOutcome(outcome.GetError());
+    }
+}
+
+void AmsClient::CancelTaskAsync(const CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmsClient::CancelTaskOutcomeCallable AmsClient::CancelTaskCallable(const CancelTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmsClient::CreateAudioModerationTaskOutcome AmsClient::CreateAudioModerationTask(const CreateAudioModerationTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAudioModerationTask");

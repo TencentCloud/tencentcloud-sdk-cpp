@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool VideoBitrateHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。
-                     * @return VideoFramerate 混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。
+                     * 获取混流-输出流帧率，音视频输出时必填。取值范围[1,60]。
+                     * @return VideoFramerate 混流-输出流帧率，音视频输出时必填。取值范围[1,60]。
                      */
                     uint64_t GetVideoFramerate() const;
 
                     /**
-                     * 设置混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。
-                     * @param VideoFramerate 混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。
+                     * 设置混流-输出流帧率，音视频输出时必填。取值范围[1,60]。
+                     * @param VideoFramerate 混流-输出流帧率，音视频输出时必填。取值范围[1,60]。
                      */
                     void SetVideoFramerate(const uint64_t& _videoFramerate);
 
@@ -265,7 +265,7 @@ namespace TencentCloud
                     bool m_videoBitrateHasBeenSet;
 
                     /**
-                     * 混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。
+                     * 混流-输出流帧率，音视频输出时必填。取值范围[1,60]。
                      */
                     uint64_t m_videoFramerate;
                     bool m_videoFramerateHasBeenSet;

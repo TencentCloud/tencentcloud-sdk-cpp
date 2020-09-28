@@ -243,14 +243,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写
-                     * @return SearchContext 服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写
+                     * 获取该字段已下线
+                     * @return SearchContext 该字段已下线
                      */
                     LogSearchContext GetSearchContext() const;
 
                     /**
-                     * 设置服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写
-                     * @param SearchContext 服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写
+                     * 设置该字段已下线
+                     * @param SearchContext 该字段已下线
                      */
                     void SetSearchContext(const LogSearchContext& _searchContext);
 
@@ -329,7 +329,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写
+                     * 该字段已下线
                      */
                     LogSearchContext m_searchContext;
                     bool m_searchContextHasBeenSet;

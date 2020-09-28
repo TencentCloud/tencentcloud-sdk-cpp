@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
-                     * 获取快照的保留时间，FALSE表示非永久保留，TRUE表示永久保留。仅支持将非永久快照修改为永久快照。
-                     * @return IsPermanent 快照的保留时间，FALSE表示非永久保留，TRUE表示永久保留。仅支持将非永久快照修改为永久快照。
+                     * 获取快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
+                     * @return IsPermanent 快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
                      */
                     bool GetIsPermanent() const;
 
                     /**
-                     * 设置快照的保留时间，FALSE表示非永久保留，TRUE表示永久保留。仅支持将非永久快照修改为永久快照。
-                     * @param IsPermanent 快照的保留时间，FALSE表示非永久保留，TRUE表示永久保留。仅支持将非永久快照修改为永久快照。
+                     * 设置快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
+                     * @param IsPermanent 快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
                      */
                     void SetIsPermanent(const bool& _isPermanent);
 
@@ -95,6 +95,24 @@ namespace TencentCloud
                      * @return IsPermanent 是否已赋值
                      */
                     bool IsPermanentHasBeenSet() const;
+
+                    /**
+                     * 获取快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     * @return Deadline 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     */
+                    std::string GetDeadline() const;
+
+                    /**
+                     * 设置快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     * @param Deadline 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     */
+                    void SetDeadline(const std::string& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     */
+                    bool DeadlineHasBeenSet() const;
 
                 private:
 
@@ -111,10 +129,16 @@ namespace TencentCloud
                     bool m_snapshotNameHasBeenSet;
 
                     /**
-                     * 快照的保留时间，FALSE表示非永久保留，TRUE表示永久保留。仅支持将非永久快照修改为永久快照。
+                     * 快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
                      */
                     bool m_isPermanent;
                     bool m_isPermanentHasBeenSet;
+
+                    /**
+                     * 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     */
+                    std::string m_deadline;
+                    bool m_deadlineHasBeenSet;
 
                 };
             }

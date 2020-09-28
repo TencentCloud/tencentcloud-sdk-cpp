@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取域名信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainInfo 域名信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DomainInfo GetDomainInfo() const;
 
@@ -59,6 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 域名信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DomainInfo m_domainInfo;
                     bool m_domainInfoHasBeenSet;

@@ -141,6 +141,36 @@ blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
                      */
                     bool FilterTypeHasBeenSet() const;
 
+                    /**
+                     * 获取时间戳进制设置
+dec：十进制
+hex：十六进制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeFormat 时间戳进制设置
+dec：十进制
+hex：十六进制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTimeFormat() const;
+
+                    /**
+                     * 设置时间戳进制设置
+dec：十进制
+hex：十六进制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TimeFormat 时间戳进制设置
+dec：十进制
+hex：十六进制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTimeFormat(const std::string& _timeFormat);
+
+                    /**
+                     * 判断参数 TimeFormat 是否已赋值
+                     * @return TimeFormat 是否已赋值
+                     */
+                    bool TimeFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,6 +201,15 @@ blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
                      */
                     std::string m_filterType;
                     bool m_filterTypeHasBeenSet;
+
+                    /**
+                     * 时间戳进制设置
+dec：十进制
+hex：十六进制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_timeFormat;
+                    bool m_timeFormatHasBeenSet;
 
                 };
             }

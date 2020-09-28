@@ -1158,6 +1158,49 @@ TsfClient::DeleteServerlessGroupOutcomeCallable TsfClient::DeleteServerlessGroup
     return task->get_future();
 }
 
+TsfClient::DeleteTaskOutcome TsfClient::DeleteTask(const DeleteTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTaskResponse rsp = DeleteTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTaskOutcome(rsp);
+        else
+            return DeleteTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTaskOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteTaskAsync(const DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteTaskOutcomeCallable TsfClient::DeleteTaskCallable(const DeleteTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeployContainerGroupOutcome TsfClient::DeployContainerGroup(const DeployContainerGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeployContainerGroup");

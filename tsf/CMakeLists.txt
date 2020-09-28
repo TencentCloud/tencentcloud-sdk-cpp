@@ -30,6 +30,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeClusterInstancesResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeMicroserviceRequest.h
   include/tencentcloud/tsf/v20180326/model/CosCredentials.h
+  include/tencentcloud/tsf/v20180326/model/HealthCheckSetting.h
   include/tencentcloud/tsf/v20180326/model/DescribeContainerGroupsRequest.h
   include/tencentcloud/tsf/v20180326/model/ExpandGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/DeleteServerlessGroupRequest.h
@@ -58,7 +59,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeContainerGroupDetailResponse.h
   include/tencentcloud/tsf/v20180326/model/SimpleApplication.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigSummaryResponse.h
-  include/tencentcloud/tsf/v20180326/model/HealthCheckSetting.h
+  include/tencentcloud/tsf/v20180326/model/DescribeLaneRulesRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeSimpleApplicationsResponse.h
   include/tencentcloud/tsf/v20180326/model/DeleteRepositoryResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigReleaseLogsRequest.h
@@ -140,6 +141,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/StartContainerGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/DeleteConfigRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigReleaseLogsResponse.h
+  include/tencentcloud/tsf/v20180326/model/DeleteTaskRequest.h
   include/tencentcloud/tsf/v20180326/model/HealthCheckSettings.h
   include/tencentcloud/tsf/v20180326/model/ServiceSetting.h
   include/tencentcloud/tsf/v20180326/model/ApiResponseDescr.h
@@ -229,7 +231,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/SimpleGroup.h
   include/tencentcloud/tsf/v20180326/model/DeleteNamespaceRequest.h
   include/tencentcloud/tsf/v20180326/model/PkgBind.h
-  include/tencentcloud/tsf/v20180326/model/DescribeLaneRulesRequest.h
+  include/tencentcloud/tsf/v20180326/model/DeleteTaskResponse.h
   include/tencentcloud/tsf/v20180326/model/DeployGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/LaneInfos.h
   include/tencentcloud/tsf/v20180326/model/CreateServerlessGroupRequest.h
@@ -279,6 +281,7 @@ set(tsf_src
   src/v20180326/model/DescribeClusterInstancesResponse.cpp
   src/v20180326/model/DescribeMicroserviceRequest.cpp
   src/v20180326/model/CosCredentials.cpp
+  src/v20180326/model/HealthCheckSetting.cpp
   src/v20180326/model/DescribeContainerGroupsRequest.cpp
   src/v20180326/model/ExpandGroupRequest.cpp
   src/v20180326/model/DeleteServerlessGroupRequest.cpp
@@ -307,7 +310,7 @@ set(tsf_src
   src/v20180326/model/DescribeContainerGroupDetailResponse.cpp
   src/v20180326/model/SimpleApplication.cpp
   src/v20180326/model/DescribePublicConfigSummaryResponse.cpp
-  src/v20180326/model/HealthCheckSetting.cpp
+  src/v20180326/model/DescribeLaneRulesRequest.cpp
   src/v20180326/model/DescribeSimpleApplicationsResponse.cpp
   src/v20180326/model/DeleteRepositoryResponse.cpp
   src/v20180326/model/DescribePublicConfigReleaseLogsRequest.cpp
@@ -389,6 +392,7 @@ set(tsf_src
   src/v20180326/model/StartContainerGroupRequest.cpp
   src/v20180326/model/DeleteConfigRequest.cpp
   src/v20180326/model/DescribePublicConfigReleaseLogsResponse.cpp
+  src/v20180326/model/DeleteTaskRequest.cpp
   src/v20180326/model/HealthCheckSettings.cpp
   src/v20180326/model/ServiceSetting.cpp
   src/v20180326/model/ApiResponseDescr.cpp
@@ -478,7 +482,7 @@ set(tsf_src
   src/v20180326/model/SimpleGroup.cpp
   src/v20180326/model/DeleteNamespaceRequest.cpp
   src/v20180326/model/PkgBind.cpp
-  src/v20180326/model/DescribeLaneRulesRequest.cpp
+  src/v20180326/model/DeleteTaskResponse.cpp
   src/v20180326/model/DeployGroupRequest.cpp
   src/v20180326/model/LaneInfos.cpp
   src/v20180326/model/CreateServerlessGroupRequest.cpp

@@ -26,7 +26,8 @@ using namespace std;
 ModifySnapshotAttributeRequest::ModifySnapshotAttributeRequest() :
     m_snapshotIdHasBeenSet(false),
     m_snapshotNameHasBeenSet(false),
-    m_isPermanentHasBeenSet(false)
+    m_isPermanentHasBeenSet(false),
+    m_deadlineHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string ModifySnapshotAttributeRequest::ToJsonString() const
         string key = "IsPermanent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPermanent, allocator);
+    }
+
+    if (m_deadlineHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deadline.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void ModifySnapshotAttributeRequest::SetIsPermanent(const bool& _isPermanent)
 bool ModifySnapshotAttributeRequest::IsPermanentHasBeenSet() const
 {
     return m_isPermanentHasBeenSet;
+}
+
+string ModifySnapshotAttributeRequest::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void ModifySnapshotAttributeRequest::SetDeadline(const string& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool ModifySnapshotAttributeRequest::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
 }
 
 

@@ -25,7 +25,8 @@ AuthenticationTypeC::AuthenticationTypeC() :
     m_secretKeyHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_fileExtensionsHasBeenSet(false),
-    m_filterTypeHasBeenSet(false)
+    m_filterTypeHasBeenSet(false),
+    m_timeFormatHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,16 @@ CoreInternalOutcome AuthenticationTypeC::Deserialize(const Value &value)
         m_filterTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeFormat") && !value["TimeFormat"].IsNull())
+    {
+        if (!value["TimeFormat"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AuthenticationTypeC.TimeFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeFormat = string(value["TimeFormat"].GetString());
+        m_timeFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -119,6 +130,14 @@ void AuthenticationTypeC::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "FilterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_filterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeFormatHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TimeFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_timeFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -186,5 +205,21 @@ void AuthenticationTypeC::SetFilterType(const string& _filterType)
 bool AuthenticationTypeC::FilterTypeHasBeenSet() const
 {
     return m_filterTypeHasBeenSet;
+}
+
+string AuthenticationTypeC::GetTimeFormat() const
+{
+    return m_timeFormat;
+}
+
+void AuthenticationTypeC::SetTimeFormat(const string& _timeFormat)
+{
+    m_timeFormat = _timeFormat;
+    m_timeFormatHasBeenSet = true;
+}
+
+bool AuthenticationTypeC::TimeFormatHasBeenSet() const
+{
+    return m_timeFormatHasBeenSet;
 }
 
