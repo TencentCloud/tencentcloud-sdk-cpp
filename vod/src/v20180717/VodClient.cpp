@@ -470,6 +470,49 @@ VodClient::CreateContentReviewTemplateOutcomeCallable VodClient::CreateContentRe
     return task->get_future();
 }
 
+VodClient::CreateImageProcessingTemplateOutcome VodClient::CreateImageProcessingTemplate(const CreateImageProcessingTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageProcessingTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageProcessingTemplateResponse rsp = CreateImageProcessingTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageProcessingTemplateOutcome(rsp);
+        else
+            return CreateImageProcessingTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageProcessingTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateImageProcessingTemplateAsync(const CreateImageProcessingTemplateRequest& request, const CreateImageProcessingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateImageProcessingTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateImageProcessingTemplateOutcomeCallable VodClient::CreateImageProcessingTemplateCallable(const CreateImageProcessingTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateImageProcessingTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateImageProcessingTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreateImageSpriteTemplateOutcome VodClient::CreateImageSpriteTemplate(const CreateImageSpriteTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateImageSpriteTemplate");
@@ -1151,6 +1194,49 @@ VodClient::DeleteContentReviewTemplateOutcomeCallable VodClient::DeleteContentRe
         [this, request]()
         {
             return this->DeleteContentReviewTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DeleteImageProcessingTemplateOutcome VodClient::DeleteImageProcessingTemplate(const DeleteImageProcessingTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImageProcessingTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImageProcessingTemplateResponse rsp = DeleteImageProcessingTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImageProcessingTemplateOutcome(rsp);
+        else
+            return DeleteImageProcessingTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImageProcessingTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteImageProcessingTemplateAsync(const DeleteImageProcessingTemplateRequest& request, const DeleteImageProcessingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteImageProcessingTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DeleteImageProcessingTemplateOutcomeCallable VodClient::DeleteImageProcessingTemplateCallable(const DeleteImageProcessingTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteImageProcessingTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteImageProcessingTemplate(request);
         }
     );
 
@@ -1968,6 +2054,49 @@ VodClient::DescribeEventsStateOutcomeCallable VodClient::DescribeEventsStateCall
         [this, request]()
         {
             return this->DescribeEventsState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DescribeImageProcessingTemplatesOutcome VodClient::DescribeImageProcessingTemplates(const DescribeImageProcessingTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageProcessingTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageProcessingTemplatesResponse rsp = DescribeImageProcessingTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageProcessingTemplatesOutcome(rsp);
+        else
+            return DescribeImageProcessingTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageProcessingTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeImageProcessingTemplatesAsync(const DescribeImageProcessingTemplatesRequest& request, const DescribeImageProcessingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageProcessingTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeImageProcessingTemplatesOutcomeCallable VodClient::DescribeImageProcessingTemplatesCallable(const DescribeImageProcessingTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageProcessingTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageProcessingTemplates(request);
         }
     );
 

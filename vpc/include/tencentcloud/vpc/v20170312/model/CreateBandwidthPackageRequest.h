@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool BandwidthPackageNameHasBeenSet() const;
 
                     /**
-                     * 获取带宽包数量(非上移账户只能填1)
-                     * @return BandwidthPackageCount 带宽包数量(非上移账户只能填1)
+                     * 获取带宽包数量(传统账户类型只能填1)
+                     * @return BandwidthPackageCount 带宽包数量(传统账户类型只能填1)
                      */
                     uint64_t GetBandwidthPackageCount() const;
 
                     /**
-                     * 设置带宽包数量(非上移账户只能填1)
-                     * @param BandwidthPackageCount 带宽包数量(非上移账户只能填1)
+                     * 设置带宽包数量(传统账户类型只能填1)
+                     * @param BandwidthPackageCount 带宽包数量(传统账户类型只能填1)
                      */
                     void SetBandwidthPackageCount(const uint64_t& _bandwidthPackageCount);
 
@@ -190,7 +190,7 @@ namespace TencentCloud
                     bool m_bandwidthPackageNameHasBeenSet;
 
                     /**
-                     * 带宽包数量(非上移账户只能填1)
+                     * 带宽包数量(传统账户类型只能填1)
                      */
                     uint64_t m_bandwidthPackageCount;
                     bool m_bandwidthPackageCountHasBeenSet;

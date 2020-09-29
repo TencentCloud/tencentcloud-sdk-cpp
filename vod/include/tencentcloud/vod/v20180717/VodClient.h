@@ -43,6 +43,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateContentReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateContentReviewTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateImageProcessingTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateImageProcessingTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreatePersonSampleRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteContentReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteContentReviewTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteImageProcessingTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteImageProcessingTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteImageSpriteTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteMediaRequest.h>
@@ -113,6 +117,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeImageProcessingTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeImageProcessingTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosRequest.h>
@@ -255,6 +261,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateContentReviewTemplateResponse> CreateContentReviewTemplateOutcome;
                 typedef std::future<CreateContentReviewTemplateOutcome> CreateContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateContentReviewTemplateRequest&, CreateContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContentReviewTemplateAsyncHandler;
+                typedef Outcome<Error, Model::CreateImageProcessingTemplateResponse> CreateImageProcessingTemplateOutcome;
+                typedef std::future<CreateImageProcessingTemplateOutcome> CreateImageProcessingTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateImageProcessingTemplateRequest&, CreateImageProcessingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageProcessingTemplateAsyncHandler;
                 typedef Outcome<Error, Model::CreateImageSpriteTemplateResponse> CreateImageSpriteTemplateOutcome;
                 typedef std::future<CreateImageSpriteTemplateOutcome> CreateImageSpriteTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateImageSpriteTemplateRequest&, CreateImageSpriteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageSpriteTemplateAsyncHandler;
@@ -303,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteContentReviewTemplateResponse> DeleteContentReviewTemplateOutcome;
                 typedef std::future<DeleteContentReviewTemplateOutcome> DeleteContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteContentReviewTemplateRequest&, DeleteContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContentReviewTemplateAsyncHandler;
+                typedef Outcome<Error, Model::DeleteImageProcessingTemplateResponse> DeleteImageProcessingTemplateOutcome;
+                typedef std::future<DeleteImageProcessingTemplateOutcome> DeleteImageProcessingTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteImageProcessingTemplateRequest&, DeleteImageProcessingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageProcessingTemplateAsyncHandler;
                 typedef Outcome<Error, Model::DeleteImageSpriteTemplateResponse> DeleteImageSpriteTemplateOutcome;
                 typedef std::future<DeleteImageSpriteTemplateOutcome> DeleteImageSpriteTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteImageSpriteTemplateRequest&, DeleteImageSpriteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageSpriteTemplateAsyncHandler;
@@ -360,6 +372,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEventsStateResponse> DescribeEventsStateOutcome;
                 typedef std::future<DescribeEventsStateOutcome> DescribeEventsStateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeEventsStateRequest&, DescribeEventsStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsStateAsyncHandler;
+                typedef Outcome<Error, Model::DescribeImageProcessingTemplatesResponse> DescribeImageProcessingTemplatesOutcome;
+                typedef std::future<DescribeImageProcessingTemplatesOutcome> DescribeImageProcessingTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeImageProcessingTemplatesRequest&, DescribeImageProcessingTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageProcessingTemplatesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImageSpriteTemplatesResponse> DescribeImageSpriteTemplatesOutcome;
                 typedef std::future<DescribeImageSpriteTemplatesOutcome> DescribeImageSpriteTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeImageSpriteTemplatesRequest&, DescribeImageSpriteTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSpriteTemplatesAsyncHandler;
@@ -614,6 +629,15 @@ namespace TencentCloud
                 CreateContentReviewTemplateOutcomeCallable CreateContentReviewTemplateCallable(const Model::CreateContentReviewTemplateRequest& request);
 
                 /**
+                 *创建一个用户自定义的图片处理模板，数量上限：16。最多支持三次操作，例如：裁剪-缩略-裁剪。
+                 * @param req CreateImageProcessingTemplateRequest
+                 * @return CreateImageProcessingTemplateOutcome
+                 */
+                CreateImageProcessingTemplateOutcome CreateImageProcessingTemplate(const Model::CreateImageProcessingTemplateRequest &request);
+                void CreateImageProcessingTemplateAsync(const Model::CreateImageProcessingTemplateRequest& request, const CreateImageProcessingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageProcessingTemplateOutcomeCallable CreateImageProcessingTemplateCallable(const Model::CreateImageProcessingTemplateRequest& request);
+
+                /**
                  *创建用户自定义雪碧图模板，数量上限：16。
                  * @param req CreateImageSpriteTemplateRequest
                  * @return CreateImageSpriteTemplateOutcome
@@ -759,6 +783,15 @@ namespace TencentCloud
                 DeleteContentReviewTemplateOutcome DeleteContentReviewTemplate(const Model::DeleteContentReviewTemplateRequest &request);
                 void DeleteContentReviewTemplateAsync(const Model::DeleteContentReviewTemplateRequest& request, const DeleteContentReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteContentReviewTemplateOutcomeCallable DeleteContentReviewTemplateCallable(const Model::DeleteContentReviewTemplateRequest& request);
+
+                /**
+                 *删除用户自定义图片处理模板。
+                 * @param req DeleteImageProcessingTemplateRequest
+                 * @return DeleteImageProcessingTemplateOutcome
+                 */
+                DeleteImageProcessingTemplateOutcome DeleteImageProcessingTemplate(const Model::DeleteImageProcessingTemplateRequest &request);
+                void DeleteImageProcessingTemplateAsync(const Model::DeleteImageProcessingTemplateRequest& request, const DeleteImageProcessingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImageProcessingTemplateOutcomeCallable DeleteImageProcessingTemplateCallable(const Model::DeleteImageProcessingTemplateRequest& request);
 
                 /**
                  *删除雪碧图模板。
@@ -940,6 +973,15 @@ namespace TencentCloud
                 DescribeEventsStateOutcome DescribeEventsState(const Model::DescribeEventsStateRequest &request);
                 void DescribeEventsStateAsync(const Model::DescribeEventsStateRequest& request, const DescribeEventsStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEventsStateOutcomeCallable DescribeEventsStateCallable(const Model::DescribeEventsStateRequest& request);
+
+                /**
+                 *获取图片处理模板列表，支持根据条件，分页查询。
+                 * @param req DescribeImageProcessingTemplatesRequest
+                 * @return DescribeImageProcessingTemplatesOutcome
+                 */
+                DescribeImageProcessingTemplatesOutcome DescribeImageProcessingTemplates(const Model::DescribeImageProcessingTemplatesRequest &request);
+                void DescribeImageProcessingTemplatesAsync(const Model::DescribeImageProcessingTemplatesRequest& request, const DescribeImageProcessingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageProcessingTemplatesOutcomeCallable DescribeImageProcessingTemplatesCallable(const Model::DescribeImageProcessingTemplatesRequest& request);
 
                 /**
                  *查询雪碧图模板，支持根据条件，分页查询。

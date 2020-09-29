@@ -28,7 +28,8 @@ PhoneVerificationRequest::PhoneVerificationRequest() :
     m_nameHasBeenSet(false),
     m_phoneHasBeenSet(false),
     m_ciphertextBlobHasBeenSet(false),
-    m_encryptListHasBeenSet(false)
+    m_encryptListHasBeenSet(false),
+    m_ivHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string PhoneVerificationRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_ivHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Iv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_iv.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -170,6 +179,22 @@ void PhoneVerificationRequest::SetEncryptList(const vector<string>& _encryptList
 bool PhoneVerificationRequest::EncryptListHasBeenSet() const
 {
     return m_encryptListHasBeenSet;
+}
+
+string PhoneVerificationRequest::GetIv() const
+{
+    return m_iv;
+}
+
+void PhoneVerificationRequest::SetIv(const string& _iv)
+{
+    m_iv = _iv;
+    m_ivHasBeenSet = true;
+}
+
+bool PhoneVerificationRequest::IvHasBeenSet() const
+{
+    return m_ivHasBeenSet;
 }
 
 

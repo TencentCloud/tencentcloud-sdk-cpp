@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool EncryptListHasBeenSet() const;
 
+                    /**
+                     * 获取有加密需求的用户，传入CBC加密的初试向量
+                     * @return Iv 有加密需求的用户，传入CBC加密的初试向量
+                     */
+                    std::string GetIv() const;
+
+                    /**
+                     * 设置有加密需求的用户，传入CBC加密的初试向量
+                     * @param Iv 有加密需求的用户，传入CBC加密的初试向量
+                     */
+                    void SetIv(const std::string& _iv);
+
+                    /**
+                     * 判断参数 Iv 是否已赋值
+                     * @return Iv 是否已赋值
+                     */
+                    bool IvHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_encryptList;
                     bool m_encryptListHasBeenSet;
+
+                    /**
+                     * 有加密需求的用户，传入CBC加密的初试向量
+                     */
+                    std::string m_iv;
+                    bool m_ivHasBeenSet;
 
                 };
             }

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]。
-                     * @return AudioSampleRate 混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]。
+                     * 获取混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]，单位是Hz。
+                     * @return AudioSampleRate 混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]，单位是Hz。
                      */
                     uint64_t GetAudioSampleRate() const;
 
                     /**
-                     * 设置混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]。
-                     * @param AudioSampleRate 混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]。
+                     * 设置混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]，单位是Hz。
+                     * @param AudioSampleRate 混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]，单位是Hz。
                      */
                     void SetAudioSampleRate(const uint64_t& _audioSampleRate);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool AudioBitrateHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流音频声道数，取值范围[1,2]。
-                     * @return AudioChannels 混流-输出流音频声道数，取值范围[1,2]。
+                     * 获取混流-输出流音频声道数，取值范围[1,2]，1表示混流输出音频为单声道，2表示混流输出音频为双声道。
+                     * @return AudioChannels 混流-输出流音频声道数，取值范围[1,2]，1表示混流输出音频为单声道，2表示混流输出音频为双声道。
                      */
                     uint64_t GetAudioChannels() const;
 
                     /**
-                     * 设置混流-输出流音频声道数，取值范围[1,2]。
-                     * @param AudioChannels 混流-输出流音频声道数，取值范围[1,2]。
+                     * 设置混流-输出流音频声道数，取值范围[1,2]，1表示混流输出音频为单声道，2表示混流输出音频为双声道。
+                     * @param AudioChannels 混流-输出流音频声道数，取值范围[1,2]，1表示混流输出音频为单声道，2表示混流输出音频为双声道。
                      */
                     void SetAudioChannels(const uint64_t& _audioChannels);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool VideoBitrateHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流帧率，音视频输出时必填。取值范围[1,60]。
-                     * @return VideoFramerate 混流-输出流帧率，音视频输出时必填。取值范围[1,60]。
+                     * 获取混流-输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。
+                     * @return VideoFramerate 混流-输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。
                      */
                     uint64_t GetVideoFramerate() const;
 
                     /**
-                     * 设置混流-输出流帧率，音视频输出时必填。取值范围[1,60]。
-                     * @param VideoFramerate 混流-输出流帧率，音视频输出时必填。取值范围[1,60]。
+                     * 设置混流-输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。
+                     * @param VideoFramerate 混流-输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。
                      */
                     void SetVideoFramerate(const uint64_t& _videoFramerate);
 
@@ -229,7 +229,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]。
+                     * 混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]，单位是Hz。
                      */
                     uint64_t m_audioSampleRate;
                     bool m_audioSampleRateHasBeenSet;
@@ -241,7 +241,7 @@ namespace TencentCloud
                     bool m_audioBitrateHasBeenSet;
 
                     /**
-                     * 混流-输出流音频声道数，取值范围[1,2]。
+                     * 混流-输出流音频声道数，取值范围[1,2]，1表示混流输出音频为单声道，2表示混流输出音频为双声道。
                      */
                     uint64_t m_audioChannels;
                     bool m_audioChannelsHasBeenSet;
@@ -265,7 +265,7 @@ namespace TencentCloud
                     bool m_videoBitrateHasBeenSet;
 
                     /**
-                     * 混流-输出流帧率，音视频输出时必填。取值范围[1,60]。
+                     * 混流-输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。
                      */
                     uint64_t m_videoFramerate;
                     bool m_videoFramerateHasBeenSet;

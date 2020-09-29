@@ -126,6 +126,49 @@ TsfClient::AddInstancesOutcomeCallable TsfClient::AddInstancesCallable(const Add
     return task->get_future();
 }
 
+TsfClient::ContinueRunFailedTaskBatchOutcome TsfClient::ContinueRunFailedTaskBatch(const ContinueRunFailedTaskBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ContinueRunFailedTaskBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ContinueRunFailedTaskBatchResponse rsp = ContinueRunFailedTaskBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ContinueRunFailedTaskBatchOutcome(rsp);
+        else
+            return ContinueRunFailedTaskBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return ContinueRunFailedTaskBatchOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ContinueRunFailedTaskBatchAsync(const ContinueRunFailedTaskBatchRequest& request, const ContinueRunFailedTaskBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ContinueRunFailedTaskBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ContinueRunFailedTaskBatchOutcomeCallable TsfClient::ContinueRunFailedTaskBatchCallable(const ContinueRunFailedTaskBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ContinueRunFailedTaskBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->ContinueRunFailedTaskBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreateApplicationOutcome TsfClient::CreateApplication(const CreateApplicationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApplication");
@@ -635,6 +678,49 @@ TsfClient::CreateServerlessGroupOutcomeCallable TsfClient::CreateServerlessGroup
         [this, request]()
         {
             return this->CreateServerlessGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::CreateTaskOutcome TsfClient::CreateTask(const CreateTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTaskResponse rsp = CreateTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTaskOutcome(rsp);
+        else
+            return CreateTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTaskOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateTaskAsync(const CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateTaskOutcomeCallable TsfClient::CreateTaskCallable(const CreateTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTask(request);
         }
     );
 
@@ -1545,6 +1631,49 @@ TsfClient::DescribeApplicationsOutcomeCallable TsfClient::DescribeApplicationsCa
     return task->get_future();
 }
 
+TsfClient::DescribeBasicResourceUsageOutcome TsfClient::DescribeBasicResourceUsage(const DescribeBasicResourceUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBasicResourceUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBasicResourceUsageResponse rsp = DescribeBasicResourceUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBasicResourceUsageOutcome(rsp);
+        else
+            return DescribeBasicResourceUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBasicResourceUsageOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeBasicResourceUsageAsync(const DescribeBasicResourceUsageRequest& request, const DescribeBasicResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBasicResourceUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeBasicResourceUsageOutcomeCallable TsfClient::DescribeBasicResourceUsageCallable(const DescribeBasicResourceUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBasicResourceUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBasicResourceUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeClusterInstancesOutcome TsfClient::DescribeClusterInstances(const DescribeClusterInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterInstances");
@@ -1925,6 +2054,49 @@ TsfClient::DescribeDownloadInfoOutcomeCallable TsfClient::DescribeDownloadInfoCa
         [this, request]()
         {
             return this->DescribeDownloadInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeFlowLastBatchStateOutcome TsfClient::DescribeFlowLastBatchState(const DescribeFlowLastBatchStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlowLastBatchState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlowLastBatchStateResponse rsp = DescribeFlowLastBatchStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlowLastBatchStateOutcome(rsp);
+        else
+            return DescribeFlowLastBatchStateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlowLastBatchStateOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeFlowLastBatchStateAsync(const DescribeFlowLastBatchStateRequest& request, const DescribeFlowLastBatchStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFlowLastBatchState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeFlowLastBatchStateOutcomeCallable TsfClient::DescribeFlowLastBatchStateCallable(const DescribeFlowLastBatchStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFlowLastBatchStateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFlowLastBatchState(request);
         }
     );
 
@@ -3007,6 +3179,49 @@ TsfClient::DescribeSimpleNamespacesOutcomeCallable TsfClient::DescribeSimpleName
     return task->get_future();
 }
 
+TsfClient::DescribeTaskLastStatusOutcome TsfClient::DescribeTaskLastStatus(const DescribeTaskLastStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskLastStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskLastStatusResponse rsp = DescribeTaskLastStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskLastStatusOutcome(rsp);
+        else
+            return DescribeTaskLastStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskLastStatusOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeTaskLastStatusAsync(const DescribeTaskLastStatusRequest& request, const DescribeTaskLastStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskLastStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeTaskLastStatusOutcomeCallable TsfClient::DescribeTaskLastStatusCallable(const DescribeTaskLastStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskLastStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskLastStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeUploadInfoOutcome TsfClient::DescribeUploadInfo(const DescribeUploadInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUploadInfo");
@@ -3043,6 +3258,264 @@ TsfClient::DescribeUploadInfoOutcomeCallable TsfClient::DescribeUploadInfoCallab
         [this, request]()
         {
             return this->DescribeUploadInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DisableTaskOutcome TsfClient::DisableTask(const DisableTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableTaskResponse rsp = DisableTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableTaskOutcome(rsp);
+        else
+            return DisableTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableTaskOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DisableTaskAsync(const DisableTaskRequest& request, const DisableTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DisableTaskOutcomeCallable TsfClient::DisableTaskCallable(const DisableTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DisableTaskFlowOutcome TsfClient::DisableTaskFlow(const DisableTaskFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableTaskFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableTaskFlowResponse rsp = DisableTaskFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableTaskFlowOutcome(rsp);
+        else
+            return DisableTaskFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableTaskFlowOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DisableTaskFlowAsync(const DisableTaskFlowRequest& request, const DisableTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableTaskFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DisableTaskFlowOutcomeCallable TsfClient::DisableTaskFlowCallable(const DisableTaskFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableTaskFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableTaskFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::EnableTaskOutcome TsfClient::EnableTask(const EnableTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableTaskResponse rsp = EnableTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableTaskOutcome(rsp);
+        else
+            return EnableTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableTaskOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::EnableTaskAsync(const EnableTaskRequest& request, const EnableTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::EnableTaskOutcomeCallable TsfClient::EnableTaskCallable(const EnableTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::EnableTaskFlowOutcome TsfClient::EnableTaskFlow(const EnableTaskFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableTaskFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableTaskFlowResponse rsp = EnableTaskFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableTaskFlowOutcome(rsp);
+        else
+            return EnableTaskFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableTaskFlowOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::EnableTaskFlowAsync(const EnableTaskFlowRequest& request, const EnableTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableTaskFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::EnableTaskFlowOutcomeCallable TsfClient::EnableTaskFlowCallable(const EnableTaskFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableTaskFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableTaskFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ExecuteTaskOutcome TsfClient::ExecuteTask(const ExecuteTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExecuteTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecuteTaskResponse rsp = ExecuteTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecuteTaskOutcome(rsp);
+        else
+            return ExecuteTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ExecuteTaskOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ExecuteTaskAsync(const ExecuteTaskRequest& request, const ExecuteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExecuteTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ExecuteTaskOutcomeCallable TsfClient::ExecuteTaskCallable(const ExecuteTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExecuteTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ExecuteTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ExecuteTaskFlowOutcome TsfClient::ExecuteTaskFlow(const ExecuteTaskFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExecuteTaskFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecuteTaskFlowResponse rsp = ExecuteTaskFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecuteTaskFlowOutcome(rsp);
+        else
+            return ExecuteTaskFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return ExecuteTaskFlowOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ExecuteTaskFlowAsync(const ExecuteTaskFlowRequest& request, const ExecuteTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExecuteTaskFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ExecuteTaskFlowOutcomeCallable TsfClient::ExecuteTaskFlowCallable(const ExecuteTaskFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExecuteTaskFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->ExecuteTaskFlow(request);
         }
     );
 
@@ -3344,6 +3817,135 @@ TsfClient::ModifyUploadInfoOutcomeCallable TsfClient::ModifyUploadInfoCallable(c
         [this, request]()
         {
             return this->ModifyUploadInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::RedoTaskOutcome TsfClient::RedoTask(const RedoTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RedoTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RedoTaskResponse rsp = RedoTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RedoTaskOutcome(rsp);
+        else
+            return RedoTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RedoTaskOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::RedoTaskAsync(const RedoTaskRequest& request, const RedoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RedoTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::RedoTaskOutcomeCallable TsfClient::RedoTaskCallable(const RedoTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RedoTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->RedoTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::RedoTaskBatchOutcome TsfClient::RedoTaskBatch(const RedoTaskBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "RedoTaskBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RedoTaskBatchResponse rsp = RedoTaskBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RedoTaskBatchOutcome(rsp);
+        else
+            return RedoTaskBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return RedoTaskBatchOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::RedoTaskBatchAsync(const RedoTaskBatchRequest& request, const RedoTaskBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RedoTaskBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::RedoTaskBatchOutcomeCallable TsfClient::RedoTaskBatchCallable(const RedoTaskBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RedoTaskBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->RedoTaskBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::RedoTaskFlowBatchOutcome TsfClient::RedoTaskFlowBatch(const RedoTaskFlowBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "RedoTaskFlowBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RedoTaskFlowBatchResponse rsp = RedoTaskFlowBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RedoTaskFlowBatchOutcome(rsp);
+        else
+            return RedoTaskFlowBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return RedoTaskFlowBatchOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::RedoTaskFlowBatchAsync(const RedoTaskFlowBatchRequest& request, const RedoTaskFlowBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RedoTaskFlowBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::RedoTaskFlowBatchOutcomeCallable TsfClient::RedoTaskFlowBatchCallable(const RedoTaskFlowBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RedoTaskFlowBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->RedoTaskFlowBatch(request);
         }
     );
 
@@ -3860,6 +4462,135 @@ TsfClient::StopGroupOutcomeCallable TsfClient::StopGroupCallable(const StopGroup
         [this, request]()
         {
             return this->StopGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::StopTaskBatchOutcome TsfClient::StopTaskBatch(const StopTaskBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopTaskBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopTaskBatchResponse rsp = StopTaskBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopTaskBatchOutcome(rsp);
+        else
+            return StopTaskBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return StopTaskBatchOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::StopTaskBatchAsync(const StopTaskBatchRequest& request, const StopTaskBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopTaskBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::StopTaskBatchOutcomeCallable TsfClient::StopTaskBatchCallable(const StopTaskBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopTaskBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->StopTaskBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::StopTaskExecuteOutcome TsfClient::StopTaskExecute(const StopTaskExecuteRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopTaskExecute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopTaskExecuteResponse rsp = StopTaskExecuteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopTaskExecuteOutcome(rsp);
+        else
+            return StopTaskExecuteOutcome(o.GetError());
+    }
+    else
+    {
+        return StopTaskExecuteOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::StopTaskExecuteAsync(const StopTaskExecuteRequest& request, const StopTaskExecuteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopTaskExecute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::StopTaskExecuteOutcomeCallable TsfClient::StopTaskExecuteCallable(const StopTaskExecuteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopTaskExecuteOutcome()>>(
+        [this, request]()
+        {
+            return this->StopTaskExecute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::TerminateTaskFlowBatchOutcome TsfClient::TerminateTaskFlowBatch(const TerminateTaskFlowBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateTaskFlowBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateTaskFlowBatchResponse rsp = TerminateTaskFlowBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateTaskFlowBatchOutcome(rsp);
+        else
+            return TerminateTaskFlowBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateTaskFlowBatchOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::TerminateTaskFlowBatchAsync(const TerminateTaskFlowBatchRequest& request, const TerminateTaskFlowBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateTaskFlowBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::TerminateTaskFlowBatchOutcomeCallable TsfClient::TerminateTaskFlowBatchCallable(const TerminateTaskFlowBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateTaskFlowBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateTaskFlowBatch(request);
         }
     );
 

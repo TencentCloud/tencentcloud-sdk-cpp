@@ -27,6 +27,8 @@
 #include <tencentcloud/tsf/v20180326/model/AddClusterInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/AddInstancesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/AddInstancesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ContinueRunFailedTaskBatchRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ContinueRunFailedTaskBatchResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateApplicationRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateApplicationResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateClusterRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/tsf/v20180326/model/CreateRepositoryResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateServerlessGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateServerlessGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateTaskRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteApplicationRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteApplicationResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteConfigRequest.h>
@@ -93,6 +97,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationAttributeResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeBasicResourceUsageRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeBasicResourceUsageResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeClusterInstancesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeClusterInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeConfigRequest.h>
@@ -111,6 +117,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeDownloadInfoRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeDownloadInfoResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeFlowLastBatchStateRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeFlowLastBatchStateResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupInstancesRequest.h>
@@ -161,8 +169,22 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleGroupsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleNamespacesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleNamespacesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUploadInfoRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUploadInfoResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DisableTaskRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DisableTaskResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DisableTaskFlowRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DisableTaskFlowResponse.h>
+#include <tencentcloud/tsf/v20180326/model/EnableTaskRequest.h>
+#include <tencentcloud/tsf/v20180326/model/EnableTaskResponse.h>
+#include <tencentcloud/tsf/v20180326/model/EnableTaskFlowRequest.h>
+#include <tencentcloud/tsf/v20180326/model/EnableTaskFlowResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ExecuteTaskRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ExecuteTaskResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ExecuteTaskFlowRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ExecuteTaskFlowResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ExpandGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ExpandGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyContainerGroupRequest.h>
@@ -177,6 +199,12 @@
 #include <tencentcloud/tsf/v20180326/model/ModifyMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoResponse.h>
+#include <tencentcloud/tsf/v20180326/model/RedoTaskRequest.h>
+#include <tencentcloud/tsf/v20180326/model/RedoTaskResponse.h>
+#include <tencentcloud/tsf/v20180326/model/RedoTaskBatchRequest.h>
+#include <tencentcloud/tsf/v20180326/model/RedoTaskBatchResponse.h>
+#include <tencentcloud/tsf/v20180326/model/RedoTaskFlowBatchRequest.h>
+#include <tencentcloud/tsf/v20180326/model/RedoTaskFlowBatchResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ReleasePublicConfigRequest.h>
@@ -201,6 +229,12 @@
 #include <tencentcloud/tsf/v20180326/model/StopContainerGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/StopGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/StopGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/StopTaskBatchRequest.h>
+#include <tencentcloud/tsf/v20180326/model/StopTaskBatchResponse.h>
+#include <tencentcloud/tsf/v20180326/model/StopTaskExecuteRequest.h>
+#include <tencentcloud/tsf/v20180326/model/StopTaskExecuteResponse.h>
+#include <tencentcloud/tsf/v20180326/model/TerminateTaskFlowBatchRequest.h>
+#include <tencentcloud/tsf/v20180326/model/TerminateTaskFlowBatchResponse.h>
 #include <tencentcloud/tsf/v20180326/model/UpdateRepositoryRequest.h>
 #include <tencentcloud/tsf/v20180326/model/UpdateRepositoryResponse.h>
 
@@ -223,6 +257,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AddInstancesResponse> AddInstancesOutcome;
                 typedef std::future<AddInstancesOutcome> AddInstancesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::AddInstancesRequest&, AddInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddInstancesAsyncHandler;
+                typedef Outcome<Error, Model::ContinueRunFailedTaskBatchResponse> ContinueRunFailedTaskBatchOutcome;
+                typedef std::future<ContinueRunFailedTaskBatchOutcome> ContinueRunFailedTaskBatchOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ContinueRunFailedTaskBatchRequest&, ContinueRunFailedTaskBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ContinueRunFailedTaskBatchAsyncHandler;
                 typedef Outcome<Error, Model::CreateApplicationResponse> CreateApplicationOutcome;
                 typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateApplicationRequest&, CreateApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAsyncHandler;
@@ -259,6 +296,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateServerlessGroupResponse> CreateServerlessGroupOutcome;
                 typedef std::future<CreateServerlessGroupOutcome> CreateServerlessGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateServerlessGroupRequest&, CreateServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessGroupAsyncHandler;
+                typedef Outcome<Error, Model::CreateTaskResponse> CreateTaskOutcome;
+                typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
                 typedef Outcome<Error, Model::DeleteApplicationResponse> DeleteApplicationOutcome;
                 typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteApplicationRequest&, DeleteApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAsyncHandler;
@@ -322,6 +362,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
                 typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBasicResourceUsageResponse> DescribeBasicResourceUsageOutcome;
+                typedef std::future<DescribeBasicResourceUsageOutcome> DescribeBasicResourceUsageOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeBasicResourceUsageRequest&, DescribeBasicResourceUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBasicResourceUsageAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClusterInstancesResponse> DescribeClusterInstancesOutcome;
                 typedef std::future<DescribeClusterInstancesOutcome> DescribeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeClusterInstancesRequest&, DescribeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstancesAsyncHandler;
@@ -349,6 +392,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDownloadInfoResponse> DescribeDownloadInfoOutcome;
                 typedef std::future<DescribeDownloadInfoOutcome> DescribeDownloadInfoOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeDownloadInfoRequest&, DescribeDownloadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDownloadInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFlowLastBatchStateResponse> DescribeFlowLastBatchStateOutcome;
+                typedef std::future<DescribeFlowLastBatchStateOutcome> DescribeFlowLastBatchStateOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeFlowLastBatchStateRequest&, DescribeFlowLastBatchStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowLastBatchStateAsyncHandler;
                 typedef Outcome<Error, Model::DescribeGroupResponse> DescribeGroupOutcome;
                 typedef std::future<DescribeGroupOutcome> DescribeGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeGroupRequest&, DescribeGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupAsyncHandler;
@@ -424,9 +470,30 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSimpleNamespacesResponse> DescribeSimpleNamespacesOutcome;
                 typedef std::future<DescribeSimpleNamespacesOutcome> DescribeSimpleNamespacesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeSimpleNamespacesRequest&, DescribeSimpleNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSimpleNamespacesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTaskLastStatusResponse> DescribeTaskLastStatusOutcome;
+                typedef std::future<DescribeTaskLastStatusOutcome> DescribeTaskLastStatusOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeTaskLastStatusRequest&, DescribeTaskLastStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLastStatusAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUploadInfoResponse> DescribeUploadInfoOutcome;
                 typedef std::future<DescribeUploadInfoOutcome> DescribeUploadInfoOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeUploadInfoRequest&, DescribeUploadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUploadInfoAsyncHandler;
+                typedef Outcome<Error, Model::DisableTaskResponse> DisableTaskOutcome;
+                typedef std::future<DisableTaskOutcome> DisableTaskOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DisableTaskRequest&, DisableTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableTaskAsyncHandler;
+                typedef Outcome<Error, Model::DisableTaskFlowResponse> DisableTaskFlowOutcome;
+                typedef std::future<DisableTaskFlowOutcome> DisableTaskFlowOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DisableTaskFlowRequest&, DisableTaskFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableTaskFlowAsyncHandler;
+                typedef Outcome<Error, Model::EnableTaskResponse> EnableTaskOutcome;
+                typedef std::future<EnableTaskOutcome> EnableTaskOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::EnableTaskRequest&, EnableTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTaskAsyncHandler;
+                typedef Outcome<Error, Model::EnableTaskFlowResponse> EnableTaskFlowOutcome;
+                typedef std::future<EnableTaskFlowOutcome> EnableTaskFlowOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::EnableTaskFlowRequest&, EnableTaskFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTaskFlowAsyncHandler;
+                typedef Outcome<Error, Model::ExecuteTaskResponse> ExecuteTaskOutcome;
+                typedef std::future<ExecuteTaskOutcome> ExecuteTaskOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ExecuteTaskRequest&, ExecuteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteTaskAsyncHandler;
+                typedef Outcome<Error, Model::ExecuteTaskFlowResponse> ExecuteTaskFlowOutcome;
+                typedef std::future<ExecuteTaskFlowOutcome> ExecuteTaskFlowOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ExecuteTaskFlowRequest&, ExecuteTaskFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteTaskFlowAsyncHandler;
                 typedef Outcome<Error, Model::ExpandGroupResponse> ExpandGroupOutcome;
                 typedef std::future<ExpandGroupOutcome> ExpandGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ExpandGroupRequest&, ExpandGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExpandGroupAsyncHandler;
@@ -448,6 +515,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyUploadInfoResponse> ModifyUploadInfoOutcome;
                 typedef std::future<ModifyUploadInfoOutcome> ModifyUploadInfoOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyUploadInfoRequest&, ModifyUploadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUploadInfoAsyncHandler;
+                typedef Outcome<Error, Model::RedoTaskResponse> RedoTaskOutcome;
+                typedef std::future<RedoTaskOutcome> RedoTaskOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::RedoTaskRequest&, RedoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskAsyncHandler;
+                typedef Outcome<Error, Model::RedoTaskBatchResponse> RedoTaskBatchOutcome;
+                typedef std::future<RedoTaskBatchOutcome> RedoTaskBatchOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::RedoTaskBatchRequest&, RedoTaskBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskBatchAsyncHandler;
+                typedef Outcome<Error, Model::RedoTaskFlowBatchResponse> RedoTaskFlowBatchOutcome;
+                typedef std::future<RedoTaskFlowBatchOutcome> RedoTaskFlowBatchOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::RedoTaskFlowBatchRequest&, RedoTaskFlowBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskFlowBatchAsyncHandler;
                 typedef Outcome<Error, Model::ReleaseConfigResponse> ReleaseConfigOutcome;
                 typedef std::future<ReleaseConfigOutcome> ReleaseConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ReleaseConfigRequest&, ReleaseConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseConfigAsyncHandler;
@@ -484,6 +560,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StopGroupResponse> StopGroupOutcome;
                 typedef std::future<StopGroupOutcome> StopGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::StopGroupRequest&, StopGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGroupAsyncHandler;
+                typedef Outcome<Error, Model::StopTaskBatchResponse> StopTaskBatchOutcome;
+                typedef std::future<StopTaskBatchOutcome> StopTaskBatchOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::StopTaskBatchRequest&, StopTaskBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTaskBatchAsyncHandler;
+                typedef Outcome<Error, Model::StopTaskExecuteResponse> StopTaskExecuteOutcome;
+                typedef std::future<StopTaskExecuteOutcome> StopTaskExecuteOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::StopTaskExecuteRequest&, StopTaskExecuteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTaskExecuteAsyncHandler;
+                typedef Outcome<Error, Model::TerminateTaskFlowBatchResponse> TerminateTaskFlowBatchOutcome;
+                typedef std::future<TerminateTaskFlowBatchOutcome> TerminateTaskFlowBatchOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::TerminateTaskFlowBatchRequest&, TerminateTaskFlowBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateTaskFlowBatchAsyncHandler;
                 typedef Outcome<Error, Model::UpdateRepositoryResponse> UpdateRepositoryOutcome;
                 typedef std::future<UpdateRepositoryOutcome> UpdateRepositoryOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::UpdateRepositoryRequest&, UpdateRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRepositoryAsyncHandler;
@@ -507,6 +592,15 @@ namespace TencentCloud
                 AddInstancesOutcome AddInstances(const Model::AddInstancesRequest &request);
                 void AddInstancesAsync(const Model::AddInstancesRequest& request, const AddInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddInstancesOutcomeCallable AddInstancesCallable(const Model::AddInstancesRequest& request);
+
+                /**
+                 *对执行失败的任务批次执行续跑
+                 * @param req ContinueRunFailedTaskBatchRequest
+                 * @return ContinueRunFailedTaskBatchOutcome
+                 */
+                ContinueRunFailedTaskBatchOutcome ContinueRunFailedTaskBatch(const Model::ContinueRunFailedTaskBatchRequest &request);
+                void ContinueRunFailedTaskBatchAsync(const Model::ContinueRunFailedTaskBatchRequest& request, const ContinueRunFailedTaskBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ContinueRunFailedTaskBatchOutcomeCallable ContinueRunFailedTaskBatchCallable(const Model::ContinueRunFailedTaskBatchRequest& request);
 
                 /**
                  *创建应用
@@ -615,6 +709,15 @@ namespace TencentCloud
                 CreateServerlessGroupOutcome CreateServerlessGroup(const Model::CreateServerlessGroupRequest &request);
                 void CreateServerlessGroupAsync(const Model::CreateServerlessGroupRequest& request, const CreateServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateServerlessGroupOutcomeCallable CreateServerlessGroupCallable(const Model::CreateServerlessGroupRequest& request);
+
+                /**
+                 *创建任务
+                 * @param req CreateTaskRequest
+                 * @return CreateTaskOutcome
+                 */
+                CreateTaskOutcome CreateTask(const Model::CreateTaskRequest &request);
+                void CreateTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
 
                 /**
                  *删除应用
@@ -807,6 +910,15 @@ namespace TencentCloud
                 DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request);
 
                 /**
+                 *TSF基本资源信息概览接口
+                 * @param req DescribeBasicResourceUsageRequest
+                 * @return DescribeBasicResourceUsageOutcome
+                 */
+                DescribeBasicResourceUsageOutcome DescribeBasicResourceUsage(const Model::DescribeBasicResourceUsageRequest &request);
+                void DescribeBasicResourceUsageAsync(const Model::DescribeBasicResourceUsageRequest& request, const DescribeBasicResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBasicResourceUsageOutcomeCallable DescribeBasicResourceUsageCallable(const Model::DescribeBasicResourceUsageRequest& request);
+
+                /**
                  *查询集群实例
                  * @param req DescribeClusterInstancesRequest
                  * @return DescribeClusterInstancesOutcome
@@ -887,6 +999,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeDownloadInfoOutcome DescribeDownloadInfo(const Model::DescribeDownloadInfoRequest &request);
                 void DescribeDownloadInfoAsync(const Model::DescribeDownloadInfoRequest& request, const DescribeDownloadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDownloadInfoOutcomeCallable DescribeDownloadInfoCallable(const Model::DescribeDownloadInfoRequest& request);
+
+                /**
+                 *查询工作流最新一个批次的状态信息
+                 * @param req DescribeFlowLastBatchStateRequest
+                 * @return DescribeFlowLastBatchStateOutcome
+                 */
+                DescribeFlowLastBatchStateOutcome DescribeFlowLastBatchState(const Model::DescribeFlowLastBatchStateRequest &request);
+                void DescribeFlowLastBatchStateAsync(const Model::DescribeFlowLastBatchStateRequest& request, const DescribeFlowLastBatchStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowLastBatchStateOutcomeCallable DescribeFlowLastBatchStateCallable(const Model::DescribeFlowLastBatchStateRequest& request);
 
                 /**
                  *查询虚拟机部署组详情
@@ -1114,6 +1235,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeSimpleNamespacesOutcomeCallable DescribeSimpleNamespacesCallable(const Model::DescribeSimpleNamespacesRequest& request);
 
                 /**
+                 *查询任务最近一次执行状态
+                 * @param req DescribeTaskLastStatusRequest
+                 * @return DescribeTaskLastStatusOutcome
+                 */
+                DescribeTaskLastStatusOutcome DescribeTaskLastStatus(const Model::DescribeTaskLastStatusRequest &request);
+                void DescribeTaskLastStatusAsync(const Model::DescribeTaskLastStatusRequest& request, const DescribeTaskLastStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskLastStatusOutcomeCallable DescribeTaskLastStatusCallable(const Model::DescribeTaskLastStatusRequest& request);
+
+                /**
                  *TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。
 COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                  * @param req DescribeUploadInfoRequest
@@ -1122,6 +1252,60 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeUploadInfoOutcome DescribeUploadInfo(const Model::DescribeUploadInfoRequest &request);
                 void DescribeUploadInfoAsync(const Model::DescribeUploadInfoRequest& request, const DescribeUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUploadInfoOutcomeCallable DescribeUploadInfoCallable(const Model::DescribeUploadInfoRequest& request);
+
+                /**
+                 *停用任务
+                 * @param req DisableTaskRequest
+                 * @return DisableTaskOutcome
+                 */
+                DisableTaskOutcome DisableTask(const Model::DisableTaskRequest &request);
+                void DisableTaskAsync(const Model::DisableTaskRequest& request, const DisableTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableTaskOutcomeCallable DisableTaskCallable(const Model::DisableTaskRequest& request);
+
+                /**
+                 *停用工作流
+                 * @param req DisableTaskFlowRequest
+                 * @return DisableTaskFlowOutcome
+                 */
+                DisableTaskFlowOutcome DisableTaskFlow(const Model::DisableTaskFlowRequest &request);
+                void DisableTaskFlowAsync(const Model::DisableTaskFlowRequest& request, const DisableTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableTaskFlowOutcomeCallable DisableTaskFlowCallable(const Model::DisableTaskFlowRequest& request);
+
+                /**
+                 *启用任务
+                 * @param req EnableTaskRequest
+                 * @return EnableTaskOutcome
+                 */
+                EnableTaskOutcome EnableTask(const Model::EnableTaskRequest &request);
+                void EnableTaskAsync(const Model::EnableTaskRequest& request, const EnableTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableTaskOutcomeCallable EnableTaskCallable(const Model::EnableTaskRequest& request);
+
+                /**
+                 *启用工作流
+                 * @param req EnableTaskFlowRequest
+                 * @return EnableTaskFlowOutcome
+                 */
+                EnableTaskFlowOutcome EnableTaskFlow(const Model::EnableTaskFlowRequest &request);
+                void EnableTaskFlowAsync(const Model::EnableTaskFlowRequest& request, const EnableTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableTaskFlowOutcomeCallable EnableTaskFlowCallable(const Model::EnableTaskFlowRequest& request);
+
+                /**
+                 *执行一次任务。
+                 * @param req ExecuteTaskRequest
+                 * @return ExecuteTaskOutcome
+                 */
+                ExecuteTaskOutcome ExecuteTask(const Model::ExecuteTaskRequest &request);
+                void ExecuteTaskAsync(const Model::ExecuteTaskRequest& request, const ExecuteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecuteTaskOutcomeCallable ExecuteTaskCallable(const Model::ExecuteTaskRequest& request);
+
+                /**
+                 *执行一次工作流
+                 * @param req ExecuteTaskFlowRequest
+                 * @return ExecuteTaskFlowOutcome
+                 */
+                ExecuteTaskFlowOutcome ExecuteTaskFlow(const Model::ExecuteTaskFlowRequest &request);
+                void ExecuteTaskFlowAsync(const Model::ExecuteTaskFlowRequest& request, const ExecuteTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecuteTaskFlowOutcomeCallable ExecuteTaskFlowCallable(const Model::ExecuteTaskFlowRequest& request);
 
                 /**
                  *虚拟机部署组添加实例
@@ -1186,6 +1370,33 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ModifyUploadInfoOutcome ModifyUploadInfo(const Model::ModifyUploadInfoRequest &request);
                 void ModifyUploadInfoAsync(const Model::ModifyUploadInfoRequest& request, const ModifyUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUploadInfoOutcomeCallable ModifyUploadInfoCallable(const Model::ModifyUploadInfoRequest& request);
+
+                /**
+                 *重新执行任务
+                 * @param req RedoTaskRequest
+                 * @return RedoTaskOutcome
+                 */
+                RedoTaskOutcome RedoTask(const Model::RedoTaskRequest &request);
+                void RedoTaskAsync(const Model::RedoTaskRequest& request, const RedoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RedoTaskOutcomeCallable RedoTaskCallable(const Model::RedoTaskRequest& request);
+
+                /**
+                 *重新执行任务批次
+                 * @param req RedoTaskBatchRequest
+                 * @return RedoTaskBatchOutcome
+                 */
+                RedoTaskBatchOutcome RedoTaskBatch(const Model::RedoTaskBatchRequest &request);
+                void RedoTaskBatchAsync(const Model::RedoTaskBatchRequest& request, const RedoTaskBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RedoTaskBatchOutcomeCallable RedoTaskBatchCallable(const Model::RedoTaskBatchRequest& request);
+
+                /**
+                 *重新执行工作流批次
+                 * @param req RedoTaskFlowBatchRequest
+                 * @return RedoTaskFlowBatchOutcome
+                 */
+                RedoTaskFlowBatchOutcome RedoTaskFlowBatch(const Model::RedoTaskFlowBatchRequest &request);
+                void RedoTaskFlowBatchAsync(const Model::RedoTaskFlowBatchRequest& request, const RedoTaskFlowBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RedoTaskFlowBatchOutcomeCallable RedoTaskFlowBatchCallable(const Model::RedoTaskFlowBatchRequest& request);
 
                 /**
                  *发布配置
@@ -1294,6 +1505,33 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 StopGroupOutcome StopGroup(const Model::StopGroupRequest &request);
                 void StopGroupAsync(const Model::StopGroupRequest& request, const StopGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopGroupOutcomeCallable StopGroupCallable(const Model::StopGroupRequest& request);
+
+                /**
+                 *停止执行中的任务批次， 非运行中的任务不可调用。
+                 * @param req StopTaskBatchRequest
+                 * @return StopTaskBatchOutcome
+                 */
+                StopTaskBatchOutcome StopTaskBatch(const Model::StopTaskBatchRequest &request);
+                void StopTaskBatchAsync(const Model::StopTaskBatchRequest& request, const StopTaskBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopTaskBatchOutcomeCallable StopTaskBatchCallable(const Model::StopTaskBatchRequest& request);
+
+                /**
+                 *停止正在某个节点上执行的任务
+                 * @param req StopTaskExecuteRequest
+                 * @return StopTaskExecuteOutcome
+                 */
+                StopTaskExecuteOutcome StopTaskExecute(const Model::StopTaskExecuteRequest &request);
+                void StopTaskExecuteAsync(const Model::StopTaskExecuteRequest& request, const StopTaskExecuteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopTaskExecuteOutcomeCallable StopTaskExecuteCallable(const Model::StopTaskExecuteRequest& request);
+
+                /**
+                 *停止一个工作流批次
+                 * @param req TerminateTaskFlowBatchRequest
+                 * @return TerminateTaskFlowBatchOutcome
+                 */
+                TerminateTaskFlowBatchOutcome TerminateTaskFlowBatch(const Model::TerminateTaskFlowBatchRequest &request);
+                void TerminateTaskFlowBatchAsync(const Model::TerminateTaskFlowBatchRequest& request, const TerminateTaskFlowBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateTaskFlowBatchOutcomeCallable TerminateTaskFlowBatchCallable(const Model::TerminateTaskFlowBatchRequest& request);
 
                 /**
                  *更新仓库信息
