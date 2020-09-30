@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DescribeRecordTemplates接口获取到的模板 ID。
-                     * @return TemplateId DescribeRecordTemplates接口获取到的模板 ID。
+                     * 获取[DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。
+                     * @return TemplateId [DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置DescribeRecordTemplates接口获取到的模板 ID。
-                     * @param TemplateId DescribeRecordTemplates接口获取到的模板 ID。
+                     * 设置[DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。
+                     * @param TemplateId [DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * DescribeRecordTemplates接口获取到的模板 ID。
+                     * [DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

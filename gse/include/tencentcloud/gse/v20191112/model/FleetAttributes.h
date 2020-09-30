@@ -344,17 +344,17 @@ namespace TencentCloud
                     bool TerminationTimeHasBeenSet() const;
 
                     /**
-                     * 获取时限保护时间
+                     * 获取时限保护超时时间，默认60分钟，最小值5，最大值1440
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GameServerSessionProtectionTimeLimit 时限保护时间
+                     * @return GameServerSessionProtectionTimeLimit 时限保护超时时间，默认60分钟，最小值5，最大值1440
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetGameServerSessionProtectionTimeLimit() const;
 
                     /**
-                     * 设置时限保护时间
+                     * 设置时限保护超时时间，默认60分钟，最小值5，最大值1440
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GameServerSessionProtectionTimeLimit 时限保护时间
+                     * @param GameServerSessionProtectionTimeLimit 时限保护超时时间，默认60分钟，最小值5，最大值1440
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGameServerSessionProtectionTimeLimit(const uint64_t& _gameServerSessionProtectionTimeLimit);
@@ -366,17 +366,17 @@ namespace TencentCloud
                     bool GameServerSessionProtectionTimeLimitHasBeenSet() const;
 
                     /**
-                     * 获取计费状态
+                     * 获取计费状态：未开通、已开通、异常、欠费隔离、销毁、解冻
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingStatus 计费状态
+                     * @return BillingStatus 计费状态：未开通、已开通、异常、欠费隔离、销毁、解冻
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBillingStatus() const;
 
                     /**
-                     * 设置计费状态
+                     * 设置计费状态：未开通、已开通、异常、欠费隔离、销毁、解冻
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BillingStatus 计费状态
+                     * @param BillingStatus 计费状态：未开通、已开通、异常、欠费隔离、销毁、解冻
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBillingStatus(const std::string& _billingStatus);
@@ -485,14 +485,14 @@ namespace TencentCloud
                     bool m_terminationTimeHasBeenSet;
 
                     /**
-                     * 时限保护时间
+                     * 时限保护超时时间，默认60分钟，最小值5，最大值1440
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_gameServerSessionProtectionTimeLimit;
                     bool m_gameServerSessionProtectionTimeLimitHasBeenSet;
 
                     /**
-                     * 计费状态
+                     * 计费状态：未开通、已开通、异常、欠费隔离、销毁、解冻
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingStatus;

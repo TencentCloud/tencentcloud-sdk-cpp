@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeIpStatusRequest::DescribeIpStatusRequest() :
     m_domainHasBeenSet(false),
-    m_layerHasBeenSet(false)
+    m_layerHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeIpStatusRequest::ToJsonString() const
         string key = "Layer";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_layer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeIpStatusRequest::SetLayer(const string& _layer)
 bool DescribeIpStatusRequest::LayerHasBeenSet() const
 {
     return m_layerHasBeenSet;
+}
+
+string DescribeIpStatusRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeIpStatusRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeIpStatusRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

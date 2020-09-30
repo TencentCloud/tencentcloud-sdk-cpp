@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gse/v20191112/model/StartMatchPlacementResponse.h>
+#include <tencentcloud/domain/v20180808/model/CreateDomainBatchResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gse::V20191112::Model;
+using namespace TencentCloud::Domain::V20180808::Model;
 using namespace rapidjson;
 using namespace std;
 
-StartMatchPlacementResponse::StartMatchPlacementResponse() :
-    m_gameServerSessionPlacementHasBeenSet(false)
+CreateDomainBatchResponse::CreateDomainBatchResponse() :
+    m_logIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome StartMatchPlacementResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateDomainBatchResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -63,21 +63,14 @@ CoreInternalOutcome StartMatchPlacementResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("GameServerSessionPlacement") && !rsp["GameServerSessionPlacement"].IsNull())
+    if (rsp.HasMember("LogId") && !rsp["LogId"].IsNull())
     {
-        if (!rsp["GameServerSessionPlacement"].IsObject())
+        if (!rsp["LogId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GameServerSessionPlacement` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `LogId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_gameServerSessionPlacement.Deserialize(rsp["GameServerSessionPlacement"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_gameServerSessionPlacementHasBeenSet = true;
+        m_logId = rsp["LogId"].GetInt64();
+        m_logIdHasBeenSet = true;
     }
 
 
@@ -85,14 +78,14 @@ CoreInternalOutcome StartMatchPlacementResponse::Deserialize(const string &paylo
 }
 
 
-GameServerSessionPlacement StartMatchPlacementResponse::GetGameServerSessionPlacement() const
+int64_t CreateDomainBatchResponse::GetLogId() const
 {
-    return m_gameServerSessionPlacement;
+    return m_logId;
 }
 
-bool StartMatchPlacementResponse::GameServerSessionPlacementHasBeenSet() const
+bool CreateDomainBatchResponse::LogIdHasBeenSet() const
 {
-    return m_gameServerSessionPlacementHasBeenSet;
+    return m_logIdHasBeenSet;
 }
 
 

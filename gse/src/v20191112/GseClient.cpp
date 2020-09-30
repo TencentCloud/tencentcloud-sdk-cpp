@@ -169,6 +169,49 @@ GseClient::CreateAssetOutcomeCallable GseClient::CreateAssetCallable(const Creat
     return task->get_future();
 }
 
+GseClient::CreateFleetOutcome GseClient::CreateFleet(const CreateFleetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFleet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFleetResponse rsp = CreateFleetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFleetOutcome(rsp);
+        else
+            return CreateFleetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFleetOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::CreateFleetAsync(const CreateFleetRequest& request, const CreateFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFleet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::CreateFleetOutcomeCallable GseClient::CreateFleetCallable(const CreateFleetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFleetOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFleet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::CreateGameServerSessionOutcome GseClient::CreateGameServerSession(const CreateGameServerSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGameServerSession");
@@ -205,6 +248,49 @@ GseClient::CreateGameServerSessionOutcomeCallable GseClient::CreateGameServerSes
         [this, request]()
         {
             return this->CreateGameServerSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::CreateGameServerSessionQueueOutcome GseClient::CreateGameServerSessionQueue(const CreateGameServerSessionQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGameServerSessionQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGameServerSessionQueueResponse rsp = CreateGameServerSessionQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGameServerSessionQueueOutcome(rsp);
+        else
+            return CreateGameServerSessionQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGameServerSessionQueueOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::CreateGameServerSessionQueueAsync(const CreateGameServerSessionQueueRequest& request, const CreateGameServerSessionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGameServerSessionQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::CreateGameServerSessionQueueOutcomeCallable GseClient::CreateGameServerSessionQueueCallable(const CreateGameServerSessionQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGameServerSessionQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGameServerSessionQueue(request);
         }
     );
 
@@ -334,6 +420,49 @@ GseClient::DeleteFleetOutcomeCallable GseClient::DeleteFleetCallable(const Delet
         [this, request]()
         {
             return this->DeleteFleet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::DeleteGameServerSessionQueueOutcome GseClient::DeleteGameServerSessionQueue(const DeleteGameServerSessionQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGameServerSessionQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGameServerSessionQueueResponse rsp = DeleteGameServerSessionQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGameServerSessionQueueOutcome(rsp);
+        else
+            return DeleteGameServerSessionQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGameServerSessionQueueOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DeleteGameServerSessionQueueAsync(const DeleteGameServerSessionQueueRequest& request, const DeleteGameServerSessionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGameServerSessionQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DeleteGameServerSessionQueueOutcomeCallable GseClient::DeleteGameServerSessionQueueCallable(const DeleteGameServerSessionQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGameServerSessionQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGameServerSessionQueue(request);
         }
     );
 
@@ -599,6 +728,49 @@ GseClient::DescribeFleetAttributesOutcomeCallable GseClient::DescribeFleetAttrib
     return task->get_future();
 }
 
+GseClient::DescribeFleetCapacityOutcome GseClient::DescribeFleetCapacity(const DescribeFleetCapacityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFleetCapacity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFleetCapacityResponse rsp = DescribeFleetCapacityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFleetCapacityOutcome(rsp);
+        else
+            return DescribeFleetCapacityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFleetCapacityOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeFleetCapacityAsync(const DescribeFleetCapacityRequest& request, const DescribeFleetCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFleetCapacity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeFleetCapacityOutcomeCallable GseClient::DescribeFleetCapacityCallable(const DescribeFleetCapacityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFleetCapacityOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFleetCapacity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::DescribeFleetEventsOutcome GseClient::DescribeFleetEvents(const DescribeFleetEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFleetEvents");
@@ -678,6 +850,135 @@ GseClient::DescribeFleetPortSettingsOutcomeCallable GseClient::DescribeFleetPort
         [this, request]()
         {
             return this->DescribeFleetPortSettings(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::DescribeFleetStatisticDetailsOutcome GseClient::DescribeFleetStatisticDetails(const DescribeFleetStatisticDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFleetStatisticDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFleetStatisticDetailsResponse rsp = DescribeFleetStatisticDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFleetStatisticDetailsOutcome(rsp);
+        else
+            return DescribeFleetStatisticDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFleetStatisticDetailsOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeFleetStatisticDetailsAsync(const DescribeFleetStatisticDetailsRequest& request, const DescribeFleetStatisticDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFleetStatisticDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeFleetStatisticDetailsOutcomeCallable GseClient::DescribeFleetStatisticDetailsCallable(const DescribeFleetStatisticDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFleetStatisticDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFleetStatisticDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::DescribeFleetStatisticFlowsOutcome GseClient::DescribeFleetStatisticFlows(const DescribeFleetStatisticFlowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFleetStatisticFlows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFleetStatisticFlowsResponse rsp = DescribeFleetStatisticFlowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFleetStatisticFlowsOutcome(rsp);
+        else
+            return DescribeFleetStatisticFlowsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFleetStatisticFlowsOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeFleetStatisticFlowsAsync(const DescribeFleetStatisticFlowsRequest& request, const DescribeFleetStatisticFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFleetStatisticFlows(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeFleetStatisticFlowsOutcomeCallable GseClient::DescribeFleetStatisticFlowsCallable(const DescribeFleetStatisticFlowsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFleetStatisticFlowsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFleetStatisticFlows(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::DescribeFleetStatisticSummaryOutcome GseClient::DescribeFleetStatisticSummary(const DescribeFleetStatisticSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFleetStatisticSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFleetStatisticSummaryResponse rsp = DescribeFleetStatisticSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFleetStatisticSummaryOutcome(rsp);
+        else
+            return DescribeFleetStatisticSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFleetStatisticSummaryOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeFleetStatisticSummaryAsync(const DescribeFleetStatisticSummaryRequest& request, const DescribeFleetStatisticSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFleetStatisticSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeFleetStatisticSummaryOutcomeCallable GseClient::DescribeFleetStatisticSummaryCallable(const DescribeFleetStatisticSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFleetStatisticSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFleetStatisticSummary(request);
         }
     );
 
@@ -900,6 +1201,49 @@ GseClient::DescribeGameServerSessionsOutcomeCallable GseClient::DescribeGameServ
     return task->get_future();
 }
 
+GseClient::DescribeInstanceLimitOutcome GseClient::DescribeInstanceLimit(const DescribeInstanceLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceLimitResponse rsp = DescribeInstanceLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceLimitOutcome(rsp);
+        else
+            return DescribeInstanceLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceLimitOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeInstanceLimitAsync(const DescribeInstanceLimitRequest& request, const DescribeInstanceLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeInstanceLimitOutcomeCallable GseClient::DescribeInstanceLimitCallable(const DescribeInstanceLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::DescribeInstanceTypesOutcome GseClient::DescribeInstanceTypes(const DescribeInstanceTypesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceTypes");
@@ -979,6 +1323,49 @@ GseClient::DescribeInstancesOutcomeCallable GseClient::DescribeInstancesCallable
         [this, request]()
         {
             return this->DescribeInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::DescribeInstancesExtendOutcome GseClient::DescribeInstancesExtend(const DescribeInstancesExtendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesExtend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesExtendResponse rsp = DescribeInstancesExtendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesExtendOutcome(rsp);
+        else
+            return DescribeInstancesExtendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesExtendOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeInstancesExtendAsync(const DescribeInstancesExtendRequest& request, const DescribeInstancesExtendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesExtend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeInstancesExtendOutcomeCallable GseClient::DescribeInstancesExtendCallable(const DescribeInstancesExtendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesExtendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesExtend(request);
         }
     );
 
@@ -1459,6 +1846,49 @@ GseClient::JoinGameServerSessionOutcomeCallable GseClient::JoinGameServerSession
     return task->get_future();
 }
 
+GseClient::JoinGameServerSessionBatchOutcome GseClient::JoinGameServerSessionBatch(const JoinGameServerSessionBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "JoinGameServerSessionBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        JoinGameServerSessionBatchResponse rsp = JoinGameServerSessionBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return JoinGameServerSessionBatchOutcome(rsp);
+        else
+            return JoinGameServerSessionBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return JoinGameServerSessionBatchOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::JoinGameServerSessionBatchAsync(const JoinGameServerSessionBatchRequest& request, const JoinGameServerSessionBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->JoinGameServerSessionBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::JoinGameServerSessionBatchOutcomeCallable GseClient::JoinGameServerSessionBatchCallable(const JoinGameServerSessionBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<JoinGameServerSessionBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->JoinGameServerSessionBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::ListAliasesOutcome GseClient::ListAliases(const ListAliasesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListAliases");
@@ -1803,49 +2233,6 @@ GseClient::StartGameServerSessionPlacementOutcomeCallable GseClient::StartGameSe
     return task->get_future();
 }
 
-GseClient::StartMatchPlacementOutcome GseClient::StartMatchPlacement(const StartMatchPlacementRequest &request)
-{
-    auto outcome = MakeRequest(request, "StartMatchPlacement");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        StartMatchPlacementResponse rsp = StartMatchPlacementResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return StartMatchPlacementOutcome(rsp);
-        else
-            return StartMatchPlacementOutcome(o.GetError());
-    }
-    else
-    {
-        return StartMatchPlacementOutcome(outcome.GetError());
-    }
-}
-
-void GseClient::StartMatchPlacementAsync(const StartMatchPlacementRequest& request, const StartMatchPlacementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartMatchPlacement(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-GseClient::StartMatchPlacementOutcomeCallable GseClient::StartMatchPlacementCallable(const StartMatchPlacementRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<StartMatchPlacementOutcome()>>(
-        [this, request]()
-        {
-            return this->StartMatchPlacement(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 GseClient::StopFleetActionsOutcome GseClient::StopFleetActions(const StopFleetActionsRequest &request)
 {
     auto outcome = MakeRequest(request, "StopFleetActions");
@@ -2061,6 +2448,49 @@ GseClient::UpdateFleetAttributesOutcomeCallable GseClient::UpdateFleetAttributes
     return task->get_future();
 }
 
+GseClient::UpdateFleetCapacityOutcome GseClient::UpdateFleetCapacity(const UpdateFleetCapacityRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateFleetCapacity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateFleetCapacityResponse rsp = UpdateFleetCapacityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateFleetCapacityOutcome(rsp);
+        else
+            return UpdateFleetCapacityOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateFleetCapacityOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::UpdateFleetCapacityAsync(const UpdateFleetCapacityRequest& request, const UpdateFleetCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateFleetCapacity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::UpdateFleetCapacityOutcomeCallable GseClient::UpdateFleetCapacityCallable(const UpdateFleetCapacityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateFleetCapacityOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateFleetCapacity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::UpdateFleetPortSettingsOutcome GseClient::UpdateFleetPortSettings(const UpdateFleetPortSettingsRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateFleetPortSettings");
@@ -2140,6 +2570,49 @@ GseClient::UpdateGameServerSessionOutcomeCallable GseClient::UpdateGameServerSes
         [this, request]()
         {
             return this->UpdateGameServerSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::UpdateGameServerSessionQueueOutcome GseClient::UpdateGameServerSessionQueue(const UpdateGameServerSessionQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateGameServerSessionQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateGameServerSessionQueueResponse rsp = UpdateGameServerSessionQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateGameServerSessionQueueOutcome(rsp);
+        else
+            return UpdateGameServerSessionQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateGameServerSessionQueueOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::UpdateGameServerSessionQueueAsync(const UpdateGameServerSessionQueueRequest& request, const UpdateGameServerSessionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateGameServerSessionQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::UpdateGameServerSessionQueueOutcomeCallable GseClient::UpdateGameServerSessionQueueCallable(const UpdateGameServerSessionQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateGameServerSessionQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateGameServerSessionQueue(request);
         }
     );
 

@@ -197,8 +197,12 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAssistantCidrRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAssistantCidrResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageBillUsageRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageBillUsageResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageQuotaRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageQuotaResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageResourcesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageResourcesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackagesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnAttachedInstancesRequest.h>
@@ -732,9 +736,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAssistantCidrResponse> DescribeAssistantCidrOutcome;
                 typedef std::future<DescribeAssistantCidrOutcome> DescribeAssistantCidrOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeAssistantCidrRequest&, DescribeAssistantCidrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssistantCidrAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBandwidthPackageBillUsageResponse> DescribeBandwidthPackageBillUsageOutcome;
+                typedef std::future<DescribeBandwidthPackageBillUsageOutcome> DescribeBandwidthPackageBillUsageOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeBandwidthPackageBillUsageRequest&, DescribeBandwidthPackageBillUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthPackageBillUsageAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBandwidthPackageQuotaResponse> DescribeBandwidthPackageQuotaOutcome;
                 typedef std::future<DescribeBandwidthPackageQuotaOutcome> DescribeBandwidthPackageQuotaOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeBandwidthPackageQuotaRequest&, DescribeBandwidthPackageQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthPackageQuotaAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBandwidthPackageResourcesResponse> DescribeBandwidthPackageResourcesOutcome;
+                typedef std::future<DescribeBandwidthPackageResourcesOutcome> DescribeBandwidthPackageResourcesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeBandwidthPackageResourcesRequest&, DescribeBandwidthPackageResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthPackageResourcesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBandwidthPackagesResponse> DescribeBandwidthPackagesOutcome;
                 typedef std::future<DescribeBandwidthPackagesOutcome> DescribeBandwidthPackagesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeBandwidthPackagesRequest&, DescribeBandwidthPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthPackagesAsyncHandler;
@@ -2036,6 +2046,15 @@ namespace TencentCloud
                 DescribeAssistantCidrOutcomeCallable DescribeAssistantCidrCallable(const Model::DescribeAssistantCidrRequest& request);
 
                 /**
+                 *本接口 (DescribeBandwidthPackageBillUsage) 用于查询后付费共享带宽包当前的计费用量.
+                 * @param req DescribeBandwidthPackageBillUsageRequest
+                 * @return DescribeBandwidthPackageBillUsageOutcome
+                 */
+                DescribeBandwidthPackageBillUsageOutcome DescribeBandwidthPackageBillUsage(const Model::DescribeBandwidthPackageBillUsageRequest &request);
+                void DescribeBandwidthPackageBillUsageAsync(const Model::DescribeBandwidthPackageBillUsageRequest& request, const DescribeBandwidthPackageBillUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBandwidthPackageBillUsageOutcomeCallable DescribeBandwidthPackageBillUsageCallable(const Model::DescribeBandwidthPackageBillUsageRequest& request);
+
+                /**
                  *接口用于查询账户在当前地域的带宽包上限数量以及使用数量
                  * @param req DescribeBandwidthPackageQuotaRequest
                  * @return DescribeBandwidthPackageQuotaOutcome
@@ -2043,6 +2062,16 @@ namespace TencentCloud
                 DescribeBandwidthPackageQuotaOutcome DescribeBandwidthPackageQuota(const Model::DescribeBandwidthPackageQuotaRequest &request);
                 void DescribeBandwidthPackageQuotaAsync(const Model::DescribeBandwidthPackageQuotaRequest& request, const DescribeBandwidthPackageQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBandwidthPackageQuotaOutcomeCallable DescribeBandwidthPackageQuotaCallable(const Model::DescribeBandwidthPackageQuotaRequest& request);
+
+                /**
+                 *本接口 (DescribeBandwidthPackageResources) 用于根据共享带宽包唯一ID查询共享带宽包内的资源列表，支持按条件过滤查询结果和分页查询。
+
+                 * @param req DescribeBandwidthPackageResourcesRequest
+                 * @return DescribeBandwidthPackageResourcesOutcome
+                 */
+                DescribeBandwidthPackageResourcesOutcome DescribeBandwidthPackageResources(const Model::DescribeBandwidthPackageResourcesRequest &request);
+                void DescribeBandwidthPackageResourcesAsync(const Model::DescribeBandwidthPackageResourcesRequest& request, const DescribeBandwidthPackageResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBandwidthPackageResourcesOutcomeCallable DescribeBandwidthPackageResourcesCallable(const Model::DescribeBandwidthPackageResourcesRequest& request);
 
                 /**
                  *接口用于查询带宽包详细信息，包括带宽包唯一标识ID，类型，计费模式，名称，资源信息等

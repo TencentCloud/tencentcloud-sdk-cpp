@@ -221,6 +221,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/CacheTagKey.h
   include/tencentcloud/cdn/v20180606/model/ScdnTypeData.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsRequest.h
+  include/tencentcloud/cdn/v20180606/model/IpFilterPathRule.h
   )
 
 set(cdn_src
@@ -427,6 +428,7 @@ set(cdn_src
   src/v20180606/model/CacheTagKey.cpp
   src/v20180606/model/ScdnTypeData.cpp
   src/v20180606/model/DescribeDomainsRequest.cpp
+  src/v20180606/model/IpFilterPathRule.cpp
   )
 
 set(cdn_include

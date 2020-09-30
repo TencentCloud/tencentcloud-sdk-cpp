@@ -24,7 +24,8 @@ using namespace std;
 IpFilter::IpFilter() :
     m_switchHasBeenSet(false),
     m_filterTypeHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_filterRulesHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,26 @@ CoreInternalOutcome IpFilter::Deserialize(const Value &value)
         m_filtersHasBeenSet = true;
     }
 
+    if (value.HasMember("FilterRules") && !value["FilterRules"].IsNull())
+    {
+        if (!value["FilterRules"].IsArray())
+            return CoreInternalOutcome(Error("response `IpFilter.FilterRules` is not array type"));
+
+        const Value &tmpValue = value["FilterRules"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IpFilterPathRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_filterRules.push_back(item);
+        }
+        m_filterRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +120,21 @@ void IpFilter::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_filterRulesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FilterRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filterRules.begin(); itr != m_filterRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -151,5 +187,21 @@ void IpFilter::SetFilters(const vector<string>& _filters)
 bool IpFilter::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<IpFilterPathRule> IpFilter::GetFilterRules() const
+{
+    return m_filterRules;
+}
+
+void IpFilter::SetFilterRules(const vector<IpFilterPathRule>& _filterRules)
+{
+    m_filterRules = _filterRules;
+    m_filterRulesHasBeenSet = true;
+}
+
+bool IpFilter::FilterRulesHasBeenSet() const
+{
+    return m_filterRulesHasBeenSet;
 }
 

@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_GSE_V20191112_MODEL_STARTMATCHPLACEMENTRESPONSE_H_
-#define TENCENTCLOUD_GSE_V20191112_MODEL_STARTMATCHPLACEMENTRESPONSE_H_
+#ifndef TENCENTCLOUD_GSE_V20191112_MODEL_CREATEGAMESERVERSESSIONQUEUERESPONSE_H_
+#define TENCENTCLOUD_GSE_V20191112_MODEL_CREATEGAMESERVERSESSIONQUEUERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/gse/v20191112/model/GameServerSessionPlacement.h>
+#include <tencentcloud/gse/v20191112/model/GameServerSessionQueue.h>
 
 
 namespace TencentCloud
@@ -33,35 +33,35 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * StartMatchPlacement返回参数结构体
+                * CreateGameServerSessionQueue返回参数结构体
                 */
-                class StartMatchPlacementResponse : public AbstractModel
+                class CreateGameServerSessionQueueResponse : public AbstractModel
                 {
                 public:
-                    StartMatchPlacementResponse();
-                    ~StartMatchPlacementResponse() = default;
+                    CreateGameServerSessionQueueResponse();
+                    ~CreateGameServerSessionQueueResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取游戏服务器会话放置
-                     * @return GameServerSessionPlacement 游戏服务器会话放置
+                     * 获取游戏服务器会话队列
+                     * @return GameServerSessionQueue 游戏服务器会话队列
                      */
-                    GameServerSessionPlacement GetGameServerSessionPlacement() const;
+                    GameServerSessionQueue GetGameServerSessionQueue() const;
 
                     /**
-                     * 判断参数 GameServerSessionPlacement 是否已赋值
-                     * @return GameServerSessionPlacement 是否已赋值
+                     * 判断参数 GameServerSessionQueue 是否已赋值
+                     * @return GameServerSessionQueue 是否已赋值
                      */
-                    bool GameServerSessionPlacementHasBeenSet() const;
+                    bool GameServerSessionQueueHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 游戏服务器会话放置
+                     * 游戏服务器会话队列
                      */
-                    GameServerSessionPlacement m_gameServerSessionPlacement;
-                    bool m_gameServerSessionPlacementHasBeenSet;
+                    GameServerSessionQueue m_gameServerSessionQueue;
+                    bool m_gameServerSessionQueueHasBeenSet;
 
                 };
             }
@@ -69,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_GSE_V20191112_MODEL_STARTMATCHPLACEMENTRESPONSE_H_
+#endif // !TENCENTCLOUD_GSE_V20191112_MODEL_CREATEGAMESERVERSESSIONQUEUERESPONSE_H_

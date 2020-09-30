@@ -36,7 +36,10 @@ EnvInfo::EnvInfo() :
     m_logServicesHasBeenSet(false),
     m_staticStoragesHasBeenSet(false),
     m_isAutoDegradeHasBeenSet(false),
-    m_envChannelHasBeenSet(false)
+    m_envChannelHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_isDefaultHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -245,6 +248,36 @@ CoreInternalOutcome EnvInfo::Deserialize(const Value &value)
         m_envChannelHasBeenSet = true;
     }
 
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EnvInfo.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = string(value["PayMode"].GetString());
+        m_payModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDefault") && !value["IsDefault"].IsNull())
+    {
+        if (!value["IsDefault"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `EnvInfo.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDefault = value["IsDefault"].GetBool();
+        m_isDefaultHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EnvInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -405,6 +438,30 @@ void EnvInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "EnvChannel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_envChannel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDefaultHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsDefault";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDefault, allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -648,5 +705,53 @@ void EnvInfo::SetEnvChannel(const string& _envChannel)
 bool EnvInfo::EnvChannelHasBeenSet() const
 {
     return m_envChannelHasBeenSet;
+}
+
+string EnvInfo::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void EnvInfo::SetPayMode(const string& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool EnvInfo::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+bool EnvInfo::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void EnvInfo::SetIsDefault(const bool& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool EnvInfo::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
+}
+
+string EnvInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void EnvInfo::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool EnvInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

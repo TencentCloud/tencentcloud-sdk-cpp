@@ -29,14 +29,20 @@
 #include <tencentcloud/gse/v20191112/model/CreateAliasResponse.h>
 #include <tencentcloud/gse/v20191112/model/CreateAssetRequest.h>
 #include <tencentcloud/gse/v20191112/model/CreateAssetResponse.h>
+#include <tencentcloud/gse/v20191112/model/CreateFleetRequest.h>
+#include <tencentcloud/gse/v20191112/model/CreateFleetResponse.h>
 #include <tencentcloud/gse/v20191112/model/CreateGameServerSessionRequest.h>
 #include <tencentcloud/gse/v20191112/model/CreateGameServerSessionResponse.h>
+#include <tencentcloud/gse/v20191112/model/CreateGameServerSessionQueueRequest.h>
+#include <tencentcloud/gse/v20191112/model/CreateGameServerSessionQueueResponse.h>
 #include <tencentcloud/gse/v20191112/model/DeleteAliasRequest.h>
 #include <tencentcloud/gse/v20191112/model/DeleteAliasResponse.h>
 #include <tencentcloud/gse/v20191112/model/DeleteAssetRequest.h>
 #include <tencentcloud/gse/v20191112/model/DeleteAssetResponse.h>
 #include <tencentcloud/gse/v20191112/model/DeleteFleetRequest.h>
 #include <tencentcloud/gse/v20191112/model/DeleteFleetResponse.h>
+#include <tencentcloud/gse/v20191112/model/DeleteGameServerSessionQueueRequest.h>
+#include <tencentcloud/gse/v20191112/model/DeleteGameServerSessionQueueResponse.h>
 #include <tencentcloud/gse/v20191112/model/DeleteScalingPolicyRequest.h>
 #include <tencentcloud/gse/v20191112/model/DeleteScalingPolicyResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeAliasRequest.h>
@@ -49,10 +55,18 @@
 #include <tencentcloud/gse/v20191112/model/DescribeCcnInstancesResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetAttributesRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetAttributesResponse.h>
+#include <tencentcloud/gse/v20191112/model/DescribeFleetCapacityRequest.h>
+#include <tencentcloud/gse/v20191112/model/DescribeFleetCapacityResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetEventsRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetEventsResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetPortSettingsRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetPortSettingsResponse.h>
+#include <tencentcloud/gse/v20191112/model/DescribeFleetStatisticDetailsRequest.h>
+#include <tencentcloud/gse/v20191112/model/DescribeFleetStatisticDetailsResponse.h>
+#include <tencentcloud/gse/v20191112/model/DescribeFleetStatisticFlowsRequest.h>
+#include <tencentcloud/gse/v20191112/model/DescribeFleetStatisticFlowsResponse.h>
+#include <tencentcloud/gse/v20191112/model/DescribeFleetStatisticSummaryRequest.h>
+#include <tencentcloud/gse/v20191112/model/DescribeFleetStatisticSummaryResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetUtilizationRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetUtilizationResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionDetailsRequest.h>
@@ -63,10 +77,14 @@
 #include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionQueuesResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionsRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionsResponse.h>
+#include <tencentcloud/gse/v20191112/model/DescribeInstanceLimitRequest.h>
+#include <tencentcloud/gse/v20191112/model/DescribeInstanceLimitResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeInstanceTypesRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeInstanceTypesResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeInstancesRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeInstancesResponse.h>
+#include <tencentcloud/gse/v20191112/model/DescribeInstancesExtendRequest.h>
+#include <tencentcloud/gse/v20191112/model/DescribeInstancesExtendResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribePlayerSessionsRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribePlayerSessionsResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeRuntimeConfigurationRequest.h>
@@ -89,6 +107,8 @@
 #include <tencentcloud/gse/v20191112/model/GetUploadFederationTokenResponse.h>
 #include <tencentcloud/gse/v20191112/model/JoinGameServerSessionRequest.h>
 #include <tencentcloud/gse/v20191112/model/JoinGameServerSessionResponse.h>
+#include <tencentcloud/gse/v20191112/model/JoinGameServerSessionBatchRequest.h>
+#include <tencentcloud/gse/v20191112/model/JoinGameServerSessionBatchResponse.h>
 #include <tencentcloud/gse/v20191112/model/ListAliasesRequest.h>
 #include <tencentcloud/gse/v20191112/model/ListAliasesResponse.h>
 #include <tencentcloud/gse/v20191112/model/ListFleetsRequest.h>
@@ -105,8 +125,6 @@
 #include <tencentcloud/gse/v20191112/model/StartFleetActionsResponse.h>
 #include <tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementRequest.h>
 #include <tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementResponse.h>
-#include <tencentcloud/gse/v20191112/model/StartMatchPlacementRequest.h>
-#include <tencentcloud/gse/v20191112/model/StartMatchPlacementResponse.h>
 #include <tencentcloud/gse/v20191112/model/StopFleetActionsRequest.h>
 #include <tencentcloud/gse/v20191112/model/StopFleetActionsResponse.h>
 #include <tencentcloud/gse/v20191112/model/StopGameServerSessionPlacementRequest.h>
@@ -117,10 +135,14 @@
 #include <tencentcloud/gse/v20191112/model/UpdateAssetResponse.h>
 #include <tencentcloud/gse/v20191112/model/UpdateFleetAttributesRequest.h>
 #include <tencentcloud/gse/v20191112/model/UpdateFleetAttributesResponse.h>
+#include <tencentcloud/gse/v20191112/model/UpdateFleetCapacityRequest.h>
+#include <tencentcloud/gse/v20191112/model/UpdateFleetCapacityResponse.h>
 #include <tencentcloud/gse/v20191112/model/UpdateFleetPortSettingsRequest.h>
 #include <tencentcloud/gse/v20191112/model/UpdateFleetPortSettingsResponse.h>
 #include <tencentcloud/gse/v20191112/model/UpdateGameServerSessionRequest.h>
 #include <tencentcloud/gse/v20191112/model/UpdateGameServerSessionResponse.h>
+#include <tencentcloud/gse/v20191112/model/UpdateGameServerSessionQueueRequest.h>
+#include <tencentcloud/gse/v20191112/model/UpdateGameServerSessionQueueResponse.h>
 #include <tencentcloud/gse/v20191112/model/UpdateRuntimeConfigurationRequest.h>
 #include <tencentcloud/gse/v20191112/model/UpdateRuntimeConfigurationResponse.h>
 
@@ -146,9 +168,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAssetResponse> CreateAssetOutcome;
                 typedef std::future<CreateAssetOutcome> CreateAssetOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::CreateAssetRequest&, CreateAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetAsyncHandler;
+                typedef Outcome<Error, Model::CreateFleetResponse> CreateFleetOutcome;
+                typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::CreateFleetRequest&, CreateFleetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFleetAsyncHandler;
                 typedef Outcome<Error, Model::CreateGameServerSessionResponse> CreateGameServerSessionOutcome;
                 typedef std::future<CreateGameServerSessionOutcome> CreateGameServerSessionOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::CreateGameServerSessionRequest&, CreateGameServerSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGameServerSessionAsyncHandler;
+                typedef Outcome<Error, Model::CreateGameServerSessionQueueResponse> CreateGameServerSessionQueueOutcome;
+                typedef std::future<CreateGameServerSessionQueueOutcome> CreateGameServerSessionQueueOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::CreateGameServerSessionQueueRequest&, CreateGameServerSessionQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGameServerSessionQueueAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAliasResponse> DeleteAliasOutcome;
                 typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DeleteAliasRequest&, DeleteAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAliasAsyncHandler;
@@ -158,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteFleetResponse> DeleteFleetOutcome;
                 typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DeleteFleetRequest&, DeleteFleetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFleetAsyncHandler;
+                typedef Outcome<Error, Model::DeleteGameServerSessionQueueResponse> DeleteGameServerSessionQueueOutcome;
+                typedef std::future<DeleteGameServerSessionQueueOutcome> DeleteGameServerSessionQueueOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DeleteGameServerSessionQueueRequest&, DeleteGameServerSessionQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGameServerSessionQueueAsyncHandler;
                 typedef Outcome<Error, Model::DeleteScalingPolicyResponse> DeleteScalingPolicyOutcome;
                 typedef std::future<DeleteScalingPolicyOutcome> DeleteScalingPolicyOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DeleteScalingPolicyRequest&, DeleteScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScalingPolicyAsyncHandler;
@@ -176,12 +207,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeFleetAttributesResponse> DescribeFleetAttributesOutcome;
                 typedef std::future<DescribeFleetAttributesOutcome> DescribeFleetAttributesOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeFleetAttributesRequest&, DescribeFleetAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetAttributesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFleetCapacityResponse> DescribeFleetCapacityOutcome;
+                typedef std::future<DescribeFleetCapacityOutcome> DescribeFleetCapacityOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DescribeFleetCapacityRequest&, DescribeFleetCapacityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetCapacityAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFleetEventsResponse> DescribeFleetEventsOutcome;
                 typedef std::future<DescribeFleetEventsOutcome> DescribeFleetEventsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeFleetEventsRequest&, DescribeFleetEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetEventsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFleetPortSettingsResponse> DescribeFleetPortSettingsOutcome;
                 typedef std::future<DescribeFleetPortSettingsOutcome> DescribeFleetPortSettingsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeFleetPortSettingsRequest&, DescribeFleetPortSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetPortSettingsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFleetStatisticDetailsResponse> DescribeFleetStatisticDetailsOutcome;
+                typedef std::future<DescribeFleetStatisticDetailsOutcome> DescribeFleetStatisticDetailsOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DescribeFleetStatisticDetailsRequest&, DescribeFleetStatisticDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetStatisticDetailsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFleetStatisticFlowsResponse> DescribeFleetStatisticFlowsOutcome;
+                typedef std::future<DescribeFleetStatisticFlowsOutcome> DescribeFleetStatisticFlowsOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DescribeFleetStatisticFlowsRequest&, DescribeFleetStatisticFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetStatisticFlowsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFleetStatisticSummaryResponse> DescribeFleetStatisticSummaryOutcome;
+                typedef std::future<DescribeFleetStatisticSummaryOutcome> DescribeFleetStatisticSummaryOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DescribeFleetStatisticSummaryRequest&, DescribeFleetStatisticSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetStatisticSummaryAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFleetUtilizationResponse> DescribeFleetUtilizationOutcome;
                 typedef std::future<DescribeFleetUtilizationOutcome> DescribeFleetUtilizationOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeFleetUtilizationRequest&, DescribeFleetUtilizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetUtilizationAsyncHandler;
@@ -197,12 +240,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeGameServerSessionsResponse> DescribeGameServerSessionsOutcome;
                 typedef std::future<DescribeGameServerSessionsOutcome> DescribeGameServerSessionsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeGameServerSessionsRequest&, DescribeGameServerSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGameServerSessionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceLimitResponse> DescribeInstanceLimitOutcome;
+                typedef std::future<DescribeInstanceLimitOutcome> DescribeInstanceLimitOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DescribeInstanceLimitRequest&, DescribeInstanceLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLimitAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstanceTypesResponse> DescribeInstanceTypesOutcome;
                 typedef std::future<DescribeInstanceTypesOutcome> DescribeInstanceTypesOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeInstanceTypesRequest&, DescribeInstanceTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceTypesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstancesExtendResponse> DescribeInstancesExtendOutcome;
+                typedef std::future<DescribeInstancesExtendOutcome> DescribeInstancesExtendOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DescribeInstancesExtendRequest&, DescribeInstancesExtendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesExtendAsyncHandler;
                 typedef Outcome<Error, Model::DescribePlayerSessionsResponse> DescribePlayerSessionsOutcome;
                 typedef std::future<DescribePlayerSessionsOutcome> DescribePlayerSessionsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribePlayerSessionsRequest&, DescribePlayerSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlayerSessionsAsyncHandler;
@@ -236,6 +285,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::JoinGameServerSessionResponse> JoinGameServerSessionOutcome;
                 typedef std::future<JoinGameServerSessionOutcome> JoinGameServerSessionOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::JoinGameServerSessionRequest&, JoinGameServerSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> JoinGameServerSessionAsyncHandler;
+                typedef Outcome<Error, Model::JoinGameServerSessionBatchResponse> JoinGameServerSessionBatchOutcome;
+                typedef std::future<JoinGameServerSessionBatchOutcome> JoinGameServerSessionBatchOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::JoinGameServerSessionBatchRequest&, JoinGameServerSessionBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> JoinGameServerSessionBatchAsyncHandler;
                 typedef Outcome<Error, Model::ListAliasesResponse> ListAliasesOutcome;
                 typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::ListAliasesRequest&, ListAliasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAliasesAsyncHandler;
@@ -260,9 +312,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StartGameServerSessionPlacementResponse> StartGameServerSessionPlacementOutcome;
                 typedef std::future<StartGameServerSessionPlacementOutcome> StartGameServerSessionPlacementOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::StartGameServerSessionPlacementRequest&, StartGameServerSessionPlacementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartGameServerSessionPlacementAsyncHandler;
-                typedef Outcome<Error, Model::StartMatchPlacementResponse> StartMatchPlacementOutcome;
-                typedef std::future<StartMatchPlacementOutcome> StartMatchPlacementOutcomeCallable;
-                typedef std::function<void(const GseClient*, const Model::StartMatchPlacementRequest&, StartMatchPlacementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMatchPlacementAsyncHandler;
                 typedef Outcome<Error, Model::StopFleetActionsResponse> StopFleetActionsOutcome;
                 typedef std::future<StopFleetActionsOutcome> StopFleetActionsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::StopFleetActionsRequest&, StopFleetActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopFleetActionsAsyncHandler;
@@ -278,12 +327,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdateFleetAttributesResponse> UpdateFleetAttributesOutcome;
                 typedef std::future<UpdateFleetAttributesOutcome> UpdateFleetAttributesOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::UpdateFleetAttributesRequest&, UpdateFleetAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFleetAttributesAsyncHandler;
+                typedef Outcome<Error, Model::UpdateFleetCapacityResponse> UpdateFleetCapacityOutcome;
+                typedef std::future<UpdateFleetCapacityOutcome> UpdateFleetCapacityOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::UpdateFleetCapacityRequest&, UpdateFleetCapacityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFleetCapacityAsyncHandler;
                 typedef Outcome<Error, Model::UpdateFleetPortSettingsResponse> UpdateFleetPortSettingsOutcome;
                 typedef std::future<UpdateFleetPortSettingsOutcome> UpdateFleetPortSettingsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::UpdateFleetPortSettingsRequest&, UpdateFleetPortSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFleetPortSettingsAsyncHandler;
                 typedef Outcome<Error, Model::UpdateGameServerSessionResponse> UpdateGameServerSessionOutcome;
                 typedef std::future<UpdateGameServerSessionOutcome> UpdateGameServerSessionOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::UpdateGameServerSessionRequest&, UpdateGameServerSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGameServerSessionAsyncHandler;
+                typedef Outcome<Error, Model::UpdateGameServerSessionQueueResponse> UpdateGameServerSessionQueueOutcome;
+                typedef std::future<UpdateGameServerSessionQueueOutcome> UpdateGameServerSessionQueueOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::UpdateGameServerSessionQueueRequest&, UpdateGameServerSessionQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGameServerSessionQueueAsyncHandler;
                 typedef Outcome<Error, Model::UpdateRuntimeConfigurationResponse> UpdateRuntimeConfigurationOutcome;
                 typedef std::future<UpdateRuntimeConfigurationOutcome> UpdateRuntimeConfigurationOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::UpdateRuntimeConfigurationRequest&, UpdateRuntimeConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRuntimeConfigurationAsyncHandler;
@@ -329,6 +384,15 @@ namespace TencentCloud
                 CreateAssetOutcomeCallable CreateAssetCallable(const Model::CreateAssetRequest& request);
 
                 /**
+                 *本接口（CreateFleet）用于创建服务器舰队
+                 * @param req CreateFleetRequest
+                 * @return CreateFleetOutcome
+                 */
+                CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest &request);
+                void CreateFleetAsync(const Model::CreateFleetRequest& request, const CreateFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFleetOutcomeCallable CreateFleetCallable(const Model::CreateFleetRequest& request);
+
+                /**
                  *本接口（CreateGameServerSession）用于创建游戏服务会话
                  * @param req CreateGameServerSessionRequest
                  * @return CreateGameServerSessionOutcome
@@ -336,6 +400,15 @@ namespace TencentCloud
                 CreateGameServerSessionOutcome CreateGameServerSession(const Model::CreateGameServerSessionRequest &request);
                 void CreateGameServerSessionAsync(const Model::CreateGameServerSessionRequest& request, const CreateGameServerSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateGameServerSessionOutcomeCallable CreateGameServerSessionCallable(const Model::CreateGameServerSessionRequest& request);
+
+                /**
+                 *本接口（CreateGameServerSessionQueue）用于创建游戏服务器会话队列
+                 * @param req CreateGameServerSessionQueueRequest
+                 * @return CreateGameServerSessionQueueOutcome
+                 */
+                CreateGameServerSessionQueueOutcome CreateGameServerSessionQueue(const Model::CreateGameServerSessionQueueRequest &request);
+                void CreateGameServerSessionQueueAsync(const Model::CreateGameServerSessionQueueRequest& request, const CreateGameServerSessionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGameServerSessionQueueOutcomeCallable CreateGameServerSessionQueueCallable(const Model::CreateGameServerSessionQueueRequest& request);
 
                 /**
                  *本接口（DeleteAlias）用于删除别名
@@ -363,6 +436,15 @@ namespace TencentCloud
                 DeleteFleetOutcome DeleteFleet(const Model::DeleteFleetRequest &request);
                 void DeleteFleetAsync(const Model::DeleteFleetRequest& request, const DeleteFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFleetOutcomeCallable DeleteFleetCallable(const Model::DeleteFleetRequest& request);
+
+                /**
+                 *本接口（DeleteGameServerSessionQueue）用于删除游戏服务器会话队列
+                 * @param req DeleteGameServerSessionQueueRequest
+                 * @return DeleteGameServerSessionQueueOutcome
+                 */
+                DeleteGameServerSessionQueueOutcome DeleteGameServerSessionQueue(const Model::DeleteGameServerSessionQueueRequest &request);
+                void DeleteGameServerSessionQueueAsync(const Model::DeleteGameServerSessionQueueRequest& request, const DeleteGameServerSessionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGameServerSessionQueueOutcomeCallable DeleteGameServerSessionQueueCallable(const Model::DeleteGameServerSessionQueueRequest& request);
 
                 /**
                  *本接口（DeleteScalingPolicy）用于删除扩缩容配置
@@ -419,6 +501,15 @@ namespace TencentCloud
                 DescribeFleetAttributesOutcomeCallable DescribeFleetAttributesCallable(const Model::DescribeFleetAttributesRequest& request);
 
                 /**
+                 *用于查询服务部署容量配置
+                 * @param req DescribeFleetCapacityRequest
+                 * @return DescribeFleetCapacityOutcome
+                 */
+                DescribeFleetCapacityOutcome DescribeFleetCapacity(const Model::DescribeFleetCapacityRequest &request);
+                void DescribeFleetCapacityAsync(const Model::DescribeFleetCapacityRequest& request, const DescribeFleetCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFleetCapacityOutcomeCallable DescribeFleetCapacityCallable(const Model::DescribeFleetCapacityRequest& request);
+
+                /**
                  *本接口（DescribeFleetEvents）用于查询部署服务器舰队相关的事件列表
                  * @param req DescribeFleetEventsRequest
                  * @return DescribeFleetEventsOutcome
@@ -435,6 +526,33 @@ namespace TencentCloud
                 DescribeFleetPortSettingsOutcome DescribeFleetPortSettings(const Model::DescribeFleetPortSettingsRequest &request);
                 void DescribeFleetPortSettingsAsync(const Model::DescribeFleetPortSettingsRequest& request, const DescribeFleetPortSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFleetPortSettingsOutcomeCallable DescribeFleetPortSettingsCallable(const Model::DescribeFleetPortSettingsRequest& request);
+
+                /**
+                 *本接口（DescribeFleetStatisticDetails）用于查询服务部署统计详情
+                 * @param req DescribeFleetStatisticDetailsRequest
+                 * @return DescribeFleetStatisticDetailsOutcome
+                 */
+                DescribeFleetStatisticDetailsOutcome DescribeFleetStatisticDetails(const Model::DescribeFleetStatisticDetailsRequest &request);
+                void DescribeFleetStatisticDetailsAsync(const Model::DescribeFleetStatisticDetailsRequest& request, const DescribeFleetStatisticDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFleetStatisticDetailsOutcomeCallable DescribeFleetStatisticDetailsCallable(const Model::DescribeFleetStatisticDetailsRequest& request);
+
+                /**
+                 *本接口（DescribeFleetStatisticFlows）用于查询服务部署统计用量
+                 * @param req DescribeFleetStatisticFlowsRequest
+                 * @return DescribeFleetStatisticFlowsOutcome
+                 */
+                DescribeFleetStatisticFlowsOutcome DescribeFleetStatisticFlows(const Model::DescribeFleetStatisticFlowsRequest &request);
+                void DescribeFleetStatisticFlowsAsync(const Model::DescribeFleetStatisticFlowsRequest& request, const DescribeFleetStatisticFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFleetStatisticFlowsOutcomeCallable DescribeFleetStatisticFlowsCallable(const Model::DescribeFleetStatisticFlowsRequest& request);
+
+                /**
+                 *本接口（DescribeFleetStatisticSummary）用于查询服务部署统计汇总信息
+                 * @param req DescribeFleetStatisticSummaryRequest
+                 * @return DescribeFleetStatisticSummaryOutcome
+                 */
+                DescribeFleetStatisticSummaryOutcome DescribeFleetStatisticSummary(const Model::DescribeFleetStatisticSummaryRequest &request);
+                void DescribeFleetStatisticSummaryAsync(const Model::DescribeFleetStatisticSummaryRequest& request, const DescribeFleetStatisticSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFleetStatisticSummaryOutcomeCallable DescribeFleetStatisticSummaryCallable(const Model::DescribeFleetStatisticSummaryRequest& request);
 
                 /**
                  *本接口（DescribeFleetUtilization）用于查询服务器舰队的利用率信息
@@ -482,6 +600,15 @@ namespace TencentCloud
                 DescribeGameServerSessionsOutcomeCallable DescribeGameServerSessionsCallable(const Model::DescribeGameServerSessionsRequest& request);
 
                 /**
+                 *查询用户实例数限额
+                 * @param req DescribeInstanceLimitRequest
+                 * @return DescribeInstanceLimitOutcome
+                 */
+                DescribeInstanceLimitOutcome DescribeInstanceLimit(const Model::DescribeInstanceLimitRequest &request);
+                void DescribeInstanceLimitAsync(const Model::DescribeInstanceLimitRequest& request, const DescribeInstanceLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceLimitOutcomeCallable DescribeInstanceLimitCallable(const Model::DescribeInstanceLimitRequest& request);
+
+                /**
                  *本接口（DescribeInstanceTypes）用于获取服务器实例类型列表
                  * @param req DescribeInstanceTypesRequest
                  * @return DescribeInstanceTypesOutcome
@@ -498,6 +625,15 @@ namespace TencentCloud
                 DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
                 void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *本接口（DescribeInstances）用于查询实例扩展信息列表
+                 * @param req DescribeInstancesExtendRequest
+                 * @return DescribeInstancesExtendOutcome
+                 */
+                DescribeInstancesExtendOutcome DescribeInstancesExtend(const Model::DescribeInstancesExtendRequest &request);
+                void DescribeInstancesExtendAsync(const Model::DescribeInstancesExtendRequest& request, const DescribeInstancesExtendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesExtendOutcomeCallable DescribeInstancesExtendCallable(const Model::DescribeInstancesExtendRequest& request);
 
                 /**
                  *本接口（DescribePlayerSessions）用于获取玩家会话列表
@@ -600,6 +736,15 @@ namespace TencentCloud
                 JoinGameServerSessionOutcomeCallable JoinGameServerSessionCallable(const Model::JoinGameServerSessionRequest& request);
 
                 /**
+                 *本接口（JoinGameServerSessionBatch）用于加入游戏服务器会话
+                 * @param req JoinGameServerSessionBatchRequest
+                 * @return JoinGameServerSessionBatchOutcome
+                 */
+                JoinGameServerSessionBatchOutcome JoinGameServerSessionBatch(const Model::JoinGameServerSessionBatchRequest &request);
+                void JoinGameServerSessionBatchAsync(const Model::JoinGameServerSessionBatchRequest& request, const JoinGameServerSessionBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                JoinGameServerSessionBatchOutcomeCallable JoinGameServerSessionBatchCallable(const Model::JoinGameServerSessionBatchRequest& request);
+
+                /**
                  *本接口（ListAliases）用于检索帐户下的所有别名
                  * @param req ListAliasesRequest
                  * @return ListAliasesOutcome
@@ -672,15 +817,6 @@ namespace TencentCloud
                 StartGameServerSessionPlacementOutcomeCallable StartGameServerSessionPlacementCallable(const Model::StartGameServerSessionPlacementRequest& request);
 
                 /**
-                 *本接口（StartMatchPlacement）用于开始匹配放置游戏服务器会话
-                 * @param req StartMatchPlacementRequest
-                 * @return StartMatchPlacementOutcome
-                 */
-                StartMatchPlacementOutcome StartMatchPlacement(const Model::StartMatchPlacementRequest &request);
-                void StartMatchPlacementAsync(const Model::StartMatchPlacementRequest& request, const StartMatchPlacementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                StartMatchPlacementOutcomeCallable StartMatchPlacementCallable(const Model::StartMatchPlacementRequest& request);
-
-                /**
                  *本接口（StopFleetActions）用于停止服务器舰队自动扩缩容，改为手动扩缩容
                  * @param req StopFleetActionsRequest
                  * @return StopFleetActionsOutcome
@@ -726,6 +862,15 @@ namespace TencentCloud
                 UpdateFleetAttributesOutcomeCallable UpdateFleetAttributesCallable(const Model::UpdateFleetAttributesRequest& request);
 
                 /**
+                 *用于更新服务部署容量配置
+                 * @param req UpdateFleetCapacityRequest
+                 * @return UpdateFleetCapacityOutcome
+                 */
+                UpdateFleetCapacityOutcome UpdateFleetCapacity(const Model::UpdateFleetCapacityRequest &request);
+                void UpdateFleetCapacityAsync(const Model::UpdateFleetCapacityRequest& request, const UpdateFleetCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateFleetCapacityOutcomeCallable UpdateFleetCapacityCallable(const Model::UpdateFleetCapacityRequest& request);
+
+                /**
                  *本接口（UpdateFleetPortSettings）用于更新服务器舰队安全组
                  * @param req UpdateFleetPortSettingsRequest
                  * @return UpdateFleetPortSettingsOutcome
@@ -742,6 +887,15 @@ namespace TencentCloud
                 UpdateGameServerSessionOutcome UpdateGameServerSession(const Model::UpdateGameServerSessionRequest &request);
                 void UpdateGameServerSessionAsync(const Model::UpdateGameServerSessionRequest& request, const UpdateGameServerSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateGameServerSessionOutcomeCallable UpdateGameServerSessionCallable(const Model::UpdateGameServerSessionRequest& request);
+
+                /**
+                 *本接口（UpdateGameServerSessionQueue）用于修改游戏服务器会话队列
+                 * @param req UpdateGameServerSessionQueueRequest
+                 * @return UpdateGameServerSessionQueueOutcome
+                 */
+                UpdateGameServerSessionQueueOutcome UpdateGameServerSessionQueue(const Model::UpdateGameServerSessionQueueRequest &request);
+                void UpdateGameServerSessionQueueAsync(const Model::UpdateGameServerSessionQueueRequest& request, const UpdateGameServerSessionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateGameServerSessionQueueOutcomeCallable UpdateGameServerSessionQueueCallable(const Model::UpdateGameServerSessionQueueRequest& request);
 
                 /**
                  *本接口（UpdateRuntimeConfiguration）用于更新服务器舰队配置

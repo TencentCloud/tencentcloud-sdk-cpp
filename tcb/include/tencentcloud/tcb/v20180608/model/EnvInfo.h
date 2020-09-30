@@ -361,6 +361,80 @@ namespace TencentCloud
                      */
                     bool EnvChannelHasBeenSet() const;
 
+                    /**
+                     * 获取支付方式。包含以下取值：
+<li> prepayment：预付费</li>
+<li> postpaid：后付费</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayMode 支付方式。包含以下取值：
+<li> prepayment：预付费</li>
+<li> postpaid：后付费</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayMode() const;
+
+                    /**
+                     * 设置支付方式。包含以下取值：
+<li> prepayment：预付费</li>
+<li> postpaid：后付费</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayMode 支付方式。包含以下取值：
+<li> prepayment：预付费</li>
+<li> postpaid：后付费</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayMode(const std::string& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取是否为默认环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDefault 是否为默认环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsDefault() const;
+
+                    /**
+                     * 设置是否为默认环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsDefault 是否为默认环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsDefault(const bool& _isDefault);
+
+                    /**
+                     * 判断参数 IsDefault 是否已赋值
+                     * @return IsDefault 是否已赋值
+                     */
+                    bool IsDefaultHasBeenSet() const;
+
+                    /**
+                     * 获取环境所属地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 环境所属地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置环境所属地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Region 环境所属地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -462,6 +536,29 @@ namespace TencentCloud
                      */
                     std::string m_envChannel;
                     bool m_envChannelHasBeenSet;
+
+                    /**
+                     * 支付方式。包含以下取值：
+<li> prepayment：预付费</li>
+<li> postpaid：后付费</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 是否为默认环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDefault;
+                    bool m_isDefaultHasBeenSet;
+
+                    /**
+                     * 环境所属地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

@@ -3781,6 +3781,49 @@ VpcClient::DescribeAssistantCidrOutcomeCallable VpcClient::DescribeAssistantCidr
     return task->get_future();
 }
 
+VpcClient::DescribeBandwidthPackageBillUsageOutcome VpcClient::DescribeBandwidthPackageBillUsage(const DescribeBandwidthPackageBillUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBandwidthPackageBillUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBandwidthPackageBillUsageResponse rsp = DescribeBandwidthPackageBillUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBandwidthPackageBillUsageOutcome(rsp);
+        else
+            return DescribeBandwidthPackageBillUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBandwidthPackageBillUsageOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeBandwidthPackageBillUsageAsync(const DescribeBandwidthPackageBillUsageRequest& request, const DescribeBandwidthPackageBillUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBandwidthPackageBillUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeBandwidthPackageBillUsageOutcomeCallable VpcClient::DescribeBandwidthPackageBillUsageCallable(const DescribeBandwidthPackageBillUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBandwidthPackageBillUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBandwidthPackageBillUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeBandwidthPackageQuotaOutcome VpcClient::DescribeBandwidthPackageQuota(const DescribeBandwidthPackageQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBandwidthPackageQuota");
@@ -3817,6 +3860,49 @@ VpcClient::DescribeBandwidthPackageQuotaOutcomeCallable VpcClient::DescribeBandw
         [this, request]()
         {
             return this->DescribeBandwidthPackageQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeBandwidthPackageResourcesOutcome VpcClient::DescribeBandwidthPackageResources(const DescribeBandwidthPackageResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBandwidthPackageResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBandwidthPackageResourcesResponse rsp = DescribeBandwidthPackageResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBandwidthPackageResourcesOutcome(rsp);
+        else
+            return DescribeBandwidthPackageResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBandwidthPackageResourcesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeBandwidthPackageResourcesAsync(const DescribeBandwidthPackageResourcesRequest& request, const DescribeBandwidthPackageResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBandwidthPackageResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeBandwidthPackageResourcesOutcomeCallable VpcClient::DescribeBandwidthPackageResourcesCallable(const DescribeBandwidthPackageResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBandwidthPackageResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBandwidthPackageResources(request);
         }
     );
 

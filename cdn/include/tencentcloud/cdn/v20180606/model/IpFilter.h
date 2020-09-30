@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/IpFilterPathRule.h>
 
 
 namespace TencentCloud
@@ -132,6 +133,28 @@ blacklist：黑名单
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取IP 黑白名单分路径配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FilterRules IP 黑白名单分路径配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IpFilterPathRule> GetFilterRules() const;
+
+                    /**
+                     * 设置IP 黑白名单分路径配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FilterRules IP 黑白名单分路径配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFilterRules(const std::vector<IpFilterPathRule>& _filterRules);
+
+                    /**
+                     * 判断参数 FilterRules 是否已赋值
+                     * @return FilterRules 是否已赋值
+                     */
+                    bool FilterRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -159,6 +182,13 @@ blacklist：黑名单
                      */
                     std::vector<std::string> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * IP 黑白名单分路径配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IpFilterPathRule> m_filterRules;
+                    bool m_filterRulesHasBeenSet;
 
                 };
             }

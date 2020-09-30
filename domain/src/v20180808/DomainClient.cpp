@@ -40,6 +40,49 @@ DomainClient::DomainClient(const Credential &credential, const string &region, c
 }
 
 
+DomainClient::CheckBatchStatusOutcome DomainClient::CheckBatchStatus(const CheckBatchStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckBatchStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckBatchStatusResponse rsp = CheckBatchStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckBatchStatusOutcome(rsp);
+        else
+            return CheckBatchStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckBatchStatusOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::CheckBatchStatusAsync(const CheckBatchStatusRequest& request, const CheckBatchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckBatchStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::CheckBatchStatusOutcomeCallable DomainClient::CheckBatchStatusCallable(const CheckBatchStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckBatchStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckBatchStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::CheckDomainOutcome DomainClient::CheckDomain(const CheckDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckDomain");
@@ -76,6 +119,49 @@ DomainClient::CheckDomainOutcomeCallable DomainClient::CheckDomainCallable(const
         [this, request]()
         {
             return this->CheckDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::CreateDomainBatchOutcome DomainClient::CreateDomainBatch(const CreateDomainBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDomainBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDomainBatchResponse rsp = CreateDomainBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDomainBatchOutcome(rsp);
+        else
+            return CreateDomainBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDomainBatchOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::CreateDomainBatchAsync(const CreateDomainBatchRequest& request, const CreateDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDomainBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::CreateDomainBatchOutcomeCallable DomainClient::CreateDomainBatchCallable(const CreateDomainBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDomainBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDomainBatch(request);
         }
     );
 
@@ -126,6 +212,49 @@ DomainClient::DescribeDomainBaseInfoOutcomeCallable DomainClient::DescribeDomain
     return task->get_future();
 }
 
+DomainClient::DescribeDomainNameListOutcome DomainClient::DescribeDomainNameList(const DescribeDomainNameListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainNameList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainNameListResponse rsp = DescribeDomainNameListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainNameListOutcome(rsp);
+        else
+            return DescribeDomainNameListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainNameListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeDomainNameListAsync(const DescribeDomainNameListRequest& request, const DescribeDomainNameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainNameList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeDomainNameListOutcomeCallable DomainClient::DescribeDomainNameListCallable(const DescribeDomainNameListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainNameListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainNameList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DescribeDomainPriceListOutcome DomainClient::DescribeDomainPriceList(const DescribeDomainPriceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainPriceList");
@@ -162,6 +291,49 @@ DomainClient::DescribeDomainPriceListOutcomeCallable DomainClient::DescribeDomai
         [this, request]()
         {
             return this->DescribeDomainPriceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeTemplateListOutcome DomainClient::DescribeTemplateList(const DescribeTemplateListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTemplateList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTemplateListResponse rsp = DescribeTemplateListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTemplateListOutcome(rsp);
+        else
+            return DescribeTemplateListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTemplateListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeTemplateListAsync(const DescribeTemplateListRequest& request, const DescribeTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTemplateList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeTemplateListOutcomeCallable DomainClient::DescribeTemplateListCallable(const DescribeTemplateListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTemplateListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTemplateList(request);
         }
     );
 
