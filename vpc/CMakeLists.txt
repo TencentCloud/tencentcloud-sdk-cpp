@@ -296,6 +296,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/RejectAttachCcnInstancesResponse.h
   include/tencentcloud/vpc/v20170312/model/SetCcnRegionBandwidthLimitsResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeAccountAttributesRequest.h
+  include/tencentcloud/vpc/v20170312/model/RenewAddressesResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeCcnRoutesRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyDhcpIpAttributeResponse.h
   include/tencentcloud/vpc/v20170312/model/CreateAndAttachNetworkInterfaceRequest.h
@@ -370,6 +371,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/CreateRouteTableRequest.h
   include/tencentcloud/vpc/v20170312/model/MigrateNetworkInterfaceRequest.h
   include/tencentcloud/vpc/v20170312/model/DisableCcnRoutesRequest.h
+  include/tencentcloud/vpc/v20170312/model/RenewAddressesRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyAddressAttributeRequest.h
   include/tencentcloud/vpc/v20170312/model/DhcpIp.h
   include/tencentcloud/vpc/v20170312/model/DeleteAssistantCidrRequest.h
@@ -825,6 +827,7 @@ set(vpc_src
   src/v20170312/model/RejectAttachCcnInstancesResponse.cpp
   src/v20170312/model/SetCcnRegionBandwidthLimitsResponse.cpp
   src/v20170312/model/DescribeAccountAttributesRequest.cpp
+  src/v20170312/model/RenewAddressesResponse.cpp
   src/v20170312/model/DescribeCcnRoutesRequest.cpp
   src/v20170312/model/ModifyDhcpIpAttributeResponse.cpp
   src/v20170312/model/CreateAndAttachNetworkInterfaceRequest.cpp
@@ -899,6 +902,7 @@ set(vpc_src
   src/v20170312/model/CreateRouteTableRequest.cpp
   src/v20170312/model/MigrateNetworkInterfaceRequest.cpp
   src/v20170312/model/DisableCcnRoutesRequest.cpp
+  src/v20170312/model/RenewAddressesRequest.cpp
   src/v20170312/model/ModifyAddressAttributeRequest.cpp
   src/v20170312/model/DhcpIp.cpp
   src/v20170312/model/DeleteAssistantCidrRequest.cpp

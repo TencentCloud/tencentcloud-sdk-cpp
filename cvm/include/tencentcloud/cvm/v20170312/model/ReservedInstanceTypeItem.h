@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取GPU核数。
-                     * @return Gpu GPU核数。
+                     * 获取GPU数量。
+                     * @return Gpu GPU数量。
                      */
                     uint64_t GetGpu() const;
 
                     /**
-                     * 设置GPU核数。
-                     * @param Gpu GPU核数。
+                     * 设置GPU数量。
+                     * @param Gpu GPU数量。
                      */
                     void SetGpu(const uint64_t& _gpu);
 
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool GpuHasBeenSet() const;
 
                     /**
-                     * 获取FPGA核数。
-                     * @return Fpga FPGA核数。
+                     * 获取FPGA数量。
+                     * @return Fpga FPGA数量。
                      */
                     uint64_t GetFpga() const;
 
                     /**
-                     * 设置FPGA核数。
-                     * @param Fpga FPGA核数。
+                     * 设置FPGA数量。
+                     * @param Fpga FPGA数量。
                      */
                     void SetFpga(const uint64_t& _fpga);
 
@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool FpgaHasBeenSet() const;
 
                     /**
-                     * 获取存储块数。
-                     * @return StorageBlock 存储块数。
+                     * 获取本地存储块数量。
+                     * @return StorageBlock 本地存储块数量。
                      */
                     uint64_t GetStorageBlock() const;
 
                     /**
-                     * 设置存储块数。
-                     * @param StorageBlock 存储块数。
+                     * 设置本地存储块数量。
+                     * @param StorageBlock 本地存储块数量。
                      */
                     void SetStorageBlock(const uint64_t& _storageBlock);
 
@@ -321,19 +321,19 @@ namespace TencentCloud
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * GPU核数。
+                     * GPU数量。
                      */
                     uint64_t m_gpu;
                     bool m_gpuHasBeenSet;
 
                     /**
-                     * FPGA核数。
+                     * FPGA数量。
                      */
                     uint64_t m_fpga;
                     bool m_fpgaHasBeenSet;
 
                     /**
-                     * 存储块数。
+                     * 本地存储块数量。
                      */
                     uint64_t m_storageBlock;
                     bool m_storageBlockHasBeenSet;

@@ -47,10 +47,12 @@ namespace TencentCloud
 Mode 映射如下：
   waf = "Web攻击"
   cc = "CC攻击"
+  bot = "Bot攻击"
                      * @return Mode 防护类型
 Mode 映射如下：
   waf = "Web攻击"
   cc = "CC攻击"
+  bot = "Bot攻击"
                      */
                     std::string GetMode() const;
 
@@ -59,10 +61,12 @@ Mode 映射如下：
 Mode 映射如下：
   waf = "Web攻击"
   cc = "CC攻击"
+  bot = "Bot攻击"
                      * @param Mode 防护类型
 Mode 映射如下：
   waf = "Web攻击"
   cc = "CC攻击"
+  bot = "Bot攻击"
                      */
                     void SetMode(const std::string& _mode);
 
@@ -144,6 +148,8 @@ AttackType 映射如下:
   trojan_horse = "木马后门攻击"
   csrf = "CSRF攻击"
   malicious_file_upload= '恶意文件上传'
+  js = "JS主动探测"
+  cookie = "Cookie指纹"
                      * @return AttackType 指定攻击类型, 不填默认查询全部攻击类型
 AttackType 映射如下:
   other = '未知类型'
@@ -161,6 +167,8 @@ AttackType 映射如下:
   trojan_horse = "木马后门攻击"
   csrf = "CSRF攻击"
   malicious_file_upload= '恶意文件上传'
+  js = "JS主动探测"
+  cookie = "Cookie指纹"
                      */
                     std::string GetAttackType() const;
 
@@ -182,6 +190,8 @@ AttackType 映射如下:
   trojan_horse = "木马后门攻击"
   csrf = "CSRF攻击"
   malicious_file_upload= '恶意文件上传'
+  js = "JS主动探测"
+  cookie = "Cookie指纹"
                      * @param AttackType 指定攻击类型, 不填默认查询全部攻击类型
 AttackType 映射如下:
   other = '未知类型'
@@ -199,6 +209,8 @@ AttackType 映射如下:
   trojan_horse = "木马后门攻击"
   csrf = "CSRF攻击"
   malicious_file_upload= '恶意文件上传'
+  js = "JS主动探测"
+  cookie = "Cookie指纹"
                      */
                     void SetAttackType(const std::string& _attackType);
 
@@ -213,10 +225,14 @@ AttackType 映射如下:
 DefenceMode 映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
+  captcha = "验证码"
+  redirect = "重定向"
                      * @return DefenceMode 指定执行动作, 不填默认查询全部执行动作
 DefenceMode 映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
+  captcha = "验证码"
+  redirect = "重定向"
                      */
                     std::string GetDefenceMode() const;
 
@@ -225,10 +241,14 @@ DefenceMode 映射如下：
 DefenceMode 映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
+  captcha = "验证码"
+  redirect = "重定向"
                      * @param DefenceMode 指定执行动作, 不填默认查询全部执行动作
 DefenceMode 映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
+  captcha = "验证码"
+  redirect = "重定向"
                      */
                     void SetDefenceMode(const std::string& _defenceMode);
 
@@ -281,6 +301,7 @@ DefenceMode 映射如下：
 Mode 映射如下：
   waf = "Web攻击"
   cc = "CC攻击"
+  bot = "Bot攻击"
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
@@ -321,6 +342,8 @@ AttackType 映射如下:
   trojan_horse = "木马后门攻击"
   csrf = "CSRF攻击"
   malicious_file_upload= '恶意文件上传'
+  js = "JS主动探测"
+  cookie = "Cookie指纹"
                      */
                     std::string m_attackType;
                     bool m_attackTypeHasBeenSet;
@@ -330,6 +353,8 @@ AttackType 映射如下:
 DefenceMode 映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
+  captcha = "验证码"
+  redirect = "重定向"
                      */
                     std::string m_defenceMode;
                     bool m_defenceModeHasBeenSet;

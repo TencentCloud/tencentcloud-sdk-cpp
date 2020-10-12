@@ -8769,6 +8769,49 @@ VpcClient::RemoveIp6RulesOutcomeCallable VpcClient::RemoveIp6RulesCallable(const
     return task->get_future();
 }
 
+VpcClient::RenewAddressesOutcome VpcClient::RenewAddresses(const RenewAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewAddressesResponse rsp = RenewAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewAddressesOutcome(rsp);
+        else
+            return RenewAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewAddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::RenewAddressesAsync(const RenewAddressesRequest& request, const RenewAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::RenewAddressesOutcomeCallable VpcClient::RenewAddressesCallable(const RenewAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::RenewVpnGatewayOutcome VpcClient::RenewVpnGateway(const RenewVpnGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "RenewVpnGateway");

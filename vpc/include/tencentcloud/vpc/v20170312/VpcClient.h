@@ -429,6 +429,8 @@
 #include <tencentcloud/vpc/v20170312/model/RemoveBandwidthPackageResourcesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/RemoveIp6RulesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/RemoveIp6RulesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/RenewAddressesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/RenewAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/RenewVpnGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/RenewVpnGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceDirectConnectGatewayCcnRoutesRequest.h>
@@ -1084,6 +1086,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RemoveIp6RulesResponse> RemoveIp6RulesOutcome;
                 typedef std::future<RemoveIp6RulesOutcome> RemoveIp6RulesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::RemoveIp6RulesRequest&, RemoveIp6RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveIp6RulesAsyncHandler;
+                typedef Outcome<Error, Model::RenewAddressesResponse> RenewAddressesOutcome;
+                typedef std::future<RenewAddressesOutcome> RenewAddressesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::RenewAddressesRequest&, RenewAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewAddressesAsyncHandler;
                 typedef Outcome<Error, Model::RenewVpnGatewayResponse> RenewVpnGatewayOutcome;
                 typedef std::future<RenewVpnGatewayOutcome> RenewVpnGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::RenewVpnGatewayRequest&, RenewVpnGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewVpnGatewayAsyncHandler;
@@ -1238,7 +1243,7 @@ namespace TencentCloud
 * 将 EIP 绑定到实例（CVM）上，其本质是将 EIP 绑定到实例上主网卡的主内网 IP 上。
 * 将 EIP 绑定到主网卡的主内网IP上，绑定过程会把其上绑定的普通公网 IP 自动解绑并释放。
 * 将 EIP 绑定到指定网卡的内网 IP上（非主网卡的主内网IP），则必须先解绑该 EIP，才能再绑定新的。
-* 将 EIP 绑定到NAT网关，请使用接口[EipBindNatGateway](https://cloud.tencent.com/document/product/215/4093)
+* 将 EIP 绑定到NAT网关，请使用接口[AssociateNatGatewayAddress](https://cloud.tencent.com/document/product/215/36722)
 * EIP 如果欠费或被封堵，则不能被绑定。
 * 只有状态为 UNBIND 的 EIP 才能够被绑定。
                  * @param req AssociateAddressRequest
@@ -2598,7 +2603,7 @@ LimitTypes取值范围：
                 /**
                  *本接口 (DisassociateAddress) 用于解绑[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。
 * 支持CVM实例，弹性网卡上的EIP解绑
-* 不支持NAT上的EIP解绑。NAT上的EIP解绑请参考[EipUnBindNatGateway](https://cloud.tencent.com/document/product/215/4092)
+* 不支持NAT上的EIP解绑。NAT上的EIP解绑请参考[DisassociateNatGatewayAddress](https://cloud.tencent.com/document/api/215/36716)
 * 只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。
 * EIP 如果被封堵，则不能进行解绑定操作。
                  * @param req DisassociateAddressRequest
@@ -3160,6 +3165,15 @@ LimitTypes取值范围：
                 RemoveIp6RulesOutcome RemoveIp6Rules(const Model::RemoveIp6RulesRequest &request);
                 void RemoveIp6RulesAsync(const Model::RemoveIp6RulesRequest& request, const RemoveIp6RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveIp6RulesOutcomeCallable RemoveIp6RulesCallable(const Model::RemoveIp6RulesRequest& request);
+
+                /**
+                 *该接口用于续费包月带宽计费模式的弹性公网IP
+                 * @param req RenewAddressesRequest
+                 * @return RenewAddressesOutcome
+                 */
+                RenewAddressesOutcome RenewAddresses(const Model::RenewAddressesRequest &request);
+                void RenewAddressesAsync(const Model::RenewAddressesRequest& request, const RenewAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewAddressesOutcomeCallable RenewAddressesCallable(const Model::RenewAddressesRequest& request);
 
                 /**
                  *本接口（RenewVpnGateway）用于预付费（包年包月）VPN网关续费。目前只支持IPSEC网关。

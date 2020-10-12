@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tke/v20180525/model/AcquireClusterAdminRoleRequest.h>
+#include <tencentcloud/tke/v20180525/model/AcquireClusterAdminRoleResponse.h>
 #include <tencentcloud/tke/v20180525/model/AddExistedInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/AddExistedInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRequest.h>
@@ -101,6 +103,9 @@ namespace TencentCloud
                 TkeClient(const Credential &credential, const std::string &region);
                 TkeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AcquireClusterAdminRoleResponse> AcquireClusterAdminRoleOutcome;
+                typedef std::future<AcquireClusterAdminRoleOutcome> AcquireClusterAdminRoleOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::AcquireClusterAdminRoleRequest&, AcquireClusterAdminRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AcquireClusterAdminRoleAsyncHandler;
                 typedef Outcome<Error, Model::AddExistedInstancesResponse> AddExistedInstancesOutcome;
                 typedef std::future<AddExistedInstancesOutcome> AddExistedInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::AddExistedInstancesRequest&, AddExistedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddExistedInstancesAsyncHandler;
@@ -199,6 +204,15 @@ namespace TencentCloud
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterEndpointSPRequest&, ModifyClusterEndpointSPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterEndpointSPAsyncHandler;
 
 
+
+                /**
+                 *通过此接口，可以获取集群的tke:admin的ClusterRole，即管理员角色，可以用于CAM侧高权限的用户，通过CAM策略给予子账户此接口权限，进而可以通过此接口直接获取到kubernetes集群内的管理员角色。
+                 * @param req AcquireClusterAdminRoleRequest
+                 * @return AcquireClusterAdminRoleOutcome
+                 */
+                AcquireClusterAdminRoleOutcome AcquireClusterAdminRole(const Model::AcquireClusterAdminRoleRequest &request);
+                void AcquireClusterAdminRoleAsync(const Model::AcquireClusterAdminRoleRequest& request, const AcquireClusterAdminRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AcquireClusterAdminRoleOutcomeCallable AcquireClusterAdminRoleCallable(const Model::AcquireClusterAdminRoleRequest& request);
 
                 /**
                  *添加已经存在的实例到集群

@@ -298,6 +298,49 @@ CdnClient::DeleteClsLogTopicOutcomeCallable CdnClient::DeleteClsLogTopicCallable
     return task->get_future();
 }
 
+CdnClient::DeleteScdnDomainOutcome CdnClient::DeleteScdnDomain(const DeleteScdnDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteScdnDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteScdnDomainResponse rsp = DeleteScdnDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteScdnDomainOutcome(rsp);
+        else
+            return DeleteScdnDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteScdnDomainOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DeleteScdnDomainAsync(const DeleteScdnDomainRequest& request, const DeleteScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteScdnDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DeleteScdnDomainOutcomeCallable CdnClient::DeleteScdnDomainCallable(const DeleteScdnDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteScdnDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteScdnDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeBillingDataOutcome CdnClient::DescribeBillingData(const DescribeBillingDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillingData");
@@ -1538,6 +1581,49 @@ CdnClient::ListClsTopicDomainsOutcomeCallable CdnClient::ListClsTopicDomainsCall
         [this, request]()
         {
             return this->ListClsTopicDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::ListScdnLogTasksOutcome CdnClient::ListScdnLogTasks(const ListScdnLogTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListScdnLogTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListScdnLogTasksResponse rsp = ListScdnLogTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListScdnLogTasksOutcome(rsp);
+        else
+            return ListScdnLogTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListScdnLogTasksOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ListScdnLogTasksAsync(const ListScdnLogTasksRequest& request, const ListScdnLogTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListScdnLogTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ListScdnLogTasksOutcomeCallable CdnClient::ListScdnLogTasksCallable(const ListScdnLogTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListScdnLogTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->ListScdnLogTasks(request);
         }
     );
 

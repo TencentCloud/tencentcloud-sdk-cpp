@@ -40,6 +40,49 @@ TkeClient::TkeClient(const Credential &credential, const string &region, const C
 }
 
 
+TkeClient::AcquireClusterAdminRoleOutcome TkeClient::AcquireClusterAdminRole(const AcquireClusterAdminRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AcquireClusterAdminRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AcquireClusterAdminRoleResponse rsp = AcquireClusterAdminRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AcquireClusterAdminRoleOutcome(rsp);
+        else
+            return AcquireClusterAdminRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return AcquireClusterAdminRoleOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::AcquireClusterAdminRoleAsync(const AcquireClusterAdminRoleRequest& request, const AcquireClusterAdminRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AcquireClusterAdminRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::AcquireClusterAdminRoleOutcomeCallable TkeClient::AcquireClusterAdminRoleCallable(const AcquireClusterAdminRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AcquireClusterAdminRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->AcquireClusterAdminRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::AddExistedInstancesOutcome TkeClient::AddExistedInstances(const AddExistedInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "AddExistedInstances");

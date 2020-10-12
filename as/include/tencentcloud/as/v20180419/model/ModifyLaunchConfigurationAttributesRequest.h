@@ -79,17 +79,17 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
+                     * 获取实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
 启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。
-                     * @return InstanceTypes 实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
+                     * @return InstanceTypes 实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
 启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。
                      */
                     std::vector<std::string> GetInstanceTypes() const;
 
                     /**
-                     * 设置实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
+                     * 设置实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
 启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。
-                     * @param InstanceTypes 实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
+                     * @param InstanceTypes 实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
 启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。
                      */
                     void SetInstanceTypes(const std::vector<std::string>& _instanceTypes);
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * 实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
+                     * 实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
 启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。
                      */
                     std::vector<std::string> m_instanceTypes;

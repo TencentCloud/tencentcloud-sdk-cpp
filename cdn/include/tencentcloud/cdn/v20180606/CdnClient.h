@@ -35,6 +35,8 @@
 #include <tencentcloud/cdn/v20180606/model/DeleteCdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteClsLogTopicRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteClsLogTopicResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DeleteScdnDomainRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DeleteScdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeBillingDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeBillingDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnDataRequest.h>
@@ -93,6 +95,8 @@
 #include <tencentcloud/cdn/v20180606/model/ListClsLogTopicsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsTopicDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsTopicDomainsResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsRequest.h>
@@ -149,6 +153,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteClsLogTopicResponse> DeleteClsLogTopicOutcome;
                 typedef std::future<DeleteClsLogTopicOutcome> DeleteClsLogTopicOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DeleteClsLogTopicRequest&, DeleteClsLogTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClsLogTopicAsyncHandler;
+                typedef Outcome<Error, Model::DeleteScdnDomainResponse> DeleteScdnDomainOutcome;
+                typedef std::future<DeleteScdnDomainOutcome> DeleteScdnDomainOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DeleteScdnDomainRequest&, DeleteScdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScdnDomainAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBillingDataResponse> DescribeBillingDataOutcome;
                 typedef std::future<DescribeBillingDataOutcome> DescribeBillingDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeBillingDataRequest&, DescribeBillingDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingDataAsyncHandler;
@@ -236,6 +243,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListClsTopicDomainsResponse> ListClsTopicDomainsOutcome;
                 typedef std::future<ListClsTopicDomainsOutcome> ListClsTopicDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListClsTopicDomainsRequest&, ListClsTopicDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListClsTopicDomainsAsyncHandler;
+                typedef Outcome<Error, Model::ListScdnLogTasksResponse> ListScdnLogTasksOutcome;
+                typedef std::future<ListScdnLogTasksOutcome> ListScdnLogTasksOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ListScdnLogTasksRequest&, ListScdnLogTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScdnLogTasksAsyncHandler;
                 typedef Outcome<Error, Model::ListTopDataResponse> ListTopDataOutcome;
                 typedef std::future<ListTopDataOutcome> ListTopDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListTopDataRequest&, ListTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopDataAsyncHandler;
@@ -330,6 +340,15 @@ namespace TencentCloud
                 DeleteClsLogTopicOutcomeCallable DeleteClsLogTopicCallable(const Model::DeleteClsLogTopicRequest& request);
 
                 /**
+                 *删除SCDN域名
+                 * @param req DeleteScdnDomainRequest
+                 * @return DeleteScdnDomainOutcome
+                 */
+                DeleteScdnDomainOutcome DeleteScdnDomain(const Model::DeleteScdnDomainRequest &request);
+                void DeleteScdnDomainAsync(const Model::DeleteScdnDomainRequest& request, const DeleteScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteScdnDomainOutcomeCallable DeleteScdnDomainCallable(const Model::DeleteScdnDomainRequest& request);
+
+                /**
                  *DescribeBillingData 用于查询实际计费数据明细。
                  * @param req DescribeBillingDataRequest
                  * @return DescribeBillingDataOutcome
@@ -367,7 +386,7 @@ namespace TencentCloud
 
                 /**
                  *DescribeCdnIp 用于查询 CDN IP 归属。
-（注意：此接口请求频率限制以 CDN 侧限制为准：200次/10分钟）
+（注意：此接口请求频率限制以 CDN 侧限制为准：200次/10分钟）  
                  * @param req DescribeCdnIpRequest
                  * @return DescribeCdnIpOutcome
                  */
@@ -616,6 +635,15 @@ namespace TencentCloud
                 ListClsTopicDomainsOutcome ListClsTopicDomains(const Model::ListClsTopicDomainsRequest &request);
                 void ListClsTopicDomainsAsync(const Model::ListClsTopicDomainsRequest& request, const ListClsTopicDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListClsTopicDomainsOutcomeCallable ListClsTopicDomainsCallable(const Model::ListClsTopicDomainsRequest& request);
+
+                /**
+                 *ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息
+                 * @param req ListScdnLogTasksRequest
+                 * @return ListScdnLogTasksOutcome
+                 */
+                ListScdnLogTasksOutcome ListScdnLogTasks(const Model::ListScdnLogTasksRequest &request);
+                void ListScdnLogTasksAsync(const Model::ListScdnLogTasksRequest& request, const ListScdnLogTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListScdnLogTasksOutcomeCallable ListScdnLogTasksCallable(const Model::ListScdnLogTasksRequest& request);
 
                 /**
                  *ListTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：

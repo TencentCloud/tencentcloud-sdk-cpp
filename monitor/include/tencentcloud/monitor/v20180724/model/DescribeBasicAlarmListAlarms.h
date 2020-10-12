@@ -110,17 +110,17 @@ namespace TencentCloud
                     bool ProjectNameHasBeenSet() const;
 
                     /**
-                     * 获取告警状态ID
+                     * 获取告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 告警状态ID
+                     * @return Status 告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置告警状态ID
+                     * 设置告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 告警状态ID
+                     * @param Status 告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const int64_t& _status);
@@ -132,17 +132,17 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取告警状态
+                     * 获取告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmStatus 告警状态
+                     * @return AlarmStatus 告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAlarmStatus() const;
 
                     /**
-                     * 设置告警状态
+                     * 设置告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlarmStatus 告警状态
+                     * @param AlarmStatus 告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAlarmStatus(const std::string& _alarmStatus);
@@ -550,14 +550,14 @@ namespace TencentCloud
                     bool m_projectNameHasBeenSet;
 
                     /**
-                     * 告警状态ID
+                     * 告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 告警状态
+                     * 告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alarmStatus;
