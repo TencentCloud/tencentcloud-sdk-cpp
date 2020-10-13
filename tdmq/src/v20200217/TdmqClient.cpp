@@ -341,6 +341,49 @@ TdmqClient::DescribeEnvironmentAttributesOutcomeCallable TdmqClient::DescribeEnv
     return task->get_future();
 }
 
+TdmqClient::DescribeEnvironmentRolesOutcome TdmqClient::DescribeEnvironmentRoles(const DescribeEnvironmentRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvironmentRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvironmentRolesResponse rsp = DescribeEnvironmentRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvironmentRolesOutcome(rsp);
+        else
+            return DescribeEnvironmentRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvironmentRolesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeEnvironmentRolesAsync(const DescribeEnvironmentRolesRequest& request, const DescribeEnvironmentRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnvironmentRoles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeEnvironmentRolesOutcomeCallable TdmqClient::DescribeEnvironmentRolesCallable(const DescribeEnvironmentRolesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnvironmentRolesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnvironmentRoles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeEnvironmentsOutcome TdmqClient::DescribeEnvironments(const DescribeEnvironmentsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvironments");

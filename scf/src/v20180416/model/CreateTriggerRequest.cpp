@@ -30,7 +30,8 @@ CreateTriggerRequest::CreateTriggerRequest() :
     m_triggerDescHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_qualifierHasBeenSet(false),
-    m_enableHasBeenSet(false)
+    m_enableHasBeenSet(false),
+    m_customArgumentHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string CreateTriggerRequest::ToJsonString() const
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_enable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customArgumentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CustomArgument";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_customArgument.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void CreateTriggerRequest::SetEnable(const string& _enable)
 bool CreateTriggerRequest::EnableHasBeenSet() const
 {
     return m_enableHasBeenSet;
+}
+
+string CreateTriggerRequest::GetCustomArgument() const
+{
+    return m_customArgument;
+}
+
+void CreateTriggerRequest::SetCustomArgument(const string& _customArgument)
+{
+    m_customArgument = _customArgument;
+    m_customArgumentHasBeenSet = true;
+}
+
+bool CreateTriggerRequest::CustomArgumentHasBeenSet() const
+{
+    return m_customArgumentHasBeenSet;
 }
 
 

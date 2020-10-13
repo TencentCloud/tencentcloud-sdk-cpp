@@ -190,6 +190,60 @@ namespace TencentCloud
                      */
                     bool BindFleetNumHasBeenSet() const;
 
+                    /**
+                     * 获取生成包的全局唯一资源标识符
+                     * @return AssetArn 生成包的全局唯一资源标识符
+                     */
+                    std::string GetAssetArn() const;
+
+                    /**
+                     * 设置生成包的全局唯一资源标识符
+                     * @param AssetArn 生成包的全局唯一资源标识符
+                     */
+                    void SetAssetArn(const std::string& _assetArn);
+
+                    /**
+                     * 判断参数 AssetArn 是否已赋值
+                     * @return AssetArn 是否已赋值
+                     */
+                    bool AssetArnHasBeenSet() const;
+
+                    /**
+                     * 获取生成包支持的操作系统镜像id
+                     * @return ImageId 生成包支持的操作系统镜像id
+                     */
+                    std::string GetImageId() const;
+
+                    /**
+                     * 设置生成包支持的操作系统镜像id
+                     * @param ImageId 生成包支持的操作系统镜像id
+                     */
+                    void SetImageId(const std::string& _imageId);
+
+                    /**
+                     * 判断参数 ImageId 是否已赋值
+                     * @return ImageId 是否已赋值
+                     */
+                    bool ImageIdHasBeenSet() const;
+
+                    /**
+                     * 获取生成包支持的操作系统类型
+                     * @return OsType 生成包支持的操作系统类型
+                     */
+                    std::string GetOsType() const;
+
+                    /**
+                     * 设置生成包支持的操作系统类型
+                     * @param OsType 生成包支持的操作系统类型
+                     */
+                    void SetOsType(const std::string& _osType);
+
+                    /**
+                     * 判断参数 OsType 是否已赋值
+                     * @return OsType 是否已赋值
+                     */
+                    bool OsTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +293,24 @@ namespace TencentCloud
                      */
                     int64_t m_bindFleetNum;
                     bool m_bindFleetNumHasBeenSet;
+
+                    /**
+                     * 生成包的全局唯一资源标识符
+                     */
+                    std::string m_assetArn;
+                    bool m_assetArnHasBeenSet;
+
+                    /**
+                     * 生成包支持的操作系统镜像id
+                     */
+                    std::string m_imageId;
+                    bool m_imageIdHasBeenSet;
+
+                    /**
+                     * 生成包支持的操作系统类型
+                     */
+                    std::string m_osType;
+                    bool m_osTypeHasBeenSet;
 
                 };
             }

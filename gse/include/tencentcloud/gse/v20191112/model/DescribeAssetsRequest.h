@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，支持包ID或包名字过滤
-                     * @return Filter 搜索条件，支持包ID或包名字过滤
+                     * 获取搜索条件，支持包ID或包名字过滤，该字段会逐步废弃，建议使用 Filters 字段
+                     * @return Filter 搜索条件，支持包ID或包名字过滤，该字段会逐步废弃，建议使用 Filters 字段
                      */
                     std::string GetFilter() const;
 
                     /**
-                     * 设置搜索条件，支持包ID或包名字过滤
-                     * @param Filter 搜索条件，支持包ID或包名字过滤
+                     * 设置搜索条件，支持包ID或包名字过滤，该字段会逐步废弃，建议使用 Filters 字段
+                     * @param Filter 搜索条件，支持包ID或包名字过滤，该字段会逐步废弃，建议使用 Filters 字段
                      */
                     void SetFilter(const std::string& _filter);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索条件，支持包ID或包名字过滤
+                     * 搜索条件，支持包ID或包名字过滤，该字段会逐步废弃，建议使用 Filters 字段
                      */
                     std::string m_filter;
                     bool m_filterHasBeenSet;

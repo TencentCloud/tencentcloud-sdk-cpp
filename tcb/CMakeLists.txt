@@ -46,6 +46,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUsersRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeDownloadFileRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h
@@ -85,9 +86,10 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteEndUserRequest.h
+  include/tencentcloud/tcb/v20180608/model/OrderInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseCodeRepoName.h
-  include/tencentcloud/tcb/v20180608/model/OrderInfo.h
+  include/tencentcloud/tcb/v20180608/model/DescribeDownloadFileResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h
   )
@@ -121,6 +123,7 @@ set(tcb_src
   src/v20180608/model/DescribeCloudBaseBuildServiceResponse.cpp
   src/v20180608/model/ModifyEnvRequest.cpp
   src/v20180608/model/DescribeEndUsersRequest.cpp
+  src/v20180608/model/DescribeDownloadFileRequest.cpp
   src/v20180608/model/DescribeEnvsRequest.cpp
   src/v20180608/model/DescribeQuotaDataRequest.cpp
   src/v20180608/model/DescribeCloudBaseBuildServiceRequest.cpp
@@ -160,9 +163,10 @@ set(tcb_src
   src/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.cpp
   src/v20180608/model/DescribePostpayPackageFreeQuotasResponse.cpp
   src/v20180608/model/DeleteEndUserRequest.cpp
+  src/v20180608/model/OrderInfo.cpp
   src/v20180608/model/DescribeEnvsResponse.cpp
   src/v20180608/model/CloudBaseCodeRepoName.cpp
-  src/v20180608/model/OrderInfo.cpp
+  src/v20180608/model/DescribeDownloadFileResponse.cpp
   src/v20180608/model/CreateAuthDomainRequest.cpp
   src/v20180608/model/DestroyEnvRequest.cpp
   )

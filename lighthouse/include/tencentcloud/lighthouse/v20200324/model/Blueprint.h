@@ -226,6 +226,24 @@ namespace TencentCloud
                      */
                     bool RequiredSystemDiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取镜像状态，取值：ONLINE、OFFLINE
+                     * @return BlueprintState 镜像状态，取值：ONLINE、OFFLINE
+                     */
+                    std::string GetBlueprintState() const;
+
+                    /**
+                     * 设置镜像状态，取值：ONLINE、OFFLINE
+                     * @param BlueprintState 镜像状态，取值：ONLINE、OFFLINE
+                     */
+                    void SetBlueprintState(const std::string& _blueprintState);
+
+                    /**
+                     * 判断参数 BlueprintState 是否已赋值
+                     * @return BlueprintState 是否已赋值
+                     */
+                    bool BlueprintStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +305,12 @@ namespace TencentCloud
                      */
                     int64_t m_requiredSystemDiskSize;
                     bool m_requiredSystemDiskSizeHasBeenSet;
+
+                    /**
+                     * 镜像状态，取值：ONLINE、OFFLINE
+                     */
+                    std::string m_blueprintState;
+                    bool m_blueprintStateHasBeenSet;
 
                 };
             }

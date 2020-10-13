@@ -37,6 +37,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DeleteTopicsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeProducersRequest.h>
@@ -86,6 +88,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEnvironmentAttributesResponse> DescribeEnvironmentAttributesOutcome;
                 typedef std::future<DescribeEnvironmentAttributesOutcome> DescribeEnvironmentAttributesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeEnvironmentAttributesRequest&, DescribeEnvironmentAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentAttributesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEnvironmentRolesResponse> DescribeEnvironmentRolesOutcome;
+                typedef std::future<DescribeEnvironmentRolesOutcome> DescribeEnvironmentRolesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeEnvironmentRolesRequest&, DescribeEnvironmentRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentRolesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
                 typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
@@ -172,6 +177,15 @@ namespace TencentCloud
                 DescribeEnvironmentAttributesOutcome DescribeEnvironmentAttributes(const Model::DescribeEnvironmentAttributesRequest &request);
                 void DescribeEnvironmentAttributesAsync(const Model::DescribeEnvironmentAttributesRequest& request, const DescribeEnvironmentAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvironmentAttributesOutcomeCallable DescribeEnvironmentAttributesCallable(const Model::DescribeEnvironmentAttributesRequest& request);
+
+                /**
+                 *获取环境角色列表
+                 * @param req DescribeEnvironmentRolesRequest
+                 * @return DescribeEnvironmentRolesOutcome
+                 */
+                DescribeEnvironmentRolesOutcome DescribeEnvironmentRoles(const Model::DescribeEnvironmentRolesRequest &request);
+                void DescribeEnvironmentRolesAsync(const Model::DescribeEnvironmentRolesRequest& request, const DescribeEnvironmentRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvironmentRolesOutcomeCallable DescribeEnvironmentRolesCallable(const Model::DescribeEnvironmentRolesRequest& request);
 
                 /**
                  *获取租户下环境列表

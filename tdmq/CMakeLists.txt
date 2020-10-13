@@ -26,6 +26,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/PartitionsTopic.h
   include/tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h
+  include/tencentcloud/tdmq/v20200217/model/Topic.h
   include/tencentcloud/tdmq/v20200217/model/CreateTopicResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsResponse.h
   include/tencentcloud/tdmq/v20200217/model/ModifyTopicResponse.h
@@ -41,6 +42,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsResponse.h
   include/tencentcloud/tdmq/v20200217/model/Connection.h
   include/tencentcloud/tdmq/v20200217/model/DeleteTopicsRequest.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateSubscriptionRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyTopicRequest.h
   include/tencentcloud/tdmq/v20200217/model/Consumer.h
@@ -54,10 +56,11 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/CreateSubscriptionResponse.h
   include/tencentcloud/tdmq/v20200217/model/ConsumersSchedule.h
   include/tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsRequest.h
-  include/tencentcloud/tdmq/v20200217/model/Topic.h
+  include/tencentcloud/tdmq/v20200217/model/EnvironmentRole.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsRequest.h
   include/tencentcloud/tdmq/v20200217/model/TopicRecord.h
   include/tencentcloud/tdmq/v20200217/model/CreateEnvironmentRequest.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesRequest.h
   )
 
 set(tdmq_src
@@ -69,6 +72,7 @@ set(tdmq_src
   src/v20200217/model/PartitionsTopic.cpp
   src/v20200217/model/ResetMsgSubOffsetByTimestampResponse.cpp
   src/v20200217/model/DescribeTopicsResponse.cpp
+  src/v20200217/model/Topic.cpp
   src/v20200217/model/CreateTopicResponse.cpp
   src/v20200217/model/DescribeEnvironmentsResponse.cpp
   src/v20200217/model/ModifyTopicResponse.cpp
@@ -84,6 +88,7 @@ set(tdmq_src
   src/v20200217/model/DeleteEnvironmentsResponse.cpp
   src/v20200217/model/Connection.cpp
   src/v20200217/model/DeleteTopicsRequest.cpp
+  src/v20200217/model/DescribeEnvironmentRolesResponse.cpp
   src/v20200217/model/CreateSubscriptionRequest.cpp
   src/v20200217/model/ModifyTopicRequest.cpp
   src/v20200217/model/Consumer.cpp
@@ -97,10 +102,11 @@ set(tdmq_src
   src/v20200217/model/CreateSubscriptionResponse.cpp
   src/v20200217/model/ConsumersSchedule.cpp
   src/v20200217/model/DeleteEnvironmentsRequest.cpp
-  src/v20200217/model/Topic.cpp
+  src/v20200217/model/EnvironmentRole.cpp
   src/v20200217/model/DescribeEnvironmentsRequest.cpp
   src/v20200217/model/TopicRecord.cpp
   src/v20200217/model/CreateEnvironmentRequest.cpp
+  src/v20200217/model/DescribeEnvironmentRolesRequest.cpp
   )
 
 set(tdmq_include

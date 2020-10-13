@@ -79,18 +79,38 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询视频处理任务类型，默认查询转码。目前只支持转码类型数据查询。
-<li>Transcode: 转码</li>
-                     * @return Type 查询视频处理任务类型，默认查询转码。目前只支持转码类型数据查询。
-<li>Transcode: 转码</li>
+                     * 获取查询视频处理任务类型，目前支持的任务类型包括：
+<li> Transcoding: 普通转码</li>
+<li> Transcoding-TESHD: 极速高清转码</li>
+<li> Editing: 视频编辑</li>
+<li> AdaptiveBitrateStreaming: 自适应码流</li>
+<li> ContentAudit: 内容审核</li>
+<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
+                     * @return Type 查询视频处理任务类型，目前支持的任务类型包括：
+<li> Transcoding: 普通转码</li>
+<li> Transcoding-TESHD: 极速高清转码</li>
+<li> Editing: 视频编辑</li>
+<li> AdaptiveBitrateStreaming: 自适应码流</li>
+<li> ContentAudit: 内容审核</li>
+<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置查询视频处理任务类型，默认查询转码。目前只支持转码类型数据查询。
-<li>Transcode: 转码</li>
-                     * @param Type 查询视频处理任务类型，默认查询转码。目前只支持转码类型数据查询。
-<li>Transcode: 转码</li>
+                     * 设置查询视频处理任务类型，目前支持的任务类型包括：
+<li> Transcoding: 普通转码</li>
+<li> Transcoding-TESHD: 极速高清转码</li>
+<li> Editing: 视频编辑</li>
+<li> AdaptiveBitrateStreaming: 自适应码流</li>
+<li> ContentAudit: 内容审核</li>
+<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
+                     * @param Type 查询视频处理任务类型，目前支持的任务类型包括：
+<li> Transcoding: 普通转码</li>
+<li> Transcoding-TESHD: 极速高清转码</li>
+<li> Editing: 视频编辑</li>
+<li> AdaptiveBitrateStreaming: 自适应码流</li>
+<li> ContentAudit: 内容审核</li>
+<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -133,8 +153,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 查询视频处理任务类型，默认查询转码。目前只支持转码类型数据查询。
-<li>Transcode: 转码</li>
+                     * 查询视频处理任务类型，目前支持的任务类型包括：
+<li> Transcoding: 普通转码</li>
+<li> Transcoding-TESHD: 极速高清转码</li>
+<li> Editing: 视频编辑</li>
+<li> AdaptiveBitrateStreaming: 自适应码流</li>
+<li> ContentAudit: 内容审核</li>
+<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool EnableHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义参数，仅支持timer触发器
+                     * @return CustomArgument 用户自定义参数，仅支持timer触发器
+                     */
+                    std::string GetCustomArgument() const;
+
+                    /**
+                     * 设置用户自定义参数，仅支持timer触发器
+                     * @param CustomArgument 用户自定义参数，仅支持timer触发器
+                     */
+                    void SetCustomArgument(const std::string& _customArgument);
+
+                    /**
+                     * 判断参数 CustomArgument 是否已赋值
+                     * @return CustomArgument 是否已赋值
+                     */
+                    bool CustomArgumentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_enable;
                     bool m_enableHasBeenSet;
+
+                    /**
+                     * 用户自定义参数，仅支持timer触发器
+                     */
+                    std::string m_customArgument;
+                    bool m_customArgumentHasBeenSet;
 
                 };
             }

@@ -54,6 +54,18 @@ namespace TencentCloud
                      */
                     bool AssetIdHasBeenSet() const;
 
+                    /**
+                     * 获取生成包的全局唯一资源标识符
+                     * @return AssetArn 生成包的全局唯一资源标识符
+                     */
+                    std::string GetAssetArn() const;
+
+                    /**
+                     * 判断参数 AssetArn 是否已赋值
+                     * @return AssetArn 是否已赋值
+                     */
+                    bool AssetArnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +73,12 @@ namespace TencentCloud
                      */
                     std::string m_assetId;
                     bool m_assetIdHasBeenSet;
+
+                    /**
+                     * 生成包的全局唯一资源标识符
+                     */
+                    std::string m_assetArn;
+                    bool m_assetArnHasBeenSet;
 
                 };
             }

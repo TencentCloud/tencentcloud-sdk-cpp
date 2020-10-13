@@ -29,7 +29,10 @@ Asset::Asset() :
     m_stautsHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_bindFleetNumHasBeenSet(false)
+    m_bindFleetNumHasBeenSet(false),
+    m_assetArnHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_osTypeHasBeenSet(false)
 {
 }
 
@@ -118,6 +121,36 @@ CoreInternalOutcome Asset::Deserialize(const Value &value)
         m_bindFleetNumHasBeenSet = true;
     }
 
+    if (value.HasMember("AssetArn") && !value["AssetArn"].IsNull())
+    {
+        if (!value["AssetArn"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Asset.AssetArn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetArn = string(value["AssetArn"].GetString());
+        m_assetArnHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageId") && !value["ImageId"].IsNull())
+    {
+        if (!value["ImageId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Asset.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageId = string(value["ImageId"].GetString());
+        m_imageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsType") && !value["OsType"].IsNull())
+    {
+        if (!value["OsType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Asset.OsType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osType = string(value["OsType"].GetString());
+        m_osTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +220,30 @@ void Asset::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "BindFleetNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindFleetNum, allocator);
+    }
+
+    if (m_assetArnHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AssetArn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_assetArn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OsType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_osType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +375,53 @@ void Asset::SetBindFleetNum(const int64_t& _bindFleetNum)
 bool Asset::BindFleetNumHasBeenSet() const
 {
     return m_bindFleetNumHasBeenSet;
+}
+
+string Asset::GetAssetArn() const
+{
+    return m_assetArn;
+}
+
+void Asset::SetAssetArn(const string& _assetArn)
+{
+    m_assetArn = _assetArn;
+    m_assetArnHasBeenSet = true;
+}
+
+bool Asset::AssetArnHasBeenSet() const
+{
+    return m_assetArnHasBeenSet;
+}
+
+string Asset::GetImageId() const
+{
+    return m_imageId;
+}
+
+void Asset::SetImageId(const string& _imageId)
+{
+    m_imageId = _imageId;
+    m_imageIdHasBeenSet = true;
+}
+
+bool Asset::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
+}
+
+string Asset::GetOsType() const
+{
+    return m_osType;
+}
+
+void Asset::SetOsType(const string& _osType)
+{
+    m_osType = _osType;
+    m_osTypeHasBeenSet = true;
+}
+
+bool Asset::OsTypeHasBeenSet() const
+{
+    return m_osTypeHasBeenSet;
 }
 

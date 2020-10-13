@@ -31,7 +31,8 @@ Blueprint::Blueprint() :
     m_platformTypeHasBeenSet(false),
     m_blueprintTypeHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_requiredSystemDiskSizeHasBeenSet(false)
+    m_requiredSystemDiskSizeHasBeenSet(false),
+    m_blueprintStateHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome Blueprint::Deserialize(const Value &value)
         m_requiredSystemDiskSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("BlueprintState") && !value["BlueprintState"].IsNull())
+    {
+        if (!value["BlueprintState"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Blueprint.BlueprintState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_blueprintState = string(value["BlueprintState"].GetString());
+        m_blueprintStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +236,14 @@ void Blueprint::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "RequiredSystemDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requiredSystemDiskSize, allocator);
+    }
+
+    if (m_blueprintStateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BlueprintState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_blueprintState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +407,21 @@ void Blueprint::SetRequiredSystemDiskSize(const int64_t& _requiredSystemDiskSize
 bool Blueprint::RequiredSystemDiskSizeHasBeenSet() const
 {
     return m_requiredSystemDiskSizeHasBeenSet;
+}
+
+string Blueprint::GetBlueprintState() const
+{
+    return m_blueprintState;
+}
+
+void Blueprint::SetBlueprintState(const string& _blueprintState)
+{
+    m_blueprintState = _blueprintState;
+    m_blueprintStateHasBeenSet = true;
+}
+
+bool Blueprint::BlueprintStateHasBeenSet() const
+{
+    return m_blueprintStateHasBeenSet;
 }
 

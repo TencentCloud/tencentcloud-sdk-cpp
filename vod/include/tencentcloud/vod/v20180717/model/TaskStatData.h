@@ -50,21 +50,37 @@ namespace TencentCloud
 
                     /**
                      * 获取任务类型。
-<li>Transcode: 转码</li>
-<li>Snapshot: 截图</li>
+<li> Transcoding: 普通转码</li>
+<li> Transcoding-TESHD: 极速高清转码</li>
+<li> Editing: 视频编辑</li>
+<li> AdaptiveBitrateStreaming: 自适应码流</li>
+<li> ContentAudit: 内容审核</li>
+<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      * @return TaskType 任务类型。
-<li>Transcode: 转码</li>
-<li>Snapshot: 截图</li>
+<li> Transcoding: 普通转码</li>
+<li> Transcoding-TESHD: 极速高清转码</li>
+<li> Editing: 视频编辑</li>
+<li> AdaptiveBitrateStreaming: 自适应码流</li>
+<li> ContentAudit: 内容审核</li>
+<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置任务类型。
-<li>Transcode: 转码</li>
-<li>Snapshot: 截图</li>
+<li> Transcoding: 普通转码</li>
+<li> Transcoding-TESHD: 极速高清转码</li>
+<li> Editing: 视频编辑</li>
+<li> AdaptiveBitrateStreaming: 自适应码流</li>
+<li> ContentAudit: 内容审核</li>
+<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      * @param TaskType 任务类型。
-<li>Transcode: 转码</li>
-<li>Snapshot: 截图</li>
+<li> Transcoding: 普通转码</li>
+<li> Transcoding-TESHD: 极速高清转码</li>
+<li> Editing: 视频编辑</li>
+<li> AdaptiveBitrateStreaming: 自适应码流</li>
+<li> ContentAudit: 内容审核</li>
+<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      */
                     void SetTaskType(const std::string& _taskType);
 
@@ -75,18 +91,14 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务数统计数据概览。
-<li>Transcode: 用量单位为秒</li>
-                     * @return Summary 任务数统计数据概览。
-<li>Transcode: 用量单位为秒</li>
+                     * 获取任务数统计数据概览，用量单位为秒。
+                     * @return Summary 任务数统计数据概览，用量单位为秒。
                      */
                     std::vector<TaskStatDataItem> GetSummary() const;
 
                     /**
-                     * 设置任务数统计数据概览。
-<li>Transcode: 用量单位为秒</li>
-                     * @param Summary 任务数统计数据概览。
-<li>Transcode: 用量单位为秒</li>
+                     * 设置任务数统计数据概览，用量单位为秒。
+                     * @param Summary 任务数统计数据概览，用量单位为秒。
                      */
                     void SetSummary(const std::vector<TaskStatDataItem>& _summary);
 
@@ -254,15 +266,18 @@ namespace TencentCloud
 
                     /**
                      * 任务类型。
-<li>Transcode: 转码</li>
-<li>Snapshot: 截图</li>
+<li> Transcoding: 普通转码</li>
+<li> Transcoding-TESHD: 极速高清转码</li>
+<li> Editing: 视频编辑</li>
+<li> AdaptiveBitrateStreaming: 自适应码流</li>
+<li> ContentAudit: 内容审核</li>
+<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 任务数统计数据概览。
-<li>Transcode: 用量单位为秒</li>
+                     * 任务数统计数据概览，用量单位为秒。
                      */
                     std::vector<TaskStatDataItem> m_summary;
                     bool m_summaryHasBeenSet;

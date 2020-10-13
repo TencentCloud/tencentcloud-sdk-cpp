@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 CreateAssetResponse::CreateAssetResponse() :
-    m_assetIdHasBeenSet(false)
+    m_assetIdHasBeenSet(false),
+    m_assetArnHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CreateAssetResponse::Deserialize(const string &payload)
         m_assetIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AssetArn") && !rsp["AssetArn"].IsNull())
+    {
+        if (!rsp["AssetArn"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AssetArn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetArn = string(rsp["AssetArn"].GetString());
+        m_assetArnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ string CreateAssetResponse::GetAssetId() const
 bool CreateAssetResponse::AssetIdHasBeenSet() const
 {
     return m_assetIdHasBeenSet;
+}
+
+string CreateAssetResponse::GetAssetArn() const
+{
+    return m_assetArn;
+}
+
+bool CreateAssetResponse::AssetArnHasBeenSet() const
+{
+    return m_assetArnHasBeenSet;
 }
 
 

@@ -45,6 +45,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeDownloadFileRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeDownloadFileResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEndUserLoginStatisticRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEndUserLoginStatisticResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEndUserStatisticRequest.h>
@@ -122,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDatabaseACLResponse> DescribeDatabaseACLOutcome;
                 typedef std::future<DescribeDatabaseACLOutcome> DescribeDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeDatabaseACLRequest&, DescribeDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseACLAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDownloadFileResponse> DescribeDownloadFileOutcome;
+                typedef std::future<DescribeDownloadFileOutcome> DescribeDownloadFileOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeDownloadFileRequest&, DescribeDownloadFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDownloadFileAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEndUserLoginStatisticResponse> DescribeEndUserLoginStatisticOutcome;
                 typedef std::future<DescribeEndUserLoginStatisticOutcome> DescribeEndUserLoginStatisticOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEndUserLoginStatisticRequest&, DescribeEndUserLoginStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndUserLoginStatisticAsyncHandler;
@@ -268,6 +273,15 @@ namespace TencentCloud
                 DescribeDatabaseACLOutcome DescribeDatabaseACL(const Model::DescribeDatabaseACLRequest &request);
                 void DescribeDatabaseACLAsync(const Model::DescribeDatabaseACLRequest& request, const DescribeDatabaseACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabaseACLOutcomeCallable DescribeDatabaseACLCallable(const Model::DescribeDatabaseACLRequest& request);
+
+                /**
+                 *获取下载文件信息
+                 * @param req DescribeDownloadFileRequest
+                 * @return DescribeDownloadFileOutcome
+                 */
+                DescribeDownloadFileOutcome DescribeDownloadFile(const Model::DescribeDownloadFileRequest &request);
+                void DescribeDownloadFileAsync(const Model::DescribeDownloadFileRequest& request, const DescribeDownloadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDownloadFileOutcomeCallable DescribeDownloadFileCallable(const Model::DescribeDownloadFileRequest& request);
 
                 /**
                  *获取环境终端用户新增与登录信息

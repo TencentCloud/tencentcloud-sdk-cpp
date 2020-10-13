@@ -513,6 +513,49 @@ TcbClient::DescribeDatabaseACLOutcomeCallable TcbClient::DescribeDatabaseACLCall
     return task->get_future();
 }
 
+TcbClient::DescribeDownloadFileOutcome TcbClient::DescribeDownloadFile(const DescribeDownloadFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDownloadFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDownloadFileResponse rsp = DescribeDownloadFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDownloadFileOutcome(rsp);
+        else
+            return DescribeDownloadFileOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDownloadFileOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeDownloadFileAsync(const DescribeDownloadFileRequest& request, const DescribeDownloadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDownloadFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeDownloadFileOutcomeCallable TcbClient::DescribeDownloadFileCallable(const DescribeDownloadFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDownloadFileOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDownloadFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeEndUserLoginStatisticOutcome TcbClient::DescribeEndUserLoginStatistic(const DescribeEndUserLoginStatisticRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEndUserLoginStatistic");

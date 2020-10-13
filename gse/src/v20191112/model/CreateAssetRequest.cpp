@@ -28,7 +28,8 @@ CreateAssetRequest::CreateAssetRequest() :
     m_assetNameHasBeenSet(false),
     m_assetVersionHasBeenSet(false),
     m_assetRegionHasBeenSet(false),
-    m_operateSystemHasBeenSet(false)
+    m_operateSystemHasBeenSet(false),
+    m_imageIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateAssetRequest::ToJsonString() const
         string key = "OperateSystem";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_operateSystem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateAssetRequest::SetOperateSystem(const string& _operateSystem)
 bool CreateAssetRequest::OperateSystemHasBeenSet() const
 {
     return m_operateSystemHasBeenSet;
+}
+
+string CreateAssetRequest::GetImageId() const
+{
+    return m_imageId;
+}
+
+void CreateAssetRequest::SetImageId(const string& _imageId)
+{
+    m_imageId = _imageId;
+    m_imageIdHasBeenSet = true;
+}
+
+bool CreateAssetRequest::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
 }
 
 

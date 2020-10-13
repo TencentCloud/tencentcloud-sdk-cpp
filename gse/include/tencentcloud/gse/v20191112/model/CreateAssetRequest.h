@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool OperateSystemHasBeenSet() const;
 
+                    /**
+                     * 获取生成包支持的操作系统镜像id
+                     * @return ImageId 生成包支持的操作系统镜像id
+                     */
+                    std::string GetImageId() const;
+
+                    /**
+                     * 设置生成包支持的操作系统镜像id
+                     * @param ImageId 生成包支持的操作系统镜像id
+                     */
+                    void SetImageId(const std::string& _imageId);
+
+                    /**
+                     * 判断参数 ImageId 是否已赋值
+                     * @return ImageId 是否已赋值
+                     */
+                    bool ImageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_operateSystem;
                     bool m_operateSystemHasBeenSet;
+
+                    /**
+                     * 生成包支持的操作系统镜像id
+                     */
+                    std::string m_imageId;
+                    bool m_imageIdHasBeenSet;
 
                 };
             }
