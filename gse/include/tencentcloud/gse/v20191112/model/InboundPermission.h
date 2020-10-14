@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool FromPortHasBeenSet() const;
 
                     /**
-                     * 获取IP 段范围，CIDR 方式划分
-                     * @return IpRange IP 段范围，CIDR 方式划分
+                     * 获取IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0
+                     * @return IpRange IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0
                      */
                     std::string GetIpRange() const;
 
                     /**
-                     * 设置IP 段范围，CIDR 方式划分
-                     * @param IpRange IP 段范围，CIDR 方式划分
+                     * 设置IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0
+                     * @param IpRange IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0
                      */
                     void SetIpRange(const std::string& _ipRange);
 
@@ -127,7 +127,7 @@ namespace TencentCloud
                     bool m_fromPortHasBeenSet;
 
                     /**
-                     * IP 段范围，CIDR 方式划分
+                     * IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0
                      */
                     std::string m_ipRange;
                     bool m_ipRangeHasBeenSet;

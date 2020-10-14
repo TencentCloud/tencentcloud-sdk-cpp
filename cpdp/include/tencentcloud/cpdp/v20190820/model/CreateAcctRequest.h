@@ -116,17 +116,17 @@ namespace TencentCloud
 
                     /**
                      * 获取子商户联系人
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return Contact 子商户联系人
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetContact() const;
 
                     /**
                      * 设置子商户联系人
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param Contact 子商户联系人
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetContact(const std::string& _contact);
 
@@ -138,17 +138,17 @@ namespace TencentCloud
 
                     /**
                      * 获取联系人手机号
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return Mobile 联系人手机号
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置联系人手机号
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param Mobile 联系人手机号
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetMobile(const std::string& _mobile);
 
@@ -160,17 +160,17 @@ namespace TencentCloud
 
                     /**
                      * 获取邮箱 
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return Email 邮箱 
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置邮箱 
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param Email 邮箱 
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetEmail(const std::string& _email);
 
@@ -296,17 +296,17 @@ merchant: 商户子账户
 
                     /**
                      * 获取子商户密钥
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return SubMerchantKey 子商户密钥
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetSubMerchantKey() const;
 
                     /**
                      * 设置子商户密钥
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param SubMerchantKey 子商户密钥
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetSubMerchantKey(const std::string& _subMerchantKey);
 
@@ -318,17 +318,17 @@ merchant: 商户子账户
 
                     /**
                      * 获取子商户私钥
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return SubMerchantPrivateKey 子商户私钥
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetSubMerchantPrivateKey() const;
 
                     /**
                      * 设置子商户私钥
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param SubMerchantPrivateKey 子商户私钥
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetSubMerchantPrivateKey(const std::string& _subMerchantPrivateKey);
 
@@ -448,21 +448,21 @@ development: 开发环境
 
                     /**
                      * 子商户联系人
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_contact;
                     bool m_contactHasBeenSet;
 
                     /**
                      * 联系人手机号
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
                      * 邮箱 
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
@@ -505,14 +505,14 @@ merchant: 商户子账户
 
                     /**
                      * 子商户密钥
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_subMerchantKey;
                     bool m_subMerchantKeyHasBeenSet;
 
                     /**
                      * 子商户私钥
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_subMerchantPrivateKey;
                     bool m_subMerchantPrivateKeyHasBeenSet;

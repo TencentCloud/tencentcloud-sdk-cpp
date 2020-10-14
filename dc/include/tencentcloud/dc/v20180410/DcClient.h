@@ -35,14 +35,20 @@
 #include <tencentcloud/dc/v20180410/model/DeleteDirectConnectTunnelResponse.h>
 #include <tencentcloud/dc/v20180410/model/DescribeAccessPointsRequest.h>
 #include <tencentcloud/dc/v20180410/model/DescribeAccessPointsResponse.h>
+#include <tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelExtraRequest.h>
+#include <tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelExtraResponse.h>
 #include <tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelsRequest.h>
 #include <tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelsResponse.h>
 #include <tencentcloud/dc/v20180410/model/DescribeDirectConnectsRequest.h>
 #include <tencentcloud/dc/v20180410/model/DescribeDirectConnectsResponse.h>
+#include <tencentcloud/dc/v20180410/model/DescribePublicDirectConnectTunnelRoutesRequest.h>
+#include <tencentcloud/dc/v20180410/model/DescribePublicDirectConnectTunnelRoutesResponse.h>
 #include <tencentcloud/dc/v20180410/model/ModifyDirectConnectAttributeRequest.h>
 #include <tencentcloud/dc/v20180410/model/ModifyDirectConnectAttributeResponse.h>
 #include <tencentcloud/dc/v20180410/model/ModifyDirectConnectTunnelAttributeRequest.h>
 #include <tencentcloud/dc/v20180410/model/ModifyDirectConnectTunnelAttributeResponse.h>
+#include <tencentcloud/dc/v20180410/model/ModifyDirectConnectTunnelExtraRequest.h>
+#include <tencentcloud/dc/v20180410/model/ModifyDirectConnectTunnelExtraResponse.h>
 #include <tencentcloud/dc/v20180410/model/RejectDirectConnectTunnelRequest.h>
 #include <tencentcloud/dc/v20180410/model/RejectDirectConnectTunnelResponse.h>
 
@@ -77,18 +83,27 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAccessPointsResponse> DescribeAccessPointsOutcome;
                 typedef std::future<DescribeAccessPointsOutcome> DescribeAccessPointsOutcomeCallable;
                 typedef std::function<void(const DcClient*, const Model::DescribeAccessPointsRequest&, DescribeAccessPointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessPointsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDirectConnectTunnelExtraResponse> DescribeDirectConnectTunnelExtraOutcome;
+                typedef std::future<DescribeDirectConnectTunnelExtraOutcome> DescribeDirectConnectTunnelExtraOutcomeCallable;
+                typedef std::function<void(const DcClient*, const Model::DescribeDirectConnectTunnelExtraRequest&, DescribeDirectConnectTunnelExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDirectConnectTunnelExtraAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDirectConnectTunnelsResponse> DescribeDirectConnectTunnelsOutcome;
                 typedef std::future<DescribeDirectConnectTunnelsOutcome> DescribeDirectConnectTunnelsOutcomeCallable;
                 typedef std::function<void(const DcClient*, const Model::DescribeDirectConnectTunnelsRequest&, DescribeDirectConnectTunnelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDirectConnectTunnelsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDirectConnectsResponse> DescribeDirectConnectsOutcome;
                 typedef std::future<DescribeDirectConnectsOutcome> DescribeDirectConnectsOutcomeCallable;
                 typedef std::function<void(const DcClient*, const Model::DescribeDirectConnectsRequest&, DescribeDirectConnectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDirectConnectsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePublicDirectConnectTunnelRoutesResponse> DescribePublicDirectConnectTunnelRoutesOutcome;
+                typedef std::future<DescribePublicDirectConnectTunnelRoutesOutcome> DescribePublicDirectConnectTunnelRoutesOutcomeCallable;
+                typedef std::function<void(const DcClient*, const Model::DescribePublicDirectConnectTunnelRoutesRequest&, DescribePublicDirectConnectTunnelRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicDirectConnectTunnelRoutesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDirectConnectAttributeResponse> ModifyDirectConnectAttributeOutcome;
                 typedef std::future<ModifyDirectConnectAttributeOutcome> ModifyDirectConnectAttributeOutcomeCallable;
                 typedef std::function<void(const DcClient*, const Model::ModifyDirectConnectAttributeRequest&, ModifyDirectConnectAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDirectConnectAttributeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDirectConnectTunnelAttributeResponse> ModifyDirectConnectTunnelAttributeOutcome;
                 typedef std::future<ModifyDirectConnectTunnelAttributeOutcome> ModifyDirectConnectTunnelAttributeOutcomeCallable;
                 typedef std::function<void(const DcClient*, const Model::ModifyDirectConnectTunnelAttributeRequest&, ModifyDirectConnectTunnelAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDirectConnectTunnelAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDirectConnectTunnelExtraResponse> ModifyDirectConnectTunnelExtraOutcome;
+                typedef std::future<ModifyDirectConnectTunnelExtraOutcome> ModifyDirectConnectTunnelExtraOutcomeCallable;
+                typedef std::function<void(const DcClient*, const Model::ModifyDirectConnectTunnelExtraRequest&, ModifyDirectConnectTunnelExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDirectConnectTunnelExtraAsyncHandler;
                 typedef Outcome<Error, Model::RejectDirectConnectTunnelResponse> RejectDirectConnectTunnelOutcome;
                 typedef std::future<RejectDirectConnectTunnelOutcome> RejectDirectConnectTunnelOutcomeCallable;
                 typedef std::function<void(const DcClient*, const Model::RejectDirectConnectTunnelRequest&, RejectDirectConnectTunnelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RejectDirectConnectTunnelAsyncHandler;
@@ -155,6 +170,15 @@ namespace TencentCloud
                 DescribeAccessPointsOutcomeCallable DescribeAccessPointsCallable(const Model::DescribeAccessPointsRequest& request);
 
                 /**
+                 *本接口（DescribeDirectConnectTunnelExtra）用于查询专用通道扩展信息
+                 * @param req DescribeDirectConnectTunnelExtraRequest
+                 * @return DescribeDirectConnectTunnelExtraOutcome
+                 */
+                DescribeDirectConnectTunnelExtraOutcome DescribeDirectConnectTunnelExtra(const Model::DescribeDirectConnectTunnelExtraRequest &request);
+                void DescribeDirectConnectTunnelExtraAsync(const Model::DescribeDirectConnectTunnelExtraRequest& request, const DescribeDirectConnectTunnelExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDirectConnectTunnelExtraOutcomeCallable DescribeDirectConnectTunnelExtraCallable(const Model::DescribeDirectConnectTunnelExtraRequest& request);
+
+                /**
                  *用于查询专用通道列表。
                  * @param req DescribeDirectConnectTunnelsRequest
                  * @return DescribeDirectConnectTunnelsOutcome
@@ -173,6 +197,15 @@ namespace TencentCloud
                 DescribeDirectConnectsOutcomeCallable DescribeDirectConnectsCallable(const Model::DescribeDirectConnectsRequest& request);
 
                 /**
+                 *本接口（DescribePublicDirectConnectTunnelRoutes）用于查询互联网通道路由列表
+                 * @param req DescribePublicDirectConnectTunnelRoutesRequest
+                 * @return DescribePublicDirectConnectTunnelRoutesOutcome
+                 */
+                DescribePublicDirectConnectTunnelRoutesOutcome DescribePublicDirectConnectTunnelRoutes(const Model::DescribePublicDirectConnectTunnelRoutesRequest &request);
+                void DescribePublicDirectConnectTunnelRoutesAsync(const Model::DescribePublicDirectConnectTunnelRoutesRequest& request, const DescribePublicDirectConnectTunnelRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicDirectConnectTunnelRoutesOutcomeCallable DescribePublicDirectConnectTunnelRoutesCallable(const Model::DescribePublicDirectConnectTunnelRoutesRequest& request);
+
+                /**
                  *修改物理专线的属性。
                  * @param req ModifyDirectConnectAttributeRequest
                  * @return ModifyDirectConnectAttributeOutcome
@@ -189,6 +222,15 @@ namespace TencentCloud
                 ModifyDirectConnectTunnelAttributeOutcome ModifyDirectConnectTunnelAttribute(const Model::ModifyDirectConnectTunnelAttributeRequest &request);
                 void ModifyDirectConnectTunnelAttributeAsync(const Model::ModifyDirectConnectTunnelAttributeRequest& request, const ModifyDirectConnectTunnelAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDirectConnectTunnelAttributeOutcomeCallable ModifyDirectConnectTunnelAttributeCallable(const Model::ModifyDirectConnectTunnelAttributeRequest& request);
+
+                /**
+                 *本接口（ModifyDirectConnectTunnelExtra）用于修改专用通道扩展信息
+                 * @param req ModifyDirectConnectTunnelExtraRequest
+                 * @return ModifyDirectConnectTunnelExtraOutcome
+                 */
+                ModifyDirectConnectTunnelExtraOutcome ModifyDirectConnectTunnelExtra(const Model::ModifyDirectConnectTunnelExtraRequest &request);
+                void ModifyDirectConnectTunnelExtraAsync(const Model::ModifyDirectConnectTunnelExtraRequest& request, const ModifyDirectConnectTunnelExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDirectConnectTunnelExtraOutcomeCallable ModifyDirectConnectTunnelExtraCallable(const Model::ModifyDirectConnectTunnelExtraRequest& request);
 
                 /**
                  *拒绝专用通道申请

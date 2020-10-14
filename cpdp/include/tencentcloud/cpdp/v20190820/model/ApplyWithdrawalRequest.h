@@ -80,17 +80,17 @@ namespace TencentCloud
 
                     /**
                      * 获取用于提现
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return SettleAcctNo 用于提现
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetSettleAcctNo() const;
 
                     /**
                      * 设置用于提现
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param SettleAcctNo 用于提现
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetSettleAcctNo(const std::string& _settleAcctNo);
 
@@ -102,17 +102,17 @@ namespace TencentCloud
 
                     /**
                      * 获取结算账户户名
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return SettleAcctName 结算账户户名
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetSettleAcctName() const;
 
                     /**
                      * 设置结算账户户名
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param SettleAcctName 结算账户户名
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetSettleAcctName(const std::string& _settleAcctName);
 
@@ -214,17 +214,17 @@ namespace TencentCloud
 
                     /**
                      * 获取会员证件号码
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return IdCode 会员证件号码
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetIdCode() const;
 
                     /**
                      * 设置会员证件号码
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param IdCode 会员证件号码
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetIdCode(const std::string& _idCode);
 
@@ -386,14 +386,14 @@ development: 开发环境
 
                     /**
                      * 用于提现
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_settleAcctNo;
                     bool m_settleAcctNoHasBeenSet;
 
                     /**
                      * 结算账户户名
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_settleAcctName;
                     bool m_settleAcctNameHasBeenSet;
@@ -430,7 +430,7 @@ development: 开发环境
 
                     /**
                      * 会员证件号码
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_idCode;
                     bool m_idCodeHasBeenSet;

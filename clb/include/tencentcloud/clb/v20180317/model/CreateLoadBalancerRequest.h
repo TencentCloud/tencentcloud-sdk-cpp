@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/InternetAccessible.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
+#include <tencentcloud/clb/v20180317/model/ExclusiveCluster.h>
 
 
 namespace TencentCloud
@@ -291,6 +292,24 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool TagsHasBeenSet() const;
 
                     /**
+                     * 获取独占集群信息
+                     * @return ExclusiveCluster 独占集群信息
+                     */
+                    ExclusiveCluster GetExclusiveCluster() const;
+
+                    /**
+                     * 设置独占集群信息
+                     * @param ExclusiveCluster 独占集群信息
+                     */
+                    void SetExclusiveCluster(const ExclusiveCluster& _exclusiveCluster);
+
+                    /**
+                     * 判断参数 ExclusiveCluster 是否已赋值
+                     * @return ExclusiveCluster 是否已赋值
+                     */
+                    bool ExclusiveClusterHasBeenSet() const;
+
+                    /**
                      * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      */
@@ -307,6 +326,24 @@ OPEN：公网属性， INTERNAL：内网属性。
                      * @return ClientToken 是否已赋值
                      */
                     bool ClientTokenHasBeenSet() const;
+
+                    /**
+                     * 获取Stgw独占集群的标签。
+                     * @return ClusterTag Stgw独占集群的标签。
+                     */
+                    std::string GetClusterTag() const;
+
+                    /**
+                     * 设置Stgw独占集群的标签。
+                     * @param ClusterTag Stgw独占集群的标签。
+                     */
+                    void SetClusterTag(const std::string& _clusterTag);
+
+                    /**
+                     * 判断参数 ClusterTag 是否已赋值
+                     * @return ClusterTag 是否已赋值
+                     */
+                    bool ClusterTagHasBeenSet() const;
 
                 private:
 
@@ -392,10 +429,22 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_tagsHasBeenSet;
 
                     /**
+                     * 独占集群信息
+                     */
+                    ExclusiveCluster m_exclusiveCluster;
+                    bool m_exclusiveClusterHasBeenSet;
+
+                    /**
                      * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * Stgw独占集群的标签。
+                     */
+                    std::string m_clusterTag;
+                    bool m_clusterTagHasBeenSet;
 
                 };
             }

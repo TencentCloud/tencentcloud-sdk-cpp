@@ -298,6 +298,49 @@ DcClient::DescribeAccessPointsOutcomeCallable DcClient::DescribeAccessPointsCall
     return task->get_future();
 }
 
+DcClient::DescribeDirectConnectTunnelExtraOutcome DcClient::DescribeDirectConnectTunnelExtra(const DescribeDirectConnectTunnelExtraRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDirectConnectTunnelExtra");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDirectConnectTunnelExtraResponse rsp = DescribeDirectConnectTunnelExtraResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDirectConnectTunnelExtraOutcome(rsp);
+        else
+            return DescribeDirectConnectTunnelExtraOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDirectConnectTunnelExtraOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::DescribeDirectConnectTunnelExtraAsync(const DescribeDirectConnectTunnelExtraRequest& request, const DescribeDirectConnectTunnelExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDirectConnectTunnelExtra(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::DescribeDirectConnectTunnelExtraOutcomeCallable DcClient::DescribeDirectConnectTunnelExtraCallable(const DescribeDirectConnectTunnelExtraRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDirectConnectTunnelExtraOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDirectConnectTunnelExtra(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcClient::DescribeDirectConnectTunnelsOutcome DcClient::DescribeDirectConnectTunnels(const DescribeDirectConnectTunnelsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDirectConnectTunnels");
@@ -384,6 +427,49 @@ DcClient::DescribeDirectConnectsOutcomeCallable DcClient::DescribeDirectConnects
     return task->get_future();
 }
 
+DcClient::DescribePublicDirectConnectTunnelRoutesOutcome DcClient::DescribePublicDirectConnectTunnelRoutes(const DescribePublicDirectConnectTunnelRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicDirectConnectTunnelRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicDirectConnectTunnelRoutesResponse rsp = DescribePublicDirectConnectTunnelRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicDirectConnectTunnelRoutesOutcome(rsp);
+        else
+            return DescribePublicDirectConnectTunnelRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicDirectConnectTunnelRoutesOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::DescribePublicDirectConnectTunnelRoutesAsync(const DescribePublicDirectConnectTunnelRoutesRequest& request, const DescribePublicDirectConnectTunnelRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublicDirectConnectTunnelRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::DescribePublicDirectConnectTunnelRoutesOutcomeCallable DcClient::DescribePublicDirectConnectTunnelRoutesCallable(const DescribePublicDirectConnectTunnelRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublicDirectConnectTunnelRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublicDirectConnectTunnelRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcClient::ModifyDirectConnectAttributeOutcome DcClient::ModifyDirectConnectAttribute(const ModifyDirectConnectAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDirectConnectAttribute");
@@ -463,6 +549,49 @@ DcClient::ModifyDirectConnectTunnelAttributeOutcomeCallable DcClient::ModifyDire
         [this, request]()
         {
             return this->ModifyDirectConnectTunnelAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcClient::ModifyDirectConnectTunnelExtraOutcome DcClient::ModifyDirectConnectTunnelExtra(const ModifyDirectConnectTunnelExtraRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDirectConnectTunnelExtra");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDirectConnectTunnelExtraResponse rsp = ModifyDirectConnectTunnelExtraResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDirectConnectTunnelExtraOutcome(rsp);
+        else
+            return ModifyDirectConnectTunnelExtraOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDirectConnectTunnelExtraOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::ModifyDirectConnectTunnelExtraAsync(const ModifyDirectConnectTunnelExtraRequest& request, const ModifyDirectConnectTunnelExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDirectConnectTunnelExtra(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::ModifyDirectConnectTunnelExtraOutcomeCallable DcClient::ModifyDirectConnectTunnelExtraCallable(const ModifyDirectConnectTunnelExtraRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDirectConnectTunnelExtraOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDirectConnectTunnelExtra(request);
         }
     );
 

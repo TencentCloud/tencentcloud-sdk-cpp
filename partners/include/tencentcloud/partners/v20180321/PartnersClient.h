@@ -43,6 +43,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentDealsCacheResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h>
@@ -97,6 +99,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAgentPayDealsResponse> DescribeAgentPayDealsOutcome;
                 typedef std::future<DescribeAgentPayDealsOutcome> DescribeAgentPayDealsOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentPayDealsRequest&, DescribeAgentPayDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentPayDealsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAgentSelfPayDealsResponse> DescribeAgentSelfPayDealsOutcome;
+                typedef std::future<DescribeAgentSelfPayDealsOutcome> DescribeAgentSelfPayDealsOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeAgentSelfPayDealsRequest&, DescribeAgentSelfPayDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentSelfPayDealsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClientBalanceResponse> DescribeClientBalanceOutcome;
                 typedef std::future<DescribeClientBalanceOutcome> DescribeClientBalanceOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeClientBalanceRequest&, DescribeClientBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBalanceAsyncHandler;
@@ -204,6 +209,15 @@ namespace TencentCloud
                 DescribeAgentPayDealsOutcome DescribeAgentPayDeals(const Model::DescribeAgentPayDealsRequest &request);
                 void DescribeAgentPayDealsAsync(const Model::DescribeAgentPayDealsRequest& request, const DescribeAgentPayDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAgentPayDealsOutcomeCallable DescribeAgentPayDealsCallable(const Model::DescribeAgentPayDealsRequest& request);
+
+                /**
+                 *可以查询代理商下指定客户的自付订单
+                 * @param req DescribeAgentSelfPayDealsRequest
+                 * @return DescribeAgentSelfPayDealsOutcome
+                 */
+                DescribeAgentSelfPayDealsOutcome DescribeAgentSelfPayDeals(const Model::DescribeAgentSelfPayDealsRequest &request);
+                void DescribeAgentSelfPayDealsAsync(const Model::DescribeAgentSelfPayDealsRequest& request, const DescribeAgentSelfPayDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentSelfPayDealsOutcomeCallable DescribeAgentSelfPayDealsCallable(const Model::DescribeAgentSelfPayDealsRequest& request);
 
                 /**
                  *为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额

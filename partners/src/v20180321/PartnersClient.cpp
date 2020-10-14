@@ -470,6 +470,49 @@ PartnersClient::DescribeAgentPayDealsOutcomeCallable PartnersClient::DescribeAge
     return task->get_future();
 }
 
+PartnersClient::DescribeAgentSelfPayDealsOutcome PartnersClient::DescribeAgentSelfPayDeals(const DescribeAgentSelfPayDealsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentSelfPayDeals");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentSelfPayDealsResponse rsp = DescribeAgentSelfPayDealsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentSelfPayDealsOutcome(rsp);
+        else
+            return DescribeAgentSelfPayDealsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentSelfPayDealsOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeAgentSelfPayDealsAsync(const DescribeAgentSelfPayDealsRequest& request, const DescribeAgentSelfPayDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentSelfPayDeals(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeAgentSelfPayDealsOutcomeCallable PartnersClient::DescribeAgentSelfPayDealsCallable(const DescribeAgentSelfPayDealsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentSelfPayDealsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentSelfPayDeals(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeClientBalanceOutcome PartnersClient::DescribeClientBalance(const DescribeClientBalanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClientBalance");

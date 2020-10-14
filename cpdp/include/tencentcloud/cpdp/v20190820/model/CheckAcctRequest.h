@@ -106,17 +106,17 @@ namespace TencentCloud
 
                     /**
                      * 获取结算账户账号
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return SettleAcctNo 结算账户账号
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetSettleAcctNo() const;
 
                     /**
                      * 设置结算账户账号
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param SettleAcctNo 结算账户账号
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetSettleAcctNo(const std::string& _settleAcctNo);
 
@@ -342,7 +342,7 @@ development: 开发环境
 
                     /**
                      * 结算账户账号
-<敏感信息>加密详见《商户端接口敏感信息加密说明》
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_settleAcctNo;
                     bool m_settleAcctNoHasBeenSet;

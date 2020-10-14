@@ -37,7 +37,9 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_internetAccessibleHasBeenSet(false),
     m_vipIspHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_exclusiveClusterHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_clusterTagHasBeenSet(false)
 {
 }
 
@@ -160,12 +162,29 @@ string CreateLoadBalancerRequest::ToJsonString() const
         }
     }
 
+    if (m_exclusiveClusterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExclusiveCluster";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_exclusiveCluster.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_clientTokenHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterTag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -384,6 +403,22 @@ bool CreateLoadBalancerRequest::TagsHasBeenSet() const
     return m_tagsHasBeenSet;
 }
 
+ExclusiveCluster CreateLoadBalancerRequest::GetExclusiveCluster() const
+{
+    return m_exclusiveCluster;
+}
+
+void CreateLoadBalancerRequest::SetExclusiveCluster(const ExclusiveCluster& _exclusiveCluster)
+{
+    m_exclusiveCluster = _exclusiveCluster;
+    m_exclusiveClusterHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::ExclusiveClusterHasBeenSet() const
+{
+    return m_exclusiveClusterHasBeenSet;
+}
+
 string CreateLoadBalancerRequest::GetClientToken() const
 {
     return m_clientToken;
@@ -398,6 +433,22 @@ void CreateLoadBalancerRequest::SetClientToken(const string& _clientToken)
 bool CreateLoadBalancerRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetClusterTag() const
+{
+    return m_clusterTag;
+}
+
+void CreateLoadBalancerRequest::SetClusterTag(const string& _clusterTag)
+{
+    m_clusterTag = _clusterTag;
+    m_clusterTagHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::ClusterTagHasBeenSet() const
+{
+    return m_clusterTagHasBeenSet;
 }
 
 
