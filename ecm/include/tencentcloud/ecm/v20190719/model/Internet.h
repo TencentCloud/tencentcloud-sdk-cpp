@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ecm/v20190719/model/PrivateIPAddressInfo.h>
 #include <tencentcloud/ecm/v20190719/model/PublicIPAddressInfo.h>
+#include <tencentcloud/ecm/v20190719/model/InstanceNetworkInfo.h>
 
 
 namespace TencentCloud
@@ -92,6 +93,28 @@ namespace TencentCloud
                      */
                     bool PublicIPAddressSetHasBeenSet() const;
 
+                    /**
+                     * 获取实例网络相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceNetworkInfoSet 实例网络相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceNetworkInfo> GetInstanceNetworkInfoSet() const;
+
+                    /**
+                     * 设置实例网络相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceNetworkInfoSet 实例网络相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceNetworkInfoSet(const std::vector<InstanceNetworkInfo>& _instanceNetworkInfoSet);
+
+                    /**
+                     * 判断参数 InstanceNetworkInfoSet 是否已赋值
+                     * @return InstanceNetworkInfoSet 是否已赋值
+                     */
+                    bool InstanceNetworkInfoSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +130,13 @@ namespace TencentCloud
                      */
                     std::vector<PublicIPAddressInfo> m_publicIPAddressSet;
                     bool m_publicIPAddressSetHasBeenSet;
+
+                    /**
+                     * 实例网络相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceNetworkInfo> m_instanceNetworkInfoSet;
+                    bool m_instanceNetworkInfoSetHasBeenSet;
 
                 };
             }

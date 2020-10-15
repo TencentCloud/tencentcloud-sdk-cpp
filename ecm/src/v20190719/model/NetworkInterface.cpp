@@ -37,7 +37,8 @@ NetworkInterface::NetworkInterface() :
     m_createdTimeHasBeenSet(false),
     m_ipv6AddressSetHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_eniTypeHasBeenSet(false)
+    m_eniTypeHasBeenSet(false),
+    m_ecmRegionHasBeenSet(false)
 {
 }
 
@@ -246,6 +247,16 @@ CoreInternalOutcome NetworkInterface::Deserialize(const Value &value)
         m_eniTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("EcmRegion") && !value["EcmRegion"].IsNull())
+    {
+        if (!value["EcmRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NetworkInterface.EcmRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ecmRegion = string(value["EcmRegion"].GetString());
+        m_ecmRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -406,6 +417,14 @@ void NetworkInterface::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "EniType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eniType, allocator);
+    }
+
+    if (m_ecmRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EcmRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_ecmRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -665,5 +684,21 @@ void NetworkInterface::SetEniType(const uint64_t& _eniType)
 bool NetworkInterface::EniTypeHasBeenSet() const
 {
     return m_eniTypeHasBeenSet;
+}
+
+string NetworkInterface::GetEcmRegion() const
+{
+    return m_ecmRegion;
+}
+
+void NetworkInterface::SetEcmRegion(const string& _ecmRegion)
+{
+    m_ecmRegion = _ecmRegion;
+    m_ecmRegionHasBeenSet = true;
+}
+
+bool NetworkInterface::EcmRegionHasBeenSet() const
+{
+    return m_ecmRegionHasBeenSet;
 }
 

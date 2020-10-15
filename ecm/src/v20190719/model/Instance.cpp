@@ -47,7 +47,8 @@ Instance::Instance() :
     m_dataDisksHasBeenSet(false),
     m_newFlagHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_virtualPrivateCloudHasBeenSet(false)
+    m_virtualPrivateCloudHasBeenSet(false),
+    m_iSPHasBeenSet(false)
 {
 }
 
@@ -388,6 +389,16 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_virtualPrivateCloudHasBeenSet = true;
     }
 
+    if (value.HasMember("ISP") && !value["ISP"].IsNull())
+    {
+        if (!value["ISP"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.ISP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iSP = string(value["ISP"].GetString());
+        m_iSPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -627,6 +638,14 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_virtualPrivateCloud.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_iSPHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ISP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_iSP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1046,5 +1065,21 @@ void Instance::SetVirtualPrivateCloud(const VirtualPrivateCloud& _virtualPrivate
 bool Instance::VirtualPrivateCloudHasBeenSet() const
 {
     return m_virtualPrivateCloudHasBeenSet;
+}
+
+string Instance::GetISP() const
+{
+    return m_iSP;
+}
+
+void Instance::SetISP(const string& _iSP)
+{
+    m_iSP = _iSP;
+    m_iSPHasBeenSet = true;
+}
+
+bool Instance::ISPHasBeenSet() const
+{
+    return m_iSPHasBeenSet;
 }
 

@@ -382,6 +382,24 @@ DELETING：删除中
                      */
                     bool EniTypeHasBeenSet() const;
 
+                    /**
+                     * 获取EcmRegion ecm区域
+                     * @return EcmRegion EcmRegion ecm区域
+                     */
+                    std::string GetEcmRegion() const;
+
+                    /**
+                     * 设置EcmRegion ecm区域
+                     * @param EcmRegion EcmRegion ecm区域
+                     */
+                    void SetEcmRegion(const std::string& _ecmRegion);
+
+                    /**
+                     * 判断参数 EcmRegion 是否已赋值
+                     * @return EcmRegion 是否已赋值
+                     */
+                    bool EcmRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -490,6 +508,12 @@ DELETING：删除中
                      */
                     uint64_t m_eniType;
                     bool m_eniTypeHasBeenSet;
+
+                    /**
+                     * EcmRegion ecm区域
+                     */
+                    std::string m_ecmRegion;
+                    bool m_ecmRegionHasBeenSet;
 
                 };
             }

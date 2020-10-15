@@ -44,24 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ECM 地域
-                     * @return EcmRegion ECM 地域
-                     */
-                    std::string GetEcmRegion() const;
-
-                    /**
-                     * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
-                     */
-                    void SetEcmRegion(const std::string& _ecmRegion);
-
-                    /**
-                     * 判断参数 EcmRegion 是否已赋值
-                     * @return EcmRegion 是否已赋值
-                     */
-                    bool EcmRegionHasBeenSet() const;
-
-                    /**
                      * 获取弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。
                      * @return NetworkInterfaceIds 弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。
                      */
@@ -177,13 +159,25 @@ is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网
                      */
                     bool LimitHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取ECM 地域
+                     * @return EcmRegion ECM 地域
+                     */
+                    std::string GetEcmRegion() const;
 
                     /**
-                     * ECM 地域
+                     * 设置ECM 地域
+                     * @param EcmRegion ECM 地域
                      */
-                    std::string m_ecmRegion;
-                    bool m_ecmRegionHasBeenSet;
+                    void SetEcmRegion(const std::string& _ecmRegion);
+
+                    /**
+                     * 判断参数 EcmRegion 是否已赋值
+                     * @return EcmRegion 是否已赋值
+                     */
+                    bool EcmRegionHasBeenSet() const;
+
+                private:
 
                     /**
                      * 弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。
@@ -219,6 +213,12 @@ is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * ECM 地域
+                     */
+                    std::string m_ecmRegion;
+                    bool m_ecmRegionHasBeenSet;
 
                 };
             }

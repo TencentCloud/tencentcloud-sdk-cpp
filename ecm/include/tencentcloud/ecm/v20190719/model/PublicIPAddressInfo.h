@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool ISPHasBeenSet() const;
 
                     /**
-                     * 获取实例的最大出带宽上限。
-                     * @return MaxBandwidthOut 实例的最大出带宽上限。
+                     * 获取实例的最大出带宽上限，单位为Mbps。
+                     * @return MaxBandwidthOut 实例的最大出带宽上限，单位为Mbps。
                      */
                     int64_t GetMaxBandwidthOut() const;
 
                     /**
-                     * 设置实例的最大出带宽上限。
-                     * @param MaxBandwidthOut 实例的最大出带宽上限。
+                     * 设置实例的最大出带宽上限，单位为Mbps。
+                     * @param MaxBandwidthOut 实例的最大出带宽上限，单位为Mbps。
                      */
                     void SetMaxBandwidthOut(const int64_t& _maxBandwidthOut);
 
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_iSPHasBeenSet;
 
                     /**
-                     * 实例的最大出带宽上限。
+                     * 实例的最大出带宽上限，单位为Mbps。
                      */
                     int64_t m_maxBandwidthOut;
                     bool m_maxBandwidthOutHasBeenSet;

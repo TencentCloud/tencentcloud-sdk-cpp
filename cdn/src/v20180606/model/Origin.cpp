@@ -30,7 +30,8 @@ Origin::Origin() :
     m_backupOriginsHasBeenSet(false),
     m_backupOriginTypeHasBeenSet(false),
     m_backupServerNameHasBeenSet(false),
-    m_basePathHasBeenSet(false)
+    m_basePathHasBeenSet(false),
+    m_pathRulesHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,26 @@ CoreInternalOutcome Origin::Deserialize(const Value &value)
         m_basePathHasBeenSet = true;
     }
 
+    if (value.HasMember("PathRules") && !value["PathRules"].IsNull())
+    {
+        if (!value["PathRules"].IsArray())
+            return CoreInternalOutcome(Error("response `Origin.PathRules` is not array type"));
+
+        const Value &tmpValue = value["PathRules"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PathRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_pathRules.push_back(item);
+        }
+        m_pathRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +243,21 @@ void Origin::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "BasePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_basePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pathRulesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PathRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_pathRules.begin(); itr != m_pathRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -369,5 +405,21 @@ void Origin::SetBasePath(const string& _basePath)
 bool Origin::BasePathHasBeenSet() const
 {
     return m_basePathHasBeenSet;
+}
+
+vector<PathRule> Origin::GetPathRules() const
+{
+    return m_pathRules;
+}
+
+void Origin::SetPathRules(const vector<PathRule>& _pathRules)
+{
+    m_pathRules = _pathRules;
+    m_pathRulesHasBeenSet = true;
+}
+
+bool Origin::PathRulesHasBeenSet() const
+{
+    return m_pathRulesHasBeenSet;
 }
 

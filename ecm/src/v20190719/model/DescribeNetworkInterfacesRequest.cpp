@@ -24,11 +24,11 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeNetworkInterfacesRequest::DescribeNetworkInterfacesRequest() :
-    m_ecmRegionHasBeenSet(false),
     m_networkInterfaceIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_ecmRegionHasBeenSet(false)
 {
 }
 
@@ -38,14 +38,6 @@ string DescribeNetworkInterfacesRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_ecmRegionHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "EcmRegion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ecmRegion.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_networkInterfaceIdsHasBeenSet)
     {
@@ -91,6 +83,14 @@ string DescribeNetworkInterfacesRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
+    if (m_ecmRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EcmRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_ecmRegion.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -98,22 +98,6 @@ string DescribeNetworkInterfacesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeNetworkInterfacesRequest::GetEcmRegion() const
-{
-    return m_ecmRegion;
-}
-
-void DescribeNetworkInterfacesRequest::SetEcmRegion(const string& _ecmRegion)
-{
-    m_ecmRegion = _ecmRegion;
-    m_ecmRegionHasBeenSet = true;
-}
-
-bool DescribeNetworkInterfacesRequest::EcmRegionHasBeenSet() const
-{
-    return m_ecmRegionHasBeenSet;
-}
 
 vector<string> DescribeNetworkInterfacesRequest::GetNetworkInterfaceIds() const
 {
@@ -177,6 +161,22 @@ void DescribeNetworkInterfacesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeNetworkInterfacesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeNetworkInterfacesRequest::GetEcmRegion() const
+{
+    return m_ecmRegion;
+}
+
+void DescribeNetworkInterfacesRequest::SetEcmRegion(const string& _ecmRegion)
+{
+    m_ecmRegion = _ecmRegion;
+    m_ecmRegionHasBeenSet = true;
+}
+
+bool DescribeNetworkInterfacesRequest::EcmRegionHasBeenSet() const
+{
+    return m_ecmRegionHasBeenSet;
 }
 
 

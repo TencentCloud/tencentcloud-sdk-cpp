@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/PathRule.h>
 
 
 namespace TencentCloud
@@ -335,6 +336,28 @@ ip：IP 列表作为源站
                      */
                     bool BasePathHasBeenSet() const;
 
+                    /**
+                     * 获取分路径回源配置规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PathRules 分路径回源配置规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PathRule> GetPathRules() const;
+
+                    /**
+                     * 设置分路径回源配置规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PathRules 分路径回源配置规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPathRules(const std::vector<PathRule>& _pathRules);
+
+                    /**
+                     * 判断参数 PathRules 是否已赋值
+                     * @return PathRules 是否已赋值
+                     */
+                    bool PathRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -420,6 +443,13 @@ ip：IP 列表作为源站
                      */
                     std::string m_basePath;
                     bool m_basePathHasBeenSet;
+
+                    /**
+                     * 分路径回源配置规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PathRule> m_pathRules;
+                    bool m_pathRulesHasBeenSet;
 
                 };
             }

@@ -694,6 +694,28 @@ PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
                      */
                     bool VirtualPrivateCloudHasBeenSet() const;
 
+                    /**
+                     * 获取实例运营商字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ISP 实例运营商字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetISP() const;
+
+                    /**
+                     * 设置实例运营商字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ISP 实例运营商字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetISP(const std::string& _iSP);
+
+                    /**
+                     * 判断参数 ISP 是否已赋值
+                     * @return ISP 是否已赋值
+                     */
+                    bool ISPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -894,6 +916,13 @@ PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
                      */
                     VirtualPrivateCloud m_virtualPrivateCloud;
                     bool m_virtualPrivateCloudHasBeenSet;
+
+                    /**
+                     * 实例运营商字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iSP;
+                    bool m_iSPHasBeenSet;
 
                 };
             }

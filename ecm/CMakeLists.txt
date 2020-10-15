@@ -105,6 +105,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeTaskStatusResponse.h
   include/tencentcloud/ecm/v20190719/model/BatchRegisterTargetsResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateModuleRequest.h
+  include/tencentcloud/ecm/v20190719/model/InstanceNetworkInfo.h
   include/tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/ReleaseAddressesResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyVpcAttributeRequest.h
@@ -288,6 +289,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ListenerHealth.h
   include/tencentcloud/ecm/v20190719/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/ecm/v20190719/model/LoadBalancer.h
+  include/tencentcloud/ecm/v20190719/model/AddressInfo.h
   )
 
 set(ecm_src
@@ -378,6 +380,7 @@ set(ecm_src
   src/v20190719/model/DescribeTaskStatusResponse.cpp
   src/v20190719/model/BatchRegisterTargetsResponse.cpp
   src/v20190719/model/CreateModuleRequest.cpp
+  src/v20190719/model/InstanceNetworkInfo.cpp
   src/v20190719/model/ModifyInstancesAttributeResponse.cpp
   src/v20190719/model/ReleaseAddressesResponse.cpp
   src/v20190719/model/ModifyVpcAttributeRequest.cpp
@@ -561,6 +564,7 @@ set(ecm_src
   src/v20190719/model/ListenerHealth.cpp
   src/v20190719/model/DisassociateSecurityGroupsResponse.cpp
   src/v20190719/model/LoadBalancer.cpp
+  src/v20190719/model/AddressInfo.cpp
   )
 
 set(ecm_include

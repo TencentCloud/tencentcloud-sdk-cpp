@@ -23,7 +23,8 @@ using namespace std;
 
 Internet::Internet() :
     m_privateIPAddressSetHasBeenSet(false),
-    m_publicIPAddressSetHasBeenSet(false)
+    m_publicIPAddressSetHasBeenSet(false),
+    m_instanceNetworkInfoSetHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome Internet::Deserialize(const Value &value)
         m_publicIPAddressSetHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceNetworkInfoSet") && !value["InstanceNetworkInfoSet"].IsNull())
+    {
+        if (!value["InstanceNetworkInfoSet"].IsArray())
+            return CoreInternalOutcome(Error("response `Internet.InstanceNetworkInfoSet` is not array type"));
+
+        const Value &tmpValue = value["InstanceNetworkInfoSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceNetworkInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceNetworkInfoSet.push_back(item);
+        }
+        m_instanceNetworkInfoSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -103,6 +124,21 @@ void Internet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
         int i=0;
         for (auto itr = m_publicIPAddressSet.begin(); itr != m_publicIPAddressSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instanceNetworkInfoSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceNetworkInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceNetworkInfoSet.begin(); itr != m_instanceNetworkInfoSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -142,5 +178,21 @@ void Internet::SetPublicIPAddressSet(const vector<PublicIPAddressInfo>& _publicI
 bool Internet::PublicIPAddressSetHasBeenSet() const
 {
     return m_publicIPAddressSetHasBeenSet;
+}
+
+vector<InstanceNetworkInfo> Internet::GetInstanceNetworkInfoSet() const
+{
+    return m_instanceNetworkInfoSet;
+}
+
+void Internet::SetInstanceNetworkInfoSet(const vector<InstanceNetworkInfo>& _instanceNetworkInfoSet)
+{
+    m_instanceNetworkInfoSet = _instanceNetworkInfoSet;
+    m_instanceNetworkInfoSetHasBeenSet = true;
+}
+
+bool Internet::InstanceNetworkInfoSetHasBeenSet() const
+{
+    return m_instanceNetworkInfoSetHasBeenSet;
 }
 
