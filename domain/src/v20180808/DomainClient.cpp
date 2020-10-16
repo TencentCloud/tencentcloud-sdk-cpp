@@ -40,6 +40,49 @@ DomainClient::DomainClient(const Credential &credential, const string &region, c
 }
 
 
+DomainClient::BatchModifyDomainInfoOutcome DomainClient::BatchModifyDomainInfo(const BatchModifyDomainInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchModifyDomainInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchModifyDomainInfoResponse rsp = BatchModifyDomainInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchModifyDomainInfoOutcome(rsp);
+        else
+            return BatchModifyDomainInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchModifyDomainInfoOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::BatchModifyDomainInfoAsync(const BatchModifyDomainInfoRequest& request, const BatchModifyDomainInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchModifyDomainInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::BatchModifyDomainInfoOutcomeCallable DomainClient::BatchModifyDomainInfoCallable(const BatchModifyDomainInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchModifyDomainInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchModifyDomainInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::CheckBatchStatusOutcome DomainClient::CheckBatchStatus(const CheckBatchStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckBatchStatus");
@@ -334,6 +377,178 @@ DomainClient::DescribeTemplateListOutcomeCallable DomainClient::DescribeTemplate
         [this, request]()
         {
             return this->DescribeTemplateList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::ModifyDomainOwnerBatchOutcome DomainClient::ModifyDomainOwnerBatch(const ModifyDomainOwnerBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDomainOwnerBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDomainOwnerBatchResponse rsp = ModifyDomainOwnerBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDomainOwnerBatchOutcome(rsp);
+        else
+            return ModifyDomainOwnerBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDomainOwnerBatchOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::ModifyDomainOwnerBatchAsync(const ModifyDomainOwnerBatchRequest& request, const ModifyDomainOwnerBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDomainOwnerBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::ModifyDomainOwnerBatchOutcomeCallable DomainClient::ModifyDomainOwnerBatchCallable(const ModifyDomainOwnerBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDomainOwnerBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDomainOwnerBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::TransferInDomainBatchOutcome DomainClient::TransferInDomainBatch(const TransferInDomainBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "TransferInDomainBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TransferInDomainBatchResponse rsp = TransferInDomainBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TransferInDomainBatchOutcome(rsp);
+        else
+            return TransferInDomainBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return TransferInDomainBatchOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::TransferInDomainBatchAsync(const TransferInDomainBatchRequest& request, const TransferInDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TransferInDomainBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::TransferInDomainBatchOutcomeCallable DomainClient::TransferInDomainBatchCallable(const TransferInDomainBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TransferInDomainBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->TransferInDomainBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::TransferProhibitionBatchOutcome DomainClient::TransferProhibitionBatch(const TransferProhibitionBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "TransferProhibitionBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TransferProhibitionBatchResponse rsp = TransferProhibitionBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TransferProhibitionBatchOutcome(rsp);
+        else
+            return TransferProhibitionBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return TransferProhibitionBatchOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::TransferProhibitionBatchAsync(const TransferProhibitionBatchRequest& request, const TransferProhibitionBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TransferProhibitionBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::TransferProhibitionBatchOutcomeCallable DomainClient::TransferProhibitionBatchCallable(const TransferProhibitionBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TransferProhibitionBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->TransferProhibitionBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::UpdateProhibitionBatchOutcome DomainClient::UpdateProhibitionBatch(const UpdateProhibitionBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateProhibitionBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateProhibitionBatchResponse rsp = UpdateProhibitionBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateProhibitionBatchOutcome(rsp);
+        else
+            return UpdateProhibitionBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateProhibitionBatchOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::UpdateProhibitionBatchAsync(const UpdateProhibitionBatchRequest& request, const UpdateProhibitionBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateProhibitionBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::UpdateProhibitionBatchOutcomeCallable DomainClient::UpdateProhibitionBatchCallable(const UpdateProhibitionBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateProhibitionBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateProhibitionBatch(request);
         }
     );
 

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ResourcePrefixHasBeenSet() const;
 
                     /**
-                     * 获取资源唯一标记
-                     * @return ResourceIds 资源唯一标记
+                     * 获取资源ID数组，大小不超过50
+                     * @return ResourceIds 资源ID数组，大小不超过50
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置资源唯一标记
-                     * @param ResourceIds 资源唯一标记
+                     * 设置资源ID数组，大小不超过50
+                     * @param ResourceIds 资源ID数组，大小不超过50
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
@@ -165,7 +165,7 @@ namespace TencentCloud
                     bool m_resourcePrefixHasBeenSet;
 
                     /**
-                     * 资源唯一标记
+                     * 资源ID数组，大小不超过50
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;

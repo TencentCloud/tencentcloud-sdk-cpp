@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取是否是Cos的资源id
-                     * @return CosResourceId 是否是Cos的资源id
+                     * 获取是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填
+                     * @return CosResourceId 是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填
                      */
                     uint64_t GetCosResourceId() const;
 
                     /**
-                     * 设置是否是Cos的资源id
-                     * @param CosResourceId 是否是Cos的资源id
+                     * 设置是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填
+                     * @param CosResourceId 是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填
                      */
                     void SetCosResourceId(const uint64_t& _cosResourceId);
 
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 是否是Cos的资源id
+                     * 是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填
                      */
                     uint64_t m_cosResourceId;
                     bool m_cosResourceIdHasBeenSet;

@@ -161,6 +161,28 @@ unknown：服务地域无法获取
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取节点的所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return City 节点的所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCity() const;
+
+                    /**
+                     * 设置节点的所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param City 节点的所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCity(const std::string& _city);
+
+                    /**
+                     * 判断参数 City 是否已赋值
+                     * @return City 是否已赋值
+                     */
+                    bool CityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +220,13 @@ unknown：服务地域无法获取
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 节点的所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_city;
+                    bool m_cityHasBeenSet;
 
                 };
             }

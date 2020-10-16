@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取物模型发布版本号，-1代表最新编辑（未发布）的版本
-                     * @return Revision 物模型发布版本号，-1代表最新编辑（未发布）的版本
+                     * 获取物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。
+                     * @return Revision 物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。
                      */
                     int64_t GetRevision() const;
 
                     /**
-                     * 设置物模型发布版本号，-1代表最新编辑（未发布）的版本
-                     * @param Revision 物模型发布版本号，-1代表最新编辑（未发布）的版本
+                     * 设置物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。
+                     * @param Revision 物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。
                      */
                     void SetRevision(const int64_t& _revision);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 物模型发布版本号，-1代表最新编辑（未发布）的版本
+                     * 物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。
                      */
                     int64_t m_revision;
                     bool m_revisionHasBeenSet;

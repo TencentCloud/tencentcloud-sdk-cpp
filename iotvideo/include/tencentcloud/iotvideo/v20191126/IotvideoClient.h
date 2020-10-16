@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/iotvideo/v20191126/model/ClearDeviceActiveCodeRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/ClearDeviceActiveCodeResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/CreateAnonymousAccessTokenRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/CreateAnonymousAccessTokenResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateAppUsrRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateAppUsrResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateBindingRequest.h>
@@ -41,6 +45,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/CreateProductResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateStorageRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateStorageResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/CreateStorageServiceRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/CreateStorageServiceResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateTraceIdsRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateTraceIdsResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateUploadPathRequest.h>
@@ -63,6 +69,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/DeleteProductResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DeleteTraceIdsRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DeleteTraceIdsResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/DeliverStorageServiceRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/DeliverStorageServiceResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeBindDevRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeBindDevResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeBindUsrRequest.h>
@@ -97,6 +105,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/DescribeRegistrationStatusResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeRunLogRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeRunLogResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/DescribeStorageServiceRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/DescribeStorageServiceResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeTraceIdsRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeTraceIdsResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeTraceStatusRequest.h>
@@ -113,6 +123,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/ModifyDevicePropertyResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/ModifyProductRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/ModifyProductResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/RefundStorageServiceRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/RefundStorageServiceResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/RunDeviceRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/RunDeviceResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/RunDeviceStreamRequest.h>
@@ -145,6 +157,12 @@ namespace TencentCloud
                 IotvideoClient(const Credential &credential, const std::string &region);
                 IotvideoClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::ClearDeviceActiveCodeResponse> ClearDeviceActiveCodeOutcome;
+                typedef std::future<ClearDeviceActiveCodeOutcome> ClearDeviceActiveCodeOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ClearDeviceActiveCodeRequest&, ClearDeviceActiveCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearDeviceActiveCodeAsyncHandler;
+                typedef Outcome<Error, Model::CreateAnonymousAccessTokenResponse> CreateAnonymousAccessTokenOutcome;
+                typedef std::future<CreateAnonymousAccessTokenOutcome> CreateAnonymousAccessTokenOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateAnonymousAccessTokenRequest&, CreateAnonymousAccessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAnonymousAccessTokenAsyncHandler;
                 typedef Outcome<Error, Model::CreateAppUsrResponse> CreateAppUsrOutcome;
                 typedef std::future<CreateAppUsrOutcome> CreateAppUsrOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateAppUsrRequest&, CreateAppUsrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppUsrAsyncHandler;
@@ -172,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateStorageResponse> CreateStorageOutcome;
                 typedef std::future<CreateStorageOutcome> CreateStorageOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateStorageRequest&, CreateStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStorageAsyncHandler;
+                typedef Outcome<Error, Model::CreateStorageServiceResponse> CreateStorageServiceOutcome;
+                typedef std::future<CreateStorageServiceOutcome> CreateStorageServiceOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateStorageServiceRequest&, CreateStorageServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStorageServiceAsyncHandler;
                 typedef Outcome<Error, Model::CreateTraceIdsResponse> CreateTraceIdsOutcome;
                 typedef std::future<CreateTraceIdsOutcome> CreateTraceIdsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateTraceIdsRequest&, CreateTraceIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTraceIdsAsyncHandler;
@@ -205,6 +226,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteTraceIdsResponse> DeleteTraceIdsOutcome;
                 typedef std::future<DeleteTraceIdsOutcome> DeleteTraceIdsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DeleteTraceIdsRequest&, DeleteTraceIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTraceIdsAsyncHandler;
+                typedef Outcome<Error, Model::DeliverStorageServiceResponse> DeliverStorageServiceOutcome;
+                typedef std::future<DeliverStorageServiceOutcome> DeliverStorageServiceOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DeliverStorageServiceRequest&, DeliverStorageServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeliverStorageServiceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBindDevResponse> DescribeBindDevOutcome;
                 typedef std::future<DescribeBindDevOutcome> DescribeBindDevOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeBindDevRequest&, DescribeBindDevOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindDevAsyncHandler;
@@ -256,6 +280,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRunLogResponse> DescribeRunLogOutcome;
                 typedef std::future<DescribeRunLogOutcome> DescribeRunLogOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeRunLogRequest&, DescribeRunLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRunLogAsyncHandler;
+                typedef Outcome<Error, Model::DescribeStorageServiceResponse> DescribeStorageServiceOutcome;
+                typedef std::future<DescribeStorageServiceOutcome> DescribeStorageServiceOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeStorageServiceRequest&, DescribeStorageServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStorageServiceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTraceIdsResponse> DescribeTraceIdsOutcome;
                 typedef std::future<DescribeTraceIdsOutcome> DescribeTraceIdsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeTraceIdsRequest&, DescribeTraceIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceIdsAsyncHandler;
@@ -280,6 +307,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyProductResponse> ModifyProductOutcome;
                 typedef std::future<ModifyProductOutcome> ModifyProductOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ModifyProductRequest&, ModifyProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProductAsyncHandler;
+                typedef Outcome<Error, Model::RefundStorageServiceResponse> RefundStorageServiceOutcome;
+                typedef std::future<RefundStorageServiceOutcome> RefundStorageServiceOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::RefundStorageServiceRequest&, RefundStorageServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundStorageServiceAsyncHandler;
                 typedef Outcome<Error, Model::RunDeviceResponse> RunDeviceOutcome;
                 typedef std::future<RunDeviceOutcome> RunDeviceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::RunDeviceRequest&, RunDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunDeviceAsyncHandler;
@@ -309,6 +339,24 @@ namespace TencentCloud
                 typedef std::function<void(const IotvideoClient*, const Model::UploadOtaVersionRequest&, UploadOtaVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadOtaVersionAsyncHandler;
 
 
+
+                /**
+                 *清除设备激活码
+                 * @param req ClearDeviceActiveCodeRequest
+                 * @return ClearDeviceActiveCodeOutcome
+                 */
+                ClearDeviceActiveCodeOutcome ClearDeviceActiveCode(const Model::ClearDeviceActiveCodeRequest &request);
+                void ClearDeviceActiveCodeAsync(const Model::ClearDeviceActiveCodeRequest& request, const ClearDeviceActiveCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClearDeviceActiveCodeOutcomeCallable ClearDeviceActiveCodeCallable(const Model::ClearDeviceActiveCodeRequest& request);
+
+                /**
+                 *创建匿名访问Token
+                 * @param req CreateAnonymousAccessTokenRequest
+                 * @return CreateAnonymousAccessTokenOutcome
+                 */
+                CreateAnonymousAccessTokenOutcome CreateAnonymousAccessToken(const Model::CreateAnonymousAccessTokenRequest &request);
+                void CreateAnonymousAccessTokenAsync(const Model::CreateAnonymousAccessTokenRequest& request, const CreateAnonymousAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAnonymousAccessTokenOutcomeCallable CreateAnonymousAccessTokenCallable(const Model::CreateAnonymousAccessTokenRequest& request);
 
                 /**
                  *本接口（CreateAppUsr）用于接收由厂商云发送过来的注册请求,建立厂商云终端用户与IoT Video终端用户的映射关系。
@@ -396,6 +444,15 @@ namespace TencentCloud
                 CreateStorageOutcome CreateStorage(const Model::CreateStorageRequest &request);
                 void CreateStorageAsync(const Model::CreateStorageRequest& request, const CreateStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateStorageOutcomeCallable CreateStorageCallable(const Model::CreateStorageRequest& request);
+
+                /**
+                 *购买云存服务
+                 * @param req CreateStorageServiceRequest
+                 * @return CreateStorageServiceOutcome
+                 */
+                CreateStorageServiceOutcome CreateStorageService(const Model::CreateStorageServiceRequest &request);
+                void CreateStorageServiceAsync(const Model::CreateStorageServiceRequest& request, const CreateStorageServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStorageServiceOutcomeCallable CreateStorageServiceCallable(const Model::CreateStorageServiceRequest& request);
 
                 /**
                  *本接口（CreateTraceIds）用于将设备加到日志跟踪白名单。
@@ -495,6 +552,15 @@ namespace TencentCloud
                 DeleteTraceIdsOutcome DeleteTraceIds(const Model::DeleteTraceIdsRequest &request);
                 void DeleteTraceIdsAsync(const Model::DeleteTraceIdsRequest& request, const DeleteTraceIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTraceIdsOutcomeCallable DeleteTraceIdsCallable(const Model::DeleteTraceIdsRequest& request);
+
+                /**
+                 *将已购买的云存服务转移到另一设备
+                 * @param req DeliverStorageServiceRequest
+                 * @return DeliverStorageServiceOutcome
+                 */
+                DeliverStorageServiceOutcome DeliverStorageService(const Model::DeliverStorageServiceRequest &request);
+                void DeliverStorageServiceAsync(const Model::DeliverStorageServiceRequest& request, const DeliverStorageServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeliverStorageServiceOutcomeCallable DeliverStorageServiceCallable(const Model::DeliverStorageServiceRequest& request);
 
                 /**
                  *本接口（DescribeBindDev）用于查询终端用户绑定的设备列表。
@@ -651,6 +717,15 @@ namespace TencentCloud
                 DescribeRunLogOutcomeCallable DescribeRunLogCallable(const Model::DescribeRunLogRequest& request);
 
                 /**
+                 *查询云存服务
+                 * @param req DescribeStorageServiceRequest
+                 * @return DescribeStorageServiceOutcome
+                 */
+                DescribeStorageServiceOutcome DescribeStorageService(const Model::DescribeStorageServiceRequest &request);
+                void DescribeStorageServiceAsync(const Model::DescribeStorageServiceRequest& request, const DescribeStorageServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStorageServiceOutcomeCallable DescribeStorageServiceCallable(const Model::DescribeStorageServiceRequest& request);
+
+                /**
                  *本接口（DescribeTraceIds）用于查询设备日志跟踪白名单。
                  * @param req DescribeTraceIdsRequest
                  * @return DescribeTraceIdsOutcome
@@ -733,6 +808,15 @@ ProWritable.Pos.setVal.x;
                 ModifyProductOutcome ModifyProduct(const Model::ModifyProductRequest &request);
                 void ModifyProductAsync(const Model::ModifyProductRequest& request, const ModifyProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProductOutcomeCallable ModifyProductCallable(const Model::ModifyProductRequest& request);
+
+                /**
+                 *退订已购买的云存服务
+                 * @param req RefundStorageServiceRequest
+                 * @return RefundStorageServiceOutcome
+                 */
+                RefundStorageServiceOutcome RefundStorageService(const Model::RefundStorageServiceRequest &request);
+                void RefundStorageServiceAsync(const Model::RefundStorageServiceRequest& request, const RefundStorageServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefundStorageServiceOutcomeCallable RefundStorageServiceCallable(const Model::RefundStorageServiceRequest& request);
 
                 /**
                  *本接口（RunDevice）用于启用设备，可进行批量操作，每次操作最多100台设备。

@@ -21,6 +21,7 @@ set(faceid_public_header
 set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/DetectInfoVideoData.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedRequest.h
+  include/tencentcloud/faceid/v20180301/model/GetFaceIdTokenRequest.h
   include/tencentcloud/faceid/v20180301/model/LivenessRequest.h
   include/tencentcloud/faceid/v20180301/model/CheckBankCardInformationRequest.h
   include/tencentcloud/faceid/v20180301/model/MobileNetworkTimeVerificationResponse.h
@@ -40,7 +41,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/LivenessRecognitionResponse.h
   include/tencentcloud/faceid/v20180301/model/BankCard2EVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/LivenessRecognitionRequest.h
-  include/tencentcloud/faceid/v20180301/model/MobileNetworkTimeVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/GetFaceIdTokenResponse.h
   include/tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/MobileStatusResponse.h
   include/tencentcloud/faceid/v20180301/model/LivenessResponse.h
@@ -51,6 +52,8 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/BankCardVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/ImageRecognitionRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCard4EVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/MobileNetworkTimeVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/GetFaceIdResultRequest.h
   include/tencentcloud/faceid/v20180301/model/GetActionSequenceResponse.h
   include/tencentcloud/faceid/v20180301/model/MinorsVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/ImageRecognitionResponse.h
@@ -64,12 +67,14 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/DetectInfoIdCardData.h
   include/tencentcloud/faceid/v20180301/model/LivenessCompareRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectDetail.h
+  include/tencentcloud/faceid/v20180301/model/GetFaceIdResultResponse.h
   )
 
 set(faceid_src
   src/v20180301/FaceidClient.cpp
   src/v20180301/model/DetectInfoVideoData.cpp
   src/v20180301/model/GetDetectInfoEnhancedRequest.cpp
+  src/v20180301/model/GetFaceIdTokenRequest.cpp
   src/v20180301/model/LivenessRequest.cpp
   src/v20180301/model/CheckBankCardInformationRequest.cpp
   src/v20180301/model/MobileNetworkTimeVerificationResponse.cpp
@@ -89,7 +94,7 @@ set(faceid_src
   src/v20180301/model/LivenessRecognitionResponse.cpp
   src/v20180301/model/BankCard2EVerificationRequest.cpp
   src/v20180301/model/LivenessRecognitionRequest.cpp
-  src/v20180301/model/MobileNetworkTimeVerificationRequest.cpp
+  src/v20180301/model/GetFaceIdTokenResponse.cpp
   src/v20180301/model/IdCardOCRVerificationResponse.cpp
   src/v20180301/model/MobileStatusResponse.cpp
   src/v20180301/model/LivenessResponse.cpp
@@ -100,6 +105,8 @@ set(faceid_src
   src/v20180301/model/BankCardVerificationResponse.cpp
   src/v20180301/model/ImageRecognitionRequest.cpp
   src/v20180301/model/BankCard4EVerificationRequest.cpp
+  src/v20180301/model/MobileNetworkTimeVerificationRequest.cpp
+  src/v20180301/model/GetFaceIdResultRequest.cpp
   src/v20180301/model/GetActionSequenceResponse.cpp
   src/v20180301/model/MinorsVerificationRequest.cpp
   src/v20180301/model/ImageRecognitionResponse.cpp
@@ -113,6 +120,7 @@ set(faceid_src
   src/v20180301/model/DetectInfoIdCardData.cpp
   src/v20180301/model/LivenessCompareRequest.cpp
   src/v20180301/model/DetectDetail.cpp
+  src/v20180301/model/GetFaceIdResultResponse.cpp
   )
 
 set(faceid_include

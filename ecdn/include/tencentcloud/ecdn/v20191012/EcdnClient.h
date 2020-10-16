@@ -37,6 +37,8 @@
 #include <tencentcloud/ecdn/v20191012/model/DescribeEcdnDomainStatisticsResponse.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribeEcdnStatisticsRequest.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribeEcdnStatisticsResponse.h>
+#include <tencentcloud/ecdn/v20191012/model/DescribeIpStatusRequest.h>
+#include <tencentcloud/ecdn/v20191012/model/DescribeIpStatusResponse.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribePurgeQuotaRequest.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribePurgeQuotaResponse.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribePurgeTasksRequest.h>
@@ -86,6 +88,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEcdnStatisticsResponse> DescribeEcdnStatisticsOutcome;
                 typedef std::future<DescribeEcdnStatisticsOutcome> DescribeEcdnStatisticsOutcomeCallable;
                 typedef std::function<void(const EcdnClient*, const Model::DescribeEcdnStatisticsRequest&, DescribeEcdnStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEcdnStatisticsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeIpStatusResponse> DescribeIpStatusOutcome;
+                typedef std::future<DescribeIpStatusOutcome> DescribeIpStatusOutcomeCallable;
+                typedef std::function<void(const EcdnClient*, const Model::DescribeIpStatusRequest&, DescribeIpStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpStatusAsyncHandler;
                 typedef Outcome<Error, Model::DescribePurgeQuotaResponse> DescribePurgeQuotaOutcome;
                 typedef std::future<DescribePurgeQuotaOutcome> DescribePurgeQuotaOutcomeCallable;
                 typedef std::function<void(const EcdnClient*, const Model::DescribePurgeQuotaRequest&, DescribePurgeQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePurgeQuotaAsyncHandler;
@@ -181,6 +186,15 @@ namespace TencentCloud
                 DescribeEcdnStatisticsOutcome DescribeEcdnStatistics(const Model::DescribeEcdnStatisticsRequest &request);
                 void DescribeEcdnStatisticsAsync(const Model::DescribeEcdnStatisticsRequest& request, const DescribeEcdnStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEcdnStatisticsOutcomeCallable DescribeEcdnStatisticsCallable(const Model::DescribeEcdnStatisticsRequest& request);
+
+                /**
+                 *DescribeIpStatus 用于查询域名所在加速平台的所有节点明细。
+                 * @param req DescribeIpStatusRequest
+                 * @return DescribeIpStatusOutcome
+                 */
+                DescribeIpStatusOutcome DescribeIpStatus(const Model::DescribeIpStatusRequest &request);
+                void DescribeIpStatusAsync(const Model::DescribeIpStatusRequest& request, const DescribeIpStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIpStatusOutcomeCallable DescribeIpStatusCallable(const Model::DescribeIpStatusRequest& request);
 
                 /**
                  *查询刷新接口的用量配额。

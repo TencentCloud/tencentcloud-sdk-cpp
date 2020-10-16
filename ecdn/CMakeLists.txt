@@ -36,7 +36,7 @@ set(ecdn_public_header_model
   include/tencentcloud/ecdn/v20191012/model/Sort.h
   include/tencentcloud/ecdn/v20191012/model/IpFreqLimit.h
   include/tencentcloud/ecdn/v20191012/model/DescribePurgeTasksRequest.h
-  include/tencentcloud/ecdn/v20191012/model/DomainFilter.h
+  include/tencentcloud/ecdn/v20191012/model/DescribeEcdnStatisticsResponse.h
   include/tencentcloud/ecdn/v20191012/model/DomainLogs.h
   include/tencentcloud/ecdn/v20191012/model/Hsts.h
   include/tencentcloud/ecdn/v20191012/model/HttpHeaderPathRule.h
@@ -61,16 +61,19 @@ set(ecdn_public_header_model
   include/tencentcloud/ecdn/v20191012/model/DeleteEcdnDomainRequest.h
   include/tencentcloud/ecdn/v20191012/model/DescribePurgeTasksResponse.h
   include/tencentcloud/ecdn/v20191012/model/AddEcdnDomainResponse.h
+  include/tencentcloud/ecdn/v20191012/model/IpStatus.h
   include/tencentcloud/ecdn/v20191012/model/PurgeTask.h
   include/tencentcloud/ecdn/v20191012/model/CacheRule.h
-  include/tencentcloud/ecdn/v20191012/model/DescribeEcdnStatisticsResponse.h
+  include/tencentcloud/ecdn/v20191012/model/DescribeIpStatusResponse.h
   include/tencentcloud/ecdn/v20191012/model/Origin.h
   include/tencentcloud/ecdn/v20191012/model/ServerCert.h
   include/tencentcloud/ecdn/v20191012/model/CacheKey.h
+  include/tencentcloud/ecdn/v20191012/model/DomainFilter.h
   include/tencentcloud/ecdn/v20191012/model/DescribeEcdnDomainStatisticsRequest.h
   include/tencentcloud/ecdn/v20191012/model/Quota.h
   include/tencentcloud/ecdn/v20191012/model/DescribeEcdnDomainLogsRequest.h
   include/tencentcloud/ecdn/v20191012/model/DomainDetailInfo.h
+  include/tencentcloud/ecdn/v20191012/model/DescribeIpStatusRequest.h
   include/tencentcloud/ecdn/v20191012/model/DescribeDomainsRequest.h
   )
 
@@ -93,7 +96,7 @@ set(ecdn_src
   src/v20191012/model/Sort.cpp
   src/v20191012/model/IpFreqLimit.cpp
   src/v20191012/model/DescribePurgeTasksRequest.cpp
-  src/v20191012/model/DomainFilter.cpp
+  src/v20191012/model/DescribeEcdnStatisticsResponse.cpp
   src/v20191012/model/DomainLogs.cpp
   src/v20191012/model/Hsts.cpp
   src/v20191012/model/HttpHeaderPathRule.cpp
@@ -118,16 +121,19 @@ set(ecdn_src
   src/v20191012/model/DeleteEcdnDomainRequest.cpp
   src/v20191012/model/DescribePurgeTasksResponse.cpp
   src/v20191012/model/AddEcdnDomainResponse.cpp
+  src/v20191012/model/IpStatus.cpp
   src/v20191012/model/PurgeTask.cpp
   src/v20191012/model/CacheRule.cpp
-  src/v20191012/model/DescribeEcdnStatisticsResponse.cpp
+  src/v20191012/model/DescribeIpStatusResponse.cpp
   src/v20191012/model/Origin.cpp
   src/v20191012/model/ServerCert.cpp
   src/v20191012/model/CacheKey.cpp
+  src/v20191012/model/DomainFilter.cpp
   src/v20191012/model/DescribeEcdnDomainStatisticsRequest.cpp
   src/v20191012/model/Quota.cpp
   src/v20191012/model/DescribeEcdnDomainLogsRequest.cpp
   src/v20191012/model/DomainDetailInfo.cpp
+  src/v20191012/model/DescribeIpStatusRequest.cpp
   src/v20191012/model/DescribeDomainsRequest.cpp
   )
 

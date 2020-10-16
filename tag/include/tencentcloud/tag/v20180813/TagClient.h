@@ -195,7 +195,7 @@ namespace TencentCloud
                 DescribeResourceTagsOutcomeCallable DescribeResourceTagsCallable(const Model::DescribeResourceTagsRequest& request);
 
                 /**
-                 *用于查询已有资源标签键值对
+                 *用于批量查询已有资源关联的标签键值对
                  * @param req DescribeResourceTagsByResourceIdsRequest
                  * @return DescribeResourceTagsByResourceIdsOutcome
                  */

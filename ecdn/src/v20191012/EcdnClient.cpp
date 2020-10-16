@@ -341,6 +341,49 @@ EcdnClient::DescribeEcdnStatisticsOutcomeCallable EcdnClient::DescribeEcdnStatis
     return task->get_future();
 }
 
+EcdnClient::DescribeIpStatusOutcome EcdnClient::DescribeIpStatus(const DescribeIpStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIpStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIpStatusResponse rsp = DescribeIpStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIpStatusOutcome(rsp);
+        else
+            return DescribeIpStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIpStatusOutcome(outcome.GetError());
+    }
+}
+
+void EcdnClient::DescribeIpStatusAsync(const DescribeIpStatusRequest& request, const DescribeIpStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIpStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcdnClient::DescribeIpStatusOutcomeCallable EcdnClient::DescribeIpStatusCallable(const DescribeIpStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIpStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIpStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcdnClient::DescribePurgeQuotaOutcome EcdnClient::DescribePurgeQuota(const DescribePurgeQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePurgeQuota");

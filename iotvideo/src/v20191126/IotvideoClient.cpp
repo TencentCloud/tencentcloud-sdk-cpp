@@ -40,6 +40,92 @@ IotvideoClient::IotvideoClient(const Credential &credential, const string &regio
 }
 
 
+IotvideoClient::ClearDeviceActiveCodeOutcome IotvideoClient::ClearDeviceActiveCode(const ClearDeviceActiveCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ClearDeviceActiveCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ClearDeviceActiveCodeResponse rsp = ClearDeviceActiveCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ClearDeviceActiveCodeOutcome(rsp);
+        else
+            return ClearDeviceActiveCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ClearDeviceActiveCodeOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ClearDeviceActiveCodeAsync(const ClearDeviceActiveCodeRequest& request, const ClearDeviceActiveCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ClearDeviceActiveCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ClearDeviceActiveCodeOutcomeCallable IotvideoClient::ClearDeviceActiveCodeCallable(const ClearDeviceActiveCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ClearDeviceActiveCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->ClearDeviceActiveCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::CreateAnonymousAccessTokenOutcome IotvideoClient::CreateAnonymousAccessToken(const CreateAnonymousAccessTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAnonymousAccessToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAnonymousAccessTokenResponse rsp = CreateAnonymousAccessTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAnonymousAccessTokenOutcome(rsp);
+        else
+            return CreateAnonymousAccessTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAnonymousAccessTokenOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateAnonymousAccessTokenAsync(const CreateAnonymousAccessTokenRequest& request, const CreateAnonymousAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAnonymousAccessToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateAnonymousAccessTokenOutcomeCallable IotvideoClient::CreateAnonymousAccessTokenCallable(const CreateAnonymousAccessTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAnonymousAccessTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAnonymousAccessToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::CreateAppUsrOutcome IotvideoClient::CreateAppUsr(const CreateAppUsrRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAppUsr");
@@ -420,6 +506,49 @@ IotvideoClient::CreateStorageOutcomeCallable IotvideoClient::CreateStorageCallab
         [this, request]()
         {
             return this->CreateStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::CreateStorageServiceOutcome IotvideoClient::CreateStorageService(const CreateStorageServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStorageService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStorageServiceResponse rsp = CreateStorageServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStorageServiceOutcome(rsp);
+        else
+            return CreateStorageServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStorageServiceOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateStorageServiceAsync(const CreateStorageServiceRequest& request, const CreateStorageServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateStorageService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateStorageServiceOutcomeCallable IotvideoClient::CreateStorageServiceCallable(const CreateStorageServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateStorageServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateStorageService(request);
         }
     );
 
@@ -893,6 +1022,49 @@ IotvideoClient::DeleteTraceIdsOutcomeCallable IotvideoClient::DeleteTraceIdsCall
         [this, request]()
         {
             return this->DeleteTraceIds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DeliverStorageServiceOutcome IotvideoClient::DeliverStorageService(const DeliverStorageServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeliverStorageService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeliverStorageServiceResponse rsp = DeliverStorageServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeliverStorageServiceOutcome(rsp);
+        else
+            return DeliverStorageServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeliverStorageServiceOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DeliverStorageServiceAsync(const DeliverStorageServiceRequest& request, const DeliverStorageServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeliverStorageService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DeliverStorageServiceOutcomeCallable IotvideoClient::DeliverStorageServiceCallable(const DeliverStorageServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeliverStorageServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeliverStorageService(request);
         }
     );
 
@@ -1631,6 +1803,49 @@ IotvideoClient::DescribeRunLogOutcomeCallable IotvideoClient::DescribeRunLogCall
     return task->get_future();
 }
 
+IotvideoClient::DescribeStorageServiceOutcome IotvideoClient::DescribeStorageService(const DescribeStorageServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStorageService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStorageServiceResponse rsp = DescribeStorageServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStorageServiceOutcome(rsp);
+        else
+            return DescribeStorageServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStorageServiceOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeStorageServiceAsync(const DescribeStorageServiceRequest& request, const DescribeStorageServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStorageService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeStorageServiceOutcomeCallable IotvideoClient::DescribeStorageServiceCallable(const DescribeStorageServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStorageServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStorageService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeTraceIdsOutcome IotvideoClient::DescribeTraceIds(const DescribeTraceIdsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTraceIds");
@@ -1968,6 +2183,49 @@ IotvideoClient::ModifyProductOutcomeCallable IotvideoClient::ModifyProductCallab
         [this, request]()
         {
             return this->ModifyProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::RefundStorageServiceOutcome IotvideoClient::RefundStorageService(const RefundStorageServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefundStorageService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefundStorageServiceResponse rsp = RefundStorageServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefundStorageServiceOutcome(rsp);
+        else
+            return RefundStorageServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return RefundStorageServiceOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::RefundStorageServiceAsync(const RefundStorageServiceRequest& request, const RefundStorageServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RefundStorageService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::RefundStorageServiceOutcomeCallable IotvideoClient::RefundStorageServiceCallable(const RefundStorageServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RefundStorageServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->RefundStorageService(request);
         }
     );
 

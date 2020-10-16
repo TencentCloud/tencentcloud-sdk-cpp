@@ -26,7 +26,8 @@ CdnIp::CdnIp() :
     m_platformHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_historyHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_cityHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome CdnIp::Deserialize(const Value &value)
         m_areaHasBeenSet = true;
     }
 
+    if (value.HasMember("City") && !value["City"].IsNull())
+    {
+        if (!value["City"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CdnIp.City` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_city = string(value["City"].GetString());
+        m_cityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -147,6 +158,14 @@ void CdnIp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "City";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_city.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -230,5 +249,21 @@ void CdnIp::SetArea(const string& _area)
 bool CdnIp::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+string CdnIp::GetCity() const
+{
+    return m_city;
+}
+
+void CdnIp::SetCity(const string& _city)
+{
+    m_city = _city;
+    m_cityHasBeenSet = true;
+}
+
+bool CdnIp::CityHasBeenSet() const
+{
+    return m_cityHasBeenSet;
 }
 

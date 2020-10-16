@@ -22,6 +22,8 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeImagePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/WebhookTarget.h
+  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesResponse.h
+  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceCreateTasksResponse.h
   include/tencentcloud/tcr/v20190924/model/WebhookTriggerLog.h
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryResponse.h
   include/tencentcloud/tcr/v20190924/model/TriggerInvokePara.h
@@ -30,6 +32,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/TagInfoResp.h
   include/tencentcloud/tcr/v20190924/model/CreateInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteInstanceTokenRequest.h
+  include/tencentcloud/tcr/v20190924/model/TaskDetail.h
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalRequest.h
@@ -46,6 +49,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/NamespaceInfo.h
   include/tencentcloud/tcr/v20190924/model/Limit.h
+  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteRepositoryResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImagePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/RegistryCondition.h
@@ -122,6 +126,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/NamespaceIsExistsResp.h
   include/tencentcloud/tcr/v20190924/model/DescribeInstancesRequest.h
   include/tencentcloud/tcr/v20190924/model/Filter.h
+  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceCreateTasksRequest.h
   include/tencentcloud/tcr/v20190924/model/RepoInfo.h
   include/tencentcloud/tcr/v20190924/model/ManageImageLifecycleGlobalPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalResponse.h
@@ -144,6 +149,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateInstanceTokenRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalRequest.h
+  include/tencentcloud/tcr/v20190924/model/ReplicationRegistry.h
   include/tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerPersonalResp.h
   include/tencentcloud/tcr/v20190924/model/TagInfo.h
@@ -177,6 +183,8 @@ set(tcr_src
   src/v20190924/model/DescribeImagePersonalResponse.cpp
   src/v20190924/model/DescribeUserQuotaPersonalRequest.cpp
   src/v20190924/model/WebhookTarget.cpp
+  src/v20190924/model/DescribeReplicationInstancesResponse.cpp
+  src/v20190924/model/DescribeReplicationInstanceCreateTasksResponse.cpp
   src/v20190924/model/WebhookTriggerLog.cpp
   src/v20190924/model/ModifyRepositoryResponse.cpp
   src/v20190924/model/TriggerInvokePara.cpp
@@ -185,6 +193,7 @@ set(tcr_src
   src/v20190924/model/TagInfoResp.cpp
   src/v20190924/model/CreateInstanceResponse.cpp
   src/v20190924/model/DeleteInstanceTokenRequest.cpp
+  src/v20190924/model/TaskDetail.cpp
   src/v20190924/model/ModifyRepositoryRequest.cpp
   src/v20190924/model/DescribeWebhookTriggerLogResponse.cpp
   src/v20190924/model/CreateApplicationTriggerPersonalRequest.cpp
@@ -201,6 +210,7 @@ set(tcr_src
   src/v20190924/model/DeleteNamespacePersonalRequest.cpp
   src/v20190924/model/NamespaceInfo.cpp
   src/v20190924/model/Limit.cpp
+  src/v20190924/model/DescribeReplicationInstancesRequest.cpp
   src/v20190924/model/DeleteRepositoryResponse.cpp
   src/v20190924/model/DeleteImagePersonalResponse.cpp
   src/v20190924/model/RegistryCondition.cpp
@@ -277,6 +287,7 @@ set(tcr_src
   src/v20190924/model/NamespaceIsExistsResp.cpp
   src/v20190924/model/DescribeInstancesRequest.cpp
   src/v20190924/model/Filter.cpp
+  src/v20190924/model/DescribeReplicationInstanceCreateTasksRequest.cpp
   src/v20190924/model/RepoInfo.cpp
   src/v20190924/model/ManageImageLifecycleGlobalPersonalRequest.cpp
   src/v20190924/model/DescribeUserQuotaPersonalResponse.cpp
@@ -299,6 +310,7 @@ set(tcr_src
   src/v20190924/model/ModifyApplicationTriggerPersonalRequest.cpp
   src/v20190924/model/CreateInstanceTokenRequest.cpp
   src/v20190924/model/ModifyUserPasswordPersonalRequest.cpp
+  src/v20190924/model/ReplicationRegistry.cpp
   src/v20190924/model/ValidateNamespaceExistPersonalResponse.cpp
   src/v20190924/model/DescribeApplicationTriggerPersonalResp.cpp
   src/v20190924/model/TagInfo.cpp

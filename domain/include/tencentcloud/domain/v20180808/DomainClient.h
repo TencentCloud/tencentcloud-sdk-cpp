@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/domain/v20180808/model/BatchModifyDomainInfoRequest.h>
+#include <tencentcloud/domain/v20180808/model/BatchModifyDomainInfoResponse.h>
 #include <tencentcloud/domain/v20180808/model/CheckBatchStatusRequest.h>
 #include <tencentcloud/domain/v20180808/model/CheckBatchStatusResponse.h>
 #include <tencentcloud/domain/v20180808/model/CheckDomainRequest.h>
@@ -37,6 +39,14 @@
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListResponse.h>
+#include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchRequest.h>
+#include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/TransferInDomainBatchRequest.h>
+#include <tencentcloud/domain/v20180808/model/TransferInDomainBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/TransferProhibitionBatchRequest.h>
+#include <tencentcloud/domain/v20180808/model/TransferProhibitionBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/UpdateProhibitionBatchRequest.h>
+#include <tencentcloud/domain/v20180808/model/UpdateProhibitionBatchResponse.h>
 
 
 namespace TencentCloud
@@ -51,6 +61,9 @@ namespace TencentCloud
                 DomainClient(const Credential &credential, const std::string &region);
                 DomainClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::BatchModifyDomainInfoResponse> BatchModifyDomainInfoOutcome;
+                typedef std::future<BatchModifyDomainInfoOutcome> BatchModifyDomainInfoOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::BatchModifyDomainInfoRequest&, BatchModifyDomainInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyDomainInfoAsyncHandler;
                 typedef Outcome<Error, Model::CheckBatchStatusResponse> CheckBatchStatusOutcome;
                 typedef std::future<CheckBatchStatusOutcome> CheckBatchStatusOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CheckBatchStatusRequest&, CheckBatchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckBatchStatusAsyncHandler;
@@ -72,8 +85,31 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTemplateListResponse> DescribeTemplateListOutcome;
                 typedef std::future<DescribeTemplateListOutcome> DescribeTemplateListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeTemplateListRequest&, DescribeTemplateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateListAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDomainOwnerBatchResponse> ModifyDomainOwnerBatchOutcome;
+                typedef std::future<ModifyDomainOwnerBatchOutcome> ModifyDomainOwnerBatchOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::ModifyDomainOwnerBatchRequest&, ModifyDomainOwnerBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainOwnerBatchAsyncHandler;
+                typedef Outcome<Error, Model::TransferInDomainBatchResponse> TransferInDomainBatchOutcome;
+                typedef std::future<TransferInDomainBatchOutcome> TransferInDomainBatchOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::TransferInDomainBatchRequest&, TransferInDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferInDomainBatchAsyncHandler;
+                typedef Outcome<Error, Model::TransferProhibitionBatchResponse> TransferProhibitionBatchOutcome;
+                typedef std::future<TransferProhibitionBatchOutcome> TransferProhibitionBatchOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::TransferProhibitionBatchRequest&, TransferProhibitionBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferProhibitionBatchAsyncHandler;
+                typedef Outcome<Error, Model::UpdateProhibitionBatchResponse> UpdateProhibitionBatchOutcome;
+                typedef std::future<UpdateProhibitionBatchOutcome> UpdateProhibitionBatchOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::UpdateProhibitionBatchRequest&, UpdateProhibitionBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProhibitionBatchAsyncHandler;
 
 
+
+                /**
+                 *本接口 ( BatchModifyDomainInfo ) 用于批量域名信息修改 。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req BatchModifyDomainInfoRequest
+                 * @return BatchModifyDomainInfoOutcome
+                 */
+                BatchModifyDomainInfoOutcome BatchModifyDomainInfo(const Model::BatchModifyDomainInfoRequest &request);
+                void BatchModifyDomainInfoAsync(const Model::BatchModifyDomainInfoRequest& request, const BatchModifyDomainInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchModifyDomainInfoOutcomeCallable BatchModifyDomainInfoCallable(const Model::BatchModifyDomainInfoRequest& request);
 
                 /**
                  *本接口 ( CheckBatchStatus ) 用于检查批量任务状态 。
@@ -150,6 +186,50 @@ namespace TencentCloud
                 DescribeTemplateListOutcome DescribeTemplateList(const Model::DescribeTemplateListRequest &request);
                 void DescribeTemplateListAsync(const Model::DescribeTemplateListRequest& request, const DescribeTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTemplateListOutcomeCallable DescribeTemplateListCallable(const Model::DescribeTemplateListRequest& request);
+
+                /**
+                 *本接口 ( ModifyDomainOwnerBatch) 用于域名批量账号间转移 。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req ModifyDomainOwnerBatchRequest
+                 * @return ModifyDomainOwnerBatchOutcome
+                 */
+                ModifyDomainOwnerBatchOutcome ModifyDomainOwnerBatch(const Model::ModifyDomainOwnerBatchRequest &request);
+                void ModifyDomainOwnerBatchAsync(const Model::ModifyDomainOwnerBatchRequest& request, const ModifyDomainOwnerBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDomainOwnerBatchOutcomeCallable ModifyDomainOwnerBatchCallable(const Model::ModifyDomainOwnerBatchRequest& request);
+
+                /**
+                 *本接口 ( TransferInDomainBatch ) 用于批量转入域名 。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req TransferInDomainBatchRequest
+                 * @return TransferInDomainBatchOutcome
+                 */
+                TransferInDomainBatchOutcome TransferInDomainBatch(const Model::TransferInDomainBatchRequest &request);
+                void TransferInDomainBatchAsync(const Model::TransferInDomainBatchRequest& request, const TransferInDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferInDomainBatchOutcomeCallable TransferInDomainBatchCallable(const Model::TransferInDomainBatchRequest& request);
+
+                /**
+                 *本接口 ( TransferInDomainBatch ) 用于批量禁止域名转移 。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req TransferProhibitionBatchRequest
+                 * @return TransferProhibitionBatchOutcome
+                 */
+                TransferProhibitionBatchOutcome TransferProhibitionBatch(const Model::TransferProhibitionBatchRequest &request);
+                void TransferProhibitionBatchAsync(const Model::TransferProhibitionBatchRequest& request, const TransferProhibitionBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferProhibitionBatchOutcomeCallable TransferProhibitionBatchCallable(const Model::TransferProhibitionBatchRequest& request);
+
+                /**
+                 *本接口 ( UpdateProhibitionBatch ) 用于批量设置禁止域名更新 。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req UpdateProhibitionBatchRequest
+                 * @return UpdateProhibitionBatchOutcome
+                 */
+                UpdateProhibitionBatchOutcome UpdateProhibitionBatch(const Model::UpdateProhibitionBatchRequest &request);
+                void UpdateProhibitionBatchAsync(const Model::UpdateProhibitionBatchRequest& request, const UpdateProhibitionBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateProhibitionBatchOutcomeCallable UpdateProhibitionBatchCallable(const Model::UpdateProhibitionBatchRequest& request);
 
             };
         }

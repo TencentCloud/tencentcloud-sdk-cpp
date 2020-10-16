@@ -1631,6 +1631,92 @@ TcrClient::DescribeNamespacesOutcomeCallable TcrClient::DescribeNamespacesCallab
     return task->get_future();
 }
 
+TcrClient::DescribeReplicationInstanceCreateTasksOutcome TcrClient::DescribeReplicationInstanceCreateTasks(const DescribeReplicationInstanceCreateTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReplicationInstanceCreateTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReplicationInstanceCreateTasksResponse rsp = DescribeReplicationInstanceCreateTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReplicationInstanceCreateTasksOutcome(rsp);
+        else
+            return DescribeReplicationInstanceCreateTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReplicationInstanceCreateTasksOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeReplicationInstanceCreateTasksAsync(const DescribeReplicationInstanceCreateTasksRequest& request, const DescribeReplicationInstanceCreateTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReplicationInstanceCreateTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeReplicationInstanceCreateTasksOutcomeCallable TcrClient::DescribeReplicationInstanceCreateTasksCallable(const DescribeReplicationInstanceCreateTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReplicationInstanceCreateTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReplicationInstanceCreateTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeReplicationInstancesOutcome TcrClient::DescribeReplicationInstances(const DescribeReplicationInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReplicationInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReplicationInstancesResponse rsp = DescribeReplicationInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReplicationInstancesOutcome(rsp);
+        else
+            return DescribeReplicationInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReplicationInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeReplicationInstancesAsync(const DescribeReplicationInstancesRequest& request, const DescribeReplicationInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReplicationInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeReplicationInstancesOutcomeCallable TcrClient::DescribeReplicationInstancesCallable(const DescribeReplicationInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReplicationInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReplicationInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DescribeRepositoriesOutcome TcrClient::DescribeRepositories(const DescribeRepositoriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRepositories");
