@@ -67,8 +67,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取业务核验结果，如下几个结果码会计费
-                     * @return Result 业务核验结果，如下几个结果码会计费
+                     * 获取业务核验结果，参考https://cloud.tencent.com/document/product/1007/47912
+                     * @return Result 业务核验结果，参考https://cloud.tencent.com/document/product/1007/47912
                      */
                     std::string GetResult() const;
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 业务核验结果，如下几个结果码会计费
+                     * 业务核验结果，参考https://cloud.tencent.com/document/product/1007/47912
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取页偏移，用于查询下一页
-                     * @return NextToken 页偏移，用于查询下一页
+                     * 获取页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
+                     * @return NextToken 页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
                      */
                     std::string GetNextToken() const;
 
                     /**
-                     * 设置页偏移，用于查询下一页
-                     * @param NextToken 页偏移，用于查询下一页
+                     * 设置页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
+                     * @param NextToken 页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
                      */
                     void SetNextToken(const std::string& _nextToken);
 
@@ -126,6 +126,32 @@ gameServerSessionProperties 游戏会话属性 String
 
 表达式String类型 等于=，不等于<>判断
 表示Number类型支持 =,<>,>,>=,<,<=
+
+例如：
+FilterExpression取值
+playerSessionCount>=2 AND hasAvailablePlayerSessions=true"
+表示查找至少有两个玩家，而且有可用玩家会话的游戏会话。
+FilterExpression取值
+gameServerSessionProperties.K1 = 'V1' AND gameServerSessionProperties.K2 = 'V2' OR gameServerSessionProperties.K3 = 'V3'
+
+表示
+查询满足如下游戏服务器会话属性的游戏会话
+{
+    "GameProperties":[
+        {
+            "Key":"K1",
+            "Value":"V1"
+        },
+        {
+            "Key":"K2",
+            "Value":"V2"
+        },
+        {
+            "Key":"K3",
+            "Value":"V3"
+        }
+    ]
+}
                      * @return FilterExpression 搜索条件表达式，支持如下变量
 gameServerSessionName 游戏会话名称 String
 gameServerSessionId 游戏会话ID String
@@ -137,6 +163,32 @@ gameServerSessionProperties 游戏会话属性 String
 
 表达式String类型 等于=，不等于<>判断
 表示Number类型支持 =,<>,>,>=,<,<=
+
+例如：
+FilterExpression取值
+playerSessionCount>=2 AND hasAvailablePlayerSessions=true"
+表示查找至少有两个玩家，而且有可用玩家会话的游戏会话。
+FilterExpression取值
+gameServerSessionProperties.K1 = 'V1' AND gameServerSessionProperties.K2 = 'V2' OR gameServerSessionProperties.K3 = 'V3'
+
+表示
+查询满足如下游戏服务器会话属性的游戏会话
+{
+    "GameProperties":[
+        {
+            "Key":"K1",
+            "Value":"V1"
+        },
+        {
+            "Key":"K2",
+            "Value":"V2"
+        },
+        {
+            "Key":"K3",
+            "Value":"V3"
+        }
+    ]
+}
                      */
                     std::string GetFilterExpression() const;
 
@@ -152,6 +204,32 @@ gameServerSessionProperties 游戏会话属性 String
 
 表达式String类型 等于=，不等于<>判断
 表示Number类型支持 =,<>,>,>=,<,<=
+
+例如：
+FilterExpression取值
+playerSessionCount>=2 AND hasAvailablePlayerSessions=true"
+表示查找至少有两个玩家，而且有可用玩家会话的游戏会话。
+FilterExpression取值
+gameServerSessionProperties.K1 = 'V1' AND gameServerSessionProperties.K2 = 'V2' OR gameServerSessionProperties.K3 = 'V3'
+
+表示
+查询满足如下游戏服务器会话属性的游戏会话
+{
+    "GameProperties":[
+        {
+            "Key":"K1",
+            "Value":"V1"
+        },
+        {
+            "Key":"K2",
+            "Value":"V2"
+        },
+        {
+            "Key":"K3",
+            "Value":"V3"
+        }
+    ]
+}
                      * @param FilterExpression 搜索条件表达式，支持如下变量
 gameServerSessionName 游戏会话名称 String
 gameServerSessionId 游戏会话ID String
@@ -163,6 +241,32 @@ gameServerSessionProperties 游戏会话属性 String
 
 表达式String类型 等于=，不等于<>判断
 表示Number类型支持 =,<>,>,>=,<,<=
+
+例如：
+FilterExpression取值
+playerSessionCount>=2 AND hasAvailablePlayerSessions=true"
+表示查找至少有两个玩家，而且有可用玩家会话的游戏会话。
+FilterExpression取值
+gameServerSessionProperties.K1 = 'V1' AND gameServerSessionProperties.K2 = 'V2' OR gameServerSessionProperties.K3 = 'V3'
+
+表示
+查询满足如下游戏服务器会话属性的游戏会话
+{
+    "GameProperties":[
+        {
+            "Key":"K1",
+            "Value":"V1"
+        },
+        {
+            "Key":"K2",
+            "Value":"V2"
+        },
+        {
+            "Key":"K3",
+            "Value":"V3"
+        }
+    ]
+}
                      */
                     void SetFilterExpression(const std::string& _filterExpression);
 
@@ -235,7 +339,7 @@ playerSessionCount 当前玩家会话数 Number
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 页偏移，用于查询下一页
+                     * 页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;
@@ -252,6 +356,32 @@ gameServerSessionProperties 游戏会话属性 String
 
 表达式String类型 等于=，不等于<>判断
 表示Number类型支持 =,<>,>,>=,<,<=
+
+例如：
+FilterExpression取值
+playerSessionCount>=2 AND hasAvailablePlayerSessions=true"
+表示查找至少有两个玩家，而且有可用玩家会话的游戏会话。
+FilterExpression取值
+gameServerSessionProperties.K1 = 'V1' AND gameServerSessionProperties.K2 = 'V2' OR gameServerSessionProperties.K3 = 'V3'
+
+表示
+查询满足如下游戏服务器会话属性的游戏会话
+{
+    "GameProperties":[
+        {
+            "Key":"K1",
+            "Value":"V1"
+        },
+        {
+            "Key":"K2",
+            "Value":"V2"
+        },
+        {
+            "Key":"K3",
+            "Value":"V3"
+        }
+    ]
+}
                      */
                     std::string m_filterExpression;
                     bool m_filterExpressionHasBeenSet;

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取分页时返回服务部署事件的数量，默认为20，最大值为100
-                     * @return Limit 分页时返回服务部署事件的数量，默认为20，最大值为100
+                     * 获取分页时返回服务器舰队事件的数量，默认为20，最大值为100
+                     * @return Limit 分页时返回服务器舰队事件的数量，默认为20，最大值为100
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页时返回服务部署事件的数量，默认为20，最大值为100
-                     * @param Limit 分页时返回服务部署事件的数量，默认为20，最大值为100
+                     * 设置分页时返回服务器舰队事件的数量，默认为20，最大值为100
+                     * @param Limit 分页时返回服务器舰队事件的数量，默认为20，最大值为100
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 分页时返回服务部署事件的数量，默认为20，最大值为100
+                     * 分页时返回服务器舰队事件的数量，默认为20，最大值为100
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

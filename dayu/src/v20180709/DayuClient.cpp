@@ -1416,6 +1416,49 @@ DayuClient::DescribeBasicDeviceThresholdOutcomeCallable DayuClient::DescribeBasi
     return task->get_future();
 }
 
+DayuClient::DescribeBizTrendOutcome DayuClient::DescribeBizTrend(const DescribeBizTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBizTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBizTrendResponse rsp = DescribeBizTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBizTrendOutcome(rsp);
+        else
+            return DescribeBizTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBizTrendOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeBizTrendAsync(const DescribeBizTrendRequest& request, const DescribeBizTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBizTrend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeBizTrendOutcomeCallable DayuClient::DescribeBizTrendCallable(const DescribeBizTrendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBizTrendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBizTrend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::DescribeCCAlarmThresholdOutcome DayuClient::DescribeCCAlarmThreshold(const DescribeCCAlarmThresholdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCCAlarmThreshold");

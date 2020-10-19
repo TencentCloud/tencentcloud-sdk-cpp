@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取服务器类型
+                     * 获取服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceType 服务器类型
+                     * @return InstanceType 服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置服务器类型
+                     * 设置服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 服务器类型
+                     * @param InstanceType 服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool InstanceCountsHasBeenSet() const;
 
                     /**
-                     * 获取服务器伸缩容间隔
+                     * 获取服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScalingInterval 服务器伸缩容间隔
+                     * @return ScalingInterval 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetScalingInterval() const;
 
                     /**
-                     * 设置服务器伸缩容间隔
+                     * 设置服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScalingInterval 服务器伸缩容间隔
+                     * @param ScalingInterval 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetScalingInterval(const uint64_t& _scalingInterval);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 服务器类型
+                     * 服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_instanceCountsHasBeenSet;
 
                     /**
-                     * 服务器伸缩容间隔
+                     * 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scalingInterval;

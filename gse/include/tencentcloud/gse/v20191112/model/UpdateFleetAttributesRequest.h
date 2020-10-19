@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取服务器舰队描述
-                     * @return Description 服务器舰队描述
+                     * 获取服务器舰队描述，最小长度0，最大长度100
+                     * @return Description 服务器舰队描述，最小长度0，最大长度100
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置服务器舰队描述
-                     * @param Description 服务器舰队描述
+                     * 设置服务器舰队描述，最小长度0，最大长度100
+                     * @param Description 服务器舰队描述，最小长度0，最大长度100
                      */
                     void SetDescription(const std::string& _description);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取服务器舰队名称
-                     * @return Name 服务器舰队名称
+                     * 获取服务器舰队名称，最小长度1，最大长度50
+                     * @return Name 服务器舰队名称，最小长度1，最大长度50
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置服务器舰队名称
-                     * @param Name 服务器舰队名称
+                     * 设置服务器舰队名称，最小长度1，最大长度50
+                     * @param Name 服务器舰队名称，最小长度1，最大长度50
                      */
                     void SetName(const std::string& _name);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取新建游戏会话保护策略
-                     * @return NewGameSessionProtectionPolicy 新建游戏会话保护策略
+                     * 获取保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection
+                     * @return NewGameSessionProtectionPolicy 保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection
                      */
                     std::string GetNewGameSessionProtectionPolicy() const;
 
                     /**
-                     * 设置新建游戏会话保护策略
-                     * @param NewGameSessionProtectionPolicy 新建游戏会话保护策略
+                     * 设置保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection
+                     * @param NewGameSessionProtectionPolicy 保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection
                      */
                     void SetNewGameSessionProtectionPolicy(const std::string& _newGameSessionProtectionPolicy);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool ResourceCreationLimitPolicyHasBeenSet() const;
 
                     /**
-                     * 获取时限保护超时时间，默认60分钟
-                     * @return GameServerSessionProtectionTimeLimit 时限保护超时时间，默认60分钟
+                     * 获取时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效
+                     * @return GameServerSessionProtectionTimeLimit 时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效
                      */
                     int64_t GetGameServerSessionProtectionTimeLimit() const;
 
                     /**
-                     * 设置时限保护超时时间，默认60分钟
-                     * @param GameServerSessionProtectionTimeLimit 时限保护超时时间，默认60分钟
+                     * 设置时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效
+                     * @param GameServerSessionProtectionTimeLimit 时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效
                      */
                     void SetGameServerSessionProtectionTimeLimit(const int64_t& _gameServerSessionProtectionTimeLimit);
 
@@ -160,19 +160,19 @@ namespace TencentCloud
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 服务器舰队描述
+                     * 服务器舰队描述，最小长度0，最大长度100
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 服务器舰队名称
+                     * 服务器舰队名称，最小长度1，最大长度50
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 新建游戏会话保护策略
+                     * 保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection
                      */
                     std::string m_newGameSessionProtectionPolicy;
                     bool m_newGameSessionProtectionPolicyHasBeenSet;
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_resourceCreationLimitPolicyHasBeenSet;
 
                     /**
-                     * 时限保护超时时间，默认60分钟
+                     * 时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效
                      */
                     int64_t m_gameServerSessionProtectionTimeLimit;
                     bool m_gameServerSessionProtectionTimeLimitHasBeenSet;

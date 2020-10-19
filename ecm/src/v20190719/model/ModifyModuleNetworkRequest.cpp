@@ -25,7 +25,8 @@ using namespace std;
 
 ModifyModuleNetworkRequest::ModifyModuleNetworkRequest() :
     m_moduleIdHasBeenSet(false),
-    m_defaultBandwidthHasBeenSet(false)
+    m_defaultBandwidthHasBeenSet(false),
+    m_defaultBandwidthInHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string ModifyModuleNetworkRequest::ToJsonString() const
         string key = "DefaultBandwidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultBandwidth, allocator);
+    }
+
+    if (m_defaultBandwidthInHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DefaultBandwidthIn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_defaultBandwidthIn, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void ModifyModuleNetworkRequest::SetDefaultBandwidth(const int64_t& _defaultBand
 bool ModifyModuleNetworkRequest::DefaultBandwidthHasBeenSet() const
 {
     return m_defaultBandwidthHasBeenSet;
+}
+
+int64_t ModifyModuleNetworkRequest::GetDefaultBandwidthIn() const
+{
+    return m_defaultBandwidthIn;
+}
+
+void ModifyModuleNetworkRequest::SetDefaultBandwidthIn(const int64_t& _defaultBandwidthIn)
+{
+    m_defaultBandwidthIn = _defaultBandwidthIn;
+    m_defaultBandwidthInHasBeenSet = true;
+}
+
+bool ModifyModuleNetworkRequest::DefaultBandwidthInHasBeenSet() const
+{
+    return m_defaultBandwidthInHasBeenSet;
 }
 
 

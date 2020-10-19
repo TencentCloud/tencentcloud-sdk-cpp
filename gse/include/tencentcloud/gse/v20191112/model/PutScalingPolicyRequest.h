@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取基于规则的扩缩容配置服务部署ID
-                     * @return FleetId 基于规则的扩缩容配置服务部署ID
+                     * 获取扩缩容配置服务器舰队ID
+                     * @return FleetId 扩缩容配置服务器舰队ID
                      */
                     std::string GetFleetId() const;
 
                     /**
-                     * 设置基于规则的扩缩容配置服务部署ID
-                     * @param FleetId 基于规则的扩缩容配置服务部署ID
+                     * 设置扩缩容配置服务器舰队ID
+                     * @param FleetId 扩缩容配置服务器舰队ID
                      */
                     void SetFleetId(const std::string& _fleetId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取策略名称
-                     * @return Name 策略名称
+                     * 获取扩缩容策略名称，最小长度为1，最大长度为1024
+                     * @return Name 扩缩容策略名称，最小长度为1，最大长度为1024
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置策略名称
-                     * @param Name 策略名称
+                     * 设置扩缩容策略名称，最小长度为1，最大长度为1024
+                     * @param Name 扩缩容策略名称，最小长度为1，最大长度为1024
                      */
                     void SetName(const std::string& _name);
 
@@ -80,14 +80,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取扩缩容调整值
-                     * @return ScalingAdjustment 扩缩容调整值
+                     * 获取扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99
+ScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额
+                     * @return ScalingAdjustment 扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99
+ScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额
                      */
                     int64_t GetScalingAdjustment() const;
 
                     /**
-                     * 设置扩缩容调整值
-                     * @param ScalingAdjustment 扩缩容调整值
+                     * 设置扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99
+ScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额
+                     * @param ScalingAdjustment 扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99
+ScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额
                      */
                     void SetScalingAdjustment(const int64_t& _scalingAdjustment);
 
@@ -98,14 +102,14 @@ namespace TencentCloud
                     bool ScalingAdjustmentHasBeenSet() const;
 
                     /**
-                     * 获取扩缩容调整类型
-                     * @return ScalingAdjustmentType 扩缩容调整类型
+                     * 获取扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）
+                     * @return ScalingAdjustmentType 扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）
                      */
                     std::string GetScalingAdjustmentType() const;
 
                     /**
-                     * 设置扩缩容调整类型
-                     * @param ScalingAdjustmentType 扩缩容调整类型
+                     * 设置扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）
+                     * @param ScalingAdjustmentType 扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）
                      */
                     void SetScalingAdjustmentType(const std::string& _scalingAdjustmentType);
 
@@ -134,14 +138,14 @@ namespace TencentCloud
                     bool ThresholdHasBeenSet() const;
 
                     /**
-                     * 获取策略比较符，取值：>,>=,<,<=
-                     * @return ComparisonOperator 策略比较符，取值：>,>=,<,<=
+                     * 获取扩缩容策略比较符，取值：>,>=,<,<=
+                     * @return ComparisonOperator 扩缩容策略比较符，取值：>,>=,<,<=
                      */
                     std::string GetComparisonOperator() const;
 
                     /**
-                     * 设置策略比较符，取值：>,>=,<,<=
-                     * @param ComparisonOperator 策略比较符，取值：>,>=,<,<=
+                     * 设置扩缩容策略比较符，取值：>,>=,<,<=
+                     * @param ComparisonOperator 扩缩容策略比较符，取值：>,>=,<,<=
                      */
                     void SetComparisonOperator(const std::string& _comparisonOperator);
 
@@ -152,14 +156,14 @@ namespace TencentCloud
                     bool ComparisonOperatorHasBeenSet() const;
 
                     /**
-                     * 获取持续时间长度（分钟）
-                     * @return EvaluationPeriods 持续时间长度（分钟）
+                     * 获取单个策略持续时间长度（分钟）
+                     * @return EvaluationPeriods 单个策略持续时间长度（分钟）
                      */
                     int64_t GetEvaluationPeriods() const;
 
                     /**
-                     * 设置持续时间长度（分钟）
-                     * @param EvaluationPeriods 持续时间长度（分钟）
+                     * 设置单个策略持续时间长度（分钟）
+                     * @param EvaluationPeriods 单个策略持续时间长度（分钟）
                      */
                     void SetEvaluationPeriods(const int64_t& _evaluationPeriods);
 
@@ -170,14 +174,22 @@ namespace TencentCloud
                     bool EvaluationPeriodsHasBeenSet() const;
 
                     /**
-                     * 获取指标名称
-                     * @return MetricName 指标名称
+                     * 获取扩缩容参与计算的指标名称，PolicyType取值RuleBased，
+MetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）；
+PolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions
+                     * @return MetricName 扩缩容参与计算的指标名称，PolicyType取值RuleBased，
+MetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）；
+PolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标名称
-                     * @param MetricName 指标名称
+                     * 设置扩缩容参与计算的指标名称，PolicyType取值RuleBased，
+MetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）；
+PolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions
+                     * @param MetricName 扩缩容参与计算的指标名称，PolicyType取值RuleBased，
+MetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）；
+PolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions
                      */
                     void SetMetricName(const std::string& _metricName);
 
@@ -206,14 +218,14 @@ namespace TencentCloud
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取扩缩容配置类型
-                     * @return TargetConfiguration 扩缩容配置类型
+                     * 获取扩缩容目标值配置，只有TargetBased类型的策略生效
+                     * @return TargetConfiguration 扩缩容目标值配置，只有TargetBased类型的策略生效
                      */
                     TargetConfiguration GetTargetConfiguration() const;
 
                     /**
-                     * 设置扩缩容配置类型
-                     * @param TargetConfiguration 扩缩容配置类型
+                     * 设置扩缩容目标值配置，只有TargetBased类型的策略生效
+                     * @param TargetConfiguration 扩缩容目标值配置，只有TargetBased类型的策略生效
                      */
                     void SetTargetConfiguration(const TargetConfiguration& _targetConfiguration);
 
@@ -226,25 +238,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 基于规则的扩缩容配置服务部署ID
+                     * 扩缩容配置服务器舰队ID
                      */
                     std::string m_fleetId;
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 策略名称
+                     * 扩缩容策略名称，最小长度为1，最大长度为1024
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 扩缩容调整值
+                     * 扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99
+ScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额
                      */
                     int64_t m_scalingAdjustment;
                     bool m_scalingAdjustmentHasBeenSet;
 
                     /**
-                     * 扩缩容调整类型
+                     * 扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）
                      */
                     std::string m_scalingAdjustmentType;
                     bool m_scalingAdjustmentTypeHasBeenSet;
@@ -256,19 +269,21 @@ namespace TencentCloud
                     bool m_thresholdHasBeenSet;
 
                     /**
-                     * 策略比较符，取值：>,>=,<,<=
+                     * 扩缩容策略比较符，取值：>,>=,<,<=
                      */
                     std::string m_comparisonOperator;
                     bool m_comparisonOperatorHasBeenSet;
 
                     /**
-                     * 持续时间长度（分钟）
+                     * 单个策略持续时间长度（分钟）
                      */
                     int64_t m_evaluationPeriods;
                     bool m_evaluationPeriodsHasBeenSet;
 
                     /**
-                     * 指标名称
+                     * 扩缩容参与计算的指标名称，PolicyType取值RuleBased，
+MetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）；
+PolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
@@ -280,7 +295,7 @@ namespace TencentCloud
                     bool m_policyTypeHasBeenSet;
 
                     /**
-                     * 扩缩容配置类型
+                     * 扩缩容目标值配置，只有TargetBased类型的策略生效
                      */
                     TargetConfiguration m_targetConfiguration;
                     bool m_targetConfigurationHasBeenSet;

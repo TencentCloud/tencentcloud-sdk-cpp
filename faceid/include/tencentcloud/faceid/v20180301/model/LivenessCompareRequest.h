@@ -43,18 +43,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用于人脸比对的照片，图片的BASE64值；
-BASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
-                     * @return ImageBase64 用于人脸比对的照片，图片的BASE64值；
-BASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
+                     * 获取用于人脸比对的照片，图片的Base64值；
+Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * @return ImageBase64 用于人脸比对的照片，图片的Base64值；
+Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置用于人脸比对的照片，图片的BASE64值；
-BASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
-                     * @param ImageBase64 用于人脸比对的照片，图片的BASE64值；
-BASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
+                     * 设置用于人脸比对的照片，图片的Base64值；
+Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * @param ImageBase64 用于人脸比对的照片，图片的Base64值；
+Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
@@ -65,18 +69,22 @@ BASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
                     bool ImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取用于活体检测的视频，视频的BASE64值；
-BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
-                     * @return VideoBase64 用于活体检测的视频，视频的BASE64值；
-BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
+                     * 获取用于活体检测的视频，视频的Base64值；
+Base64编码后的大小不超过8M，支持mp4、avi、flv格式。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * @return VideoBase64 用于活体检测的视频，视频的Base64值；
+Base64编码后的大小不超过8M，支持mp4、avi、flv格式。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     std::string GetVideoBase64() const;
 
                     /**
-                     * 设置用于活体检测的视频，视频的BASE64值；
-BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
-                     * @param VideoBase64 用于活体检测的视频，视频的BASE64值；
-BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
+                     * 设置用于活体检测的视频，视频的Base64值；
+Base64编码后的大小不超过8M，支持mp4、avi、flv格式。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * @param VideoBase64 用于活体检测的视频，视频的Base64值；
+Base64编码后的大小不超过8M，支持mp4、avi、flv格式。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     void SetVideoBase64(const std::string& _videoBase64);
 
@@ -167,15 +175,17 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                 private:
 
                     /**
-                     * 用于人脸比对的照片，图片的BASE64值；
-BASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
+                     * 用于人脸比对的照片，图片的Base64值；
+Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
 
                     /**
-                     * 用于活体检测的视频，视频的BASE64值；
-BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
+                     * 用于活体检测的视频，视频的Base64值；
+Base64编码后的大小不超过8M，支持mp4、avi、flv格式。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     std::string m_videoBase64;
                     bool m_videoBase64HasBeenSet;

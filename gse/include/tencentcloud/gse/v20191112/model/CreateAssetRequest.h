@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool AssetRegionHasBeenSet() const;
 
                     /**
-                     * 获取生成包可运行的操作系统，暂时只有CentOS7.16
-                     * @return OperateSystem 生成包可运行的操作系统，暂时只有CentOS7.16
+                     * 获取生成包可运行的操作系统，若传入参数为CentOS7.16则不需要传入ImageId字段，否则，需要传入Imageid字段（该方式是为了兼容之前的版本，后续建议使用ImageId来替代该字段）
+                     * @return OperateSystem 生成包可运行的操作系统，若传入参数为CentOS7.16则不需要传入ImageId字段，否则，需要传入Imageid字段（该方式是为了兼容之前的版本，后续建议使用ImageId来替代该字段）
                      */
                     std::string GetOperateSystem() const;
 
                     /**
-                     * 设置生成包可运行的操作系统，暂时只有CentOS7.16
-                     * @param OperateSystem 生成包可运行的操作系统，暂时只有CentOS7.16
+                     * 设置生成包可运行的操作系统，若传入参数为CentOS7.16则不需要传入ImageId字段，否则，需要传入Imageid字段（该方式是为了兼容之前的版本，后续建议使用ImageId来替代该字段）
+                     * @param OperateSystem 生成包可运行的操作系统，若传入参数为CentOS7.16则不需要传入ImageId字段，否则，需要传入Imageid字段（该方式是为了兼容之前的版本，后续建议使用ImageId来替代该字段）
                      */
                     void SetOperateSystem(const std::string& _operateSystem);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool OperateSystemHasBeenSet() const;
 
                     /**
-                     * 获取生成包支持的操作系统镜像id
-                     * @return ImageId 生成包支持的操作系统镜像id
+                     * 获取生成包支持的操作系统镜像id，若传入OperateSystem字段的值是CentOS7.16，则不需要传入该值；如果不是，则需要通过DescribeAssetSystems接口获取asset支持的操作系统ImageId进行传入
+                     * @return ImageId 生成包支持的操作系统镜像id，若传入OperateSystem字段的值是CentOS7.16，则不需要传入该值；如果不是，则需要通过DescribeAssetSystems接口获取asset支持的操作系统ImageId进行传入
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置生成包支持的操作系统镜像id
-                     * @param ImageId 生成包支持的操作系统镜像id
+                     * 设置生成包支持的操作系统镜像id，若传入OperateSystem字段的值是CentOS7.16，则不需要传入该值；如果不是，则需要通过DescribeAssetSystems接口获取asset支持的操作系统ImageId进行传入
+                     * @param ImageId 生成包支持的操作系统镜像id，若传入OperateSystem字段的值是CentOS7.16，则不需要传入该值；如果不是，则需要通过DescribeAssetSystems接口获取asset支持的操作系统ImageId进行传入
                      */
                     void SetImageId(const std::string& _imageId);
 
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_assetRegionHasBeenSet;
 
                     /**
-                     * 生成包可运行的操作系统，暂时只有CentOS7.16
+                     * 生成包可运行的操作系统，若传入参数为CentOS7.16则不需要传入ImageId字段，否则，需要传入Imageid字段（该方式是为了兼容之前的版本，后续建议使用ImageId来替代该字段）
                      */
                     std::string m_operateSystem;
                     bool m_operateSystemHasBeenSet;
 
                     /**
-                     * 生成包支持的操作系统镜像id
+                     * 生成包支持的操作系统镜像id，若传入OperateSystem字段的值是CentOS7.16，则不需要传入该值；如果不是，则需要通过DescribeAssetSystems接口获取asset支持的操作系统ImageId进行传入
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;

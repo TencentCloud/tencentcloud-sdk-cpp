@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取路由策略类型，有效值SIMPLE|TERMINAL
-                     * @return RoutingStrategyType 路由策略类型，有效值SIMPLE|TERMINAL
+                     * 获取路由策略类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
+                     * @return RoutingStrategyType 路由策略类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
                      */
                     std::string GetRoutingStrategyType() const;
 
                     /**
-                     * 设置路由策略类型，有效值SIMPLE|TERMINAL
-                     * @param RoutingStrategyType 路由策略类型，有效值SIMPLE|TERMINAL
+                     * 设置路由策略类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
+                     * @param RoutingStrategyType 路由策略类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
                      */
                     void SetRoutingStrategyType(const std::string& _routingStrategyType);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 路由策略类型，有效值SIMPLE|TERMINAL
+                     * 路由策略类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
                      */
                     std::string m_routingStrategyType;
                     bool m_routingStrategyTypeHasBeenSet;

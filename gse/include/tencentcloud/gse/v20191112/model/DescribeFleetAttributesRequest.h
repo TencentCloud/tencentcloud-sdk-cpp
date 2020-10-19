@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FleetIdsHasBeenSet() const;
 
                     /**
-                     * 获取结果返回最大数量，最小值0，最大值1000
-                     * @return Limit 结果返回最大数量，最小值0，最大值1000
+                     * 获取结果返回最大数量，默认值20，最大值100
+                     * @return Limit 结果返回最大数量，默认值20，最大值100
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置结果返回最大数量，最小值0，最大值1000
-                     * @param Limit 结果返回最大数量，最小值0，最大值1000
+                     * 设置结果返回最大数量，默认值20，最大值100
+                     * @param Limit 结果返回最大数量，默认值20，最大值100
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_fleetIdsHasBeenSet;
 
                     /**
-                     * 结果返回最大数量，最小值0，最大值1000
+                     * 结果返回最大数量，默认值20，最大值100
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

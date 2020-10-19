@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取别名的路由策略的类型SIMPLE/TERMINAL
-                     * @return Type 别名的路由策略的类型SIMPLE/TERMINAL
+                     * 获取别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
+                     * @return Type 别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置别名的路由策略的类型SIMPLE/TERMINAL
-                     * @param Type 别名的路由策略的类型SIMPLE/TERMINAL
+                     * 设置别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
+                     * @param Type 别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
                      */
                     void SetType(const std::string& _type);
 
@@ -87,17 +87,17 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取与终端路由策略一起使用的消息文本
+                     * 获取与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Message 与终端路由策略一起使用的消息文本
+                     * @return Message 与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置与终端路由策略一起使用的消息文本
+                     * 设置与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 与终端路由策略一起使用的消息文本
+                     * @param Message 与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMessage(const std::string& _message);
@@ -111,7 +111,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 别名的路由策略的类型SIMPLE/TERMINAL
+                     * 别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 与终端路由策略一起使用的消息文本
+                     * 与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;

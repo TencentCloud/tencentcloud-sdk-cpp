@@ -87,6 +87,8 @@
 #include <tencentcloud/dayu/v20180709/model/DescribeBasicCCThresholdResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBasicDeviceThresholdRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBasicDeviceThresholdResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeBizTrendRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeBizTrendResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCAlarmThresholdRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCAlarmThresholdResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCEvListRequest.h>
@@ -353,6 +355,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBasicDeviceThresholdResponse> DescribeBasicDeviceThresholdOutcome;
                 typedef std::future<DescribeBasicDeviceThresholdOutcome> DescribeBasicDeviceThresholdOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeBasicDeviceThresholdRequest&, DescribeBasicDeviceThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBasicDeviceThresholdAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBizTrendResponse> DescribeBizTrendOutcome;
+                typedef std::future<DescribeBizTrendOutcome> DescribeBizTrendOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeBizTrendRequest&, DescribeBizTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTrendAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCCAlarmThresholdResponse> DescribeCCAlarmThresholdOutcome;
                 typedef std::future<DescribeCCAlarmThresholdOutcome> DescribeCCAlarmThresholdOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeCCAlarmThresholdRequest&, DescribeCCAlarmThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCAlarmThresholdAsyncHandler;
@@ -878,6 +883,15 @@ namespace TencentCloud
                 DescribeBasicDeviceThresholdOutcome DescribeBasicDeviceThreshold(const Model::DescribeBasicDeviceThresholdRequest &request);
                 void DescribeBasicDeviceThresholdAsync(const Model::DescribeBasicDeviceThresholdRequest& request, const DescribeBasicDeviceThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBasicDeviceThresholdOutcomeCallable DescribeBasicDeviceThresholdCallable(const Model::DescribeBasicDeviceThresholdRequest& request);
+
+                /**
+                 *获取业务流量曲线
+                 * @param req DescribeBizTrendRequest
+                 * @return DescribeBizTrendOutcome
+                 */
+                DescribeBizTrendOutcome DescribeBizTrend(const Model::DescribeBizTrendRequest &request);
+                void DescribeBizTrendAsync(const Model::DescribeBizTrendRequest& request, const DescribeBizTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBizTrendOutcomeCallable DescribeBizTrendCallable(const Model::DescribeBizTrendRequest& request);
 
                 /**
                  *获取高防包、高防IP、高防IP专业版、棋牌盾产品设置CC攻击的告警通知阈值

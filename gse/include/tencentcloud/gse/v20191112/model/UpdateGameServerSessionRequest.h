@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取玩家会话创建策略（ACCEPT_ALL,DENY_ALL）
-                     * @return PlayerSessionCreationPolicy 玩家会话创建策略（ACCEPT_ALL,DENY_ALL）
+                     * 获取玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）
+                     * @return PlayerSessionCreationPolicy 玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）
                      */
                     std::string GetPlayerSessionCreationPolicy() const;
 
                     /**
-                     * 设置玩家会话创建策略（ACCEPT_ALL,DENY_ALL）
-                     * @param PlayerSessionCreationPolicy 玩家会话创建策略（ACCEPT_ALL,DENY_ALL）
+                     * 设置玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）
+                     * @param PlayerSessionCreationPolicy 玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）
                      */
                     void SetPlayerSessionCreationPolicy(const std::string& _playerSessionCreationPolicy);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool PlayerSessionCreationPolicyHasBeenSet() const;
 
                     /**
-                     * 获取保护策略(NoProtection,TimeLimitProtection,FullProtection)
-                     * @return ProtectionPolicy 保护策略(NoProtection,TimeLimitProtection,FullProtection)
+                     * 获取保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)
+                     * @return ProtectionPolicy 保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)
                      */
                     std::string GetProtectionPolicy() const;
 
                     /**
-                     * 设置保护策略(NoProtection,TimeLimitProtection,FullProtection)
-                     * @param ProtectionPolicy 保护策略(NoProtection,TimeLimitProtection,FullProtection)
+                     * 设置保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)
+                     * @param ProtectionPolicy 保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)
                      */
                     void SetProtectionPolicy(const std::string& _protectionPolicy);
 
@@ -153,13 +153,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 玩家会话创建策略（ACCEPT_ALL,DENY_ALL）
+                     * 玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）
                      */
                     std::string m_playerSessionCreationPolicy;
                     bool m_playerSessionCreationPolicyHasBeenSet;
 
                     /**
-                     * 保护策略(NoProtection,TimeLimitProtection,FullProtection)
+                     * 保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)
                      */
                     std::string m_protectionPolicy;
                     bool m_protectionPolicyHasBeenSet;

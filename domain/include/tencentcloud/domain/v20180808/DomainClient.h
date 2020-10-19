@@ -31,6 +31,10 @@
 #include <tencentcloud/domain/v20180808/model/CheckDomainResponse.h>
 #include <tencentcloud/domain/v20180808/model/CreateDomainBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/CreateDomainBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/CreateTemplateRequest.h>
+#include <tencentcloud/domain/v20180808/model/CreateTemplateResponse.h>
+#include <tencentcloud/domain/v20180808/model/DeleteTemplateRequest.h>
+#include <tencentcloud/domain/v20180808/model/DeleteTemplateResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainNameListRequest.h>
@@ -39,14 +43,22 @@
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListResponse.h>
+#include <tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchRequest.h>
+#include <tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/RenewDomainBatchRequest.h>
+#include <tencentcloud/domain/v20180808/model/RenewDomainBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/SetDomainAutoRenewRequest.h>
+#include <tencentcloud/domain/v20180808/model/SetDomainAutoRenewResponse.h>
 #include <tencentcloud/domain/v20180808/model/TransferInDomainBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/TransferInDomainBatchResponse.h>
 #include <tencentcloud/domain/v20180808/model/TransferProhibitionBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/TransferProhibitionBatchResponse.h>
 #include <tencentcloud/domain/v20180808/model/UpdateProhibitionBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/UpdateProhibitionBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/UploadImageRequest.h>
+#include <tencentcloud/domain/v20180808/model/UploadImageResponse.h>
 
 
 namespace TencentCloud
@@ -73,6 +85,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateDomainBatchResponse> CreateDomainBatchOutcome;
                 typedef std::future<CreateDomainBatchOutcome> CreateDomainBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CreateDomainBatchRequest&, CreateDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainBatchAsyncHandler;
+                typedef Outcome<Error, Model::CreateTemplateResponse> CreateTemplateOutcome;
+                typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::CreateTemplateRequest&, CreateTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTemplateAsyncHandler;
+                typedef Outcome<Error, Model::DeleteTemplateResponse> DeleteTemplateOutcome;
+                typedef std::future<DeleteTemplateOutcome> DeleteTemplateOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DeleteTemplateRequest&, DeleteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDomainBaseInfoResponse> DescribeDomainBaseInfoOutcome;
                 typedef std::future<DescribeDomainBaseInfoOutcome> DescribeDomainBaseInfoOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeDomainBaseInfoRequest&, DescribeDomainBaseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainBaseInfoAsyncHandler;
@@ -85,9 +103,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTemplateListResponse> DescribeTemplateListOutcome;
                 typedef std::future<DescribeTemplateListOutcome> DescribeTemplateListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeTemplateListRequest&, DescribeTemplateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateListAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDomainDNSBatchResponse> ModifyDomainDNSBatchOutcome;
+                typedef std::future<ModifyDomainDNSBatchOutcome> ModifyDomainDNSBatchOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::ModifyDomainDNSBatchRequest&, ModifyDomainDNSBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainDNSBatchAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDomainOwnerBatchResponse> ModifyDomainOwnerBatchOutcome;
                 typedef std::future<ModifyDomainOwnerBatchOutcome> ModifyDomainOwnerBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::ModifyDomainOwnerBatchRequest&, ModifyDomainOwnerBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainOwnerBatchAsyncHandler;
+                typedef Outcome<Error, Model::RenewDomainBatchResponse> RenewDomainBatchOutcome;
+                typedef std::future<RenewDomainBatchOutcome> RenewDomainBatchOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::RenewDomainBatchRequest&, RenewDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDomainBatchAsyncHandler;
+                typedef Outcome<Error, Model::SetDomainAutoRenewResponse> SetDomainAutoRenewOutcome;
+                typedef std::future<SetDomainAutoRenewOutcome> SetDomainAutoRenewOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::SetDomainAutoRenewRequest&, SetDomainAutoRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainAutoRenewAsyncHandler;
                 typedef Outcome<Error, Model::TransferInDomainBatchResponse> TransferInDomainBatchOutcome;
                 typedef std::future<TransferInDomainBatchOutcome> TransferInDomainBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::TransferInDomainBatchRequest&, TransferInDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferInDomainBatchAsyncHandler;
@@ -97,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdateProhibitionBatchResponse> UpdateProhibitionBatchOutcome;
                 typedef std::future<UpdateProhibitionBatchOutcome> UpdateProhibitionBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::UpdateProhibitionBatchRequest&, UpdateProhibitionBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProhibitionBatchAsyncHandler;
+                typedef Outcome<Error, Model::UploadImageResponse> UploadImageOutcome;
+                typedef std::future<UploadImageOutcome> UploadImageOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::UploadImageRequest&, UploadImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadImageAsyncHandler;
 
 
 
@@ -112,7 +142,7 @@ namespace TencentCloud
                 BatchModifyDomainInfoOutcomeCallable BatchModifyDomainInfoCallable(const Model::BatchModifyDomainInfoRequest& request);
 
                 /**
-                 *本接口 ( CheckBatchStatus ) 用于检查批量任务状态 。
+                 *本接口 ( CheckBatchStatus ) 用于查询批量操作日志状态 。
 
 默认接口请求频率限制：20次/秒。
                  * @param req CheckBatchStatusRequest
@@ -141,6 +171,28 @@ namespace TencentCloud
                 CreateDomainBatchOutcome CreateDomainBatch(const Model::CreateDomainBatchRequest &request);
                 void CreateDomainBatchAsync(const Model::CreateDomainBatchRequest& request, const CreateDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDomainBatchOutcomeCallable CreateDomainBatchCallable(const Model::CreateDomainBatchRequest& request);
+
+                /**
+                 *本接口 ( CreateTemplate ) 用于添加域名信息模板 。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req CreateTemplateRequest
+                 * @return CreateTemplateOutcome
+                 */
+                CreateTemplateOutcome CreateTemplate(const Model::CreateTemplateRequest &request);
+                void CreateTemplateAsync(const Model::CreateTemplateRequest& request, const CreateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTemplateOutcomeCallable CreateTemplateCallable(const Model::CreateTemplateRequest& request);
+
+                /**
+                 *本接口 ( DeleteTemplate ) 用于删除域名信息模板。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req DeleteTemplateRequest
+                 * @return DeleteTemplateOutcome
+                 */
+                DeleteTemplateOutcome DeleteTemplate(const Model::DeleteTemplateRequest &request);
+                void DeleteTemplateAsync(const Model::DeleteTemplateRequest& request, const DeleteTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTemplateOutcomeCallable DeleteTemplateCallable(const Model::DeleteTemplateRequest& request);
 
                 /**
                  *本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。
@@ -188,6 +240,17 @@ namespace TencentCloud
                 DescribeTemplateListOutcomeCallable DescribeTemplateListCallable(const Model::DescribeTemplateListRequest& request);
 
                 /**
+                 *本接口 ( ModifyDomainDNSBatch) 用于批量修改域名DNS信息 。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req ModifyDomainDNSBatchRequest
+                 * @return ModifyDomainDNSBatchOutcome
+                 */
+                ModifyDomainDNSBatchOutcome ModifyDomainDNSBatch(const Model::ModifyDomainDNSBatchRequest &request);
+                void ModifyDomainDNSBatchAsync(const Model::ModifyDomainDNSBatchRequest& request, const ModifyDomainDNSBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDomainDNSBatchOutcomeCallable ModifyDomainDNSBatchCallable(const Model::ModifyDomainDNSBatchRequest& request);
+
+                /**
                  *本接口 ( ModifyDomainOwnerBatch) 用于域名批量账号间转移 。
 
 默认接口请求频率限制：20次/秒。
@@ -197,6 +260,29 @@ namespace TencentCloud
                 ModifyDomainOwnerBatchOutcome ModifyDomainOwnerBatch(const Model::ModifyDomainOwnerBatchRequest &request);
                 void ModifyDomainOwnerBatchAsync(const Model::ModifyDomainOwnerBatchRequest& request, const ModifyDomainOwnerBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainOwnerBatchOutcomeCallable ModifyDomainOwnerBatchCallable(const Model::ModifyDomainOwnerBatchRequest& request);
+
+                /**
+                 *本接口 ( RenewDomainBatch ) 用于批量续费域名 。
+
+默认接口请求频率限制：20次/秒。
+
+                 * @param req RenewDomainBatchRequest
+                 * @return RenewDomainBatchOutcome
+                 */
+                RenewDomainBatchOutcome RenewDomainBatch(const Model::RenewDomainBatchRequest &request);
+                void RenewDomainBatchAsync(const Model::RenewDomainBatchRequest& request, const RenewDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewDomainBatchOutcomeCallable RenewDomainBatchCallable(const Model::RenewDomainBatchRequest& request);
+
+                /**
+                 *本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req SetDomainAutoRenewRequest
+                 * @return SetDomainAutoRenewOutcome
+                 */
+                SetDomainAutoRenewOutcome SetDomainAutoRenew(const Model::SetDomainAutoRenewRequest &request);
+                void SetDomainAutoRenewAsync(const Model::SetDomainAutoRenewRequest& request, const SetDomainAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetDomainAutoRenewOutcomeCallable SetDomainAutoRenewCallable(const Model::SetDomainAutoRenewRequest& request);
 
                 /**
                  *本接口 ( TransferInDomainBatch ) 用于批量转入域名 。
@@ -230,6 +316,17 @@ namespace TencentCloud
                 UpdateProhibitionBatchOutcome UpdateProhibitionBatch(const Model::UpdateProhibitionBatchRequest &request);
                 void UpdateProhibitionBatchAsync(const Model::UpdateProhibitionBatchRequest& request, const UpdateProhibitionBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateProhibitionBatchOutcomeCallable UpdateProhibitionBatchCallable(const Model::UpdateProhibitionBatchRequest& request);
+
+                /**
+                 *本接口 ( UploadImage ) 用于上传资质照片 。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req UploadImageRequest
+                 * @return UploadImageOutcome
+                 */
+                UploadImageOutcome UploadImage(const Model::UploadImageRequest &request);
+                void UploadImageAsync(const Model::UploadImageRequest& request, const UploadImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadImageOutcomeCallable UploadImageCallable(const Model::UploadImageRequest& request);
 
             };
         }

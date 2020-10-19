@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool AssetIdHasBeenSet() const;
 
                     /**
-                     * 获取结果返回最大值，最小值0，最大值1000
-                     * @return Limit 结果返回最大值，最小值0，最大值1000
+                     * 获取结果返回最大值，暂未使用
+                     * @return Limit 结果返回最大值，暂未使用
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置结果返回最大值，最小值0，最大值1000
-                     * @param Limit 结果返回最大值，最小值0，最大值1000
+                     * 设置结果返回最大值，暂未使用
+                     * @param Limit 结果返回最大值，暂未使用
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取结果返回偏移，最小值0
-                     * @return Offset 结果返回偏移，最小值0
+                     * 获取结果返回偏移，暂未使用
+                     * @return Offset 结果返回偏移，暂未使用
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置结果返回偏移，最小值0
-                     * @param Offset 结果返回偏移，最小值0
+                     * 设置结果返回偏移，暂未使用
+                     * @param Offset 结果返回偏移，暂未使用
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_assetIdHasBeenSet;
 
                     /**
-                     * 结果返回最大值，最小值0，最大值1000
+                     * 结果返回最大值，暂未使用
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 结果返回偏移，最小值0
+                     * 结果返回偏移，暂未使用
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

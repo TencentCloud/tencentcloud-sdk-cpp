@@ -43,9 +43,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务部署 Id 列表
+                     * 获取服务器舰队 Id 列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FleetIds 服务部署 Id 列表
+                     * @return FleetIds 服务器舰队 Id 列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetFleetIds() const;
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool FleetIdsHasBeenSet() const;
 
                     /**
-                     * 获取服务部署 Id 总数，最小值0
-                     * @return TotalCount 服务部署 Id 总数，最小值0
+                     * 获取服务器舰队 Id 总数，最小值0
+                     * @return TotalCount 服务器舰队 Id 总数，最小值0
                      */
                     uint64_t GetTotalCount() const;
 
@@ -71,14 +71,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务部署 Id 列表
+                     * 服务器舰队 Id 列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_fleetIds;
                     bool m_fleetIdsHasBeenSet;
 
                     /**
-                     * 服务部署 Id 总数，最小值0
+                     * 服务器舰队 Id 总数，最小值0
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

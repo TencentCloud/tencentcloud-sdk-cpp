@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务部署运行配置信息
+                     * 获取服务器舰队运行配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuntimeConfiguration 服务部署运行配置信息
+                     * @return RuntimeConfiguration 服务器舰队运行配置信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RuntimeConfiguration GetRuntimeConfiguration() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务部署运行配置信息
+                     * 服务器舰队运行配置信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RuntimeConfiguration m_runtimeConfiguration;

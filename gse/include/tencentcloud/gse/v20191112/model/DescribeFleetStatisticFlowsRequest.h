@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务部署ID
-                     * @return FleetId 服务部署ID
+                     * 获取服务器舰队ID
+                     * @return FleetId 服务器舰队ID
                      */
                     std::string GetFleetId() const;
 
                     /**
-                     * 设置服务部署ID
-                     * @param FleetId 服务部署ID
+                     * 设置服务器舰队ID
+                     * @param FleetId 服务器舰队ID
                      */
                     void SetFleetId(const std::string& _fleetId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间
-                     * @return BeginTime 查询开始时间
+                     * 获取查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss
+                     * @return BeginTime 查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置查询开始时间
-                     * @param BeginTime 查询开始时间
+                     * 设置查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss
+                     * @param BeginTime 查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间
-                     * @return EndTime 查询结束时间
+                     * 获取查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss
+                     * @return EndTime 查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间
-                     * @param EndTime 查询结束时间
+                     * 设置查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss
+                     * @param EndTime 查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -135,19 +135,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务部署ID
+                     * 服务器舰队ID
                      */
                     std::string m_fleetId;
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 查询开始时间
+                     * 查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间
+                     * 查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

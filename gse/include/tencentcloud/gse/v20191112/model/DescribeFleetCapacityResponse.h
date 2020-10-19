@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务部署容量配置
+                     * 获取服务器舰队的容量配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FleetCapacity 服务部署容量配置
+                     * @return FleetCapacity 服务器舰队的容量配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FleetCapacity> GetFleetCapacity() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务部署容量配置
+                     * 服务器舰队的容量配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FleetCapacity> m_fleetCapacity;

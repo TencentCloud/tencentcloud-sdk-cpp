@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NewGameServerSessionsPerCreatorHasBeenSet() const;
 
                     /**
-                     * 获取单位时间，最小值1，默认3
-                     * @return PolicyPeriodInMinutes 单位时间，最小值1，默认3
+                     * 获取单位时间，最小值1，默认3，单位分钟
+                     * @return PolicyPeriodInMinutes 单位时间，最小值1，默认3，单位分钟
                      */
                     uint64_t GetPolicyPeriodInMinutes() const;
 
                     /**
-                     * 设置单位时间，最小值1，默认3
-                     * @param PolicyPeriodInMinutes 单位时间，最小值1，默认3
+                     * 设置单位时间，最小值1，默认3，单位分钟
+                     * @param PolicyPeriodInMinutes 单位时间，最小值1，默认3，单位分钟
                      */
                     void SetPolicyPeriodInMinutes(const uint64_t& _policyPeriodInMinutes);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_newGameServerSessionsPerCreatorHasBeenSet;
 
                     /**
-                     * 单位时间，最小值1，默认3
+                     * 单位时间，最小值1，默认3，单位分钟
                      */
                     uint64_t m_policyPeriodInMinutes;
                     bool m_policyPeriodInMinutesHasBeenSet;

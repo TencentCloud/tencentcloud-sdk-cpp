@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务部署Id
-                     * @return FleetId 服务部署Id
+                     * 获取服务器舰队ID
+                     * @return FleetId 服务器舰队ID
                      */
                     std::string GetFleetId() const;
 
                     /**
-                     * 设置服务部署Id
-                     * @param FleetId 服务部署Id
+                     * 设置服务器舰队ID
+                     * @param FleetId 服务器舰队ID
                      */
                     void SetFleetId(const std::string& _fleetId);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务部署Id
+                     * 服务器舰队ID
                      */
                     std::string m_fleetId;
                     bool m_fleetIdHasBeenSet;

@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始部署游戏服务器会话的唯一标识符
-                     * @return PlacementId 开始部署游戏服务器会话的唯一标识符
+                     * 获取开始部署游戏服务器会话的唯一标识符，最大值48个ASCII字符，模式：[a-zA-Z0-9-]+
+                     * @return PlacementId 开始部署游戏服务器会话的唯一标识符，最大值48个ASCII字符，模式：[a-zA-Z0-9-]+
                      */
                     std::string GetPlacementId() const;
 
                     /**
-                     * 设置开始部署游戏服务器会话的唯一标识符
-                     * @param PlacementId 开始部署游戏服务器会话的唯一标识符
+                     * 设置开始部署游戏服务器会话的唯一标识符，最大值48个ASCII字符，模式：[a-zA-Z0-9-]+
+                     * @param PlacementId 开始部署游戏服务器会话的唯一标识符，最大值48个ASCII字符，模式：[a-zA-Z0-9-]+
                      */
                     void SetPlacementId(const std::string& _placementId);
 
@@ -82,14 +82,14 @@ namespace TencentCloud
                     bool GameServerSessionQueueNameHasBeenSet() const;
 
                     /**
-                     * 获取游戏服务器允许同时连接到游戏会话的最大玩家数量
-                     * @return MaximumPlayerSessionCount 游戏服务器允许同时连接到游戏会话的最大玩家数量
+                     * 获取游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额
+                     * @return MaximumPlayerSessionCount 游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额
                      */
                     uint64_t GetMaximumPlayerSessionCount() const;
 
                     /**
-                     * 设置游戏服务器允许同时连接到游戏会话的最大玩家数量
-                     * @param MaximumPlayerSessionCount 游戏服务器允许同时连接到游戏会话的最大玩家数量
+                     * 设置游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额
+                     * @param MaximumPlayerSessionCount 游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额
                      */
                     void SetMaximumPlayerSessionCount(const uint64_t& _maximumPlayerSessionCount);
 
@@ -136,14 +136,14 @@ namespace TencentCloud
                     bool GamePropertiesHasBeenSet() const;
 
                     /**
-                     * 获取游戏服务器会话数据
-                     * @return GameServerSessionData 游戏服务器会话数据
+                     * 获取游戏服务器会话数据，最大长度不超过4096个ASCII字符
+                     * @return GameServerSessionData 游戏服务器会话数据，最大长度不超过4096个ASCII字符
                      */
                     std::string GetGameServerSessionData() const;
 
                     /**
-                     * 设置游戏服务器会话数据
-                     * @param GameServerSessionData 游戏服务器会话数据
+                     * 设置游戏服务器会话数据，最大长度不超过4096个ASCII字符
+                     * @param GameServerSessionData 游戏服务器会话数据，最大长度不超过4096个ASCII字符
                      */
                     void SetGameServerSessionData(const std::string& _gameServerSessionData);
 
@@ -154,14 +154,14 @@ namespace TencentCloud
                     bool GameServerSessionDataHasBeenSet() const;
 
                     /**
-                     * 获取游戏服务器会话名称
-                     * @return GameServerSessionName 游戏服务器会话名称
+                     * 获取游戏服务器会话名称，最大长度不超过4096个ASCII字符
+                     * @return GameServerSessionName 游戏服务器会话名称，最大长度不超过4096个ASCII字符
                      */
                     std::string GetGameServerSessionName() const;
 
                     /**
-                     * 设置游戏服务器会话名称
-                     * @param GameServerSessionName 游戏服务器会话名称
+                     * 设置游戏服务器会话名称，最大长度不超过4096个ASCII字符
+                     * @param GameServerSessionName 游戏服务器会话名称，最大长度不超过4096个ASCII字符
                      */
                     void SetGameServerSessionName(const std::string& _gameServerSessionName);
 
@@ -192,7 +192,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始部署游戏服务器会话的唯一标识符
+                     * 开始部署游戏服务器会话的唯一标识符，最大值48个ASCII字符，模式：[a-zA-Z0-9-]+
                      */
                     std::string m_placementId;
                     bool m_placementIdHasBeenSet;
@@ -204,7 +204,7 @@ namespace TencentCloud
                     bool m_gameServerSessionQueueNameHasBeenSet;
 
                     /**
-                     * 游戏服务器允许同时连接到游戏会话的最大玩家数量
+                     * 游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额
                      */
                     uint64_t m_maximumPlayerSessionCount;
                     bool m_maximumPlayerSessionCountHasBeenSet;
@@ -222,13 +222,13 @@ namespace TencentCloud
                     bool m_gamePropertiesHasBeenSet;
 
                     /**
-                     * 游戏服务器会话数据
+                     * 游戏服务器会话数据，最大长度不超过4096个ASCII字符
                      */
                     std::string m_gameServerSessionData;
                     bool m_gameServerSessionDataHasBeenSet;
 
                     /**
-                     * 游戏服务器会话名称
+                     * 游戏服务器会话名称，最大长度不超过4096个ASCII字符
                      */
                     std::string m_gameServerSessionName;
                     bool m_gameServerSessionNameHasBeenSet;

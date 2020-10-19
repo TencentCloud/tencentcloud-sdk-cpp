@@ -300,17 +300,17 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取服务器舰队停止状态
+                     * 获取服务器舰队停止状态，为空时表示自动扩缩容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StoppedActions 服务器舰队停止状态
+                     * @return StoppedActions 服务器舰队停止状态，为空时表示自动扩缩容
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetStoppedActions() const;
 
                     /**
-                     * 设置服务器舰队停止状态
+                     * 设置服务器舰队停止状态，为空时表示自动扩缩容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StoppedActions 服务器舰队停止状态
+                     * @param StoppedActions 服务器舰队停止状态，为空时表示自动扩缩容
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStoppedActions(const std::vector<std::string>& _stoppedActions);
@@ -471,7 +471,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 服务器舰队停止状态
+                     * 服务器舰队停止状态，为空时表示自动扩缩容
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_stoppedActions;

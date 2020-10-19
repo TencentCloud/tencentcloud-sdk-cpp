@@ -163,6 +163,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/ModifyCCIpAllowDenyResponse.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCAlarmThresholdRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeCCFrequencyRulesResponse.h
+  include/tencentcloud/dayu/v20180709/model/DescribeBizTrendResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSEvListRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeBasicCCThresholdResponse.h
   include/tencentcloud/dayu/v20180709/model/ModifyDDoSPolicyNameRequest.h
@@ -248,6 +249,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/DescribeRuleSetsRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeSchedulingDomainListRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribleL7RulesResponse.h
+  include/tencentcloud/dayu/v20180709/model/DescribeBizTrendRequest.h
   include/tencentcloud/dayu/v20180709/model/CreateCCFrequencyRulesResponse.h
   include/tencentcloud/dayu/v20180709/model/CreateNewL4RulesRequest.h
   include/tencentcloud/dayu/v20180709/model/DDoSPolicyPortLimit.h
@@ -426,6 +428,7 @@ set(dayu_src
   src/v20180709/model/ModifyCCIpAllowDenyResponse.cpp
   src/v20180709/model/ModifyCCAlarmThresholdRequest.cpp
   src/v20180709/model/DescribeCCFrequencyRulesResponse.cpp
+  src/v20180709/model/DescribeBizTrendResponse.cpp
   src/v20180709/model/DescribeDDoSEvListRequest.cpp
   src/v20180709/model/DescribeBasicCCThresholdResponse.cpp
   src/v20180709/model/ModifyDDoSPolicyNameRequest.cpp
@@ -511,6 +514,7 @@ set(dayu_src
   src/v20180709/model/DescribeRuleSetsRequest.cpp
   src/v20180709/model/DescribeSchedulingDomainListRequest.cpp
   src/v20180709/model/DescribleL7RulesResponse.cpp
+  src/v20180709/model/DescribeBizTrendRequest.cpp
   src/v20180709/model/CreateCCFrequencyRulesResponse.cpp
   src/v20180709/model/CreateNewL4RulesRequest.cpp
   src/v20180709/model/DDoSPolicyPortLimit.cpp

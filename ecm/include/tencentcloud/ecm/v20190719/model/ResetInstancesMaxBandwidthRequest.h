@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取修改后的最大带宽上限。
-                     * @return MaxBandwidthOut 修改后的最大带宽上限。
+                     * 获取修改后的最大出带宽上限。
+                     * @return MaxBandwidthOut 修改后的最大出带宽上限。
                      */
                     int64_t GetMaxBandwidthOut() const;
 
                     /**
-                     * 设置修改后的最大带宽上限。
-                     * @param MaxBandwidthOut 修改后的最大带宽上限。
+                     * 设置修改后的最大出带宽上限。
+                     * @param MaxBandwidthOut 修改后的最大出带宽上限。
                      */
                     void SetMaxBandwidthOut(const int64_t& _maxBandwidthOut);
 
@@ -77,6 +77,24 @@ namespace TencentCloud
                      * @return MaxBandwidthOut 是否已赋值
                      */
                     bool MaxBandwidthOutHasBeenSet() const;
+
+                    /**
+                     * 获取修改后的最大入带宽上限。
+                     * @return MaxBandwidthIn 修改后的最大入带宽上限。
+                     */
+                    int64_t GetMaxBandwidthIn() const;
+
+                    /**
+                     * 设置修改后的最大入带宽上限。
+                     * @param MaxBandwidthIn 修改后的最大入带宽上限。
+                     */
+                    void SetMaxBandwidthIn(const int64_t& _maxBandwidthIn);
+
+                    /**
+                     * 判断参数 MaxBandwidthIn 是否已赋值
+                     * @return MaxBandwidthIn 是否已赋值
+                     */
+                    bool MaxBandwidthInHasBeenSet() const;
 
                 private:
 
@@ -87,10 +105,16 @@ namespace TencentCloud
                     bool m_instanceIdSetHasBeenSet;
 
                     /**
-                     * 修改后的最大带宽上限。
+                     * 修改后的最大出带宽上限。
                      */
                     int64_t m_maxBandwidthOut;
                     bool m_maxBandwidthOutHasBeenSet;
+
+                    /**
+                     * 修改后的最大入带宽上限。
+                     */
+                    int64_t m_maxBandwidthIn;
+                    bool m_maxBandwidthInHasBeenSet;
 
                 };
             }

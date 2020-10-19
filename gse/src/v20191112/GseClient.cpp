@@ -599,6 +599,49 @@ GseClient::DescribeAssetOutcomeCallable GseClient::DescribeAssetCallable(const D
     return task->get_future();
 }
 
+GseClient::DescribeAssetSystemsOutcome GseClient::DescribeAssetSystems(const DescribeAssetSystemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetSystems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetSystemsResponse rsp = DescribeAssetSystemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetSystemsOutcome(rsp);
+        else
+            return DescribeAssetSystemsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetSystemsOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeAssetSystemsAsync(const DescribeAssetSystemsRequest& request, const DescribeAssetSystemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetSystems(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeAssetSystemsOutcomeCallable GseClient::DescribeAssetSystemsCallable(const DescribeAssetSystemsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetSystemsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetSystems(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::DescribeAssetsOutcome GseClient::DescribeAssets(const DescribeAssetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssets");
@@ -2484,6 +2527,49 @@ GseClient::UpdateFleetCapacityOutcomeCallable GseClient::UpdateFleetCapacityCall
         [this, request]()
         {
             return this->UpdateFleetCapacity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::UpdateFleetNameOutcome GseClient::UpdateFleetName(const UpdateFleetNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateFleetName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateFleetNameResponse rsp = UpdateFleetNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateFleetNameOutcome(rsp);
+        else
+            return UpdateFleetNameOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateFleetNameOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::UpdateFleetNameAsync(const UpdateFleetNameRequest& request, const UpdateFleetNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateFleetName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::UpdateFleetNameOutcomeCallable GseClient::UpdateFleetNameCallable(const UpdateFleetNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateFleetNameOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateFleetName(request);
         }
     );
 

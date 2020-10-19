@@ -236,14 +236,14 @@ namespace TencentCloud
                     bool GamePropertiesHasBeenSet() const;
 
                     /**
-                     * 获取最大玩家数量
-                     * @return MaximumPlayerSessionCount 最大玩家数量
+                     * 获取游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额
+                     * @return MaximumPlayerSessionCount 游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额
                      */
                     uint64_t GetMaximumPlayerSessionCount() const;
 
                     /**
-                     * 设置最大玩家数量
-                     * @param MaximumPlayerSessionCount 最大玩家数量
+                     * 设置游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额
+                     * @param MaximumPlayerSessionCount 游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额
                      */
                     void SetMaximumPlayerSessionCount(const uint64_t& _maximumPlayerSessionCount);
 
@@ -466,7 +466,7 @@ namespace TencentCloud
                     bool m_gamePropertiesHasBeenSet;
 
                     /**
-                     * 最大玩家数量
+                     * 游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额
                      */
                     uint64_t m_maximumPlayerSessionCount;
                     bool m_maximumPlayerSessionCountHasBeenSet;

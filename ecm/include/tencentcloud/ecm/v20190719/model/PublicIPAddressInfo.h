@@ -119,6 +119,24 @@ namespace TencentCloud
                      */
                     bool MaxBandwidthOutHasBeenSet() const;
 
+                    /**
+                     * 获取实例的最大入带宽上限，单位为Mbps。
+                     * @return MaxBandwidthIn 实例的最大入带宽上限，单位为Mbps。
+                     */
+                    int64_t GetMaxBandwidthIn() const;
+
+                    /**
+                     * 设置实例的最大入带宽上限，单位为Mbps。
+                     * @param MaxBandwidthIn 实例的最大入带宽上限，单位为Mbps。
+                     */
+                    void SetMaxBandwidthIn(const int64_t& _maxBandwidthIn);
+
+                    /**
+                     * 判断参数 MaxBandwidthIn 是否已赋值
+                     * @return MaxBandwidthIn 是否已赋值
+                     */
+                    bool MaxBandwidthInHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +162,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxBandwidthOut;
                     bool m_maxBandwidthOutHasBeenSet;
+
+                    /**
+                     * 实例的最大入带宽上限，单位为Mbps。
+                     */
+                    int64_t m_maxBandwidthIn;
+                    bool m_maxBandwidthInHasBeenSet;
 
                 };
             }

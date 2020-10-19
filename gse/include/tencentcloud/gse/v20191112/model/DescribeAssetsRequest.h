@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生成包可部署地域
-                     * @return AssetRegion 生成包可部署地域
+                     * 获取生成包支持的可部署 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
+                     * @return AssetRegion 生成包支持的可部署 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
                      */
                     std::string GetAssetRegion() const;
 
                     /**
-                     * 设置生成包可部署地域
-                     * @param AssetRegion 生成包可部署地域
+                     * 设置生成包支持的可部署 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
+                     * @param AssetRegion 生成包支持的可部署 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
                      */
                     void SetAssetRegion(const std::string& _assetRegion);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 生成包可部署地域
+                     * 生成包支持的可部署 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
                      */
                     std::string m_assetRegion;
                     bool m_assetRegionHasBeenSet;

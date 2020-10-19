@@ -212,6 +212,92 @@ DomainClient::CreateDomainBatchOutcomeCallable DomainClient::CreateDomainBatchCa
     return task->get_future();
 }
 
+DomainClient::CreateTemplateOutcome DomainClient::CreateTemplate(const CreateTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTemplateResponse rsp = CreateTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTemplateOutcome(rsp);
+        else
+            return CreateTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTemplateOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::CreateTemplateAsync(const CreateTemplateRequest& request, const CreateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::CreateTemplateOutcomeCallable DomainClient::CreateTemplateCallable(const CreateTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DeleteTemplateOutcome DomainClient::DeleteTemplate(const DeleteTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTemplateResponse rsp = DeleteTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTemplateOutcome(rsp);
+        else
+            return DeleteTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTemplateOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DeleteTemplateAsync(const DeleteTemplateRequest& request, const DeleteTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DeleteTemplateOutcomeCallable DomainClient::DeleteTemplateCallable(const DeleteTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DescribeDomainBaseInfoOutcome DomainClient::DescribeDomainBaseInfo(const DescribeDomainBaseInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainBaseInfo");
@@ -384,6 +470,49 @@ DomainClient::DescribeTemplateListOutcomeCallable DomainClient::DescribeTemplate
     return task->get_future();
 }
 
+DomainClient::ModifyDomainDNSBatchOutcome DomainClient::ModifyDomainDNSBatch(const ModifyDomainDNSBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDomainDNSBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDomainDNSBatchResponse rsp = ModifyDomainDNSBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDomainDNSBatchOutcome(rsp);
+        else
+            return ModifyDomainDNSBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDomainDNSBatchOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::ModifyDomainDNSBatchAsync(const ModifyDomainDNSBatchRequest& request, const ModifyDomainDNSBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDomainDNSBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::ModifyDomainDNSBatchOutcomeCallable DomainClient::ModifyDomainDNSBatchCallable(const ModifyDomainDNSBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDomainDNSBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDomainDNSBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::ModifyDomainOwnerBatchOutcome DomainClient::ModifyDomainOwnerBatch(const ModifyDomainOwnerBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDomainOwnerBatch");
@@ -420,6 +549,92 @@ DomainClient::ModifyDomainOwnerBatchOutcomeCallable DomainClient::ModifyDomainOw
         [this, request]()
         {
             return this->ModifyDomainOwnerBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::RenewDomainBatchOutcome DomainClient::RenewDomainBatch(const RenewDomainBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewDomainBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewDomainBatchResponse rsp = RenewDomainBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewDomainBatchOutcome(rsp);
+        else
+            return RenewDomainBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewDomainBatchOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::RenewDomainBatchAsync(const RenewDomainBatchRequest& request, const RenewDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewDomainBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::RenewDomainBatchOutcomeCallable DomainClient::RenewDomainBatchCallable(const RenewDomainBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewDomainBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewDomainBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::SetDomainAutoRenewOutcome DomainClient::SetDomainAutoRenew(const SetDomainAutoRenewRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetDomainAutoRenew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetDomainAutoRenewResponse rsp = SetDomainAutoRenewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetDomainAutoRenewOutcome(rsp);
+        else
+            return SetDomainAutoRenewOutcome(o.GetError());
+    }
+    else
+    {
+        return SetDomainAutoRenewOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::SetDomainAutoRenewAsync(const SetDomainAutoRenewRequest& request, const SetDomainAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetDomainAutoRenew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::SetDomainAutoRenewOutcomeCallable DomainClient::SetDomainAutoRenewCallable(const SetDomainAutoRenewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetDomainAutoRenewOutcome()>>(
+        [this, request]()
+        {
+            return this->SetDomainAutoRenew(request);
         }
     );
 
@@ -549,6 +764,49 @@ DomainClient::UpdateProhibitionBatchOutcomeCallable DomainClient::UpdateProhibit
         [this, request]()
         {
             return this->UpdateProhibitionBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::UploadImageOutcome DomainClient::UploadImage(const UploadImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadImageResponse rsp = UploadImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadImageOutcome(rsp);
+        else
+            return UploadImageOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadImageOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::UploadImageAsync(const UploadImageRequest& request, const UploadImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::UploadImageOutcomeCallable DomainClient::UploadImageCallable(const UploadImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadImageOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadImage(request);
         }
     );
 

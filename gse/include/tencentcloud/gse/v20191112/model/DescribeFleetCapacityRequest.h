@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务部署 Id列表
-                     * @return FleetIds 服务部署 Id列表
+                     * 获取服务器舰队ID列表
+                     * @return FleetIds 服务器舰队ID列表
                      */
                     std::vector<std::string> GetFleetIds() const;
 
                     /**
-                     * 设置服务部署 Id列表
-                     * @param FleetIds 服务部署 Id列表
+                     * 设置服务器舰队ID列表
+                     * @param FleetIds 服务器舰队ID列表
                      */
                     void SetFleetIds(const std::vector<std::string>& _fleetIds);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FleetIdsHasBeenSet() const;
 
                     /**
-                     * 获取结果返回最大数量
-                     * @return Limit 结果返回最大数量
+                     * 获取结果返回最大数量，最大值 100
+                     * @return Limit 结果返回最大数量，最大值 100
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置结果返回最大数量
-                     * @param Limit 结果返回最大数量
+                     * 设置结果返回最大数量，最大值 100
+                     * @param Limit 结果返回最大数量，最大值 100
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取返回结果偏移
-                     * @return Offset 返回结果偏移
+                     * 获取返回结果偏移，最小值 0
+                     * @return Offset 返回结果偏移，最小值 0
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置返回结果偏移
-                     * @param Offset 返回结果偏移
+                     * 设置返回结果偏移，最小值 0
+                     * @param Offset 返回结果偏移，最小值 0
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务部署 Id列表
+                     * 服务器舰队ID列表
                      */
                     std::vector<std::string> m_fleetIds;
                     bool m_fleetIdsHasBeenSet;
 
                     /**
-                     * 结果返回最大数量
+                     * 结果返回最大数量，最大值 100
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 返回结果偏移
+                     * 返回结果偏移，最小值 0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

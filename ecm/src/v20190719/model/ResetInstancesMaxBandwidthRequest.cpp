@@ -25,7 +25,8 @@ using namespace std;
 
 ResetInstancesMaxBandwidthRequest::ResetInstancesMaxBandwidthRequest() :
     m_instanceIdSetHasBeenSet(false),
-    m_maxBandwidthOutHasBeenSet(false)
+    m_maxBandwidthOutHasBeenSet(false),
+    m_maxBandwidthInHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string ResetInstancesMaxBandwidthRequest::ToJsonString() const
         string key = "MaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxBandwidthOut, allocator);
+    }
+
+    if (m_maxBandwidthInHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxBandwidthIn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxBandwidthIn, allocator);
     }
 
 
@@ -95,6 +104,22 @@ void ResetInstancesMaxBandwidthRequest::SetMaxBandwidthOut(const int64_t& _maxBa
 bool ResetInstancesMaxBandwidthRequest::MaxBandwidthOutHasBeenSet() const
 {
     return m_maxBandwidthOutHasBeenSet;
+}
+
+int64_t ResetInstancesMaxBandwidthRequest::GetMaxBandwidthIn() const
+{
+    return m_maxBandwidthIn;
+}
+
+void ResetInstancesMaxBandwidthRequest::SetMaxBandwidthIn(const int64_t& _maxBandwidthIn)
+{
+    m_maxBandwidthIn = _maxBandwidthIn;
+    m_maxBandwidthInHasBeenSet = true;
+}
+
+bool ResetInstancesMaxBandwidthRequest::MaxBandwidthInHasBeenSet() const
+{
+    return m_maxBandwidthInHasBeenSet;
 }
 
 

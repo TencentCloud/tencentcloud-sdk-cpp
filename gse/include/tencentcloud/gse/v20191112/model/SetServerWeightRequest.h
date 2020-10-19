@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务舰队ID
-                     * @return FleetId 服务舰队ID
+                     * 获取服务器舰队ID
+                     * @return FleetId 服务器舰队ID
                      */
                     std::string GetFleetId() const;
 
                     /**
-                     * 设置服务舰队ID
-                     * @param FleetId 服务舰队ID
+                     * 设置服务器舰队ID
+                     * @param FleetId 服务器舰队ID
                      */
                     void SetFleetId(const std::string& _fleetId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取权重
-                     * @return Weight 权重
+                     * 获取权重，最小值0，最大值10，默认值5
+                     * @return Weight 权重，最小值0，最大值10，默认值5
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置权重
-                     * @param Weight 权重
+                     * 设置权重，最小值0，最大值10，默认值5
+                     * @param Weight 权重，最小值0，最大值10，默认值5
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务舰队ID
+                     * 服务器舰队ID
                      */
                     std::string m_fleetId;
                     bool m_fleetIdHasBeenSet;
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 权重
+                     * 权重，最小值0，最大值10，默认值5
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

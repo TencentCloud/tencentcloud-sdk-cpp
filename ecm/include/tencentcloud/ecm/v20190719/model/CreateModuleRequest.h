@@ -213,6 +213,24 @@ namespace TencentCloud
                      */
                     bool SecurityGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取默认入带宽，单位：M。范围不得超过带宽上下限，详看DescribeConfig。
+                     * @return DefaultBandWidthIn 默认入带宽，单位：M。范围不得超过带宽上下限，详看DescribeConfig。
+                     */
+                    int64_t GetDefaultBandWidthIn() const;
+
+                    /**
+                     * 设置默认入带宽，单位：M。范围不得超过带宽上下限，详看DescribeConfig。
+                     * @param DefaultBandWidthIn 默认入带宽，单位：M。范围不得超过带宽上下限，详看DescribeConfig。
+                     */
+                    void SetDefaultBandWidthIn(const int64_t& _defaultBandWidthIn);
+
+                    /**
+                     * 判断参数 DefaultBandWidthIn 是否已赋值
+                     * @return DefaultBandWidthIn 是否已赋值
+                     */
+                    bool DefaultBandWidthInHasBeenSet() const;
+
                 private:
 
                     /**
@@ -270,6 +288,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroups;
                     bool m_securityGroupsHasBeenSet;
+
+                    /**
+                     * 默认入带宽，单位：M。范围不得超过带宽上下限，详看DescribeConfig。
+                     */
+                    int64_t m_defaultBandWidthIn;
+                    bool m_defaultBandWidthInHasBeenSet;
 
                 };
             }

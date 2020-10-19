@@ -97,14 +97,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取CompareLib为上传照片比对时必传，base64后图片最大8MB。
-                     * @return ImageBase64 CompareLib为上传照片比对时必传，base64后图片最大8MB。
+                     * 获取CompareLib为上传照片比对时必传，Base64后图片最大8MB。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * @return ImageBase64 CompareLib为上传照片比对时必传，Base64后图片最大8MB。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置CompareLib为上传照片比对时必传，base64后图片最大8MB。
-                     * @param ImageBase64 CompareLib为上传照片比对时必传，base64后图片最大8MB。
+                     * 设置CompareLib为上传照片比对时必传，Base64后图片最大8MB。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * @param ImageBase64 CompareLib为上传照片比对时必传，Base64后图片最大8MB。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
@@ -171,7 +175,8 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * CompareLib为上传照片比对时必传，base64后图片最大8MB。
+                     * CompareLib为上传照片比对时必传，Base64后图片最大8MB。
+请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;

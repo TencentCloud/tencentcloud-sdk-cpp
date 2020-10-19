@@ -43,9 +43,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务部署ID
+                     * 获取服务器舰队ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FleetId 服务部署ID
+                     * @return FleetId 服务器舰队ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFleetId() const;
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务部署ID
+                     * 服务器舰队ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fleetId;

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FleetIdHasBeenSet() const;
 
                     /**
-                     * 获取扩展策略，为空或者AUTO_SCALING
-                     * @return Actions 扩展策略，为空或者AUTO_SCALING
+                     * 获取服务器舰队扩展策略，值为["AUTO_SCALING"]
+                     * @return Actions 服务器舰队扩展策略，值为["AUTO_SCALING"]
                      */
                     std::vector<std::string> GetActions() const;
 
                     /**
-                     * 设置扩展策略，为空或者AUTO_SCALING
-                     * @param Actions 扩展策略，为空或者AUTO_SCALING
+                     * 设置服务器舰队扩展策略，值为["AUTO_SCALING"]
+                     * @param Actions 服务器舰队扩展策略，值为["AUTO_SCALING"]
                      */
                     void SetActions(const std::vector<std::string>& _actions);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_fleetIdHasBeenSet;
 
                     /**
-                     * 扩展策略，为空或者AUTO_SCALING
+                     * 服务器舰队扩展策略，值为["AUTO_SCALING"]
                      */
                     std::vector<std::string> m_actions;
                     bool m_actionsHasBeenSet;

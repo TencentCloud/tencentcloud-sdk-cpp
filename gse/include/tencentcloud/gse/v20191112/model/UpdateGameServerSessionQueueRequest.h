@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取目的服务部署（可为别名）列表
-                     * @return Destinations 目的服务部署（可为别名）列表
+                     * 获取目的服务器舰队（可为别名）列表
+                     * @return Destinations 目的服务器舰队（可为别名）列表
                      */
                     std::vector<GameServerSessionQueueDestination> GetDestinations() const;
 
                     /**
-                     * 设置目的服务部署（可为别名）列表
-                     * @param Destinations 目的服务部署（可为别名）列表
+                     * 设置目的服务器舰队（可为别名）列表
+                     * @param Destinations 目的服务器舰队（可为别名）列表
                      */
                     void SetDestinations(const std::vector<GameServerSessionQueueDestination>& _destinations);
 
@@ -125,7 +125,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 目的服务部署（可为别名）列表
+                     * 目的服务器舰队（可为别名）列表
                      */
                     std::vector<GameServerSessionQueueDestination> m_destinations;
                     bool m_destinationsHasBeenSet;

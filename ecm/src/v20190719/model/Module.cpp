@@ -33,7 +33,8 @@ Module::Module() :
     m_defaultBandwidthHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_closeIpDirectHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_defaultBandwidthInHasBeenSet(false)
 {
 }
 
@@ -189,6 +190,16 @@ CoreInternalOutcome Module::Deserialize(const Value &value)
         m_securityGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultBandwidthIn") && !value["DefaultBandwidthIn"].IsNull())
+    {
+        if (!value["DefaultBandwidthIn"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Module.DefaultBandwidthIn` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultBandwidthIn = value["DefaultBandwidthIn"].GetInt64();
+        m_defaultBandwidthInHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -304,6 +315,14 @@ void Module::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_defaultBandwidthInHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DefaultBandwidthIn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultBandwidthIn, allocator);
     }
 
 }
@@ -499,5 +518,21 @@ void Module::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
 bool Module::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+int64_t Module::GetDefaultBandwidthIn() const
+{
+    return m_defaultBandwidthIn;
+}
+
+void Module::SetDefaultBandwidthIn(const int64_t& _defaultBandwidthIn)
+{
+    m_defaultBandwidthIn = _defaultBandwidthIn;
+    m_defaultBandwidthInHasBeenSet = true;
+}
+
+bool Module::DefaultBandwidthInHasBeenSet() const
+{
+    return m_defaultBandwidthInHasBeenSet;
 }
 

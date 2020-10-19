@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务部署ID
-                     * @return FleetId 服务部署ID
+                     * 获取服务器舰队ID
+                     * @return FleetId 服务器舰队ID
                      */
                     std::string GetFleetId() const;
 
                     /**
-                     * 设置服务部署ID
-                     * @param FleetId 服务部署ID
+                     * 设置服务器舰队ID
+                     * @param FleetId 服务器舰队ID
                      */
                     void SetFleetId(const std::string& _fleetId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DesiredInstancesHasBeenSet() const;
 
                     /**
-                     * 获取服务器实例数最小限制
-                     * @return MinSize 服务器实例数最小限制
+                     * 获取服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1
+                     * @return MinSize 服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1
                      */
                     uint64_t GetMinSize() const;
 
                     /**
-                     * 设置服务器实例数最小限制
-                     * @param MinSize 服务器实例数最小限制
+                     * 设置服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1
+                     * @param MinSize 服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1
                      */
                     void SetMinSize(const uint64_t& _minSize);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
-                     * 获取服务器实例数最大限制
-                     * @return MaxSize 服务器实例数最大限制
+                     * 获取服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额
+                     * @return MaxSize 服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
-                     * 设置服务器实例数最大限制
-                     * @param MaxSize 服务器实例数最大限制
+                     * 设置服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额
+                     * @param MaxSize 服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool MaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取服务器伸缩容间隔
-                     * @return ScalingInterval 服务器伸缩容间隔
+                     * 获取服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
+                     * @return ScalingInterval 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
                      */
                     uint64_t GetScalingInterval() const;
 
                     /**
-                     * 设置服务器伸缩容间隔
-                     * @param ScalingInterval 服务器伸缩容间隔
+                     * 设置服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
+                     * @param ScalingInterval 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
                      */
                     void SetScalingInterval(const uint64_t& _scalingInterval);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务部署ID
+                     * 服务器舰队ID
                      */
                     std::string m_fleetId;
                     bool m_fleetIdHasBeenSet;
@@ -147,19 +147,19 @@ namespace TencentCloud
                     bool m_desiredInstancesHasBeenSet;
 
                     /**
-                     * 服务器实例数最小限制
+                     * 服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1
                      */
                     uint64_t m_minSize;
                     bool m_minSizeHasBeenSet;
 
                     /**
-                     * 服务器实例数最大限制
+                     * 服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额
                      */
                     uint64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;
 
                     /**
-                     * 服务器伸缩容间隔
+                     * 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
                      */
                     uint64_t m_scalingInterval;
                     bool m_scalingIntervalHasBeenSet;

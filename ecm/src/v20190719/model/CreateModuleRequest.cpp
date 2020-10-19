@@ -32,7 +32,8 @@ CreateModuleRequest::CreateModuleRequest() :
     m_defaultDataDiskSizeHasBeenSet(false),
     m_closeIpDirectHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_defaultBandWidthInHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,14 @@ string CreateModuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_defaultBandWidthInHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DefaultBandWidthIn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_defaultBandWidthIn, allocator);
     }
 
 
@@ -277,6 +286,22 @@ void CreateModuleRequest::SetSecurityGroups(const vector<string>& _securityGroup
 bool CreateModuleRequest::SecurityGroupsHasBeenSet() const
 {
     return m_securityGroupsHasBeenSet;
+}
+
+int64_t CreateModuleRequest::GetDefaultBandWidthIn() const
+{
+    return m_defaultBandWidthIn;
+}
+
+void CreateModuleRequest::SetDefaultBandWidthIn(const int64_t& _defaultBandWidthIn)
+{
+    m_defaultBandWidthIn = _defaultBandWidthIn;
+    m_defaultBandWidthInHasBeenSet = true;
+}
+
+bool CreateModuleRequest::DefaultBandWidthInHasBeenSet() const
+{
+    return m_defaultBandWidthInHasBeenSet;
 }
 
 

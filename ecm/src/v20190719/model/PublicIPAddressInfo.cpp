@@ -25,7 +25,8 @@ PublicIPAddressInfo::PublicIPAddressInfo() :
     m_chargeModeHasBeenSet(false),
     m_publicIPAddressHasBeenSet(false),
     m_iSPHasBeenSet(false),
-    m_maxBandwidthOutHasBeenSet(false)
+    m_maxBandwidthOutHasBeenSet(false),
+    m_maxBandwidthInHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,16 @@ CoreInternalOutcome PublicIPAddressInfo::Deserialize(const Value &value)
         m_maxBandwidthOutHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxBandwidthIn") && !value["MaxBandwidthIn"].IsNull())
+    {
+        if (!value["MaxBandwidthIn"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PublicIPAddressInfo.MaxBandwidthIn` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxBandwidthIn = value["MaxBandwidthIn"].GetInt64();
+        m_maxBandwidthInHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -119,6 +130,14 @@ void PublicIPAddressInfo::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "MaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxBandwidthOut, allocator);
+    }
+
+    if (m_maxBandwidthInHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxBandwidthIn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxBandwidthIn, allocator);
     }
 
 }
@@ -186,5 +205,21 @@ void PublicIPAddressInfo::SetMaxBandwidthOut(const int64_t& _maxBandwidthOut)
 bool PublicIPAddressInfo::MaxBandwidthOutHasBeenSet() const
 {
     return m_maxBandwidthOutHasBeenSet;
+}
+
+int64_t PublicIPAddressInfo::GetMaxBandwidthIn() const
+{
+    return m_maxBandwidthIn;
+}
+
+void PublicIPAddressInfo::SetMaxBandwidthIn(const int64_t& _maxBandwidthIn)
+{
+    m_maxBandwidthIn = _maxBandwidthIn;
+    m_maxBandwidthInHasBeenSet = true;
+}
+
+bool PublicIPAddressInfo::MaxBandwidthInHasBeenSet() const
+{
+    return m_maxBandwidthInHasBeenSet;
 }
 

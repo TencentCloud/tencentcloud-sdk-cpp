@@ -65,132 +65,6 @@ namespace TencentCloud
                     bool ServiceHasBeenSet() const;
 
                     /**
-                     * 获取Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)
-                     * @return CertMd5 Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)
-                     */
-                    std::string GetCertMd5() const;
-
-                    /**
-                     * 设置Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)
-                     * @param CertMd5 Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)
-                     */
-                    void SetCertMd5(const std::string& _certMd5);
-
-                    /**
-                     * 判断参数 CertMd5 是否已赋值
-                     * @return CertMd5 是否已赋值
-                     */
-                    bool CertMd5HasBeenSet() const;
-
-                    /**
-                     * 获取Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)
-                     * @return FileMd5 Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)
-                     */
-                    std::string GetFileMd5() const;
-
-                    /**
-                     * 设置Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)
-                     * @param FileMd5 Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)
-                     */
-                    void SetFileMd5(const std::string& _fileMd5);
-
-                    /**
-                     * 判断参数 FileMd5 是否已赋值
-                     * @return FileMd5 是否已赋值
-                     */
-                    bool FileMd5HasBeenSet() const;
-
-                    /**
-                     * 获取Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)
-                     * @return FileSize Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)
-                     */
-                    int64_t GetFileSize() const;
-
-                    /**
-                     * 设置Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)
-                     * @param FileSize Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)
-                     */
-                    void SetFileSize(const int64_t& _fileSize);
-
-                    /**
-                     * 判断参数 FileSize 是否已赋值
-                     * @return FileSize 是否已赋值
-                     */
-                    bool FileSizeHasBeenSet() const;
-
-                    /**
-                     * 获取安卓设备的Imei (业务名为bri_dev时必填)
-                     * @return Imei 安卓设备的Imei (业务名为bri_dev时必填)
-                     */
-                    std::string GetImei() const;
-
-                    /**
-                     * 设置安卓设备的Imei (业务名为bri_dev时必填)
-                     * @param Imei 安卓设备的Imei (业务名为bri_dev时必填)
-                     */
-                    void SetImei(const std::string& _imei);
-
-                    /**
-                     * 判断参数 Imei 是否已赋值
-                     * @return Imei 是否已赋值
-                     */
-                    bool ImeiHasBeenSet() const;
-
-                    /**
-                     * 获取点分格式的IP (业务名为bri_ip时必填)
-                     * @return Ip 点分格式的IP (业务名为bri_ip时必填)
-                     */
-                    std::string GetIp() const;
-
-                    /**
-                     * 设置点分格式的IP (业务名为bri_ip时必填)
-                     * @param Ip 点分格式的IP (业务名为bri_ip时必填)
-                     */
-                    void SetIp(const std::string& _ip);
-
-                    /**
-                     * 判断参数 Ip 是否已赋值
-                     * @return Ip 是否已赋值
-                     */
-                    bool IpHasBeenSet() const;
-
-                    /**
-                     * 获取Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)
-                     * @return PackageName Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)
-                     */
-                    std::string GetPackageName() const;
-
-                    /**
-                     * 设置Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)
-                     * @param PackageName Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)
-                     */
-                    void SetPackageName(const std::string& _packageName);
-
-                    /**
-                     * 判断参数 PackageName 是否已赋值
-                     * @return PackageName 是否已赋值
-                     */
-                    bool PackageNameHasBeenSet() const;
-
-                    /**
-                     * 获取电话号码 (业务名为bri_num时必填)
-                     * @return PhoneNumber 电话号码 (业务名为bri_num时必填)
-                     */
-                    std::string GetPhoneNumber() const;
-
-                    /**
-                     * 设置电话号码 (业务名为bri_num时必填)
-                     * @param PhoneNumber 电话号码 (业务名为bri_num时必填)
-                     */
-                    void SetPhoneNumber(const std::string& _phoneNumber);
-
-                    /**
-                     * 判断参数 PhoneNumber 是否已赋值
-                     * @return PhoneNumber 是否已赋值
-                     */
-                    bool PhoneNumberHasBeenSet() const;
-
-                    /**
                      * 获取QQ号 (业务名为bri_social时必填, 除非已填Wechat)
                      * @return QQ QQ号 (业务名为bri_social时必填, 除非已填Wechat)
                      */
@@ -227,6 +101,78 @@ namespace TencentCloud
                     bool QQTagHasBeenSet() const;
 
                     /**
+                     * 获取网址 (业务名为bri_url时必填)
+                     * @return Url 网址 (业务名为bri_url时必填)
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置网址 (业务名为bri_url时必填)
+                     * @param Url 网址 (业务名为bri_url时必填)
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     */
+                    bool UrlHasBeenSet() const;
+
+                    /**
+                     * 获取Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)
+                     * @return CertMd5 Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)
+                     */
+                    std::string GetCertMd5() const;
+
+                    /**
+                     * 设置Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)
+                     * @param CertMd5 Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)
+                     */
+                    void SetCertMd5(const std::string& _certMd5);
+
+                    /**
+                     * 判断参数 CertMd5 是否已赋值
+                     * @return CertMd5 是否已赋值
+                     */
+                    bool CertMd5HasBeenSet() const;
+
+                    /**
+                     * 获取Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)
+                     * @return PackageName Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)
+                     */
+                    std::string GetPackageName() const;
+
+                    /**
+                     * 设置Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)
+                     * @param PackageName Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)
+                     */
+                    void SetPackageName(const std::string& _packageName);
+
+                    /**
+                     * 判断参数 PackageName 是否已赋值
+                     * @return PackageName 是否已赋值
+                     */
+                    bool PackageNameHasBeenSet() const;
+
+                    /**
+                     * 获取Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)
+                     * @return FileMd5 Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)
+                     */
+                    std::string GetFileMd5() const;
+
+                    /**
+                     * 设置Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)
+                     * @param FileMd5 Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)
+                     */
+                    void SetFileMd5(const std::string& _fileMd5);
+
+                    /**
+                     * 判断参数 FileMd5 是否已赋值
+                     * @return FileMd5 是否已赋值
+                     */
+                    bool FileMd5HasBeenSet() const;
+
+                    /**
                      * 获取业务场景 (1-注册, 2-登录, 3-发消息)
                      * @return Scene 业务场景 (1-注册, 2-登录, 3-发消息)
                      */
@@ -245,22 +191,80 @@ namespace TencentCloud
                     bool SceneHasBeenSet() const;
 
                     /**
-                     * 获取网址 (业务名为bri_url时必填)
-                     * @return Url 网址 (业务名为bri_url时必填)
+                     * 获取电话号码 (业务名为bri_num时必填)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PhoneNumber 电话号码 (业务名为bri_num时必填)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetUrl() const;
+                    std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置网址 (业务名为bri_url时必填)
-                     * @param Url 网址 (业务名为bri_url时必填)
+                     * 设置电话号码 (业务名为bri_num时必填)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PhoneNumber 电话号码 (业务名为bri_num时必填)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetUrl(const std::string& _url);
+                    void SetPhoneNumber(const std::string& _phoneNumber);
 
                     /**
-                     * 判断参数 Url 是否已赋值
-                     * @return Url 是否已赋值
+                     * 判断参数 PhoneNumber 是否已赋值
+                     * @return PhoneNumber 是否已赋值
                      */
-                    bool UrlHasBeenSet() const;
+                    bool PhoneNumberHasBeenSet() const;
+
+                    /**
+                     * 获取Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)
+                     * @return FileSize Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)
+                     */
+                    int64_t GetFileSize() const;
+
+                    /**
+                     * 设置Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)
+                     * @param FileSize Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)
+                     */
+                    void SetFileSize(const int64_t& _fileSize);
+
+                    /**
+                     * 判断参数 FileSize 是否已赋值
+                     * @return FileSize 是否已赋值
+                     */
+                    bool FileSizeHasBeenSet() const;
+
+                    /**
+                     * 获取点分格式的IP (业务名为bri_ip时必填)
+                     * @return Ip 点分格式的IP (业务名为bri_ip时必填)
+                     */
+                    std::string GetIp() const;
+
+                    /**
+                     * 设置点分格式的IP (业务名为bri_ip时必填)
+                     * @param Ip 点分格式的IP (业务名为bri_ip时必填)
+                     */
+                    void SetIp(const std::string& _ip);
+
+                    /**
+                     * 判断参数 Ip 是否已赋值
+                     * @return Ip 是否已赋值
+                     */
+                    bool IpHasBeenSet() const;
+
+                    /**
+                     * 获取安卓设备的Imei (业务名为bri_dev时必填)
+                     * @return Imei 安卓设备的Imei (业务名为bri_dev时必填)
+                     */
+                    std::string GetImei() const;
+
+                    /**
+                     * 设置安卓设备的Imei (业务名为bri_dev时必填)
+                     * @param Imei 安卓设备的Imei (业务名为bri_dev时必填)
+                     */
+                    void SetImei(const std::string& _imei);
+
+                    /**
+                     * 判断参数 Imei 是否已赋值
+                     * @return Imei 是否已赋值
+                     */
+                    bool ImeiHasBeenSet() const;
 
                     /**
                      * 获取微信号 (业务名为bri_social时必填, 除非已填QQ)
@@ -307,48 +311,6 @@ namespace TencentCloud
                     bool m_serviceHasBeenSet;
 
                     /**
-                     * Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)
-                     */
-                    std::string m_certMd5;
-                    bool m_certMd5HasBeenSet;
-
-                    /**
-                     * Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)
-                     */
-                    std::string m_fileMd5;
-                    bool m_fileMd5HasBeenSet;
-
-                    /**
-                     * Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)
-                     */
-                    int64_t m_fileSize;
-                    bool m_fileSizeHasBeenSet;
-
-                    /**
-                     * 安卓设备的Imei (业务名为bri_dev时必填)
-                     */
-                    std::string m_imei;
-                    bool m_imeiHasBeenSet;
-
-                    /**
-                     * 点分格式的IP (业务名为bri_ip时必填)
-                     */
-                    std::string m_ip;
-                    bool m_ipHasBeenSet;
-
-                    /**
-                     * Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)
-                     */
-                    std::string m_packageName;
-                    bool m_packageNameHasBeenSet;
-
-                    /**
-                     * 电话号码 (业务名为bri_num时必填)
-                     */
-                    std::string m_phoneNumber;
-                    bool m_phoneNumberHasBeenSet;
-
-                    /**
                      * QQ号 (业务名为bri_social时必填, 除非已填Wechat)
                      */
                     std::string m_qQ;
@@ -361,16 +323,59 @@ namespace TencentCloud
                     bool m_qQTagHasBeenSet;
 
                     /**
+                     * 网址 (业务名为bri_url时必填)
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
+
+                    /**
+                     * Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)
+                     */
+                    std::string m_certMd5;
+                    bool m_certMd5HasBeenSet;
+
+                    /**
+                     * Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)
+                     */
+                    std::string m_packageName;
+                    bool m_packageNameHasBeenSet;
+
+                    /**
+                     * Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)
+                     */
+                    std::string m_fileMd5;
+                    bool m_fileMd5HasBeenSet;
+
+                    /**
                      * 业务场景 (1-注册, 2-登录, 3-发消息)
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
 
                     /**
-                     * 网址 (业务名为bri_url时必填)
+                     * 电话号码 (业务名为bri_num时必填)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_url;
-                    bool m_urlHasBeenSet;
+                    std::string m_phoneNumber;
+                    bool m_phoneNumberHasBeenSet;
+
+                    /**
+                     * Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)
+                     */
+                    int64_t m_fileSize;
+                    bool m_fileSizeHasBeenSet;
+
+                    /**
+                     * 点分格式的IP (业务名为bri_ip时必填)
+                     */
+                    std::string m_ip;
+                    bool m_ipHasBeenSet;
+
+                    /**
+                     * 安卓设备的Imei (业务名为bri_dev时必填)
+                     */
+                    std::string m_imei;
+                    bool m_imeiHasBeenSet;
 
                     /**
                      * 微信号 (业务名为bri_social时必填, 除非已填QQ)

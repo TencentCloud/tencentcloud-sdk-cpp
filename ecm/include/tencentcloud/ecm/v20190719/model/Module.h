@@ -206,14 +206,14 @@ DELETEFAILED：删除失败
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取默认带宽
-                     * @return DefaultBandwidth 默认带宽
+                     * 获取默认出带宽
+                     * @return DefaultBandwidth 默认出带宽
                      */
                     int64_t GetDefaultBandwidth() const;
 
                     /**
-                     * 设置默认带宽
-                     * @param DefaultBandwidth 默认带宽
+                     * 设置默认出带宽
+                     * @param DefaultBandwidth 默认出带宽
                      */
                     void SetDefaultBandwidth(const int64_t& _defaultBandwidth);
 
@@ -281,6 +281,24 @@ DELETEFAILED：删除失败
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取默认入带宽
+                     * @return DefaultBandwidthIn 默认入带宽
+                     */
+                    int64_t GetDefaultBandwidthIn() const;
+
+                    /**
+                     * 设置默认入带宽
+                     * @param DefaultBandwidthIn 默认入带宽
+                     */
+                    void SetDefaultBandwidthIn(const int64_t& _defaultBandwidthIn);
+
+                    /**
+                     * 判断参数 DefaultBandwidthIn 是否已赋值
+                     * @return DefaultBandwidthIn 是否已赋值
+                     */
+                    bool DefaultBandwidthInHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,7 +353,7 @@ DELETEFAILED：删除失败
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 默认带宽
+                     * 默认出带宽
                      */
                     int64_t m_defaultBandwidth;
                     bool m_defaultBandwidthHasBeenSet;
@@ -358,6 +376,12 @@ DELETEFAILED：删除失败
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 默认入带宽
+                     */
+                    int64_t m_defaultBandwidthIn;
+                    bool m_defaultBandwidthInHasBeenSet;
 
                 };
             }

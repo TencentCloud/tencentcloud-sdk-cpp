@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取游戏会话进程超时
-                     * @return GameServerSessionActivationTimeoutSeconds 游戏会话进程超时
+                     * 获取游戏会话进程超时，最小值1，最大值600，单位秒
+                     * @return GameServerSessionActivationTimeoutSeconds 游戏会话进程超时，最小值1，最大值600，单位秒
                      */
                     uint64_t GetGameServerSessionActivationTimeoutSeconds() const;
 
                     /**
-                     * 设置游戏会话进程超时
-                     * @param GameServerSessionActivationTimeoutSeconds 游戏会话进程超时
+                     * 设置游戏会话进程超时，最小值1，最大值600，单位秒
+                     * @param GameServerSessionActivationTimeoutSeconds 游戏会话进程超时，最小值1，最大值600，单位秒
                      */
                     void SetGameServerSessionActivationTimeoutSeconds(const uint64_t& _gameServerSessionActivationTimeoutSeconds);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool GameServerSessionActivationTimeoutSecondsHasBeenSet() const;
 
                     /**
-                     * 获取最大游戏会话数
-                     * @return MaxConcurrentGameServerSessionActivations 最大游戏会话数
+                     * 获取最大游戏会话数，最小值1，最大值2147483647
+                     * @return MaxConcurrentGameServerSessionActivations 最大游戏会话数，最小值1，最大值2147483647
                      */
                     uint64_t GetMaxConcurrentGameServerSessionActivations() const;
 
                     /**
-                     * 设置最大游戏会话数
-                     * @param MaxConcurrentGameServerSessionActivations 最大游戏会话数
+                     * 设置最大游戏会话数，最小值1，最大值2147483647
+                     * @param MaxConcurrentGameServerSessionActivations 最大游戏会话数，最小值1，最大值2147483647
                      */
                     void SetMaxConcurrentGameServerSessionActivations(const uint64_t& _maxConcurrentGameServerSessionActivations);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool MaxConcurrentGameServerSessionActivationsHasBeenSet() const;
 
                     /**
-                     * 获取服务进程配置
-                     * @return ServerProcesses 服务进程配置
+                     * 获取服务进程配置，至少有一个进程配置
+                     * @return ServerProcesses 服务进程配置，至少有一个进程配置
                      */
                     std::vector<ServerProcesse> GetServerProcesses() const;
 
                     /**
-                     * 设置服务进程配置
-                     * @param ServerProcesses 服务进程配置
+                     * 设置服务进程配置，至少有一个进程配置
+                     * @param ServerProcesses 服务进程配置，至少有一个进程配置
                      */
                     void SetServerProcesses(const std::vector<ServerProcesse>& _serverProcesses);
 
@@ -104,19 +104,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 游戏会话进程超时
+                     * 游戏会话进程超时，最小值1，最大值600，单位秒
                      */
                     uint64_t m_gameServerSessionActivationTimeoutSeconds;
                     bool m_gameServerSessionActivationTimeoutSecondsHasBeenSet;
 
                     /**
-                     * 最大游戏会话数
+                     * 最大游戏会话数，最小值1，最大值2147483647
                      */
                     uint64_t m_maxConcurrentGameServerSessionActivations;
                     bool m_maxConcurrentGameServerSessionActivationsHasBeenSet;
 
                     /**
-                     * 服务进程配置
+                     * 服务进程配置，至少有一个进程配置
                      */
                     std::vector<ServerProcesse> m_serverProcesses;
                     bool m_serverProcessesHasBeenSet;

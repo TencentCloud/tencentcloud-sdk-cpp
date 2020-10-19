@@ -100,14 +100,14 @@ namespace TencentCloud
                     bool InboundPermissionsHasBeenSet() const;
 
                     /**
-                     * 获取服务器类型，例如S5.LARGE8
-                     * @return InstanceType 服务器类型，例如S5.LARGE8
+                     * 获取服务器类型，参数根据[获取服务器实例类型列表](https://cloud.tencent.com/document/product/1165/48732)接口获取。
+                     * @return InstanceType 服务器类型，参数根据[获取服务器实例类型列表](https://cloud.tencent.com/document/product/1165/48732)接口获取。
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置服务器类型，例如S5.LARGE8
-                     * @param InstanceType 服务器类型，例如S5.LARGE8
+                     * 设置服务器类型，参数根据[获取服务器实例类型列表](https://cloud.tencent.com/document/product/1165/48732)接口获取。
+                     * @param InstanceType 服务器类型，参数根据[获取服务器实例类型列表](https://cloud.tencent.com/document/product/1165/48732)接口获取。
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
@@ -172,14 +172,14 @@ namespace TencentCloud
                     bool NewGameServerSessionProtectionPolicyHasBeenSet() const;
 
                     /**
-                     * 获取VPC 网络 Id，弃用，对等链接已不再使用
-                     * @return PeerVpcId VPC 网络 Id，弃用，对等链接已不再使用
+                     * 获取VPC 网络 Id，对等连接已不再使用
+                     * @return PeerVpcId VPC 网络 Id，对等连接已不再使用
                      */
                     std::string GetPeerVpcId() const;
 
                     /**
-                     * 设置VPC 网络 Id，弃用，对等链接已不再使用
-                     * @param PeerVpcId VPC 网络 Id，弃用，对等链接已不再使用
+                     * 设置VPC 网络 Id，对等连接已不再使用
+                     * @param PeerVpcId VPC 网络 Id，对等连接已不再使用
                      */
                     void SetPeerVpcId(const std::string& _peerVpcId);
 
@@ -226,14 +226,14 @@ namespace TencentCloud
                     bool RuntimeConfigurationHasBeenSet() const;
 
                     /**
-                     * 获取VPC 子网，弃用，对等链接已不再使用
-                     * @return SubNetId VPC 子网，弃用，对等链接已不再使用
+                     * 获取VPC 子网，对等连接已不再使用
+                     * @return SubNetId VPC 子网，对等连接已不再使用
                      */
                     std::string GetSubNetId() const;
 
                     /**
-                     * 设置VPC 子网，弃用，对等链接已不再使用
-                     * @param SubNetId VPC 子网，弃用，对等链接已不再使用
+                     * 设置VPC 子网，对等连接已不再使用
+                     * @param SubNetId VPC 子网，对等连接已不再使用
                      */
                     void SetSubNetId(const std::string& _subNetId);
 
@@ -244,14 +244,14 @@ namespace TencentCloud
                     bool SubNetIdHasBeenSet() const;
 
                     /**
-                     * 获取时限保护超时时间，默认60分钟，最小值5，最大值1440
-                     * @return GameServerSessionProtectionTimeLimit 时限保护超时时间，默认60分钟，最小值5，最大值1440
+                     * 获取时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效
+                     * @return GameServerSessionProtectionTimeLimit 时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效
                      */
                     int64_t GetGameServerSessionProtectionTimeLimit() const;
 
                     /**
-                     * 设置时限保护超时时间，默认60分钟，最小值5，最大值1440
-                     * @param GameServerSessionProtectionTimeLimit 时限保护超时时间，默认60分钟，最小值5，最大值1440
+                     * 设置时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效
+                     * @param GameServerSessionProtectionTimeLimit 时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效
                      */
                     void SetGameServerSessionProtectionTimeLimit(const int64_t& _gameServerSessionProtectionTimeLimit);
 
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_inboundPermissionsHasBeenSet;
 
                     /**
-                     * 服务器类型，例如S5.LARGE8
+                     * 服务器类型，参数根据[获取服务器实例类型列表](https://cloud.tencent.com/document/product/1165/48732)接口获取。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -306,7 +306,7 @@ namespace TencentCloud
                     bool m_newGameServerSessionProtectionPolicyHasBeenSet;
 
                     /**
-                     * VPC 网络 Id，弃用，对等链接已不再使用
+                     * VPC 网络 Id，对等连接已不再使用
                      */
                     std::string m_peerVpcId;
                     bool m_peerVpcIdHasBeenSet;
@@ -324,13 +324,13 @@ namespace TencentCloud
                     bool m_runtimeConfigurationHasBeenSet;
 
                     /**
-                     * VPC 子网，弃用，对等链接已不再使用
+                     * VPC 子网，对等连接已不再使用
                      */
                     std::string m_subNetId;
                     bool m_subNetIdHasBeenSet;
 
                     /**
-                     * 时限保护超时时间，默认60分钟，最小值5，最大值1440
+                     * 时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效
                      */
                     int64_t m_gameServerSessionProtectionTimeLimit;
                     bool m_gameServerSessionProtectionTimeLimitHasBeenSet;
