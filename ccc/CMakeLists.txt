@@ -19,18 +19,22 @@ set(ccc_public_header
   )
 
 set(ccc_public_header_model
-  include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
-  include/tencentcloud/ccc/v20200210/model/TelCdrInfo.h
-  include/tencentcloud/ccc/v20200210/model/SeatUserInfo.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h
+  include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
+  include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h
+  include/tencentcloud/ccc/v20200210/model/TelCdrInfo.h
+  include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h
+  include/tencentcloud/ccc/v20200210/model/SeatUserInfo.h
   )
 
 set(ccc_src
   src/v20200210/CccClient.cpp
-  src/v20200210/model/DescribeTelCdrResponse.cpp
-  src/v20200210/model/TelCdrInfo.cpp
-  src/v20200210/model/SeatUserInfo.cpp
   src/v20200210/model/DescribeTelCdrRequest.cpp
+  src/v20200210/model/DescribeTelCdrResponse.cpp
+  src/v20200210/model/CreateSDKLoginTokenResponse.cpp
+  src/v20200210/model/TelCdrInfo.cpp
+  src/v20200210/model/CreateSDKLoginTokenRequest.cpp
+  src/v20200210/model/SeatUserInfo.cpp
   )
 
 set(ccc_include

@@ -63,6 +63,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/ZoneInfo.h
   include/tencentcloud/sqlserver/v20180328/model/InquiryPriceCreateDBInstancesRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupByFlowIdResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/RecycleDBInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusRequest.h
   include/tencentcloud/sqlserver/v20180328/model/StartMigrationCheckResponse.h
   include/tencentcloud/sqlserver/v20180328/model/MigrateTask.h
@@ -153,6 +154,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DBPrivilege.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeOrdersRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupDetailsResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/RecycleDBInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DeleteAccountRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupByReadOnlyInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeMaintenanceSpanRequest.h
@@ -243,6 +245,7 @@ set(sqlserver_src
   src/v20180328/model/ZoneInfo.cpp
   src/v20180328/model/InquiryPriceCreateDBInstancesRequest.cpp
   src/v20180328/model/DescribeBackupByFlowIdResponse.cpp
+  src/v20180328/model/RecycleDBInstanceRequest.cpp
   src/v20180328/model/DescribeFlowStatusRequest.cpp
   src/v20180328/model/StartMigrationCheckResponse.cpp
   src/v20180328/model/MigrateTask.cpp
@@ -333,6 +336,7 @@ set(sqlserver_src
   src/v20180328/model/DBPrivilege.cpp
   src/v20180328/model/DescribeOrdersRequest.cpp
   src/v20180328/model/DescribeReadOnlyGroupDetailsResponse.cpp
+  src/v20180328/model/RecycleDBInstanceResponse.cpp
   src/v20180328/model/DeleteAccountRequest.cpp
   src/v20180328/model/DescribeReadOnlyGroupByReadOnlyInstanceRequest.cpp
   src/v20180328/model/DescribeMaintenanceSpanRequest.cpp

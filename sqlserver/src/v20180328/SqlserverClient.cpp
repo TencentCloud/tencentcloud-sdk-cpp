@@ -2534,6 +2534,49 @@ SqlserverClient::QueryMigrationCheckProcessOutcomeCallable SqlserverClient::Quer
     return task->get_future();
 }
 
+SqlserverClient::RecycleDBInstanceOutcome SqlserverClient::RecycleDBInstance(const RecycleDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecycleDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecycleDBInstanceResponse rsp = RecycleDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecycleDBInstanceOutcome(rsp);
+        else
+            return RecycleDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return RecycleDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::RecycleDBInstanceAsync(const RecycleDBInstanceRequest& request, const RecycleDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecycleDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::RecycleDBInstanceOutcomeCallable SqlserverClient::RecycleDBInstanceCallable(const RecycleDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecycleDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->RecycleDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::RemoveBackupsOutcome SqlserverClient::RemoveBackups(const RemoveBackupsRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveBackups");

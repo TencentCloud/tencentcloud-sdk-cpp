@@ -139,6 +139,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyReadOnlyGroupDetailsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/QueryMigrationCheckProcessRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/QueryMigrationCheckProcessResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/RecycleDBInstanceRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/RecycleDBInstanceResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/RemoveBackupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/RemoveBackupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/RenewDBInstanceRequest.h>
@@ -351,6 +353,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryMigrationCheckProcessResponse> QueryMigrationCheckProcessOutcome;
                 typedef std::future<QueryMigrationCheckProcessOutcome> QueryMigrationCheckProcessOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::QueryMigrationCheckProcessRequest&, QueryMigrationCheckProcessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMigrationCheckProcessAsyncHandler;
+                typedef Outcome<Error, Model::RecycleDBInstanceResponse> RecycleDBInstanceOutcome;
+                typedef std::future<RecycleDBInstanceOutcome> RecycleDBInstanceOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::RecycleDBInstanceRequest&, RecycleDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecycleDBInstanceAsyncHandler;
                 typedef Outcome<Error, Model::RemoveBackupsResponse> RemoveBackupsOutcome;
                 typedef std::future<RemoveBackupsOutcome> RemoveBackupsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::RemoveBackupsRequest&, RemoveBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveBackupsAsyncHandler;
@@ -911,6 +916,15 @@ namespace TencentCloud
                 QueryMigrationCheckProcessOutcome QueryMigrationCheckProcess(const Model::QueryMigrationCheckProcessRequest &request);
                 void QueryMigrationCheckProcessAsync(const Model::QueryMigrationCheckProcessRequest& request, const QueryMigrationCheckProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryMigrationCheckProcessOutcomeCallable QueryMigrationCheckProcessCallable(const Model::QueryMigrationCheckProcessRequest& request);
+
+                /**
+                 *本接口（RecycleDBInstance）用于主动回收已下线的SQLSERVER实例
+                 * @param req RecycleDBInstanceRequest
+                 * @return RecycleDBInstanceOutcome
+                 */
+                RecycleDBInstanceOutcome RecycleDBInstance(const Model::RecycleDBInstanceRequest &request);
+                void RecycleDBInstanceAsync(const Model::RecycleDBInstanceRequest& request, const RecycleDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecycleDBInstanceOutcomeCallable RecycleDBInstanceCallable(const Model::RecycleDBInstanceRequest& request);
 
                 /**
                  *本接口（RemoveBackups）可以删除用户手动创建的备份文件。待删除的备份策略可以是实例备份，也可以是多库备份。

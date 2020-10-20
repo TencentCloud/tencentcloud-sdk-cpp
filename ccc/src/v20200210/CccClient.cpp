@@ -40,6 +40,49 @@ CccClient::CccClient(const Credential &credential, const string &region, const C
 }
 
 
+CccClient::CreateSDKLoginTokenOutcome CccClient::CreateSDKLoginToken(const CreateSDKLoginTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSDKLoginToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSDKLoginTokenResponse rsp = CreateSDKLoginTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSDKLoginTokenOutcome(rsp);
+        else
+            return CreateSDKLoginTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSDKLoginTokenOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateSDKLoginTokenAsync(const CreateSDKLoginTokenRequest& request, const CreateSDKLoginTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSDKLoginToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateSDKLoginTokenOutcomeCallable CccClient::CreateSDKLoginTokenCallable(const CreateSDKLoginTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSDKLoginTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSDKLoginToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeTelCdrOutcome CccClient::DescribeTelCdr(const DescribeTelCdrRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTelCdr");

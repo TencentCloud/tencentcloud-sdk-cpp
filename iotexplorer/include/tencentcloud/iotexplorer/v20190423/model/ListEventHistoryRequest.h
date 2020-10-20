@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool SizeHasBeenSet() const;
 
+                    /**
+                     * 获取事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。
+                     * @return EventId 事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。
+                     * @param EventId 事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     */
+                    bool EventIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
+
+                    /**
+                     * 事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
 
                 };
             }

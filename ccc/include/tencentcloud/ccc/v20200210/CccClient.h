@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h>
 
@@ -39,11 +41,23 @@ namespace TencentCloud
                 CccClient(const Credential &credential, const std::string &region);
                 CccClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateSDKLoginTokenResponse> CreateSDKLoginTokenOutcome;
+                typedef std::future<CreateSDKLoginTokenOutcome> CreateSDKLoginTokenOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreateSDKLoginTokenRequest&, CreateSDKLoginTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSDKLoginTokenAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTelCdrResponse> DescribeTelCdrOutcome;
                 typedef std::future<DescribeTelCdrOutcome> DescribeTelCdrOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelCdrRequest&, DescribeTelCdrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelCdrAsyncHandler;
 
 
+
+                /**
+                 *创建 SDK 登录 Token。
+                 * @param req CreateSDKLoginTokenRequest
+                 * @return CreateSDKLoginTokenOutcome
+                 */
+                CreateSDKLoginTokenOutcome CreateSDKLoginToken(const Model::CreateSDKLoginTokenRequest &request);
+                void CreateSDKLoginTokenAsync(const Model::CreateSDKLoginTokenRequest& request, const CreateSDKLoginTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSDKLoginTokenOutcomeCallable CreateSDKLoginTokenCallable(const Model::CreateSDKLoginTokenRequest& request);
 
                 /**
                  *获取电话服务记录与录音

@@ -37,7 +37,8 @@ DescribeJobResponse::DescribeJobResponse() :
     m_taskMetricsHasBeenSet(false),
     m_taskInstanceMetricsHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_nextActionHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome DescribeJobResponse::Deserialize(const string &payload)
         m_tagsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NextAction") && !rsp["NextAction"].IsNull())
+    {
+        if (!rsp["NextAction"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NextAction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextAction = string(rsp["NextAction"].GetString());
+        m_nextActionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,7 +365,7 @@ bool DescribeJobResponse::TaskMetricsHasBeenSet() const
     return m_taskMetricsHasBeenSet;
 }
 
-TaskInstanceView DescribeJobResponse::GetTaskInstanceMetrics() const
+TaskInstanceMetrics DescribeJobResponse::GetTaskInstanceMetrics() const
 {
     return m_taskInstanceMetrics;
 }
@@ -382,6 +393,16 @@ vector<Tag> DescribeJobResponse::GetTags() const
 bool DescribeJobResponse::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string DescribeJobResponse::GetNextAction() const
+{
+    return m_nextAction;
+}
+
+bool DescribeJobResponse::NextActionHasBeenSet() const
+{
+    return m_nextActionHasBeenSet;
 }
 
 

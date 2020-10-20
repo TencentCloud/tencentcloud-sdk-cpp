@@ -30,7 +30,8 @@ ListEventHistoryRequest::ListEventHistoryRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_contextHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_eventIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string ListEventHistoryRequest::ToJsonString() const
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_size, allocator);
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_eventId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void ListEventHistoryRequest::SetSize(const int64_t& _size)
 bool ListEventHistoryRequest::SizeHasBeenSet() const
 {
     return m_sizeHasBeenSet;
+}
+
+string ListEventHistoryRequest::GetEventId() const
+{
+    return m_eventId;
+}
+
+void ListEventHistoryRequest::SetEventId(const string& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool ListEventHistoryRequest::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
 }
 
 

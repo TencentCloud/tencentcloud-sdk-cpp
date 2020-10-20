@@ -24,7 +24,7 @@
 #include <tencentcloud/batch/v20170312/model/TaskView.h>
 #include <tencentcloud/batch/v20170312/model/Dependence.h>
 #include <tencentcloud/batch/v20170312/model/TaskMetrics.h>
-#include <tencentcloud/batch/v20170312/model/TaskInstanceView.h>
+#include <tencentcloud/batch/v20170312/model/TaskInstanceMetrics.h>
 #include <tencentcloud/batch/v20170312/model/Tag.h>
 
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                      * 获取任务实例统计指标
                      * @return TaskInstanceMetrics 任务实例统计指标
                      */
-                    TaskInstanceView GetTaskInstanceMetrics() const;
+                    TaskInstanceMetrics GetTaskInstanceMetrics() const;
 
                     /**
                      * 判断参数 TaskInstanceMetrics 是否已赋值
@@ -204,6 +204,20 @@ namespace TencentCloud
                      * @return Tags 是否已赋值
                      */
                     bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取下一步动作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NextAction 下一步动作
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNextAction() const;
+
+                    /**
+                     * 判断参数 NextAction 是否已赋值
+                     * @return NextAction 是否已赋值
+                     */
+                    bool NextActionHasBeenSet() const;
 
                 private:
 
@@ -270,7 +284,7 @@ namespace TencentCloud
                     /**
                      * 任务实例统计指标
                      */
-                    TaskInstanceView m_taskInstanceMetrics;
+                    TaskInstanceMetrics m_taskInstanceMetrics;
                     bool m_taskInstanceMetricsHasBeenSet;
 
                     /**
@@ -285,6 +299,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 下一步动作
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nextAction;
+                    bool m_nextActionHasBeenSet;
 
                 };
             }
