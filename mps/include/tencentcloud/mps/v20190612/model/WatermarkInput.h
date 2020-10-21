@@ -68,16 +68,20 @@ namespace TencentCloud
                     /**
                      * 获取水印自定义参数，当 Definition 填 0 时有效。
 该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。
+水印自定义参数不支持截图打水印。
                      * @return RawParameter 水印自定义参数，当 Definition 填 0 时有效。
 该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。
+水印自定义参数不支持截图打水印。
                      */
                     RawWatermarkParameter GetRawParameter() const;
 
                     /**
                      * 设置水印自定义参数，当 Definition 填 0 时有效。
 该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。
+水印自定义参数不支持截图打水印。
                      * @param RawParameter 水印自定义参数，当 Definition 填 0 时有效。
 该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。
+水印自定义参数不支持截图打水印。
                      */
                     void SetRawParameter(const RawWatermarkParameter& _rawParameter);
 
@@ -89,13 +93,17 @@ namespace TencentCloud
 
                     /**
                      * 获取文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
+文字水印不支持截图打水印。
                      * @return TextContent 文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
+文字水印不支持截图打水印。
                      */
                     std::string GetTextContent() const;
 
                     /**
                      * 设置文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
+文字水印不支持截图打水印。
                      * @param TextContent 文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
+文字水印不支持截图打水印。
                      */
                     void SetTextContent(const std::string& _textContent);
 
@@ -107,13 +115,17 @@ namespace TencentCloud
 
                     /**
                      * 获取SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
+SVG 水印不支持截图打水印。
                      * @return SvgContent SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
+SVG 水印不支持截图打水印。
                      */
                     std::string GetSvgContent() const;
 
                     /**
                      * 设置SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
+SVG 水印不支持截图打水印。
                      * @param SvgContent SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
+SVG 水印不支持截图打水印。
                      */
                     void SetSvgContent(const std::string& _svgContent);
 
@@ -194,18 +206,21 @@ namespace TencentCloud
                     /**
                      * 水印自定义参数，当 Definition 填 0 时有效。
 该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。
+水印自定义参数不支持截图打水印。
                      */
                     RawWatermarkParameter m_rawParameter;
                     bool m_rawParameterHasBeenSet;
 
                     /**
                      * 文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
+文字水印不支持截图打水印。
                      */
                     std::string m_textContent;
                     bool m_textContentHasBeenSet;
 
                     /**
                      * SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
+SVG 水印不支持截图打水印。
                      */
                     std::string m_svgContent;
                     bool m_svgContentHasBeenSet;

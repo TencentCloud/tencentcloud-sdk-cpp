@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool DeployDescHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许强制启动
+                     * @return ForceStart 是否允许强制启动
+                     */
+                    bool GetForceStart() const;
+
+                    /**
+                     * 设置是否允许强制启动
+                     * @param ForceStart 是否允许强制启动
+                     */
+                    void SetForceStart(const bool& _forceStart);
+
+                    /**
+                     * 判断参数 ForceStart 是否已赋值
+                     * @return ForceStart 是否已赋值
+                     */
+                    bool ForceStartHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_deployDesc;
                     bool m_deployDescHasBeenSet;
+
+                    /**
+                     * 是否允许强制启动
+                     */
+                    bool m_forceStart;
+                    bool m_forceStartHasBeenSet;
 
                 };
             }

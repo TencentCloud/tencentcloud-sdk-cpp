@@ -641,6 +641,28 @@ namespace TencentCloud
                      */
                     bool OperationInfoHasBeenSet() const;
 
+                    /**
+                     * 获取集群版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterVersion 集群版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterVersion() const;
+
+                    /**
+                     * 设置集群版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterVersion 集群版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterVersion(const std::string& _clusterVersion);
+
+                    /**
+                     * 判断参数 ClusterVersion 是否已赋值
+                     * @return ClusterVersion 是否已赋值
+                     */
+                    bool ClusterVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -831,6 +853,13 @@ namespace TencentCloud
                      */
                     OperationInfo m_operationInfo;
                     bool m_operationInfoHasBeenSet;
+
+                    /**
+                     * 集群版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterVersion;
+                    bool m_clusterVersionHasBeenSet;
 
                 };
             }

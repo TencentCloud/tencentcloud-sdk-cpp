@@ -29,7 +29,8 @@ DescribeMicroservicesRequest::DescribeMicroservicesRequest() :
     m_orderByHasBeenSet(false),
     m_orderTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,19 @@ string DescribeMicroservicesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_status.begin(); itr != m_status.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -190,6 +204,22 @@ void DescribeMicroservicesRequest::SetLimit(const int64_t& _limit)
 bool DescribeMicroservicesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> DescribeMicroservicesRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeMicroservicesRequest::SetStatus(const vector<string>& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeMicroservicesRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

@@ -34,7 +34,8 @@ Namespace::Namespace() :
     m_clusterListHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_namespaceResourceTypeHasBeenSet(false),
-    m_namespaceTypeHasBeenSet(false)
+    m_namespaceTypeHasBeenSet(false),
+    m_isHaEnableHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome Namespace::Deserialize(const Value &value)
         m_namespaceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsHaEnable") && !value["IsHaEnable"].IsNull())
+    {
+        if (!value["IsHaEnable"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Namespace.IsHaEnable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isHaEnable = string(value["IsHaEnable"].GetString());
+        m_isHaEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -299,6 +310,14 @@ void Namespace::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "NamespaceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_namespaceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isHaEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsHaEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_isHaEnable.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -510,5 +529,21 @@ void Namespace::SetNamespaceType(const string& _namespaceType)
 bool Namespace::NamespaceTypeHasBeenSet() const
 {
     return m_namespaceTypeHasBeenSet;
+}
+
+string Namespace::GetIsHaEnable() const
+{
+    return m_isHaEnable;
+}
+
+void Namespace::SetIsHaEnable(const string& _isHaEnable)
+{
+    m_isHaEnable = _isHaEnable;
+    m_isHaEnableHasBeenSet = true;
+}
+
+bool Namespace::IsHaEnableHasBeenSet() const
+{
+    return m_isHaEnableHasBeenSet;
 }
 

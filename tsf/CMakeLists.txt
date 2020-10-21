@@ -42,7 +42,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeImageTagsRequest.h
   include/tencentcloud/tsf/v20180326/model/ModifyLaneRuleResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeSimpleClustersResponse.h
-  include/tencentcloud/tsf/v20180326/model/TaskRule.h
+  include/tencentcloud/tsf/v20180326/model/SchedulingStrategy.h
   include/tencentcloud/tsf/v20180326/model/DescribePodInstancesResponse.h
   include/tencentcloud/tsf/v20180326/model/VmGroup.h
   include/tencentcloud/tsf/v20180326/model/DescribeRepositoryResponse.h
@@ -103,6 +103,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeGroupsResponse.h
   include/tencentcloud/tsf/v20180326/model/TaskId.h
   include/tencentcloud/tsf/v20180326/model/Env.h
+  include/tencentcloud/tsf/v20180326/model/TaskRule.h
   include/tencentcloud/tsf/v20180326/model/DeleteContainerGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeSimpleGroupsRequest.h
   include/tencentcloud/tsf/v20180326/model/CreateNamespaceResponse.h
@@ -333,7 +334,7 @@ set(tsf_src
   src/v20180326/model/DescribeImageTagsRequest.cpp
   src/v20180326/model/ModifyLaneRuleResponse.cpp
   src/v20180326/model/DescribeSimpleClustersResponse.cpp
-  src/v20180326/model/TaskRule.cpp
+  src/v20180326/model/SchedulingStrategy.cpp
   src/v20180326/model/DescribePodInstancesResponse.cpp
   src/v20180326/model/VmGroup.cpp
   src/v20180326/model/DescribeRepositoryResponse.cpp
@@ -394,6 +395,7 @@ set(tsf_src
   src/v20180326/model/DescribeGroupsResponse.cpp
   src/v20180326/model/TaskId.cpp
   src/v20180326/model/Env.cpp
+  src/v20180326/model/TaskRule.cpp
   src/v20180326/model/DeleteContainerGroupResponse.cpp
   src/v20180326/model/DescribeSimpleGroupsRequest.cpp
   src/v20180326/model/CreateNamespaceResponse.cpp

@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取状态过滤，online、offline、single_online
+                     * @return Status 状态过滤，online、offline、single_online
+                     */
+                    std::vector<std::string> GetStatus() const;
+
+                    /**
+                     * 设置状态过滤，online、offline、single_online
+                     * @param Status 状态过滤，online、offline、single_online
+                     */
+                    void SetStatus(const std::vector<std::string>& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 状态过滤，online、offline、single_online
+                     */
+                    std::vector<std::string> m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

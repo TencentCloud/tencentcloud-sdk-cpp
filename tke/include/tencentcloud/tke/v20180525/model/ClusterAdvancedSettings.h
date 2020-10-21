@@ -263,6 +263,24 @@ namespace TencentCloud
                      */
                     bool AuditLogTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取区分单网卡多IP模式和独立网卡模式
+                     * @return VpcCniType 区分单网卡多IP模式和独立网卡模式
+                     */
+                    std::string GetVpcCniType() const;
+
+                    /**
+                     * 设置区分单网卡多IP模式和独立网卡模式
+                     * @param VpcCniType 区分单网卡多IP模式和独立网卡模式
+                     */
+                    void SetVpcCniType(const std::string& _vpcCniType);
+
+                    /**
+                     * 判断参数 VpcCniType 是否已赋值
+                     * @return VpcCniType 是否已赋值
+                     */
+                    bool VpcCniTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +354,12 @@ namespace TencentCloud
                      */
                     std::string m_auditLogTopicId;
                     bool m_auditLogTopicIdHasBeenSet;
+
+                    /**
+                     * 区分单网卡多IP模式和独立网卡模式
+                     */
+                    std::string m_vpcCniType;
+                    bool m_vpcCniTypeHasBeenSet;
 
                 };
             }

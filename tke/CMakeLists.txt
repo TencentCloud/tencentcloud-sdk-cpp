@@ -42,6 +42,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ClusterAsGroup.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusRequest.h
   include/tencentcloud/tke/v20180525/model/Tag.h
+  include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterNetworkSettings.h
   include/tencentcloud/tke/v20180525/model/DescribeImagesResponse.h
   include/tencentcloud/tke/v20180525/model/AutoScalingGroupRange.h
@@ -55,6 +56,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/Label.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterBasicSettings.h
+  include/tencentcloud/tke/v20180525/model/CreatePrometheusDashboardResponse.h
   include/tencentcloud/tke/v20180525/model/RouteTableConflict.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeResponse.h
@@ -74,6 +76,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ResourceDeleteOption.h
   include/tencentcloud/tke/v20180525/model/LoginSettings.h
   include/tencentcloud/tke/v20180525/model/Instance.h
+  include/tencentcloud/tke/v20180525/model/ModifyClusterAttributeResponse.h
   include/tencentcloud/tke/v20180525/model/EnhancedService.h
   include/tencentcloud/tke/v20180525/model/CreateClusterAsGroupRequest.h
   include/tencentcloud/tke/v20180525/model/CreateClusterResponse.h
@@ -93,10 +96,11 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipRequest.h
   include/tencentcloud/tke/v20180525/model/Cluster.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h
+  include/tencentcloud/tke/v20180525/model/CreatePrometheusDashboardRequest.h
   include/tencentcloud/tke/v20180525/model/AddExistedInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterRouteTableResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionRequest.h
-  include/tencentcloud/tke/v20180525/model/ModifyClusterAttributeResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointRequest.h
   include/tencentcloud/tke/v20180525/model/AddExistedInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroupOption.h
@@ -146,6 +150,7 @@ set(tke_src
   src/v20180525/model/ClusterAsGroup.cpp
   src/v20180525/model/DescribeClusterEndpointStatusRequest.cpp
   src/v20180525/model/Tag.cpp
+  src/v20180525/model/DescribePrometheusAgentInstancesRequest.cpp
   src/v20180525/model/ClusterNetworkSettings.cpp
   src/v20180525/model/DescribeImagesResponse.cpp
   src/v20180525/model/AutoScalingGroupRange.cpp
@@ -159,6 +164,7 @@ set(tke_src
   src/v20180525/model/Label.cpp
   src/v20180525/model/DeleteClusterEndpointVipResponse.cpp
   src/v20180525/model/ClusterBasicSettings.cpp
+  src/v20180525/model/CreatePrometheusDashboardResponse.cpp
   src/v20180525/model/RouteTableConflict.cpp
   src/v20180525/model/DeleteClusterInstancesRequest.cpp
   src/v20180525/model/ModifyClusterAsGroupAttributeResponse.cpp
@@ -178,6 +184,7 @@ set(tke_src
   src/v20180525/model/ResourceDeleteOption.cpp
   src/v20180525/model/LoginSettings.cpp
   src/v20180525/model/Instance.cpp
+  src/v20180525/model/ModifyClusterAttributeResponse.cpp
   src/v20180525/model/EnhancedService.cpp
   src/v20180525/model/CreateClusterAsGroupRequest.cpp
   src/v20180525/model/CreateClusterResponse.cpp
@@ -197,10 +204,11 @@ set(tke_src
   src/v20180525/model/DeleteClusterEndpointVipRequest.cpp
   src/v20180525/model/Cluster.cpp
   src/v20180525/model/DescribeClusterEndpointStatusResponse.cpp
+  src/v20180525/model/CreatePrometheusDashboardRequest.cpp
   src/v20180525/model/AddExistedInstancesResponse.cpp
   src/v20180525/model/DeleteClusterRouteTableResponse.cpp
   src/v20180525/model/DescribeClusterAsGroupOptionRequest.cpp
-  src/v20180525/model/ModifyClusterAttributeResponse.cpp
+  src/v20180525/model/DescribePrometheusAgentInstancesResponse.cpp
   src/v20180525/model/CreateClusterEndpointRequest.cpp
   src/v20180525/model/AddExistedInstancesRequest.cpp
   src/v20180525/model/ClusterAsGroupOption.cpp

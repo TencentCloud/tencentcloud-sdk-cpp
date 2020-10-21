@@ -427,6 +427,49 @@ TkeClient::CreateClusterRouteTableOutcomeCallable TkeClient::CreateClusterRouteT
     return task->get_future();
 }
 
+TkeClient::CreatePrometheusDashboardOutcome TkeClient::CreatePrometheusDashboard(const CreatePrometheusDashboardRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrometheusDashboard");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrometheusDashboardResponse rsp = CreatePrometheusDashboardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrometheusDashboardOutcome(rsp);
+        else
+            return CreatePrometheusDashboardOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrometheusDashboardOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreatePrometheusDashboardAsync(const CreatePrometheusDashboardRequest& request, const CreatePrometheusDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrometheusDashboard(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreatePrometheusDashboardOutcomeCallable TkeClient::CreatePrometheusDashboardCallable(const CreatePrometheusDashboardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrometheusDashboardOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrometheusDashboard(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeleteClusterOutcome TkeClient::DeleteCluster(const DeleteClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCluster");
@@ -1237,6 +1280,49 @@ TkeClient::DescribeImagesOutcomeCallable TkeClient::DescribeImagesCallable(const
         [this, request]()
         {
             return this->DescribeImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribePrometheusAgentInstancesOutcome TkeClient::DescribePrometheusAgentInstances(const DescribePrometheusAgentInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusAgentInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusAgentInstancesResponse rsp = DescribePrometheusAgentInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusAgentInstancesOutcome(rsp);
+        else
+            return DescribePrometheusAgentInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusAgentInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePrometheusAgentInstancesAsync(const DescribePrometheusAgentInstancesRequest& request, const DescribePrometheusAgentInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusAgentInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePrometheusAgentInstancesOutcomeCallable TkeClient::DescribePrometheusAgentInstancesCallable(const DescribePrometheusAgentInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusAgentInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusAgentInstances(request);
         }
     );
 

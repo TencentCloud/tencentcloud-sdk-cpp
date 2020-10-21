@@ -1287,6 +1287,92 @@ ClbClient::DescribeClsLogSetOutcomeCallable ClbClient::DescribeClsLogSetCallable
     return task->get_future();
 }
 
+ClbClient::DescribeClusterResourcesOutcome ClbClient::DescribeClusterResources(const DescribeClusterResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterResourcesResponse rsp = DescribeClusterResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterResourcesOutcome(rsp);
+        else
+            return DescribeClusterResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterResourcesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeClusterResourcesAsync(const DescribeClusterResourcesRequest& request, const DescribeClusterResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeClusterResourcesOutcomeCallable ClbClient::DescribeClusterResourcesCallable(const DescribeClusterResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DescribeExclusiveClustersOutcome ClbClient::DescribeExclusiveClusters(const DescribeExclusiveClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExclusiveClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExclusiveClustersResponse rsp = DescribeExclusiveClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExclusiveClustersOutcome(rsp);
+        else
+            return DescribeExclusiveClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExclusiveClustersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeExclusiveClustersAsync(const DescribeExclusiveClustersRequest& request, const DescribeExclusiveClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExclusiveClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeExclusiveClustersOutcomeCallable ClbClient::DescribeExclusiveClustersCallable(const DescribeExclusiveClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExclusiveClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExclusiveClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeListenersOutcome ClbClient::DescribeListeners(const DescribeListenersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeListeners");

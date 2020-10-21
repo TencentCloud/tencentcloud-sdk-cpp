@@ -41,6 +41,8 @@
 #include <tencentcloud/tke/v20180525/model/CreateClusterRouteResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRouteTableRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRouteTableResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreatePrometheusDashboardRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreatePrometheusDashboardResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsRequest.h>
@@ -79,6 +81,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRegionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h>
@@ -130,6 +134,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateClusterRouteTableResponse> CreateClusterRouteTableOutcome;
                 typedef std::future<CreateClusterRouteTableOutcome> CreateClusterRouteTableOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateClusterRouteTableRequest&, CreateClusterRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterRouteTableAsyncHandler;
+                typedef Outcome<Error, Model::CreatePrometheusDashboardResponse> CreatePrometheusDashboardOutcome;
+                typedef std::future<CreatePrometheusDashboardOutcome> CreatePrometheusDashboardOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreatePrometheusDashboardRequest&, CreatePrometheusDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusDashboardAsyncHandler;
                 typedef Outcome<Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
                 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
@@ -187,6 +194,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
                 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeImagesRequest&, DescribeImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
+                typedef Outcome<Error, Model::DescribePrometheusAgentInstancesResponse> DescribePrometheusAgentInstancesOutcome;
+                typedef std::future<DescribePrometheusAgentInstancesOutcome> DescribePrometheusAgentInstancesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribePrometheusAgentInstancesRequest&, DescribePrometheusAgentInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAgentInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -285,6 +295,15 @@ namespace TencentCloud
                 CreateClusterRouteTableOutcome CreateClusterRouteTable(const Model::CreateClusterRouteTableRequest &request);
                 void CreateClusterRouteTableAsync(const Model::CreateClusterRouteTableRequest& request, const CreateClusterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClusterRouteTableOutcomeCallable CreateClusterRouteTableCallable(const Model::CreateClusterRouteTableRequest& request);
+
+                /**
+                 *创建grafana监控面板
+                 * @param req CreatePrometheusDashboardRequest
+                 * @return CreatePrometheusDashboardOutcome
+                 */
+                CreatePrometheusDashboardOutcome CreatePrometheusDashboard(const Model::CreatePrometheusDashboardRequest &request);
+                void CreatePrometheusDashboardAsync(const Model::CreatePrometheusDashboardRequest& request, const CreatePrometheusDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrometheusDashboardOutcomeCallable CreatePrometheusDashboardCallable(const Model::CreatePrometheusDashboardRequest& request);
 
                 /**
                  *删除集群(YUNAPI V3版本)
@@ -456,6 +475,15 @@ namespace TencentCloud
                 DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest &request);
                 void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request);
+
+                /**
+                 *获取关联目标集群的实例列表
+                 * @param req DescribePrometheusAgentInstancesRequest
+                 * @return DescribePrometheusAgentInstancesOutcome
+                 */
+                DescribePrometheusAgentInstancesOutcome DescribePrometheusAgentInstances(const Model::DescribePrometheusAgentInstancesRequest &request);
+                void DescribePrometheusAgentInstancesAsync(const Model::DescribePrometheusAgentInstancesRequest& request, const DescribePrometheusAgentInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusAgentInstancesOutcomeCallable DescribePrometheusAgentInstancesCallable(const Model::DescribePrometheusAgentInstancesRequest& request);
 
                 /**
                  *获取容器服务支持的所有地域

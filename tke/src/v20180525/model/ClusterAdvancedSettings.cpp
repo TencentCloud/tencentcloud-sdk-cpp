@@ -33,7 +33,8 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_kubeProxyModeHasBeenSet(false),
     m_auditEnabledHasBeenSet(false),
     m_auditLogsetIdHasBeenSet(false),
-    m_auditLogTopicIdHasBeenSet(false)
+    m_auditLogTopicIdHasBeenSet(false),
+    m_vpcCniTypeHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,16 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
         m_auditLogTopicIdHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcCniType") && !value["VpcCniType"].IsNull())
+    {
+        if (!value["VpcCniType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.VpcCniType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcCniType = string(value["VpcCniType"].GetString());
+        m_vpcCniTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -271,6 +282,14 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
         string key = "AuditLogTopicId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_auditLogTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcCniTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcCniType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vpcCniType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -466,5 +485,21 @@ void ClusterAdvancedSettings::SetAuditLogTopicId(const string& _auditLogTopicId)
 bool ClusterAdvancedSettings::AuditLogTopicIdHasBeenSet() const
 {
     return m_auditLogTopicIdHasBeenSet;
+}
+
+string ClusterAdvancedSettings::GetVpcCniType() const
+{
+    return m_vpcCniType;
+}
+
+void ClusterAdvancedSettings::SetVpcCniType(const string& _vpcCniType)
+{
+    m_vpcCniType = _vpcCniType;
+    m_vpcCniTypeHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::VpcCniTypeHasBeenSet() const
+{
+    return m_vpcCniTypeHasBeenSet;
 }
 

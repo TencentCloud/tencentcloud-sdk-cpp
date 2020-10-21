@@ -334,6 +334,28 @@ Other-Overseas（其他境外地区）
                      */
                     bool ProductRegionHasBeenSet() const;
 
+                    /**
+                     * 获取接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessMode 接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAccessMode() const;
+
+                    /**
+                     * 设置接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccessMode 接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccessMode(const int64_t& _accessMode);
+
+                    /**
+                     * 判断参数 AccessMode 是否已赋值
+                     * @return AccessMode 是否已赋值
+                     */
+                    bool AccessModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +447,13 @@ Other-Overseas（其他境外地区）
                      */
                     std::string m_productRegion;
                     bool m_productRegionHasBeenSet;
+
+                    /**
+                     * 接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_accessMode;
+                    bool m_accessModeHasBeenSet;
 
                 };
             }

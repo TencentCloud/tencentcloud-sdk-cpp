@@ -333,6 +333,28 @@ namespace TencentCloud
                      */
                     bool NamespaceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启高可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsHaEnable 是否开启高可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsHaEnable() const;
+
+                    /**
+                     * 设置是否开启高可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsHaEnable 是否开启高可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsHaEnable(const std::string& _isHaEnable);
+
+                    /**
+                     * 判断参数 IsHaEnable 是否已赋值
+                     * @return IsHaEnable 是否已赋值
+                     */
+                    bool IsHaEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +447,13 @@ namespace TencentCloud
                      */
                     std::string m_namespaceType;
                     bool m_namespaceTypeHasBeenSet;
+
+                    /**
+                     * 是否开启高可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isHaEnable;
+                    bool m_isHaEnableHasBeenSet;
 
                 };
             }

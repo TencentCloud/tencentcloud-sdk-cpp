@@ -48,7 +48,8 @@ Cluster::Cluster() :
     m_clusterLimitMemHasBeenSet(false),
     m_runServiceInstanceCountHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_operationInfoHasBeenSet(false)
+    m_operationInfoHasBeenSet(false),
+    m_clusterVersionHasBeenSet(false)
 {
 }
 
@@ -334,6 +335,16 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
         m_operationInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterVersion") && !value["ClusterVersion"].IsNull())
+    {
+        if (!value["ClusterVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.ClusterVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterVersion = string(value["ClusterVersion"].GetString());
+        m_clusterVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -556,6 +567,14 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_operationInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_clusterVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clusterVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -991,5 +1010,21 @@ void Cluster::SetOperationInfo(const OperationInfo& _operationInfo)
 bool Cluster::OperationInfoHasBeenSet() const
 {
     return m_operationInfoHasBeenSet;
+}
+
+string Cluster::GetClusterVersion() const
+{
+    return m_clusterVersion;
+}
+
+void Cluster::SetClusterVersion(const string& _clusterVersion)
+{
+    m_clusterVersion = _clusterVersion;
+    m_clusterVersionHasBeenSet = true;
+}
+
+bool Cluster::ClusterVersionHasBeenSet() const
+{
+    return m_clusterVersionHasBeenSet;
 }
 

@@ -23,7 +23,8 @@ using namespace std;
 
 MediaInputInfo::MediaInputInfo() :
     m_typeHasBeenSet(false),
-    m_cosInputInfoHasBeenSet(false)
+    m_cosInputInfoHasBeenSet(false),
+    m_urlInputInfoHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,23 @@ CoreInternalOutcome MediaInputInfo::Deserialize(const Value &value)
         m_cosInputInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("UrlInputInfo") && !value["UrlInputInfo"].IsNull())
+    {
+        if (!value["UrlInputInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MediaInputInfo.UrlInputInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_urlInputInfo.Deserialize(value["UrlInputInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_urlInputInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -81,6 +99,15 @@ void MediaInputInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_cosInputInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_urlInputInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UrlInputInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_urlInputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -116,5 +143,21 @@ void MediaInputInfo::SetCosInputInfo(const CosInputInfo& _cosInputInfo)
 bool MediaInputInfo::CosInputInfoHasBeenSet() const
 {
     return m_cosInputInfoHasBeenSet;
+}
+
+UrlInputInfo MediaInputInfo::GetUrlInputInfo() const
+{
+    return m_urlInputInfo;
+}
+
+void MediaInputInfo::SetUrlInputInfo(const UrlInputInfo& _urlInputInfo)
+{
+    m_urlInputInfo = _urlInputInfo;
+    m_urlInputInfoHasBeenSet = true;
+}
+
+bool MediaInputInfo::UrlInputInfoHasBeenSet() const
+{
+    return m_urlInputInfoHasBeenSet;
 }
 

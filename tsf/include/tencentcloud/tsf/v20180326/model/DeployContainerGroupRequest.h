@@ -24,6 +24,7 @@
 #include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
 #include <tencentcloud/tsf/v20180326/model/Env.h>
 #include <tencentcloud/tsf/v20180326/model/ServiceSetting.h>
+#include <tencentcloud/tsf/v20180326/model/SchedulingStrategy.h>
 
 
 namespace TencentCloud
@@ -549,6 +550,24 @@ namespace TencentCloud
                      */
                     bool DeployAgentHasBeenSet() const;
 
+                    /**
+                     * 获取节点调度策略。若不指定改参数，则默认不使用节点调度策略。
+                     * @return SchedulingStrategy 节点调度策略。若不指定改参数，则默认不使用节点调度策略。
+                     */
+                    SchedulingStrategy GetSchedulingStrategy() const;
+
+                    /**
+                     * 设置节点调度策略。若不指定改参数，则默认不使用节点调度策略。
+                     * @param SchedulingStrategy 节点调度策略。若不指定改参数，则默认不使用节点调度策略。
+                     */
+                    void SetSchedulingStrategy(const SchedulingStrategy& _schedulingStrategy);
+
+                    /**
+                     * 判断参数 SchedulingStrategy 是否已赋值
+                     * @return SchedulingStrategy 是否已赋值
+                     */
+                    bool SchedulingStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -718,6 +737,12 @@ namespace TencentCloud
                      */
                     bool m_deployAgent;
                     bool m_deployAgentHasBeenSet;
+
+                    /**
+                     * 节点调度策略。若不指定改参数，则默认不使用节点调度策略。
+                     */
+                    SchedulingStrategy m_schedulingStrategy;
+                    bool m_schedulingStrategyHasBeenSet;
 
                 };
             }

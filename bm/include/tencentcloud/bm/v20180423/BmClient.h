@@ -416,7 +416,7 @@ namespace TencentCloud
                 DescribeCustomImagesOutcomeCallable DescribeCustomImagesCallable(const Model::DescribeCustomImagesRequest& request);
 
                 /**
-                 *获取获取设备类型
+                 *获取设备类型
                  * @param req DescribeDeviceClassRequest
                  * @return DescribeDeviceClassOutcome
                  */

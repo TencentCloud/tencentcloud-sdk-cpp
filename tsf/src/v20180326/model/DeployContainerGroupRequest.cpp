@@ -51,7 +51,8 @@ DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_healthCheckSettingsHasBeenSet(false),
     m_envsHasBeenSet(false),
     m_serviceSettingHasBeenSet(false),
-    m_deployAgentHasBeenSet(false)
+    m_deployAgentHasBeenSet(false),
+    m_schedulingStrategyHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,15 @@ string DeployContainerGroupRequest::ToJsonString() const
         string key = "DeployAgent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deployAgent, allocator);
+    }
+
+    if (m_schedulingStrategyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SchedulingStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_schedulingStrategy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -749,6 +759,22 @@ void DeployContainerGroupRequest::SetDeployAgent(const bool& _deployAgent)
 bool DeployContainerGroupRequest::DeployAgentHasBeenSet() const
 {
     return m_deployAgentHasBeenSet;
+}
+
+SchedulingStrategy DeployContainerGroupRequest::GetSchedulingStrategy() const
+{
+    return m_schedulingStrategy;
+}
+
+void DeployContainerGroupRequest::SetSchedulingStrategy(const SchedulingStrategy& _schedulingStrategy)
+{
+    m_schedulingStrategy = _schedulingStrategy;
+    m_schedulingStrategyHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::SchedulingStrategyHasBeenSet() const
+{
+    return m_schedulingStrategyHasBeenSet;
 }
 
 

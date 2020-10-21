@@ -129,6 +129,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskImageSpriteResult.h
   include/tencentcloud/mps/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/MediaContentReviewOcrTextSegmentItem.h
+  include/tencentcloud/mps/v20190612/model/UrlInputInfo.h
   include/tencentcloud/mps/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/ImageWatermarkInput.h
   include/tencentcloud/mps/v20190612/model/AsrFullTextConfigureInfoForUpdate.h
@@ -487,6 +488,7 @@ set(mps_src
   src/v20190612/model/MediaProcessTaskImageSpriteResult.cpp
   src/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesResponse.cpp
   src/v20190612/model/MediaContentReviewOcrTextSegmentItem.cpp
+  src/v20190612/model/UrlInputInfo.cpp
   src/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.cpp
   src/v20190612/model/ImageWatermarkInput.cpp
   src/v20190612/model/AsrFullTextConfigureInfoForUpdate.cpp

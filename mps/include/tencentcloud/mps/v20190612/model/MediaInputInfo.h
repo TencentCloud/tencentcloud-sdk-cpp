@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/CosInputInfo.h>
+#include <tencentcloud/mps/v20190612/model/UrlInputInfo.h>
 
 
 namespace TencentCloud
@@ -48,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入来源对象的类型，现在仅支持 COS。
-                     * @return Type 输入来源对象的类型，现在仅支持 COS。
+                     * 获取输入来源对象的类型，可以支持 COS 和 URL 两种。
+                     * @return Type 输入来源对象的类型，可以支持 COS 和 URL 两种。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置输入来源对象的类型，现在仅支持 COS。
-                     * @param Type 输入来源对象的类型，现在仅支持 COS。
+                     * 设置输入来源对象的类型，可以支持 COS 和 URL 两种。
+                     * @param Type 输入来源对象的类型，可以支持 COS 和 URL 两种。
                      */
                     void SetType(const std::string& _type);
 
@@ -83,10 +84,32 @@ namespace TencentCloud
                      */
                     bool CosInputInfoHasBeenSet() const;
 
+                    /**
+                     * 获取当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UrlInputInfo 当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UrlInputInfo GetUrlInputInfo() const;
+
+                    /**
+                     * 设置当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UrlInputInfo 当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUrlInputInfo(const UrlInputInfo& _urlInputInfo);
+
+                    /**
+                     * 判断参数 UrlInputInfo 是否已赋值
+                     * @return UrlInputInfo 是否已赋值
+                     */
+                    bool UrlInputInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 输入来源对象的类型，现在仅支持 COS。
+                     * 输入来源对象的类型，可以支持 COS 和 URL 两种。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -96,6 +119,13 @@ namespace TencentCloud
                      */
                     CosInputInfo m_cosInputInfo;
                     bool m_cosInputInfoHasBeenSet;
+
+                    /**
+                     * 当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UrlInputInfo m_urlInputInfo;
+                    bool m_urlInputInfoHasBeenSet;
 
                 };
             }

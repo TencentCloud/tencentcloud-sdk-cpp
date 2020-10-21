@@ -29,7 +29,8 @@ VideoTemplateInfoForUpdate::VideoTemplateInfoForUpdate() :
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
     m_gopHasBeenSet(false),
-    m_fillTypeHasBeenSet(false)
+    m_fillTypeHasBeenSet(false),
+    m_vcrfHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome VideoTemplateInfoForUpdate::Deserialize(const Value &value)
         m_fillTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Vcrf") && !value["Vcrf"].IsNull())
+    {
+        if (!value["Vcrf"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VideoTemplateInfoForUpdate.Vcrf` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vcrf = value["Vcrf"].GetUint64();
+        m_vcrfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void VideoTemplateInfoForUpdate::ToJsonObject(Value &value, Document::AllocatorT
         string key = "FillType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vcrfHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Vcrf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vcrf, allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void VideoTemplateInfoForUpdate::SetFillType(const string& _fillType)
 bool VideoTemplateInfoForUpdate::FillTypeHasBeenSet() const
 {
     return m_fillTypeHasBeenSet;
+}
+
+uint64_t VideoTemplateInfoForUpdate::GetVcrf() const
+{
+    return m_vcrf;
+}
+
+void VideoTemplateInfoForUpdate::SetVcrf(const uint64_t& _vcrf)
+{
+    m_vcrf = _vcrf;
+    m_vcrfHasBeenSet = true;
+}
+
+bool VideoTemplateInfoForUpdate::VcrfHasBeenSet() const
+{
+    return m_vcrfHasBeenSet;
 }
 

@@ -66,13 +66,17 @@ namespace TencentCloud
 
                     /**
                      * 获取文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
+文字水印不支持截图打水印。
                      * @return TextContent 文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
+文字水印不支持截图打水印。
                      */
                     std::string GetTextContent() const;
 
                     /**
                      * 设置文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
+文字水印不支持截图打水印。
                      * @param TextContent 文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
+文字水印不支持截图打水印。
                      */
                     void SetTextContent(const std::string& _textContent);
 
@@ -84,13 +88,17 @@ namespace TencentCloud
 
                     /**
                      * 获取SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
+SVG 水印不支持截图打水印。
                      * @return SvgContent SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
+SVG 水印不支持截图打水印。
                      */
                     std::string GetSvgContent() const;
 
                     /**
                      * 设置SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
+SVG 水印不支持截图打水印。
                      * @param SvgContent SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
+SVG 水印不支持截图打水印。
                      */
                     void SetSvgContent(const std::string& _svgContent);
 
@@ -170,12 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
+文字水印不支持截图打水印。
                      */
                     std::string m_textContent;
                     bool m_textContentHasBeenSet;
 
                     /**
                      * SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
+SVG 水印不支持截图打水印。
                      */
                     std::string m_svgContent;
                     bool m_svgContentHasBeenSet;

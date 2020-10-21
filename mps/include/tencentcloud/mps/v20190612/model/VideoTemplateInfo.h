@@ -282,6 +282,28 @@ namespace TencentCloud
                      */
                     bool FillTypeHasBeenSet() const;
 
+                    /**
+                     * 获取视频恒定码率控制因子，取值范围为[1, 51]。
+如果指定该参数，将使用 CRF 的码率控制方式做转码。0值表示禁用 CRF 模式。
+                     * @return Vcrf 视频恒定码率控制因子，取值范围为[1, 51]。
+如果指定该参数，将使用 CRF 的码率控制方式做转码。0值表示禁用 CRF 模式。
+                     */
+                    uint64_t GetVcrf() const;
+
+                    /**
+                     * 设置视频恒定码率控制因子，取值范围为[1, 51]。
+如果指定该参数，将使用 CRF 的码率控制方式做转码。0值表示禁用 CRF 模式。
+                     * @param Vcrf 视频恒定码率控制因子，取值范围为[1, 51]。
+如果指定该参数，将使用 CRF 的码率控制方式做转码。0值表示禁用 CRF 模式。
+                     */
+                    void SetVcrf(const uint64_t& _vcrf);
+
+                    /**
+                     * 判断参数 Vcrf 是否已赋值
+                     * @return Vcrf 是否已赋值
+                     */
+                    bool VcrfHasBeenSet() const;
+
                 private:
 
                     /**
@@ -354,6 +376,13 @@ namespace TencentCloud
                      */
                     std::string m_fillType;
                     bool m_fillTypeHasBeenSet;
+
+                    /**
+                     * 视频恒定码率控制因子，取值范围为[1, 51]。
+如果指定该参数，将使用 CRF 的码率控制方式做转码。0值表示禁用 CRF 模式。
+                     */
+                    uint64_t m_vcrf;
+                    bool m_vcrfHasBeenSet;
 
                 };
             }

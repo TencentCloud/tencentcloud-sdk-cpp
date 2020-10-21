@@ -27,7 +27,8 @@ DeployGroupRequest::DeployGroupRequest() :
     m_groupIdHasBeenSet(false),
     m_pkgIdHasBeenSet(false),
     m_startupParametersHasBeenSet(false),
-    m_deployDescHasBeenSet(false)
+    m_deployDescHasBeenSet(false),
+    m_forceStartHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string DeployGroupRequest::ToJsonString() const
         string key = "DeployDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_deployDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceStartHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForceStart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceStart, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void DeployGroupRequest::SetDeployDesc(const string& _deployDesc)
 bool DeployGroupRequest::DeployDescHasBeenSet() const
 {
     return m_deployDescHasBeenSet;
+}
+
+bool DeployGroupRequest::GetForceStart() const
+{
+    return m_forceStart;
+}
+
+void DeployGroupRequest::SetForceStart(const bool& _forceStart)
+{
+    m_forceStart = _forceStart;
+    m_forceStartHasBeenSet = true;
+}
+
+bool DeployGroupRequest::ForceStartHasBeenSet() const
+{
+    return m_forceStartHasBeenSet;
 }
 
 

@@ -33,7 +33,8 @@ ProductData::ProductData() :
     m_chipManufactureIdHasBeenSet(false),
     m_chipIdHasBeenSet(false),
     m_productCateHasBeenSet(false),
-    m_productRegionHasBeenSet(false)
+    m_productRegionHasBeenSet(false),
+    m_accessModeHasBeenSet(false)
 {
 }
 
@@ -165,6 +166,16 @@ CoreInternalOutcome ProductData::Deserialize(const Value &value)
         m_productRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessMode") && !value["AccessMode"].IsNull())
+    {
+        if (!value["AccessMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ProductData.AccessMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessMode = value["AccessMode"].GetInt64();
+        m_accessModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -271,6 +282,14 @@ void ProductData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "ProductRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_productRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccessMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accessMode, allocator);
     }
 
 }
@@ -466,5 +485,21 @@ void ProductData::SetProductRegion(const string& _productRegion)
 bool ProductData::ProductRegionHasBeenSet() const
 {
     return m_productRegionHasBeenSet;
+}
+
+int64_t ProductData::GetAccessMode() const
+{
+    return m_accessMode;
+}
+
+void ProductData::SetAccessMode(const int64_t& _accessMode)
+{
+    m_accessMode = _accessMode;
+    m_accessModeHasBeenSet = true;
+}
+
+bool ProductData::AccessModeHasBeenSet() const
+{
+    return m_accessModeHasBeenSet;
 }
 

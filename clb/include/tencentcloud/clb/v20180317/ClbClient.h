@@ -81,6 +81,10 @@
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClsLogSetRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClsLogSetResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeClusterResourcesRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeClusterResourcesResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeExclusiveClustersRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeExclusiveClustersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerListByCertIdRequest.h>
@@ -246,6 +250,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClsLogSetResponse> DescribeClsLogSetOutcome;
                 typedef std::future<DescribeClsLogSetOutcome> DescribeClsLogSetOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeClsLogSetRequest&, DescribeClsLogSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClsLogSetAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterResourcesResponse> DescribeClusterResourcesOutcome;
+                typedef std::future<DescribeClusterResourcesOutcome> DescribeClusterResourcesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeClusterResourcesRequest&, DescribeClusterResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterResourcesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeExclusiveClustersResponse> DescribeExclusiveClustersOutcome;
+                typedef std::future<DescribeExclusiveClustersOutcome> DescribeExclusiveClustersOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeExclusiveClustersRequest&, DescribeExclusiveClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExclusiveClustersAsyncHandler;
                 typedef Outcome<Error, Model::DescribeListenersResponse> DescribeListenersOutcome;
                 typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeListenersRequest&, DescribeListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenersAsyncHandler;
@@ -620,6 +630,24 @@ namespace TencentCloud
                 DescribeClsLogSetOutcome DescribeClsLogSet(const Model::DescribeClsLogSetRequest &request);
                 void DescribeClsLogSetAsync(const Model::DescribeClsLogSetRequest& request, const DescribeClsLogSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClsLogSetOutcomeCallable DescribeClsLogSetCallable(const Model::DescribeClsLogSetRequest& request);
+
+                /**
+                 *查询独占集群中资源列表，支持按集群ID、vip、负载均衡ID、是否闲置为过滤条件检索
+                 * @param req DescribeClusterResourcesRequest
+                 * @return DescribeClusterResourcesOutcome
+                 */
+                DescribeClusterResourcesOutcome DescribeClusterResources(const Model::DescribeClusterResourcesRequest &request);
+                void DescribeClusterResourcesAsync(const Model::DescribeClusterResourcesRequest& request, const DescribeClusterResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterResourcesOutcomeCallable DescribeClusterResourcesCallable(const Model::DescribeClusterResourcesRequest& request);
+
+                /**
+                 *查询集群信息列表，支持以集群类型、集群唯一ID、集群名字、集群标签、集群内vip、集群内负载均衡唯一id、集群网络类型、可用区等条件进行检索
+                 * @param req DescribeExclusiveClustersRequest
+                 * @return DescribeExclusiveClustersOutcome
+                 */
+                DescribeExclusiveClustersOutcome DescribeExclusiveClusters(const Model::DescribeExclusiveClustersRequest &request);
+                void DescribeExclusiveClustersAsync(const Model::DescribeExclusiveClustersRequest& request, const DescribeExclusiveClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExclusiveClustersOutcomeCallable DescribeExclusiveClustersCallable(const Model::DescribeExclusiveClustersRequest& request);
 
                 /**
                  *DescribeListeners 接口可根据负载均衡器 ID，监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。

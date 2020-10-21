@@ -29,7 +29,8 @@ CreateNamespaceRequest::CreateNamespaceRequest() :
     m_namespaceDescHasBeenSet(false),
     m_namespaceResourceTypeHasBeenSet(false),
     m_namespaceTypeHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_isHaEnableHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string CreateNamespaceRequest::ToJsonString() const
         string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isHaEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsHaEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_isHaEnable.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void CreateNamespaceRequest::SetNamespaceId(const string& _namespaceId)
 bool CreateNamespaceRequest::NamespaceIdHasBeenSet() const
 {
     return m_namespaceIdHasBeenSet;
+}
+
+string CreateNamespaceRequest::GetIsHaEnable() const
+{
+    return m_isHaEnable;
+}
+
+void CreateNamespaceRequest::SetIsHaEnable(const string& _isHaEnable)
+{
+    m_isHaEnable = _isHaEnable;
+    m_isHaEnableHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::IsHaEnableHasBeenSet() const
+{
+    return m_isHaEnableHasBeenSet;
 }
 
 
