@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入视频信息，包括视频 URL ， 名称、视频自定义 ID。
-                     * @return InputInfo 输入视频信息，包括视频 URL ， 名称、视频自定义 ID。
+                     * 获取API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
+                     * @return InputInfo API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
-                     * 设置输入视频信息，包括视频 URL ， 名称、视频自定义 ID。
-                     * @param InputInfo 输入视频信息，包括视频 URL ， 名称、视频自定义 ID。
+                     * 设置API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
+                     * @param InputInfo API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
 
@@ -230,7 +230,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入视频信息，包括视频 URL ， 名称、视频自定义 ID。
+                     * API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
                      */
                     MediaInputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;

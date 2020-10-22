@@ -356,6 +356,28 @@ Other-Overseas（其他境外地区）
                      */
                     bool AccessModeHasBeenSet() const;
 
+                    /**
+                     * 获取linux,android,liteos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Os linux,android,liteos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOs() const;
+
+                    /**
+                     * 设置linux,android,liteos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Os linux,android,liteos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOs(const std::string& _os);
+
+                    /**
+                     * 判断参数 Os 是否已赋值
+                     * @return Os 是否已赋值
+                     */
+                    bool OsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -454,6 +476,13 @@ Other-Overseas（其他境外地区）
                      */
                     int64_t m_accessMode;
                     bool m_accessModeHasBeenSet;
+
+                    /**
+                     * linux,android,liteos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_os;
+                    bool m_osHasBeenSet;
 
                 };
             }

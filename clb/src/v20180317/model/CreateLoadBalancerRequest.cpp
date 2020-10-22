@@ -37,6 +37,7 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_internetAccessibleHasBeenSet(false),
     m_vipIspHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_vipHasBeenSet(false),
     m_exclusiveClusterHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_clusterTagHasBeenSet(false)
@@ -160,6 +161,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_vipHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Vip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_vip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_exclusiveClusterHasBeenSet)
@@ -401,6 +410,22 @@ void CreateLoadBalancerRequest::SetTags(const vector<TagInfo>& _tags)
 bool CreateLoadBalancerRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetVip() const
+{
+    return m_vip;
+}
+
+void CreateLoadBalancerRequest::SetVip(const string& _vip)
+{
+    m_vip = _vip;
+    m_vipHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::VipHasBeenSet() const
+{
+    return m_vipHasBeenSet;
 }
 
 ExclusiveCluster CreateLoadBalancerRequest::GetExclusiveCluster() const

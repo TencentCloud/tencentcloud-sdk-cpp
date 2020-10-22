@@ -292,6 +292,24 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool TagsHasBeenSet() const;
 
                     /**
+                     * 获取指定Vip申请负载均衡
+                     * @return Vip 指定Vip申请负载均衡
+                     */
+                    std::string GetVip() const;
+
+                    /**
+                     * 设置指定Vip申请负载均衡
+                     * @param Vip 指定Vip申请负载均衡
+                     */
+                    void SetVip(const std::string& _vip);
+
+                    /**
+                     * 判断参数 Vip 是否已赋值
+                     * @return Vip 是否已赋值
+                     */
+                    bool VipHasBeenSet() const;
+
+                    /**
                      * 获取独占集群信息
                      * @return ExclusiveCluster 独占集群信息
                      */
@@ -427,6 +445,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 指定Vip申请负载均衡
+                     */
+                    std::string m_vip;
+                    bool m_vipHasBeenSet;
 
                     /**
                      * 独占集群信息

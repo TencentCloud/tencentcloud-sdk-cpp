@@ -34,7 +34,8 @@ ProductData::ProductData() :
     m_chipIdHasBeenSet(false),
     m_productCateHasBeenSet(false),
     m_productRegionHasBeenSet(false),
-    m_accessModeHasBeenSet(false)
+    m_accessModeHasBeenSet(false),
+    m_osHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,16 @@ CoreInternalOutcome ProductData::Deserialize(const Value &value)
         m_accessModeHasBeenSet = true;
     }
 
+    if (value.HasMember("Os") && !value["Os"].IsNull())
+    {
+        if (!value["Os"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProductData.Os` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_os = string(value["Os"].GetString());
+        m_osHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -290,6 +301,14 @@ void ProductData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "AccessMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accessMode, allocator);
+    }
+
+    if (m_osHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Os";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_os.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -501,5 +520,21 @@ void ProductData::SetAccessMode(const int64_t& _accessMode)
 bool ProductData::AccessModeHasBeenSet() const
 {
     return m_accessModeHasBeenSet;
+}
+
+string ProductData::GetOs() const
+{
+    return m_os;
+}
+
+void ProductData::SetOs(const string& _os)
+{
+    m_os = _os;
+    m_osHasBeenSet = true;
+}
+
+bool ProductData::OsHasBeenSet() const
+{
+    return m_osHasBeenSet;
 }
 
