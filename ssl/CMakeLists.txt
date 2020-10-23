@@ -20,10 +20,11 @@ set(ssl_public_header
 
 set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/ApplyCertificateResponse.h
+  include/tencentcloud/ssl/v20191205/model/CompleteCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DeleteCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsResponse.h
   include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationRequest.h
-  include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationResponse.h
+  include/tencentcloud/ssl/v20191205/model/DownloadCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/ReplaceCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/DownloadCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/CancelCertificateOrderRequest.h
@@ -37,32 +38,36 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/ApplyCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/ReplaceCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DeleteCertificateResponse.h
-  include/tencentcloud/ssl/v20191205/model/DvAuthDetail.h
+  include/tencentcloud/ssl/v20191205/model/DescribeCertificateDetailResponse.h
+  include/tencentcloud/ssl/v20191205/model/CheckCertificateChainResponse.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateProjectRequest.h
   include/tencentcloud/ssl/v20191205/model/DvAuths.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateAliasRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateRequest.h
+  include/tencentcloud/ssl/v20191205/model/DvAuthDetail.h
   include/tencentcloud/ssl/v20191205/model/ProjectInfo.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsRequest.h
   include/tencentcloud/ssl/v20191205/model/CancelCertificateOrderResponse.h
   include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificatesResponse.h
-  include/tencentcloud/ssl/v20191205/model/DownloadCertificateResponse.h
+  include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationResponse.h
   include/tencentcloud/ssl/v20191205/model/UploadCertificateResponse.h
-  include/tencentcloud/ssl/v20191205/model/DescribeCertificateDetailResponse.h
+  include/tencentcloud/ssl/v20191205/model/CheckCertificateChainRequest.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateAliasResponse.h
   include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationRequest.h
   include/tencentcloud/ssl/v20191205/model/SubmittedData.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificatesRequest.h
+  include/tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h
   )
 
 set(ssl_src
   src/v20191205/SslClient.cpp
   src/v20191205/model/ApplyCertificateResponse.cpp
+  src/v20191205/model/CompleteCertificateRequest.cpp
   src/v20191205/model/DeleteCertificateRequest.cpp
   src/v20191205/model/DescribeCertificateOperateLogsResponse.cpp
   src/v20191205/model/CommitCertificateInformationRequest.cpp
-  src/v20191205/model/CommitCertificateInformationResponse.cpp
+  src/v20191205/model/DownloadCertificateResponse.cpp
   src/v20191205/model/ReplaceCertificateResponse.cpp
   src/v20191205/model/DownloadCertificateRequest.cpp
   src/v20191205/model/CancelCertificateOrderRequest.cpp
@@ -76,23 +81,26 @@ set(ssl_src
   src/v20191205/model/ApplyCertificateRequest.cpp
   src/v20191205/model/ReplaceCertificateRequest.cpp
   src/v20191205/model/DeleteCertificateResponse.cpp
-  src/v20191205/model/DvAuthDetail.cpp
+  src/v20191205/model/DescribeCertificateDetailResponse.cpp
+  src/v20191205/model/CheckCertificateChainResponse.cpp
   src/v20191205/model/ModifyCertificateProjectRequest.cpp
   src/v20191205/model/DvAuths.cpp
   src/v20191205/model/ModifyCertificateAliasRequest.cpp
   src/v20191205/model/DescribeCertificateRequest.cpp
+  src/v20191205/model/DvAuthDetail.cpp
   src/v20191205/model/ProjectInfo.cpp
   src/v20191205/model/DescribeCertificateOperateLogsRequest.cpp
   src/v20191205/model/CancelCertificateOrderResponse.cpp
   src/v20191205/model/SubmitCertificateInformationResponse.cpp
   src/v20191205/model/DescribeCertificatesResponse.cpp
-  src/v20191205/model/DownloadCertificateResponse.cpp
+  src/v20191205/model/CommitCertificateInformationResponse.cpp
   src/v20191205/model/UploadCertificateResponse.cpp
-  src/v20191205/model/DescribeCertificateDetailResponse.cpp
+  src/v20191205/model/CheckCertificateChainRequest.cpp
   src/v20191205/model/ModifyCertificateAliasResponse.cpp
   src/v20191205/model/SubmitCertificateInformationRequest.cpp
   src/v20191205/model/SubmittedData.cpp
   src/v20191205/model/DescribeCertificatesRequest.cpp
+  src/v20191205/model/CompleteCertificateResponse.cpp
   )
 
 set(ssl_include

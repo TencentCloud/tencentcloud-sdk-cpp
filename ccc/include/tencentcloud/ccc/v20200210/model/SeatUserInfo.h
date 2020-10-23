@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取坐席电话号码
-                     * @return Phone 坐席电话号码
-                     */
-                    std::string GetPhone() const;
-
-                    /**
-                     * 设置坐席电话号码
-                     * @param Phone 坐席电话号码
-                     */
-                    void SetPhone(const std::string& _phone);
-
-                    /**
-                     * 判断参数 Phone 是否已赋值
-                     * @return Phone 是否已赋值
-                     */
-                    bool PhoneHasBeenSet() const;
-
-                    /**
                      * 获取坐席名称
                      * @return Name 坐席名称
                      */
@@ -99,6 +81,24 @@ namespace TencentCloud
                      * @return Mail 是否已赋值
                      */
                     bool MailHasBeenSet() const;
+
+                    /**
+                     * 获取坐席电话号码
+                     * @return Phone 坐席电话号码
+                     */
+                    std::string GetPhone() const;
+
+                    /**
+                     * 设置坐席电话号码
+                     * @param Phone 坐席电话号码
+                     */
+                    void SetPhone(const std::string& _phone);
+
+                    /**
+                     * 判断参数 Phone 是否已赋值
+                     * @return Phone 是否已赋值
+                     */
+                    bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取坐席昵称
@@ -158,13 +158,29 @@ namespace TencentCloud
                      */
                     bool SkillGroupNameListHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StaffNumber 工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStaffNumber() const;
 
                     /**
-                     * 坐席电话号码
+                     * 设置工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StaffNumber 工号
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_phone;
-                    bool m_phoneHasBeenSet;
+                    void SetStaffNumber(const std::string& _staffNumber);
+
+                    /**
+                     * 判断参数 StaffNumber 是否已赋值
+                     * @return StaffNumber 是否已赋值
+                     */
+                    bool StaffNumberHasBeenSet() const;
+
+                private:
 
                     /**
                      * 坐席名称
@@ -177,6 +193,12 @@ namespace TencentCloud
                      */
                     std::string m_mail;
                     bool m_mailHasBeenSet;
+
+                    /**
+                     * 坐席电话号码
+                     */
+                    std::string m_phone;
+                    bool m_phoneHasBeenSet;
 
                     /**
                      * 坐席昵称
@@ -196,6 +218,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_skillGroupNameList;
                     bool m_skillGroupNameListHasBeenSet;
+
+                    /**
+                     * 工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_staffNumber;
+                    bool m_staffNumberHasBeenSet;
 
                 };
             }

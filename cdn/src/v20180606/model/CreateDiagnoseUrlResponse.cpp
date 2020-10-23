@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tts/v20190823/model/TextToVoiceResponse.h>
+#include <tencentcloud/cdn/v20180606/model/CreateDiagnoseUrlResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tts::V20190823::Model;
+using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace rapidjson;
 using namespace std;
 
-TextToVoiceResponse::TextToVoiceResponse()
+CreateDiagnoseUrlResponse::CreateDiagnoseUrlResponse() :
+    m_diagnoseLinkHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome TextToVoiceResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateDiagnoseUrlResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -62,9 +63,29 @@ CoreInternalOutcome TextToVoiceResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("DiagnoseLink") && !rsp["DiagnoseLink"].IsNull())
+    {
+        if (!rsp["DiagnoseLink"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DiagnoseLink` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diagnoseLink = string(rsp["DiagnoseLink"].GetString());
+        m_diagnoseLinkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string CreateDiagnoseUrlResponse::GetDiagnoseLink() const
+{
+    return m_diagnoseLink;
+}
+
+bool CreateDiagnoseUrlResponse::DiagnoseLinkHasBeenSet() const
+{
+    return m_diagnoseLinkHasBeenSet;
+}
 
 

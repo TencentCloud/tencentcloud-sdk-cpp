@@ -106,6 +106,20 @@ namespace TencentCloud
                      */
                     bool KeyRegionHasBeenSet() const;
 
+                    /**
+                     * 获取当前 CDB 后端服务使用的 KMS 服务的默认地域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultKmsRegion 当前 CDB 后端服务使用的 KMS 服务的默认地域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDefaultKmsRegion() const;
+
+                    /**
+                     * 判断参数 DefaultKmsRegion 是否已赋值
+                     * @return DefaultKmsRegion 是否已赋值
+                     */
+                    bool DefaultKmsRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +153,13 @@ namespace TencentCloud
                      */
                     std::string m_keyRegion;
                     bool m_keyRegionHasBeenSet;
+
+                    /**
+                     * 当前 CDB 后端服务使用的 KMS 服务的默认地域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_defaultKmsRegion;
+                    bool m_defaultKmsRegionHasBeenSet;
 
                 };
             }

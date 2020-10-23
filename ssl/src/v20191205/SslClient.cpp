@@ -126,6 +126,49 @@ SslClient::CancelCertificateOrderOutcomeCallable SslClient::CancelCertificateOrd
     return task->get_future();
 }
 
+SslClient::CheckCertificateChainOutcome SslClient::CheckCertificateChain(const CheckCertificateChainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckCertificateChain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckCertificateChainResponse rsp = CheckCertificateChainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckCertificateChainOutcome(rsp);
+        else
+            return CheckCertificateChainOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckCertificateChainOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::CheckCertificateChainAsync(const CheckCertificateChainRequest& request, const CheckCertificateChainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckCertificateChain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::CheckCertificateChainOutcomeCallable SslClient::CheckCertificateChainCallable(const CheckCertificateChainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckCertificateChainOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckCertificateChain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::CommitCertificateInformationOutcome SslClient::CommitCertificateInformation(const CommitCertificateInformationRequest &request)
 {
     auto outcome = MakeRequest(request, "CommitCertificateInformation");
@@ -162,6 +205,49 @@ SslClient::CommitCertificateInformationOutcomeCallable SslClient::CommitCertific
         [this, request]()
         {
             return this->CommitCertificateInformation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SslClient::CompleteCertificateOutcome SslClient::CompleteCertificate(const CompleteCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CompleteCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CompleteCertificateResponse rsp = CompleteCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CompleteCertificateOutcome(rsp);
+        else
+            return CompleteCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return CompleteCertificateOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::CompleteCertificateAsync(const CompleteCertificateRequest& request, const CompleteCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CompleteCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::CompleteCertificateOutcomeCallable SslClient::CompleteCertificateCallable(const CompleteCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CompleteCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->CompleteCertificate(request);
         }
     );
 

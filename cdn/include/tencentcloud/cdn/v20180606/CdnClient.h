@@ -27,6 +27,8 @@
 #include <tencentcloud/cdn/v20180606/model/AddCdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateClsLogTopicRequest.h>
 #include <tencentcloud/cdn/v20180606/model/CreateClsLogTopicResponse.h>
+#include <tencentcloud/cdn/v20180606/model/CreateDiagnoseUrlRequest.h>
+#include <tencentcloud/cdn/v20180606/model/CreateDiagnoseUrlResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskRequest.h>
 #include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateVerifyRecordRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnIpResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCertDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCertDomainsResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsRequest.h>
@@ -95,6 +99,8 @@
 #include <tencentcloud/cdn/v20180606/model/ListClsLogTopicsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsTopicDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsTopicDomainsResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ListDiagnoseReportRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ListDiagnoseReportResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataRequest.h>
@@ -141,6 +147,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateClsLogTopicResponse> CreateClsLogTopicOutcome;
                 typedef std::future<CreateClsLogTopicOutcome> CreateClsLogTopicOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::CreateClsLogTopicRequest&, CreateClsLogTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClsLogTopicAsyncHandler;
+                typedef Outcome<Error, Model::CreateDiagnoseUrlResponse> CreateDiagnoseUrlOutcome;
+                typedef std::future<CreateDiagnoseUrlOutcome> CreateDiagnoseUrlOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::CreateDiagnoseUrlRequest&, CreateDiagnoseUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiagnoseUrlAsyncHandler;
                 typedef Outcome<Error, Model::CreateScdnLogTaskResponse> CreateScdnLogTaskOutcome;
                 typedef std::future<CreateScdnLogTaskOutcome> CreateScdnLogTaskOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::CreateScdnLogTaskRequest&, CreateScdnLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScdnLogTaskAsyncHandler;
@@ -171,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCertDomainsResponse> DescribeCertDomainsOutcome;
                 typedef std::future<DescribeCertDomainsOutcome> DescribeCertDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeCertDomainsRequest&, DescribeCertDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertDomainsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDiagnoseReportResponse> DescribeDiagnoseReportOutcome;
+                typedef std::future<DescribeDiagnoseReportOutcome> DescribeDiagnoseReportOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeDiagnoseReportRequest&, DescribeDiagnoseReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnoseReportAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDistrictIspDataResponse> DescribeDistrictIspDataOutcome;
                 typedef std::future<DescribeDistrictIspDataOutcome> DescribeDistrictIspDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeDistrictIspDataRequest&, DescribeDistrictIspDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDistrictIspDataAsyncHandler;
@@ -243,6 +255,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListClsTopicDomainsResponse> ListClsTopicDomainsOutcome;
                 typedef std::future<ListClsTopicDomainsOutcome> ListClsTopicDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListClsTopicDomainsRequest&, ListClsTopicDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListClsTopicDomainsAsyncHandler;
+                typedef Outcome<Error, Model::ListDiagnoseReportResponse> ListDiagnoseReportOutcome;
+                typedef std::future<ListDiagnoseReportOutcome> ListDiagnoseReportOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ListDiagnoseReportRequest&, ListDiagnoseReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDiagnoseReportAsyncHandler;
                 typedef Outcome<Error, Model::ListScdnLogTasksResponse> ListScdnLogTasksOutcome;
                 typedef std::future<ListScdnLogTasksOutcome> ListScdnLogTasksOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListScdnLogTasksRequest&, ListScdnLogTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScdnLogTasksAsyncHandler;
@@ -302,6 +317,15 @@ namespace TencentCloud
                 CreateClsLogTopicOutcome CreateClsLogTopic(const Model::CreateClsLogTopicRequest &request);
                 void CreateClsLogTopicAsync(const Model::CreateClsLogTopicRequest& request, const CreateClsLogTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClsLogTopicOutcomeCallable CreateClsLogTopicCallable(const Model::CreateClsLogTopicRequest& request);
+
+                /**
+                 *CreateDiagnoseUrl 用于添加域名诊断任务URL
+                 * @param req CreateDiagnoseUrlRequest
+                 * @return CreateDiagnoseUrlOutcome
+                 */
+                CreateDiagnoseUrlOutcome CreateDiagnoseUrl(const Model::CreateDiagnoseUrlRequest &request);
+                void CreateDiagnoseUrlAsync(const Model::CreateDiagnoseUrlRequest& request, const CreateDiagnoseUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDiagnoseUrlOutcomeCallable CreateDiagnoseUrlCallable(const Model::CreateDiagnoseUrlRequest& request);
 
                 /**
                  *CreateScdnLogTask 用于创建事件日志任务
@@ -402,6 +426,15 @@ namespace TencentCloud
                 DescribeCertDomainsOutcome DescribeCertDomains(const Model::DescribeCertDomainsRequest &request);
                 void DescribeCertDomainsAsync(const Model::DescribeCertDomainsRequest& request, const DescribeCertDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCertDomainsOutcomeCallable DescribeCertDomainsCallable(const Model::DescribeCertDomainsRequest& request);
+
+                /**
+                 *DescribeDiagnoseReport 用于获取指定报告id的内容
+                 * @param req DescribeDiagnoseReportRequest
+                 * @return DescribeDiagnoseReportOutcome
+                 */
+                DescribeDiagnoseReportOutcome DescribeDiagnoseReport(const Model::DescribeDiagnoseReportRequest &request);
+                void DescribeDiagnoseReportAsync(const Model::DescribeDiagnoseReportRequest& request, const DescribeDiagnoseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDiagnoseReportOutcomeCallable DescribeDiagnoseReportCallable(const Model::DescribeDiagnoseReportRequest& request);
 
                 /**
                  *查询指定域名的区域、运营商明细数据
@@ -635,6 +668,15 @@ namespace TencentCloud
                 ListClsTopicDomainsOutcome ListClsTopicDomains(const Model::ListClsTopicDomainsRequest &request);
                 void ListClsTopicDomainsAsync(const Model::ListClsTopicDomainsRequest& request, const ListClsTopicDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListClsTopicDomainsOutcomeCallable ListClsTopicDomainsCallable(const Model::ListClsTopicDomainsRequest& request);
+
+                /**
+                 *ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情。
+                 * @param req ListDiagnoseReportRequest
+                 * @return ListDiagnoseReportOutcome
+                 */
+                ListDiagnoseReportOutcome ListDiagnoseReport(const Model::ListDiagnoseReportRequest &request);
+                void ListDiagnoseReportAsync(const Model::ListDiagnoseReportRequest& request, const ListDiagnoseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListDiagnoseReportOutcomeCallable ListDiagnoseReportCallable(const Model::ListDiagnoseReportRequest& request);
 
                 /**
                  *ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息

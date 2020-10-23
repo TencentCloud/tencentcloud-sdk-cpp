@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tts/v20190823/model/TextToVoiceResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ListDiagnoseReportResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tts::V20190823::Model;
+using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace rapidjson;
 using namespace std;
 
-TextToVoiceResponse::TextToVoiceResponse()
+ListDiagnoseReportResponse::ListDiagnoseReportResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome TextToVoiceResponse::Deserialize(const string &payload)
+CoreInternalOutcome ListDiagnoseReportResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -62,9 +63,39 @@ CoreInternalOutcome TextToVoiceResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Error("response `Data` is not array type"));
+
+        const Value &tmpValue = rsp["Data"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DiagnoseInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
+        }
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<DiagnoseInfo> ListDiagnoseReportResponse::GetData() const
+{
+    return m_data;
+}
+
+bool ListDiagnoseReportResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
+}
 
 

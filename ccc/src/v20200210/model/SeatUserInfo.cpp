@@ -22,12 +22,13 @@ using namespace rapidjson;
 using namespace std;
 
 SeatUserInfo::SeatUserInfo() :
-    m_phoneHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_mailHasBeenSet(false),
+    m_phoneHasBeenSet(false),
     m_nickHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_skillGroupNameListHasBeenSet(false)
+    m_skillGroupNameListHasBeenSet(false),
+    m_staffNumberHasBeenSet(false)
 {
 }
 
@@ -35,16 +36,6 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Phone") && !value["Phone"].IsNull())
-    {
-        if (!value["Phone"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `SeatUserInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_phone = string(value["Phone"].GetString());
-        m_phoneHasBeenSet = true;
-    }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
     {
@@ -64,6 +55,16 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const Value &value)
         }
         m_mail = string(value["Mail"].GetString());
         m_mailHasBeenSet = true;
+    }
+
+    if (value.HasMember("Phone") && !value["Phone"].IsNull())
+    {
+        if (!value["Phone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SeatUserInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_phone = string(value["Phone"].GetString());
+        m_phoneHasBeenSet = true;
     }
 
     if (value.HasMember("Nick") && !value["Nick"].IsNull())
@@ -99,20 +100,22 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const Value &value)
         m_skillGroupNameListHasBeenSet = true;
     }
 
+    if (value.HasMember("StaffNumber") && !value["StaffNumber"].IsNull())
+    {
+        if (!value["StaffNumber"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SeatUserInfo.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staffNumber = string(value["StaffNumber"].GetString());
+        m_staffNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void SeatUserInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_phoneHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Phone";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_phone.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_nameHasBeenSet)
     {
@@ -128,6 +131,14 @@ void SeatUserInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "Mail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_mail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_phoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Phone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_phone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nickHasBeenSet)
@@ -159,24 +170,16 @@ void SeatUserInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         }
     }
 
+    if (m_staffNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StaffNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_staffNumber.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string SeatUserInfo::GetPhone() const
-{
-    return m_phone;
-}
-
-void SeatUserInfo::SetPhone(const string& _phone)
-{
-    m_phone = _phone;
-    m_phoneHasBeenSet = true;
-}
-
-bool SeatUserInfo::PhoneHasBeenSet() const
-{
-    return m_phoneHasBeenSet;
-}
 
 string SeatUserInfo::GetName() const
 {
@@ -208,6 +211,22 @@ void SeatUserInfo::SetMail(const string& _mail)
 bool SeatUserInfo::MailHasBeenSet() const
 {
     return m_mailHasBeenSet;
+}
+
+string SeatUserInfo::GetPhone() const
+{
+    return m_phone;
+}
+
+void SeatUserInfo::SetPhone(const string& _phone)
+{
+    m_phone = _phone;
+    m_phoneHasBeenSet = true;
+}
+
+bool SeatUserInfo::PhoneHasBeenSet() const
+{
+    return m_phoneHasBeenSet;
 }
 
 string SeatUserInfo::GetNick() const
@@ -256,5 +275,21 @@ void SeatUserInfo::SetSkillGroupNameList(const vector<string>& _skillGroupNameLi
 bool SeatUserInfo::SkillGroupNameListHasBeenSet() const
 {
     return m_skillGroupNameListHasBeenSet;
+}
+
+string SeatUserInfo::GetStaffNumber() const
+{
+    return m_staffNumber;
+}
+
+void SeatUserInfo::SetStaffNumber(const string& _staffNumber)
+{
+    m_staffNumber = _staffNumber;
+    m_staffNumberHasBeenSet = true;
+}
+
+bool SeatUserInfo::StaffNumberHasBeenSet() const
+{
+    return m_staffNumberHasBeenSet;
 }
 

@@ -14,21 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tts/v20190823/model/TextToVoiceResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CheckCertificateChainResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tts::V20190823::Model;
+using namespace TencentCloud::Ssl::V20191205::Model;
 using namespace rapidjson;
 using namespace std;
 
-TextToVoiceResponse::TextToVoiceResponse()
+CheckCertificateChainResponse::CheckCertificateChainResponse() :
+    m_isValidHasBeenSet(false),
+    m_isTrustedCAHasBeenSet(false),
+    m_chainsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome TextToVoiceResponse::Deserialize(const string &payload)
+CoreInternalOutcome CheckCertificateChainResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -62,9 +65,72 @@ CoreInternalOutcome TextToVoiceResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("IsValid") && !rsp["IsValid"].IsNull())
+    {
+        if (!rsp["IsValid"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `IsValid` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isValid = rsp["IsValid"].GetBool();
+        m_isValidHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsTrustedCA") && !rsp["IsTrustedCA"].IsNull())
+    {
+        if (!rsp["IsTrustedCA"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `IsTrustedCA` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isTrustedCA = rsp["IsTrustedCA"].GetBool();
+        m_isTrustedCAHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Chains") && !rsp["Chains"].IsNull())
+    {
+        if (!rsp["Chains"].IsArray())
+            return CoreInternalOutcome(Error("response `Chains` is not array type"));
+
+        const Value &tmpValue = rsp["Chains"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_chains.push_back((*itr).GetString());
+        }
+        m_chainsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+bool CheckCertificateChainResponse::GetIsValid() const
+{
+    return m_isValid;
+}
+
+bool CheckCertificateChainResponse::IsValidHasBeenSet() const
+{
+    return m_isValidHasBeenSet;
+}
+
+bool CheckCertificateChainResponse::GetIsTrustedCA() const
+{
+    return m_isTrustedCA;
+}
+
+bool CheckCertificateChainResponse::IsTrustedCAHasBeenSet() const
+{
+    return m_isTrustedCAHasBeenSet;
+}
+
+vector<string> CheckCertificateChainResponse::GetChains() const
+{
+    return m_chains;
+}
+
+bool CheckCertificateChainResponse::ChainsHasBeenSet() const
+{
+    return m_chainsHasBeenSet;
+}
 
 

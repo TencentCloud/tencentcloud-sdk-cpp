@@ -126,6 +126,49 @@ CdnClient::CreateClsLogTopicOutcomeCallable CdnClient::CreateClsLogTopicCallable
     return task->get_future();
 }
 
+CdnClient::CreateDiagnoseUrlOutcome CdnClient::CreateDiagnoseUrl(const CreateDiagnoseUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDiagnoseUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDiagnoseUrlResponse rsp = CreateDiagnoseUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDiagnoseUrlOutcome(rsp);
+        else
+            return CreateDiagnoseUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDiagnoseUrlOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::CreateDiagnoseUrlAsync(const CreateDiagnoseUrlRequest& request, const CreateDiagnoseUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDiagnoseUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::CreateDiagnoseUrlOutcomeCallable CdnClient::CreateDiagnoseUrlCallable(const CreateDiagnoseUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDiagnoseUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDiagnoseUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::CreateScdnLogTaskOutcome CdnClient::CreateScdnLogTask(const CreateScdnLogTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScdnLogTask");
@@ -549,6 +592,49 @@ CdnClient::DescribeCertDomainsOutcomeCallable CdnClient::DescribeCertDomainsCall
         [this, request]()
         {
             return this->DescribeCertDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::DescribeDiagnoseReportOutcome CdnClient::DescribeDiagnoseReport(const DescribeDiagnoseReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDiagnoseReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDiagnoseReportResponse rsp = DescribeDiagnoseReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDiagnoseReportOutcome(rsp);
+        else
+            return DescribeDiagnoseReportOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDiagnoseReportOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeDiagnoseReportAsync(const DescribeDiagnoseReportRequest& request, const DescribeDiagnoseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDiagnoseReport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeDiagnoseReportOutcomeCallable CdnClient::DescribeDiagnoseReportCallable(const DescribeDiagnoseReportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDiagnoseReportOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDiagnoseReport(request);
         }
     );
 
@@ -1581,6 +1667,49 @@ CdnClient::ListClsTopicDomainsOutcomeCallable CdnClient::ListClsTopicDomainsCall
         [this, request]()
         {
             return this->ListClsTopicDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::ListDiagnoseReportOutcome CdnClient::ListDiagnoseReport(const ListDiagnoseReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListDiagnoseReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListDiagnoseReportResponse rsp = ListDiagnoseReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListDiagnoseReportOutcome(rsp);
+        else
+            return ListDiagnoseReportOutcome(o.GetError());
+    }
+    else
+    {
+        return ListDiagnoseReportOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ListDiagnoseReportAsync(const ListDiagnoseReportRequest& request, const ListDiagnoseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListDiagnoseReport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ListDiagnoseReportOutcomeCallable CdnClient::ListDiagnoseReportCallable(const ListDiagnoseReportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListDiagnoseReportOutcome()>>(
+        [this, request]()
+        {
+            return this->ListDiagnoseReport(request);
         }
     );
 

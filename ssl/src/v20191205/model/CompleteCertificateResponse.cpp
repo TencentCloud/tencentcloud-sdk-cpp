@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tts/v20190823/model/TextToVoiceResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tts::V20190823::Model;
+using namespace TencentCloud::Ssl::V20191205::Model;
 using namespace rapidjson;
 using namespace std;
 
-TextToVoiceResponse::TextToVoiceResponse()
+CompleteCertificateResponse::CompleteCertificateResponse() :
+    m_certificateIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome TextToVoiceResponse::Deserialize(const string &payload)
+CoreInternalOutcome CompleteCertificateResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -62,9 +63,29 @@ CoreInternalOutcome TextToVoiceResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("CertificateId") && !rsp["CertificateId"].IsNull())
+    {
+        if (!rsp["CertificateId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certificateId = string(rsp["CertificateId"].GetString());
+        m_certificateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string CompleteCertificateResponse::GetCertificateId() const
+{
+    return m_certificateId;
+}
+
+bool CompleteCertificateResponse::CertificateIdHasBeenSet() const
+{
+    return m_certificateIdHasBeenSet;
+}
 
 

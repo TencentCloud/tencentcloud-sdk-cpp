@@ -49,7 +49,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_cbsEncryptHasBeenSet(false),
     m_metaTypeHasBeenSet(false),
     m_unifyMetaInstanceIdHasBeenSet(false),
-    m_metaDBInfoHasBeenSet(false)
+    m_metaDBInfoHasBeenSet(false),
+    m_applicationRoleHasBeenSet(false)
 {
 }
 
@@ -296,6 +297,14 @@ string CreateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_metaDBInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_applicationRoleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationRole";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_applicationRole.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -720,6 +729,22 @@ void CreateInstanceRequest::SetMetaDBInfo(const CustomMetaInfo& _metaDBInfo)
 bool CreateInstanceRequest::MetaDBInfoHasBeenSet() const
 {
     return m_metaDBInfoHasBeenSet;
+}
+
+string CreateInstanceRequest::GetApplicationRole() const
+{
+    return m_applicationRole;
+}
+
+void CreateInstanceRequest::SetApplicationRole(const string& _applicationRole)
+{
+    m_applicationRole = _applicationRole;
+    m_applicationRoleHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::ApplicationRoleHasBeenSet() const
+{
+    return m_applicationRoleHasBeenSet;
 }
 
 

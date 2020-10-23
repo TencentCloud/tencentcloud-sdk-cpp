@@ -626,6 +626,24 @@ namespace TencentCloud
                      */
                     bool MetaDBInfoHasBeenSet() const;
 
+                    /**
+                     * 获取自定义应用角色。
+                     * @return ApplicationRole 自定义应用角色。
+                     */
+                    std::string GetApplicationRole() const;
+
+                    /**
+                     * 设置自定义应用角色。
+                     * @param ApplicationRole 自定义应用角色。
+                     */
+                    void SetApplicationRole(const std::string& _applicationRole);
+
+                    /**
+                     * 判断参数 ApplicationRole 是否已赋值
+                     * @return ApplicationRole 是否已赋值
+                     */
+                    bool ApplicationRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -810,6 +828,12 @@ namespace TencentCloud
                      */
                     CustomMetaInfo m_metaDBInfo;
                     bool m_metaDBInfoHasBeenSet;
+
+                    /**
+                     * 自定义应用角色。
+                     */
+                    std::string m_applicationRole;
+                    bool m_applicationRoleHasBeenSet;
 
                 };
             }

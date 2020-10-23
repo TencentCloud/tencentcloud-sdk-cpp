@@ -31,7 +31,9 @@ CreateProductRequest::CreateProductRequest() :
     m_chipManufactureIdHasBeenSet(false),
     m_chipIdHasBeenSet(false),
     m_productRegionHasBeenSet(false),
-    m_productCateHasBeenSet(false)
+    m_productCateHasBeenSet(false),
+    m_accessModeHasBeenSet(false),
+    m_osHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,22 @@ string CreateProductRequest::ToJsonString() const
         string key = "ProductCate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_productCate, allocator);
+    }
+
+    if (m_accessModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccessMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_accessMode, allocator);
+    }
+
+    if (m_osHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Os";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_os.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -245,6 +263,38 @@ void CreateProductRequest::SetProductCate(const uint64_t& _productCate)
 bool CreateProductRequest::ProductCateHasBeenSet() const
 {
     return m_productCateHasBeenSet;
+}
+
+int64_t CreateProductRequest::GetAccessMode() const
+{
+    return m_accessMode;
+}
+
+void CreateProductRequest::SetAccessMode(const int64_t& _accessMode)
+{
+    m_accessMode = _accessMode;
+    m_accessModeHasBeenSet = true;
+}
+
+bool CreateProductRequest::AccessModeHasBeenSet() const
+{
+    return m_accessModeHasBeenSet;
+}
+
+string CreateProductRequest::GetOs() const
+{
+    return m_os;
+}
+
+void CreateProductRequest::SetOs(const string& _os)
+{
+    m_os = _os;
+    m_osHasBeenSet = true;
+}
+
+bool CreateProductRequest::OsHasBeenSet() const
+{
+    return m_osHasBeenSet;
 }
 
 

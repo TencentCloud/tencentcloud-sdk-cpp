@@ -27,8 +27,12 @@
 #include <tencentcloud/ssl/v20191205/model/ApplyCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CancelCertificateOrderRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CancelCertificateOrderResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CheckCertificateChainRequest.h>
+#include <tencentcloud/ssl/v20191205/model/CheckCertificateChainResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CommitCertificateInformationRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CommitCertificateInformationResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CompleteCertificateRequest.h>
+#include <tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateRequest.h>
@@ -71,9 +75,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CancelCertificateOrderResponse> CancelCertificateOrderOutcome;
                 typedef std::future<CancelCertificateOrderOutcome> CancelCertificateOrderOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CancelCertificateOrderRequest&, CancelCertificateOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelCertificateOrderAsyncHandler;
+                typedef Outcome<Error, Model::CheckCertificateChainResponse> CheckCertificateChainOutcome;
+                typedef std::future<CheckCertificateChainOutcome> CheckCertificateChainOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::CheckCertificateChainRequest&, CheckCertificateChainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCertificateChainAsyncHandler;
                 typedef Outcome<Error, Model::CommitCertificateInformationResponse> CommitCertificateInformationOutcome;
                 typedef std::future<CommitCertificateInformationOutcome> CommitCertificateInformationOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CommitCertificateInformationRequest&, CommitCertificateInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitCertificateInformationAsyncHandler;
+                typedef Outcome<Error, Model::CompleteCertificateResponse> CompleteCertificateOutcome;
+                typedef std::future<CompleteCertificateOutcome> CompleteCertificateOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::CompleteCertificateRequest&, CompleteCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompleteCertificateAsyncHandler;
                 typedef Outcome<Error, Model::DeleteCertificateResponse> DeleteCertificateOutcome;
                 typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DeleteCertificateRequest&, DeleteCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCertificateAsyncHandler;
@@ -129,6 +139,15 @@ namespace TencentCloud
                 CancelCertificateOrderOutcomeCallable CancelCertificateOrderCallable(const Model::CancelCertificateOrderRequest& request);
 
                 /**
+                 *本接口（CheckCertificateChain）用于检查证书链是否完整。
+                 * @param req CheckCertificateChainRequest
+                 * @return CheckCertificateChainOutcome
+                 */
+                CheckCertificateChainOutcome CheckCertificateChain(const Model::CheckCertificateChainRequest &request);
+                void CheckCertificateChainAsync(const Model::CheckCertificateChainRequest& request, const CheckCertificateChainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckCertificateChainOutcomeCallable CheckCertificateChainCallable(const Model::CheckCertificateChainRequest& request);
+
+                /**
                  *提交证书订单。
                  * @param req CommitCertificateInformationRequest
                  * @return CommitCertificateInformationOutcome
@@ -136,6 +155,15 @@ namespace TencentCloud
                 CommitCertificateInformationOutcome CommitCertificateInformation(const Model::CommitCertificateInformationRequest &request);
                 void CommitCertificateInformationAsync(const Model::CommitCertificateInformationRequest& request, const CommitCertificateInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CommitCertificateInformationOutcomeCallable CommitCertificateInformationCallable(const Model::CommitCertificateInformationRequest& request);
+
+                /**
+                 *本接口（CompleteCertificate）用于主动触发证书验证。
+                 * @param req CompleteCertificateRequest
+                 * @return CompleteCertificateOutcome
+                 */
+                CompleteCertificateOutcome CompleteCertificate(const Model::CompleteCertificateRequest &request);
+                void CompleteCertificateAsync(const Model::CompleteCertificateRequest& request, const CompleteCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CompleteCertificateOutcomeCallable CompleteCertificateCallable(const Model::CompleteCertificateRequest& request);
 
                 /**
                  *本接口（DeleteCertificate）用于删除证书。

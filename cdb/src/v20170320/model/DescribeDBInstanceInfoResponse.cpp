@@ -29,7 +29,8 @@ DescribeDBInstanceInfoResponse::DescribeDBInstanceInfoResponse() :
     m_instanceNameHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_keyIdHasBeenSet(false),
-    m_keyRegionHasBeenSet(false)
+    m_keyRegionHasBeenSet(false),
+    m_defaultKmsRegionHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome DescribeDBInstanceInfoResponse::Deserialize(const string &pa
         m_keyRegionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DefaultKmsRegion") && !rsp["DefaultKmsRegion"].IsNull())
+    {
+        if (!rsp["DefaultKmsRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DefaultKmsRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultKmsRegion = string(rsp["DefaultKmsRegion"].GetString());
+        m_defaultKmsRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -170,6 +181,16 @@ string DescribeDBInstanceInfoResponse::GetKeyRegion() const
 bool DescribeDBInstanceInfoResponse::KeyRegionHasBeenSet() const
 {
     return m_keyRegionHasBeenSet;
+}
+
+string DescribeDBInstanceInfoResponse::GetDefaultKmsRegion() const
+{
+    return m_defaultKmsRegion;
+}
+
+bool DescribeDBInstanceInfoResponse::DefaultKmsRegionHasBeenSet() const
+{
+    return m_defaultKmsRegionHasBeenSet;
 }
 
 

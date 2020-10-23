@@ -1,0 +1,294 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportResponse.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cdn::V20180606::Model;
+using namespace rapidjson;
+using namespace std;
+
+DescribeDiagnoseReportResponse::DescribeDiagnoseReportResponse() :
+    m_baskInfoHasBeenSet(false),
+    m_cnameInfoHasBeenSet(false),
+    m_clientInfoHasBeenSet(false),
+    m_dnsInfoHasBeenSet(false),
+    m_networkInfoHasBeenSet(false),
+    m_ocNodeInfoHasBeenSet(false),
+    m_midNodeInfoHasBeenSet(false),
+    m_originInfoHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &payload)
+{
+    Document d;
+    d.Parse(payload.c_str());
+    if (d.HasParseError() || !d.IsObject())
+    {
+        return CoreInternalOutcome(Error("response not json format"));
+    }
+    if (!d.HasMember("Response") || !d["Response"].IsObject())
+    {
+        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+    }
+    Value &rsp = d["Response"];
+    if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
+    {
+        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+    }
+    string requestId(rsp["RequestId"].GetString());
+    SetRequestId(requestId);
+
+    if (rsp.HasMember("Error"))
+    {
+        if (!rsp["Error"].IsObject() ||
+            !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
+            !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+        }
+        string errorCode(rsp["Error"]["Code"].GetString());
+        string errorMsg(rsp["Error"]["Message"].GetString());
+        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+    }
+
+
+    if (rsp.HasMember("BaskInfo") && !rsp["BaskInfo"].IsNull())
+    {
+        if (!rsp["BaskInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BaskInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_baskInfo.Deserialize(rsp["BaskInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_baskInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CnameInfo") && !rsp["CnameInfo"].IsNull())
+    {
+        if (!rsp["CnameInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CnameInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cnameInfo.Deserialize(rsp["CnameInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cnameInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClientInfo") && !rsp["ClientInfo"].IsNull())
+    {
+        if (!rsp["ClientInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ClientInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_clientInfo.Deserialize(rsp["ClientInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_clientInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DnsInfo") && !rsp["DnsInfo"].IsNull())
+    {
+        if (!rsp["DnsInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DnsInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dnsInfo.Deserialize(rsp["DnsInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dnsInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NetworkInfo") && !rsp["NetworkInfo"].IsNull())
+    {
+        if (!rsp["NetworkInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `NetworkInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_networkInfo.Deserialize(rsp["NetworkInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_networkInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OcNodeInfo") && !rsp["OcNodeInfo"].IsNull())
+    {
+        if (!rsp["OcNodeInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `OcNodeInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ocNodeInfo.Deserialize(rsp["OcNodeInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ocNodeInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MidNodeInfo") && !rsp["MidNodeInfo"].IsNull())
+    {
+        if (!rsp["MidNodeInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MidNodeInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_midNodeInfo.Deserialize(rsp["MidNodeInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_midNodeInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OriginInfo") && !rsp["OriginInfo"].IsNull())
+    {
+        if (!rsp["OriginInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `OriginInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_originInfo.Deserialize(rsp["OriginInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_originInfoHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+
+DiagnoseData DescribeDiagnoseReportResponse::GetBaskInfo() const
+{
+    return m_baskInfo;
+}
+
+bool DescribeDiagnoseReportResponse::BaskInfoHasBeenSet() const
+{
+    return m_baskInfoHasBeenSet;
+}
+
+DiagnoseData DescribeDiagnoseReportResponse::GetCnameInfo() const
+{
+    return m_cnameInfo;
+}
+
+bool DescribeDiagnoseReportResponse::CnameInfoHasBeenSet() const
+{
+    return m_cnameInfoHasBeenSet;
+}
+
+DiagnoseData DescribeDiagnoseReportResponse::GetClientInfo() const
+{
+    return m_clientInfo;
+}
+
+bool DescribeDiagnoseReportResponse::ClientInfoHasBeenSet() const
+{
+    return m_clientInfoHasBeenSet;
+}
+
+DiagnoseData DescribeDiagnoseReportResponse::GetDnsInfo() const
+{
+    return m_dnsInfo;
+}
+
+bool DescribeDiagnoseReportResponse::DnsInfoHasBeenSet() const
+{
+    return m_dnsInfoHasBeenSet;
+}
+
+DiagnoseData DescribeDiagnoseReportResponse::GetNetworkInfo() const
+{
+    return m_networkInfo;
+}
+
+bool DescribeDiagnoseReportResponse::NetworkInfoHasBeenSet() const
+{
+    return m_networkInfoHasBeenSet;
+}
+
+DiagnoseData DescribeDiagnoseReportResponse::GetOcNodeInfo() const
+{
+    return m_ocNodeInfo;
+}
+
+bool DescribeDiagnoseReportResponse::OcNodeInfoHasBeenSet() const
+{
+    return m_ocNodeInfoHasBeenSet;
+}
+
+DiagnoseData DescribeDiagnoseReportResponse::GetMidNodeInfo() const
+{
+    return m_midNodeInfo;
+}
+
+bool DescribeDiagnoseReportResponse::MidNodeInfoHasBeenSet() const
+{
+    return m_midNodeInfoHasBeenSet;
+}
+
+DiagnoseData DescribeDiagnoseReportResponse::GetOriginInfo() const
+{
+    return m_originInfo;
+}
+
+bool DescribeDiagnoseReportResponse::OriginInfoHasBeenSet() const
+{
+    return m_originInfoHasBeenSet;
+}
+
+

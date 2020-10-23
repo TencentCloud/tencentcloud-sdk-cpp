@@ -218,6 +218,42 @@ Other-Overseas（其他境外地区）
                      */
                     bool ProductCateHasBeenSet() const;
 
+                    /**
+                     * 获取接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+                     * @return AccessMode 接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+                     */
+                    int64_t GetAccessMode() const;
+
+                    /**
+                     * 设置接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+                     * @param AccessMode 接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+                     */
+                    void SetAccessMode(const int64_t& _accessMode);
+
+                    /**
+                     * 判断参数 AccessMode 是否已赋值
+                     * @return AccessMode 是否已赋值
+                     */
+                    bool AccessModeHasBeenSet() const;
+
+                    /**
+                     * 获取linux,android,liteos
+                     * @return Os linux,android,liteos
+                     */
+                    std::string GetOs() const;
+
+                    /**
+                     * 设置linux,android,liteos
+                     * @param Os linux,android,liteos
+                     */
+                    void SetOs(const std::string& _os);
+
+                    /**
+                     * 判断参数 Os 是否已赋值
+                     * @return Os 是否已赋值
+                     */
+                    bool OsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -275,6 +311,18 @@ Other-Overseas（其他境外地区）
                      */
                     uint64_t m_productCate;
                     bool m_productCateHasBeenSet;
+
+                    /**
+                     * 接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+                     */
+                    int64_t m_accessMode;
+                    bool m_accessModeHasBeenSet;
+
+                    /**
+                     * linux,android,liteos
+                     */
+                    std::string m_os;
+                    bool m_osHasBeenSet;
 
                 };
             }

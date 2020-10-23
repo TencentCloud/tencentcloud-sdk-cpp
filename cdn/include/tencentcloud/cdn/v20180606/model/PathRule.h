@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool RegexHasBeenSet() const;
 
                     /**
-                     * 获取URL路径。
+                     * 获取匹配的URL路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path URL路径。
+                     * @return Path 匹配的URL路径。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置URL路径。
+                     * 设置匹配的URL路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path URL路径。
+                     * @param Path 匹配的URL路径。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPath(const std::string& _path);
@@ -92,17 +92,17 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取路径匹配时的回源源站。
+                     * 获取路径匹配时的回源源站。暂不支持开了私有读写的COS源。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Origin 路径匹配时的回源源站。
+                     * @return Origin 路径匹配时的回源源站。暂不支持开了私有读写的COS源。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOrigin() const;
 
                     /**
-                     * 设置路径匹配时的回源源站。
+                     * 设置路径匹配时的回源源站。暂不支持开了私有读写的COS源。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Origin 路径匹配时的回源源站。
+                     * @param Origin 路径匹配时的回源源站。暂不支持开了私有读写的COS源。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOrigin(const std::string& _origin);
@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool OriginHasBeenSet() const;
 
                     /**
-                     * 获取路径匹配时的回源Host头部。
+                     * 获取路径匹配时回源的Host头部。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServerName 路径匹配时的回源Host头部。
+                     * @return ServerName 路径匹配时回源的Host头部。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetServerName() const;
 
                     /**
-                     * 设置路径匹配时的回源Host头部。
+                     * 设置路径匹配时回源的Host头部。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServerName 路径匹配时的回源Host头部。
+                     * @param ServerName 路径匹配时回源的Host头部。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetServerName(const std::string& _serverName);
@@ -158,17 +158,17 @@ namespace TencentCloud
                     bool OriginAreaHasBeenSet() const;
 
                     /**
-                     * 获取路径匹配时的回源URI路径。
+                     * 获取路径匹配时回源的URI路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ForwardUri 路径匹配时的回源URI路径。
+                     * @return ForwardUri 路径匹配时回源的URI路径。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetForwardUri() const;
 
                     /**
-                     * 设置路径匹配时的回源URI路径。
+                     * 设置路径匹配时回源的URI路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ForwardUri 路径匹配时的回源URI路径。
+                     * @param ForwardUri 路径匹配时回源的URI路径。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetForwardUri(const std::string& _forwardUri);
@@ -180,17 +180,17 @@ namespace TencentCloud
                     bool ForwardUriHasBeenSet() const;
 
                     /**
-                     * 获取路径匹配时的回源头部设置。
+                     * 获取路径匹配时回源的头部设置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RequestHeaders 路径匹配时的回源头部设置。
+                     * @return RequestHeaders 路径匹配时回源的头部设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HttpHeaderRule> GetRequestHeaders() const;
 
                     /**
-                     * 设置路径匹配时的回源头部设置。
+                     * 设置路径匹配时回源的头部设置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RequestHeaders 路径匹配时的回源头部设置。
+                     * @param RequestHeaders 路径匹配时回源的头部设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRequestHeaders(const std::vector<HttpHeaderRule>& _requestHeaders);
@@ -211,21 +211,21 @@ namespace TencentCloud
                     bool m_regexHasBeenSet;
 
                     /**
-                     * URL路径。
+                     * 匹配的URL路径。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 路径匹配时的回源源站。
+                     * 路径匹配时的回源源站。暂不支持开了私有读写的COS源。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_origin;
                     bool m_originHasBeenSet;
 
                     /**
-                     * 路径匹配时的回源Host头部。
+                     * 路径匹配时回源的Host头部。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverName;
@@ -239,14 +239,14 @@ namespace TencentCloud
                     bool m_originAreaHasBeenSet;
 
                     /**
-                     * 路径匹配时的回源URI路径。
+                     * 路径匹配时回源的URI路径。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_forwardUri;
                     bool m_forwardUriHasBeenSet;
 
                     /**
-                     * 路径匹配时的回源头部设置。
+                     * 路径匹配时回源的头部设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HttpHeaderRule> m_requestHeaders;
