@@ -298,6 +298,92 @@ DomainClient::DeleteTemplateOutcomeCallable DomainClient::DeleteTemplateCallable
     return task->get_future();
 }
 
+DomainClient::DescribeBatchOperationLogDetailsOutcome DomainClient::DescribeBatchOperationLogDetails(const DescribeBatchOperationLogDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchOperationLogDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchOperationLogDetailsResponse rsp = DescribeBatchOperationLogDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchOperationLogDetailsOutcome(rsp);
+        else
+            return DescribeBatchOperationLogDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchOperationLogDetailsOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeBatchOperationLogDetailsAsync(const DescribeBatchOperationLogDetailsRequest& request, const DescribeBatchOperationLogDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchOperationLogDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeBatchOperationLogDetailsOutcomeCallable DomainClient::DescribeBatchOperationLogDetailsCallable(const DescribeBatchOperationLogDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchOperationLogDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchOperationLogDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeBatchOperationLogsOutcome DomainClient::DescribeBatchOperationLogs(const DescribeBatchOperationLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchOperationLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchOperationLogsResponse rsp = DescribeBatchOperationLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchOperationLogsOutcome(rsp);
+        else
+            return DescribeBatchOperationLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchOperationLogsOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeBatchOperationLogsAsync(const DescribeBatchOperationLogsRequest& request, const DescribeBatchOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchOperationLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeBatchOperationLogsOutcomeCallable DomainClient::DescribeBatchOperationLogsCallable(const DescribeBatchOperationLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchOperationLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchOperationLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DescribeDomainBaseInfoOutcome DomainClient::DescribeDomainBaseInfo(const DescribeDomainBaseInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainBaseInfo");

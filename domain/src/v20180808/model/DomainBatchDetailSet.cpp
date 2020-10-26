@@ -1,0 +1,252 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/domain/v20180808/model/DomainBatchDetailSet.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Domain::V20180808::Model;
+using namespace rapidjson;
+using namespace std;
+
+DomainBatchDetailSet::DomainBatchDetailSet() :
+    m_idHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_reasonHasBeenSet(false),
+    m_createdOnHasBeenSet(false),
+    m_updatedOnHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome DomainBatchDetailSet::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetInt64();
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(value["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
+    {
+        if (!value["CreatedOn"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdOn = string(value["CreatedOn"].GetString());
+        m_createdOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedOn") && !value["UpdatedOn"].IsNull())
+    {
+        if (!value["UpdatedOn"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedOn = string(value["UpdatedOn"].GetString());
+        m_updatedOnHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void DomainBatchDetailSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_idHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdOnHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreatedOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createdOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedOnHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdatedOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updatedOn.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+int64_t DomainBatchDetailSet::GetId() const
+{
+    return m_id;
+}
+
+void DomainBatchDetailSet::SetId(const int64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool DomainBatchDetailSet::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+string DomainBatchDetailSet::GetDomain() const
+{
+    return m_domain;
+}
+
+void DomainBatchDetailSet::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DomainBatchDetailSet::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string DomainBatchDetailSet::GetStatus() const
+{
+    return m_status;
+}
+
+void DomainBatchDetailSet::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DomainBatchDetailSet::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DomainBatchDetailSet::GetReason() const
+{
+    return m_reason;
+}
+
+void DomainBatchDetailSet::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool DomainBatchDetailSet::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
+}
+
+string DomainBatchDetailSet::GetCreatedOn() const
+{
+    return m_createdOn;
+}
+
+void DomainBatchDetailSet::SetCreatedOn(const string& _createdOn)
+{
+    m_createdOn = _createdOn;
+    m_createdOnHasBeenSet = true;
+}
+
+bool DomainBatchDetailSet::CreatedOnHasBeenSet() const
+{
+    return m_createdOnHasBeenSet;
+}
+
+string DomainBatchDetailSet::GetUpdatedOn() const
+{
+    return m_updatedOn;
+}
+
+void DomainBatchDetailSet::SetUpdatedOn(const string& _updatedOn)
+{
+    m_updatedOn = _updatedOn;
+    m_updatedOnHasBeenSet = true;
+}
+
+bool DomainBatchDetailSet::UpdatedOnHasBeenSet() const
+{
+    return m_updatedOnHasBeenSet;
+}
+

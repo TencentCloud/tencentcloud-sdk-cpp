@@ -27,7 +27,8 @@ using namespace std;
 AddExistedInstancesResponse::AddExistedInstancesResponse() :
     m_failedInstanceIdsHasBeenSet(false),
     m_succInstanceIdsHasBeenSet(false),
-    m_timeoutInstanceIdsHasBeenSet(false)
+    m_timeoutInstanceIdsHasBeenSet(false),
+    m_failedReasonsHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,19 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
         m_timeoutInstanceIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FailedReasons") && !rsp["FailedReasons"].IsNull())
+    {
+        if (!rsp["FailedReasons"].IsArray())
+            return CoreInternalOutcome(Error("response `FailedReasons` is not array type"));
+
+        const Value &tmpValue = rsp["FailedReasons"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_failedReasons.push_back((*itr).GetString());
+        }
+        m_failedReasonsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +151,16 @@ vector<string> AddExistedInstancesResponse::GetTimeoutInstanceIds() const
 bool AddExistedInstancesResponse::TimeoutInstanceIdsHasBeenSet() const
 {
     return m_timeoutInstanceIdsHasBeenSet;
+}
+
+vector<string> AddExistedInstancesResponse::GetFailedReasons() const
+{
+    return m_failedReasons;
+}
+
+bool AddExistedInstancesResponse::FailedReasonsHasBeenSet() const
+{
+    return m_failedReasonsHasBeenSet;
 }
 
 

@@ -35,6 +35,10 @@
 #include <tencentcloud/domain/v20180808/model/CreateTemplateResponse.h>
 #include <tencentcloud/domain/v20180808/model/DeleteTemplateRequest.h>
 #include <tencentcloud/domain/v20180808/model/DeleteTemplateResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainNameListRequest.h>
@@ -91,6 +95,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteTemplateResponse> DeleteTemplateOutcome;
                 typedef std::future<DeleteTemplateOutcome> DeleteTemplateOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DeleteTemplateRequest&, DeleteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBatchOperationLogDetailsResponse> DescribeBatchOperationLogDetailsOutcome;
+                typedef std::future<DescribeBatchOperationLogDetailsOutcome> DescribeBatchOperationLogDetailsOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeBatchOperationLogDetailsRequest&, DescribeBatchOperationLogDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOperationLogDetailsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBatchOperationLogsResponse> DescribeBatchOperationLogsOutcome;
+                typedef std::future<DescribeBatchOperationLogsOutcome> DescribeBatchOperationLogsOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeBatchOperationLogsRequest&, DescribeBatchOperationLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOperationLogsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDomainBaseInfoResponse> DescribeDomainBaseInfoOutcome;
                 typedef std::future<DescribeDomainBaseInfoOutcome> DescribeDomainBaseInfoOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeDomainBaseInfoRequest&, DescribeDomainBaseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainBaseInfoAsyncHandler;
@@ -193,6 +203,24 @@ namespace TencentCloud
                 DeleteTemplateOutcome DeleteTemplate(const Model::DeleteTemplateRequest &request);
                 void DeleteTemplateAsync(const Model::DeleteTemplateRequest& request, const DeleteTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTemplateOutcomeCallable DeleteTemplateCallable(const Model::DeleteTemplateRequest& request);
+
+                /**
+                 *本接口 ( DescribeBatchOperationLogDetails ) 用于获取批量操作日志详情。
+                 * @param req DescribeBatchOperationLogDetailsRequest
+                 * @return DescribeBatchOperationLogDetailsOutcome
+                 */
+                DescribeBatchOperationLogDetailsOutcome DescribeBatchOperationLogDetails(const Model::DescribeBatchOperationLogDetailsRequest &request);
+                void DescribeBatchOperationLogDetailsAsync(const Model::DescribeBatchOperationLogDetailsRequest& request, const DescribeBatchOperationLogDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchOperationLogDetailsOutcomeCallable DescribeBatchOperationLogDetailsCallable(const Model::DescribeBatchOperationLogDetailsRequest& request);
+
+                /**
+                 *本接口 ( DescribeBatchOperationLogs ) 用于获取批量操作日志 。
+                 * @param req DescribeBatchOperationLogsRequest
+                 * @return DescribeBatchOperationLogsOutcome
+                 */
+                DescribeBatchOperationLogsOutcome DescribeBatchOperationLogs(const Model::DescribeBatchOperationLogsRequest &request);
+                void DescribeBatchOperationLogsAsync(const Model::DescribeBatchOperationLogsRequest& request, const DescribeBatchOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchOperationLogsOutcomeCallable DescribeBatchOperationLogsCallable(const Model::DescribeBatchOperationLogsRequest& request);
 
                 /**
                  *本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。
@@ -308,8 +336,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( UpdateProhibitionBatch ) 用于批量设置禁止域名更新 。
-
-默认接口请求频率限制：20次/秒。
                  * @param req UpdateProhibitionBatchRequest
                  * @return UpdateProhibitionBatchOutcome
                  */

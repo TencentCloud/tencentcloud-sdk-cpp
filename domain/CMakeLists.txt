@@ -26,6 +26,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DeleteTemplateResponse.h
   include/tencentcloud/domain/v20180808/model/TransferInDomainBatchRequest.h
   include/tencentcloud/domain/v20180808/model/CreateDomainBatchResponse.h
+  include/tencentcloud/domain/v20180808/model/DomainBatchDetailSet.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchResponse.h
   include/tencentcloud/domain/v20180808/model/RenewDomainBatchRequest.h
   include/tencentcloud/domain/v20180808/model/TransferInDomainBatchResponse.h
@@ -37,6 +38,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateListResponse.h
   include/tencentcloud/domain/v20180808/model/TransferProhibitionBatchRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainNameListResponse.h
   include/tencentcloud/domain/v20180808/model/ContactInfo.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h
@@ -53,15 +55,19 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoRequest.h
   include/tencentcloud/domain/v20180808/model/DomainBaseInfo.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainNameListRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsRequest.h
   include/tencentcloud/domain/v20180808/model/UploadImageRequest.h
   include/tencentcloud/domain/v20180808/model/CheckDomainRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsResponse.h
   include/tencentcloud/domain/v20180808/model/TransferProhibitionBatchResponse.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchRequest.h
-  include/tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsResponse.h
   include/tencentcloud/domain/v20180808/model/CheckBatchStatusResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchResponse.h
   include/tencentcloud/domain/v20180808/model/SetDomainAutoRenewRequest.h
+  include/tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchRequest.h
+  include/tencentcloud/domain/v20180808/model/DomainBatchLogSet.h
   )
 
 set(domain_src
@@ -73,6 +79,7 @@ set(domain_src
   src/v20180808/model/DeleteTemplateResponse.cpp
   src/v20180808/model/TransferInDomainBatchRequest.cpp
   src/v20180808/model/CreateDomainBatchResponse.cpp
+  src/v20180808/model/DomainBatchDetailSet.cpp
   src/v20180808/model/ModifyDomainDNSBatchResponse.cpp
   src/v20180808/model/RenewDomainBatchRequest.cpp
   src/v20180808/model/TransferInDomainBatchResponse.cpp
@@ -84,6 +91,7 @@ set(domain_src
   src/v20180808/model/DescribeDomainBaseInfoResponse.cpp
   src/v20180808/model/DescribeTemplateListResponse.cpp
   src/v20180808/model/TransferProhibitionBatchRequest.cpp
+  src/v20180808/model/DescribeBatchOperationLogDetailsRequest.cpp
   src/v20180808/model/DescribeDomainNameListResponse.cpp
   src/v20180808/model/ContactInfo.cpp
   src/v20180808/model/DescribeDomainPriceListResponse.cpp
@@ -100,15 +108,19 @@ set(domain_src
   src/v20180808/model/DescribeDomainBaseInfoRequest.cpp
   src/v20180808/model/DomainBaseInfo.cpp
   src/v20180808/model/DescribeDomainNameListRequest.cpp
+  src/v20180808/model/DescribeBatchOperationLogsRequest.cpp
   src/v20180808/model/UploadImageRequest.cpp
   src/v20180808/model/CheckDomainRequest.cpp
+  src/v20180808/model/DescribeBatchOperationLogsResponse.cpp
   src/v20180808/model/TransferProhibitionBatchResponse.cpp
   src/v20180808/model/ModifyDomainDNSBatchRequest.cpp
-  src/v20180808/model/ModifyDomainOwnerBatchRequest.cpp
+  src/v20180808/model/DescribeBatchOperationLogDetailsResponse.cpp
   src/v20180808/model/CheckBatchStatusResponse.cpp
   src/v20180808/model/DescribeTemplateListRequest.cpp
   src/v20180808/model/ModifyDomainOwnerBatchResponse.cpp
   src/v20180808/model/SetDomainAutoRenewRequest.cpp
+  src/v20180808/model/ModifyDomainOwnerBatchRequest.cpp
+  src/v20180808/model/DomainBatchLogSet.cpp
   )
 
 set(domain_include
