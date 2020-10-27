@@ -27,6 +27,8 @@
 #include <tencentcloud/tke/v20180525/model/AcquireClusterAdminRoleResponse.h>
 #include <tencentcloud/tke/v20180525/model/AddExistedInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/AddExistedInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/AddNodeToNodePoolRequest.h>
+#include <tencentcloud/tke/v20180525/model/AddNodeToNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterAsGroupRequest.h>
@@ -37,6 +39,10 @@
 #include <tencentcloud/tke/v20180525/model/CreateClusterEndpointVipResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateClusterNodePoolRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreateClusterNodePoolResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateClusterNodePoolFromExistingAsgRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreateClusterNodePoolFromExistingAsgResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRouteRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRouteResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRouteTableRequest.h>
@@ -53,6 +59,8 @@
 #include <tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeleteClusterNodePoolRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeleteClusterNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteTableRequest.h>
@@ -69,6 +77,10 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterNodePoolsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterNodePoolsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRoutesRequest.h>
@@ -93,6 +105,10 @@
 #include <tencentcloud/tke/v20180525/model/ModifyClusterAttributeResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolResponse.h>
+#include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolRequest.h>
+#include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolResponse.h>
 
 
 namespace TencentCloud
@@ -113,6 +129,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AddExistedInstancesResponse> AddExistedInstancesOutcome;
                 typedef std::future<AddExistedInstancesOutcome> AddExistedInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::AddExistedInstancesRequest&, AddExistedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddExistedInstancesAsyncHandler;
+                typedef Outcome<Error, Model::AddNodeToNodePoolResponse> AddNodeToNodePoolOutcome;
+                typedef std::future<AddNodeToNodePoolOutcome> AddNodeToNodePoolOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::AddNodeToNodePoolRequest&, AddNodeToNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddNodeToNodePoolAsyncHandler;
                 typedef Outcome<Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
@@ -128,6 +147,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateClusterInstancesResponse> CreateClusterInstancesOutcome;
                 typedef std::future<CreateClusterInstancesOutcome> CreateClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateClusterInstancesRequest&, CreateClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterInstancesAsyncHandler;
+                typedef Outcome<Error, Model::CreateClusterNodePoolResponse> CreateClusterNodePoolOutcome;
+                typedef std::future<CreateClusterNodePoolOutcome> CreateClusterNodePoolOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateClusterNodePoolRequest&, CreateClusterNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterNodePoolAsyncHandler;
+                typedef Outcome<Error, Model::CreateClusterNodePoolFromExistingAsgResponse> CreateClusterNodePoolFromExistingAsgOutcome;
+                typedef std::future<CreateClusterNodePoolFromExistingAsgOutcome> CreateClusterNodePoolFromExistingAsgOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateClusterNodePoolFromExistingAsgRequest&, CreateClusterNodePoolFromExistingAsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterNodePoolFromExistingAsgAsyncHandler;
                 typedef Outcome<Error, Model::CreateClusterRouteResponse> CreateClusterRouteOutcome;
                 typedef std::future<CreateClusterRouteOutcome> CreateClusterRouteOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateClusterRouteRequest&, CreateClusterRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterRouteAsyncHandler;
@@ -152,6 +177,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteClusterInstancesResponse> DeleteClusterInstancesOutcome;
                 typedef std::future<DeleteClusterInstancesOutcome> DeleteClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteClusterInstancesRequest&, DeleteClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteClusterNodePoolResponse> DeleteClusterNodePoolOutcome;
+                typedef std::future<DeleteClusterNodePoolOutcome> DeleteClusterNodePoolOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteClusterNodePoolRequest&, DeleteClusterNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterNodePoolAsyncHandler;
                 typedef Outcome<Error, Model::DeleteClusterRouteResponse> DeleteClusterRouteOutcome;
                 typedef std::future<DeleteClusterRouteOutcome> DeleteClusterRouteOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteClusterRouteRequest&, DeleteClusterRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterRouteAsyncHandler;
@@ -176,6 +204,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClusterKubeconfigResponse> DescribeClusterKubeconfigOutcome;
                 typedef std::future<DescribeClusterKubeconfigOutcome> DescribeClusterKubeconfigOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterKubeconfigRequest&, DescribeClusterKubeconfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterKubeconfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterNodePoolDetailResponse> DescribeClusterNodePoolDetailOutcome;
+                typedef std::future<DescribeClusterNodePoolDetailOutcome> DescribeClusterNodePoolDetailOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterNodePoolDetailRequest&, DescribeClusterNodePoolDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNodePoolDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterNodePoolsResponse> DescribeClusterNodePoolsOutcome;
+                typedef std::future<DescribeClusterNodePoolsOutcome> DescribeClusterNodePoolsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterNodePoolsRequest&, DescribeClusterNodePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNodePoolsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClusterRouteTablesResponse> DescribeClusterRouteTablesOutcome;
                 typedef std::future<DescribeClusterRouteTablesOutcome> DescribeClusterRouteTablesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterRouteTablesRequest&, DescribeClusterRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterRouteTablesAsyncHandler;
@@ -212,6 +246,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyClusterEndpointSPResponse> ModifyClusterEndpointSPOutcome;
                 typedef std::future<ModifyClusterEndpointSPOutcome> ModifyClusterEndpointSPOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterEndpointSPRequest&, ModifyClusterEndpointSPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterEndpointSPAsyncHandler;
+                typedef Outcome<Error, Model::ModifyClusterNodePoolResponse> ModifyClusterNodePoolOutcome;
+                typedef std::future<ModifyClusterNodePoolOutcome> ModifyClusterNodePoolOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyClusterNodePoolRequest&, ModifyClusterNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterNodePoolAsyncHandler;
+                typedef Outcome<Error, Model::RemoveNodeFromNodePoolResponse> RemoveNodeFromNodePoolOutcome;
+                typedef std::future<RemoveNodeFromNodePoolOutcome> RemoveNodeFromNodePoolOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::RemoveNodeFromNodePoolRequest&, RemoveNodeFromNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveNodeFromNodePoolAsyncHandler;
 
 
 
@@ -232,6 +272,15 @@ namespace TencentCloud
                 AddExistedInstancesOutcome AddExistedInstances(const Model::AddExistedInstancesRequest &request);
                 void AddExistedInstancesAsync(const Model::AddExistedInstancesRequest& request, const AddExistedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddExistedInstancesOutcomeCallable AddExistedInstancesCallable(const Model::AddExistedInstancesRequest& request);
+
+                /**
+                 *将集群内节点移入节点池
+                 * @param req AddNodeToNodePoolRequest
+                 * @return AddNodeToNodePoolOutcome
+                 */
+                AddNodeToNodePoolOutcome AddNodeToNodePool(const Model::AddNodeToNodePoolRequest &request);
+                void AddNodeToNodePoolAsync(const Model::AddNodeToNodePoolRequest& request, const AddNodeToNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddNodeToNodePoolOutcomeCallable AddNodeToNodePoolCallable(const Model::AddNodeToNodePoolRequest& request);
 
                 /**
                  *创建集群
@@ -277,6 +326,24 @@ namespace TencentCloud
                 CreateClusterInstancesOutcome CreateClusterInstances(const Model::CreateClusterInstancesRequest &request);
                 void CreateClusterInstancesAsync(const Model::CreateClusterInstancesRequest& request, const CreateClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClusterInstancesOutcomeCallable CreateClusterInstancesCallable(const Model::CreateClusterInstancesRequest& request);
+
+                /**
+                 *创建节点池
+                 * @param req CreateClusterNodePoolRequest
+                 * @return CreateClusterNodePoolOutcome
+                 */
+                CreateClusterNodePoolOutcome CreateClusterNodePool(const Model::CreateClusterNodePoolRequest &request);
+                void CreateClusterNodePoolAsync(const Model::CreateClusterNodePoolRequest& request, const CreateClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateClusterNodePoolOutcomeCallable CreateClusterNodePoolCallable(const Model::CreateClusterNodePoolRequest& request);
+
+                /**
+                 *从伸缩组创建节点池
+                 * @param req CreateClusterNodePoolFromExistingAsgRequest
+                 * @return CreateClusterNodePoolFromExistingAsgOutcome
+                 */
+                CreateClusterNodePoolFromExistingAsgOutcome CreateClusterNodePoolFromExistingAsg(const Model::CreateClusterNodePoolFromExistingAsgRequest &request);
+                void CreateClusterNodePoolFromExistingAsgAsync(const Model::CreateClusterNodePoolFromExistingAsgRequest& request, const CreateClusterNodePoolFromExistingAsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateClusterNodePoolFromExistingAsgOutcomeCallable CreateClusterNodePoolFromExistingAsgCallable(const Model::CreateClusterNodePoolFromExistingAsgRequest& request);
 
                 /**
                  *创建集群路由
@@ -351,6 +418,15 @@ namespace TencentCloud
                 DeleteClusterInstancesOutcomeCallable DeleteClusterInstancesCallable(const Model::DeleteClusterInstancesRequest& request);
 
                 /**
+                 *删除节点池
+                 * @param req DeleteClusterNodePoolRequest
+                 * @return DeleteClusterNodePoolOutcome
+                 */
+                DeleteClusterNodePoolOutcome DeleteClusterNodePool(const Model::DeleteClusterNodePoolRequest &request);
+                void DeleteClusterNodePoolAsync(const Model::DeleteClusterNodePoolRequest& request, const DeleteClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteClusterNodePoolOutcomeCallable DeleteClusterNodePoolCallable(const Model::DeleteClusterNodePoolRequest& request);
+
+                /**
                  *删除集群路由
                  * @param req DeleteClusterRouteRequest
                  * @return DeleteClusterRouteOutcome
@@ -421,6 +497,24 @@ namespace TencentCloud
                 DescribeClusterKubeconfigOutcome DescribeClusterKubeconfig(const Model::DescribeClusterKubeconfigRequest &request);
                 void DescribeClusterKubeconfigAsync(const Model::DescribeClusterKubeconfigRequest& request, const DescribeClusterKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterKubeconfigOutcomeCallable DescribeClusterKubeconfigCallable(const Model::DescribeClusterKubeconfigRequest& request);
+
+                /**
+                 *查询节点池详情
+                 * @param req DescribeClusterNodePoolDetailRequest
+                 * @return DescribeClusterNodePoolDetailOutcome
+                 */
+                DescribeClusterNodePoolDetailOutcome DescribeClusterNodePoolDetail(const Model::DescribeClusterNodePoolDetailRequest &request);
+                void DescribeClusterNodePoolDetailAsync(const Model::DescribeClusterNodePoolDetailRequest& request, const DescribeClusterNodePoolDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterNodePoolDetailOutcomeCallable DescribeClusterNodePoolDetailCallable(const Model::DescribeClusterNodePoolDetailRequest& request);
+
+                /**
+                 *查询节点池列表
+                 * @param req DescribeClusterNodePoolsRequest
+                 * @return DescribeClusterNodePoolsOutcome
+                 */
+                DescribeClusterNodePoolsOutcome DescribeClusterNodePools(const Model::DescribeClusterNodePoolsRequest &request);
+                void DescribeClusterNodePoolsAsync(const Model::DescribeClusterNodePoolsRequest& request, const DescribeClusterNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterNodePoolsOutcomeCallable DescribeClusterNodePoolsCallable(const Model::DescribeClusterNodePoolsRequest& request);
 
                 /**
                  *查询集群路由表
@@ -529,6 +623,24 @@ namespace TencentCloud
                 ModifyClusterEndpointSPOutcome ModifyClusterEndpointSP(const Model::ModifyClusterEndpointSPRequest &request);
                 void ModifyClusterEndpointSPAsync(const Model::ModifyClusterEndpointSPRequest& request, const ModifyClusterEndpointSPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterEndpointSPOutcomeCallable ModifyClusterEndpointSPCallable(const Model::ModifyClusterEndpointSPRequest& request);
+
+                /**
+                 *编辑节点池
+                 * @param req ModifyClusterNodePoolRequest
+                 * @return ModifyClusterNodePoolOutcome
+                 */
+                ModifyClusterNodePoolOutcome ModifyClusterNodePool(const Model::ModifyClusterNodePoolRequest &request);
+                void ModifyClusterNodePoolAsync(const Model::ModifyClusterNodePoolRequest& request, const ModifyClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterNodePoolOutcomeCallable ModifyClusterNodePoolCallable(const Model::ModifyClusterNodePoolRequest& request);
+
+                /**
+                 *移出节点池节点，但保留在集群内
+                 * @param req RemoveNodeFromNodePoolRequest
+                 * @return RemoveNodeFromNodePoolOutcome
+                 */
+                RemoveNodeFromNodePoolOutcome RemoveNodeFromNodePool(const Model::RemoveNodeFromNodePoolRequest &request);
+                void RemoveNodeFromNodePoolAsync(const Model::RemoveNodeFromNodePoolRequest& request, const RemoveNodeFromNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveNodeFromNodePoolOutcomeCallable RemoveNodeFromNodePoolCallable(const Model::RemoveNodeFromNodePoolRequest& request);
 
             };
         }

@@ -28,7 +28,8 @@ ReplaceCertificateRequest::ReplaceCertificateRequest() :
     m_validTypeHasBeenSet(false),
     m_csrTypeHasBeenSet(false),
     m_csrContentHasBeenSet(false),
-    m_csrkeyPasswordHasBeenSet(false)
+    m_csrkeyPasswordHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string ReplaceCertificateRequest::ToJsonString() const
         string key = "CsrkeyPassword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_csrkeyPassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void ReplaceCertificateRequest::SetCsrkeyPassword(const string& _csrkeyPassword)
 bool ReplaceCertificateRequest::CsrkeyPasswordHasBeenSet() const
 {
     return m_csrkeyPasswordHasBeenSet;
+}
+
+string ReplaceCertificateRequest::GetReason() const
+{
+    return m_reason;
+}
+
+void ReplaceCertificateRequest::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool ReplaceCertificateRequest::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 
 

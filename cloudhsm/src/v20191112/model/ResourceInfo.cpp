@@ -39,7 +39,10 @@ ResourceInfo::ResourceInfo() :
     m_subnetNameHasBeenSet(false),
     m_expiredHasBeenSet(false),
     m_remainSecondsHasBeenSet(false),
-    m_vpcNameHasBeenSet(false)
+    m_vpcNameHasBeenSet(false),
+    m_createUinHasBeenSet(false),
+    m_renewFlagHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -238,6 +241,46 @@ CoreInternalOutcome ResourceInfo::Deserialize(const Value &value)
         m_vpcNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateUin") && !value["CreateUin"].IsNull())
+    {
+        if (!value["CreateUin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.CreateUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUin = string(value["CreateUin"].GetString());
+        m_createUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    {
+        if (!value["RenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = value["RenewFlag"].GetInt64();
+        m_renewFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `ResourceInfo.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -394,6 +437,37 @@ void ResourceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "VpcName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -685,5 +759,53 @@ void ResourceInfo::SetVpcName(const string& _vpcName)
 bool ResourceInfo::VpcNameHasBeenSet() const
 {
     return m_vpcNameHasBeenSet;
+}
+
+string ResourceInfo::GetCreateUin() const
+{
+    return m_createUin;
+}
+
+void ResourceInfo::SetCreateUin(const string& _createUin)
+{
+    m_createUin = _createUin;
+    m_createUinHasBeenSet = true;
+}
+
+bool ResourceInfo::CreateUinHasBeenSet() const
+{
+    return m_createUinHasBeenSet;
+}
+
+int64_t ResourceInfo::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void ResourceInfo::SetRenewFlag(const int64_t& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool ResourceInfo::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
+}
+
+vector<Tag> ResourceInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void ResourceInfo::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ResourceInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

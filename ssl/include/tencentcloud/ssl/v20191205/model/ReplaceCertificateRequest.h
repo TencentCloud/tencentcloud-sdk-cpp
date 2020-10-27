@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool CsrkeyPasswordHasBeenSet() const;
 
+                    /**
+                     * 获取重颁发原因。
+                     * @return Reason 重颁发原因。
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 设置重颁发原因。
+                     * @param Reason 重颁发原因。
+                     */
+                    void SetReason(const std::string& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_csrkeyPassword;
                     bool m_csrkeyPasswordHasBeenSet;
+
+                    /**
+                     * 重颁发原因。
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

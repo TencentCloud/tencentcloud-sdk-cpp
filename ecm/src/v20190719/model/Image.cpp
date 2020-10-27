@@ -36,7 +36,8 @@ Image::Image() :
     m_imageOwnerHasBeenSet(false),
     m_imageSizeHasBeenSet(false),
     m_srcImageHasBeenSet(false),
-    m_imageSourceHasBeenSet(false)
+    m_imageSourceHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,16 @@ CoreInternalOutcome Image::Deserialize(const Value &value)
         m_imageSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
+    {
+        if (!value["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Image.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(value["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -328,6 +339,14 @@ void Image::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "ImageSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_imageSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -571,5 +590,21 @@ void Image::SetImageSource(const string& _imageSource)
 bool Image::ImageSourceHasBeenSet() const
 {
     return m_imageSourceHasBeenSet;
+}
+
+string Image::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void Image::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool Image::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 

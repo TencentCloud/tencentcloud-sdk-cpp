@@ -24,7 +24,8 @@ using namespace std;
 AdaptiveStreamTemplate::AdaptiveStreamTemplate() :
     m_videoHasBeenSet(false),
     m_audioHasBeenSet(false),
-    m_removeAudioHasBeenSet(false)
+    m_removeAudioHasBeenSet(false),
+    m_removeVideoHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,16 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const Value &value)
         m_removeAudioHasBeenSet = true;
     }
 
+    if (value.HasMember("RemoveVideo") && !value["RemoveVideo"].IsNull())
+    {
+        if (!value["RemoveVideo"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AdaptiveStreamTemplate.RemoveVideo` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_removeVideo = value["RemoveVideo"].GetUint64();
+        m_removeVideoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void AdaptiveStreamTemplate::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "RemoveAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_removeAudio, allocator);
+    }
+
+    if (m_removeVideoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RemoveVideo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_removeVideo, allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void AdaptiveStreamTemplate::SetRemoveAudio(const uint64_t& _removeAudio)
 bool AdaptiveStreamTemplate::RemoveAudioHasBeenSet() const
 {
     return m_removeAudioHasBeenSet;
+}
+
+uint64_t AdaptiveStreamTemplate::GetRemoveVideo() const
+{
+    return m_removeVideo;
+}
+
+void AdaptiveStreamTemplate::SetRemoveVideo(const uint64_t& _removeVideo)
+{
+    m_removeVideo = _removeVideo;
+    m_removeVideoHasBeenSet = true;
+}
+
+bool AdaptiveStreamTemplate::RemoveVideoHasBeenSet() const
+{
+    return m_removeVideoHasBeenSet;
 }
 

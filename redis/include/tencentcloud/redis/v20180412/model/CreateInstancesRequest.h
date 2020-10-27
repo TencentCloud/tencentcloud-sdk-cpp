@@ -79,14 +79,18 @@ namespace TencentCloud
                     bool TypeIdHasBeenSet() const;
 
                     /**
-                     * 获取实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
-                     * @return MemSize 实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+                     * 获取内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。
+                     * @return MemSize 内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。
                      */
                     uint64_t GetMemSize() const;
 
                     /**
-                     * 设置实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
-                     * @param MemSize 实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+                     * 设置内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。
+                     * @param MemSize 内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。
                      */
                     void SetMemSize(const uint64_t& _memSize);
 
@@ -151,14 +155,18 @@ namespace TencentCloud
                     bool BillingModeHasBeenSet() const;
 
                     /**
-                     * 获取实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
-                     * @return Password 实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
+                     * 获取实例密码，当输入参数NoAuth为true且使用私有网络VPC时，Password为非必填，否则Password为必填。
+密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
+                     * @return Password 实例密码，当输入参数NoAuth为true且使用私有网络VPC时，Password为非必填，否则Password为必填。
+密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
-                     * @param Password 实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
+                     * 设置实例密码，当输入参数NoAuth为true且使用私有网络VPC时，Password为非必填，否则Password为必填。
+密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
+                     * @param Password 实例密码，当输入参数NoAuth为true且使用私有网络VPC时，Password为非必填，否则Password为必填。
+密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
                      */
                     void SetPassword(const std::string& _password);
 
@@ -381,7 +389,8 @@ namespace TencentCloud
                     bool m_typeIdHasBeenSet;
 
                     /**
-                     * 实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+                     * 内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。
+TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。
                      */
                     uint64_t m_memSize;
                     bool m_memSizeHasBeenSet;
@@ -405,7 +414,8 @@ namespace TencentCloud
                     bool m_billingModeHasBeenSet;
 
                     /**
-                     * 实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
+                     * 实例密码，当输入参数NoAuth为true且使用私有网络VPC时，Password为非必填，否则Password为必填。
+密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

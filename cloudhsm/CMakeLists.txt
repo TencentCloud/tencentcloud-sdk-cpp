@@ -29,11 +29,13 @@ set(cloudhsm_public_header_model
   include/tencentcloud/cloudhsm/v20191112/model/DescribeHSMByVpcIdRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeHSMByVpcIdResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeUsgRuleResponse.h
+  include/tencentcloud/cloudhsm/v20191112/model/Tag.h
   include/tencentcloud/cloudhsm/v20191112/model/ResourceInfo.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeVpcRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/Vpc.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeUsgRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeVsmAttributesResponse.h
+  include/tencentcloud/cloudhsm/v20191112/model/TagFilter.h
   include/tencentcloud/cloudhsm/v20191112/model/SgUnit.h
   include/tencentcloud/cloudhsm/v20191112/model/UsgRuleDetail.h
   include/tencentcloud/cloudhsm/v20191112/model/InquiryPriceBuyVsmResponse.h
@@ -59,11 +61,13 @@ set(cloudhsm_src
   src/v20191112/model/DescribeHSMByVpcIdRequest.cpp
   src/v20191112/model/DescribeHSMByVpcIdResponse.cpp
   src/v20191112/model/DescribeUsgRuleResponse.cpp
+  src/v20191112/model/Tag.cpp
   src/v20191112/model/ResourceInfo.cpp
   src/v20191112/model/DescribeVpcRequest.cpp
   src/v20191112/model/Vpc.cpp
   src/v20191112/model/DescribeUsgRequest.cpp
   src/v20191112/model/DescribeVsmAttributesResponse.cpp
+  src/v20191112/model/TagFilter.cpp
   src/v20191112/model/SgUnit.cpp
   src/v20191112/model/UsgRuleDetail.cpp
   src/v20191112/model/InquiryPriceBuyVsmResponse.cpp

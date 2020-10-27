@@ -28,7 +28,9 @@ RunOtaVersionRequest::RunOtaVersionRequest() :
     m_otaVersionHasBeenSet(false),
     m_grayValueHasBeenSet(false),
     m_oldVersionsHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_contentsHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,23 @@ string RunOtaVersionRequest::ToJsonString() const
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Contents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_contents.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -170,6 +189,38 @@ void RunOtaVersionRequest::SetOperator(const string& _operator)
 bool RunOtaVersionRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string RunOtaVersionRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void RunOtaVersionRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool RunOtaVersionRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
+Contents RunOtaVersionRequest::GetContents() const
+{
+    return m_contents;
+}
+
+void RunOtaVersionRequest::SetContents(const Contents& _contents)
+{
+    m_contents = _contents;
+    m_contentsHasBeenSet = true;
+}
+
+bool RunOtaVersionRequest::ContentsHasBeenSet() const
+{
+    return m_contentsHasBeenSet;
 }
 
 

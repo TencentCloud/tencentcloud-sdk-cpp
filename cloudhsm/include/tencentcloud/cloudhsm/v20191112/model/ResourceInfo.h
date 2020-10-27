@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cloudhsm/v20191112/model/SgUnit.h>
+#include <tencentcloud/cloudhsm/v20191112/model/Tag.h>
 
 
 namespace TencentCloud
@@ -443,6 +444,72 @@ namespace TencentCloud
                      */
                     bool VpcNameHasBeenSet() const;
 
+                    /**
+                     * 获取创建者Uin账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateUin 创建者Uin账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateUin() const;
+
+                    /**
+                     * 设置创建者Uin账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateUin 创建者Uin账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateUin(const std::string& _createUin);
+
+                    /**
+                     * 判断参数 CreateUin 是否已赋值
+                     * @return CreateUin 是否已赋值
+                     */
+                    bool CreateUinHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RenewFlag 自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRenewFlag() const;
+
+                    /**
+                     * 设置自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RenewFlag 自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRenewFlag(const int64_t& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +637,27 @@ namespace TencentCloud
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
+
+                    /**
+                     * 创建者Uin账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createUin;
+                    bool m_createUinHasBeenSet;
+
+                    /**
+                     * 自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

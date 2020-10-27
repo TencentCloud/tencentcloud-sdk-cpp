@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool DiscountPriceHasBeenSet() const;
 
                     /**
-                     * 获取折扣，如20.0代表2折
+                     * 获取折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Discount 折扣，如20.0代表2折
+                     * @return Discount 折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetDiscount() const;
 
                     /**
-                     * 设置折扣，如20.0代表2折
+                     * 设置折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Discount 折扣，如20.0代表2折
+                     * @param Discount 折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiscount(const double& _discount);
@@ -266,6 +266,240 @@ namespace TencentCloud
                      */
                     bool UnitPriceDiscountThirdStepHasBeenSet() const;
 
+                    /**
+                     * 获取预支三年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginalPriceThreeYear 预支三年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetOriginalPriceThreeYear() const;
+
+                    /**
+                     * 设置预支三年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginalPriceThreeYear 预支三年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginalPriceThreeYear(const double& _originalPriceThreeYear);
+
+                    /**
+                     * 判断参数 OriginalPriceThreeYear 是否已赋值
+                     * @return OriginalPriceThreeYear 是否已赋值
+                     */
+                    bool OriginalPriceThreeYearHasBeenSet() const;
+
+                    /**
+                     * 获取预支三年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountPriceThreeYear 预支三年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDiscountPriceThreeYear() const;
+
+                    /**
+                     * 设置预支三年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiscountPriceThreeYear 预支三年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiscountPriceThreeYear(const double& _discountPriceThreeYear);
+
+                    /**
+                     * 判断参数 DiscountPriceThreeYear 是否已赋值
+                     * @return DiscountPriceThreeYear 是否已赋值
+                     */
+                    bool DiscountPriceThreeYearHasBeenSet() const;
+
+                    /**
+                     * 获取预支三年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountThreeYear 预支三年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDiscountThreeYear() const;
+
+                    /**
+                     * 设置预支三年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiscountThreeYear 预支三年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiscountThreeYear(const double& _discountThreeYear);
+
+                    /**
+                     * 判断参数 DiscountThreeYear 是否已赋值
+                     * @return DiscountThreeYear 是否已赋值
+                     */
+                    bool DiscountThreeYearHasBeenSet() const;
+
+                    /**
+                     * 获取预支五年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginalPriceFiveYear 预支五年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetOriginalPriceFiveYear() const;
+
+                    /**
+                     * 设置预支五年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginalPriceFiveYear 预支五年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginalPriceFiveYear(const double& _originalPriceFiveYear);
+
+                    /**
+                     * 判断参数 OriginalPriceFiveYear 是否已赋值
+                     * @return OriginalPriceFiveYear 是否已赋值
+                     */
+                    bool OriginalPriceFiveYearHasBeenSet() const;
+
+                    /**
+                     * 获取预支五年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountPriceFiveYear 预支五年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDiscountPriceFiveYear() const;
+
+                    /**
+                     * 设置预支五年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiscountPriceFiveYear 预支五年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiscountPriceFiveYear(const double& _discountPriceFiveYear);
+
+                    /**
+                     * 判断参数 DiscountPriceFiveYear 是否已赋值
+                     * @return DiscountPriceFiveYear 是否已赋值
+                     */
+                    bool DiscountPriceFiveYearHasBeenSet() const;
+
+                    /**
+                     * 获取预支五年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountFiveYear 预支五年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDiscountFiveYear() const;
+
+                    /**
+                     * 设置预支五年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiscountFiveYear 预支五年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiscountFiveYear(const double& _discountFiveYear);
+
+                    /**
+                     * 判断参数 DiscountFiveYear 是否已赋值
+                     * @return DiscountFiveYear 是否已赋值
+                     */
+                    bool DiscountFiveYearHasBeenSet() const;
+
+                    /**
+                     * 获取预支一年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginalPriceOneYear 预支一年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetOriginalPriceOneYear() const;
+
+                    /**
+                     * 设置预支一年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginalPriceOneYear 预支一年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginalPriceOneYear(const double& _originalPriceOneYear);
+
+                    /**
+                     * 判断参数 OriginalPriceOneYear 是否已赋值
+                     * @return OriginalPriceOneYear 是否已赋值
+                     */
+                    bool OriginalPriceOneYearHasBeenSet() const;
+
+                    /**
+                     * 获取预支一年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountPriceOneYear 预支一年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDiscountPriceOneYear() const;
+
+                    /**
+                     * 设置预支一年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiscountPriceOneYear 预支一年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiscountPriceOneYear(const double& _discountPriceOneYear);
+
+                    /**
+                     * 判断参数 DiscountPriceOneYear 是否已赋值
+                     * @return DiscountPriceOneYear 是否已赋值
+                     */
+                    bool DiscountPriceOneYearHasBeenSet() const;
+
+                    /**
+                     * 获取预支一年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountOneYear 预支一年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDiscountOneYear() const;
+
+                    /**
+                     * 设置预支一年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiscountOneYear 预支一年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiscountOneYear(const double& _discountOneYear);
+
+                    /**
+                     * 判断参数 DiscountOneYear 是否已赋值
+                     * @return DiscountOneYear 是否已赋值
+                     */
+                    bool DiscountOneYearHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,7 +531,7 @@ namespace TencentCloud
                     bool m_discountPriceHasBeenSet;
 
                     /**
-                     * 折扣，如20.0代表2折
+                     * 折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_discount;
@@ -337,6 +571,78 @@ namespace TencentCloud
                      */
                     double m_unitPriceDiscountThirdStep;
                     bool m_unitPriceDiscountThirdStepHasBeenSet;
+
+                    /**
+                     * 预支三年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_originalPriceThreeYear;
+                    bool m_originalPriceThreeYearHasBeenSet;
+
+                    /**
+                     * 预支三年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_discountPriceThreeYear;
+                    bool m_discountPriceThreeYearHasBeenSet;
+
+                    /**
+                     * 预支三年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_discountThreeYear;
+                    bool m_discountThreeYearHasBeenSet;
+
+                    /**
+                     * 预支五年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_originalPriceFiveYear;
+                    bool m_originalPriceFiveYearHasBeenSet;
+
+                    /**
+                     * 预支五年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_discountPriceFiveYear;
+                    bool m_discountPriceFiveYearHasBeenSet;
+
+                    /**
+                     * 预支五年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_discountFiveYear;
+                    bool m_discountFiveYearHasBeenSet;
+
+                    /**
+                     * 预支一年合计费用的原价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_originalPriceOneYear;
+                    bool m_originalPriceOneYearHasBeenSet;
+
+                    /**
+                     * 预支一年合计费用的折扣价，预付费模式使用，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_discountPriceOneYear;
+                    bool m_discountPriceOneYearHasBeenSet;
+
+                    /**
+                     * 预支一年应用的折扣，如20.0代表2折。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_discountOneYear;
+                    bool m_discountOneYearHasBeenSet;
 
                 };
             }

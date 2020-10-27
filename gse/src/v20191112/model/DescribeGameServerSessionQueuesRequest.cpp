@@ -26,7 +26,8 @@ using namespace std;
 DescribeGameServerSessionQueuesRequest::DescribeGameServerSessionQueuesRequest() :
     m_namesHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,21 @@ string DescribeGameServerSessionQueuesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -120,6 +136,22 @@ void DescribeGameServerSessionQueuesRequest::SetOffset(const uint64_t& _offset)
 bool DescribeGameServerSessionQueuesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+vector<Filter> DescribeGameServerSessionQueuesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeGameServerSessionQueuesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeGameServerSessionQueuesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

@@ -143,6 +143,7 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/InstanceCounts.h
   include/tencentcloud/gse/v20191112/model/UpdateFleetNameRequest.h
   include/tencentcloud/gse/v20191112/model/CreateFleetResponse.h
+  include/tencentcloud/gse/v20191112/model/Filter.h
   include/tencentcloud/gse/v20191112/model/UpdateFleetAttributesResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeFleetUtilizationRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionDetailsRequest.h
@@ -314,6 +315,7 @@ set(gse_src
   src/v20191112/model/InstanceCounts.cpp
   src/v20191112/model/UpdateFleetNameRequest.cpp
   src/v20191112/model/CreateFleetResponse.cpp
+  src/v20191112/model/Filter.cpp
   src/v20191112/model/UpdateFleetAttributesResponse.cpp
   src/v20191112/model/DescribeFleetUtilizationRequest.cpp
   src/v20191112/model/DescribeGameServerSessionDetailsRequest.cpp

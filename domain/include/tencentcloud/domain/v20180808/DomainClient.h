@@ -142,8 +142,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( BatchModifyDomainInfo ) 用于批量域名信息修改 。
-
-默认接口请求频率限制：20次/秒。
                  * @param req BatchModifyDomainInfoRequest
                  * @return BatchModifyDomainInfoOutcome
                  */
@@ -184,8 +182,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( CreateTemplate ) 用于添加域名信息模板 。
-
-默认接口请求频率限制：20次/秒。
                  * @param req CreateTemplateRequest
                  * @return CreateTemplateOutcome
                  */
@@ -195,8 +191,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( DeleteTemplate ) 用于删除域名信息模板。
-
-默认接口请求频率限制：20次/秒。
                  * @param req DeleteTemplateRequest
                  * @return DeleteTemplateOutcome
                  */
@@ -237,8 +231,6 @@ namespace TencentCloud
                 /**
                  *本接口 (  DescribeDomainNameList ) 获取域名列表。
 
-默认接口请求频率限制：20次/秒。
-
                  * @param req DescribeDomainNameListRequest
                  * @return DescribeDomainNameListOutcome
                  */
@@ -257,8 +249,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 (DescribeTemplateList) 用于获取模板列表。
-
-默认接口请求频率限制：20次/秒。
 
                  * @param req DescribeTemplateListRequest
                  * @return DescribeTemplateListOutcome
@@ -280,8 +270,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( ModifyDomainOwnerBatch) 用于域名批量账号间转移 。
-
-默认接口请求频率限制：20次/秒。
                  * @param req ModifyDomainOwnerBatchRequest
                  * @return ModifyDomainOwnerBatchOutcome
                  */
@@ -345,8 +333,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( UploadImage ) 用于上传资质照片 。
-
-默认接口请求频率限制：20次/秒。
                  * @param req UploadImageRequest
                  * @return UploadImageOutcome
                  */

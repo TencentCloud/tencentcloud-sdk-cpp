@@ -36,7 +36,9 @@ VersionData::VersionData() :
     m_onlineCountHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_uploadTimeHasBeenSet(false),
-    m_modifyTimesHasBeenSet(false)
+    m_modifyTimesHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_contentsHasBeenSet(false)
 {
 }
 
@@ -195,6 +197,33 @@ CoreInternalOutcome VersionData::Deserialize(const Value &value)
         m_modifyTimesHasBeenSet = true;
     }
 
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VersionData.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("Contents") && !value["Contents"].IsNull())
+    {
+        if (!value["Contents"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `VersionData.Contents` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_contents.Deserialize(value["Contents"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_contentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -320,6 +349,23 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "ModifyTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modifyTimes, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Contents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_contents.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -563,5 +609,37 @@ void VersionData::SetModifyTimes(const uint64_t& _modifyTimes)
 bool VersionData::ModifyTimesHasBeenSet() const
 {
     return m_modifyTimesHasBeenSet;
+}
+
+string VersionData::GetRemark() const
+{
+    return m_remark;
+}
+
+void VersionData::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool VersionData::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
+Contents VersionData::GetContents() const
+{
+    return m_contents;
+}
+
+void VersionData::SetContents(const Contents& _contents)
+{
+    m_contents = _contents;
+    m_contentsHasBeenSet = true;
+}
+
+bool VersionData::ContentsHasBeenSet() const
+{
+    return m_contentsHasBeenSet;
 }
 

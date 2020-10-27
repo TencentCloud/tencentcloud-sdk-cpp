@@ -31,7 +31,16 @@ ItemPrice::ItemPrice() :
     m_unitPriceSecondStepHasBeenSet(false),
     m_unitPriceDiscountSecondStepHasBeenSet(false),
     m_unitPriceThirdStepHasBeenSet(false),
-    m_unitPriceDiscountThirdStepHasBeenSet(false)
+    m_unitPriceDiscountThirdStepHasBeenSet(false),
+    m_originalPriceThreeYearHasBeenSet(false),
+    m_discountPriceThreeYearHasBeenSet(false),
+    m_discountThreeYearHasBeenSet(false),
+    m_originalPriceFiveYearHasBeenSet(false),
+    m_discountPriceFiveYearHasBeenSet(false),
+    m_discountFiveYearHasBeenSet(false),
+    m_originalPriceOneYearHasBeenSet(false),
+    m_discountPriceOneYearHasBeenSet(false),
+    m_discountOneYearHasBeenSet(false)
 {
 }
 
@@ -140,6 +149,96 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
         m_unitPriceDiscountThirdStepHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginalPriceThreeYear") && !value["OriginalPriceThreeYear"].IsNull())
+    {
+        if (!value["OriginalPriceThreeYear"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPriceThreeYear` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalPriceThreeYear = value["OriginalPriceThreeYear"].GetDouble();
+        m_originalPriceThreeYearHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountPriceThreeYear") && !value["DiscountPriceThreeYear"].IsNull())
+    {
+        if (!value["DiscountPriceThreeYear"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPriceThreeYear` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountPriceThreeYear = value["DiscountPriceThreeYear"].GetDouble();
+        m_discountPriceThreeYearHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountThreeYear") && !value["DiscountThreeYear"].IsNull())
+    {
+        if (!value["DiscountThreeYear"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountThreeYear` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountThreeYear = value["DiscountThreeYear"].GetDouble();
+        m_discountThreeYearHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginalPriceFiveYear") && !value["OriginalPriceFiveYear"].IsNull())
+    {
+        if (!value["OriginalPriceFiveYear"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPriceFiveYear` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalPriceFiveYear = value["OriginalPriceFiveYear"].GetDouble();
+        m_originalPriceFiveYearHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountPriceFiveYear") && !value["DiscountPriceFiveYear"].IsNull())
+    {
+        if (!value["DiscountPriceFiveYear"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPriceFiveYear` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountPriceFiveYear = value["DiscountPriceFiveYear"].GetDouble();
+        m_discountPriceFiveYearHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountFiveYear") && !value["DiscountFiveYear"].IsNull())
+    {
+        if (!value["DiscountFiveYear"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountFiveYear` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountFiveYear = value["DiscountFiveYear"].GetDouble();
+        m_discountFiveYearHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginalPriceOneYear") && !value["OriginalPriceOneYear"].IsNull())
+    {
+        if (!value["OriginalPriceOneYear"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPriceOneYear` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalPriceOneYear = value["OriginalPriceOneYear"].GetDouble();
+        m_originalPriceOneYearHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountPriceOneYear") && !value["DiscountPriceOneYear"].IsNull())
+    {
+        if (!value["DiscountPriceOneYear"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPriceOneYear` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountPriceOneYear = value["DiscountPriceOneYear"].GetDouble();
+        m_discountPriceOneYearHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountOneYear") && !value["DiscountOneYear"].IsNull())
+    {
+        if (!value["DiscountOneYear"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountOneYear` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountOneYear = value["DiscountOneYear"].GetDouble();
+        m_discountOneYearHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +324,78 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "UnitPriceDiscountThirdStep";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPriceDiscountThirdStep, allocator);
+    }
+
+    if (m_originalPriceThreeYearHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginalPriceThreeYear";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_originalPriceThreeYear, allocator);
+    }
+
+    if (m_discountPriceThreeYearHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiscountPriceThreeYear";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_discountPriceThreeYear, allocator);
+    }
+
+    if (m_discountThreeYearHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiscountThreeYear";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_discountThreeYear, allocator);
+    }
+
+    if (m_originalPriceFiveYearHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginalPriceFiveYear";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_originalPriceFiveYear, allocator);
+    }
+
+    if (m_discountPriceFiveYearHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiscountPriceFiveYear";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_discountPriceFiveYear, allocator);
+    }
+
+    if (m_discountFiveYearHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiscountFiveYear";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_discountFiveYear, allocator);
+    }
+
+    if (m_originalPriceOneYearHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginalPriceOneYear";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_originalPriceOneYear, allocator);
+    }
+
+    if (m_discountPriceOneYearHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiscountPriceOneYear";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_discountPriceOneYear, allocator);
+    }
+
+    if (m_discountOneYearHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiscountOneYear";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_discountOneYear, allocator);
     }
 
 }
@@ -388,5 +559,149 @@ void ItemPrice::SetUnitPriceDiscountThirdStep(const double& _unitPriceDiscountTh
 bool ItemPrice::UnitPriceDiscountThirdStepHasBeenSet() const
 {
     return m_unitPriceDiscountThirdStepHasBeenSet;
+}
+
+double ItemPrice::GetOriginalPriceThreeYear() const
+{
+    return m_originalPriceThreeYear;
+}
+
+void ItemPrice::SetOriginalPriceThreeYear(const double& _originalPriceThreeYear)
+{
+    m_originalPriceThreeYear = _originalPriceThreeYear;
+    m_originalPriceThreeYearHasBeenSet = true;
+}
+
+bool ItemPrice::OriginalPriceThreeYearHasBeenSet() const
+{
+    return m_originalPriceThreeYearHasBeenSet;
+}
+
+double ItemPrice::GetDiscountPriceThreeYear() const
+{
+    return m_discountPriceThreeYear;
+}
+
+void ItemPrice::SetDiscountPriceThreeYear(const double& _discountPriceThreeYear)
+{
+    m_discountPriceThreeYear = _discountPriceThreeYear;
+    m_discountPriceThreeYearHasBeenSet = true;
+}
+
+bool ItemPrice::DiscountPriceThreeYearHasBeenSet() const
+{
+    return m_discountPriceThreeYearHasBeenSet;
+}
+
+double ItemPrice::GetDiscountThreeYear() const
+{
+    return m_discountThreeYear;
+}
+
+void ItemPrice::SetDiscountThreeYear(const double& _discountThreeYear)
+{
+    m_discountThreeYear = _discountThreeYear;
+    m_discountThreeYearHasBeenSet = true;
+}
+
+bool ItemPrice::DiscountThreeYearHasBeenSet() const
+{
+    return m_discountThreeYearHasBeenSet;
+}
+
+double ItemPrice::GetOriginalPriceFiveYear() const
+{
+    return m_originalPriceFiveYear;
+}
+
+void ItemPrice::SetOriginalPriceFiveYear(const double& _originalPriceFiveYear)
+{
+    m_originalPriceFiveYear = _originalPriceFiveYear;
+    m_originalPriceFiveYearHasBeenSet = true;
+}
+
+bool ItemPrice::OriginalPriceFiveYearHasBeenSet() const
+{
+    return m_originalPriceFiveYearHasBeenSet;
+}
+
+double ItemPrice::GetDiscountPriceFiveYear() const
+{
+    return m_discountPriceFiveYear;
+}
+
+void ItemPrice::SetDiscountPriceFiveYear(const double& _discountPriceFiveYear)
+{
+    m_discountPriceFiveYear = _discountPriceFiveYear;
+    m_discountPriceFiveYearHasBeenSet = true;
+}
+
+bool ItemPrice::DiscountPriceFiveYearHasBeenSet() const
+{
+    return m_discountPriceFiveYearHasBeenSet;
+}
+
+double ItemPrice::GetDiscountFiveYear() const
+{
+    return m_discountFiveYear;
+}
+
+void ItemPrice::SetDiscountFiveYear(const double& _discountFiveYear)
+{
+    m_discountFiveYear = _discountFiveYear;
+    m_discountFiveYearHasBeenSet = true;
+}
+
+bool ItemPrice::DiscountFiveYearHasBeenSet() const
+{
+    return m_discountFiveYearHasBeenSet;
+}
+
+double ItemPrice::GetOriginalPriceOneYear() const
+{
+    return m_originalPriceOneYear;
+}
+
+void ItemPrice::SetOriginalPriceOneYear(const double& _originalPriceOneYear)
+{
+    m_originalPriceOneYear = _originalPriceOneYear;
+    m_originalPriceOneYearHasBeenSet = true;
+}
+
+bool ItemPrice::OriginalPriceOneYearHasBeenSet() const
+{
+    return m_originalPriceOneYearHasBeenSet;
+}
+
+double ItemPrice::GetDiscountPriceOneYear() const
+{
+    return m_discountPriceOneYear;
+}
+
+void ItemPrice::SetDiscountPriceOneYear(const double& _discountPriceOneYear)
+{
+    m_discountPriceOneYear = _discountPriceOneYear;
+    m_discountPriceOneYearHasBeenSet = true;
+}
+
+bool ItemPrice::DiscountPriceOneYearHasBeenSet() const
+{
+    return m_discountPriceOneYearHasBeenSet;
+}
+
+double ItemPrice::GetDiscountOneYear() const
+{
+    return m_discountOneYear;
+}
+
+void ItemPrice::SetDiscountOneYear(const double& _discountOneYear)
+{
+    m_discountOneYear = _discountOneYear;
+    m_discountOneYearHasBeenSet = true;
+}
+
+bool ItemPrice::DiscountOneYearHasBeenSet() const
+{
+    return m_discountOneYearHasBeenSet;
 }
 

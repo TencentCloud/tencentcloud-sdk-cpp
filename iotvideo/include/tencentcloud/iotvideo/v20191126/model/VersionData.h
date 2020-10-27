@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotvideo/v20191126/model/Contents.h>
 
 
 namespace TencentCloud
@@ -376,6 +377,50 @@ namespace TencentCloud
                      */
                     bool ModifyTimesHasBeenSet() const;
 
+                    /**
+                     * 获取备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Remark 备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Remark 备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取版本发布的描述信息，需要国际化，可以为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Contents 版本发布的描述信息，需要国际化，可以为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Contents GetContents() const;
+
+                    /**
+                     * 设置版本发布的描述信息，需要国际化，可以为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Contents 版本发布的描述信息，需要国际化，可以为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContents(const Contents& _contents);
+
+                    /**
+                     * 判断参数 Contents 是否已赋值
+                     * @return Contents 是否已赋值
+                     */
+                    bool ContentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -482,6 +527,20 @@ namespace TencentCloud
                      */
                     uint64_t m_modifyTimes;
                     bool m_modifyTimesHasBeenSet;
+
+                    /**
+                     * 备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 版本发布的描述信息，需要国际化，可以为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Contents m_contents;
+                    bool m_contentsHasBeenSet;
 
                 };
             }

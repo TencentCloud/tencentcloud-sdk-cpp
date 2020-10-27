@@ -317,6 +317,24 @@ namespace TencentCloud
                      */
                     bool ImageSourceHasBeenSet() const;
 
+                    /**
+                     * 获取中间态和失败时候的任务ID
+                     * @return TaskId 中间态和失败时候的任务ID
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置中间态和失败时候的任务ID
+                     * @param TaskId 中间态和失败时候的任务ID
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -408,6 +426,12 @@ namespace TencentCloud
                      */
                     std::string m_imageSource;
                     bool m_imageSourceHasBeenSet;
+
+                    /**
+                     * 中间态和失败时候的任务ID
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

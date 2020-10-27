@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cloudhsm/v20191112/model/UsgRuleDetail.h>
+#include <tencentcloud/cloudhsm/v20191112/model/Tag.h>
 
 
 namespace TencentCloud
@@ -301,6 +302,34 @@ namespace TencentCloud
                      */
                     bool SubnetCidrBlockHasBeenSet() const;
 
+                    /**
+                     * 获取资源所关联的Tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 资源所关联的Tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RenewFlag 资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRenewFlag() const;
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +460,20 @@ namespace TencentCloud
                      */
                     std::string m_subnetCidrBlock;
                     bool m_subnetCidrBlockHasBeenSet;
+
+                    /**
+                     * 资源所关联的Tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
 
                 };
             }

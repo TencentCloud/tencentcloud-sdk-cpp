@@ -126,6 +126,49 @@ TkeClient::AddExistedInstancesOutcomeCallable TkeClient::AddExistedInstancesCall
     return task->get_future();
 }
 
+TkeClient::AddNodeToNodePoolOutcome TkeClient::AddNodeToNodePool(const AddNodeToNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddNodeToNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddNodeToNodePoolResponse rsp = AddNodeToNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddNodeToNodePoolOutcome(rsp);
+        else
+            return AddNodeToNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return AddNodeToNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::AddNodeToNodePoolAsync(const AddNodeToNodePoolRequest& request, const AddNodeToNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddNodeToNodePool(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::AddNodeToNodePoolOutcomeCallable TkeClient::AddNodeToNodePoolCallable(const AddNodeToNodePoolRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddNodeToNodePoolOutcome()>>(
+        [this, request]()
+        {
+            return this->AddNodeToNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreateClusterOutcome TkeClient::CreateCluster(const CreateClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCluster");
@@ -334,6 +377,92 @@ TkeClient::CreateClusterInstancesOutcomeCallable TkeClient::CreateClusterInstanc
         [this, request]()
         {
             return this->CreateClusterInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::CreateClusterNodePoolOutcome TkeClient::CreateClusterNodePool(const CreateClusterNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterNodePoolResponse rsp = CreateClusterNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterNodePoolOutcome(rsp);
+        else
+            return CreateClusterNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterNodePoolAsync(const CreateClusterNodePoolRequest& request, const CreateClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterNodePool(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterNodePoolOutcomeCallable TkeClient::CreateClusterNodePoolCallable(const CreateClusterNodePoolRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterNodePoolOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::CreateClusterNodePoolFromExistingAsgOutcome TkeClient::CreateClusterNodePoolFromExistingAsg(const CreateClusterNodePoolFromExistingAsgRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterNodePoolFromExistingAsg");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterNodePoolFromExistingAsgResponse rsp = CreateClusterNodePoolFromExistingAsgResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterNodePoolFromExistingAsgOutcome(rsp);
+        else
+            return CreateClusterNodePoolFromExistingAsgOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterNodePoolFromExistingAsgOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterNodePoolFromExistingAsgAsync(const CreateClusterNodePoolFromExistingAsgRequest& request, const CreateClusterNodePoolFromExistingAsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterNodePoolFromExistingAsg(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterNodePoolFromExistingAsgOutcomeCallable TkeClient::CreateClusterNodePoolFromExistingAsgCallable(const CreateClusterNodePoolFromExistingAsgRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterNodePoolFromExistingAsgOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterNodePoolFromExistingAsg(request);
         }
     );
 
@@ -685,6 +814,49 @@ TkeClient::DeleteClusterInstancesOutcomeCallable TkeClient::DeleteClusterInstanc
     return task->get_future();
 }
 
+TkeClient::DeleteClusterNodePoolOutcome TkeClient::DeleteClusterNodePool(const DeleteClusterNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterNodePoolResponse rsp = DeleteClusterNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterNodePoolOutcome(rsp);
+        else
+            return DeleteClusterNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterNodePoolAsync(const DeleteClusterNodePoolRequest& request, const DeleteClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterNodePool(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterNodePoolOutcomeCallable TkeClient::DeleteClusterNodePoolCallable(const DeleteClusterNodePoolRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterNodePoolOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeleteClusterRouteOutcome TkeClient::DeleteClusterRoute(const DeleteClusterRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteClusterRoute");
@@ -1022,6 +1194,92 @@ TkeClient::DescribeClusterKubeconfigOutcomeCallable TkeClient::DescribeClusterKu
         [this, request]()
         {
             return this->DescribeClusterKubeconfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterNodePoolDetailOutcome TkeClient::DescribeClusterNodePoolDetail(const DescribeClusterNodePoolDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterNodePoolDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterNodePoolDetailResponse rsp = DescribeClusterNodePoolDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterNodePoolDetailOutcome(rsp);
+        else
+            return DescribeClusterNodePoolDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterNodePoolDetailOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterNodePoolDetailAsync(const DescribeClusterNodePoolDetailRequest& request, const DescribeClusterNodePoolDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterNodePoolDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterNodePoolDetailOutcomeCallable TkeClient::DescribeClusterNodePoolDetailCallable(const DescribeClusterNodePoolDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterNodePoolDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterNodePoolDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterNodePoolsOutcome TkeClient::DescribeClusterNodePools(const DescribeClusterNodePoolsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterNodePools");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterNodePoolsResponse rsp = DescribeClusterNodePoolsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterNodePoolsOutcome(rsp);
+        else
+            return DescribeClusterNodePoolsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterNodePoolsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterNodePoolsAsync(const DescribeClusterNodePoolsRequest& request, const DescribeClusterNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterNodePools(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterNodePoolsOutcomeCallable TkeClient::DescribeClusterNodePoolsCallable(const DescribeClusterNodePoolsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterNodePoolsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterNodePools(request);
         }
     );
 
@@ -1538,6 +1796,92 @@ TkeClient::ModifyClusterEndpointSPOutcomeCallable TkeClient::ModifyClusterEndpoi
         [this, request]()
         {
             return this->ModifyClusterEndpointSP(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyClusterNodePoolOutcome TkeClient::ModifyClusterNodePool(const ModifyClusterNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterNodePoolResponse rsp = ModifyClusterNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterNodePoolOutcome(rsp);
+        else
+            return ModifyClusterNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterNodePoolAsync(const ModifyClusterNodePoolRequest& request, const ModifyClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterNodePool(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterNodePoolOutcomeCallable TkeClient::ModifyClusterNodePoolCallable(const ModifyClusterNodePoolRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterNodePoolOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::RemoveNodeFromNodePoolOutcome TkeClient::RemoveNodeFromNodePool(const RemoveNodeFromNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveNodeFromNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveNodeFromNodePoolResponse rsp = RemoveNodeFromNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveNodeFromNodePoolOutcome(rsp);
+        else
+            return RemoveNodeFromNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveNodeFromNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::RemoveNodeFromNodePoolAsync(const RemoveNodeFromNodePoolRequest& request, const RemoveNodeFromNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveNodeFromNodePool(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::RemoveNodeFromNodePoolOutcomeCallable TkeClient::RemoveNodeFromNodePoolCallable(const RemoveNodeFromNodePoolRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveNodeFromNodePoolOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveNodeFromNodePool(request);
         }
     );
 

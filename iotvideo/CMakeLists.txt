@@ -90,6 +90,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/RunTestOtaVersionRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeDeviceResponse.h
   include/tencentcloud/iotvideo/v20191126/model/SetMessageQueueResponse.h
+  include/tencentcloud/iotvideo/v20191126/model/Contents.h
   include/tencentcloud/iotvideo/v20191126/model/DeleteOtaVersionResponse.h
   include/tencentcloud/iotvideo/v20191126/model/UploadOtaVersionRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeIotModelsRequest.h
@@ -231,6 +232,7 @@ set(iotvideo_src
   src/v20191126/model/RunTestOtaVersionRequest.cpp
   src/v20191126/model/DescribeDeviceResponse.cpp
   src/v20191126/model/SetMessageQueueResponse.cpp
+  src/v20191126/model/Contents.cpp
   src/v20191126/model/DeleteOtaVersionResponse.cpp
   src/v20191126/model/UploadOtaVersionRequest.cpp
   src/v20191126/model/DescribeIotModelsRequest.cpp

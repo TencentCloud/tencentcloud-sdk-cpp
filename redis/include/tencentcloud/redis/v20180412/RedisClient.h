@@ -39,6 +39,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceAccountRequest.h>
@@ -179,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBackupUrlResponse> DescribeBackupUrlOutcome;
                 typedef std::future<DescribeBackupUrlOutcome> DescribeBackupUrlOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeBackupUrlRequest&, DescribeBackupUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupUrlAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCommonDBInstancesResponse> DescribeCommonDBInstancesOutcome;
+                typedef std::future<DescribeCommonDBInstancesOutcome> DescribeCommonDBInstancesOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeCommonDBInstancesRequest&, DescribeCommonDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCommonDBInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
                 typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
@@ -406,6 +411,15 @@ namespace TencentCloud
                 DescribeBackupUrlOutcome DescribeBackupUrl(const Model::DescribeBackupUrlRequest &request);
                 void DescribeBackupUrlAsync(const Model::DescribeBackupUrlRequest& request, const DescribeBackupUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupUrlOutcomeCallable DescribeBackupUrlCallable(const Model::DescribeBackupUrlRequest& request);
+
+                /**
+                 *查询Redis实例列表信息
+                 * @param req DescribeCommonDBInstancesRequest
+                 * @return DescribeCommonDBInstancesOutcome
+                 */
+                DescribeCommonDBInstancesOutcome DescribeCommonDBInstances(const Model::DescribeCommonDBInstancesRequest &request);
+                void DescribeCommonDBInstancesAsync(const Model::DescribeCommonDBInstancesRequest& request, const DescribeCommonDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCommonDBInstancesOutcomeCallable DescribeCommonDBInstancesCallable(const Model::DescribeCommonDBInstancesRequest& request);
 
                 /**
                  *本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。

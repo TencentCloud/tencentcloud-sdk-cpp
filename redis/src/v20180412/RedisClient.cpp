@@ -384,6 +384,49 @@ RedisClient::DescribeBackupUrlOutcomeCallable RedisClient::DescribeBackupUrlCall
     return task->get_future();
 }
 
+RedisClient::DescribeCommonDBInstancesOutcome RedisClient::DescribeCommonDBInstances(const DescribeCommonDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCommonDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCommonDBInstancesResponse rsp = DescribeCommonDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCommonDBInstancesOutcome(rsp);
+        else
+            return DescribeCommonDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCommonDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeCommonDBInstancesAsync(const DescribeCommonDBInstancesRequest& request, const DescribeCommonDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCommonDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeCommonDBInstancesOutcomeCallable RedisClient::DescribeCommonDBInstancesCallable(const DescribeCommonDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCommonDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCommonDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeDBSecurityGroupsOutcome RedisClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBSecurityGroups");

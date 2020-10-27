@@ -39,6 +39,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/TendisNodes.h
   include/tencentcloud/redis/v20180412/model/RenewInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h
+  include/tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstancesResponse.h
@@ -66,6 +67,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModifyInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/ProxyNodes.h
   include/tencentcloud/redis/v20180412/model/TradeDealDetail.h
+  include/tencentcloud/redis/v20180412/model/RedisCommonInstanceList.h
   include/tencentcloud/redis/v20180412/model/SourceInfo.h
   include/tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorHotKeyRequest.h
@@ -137,6 +139,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/InstanceSet.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceRenewInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowResponse.h
+  include/tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdTookRequest.h
   include/tencentcloud/redis/v20180412/model/DestroyPrepaidInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyTypeDistRequest.h
@@ -198,6 +201,7 @@ set(redis_src
   src/v20180412/model/TendisNodes.cpp
   src/v20180412/model/RenewInstanceResponse.cpp
   src/v20180412/model/DescribeSlowLogResponse.cpp
+  src/v20180412/model/DescribeCommonDBInstancesRequest.cpp
   src/v20180412/model/DescribeDBSecurityGroupsResponse.cpp
   src/v20180412/model/DescribeBackupUrlRequest.cpp
   src/v20180412/model/DescribeInstancesResponse.cpp
@@ -225,6 +229,7 @@ set(redis_src
   src/v20180412/model/ModifyInstanceResponse.cpp
   src/v20180412/model/ProxyNodes.cpp
   src/v20180412/model/TradeDealDetail.cpp
+  src/v20180412/model/RedisCommonInstanceList.cpp
   src/v20180412/model/SourceInfo.cpp
   src/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorHotKeyRequest.cpp
@@ -296,6 +301,7 @@ set(redis_src
   src/v20180412/model/InstanceSet.cpp
   src/v20180412/model/InquiryPriceRenewInstanceRequest.cpp
   src/v20180412/model/ModifyMaintenanceWindowResponse.cpp
+  src/v20180412/model/DescribeCommonDBInstancesResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorTopNCmdTookRequest.cpp
   src/v20180412/model/DestroyPrepaidInstanceResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorBigKeyTypeDistRequest.cpp

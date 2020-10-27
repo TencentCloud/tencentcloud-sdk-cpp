@@ -26,7 +26,8 @@ using namespace std;
 DescribeVsmsRequest::DescribeVsmsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_searchWordHasBeenSet(false)
+    m_searchWordHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,21 @@ string DescribeVsmsRequest::ToJsonString() const
         string key = "SearchWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_searchWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagFiltersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -115,6 +131,22 @@ void DescribeVsmsRequest::SetSearchWord(const string& _searchWord)
 bool DescribeVsmsRequest::SearchWordHasBeenSet() const
 {
     return m_searchWordHasBeenSet;
+}
+
+vector<TagFilter> DescribeVsmsRequest::GetTagFilters() const
+{
+    return m_tagFilters;
+}
+
+void DescribeVsmsRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
+{
+    m_tagFilters = _tagFilters;
+    m_tagFiltersHasBeenSet = true;
+}
+
+bool DescribeVsmsRequest::TagFiltersHasBeenSet() const
+{
+    return m_tagFiltersHasBeenSet;
 }
 
 

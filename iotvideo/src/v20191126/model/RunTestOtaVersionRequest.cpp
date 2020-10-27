@@ -27,7 +27,8 @@ RunTestOtaVersionRequest::RunTestOtaVersionRequest() :
     m_productIdHasBeenSet(false),
     m_otaVersionHasBeenSet(false),
     m_tidsHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,14 @@ string RunTestOtaVersionRequest::ToJsonString() const
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -145,6 +154,22 @@ void RunTestOtaVersionRequest::SetOperator(const string& _operator)
 bool RunTestOtaVersionRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string RunTestOtaVersionRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void RunTestOtaVersionRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool RunTestOtaVersionRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 

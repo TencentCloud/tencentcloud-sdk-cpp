@@ -44,7 +44,9 @@ DescribeVsmAttributesResponse::DescribeVsmAttributesResponse() :
     m_remainSecondsHasBeenSet(false),
     m_vpcNameHasBeenSet(false),
     m_vpcCidrBlockHasBeenSet(false),
-    m_subnetCidrBlockHasBeenSet(false)
+    m_subnetCidrBlockHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_renewFlagHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,36 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
         m_subnetCidrBlockHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
+    {
+        if (!rsp["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+
+        const Value &tmpValue = rsp["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RenewFlag") && !rsp["RenewFlag"].IsNull())
+    {
+        if (!rsp["RenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = rsp["RenewFlag"].GetInt64();
+        m_renewFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -495,6 +527,26 @@ string DescribeVsmAttributesResponse::GetSubnetCidrBlock() const
 bool DescribeVsmAttributesResponse::SubnetCidrBlockHasBeenSet() const
 {
     return m_subnetCidrBlockHasBeenSet;
+}
+
+vector<Tag> DescribeVsmAttributesResponse::GetTags() const
+{
+    return m_tags;
+}
+
+bool DescribeVsmAttributesResponse::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+int64_t DescribeVsmAttributesResponse::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+bool DescribeVsmAttributesResponse::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
 }
 
 

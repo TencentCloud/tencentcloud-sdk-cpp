@@ -29,7 +29,8 @@ ListAliasesRequest::ListAliasesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_orderByHasBeenSet(false),
-    m_orderWayHasBeenSet(false)
+    m_orderWayHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,21 @@ string ListAliasesRequest::ToJsonString() const
         string key = "OrderWay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_orderWay.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -190,6 +206,22 @@ void ListAliasesRequest::SetOrderWay(const string& _orderWay)
 bool ListAliasesRequest::OrderWayHasBeenSet() const
 {
     return m_orderWayHasBeenSet;
+}
+
+vector<Filter> ListAliasesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void ListAliasesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool ListAliasesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 
