@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/NodePool.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,25 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取节点池详情
+                     * @return NodePool 节点池详情
+                     */
+                    NodePool GetNodePool() const;
+
+                    /**
+                     * 判断参数 NodePool 是否已赋值
+                     * @return NodePool 是否已赋值
+                     */
+                    bool NodePoolHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 节点池详情
+                     */
+                    NodePool m_nodePool;
+                    bool m_nodePoolHasBeenSet;
 
                 };
             }

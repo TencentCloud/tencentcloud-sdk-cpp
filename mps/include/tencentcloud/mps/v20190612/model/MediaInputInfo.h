@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入来源对象的类型，可以支持 COS 和 URL 两种。
-                     * @return Type 输入来源对象的类型，可以支持 COS 和 URL 两种。
+                     * 获取输入来源对象的类型，目前仅支持 COS。
+                     * @return Type 输入来源对象的类型，目前仅支持 COS。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置输入来源对象的类型，可以支持 COS 和 URL 两种。
-                     * @param Type 输入来源对象的类型，可以支持 COS 和 URL 两种。
+                     * 设置输入来源对象的类型，目前仅支持 COS。
+                     * @param Type 输入来源对象的类型，目前仅支持 COS。
                      */
                     void SetType(const std::string& _type);
 
@@ -86,16 +86,24 @@ namespace TencentCloud
 
                     /**
                      * 获取当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+
+目前尚不支持 URL 输入，该能力将于近期支持。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UrlInputInfo 当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+
+目前尚不支持 URL 输入，该能力将于近期支持。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UrlInputInfo GetUrlInputInfo() const;
 
                     /**
                      * 设置当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+
+目前尚不支持 URL 输入，该能力将于近期支持。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param UrlInputInfo 当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+
+目前尚不支持 URL 输入，该能力将于近期支持。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUrlInputInfo(const UrlInputInfo& _urlInputInfo);
@@ -109,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入来源对象的类型，可以支持 COS 和 URL 两种。
+                     * 输入来源对象的类型，目前仅支持 COS。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -122,6 +130,8 @@ namespace TencentCloud
 
                     /**
                      * 当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+
+目前尚不支持 URL 输入，该能力将于近期支持。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UrlInputInfo m_urlInputInfo;

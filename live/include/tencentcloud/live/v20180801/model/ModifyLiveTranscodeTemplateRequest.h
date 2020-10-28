@@ -61,20 +61,20 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取视频编码：h264/h265/origin，默认h264。
+                     * 获取视频编码：h264/h265/origin，默认origin。
 
 origin: 保持原始编码格式
-                     * @return Vcodec 视频编码：h264/h265/origin，默认h264。
+                     * @return Vcodec 视频编码：h264/h265/origin，默认origin。
 
 origin: 保持原始编码格式
                      */
                     std::string GetVcodec() const;
 
                     /**
-                     * 设置视频编码：h264/h265/origin，默认h264。
+                     * 设置视频编码：h264/h265/origin，默认origin。
 
 origin: 保持原始编码格式
-                     * @param Vcodec 视频编码：h264/h265/origin，默认h264。
+                     * @param Vcodec 视频编码：h264/h265/origin，默认origin。
 
 origin: 保持原始编码格式
                      */
@@ -477,7 +477,7 @@ baseline/main/high。
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 视频编码：h264/h265/origin，默认h264。
+                     * 视频编码：h264/h265/origin，默认origin。
 
 origin: 保持原始编码格式
                      */

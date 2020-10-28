@@ -33,7 +33,8 @@ Bundle::Bundle() :
     m_cPUHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_internetChargeTypeHasBeenSet(false),
-    m_bundleSalesStateHasBeenSet(false)
+    m_bundleSalesStateHasBeenSet(false),
+    m_bundleTypeHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,16 @@ CoreInternalOutcome Bundle::Deserialize(const Value &value)
         m_bundleSalesStateHasBeenSet = true;
     }
 
+    if (value.HasMember("BundleType") && !value["BundleType"].IsNull())
+    {
+        if (!value["BundleType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Bundle.BundleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleType = string(value["BundleType"].GetString());
+        m_bundleTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -271,6 +282,14 @@ void Bundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "BundleSalesState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_bundleSalesState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BundleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_bundleType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -466,5 +485,21 @@ void Bundle::SetBundleSalesState(const string& _bundleSalesState)
 bool Bundle::BundleSalesStateHasBeenSet() const
 {
     return m_bundleSalesStateHasBeenSet;
+}
+
+string Bundle::GetBundleType() const
+{
+    return m_bundleType;
+}
+
+void Bundle::SetBundleType(const string& _bundleType)
+{
+    m_bundleType = _bundleType;
+    m_bundleTypeHasBeenSet = true;
+}
+
+bool Bundle::BundleTypeHasBeenSet() const
+{
+    return m_bundleTypeHasBeenSet;
 }
 

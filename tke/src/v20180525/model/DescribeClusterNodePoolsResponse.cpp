@@ -24,7 +24,9 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeClusterNodePoolsResponse::DescribeClusterNodePoolsResponse()
+DescribeClusterNodePoolsResponse::DescribeClusterNodePoolsResponse() :
+    m_nodePoolSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -62,9 +64,59 @@ CoreInternalOutcome DescribeClusterNodePoolsResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("NodePoolSet") && !rsp["NodePoolSet"].IsNull())
+    {
+        if (!rsp["NodePoolSet"].IsArray())
+            return CoreInternalOutcome(Error("response `NodePoolSet` is not array type"));
+
+        const Value &tmpValue = rsp["NodePoolSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NodePool item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_nodePoolSet.push_back(item);
+        }
+        m_nodePoolSetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<NodePool> DescribeClusterNodePoolsResponse::GetNodePoolSet() const
+{
+    return m_nodePoolSet;
+}
+
+bool DescribeClusterNodePoolsResponse::NodePoolSetHasBeenSet() const
+{
+    return m_nodePoolSetHasBeenSet;
+}
+
+int64_t DescribeClusterNodePoolsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeClusterNodePoolsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

@@ -24,7 +24,8 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeClusterNodePoolDetailResponse::DescribeClusterNodePoolDetailResponse()
+DescribeClusterNodePoolDetailResponse::DescribeClusterNodePoolDetailResponse() :
+    m_nodePoolHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,36 @@ CoreInternalOutcome DescribeClusterNodePoolDetailResponse::Deserialize(const str
     }
 
 
+    if (rsp.HasMember("NodePool") && !rsp["NodePool"].IsNull())
+    {
+        if (!rsp["NodePool"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `NodePool` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_nodePool.Deserialize(rsp["NodePool"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_nodePoolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+NodePool DescribeClusterNodePoolDetailResponse::GetNodePool() const
+{
+    return m_nodePool;
+}
+
+bool DescribeClusterNodePoolDetailResponse::NodePoolHasBeenSet() const
+{
+    return m_nodePoolHasBeenSet;
+}
 
 

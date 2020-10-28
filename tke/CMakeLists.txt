@@ -30,6 +30,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterResponse.h
+  include/tencentcloud/tke/v20180525/model/AutoscalingAdded.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteTableResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointResponse.h
   include/tencentcloud/tke/v20180525/model/RouteInfo.h
@@ -40,6 +41,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteResponse.h
   include/tencentcloud/tke/v20180525/model/AddNodeToNodePoolRequest.h
+  include/tencentcloud/tke/v20180525/model/NodePool.h
   include/tencentcloud/tke/v20180525/model/RouteTableInfo.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroup.h
   include/tencentcloud/tke/v20180525/model/Instance.h
@@ -64,6 +66,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DeleteClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/ManuallyAdded.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterCIDRSettings.h
@@ -137,6 +140,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolResponse.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceDataDiskMountSetting.h
+  include/tencentcloud/tke/v20180525/model/NodeCountSummary.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsResponse.h
   include/tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailResponse.h
@@ -155,6 +159,7 @@ set(tke_src
   src/v20180525/model/ModifyClusterEndpointSPRequest.cpp
   src/v20180525/model/DescribeClusterInstancesResponse.cpp
   src/v20180525/model/DeleteClusterResponse.cpp
+  src/v20180525/model/AutoscalingAdded.cpp
   src/v20180525/model/CreateClusterRouteTableResponse.cpp
   src/v20180525/model/DeleteClusterEndpointResponse.cpp
   src/v20180525/model/RouteInfo.cpp
@@ -165,6 +170,7 @@ set(tke_src
   src/v20180525/model/DescribeRegionsResponse.cpp
   src/v20180525/model/CreateClusterRouteResponse.cpp
   src/v20180525/model/AddNodeToNodePoolRequest.cpp
+  src/v20180525/model/NodePool.cpp
   src/v20180525/model/RouteTableInfo.cpp
   src/v20180525/model/ClusterAsGroup.cpp
   src/v20180525/model/Instance.cpp
@@ -189,6 +195,7 @@ set(tke_src
   src/v20180525/model/DeleteClusterInstancesRequest.cpp
   src/v20180525/model/ModifyClusterAsGroupAttributeResponse.cpp
   src/v20180525/model/CreateClusterInstancesRequest.cpp
+  src/v20180525/model/ManuallyAdded.cpp
   src/v20180525/model/DescribeClusterRouteTablesResponse.cpp
   src/v20180525/model/DescribeClusterKubeconfigRequest.cpp
   src/v20180525/model/ClusterCIDRSettings.cpp
@@ -262,6 +269,7 @@ set(tke_src
   src/v20180525/model/CreateClusterNodePoolResponse.cpp
   src/v20180525/model/ModifyClusterAsGroupAttributeRequest.cpp
   src/v20180525/model/InstanceDataDiskMountSetting.cpp
+  src/v20180525/model/NodeCountSummary.cpp
   src/v20180525/model/DescribeClusterAsGroupsResponse.cpp
   src/v20180525/model/RemoveNodeFromNodePoolRequest.cpp
   src/v20180525/model/DescribeClusterNodePoolDetailResponse.cpp

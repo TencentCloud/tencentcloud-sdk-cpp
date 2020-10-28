@@ -103,7 +103,6 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/QrcodeImgSize.h
   include/tencentcloud/ocr/v20181119/model/VerifyBasicBizLicenseResponse.h
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/ProductDataRecord.h
   include/tencentcloud/ocr/v20181119/model/LicensePlateOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralBasicOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TextVehicleBack.h
@@ -275,7 +274,6 @@ set(ocr_src
   src/v20181119/model/QrcodeImgSize.cpp
   src/v20181119/model/VerifyBasicBizLicenseResponse.cpp
   src/v20181119/model/VehicleRegCertOCRRequest.cpp
-  src/v20181119/model/ProductDataRecord.cpp
   src/v20181119/model/LicensePlateOCRRequest.cpp
   src/v20181119/model/GeneralBasicOCRRequest.cpp
   src/v20181119/model/TextVehicleBack.cpp
