@@ -310,7 +310,7 @@ namespace TencentCloud
                 AddCdnDomainOutcomeCallable AddCdnDomainCallable(const Model::AddCdnDomainRequest& request);
 
                 /**
-                 *CreatClsLogTopic 用于创建日志主题。注意：一个日志集下至多可创建10个日志主题。
+                 *CreateClsLogTopic 用于创建日志主题。注意：一个日志集下至多可创建10个日志主题。
                  * @param req CreateClsLogTopicRequest
                  * @return CreateClsLogTopicOutcome
                  */

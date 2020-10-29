@@ -122,9 +122,13 @@ namespace TencentCloud
                      * 获取子应用状态，有效值：
 <li>On：启用；</li>
 <li>Off：停用。</li>
+<li>Destroying：销毁中。</li>
+<li>Destroyed：销毁完成。</li>
                      * @return Status 子应用状态，有效值：
 <li>On：启用；</li>
 <li>Off：停用。</li>
+<li>Destroying：销毁中。</li>
+<li>Destroyed：销毁完成。</li>
                      */
                     std::string GetStatus() const;
 
@@ -132,9 +136,13 @@ namespace TencentCloud
                      * 设置子应用状态，有效值：
 <li>On：启用；</li>
 <li>Off：停用。</li>
+<li>Destroying：销毁中。</li>
+<li>Destroyed：销毁完成。</li>
                      * @param Status 子应用状态，有效值：
 <li>On：启用；</li>
 <li>Off：停用。</li>
+<li>Destroying：销毁中。</li>
+<li>Destroyed：销毁完成。</li>
                      */
                     void SetStatus(const std::string& _status);
 
@@ -174,6 +182,8 @@ namespace TencentCloud
                      * 子应用状态，有效值：
 <li>On：启用；</li>
 <li>Off：停用。</li>
+<li>Destroying：销毁中。</li>
+<li>Destroyed：销毁完成。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

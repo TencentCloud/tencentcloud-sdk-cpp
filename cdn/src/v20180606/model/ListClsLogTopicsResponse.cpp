@@ -24,9 +24,7 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace rapidjson;
 using namespace std;
 
-ListClsLogTopicsResponse::ListClsLogTopicsResponse() :
-    m_logsetHasBeenSet(false),
-    m_topicsHasBeenSet(false)
+ListClsLogTopicsResponse::ListClsLogTopicsResponse()
 {
 }
 
@@ -64,66 +62,9 @@ CoreInternalOutcome ListClsLogTopicsResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Logset") && !rsp["Logset"].IsNull())
-    {
-        if (!rsp["Logset"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `Logset` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_logset.Deserialize(rsp["Logset"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_logsetHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Topics") && !rsp["Topics"].IsNull())
-    {
-        if (!rsp["Topics"].IsArray())
-            return CoreInternalOutcome(Error("response `Topics` is not array type"));
-
-        const Value &tmpValue = rsp["Topics"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            TopicInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_topics.push_back(item);
-        }
-        m_topicsHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-LogSetInfo ListClsLogTopicsResponse::GetLogset() const
-{
-    return m_logset;
-}
-
-bool ListClsLogTopicsResponse::LogsetHasBeenSet() const
-{
-    return m_logsetHasBeenSet;
-}
-
-vector<TopicInfo> ListClsLogTopicsResponse::GetTopics() const
-{
-    return m_topics;
-}
-
-bool ListClsLogTopicsResponse::TopicsHasBeenSet() const
-{
-    return m_topicsHasBeenSet;
-}
 
 

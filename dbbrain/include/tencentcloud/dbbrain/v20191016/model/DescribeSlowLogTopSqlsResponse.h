@@ -21,7 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dbbrain/v20191016/model/SlowLogTopSqlItem.h>
 
 
 namespace TencentCloud
@@ -43,43 +42,7 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
-                    /**
-                     * 获取符合条件的记录总数。
-                     * @return TotalCount 符合条件的记录总数。
-                     */
-                    int64_t GetTotalCount() const;
-
-                    /**
-                     * 判断参数 TotalCount 是否已赋值
-                     * @return TotalCount 是否已赋值
-                     */
-                    bool TotalCountHasBeenSet() const;
-
-                    /**
-                     * 获取慢日志 top sql 列表
-                     * @return Rows 慢日志 top sql 列表
-                     */
-                    std::vector<SlowLogTopSqlItem> GetRows() const;
-
-                    /**
-                     * 判断参数 Rows 是否已赋值
-                     * @return Rows 是否已赋值
-                     */
-                    bool RowsHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 符合条件的记录总数。
-                     */
-                    int64_t m_totalCount;
-                    bool m_totalCountHasBeenSet;
-
-                    /**
-                     * 慢日志 top sql 列表
-                     */
-                    std::vector<SlowLogTopSqlItem> m_rows;
-                    bool m_rowsHasBeenSet;
 
                 };
             }

@@ -24,10 +24,7 @@ using namespace TencentCloud::Dbbrain::V20191016::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeSlowLogTimeSeriesStatsResponse::DescribeSlowLogTimeSeriesStatsResponse() :
-    m_periodHasBeenSet(false),
-    m_timeSeriesHasBeenSet(false),
-    m_seriesDataHasBeenSet(false)
+DescribeSlowLogTimeSeriesStatsResponse::DescribeSlowLogTimeSeriesStatsResponse()
 {
 }
 
@@ -65,86 +62,9 @@ CoreInternalOutcome DescribeSlowLogTimeSeriesStatsResponse::Deserialize(const st
     }
 
 
-    if (rsp.HasMember("Period") && !rsp["Period"].IsNull())
-    {
-        if (!rsp["Period"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `Period` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_period = rsp["Period"].GetInt64();
-        m_periodHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TimeSeries") && !rsp["TimeSeries"].IsNull())
-    {
-        if (!rsp["TimeSeries"].IsArray())
-            return CoreInternalOutcome(Error("response `TimeSeries` is not array type"));
-
-        const Value &tmpValue = rsp["TimeSeries"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            TimeSlice item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_timeSeries.push_back(item);
-        }
-        m_timeSeriesHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("SeriesData") && !rsp["SeriesData"].IsNull())
-    {
-        if (!rsp["SeriesData"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `SeriesData` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_seriesData.Deserialize(rsp["SeriesData"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_seriesDataHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-int64_t DescribeSlowLogTimeSeriesStatsResponse::GetPeriod() const
-{
-    return m_period;
-}
-
-bool DescribeSlowLogTimeSeriesStatsResponse::PeriodHasBeenSet() const
-{
-    return m_periodHasBeenSet;
-}
-
-vector<TimeSlice> DescribeSlowLogTimeSeriesStatsResponse::GetTimeSeries() const
-{
-    return m_timeSeries;
-}
-
-bool DescribeSlowLogTimeSeriesStatsResponse::TimeSeriesHasBeenSet() const
-{
-    return m_timeSeriesHasBeenSet;
-}
-
-MonitorMetricSeriesData DescribeSlowLogTimeSeriesStatsResponse::GetSeriesData() const
-{
-    return m_seriesData;
-}
-
-bool DescribeSlowLogTimeSeriesStatsResponse::SeriesDataHasBeenSet() const
-{
-    return m_seriesDataHasBeenSet;
-}
 
 

@@ -40,6 +40,49 @@ OcrClient::OcrClient(const Credential &credential, const string &region, const C
 }
 
 
+OcrClient::AdvertiseOCROutcome OcrClient::AdvertiseOCR(const AdvertiseOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "AdvertiseOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AdvertiseOCRResponse rsp = AdvertiseOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AdvertiseOCROutcome(rsp);
+        else
+            return AdvertiseOCROutcome(o.GetError());
+    }
+    else
+    {
+        return AdvertiseOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::AdvertiseOCRAsync(const AdvertiseOCRRequest& request, const AdvertiseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AdvertiseOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::AdvertiseOCROutcomeCallable OcrClient::AdvertiseOCRCallable(const AdvertiseOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AdvertiseOCROutcome()>>(
+        [this, request]()
+        {
+            return this->AdvertiseOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::ArithmeticOCROutcome OcrClient::ArithmeticOCR(const ArithmeticOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "ArithmeticOCR");
@@ -1796,6 +1839,49 @@ OcrClient::QuotaInvoiceOCROutcomeCallable OcrClient::QuotaInvoiceOCRCallable(con
         [this, request]()
         {
             return this->QuotaInvoiceOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::RecognizeTableOCROutcome OcrClient::RecognizeTableOCR(const RecognizeTableOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeTableOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeTableOCRResponse rsp = RecognizeTableOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeTableOCROutcome(rsp);
+        else
+            return RecognizeTableOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeTableOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeTableOCRAsync(const RecognizeTableOCRRequest& request, const RecognizeTableOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeTableOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeTableOCROutcomeCallable OcrClient::RecognizeTableOCRCallable(const RecognizeTableOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeTableOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeTableOCR(request);
         }
     );
 

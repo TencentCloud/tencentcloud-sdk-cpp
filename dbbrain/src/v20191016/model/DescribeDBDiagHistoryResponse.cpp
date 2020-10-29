@@ -24,8 +24,7 @@ using namespace TencentCloud::Dbbrain::V20191016::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeDBDiagHistoryResponse::DescribeDBDiagHistoryResponse() :
-    m_eventsHasBeenSet(false)
+DescribeDBDiagHistoryResponse::DescribeDBDiagHistoryResponse()
 {
 }
 
@@ -63,39 +62,9 @@ CoreInternalOutcome DescribeDBDiagHistoryResponse::Deserialize(const string &pay
     }
 
 
-    if (rsp.HasMember("Events") && !rsp["Events"].IsNull())
-    {
-        if (!rsp["Events"].IsArray())
-            return CoreInternalOutcome(Error("response `Events` is not array type"));
-
-        const Value &tmpValue = rsp["Events"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            DiagHistoryEventItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_events.push_back(item);
-        }
-        m_eventsHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-vector<DiagHistoryEventItem> DescribeDBDiagHistoryResponse::GetEvents() const
-{
-    return m_events;
-}
-
-bool DescribeDBDiagHistoryResponse::EventsHasBeenSet() const
-{
-    return m_eventsHasBeenSet;
-}
 
 

@@ -21,7 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dbbrain/v20191016/model/TableSpaceTimeSeries.h>
 
 
 namespace TencentCloud
@@ -43,25 +42,7 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
-                    /**
-                     * 获取返回的Top表空间统计信息的时序数据列表。
-                     * @return TopSpaceTableTimeSeries 返回的Top表空间统计信息的时序数据列表。
-                     */
-                    std::vector<TableSpaceTimeSeries> GetTopSpaceTableTimeSeries() const;
-
-                    /**
-                     * 判断参数 TopSpaceTableTimeSeries 是否已赋值
-                     * @return TopSpaceTableTimeSeries 是否已赋值
-                     */
-                    bool TopSpaceTableTimeSeriesHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 返回的Top表空间统计信息的时序数据列表。
-                     */
-                    std::vector<TableSpaceTimeSeries> m_topSpaceTableTimeSeries;
-                    bool m_topSpaceTableTimeSeriesHasBeenSet;
 
                 };
             }

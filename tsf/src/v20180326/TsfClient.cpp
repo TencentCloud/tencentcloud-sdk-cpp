@@ -2233,6 +2233,49 @@ TsfClient::DescribeGroupsOutcomeCallable TsfClient::DescribeGroupsCallable(const
     return task->get_future();
 }
 
+TsfClient::DescribeImageRepositoryOutcome TsfClient::DescribeImageRepository(const DescribeImageRepositoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageRepository");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageRepositoryResponse rsp = DescribeImageRepositoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageRepositoryOutcome(rsp);
+        else
+            return DescribeImageRepositoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageRepositoryOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeImageRepositoryAsync(const DescribeImageRepositoryRequest& request, const DescribeImageRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageRepository(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeImageRepositoryOutcomeCallable TsfClient::DescribeImageRepositoryCallable(const DescribeImageRepositoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageRepositoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageRepository(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeImageTagsOutcome TsfClient::DescribeImageTags(const DescribeImageTagsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImageTags");

@@ -93,6 +93,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/DescribeMessageQueueResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeModelDataRetRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeModelDataRetResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/DescribeOsListRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/DescribeOsListResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeOtaVersionsRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeOtaVersionsResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeProductRequest.h>
@@ -123,6 +125,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/ModifyDevicePropertyResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/ModifyProductRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/ModifyProductResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/ModifyVerContentRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/ModifyVerContentResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/RefundStorageServiceRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/RefundStorageServiceResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/RunDeviceRequest.h>
@@ -262,6 +266,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeModelDataRetResponse> DescribeModelDataRetOutcome;
                 typedef std::future<DescribeModelDataRetOutcome> DescribeModelDataRetOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeModelDataRetRequest&, DescribeModelDataRetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelDataRetAsyncHandler;
+                typedef Outcome<Error, Model::DescribeOsListResponse> DescribeOsListOutcome;
+                typedef std::future<DescribeOsListOutcome> DescribeOsListOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeOsListRequest&, DescribeOsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOsListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeOtaVersionsResponse> DescribeOtaVersionsOutcome;
                 typedef std::future<DescribeOtaVersionsOutcome> DescribeOtaVersionsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeOtaVersionsRequest&, DescribeOtaVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOtaVersionsAsyncHandler;
@@ -307,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyProductResponse> ModifyProductOutcome;
                 typedef std::future<ModifyProductOutcome> ModifyProductOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ModifyProductRequest&, ModifyProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProductAsyncHandler;
+                typedef Outcome<Error, Model::ModifyVerContentResponse> ModifyVerContentOutcome;
+                typedef std::future<ModifyVerContentOutcome> ModifyVerContentOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ModifyVerContentRequest&, ModifyVerContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVerContentAsyncHandler;
                 typedef Outcome<Error, Model::RefundStorageServiceResponse> RefundStorageServiceOutcome;
                 typedef std::future<RefundStorageServiceOutcome> RefundStorageServiceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::RefundStorageServiceRequest&, RefundStorageServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundStorageServiceAsyncHandler;
@@ -663,6 +673,15 @@ namespace TencentCloud
                 DescribeModelDataRetOutcomeCallable DescribeModelDataRetCallable(const Model::DescribeModelDataRetRequest& request);
 
                 /**
+                 *查看操作系统支持的芯片列表
+                 * @param req DescribeOsListRequest
+                 * @return DescribeOsListOutcome
+                 */
+                DescribeOsListOutcome DescribeOsList(const Model::DescribeOsListRequest &request);
+                void DescribeOsListAsync(const Model::DescribeOsListRequest& request, const DescribeOsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOsListOutcomeCallable DescribeOsListCallable(const Model::DescribeOsListRequest& request);
+
+                /**
                  *本接口（DescribeOtaVersions）用于查询固件版本信息列表。
                  * @param req DescribeOtaVersionsRequest
                  * @return DescribeOtaVersionsOutcome
@@ -808,6 +827,15 @@ ProWritable.Pos.setVal.x;
                 ModifyProductOutcome ModifyProduct(const Model::ModifyProductRequest &request);
                 void ModifyProductAsync(const Model::ModifyProductRequest& request, const ModifyProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProductOutcomeCallable ModifyProductCallable(const Model::ModifyProductRequest& request);
+
+                /**
+                 *编辑版本描述信息
+                 * @param req ModifyVerContentRequest
+                 * @return ModifyVerContentOutcome
+                 */
+                ModifyVerContentOutcome ModifyVerContent(const Model::ModifyVerContentRequest &request);
+                void ModifyVerContentAsync(const Model::ModifyVerContentRequest& request, const ModifyVerContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVerContentOutcomeCallable ModifyVerContentCallable(const Model::ModifyVerContentRequest& request);
 
                 /**
                  *退订已购买的云存服务

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ocr/v20181119/model/AdvertiseOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/AdvertiseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ArithmeticOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ArithmeticOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h>
@@ -105,6 +107,8 @@
 #include <tencentcloud/ocr/v20181119/model/QueryBarCodeResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h>
@@ -159,6 +163,9 @@ namespace TencentCloud
                 OcrClient(const Credential &credential, const std::string &region);
                 OcrClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AdvertiseOCRResponse> AdvertiseOCROutcome;
+                typedef std::future<AdvertiseOCROutcome> AdvertiseOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::AdvertiseOCRRequest&, AdvertiseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> AdvertiseOCRAsyncHandler;
                 typedef Outcome<Error, Model::ArithmeticOCRResponse> ArithmeticOCROutcome;
                 typedef std::future<ArithmeticOCROutcome> ArithmeticOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ArithmeticOCRRequest&, ArithmeticOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ArithmeticOCRAsyncHandler;
@@ -282,6 +289,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QuotaInvoiceOCRResponse> QuotaInvoiceOCROutcome;
                 typedef std::future<QuotaInvoiceOCROutcome> QuotaInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuotaInvoiceOCRRequest&, QuotaInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuotaInvoiceOCRAsyncHandler;
+                typedef Outcome<Error, Model::RecognizeTableOCRResponse> RecognizeTableOCROutcome;
+                typedef std::future<RecognizeTableOCROutcome> RecognizeTableOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeTableOCRRequest&, RecognizeTableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableOCRAsyncHandler;
                 typedef Outcome<Error, Model::RecognizeThaiIDCardOCRResponse> RecognizeThaiIDCardOCROutcome;
                 typedef std::future<RecognizeThaiIDCardOCROutcome> RecognizeThaiIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeThaiIDCardOCRRequest&, RecognizeThaiIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeThaiIDCardOCRAsyncHandler;
@@ -344,6 +354,17 @@ namespace TencentCloud
                 typedef std::function<void(const OcrClient*, const Model::WaybillOCRRequest&, WaybillOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> WaybillOCRAsyncHandler;
 
 
+
+                /**
+                 *本接口支持广告商品图片内文字的检测和识别，返回文本框位置与文字内容。
+
+产品优势：针对广告商品图片普遍存在较多繁体字、艺术字的特点，进行了识别能力的增强。支持中英文、横排、竖排以及倾斜场景文字识别。文字识别的召回率和准确率能达到96%以上。
+                 * @param req AdvertiseOCRRequest
+                 * @return AdvertiseOCROutcome
+                 */
+                AdvertiseOCROutcome AdvertiseOCR(const Model::AdvertiseOCRRequest &request);
+                void AdvertiseOCRAsync(const Model::AdvertiseOCRRequest& request, const AdvertiseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AdvertiseOCROutcomeCallable AdvertiseOCRCallable(const Model::AdvertiseOCRRequest& request);
 
                 /**
                  *本接口支持作业算式题目的自动识别，目前覆盖 K12 学力范围内的 14 种题型，包括加减乘除四则运算、分数四则运算、竖式四则运算、脱式计算等。
@@ -969,6 +990,15 @@ namespace TencentCloud
                 QuotaInvoiceOCROutcome QuotaInvoiceOCR(const Model::QuotaInvoiceOCRRequest &request);
                 void QuotaInvoiceOCRAsync(const Model::QuotaInvoiceOCRRequest& request, const QuotaInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QuotaInvoiceOCROutcomeCallable QuotaInvoiceOCRCallable(const Model::QuotaInvoiceOCRRequest& request);
+
+                /**
+                 *本接口支持图片/ PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持对0度至180度旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。
+                 * @param req RecognizeTableOCRRequest
+                 * @return RecognizeTableOCROutcome
+                 */
+                RecognizeTableOCROutcome RecognizeTableOCR(const Model::RecognizeTableOCRRequest &request);
+                void RecognizeTableOCRAsync(const Model::RecognizeTableOCRRequest& request, const RecognizeTableOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeTableOCROutcomeCallable RecognizeTableOCRCallable(const Model::RecognizeTableOCRRequest& request);
 
                 /**
                  *本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码。

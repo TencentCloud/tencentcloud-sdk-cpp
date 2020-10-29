@@ -29,14 +29,20 @@
 #include <tencentcloud/chdfs/v20190718/model/CreateAccessRulesResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/CreateFileSystemRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/CreateFileSystemResponse.h>
+#include <tencentcloud/chdfs/v20190718/model/CreateLifeCycleRulesRequest.h>
+#include <tencentcloud/chdfs/v20190718/model/CreateLifeCycleRulesResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/CreateMountPointRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/CreateMountPointResponse.h>
+#include <tencentcloud/chdfs/v20190718/model/CreateRestoreTasksRequest.h>
+#include <tencentcloud/chdfs/v20190718/model/CreateRestoreTasksResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/DeleteAccessGroupRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/DeleteAccessGroupResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/DeleteAccessRulesRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/DeleteAccessRulesResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/DeleteFileSystemRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/DeleteFileSystemResponse.h>
+#include <tencentcloud/chdfs/v20190718/model/DeleteLifeCycleRulesRequest.h>
+#include <tencentcloud/chdfs/v20190718/model/DeleteLifeCycleRulesResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/DeleteMountPointRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/DeleteMountPointResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/DescribeAccessGroupsRequest.h>
@@ -47,18 +53,28 @@
 #include <tencentcloud/chdfs/v20190718/model/DescribeFileSystemResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/DescribeFileSystemsRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/DescribeFileSystemsResponse.h>
+#include <tencentcloud/chdfs/v20190718/model/DescribeLifeCycleRulesRequest.h>
+#include <tencentcloud/chdfs/v20190718/model/DescribeLifeCycleRulesResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/DescribeMountPointRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/DescribeMountPointResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/DescribeMountPointsRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/DescribeMountPointsResponse.h>
+#include <tencentcloud/chdfs/v20190718/model/DescribeResourceTagsRequest.h>
+#include <tencentcloud/chdfs/v20190718/model/DescribeResourceTagsResponse.h>
+#include <tencentcloud/chdfs/v20190718/model/DescribeRestoreTasksRequest.h>
+#include <tencentcloud/chdfs/v20190718/model/DescribeRestoreTasksResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/ModifyAccessGroupRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/ModifyAccessGroupResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/ModifyAccessRulesRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/ModifyAccessRulesResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/ModifyFileSystemRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/ModifyFileSystemResponse.h>
+#include <tencentcloud/chdfs/v20190718/model/ModifyLifeCycleRulesRequest.h>
+#include <tencentcloud/chdfs/v20190718/model/ModifyLifeCycleRulesResponse.h>
 #include <tencentcloud/chdfs/v20190718/model/ModifyMountPointRequest.h>
 #include <tencentcloud/chdfs/v20190718/model/ModifyMountPointResponse.h>
+#include <tencentcloud/chdfs/v20190718/model/ModifyResourceTagsRequest.h>
+#include <tencentcloud/chdfs/v20190718/model/ModifyResourceTagsResponse.h>
 
 
 namespace TencentCloud
@@ -82,9 +98,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateFileSystemResponse> CreateFileSystemOutcome;
                 typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::CreateFileSystemRequest&, CreateFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileSystemAsyncHandler;
+                typedef Outcome<Error, Model::CreateLifeCycleRulesResponse> CreateLifeCycleRulesOutcome;
+                typedef std::future<CreateLifeCycleRulesOutcome> CreateLifeCycleRulesOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::CreateLifeCycleRulesRequest&, CreateLifeCycleRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLifeCycleRulesAsyncHandler;
                 typedef Outcome<Error, Model::CreateMountPointResponse> CreateMountPointOutcome;
                 typedef std::future<CreateMountPointOutcome> CreateMountPointOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::CreateMountPointRequest&, CreateMountPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMountPointAsyncHandler;
+                typedef Outcome<Error, Model::CreateRestoreTasksResponse> CreateRestoreTasksOutcome;
+                typedef std::future<CreateRestoreTasksOutcome> CreateRestoreTasksOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::CreateRestoreTasksRequest&, CreateRestoreTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRestoreTasksAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAccessGroupResponse> DeleteAccessGroupOutcome;
                 typedef std::future<DeleteAccessGroupOutcome> DeleteAccessGroupOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DeleteAccessGroupRequest&, DeleteAccessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessGroupAsyncHandler;
@@ -94,6 +116,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteFileSystemResponse> DeleteFileSystemOutcome;
                 typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DeleteFileSystemRequest&, DeleteFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFileSystemAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLifeCycleRulesResponse> DeleteLifeCycleRulesOutcome;
+                typedef std::future<DeleteLifeCycleRulesOutcome> DeleteLifeCycleRulesOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::DeleteLifeCycleRulesRequest&, DeleteLifeCycleRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLifeCycleRulesAsyncHandler;
                 typedef Outcome<Error, Model::DeleteMountPointResponse> DeleteMountPointOutcome;
                 typedef std::future<DeleteMountPointOutcome> DeleteMountPointOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DeleteMountPointRequest&, DeleteMountPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMountPointAsyncHandler;
@@ -109,12 +134,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeFileSystemsResponse> DescribeFileSystemsOutcome;
                 typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DescribeFileSystemsRequest&, DescribeFileSystemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileSystemsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLifeCycleRulesResponse> DescribeLifeCycleRulesOutcome;
+                typedef std::future<DescribeLifeCycleRulesOutcome> DescribeLifeCycleRulesOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::DescribeLifeCycleRulesRequest&, DescribeLifeCycleRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLifeCycleRulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMountPointResponse> DescribeMountPointOutcome;
                 typedef std::future<DescribeMountPointOutcome> DescribeMountPointOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DescribeMountPointRequest&, DescribeMountPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMountPointAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMountPointsResponse> DescribeMountPointsOutcome;
                 typedef std::future<DescribeMountPointsOutcome> DescribeMountPointsOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DescribeMountPointsRequest&, DescribeMountPointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMountPointsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeResourceTagsResponse> DescribeResourceTagsOutcome;
+                typedef std::future<DescribeResourceTagsOutcome> DescribeResourceTagsOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::DescribeResourceTagsRequest&, DescribeResourceTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceTagsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRestoreTasksResponse> DescribeRestoreTasksOutcome;
+                typedef std::future<DescribeRestoreTasksOutcome> DescribeRestoreTasksOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::DescribeRestoreTasksRequest&, DescribeRestoreTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTasksAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAccessGroupResponse> ModifyAccessGroupOutcome;
                 typedef std::future<ModifyAccessGroupOutcome> ModifyAccessGroupOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::ModifyAccessGroupRequest&, ModifyAccessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessGroupAsyncHandler;
@@ -124,9 +158,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyFileSystemResponse> ModifyFileSystemOutcome;
                 typedef std::future<ModifyFileSystemOutcome> ModifyFileSystemOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::ModifyFileSystemRequest&, ModifyFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFileSystemAsyncHandler;
+                typedef Outcome<Error, Model::ModifyLifeCycleRulesResponse> ModifyLifeCycleRulesOutcome;
+                typedef std::future<ModifyLifeCycleRulesOutcome> ModifyLifeCycleRulesOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::ModifyLifeCycleRulesRequest&, ModifyLifeCycleRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLifeCycleRulesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyMountPointResponse> ModifyMountPointOutcome;
                 typedef std::future<ModifyMountPointOutcome> ModifyMountPointOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::ModifyMountPointRequest&, ModifyMountPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMountPointAsyncHandler;
+                typedef Outcome<Error, Model::ModifyResourceTagsResponse> ModifyResourceTagsOutcome;
+                typedef std::future<ModifyResourceTagsOutcome> ModifyResourceTagsOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::ModifyResourceTagsRequest&, ModifyResourceTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceTagsAsyncHandler;
 
 
 
@@ -158,6 +198,15 @@ namespace TencentCloud
                 CreateFileSystemOutcomeCallable CreateFileSystemCallable(const Model::CreateFileSystemRequest& request);
 
                 /**
+                 *批量创建生命周期规则，生命周期规则ID和创建时间无需填写。
+                 * @param req CreateLifeCycleRulesRequest
+                 * @return CreateLifeCycleRulesOutcome
+                 */
+                CreateLifeCycleRulesOutcome CreateLifeCycleRules(const Model::CreateLifeCycleRulesRequest &request);
+                void CreateLifeCycleRulesAsync(const Model::CreateLifeCycleRulesRequest& request, const CreateLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLifeCycleRulesOutcomeCallable CreateLifeCycleRulesCallable(const Model::CreateLifeCycleRulesRequest& request);
+
+                /**
                  *创建文件系统挂载点，仅限于创建成功的文件系统。
                  * @param req CreateMountPointRequest
                  * @return CreateMountPointOutcome
@@ -165,6 +214,15 @@ namespace TencentCloud
                 CreateMountPointOutcome CreateMountPoint(const Model::CreateMountPointRequest &request);
                 void CreateMountPointAsync(const Model::CreateMountPointRequest& request, const CreateMountPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMountPointOutcomeCallable CreateMountPointCallable(const Model::CreateMountPointRequest& request);
+
+                /**
+                 *批量创建回热任务，回热任务ID、状态和创建时间无需填写。
+                 * @param req CreateRestoreTasksRequest
+                 * @return CreateRestoreTasksOutcome
+                 */
+                CreateRestoreTasksOutcome CreateRestoreTasks(const Model::CreateRestoreTasksRequest &request);
+                void CreateRestoreTasksAsync(const Model::CreateRestoreTasksRequest& request, const CreateRestoreTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRestoreTasksOutcomeCallable CreateRestoreTasksCallable(const Model::CreateRestoreTasksRequest& request);
 
                 /**
                  *删除权限组。
@@ -192,6 +250,15 @@ namespace TencentCloud
                 DeleteFileSystemOutcome DeleteFileSystem(const Model::DeleteFileSystemRequest &request);
                 void DeleteFileSystemAsync(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFileSystemOutcomeCallable DeleteFileSystemCallable(const Model::DeleteFileSystemRequest& request);
+
+                /**
+                 *批量删除生命周期规则。
+                 * @param req DeleteLifeCycleRulesRequest
+                 * @return DeleteLifeCycleRulesOutcome
+                 */
+                DeleteLifeCycleRulesOutcome DeleteLifeCycleRules(const Model::DeleteLifeCycleRulesRequest &request);
+                void DeleteLifeCycleRulesAsync(const Model::DeleteLifeCycleRulesRequest& request, const DeleteLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLifeCycleRulesOutcomeCallable DeleteLifeCycleRulesCallable(const Model::DeleteLifeCycleRulesRequest& request);
 
                 /**
                  *删除挂载点。
@@ -239,6 +306,15 @@ namespace TencentCloud
                 DescribeFileSystemsOutcomeCallable DescribeFileSystemsCallable(const Model::DescribeFileSystemsRequest& request);
 
                 /**
+                 *通过文件系统ID查看生命周期规则列表。
+                 * @param req DescribeLifeCycleRulesRequest
+                 * @return DescribeLifeCycleRulesOutcome
+                 */
+                DescribeLifeCycleRulesOutcome DescribeLifeCycleRules(const Model::DescribeLifeCycleRulesRequest &request);
+                void DescribeLifeCycleRulesAsync(const Model::DescribeLifeCycleRulesRequest& request, const DescribeLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLifeCycleRulesOutcomeCallable DescribeLifeCycleRulesCallable(const Model::DescribeLifeCycleRulesRequest& request);
+
+                /**
                  *查看挂载点详细信息。
                  * @param req DescribeMountPointRequest
                  * @return DescribeMountPointOutcome
@@ -257,6 +333,24 @@ namespace TencentCloud
                 DescribeMountPointsOutcomeCallable DescribeMountPointsCallable(const Model::DescribeMountPointsRequest& request);
 
                 /**
+                 *通过文件系统ID查看资源标签列表。
+                 * @param req DescribeResourceTagsRequest
+                 * @return DescribeResourceTagsOutcome
+                 */
+                DescribeResourceTagsOutcome DescribeResourceTags(const Model::DescribeResourceTagsRequest &request);
+                void DescribeResourceTagsAsync(const Model::DescribeResourceTagsRequest& request, const DescribeResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceTagsOutcomeCallable DescribeResourceTagsCallable(const Model::DescribeResourceTagsRequest& request);
+
+                /**
+                 *通过文件系统ID查看回热任务列表。
+                 * @param req DescribeRestoreTasksRequest
+                 * @return DescribeRestoreTasksOutcome
+                 */
+                DescribeRestoreTasksOutcome DescribeRestoreTasks(const Model::DescribeRestoreTasksRequest &request);
+                void DescribeRestoreTasksAsync(const Model::DescribeRestoreTasksRequest& request, const DescribeRestoreTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRestoreTasksOutcomeCallable DescribeRestoreTasksCallable(const Model::DescribeRestoreTasksRequest& request);
+
+                /**
                  *修改权限组属性。
                  * @param req ModifyAccessGroupRequest
                  * @return ModifyAccessGroupOutcome
@@ -266,7 +360,7 @@ namespace TencentCloud
                 ModifyAccessGroupOutcomeCallable ModifyAccessGroupCallable(const Model::ModifyAccessGroupRequest& request);
 
                 /**
-                 *批量修改权限规则属性，需要指定权限规则ID。
+                 *批量修改权限规则属性，需要指定权限规则ID，支持修改权限规则地址、访问模式和优先级。
                  * @param req ModifyAccessRulesRequest
                  * @return ModifyAccessRulesOutcome
                  */
@@ -284,6 +378,15 @@ namespace TencentCloud
                 ModifyFileSystemOutcomeCallable ModifyFileSystemCallable(const Model::ModifyFileSystemRequest& request);
 
                 /**
+                 *批量修改生命周期规则属性，需要指定生命周期规则ID，支持修改生命周期规则名称、路径、转换列表和状态。
+                 * @param req ModifyLifeCycleRulesRequest
+                 * @return ModifyLifeCycleRulesOutcome
+                 */
+                ModifyLifeCycleRulesOutcome ModifyLifeCycleRules(const Model::ModifyLifeCycleRulesRequest &request);
+                void ModifyLifeCycleRulesAsync(const Model::ModifyLifeCycleRulesRequest& request, const ModifyLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLifeCycleRulesOutcomeCallable ModifyLifeCycleRulesCallable(const Model::ModifyLifeCycleRulesRequest& request);
+
+                /**
                  *修改挂载点属性。
                  * @param req ModifyMountPointRequest
                  * @return ModifyMountPointOutcome
@@ -291,6 +394,15 @@ namespace TencentCloud
                 ModifyMountPointOutcome ModifyMountPoint(const Model::ModifyMountPointRequest &request);
                 void ModifyMountPointAsync(const Model::ModifyMountPointRequest& request, const ModifyMountPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMountPointOutcomeCallable ModifyMountPointCallable(const Model::ModifyMountPointRequest& request);
+
+                /**
+                 *修改资源标签列表，全量覆盖。
+                 * @param req ModifyResourceTagsRequest
+                 * @return ModifyResourceTagsOutcome
+                 */
+                ModifyResourceTagsOutcome ModifyResourceTags(const Model::ModifyResourceTagsRequest &request);
+                void ModifyResourceTagsAsync(const Model::ModifyResourceTagsRequest& request, const ModifyResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceTagsOutcomeCallable ModifyResourceTagsCallable(const Model::ModifyResourceTagsRequest& request);
 
             };
         }

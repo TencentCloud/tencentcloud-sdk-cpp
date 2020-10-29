@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间。
-                     * @return StartTime 开始时间。
+                     * 获取开始时间，如“2019-09-10 12:13:14”。
+                     * @return StartTime 开始时间，如“2019-09-10 12:13:14”。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间。
-                     * @param StartTime 开始时间。
+                     * 设置开始时间，如“2019-09-10 12:13:14”。
+                     * @param StartTime 开始时间，如“2019-09-10 12:13:14”。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取截止时间。
-                     * @return EndTime 截止时间。
+                     * 获取截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。
+                     * @return EndTime 截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置截止时间。
-                     * @param EndTime 截止时间。
+                     * 设置截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。
+                     * @param EndTime 截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间。
+                     * 开始时间，如“2019-09-10 12:13:14”。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 截止时间。
+                     * 截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

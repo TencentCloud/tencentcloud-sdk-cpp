@@ -125,6 +125,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeImageRepositoryRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeImageRepositoryResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageTagsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageTagsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeLaneRulesRequest.h>
@@ -404,6 +406,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeGroupsResponse> DescribeGroupsOutcome;
                 typedef std::future<DescribeGroupsOutcome> DescribeGroupsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeGroupsRequest&, DescribeGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeImageRepositoryResponse> DescribeImageRepositoryOutcome;
+                typedef std::future<DescribeImageRepositoryOutcome> DescribeImageRepositoryOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeImageRepositoryRequest&, DescribeImageRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRepositoryAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImageTagsResponse> DescribeImageTagsOutcome;
                 typedef std::future<DescribeImageTagsOutcome> DescribeImageTagsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeImageTagsRequest&, DescribeImageTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageTagsAsyncHandler;
@@ -1035,6 +1040,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeGroupsOutcome DescribeGroups(const Model::DescribeGroupsRequest &request);
                 void DescribeGroupsAsync(const Model::DescribeGroupsRequest& request, const DescribeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGroupsOutcomeCallable DescribeGroupsCallable(const Model::DescribeGroupsRequest& request);
+
+                /**
+                 *镜像仓库列表 
+                 * @param req DescribeImageRepositoryRequest
+                 * @return DescribeImageRepositoryOutcome
+                 */
+                DescribeImageRepositoryOutcome DescribeImageRepository(const Model::DescribeImageRepositoryRequest &request);
+                void DescribeImageRepositoryAsync(const Model::DescribeImageRepositoryRequest& request, const DescribeImageRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageRepositoryOutcomeCallable DescribeImageRepositoryCallable(const Model::DescribeImageRepositoryRequest& request);
 
                 /**
                  *镜像版本列表

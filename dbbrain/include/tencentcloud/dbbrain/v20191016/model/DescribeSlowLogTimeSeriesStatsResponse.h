@@ -21,8 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dbbrain/v20191016/model/TimeSlice.h>
-#include <tencentcloud/dbbrain/v20191016/model/MonitorMetricSeriesData.h>
 
 
 namespace TencentCloud
@@ -44,61 +42,7 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
-                    /**
-                     * 获取柱间单位时间间隔，单位为秒。
-                     * @return Period 柱间单位时间间隔，单位为秒。
-                     */
-                    int64_t GetPeriod() const;
-
-                    /**
-                     * 判断参数 Period 是否已赋值
-                     * @return Period 是否已赋值
-                     */
-                    bool PeriodHasBeenSet() const;
-
-                    /**
-                     * 获取单位时间间隔内慢日志数量统计。
-                     * @return TimeSeries 单位时间间隔内慢日志数量统计。
-                     */
-                    std::vector<TimeSlice> GetTimeSeries() const;
-
-                    /**
-                     * 判断参数 TimeSeries 是否已赋值
-                     * @return TimeSeries 是否已赋值
-                     */
-                    bool TimeSeriesHasBeenSet() const;
-
-                    /**
-                     * 获取单位时间间隔内的实例 cpu 利用率监控数据。
-                     * @return SeriesData 单位时间间隔内的实例 cpu 利用率监控数据。
-                     */
-                    MonitorMetricSeriesData GetSeriesData() const;
-
-                    /**
-                     * 判断参数 SeriesData 是否已赋值
-                     * @return SeriesData 是否已赋值
-                     */
-                    bool SeriesDataHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 柱间单位时间间隔，单位为秒。
-                     */
-                    int64_t m_period;
-                    bool m_periodHasBeenSet;
-
-                    /**
-                     * 单位时间间隔内慢日志数量统计。
-                     */
-                    std::vector<TimeSlice> m_timeSeries;
-                    bool m_timeSeriesHasBeenSet;
-
-                    /**
-                     * 单位时间间隔内的实例 cpu 利用率监控数据。
-                     */
-                    MonitorMetricSeriesData m_seriesData;
-                    bool m_seriesDataHasBeenSet;
 
                 };
             }

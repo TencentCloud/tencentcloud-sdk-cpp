@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/ResourceTag.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取标签信息，查询指定标签的子应用列表。
+                     * @return Tags 标签信息，查询指定标签的子应用列表。
+                     */
+                    std::vector<ResourceTag> GetTags() const;
+
+                    /**
+                     * 设置标签信息，查询指定标签的子应用列表。
+                     * @param Tags 标签信息，查询指定标签的子应用列表。
+                     */
+                    void SetTags(const std::vector<ResourceTag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 标签信息，查询指定标签的子应用列表。
+                     */
+                    std::vector<ResourceTag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

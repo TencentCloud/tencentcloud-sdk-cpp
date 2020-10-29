@@ -21,7 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cdn/v20180606/model/DomainAreaConfig.h>
 
 
 namespace TencentCloud
@@ -43,136 +42,7 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
-                    /**
-                     * 获取开发者ID
-                     * @return AppId 开发者ID
-                     */
-                    uint64_t GetAppId() const;
-
-                    /**
-                     * 判断参数 AppId 是否已赋值
-                     * @return AppId 是否已赋值
-                     */
-                    bool AppIdHasBeenSet() const;
-
-                    /**
-                     * 获取渠道
-                     * @return Channel 渠道
-                     */
-                    std::string GetChannel() const;
-
-                    /**
-                     * 判断参数 Channel 是否已赋值
-                     * @return Channel 是否已赋值
-                     */
-                    bool ChannelHasBeenSet() const;
-
-                    /**
-                     * 获取日志集ID
-                     * @return LogsetId 日志集ID
-                     */
-                    std::string GetLogsetId() const;
-
-                    /**
-                     * 判断参数 LogsetId 是否已赋值
-                     * @return LogsetId 是否已赋值
-                     */
-                    bool LogsetIdHasBeenSet() const;
-
-                    /**
-                     * 获取日志主题ID
-                     * @return TopicId 日志主题ID
-                     */
-                    std::string GetTopicId() const;
-
-                    /**
-                     * 判断参数 TopicId 是否已赋值
-                     * @return TopicId 是否已赋值
-                     */
-                    bool TopicIdHasBeenSet() const;
-
-                    /**
-                     * 获取域名区域配置，其中可能含有已删除的域名，如果要再传回ManageClsTopicDomains接口，需要结合ListCdnDomains接口排除掉已删除的域名
-                     * @return DomainAreaConfigs 域名区域配置，其中可能含有已删除的域名，如果要再传回ManageClsTopicDomains接口，需要结合ListCdnDomains接口排除掉已删除的域名
-                     */
-                    std::vector<DomainAreaConfig> GetDomainAreaConfigs() const;
-
-                    /**
-                     * 判断参数 DomainAreaConfigs 是否已赋值
-                     * @return DomainAreaConfigs 是否已赋值
-                     */
-                    bool DomainAreaConfigsHasBeenSet() const;
-
-                    /**
-                     * 获取日志主题名称
-                     * @return TopicName 日志主题名称
-                     */
-                    std::string GetTopicName() const;
-
-                    /**
-                     * 判断参数 TopicName 是否已赋值
-                     * @return TopicName 是否已赋值
-                     */
-                    bool TopicNameHasBeenSet() const;
-
-                    /**
-                     * 获取日志主题最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 日志主题最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetUpdateTime() const;
-
-                    /**
-                     * 判断参数 UpdateTime 是否已赋值
-                     * @return UpdateTime 是否已赋值
-                     */
-                    bool UpdateTimeHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 开发者ID
-                     */
-                    uint64_t m_appId;
-                    bool m_appIdHasBeenSet;
-
-                    /**
-                     * 渠道
-                     */
-                    std::string m_channel;
-                    bool m_channelHasBeenSet;
-
-                    /**
-                     * 日志集ID
-                     */
-                    std::string m_logsetId;
-                    bool m_logsetIdHasBeenSet;
-
-                    /**
-                     * 日志主题ID
-                     */
-                    std::string m_topicId;
-                    bool m_topicIdHasBeenSet;
-
-                    /**
-                     * 域名区域配置，其中可能含有已删除的域名，如果要再传回ManageClsTopicDomains接口，需要结合ListCdnDomains接口排除掉已删除的域名
-                     */
-                    std::vector<DomainAreaConfig> m_domainAreaConfigs;
-                    bool m_domainAreaConfigsHasBeenSet;
-
-                    /**
-                     * 日志主题名称
-                     */
-                    std::string m_topicName;
-                    bool m_topicNameHasBeenSet;
-
-                    /**
-                     * 日志主题最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_updateTime;
-                    bool m_updateTimeHasBeenSet;
 
                 };
             }

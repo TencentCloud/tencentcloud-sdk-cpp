@@ -24,8 +24,7 @@ using namespace TencentCloud::Dbbrain::V20191016::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeTopSpaceTableTimeSeriesResponse::DescribeTopSpaceTableTimeSeriesResponse() :
-    m_topSpaceTableTimeSeriesHasBeenSet(false)
+DescribeTopSpaceTableTimeSeriesResponse::DescribeTopSpaceTableTimeSeriesResponse()
 {
 }
 
@@ -63,39 +62,9 @@ CoreInternalOutcome DescribeTopSpaceTableTimeSeriesResponse::Deserialize(const s
     }
 
 
-    if (rsp.HasMember("TopSpaceTableTimeSeries") && !rsp["TopSpaceTableTimeSeries"].IsNull())
-    {
-        if (!rsp["TopSpaceTableTimeSeries"].IsArray())
-            return CoreInternalOutcome(Error("response `TopSpaceTableTimeSeries` is not array type"));
-
-        const Value &tmpValue = rsp["TopSpaceTableTimeSeries"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            TableSpaceTimeSeries item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_topSpaceTableTimeSeries.push_back(item);
-        }
-        m_topSpaceTableTimeSeriesHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-vector<TableSpaceTimeSeries> DescribeTopSpaceTableTimeSeriesResponse::GetTopSpaceTableTimeSeries() const
-{
-    return m_topSpaceTableTimeSeries;
-}
-
-bool DescribeTopSpaceTableTimeSeriesResponse::TopSpaceTableTimeSeriesHasBeenSet() const
-{
-    return m_topSpaceTableTimeSeriesHasBeenSet;
-}
 
 

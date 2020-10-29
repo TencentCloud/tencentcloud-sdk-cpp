@@ -26,7 +26,11 @@ using namespace std;
 
 GetServiceStatusResponse::GetServiceStatusResponse() :
     m_serviceEnabledHasBeenSet(false),
-    m_invalidTypeHasBeenSet(false)
+    m_invalidTypeHasBeenSet(false),
+    m_userLevelHasBeenSet(false),
+    m_proExpireTimeHasBeenSet(false),
+    m_proRenewFlagHasBeenSet(false),
+    m_proResourceIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +88,46 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_invalidTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserLevel") && !rsp["UserLevel"].IsNull())
+    {
+        if (!rsp["UserLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `UserLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_userLevel = rsp["UserLevel"].GetUint64();
+        m_userLevelHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProExpireTime") && !rsp["ProExpireTime"].IsNull())
+    {
+        if (!rsp["ProExpireTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ProExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proExpireTime = rsp["ProExpireTime"].GetUint64();
+        m_proExpireTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProRenewFlag") && !rsp["ProRenewFlag"].IsNull())
+    {
+        if (!rsp["ProRenewFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ProRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proRenewFlag = rsp["ProRenewFlag"].GetUint64();
+        m_proRenewFlagHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProResourceId") && !rsp["ProResourceId"].IsNull())
+    {
+        if (!rsp["ProResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proResourceId = string(rsp["ProResourceId"].GetString());
+        m_proResourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +151,46 @@ int64_t GetServiceStatusResponse::GetInvalidType() const
 bool GetServiceStatusResponse::InvalidTypeHasBeenSet() const
 {
     return m_invalidTypeHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetUserLevel() const
+{
+    return m_userLevel;
+}
+
+bool GetServiceStatusResponse::UserLevelHasBeenSet() const
+{
+    return m_userLevelHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetProExpireTime() const
+{
+    return m_proExpireTime;
+}
+
+bool GetServiceStatusResponse::ProExpireTimeHasBeenSet() const
+{
+    return m_proExpireTimeHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetProRenewFlag() const
+{
+    return m_proRenewFlag;
+}
+
+bool GetServiceStatusResponse::ProRenewFlagHasBeenSet() const
+{
+    return m_proRenewFlagHasBeenSet;
+}
+
+string GetServiceStatusResponse::GetProResourceId() const
+{
+    return m_proResourceId;
+}
+
+bool GetServiceStatusResponse::ProResourceIdHasBeenSet() const
+{
+    return m_proResourceIdHasBeenSet;
 }
 
 

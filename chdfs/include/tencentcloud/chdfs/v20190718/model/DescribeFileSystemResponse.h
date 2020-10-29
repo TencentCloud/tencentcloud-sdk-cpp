@@ -56,9 +56,9 @@ namespace TencentCloud
                     bool FileSystemHasBeenSet() const;
 
                     /**
-                     * 获取文件系统已使用容量（byte）
+                     * 获取文件系统已使用容量（已弃用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileSystemCapacityUsed 文件系统已使用容量（byte）
+                     * @return FileSystemCapacityUsed 文件系统已使用容量（已弃用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetFileSystemCapacityUsed() const;
@@ -70,9 +70,9 @@ namespace TencentCloud
                     bool FileSystemCapacityUsedHasBeenSet() const;
 
                     /**
-                     * 获取已使用容量（byte）
+                     * 获取已使用容量（byte），包括标准和归档存储
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CapacityUsed 已使用容量（byte）
+                     * @return CapacityUsed 已使用容量（byte），包括标准和归档存储
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetCapacityUsed() const;
@@ -83,6 +83,20 @@ namespace TencentCloud
                      */
                     bool CapacityUsedHasBeenSet() const;
 
+                    /**
+                     * 获取已使用归档存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ArchiveCapacityUsed 已使用归档存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetArchiveCapacityUsed() const;
+
+                    /**
+                     * 判断参数 ArchiveCapacityUsed 是否已赋值
+                     * @return ArchiveCapacityUsed 是否已赋值
+                     */
+                    bool ArchiveCapacityUsedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,18 +106,25 @@ namespace TencentCloud
                     bool m_fileSystemHasBeenSet;
 
                     /**
-                     * 文件系统已使用容量（byte）
+                     * 文件系统已使用容量（已弃用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fileSystemCapacityUsed;
                     bool m_fileSystemCapacityUsedHasBeenSet;
 
                     /**
-                     * 已使用容量（byte）
+                     * 已使用容量（byte），包括标准和归档存储
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_capacityUsed;
                     bool m_capacityUsedHasBeenSet;
+
+                    /**
+                     * 已使用归档存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_archiveCapacityUsed;
+                    bool m_archiveCapacityUsedHasBeenSet;
 
                 };
             }

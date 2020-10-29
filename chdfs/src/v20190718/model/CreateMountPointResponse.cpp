@@ -24,8 +24,7 @@ using namespace TencentCloud::Chdfs::V20190718::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateMountPointResponse::CreateMountPointResponse() :
-    m_mountPointHasBeenSet(false)
+CreateMountPointResponse::CreateMountPointResponse()
 {
 }
 
@@ -63,36 +62,9 @@ CoreInternalOutcome CreateMountPointResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("MountPoint") && !rsp["MountPoint"].IsNull())
-    {
-        if (!rsp["MountPoint"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `MountPoint` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_mountPoint.Deserialize(rsp["MountPoint"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_mountPointHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-MountPoint CreateMountPointResponse::GetMountPoint() const
-{
-    return m_mountPoint;
-}
-
-bool CreateMountPointResponse::MountPointHasBeenSet() const
-{
-    return m_mountPointHasBeenSet;
-}
 
 

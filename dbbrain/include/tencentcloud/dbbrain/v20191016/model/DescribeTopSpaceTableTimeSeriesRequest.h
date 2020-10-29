@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool SortByHasBeenSet() const;
 
                     /**
-                     * 获取开始日期，最早为当日的前第6天，默认为截止日期的前第6天。
-                     * @return StartDate 开始日期，最早为当日的前第6天，默认为截止日期的前第6天。
+                     * 获取开始日期，最早为当日的前第29天，默认为截止日期的前第6天。
+                     * @return StartDate 开始日期，最早为当日的前第29天，默认为截止日期的前第6天。
                      */
                     std::string GetStartDate() const;
 
                     /**
-                     * 设置开始日期，最早为当日的前第6天，默认为截止日期的前第6天。
-                     * @param StartDate 开始日期，最早为当日的前第6天，默认为截止日期的前第6天。
+                     * 设置开始日期，最早为当日的前第29天，默认为截止日期的前第6天。
+                     * @param StartDate 开始日期，最早为当日的前第29天，默认为截止日期的前第6天。
                      */
                     void SetStartDate(const std::string& _startDate);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取截止日期，最早为当日的前第6天，默认为当日。
-                     * @return EndDate 截止日期，最早为当日的前第6天，默认为当日。
+                     * 获取截止日期，最早为当日的前第29天，默认为当日。
+                     * @return EndDate 截止日期，最早为当日的前第29天，默认为当日。
                      */
                     std::string GetEndDate() const;
 
                     /**
-                     * 设置截止日期，最早为当日的前第6天，默认为当日。
-                     * @param EndDate 截止日期，最早为当日的前第6天，默认为当日。
+                     * 设置截止日期，最早为当日的前第29天，默认为当日。
+                     * @param EndDate 截止日期，最早为当日的前第29天，默认为当日。
                      */
                     void SetEndDate(const std::string& _endDate);
 
@@ -153,13 +153,13 @@ namespace TencentCloud
                     bool m_sortByHasBeenSet;
 
                     /**
-                     * 开始日期，最早为当日的前第6天，默认为截止日期的前第6天。
+                     * 开始日期，最早为当日的前第29天，默认为截止日期的前第6天。
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 截止日期，最早为当日的前第6天，默认为当日。
+                     * 截止日期，最早为当日的前第29天，默认为当日。
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;

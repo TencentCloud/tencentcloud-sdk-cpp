@@ -24,9 +24,7 @@ using namespace TencentCloud::Dbbrain::V20191016::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeSlowLogTopSqlsResponse::DescribeSlowLogTopSqlsResponse() :
-    m_totalCountHasBeenSet(false),
-    m_rowsHasBeenSet(false)
+DescribeSlowLogTopSqlsResponse::DescribeSlowLogTopSqlsResponse()
 {
 }
 
@@ -64,59 +62,9 @@ CoreInternalOutcome DescribeSlowLogTopSqlsResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Rows") && !rsp["Rows"].IsNull())
-    {
-        if (!rsp["Rows"].IsArray())
-            return CoreInternalOutcome(Error("response `Rows` is not array type"));
-
-        const Value &tmpValue = rsp["Rows"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            SlowLogTopSqlItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_rows.push_back(item);
-        }
-        m_rowsHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-int64_t DescribeSlowLogTopSqlsResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeSlowLogTopSqlsResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
-}
-
-vector<SlowLogTopSqlItem> DescribeSlowLogTopSqlsResponse::GetRows() const
-{
-    return m_rows;
-}
-
-bool DescribeSlowLogTopSqlsResponse::RowsHasBeenSet() const
-{
-    return m_rowsHasBeenSet;
-}
 
 

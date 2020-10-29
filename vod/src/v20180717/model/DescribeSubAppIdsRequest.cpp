@@ -23,7 +23,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeSubAppIdsRequest::DescribeSubAppIdsRequest()
+DescribeSubAppIdsRequest::DescribeSubAppIdsRequest() :
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,21 @@ string DescribeSubAppIdsRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +57,21 @@ string DescribeSubAppIdsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<ResourceTag> DescribeSubAppIdsRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeSubAppIdsRequest::SetTags(const vector<ResourceTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeSubAppIdsRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
 
 

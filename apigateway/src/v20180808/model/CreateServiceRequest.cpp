@@ -31,7 +31,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_netTypesHasBeenSet(false),
     m_ipVersionHasBeenSet(false),
     m_setServerNameHasBeenSet(false),
-    m_appIdTypeHasBeenSet(false)
+    m_appIdTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,21 @@ string CreateServiceRequest::ToJsonString() const
         string key = "AppIdType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_appIdType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -245,6 +261,22 @@ void CreateServiceRequest::SetAppIdType(const string& _appIdType)
 bool CreateServiceRequest::AppIdTypeHasBeenSet() const
 {
     return m_appIdTypeHasBeenSet;
+}
+
+vector<Tag> CreateServiceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateServiceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateServiceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 
