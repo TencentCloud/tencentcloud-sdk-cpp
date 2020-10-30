@@ -28,10 +28,10 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleResponse.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkResponse.h
-  include/tencentcloud/trtc/v20190722/model/RemoveUserRequest.h
+  include/tencentcloud/trtc/v20190722/model/DescribeUserInformationRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkRequest.h
-  include/tencentcloud/trtc/v20190722/model/DismissRoomRequest.h
+  include/tencentcloud/trtc/v20190722/model/DescribeUserInformationResponse.h
   include/tencentcloud/trtc/v20190722/model/EncodeParams.h
   include/tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityResponse.h
@@ -39,6 +39,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/UserInformation.h
   include/tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeRoomInformationResponse.h
+  include/tencentcloud/trtc/v20190722/model/RemoveUserRequest.h
   include/tencentcloud/trtc/v20190722/model/OutputParams.h
   include/tencentcloud/trtc/v20190722/model/EventMessage.h
   include/tencentcloud/trtc/v20190722/model/CreateTroubleInfoResponse.h
@@ -48,6 +49,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/ScaleInfomation.h
   include/tencentcloud/trtc/v20190722/model/CreateTroubleInfoRequest.h
   include/tencentcloud/trtc/v20190722/model/EventList.h
+  include/tencentcloud/trtc/v20190722/model/DismissRoomRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeDetailEventResponse.h
   include/tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeResponse.h
   include/tencentcloud/trtc/v20190722/model/SmallVideoLayoutParams.h
@@ -72,10 +74,10 @@ set(trtc_src
   src/v20190722/model/DescribeRealtimeScaleResponse.cpp
   src/v20190722/model/DismissRoomResponse.cpp
   src/v20190722/model/DescribeRealtimeNetworkResponse.cpp
-  src/v20190722/model/RemoveUserRequest.cpp
+  src/v20190722/model/DescribeUserInformationRequest.cpp
   src/v20190722/model/DescribeCallDetailRequest.cpp
   src/v20190722/model/DescribeRealtimeNetworkRequest.cpp
-  src/v20190722/model/DismissRoomRequest.cpp
+  src/v20190722/model/DescribeUserInformationResponse.cpp
   src/v20190722/model/EncodeParams.cpp
   src/v20190722/model/StartMCUMixTranscodeRequest.cpp
   src/v20190722/model/DescribeRealtimeQualityResponse.cpp
@@ -83,6 +85,7 @@ set(trtc_src
   src/v20190722/model/UserInformation.cpp
   src/v20190722/model/DescribeHistoryScaleRequest.cpp
   src/v20190722/model/DescribeRoomInformationResponse.cpp
+  src/v20190722/model/RemoveUserRequest.cpp
   src/v20190722/model/OutputParams.cpp
   src/v20190722/model/EventMessage.cpp
   src/v20190722/model/CreateTroubleInfoResponse.cpp
@@ -92,6 +95,7 @@ set(trtc_src
   src/v20190722/model/ScaleInfomation.cpp
   src/v20190722/model/CreateTroubleInfoRequest.cpp
   src/v20190722/model/EventList.cpp
+  src/v20190722/model/DismissRoomRequest.cpp
   src/v20190722/model/DescribeDetailEventResponse.cpp
   src/v20190722/model/StartMCUMixTranscodeResponse.cpp
   src/v20190722/model/SmallVideoLayoutParams.cpp

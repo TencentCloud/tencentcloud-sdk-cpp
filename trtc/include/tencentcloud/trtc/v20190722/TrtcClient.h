@@ -41,6 +41,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeUserInformationRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeUserInformationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserRequest.h>
@@ -90,6 +92,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRoomInformationResponse> DescribeRoomInformationOutcome;
                 typedef std::future<DescribeRoomInformationOutcome> DescribeRoomInformationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRoomInformationRequest&, DescribeRoomInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomInformationAsyncHandler;
+                typedef Outcome<Error, Model::DescribeUserInformationResponse> DescribeUserInformationOutcome;
+                typedef std::future<DescribeUserInformationOutcome> DescribeUserInformationOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeUserInformationRequest&, DescribeUserInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInformationAsyncHandler;
                 typedef Outcome<Error, Model::DismissRoomResponse> DismissRoomOutcome;
                 typedef std::future<DismissRoomOutcome> DismissRoomOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DismissRoomRequest&, DismissRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomAsyncHandler;
@@ -185,6 +190,15 @@ namespace TencentCloud
                 DescribeRoomInformationOutcome DescribeRoomInformation(const Model::DescribeRoomInformationRequest &request);
                 void DescribeRoomInformationAsync(const Model::DescribeRoomInformationRequest& request, const DescribeRoomInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRoomInformationOutcomeCallable DescribeRoomInformationCallable(const Model::DescribeRoomInformationRequest& request);
+
+                /**
+                 *查询指定时间内的用户列表，可查询14天内数据。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。
+                 * @param req DescribeUserInformationRequest
+                 * @return DescribeUserInformationOutcome
+                 */
+                DescribeUserInformationOutcome DescribeUserInformation(const Model::DescribeUserInformationRequest &request);
+                void DescribeUserInformationAsync(const Model::DescribeUserInformationRequest& request, const DescribeUserInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserInformationOutcomeCallable DescribeUserInformationCallable(const Model::DescribeUserInformationRequest& request);
 
                 /**
                  *接口说明：把房间所有用户从房间移出，解散房间。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。

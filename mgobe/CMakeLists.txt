@@ -15,16 +15,22 @@
 #
 
 set(mgobe_public_header
+  include/tencentcloud/mgobe/v20201014/MgobeClient.h
   include/tencentcloud/mgobe/v20190929/MgobeClient.h
   )
 
 set(mgobe_public_header_model
+  include/tencentcloud/mgobe/v20201014/model/DismissRoomRequest.h
+  include/tencentcloud/mgobe/v20201014/model/DismissRoomResponse.h
   include/tencentcloud/mgobe/v20190929/model/DismissRoomRequest.h
   include/tencentcloud/mgobe/v20190929/model/DismissRoomResponse.h
   )
 
 set(mgobe_src
+  src/v20201014/MgobeClient.cpp
   src/v20190929/MgobeClient.cpp
+  src/v20201014/model/DismissRoomRequest.cpp
+  src/v20201014/model/DismissRoomResponse.cpp
   src/v20190929/model/DismissRoomRequest.cpp
   src/v20190929/model/DismissRoomResponse.cpp
   )

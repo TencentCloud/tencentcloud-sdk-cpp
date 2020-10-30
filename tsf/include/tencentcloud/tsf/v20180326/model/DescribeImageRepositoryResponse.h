@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/ImageRepositoryResult.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,25 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取查询的权限数据对象
+                     * @return Result 查询的权限数据对象
+                     */
+                    ImageRepositoryResult GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 查询的权限数据对象
+                     */
+                    ImageRepositoryResult m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

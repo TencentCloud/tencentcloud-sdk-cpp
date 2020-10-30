@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ocr/v20181119/model/PassportOCRResponse.h>
+#include <tencentcloud/mgobe/v20201014/model/DismissRoomResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ocr::V20181119::Model;
+using namespace TencentCloud::Mgobe::V20201014::Model;
 using namespace rapidjson;
 using namespace std;
 
-PassportOCRResponse::PassportOCRResponse()
+DismissRoomResponse::DismissRoomResponse()
 {
 }
 
-CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
+CoreInternalOutcome DismissRoomResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());

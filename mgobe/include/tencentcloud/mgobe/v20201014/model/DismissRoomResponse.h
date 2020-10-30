@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_OCR_V20181119_MODEL_PASSPORTOCRRESPONSE_H_
-#define TENCENTCLOUD_OCR_V20181119_MODEL_PASSPORTOCRRESPONSE_H_
+#ifndef TENCENTCLOUD_MGOBE_V20201014_MODEL_DISMISSROOMRESPONSE_H_
+#define TENCENTCLOUD_MGOBE_V20201014_MODEL_DISMISSROOMRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Ocr
+    namespace Mgobe
     {
-        namespace V20181119
+        namespace V20201014
         {
             namespace Model
             {
                 /**
-                * PassportOCR返回参数结构体
+                * DismissRoom返回参数结构体
                 */
-                class PassportOCRResponse : public AbstractModel
+                class DismissRoomResponse : public AbstractModel
                 {
                 public:
-                    PassportOCRResponse();
-                    ~PassportOCRResponse() = default;
+                    DismissRoomResponse();
+                    ~DismissRoomResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
@@ -50,4 +50,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_OCR_V20181119_MODEL_PASSPORTOCRRESPONSE_H_
+#endif // !TENCENTCLOUD_MGOBE_V20201014_MODEL_DISMISSROOMRESPONSE_H_

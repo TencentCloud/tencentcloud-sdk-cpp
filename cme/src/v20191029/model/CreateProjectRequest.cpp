@@ -30,7 +30,9 @@ CreateProjectRequest::CreateProjectRequest() :
     m_aspectRatioHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_switcherProjectInputHasBeenSet(false)
+    m_switcherProjectInputHasBeenSet(false),
+    m_liveStreamClipProjectInputHasBeenSet(false),
+    m_videoEditProjectInputHasBeenSet(false)
 {
 }
 
@@ -97,6 +99,24 @@ string CreateProjectRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_switcherProjectInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_liveStreamClipProjectInputHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LiveStreamClipProjectInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_liveStreamClipProjectInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_videoEditProjectInputHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VideoEditProjectInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_videoEditProjectInput.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -217,6 +237,38 @@ void CreateProjectRequest::SetSwitcherProjectInput(const SwitcherProjectInput& _
 bool CreateProjectRequest::SwitcherProjectInputHasBeenSet() const
 {
     return m_switcherProjectInputHasBeenSet;
+}
+
+LiveStreamClipProjectInput CreateProjectRequest::GetLiveStreamClipProjectInput() const
+{
+    return m_liveStreamClipProjectInput;
+}
+
+void CreateProjectRequest::SetLiveStreamClipProjectInput(const LiveStreamClipProjectInput& _liveStreamClipProjectInput)
+{
+    m_liveStreamClipProjectInput = _liveStreamClipProjectInput;
+    m_liveStreamClipProjectInputHasBeenSet = true;
+}
+
+bool CreateProjectRequest::LiveStreamClipProjectInputHasBeenSet() const
+{
+    return m_liveStreamClipProjectInputHasBeenSet;
+}
+
+VideoEditProjectInput CreateProjectRequest::GetVideoEditProjectInput() const
+{
+    return m_videoEditProjectInput;
+}
+
+void CreateProjectRequest::SetVideoEditProjectInput(const VideoEditProjectInput& _videoEditProjectInput)
+{
+    m_videoEditProjectInput = _videoEditProjectInput;
+    m_videoEditProjectInputHasBeenSet = true;
+}
+
+bool CreateProjectRequest::VideoEditProjectInputHasBeenSet() const
+{
+    return m_videoEditProjectInputHasBeenSet;
 }
 
 

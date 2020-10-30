@@ -24,7 +24,8 @@ using namespace TencentCloud::Tsf::V20180326::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeImageRepositoryResponse::DescribeImageRepositoryResponse()
+DescribeImageRepositoryResponse::DescribeImageRepositoryResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,36 @@ CoreInternalOutcome DescribeImageRepositoryResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    {
+        if (!rsp["Result"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Result` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+ImageRepositoryResult DescribeImageRepositoryResponse::GetResult() const
+{
+    return m_result;
+}
+
+bool DescribeImageRepositoryResponse::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
+}
 
 

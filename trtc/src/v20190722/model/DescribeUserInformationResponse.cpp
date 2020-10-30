@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ocr/v20181119/model/PassportOCRResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeUserInformationResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ocr::V20181119::Model;
+using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace rapidjson;
 using namespace std;
 
-PassportOCRResponse::PassportOCRResponse()
+DescribeUserInformationResponse::DescribeUserInformationResponse() :
+    m_totalHasBeenSet(false),
+    m_userListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeUserInformationResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -62,9 +64,59 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UserList") && !rsp["UserList"].IsNull())
+    {
+        if (!rsp["UserList"].IsArray())
+            return CoreInternalOutcome(Error("response `UserList` is not array type"));
+
+        const Value &tmpValue = rsp["UserList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UserInformation item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_userList.push_back(item);
+        }
+        m_userListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+uint64_t DescribeUserInformationResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeUserInformationResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
+
+vector<UserInformation> DescribeUserInformationResponse::GetUserList() const
+{
+    return m_userList;
+}
+
+bool DescribeUserInformationResponse::UserListHasBeenSet() const
+{
+    return m_userListHasBeenSet;
+}
 
 

@@ -14,42 +14,42 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/iotvideo/v20191126/model/CreateAppUsrRequest.h>
+#include <tencentcloud/mgobe/v20201014/model/DismissRoomRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Iotvideo::V20191126::Model;
+using namespace TencentCloud::Mgobe::V20201014::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateAppUsrRequest::CreateAppUsrRequest() :
-    m_cunionIdHasBeenSet(false),
-    m_mobileHasBeenSet(false)
+DismissRoomRequest::DismissRoomRequest() :
+    m_gameIdHasBeenSet(false),
+    m_roomIdHasBeenSet(false)
 {
 }
 
-string CreateAppUsrRequest::ToJsonString() const
+string DismissRoomRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_cunionIdHasBeenSet)
+    if (m_gameIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "CunionId";
+        string key = "GameId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cunionId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_gameId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_mobileHasBeenSet)
+    if (m_roomIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Mobile";
+        string key = "RoomId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_mobile.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_roomId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -60,36 +60,36 @@ string CreateAppUsrRequest::ToJsonString() const
 }
 
 
-string CreateAppUsrRequest::GetCunionId() const
+string DismissRoomRequest::GetGameId() const
 {
-    return m_cunionId;
+    return m_gameId;
 }
 
-void CreateAppUsrRequest::SetCunionId(const string& _cunionId)
+void DismissRoomRequest::SetGameId(const string& _gameId)
 {
-    m_cunionId = _cunionId;
-    m_cunionIdHasBeenSet = true;
+    m_gameId = _gameId;
+    m_gameIdHasBeenSet = true;
 }
 
-bool CreateAppUsrRequest::CunionIdHasBeenSet() const
+bool DismissRoomRequest::GameIdHasBeenSet() const
 {
-    return m_cunionIdHasBeenSet;
+    return m_gameIdHasBeenSet;
 }
 
-string CreateAppUsrRequest::GetMobile() const
+string DismissRoomRequest::GetRoomId() const
 {
-    return m_mobile;
+    return m_roomId;
 }
 
-void CreateAppUsrRequest::SetMobile(const string& _mobile)
+void DismissRoomRequest::SetRoomId(const string& _roomId)
 {
-    m_mobile = _mobile;
-    m_mobileHasBeenSet = true;
+    m_roomId = _roomId;
+    m_roomIdHasBeenSet = true;
 }
 
-bool CreateAppUsrRequest::MobileHasBeenSet() const
+bool DismissRoomRequest::RoomIdHasBeenSet() const
 {
-    return m_mobileHasBeenSet;
+    return m_roomIdHasBeenSet;
 }
 
 

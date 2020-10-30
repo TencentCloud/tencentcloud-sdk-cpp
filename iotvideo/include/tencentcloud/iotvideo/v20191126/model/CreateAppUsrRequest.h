@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool CunionIdHasBeenSet() const;
 
+                    /**
+                     * 获取用于小程序关联手机号
+                     * @return Mobile 用于小程序关联手机号
+                     */
+                    std::string GetMobile() const;
+
+                    /**
+                     * 设置用于小程序关联手机号
+                     * @param Mobile 用于小程序关联手机号
+                     */
+                    void SetMobile(const std::string& _mobile);
+
+                    /**
+                     * 判断参数 Mobile 是否已赋值
+                     * @return Mobile 是否已赋值
+                     */
+                    bool MobileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_cunionId;
                     bool m_cunionIdHasBeenSet;
+
+                    /**
+                     * 用于小程序关联手机号
+                     */
+                    std::string m_mobile;
+                    bool m_mobileHasBeenSet;
 
                 };
             }

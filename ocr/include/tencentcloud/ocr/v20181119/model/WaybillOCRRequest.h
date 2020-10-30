@@ -106,6 +106,24 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取预检测开关，当待识别运单占整个输入图像的比例较小时，建议打开预检测开关。默认值为false。
+                     * @return EnablePreDetect 预检测开关，当待识别运单占整个输入图像的比例较小时，建议打开预检测开关。默认值为false。
+                     */
+                    bool GetEnablePreDetect() const;
+
+                    /**
+                     * 设置预检测开关，当待识别运单占整个输入图像的比例较小时，建议打开预检测开关。默认值为false。
+                     * @param EnablePreDetect 预检测开关，当待识别运单占整个输入图像的比例较小时，建议打开预检测开关。默认值为false。
+                     */
+                    void SetEnablePreDetect(const bool& _enablePreDetect);
+
+                    /**
+                     * 判断参数 EnablePreDetect 是否已赋值
+                     * @return EnablePreDetect 是否已赋值
+                     */
+                    bool EnablePreDetectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +144,12 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 预检测开关，当待识别运单占整个输入图像的比例较小时，建议打开预检测开关。默认值为false。
+                     */
+                    bool m_enablePreDetect;
+                    bool m_enablePreDetectHasBeenSet;
 
                 };
             }

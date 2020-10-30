@@ -23,6 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/Entity.h>
 #include <tencentcloud/cme/v20191029/model/SwitcherProjectInput.h>
+#include <tencentcloud/cme/v20191029/model/LiveStreamClipProjectInput.h>
+#include <tencentcloud/cme/v20191029/model/VideoEditProjectInput.h>
 
 
 namespace TencentCloud
@@ -186,6 +188,42 @@ namespace TencentCloud
                      */
                     bool SwitcherProjectInputHasBeenSet() const;
 
+                    /**
+                     * 获取直播剪辑信息，暂未开放，请勿使用。
+                     * @return LiveStreamClipProjectInput 直播剪辑信息，暂未开放，请勿使用。
+                     */
+                    LiveStreamClipProjectInput GetLiveStreamClipProjectInput() const;
+
+                    /**
+                     * 设置直播剪辑信息，暂未开放，请勿使用。
+                     * @param LiveStreamClipProjectInput 直播剪辑信息，暂未开放，请勿使用。
+                     */
+                    void SetLiveStreamClipProjectInput(const LiveStreamClipProjectInput& _liveStreamClipProjectInput);
+
+                    /**
+                     * 判断参数 LiveStreamClipProjectInput 是否已赋值
+                     * @return LiveStreamClipProjectInput 是否已赋值
+                     */
+                    bool LiveStreamClipProjectInputHasBeenSet() const;
+
+                    /**
+                     * 获取视频编辑信息。
+                     * @return VideoEditProjectInput 视频编辑信息。
+                     */
+                    VideoEditProjectInput GetVideoEditProjectInput() const;
+
+                    /**
+                     * 设置视频编辑信息。
+                     * @param VideoEditProjectInput 视频编辑信息。
+                     */
+                    void SetVideoEditProjectInput(const VideoEditProjectInput& _videoEditProjectInput);
+
+                    /**
+                     * 判断参数 VideoEditProjectInput 是否已赋值
+                     * @return VideoEditProjectInput 是否已赋值
+                     */
+                    bool VideoEditProjectInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +271,18 @@ namespace TencentCloud
                      */
                     SwitcherProjectInput m_switcherProjectInput;
                     bool m_switcherProjectInputHasBeenSet;
+
+                    /**
+                     * 直播剪辑信息，暂未开放，请勿使用。
+                     */
+                    LiveStreamClipProjectInput m_liveStreamClipProjectInput;
+                    bool m_liveStreamClipProjectInputHasBeenSet;
+
+                    /**
+                     * 视频编辑信息。
+                     */
+                    VideoEditProjectInput m_videoEditProjectInput;
+                    bool m_videoEditProjectInputHasBeenSet;
 
                 };
             }

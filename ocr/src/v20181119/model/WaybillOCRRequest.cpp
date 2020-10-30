@@ -25,7 +25,8 @@ using namespace std;
 
 WaybillOCRRequest::WaybillOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_enablePreDetectHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string WaybillOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enablePreDetectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnablePreDetect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enablePreDetect, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void WaybillOCRRequest::SetImageUrl(const string& _imageUrl)
 bool WaybillOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool WaybillOCRRequest::GetEnablePreDetect() const
+{
+    return m_enablePreDetect;
+}
+
+void WaybillOCRRequest::SetEnablePreDetect(const bool& _enablePreDetect)
+{
+    m_enablePreDetect = _enablePreDetect;
+    m_enablePreDetectHasBeenSet = true;
+}
+
+bool WaybillOCRRequest::EnablePreDetectHasBeenSet() const
+{
+    return m_enablePreDetectHasBeenSet;
 }
 
 
