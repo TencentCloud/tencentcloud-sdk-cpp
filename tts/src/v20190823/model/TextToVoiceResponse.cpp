@@ -24,7 +24,9 @@ using namespace TencentCloud::Tts::V20190823::Model;
 using namespace rapidjson;
 using namespace std;
 
-TextToVoiceResponse::TextToVoiceResponse()
+TextToVoiceResponse::TextToVoiceResponse() :
+    m_audioHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -62,9 +64,49 @@ CoreInternalOutcome TextToVoiceResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Audio") && !rsp["Audio"].IsNull())
+    {
+        if (!rsp["Audio"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Audio` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audio = string(rsp["Audio"].GetString());
+        m_audioHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
+    {
+        if (!rsp["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(rsp["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string TextToVoiceResponse::GetAudio() const
+{
+    return m_audio;
+}
+
+bool TextToVoiceResponse::AudioHasBeenSet() const
+{
+    return m_audioHasBeenSet;
+}
+
+string TextToVoiceResponse::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+bool TextToVoiceResponse::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
 
 

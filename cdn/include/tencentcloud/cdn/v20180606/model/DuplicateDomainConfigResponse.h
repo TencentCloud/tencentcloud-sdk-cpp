@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_IAI_V20180301_MODEL_VERIFYPERSONRESPONSE_H_
-#define TENCENTCLOUD_IAI_V20180301_MODEL_VERIFYPERSONRESPONSE_H_
+#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_DUPLICATEDOMAINCONFIGRESPONSE_H_
+#define TENCENTCLOUD_CDN_V20180606_MODEL_DUPLICATEDOMAINCONFIGRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Iai
+    namespace Cdn
     {
-        namespace V20180301
+        namespace V20180606
         {
             namespace Model
             {
                 /**
-                * VerifyPerson返回参数结构体
+                * DuplicateDomainConfig返回参数结构体
                 */
-                class VerifyPersonResponse : public AbstractModel
+                class DuplicateDomainConfigResponse : public AbstractModel
                 {
                 public:
-                    VerifyPersonResponse();
-                    ~VerifyPersonResponse() = default;
+                    DuplicateDomainConfigResponse();
+                    ~DuplicateDomainConfigResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
@@ -50,4 +50,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_IAI_V20180301_MODEL_VERIFYPERSONRESPONSE_H_
+#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_DUPLICATEDOMAINCONFIGRESPONSE_H_

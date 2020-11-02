@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检测到的文本信息，具体内容请点击左侧链接。
-                     * @return TextDetections 检测到的文本信息，具体内容请点击左侧链接。
+                     * 获取检测到的文本信息，具体内容请点击左侧链接
+                     * @return TextDetections 检测到的文本信息，具体内容请点击左侧链接
                      */
                     std::vector<TextTable> GetTextDetections() const;
 
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 检测到的文本信息，具体内容请点击左侧链接。
+                     * 检测到的文本信息，具体内容请点击左侧链接
                      */
                     std::vector<TextTable> m_textDetections;
                     bool m_textDetectionsHasBeenSet;

@@ -43,6 +43,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。
+                     * @return PersonId 待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。
+                     */
+                    std::string GetPersonId() const;
+
+                    /**
+                     * 设置待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。
+                     * @param PersonId 待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。
+                     */
+                    void SetPersonId(const std::string& _personId);
+
+                    /**
+                     * 判断参数 PersonId 是否已赋值
+                     * @return PersonId 是否已赋值
+                     */
+                    bool PersonIdHasBeenSet() const;
+
+                    /**
                      * 获取图片 base64 数据。
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
@@ -115,24 +133,6 @@ jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。
-                     * @return PersonId 待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。
-                     */
-                    std::string GetPersonId() const;
-
-                    /**
-                     * 设置待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。
-                     * @param PersonId 待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。
-                     */
-                    void SetPersonId(const std::string& _personId);
-
-                    /**
-                     * 判断参数 PersonId 是否已赋值
-                     * @return PersonId 是否已赋值
-                     */
-                    bool PersonIdHasBeenSet() const;
-
-                    /**
                      * 获取图片质量控制。 
 0: 不进行控制； 
 1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； 
@@ -199,6 +199,12 @@ jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2
                 private:
 
                     /**
+                     * 待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。
+                     */
+                    std::string m_personId;
+                    bool m_personIdHasBeenSet;
+
+                    /**
                      * 图片 base64 数据。
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
@@ -218,12 +224,6 @@ jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
-
-                    /**
-                     * 待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。
-                     */
-                    std::string m_personId;
-                    bool m_personIdHasBeenSet;
 
                     /**
                      * 图片质量控制。 

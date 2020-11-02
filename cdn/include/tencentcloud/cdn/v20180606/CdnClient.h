@@ -89,6 +89,8 @@
 #include <tencentcloud/cdn/v20180606/model/DisableCachesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DisableClsLogTopicRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DisableClsLogTopicResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DuplicateDomainConfigRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DuplicateDomainConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/EnableCachesRequest.h>
 #include <tencentcloud/cdn/v20180606/model/EnableCachesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/EnableClsLogTopicRequest.h>
@@ -240,6 +242,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DisableClsLogTopicResponse> DisableClsLogTopicOutcome;
                 typedef std::future<DisableClsLogTopicOutcome> DisableClsLogTopicOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DisableClsLogTopicRequest&, DisableClsLogTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableClsLogTopicAsyncHandler;
+                typedef Outcome<Error, Model::DuplicateDomainConfigResponse> DuplicateDomainConfigOutcome;
+                typedef std::future<DuplicateDomainConfigOutcome> DuplicateDomainConfigOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DuplicateDomainConfigRequest&, DuplicateDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DuplicateDomainConfigAsyncHandler;
                 typedef Outcome<Error, Model::EnableCachesResponse> EnableCachesOutcome;
                 typedef std::future<EnableCachesOutcome> EnableCachesOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::EnableCachesRequest&, EnableCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableCachesAsyncHandler;
@@ -623,6 +628,15 @@ namespace TencentCloud
                 DisableClsLogTopicOutcome DisableClsLogTopic(const Model::DisableClsLogTopicRequest &request);
                 void DisableClsLogTopicAsync(const Model::DisableClsLogTopicRequest& request, const DisableClsLogTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableClsLogTopicOutcomeCallable DisableClsLogTopicCallable(const Model::DisableClsLogTopicRequest& request);
+
+                /**
+                 *拷贝参考域名的配置至新域名。暂不支持自有证书以及定制化配置
+                 * @param req DuplicateDomainConfigRequest
+                 * @return DuplicateDomainConfigOutcome
+                 */
+                DuplicateDomainConfigOutcome DuplicateDomainConfig(const Model::DuplicateDomainConfigRequest &request);
+                void DuplicateDomainConfigAsync(const Model::DuplicateDomainConfigRequest& request, const DuplicateDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DuplicateDomainConfigOutcomeCallable DuplicateDomainConfigCallable(const Model::DuplicateDomainConfigRequest& request);
 
                 /**
                  *EnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时间约 5~10 分钟。（接口尚在内测中，暂未全量开放使用）

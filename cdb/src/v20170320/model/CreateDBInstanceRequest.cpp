@@ -50,7 +50,9 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_resourceTagsHasBeenSet(false),
     m_deployGroupIdHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
+    m_deviceTypeHasBeenSet(false),
+    m_paramTemplateIdHasBeenSet(false),
+    m_alarmPolicyListHasBeenSet(false)
 {
 }
 
@@ -295,6 +297,27 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "DeviceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramTemplateIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ParamTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_paramTemplateId, allocator);
+    }
+
+    if (m_alarmPolicyListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AlarmPolicyList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_alarmPolicyList.begin(); itr != m_alarmPolicyList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -735,6 +758,38 @@ void CreateDBInstanceRequest::SetDeviceType(const string& _deviceType)
 bool CreateDBInstanceRequest::DeviceTypeHasBeenSet() const
 {
     return m_deviceTypeHasBeenSet;
+}
+
+int64_t CreateDBInstanceRequest::GetParamTemplateId() const
+{
+    return m_paramTemplateId;
+}
+
+void CreateDBInstanceRequest::SetParamTemplateId(const int64_t& _paramTemplateId)
+{
+    m_paramTemplateId = _paramTemplateId;
+    m_paramTemplateIdHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::ParamTemplateIdHasBeenSet() const
+{
+    return m_paramTemplateIdHasBeenSet;
+}
+
+vector<int64_t> CreateDBInstanceRequest::GetAlarmPolicyList() const
+{
+    return m_alarmPolicyList;
+}
+
+void CreateDBInstanceRequest::SetAlarmPolicyList(const vector<int64_t>& _alarmPolicyList)
+{
+    m_alarmPolicyList = _alarmPolicyList;
+    m_alarmPolicyListHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::AlarmPolicyListHasBeenSet() const
+{
+    return m_alarmPolicyListHasBeenSet;
 }
 
 

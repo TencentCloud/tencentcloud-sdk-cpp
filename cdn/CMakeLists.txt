@@ -59,6 +59,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsResponse.h
   include/tencentcloud/cdn/v20180606/model/UpdateImageConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/DisableCachesRequest.h
+  include/tencentcloud/cdn/v20180606/model/DuplicateDomainConfigResponse.h
   include/tencentcloud/cdn/v20180606/model/CompressionRule.h
   include/tencentcloud/cdn/v20180606/model/GuetzliAdapter.h
   include/tencentcloud/cdn/v20180606/model/Origin.h
@@ -104,6 +105,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/CreateScdnLogTaskResponse.h
   include/tencentcloud/cdn/v20180606/model/MapInfo.h
   include/tencentcloud/cdn/v20180606/model/DescribeCertDomainsResponse.h
+  include/tencentcloud/cdn/v20180606/model/DuplicateDomainConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/AuthenticationTypeD.h
   include/tencentcloud/cdn/v20180606/model/AuthenticationTypeC.h
   include/tencentcloud/cdn/v20180606/model/AuthenticationTypeB.h
@@ -280,6 +282,7 @@ set(cdn_src
   src/v20180606/model/DescribeDomainsResponse.cpp
   src/v20180606/model/UpdateImageConfigRequest.cpp
   src/v20180606/model/DisableCachesRequest.cpp
+  src/v20180606/model/DuplicateDomainConfigResponse.cpp
   src/v20180606/model/CompressionRule.cpp
   src/v20180606/model/GuetzliAdapter.cpp
   src/v20180606/model/Origin.cpp
@@ -325,6 +328,7 @@ set(cdn_src
   src/v20180606/model/CreateScdnLogTaskResponse.cpp
   src/v20180606/model/MapInfo.cpp
   src/v20180606/model/DescribeCertDomainsResponse.cpp
+  src/v20180606/model/DuplicateDomainConfigRequest.cpp
   src/v20180606/model/AuthenticationTypeD.cpp
   src/v20180606/model/AuthenticationTypeC.cpp
   src/v20180606/model/AuthenticationTypeB.cpp

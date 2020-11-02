@@ -42,61 +42,7 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
-                    /**
-                     * 获取给定的人脸照片与 PersonId 对应的相似度。若 PersonId 下有多张人脸（Face），会融合多张人脸信息进行验证。
-                     * @return Score 给定的人脸照片与 PersonId 对应的相似度。若 PersonId 下有多张人脸（Face），会融合多张人脸信息进行验证。
-                     */
-                    double GetScore() const;
-
-                    /**
-                     * 判断参数 Score 是否已赋值
-                     * @return Score 是否已赋值
-                     */
-                    bool ScoreHasBeenSet() const;
-
-                    /**
-                     * 获取是否为同一人的判断。
-                     * @return IsMatch 是否为同一人的判断。
-                     */
-                    bool GetIsMatch() const;
-
-                    /**
-                     * 判断参数 IsMatch 是否已赋值
-                     * @return IsMatch 是否已赋值
-                     */
-                    bool IsMatchHasBeenSet() const;
-
-                    /**
-                     * 获取人脸识别所用的算法模型版本，是该 Person 所在的人员库的算法模型版本。在创建人员库时设置，详情可参考[算法模型版本](https://cloud.tencent.com/document/product/867/40042)
-                     * @return FaceModelVersion 人脸识别所用的算法模型版本，是该 Person 所在的人员库的算法模型版本。在创建人员库时设置，详情可参考[算法模型版本](https://cloud.tencent.com/document/product/867/40042)
-                     */
-                    std::string GetFaceModelVersion() const;
-
-                    /**
-                     * 判断参数 FaceModelVersion 是否已赋值
-                     * @return FaceModelVersion 是否已赋值
-                     */
-                    bool FaceModelVersionHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 给定的人脸照片与 PersonId 对应的相似度。若 PersonId 下有多张人脸（Face），会融合多张人脸信息进行验证。
-                     */
-                    double m_score;
-                    bool m_scoreHasBeenSet;
-
-                    /**
-                     * 是否为同一人的判断。
-                     */
-                    bool m_isMatch;
-                    bool m_isMatchHasBeenSet;
-
-                    /**
-                     * 人脸识别所用的算法模型版本，是该 Person 所在的人员库的算法模型版本。在创建人员库时设置，详情可参考[算法模型版本](https://cloud.tencent.com/document/product/867/40042)
-                     */
-                    std::string m_faceModelVersion;
-                    bool m_faceModelVersionHasBeenSet;
 
                 };
             }

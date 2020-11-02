@@ -1459,6 +1459,49 @@ CdnClient::DisableClsLogTopicOutcomeCallable CdnClient::DisableClsLogTopicCallab
     return task->get_future();
 }
 
+CdnClient::DuplicateDomainConfigOutcome CdnClient::DuplicateDomainConfig(const DuplicateDomainConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DuplicateDomainConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DuplicateDomainConfigResponse rsp = DuplicateDomainConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DuplicateDomainConfigOutcome(rsp);
+        else
+            return DuplicateDomainConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DuplicateDomainConfigOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DuplicateDomainConfigAsync(const DuplicateDomainConfigRequest& request, const DuplicateDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DuplicateDomainConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DuplicateDomainConfigOutcomeCallable CdnClient::DuplicateDomainConfigCallable(const DuplicateDomainConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DuplicateDomainConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DuplicateDomainConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::EnableCachesOutcome CdnClient::EnableCaches(const EnableCachesRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableCaches");

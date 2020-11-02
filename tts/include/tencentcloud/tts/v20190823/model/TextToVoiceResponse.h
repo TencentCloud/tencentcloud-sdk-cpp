@@ -42,7 +42,43 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取base64编码的wav/mp3音频数据
+                     * @return Audio base64编码的wav/mp3音频数据
+                     */
+                    std::string GetAudio() const;
+
+                    /**
+                     * 判断参数 Audio 是否已赋值
+                     * @return Audio 是否已赋值
+                     */
+                    bool AudioHasBeenSet() const;
+
+                    /**
+                     * 获取一次请求对应一个SessionId
+                     * @return SessionId 一次请求对应一个SessionId
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     */
+                    bool SessionIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * base64编码的wav/mp3音频数据
+                     */
+                    std::string m_audio;
+                    bool m_audioHasBeenSet;
+
+                    /**
+                     * 一次请求对应一个SessionId
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                 };
             }

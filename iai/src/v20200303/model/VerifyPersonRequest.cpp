@@ -24,9 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 VerifyPersonRequest::VerifyPersonRequest() :
+    m_personIdHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_personIdHasBeenSet(false),
     m_qualityControlHasBeenSet(false),
     m_needRotateDetectionHasBeenSet(false)
 {
@@ -38,6 +38,14 @@ string VerifyPersonRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_personIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PersonId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_imageHasBeenSet)
     {
@@ -53,14 +61,6 @@ string VerifyPersonRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_personIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PersonId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qualityControlHasBeenSet)
@@ -86,6 +86,22 @@ string VerifyPersonRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string VerifyPersonRequest::GetPersonId() const
+{
+    return m_personId;
+}
+
+void VerifyPersonRequest::SetPersonId(const string& _personId)
+{
+    m_personId = _personId;
+    m_personIdHasBeenSet = true;
+}
+
+bool VerifyPersonRequest::PersonIdHasBeenSet() const
+{
+    return m_personIdHasBeenSet;
+}
 
 string VerifyPersonRequest::GetImage() const
 {
@@ -117,22 +133,6 @@ void VerifyPersonRequest::SetUrl(const string& _url)
 bool VerifyPersonRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
-}
-
-string VerifyPersonRequest::GetPersonId() const
-{
-    return m_personId;
-}
-
-void VerifyPersonRequest::SetPersonId(const string& _personId)
-{
-    m_personId = _personId;
-    m_personIdHasBeenSet = true;
-}
-
-bool VerifyPersonRequest::PersonIdHasBeenSet() const
-{
-    return m_personIdHasBeenSet;
 }
 
 uint64_t VerifyPersonRequest::GetQualityControl() const

@@ -531,6 +531,42 @@ namespace TencentCloud
                      */
                     bool DeviceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取参数模板id。
+                     * @return ParamTemplateId 参数模板id。
+                     */
+                    int64_t GetParamTemplateId() const;
+
+                    /**
+                     * 设置参数模板id。
+                     * @param ParamTemplateId 参数模板id。
+                     */
+                    void SetParamTemplateId(const int64_t& _paramTemplateId);
+
+                    /**
+                     * 判断参数 ParamTemplateId 是否已赋值
+                     * @return ParamTemplateId 是否已赋值
+                     */
+                    bool ParamTemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警策略id数组。
+                     * @return AlarmPolicyList 告警策略id数组。
+                     */
+                    std::vector<int64_t> GetAlarmPolicyList() const;
+
+                    /**
+                     * 设置告警策略id数组。
+                     * @param AlarmPolicyList 告警策略id数组。
+                     */
+                    void SetAlarmPolicyList(const std::vector<int64_t>& _alarmPolicyList);
+
+                    /**
+                     * 判断参数 AlarmPolicyList 是否已赋值
+                     * @return AlarmPolicyList 是否已赋值
+                     */
+                    bool AlarmPolicyListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -694,6 +730,18 @@ namespace TencentCloud
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
+
+                    /**
+                     * 参数模板id。
+                     */
+                    int64_t m_paramTemplateId;
+                    bool m_paramTemplateIdHasBeenSet;
+
+                    /**
+                     * 告警策略id数组。
+                     */
+                    std::vector<int64_t> m_alarmPolicyList;
+                    bool m_alarmPolicyListHasBeenSet;
 
                 };
             }

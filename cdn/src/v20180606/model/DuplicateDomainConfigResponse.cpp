@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/iai/v20200303/model/VerifyPersonResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DuplicateDomainConfigResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Iai::V20200303::Model;
+using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace rapidjson;
 using namespace std;
 
-VerifyPersonResponse::VerifyPersonResponse()
+DuplicateDomainConfigResponse::DuplicateDomainConfigResponse()
 {
 }
 
-CoreInternalOutcome VerifyPersonResponse::Deserialize(const string &payload)
+CoreInternalOutcome DuplicateDomainConfigResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());

@@ -237,14 +237,14 @@ Other-Overseas（其他境外地区）
                     bool AccessModeHasBeenSet() const;
 
                     /**
-                     * 获取linux,android,liteos
-                     * @return Os linux,android,liteos
+                     * 获取Linux,Android,Liteos等系统
+                     * @return Os Linux,Android,Liteos等系统
                      */
                     std::string GetOs() const;
 
                     /**
-                     * 设置linux,android,liteos
-                     * @param Os linux,android,liteos
+                     * 设置Linux,Android,Liteos等系统
+                     * @param Os Linux,Android,Liteos等系统
                      */
                     void SetOs(const std::string& _os);
 
@@ -319,7 +319,7 @@ Other-Overseas（其他境外地区）
                     bool m_accessModeHasBeenSet;
 
                     /**
-                     * linux,android,liteos
+                     * Linux,Android,Liteos等系统
                      */
                     std::string m_os;
                     bool m_osHasBeenSet;
