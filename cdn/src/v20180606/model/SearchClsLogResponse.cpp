@@ -24,7 +24,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace rapidjson;
 using namespace std;
 
-SearchClsLogResponse::SearchClsLogResponse()
+SearchClsLogResponse::SearchClsLogResponse() :
+    m_logsHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,36 @@ CoreInternalOutcome SearchClsLogResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Logs") && !rsp["Logs"].IsNull())
+    {
+        if (!rsp["Logs"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Logs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_logs.Deserialize(rsp["Logs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_logsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+ClsSearchLogs SearchClsLogResponse::GetLogs() const
+{
+    return m_logs;
+}
+
+bool SearchClsLogResponse::LogsHasBeenSet() const
+{
+    return m_logsHasBeenSet;
+}
 
 

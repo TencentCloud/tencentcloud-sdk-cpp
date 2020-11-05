@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 录音文件识别请求的返回数据
+                * 录音文件识别、实时语音异步识别请求的返回数据
                 */
                 class Task : public AbstractModel
                 {

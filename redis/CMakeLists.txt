@@ -41,6 +41,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsResponse.h
+  include/tencentcloud/redis/v20180412/model/RedisNodeInfo.h
   include/tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceEnumParam.h
@@ -117,6 +118,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceSecurityGroupResponse.h
   include/tencentcloud/redis/v20180412/model/ProductConf.h
+  include/tencentcloud/redis/v20180412/model/ModifyConnectionConfigRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceNode.h
   include/tencentcloud/redis/v20180412/model/StartupInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInstanceInfo.h
@@ -138,6 +140,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModfiyInstancePasswordResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceSet.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceRenewInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/ModifyConnectionConfigResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdTookRequest.h
@@ -203,6 +206,7 @@ set(redis_src
   src/v20180412/model/DescribeSlowLogResponse.cpp
   src/v20180412/model/DescribeCommonDBInstancesRequest.cpp
   src/v20180412/model/DescribeDBSecurityGroupsResponse.cpp
+  src/v20180412/model/RedisNodeInfo.cpp
   src/v20180412/model/DescribeBackupUrlRequest.cpp
   src/v20180412/model/DescribeInstancesResponse.cpp
   src/v20180412/model/InstanceEnumParam.cpp
@@ -279,6 +283,7 @@ set(redis_src
   src/v20180412/model/DescribeMaintenanceWindowResponse.cpp
   src/v20180412/model/DescribeInstanceSecurityGroupResponse.cpp
   src/v20180412/model/ProductConf.cpp
+  src/v20180412/model/ModifyConnectionConfigRequest.cpp
   src/v20180412/model/InstanceNode.cpp
   src/v20180412/model/StartupInstanceResponse.cpp
   src/v20180412/model/DescribeInstanceDTSInstanceInfo.cpp
@@ -300,6 +305,7 @@ set(redis_src
   src/v20180412/model/ModfiyInstancePasswordResponse.cpp
   src/v20180412/model/InstanceSet.cpp
   src/v20180412/model/InquiryPriceRenewInstanceRequest.cpp
+  src/v20180412/model/ModifyConnectionConfigResponse.cpp
   src/v20180412/model/ModifyMaintenanceWindowResponse.cpp
   src/v20180412/model/DescribeCommonDBInstancesResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorTopNCmdTookRequest.cpp

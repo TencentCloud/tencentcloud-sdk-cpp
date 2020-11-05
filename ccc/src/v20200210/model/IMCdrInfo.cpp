@@ -1,0 +1,287 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/ccc/v20200210/model/IMCdrInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Ccc::V20200210::Model;
+using namespace rapidjson;
+using namespace std;
+
+IMCdrInfo::IMCdrInfo() :
+    m_idHasBeenSet(false),
+    m_durationHasBeenSet(false),
+    m_endStatusHasBeenSet(false),
+    m_nicknameHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_staffIdHasBeenSet(false),
+    m_timestampHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome IMCdrInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IMCdrInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Duration") && !value["Duration"].IsNull())
+    {
+        if (!value["Duration"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `IMCdrInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_duration = value["Duration"].GetInt64();
+        m_durationHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndStatus") && !value["EndStatus"].IsNull())
+    {
+        if (!value["EndStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `IMCdrInfo.EndStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_endStatus = value["EndStatus"].GetInt64();
+        m_endStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Nickname") && !value["Nickname"].IsNull())
+    {
+        if (!value["Nickname"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IMCdrInfo.Nickname` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nickname = string(value["Nickname"].GetString());
+        m_nicknameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `IMCdrInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetInt64();
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("StaffId") && !value["StaffId"].IsNull())
+    {
+        if (!value["StaffId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IMCdrInfo.StaffId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staffId = string(value["StaffId"].GetString());
+        m_staffIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Timestamp") && !value["Timestamp"].IsNull())
+    {
+        if (!value["Timestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `IMCdrInfo.Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timestamp = value["Timestamp"].GetInt64();
+        m_timestampHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void IMCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_idHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_durationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Duration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_endStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endStatus, allocator);
+    }
+
+    if (m_nicknameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Nickname";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_nickname.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_staffIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StaffId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_staffId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timestampHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Timestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timestamp, allocator);
+    }
+
+}
+
+
+string IMCdrInfo::GetId() const
+{
+    return m_id;
+}
+
+void IMCdrInfo::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool IMCdrInfo::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+int64_t IMCdrInfo::GetDuration() const
+{
+    return m_duration;
+}
+
+void IMCdrInfo::SetDuration(const int64_t& _duration)
+{
+    m_duration = _duration;
+    m_durationHasBeenSet = true;
+}
+
+bool IMCdrInfo::DurationHasBeenSet() const
+{
+    return m_durationHasBeenSet;
+}
+
+int64_t IMCdrInfo::GetEndStatus() const
+{
+    return m_endStatus;
+}
+
+void IMCdrInfo::SetEndStatus(const int64_t& _endStatus)
+{
+    m_endStatus = _endStatus;
+    m_endStatusHasBeenSet = true;
+}
+
+bool IMCdrInfo::EndStatusHasBeenSet() const
+{
+    return m_endStatusHasBeenSet;
+}
+
+string IMCdrInfo::GetNickname() const
+{
+    return m_nickname;
+}
+
+void IMCdrInfo::SetNickname(const string& _nickname)
+{
+    m_nickname = _nickname;
+    m_nicknameHasBeenSet = true;
+}
+
+bool IMCdrInfo::NicknameHasBeenSet() const
+{
+    return m_nicknameHasBeenSet;
+}
+
+int64_t IMCdrInfo::GetType() const
+{
+    return m_type;
+}
+
+void IMCdrInfo::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool IMCdrInfo::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string IMCdrInfo::GetStaffId() const
+{
+    return m_staffId;
+}
+
+void IMCdrInfo::SetStaffId(const string& _staffId)
+{
+    m_staffId = _staffId;
+    m_staffIdHasBeenSet = true;
+}
+
+bool IMCdrInfo::StaffIdHasBeenSet() const
+{
+    return m_staffIdHasBeenSet;
+}
+
+int64_t IMCdrInfo::GetTimestamp() const
+{
+    return m_timestamp;
+}
+
+void IMCdrInfo::SetTimestamp(const int64_t& _timestamp)
+{
+    m_timestamp = _timestamp;
+    m_timestampHasBeenSet = true;
+}
+
+bool IMCdrInfo::TimestampHasBeenSet() const
+{
+    return m_timestampHasBeenSet;
+}
+

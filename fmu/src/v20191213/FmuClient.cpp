@@ -341,6 +341,92 @@ FmuClient::QueryBeautifyVideoJobOutcomeCallable FmuClient::QueryBeautifyVideoJob
     return task->get_future();
 }
 
+FmuClient::StyleImageOutcome FmuClient::StyleImage(const StyleImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "StyleImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StyleImageResponse rsp = StyleImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StyleImageOutcome(rsp);
+        else
+            return StyleImageOutcome(o.GetError());
+    }
+    else
+    {
+        return StyleImageOutcome(outcome.GetError());
+    }
+}
+
+void FmuClient::StyleImageAsync(const StyleImageRequest& request, const StyleImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StyleImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FmuClient::StyleImageOutcomeCallable FmuClient::StyleImageCallable(const StyleImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StyleImageOutcome()>>(
+        [this, request]()
+        {
+            return this->StyleImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FmuClient::StyleImageProOutcome FmuClient::StyleImagePro(const StyleImageProRequest &request)
+{
+    auto outcome = MakeRequest(request, "StyleImagePro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StyleImageProResponse rsp = StyleImageProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StyleImageProOutcome(rsp);
+        else
+            return StyleImageProOutcome(o.GetError());
+    }
+    else
+    {
+        return StyleImageProOutcome(outcome.GetError());
+    }
+}
+
+void FmuClient::StyleImageProAsync(const StyleImageProRequest& request, const StyleImageProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StyleImagePro(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FmuClient::StyleImageProOutcomeCallable FmuClient::StyleImageProCallable(const StyleImageProRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StyleImageProOutcome()>>(
+        [this, request]()
+        {
+            return this->StyleImagePro(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FmuClient::TryLipstickPicOutcome FmuClient::TryLipstickPic(const TryLipstickPicRequest &request)
 {
     auto outcome = MakeRequest(request, "TryLipstickPic");

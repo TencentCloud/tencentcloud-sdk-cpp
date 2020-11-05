@@ -257,6 +257,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeNetworkInterfaceLimitResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetworkInterfacesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetworkInterfacesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeProductQuotaRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeProductQuotaResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteConflictsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteConflictsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteTablesRequest.h>
@@ -828,6 +830,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeNetworkInterfacesResponse> DescribeNetworkInterfacesOutcome;
                 typedef std::future<DescribeNetworkInterfacesOutcome> DescribeNetworkInterfacesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNetworkInterfacesRequest&, DescribeNetworkInterfacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkInterfacesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeProductQuotaResponse> DescribeProductQuotaOutcome;
+                typedef std::future<DescribeProductQuotaOutcome> DescribeProductQuotaOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeProductQuotaRequest&, DescribeProductQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductQuotaAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRouteConflictsResponse> DescribeRouteConflictsOutcome;
                 typedef std::future<DescribeRouteConflictsOutcome> DescribeRouteConflictsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeRouteConflictsRequest&, DescribeRouteConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteConflictsAsyncHandler;
@@ -1320,11 +1325,11 @@ namespace TencentCloud
                 AttachClassicLinkVpcOutcomeCallable AttachClassicLinkVpcCallable(const Model::AttachClassicLinkVpcRequest& request);
 
                 /**
-                 *本接口（AttachNetworkInterface）用于弹性网卡绑定云主机。
-* 一个云主机可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href="https://cloud.tencent.com/document/product/576/18527">弹性网卡使用限制</a>。
-* 一个弹性网卡只能同时绑定一个云主机。
-* 只有运行中或者已关机状态的云主机才能绑定弹性网卡，查看云主机状态详见<a href="https://cloud.tencent.com/document/api/213/9452#InstanceStatus">腾讯云主机信息</a>。
-* 弹性网卡绑定的云主机必须是私有网络的，而且云主机所在可用区必须和弹性网卡子网的可用区相同。
+                 *本接口（AttachNetworkInterface）用于弹性网卡绑定云服务器。
+* 一个云服务器可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href="https://cloud.tencent.com/document/product/576/18527">弹性网卡使用限制</a>。
+* 一个弹性网卡只能同时绑定一个云服务器。
+* 只有运行中或者已关机状态的云服务器才能绑定弹性网卡，查看云服务器状态详见<a href="https://cloud.tencent.com/document/api/213/9452#InstanceStatus">腾讯云服务器信息</a>。
+* 弹性网卡绑定的云服务器必须是私有网络的，而且云服务器所在可用区必须和弹性网卡子网的可用区相同。
                  * @param req AttachNetworkInterfaceRequest
                  * @return AttachNetworkInterfaceOutcome
                  */
@@ -1392,7 +1397,7 @@ namespace TencentCloud
                 CreateAddressTemplateGroupOutcomeCallable CreateAddressTemplateGroupCallable(const Model::CreateAddressTemplateGroupRequest& request);
 
                 /**
-                 *本接口（CreateAndAttachNetworkInterface）用于创建弹性网卡并绑定云主机。
+                 *本接口（CreateAndAttachNetworkInterface）用于创建弹性网卡并绑定云服务器。
 * 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。
 * 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。
 * 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
@@ -2326,6 +2331,15 @@ namespace TencentCloud
                 DescribeNetworkInterfacesOutcomeCallable DescribeNetworkInterfacesCallable(const Model::DescribeNetworkInterfacesRequest& request);
 
                 /**
+                 *本接口用于查询网络产品的配额信息
+                 * @param req DescribeProductQuotaRequest
+                 * @return DescribeProductQuotaOutcome
+                 */
+                DescribeProductQuotaOutcome DescribeProductQuota(const Model::DescribeProductQuotaRequest &request);
+                void DescribeProductQuotaAsync(const Model::DescribeProductQuotaRequest& request, const DescribeProductQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductQuotaOutcomeCallable DescribeProductQuotaCallable(const Model::DescribeProductQuotaRequest& request);
+
+                /**
                  *本接口（DescribeRouteConflicts）用于查询自定义路由策略与云联网路由策略冲突列表
                  * @param req DescribeRouteConflictsRequest
                  * @return DescribeRouteConflictsOutcome
@@ -2565,7 +2579,7 @@ LimitTypes取值范围：
                 DetachClassicLinkVpcOutcomeCallable DetachClassicLinkVpcCallable(const Model::DetachClassicLinkVpcRequest& request);
 
                 /**
-                 *本接口（DetachNetworkInterface）用于弹性网卡解绑云主机。
+                 *本接口（DetachNetworkInterface）用于弹性网卡解绑云服务器。
                  * @param req DetachNetworkInterfaceRequest
                  * @return DetachNetworkInterfaceOutcome
                  */

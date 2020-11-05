@@ -5071,6 +5071,49 @@ VpcClient::DescribeNetworkInterfacesOutcomeCallable VpcClient::DescribeNetworkIn
     return task->get_future();
 }
 
+VpcClient::DescribeProductQuotaOutcome VpcClient::DescribeProductQuota(const DescribeProductQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProductQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProductQuotaResponse rsp = DescribeProductQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProductQuotaOutcome(rsp);
+        else
+            return DescribeProductQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProductQuotaOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeProductQuotaAsync(const DescribeProductQuotaRequest& request, const DescribeProductQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProductQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeProductQuotaOutcomeCallable VpcClient::DescribeProductQuotaCallable(const DescribeProductQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProductQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProductQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeRouteConflictsOutcome VpcClient::DescribeRouteConflicts(const DescribeRouteConflictsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRouteConflicts");

@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool ProtectModeHasBeenSet() const;
 
+                    /**
+                     * 获取部署策略，取值范围：HA-高可用版两节点，FE-金融版三节点；默认值根据数据复制方式决定，数据复制方式为强同步复制时默认值为FE，数据复制方式非强同步时默认值为HA。
+                     * @return DeviceType 部署策略，取值范围：HA-高可用版两节点，FE-金融版三节点；默认值根据数据复制方式决定，数据复制方式为强同步复制时默认值为FE，数据复制方式非强同步时默认值为HA。
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置部署策略，取值范围：HA-高可用版两节点，FE-金融版三节点；默认值根据数据复制方式决定，数据复制方式为强同步复制时默认值为FE，数据复制方式非强同步时默认值为HA。
+                     * @param DeviceType 部署策略，取值范围：HA-高可用版两节点，FE-金融版三节点；默认值根据数据复制方式决定，数据复制方式为强同步复制时默认值为FE，数据复制方式非强同步时默认值为HA。
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     int64_t m_protectMode;
                     bool m_protectModeHasBeenSet;
+
+                    /**
+                     * 部署策略，取值范围：HA-高可用版两节点，FE-金融版三节点；默认值根据数据复制方式决定，数据复制方式为强同步复制时默认值为FE，数据复制方式非强同步时默认值为HA。
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ InquiryPriceUpgradeInstancesRequest::InquiryPriceUpgradeInstancesRequest() :
     m_memoryHasBeenSet(false),
     m_volumeHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_protectModeHasBeenSet(false)
+    m_protectModeHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string InquiryPriceUpgradeInstancesRequest::ToJsonString() const
         string key = "ProtectMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_protectMode, allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void InquiryPriceUpgradeInstancesRequest::SetProtectMode(const uint64_t& _protec
 bool InquiryPriceUpgradeInstancesRequest::ProtectModeHasBeenSet() const
 {
     return m_protectModeHasBeenSet;
+}
+
+string InquiryPriceUpgradeInstancesRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void InquiryPriceUpgradeInstancesRequest::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool InquiryPriceUpgradeInstancesRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 
 

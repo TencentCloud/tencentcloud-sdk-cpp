@@ -24,6 +24,7 @@ using namespace std;
 TranscodeTaskInput::TranscodeTaskInput() :
     m_definitionHasBeenSet(false),
     m_rawParameterHasBeenSet(false),
+    m_overrideParameterHasBeenSet(false),
     m_watermarkSetHasBeenSet(false),
     m_mosaicSetHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
@@ -63,6 +64,23 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const Value &value)
         }
 
         m_rawParameterHasBeenSet = true;
+    }
+
+    if (value.HasMember("OverrideParameter") && !value["OverrideParameter"].IsNull())
+    {
+        if (!value["OverrideParameter"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TranscodeTaskInput.OverrideParameter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_overrideParameter.Deserialize(value["OverrideParameter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_overrideParameterHasBeenSet = true;
     }
 
     if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
@@ -183,6 +201,15 @@ void TranscodeTaskInput::ToJsonObject(Value &value, Document::AllocatorType& all
         m_rawParameter.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_overrideParameterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OverrideParameter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_overrideParameter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_watermarkSetHasBeenSet)
     {
         Value iKey(kStringType);
@@ -280,6 +307,22 @@ void TranscodeTaskInput::SetRawParameter(const RawTranscodeParameter& _rawParame
 bool TranscodeTaskInput::RawParameterHasBeenSet() const
 {
     return m_rawParameterHasBeenSet;
+}
+
+OverrideTranscodeParameter TranscodeTaskInput::GetOverrideParameter() const
+{
+    return m_overrideParameter;
+}
+
+void TranscodeTaskInput::SetOverrideParameter(const OverrideTranscodeParameter& _overrideParameter)
+{
+    m_overrideParameter = _overrideParameter;
+    m_overrideParameterHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::OverrideParameterHasBeenSet() const
+{
+    return m_overrideParameterHasBeenSet;
 }
 
 vector<WatermarkInput> TranscodeTaskInput::GetWatermarkSet() const

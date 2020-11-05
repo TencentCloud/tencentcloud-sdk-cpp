@@ -637,17 +637,17 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的计费类型
+                     * 获取负载均衡实例的计费类型，PREPAID：包年包月，POSTPAID_BY_HOUR：按量计费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChargeType 负载均衡实例的计费类型
+                     * @return ChargeType 负载均衡实例的计费类型，PREPAID：包年包月，POSTPAID_BY_HOUR：按量计费
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置负载均衡实例的计费类型
+                     * 设置负载均衡实例的计费类型，PREPAID：包年包月，POSTPAID_BY_HOUR：按量计费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChargeType 负载均衡实例的计费类型
+                     * @param ChargeType 负载均衡实例的计费类型，PREPAID：包年包月，POSTPAID_BY_HOUR：按量计费
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -1265,7 +1265,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 负载均衡实例的计费类型
+                     * 负载均衡实例的计费类型，PREPAID：包年包月，POSTPAID_BY_HOUR：按量计费
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeType;

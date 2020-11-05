@@ -41,7 +41,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_redisReplicasNumHasBeenSet(false),
     m_replicasReadonlyHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_noAuthHasBeenSet(false)
+    m_noAuthHasBeenSet(false),
+    m_nodeSetHasBeenSet(false)
 {
 }
 
@@ -199,6 +200,21 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "NoAuth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_noAuth, allocator);
+    }
+
+    if (m_nodeSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeSet.begin(); itr != m_nodeSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -495,6 +511,22 @@ void CreateInstancesRequest::SetNoAuth(const bool& _noAuth)
 bool CreateInstancesRequest::NoAuthHasBeenSet() const
 {
     return m_noAuthHasBeenSet;
+}
+
+vector<RedisNodeInfo> CreateInstancesRequest::GetNodeSet() const
+{
+    return m_nodeSet;
+}
+
+void CreateInstancesRequest::SetNodeSet(const vector<RedisNodeInfo>& _nodeSet)
+{
+    m_nodeSet = _nodeSet;
+    m_nodeSetHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::NodeSetHasBeenSet() const
+{
+    return m_nodeSetHasBeenSet;
 }
 
 

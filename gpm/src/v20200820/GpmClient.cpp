@@ -556,6 +556,49 @@ GpmClient::DescribeRulesOutcomeCallable GpmClient::DescribeRulesCallable(const D
     return task->get_future();
 }
 
+GpmClient::DescribeTokenOutcome GpmClient::DescribeToken(const DescribeTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTokenResponse rsp = DescribeTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTokenOutcome(rsp);
+        else
+            return DescribeTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTokenOutcome(outcome.GetError());
+    }
+}
+
+void GpmClient::DescribeTokenAsync(const DescribeTokenRequest& request, const DescribeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GpmClient::DescribeTokenOutcomeCallable GpmClient::DescribeTokenCallable(const DescribeTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GpmClient::ModifyMatchOutcome GpmClient::ModifyMatch(const ModifyMatchRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMatch");
@@ -635,6 +678,49 @@ GpmClient::ModifyRuleOutcomeCallable GpmClient::ModifyRuleCallable(const ModifyR
         [this, request]()
         {
             return this->ModifyRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GpmClient::ModifyTokenOutcome GpmClient::ModifyToken(const ModifyTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTokenResponse rsp = ModifyTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTokenOutcome(rsp);
+        else
+            return ModifyTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTokenOutcome(outcome.GetError());
+    }
+}
+
+void GpmClient::ModifyTokenAsync(const ModifyTokenRequest& request, const ModifyTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GpmClient::ModifyTokenOutcomeCallable GpmClient::ModifyTokenCallable(const ModifyTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyToken(request);
         }
     );
 

@@ -117,6 +117,8 @@
 #include <tencentcloud/redis/v20180412/model/ModfiyInstancePasswordResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyConnectionConfigRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyConnectionConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceRequest.h>
@@ -298,6 +300,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAutoBackupConfigResponse> ModifyAutoBackupConfigOutcome;
                 typedef std::future<ModifyAutoBackupConfigOutcome> ModifyAutoBackupConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyAutoBackupConfigRequest&, ModifyAutoBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoBackupConfigAsyncHandler;
+                typedef Outcome<Error, Model::ModifyConnectionConfigResponse> ModifyConnectionConfigOutcome;
+                typedef std::future<ModifyConnectionConfigOutcome> ModifyConnectionConfigOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyConnectionConfigRequest&, ModifyConnectionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConnectionConfigAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
                 typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
@@ -762,6 +767,15 @@ namespace TencentCloud
                 ModifyAutoBackupConfigOutcome ModifyAutoBackupConfig(const Model::ModifyAutoBackupConfigRequest &request);
                 void ModifyAutoBackupConfigAsync(const Model::ModifyAutoBackupConfigRequest& request, const ModifyAutoBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAutoBackupConfigOutcomeCallable ModifyAutoBackupConfigCallable(const Model::ModifyAutoBackupConfigRequest& request);
+
+                /**
+                 *修改实例的连接配置，包括带宽和最大连接数
+                 * @param req ModifyConnectionConfigRequest
+                 * @return ModifyConnectionConfigOutcome
+                 */
+                ModifyConnectionConfigOutcome ModifyConnectionConfig(const Model::ModifyConnectionConfigRequest &request);
+                void ModifyConnectionConfigAsync(const Model::ModifyConnectionConfigRequest& request, const ModifyConnectionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConnectionConfigOutcomeCallable ModifyConnectionConfigCallable(const Model::ModifyConnectionConfigRequest& request);
 
                 /**
                  *本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。

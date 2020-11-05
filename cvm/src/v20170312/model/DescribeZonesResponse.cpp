@@ -24,7 +24,9 @@ using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeZonesResponse::DescribeZonesResponse()
+DescribeZonesResponse::DescribeZonesResponse() :
+    m_totalCountHasBeenSet(false),
+    m_zoneSetHasBeenSet(false)
 {
 }
 
@@ -62,9 +64,59 @@ CoreInternalOutcome DescribeZonesResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ZoneSet") && !rsp["ZoneSet"].IsNull())
+    {
+        if (!rsp["ZoneSet"].IsArray())
+            return CoreInternalOutcome(Error("response `ZoneSet` is not array type"));
+
+        const Value &tmpValue = rsp["ZoneSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ZoneInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_zoneSet.push_back(item);
+        }
+        m_zoneSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+uint64_t DescribeZonesResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeZonesResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<ZoneInfo> DescribeZonesResponse::GetZoneSet() const
+{
+    return m_zoneSet;
+}
+
+bool DescribeZonesResponse::ZoneSetHasBeenSet() const
+{
+    return m_zoneSetHasBeenSet;
+}
 
 

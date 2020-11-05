@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool OutPkgHasBeenSet() const;
 
                     /**
-                     * 获取入带宽，单位：`Byte`。
-                     * @return InTraffic 入带宽，单位：`Byte`。
+                     * 获取入流量，单位：`Byte`。
+                     * @return InTraffic 入流量，单位：`Byte`。
                      */
                     uint64_t GetInTraffic() const;
 
                     /**
-                     * 设置入带宽，单位：`Byte`。
-                     * @param InTraffic 入带宽，单位：`Byte`。
+                     * 设置入流量，单位：`Byte`。
+                     * @param InTraffic 入流量，单位：`Byte`。
                      */
                     void SetInTraffic(const uint64_t& _inTraffic);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool InTrafficHasBeenSet() const;
 
                     /**
-                     * 获取出带宽，单位：`Byte`。
-                     * @return OutTraffic 出带宽，单位：`Byte`。
+                     * 获取出流量，单位：`Byte`。
+                     * @return OutTraffic 出流量，单位：`Byte`。
                      */
                     uint64_t GetOutTraffic() const;
 
                     /**
-                     * 设置出带宽，单位：`Byte`。
-                     * @param OutTraffic 出带宽，单位：`Byte`。
+                     * 设置出流量，单位：`Byte`。
+                     * @param OutTraffic 出流量，单位：`Byte`。
                      */
                     void SetOutTraffic(const uint64_t& _outTraffic);
 
@@ -157,13 +157,13 @@ namespace TencentCloud
                     bool m_outPkgHasBeenSet;
 
                     /**
-                     * 入带宽，单位：`Byte`。
+                     * 入流量，单位：`Byte`。
                      */
                     uint64_t m_inTraffic;
                     bool m_inTrafficHasBeenSet;
 
                     /**
-                     * 出带宽，单位：`Byte`。
+                     * 出流量，单位：`Byte`。
                      */
                     uint64_t m_outTraffic;
                     bool m_outTrafficHasBeenSet;

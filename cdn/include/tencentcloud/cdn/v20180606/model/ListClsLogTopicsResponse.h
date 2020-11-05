@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/LogSetInfo.h>
+#include <tencentcloud/cdn/v20180606/model/TopicInfo.h>
 
 
 namespace TencentCloud
@@ -42,7 +44,46 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取日志集信息
+                     * @return Logset 日志集信息
+                     */
+                    LogSetInfo GetLogset() const;
+
+                    /**
+                     * 判断参数 Logset 是否已赋值
+                     * @return Logset 是否已赋值
+                     */
+                    bool LogsetHasBeenSet() const;
+
+                    /**
+                     * 获取日志主题信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Topics 日志主题信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TopicInfo> GetTopics() const;
+
+                    /**
+                     * 判断参数 Topics 是否已赋值
+                     * @return Topics 是否已赋值
+                     */
+                    bool TopicsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 日志集信息
+                     */
+                    LogSetInfo m_logset;
+                    bool m_logsetHasBeenSet;
+
+                    /**
+                     * 日志主题信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TopicInfo> m_topics;
+                    bool m_topicsHasBeenSet;
 
                 };
             }

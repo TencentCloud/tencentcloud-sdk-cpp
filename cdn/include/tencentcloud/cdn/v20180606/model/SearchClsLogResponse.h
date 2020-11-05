@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/ClsSearchLogs.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,25 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取查询结果
+                     * @return Logs 查询结果
+                     */
+                    ClsSearchLogs GetLogs() const;
+
+                    /**
+                     * 判断参数 Logs 是否已赋值
+                     * @return Logs 是否已赋值
+                     */
+                    bool LogsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 查询结果
+                     */
+                    ClsSearchLogs m_logs;
+                    bool m_logsHasBeenSet;
 
                 };
             }

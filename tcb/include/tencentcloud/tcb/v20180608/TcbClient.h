@@ -29,6 +29,10 @@
 #include <tencentcloud/tcb/v20180608/model/CommonServiceAPIResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateAuthDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunServerVersionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreatePostpayPackageRequest.h>
@@ -69,6 +73,8 @@
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
+#include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerRequest.h>
+#include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEndUserRequest.h>
@@ -100,6 +106,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAuthDomainResponse> CreateAuthDomainOutcome;
                 typedef std::future<CreateAuthDomainOutcome> CreateAuthDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateAuthDomainRequest&, CreateAuthDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthDomainAsyncHandler;
+                typedef Outcome<Error, Model::CreateCloudBaseRunResourceResponse> CreateCloudBaseRunResourceOutcome;
+                typedef std::future<CreateCloudBaseRunResourceOutcome> CreateCloudBaseRunResourceOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateCloudBaseRunResourceRequest&, CreateCloudBaseRunResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudBaseRunResourceAsyncHandler;
+                typedef Outcome<Error, Model::CreateCloudBaseRunServerVersionResponse> CreateCloudBaseRunServerVersionOutcome;
+                typedef std::future<CreateCloudBaseRunServerVersionOutcome> CreateCloudBaseRunServerVersionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateCloudBaseRunServerVersionRequest&, CreateCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudBaseRunServerVersionAsyncHandler;
                 typedef Outcome<Error, Model::CreateHostingDomainResponse> CreateHostingDomainOutcome;
                 typedef std::future<CreateHostingDomainOutcome> CreateHostingDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateHostingDomainRequest&, CreateHostingDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostingDomainAsyncHandler;
@@ -160,6 +172,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DestroyStaticStoreResponse> DestroyStaticStoreOutcome;
                 typedef std::future<DestroyStaticStoreOutcome> DestroyStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyStaticStoreRequest&, DestroyStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStaticStoreAsyncHandler;
+                typedef Outcome<Error, Model::EstablishCloudBaseRunServerResponse> EstablishCloudBaseRunServerOutcome;
+                typedef std::future<EstablishCloudBaseRunServerOutcome> EstablishCloudBaseRunServerOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::EstablishCloudBaseRunServerRequest&, EstablishCloudBaseRunServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstablishCloudBaseRunServerAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDatabaseACLResponse> ModifyDatabaseACLOutcome;
                 typedef std::future<ModifyDatabaseACLOutcome> ModifyDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyDatabaseACLRequest&, ModifyDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseACLAsyncHandler;
@@ -201,6 +216,24 @@ namespace TencentCloud
                 CreateAuthDomainOutcome CreateAuthDomain(const Model::CreateAuthDomainRequest &request);
                 void CreateAuthDomainAsync(const Model::CreateAuthDomainRequest& request, const CreateAuthDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAuthDomainOutcomeCallable CreateAuthDomainCallable(const Model::CreateAuthDomainRequest& request);
+
+                /**
+                 *开通容器托管的资源，包括集群创建，VPC配置，异步任务创建，镜像托管，Coding等，查看创建结果需要根据DescribeCloudBaseRunResource接口来查看
+                 * @param req CreateCloudBaseRunResourceRequest
+                 * @return CreateCloudBaseRunResourceOutcome
+                 */
+                CreateCloudBaseRunResourceOutcome CreateCloudBaseRunResource(const Model::CreateCloudBaseRunResourceRequest &request);
+                void CreateCloudBaseRunResourceAsync(const Model::CreateCloudBaseRunResourceRequest& request, const CreateCloudBaseRunResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudBaseRunResourceOutcomeCallable CreateCloudBaseRunResourceCallable(const Model::CreateCloudBaseRunResourceRequest& request);
+
+                /**
+                 *创建服务版本
+                 * @param req CreateCloudBaseRunServerVersionRequest
+                 * @return CreateCloudBaseRunServerVersionOutcome
+                 */
+                CreateCloudBaseRunServerVersionOutcome CreateCloudBaseRunServerVersion(const Model::CreateCloudBaseRunServerVersionRequest &request);
+                void CreateCloudBaseRunServerVersionAsync(const Model::CreateCloudBaseRunServerVersionRequest& request, const CreateCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudBaseRunServerVersionOutcomeCallable CreateCloudBaseRunServerVersionCallable(const Model::CreateCloudBaseRunServerVersionRequest& request);
 
                 /**
                  *创建托管域名
@@ -381,6 +414,15 @@ namespace TencentCloud
                 DestroyStaticStoreOutcome DestroyStaticStore(const Model::DestroyStaticStoreRequest &request);
                 void DestroyStaticStoreAsync(const Model::DestroyStaticStoreRequest& request, const DestroyStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyStaticStoreOutcomeCallable DestroyStaticStoreCallable(const Model::DestroyStaticStoreRequest& request);
+
+                /**
+                 *创建云应用服务
+                 * @param req EstablishCloudBaseRunServerRequest
+                 * @return EstablishCloudBaseRunServerOutcome
+                 */
+                EstablishCloudBaseRunServerOutcome EstablishCloudBaseRunServer(const Model::EstablishCloudBaseRunServerRequest &request);
+                void EstablishCloudBaseRunServerAsync(const Model::EstablishCloudBaseRunServerRequest& request, const EstablishCloudBaseRunServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EstablishCloudBaseRunServerOutcomeCallable EstablishCloudBaseRunServerCallable(const Model::EstablishCloudBaseRunServerRequest& request);
 
                 /**
                  *修改数据库权限

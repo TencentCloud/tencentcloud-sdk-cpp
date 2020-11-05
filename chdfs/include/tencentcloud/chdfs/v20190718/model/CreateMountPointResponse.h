@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/chdfs/v20190718/model/MountPoint.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,25 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取挂载点
+                     * @return MountPoint 挂载点
+                     */
+                    MountPoint GetMountPoint() const;
+
+                    /**
+                     * 判断参数 MountPoint 是否已赋值
+                     * @return MountPoint 是否已赋值
+                     */
+                    bool MountPointHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 挂载点
+                     */
+                    MountPoint m_mountPoint;
+                    bool m_mountPointHasBeenSet;
 
                 };
             }

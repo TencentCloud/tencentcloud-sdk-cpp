@@ -33,7 +33,8 @@ CreateCfsFileSystemRequest::CreateCfsFileSystemRequest() :
     m_subnetIdHasBeenSet(false),
     m_mountIPHasBeenSet(false),
     m_fsNameHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,14 @@ string CreateCfsFileSystemRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -297,6 +306,22 @@ void CreateCfsFileSystemRequest::SetResourceTags(const vector<TagInfo>& _resourc
 bool CreateCfsFileSystemRequest::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string CreateCfsFileSystemRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateCfsFileSystemRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateCfsFileSystemRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

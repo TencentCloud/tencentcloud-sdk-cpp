@@ -53,6 +53,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/AssociateInstancesKeyPairsRequest.h
   include/tencentcloud/cvm/v20170312/model/ImportKeyPairResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstancesStatusResponse.h
+  include/tencentcloud/cvm/v20170312/model/ZoneInfo.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceTypeConfigsRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeKeyPairsResponse.h
   include/tencentcloud/cvm/v20170312/model/ResetInstancesPasswordRequest.h
@@ -240,6 +241,7 @@ set(cvm_src
   src/v20170312/model/AssociateInstancesKeyPairsRequest.cpp
   src/v20170312/model/ImportKeyPairResponse.cpp
   src/v20170312/model/DescribeInstancesStatusResponse.cpp
+  src/v20170312/model/ZoneInfo.cpp
   src/v20170312/model/DescribeInstanceTypeConfigsRequest.cpp
   src/v20170312/model/DescribeKeyPairsResponse.cpp
   src/v20170312/model/ResetInstancesPasswordRequest.cpp

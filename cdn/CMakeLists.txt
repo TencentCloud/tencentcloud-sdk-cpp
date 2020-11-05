@@ -73,6 +73,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DeleteClsLogTopicRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataResponse.h
   include/tencentcloud/cdn/v20180606/model/UpdatePayTypeResponse.h
+  include/tencentcloud/cdn/v20180606/model/TopicInfo.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsConfigResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportRequest.h
   include/tencentcloud/cdn/v20180606/model/BriefDomain.h
@@ -188,6 +189,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/Seo.h
   include/tencentcloud/cdn/v20180606/model/BandwidthAlert.h
   include/tencentcloud/cdn/v20180606/model/CreateVerifyRecordRequest.h
+  include/tencentcloud/cdn/v20180606/model/ClsLogObject.h
   include/tencentcloud/cdn/v20180606/model/RegionMapRelation.h
   include/tencentcloud/cdn/v20180606/model/PurgePathCacheRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportResponse.h
@@ -212,6 +214,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ListTopDataResponse.h
   include/tencentcloud/cdn/v20180606/model/MaxAge.h
   include/tencentcloud/cdn/v20180606/model/UpdateDomainConfigResponse.h
+  include/tencentcloud/cdn/v20180606/model/LogSetInfo.h
   include/tencentcloud/cdn/v20180606/model/ListDiagnoseReportResponse.h
   include/tencentcloud/cdn/v20180606/model/SearchClsLogRequest.h
   include/tencentcloud/cdn/v20180606/model/UpdateDomainConfigRequest.h
@@ -219,6 +222,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsResponse.h
   include/tencentcloud/cdn/v20180606/model/VideoSeek.h
   include/tencentcloud/cdn/v20180606/model/Compatibility.h
+  include/tencentcloud/cdn/v20180606/model/ClsSearchLogs.h
   include/tencentcloud/cdn/v20180606/model/DescribeUrlViolationsResponse.h
   include/tencentcloud/cdn/v20180606/model/IpFilter.h
   include/tencentcloud/cdn/v20180606/model/DiagnoseUnit.h
@@ -296,6 +300,7 @@ set(cdn_src
   src/v20180606/model/DeleteClsLogTopicRequest.cpp
   src/v20180606/model/DescribeDistrictIspDataResponse.cpp
   src/v20180606/model/UpdatePayTypeResponse.cpp
+  src/v20180606/model/TopicInfo.cpp
   src/v20180606/model/DescribeDomainsConfigResponse.cpp
   src/v20180606/model/DescribeDiagnoseReportRequest.cpp
   src/v20180606/model/BriefDomain.cpp
@@ -411,6 +416,7 @@ set(cdn_src
   src/v20180606/model/Seo.cpp
   src/v20180606/model/BandwidthAlert.cpp
   src/v20180606/model/CreateVerifyRecordRequest.cpp
+  src/v20180606/model/ClsLogObject.cpp
   src/v20180606/model/RegionMapRelation.cpp
   src/v20180606/model/PurgePathCacheRequest.cpp
   src/v20180606/model/DescribeDiagnoseReportResponse.cpp
@@ -435,6 +441,7 @@ set(cdn_src
   src/v20180606/model/ListTopDataResponse.cpp
   src/v20180606/model/MaxAge.cpp
   src/v20180606/model/UpdateDomainConfigResponse.cpp
+  src/v20180606/model/LogSetInfo.cpp
   src/v20180606/model/ListDiagnoseReportResponse.cpp
   src/v20180606/model/SearchClsLogRequest.cpp
   src/v20180606/model/UpdateDomainConfigRequest.cpp
@@ -442,6 +449,7 @@ set(cdn_src
   src/v20180606/model/ManageClsTopicDomainsResponse.cpp
   src/v20180606/model/VideoSeek.cpp
   src/v20180606/model/Compatibility.cpp
+  src/v20180606/model/ClsSearchLogs.cpp
   src/v20180606/model/DescribeUrlViolationsResponse.cpp
   src/v20180606/model/IpFilter.cpp
   src/v20180606/model/DiagnoseUnit.cpp

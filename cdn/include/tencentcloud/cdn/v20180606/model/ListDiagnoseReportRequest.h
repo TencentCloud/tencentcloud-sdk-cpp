@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool KeyWordsHasBeenSet() const;
 
+                    /**
+                     * 获取用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx
+                     * @return DiagnoseLink 用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx
+                     */
+                    std::string GetDiagnoseLink() const;
+
+                    /**
+                     * 设置用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx
+                     * @param DiagnoseLink 用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx
+                     */
+                    void SetDiagnoseLink(const std::string& _diagnoseLink);
+
+                    /**
+                     * 判断参数 DiagnoseLink 是否已赋值
+                     * @return DiagnoseLink 是否已赋值
+                     */
+                    bool DiagnoseLinkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_keyWords;
                     bool m_keyWordsHasBeenSet;
+
+                    /**
+                     * 用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx
+                     */
+                    std::string m_diagnoseLink;
+                    bool m_diagnoseLinkHasBeenSet;
 
                 };
             }

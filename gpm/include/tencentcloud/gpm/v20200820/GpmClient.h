@@ -47,10 +47,14 @@
 #include <tencentcloud/gpm/v20200820/model/DescribeRuleResponse.h>
 #include <tencentcloud/gpm/v20200820/model/DescribeRulesRequest.h>
 #include <tencentcloud/gpm/v20200820/model/DescribeRulesResponse.h>
+#include <tencentcloud/gpm/v20200820/model/DescribeTokenRequest.h>
+#include <tencentcloud/gpm/v20200820/model/DescribeTokenResponse.h>
 #include <tencentcloud/gpm/v20200820/model/ModifyMatchRequest.h>
 #include <tencentcloud/gpm/v20200820/model/ModifyMatchResponse.h>
 #include <tencentcloud/gpm/v20200820/model/ModifyRuleRequest.h>
 #include <tencentcloud/gpm/v20200820/model/ModifyRuleResponse.h>
+#include <tencentcloud/gpm/v20200820/model/ModifyTokenRequest.h>
+#include <tencentcloud/gpm/v20200820/model/ModifyTokenResponse.h>
 #include <tencentcloud/gpm/v20200820/model/StartMatchingRequest.h>
 #include <tencentcloud/gpm/v20200820/model/StartMatchingResponse.h>
 
@@ -103,12 +107,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRulesResponse> DescribeRulesOutcome;
                 typedef std::future<DescribeRulesOutcome> DescribeRulesOutcomeCallable;
                 typedef std::function<void(const GpmClient*, const Model::DescribeRulesRequest&, DescribeRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTokenResponse> DescribeTokenOutcome;
+                typedef std::future<DescribeTokenOutcome> DescribeTokenOutcomeCallable;
+                typedef std::function<void(const GpmClient*, const Model::DescribeTokenRequest&, DescribeTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTokenAsyncHandler;
                 typedef Outcome<Error, Model::ModifyMatchResponse> ModifyMatchOutcome;
                 typedef std::future<ModifyMatchOutcome> ModifyMatchOutcomeCallable;
                 typedef std::function<void(const GpmClient*, const Model::ModifyMatchRequest&, ModifyMatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMatchAsyncHandler;
                 typedef Outcome<Error, Model::ModifyRuleResponse> ModifyRuleOutcome;
                 typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
                 typedef std::function<void(const GpmClient*, const Model::ModifyRuleRequest&, ModifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTokenResponse> ModifyTokenOutcome;
+                typedef std::future<ModifyTokenOutcome> ModifyTokenOutcomeCallable;
+                typedef std::function<void(const GpmClient*, const Model::ModifyTokenRequest&, ModifyTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTokenAsyncHandler;
                 typedef Outcome<Error, Model::StartMatchingResponse> StartMatchingOutcome;
                 typedef std::future<StartMatchingOutcome> StartMatchingOutcomeCallable;
                 typedef std::function<void(const GpmClient*, const Model::StartMatchingRequest&, StartMatchingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMatchingAsyncHandler;
@@ -224,6 +234,15 @@ namespace TencentCloud
                 DescribeRulesOutcomeCallable DescribeRulesCallable(const Model::DescribeRulesRequest& request);
 
                 /**
+                 *查询匹配Token，Token用于push消息验证。
+                 * @param req DescribeTokenRequest
+                 * @return DescribeTokenOutcome
+                 */
+                DescribeTokenOutcome DescribeToken(const Model::DescribeTokenRequest &request);
+                void DescribeTokenAsync(const Model::DescribeTokenRequest& request, const DescribeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTokenOutcomeCallable DescribeTokenCallable(const Model::DescribeTokenRequest& request);
+
+                /**
                  *修改匹配
                  * @param req ModifyMatchRequest
                  * @return ModifyMatchOutcome
@@ -240,6 +259,15 @@ namespace TencentCloud
                 ModifyRuleOutcome ModifyRule(const Model::ModifyRuleRequest &request);
                 void ModifyRuleAsync(const Model::ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRuleOutcomeCallable ModifyRuleCallable(const Model::ModifyRuleRequest& request);
+
+                /**
+                 *修改匹配Token。
+                 * @param req ModifyTokenRequest
+                 * @return ModifyTokenOutcome
+                 */
+                ModifyTokenOutcome ModifyToken(const Model::ModifyTokenRequest &request);
+                void ModifyTokenAsync(const Model::ModifyTokenRequest& request, const ModifyTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTokenOutcomeCallable ModifyTokenCallable(const Model::ModifyTokenRequest& request);
 
                 /**
                  *支持传入一个玩家或多个玩家发起匹配，在同一个请求内的玩家将被分到同一个对局。

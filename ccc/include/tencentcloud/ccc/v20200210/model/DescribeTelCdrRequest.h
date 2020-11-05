@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
-                     */
-                    int64_t GetInstanceId() const;
-
-                    /**
-                     * 设置实例 ID
-                     * @param InstanceId 实例 ID
-                     */
-                    void SetInstanceId(const int64_t& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     */
-                    bool InstanceIdHasBeenSet() const;
-
-                    /**
                      * 获取起始时间戳，Unix 时间戳
                      * @return StartTimeStamp 起始时间戳，Unix 时间戳
                      */
@@ -97,14 +79,14 @@ namespace TencentCloud
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数
-                     * @return Limit 返回记录条数
+                     * 获取返回记录条数，上限 100
+                     * @return Limit 返回记录条数，上限 100
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数
-                     * @param Limit 返回记录条数
+                     * 设置返回记录条数，上限 100
+                     * @param Limit 返回记录条数，上限 100
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -132,13 +114,43 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取实例 ID
+                     * @return InstanceId 实例 ID
+                     */
+                    int64_t GetInstanceId() const;
 
                     /**
-                     * 实例 ID
+                     * 设置实例 ID
+                     * @param InstanceId 实例 ID
                      */
-                    int64_t m_instanceId;
-                    bool m_instanceIdHasBeenSet;
+                    void SetInstanceId(const int64_t& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取应用ID。
+                     * @return SdkAppId 应用ID。
+                     */
+                    int64_t GetSdkAppId() const;
+
+                    /**
+                     * 设置应用ID。
+                     * @param SdkAppId 应用ID。
+                     */
+                    void SetSdkAppId(const int64_t& _sdkAppId);
+
+                    /**
+                     * 判断参数 SdkAppId 是否已赋值
+                     * @return SdkAppId 是否已赋值
+                     */
+                    bool SdkAppIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 起始时间戳，Unix 时间戳
@@ -153,7 +165,7 @@ namespace TencentCloud
                     bool m_endTimeStampHasBeenSet;
 
                     /**
-                     * 返回记录条数
+                     * 返回记录条数，上限 100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -163,6 +175,18 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 实例 ID
+                     */
+                    int64_t m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 应用ID。
+                     */
+                    int64_t m_sdkAppId;
+                    bool m_sdkAppIdHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/redis/v20180412/model/RedisNodeInfo.h>
 
 
 namespace TencentCloud
@@ -378,6 +379,24 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     bool NoAuthHasBeenSet() const;
 
+                    /**
+                     * 获取实例的节点信息，目前支持传入节点的类型（主节点或者副本节点），节点的可用区。单可用区部署不需要传递此参数。
+                     * @return NodeSet 实例的节点信息，目前支持传入节点的类型（主节点或者副本节点），节点的可用区。单可用区部署不需要传递此参数。
+                     */
+                    std::vector<RedisNodeInfo> GetNodeSet() const;
+
+                    /**
+                     * 设置实例的节点信息，目前支持传入节点的类型（主节点或者副本节点），节点的可用区。单可用区部署不需要传递此参数。
+                     * @param NodeSet 实例的节点信息，目前支持传入节点的类型（主节点或者副本节点），节点的可用区。单可用区部署不需要传递此参数。
+                     */
+                    void SetNodeSet(const std::vector<RedisNodeInfo>& _nodeSet);
+
+                    /**
+                     * 判断参数 NodeSet 是否已赋值
+                     * @return NodeSet 是否已赋值
+                     */
+                    bool NodeSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -490,6 +509,12 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;
+
+                    /**
+                     * 实例的节点信息，目前支持传入节点的类型（主节点或者副本节点），节点的可用区。单可用区部署不需要传递此参数。
+                     */
+                    std::vector<RedisNodeInfo> m_nodeSet;
+                    bool m_nodeSetHasBeenSet;
 
                 };
             }

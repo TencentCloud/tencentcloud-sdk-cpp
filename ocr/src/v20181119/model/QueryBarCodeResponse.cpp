@@ -24,7 +24,9 @@ using namespace TencentCloud::Ocr::V20181119::Model;
 using namespace rapidjson;
 using namespace std;
 
-QueryBarCodeResponse::QueryBarCodeResponse()
+QueryBarCodeResponse::QueryBarCodeResponse() :
+    m_barCodeHasBeenSet(false),
+    m_productDataRecordsHasBeenSet(false)
 {
 }
 
@@ -62,9 +64,59 @@ CoreInternalOutcome QueryBarCodeResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("BarCode") && !rsp["BarCode"].IsNull())
+    {
+        if (!rsp["BarCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BarCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_barCode = string(rsp["BarCode"].GetString());
+        m_barCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProductDataRecords") && !rsp["ProductDataRecords"].IsNull())
+    {
+        if (!rsp["ProductDataRecords"].IsArray())
+            return CoreInternalOutcome(Error("response `ProductDataRecords` is not array type"));
+
+        const Value &tmpValue = rsp["ProductDataRecords"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ProductDataRecord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_productDataRecords.push_back(item);
+        }
+        m_productDataRecordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string QueryBarCodeResponse::GetBarCode() const
+{
+    return m_barCode;
+}
+
+bool QueryBarCodeResponse::BarCodeHasBeenSet() const
+{
+    return m_barCodeHasBeenSet;
+}
+
+vector<ProductDataRecord> QueryBarCodeResponse::GetProductDataRecords() const
+{
+    return m_productDataRecords;
+}
+
+bool QueryBarCodeResponse::ProductDataRecordsHasBeenSet() const
+{
+    return m_productDataRecordsHasBeenSet;
+}
 
 

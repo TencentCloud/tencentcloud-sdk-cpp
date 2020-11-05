@@ -2061,6 +2061,49 @@ RedisClient::ModifyAutoBackupConfigOutcomeCallable RedisClient::ModifyAutoBackup
     return task->get_future();
 }
 
+RedisClient::ModifyConnectionConfigOutcome RedisClient::ModifyConnectionConfig(const ModifyConnectionConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConnectionConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConnectionConfigResponse rsp = ModifyConnectionConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConnectionConfigOutcome(rsp);
+        else
+            return ModifyConnectionConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConnectionConfigOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyConnectionConfigAsync(const ModifyConnectionConfigRequest& request, const ModifyConnectionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConnectionConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::ModifyConnectionConfigOutcomeCallable RedisClient::ModifyConnectionConfigCallable(const ModifyConnectionConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConnectionConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConnectionConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::ModifyDBInstanceSecurityGroupsOutcome RedisClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroups");

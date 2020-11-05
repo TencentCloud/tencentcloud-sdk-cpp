@@ -34,15 +34,18 @@ set(gpm_public_header_model
   include/tencentcloud/gpm/v20200820/model/DeleteRuleRequest.h
   include/tencentcloud/gpm/v20200820/model/MatchInfo.h
   include/tencentcloud/gpm/v20200820/model/DescribeRulesRequest.h
+  include/tencentcloud/gpm/v20200820/model/DescribeTokenResponse.h
   include/tencentcloud/gpm/v20200820/model/DescribeRuleResponse.h
   include/tencentcloud/gpm/v20200820/model/DescribeMatchRequest.h
   include/tencentcloud/gpm/v20200820/model/ModifyRuleRequest.h
+  include/tencentcloud/gpm/v20200820/model/DescribeTokenRequest.h
   include/tencentcloud/gpm/v20200820/model/DescribeDataRequest.h
   include/tencentcloud/gpm/v20200820/model/RegionLatency.h
   include/tencentcloud/gpm/v20200820/model/CreateRuleRequest.h
   include/tencentcloud/gpm/v20200820/model/ReportOverviewData.h
   include/tencentcloud/gpm/v20200820/model/DescribeRuleRequest.h
   include/tencentcloud/gpm/v20200820/model/DescribeMatchResponse.h
+  include/tencentcloud/gpm/v20200820/model/ModifyTokenResponse.h
   include/tencentcloud/gpm/v20200820/model/MatchCodeAttr.h
   include/tencentcloud/gpm/v20200820/model/MatchAttribute.h
   include/tencentcloud/gpm/v20200820/model/DeleteMatchResponse.h
@@ -55,6 +58,7 @@ set(gpm_public_header_model
   include/tencentcloud/gpm/v20200820/model/DescribeRulesResponse.h
   include/tencentcloud/gpm/v20200820/model/MTicket.h
   include/tencentcloud/gpm/v20200820/model/RuleInfo.h
+  include/tencentcloud/gpm/v20200820/model/ModifyTokenRequest.h
   include/tencentcloud/gpm/v20200820/model/DescribeMatchesResponse.h
   include/tencentcloud/gpm/v20200820/model/Player.h
   include/tencentcloud/gpm/v20200820/model/StartMatchingRequest.h
@@ -82,15 +86,18 @@ set(gpm_src
   src/v20200820/model/DeleteRuleRequest.cpp
   src/v20200820/model/MatchInfo.cpp
   src/v20200820/model/DescribeRulesRequest.cpp
+  src/v20200820/model/DescribeTokenResponse.cpp
   src/v20200820/model/DescribeRuleResponse.cpp
   src/v20200820/model/DescribeMatchRequest.cpp
   src/v20200820/model/ModifyRuleRequest.cpp
+  src/v20200820/model/DescribeTokenRequest.cpp
   src/v20200820/model/DescribeDataRequest.cpp
   src/v20200820/model/RegionLatency.cpp
   src/v20200820/model/CreateRuleRequest.cpp
   src/v20200820/model/ReportOverviewData.cpp
   src/v20200820/model/DescribeRuleRequest.cpp
   src/v20200820/model/DescribeMatchResponse.cpp
+  src/v20200820/model/ModifyTokenResponse.cpp
   src/v20200820/model/MatchCodeAttr.cpp
   src/v20200820/model/MatchAttribute.cpp
   src/v20200820/model/DeleteMatchResponse.cpp
@@ -103,6 +110,7 @@ set(gpm_src
   src/v20200820/model/DescribeRulesResponse.cpp
   src/v20200820/model/MTicket.cpp
   src/v20200820/model/RuleInfo.cpp
+  src/v20200820/model/ModifyTokenRequest.cpp
   src/v20200820/model/DescribeMatchesResponse.cpp
   src/v20200820/model/Player.cpp
   src/v20200820/model/StartMatchingRequest.cpp

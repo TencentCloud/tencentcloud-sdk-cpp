@@ -24,7 +24,9 @@ set(fmu_public_header_model
   include/tencentcloud/fmu/v20191213/model/CancelBeautifyVideoJobResponse.h
   include/tencentcloud/fmu/v20191213/model/RGBAInfo.h
   include/tencentcloud/fmu/v20191213/model/BeautifyVideoOutput.h
+  include/tencentcloud/fmu/v20191213/model/StyleImageProResponse.h
   include/tencentcloud/fmu/v20191213/model/LipColorInfo.h
+  include/tencentcloud/fmu/v20191213/model/StyleImageRequest.h
   include/tencentcloud/fmu/v20191213/model/CreateModelResponse.h
   include/tencentcloud/fmu/v20191213/model/GetModelListResponse.h
   include/tencentcloud/fmu/v20191213/model/BeautifyPicResponse.h
@@ -36,7 +38,9 @@ set(fmu_public_header_model
   include/tencentcloud/fmu/v20191213/model/CancelBeautifyVideoJobRequest.h
   include/tencentcloud/fmu/v20191213/model/BeautyParam.h
   include/tencentcloud/fmu/v20191213/model/TryLipstickPicRequest.h
+  include/tencentcloud/fmu/v20191213/model/StyleImageProRequest.h
   include/tencentcloud/fmu/v20191213/model/QueryBeautifyVideoJobResponse.h
+  include/tencentcloud/fmu/v20191213/model/StyleImageResponse.h
   include/tencentcloud/fmu/v20191213/model/CreateModelRequest.h
   include/tencentcloud/fmu/v20191213/model/FaceRect.h
   include/tencentcloud/fmu/v20191213/model/BeautifyPicRequest.h
@@ -50,7 +54,9 @@ set(fmu_src
   src/v20191213/model/CancelBeautifyVideoJobResponse.cpp
   src/v20191213/model/RGBAInfo.cpp
   src/v20191213/model/BeautifyVideoOutput.cpp
+  src/v20191213/model/StyleImageProResponse.cpp
   src/v20191213/model/LipColorInfo.cpp
+  src/v20191213/model/StyleImageRequest.cpp
   src/v20191213/model/CreateModelResponse.cpp
   src/v20191213/model/GetModelListResponse.cpp
   src/v20191213/model/BeautifyPicResponse.cpp
@@ -62,7 +68,9 @@ set(fmu_src
   src/v20191213/model/CancelBeautifyVideoJobRequest.cpp
   src/v20191213/model/BeautyParam.cpp
   src/v20191213/model/TryLipstickPicRequest.cpp
+  src/v20191213/model/StyleImageProRequest.cpp
   src/v20191213/model/QueryBeautifyVideoJobResponse.cpp
+  src/v20191213/model/StyleImageResponse.cpp
   src/v20191213/model/CreateModelRequest.cpp
   src/v20191213/model/FaceRect.cpp
   src/v20191213/model/BeautifyPicRequest.cpp

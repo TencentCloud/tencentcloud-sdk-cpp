@@ -40,7 +40,8 @@ DomainDetailInfo::DomainDetailInfo() :
     m_disableHasBeenSet(false),
     m_forceRedirectHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_readonlyHasBeenSet(false)
+    m_readonlyHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -295,6 +296,26 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const Value &value)
         m_readonlyHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsArray())
+            return CoreInternalOutcome(Error("response `DomainDetailInfo.Tag` is not array type"));
+
+        const Value &tmpValue = value["Tag"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tag.push_back(item);
+        }
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +481,21 @@ void DomainDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "Readonly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_readonly.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -767,5 +803,21 @@ void DomainDetailInfo::SetReadonly(const string& _readonly)
 bool DomainDetailInfo::ReadonlyHasBeenSet() const
 {
     return m_readonlyHasBeenSet;
+}
+
+vector<Tag> DomainDetailInfo::GetTag() const
+{
+    return m_tag;
+}
+
+void DomainDetailInfo::SetTag(const vector<Tag>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool DomainDetailInfo::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

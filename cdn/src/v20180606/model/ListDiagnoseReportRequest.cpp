@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 ListDiagnoseReportRequest::ListDiagnoseReportRequest() :
-    m_keyWordsHasBeenSet(false)
+    m_keyWordsHasBeenSet(false),
+    m_diagnoseLinkHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string ListDiagnoseReportRequest::ToJsonString() const
         string key = "KeyWords";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_keyWords.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diagnoseLinkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiagnoseLink";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_diagnoseLink.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void ListDiagnoseReportRequest::SetKeyWords(const string& _keyWords)
 bool ListDiagnoseReportRequest::KeyWordsHasBeenSet() const
 {
     return m_keyWordsHasBeenSet;
+}
+
+string ListDiagnoseReportRequest::GetDiagnoseLink() const
+{
+    return m_diagnoseLink;
+}
+
+void ListDiagnoseReportRequest::SetDiagnoseLink(const string& _diagnoseLink)
+{
+    m_diagnoseLink = _diagnoseLink;
+    m_diagnoseLinkHasBeenSet = true;
+}
+
+bool ListDiagnoseReportRequest::DiagnoseLinkHasBeenSet() const
+{
+    return m_diagnoseLinkHasBeenSet;
 }
 
 

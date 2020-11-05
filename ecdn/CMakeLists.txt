@@ -51,6 +51,7 @@ set(ecdn_public_header_model
   include/tencentcloud/ecdn/v20191012/model/DomainBriefInfo.h
   include/tencentcloud/ecdn/v20191012/model/StartEcdnDomainResponse.h
   include/tencentcloud/ecdn/v20191012/model/DeleteEcdnDomainResponse.h
+  include/tencentcloud/ecdn/v20191012/model/Tag.h
   include/tencentcloud/ecdn/v20191012/model/StopEcdnDomainResponse.h
   include/tencentcloud/ecdn/v20191012/model/PurgePathCacheResponse.h
   include/tencentcloud/ecdn/v20191012/model/PurgeUrlsCacheResponse.h
@@ -111,6 +112,7 @@ set(ecdn_src
   src/v20191012/model/DomainBriefInfo.cpp
   src/v20191012/model/StartEcdnDomainResponse.cpp
   src/v20191012/model/DeleteEcdnDomainResponse.cpp
+  src/v20191012/model/Tag.cpp
   src/v20191012/model/StopEcdnDomainResponse.cpp
   src/v20191012/model/PurgePathCacheResponse.cpp
   src/v20191012/model/PurgeUrlsCacheResponse.cpp

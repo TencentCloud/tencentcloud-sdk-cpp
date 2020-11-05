@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1为通过检查，0为未通过检查。
-                     * @return IsValid 1为通过检查，0为未通过检查。
+                     * 获取true为通过检查，false为未通过检查。
+                     * @return IsValid true为通过检查，false为未通过检查。
                      */
                     bool GetIsValid() const;
 
@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool IsValidHasBeenSet() const;
 
                     /**
-                     * 获取1为可信CA，0为不可信CA。
-                     * @return IsTrustedCA 1为可信CA，0为不可信CA。
+                     * 获取true为可信CA，false为不可信CA。
+                     * @return IsTrustedCA true为可信CA，false为不可信CA。
                      */
                     bool GetIsTrustedCA() const;
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1为通过检查，0为未通过检查。
+                     * true为通过检查，false为未通过检查。
                      */
                     bool m_isValid;
                     bool m_isValidHasBeenSet;
 
                     /**
-                     * 1为可信CA，0为不可信CA。
+                     * true为可信CA，false为不可信CA。
                      */
                     bool m_isTrustedCA;
                     bool m_isTrustedCAHasBeenSet;

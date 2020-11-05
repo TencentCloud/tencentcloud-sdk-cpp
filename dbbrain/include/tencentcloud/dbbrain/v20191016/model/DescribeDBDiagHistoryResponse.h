@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dbbrain/v20191016/model/DiagHistoryEventItem.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,25 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取事件描述。
+                     * @return Events 事件描述。
+                     */
+                    std::vector<DiagHistoryEventItem> GetEvents() const;
+
+                    /**
+                     * 判断参数 Events 是否已赋值
+                     * @return Events 是否已赋值
+                     */
+                    bool EventsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 事件描述。
+                     */
+                    std::vector<DiagHistoryEventItem> m_events;
+                    bool m_eventsHasBeenSet;
 
                 };
             }

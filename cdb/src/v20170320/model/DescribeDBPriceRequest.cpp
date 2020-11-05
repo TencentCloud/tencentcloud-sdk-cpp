@@ -31,7 +31,8 @@ DescribeDBPriceRequest::DescribeDBPriceRequest() :
     m_payTypeHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_instanceRoleHasBeenSet(false),
-    m_protectModeHasBeenSet(false)
+    m_protectModeHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string DescribeDBPriceRequest::ToJsonString() const
         string key = "ProtectMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_protectMode, allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +249,22 @@ void DescribeDBPriceRequest::SetProtectMode(const int64_t& _protectMode)
 bool DescribeDBPriceRequest::ProtectModeHasBeenSet() const
 {
     return m_protectModeHasBeenSet;
+}
+
+string DescribeDBPriceRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void DescribeDBPriceRequest::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool DescribeDBPriceRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 
 

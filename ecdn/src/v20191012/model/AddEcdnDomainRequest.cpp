@@ -34,7 +34,8 @@ AddEcdnDomainRequest::AddEcdnDomainRequest() :
     m_cacheKeyHasBeenSet(false),
     m_cacheHasBeenSet(false),
     m_httpsHasBeenSet(false),
-    m_forceRedirectHasBeenSet(false)
+    m_forceRedirectHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,21 @@ string AddEcdnDomainRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_forceRedirect.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -323,6 +339,22 @@ void AddEcdnDomainRequest::SetForceRedirect(const ForceRedirect& _forceRedirect)
 bool AddEcdnDomainRequest::ForceRedirectHasBeenSet() const
 {
     return m_forceRedirectHasBeenSet;
+}
+
+vector<Tag> AddEcdnDomainRequest::GetTag() const
+{
+    return m_tag;
+}
+
+void AddEcdnDomainRequest::SetTag(const vector<Tag>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool AddEcdnDomainRequest::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 
 

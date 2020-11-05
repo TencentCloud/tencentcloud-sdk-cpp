@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/RawTranscodeParameter.h>
+#include <tencentcloud/mps/v20190612/model/OverrideTranscodeParameter.h>
 #include <tencentcloud/mps/v20190612/model/WatermarkInput.h>
 #include <tencentcloud/mps/v20190612/model/MosaicInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
@@ -94,6 +95,36 @@ namespace TencentCloud
                      * @return RawParameter 是否已赋值
                      */
                     bool RawParameterHasBeenSet() const;
+
+                    /**
+                     * 获取视频转码自定义参数，当 Definition 不填 0 时有效。
+当填写了该结构中的部分转码参数时，将使用填写的参数覆盖转码模板中的参数。
+该参数用于高度定制场景，建议您仅使用 Definition 指定转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OverrideParameter 视频转码自定义参数，当 Definition 不填 0 时有效。
+当填写了该结构中的部分转码参数时，将使用填写的参数覆盖转码模板中的参数。
+该参数用于高度定制场景，建议您仅使用 Definition 指定转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OverrideTranscodeParameter GetOverrideParameter() const;
+
+                    /**
+                     * 设置视频转码自定义参数，当 Definition 不填 0 时有效。
+当填写了该结构中的部分转码参数时，将使用填写的参数覆盖转码模板中的参数。
+该参数用于高度定制场景，建议您仅使用 Definition 指定转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OverrideParameter 视频转码自定义参数，当 Definition 不填 0 时有效。
+当填写了该结构中的部分转码参数时，将使用填写的参数覆盖转码模板中的参数。
+该参数用于高度定制场景，建议您仅使用 Definition 指定转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOverrideParameter(const OverrideTranscodeParameter& _overrideParameter);
+
+                    /**
+                     * 判断参数 OverrideParameter 是否已赋值
+                     * @return OverrideParameter 是否已赋值
+                     */
+                    bool OverrideParameterHasBeenSet() const;
 
                     /**
                      * 获取水印列表，支持多张图片或文字水印，最大可支持 10 张。
@@ -230,6 +261,15 @@ namespace TencentCloud
                      */
                     RawTranscodeParameter m_rawParameter;
                     bool m_rawParameterHasBeenSet;
+
+                    /**
+                     * 视频转码自定义参数，当 Definition 不填 0 时有效。
+当填写了该结构中的部分转码参数时，将使用填写的参数覆盖转码模板中的参数。
+该参数用于高度定制场景，建议您仅使用 Definition 指定转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OverrideTranscodeParameter m_overrideParameter;
+                    bool m_overrideParameterHasBeenSet;
 
                     /**
                      * 水印列表，支持多张图片或文字水印，最大可支持 10 张。

@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取云主机实例ID。
-                     * @return InstanceId 云主机实例ID。
+                     * 获取云服务器实例ID。
+                     * @return InstanceId 云服务器实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置云主机实例ID。
-                     * @param InstanceId 云主机实例ID。
+                     * 设置云服务器实例ID。
+                     * @param InstanceId 云服务器实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -227,7 +227,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 云主机实例ID。
+                     * 云服务器实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

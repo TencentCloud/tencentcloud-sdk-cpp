@@ -37,6 +37,10 @@
 #include <tencentcloud/fmu/v20191213/model/GetModelListResponse.h>
 #include <tencentcloud/fmu/v20191213/model/QueryBeautifyVideoJobRequest.h>
 #include <tencentcloud/fmu/v20191213/model/QueryBeautifyVideoJobResponse.h>
+#include <tencentcloud/fmu/v20191213/model/StyleImageRequest.h>
+#include <tencentcloud/fmu/v20191213/model/StyleImageResponse.h>
+#include <tencentcloud/fmu/v20191213/model/StyleImageProRequest.h>
+#include <tencentcloud/fmu/v20191213/model/StyleImageProResponse.h>
 #include <tencentcloud/fmu/v20191213/model/TryLipstickPicRequest.h>
 #include <tencentcloud/fmu/v20191213/model/TryLipstickPicResponse.h>
 
@@ -74,6 +78,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryBeautifyVideoJobResponse> QueryBeautifyVideoJobOutcome;
                 typedef std::future<QueryBeautifyVideoJobOutcome> QueryBeautifyVideoJobOutcomeCallable;
                 typedef std::function<void(const FmuClient*, const Model::QueryBeautifyVideoJobRequest&, QueryBeautifyVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBeautifyVideoJobAsyncHandler;
+                typedef Outcome<Error, Model::StyleImageResponse> StyleImageOutcome;
+                typedef std::future<StyleImageOutcome> StyleImageOutcomeCallable;
+                typedef std::function<void(const FmuClient*, const Model::StyleImageRequest&, StyleImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StyleImageAsyncHandler;
+                typedef Outcome<Error, Model::StyleImageProResponse> StyleImageProOutcome;
+                typedef std::future<StyleImageProOutcome> StyleImageProOutcomeCallable;
+                typedef std::function<void(const FmuClient*, const Model::StyleImageProRequest&, StyleImageProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StyleImageProAsyncHandler;
                 typedef Outcome<Error, Model::TryLipstickPicResponse> TryLipstickPicOutcome;
                 typedef std::future<TryLipstickPicOutcome> TryLipstickPicOutcomeCallable;
                 typedef std::function<void(const FmuClient*, const Model::TryLipstickPicRequest&, TryLipstickPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TryLipstickPicAsyncHandler;
@@ -145,6 +155,24 @@ namespace TencentCloud
                 QueryBeautifyVideoJobOutcome QueryBeautifyVideoJob(const Model::QueryBeautifyVideoJobRequest &request);
                 void QueryBeautifyVideoJobAsync(const Model::QueryBeautifyVideoJobRequest& request, const QueryBeautifyVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryBeautifyVideoJobOutcomeCallable QueryBeautifyVideoJobCallable(const Model::QueryBeautifyVideoJobRequest& request);
+
+                /**
+                 *上传一张照片，输出滤镜处理后的图片。
+                 * @param req StyleImageRequest
+                 * @return StyleImageOutcome
+                 */
+                StyleImageOutcome StyleImage(const Model::StyleImageRequest &request);
+                void StyleImageAsync(const Model::StyleImageRequest& request, const StyleImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StyleImageOutcomeCallable StyleImageCallable(const Model::StyleImageRequest& request);
+
+                /**
+                 *上传一张照片，输出滤镜处理后的图片。
+                 * @param req StyleImageProRequest
+                 * @return StyleImageProOutcome
+                 */
+                StyleImageProOutcome StyleImagePro(const Model::StyleImageProRequest &request);
+                void StyleImageProAsync(const Model::StyleImageProRequest& request, const StyleImageProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StyleImageProOutcomeCallable StyleImageProCallable(const Model::StyleImageProRequest& request);
 
                 /**
                  *对图片中的人脸嘴唇进行着色，最多支持同时对一张图中的3张人脸进行试唇色。

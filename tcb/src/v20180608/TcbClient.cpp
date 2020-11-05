@@ -169,6 +169,92 @@ TcbClient::CreateAuthDomainOutcomeCallable TcbClient::CreateAuthDomainCallable(c
     return task->get_future();
 }
 
+TcbClient::CreateCloudBaseRunResourceOutcome TcbClient::CreateCloudBaseRunResource(const CreateCloudBaseRunResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudBaseRunResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudBaseRunResourceResponse rsp = CreateCloudBaseRunResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudBaseRunResourceOutcome(rsp);
+        else
+            return CreateCloudBaseRunResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudBaseRunResourceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateCloudBaseRunResourceAsync(const CreateCloudBaseRunResourceRequest& request, const CreateCloudBaseRunResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudBaseRunResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CreateCloudBaseRunResourceOutcomeCallable TcbClient::CreateCloudBaseRunResourceCallable(const CreateCloudBaseRunResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudBaseRunResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudBaseRunResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::CreateCloudBaseRunServerVersionOutcome TcbClient::CreateCloudBaseRunServerVersion(const CreateCloudBaseRunServerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudBaseRunServerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudBaseRunServerVersionResponse rsp = CreateCloudBaseRunServerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudBaseRunServerVersionOutcome(rsp);
+        else
+            return CreateCloudBaseRunServerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudBaseRunServerVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateCloudBaseRunServerVersionAsync(const CreateCloudBaseRunServerVersionRequest& request, const CreateCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudBaseRunServerVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CreateCloudBaseRunServerVersionOutcomeCallable TcbClient::CreateCloudBaseRunServerVersionCallable(const CreateCloudBaseRunServerVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudBaseRunServerVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudBaseRunServerVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::CreateHostingDomainOutcome TcbClient::CreateHostingDomain(const CreateHostingDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHostingDomain");
@@ -1022,6 +1108,49 @@ TcbClient::DestroyStaticStoreOutcomeCallable TcbClient::DestroyStaticStoreCallab
         [this, request]()
         {
             return this->DestroyStaticStore(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::EstablishCloudBaseRunServerOutcome TcbClient::EstablishCloudBaseRunServer(const EstablishCloudBaseRunServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "EstablishCloudBaseRunServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EstablishCloudBaseRunServerResponse rsp = EstablishCloudBaseRunServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EstablishCloudBaseRunServerOutcome(rsp);
+        else
+            return EstablishCloudBaseRunServerOutcome(o.GetError());
+    }
+    else
+    {
+        return EstablishCloudBaseRunServerOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::EstablishCloudBaseRunServerAsync(const EstablishCloudBaseRunServerRequest& request, const EstablishCloudBaseRunServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EstablishCloudBaseRunServer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::EstablishCloudBaseRunServerOutcomeCallable TcbClient::EstablishCloudBaseRunServerCallable(const EstablishCloudBaseRunServerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EstablishCloudBaseRunServerOutcome()>>(
+        [this, request]()
+        {
+            return this->EstablishCloudBaseRunServer(request);
         }
     );
 

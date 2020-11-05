@@ -24,7 +24,9 @@ using namespace TencentCloud::Dbbrain::V20191016::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeTopSpaceTablesResponse::DescribeTopSpaceTablesResponse()
+DescribeTopSpaceTablesResponse::DescribeTopSpaceTablesResponse() :
+    m_topSpaceTablesHasBeenSet(false),
+    m_timestampHasBeenSet(false)
 {
 }
 
@@ -62,9 +64,59 @@ CoreInternalOutcome DescribeTopSpaceTablesResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("TopSpaceTables") && !rsp["TopSpaceTables"].IsNull())
+    {
+        if (!rsp["TopSpaceTables"].IsArray())
+            return CoreInternalOutcome(Error("response `TopSpaceTables` is not array type"));
+
+        const Value &tmpValue = rsp["TopSpaceTables"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TableSpaceData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_topSpaceTables.push_back(item);
+        }
+        m_topSpaceTablesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Timestamp") && !rsp["Timestamp"].IsNull())
+    {
+        if (!rsp["Timestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timestamp = rsp["Timestamp"].GetInt64();
+        m_timestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<TableSpaceData> DescribeTopSpaceTablesResponse::GetTopSpaceTables() const
+{
+    return m_topSpaceTables;
+}
+
+bool DescribeTopSpaceTablesResponse::TopSpaceTablesHasBeenSet() const
+{
+    return m_topSpaceTablesHasBeenSet;
+}
+
+int64_t DescribeTopSpaceTablesResponse::GetTimestamp() const
+{
+    return m_timestamp;
+}
+
+bool DescribeTopSpaceTablesResponse::TimestampHasBeenSet() const
+{
+    return m_timestampHasBeenSet;
+}
 
 

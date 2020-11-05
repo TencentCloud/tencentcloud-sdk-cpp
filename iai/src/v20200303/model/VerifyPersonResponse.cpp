@@ -24,7 +24,10 @@ using namespace TencentCloud::Iai::V20200303::Model;
 using namespace rapidjson;
 using namespace std;
 
-VerifyPersonResponse::VerifyPersonResponse()
+VerifyPersonResponse::VerifyPersonResponse() :
+    m_scoreHasBeenSet(false),
+    m_isMatchHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -62,9 +65,69 @@ CoreInternalOutcome VerifyPersonResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Score") && !rsp["Score"].IsNull())
+    {
+        if (!rsp["Score"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `Score` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_score = rsp["Score"].GetDouble();
+        m_scoreHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsMatch") && !rsp["IsMatch"].IsNull())
+    {
+        if (!rsp["IsMatch"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `IsMatch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMatch = rsp["IsMatch"].GetBool();
+        m_isMatchHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+double VerifyPersonResponse::GetScore() const
+{
+    return m_score;
+}
+
+bool VerifyPersonResponse::ScoreHasBeenSet() const
+{
+    return m_scoreHasBeenSet;
+}
+
+bool VerifyPersonResponse::GetIsMatch() const
+{
+    return m_isMatch;
+}
+
+bool VerifyPersonResponse::IsMatchHasBeenSet() const
+{
+    return m_isMatchHasBeenSet;
+}
+
+string VerifyPersonResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool VerifyPersonResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
+}
 
 
