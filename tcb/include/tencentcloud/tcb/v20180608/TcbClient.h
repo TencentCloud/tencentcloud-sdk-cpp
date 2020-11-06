@@ -45,6 +45,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h>
@@ -130,6 +132,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCloudBaseBuildServiceResponse> DescribeCloudBaseBuildServiceOutcome;
                 typedef std::future<DescribeCloudBaseBuildServiceOutcome> DescribeCloudBaseBuildServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseBuildServiceRequest&, DescribeCloudBaseBuildServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseBuildServiceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudBaseRunServerVersionResponse> DescribeCloudBaseRunServerVersionOutcome;
+                typedef std::future<DescribeCloudBaseRunServerVersionOutcome> DescribeCloudBaseRunServerVersionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunServerVersionRequest&, DescribeCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunServerVersionAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCloudBaseRunVersionSnapshotResponse> DescribeCloudBaseRunVersionSnapshotOutcome;
                 typedef std::future<DescribeCloudBaseRunVersionSnapshotOutcome> DescribeCloudBaseRunVersionSnapshotOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunVersionSnapshotRequest&, DescribeCloudBaseRunVersionSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunVersionSnapshotAsyncHandler;
@@ -288,6 +293,15 @@ namespace TencentCloud
                 DescribeCloudBaseBuildServiceOutcome DescribeCloudBaseBuildService(const Model::DescribeCloudBaseBuildServiceRequest &request);
                 void DescribeCloudBaseBuildServiceAsync(const Model::DescribeCloudBaseBuildServiceRequest& request, const DescribeCloudBaseBuildServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudBaseBuildServiceOutcomeCallable DescribeCloudBaseBuildServiceCallable(const Model::DescribeCloudBaseBuildServiceRequest& request);
+
+                /**
+                 *查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize
+                 * @param req DescribeCloudBaseRunServerVersionRequest
+                 * @return DescribeCloudBaseRunServerVersionOutcome
+                 */
+                DescribeCloudBaseRunServerVersionOutcome DescribeCloudBaseRunServerVersion(const Model::DescribeCloudBaseRunServerVersionRequest &request);
+                void DescribeCloudBaseRunServerVersionAsync(const Model::DescribeCloudBaseRunServerVersionRequest& request, const DescribeCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseRunServerVersionOutcomeCallable DescribeCloudBaseRunServerVersionCallable(const Model::DescribeCloudBaseRunServerVersionRequest& request);
 
                 /**
                  *查询版本历史

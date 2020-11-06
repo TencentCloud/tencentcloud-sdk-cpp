@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态值
-                     * @return Status 状态值
+                     * 获取状态值，0:操作成功
+                     * @return Status 状态值，0:操作成功
                      */
                     int64_t GetStatus() const;
 
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态值
+                     * 状态值，0:操作成功
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

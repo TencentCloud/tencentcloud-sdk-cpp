@@ -169,6 +169,49 @@ GseClient::CreateAssetOutcomeCallable GseClient::CreateAssetCallable(const Creat
     return task->get_future();
 }
 
+GseClient::CreateAssetWithImageOutcome GseClient::CreateAssetWithImage(const CreateAssetWithImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAssetWithImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAssetWithImageResponse rsp = CreateAssetWithImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAssetWithImageOutcome(rsp);
+        else
+            return CreateAssetWithImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAssetWithImageOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::CreateAssetWithImageAsync(const CreateAssetWithImageRequest& request, const CreateAssetWithImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAssetWithImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::CreateAssetWithImageOutcomeCallable GseClient::CreateAssetWithImageCallable(const CreateAssetWithImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAssetWithImageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAssetWithImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::CreateFleetOutcome GseClient::CreateFleet(const CreateFleetRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFleet");

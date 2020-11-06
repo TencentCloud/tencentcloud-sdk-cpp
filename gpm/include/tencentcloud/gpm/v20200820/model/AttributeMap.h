@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性字典 key
-                     * @return Key 属性字典 key
+                     * 获取属性字典 key [a-zA-Z0-9-\.]*
+                     * @return Key 属性字典 key [a-zA-Z0-9-\.]*
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置属性字典 key
-                     * @param Key 属性字典 key
+                     * 设置属性字典 key [a-zA-Z0-9-\.]*
+                     * @param Key 属性字典 key [a-zA-Z0-9-\.]*
                      */
                     void SetKey(const std::string& _key);
 
@@ -85,7 +85,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性字典 key
+                     * 属性字典 key [a-zA-Z0-9-\.]*
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

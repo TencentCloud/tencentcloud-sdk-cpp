@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则名称
-                     * @return RuleName 规则名称
+                     * 获取规则名称 [a-zA-Z\d-\.]*
+                     * @return RuleName 规则名称 [a-zA-Z\d-\.]*
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param RuleName 规则名称
+                     * 设置规则名称 [a-zA-Z\d-\.]*
+                     * @param RuleName 规则名称 [a-zA-Z\d-\.]*
                      */
                     void SetRuleName(const std::string& _ruleName);
 
@@ -122,7 +122,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则名称
+                     * 规则名称 [a-zA-Z\d-\.]*
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;

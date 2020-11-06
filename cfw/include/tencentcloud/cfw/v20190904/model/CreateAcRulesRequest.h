@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool OverwriteHasBeenSet() const;
 
                     /**
-                     * 获取NAT实例ID, Area存在的时候这个必传
-                     * @return InstanceId NAT实例ID, Area存在的时候这个必传
+                     * 获取NAT实例ID, 参数Area存在的时候这个必传
+                     * @return InstanceId NAT实例ID, 参数Area存在的时候这个必传
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置NAT实例ID, Area存在的时候这个必传
-                     * @param InstanceId NAT实例ID, Area存在的时候这个必传
+                     * 设置NAT实例ID, 参数Area存在的时候这个必传
+                     * @param InstanceId NAT实例ID, 参数Area存在的时候这个必传
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_overwriteHasBeenSet;
 
                     /**
-                     * NAT实例ID, Area存在的时候这个必传
+                     * NAT实例ID, 参数Area存在的时候这个必传
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

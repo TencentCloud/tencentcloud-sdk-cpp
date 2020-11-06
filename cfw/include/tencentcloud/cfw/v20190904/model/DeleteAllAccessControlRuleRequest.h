@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取边ID
-                     * @return EdgeId 边ID
+                     * 获取VPC间防火墙开关ID
+                     * @return EdgeId VPC间防火墙开关ID
                      */
                     std::string GetEdgeId() const;
 
                     /**
-                     * 设置边ID
-                     * @param EdgeId 边ID
+                     * 设置VPC间防火墙开关ID
+                     * @param EdgeId VPC间防火墙开关ID
                      */
                     void SetEdgeId(const std::string& _edgeId);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 边ID
+                     * VPC间防火墙开关ID
                      */
                     std::string m_edgeId;
                     bool m_edgeIdHasBeenSet;

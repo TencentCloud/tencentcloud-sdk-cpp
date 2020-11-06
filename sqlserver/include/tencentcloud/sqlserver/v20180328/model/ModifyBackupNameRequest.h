@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改名称的备份ID，可通过DescribeBackups 接口获取。
-                     * @return BackupId 要修改名称的备份ID，可通过DescribeBackups 接口获取。
+                     * 获取要修改名称的备份ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/product/238/19943)  接口获取。
+                     * @return BackupId 要修改名称的备份ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/product/238/19943)  接口获取。
                      */
                     uint64_t GetBackupId() const;
 
                     /**
-                     * 设置要修改名称的备份ID，可通过DescribeBackups 接口获取。
-                     * @param BackupId 要修改名称的备份ID，可通过DescribeBackups 接口获取。
+                     * 设置要修改名称的备份ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/product/238/19943)  接口获取。
+                     * @param BackupId 要修改名称的备份ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/product/238/19943)  接口获取。
                      */
                     void SetBackupId(const uint64_t& _backupId);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 要修改名称的备份ID，可通过DescribeBackups 接口获取。
+                     * 要修改名称的备份ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/product/238/19943)  接口获取。
                      */
                     uint64_t m_backupId;
                     bool m_backupIdHasBeenSet;

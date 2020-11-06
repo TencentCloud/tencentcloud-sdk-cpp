@@ -513,6 +513,49 @@ TcbClient::DescribeCloudBaseBuildServiceOutcomeCallable TcbClient::DescribeCloud
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseRunServerVersionOutcome TcbClient::DescribeCloudBaseRunServerVersion(const DescribeCloudBaseRunServerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunServerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunServerVersionResponse rsp = DescribeCloudBaseRunServerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunServerVersionOutcome(rsp);
+        else
+            return DescribeCloudBaseRunServerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunServerVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunServerVersionAsync(const DescribeCloudBaseRunServerVersionRequest& request, const DescribeCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunServerVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunServerVersionOutcomeCallable TcbClient::DescribeCloudBaseRunServerVersionCallable(const DescribeCloudBaseRunServerVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunServerVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunServerVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeCloudBaseRunVersionSnapshotOutcome TcbClient::DescribeCloudBaseRunVersionSnapshot(const DescribeCloudBaseRunVersionSnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseRunVersionSnapshot");

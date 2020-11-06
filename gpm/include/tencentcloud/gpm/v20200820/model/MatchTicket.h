@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取MatchTicketId 长度 128
-                     * @return Id MatchTicketId 长度 128
+                     * 获取MatchTicketId 长度 128 [a-zA-Z0-9-\.]*
+                     * @return Id MatchTicketId 长度 128 [a-zA-Z0-9-\.]*
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置MatchTicketId 长度 128
-                     * @param Id MatchTicketId 长度 128
+                     * 设置MatchTicketId 长度 128 [a-zA-Z0-9-\.]*
+                     * @param Id MatchTicketId 长度 128 [a-zA-Z0-9-\.]*
                      */
                     void SetId(const std::string& _id);
 
@@ -250,7 +250,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * MatchTicketId 长度 128
+                     * MatchTicketId 长度 128 [a-zA-Z0-9-\.]*
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取玩家 PlayerId 长度 128
-                     * @return Id 玩家 PlayerId 长度 128
+                     * 获取玩家 PlayerId 长度 128 [a-zA-Z\d-\._]*
+                     * @return Id 玩家 PlayerId 长度 128 [a-zA-Z\d-\._]*
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置玩家 PlayerId 长度 128
-                     * @param Id 玩家 PlayerId 长度 128
+                     * 设置玩家 PlayerId 长度 128 [a-zA-Z\d-\._]*
+                     * @param Id 玩家 PlayerId 长度 128 [a-zA-Z\d-\._]*
                      */
                     void SetId(const std::string& _id);
 
@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool MatchAttributesHasBeenSet() const;
 
                     /**
-                     * 获取队伍名，可以传递不同队伍名，长度 128
-                     * @return Team 队伍名，可以传递不同队伍名，长度 128
+                     * 获取队伍名，可以传递不同队伍名，长度 128 [a-zA-Z0-9-\.]*
+                     * @return Team 队伍名，可以传递不同队伍名，长度 128 [a-zA-Z0-9-\.]*
                      */
                     std::string GetTeam() const;
 
                     /**
-                     * 设置队伍名，可以传递不同队伍名，长度 128
-                     * @param Team 队伍名，可以传递不同队伍名，长度 128
+                     * 设置队伍名，可以传递不同队伍名，长度 128 [a-zA-Z0-9-\.]*
+                     * @param Team 队伍名，可以传递不同队伍名，长度 128 [a-zA-Z0-9-\.]*
                      */
                     void SetTeam(const std::string& _team);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 玩家 PlayerId 长度 128
+                     * 玩家 PlayerId 长度 128 [a-zA-Z\d-\._]*
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_matchAttributesHasBeenSet;
 
                     /**
-                     * 队伍名，可以传递不同队伍名，长度 128
+                     * 队伍名，可以传递不同队伍名，长度 128 [a-zA-Z0-9-\.]*
                      */
                     std::string m_team;
                     bool m_teamHasBeenSet;

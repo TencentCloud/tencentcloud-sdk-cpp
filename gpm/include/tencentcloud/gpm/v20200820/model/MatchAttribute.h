@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性名 长度 128
-                     * @return Name 属性名 长度 128
+                     * 获取属性名 长度 128 [a-zA-Z0-9-\.]*
+                     * @return Name 属性名 长度 128 [a-zA-Z0-9-\.]*
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置属性名 长度 128
-                     * @param Name 属性名 长度 128
+                     * 设置属性名 长度 128 [a-zA-Z0-9-\.]*
+                     * @param Name 属性名 长度 128 [a-zA-Z0-9-\.]*
                      */
                     void SetName(const std::string& _name);
 
@@ -158,7 +158,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性名 长度 128
+                     * 属性名 长度 128 [a-zA-Z0-9-\.]*
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

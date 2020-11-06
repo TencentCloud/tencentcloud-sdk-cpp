@@ -29,6 +29,8 @@
 #include <tencentcloud/gse/v20191112/model/CreateAliasResponse.h>
 #include <tencentcloud/gse/v20191112/model/CreateAssetRequest.h>
 #include <tencentcloud/gse/v20191112/model/CreateAssetResponse.h>
+#include <tencentcloud/gse/v20191112/model/CreateAssetWithImageRequest.h>
+#include <tencentcloud/gse/v20191112/model/CreateAssetWithImageResponse.h>
 #include <tencentcloud/gse/v20191112/model/CreateFleetRequest.h>
 #include <tencentcloud/gse/v20191112/model/CreateFleetResponse.h>
 #include <tencentcloud/gse/v20191112/model/CreateGameServerSessionRequest.h>
@@ -172,6 +174,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAssetResponse> CreateAssetOutcome;
                 typedef std::future<CreateAssetOutcome> CreateAssetOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::CreateAssetRequest&, CreateAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetAsyncHandler;
+                typedef Outcome<Error, Model::CreateAssetWithImageResponse> CreateAssetWithImageOutcome;
+                typedef std::future<CreateAssetWithImageOutcome> CreateAssetWithImageOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::CreateAssetWithImageRequest&, CreateAssetWithImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetWithImageAsyncHandler;
                 typedef Outcome<Error, Model::CreateFleetResponse> CreateFleetOutcome;
                 typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::CreateFleetRequest&, CreateFleetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFleetAsyncHandler;
@@ -394,6 +399,15 @@ namespace TencentCloud
                 CreateAssetOutcome CreateAsset(const Model::CreateAssetRequest &request);
                 void CreateAssetAsync(const Model::CreateAssetRequest& request, const CreateAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAssetOutcomeCallable CreateAssetCallable(const Model::CreateAssetRequest& request);
+
+                /**
+                 *本接口（CreateAssetWithImage）用于创建生成包镜像信息。
+                 * @param req CreateAssetWithImageRequest
+                 * @return CreateAssetWithImageOutcome
+                 */
+                CreateAssetWithImageOutcome CreateAssetWithImage(const Model::CreateAssetWithImageRequest &request);
+                void CreateAssetWithImageAsync(const Model::CreateAssetWithImageRequest& request, const CreateAssetWithImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAssetWithImageOutcomeCallable CreateAssetWithImageCallable(const Model::CreateAssetWithImageRequest& request);
 
                 /**
                  *本接口（CreateFleet）用于创建服务器舰队。

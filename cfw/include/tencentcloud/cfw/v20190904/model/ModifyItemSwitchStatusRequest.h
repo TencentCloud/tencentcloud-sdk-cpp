@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取状态值
-                     * @return Status 状态值
+                     * 获取状态值，0: 关闭 ,1:开启
+                     * @return Status 状态值，0: 关闭 ,1:开启
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态值
-                     * @param Status 状态值
+                     * 设置状态值，0: 关闭 ,1:开启
+                     * @param Status 状态值，0: 关闭 ,1:开启
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 状态值
+                     * 状态值，0: 关闭 ,1:开启
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

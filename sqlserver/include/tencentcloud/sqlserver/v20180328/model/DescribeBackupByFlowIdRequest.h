@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取创建备份流程ID
-                     * @return FlowId 创建备份流程ID
+                     * 获取创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取
+                     * @return FlowId 创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置创建备份流程ID
-                     * @param FlowId 创建备份流程ID
+                     * 设置创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取
+                     * @param FlowId 创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取
                      */
                     void SetFlowId(const std::string& _flowId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 创建备份流程ID
+                     * 创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

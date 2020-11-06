@@ -28,8 +28,10 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.h
   include/tencentcloud/tcb/v20180608/model/KVPair.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/FunctionInfo.h
   include/tencentcloud/tcb/v20180608/model/CreatePostpayPackageResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h
   include/tencentcloud/tcb/v20180608/model/PostpayEnvQuota.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUsersResponse.h
@@ -115,8 +117,10 @@ set(tcb_src
   src/v20180608/model/StorageInfo.cpp
   src/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.cpp
   src/v20180608/model/KVPair.cpp
+  src/v20180608/model/DescribeCloudBaseRunServerVersionRequest.cpp
   src/v20180608/model/FunctionInfo.cpp
   src/v20180608/model/CreatePostpayPackageResponse.cpp
+  src/v20180608/model/DescribeCloudBaseRunServerVersionResponse.cpp
   src/v20180608/model/CommonServiceAPIRequest.cpp
   src/v20180608/model/PostpayEnvQuota.cpp
   src/v20180608/model/DescribeEndUsersResponse.cpp
