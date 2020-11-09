@@ -42,6 +42,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20191016/model/TableSpaceData.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTopSqlsResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/SchemaItem.h
   )
 
 set(dbbrain_src
@@ -69,6 +70,7 @@ set(dbbrain_src
   src/v20191016/model/TableSpaceData.cpp
   src/v20191016/model/DescribeSlowLogTopSqlsResponse.cpp
   src/v20191016/model/DescribeTopSpaceTablesResponse.cpp
+  src/v20191016/model/SchemaItem.cpp
   )
 
 set(dbbrain_include

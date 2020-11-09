@@ -126,6 +126,49 @@ MonitorClient::CreatePolicyGroupOutcomeCallable MonitorClient::CreatePolicyGroup
     return task->get_future();
 }
 
+MonitorClient::CreateServiceDiscoveryOutcome MonitorClient::CreateServiceDiscovery(const CreateServiceDiscoveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateServiceDiscovery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateServiceDiscoveryResponse rsp = CreateServiceDiscoveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateServiceDiscoveryOutcome(rsp);
+        else
+            return CreateServiceDiscoveryOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateServiceDiscoveryOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateServiceDiscoveryAsync(const CreateServiceDiscoveryRequest& request, const CreateServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateServiceDiscovery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateServiceDiscoveryOutcomeCallable MonitorClient::CreateServiceDiscoveryCallable(const CreateServiceDiscoveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateServiceDiscoveryOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateServiceDiscovery(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DeletePolicyGroupOutcome MonitorClient::DeletePolicyGroup(const DeletePolicyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePolicyGroup");
@@ -162,6 +205,49 @@ MonitorClient::DeletePolicyGroupOutcomeCallable MonitorClient::DeletePolicyGroup
         [this, request]()
         {
             return this->DeletePolicyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeleteServiceDiscoveryOutcome MonitorClient::DeleteServiceDiscovery(const DeleteServiceDiscoveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteServiceDiscovery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteServiceDiscoveryResponse rsp = DeleteServiceDiscoveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteServiceDiscoveryOutcome(rsp);
+        else
+            return DeleteServiceDiscoveryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteServiceDiscoveryOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteServiceDiscoveryAsync(const DeleteServiceDiscoveryRequest& request, const DeleteServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteServiceDiscovery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteServiceDiscoveryOutcomeCallable MonitorClient::DeleteServiceDiscoveryCallable(const DeleteServiceDiscoveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteServiceDiscoveryOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteServiceDiscovery(request);
         }
     );
 
@@ -642,6 +728,49 @@ MonitorClient::DescribeProductListOutcomeCallable MonitorClient::DescribeProduct
     return task->get_future();
 }
 
+MonitorClient::DescribeServiceDiscoveryOutcome MonitorClient::DescribeServiceDiscovery(const DescribeServiceDiscoveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceDiscovery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceDiscoveryResponse rsp = DescribeServiceDiscoveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceDiscoveryOutcome(rsp);
+        else
+            return DescribeServiceDiscoveryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceDiscoveryOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeServiceDiscoveryAsync(const DescribeServiceDiscoveryRequest& request, const DescribeServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceDiscovery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeServiceDiscoveryOutcomeCallable MonitorClient::DescribeServiceDiscoveryCallable(const DescribeServiceDiscoveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceDiscoveryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceDiscovery(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::GetMonitorDataOutcome MonitorClient::GetMonitorData(const GetMonitorDataRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMonitorData");
@@ -936,6 +1065,49 @@ MonitorClient::UnBindingPolicyObjectOutcomeCallable MonitorClient::UnBindingPoli
         [this, request]()
         {
             return this->UnBindingPolicyObject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdateServiceDiscoveryOutcome MonitorClient::UpdateServiceDiscovery(const UpdateServiceDiscoveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateServiceDiscovery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateServiceDiscoveryResponse rsp = UpdateServiceDiscoveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateServiceDiscoveryOutcome(rsp);
+        else
+            return UpdateServiceDiscoveryOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateServiceDiscoveryOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateServiceDiscoveryAsync(const UpdateServiceDiscoveryRequest& request, const UpdateServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateServiceDiscovery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateServiceDiscoveryOutcomeCallable MonitorClient::UpdateServiceDiscoveryCallable(const UpdateServiceDiscoveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateServiceDiscoveryOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateServiceDiscovery(request);
         }
     );
 

@@ -29,7 +29,9 @@ UploadOtaVersionRequest::UploadOtaVersionRequest() :
     m_versionUrlHasBeenSet(false),
     m_fileSizeHasBeenSet(false),
     m_md5HasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_contentsHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,23 @@ string UploadOtaVersionRequest::ToJsonString() const
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Contents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_contents.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -190,6 +209,38 @@ void UploadOtaVersionRequest::SetOperator(const string& _operator)
 bool UploadOtaVersionRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string UploadOtaVersionRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void UploadOtaVersionRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool UploadOtaVersionRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
+Contents UploadOtaVersionRequest::GetContents() const
+{
+    return m_contents;
+}
+
+void UploadOtaVersionRequest::SetContents(const Contents& _contents)
+{
+    m_contents = _contents;
+    m_contentsHasBeenSet = true;
+}
+
+bool UploadOtaVersionRequest::ContentsHasBeenSet() const
+{
+    return m_contentsHasBeenSet;
 }
 
 

@@ -30,7 +30,8 @@ DescribeSlowLogTopSqlsRequest::DescribeSlowLogTopSqlsRequest() :
     m_sortByHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_schemaListHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,21 @@ string DescribeSlowLogTopSqlsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_schemaListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SchemaList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_schemaList.begin(); itr != m_schemaList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -215,6 +231,22 @@ void DescribeSlowLogTopSqlsRequest::SetOffset(const int64_t& _offset)
 bool DescribeSlowLogTopSqlsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+vector<SchemaItem> DescribeSlowLogTopSqlsRequest::GetSchemaList() const
+{
+    return m_schemaList;
+}
+
+void DescribeSlowLogTopSqlsRequest::SetSchemaList(const vector<SchemaItem>& _schemaList)
+{
+    m_schemaList = _schemaList;
+    m_schemaListHasBeenSet = true;
+}
+
+bool DescribeSlowLogTopSqlsRequest::SchemaListHasBeenSet() const
+{
+    return m_schemaListHasBeenSet;
 }
 
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotvideo/v20191126/model/Contents.h>
 
 
 namespace TencentCloud
@@ -150,6 +151,42 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取备注信息
+                     * @return Remark 备注信息
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注信息
+                     * @param Remark 备注信息
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取版本发布的描述信息，需要国际化，可以为空
+                     * @return Contents 版本发布的描述信息，需要国际化，可以为空
+                     */
+                    Contents GetContents() const;
+
+                    /**
+                     * 设置版本发布的描述信息，需要国际化，可以为空
+                     * @param Contents 版本发布的描述信息，需要国际化，可以为空
+                     */
+                    void SetContents(const Contents& _contents);
+
+                    /**
+                     * 判断参数 Contents 是否已赋值
+                     * @return Contents 是否已赋值
+                     */
+                    bool ContentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +224,18 @@ namespace TencentCloud
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 备注信息
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 版本发布的描述信息，需要国际化，可以为空
+                     */
+                    Contents m_contents;
+                    bool m_contentsHasBeenSet;
 
                 };
             }

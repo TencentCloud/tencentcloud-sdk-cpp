@@ -27,8 +27,12 @@
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyObjectResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAccidentEventListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAccidentEventListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmHistoriesRequest.h>
@@ -51,6 +55,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeProductEventListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversRequest.h>
@@ -65,6 +71,8 @@
 #include <tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingPolicyObjectRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingPolicyObjectResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateServiceDiscoveryRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateServiceDiscoveryResponse.h>
 
 
 namespace TencentCloud
@@ -85,9 +93,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreatePolicyGroupResponse> CreatePolicyGroupOutcome;
                 typedef std::future<CreatePolicyGroupOutcome> CreatePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreatePolicyGroupRequest&, CreatePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyGroupAsyncHandler;
+                typedef Outcome<Error, Model::CreateServiceDiscoveryResponse> CreateServiceDiscoveryOutcome;
+                typedef std::future<CreateServiceDiscoveryOutcome> CreateServiceDiscoveryOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateServiceDiscoveryRequest&, CreateServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceDiscoveryAsyncHandler;
                 typedef Outcome<Error, Model::DeletePolicyGroupResponse> DeletePolicyGroupOutcome;
                 typedef std::future<DeletePolicyGroupOutcome> DeletePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeletePolicyGroupRequest&, DeletePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyGroupAsyncHandler;
+                typedef Outcome<Error, Model::DeleteServiceDiscoveryResponse> DeleteServiceDiscoveryOutcome;
+                typedef std::future<DeleteServiceDiscoveryOutcome> DeleteServiceDiscoveryOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteServiceDiscoveryRequest&, DeleteServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceDiscoveryAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAccidentEventListResponse> DescribeAccidentEventListOutcome;
                 typedef std::future<DescribeAccidentEventListOutcome> DescribeAccidentEventListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAccidentEventListRequest&, DescribeAccidentEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccidentEventListAsyncHandler;
@@ -121,6 +135,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeProductListResponse> DescribeProductListOutcome;
                 typedef std::future<DescribeProductListOutcome> DescribeProductListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeProductListRequest&, DescribeProductListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeServiceDiscoveryResponse> DescribeServiceDiscoveryOutcome;
+                typedef std::future<DescribeServiceDiscoveryOutcome> DescribeServiceDiscoveryOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeServiceDiscoveryRequest&, DescribeServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceDiscoveryAsyncHandler;
                 typedef Outcome<Error, Model::GetMonitorDataResponse> GetMonitorDataOutcome;
                 typedef std::future<GetMonitorDataOutcome> GetMonitorDataOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::GetMonitorDataRequest&, GetMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMonitorDataAsyncHandler;
@@ -142,6 +159,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UnBindingPolicyObjectResponse> UnBindingPolicyObjectOutcome;
                 typedef std::future<UnBindingPolicyObjectOutcome> UnBindingPolicyObjectOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UnBindingPolicyObjectRequest&, UnBindingPolicyObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindingPolicyObjectAsyncHandler;
+                typedef Outcome<Error, Model::UpdateServiceDiscoveryResponse> UpdateServiceDiscoveryOutcome;
+                typedef std::future<UpdateServiceDiscoveryOutcome> UpdateServiceDiscoveryOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateServiceDiscoveryRequest&, UpdateServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceDiscoveryAsyncHandler;
 
 
 
@@ -164,6 +184,17 @@ namespace TencentCloud
                 CreatePolicyGroupOutcomeCallable CreatePolicyGroupCallable(const Model::CreatePolicyGroupRequest& request);
 
                 /**
+                 *在腾讯云容器服务下创建 Prometheus 服务发现。
+<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考
+<a href="https://cloud.tencent.com/document/product/248/48859" target="_blank">Agent 安装</a>。</p>
+                 * @param req CreateServiceDiscoveryRequest
+                 * @return CreateServiceDiscoveryOutcome
+                 */
+                CreateServiceDiscoveryOutcome CreateServiceDiscovery(const Model::CreateServiceDiscoveryRequest &request);
+                void CreateServiceDiscoveryAsync(const Model::CreateServiceDiscoveryRequest& request, const CreateServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateServiceDiscoveryOutcomeCallable CreateServiceDiscoveryCallable(const Model::CreateServiceDiscoveryRequest& request);
+
+                /**
                  *删除告警策略组
                  * @param req DeletePolicyGroupRequest
                  * @return DeletePolicyGroupOutcome
@@ -171,6 +202,17 @@ namespace TencentCloud
                 DeletePolicyGroupOutcome DeletePolicyGroup(const Model::DeletePolicyGroupRequest &request);
                 void DeletePolicyGroupAsync(const Model::DeletePolicyGroupRequest& request, const DeletePolicyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePolicyGroupOutcomeCallable DeletePolicyGroupCallable(const Model::DeletePolicyGroupRequest& request);
+
+                /**
+                 *删除在腾讯云容器服务下创建的 Prometheus 服务发现。
+<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考
+<a href="https://cloud.tencent.com/document/product/248/48859" target="_blank">Agent 安装</a>。</p>
+                 * @param req DeleteServiceDiscoveryRequest
+                 * @return DeleteServiceDiscoveryOutcome
+                 */
+                DeleteServiceDiscoveryOutcome DeleteServiceDiscovery(const Model::DeleteServiceDiscoveryRequest &request);
+                void DeleteServiceDiscoveryAsync(const Model::DeleteServiceDiscoveryRequest& request, const DeleteServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteServiceDiscoveryOutcomeCallable DeleteServiceDiscoveryCallable(const Model::DeleteServiceDiscoveryRequest& request);
 
                 /**
                  *获取平台事件列表
@@ -272,6 +314,17 @@ namespace TencentCloud
                 DescribeProductListOutcomeCallable DescribeProductListCallable(const Model::DescribeProductListRequest& request);
 
                 /**
+                 *列出在腾讯云容器服务下创建的 Prometheus 服务发现。
+<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考
+<a href="https://cloud.tencent.com/document/product/248/48859" target="_blank">Agent 安装</a>。</p>
+                 * @param req DescribeServiceDiscoveryRequest
+                 * @return DescribeServiceDiscoveryOutcome
+                 */
+                DescribeServiceDiscoveryOutcome DescribeServiceDiscovery(const Model::DescribeServiceDiscoveryRequest &request);
+                void DescribeServiceDiscoveryAsync(const Model::DescribeServiceDiscoveryRequest& request, const DescribeServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceDiscoveryOutcomeCallable DescribeServiceDiscoveryCallable(const Model::DescribeServiceDiscoveryRequest& request);
+
+                /**
                  *获取云产品的监控数据。传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。
 接口调用频率限制为：20次/秒，1200次/分钟。单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。
 若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。
@@ -341,6 +394,17 @@ namespace TencentCloud
                 UnBindingPolicyObjectOutcome UnBindingPolicyObject(const Model::UnBindingPolicyObjectRequest &request);
                 void UnBindingPolicyObjectAsync(const Model::UnBindingPolicyObjectRequest& request, const UnBindingPolicyObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnBindingPolicyObjectOutcomeCallable UnBindingPolicyObjectCallable(const Model::UnBindingPolicyObjectRequest& request);
+
+                /**
+                 *在腾讯云容器服务下更新 Prometheus 服务发现。
+<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考
+<a href="https://cloud.tencent.com/document/product/248/48859" target="_blank">Agent 安装</a>。</p>
+                 * @param req UpdateServiceDiscoveryRequest
+                 * @return UpdateServiceDiscoveryOutcome
+                 */
+                UpdateServiceDiscoveryOutcome UpdateServiceDiscovery(const Model::UpdateServiceDiscoveryRequest &request);
+                void UpdateServiceDiscoveryAsync(const Model::UpdateServiceDiscoveryRequest& request, const UpdateServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateServiceDiscoveryOutcomeCallable UpdateServiceDiscoveryCallable(const Model::UpdateServiceDiscoveryRequest& request);
 
             };
         }

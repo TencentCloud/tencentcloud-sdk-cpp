@@ -102,6 +102,66 @@ namespace TencentCloud
                      */
                     bool MosaicSetHasBeenSet() const;
 
+                    /**
+                     * 获取转码后的视频的起始时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     * @return StartTimeOffset 转码后的视频的起始时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     */
+                    double GetStartTimeOffset() const;
+
+                    /**
+                     * 设置转码后的视频的起始时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     * @param StartTimeOffset 转码后的视频的起始时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     */
+                    void SetStartTimeOffset(const double& _startTimeOffset);
+
+                    /**
+                     * 判断参数 StartTimeOffset 是否已赋值
+                     * @return StartTimeOffset 是否已赋值
+                     */
+                    bool StartTimeOffsetHasBeenSet() const;
+
+                    /**
+                     * 获取转码后视频的终止时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     * @return EndTimeOffset 转码后视频的终止时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     */
+                    double GetEndTimeOffset() const;
+
+                    /**
+                     * 设置转码后视频的终止时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     * @param EndTimeOffset 转码后视频的终止时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     */
+                    void SetEndTimeOffset(const double& _endTimeOffset);
+
+                    /**
+                     * 判断参数 EndTimeOffset 是否已赋值
+                     * @return EndTimeOffset 是否已赋值
+                     */
+                    bool EndTimeOffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,6 +181,24 @@ namespace TencentCloud
                      */
                     std::vector<MosaicInput> m_mosaicSet;
                     bool m_mosaicSetHasBeenSet;
+
+                    /**
+                     * 转码后的视频的起始时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     */
+                    double m_startTimeOffset;
+                    bool m_startTimeOffsetHasBeenSet;
+
+                    /**
+                     * 转码后视频的终止时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     */
+                    double m_endTimeOffset;
+                    bool m_endTimeOffsetHasBeenSet;
 
                 };
             }

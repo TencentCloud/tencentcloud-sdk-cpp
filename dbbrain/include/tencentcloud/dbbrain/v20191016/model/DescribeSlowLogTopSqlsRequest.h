@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dbbrain/v20191016/model/SchemaItem.h>
 
 
 namespace TencentCloud
@@ -168,6 +169,24 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取数据库名称数组。
+                     * @return SchemaList 数据库名称数组。
+                     */
+                    std::vector<SchemaItem> GetSchemaList() const;
+
+                    /**
+                     * 设置数据库名称数组。
+                     * @param SchemaList 数据库名称数组。
+                     */
+                    void SetSchemaList(const std::vector<SchemaItem>& _schemaList);
+
+                    /**
+                     * 判断参数 SchemaList 是否已赋值
+                     * @return SchemaList 是否已赋值
+                     */
+                    bool SchemaListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +230,12 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 数据库名称数组。
+                     */
+                    std::vector<SchemaItem> m_schemaList;
+                    bool m_schemaListHasBeenSet;
 
                 };
             }

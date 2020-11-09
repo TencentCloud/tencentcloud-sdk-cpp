@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CFW_V20190904_MODEL_MODIFYALLRULESTATUSRESPONSE_H_
-#define TENCENTCLOUD_CFW_V20190904_MODEL_MODIFYALLRULESTATUSRESPONSE_H_
+#ifndef TENCENTCLOUD_MONITOR_V20180724_MODEL_DESCRIBESERVICEDISCOVERYRESPONSE_H_
+#define TENCENTCLOUD_MONITOR_V20180724_MODEL_DESCRIBESERVICEDISCOVERYRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/ServiceDiscoveryItem.h>
 
 
 namespace TencentCloud
 {
-    namespace Cfw
+    namespace Monitor
     {
-        namespace V20190904
+        namespace V20180724
         {
             namespace Model
             {
                 /**
-                * ModifyAllRuleStatus返回参数结构体
+                * DescribeServiceDiscovery返回参数结构体
                 */
-                class ModifyAllRuleStatusResponse : public AbstractModel
+                class DescribeServiceDiscoveryResponse : public AbstractModel
                 {
                 public:
-                    ModifyAllRuleStatusResponse();
-                    ~ModifyAllRuleStatusResponse() = default;
+                    DescribeServiceDiscoveryResponse();
+                    ~DescribeServiceDiscoveryResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取0: 修改成功, 其他: 修改失败
+                     * 获取返回服务发现列表信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 0: 修改成功, 其他: 修改失败
+                     * @return ServiceDiscoverySet 返回服务发现列表信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t GetStatus() const;
+                    std::vector<ServiceDiscoveryItem> GetServiceDiscoverySet() const;
 
                     /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
+                     * 判断参数 ServiceDiscoverySet 是否已赋值
+                     * @return ServiceDiscoverySet 是否已赋值
                      */
-                    bool StatusHasBeenSet() const;
+                    bool ServiceDiscoverySetHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 0: 修改成功, 其他: 修改失败
+                     * 返回服务发现列表信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_status;
-                    bool m_statusHasBeenSet;
+                    std::vector<ServiceDiscoveryItem> m_serviceDiscoverySet;
+                    bool m_serviceDiscoverySetHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CFW_V20190904_MODEL_MODIFYALLRULESTATUSRESPONSE_H_
+#endif // !TENCENTCLOUD_MONITOR_V20180724_MODEL_DESCRIBESERVICEDISCOVERYRESPONSE_H_

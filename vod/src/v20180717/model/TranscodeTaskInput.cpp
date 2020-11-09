@@ -24,7 +24,9 @@ using namespace std;
 TranscodeTaskInput::TranscodeTaskInput() :
     m_definitionHasBeenSet(false),
     m_watermarkSetHasBeenSet(false),
-    m_mosaicSetHasBeenSet(false)
+    m_mosaicSetHasBeenSet(false),
+    m_startTimeOffsetHasBeenSet(false),
+    m_endTimeOffsetHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,26 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const Value &value)
         m_mosaicSetHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTimeOffset") && !value["StartTimeOffset"].IsNull())
+    {
+        if (!value["StartTimeOffset"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `TranscodeTaskInput.StartTimeOffset` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTimeOffset = value["StartTimeOffset"].GetDouble();
+        m_startTimeOffsetHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTimeOffset") && !value["EndTimeOffset"].IsNull())
+    {
+        if (!value["EndTimeOffset"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `TranscodeTaskInput.EndTimeOffset` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTimeOffset = value["EndTimeOffset"].GetDouble();
+        m_endTimeOffsetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +148,22 @@ void TranscodeTaskInput::ToJsonObject(Value &value, Document::AllocatorType& all
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_startTimeOffsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTimeOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTimeOffset, allocator);
+    }
+
+    if (m_endTimeOffsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTimeOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endTimeOffset, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void TranscodeTaskInput::SetMosaicSet(const vector<MosaicInput>& _mosaicSet)
 bool TranscodeTaskInput::MosaicSetHasBeenSet() const
 {
     return m_mosaicSetHasBeenSet;
+}
+
+double TranscodeTaskInput::GetStartTimeOffset() const
+{
+    return m_startTimeOffset;
+}
+
+void TranscodeTaskInput::SetStartTimeOffset(const double& _startTimeOffset)
+{
+    m_startTimeOffset = _startTimeOffset;
+    m_startTimeOffsetHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::StartTimeOffsetHasBeenSet() const
+{
+    return m_startTimeOffsetHasBeenSet;
+}
+
+double TranscodeTaskInput::GetEndTimeOffset() const
+{
+    return m_endTimeOffset;
+}
+
+void TranscodeTaskInput::SetEndTimeOffset(const double& _endTimeOffset)
+{
+    m_endTimeOffset = _endTimeOffset;
+    m_endTimeOffsetHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::EndTimeOffsetHasBeenSet() const
+{
+    return m_endTimeOffsetHasBeenSet;
 }
 
