@@ -4770,6 +4770,49 @@ VpcClient::DescribeIp6TranslatorsOutcomeCallable VpcClient::DescribeIp6Translato
     return task->get_future();
 }
 
+VpcClient::DescribeIpGeolocationDatabaseUrlOutcome VpcClient::DescribeIpGeolocationDatabaseUrl(const DescribeIpGeolocationDatabaseUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIpGeolocationDatabaseUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIpGeolocationDatabaseUrlResponse rsp = DescribeIpGeolocationDatabaseUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIpGeolocationDatabaseUrlOutcome(rsp);
+        else
+            return DescribeIpGeolocationDatabaseUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIpGeolocationDatabaseUrlOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeIpGeolocationDatabaseUrlAsync(const DescribeIpGeolocationDatabaseUrlRequest& request, const DescribeIpGeolocationDatabaseUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIpGeolocationDatabaseUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeIpGeolocationDatabaseUrlOutcomeCallable VpcClient::DescribeIpGeolocationDatabaseUrlCallable(const DescribeIpGeolocationDatabaseUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIpGeolocationDatabaseUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIpGeolocationDatabaseUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome VpcClient::DescribeNatGatewayDestinationIpPortTranslationNatRules(const DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatGatewayDestinationIpPortTranslationNatRules");

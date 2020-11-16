@@ -45,9 +45,9 @@ CoreInternalOutcome RegionDetected::Deserialize(const Value &value)
 
     if (value.HasMember("CategoryScore") && !value["CategoryScore"].IsNull())
     {
-        if (!value["CategoryScore"].IsDouble())
+        if (!value["CategoryScore"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RegionDetected.CategoryScore` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RegionDetected.CategoryScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_categoryScore = value["CategoryScore"].GetDouble();
         m_categoryScoreHasBeenSet = true;

@@ -47,9 +47,9 @@ CoreInternalOutcome DayStreamPlayInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Bandwidth") && !value["Bandwidth"].IsNull())
     {
-        if (!value["Bandwidth"].IsDouble())
+        if (!value["Bandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DayStreamPlayInfo.Bandwidth` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DayStreamPlayInfo.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetDouble();
         m_bandwidthHasBeenSet = true;
@@ -57,9 +57,9 @@ CoreInternalOutcome DayStreamPlayInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Flux") && !value["Flux"].IsNull())
     {
-        if (!value["Flux"].IsDouble())
+        if (!value["Flux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DayStreamPlayInfo.Flux` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DayStreamPlayInfo.Flux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_flux = value["Flux"].GetDouble();
         m_fluxHasBeenSet = true;

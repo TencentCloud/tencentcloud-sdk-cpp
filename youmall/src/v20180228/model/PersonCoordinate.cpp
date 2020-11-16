@@ -40,9 +40,9 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const Value &value)
 
     if (value.HasMember("CADX") && !value["CADX"].IsNull())
     {
-        if (!value["CADX"].IsDouble())
+        if (!value["CADX"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PersonCoordinate.CADX` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PersonCoordinate.CADX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cADX = value["CADX"].GetDouble();
         m_cADXHasBeenSet = true;
@@ -50,9 +50,9 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const Value &value)
 
     if (value.HasMember("CADY") && !value["CADY"].IsNull())
     {
-        if (!value["CADY"].IsDouble())
+        if (!value["CADY"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PersonCoordinate.CADY` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PersonCoordinate.CADY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cADY = value["CADY"].GetDouble();
         m_cADYHasBeenSet = true;

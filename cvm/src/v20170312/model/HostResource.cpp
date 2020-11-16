@@ -59,9 +59,9 @@ CoreInternalOutcome HostResource::Deserialize(const Value &value)
 
     if (value.HasMember("MemTotal") && !value["MemTotal"].IsNull())
     {
-        if (!value["MemTotal"].IsDouble())
+        if (!value["MemTotal"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HostResource.MemTotal` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `HostResource.MemTotal` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_memTotal = value["MemTotal"].GetDouble();
         m_memTotalHasBeenSet = true;
@@ -69,9 +69,9 @@ CoreInternalOutcome HostResource::Deserialize(const Value &value)
 
     if (value.HasMember("MemAvailable") && !value["MemAvailable"].IsNull())
     {
-        if (!value["MemAvailable"].IsDouble())
+        if (!value["MemAvailable"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HostResource.MemAvailable` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `HostResource.MemAvailable` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_memAvailable = value["MemAvailable"].GetDouble();
         m_memAvailableHasBeenSet = true;

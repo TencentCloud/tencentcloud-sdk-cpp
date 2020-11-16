@@ -109,9 +109,9 @@ CoreInternalOutcome SentenceDetail::Deserialize(const Value &value)
 
     if (value.HasMember("SpeechSpeed") && !value["SpeechSpeed"].IsNull())
     {
-        if (!value["SpeechSpeed"].IsDouble())
+        if (!value["SpeechSpeed"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SentenceDetail.SpeechSpeed` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SentenceDetail.SpeechSpeed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_speechSpeed = value["SpeechSpeed"].GetDouble();
         m_speechSpeedHasBeenSet = true;

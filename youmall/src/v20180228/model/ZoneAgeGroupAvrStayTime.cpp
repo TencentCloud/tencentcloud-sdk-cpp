@@ -34,9 +34,9 @@ CoreInternalOutcome ZoneAgeGroupAvrStayTime::Deserialize(const Value &value)
 
     if (value.HasMember("MaleAvrStayTime") && !value["MaleAvrStayTime"].IsNull())
     {
-        if (!value["MaleAvrStayTime"].IsDouble())
+        if (!value["MaleAvrStayTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ZoneAgeGroupAvrStayTime.MaleAvrStayTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ZoneAgeGroupAvrStayTime.MaleAvrStayTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maleAvrStayTime = value["MaleAvrStayTime"].GetDouble();
         m_maleAvrStayTimeHasBeenSet = true;
@@ -44,9 +44,9 @@ CoreInternalOutcome ZoneAgeGroupAvrStayTime::Deserialize(const Value &value)
 
     if (value.HasMember("FemaleAvrStayTime") && !value["FemaleAvrStayTime"].IsNull())
     {
-        if (!value["FemaleAvrStayTime"].IsDouble())
+        if (!value["FemaleAvrStayTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ZoneAgeGroupAvrStayTime.FemaleAvrStayTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ZoneAgeGroupAvrStayTime.FemaleAvrStayTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_femaleAvrStayTime = value["FemaleAvrStayTime"].GetDouble();
         m_femaleAvrStayTimeHasBeenSet = true;

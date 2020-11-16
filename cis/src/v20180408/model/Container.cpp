@@ -107,9 +107,9 @@ CoreInternalOutcome Container::Deserialize(const Value &value)
 
     if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
     {
-        if (!value["Cpu"].IsDouble())
+        if (!value["Cpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Container.Cpu` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Container.Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetDouble();
         m_cpuHasBeenSet = true;
@@ -117,9 +117,9 @@ CoreInternalOutcome Container::Deserialize(const Value &value)
 
     if (value.HasMember("Memory") && !value["Memory"].IsNull())
     {
-        if (!value["Memory"].IsDouble())
+        if (!value["Memory"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Container.Memory` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Container.Memory` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetDouble();
         m_memoryHasBeenSet = true;

@@ -74,9 +74,9 @@ CoreInternalOutcome MixedInvoiceItem::Deserialize(const Value &value)
 
     if (value.HasMember("Angle") && !value["Angle"].IsNull())
     {
-        if (!value["Angle"].IsDouble())
+        if (!value["Angle"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MixedInvoiceItem.Angle` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MixedInvoiceItem.Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_angle = value["Angle"].GetDouble();
         m_angleHasBeenSet = true;

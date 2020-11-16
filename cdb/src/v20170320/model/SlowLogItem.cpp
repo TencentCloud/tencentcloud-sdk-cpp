@@ -53,9 +53,9 @@ CoreInternalOutcome SlowLogItem::Deserialize(const Value &value)
 
     if (value.HasMember("QueryTime") && !value["QueryTime"].IsNull())
     {
-        if (!value["QueryTime"].IsDouble())
+        if (!value["QueryTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.QueryTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SlowLogItem.QueryTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_queryTime = value["QueryTime"].GetDouble();
         m_queryTimeHasBeenSet = true;
@@ -103,9 +103,9 @@ CoreInternalOutcome SlowLogItem::Deserialize(const Value &value)
 
     if (value.HasMember("LockTime") && !value["LockTime"].IsNull())
     {
-        if (!value["LockTime"].IsDouble())
+        if (!value["LockTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.LockTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SlowLogItem.LockTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lockTime = value["LockTime"].GetDouble();
         m_lockTimeHasBeenSet = true;

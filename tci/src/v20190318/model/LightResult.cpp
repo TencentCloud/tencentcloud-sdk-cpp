@@ -44,9 +44,9 @@ CoreInternalOutcome LightResult::Deserialize(const Value &value)
 
     if (value.HasMember("LightValue") && !value["LightValue"].IsNull())
     {
-        if (!value["LightValue"].IsDouble())
+        if (!value["LightValue"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LightResult.LightValue` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `LightResult.LightValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lightValue = value["LightValue"].GetDouble();
         m_lightValueHasBeenSet = true;

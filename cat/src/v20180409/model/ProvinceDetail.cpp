@@ -39,9 +39,9 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const Value &value)
 
     if (value.HasMember("AvgAvailRatio") && !value["AvgAvailRatio"].IsNull())
     {
-        if (!value["AvgAvailRatio"].IsDouble())
+        if (!value["AvgAvailRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProvinceDetail.AvgAvailRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ProvinceDetail.AvgAvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgAvailRatio = value["AvgAvailRatio"].GetDouble();
         m_avgAvailRatioHasBeenSet = true;
@@ -99,9 +99,9 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const Value &value)
 
     if (value.HasMember("AvgTime") && !value["AvgTime"].IsNull())
     {
-        if (!value["AvgTime"].IsDouble())
+        if (!value["AvgTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProvinceDetail.AvgTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ProvinceDetail.AvgTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgTime = value["AvgTime"].GetDouble();
         m_avgTimeHasBeenSet = true;

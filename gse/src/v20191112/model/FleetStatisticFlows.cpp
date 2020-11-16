@@ -34,9 +34,9 @@ CoreInternalOutcome FleetStatisticFlows::Deserialize(const Value &value)
 
     if (value.HasMember("TotalUsedFlowMegaBytes") && !value["TotalUsedFlowMegaBytes"].IsNull())
     {
-        if (!value["TotalUsedFlowMegaBytes"].IsDouble())
+        if (!value["TotalUsedFlowMegaBytes"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticFlows.TotalUsedFlowMegaBytes` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FleetStatisticFlows.TotalUsedFlowMegaBytes` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalUsedFlowMegaBytes = value["TotalUsedFlowMegaBytes"].GetDouble();
         m_totalUsedFlowMegaBytesHasBeenSet = true;

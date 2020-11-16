@@ -45,9 +45,9 @@ CoreInternalOutcome KeyPointInfo::Deserialize(const Value &value)
 
     if (value.HasMember("X") && !value["X"].IsNull())
     {
-        if (!value["X"].IsDouble())
+        if (!value["X"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeyPointInfo.X` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `KeyPointInfo.X` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetDouble();
         m_xHasBeenSet = true;
@@ -55,9 +55,9 @@ CoreInternalOutcome KeyPointInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Y") && !value["Y"].IsNull())
     {
-        if (!value["Y"].IsDouble())
+        if (!value["Y"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeyPointInfo.Y` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `KeyPointInfo.Y` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetDouble();
         m_yHasBeenSet = true;

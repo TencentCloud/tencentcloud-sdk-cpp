@@ -60,9 +60,9 @@ CoreInternalOutcome PhoneInfo::Deserialize(const Value &value)
 
     if (value.HasMember("PronAccuracy") && !value["PronAccuracy"].IsNull())
     {
-        if (!value["PronAccuracy"].IsDouble())
+        if (!value["PronAccuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PhoneInfo.PronAccuracy` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PhoneInfo.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronAccuracy = value["PronAccuracy"].GetDouble();
         m_pronAccuracyHasBeenSet = true;

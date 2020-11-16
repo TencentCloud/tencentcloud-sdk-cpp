@@ -71,9 +71,9 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const Value &value)
 
     if (value.HasMember("FixedPrice") && !value["FixedPrice"].IsNull())
     {
-        if (!value["FixedPrice"].IsDouble())
+        if (!value["FixedPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.FixedPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.FixedPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fixedPrice = value["FixedPrice"].GetDouble();
         m_fixedPriceHasBeenSet = true;
@@ -121,9 +121,9 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const Value &value)
 
     if (value.HasMember("UsagePrice") && !value["UsagePrice"].IsNull())
     {
-        if (!value["UsagePrice"].IsDouble())
+        if (!value["UsagePrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.UsagePrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.UsagePrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_usagePrice = value["UsagePrice"].GetDouble();
         m_usagePriceHasBeenSet = true;

@@ -44,9 +44,9 @@ CoreInternalOutcome UpperBodyClothSleeve::Deserialize(const Value &value)
 
     if (value.HasMember("Probability") && !value["Probability"].IsNull())
     {
-        if (!value["Probability"].IsDouble())
+        if (!value["Probability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `UpperBodyClothSleeve.Probability` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `UpperBodyClothSleeve.Probability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_probability = value["Probability"].GetDouble();
         m_probabilityHasBeenSet = true;

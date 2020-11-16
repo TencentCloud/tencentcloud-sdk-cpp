@@ -67,9 +67,9 @@ CoreInternalOutcome SearchResultItem::Deserialize(const Value &value)
 
     if (value.HasMember("L2Score") && !value["L2Score"].IsNull())
     {
-        if (!value["L2Score"].IsDouble())
+        if (!value["L2Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SearchResultItem.L2Score` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SearchResultItem.L2Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_l2Score = value["L2Score"].GetDouble();
         m_l2ScoreHasBeenSet = true;

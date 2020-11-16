@@ -46,9 +46,9 @@ CoreInternalOutcome ClassificationResult::Deserialize(const Value &value)
 
     if (value.HasMember("FirstClassProbability") && !value["FirstClassProbability"].IsNull())
     {
-        if (!value["FirstClassProbability"].IsDouble())
+        if (!value["FirstClassProbability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.FirstClassProbability` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ClassificationResult.FirstClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_firstClassProbability = value["FirstClassProbability"].GetDouble();
         m_firstClassProbabilityHasBeenSet = true;
@@ -66,9 +66,9 @@ CoreInternalOutcome ClassificationResult::Deserialize(const Value &value)
 
     if (value.HasMember("SecondClassProbability") && !value["SecondClassProbability"].IsNull())
     {
-        if (!value["SecondClassProbability"].IsDouble())
+        if (!value["SecondClassProbability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.SecondClassProbability` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ClassificationResult.SecondClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_secondClassProbability = value["SecondClassProbability"].GetDouble();
         m_secondClassProbabilityHasBeenSet = true;

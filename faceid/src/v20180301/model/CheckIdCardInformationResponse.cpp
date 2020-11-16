@@ -76,9 +76,9 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
 
     if (rsp.HasMember("Sim") && !rsp["Sim"].IsNull())
     {
-        if (!rsp["Sim"].IsDouble())
+        if (!rsp["Sim"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Sim` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Sim` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sim = rsp["Sim"].GetDouble();
         m_simHasBeenSet = true;
@@ -186,9 +186,9 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
 
     if (rsp.HasMember("Quality") && !rsp["Quality"].IsNull())
     {
-        if (!rsp["Quality"].IsDouble())
+        if (!rsp["Quality"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Quality` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Quality` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_quality = rsp["Quality"].GetDouble();
         m_qualityHasBeenSet = true;

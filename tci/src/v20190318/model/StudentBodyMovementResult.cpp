@@ -42,9 +42,9 @@ CoreInternalOutcome StudentBodyMovementResult::Deserialize(const Value &value)
 
     if (value.HasMember("Confidence") && !value["Confidence"].IsNull())
     {
-        if (!value["Confidence"].IsDouble())
+        if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StudentBodyMovementResult.Confidence` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `StudentBodyMovementResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -52,9 +52,9 @@ CoreInternalOutcome StudentBodyMovementResult::Deserialize(const Value &value)
 
     if (value.HasMember("HandupConfidence") && !value["HandupConfidence"].IsNull())
     {
-        if (!value["HandupConfidence"].IsDouble())
+        if (!value["HandupConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StudentBodyMovementResult.HandupConfidence` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `StudentBodyMovementResult.HandupConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_handupConfidence = value["HandupConfidence"].GetDouble();
         m_handupConfidenceHasBeenSet = true;
@@ -102,9 +102,9 @@ CoreInternalOutcome StudentBodyMovementResult::Deserialize(const Value &value)
 
     if (value.HasMember("StandConfidence") && !value["StandConfidence"].IsNull())
     {
-        if (!value["StandConfidence"].IsDouble())
+        if (!value["StandConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StudentBodyMovementResult.StandConfidence` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `StudentBodyMovementResult.StandConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_standConfidence = value["StandConfidence"].GetDouble();
         m_standConfidenceHasBeenSet = true;

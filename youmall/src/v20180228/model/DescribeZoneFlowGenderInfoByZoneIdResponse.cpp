@@ -110,9 +110,9 @@ CoreInternalOutcome DescribeZoneFlowGenderInfoByZoneIdResponse::Deserialize(cons
 
     if (rsp.HasMember("MalePercent") && !rsp["MalePercent"].IsNull())
     {
-        if (!rsp["MalePercent"].IsDouble())
+        if (!rsp["MalePercent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MalePercent` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MalePercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_malePercent = rsp["MalePercent"].GetDouble();
         m_malePercentHasBeenSet = true;
@@ -120,9 +120,9 @@ CoreInternalOutcome DescribeZoneFlowGenderInfoByZoneIdResponse::Deserialize(cons
 
     if (rsp.HasMember("FemalePercent") && !rsp["FemalePercent"].IsNull())
     {
-        if (!rsp["FemalePercent"].IsDouble())
+        if (!rsp["FemalePercent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FemalePercent` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FemalePercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_femalePercent = rsp["FemalePercent"].GetDouble();
         m_femalePercentHasBeenSet = true;

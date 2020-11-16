@@ -58,9 +58,9 @@ CoreInternalOutcome MatchAttribute::Deserialize(const Value &value)
 
     if (value.HasMember("NumberValue") && !value["NumberValue"].IsNull())
     {
-        if (!value["NumberValue"].IsDouble())
+        if (!value["NumberValue"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MatchAttribute.NumberValue` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MatchAttribute.NumberValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_numberValue = value["NumberValue"].GetDouble();
         m_numberValueHasBeenSet = true;

@@ -45,9 +45,9 @@ CoreInternalOutcome CaptchaOperDataLoadTimeUnit::Deserialize(const Value &value)
 
     if (value.HasMember("MarketLoadTime") && !value["MarketLoadTime"].IsNull())
     {
-        if (!value["MarketLoadTime"].IsDouble())
+        if (!value["MarketLoadTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataLoadTimeUnit.MarketLoadTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CaptchaOperDataLoadTimeUnit.MarketLoadTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_marketLoadTime = value["MarketLoadTime"].GetDouble();
         m_marketLoadTimeHasBeenSet = true;
@@ -55,9 +55,9 @@ CoreInternalOutcome CaptchaOperDataLoadTimeUnit::Deserialize(const Value &value)
 
     if (value.HasMember("AppIdLoadTime") && !value["AppIdLoadTime"].IsNull())
     {
-        if (!value["AppIdLoadTime"].IsDouble())
+        if (!value["AppIdLoadTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataLoadTimeUnit.AppIdLoadTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CaptchaOperDataLoadTimeUnit.AppIdLoadTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_appIdLoadTime = value["AppIdLoadTime"].GetDouble();
         m_appIdLoadTimeHasBeenSet = true;

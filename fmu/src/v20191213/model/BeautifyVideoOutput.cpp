@@ -89,9 +89,9 @@ CoreInternalOutcome BeautifyVideoOutput::Deserialize(const Value &value)
 
     if (value.HasMember("Fps") && !value["Fps"].IsNull())
     {
-        if (!value["Fps"].IsDouble())
+        if (!value["Fps"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BeautifyVideoOutput.Fps` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `BeautifyVideoOutput.Fps` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fps = value["Fps"].GetDouble();
         m_fpsHasBeenSet = true;
@@ -99,9 +99,9 @@ CoreInternalOutcome BeautifyVideoOutput::Deserialize(const Value &value)
 
     if (value.HasMember("DurationInSec") && !value["DurationInSec"].IsNull())
     {
-        if (!value["DurationInSec"].IsDouble())
+        if (!value["DurationInSec"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BeautifyVideoOutput.DurationInSec` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `BeautifyVideoOutput.DurationInSec` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_durationInSec = value["DurationInSec"].GetDouble();
         m_durationInSecHasBeenSet = true;

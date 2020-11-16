@@ -112,9 +112,9 @@ CoreInternalOutcome GetFaceIdResultResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("Similarity") && !rsp["Similarity"].IsNull())
     {
-        if (!rsp["Similarity"].IsDouble())
+        if (!rsp["Similarity"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Similarity` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_similarity = rsp["Similarity"].GetDouble();
         m_similarityHasBeenSet = true;

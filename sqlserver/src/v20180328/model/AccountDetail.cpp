@@ -29,7 +29,8 @@ AccountDetail::AccountDetail() :
     m_updateTimeHasBeenSet(false),
     m_passTimeHasBeenSet(false),
     m_internalStatusHasBeenSet(false),
-    m_dbsHasBeenSet(false)
+    m_dbsHasBeenSet(false),
+    m_isAdminHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome AccountDetail::Deserialize(const Value &value)
         m_dbsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAdmin") && !value["IsAdmin"].IsNull())
+    {
+        if (!value["IsAdmin"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `AccountDetail.IsAdmin` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAdmin = value["IsAdmin"].GetBool();
+        m_isAdminHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -204,6 +215,14 @@ void AccountDetail::ToJsonObject(Value &value, Document::AllocatorType& allocato
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isAdminHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsAdmin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAdmin, allocator);
     }
 
 }
@@ -335,5 +354,21 @@ void AccountDetail::SetDbs(const vector<DBPrivilege>& _dbs)
 bool AccountDetail::DbsHasBeenSet() const
 {
     return m_dbsHasBeenSet;
+}
+
+bool AccountDetail::GetIsAdmin() const
+{
+    return m_isAdmin;
+}
+
+void AccountDetail::SetIsAdmin(const bool& _isAdmin)
+{
+    m_isAdmin = _isAdmin;
+    m_isAdminHasBeenSet = true;
+}
+
+bool AccountDetail::IsAdminHasBeenSet() const
+{
+    return m_isAdminHasBeenSet;
 }
 

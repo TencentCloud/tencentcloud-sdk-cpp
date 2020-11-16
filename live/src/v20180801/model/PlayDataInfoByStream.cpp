@@ -44,9 +44,9 @@ CoreInternalOutcome PlayDataInfoByStream::Deserialize(const Value &value)
 
     if (value.HasMember("TotalFlux") && !value["TotalFlux"].IsNull())
     {
-        if (!value["TotalFlux"].IsDouble())
+        if (!value["TotalFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PlayDataInfoByStream.TotalFlux` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PlayDataInfoByStream.TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalFlux = value["TotalFlux"].GetDouble();
         m_totalFluxHasBeenSet = true;

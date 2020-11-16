@@ -66,9 +66,9 @@ CoreInternalOutcome GetSimilarPersonResultResponse::Deserialize(const string &pa
 
     if (rsp.HasMember("Progress") && !rsp["Progress"].IsNull())
     {
-        if (!rsp["Progress"].IsDouble())
+        if (!rsp["Progress"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Progress` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Progress` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_progress = rsp["Progress"].GetDouble();
         m_progressHasBeenSet = true;

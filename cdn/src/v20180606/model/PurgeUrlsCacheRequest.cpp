@@ -25,7 +25,8 @@ using namespace std;
 
 PurgeUrlsCacheRequest::PurgeUrlsCacheRequest() :
     m_urlsHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_urlEncodeHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string PurgeUrlsCacheRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlEncodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UrlEncode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_urlEncode, allocator);
     }
 
 
@@ -95,6 +104,22 @@ void PurgeUrlsCacheRequest::SetArea(const string& _area)
 bool PurgeUrlsCacheRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+bool PurgeUrlsCacheRequest::GetUrlEncode() const
+{
+    return m_urlEncode;
+}
+
+void PurgeUrlsCacheRequest::SetUrlEncode(const bool& _urlEncode)
+{
+    m_urlEncode = _urlEncode;
+    m_urlEncodeHasBeenSet = true;
+}
+
+bool PurgeUrlsCacheRequest::UrlEncodeHasBeenSet() const
+{
+    return m_urlEncodeHasBeenSet;
 }
 
 

@@ -79,9 +79,9 @@ CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Bandwidth") && !value["Bandwidth"].IsNull())
     {
-        if (!value["Bandwidth"].IsDouble())
+        if (!value["Bandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MonitorStreamPlayInfo.Bandwidth` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MonitorStreamPlayInfo.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetDouble();
         m_bandwidthHasBeenSet = true;

@@ -73,9 +73,9 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
 
     if (rsp.HasMember("PronAccuracy") && !rsp["PronAccuracy"].IsNull())
     {
-        if (!rsp["PronAccuracy"].IsDouble())
+        if (!rsp["PronAccuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PronAccuracy` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronAccuracy = rsp["PronAccuracy"].GetDouble();
         m_pronAccuracyHasBeenSet = true;
@@ -83,9 +83,9 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
 
     if (rsp.HasMember("PronFluency") && !rsp["PronFluency"].IsNull())
     {
-        if (!rsp["PronFluency"].IsDouble())
+        if (!rsp["PronFluency"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PronFluency` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronFluency = rsp["PronFluency"].GetDouble();
         m_pronFluencyHasBeenSet = true;
@@ -93,9 +93,9 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
 
     if (rsp.HasMember("PronCompletion") && !rsp["PronCompletion"].IsNull())
     {
-        if (!rsp["PronCompletion"].IsDouble())
+        if (!rsp["PronCompletion"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PronCompletion` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PronCompletion` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronCompletion = rsp["PronCompletion"].GetDouble();
         m_pronCompletionHasBeenSet = true;
@@ -173,9 +173,9 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
 
     if (rsp.HasMember("SuggestedScore") && !rsp["SuggestedScore"].IsNull())
     {
-        if (!rsp["SuggestedScore"].IsDouble())
+        if (!rsp["SuggestedScore"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SuggestedScore` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SuggestedScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_suggestedScore = rsp["SuggestedScore"].GetDouble();
         m_suggestedScoreHasBeenSet = true;

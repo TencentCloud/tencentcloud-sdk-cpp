@@ -27,7 +27,8 @@ LayoutParams::LayoutParams() :
     m_mainVideoStreamTypeHasBeenSet(false),
     m_smallVideoLayoutParamsHasBeenSet(false),
     m_mainVideoRightAlignHasBeenSet(false),
-    m_mixVideoUidsHasBeenSet(false)
+    m_mixVideoUidsHasBeenSet(false),
+    m_presetLayoutConfigHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,26 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
         m_mixVideoUidsHasBeenSet = true;
     }
 
+    if (value.HasMember("PresetLayoutConfig") && !value["PresetLayoutConfig"].IsNull())
+    {
+        if (!value["PresetLayoutConfig"].IsArray())
+            return CoreInternalOutcome(Error("response `LayoutParams.PresetLayoutConfig` is not array type"));
+
+        const Value &tmpValue = value["PresetLayoutConfig"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PresetLayoutConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_presetLayoutConfig.push_back(item);
+        }
+        m_presetLayoutConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +185,21 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
         for (auto itr = m_mixVideoUids.begin(); itr != m_mixVideoUids.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_presetLayoutConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PresetLayoutConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_presetLayoutConfig.begin(); itr != m_presetLayoutConfig.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -264,5 +300,21 @@ void LayoutParams::SetMixVideoUids(const vector<string>& _mixVideoUids)
 bool LayoutParams::MixVideoUidsHasBeenSet() const
 {
     return m_mixVideoUidsHasBeenSet;
+}
+
+vector<PresetLayoutConfig> LayoutParams::GetPresetLayoutConfig() const
+{
+    return m_presetLayoutConfig;
+}
+
+void LayoutParams::SetPresetLayoutConfig(const vector<PresetLayoutConfig>& _presetLayoutConfig)
+{
+    m_presetLayoutConfig = _presetLayoutConfig;
+    m_presetLayoutConfigHasBeenSet = true;
+}
+
+bool LayoutParams::PresetLayoutConfigHasBeenSet() const
+{
+    return m_presetLayoutConfigHasBeenSet;
 }
 

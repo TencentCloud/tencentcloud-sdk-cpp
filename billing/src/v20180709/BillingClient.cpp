@@ -685,6 +685,49 @@ BillingClient::DescribeDealsByCondOutcomeCallable BillingClient::DescribeDealsBy
     return task->get_future();
 }
 
+BillingClient::DescribeDosageCosDetailByDateOutcome BillingClient::DescribeDosageCosDetailByDate(const DescribeDosageCosDetailByDateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDosageCosDetailByDate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDosageCosDetailByDateResponse rsp = DescribeDosageCosDetailByDateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDosageCosDetailByDateOutcome(rsp);
+        else
+            return DescribeDosageCosDetailByDateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDosageCosDetailByDateOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeDosageCosDetailByDateAsync(const DescribeDosageCosDetailByDateRequest& request, const DescribeDosageCosDetailByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDosageCosDetailByDate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeDosageCosDetailByDateOutcomeCallable BillingClient::DescribeDosageCosDetailByDateCallable(const DescribeDosageCosDetailByDateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDosageCosDetailByDateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDosageCosDetailByDate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::DescribeDosageDetailByDateOutcome BillingClient::DescribeDosageDetailByDate(const DescribeDosageDetailByDateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDosageDetailByDate");

@@ -51,9 +51,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("UnitPrice") && !value["UnitPrice"].IsNull())
     {
-        if (!value["UnitPrice"].IsDouble())
+        if (!value["UnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.UnitPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unitPrice = value["UnitPrice"].GetDouble();
         m_unitPriceHasBeenSet = true;
@@ -71,9 +71,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("OriginalPrice") && !value["OriginalPrice"].IsNull())
     {
-        if (!value["OriginalPrice"].IsDouble())
+        if (!value["OriginalPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalPrice = value["OriginalPrice"].GetDouble();
         m_originalPriceHasBeenSet = true;
@@ -81,9 +81,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("DiscountPrice") && !value["DiscountPrice"].IsNull())
     {
-        if (!value["DiscountPrice"].IsDouble())
+        if (!value["DiscountPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountPrice = value["DiscountPrice"].GetDouble();
         m_discountPriceHasBeenSet = true;
@@ -91,9 +91,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("Discount") && !value["Discount"].IsNull())
     {
-        if (!value["Discount"].IsDouble())
+        if (!value["Discount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.Discount` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.Discount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discount = value["Discount"].GetDouble();
         m_discountHasBeenSet = true;
@@ -101,9 +101,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("UnitPriceDiscount") && !value["UnitPriceDiscount"].IsNull())
     {
-        if (!value["UnitPriceDiscount"].IsDouble())
+        if (!value["UnitPriceDiscount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceDiscount` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unitPriceDiscount = value["UnitPriceDiscount"].GetDouble();
         m_unitPriceDiscountHasBeenSet = true;
@@ -111,9 +111,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("UnitPriceSecondStep") && !value["UnitPriceSecondStep"].IsNull())
     {
-        if (!value["UnitPriceSecondStep"].IsDouble())
+        if (!value["UnitPriceSecondStep"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceSecondStep` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceSecondStep` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unitPriceSecondStep = value["UnitPriceSecondStep"].GetDouble();
         m_unitPriceSecondStepHasBeenSet = true;
@@ -121,9 +121,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("UnitPriceDiscountSecondStep") && !value["UnitPriceDiscountSecondStep"].IsNull())
     {
-        if (!value["UnitPriceDiscountSecondStep"].IsDouble())
+        if (!value["UnitPriceDiscountSecondStep"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceDiscountSecondStep` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceDiscountSecondStep` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unitPriceDiscountSecondStep = value["UnitPriceDiscountSecondStep"].GetDouble();
         m_unitPriceDiscountSecondStepHasBeenSet = true;
@@ -131,9 +131,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("UnitPriceThirdStep") && !value["UnitPriceThirdStep"].IsNull())
     {
-        if (!value["UnitPriceThirdStep"].IsDouble())
+        if (!value["UnitPriceThirdStep"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceThirdStep` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceThirdStep` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unitPriceThirdStep = value["UnitPriceThirdStep"].GetDouble();
         m_unitPriceThirdStepHasBeenSet = true;
@@ -141,9 +141,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("UnitPriceDiscountThirdStep") && !value["UnitPriceDiscountThirdStep"].IsNull())
     {
-        if (!value["UnitPriceDiscountThirdStep"].IsDouble())
+        if (!value["UnitPriceDiscountThirdStep"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceDiscountThirdStep` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceDiscountThirdStep` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unitPriceDiscountThirdStep = value["UnitPriceDiscountThirdStep"].GetDouble();
         m_unitPriceDiscountThirdStepHasBeenSet = true;
@@ -151,9 +151,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("OriginalPriceThreeYear") && !value["OriginalPriceThreeYear"].IsNull())
     {
-        if (!value["OriginalPriceThreeYear"].IsDouble())
+        if (!value["OriginalPriceThreeYear"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPriceThreeYear` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPriceThreeYear` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalPriceThreeYear = value["OriginalPriceThreeYear"].GetDouble();
         m_originalPriceThreeYearHasBeenSet = true;
@@ -161,9 +161,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("DiscountPriceThreeYear") && !value["DiscountPriceThreeYear"].IsNull())
     {
-        if (!value["DiscountPriceThreeYear"].IsDouble())
+        if (!value["DiscountPriceThreeYear"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPriceThreeYear` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPriceThreeYear` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountPriceThreeYear = value["DiscountPriceThreeYear"].GetDouble();
         m_discountPriceThreeYearHasBeenSet = true;
@@ -171,9 +171,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("DiscountThreeYear") && !value["DiscountThreeYear"].IsNull())
     {
-        if (!value["DiscountThreeYear"].IsDouble())
+        if (!value["DiscountThreeYear"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.DiscountThreeYear` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountThreeYear` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountThreeYear = value["DiscountThreeYear"].GetDouble();
         m_discountThreeYearHasBeenSet = true;
@@ -181,9 +181,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("OriginalPriceFiveYear") && !value["OriginalPriceFiveYear"].IsNull())
     {
-        if (!value["OriginalPriceFiveYear"].IsDouble())
+        if (!value["OriginalPriceFiveYear"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPriceFiveYear` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPriceFiveYear` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalPriceFiveYear = value["OriginalPriceFiveYear"].GetDouble();
         m_originalPriceFiveYearHasBeenSet = true;
@@ -191,9 +191,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("DiscountPriceFiveYear") && !value["DiscountPriceFiveYear"].IsNull())
     {
-        if (!value["DiscountPriceFiveYear"].IsDouble())
+        if (!value["DiscountPriceFiveYear"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPriceFiveYear` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPriceFiveYear` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountPriceFiveYear = value["DiscountPriceFiveYear"].GetDouble();
         m_discountPriceFiveYearHasBeenSet = true;
@@ -201,9 +201,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("DiscountFiveYear") && !value["DiscountFiveYear"].IsNull())
     {
-        if (!value["DiscountFiveYear"].IsDouble())
+        if (!value["DiscountFiveYear"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.DiscountFiveYear` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountFiveYear` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountFiveYear = value["DiscountFiveYear"].GetDouble();
         m_discountFiveYearHasBeenSet = true;
@@ -211,9 +211,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("OriginalPriceOneYear") && !value["OriginalPriceOneYear"].IsNull())
     {
-        if (!value["OriginalPriceOneYear"].IsDouble())
+        if (!value["OriginalPriceOneYear"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPriceOneYear` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPriceOneYear` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalPriceOneYear = value["OriginalPriceOneYear"].GetDouble();
         m_originalPriceOneYearHasBeenSet = true;
@@ -221,9 +221,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("DiscountPriceOneYear") && !value["DiscountPriceOneYear"].IsNull())
     {
-        if (!value["DiscountPriceOneYear"].IsDouble())
+        if (!value["DiscountPriceOneYear"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPriceOneYear` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPriceOneYear` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountPriceOneYear = value["DiscountPriceOneYear"].GetDouble();
         m_discountPriceOneYearHasBeenSet = true;
@@ -231,9 +231,9 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("DiscountOneYear") && !value["DiscountOneYear"].IsNull())
     {
-        if (!value["DiscountOneYear"].IsDouble())
+        if (!value["DiscountOneYear"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.DiscountOneYear` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.DiscountOneYear` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountOneYear = value["DiscountOneYear"].GetDouble();
         m_discountOneYearHasBeenSet = true;

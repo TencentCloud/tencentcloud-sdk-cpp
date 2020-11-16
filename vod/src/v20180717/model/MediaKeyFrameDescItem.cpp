@@ -34,9 +34,9 @@ CoreInternalOutcome MediaKeyFrameDescItem::Deserialize(const Value &value)
 
     if (value.HasMember("TimeOffset") && !value["TimeOffset"].IsNull())
     {
-        if (!value["TimeOffset"].IsDouble())
+        if (!value["TimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaKeyFrameDescItem.TimeOffset` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MediaKeyFrameDescItem.TimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_timeOffset = value["TimeOffset"].GetDouble();
         m_timeOffsetHasBeenSet = true;

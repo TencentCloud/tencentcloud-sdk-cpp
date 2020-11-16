@@ -179,9 +179,9 @@ CoreInternalOutcome CardInfo::Deserialize(const Value &value)
 
     if (value.HasMember("DataUsedInPeriod") && !value["DataUsedInPeriod"].IsNull())
     {
-        if (!value["DataUsedInPeriod"].IsDouble())
+        if (!value["DataUsedInPeriod"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.DataUsedInPeriod` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CardInfo.DataUsedInPeriod` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_dataUsedInPeriod = value["DataUsedInPeriod"].GetDouble();
         m_dataUsedInPeriodHasBeenSet = true;
@@ -189,9 +189,9 @@ CoreInternalOutcome CardInfo::Deserialize(const Value &value)
 
     if (value.HasMember("DataTotalInPeriod") && !value["DataTotalInPeriod"].IsNull())
     {
-        if (!value["DataTotalInPeriod"].IsDouble())
+        if (!value["DataTotalInPeriod"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.DataTotalInPeriod` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CardInfo.DataTotalInPeriod` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_dataTotalInPeriod = value["DataTotalInPeriod"].GetDouble();
         m_dataTotalInPeriodHasBeenSet = true;

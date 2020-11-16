@@ -37,9 +37,9 @@ CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const Value &v
 
     if (value.HasMember("X") && !value["X"].IsNull())
     {
-        if (!value["X"].IsDouble())
+        if (!value["X"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.X` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.X` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetDouble();
         m_xHasBeenSet = true;
@@ -47,9 +47,9 @@ CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const Value &v
 
     if (value.HasMember("Y") && !value["Y"].IsNull())
     {
-        if (!value["Y"].IsDouble())
+        if (!value["Y"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.Y` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.Y` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetDouble();
         m_yHasBeenSet = true;
@@ -77,9 +77,9 @@ CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const Value &v
 
     if (value.HasMember("Rotate") && !value["Rotate"].IsNull())
     {
-        if (!value["Rotate"].IsDouble())
+        if (!value["Rotate"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.Rotate` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.Rotate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_rotate = value["Rotate"].GetDouble();
         m_rotateHasBeenSet = true;

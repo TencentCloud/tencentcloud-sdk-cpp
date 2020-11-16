@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool EnvIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用统一域名
+                     * @return EnableUnion 是否启用统一域名
+                     */
+                    bool GetEnableUnion() const;
+
+                    /**
+                     * 设置是否启用统一域名
+                     * @param EnableUnion 是否启用统一域名
+                     */
+                    void SetEnableUnion(const bool& _enableUnion);
+
+                    /**
+                     * 判断参数 EnableUnion 是否已赋值
+                     * @return EnableUnion 是否已赋值
+                     */
+                    bool EnableUnionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
+
+                    /**
+                     * 是否启用统一域名
+                     */
+                    bool m_enableUnion;
+                    bool m_enableUnionHasBeenSet;
 
                 };
             }

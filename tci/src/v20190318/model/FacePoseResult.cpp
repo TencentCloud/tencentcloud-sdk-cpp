@@ -46,9 +46,9 @@ CoreInternalOutcome FacePoseResult::Deserialize(const Value &value)
 
     if (value.HasMember("Pitch") && !value["Pitch"].IsNull())
     {
-        if (!value["Pitch"].IsDouble())
+        if (!value["Pitch"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FacePoseResult.Pitch` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FacePoseResult.Pitch` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pitch = value["Pitch"].GetDouble();
         m_pitchHasBeenSet = true;
@@ -56,9 +56,9 @@ CoreInternalOutcome FacePoseResult::Deserialize(const Value &value)
 
     if (value.HasMember("Roll") && !value["Roll"].IsNull())
     {
-        if (!value["Roll"].IsDouble())
+        if (!value["Roll"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FacePoseResult.Roll` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FacePoseResult.Roll` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_roll = value["Roll"].GetDouble();
         m_rollHasBeenSet = true;
@@ -66,9 +66,9 @@ CoreInternalOutcome FacePoseResult::Deserialize(const Value &value)
 
     if (value.HasMember("Yaw") && !value["Yaw"].IsNull())
     {
-        if (!value["Yaw"].IsDouble())
+        if (!value["Yaw"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FacePoseResult.Yaw` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FacePoseResult.Yaw` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_yaw = value["Yaw"].GetDouble();
         m_yawHasBeenSet = true;

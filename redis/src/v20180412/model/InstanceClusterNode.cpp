@@ -145,9 +145,9 @@ CoreInternalOutcome InstanceClusterNode::Deserialize(const Value &value)
 
     if (value.HasMember("QpsSlope") && !value["QpsSlope"].IsNull())
     {
-        if (!value["QpsSlope"].IsDouble())
+        if (!value["QpsSlope"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterNode.QpsSlope` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstanceClusterNode.QpsSlope` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_qpsSlope = value["QpsSlope"].GetDouble();
         m_qpsSlopeHasBeenSet = true;
@@ -165,9 +165,9 @@ CoreInternalOutcome InstanceClusterNode::Deserialize(const Value &value)
 
     if (value.HasMember("StorageSlope") && !value["StorageSlope"].IsNull())
     {
-        if (!value["StorageSlope"].IsDouble())
+        if (!value["StorageSlope"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterNode.StorageSlope` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstanceClusterNode.StorageSlope` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_storageSlope = value["StorageSlope"].GetDouble();
         m_storageSlopeHasBeenSet = true;

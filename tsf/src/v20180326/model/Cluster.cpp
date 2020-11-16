@@ -130,9 +130,9 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
 
     if (value.HasMember("ClusterTotalCpu") && !value["ClusterTotalCpu"].IsNull())
     {
-        if (!value["ClusterTotalCpu"].IsDouble())
+        if (!value["ClusterTotalCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterTotalCpu` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Cluster.ClusterTotalCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterTotalCpu = value["ClusterTotalCpu"].GetDouble();
         m_clusterTotalCpuHasBeenSet = true;
@@ -140,9 +140,9 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
 
     if (value.HasMember("ClusterTotalMem") && !value["ClusterTotalMem"].IsNull())
     {
-        if (!value["ClusterTotalMem"].IsDouble())
+        if (!value["ClusterTotalMem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterTotalMem` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Cluster.ClusterTotalMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterTotalMem = value["ClusterTotalMem"].GetDouble();
         m_clusterTotalMemHasBeenSet = true;
@@ -150,9 +150,9 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
 
     if (value.HasMember("ClusterUsedCpu") && !value["ClusterUsedCpu"].IsNull())
     {
-        if (!value["ClusterUsedCpu"].IsDouble())
+        if (!value["ClusterUsedCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterUsedCpu` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Cluster.ClusterUsedCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterUsedCpu = value["ClusterUsedCpu"].GetDouble();
         m_clusterUsedCpuHasBeenSet = true;
@@ -160,9 +160,9 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
 
     if (value.HasMember("ClusterUsedMem") && !value["ClusterUsedMem"].IsNull())
     {
-        if (!value["ClusterUsedMem"].IsDouble())
+        if (!value["ClusterUsedMem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterUsedMem` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Cluster.ClusterUsedMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterUsedMem = value["ClusterUsedMem"].GetDouble();
         m_clusterUsedMemHasBeenSet = true;
@@ -280,9 +280,9 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
 
     if (value.HasMember("ClusterLimitCpu") && !value["ClusterLimitCpu"].IsNull())
     {
-        if (!value["ClusterLimitCpu"].IsDouble())
+        if (!value["ClusterLimitCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterLimitCpu` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Cluster.ClusterLimitCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterLimitCpu = value["ClusterLimitCpu"].GetDouble();
         m_clusterLimitCpuHasBeenSet = true;
@@ -290,9 +290,9 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
 
     if (value.HasMember("ClusterLimitMem") && !value["ClusterLimitMem"].IsNull())
     {
-        if (!value["ClusterLimitMem"].IsDouble())
+        if (!value["ClusterLimitMem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterLimitMem` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Cluster.ClusterLimitMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterLimitMem = value["ClusterLimitMem"].GetDouble();
         m_clusterLimitMemHasBeenSet = true;

@@ -197,9 +197,9 @@ CoreInternalOutcome InstanceSet::Deserialize(const Value &value)
 
     if (value.HasMember("Size") && !value["Size"].IsNull())
     {
-        if (!value["Size"].IsDouble())
+        if (!value["Size"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstanceSet.Size` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstanceSet.Size` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetDouble();
         m_sizeHasBeenSet = true;
@@ -207,9 +207,9 @@ CoreInternalOutcome InstanceSet::Deserialize(const Value &value)
 
     if (value.HasMember("SizeUsed") && !value["SizeUsed"].IsNull())
     {
-        if (!value["SizeUsed"].IsDouble())
+        if (!value["SizeUsed"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstanceSet.SizeUsed` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstanceSet.SizeUsed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sizeUsed = value["SizeUsed"].GetDouble();
         m_sizeUsedHasBeenSet = true;

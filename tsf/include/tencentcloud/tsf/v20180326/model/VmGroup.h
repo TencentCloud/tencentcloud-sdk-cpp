@@ -574,6 +574,116 @@ namespace TencentCloud
                      */
                     bool DeployDescHasBeenSet() const;
 
+                    /**
+                     * 获取滚动发布的更新方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateType 滚动发布的更新方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetUpdateType() const;
+
+                    /**
+                     * 设置滚动发布的更新方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdateType 滚动发布的更新方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdateType(const uint64_t& _updateType);
+
+                    /**
+                     * 判断参数 UpdateType 是否已赋值
+                     * @return UpdateType 是否已赋值
+                     */
+                    bool UpdateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取发布是否启用beta批次
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployBetaEnable 发布是否启用beta批次
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDeployBetaEnable() const;
+
+                    /**
+                     * 设置发布是否启用beta批次
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeployBetaEnable 发布是否启用beta批次
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeployBetaEnable(const bool& _deployBetaEnable);
+
+                    /**
+                     * 判断参数 DeployBetaEnable 是否已赋值
+                     * @return DeployBetaEnable 是否已赋值
+                     */
+                    bool DeployBetaEnableHasBeenSet() const;
+
+                    /**
+                     * 获取滚动发布的批次比例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployBatch 滚动发布的批次比例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> GetDeployBatch() const;
+
+                    /**
+                     * 设置滚动发布的批次比例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeployBatch 滚动发布的批次比例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeployBatch(const std::vector<double>& _deployBatch);
+
+                    /**
+                     * 判断参数 DeployBatch 是否已赋值
+                     * @return DeployBatch 是否已赋值
+                     */
+                    bool DeployBatchHasBeenSet() const;
+
+                    /**
+                     * 获取滚动发布的批次执行方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployExeMode 滚动发布的批次执行方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeployExeMode() const;
+
+                    /**
+                     * 设置滚动发布的批次执行方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeployExeMode 滚动发布的批次执行方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeployExeMode(const std::string& _deployExeMode);
+
+                    /**
+                     * 判断参数 DeployExeMode 是否已赋值
+                     * @return DeployExeMode 是否已赋值
+                     */
+                    bool DeployExeModeHasBeenSet() const;
+
+                    /**
+                     * 获取滚动发布的每个批次的等待时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployWaitTime 滚动发布的每个批次的等待时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDeployWaitTime() const;
+
+                    /**
+                     * 设置滚动发布的每个批次的等待时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeployWaitTime 滚动发布的每个批次的等待时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeployWaitTime(const uint64_t& _deployWaitTime);
+
+                    /**
+                     * 判断参数 DeployWaitTime 是否已赋值
+                     * @return DeployWaitTime 是否已赋值
+                     */
+                    bool DeployWaitTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -743,6 +853,41 @@ namespace TencentCloud
                      */
                     std::string m_deployDesc;
                     bool m_deployDescHasBeenSet;
+
+                    /**
+                     * 滚动发布的更新方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_updateType;
+                    bool m_updateTypeHasBeenSet;
+
+                    /**
+                     * 发布是否启用beta批次
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_deployBetaEnable;
+                    bool m_deployBetaEnableHasBeenSet;
+
+                    /**
+                     * 滚动发布的批次比例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> m_deployBatch;
+                    bool m_deployBatchHasBeenSet;
+
+                    /**
+                     * 滚动发布的批次执行方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deployExeMode;
+                    bool m_deployExeModeHasBeenSet;
+
+                    /**
+                     * 滚动发布的每个批次的等待时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_deployWaitTime;
+                    bool m_deployWaitTimeHasBeenSet;
 
                 };
             }

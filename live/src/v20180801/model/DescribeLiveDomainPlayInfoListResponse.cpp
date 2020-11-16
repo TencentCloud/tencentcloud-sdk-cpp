@@ -80,9 +80,9 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
 
     if (rsp.HasMember("TotalBandwidth") && !rsp["TotalBandwidth"].IsNull())
     {
-        if (!rsp["TotalBandwidth"].IsDouble())
+        if (!rsp["TotalBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TotalBandwidth` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalBandwidth = rsp["TotalBandwidth"].GetDouble();
         m_totalBandwidthHasBeenSet = true;
@@ -90,9 +90,9 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
 
     if (rsp.HasMember("TotalFlux") && !rsp["TotalFlux"].IsNull())
     {
-        if (!rsp["TotalFlux"].IsDouble())
+        if (!rsp["TotalFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TotalFlux` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalFlux = rsp["TotalFlux"].GetDouble();
         m_totalFluxHasBeenSet = true;

@@ -31,7 +31,8 @@ HealthCheckSetting::HealthCheckSetting() :
     m_schemeHasBeenSet(false),
     m_portHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_commandHasBeenSet(false)
+    m_commandHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,16 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const Value &value)
         m_commandHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HealthCheckSetting.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -233,6 +244,14 @@ void HealthCheckSetting::ToJsonObject(Value &value, Document::AllocatorType& all
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -396,5 +415,21 @@ void HealthCheckSetting::SetCommand(const vector<string>& _command)
 bool HealthCheckSetting::CommandHasBeenSet() const
 {
     return m_commandHasBeenSet;
+}
+
+string HealthCheckSetting::GetType() const
+{
+    return m_type;
+}
+
+void HealthCheckSetting::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool HealthCheckSetting::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

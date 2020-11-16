@@ -95,9 +95,9 @@ CoreInternalOutcome Item::Deserialize(const Value &value)
 
     if (value.HasMember("ItemConf") && !value["ItemConf"].IsNull())
     {
-        if (!value["ItemConf"].IsDouble())
+        if (!value["ItemConf"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Item.ItemConf` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Item.ItemConf` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_itemConf = value["ItemConf"].GetDouble();
         m_itemConfHasBeenSet = true;

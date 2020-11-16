@@ -80,9 +80,9 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const Value &value)
 
     if (value.HasMember("CostTime") && !value["CostTime"].IsNull())
     {
-        if (!value["CostTime"].IsDouble())
+        if (!value["CostTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.CostTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NormalQueryItem.CostTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_costTime = value["CostTime"].GetDouble();
         m_costTimeHasBeenSet = true;
@@ -100,9 +100,9 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const Value &value)
 
     if (value.HasMember("MinCostTime") && !value["MinCostTime"].IsNull())
     {
-        if (!value["MinCostTime"].IsDouble())
+        if (!value["MinCostTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.MinCostTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NormalQueryItem.MinCostTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_minCostTime = value["MinCostTime"].GetDouble();
         m_minCostTimeHasBeenSet = true;
@@ -110,9 +110,9 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const Value &value)
 
     if (value.HasMember("MaxCostTime") && !value["MaxCostTime"].IsNull())
     {
-        if (!value["MaxCostTime"].IsDouble())
+        if (!value["MaxCostTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.MaxCostTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NormalQueryItem.MaxCostTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxCostTime = value["MaxCostTime"].GetDouble();
         m_maxCostTimeHasBeenSet = true;

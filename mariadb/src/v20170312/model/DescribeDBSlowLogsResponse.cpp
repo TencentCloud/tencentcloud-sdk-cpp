@@ -89,9 +89,9 @@ CoreInternalOutcome DescribeDBSlowLogsResponse::Deserialize(const string &payloa
 
     if (rsp.HasMember("LockTimeSum") && !rsp["LockTimeSum"].IsNull())
     {
-        if (!rsp["LockTimeSum"].IsDouble())
+        if (!rsp["LockTimeSum"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LockTimeSum` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `LockTimeSum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lockTimeSum = rsp["LockTimeSum"].GetDouble();
         m_lockTimeSumHasBeenSet = true;
@@ -119,9 +119,9 @@ CoreInternalOutcome DescribeDBSlowLogsResponse::Deserialize(const string &payloa
 
     if (rsp.HasMember("QueryTimeSum") && !rsp["QueryTimeSum"].IsNull())
     {
-        if (!rsp["QueryTimeSum"].IsDouble())
+        if (!rsp["QueryTimeSum"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `QueryTimeSum` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `QueryTimeSum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_queryTimeSum = rsp["QueryTimeSum"].GetDouble();
         m_queryTimeSumHasBeenSet = true;

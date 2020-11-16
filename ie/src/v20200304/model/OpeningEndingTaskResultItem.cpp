@@ -36,9 +36,9 @@ CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const Value &value)
 
     if (value.HasMember("OpeningTimeOffset") && !value["OpeningTimeOffset"].IsNull())
     {
-        if (!value["OpeningTimeOffset"].IsDouble())
+        if (!value["OpeningTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.OpeningTimeOffset` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.OpeningTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_openingTimeOffset = value["OpeningTimeOffset"].GetDouble();
         m_openingTimeOffsetHasBeenSet = true;
@@ -46,9 +46,9 @@ CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const Value &value)
 
     if (value.HasMember("OpeningConfidence") && !value["OpeningConfidence"].IsNull())
     {
-        if (!value["OpeningConfidence"].IsDouble())
+        if (!value["OpeningConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.OpeningConfidence` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.OpeningConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_openingConfidence = value["OpeningConfidence"].GetDouble();
         m_openingConfidenceHasBeenSet = true;
@@ -56,9 +56,9 @@ CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const Value &value)
 
     if (value.HasMember("EndingTimeOffset") && !value["EndingTimeOffset"].IsNull())
     {
-        if (!value["EndingTimeOffset"].IsDouble())
+        if (!value["EndingTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.EndingTimeOffset` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.EndingTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endingTimeOffset = value["EndingTimeOffset"].GetDouble();
         m_endingTimeOffsetHasBeenSet = true;
@@ -66,9 +66,9 @@ CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const Value &value)
 
     if (value.HasMember("EndingConfidence") && !value["EndingConfidence"].IsNull())
     {
-        if (!value["EndingConfidence"].IsDouble())
+        if (!value["EndingConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.EndingConfidence` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.EndingConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endingConfidence = value["EndingConfidence"].GetDouble();
         m_endingConfidenceHasBeenSet = true;

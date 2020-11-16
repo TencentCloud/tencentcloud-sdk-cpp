@@ -45,7 +45,12 @@ VmGroup::VmGroup() :
     m_applicationTypeHasBeenSet(false),
     m_groupResourceTypeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_deployDescHasBeenSet(false)
+    m_deployDescHasBeenSet(false),
+    m_updateTypeHasBeenSet(false),
+    m_deployBetaEnableHasBeenSet(false),
+    m_deployBatchHasBeenSet(false),
+    m_deployExeModeHasBeenSet(false),
+    m_deployWaitTimeHasBeenSet(false)
 {
 }
 
@@ -294,6 +299,59 @@ CoreInternalOutcome VmGroup::Deserialize(const Value &value)
         m_deployDescHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateType") && !value["UpdateType"].IsNull())
+    {
+        if (!value["UpdateType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.UpdateType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateType = value["UpdateType"].GetUint64();
+        m_updateTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployBetaEnable") && !value["DeployBetaEnable"].IsNull())
+    {
+        if (!value["DeployBetaEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.DeployBetaEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployBetaEnable = value["DeployBetaEnable"].GetBool();
+        m_deployBetaEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployBatch") && !value["DeployBatch"].IsNull())
+    {
+        if (!value["DeployBatch"].IsArray())
+            return CoreInternalOutcome(Error("response `VmGroup.DeployBatch` is not array type"));
+
+        const Value &tmpValue = value["DeployBatch"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_deployBatch.push_back((*itr).GetDouble());
+        }
+        m_deployBatchHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployExeMode") && !value["DeployExeMode"].IsNull())
+    {
+        if (!value["DeployExeMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.DeployExeMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployExeMode = string(value["DeployExeMode"].GetString());
+        m_deployExeModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployWaitTime") && !value["DeployWaitTime"].IsNull())
+    {
+        if (!value["DeployWaitTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.DeployWaitTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployWaitTime = value["DeployWaitTime"].GetUint64();
+        m_deployWaitTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -491,6 +549,51 @@ void VmGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "DeployDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_deployDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateType, allocator);
+    }
+
+    if (m_deployBetaEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployBetaEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deployBetaEnable, allocator);
+    }
+
+    if (m_deployBatchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployBatch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_deployBatch.begin(); itr != m_deployBatch.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+        }
+    }
+
+    if (m_deployExeModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployExeMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deployExeMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployWaitTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployWaitTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deployWaitTime, allocator);
     }
 
 }
@@ -878,5 +981,85 @@ void VmGroup::SetDeployDesc(const string& _deployDesc)
 bool VmGroup::DeployDescHasBeenSet() const
 {
     return m_deployDescHasBeenSet;
+}
+
+uint64_t VmGroup::GetUpdateType() const
+{
+    return m_updateType;
+}
+
+void VmGroup::SetUpdateType(const uint64_t& _updateType)
+{
+    m_updateType = _updateType;
+    m_updateTypeHasBeenSet = true;
+}
+
+bool VmGroup::UpdateTypeHasBeenSet() const
+{
+    return m_updateTypeHasBeenSet;
+}
+
+bool VmGroup::GetDeployBetaEnable() const
+{
+    return m_deployBetaEnable;
+}
+
+void VmGroup::SetDeployBetaEnable(const bool& _deployBetaEnable)
+{
+    m_deployBetaEnable = _deployBetaEnable;
+    m_deployBetaEnableHasBeenSet = true;
+}
+
+bool VmGroup::DeployBetaEnableHasBeenSet() const
+{
+    return m_deployBetaEnableHasBeenSet;
+}
+
+vector<double> VmGroup::GetDeployBatch() const
+{
+    return m_deployBatch;
+}
+
+void VmGroup::SetDeployBatch(const vector<double>& _deployBatch)
+{
+    m_deployBatch = _deployBatch;
+    m_deployBatchHasBeenSet = true;
+}
+
+bool VmGroup::DeployBatchHasBeenSet() const
+{
+    return m_deployBatchHasBeenSet;
+}
+
+string VmGroup::GetDeployExeMode() const
+{
+    return m_deployExeMode;
+}
+
+void VmGroup::SetDeployExeMode(const string& _deployExeMode)
+{
+    m_deployExeMode = _deployExeMode;
+    m_deployExeModeHasBeenSet = true;
+}
+
+bool VmGroup::DeployExeModeHasBeenSet() const
+{
+    return m_deployExeModeHasBeenSet;
+}
+
+uint64_t VmGroup::GetDeployWaitTime() const
+{
+    return m_deployWaitTime;
+}
+
+void VmGroup::SetDeployWaitTime(const uint64_t& _deployWaitTime)
+{
+    m_deployWaitTime = _deployWaitTime;
+    m_deployWaitTimeHasBeenSet = true;
+}
+
+bool VmGroup::DeployWaitTimeHasBeenSet() const
+{
+    return m_deployWaitTimeHasBeenSet;
 }
 

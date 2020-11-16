@@ -60,9 +60,9 @@ CoreInternalOutcome WordRsp::Deserialize(const Value &value)
 
     if (value.HasMember("PronAccuracy") && !value["PronAccuracy"].IsNull())
     {
-        if (!value["PronAccuracy"].IsDouble())
+        if (!value["PronAccuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WordRsp.PronAccuracy` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `WordRsp.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronAccuracy = value["PronAccuracy"].GetDouble();
         m_pronAccuracyHasBeenSet = true;
@@ -70,9 +70,9 @@ CoreInternalOutcome WordRsp::Deserialize(const Value &value)
 
     if (value.HasMember("PronFluency") && !value["PronFluency"].IsNull())
     {
-        if (!value["PronFluency"].IsDouble())
+        if (!value["PronFluency"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WordRsp.PronFluency` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `WordRsp.PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronFluency = value["PronFluency"].GetDouble();
         m_pronFluencyHasBeenSet = true;

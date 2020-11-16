@@ -87,9 +87,9 @@ CoreInternalOutcome DescribeAlarmsByTaskResponse::Deserialize(const string &payl
 
     if (rsp.HasMember("FaultRatio") && !rsp["FaultRatio"].IsNull())
     {
-        if (!rsp["FaultRatio"].IsDouble())
+        if (!rsp["FaultRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaultRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FaultRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_faultRatio = rsp["FaultRatio"].GetDouble();
         m_faultRatioHasBeenSet = true;

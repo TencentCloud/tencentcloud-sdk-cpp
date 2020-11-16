@@ -51,9 +51,9 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const Value &value)
 
     if (value.HasMember("Duration") && !value["Duration"].IsNull())
     {
-        if (!value["Duration"].IsDouble())
+        if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StickerTrackItem.Duration` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `StickerTrackItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -61,9 +61,9 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const Value &value)
 
     if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
     {
-        if (!value["StartTime"].IsDouble())
+        if (!value["StartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StickerTrackItem.StartTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `StickerTrackItem.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetDouble();
         m_startTimeHasBeenSet = true;

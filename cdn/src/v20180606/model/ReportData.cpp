@@ -68,9 +68,9 @@ CoreInternalOutcome ReportData::Deserialize(const Value &value)
 
     if (value.HasMember("Percentage") && !value["Percentage"].IsNull())
     {
-        if (!value["Percentage"].IsDouble())
+        if (!value["Percentage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReportData.Percentage` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ReportData.Percentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percentage = value["Percentage"].GetDouble();
         m_percentageHasBeenSet = true;
@@ -88,9 +88,9 @@ CoreInternalOutcome ReportData::Deserialize(const Value &value)
 
     if (value.HasMember("BillingPercentage") && !value["BillingPercentage"].IsNull())
     {
-        if (!value["BillingPercentage"].IsDouble())
+        if (!value["BillingPercentage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReportData.BillingPercentage` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ReportData.BillingPercentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_billingPercentage = value["BillingPercentage"].GetDouble();
         m_billingPercentageHasBeenSet = true;

@@ -186,9 +186,9 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
 
     if (rsp.HasMember("PolicyThreshold") && !rsp["PolicyThreshold"].IsNull())
     {
-        if (!rsp["PolicyThreshold"].IsDouble())
+        if (!rsp["PolicyThreshold"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PolicyThreshold` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PolicyThreshold` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_policyThreshold = rsp["PolicyThreshold"].GetDouble();
         m_policyThresholdHasBeenSet = true;
@@ -399,9 +399,9 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
 
     if (rsp.HasMember("CpuSize") && !rsp["CpuSize"].IsNull())
     {
-        if (!rsp["CpuSize"].IsDouble())
+        if (!rsp["CpuSize"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CpuSize` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CpuSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cpuSize = rsp["CpuSize"].GetDouble();
         m_cpuSizeHasBeenSet = true;
@@ -409,9 +409,9 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
 
     if (rsp.HasMember("MemSize") && !rsp["MemSize"].IsNull())
     {
-        if (!rsp["MemSize"].IsDouble())
+        if (!rsp["MemSize"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MemSize` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MemSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_memSize = rsp["MemSize"].GetDouble();
         m_memSizeHasBeenSet = true;

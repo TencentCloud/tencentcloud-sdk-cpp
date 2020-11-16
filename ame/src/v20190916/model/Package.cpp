@@ -103,9 +103,9 @@ CoreInternalOutcome Package::Deserialize(const Value &value)
 
     if (value.HasMember("PackagePrice") && !value["PackagePrice"].IsNull())
     {
-        if (!value["PackagePrice"].IsDouble())
+        if (!value["PackagePrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Package.PackagePrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Package.PackagePrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_packagePrice = value["PackagePrice"].GetDouble();
         m_packagePriceHasBeenSet = true;

@@ -45,9 +45,9 @@ CoreInternalOutcome IspDetail::Deserialize(const Value &value)
 
     if (value.HasMember("AvailRatio") && !value["AvailRatio"].IsNull())
     {
-        if (!value["AvailRatio"].IsDouble())
+        if (!value["AvailRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `IspDetail.AvailRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `IspDetail.AvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_availRatio = value["AvailRatio"].GetDouble();
         m_availRatioHasBeenSet = true;
@@ -55,9 +55,9 @@ CoreInternalOutcome IspDetail::Deserialize(const Value &value)
 
     if (value.HasMember("AvgTime") && !value["AvgTime"].IsNull())
     {
-        if (!value["AvgTime"].IsDouble())
+        if (!value["AvgTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `IspDetail.AvgTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `IspDetail.AvgTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgTime = value["AvgTime"].GetDouble();
         m_avgTimeHasBeenSet = true;

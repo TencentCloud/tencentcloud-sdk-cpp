@@ -45,9 +45,9 @@ CoreInternalOutcome ImageTransform::Deserialize(const Value &value)
 
     if (value.HasMember("RotateAngle") && !value["RotateAngle"].IsNull())
     {
-        if (!value["RotateAngle"].IsDouble())
+        if (!value["RotateAngle"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ImageTransform.RotateAngle` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ImageTransform.RotateAngle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_rotateAngle = value["RotateAngle"].GetDouble();
         m_rotateAngleHasBeenSet = true;

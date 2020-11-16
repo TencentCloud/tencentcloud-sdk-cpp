@@ -97,9 +97,9 @@ CoreInternalOutcome BusinessCardOCRResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
     {
-        if (!rsp["Angle"].IsDouble())
+        if (!rsp["Angle"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Angle` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_angle = rsp["Angle"].GetDouble();
         m_angleHasBeenSet = true;

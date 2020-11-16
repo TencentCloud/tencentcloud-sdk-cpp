@@ -45,9 +45,9 @@ CoreInternalOutcome Denoising::Deserialize(const Value &value)
 
     if (value.HasMember("TemplStrength") && !value["TemplStrength"].IsNull())
     {
-        if (!value["TemplStrength"].IsDouble())
+        if (!value["TemplStrength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Denoising.TemplStrength` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Denoising.TemplStrength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_templStrength = value["TemplStrength"].GetDouble();
         m_templStrengthHasBeenSet = true;
@@ -55,9 +55,9 @@ CoreInternalOutcome Denoising::Deserialize(const Value &value)
 
     if (value.HasMember("SpatialStrength") && !value["SpatialStrength"].IsNull())
     {
-        if (!value["SpatialStrength"].IsDouble())
+        if (!value["SpatialStrength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Denoising.SpatialStrength` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Denoising.SpatialStrength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_spatialStrength = value["SpatialStrength"].GetDouble();
         m_spatialStrengthHasBeenSet = true;

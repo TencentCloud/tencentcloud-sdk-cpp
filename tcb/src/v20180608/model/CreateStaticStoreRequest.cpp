@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 CreateStaticStoreRequest::CreateStaticStoreRequest() :
-    m_envIdHasBeenSet(false)
+    m_envIdHasBeenSet(false),
+    m_enableUnionHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string CreateStaticStoreRequest::ToJsonString() const
         string key = "EnvId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableUnionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableUnion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableUnion, allocator);
     }
 
 
@@ -65,6 +74,22 @@ void CreateStaticStoreRequest::SetEnvId(const string& _envId)
 bool CreateStaticStoreRequest::EnvIdHasBeenSet() const
 {
     return m_envIdHasBeenSet;
+}
+
+bool CreateStaticStoreRequest::GetEnableUnion() const
+{
+    return m_enableUnion;
+}
+
+void CreateStaticStoreRequest::SetEnableUnion(const bool& _enableUnion)
+{
+    m_enableUnion = _enableUnion;
+    m_enableUnionHasBeenSet = true;
+}
+
+bool CreateStaticStoreRequest::EnableUnionHasBeenSet() const
+{
+    return m_enableUnionHasBeenSet;
 }
 
 

@@ -54,9 +54,9 @@ CoreInternalOutcome WholeTextItem::Deserialize(const Value &value)
 
     if (value.HasMember("AvgVolume") && !value["AvgVolume"].IsNull())
     {
-        if (!value["AvgVolume"].IsDouble())
+        if (!value["AvgVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WholeTextItem.AvgVolume` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `WholeTextItem.AvgVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgVolume = value["AvgVolume"].GetDouble();
         m_avgVolumeHasBeenSet = true;
@@ -64,9 +64,9 @@ CoreInternalOutcome WholeTextItem::Deserialize(const Value &value)
 
     if (value.HasMember("MaxVolume") && !value["MaxVolume"].IsNull())
     {
-        if (!value["MaxVolume"].IsDouble())
+        if (!value["MaxVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WholeTextItem.MaxVolume` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `WholeTextItem.MaxVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxVolume = value["MaxVolume"].GetDouble();
         m_maxVolumeHasBeenSet = true;
@@ -74,9 +74,9 @@ CoreInternalOutcome WholeTextItem::Deserialize(const Value &value)
 
     if (value.HasMember("MinVolume") && !value["MinVolume"].IsNull())
     {
-        if (!value["MinVolume"].IsDouble())
+        if (!value["MinVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WholeTextItem.MinVolume` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `WholeTextItem.MinVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_minVolume = value["MinVolume"].GetDouble();
         m_minVolumeHasBeenSet = true;
@@ -84,9 +84,9 @@ CoreInternalOutcome WholeTextItem::Deserialize(const Value &value)
 
     if (value.HasMember("Speed") && !value["Speed"].IsNull())
     {
-        if (!value["Speed"].IsDouble())
+        if (!value["Speed"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WholeTextItem.Speed` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `WholeTextItem.Speed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_speed = value["Speed"].GetDouble();
         m_speedHasBeenSet = true;

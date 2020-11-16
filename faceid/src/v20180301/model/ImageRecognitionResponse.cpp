@@ -67,9 +67,9 @@ CoreInternalOutcome ImageRecognitionResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("Sim") && !rsp["Sim"].IsNull())
     {
-        if (!rsp["Sim"].IsDouble())
+        if (!rsp["Sim"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Sim` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Sim` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sim = rsp["Sim"].GetDouble();
         m_simHasBeenSet = true;

@@ -66,9 +66,9 @@ CoreInternalOutcome InquiryPriceOpenProVersionPrepaidResponse::Deserialize(const
 
     if (rsp.HasMember("OriginalPrice") && !rsp["OriginalPrice"].IsNull())
     {
-        if (!rsp["OriginalPrice"].IsDouble())
+        if (!rsp["OriginalPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OriginalPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalPrice = rsp["OriginalPrice"].GetDouble();
         m_originalPriceHasBeenSet = true;
@@ -76,9 +76,9 @@ CoreInternalOutcome InquiryPriceOpenProVersionPrepaidResponse::Deserialize(const
 
     if (rsp.HasMember("DiscountPrice") && !rsp["DiscountPrice"].IsNull())
     {
-        if (!rsp["DiscountPrice"].IsDouble())
+        if (!rsp["DiscountPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DiscountPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountPrice = rsp["DiscountPrice"].GetDouble();
         m_discountPriceHasBeenSet = true;

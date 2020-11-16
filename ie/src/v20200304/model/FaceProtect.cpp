@@ -33,9 +33,9 @@ CoreInternalOutcome FaceProtect::Deserialize(const Value &value)
 
     if (value.HasMember("FaceUsmRatio") && !value["FaceUsmRatio"].IsNull())
     {
-        if (!value["FaceUsmRatio"].IsDouble())
+        if (!value["FaceUsmRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceProtect.FaceUsmRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FaceProtect.FaceUsmRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_faceUsmRatio = value["FaceUsmRatio"].GetDouble();
         m_faceUsmRatioHasBeenSet = true;

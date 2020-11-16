@@ -80,9 +80,9 @@ CoreInternalOutcome CreatePolicyGroupCondition::Deserialize(const Value &value)
 
     if (value.HasMember("CalcValue") && !value["CalcValue"].IsNull())
     {
-        if (!value["CalcValue"].IsDouble())
+        if (!value["CalcValue"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CreatePolicyGroupCondition.CalcValue` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CreatePolicyGroupCondition.CalcValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_calcValue = value["CalcValue"].GetDouble();
         m_calcValueHasBeenSet = true;

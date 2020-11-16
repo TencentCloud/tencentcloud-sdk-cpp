@@ -44,9 +44,9 @@ CoreInternalOutcome FrameTagConfigureInfoForUpdate::Deserialize(const Value &val
 
     if (value.HasMember("ScreenshotInterval") && !value["ScreenshotInterval"].IsNull())
     {
-        if (!value["ScreenshotInterval"].IsDouble())
+        if (!value["ScreenshotInterval"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FrameTagConfigureInfoForUpdate.ScreenshotInterval` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FrameTagConfigureInfoForUpdate.ScreenshotInterval` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_screenshotInterval = value["ScreenshotInterval"].GetDouble();
         m_screenshotIntervalHasBeenSet = true;

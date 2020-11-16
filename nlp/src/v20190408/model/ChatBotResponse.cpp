@@ -66,9 +66,9 @@ CoreInternalOutcome ChatBotResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("Confidence") && !rsp["Confidence"].IsNull())
     {
-        if (!rsp["Confidence"].IsDouble())
+        if (!rsp["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Confidence` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = rsp["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;

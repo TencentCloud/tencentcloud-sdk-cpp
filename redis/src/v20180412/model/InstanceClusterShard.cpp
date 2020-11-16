@@ -101,9 +101,9 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const Value &value)
 
     if (value.HasMember("StorageSlope") && !value["StorageSlope"].IsNull())
     {
-        if (!value["StorageSlope"].IsDouble())
+        if (!value["StorageSlope"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterShard.StorageSlope` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstanceClusterShard.StorageSlope` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_storageSlope = value["StorageSlope"].GetDouble();
         m_storageSlopeHasBeenSet = true;

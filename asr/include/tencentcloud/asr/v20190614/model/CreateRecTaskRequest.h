@@ -46,8 +46,7 @@ namespace TencentCloud
                      * 获取引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
-• 8k_zh：电话 8k 中文普通话通用（可用于双声道音频）；
-• 8k_zh_s：电话 8k 中文普通话话者分离（仅适用于单声道音频）；
+• 8k_zh：电话 8k 中文普通话通用；
 非电话场景：
 • 16k_zh：16k 中文普通话通用；
 • 16k_zh_video：16k 音视频领域；
@@ -58,8 +57,7 @@ namespace TencentCloud
                      * @return EngineModelType 引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
-• 8k_zh：电话 8k 中文普通话通用（可用于双声道音频）；
-• 8k_zh_s：电话 8k 中文普通话话者分离（仅适用于单声道音频）；
+• 8k_zh：电话 8k 中文普通话通用；
 非电话场景：
 • 16k_zh：16k 中文普通话通用；
 • 16k_zh_video：16k 音视频领域；
@@ -74,8 +72,7 @@ namespace TencentCloud
                      * 设置引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
-• 8k_zh：电话 8k 中文普通话通用（可用于双声道音频）；
-• 8k_zh_s：电话 8k 中文普通话话者分离（仅适用于单声道音频）；
+• 8k_zh：电话 8k 中文普通话通用；
 非电话场景：
 • 16k_zh：16k 中文普通话通用；
 • 16k_zh_video：16k 音视频领域；
@@ -86,8 +83,7 @@ namespace TencentCloud
                      * @param EngineModelType 引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
-• 8k_zh：电话 8k 中文普通话通用（可用于双声道音频）；
-• 8k_zh_s：电话 8k 中文普通话话者分离（仅适用于单声道音频）；
+• 8k_zh：电话 8k 中文普通话通用；
 非电话场景：
 • 16k_zh：16k 中文普通话通用；
 • 16k_zh_video：16k 音视频领域；
@@ -123,14 +119,14 @@ namespace TencentCloud
                     bool ChannelNumHasBeenSet() const;
 
                     /**
-                     * 获取识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，词时间戳列表，一般用于生成字幕场景)；2：词级别粒度的详细识别结果（包含标点）
-                     * @return ResTextFormat 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，词时间戳列表，一般用于生成字幕场景)；2：词级别粒度的详细识别结果（包含标点）
+                     * 获取识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点）
+                     * @return ResTextFormat 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点）
                      */
                     uint64_t GetResTextFormat() const;
 
                     /**
-                     * 设置识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，词时间戳列表，一般用于生成字幕场景)；2：词级别粒度的详细识别结果（包含标点）
-                     * @param ResTextFormat 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，词时间戳列表，一般用于生成字幕场景)；2：词级别粒度的详细识别结果（包含标点）
+                     * 设置识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点）
+                     * @param ResTextFormat 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点）
                      */
                     void SetResTextFormat(const uint64_t& _resTextFormat);
 
@@ -384,8 +380,7 @@ namespace TencentCloud
                      * 引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
-• 8k_zh：电话 8k 中文普通话通用（可用于双声道音频）；
-• 8k_zh_s：电话 8k 中文普通话话者分离（仅适用于单声道音频）；
+• 8k_zh：电话 8k 中文普通话通用；
 非电话场景：
 • 16k_zh：16k 中文普通话通用；
 • 16k_zh_video：16k 音视频领域；
@@ -404,7 +399,7 @@ namespace TencentCloud
                     bool m_channelNumHasBeenSet;
 
                     /**
-                     * 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，词时间戳列表，一般用于生成字幕场景)；2：词级别粒度的详细识别结果（包含标点）
+                     * 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点）
                      */
                     uint64_t m_resTextFormat;
                     bool m_resTextFormatHasBeenSet;

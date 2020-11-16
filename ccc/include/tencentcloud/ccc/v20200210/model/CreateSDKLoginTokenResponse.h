@@ -66,6 +66,18 @@ namespace TencentCloud
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
+                    /**
+                     * 获取SDK 加载路径会随着 SDK 的发布而变动。
+                     * @return SdkURL SDK 加载路径会随着 SDK 的发布而变动。
+                     */
+                    std::string GetSdkURL() const;
+
+                    /**
+                     * 判断参数 SdkURL 是否已赋值
+                     * @return SdkURL 是否已赋值
+                     */
+                    bool SdkURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +91,12 @@ namespace TencentCloud
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
+
+                    /**
+                     * SDK 加载路径会随着 SDK 的发布而变动。
+                     */
+                    std::string m_sdkURL;
+                    bool m_sdkURLHasBeenSet;
 
                 };
             }

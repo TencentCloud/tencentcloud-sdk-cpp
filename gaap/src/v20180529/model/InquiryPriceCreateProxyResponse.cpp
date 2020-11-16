@@ -70,9 +70,9 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
 
     if (rsp.HasMember("ProxyDailyPrice") && !rsp["ProxyDailyPrice"].IsNull())
     {
-        if (!rsp["ProxyDailyPrice"].IsDouble())
+        if (!rsp["ProxyDailyPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProxyDailyPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ProxyDailyPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_proxyDailyPrice = rsp["ProxyDailyPrice"].GetDouble();
         m_proxyDailyPriceHasBeenSet = true;
@@ -100,9 +100,9 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
 
     if (rsp.HasMember("DiscountProxyDailyPrice") && !rsp["DiscountProxyDailyPrice"].IsNull())
     {
-        if (!rsp["DiscountProxyDailyPrice"].IsDouble())
+        if (!rsp["DiscountProxyDailyPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DiscountProxyDailyPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DiscountProxyDailyPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountProxyDailyPrice = rsp["DiscountProxyDailyPrice"].GetDouble();
         m_discountProxyDailyPriceHasBeenSet = true;
@@ -120,9 +120,9 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
 
     if (rsp.HasMember("FlowUnitPrice") && !rsp["FlowUnitPrice"].IsNull())
     {
-        if (!rsp["FlowUnitPrice"].IsDouble())
+        if (!rsp["FlowUnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FlowUnitPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FlowUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_flowUnitPrice = rsp["FlowUnitPrice"].GetDouble();
         m_flowUnitPriceHasBeenSet = true;
@@ -130,9 +130,9 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
 
     if (rsp.HasMember("DiscountFlowUnitPrice") && !rsp["DiscountFlowUnitPrice"].IsNull())
     {
-        if (!rsp["DiscountFlowUnitPrice"].IsDouble())
+        if (!rsp["DiscountFlowUnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DiscountFlowUnitPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DiscountFlowUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountFlowUnitPrice = rsp["DiscountFlowUnitPrice"].GetDouble();
         m_discountFlowUnitPriceHasBeenSet = true;

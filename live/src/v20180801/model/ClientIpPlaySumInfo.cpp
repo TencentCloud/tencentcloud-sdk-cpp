@@ -58,9 +58,9 @@ CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const Value &value)
 
     if (value.HasMember("TotalFlux") && !value["TotalFlux"].IsNull())
     {
-        if (!value["TotalFlux"].IsDouble())
+        if (!value["TotalFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ClientIpPlaySumInfo.TotalFlux` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ClientIpPlaySumInfo.TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalFlux = value["TotalFlux"].GetDouble();
         m_totalFluxHasBeenSet = true;

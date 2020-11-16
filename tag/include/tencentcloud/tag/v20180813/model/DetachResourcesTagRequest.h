@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源所属业务名称
-                     * @return ServiceType 资源所属业务名称
+                     * 获取资源所属业务名称（资源六段式中的第三段）
+                     * @return ServiceType 资源所属业务名称（资源六段式中的第三段）
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置资源所属业务名称
-                     * @param ServiceType 资源所属业务名称
+                     * 设置资源所属业务名称（资源六段式中的第三段）
+                     * @param ServiceType 资源所属业务名称（资源六段式中的第三段）
                      */
                     void SetServiceType(const std::string& _serviceType);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取资源所在地域不区分地域的资源不需要传入该字段
-                     * @return ResourceRegion 资源所在地域不区分地域的资源不需要传入该字段
+                     * 获取资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * @return ResourceRegion 资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
                      */
                     std::string GetResourceRegion() const;
 
                     /**
-                     * 设置资源所在地域不区分地域的资源不需要传入该字段
-                     * @param ResourceRegion 资源所在地域不区分地域的资源不需要传入该字段
+                     * 设置资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * @param ResourceRegion 资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ResourceRegionHasBeenSet() const;
 
                     /**
-                     * 获取资源前缀，cos存储桶不需要传入该字段
-                     * @return ResourcePrefix 资源前缀，cos存储桶不需要传入该字段
+                     * 获取资源前缀（资源六段式中最后一段"/"前面的部分），cos存储桶不需要传入该字段，其他云资源必填
+                     * @return ResourcePrefix 资源前缀（资源六段式中最后一段"/"前面的部分），cos存储桶不需要传入该字段，其他云资源必填
                      */
                     std::string GetResourcePrefix() const;
 
                     /**
-                     * 设置资源前缀，cos存储桶不需要传入该字段
-                     * @param ResourcePrefix 资源前缀，cos存储桶不需要传入该字段
+                     * 设置资源前缀（资源六段式中最后一段"/"前面的部分），cos存储桶不需要传入该字段，其他云资源必填
+                     * @param ResourcePrefix 资源前缀（资源六段式中最后一段"/"前面的部分），cos存储桶不需要传入该字段，其他云资源必填
                      */
                     void SetResourcePrefix(const std::string& _resourcePrefix);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源所属业务名称
+                     * 资源所属业务名称（资源六段式中的第三段）
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -153,13 +153,13 @@ namespace TencentCloud
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 资源所在地域不区分地域的资源不需要传入该字段
+                     * 资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
-                     * 资源前缀，cos存储桶不需要传入该字段
+                     * 资源前缀（资源六段式中最后一段"/"前面的部分），cos存储桶不需要传入该字段，其他云资源必填
                      */
                     std::string m_resourcePrefix;
                     bool m_resourcePrefixHasBeenSet;

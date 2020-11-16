@@ -55,9 +55,9 @@ CoreInternalOutcome HttpCodeValue::Deserialize(const Value &value)
 
     if (value.HasMember("Percentage") && !value["Percentage"].IsNull())
     {
-        if (!value["Percentage"].IsDouble())
+        if (!value["Percentage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HttpCodeValue.Percentage` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `HttpCodeValue.Percentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percentage = value["Percentage"].GetDouble();
         m_percentageHasBeenSet = true;

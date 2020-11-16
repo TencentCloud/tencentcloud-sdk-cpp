@@ -41,9 +41,9 @@ CoreInternalOutcome NetworkInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Upload") && !value["Upload"].IsNull())
     {
-        if (!value["Upload"].IsDouble())
+        if (!value["Upload"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.Upload` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NetworkInfo.Upload` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_upload = value["Upload"].GetDouble();
         m_uploadHasBeenSet = true;
@@ -51,9 +51,9 @@ CoreInternalOutcome NetworkInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Download") && !value["Download"].IsNull())
     {
-        if (!value["Download"].IsDouble())
+        if (!value["Download"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.Download` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NetworkInfo.Download` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_download = value["Download"].GetDouble();
         m_downloadHasBeenSet = true;
@@ -61,9 +61,9 @@ CoreInternalOutcome NetworkInfo::Deserialize(const Value &value)
 
     if (value.HasMember("MinRtt") && !value["MinRtt"].IsNull())
     {
-        if (!value["MinRtt"].IsDouble())
+        if (!value["MinRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.MinRtt` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NetworkInfo.MinRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_minRtt = value["MinRtt"].GetDouble();
         m_minRttHasBeenSet = true;
@@ -71,9 +71,9 @@ CoreInternalOutcome NetworkInfo::Deserialize(const Value &value)
 
     if (value.HasMember("AvgRtt") && !value["AvgRtt"].IsNull())
     {
-        if (!value["AvgRtt"].IsDouble())
+        if (!value["AvgRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.AvgRtt` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NetworkInfo.AvgRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgRtt = value["AvgRtt"].GetDouble();
         m_avgRttHasBeenSet = true;
@@ -81,9 +81,9 @@ CoreInternalOutcome NetworkInfo::Deserialize(const Value &value)
 
     if (value.HasMember("MaxRtt") && !value["MaxRtt"].IsNull())
     {
-        if (!value["MaxRtt"].IsDouble())
+        if (!value["MaxRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.MaxRtt` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NetworkInfo.MaxRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxRtt = value["MaxRtt"].GetDouble();
         m_maxRttHasBeenSet = true;
@@ -91,9 +91,9 @@ CoreInternalOutcome NetworkInfo::Deserialize(const Value &value)
 
     if (value.HasMember("MdevRtt") && !value["MdevRtt"].IsNull())
     {
-        if (!value["MdevRtt"].IsDouble())
+        if (!value["MdevRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.MdevRtt` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NetworkInfo.MdevRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_mdevRtt = value["MdevRtt"].GetDouble();
         m_mdevRttHasBeenSet = true;
@@ -101,9 +101,9 @@ CoreInternalOutcome NetworkInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Loss") && !value["Loss"].IsNull())
     {
-        if (!value["Loss"].IsDouble())
+        if (!value["Loss"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.Loss` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NetworkInfo.Loss` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_loss = value["Loss"].GetDouble();
         m_lossHasBeenSet = true;

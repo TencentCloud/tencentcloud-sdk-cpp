@@ -92,9 +92,9 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("ProjectBudget") && !rsp["ProjectBudget"].IsNull())
     {
-        if (!rsp["ProjectBudget"].IsDouble())
+        if (!rsp["ProjectBudget"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProjectBudget` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ProjectBudget` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_projectBudget = rsp["ProjectBudget"].GetDouble();
         m_projectBudgetHasBeenSet = true;

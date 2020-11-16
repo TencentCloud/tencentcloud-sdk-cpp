@@ -57,9 +57,9 @@ CoreInternalOutcome AudioResultDetailMoanResult::Deserialize(const Value &value)
 
     if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
     {
-        if (!value["StartTime"].IsDouble())
+        if (!value["StartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailMoanResult.StartTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AudioResultDetailMoanResult.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetDouble();
         m_startTimeHasBeenSet = true;
@@ -67,9 +67,9 @@ CoreInternalOutcome AudioResultDetailMoanResult::Deserialize(const Value &value)
 
     if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
     {
-        if (!value["EndTime"].IsDouble())
+        if (!value["EndTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailMoanResult.EndTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AudioResultDetailMoanResult.EndTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetDouble();
         m_endTimeHasBeenSet = true;

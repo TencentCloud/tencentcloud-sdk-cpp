@@ -60,9 +60,9 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const Value &value)
 
     if (value.HasMember("ImageWidth") && !value["ImageWidth"].IsNull())
     {
-        if (!value["ImageWidth"].IsDouble())
+        if (!value["ImageWidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.ImageWidth` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.ImageWidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_imageWidth = value["ImageWidth"].GetDouble();
         m_imageWidthHasBeenSet = true;
@@ -70,9 +70,9 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const Value &value)
 
     if (value.HasMember("ImageHeight") && !value["ImageHeight"].IsNull())
     {
-        if (!value["ImageHeight"].IsDouble())
+        if (!value["ImageHeight"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.ImageHeight` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.ImageHeight` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_imageHeight = value["ImageHeight"].GetDouble();
         m_imageHeightHasBeenSet = true;
@@ -80,9 +80,9 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const Value &value)
 
     if (value.HasMember("LocationX") && !value["LocationX"].IsNull())
     {
-        if (!value["LocationX"].IsDouble())
+        if (!value["LocationX"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.LocationX` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.LocationX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_locationX = value["LocationX"].GetDouble();
         m_locationXHasBeenSet = true;
@@ -90,9 +90,9 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const Value &value)
 
     if (value.HasMember("LocationY") && !value["LocationY"].IsNull())
     {
-        if (!value["LocationY"].IsDouble())
+        if (!value["LocationY"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.LocationY` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.LocationY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_locationY = value["LocationY"].GetDouble();
         m_locationYHasBeenSet = true;

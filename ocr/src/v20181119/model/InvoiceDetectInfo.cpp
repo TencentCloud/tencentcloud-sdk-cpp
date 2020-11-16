@@ -36,9 +36,9 @@ CoreInternalOutcome InvoiceDetectInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Angle") && !value["Angle"].IsNull())
     {
-        if (!value["Angle"].IsDouble())
+        if (!value["Angle"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InvoiceDetectInfo.Angle` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InvoiceDetectInfo.Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_angle = value["Angle"].GetDouble();
         m_angleHasBeenSet = true;

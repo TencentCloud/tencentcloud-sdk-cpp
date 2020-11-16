@@ -206,9 +206,9 @@ CoreInternalOutcome DCDBShardInfo::Deserialize(const Value &value)
 
     if (value.HasMember("StorageUsage") && !value["StorageUsage"].IsNull())
     {
-        if (!value["StorageUsage"].IsDouble())
+        if (!value["StorageUsage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DCDBShardInfo.StorageUsage` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DCDBShardInfo.StorageUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_storageUsage = value["StorageUsage"].GetDouble();
         m_storageUsageHasBeenSet = true;
@@ -216,9 +216,9 @@ CoreInternalOutcome DCDBShardInfo::Deserialize(const Value &value)
 
     if (value.HasMember("MemoryUsage") && !value["MemoryUsage"].IsNull())
     {
-        if (!value["MemoryUsage"].IsDouble())
+        if (!value["MemoryUsage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DCDBShardInfo.MemoryUsage` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DCDBShardInfo.MemoryUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_memoryUsage = value["MemoryUsage"].GetDouble();
         m_memoryUsageHasBeenSet = true;

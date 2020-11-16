@@ -35,9 +35,9 @@ CoreInternalOutcome SlowlogDetail::Deserialize(const Value &value)
 
     if (value.HasMember("TotalTime") && !value["TotalTime"].IsNull())
     {
-        if (!value["TotalTime"].IsDouble())
+        if (!value["TotalTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SlowlogDetail.TotalTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SlowlogDetail.TotalTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalTime = value["TotalTime"].GetDouble();
         m_totalTimeHasBeenSet = true;

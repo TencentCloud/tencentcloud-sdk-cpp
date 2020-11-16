@@ -243,9 +243,9 @@ CoreInternalOutcome TemplateInfo::Deserialize(const Value &value)
 
     if (value.HasMember("AdaptBitratePercent") && !value["AdaptBitratePercent"].IsNull())
     {
-        if (!value["AdaptBitratePercent"].IsDouble())
+        if (!value["AdaptBitratePercent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.AdaptBitratePercent` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TemplateInfo.AdaptBitratePercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_adaptBitratePercent = value["AdaptBitratePercent"].GetDouble();
         m_adaptBitratePercentHasBeenSet = true;

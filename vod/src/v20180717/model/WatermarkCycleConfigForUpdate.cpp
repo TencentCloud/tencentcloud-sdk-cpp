@@ -35,9 +35,9 @@ CoreInternalOutcome WatermarkCycleConfigForUpdate::Deserialize(const Value &valu
 
     if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
     {
-        if (!value["StartTime"].IsDouble())
+        if (!value["StartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WatermarkCycleConfigForUpdate.StartTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `WatermarkCycleConfigForUpdate.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetDouble();
         m_startTimeHasBeenSet = true;
@@ -45,9 +45,9 @@ CoreInternalOutcome WatermarkCycleConfigForUpdate::Deserialize(const Value &valu
 
     if (value.HasMember("DisplayDuration") && !value["DisplayDuration"].IsNull())
     {
-        if (!value["DisplayDuration"].IsDouble())
+        if (!value["DisplayDuration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WatermarkCycleConfigForUpdate.DisplayDuration` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `WatermarkCycleConfigForUpdate.DisplayDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_displayDuration = value["DisplayDuration"].GetDouble();
         m_displayDurationHasBeenSet = true;
@@ -55,9 +55,9 @@ CoreInternalOutcome WatermarkCycleConfigForUpdate::Deserialize(const Value &valu
 
     if (value.HasMember("CycleDuration") && !value["CycleDuration"].IsNull())
     {
-        if (!value["CycleDuration"].IsDouble())
+        if (!value["CycleDuration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WatermarkCycleConfigForUpdate.CycleDuration` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `WatermarkCycleConfigForUpdate.CycleDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cycleDuration = value["CycleDuration"].GetDouble();
         m_cycleDurationHasBeenSet = true;

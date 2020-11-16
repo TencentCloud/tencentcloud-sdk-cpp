@@ -66,9 +66,9 @@ CoreInternalOutcome TextWatermarkTemplateInput::Deserialize(const Value &value)
 
     if (value.HasMember("FontAlpha") && !value["FontAlpha"].IsNull())
     {
-        if (!value["FontAlpha"].IsDouble())
+        if (!value["FontAlpha"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TextWatermarkTemplateInput.FontAlpha` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TextWatermarkTemplateInput.FontAlpha` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fontAlpha = value["FontAlpha"].GetDouble();
         m_fontAlphaHasBeenSet = true;

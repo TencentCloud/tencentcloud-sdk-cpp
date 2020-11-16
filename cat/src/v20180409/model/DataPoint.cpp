@@ -44,9 +44,9 @@ CoreInternalOutcome DataPoint::Deserialize(const Value &value)
 
     if (value.HasMember("MetricValue") && !value["MetricValue"].IsNull())
     {
-        if (!value["MetricValue"].IsDouble())
+        if (!value["MetricValue"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DataPoint.MetricValue` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DataPoint.MetricValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_metricValue = value["MetricValue"].GetDouble();
         m_metricValueHasBeenSet = true;

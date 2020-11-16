@@ -70,9 +70,9 @@ CoreInternalOutcome ProjectInfo::Deserialize(const Value &value)
 
     if (value.HasMember("ProjectBudget") && !value["ProjectBudget"].IsNull())
     {
-        if (!value["ProjectBudget"].IsDouble())
+        if (!value["ProjectBudget"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.ProjectBudget` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ProjectInfo.ProjectBudget` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_projectBudget = value["ProjectBudget"].GetDouble();
         m_projectBudgetHasBeenSet = true;

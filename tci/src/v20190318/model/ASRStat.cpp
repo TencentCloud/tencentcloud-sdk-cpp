@@ -41,9 +41,9 @@ CoreInternalOutcome ASRStat::Deserialize(const Value &value)
 
     if (value.HasMember("AvgSpeed") && !value["AvgSpeed"].IsNull())
     {
-        if (!value["AvgSpeed"].IsDouble())
+        if (!value["AvgSpeed"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.AvgSpeed` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ASRStat.AvgSpeed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgSpeed = value["AvgSpeed"].GetDouble();
         m_avgSpeedHasBeenSet = true;
@@ -51,9 +51,9 @@ CoreInternalOutcome ASRStat::Deserialize(const Value &value)
 
     if (value.HasMember("AvgVolume") && !value["AvgVolume"].IsNull())
     {
-        if (!value["AvgVolume"].IsDouble())
+        if (!value["AvgVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.AvgVolume` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ASRStat.AvgVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgVolume = value["AvgVolume"].GetDouble();
         m_avgVolumeHasBeenSet = true;
@@ -61,9 +61,9 @@ CoreInternalOutcome ASRStat::Deserialize(const Value &value)
 
     if (value.HasMember("MaxVolume") && !value["MaxVolume"].IsNull())
     {
-        if (!value["MaxVolume"].IsDouble())
+        if (!value["MaxVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.MaxVolume` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ASRStat.MaxVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxVolume = value["MaxVolume"].GetDouble();
         m_maxVolumeHasBeenSet = true;
@@ -71,9 +71,9 @@ CoreInternalOutcome ASRStat::Deserialize(const Value &value)
 
     if (value.HasMember("MinVolume") && !value["MinVolume"].IsNull())
     {
-        if (!value["MinVolume"].IsDouble())
+        if (!value["MinVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.MinVolume` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ASRStat.MinVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_minVolume = value["MinVolume"].GetDouble();
         m_minVolumeHasBeenSet = true;

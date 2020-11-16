@@ -67,9 +67,9 @@ CoreInternalOutcome DetectLiveFaceResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("Score") && !rsp["Score"].IsNull())
     {
-        if (!rsp["Score"].IsDouble())
+        if (!rsp["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Score` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = rsp["Score"].GetDouble();
         m_scoreHasBeenSet = true;

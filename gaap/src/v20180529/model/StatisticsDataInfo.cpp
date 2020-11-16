@@ -44,9 +44,9 @@ CoreInternalOutcome StatisticsDataInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Data") && !value["Data"].IsNull())
     {
-        if (!value["Data"].IsDouble())
+        if (!value["Data"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StatisticsDataInfo.Data` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `StatisticsDataInfo.Data` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_data = value["Data"].GetDouble();
         m_dataHasBeenSet = true;

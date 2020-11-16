@@ -69,9 +69,9 @@ CoreInternalOutcome InquiryPriceBuyVsmResponse::Deserialize(const string &payloa
 
     if (rsp.HasMember("TotalCost") && !rsp["TotalCost"].IsNull())
     {
-        if (!rsp["TotalCost"].IsDouble())
+        if (!rsp["TotalCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TotalCost` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalCost = rsp["TotalCost"].GetDouble();
         m_totalCostHasBeenSet = true;
@@ -109,9 +109,9 @@ CoreInternalOutcome InquiryPriceBuyVsmResponse::Deserialize(const string &payloa
 
     if (rsp.HasMember("OriginalCost") && !rsp["OriginalCost"].IsNull())
     {
-        if (!rsp["OriginalCost"].IsDouble())
+        if (!rsp["OriginalCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OriginalCost` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OriginalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalCost = rsp["OriginalCost"].GetDouble();
         m_originalCostHasBeenSet = true;

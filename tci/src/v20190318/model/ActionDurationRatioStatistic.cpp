@@ -44,9 +44,9 @@ CoreInternalOutcome ActionDurationRatioStatistic::Deserialize(const Value &value
 
     if (value.HasMember("Ratio") && !value["Ratio"].IsNull())
     {
-        if (!value["Ratio"].IsDouble())
+        if (!value["Ratio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ActionDurationRatioStatistic.Ratio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ActionDurationRatioStatistic.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_ratio = value["Ratio"].GetDouble();
         m_ratioHasBeenSet = true;

@@ -53,6 +53,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByResourceResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDealsByCondRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDealsByCondResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeDosageCosDetailByDateRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeDosageCosDetailByDateResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateResponse.h>
 #include <tencentcloud/billing/v20180709/model/PayDealsRequest.h>
@@ -116,6 +118,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDealsByCondResponse> DescribeDealsByCondOutcome;
                 typedef std::future<DescribeDealsByCondOutcome> DescribeDealsByCondOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeDealsByCondRequest&, DescribeDealsByCondOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDealsByCondAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDosageCosDetailByDateResponse> DescribeDosageCosDetailByDateOutcome;
+                typedef std::future<DescribeDosageCosDetailByDateOutcome> DescribeDosageCosDetailByDateOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeDosageCosDetailByDateRequest&, DescribeDosageCosDetailByDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDosageCosDetailByDateAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDosageDetailByDateResponse> DescribeDosageDetailByDateOutcome;
                 typedef std::future<DescribeDosageDetailByDateOutcome> DescribeDosageDetailByDateOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeDosageDetailByDateRequest&, DescribeDosageDetailByDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDosageDetailByDateAsyncHandler;
@@ -259,6 +264,15 @@ namespace TencentCloud
                 DescribeDealsByCondOutcome DescribeDealsByCond(const Model::DescribeDealsByCondRequest &request);
                 void DescribeDealsByCondAsync(const Model::DescribeDealsByCondRequest& request, const DescribeDealsByCondAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDealsByCondOutcomeCallable DescribeDealsByCondCallable(const Model::DescribeDealsByCondRequest& request);
+
+                /**
+                 *获取COS产品用量明细
+                 * @param req DescribeDosageCosDetailByDateRequest
+                 * @return DescribeDosageCosDetailByDateOutcome
+                 */
+                DescribeDosageCosDetailByDateOutcome DescribeDosageCosDetailByDate(const Model::DescribeDosageCosDetailByDateRequest &request);
+                void DescribeDosageCosDetailByDateAsync(const Model::DescribeDosageCosDetailByDateRequest& request, const DescribeDosageCosDetailByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDosageCosDetailByDateOutcomeCallable DescribeDosageCosDetailByDateCallable(const Model::DescribeDosageCosDetailByDateRequest& request);
 
                 /**
                  *按日期获取产品用量明细

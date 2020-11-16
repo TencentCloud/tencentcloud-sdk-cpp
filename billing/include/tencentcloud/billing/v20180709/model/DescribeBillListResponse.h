@@ -127,6 +127,66 @@ namespace TencentCloud
                      */
                     bool DeductAmountHasBeenSet() const;
 
+                    /**
+                     * 获取资金转入总额，单位（分）
+                     * @return AgentInAmount 资金转入总额，单位（分）
+                     */
+                    double GetAgentInAmount() const;
+
+                    /**
+                     * 判断参数 AgentInAmount 是否已赋值
+                     * @return AgentInAmount 是否已赋值
+                     */
+                    bool AgentInAmountHasBeenSet() const;
+
+                    /**
+                     * 获取垫付充值总额，单位（分）
+                     * @return AdvanceRechargeAmount 垫付充值总额，单位（分）
+                     */
+                    double GetAdvanceRechargeAmount() const;
+
+                    /**
+                     * 判断参数 AdvanceRechargeAmount 是否已赋值
+                     * @return AdvanceRechargeAmount 是否已赋值
+                     */
+                    bool AdvanceRechargeAmountHasBeenSet() const;
+
+                    /**
+                     * 获取提现扣减总额，单位（分）
+                     * @return WithdrawAmount 提现扣减总额，单位（分）
+                     */
+                    double GetWithdrawAmount() const;
+
+                    /**
+                     * 判断参数 WithdrawAmount 是否已赋值
+                     * @return WithdrawAmount 是否已赋值
+                     */
+                    bool WithdrawAmountHasBeenSet() const;
+
+                    /**
+                     * 获取资金转出总额，单位（分）
+                     * @return AgentOutAmount 资金转出总额，单位（分）
+                     */
+                    double GetAgentOutAmount() const;
+
+                    /**
+                     * 判断参数 AgentOutAmount 是否已赋值
+                     * @return AgentOutAmount 是否已赋值
+                     */
+                    bool AgentOutAmountHasBeenSet() const;
+
+                    /**
+                     * 获取还垫付总额，单位（分）
+                     * @return AdvancePayAmount 还垫付总额，单位（分）
+                     */
+                    double GetAdvancePayAmount() const;
+
+                    /**
+                     * 判断参数 AdvancePayAmount 是否已赋值
+                     * @return AdvancePayAmount 是否已赋值
+                     */
+                    bool AdvancePayAmountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +230,36 @@ namespace TencentCloud
                      */
                     double m_deductAmount;
                     bool m_deductAmountHasBeenSet;
+
+                    /**
+                     * 资金转入总额，单位（分）
+                     */
+                    double m_agentInAmount;
+                    bool m_agentInAmountHasBeenSet;
+
+                    /**
+                     * 垫付充值总额，单位（分）
+                     */
+                    double m_advanceRechargeAmount;
+                    bool m_advanceRechargeAmountHasBeenSet;
+
+                    /**
+                     * 提现扣减总额，单位（分）
+                     */
+                    double m_withdrawAmount;
+                    bool m_withdrawAmountHasBeenSet;
+
+                    /**
+                     * 资金转出总额，单位（分）
+                     */
+                    double m_agentOutAmount;
+                    bool m_agentOutAmountHasBeenSet;
+
+                    /**
+                     * 还垫付总额，单位（分）
+                     */
+                    double m_advancePayAmount;
+                    bool m_advancePayAmountHasBeenSet;
 
                 };
             }

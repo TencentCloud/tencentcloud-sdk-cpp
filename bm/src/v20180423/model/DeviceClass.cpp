@@ -117,9 +117,9 @@ CoreInternalOutcome DeviceClass::Deserialize(const Value &value)
 
     if (value.HasMember("Discount") && !value["Discount"].IsNull())
     {
-        if (!value["Discount"].IsDouble())
+        if (!value["Discount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DeviceClass.Discount` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DeviceClass.Discount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discount = value["Discount"].GetDouble();
         m_discountHasBeenSet = true;

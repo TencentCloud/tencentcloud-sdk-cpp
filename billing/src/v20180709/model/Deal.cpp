@@ -164,9 +164,9 @@ CoreInternalOutcome Deal::Deserialize(const Value &value)
 
     if (value.HasMember("TimeSpan") && !value["TimeSpan"].IsNull())
     {
-        if (!value["TimeSpan"].IsDouble())
+        if (!value["TimeSpan"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Deal.TimeSpan` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Deal.TimeSpan` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_timeSpan = value["TimeSpan"].GetDouble();
         m_timeSpanHasBeenSet = true;
@@ -194,9 +194,9 @@ CoreInternalOutcome Deal::Deserialize(const Value &value)
 
     if (value.HasMember("Policy") && !value["Policy"].IsNull())
     {
-        if (!value["Policy"].IsDouble())
+        if (!value["Policy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Deal.Policy` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Deal.Policy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_policy = value["Policy"].GetDouble();
         m_policyHasBeenSet = true;
@@ -204,9 +204,9 @@ CoreInternalOutcome Deal::Deserialize(const Value &value)
 
     if (value.HasMember("Price") && !value["Price"].IsNull())
     {
-        if (!value["Price"].IsDouble())
+        if (!value["Price"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Deal.Price` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Deal.Price` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_price = value["Price"].GetDouble();
         m_priceHasBeenSet = true;
@@ -214,9 +214,9 @@ CoreInternalOutcome Deal::Deserialize(const Value &value)
 
     if (value.HasMember("TotalCost") && !value["TotalCost"].IsNull())
     {
-        if (!value["TotalCost"].IsDouble())
+        if (!value["TotalCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Deal.TotalCost` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Deal.TotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalCost = value["TotalCost"].GetDouble();
         m_totalCostHasBeenSet = true;

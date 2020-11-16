@@ -73,9 +73,9 @@ CoreInternalOutcome DescribeProIspPlaySumInfoListResponse::Deserialize(const str
 
     if (rsp.HasMember("TotalFlux") && !rsp["TotalFlux"].IsNull())
     {
-        if (!rsp["TotalFlux"].IsDouble())
+        if (!rsp["TotalFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TotalFlux` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalFlux = rsp["TotalFlux"].GetDouble();
         m_totalFluxHasBeenSet = true;
@@ -163,9 +163,9 @@ CoreInternalOutcome DescribeProIspPlaySumInfoListResponse::Deserialize(const str
 
     if (rsp.HasMember("AvgFluxPerSecond") && !rsp["AvgFluxPerSecond"].IsNull())
     {
-        if (!rsp["AvgFluxPerSecond"].IsDouble())
+        if (!rsp["AvgFluxPerSecond"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AvgFluxPerSecond` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AvgFluxPerSecond` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgFluxPerSecond = rsp["AvgFluxPerSecond"].GetDouble();
         m_avgFluxPerSecondHasBeenSet = true;

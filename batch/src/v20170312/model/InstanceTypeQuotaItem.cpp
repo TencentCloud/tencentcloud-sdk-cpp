@@ -206,9 +206,9 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const Value &value)
 
     if (value.HasMember("InstanceBandwidth") && !value["InstanceBandwidth"].IsNull())
     {
-        if (!value["InstanceBandwidth"].IsDouble())
+        if (!value["InstanceBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.InstanceBandwidth` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.InstanceBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_instanceBandwidth = value["InstanceBandwidth"].GetDouble();
         m_instanceBandwidthHasBeenSet = true;

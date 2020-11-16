@@ -57,9 +57,9 @@ CoreInternalOutcome Keyword::Deserialize(const Value &value)
 
     if (value.HasMember("ScoreCoeff") && !value["ScoreCoeff"].IsNull())
     {
-        if (!value["ScoreCoeff"].IsDouble())
+        if (!value["ScoreCoeff"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Keyword.ScoreCoeff` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Keyword.ScoreCoeff` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_scoreCoeff = value["ScoreCoeff"].GetDouble();
         m_scoreCoeffHasBeenSet = true;

@@ -55,9 +55,9 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const Value &value)
 
     if (value.HasMember("SampleRate") && !value["SampleRate"].IsNull())
     {
-        if (!value["SampleRate"].IsDouble())
+        if (!value["SampleRate"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.SampleRate` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AiContentReviewResult.SampleRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sampleRate = value["SampleRate"].GetDouble();
         m_sampleRateHasBeenSet = true;
@@ -65,9 +65,9 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const Value &value)
 
     if (value.HasMember("Duration") && !value["Duration"].IsNull())
     {
-        if (!value["Duration"].IsDouble())
+        if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.Duration` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AiContentReviewResult.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;

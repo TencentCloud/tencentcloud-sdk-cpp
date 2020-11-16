@@ -48,9 +48,9 @@ CoreInternalOutcome BandwidthPriceGradient::Deserialize(const Value &value)
 
     if (value.HasMember("BandwidthUnitPrice") && !value["BandwidthUnitPrice"].IsNull())
     {
-        if (!value["BandwidthUnitPrice"].IsDouble())
+        if (!value["BandwidthUnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPriceGradient.BandwidthUnitPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `BandwidthPriceGradient.BandwidthUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthUnitPrice = value["BandwidthUnitPrice"].GetDouble();
         m_bandwidthUnitPriceHasBeenSet = true;
@@ -58,9 +58,9 @@ CoreInternalOutcome BandwidthPriceGradient::Deserialize(const Value &value)
 
     if (value.HasMember("DiscountBandwidthUnitPrice") && !value["DiscountBandwidthUnitPrice"].IsNull())
     {
-        if (!value["DiscountBandwidthUnitPrice"].IsDouble())
+        if (!value["DiscountBandwidthUnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPriceGradient.DiscountBandwidthUnitPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `BandwidthPriceGradient.DiscountBandwidthUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountBandwidthUnitPrice = value["DiscountBandwidthUnitPrice"].GetDouble();
         m_discountBandwidthUnitPriceHasBeenSet = true;

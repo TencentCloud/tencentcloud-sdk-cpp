@@ -36,9 +36,9 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const Value &value)
 
     if (value.HasMember("Accuracy") && !value["Accuracy"].IsNull())
     {
-        if (!value["Accuracy"].IsDouble())
+        if (!value["Accuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Accuracy` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Accuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_accuracy = value["Accuracy"].GetDouble();
         m_accuracyHasBeenSet = true;
@@ -46,9 +46,9 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const Value &value)
 
     if (value.HasMember("Altitude") && !value["Altitude"].IsNull())
     {
-        if (!value["Altitude"].IsDouble())
+        if (!value["Altitude"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Altitude` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Altitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_altitude = value["Altitude"].GetDouble();
         m_altitudeHasBeenSet = true;
@@ -56,9 +56,9 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const Value &value)
 
     if (value.HasMember("Latitude") && !value["Latitude"].IsNull())
     {
-        if (!value["Latitude"].IsDouble())
+        if (!value["Latitude"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Latitude` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Latitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_latitude = value["Latitude"].GetDouble();
         m_latitudeHasBeenSet = true;
@@ -66,9 +66,9 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const Value &value)
 
     if (value.HasMember("Longitude") && !value["Longitude"].IsNull())
     {
-        if (!value["Longitude"].IsDouble())
+        if (!value["Longitude"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Longitude` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Longitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_longitude = value["Longitude"].GetDouble();
         m_longitudeHasBeenSet = true;

@@ -243,6 +243,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6TranslatorQuotaResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6TranslatorsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6TranslatorsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeIpGeolocationDatabaseUrlRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeIpGeolocationDatabaseUrlResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysRequest.h>
@@ -809,6 +811,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeIp6TranslatorsResponse> DescribeIp6TranslatorsOutcome;
                 typedef std::future<DescribeIp6TranslatorsOutcome> DescribeIp6TranslatorsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeIp6TranslatorsRequest&, DescribeIp6TranslatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIp6TranslatorsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeIpGeolocationDatabaseUrlResponse> DescribeIpGeolocationDatabaseUrlOutcome;
+                typedef std::future<DescribeIpGeolocationDatabaseUrlOutcome> DescribeIpGeolocationDatabaseUrlOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeIpGeolocationDatabaseUrlRequest&, DescribeIpGeolocationDatabaseUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpGeolocationDatabaseUrlAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse> DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome;
                 typedef std::future<DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome> DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest&, DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayDestinationIpPortTranslationNatRulesAsyncHandler;
@@ -2266,6 +2271,15 @@ namespace TencentCloud
                 DescribeIp6TranslatorsOutcome DescribeIp6Translators(const Model::DescribeIp6TranslatorsRequest &request);
                 void DescribeIp6TranslatorsAsync(const Model::DescribeIp6TranslatorsRequest& request, const DescribeIp6TranslatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIp6TranslatorsOutcomeCallable DescribeIp6TranslatorsCallable(const Model::DescribeIp6TranslatorsRequest& request);
+
+                /**
+                 *该接口用于获取ip地理位置库下载链接
+                 * @param req DescribeIpGeolocationDatabaseUrlRequest
+                 * @return DescribeIpGeolocationDatabaseUrlOutcome
+                 */
+                DescribeIpGeolocationDatabaseUrlOutcome DescribeIpGeolocationDatabaseUrl(const Model::DescribeIpGeolocationDatabaseUrlRequest &request);
+                void DescribeIpGeolocationDatabaseUrlAsync(const Model::DescribeIpGeolocationDatabaseUrlRequest& request, const DescribeIpGeolocationDatabaseUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIpGeolocationDatabaseUrlOutcomeCallable DescribeIpGeolocationDatabaseUrlCallable(const Model::DescribeIpGeolocationDatabaseUrlRequest& request);
 
                 /**
                  *本接口（DescribeNatGatewayDestinationIpPortTranslationNatRules）用于查询NAT网关端口转发规则对象数组。

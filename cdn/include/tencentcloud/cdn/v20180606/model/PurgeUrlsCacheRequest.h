@@ -94,6 +94,24 @@ namespace TencentCloud
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取是否对中文字符进行编码后刷新
+                     * @return UrlEncode 是否对中文字符进行编码后刷新
+                     */
+                    bool GetUrlEncode() const;
+
+                    /**
+                     * 设置是否对中文字符进行编码后刷新
+                     * @param UrlEncode 是否对中文字符进行编码后刷新
+                     */
+                    void SetUrlEncode(const bool& _urlEncode);
+
+                    /**
+                     * 判断参数 UrlEncode 是否已赋值
+                     * @return UrlEncode 是否已赋值
+                     */
+                    bool UrlEncodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +129,12 @@ namespace TencentCloud
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 是否对中文字符进行编码后刷新
+                     */
+                    bool m_urlEncode;
+                    bool m_urlEncodeHasBeenSet;
 
                 };
             }

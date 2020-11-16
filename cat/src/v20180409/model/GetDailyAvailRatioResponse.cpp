@@ -74,9 +74,9 @@ CoreInternalOutcome GetDailyAvailRatioResponse::Deserialize(const string &payloa
 
     if (rsp.HasMember("AvgAvailRatio") && !rsp["AvgAvailRatio"].IsNull())
     {
-        if (!rsp["AvgAvailRatio"].IsDouble())
+        if (!rsp["AvgAvailRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AvgAvailRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AvgAvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgAvailRatio = rsp["AvgAvailRatio"].GetDouble();
         m_avgAvailRatioHasBeenSet = true;
@@ -84,9 +84,9 @@ CoreInternalOutcome GetDailyAvailRatioResponse::Deserialize(const string &payloa
 
     if (rsp.HasMember("LowestAvailRatio") && !rsp["LowestAvailRatio"].IsNull())
     {
-        if (!rsp["LowestAvailRatio"].IsDouble())
+        if (!rsp["LowestAvailRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LowestAvailRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `LowestAvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lowestAvailRatio = rsp["LowestAvailRatio"].GetDouble();
         m_lowestAvailRatioHasBeenSet = true;
@@ -124,9 +124,9 @@ CoreInternalOutcome GetDailyAvailRatioResponse::Deserialize(const string &payloa
 
     if (rsp.HasMember("AvgTime") && !rsp["AvgTime"].IsNull())
     {
-        if (!rsp["AvgTime"].IsDouble())
+        if (!rsp["AvgTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AvgTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AvgTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgTime = rsp["AvgTime"].GetDouble();
         m_avgTimeHasBeenSet = true;
@@ -134,9 +134,9 @@ CoreInternalOutcome GetDailyAvailRatioResponse::Deserialize(const string &payloa
 
     if (rsp.HasMember("AvgAvailRatio2") && !rsp["AvgAvailRatio2"].IsNull())
     {
-        if (!rsp["AvgAvailRatio2"].IsDouble())
+        if (!rsp["AvgAvailRatio2"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AvgAvailRatio2` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AvgAvailRatio2` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgAvailRatio2 = rsp["AvgAvailRatio2"].GetDouble();
         m_avgAvailRatio2HasBeenSet = true;
@@ -144,9 +144,9 @@ CoreInternalOutcome GetDailyAvailRatioResponse::Deserialize(const string &payloa
 
     if (rsp.HasMember("AvgTime2") && !rsp["AvgTime2"].IsNull())
     {
-        if (!rsp["AvgTime2"].IsDouble())
+        if (!rsp["AvgTime2"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AvgTime2` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AvgTime2` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgTime2 = rsp["AvgTime2"].GetDouble();
         m_avgTime2HasBeenSet = true;
@@ -154,9 +154,9 @@ CoreInternalOutcome GetDailyAvailRatioResponse::Deserialize(const string &payloa
 
     if (rsp.HasMember("LowestAvailRatio2") && !rsp["LowestAvailRatio2"].IsNull())
     {
-        if (!rsp["LowestAvailRatio2"].IsDouble())
+        if (!rsp["LowestAvailRatio2"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LowestAvailRatio2` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `LowestAvailRatio2` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lowestAvailRatio2 = rsp["LowestAvailRatio2"].GetDouble();
         m_lowestAvailRatio2HasBeenSet = true;

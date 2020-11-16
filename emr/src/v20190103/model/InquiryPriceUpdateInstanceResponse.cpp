@@ -68,9 +68,9 @@ CoreInternalOutcome InquiryPriceUpdateInstanceResponse::Deserialize(const string
 
     if (rsp.HasMember("OriginalCost") && !rsp["OriginalCost"].IsNull())
     {
-        if (!rsp["OriginalCost"].IsDouble())
+        if (!rsp["OriginalCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OriginalCost` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OriginalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalCost = rsp["OriginalCost"].GetDouble();
         m_originalCostHasBeenSet = true;
@@ -78,9 +78,9 @@ CoreInternalOutcome InquiryPriceUpdateInstanceResponse::Deserialize(const string
 
     if (rsp.HasMember("DiscountCost") && !rsp["DiscountCost"].IsNull())
     {
-        if (!rsp["DiscountCost"].IsDouble())
+        if (!rsp["DiscountCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DiscountCost` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DiscountCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountCost = rsp["DiscountCost"].GetDouble();
         m_discountCostHasBeenSet = true;

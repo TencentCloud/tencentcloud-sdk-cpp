@@ -107,9 +107,9 @@ CoreInternalOutcome ProductInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Score") && !value["Score"].IsNull())
     {
-        if (!value["Score"].IsDouble())
+        if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.Score` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ProductInfo.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;

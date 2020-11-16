@@ -97,9 +97,9 @@ CoreInternalOutcome GeneralFastOCRResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("Angel") && !rsp["Angel"].IsNull())
     {
-        if (!rsp["Angel"].IsDouble())
+        if (!rsp["Angel"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Angel` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Angel` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_angel = rsp["Angel"].GetDouble();
         m_angelHasBeenSet = true;

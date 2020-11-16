@@ -266,6 +266,28 @@ namespace TencentCloud
                      */
                     bool CommandHasBeenSet() const;
 
+                    /**
+                     * 获取TSF_DEFAULT：tsf 默认就绪探针。K8S_NATIVE：k8s 原生探针。不填默认为 k8s 原生探针。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type TSF_DEFAULT：tsf 默认就绪探针。K8S_NATIVE：k8s 原生探针。不填默认为 k8s 原生探针。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置TSF_DEFAULT：tsf 默认就绪探针。K8S_NATIVE：k8s 原生探针。不填默认为 k8s 原生探针。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Type TSF_DEFAULT：tsf 默认就绪探针。K8S_NATIVE：k8s 原生探针。不填默认为 k8s 原生探针。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +359,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_command;
                     bool m_commandHasBeenSet;
+
+                    /**
+                     * TSF_DEFAULT：tsf 默认就绪探针。K8S_NATIVE：k8s 原生探针。不填默认为 k8s 原生探针。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

@@ -48,9 +48,9 @@ CoreInternalOutcome KeywordScore::Deserialize(const Value &value)
 
     if (value.HasMember("PronAccuracy") && !value["PronAccuracy"].IsNull())
     {
-        if (!value["PronAccuracy"].IsDouble())
+        if (!value["PronAccuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeywordScore.PronAccuracy` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `KeywordScore.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronAccuracy = value["PronAccuracy"].GetDouble();
         m_pronAccuracyHasBeenSet = true;
@@ -58,9 +58,9 @@ CoreInternalOutcome KeywordScore::Deserialize(const Value &value)
 
     if (value.HasMember("PronFluency") && !value["PronFluency"].IsNull())
     {
-        if (!value["PronFluency"].IsDouble())
+        if (!value["PronFluency"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeywordScore.PronFluency` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `KeywordScore.PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronFluency = value["PronFluency"].GetDouble();
         m_pronFluencyHasBeenSet = true;
@@ -68,9 +68,9 @@ CoreInternalOutcome KeywordScore::Deserialize(const Value &value)
 
     if (value.HasMember("PronCompletion") && !value["PronCompletion"].IsNull())
     {
-        if (!value["PronCompletion"].IsDouble())
+        if (!value["PronCompletion"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeywordScore.PronCompletion` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `KeywordScore.PronCompletion` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronCompletion = value["PronCompletion"].GetDouble();
         m_pronCompletionHasBeenSet = true;
@@ -98,9 +98,9 @@ CoreInternalOutcome KeywordScore::Deserialize(const Value &value)
 
     if (value.HasMember("SuggestedScore") && !value["SuggestedScore"].IsNull())
     {
-        if (!value["SuggestedScore"].IsDouble())
+        if (!value["SuggestedScore"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeywordScore.SuggestedScore` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `KeywordScore.SuggestedScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_suggestedScore = value["SuggestedScore"].GetDouble();
         m_suggestedScoreHasBeenSet = true;

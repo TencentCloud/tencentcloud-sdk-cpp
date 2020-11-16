@@ -46,9 +46,9 @@ CoreInternalOutcome AudioTrackItem::Deserialize(const Value &value)
 
     if (value.HasMember("SourceMediaStartTime") && !value["SourceMediaStartTime"].IsNull())
     {
-        if (!value["SourceMediaStartTime"].IsDouble())
+        if (!value["SourceMediaStartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioTrackItem.SourceMediaStartTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AudioTrackItem.SourceMediaStartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sourceMediaStartTime = value["SourceMediaStartTime"].GetDouble();
         m_sourceMediaStartTimeHasBeenSet = true;
@@ -56,9 +56,9 @@ CoreInternalOutcome AudioTrackItem::Deserialize(const Value &value)
 
     if (value.HasMember("Duration") && !value["Duration"].IsNull())
     {
-        if (!value["Duration"].IsDouble())
+        if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioTrackItem.Duration` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AudioTrackItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;

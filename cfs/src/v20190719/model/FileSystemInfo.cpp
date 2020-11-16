@@ -227,9 +227,9 @@ CoreInternalOutcome FileSystemInfo::Deserialize(const Value &value)
 
     if (value.HasMember("BandwidthLimit") && !value["BandwidthLimit"].IsNull())
     {
-        if (!value["BandwidthLimit"].IsDouble())
+        if (!value["BandwidthLimit"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FileSystemInfo.BandwidthLimit` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FileSystemInfo.BandwidthLimit` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthLimit = value["BandwidthLimit"].GetDouble();
         m_bandwidthLimitHasBeenSet = true;

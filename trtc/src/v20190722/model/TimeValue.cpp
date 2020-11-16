@@ -44,9 +44,9 @@ CoreInternalOutcome TimeValue::Deserialize(const Value &value)
 
     if (value.HasMember("Value") && !value["Value"].IsNull())
     {
-        if (!value["Value"].IsDouble())
+        if (!value["Value"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TimeValue.Value` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TimeValue.Value` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetDouble();
         m_valueHasBeenSet = true;

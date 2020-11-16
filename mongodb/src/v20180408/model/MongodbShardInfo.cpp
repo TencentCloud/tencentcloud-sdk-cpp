@@ -40,9 +40,9 @@ CoreInternalOutcome MongodbShardInfo::Deserialize(const Value &value)
 
     if (value.HasMember("UsedVolume") && !value["UsedVolume"].IsNull())
     {
-        if (!value["UsedVolume"].IsDouble())
+        if (!value["UsedVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MongodbShardInfo.UsedVolume` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MongodbShardInfo.UsedVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_usedVolume = value["UsedVolume"].GetDouble();
         m_usedVolumeHasBeenSet = true;

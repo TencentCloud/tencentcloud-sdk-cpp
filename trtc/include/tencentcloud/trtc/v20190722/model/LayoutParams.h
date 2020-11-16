@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/SmallVideoLayoutParams.h>
+#include <tencentcloud/trtc/v20190722/model/PresetLayoutConfig.h>
 
 
 namespace TencentCloud
@@ -48,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板。
-                     * @return Template 混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板。
+                     * 获取混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板;4为自定义模板。
+                     * @return Template 混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板;4为自定义模板。
                      */
                     uint64_t GetTemplate() const;
 
                     /**
-                     * 设置混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板。
-                     * @param Template 混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板。
+                     * 设置混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板;4为自定义模板。
+                     * @param Template 混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板;4为自定义模板。
                      */
                     void SetTemplate(const uint64_t& _template);
 
@@ -155,10 +156,28 @@ namespace TencentCloud
                      */
                     bool MixVideoUidsHasBeenSet() const;
 
+                    /**
+                     * 获取自定义模板中有效，指定用户视频在混合画面中的位置。
+                     * @return PresetLayoutConfig 自定义模板中有效，指定用户视频在混合画面中的位置。
+                     */
+                    std::vector<PresetLayoutConfig> GetPresetLayoutConfig() const;
+
+                    /**
+                     * 设置自定义模板中有效，指定用户视频在混合画面中的位置。
+                     * @param PresetLayoutConfig 自定义模板中有效，指定用户视频在混合画面中的位置。
+                     */
+                    void SetPresetLayoutConfig(const std::vector<PresetLayoutConfig>& _presetLayoutConfig);
+
+                    /**
+                     * 判断参数 PresetLayoutConfig 是否已赋值
+                     * @return PresetLayoutConfig 是否已赋值
+                     */
+                    bool PresetLayoutConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板。
+                     * 混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板;4为自定义模板。
                      */
                     uint64_t m_template;
                     bool m_templateHasBeenSet;
@@ -192,6 +211,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_mixVideoUids;
                     bool m_mixVideoUidsHasBeenSet;
+
+                    /**
+                     * 自定义模板中有效，指定用户视频在混合画面中的位置。
+                     */
+                    std::vector<PresetLayoutConfig> m_presetLayoutConfig;
+                    bool m_presetLayoutConfigHasBeenSet;
 
                 };
             }

@@ -407,14 +407,14 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取实例高可用， 1-双机高可用，2-单机
-                     * @return Model 实例高可用， 1-双机高可用，2-单机
+                     * 获取实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房
+                     * @return Model 实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房
                      */
                     int64_t GetModel() const;
 
                     /**
-                     * 设置实例高可用， 1-双机高可用，2-单机
-                     * @param Model 实例高可用， 1-双机高可用，2-单机
+                     * 设置实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房
+                     * @param Model 实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房
                      */
                     void SetModel(const int64_t& _model);
 
@@ -833,7 +833,7 @@ namespace TencentCloud
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 实例高可用， 1-双机高可用，2-单机
+                     * 实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房
                      */
                     int64_t m_model;
                     bool m_modelHasBeenSet;

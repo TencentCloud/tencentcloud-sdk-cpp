@@ -116,9 +116,9 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const Value &value)
 
     if (value.HasMember("MaxBandwidth") && !value["MaxBandwidth"].IsNull())
     {
-        if (!value["MaxBandwidth"].IsDouble())
+        if (!value["MaxBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.MaxBandwidth` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.MaxBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxBandwidth = value["MaxBandwidth"].GetDouble();
         m_maxBandwidthHasBeenSet = true;

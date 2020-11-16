@@ -42,9 +42,9 @@ CoreInternalOutcome Order::Deserialize(const Value &value)
 
     if (value.HasMember("AmountHasTax") && !value["AmountHasTax"].IsNull())
     {
-        if (!value["AmountHasTax"].IsDouble())
+        if (!value["AmountHasTax"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Order.AmountHasTax` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Order.AmountHasTax` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_amountHasTax = value["AmountHasTax"].GetDouble();
         m_amountHasTaxHasBeenSet = true;
@@ -52,9 +52,9 @@ CoreInternalOutcome Order::Deserialize(const Value &value)
 
     if (value.HasMember("Discount") && !value["Discount"].IsNull())
     {
-        if (!value["Discount"].IsDouble())
+        if (!value["Discount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Order.Discount` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Order.Discount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discount = value["Discount"].GetDouble();
         m_discountHasBeenSet = true;
@@ -92,9 +92,9 @@ CoreInternalOutcome Order::Deserialize(const Value &value)
 
     if (value.HasMember("Amount") && !value["Amount"].IsNull())
     {
-        if (!value["Amount"].IsDouble())
+        if (!value["Amount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Order.Amount` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Order.Amount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_amount = value["Amount"].GetDouble();
         m_amountHasBeenSet = true;

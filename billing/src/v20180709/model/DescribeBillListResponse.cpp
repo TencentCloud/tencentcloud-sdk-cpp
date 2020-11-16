@@ -31,7 +31,12 @@ DescribeBillListResponse::DescribeBillListResponse() :
     m_rechargeAmountHasBeenSet(false),
     m_blockAmountHasBeenSet(false),
     m_unblockAmountHasBeenSet(false),
-    m_deductAmountHasBeenSet(false)
+    m_deductAmountHasBeenSet(false),
+    m_agentInAmountHasBeenSet(false),
+    m_advanceRechargeAmountHasBeenSet(false),
+    m_withdrawAmountHasBeenSet(false),
+    m_agentOutAmountHasBeenSet(false),
+    m_advancePayAmountHasBeenSet(false)
 {
 }
 
@@ -101,9 +106,9 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("ReturnAmount") && !rsp["ReturnAmount"].IsNull())
     {
-        if (!rsp["ReturnAmount"].IsDouble())
+        if (!rsp["ReturnAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReturnAmount` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ReturnAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_returnAmount = rsp["ReturnAmount"].GetDouble();
         m_returnAmountHasBeenSet = true;
@@ -111,9 +116,9 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("RechargeAmount") && !rsp["RechargeAmount"].IsNull())
     {
-        if (!rsp["RechargeAmount"].IsDouble())
+        if (!rsp["RechargeAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RechargeAmount` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RechargeAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_rechargeAmount = rsp["RechargeAmount"].GetDouble();
         m_rechargeAmountHasBeenSet = true;
@@ -121,9 +126,9 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("BlockAmount") && !rsp["BlockAmount"].IsNull())
     {
-        if (!rsp["BlockAmount"].IsDouble())
+        if (!rsp["BlockAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BlockAmount` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `BlockAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_blockAmount = rsp["BlockAmount"].GetDouble();
         m_blockAmountHasBeenSet = true;
@@ -131,9 +136,9 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("UnblockAmount") && !rsp["UnblockAmount"].IsNull())
     {
-        if (!rsp["UnblockAmount"].IsDouble())
+        if (!rsp["UnblockAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `UnblockAmount` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `UnblockAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unblockAmount = rsp["UnblockAmount"].GetDouble();
         m_unblockAmountHasBeenSet = true;
@@ -141,12 +146,62 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("DeductAmount") && !rsp["DeductAmount"].IsNull())
     {
-        if (!rsp["DeductAmount"].IsDouble())
+        if (!rsp["DeductAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DeductAmount` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DeductAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_deductAmount = rsp["DeductAmount"].GetDouble();
         m_deductAmountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AgentInAmount") && !rsp["AgentInAmount"].IsNull())
+    {
+        if (!rsp["AgentInAmount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `AgentInAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentInAmount = rsp["AgentInAmount"].GetDouble();
+        m_agentInAmountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AdvanceRechargeAmount") && !rsp["AdvanceRechargeAmount"].IsNull())
+    {
+        if (!rsp["AdvanceRechargeAmount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `AdvanceRechargeAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_advanceRechargeAmount = rsp["AdvanceRechargeAmount"].GetDouble();
+        m_advanceRechargeAmountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WithdrawAmount") && !rsp["WithdrawAmount"].IsNull())
+    {
+        if (!rsp["WithdrawAmount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `WithdrawAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_withdrawAmount = rsp["WithdrawAmount"].GetDouble();
+        m_withdrawAmountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AgentOutAmount") && !rsp["AgentOutAmount"].IsNull())
+    {
+        if (!rsp["AgentOutAmount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `AgentOutAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentOutAmount = rsp["AgentOutAmount"].GetDouble();
+        m_agentOutAmountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AdvancePayAmount") && !rsp["AdvancePayAmount"].IsNull())
+    {
+        if (!rsp["AdvancePayAmount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `AdvancePayAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_advancePayAmount = rsp["AdvancePayAmount"].GetDouble();
+        m_advancePayAmountHasBeenSet = true;
     }
 
 
@@ -222,6 +277,56 @@ double DescribeBillListResponse::GetDeductAmount() const
 bool DescribeBillListResponse::DeductAmountHasBeenSet() const
 {
     return m_deductAmountHasBeenSet;
+}
+
+double DescribeBillListResponse::GetAgentInAmount() const
+{
+    return m_agentInAmount;
+}
+
+bool DescribeBillListResponse::AgentInAmountHasBeenSet() const
+{
+    return m_agentInAmountHasBeenSet;
+}
+
+double DescribeBillListResponse::GetAdvanceRechargeAmount() const
+{
+    return m_advanceRechargeAmount;
+}
+
+bool DescribeBillListResponse::AdvanceRechargeAmountHasBeenSet() const
+{
+    return m_advanceRechargeAmountHasBeenSet;
+}
+
+double DescribeBillListResponse::GetWithdrawAmount() const
+{
+    return m_withdrawAmount;
+}
+
+bool DescribeBillListResponse::WithdrawAmountHasBeenSet() const
+{
+    return m_withdrawAmountHasBeenSet;
+}
+
+double DescribeBillListResponse::GetAgentOutAmount() const
+{
+    return m_agentOutAmount;
+}
+
+bool DescribeBillListResponse::AgentOutAmountHasBeenSet() const
+{
+    return m_agentOutAmountHasBeenSet;
+}
+
+double DescribeBillListResponse::GetAdvancePayAmount() const
+{
+    return m_advancePayAmount;
+}
+
+bool DescribeBillListResponse::AdvancePayAmountHasBeenSet() const
+{
+    return m_advancePayAmountHasBeenSet;
 }
 
 

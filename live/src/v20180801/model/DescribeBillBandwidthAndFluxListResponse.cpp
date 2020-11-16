@@ -80,9 +80,9 @@ CoreInternalOutcome DescribeBillBandwidthAndFluxListResponse::Deserialize(const 
 
     if (rsp.HasMember("PeakBandwidth") && !rsp["PeakBandwidth"].IsNull())
     {
-        if (!rsp["PeakBandwidth"].IsDouble())
+        if (!rsp["PeakBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PeakBandwidth` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PeakBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_peakBandwidth = rsp["PeakBandwidth"].GetDouble();
         m_peakBandwidthHasBeenSet = true;
@@ -100,9 +100,9 @@ CoreInternalOutcome DescribeBillBandwidthAndFluxListResponse::Deserialize(const 
 
     if (rsp.HasMember("P95PeakBandwidth") && !rsp["P95PeakBandwidth"].IsNull())
     {
-        if (!rsp["P95PeakBandwidth"].IsDouble())
+        if (!rsp["P95PeakBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `P95PeakBandwidth` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `P95PeakBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_p95PeakBandwidth = rsp["P95PeakBandwidth"].GetDouble();
         m_p95PeakBandwidthHasBeenSet = true;
@@ -110,9 +110,9 @@ CoreInternalOutcome DescribeBillBandwidthAndFluxListResponse::Deserialize(const 
 
     if (rsp.HasMember("SumFlux") && !rsp["SumFlux"].IsNull())
     {
-        if (!rsp["SumFlux"].IsDouble())
+        if (!rsp["SumFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SumFlux` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SumFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sumFlux = rsp["SumFlux"].GetDouble();
         m_sumFluxHasBeenSet = true;

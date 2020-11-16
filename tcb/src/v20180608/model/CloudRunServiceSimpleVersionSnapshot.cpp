@@ -81,9 +81,9 @@ CoreInternalOutcome CloudRunServiceSimpleVersionSnapshot::Deserialize(const Valu
 
     if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
     {
-        if (!value["Cpu"].IsDouble())
+        if (!value["Cpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CloudRunServiceSimpleVersionSnapshot.Cpu` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CloudRunServiceSimpleVersionSnapshot.Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetDouble();
         m_cpuHasBeenSet = true;
@@ -91,9 +91,9 @@ CoreInternalOutcome CloudRunServiceSimpleVersionSnapshot::Deserialize(const Valu
 
     if (value.HasMember("Mem") && !value["Mem"].IsNull())
     {
-        if (!value["Mem"].IsDouble())
+        if (!value["Mem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CloudRunServiceSimpleVersionSnapshot.Mem` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CloudRunServiceSimpleVersionSnapshot.Mem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_mem = value["Mem"].GetDouble();
         m_memHasBeenSet = true;

@@ -44,9 +44,9 @@ CoreInternalOutcome AudioVolumeParam::Deserialize(const Value &value)
 
     if (value.HasMember("Gain") && !value["Gain"].IsNull())
     {
-        if (!value["Gain"].IsDouble())
+        if (!value["Gain"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioVolumeParam.Gain` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AudioVolumeParam.Gain` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_gain = value["Gain"].GetDouble();
         m_gainHasBeenSet = true;

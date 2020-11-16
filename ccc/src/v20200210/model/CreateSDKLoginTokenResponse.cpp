@@ -26,7 +26,8 @@ using namespace std;
 
 CreateSDKLoginTokenResponse::CreateSDKLoginTokenResponse() :
     m_tokenHasBeenSet(false),
-    m_expiredTimeHasBeenSet(false)
+    m_expiredTimeHasBeenSet(false),
+    m_sdkURLHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome CreateSDKLoginTokenResponse::Deserialize(const string &paylo
         m_expiredTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SdkURL") && !rsp["SdkURL"].IsNull())
+    {
+        if (!rsp["SdkURL"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SdkURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sdkURL = string(rsp["SdkURL"].GetString());
+        m_sdkURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,16 @@ int64_t CreateSDKLoginTokenResponse::GetExpiredTime() const
 bool CreateSDKLoginTokenResponse::ExpiredTimeHasBeenSet() const
 {
     return m_expiredTimeHasBeenSet;
+}
+
+string CreateSDKLoginTokenResponse::GetSdkURL() const
+{
+    return m_sdkURL;
+}
+
+bool CreateSDKLoginTokenResponse::SdkURLHasBeenSet() const
+{
+    return m_sdkURLHasBeenSet;
 }
 
 

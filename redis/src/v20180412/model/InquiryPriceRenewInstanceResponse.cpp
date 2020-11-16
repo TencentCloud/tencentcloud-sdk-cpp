@@ -65,9 +65,9 @@ CoreInternalOutcome InquiryPriceRenewInstanceResponse::Deserialize(const string 
 
     if (rsp.HasMember("Price") && !rsp["Price"].IsNull())
     {
-        if (!rsp["Price"].IsDouble())
+        if (!rsp["Price"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Price` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Price` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_price = rsp["Price"].GetDouble();
         m_priceHasBeenSet = true;

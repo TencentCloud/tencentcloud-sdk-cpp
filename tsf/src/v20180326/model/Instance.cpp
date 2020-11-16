@@ -238,9 +238,9 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
 
     if (value.HasMember("InstanceTotalCpu") && !value["InstanceTotalCpu"].IsNull())
     {
-        if (!value["InstanceTotalCpu"].IsDouble())
+        if (!value["InstanceTotalCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Instance.InstanceTotalCpu` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Instance.InstanceTotalCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_instanceTotalCpu = value["InstanceTotalCpu"].GetDouble();
         m_instanceTotalCpuHasBeenSet = true;
@@ -248,9 +248,9 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
 
     if (value.HasMember("InstanceTotalMem") && !value["InstanceTotalMem"].IsNull())
     {
-        if (!value["InstanceTotalMem"].IsDouble())
+        if (!value["InstanceTotalMem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Instance.InstanceTotalMem` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Instance.InstanceTotalMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_instanceTotalMem = value["InstanceTotalMem"].GetDouble();
         m_instanceTotalMemHasBeenSet = true;
@@ -258,9 +258,9 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
 
     if (value.HasMember("InstanceUsedCpu") && !value["InstanceUsedCpu"].IsNull())
     {
-        if (!value["InstanceUsedCpu"].IsDouble())
+        if (!value["InstanceUsedCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Instance.InstanceUsedCpu` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Instance.InstanceUsedCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_instanceUsedCpu = value["InstanceUsedCpu"].GetDouble();
         m_instanceUsedCpuHasBeenSet = true;
@@ -268,9 +268,9 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
 
     if (value.HasMember("InstanceUsedMem") && !value["InstanceUsedMem"].IsNull())
     {
-        if (!value["InstanceUsedMem"].IsDouble())
+        if (!value["InstanceUsedMem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Instance.InstanceUsedMem` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Instance.InstanceUsedMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_instanceUsedMem = value["InstanceUsedMem"].GetDouble();
         m_instanceUsedMemHasBeenSet = true;
@@ -278,9 +278,9 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
 
     if (value.HasMember("InstanceLimitCpu") && !value["InstanceLimitCpu"].IsNull())
     {
-        if (!value["InstanceLimitCpu"].IsDouble())
+        if (!value["InstanceLimitCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Instance.InstanceLimitCpu` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Instance.InstanceLimitCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_instanceLimitCpu = value["InstanceLimitCpu"].GetDouble();
         m_instanceLimitCpuHasBeenSet = true;
@@ -288,9 +288,9 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
 
     if (value.HasMember("InstanceLimitMem") && !value["InstanceLimitMem"].IsNull())
     {
-        if (!value["InstanceLimitMem"].IsDouble())
+        if (!value["InstanceLimitMem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Instance.InstanceLimitMem` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Instance.InstanceLimitMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_instanceLimitMem = value["InstanceLimitMem"].GetDouble();
         m_instanceLimitMemHasBeenSet = true;

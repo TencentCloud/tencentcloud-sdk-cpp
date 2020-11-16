@@ -35,9 +35,9 @@ CoreInternalOutcome FrameInfo::Deserialize(const Value &value)
 
     if (value.HasMember("Similarity") && !value["Similarity"].IsNull())
     {
-        if (!value["Similarity"].IsDouble())
+        if (!value["Similarity"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FrameInfo.Similarity` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FrameInfo.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_similarity = value["Similarity"].GetDouble();
         m_similarityHasBeenSet = true;

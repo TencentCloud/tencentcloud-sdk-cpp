@@ -37,9 +37,9 @@ CoreInternalOutcome RrectF::Deserialize(const Value &value)
 
     if (value.HasMember("Cx") && !value["Cx"].IsNull())
     {
-        if (!value["Cx"].IsDouble())
+        if (!value["Cx"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RrectF.Cx` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RrectF.Cx` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cx = value["Cx"].GetDouble();
         m_cxHasBeenSet = true;
@@ -47,9 +47,9 @@ CoreInternalOutcome RrectF::Deserialize(const Value &value)
 
     if (value.HasMember("Cy") && !value["Cy"].IsNull())
     {
-        if (!value["Cy"].IsDouble())
+        if (!value["Cy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RrectF.Cy` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RrectF.Cy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cy = value["Cy"].GetDouble();
         m_cyHasBeenSet = true;
@@ -57,9 +57,9 @@ CoreInternalOutcome RrectF::Deserialize(const Value &value)
 
     if (value.HasMember("Height") && !value["Height"].IsNull())
     {
-        if (!value["Height"].IsDouble())
+        if (!value["Height"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RrectF.Height` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RrectF.Height` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetDouble();
         m_heightHasBeenSet = true;
@@ -67,9 +67,9 @@ CoreInternalOutcome RrectF::Deserialize(const Value &value)
 
     if (value.HasMember("Rotate") && !value["Rotate"].IsNull())
     {
-        if (!value["Rotate"].IsDouble())
+        if (!value["Rotate"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RrectF.Rotate` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RrectF.Rotate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_rotate = value["Rotate"].GetDouble();
         m_rotateHasBeenSet = true;
@@ -77,9 +77,9 @@ CoreInternalOutcome RrectF::Deserialize(const Value &value)
 
     if (value.HasMember("Width") && !value["Width"].IsNull())
     {
-        if (!value["Width"].IsDouble())
+        if (!value["Width"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RrectF.Width` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RrectF.Width` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetDouble();
         m_widthHasBeenSet = true;

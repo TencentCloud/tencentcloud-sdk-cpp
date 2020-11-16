@@ -46,9 +46,9 @@ CoreInternalOutcome TaskDetail::Deserialize(const Value &value)
 
     if (value.HasMember("Progress") && !value["Progress"].IsNull())
     {
-        if (!value["Progress"].IsDouble())
+        if (!value["Progress"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TaskDetail.Progress` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TaskDetail.Progress` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetDouble();
         m_progressHasBeenSet = true;

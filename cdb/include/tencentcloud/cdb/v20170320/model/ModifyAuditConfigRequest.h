@@ -101,16 +101,20 @@ namespace TencentCloud
                     /**
                      * 获取是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。
 当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。
+CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按照CloseAudit优先的逻辑处理。
                      * @return CloseAudit 是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。
 当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。
+CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按照CloseAudit优先的逻辑处理。
                      */
                     bool GetCloseAudit() const;
 
                     /**
                      * 设置是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。
 当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。
+CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按照CloseAudit优先的逻辑处理。
                      * @param CloseAudit 是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。
 当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。
+CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按照CloseAudit优先的逻辑处理。
                      */
                     void SetCloseAudit(const bool& _closeAudit);
 
@@ -142,6 +146,7 @@ namespace TencentCloud
                     /**
                      * 是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。
 当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。
+CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按照CloseAudit优先的逻辑处理。
                      */
                     bool m_closeAudit;
                     bool m_closeAuditHasBeenSet;

@@ -52,9 +52,9 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const Value &value)
 
     if (value.HasMember("SourceMediaStartTime") && !value["SourceMediaStartTime"].IsNull())
     {
-        if (!value["SourceMediaStartTime"].IsDouble())
+        if (!value["SourceMediaStartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.SourceMediaStartTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `VideoTrackItem.SourceMediaStartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sourceMediaStartTime = value["SourceMediaStartTime"].GetDouble();
         m_sourceMediaStartTimeHasBeenSet = true;
@@ -62,9 +62,9 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const Value &value)
 
     if (value.HasMember("Duration") && !value["Duration"].IsNull())
     {
-        if (!value["Duration"].IsDouble())
+        if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.Duration` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `VideoTrackItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;

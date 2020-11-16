@@ -58,9 +58,9 @@ CoreInternalOutcome CaptchaOperDataTryTimesUnit::Deserialize(const Value &value)
 
     if (value.HasMember("MarketCntPerPass") && !value["MarketCntPerPass"].IsNull())
     {
-        if (!value["MarketCntPerPass"].IsDouble())
+        if (!value["MarketCntPerPass"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataTryTimesUnit.MarketCntPerPass` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CaptchaOperDataTryTimesUnit.MarketCntPerPass` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_marketCntPerPass = value["MarketCntPerPass"].GetDouble();
         m_marketCntPerPassHasBeenSet = true;

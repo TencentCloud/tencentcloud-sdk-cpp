@@ -56,9 +56,9 @@ CoreInternalOutcome CoverBySnapshotTaskInput::Deserialize(const Value &value)
 
     if (value.HasMember("PositionValue") && !value["PositionValue"].IsNull())
     {
-        if (!value["PositionValue"].IsDouble())
+        if (!value["PositionValue"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CoverBySnapshotTaskInput.PositionValue` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CoverBySnapshotTaskInput.PositionValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_positionValue = value["PositionValue"].GetDouble();
         m_positionValueHasBeenSet = true;

@@ -46,9 +46,9 @@ CoreInternalOutcome CaptchaOperDataInterceptUnit::Deserialize(const Value &value
 
     if (value.HasMember("AllStopCnt") && !value["AllStopCnt"].IsNull())
     {
-        if (!value["AllStopCnt"].IsDouble())
+        if (!value["AllStopCnt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataInterceptUnit.AllStopCnt` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CaptchaOperDataInterceptUnit.AllStopCnt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_allStopCnt = value["AllStopCnt"].GetDouble();
         m_allStopCntHasBeenSet = true;
@@ -56,9 +56,9 @@ CoreInternalOutcome CaptchaOperDataInterceptUnit::Deserialize(const Value &value
 
     if (value.HasMember("PicStopCnt") && !value["PicStopCnt"].IsNull())
     {
-        if (!value["PicStopCnt"].IsDouble())
+        if (!value["PicStopCnt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataInterceptUnit.PicStopCnt` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CaptchaOperDataInterceptUnit.PicStopCnt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_picStopCnt = value["PicStopCnt"].GetDouble();
         m_picStopCntHasBeenSet = true;
@@ -66,9 +66,9 @@ CoreInternalOutcome CaptchaOperDataInterceptUnit::Deserialize(const Value &value
 
     if (value.HasMember("StrategyStopCnt") && !value["StrategyStopCnt"].IsNull())
     {
-        if (!value["StrategyStopCnt"].IsDouble())
+        if (!value["StrategyStopCnt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataInterceptUnit.StrategyStopCnt` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CaptchaOperDataInterceptUnit.StrategyStopCnt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_strategyStopCnt = value["StrategyStopCnt"].GetDouble();
         m_strategyStopCntHasBeenSet = true;

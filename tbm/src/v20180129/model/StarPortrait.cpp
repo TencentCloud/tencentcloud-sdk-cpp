@@ -44,9 +44,9 @@ CoreInternalOutcome StarPortrait::Deserialize(const Value &value)
 
     if (value.HasMember("Percent") && !value["Percent"].IsNull())
     {
-        if (!value["Percent"].IsDouble())
+        if (!value["Percent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StarPortrait.Percent` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `StarPortrait.Percent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetDouble();
         m_percentHasBeenSet = true;

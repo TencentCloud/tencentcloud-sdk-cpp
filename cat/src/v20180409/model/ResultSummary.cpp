@@ -56,9 +56,9 @@ CoreInternalOutcome ResultSummary::Deserialize(const Value &value)
 
     if (value.HasMember("AvailRatio") && !value["AvailRatio"].IsNull())
     {
-        if (!value["AvailRatio"].IsDouble())
+        if (!value["AvailRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ResultSummary.AvailRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ResultSummary.AvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_availRatio = value["AvailRatio"].GetDouble();
         m_availRatioHasBeenSet = true;
@@ -66,9 +66,9 @@ CoreInternalOutcome ResultSummary::Deserialize(const Value &value)
 
     if (value.HasMember("ReponseTime") && !value["ReponseTime"].IsNull())
     {
-        if (!value["ReponseTime"].IsDouble())
+        if (!value["ReponseTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ResultSummary.ReponseTime` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ResultSummary.ReponseTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_reponseTime = value["ReponseTime"].GetDouble();
         m_reponseTimeHasBeenSet = true;

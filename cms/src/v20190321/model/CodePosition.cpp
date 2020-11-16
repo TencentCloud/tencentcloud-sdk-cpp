@@ -34,9 +34,9 @@ CoreInternalOutcome CodePosition::Deserialize(const Value &value)
 
     if (value.HasMember("FloatX") && !value["FloatX"].IsNull())
     {
-        if (!value["FloatX"].IsDouble())
+        if (!value["FloatX"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CodePosition.FloatX` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CodePosition.FloatX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_floatX = value["FloatX"].GetDouble();
         m_floatXHasBeenSet = true;
@@ -44,9 +44,9 @@ CoreInternalOutcome CodePosition::Deserialize(const Value &value)
 
     if (value.HasMember("FloatY") && !value["FloatY"].IsNull())
     {
-        if (!value["FloatY"].IsDouble())
+        if (!value["FloatY"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CodePosition.FloatY` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CodePosition.FloatY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_floatY = value["FloatY"].GetDouble();
         m_floatYHasBeenSet = true;

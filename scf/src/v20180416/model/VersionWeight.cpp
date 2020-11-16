@@ -44,9 +44,9 @@ CoreInternalOutcome VersionWeight::Deserialize(const Value &value)
 
     if (value.HasMember("Weight") && !value["Weight"].IsNull())
     {
-        if (!value["Weight"].IsDouble())
+        if (!value["Weight"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VersionWeight.Weight` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `VersionWeight.Weight` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetDouble();
         m_weightHasBeenSet = true;

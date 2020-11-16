@@ -44,9 +44,9 @@ CoreInternalOutcome AgePortrait::Deserialize(const Value &value)
 
     if (value.HasMember("Percent") && !value["Percent"].IsNull())
     {
-        if (!value["Percent"].IsDouble())
+        if (!value["Percent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AgePortrait.Percent` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AgePortrait.Percent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetDouble();
         m_percentHasBeenSet = true;

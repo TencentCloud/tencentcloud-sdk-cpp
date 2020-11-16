@@ -37,9 +37,9 @@ CoreInternalOutcome Location::Deserialize(const Value &value)
 
     if (value.HasMember("X") && !value["X"].IsNull())
     {
-        if (!value["X"].IsDouble())
+        if (!value["X"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Location.X` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Location.X` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetDouble();
         m_xHasBeenSet = true;
@@ -47,9 +47,9 @@ CoreInternalOutcome Location::Deserialize(const Value &value)
 
     if (value.HasMember("Y") && !value["Y"].IsNull())
     {
-        if (!value["Y"].IsDouble())
+        if (!value["Y"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Location.Y` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Location.Y` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetDouble();
         m_yHasBeenSet = true;
@@ -57,9 +57,9 @@ CoreInternalOutcome Location::Deserialize(const Value &value)
 
     if (value.HasMember("Width") && !value["Width"].IsNull())
     {
-        if (!value["Width"].IsDouble())
+        if (!value["Width"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Location.Width` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Location.Width` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetDouble();
         m_widthHasBeenSet = true;
@@ -67,9 +67,9 @@ CoreInternalOutcome Location::Deserialize(const Value &value)
 
     if (value.HasMember("Height") && !value["Height"].IsNull())
     {
-        if (!value["Height"].IsDouble())
+        if (!value["Height"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Location.Height` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Location.Height` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetDouble();
         m_heightHasBeenSet = true;
@@ -77,9 +77,9 @@ CoreInternalOutcome Location::Deserialize(const Value &value)
 
     if (value.HasMember("Rotate") && !value["Rotate"].IsNull())
     {
-        if (!value["Rotate"].IsDouble())
+        if (!value["Rotate"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Location.Rotate` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Location.Rotate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_rotate = value["Rotate"].GetDouble();
         m_rotateHasBeenSet = true;

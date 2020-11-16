@@ -55,9 +55,9 @@ CoreInternalOutcome AllMuteSlice::Deserialize(const Value &value)
 
     if (value.HasMember("MuteRatio") && !value["MuteRatio"].IsNull())
     {
-        if (!value["MuteRatio"].IsDouble())
+        if (!value["MuteRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AllMuteSlice.MuteRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AllMuteSlice.MuteRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_muteRatio = value["MuteRatio"].GetDouble();
         m_muteRatioHasBeenSet = true;

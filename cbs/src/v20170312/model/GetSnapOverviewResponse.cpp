@@ -68,9 +68,9 @@ CoreInternalOutcome GetSnapOverviewResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("TotalSize") && !rsp["TotalSize"].IsNull())
     {
-        if (!rsp["TotalSize"].IsDouble())
+        if (!rsp["TotalSize"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TotalSize` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalSize = rsp["TotalSize"].GetDouble();
         m_totalSizeHasBeenSet = true;
@@ -78,9 +78,9 @@ CoreInternalOutcome GetSnapOverviewResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("RealTradeSize") && !rsp["RealTradeSize"].IsNull())
     {
-        if (!rsp["RealTradeSize"].IsDouble())
+        if (!rsp["RealTradeSize"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RealTradeSize` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RealTradeSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_realTradeSize = rsp["RealTradeSize"].GetDouble();
         m_realTradeSizeHasBeenSet = true;
@@ -88,9 +88,9 @@ CoreInternalOutcome GetSnapOverviewResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("FreeQuota") && !rsp["FreeQuota"].IsNull())
     {
-        if (!rsp["FreeQuota"].IsDouble())
+        if (!rsp["FreeQuota"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FreeQuota` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FreeQuota` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_freeQuota = rsp["FreeQuota"].GetDouble();
         m_freeQuotaHasBeenSet = true;

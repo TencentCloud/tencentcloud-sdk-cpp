@@ -68,9 +68,9 @@ CoreInternalOutcome SentimentAnalysisResponse::Deserialize(const string &payload
 
     if (rsp.HasMember("Negative") && !rsp["Negative"].IsNull())
     {
-        if (!rsp["Negative"].IsDouble())
+        if (!rsp["Negative"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Negative` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Negative` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_negative = rsp["Negative"].GetDouble();
         m_negativeHasBeenSet = true;
@@ -78,9 +78,9 @@ CoreInternalOutcome SentimentAnalysisResponse::Deserialize(const string &payload
 
     if (rsp.HasMember("Neutral") && !rsp["Neutral"].IsNull())
     {
-        if (!rsp["Neutral"].IsDouble())
+        if (!rsp["Neutral"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Neutral` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Neutral` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_neutral = rsp["Neutral"].GetDouble();
         m_neutralHasBeenSet = true;
@@ -88,9 +88,9 @@ CoreInternalOutcome SentimentAnalysisResponse::Deserialize(const string &payload
 
     if (rsp.HasMember("Positive") && !rsp["Positive"].IsNull())
     {
-        if (!rsp["Positive"].IsDouble())
+        if (!rsp["Positive"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Positive` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Positive` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_positive = rsp["Positive"].GetDouble();
         m_positiveHasBeenSet = true;

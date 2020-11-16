@@ -134,9 +134,9 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const Value &value)
 
     if (value.HasMember("Quality") && !value["Quality"].IsNull())
     {
-        if (!value["Quality"].IsDouble())
+        if (!value["Quality"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Quality` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Quality` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_quality = value["Quality"].GetDouble();
         m_qualityHasBeenSet = true;

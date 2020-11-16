@@ -93,9 +93,9 @@ CoreInternalOutcome MediaMetaData::Deserialize(const Value &value)
 
     if (value.HasMember("Duration") && !value["Duration"].IsNull())
     {
-        if (!value["Duration"].IsDouble())
+        if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Duration` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MediaMetaData.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -153,9 +153,9 @@ CoreInternalOutcome MediaMetaData::Deserialize(const Value &value)
 
     if (value.HasMember("VideoDuration") && !value["VideoDuration"].IsNull())
     {
-        if (!value["VideoDuration"].IsDouble())
+        if (!value["VideoDuration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.VideoDuration` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MediaMetaData.VideoDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_videoDuration = value["VideoDuration"].GetDouble();
         m_videoDurationHasBeenSet = true;
@@ -163,9 +163,9 @@ CoreInternalOutcome MediaMetaData::Deserialize(const Value &value)
 
     if (value.HasMember("AudioDuration") && !value["AudioDuration"].IsNull())
     {
-        if (!value["AudioDuration"].IsDouble())
+        if (!value["AudioDuration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.AudioDuration` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MediaMetaData.AudioDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_audioDuration = value["AudioDuration"].GetDouble();
         m_audioDurationHasBeenSet = true;

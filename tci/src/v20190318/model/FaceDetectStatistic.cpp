@@ -40,9 +40,9 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const Value &value)
 
     if (value.HasMember("FaceSizeRatio") && !value["FaceSizeRatio"].IsNull())
     {
-        if (!value["FaceSizeRatio"].IsDouble())
+        if (!value["FaceSizeRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.FaceSizeRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FaceDetectStatistic.FaceSizeRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_faceSizeRatio = value["FaceSizeRatio"].GetDouble();
         m_faceSizeRatioHasBeenSet = true;
@@ -60,9 +60,9 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const Value &value)
 
     if (value.HasMember("FrontalFaceRatio") && !value["FrontalFaceRatio"].IsNull())
     {
-        if (!value["FrontalFaceRatio"].IsDouble())
+        if (!value["FrontalFaceRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.FrontalFaceRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FaceDetectStatistic.FrontalFaceRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_frontalFaceRatio = value["FrontalFaceRatio"].GetDouble();
         m_frontalFaceRatioHasBeenSet = true;
@@ -70,9 +70,9 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const Value &value)
 
     if (value.HasMember("FrontalFaceRealRatio") && !value["FrontalFaceRealRatio"].IsNull())
     {
-        if (!value["FrontalFaceRealRatio"].IsDouble())
+        if (!value["FrontalFaceRealRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.FrontalFaceRealRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FaceDetectStatistic.FrontalFaceRealRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_frontalFaceRealRatio = value["FrontalFaceRealRatio"].GetDouble();
         m_frontalFaceRealRatioHasBeenSet = true;
@@ -100,9 +100,9 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const Value &value)
 
     if (value.HasMember("SideFaceRatio") && !value["SideFaceRatio"].IsNull())
     {
-        if (!value["SideFaceRatio"].IsDouble())
+        if (!value["SideFaceRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.SideFaceRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FaceDetectStatistic.SideFaceRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sideFaceRatio = value["SideFaceRatio"].GetDouble();
         m_sideFaceRatioHasBeenSet = true;
@@ -110,9 +110,9 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const Value &value)
 
     if (value.HasMember("SideFaceRealRatio") && !value["SideFaceRealRatio"].IsNull())
     {
-        if (!value["SideFaceRealRatio"].IsDouble())
+        if (!value["SideFaceRealRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.SideFaceRealRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FaceDetectStatistic.SideFaceRealRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sideFaceRealRatio = value["SideFaceRealRatio"].GetDouble();
         m_sideFaceRealRatioHasBeenSet = true;

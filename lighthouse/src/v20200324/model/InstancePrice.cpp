@@ -36,9 +36,9 @@ CoreInternalOutcome InstancePrice::Deserialize(const Value &value)
 
     if (value.HasMember("OriginalBundlePrice") && !value["OriginalBundlePrice"].IsNull())
     {
-        if (!value["OriginalBundlePrice"].IsDouble())
+        if (!value["OriginalBundlePrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstancePrice.OriginalBundlePrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstancePrice.OriginalBundlePrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalBundlePrice = value["OriginalBundlePrice"].GetDouble();
         m_originalBundlePriceHasBeenSet = true;
@@ -46,9 +46,9 @@ CoreInternalOutcome InstancePrice::Deserialize(const Value &value)
 
     if (value.HasMember("OriginalPrice") && !value["OriginalPrice"].IsNull())
     {
-        if (!value["OriginalPrice"].IsDouble())
+        if (!value["OriginalPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstancePrice.OriginalPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstancePrice.OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalPrice = value["OriginalPrice"].GetDouble();
         m_originalPriceHasBeenSet = true;
@@ -66,9 +66,9 @@ CoreInternalOutcome InstancePrice::Deserialize(const Value &value)
 
     if (value.HasMember("DiscountPrice") && !value["DiscountPrice"].IsNull())
     {
-        if (!value["DiscountPrice"].IsDouble())
+        if (!value["DiscountPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstancePrice.DiscountPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstancePrice.DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountPrice = value["DiscountPrice"].GetDouble();
         m_discountPriceHasBeenSet = true;

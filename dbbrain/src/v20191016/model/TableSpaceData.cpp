@@ -72,9 +72,9 @@ CoreInternalOutcome TableSpaceData::Deserialize(const Value &value)
 
     if (value.HasMember("DataLength") && !value["DataLength"].IsNull())
     {
-        if (!value["DataLength"].IsDouble())
+        if (!value["DataLength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.DataLength` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TableSpaceData.DataLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_dataLength = value["DataLength"].GetDouble();
         m_dataLengthHasBeenSet = true;
@@ -82,9 +82,9 @@ CoreInternalOutcome TableSpaceData::Deserialize(const Value &value)
 
     if (value.HasMember("IndexLength") && !value["IndexLength"].IsNull())
     {
-        if (!value["IndexLength"].IsDouble())
+        if (!value["IndexLength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.IndexLength` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TableSpaceData.IndexLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_indexLength = value["IndexLength"].GetDouble();
         m_indexLengthHasBeenSet = true;
@@ -92,9 +92,9 @@ CoreInternalOutcome TableSpaceData::Deserialize(const Value &value)
 
     if (value.HasMember("DataFree") && !value["DataFree"].IsNull())
     {
-        if (!value["DataFree"].IsDouble())
+        if (!value["DataFree"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.DataFree` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TableSpaceData.DataFree` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_dataFree = value["DataFree"].GetDouble();
         m_dataFreeHasBeenSet = true;
@@ -102,9 +102,9 @@ CoreInternalOutcome TableSpaceData::Deserialize(const Value &value)
 
     if (value.HasMember("TotalLength") && !value["TotalLength"].IsNull())
     {
-        if (!value["TotalLength"].IsDouble())
+        if (!value["TotalLength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.TotalLength` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TableSpaceData.TotalLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalLength = value["TotalLength"].GetDouble();
         m_totalLengthHasBeenSet = true;
@@ -112,9 +112,9 @@ CoreInternalOutcome TableSpaceData::Deserialize(const Value &value)
 
     if (value.HasMember("FragRatio") && !value["FragRatio"].IsNull())
     {
-        if (!value["FragRatio"].IsDouble())
+        if (!value["FragRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.FragRatio` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TableSpaceData.FragRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fragRatio = value["FragRatio"].GetDouble();
         m_fragRatioHasBeenSet = true;
@@ -132,9 +132,9 @@ CoreInternalOutcome TableSpaceData::Deserialize(const Value &value)
 
     if (value.HasMember("PhysicalFileSize") && !value["PhysicalFileSize"].IsNull())
     {
-        if (!value["PhysicalFileSize"].IsDouble())
+        if (!value["PhysicalFileSize"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.PhysicalFileSize` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TableSpaceData.PhysicalFileSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_physicalFileSize = value["PhysicalFileSize"].GetDouble();
         m_physicalFileSizeHasBeenSet = true;

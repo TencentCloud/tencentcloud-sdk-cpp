@@ -36,9 +36,9 @@ CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const Val
 
     if (value.HasMember("HeadConfidence") && !value["HeadConfidence"].IsNull())
     {
-        if (!value["HeadConfidence"].IsDouble())
+        if (!value["HeadConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.HeadConfidence` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.HeadConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_headConfidence = value["HeadConfidence"].GetDouble();
         m_headConfidenceHasBeenSet = true;
@@ -46,9 +46,9 @@ CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const Val
 
     if (value.HasMember("HeadTimeOffset") && !value["HeadTimeOffset"].IsNull())
     {
-        if (!value["HeadTimeOffset"].IsDouble())
+        if (!value["HeadTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.HeadTimeOffset` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.HeadTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_headTimeOffset = value["HeadTimeOffset"].GetDouble();
         m_headTimeOffsetHasBeenSet = true;
@@ -56,9 +56,9 @@ CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const Val
 
     if (value.HasMember("TailConfidence") && !value["TailConfidence"].IsNull())
     {
-        if (!value["TailConfidence"].IsDouble())
+        if (!value["TailConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.TailConfidence` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.TailConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_tailConfidence = value["TailConfidence"].GetDouble();
         m_tailConfidenceHasBeenSet = true;
@@ -66,9 +66,9 @@ CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const Val
 
     if (value.HasMember("TailTimeOffset") && !value["TailTimeOffset"].IsNull())
     {
-        if (!value["TailTimeOffset"].IsDouble())
+        if (!value["TailTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.TailTimeOffset` IsDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.TailTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_tailTimeOffset = value["TailTimeOffset"].GetDouble();
         m_tailTimeOffsetHasBeenSet = true;
