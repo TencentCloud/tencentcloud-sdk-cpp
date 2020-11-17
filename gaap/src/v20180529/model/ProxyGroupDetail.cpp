@@ -34,7 +34,10 @@ ProxyGroupDetail::ProxyGroupDetail() :
     m_realServerRegionInfoHasBeenSet(false),
     m_isOldGroupHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_policyIdHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_clientIPMethodHasBeenSet(false)
 {
 }
 
@@ -190,6 +193,39 @@ CoreInternalOutcome ProxyGroupDetail::Deserialize(const Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyId") && !value["PolicyId"].IsNull())
+    {
+        if (!value["PolicyId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProxyGroupDetail.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyId = string(value["PolicyId"].GetString());
+        m_policyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProxyGroupDetail.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClientIPMethod") && !value["ClientIPMethod"].IsNull())
+    {
+        if (!value["ClientIPMethod"].IsArray())
+            return CoreInternalOutcome(Error("response `ProxyGroupDetail.ClientIPMethod` is not array type"));
+
+        const Value &tmpValue = value["ClientIPMethod"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_clientIPMethod.push_back((*itr).GetInt64());
+        }
+        m_clientIPMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +342,35 @@ void ProxyGroupDetail::ToJsonObject(Value &value, Document::AllocatorType& alloc
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientIPMethodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientIPMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_clientIPMethod.begin(); itr != m_clientIPMethod.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -518,5 +583,53 @@ void ProxyGroupDetail::SetTagSet(const vector<TagPair>& _tagSet)
 bool ProxyGroupDetail::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+string ProxyGroupDetail::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void ProxyGroupDetail::SetPolicyId(const string& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool ProxyGroupDetail::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
+}
+
+string ProxyGroupDetail::GetVersion() const
+{
+    return m_version;
+}
+
+void ProxyGroupDetail::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool ProxyGroupDetail::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+vector<int64_t> ProxyGroupDetail::GetClientIPMethod() const
+{
+    return m_clientIPMethod;
+}
+
+void ProxyGroupDetail::SetClientIPMethod(const vector<int64_t>& _clientIPMethod)
+{
+    m_clientIPMethod = _clientIPMethod;
+    m_clientIPMethodHasBeenSet = true;
+}
+
+bool ProxyGroupDetail::ClientIPMethodHasBeenSet() const
+{
+    return m_clientIPMethodHasBeenSet;
 }
 

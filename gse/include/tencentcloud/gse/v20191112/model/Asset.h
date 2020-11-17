@@ -244,6 +244,42 @@ namespace TencentCloud
                      */
                     bool OsTypeHasBeenSet() const;
 
+                    /**
+                     * 获取生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型
+                     * @return ResourceType 生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型
+                     * @param ResourceType 生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位
+                     * @return SharingStatus 镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位
+                     */
+                    std::string GetSharingStatus() const;
+
+                    /**
+                     * 设置镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位
+                     * @param SharingStatus 镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位
+                     */
+                    void SetSharingStatus(const std::string& _sharingStatus);
+
+                    /**
+                     * 判断参数 SharingStatus 是否已赋值
+                     * @return SharingStatus 是否已赋值
+                     */
+                    bool SharingStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +347,18 @@ namespace TencentCloud
                      */
                     std::string m_osType;
                     bool m_osTypeHasBeenSet;
+
+                    /**
+                     * 生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位
+                     */
+                    std::string m_sharingStatus;
+                    bool m_sharingStatusHasBeenSet;
 
                 };
             }

@@ -191,6 +191,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeStreamPushInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeTopClientIpSumInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeTopClientIpSumInfoListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeUploadStreamNumsRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeUploadStreamNumsResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeVisitTopSumInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeVisitTopSumInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DropLiveStreamRequest.h>
@@ -501,6 +503,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTopClientIpSumInfoListResponse> DescribeTopClientIpSumInfoListOutcome;
                 typedef std::future<DescribeTopClientIpSumInfoListOutcome> DescribeTopClientIpSumInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeTopClientIpSumInfoListRequest&, DescribeTopClientIpSumInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopClientIpSumInfoListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeUploadStreamNumsResponse> DescribeUploadStreamNumsOutcome;
+                typedef std::future<DescribeUploadStreamNumsOutcome> DescribeUploadStreamNumsOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeUploadStreamNumsRequest&, DescribeUploadStreamNumsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUploadStreamNumsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeVisitTopSumInfoListResponse> DescribeVisitTopSumInfoListOutcome;
                 typedef std::future<DescribeVisitTopSumInfoListOutcome> DescribeVisitTopSumInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeVisitTopSumInfoListRequest&, DescribeVisitTopSumInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVisitTopSumInfoListAsyncHandler;
@@ -1379,6 +1384,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeTopClientIpSumInfoListOutcome DescribeTopClientIpSumInfoList(const Model::DescribeTopClientIpSumInfoListRequest &request);
                 void DescribeTopClientIpSumInfoListAsync(const Model::DescribeTopClientIpSumInfoListRequest& request, const DescribeTopClientIpSumInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopClientIpSumInfoListOutcomeCallable DescribeTopClientIpSumInfoListCallable(const Model::DescribeTopClientIpSumInfoListRequest& request);
+
+                /**
+                 *直播上行路数查询
+                 * @param req DescribeUploadStreamNumsRequest
+                 * @return DescribeUploadStreamNumsOutcome
+                 */
+                DescribeUploadStreamNumsOutcome DescribeUploadStreamNums(const Model::DescribeUploadStreamNumsRequest &request);
+                void DescribeUploadStreamNumsAsync(const Model::DescribeUploadStreamNumsRequest& request, const DescribeUploadStreamNumsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUploadStreamNumsOutcomeCallable DescribeUploadStreamNumsCallable(const Model::DescribeUploadStreamNumsRequest& request);
 
                 /**
                  *查询某时间段top n的域名或流id信息（暂支持top 1000）。

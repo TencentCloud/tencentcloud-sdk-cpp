@@ -222,6 +222,24 @@ namespace TencentCloud
                      */
                     bool RealServerPortsHasBeenSet() const;
 
+                    /**
+                     * 获取监听器获取客户端 IP 的方式，0表示 TOA, 1表示Proxy Protocol
+                     * @return ClientIPMethod 监听器获取客户端 IP 的方式，0表示 TOA, 1表示Proxy Protocol
+                     */
+                    int64_t GetClientIPMethod() const;
+
+                    /**
+                     * 设置监听器获取客户端 IP 的方式，0表示 TOA, 1表示Proxy Protocol
+                     * @param ClientIPMethod 监听器获取客户端 IP 的方式，0表示 TOA, 1表示Proxy Protocol
+                     */
+                    void SetClientIPMethod(const int64_t& _clientIPMethod);
+
+                    /**
+                     * 判断参数 ClientIPMethod 是否已赋值
+                     * @return ClientIPMethod 是否已赋值
+                     */
+                    bool ClientIPMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_realServerPorts;
                     bool m_realServerPortsHasBeenSet;
+
+                    /**
+                     * 监听器获取客户端 IP 的方式，0表示 TOA, 1表示Proxy Protocol
+                     */
+                    int64_t m_clientIPMethod;
+                    bool m_clientIPMethodHasBeenSet;
 
                 };
             }

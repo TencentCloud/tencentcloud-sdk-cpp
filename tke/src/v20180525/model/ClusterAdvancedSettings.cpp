@@ -34,7 +34,8 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_auditEnabledHasBeenSet(false),
     m_auditLogsetIdHasBeenSet(false),
     m_auditLogTopicIdHasBeenSet(false),
-    m_vpcCniTypeHasBeenSet(false)
+    m_vpcCniTypeHasBeenSet(false),
+    m_runtimeVersionHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,16 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
         m_vpcCniTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RuntimeVersion") && !value["RuntimeVersion"].IsNull())
+    {
+        if (!value["RuntimeVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.RuntimeVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runtimeVersion = string(value["RuntimeVersion"].GetString());
+        m_runtimeVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -290,6 +301,14 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
         string key = "VpcCniType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_vpcCniType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runtimeVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RuntimeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -501,5 +520,21 @@ void ClusterAdvancedSettings::SetVpcCniType(const string& _vpcCniType)
 bool ClusterAdvancedSettings::VpcCniTypeHasBeenSet() const
 {
     return m_vpcCniTypeHasBeenSet;
+}
+
+string ClusterAdvancedSettings::GetRuntimeVersion() const
+{
+    return m_runtimeVersion;
+}
+
+void ClusterAdvancedSettings::SetRuntimeVersion(const string& _runtimeVersion)
+{
+    m_runtimeVersion = _runtimeVersion;
+    m_runtimeVersionHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::RuntimeVersionHasBeenSet() const
+{
+    return m_runtimeVersionHasBeenSet;
 }
 

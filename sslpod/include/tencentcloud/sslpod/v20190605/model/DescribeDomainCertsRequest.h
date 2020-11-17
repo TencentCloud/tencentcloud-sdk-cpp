@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名ID
-                     * @return DomainId 域名ID
+                     * 获取域名ID，可通过搜索域名接口获得
+                     * @return DomainId 域名ID，可通过搜索域名接口获得
                      */
                     int64_t GetDomainId() const;
 
                     /**
-                     * 设置域名ID
-                     * @param DomainId 域名ID
+                     * 设置域名ID，可通过搜索域名接口获得
+                     * @param DomainId 域名ID，可通过搜索域名接口获得
                      */
                     void SetDomainId(const int64_t& _domainId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名ID
+                     * 域名ID，可通过搜索域名接口获得
                      */
                     int64_t m_domainId;
                     bool m_domainIdHasBeenSet;

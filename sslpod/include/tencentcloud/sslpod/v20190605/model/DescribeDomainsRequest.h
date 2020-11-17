@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool SearchTypeHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return Tag 标签
+                     * 获取标签，多个标签用逗号分隔
+                     * @return Tag 标签，多个标签用逗号分隔
                      */
                     std::string GetTag() const;
 
                     /**
-                     * 设置标签
-                     * @param Tag 标签
+                     * 设置标签，多个标签用逗号分隔
+                     * @param Tag 标签，多个标签用逗号分隔
                      */
                     void SetTag(const std::string& _tag);
 
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_searchTypeHasBeenSet;
 
                     /**
-                     * 标签
+                     * 标签，多个标签用逗号分隔
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

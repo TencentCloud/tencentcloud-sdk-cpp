@@ -47,6 +47,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstance.h
   include/tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h
+  include/tencentcloud/monitor/v20180724/model/DescribeMonitorTypesRequest.h
   include/tencentcloud/monitor/v20180724/model/DimensionsDesc.h
   include/tencentcloud/monitor/v20180724/model/ServiceDiscoveryItem.h
   include/tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryRequest.h
@@ -69,6 +70,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/Instance.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectDimension.h
   include/tencentcloud/monitor/v20180724/model/UpdateServiceDiscoveryResponse.h
+  include/tencentcloud/monitor/v20180724/model/DescribeMonitorTypesResponse.h
   include/tencentcloud/monitor/v20180724/model/Dimension.h
   include/tencentcloud/monitor/v20180724/model/DescribeBasicAlarmListAlarms.h
   include/tencentcloud/monitor/v20180724/model/UpdateServiceDiscoveryRequest.h
@@ -149,6 +151,7 @@ set(monitor_src
   src/v20180724/model/DescribePolicyConditionListRequest.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListInstance.cpp
   src/v20180724/model/DeletePolicyGroupResponse.cpp
+  src/v20180724/model/DescribeMonitorTypesRequest.cpp
   src/v20180724/model/DimensionsDesc.cpp
   src/v20180724/model/ServiceDiscoveryItem.cpp
   src/v20180724/model/CreateServiceDiscoveryRequest.cpp
@@ -171,6 +174,7 @@ set(monitor_src
   src/v20180724/model/Instance.cpp
   src/v20180724/model/BindingPolicyObjectDimension.cpp
   src/v20180724/model/UpdateServiceDiscoveryResponse.cpp
+  src/v20180724/model/DescribeMonitorTypesResponse.cpp
   src/v20180724/model/Dimension.cpp
   src/v20180724/model/DescribeBasicAlarmListAlarms.cpp
   src/v20180724/model/UpdateServiceDiscoveryRequest.cpp

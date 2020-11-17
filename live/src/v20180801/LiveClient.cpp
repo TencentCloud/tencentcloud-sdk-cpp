@@ -3652,6 +3652,49 @@ LiveClient::DescribeTopClientIpSumInfoListOutcomeCallable LiveClient::DescribeTo
     return task->get_future();
 }
 
+LiveClient::DescribeUploadStreamNumsOutcome LiveClient::DescribeUploadStreamNums(const DescribeUploadStreamNumsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUploadStreamNums");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUploadStreamNumsResponse rsp = DescribeUploadStreamNumsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUploadStreamNumsOutcome(rsp);
+        else
+            return DescribeUploadStreamNumsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUploadStreamNumsOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeUploadStreamNumsAsync(const DescribeUploadStreamNumsRequest& request, const DescribeUploadStreamNumsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUploadStreamNums(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeUploadStreamNumsOutcomeCallable LiveClient::DescribeUploadStreamNumsCallable(const DescribeUploadStreamNumsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUploadStreamNumsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUploadStreamNums(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeVisitTopSumInfoListOutcome LiveClient::DescribeVisitTopSumInfoList(const DescribeVisitTopSumInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVisitTopSumInfoList");

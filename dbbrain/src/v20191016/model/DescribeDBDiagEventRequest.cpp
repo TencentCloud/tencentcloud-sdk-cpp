@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeDBDiagEventRequest::DescribeDBDiagEventRequest() :
     m_instanceIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeDBDiagEventRequest::ToJsonString() const
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_eventId, allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeDBDiagEventRequest::SetEventId(const int64_t& _eventId)
 bool DescribeDBDiagEventRequest::EventIdHasBeenSet() const
 {
     return m_eventIdHasBeenSet;
+}
+
+string DescribeDBDiagEventRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeDBDiagEventRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeDBDiagEventRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

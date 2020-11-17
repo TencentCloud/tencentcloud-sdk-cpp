@@ -47,7 +47,8 @@ ProxyInfo::ProxyInfo() :
     m_billingTypeHasBeenSet(false),
     m_relatedGlobalDomainsHasBeenSet(false),
     m_modifyConfigTimeHasBeenSet(false),
-    m_proxyTypeHasBeenSet(false)
+    m_proxyTypeHasBeenSet(false),
+    m_clientIPMethodHasBeenSet(false)
 {
 }
 
@@ -346,6 +347,19 @@ CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
         m_proxyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientIPMethod") && !value["ClientIPMethod"].IsNull())
+    {
+        if (!value["ClientIPMethod"].IsArray())
+            return CoreInternalOutcome(Error("response `ProxyInfo.ClientIPMethod` is not array type"));
+
+        const Value &tmpValue = value["ClientIPMethod"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_clientIPMethod.push_back((*itr).GetInt64());
+        }
+        m_clientIPMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -578,6 +592,19 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "ProxyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_proxyType, allocator);
+    }
+
+    if (m_clientIPMethodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientIPMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_clientIPMethod.begin(); itr != m_clientIPMethod.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -997,5 +1024,21 @@ void ProxyInfo::SetProxyType(const uint64_t& _proxyType)
 bool ProxyInfo::ProxyTypeHasBeenSet() const
 {
     return m_proxyTypeHasBeenSet;
+}
+
+vector<int64_t> ProxyInfo::GetClientIPMethod() const
+{
+    return m_clientIPMethod;
+}
+
+void ProxyInfo::SetClientIPMethod(const vector<int64_t>& _clientIPMethod)
+{
+    m_clientIPMethod = _clientIPMethod;
+    m_clientIPMethodHasBeenSet = true;
+}
+
+bool ProxyInfo::ClientIPMethodHasBeenSet() const
+{
+    return m_clientIPMethodHasBeenSet;
 }
 

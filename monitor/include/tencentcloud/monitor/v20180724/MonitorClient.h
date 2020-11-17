@@ -45,6 +45,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeBasicAlarmListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeMonitorTypesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeMonitorTypesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyConditionListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyConditionListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoRequest.h>
@@ -120,6 +122,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBindingPolicyObjectListResponse> DescribeBindingPolicyObjectListOutcome;
                 typedef std::future<DescribeBindingPolicyObjectListOutcome> DescribeBindingPolicyObjectListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeBindingPolicyObjectListRequest&, DescribeBindingPolicyObjectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindingPolicyObjectListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMonitorTypesResponse> DescribeMonitorTypesOutcome;
+                typedef std::future<DescribeMonitorTypesOutcome> DescribeMonitorTypesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeMonitorTypesRequest&, DescribeMonitorTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorTypesAsyncHandler;
                 typedef Outcome<Error, Model::DescribePolicyConditionListResponse> DescribePolicyConditionListOutcome;
                 typedef std::future<DescribePolicyConditionListOutcome> DescribePolicyConditionListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePolicyConditionListRequest&, DescribePolicyConditionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyConditionListAsyncHandler;
@@ -267,6 +272,15 @@ namespace TencentCloud
                 DescribeBindingPolicyObjectListOutcome DescribeBindingPolicyObjectList(const Model::DescribeBindingPolicyObjectListRequest &request);
                 void DescribeBindingPolicyObjectListAsync(const Model::DescribeBindingPolicyObjectListRequest& request, const DescribeBindingPolicyObjectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBindingPolicyObjectListOutcomeCallable DescribeBindingPolicyObjectListCallable(const Model::DescribeBindingPolicyObjectListRequest& request);
+
+                /**
+                 *云监控支持多种类型的监控，此接口列出支持的所有类型
+                 * @param req DescribeMonitorTypesRequest
+                 * @return DescribeMonitorTypesOutcome
+                 */
+                DescribeMonitorTypesOutcome DescribeMonitorTypes(const Model::DescribeMonitorTypesRequest &request);
+                void DescribeMonitorTypesAsync(const Model::DescribeMonitorTypesRequest& request, const DescribeMonitorTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMonitorTypesOutcomeCallable DescribeMonitorTypesCallable(const Model::DescribeMonitorTypesRequest& request);
 
                 /**
                  *获取基础告警策略条件

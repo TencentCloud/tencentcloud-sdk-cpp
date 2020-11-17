@@ -384,6 +384,49 @@ TrtcClient::DescribeRealtimeScaleOutcomeCallable TrtcClient::DescribeRealtimeSca
     return task->get_future();
 }
 
+TrtcClient::DescribeRecordStatisticOutcome TrtcClient::DescribeRecordStatistic(const DescribeRecordStatisticRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordStatistic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordStatisticResponse rsp = DescribeRecordStatisticResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordStatisticOutcome(rsp);
+        else
+            return DescribeRecordStatisticOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordStatisticOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeRecordStatisticAsync(const DescribeRecordStatisticRequest& request, const DescribeRecordStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordStatistic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeRecordStatisticOutcomeCallable TrtcClient::DescribeRecordStatisticCallable(const DescribeRecordStatisticRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordStatisticOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeRoomInformationOutcome TrtcClient::DescribeRoomInformation(const DescribeRoomInformationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRoomInformation");
@@ -420,6 +463,92 @@ TrtcClient::DescribeRoomInformationOutcomeCallable TrtcClient::DescribeRoomInfor
         [this, request]()
         {
             return this->DescribeRoomInformation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DescribeTrtcInteractiveTimeOutcome TrtcClient::DescribeTrtcInteractiveTime(const DescribeTrtcInteractiveTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrtcInteractiveTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrtcInteractiveTimeResponse rsp = DescribeTrtcInteractiveTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrtcInteractiveTimeOutcome(rsp);
+        else
+            return DescribeTrtcInteractiveTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrtcInteractiveTimeOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTrtcInteractiveTimeAsync(const DescribeTrtcInteractiveTimeRequest& request, const DescribeTrtcInteractiveTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrtcInteractiveTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeTrtcInteractiveTimeOutcomeCallable TrtcClient::DescribeTrtcInteractiveTimeCallable(const DescribeTrtcInteractiveTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrtcInteractiveTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrtcInteractiveTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DescribeTrtcMcuTranscodeTimeOutcome TrtcClient::DescribeTrtcMcuTranscodeTime(const DescribeTrtcMcuTranscodeTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrtcMcuTranscodeTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrtcMcuTranscodeTimeResponse rsp = DescribeTrtcMcuTranscodeTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrtcMcuTranscodeTimeOutcome(rsp);
+        else
+            return DescribeTrtcMcuTranscodeTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrtcMcuTranscodeTimeOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTrtcMcuTranscodeTimeAsync(const DescribeTrtcMcuTranscodeTimeRequest& request, const DescribeTrtcMcuTranscodeTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrtcMcuTranscodeTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeTrtcMcuTranscodeTimeOutcomeCallable TrtcClient::DescribeTrtcMcuTranscodeTimeCallable(const DescribeTrtcMcuTranscodeTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrtcMcuTranscodeTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrtcMcuTranscodeTime(request);
         }
     );
 
@@ -513,6 +642,49 @@ TrtcClient::DismissRoomOutcomeCallable TrtcClient::DismissRoomCallable(const Dis
     return task->get_future();
 }
 
+TrtcClient::DismissRoomByStrRoomIdOutcome TrtcClient::DismissRoomByStrRoomId(const DismissRoomByStrRoomIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DismissRoomByStrRoomId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DismissRoomByStrRoomIdResponse rsp = DismissRoomByStrRoomIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DismissRoomByStrRoomIdOutcome(rsp);
+        else
+            return DismissRoomByStrRoomIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DismissRoomByStrRoomIdOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DismissRoomByStrRoomIdAsync(const DismissRoomByStrRoomIdRequest& request, const DismissRoomByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DismissRoomByStrRoomId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DismissRoomByStrRoomIdOutcomeCallable TrtcClient::DismissRoomByStrRoomIdCallable(const DismissRoomByStrRoomIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DismissRoomByStrRoomIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DismissRoomByStrRoomId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::RemoveUserOutcome TrtcClient::RemoveUser(const RemoveUserRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveUser");
@@ -549,6 +721,49 @@ TrtcClient::RemoveUserOutcomeCallable TrtcClient::RemoveUserCallable(const Remov
         [this, request]()
         {
             return this->RemoveUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::RemoveUserByStrRoomIdOutcome TrtcClient::RemoveUserByStrRoomId(const RemoveUserByStrRoomIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveUserByStrRoomId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveUserByStrRoomIdResponse rsp = RemoveUserByStrRoomIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveUserByStrRoomIdOutcome(rsp);
+        else
+            return RemoveUserByStrRoomIdOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveUserByStrRoomIdOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::RemoveUserByStrRoomIdAsync(const RemoveUserByStrRoomIdRequest& request, const RemoveUserByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveUserByStrRoomId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::RemoveUserByStrRoomIdOutcomeCallable TrtcClient::RemoveUserByStrRoomIdCallable(const RemoveUserByStrRoomIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveUserByStrRoomIdOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveUserByStrRoomId(request);
         }
     );
 

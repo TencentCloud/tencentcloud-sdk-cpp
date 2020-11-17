@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool RuleCodeHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
-                     * @return RuleName 规则名称
+                     * 获取规则名称，只能包含数字、字母、. 和 -
+                     * @return RuleName 规则名称，只能包含数字、字母、. 和 -
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param RuleName 规则名称
+                     * 设置规则名称，只能包含数字、字母、. 和 -
+                     * @param RuleName 规则名称，只能包含数字、字母、. 和 -
                      */
                     void SetRuleName(const std::string& _ruleName);
 
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_ruleCodeHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * 规则名称，只能包含数字、字母、. 和 -
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;

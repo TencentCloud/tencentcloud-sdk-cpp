@@ -33,7 +33,8 @@ CreateTCPListenersRequest::CreateTCPListenersRequest() :
     m_groupIdHasBeenSet(false),
     m_delayLoopHasBeenSet(false),
     m_connectTimeoutHasBeenSet(false),
-    m_realServerPortsHasBeenSet(false)
+    m_realServerPortsHasBeenSet(false),
+    m_clientIPMethodHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,14 @@ string CreateTCPListenersRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_clientIPMethodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientIPMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clientIPMethod, allocator);
     }
 
 
@@ -300,6 +309,22 @@ void CreateTCPListenersRequest::SetRealServerPorts(const vector<uint64_t>& _real
 bool CreateTCPListenersRequest::RealServerPortsHasBeenSet() const
 {
     return m_realServerPortsHasBeenSet;
+}
+
+int64_t CreateTCPListenersRequest::GetClientIPMethod() const
+{
+    return m_clientIPMethod;
+}
+
+void CreateTCPListenersRequest::SetClientIPMethod(const int64_t& _clientIPMethod)
+{
+    m_clientIPMethod = _clientIPMethod;
+    m_clientIPMethodHasBeenSet = true;
+}
+
+bool CreateTCPListenersRequest::ClientIPMethodHasBeenSet() const
+{
+    return m_clientIPMethodHasBeenSet;
 }
 
 

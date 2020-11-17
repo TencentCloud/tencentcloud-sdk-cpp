@@ -24,11 +24,11 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeCostSummaryByRegionRequest::DescribeCostSummaryByRegionRequest() :
-    m_payerUinHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_payerUinHasBeenSet(false),
     m_needRecordNumHasBeenSet(false)
 {
 }
@@ -39,14 +39,6 @@ string DescribeCostSummaryByRegionRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_payerUinHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PayerUin";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_beginTimeHasBeenSet)
     {
@@ -80,6 +72,14 @@ string DescribeCostSummaryByRegionRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
+    if (m_payerUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayerUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_needRecordNumHasBeenSet)
     {
         Value iKey(kStringType);
@@ -95,22 +95,6 @@ string DescribeCostSummaryByRegionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeCostSummaryByRegionRequest::GetPayerUin() const
-{
-    return m_payerUin;
-}
-
-void DescribeCostSummaryByRegionRequest::SetPayerUin(const string& _payerUin)
-{
-    m_payerUin = _payerUin;
-    m_payerUinHasBeenSet = true;
-}
-
-bool DescribeCostSummaryByRegionRequest::PayerUinHasBeenSet() const
-{
-    return m_payerUinHasBeenSet;
-}
 
 string DescribeCostSummaryByRegionRequest::GetBeginTime() const
 {
@@ -174,6 +158,22 @@ void DescribeCostSummaryByRegionRequest::SetOffset(const uint64_t& _offset)
 bool DescribeCostSummaryByRegionRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeCostSummaryByRegionRequest::GetPayerUin() const
+{
+    return m_payerUin;
+}
+
+void DescribeCostSummaryByRegionRequest::SetPayerUin(const string& _payerUin)
+{
+    m_payerUin = _payerUin;
+    m_payerUinHasBeenSet = true;
+}
+
+bool DescribeCostSummaryByRegionRequest::PayerUinHasBeenSet() const
+{
+    return m_payerUinHasBeenSet;
 }
 
 uint64_t DescribeCostSummaryByRegionRequest::GetNeedRecordNum() const

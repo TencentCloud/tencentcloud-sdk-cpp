@@ -513,6 +513,49 @@ MonitorClient::DescribeBindingPolicyObjectListOutcomeCallable MonitorClient::Des
     return task->get_future();
 }
 
+MonitorClient::DescribeMonitorTypesOutcome MonitorClient::DescribeMonitorTypes(const DescribeMonitorTypesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMonitorTypes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMonitorTypesResponse rsp = DescribeMonitorTypesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMonitorTypesOutcome(rsp);
+        else
+            return DescribeMonitorTypesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMonitorTypesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeMonitorTypesAsync(const DescribeMonitorTypesRequest& request, const DescribeMonitorTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMonitorTypes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeMonitorTypesOutcomeCallable MonitorClient::DescribeMonitorTypesCallable(const DescribeMonitorTypesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMonitorTypesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMonitorTypes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribePolicyConditionListOutcome MonitorClient::DescribePolicyConditionList(const DescribePolicyConditionListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePolicyConditionList");

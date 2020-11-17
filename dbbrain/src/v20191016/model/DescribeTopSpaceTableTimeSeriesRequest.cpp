@@ -28,7 +28,8 @@ DescribeTopSpaceTableTimeSeriesRequest::DescribeTopSpaceTableTimeSeriesRequest()
     m_limitHasBeenSet(false),
     m_sortByHasBeenSet(false),
     m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
+    m_endDateHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string DescribeTopSpaceTableTimeSeriesRequest::ToJsonString() const
         string key = "EndDate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_endDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void DescribeTopSpaceTableTimeSeriesRequest::SetEndDate(const string& _endDate)
 bool DescribeTopSpaceTableTimeSeriesRequest::EndDateHasBeenSet() const
 {
     return m_endDateHasBeenSet;
+}
+
+string DescribeTopSpaceTableTimeSeriesRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeTopSpaceTableTimeSeriesRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeTopSpaceTableTimeSeriesRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

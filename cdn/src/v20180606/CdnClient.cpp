@@ -169,6 +169,49 @@ CdnClient::CreateDiagnoseUrlOutcomeCallable CdnClient::CreateDiagnoseUrlCallable
     return task->get_future();
 }
 
+CdnClient::CreateEdgePackTaskOutcome CdnClient::CreateEdgePackTask(const CreateEdgePackTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEdgePackTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEdgePackTaskResponse rsp = CreateEdgePackTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEdgePackTaskOutcome(rsp);
+        else
+            return CreateEdgePackTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEdgePackTaskOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::CreateEdgePackTaskAsync(const CreateEdgePackTaskRequest& request, const CreateEdgePackTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEdgePackTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::CreateEdgePackTaskOutcomeCallable CdnClient::CreateEdgePackTaskCallable(const CreateEdgePackTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEdgePackTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEdgePackTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::CreateScdnLogTaskOutcome CdnClient::CreateScdnLogTask(const CreateScdnLogTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScdnLogTask");

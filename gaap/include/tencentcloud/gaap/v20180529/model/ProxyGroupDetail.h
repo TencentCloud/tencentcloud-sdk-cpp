@@ -306,6 +306,72 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取安全策略ID，当设置了安全策略时，存在该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolicyId 安全策略ID，当设置了安全策略时，存在该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPolicyId() const;
+
+                    /**
+                     * 设置安全策略ID，当设置了安全策略时，存在该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PolicyId 安全策略ID，当设置了安全策略时，存在该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPolicyId(const std::string& _policyId);
+
+                    /**
+                     * 判断参数 PolicyId 是否已赋值
+                     * @return PolicyId 是否已赋值
+                     */
+                    bool PolicyIdHasBeenSet() const;
+
+                    /**
+                     * 获取通道组版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Version 通道组版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置通道组版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Version 通道组版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetClientIPMethod() const;
+
+                    /**
+                     * 设置通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClientIPMethod(const std::vector<int64_t>& _clientIPMethod);
+
+                    /**
+                     * 判断参数 ClientIPMethod 是否已赋值
+                     * @return ClientIPMethod 是否已赋值
+                     */
+                    bool ClientIPMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -391,6 +457,27 @@ namespace TencentCloud
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 安全策略ID，当设置了安全策略时，存在该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_policyId;
+                    bool m_policyIdHasBeenSet;
+
+                    /**
+                     * 通道组版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
+
+                    /**
+                     * 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_clientIPMethod;
+                    bool m_clientIPMethodHasBeenSet;
 
                 };
             }

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监控的服务器类型 Enums(0,1,2,3)
-                     * @return ServerType 监控的服务器类型 Enums(0,1,2,3)
+                     * 获取监控的服务器类型（0：web，1：smtp，2：imap，3：pops）
+                     * @return ServerType 监控的服务器类型（0：web，1：smtp，2：imap，3：pops）
                      */
                     int64_t GetServerType() const;
 
                     /**
-                     * 设置监控的服务器类型 Enums(0,1,2,3)
-                     * @param ServerType 监控的服务器类型 Enums(0,1,2,3)
+                     * 设置监控的服务器类型（0：web，1：smtp，2：imap，3：pops）
+                     * @param ServerType 监控的服务器类型（0：web，1：smtp，2：imap，3：pops）
                      */
                     void SetServerType(const int64_t& _serverType);
 
@@ -153,7 +153,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监控的服务器类型 Enums(0,1,2,3)
+                     * 监控的服务器类型（0：web，1：smtp，2：imap，3：pops）
                      */
                     int64_t m_serverType;
                     bool m_serverTypeHasBeenSet;

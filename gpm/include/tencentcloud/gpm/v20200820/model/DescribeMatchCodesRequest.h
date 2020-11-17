@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，页码
+                     * @return Offset 偏移量，页码
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量，页码
+                     * @param Offset 偏移量，页码
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 偏移量
+                     * 偏移量，页码
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

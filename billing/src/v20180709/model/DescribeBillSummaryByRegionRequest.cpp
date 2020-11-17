@@ -24,9 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeBillSummaryByRegionRequest::DescribeBillSummaryByRegionRequest() :
-    m_payerUinHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_payerUinHasBeenSet(false)
 {
 }
 
@@ -36,14 +36,6 @@ string DescribeBillSummaryByRegionRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_payerUinHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PayerUin";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_beginTimeHasBeenSet)
     {
@@ -61,6 +53,14 @@ string DescribeBillSummaryByRegionRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_payerUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayerUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -68,22 +68,6 @@ string DescribeBillSummaryByRegionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeBillSummaryByRegionRequest::GetPayerUin() const
-{
-    return m_payerUin;
-}
-
-void DescribeBillSummaryByRegionRequest::SetPayerUin(const string& _payerUin)
-{
-    m_payerUin = _payerUin;
-    m_payerUinHasBeenSet = true;
-}
-
-bool DescribeBillSummaryByRegionRequest::PayerUinHasBeenSet() const
-{
-    return m_payerUinHasBeenSet;
-}
 
 string DescribeBillSummaryByRegionRequest::GetBeginTime() const
 {
@@ -115,6 +99,22 @@ void DescribeBillSummaryByRegionRequest::SetEndTime(const string& _endTime)
 bool DescribeBillSummaryByRegionRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeBillSummaryByRegionRequest::GetPayerUin() const
+{
+    return m_payerUin;
+}
+
+void DescribeBillSummaryByRegionRequest::SetPayerUin(const string& _payerUin)
+{
+    m_payerUin = _payerUin;
+    m_payerUinHasBeenSet = true;
+}
+
+bool DescribeBillSummaryByRegionRequest::PayerUinHasBeenSet() const
+{
+    return m_payerUinHasBeenSet;
 }
 
 

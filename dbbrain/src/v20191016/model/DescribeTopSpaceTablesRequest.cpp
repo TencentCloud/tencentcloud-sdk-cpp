@@ -26,7 +26,8 @@ using namespace std;
 DescribeTopSpaceTablesRequest::DescribeTopSpaceTablesRequest() :
     m_instanceIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_sortByHasBeenSet(false)
+    m_sortByHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DescribeTopSpaceTablesRequest::ToJsonString() const
         string key = "SortBy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_sortBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DescribeTopSpaceTablesRequest::SetSortBy(const string& _sortBy)
 bool DescribeTopSpaceTablesRequest::SortByHasBeenSet() const
 {
     return m_sortByHasBeenSet;
+}
+
+string DescribeTopSpaceTablesRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeTopSpaceTablesRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeTopSpaceTablesRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

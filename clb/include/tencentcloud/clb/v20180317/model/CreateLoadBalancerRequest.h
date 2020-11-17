@@ -24,6 +24,7 @@
 #include <tencentcloud/clb/v20180317/model/InternetAccessible.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 #include <tencentcloud/clb/v20180317/model/ExclusiveCluster.h>
+#include <tencentcloud/clb/v20180317/model/SnatIp.h>
 
 
 namespace TencentCloud
@@ -346,6 +347,42 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ClientTokenHasBeenSet() const;
 
                     /**
+                     * 获取是否支持绑定跨地域/跨Vpc绑定IP的功能。
+                     * @return SnatPro 是否支持绑定跨地域/跨Vpc绑定IP的功能。
+                     */
+                    bool GetSnatPro() const;
+
+                    /**
+                     * 设置是否支持绑定跨地域/跨Vpc绑定IP的功能。
+                     * @param SnatPro 是否支持绑定跨地域/跨Vpc绑定IP的功能。
+                     */
+                    void SetSnatPro(const bool& _snatPro);
+
+                    /**
+                     * 判断参数 SnatPro 是否已赋值
+                     * @return SnatPro 是否已赋值
+                     */
+                    bool SnatProHasBeenSet() const;
+
+                    /**
+                     * 获取开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。
+                     * @return SnatIps 开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。
+                     */
+                    std::vector<SnatIp> GetSnatIps() const;
+
+                    /**
+                     * 设置开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。
+                     * @param SnatIps 开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。
+                     */
+                    void SetSnatIps(const std::vector<SnatIp>& _snatIps);
+
+                    /**
+                     * 判断参数 SnatIps 是否已赋值
+                     * @return SnatIps 是否已赋值
+                     */
+                    bool SnatIpsHasBeenSet() const;
+
+                    /**
                      * 获取Stgw独占集群的标签。
                      * @return ClusterTag Stgw独占集群的标签。
                      */
@@ -463,6 +500,18 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 是否支持绑定跨地域/跨Vpc绑定IP的功能。
+                     */
+                    bool m_snatPro;
+                    bool m_snatProHasBeenSet;
+
+                    /**
+                     * 开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。
+                     */
+                    std::vector<SnatIp> m_snatIps;
+                    bool m_snatIpsHasBeenSet;
 
                     /**
                      * Stgw独占集群的标签。

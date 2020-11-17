@@ -20,13 +20,17 @@ set(asw_public_header
 
 set(asw_public_header_model
   include/tencentcloud/asw/v20200722/model/DescribeExecutionsRequest.h
+  include/tencentcloud/asw/v20200722/model/DescribeFlowServicesResponse.h
+  include/tencentcloud/asw/v20200722/model/StateMachine.h
   include/tencentcloud/asw/v20200722/model/DescribeExecutionResponse.h
-  include/tencentcloud/asw/v20200722/model/StartExecutionResponse.h
+  include/tencentcloud/asw/v20200722/model/DescribeFlowServicesRequest.h
   include/tencentcloud/asw/v20200722/model/DescribeExecutionRequest.h
   include/tencentcloud/asw/v20200722/model/DescribeFlowServiceDetailResponse.h
   include/tencentcloud/asw/v20200722/model/CreateFlowServiceResponse.h
+  include/tencentcloud/asw/v20200722/model/Filter.h
   include/tencentcloud/asw/v20200722/model/StartExecutionRequest.h
   include/tencentcloud/asw/v20200722/model/ModifyFlowServiceResponse.h
+  include/tencentcloud/asw/v20200722/model/StartExecutionResponse.h
   include/tencentcloud/asw/v20200722/model/CreateFlowServiceRequest.h
   include/tencentcloud/asw/v20200722/model/DescribeExecutionsResponse.h
   include/tencentcloud/asw/v20200722/model/ModifyFlowServiceRequest.h
@@ -36,13 +40,17 @@ set(asw_public_header_model
 set(asw_src
   src/v20200722/AswClient.cpp
   src/v20200722/model/DescribeExecutionsRequest.cpp
+  src/v20200722/model/DescribeFlowServicesResponse.cpp
+  src/v20200722/model/StateMachine.cpp
   src/v20200722/model/DescribeExecutionResponse.cpp
-  src/v20200722/model/StartExecutionResponse.cpp
+  src/v20200722/model/DescribeFlowServicesRequest.cpp
   src/v20200722/model/DescribeExecutionRequest.cpp
   src/v20200722/model/DescribeFlowServiceDetailResponse.cpp
   src/v20200722/model/CreateFlowServiceResponse.cpp
+  src/v20200722/model/Filter.cpp
   src/v20200722/model/StartExecutionRequest.cpp
   src/v20200722/model/ModifyFlowServiceResponse.cpp
+  src/v20200722/model/StartExecutionResponse.cpp
   src/v20200722/model/CreateFlowServiceRequest.cpp
   src/v20200722/model/DescribeExecutionsResponse.cpp
   src/v20200722/model/ModifyFlowServiceRequest.cpp

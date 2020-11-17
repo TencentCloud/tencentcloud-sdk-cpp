@@ -35,7 +35,8 @@ TCPListener::TCPListener() :
     m_healthCheckHasBeenSet(false),
     m_bindStatusHasBeenSet(false),
     m_realServerSetHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_clientIPMethodHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome TCPListener::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientIPMethod") && !value["ClientIPMethod"].IsNull())
+    {
+        if (!value["ClientIPMethod"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TCPListener.ClientIPMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientIPMethod = value["ClientIPMethod"].GetUint64();
+        m_clientIPMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -318,6 +329,14 @@ void TCPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_clientIPMethodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientIPMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientIPMethod, allocator);
     }
 
 }
@@ -545,5 +564,21 @@ void TCPListener::SetCreateTime(const uint64_t& _createTime)
 bool TCPListener::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t TCPListener::GetClientIPMethod() const
+{
+    return m_clientIPMethod;
+}
+
+void TCPListener::SetClientIPMethod(const uint64_t& _clientIPMethod)
+{
+    m_clientIPMethod = _clientIPMethod;
+    m_clientIPMethodHasBeenSet = true;
+}
+
+bool TCPListener::ClientIPMethodHasBeenSet() const
+{
+    return m_clientIPMethodHasBeenSet;
 }
 

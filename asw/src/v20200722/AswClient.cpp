@@ -212,6 +212,49 @@ AswClient::DescribeFlowServiceDetailOutcomeCallable AswClient::DescribeFlowServi
     return task->get_future();
 }
 
+AswClient::DescribeFlowServicesOutcome AswClient::DescribeFlowServices(const DescribeFlowServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlowServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlowServicesResponse rsp = DescribeFlowServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlowServicesOutcome(rsp);
+        else
+            return DescribeFlowServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlowServicesOutcome(outcome.GetError());
+    }
+}
+
+void AswClient::DescribeFlowServicesAsync(const DescribeFlowServicesRequest& request, const DescribeFlowServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFlowServices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AswClient::DescribeFlowServicesOutcomeCallable AswClient::DescribeFlowServicesCallable(const DescribeFlowServicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFlowServicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFlowServices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AswClient::ModifyFlowServiceOutcome AswClient::ModifyFlowService(const ModifyFlowServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyFlowService");

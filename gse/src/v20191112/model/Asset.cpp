@@ -32,7 +32,9 @@ Asset::Asset() :
     m_bindFleetNumHasBeenSet(false),
     m_assetArnHasBeenSet(false),
     m_imageIdHasBeenSet(false),
-    m_osTypeHasBeenSet(false)
+    m_osTypeHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_sharingStatusHasBeenSet(false)
 {
 }
 
@@ -151,6 +153,26 @@ CoreInternalOutcome Asset::Deserialize(const Value &value)
         m_osTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceType") && !value["ResourceType"].IsNull())
+    {
+        if (!value["ResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Asset.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceType = string(value["ResourceType"].GetString());
+        m_resourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SharingStatus") && !value["SharingStatus"].IsNull())
+    {
+        if (!value["SharingStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Asset.SharingStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sharingStatus = string(value["SharingStatus"].GetString());
+        m_sharingStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +266,22 @@ void Asset::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "OsType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_osType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sharingStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SharingStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sharingStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -423,5 +461,37 @@ void Asset::SetOsType(const string& _osType)
 bool Asset::OsTypeHasBeenSet() const
 {
     return m_osTypeHasBeenSet;
+}
+
+string Asset::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void Asset::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool Asset::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
+string Asset::GetSharingStatus() const
+{
+    return m_sharingStatus;
+}
+
+void Asset::SetSharingStatus(const string& _sharingStatus)
+{
+    m_sharingStatus = _sharingStatus;
+    m_sharingStatusHasBeenSet = true;
+}
+
+bool Asset::SharingStatusHasBeenSet() const
+{
+    return m_sharingStatusHasBeenSet;
 }
 

@@ -1,0 +1,90 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_ASW_V20200722_MODEL_DESCRIBEFLOWSERVICESRESPONSE_H_
+#define TENCENTCLOUD_ASW_V20200722_MODEL_DESCRIBEFLOWSERVICESRESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/asw/v20200722/model/StateMachine.h>
+
+
+namespace TencentCloud
+{
+    namespace Asw
+    {
+        namespace V20200722
+        {
+            namespace Model
+            {
+                /**
+                * DescribeFlowServices返回参数结构体
+                */
+                class DescribeFlowServicesResponse : public AbstractModel
+                {
+                public:
+                    DescribeFlowServicesResponse();
+                    ~DescribeFlowServicesResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+
+
+                    /**
+                     * 获取用户的状态机列表
+                     * @return FlowServiceSet 用户的状态机列表
+                     */
+                    std::vector<StateMachine> GetFlowServiceSet() const;
+
+                    /**
+                     * 判断参数 FlowServiceSet 是否已赋值
+                     * @return FlowServiceSet 是否已赋值
+                     */
+                    bool FlowServiceSetHasBeenSet() const;
+
+                    /**
+                     * 获取用户的状态机总数
+                     * @return TotalCount 用户的状态机总数
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 用户的状态机列表
+                     */
+                    std::vector<StateMachine> m_flowServiceSet;
+                    bool m_flowServiceSetHasBeenSet;
+
+                    /**
+                     * 用户的状态机总数
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_ASW_V20200722_MODEL_DESCRIBEFLOWSERVICESRESPONSE_H_

@@ -29,6 +29,8 @@
 #include <tencentcloud/cdn/v20180606/model/CreateClsLogTopicResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateDiagnoseUrlRequest.h>
 #include <tencentcloud/cdn/v20180606/model/CreateDiagnoseUrlResponse.h>
+#include <tencentcloud/cdn/v20180606/model/CreateEdgePackTaskRequest.h>
+#include <tencentcloud/cdn/v20180606/model/CreateEdgePackTaskResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskRequest.h>
 #include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateVerifyRecordRequest.h>
@@ -152,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateDiagnoseUrlResponse> CreateDiagnoseUrlOutcome;
                 typedef std::future<CreateDiagnoseUrlOutcome> CreateDiagnoseUrlOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::CreateDiagnoseUrlRequest&, CreateDiagnoseUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiagnoseUrlAsyncHandler;
+                typedef Outcome<Error, Model::CreateEdgePackTaskResponse> CreateEdgePackTaskOutcome;
+                typedef std::future<CreateEdgePackTaskOutcome> CreateEdgePackTaskOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::CreateEdgePackTaskRequest&, CreateEdgePackTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgePackTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateScdnLogTaskResponse> CreateScdnLogTaskOutcome;
                 typedef std::future<CreateScdnLogTaskOutcome> CreateScdnLogTaskOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::CreateScdnLogTaskRequest&, CreateScdnLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScdnLogTaskAsyncHandler;
@@ -331,6 +336,15 @@ namespace TencentCloud
                 CreateDiagnoseUrlOutcome CreateDiagnoseUrl(const Model::CreateDiagnoseUrlRequest &request);
                 void CreateDiagnoseUrlAsync(const Model::CreateDiagnoseUrlRequest& request, const CreateDiagnoseUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDiagnoseUrlOutcomeCallable CreateDiagnoseUrlCallable(const Model::CreateDiagnoseUrlRequest& request);
+
+                /**
+                 *动态打包任务提交接口
+                 * @param req CreateEdgePackTaskRequest
+                 * @return CreateEdgePackTaskOutcome
+                 */
+                CreateEdgePackTaskOutcome CreateEdgePackTask(const Model::CreateEdgePackTaskRequest &request);
+                void CreateEdgePackTaskAsync(const Model::CreateEdgePackTaskRequest& request, const CreateEdgePackTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEdgePackTaskOutcomeCallable CreateEdgePackTaskCallable(const Model::CreateEdgePackTaskRequest& request);
 
                 /**
                  *CreateScdnLogTask 用于创建事件日志任务

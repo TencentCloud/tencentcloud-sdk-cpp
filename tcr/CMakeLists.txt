@@ -75,6 +75,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/TcrImageInfo.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecycleGlobalPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateNamespacePersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/DeleteInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeInstanceStatusRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerRequest.h
@@ -133,6 +134,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeImagePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/DeleteInstanceRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageManifestsResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeNamespacePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalResponse.h
@@ -236,6 +238,7 @@ set(tcr_src
   src/v20190924/model/TcrImageInfo.cpp
   src/v20190924/model/DescribeImageLifecycleGlobalPersonalResponse.cpp
   src/v20190924/model/CreateNamespacePersonalResponse.cpp
+  src/v20190924/model/DeleteInstanceResponse.cpp
   src/v20190924/model/DeleteImageLifecycleGlobalPersonalRequest.cpp
   src/v20190924/model/DescribeInstanceStatusRequest.cpp
   src/v20190924/model/ModifyWebhookTriggerRequest.cpp
@@ -294,6 +297,7 @@ set(tcr_src
   src/v20190924/model/DescribeImagePersonalRequest.cpp
   src/v20190924/model/DeleteImageLifecyclePersonalRequest.cpp
   src/v20190924/model/ModifyApplicationTriggerPersonalResponse.cpp
+  src/v20190924/model/DeleteInstanceRequest.cpp
   src/v20190924/model/DescribeImageManifestsResponse.cpp
   src/v20190924/model/DescribeNamespacePersonalResponse.cpp
   src/v20190924/model/DeleteNamespacePersonalResponse.cpp

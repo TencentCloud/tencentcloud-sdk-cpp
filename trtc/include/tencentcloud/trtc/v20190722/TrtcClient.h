@@ -39,14 +39,24 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeRecordStatisticRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeRecordStatisticResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTrtcInteractiveTimeRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTrtcInteractiveTimeResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserInformationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserInformationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserRequest.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserResponse.h>
+#include <tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdRequest.h>
+#include <tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeRequest.h>
@@ -89,18 +99,33 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRealtimeScaleResponse> DescribeRealtimeScaleOutcome;
                 typedef std::future<DescribeRealtimeScaleOutcome> DescribeRealtimeScaleOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRealtimeScaleRequest&, DescribeRealtimeScaleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeScaleAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRecordStatisticResponse> DescribeRecordStatisticOutcome;
+                typedef std::future<DescribeRecordStatisticOutcome> DescribeRecordStatisticOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeRecordStatisticRequest&, DescribeRecordStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStatisticAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRoomInformationResponse> DescribeRoomInformationOutcome;
                 typedef std::future<DescribeRoomInformationOutcome> DescribeRoomInformationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRoomInformationRequest&, DescribeRoomInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomInformationAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTrtcInteractiveTimeResponse> DescribeTrtcInteractiveTimeOutcome;
+                typedef std::future<DescribeTrtcInteractiveTimeOutcome> DescribeTrtcInteractiveTimeOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeTrtcInteractiveTimeRequest&, DescribeTrtcInteractiveTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrtcInteractiveTimeAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTrtcMcuTranscodeTimeResponse> DescribeTrtcMcuTranscodeTimeOutcome;
+                typedef std::future<DescribeTrtcMcuTranscodeTimeOutcome> DescribeTrtcMcuTranscodeTimeOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeTrtcMcuTranscodeTimeRequest&, DescribeTrtcMcuTranscodeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrtcMcuTranscodeTimeAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUserInformationResponse> DescribeUserInformationOutcome;
                 typedef std::future<DescribeUserInformationOutcome> DescribeUserInformationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeUserInformationRequest&, DescribeUserInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInformationAsyncHandler;
                 typedef Outcome<Error, Model::DismissRoomResponse> DismissRoomOutcome;
                 typedef std::future<DismissRoomOutcome> DismissRoomOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DismissRoomRequest&, DismissRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomAsyncHandler;
+                typedef Outcome<Error, Model::DismissRoomByStrRoomIdResponse> DismissRoomByStrRoomIdOutcome;
+                typedef std::future<DismissRoomByStrRoomIdOutcome> DismissRoomByStrRoomIdOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DismissRoomByStrRoomIdRequest&, DismissRoomByStrRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomByStrRoomIdAsyncHandler;
                 typedef Outcome<Error, Model::RemoveUserResponse> RemoveUserOutcome;
                 typedef std::future<RemoveUserOutcome> RemoveUserOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::RemoveUserRequest&, RemoveUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserAsyncHandler;
+                typedef Outcome<Error, Model::RemoveUserByStrRoomIdResponse> RemoveUserByStrRoomIdOutcome;
+                typedef std::future<RemoveUserByStrRoomIdOutcome> RemoveUserByStrRoomIdOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::RemoveUserByStrRoomIdRequest&, RemoveUserByStrRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserByStrRoomIdAsyncHandler;
                 typedef Outcome<Error, Model::StartMCUMixTranscodeResponse> StartMCUMixTranscodeOutcome;
                 typedef std::future<StartMCUMixTranscodeOutcome> StartMCUMixTranscodeOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StartMCUMixTranscodeRequest&, StartMCUMixTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMCUMixTranscodeAsyncHandler;
@@ -183,6 +208,20 @@ namespace TencentCloud
                 DescribeRealtimeScaleOutcomeCallable DescribeRealtimeScaleCallable(const Model::DescribeRealtimeScaleRequest& request);
 
                 /**
+                 *查询云端录制计费时长。
+
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过31天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。
+                 * @param req DescribeRecordStatisticRequest
+                 * @return DescribeRecordStatisticOutcome
+                 */
+                DescribeRecordStatisticOutcome DescribeRecordStatistic(const Model::DescribeRecordStatisticRequest &request);
+                void DescribeRecordStatisticAsync(const Model::DescribeRecordStatisticRequest& request, const DescribeRecordStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordStatisticOutcomeCallable DescribeRecordStatisticCallable(const Model::DescribeRecordStatisticRequest& request);
+
+                /**
                  *查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。
                  * @param req DescribeRoomInformationRequest
                  * @return DescribeRoomInformationOutcome
@@ -190,6 +229,32 @@ namespace TencentCloud
                 DescribeRoomInformationOutcome DescribeRoomInformation(const Model::DescribeRoomInformationRequest &request);
                 void DescribeRoomInformationAsync(const Model::DescribeRoomInformationRequest& request, const DescribeRoomInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRoomInformationOutcomeCallable DescribeRoomInformationCallable(const Model::DescribeRoomInformationRequest& request);
+
+                /**
+                 *查询音视频互动计费时长。
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过31天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。
+                 * @param req DescribeTrtcInteractiveTimeRequest
+                 * @return DescribeTrtcInteractiveTimeOutcome
+                 */
+                DescribeTrtcInteractiveTimeOutcome DescribeTrtcInteractiveTime(const Model::DescribeTrtcInteractiveTimeRequest &request);
+                void DescribeTrtcInteractiveTimeAsync(const Model::DescribeTrtcInteractiveTimeRequest& request, const DescribeTrtcInteractiveTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrtcInteractiveTimeOutcomeCallable DescribeTrtcInteractiveTimeCallable(const Model::DescribeTrtcInteractiveTimeRequest& request);
+
+                /**
+                 *查询旁路转码计费时长。
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过31天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。
+                 * @param req DescribeTrtcMcuTranscodeTimeRequest
+                 * @return DescribeTrtcMcuTranscodeTimeOutcome
+                 */
+                DescribeTrtcMcuTranscodeTimeOutcome DescribeTrtcMcuTranscodeTime(const Model::DescribeTrtcMcuTranscodeTimeRequest &request);
+                void DescribeTrtcMcuTranscodeTimeAsync(const Model::DescribeTrtcMcuTranscodeTimeRequest& request, const DescribeTrtcMcuTranscodeTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrtcMcuTranscodeTimeOutcomeCallable DescribeTrtcMcuTranscodeTimeCallable(const Model::DescribeTrtcMcuTranscodeTimeRequest& request);
 
                 /**
                  *查询指定时间内的用户列表，可查询14天内数据。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。
@@ -210,6 +275,15 @@ namespace TencentCloud
                 DismissRoomOutcomeCallable DismissRoomCallable(const Model::DismissRoomRequest& request);
 
                 /**
+                 *接口说明：把房间所有用户从房间移出，解散房间。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。
+                 * @param req DismissRoomByStrRoomIdRequest
+                 * @return DismissRoomByStrRoomIdOutcome
+                 */
+                DismissRoomByStrRoomIdOutcome DismissRoomByStrRoomId(const Model::DismissRoomByStrRoomIdRequest &request);
+                void DismissRoomByStrRoomIdAsync(const Model::DismissRoomByStrRoomIdRequest& request, const DismissRoomByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DismissRoomByStrRoomIdOutcomeCallable DismissRoomByStrRoomIdCallable(const Model::DismissRoomByStrRoomIdRequest& request);
+
+                /**
                  *接口说明：将用户从房间移出，适用于主播/房主/管理员踢人等场景。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。
                  * @param req RemoveUserRequest
                  * @return RemoveUserOutcome
@@ -217,6 +291,15 @@ namespace TencentCloud
                 RemoveUserOutcome RemoveUser(const Model::RemoveUserRequest &request);
                 void RemoveUserAsync(const Model::RemoveUserRequest& request, const RemoveUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveUserOutcomeCallable RemoveUserCallable(const Model::RemoveUserRequest& request);
+
+                /**
+                 *接口说明：将用户从房间移出，适用于主播/房主/管理员踢人等场景。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。
+                 * @param req RemoveUserByStrRoomIdRequest
+                 * @return RemoveUserByStrRoomIdOutcome
+                 */
+                RemoveUserByStrRoomIdOutcome RemoveUserByStrRoomId(const Model::RemoveUserByStrRoomIdRequest &request);
+                void RemoveUserByStrRoomIdAsync(const Model::RemoveUserByStrRoomIdRequest& request, const RemoveUserByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveUserByStrRoomIdOutcomeCallable RemoveUserByStrRoomIdCallable(const Model::RemoveUserByStrRoomIdRequest& request);
 
                 /**
                  *接口说明：启动云端混流，并指定混流画面中各路画面的布局位置。

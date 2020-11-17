@@ -24,10 +24,10 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeBillSummaryByTagRequest::DescribeBillSummaryByTagRequest() :
-    m_payerUinHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_tagKeyHasBeenSet(false)
+    m_tagKeyHasBeenSet(false),
+    m_payerUinHasBeenSet(false)
 {
 }
 
@@ -37,14 +37,6 @@ string DescribeBillSummaryByTagRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_payerUinHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PayerUin";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_beginTimeHasBeenSet)
     {
@@ -70,6 +62,14 @@ string DescribeBillSummaryByTagRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_tagKey.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_payerUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayerUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -77,22 +77,6 @@ string DescribeBillSummaryByTagRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeBillSummaryByTagRequest::GetPayerUin() const
-{
-    return m_payerUin;
-}
-
-void DescribeBillSummaryByTagRequest::SetPayerUin(const string& _payerUin)
-{
-    m_payerUin = _payerUin;
-    m_payerUinHasBeenSet = true;
-}
-
-bool DescribeBillSummaryByTagRequest::PayerUinHasBeenSet() const
-{
-    return m_payerUinHasBeenSet;
-}
 
 string DescribeBillSummaryByTagRequest::GetBeginTime() const
 {
@@ -140,6 +124,22 @@ void DescribeBillSummaryByTagRequest::SetTagKey(const string& _tagKey)
 bool DescribeBillSummaryByTagRequest::TagKeyHasBeenSet() const
 {
     return m_tagKeyHasBeenSet;
+}
+
+string DescribeBillSummaryByTagRequest::GetPayerUin() const
+{
+    return m_payerUin;
+}
+
+void DescribeBillSummaryByTagRequest::SetPayerUin(const string& _payerUin)
+{
+    m_payerUin = _payerUin;
+    m_payerUinHasBeenSet = true;
+}
+
+bool DescribeBillSummaryByTagRequest::PayerUinHasBeenSet() const
+{
+    return m_payerUinHasBeenSet;
 }
 
 

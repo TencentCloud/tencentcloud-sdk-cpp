@@ -771,6 +771,49 @@ TcrClient::DeleteImagePersonalOutcomeCallable TcrClient::DeleteImagePersonalCall
     return task->get_future();
 }
 
+TcrClient::DeleteInstanceOutcome TcrClient::DeleteInstance(const DeleteInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstanceResponse rsp = DeleteInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstanceOutcome(rsp);
+        else
+            return DeleteInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteInstanceOutcomeCallable TcrClient::DeleteInstanceCallable(const DeleteInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DeleteInstanceTokenOutcome TcrClient::DeleteInstanceToken(const DeleteInstanceTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteInstanceToken");

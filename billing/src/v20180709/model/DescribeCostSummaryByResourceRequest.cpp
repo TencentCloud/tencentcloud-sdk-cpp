@@ -24,11 +24,11 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeCostSummaryByResourceRequest::DescribeCostSummaryByResourceRequest() :
-    m_payerUinHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_payerUinHasBeenSet(false),
     m_needRecordNumHasBeenSet(false),
     m_needConditionValueHasBeenSet(false),
     m_conditionsHasBeenSet(false)
@@ -41,14 +41,6 @@ string DescribeCostSummaryByResourceRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_payerUinHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PayerUin";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_beginTimeHasBeenSet)
     {
@@ -80,6 +72,14 @@ string DescribeCostSummaryByResourceRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_payerUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayerUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_needRecordNumHasBeenSet)
@@ -114,22 +114,6 @@ string DescribeCostSummaryByResourceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeCostSummaryByResourceRequest::GetPayerUin() const
-{
-    return m_payerUin;
-}
-
-void DescribeCostSummaryByResourceRequest::SetPayerUin(const string& _payerUin)
-{
-    m_payerUin = _payerUin;
-    m_payerUinHasBeenSet = true;
-}
-
-bool DescribeCostSummaryByResourceRequest::PayerUinHasBeenSet() const
-{
-    return m_payerUinHasBeenSet;
-}
 
 string DescribeCostSummaryByResourceRequest::GetBeginTime() const
 {
@@ -193,6 +177,22 @@ void DescribeCostSummaryByResourceRequest::SetOffset(const uint64_t& _offset)
 bool DescribeCostSummaryByResourceRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeCostSummaryByResourceRequest::GetPayerUin() const
+{
+    return m_payerUin;
+}
+
+void DescribeCostSummaryByResourceRequest::SetPayerUin(const string& _payerUin)
+{
+    m_payerUin = _payerUin;
+    m_payerUinHasBeenSet = true;
+}
+
+bool DescribeCostSummaryByResourceRequest::PayerUinHasBeenSet() const
+{
+    return m_payerUinHasBeenSet;
 }
 
 uint64_t DescribeCostSummaryByResourceRequest::GetNeedRecordNum() const

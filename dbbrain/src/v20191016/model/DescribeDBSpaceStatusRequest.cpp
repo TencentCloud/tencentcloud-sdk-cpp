@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeDBSpaceStatusRequest::DescribeDBSpaceStatusRequest() :
     m_instanceIdHasBeenSet(false),
-    m_rangeDaysHasBeenSet(false)
+    m_rangeDaysHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeDBSpaceStatusRequest::ToJsonString() const
         string key = "RangeDays";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rangeDays, allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeDBSpaceStatusRequest::SetRangeDays(const int64_t& _rangeDays)
 bool DescribeDBSpaceStatusRequest::RangeDaysHasBeenSet() const
 {
     return m_rangeDaysHasBeenSet;
+}
+
+string DescribeDBSpaceStatusRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeDBSpaceStatusRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeDBSpaceStatusRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

@@ -43,32 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询账单数据的用户UIN
-                     * @return PayerUin 查询账单数据的用户UIN
-                     */
-                    std::string GetPayerUin() const;
-
-                    /**
-                     * 设置查询账单数据的用户UIN
-                     * @param PayerUin 查询账单数据的用户UIN
-                     */
-                    void SetPayerUin(const std::string& _payerUin);
-
-                    /**
-                     * 判断参数 PayerUin 是否已赋值
-                     * @return PayerUin 是否已赋值
-                     */
-                    bool PayerUinHasBeenSet() const;
-
-                    /**
-                     * 获取目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00
-                     * @return BeginTime 目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00
+                     * 获取目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * @return BeginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00
-                     * @param BeginTime 目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00
+                     * 设置目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * @param BeginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
@@ -79,14 +61,14 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59
-                     * @return EndTime 目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59
+                     * 获取目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * @return EndTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59
-                     * @param EndTime 目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59
+                     * 设置目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * @param EndTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -114,22 +96,34 @@ namespace TencentCloud
                      */
                     bool TagKeyHasBeenSet() const;
 
+                    /**
+                     * 获取查询账单数据的用户UIN
+                     * @return PayerUin 查询账单数据的用户UIN
+                     */
+                    std::string GetPayerUin() const;
+
+                    /**
+                     * 设置查询账单数据的用户UIN
+                     * @param PayerUin 查询账单数据的用户UIN
+                     */
+                    void SetPayerUin(const std::string& _payerUin);
+
+                    /**
+                     * 判断参数 PayerUin 是否已赋值
+                     * @return PayerUin 是否已赋值
+                     */
+                    bool PayerUinHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 查询账单数据的用户UIN
-                     */
-                    std::string m_payerUin;
-                    bool m_payerUinHasBeenSet;
-
-                    /**
-                     * 目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00
+                     * 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59
+                     * 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -139,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
+
+                    /**
+                     * 查询账单数据的用户UIN
+                     */
+                    std::string m_payerUin;
+                    bool m_payerUinHasBeenSet;
 
                 };
             }

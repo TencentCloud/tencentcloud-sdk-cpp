@@ -355,6 +355,28 @@ lc表示最小连接数。
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientIPMethod 监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetClientIPMethod() const;
+
+                    /**
+                     * 设置监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClientIPMethod 监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClientIPMethod(const uint64_t& _clientIPMethod);
+
+                    /**
+                     * 判断参数 ClientIPMethod 是否已赋值
+                     * @return ClientIPMethod 是否已赋值
+                     */
+                    bool ClientIPMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -454,6 +476,13 @@ lc表示最小连接数。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 监听器获取客户端 IP 的方式，0表示TOA, 1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_clientIPMethod;
+                    bool m_clientIPMethodHasBeenSet;
 
                 };
             }

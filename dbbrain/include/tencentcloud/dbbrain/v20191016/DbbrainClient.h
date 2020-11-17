@@ -103,7 +103,7 @@ namespace TencentCloud
                 DescribeDBSpaceStatusOutcomeCallable DescribeDBSpaceStatusCallable(const Model::DescribeDBSpaceStatusRequest& request);
 
                 /**
-                 *获取慢日志统计柱状图
+                 *获取慢日志统计柱状图。
                  * @param req DescribeSlowLogTimeSeriesStatsRequest
                  * @return DescribeSlowLogTimeSeriesStatsOutcome
                  */

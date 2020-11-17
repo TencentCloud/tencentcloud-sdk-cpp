@@ -31,7 +31,8 @@ DescribeSlowLogTopSqlsRequest::DescribeSlowLogTopSqlsRequest() :
     m_orderByHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_schemaListHasBeenSet(false)
+    m_schemaListHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string DescribeSlowLogTopSqlsRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_productHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -247,6 +256,22 @@ void DescribeSlowLogTopSqlsRequest::SetSchemaList(const vector<SchemaItem>& _sch
 bool DescribeSlowLogTopSqlsRequest::SchemaListHasBeenSet() const
 {
     return m_schemaListHasBeenSet;
+}
+
+string DescribeSlowLogTopSqlsRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeSlowLogTopSqlsRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeSlowLogTopSqlsRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

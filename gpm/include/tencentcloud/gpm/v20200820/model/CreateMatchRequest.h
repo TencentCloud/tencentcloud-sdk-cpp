@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool MatchDescHasBeenSet() const;
 
                     /**
-                     * 获取只支持https协议
-                     * @return NotifyUrl 只支持https协议
+                     * 获取只支持https 和 http 协议
+                     * @return NotifyUrl 只支持https 和 http 协议
                      */
                     std::string GetNotifyUrl() const;
 
                     /**
-                     * 设置只支持https协议
-                     * @param NotifyUrl 只支持https协议
+                     * 设置只支持https 和 http 协议
+                     * @param NotifyUrl 只支持https 和 http 协议
                      */
                     void SetNotifyUrl(const std::string& _notifyUrl);
 
@@ -310,7 +310,7 @@ namespace TencentCloud
                     bool m_matchDescHasBeenSet;
 
                     /**
-                     * 只支持https协议
+                     * 只支持https 和 http 协议
                      */
                     std::string m_notifyUrl;
                     bool m_notifyUrlHasBeenSet;

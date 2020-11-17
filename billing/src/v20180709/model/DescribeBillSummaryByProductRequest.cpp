@@ -24,9 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeBillSummaryByProductRequest::DescribeBillSummaryByProductRequest() :
-    m_payerUinHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_payerUinHasBeenSet(false)
 {
 }
 
@@ -36,14 +36,6 @@ string DescribeBillSummaryByProductRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_payerUinHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PayerUin";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_beginTimeHasBeenSet)
     {
@@ -61,6 +53,14 @@ string DescribeBillSummaryByProductRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_payerUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayerUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -68,22 +68,6 @@ string DescribeBillSummaryByProductRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeBillSummaryByProductRequest::GetPayerUin() const
-{
-    return m_payerUin;
-}
-
-void DescribeBillSummaryByProductRequest::SetPayerUin(const string& _payerUin)
-{
-    m_payerUin = _payerUin;
-    m_payerUinHasBeenSet = true;
-}
-
-bool DescribeBillSummaryByProductRequest::PayerUinHasBeenSet() const
-{
-    return m_payerUinHasBeenSet;
-}
 
 string DescribeBillSummaryByProductRequest::GetBeginTime() const
 {
@@ -115,6 +99,22 @@ void DescribeBillSummaryByProductRequest::SetEndTime(const string& _endTime)
 bool DescribeBillSummaryByProductRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeBillSummaryByProductRequest::GetPayerUin() const
+{
+    return m_payerUin;
+}
+
+void DescribeBillSummaryByProductRequest::SetPayerUin(const string& _payerUin)
+{
+    m_payerUin = _payerUin;
+    m_payerUinHasBeenSet = true;
+}
+
+bool DescribeBillSummaryByProductRequest::PayerUinHasBeenSet() const
+{
+    return m_payerUinHasBeenSet;
 }
 
 

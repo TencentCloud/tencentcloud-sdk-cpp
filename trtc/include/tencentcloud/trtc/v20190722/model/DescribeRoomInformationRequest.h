@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，5天内。本地unix时间戳（1588031999s）
-                     * @return StartTime 查询开始时间，5天内。本地unix时间戳（1588031999s）
+                     * 获取查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * @return StartTime 查询开始时间，14天内。本地unix时间戳（1588031999s）
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，5天内。本地unix时间戳（1588031999s）
-                     * @param StartTime 查询开始时间，5天内。本地unix时间戳（1588031999s）
+                     * 设置查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * @param StartTime 查询开始时间，14天内。本地unix时间戳（1588031999s）
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 查询开始时间，5天内。本地unix时间戳（1588031999s）
+                     * 查询开始时间，14天内。本地unix时间戳（1588031999s）
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;

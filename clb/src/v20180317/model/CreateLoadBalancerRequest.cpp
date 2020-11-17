@@ -40,6 +40,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_vipHasBeenSet(false),
     m_exclusiveClusterHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
+    m_snatProHasBeenSet(false),
+    m_snatIpsHasBeenSet(false),
     m_clusterTagHasBeenSet(false)
 {
 }
@@ -186,6 +188,29 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snatProHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SnatPro";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_snatPro, allocator);
+    }
+
+    if (m_snatIpsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SnatIps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_snatIps.begin(); itr != m_snatIps.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_clusterTagHasBeenSet)
@@ -458,6 +483,38 @@ void CreateLoadBalancerRequest::SetClientToken(const string& _clientToken)
 bool CreateLoadBalancerRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+bool CreateLoadBalancerRequest::GetSnatPro() const
+{
+    return m_snatPro;
+}
+
+void CreateLoadBalancerRequest::SetSnatPro(const bool& _snatPro)
+{
+    m_snatPro = _snatPro;
+    m_snatProHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::SnatProHasBeenSet() const
+{
+    return m_snatProHasBeenSet;
+}
+
+vector<SnatIp> CreateLoadBalancerRequest::GetSnatIps() const
+{
+    return m_snatIps;
+}
+
+void CreateLoadBalancerRequest::SetSnatIps(const vector<SnatIp>& _snatIps)
+{
+    m_snatIps = _snatIps;
+    m_snatIpsHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::SnatIpsHasBeenSet() const
+{
+    return m_snatIpsHasBeenSet;
 }
 
 string CreateLoadBalancerRequest::GetClusterTag() const

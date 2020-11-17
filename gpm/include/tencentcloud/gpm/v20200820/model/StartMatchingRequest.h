@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool PlayersHasBeenSet() const;
 
                     /**
-                     * 获取请求 Id 默认 "" 为空则由 GPM 自动生成 长度 128。
-                     * @return MatchTicketId 请求 Id 默认 "" 为空则由 GPM 自动生成 长度 128。
+                     * 获取请求 Id 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -
+                     * @return MatchTicketId 请求 Id 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -
                      */
                     std::string GetMatchTicketId() const;
 
                     /**
-                     * 设置请求 Id 默认 "" 为空则由 GPM 自动生成 长度 128。
-                     * @param MatchTicketId 请求 Id 默认 "" 为空则由 GPM 自动生成 长度 128。
+                     * 设置请求 Id 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -
+                     * @param MatchTicketId 请求 Id 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -
                      */
                     void SetMatchTicketId(const std::string& _matchTicketId);
 
@@ -112,7 +112,7 @@ namespace TencentCloud
                     bool m_playersHasBeenSet;
 
                     /**
-                     * 请求 Id 默认 "" 为空则由 GPM 自动生成 长度 128。
+                     * 请求 Id 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -
                      */
                     std::string m_matchTicketId;
                     bool m_matchTicketIdHasBeenSet;

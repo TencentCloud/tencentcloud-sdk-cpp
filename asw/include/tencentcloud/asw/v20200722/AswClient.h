@@ -31,6 +31,8 @@
 #include <tencentcloud/asw/v20200722/model/DescribeExecutionsResponse.h>
 #include <tencentcloud/asw/v20200722/model/DescribeFlowServiceDetailRequest.h>
 #include <tencentcloud/asw/v20200722/model/DescribeFlowServiceDetailResponse.h>
+#include <tencentcloud/asw/v20200722/model/DescribeFlowServicesRequest.h>
+#include <tencentcloud/asw/v20200722/model/DescribeFlowServicesResponse.h>
 #include <tencentcloud/asw/v20200722/model/ModifyFlowServiceRequest.h>
 #include <tencentcloud/asw/v20200722/model/ModifyFlowServiceResponse.h>
 #include <tencentcloud/asw/v20200722/model/StartExecutionRequest.h>
@@ -61,6 +63,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeFlowServiceDetailResponse> DescribeFlowServiceDetailOutcome;
                 typedef std::future<DescribeFlowServiceDetailOutcome> DescribeFlowServiceDetailOutcomeCallable;
                 typedef std::function<void(const AswClient*, const Model::DescribeFlowServiceDetailRequest&, DescribeFlowServiceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowServiceDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFlowServicesResponse> DescribeFlowServicesOutcome;
+                typedef std::future<DescribeFlowServicesOutcome> DescribeFlowServicesOutcomeCallable;
+                typedef std::function<void(const AswClient*, const Model::DescribeFlowServicesRequest&, DescribeFlowServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowServicesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyFlowServiceResponse> ModifyFlowServiceOutcome;
                 typedef std::future<ModifyFlowServiceOutcome> ModifyFlowServiceOutcomeCallable;
                 typedef std::function<void(const AswClient*, const Model::ModifyFlowServiceRequest&, ModifyFlowServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFlowServiceAsyncHandler;
@@ -105,6 +110,15 @@ namespace TencentCloud
                 DescribeFlowServiceDetailOutcome DescribeFlowServiceDetail(const Model::DescribeFlowServiceDetailRequest &request);
                 void DescribeFlowServiceDetailAsync(const Model::DescribeFlowServiceDetailRequest& request, const DescribeFlowServiceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlowServiceDetailOutcomeCallable DescribeFlowServiceDetailCallable(const Model::DescribeFlowServiceDetailRequest& request);
+
+                /**
+                 *查询指定用户下所有状态机，以列表形式返回
+                 * @param req DescribeFlowServicesRequest
+                 * @return DescribeFlowServicesOutcome
+                 */
+                DescribeFlowServicesOutcome DescribeFlowServices(const Model::DescribeFlowServicesRequest &request);
+                void DescribeFlowServicesAsync(const Model::DescribeFlowServicesRequest& request, const DescribeFlowServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowServicesOutcomeCallable DescribeFlowServicesCallable(const Model::DescribeFlowServicesRequest& request);
 
                 /**
                  *该接口用于修改状态机

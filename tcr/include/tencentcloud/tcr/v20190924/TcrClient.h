@@ -57,6 +57,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImagePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImagePersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteInstanceRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteInstanceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceTokenRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespaceRequest.h>
@@ -204,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteImagePersonalResponse> DeleteImagePersonalOutcome;
                 typedef std::future<DeleteImagePersonalOutcome> DeleteImagePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteImagePersonalRequest&, DeleteImagePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImagePersonalAsyncHandler;
+                typedef Outcome<Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
+                typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
                 typedef Outcome<Error, Model::DeleteInstanceTokenResponse> DeleteInstanceTokenOutcome;
                 typedef std::future<DeleteInstanceTokenOutcome> DeleteInstanceTokenOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteInstanceTokenRequest&, DeleteInstanceTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceTokenAsyncHandler;
@@ -482,6 +487,15 @@ namespace TencentCloud
                 DeleteImagePersonalOutcome DeleteImagePersonal(const Model::DeleteImagePersonalRequest &request);
                 void DeleteImagePersonalAsync(const Model::DeleteImagePersonalRequest& request, const DeleteImagePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteImagePersonalOutcomeCallable DeleteImagePersonalCallable(const Model::DeleteImagePersonalRequest& request);
+
+                /**
+                 *删除镜像仓库企业版实例
+                 * @param req DeleteInstanceRequest
+                 * @return DeleteInstanceOutcome
+                 */
+                DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
+                void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
 
                 /**
                  *删除长期访问凭证

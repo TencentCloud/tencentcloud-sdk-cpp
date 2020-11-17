@@ -26,7 +26,8 @@ using namespace std;
 DescribeDBDiagHistoryRequest::DescribeDBDiagHistoryRequest() :
     m_instanceIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DescribeDBDiagHistoryRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DescribeDBDiagHistoryRequest::SetEndTime(const string& _endTime)
 bool DescribeDBDiagHistoryRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeDBDiagHistoryRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeDBDiagHistoryRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeDBDiagHistoryRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

@@ -608,6 +608,28 @@ UNKNOWN表示未知状态。
                      */
                     bool ProxyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetClientIPMethod() const;
+
+                    /**
+                     * 设置通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClientIPMethod(const std::vector<int64_t>& _clientIPMethod);
+
+                    /**
+                     * 判断参数 ClientIPMethod 是否已赋值
+                     * @return ClientIPMethod 是否已赋值
+                     */
+                    bool ClientIPMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -788,6 +810,13 @@ UNKNOWN表示未知状态。
                      */
                     uint64_t m_proxyType;
                     bool m_proxyTypeHasBeenSet;
+
+                    /**
+                     * 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_clientIPMethod;
+                    bool m_clientIPMethodHasBeenSet;
 
                 };
             }
