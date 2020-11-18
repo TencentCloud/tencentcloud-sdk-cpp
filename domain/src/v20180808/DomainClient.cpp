@@ -513,6 +513,49 @@ DomainClient::DescribeDomainPriceListOutcomeCallable DomainClient::DescribeDomai
     return task->get_future();
 }
 
+DomainClient::DescribeTemplateOutcome DomainClient::DescribeTemplate(const DescribeTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTemplateResponse rsp = DescribeTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTemplateOutcome(rsp);
+        else
+            return DescribeTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTemplateOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeTemplateAsync(const DescribeTemplateRequest& request, const DescribeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeTemplateOutcomeCallable DomainClient::DescribeTemplateCallable(const DescribeTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DescribeTemplateListOutcome DomainClient::DescribeTemplateList(const DescribeTemplateListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTemplateList");

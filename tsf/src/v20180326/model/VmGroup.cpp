@@ -50,7 +50,9 @@ VmGroup::VmGroup() :
     m_deployBetaEnableHasBeenSet(false),
     m_deployBatchHasBeenSet(false),
     m_deployExeModeHasBeenSet(false),
-    m_deployWaitTimeHasBeenSet(false)
+    m_deployWaitTimeHasBeenSet(false),
+    m_enableHealthCheckHasBeenSet(false),
+    m_healthCheckSettingsHasBeenSet(false)
 {
 }
 
@@ -352,6 +354,33 @@ CoreInternalOutcome VmGroup::Deserialize(const Value &value)
         m_deployWaitTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableHealthCheck") && !value["EnableHealthCheck"].IsNull())
+    {
+        if (!value["EnableHealthCheck"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.EnableHealthCheck` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableHealthCheck = value["EnableHealthCheck"].GetBool();
+        m_enableHealthCheckHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheckSettings") && !value["HealthCheckSettings"].IsNull())
+    {
+        if (!value["HealthCheckSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.HealthCheckSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthCheckSettings.Deserialize(value["HealthCheckSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthCheckSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -594,6 +623,23 @@ void VmGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "DeployWaitTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deployWaitTime, allocator);
+    }
+
+    if (m_enableHealthCheckHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableHealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableHealthCheck, allocator);
+    }
+
+    if (m_healthCheckSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthCheckSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_healthCheckSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1061,5 +1107,37 @@ void VmGroup::SetDeployWaitTime(const uint64_t& _deployWaitTime)
 bool VmGroup::DeployWaitTimeHasBeenSet() const
 {
     return m_deployWaitTimeHasBeenSet;
+}
+
+bool VmGroup::GetEnableHealthCheck() const
+{
+    return m_enableHealthCheck;
+}
+
+void VmGroup::SetEnableHealthCheck(const bool& _enableHealthCheck)
+{
+    m_enableHealthCheck = _enableHealthCheck;
+    m_enableHealthCheckHasBeenSet = true;
+}
+
+bool VmGroup::EnableHealthCheckHasBeenSet() const
+{
+    return m_enableHealthCheckHasBeenSet;
+}
+
+HealthCheckSettings VmGroup::GetHealthCheckSettings() const
+{
+    return m_healthCheckSettings;
+}
+
+void VmGroup::SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings)
+{
+    m_healthCheckSettings = _healthCheckSettings;
+    m_healthCheckSettingsHasBeenSet = true;
+}
+
+bool VmGroup::HealthCheckSettingsHasBeenSet() const
+{
+    return m_healthCheckSettingsHasBeenSet;
 }
 

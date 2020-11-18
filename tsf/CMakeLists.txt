@@ -176,6 +176,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/ServiceSetting.h
   include/tencentcloud/tsf/v20180326/model/ExecuteTaskResponse.h
   include/tencentcloud/tsf/v20180326/model/ApiResponseDescr.h
+  include/tencentcloud/tsf/v20180326/model/UpdateHealthCheckSettingsRequest.h
   include/tencentcloud/tsf/v20180326/model/DeployServerlessGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/Config.h
   include/tencentcloud/tsf/v20180326/model/CreateClusterResponse.h
@@ -206,6 +207,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/RevocationPublicConfigRequest.h
   include/tencentcloud/tsf/v20180326/model/TaskFlowLastBatchState.h
   include/tencentcloud/tsf/v20180326/model/PropertyField.h
+  include/tencentcloud/tsf/v20180326/model/UpdateHealthCheckSettingsResponse.h
   include/tencentcloud/tsf/v20180326/model/TsfPageApplication.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/RedoTaskRequest.h
@@ -472,6 +474,7 @@ set(tsf_src
   src/v20180326/model/ServiceSetting.cpp
   src/v20180326/model/ExecuteTaskResponse.cpp
   src/v20180326/model/ApiResponseDescr.cpp
+  src/v20180326/model/UpdateHealthCheckSettingsRequest.cpp
   src/v20180326/model/DeployServerlessGroupRequest.cpp
   src/v20180326/model/Config.cpp
   src/v20180326/model/CreateClusterResponse.cpp
@@ -502,6 +505,7 @@ set(tsf_src
   src/v20180326/model/RevocationPublicConfigRequest.cpp
   src/v20180326/model/TaskFlowLastBatchState.cpp
   src/v20180326/model/PropertyField.cpp
+  src/v20180326/model/UpdateHealthCheckSettingsResponse.cpp
   src/v20180326/model/TsfPageApplication.cpp
   src/v20180326/model/DescribeGroupRequest.cpp
   src/v20180326/model/RedoTaskRequest.cpp

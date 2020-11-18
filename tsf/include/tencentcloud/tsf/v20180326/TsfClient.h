@@ -237,6 +237,8 @@
 #include <tencentcloud/tsf/v20180326/model/StopTaskExecuteResponse.h>
 #include <tencentcloud/tsf/v20180326/model/TerminateTaskFlowBatchRequest.h>
 #include <tencentcloud/tsf/v20180326/model/TerminateTaskFlowBatchResponse.h>
+#include <tencentcloud/tsf/v20180326/model/UpdateHealthCheckSettingsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/UpdateHealthCheckSettingsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/UpdateRepositoryRequest.h>
 #include <tencentcloud/tsf/v20180326/model/UpdateRepositoryResponse.h>
 
@@ -574,6 +576,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::TerminateTaskFlowBatchResponse> TerminateTaskFlowBatchOutcome;
                 typedef std::future<TerminateTaskFlowBatchOutcome> TerminateTaskFlowBatchOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::TerminateTaskFlowBatchRequest&, TerminateTaskFlowBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateTaskFlowBatchAsyncHandler;
+                typedef Outcome<Error, Model::UpdateHealthCheckSettingsResponse> UpdateHealthCheckSettingsOutcome;
+                typedef std::future<UpdateHealthCheckSettingsOutcome> UpdateHealthCheckSettingsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::UpdateHealthCheckSettingsRequest&, UpdateHealthCheckSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateHealthCheckSettingsAsyncHandler;
                 typedef Outcome<Error, Model::UpdateRepositoryResponse> UpdateRepositoryOutcome;
                 typedef std::future<UpdateRepositoryOutcome> UpdateRepositoryOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::UpdateRepositoryRequest&, UpdateRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRepositoryAsyncHandler;
@@ -1546,6 +1551,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 TerminateTaskFlowBatchOutcome TerminateTaskFlowBatch(const Model::TerminateTaskFlowBatchRequest &request);
                 void TerminateTaskFlowBatchAsync(const Model::TerminateTaskFlowBatchRequest& request, const TerminateTaskFlowBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TerminateTaskFlowBatchOutcomeCallable TerminateTaskFlowBatchCallable(const Model::TerminateTaskFlowBatchRequest& request);
+
+                /**
+                 *更新健康检查配置
+                 * @param req UpdateHealthCheckSettingsRequest
+                 * @return UpdateHealthCheckSettingsOutcome
+                 */
+                UpdateHealthCheckSettingsOutcome UpdateHealthCheckSettings(const Model::UpdateHealthCheckSettingsRequest &request);
+                void UpdateHealthCheckSettingsAsync(const Model::UpdateHealthCheckSettingsRequest& request, const UpdateHealthCheckSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateHealthCheckSettingsOutcomeCallable UpdateHealthCheckSettingsCallable(const Model::UpdateHealthCheckSettingsRequest& request);
 
                 /**
                  *更新仓库信息

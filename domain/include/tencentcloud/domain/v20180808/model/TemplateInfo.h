@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取认证状态
-                     * @return AuditStatus 认证状态
+                     * 获取认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * @return AuditStatus 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
                      */
                     std::string GetAuditStatus() const;
 
                     /**
-                     * 设置认证状态
-                     * @param AuditStatus 认证状态
+                     * 设置认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * @param AuditStatus 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
                      */
                     void SetAuditStatus(const std::string& _auditStatus);
 
@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool UserUinHasBeenSet() const;
 
                     /**
-                     * 获取是否是默认模板
-                     * @return IsDefault 是否是默认模板
+                     * 获取是否是默认模板: 是:yes，否:no
+                     * @return IsDefault 是否是默认模板: 是:yes，否:no
                      */
                     std::string GetIsDefault() const;
 
                     /**
-                     * 设置是否是默认模板
-                     * @param IsDefault 是否是默认模板
+                     * 设置是否是默认模板: 是:yes，否:no
+                     * @param IsDefault 是否是默认模板: 是:yes，否:no
                      */
                     void SetIsDefault(const std::string& _isDefault);
 
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 认证状态
+                     * 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
                      */
                     std::string m_auditStatus;
                     bool m_auditStatusHasBeenSet;
@@ -279,7 +279,7 @@ namespace TencentCloud
                     bool m_userUinHasBeenSet;
 
                     /**
-                     * 是否是默认模板
+                     * 是否是默认模板: 是:yes，否:no
                      */
                     std::string m_isDefault;
                     bool m_isDefaultHasBeenSet;

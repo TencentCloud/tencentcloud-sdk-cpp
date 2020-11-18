@@ -442,17 +442,17 @@ namespace TencentCloud
                     bool ReadonlyHasBeenSet() const;
 
                     /**
-                     * 获取域名标签
+                     * 获取域名标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tag 域名标签
+                     * @return Tag 域名标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
-                     * 设置域名标签
+                     * 设置域名标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag 域名标签
+                     * @param Tag 域名标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -591,7 +591,7 @@ namespace TencentCloud
                     bool m_readonlyHasBeenSet;
 
                     /**
-                     * 域名标签
+                     * 域名标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tag;

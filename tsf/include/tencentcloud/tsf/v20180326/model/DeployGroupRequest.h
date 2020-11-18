@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
 
 
 namespace TencentCloud
@@ -132,6 +133,132 @@ namespace TencentCloud
                      */
                     bool ForceStartHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启健康检查
+                     * @return EnableHealthCheck 是否开启健康检查
+                     */
+                    bool GetEnableHealthCheck() const;
+
+                    /**
+                     * 设置是否开启健康检查
+                     * @param EnableHealthCheck 是否开启健康检查
+                     */
+                    void SetEnableHealthCheck(const bool& _enableHealthCheck);
+
+                    /**
+                     * 判断参数 EnableHealthCheck 是否已赋值
+                     * @return EnableHealthCheck 是否已赋值
+                     */
+                    bool EnableHealthCheckHasBeenSet() const;
+
+                    /**
+                     * 获取开启健康检查时，配置健康检查
+                     * @return HealthCheckSettings 开启健康检查时，配置健康检查
+                     */
+                    HealthCheckSettings GetHealthCheckSettings() const;
+
+                    /**
+                     * 设置开启健康检查时，配置健康检查
+                     * @param HealthCheckSettings 开启健康检查时，配置健康检查
+                     */
+                    void SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings);
+
+                    /**
+                     * 判断参数 HealthCheckSettings 是否已赋值
+                     * @return HealthCheckSettings 是否已赋值
+                     */
+                    bool HealthCheckSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取部署方式，0表示快速更新，1表示滚动更新
+                     * @return UpdateType 部署方式，0表示快速更新，1表示滚动更新
+                     */
+                    uint64_t GetUpdateType() const;
+
+                    /**
+                     * 设置部署方式，0表示快速更新，1表示滚动更新
+                     * @param UpdateType 部署方式，0表示快速更新，1表示滚动更新
+                     */
+                    void SetUpdateType(const uint64_t& _updateType);
+
+                    /**
+                     * 判断参数 UpdateType 是否已赋值
+                     * @return UpdateType 是否已赋值
+                     */
+                    bool UpdateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用beta批次
+                     * @return DeployBetaEnable 是否启用beta批次
+                     */
+                    bool GetDeployBetaEnable() const;
+
+                    /**
+                     * 设置是否启用beta批次
+                     * @param DeployBetaEnable 是否启用beta批次
+                     */
+                    void SetDeployBetaEnable(const bool& _deployBetaEnable);
+
+                    /**
+                     * 判断参数 DeployBetaEnable 是否已赋值
+                     * @return DeployBetaEnable 是否已赋值
+                     */
+                    bool DeployBetaEnableHasBeenSet() const;
+
+                    /**
+                     * 获取滚动发布每个批次参与的实例比率
+                     * @return DeployBatch 滚动发布每个批次参与的实例比率
+                     */
+                    std::vector<double> GetDeployBatch() const;
+
+                    /**
+                     * 设置滚动发布每个批次参与的实例比率
+                     * @param DeployBatch 滚动发布每个批次参与的实例比率
+                     */
+                    void SetDeployBatch(const std::vector<double>& _deployBatch);
+
+                    /**
+                     * 判断参数 DeployBatch 是否已赋值
+                     * @return DeployBatch 是否已赋值
+                     */
+                    bool DeployBatchHasBeenSet() const;
+
+                    /**
+                     * 获取滚动发布的执行方式
+                     * @return DeployExeMode 滚动发布的执行方式
+                     */
+                    std::string GetDeployExeMode() const;
+
+                    /**
+                     * 设置滚动发布的执行方式
+                     * @param DeployExeMode 滚动发布的执行方式
+                     */
+                    void SetDeployExeMode(const std::string& _deployExeMode);
+
+                    /**
+                     * 判断参数 DeployExeMode 是否已赋值
+                     * @return DeployExeMode 是否已赋值
+                     */
+                    bool DeployExeModeHasBeenSet() const;
+
+                    /**
+                     * 获取滚动发布每个批次的时间间隔
+                     * @return DeployWaitTime 滚动发布每个批次的时间间隔
+                     */
+                    uint64_t GetDeployWaitTime() const;
+
+                    /**
+                     * 设置滚动发布每个批次的时间间隔
+                     * @param DeployWaitTime 滚动发布每个批次的时间间隔
+                     */
+                    void SetDeployWaitTime(const uint64_t& _deployWaitTime);
+
+                    /**
+                     * 判断参数 DeployWaitTime 是否已赋值
+                     * @return DeployWaitTime 是否已赋值
+                     */
+                    bool DeployWaitTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +290,48 @@ namespace TencentCloud
                      */
                     bool m_forceStart;
                     bool m_forceStartHasBeenSet;
+
+                    /**
+                     * 是否开启健康检查
+                     */
+                    bool m_enableHealthCheck;
+                    bool m_enableHealthCheckHasBeenSet;
+
+                    /**
+                     * 开启健康检查时，配置健康检查
+                     */
+                    HealthCheckSettings m_healthCheckSettings;
+                    bool m_healthCheckSettingsHasBeenSet;
+
+                    /**
+                     * 部署方式，0表示快速更新，1表示滚动更新
+                     */
+                    uint64_t m_updateType;
+                    bool m_updateTypeHasBeenSet;
+
+                    /**
+                     * 是否启用beta批次
+                     */
+                    bool m_deployBetaEnable;
+                    bool m_deployBetaEnableHasBeenSet;
+
+                    /**
+                     * 滚动发布每个批次参与的实例比率
+                     */
+                    std::vector<double> m_deployBatch;
+                    bool m_deployBatchHasBeenSet;
+
+                    /**
+                     * 滚动发布的执行方式
+                     */
+                    std::string m_deployExeMode;
+                    bool m_deployExeModeHasBeenSet;
+
+                    /**
+                     * 滚动发布每个批次的时间间隔
+                     */
+                    uint64_t m_deployWaitTime;
+                    bool m_deployWaitTimeHasBeenSet;
 
                 };
             }

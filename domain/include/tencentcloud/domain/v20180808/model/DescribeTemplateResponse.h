@@ -14,53 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_SSL_V20191205_MODEL_DELETECERTIFICATERESPONSE_H_
-#define TENCENTCLOUD_SSL_V20191205_MODEL_DELETECERTIFICATERESPONSE_H_
+#ifndef TENCENTCLOUD_DOMAIN_V20180808_MODEL_DESCRIBETEMPLATERESPONSE_H_
+#define TENCENTCLOUD_DOMAIN_V20180808_MODEL_DESCRIBETEMPLATERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/domain/v20180808/model/TemplateInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Ssl
+    namespace Domain
     {
-        namespace V20191205
+        namespace V20180808
         {
             namespace Model
             {
                 /**
-                * DeleteCertificate返回参数结构体
+                * DescribeTemplate返回参数结构体
                 */
-                class DeleteCertificateResponse : public AbstractModel
+                class DescribeTemplateResponse : public AbstractModel
                 {
                 public:
-                    DeleteCertificateResponse();
-                    ~DeleteCertificateResponse() = default;
+                    DescribeTemplateResponse();
+                    ~DescribeTemplateResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取删除结果（true：删除成功，false：删除失败）
-                     * @return DeleteResult 删除结果（true：删除成功，false：删除失败）
+                     * 获取模板信息
+                     * @return Template 模板信息
                      */
-                    bool GetDeleteResult() const;
+                    TemplateInfo GetTemplate() const;
 
                     /**
-                     * 判断参数 DeleteResult 是否已赋值
-                     * @return DeleteResult 是否已赋值
+                     * 判断参数 Template 是否已赋值
+                     * @return Template 是否已赋值
                      */
-                    bool DeleteResultHasBeenSet() const;
+                    bool TemplateHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 删除结果（true：删除成功，false：删除失败）
+                     * 模板信息
                      */
-                    bool m_deleteResult;
-                    bool m_deleteResultHasBeenSet;
+                    TemplateInfo m_template;
+                    bool m_templateHasBeenSet;
 
                 };
             }
@@ -68,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_SSL_V20191205_MODEL_DELETECERTIFICATERESPONSE_H_
+#endif // !TENCENTCLOUD_DOMAIN_V20180808_MODEL_DESCRIBETEMPLATERESPONSE_H_

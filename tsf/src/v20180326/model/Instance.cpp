@@ -57,7 +57,8 @@ Instance::Instance() :
     m_applicationResourceTypeHasBeenSet(false),
     m_serviceSidecarStatusHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false)
+    m_namespaceNameHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -426,6 +427,16 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_namespaceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(value["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -719,6 +730,14 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "NamespaceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1298,5 +1317,21 @@ void Instance::SetNamespaceName(const string& _namespaceName)
 bool Instance::NamespaceNameHasBeenSet() const
 {
     return m_namespaceNameHasBeenSet;
+}
+
+string Instance::GetReason() const
+{
+    return m_reason;
+}
+
+void Instance::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool Instance::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 

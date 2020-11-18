@@ -29,11 +29,13 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DomainBatchDetailSet.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchResponse.h
   include/tencentcloud/domain/v20180808/model/RenewDomainBatchRequest.h
-  include/tencentcloud/domain/v20180808/model/TransferInDomainBatchResponse.h
+  include/tencentcloud/domain/v20180808/model/DescribeTemplateResponse.h
   include/tencentcloud/domain/v20180808/model/UpdateProhibitionBatchResponse.h
   include/tencentcloud/domain/v20180808/model/CheckDomainResponse.h
   include/tencentcloud/domain/v20180808/model/RenewDomainBatchResponse.h
   include/tencentcloud/domain/v20180808/model/PriceInfo.h
+  include/tencentcloud/domain/v20180808/model/DescribeTemplateRequest.h
+  include/tencentcloud/domain/v20180808/model/TransferInDomainBatchResponse.h
   include/tencentcloud/domain/v20180808/model/BatchModifyDomainInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateListResponse.h
@@ -82,11 +84,13 @@ set(domain_src
   src/v20180808/model/DomainBatchDetailSet.cpp
   src/v20180808/model/ModifyDomainDNSBatchResponse.cpp
   src/v20180808/model/RenewDomainBatchRequest.cpp
-  src/v20180808/model/TransferInDomainBatchResponse.cpp
+  src/v20180808/model/DescribeTemplateResponse.cpp
   src/v20180808/model/UpdateProhibitionBatchResponse.cpp
   src/v20180808/model/CheckDomainResponse.cpp
   src/v20180808/model/RenewDomainBatchResponse.cpp
   src/v20180808/model/PriceInfo.cpp
+  src/v20180808/model/DescribeTemplateRequest.cpp
+  src/v20180808/model/TransferInDomainBatchResponse.cpp
   src/v20180808/model/BatchModifyDomainInfoResponse.cpp
   src/v20180808/model/DescribeDomainBaseInfoResponse.cpp
   src/v20180808/model/DescribeTemplateListResponse.cpp

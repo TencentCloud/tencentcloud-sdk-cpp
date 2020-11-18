@@ -4641,6 +4641,49 @@ TsfClient::TerminateTaskFlowBatchOutcomeCallable TsfClient::TerminateTaskFlowBat
     return task->get_future();
 }
 
+TsfClient::UpdateHealthCheckSettingsOutcome TsfClient::UpdateHealthCheckSettings(const UpdateHealthCheckSettingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateHealthCheckSettings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateHealthCheckSettingsResponse rsp = UpdateHealthCheckSettingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateHealthCheckSettingsOutcome(rsp);
+        else
+            return UpdateHealthCheckSettingsOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateHealthCheckSettingsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::UpdateHealthCheckSettingsAsync(const UpdateHealthCheckSettingsRequest& request, const UpdateHealthCheckSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateHealthCheckSettings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::UpdateHealthCheckSettingsOutcomeCallable TsfClient::UpdateHealthCheckSettingsCallable(const UpdateHealthCheckSettingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateHealthCheckSettingsOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateHealthCheckSettings(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::UpdateRepositoryOutcome TsfClient::UpdateRepository(const UpdateRepositoryRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateRepository");

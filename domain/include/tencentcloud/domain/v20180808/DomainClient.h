@@ -45,6 +45,8 @@
 #include <tencentcloud/domain/v20180808/model/DescribeDomainNameListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeTemplateRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeTemplateResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchRequest.h>
@@ -110,6 +112,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDomainPriceListResponse> DescribeDomainPriceListOutcome;
                 typedef std::future<DescribeDomainPriceListOutcome> DescribeDomainPriceListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeDomainPriceListRequest&, DescribeDomainPriceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainPriceListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTemplateResponse> DescribeTemplateOutcome;
+                typedef std::future<DescribeTemplateOutcome> DescribeTemplateOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeTemplateRequest&, DescribeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTemplateListResponse> DescribeTemplateListOutcome;
                 typedef std::future<DescribeTemplateListOutcome> DescribeTemplateListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeTemplateListRequest&, DescribeTemplateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateListAsyncHandler;
@@ -246,6 +251,15 @@ namespace TencentCloud
                 DescribeDomainPriceListOutcome DescribeDomainPriceList(const Model::DescribeDomainPriceListRequest &request);
                 void DescribeDomainPriceListAsync(const Model::DescribeDomainPriceListRequest& request, const DescribeDomainPriceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainPriceListOutcomeCallable DescribeDomainPriceListCallable(const Model::DescribeDomainPriceListRequest& request);
+
+                /**
+                 *本接口 (DescribeTemplate) 用于获取模板信息。
+                 * @param req DescribeTemplateRequest
+                 * @return DescribeTemplateOutcome
+                 */
+                DescribeTemplateOutcome DescribeTemplate(const Model::DescribeTemplateRequest &request);
+                void DescribeTemplateAsync(const Model::DescribeTemplateRequest& request, const DescribeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTemplateOutcomeCallable DescribeTemplateCallable(const Model::DescribeTemplateRequest& request);
 
                 /**
                  *本接口 (DescribeTemplateList) 用于获取模板列表。

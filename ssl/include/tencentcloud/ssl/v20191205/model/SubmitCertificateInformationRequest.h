@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool DomainListHasBeenSet() const;
 
                     /**
-                     * 获取私钥密码。
-                     * @return KeyPassword 私钥密码。
+                     * 获取私钥密码（非必填）。
+                     * @return KeyPassword 私钥密码（非必填）。
                      */
                     std::string GetKeyPassword() const;
 
                     /**
-                     * 设置私钥密码。
-                     * @param KeyPassword 私钥密码。
+                     * 设置私钥密码（非必填）。
+                     * @param KeyPassword 私钥密码（非必填）。
                      */
                     void SetKeyPassword(const std::string& _keyPassword);
 
@@ -313,14 +313,14 @@ namespace TencentCloud
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
-                     * 获取证书验证方式。
-                     * @return VerifyType 证书验证方式。
+                     * 获取证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
+                     * @return VerifyType 证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
                      */
                     std::string GetVerifyType() const;
 
                     /**
-                     * 设置证书验证方式。
-                     * @param VerifyType 证书验证方式。
+                     * 设置证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
+                     * @param VerifyType 证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
                      */
                     void SetVerifyType(const std::string& _verifyType);
 
@@ -543,7 +543,7 @@ namespace TencentCloud
                     bool m_domainListHasBeenSet;
 
                     /**
-                     * 私钥密码。
+                     * 私钥密码（非必填）。
                      */
                     std::string m_keyPassword;
                     bool m_keyPasswordHasBeenSet;
@@ -603,7 +603,7 @@ namespace TencentCloud
                     bool m_phoneNumberHasBeenSet;
 
                     /**
-                     * 证书验证方式。
+                     * 证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
                      */
                     std::string m_verifyType;
                     bool m_verifyTypeHasBeenSet;

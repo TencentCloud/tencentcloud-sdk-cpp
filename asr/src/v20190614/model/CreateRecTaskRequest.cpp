@@ -28,6 +28,8 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_channelNumHasBeenSet(false),
     m_resTextFormatHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
+    m_speakerDiarizationHasBeenSet(false),
+    m_speakerNumberHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_dataHasBeenSet(false),
@@ -37,8 +39,6 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_filterModalHasBeenSet(false),
     m_convertNumModeHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_speakerDiarizationHasBeenSet(false),
-    m_speakerNumberHasBeenSet(false),
     m_filterPuncHasBeenSet(false)
 {
 }
@@ -80,6 +80,22 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "SourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sourceType, allocator);
+    }
+
+    if (m_speakerDiarizationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SpeakerDiarization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_speakerDiarization, allocator);
+    }
+
+    if (m_speakerNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SpeakerNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_speakerNumber, allocator);
     }
 
     if (m_callbackUrlHasBeenSet)
@@ -152,22 +168,6 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_extra.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_speakerDiarizationHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "SpeakerDiarization";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_speakerDiarization, allocator);
-    }
-
-    if (m_speakerNumberHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "SpeakerNumber";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_speakerNumber, allocator);
     }
 
     if (m_filterPuncHasBeenSet)
@@ -248,6 +248,38 @@ void CreateRecTaskRequest::SetSourceType(const uint64_t& _sourceType)
 bool CreateRecTaskRequest::SourceTypeHasBeenSet() const
 {
     return m_sourceTypeHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetSpeakerDiarization() const
+{
+    return m_speakerDiarization;
+}
+
+void CreateRecTaskRequest::SetSpeakerDiarization(const int64_t& _speakerDiarization)
+{
+    m_speakerDiarization = _speakerDiarization;
+    m_speakerDiarizationHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::SpeakerDiarizationHasBeenSet() const
+{
+    return m_speakerDiarizationHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetSpeakerNumber() const
+{
+    return m_speakerNumber;
+}
+
+void CreateRecTaskRequest::SetSpeakerNumber(const int64_t& _speakerNumber)
+{
+    m_speakerNumber = _speakerNumber;
+    m_speakerNumberHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::SpeakerNumberHasBeenSet() const
+{
+    return m_speakerNumberHasBeenSet;
 }
 
 string CreateRecTaskRequest::GetCallbackUrl() const
@@ -392,38 +424,6 @@ void CreateRecTaskRequest::SetExtra(const string& _extra)
 bool CreateRecTaskRequest::ExtraHasBeenSet() const
 {
     return m_extraHasBeenSet;
-}
-
-int64_t CreateRecTaskRequest::GetSpeakerDiarization() const
-{
-    return m_speakerDiarization;
-}
-
-void CreateRecTaskRequest::SetSpeakerDiarization(const int64_t& _speakerDiarization)
-{
-    m_speakerDiarization = _speakerDiarization;
-    m_speakerDiarizationHasBeenSet = true;
-}
-
-bool CreateRecTaskRequest::SpeakerDiarizationHasBeenSet() const
-{
-    return m_speakerDiarizationHasBeenSet;
-}
-
-int64_t CreateRecTaskRequest::GetSpeakerNumber() const
-{
-    return m_speakerNumber;
-}
-
-void CreateRecTaskRequest::SetSpeakerNumber(const int64_t& _speakerNumber)
-{
-    m_speakerNumber = _speakerNumber;
-    m_speakerNumberHasBeenSet = true;
-}
-
-bool CreateRecTaskRequest::SpeakerNumberHasBeenSet() const
-{
-    return m_speakerNumberHasBeenSet;
 }
 
 int64_t CreateRecTaskRequest::GetFilterPunc() const

@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool CertificateIdsHasBeenSet() const;
 
                     /**
-                     * 获取子订单ID
-                     * @return DealIds 子订单ID
+                     * 获取订单号列表
+                     * @return DealIds 订单号列表
                      */
                     std::vector<std::string> GetDealIds() const;
 
@@ -75,7 +75,7 @@ namespace TencentCloud
                     bool m_certificateIdsHasBeenSet;
 
                     /**
-                     * 子订单ID
+                     * 订单号列表
                      */
                     std::vector<std::string> m_dealIds;
                     bool m_dealIdsHasBeenSet;

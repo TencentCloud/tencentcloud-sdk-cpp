@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_SSL_V20191205_MODEL_DELETECERTIFICATERESPONSE_H_
-#define TENCENTCLOUD_SSL_V20191205_MODEL_DELETECERTIFICATERESPONSE_H_
+#ifndef TENCENTCLOUD_BA_V20200720_MODEL_CREATEWEAPPQRURLRESPONSE_H_
+#define TENCENTCLOUD_BA_V20200720_MODEL_CREATEWEAPPQRURLRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,42 +25,42 @@
 
 namespace TencentCloud
 {
-    namespace Ssl
+    namespace Ba
     {
-        namespace V20191205
+        namespace V20200720
         {
             namespace Model
             {
                 /**
-                * DeleteCertificate返回参数结构体
+                * CreateWeappQRUrl返回参数结构体
                 */
-                class DeleteCertificateResponse : public AbstractModel
+                class CreateWeappQRUrlResponse : public AbstractModel
                 {
                 public:
-                    DeleteCertificateResponse();
-                    ~DeleteCertificateResponse() = default;
+                    CreateWeappQRUrlResponse();
+                    ~CreateWeappQRUrlResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取删除结果（true：删除成功，false：删除失败）
-                     * @return DeleteResult 删除结果（true：删除成功，false：删除失败）
+                     * 获取渠道备案小程序二维码
+                     * @return Url 渠道备案小程序二维码
                      */
-                    bool GetDeleteResult() const;
+                    std::string GetUrl() const;
 
                     /**
-                     * 判断参数 DeleteResult 是否已赋值
-                     * @return DeleteResult 是否已赋值
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
                      */
-                    bool DeleteResultHasBeenSet() const;
+                    bool UrlHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 删除结果（true：删除成功，false：删除失败）
+                     * 渠道备案小程序二维码
                      */
-                    bool m_deleteResult;
-                    bool m_deleteResultHasBeenSet;
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }
@@ -68,4 +68,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_SSL_V20191205_MODEL_DELETECERTIFICATERESPONSE_H_
+#endif // !TENCENTCLOUD_BA_V20200720_MODEL_CREATEWEAPPQRURLRESPONSE_H_

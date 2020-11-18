@@ -177,7 +177,7 @@ namespace TencentCloud
                 CommitCertificateInformationOutcomeCallable CommitCertificateInformationCallable(const Model::CommitCertificateInformationRequest& request);
 
                 /**
-                 *本接口（CompleteCertificate）用于主动触发证书验证。
+                 *本接口（CompleteCertificate）用于主动触发证书验证。仅非DNSPod和Wotrus品牌证书支持使用此接口。
                  * @param req CompleteCertificateRequest
                  * @return CompleteCertificateOutcome
                  */
@@ -285,7 +285,7 @@ namespace TencentCloud
                 RevokeCertificateOutcomeCallable RevokeCertificateCallable(const Model::RevokeCertificateRequest& request);
 
                 /**
-                 *提交证书资料。
+                 *提交证书资料。输入参数信息可以分多次提交，但提交的证书资料应最低限度保持完整。
                  * @param req SubmitCertificateInformationRequest
                  * @return SubmitCertificateInformationOutcome
                  */

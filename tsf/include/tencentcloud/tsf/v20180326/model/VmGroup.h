@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
 
 
 namespace TencentCloud
@@ -684,6 +685,50 @@ namespace TencentCloud
                      */
                     bool DeployWaitTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启了健康检查
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableHealthCheck 是否开启了健康检查
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableHealthCheck() const;
+
+                    /**
+                     * 设置是否开启了健康检查
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableHealthCheck 是否开启了健康检查
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableHealthCheck(const bool& _enableHealthCheck);
+
+                    /**
+                     * 判断参数 EnableHealthCheck 是否已赋值
+                     * @return EnableHealthCheck 是否已赋值
+                     */
+                    bool EnableHealthCheckHasBeenSet() const;
+
+                    /**
+                     * 获取健康检查配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthCheckSettings 健康检查配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HealthCheckSettings GetHealthCheckSettings() const;
+
+                    /**
+                     * 设置健康检查配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HealthCheckSettings 健康检查配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings);
+
+                    /**
+                     * 判断参数 HealthCheckSettings 是否已赋值
+                     * @return HealthCheckSettings 是否已赋值
+                     */
+                    bool HealthCheckSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -888,6 +933,20 @@ namespace TencentCloud
                      */
                     uint64_t m_deployWaitTime;
                     bool m_deployWaitTimeHasBeenSet;
+
+                    /**
+                     * 是否开启了健康检查
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableHealthCheck;
+                    bool m_enableHealthCheckHasBeenSet;
+
+                    /**
+                     * 健康检查配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HealthCheckSettings m_healthCheckSettings;
+                    bool m_healthCheckSettingsHasBeenSet;
 
                 };
             }

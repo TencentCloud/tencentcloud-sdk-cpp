@@ -663,17 +663,17 @@ namespace TencentCloud
                     bool OperationStateHasBeenSet() const;
 
                     /**
-                     * 获取NamespaceId
+                     * 获取NamespaceId Ns ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NamespaceId NamespaceId
+                     * @return NamespaceId NamespaceId Ns ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置NamespaceId
+                     * 设置NamespaceId Ns ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceId NamespaceId
+                     * @param NamespaceId NamespaceId Ns ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -685,17 +685,17 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取InstanceZoneId
+                     * 获取InstanceZoneId 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceZoneId InstanceZoneId
+                     * @return InstanceZoneId InstanceZoneId 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceZoneId() const;
 
                     /**
-                     * 设置InstanceZoneId
+                     * 设置InstanceZoneId 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceZoneId InstanceZoneId
+                     * @param InstanceZoneId InstanceZoneId 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceZoneId(const std::string& _instanceZoneId);
@@ -707,17 +707,17 @@ namespace TencentCloud
                     bool InstanceZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取InstanceImportMode
+                     * 获取InstanceImportMode 导入模式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceImportMode InstanceImportMode
+                     * @return InstanceImportMode InstanceImportMode 导入模式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceImportMode() const;
 
                     /**
-                     * 设置InstanceImportMode
+                     * 设置InstanceImportMode 导入模式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceImportMode InstanceImportMode
+                     * @param InstanceImportMode InstanceImportMode 导入模式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceImportMode(const std::string& _instanceImportMode);
@@ -729,17 +729,17 @@ namespace TencentCloud
                     bool InstanceImportModeHasBeenSet() const;
 
                     /**
-                     * 获取ApplicationType
+                     * 获取ApplicationType应用类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApplicationType ApplicationType
+                     * @return ApplicationType ApplicationType应用类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetApplicationType() const;
 
                     /**
-                     * 设置ApplicationType
+                     * 设置ApplicationType应用类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationType ApplicationType
+                     * @param ApplicationType ApplicationType应用类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetApplicationType(const std::string& _applicationType);
@@ -751,17 +751,17 @@ namespace TencentCloud
                     bool ApplicationTypeHasBeenSet() const;
 
                     /**
-                     * 获取ApplicationResourceType
+                     * 获取ApplicationResourceType 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApplicationResourceType ApplicationResourceType
+                     * @return ApplicationResourceType ApplicationResourceType 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetApplicationResourceType() const;
 
                     /**
-                     * 设置ApplicationResourceType
+                     * 设置ApplicationResourceType 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationResourceType ApplicationResourceType
+                     * @param ApplicationResourceType ApplicationResourceType 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetApplicationResourceType(const std::string& _applicationResourceType);
@@ -773,17 +773,17 @@ namespace TencentCloud
                     bool ApplicationResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取ServiceSidecarStatus
+                     * 获取sidecar状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceSidecarStatus ServiceSidecarStatus
+                     * @return ServiceSidecarStatus sidecar状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetServiceSidecarStatus() const;
 
                     /**
-                     * 设置ServiceSidecarStatus
+                     * 设置sidecar状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceSidecarStatus ServiceSidecarStatus
+                     * @param ServiceSidecarStatus sidecar状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetServiceSidecarStatus(const std::string& _serviceSidecarStatus);
@@ -795,17 +795,17 @@ namespace TencentCloud
                     bool ServiceSidecarStatusHasBeenSet() const;
 
                     /**
-                     * 获取GroupName
+                     * 获取部署组名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupName GroupName
+                     * @return GroupName 部署组名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置GroupName
+                     * 设置部署组名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupName GroupName
+                     * @param GroupName 部署组名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -817,17 +817,17 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取NamespaceName
+                     * 获取NS名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NamespaceName NamespaceName
+                     * @return NamespaceName NS名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNamespaceName() const;
 
                     /**
-                     * 设置NamespaceName
+                     * 设置NS名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceName NamespaceName
+                     * @param NamespaceName NS名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -837,6 +837,28 @@ namespace TencentCloud
                      * @return NamespaceName 是否已赋值
                      */
                     bool NamespaceNameHasBeenSet() const;
+
+                    /**
+                     * 获取健康检查原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Reason 健康检查原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 设置健康检查原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Reason 健康检查原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReason(const std::string& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     */
+                    bool ReasonHasBeenSet() const;
 
                 private:
 
@@ -1037,60 +1059,67 @@ namespace TencentCloud
                     bool m_operationStateHasBeenSet;
 
                     /**
-                     * NamespaceId
+                     * NamespaceId Ns ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * InstanceZoneId
+                     * InstanceZoneId 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceZoneId;
                     bool m_instanceZoneIdHasBeenSet;
 
                     /**
-                     * InstanceImportMode
+                     * InstanceImportMode 导入模式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceImportMode;
                     bool m_instanceImportModeHasBeenSet;
 
                     /**
-                     * ApplicationType
+                     * ApplicationType应用类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationType;
                     bool m_applicationTypeHasBeenSet;
 
                     /**
-                     * ApplicationResourceType
+                     * ApplicationResourceType 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationResourceType;
                     bool m_applicationResourceTypeHasBeenSet;
 
                     /**
-                     * ServiceSidecarStatus
+                     * sidecar状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceSidecarStatus;
                     bool m_serviceSidecarStatusHasBeenSet;
 
                     /**
-                     * GroupName
+                     * 部署组名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * NamespaceName
+                     * NS名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
+
+                    /**
+                     * 健康检查原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

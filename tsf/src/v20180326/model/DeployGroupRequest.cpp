@@ -28,7 +28,14 @@ DeployGroupRequest::DeployGroupRequest() :
     m_pkgIdHasBeenSet(false),
     m_startupParametersHasBeenSet(false),
     m_deployDescHasBeenSet(false),
-    m_forceStartHasBeenSet(false)
+    m_forceStartHasBeenSet(false),
+    m_enableHealthCheckHasBeenSet(false),
+    m_healthCheckSettingsHasBeenSet(false),
+    m_updateTypeHasBeenSet(false),
+    m_deployBetaEnableHasBeenSet(false),
+    m_deployBatchHasBeenSet(false),
+    m_deployExeModeHasBeenSet(false),
+    m_deployWaitTimeHasBeenSet(false)
 {
 }
 
@@ -77,6 +84,68 @@ string DeployGroupRequest::ToJsonString() const
         string key = "ForceStart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceStart, allocator);
+    }
+
+    if (m_enableHealthCheckHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableHealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableHealthCheck, allocator);
+    }
+
+    if (m_healthCheckSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthCheckSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_healthCheckSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_updateTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_updateType, allocator);
+    }
+
+    if (m_deployBetaEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployBetaEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deployBetaEnable, allocator);
+    }
+
+    if (m_deployBatchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployBatch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_deployBatch.begin(); itr != m_deployBatch.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+        }
+    }
+
+    if (m_deployExeModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployExeMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deployExeMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployWaitTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployWaitTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deployWaitTime, allocator);
     }
 
 
@@ -165,6 +234,118 @@ void DeployGroupRequest::SetForceStart(const bool& _forceStart)
 bool DeployGroupRequest::ForceStartHasBeenSet() const
 {
     return m_forceStartHasBeenSet;
+}
+
+bool DeployGroupRequest::GetEnableHealthCheck() const
+{
+    return m_enableHealthCheck;
+}
+
+void DeployGroupRequest::SetEnableHealthCheck(const bool& _enableHealthCheck)
+{
+    m_enableHealthCheck = _enableHealthCheck;
+    m_enableHealthCheckHasBeenSet = true;
+}
+
+bool DeployGroupRequest::EnableHealthCheckHasBeenSet() const
+{
+    return m_enableHealthCheckHasBeenSet;
+}
+
+HealthCheckSettings DeployGroupRequest::GetHealthCheckSettings() const
+{
+    return m_healthCheckSettings;
+}
+
+void DeployGroupRequest::SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings)
+{
+    m_healthCheckSettings = _healthCheckSettings;
+    m_healthCheckSettingsHasBeenSet = true;
+}
+
+bool DeployGroupRequest::HealthCheckSettingsHasBeenSet() const
+{
+    return m_healthCheckSettingsHasBeenSet;
+}
+
+uint64_t DeployGroupRequest::GetUpdateType() const
+{
+    return m_updateType;
+}
+
+void DeployGroupRequest::SetUpdateType(const uint64_t& _updateType)
+{
+    m_updateType = _updateType;
+    m_updateTypeHasBeenSet = true;
+}
+
+bool DeployGroupRequest::UpdateTypeHasBeenSet() const
+{
+    return m_updateTypeHasBeenSet;
+}
+
+bool DeployGroupRequest::GetDeployBetaEnable() const
+{
+    return m_deployBetaEnable;
+}
+
+void DeployGroupRequest::SetDeployBetaEnable(const bool& _deployBetaEnable)
+{
+    m_deployBetaEnable = _deployBetaEnable;
+    m_deployBetaEnableHasBeenSet = true;
+}
+
+bool DeployGroupRequest::DeployBetaEnableHasBeenSet() const
+{
+    return m_deployBetaEnableHasBeenSet;
+}
+
+vector<double> DeployGroupRequest::GetDeployBatch() const
+{
+    return m_deployBatch;
+}
+
+void DeployGroupRequest::SetDeployBatch(const vector<double>& _deployBatch)
+{
+    m_deployBatch = _deployBatch;
+    m_deployBatchHasBeenSet = true;
+}
+
+bool DeployGroupRequest::DeployBatchHasBeenSet() const
+{
+    return m_deployBatchHasBeenSet;
+}
+
+string DeployGroupRequest::GetDeployExeMode() const
+{
+    return m_deployExeMode;
+}
+
+void DeployGroupRequest::SetDeployExeMode(const string& _deployExeMode)
+{
+    m_deployExeMode = _deployExeMode;
+    m_deployExeModeHasBeenSet = true;
+}
+
+bool DeployGroupRequest::DeployExeModeHasBeenSet() const
+{
+    return m_deployExeModeHasBeenSet;
+}
+
+uint64_t DeployGroupRequest::GetDeployWaitTime() const
+{
+    return m_deployWaitTime;
+}
+
+void DeployGroupRequest::SetDeployWaitTime(const uint64_t& _deployWaitTime)
+{
+    m_deployWaitTime = _deployWaitTime;
+    m_deployWaitTimeHasBeenSet = true;
+}
+
+bool DeployGroupRequest::DeployWaitTimeHasBeenSet() const
+{
+    return m_deployWaitTimeHasBeenSet;
 }
 
 
