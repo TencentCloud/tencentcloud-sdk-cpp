@@ -38,7 +38,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_instanceTypeHasBeenSet(false),
     m_dataDiskSizeHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_systemDiskSizeHasBeenSet(false)
+    m_systemDiskSizeHasBeenSet(false),
+    m_internetMaxBandwidthInHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,14 @@ string RunInstancesRequest::ToJsonString() const
         string key = "SystemDiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_systemDiskSize, allocator);
+    }
+
+    if (m_internetMaxBandwidthInHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetMaxBandwidthIn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_internetMaxBandwidthIn, allocator);
     }
 
 
@@ -435,6 +444,22 @@ void RunInstancesRequest::SetSystemDiskSize(const uint64_t& _systemDiskSize)
 bool RunInstancesRequest::SystemDiskSizeHasBeenSet() const
 {
     return m_systemDiskSizeHasBeenSet;
+}
+
+int64_t RunInstancesRequest::GetInternetMaxBandwidthIn() const
+{
+    return m_internetMaxBandwidthIn;
+}
+
+void RunInstancesRequest::SetInternetMaxBandwidthIn(const int64_t& _internetMaxBandwidthIn)
+{
+    m_internetMaxBandwidthIn = _internetMaxBandwidthIn;
+    m_internetMaxBandwidthInHasBeenSet = true;
+}
+
+bool RunInstancesRequest::InternetMaxBandwidthInHasBeenSet() const
+{
+    return m_internetMaxBandwidthInHasBeenSet;
 }
 
 

@@ -73,6 +73,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorHotKeyRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInfoRequest.h
+  include/tencentcloud/redis/v20180412/model/DescribeTendisSlowLogResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeProductInfoResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceAccountRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeBackupUrlResponse.h
@@ -152,6 +153,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceNodeInfoRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceClusterNode.h
+  include/tencentcloud/redis/v20180412/model/DescribeTendisSlowLogRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeProxySlowLogRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeProxySlowLogResponse.h
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h
@@ -171,6 +173,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DeleteInstanceAccountResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorSIPRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceClusterShard.h
+  include/tencentcloud/redis/v20180412/model/TendisSlowLogDetail.h
   include/tencentcloud/redis/v20180412/model/ZoneCapacityConf.h
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceNodeInfoResponse.h
@@ -238,6 +241,7 @@ set(redis_src
   src/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorHotKeyRequest.cpp
   src/v20180412/model/DescribeInstanceDTSInfoRequest.cpp
+  src/v20180412/model/DescribeTendisSlowLogResponse.cpp
   src/v20180412/model/DescribeProductInfoResponse.cpp
   src/v20180412/model/ModifyInstanceAccountRequest.cpp
   src/v20180412/model/DescribeBackupUrlResponse.cpp
@@ -317,6 +321,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceNodeInfoRequest.cpp
   src/v20180412/model/DescribeMaintenanceWindowRequest.cpp
   src/v20180412/model/InstanceClusterNode.cpp
+  src/v20180412/model/DescribeTendisSlowLogRequest.cpp
   src/v20180412/model/DescribeProxySlowLogRequest.cpp
   src/v20180412/model/DescribeProxySlowLogResponse.cpp
   src/v20180412/model/UpgradeInstanceVersionRequest.cpp
@@ -336,6 +341,7 @@ set(redis_src
   src/v20180412/model/DeleteInstanceAccountResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorSIPRequest.cpp
   src/v20180412/model/InstanceClusterShard.cpp
+  src/v20180412/model/TendisSlowLogDetail.cpp
   src/v20180412/model/ZoneCapacityConf.cpp
   src/v20180412/model/UpgradeInstanceRequest.cpp
   src/v20180412/model/DescribeInstanceNodeInfoResponse.cpp

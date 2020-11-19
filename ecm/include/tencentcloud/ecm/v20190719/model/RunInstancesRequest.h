@@ -86,14 +86,22 @@ Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值
-                     * @return InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     * 获取公网出带宽上限，单位：Mbps。
+1.如果未传该参数或者传的值为0，则使用模块下的默认值。
+2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthIn的值
+                     * @return InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。
+1.如果未传该参数或者传的值为0，则使用模块下的默认值。
+2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthIn的值
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值
-                     * @param InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     * 设置公网出带宽上限，单位：Mbps。
+1.如果未传该参数或者传的值为0，则使用模块下的默认值。
+2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthIn的值
+                     * @param InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。
+1.如果未传该参数或者传的值为0，则使用模块下的默认值。
+2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthIn的值
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
 
@@ -355,6 +363,32 @@ Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写�
                      */
                     bool SystemDiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取公网入带宽上限，单位：Mbps。
+1.如果未传该参数或者传的值为0，则使用对应模块的默认值。
+2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthOut
+                     * @return InternetMaxBandwidthIn 公网入带宽上限，单位：Mbps。
+1.如果未传该参数或者传的值为0，则使用对应模块的默认值。
+2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthOut
+                     */
+                    int64_t GetInternetMaxBandwidthIn() const;
+
+                    /**
+                     * 设置公网入带宽上限，单位：Mbps。
+1.如果未传该参数或者传的值为0，则使用对应模块的默认值。
+2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthOut
+                     * @param InternetMaxBandwidthIn 公网入带宽上限，单位：Mbps。
+1.如果未传该参数或者传的值为0，则使用对应模块的默认值。
+2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthOut
+                     */
+                    void SetInternetMaxBandwidthIn(const int64_t& _internetMaxBandwidthIn);
+
+                    /**
+                     * 判断参数 InternetMaxBandwidthIn 是否已赋值
+                     * @return InternetMaxBandwidthIn 是否已赋值
+                     */
+                    bool InternetMaxBandwidthInHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,7 +405,9 @@ Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     * 公网出带宽上限，单位：Mbps。
+1.如果未传该参数或者传的值为0，则使用模块下的默认值。
+2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthIn的值
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
@@ -456,6 +492,14 @@ Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写�
                      */
                     uint64_t m_systemDiskSize;
                     bool m_systemDiskSizeHasBeenSet;
+
+                    /**
+                     * 公网入带宽上限，单位：Mbps。
+1.如果未传该参数或者传的值为0，则使用对应模块的默认值。
+2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthOut
+                     */
+                    int64_t m_internetMaxBandwidthIn;
+                    bool m_internetMaxBandwidthInHasBeenSet;
 
                 };
             }

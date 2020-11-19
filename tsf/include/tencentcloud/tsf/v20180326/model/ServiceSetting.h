@@ -75,7 +75,7 @@ namespace TencentCloud
                      * @return ProtocolPorts 容器端口映射
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ProtocolPort GetProtocolPorts() const;
+                    std::vector<ProtocolPort> GetProtocolPorts() const;
 
                     /**
                      * 设置容器端口映射
@@ -83,7 +83,7 @@ namespace TencentCloud
                      * @param ProtocolPorts 容器端口映射
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetProtocolPorts(const ProtocolPort& _protocolPorts);
+                    void SetProtocolPorts(const std::vector<ProtocolPort>& _protocolPorts);
 
                     /**
                      * 判断参数 ProtocolPorts 是否已赋值
@@ -126,7 +126,7 @@ namespace TencentCloud
                      * 容器端口映射
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ProtocolPort m_protocolPorts;
+                    std::vector<ProtocolPort> m_protocolPorts;
                     bool m_protocolPortsHasBeenSet;
 
                     /**

@@ -45,18 +45,21 @@ CoreInternalOutcome ServiceSetting::Deserialize(const Value &value)
 
     if (value.HasMember("ProtocolPorts") && !value["ProtocolPorts"].IsNull())
     {
-        if (!value["ProtocolPorts"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `ServiceSetting.ProtocolPorts` is not object type").SetRequestId(requestId));
-        }
+        if (!value["ProtocolPorts"].IsArray())
+            return CoreInternalOutcome(Error("response `ServiceSetting.ProtocolPorts` is not array type"));
 
-        CoreInternalOutcome outcome = m_protocolPorts.Deserialize(value["ProtocolPorts"]);
-        if (!outcome.IsSuccess())
+        const Value &tmpValue = value["ProtocolPorts"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            ProtocolPort item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_protocolPorts.push_back(item);
         }
-
         m_protocolPortsHasBeenSet = true;
     }
 
@@ -90,8 +93,14 @@ void ServiceSetting::ToJsonObject(Value &value, Document::AllocatorType& allocat
         Value iKey(kStringType);
         string key = "ProtocolPorts";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_protocolPorts.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_protocolPorts.begin(); itr != m_protocolPorts.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_subnetIdHasBeenSet)
@@ -121,12 +130,12 @@ bool ServiceSetting::AccessTypeHasBeenSet() const
     return m_accessTypeHasBeenSet;
 }
 
-ProtocolPort ServiceSetting::GetProtocolPorts() const
+vector<ProtocolPort> ServiceSetting::GetProtocolPorts() const
 {
     return m_protocolPorts;
 }
 
-void ServiceSetting::SetProtocolPorts(const ProtocolPort& _protocolPorts)
+void ServiceSetting::SetProtocolPorts(const vector<ProtocolPort>& _protocolPorts)
 {
     m_protocolPorts = _protocolPorts;
     m_protocolPortsHasBeenSet = true;

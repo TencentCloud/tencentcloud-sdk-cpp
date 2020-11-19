@@ -95,6 +95,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeTaskInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskListRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskListResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeTendisSlowLogRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeTendisSlowLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/DestroyPostpaidInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/DestroyPostpaidInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/DestroyPrepaidInstanceRequest.h>
@@ -267,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTaskListResponse> DescribeTaskListOutcome;
                 typedef std::future<DescribeTaskListOutcome> DescribeTaskListOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeTaskListRequest&, DescribeTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTendisSlowLogResponse> DescribeTendisSlowLogOutcome;
+                typedef std::future<DescribeTendisSlowLogOutcome> DescribeTendisSlowLogOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeTendisSlowLogRequest&, DescribeTendisSlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTendisSlowLogAsyncHandler;
                 typedef Outcome<Error, Model::DestroyPostpaidInstanceResponse> DestroyPostpaidInstanceOutcome;
                 typedef std::future<DestroyPostpaidInstanceOutcome> DestroyPostpaidInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DestroyPostpaidInstanceRequest&, DestroyPostpaidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyPostpaidInstanceAsyncHandler;
@@ -668,6 +673,15 @@ namespace TencentCloud
                 DescribeTaskListOutcome DescribeTaskList(const Model::DescribeTaskListRequest &request);
                 void DescribeTaskListAsync(const Model::DescribeTaskListRequest& request, const DescribeTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskListOutcomeCallable DescribeTaskListCallable(const Model::DescribeTaskListRequest& request);
+
+                /**
+                 *查询Tendis慢查询
+                 * @param req DescribeTendisSlowLogRequest
+                 * @return DescribeTendisSlowLogOutcome
+                 */
+                DescribeTendisSlowLogOutcome DescribeTendisSlowLog(const Model::DescribeTendisSlowLogRequest &request);
+                void DescribeTendisSlowLogAsync(const Model::DescribeTendisSlowLogRequest& request, const DescribeTendisSlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTendisSlowLogOutcomeCallable DescribeTendisSlowLogCallable(const Model::DescribeTendisSlowLogRequest& request);
 
                 /**
                  *按量计费实例销毁

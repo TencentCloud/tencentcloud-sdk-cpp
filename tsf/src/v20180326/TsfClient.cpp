@@ -728,6 +728,49 @@ TsfClient::CreateTaskOutcomeCallable TsfClient::CreateTaskCallable(const CreateT
     return task->get_future();
 }
 
+TsfClient::CreateTaskFlowOutcome TsfClient::CreateTaskFlow(const CreateTaskFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTaskFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTaskFlowResponse rsp = CreateTaskFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTaskFlowOutcome(rsp);
+        else
+            return CreateTaskFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTaskFlowOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateTaskFlowAsync(const CreateTaskFlowRequest& request, const CreateTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTaskFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateTaskFlowOutcomeCallable TsfClient::CreateTaskFlowCallable(const CreateTaskFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTaskFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTaskFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeleteApplicationOutcome TsfClient::DeleteApplication(const DeleteApplicationRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteApplication");
@@ -3824,6 +3867,49 @@ TsfClient::ModifyMicroserviceOutcomeCallable TsfClient::ModifyMicroserviceCallab
     return task->get_future();
 }
 
+TsfClient::ModifyTaskOutcome TsfClient::ModifyTask(const ModifyTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTaskResponse rsp = ModifyTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTaskOutcome(rsp);
+        else
+            return ModifyTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTaskOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ModifyTaskAsync(const ModifyTaskRequest& request, const ModifyTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ModifyTaskOutcomeCallable TsfClient::ModifyTaskCallable(const ModifyTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::ModifyUploadInfoOutcome TsfClient::ModifyUploadInfo(const ModifyUploadInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUploadInfo");
@@ -3946,6 +4032,49 @@ TsfClient::RedoTaskBatchOutcomeCallable TsfClient::RedoTaskBatchCallable(const R
         [this, request]()
         {
             return this->RedoTaskBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::RedoTaskExecuteOutcome TsfClient::RedoTaskExecute(const RedoTaskExecuteRequest &request)
+{
+    auto outcome = MakeRequest(request, "RedoTaskExecute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RedoTaskExecuteResponse rsp = RedoTaskExecuteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RedoTaskExecuteOutcome(rsp);
+        else
+            return RedoTaskExecuteOutcome(o.GetError());
+    }
+    else
+    {
+        return RedoTaskExecuteOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::RedoTaskExecuteAsync(const RedoTaskExecuteRequest& request, const RedoTaskExecuteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RedoTaskExecute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::RedoTaskExecuteOutcomeCallable TsfClient::RedoTaskExecuteCallable(const RedoTaskExecuteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RedoTaskExecuteOutcome()>>(
+        [this, request]()
+        {
+            return this->RedoTaskExecute(request);
         }
     );
 

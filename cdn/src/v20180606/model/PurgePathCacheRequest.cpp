@@ -25,7 +25,8 @@ using namespace std;
 
 PurgePathCacheRequest::PurgePathCacheRequest() :
     m_pathsHasBeenSet(false),
-    m_flushTypeHasBeenSet(false)
+    m_flushTypeHasBeenSet(false),
+    m_urlEncodeHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string PurgePathCacheRequest::ToJsonString() const
         string key = "FlushType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_flushType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlEncodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UrlEncode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_urlEncode, allocator);
     }
 
 
@@ -95,6 +104,22 @@ void PurgePathCacheRequest::SetFlushType(const string& _flushType)
 bool PurgePathCacheRequest::FlushTypeHasBeenSet() const
 {
     return m_flushTypeHasBeenSet;
+}
+
+bool PurgePathCacheRequest::GetUrlEncode() const
+{
+    return m_urlEncode;
+}
+
+void PurgePathCacheRequest::SetUrlEncode(const bool& _urlEncode)
+{
+    m_urlEncode = _urlEncode;
+    m_urlEncodeHasBeenSet = true;
+}
+
+bool PurgePathCacheRequest::UrlEncodeHasBeenSet() const
+{
+    return m_urlEncodeHasBeenSet;
 }
 
 

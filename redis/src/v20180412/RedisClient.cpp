@@ -1588,6 +1588,49 @@ RedisClient::DescribeTaskListOutcomeCallable RedisClient::DescribeTaskListCallab
     return task->get_future();
 }
 
+RedisClient::DescribeTendisSlowLogOutcome RedisClient::DescribeTendisSlowLog(const DescribeTendisSlowLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTendisSlowLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTendisSlowLogResponse rsp = DescribeTendisSlowLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTendisSlowLogOutcome(rsp);
+        else
+            return DescribeTendisSlowLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTendisSlowLogOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeTendisSlowLogAsync(const DescribeTendisSlowLogRequest& request, const DescribeTendisSlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTendisSlowLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeTendisSlowLogOutcomeCallable RedisClient::DescribeTendisSlowLogCallable(const DescribeTendisSlowLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTendisSlowLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTendisSlowLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DestroyPostpaidInstanceOutcome RedisClient::DestroyPostpaidInstance(const DestroyPostpaidInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyPostpaidInstance");

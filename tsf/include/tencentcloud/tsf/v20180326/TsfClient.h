@@ -55,6 +55,8 @@
 #include <tencentcloud/tsf/v20180326/model/CreateServerlessGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateTaskRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateTaskResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateTaskFlowRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateTaskFlowResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteApplicationRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteApplicationResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteConfigRequest.h>
@@ -199,12 +201,16 @@
 #include <tencentcloud/tsf/v20180326/model/ModifyLaneRuleResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyMicroserviceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyMicroserviceResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyTaskRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoResponse.h>
 #include <tencentcloud/tsf/v20180326/model/RedoTaskRequest.h>
 #include <tencentcloud/tsf/v20180326/model/RedoTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/RedoTaskBatchRequest.h>
 #include <tencentcloud/tsf/v20180326/model/RedoTaskBatchResponse.h>
+#include <tencentcloud/tsf/v20180326/model/RedoTaskExecuteRequest.h>
+#include <tencentcloud/tsf/v20180326/model/RedoTaskExecuteResponse.h>
 #include <tencentcloud/tsf/v20180326/model/RedoTaskFlowBatchRequest.h>
 #include <tencentcloud/tsf/v20180326/model/RedoTaskFlowBatchResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseConfigRequest.h>
@@ -303,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateTaskResponse> CreateTaskOutcome;
                 typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateTaskFlowResponse> CreateTaskFlowOutcome;
+                typedef std::future<CreateTaskFlowOutcome> CreateTaskFlowOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateTaskFlowRequest&, CreateTaskFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFlowAsyncHandler;
                 typedef Outcome<Error, Model::DeleteApplicationResponse> DeleteApplicationOutcome;
                 typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteApplicationRequest&, DeleteApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAsyncHandler;
@@ -519,6 +528,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyMicroserviceResponse> ModifyMicroserviceOutcome;
                 typedef std::future<ModifyMicroserviceOutcome> ModifyMicroserviceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyMicroserviceRequest&, ModifyMicroserviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMicroserviceAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTaskResponse> ModifyTaskOutcome;
+                typedef std::future<ModifyTaskOutcome> ModifyTaskOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ModifyTaskRequest&, ModifyTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskAsyncHandler;
                 typedef Outcome<Error, Model::ModifyUploadInfoResponse> ModifyUploadInfoOutcome;
                 typedef std::future<ModifyUploadInfoOutcome> ModifyUploadInfoOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyUploadInfoRequest&, ModifyUploadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUploadInfoAsyncHandler;
@@ -528,6 +540,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RedoTaskBatchResponse> RedoTaskBatchOutcome;
                 typedef std::future<RedoTaskBatchOutcome> RedoTaskBatchOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::RedoTaskBatchRequest&, RedoTaskBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskBatchAsyncHandler;
+                typedef Outcome<Error, Model::RedoTaskExecuteResponse> RedoTaskExecuteOutcome;
+                typedef std::future<RedoTaskExecuteOutcome> RedoTaskExecuteOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::RedoTaskExecuteRequest&, RedoTaskExecuteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskExecuteAsyncHandler;
                 typedef Outcome<Error, Model::RedoTaskFlowBatchResponse> RedoTaskFlowBatchOutcome;
                 typedef std::future<RedoTaskFlowBatchOutcome> RedoTaskFlowBatchOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::RedoTaskFlowBatchRequest&, RedoTaskFlowBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskFlowBatchAsyncHandler;
@@ -728,6 +743,15 @@ namespace TencentCloud
                 CreateTaskOutcome CreateTask(const Model::CreateTaskRequest &request);
                 void CreateTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
+
+                /**
+                 *创建工作流
+                 * @param req CreateTaskFlowRequest
+                 * @return CreateTaskFlowOutcome
+                 */
+                CreateTaskFlowOutcome CreateTaskFlow(const Model::CreateTaskFlowRequest &request);
+                void CreateTaskFlowAsync(const Model::CreateTaskFlowRequest& request, const CreateTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTaskFlowOutcomeCallable CreateTaskFlowCallable(const Model::CreateTaskFlowRequest& request);
 
                 /**
                  *删除应用
@@ -1381,6 +1405,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ModifyMicroserviceOutcomeCallable ModifyMicroserviceCallable(const Model::ModifyMicroserviceRequest& request);
 
                 /**
+                 *修改任务
+                 * @param req ModifyTaskRequest
+                 * @return ModifyTaskOutcome
+                 */
+                ModifyTaskOutcome ModifyTask(const Model::ModifyTaskRequest &request);
+                void ModifyTaskAsync(const Model::ModifyTaskRequest& request, const ModifyTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTaskOutcomeCallable ModifyTaskCallable(const Model::ModifyTaskRequest& request);
+
+                /**
                  *调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。
 调用此接口完成后，才标志上传包流程结束。
                  * @param req ModifyUploadInfoRequest
@@ -1407,6 +1440,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 RedoTaskBatchOutcome RedoTaskBatch(const Model::RedoTaskBatchRequest &request);
                 void RedoTaskBatchAsync(const Model::RedoTaskBatchRequest& request, const RedoTaskBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RedoTaskBatchOutcomeCallable RedoTaskBatchCallable(const Model::RedoTaskBatchRequest& request);
+
+                /**
+                 *重新执行在某个节点上执行任务。
+                 * @param req RedoTaskExecuteRequest
+                 * @return RedoTaskExecuteOutcome
+                 */
+                RedoTaskExecuteOutcome RedoTaskExecute(const Model::RedoTaskExecuteRequest &request);
+                void RedoTaskExecuteAsync(const Model::RedoTaskExecuteRequest& request, const RedoTaskExecuteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RedoTaskExecuteOutcomeCallable RedoTaskExecuteCallable(const Model::RedoTaskExecuteRequest& request);
 
                 /**
                  *重新执行工作流批次
