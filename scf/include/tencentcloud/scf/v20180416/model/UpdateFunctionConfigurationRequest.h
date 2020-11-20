@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime
-                     * @return Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime
+                     * 获取函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime
+                     * @return Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime
                      */
                     std::string GetRuntime() const;
 
                     /**
-                     * 设置函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime
-                     * @param Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime
+                     * 设置函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime
+                     * @param Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime
                      */
                     void SetRuntime(const std::string& _runtime);
 
@@ -247,14 +247,14 @@ namespace TencentCloud
                     bool ClsTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取在更新时是否同步发布新版本，默认为：FALSE，不发布
-                     * @return Publish 在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     * 获取在更新时是否同步发布新版本，默认为：FALSE，不发布新版本
+                     * @return Publish 在更新时是否同步发布新版本，默认为：FALSE，不发布新版本
                      */
                     std::string GetPublish() const;
 
                     /**
-                     * 设置在更新时是否同步发布新版本，默认为：FALSE，不发布
-                     * @param Publish 在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     * 设置在更新时是否同步发布新版本，默认为：FALSE，不发布新版本
+                     * @param Publish 在更新时是否同步发布新版本，默认为：FALSE，不发布新版本
                      */
                     void SetPublish(const std::string& _publish);
 
@@ -337,14 +337,14 @@ namespace TencentCloud
                     bool PublicNetConfigHasBeenSet() const;
 
                     /**
-                     * 获取文件系统配置入参，用于云函数绑定文件系统
-                     * @return CfsConfig 文件系统配置入参，用于云函数绑定文件系统
+                     * 获取文件系统配置入参，用于云函数绑定CFS文件系统
+                     * @return CfsConfig 文件系统配置入参，用于云函数绑定CFS文件系统
                      */
                     CfsConfig GetCfsConfig() const;
 
                     /**
-                     * 设置文件系统配置入参，用于云函数绑定文件系统
-                     * @param CfsConfig 文件系统配置入参，用于云函数绑定文件系统
+                     * 设置文件系统配置入参，用于云函数绑定CFS文件系统
+                     * @param CfsConfig 文件系统配置入参，用于云函数绑定CFS文件系统
                      */
                     void SetCfsConfig(const CfsConfig& _cfsConfig);
 
@@ -399,7 +399,7 @@ namespace TencentCloud
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime
+                     * 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;
@@ -441,7 +441,7 @@ namespace TencentCloud
                     bool m_clsTopicIdHasBeenSet;
 
                     /**
-                     * 在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     * 在更新时是否同步发布新版本，默认为：FALSE，不发布新版本
                      */
                     std::string m_publish;
                     bool m_publishHasBeenSet;
@@ -471,7 +471,7 @@ namespace TencentCloud
                     bool m_publicNetConfigHasBeenSet;
 
                     /**
-                     * 文件系统配置入参，用于云函数绑定文件系统
+                     * 文件系统配置入参，用于云函数绑定CFS文件系统
                      */
                     CfsConfig m_cfsConfig;
                     bool m_cfsConfigHasBeenSet;

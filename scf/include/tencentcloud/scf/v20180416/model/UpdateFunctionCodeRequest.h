@@ -224,14 +224,14 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段
-                     * @return CodeSource 代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段
+                     * 获取代码来源方式，支持 ZipFile, Cos, Inline 之一
+                     * @return CodeSource 代码来源方式，支持 ZipFile, Cos, Inline 之一
                      */
                     std::string GetCodeSource() const;
 
                     /**
-                     * 设置代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段
-                     * @param CodeSource 代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段
+                     * 设置代码来源方式，支持 ZipFile, Cos, Inline 之一
+                     * @param CodeSource 代码来源方式，支持 ZipFile, Cos, Inline 之一
                      */
                     void SetCodeSource(const std::string& _codeSource);
 
@@ -304,7 +304,7 @@ namespace TencentCloud
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段
+                     * 代码来源方式，支持 ZipFile, Cos, Inline 之一
                      */
                     std::string m_codeSource;
                     bool m_codeSourceHasBeenSet;

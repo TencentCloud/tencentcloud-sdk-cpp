@@ -68,7 +68,8 @@ LoadBalancer::LoadBalancer() :
     m_isBlockTimeHasBeenSet(false),
     m_localBgpHasBeenSet(false),
     m_clusterTagHasBeenSet(false),
-    m_mixIpTargetHasBeenSet(false)
+    m_mixIpTargetHasBeenSet(false),
+    m_zonesHasBeenSet(false)
 {
 }
 
@@ -625,6 +626,19 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_mixIpTargetHasBeenSet = true;
     }
 
+    if (value.HasMember("Zones") && !value["Zones"].IsNull())
+    {
+        if (!value["Zones"].IsArray())
+            return CoreInternalOutcome(Error("response `LoadBalancer.Zones` is not array type"));
+
+        const Value &tmpValue = value["Zones"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zones.push_back((*itr).GetString());
+        }
+        m_zonesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1043,6 +1057,19 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "MixIpTarget";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mixIpTarget, allocator);
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1798,5 +1825,21 @@ void LoadBalancer::SetMixIpTarget(const bool& _mixIpTarget)
 bool LoadBalancer::MixIpTargetHasBeenSet() const
 {
     return m_mixIpTargetHasBeenSet;
+}
+
+vector<string> LoadBalancer::GetZones() const
+{
+    return m_zones;
+}
+
+void LoadBalancer::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool LoadBalancer::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 

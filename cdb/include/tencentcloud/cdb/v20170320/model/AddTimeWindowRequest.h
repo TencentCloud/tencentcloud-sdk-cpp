@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；下同。
-                     * @return Monday 星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；下同。
+                     * 获取星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；可设置多个时间段。 一周中应至少设置一天的时间窗。下同。
+                     * @return Monday 星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；可设置多个时间段。 一周中应至少设置一天的时间窗。下同。
                      */
                     std::vector<std::string> GetMonday() const;
 
                     /**
-                     * 设置星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；下同。
-                     * @param Monday 星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；下同。
+                     * 设置星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；可设置多个时间段。 一周中应至少设置一天的时间窗。下同。
+                     * @param Monday 星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；可设置多个时间段。 一周中应至少设置一天的时间窗。下同。
                      */
                     void SetMonday(const std::vector<std::string>& _monday);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool MondayHasBeenSet() const;
 
                     /**
-                     * 获取星期二的可维护时间窗口。
-                     * @return Tuesday 星期二的可维护时间窗口。
+                     * 获取星期二的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @return Tuesday 星期二的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> GetTuesday() const;
 
                     /**
-                     * 设置星期二的可维护时间窗口。
-                     * @param Tuesday 星期二的可维护时间窗口。
+                     * 设置星期二的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @param Tuesday 星期二的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     void SetTuesday(const std::vector<std::string>& _tuesday);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TuesdayHasBeenSet() const;
 
                     /**
-                     * 获取星期三的可维护时间窗口。
-                     * @return Wednesday 星期三的可维护时间窗口。
+                     * 获取星期三的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @return Wednesday 星期三的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> GetWednesday() const;
 
                     /**
-                     * 设置星期三的可维护时间窗口。
-                     * @param Wednesday 星期三的可维护时间窗口。
+                     * 设置星期三的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @param Wednesday 星期三的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     void SetWednesday(const std::vector<std::string>& _wednesday);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool WednesdayHasBeenSet() const;
 
                     /**
-                     * 获取星期四的可维护时间窗口。
-                     * @return Thursday 星期四的可维护时间窗口。
+                     * 获取星期四的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @return Thursday 星期四的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> GetThursday() const;
 
                     /**
-                     * 设置星期四的可维护时间窗口。
-                     * @param Thursday 星期四的可维护时间窗口。
+                     * 设置星期四的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @param Thursday 星期四的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     void SetThursday(const std::vector<std::string>& _thursday);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool ThursdayHasBeenSet() const;
 
                     /**
-                     * 获取星期五的可维护时间窗口。
-                     * @return Friday 星期五的可维护时间窗口。
+                     * 获取星期五的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @return Friday 星期五的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> GetFriday() const;
 
                     /**
-                     * 设置星期五的可维护时间窗口。
-                     * @param Friday 星期五的可维护时间窗口。
+                     * 设置星期五的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @param Friday 星期五的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     void SetFriday(const std::vector<std::string>& _friday);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool FridayHasBeenSet() const;
 
                     /**
-                     * 获取星期六的可维护时间窗口。
-                     * @return Saturday 星期六的可维护时间窗口。
+                     * 获取星期六的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @return Saturday 星期六的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> GetSaturday() const;
 
                     /**
-                     * 设置星期六的可维护时间窗口。
-                     * @param Saturday 星期六的可维护时间窗口。
+                     * 设置星期六的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @param Saturday 星期六的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     void SetSaturday(const std::vector<std::string>& _saturday);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool SaturdayHasBeenSet() const;
 
                     /**
-                     * 获取星期日的可维护时间窗口。
-                     * @return Sunday 星期日的可维护时间窗口。
+                     * 获取星期日的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @return Sunday 星期日的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> GetSunday() const;
 
                     /**
-                     * 设置星期日的可维护时间窗口。
-                     * @param Sunday 星期日的可维护时间窗口。
+                     * 设置星期日的可维护时间窗口。 一周中应至少设置一天的时间窗。
+                     * @param Sunday 星期日的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     void SetSunday(const std::vector<std::string>& _sunday);
 
@@ -195,43 +195,43 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；下同。
+                     * 星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；可设置多个时间段。 一周中应至少设置一天的时间窗。下同。
                      */
                     std::vector<std::string> m_monday;
                     bool m_mondayHasBeenSet;
 
                     /**
-                     * 星期二的可维护时间窗口。
+                     * 星期二的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> m_tuesday;
                     bool m_tuesdayHasBeenSet;
 
                     /**
-                     * 星期三的可维护时间窗口。
+                     * 星期三的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> m_wednesday;
                     bool m_wednesdayHasBeenSet;
 
                     /**
-                     * 星期四的可维护时间窗口。
+                     * 星期四的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> m_thursday;
                     bool m_thursdayHasBeenSet;
 
                     /**
-                     * 星期五的可维护时间窗口。
+                     * 星期五的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> m_friday;
                     bool m_fridayHasBeenSet;
 
                     /**
-                     * 星期六的可维护时间窗口。
+                     * 星期六的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> m_saturday;
                     bool m_saturdayHasBeenSet;
 
                     /**
-                     * 星期日的可维护时间窗口。
+                     * 星期日的可维护时间窗口。 一周中应至少设置一天的时间窗。
                      */
                     std::vector<std::string> m_sunday;
                     bool m_sundayHasBeenSet;

@@ -29,7 +29,8 @@ Listener::Listener() :
     m_schedulerHasBeenSet(false),
     m_sessionExpireTimeHasBeenSet(false),
     m_listenerNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_sessionTypeHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,16 @@ CoreInternalOutcome Listener::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionType") && !value["SessionType"].IsNull())
+    {
+        if (!value["SessionType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Listener.SessionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionType = string(value["SessionType"].GetString());
+        m_sessionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -195,6 +206,14 @@ void Listener::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sessionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -326,5 +345,21 @@ void Listener::SetCreateTime(const string& _createTime)
 bool Listener::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string Listener::GetSessionType() const
+{
+    return m_sessionType;
+}
+
+void Listener::SetSessionType(const string& _sessionType)
+{
+    m_sessionType = _sessionType;
+    m_sessionTypeHasBeenSet = true;
+}
+
+bool Listener::SessionTypeHasBeenSet() const
+{
+    return m_sessionTypeHasBeenSet;
 }
 

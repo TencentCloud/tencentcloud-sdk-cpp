@@ -30,7 +30,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_listenerNamesHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_sessionExpireTimeHasBeenSet(false),
-    m_schedulerHasBeenSet(false)
+    m_schedulerHasBeenSet(false),
+    m_sessionTypeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string CreateListenerRequest::ToJsonString() const
         string key = "Scheduler";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_scheduler.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -226,6 +235,22 @@ void CreateListenerRequest::SetScheduler(const string& _scheduler)
 bool CreateListenerRequest::SchedulerHasBeenSet() const
 {
     return m_schedulerHasBeenSet;
+}
+
+string CreateListenerRequest::GetSessionType() const
+{
+    return m_sessionType;
+}
+
+void CreateListenerRequest::SetSessionType(const string& _sessionType)
+{
+    m_sessionType = _sessionType;
+    m_sessionTypeHasBeenSet = true;
+}
+
+bool CreateListenerRequest::SessionTypeHasBeenSet() const
+{
+    return m_sessionTypeHasBeenSet;
 }
 
 

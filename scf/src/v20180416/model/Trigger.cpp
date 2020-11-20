@@ -29,7 +29,10 @@ Trigger::Trigger() :
     m_addTimeHasBeenSet(false),
     m_enableHasBeenSet(false),
     m_customArgumentHasBeenSet(false),
-    m_availableStatusHasBeenSet(false)
+    m_availableStatusHasBeenSet(false),
+    m_resourceIdHasBeenSet(false),
+    m_bindStatusHasBeenSet(false),
+    m_triggerAttributeHasBeenSet(false)
 {
 }
 
@@ -118,6 +121,36 @@ CoreInternalOutcome Trigger::Deserialize(const Value &value)
         m_availableStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceId") && !value["ResourceId"].IsNull())
+    {
+        if (!value["ResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Trigger.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceId = string(value["ResourceId"].GetString());
+        m_resourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BindStatus") && !value["BindStatus"].IsNull())
+    {
+        if (!value["BindStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Trigger.BindStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bindStatus = string(value["BindStatus"].GetString());
+        m_bindStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("TriggerAttribute") && !value["TriggerAttribute"].IsNull())
+    {
+        if (!value["TriggerAttribute"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Trigger.TriggerAttribute` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerAttribute = string(value["TriggerAttribute"].GetString());
+        m_triggerAttributeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +220,30 @@ void Trigger::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "AvailableStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_availableStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bindStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BindStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_bindStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerAttributeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TriggerAttribute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_triggerAttribute.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +375,53 @@ void Trigger::SetAvailableStatus(const string& _availableStatus)
 bool Trigger::AvailableStatusHasBeenSet() const
 {
     return m_availableStatusHasBeenSet;
+}
+
+string Trigger::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void Trigger::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool Trigger::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
+}
+
+string Trigger::GetBindStatus() const
+{
+    return m_bindStatus;
+}
+
+void Trigger::SetBindStatus(const string& _bindStatus)
+{
+    m_bindStatus = _bindStatus;
+    m_bindStatusHasBeenSet = true;
+}
+
+bool Trigger::BindStatusHasBeenSet() const
+{
+    return m_bindStatusHasBeenSet;
+}
+
+string Trigger::GetTriggerAttribute() const
+{
+    return m_triggerAttribute;
+}
+
+void Trigger::SetTriggerAttribute(const string& _triggerAttribute)
+{
+    m_triggerAttribute = _triggerAttribute;
+    m_triggerAttributeHasBeenSet = true;
+}
+
+bool Trigger::TriggerAttributeHasBeenSet() const
+{
+    return m_triggerAttributeHasBeenSet;
 }
 

@@ -223,6 +223,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取监听器的会话类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionType 监听器的会话类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSessionType() const;
+
+                    /**
+                     * 设置监听器的会话类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionType 监听器的会话类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionType(const std::string& _sessionType);
+
+                    /**
+                     * 判断参数 SessionType 是否已赋值
+                     * @return SessionType 是否已赋值
+                     */
+                    bool SessionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +302,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 监听器的会话类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionType;
+                    bool m_sessionTypeHasBeenSet;
 
                 };
             }

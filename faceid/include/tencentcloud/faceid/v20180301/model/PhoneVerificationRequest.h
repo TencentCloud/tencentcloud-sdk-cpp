@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取有加密需求的用户，接入传入kms的CiphertextBlob
-                     * @return CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob
+                     * 获取有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * @return CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
                      */
                     std::string GetCiphertextBlob() const;
 
                     /**
-                     * 设置有加密需求的用户，接入传入kms的CiphertextBlob
-                     * @param CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob
+                     * 设置有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * @param CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
                      */
                     void SetCiphertextBlob(const std::string& _ciphertextBlob);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 有加密需求的用户，接入传入kms的CiphertextBlob
+                     * 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
                      */
                     std::string m_ciphertextBlob;
                     bool m_ciphertextBlobHasBeenSet;

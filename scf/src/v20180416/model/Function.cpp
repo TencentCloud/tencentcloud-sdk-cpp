@@ -32,7 +32,10 @@ Function::Function() :
     m_statusDescHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_statusReasonsHasBeenSet(false),
+    m_totalProvisionedConcurrencyMemHasBeenSet(false),
+    m_reservedConcurrencyMemHasBeenSet(false)
 {
 }
 
@@ -161,6 +164,46 @@ CoreInternalOutcome Function::Deserialize(const Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("StatusReasons") && !value["StatusReasons"].IsNull())
+    {
+        if (!value["StatusReasons"].IsArray())
+            return CoreInternalOutcome(Error("response `Function.StatusReasons` is not array type"));
+
+        const Value &tmpValue = value["StatusReasons"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StatusReason item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_statusReasons.push_back(item);
+        }
+        m_statusReasonsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalProvisionedConcurrencyMem") && !value["TotalProvisionedConcurrencyMem"].IsNull())
+    {
+        if (!value["TotalProvisionedConcurrencyMem"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Function.TotalProvisionedConcurrencyMem` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalProvisionedConcurrencyMem = value["TotalProvisionedConcurrencyMem"].GetUint64();
+        m_totalProvisionedConcurrencyMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReservedConcurrencyMem") && !value["ReservedConcurrencyMem"].IsNull())
+    {
+        if (!value["ReservedConcurrencyMem"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Function.ReservedConcurrencyMem` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_reservedConcurrencyMem = value["ReservedConcurrencyMem"].GetUint64();
+        m_reservedConcurrencyMemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -261,6 +304,37 @@ void Function::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusReasonsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StatusReasons";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_statusReasons.begin(); itr != m_statusReasons.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalProvisionedConcurrencyMemHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TotalProvisionedConcurrencyMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalProvisionedConcurrencyMem, allocator);
+    }
+
+    if (m_reservedConcurrencyMemHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReservedConcurrencyMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reservedConcurrencyMem, allocator);
     }
 
 }
@@ -440,5 +514,53 @@ void Function::SetType(const string& _type)
 bool Function::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+vector<StatusReason> Function::GetStatusReasons() const
+{
+    return m_statusReasons;
+}
+
+void Function::SetStatusReasons(const vector<StatusReason>& _statusReasons)
+{
+    m_statusReasons = _statusReasons;
+    m_statusReasonsHasBeenSet = true;
+}
+
+bool Function::StatusReasonsHasBeenSet() const
+{
+    return m_statusReasonsHasBeenSet;
+}
+
+uint64_t Function::GetTotalProvisionedConcurrencyMem() const
+{
+    return m_totalProvisionedConcurrencyMem;
+}
+
+void Function::SetTotalProvisionedConcurrencyMem(const uint64_t& _totalProvisionedConcurrencyMem)
+{
+    m_totalProvisionedConcurrencyMem = _totalProvisionedConcurrencyMem;
+    m_totalProvisionedConcurrencyMemHasBeenSet = true;
+}
+
+bool Function::TotalProvisionedConcurrencyMemHasBeenSet() const
+{
+    return m_totalProvisionedConcurrencyMemHasBeenSet;
+}
+
+uint64_t Function::GetReservedConcurrencyMem() const
+{
+    return m_reservedConcurrencyMem;
+}
+
+void Function::SetReservedConcurrencyMem(const uint64_t& _reservedConcurrencyMem)
+{
+    m_reservedConcurrencyMem = _reservedConcurrencyMem;
+    m_reservedConcurrencyMemHasBeenSet = true;
+}
+
+bool Function::ReservedConcurrencyMemHasBeenSet() const
+{
+    return m_reservedConcurrencyMemHasBeenSet;
 }
 

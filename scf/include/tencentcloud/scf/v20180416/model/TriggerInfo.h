@@ -212,6 +212,60 @@ namespace TencentCloud
                      */
                     bool ModTimeHasBeenSet() const;
 
+                    /**
+                     * 获取触发器最小资源ID
+                     * @return ResourceId 触发器最小资源ID
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置触发器最小资源ID
+                     * @param ResourceId 触发器最小资源ID
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取触发器和云函数绑定状态
+                     * @return BindStatus 触发器和云函数绑定状态
+                     */
+                    std::string GetBindStatus() const;
+
+                    /**
+                     * 设置触发器和云函数绑定状态
+                     * @param BindStatus 触发器和云函数绑定状态
+                     */
+                    void SetBindStatus(const std::string& _bindStatus);
+
+                    /**
+                     * 判断参数 BindStatus 是否已赋值
+                     * @return BindStatus 是否已赋值
+                     */
+                    bool BindStatusHasBeenSet() const;
+
+                    /**
+                     * 获取触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建
+                     * @return TriggerAttribute 触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建
+                     */
+                    std::string GetTriggerAttribute() const;
+
+                    /**
+                     * 设置触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建
+                     * @param TriggerAttribute 触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建
+                     */
+                    void SetTriggerAttribute(const std::string& _triggerAttribute);
+
+                    /**
+                     * 判断参数 TriggerAttribute 是否已赋值
+                     * @return TriggerAttribute 是否已赋值
+                     */
+                    bool TriggerAttributeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -268,6 +322,24 @@ namespace TencentCloud
                      */
                     std::string m_modTime;
                     bool m_modTimeHasBeenSet;
+
+                    /**
+                     * 触发器最小资源ID
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 触发器和云函数绑定状态
+                     */
+                    std::string m_bindStatus;
+                    bool m_bindStatusHasBeenSet;
+
+                    /**
+                     * 触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建
+                     */
+                    std::string m_triggerAttribute;
+                    bool m_triggerAttributeHasBeenSet;
 
                 };
             }

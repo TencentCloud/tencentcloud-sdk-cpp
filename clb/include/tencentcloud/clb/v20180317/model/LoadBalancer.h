@@ -1076,6 +1076,28 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool MixIpTargetHasBeenSet() const;
 
+                    /**
+                     * 获取私有网络内网负载均衡，就近接入模式下规则所落在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zones 私有网络内网负载均衡，就近接入模式下规则所落在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetZones() const;
+
+                    /**
+                     * 设置私有网络内网负载均衡，就近接入模式下规则所落在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Zones 私有网络内网负载均衡，就近接入模式下规则所落在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZones(const std::vector<std::string>& _zones);
+
+                    /**
+                     * 判断参数 Zones 是否已赋值
+                     * @return Zones 是否已赋值
+                     */
+                    bool ZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1403,6 +1425,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool m_mixIpTarget;
                     bool m_mixIpTargetHasBeenSet;
+
+                    /**
+                     * 私有网络内网负载均衡，就近接入模式下规则所落在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_zones;
+                    bool m_zonesHasBeenSet;
 
                 };
             }

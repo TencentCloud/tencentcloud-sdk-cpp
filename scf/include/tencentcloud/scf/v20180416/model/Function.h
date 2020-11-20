@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/scf/v20180416/model/Tag.h>
+#include <tencentcloud/scf/v20180416/model/StatusReason.h>
 
 
 namespace TencentCloud
@@ -156,14 +157,14 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取函数状态
-                     * @return Status 函数状态
+                     * 获取函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
+                     * @return Status 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置函数状态
-                     * @param Status 函数状态
+                     * 设置函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
+                     * @param Status 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
                      */
                     void SetStatus(const std::string& _status);
 
@@ -245,6 +246,68 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取函数状态失败原因
+                     * @return StatusReasons 函数状态失败原因
+                     */
+                    std::vector<StatusReason> GetStatusReasons() const;
+
+                    /**
+                     * 设置函数状态失败原因
+                     * @param StatusReasons 函数状态失败原因
+                     */
+                    void SetStatusReasons(const std::vector<StatusReason>& _statusReasons);
+
+                    /**
+                     * 判断参数 StatusReasons 是否已赋值
+                     * @return StatusReasons 是否已赋值
+                     */
+                    bool StatusReasonsHasBeenSet() const;
+
+                    /**
+                     * 获取函数所有版本预置并发内存总和
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalProvisionedConcurrencyMem 函数所有版本预置并发内存总和
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTotalProvisionedConcurrencyMem() const;
+
+                    /**
+                     * 设置函数所有版本预置并发内存总和
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TotalProvisionedConcurrencyMem 函数所有版本预置并发内存总和
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTotalProvisionedConcurrencyMem(const uint64_t& _totalProvisionedConcurrencyMem);
+
+                    /**
+                     * 判断参数 TotalProvisionedConcurrencyMem 是否已赋值
+                     * @return TotalProvisionedConcurrencyMem 是否已赋值
+                     */
+                    bool TotalProvisionedConcurrencyMemHasBeenSet() const;
+
+                    /**
+                     * 获取函数并发保留内存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReservedConcurrencyMem 函数并发保留内存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetReservedConcurrencyMem() const;
+
+                    /**
+                     * 设置函数并发保留内存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReservedConcurrencyMem 函数并发保留内存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReservedConcurrencyMem(const uint64_t& _reservedConcurrencyMem);
+
+                    /**
+                     * 判断参数 ReservedConcurrencyMem 是否已赋值
+                     * @return ReservedConcurrencyMem 是否已赋值
+                     */
+                    bool ReservedConcurrencyMemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,7 +347,7 @@ namespace TencentCloud
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 函数状态
+                     * 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -312,6 +375,26 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 函数状态失败原因
+                     */
+                    std::vector<StatusReason> m_statusReasons;
+                    bool m_statusReasonsHasBeenSet;
+
+                    /**
+                     * 函数所有版本预置并发内存总和
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_totalProvisionedConcurrencyMem;
+                    bool m_totalProvisionedConcurrencyMemHasBeenSet;
+
+                    /**
+                     * 函数并发保留内存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_reservedConcurrencyMem;
+                    bool m_reservedConcurrencyMemHasBeenSet;
 
                 };
             }

@@ -513,6 +513,49 @@ TcbClient::DescribeCloudBaseBuildServiceOutcomeCallable TcbClient::DescribeCloud
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseRunResourceOutcome TcbClient::DescribeCloudBaseRunResource(const DescribeCloudBaseRunResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunResourceResponse rsp = DescribeCloudBaseRunResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunResourceOutcome(rsp);
+        else
+            return DescribeCloudBaseRunResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunResourceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunResourceAsync(const DescribeCloudBaseRunResourceRequest& request, const DescribeCloudBaseRunResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunResourceOutcomeCallable TcbClient::DescribeCloudBaseRunResourceCallable(const DescribeCloudBaseRunResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeCloudBaseRunServerVersionOutcome TcbClient::DescribeCloudBaseRunServerVersion(const DescribeCloudBaseRunServerVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseRunServerVersion");

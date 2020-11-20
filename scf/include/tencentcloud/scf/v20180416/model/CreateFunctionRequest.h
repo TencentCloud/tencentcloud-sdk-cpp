@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool FunctionNameHasBeenSet() const;
 
                     /**
-                     * 获取函数的代码. 注意：不能同时指定Cos与ZipFile
-                     * @return Code 函数的代码. 注意：不能同时指定Cos与ZipFile
+                     * 获取函数代码. 注意：不能同时指定Cos、ZipFile或 DemoId。
+                     * @return Code 函数代码. 注意：不能同时指定Cos、ZipFile或 DemoId。
                      */
                     Code GetCode() const;
 
                     /**
-                     * 设置函数的代码. 注意：不能同时指定Cos与ZipFile
-                     * @param Code 函数的代码. 注意：不能同时指定Cos与ZipFile
+                     * 设置函数代码. 注意：不能同时指定Cos、ZipFile或 DemoId。
+                     * @param Code 函数代码. 注意：不能同时指定Cos、ZipFile或 DemoId。
                      */
                     void SetCode(const Code& _code);
 
@@ -87,14 +87,14 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式，文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
-                     * @return Handler 函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式，文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
+                     * 获取函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
+                     * @return Handler 函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
                      */
                     std::string GetHandler() const;
 
                     /**
-                     * 设置函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式，文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
-                     * @param Handler 函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式，文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
+                     * 设置函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
+                     * @param Handler 函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
                      */
                     void SetHandler(const std::string& _handler);
 
@@ -177,14 +177,14 @@ namespace TencentCloud
                     bool EnvironmentHasBeenSet() const;
 
                     /**
-                     * 获取函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime，默认Python2.7
-                     * @return Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime，默认Python2.7
+                     * 获取函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1，Java8和CustomRuntime，默认Python2.7
+                     * @return Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1，Java8和CustomRuntime，默认Python2.7
                      */
                     std::string GetRuntime() const;
 
                     /**
-                     * 设置函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime，默认Python2.7
-                     * @param Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime，默认Python2.7
+                     * 设置函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1，Java8和CustomRuntime，默认Python2.7
+                     * @param Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1，Java8和CustomRuntime，默认Python2.7
                      */
                     void SetRuntime(const std::string& _runtime);
 
@@ -303,14 +303,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段
-                     * @return CodeSource CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段
+                     * 获取CodeSource 代码来源，支持ZipFile, Cos, Demo 其中之一
+                     * @return CodeSource CodeSource 代码来源，支持ZipFile, Cos, Demo 其中之一
                      */
                     std::string GetCodeSource() const;
 
                     /**
-                     * 设置CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段
-                     * @param CodeSource CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段
+                     * 设置CodeSource 代码来源，支持ZipFile, Cos, Demo 其中之一
+                     * @param CodeSource CodeSource 代码来源，支持ZipFile, Cos, Demo 其中之一
                      */
                     void SetCodeSource(const std::string& _codeSource);
 
@@ -437,13 +437,13 @@ namespace TencentCloud
                     bool m_functionNameHasBeenSet;
 
                     /**
-                     * 函数的代码. 注意：不能同时指定Cos与ZipFile
+                     * 函数代码. 注意：不能同时指定Cos、ZipFile或 DemoId。
                      */
                     Code m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式，文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
+                     * 函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
                      */
                     std::string m_handler;
                     bool m_handlerHasBeenSet;
@@ -473,7 +473,7 @@ namespace TencentCloud
                     bool m_environmentHasBeenSet;
 
                     /**
-                     * 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime，默认Python2.7
+                     * 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1，Java8和CustomRuntime，默认Python2.7
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;
@@ -515,7 +515,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段
+                     * CodeSource 代码来源，支持ZipFile, Cos, Demo 其中之一
                      */
                     std::string m_codeSource;
                     bool m_codeSourceHasBeenSet;
