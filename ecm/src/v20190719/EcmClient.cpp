@@ -384,6 +384,49 @@ EcmClient::BatchRegisterTargetsOutcomeCallable EcmClient::BatchRegisterTargetsCa
     return task->get_future();
 }
 
+EcmClient::CreateHaVipOutcome EcmClient::CreateHaVip(const CreateHaVipRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHaVip");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHaVipResponse rsp = CreateHaVipResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHaVipOutcome(rsp);
+        else
+            return CreateHaVipOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHaVipOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateHaVipAsync(const CreateHaVipRequest& request, const CreateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHaVip(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateHaVipOutcomeCallable EcmClient::CreateHaVipCallable(const CreateHaVipRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHaVipOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHaVip(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::CreateImageOutcome EcmClient::CreateImage(const CreateImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateImage");
@@ -599,6 +642,92 @@ EcmClient::CreateNetworkInterfaceOutcomeCallable EcmClient::CreateNetworkInterfa
     return task->get_future();
 }
 
+EcmClient::CreateRouteTableOutcome EcmClient::CreateRouteTable(const CreateRouteTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRouteTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRouteTableResponse rsp = CreateRouteTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRouteTableOutcome(rsp);
+        else
+            return CreateRouteTableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRouteTableOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateRouteTableAsync(const CreateRouteTableRequest& request, const CreateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRouteTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateRouteTableOutcomeCallable EcmClient::CreateRouteTableCallable(const CreateRouteTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRouteTableOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRouteTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::CreateRoutesOutcome EcmClient::CreateRoutes(const CreateRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoutesResponse rsp = CreateRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoutesOutcome(rsp);
+        else
+            return CreateRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoutesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateRoutesAsync(const CreateRoutesRequest& request, const CreateRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateRoutesOutcomeCallable EcmClient::CreateRoutesCallable(const CreateRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::CreateSecurityGroupOutcome EcmClient::CreateSecurityGroup(const CreateSecurityGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSecurityGroup");
@@ -764,6 +893,49 @@ EcmClient::CreateVpcOutcomeCallable EcmClient::CreateVpcCallable(const CreateVpc
         [this, request]()
         {
             return this->CreateVpc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteHaVipOutcome EcmClient::DeleteHaVip(const DeleteHaVipRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteHaVip");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteHaVipResponse rsp = DeleteHaVipResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteHaVipOutcome(rsp);
+        else
+            return DeleteHaVipOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteHaVipOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteHaVipAsync(const DeleteHaVipRequest& request, const DeleteHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteHaVip(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteHaVipOutcomeCallable EcmClient::DeleteHaVipCallable(const DeleteHaVipRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteHaVipOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteHaVip(request);
         }
     );
 
@@ -1022,6 +1194,92 @@ EcmClient::DeleteNetworkInterfaceOutcomeCallable EcmClient::DeleteNetworkInterfa
         [this, request]()
         {
             return this->DeleteNetworkInterface(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteRouteTableOutcome EcmClient::DeleteRouteTable(const DeleteRouteTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRouteTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRouteTableResponse rsp = DeleteRouteTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRouteTableOutcome(rsp);
+        else
+            return DeleteRouteTableOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRouteTableOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteRouteTableAsync(const DeleteRouteTableRequest& request, const DeleteRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRouteTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteRouteTableOutcomeCallable EcmClient::DeleteRouteTableCallable(const DeleteRouteTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRouteTableOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRouteTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteRoutesOutcome EcmClient::DeleteRoutes(const DeleteRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoutesResponse rsp = DeleteRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoutesOutcome(rsp);
+        else
+            return DeleteRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoutesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteRoutesAsync(const DeleteRoutesRequest& request, const DeleteRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteRoutesOutcomeCallable EcmClient::DeleteRoutesCallable(const DeleteRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoutes(request);
         }
     );
 
@@ -1452,6 +1710,49 @@ EcmClient::DescribeDefaultSubnetOutcomeCallable EcmClient::DescribeDefaultSubnet
         [this, request]()
         {
             return this->DescribeDefaultSubnet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeHaVipsOutcome EcmClient::DescribeHaVips(const DescribeHaVipsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHaVips");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHaVipsResponse rsp = DescribeHaVipsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHaVipsOutcome(rsp);
+        else
+            return DescribeHaVipsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHaVipsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeHaVipsAsync(const DescribeHaVipsRequest& request, const DescribeHaVipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHaVips(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeHaVipsOutcomeCallable EcmClient::DescribeHaVipsCallable(const DescribeHaVipsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHaVipsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHaVips(request);
         }
     );
 
@@ -2104,6 +2405,92 @@ EcmClient::DescribePeakNetworkOverviewOutcomeCallable EcmClient::DescribePeakNet
     return task->get_future();
 }
 
+EcmClient::DescribeRouteConflictsOutcome EcmClient::DescribeRouteConflicts(const DescribeRouteConflictsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRouteConflicts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRouteConflictsResponse rsp = DescribeRouteConflictsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRouteConflictsOutcome(rsp);
+        else
+            return DescribeRouteConflictsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRouteConflictsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeRouteConflictsAsync(const DescribeRouteConflictsRequest& request, const DescribeRouteConflictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRouteConflicts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeRouteConflictsOutcomeCallable EcmClient::DescribeRouteConflictsCallable(const DescribeRouteConflictsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRouteConflictsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRouteConflicts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeRouteTablesOutcome EcmClient::DescribeRouteTables(const DescribeRouteTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRouteTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRouteTablesResponse rsp = DescribeRouteTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRouteTablesOutcome(rsp);
+        else
+            return DescribeRouteTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRouteTablesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeRouteTablesAsync(const DescribeRouteTablesRequest& request, const DescribeRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRouteTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeRouteTablesOutcomeCallable EcmClient::DescribeRouteTablesCallable(const DescribeRouteTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRouteTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRouteTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeSecurityGroupAssociationStatisticsOutcome EcmClient::DescribeSecurityGroupAssociationStatistics(const DescribeSecurityGroupAssociationStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityGroupAssociationStatistics");
@@ -2577,6 +2964,49 @@ EcmClient::DetachNetworkInterfaceOutcomeCallable EcmClient::DetachNetworkInterfa
     return task->get_future();
 }
 
+EcmClient::DisableRoutesOutcome EcmClient::DisableRoutes(const DisableRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableRoutesResponse rsp = DisableRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableRoutesOutcome(rsp);
+        else
+            return DisableRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableRoutesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DisableRoutesAsync(const DisableRoutesRequest& request, const DisableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DisableRoutesOutcomeCallable EcmClient::DisableRoutesCallable(const DisableRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DisassociateAddressOutcome EcmClient::DisassociateAddress(const DisassociateAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateAddress");
@@ -2656,6 +3086,49 @@ EcmClient::DisassociateSecurityGroupsOutcomeCallable EcmClient::DisassociateSecu
         [this, request]()
         {
             return this->DisassociateSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::EnableRoutesOutcome EcmClient::EnableRoutes(const EnableRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableRoutesResponse rsp = EnableRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableRoutesOutcome(rsp);
+        else
+            return EnableRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableRoutesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::EnableRoutesAsync(const EnableRoutesRequest& request, const EnableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::EnableRoutesOutcomeCallable EcmClient::EnableRoutesCallable(const EnableRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableRoutes(request);
         }
     );
 
@@ -2957,6 +3430,49 @@ EcmClient::ModifyDefaultSubnetOutcomeCallable EcmClient::ModifyDefaultSubnetCall
         [this, request]()
         {
             return this->ModifyDefaultSubnet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifyHaVipAttributeOutcome EcmClient::ModifyHaVipAttribute(const ModifyHaVipAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyHaVipAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyHaVipAttributeResponse rsp = ModifyHaVipAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyHaVipAttributeOutcome(rsp);
+        else
+            return ModifyHaVipAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyHaVipAttributeOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyHaVipAttributeAsync(const ModifyHaVipAttributeRequest& request, const ModifyHaVipAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyHaVipAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyHaVipAttributeOutcomeCallable EcmClient::ModifyHaVipAttributeCallable(const ModifyHaVipAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyHaVipAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyHaVipAttribute(request);
         }
     );
 
@@ -3394,6 +3910,49 @@ EcmClient::ModifyModuleSecurityGroupsOutcomeCallable EcmClient::ModifyModuleSecu
     return task->get_future();
 }
 
+EcmClient::ModifyRouteTableAttributeOutcome EcmClient::ModifyRouteTableAttribute(const ModifyRouteTableAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRouteTableAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRouteTableAttributeResponse rsp = ModifyRouteTableAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRouteTableAttributeOutcome(rsp);
+        else
+            return ModifyRouteTableAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRouteTableAttributeOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyRouteTableAttributeAsync(const ModifyRouteTableAttributeRequest& request, const ModifyRouteTableAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRouteTableAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyRouteTableAttributeOutcomeCallable EcmClient::ModifyRouteTableAttributeCallable(const ModifyRouteTableAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRouteTableAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRouteTableAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ModifySecurityGroupAttributeOutcome EcmClient::ModifySecurityGroupAttribute(const ModifySecurityGroupAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySecurityGroupAttribute");
@@ -3781,6 +4340,92 @@ EcmClient::RemovePrivateIpAddressesOutcomeCallable EcmClient::RemovePrivateIpAdd
     return task->get_future();
 }
 
+EcmClient::ReplaceRouteTableAssociationOutcome EcmClient::ReplaceRouteTableAssociation(const ReplaceRouteTableAssociationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceRouteTableAssociation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceRouteTableAssociationResponse rsp = ReplaceRouteTableAssociationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceRouteTableAssociationOutcome(rsp);
+        else
+            return ReplaceRouteTableAssociationOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceRouteTableAssociationOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ReplaceRouteTableAssociationAsync(const ReplaceRouteTableAssociationRequest& request, const ReplaceRouteTableAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceRouteTableAssociation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ReplaceRouteTableAssociationOutcomeCallable EcmClient::ReplaceRouteTableAssociationCallable(const ReplaceRouteTableAssociationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceRouteTableAssociationOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceRouteTableAssociation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ReplaceRoutesOutcome EcmClient::ReplaceRoutes(const ReplaceRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceRoutesResponse rsp = ReplaceRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceRoutesOutcome(rsp);
+        else
+            return ReplaceRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceRoutesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ReplaceRoutesAsync(const ReplaceRoutesRequest& request, const ReplaceRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ReplaceRoutesOutcomeCallable EcmClient::ReplaceRoutesCallable(const ReplaceRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ReplaceSecurityGroupPolicyOutcome EcmClient::ReplaceSecurityGroupPolicy(const ReplaceSecurityGroupPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ReplaceSecurityGroupPolicy");
@@ -3946,6 +4591,49 @@ EcmClient::ResetInstancesPasswordOutcomeCallable EcmClient::ResetInstancesPasswo
         [this, request]()
         {
             return this->ResetInstancesPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ResetRoutesOutcome EcmClient::ResetRoutes(const ResetRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetRoutesResponse rsp = ResetRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetRoutesOutcome(rsp);
+        else
+            return ResetRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetRoutesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ResetRoutesAsync(const ResetRoutesRequest& request, const ResetRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ResetRoutesOutcomeCallable EcmClient::ResetRoutesCallable(const ResetRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetRoutes(request);
         }
     );
 

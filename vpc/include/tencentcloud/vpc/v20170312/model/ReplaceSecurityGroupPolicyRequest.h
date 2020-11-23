@@ -79,6 +79,24 @@ namespace TencentCloud
                      */
                     bool SecurityGroupPolicySetHasBeenSet() const;
 
+                    /**
+                     * 获取旧的安全组规则集合对象，可选，日志记录用。
+                     * @return OriginalSecurityGroupPolicySet 旧的安全组规则集合对象，可选，日志记录用。
+                     */
+                    SecurityGroupPolicySet GetOriginalSecurityGroupPolicySet() const;
+
+                    /**
+                     * 设置旧的安全组规则集合对象，可选，日志记录用。
+                     * @param OriginalSecurityGroupPolicySet 旧的安全组规则集合对象，可选，日志记录用。
+                     */
+                    void SetOriginalSecurityGroupPolicySet(const SecurityGroupPolicySet& _originalSecurityGroupPolicySet);
+
+                    /**
+                     * 判断参数 OriginalSecurityGroupPolicySet 是否已赋值
+                     * @return OriginalSecurityGroupPolicySet 是否已赋值
+                     */
+                    bool OriginalSecurityGroupPolicySetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +110,12 @@ namespace TencentCloud
                      */
                     SecurityGroupPolicySet m_securityGroupPolicySet;
                     bool m_securityGroupPolicySetHasBeenSet;
+
+                    /**
+                     * 旧的安全组规则集合对象，可选，日志记录用。
+                     */
+                    SecurityGroupPolicySet m_originalSecurityGroupPolicySet;
+                    bool m_originalSecurityGroupPolicySetHasBeenSet;
 
                 };
             }

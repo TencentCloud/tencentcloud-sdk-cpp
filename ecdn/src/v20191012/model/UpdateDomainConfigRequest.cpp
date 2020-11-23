@@ -34,7 +34,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_cacheHasBeenSet(false),
     m_httpsHasBeenSet(false),
     m_forceRedirectHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_webSocketHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webSocketHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WebSocket";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_webSocket.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -323,6 +333,22 @@ void UpdateDomainConfigRequest::SetArea(const string& _area)
 bool UpdateDomainConfigRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+WebSocket UpdateDomainConfigRequest::GetWebSocket() const
+{
+    return m_webSocket;
+}
+
+void UpdateDomainConfigRequest::SetWebSocket(const WebSocket& _webSocket)
+{
+    m_webSocket = _webSocket;
+    m_webSocketHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::WebSocketHasBeenSet() const
+{
+    return m_webSocketHasBeenSet;
 }
 
 

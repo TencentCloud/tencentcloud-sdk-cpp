@@ -25,7 +25,8 @@ using namespace std;
 
 ReplaceSecurityGroupPolicyRequest::ReplaceSecurityGroupPolicyRequest() :
     m_securityGroupIdHasBeenSet(false),
-    m_securityGroupPolicySetHasBeenSet(false)
+    m_securityGroupPolicySetHasBeenSet(false),
+    m_originalSecurityGroupPolicySetHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,15 @@ string ReplaceSecurityGroupPolicyRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_securityGroupPolicySet.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_originalSecurityGroupPolicySetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginalSecurityGroupPolicySet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_originalSecurityGroupPolicySet.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -91,6 +101,22 @@ void ReplaceSecurityGroupPolicyRequest::SetSecurityGroupPolicySet(const Security
 bool ReplaceSecurityGroupPolicyRequest::SecurityGroupPolicySetHasBeenSet() const
 {
     return m_securityGroupPolicySetHasBeenSet;
+}
+
+SecurityGroupPolicySet ReplaceSecurityGroupPolicyRequest::GetOriginalSecurityGroupPolicySet() const
+{
+    return m_originalSecurityGroupPolicySet;
+}
+
+void ReplaceSecurityGroupPolicyRequest::SetOriginalSecurityGroupPolicySet(const SecurityGroupPolicySet& _originalSecurityGroupPolicySet)
+{
+    m_originalSecurityGroupPolicySet = _originalSecurityGroupPolicySet;
+    m_originalSecurityGroupPolicySetHasBeenSet = true;
+}
+
+bool ReplaceSecurityGroupPolicyRequest::OriginalSecurityGroupPolicySetHasBeenSet() const
+{
+    return m_originalSecurityGroupPolicySetHasBeenSet;
 }
 
 

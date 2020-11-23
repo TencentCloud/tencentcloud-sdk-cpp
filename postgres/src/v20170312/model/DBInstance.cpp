@@ -49,7 +49,10 @@ DBInstance::DBInstance() :
     m_appIdHasBeenSet(false),
     m_uidHasBeenSet(false),
     m_supportIpv6HasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_masterDBInstanceIdHasBeenSet(false),
+    m_readOnlyInstanceNumHasBeenSet(false),
+    m_statusInReadonlyGroupHasBeenSet(false)
 {
 }
 
@@ -358,6 +361,36 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("MasterDBInstanceId") && !value["MasterDBInstanceId"].IsNull())
+    {
+        if (!value["MasterDBInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.MasterDBInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_masterDBInstanceId = string(value["MasterDBInstanceId"].GetString());
+        m_masterDBInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadOnlyInstanceNum") && !value["ReadOnlyInstanceNum"].IsNull())
+    {
+        if (!value["ReadOnlyInstanceNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.ReadOnlyInstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readOnlyInstanceNum = value["ReadOnlyInstanceNum"].GetInt64();
+        m_readOnlyInstanceNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("StatusInReadonlyGroup") && !value["StatusInReadonlyGroup"].IsNull())
+    {
+        if (!value["StatusInReadonlyGroup"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.StatusInReadonlyGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusInReadonlyGroup = string(value["StatusInReadonlyGroup"].GetString());
+        m_statusInReadonlyGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -601,6 +634,30 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_masterDBInstanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MasterDBInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_masterDBInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_readOnlyInstanceNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReadOnlyInstanceNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readOnlyInstanceNum, allocator);
+    }
+
+    if (m_statusInReadonlyGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StatusInReadonlyGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_statusInReadonlyGroup.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1052,5 +1109,53 @@ void DBInstance::SetTagList(const vector<Tag>& _tagList)
 bool DBInstance::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+string DBInstance::GetMasterDBInstanceId() const
+{
+    return m_masterDBInstanceId;
+}
+
+void DBInstance::SetMasterDBInstanceId(const string& _masterDBInstanceId)
+{
+    m_masterDBInstanceId = _masterDBInstanceId;
+    m_masterDBInstanceIdHasBeenSet = true;
+}
+
+bool DBInstance::MasterDBInstanceIdHasBeenSet() const
+{
+    return m_masterDBInstanceIdHasBeenSet;
+}
+
+int64_t DBInstance::GetReadOnlyInstanceNum() const
+{
+    return m_readOnlyInstanceNum;
+}
+
+void DBInstance::SetReadOnlyInstanceNum(const int64_t& _readOnlyInstanceNum)
+{
+    m_readOnlyInstanceNum = _readOnlyInstanceNum;
+    m_readOnlyInstanceNumHasBeenSet = true;
+}
+
+bool DBInstance::ReadOnlyInstanceNumHasBeenSet() const
+{
+    return m_readOnlyInstanceNumHasBeenSet;
+}
+
+string DBInstance::GetStatusInReadonlyGroup() const
+{
+    return m_statusInReadonlyGroup;
+}
+
+void DBInstance::SetStatusInReadonlyGroup(const string& _statusInReadonlyGroup)
+{
+    m_statusInReadonlyGroup = _statusInReadonlyGroup;
+    m_statusInReadonlyGroupHasBeenSet = true;
+}
+
+bool DBInstance::StatusInReadonlyGroupHasBeenSet() const
+{
+    return m_statusInReadonlyGroupHasBeenSet;
 }
 

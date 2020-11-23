@@ -112,6 +112,28 @@ namespace TencentCloud
                      */
                     bool TcHasBeenSet() const;
 
+                    /**
+                     * 获取默认语言，最多不超过300个字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Default 默认语言，最多不超过300个字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDefault() const;
+
+                    /**
+                     * 设置默认语言，最多不超过300个字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Default 默认语言，最多不超过300个字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDefault(const std::string& _default);
+
+                    /**
+                     * 判断参数 Default 是否已赋值
+                     * @return Default 是否已赋值
+                     */
+                    bool DefaultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +156,13 @@ namespace TencentCloud
                      */
                     std::string m_tc;
                     bool m_tcHasBeenSet;
+
+                    /**
+                     * 默认语言，最多不超过300个字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_default;
+                    bool m_defaultHasBeenSet;
 
                 };
             }

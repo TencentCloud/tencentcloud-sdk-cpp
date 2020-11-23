@@ -30,7 +30,9 @@ EstablishCloudBaseRunServerRequest::EstablishCloudBaseRunServerRequest() :
     m_imageRepoHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_esInfoHasBeenSet(false),
-    m_logTypeHasBeenSet(false)
+    m_logTypeHasBeenSet(false),
+    m_operatorRemarkHasBeenSet(false),
+    m_sourceHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,22 @@ string EstablishCloudBaseRunServerRequest::ToJsonString() const
         string key = "LogType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_logType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorRemarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OperatorRemark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_operatorRemark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -216,6 +234,38 @@ void EstablishCloudBaseRunServerRequest::SetLogType(const string& _logType)
 bool EstablishCloudBaseRunServerRequest::LogTypeHasBeenSet() const
 {
     return m_logTypeHasBeenSet;
+}
+
+string EstablishCloudBaseRunServerRequest::GetOperatorRemark() const
+{
+    return m_operatorRemark;
+}
+
+void EstablishCloudBaseRunServerRequest::SetOperatorRemark(const string& _operatorRemark)
+{
+    m_operatorRemark = _operatorRemark;
+    m_operatorRemarkHasBeenSet = true;
+}
+
+bool EstablishCloudBaseRunServerRequest::OperatorRemarkHasBeenSet() const
+{
+    return m_operatorRemarkHasBeenSet;
+}
+
+string EstablishCloudBaseRunServerRequest::GetSource() const
+{
+    return m_source;
+}
+
+void EstablishCloudBaseRunServerRequest::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool EstablishCloudBaseRunServerRequest::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
 }
 
 

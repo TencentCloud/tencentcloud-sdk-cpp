@@ -30,6 +30,7 @@
 #include <tencentcloud/ecdn/v20191012/model/Https.h>
 #include <tencentcloud/ecdn/v20191012/model/ForceRedirect.h>
 #include <tencentcloud/ecdn/v20191012/model/Tag.h>
+#include <tencentcloud/ecdn/v20191012/model/WebSocket.h>
 
 
 namespace TencentCloud
@@ -267,6 +268,24 @@ namespace TencentCloud
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取WebSocket配置
+                     * @return WebSocket WebSocket配置
+                     */
+                    WebSocket GetWebSocket() const;
+
+                    /**
+                     * 设置WebSocket配置
+                     * @param WebSocket WebSocket配置
+                     */
+                    void SetWebSocket(const WebSocket& _webSocket);
+
+                    /**
+                     * 判断参数 WebSocket 是否已赋值
+                     * @return WebSocket 是否已赋值
+                     */
+                    bool WebSocketHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +359,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * WebSocket配置
+                     */
+                    WebSocket m_webSocket;
+                    bool m_webSocketHasBeenSet;
 
                 };
             }

@@ -169,6 +169,42 @@ namespace TencentCloud
                      */
                     bool LogTypeHasBeenSet() const;
 
+                    /**
+                     * 获取操作备注
+                     * @return OperatorRemark 操作备注
+                     */
+                    std::string GetOperatorRemark() const;
+
+                    /**
+                     * 设置操作备注
+                     * @param OperatorRemark 操作备注
+                     */
+                    void SetOperatorRemark(const std::string& _operatorRemark);
+
+                    /**
+                     * 判断参数 OperatorRemark 是否已赋值
+                     * @return OperatorRemark 是否已赋值
+                     */
+                    bool OperatorRemarkHasBeenSet() const;
+
+                    /**
+                     * 获取来源方（默认值：qcloud，微信侧来源miniapp)
+                     * @return Source 来源方（默认值：qcloud，微信侧来源miniapp)
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置来源方（默认值：qcloud，微信侧来源miniapp)
+                     * @param Source 来源方（默认值：qcloud，微信侧来源miniapp)
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     */
+                    bool SourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +248,18 @@ namespace TencentCloud
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
+
+                    /**
+                     * 操作备注
+                     */
+                    std::string m_operatorRemark;
+                    bool m_operatorRemarkHasBeenSet;
+
+                    /**
+                     * 来源方（默认值：qcloud，微信侧来源miniapp)
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
 
                 };
             }

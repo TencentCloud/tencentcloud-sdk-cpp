@@ -53,7 +53,8 @@ CreateCloudBaseRunServerVersionRequest::CreateCloudBaseRunServerVersionRequest()
     m_mountVolumeInfoHasBeenSet(false),
     m_accessTypeHasBeenSet(false),
     m_esInfoHasBeenSet(false),
-    m_enableUnionHasBeenSet(false)
+    m_enableUnionHasBeenSet(false),
+    m_operatorRemarkHasBeenSet(false)
 {
 }
 
@@ -313,6 +314,14 @@ string CreateCloudBaseRunServerVersionRequest::ToJsonString() const
         string key = "EnableUnion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableUnion, allocator);
+    }
+
+    if (m_operatorRemarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OperatorRemark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_operatorRemark.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -801,6 +810,22 @@ void CreateCloudBaseRunServerVersionRequest::SetEnableUnion(const bool& _enableU
 bool CreateCloudBaseRunServerVersionRequest::EnableUnionHasBeenSet() const
 {
     return m_enableUnionHasBeenSet;
+}
+
+string CreateCloudBaseRunServerVersionRequest::GetOperatorRemark() const
+{
+    return m_operatorRemark;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetOperatorRemark(const string& _operatorRemark)
+{
+    m_operatorRemark = _operatorRemark;
+    m_operatorRemarkHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::OperatorRemarkHasBeenSet() const
+{
+    return m_operatorRemarkHasBeenSet;
 }
 
 

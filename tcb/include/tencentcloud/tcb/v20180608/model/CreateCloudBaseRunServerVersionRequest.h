@@ -587,6 +587,24 @@ namespace TencentCloud
                      */
                     bool EnableUnionHasBeenSet() const;
 
+                    /**
+                     * 获取操作备注
+                     * @return OperatorRemark 操作备注
+                     */
+                    std::string GetOperatorRemark() const;
+
+                    /**
+                     * 设置操作备注
+                     * @param OperatorRemark 操作备注
+                     */
+                    void SetOperatorRemark(const std::string& _operatorRemark);
+
+                    /**
+                     * 判断参数 OperatorRemark 是否已赋值
+                     * @return OperatorRemark 是否已赋值
+                     */
+                    bool OperatorRemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -768,6 +786,12 @@ namespace TencentCloud
                      */
                     bool m_enableUnion;
                     bool m_enableUnionHasBeenSet;
+
+                    /**
+                     * 操作备注
+                     */
+                    std::string m_operatorRemark;
+                    bool m_operatorRemarkHasBeenSet;
 
                 };
             }

@@ -41,7 +41,8 @@ DomainDetailInfo::DomainDetailInfo() :
     m_forceRedirectHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_readonlyHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_webSocketHasBeenSet(false)
 {
 }
 
@@ -316,6 +317,23 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const Value &value)
         m_tagHasBeenSet = true;
     }
 
+    if (value.HasMember("WebSocket") && !value["WebSocket"].IsNull())
+    {
+        if (!value["WebSocket"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DomainDetailInfo.WebSocket` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_webSocket.Deserialize(value["WebSocket"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_webSocketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +514,15 @@ void DomainDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_webSocketHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WebSocket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_webSocket.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -819,5 +846,21 @@ void DomainDetailInfo::SetTag(const vector<Tag>& _tag)
 bool DomainDetailInfo::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+WebSocket DomainDetailInfo::GetWebSocket() const
+{
+    return m_webSocket;
+}
+
+void DomainDetailInfo::SetWebSocket(const WebSocket& _webSocket)
+{
+    m_webSocket = _webSocket;
+    m_webSocketHasBeenSet = true;
+}
+
+bool DomainDetailInfo::WebSocketHasBeenSet() const
+{
+    return m_webSocketHasBeenSet;
 }
 

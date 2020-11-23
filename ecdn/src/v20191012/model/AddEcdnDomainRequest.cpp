@@ -35,7 +35,8 @@ AddEcdnDomainRequest::AddEcdnDomainRequest() :
     m_cacheHasBeenSet(false),
     m_httpsHasBeenSet(false),
     m_forceRedirectHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_webSocketHasBeenSet(false)
 {
 }
 
@@ -155,6 +156,15 @@ string AddEcdnDomainRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_webSocketHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WebSocket";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_webSocket.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -355,6 +365,22 @@ void AddEcdnDomainRequest::SetTag(const vector<Tag>& _tag)
 bool AddEcdnDomainRequest::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+WebSocket AddEcdnDomainRequest::GetWebSocket() const
+{
+    return m_webSocket;
+}
+
+void AddEcdnDomainRequest::SetWebSocket(const WebSocket& _webSocket)
+{
+    m_webSocket = _webSocket;
+    m_webSocketHasBeenSet = true;
+}
+
+bool AddEcdnDomainRequest::WebSocketHasBeenSet() const
+{
+    return m_webSocketHasBeenSet;
 }
 
 

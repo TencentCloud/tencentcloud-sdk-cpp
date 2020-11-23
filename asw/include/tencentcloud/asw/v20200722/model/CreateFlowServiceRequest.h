@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool FlowServiceChineseNameHasBeenSet() const;
 
                     /**
-                     * 获取角色资源名
-                     * @return RoleResource 角色资源名
+                     * 获取角色资源名, 比如: qcs::cam::uin/20103392:roleName/SomeRoleForYourStateMachine
+                     * @return RoleResource 角色资源名, 比如: qcs::cam::uin/20103392:roleName/SomeRoleForYourStateMachine
                      */
                     std::string GetRoleResource() const;
 
                     /**
-                     * 设置角色资源名
-                     * @param RoleResource 角色资源名
+                     * 设置角色资源名, 比如: qcs::cam::uin/20103392:roleName/SomeRoleForYourStateMachine
+                     * @param RoleResource 角色资源名, 比如: qcs::cam::uin/20103392:roleName/SomeRoleForYourStateMachine
                      */
                     void SetRoleResource(const std::string& _roleResource);
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_flowServiceChineseNameHasBeenSet;
 
                     /**
-                     * 角色资源名
+                     * 角色资源名, 比如: qcs::cam::uin/20103392:roleName/SomeRoleForYourStateMachine
                      */
                     std::string m_roleResource;
                     bool m_roleResourceHasBeenSet;

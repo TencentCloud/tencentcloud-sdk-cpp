@@ -39,6 +39,8 @@
 #include <tencentcloud/ecm/v20190719/model/BatchModifyTargetWeightResponse.h>
 #include <tencentcloud/ecm/v20190719/model/BatchRegisterTargetsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/BatchRegisterTargetsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateHaVipRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateHaVipResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateListenerRequest.h>
@@ -49,6 +51,10 @@
 #include <tencentcloud/ecm/v20190719/model/CreateModuleResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateNetworkInterfaceResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateRouteTableRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateRouteTableResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateRoutesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateRoutesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateSecurityGroupRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateSecurityGroupResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateSecurityGroupPoliciesRequest.h>
@@ -57,6 +63,8 @@
 #include <tencentcloud/ecm/v20190719/model/CreateSubnetResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateVpcRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateVpcResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteHaVipRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteHaVipResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteListenerRequest.h>
@@ -69,6 +77,10 @@
 #include <tencentcloud/ecm/v20190719/model/DeleteModuleResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteNetworkInterfaceResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteRouteTableRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteRouteTableResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteRoutesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DeleteRoutesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteSecurityGroupRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteSecurityGroupResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DeleteSecurityGroupPoliciesRequest.h>
@@ -89,6 +101,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeCustomImageTaskResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeHaVipsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeHaVipsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeImportImageOsRequest.h>
@@ -119,6 +133,10 @@
 #include <tencentcloud/ecm/v20190719/model/DescribePeakBaseOverviewResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePeakNetworkOverviewRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePeakNetworkOverviewResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeRouteConflictsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeRouteConflictsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeRouteTablesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeRouteTablesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupAssociationStatisticsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupAssociationStatisticsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeSecurityGroupLimitsRequest.h>
@@ -141,10 +159,14 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeVpcsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DisableRoutesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DisableRoutesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateAddressRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateAddressResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateSecurityGroupsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateSecurityGroupsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/EnableRoutesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/EnableRoutesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ImportCustomImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ImportCustomImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ImportImageRequest.h>
@@ -159,6 +181,8 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyAddressesBandwidthResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyDefaultSubnetRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyDefaultSubnetResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyHaVipAttributeRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyHaVipAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyImageAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyImageAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeRequest.h>
@@ -179,6 +203,8 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleNetworkResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleSecurityGroupsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleSecurityGroupsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyRouteTableAttributeRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyRouteTableAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifySecurityGroupAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifySecurityGroupAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifySecurityGroupPoliciesRequest.h>
@@ -197,6 +223,10 @@
 #include <tencentcloud/ecm/v20190719/model/ReleaseAddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ReplaceRouteTableAssociationRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ReplaceRouteTableAssociationResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ReplaceRoutesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ReplaceRoutesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ReplaceSecurityGroupPolicyRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ReplaceSecurityGroupPolicyResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ResetInstancesRequest.h>
@@ -205,6 +235,8 @@
 #include <tencentcloud/ecm/v20190719/model/ResetInstancesMaxBandwidthResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ResetInstancesPasswordRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ResetInstancesPasswordResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ResetRoutesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ResetRoutesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/RunInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/RunInstancesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/StartInstancesRequest.h>
@@ -251,6 +283,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BatchRegisterTargetsResponse> BatchRegisterTargetsOutcome;
                 typedef std::future<BatchRegisterTargetsOutcome> BatchRegisterTargetsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::BatchRegisterTargetsRequest&, BatchRegisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterTargetsAsyncHandler;
+                typedef Outcome<Error, Model::CreateHaVipResponse> CreateHaVipOutcome;
+                typedef std::future<CreateHaVipOutcome> CreateHaVipOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::CreateHaVipRequest&, CreateHaVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHaVipAsyncHandler;
                 typedef Outcome<Error, Model::CreateImageResponse> CreateImageOutcome;
                 typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateImageRequest&, CreateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAsyncHandler;
@@ -266,6 +301,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateNetworkInterfaceResponse> CreateNetworkInterfaceOutcome;
                 typedef std::future<CreateNetworkInterfaceOutcome> CreateNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateNetworkInterfaceRequest&, CreateNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkInterfaceAsyncHandler;
+                typedef Outcome<Error, Model::CreateRouteTableResponse> CreateRouteTableOutcome;
+                typedef std::future<CreateRouteTableOutcome> CreateRouteTableOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::CreateRouteTableRequest&, CreateRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteTableAsyncHandler;
+                typedef Outcome<Error, Model::CreateRoutesResponse> CreateRoutesOutcome;
+                typedef std::future<CreateRoutesOutcome> CreateRoutesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::CreateRoutesRequest&, CreateRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoutesAsyncHandler;
                 typedef Outcome<Error, Model::CreateSecurityGroupResponse> CreateSecurityGroupOutcome;
                 typedef std::future<CreateSecurityGroupOutcome> CreateSecurityGroupOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateSecurityGroupRequest&, CreateSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityGroupAsyncHandler;
@@ -278,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateVpcResponse> CreateVpcOutcome;
                 typedef std::future<CreateVpcOutcome> CreateVpcOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateVpcRequest&, CreateVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcAsyncHandler;
+                typedef Outcome<Error, Model::DeleteHaVipResponse> DeleteHaVipOutcome;
+                typedef std::future<DeleteHaVipOutcome> DeleteHaVipOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DeleteHaVipRequest&, DeleteHaVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHaVipAsyncHandler;
                 typedef Outcome<Error, Model::DeleteImageResponse> DeleteImageOutcome;
                 typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DeleteImageRequest&, DeleteImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageAsyncHandler;
@@ -296,6 +340,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteNetworkInterfaceResponse> DeleteNetworkInterfaceOutcome;
                 typedef std::future<DeleteNetworkInterfaceOutcome> DeleteNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DeleteNetworkInterfaceRequest&, DeleteNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkInterfaceAsyncHandler;
+                typedef Outcome<Error, Model::DeleteRouteTableResponse> DeleteRouteTableOutcome;
+                typedef std::future<DeleteRouteTableOutcome> DeleteRouteTableOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DeleteRouteTableRequest&, DeleteRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteTableAsyncHandler;
+                typedef Outcome<Error, Model::DeleteRoutesResponse> DeleteRoutesOutcome;
+                typedef std::future<DeleteRoutesOutcome> DeleteRoutesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DeleteRoutesRequest&, DeleteRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoutesAsyncHandler;
                 typedef Outcome<Error, Model::DeleteSecurityGroupResponse> DeleteSecurityGroupOutcome;
                 typedef std::future<DeleteSecurityGroupOutcome> DeleteSecurityGroupOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DeleteSecurityGroupRequest&, DeleteSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupAsyncHandler;
@@ -326,6 +376,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDefaultSubnetResponse> DescribeDefaultSubnetOutcome;
                 typedef std::future<DescribeDefaultSubnetOutcome> DescribeDefaultSubnetOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeDefaultSubnetRequest&, DescribeDefaultSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultSubnetAsyncHandler;
+                typedef Outcome<Error, Model::DescribeHaVipsResponse> DescribeHaVipsOutcome;
+                typedef std::future<DescribeHaVipsOutcome> DescribeHaVipsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeHaVipsRequest&, DescribeHaVipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHaVipsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImageResponse> DescribeImageOutcome;
                 typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeImageRequest&, DescribeImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAsyncHandler;
@@ -371,6 +424,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePeakNetworkOverviewResponse> DescribePeakNetworkOverviewOutcome;
                 typedef std::future<DescribePeakNetworkOverviewOutcome> DescribePeakNetworkOverviewOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribePeakNetworkOverviewRequest&, DescribePeakNetworkOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePeakNetworkOverviewAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRouteConflictsResponse> DescribeRouteConflictsOutcome;
+                typedef std::future<DescribeRouteConflictsOutcome> DescribeRouteConflictsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeRouteConflictsRequest&, DescribeRouteConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteConflictsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRouteTablesResponse> DescribeRouteTablesOutcome;
+                typedef std::future<DescribeRouteTablesOutcome> DescribeRouteTablesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeRouteTablesRequest&, DescribeRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTablesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSecurityGroupAssociationStatisticsResponse> DescribeSecurityGroupAssociationStatisticsOutcome;
                 typedef std::future<DescribeSecurityGroupAssociationStatisticsOutcome> DescribeSecurityGroupAssociationStatisticsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeSecurityGroupAssociationStatisticsRequest&, DescribeSecurityGroupAssociationStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupAssociationStatisticsAsyncHandler;
@@ -404,12 +463,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetachNetworkInterfaceResponse> DetachNetworkInterfaceOutcome;
                 typedef std::future<DetachNetworkInterfaceOutcome> DetachNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DetachNetworkInterfaceRequest&, DetachNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachNetworkInterfaceAsyncHandler;
+                typedef Outcome<Error, Model::DisableRoutesResponse> DisableRoutesOutcome;
+                typedef std::future<DisableRoutesOutcome> DisableRoutesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DisableRoutesRequest&, DisableRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableRoutesAsyncHandler;
                 typedef Outcome<Error, Model::DisassociateAddressResponse> DisassociateAddressOutcome;
                 typedef std::future<DisassociateAddressOutcome> DisassociateAddressOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DisassociateAddressRequest&, DisassociateAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateAddressAsyncHandler;
                 typedef Outcome<Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
                 typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::EnableRoutesResponse> EnableRoutesOutcome;
+                typedef std::future<EnableRoutesOutcome> EnableRoutesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::EnableRoutesRequest&, EnableRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableRoutesAsyncHandler;
                 typedef Outcome<Error, Model::ImportCustomImageResponse> ImportCustomImageOutcome;
                 typedef std::future<ImportCustomImageOutcome> ImportCustomImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ImportCustomImageRequest&, ImportCustomImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportCustomImageAsyncHandler;
@@ -431,6 +496,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyDefaultSubnetResponse> ModifyDefaultSubnetOutcome;
                 typedef std::future<ModifyDefaultSubnetOutcome> ModifyDefaultSubnetOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyDefaultSubnetRequest&, ModifyDefaultSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultSubnetAsyncHandler;
+                typedef Outcome<Error, Model::ModifyHaVipAttributeResponse> ModifyHaVipAttributeOutcome;
+                typedef std::future<ModifyHaVipAttributeOutcome> ModifyHaVipAttributeOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyHaVipAttributeRequest&, ModifyHaVipAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHaVipAttributeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyImageAttributeResponse> ModifyImageAttributeOutcome;
                 typedef std::future<ModifyImageAttributeOutcome> ModifyImageAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyImageAttributeRequest&, ModifyImageAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageAttributeAsyncHandler;
@@ -461,6 +529,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyModuleSecurityGroupsResponse> ModifyModuleSecurityGroupsOutcome;
                 typedef std::future<ModifyModuleSecurityGroupsOutcome> ModifyModuleSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyModuleSecurityGroupsRequest&, ModifyModuleSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::ModifyRouteTableAttributeResponse> ModifyRouteTableAttributeOutcome;
+                typedef std::future<ModifyRouteTableAttributeOutcome> ModifyRouteTableAttributeOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyRouteTableAttributeRequest&, ModifyRouteTableAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouteTableAttributeAsyncHandler;
                 typedef Outcome<Error, Model::ModifySecurityGroupAttributeResponse> ModifySecurityGroupAttributeOutcome;
                 typedef std::future<ModifySecurityGroupAttributeOutcome> ModifySecurityGroupAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifySecurityGroupAttributeRequest&, ModifySecurityGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupAttributeAsyncHandler;
@@ -488,6 +559,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RemovePrivateIpAddressesResponse> RemovePrivateIpAddressesOutcome;
                 typedef std::future<RemovePrivateIpAddressesOutcome> RemovePrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::RemovePrivateIpAddressesRequest&, RemovePrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemovePrivateIpAddressesAsyncHandler;
+                typedef Outcome<Error, Model::ReplaceRouteTableAssociationResponse> ReplaceRouteTableAssociationOutcome;
+                typedef std::future<ReplaceRouteTableAssociationOutcome> ReplaceRouteTableAssociationOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ReplaceRouteTableAssociationRequest&, ReplaceRouteTableAssociationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRouteTableAssociationAsyncHandler;
+                typedef Outcome<Error, Model::ReplaceRoutesResponse> ReplaceRoutesOutcome;
+                typedef std::future<ReplaceRoutesOutcome> ReplaceRoutesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ReplaceRoutesRequest&, ReplaceRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRoutesAsyncHandler;
                 typedef Outcome<Error, Model::ReplaceSecurityGroupPolicyResponse> ReplaceSecurityGroupPolicyOutcome;
                 typedef std::future<ReplaceSecurityGroupPolicyOutcome> ReplaceSecurityGroupPolicyOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ReplaceSecurityGroupPolicyRequest&, ReplaceSecurityGroupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceSecurityGroupPolicyAsyncHandler;
@@ -500,6 +577,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ResetInstancesPasswordResponse> ResetInstancesPasswordOutcome;
                 typedef std::future<ResetInstancesPasswordOutcome> ResetInstancesPasswordOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ResetInstancesPasswordRequest&, ResetInstancesPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesPasswordAsyncHandler;
+                typedef Outcome<Error, Model::ResetRoutesResponse> ResetRoutesOutcome;
+                typedef std::future<ResetRoutesOutcome> ResetRoutesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ResetRoutesRequest&, ResetRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRoutesAsyncHandler;
                 typedef Outcome<Error, Model::RunInstancesResponse> RunInstancesOutcome;
                 typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::RunInstancesRequest&, RunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
@@ -594,6 +674,15 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 BatchRegisterTargetsOutcomeCallable BatchRegisterTargetsCallable(const Model::BatchRegisterTargetsRequest& request);
 
                 /**
+                 *本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）
+                 * @param req CreateHaVipRequest
+                 * @return CreateHaVipOutcome
+                 */
+                CreateHaVipOutcome CreateHaVip(const Model::CreateHaVipRequest &request);
+                void CreateHaVipAsync(const Model::CreateHaVipRequest& request, const CreateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHaVipOutcomeCallable CreateHaVipCallable(const Model::CreateHaVipRequest& request);
+
+                /**
                  *本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。
                  * @param req CreateImageRequest
                  * @return CreateImageOutcome
@@ -637,6 +726,24 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 CreateNetworkInterfaceOutcome CreateNetworkInterface(const Model::CreateNetworkInterfaceRequest &request);
                 void CreateNetworkInterfaceAsync(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNetworkInterfaceOutcomeCallable CreateNetworkInterfaceCallable(const Model::CreateNetworkInterfaceRequest& request);
+
+                /**
+                 *创建了VPC后，系统会创建一个默认路由表，所有新建的子网都会关联到默认路由表。默认情况下您可以直接使用默认路由表来管理您的路由策略。当您的路由策略较多时，您可以调用创建路由表接口创建更多路由表管理您的路由策略。
+                 * @param req CreateRouteTableRequest
+                 * @return CreateRouteTableOutcome
+                 */
+                CreateRouteTableOutcome CreateRouteTable(const Model::CreateRouteTableRequest &request);
+                void CreateRouteTableAsync(const Model::CreateRouteTableRequest& request, const CreateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRouteTableOutcomeCallable CreateRouteTableCallable(const Model::CreateRouteTableRequest& request);
+
+                /**
+                 *创建路由策略
+                 * @param req CreateRoutesRequest
+                 * @return CreateRoutesOutcome
+                 */
+                CreateRoutesOutcome CreateRoutes(const Model::CreateRoutesRequest &request);
+                void CreateRoutesAsync(const Model::CreateRoutesRequest& request, const CreateRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoutesOutcomeCallable CreateRoutesCallable(const Model::CreateRoutesRequest& request);
 
                 /**
                  *创建安全组
@@ -684,6 +791,15 @@ CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系
                 CreateVpcOutcome CreateVpc(const Model::CreateVpcRequest &request);
                 void CreateVpcAsync(const Model::CreateVpcRequest& request, const CreateVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateVpcOutcomeCallable CreateVpcCallable(const Model::CreateVpcRequest& request);
+
+                /**
+                 *用于删除高可用虚拟IP（HAVIP）
+                 * @param req DeleteHaVipRequest
+                 * @return DeleteHaVipOutcome
+                 */
+                DeleteHaVipOutcome DeleteHaVip(const Model::DeleteHaVipRequest &request);
+                void DeleteHaVipAsync(const Model::DeleteHaVipRequest& request, const DeleteHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteHaVipOutcomeCallable DeleteHaVipCallable(const Model::DeleteHaVipRequest& request);
 
                 /**
                  *删除镜像
@@ -738,6 +854,24 @@ CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系
                 DeleteNetworkInterfaceOutcome DeleteNetworkInterface(const Model::DeleteNetworkInterfaceRequest &request);
                 void DeleteNetworkInterfaceAsync(const Model::DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNetworkInterfaceOutcomeCallable DeleteNetworkInterfaceCallable(const Model::DeleteNetworkInterfaceRequest& request);
+
+                /**
+                 *删除路由表
+                 * @param req DeleteRouteTableRequest
+                 * @return DeleteRouteTableOutcome
+                 */
+                DeleteRouteTableOutcome DeleteRouteTable(const Model::DeleteRouteTableRequest &request);
+                void DeleteRouteTableAsync(const Model::DeleteRouteTableRequest& request, const DeleteRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRouteTableOutcomeCallable DeleteRouteTableCallable(const Model::DeleteRouteTableRequest& request);
+
+                /**
+                 *对某个路由表批量删除路由策略
+                 * @param req DeleteRoutesRequest
+                 * @return DeleteRoutesOutcome
+                 */
+                DeleteRoutesOutcome DeleteRoutes(const Model::DeleteRoutesRequest &request);
+                void DeleteRoutesAsync(const Model::DeleteRoutesRequest& request, const DeleteRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoutesOutcomeCallable DeleteRoutesCallable(const Model::DeleteRoutesRequest& request);
 
                 /**
                  *只有当前账号下的安全组允许被删除。
@@ -830,6 +964,15 @@ CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系
                 DescribeDefaultSubnetOutcome DescribeDefaultSubnet(const Model::DescribeDefaultSubnetRequest &request);
                 void DescribeDefaultSubnetAsync(const Model::DescribeDefaultSubnetRequest& request, const DescribeDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDefaultSubnetOutcomeCallable DescribeDefaultSubnetCallable(const Model::DescribeDefaultSubnetRequest& request);
+
+                /**
+                 *用于查询高可用虚拟IP（HAVIP）列表。
+                 * @param req DescribeHaVipsRequest
+                 * @return DescribeHaVipsOutcome
+                 */
+                DescribeHaVipsOutcome DescribeHaVips(const Model::DescribeHaVipsRequest &request);
+                void DescribeHaVipsAsync(const Model::DescribeHaVipsRequest& request, const DescribeHaVipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHaVipsOutcomeCallable DescribeHaVipsCallable(const Model::DescribeHaVipsRequest& request);
 
                 /**
                  *展示镜像列表
@@ -967,6 +1110,24 @@ CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系
                 DescribePeakNetworkOverviewOutcomeCallable DescribePeakNetworkOverviewCallable(const Model::DescribePeakNetworkOverviewRequest& request);
 
                 /**
+                 *查询自定义路由策略与云联网路由策略冲突列表
+                 * @param req DescribeRouteConflictsRequest
+                 * @return DescribeRouteConflictsOutcome
+                 */
+                DescribeRouteConflictsOutcome DescribeRouteConflicts(const Model::DescribeRouteConflictsRequest &request);
+                void DescribeRouteConflictsAsync(const Model::DescribeRouteConflictsRequest& request, const DescribeRouteConflictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRouteConflictsOutcomeCallable DescribeRouteConflictsCallable(const Model::DescribeRouteConflictsRequest& request);
+
+                /**
+                 *查询路由表对象列表
+                 * @param req DescribeRouteTablesRequest
+                 * @return DescribeRouteTablesOutcome
+                 */
+                DescribeRouteTablesOutcome DescribeRouteTables(const Model::DescribeRouteTablesRequest &request);
+                void DescribeRouteTablesAsync(const Model::DescribeRouteTablesRequest& request, const DescribeRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRouteTablesOutcomeCallable DescribeRouteTablesCallable(const Model::DescribeRouteTablesRequest& request);
+
+                /**
                  *查询安全组关联实例统计
                  * @param req DescribeSecurityGroupAssociationStatisticsRequest
                  * @return DescribeSecurityGroupAssociationStatisticsOutcome
@@ -1066,6 +1227,15 @@ CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系
                 DetachNetworkInterfaceOutcomeCallable DetachNetworkInterfaceCallable(const Model::DetachNetworkInterfaceRequest& request);
 
                 /**
+                 *禁用已启用的子网路由
+                 * @param req DisableRoutesRequest
+                 * @return DisableRoutesOutcome
+                 */
+                DisableRoutesOutcome DisableRoutes(const Model::DisableRoutesRequest &request);
+                void DisableRoutesAsync(const Model::DisableRoutesRequest& request, const DisableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableRoutesOutcomeCallable DisableRoutesCallable(const Model::DisableRoutesRequest& request);
+
+                /**
                  *解绑弹性公网IP（简称 EIP）
 只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。
 EIP 如果被封堵，则不能进行解绑定操作。
@@ -1084,6 +1254,16 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 DisassociateSecurityGroupsOutcome DisassociateSecurityGroups(const Model::DisassociateSecurityGroupsRequest &request);
                 void DisassociateSecurityGroupsAsync(const Model::DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
+
+                /**
+                 *启用已禁用的子网路由。
+本接口会校验启用后，是否与已有路由冲突，如果冲突，则无法启用，失败处理。路由冲突时，需要先禁用与之冲突的路由，才能启用该路由。
+                 * @param req EnableRoutesRequest
+                 * @return EnableRoutesOutcome
+                 */
+                EnableRoutesOutcome EnableRoutes(const Model::EnableRoutesRequest &request);
+                void EnableRoutesAsync(const Model::EnableRoutesRequest& request, const EnableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableRoutesOutcomeCallable EnableRoutesCallable(const Model::EnableRoutesRequest& request);
 
                 /**
                  *导入自定义镜像，支持 RAW、VHD、QCOW2、VMDK 镜像格式
@@ -1150,6 +1330,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyDefaultSubnetOutcome ModifyDefaultSubnet(const Model::ModifyDefaultSubnetRequest &request);
                 void ModifyDefaultSubnetAsync(const Model::ModifyDefaultSubnetRequest& request, const ModifyDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDefaultSubnetOutcomeCallable ModifyDefaultSubnetCallable(const Model::ModifyDefaultSubnetRequest& request);
+
+                /**
+                 *用于修改高可用虚拟IP（HAVIP）属性
+                 * @param req ModifyHaVipAttributeRequest
+                 * @return ModifyHaVipAttributeOutcome
+                 */
+                ModifyHaVipAttributeOutcome ModifyHaVipAttribute(const Model::ModifyHaVipAttributeRequest &request);
+                void ModifyHaVipAttributeAsync(const Model::ModifyHaVipAttributeRequest& request, const ModifyHaVipAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyHaVipAttributeOutcomeCallable ModifyHaVipAttributeCallable(const Model::ModifyHaVipAttributeRequest& request);
 
                 /**
                  *本接口（ModifyImageAttribute）用于修改镜像属性。
@@ -1242,6 +1431,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyModuleSecurityGroupsOutcomeCallable ModifyModuleSecurityGroupsCallable(const Model::ModifyModuleSecurityGroupsRequest& request);
 
                 /**
+                 *修改路由表属性
+                 * @param req ModifyRouteTableAttributeRequest
+                 * @return ModifyRouteTableAttributeOutcome
+                 */
+                ModifyRouteTableAttributeOutcome ModifyRouteTableAttribute(const Model::ModifyRouteTableAttributeRequest &request);
+                void ModifyRouteTableAttributeAsync(const Model::ModifyRouteTableAttributeRequest& request, const ModifyRouteTableAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRouteTableAttributeOutcomeCallable ModifyRouteTableAttributeCallable(const Model::ModifyRouteTableAttributeRequest& request);
+
+                /**
                  *修改安全组属性
                  * @param req ModifySecurityGroupAttributeRequest
                  * @return ModifySecurityGroupAttributeOutcome
@@ -1326,6 +1524,24 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 RemovePrivateIpAddressesOutcomeCallable RemovePrivateIpAddressesCallable(const Model::RemovePrivateIpAddressesRequest& request);
 
                 /**
+                 *修改子网关联的路由表，一个子网只能关联一个路由表。
+                 * @param req ReplaceRouteTableAssociationRequest
+                 * @return ReplaceRouteTableAssociationOutcome
+                 */
+                ReplaceRouteTableAssociationOutcome ReplaceRouteTableAssociation(const Model::ReplaceRouteTableAssociationRequest &request);
+                void ReplaceRouteTableAssociationAsync(const Model::ReplaceRouteTableAssociationRequest& request, const ReplaceRouteTableAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceRouteTableAssociationOutcomeCallable ReplaceRouteTableAssociationCallable(const Model::ReplaceRouteTableAssociationRequest& request);
+
+                /**
+                 *替换路由策略
+                 * @param req ReplaceRoutesRequest
+                 * @return ReplaceRoutesOutcome
+                 */
+                ReplaceRoutesOutcome ReplaceRoutes(const Model::ReplaceRoutesRequest &request);
+                void ReplaceRoutesAsync(const Model::ReplaceRoutesRequest& request, const ReplaceRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceRoutesOutcomeCallable ReplaceRoutesCallable(const Model::ReplaceRoutesRequest& request);
+
+                /**
                  *替换单条安全组路由规则, 单个请求中只能替换单个方向的一条规则, 必须要指定索引（PolicyIndex）。
                  * @param req ReplaceSecurityGroupPolicyRequest
                  * @return ReplaceSecurityGroupPolicyOutcome
@@ -1360,6 +1576,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ResetInstancesPasswordOutcome ResetInstancesPassword(const Model::ResetInstancesPasswordRequest &request);
                 void ResetInstancesPasswordAsync(const Model::ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetInstancesPasswordOutcomeCallable ResetInstancesPasswordCallable(const Model::ResetInstancesPasswordRequest& request);
+
+                /**
+                 *对某个路由表名称和所有路由策略（Route）进行重新设置
+                 * @param req ResetRoutesRequest
+                 * @return ResetRoutesOutcome
+                 */
+                ResetRoutesOutcome ResetRoutes(const Model::ResetRoutesRequest &request);
+                void ResetRoutesAsync(const Model::ResetRoutesRequest& request, const ResetRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetRoutesOutcomeCallable ResetRoutesCallable(const Model::ResetRoutesRequest& request);
 
                 /**
                  *创建ECM实例

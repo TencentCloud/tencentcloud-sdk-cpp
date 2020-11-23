@@ -556,6 +556,72 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取主实例信息，仅在实例为只读实例时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MasterDBInstanceId 主实例信息，仅在实例为只读实例时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMasterDBInstanceId() const;
+
+                    /**
+                     * 设置主实例信息，仅在实例为只读实例时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MasterDBInstanceId 主实例信息，仅在实例为只读实例时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMasterDBInstanceId(const std::string& _masterDBInstanceId);
+
+                    /**
+                     * 判断参数 MasterDBInstanceId 是否已赋值
+                     * @return MasterDBInstanceId 是否已赋值
+                     */
+                    bool MasterDBInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取只读实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReadOnlyInstanceNum 只读实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetReadOnlyInstanceNum() const;
+
+                    /**
+                     * 设置只读实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReadOnlyInstanceNum 只读实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReadOnlyInstanceNum(const int64_t& _readOnlyInstanceNum);
+
+                    /**
+                     * 判断参数 ReadOnlyInstanceNum 是否已赋值
+                     * @return ReadOnlyInstanceNum 是否已赋值
+                     */
+                    bool ReadOnlyInstanceNumHasBeenSet() const;
+
+                    /**
+                     * 获取只读实例在只读组中的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusInReadonlyGroup 只读实例在只读组中的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStatusInReadonlyGroup() const;
+
+                    /**
+                     * 设置只读实例在只读组中的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StatusInReadonlyGroup 只读实例在只读组中的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatusInReadonlyGroup(const std::string& _statusInReadonlyGroup);
+
+                    /**
+                     * 判断参数 StatusInReadonlyGroup 是否已赋值
+                     * @return StatusInReadonlyGroup 是否已赋值
+                     */
+                    bool StatusInReadonlyGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -726,6 +792,27 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 主实例信息，仅在实例为只读实例时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_masterDBInstanceId;
+                    bool m_masterDBInstanceIdHasBeenSet;
+
+                    /**
+                     * 只读实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_readOnlyInstanceNum;
+                    bool m_readOnlyInstanceNumHasBeenSet;
+
+                    /**
+                     * 只读实例在只读组中的状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_statusInReadonlyGroup;
+                    bool m_statusInReadonlyGroupHasBeenSet;
 
                 };
             }

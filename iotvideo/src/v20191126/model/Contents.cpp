@@ -24,7 +24,8 @@ using namespace std;
 Contents::Contents() :
     m_enHasBeenSet(false),
     m_cnHasBeenSet(false),
-    m_tcHasBeenSet(false)
+    m_tcHasBeenSet(false),
+    m_defaultHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome Contents::Deserialize(const Value &value)
         m_tcHasBeenSet = true;
     }
 
+    if (value.HasMember("Default") && !value["Default"].IsNull())
+    {
+        if (!value["Default"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Contents.Default` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_default = string(value["Default"].GetString());
+        m_defaultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void Contents::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Tc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_tc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Default";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_default.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void Contents::SetTc(const string& _tc)
 bool Contents::TcHasBeenSet() const
 {
     return m_tcHasBeenSet;
+}
+
+string Contents::GetDefault() const
+{
+    return m_default;
+}
+
+void Contents::SetDefault(const string& _default)
+{
+    m_default = _default;
+    m_defaultHasBeenSet = true;
+}
+
+bool Contents::DefaultHasBeenSet() const
+{
+    return m_defaultHasBeenSet;
 }
 

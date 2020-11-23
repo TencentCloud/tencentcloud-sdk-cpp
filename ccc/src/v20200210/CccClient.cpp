@@ -212,6 +212,49 @@ CccClient::DescribeIMCdrsOutcomeCallable CccClient::DescribeIMCdrsCallable(const
     return task->get_future();
 }
 
+CccClient::DescribeTelCallInfoOutcome CccClient::DescribeTelCallInfo(const DescribeTelCallInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTelCallInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTelCallInfoResponse rsp = DescribeTelCallInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTelCallInfoOutcome(rsp);
+        else
+            return DescribeTelCallInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTelCallInfoOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeTelCallInfoAsync(const DescribeTelCallInfoRequest& request, const DescribeTelCallInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTelCallInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeTelCallInfoOutcomeCallable CccClient::DescribeTelCallInfoCallable(const DescribeTelCallInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTelCallInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTelCallInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeTelCdrOutcome CccClient::DescribeTelCdr(const DescribeTelCdrRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTelCdr");

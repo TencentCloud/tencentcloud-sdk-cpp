@@ -31,6 +31,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h>
 
@@ -59,6 +61,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeIMCdrsResponse> DescribeIMCdrsOutcome;
                 typedef std::future<DescribeIMCdrsOutcome> DescribeIMCdrsOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeIMCdrsRequest&, DescribeIMCdrsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIMCdrsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTelCallInfoResponse> DescribeTelCallInfoOutcome;
+                typedef std::future<DescribeTelCallInfoOutcome> DescribeTelCallInfoOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeTelCallInfoRequest&, DescribeTelCallInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelCallInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTelCdrResponse> DescribeTelCdrOutcome;
                 typedef std::future<DescribeTelCdrOutcome> DescribeTelCdrOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelCdrRequest&, DescribeTelCdrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelCdrAsyncHandler;
@@ -100,6 +105,15 @@ namespace TencentCloud
                 DescribeIMCdrsOutcome DescribeIMCdrs(const Model::DescribeIMCdrsRequest &request);
                 void DescribeIMCdrsAsync(const Model::DescribeIMCdrsRequest& request, const DescribeIMCdrsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIMCdrsOutcomeCallable DescribeIMCdrsCallable(const Model::DescribeIMCdrsRequest& request);
+
+                /**
+                 *获取电话呼叫统计信息
+                 * @param req DescribeTelCallInfoRequest
+                 * @return DescribeTelCallInfoOutcome
+                 */
+                DescribeTelCallInfoOutcome DescribeTelCallInfo(const Model::DescribeTelCallInfoRequest &request);
+                void DescribeTelCallInfoAsync(const Model::DescribeTelCallInfoRequest& request, const DescribeTelCallInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTelCallInfoOutcomeCallable DescribeTelCallInfoCallable(const Model::DescribeTelCallInfoRequest& request);
 
                 /**
                  *获取电话服务记录与录音
