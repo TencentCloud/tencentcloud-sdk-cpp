@@ -27,7 +27,8 @@ using namespace std;
 CreateInstanceTokenResponse::CreateInstanceTokenResponse() :
     m_usernameHasBeenSet(false),
     m_tokenHasBeenSet(false),
-    m_expTimeHasBeenSet(false)
+    m_expTimeHasBeenSet(false),
+    m_tokenIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome CreateInstanceTokenResponse::Deserialize(const string &paylo
         m_expTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TokenId") && !rsp["TokenId"].IsNull())
+    {
+        if (!rsp["TokenId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TokenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenId = string(rsp["TokenId"].GetString());
+        m_tokenIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +139,16 @@ int64_t CreateInstanceTokenResponse::GetExpTime() const
 bool CreateInstanceTokenResponse::ExpTimeHasBeenSet() const
 {
     return m_expTimeHasBeenSet;
+}
+
+string CreateInstanceTokenResponse::GetTokenId() const
+{
+    return m_tokenId;
+}
+
+bool CreateInstanceTokenResponse::TokenIdHasBeenSet() const
+{
+    return m_tokenIdHasBeenSet;
 }
 
 

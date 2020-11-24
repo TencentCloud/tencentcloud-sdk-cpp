@@ -24,7 +24,8 @@ using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateHaVipResponse::CreateHaVipResponse()
+CreateHaVipResponse::CreateHaVipResponse() :
+    m_haVipHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,36 @@ CoreInternalOutcome CreateHaVipResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("HaVip") && !rsp["HaVip"].IsNull())
+    {
+        if (!rsp["HaVip"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `HaVip` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_haVip.Deserialize(rsp["HaVip"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_haVipHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+HaVip CreateHaVipResponse::GetHaVip() const
+{
+    return m_haVip;
+}
+
+bool CreateHaVipResponse::HaVipHasBeenSet() const
+{
+    return m_haVipHasBeenSet;
+}
 
 

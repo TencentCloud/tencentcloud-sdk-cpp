@@ -106,14 +106,14 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取配置项（JSON格式字符串）
-                     * @return EsConfig 配置项（JSON格式字符串）
+                     * 获取ES配置项（JSON格式字符串）
+                     * @return EsConfig ES配置项（JSON格式字符串）
                      */
                     std::string GetEsConfig() const;
 
                     /**
-                     * 设置配置项（JSON格式字符串）
-                     * @param EsConfig 配置项（JSON格式字符串）
+                     * 设置ES配置项（JSON格式字符串）
+                     * @param EsConfig ES配置项（JSON格式字符串）
                      */
                     void SetEsConfig(const std::string& _esConfig);
 
@@ -485,6 +485,24 @@ namespace TencentCloud
                      */
                     bool SceneTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Kibana配置项（JSON格式字符串）
+                     * @return KibanaConfig Kibana配置项（JSON格式字符串）
+                     */
+                    std::string GetKibanaConfig() const;
+
+                    /**
+                     * 设置Kibana配置项（JSON格式字符串）
+                     * @param KibanaConfig Kibana配置项（JSON格式字符串）
+                     */
+                    void SetKibanaConfig(const std::string& _kibanaConfig);
+
+                    /**
+                     * 判断参数 KibanaConfig 是否已赋值
+                     * @return KibanaConfig 是否已赋值
+                     */
+                    bool KibanaConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,7 +525,7 @@ namespace TencentCloud
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 配置项（JSON格式字符串）
+                     * ES配置项（JSON格式字符串）
                      */
                     std::string m_esConfig;
                     bool m_esConfigHasBeenSet;
@@ -630,6 +648,12 @@ namespace TencentCloud
                      */
                     int64_t m_sceneType;
                     bool m_sceneTypeHasBeenSet;
+
+                    /**
+                     * Kibana配置项（JSON格式字符串）
+                     */
+                    std::string m_kibanaConfig;
+                    bool m_kibanaConfigHasBeenSet;
 
                 };
             }

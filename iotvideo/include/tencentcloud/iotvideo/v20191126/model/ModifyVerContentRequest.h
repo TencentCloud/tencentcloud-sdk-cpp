@@ -44,16 +44,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品id,大于0的有符号长整型
-                     * @return ProductId 产品id,大于0的有符号长整型
+                     * 获取产品id
+                     * @return ProductId 产品id
                      */
-                    int64_t GetProductId() const;
+                    std::string GetProductId() const;
 
                     /**
-                     * 设置产品id,大于0的有符号长整型
-                     * @param ProductId 产品id,大于0的有符号长整型
+                     * 设置产品id
+                     * @param ProductId 产品id
                      */
-                    void SetProductId(const int64_t& _productId);
+                    void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
@@ -136,9 +136,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品id,大于0的有符号长整型
+                     * 产品id
                      */
-                    int64_t m_productId;
+                    std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**

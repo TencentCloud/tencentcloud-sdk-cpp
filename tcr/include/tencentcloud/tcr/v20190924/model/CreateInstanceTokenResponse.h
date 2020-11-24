@@ -80,6 +80,20 @@ namespace TencentCloud
                      */
                     bool ExpTimeHasBeenSet() const;
 
+                    /**
+                     * 获取长期凭证的TokenId，短期凭证没有TokenId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TokenId 长期凭证的TokenId，短期凭证没有TokenId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTokenId() const;
+
+                    /**
+                     * 判断参数 TokenId 是否已赋值
+                     * @return TokenId 是否已赋值
+                     */
+                    bool TokenIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +114,13 @@ namespace TencentCloud
                      */
                     int64_t m_expTime;
                     bool m_expTimeHasBeenSet;
+
+                    /**
+                     * 长期凭证的TokenId，短期凭证没有TokenId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tokenId;
+                    bool m_tokenIdHasBeenSet;
 
                 };
             }

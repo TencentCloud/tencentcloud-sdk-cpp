@@ -4813,6 +4813,49 @@ VpcClient::DescribeIpGeolocationDatabaseUrlOutcomeCallable VpcClient::DescribeIp
     return task->get_future();
 }
 
+VpcClient::DescribeIpGeolocationInfosOutcome VpcClient::DescribeIpGeolocationInfos(const DescribeIpGeolocationInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIpGeolocationInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIpGeolocationInfosResponse rsp = DescribeIpGeolocationInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIpGeolocationInfosOutcome(rsp);
+        else
+            return DescribeIpGeolocationInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIpGeolocationInfosOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeIpGeolocationInfosAsync(const DescribeIpGeolocationInfosRequest& request, const DescribeIpGeolocationInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIpGeolocationInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeIpGeolocationInfosOutcomeCallable VpcClient::DescribeIpGeolocationInfosCallable(const DescribeIpGeolocationInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIpGeolocationInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIpGeolocationInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome VpcClient::DescribeNatGatewayDestinationIpPortTranslationNatRules(const DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatGatewayDestinationIpPortTranslationNatRules");

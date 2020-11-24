@@ -35,6 +35,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeInstancesResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/RestartKibanaRequest.h>
+#include <tencentcloud/es/v20180416/model/RestartKibanaResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartNodesRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartNodesResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceRequest.h>
@@ -77,6 +79,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RestartInstanceResponse> RestartInstanceOutcome;
                 typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartInstanceRequest&, RestartInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
+                typedef Outcome<Error, Model::RestartKibanaResponse> RestartKibanaOutcome;
+                typedef std::future<RestartKibanaOutcome> RestartKibanaOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::RestartKibanaRequest&, RestartKibanaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartKibanaAsyncHandler;
                 typedef Outcome<Error, Model::RestartNodesResponse> RestartNodesOutcome;
                 typedef std::future<RestartNodesOutcome> RestartNodesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartNodesRequest&, RestartNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartNodesAsyncHandler;
@@ -148,6 +153,15 @@ namespace TencentCloud
                 RestartInstanceOutcome RestartInstance(const Model::RestartInstanceRequest &request);
                 void RestartInstanceAsync(const Model::RestartInstanceRequest& request, const RestartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartInstanceOutcomeCallable RestartInstanceCallable(const Model::RestartInstanceRequest& request);
+
+                /**
+                 *重启Kibana 
+                 * @param req RestartKibanaRequest
+                 * @return RestartKibanaOutcome
+                 */
+                RestartKibanaOutcome RestartKibana(const Model::RestartKibanaRequest &request);
+                void RestartKibanaAsync(const Model::RestartKibanaRequest& request, const RestartKibanaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartKibanaOutcomeCallable RestartKibanaCallable(const Model::RestartKibanaRequest& request);
 
                 /**
                  *用于重启集群节点

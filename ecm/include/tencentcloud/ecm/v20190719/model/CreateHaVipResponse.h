@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ecm/v20190719/model/HaVip.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,25 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取HAVIP对象。
+                     * @return HaVip HAVIP对象。
+                     */
+                    HaVip GetHaVip() const;
+
+                    /**
+                     * 判断参数 HaVip 是否已赋值
+                     * @return HaVip 是否已赋值
+                     */
+                    bool HaVipHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * HAVIP对象。
+                     */
+                    HaVip m_haVip;
+                    bool m_haVipHasBeenSet;
 
                 };
             }

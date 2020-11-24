@@ -28,63 +28,82 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DeleteProjectRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeviceDataHistoryItem.h
-  include/tencentcloud/iotexplorer/v20190423/model/ProductEntry.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetStudioProductListResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionResponse.h
-  include/tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ProjectEntry.h
   include/tencentcloud/iotexplorer/v20190423/model/GetProjectListRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/EventHistoryItem.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/TopicRulePayload.h
+  include/tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchStudioProductRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyProjectResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/LoRaGatewayLocation.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetProjectListResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyProjectRequest.h
-  include/tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateStudioProductRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ProductModelDefinition.h
-  include/tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteProjectResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ProjectEntryEx.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h
-  include/tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/TopicRuleInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeProjectRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetStudioProductListRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteDeviceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeviceInfo.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/LoRaGatewayItem.h
+  include/tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceResponse.h
-  include/tencentcloud/iotexplorer/v20190423/model/GetProjectListResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/TopicRule.h
+  include/tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateProjectRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/ProductEntry.h
   )
 
 set(iotexplorer_src
@@ -98,63 +117,82 @@ set(iotexplorer_src
   src/v20190423/model/DeleteProjectRequest.cpp
   src/v20190423/model/ListEventHistoryRequest.cpp
   src/v20190423/model/ListEventHistoryResponse.cpp
+  src/v20190423/model/ModifyTopicRuleRequest.cpp
   src/v20190423/model/DeviceDataHistoryItem.cpp
-  src/v20190423/model/ProductEntry.cpp
+  src/v20190423/model/GetTopicRuleListRequest.cpp
   src/v20190423/model/GetStudioProductListResponse.cpp
+  src/v20190423/model/GetLoRaGatewayListResponse.cpp
   src/v20190423/model/DescribeModelDefinitionResponse.cpp
   src/v20190423/model/ModifyModelDefinitionResponse.cpp
-  src/v20190423/model/GetLoRaGatewayListResponse.cpp
+  src/v20190423/model/DisableTopicRuleRequest.cpp
   src/v20190423/model/ProjectEntry.cpp
   src/v20190423/model/GetProjectListRequest.cpp
+  src/v20190423/model/ModifyLoRaGatewayResponse.cpp
   src/v20190423/model/DeleteStudioProductResponse.cpp
   src/v20190423/model/EventHistoryItem.cpp
+  src/v20190423/model/GetLoRaGatewayListRequest.cpp
   src/v20190423/model/DeleteDeviceRequest.cpp
   src/v20190423/model/GetDeviceListResponse.cpp
   src/v20190423/model/ModifyStudioProductResponse.cpp
   src/v20190423/model/ControlDeviceDataRequest.cpp
+  src/v20190423/model/TopicRulePayload.cpp
+  src/v20190423/model/SearchTopicRuleResponse.cpp
   src/v20190423/model/SearchStudioProductRequest.cpp
   src/v20190423/model/ReleaseStudioProductResponse.cpp
   src/v20190423/model/DescribeStudioProductResponse.cpp
   src/v20190423/model/DeleteLoRaGatewayRequest.cpp
   src/v20190423/model/ModifyProjectResponse.cpp
+  src/v20190423/model/DeleteTopicRuleResponse.cpp
   src/v20190423/model/ModifyModelDefinitionRequest.cpp
   src/v20190423/model/LoRaGatewayLocation.cpp
   src/v20190423/model/CreateStudioProductResponse.cpp
   src/v20190423/model/CallDeviceActionSyncRequest.cpp
   src/v20190423/model/DeleteStudioProductRequest.cpp
+  src/v20190423/model/GetProjectListResponse.cpp
+  src/v20190423/model/ModifyTopicRuleResponse.cpp
   src/v20190423/model/ModifyProjectRequest.cpp
-  src/v20190423/model/ModifyLoRaGatewayResponse.cpp
+  src/v20190423/model/EnableTopicRuleResponse.cpp
+  src/v20190423/model/DescribeTopicRuleRequest.cpp
+  src/v20190423/model/DescribeTopicRuleResponse.cpp
   src/v20190423/model/CallDeviceActionSyncResponse.cpp
   src/v20190423/model/CreateLoRaGatewayRequest.cpp
   src/v20190423/model/ModifyStudioProductRequest.cpp
   src/v20190423/model/DescribeDeviceDataHistoryResponse.cpp
   src/v20190423/model/CreateStudioProductRequest.cpp
   src/v20190423/model/ProductModelDefinition.cpp
-  src/v20190423/model/CreateProjectResponse.cpp
   src/v20190423/model/ReleaseStudioProductRequest.cpp
+  src/v20190423/model/CreateProjectResponse.cpp
+  src/v20190423/model/GetTopicRuleListResponse.cpp
   src/v20190423/model/DescribeModelDefinitionRequest.cpp
   src/v20190423/model/DeleteProjectResponse.cpp
   src/v20190423/model/CallDeviceActionAsyncResponse.cpp
   src/v20190423/model/CallDeviceActionAsyncRequest.cpp
   src/v20190423/model/ProjectEntryEx.cpp
+  src/v20190423/model/CreateTopicRuleResponse.cpp
   src/v20190423/model/DescribeDeviceDataResponse.cpp
   src/v20190423/model/CreateDeviceResponse.cpp
-  src/v20190423/model/GetLoRaGatewayListRequest.cpp
+  src/v20190423/model/CreateTopicRuleRequest.cpp
+  src/v20190423/model/TopicRuleInfo.cpp
   src/v20190423/model/CreateDeviceRequest.cpp
   src/v20190423/model/DescribeProjectRequest.cpp
   src/v20190423/model/GetStudioProductListRequest.cpp
+  src/v20190423/model/SearchTopicRuleRequest.cpp
   src/v20190423/model/DescribeDeviceDataRequest.cpp
   src/v20190423/model/DeleteDeviceResponse.cpp
   src/v20190423/model/DeviceInfo.cpp
+  src/v20190423/model/DeleteTopicRuleRequest.cpp
   src/v20190423/model/CreateLoRaGatewayResponse.cpp
   src/v20190423/model/DescribeDeviceRequest.cpp
   src/v20190423/model/GetDeviceListRequest.cpp
   src/v20190423/model/ModifyLoRaGatewayRequest.cpp
   src/v20190423/model/DeleteLoRaGatewayResponse.cpp
   src/v20190423/model/LoRaGatewayItem.cpp
+  src/v20190423/model/EnableTopicRuleRequest.cpp
   src/v20190423/model/DescribeDeviceResponse.cpp
-  src/v20190423/model/GetProjectListResponse.cpp
+  src/v20190423/model/TopicRule.cpp
+  src/v20190423/model/DisableTopicRuleResponse.cpp
   src/v20190423/model/CreateProjectRequest.cpp
+  src/v20190423/model/ProductEntry.cpp
   )
 
 set(iotexplorer_include

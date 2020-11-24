@@ -42,7 +42,103 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取HAVIP所在私有网络ID。
+                     * @return VpcId HAVIP所在私有网络ID。
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置HAVIP所在私有网络ID。
+                     * @param VpcId HAVIP所在私有网络ID。
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取HAVIP所在子网ID。
+                     * @return SubnetId HAVIP所在子网ID。
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置HAVIP所在子网ID。
+                     * @param SubnetId HAVIP所在子网ID。
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取HAVIP名称。
+                     * @return HaVipName HAVIP名称。
+                     */
+                    std::string GetHaVipName() const;
+
+                    /**
+                     * 设置HAVIP名称。
+                     * @param HaVipName HAVIP名称。
+                     */
+                    void SetHaVipName(const std::string& _haVipName);
+
+                    /**
+                     * 判断参数 HaVipName 是否已赋值
+                     * @return HaVipName 是否已赋值
+                     */
+                    bool HaVipNameHasBeenSet() const;
+
+                    /**
+                     * 获取指定虚拟IP地址，必须在VPC网段内且未被占用。不指定则自动分配。
+                     * @return Vip 指定虚拟IP地址，必须在VPC网段内且未被占用。不指定则自动分配。
+                     */
+                    std::string GetVip() const;
+
+                    /**
+                     * 设置指定虚拟IP地址，必须在VPC网段内且未被占用。不指定则自动分配。
+                     * @param Vip 指定虚拟IP地址，必须在VPC网段内且未被占用。不指定则自动分配。
+                     */
+                    void SetVip(const std::string& _vip);
+
+                    /**
+                     * 判断参数 Vip 是否已赋值
+                     * @return Vip 是否已赋值
+                     */
+                    bool VipHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * HAVIP所在私有网络ID。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * HAVIP所在子网ID。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * HAVIP名称。
+                     */
+                    std::string m_haVipName;
+                    bool m_haVipNameHasBeenSet;
+
+                    /**
+                     * 指定虚拟IP地址，必须在VPC网段内且未被占用。不指定则自动分配。
+                     */
+                    std::string m_vip;
+                    bool m_vipHasBeenSet;
 
                 };
             }

@@ -46,7 +46,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_kibanaPrivatePortHasBeenSet(false),
     m_scaleTypeHasBeenSet(false),
     m_multiZoneInfoHasBeenSet(false),
-    m_sceneTypeHasBeenSet(false)
+    m_sceneTypeHasBeenSet(false),
+    m_kibanaConfigHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,14 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "SceneType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sceneType, allocator);
+    }
+
+    if (m_kibanaConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KibanaConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_kibanaConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -632,6 +641,22 @@ void UpdateInstanceRequest::SetSceneType(const int64_t& _sceneType)
 bool UpdateInstanceRequest::SceneTypeHasBeenSet() const
 {
     return m_sceneTypeHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetKibanaConfig() const
+{
+    return m_kibanaConfig;
+}
+
+void UpdateInstanceRequest::SetKibanaConfig(const string& _kibanaConfig)
+{
+    m_kibanaConfig = _kibanaConfig;
+    m_kibanaConfigHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::KibanaConfigHasBeenSet() const
+{
+    return m_kibanaConfigHasBeenSet;
 }
 
 

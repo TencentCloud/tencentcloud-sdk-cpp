@@ -23,7 +23,12 @@ using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeHaVipsRequest::DescribeHaVipsRequest()
+DescribeHaVipsRequest::DescribeHaVipsRequest() :
+    m_haVipIdsHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_ecmRegionHasBeenSet(false)
 {
 }
 
@@ -34,6 +39,58 @@ string DescribeHaVipsRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_haVipIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HaVipIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_haVipIds.begin(); itr != m_haVipIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_ecmRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EcmRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_ecmRegion.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +98,85 @@ string DescribeHaVipsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> DescribeHaVipsRequest::GetHaVipIds() const
+{
+    return m_haVipIds;
+}
+
+void DescribeHaVipsRequest::SetHaVipIds(const vector<string>& _haVipIds)
+{
+    m_haVipIds = _haVipIds;
+    m_haVipIdsHasBeenSet = true;
+}
+
+bool DescribeHaVipsRequest::HaVipIdsHasBeenSet() const
+{
+    return m_haVipIdsHasBeenSet;
+}
+
+vector<Filter> DescribeHaVipsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeHaVipsRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeHaVipsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+int64_t DescribeHaVipsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeHaVipsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeHaVipsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeHaVipsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeHaVipsRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeHaVipsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string DescribeHaVipsRequest::GetEcmRegion() const
+{
+    return m_ecmRegion;
+}
+
+void DescribeHaVipsRequest::SetEcmRegion(const string& _ecmRegion)
+{
+    m_ecmRegion = _ecmRegion;
+    m_ecmRegionHasBeenSet = true;
+}
+
+bool DescribeHaVipsRequest::EcmRegionHasBeenSet() const
+{
+    return m_ecmRegionHasBeenSet;
+}
 
 

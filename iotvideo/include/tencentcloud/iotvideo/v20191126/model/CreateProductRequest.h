@@ -254,6 +254,24 @@ Other-Overseas（其他境外地区）
                      */
                     bool OsHasBeenSet() const;
 
+                    /**
+                     * 获取芯片架构，只是针对操作系统为android的
+                     * @return ChipArch 芯片架构，只是针对操作系统为android的
+                     */
+                    std::string GetChipArch() const;
+
+                    /**
+                     * 设置芯片架构，只是针对操作系统为android的
+                     * @param ChipArch 芯片架构，只是针对操作系统为android的
+                     */
+                    void SetChipArch(const std::string& _chipArch);
+
+                    /**
+                     * 判断参数 ChipArch 是否已赋值
+                     * @return ChipArch 是否已赋值
+                     */
+                    bool ChipArchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,6 +341,12 @@ Other-Overseas（其他境外地区）
                      */
                     std::string m_os;
                     bool m_osHasBeenSet;
+
+                    /**
+                     * 芯片架构，只是针对操作系统为android的
+                     */
+                    std::string m_chipArch;
+                    bool m_chipArchHasBeenSet;
 
                 };
             }

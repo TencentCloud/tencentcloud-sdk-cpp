@@ -298,6 +298,49 @@ EsClient::RestartInstanceOutcomeCallable EsClient::RestartInstanceCallable(const
     return task->get_future();
 }
 
+EsClient::RestartKibanaOutcome EsClient::RestartKibana(const RestartKibanaRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartKibana");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartKibanaResponse rsp = RestartKibanaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartKibanaOutcome(rsp);
+        else
+            return RestartKibanaOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartKibanaOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::RestartKibanaAsync(const RestartKibanaRequest& request, const RestartKibanaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartKibana(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::RestartKibanaOutcomeCallable EsClient::RestartKibanaCallable(const RestartKibanaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartKibanaOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartKibana(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::RestartNodesOutcome EsClient::RestartNodes(const RestartNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "RestartNodes");

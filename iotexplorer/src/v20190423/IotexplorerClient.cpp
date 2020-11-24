@@ -341,6 +341,49 @@ IotexplorerClient::CreateStudioProductOutcomeCallable IotexplorerClient::CreateS
     return task->get_future();
 }
 
+IotexplorerClient::CreateTopicRuleOutcome IotexplorerClient::CreateTopicRule(const CreateTopicRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTopicRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTopicRuleResponse rsp = CreateTopicRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTopicRuleOutcome(rsp);
+        else
+            return CreateTopicRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTopicRuleOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTopicRuleAsync(const CreateTopicRuleRequest& request, const CreateTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTopicRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateTopicRuleOutcomeCallable IotexplorerClient::CreateTopicRuleCallable(const CreateTopicRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTopicRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DeleteDeviceOutcome IotexplorerClient::DeleteDevice(const DeleteDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDevice");
@@ -506,6 +549,49 @@ IotexplorerClient::DeleteStudioProductOutcomeCallable IotexplorerClient::DeleteS
         [this, request]()
         {
             return this->DeleteStudioProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DeleteTopicRuleOutcome IotexplorerClient::DeleteTopicRule(const DeleteTopicRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTopicRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTopicRuleResponse rsp = DeleteTopicRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTopicRuleOutcome(rsp);
+        else
+            return DeleteTopicRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTopicRuleOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteTopicRuleAsync(const DeleteTopicRuleRequest& request, const DeleteTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTopicRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DeleteTopicRuleOutcomeCallable IotexplorerClient::DeleteTopicRuleCallable(const DeleteTopicRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTopicRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTopicRule(request);
         }
     );
 
@@ -771,6 +857,135 @@ IotexplorerClient::DescribeStudioProductOutcomeCallable IotexplorerClient::Descr
     return task->get_future();
 }
 
+IotexplorerClient::DescribeTopicRuleOutcome IotexplorerClient::DescribeTopicRule(const DescribeTopicRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopicRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopicRuleResponse rsp = DescribeTopicRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopicRuleOutcome(rsp);
+        else
+            return DescribeTopicRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopicRuleOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTopicRuleAsync(const DescribeTopicRuleRequest& request, const DescribeTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopicRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeTopicRuleOutcomeCallable IotexplorerClient::DescribeTopicRuleCallable(const DescribeTopicRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopicRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DisableTopicRuleOutcome IotexplorerClient::DisableTopicRule(const DisableTopicRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableTopicRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableTopicRuleResponse rsp = DisableTopicRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableTopicRuleOutcome(rsp);
+        else
+            return DisableTopicRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableTopicRuleOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DisableTopicRuleAsync(const DisableTopicRuleRequest& request, const DisableTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableTopicRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DisableTopicRuleOutcomeCallable IotexplorerClient::DisableTopicRuleCallable(const DisableTopicRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableTopicRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::EnableTopicRuleOutcome IotexplorerClient::EnableTopicRule(const EnableTopicRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableTopicRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableTopicRuleResponse rsp = EnableTopicRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableTopicRuleOutcome(rsp);
+        else
+            return EnableTopicRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableTopicRuleOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::EnableTopicRuleAsync(const EnableTopicRuleRequest& request, const EnableTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableTopicRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::EnableTopicRuleOutcomeCallable IotexplorerClient::EnableTopicRuleCallable(const EnableTopicRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableTopicRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::GetDeviceListOutcome IotexplorerClient::GetDeviceList(const GetDeviceListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetDeviceList");
@@ -936,6 +1151,49 @@ IotexplorerClient::GetStudioProductListOutcomeCallable IotexplorerClient::GetStu
         [this, request]()
         {
             return this->GetStudioProductList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::GetTopicRuleListOutcome IotexplorerClient::GetTopicRuleList(const GetTopicRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTopicRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTopicRuleListResponse rsp = GetTopicRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTopicRuleListOutcome(rsp);
+        else
+            return GetTopicRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTopicRuleListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetTopicRuleListAsync(const GetTopicRuleListRequest& request, const GetTopicRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTopicRuleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetTopicRuleListOutcomeCallable IotexplorerClient::GetTopicRuleListCallable(const GetTopicRuleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTopicRuleListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTopicRuleList(request);
         }
     );
 
@@ -1158,6 +1416,49 @@ IotexplorerClient::ModifyStudioProductOutcomeCallable IotexplorerClient::ModifyS
     return task->get_future();
 }
 
+IotexplorerClient::ModifyTopicRuleOutcome IotexplorerClient::ModifyTopicRule(const ModifyTopicRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTopicRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTopicRuleResponse rsp = ModifyTopicRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTopicRuleOutcome(rsp);
+        else
+            return ModifyTopicRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTopicRuleOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyTopicRuleAsync(const ModifyTopicRuleRequest& request, const ModifyTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTopicRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ModifyTopicRuleOutcomeCallable IotexplorerClient::ModifyTopicRuleCallable(const ModifyTopicRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTopicRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::ReleaseStudioProductOutcome IotexplorerClient::ReleaseStudioProduct(const ReleaseStudioProductRequest &request)
 {
     auto outcome = MakeRequest(request, "ReleaseStudioProduct");
@@ -1237,6 +1538,49 @@ IotexplorerClient::SearchStudioProductOutcomeCallable IotexplorerClient::SearchS
         [this, request]()
         {
             return this->SearchStudioProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::SearchTopicRuleOutcome IotexplorerClient::SearchTopicRule(const SearchTopicRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchTopicRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchTopicRuleResponse rsp = SearchTopicRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchTopicRuleOutcome(rsp);
+        else
+            return SearchTopicRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchTopicRuleOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::SearchTopicRuleAsync(const SearchTopicRuleRequest& request, const SearchTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchTopicRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::SearchTopicRuleOutcomeCallable IotexplorerClient::SearchTopicRuleCallable(const SearchTopicRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchTopicRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchTopicRule(request);
         }
     );
 

@@ -23,7 +23,8 @@ using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace rapidjson;
 using namespace std;
 
-DeleteHaVipRequest::DeleteHaVipRequest()
+DeleteHaVipRequest::DeleteHaVipRequest() :
+    m_haVipIdHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,14 @@ string DeleteHaVipRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_haVipIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HaVipId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_haVipId.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +50,21 @@ string DeleteHaVipRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteHaVipRequest::GetHaVipId() const
+{
+    return m_haVipId;
+}
+
+void DeleteHaVipRequest::SetHaVipId(const string& _haVipId)
+{
+    m_haVipId = _haVipId;
+    m_haVipIdHasBeenSet = true;
+}
+
+bool DeleteHaVipRequest::HaVipIdHasBeenSet() const
+{
+    return m_haVipIdHasBeenSet;
+}
 
 

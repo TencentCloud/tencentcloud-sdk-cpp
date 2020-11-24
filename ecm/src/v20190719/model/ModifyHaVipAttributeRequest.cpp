@@ -23,7 +23,9 @@ using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace rapidjson;
 using namespace std;
 
-ModifyHaVipAttributeRequest::ModifyHaVipAttributeRequest()
+ModifyHaVipAttributeRequest::ModifyHaVipAttributeRequest() :
+    m_haVipIdHasBeenSet(false),
+    m_haVipNameHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,22 @@ string ModifyHaVipAttributeRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_haVipIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HaVipId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_haVipId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_haVipNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HaVipName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_haVipName.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +59,37 @@ string ModifyHaVipAttributeRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyHaVipAttributeRequest::GetHaVipId() const
+{
+    return m_haVipId;
+}
+
+void ModifyHaVipAttributeRequest::SetHaVipId(const string& _haVipId)
+{
+    m_haVipId = _haVipId;
+    m_haVipIdHasBeenSet = true;
+}
+
+bool ModifyHaVipAttributeRequest::HaVipIdHasBeenSet() const
+{
+    return m_haVipIdHasBeenSet;
+}
+
+string ModifyHaVipAttributeRequest::GetHaVipName() const
+{
+    return m_haVipName;
+}
+
+void ModifyHaVipAttributeRequest::SetHaVipName(const string& _haVipName)
+{
+    m_haVipName = _haVipName;
+    m_haVipNameHasBeenSet = true;
+}
+
+bool ModifyHaVipAttributeRequest::HaVipNameHasBeenSet() const
+{
+    return m_haVipNameHasBeenSet;
+}
 
 

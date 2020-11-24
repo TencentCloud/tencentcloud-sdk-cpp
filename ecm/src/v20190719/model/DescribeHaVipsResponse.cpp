@@ -24,7 +24,9 @@ using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeHaVipsResponse::DescribeHaVipsResponse()
+DescribeHaVipsResponse::DescribeHaVipsResponse() :
+    m_totalCountHasBeenSet(false),
+    m_haVipSetHasBeenSet(false)
 {
 }
 
@@ -62,9 +64,59 @@ CoreInternalOutcome DescribeHaVipsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HaVipSet") && !rsp["HaVipSet"].IsNull())
+    {
+        if (!rsp["HaVipSet"].IsArray())
+            return CoreInternalOutcome(Error("response `HaVipSet` is not array type"));
+
+        const Value &tmpValue = rsp["HaVipSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HaVip item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_haVipSet.push_back(item);
+        }
+        m_haVipSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+int64_t DescribeHaVipsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeHaVipsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<HaVip> DescribeHaVipsResponse::GetHaVipSet() const
+{
+    return m_haVipSet;
+}
+
+bool DescribeHaVipsResponse::HaVipSetHasBeenSet() const
+{
+    return m_haVipSetHasBeenSet;
+}
 
 

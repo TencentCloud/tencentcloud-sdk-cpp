@@ -28,6 +28,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/EsPublicAcl.h
   include/tencentcloud/es/v20180416/model/DictInfo.h
   include/tencentcloud/es/v20180416/model/RestartInstanceResponse.h
+  include/tencentcloud/es/v20180416/model/RestartKibanaRequest.h
   include/tencentcloud/es/v20180416/model/CreateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsRequest.h
   include/tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h
@@ -57,6 +58,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h
+  include/tencentcloud/es/v20180416/model/RestartKibanaResponse.h
   include/tencentcloud/es/v20180416/model/Operation.h
   )
 
@@ -71,6 +73,7 @@ set(es_src
   src/v20180416/model/EsPublicAcl.cpp
   src/v20180416/model/DictInfo.cpp
   src/v20180416/model/RestartInstanceResponse.cpp
+  src/v20180416/model/RestartKibanaRequest.cpp
   src/v20180416/model/CreateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceLogsRequest.cpp
   src/v20180416/model/UpgradeLicenseRequest.cpp
@@ -100,6 +103,7 @@ set(es_src
   src/v20180416/model/UpgradeInstanceResponse.cpp
   src/v20180416/model/UpdateInstanceResponse.cpp
   src/v20180416/model/UpgradeInstanceRequest.cpp
+  src/v20180416/model/RestartKibanaResponse.cpp
   src/v20180416/model/Operation.cpp
   )
 

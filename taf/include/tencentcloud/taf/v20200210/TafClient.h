@@ -29,6 +29,8 @@
 #include <tencentcloud/taf/v20200210/model/EnhanceTaDegreeResponse.h>
 #include <tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceRequest.h>
 #include <tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceResponse.h>
+#include <tencentcloud/taf/v20200210/model/RecognizeEffectiveFlowRequest.h>
+#include <tencentcloud/taf/v20200210/model/RecognizeEffectiveFlowResponse.h>
 #include <tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceRequest.h>
 #include <tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceResponse.h>
 #include <tencentcloud/taf/v20200210/model/RecognizeTargetAudienceRequest.h>
@@ -58,6 +60,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RecognizeCustomizedAudienceResponse> RecognizeCustomizedAudienceOutcome;
                 typedef std::future<RecognizeCustomizedAudienceOutcome> RecognizeCustomizedAudienceOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::RecognizeCustomizedAudienceRequest&, RecognizeCustomizedAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeCustomizedAudienceAsyncHandler;
+                typedef Outcome<Error, Model::RecognizeEffectiveFlowResponse> RecognizeEffectiveFlowOutcome;
+                typedef std::future<RecognizeEffectiveFlowOutcome> RecognizeEffectiveFlowOutcomeCallable;
+                typedef std::function<void(const TafClient*, const Model::RecognizeEffectiveFlowRequest&, RecognizeEffectiveFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeEffectiveFlowAsyncHandler;
                 typedef Outcome<Error, Model::RecognizePreciseTargetAudienceResponse> RecognizePreciseTargetAudienceOutcome;
                 typedef std::future<RecognizePreciseTargetAudienceOutcome> RecognizePreciseTargetAudienceOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::RecognizePreciseTargetAudienceRequest&, RecognizePreciseTargetAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePreciseTargetAudienceAsyncHandler;
@@ -96,6 +101,15 @@ namespace TencentCloud
                 RecognizeCustomizedAudienceOutcome RecognizeCustomizedAudience(const Model::RecognizeCustomizedAudienceRequest &request);
                 void RecognizeCustomizedAudienceAsync(const Model::RecognizeCustomizedAudienceRequest& request, const RecognizeCustomizedAudienceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeCustomizedAudienceOutcomeCallable RecognizeCustomizedAudienceCallable(const Model::RecognizeCustomizedAudienceRequest& request);
+
+                /**
+                 *筛选敏感易骚扰人群
+                 * @param req RecognizeEffectiveFlowRequest
+                 * @return RecognizeEffectiveFlowOutcome
+                 */
+                RecognizeEffectiveFlowOutcome RecognizeEffectiveFlow(const Model::RecognizeEffectiveFlowRequest &request);
+                void RecognizeEffectiveFlowAsync(const Model::RecognizeEffectiveFlowRequest& request, const RecognizeEffectiveFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeEffectiveFlowOutcomeCallable RecognizeEffectiveFlowCallable(const Model::RecognizeEffectiveFlowRequest& request);
 
                 /**
                  *流量反欺诈-流量验准高级版

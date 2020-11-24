@@ -33,7 +33,8 @@ CreateProductRequest::CreateProductRequest() :
     m_productRegionHasBeenSet(false),
     m_productCateHasBeenSet(false),
     m_accessModeHasBeenSet(false),
-    m_osHasBeenSet(false)
+    m_osHasBeenSet(false),
+    m_chipArchHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,14 @@ string CreateProductRequest::ToJsonString() const
         string key = "Os";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_os.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chipArchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ChipArch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_chipArch.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -295,6 +304,22 @@ void CreateProductRequest::SetOs(const string& _os)
 bool CreateProductRequest::OsHasBeenSet() const
 {
     return m_osHasBeenSet;
+}
+
+string CreateProductRequest::GetChipArch() const
+{
+    return m_chipArch;
+}
+
+void CreateProductRequest::SetChipArch(const string& _chipArch)
+{
+    m_chipArch = _chipArch;
+    m_chipArchHasBeenSet = true;
+}
+
+bool CreateProductRequest::ChipArchHasBeenSet() const
+{
+    return m_chipArchHasBeenSet;
 }
 
 

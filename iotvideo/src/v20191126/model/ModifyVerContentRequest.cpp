@@ -44,7 +44,7 @@ string ModifyVerContentRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_productId, allocator);
+        d.AddMember(iKey, Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_otaVersionHasBeenSet)
@@ -88,12 +88,12 @@ string ModifyVerContentRequest::ToJsonString() const
 }
 
 
-int64_t ModifyVerContentRequest::GetProductId() const
+string ModifyVerContentRequest::GetProductId() const
 {
     return m_productId;
 }
 
-void ModifyVerContentRequest::SetProductId(const int64_t& _productId)
+void ModifyVerContentRequest::SetProductId(const string& _productId)
 {
     m_productId = _productId;
     m_productIdHasBeenSet = true;
