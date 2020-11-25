@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳，Unix 时间戳
-                     * @return EndTimeStamp 结束时间戳，Unix 时间戳
+                     * 获取结束时间戳，Unix 时间戳，查询时间范围最大为90天
+                     * @return EndTimeStamp 结束时间戳，Unix 时间戳，查询时间范围最大为90天
                      */
                     int64_t GetEndTimeStamp() const;
 
                     /**
-                     * 设置结束时间戳，Unix 时间戳
-                     * @param EndTimeStamp 结束时间戳，Unix 时间戳
+                     * 设置结束时间戳，Unix 时间戳，查询时间范围最大为90天
+                     * @param EndTimeStamp 结束时间戳，Unix 时间戳，查询时间范围最大为90天
                      */
                     void SetEndTimeStamp(const int64_t& _endTimeStamp);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_startTimeStampHasBeenSet;
 
                     /**
-                     * 结束时间戳，Unix 时间戳
+                     * 结束时间戳，Unix 时间戳，查询时间范围最大为90天
                      */
                     int64_t m_endTimeStamp;
                     bool m_endTimeStampHasBeenSet;

@@ -141,6 +141,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/QueryMigrationCheckProcessResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/RecycleDBInstanceRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/RecycleDBInstanceResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/RecycleReadOnlyGroupRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/RecycleReadOnlyGroupResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/RemoveBackupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/RemoveBackupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/RenewDBInstanceRequest.h>
@@ -356,6 +358,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RecycleDBInstanceResponse> RecycleDBInstanceOutcome;
                 typedef std::future<RecycleDBInstanceOutcome> RecycleDBInstanceOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::RecycleDBInstanceRequest&, RecycleDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecycleDBInstanceAsyncHandler;
+                typedef Outcome<Error, Model::RecycleReadOnlyGroupResponse> RecycleReadOnlyGroupOutcome;
+                typedef std::future<RecycleReadOnlyGroupOutcome> RecycleReadOnlyGroupOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::RecycleReadOnlyGroupRequest&, RecycleReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecycleReadOnlyGroupAsyncHandler;
                 typedef Outcome<Error, Model::RemoveBackupsResponse> RemoveBackupsOutcome;
                 typedef std::future<RemoveBackupsOutcome> RemoveBackupsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::RemoveBackupsRequest&, RemoveBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveBackupsAsyncHandler;
@@ -927,6 +932,15 @@ namespace TencentCloud
                 RecycleDBInstanceOutcomeCallable RecycleDBInstanceCallable(const Model::RecycleDBInstanceRequest& request);
 
                 /**
+                 *本接口（RecycleReadOnlyGroup）立即回收只读组的资源，只读组占用的vip等资源将立即释放且不可找回。
+                 * @param req RecycleReadOnlyGroupRequest
+                 * @return RecycleReadOnlyGroupOutcome
+                 */
+                RecycleReadOnlyGroupOutcome RecycleReadOnlyGroup(const Model::RecycleReadOnlyGroupRequest &request);
+                void RecycleReadOnlyGroupAsync(const Model::RecycleReadOnlyGroupRequest& request, const RecycleReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecycleReadOnlyGroupOutcomeCallable RecycleReadOnlyGroupCallable(const Model::RecycleReadOnlyGroupRequest& request);
+
+                /**
                  *本接口（RemoveBackups）可以删除用户手动创建的备份文件。待删除的备份策略可以是实例备份，也可以是多库备份。
                  * @param req RemoveBackupsRequest
                  * @return RemoveBackupsOutcome
@@ -1017,7 +1031,7 @@ namespace TencentCloud
                 StopMigrationOutcomeCallable StopMigrationCallable(const Model::StopMigrationRequest& request);
 
                 /**
-                 *本接口(TerminateDBInstance)用于主动销毁按量计费实例。
+                 *本接口(TerminateDBInstance)用于主动隔离实例，使得实例进入回收站。
                  * @param req TerminateDBInstanceRequest
                  * @return TerminateDBInstanceOutcome
                  */

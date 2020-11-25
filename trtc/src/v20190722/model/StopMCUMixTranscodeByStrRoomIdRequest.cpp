@@ -14,42 +14,42 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/sqlserver/v20180328/model/DescribeProductConfigRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeByStrRoomIdRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Sqlserver::V20180328::Model;
+using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeProductConfigRequest::DescribeProductConfigRequest() :
-    m_zoneHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+StopMCUMixTranscodeByStrRoomIdRequest::StopMCUMixTranscodeByStrRoomIdRequest() :
+    m_sdkAppIdHasBeenSet(false),
+    m_strRoomIdHasBeenSet(false)
 {
 }
 
-string DescribeProductConfigRequest::ToJsonString() const
+string StopMCUMixTranscodeByStrRoomIdRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_zoneHasBeenSet)
+    if (m_sdkAppIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Zone";
+        string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_sdkAppId, allocator);
     }
 
-    if (m_instanceTypeHasBeenSet)
+    if (m_strRoomIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "InstanceType";
+        string key = "StrRoomId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_strRoomId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -60,36 +60,36 @@ string DescribeProductConfigRequest::ToJsonString() const
 }
 
 
-string DescribeProductConfigRequest::GetZone() const
+uint64_t StopMCUMixTranscodeByStrRoomIdRequest::GetSdkAppId() const
 {
-    return m_zone;
+    return m_sdkAppId;
 }
 
-void DescribeProductConfigRequest::SetZone(const string& _zone)
+void StopMCUMixTranscodeByStrRoomIdRequest::SetSdkAppId(const uint64_t& _sdkAppId)
 {
-    m_zone = _zone;
-    m_zoneHasBeenSet = true;
+    m_sdkAppId = _sdkAppId;
+    m_sdkAppIdHasBeenSet = true;
 }
 
-bool DescribeProductConfigRequest::ZoneHasBeenSet() const
+bool StopMCUMixTranscodeByStrRoomIdRequest::SdkAppIdHasBeenSet() const
 {
-    return m_zoneHasBeenSet;
+    return m_sdkAppIdHasBeenSet;
 }
 
-string DescribeProductConfigRequest::GetInstanceType() const
+string StopMCUMixTranscodeByStrRoomIdRequest::GetStrRoomId() const
 {
-    return m_instanceType;
+    return m_strRoomId;
 }
 
-void DescribeProductConfigRequest::SetInstanceType(const string& _instanceType)
+void StopMCUMixTranscodeByStrRoomIdRequest::SetStrRoomId(const string& _strRoomId)
 {
-    m_instanceType = _instanceType;
-    m_instanceTypeHasBeenSet = true;
+    m_strRoomId = _strRoomId;
+    m_strRoomIdHasBeenSet = true;
 }
 
-bool DescribeProductConfigRequest::InstanceTypeHasBeenSet() const
+bool StopMCUMixTranscodeByStrRoomIdRequest::StrRoomIdHasBeenSet() const
 {
-    return m_instanceTypeHasBeenSet;
+    return m_strRoomIdHasBeenSet;
 }
 
 

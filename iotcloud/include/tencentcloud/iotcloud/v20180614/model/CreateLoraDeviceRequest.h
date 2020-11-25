@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品 ID ，创建产品时腾讯云为用户分配全局唯一的 ID
-                     * @return ProductId 产品 ID ，创建产品时腾讯云为用户分配全局唯一的 ID
+                     * 获取产品Id ，创建产品时腾讯云为用户分配全局唯一的Id
+                     * @return ProductId 产品Id ，创建产品时腾讯云为用户分配全局唯一的Id
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品 ID ，创建产品时腾讯云为用户分配全局唯一的 ID
-                     * @param ProductId 产品 ID ，创建产品时腾讯云为用户分配全局唯一的 ID
+                     * 设置产品Id ，创建产品时腾讯云为用户分配全局唯一的Id
+                     * @param ProductId 产品Id ，创建产品时腾讯云为用户分配全局唯一的Id
                      */
                     void SetProductId(const std::string& _productId);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品 ID ，创建产品时腾讯云为用户分配全局唯一的 ID
+                     * 产品Id ，创建产品时腾讯云为用户分配全局唯一的Id
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;

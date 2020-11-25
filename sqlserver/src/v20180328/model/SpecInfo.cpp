@@ -35,7 +35,9 @@ SpecInfo::SpecInfo() :
     m_suitInfoHasBeenSet(false),
     m_pidHasBeenSet(false),
     m_postPidHasBeenSet(false),
-    m_payModeStatusHasBeenSet(false)
+    m_payModeStatusHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_multiZonesStatusHasBeenSet(false)
 {
 }
 
@@ -187,6 +189,26 @@ CoreInternalOutcome SpecInfo::Deserialize(const Value &value)
         m_payModeStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SpecInfo.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MultiZonesStatus") && !value["MultiZonesStatus"].IsNull())
+    {
+        if (!value["MultiZonesStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SpecInfo.MultiZonesStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_multiZonesStatus = string(value["MultiZonesStatus"].GetString());
+        m_multiZonesStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -309,6 +331,22 @@ void SpecInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "PayModeStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_payModeStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiZonesStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MultiZonesStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_multiZonesStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -536,5 +574,37 @@ void SpecInfo::SetPayModeStatus(const string& _payModeStatus)
 bool SpecInfo::PayModeStatusHasBeenSet() const
 {
     return m_payModeStatusHasBeenSet;
+}
+
+string SpecInfo::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void SpecInfo::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool SpecInfo::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+string SpecInfo::GetMultiZonesStatus() const
+{
+    return m_multiZonesStatus;
+}
+
+void SpecInfo::SetMultiZonesStatus(const string& _multiZonesStatus)
+{
+    m_multiZonesStatus = _multiZonesStatus;
+    m_multiZonesStatusHasBeenSet = true;
+}
+
+bool SpecInfo::MultiZonesStatusHasBeenSet() const
+{
+    return m_multiZonesStatusHasBeenSet;
 }
 

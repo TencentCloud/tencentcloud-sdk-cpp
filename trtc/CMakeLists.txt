@@ -23,6 +23,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/RealtimeData.h
   include/tencentcloud/trtc/v20190722/model/DescribeAbnormalEventRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeTrtcInteractiveTimeResponse.h
+  include/tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeByStrRoomIdRequest.h
   include/tencentcloud/trtc/v20190722/model/LayoutParams.h
   include/tencentcloud/trtc/v20190722/model/TimeValue.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdRequest.h
@@ -50,8 +51,10 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/OutputParams.h
   include/tencentcloud/trtc/v20190722/model/EventMessage.h
   include/tencentcloud/trtc/v20190722/model/CreateTroubleInfoResponse.h
+  include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeByStrRoomIdRequest.h
   include/tencentcloud/trtc/v20190722/model/QualityData.h
   include/tencentcloud/trtc/v20190722/model/AbnormalEvent.h
+  include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeByStrRoomIdResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityRequest.h
   include/tencentcloud/trtc/v20190722/model/ScaleInfomation.h
   include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeResponse.h
@@ -78,6 +81,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeRecordStatisticResponse.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeHistoryScaleResponse.h
+  include/tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeByStrRoomIdResponse.h
   )
 
 set(trtc_src
@@ -86,6 +90,7 @@ set(trtc_src
   src/v20190722/model/RealtimeData.cpp
   src/v20190722/model/DescribeAbnormalEventRequest.cpp
   src/v20190722/model/DescribeTrtcInteractiveTimeResponse.cpp
+  src/v20190722/model/StartMCUMixTranscodeByStrRoomIdRequest.cpp
   src/v20190722/model/LayoutParams.cpp
   src/v20190722/model/TimeValue.cpp
   src/v20190722/model/DismissRoomByStrRoomIdRequest.cpp
@@ -113,8 +118,10 @@ set(trtc_src
   src/v20190722/model/OutputParams.cpp
   src/v20190722/model/EventMessage.cpp
   src/v20190722/model/CreateTroubleInfoResponse.cpp
+  src/v20190722/model/StopMCUMixTranscodeByStrRoomIdRequest.cpp
   src/v20190722/model/QualityData.cpp
   src/v20190722/model/AbnormalEvent.cpp
+  src/v20190722/model/StopMCUMixTranscodeByStrRoomIdResponse.cpp
   src/v20190722/model/DescribeRealtimeQualityRequest.cpp
   src/v20190722/model/ScaleInfomation.cpp
   src/v20190722/model/StopMCUMixTranscodeResponse.cpp
@@ -141,6 +148,7 @@ set(trtc_src
   src/v20190722/model/DescribeRecordStatisticResponse.cpp
   src/v20190722/model/DismissRoomByStrRoomIdResponse.cpp
   src/v20190722/model/DescribeHistoryScaleResponse.cpp
+  src/v20190722/model/StartMCUMixTranscodeByStrRoomIdResponse.cpp
   )
 
 set(trtc_include

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分省份分运营商错误码为4或5开头的状态码数据信息。
-                     * @return ProIspInfoList 分省份分运营商错误码为4或5开头的状态码数据信息。
+                     * 获取分省份分运营商错误码为2或3或4或5开头的状态码数据信息。
+                     * @return ProIspInfoList 分省份分运营商错误码为2或3或4或5开头的状态码数据信息。
                      */
                     std::vector<ProIspPlayCodeDataInfo> GetProIspInfoList() const;
 
@@ -179,7 +179,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分省份分运营商错误码为4或5开头的状态码数据信息。
+                     * 分省份分运营商错误码为2或3或4或5开头的状态码数据信息。
                      */
                     std::vector<ProIspPlayCodeDataInfo> m_proIspInfoList;
                     bool m_proIspInfoListHasBeenSet;

@@ -2577,6 +2577,49 @@ SqlserverClient::RecycleDBInstanceOutcomeCallable SqlserverClient::RecycleDBInst
     return task->get_future();
 }
 
+SqlserverClient::RecycleReadOnlyGroupOutcome SqlserverClient::RecycleReadOnlyGroup(const RecycleReadOnlyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecycleReadOnlyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecycleReadOnlyGroupResponse rsp = RecycleReadOnlyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecycleReadOnlyGroupOutcome(rsp);
+        else
+            return RecycleReadOnlyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return RecycleReadOnlyGroupOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::RecycleReadOnlyGroupAsync(const RecycleReadOnlyGroupRequest& request, const RecycleReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecycleReadOnlyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::RecycleReadOnlyGroupOutcomeCallable SqlserverClient::RecycleReadOnlyGroupCallable(const RecycleReadOnlyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecycleReadOnlyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->RecycleReadOnlyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::RemoveBackupsOutcome SqlserverClient::RemoveBackups(const RemoveBackupsRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveBackups");

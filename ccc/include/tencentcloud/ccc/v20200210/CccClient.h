@@ -107,7 +107,7 @@ namespace TencentCloud
                 DescribeIMCdrsOutcomeCallable DescribeIMCdrsCallable(const Model::DescribeIMCdrsRequest& request);
 
                 /**
-                 *获取电话呼叫统计信息
+                 *按实例获取电话消耗统计
                  * @param req DescribeTelCallInfoRequest
                  * @return DescribeTelCallInfoOutcome
                  */

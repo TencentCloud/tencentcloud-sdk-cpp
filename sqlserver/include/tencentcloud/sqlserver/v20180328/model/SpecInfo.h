@@ -302,6 +302,42 @@ namespace TencentCloud
                      */
                     bool PayModeStatusHasBeenSet() const;
 
+                    /**
+                     * 获取产品类型，HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-基础版本型
+                     * @return InstanceType 产品类型，HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-基础版本型
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置产品类型，HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-基础版本型
+                     * @param InstanceType 产品类型，HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-基础版本型
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有
+                     * @return MultiZonesStatus 跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有
+                     */
+                    std::string GetMultiZonesStatus() const;
+
+                    /**
+                     * 设置跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有
+                     * @param MultiZonesStatus 跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有
+                     */
+                    void SetMultiZonesStatus(const std::string& _multiZonesStatus);
+
+                    /**
+                     * 判断参数 MultiZonesStatus 是否已赋值
+                     * @return MultiZonesStatus 是否已赋值
+                     */
+                    bool MultiZonesStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -388,6 +424,18 @@ namespace TencentCloud
                      */
                     std::string m_payModeStatus;
                     bool m_payModeStatusHasBeenSet;
+
+                    /**
+                     * 产品类型，HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-基础版本型
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有
+                     */
+                    std::string m_multiZonesStatus;
+                    bool m_multiZonesStatusHasBeenSet;
 
                 };
             }
