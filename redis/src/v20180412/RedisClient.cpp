@@ -1201,6 +1201,49 @@ RedisClient::DescribeInstanceShardsOutcomeCallable RedisClient::DescribeInstance
     return task->get_future();
 }
 
+RedisClient::DescribeInstanceZoneInfoOutcome RedisClient::DescribeInstanceZoneInfo(const DescribeInstanceZoneInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceZoneInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceZoneInfoResponse rsp = DescribeInstanceZoneInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceZoneInfoOutcome(rsp);
+        else
+            return DescribeInstanceZoneInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceZoneInfoOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceZoneInfoAsync(const DescribeInstanceZoneInfoRequest& request, const DescribeInstanceZoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceZoneInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceZoneInfoOutcomeCallable RedisClient::DescribeInstanceZoneInfoCallable(const DescribeInstanceZoneInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceZoneInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceZoneInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeInstancesOutcome RedisClient::DescribeInstances(const DescribeInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstances");

@@ -54,7 +54,8 @@ CreateCloudBaseRunServerVersionRequest::CreateCloudBaseRunServerVersionRequest()
     m_accessTypeHasBeenSet(false),
     m_esInfoHasBeenSet(false),
     m_enableUnionHasBeenSet(false),
-    m_operatorRemarkHasBeenSet(false)
+    m_operatorRemarkHasBeenSet(false),
+    m_serverPathHasBeenSet(false)
 {
 }
 
@@ -322,6 +323,14 @@ string CreateCloudBaseRunServerVersionRequest::ToJsonString() const
         string key = "OperatorRemark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_operatorRemark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverPathHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServerPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_serverPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -826,6 +835,22 @@ void CreateCloudBaseRunServerVersionRequest::SetOperatorRemark(const string& _op
 bool CreateCloudBaseRunServerVersionRequest::OperatorRemarkHasBeenSet() const
 {
     return m_operatorRemarkHasBeenSet;
+}
+
+string CreateCloudBaseRunServerVersionRequest::GetServerPath() const
+{
+    return m_serverPath;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetServerPath(const string& _serverPath)
+{
+    m_serverPath = _serverPath;
+    m_serverPathHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::ServerPathHasBeenSet() const
+{
+    return m_serverPathHasBeenSet;
 }
 
 

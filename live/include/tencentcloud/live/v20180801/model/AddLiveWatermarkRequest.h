@@ -44,13 +44,21 @@ namespace TencentCloud
 
                     /**
                      * 获取水印图片 URL。
+URL中禁止包含的字符：
+ ;(){}$>`#"\'|
                      * @return PictureUrl 水印图片 URL。
+URL中禁止包含的字符：
+ ;(){}$>`#"\'|
                      */
                     std::string GetPictureUrl() const;
 
                     /**
                      * 设置水印图片 URL。
+URL中禁止包含的字符：
+ ;(){}$>`#"\'|
                      * @param PictureUrl 水印图片 URL。
+URL中禁止包含的字符：
+ ;(){}$>`#"\'|
                      */
                     void SetPictureUrl(const std::string& _pictureUrl);
 
@@ -137,14 +145,14 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
-                     * @return Height 水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
+                     * 获取水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
+                     * @return Height 水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
-                     * @param Height 水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
+                     * 设置水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
+                     * @param Height 水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -158,6 +166,8 @@ namespace TencentCloud
 
                     /**
                      * 水印图片 URL。
+URL中禁止包含的字符：
+ ;(){}$>`#"\'|
                      */
                     std::string m_pictureUrl;
                     bool m_pictureUrlHasBeenSet;
@@ -188,7 +198,7 @@ namespace TencentCloud
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
+                     * 水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

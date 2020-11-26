@@ -30,7 +30,9 @@ DomainCertInfo::DomainCertInfo() :
     m_certTypeHasBeenSet(false),
     m_certExpireTimeHasBeenSet(false),
     m_domainNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_certDomainsHasBeenSet(false),
+    m_cloudCertIdHasBeenSet(false)
 {
 }
 
@@ -129,6 +131,29 @@ CoreInternalOutcome DomainCertInfo::Deserialize(const Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("CertDomains") && !value["CertDomains"].IsNull())
+    {
+        if (!value["CertDomains"].IsArray())
+            return CoreInternalOutcome(Error("response `DomainCertInfo.CertDomains` is not array type"));
+
+        const Value &tmpValue = value["CertDomains"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_certDomains.push_back((*itr).GetString());
+        }
+        m_certDomainsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudCertId") && !value["CloudCertId"].IsNull())
+    {
+        if (!value["CloudCertId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainCertInfo.CloudCertId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudCertId = string(value["CloudCertId"].GetString());
+        m_cloudCertIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +231,27 @@ void DomainCertInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_certDomainsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CertDomains";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_certDomains.begin(); itr != m_certDomains.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cloudCertIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CloudCertId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cloudCertId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +399,37 @@ void DomainCertInfo::SetStatus(const int64_t& _status)
 bool DomainCertInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<string> DomainCertInfo::GetCertDomains() const
+{
+    return m_certDomains;
+}
+
+void DomainCertInfo::SetCertDomains(const vector<string>& _certDomains)
+{
+    m_certDomains = _certDomains;
+    m_certDomainsHasBeenSet = true;
+}
+
+bool DomainCertInfo::CertDomainsHasBeenSet() const
+{
+    return m_certDomainsHasBeenSet;
+}
+
+string DomainCertInfo::GetCloudCertId() const
+{
+    return m_cloudCertId;
+}
+
+void DomainCertInfo::SetCloudCertId(const string& _cloudCertId)
+{
+    m_cloudCertId = _cloudCertId;
+    m_cloudCertIdHasBeenSet = true;
+}
+
+bool DomainCertInfo::CloudCertIdHasBeenSet() const
+{
+    return m_cloudCertIdHasBeenSet;
 }
 

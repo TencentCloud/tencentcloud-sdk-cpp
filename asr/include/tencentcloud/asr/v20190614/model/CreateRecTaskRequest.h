@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)
-                     * @return SpeakerDiarization 是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)
+                     * 获取是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)
+                     * @return SpeakerDiarization 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)
                      */
                     int64_t GetSpeakerDiarization() const;
 
                     /**
-                     * 设置是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)
-                     * @param SpeakerDiarization 是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)
+                     * 设置是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)
+                     * @param SpeakerDiarization 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)
                      */
                     void SetSpeakerDiarization(const int64_t& _speakerDiarization);
 
@@ -173,17 +173,17 @@ namespace TencentCloud
                     bool SpeakerDiarizationHasBeenSet() const;
 
                     /**
-                     * 获取话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）
+                     * 获取说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。
 注：话者分离目前是beta版本，请根据您的需要谨慎使用
-                     * @return SpeakerNumber 话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）
+                     * @return SpeakerNumber 说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。
 注：话者分离目前是beta版本，请根据您的需要谨慎使用
                      */
                     int64_t GetSpeakerNumber() const;
 
                     /**
-                     * 设置话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）
+                     * 设置说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。
 注：话者分离目前是beta版本，请根据您的需要谨慎使用
-                     * @param SpeakerNumber 话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）
+                     * @param SpeakerNumber 说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。
 注：话者分离目前是beta版本，请根据您的需要谨慎使用
                      */
                     void SetSpeakerNumber(const int64_t& _speakerNumber);
@@ -411,13 +411,13 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 是否开启话者分离，0：不开启，1：开启(仅支持8k_zh/16k_zh引擎模型，单声道音频)
+                     * 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)
                      */
                     int64_t m_speakerDiarization;
                     bool m_speakerDiarizationHasBeenSet;
 
                     /**
-                     * 话者分离人数（需配合开启话者分离使用），支持2-10（8k_zh仅支持2， 16k_zh支持2-10）
+                     * 说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。
 注：话者分离目前是beta版本，请根据您的需要谨慎使用
                      */
                     int64_t m_speakerNumber;

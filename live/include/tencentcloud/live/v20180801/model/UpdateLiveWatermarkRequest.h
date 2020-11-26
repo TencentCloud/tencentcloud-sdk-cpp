@@ -66,13 +66,21 @@ namespace TencentCloud
 
                     /**
                      * 获取水印图片 URL。
+URL中禁止包含的字符：
+ ;(){}$>`#"\'|
                      * @return PictureUrl 水印图片 URL。
+URL中禁止包含的字符：
+ ;(){}$>`#"\'|
                      */
                     std::string GetPictureUrl() const;
 
                     /**
                      * 设置水印图片 URL。
+URL中禁止包含的字符：
+ ;(){}$>`#"\'|
                      * @param PictureUrl 水印图片 URL。
+URL中禁止包含的字符：
+ ;(){}$>`#"\'|
                      */
                     void SetPictureUrl(const std::string& _pictureUrl);
 
@@ -187,6 +195,8 @@ namespace TencentCloud
 
                     /**
                      * 水印图片 URL。
+URL中禁止包含的字符：
+ ;(){}$>`#"\'|
                      */
                     std::string m_pictureUrl;
                     bool m_pictureUrlHasBeenSet;

@@ -556,6 +556,49 @@ TcbClient::DescribeCloudBaseRunResourceOutcomeCallable TcbClient::DescribeCloudB
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseRunResourceForExtendOutcome TcbClient::DescribeCloudBaseRunResourceForExtend(const DescribeCloudBaseRunResourceForExtendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunResourceForExtend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunResourceForExtendResponse rsp = DescribeCloudBaseRunResourceForExtendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunResourceForExtendOutcome(rsp);
+        else
+            return DescribeCloudBaseRunResourceForExtendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunResourceForExtendOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunResourceForExtendAsync(const DescribeCloudBaseRunResourceForExtendRequest& request, const DescribeCloudBaseRunResourceForExtendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunResourceForExtend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunResourceForExtendOutcomeCallable TcbClient::DescribeCloudBaseRunResourceForExtendCallable(const DescribeCloudBaseRunResourceForExtendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunResourceForExtendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunResourceForExtend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeCloudBaseRunServerVersionOutcome TcbClient::DescribeCloudBaseRunServerVersion(const DescribeCloudBaseRunServerVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseRunServerVersion");

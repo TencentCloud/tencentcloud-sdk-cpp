@@ -216,6 +216,54 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取证书本身标识的域名列表。
+比如: ["*.x.com"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertDomains 证书本身标识的域名列表。
+比如: ["*.x.com"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetCertDomains() const;
+
+                    /**
+                     * 设置证书本身标识的域名列表。
+比如: ["*.x.com"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CertDomains 证书本身标识的域名列表。
+比如: ["*.x.com"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCertDomains(const std::vector<std::string>& _certDomains);
+
+                    /**
+                     * 判断参数 CertDomains 是否已赋值
+                     * @return CertDomains 是否已赋值
+                     */
+                    bool CertDomainsHasBeenSet() const;
+
+                    /**
+                     * 获取腾讯云ssl的证书Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudCertId 腾讯云ssl的证书Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCloudCertId() const;
+
+                    /**
+                     * 设置腾讯云ssl的证书Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CloudCertId 腾讯云ssl的证书Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCloudCertId(const std::string& _cloudCertId);
+
+                    /**
+                     * 判断参数 CloudCertId 是否已赋值
+                     * @return CloudCertId 是否已赋值
+                     */
+                    bool CloudCertIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +321,21 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 证书本身标识的域名列表。
+比如: ["*.x.com"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_certDomains;
+                    bool m_certDomainsHasBeenSet;
+
+                    /**
+                     * 腾讯云ssl的证书Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cloudCertId;
+                    bool m_cloudCertIdHasBeenSet;
 
                 };
             }

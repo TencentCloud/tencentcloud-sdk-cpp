@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool ZsopscopeHasBeenSet() const;
 
                     /**
-                     * 获取状态信息
-                     * @return Reason 状态信息
+                     * 获取查询的状态信息
+                     * @return Reason 查询的状态信息
                      */
                     std::string GetReason() const;
 
@@ -292,7 +292,7 @@ namespace TencentCloud
                     bool m_zsopscopeHasBeenSet;
 
                     /**
-                     * 状态信息
+                     * 查询的状态信息
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;

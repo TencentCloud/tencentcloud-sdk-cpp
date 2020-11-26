@@ -77,6 +77,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceSecurityGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceShardsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceShardsResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceZoneInfoRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceZoneInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstancesRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstancesResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h>
@@ -242,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstanceShardsResponse> DescribeInstanceShardsOutcome;
                 typedef std::future<DescribeInstanceShardsOutcome> DescribeInstanceShardsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceShardsRequest&, DescribeInstanceShardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceShardsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceZoneInfoResponse> DescribeInstanceZoneInfoOutcome;
+                typedef std::future<DescribeInstanceZoneInfoOutcome> DescribeInstanceZoneInfoOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceZoneInfoRequest&, DescribeInstanceZoneInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceZoneInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
@@ -592,6 +597,15 @@ namespace TencentCloud
                 DescribeInstanceShardsOutcome DescribeInstanceShards(const Model::DescribeInstanceShardsRequest &request);
                 void DescribeInstanceShardsAsync(const Model::DescribeInstanceShardsRequest& request, const DescribeInstanceShardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceShardsOutcomeCallable DescribeInstanceShardsCallable(const Model::DescribeInstanceShardsRequest& request);
+
+                /**
+                 *查询Redis节点信息
+                 * @param req DescribeInstanceZoneInfoRequest
+                 * @return DescribeInstanceZoneInfoOutcome
+                 */
+                DescribeInstanceZoneInfoOutcome DescribeInstanceZoneInfo(const Model::DescribeInstanceZoneInfoRequest &request);
+                void DescribeInstanceZoneInfoAsync(const Model::DescribeInstanceZoneInfoRequest& request, const DescribeInstanceZoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceZoneInfoOutcomeCallable DescribeInstanceZoneInfoCallable(const Model::DescribeInstanceZoneInfoRequest& request);
 
                 /**
                  *查询Redis实例列表
