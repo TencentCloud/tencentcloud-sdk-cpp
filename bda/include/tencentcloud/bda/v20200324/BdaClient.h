@@ -27,12 +27,16 @@
 #include <tencentcloud/bda/v20200324/model/CreateGroupResponse.h>
 #include <tencentcloud/bda/v20200324/model/CreatePersonRequest.h>
 #include <tencentcloud/bda/v20200324/model/CreatePersonResponse.h>
+#include <tencentcloud/bda/v20200324/model/CreateSegmentationTaskRequest.h>
+#include <tencentcloud/bda/v20200324/model/CreateSegmentationTaskResponse.h>
 #include <tencentcloud/bda/v20200324/model/CreateTraceRequest.h>
 #include <tencentcloud/bda/v20200324/model/CreateTraceResponse.h>
 #include <tencentcloud/bda/v20200324/model/DeleteGroupRequest.h>
 #include <tencentcloud/bda/v20200324/model/DeleteGroupResponse.h>
 #include <tencentcloud/bda/v20200324/model/DeletePersonRequest.h>
 #include <tencentcloud/bda/v20200324/model/DeletePersonResponse.h>
+#include <tencentcloud/bda/v20200324/model/DescribeSegmentationTaskRequest.h>
+#include <tencentcloud/bda/v20200324/model/DescribeSegmentationTaskResponse.h>
 #include <tencentcloud/bda/v20200324/model/DetectBodyRequest.h>
 #include <tencentcloud/bda/v20200324/model/DetectBodyResponse.h>
 #include <tencentcloud/bda/v20200324/model/DetectBodyJointsRequest.h>
@@ -51,6 +55,8 @@
 #include <tencentcloud/bda/v20200324/model/SegmentCustomizedPortraitPicResponse.h>
 #include <tencentcloud/bda/v20200324/model/SegmentPortraitPicRequest.h>
 #include <tencentcloud/bda/v20200324/model/SegmentPortraitPicResponse.h>
+#include <tencentcloud/bda/v20200324/model/TerminateSegmentationTaskRequest.h>
+#include <tencentcloud/bda/v20200324/model/TerminateSegmentationTaskResponse.h>
 
 
 namespace TencentCloud
@@ -71,6 +77,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreatePersonResponse> CreatePersonOutcome;
                 typedef std::future<CreatePersonOutcome> CreatePersonOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::CreatePersonRequest&, CreatePersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonAsyncHandler;
+                typedef Outcome<Error, Model::CreateSegmentationTaskResponse> CreateSegmentationTaskOutcome;
+                typedef std::future<CreateSegmentationTaskOutcome> CreateSegmentationTaskOutcomeCallable;
+                typedef std::function<void(const BdaClient*, const Model::CreateSegmentationTaskRequest&, CreateSegmentationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSegmentationTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateTraceResponse> CreateTraceOutcome;
                 typedef std::future<CreateTraceOutcome> CreateTraceOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::CreateTraceRequest&, CreateTraceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTraceAsyncHandler;
@@ -80,6 +89,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeletePersonResponse> DeletePersonOutcome;
                 typedef std::future<DeletePersonOutcome> DeletePersonOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::DeletePersonRequest&, DeletePersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePersonAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSegmentationTaskResponse> DescribeSegmentationTaskOutcome;
+                typedef std::future<DescribeSegmentationTaskOutcome> DescribeSegmentationTaskOutcomeCallable;
+                typedef std::function<void(const BdaClient*, const Model::DescribeSegmentationTaskRequest&, DescribeSegmentationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSegmentationTaskAsyncHandler;
                 typedef Outcome<Error, Model::DetectBodyResponse> DetectBodyOutcome;
                 typedef std::future<DetectBodyOutcome> DetectBodyOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::DetectBodyRequest&, DetectBodyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectBodyAsyncHandler;
@@ -107,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SegmentPortraitPicResponse> SegmentPortraitPicOutcome;
                 typedef std::future<SegmentPortraitPicOutcome> SegmentPortraitPicOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::SegmentPortraitPicRequest&, SegmentPortraitPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SegmentPortraitPicAsyncHandler;
+                typedef Outcome<Error, Model::TerminateSegmentationTaskResponse> TerminateSegmentationTaskOutcome;
+                typedef std::future<TerminateSegmentationTaskOutcome> TerminateSegmentationTaskOutcomeCallable;
+                typedef std::function<void(const BdaClient*, const Model::TerminateSegmentationTaskRequest&, TerminateSegmentationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateSegmentationTaskAsyncHandler;
 
 
 
@@ -142,6 +157,15 @@ namespace TencentCloud
                 CreatePersonOutcomeCallable CreatePersonCallable(const Model::CreatePersonRequest& request);
 
                 /**
+                 *本接口为离线人像分割处理接口组中的提交任务接口，可以对提交的资源进行处理视频流/图片流识别视频作品中的人像区域，进行一键抠像、背景替换、人像虚化等后期处理。
+                 * @param req CreateSegmentationTaskRequest
+                 * @return CreateSegmentationTaskOutcome
+                 */
+                CreateSegmentationTaskOutcome CreateSegmentationTask(const Model::CreateSegmentationTaskRequest &request);
+                void CreateSegmentationTaskAsync(const Model::CreateSegmentationTaskRequest& request, const CreateSegmentationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSegmentationTaskOutcomeCallable CreateSegmentationTaskCallable(const Model::CreateSegmentationTaskRequest& request);
+
+                /**
                  *将一个人体轨迹添加到一个人员中。一个人员最多允许包含 5 个人体轨迹。同一人的人体轨迹越多，搜索识别效果越好。
 
 >请注意：
@@ -174,6 +198,15 @@ namespace TencentCloud
                 DeletePersonOutcome DeletePerson(const Model::DeletePersonRequest &request);
                 void DeletePersonAsync(const Model::DeletePersonRequest& request, const DeletePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePersonOutcomeCallable DeletePersonCallable(const Model::DeletePersonRequest& request);
+
+                /**
+                 *可以查看单条任务的处理情况，包括处理状态，处理结果。
+                 * @param req DescribeSegmentationTaskRequest
+                 * @return DescribeSegmentationTaskOutcome
+                 */
+                DescribeSegmentationTaskOutcome DescribeSegmentationTask(const Model::DescribeSegmentationTaskRequest &request);
+                void DescribeSegmentationTaskAsync(const Model::DescribeSegmentationTaskRequest& request, const DescribeSegmentationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSegmentationTaskOutcomeCallable DescribeSegmentationTaskCallable(const Model::DescribeSegmentationTaskRequest& request);
 
                 /**
                  *检测给定图片中的人体（Body）的位置信息及属性信息。
@@ -265,6 +298,15 @@ namespace TencentCloud
                 SegmentPortraitPicOutcome SegmentPortraitPic(const Model::SegmentPortraitPicRequest &request);
                 void SegmentPortraitPicAsync(const Model::SegmentPortraitPicRequest& request, const SegmentPortraitPicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SegmentPortraitPicOutcomeCallable SegmentPortraitPicCallable(const Model::SegmentPortraitPicRequest& request);
+
+                /**
+                 *终止指定视频人像分割处理任务
+                 * @param req TerminateSegmentationTaskRequest
+                 * @return TerminateSegmentationTaskOutcome
+                 */
+                TerminateSegmentationTaskOutcome TerminateSegmentationTask(const Model::TerminateSegmentationTaskRequest &request);
+                void TerminateSegmentationTaskAsync(const Model::TerminateSegmentationTaskRequest& request, const TerminateSegmentationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateSegmentationTaskOutcomeCallable TerminateSegmentationTaskCallable(const Model::TerminateSegmentationTaskRequest& request);
 
             };
         }

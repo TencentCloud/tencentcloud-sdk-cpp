@@ -169,6 +169,49 @@ TkeClient::AddNodeToNodePoolOutcomeCallable TkeClient::AddNodeToNodePoolCallable
     return task->get_future();
 }
 
+TkeClient::CheckInstancesUpgradeAbleOutcome TkeClient::CheckInstancesUpgradeAble(const CheckInstancesUpgradeAbleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckInstancesUpgradeAble");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckInstancesUpgradeAbleResponse rsp = CheckInstancesUpgradeAbleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckInstancesUpgradeAbleOutcome(rsp);
+        else
+            return CheckInstancesUpgradeAbleOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckInstancesUpgradeAbleOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CheckInstancesUpgradeAbleAsync(const CheckInstancesUpgradeAbleRequest& request, const CheckInstancesUpgradeAbleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckInstancesUpgradeAble(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CheckInstancesUpgradeAbleOutcomeCallable TkeClient::CheckInstancesUpgradeAbleCallable(const CheckInstancesUpgradeAbleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckInstancesUpgradeAbleOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckInstancesUpgradeAble(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreateClusterOutcome TkeClient::CreateCluster(const CreateClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCluster");
@@ -1882,6 +1925,49 @@ TkeClient::RemoveNodeFromNodePoolOutcomeCallable TkeClient::RemoveNodeFromNodePo
         [this, request]()
         {
             return this->RemoveNodeFromNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UpgradeClusterInstancesOutcome TkeClient::UpgradeClusterInstances(const UpgradeClusterInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeClusterInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeClusterInstancesResponse rsp = UpgradeClusterInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeClusterInstancesOutcome(rsp);
+        else
+            return UpgradeClusterInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeClusterInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UpgradeClusterInstancesAsync(const UpgradeClusterInstancesRequest& request, const UpgradeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeClusterInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UpgradeClusterInstancesOutcomeCallable TkeClient::UpgradeClusterInstancesCallable(const UpgradeClusterInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeClusterInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeClusterInstances(request);
         }
     );
 

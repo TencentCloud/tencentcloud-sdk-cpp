@@ -255,6 +255,49 @@ FaceidClient::CheckIdCardInformationOutcomeCallable FaceidClient::CheckIdCardInf
     return task->get_future();
 }
 
+FaceidClient::CheckPhoneAndNameOutcome FaceidClient::CheckPhoneAndName(const CheckPhoneAndNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckPhoneAndName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckPhoneAndNameResponse rsp = CheckPhoneAndNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckPhoneAndNameOutcome(rsp);
+        else
+            return CheckPhoneAndNameOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckPhoneAndNameOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::CheckPhoneAndNameAsync(const CheckPhoneAndNameRequest& request, const CheckPhoneAndNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckPhoneAndName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::CheckPhoneAndNameOutcomeCallable FaceidClient::CheckPhoneAndNameCallable(const CheckPhoneAndNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckPhoneAndNameOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckPhoneAndName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::DetectAuthOutcome FaceidClient::DetectAuth(const DetectAuthRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectAuth");

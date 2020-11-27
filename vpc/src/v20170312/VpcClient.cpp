@@ -6920,6 +6920,49 @@ VpcClient::HaVipDisassociateAddressIpOutcomeCallable VpcClient::HaVipDisassociat
     return task->get_future();
 }
 
+VpcClient::InquirePriceCreateDirectConnectGatewayOutcome VpcClient::InquirePriceCreateDirectConnectGateway(const InquirePriceCreateDirectConnectGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceCreateDirectConnectGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceCreateDirectConnectGatewayResponse rsp = InquirePriceCreateDirectConnectGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceCreateDirectConnectGatewayOutcome(rsp);
+        else
+            return InquirePriceCreateDirectConnectGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceCreateDirectConnectGatewayOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::InquirePriceCreateDirectConnectGatewayAsync(const InquirePriceCreateDirectConnectGatewayRequest& request, const InquirePriceCreateDirectConnectGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceCreateDirectConnectGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::InquirePriceCreateDirectConnectGatewayOutcomeCallable VpcClient::InquirePriceCreateDirectConnectGatewayCallable(const InquirePriceCreateDirectConnectGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceCreateDirectConnectGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceCreateDirectConnectGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::InquiryPriceCreateVpnGatewayOutcome VpcClient::InquiryPriceCreateVpnGateway(const InquiryPriceCreateVpnGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "InquiryPriceCreateVpnGateway");

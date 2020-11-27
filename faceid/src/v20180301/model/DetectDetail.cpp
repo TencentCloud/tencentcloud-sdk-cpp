@@ -33,7 +33,8 @@ DetectDetail::DetectDetail() :
     m_livestatusHasBeenSet(false),
     m_livemsgHasBeenSet(false),
     m_comparestatusHasBeenSet(false),
-    m_comparemsgHasBeenSet(false)
+    m_comparemsgHasBeenSet(false),
+    m_compareLibTypeHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome DetectDetail::Deserialize(const Value &value)
         m_comparemsgHasBeenSet = true;
     }
 
+    if (value.HasMember("CompareLibType") && !value["CompareLibType"].IsNull())
+    {
+        if (!value["CompareLibType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DetectDetail.CompareLibType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_compareLibType = string(value["CompareLibType"].GetString());
+        m_compareLibTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +274,14 @@ void DetectDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "Comparemsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_comparemsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compareLibTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CompareLibType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_compareLibType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -458,5 +477,21 @@ void DetectDetail::SetComparemsg(const string& _comparemsg)
 bool DetectDetail::ComparemsgHasBeenSet() const
 {
     return m_comparemsgHasBeenSet;
+}
+
+string DetectDetail::GetCompareLibType() const
+{
+    return m_compareLibType;
+}
+
+void DetectDetail::SetCompareLibType(const string& _compareLibType)
+{
+    m_compareLibType = _compareLibType;
+    m_compareLibTypeHasBeenSet = true;
+}
+
+bool DetectDetail::CompareLibTypeHasBeenSet() const
+{
+    return m_compareLibTypeHasBeenSet;
 }
 

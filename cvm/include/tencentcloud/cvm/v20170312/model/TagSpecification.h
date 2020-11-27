@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签绑定的资源类型，当前支持类型："instance"和"host"
-                     * @return ResourceType 标签绑定的资源类型，当前支持类型："instance"和"host"
+                     * 获取标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”
+                     * @return ResourceType 标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置标签绑定的资源类型，当前支持类型："instance"和"host"
-                     * @param ResourceType 标签绑定的资源类型，当前支持类型："instance"和"host"
+                     * 设置标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”
+                     * @param ResourceType 标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”
                      */
                     void SetResourceType(const std::string& _resourceType);
 
@@ -86,7 +86,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签绑定的资源类型，当前支持类型："instance"和"host"
+                     * 标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

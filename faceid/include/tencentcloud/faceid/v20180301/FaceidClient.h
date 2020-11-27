@@ -33,6 +33,8 @@
 #include <tencentcloud/faceid/v20180301/model/CheckBankCardInformationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/CheckIdCardInformationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/CheckIdCardInformationResponse.h>
+#include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameRequest.h>
+#include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameResponse.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthRequest.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetActionSequenceRequest.h>
@@ -96,6 +98,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CheckIdCardInformationResponse> CheckIdCardInformationOutcome;
                 typedef std::future<CheckIdCardInformationOutcome> CheckIdCardInformationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::CheckIdCardInformationRequest&, CheckIdCardInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckIdCardInformationAsyncHandler;
+                typedef Outcome<Error, Model::CheckPhoneAndNameResponse> CheckPhoneAndNameOutcome;
+                typedef std::future<CheckPhoneAndNameOutcome> CheckPhoneAndNameOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::CheckPhoneAndNameRequest&, CheckPhoneAndNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckPhoneAndNameAsyncHandler;
                 typedef Outcome<Error, Model::DetectAuthResponse> DetectAuthOutcome;
                 typedef std::future<DetectAuthOutcome> DetectAuthOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::DetectAuthRequest&, DetectAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectAuthAsyncHandler;
@@ -194,6 +199,15 @@ namespace TencentCloud
                 CheckIdCardInformationOutcome CheckIdCardInformation(const Model::CheckIdCardInformationRequest &request);
                 void CheckIdCardInformationAsync(const Model::CheckIdCardInformationRequest& request, const CheckIdCardInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckIdCardInformationOutcomeCallable CheckIdCardInformationCallable(const Model::CheckIdCardInformationRequest& request);
+
+                /**
+                 *本接口用于校验手机号和姓名的真实性和一致性。
+                 * @param req CheckPhoneAndNameRequest
+                 * @return CheckPhoneAndNameOutcome
+                 */
+                CheckPhoneAndNameOutcome CheckPhoneAndName(const Model::CheckPhoneAndNameRequest &request);
+                void CheckPhoneAndNameAsync(const Model::CheckPhoneAndNameRequest& request, const CheckPhoneAndNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckPhoneAndNameOutcomeCallable CheckPhoneAndNameCallable(const Model::CheckPhoneAndNameRequest& request);
 
                 /**
                  *每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。

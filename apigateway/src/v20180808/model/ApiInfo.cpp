@@ -68,7 +68,8 @@ ApiInfo::ApiInfo() :
     m_serviceTsfLoadBalanceConfHasBeenSet(false),
     m_serviceTsfHealthCheckConfHasBeenSet(false),
     m_enableCORSHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_environmentsHasBeenSet(false)
 {
 }
 
@@ -645,6 +646,19 @@ CoreInternalOutcome ApiInfo::Deserialize(const Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("Environments") && !value["Environments"].IsNull())
+    {
+        if (!value["Environments"].IsArray())
+            return CoreInternalOutcome(Error("response `ApiInfo.Environments` is not array type"));
+
+        const Value &tmpValue = value["Environments"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_environments.push_back((*itr).GetString());
+        }
+        m_environmentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1077,6 +1091,19 @@ void ApiInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_environmentsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Environments";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_environments.begin(); itr != m_environments.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -1833,5 +1860,21 @@ void ApiInfo::SetTags(const vector<Tag>& _tags)
 bool ApiInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<string> ApiInfo::GetEnvironments() const
+{
+    return m_environments;
+}
+
+void ApiInfo::SetEnvironments(const vector<string>& _environments)
+{
+    m_environments = _environments;
+    m_environmentsHasBeenSet = true;
+}
+
+bool ApiInfo::EnvironmentsHasBeenSet() const
+{
+    return m_environmentsHasBeenSet;
 }
 

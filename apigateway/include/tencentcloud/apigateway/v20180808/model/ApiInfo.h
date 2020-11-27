@@ -1091,6 +1091,28 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取API已发布的环境信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Environments API已发布的环境信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetEnvironments() const;
+
+                    /**
+                     * 设置API已发布的环境信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Environments API已发布的环境信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnvironments(const std::vector<std::string>& _environments);
+
+                    /**
+                     * 判断参数 Environments 是否已赋值
+                     * @return Environments 是否已赋值
+                     */
+                    bool EnvironmentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1421,6 +1443,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * API已发布的环境信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_environments;
+                    bool m_environmentsHasBeenSet;
 
                 };
             }

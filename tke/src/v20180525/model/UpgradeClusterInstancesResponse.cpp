@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cvm/v20170312/model/DescribeSpotTypeConfigResponse.h>
+#include <tencentcloud/tke/v20180525/model/UpgradeClusterInstancesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cvm::V20170312::Model;
+using namespace TencentCloud::Tke::V20180525::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeSpotTypeConfigResponse::DescribeSpotTypeConfigResponse()
+UpgradeClusterInstancesResponse::UpgradeClusterInstancesResponse()
 {
 }
 
-CoreInternalOutcome DescribeSpotTypeConfigResponse::Deserialize(const string &payload)
+CoreInternalOutcome UpgradeClusterInstancesResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());

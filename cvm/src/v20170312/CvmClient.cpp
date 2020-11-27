@@ -1287,49 +1287,6 @@ CvmClient::DescribeReservedInstancesOfferingsOutcomeCallable CvmClient::Describe
     return task->get_future();
 }
 
-CvmClient::DescribeSpotTypeConfigOutcome CvmClient::DescribeSpotTypeConfig(const DescribeSpotTypeConfigRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSpotTypeConfig");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSpotTypeConfigResponse rsp = DescribeSpotTypeConfigResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSpotTypeConfigOutcome(rsp);
-        else
-            return DescribeSpotTypeConfigOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSpotTypeConfigOutcome(outcome.GetError());
-    }
-}
-
-void CvmClient::DescribeSpotTypeConfigAsync(const DescribeSpotTypeConfigRequest& request, const DescribeSpotTypeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpotTypeConfig(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CvmClient::DescribeSpotTypeConfigOutcomeCallable CvmClient::DescribeSpotTypeConfigCallable(const DescribeSpotTypeConfigRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSpotTypeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpotTypeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CvmClient::DescribeZoneInstanceConfigInfosOutcome CvmClient::DescribeZoneInstanceConfigInfos(const DescribeZoneInstanceConfigInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZoneInstanceConfigInfos");

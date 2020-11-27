@@ -42,7 +42,8 @@ DetectInfoText::DetectInfoText() :
     m_locationHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_livenessDetailHasBeenSet(false),
-    m_mobileHasBeenSet(false)
+    m_mobileHasBeenSet(false),
+    m_compareLibTypeHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,16 @@ CoreInternalOutcome DetectInfoText::Deserialize(const Value &value)
         m_mobileHasBeenSet = true;
     }
 
+    if (value.HasMember("CompareLibType") && !value["CompareLibType"].IsNull())
+    {
+        if (!value["CompareLibType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DetectInfoText.CompareLibType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_compareLibType = string(value["CompareLibType"].GetString());
+        m_compareLibTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -451,6 +462,14 @@ void DetectInfoText::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compareLibTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CompareLibType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_compareLibType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -790,5 +809,21 @@ void DetectInfoText::SetMobile(const string& _mobile)
 bool DetectInfoText::MobileHasBeenSet() const
 {
     return m_mobileHasBeenSet;
+}
+
+string DetectInfoText::GetCompareLibType() const
+{
+    return m_compareLibType;
+}
+
+void DetectInfoText::SetCompareLibType(const string& _compareLibType)
+{
+    m_compareLibType = _compareLibType;
+    m_compareLibTypeHasBeenSet = true;
+}
+
+bool DetectInfoText::CompareLibTypeHasBeenSet() const
+{
+    return m_compareLibTypeHasBeenSet;
 }
 

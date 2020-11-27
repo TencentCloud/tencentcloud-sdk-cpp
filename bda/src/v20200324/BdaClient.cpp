@@ -126,6 +126,49 @@ BdaClient::CreatePersonOutcomeCallable BdaClient::CreatePersonCallable(const Cre
     return task->get_future();
 }
 
+BdaClient::CreateSegmentationTaskOutcome BdaClient::CreateSegmentationTask(const CreateSegmentationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSegmentationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSegmentationTaskResponse rsp = CreateSegmentationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSegmentationTaskOutcome(rsp);
+        else
+            return CreateSegmentationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSegmentationTaskOutcome(outcome.GetError());
+    }
+}
+
+void BdaClient::CreateSegmentationTaskAsync(const CreateSegmentationTaskRequest& request, const CreateSegmentationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSegmentationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BdaClient::CreateSegmentationTaskOutcomeCallable BdaClient::CreateSegmentationTaskCallable(const CreateSegmentationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSegmentationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSegmentationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BdaClient::CreateTraceOutcome BdaClient::CreateTrace(const CreateTraceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTrace");
@@ -248,6 +291,49 @@ BdaClient::DeletePersonOutcomeCallable BdaClient::DeletePersonCallable(const Del
         [this, request]()
         {
             return this->DeletePerson(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BdaClient::DescribeSegmentationTaskOutcome BdaClient::DescribeSegmentationTask(const DescribeSegmentationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSegmentationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSegmentationTaskResponse rsp = DescribeSegmentationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSegmentationTaskOutcome(rsp);
+        else
+            return DescribeSegmentationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSegmentationTaskOutcome(outcome.GetError());
+    }
+}
+
+void BdaClient::DescribeSegmentationTaskAsync(const DescribeSegmentationTaskRequest& request, const DescribeSegmentationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSegmentationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BdaClient::DescribeSegmentationTaskOutcomeCallable BdaClient::DescribeSegmentationTaskCallable(const DescribeSegmentationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSegmentationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSegmentationTask(request);
         }
     );
 
@@ -635,6 +721,49 @@ BdaClient::SegmentPortraitPicOutcomeCallable BdaClient::SegmentPortraitPicCallab
         [this, request]()
         {
             return this->SegmentPortraitPic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BdaClient::TerminateSegmentationTaskOutcome BdaClient::TerminateSegmentationTask(const TerminateSegmentationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateSegmentationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateSegmentationTaskResponse rsp = TerminateSegmentationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateSegmentationTaskOutcome(rsp);
+        else
+            return TerminateSegmentationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateSegmentationTaskOutcome(outcome.GetError());
+    }
+}
+
+void BdaClient::TerminateSegmentationTaskAsync(const TerminateSegmentationTaskRequest& request, const TerminateSegmentationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateSegmentationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BdaClient::TerminateSegmentationTaskOutcomeCallable BdaClient::TerminateSegmentationTaskCallable(const TerminateSegmentationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateSegmentationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateSegmentationTask(request);
         }
     );
 

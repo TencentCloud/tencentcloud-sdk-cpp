@@ -14,25 +14,34 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cvm/v20170312/model/DescribeSpotTypeConfigRequest.h>
+#include <tencentcloud/bda/v20200324/model/DescribeSegmentationTaskRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cvm::V20170312::Model;
+using namespace TencentCloud::Bda::V20200324::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeSpotTypeConfigRequest::DescribeSpotTypeConfigRequest()
+DescribeSegmentationTaskRequest::DescribeSegmentationTaskRequest() :
+    m_taskIDHasBeenSet(false)
 {
 }
 
-string DescribeSpotTypeConfigRequest::ToJsonString() const
+string DescribeSegmentationTaskRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_taskIDHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TaskID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_taskID.c_str(), allocator).Move(), allocator);
+    }
 
 
     StringBuffer buffer;
@@ -41,5 +50,21 @@ string DescribeSpotTypeConfigRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSegmentationTaskRequest::GetTaskID() const
+{
+    return m_taskID;
+}
+
+void DescribeSegmentationTaskRequest::SetTaskID(const string& _taskID)
+{
+    m_taskID = _taskID;
+    m_taskIDHasBeenSet = true;
+}
+
+bool DescribeSegmentationTaskRequest::TaskIDHasBeenSet() const
+{
+    return m_taskIDHasBeenSet;
+}
 
 

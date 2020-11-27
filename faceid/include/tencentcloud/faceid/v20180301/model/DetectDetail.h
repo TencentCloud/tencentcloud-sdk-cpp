@@ -310,6 +310,44 @@ namespace TencentCloud
                      */
                     bool ComparemsgHasBeenSet() const;
 
+                    /**
+                     * 获取比对库源类型。包括：
+公安商业库；
+业务方自有库（用户上传照片、客户的混合库、混合部署库）；
+二次验证库；
+人工审核库；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CompareLibType 比对库源类型。包括：
+公安商业库；
+业务方自有库（用户上传照片、客户的混合库、混合部署库）；
+二次验证库；
+人工审核库；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCompareLibType() const;
+
+                    /**
+                     * 设置比对库源类型。包括：
+公安商业库；
+业务方自有库（用户上传照片、客户的混合库、混合部署库）；
+二次验证库；
+人工审核库；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CompareLibType 比对库源类型。包括：
+公安商业库；
+业务方自有库（用户上传照片、客户的混合库、混合部署库）；
+二次验证库；
+人工审核库；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCompareLibType(const std::string& _compareLibType);
+
+                    /**
+                     * 判断参数 CompareLibType 是否已赋值
+                     * @return CompareLibType 是否已赋值
+                     */
+                    bool CompareLibTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +433,17 @@ namespace TencentCloud
                      */
                     std::string m_comparemsg;
                     bool m_comparemsgHasBeenSet;
+
+                    /**
+                     * 比对库源类型。包括：
+公安商业库；
+业务方自有库（用户上传照片、客户的混合库、混合部署库）；
+二次验证库；
+人工审核库；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_compareLibType;
+                    bool m_compareLibTypeHasBeenSet;
 
                 };
             }

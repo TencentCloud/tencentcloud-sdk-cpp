@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CVM_V20170312_MODEL_DESCRIBESPOTTYPECONFIGRESPONSE_H_
-#define TENCENTCLOUD_CVM_V20170312_MODEL_DESCRIBESPOTTYPECONFIGRESPONSE_H_
+#ifndef TENCENTCLOUD_TKE_V20180525_MODEL_UPGRADECLUSTERINSTANCESRESPONSE_H_
+#define TENCENTCLOUD_TKE_V20180525_MODEL_UPGRADECLUSTERINSTANCESRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Cvm
+    namespace Tke
     {
-        namespace V20170312
+        namespace V20180525
         {
             namespace Model
             {
                 /**
-                * DescribeSpotTypeConfig返回参数结构体
+                * UpgradeClusterInstances返回参数结构体
                 */
-                class DescribeSpotTypeConfigResponse : public AbstractModel
+                class UpgradeClusterInstancesResponse : public AbstractModel
                 {
                 public:
-                    DescribeSpotTypeConfigResponse();
-                    ~DescribeSpotTypeConfigResponse() = default;
+                    UpgradeClusterInstancesResponse();
+                    ~UpgradeClusterInstancesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
@@ -50,4 +50,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CVM_V20170312_MODEL_DESCRIBESPOTTYPECONFIGRESPONSE_H_
+#endif // !TENCENTCLOUD_TKE_V20180525_MODEL_UPGRADECLUSTERINSTANCESRESPONSE_H_

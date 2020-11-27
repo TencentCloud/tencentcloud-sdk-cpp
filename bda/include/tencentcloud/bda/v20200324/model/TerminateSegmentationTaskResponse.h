@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CVM_V20170312_MODEL_DESCRIBESPOTTYPECONFIGREQUEST_H_
-#define TENCENTCLOUD_CVM_V20170312_MODEL_DESCRIBESPOTTYPECONFIGREQUEST_H_
+#ifndef TENCENTCLOUD_BDA_V20200324_MODEL_TERMINATESEGMENTATIONTASKRESPONSE_H_
+#define TENCENTCLOUD_BDA_V20200324_MODEL_TERMINATESEGMENTATIONTASKRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,21 +25,21 @@
 
 namespace TencentCloud
 {
-    namespace Cvm
+    namespace Bda
     {
-        namespace V20170312
+        namespace V20200324
         {
             namespace Model
             {
                 /**
-                * DescribeSpotTypeConfig请求参数结构体
+                * TerminateSegmentationTask返回参数结构体
                 */
-                class DescribeSpotTypeConfigRequest : public AbstractModel
+                class TerminateSegmentationTaskResponse : public AbstractModel
                 {
                 public:
-                    DescribeSpotTypeConfigRequest();
-                    ~DescribeSpotTypeConfigRequest() = default;
-                    std::string ToJsonString() const;
+                    TerminateSegmentationTaskResponse();
+                    ~TerminateSegmentationTaskResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                 private:
@@ -50,4 +50,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CVM_V20170312_MODEL_DESCRIBESPOTTYPECONFIGREQUEST_H_
+#endif // !TENCENTCLOUD_BDA_V20200324_MODEL_TERMINATESEGMENTATIONTASKRESPONSE_H_
