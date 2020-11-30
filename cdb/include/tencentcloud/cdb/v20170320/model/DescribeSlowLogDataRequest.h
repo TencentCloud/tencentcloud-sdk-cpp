@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取一次性返回的记录数量，最大为400。
-                     * @return Limit 一次性返回的记录数量，最大为400。
+                     * 获取一次性返回的记录数量，默认为100，最大为400。
+                     * @return Limit 一次性返回的记录数量，默认为100，最大为400。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置一次性返回的记录数量，最大为400。
-                     * @param Limit 一次性返回的记录数量，最大为400。
+                     * 设置一次性返回的记录数量，默认为100，最大为400。
+                     * @param Limit 一次性返回的记录数量，默认为100，最大为400。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -279,7 +279,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 一次性返回的记录数量，最大为400。
+                     * 一次性返回的记录数量，默认为100，最大为400。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

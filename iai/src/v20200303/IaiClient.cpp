@@ -212,6 +212,49 @@ IaiClient::CompareFaceOutcomeCallable IaiClient::CompareFaceCallable(const Compa
     return task->get_future();
 }
 
+IaiClient::CompareMaskFaceOutcome IaiClient::CompareMaskFace(const CompareMaskFaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CompareMaskFace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CompareMaskFaceResponse rsp = CompareMaskFaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CompareMaskFaceOutcome(rsp);
+        else
+            return CompareMaskFaceOutcome(o.GetError());
+    }
+    else
+    {
+        return CompareMaskFaceOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::CompareMaskFaceAsync(const CompareMaskFaceRequest& request, const CompareMaskFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CompareMaskFace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::CompareMaskFaceOutcomeCallable IaiClient::CompareMaskFaceCallable(const CompareMaskFaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CompareMaskFaceOutcome()>>(
+        [this, request]()
+        {
+            return this->CompareMaskFace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IaiClient::CopyPersonOutcome IaiClient::CopyPerson(const CopyPersonRequest &request)
 {
     auto outcome = MakeRequest(request, "CopyPerson");

@@ -31,6 +31,8 @@
 #include <tencentcloud/iai/v20200303/model/CheckSimilarPersonResponse.h>
 #include <tencentcloud/iai/v20200303/model/CompareFaceRequest.h>
 #include <tencentcloud/iai/v20200303/model/CompareFaceResponse.h>
+#include <tencentcloud/iai/v20200303/model/CompareMaskFaceRequest.h>
+#include <tencentcloud/iai/v20200303/model/CompareMaskFaceResponse.h>
 #include <tencentcloud/iai/v20200303/model/CopyPersonRequest.h>
 #include <tencentcloud/iai/v20200303/model/CopyPersonResponse.h>
 #include <tencentcloud/iai/v20200303/model/CreateFaceRequest.h>
@@ -125,6 +127,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CompareFaceResponse> CompareFaceOutcome;
                 typedef std::future<CompareFaceOutcome> CompareFaceOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::CompareFaceRequest&, CompareFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompareFaceAsyncHandler;
+                typedef Outcome<Error, Model::CompareMaskFaceResponse> CompareMaskFaceOutcome;
+                typedef std::future<CompareMaskFaceOutcome> CompareMaskFaceOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::CompareMaskFaceRequest&, CompareMaskFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompareMaskFaceAsyncHandler;
                 typedef Outcome<Error, Model::CopyPersonResponse> CopyPersonOutcome;
                 typedef std::future<CopyPersonOutcome> CopyPersonOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::CopyPersonRequest&, CopyPersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyPersonAsyncHandler;
@@ -283,6 +288,19 @@ namespace TencentCloud
                 CompareFaceOutcome CompareFace(const Model::CompareFaceRequest &request);
                 void CompareFaceAsync(const Model::CompareFaceRequest& request, const CompareFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CompareFaceOutcomeCallable CompareFaceCallable(const Model::CompareFaceRequest& request);
+
+                /**
+                 *对两张图片中的人脸进行相似度比对，返回人脸相似度分数。
+
+戴口罩人脸比对接口可在查询照人脸戴口罩情况下使用，口罩遮挡程度最高可以遮挡鼻尖。
+
+如图片人脸不存在戴口罩情况，建议使用人脸比对服务。
+                 * @param req CompareMaskFaceRequest
+                 * @return CompareMaskFaceOutcome
+                 */
+                CompareMaskFaceOutcome CompareMaskFace(const Model::CompareMaskFaceRequest &request);
+                void CompareMaskFaceAsync(const Model::CompareMaskFaceRequest& request, const CompareMaskFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CompareMaskFaceOutcomeCallable CompareMaskFaceCallable(const Model::CompareMaskFaceRequest& request);
 
                 /**
                  *将已存在于某人员库的人员复制到其他人员库，该人员的描述信息不会被复制。单个人员最多只能同时存在100个人员库中。

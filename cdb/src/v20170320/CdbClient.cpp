@@ -427,6 +427,49 @@ CdbClient::CreateBackupOutcomeCallable CdbClient::CreateBackupCallable(const Cre
     return task->get_future();
 }
 
+CdbClient::CreateCloneInstanceOutcome CdbClient::CreateCloneInstance(const CreateCloneInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloneInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloneInstanceResponse rsp = CreateCloneInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloneInstanceOutcome(rsp);
+        else
+            return CreateCloneInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloneInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::CreateCloneInstanceAsync(const CreateCloneInstanceRequest& request, const CreateCloneInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloneInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::CreateCloneInstanceOutcomeCallable CdbClient::CreateCloneInstanceCallable(const CreateCloneInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloneInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloneInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::CreateDBImportJobOutcome CdbClient::CreateDBImportJob(const CreateDBImportJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDBImportJob");
@@ -1667,6 +1710,49 @@ CdbClient::DescribeBinlogsOutcomeCallable CdbClient::DescribeBinlogsCallable(con
         [this, request]()
         {
             return this->DescribeBinlogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DescribeCloneListOutcome CdbClient::DescribeCloneList(const DescribeCloneListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloneList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloneListResponse rsp = DescribeCloneListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloneListOutcome(rsp);
+        else
+            return DescribeCloneListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloneListOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeCloneListAsync(const DescribeCloneListRequest& request, const DescribeCloneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloneList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeCloneListOutcomeCallable CdbClient::DescribeCloneListCallable(const DescribeCloneListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloneListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloneList(request);
         }
     );
 
@@ -4376,6 +4462,49 @@ CdbClient::StopDBImportJobOutcomeCallable CdbClient::StopDBImportJobCallable(con
         [this, request]()
         {
             return this->StopDBImportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::StopRollbackOutcome CdbClient::StopRollback(const StopRollbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopRollback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopRollbackResponse rsp = StopRollbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopRollbackOutcome(rsp);
+        else
+            return StopRollbackOutcome(o.GetError());
+    }
+    else
+    {
+        return StopRollbackOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::StopRollbackAsync(const StopRollbackRequest& request, const StopRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopRollback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::StopRollbackOutcomeCallable CdbClient::StopRollbackCallable(const StopRollbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopRollbackOutcome()>>(
+        [this, request]()
+        {
+            return this->StopRollback(request);
         }
     );
 

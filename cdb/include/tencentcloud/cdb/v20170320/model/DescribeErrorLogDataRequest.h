@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool KeyWordsHasBeenSet() const;
 
                     /**
-                     * 获取分页的返回数量，最大为400。
-                     * @return Limit 分页的返回数量，最大为400。
+                     * 获取分页的返回数量，默认为100，最大为400。
+                     * @return Limit 分页的返回数量，默认为100，最大为400。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页的返回数量，最大为400。
-                     * @param Limit 分页的返回数量，最大为400。
+                     * 设置分页的返回数量，默认为100，最大为400。
+                     * @param Limit 分页的返回数量，默认为100，最大为400。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_keyWordsHasBeenSet;
 
                     /**
-                     * 分页的返回数量，最大为400。
+                     * 分页的返回数量，默认为100，最大为400。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/ExportReverseShellEventsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace rapidjson;
 using namespace std;
 
-ExportReverseShellEventsResponse::ExportReverseShellEventsResponse() :
-    m_downloadUrlHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+DescribeCloneListResponse::DescribeCloneListResponse() :
+    m_totalCountHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ExportReverseShellEventsResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeCloneListResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +64,34 @@ CoreInternalOutcome ExportReverseShellEventsResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("DownloadUrl") && !rsp["DownloadUrl"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["DownloadUrl"].IsString())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_downloadUrl = string(rsp["DownloadUrl"].GetString());
-        m_downloadUrlHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
     {
-        if (!rsp["TaskId"].IsString())
+        if (!rsp["Items"].IsArray())
+            return CoreInternalOutcome(Error("response `Items` is not array type"));
+
+        const Value &tmpValue = rsp["Items"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            CloneItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_items.push_back(item);
         }
-        m_taskId = string(rsp["TaskId"].GetString());
-        m_taskIdHasBeenSet = true;
+        m_itemsHasBeenSet = true;
     }
 
 
@@ -89,24 +99,24 @@ CoreInternalOutcome ExportReverseShellEventsResponse::Deserialize(const string &
 }
 
 
-string ExportReverseShellEventsResponse::GetDownloadUrl() const
+int64_t DescribeCloneListResponse::GetTotalCount() const
 {
-    return m_downloadUrl;
+    return m_totalCount;
 }
 
-bool ExportReverseShellEventsResponse::DownloadUrlHasBeenSet() const
+bool DescribeCloneListResponse::TotalCountHasBeenSet() const
 {
-    return m_downloadUrlHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-string ExportReverseShellEventsResponse::GetTaskId() const
+vector<CloneItem> DescribeCloneListResponse::GetItems() const
 {
-    return m_taskId;
+    return m_items;
 }
 
-bool ExportReverseShellEventsResponse::TaskIdHasBeenSet() const
+bool DescribeCloneListResponse::ItemsHasBeenSet() const
 {
-    return m_taskIdHasBeenSet;
+    return m_itemsHasBeenSet;
 }
 
 

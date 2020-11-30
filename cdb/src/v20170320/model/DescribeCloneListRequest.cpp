@@ -14,35 +14,35 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/ExportMalwaresRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCloneListRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace rapidjson;
 using namespace std;
 
-ExportMalwaresRequest::ExportMalwaresRequest() :
-    m_limitHasBeenSet(false),
+DescribeCloneListRequest::DescribeCloneListRequest() :
+    m_instanceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_limitHasBeenSet(false)
 {
 }
 
-string ExportMalwaresRequest::ToJsonString() const
+string DescribeCloneListRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_limitHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Limit";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -53,19 +53,12 @@ string ExportMalwaresRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
-    if (m_filtersHasBeenSet)
+    if (m_limitHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Filters";
+        string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -76,52 +69,52 @@ string ExportMalwaresRequest::ToJsonString() const
 }
 
 
-uint64_t ExportMalwaresRequest::GetLimit() const
+string DescribeCloneListRequest::GetInstanceId() const
 {
-    return m_limit;
+    return m_instanceId;
 }
 
-void ExportMalwaresRequest::SetLimit(const uint64_t& _limit)
+void DescribeCloneListRequest::SetInstanceId(const string& _instanceId)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
 }
 
-bool ExportMalwaresRequest::LimitHasBeenSet() const
+bool DescribeCloneListRequest::InstanceIdHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_instanceIdHasBeenSet;
 }
 
-uint64_t ExportMalwaresRequest::GetOffset() const
+int64_t DescribeCloneListRequest::GetOffset() const
 {
     return m_offset;
 }
 
-void ExportMalwaresRequest::SetOffset(const uint64_t& _offset)
+void DescribeCloneListRequest::SetOffset(const int64_t& _offset)
 {
     m_offset = _offset;
     m_offsetHasBeenSet = true;
 }
 
-bool ExportMalwaresRequest::OffsetHasBeenSet() const
+bool DescribeCloneListRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
 }
 
-vector<Filters> ExportMalwaresRequest::GetFilters() const
+int64_t DescribeCloneListRequest::GetLimit() const
 {
-    return m_filters;
+    return m_limit;
 }
 
-void ExportMalwaresRequest::SetFilters(const vector<Filters>& _filters)
+void DescribeCloneListRequest::SetLimit(const int64_t& _limit)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool ExportMalwaresRequest::FiltersHasBeenSet() const
+bool DescribeCloneListRequest::LimitHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_limitHasBeenSet;
 }
 
 

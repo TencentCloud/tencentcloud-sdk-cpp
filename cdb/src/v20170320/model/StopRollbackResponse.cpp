@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/ExportReverseShellEventsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/StopRollbackResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace rapidjson;
 using namespace std;
 
-ExportReverseShellEventsResponse::ExportReverseShellEventsResponse() :
-    m_downloadUrlHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+StopRollbackResponse::StopRollbackResponse() :
+    m_asyncRequestIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ExportReverseShellEventsResponse::Deserialize(const string &payload)
+CoreInternalOutcome StopRollbackResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +63,14 @@ CoreInternalOutcome ExportReverseShellEventsResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("DownloadUrl") && !rsp["DownloadUrl"].IsNull())
+    if (rsp.HasMember("AsyncRequestId") && !rsp["AsyncRequestId"].IsNull())
     {
-        if (!rsp["DownloadUrl"].IsString())
+        if (!rsp["AsyncRequestId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AsyncRequestId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_downloadUrl = string(rsp["DownloadUrl"].GetString());
-        m_downloadUrlHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
-    {
-        if (!rsp["TaskId"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_taskId = string(rsp["TaskId"].GetString());
-        m_taskIdHasBeenSet = true;
+        m_asyncRequestId = string(rsp["AsyncRequestId"].GetString());
+        m_asyncRequestIdHasBeenSet = true;
     }
 
 
@@ -89,24 +78,14 @@ CoreInternalOutcome ExportReverseShellEventsResponse::Deserialize(const string &
 }
 
 
-string ExportReverseShellEventsResponse::GetDownloadUrl() const
+string StopRollbackResponse::GetAsyncRequestId() const
 {
-    return m_downloadUrl;
+    return m_asyncRequestId;
 }
 
-bool ExportReverseShellEventsResponse::DownloadUrlHasBeenSet() const
+bool StopRollbackResponse::AsyncRequestIdHasBeenSet() const
 {
-    return m_downloadUrlHasBeenSet;
-}
-
-string ExportReverseShellEventsResponse::GetTaskId() const
-{
-    return m_taskId;
-}
-
-bool ExportReverseShellEventsResponse::TaskIdHasBeenSet() const
-{
-    return m_taskIdHasBeenSet;
+    return m_asyncRequestIdHasBeenSet;
 }
 
 

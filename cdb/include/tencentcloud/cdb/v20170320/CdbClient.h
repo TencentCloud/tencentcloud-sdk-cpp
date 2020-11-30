@@ -41,6 +41,8 @@
 #include <tencentcloud/cdb/v20170320/model/CreateAuditRuleResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateBackupRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateBackupResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CreateCloneInstanceRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CreateCloneInstanceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateDBImportJobRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateDBImportJobResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateDBInstanceRequest.h>
@@ -99,6 +101,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCloneListRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBInstanceCharsetRequest.h>
@@ -225,6 +229,8 @@
 #include <tencentcloud/cdb/v20170320/model/StartBatchRollbackResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StopDBImportJobRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StopDBImportJobResponse.h>
+#include <tencentcloud/cdb/v20170320/model/StopRollbackRequest.h>
+#include <tencentcloud/cdb/v20170320/model/StopRollbackResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeDBInstanceRequest.h>
@@ -274,6 +280,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateBackupResponse> CreateBackupOutcome;
                 typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateBackupRequest&, CreateBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupAsyncHandler;
+                typedef Outcome<Error, Model::CreateCloneInstanceResponse> CreateCloneInstanceOutcome;
+                typedef std::future<CreateCloneInstanceOutcome> CreateCloneInstanceOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CreateCloneInstanceRequest&, CreateCloneInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloneInstanceAsyncHandler;
                 typedef Outcome<Error, Model::CreateDBImportJobResponse> CreateDBImportJobOutcome;
                 typedef std::future<CreateDBImportJobOutcome> CreateDBImportJobOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateDBImportJobRequest&, CreateDBImportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBImportJobAsyncHandler;
@@ -361,6 +370,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBinlogsResponse> DescribeBinlogsOutcome;
                 typedef std::future<DescribeBinlogsOutcome> DescribeBinlogsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBinlogsRequest&, DescribeBinlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloneListResponse> DescribeCloneListOutcome;
+                typedef std::future<DescribeCloneListOutcome> DescribeCloneListOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeCloneListRequest&, DescribeCloneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloneListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBImportRecordsResponse> DescribeDBImportRecordsOutcome;
                 typedef std::future<DescribeDBImportRecordsOutcome> DescribeDBImportRecordsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDBImportRecordsRequest&, DescribeDBImportRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBImportRecordsAsyncHandler;
@@ -550,6 +562,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StopDBImportJobResponse> StopDBImportJobOutcome;
                 typedef std::future<StopDBImportJobOutcome> StopDBImportJobOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StopDBImportJobRequest&, StopDBImportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopDBImportJobAsyncHandler;
+                typedef Outcome<Error, Model::StopRollbackResponse> StopRollbackOutcome;
+                typedef std::future<StopRollbackOutcome> StopRollbackOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::StopRollbackRequest&, StopRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRollbackAsyncHandler;
                 typedef Outcome<Error, Model::SwitchForUpgradeResponse> SwitchForUpgradeOutcome;
                 typedef std::future<SwitchForUpgradeOutcome> SwitchForUpgradeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::SwitchForUpgradeRequest&, SwitchForUpgradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchForUpgradeAsyncHandler;
@@ -645,6 +660,15 @@ namespace TencentCloud
                 CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest &request);
                 void CreateBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request);
+
+                /**
+                 *本接口(CreateCloneInstance) 用于从目标源实例创建一个克隆实例，可以指定克隆实例回档到源实例的指定物理备份文件或者指定的回档时间点。
+                 * @param req CreateCloneInstanceRequest
+                 * @return CreateCloneInstanceOutcome
+                 */
+                CreateCloneInstanceOutcome CreateCloneInstance(const Model::CreateCloneInstanceRequest &request);
+                void CreateCloneInstanceAsync(const Model::CreateCloneInstanceRequest& request, const CreateCloneInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloneInstanceOutcomeCallable CreateCloneInstanceCallable(const Model::CreateCloneInstanceRequest& request);
 
                 /**
                  *本接口(CreateDBImportJob)用于创建云数据库数据导入任务。
@@ -928,6 +952,15 @@ namespace TencentCloud
                 DescribeBinlogsOutcome DescribeBinlogs(const Model::DescribeBinlogsRequest &request);
                 void DescribeBinlogsAsync(const Model::DescribeBinlogsRequest& request, const DescribeBinlogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBinlogsOutcomeCallable DescribeBinlogsCallable(const Model::DescribeBinlogsRequest& request);
+
+                /**
+                 *本接口(DescribeCloneList) 用于查询用户实例的克隆任务列表。
+                 * @param req DescribeCloneListRequest
+                 * @return DescribeCloneListOutcome
+                 */
+                DescribeCloneListOutcome DescribeCloneList(const Model::DescribeCloneListRequest &request);
+                void DescribeCloneListAsync(const Model::DescribeCloneListRequest& request, const DescribeCloneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloneListOutcomeCallable DescribeCloneListCallable(const Model::DescribeCloneListRequest& request);
 
                 /**
                  *本接口(DescribeDBImportRecords)用于查询云数据库导入任务操作日志。
@@ -1510,6 +1543,15 @@ namespace TencentCloud
                 StopDBImportJobOutcome StopDBImportJob(const Model::StopDBImportJobRequest &request);
                 void StopDBImportJobAsync(const Model::StopDBImportJobRequest& request, const StopDBImportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopDBImportJobOutcomeCallable StopDBImportJobCallable(const Model::StopDBImportJobRequest& request);
+
+                /**
+                 *本接口(StopRollback) 用于撤销实例正在进行的回档任务，该接口返回一个异步任务id。 撤销结果可以通过 DescribeRequestResult 查询任务的执行情况。
+                 * @param req StopRollbackRequest
+                 * @return StopRollbackOutcome
+                 */
+                StopRollbackOutcome StopRollback(const Model::StopRollbackRequest &request);
+                void StopRollbackAsync(const Model::StopRollbackRequest& request, const StopRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopRollbackOutcomeCallable StopRollbackCallable(const Model::StopRollbackRequest& request);
 
                 /**
                  *本接口(SwitchForUpgrade)用于切换访问新实例，针对主升级中的实例处于待切换状态时，用户可主动发起该流程。

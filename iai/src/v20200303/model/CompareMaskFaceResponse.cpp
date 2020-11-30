@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/ExportReverseShellEventsResponse.h>
+#include <tencentcloud/iai/v20200303/model/CompareMaskFaceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Iai::V20200303::Model;
 using namespace rapidjson;
 using namespace std;
 
-ExportReverseShellEventsResponse::ExportReverseShellEventsResponse() :
-    m_downloadUrlHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+CompareMaskFaceResponse::CompareMaskFaceResponse() :
+    m_scoreHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ExportReverseShellEventsResponse::Deserialize(const string &payload)
+CoreInternalOutcome CompareMaskFaceResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +64,24 @@ CoreInternalOutcome ExportReverseShellEventsResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("DownloadUrl") && !rsp["DownloadUrl"].IsNull())
+    if (rsp.HasMember("Score") && !rsp["Score"].IsNull())
     {
-        if (!rsp["DownloadUrl"].IsString())
+        if (!rsp["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_downloadUrl = string(rsp["DownloadUrl"].GetString());
-        m_downloadUrlHasBeenSet = true;
+        m_score = rsp["Score"].GetDouble();
+        m_scoreHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
     {
-        if (!rsp["TaskId"].IsString())
+        if (!rsp["FaceModelVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_taskId = string(rsp["TaskId"].GetString());
-        m_taskIdHasBeenSet = true;
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
     }
 
 
@@ -89,24 +89,24 @@ CoreInternalOutcome ExportReverseShellEventsResponse::Deserialize(const string &
 }
 
 
-string ExportReverseShellEventsResponse::GetDownloadUrl() const
+double CompareMaskFaceResponse::GetScore() const
 {
-    return m_downloadUrl;
+    return m_score;
 }
 
-bool ExportReverseShellEventsResponse::DownloadUrlHasBeenSet() const
+bool CompareMaskFaceResponse::ScoreHasBeenSet() const
 {
-    return m_downloadUrlHasBeenSet;
+    return m_scoreHasBeenSet;
 }
 
-string ExportReverseShellEventsResponse::GetTaskId() const
+string CompareMaskFaceResponse::GetFaceModelVersion() const
 {
-    return m_taskId;
+    return m_faceModelVersion;
 }
 
-bool ExportReverseShellEventsResponse::TaskIdHasBeenSet() const
+bool CompareMaskFaceResponse::FaceModelVersionHasBeenSet() const
 {
-    return m_taskIdHasBeenSet;
+    return m_faceModelVersionHasBeenSet;
 }
 
 

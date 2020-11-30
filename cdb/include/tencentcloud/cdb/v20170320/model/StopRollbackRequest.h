@@ -14,60 +14,59 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_EXPORTBRUTEATTACKSREQUEST_H_
-#define TENCENTCLOUD_CWP_V20180228_MODEL_EXPORTBRUTEATTACKSREQUEST_H_
+#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_STOPROLLBACKREQUEST_H_
+#define TENCENTCLOUD_CDB_V20170320_MODEL_STOPROLLBACKREQUEST_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cwp/v20180228/model/Filters.h>
 
 
 namespace TencentCloud
 {
-    namespace Cwp
+    namespace Cdb
     {
-        namespace V20180228
+        namespace V20170320
         {
             namespace Model
             {
                 /**
-                * ExportBruteAttacks请求参数结构体
+                * StopRollback请求参数结构体
                 */
-                class ExportBruteAttacksRequest : public AbstractModel
+                class StopRollbackRequest : public AbstractModel
                 {
                 public:
-                    ExportBruteAttacksRequest();
-                    ~ExportBruteAttacksRequest() = default;
+                    StopRollbackRequest();
+                    ~StopRollbackRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取过滤参数
-                     * @return Filters 过滤参数
+                     * 获取撤销回档任务对应的实例Id。
+                     * @return InstanceId 撤销回档任务对应的实例Id。
                      */
-                    std::vector<Filters> GetFilters() const;
+                    std::string GetInstanceId() const;
 
                     /**
-                     * 设置过滤参数
-                     * @param Filters 过滤参数
+                     * 设置撤销回档任务对应的实例Id。
+                     * @param InstanceId 撤销回档任务对应的实例Id。
                      */
-                    void SetFilters(const std::vector<Filters>& _filters);
+                    void SetInstanceId(const std::string& _instanceId);
 
                     /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
                      */
-                    bool FiltersHasBeenSet() const;
+                    bool InstanceIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 过滤参数
+                     * 撤销回档任务对应的实例Id。
                      */
-                    std::vector<Filters> m_filters;
-                    bool m_filtersHasBeenSet;
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }
@@ -75,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_EXPORTBRUTEATTACKSREQUEST_H_
+#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_STOPROLLBACKREQUEST_H_

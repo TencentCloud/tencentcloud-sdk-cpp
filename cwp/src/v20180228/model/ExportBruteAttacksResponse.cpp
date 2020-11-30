@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 ExportBruteAttacksResponse::ExportBruteAttacksResponse() :
-    m_downloadUrlHasBeenSet(false)
+    m_downloadUrlHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ExportBruteAttacksResponse::Deserialize(const string &payloa
         m_downloadUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ string ExportBruteAttacksResponse::GetDownloadUrl() const
 bool ExportBruteAttacksResponse::DownloadUrlHasBeenSet() const
 {
     return m_downloadUrlHasBeenSet;
+}
+
+string ExportBruteAttacksResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool ExportBruteAttacksResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

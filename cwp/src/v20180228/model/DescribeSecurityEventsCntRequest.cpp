@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/ExportBruteAttacksRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventsCntRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,32 +23,16 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace rapidjson;
 using namespace std;
 
-ExportBruteAttacksRequest::ExportBruteAttacksRequest() :
-    m_filtersHasBeenSet(false)
+DescribeSecurityEventsCntRequest::DescribeSecurityEventsCntRequest()
 {
 }
 
-string ExportBruteAttacksRequest::ToJsonString() const
+string DescribeSecurityEventsCntRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_filtersHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Filters";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
 
 
     StringBuffer buffer;
@@ -57,21 +41,5 @@ string ExportBruteAttacksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<Filters> ExportBruteAttacksRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void ExportBruteAttacksRequest::SetFilters(const vector<Filters>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool ExportBruteAttacksRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
 
 

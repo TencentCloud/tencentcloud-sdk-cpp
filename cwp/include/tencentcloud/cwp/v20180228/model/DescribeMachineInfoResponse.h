@@ -250,6 +250,30 @@ namespace TencentCloud
                      */
                     bool FreeVulsLeftHasBeenSet() const;
 
+                    /**
+                     * 获取agent版本号
+                     * @return AgentVersion agent版本号
+                     */
+                    std::string GetAgentVersion() const;
+
+                    /**
+                     * 判断参数 AgentVersion 是否已赋值
+                     * @return AgentVersion 是否已赋值
+                     */
+                    bool AgentVersionHasBeenSet() const;
+
+                    /**
+                     * 获取专业版到期时间(仅预付费)
+                     * @return ProVersionDeadline 专业版到期时间(仅预付费)
+                     */
+                    std::string GetProVersionDeadline() const;
+
+                    /**
+                     * 判断参数 ProVersionDeadline 是否已赋值
+                     * @return ProVersionDeadline 是否已赋值
+                     */
+                    bool ProVersionDeadlineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +379,18 @@ namespace TencentCloud
                      */
                     uint64_t m_freeVulsLeft;
                     bool m_freeVulsLeftHasBeenSet;
+
+                    /**
+                     * agent版本号
+                     */
+                    std::string m_agentVersion;
+                    bool m_agentVersionHasBeenSet;
+
+                    /**
+                     * 专业版到期时间(仅预付费)
+                     */
+                    std::string m_proVersionDeadline;
+                    bool m_proVersionDeadlineHasBeenSet;
 
                 };
             }

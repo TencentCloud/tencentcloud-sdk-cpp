@@ -73,7 +73,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/VerifyFaceRequest.h
   include/tencentcloud/iai/v20200303/model/GetPersonListResponse.h
   include/tencentcloud/iai/v20200303/model/Hair.h
-  include/tencentcloud/iai/v20200303/model/GetPersonListNumRequest.h
+  include/tencentcloud/iai/v20200303/model/CheckSimilarPersonResponse.h
   include/tencentcloud/iai/v20200303/model/Result.h
   include/tencentcloud/iai/v20200303/model/GetPersonGroupInfoResponse.h
   include/tencentcloud/iai/v20200303/model/UpgradeGroupFaceModelVersionResponse.h
@@ -86,6 +86,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/FaceQualityCompleteness.h
   include/tencentcloud/iai/v20200303/model/FaceAttributesInfo.h
   include/tencentcloud/iai/v20200303/model/VerifyPersonRequest.h
+  include/tencentcloud/iai/v20200303/model/CompareMaskFaceResponse.h
   include/tencentcloud/iai/v20200303/model/ModifyPersonBaseInfoRequest.h
   include/tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateRequest.h
   include/tencentcloud/iai/v20200303/model/JobIdInfo.h
@@ -95,6 +96,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/SearchPersonsRequest.h
   include/tencentcloud/iai/v20200303/model/PersonInfo.h
   include/tencentcloud/iai/v20200303/model/GroupExDescriptionInfo.h
+  include/tencentcloud/iai/v20200303/model/CompareMaskFaceRequest.h
   include/tencentcloud/iai/v20200303/model/AnalyzeFaceResponse.h
   include/tencentcloud/iai/v20200303/model/DetectFaceRequest.h
   include/tencentcloud/iai/v20200303/model/GetPersonBaseInfoRequest.h
@@ -114,7 +116,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/CompareFaceRequest.h
   include/tencentcloud/iai/v20200303/model/VerifyPersonResponse.h
   include/tencentcloud/iai/v20200303/model/DetectFaceResponse.h
-  include/tencentcloud/iai/v20200303/model/CheckSimilarPersonResponse.h
+  include/tencentcloud/iai/v20200303/model/GetPersonListNumRequest.h
   include/tencentcloud/iai/v20200303/model/Eyebrow.h
   include/tencentcloud/iai/v20200303/model/GetGroupInfoRequest.h
   include/tencentcloud/iai/v20200303/model/UpgradeJobInfo.h
@@ -286,7 +288,7 @@ set(iai_src
   src/v20200303/model/VerifyFaceRequest.cpp
   src/v20200303/model/GetPersonListResponse.cpp
   src/v20200303/model/Hair.cpp
-  src/v20200303/model/GetPersonListNumRequest.cpp
+  src/v20200303/model/CheckSimilarPersonResponse.cpp
   src/v20200303/model/Result.cpp
   src/v20200303/model/GetPersonGroupInfoResponse.cpp
   src/v20200303/model/UpgradeGroupFaceModelVersionResponse.cpp
@@ -299,6 +301,7 @@ set(iai_src
   src/v20200303/model/FaceQualityCompleteness.cpp
   src/v20200303/model/FaceAttributesInfo.cpp
   src/v20200303/model/VerifyPersonRequest.cpp
+  src/v20200303/model/CompareMaskFaceResponse.cpp
   src/v20200303/model/ModifyPersonBaseInfoRequest.cpp
   src/v20200303/model/DetectLiveFaceAccurateRequest.cpp
   src/v20200303/model/JobIdInfo.cpp
@@ -308,6 +311,7 @@ set(iai_src
   src/v20200303/model/SearchPersonsRequest.cpp
   src/v20200303/model/PersonInfo.cpp
   src/v20200303/model/GroupExDescriptionInfo.cpp
+  src/v20200303/model/CompareMaskFaceRequest.cpp
   src/v20200303/model/AnalyzeFaceResponse.cpp
   src/v20200303/model/DetectFaceRequest.cpp
   src/v20200303/model/GetPersonBaseInfoRequest.cpp
@@ -327,7 +331,7 @@ set(iai_src
   src/v20200303/model/CompareFaceRequest.cpp
   src/v20200303/model/VerifyPersonResponse.cpp
   src/v20200303/model/DetectFaceResponse.cpp
-  src/v20200303/model/CheckSimilarPersonResponse.cpp
+  src/v20200303/model/GetPersonListNumRequest.cpp
   src/v20200303/model/Eyebrow.cpp
   src/v20200303/model/GetGroupInfoRequest.cpp
   src/v20200303/model/UpgradeJobInfo.cpp

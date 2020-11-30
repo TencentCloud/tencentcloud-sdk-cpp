@@ -40,7 +40,9 @@ DescribeMachineInfoResponse::DescribeMachineInfoResponse() :
     m_machineRegionHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_freeMalwaresLeftHasBeenSet(false),
-    m_freeVulsLeftHasBeenSet(false)
+    m_freeVulsLeftHasBeenSet(false),
+    m_agentVersionHasBeenSet(false),
+    m_proVersionDeadlineHasBeenSet(false)
 {
 }
 
@@ -238,6 +240,26 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
         m_freeVulsLeftHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AgentVersion") && !rsp["AgentVersion"].IsNull())
+    {
+        if (!rsp["AgentVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentVersion = string(rsp["AgentVersion"].GetString());
+        m_agentVersionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProVersionDeadline") && !rsp["ProVersionDeadline"].IsNull())
+    {
+        if (!rsp["ProVersionDeadline"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProVersionDeadline` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proVersionDeadline = string(rsp["ProVersionDeadline"].GetString());
+        m_proVersionDeadlineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -401,6 +423,26 @@ uint64_t DescribeMachineInfoResponse::GetFreeVulsLeft() const
 bool DescribeMachineInfoResponse::FreeVulsLeftHasBeenSet() const
 {
     return m_freeVulsLeftHasBeenSet;
+}
+
+string DescribeMachineInfoResponse::GetAgentVersion() const
+{
+    return m_agentVersion;
+}
+
+bool DescribeMachineInfoResponse::AgentVersionHasBeenSet() const
+{
+    return m_agentVersionHasBeenSet;
+}
+
+string DescribeMachineInfoResponse::GetProVersionDeadline() const
+{
+    return m_proVersionDeadline;
+}
+
+bool DescribeMachineInfoResponse::ProVersionDeadlineHasBeenSet() const
+{
+    return m_proVersionDeadlineHasBeenSet;
 }
 
 

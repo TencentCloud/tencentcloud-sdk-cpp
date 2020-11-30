@@ -38,7 +38,9 @@ Machine::Machine() :
     m_cyberAttackNumHasBeenSet(false),
     m_securityStatusHasBeenSet(false),
     m_invasionNumHasBeenSet(false),
-    m_regionInfoHasBeenSet(false)
+    m_regionInfoHasBeenSet(false),
+    m_instanceStateHasBeenSet(false),
+    m_licenseStatusHasBeenSet(false)
 {
 }
 
@@ -234,6 +236,26 @@ CoreInternalOutcome Machine::Deserialize(const Value &value)
         m_regionInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceState") && !value["InstanceState"].IsNull())
+    {
+        if (!value["InstanceState"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Machine.InstanceState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceState = string(value["InstanceState"].GetString());
+        m_instanceStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("LicenseStatus") && !value["LicenseStatus"].IsNull())
+    {
+        if (!value["LicenseStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Machine.LicenseStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseStatus = value["LicenseStatus"].GetUint64();
+        m_licenseStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -383,6 +405,22 @@ void Machine::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_regionInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceStateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_licenseStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LicenseStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licenseStatus, allocator);
     }
 
 }
@@ -658,5 +696,37 @@ void Machine::SetRegionInfo(const RegionInfo& _regionInfo)
 bool Machine::RegionInfoHasBeenSet() const
 {
     return m_regionInfoHasBeenSet;
+}
+
+string Machine::GetInstanceState() const
+{
+    return m_instanceState;
+}
+
+void Machine::SetInstanceState(const string& _instanceState)
+{
+    m_instanceState = _instanceState;
+    m_instanceStateHasBeenSet = true;
+}
+
+bool Machine::InstanceStateHasBeenSet() const
+{
+    return m_instanceStateHasBeenSet;
+}
+
+uint64_t Machine::GetLicenseStatus() const
+{
+    return m_licenseStatus;
+}
+
+void Machine::SetLicenseStatus(const uint64_t& _licenseStatus)
+{
+    m_licenseStatus = _licenseStatus;
+    m_licenseStatusHasBeenSet = true;
+}
+
+bool Machine::LicenseStatusHasBeenSet() const
+{
+    return m_licenseStatusHasBeenSet;
 }
 

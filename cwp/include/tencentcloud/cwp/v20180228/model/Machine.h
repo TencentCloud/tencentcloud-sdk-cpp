@@ -394,6 +394,42 @@ namespace TencentCloud
                      */
                     bool RegionInfoHasBeenSet() const;
 
+                    /**
+                     * 获取实例状态 TERMINATED_PRO_VERSION 已销毁
+                     * @return InstanceState 实例状态 TERMINATED_PRO_VERSION 已销毁
+                     */
+                    std::string GetInstanceState() const;
+
+                    /**
+                     * 设置实例状态 TERMINATED_PRO_VERSION 已销毁
+                     * @param InstanceState 实例状态 TERMINATED_PRO_VERSION 已销毁
+                     */
+                    void SetInstanceState(const std::string& _instanceState);
+
+                    /**
+                     * 判断参数 InstanceState 是否已赋值
+                     * @return InstanceState 是否已赋值
+                     */
+                    bool InstanceStateHasBeenSet() const;
+
+                    /**
+                     * 获取授权状态 1 授权 0 未授权
+                     * @return LicenseStatus 授权状态 1 授权 0 未授权
+                     */
+                    uint64_t GetLicenseStatus() const;
+
+                    /**
+                     * 设置授权状态 1 授权 0 未授权
+                     * @param LicenseStatus 授权状态 1 授权 0 未授权
+                     */
+                    void SetLicenseStatus(const uint64_t& _licenseStatus);
+
+                    /**
+                     * 判断参数 LicenseStatus 是否已赋值
+                     * @return LicenseStatus 是否已赋值
+                     */
+                    bool LicenseStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,6 +543,18 @@ namespace TencentCloud
                      */
                     RegionInfo m_regionInfo;
                     bool m_regionInfoHasBeenSet;
+
+                    /**
+                     * 实例状态 TERMINATED_PRO_VERSION 已销毁
+                     */
+                    std::string m_instanceState;
+                    bool m_instanceStateHasBeenSet;
+
+                    /**
+                     * 授权状态 1 授权 0 未授权
+                     */
+                    uint64_t m_licenseStatus;
+                    bool m_licenseStatusHasBeenSet;
 
                 };
             }

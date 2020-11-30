@@ -14,40 +14,33 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/ExportBruteAttacksRequest.h>
+#include <tencentcloud/cdb/v20170320/model/StopRollbackRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace rapidjson;
 using namespace std;
 
-ExportBruteAttacksRequest::ExportBruteAttacksRequest() :
-    m_filtersHasBeenSet(false)
+StopRollbackRequest::StopRollbackRequest() :
+    m_instanceIdHasBeenSet(false)
 {
 }
 
-string ExportBruteAttacksRequest::ToJsonString() const
+string StopRollbackRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_filtersHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Filters";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -58,20 +51,20 @@ string ExportBruteAttacksRequest::ToJsonString() const
 }
 
 
-vector<Filters> ExportBruteAttacksRequest::GetFilters() const
+string StopRollbackRequest::GetInstanceId() const
 {
-    return m_filters;
+    return m_instanceId;
 }
 
-void ExportBruteAttacksRequest::SetFilters(const vector<Filters>& _filters)
+void StopRollbackRequest::SetInstanceId(const string& _instanceId)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
 }
 
-bool ExportBruteAttacksRequest::FiltersHasBeenSet() const
+bool StopRollbackRequest::InstanceIdHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_instanceIdHasBeenSet;
 }
 
 

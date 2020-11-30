@@ -1,0 +1,457 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cdb/v20170320/model/CreateCloneInstanceRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace rapidjson;
+using namespace std;
+
+CreateCloneInstanceRequest::CreateCloneInstanceRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_specifiedRollbackTimeHasBeenSet(false),
+    m_specifiedBackupIdHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false),
+    m_uniqSubnetIdHasBeenSet(false),
+    m_memoryHasBeenSet(false),
+    m_volumeHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_securityGroupHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_protectModeHasBeenSet(false),
+    m_deployModeHasBeenSet(false),
+    m_slaveZoneHasBeenSet(false),
+    m_backupZoneHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false)
+{
+}
+
+string CreateCloneInstanceRequest::ToJsonString() const
+{
+    Document d;
+    d.SetObject();
+    Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specifiedRollbackTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SpecifiedRollbackTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_specifiedRollbackTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specifiedBackupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SpecifiedBackupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_specifiedBackupId, allocator);
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniqSubnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UniqSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memoryHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Memory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_memory, allocator);
+    }
+
+    if (m_volumeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Volume";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_volume, allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroup.begin(); itr != m_securityGroup.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_protectModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProtectMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_protectMode, allocator);
+    }
+
+    if (m_deployModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deployMode, allocator);
+    }
+
+    if (m_slaveZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SlaveZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_slaveZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_backupZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
+    }
+
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string CreateCloneInstanceRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreateCloneInstanceRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetSpecifiedRollbackTime() const
+{
+    return m_specifiedRollbackTime;
+}
+
+void CreateCloneInstanceRequest::SetSpecifiedRollbackTime(const string& _specifiedRollbackTime)
+{
+    m_specifiedRollbackTime = _specifiedRollbackTime;
+    m_specifiedRollbackTimeHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::SpecifiedRollbackTimeHasBeenSet() const
+{
+    return m_specifiedRollbackTimeHasBeenSet;
+}
+
+int64_t CreateCloneInstanceRequest::GetSpecifiedBackupId() const
+{
+    return m_specifiedBackupId;
+}
+
+void CreateCloneInstanceRequest::SetSpecifiedBackupId(const int64_t& _specifiedBackupId)
+{
+    m_specifiedBackupId = _specifiedBackupId;
+    m_specifiedBackupIdHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::SpecifiedBackupIdHasBeenSet() const
+{
+    return m_specifiedBackupIdHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+void CreateCloneInstanceRequest::SetUniqVpcId(const string& _uniqVpcId)
+{
+    m_uniqVpcId = _uniqVpcId;
+    m_uniqVpcIdHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetUniqSubnetId() const
+{
+    return m_uniqSubnetId;
+}
+
+void CreateCloneInstanceRequest::SetUniqSubnetId(const string& _uniqSubnetId)
+{
+    m_uniqSubnetId = _uniqSubnetId;
+    m_uniqSubnetIdHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::UniqSubnetIdHasBeenSet() const
+{
+    return m_uniqSubnetIdHasBeenSet;
+}
+
+int64_t CreateCloneInstanceRequest::GetMemory() const
+{
+    return m_memory;
+}
+
+void CreateCloneInstanceRequest::SetMemory(const int64_t& _memory)
+{
+    m_memory = _memory;
+    m_memoryHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::MemoryHasBeenSet() const
+{
+    return m_memoryHasBeenSet;
+}
+
+int64_t CreateCloneInstanceRequest::GetVolume() const
+{
+    return m_volume;
+}
+
+void CreateCloneInstanceRequest::SetVolume(const int64_t& _volume)
+{
+    m_volume = _volume;
+    m_volumeHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::VolumeHasBeenSet() const
+{
+    return m_volumeHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void CreateCloneInstanceRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+vector<string> CreateCloneInstanceRequest::GetSecurityGroup() const
+{
+    return m_securityGroup;
+}
+
+void CreateCloneInstanceRequest::SetSecurityGroup(const vector<string>& _securityGroup)
+{
+    m_securityGroup = _securityGroup;
+    m_securityGroupHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::SecurityGroupHasBeenSet() const
+{
+    return m_securityGroupHasBeenSet;
+}
+
+vector<TagInfo> CreateCloneInstanceRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateCloneInstanceRequest::SetResourceTags(const vector<TagInfo>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
+}
+
+int64_t CreateCloneInstanceRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void CreateCloneInstanceRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+int64_t CreateCloneInstanceRequest::GetProtectMode() const
+{
+    return m_protectMode;
+}
+
+void CreateCloneInstanceRequest::SetProtectMode(const int64_t& _protectMode)
+{
+    m_protectMode = _protectMode;
+    m_protectModeHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::ProtectModeHasBeenSet() const
+{
+    return m_protectModeHasBeenSet;
+}
+
+int64_t CreateCloneInstanceRequest::GetDeployMode() const
+{
+    return m_deployMode;
+}
+
+void CreateCloneInstanceRequest::SetDeployMode(const int64_t& _deployMode)
+{
+    m_deployMode = _deployMode;
+    m_deployModeHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::DeployModeHasBeenSet() const
+{
+    return m_deployModeHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetSlaveZone() const
+{
+    return m_slaveZone;
+}
+
+void CreateCloneInstanceRequest::SetSlaveZone(const string& _slaveZone)
+{
+    m_slaveZone = _slaveZone;
+    m_slaveZoneHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::SlaveZoneHasBeenSet() const
+{
+    return m_slaveZoneHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetBackupZone() const
+{
+    return m_backupZone;
+}
+
+void CreateCloneInstanceRequest::SetBackupZone(const string& _backupZone)
+{
+    m_backupZone = _backupZone;
+    m_backupZoneHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::BackupZoneHasBeenSet() const
+{
+    return m_backupZoneHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void CreateCloneInstanceRequest::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
+}
+
+
