@@ -52,11 +52,13 @@ all：所有文件生效
 file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
+index: 指定主页生效
                      * @return MaxAgeType 规则类型：
 all：所有文件生效
 file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
+index: 指定主页生效
                      */
                     std::string GetMaxAgeType() const;
 
@@ -66,11 +68,13 @@ all：所有文件生效
 file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
+index: 指定主页生效
                      * @param MaxAgeType 规则类型：
 all：所有文件生效
 file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
+index: 指定主页生效
                      */
                     void SetMaxAgeType(const std::string& _maxAgeType);
 
@@ -86,11 +90,13 @@ all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
+index 时填充 /
                      * @return MaxAgeContents MaxAgeType 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
+index 时填充 /
                      */
                     std::vector<std::string> GetMaxAgeContents() const;
 
@@ -100,11 +106,13 @@ all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
+index 时填充 /
                      * @param MaxAgeContents MaxAgeType 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
+index 时填充 /
                      */
                     void SetMaxAgeContents(const std::vector<std::string>& _maxAgeContents);
 
@@ -140,6 +148,7 @@ all：所有文件生效
 file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
+index: 指定主页生效
                      */
                     std::string m_maxAgeType;
                     bool m_maxAgeTypeHasBeenSet;
@@ -150,6 +159,7 @@ all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
+index 时填充 /
                      */
                     std::vector<std::string> m_maxAgeContents;
                     bool m_maxAgeContentsHasBeenSet;

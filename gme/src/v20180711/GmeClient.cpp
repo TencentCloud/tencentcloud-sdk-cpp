@@ -255,6 +255,49 @@ GmeClient::DescribeScanResultListOutcomeCallable GmeClient::DescribeScanResultLi
     return task->get_future();
 }
 
+GmeClient::DescribeUserInAndOutTimeOutcome GmeClient::DescribeUserInAndOutTime(const DescribeUserInAndOutTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserInAndOutTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserInAndOutTimeResponse rsp = DescribeUserInAndOutTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserInAndOutTimeOutcome(rsp);
+        else
+            return DescribeUserInAndOutTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserInAndOutTimeOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeUserInAndOutTimeAsync(const DescribeUserInAndOutTimeRequest& request, const DescribeUserInAndOutTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserInAndOutTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeUserInAndOutTimeOutcomeCallable GmeClient::DescribeUserInAndOutTimeCallable(const DescribeUserInAndOutTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserInAndOutTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserInAndOutTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::ModifyAppStatusOutcome GmeClient::ModifyAppStatus(const ModifyAppStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAppStatus");

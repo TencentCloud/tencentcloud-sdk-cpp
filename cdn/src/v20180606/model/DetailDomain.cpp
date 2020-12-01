@@ -69,7 +69,9 @@ DetailDomain::DetailDomain() :
     m_advanceHasBeenSet(false),
     m_urlRedirectHasBeenSet(false),
     m_accessPortHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_advancedAuthenticationHasBeenSet(false),
+    m_originAuthenticationHasBeenSet(false)
 {
 }
 
@@ -802,6 +804,40 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_tagHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvancedAuthentication") && !value["AdvancedAuthentication"].IsNull())
+    {
+        if (!value["AdvancedAuthentication"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.AdvancedAuthentication` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_advancedAuthentication.Deserialize(value["AdvancedAuthentication"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_advancedAuthenticationHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginAuthentication") && !value["OriginAuthentication"].IsNull())
+    {
+        if (!value["OriginAuthentication"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.OriginAuthentication` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_originAuthentication.Deserialize(value["OriginAuthentication"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_originAuthenticationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1236,6 +1272,24 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_advancedAuthenticationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AdvancedAuthentication";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_advancedAuthentication.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_originAuthenticationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginAuthentication";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_originAuthentication.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2007,5 +2061,37 @@ void DetailDomain::SetTag(const vector<Tag>& _tag)
 bool DetailDomain::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+AdvancedAuthentication DetailDomain::GetAdvancedAuthentication() const
+{
+    return m_advancedAuthentication;
+}
+
+void DetailDomain::SetAdvancedAuthentication(const AdvancedAuthentication& _advancedAuthentication)
+{
+    m_advancedAuthentication = _advancedAuthentication;
+    m_advancedAuthenticationHasBeenSet = true;
+}
+
+bool DetailDomain::AdvancedAuthenticationHasBeenSet() const
+{
+    return m_advancedAuthenticationHasBeenSet;
+}
+
+OriginAuthentication DetailDomain::GetOriginAuthentication() const
+{
+    return m_originAuthentication;
+}
+
+void DetailDomain::SetOriginAuthentication(const OriginAuthentication& _originAuthentication)
+{
+    m_originAuthentication = _originAuthentication;
+    m_originAuthenticationHasBeenSet = true;
+}
+
+bool DetailDomain::OriginAuthenticationHasBeenSet() const
+{
+    return m_originAuthenticationHasBeenSet;
 }
 

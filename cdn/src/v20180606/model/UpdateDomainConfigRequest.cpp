@@ -57,7 +57,9 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_userAgentFilterHasBeenSet(false),
     m_accessControlHasBeenSet(false),
     m_urlRedirectHasBeenSet(false),
-    m_accessPortHasBeenSet(false)
+    m_accessPortHasBeenSet(false),
+    m_advancedAuthenticationHasBeenSet(false),
+    m_originAuthenticationHasBeenSet(false)
 {
 }
 
@@ -372,6 +374,24 @@ string UpdateDomainConfigRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_advancedAuthenticationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AdvancedAuthentication";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_advancedAuthentication.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_originAuthenticationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginAuthentication";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_originAuthentication.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -924,6 +944,38 @@ void UpdateDomainConfigRequest::SetAccessPort(const vector<int64_t>& _accessPort
 bool UpdateDomainConfigRequest::AccessPortHasBeenSet() const
 {
     return m_accessPortHasBeenSet;
+}
+
+AdvancedAuthentication UpdateDomainConfigRequest::GetAdvancedAuthentication() const
+{
+    return m_advancedAuthentication;
+}
+
+void UpdateDomainConfigRequest::SetAdvancedAuthentication(const AdvancedAuthentication& _advancedAuthentication)
+{
+    m_advancedAuthentication = _advancedAuthentication;
+    m_advancedAuthenticationHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::AdvancedAuthenticationHasBeenSet() const
+{
+    return m_advancedAuthenticationHasBeenSet;
+}
+
+OriginAuthentication UpdateDomainConfigRequest::GetOriginAuthentication() const
+{
+    return m_originAuthentication;
+}
+
+void UpdateDomainConfigRequest::SetOriginAuthentication(const OriginAuthentication& _originAuthentication)
+{
+    m_originAuthentication = _originAuthentication;
+    m_originAuthenticationHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::OriginAuthenticationHasBeenSet() const
+{
+    return m_originAuthenticationHasBeenSet;
 }
 
 

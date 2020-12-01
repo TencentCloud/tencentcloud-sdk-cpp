@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool RedirectStatusCodeHasBeenSet() const;
 
                     /**
-                     * 获取待匹配的Url模式，支持完全路径匹配和正则匹配，最大长度1024字符。
-                     * @return Pattern 待匹配的Url模式，支持完全路径匹配和正则匹配，最大长度1024字符。
+                     * 获取待匹配的Url，仅支持Url路径，不支持参数。默认完全匹配，支持通配符 *，最多支持5个通配符，最大长度1024字符。
+                     * @return Pattern 待匹配的Url，仅支持Url路径，不支持参数。默认完全匹配，支持通配符 *，最多支持5个通配符，最大长度1024字符。
                      */
                     std::string GetPattern() const;
 
                     /**
-                     * 设置待匹配的Url模式，支持完全路径匹配和正则匹配，最大长度1024字符。
-                     * @param Pattern 待匹配的Url模式，支持完全路径匹配和正则匹配，最大长度1024字符。
+                     * 设置待匹配的Url，仅支持Url路径，不支持参数。默认完全匹配，支持通配符 *，最多支持5个通配符，最大长度1024字符。
+                     * @param Pattern 待匹配的Url，仅支持Url路径，不支持参数。默认完全匹配，支持通配符 *，最多支持5个通配符，最大长度1024字符。
                      */
                     void SetPattern(const std::string& _pattern);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PatternHasBeenSet() const;
 
                     /**
-                     * 获取目标URL，必须以“/”开头，最大长度1024字符。
-                     * @return RedirectUrl 目标URL，必须以“/”开头，最大长度1024字符。
+                     * 获取目标URL，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。
+                     * @return RedirectUrl 目标URL，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。
                      */
                     std::string GetRedirectUrl() const;
 
                     /**
-                     * 设置目标URL，必须以“/”开头，最大长度1024字符。
-                     * @param RedirectUrl 目标URL，必须以“/”开头，最大长度1024字符。
+                     * 设置目标URL，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。
+                     * @param RedirectUrl 目标URL，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。
                      */
                     void SetRedirectUrl(const std::string& _redirectUrl);
 
@@ -109,13 +109,13 @@ namespace TencentCloud
                     bool m_redirectStatusCodeHasBeenSet;
 
                     /**
-                     * 待匹配的Url模式，支持完全路径匹配和正则匹配，最大长度1024字符。
+                     * 待匹配的Url，仅支持Url路径，不支持参数。默认完全匹配，支持通配符 *，最多支持5个通配符，最大长度1024字符。
                      */
                     std::string m_pattern;
                     bool m_patternHasBeenSet;
 
                     /**
-                     * 目标URL，必须以“/”开头，最大长度1024字符。
+                     * 目标URL，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。
                      */
                     std::string m_redirectUrl;
                     bool m_redirectUrlHasBeenSet;

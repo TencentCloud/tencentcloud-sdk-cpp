@@ -70,8 +70,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取当前页号
-                     * @return PageNumber 当前页号
+                     * 获取当前页号，不填默认返回第一页
+                     * @return PageNumber 当前页号，不填默认返回第一页
                      */
                     int64_t GetPageNumber() const;
 
@@ -82,8 +82,8 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取单页大小
-                     * @return PageSize 单页大小
+                     * 获取单页大小，不填默认取 30，最大值不能超过 30
+                     * @return PageSize 单页大小，不填默认取 30，最大值不能超过 30
                      */
                     int64_t GetPageSize() const;
 
@@ -133,13 +133,13 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 当前页号
+                     * 当前页号，不填默认返回第一页
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 单页大小
+                     * 单页大小，不填默认取 30，最大值不能超过 30
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

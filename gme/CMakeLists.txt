@@ -32,8 +32,10 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/VoiceMessageConf.h
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeAppStatisticsResponse.h
+  include/tencentcloud/gme/v20180711/model/InOutTimeInfo.h
   include/tencentcloud/gme/v20180711/model/Task.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterStatisticsItem.h
+  include/tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeResponse.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterInfo.h
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResult.h
@@ -50,6 +52,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultRequest.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterConf.h
   include/tencentcloud/gme/v20180711/model/ScanVoiceRequest.h
+  include/tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeRequest.h
   )
 
 set(gme_src
@@ -67,8 +70,10 @@ set(gme_src
   src/v20180711/model/VoiceMessageConf.cpp
   src/v20180711/model/DescribeFilterResultListResponse.cpp
   src/v20180711/model/DescribeAppStatisticsResponse.cpp
+  src/v20180711/model/InOutTimeInfo.cpp
   src/v20180711/model/Task.cpp
   src/v20180711/model/VoiceFilterStatisticsItem.cpp
+  src/v20180711/model/DescribeUserInAndOutTimeResponse.cpp
   src/v20180711/model/VoiceFilterInfo.cpp
   src/v20180711/model/DescribeFilterResultResponse.cpp
   src/v20180711/model/DescribeScanResult.cpp
@@ -85,6 +90,7 @@ set(gme_src
   src/v20180711/model/DescribeFilterResultRequest.cpp
   src/v20180711/model/VoiceFilterConf.cpp
   src/v20180711/model/ScanVoiceRequest.cpp
+  src/v20180711/model/DescribeUserInAndOutTimeRequest.cpp
   )
 
 set(gme_include

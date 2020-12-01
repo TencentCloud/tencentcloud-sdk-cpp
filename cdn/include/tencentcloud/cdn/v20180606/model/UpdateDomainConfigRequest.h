@@ -50,6 +50,8 @@
 #include <tencentcloud/cdn/v20180606/model/UserAgentFilter.h>
 #include <tencentcloud/cdn/v20180606/model/AccessControl.h>
 #include <tencentcloud/cdn/v20180606/model/UrlRedirect.h>
+#include <tencentcloud/cdn/v20180606/model/AdvancedAuthentication.h>
+#include <tencentcloud/cdn/v20180606/model/OriginAuthentication.h>
 
 
 namespace TencentCloud
@@ -711,6 +713,42 @@ global：全球加速
                      */
                     bool AccessPortHasBeenSet() const;
 
+                    /**
+                     * 获取时间戳防盗链高级版配置，白名单功能
+                     * @return AdvancedAuthentication 时间戳防盗链高级版配置，白名单功能
+                     */
+                    AdvancedAuthentication GetAdvancedAuthentication() const;
+
+                    /**
+                     * 设置时间戳防盗链高级版配置，白名单功能
+                     * @param AdvancedAuthentication 时间戳防盗链高级版配置，白名单功能
+                     */
+                    void SetAdvancedAuthentication(const AdvancedAuthentication& _advancedAuthentication);
+
+                    /**
+                     * 判断参数 AdvancedAuthentication 是否已赋值
+                     * @return AdvancedAuthentication 是否已赋值
+                     */
+                    bool AdvancedAuthenticationHasBeenSet() const;
+
+                    /**
+                     * 获取回源鉴权高级版配置，白名单功能
+                     * @return OriginAuthentication 回源鉴权高级版配置，白名单功能
+                     */
+                    OriginAuthentication GetOriginAuthentication() const;
+
+                    /**
+                     * 设置回源鉴权高级版配置，白名单功能
+                     * @param OriginAuthentication 回源鉴权高级版配置，白名单功能
+                     */
+                    void SetOriginAuthentication(const OriginAuthentication& _originAuthentication);
+
+                    /**
+                     * 判断参数 OriginAuthentication 是否已赋值
+                     * @return OriginAuthentication 是否已赋值
+                     */
+                    bool OriginAuthenticationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -923,6 +961,18 @@ global：全球加速
                      */
                     std::vector<int64_t> m_accessPort;
                     bool m_accessPortHasBeenSet;
+
+                    /**
+                     * 时间戳防盗链高级版配置，白名单功能
+                     */
+                    AdvancedAuthentication m_advancedAuthentication;
+                    bool m_advancedAuthenticationHasBeenSet;
+
+                    /**
+                     * 回源鉴权高级版配置，白名单功能
+                     */
+                    OriginAuthentication m_originAuthentication;
+                    bool m_originAuthenticationHasBeenSet;
 
                 };
             }

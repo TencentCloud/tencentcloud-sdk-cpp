@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书公钥。
-                     * @return CertificatePublicKey 证书公钥。
+                     * 获取证书内容。
+                     * @return CertificatePublicKey 证书内容。
                      */
                     std::string GetCertificatePublicKey() const;
 
                     /**
-                     * 设置证书公钥。
-                     * @param CertificatePublicKey 证书公钥。
+                     * 设置证书内容。
+                     * @param CertificatePublicKey 证书内容。
                      */
                     void SetCertificatePublicKey(const std::string& _certificatePublicKey);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书公钥。
+                     * 证书内容。
                      */
                     std::string m_certificatePublicKey;
                     bool m_certificatePublicKeyHasBeenSet;

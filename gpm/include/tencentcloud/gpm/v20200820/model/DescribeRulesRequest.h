@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前页号，不传则获取所有有权限的资源。
-                     * @return PageNumber 当前页号，不传则获取所有有权限的资源。
+                     * 获取当前页号，不传则返回第一页
+                     * @return PageNumber 当前页号，不传则返回第一页
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置当前页号，不传则获取所有有权限的资源。
-                     * @param PageNumber 当前页号，不传则获取所有有权限的资源。
+                     * 设置当前页号，不传则返回第一页
+                     * @param PageNumber 当前页号，不传则返回第一页
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取单页大小，不传则获取所有有权限的资源。
-                     * @return PageSize 单页大小，不传则获取所有有权限的资源。
+                     * 获取单页大小，最大 30，不填默认30
+                     * @return PageSize 单页大小，最大 30，不填默认30
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置单页大小，不传则获取所有有权限的资源。
-                     * @param PageSize 单页大小，不传则获取所有有权限的资源。
+                     * 设置单页大小，最大 30，不填默认30
+                     * @param PageSize 单页大小，最大 30，不填默认30
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
@@ -136,13 +136,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前页号，不传则获取所有有权限的资源。
+                     * 当前页号，不传则返回第一页
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 单页大小，不传则获取所有有权限的资源。
+                     * 单页大小，最大 30，不填默认30
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

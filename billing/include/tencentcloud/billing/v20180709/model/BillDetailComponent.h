@@ -335,17 +335,17 @@ namespace TencentCloud
                     bool IncentivePayAmountHasBeenSet() const;
 
                     /**
-                     * 获取组件类型代码（未开放的字段）
+                     * 获取组件类型代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ItemCode 组件类型代码（未开放的字段）
+                     * @return ItemCode 组件类型代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetItemCode() const;
 
                     /**
-                     * 设置组件类型代码（未开放的字段）
+                     * 设置组件类型代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemCode 组件类型代码（未开放的字段）
+                     * @param ItemCode 组件类型代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetItemCode(const std::string& _itemCode);
@@ -357,17 +357,17 @@ namespace TencentCloud
                     bool ItemCodeHasBeenSet() const;
 
                     /**
-                     * 获取组件名称代码（未开放的字段）
+                     * 获取组件名称代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComponentCode 组件名称代码（未开放的字段）
+                     * @return ComponentCode 组件名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetComponentCode() const;
 
                     /**
-                     * 设置组件名称代码（未开放的字段）
+                     * 设置组件名称代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ComponentCode 组件名称代码（未开放的字段）
+                     * @param ComponentCode 组件名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetComponentCode(const std::string& _componentCode);
@@ -499,14 +499,14 @@ namespace TencentCloud
                     bool m_incentivePayAmountHasBeenSet;
 
                     /**
-                     * 组件类型代码（未开放的字段）
+                     * 组件类型代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_itemCode;
                     bool m_itemCodeHasBeenSet;
 
                     /**
-                     * 组件名称代码（未开放的字段）
+                     * 组件名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentCode;

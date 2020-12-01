@@ -56,6 +56,7 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+default 时填充 "no max-age"
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RulePaths CacheType 对应类型下的匹配内容：
 all 时填充 *
@@ -63,6 +64,7 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+default 时填充 "no max-age"
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetRulePaths() const;
@@ -74,6 +76,7 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+default 时填充 "no max-age"
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param RulePaths CacheType 对应类型下的匹配内容：
 all 时填充 *
@@ -81,6 +84,7 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+default 时填充 "no max-age"
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRulePaths(const std::vector<std::string>& _rulePaths);
@@ -98,6 +102,7 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 index：首页
+default: 源站无max-age时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleType 规则类型：
 all：所有文件生效
@@ -105,6 +110,7 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 index：首页
+default: 源站无max-age时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRuleType() const;
@@ -116,6 +122,7 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 index：首页
+default: 源站无max-age时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param RuleType 规则类型：
 all：所有文件生效
@@ -123,6 +130,7 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 index：首页
+default: 源站无max-age时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRuleType(const std::string& _ruleType);
@@ -164,6 +172,7 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+default 时填充 "no max-age"
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_rulePaths;
@@ -176,6 +185,7 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 index：首页
+default: 源站无max-age时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleType;

@@ -72,14 +72,14 @@ namespace TencentCloud
                     bool ServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取API 的后端服务类型。支持HTTP、MOCK、TSF、CLB、SCF、WEBSOCKET、TARGET（内测）。
-                     * @return ServiceType API 的后端服务类型。支持HTTP、MOCK、TSF、CLB、SCF、WEBSOCKET、TARGET（内测）。
+                     * 获取API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。
+                     * @return ServiceType API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置API 的后端服务类型。支持HTTP、MOCK、TSF、CLB、SCF、WEBSOCKET、TARGET（内测）。
-                     * @param ServiceType API 的后端服务类型。支持HTTP、MOCK、TSF、CLB、SCF、WEBSOCKET、TARGET（内测）。
+                     * 设置API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。
+                     * @param ServiceType API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。
                      */
                     void SetServiceType(const std::string& _serviceType);
 
@@ -108,14 +108,14 @@ namespace TencentCloud
                     bool ServiceTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。
-                     * @return Protocol API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。
+                     * 获取API 的前端请求协议，支持HTTP和WEBSOCKET。
+                     * @return Protocol API 的前端请求协议，支持HTTP和WEBSOCKET。
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。
-                     * @param Protocol API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。
+                     * 设置API 的前端请求协议，支持HTTP和WEBSOCKET。
+                     * @param Protocol API 的前端请求协议，支持HTTP和WEBSOCKET。
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -872,7 +872,7 @@ namespace TencentCloud
                     bool m_serviceIdHasBeenSet;
 
                     /**
-                     * API 的后端服务类型。支持HTTP、MOCK、TSF、CLB、SCF、WEBSOCKET、TARGET（内测）。
+                     * API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -884,7 +884,7 @@ namespace TencentCloud
                     bool m_serviceTimeoutHasBeenSet;
 
                     /**
-                     * API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。
+                     * API 的前端请求协议，支持HTTP和WEBSOCKET。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

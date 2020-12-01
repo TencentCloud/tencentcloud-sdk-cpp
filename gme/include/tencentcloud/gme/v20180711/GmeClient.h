@@ -33,6 +33,8 @@
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeScanResultListResponse.h>
+#include <tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeResponse.h>
 #include <tencentcloud/gme/v20180711/model/ModifyAppStatusRequest.h>
 #include <tencentcloud/gme/v20180711/model/ModifyAppStatusResponse.h>
 #include <tencentcloud/gme/v20180711/model/ScanVoiceRequest.h>
@@ -68,6 +70,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeScanResultListResponse> DescribeScanResultListOutcome;
                 typedef std::future<DescribeScanResultListOutcome> DescribeScanResultListOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeScanResultListRequest&, DescribeScanResultListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanResultListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeUserInAndOutTimeResponse> DescribeUserInAndOutTimeOutcome;
+                typedef std::future<DescribeUserInAndOutTimeOutcome> DescribeUserInAndOutTimeOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeUserInAndOutTimeRequest&, DescribeUserInAndOutTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInAndOutTimeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAppStatusResponse> ModifyAppStatusOutcome;
                 typedef std::future<ModifyAppStatusOutcome> ModifyAppStatusOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ModifyAppStatusRequest&, ModifyAppStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppStatusAsyncHandler;
@@ -125,6 +130,15 @@ namespace TencentCloud
                 DescribeScanResultListOutcome DescribeScanResultList(const Model::DescribeScanResultListRequest &request);
                 void DescribeScanResultListAsync(const Model::DescribeScanResultListRequest& request, const DescribeScanResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScanResultListOutcomeCallable DescribeScanResultListCallable(const Model::DescribeScanResultListRequest& request);
+
+                /**
+                 *拉取用户在房间得进出时间
+                 * @param req DescribeUserInAndOutTimeRequest
+                 * @return DescribeUserInAndOutTimeOutcome
+                 */
+                DescribeUserInAndOutTimeOutcome DescribeUserInAndOutTime(const Model::DescribeUserInAndOutTimeRequest &request);
+                void DescribeUserInAndOutTimeAsync(const Model::DescribeUserInAndOutTimeRequest& request, const DescribeUserInAndOutTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserInAndOutTimeOutcomeCallable DescribeUserInAndOutTimeCallable(const Model::DescribeUserInAndOutTimeRequest& request);
 
                 /**
                  *本接口(ModifyAppStatus)用于修改应用总开关状态。

@@ -58,6 +58,8 @@
 #include <tencentcloud/cdn/v20180606/model/AccessControl.h>
 #include <tencentcloud/cdn/v20180606/model/UrlRedirect.h>
 #include <tencentcloud/cdn/v20180606/model/Tag.h>
+#include <tencentcloud/cdn/v20180606/model/AdvancedAuthentication.h>
+#include <tencentcloud/cdn/v20180606/model/OriginAuthentication.h>
 
 
 namespace TencentCloud
@@ -831,17 +833,17 @@ readonly：域名存在特殊配置，被锁定
                     bool MaxAgeHasBeenSet() const;
 
                     /**
-                     * 获取Ipv6 配置（功能灰度中，敬请期待）
+                     * 获取Ipv6 回源配置（功能灰度中，敬请期待）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ipv6 Ipv6 配置（功能灰度中，敬请期待）
+                     * @return Ipv6 Ipv6 回源配置（功能灰度中，敬请期待）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Ipv6 GetIpv6() const;
 
                     /**
-                     * 设置Ipv6 配置（功能灰度中，敬请期待）
+                     * 设置Ipv6 回源配置（功能灰度中，敬请期待）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ipv6 Ipv6 配置（功能灰度中，敬请期待）
+                     * @param Ipv6 Ipv6 回源配置（功能灰度中，敬请期待）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIpv6(const Ipv6& _ipv6);
@@ -1196,6 +1198,50 @@ off：不支持
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取时间戳防盗链高级配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvancedAuthentication 时间戳防盗链高级配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AdvancedAuthentication GetAdvancedAuthentication() const;
+
+                    /**
+                     * 设置时间戳防盗链高级配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdvancedAuthentication 时间戳防盗链高级配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdvancedAuthentication(const AdvancedAuthentication& _advancedAuthentication);
+
+                    /**
+                     * 判断参数 AdvancedAuthentication 是否已赋值
+                     * @return AdvancedAuthentication 是否已赋值
+                     */
+                    bool AdvancedAuthenticationHasBeenSet() const;
+
+                    /**
+                     * 获取回源鉴权高级配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginAuthentication 回源鉴权高级配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OriginAuthentication GetOriginAuthentication() const;
+
+                    /**
+                     * 设置回源鉴权高级配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginAuthentication 回源鉴权高级配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginAuthentication(const OriginAuthentication& _originAuthentication);
+
+                    /**
+                     * 判断参数 OriginAuthentication 是否已赋值
+                     * @return OriginAuthentication 是否已赋值
+                     */
+                    bool OriginAuthenticationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1436,7 +1482,7 @@ readonly：域名存在特殊配置，被锁定
                     bool m_maxAgeHasBeenSet;
 
                     /**
-                     * Ipv6 配置（功能灰度中，敬请期待）
+                     * Ipv6 回源配置（功能灰度中，敬请期待）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Ipv6 m_ipv6;
@@ -1548,6 +1594,20 @@ off：不支持
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 时间戳防盗链高级配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AdvancedAuthentication m_advancedAuthentication;
+                    bool m_advancedAuthenticationHasBeenSet;
+
+                    /**
+                     * 回源鉴权高级配置，白名单功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OriginAuthentication m_originAuthentication;
+                    bool m_originAuthenticationHasBeenSet;
 
                 };
             }

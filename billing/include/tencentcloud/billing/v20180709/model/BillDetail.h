@@ -395,17 +395,17 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取商品名称代码（未开放的字段）
+                     * 获取商品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BusinessCode 商品名称代码（未开放的字段）
+                     * @return BusinessCode 商品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBusinessCode() const;
 
                     /**
-                     * 设置商品名称代码（未开放的字段）
+                     * 设置商品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BusinessCode 商品名称代码（未开放的字段）
+                     * @param BusinessCode 商品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -417,17 +417,17 @@ namespace TencentCloud
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
-                     * 获取子商品名称代码 （未开放的字段）
+                     * 获取子商品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductCode 子商品名称代码 （未开放的字段）
+                     * @return ProductCode 子商品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置子商品名称代码 （未开放的字段）
+                     * 设置子商品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductCode 子商品名称代码 （未开放的字段）
+                     * @param ProductCode 子商品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -600,14 +600,14 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 商品名称代码（未开放的字段）
+                     * 商品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;
 
                     /**
-                     * 子商品名称代码 （未开放的字段）
+                     * 子商品名称代码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCode;

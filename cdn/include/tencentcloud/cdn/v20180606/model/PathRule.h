@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool RegexHasBeenSet() const;
 
                     /**
-                     * 获取匹配的URL路径。
+                     * 获取匹配的URL路径，仅支持Url路径，不支持参数。默认完全匹配，正则模式下支持通配符 *，最多支持5个通配符，最大长度1024字符。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path 匹配的URL路径。
+                     * @return Path 匹配的URL路径，仅支持Url路径，不支持参数。默认完全匹配，正则模式下支持通配符 *，最多支持5个通配符，最大长度1024字符。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置匹配的URL路径。
+                     * 设置匹配的URL路径，仅支持Url路径，不支持参数。默认完全匹配，正则模式下支持通配符 *，最多支持5个通配符，最大长度1024字符。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path 匹配的URL路径。
+                     * @param Path 匹配的URL路径，仅支持Url路径，不支持参数。默认完全匹配，正则模式下支持通配符 *，最多支持5个通配符，最大长度1024字符。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPath(const std::string& _path);
@@ -92,17 +92,17 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取路径匹配时的回源源站。暂不支持开了私有读写的COS源。
+                     * 获取路径匹配时的回源源站。暂不支持开了私有读写的COS源。不填写时沿用默认源站。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Origin 路径匹配时的回源源站。暂不支持开了私有读写的COS源。
+                     * @return Origin 路径匹配时的回源源站。暂不支持开了私有读写的COS源。不填写时沿用默认源站。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOrigin() const;
 
                     /**
-                     * 设置路径匹配时的回源源站。暂不支持开了私有读写的COS源。
+                     * 设置路径匹配时的回源源站。暂不支持开了私有读写的COS源。不填写时沿用默认源站。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Origin 路径匹配时的回源源站。暂不支持开了私有读写的COS源。
+                     * @param Origin 路径匹配时的回源源站。暂不支持开了私有读写的COS源。不填写时沿用默认源站。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOrigin(const std::string& _origin);
@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool OriginHasBeenSet() const;
 
                     /**
-                     * 获取路径匹配时回源的Host头部。
+                     * 获取路径匹配时回源的Host头部。不填写时沿用默认ServerName。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServerName 路径匹配时回源的Host头部。
+                     * @return ServerName 路径匹配时回源的Host头部。不填写时沿用默认ServerName。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetServerName() const;
 
                     /**
-                     * 设置路径匹配时回源的Host头部。
+                     * 设置路径匹配时回源的Host头部。不填写时沿用默认ServerName。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServerName 路径匹配时回源的Host头部。
+                     * @param ServerName 路径匹配时回源的Host头部。不填写时沿用默认ServerName。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetServerName(const std::string& _serverName);
@@ -136,17 +136,17 @@ namespace TencentCloud
                     bool ServerNameHasBeenSet() const;
 
                     /**
-                     * 获取源站所属区域，支持CN，OV。分别表示国内或海外。
+                     * 获取源站所属区域，支持CN，OV。分别表示国内或海外。默认为CN。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginArea 源站所属区域，支持CN，OV。分别表示国内或海外。
+                     * @return OriginArea 源站所属区域，支持CN，OV。分别表示国内或海外。默认为CN。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOriginArea() const;
 
                     /**
-                     * 设置源站所属区域，支持CN，OV。分别表示国内或海外。
+                     * 设置源站所属区域，支持CN，OV。分别表示国内或海外。默认为CN。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginArea 源站所属区域，支持CN，OV。分别表示国内或海外。
+                     * @param OriginArea 源站所属区域，支持CN，OV。分别表示国内或海外。默认为CN。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOriginArea(const std::string& _originArea);
@@ -158,17 +158,17 @@ namespace TencentCloud
                     bool OriginAreaHasBeenSet() const;
 
                     /**
-                     * 获取路径匹配时回源的URI路径。
+                     * 获取路径匹配时回源的URI路径，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ForwardUri 路径匹配时回源的URI路径。
+                     * @return ForwardUri 路径匹配时回源的URI路径，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetForwardUri() const;
 
                     /**
-                     * 设置路径匹配时回源的URI路径。
+                     * 设置路径匹配时回源的URI路径，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ForwardUri 路径匹配时回源的URI路径。
+                     * @param ForwardUri 路径匹配时回源的URI路径，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetForwardUri(const std::string& _forwardUri);
@@ -211,35 +211,35 @@ namespace TencentCloud
                     bool m_regexHasBeenSet;
 
                     /**
-                     * 匹配的URL路径。
+                     * 匹配的URL路径，仅支持Url路径，不支持参数。默认完全匹配，正则模式下支持通配符 *，最多支持5个通配符，最大长度1024字符。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 路径匹配时的回源源站。暂不支持开了私有读写的COS源。
+                     * 路径匹配时的回源源站。暂不支持开了私有读写的COS源。不填写时沿用默认源站。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_origin;
                     bool m_originHasBeenSet;
 
                     /**
-                     * 路径匹配时回源的Host头部。
+                     * 路径匹配时回源的Host头部。不填写时沿用默认ServerName。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverName;
                     bool m_serverNameHasBeenSet;
 
                     /**
-                     * 源站所属区域，支持CN，OV。分别表示国内或海外。
+                     * 源站所属区域，支持CN，OV。分别表示国内或海外。默认为CN。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originArea;
                     bool m_originAreaHasBeenSet;
 
                     /**
-                     * 路径匹配时回源的URI路径。
+                     * 路径匹配时回源的URI路径，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_forwardUri;

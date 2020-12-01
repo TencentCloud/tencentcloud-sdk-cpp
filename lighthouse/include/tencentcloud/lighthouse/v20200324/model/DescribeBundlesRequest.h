@@ -99,7 +99,7 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤器列表。
-<li>bundle-id</li>按照【镜像 ID】进行过滤。
+<li>bundle-id</li>按照【套餐 ID】进行过滤。
 类型：String
 必选：否
 <li>support-platform-type</li>按照【系统类型】进行过滤。
@@ -108,7 +108,7 @@ namespace TencentCloud
 必选：否
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BundleIds 和 Filters。
                      * @return Filters 过滤器列表。
-<li>bundle-id</li>按照【镜像 ID】进行过滤。
+<li>bundle-id</li>按照【套餐 ID】进行过滤。
 类型：String
 必选：否
 <li>support-platform-type</li>按照【系统类型】进行过滤。
@@ -121,7 +121,7 @@ namespace TencentCloud
 
                     /**
                      * 设置过滤器列表。
-<li>bundle-id</li>按照【镜像 ID】进行过滤。
+<li>bundle-id</li>按照【套餐 ID】进行过滤。
 类型：String
 必选：否
 <li>support-platform-type</li>按照【系统类型】进行过滤。
@@ -130,7 +130,7 @@ namespace TencentCloud
 必选：否
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BundleIds 和 Filters。
                      * @param Filters 过滤器列表。
-<li>bundle-id</li>按照【镜像 ID】进行过滤。
+<li>bundle-id</li>按照【套餐 ID】进行过滤。
 类型：String
 必选：否
 <li>support-platform-type</li>按照【系统类型】进行过滤。
@@ -169,7 +169,7 @@ namespace TencentCloud
 
                     /**
                      * 过滤器列表。
-<li>bundle-id</li>按照【镜像 ID】进行过滤。
+<li>bundle-id</li>按照【套餐 ID】进行过滤。
 类型：String
 必选：否
 <li>support-platform-type</li>按照【系统类型】进行过滤。

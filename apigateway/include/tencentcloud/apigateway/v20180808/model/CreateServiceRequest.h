@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户自定义的服务名称。如果没传，则系统自动生成一个唯一名称。
-                     * @return ServiceName 用户自定义的服务名称。如果没传，则系统自动生成一个唯一名称。
+                     * 获取用户自定义的服务名称。
+                     * @return ServiceName 用户自定义的服务名称。
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置用户自定义的服务名称。如果没传，则系统自动生成一个唯一名称。
-                     * @param ServiceName 用户自定义的服务名称。如果没传，则系统自动生成一个唯一名称。
+                     * 设置用户自定义的服务名称。
+                     * @param ServiceName 用户自定义的服务名称。
                      */
                     void SetServiceName(const std::string& _serviceName);
 
@@ -208,7 +208,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户自定义的服务名称。如果没传，则系统自动生成一个唯一名称。
+                     * 用户自定义的服务名称。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
