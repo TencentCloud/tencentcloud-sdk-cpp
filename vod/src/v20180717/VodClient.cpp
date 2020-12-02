@@ -1889,6 +1889,49 @@ VodClient::DescribeAnimatedGraphicsTemplatesOutcomeCallable VodClient::DescribeA
     return task->get_future();
 }
 
+VodClient::DescribeCDNStatDetailsOutcome VodClient::DescribeCDNStatDetails(const DescribeCDNStatDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCDNStatDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCDNStatDetailsResponse rsp = DescribeCDNStatDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCDNStatDetailsOutcome(rsp);
+        else
+            return DescribeCDNStatDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCDNStatDetailsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeCDNStatDetailsAsync(const DescribeCDNStatDetailsRequest& request, const DescribeCDNStatDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCDNStatDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeCDNStatDetailsOutcomeCallable VodClient::DescribeCDNStatDetailsCallable(const DescribeCDNStatDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCDNStatDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCDNStatDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeCDNUsageDataOutcome VodClient::DescribeCDNUsageData(const DescribeCDNUsageDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCDNUsageData");

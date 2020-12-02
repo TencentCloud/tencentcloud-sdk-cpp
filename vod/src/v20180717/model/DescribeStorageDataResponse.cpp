@@ -28,7 +28,8 @@ DescribeStorageDataResponse::DescribeStorageDataResponse() :
     m_mediaCountHasBeenSet(false),
     m_totalStorageHasBeenSet(false),
     m_infrequentStorageHasBeenSet(false),
-    m_standardStorageHasBeenSet(false)
+    m_standardStorageHasBeenSet(false),
+    m_storageStatHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,26 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
         m_standardStorageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StorageStat") && !rsp["StorageStat"].IsNull())
+    {
+        if (!rsp["StorageStat"].IsArray())
+            return CoreInternalOutcome(Error("response `StorageStat` is not array type"));
+
+        const Value &tmpValue = rsp["StorageStat"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StorageStatData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_storageStat.push_back(item);
+        }
+        m_storageStatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +170,16 @@ uint64_t DescribeStorageDataResponse::GetStandardStorage() const
 bool DescribeStorageDataResponse::StandardStorageHasBeenSet() const
 {
     return m_standardStorageHasBeenSet;
+}
+
+vector<StorageStatData> DescribeStorageDataResponse::GetStorageStat() const
+{
+    return m_storageStat;
+}
+
+bool DescribeStorageDataResponse::StorageStatHasBeenSet() const
+{
+    return m_storageStatHasBeenSet;
 }
 
 

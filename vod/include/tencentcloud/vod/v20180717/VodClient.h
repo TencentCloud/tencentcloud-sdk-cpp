@@ -109,6 +109,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAnimatedGraphicsTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAnimatedGraphicsTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCDNStatDetailsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCDNStatDetailsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCdnLogsRequest.h>
@@ -360,6 +362,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAnimatedGraphicsTemplatesResponse> DescribeAnimatedGraphicsTemplatesOutcome;
                 typedef std::future<DescribeAnimatedGraphicsTemplatesOutcome> DescribeAnimatedGraphicsTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAnimatedGraphicsTemplatesRequest&, DescribeAnimatedGraphicsTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnimatedGraphicsTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCDNStatDetailsResponse> DescribeCDNStatDetailsOutcome;
+                typedef std::future<DescribeCDNStatDetailsOutcome> DescribeCDNStatDetailsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeCDNStatDetailsRequest&, DescribeCDNStatDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCDNStatDetailsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCDNUsageDataResponse> DescribeCDNUsageDataOutcome;
                 typedef std::future<DescribeCDNUsageDataOutcome> DescribeCDNUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeCDNUsageDataRequest&, DescribeCDNUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCDNUsageDataAsyncHandler;
@@ -931,6 +936,18 @@ namespace TencentCloud
                 DescribeAnimatedGraphicsTemplatesOutcomeCallable DescribeAnimatedGraphicsTemplatesCallable(const Model::DescribeAnimatedGraphicsTemplatesRequest& request);
 
                 /**
+                 *该接口用于查询点播域名的 CDN 带宽、流量等统计数据。
+* 查询的起始时间和结束时间跨度不超过90天。
+* 可以查询不同服务区域的数据。
+* 中国境内的数据支持查询指定地区、运营商的统计数据。
+                 * @param req DescribeCDNStatDetailsRequest
+                 * @return DescribeCDNStatDetailsOutcome
+                 */
+                DescribeCDNStatDetailsOutcome DescribeCDNStatDetails(const Model::DescribeCDNStatDetailsRequest &request);
+                void DescribeCDNStatDetailsAsync(const Model::DescribeCDNStatDetailsRequest& request, const DescribeCDNStatDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCDNStatDetailsOutcomeCallable DescribeCDNStatDetailsCallable(const Model::DescribeCDNStatDetailsRequest& request);
+
+                /**
                  *该接口用于查询点播 CDN 的流量、带宽等统计数据。
    1. 可以查询最近365天内的 CDN 用量数据。
    2.  查询时间跨度不超过90天。
@@ -1083,10 +1100,9 @@ namespace TencentCloud
 
                 /**
                  *该接口返回查询时间范围内使用的点播存储空间，单位：字节。
-   1. 可以查询最近365天内的存储空间数据；
-   2. 查询时间跨度不超过90天；
-   3. 分钟粒度查询跨度不超过5天；
-   4. 小时粒度查询跨度不超过10天。
+    1. 可以查询最近365天内的存储空间数据；
+    2. 查询时间跨度不超过90天；
+    3. 分钟粒度查询跨度不超过7天；
                  * @param req DescribeStorageDetailsRequest
                  * @return DescribeStorageDetailsOutcome
                  */

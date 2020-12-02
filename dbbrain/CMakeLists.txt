@@ -19,58 +19,88 @@ set(dbbrain_public_header
   )
 
 set(dbbrain_public_header_model
+  include/tencentcloud/dbbrain/v20191016/model/DescribeAllUserContactRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTableTimeSeriesResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/ContactItem.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBDiagHistoryResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBSpaceStatusRequest.h
-  include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeAllUserContactResponse.h
   include/tencentcloud/dbbrain/v20191016/model/TimeSlice.h
-  include/tencentcloud/dbbrain/v20191016/model/MonitorFloatMetric.h
+  include/tencentcloud/dbbrain/v20191016/model/ModifyDiagDBInstanceConfRequest.h
   include/tencentcloud/dbbrain/v20191016/model/MonitorMetric.h
+  include/tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportTaskRequest.h
+  include/tencentcloud/dbbrain/v20191016/model/MonitorFloatMetric.h
   include/tencentcloud/dbbrain/v20191016/model/TableSpaceTimeSeries.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeAllUserGroupResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/SchemaItem.h
+  include/tencentcloud/dbbrain/v20191016/model/CreateMailProfileResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBDiagEventRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBSpaceStatusResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBDiagEventResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBDiagHistoryRequest.h
+  include/tencentcloud/dbbrain/v20191016/model/GroupItem.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTableTimeSeriesRequest.h
+  include/tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportTaskResponse.h
   include/tencentcloud/dbbrain/v20191016/model/MonitorMetricSeriesData.h
+  include/tencentcloud/dbbrain/v20191016/model/ModifyDiagDBInstanceConfResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DiagHistoryEventItem.h
   include/tencentcloud/dbbrain/v20191016/model/SlowLogTopSqlItem.h
+  include/tencentcloud/dbbrain/v20191016/model/CreateMailProfileRequest.h
   include/tencentcloud/dbbrain/v20191016/model/MonitorFloatMetricSeriesData.h
+  include/tencentcloud/dbbrain/v20191016/model/MailConfiguration.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTopSqlsRequest.h
   include/tencentcloud/dbbrain/v20191016/model/TableSpaceData.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTopSqlsResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/InstanceConfs.h
+  include/tencentcloud/dbbrain/v20191016/model/ProfileInfo.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeAllUserGroupRequest.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesResponse.h
-  include/tencentcloud/dbbrain/v20191016/model/SchemaItem.h
   )
 
 set(dbbrain_src
   src/v20191016/DbbrainClient.cpp
+  src/v20191016/model/DescribeAllUserContactRequest.cpp
   src/v20191016/model/DescribeTopSpaceTableTimeSeriesResponse.cpp
+  src/v20191016/model/ContactItem.cpp
   src/v20191016/model/DescribeDBDiagHistoryResponse.cpp
   src/v20191016/model/DescribeDBSpaceStatusRequest.cpp
-  src/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.cpp
+  src/v20191016/model/DescribeAllUserContactResponse.cpp
   src/v20191016/model/TimeSlice.cpp
-  src/v20191016/model/MonitorFloatMetric.cpp
+  src/v20191016/model/ModifyDiagDBInstanceConfRequest.cpp
   src/v20191016/model/MonitorMetric.cpp
+  src/v20191016/model/CreateDBDiagReportTaskRequest.cpp
+  src/v20191016/model/MonitorFloatMetric.cpp
   src/v20191016/model/TableSpaceTimeSeries.cpp
+  src/v20191016/model/DescribeAllUserGroupResponse.cpp
+  src/v20191016/model/SchemaItem.cpp
+  src/v20191016/model/CreateMailProfileResponse.cpp
   src/v20191016/model/DescribeTopSpaceTablesRequest.cpp
   src/v20191016/model/DescribeSlowLogTimeSeriesStatsRequest.cpp
   src/v20191016/model/DescribeDBDiagEventRequest.cpp
   src/v20191016/model/DescribeDBSpaceStatusResponse.cpp
   src/v20191016/model/DescribeDBDiagEventResponse.cpp
   src/v20191016/model/DescribeDBDiagHistoryRequest.cpp
+  src/v20191016/model/GroupItem.cpp
   src/v20191016/model/DescribeTopSpaceTableTimeSeriesRequest.cpp
+  src/v20191016/model/CreateDBDiagReportTaskResponse.cpp
   src/v20191016/model/MonitorMetricSeriesData.cpp
+  src/v20191016/model/ModifyDiagDBInstanceConfResponse.cpp
   src/v20191016/model/DiagHistoryEventItem.cpp
   src/v20191016/model/SlowLogTopSqlItem.cpp
+  src/v20191016/model/CreateMailProfileRequest.cpp
   src/v20191016/model/MonitorFloatMetricSeriesData.cpp
+  src/v20191016/model/MailConfiguration.cpp
   src/v20191016/model/DescribeSlowLogTopSqlsRequest.cpp
   src/v20191016/model/TableSpaceData.cpp
   src/v20191016/model/DescribeSlowLogTopSqlsResponse.cpp
+  src/v20191016/model/InstanceConfs.cpp
+  src/v20191016/model/ProfileInfo.cpp
+  src/v20191016/model/DescribeAllUserGroupRequest.cpp
+  src/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.cpp
   src/v20191016/model/DescribeTopSpaceTablesResponse.cpp
-  src/v20191016/model/SchemaItem.cpp
   )
 
 set(dbbrain_include

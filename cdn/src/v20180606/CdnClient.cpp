@@ -599,6 +599,49 @@ CdnClient::DescribeCdnIpOutcomeCallable CdnClient::DescribeCdnIpCallable(const D
     return task->get_future();
 }
 
+CdnClient::DescribeCdnOriginIpOutcome CdnClient::DescribeCdnOriginIp(const DescribeCdnOriginIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCdnOriginIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCdnOriginIpResponse rsp = DescribeCdnOriginIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCdnOriginIpOutcome(rsp);
+        else
+            return DescribeCdnOriginIpOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCdnOriginIpOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeCdnOriginIpAsync(const DescribeCdnOriginIpRequest& request, const DescribeCdnOriginIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCdnOriginIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnOriginIpOutcomeCallable CdnClient::DescribeCdnOriginIpCallable(const DescribeCdnOriginIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCdnOriginIpOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCdnOriginIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeCertDomainsOutcome CdnClient::DescribeCertDomains(const DescribeCertDomainsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCertDomains");

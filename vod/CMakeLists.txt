@@ -101,6 +101,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ConcatTask2017.h
   include/tencentcloud/vod/v20180717/model/DeleteAIRecognitionTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/FileUploadTask.h
+  include/tencentcloud/vod/v20180717/model/DescribeCDNStatDetailsResponse.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskCoverResult.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskClassificationOutput.h
   include/tencentcloud/vod/v20180717/model/FileDeleteTask.h
@@ -338,6 +339,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/TranscodeTaskInput.h
   include/tencentcloud/vod/v20180717/model/ModifyAIRecognitionTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/WechatPublishTask.h
+  include/tencentcloud/vod/v20180717/model/DescribeCDNStatDetailsRequest.h
   include/tencentcloud/vod/v20180717/model/ClipFileInfo2017.h
   include/tencentcloud/vod/v20180717/model/StatDataItem.h
   include/tencentcloud/vod/v20180717/model/MediaSourceData.h
@@ -502,6 +504,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskCoverInput.h
   include/tencentcloud/vod/v20180717/model/DescribeStorageDetailsRequest.h
   include/tencentcloud/vod/v20180717/model/MediaTrack.h
+  include/tencentcloud/vod/v20180717/model/StorageStatData.h
   include/tencentcloud/vod/v20180717/model/MediaOutputInfo.h
   include/tencentcloud/vod/v20180717/model/EditMediaTaskOutput.h
   include/tencentcloud/vod/v20180717/model/HighlightSegmentItem.h
@@ -599,6 +602,7 @@ set(vod_src
   src/v20180717/model/ConcatTask2017.cpp
   src/v20180717/model/DeleteAIRecognitionTemplateRequest.cpp
   src/v20180717/model/FileUploadTask.cpp
+  src/v20180717/model/DescribeCDNStatDetailsResponse.cpp
   src/v20180717/model/AiAnalysisTaskCoverResult.cpp
   src/v20180717/model/AiAnalysisTaskClassificationOutput.cpp
   src/v20180717/model/FileDeleteTask.cpp
@@ -836,6 +840,7 @@ set(vod_src
   src/v20180717/model/TranscodeTaskInput.cpp
   src/v20180717/model/ModifyAIRecognitionTemplateRequest.cpp
   src/v20180717/model/WechatPublishTask.cpp
+  src/v20180717/model/DescribeCDNStatDetailsRequest.cpp
   src/v20180717/model/ClipFileInfo2017.cpp
   src/v20180717/model/StatDataItem.cpp
   src/v20180717/model/MediaSourceData.cpp
@@ -1000,6 +1005,7 @@ set(vod_src
   src/v20180717/model/AiAnalysisTaskCoverInput.cpp
   src/v20180717/model/DescribeStorageDetailsRequest.cpp
   src/v20180717/model/MediaTrack.cpp
+  src/v20180717/model/StorageStatData.cpp
   src/v20180717/model/MediaOutputInfo.cpp
   src/v20180717/model/EditMediaTaskOutput.cpp
   src/v20180717/model/HighlightSegmentItem.cpp

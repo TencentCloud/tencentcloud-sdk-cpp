@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-                     * @return StartTime 起始时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
+                     * 获取起始时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
+                     * @return StartTime 起始时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-                     * @param StartTime 起始时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
+                     * 设置起始时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
+                     * @param StartTime 起始时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，需大于开始日期，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-                     * @return EndTime 结束时间，需大于开始日期，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
+                     * 获取结束时间，需大于开始日期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
+                     * @return EndTime 结束时间，需大于开始日期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，需大于开始日期，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-                     * @param EndTime 结束时间，需大于开始日期，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
+                     * 设置结束时间，需大于开始日期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
+                     * @param EndTime 结束时间，需大于开始日期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -79,30 +79,26 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询时间间隔，有效值：
-<li>Minute：每分钟一个统计数据。</li>
-<li>Hour：每小时一个统计数据。</li>
-<li>Day：每天一个统计数据。</li>
-默认按时间跨度决定，小于1小时按分钟，小于等于7天按小时，大于7天按天展示。
-                     * @return Interval 查询时间间隔，有效值：
-<li>Minute：每分钟一个统计数据。</li>
-<li>Hour：每小时一个统计数据。</li>
-<li>Day：每天一个统计数据。</li>
-默认按时间跨度决定，小于1小时按分钟，小于等于7天按小时，大于7天按天展示。
+                     * 获取统计时间粒度，有效值：
+<li>Minute：以5分钟为粒度。</li>
+<li>Day：以天为粒度。</li>
+默认按时间跨度决定，小于等于1天以5分钟为粒度，大于1天则以天为粒度。
+                     * @return Interval 统计时间粒度，有效值：
+<li>Minute：以5分钟为粒度。</li>
+<li>Day：以天为粒度。</li>
+默认按时间跨度决定，小于等于1天以5分钟为粒度，大于1天则以天为粒度。
                      */
                     std::string GetInterval() const;
 
                     /**
-                     * 设置查询时间间隔，有效值：
-<li>Minute：每分钟一个统计数据。</li>
-<li>Hour：每小时一个统计数据。</li>
-<li>Day：每天一个统计数据。</li>
-默认按时间跨度决定，小于1小时按分钟，小于等于7天按小时，大于7天按天展示。
-                     * @param Interval 查询时间间隔，有效值：
-<li>Minute：每分钟一个统计数据。</li>
-<li>Hour：每小时一个统计数据。</li>
-<li>Day：每天一个统计数据。</li>
-默认按时间跨度决定，小于1小时按分钟，小于等于7天按小时，大于7天按天展示。
+                     * 设置统计时间粒度，有效值：
+<li>Minute：以5分钟为粒度。</li>
+<li>Day：以天为粒度。</li>
+默认按时间跨度决定，小于等于1天以5分钟为粒度，大于1天则以天为粒度。
+                     * @param Interval 统计时间粒度，有效值：
+<li>Minute：以5分钟为粒度。</li>
+<li>Day：以天为粒度。</li>
+默认按时间跨度决定，小于等于1天以5分钟为粒度，大于1天则以天为粒度。
                      */
                     void SetInterval(const std::string& _interval);
 
@@ -168,26 +164,55 @@ namespace TencentCloud
                      */
                     bool SubAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取查询的存储区域，有效值：
+<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
+<li>outside Chinese Mainland：中国境外。</li>
+默认值为 Chinese Mainland。
+                     * @return Area 查询的存储区域，有效值：
+<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
+<li>outside Chinese Mainland：中国境外。</li>
+默认值为 Chinese Mainland。
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置查询的存储区域，有效值：
+<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
+<li>outside Chinese Mainland：中国境外。</li>
+默认值为 Chinese Mainland。
+                     * @param Area 查询的存储区域，有效值：
+<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
+<li>outside Chinese Mainland：中国境外。</li>
+默认值为 Chinese Mainland。
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 起始时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
+                     * 起始时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，需大于开始日期，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
+                     * 结束时间，需大于开始日期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 查询时间间隔，有效值：
-<li>Minute：每分钟一个统计数据。</li>
-<li>Hour：每小时一个统计数据。</li>
-<li>Day：每天一个统计数据。</li>
-默认按时间跨度决定，小于1小时按分钟，小于等于7天按小时，大于7天按天展示。
+                     * 统计时间粒度，有效值：
+<li>Minute：以5分钟为粒度。</li>
+<li>Day：以天为粒度。</li>
+默认按时间跨度决定，小于等于1天以5分钟为粒度，大于1天则以天为粒度。
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;
@@ -208,6 +233,15 @@ namespace TencentCloud
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * 查询的存储区域，有效值：
+<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
+<li>outside Chinese Mainland：中国境外。</li>
+默认值为 Chinese Mainland。
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

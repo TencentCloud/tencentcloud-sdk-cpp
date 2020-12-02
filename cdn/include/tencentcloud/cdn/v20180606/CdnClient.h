@@ -49,6 +49,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnDomainLogsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnIpRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnIpResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeCdnOriginIpRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeCdnOriginIpResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCertDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCertDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportRequest.h>
@@ -184,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCdnIpResponse> DescribeCdnIpOutcome;
                 typedef std::future<DescribeCdnIpOutcome> DescribeCdnIpOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeCdnIpRequest&, DescribeCdnIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnIpAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCdnOriginIpResponse> DescribeCdnOriginIpOutcome;
+                typedef std::future<DescribeCdnOriginIpOutcome> DescribeCdnOriginIpOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeCdnOriginIpRequest&, DescribeCdnOriginIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnOriginIpAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCertDomainsResponse> DescribeCertDomainsOutcome;
                 typedef std::future<DescribeCertDomainsOutcome> DescribeCertDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeCertDomainsRequest&, DescribeCertDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertDomainsAsyncHandler;
@@ -436,6 +441,15 @@ namespace TencentCloud
                 DescribeCdnIpOutcome DescribeCdnIp(const Model::DescribeCdnIpRequest &request);
                 void DescribeCdnIpAsync(const Model::DescribeCdnIpRequest& request, const DescribeCdnIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCdnIpOutcomeCallable DescribeCdnIpCallable(const Model::DescribeCdnIpRequest& request);
+
+                /**
+                 *本接口（DescribeCdnOriginIp）用于查询 CDN 回源节点的IP信息。（注：使用此接口需开启对应白名单）
+                 * @param req DescribeCdnOriginIpRequest
+                 * @return DescribeCdnOriginIpOutcome
+                 */
+                DescribeCdnOriginIpOutcome DescribeCdnOriginIp(const Model::DescribeCdnOriginIpRequest &request);
+                void DescribeCdnOriginIpAsync(const Model::DescribeCdnOriginIpRequest& request, const DescribeCdnOriginIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCdnOriginIpOutcomeCallable DescribeCdnOriginIpCallable(const Model::DescribeCdnOriginIpRequest& request);
 
                 /**
                  *DescribeCertDomains 用于校验SSL证书并提取证书中包含的域名。

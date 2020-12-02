@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBESTORAGEDETAILSRESPONSE_H_
-#define TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBESTORAGEDETAILSRESPONSE_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBECDNSTATDETAILSRESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBECDNSTATDETAILSRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -33,19 +33,31 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeStorageDetails返回参数结构体
+                * DescribeCDNStatDetails返回参数结构体
                 */
-                class DescribeStorageDetailsResponse : public AbstractModel
+                class DescribeCDNStatDetailsResponse : public AbstractModel
                 {
                 public:
-                    DescribeStorageDetailsResponse();
-                    ~DescribeStorageDetailsResponse() = default;
+                    DescribeCDNStatDetailsResponse();
+                    ~DescribeCDNStatDetailsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取存储统计数据，每5分钟或每天一条数据。
-                     * @return Data 存储统计数据，每5分钟或每天一条数据。
+                     * 获取每条数据的时间粒度，单位：分钟。
+                     * @return DataInterval 每条数据的时间粒度，单位：分钟。
+                     */
+                    uint64_t GetDataInterval() const;
+
+                    /**
+                     * 判断参数 DataInterval 是否已赋值
+                     * @return DataInterval 是否已赋值
+                     */
+                    bool DataIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取CDN 用量数据。
+                     * @return Data CDN 用量数据。
                      */
                     std::vector<StatDataItem> GetData() const;
 
@@ -58,7 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 存储统计数据，每5分钟或每天一条数据。
+                     * 每条数据的时间粒度，单位：分钟。
+                     */
+                    uint64_t m_dataInterval;
+                    bool m_dataIntervalHasBeenSet;
+
+                    /**
+                     * CDN 用量数据。
                      */
                     std::vector<StatDataItem> m_data;
                     bool m_dataHasBeenSet;
@@ -69,4 +87,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBESTORAGEDETAILSRESPONSE_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBECDNSTATDETAILSRESPONSE_H_

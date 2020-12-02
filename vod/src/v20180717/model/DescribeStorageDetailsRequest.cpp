@@ -28,7 +28,8 @@ DescribeStorageDetailsRequest::DescribeStorageDetailsRequest() :
     m_endTimeHasBeenSet(false),
     m_intervalHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_subAppIdHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string DescribeStorageDetailsRequest::ToJsonString() const
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subAppId, allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void DescribeStorageDetailsRequest::SetSubAppId(const uint64_t& _subAppId)
 bool DescribeStorageDetailsRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+string DescribeStorageDetailsRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeStorageDetailsRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeStorageDetailsRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

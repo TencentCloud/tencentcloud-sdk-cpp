@@ -39,6 +39,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/CreateClsLogTopicResponse.h
   include/tencentcloud/cdn/v20180606/model/PurgePathCacheResponse.h
   include/tencentcloud/cdn/v20180606/model/DomainFilter.h
+  include/tencentcloud/cdn/v20180606/model/DescribeCdnOriginIpResponse.h
   include/tencentcloud/cdn/v20180606/model/SpecificConfig.h
   include/tencentcloud/cdn/v20180606/model/FollowRedirect.h
   include/tencentcloud/cdn/v20180606/model/RequestHeader.h
@@ -75,6 +76,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DeleteClsLogTopicRequest.h
   include/tencentcloud/cdn/v20180606/model/DeleteScdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataResponse.h
+  include/tencentcloud/cdn/v20180606/model/DescribeCdnOriginIpRequest.h
   include/tencentcloud/cdn/v20180606/model/UpdatePayTypeResponse.h
   include/tencentcloud/cdn/v20180606/model/TopicInfo.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsConfigResponse.h
@@ -244,6 +246,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/PurgeTask.h
   include/tencentcloud/cdn/v20180606/model/OriginPullTimeout.h
   include/tencentcloud/cdn/v20180606/model/DeleteCdnDomainResponse.h
+  include/tencentcloud/cdn/v20180606/model/OriginIp.h
   include/tencentcloud/cdn/v20180606/model/CdnIp.h
   include/tencentcloud/cdn/v20180606/model/DescribeCdnDataRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeImageConfigResponse.h
@@ -277,6 +280,7 @@ set(cdn_src
   src/v20180606/model/CreateClsLogTopicResponse.cpp
   src/v20180606/model/PurgePathCacheResponse.cpp
   src/v20180606/model/DomainFilter.cpp
+  src/v20180606/model/DescribeCdnOriginIpResponse.cpp
   src/v20180606/model/SpecificConfig.cpp
   src/v20180606/model/FollowRedirect.cpp
   src/v20180606/model/RequestHeader.cpp
@@ -313,6 +317,7 @@ set(cdn_src
   src/v20180606/model/DeleteClsLogTopicRequest.cpp
   src/v20180606/model/DeleteScdnDomainRequest.cpp
   src/v20180606/model/DescribeDistrictIspDataResponse.cpp
+  src/v20180606/model/DescribeCdnOriginIpRequest.cpp
   src/v20180606/model/UpdatePayTypeResponse.cpp
   src/v20180606/model/TopicInfo.cpp
   src/v20180606/model/DescribeDomainsConfigResponse.cpp
@@ -482,6 +487,7 @@ set(cdn_src
   src/v20180606/model/PurgeTask.cpp
   src/v20180606/model/OriginPullTimeout.cpp
   src/v20180606/model/DeleteCdnDomainResponse.cpp
+  src/v20180606/model/OriginIp.cpp
   src/v20180606/model/CdnIp.cpp
   src/v20180606/model/DescribeCdnDataRequest.cpp
   src/v20180606/model/DescribeImageConfigResponse.cpp

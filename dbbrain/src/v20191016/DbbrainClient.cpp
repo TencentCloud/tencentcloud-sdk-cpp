@@ -40,6 +40,178 @@ DbbrainClient::DbbrainClient(const Credential &credential, const string &region,
 }
 
 
+DbbrainClient::CreateDBDiagReportTaskOutcome DbbrainClient::CreateDBDiagReportTask(const CreateDBDiagReportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDBDiagReportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDBDiagReportTaskResponse rsp = CreateDBDiagReportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDBDiagReportTaskOutcome(rsp);
+        else
+            return CreateDBDiagReportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDBDiagReportTaskOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateDBDiagReportTaskAsync(const CreateDBDiagReportTaskRequest& request, const CreateDBDiagReportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDBDiagReportTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateDBDiagReportTaskOutcomeCallable DbbrainClient::CreateDBDiagReportTaskCallable(const CreateDBDiagReportTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDBDiagReportTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDBDiagReportTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::CreateMailProfileOutcome DbbrainClient::CreateMailProfile(const CreateMailProfileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMailProfile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMailProfileResponse rsp = CreateMailProfileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMailProfileOutcome(rsp);
+        else
+            return CreateMailProfileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMailProfileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateMailProfileAsync(const CreateMailProfileRequest& request, const CreateMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMailProfile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateMailProfileOutcomeCallable DbbrainClient::CreateMailProfileCallable(const CreateMailProfileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMailProfileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMailProfile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeAllUserContactOutcome DbbrainClient::DescribeAllUserContact(const DescribeAllUserContactRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAllUserContact");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAllUserContactResponse rsp = DescribeAllUserContactResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAllUserContactOutcome(rsp);
+        else
+            return DescribeAllUserContactOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAllUserContactOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeAllUserContactAsync(const DescribeAllUserContactRequest& request, const DescribeAllUserContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAllUserContact(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeAllUserContactOutcomeCallable DbbrainClient::DescribeAllUserContactCallable(const DescribeAllUserContactRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAllUserContactOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAllUserContact(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeAllUserGroupOutcome DbbrainClient::DescribeAllUserGroup(const DescribeAllUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAllUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAllUserGroupResponse rsp = DescribeAllUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAllUserGroupOutcome(rsp);
+        else
+            return DescribeAllUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAllUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeAllUserGroupAsync(const DescribeAllUserGroupRequest& request, const DescribeAllUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAllUserGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeAllUserGroupOutcomeCallable DbbrainClient::DescribeAllUserGroupCallable(const DescribeAllUserGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAllUserGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAllUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeDBDiagEventOutcome DbbrainClient::DescribeDBDiagEvent(const DescribeDBDiagEventRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBDiagEvent");
@@ -334,6 +506,49 @@ DbbrainClient::DescribeTopSpaceTablesOutcomeCallable DbbrainClient::DescribeTopS
         [this, request]()
         {
             return this->DescribeTopSpaceTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::ModifyDiagDBInstanceConfOutcome DbbrainClient::ModifyDiagDBInstanceConf(const ModifyDiagDBInstanceConfRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDiagDBInstanceConf");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDiagDBInstanceConfResponse rsp = ModifyDiagDBInstanceConfResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDiagDBInstanceConfOutcome(rsp);
+        else
+            return ModifyDiagDBInstanceConfOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDiagDBInstanceConfOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::ModifyDiagDBInstanceConfAsync(const ModifyDiagDBInstanceConfRequest& request, const ModifyDiagDBInstanceConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDiagDBInstanceConf(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::ModifyDiagDBInstanceConfOutcomeCallable DbbrainClient::ModifyDiagDBInstanceConfCallable(const ModifyDiagDBInstanceConfRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDiagDBInstanceConfOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDiagDBInstanceConf(request);
         }
     );
 

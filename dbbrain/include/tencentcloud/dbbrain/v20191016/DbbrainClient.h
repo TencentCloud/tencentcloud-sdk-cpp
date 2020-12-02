@@ -23,6 +23,14 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportTaskRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportTaskResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/CreateMailProfileRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/CreateMailProfileResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeAllUserContactRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeAllUserContactResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeAllUserGroupRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeAllUserGroupResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBDiagEventRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBDiagEventResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBDiagHistoryRequest.h>
@@ -37,6 +45,8 @@
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTableTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/ModifyDiagDBInstanceConfRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/ModifyDiagDBInstanceConfResponse.h>
 
 
 namespace TencentCloud
@@ -51,6 +61,18 @@ namespace TencentCloud
                 DbbrainClient(const Credential &credential, const std::string &region);
                 DbbrainClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateDBDiagReportTaskResponse> CreateDBDiagReportTaskOutcome;
+                typedef std::future<CreateDBDiagReportTaskOutcome> CreateDBDiagReportTaskOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateDBDiagReportTaskRequest&, CreateDBDiagReportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBDiagReportTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateMailProfileResponse> CreateMailProfileOutcome;
+                typedef std::future<CreateMailProfileOutcome> CreateMailProfileOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateMailProfileRequest&, CreateMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMailProfileAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAllUserContactResponse> DescribeAllUserContactOutcome;
+                typedef std::future<DescribeAllUserContactOutcome> DescribeAllUserContactOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeAllUserContactRequest&, DescribeAllUserContactOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllUserContactAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAllUserGroupResponse> DescribeAllUserGroupOutcome;
+                typedef std::future<DescribeAllUserGroupOutcome> DescribeAllUserGroupOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeAllUserGroupRequest&, DescribeAllUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllUserGroupAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBDiagEventResponse> DescribeDBDiagEventOutcome;
                 typedef std::future<DescribeDBDiagEventOutcome> DescribeDBDiagEventOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagEventRequest&, DescribeDBDiagEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagEventAsyncHandler;
@@ -72,8 +94,47 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTopSpaceTablesResponse> DescribeTopSpaceTablesOutcome;
                 typedef std::future<DescribeTopSpaceTablesOutcome> DescribeTopSpaceTablesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceTablesRequest&, DescribeTopSpaceTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceTablesAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDiagDBInstanceConfResponse> ModifyDiagDBInstanceConfOutcome;
+                typedef std::future<ModifyDiagDBInstanceConfOutcome> ModifyDiagDBInstanceConfOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::ModifyDiagDBInstanceConfRequest&, ModifyDiagDBInstanceConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiagDBInstanceConfAsyncHandler;
 
 
+
+                /**
+                 *创建健康报告，并可以选择是否发送邮件。
+                 * @param req CreateDBDiagReportTaskRequest
+                 * @return CreateDBDiagReportTaskOutcome
+                 */
+                CreateDBDiagReportTaskOutcome CreateDBDiagReportTask(const Model::CreateDBDiagReportTaskRequest &request);
+                void CreateDBDiagReportTaskAsync(const Model::CreateDBDiagReportTaskRequest& request, const CreateDBDiagReportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDBDiagReportTaskOutcomeCallable CreateDBDiagReportTaskCallable(const Model::CreateDBDiagReportTaskRequest& request);
+
+                /**
+                 *创建邮件配置。其中入参ProfileType表示所创建配置的类型，ProfileType 取值包括：dbScan_mail_configuration（数据库巡检邮件配置）、scheduler_mail_configuration（定期生成邮件配置）。
+                 * @param req CreateMailProfileRequest
+                 * @return CreateMailProfileOutcome
+                 */
+                CreateMailProfileOutcome CreateMailProfile(const Model::CreateMailProfileRequest &request);
+                void CreateMailProfileAsync(const Model::CreateMailProfileRequest& request, const CreateMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMailProfileOutcomeCallable CreateMailProfileCallable(const Model::CreateMailProfileRequest& request);
+
+                /**
+                 *获取邮件发送中联系人的相关信息。
+                 * @param req DescribeAllUserContactRequest
+                 * @return DescribeAllUserContactOutcome
+                 */
+                DescribeAllUserContactOutcome DescribeAllUserContact(const Model::DescribeAllUserContactRequest &request);
+                void DescribeAllUserContactAsync(const Model::DescribeAllUserContactRequest& request, const DescribeAllUserContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllUserContactOutcomeCallable DescribeAllUserContactCallable(const Model::DescribeAllUserContactRequest& request);
+
+                /**
+                 *获取邮件发送联系组的相关信息。
+                 * @param req DescribeAllUserGroupRequest
+                 * @return DescribeAllUserGroupOutcome
+                 */
+                DescribeAllUserGroupOutcome DescribeAllUserGroup(const Model::DescribeAllUserGroupRequest &request);
+                void DescribeAllUserGroupAsync(const Model::DescribeAllUserGroupRequest& request, const DescribeAllUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllUserGroupOutcomeCallable DescribeAllUserGroupCallable(const Model::DescribeAllUserGroupRequest& request);
 
                 /**
                  *获取实例异常诊断事件的详情信息。
@@ -137,6 +198,15 @@ namespace TencentCloud
                 DescribeTopSpaceTablesOutcome DescribeTopSpaceTables(const Model::DescribeTopSpaceTablesRequest &request);
                 void DescribeTopSpaceTablesAsync(const Model::DescribeTopSpaceTablesRequest& request, const DescribeTopSpaceTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopSpaceTablesOutcomeCallable DescribeTopSpaceTablesCallable(const Model::DescribeTopSpaceTablesRequest& request);
+
+                /**
+                 *修改实例巡检开关。
+                 * @param req ModifyDiagDBInstanceConfRequest
+                 * @return ModifyDiagDBInstanceConfOutcome
+                 */
+                ModifyDiagDBInstanceConfOutcome ModifyDiagDBInstanceConf(const Model::ModifyDiagDBInstanceConfRequest &request);
+                void ModifyDiagDBInstanceConfAsync(const Model::ModifyDiagDBInstanceConfRequest& request, const ModifyDiagDBInstanceConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDiagDBInstanceConfOutcomeCallable ModifyDiagDBInstanceConfCallable(const Model::ModifyDiagDBInstanceConfRequest& request);
 
             };
         }
