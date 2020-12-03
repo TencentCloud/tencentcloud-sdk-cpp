@@ -126,6 +126,92 @@ TsfClient::AddInstancesOutcomeCallable TsfClient::AddInstancesCallable(const Add
     return task->get_future();
 }
 
+TsfClient::BindApiGroupOutcome TsfClient::BindApiGroup(const BindApiGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindApiGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindApiGroupResponse rsp = BindApiGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindApiGroupOutcome(rsp);
+        else
+            return BindApiGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return BindApiGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::BindApiGroupAsync(const BindApiGroupRequest& request, const BindApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindApiGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::BindApiGroupOutcomeCallable TsfClient::BindApiGroupCallable(const BindApiGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindApiGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->BindApiGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ChangeApiUsableStatusOutcome TsfClient::ChangeApiUsableStatus(const ChangeApiUsableStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChangeApiUsableStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChangeApiUsableStatusResponse rsp = ChangeApiUsableStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChangeApiUsableStatusOutcome(rsp);
+        else
+            return ChangeApiUsableStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ChangeApiUsableStatusOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ChangeApiUsableStatusAsync(const ChangeApiUsableStatusRequest& request, const ChangeApiUsableStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChangeApiUsableStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ChangeApiUsableStatusOutcomeCallable TsfClient::ChangeApiUsableStatusCallable(const ChangeApiUsableStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChangeApiUsableStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ChangeApiUsableStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::ContinueRunFailedTaskBatchOutcome TsfClient::ContinueRunFailedTaskBatch(const ContinueRunFailedTaskBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "ContinueRunFailedTaskBatch");
@@ -162,6 +248,135 @@ TsfClient::ContinueRunFailedTaskBatchOutcomeCallable TsfClient::ContinueRunFaile
         [this, request]()
         {
             return this->ContinueRunFailedTaskBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::CreateAllGatewayApiAsyncOutcome TsfClient::CreateAllGatewayApiAsync(const CreateAllGatewayApiAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAllGatewayApiAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAllGatewayApiAsyncResponse rsp = CreateAllGatewayApiAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAllGatewayApiAsyncOutcome(rsp);
+        else
+            return CreateAllGatewayApiAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAllGatewayApiAsyncOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateAllGatewayApiAsyncAsync(const CreateAllGatewayApiAsyncRequest& request, const CreateAllGatewayApiAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAllGatewayApiAsync(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateAllGatewayApiAsyncOutcomeCallable TsfClient::CreateAllGatewayApiAsyncCallable(const CreateAllGatewayApiAsyncRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAllGatewayApiAsyncOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAllGatewayApiAsync(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::CreateApiGroupOutcome TsfClient::CreateApiGroup(const CreateApiGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApiGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApiGroupResponse rsp = CreateApiGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApiGroupOutcome(rsp);
+        else
+            return CreateApiGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApiGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateApiGroupAsync(const CreateApiGroupRequest& request, const CreateApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApiGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateApiGroupOutcomeCallable TsfClient::CreateApiGroupCallable(const CreateApiGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApiGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApiGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::CreateApiRateLimitRuleOutcome TsfClient::CreateApiRateLimitRule(const CreateApiRateLimitRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApiRateLimitRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApiRateLimitRuleResponse rsp = CreateApiRateLimitRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApiRateLimitRuleOutcome(rsp);
+        else
+            return CreateApiRateLimitRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApiRateLimitRuleOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateApiRateLimitRuleAsync(const CreateApiRateLimitRuleRequest& request, const CreateApiRateLimitRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApiRateLimitRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateApiRateLimitRuleOutcomeCallable TsfClient::CreateApiRateLimitRuleCallable(const CreateApiRateLimitRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApiRateLimitRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApiRateLimitRule(request);
         }
     );
 
@@ -334,6 +549,49 @@ TsfClient::CreateContainGroupOutcomeCallable TsfClient::CreateContainGroupCallab
         [this, request]()
         {
             return this->CreateContainGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::CreateGatewayApiOutcome TsfClient::CreateGatewayApi(const CreateGatewayApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGatewayApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGatewayApiResponse rsp = CreateGatewayApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGatewayApiOutcome(rsp);
+        else
+            return CreateGatewayApiOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGatewayApiOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateGatewayApiAsync(const CreateGatewayApiRequest& request, const CreateGatewayApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGatewayApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateGatewayApiOutcomeCallable TsfClient::CreateGatewayApiCallable(const CreateGatewayApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGatewayApiOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGatewayApi(request);
         }
     );
 
@@ -764,6 +1022,49 @@ TsfClient::CreateTaskFlowOutcomeCallable TsfClient::CreateTaskFlowCallable(const
         [this, request]()
         {
             return this->CreateTaskFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DeleteApiGroupOutcome TsfClient::DeleteApiGroup(const DeleteApiGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApiGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteApiGroupResponse rsp = DeleteApiGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteApiGroupOutcome(rsp);
+        else
+            return DeleteApiGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteApiGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteApiGroupAsync(const DeleteApiGroupRequest& request, const DeleteApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteApiGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteApiGroupOutcomeCallable TsfClient::DeleteApiGroupCallable(const DeleteApiGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteApiGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteApiGroup(request);
         }
     );
 
@@ -1502,6 +1803,178 @@ TsfClient::DescribeApiDetailOutcomeCallable TsfClient::DescribeApiDetailCallable
     return task->get_future();
 }
 
+TsfClient::DescribeApiGroupOutcome TsfClient::DescribeApiGroup(const DescribeApiGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiGroupResponse rsp = DescribeApiGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiGroupOutcome(rsp);
+        else
+            return DescribeApiGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeApiGroupAsync(const DescribeApiGroupRequest& request, const DescribeApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeApiGroupOutcomeCallable TsfClient::DescribeApiGroupCallable(const DescribeApiGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeApiGroupsOutcome TsfClient::DescribeApiGroups(const DescribeApiGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiGroupsResponse rsp = DescribeApiGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiGroupsOutcome(rsp);
+        else
+            return DescribeApiGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeApiGroupsAsync(const DescribeApiGroupsRequest& request, const DescribeApiGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeApiGroupsOutcomeCallable TsfClient::DescribeApiGroupsCallable(const DescribeApiGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeApiRateLimitRulesOutcome TsfClient::DescribeApiRateLimitRules(const DescribeApiRateLimitRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiRateLimitRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiRateLimitRulesResponse rsp = DescribeApiRateLimitRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiRateLimitRulesOutcome(rsp);
+        else
+            return DescribeApiRateLimitRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiRateLimitRulesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeApiRateLimitRulesAsync(const DescribeApiRateLimitRulesRequest& request, const DescribeApiRateLimitRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiRateLimitRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeApiRateLimitRulesOutcomeCallable TsfClient::DescribeApiRateLimitRulesCallable(const DescribeApiRateLimitRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiRateLimitRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiRateLimitRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeApiUseDetailOutcome TsfClient::DescribeApiUseDetail(const DescribeApiUseDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiUseDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiUseDetailResponse rsp = DescribeApiUseDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiUseDetailOutcome(rsp);
+        else
+            return DescribeApiUseDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiUseDetailOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeApiUseDetailAsync(const DescribeApiUseDetailRequest& request, const DescribeApiUseDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiUseDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeApiUseDetailOutcomeCallable TsfClient::DescribeApiUseDetailCallable(const DescribeApiUseDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiUseDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiUseDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeApiVersionsOutcome TsfClient::DescribeApiVersions(const DescribeApiVersionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApiVersions");
@@ -2061,6 +2534,49 @@ TsfClient::DescribeContainerGroupsOutcomeCallable TsfClient::DescribeContainerGr
     return task->get_future();
 }
 
+TsfClient::DescribeCreateGatewayApiStatusOutcome TsfClient::DescribeCreateGatewayApiStatus(const DescribeCreateGatewayApiStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCreateGatewayApiStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCreateGatewayApiStatusResponse rsp = DescribeCreateGatewayApiStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCreateGatewayApiStatusOutcome(rsp);
+        else
+            return DescribeCreateGatewayApiStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCreateGatewayApiStatusOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeCreateGatewayApiStatusAsync(const DescribeCreateGatewayApiStatusRequest& request, const DescribeCreateGatewayApiStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCreateGatewayApiStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeCreateGatewayApiStatusOutcomeCallable TsfClient::DescribeCreateGatewayApiStatusCallable(const DescribeCreateGatewayApiStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCreateGatewayApiStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCreateGatewayApiStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeDownloadInfoOutcome TsfClient::DescribeDownloadInfo(const DescribeDownloadInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDownloadInfo");
@@ -2147,6 +2663,92 @@ TsfClient::DescribeFlowLastBatchStateOutcomeCallable TsfClient::DescribeFlowLast
     return task->get_future();
 }
 
+TsfClient::DescribeGatewayAllGroupApisOutcome TsfClient::DescribeGatewayAllGroupApis(const DescribeGatewayAllGroupApisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGatewayAllGroupApis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGatewayAllGroupApisResponse rsp = DescribeGatewayAllGroupApisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGatewayAllGroupApisOutcome(rsp);
+        else
+            return DescribeGatewayAllGroupApisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGatewayAllGroupApisOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeGatewayAllGroupApisAsync(const DescribeGatewayAllGroupApisRequest& request, const DescribeGatewayAllGroupApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGatewayAllGroupApis(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeGatewayAllGroupApisOutcomeCallable TsfClient::DescribeGatewayAllGroupApisCallable(const DescribeGatewayAllGroupApisRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGatewayAllGroupApisOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGatewayAllGroupApis(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeGatewayMonitorOverviewOutcome TsfClient::DescribeGatewayMonitorOverview(const DescribeGatewayMonitorOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGatewayMonitorOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGatewayMonitorOverviewResponse rsp = DescribeGatewayMonitorOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGatewayMonitorOverviewOutcome(rsp);
+        else
+            return DescribeGatewayMonitorOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGatewayMonitorOverviewOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeGatewayMonitorOverviewAsync(const DescribeGatewayMonitorOverviewRequest& request, const DescribeGatewayMonitorOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGatewayMonitorOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeGatewayMonitorOverviewOutcomeCallable TsfClient::DescribeGatewayMonitorOverviewCallable(const DescribeGatewayMonitorOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGatewayMonitorOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGatewayMonitorOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeGroupOutcome TsfClient::DescribeGroup(const DescribeGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGroup");
@@ -2190,6 +2792,92 @@ TsfClient::DescribeGroupOutcomeCallable TsfClient::DescribeGroupCallable(const D
     return task->get_future();
 }
 
+TsfClient::DescribeGroupBindedGatewaysOutcome TsfClient::DescribeGroupBindedGateways(const DescribeGroupBindedGatewaysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupBindedGateways");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupBindedGatewaysResponse rsp = DescribeGroupBindedGatewaysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupBindedGatewaysOutcome(rsp);
+        else
+            return DescribeGroupBindedGatewaysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupBindedGatewaysOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeGroupBindedGatewaysAsync(const DescribeGroupBindedGatewaysRequest& request, const DescribeGroupBindedGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupBindedGateways(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeGroupBindedGatewaysOutcomeCallable TsfClient::DescribeGroupBindedGatewaysCallable(const DescribeGroupBindedGatewaysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupBindedGatewaysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupBindedGateways(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeGroupGatewaysOutcome TsfClient::DescribeGroupGateways(const DescribeGroupGatewaysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupGateways");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupGatewaysResponse rsp = DescribeGroupGatewaysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupGatewaysOutcome(rsp);
+        else
+            return DescribeGroupGatewaysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupGatewaysOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeGroupGatewaysAsync(const DescribeGroupGatewaysRequest& request, const DescribeGroupGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupGateways(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeGroupGatewaysOutcomeCallable TsfClient::DescribeGroupGatewaysCallable(const DescribeGroupGatewaysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupGatewaysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupGateways(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeGroupInstancesOutcome TsfClient::DescribeGroupInstances(const DescribeGroupInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGroupInstances");
@@ -2226,6 +2914,49 @@ TsfClient::DescribeGroupInstancesOutcomeCallable TsfClient::DescribeGroupInstanc
         [this, request]()
         {
             return this->DescribeGroupInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeGroupUseDetailOutcome TsfClient::DescribeGroupUseDetail(const DescribeGroupUseDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupUseDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupUseDetailResponse rsp = DescribeGroupUseDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupUseDetailOutcome(rsp);
+        else
+            return DescribeGroupUseDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupUseDetailOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeGroupUseDetailAsync(const DescribeGroupUseDetailRequest& request, const DescribeGroupUseDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupUseDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeGroupUseDetailOutcomeCallable TsfClient::DescribeGroupUseDetailCallable(const DescribeGroupUseDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupUseDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupUseDetail(request);
         }
     );
 
@@ -3437,6 +4168,49 @@ TsfClient::DisableTaskFlowOutcomeCallable TsfClient::DisableTaskFlowCallable(con
     return task->get_future();
 }
 
+TsfClient::DraftApiGroupOutcome TsfClient::DraftApiGroup(const DraftApiGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DraftApiGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DraftApiGroupResponse rsp = DraftApiGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DraftApiGroupOutcome(rsp);
+        else
+            return DraftApiGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DraftApiGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DraftApiGroupAsync(const DraftApiGroupRequest& request, const DraftApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DraftApiGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DraftApiGroupOutcomeCallable TsfClient::DraftApiGroupCallable(const DraftApiGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DraftApiGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DraftApiGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::EnableTaskOutcome TsfClient::EnableTask(const EnableTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableTask");
@@ -4125,6 +4899,49 @@ TsfClient::RedoTaskFlowBatchOutcomeCallable TsfClient::RedoTaskFlowBatchCallable
     return task->get_future();
 }
 
+TsfClient::ReleaseApiGroupOutcome TsfClient::ReleaseApiGroup(const ReleaseApiGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseApiGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseApiGroupResponse rsp = ReleaseApiGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseApiGroupOutcome(rsp);
+        else
+            return ReleaseApiGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseApiGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ReleaseApiGroupAsync(const ReleaseApiGroupRequest& request, const ReleaseApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseApiGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ReleaseApiGroupOutcomeCallable TsfClient::ReleaseApiGroupCallable(const ReleaseApiGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseApiGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseApiGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::ReleaseConfigOutcome TsfClient::ReleaseConfig(const ReleaseConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ReleaseConfig");
@@ -4763,6 +5580,221 @@ TsfClient::TerminateTaskFlowBatchOutcomeCallable TsfClient::TerminateTaskFlowBat
         [this, request]()
         {
             return this->TerminateTaskFlowBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::UnbindApiGroupOutcome TsfClient::UnbindApiGroup(const UnbindApiGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindApiGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindApiGroupResponse rsp = UnbindApiGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindApiGroupOutcome(rsp);
+        else
+            return UnbindApiGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindApiGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::UnbindApiGroupAsync(const UnbindApiGroupRequest& request, const UnbindApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindApiGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::UnbindApiGroupOutcomeCallable TsfClient::UnbindApiGroupCallable(const UnbindApiGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindApiGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindApiGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::UpdateApiGroupOutcome TsfClient::UpdateApiGroup(const UpdateApiGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateApiGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateApiGroupResponse rsp = UpdateApiGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateApiGroupOutcome(rsp);
+        else
+            return UpdateApiGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateApiGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::UpdateApiGroupAsync(const UpdateApiGroupRequest& request, const UpdateApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateApiGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::UpdateApiGroupOutcomeCallable TsfClient::UpdateApiGroupCallable(const UpdateApiGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateApiGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateApiGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::UpdateApiRateLimitRuleOutcome TsfClient::UpdateApiRateLimitRule(const UpdateApiRateLimitRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateApiRateLimitRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateApiRateLimitRuleResponse rsp = UpdateApiRateLimitRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateApiRateLimitRuleOutcome(rsp);
+        else
+            return UpdateApiRateLimitRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateApiRateLimitRuleOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::UpdateApiRateLimitRuleAsync(const UpdateApiRateLimitRuleRequest& request, const UpdateApiRateLimitRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateApiRateLimitRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::UpdateApiRateLimitRuleOutcomeCallable TsfClient::UpdateApiRateLimitRuleCallable(const UpdateApiRateLimitRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateApiRateLimitRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateApiRateLimitRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::UpdateApiRateLimitRulesOutcome TsfClient::UpdateApiRateLimitRules(const UpdateApiRateLimitRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateApiRateLimitRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateApiRateLimitRulesResponse rsp = UpdateApiRateLimitRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateApiRateLimitRulesOutcome(rsp);
+        else
+            return UpdateApiRateLimitRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateApiRateLimitRulesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::UpdateApiRateLimitRulesAsync(const UpdateApiRateLimitRulesRequest& request, const UpdateApiRateLimitRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateApiRateLimitRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::UpdateApiRateLimitRulesOutcomeCallable TsfClient::UpdateApiRateLimitRulesCallable(const UpdateApiRateLimitRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateApiRateLimitRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateApiRateLimitRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::UpdateGatewayApiOutcome TsfClient::UpdateGatewayApi(const UpdateGatewayApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateGatewayApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateGatewayApiResponse rsp = UpdateGatewayApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateGatewayApiOutcome(rsp);
+        else
+            return UpdateGatewayApiOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateGatewayApiOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::UpdateGatewayApiAsync(const UpdateGatewayApiRequest& request, const UpdateGatewayApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateGatewayApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::UpdateGatewayApiOutcomeCallable TsfClient::UpdateGatewayApiCallable(const UpdateGatewayApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateGatewayApiOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateGatewayApi(request);
         }
     );
 

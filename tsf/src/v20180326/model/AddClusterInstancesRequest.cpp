@@ -32,7 +32,8 @@ AddClusterInstancesRequest::AddClusterInstancesRequest() :
     m_keyIdHasBeenSet(false),
     m_sgIdHasBeenSet(false),
     m_instanceImportModeHasBeenSet(false),
-    m_osCustomizeTypeHasBeenSet(false)
+    m_osCustomizeTypeHasBeenSet(false),
+    m_featureIdListHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,19 @@ string AddClusterInstancesRequest::ToJsonString() const
         string key = "OsCustomizeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_featureIdListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FeatureIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_featureIdList.begin(); itr != m_featureIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -270,6 +284,22 @@ void AddClusterInstancesRequest::SetOsCustomizeType(const string& _osCustomizeTy
 bool AddClusterInstancesRequest::OsCustomizeTypeHasBeenSet() const
 {
     return m_osCustomizeTypeHasBeenSet;
+}
+
+vector<string> AddClusterInstancesRequest::GetFeatureIdList() const
+{
+    return m_featureIdList;
+}
+
+void AddClusterInstancesRequest::SetFeatureIdList(const vector<string>& _featureIdList)
+{
+    m_featureIdList = _featureIdList;
+    m_featureIdListHasBeenSet = true;
+}
+
+bool AddClusterInstancesRequest::FeatureIdListHasBeenSet() const
+{
+    return m_featureIdListHasBeenSet;
 }
 
 

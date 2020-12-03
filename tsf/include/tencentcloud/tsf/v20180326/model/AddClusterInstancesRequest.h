@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool OsCustomizeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取镜像特征ID列表
+                     * @return FeatureIdList 镜像特征ID列表
+                     */
+                    std::vector<std::string> GetFeatureIdList() const;
+
+                    /**
+                     * 设置镜像特征ID列表
+                     * @param FeatureIdList 镜像特征ID列表
+                     */
+                    void SetFeatureIdList(const std::vector<std::string>& _featureIdList);
+
+                    /**
+                     * 判断参数 FeatureIdList 是否已赋值
+                     * @return FeatureIdList 是否已赋值
+                     */
+                    bool FeatureIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::string m_osCustomizeType;
                     bool m_osCustomizeTypeHasBeenSet;
+
+                    /**
+                     * 镜像特征ID列表
+                     */
+                    std::vector<std::string> m_featureIdList;
+                    bool m_featureIdListHasBeenSet;
 
                 };
             }

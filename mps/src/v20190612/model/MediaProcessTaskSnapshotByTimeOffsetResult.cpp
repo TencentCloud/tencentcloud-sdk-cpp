@@ -23,6 +23,7 @@ using namespace std;
 
 MediaProcessTaskSnapshotByTimeOffsetResult::MediaProcessTaskSnapshotByTimeOffsetResult() :
     m_statusHasBeenSet(false),
+    m_errCodeExtHasBeenSet(false),
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
@@ -43,6 +44,16 @@ CoreInternalOutcome MediaProcessTaskSnapshotByTimeOffsetResult::Deserialize(cons
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrCodeExt") && !value["ErrCodeExt"].IsNull())
+    {
+        if (!value["ErrCodeExt"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MediaProcessTaskSnapshotByTimeOffsetResult.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errCodeExt = string(value["ErrCodeExt"].GetString());
+        m_errCodeExtHasBeenSet = true;
     }
 
     if (value.HasMember("ErrCode") && !value["ErrCode"].IsNull())
@@ -114,6 +125,14 @@ void MediaProcessTaskSnapshotByTimeOffsetResult::ToJsonObject(Value &value, Docu
         value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_errCodeExtHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ErrCodeExt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_errCodeExt.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_errCodeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -165,6 +184,22 @@ void MediaProcessTaskSnapshotByTimeOffsetResult::SetStatus(const string& _status
 bool MediaProcessTaskSnapshotByTimeOffsetResult::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string MediaProcessTaskSnapshotByTimeOffsetResult::GetErrCodeExt() const
+{
+    return m_errCodeExt;
+}
+
+void MediaProcessTaskSnapshotByTimeOffsetResult::SetErrCodeExt(const string& _errCodeExt)
+{
+    m_errCodeExt = _errCodeExt;
+    m_errCodeExtHasBeenSet = true;
+}
+
+bool MediaProcessTaskSnapshotByTimeOffsetResult::ErrCodeExtHasBeenSet() const
+{
+    return m_errCodeExtHasBeenSet;
 }
 
 int64_t MediaProcessTaskSnapshotByTimeOffsetResult::GetErrCode() const

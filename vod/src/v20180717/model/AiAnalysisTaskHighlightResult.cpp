@@ -23,6 +23,7 @@ using namespace std;
 
 AiAnalysisTaskHighlightResult::AiAnalysisTaskHighlightResult() :
     m_statusHasBeenSet(false),
+    m_errCodeExtHasBeenSet(false),
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
@@ -43,6 +44,16 @@ CoreInternalOutcome AiAnalysisTaskHighlightResult::Deserialize(const Value &valu
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrCodeExt") && !value["ErrCodeExt"].IsNull())
+    {
+        if (!value["ErrCodeExt"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AiAnalysisTaskHighlightResult.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errCodeExt = string(value["ErrCodeExt"].GetString());
+        m_errCodeExtHasBeenSet = true;
     }
 
     if (value.HasMember("ErrCode") && !value["ErrCode"].IsNull())
@@ -114,6 +125,14 @@ void AiAnalysisTaskHighlightResult::ToJsonObject(Value &value, Document::Allocat
         value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_errCodeExtHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ErrCodeExt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_errCodeExt.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_errCodeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -165,6 +184,22 @@ void AiAnalysisTaskHighlightResult::SetStatus(const string& _status)
 bool AiAnalysisTaskHighlightResult::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string AiAnalysisTaskHighlightResult::GetErrCodeExt() const
+{
+    return m_errCodeExt;
+}
+
+void AiAnalysisTaskHighlightResult::SetErrCodeExt(const string& _errCodeExt)
+{
+    m_errCodeExt = _errCodeExt;
+    m_errCodeExtHasBeenSet = true;
+}
+
+bool AiAnalysisTaskHighlightResult::ErrCodeExtHasBeenSet() const
+{
+    return m_errCodeExtHasBeenSet;
 }
 
 int64_t AiAnalysisTaskHighlightResult::GetErrCode() const

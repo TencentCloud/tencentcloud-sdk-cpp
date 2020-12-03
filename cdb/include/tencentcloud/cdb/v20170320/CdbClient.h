@@ -211,6 +211,10 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyParamTemplateResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyRoReplicationDelayRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyRoReplicationDelayResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyRoTypeRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyRoTypeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesRequest.h>
@@ -227,8 +231,12 @@
 #include <tencentcloud/cdb/v20170320/model/RestartDBInstancesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StartBatchRollbackRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StartBatchRollbackResponse.h>
+#include <tencentcloud/cdb/v20170320/model/StartDelayReplicationRequest.h>
+#include <tencentcloud/cdb/v20170320/model/StartDelayReplicationResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StopDBImportJobRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StopDBImportJobResponse.h>
+#include <tencentcloud/cdb/v20170320/model/StopDelayReplicationRequest.h>
+#include <tencentcloud/cdb/v20170320/model/StopDelayReplicationResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StopRollbackRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StopRollbackResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeRequest.h>
@@ -535,6 +543,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyRoGroupInfoResponse> ModifyRoGroupInfoOutcome;
                 typedef std::future<ModifyRoGroupInfoOutcome> ModifyRoGroupInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyRoGroupInfoRequest&, ModifyRoGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoGroupInfoAsyncHandler;
+                typedef Outcome<Error, Model::ModifyRoReplicationDelayResponse> ModifyRoReplicationDelayOutcome;
+                typedef std::future<ModifyRoReplicationDelayOutcome> ModifyRoReplicationDelayOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyRoReplicationDelayRequest&, ModifyRoReplicationDelayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoReplicationDelayAsyncHandler;
+                typedef Outcome<Error, Model::ModifyRoTypeResponse> ModifyRoTypeOutcome;
+                typedef std::future<ModifyRoTypeOutcome> ModifyRoTypeOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyRoTypeRequest&, ModifyRoTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoTypeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTimeWindowResponse> ModifyTimeWindowOutcome;
                 typedef std::future<ModifyTimeWindowOutcome> ModifyTimeWindowOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyTimeWindowRequest&, ModifyTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTimeWindowAsyncHandler;
@@ -559,9 +573,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StartBatchRollbackResponse> StartBatchRollbackOutcome;
                 typedef std::future<StartBatchRollbackOutcome> StartBatchRollbackOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StartBatchRollbackRequest&, StartBatchRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartBatchRollbackAsyncHandler;
+                typedef Outcome<Error, Model::StartDelayReplicationResponse> StartDelayReplicationOutcome;
+                typedef std::future<StartDelayReplicationOutcome> StartDelayReplicationOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::StartDelayReplicationRequest&, StartDelayReplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartDelayReplicationAsyncHandler;
                 typedef Outcome<Error, Model::StopDBImportJobResponse> StopDBImportJobOutcome;
                 typedef std::future<StopDBImportJobOutcome> StopDBImportJobOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StopDBImportJobRequest&, StopDBImportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopDBImportJobAsyncHandler;
+                typedef Outcome<Error, Model::StopDelayReplicationResponse> StopDelayReplicationOutcome;
+                typedef std::future<StopDelayReplicationOutcome> StopDelayReplicationOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::StopDelayReplicationRequest&, StopDelayReplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopDelayReplicationAsyncHandler;
                 typedef Outcome<Error, Model::StopRollbackResponse> StopRollbackOutcome;
                 typedef std::future<StopRollbackOutcome> StopRollbackOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StopRollbackRequest&, StopRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRollbackAsyncHandler;
@@ -1454,6 +1474,24 @@ namespace TencentCloud
                 ModifyRoGroupInfoOutcomeCallable ModifyRoGroupInfoCallable(const Model::ModifyRoGroupInfoRequest& request);
 
                 /**
+                 *修改延迟只读实例的延迟复制时间。
+                 * @param req ModifyRoReplicationDelayRequest
+                 * @return ModifyRoReplicationDelayOutcome
+                 */
+                ModifyRoReplicationDelayOutcome ModifyRoReplicationDelay(const Model::ModifyRoReplicationDelayRequest &request);
+                void ModifyRoReplicationDelayAsync(const Model::ModifyRoReplicationDelayRequest& request, const ModifyRoReplicationDelayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoReplicationDelayOutcomeCallable ModifyRoReplicationDelayCallable(const Model::ModifyRoReplicationDelayRequest& request);
+
+                /**
+                 *修改只读实例类型，可以将普通只读实例变为延迟只读实例，或者将延迟只读实例变为普通只读实例。
+                 * @param req ModifyRoTypeRequest
+                 * @return ModifyRoTypeOutcome
+                 */
+                ModifyRoTypeOutcome ModifyRoType(const Model::ModifyRoTypeRequest &request);
+                void ModifyRoTypeAsync(const Model::ModifyRoTypeRequest& request, const ModifyRoTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoTypeOutcomeCallable ModifyRoTypeCallable(const Model::ModifyRoTypeRequest& request);
+
+                /**
                  *本接口(ModifyTimeWindow)用于更新云数据库实例的维护时间窗口。
                  * @param req ModifyTimeWindowRequest
                  * @return ModifyTimeWindowOutcome
@@ -1536,6 +1574,15 @@ namespace TencentCloud
                 StartBatchRollbackOutcomeCallable StartBatchRollbackCallable(const Model::StartBatchRollbackRequest& request);
 
                 /**
+                 *启动延迟只读实例的延迟复制。
+                 * @param req StartDelayReplicationRequest
+                 * @return StartDelayReplicationOutcome
+                 */
+                StartDelayReplicationOutcome StartDelayReplication(const Model::StartDelayReplicationRequest &request);
+                void StartDelayReplicationAsync(const Model::StartDelayReplicationRequest& request, const StartDelayReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartDelayReplicationOutcomeCallable StartDelayReplicationCallable(const Model::StartDelayReplicationRequest& request);
+
+                /**
                  *本接口(StopDBImportJob)用于终止数据导入任务。
                  * @param req StopDBImportJobRequest
                  * @return StopDBImportJobOutcome
@@ -1543,6 +1590,15 @@ namespace TencentCloud
                 StopDBImportJobOutcome StopDBImportJob(const Model::StopDBImportJobRequest &request);
                 void StopDBImportJobAsync(const Model::StopDBImportJobRequest& request, const StopDBImportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopDBImportJobOutcomeCallable StopDBImportJobCallable(const Model::StopDBImportJobRequest& request);
+
+                /**
+                 *停止延迟只读实例的延迟复制。
+                 * @param req StopDelayReplicationRequest
+                 * @return StopDelayReplicationOutcome
+                 */
+                StopDelayReplicationOutcome StopDelayReplication(const Model::StopDelayReplicationRequest &request);
+                void StopDelayReplicationAsync(const Model::StopDelayReplicationRequest& request, const StopDelayReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopDelayReplicationOutcomeCallable StopDelayReplicationCallable(const Model::StopDelayReplicationRequest& request);
 
                 /**
                  *本接口(StopRollback) 用于撤销实例正在进行的回档任务，该接口返回一个异步任务id。 撤销结果可以通过 DescribeRequestResult 查询任务的执行情况。

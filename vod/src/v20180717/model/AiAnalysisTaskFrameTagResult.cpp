@@ -23,6 +23,7 @@ using namespace std;
 
 AiAnalysisTaskFrameTagResult::AiAnalysisTaskFrameTagResult() :
     m_statusHasBeenSet(false),
+    m_errCodeExtHasBeenSet(false),
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
@@ -43,6 +44,16 @@ CoreInternalOutcome AiAnalysisTaskFrameTagResult::Deserialize(const Value &value
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrCodeExt") && !value["ErrCodeExt"].IsNull())
+    {
+        if (!value["ErrCodeExt"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AiAnalysisTaskFrameTagResult.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errCodeExt = string(value["ErrCodeExt"].GetString());
+        m_errCodeExtHasBeenSet = true;
     }
 
     if (value.HasMember("ErrCode") && !value["ErrCode"].IsNull())
@@ -114,6 +125,14 @@ void AiAnalysisTaskFrameTagResult::ToJsonObject(Value &value, Document::Allocato
         value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_errCodeExtHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ErrCodeExt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_errCodeExt.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_errCodeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -165,6 +184,22 @@ void AiAnalysisTaskFrameTagResult::SetStatus(const string& _status)
 bool AiAnalysisTaskFrameTagResult::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string AiAnalysisTaskFrameTagResult::GetErrCodeExt() const
+{
+    return m_errCodeExt;
+}
+
+void AiAnalysisTaskFrameTagResult::SetErrCodeExt(const string& _errCodeExt)
+{
+    m_errCodeExt = _errCodeExt;
+    m_errCodeExtHasBeenSet = true;
+}
+
+bool AiAnalysisTaskFrameTagResult::ErrCodeExtHasBeenSet() const
+{
+    return m_errCodeExtHasBeenSet;
 }
 
 int64_t AiAnalysisTaskFrameTagResult::GetErrCode() const

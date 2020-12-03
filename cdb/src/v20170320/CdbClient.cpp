@@ -4082,6 +4082,92 @@ CdbClient::ModifyRoGroupInfoOutcomeCallable CdbClient::ModifyRoGroupInfoCallable
     return task->get_future();
 }
 
+CdbClient::ModifyRoReplicationDelayOutcome CdbClient::ModifyRoReplicationDelay(const ModifyRoReplicationDelayRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoReplicationDelay");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoReplicationDelayResponse rsp = ModifyRoReplicationDelayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoReplicationDelayOutcome(rsp);
+        else
+            return ModifyRoReplicationDelayOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoReplicationDelayOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyRoReplicationDelayAsync(const ModifyRoReplicationDelayRequest& request, const ModifyRoReplicationDelayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoReplicationDelay(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyRoReplicationDelayOutcomeCallable CdbClient::ModifyRoReplicationDelayCallable(const ModifyRoReplicationDelayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoReplicationDelayOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoReplicationDelay(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ModifyRoTypeOutcome CdbClient::ModifyRoType(const ModifyRoTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoTypeResponse rsp = ModifyRoTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoTypeOutcome(rsp);
+        else
+            return ModifyRoTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoTypeOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyRoTypeAsync(const ModifyRoTypeRequest& request, const ModifyRoTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyRoTypeOutcomeCallable CdbClient::ModifyRoTypeCallable(const ModifyRoTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyTimeWindowOutcome CdbClient::ModifyTimeWindow(const ModifyTimeWindowRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTimeWindow");
@@ -4426,6 +4512,49 @@ CdbClient::StartBatchRollbackOutcomeCallable CdbClient::StartBatchRollbackCallab
     return task->get_future();
 }
 
+CdbClient::StartDelayReplicationOutcome CdbClient::StartDelayReplication(const StartDelayReplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartDelayReplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartDelayReplicationResponse rsp = StartDelayReplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartDelayReplicationOutcome(rsp);
+        else
+            return StartDelayReplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return StartDelayReplicationOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::StartDelayReplicationAsync(const StartDelayReplicationRequest& request, const StartDelayReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartDelayReplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::StartDelayReplicationOutcomeCallable CdbClient::StartDelayReplicationCallable(const StartDelayReplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartDelayReplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->StartDelayReplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::StopDBImportJobOutcome CdbClient::StopDBImportJob(const StopDBImportJobRequest &request)
 {
     auto outcome = MakeRequest(request, "StopDBImportJob");
@@ -4462,6 +4591,49 @@ CdbClient::StopDBImportJobOutcomeCallable CdbClient::StopDBImportJobCallable(con
         [this, request]()
         {
             return this->StopDBImportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::StopDelayReplicationOutcome CdbClient::StopDelayReplication(const StopDelayReplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopDelayReplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopDelayReplicationResponse rsp = StopDelayReplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopDelayReplicationOutcome(rsp);
+        else
+            return StopDelayReplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return StopDelayReplicationOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::StopDelayReplicationAsync(const StopDelayReplicationRequest& request, const StopDelayReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopDelayReplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::StopDelayReplicationOutcomeCallable CdbClient::StopDelayReplicationCallable(const StopDelayReplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopDelayReplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->StopDelayReplication(request);
         }
     );
 

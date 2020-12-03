@@ -27,7 +27,8 @@ DiagnoseInfo::DiagnoseInfo() :
     m_createTimeHasBeenSet(false),
     m_expireDateHasBeenSet(false),
     m_visitCountHasBeenSet(false),
-    m_clientListHasBeenSet(false)
+    m_clientListHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome DiagnoseInfo::Deserialize(const Value &value)
         m_clientListHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DiagnoseInfo.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -166,6 +177,14 @@ void DiagnoseInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -265,5 +284,21 @@ void DiagnoseInfo::SetClientList(const vector<DiagnoseList>& _clientList)
 bool DiagnoseInfo::ClientListHasBeenSet() const
 {
     return m_clientListHasBeenSet;
+}
+
+string DiagnoseInfo::GetArea() const
+{
+    return m_area;
+}
+
+void DiagnoseInfo::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DiagnoseInfo::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
