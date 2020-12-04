@@ -22,6 +22,7 @@ using namespace rapidjson;
 using namespace std;
 
 VideoEditProjectInput::VideoEditProjectInput() :
+    m_videoEditTemplateIdHasBeenSet(false),
     m_initTracksHasBeenSet(false)
 {
 }
@@ -30,6 +31,16 @@ CoreInternalOutcome VideoEditProjectInput::Deserialize(const Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("VideoEditTemplateId") && !value["VideoEditTemplateId"].IsNull())
+    {
+        if (!value["VideoEditTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VideoEditProjectInput.VideoEditTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoEditTemplateId = string(value["VideoEditTemplateId"].GetString());
+        m_videoEditTemplateIdHasBeenSet = true;
+    }
 
     if (value.HasMember("InitTracks") && !value["InitTracks"].IsNull())
     {
@@ -58,6 +69,14 @@ CoreInternalOutcome VideoEditProjectInput::Deserialize(const Value &value)
 void VideoEditProjectInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
+    if (m_videoEditTemplateIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VideoEditTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_videoEditTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_initTracksHasBeenSet)
     {
         Value iKey(kStringType);
@@ -75,6 +94,22 @@ void VideoEditProjectInput::ToJsonObject(Value &value, Document::AllocatorType& 
 
 }
 
+
+string VideoEditProjectInput::GetVideoEditTemplateId() const
+{
+    return m_videoEditTemplateId;
+}
+
+void VideoEditProjectInput::SetVideoEditTemplateId(const string& _videoEditTemplateId)
+{
+    m_videoEditTemplateId = _videoEditTemplateId;
+    m_videoEditTemplateIdHasBeenSet = true;
+}
+
+bool VideoEditProjectInput::VideoEditTemplateIdHasBeenSet() const
+{
+    return m_videoEditTemplateIdHasBeenSet;
+}
 
 vector<MediaTrack> VideoEditProjectInput::GetInitTracks() const
 {

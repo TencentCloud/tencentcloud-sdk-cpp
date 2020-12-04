@@ -83,6 +83,49 @@ UmpClient::CreateCameraAlertsOutcomeCallable UmpClient::CreateCameraAlertsCallab
     return task->get_future();
 }
 
+UmpClient::CreateCaptureOutcome UmpClient::CreateCapture(const CreateCaptureRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCapture");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCaptureResponse rsp = CreateCaptureResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCaptureOutcome(rsp);
+        else
+            return CreateCaptureOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCaptureOutcome(outcome.GetError());
+    }
+}
+
+void UmpClient::CreateCaptureAsync(const CreateCaptureRequest& request, const CreateCaptureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCapture(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+UmpClient::CreateCaptureOutcomeCallable UmpClient::CreateCaptureCallable(const CreateCaptureRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCaptureOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCapture(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 UmpClient::CreateMultiBizAlertOutcome UmpClient::CreateMultiBizAlert(const CreateMultiBizAlertRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMultiBizAlert");

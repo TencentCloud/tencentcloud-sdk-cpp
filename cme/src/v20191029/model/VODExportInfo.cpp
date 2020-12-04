@@ -23,7 +23,8 @@ using namespace std;
 
 VODExportInfo::VODExportInfo() :
     m_nameHasBeenSet(false),
-    m_classIdHasBeenSet(false)
+    m_classIdHasBeenSet(false),
+    m_thirdPartyPublishInfosHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,26 @@ CoreInternalOutcome VODExportInfo::Deserialize(const Value &value)
         m_classIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ThirdPartyPublishInfos") && !value["ThirdPartyPublishInfos"].IsNull())
+    {
+        if (!value["ThirdPartyPublishInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `VODExportInfo.ThirdPartyPublishInfos` is not array type"));
+
+        const Value &tmpValue = value["ThirdPartyPublishInfos"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ThirdPartyPublishInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_thirdPartyPublishInfos.push_back(item);
+        }
+        m_thirdPartyPublishInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +94,21 @@ void VODExportInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ClassId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_classId, allocator);
+    }
+
+    if (m_thirdPartyPublishInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ThirdPartyPublishInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_thirdPartyPublishInfos.begin(); itr != m_thirdPartyPublishInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -108,5 +144,21 @@ void VODExportInfo::SetClassId(const uint64_t& _classId)
 bool VODExportInfo::ClassIdHasBeenSet() const
 {
     return m_classIdHasBeenSet;
+}
+
+vector<ThirdPartyPublishInfo> VODExportInfo::GetThirdPartyPublishInfos() const
+{
+    return m_thirdPartyPublishInfos;
+}
+
+void VODExportInfo::SetThirdPartyPublishInfos(const vector<ThirdPartyPublishInfo>& _thirdPartyPublishInfos)
+{
+    m_thirdPartyPublishInfos = _thirdPartyPublishInfos;
+    m_thirdPartyPublishInfosHasBeenSet = true;
+}
+
+bool VODExportInfo::ThirdPartyPublishInfosHasBeenSet() const
+{
+    return m_thirdPartyPublishInfosHasBeenSet;
 }
 

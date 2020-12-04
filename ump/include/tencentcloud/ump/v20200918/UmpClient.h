@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ump/v20200918/model/CreateCameraAlertsRequest.h>
 #include <tencentcloud/ump/v20200918/model/CreateCameraAlertsResponse.h>
+#include <tencentcloud/ump/v20200918/model/CreateCaptureRequest.h>
+#include <tencentcloud/ump/v20200918/model/CreateCaptureResponse.h>
 #include <tencentcloud/ump/v20200918/model/CreateMultiBizAlertRequest.h>
 #include <tencentcloud/ump/v20200918/model/CreateMultiBizAlertResponse.h>
 #include <tencentcloud/ump/v20200918/model/CreateProgramStateRequest.h>
@@ -66,6 +68,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateCameraAlertsResponse> CreateCameraAlertsOutcome;
                 typedef std::future<CreateCameraAlertsOutcome> CreateCameraAlertsOutcomeCallable;
                 typedef std::function<void(const UmpClient*, const Model::CreateCameraAlertsRequest&, CreateCameraAlertsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCameraAlertsAsyncHandler;
+                typedef Outcome<Error, Model::CreateCaptureResponse> CreateCaptureOutcome;
+                typedef std::future<CreateCaptureOutcome> CreateCaptureOutcomeCallable;
+                typedef std::function<void(const UmpClient*, const Model::CreateCaptureRequest&, CreateCaptureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCaptureAsyncHandler;
                 typedef Outcome<Error, Model::CreateMultiBizAlertResponse> CreateMultiBizAlertOutcome;
                 typedef std::future<CreateMultiBizAlertOutcome> CreateMultiBizAlertOutcomeCallable;
                 typedef std::function<void(const UmpClient*, const Model::CreateMultiBizAlertRequest&, CreateMultiBizAlertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiBizAlertAsyncHandler;
@@ -115,6 +120,15 @@ namespace TencentCloud
                 CreateCameraAlertsOutcome CreateCameraAlerts(const Model::CreateCameraAlertsRequest &request);
                 void CreateCameraAlertsAsync(const Model::CreateCameraAlertsRequest& request, const CreateCameraAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCameraAlertsOutcomeCallable CreateCameraAlertsCallable(const Model::CreateCameraAlertsRequest& request);
+
+                /**
+                 *场内抓拍上报接口
+                 * @param req CreateCaptureRequest
+                 * @return CreateCaptureOutcome
+                 */
+                CreateCaptureOutcome CreateCapture(const Model::CreateCaptureRequest &request);
+                void CreateCaptureAsync(const Model::CreateCaptureRequest& request, const CreateCaptureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCaptureOutcomeCallable CreateCaptureCallable(const Model::CreateCaptureRequest& request);
 
                 /**
                  *集团广场的多经点位告警

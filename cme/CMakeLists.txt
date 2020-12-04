@@ -56,6 +56,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/TimeRange.h
   include/tencentcloud/cme/v20191029/model/DescribeLoginStatusRequest.h
   include/tencentcloud/cme/v20191029/model/DeleteLoginStatusResponse.h
+  include/tencentcloud/cme/v20191029/model/WeiboPublishInfo.h
   include/tencentcloud/cme/v20191029/model/Resource.h
   include/tencentcloud/cme/v20191029/model/CreateLinkResponse.h
   include/tencentcloud/cme/v20191029/model/ListMediaResponse.h
@@ -76,6 +77,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/ImportMediaToProjectRequest.h
   include/tencentcloud/cme/v20191029/model/VODExportInfo.h
   include/tencentcloud/cme/v20191029/model/SortBy.h
+  include/tencentcloud/cme/v20191029/model/PenguinMediaPlatformPublishInfo.h
   include/tencentcloud/cme/v20191029/model/ImageMaterial.h
   include/tencentcloud/cme/v20191029/model/DescribeClassRequest.h
   include/tencentcloud/cme/v20191029/model/MoveClassRequest.h
@@ -96,6 +98,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/VideoStreamInfo.h
   include/tencentcloud/cme/v20191029/model/AddTeamMemberRequest.h
   include/tencentcloud/cme/v20191029/model/ExportVideoEditProjectResponse.h
+  include/tencentcloud/cme/v20191029/model/ThirdPartyPublishInfo.h
   include/tencentcloud/cme/v20191029/model/ListMediaRequest.h
   include/tencentcloud/cme/v20191029/model/ModifyTeamResponse.h
   include/tencentcloud/cme/v20191029/model/DeleteLoginStatusRequest.h
@@ -123,6 +126,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DescribeClassResponse.h
   include/tencentcloud/cme/v20191029/model/MediaMetaData.h
   include/tencentcloud/cme/v20191029/model/DescribeSharedSpaceRequest.h
+  include/tencentcloud/cme/v20191029/model/KuaishouPublishInfo.h
   include/tencentcloud/cme/v20191029/model/TaskBaseInfo.h
   include/tencentcloud/cme/v20191029/model/DeleteClassResponse.h
   include/tencentcloud/cme/v20191029/model/LiveStreamClipProjectInput.h
@@ -173,6 +177,7 @@ set(cme_src
   src/v20191029/model/TimeRange.cpp
   src/v20191029/model/DescribeLoginStatusRequest.cpp
   src/v20191029/model/DeleteLoginStatusResponse.cpp
+  src/v20191029/model/WeiboPublishInfo.cpp
   src/v20191029/model/Resource.cpp
   src/v20191029/model/CreateLinkResponse.cpp
   src/v20191029/model/ListMediaResponse.cpp
@@ -193,6 +198,7 @@ set(cme_src
   src/v20191029/model/ImportMediaToProjectRequest.cpp
   src/v20191029/model/VODExportInfo.cpp
   src/v20191029/model/SortBy.cpp
+  src/v20191029/model/PenguinMediaPlatformPublishInfo.cpp
   src/v20191029/model/ImageMaterial.cpp
   src/v20191029/model/DescribeClassRequest.cpp
   src/v20191029/model/MoveClassRequest.cpp
@@ -213,6 +219,7 @@ set(cme_src
   src/v20191029/model/VideoStreamInfo.cpp
   src/v20191029/model/AddTeamMemberRequest.cpp
   src/v20191029/model/ExportVideoEditProjectResponse.cpp
+  src/v20191029/model/ThirdPartyPublishInfo.cpp
   src/v20191029/model/ListMediaRequest.cpp
   src/v20191029/model/ModifyTeamResponse.cpp
   src/v20191029/model/DeleteLoginStatusRequest.cpp
@@ -240,6 +247,7 @@ set(cme_src
   src/v20191029/model/DescribeClassResponse.cpp
   src/v20191029/model/MediaMetaData.cpp
   src/v20191029/model/DescribeSharedSpaceRequest.cpp
+  src/v20191029/model/KuaishouPublishInfo.cpp
   src/v20191029/model/TaskBaseInfo.cpp
   src/v20191029/model/DeleteClassResponse.cpp
   src/v20191029/model/LiveStreamClipProjectInput.cpp

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/Entity.h>
+#include <tencentcloud/cme/v20191029/model/ThirdPartyPublishInfo.h>
 
 
 namespace TencentCloud
@@ -137,6 +138,24 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取第三方平台发布信息列表。
+                     * @return ThirdPartyPublishInfos 第三方平台发布信息列表。
+                     */
+                    std::vector<ThirdPartyPublishInfo> GetThirdPartyPublishInfos() const;
+
+                    /**
+                     * 设置第三方平台发布信息列表。
+                     * @param ThirdPartyPublishInfos 第三方平台发布信息列表。
+                     */
+                    void SetThirdPartyPublishInfos(const std::vector<ThirdPartyPublishInfo>& _thirdPartyPublishInfos);
+
+                    /**
+                     * 判断参数 ThirdPartyPublishInfos 是否已赋值
+                     * @return ThirdPartyPublishInfos 是否已赋值
+                     */
+                    bool ThirdPartyPublishInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +187,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 第三方平台发布信息列表。
+                     */
+                    std::vector<ThirdPartyPublishInfo> m_thirdPartyPublishInfos;
+                    bool m_thirdPartyPublishInfosHasBeenSet;
 
                 };
             }

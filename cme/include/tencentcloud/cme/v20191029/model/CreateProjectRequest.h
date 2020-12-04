@@ -171,14 +171,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取导播台信息，仅当项目类型为 SWITCHER 时有效。
-                     * @return SwitcherProjectInput 导播台信息，仅当项目类型为 SWITCHER 时有效。
+                     * 获取导播台信息，仅当项目类型为 SWITCHER 时必填。
+                     * @return SwitcherProjectInput 导播台信息，仅当项目类型为 SWITCHER 时必填。
                      */
                     SwitcherProjectInput GetSwitcherProjectInput() const;
 
                     /**
-                     * 设置导播台信息，仅当项目类型为 SWITCHER 时有效。
-                     * @param SwitcherProjectInput 导播台信息，仅当项目类型为 SWITCHER 时有效。
+                     * 设置导播台信息，仅当项目类型为 SWITCHER 时必填。
+                     * @param SwitcherProjectInput 导播台信息，仅当项目类型为 SWITCHER 时必填。
                      */
                     void SetSwitcherProjectInput(const SwitcherProjectInput& _switcherProjectInput);
 
@@ -207,14 +207,14 @@ namespace TencentCloud
                     bool LiveStreamClipProjectInputHasBeenSet() const;
 
                     /**
-                     * 获取视频编辑信息。
-                     * @return VideoEditProjectInput 视频编辑信息。
+                     * 获取视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。
+                     * @return VideoEditProjectInput 视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。
                      */
                     VideoEditProjectInput GetVideoEditProjectInput() const;
 
                     /**
-                     * 设置视频编辑信息。
-                     * @param VideoEditProjectInput 视频编辑信息。
+                     * 设置视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。
+                     * @param VideoEditProjectInput 视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。
                      */
                     void SetVideoEditProjectInput(const VideoEditProjectInput& _videoEditProjectInput);
 
@@ -267,7 +267,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 导播台信息，仅当项目类型为 SWITCHER 时有效。
+                     * 导播台信息，仅当项目类型为 SWITCHER 时必填。
                      */
                     SwitcherProjectInput m_switcherProjectInput;
                     bool m_switcherProjectInputHasBeenSet;
@@ -279,7 +279,7 @@ namespace TencentCloud
                     bool m_liveStreamClipProjectInputHasBeenSet;
 
                     /**
-                     * 视频编辑信息。
+                     * 视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。
                      */
                     VideoEditProjectInput m_videoEditProjectInput;
                     bool m_videoEditProjectInputHasBeenSet;
