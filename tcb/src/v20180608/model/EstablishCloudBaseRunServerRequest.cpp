@@ -32,7 +32,9 @@ EstablishCloudBaseRunServerRequest::EstablishCloudBaseRunServerRequest() :
     m_esInfoHasBeenSet(false),
     m_logTypeHasBeenSet(false),
     m_operatorRemarkHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_vpcInfoHasBeenSet(false),
+    m_publicAccessHasBeenSet(false)
 {
 }
 
@@ -114,6 +116,23 @@ string EstablishCloudBaseRunServerRequest::ToJsonString() const
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_vpcInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_publicAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_publicAccess, allocator);
     }
 
 
@@ -266,6 +285,38 @@ void EstablishCloudBaseRunServerRequest::SetSource(const string& _source)
 bool EstablishCloudBaseRunServerRequest::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+CloudBaseRunVpcInfo EstablishCloudBaseRunServerRequest::GetVpcInfo() const
+{
+    return m_vpcInfo;
+}
+
+void EstablishCloudBaseRunServerRequest::SetVpcInfo(const CloudBaseRunVpcInfo& _vpcInfo)
+{
+    m_vpcInfo = _vpcInfo;
+    m_vpcInfoHasBeenSet = true;
+}
+
+bool EstablishCloudBaseRunServerRequest::VpcInfoHasBeenSet() const
+{
+    return m_vpcInfoHasBeenSet;
+}
+
+int64_t EstablishCloudBaseRunServerRequest::GetPublicAccess() const
+{
+    return m_publicAccess;
+}
+
+void EstablishCloudBaseRunServerRequest::SetPublicAccess(const int64_t& _publicAccess)
+{
+    m_publicAccess = _publicAccess;
+    m_publicAccessHasBeenSet = true;
+}
+
+bool EstablishCloudBaseRunServerRequest::PublicAccessHasBeenSet() const
+{
+    return m_publicAccessHasBeenSet;
 }
 
 

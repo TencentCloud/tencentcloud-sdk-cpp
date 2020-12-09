@@ -188,14 +188,14 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取被调用的函数参数列表
-                     * @return Args 被调用的函数参数列表
+                     * 获取被调用的函数参数列表，参数列表大小总和要求小于2M
+                     * @return Args 被调用的函数参数列表，参数列表大小总和要求小于2M
                      */
                     std::vector<std::string> GetArgs() const;
 
                     /**
-                     * 设置被调用的函数参数列表
-                     * @param Args 被调用的函数参数列表
+                     * 设置被调用的函数参数列表，参数列表大小总和要求小于2M
+                     * @param Args 被调用的函数参数列表，参数列表大小总和要求小于2M
                      */
                     void SetArgs(const std::vector<std::string>& _args);
 
@@ -274,7 +274,7 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 被调用的函数参数列表
+                     * 被调用的函数参数列表，参数列表大小总和要求小于2M
                      */
                     std::vector<std::string> m_args;
                     bool m_argsHasBeenSet;

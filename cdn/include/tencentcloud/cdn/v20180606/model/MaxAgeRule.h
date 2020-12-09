@@ -91,12 +91,14 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+注意：all规则不可删除，默认遵循源站，可修改。
                      * @return MaxAgeContents MaxAgeType 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+注意：all规则不可删除，默认遵循源站，可修改。
                      */
                     std::vector<std::string> GetMaxAgeContents() const;
 
@@ -107,12 +109,14 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+注意：all规则不可删除，默认遵循源站，可修改。
                      * @param MaxAgeContents MaxAgeType 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+注意：all规则不可删除，默认遵循源站，可修改。
                      */
                     void SetMaxAgeContents(const std::vector<std::string>& _maxAgeContents);
 
@@ -124,13 +128,17 @@ index 时填充 /
 
                     /**
                      * 获取MaxAge 时间设置，单位秒
+注意：时间为0，即不缓存。
                      * @return MaxAgeTime MaxAge 时间设置，单位秒
+注意：时间为0，即不缓存。
                      */
                     int64_t GetMaxAgeTime() const;
 
                     /**
                      * 设置MaxAge 时间设置，单位秒
+注意：时间为0，即不缓存。
                      * @param MaxAgeTime MaxAge 时间设置，单位秒
+注意：时间为0，即不缓存。
                      */
                     void SetMaxAgeTime(const int64_t& _maxAgeTime);
 
@@ -139,6 +147,28 @@ index 时填充 /
                      * @return MaxAgeTime 是否已赋值
                      */
                     bool MaxAgeTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否遵循源站，on或off，开启时忽略时间设置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FollowOrigin 是否遵循源站，on或off，开启时忽略时间设置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFollowOrigin() const;
+
+                    /**
+                     * 设置是否遵循源站，on或off，开启时忽略时间设置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FollowOrigin 是否遵循源站，on或off，开启时忽略时间设置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFollowOrigin(const std::string& _followOrigin);
+
+                    /**
+                     * 判断参数 FollowOrigin 是否已赋值
+                     * @return FollowOrigin 是否已赋值
+                     */
+                    bool FollowOriginHasBeenSet() const;
 
                 private:
 
@@ -160,15 +190,24 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+注意：all规则不可删除，默认遵循源站，可修改。
                      */
                     std::vector<std::string> m_maxAgeContents;
                     bool m_maxAgeContentsHasBeenSet;
 
                     /**
                      * MaxAge 时间设置，单位秒
+注意：时间为0，即不缓存。
                      */
                     int64_t m_maxAgeTime;
                     bool m_maxAgeTimeHasBeenSet;
+
+                    /**
+                     * 是否遵循源站，on或off，开启时忽略时间设置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_followOrigin;
+                    bool m_followOriginHasBeenSet;
 
                 };
             }

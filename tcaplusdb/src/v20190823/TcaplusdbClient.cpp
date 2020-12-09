@@ -642,6 +642,49 @@ TcaplusdbClient::DescribeIdlFileInfosOutcomeCallable TcaplusdbClient::DescribeId
     return task->get_future();
 }
 
+TcaplusdbClient::DescribeMachineOutcome TcaplusdbClient::DescribeMachine(const DescribeMachineRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMachine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMachineResponse rsp = DescribeMachineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMachineOutcome(rsp);
+        else
+            return DescribeMachineOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMachineOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DescribeMachineAsync(const DescribeMachineRequest& request, const DescribeMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMachine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DescribeMachineOutcomeCallable TcaplusdbClient::DescribeMachineCallable(const DescribeMachineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMachineOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMachine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::DescribeRegionsOutcome TcaplusdbClient::DescribeRegions(const DescribeRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRegions");
@@ -979,6 +1022,49 @@ TcaplusdbClient::DescribeUinInWhitelistOutcomeCallable TcaplusdbClient::Describe
         [this, request]()
         {
             return this->DescribeUinInWhitelist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::ModifyClusterMachineOutcome TcaplusdbClient::ModifyClusterMachine(const ModifyClusterMachineRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterMachine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterMachineResponse rsp = ModifyClusterMachineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterMachineOutcome(rsp);
+        else
+            return ModifyClusterMachineOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterMachineOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::ModifyClusterMachineAsync(const ModifyClusterMachineRequest& request, const ModifyClusterMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterMachine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::ModifyClusterMachineOutcomeCallable TcaplusdbClient::ModifyClusterMachineCallable(const ModifyClusterMachineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterMachineOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterMachine(request);
         }
     );
 

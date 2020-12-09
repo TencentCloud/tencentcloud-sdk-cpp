@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool CcnRouteTypeHasBeenSet() const;
 
+                    /**
+                     * 获取云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。
+                     * @return ModeType 云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。
+                     */
+                    std::string GetModeType() const;
+
+                    /**
+                     * 设置云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。
+                     * @param ModeType 云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。
+                     */
+                    void SetModeType(const std::string& _modeType);
+
+                    /**
+                     * 判断参数 ModeType 是否已赋值
+                     * @return ModeType 是否已赋值
+                     */
+                    bool ModeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_ccnRouteType;
                     bool m_ccnRouteTypeHasBeenSet;
+
+                    /**
+                     * 云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。
+                     */
+                    std::string m_modeType;
+                    bool m_modeTypeHasBeenSet;
 
                 };
             }

@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ServerDetailInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ProxyDetailInfo.h>
 
 
 namespace TencentCloud
@@ -324,6 +326,160 @@ namespace TencentCloud
                      */
                     bool ApiAccessIpv6HasBeenSet() const;
 
+                    /**
+                     * 获取集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterType 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetClusterType() const;
+
+                    /**
+                     * 设置集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterType 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterType(const int64_t& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterStatus 集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetClusterStatus() const;
+
+                    /**
+                     * 设置集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterStatus 集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterStatus(const int64_t& _clusterStatus);
+
+                    /**
+                     * 判断参数 ClusterStatus 是否已赋值
+                     * @return ClusterStatus 是否已赋值
+                     */
+                    bool ClusterStatusHasBeenSet() const;
+
+                    /**
+                     * 获取读CU
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReadCapacityUnit 读CU
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetReadCapacityUnit() const;
+
+                    /**
+                     * 设置读CU
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReadCapacityUnit 读CU
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReadCapacityUnit(const int64_t& _readCapacityUnit);
+
+                    /**
+                     * 判断参数 ReadCapacityUnit 是否已赋值
+                     * @return ReadCapacityUnit 是否已赋值
+                     */
+                    bool ReadCapacityUnitHasBeenSet() const;
+
+                    /**
+                     * 获取写CU
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WriteCapacityUnit 写CU
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetWriteCapacityUnit() const;
+
+                    /**
+                     * 设置写CU
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WriteCapacityUnit 写CU
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWriteCapacityUnit(const int64_t& _writeCapacityUnit);
+
+                    /**
+                     * 判断参数 WriteCapacityUnit 是否已赋值
+                     * @return WriteCapacityUnit 是否已赋值
+                     */
+                    bool WriteCapacityUnitHasBeenSet() const;
+
+                    /**
+                     * 获取磁盘容量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskVolume 磁盘容量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDiskVolume() const;
+
+                    /**
+                     * 设置磁盘容量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiskVolume 磁盘容量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiskVolume(const int64_t& _diskVolume);
+
+                    /**
+                     * 判断参数 DiskVolume 是否已赋值
+                     * @return DiskVolume 是否已赋值
+                     */
+                    bool DiskVolumeHasBeenSet() const;
+
+                    /**
+                     * 获取独占server机器信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServerList 独占server机器信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServerDetailInfo> GetServerList() const;
+
+                    /**
+                     * 设置独占server机器信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServerList 独占server机器信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServerList(const std::vector<ServerDetailInfo>& _serverList);
+
+                    /**
+                     * 判断参数 ServerList 是否已赋值
+                     * @return ServerList 是否已赋值
+                     */
+                    bool ServerListHasBeenSet() const;
+
+                    /**
+                     * 获取独占proxy机器信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxyList 独占proxy机器信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ProxyDetailInfo> GetProxyList() const;
+
+                    /**
+                     * 设置独占proxy机器信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProxyList 独占proxy机器信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProxyList(const std::vector<ProxyDetailInfo>& _proxyList);
+
+                    /**
+                     * 判断参数 ProxyList 是否已赋值
+                     * @return ProxyList 是否已赋值
+                     */
+                    bool ProxyListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -417,6 +573,55 @@ namespace TencentCloud
                      */
                     std::string m_apiAccessIpv6;
                     bool m_apiAccessIpv6HasBeenSet;
+
+                    /**
+                     * 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * 集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clusterStatus;
+                    bool m_clusterStatusHasBeenSet;
+
+                    /**
+                     * 读CU
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_readCapacityUnit;
+                    bool m_readCapacityUnitHasBeenSet;
+
+                    /**
+                     * 写CU
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_writeCapacityUnit;
+                    bool m_writeCapacityUnitHasBeenSet;
+
+                    /**
+                     * 磁盘容量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_diskVolume;
+                    bool m_diskVolumeHasBeenSet;
+
+                    /**
+                     * 独占server机器信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServerDetailInfo> m_serverList;
+                    bool m_serverListHasBeenSet;
+
+                    /**
+                     * 独占proxy机器信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ProxyDetailInfo> m_proxyList;
+                    bool m_proxyListHasBeenSet;
 
                 };
             }

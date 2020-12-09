@@ -404,6 +404,24 @@ xinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公
                      */
                     bool RegistrarTypeHasBeenSet() const;
 
+                    /**
+                     * 获取域名绑定的ns
+                     * @return NameServer 域名绑定的ns
+                     */
+                    std::vector<std::string> GetNameServer() const;
+
+                    /**
+                     * 设置域名绑定的ns
+                     * @param NameServer 域名绑定的ns
+                     */
+                    void SetNameServer(const std::vector<std::string>& _nameServer);
+
+                    /**
+                     * 判断参数 NameServer 是否已赋值
+                     * @return NameServer 是否已赋值
+                     */
+                    bool NameServerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -511,6 +529,12 @@ xinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公
                      */
                     std::string m_registrarType;
                     bool m_registrarTypeHasBeenSet;
+
+                    /**
+                     * 域名绑定的ns
+                     */
+                    std::vector<std::string> m_nameServer;
+                    bool m_nameServerHasBeenSet;
 
                 };
             }

@@ -100,6 +100,28 @@ namespace TencentCloud
                      */
                     bool RedirectUrlHasBeenSet() const;
 
+                    /**
+                     * 获取目标host，必须以http://或https://开头，并填写标准格式域名，如果不填写，默认为http:// + 当前域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RedirectHost 目标host，必须以http://或https://开头，并填写标准格式域名，如果不填写，默认为http:// + 当前域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRedirectHost() const;
+
+                    /**
+                     * 设置目标host，必须以http://或https://开头，并填写标准格式域名，如果不填写，默认为http:// + 当前域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RedirectHost 目标host，必须以http://或https://开头，并填写标准格式域名，如果不填写，默认为http:// + 当前域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRedirectHost(const std::string& _redirectHost);
+
+                    /**
+                     * 判断参数 RedirectHost 是否已赋值
+                     * @return RedirectHost 是否已赋值
+                     */
+                    bool RedirectHostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +141,13 @@ namespace TencentCloud
                      */
                     std::string m_redirectUrl;
                     bool m_redirectUrlHasBeenSet;
+
+                    /**
+                     * 目标host，必须以http://或https://开头，并填写标准格式域名，如果不填写，默认为http:// + 当前域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_redirectHost;
+                    bool m_redirectHostHasBeenSet;
 
                 };
             }

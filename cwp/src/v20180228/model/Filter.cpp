@@ -23,7 +23,8 @@ using namespace std;
 
 Filter::Filter() :
     m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_exactMatchHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,16 @@ CoreInternalOutcome Filter::Deserialize(const Value &value)
         m_valuesHasBeenSet = true;
     }
 
+    if (value.HasMember("ExactMatch") && !value["ExactMatch"].IsNull())
+    {
+        if (!value["ExactMatch"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Filter.ExactMatch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_exactMatch = value["ExactMatch"].GetBool();
+        m_exactMatchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -81,6 +92,14 @@ void Filter::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_exactMatchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExactMatch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exactMatch, allocator);
     }
 
 }
@@ -116,5 +135,21 @@ void Filter::SetValues(const vector<string>& _values)
 bool Filter::ValuesHasBeenSet() const
 {
     return m_valuesHasBeenSet;
+}
+
+bool Filter::GetExactMatch() const
+{
+    return m_exactMatch;
+}
+
+void Filter::SetExactMatch(const bool& _exactMatch)
+{
+    m_exactMatch = _exactMatch;
+    m_exactMatchHasBeenSet = true;
+}
+
+bool Filter::ExactMatchHasBeenSet() const
+{
+    return m_exactMatchHasBeenSet;
 }
 

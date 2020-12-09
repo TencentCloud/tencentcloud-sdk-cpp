@@ -1588,6 +1588,49 @@ TcrClient::DescribeInstancesOutcomeCallable TcrClient::DescribeInstancesCallable
     return task->get_future();
 }
 
+TcrClient::DescribeInternalEndpointsOutcome TcrClient::DescribeInternalEndpoints(const DescribeInternalEndpointsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInternalEndpoints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInternalEndpointsResponse rsp = DescribeInternalEndpointsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInternalEndpointsOutcome(rsp);
+        else
+            return DescribeInternalEndpointsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInternalEndpointsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeInternalEndpointsAsync(const DescribeInternalEndpointsRequest& request, const DescribeInternalEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInternalEndpoints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeInternalEndpointsOutcomeCallable TcrClient::DescribeInternalEndpointsCallable(const DescribeInternalEndpointsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInternalEndpointsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInternalEndpoints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DescribeNamespacePersonalOutcome TcrClient::DescribeNamespacePersonal(const DescribeNamespacePersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNamespacePersonal");
@@ -2140,6 +2183,49 @@ TcrClient::ManageImageLifecycleGlobalPersonalOutcomeCallable TcrClient::ManageIm
         [this, request]()
         {
             return this->ManageImageLifecycleGlobalPersonal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::ManageInternalEndpointOutcome TcrClient::ManageInternalEndpoint(const ManageInternalEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "ManageInternalEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ManageInternalEndpointResponse rsp = ManageInternalEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ManageInternalEndpointOutcome(rsp);
+        else
+            return ManageInternalEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return ManageInternalEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ManageInternalEndpointAsync(const ManageInternalEndpointRequest& request, const ManageInternalEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ManageInternalEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::ManageInternalEndpointOutcomeCallable TcrClient::ManageInternalEndpointCallable(const ManageInternalEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ManageInternalEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->ManageInternalEndpoint(request);
         }
     );
 

@@ -165,14 +165,14 @@ Oversea：则查询国外数据，
                     bool GranularityHasBeenSet() const;
 
                     /**
-                     * 获取服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。
-                     * @return ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。
+                     * 获取服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     * @return ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。
-                     * @param ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。
+                     * 设置服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     * @param ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
                      */
                     void SetServiceName(const std::string& _serviceName);
 
@@ -223,7 +223,7 @@ Oversea：则查询国外数据，
                     bool m_granularityHasBeenSet;
 
                     /**
-                     * 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。
+                     * 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;

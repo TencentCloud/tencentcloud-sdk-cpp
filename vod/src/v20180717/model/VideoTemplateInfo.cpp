@@ -29,7 +29,8 @@ VideoTemplateInfo::VideoTemplateInfo() :
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
-    m_vcrfHasBeenSet(false)
+    m_vcrfHasBeenSet(false),
+    m_gopHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome VideoTemplateInfo::Deserialize(const Value &value)
         m_vcrfHasBeenSet = true;
     }
 
+    if (value.HasMember("Gop") && !value["Gop"].IsNull())
+    {
+        if (!value["Gop"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VideoTemplateInfo.Gop` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gop = value["Gop"].GetUint64();
+        m_gopHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void VideoTemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "Vcrf";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vcrf, allocator);
+    }
+
+    if (m_gopHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Gop";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gop, allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void VideoTemplateInfo::SetVcrf(const uint64_t& _vcrf)
 bool VideoTemplateInfo::VcrfHasBeenSet() const
 {
     return m_vcrfHasBeenSet;
+}
+
+uint64_t VideoTemplateInfo::GetGop() const
+{
+    return m_gop;
+}
+
+void VideoTemplateInfo::SetGop(const uint64_t& _gop)
+{
+    m_gop = _gop;
+    m_gopHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::GopHasBeenSet() const
+{
+    return m_gopHasBeenSet;
 }
 

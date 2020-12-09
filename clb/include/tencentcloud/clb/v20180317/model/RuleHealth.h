@@ -110,17 +110,17 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取本规则上绑定的后端的健康检查状态
+                     * 获取本规则上绑定的后端服务的健康检查状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Targets 本规则上绑定的后端的健康检查状态
+                     * @return Targets 本规则上绑定的后端服务的健康检查状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TargetHealth> GetTargets() const;
 
                     /**
-                     * 设置本规则上绑定的后端的健康检查状态
+                     * 设置本规则上绑定的后端服务的健康检查状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Targets 本规则上绑定的后端的健康检查状态
+                     * @param Targets 本规则上绑定的后端服务的健康检查状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTargets(const std::vector<TargetHealth>& _targets);
@@ -154,7 +154,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 本规则上绑定的后端的健康检查状态
+                     * 本规则上绑定的后端服务的健康检查状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TargetHealth> m_targets;

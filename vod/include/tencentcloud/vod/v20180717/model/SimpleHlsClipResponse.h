@@ -67,6 +67,18 @@ namespace TencentCloud
                      */
                     bool MetaDataHasBeenSet() const;
 
+                    /**
+                     * 获取剪辑固化后的视频的媒体文件的唯一标识。
+                     * @return FileId 剪辑固化后的视频的媒体文件的唯一标识。
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +92,12 @@ namespace TencentCloud
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
+
+                    /**
+                     * 剪辑固化后的视频的媒体文件的唯一标识。
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

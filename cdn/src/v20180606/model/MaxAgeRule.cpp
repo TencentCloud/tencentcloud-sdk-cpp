@@ -24,7 +24,8 @@ using namespace std;
 MaxAgeRule::MaxAgeRule() :
     m_maxAgeTypeHasBeenSet(false),
     m_maxAgeContentsHasBeenSet(false),
-    m_maxAgeTimeHasBeenSet(false)
+    m_maxAgeTimeHasBeenSet(false),
+    m_followOriginHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,16 @@ CoreInternalOutcome MaxAgeRule::Deserialize(const Value &value)
         m_maxAgeTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FollowOrigin") && !value["FollowOrigin"].IsNull())
+    {
+        if (!value["FollowOrigin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MaxAgeRule.FollowOrigin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_followOrigin = string(value["FollowOrigin"].GetString());
+        m_followOriginHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -100,6 +111,14 @@ void MaxAgeRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "MaxAgeTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxAgeTime, allocator);
+    }
+
+    if (m_followOriginHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FollowOrigin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_followOrigin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -151,5 +170,21 @@ void MaxAgeRule::SetMaxAgeTime(const int64_t& _maxAgeTime)
 bool MaxAgeRule::MaxAgeTimeHasBeenSet() const
 {
     return m_maxAgeTimeHasBeenSet;
+}
+
+string MaxAgeRule::GetFollowOrigin() const
+{
+    return m_followOrigin;
+}
+
+void MaxAgeRule::SetFollowOrigin(const string& _followOrigin)
+{
+    m_followOrigin = _followOrigin;
+    m_followOriginHasBeenSet = true;
+}
+
+bool MaxAgeRule::FollowOriginHasBeenSet() const
+{
+    return m_followOriginHasBeenSet;
 }
 

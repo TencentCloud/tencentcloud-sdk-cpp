@@ -36,7 +36,14 @@ ClusterInfo::ClusterInfo() :
     m_apiAccessIpHasBeenSet(false),
     m_apiAccessPortHasBeenSet(false),
     m_oldPasswordExpireTimeHasBeenSet(false),
-    m_apiAccessIpv6HasBeenSet(false)
+    m_apiAccessIpv6HasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
+    m_clusterStatusHasBeenSet(false),
+    m_readCapacityUnitHasBeenSet(false),
+    m_writeCapacityUnitHasBeenSet(false),
+    m_diskVolumeHasBeenSet(false),
+    m_serverListHasBeenSet(false),
+    m_proxyListHasBeenSet(false)
 {
 }
 
@@ -195,6 +202,96 @@ CoreInternalOutcome ClusterInfo::Deserialize(const Value &value)
         m_apiAccessIpv6HasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInfo.ClusterType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = value["ClusterType"].GetInt64();
+        m_clusterTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterStatus") && !value["ClusterStatus"].IsNull())
+    {
+        if (!value["ClusterStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInfo.ClusterStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterStatus = value["ClusterStatus"].GetInt64();
+        m_clusterStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadCapacityUnit") && !value["ReadCapacityUnit"].IsNull())
+    {
+        if (!value["ReadCapacityUnit"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInfo.ReadCapacityUnit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readCapacityUnit = value["ReadCapacityUnit"].GetInt64();
+        m_readCapacityUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("WriteCapacityUnit") && !value["WriteCapacityUnit"].IsNull())
+    {
+        if (!value["WriteCapacityUnit"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInfo.WriteCapacityUnit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_writeCapacityUnit = value["WriteCapacityUnit"].GetInt64();
+        m_writeCapacityUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskVolume") && !value["DiskVolume"].IsNull())
+    {
+        if (!value["DiskVolume"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInfo.DiskVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskVolume = value["DiskVolume"].GetInt64();
+        m_diskVolumeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServerList") && !value["ServerList"].IsNull())
+    {
+        if (!value["ServerList"].IsArray())
+            return CoreInternalOutcome(Error("response `ClusterInfo.ServerList` is not array type"));
+
+        const Value &tmpValue = value["ServerList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ServerDetailInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serverList.push_back(item);
+        }
+        m_serverListHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProxyList") && !value["ProxyList"].IsNull())
+    {
+        if (!value["ProxyList"].IsArray())
+            return CoreInternalOutcome(Error("response `ClusterInfo.ProxyList` is not array type"));
+
+        const Value &tmpValue = value["ProxyList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ProxyDetailInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_proxyList.push_back(item);
+        }
+        m_proxyListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -320,6 +417,76 @@ void ClusterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "ApiAccessIpv6";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_apiAccessIpv6.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterType, allocator);
+    }
+
+    if (m_clusterStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterStatus, allocator);
+    }
+
+    if (m_readCapacityUnitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReadCapacityUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readCapacityUnit, allocator);
+    }
+
+    if (m_writeCapacityUnitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WriteCapacityUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_writeCapacityUnit, allocator);
+    }
+
+    if (m_diskVolumeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskVolume, allocator);
+    }
+
+    if (m_serverListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServerList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serverList.begin(); itr != m_serverList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_proxyListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProxyList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_proxyList.begin(); itr != m_proxyList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -563,5 +730,117 @@ void ClusterInfo::SetApiAccessIpv6(const string& _apiAccessIpv6)
 bool ClusterInfo::ApiAccessIpv6HasBeenSet() const
 {
     return m_apiAccessIpv6HasBeenSet;
+}
+
+int64_t ClusterInfo::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void ClusterInfo::SetClusterType(const int64_t& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool ClusterInfo::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
+}
+
+int64_t ClusterInfo::GetClusterStatus() const
+{
+    return m_clusterStatus;
+}
+
+void ClusterInfo::SetClusterStatus(const int64_t& _clusterStatus)
+{
+    m_clusterStatus = _clusterStatus;
+    m_clusterStatusHasBeenSet = true;
+}
+
+bool ClusterInfo::ClusterStatusHasBeenSet() const
+{
+    return m_clusterStatusHasBeenSet;
+}
+
+int64_t ClusterInfo::GetReadCapacityUnit() const
+{
+    return m_readCapacityUnit;
+}
+
+void ClusterInfo::SetReadCapacityUnit(const int64_t& _readCapacityUnit)
+{
+    m_readCapacityUnit = _readCapacityUnit;
+    m_readCapacityUnitHasBeenSet = true;
+}
+
+bool ClusterInfo::ReadCapacityUnitHasBeenSet() const
+{
+    return m_readCapacityUnitHasBeenSet;
+}
+
+int64_t ClusterInfo::GetWriteCapacityUnit() const
+{
+    return m_writeCapacityUnit;
+}
+
+void ClusterInfo::SetWriteCapacityUnit(const int64_t& _writeCapacityUnit)
+{
+    m_writeCapacityUnit = _writeCapacityUnit;
+    m_writeCapacityUnitHasBeenSet = true;
+}
+
+bool ClusterInfo::WriteCapacityUnitHasBeenSet() const
+{
+    return m_writeCapacityUnitHasBeenSet;
+}
+
+int64_t ClusterInfo::GetDiskVolume() const
+{
+    return m_diskVolume;
+}
+
+void ClusterInfo::SetDiskVolume(const int64_t& _diskVolume)
+{
+    m_diskVolume = _diskVolume;
+    m_diskVolumeHasBeenSet = true;
+}
+
+bool ClusterInfo::DiskVolumeHasBeenSet() const
+{
+    return m_diskVolumeHasBeenSet;
+}
+
+vector<ServerDetailInfo> ClusterInfo::GetServerList() const
+{
+    return m_serverList;
+}
+
+void ClusterInfo::SetServerList(const vector<ServerDetailInfo>& _serverList)
+{
+    m_serverList = _serverList;
+    m_serverListHasBeenSet = true;
+}
+
+bool ClusterInfo::ServerListHasBeenSet() const
+{
+    return m_serverListHasBeenSet;
+}
+
+vector<ProxyDetailInfo> ClusterInfo::GetProxyList() const
+{
+    return m_proxyList;
+}
+
+void ClusterInfo::SetProxyList(const vector<ProxyDetailInfo>& _proxyList)
+{
+    m_proxyList = _proxyList;
+    m_proxyListHasBeenSet = true;
+}
+
+bool ClusterInfo::ProxyListHasBeenSet() const
+{
+    return m_proxyListHasBeenSet;
 }
 

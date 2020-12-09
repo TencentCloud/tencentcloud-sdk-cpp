@@ -2362,6 +2362,49 @@ CdnClient::UpdatePayTypeOutcomeCallable CdnClient::UpdatePayTypeCallable(const U
     return task->get_future();
 }
 
+CdnClient::UpdateScdnDomainOutcome CdnClient::UpdateScdnDomain(const UpdateScdnDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateScdnDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateScdnDomainResponse rsp = UpdateScdnDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateScdnDomainOutcome(rsp);
+        else
+            return UpdateScdnDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateScdnDomainOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::UpdateScdnDomainAsync(const UpdateScdnDomainRequest& request, const UpdateScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateScdnDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::UpdateScdnDomainOutcomeCallable CdnClient::UpdateScdnDomainCallable(const UpdateScdnDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateScdnDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateScdnDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::VerifyDomainRecordOutcome CdnClient::VerifyDomainRecord(const VerifyDomainRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyDomainRecord");

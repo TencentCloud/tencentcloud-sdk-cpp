@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/TagInfoUnit.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/MachineInfo.h>
 
 
 namespace TencentCloud
@@ -169,6 +170,60 @@ namespace TencentCloud
                      */
                     bool Ipv6EnableHasBeenSet() const;
 
+                    /**
+                     * 获取独占集群占用的svr机器
+                     * @return ServerList 独占集群占用的svr机器
+                     */
+                    std::vector<MachineInfo> GetServerList() const;
+
+                    /**
+                     * 设置独占集群占用的svr机器
+                     * @param ServerList 独占集群占用的svr机器
+                     */
+                    void SetServerList(const std::vector<MachineInfo>& _serverList);
+
+                    /**
+                     * 判断参数 ServerList 是否已赋值
+                     * @return ServerList 是否已赋值
+                     */
+                    bool ServerListHasBeenSet() const;
+
+                    /**
+                     * 获取独占集群占用的proxy机器
+                     * @return ProxyList 独占集群占用的proxy机器
+                     */
+                    std::vector<MachineInfo> GetProxyList() const;
+
+                    /**
+                     * 设置独占集群占用的proxy机器
+                     * @param ProxyList 独占集群占用的proxy机器
+                     */
+                    void SetProxyList(const std::vector<MachineInfo>& _proxyList);
+
+                    /**
+                     * 判断参数 ProxyList 是否已赋值
+                     * @return ProxyList 是否已赋值
+                     */
+                    bool ProxyListHasBeenSet() const;
+
+                    /**
+                     * 获取集群类型1共享2独占
+                     * @return ClusterType 集群类型1共享2独占
+                     */
+                    int64_t GetClusterType() const;
+
+                    /**
+                     * 设置集群类型1共享2独占
+                     * @param ClusterType 集群类型1共享2独占
+                     */
+                    void SetClusterType(const int64_t& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +267,24 @@ namespace TencentCloud
                      */
                     int64_t m_ipv6Enable;
                     bool m_ipv6EnableHasBeenSet;
+
+                    /**
+                     * 独占集群占用的svr机器
+                     */
+                    std::vector<MachineInfo> m_serverList;
+                    bool m_serverListHasBeenSet;
+
+                    /**
+                     * 独占集群占用的proxy机器
+                     */
+                    std::vector<MachineInfo> m_proxyList;
+                    bool m_proxyListHasBeenSet;
+
+                    /**
+                     * 集群类型1共享2独占
+                     */
+                    int64_t m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

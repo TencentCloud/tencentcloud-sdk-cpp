@@ -258,6 +258,28 @@ namespace TencentCloud
                      */
                     bool VcrfHasBeenSet() const;
 
+                    /**
+                     * 获取关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。
+当填 0 或不填时，系统将自动设置 gop 长度。
+                     * @return Gop 关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。
+当填 0 或不填时，系统将自动设置 gop 长度。
+                     */
+                    uint64_t GetGop() const;
+
+                    /**
+                     * 设置关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。
+当填 0 或不填时，系统将自动设置 gop 长度。
+                     * @param Gop 关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。
+当填 0 或不填时，系统将自动设置 gop 长度。
+                     */
+                    void SetGop(const uint64_t& _gop);
+
+                    /**
+                     * 判断参数 Gop 是否已赋值
+                     * @return Gop 是否已赋值
+                     */
+                    bool GopHasBeenSet() const;
+
                 private:
 
                     /**
@@ -324,6 +346,13 @@ namespace TencentCloud
                      */
                     uint64_t m_vcrf;
                     bool m_vcrfHasBeenSet;
+
+                    /**
+                     * 关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。
+当填 0 或不填时，系统将自动设置 gop 长度。
+                     */
+                    uint64_t m_gop;
+                    bool m_gopHasBeenSet;
 
                 };
             }

@@ -38,6 +38,7 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_vipIspHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vipHasBeenSet(false),
+    m_bandwidthPackageIdHasBeenSet(false),
     m_exclusiveClusterHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_snatProHasBeenSet(false),
@@ -171,6 +172,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "Vip";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_vip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthPackageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BandwidthPackageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_bandwidthPackageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_exclusiveClusterHasBeenSet)
@@ -451,6 +460,22 @@ void CreateLoadBalancerRequest::SetVip(const string& _vip)
 bool CreateLoadBalancerRequest::VipHasBeenSet() const
 {
     return m_vipHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetBandwidthPackageId() const
+{
+    return m_bandwidthPackageId;
+}
+
+void CreateLoadBalancerRequest::SetBandwidthPackageId(const string& _bandwidthPackageId)
+{
+    m_bandwidthPackageId = _bandwidthPackageId;
+    m_bandwidthPackageIdHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::BandwidthPackageIdHasBeenSet() const
+{
+    return m_bandwidthPackageIdHasBeenSet;
 }
 
 ExclusiveCluster CreateLoadBalancerRequest::GetExclusiveCluster() const

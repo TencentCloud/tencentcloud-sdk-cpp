@@ -27,7 +27,8 @@ CreateDirectConnectGatewayRequest::CreateDirectConnectGatewayRequest() :
     m_directConnectGatewayNameHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_networkInstanceIdHasBeenSet(false),
-    m_gatewayTypeHasBeenSet(false)
+    m_gatewayTypeHasBeenSet(false),
+    m_modeTypeHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string CreateDirectConnectGatewayRequest::ToJsonString() const
         string key = "GatewayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_gatewayType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_modeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void CreateDirectConnectGatewayRequest::SetGatewayType(const string& _gatewayTyp
 bool CreateDirectConnectGatewayRequest::GatewayTypeHasBeenSet() const
 {
     return m_gatewayTypeHasBeenSet;
+}
+
+string CreateDirectConnectGatewayRequest::GetModeType() const
+{
+    return m_modeType;
+}
+
+void CreateDirectConnectGatewayRequest::SetModeType(const string& _modeType)
+{
+    m_modeType = _modeType;
+    m_modeTypeHasBeenSet = true;
+}
+
+bool CreateDirectConnectGatewayRequest::ModeTypeHasBeenSet() const
+{
+    return m_modeTypeHasBeenSet;
 }
 
 

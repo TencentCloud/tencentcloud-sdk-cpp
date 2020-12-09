@@ -30,7 +30,10 @@ CreateClusterRequest::CreateClusterRequest() :
     m_subnetIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_ipv6EnableHasBeenSet(false)
+    m_ipv6EnableHasBeenSet(false),
+    m_serverListHasBeenSet(false),
+    m_proxyListHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -102,6 +105,44 @@ string CreateClusterRequest::ToJsonString() const
         string key = "Ipv6Enable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ipv6Enable, allocator);
+    }
+
+    if (m_serverListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServerList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serverList.begin(); itr != m_serverList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_proxyListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProxyList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_proxyList.begin(); itr != m_proxyList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clusterType, allocator);
     }
 
 
@@ -222,6 +263,54 @@ void CreateClusterRequest::SetIpv6Enable(const int64_t& _ipv6Enable)
 bool CreateClusterRequest::Ipv6EnableHasBeenSet() const
 {
     return m_ipv6EnableHasBeenSet;
+}
+
+vector<MachineInfo> CreateClusterRequest::GetServerList() const
+{
+    return m_serverList;
+}
+
+void CreateClusterRequest::SetServerList(const vector<MachineInfo>& _serverList)
+{
+    m_serverList = _serverList;
+    m_serverListHasBeenSet = true;
+}
+
+bool CreateClusterRequest::ServerListHasBeenSet() const
+{
+    return m_serverListHasBeenSet;
+}
+
+vector<MachineInfo> CreateClusterRequest::GetProxyList() const
+{
+    return m_proxyList;
+}
+
+void CreateClusterRequest::SetProxyList(const vector<MachineInfo>& _proxyList)
+{
+    m_proxyList = _proxyList;
+    m_proxyListHasBeenSet = true;
+}
+
+bool CreateClusterRequest::ProxyListHasBeenSet() const
+{
+    return m_proxyListHasBeenSet;
+}
+
+int64_t CreateClusterRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void CreateClusterRequest::SetClusterType(const int64_t& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool CreateClusterRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 

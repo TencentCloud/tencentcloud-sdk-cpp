@@ -30,7 +30,8 @@ Https::Https() :
     m_clientCertInfoHasBeenSet(false),
     m_spdyHasBeenSet(false),
     m_sslStatusHasBeenSet(false),
-    m_hstsHasBeenSet(false)
+    m_hstsHasBeenSet(false),
+    m_tlsVersionHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,19 @@ CoreInternalOutcome Https::Deserialize(const Value &value)
         m_hstsHasBeenSet = true;
     }
 
+    if (value.HasMember("TlsVersion") && !value["TlsVersion"].IsNull())
+    {
+        if (!value["TlsVersion"].IsArray())
+            return CoreInternalOutcome(Error("response `Https.TlsVersion` is not array type"));
+
+        const Value &tmpValue = value["TlsVersion"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tlsVersion.push_back((*itr).GetString());
+        }
+        m_tlsVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +244,19 @@ void Https::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_hsts.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tlsVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TlsVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_tlsVersion.begin(); itr != m_tlsVersion.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -377,5 +404,21 @@ void Https::SetHsts(const Hsts& _hsts)
 bool Https::HstsHasBeenSet() const
 {
     return m_hstsHasBeenSet;
+}
+
+vector<string> Https::GetTlsVersion() const
+{
+    return m_tlsVersion;
+}
+
+void Https::SetTlsVersion(const vector<string>& _tlsVersion)
+{
+    m_tlsVersion = _tlsVersion;
+    m_tlsVersionHasBeenSet = true;
+}
+
+bool Https::TlsVersionHasBeenSet() const
+{
+    return m_tlsVersionHasBeenSet;
 }
 

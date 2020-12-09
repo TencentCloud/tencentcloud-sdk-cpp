@@ -24,7 +24,8 @@ using namespace std;
 UrlRedirectRule::UrlRedirectRule() :
     m_redirectStatusCodeHasBeenSet(false),
     m_patternHasBeenSet(false),
-    m_redirectUrlHasBeenSet(false)
+    m_redirectUrlHasBeenSet(false),
+    m_redirectHostHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome UrlRedirectRule::Deserialize(const Value &value)
         m_redirectUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("RedirectHost") && !value["RedirectHost"].IsNull())
+    {
+        if (!value["RedirectHost"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `UrlRedirectRule.RedirectHost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_redirectHost = string(value["RedirectHost"].GetString());
+        m_redirectHostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void UrlRedirectRule::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "RedirectUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_redirectUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_redirectHostHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RedirectHost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_redirectHost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void UrlRedirectRule::SetRedirectUrl(const string& _redirectUrl)
 bool UrlRedirectRule::RedirectUrlHasBeenSet() const
 {
     return m_redirectUrlHasBeenSet;
+}
+
+string UrlRedirectRule::GetRedirectHost() const
+{
+    return m_redirectHost;
+}
+
+void UrlRedirectRule::SetRedirectHost(const string& _redirectHost)
+{
+    m_redirectHost = _redirectHost;
+    m_redirectHostHasBeenSet = true;
+}
+
+bool UrlRedirectRule::RedirectHostHasBeenSet() const
+{
+    return m_redirectHostHasBeenSet;
 }
 

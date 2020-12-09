@@ -87,6 +87,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeDownloadFileResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h
+  include/tencentcloud/tcb/v20180608/model/CloudBaseRunVpcInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceResponse.h
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.h
@@ -181,6 +182,7 @@ set(tcb_src
   src/v20180608/model/DescribeDownloadFileResponse.cpp
   src/v20180608/model/DescribeQuotaDataRequest.cpp
   src/v20180608/model/CreateStaticStoreResponse.cpp
+  src/v20180608/model/CloudBaseRunVpcInfo.cpp
   src/v20180608/model/DescribeCloudBaseRunResourceResponse.cpp
   src/v20180608/model/StorageInfo.cpp
   src/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.cpp

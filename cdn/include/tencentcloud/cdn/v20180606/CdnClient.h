@@ -131,6 +131,8 @@
 #include <tencentcloud/cdn/v20180606/model/UpdateImageConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/UpdatePayTypeRequest.h>
 #include <tencentcloud/cdn/v20180606/model/UpdatePayTypeResponse.h>
+#include <tencentcloud/cdn/v20180606/model/UpdateScdnDomainRequest.h>
+#include <tencentcloud/cdn/v20180606/model/UpdateScdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/VerifyDomainRecordRequest.h>
 #include <tencentcloud/cdn/v20180606/model/VerifyDomainRecordResponse.h>
 
@@ -309,6 +311,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdatePayTypeResponse> UpdatePayTypeOutcome;
                 typedef std::future<UpdatePayTypeOutcome> UpdatePayTypeOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::UpdatePayTypeRequest&, UpdatePayTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePayTypeAsyncHandler;
+                typedef Outcome<Error, Model::UpdateScdnDomainResponse> UpdateScdnDomainOutcome;
+                typedef std::future<UpdateScdnDomainOutcome> UpdateScdnDomainOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::UpdateScdnDomainRequest&, UpdateScdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateScdnDomainAsyncHandler;
                 typedef Outcome<Error, Model::VerifyDomainRecordResponse> VerifyDomainRecordOutcome;
                 typedef std::future<VerifyDomainRecordOutcome> VerifyDomainRecordOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::VerifyDomainRecordRequest&, VerifyDomainRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainRecordAsyncHandler;
@@ -840,6 +845,15 @@ namespace TencentCloud
                 UpdatePayTypeOutcome UpdatePayType(const Model::UpdatePayTypeRequest &request);
                 void UpdatePayTypeAsync(const Model::UpdatePayTypeRequest& request, const UpdatePayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdatePayTypeOutcomeCallable UpdatePayTypeCallable(const Model::UpdatePayTypeRequest& request);
+
+                /**
+                 *UpdateScdnDomain 用于修改 SCDN 加速域名安全相关配置
+                 * @param req UpdateScdnDomainRequest
+                 * @return UpdateScdnDomainOutcome
+                 */
+                UpdateScdnDomainOutcome UpdateScdnDomain(const Model::UpdateScdnDomainRequest &request);
+                void UpdateScdnDomainAsync(const Model::UpdateScdnDomainRequest& request, const UpdateScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateScdnDomainOutcomeCallable UpdateScdnDomainCallable(const Model::UpdateScdnDomainRequest& request);
 
                 /**
                  *验证域名解析值

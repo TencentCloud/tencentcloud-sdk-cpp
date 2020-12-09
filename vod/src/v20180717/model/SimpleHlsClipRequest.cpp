@@ -27,6 +27,7 @@ SimpleHlsClipRequest::SimpleHlsClipRequest() :
     m_urlHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
+    m_isPersistenceHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -60,6 +61,14 @@ string SimpleHlsClipRequest::ToJsonString() const
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTimeOffset, allocator);
+    }
+
+    if (m_isPersistenceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsPersistence";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPersistence, allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -124,6 +133,22 @@ void SimpleHlsClipRequest::SetEndTimeOffset(const double& _endTimeOffset)
 bool SimpleHlsClipRequest::EndTimeOffsetHasBeenSet() const
 {
     return m_endTimeOffsetHasBeenSet;
+}
+
+int64_t SimpleHlsClipRequest::GetIsPersistence() const
+{
+    return m_isPersistence;
+}
+
+void SimpleHlsClipRequest::SetIsPersistence(const int64_t& _isPersistence)
+{
+    m_isPersistence = _isPersistence;
+    m_isPersistenceHasBeenSet = true;
+}
+
+bool SimpleHlsClipRequest::IsPersistenceHasBeenSet() const
+{
+    return m_isPersistenceHasBeenSet;
 }
 
 uint64_t SimpleHlsClipRequest::GetSubAppId() const

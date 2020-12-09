@@ -1459,6 +1459,49 @@ ClbClient::DescribeLoadBalancerListByCertIdOutcomeCallable ClbClient::DescribeLo
     return task->get_future();
 }
 
+ClbClient::DescribeLoadBalancerTrafficOutcome ClbClient::DescribeLoadBalancerTraffic(const DescribeLoadBalancerTrafficRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoadBalancerTraffic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoadBalancerTrafficResponse rsp = DescribeLoadBalancerTrafficResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoadBalancerTrafficOutcome(rsp);
+        else
+            return DescribeLoadBalancerTrafficOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoadBalancerTrafficOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeLoadBalancerTrafficAsync(const DescribeLoadBalancerTrafficRequest& request, const DescribeLoadBalancerTrafficAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLoadBalancerTraffic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeLoadBalancerTrafficOutcomeCallable ClbClient::DescribeLoadBalancerTrafficCallable(const DescribeLoadBalancerTrafficRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerTrafficOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLoadBalancerTraffic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeLoadBalancersOutcome ClbClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLoadBalancers");

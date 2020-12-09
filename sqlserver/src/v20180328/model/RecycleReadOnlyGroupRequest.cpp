@@ -23,7 +23,9 @@ using namespace TencentCloud::Sqlserver::V20180328::Model;
 using namespace rapidjson;
 using namespace std;
 
-RecycleReadOnlyGroupRequest::RecycleReadOnlyGroupRequest()
+RecycleReadOnlyGroupRequest::RecycleReadOnlyGroupRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_readOnlyGroupIdHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,22 @@ string RecycleReadOnlyGroupRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_readOnlyGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReadOnlyGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_readOnlyGroupId.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +59,37 @@ string RecycleReadOnlyGroupRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string RecycleReadOnlyGroupRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void RecycleReadOnlyGroupRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool RecycleReadOnlyGroupRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string RecycleReadOnlyGroupRequest::GetReadOnlyGroupId() const
+{
+    return m_readOnlyGroupId;
+}
+
+void RecycleReadOnlyGroupRequest::SetReadOnlyGroupId(const string& _readOnlyGroupId)
+{
+    m_readOnlyGroupId = _readOnlyGroupId;
+    m_readOnlyGroupIdHasBeenSet = true;
+}
+
+bool RecycleReadOnlyGroupRequest::ReadOnlyGroupIdHasBeenSet() const
+{
+    return m_readOnlyGroupIdHasBeenSet;
+}
 
 

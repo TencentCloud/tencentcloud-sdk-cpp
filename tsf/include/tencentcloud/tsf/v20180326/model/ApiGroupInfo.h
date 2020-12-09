@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool GroupContextHasBeenSet() const;
 
                     /**
-                     * 获取鉴权类型。 secret： 秘钥鉴权； none:无鉴权
+                     * 获取鉴权类型。 secret： 密钥鉴权； none:无鉴权
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AuthType 鉴权类型。 secret： 秘钥鉴权； none:无鉴权
+                     * @return AuthType 鉴权类型。 secret： 密钥鉴权； none:无鉴权
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAuthType() const;
 
                     /**
-                     * 设置鉴权类型。 secret： 秘钥鉴权； none:无鉴权
+                     * 设置鉴权类型。 secret： 密钥鉴权； none:无鉴权
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthType 鉴权类型。 secret： 秘钥鉴权； none:无鉴权
+                     * @param AuthType 鉴权类型。 secret： 密钥鉴权； none:无鉴权
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAuthType(const std::string& _authType);
@@ -335,7 +335,7 @@ namespace TencentCloud
                     bool m_groupContextHasBeenSet;
 
                     /**
-                     * 鉴权类型。 secret： 秘钥鉴权； none:无鉴权
+                     * 鉴权类型。 secret： 密钥鉴权； none:无鉴权
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authType;

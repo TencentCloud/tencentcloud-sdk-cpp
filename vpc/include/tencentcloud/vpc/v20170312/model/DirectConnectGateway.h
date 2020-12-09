@@ -320,6 +320,50 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
+                    /**
+                     * 获取专线网关是否支持VXLAN架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VXLANSupport 专线网关是否支持VXLAN架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<bool> GetVXLANSupport() const;
+
+                    /**
+                     * 设置专线网关是否支持VXLAN架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VXLANSupport 专线网关是否支持VXLAN架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVXLANSupport(const std::vector<bool>& _vXLANSupport);
+
+                    /**
+                     * 判断参数 VXLANSupport 是否已赋值
+                     * @return VXLANSupport 是否已赋值
+                     */
+                    bool VXLANSupportHasBeenSet() const;
+
+                    /**
+                     * 获取云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModeType 云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetModeType() const;
+
+                    /**
+                     * 设置云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModeType 云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModeType(const std::string& _modeType);
+
+                    /**
+                     * 判断参数 ModeType 是否已赋值
+                     * @return ModeType 是否已赋值
+                     */
+                    bool ModeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -409,6 +453,20 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      */
                     std::string m_natGatewayId;
                     bool m_natGatewayIdHasBeenSet;
+
+                    /**
+                     * 专线网关是否支持VXLAN架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<bool> m_vXLANSupport;
+                    bool m_vXLANSupportHasBeenSet;
+
+                    /**
+                     * 云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modeType;
+                    bool m_modeTypeHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ using namespace std;
 
 SimpleHlsClipResponse::SimpleHlsClipResponse() :
     m_urlHasBeenSet(false),
-    m_metaDataHasBeenSet(false)
+    m_metaDataHasBeenSet(false),
+    m_fileIdHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ CoreInternalOutcome SimpleHlsClipResponse::Deserialize(const string &payload)
         m_metaDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FileId") && !rsp["FileId"].IsNull())
+    {
+        if (!rsp["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(rsp["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -114,6 +125,16 @@ MediaMetaData SimpleHlsClipResponse::GetMetaData() const
 bool SimpleHlsClipResponse::MetaDataHasBeenSet() const
 {
     return m_metaDataHasBeenSet;
+}
+
+string SimpleHlsClipResponse::GetFileId() const
+{
+    return m_fileId;
+}
+
+bool SimpleHlsClipResponse::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 
 

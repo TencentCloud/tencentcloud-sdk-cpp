@@ -95,6 +95,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstancesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstancesResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeInternalEndpointsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeInternalEndpointsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeNamespacePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeNamespacePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeNamespacesRequest.h>
@@ -121,6 +123,8 @@
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ManageImageLifecycleGlobalPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ManageImageLifecycleGlobalPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ManageInternalEndpointRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ManageInternalEndpointResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceTokenRequest.h>
@@ -263,6 +267,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInternalEndpointsResponse> DescribeInternalEndpointsOutcome;
+                typedef std::future<DescribeInternalEndpointsOutcome> DescribeInternalEndpointsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeInternalEndpointsRequest&, DescribeInternalEndpointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInternalEndpointsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNamespacePersonalResponse> DescribeNamespacePersonalOutcome;
                 typedef std::future<DescribeNamespacePersonalOutcome> DescribeNamespacePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeNamespacePersonalRequest&, DescribeNamespacePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNamespacePersonalAsyncHandler;
@@ -302,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ManageImageLifecycleGlobalPersonalResponse> ManageImageLifecycleGlobalPersonalOutcome;
                 typedef std::future<ManageImageLifecycleGlobalPersonalOutcome> ManageImageLifecycleGlobalPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ManageImageLifecycleGlobalPersonalRequest&, ManageImageLifecycleGlobalPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageImageLifecycleGlobalPersonalAsyncHandler;
+                typedef Outcome<Error, Model::ManageInternalEndpointResponse> ManageInternalEndpointOutcome;
+                typedef std::future<ManageInternalEndpointOutcome> ManageInternalEndpointOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ManageInternalEndpointRequest&, ManageInternalEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageInternalEndpointAsyncHandler;
                 typedef Outcome<Error, Model::ModifyApplicationTriggerPersonalResponse> ModifyApplicationTriggerPersonalOutcome;
                 typedef std::future<ModifyApplicationTriggerPersonalOutcome> ModifyApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyApplicationTriggerPersonalRequest&, ModifyApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationTriggerPersonalAsyncHandler;
@@ -660,6 +670,15 @@ namespace TencentCloud
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
+                 *查询实例内网访问VPC链接
+                 * @param req DescribeInternalEndpointsRequest
+                 * @return DescribeInternalEndpointsOutcome
+                 */
+                DescribeInternalEndpointsOutcome DescribeInternalEndpoints(const Model::DescribeInternalEndpointsRequest &request);
+                void DescribeInternalEndpointsAsync(const Model::DescribeInternalEndpointsRequest& request, const DescribeInternalEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInternalEndpointsOutcomeCallable DescribeInternalEndpointsCallable(const Model::DescribeInternalEndpointsRequest& request);
+
+                /**
                  *查询个人版命名空间信息
                  * @param req DescribeNamespacePersonalRequest
                  * @return DescribeNamespacePersonalOutcome
@@ -775,6 +794,15 @@ namespace TencentCloud
                 ManageImageLifecycleGlobalPersonalOutcome ManageImageLifecycleGlobalPersonal(const Model::ManageImageLifecycleGlobalPersonalRequest &request);
                 void ManageImageLifecycleGlobalPersonalAsync(const Model::ManageImageLifecycleGlobalPersonalRequest& request, const ManageImageLifecycleGlobalPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ManageImageLifecycleGlobalPersonalOutcomeCallable ManageImageLifecycleGlobalPersonalCallable(const Model::ManageImageLifecycleGlobalPersonalRequest& request);
+
+                /**
+                 *管理实例内网访问VPC链接
+                 * @param req ManageInternalEndpointRequest
+                 * @return ManageInternalEndpointOutcome
+                 */
+                ManageInternalEndpointOutcome ManageInternalEndpoint(const Model::ManageInternalEndpointRequest &request);
+                void ManageInternalEndpointAsync(const Model::ManageInternalEndpointRequest& request, const ManageInternalEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ManageInternalEndpointOutcomeCallable ManageInternalEndpointCallable(const Model::ManageInternalEndpointRequest& request);
 
                 /**
                  *用于修改应用更新触发器

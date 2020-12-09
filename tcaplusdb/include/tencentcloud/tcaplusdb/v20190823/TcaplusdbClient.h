@@ -51,6 +51,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeClustersResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeIdlFileInfosRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeIdlFileInfosResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeMachineRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeMachineResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupTagsRequest.h>
@@ -67,6 +69,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTasksResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterMachineRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterMachineResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterPasswordRequest.h>
@@ -149,6 +153,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeIdlFileInfosResponse> DescribeIdlFileInfosOutcome;
                 typedef std::future<DescribeIdlFileInfosOutcome> DescribeIdlFileInfosOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeIdlFileInfosRequest&, DescribeIdlFileInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIdlFileInfosAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMachineResponse> DescribeMachineOutcome;
+                typedef std::future<DescribeMachineOutcome> DescribeMachineOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeMachineRequest&, DescribeMachineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -173,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUinInWhitelistResponse> DescribeUinInWhitelistOutcome;
                 typedef std::future<DescribeUinInWhitelistOutcome> DescribeUinInWhitelistOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeUinInWhitelistRequest&, DescribeUinInWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUinInWhitelistAsyncHandler;
+                typedef Outcome<Error, Model::ModifyClusterMachineResponse> ModifyClusterMachineOutcome;
+                typedef std::future<ModifyClusterMachineOutcome> ModifyClusterMachineOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyClusterMachineRequest&, ModifyClusterMachineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterMachineAsyncHandler;
                 typedef Outcome<Error, Model::ModifyClusterNameResponse> ModifyClusterNameOutcome;
                 typedef std::future<ModifyClusterNameOutcome> ModifyClusterNameOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyClusterNameRequest&, ModifyClusterNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterNameAsyncHandler;
@@ -342,6 +352,15 @@ namespace TencentCloud
                 DescribeIdlFileInfosOutcomeCallable DescribeIdlFileInfosCallable(const Model::DescribeIdlFileInfosRequest& request);
 
                 /**
+                 *查询独占集群可以申请的剩余机器
+                 * @param req DescribeMachineRequest
+                 * @return DescribeMachineOutcome
+                 */
+                DescribeMachineOutcome DescribeMachine(const Model::DescribeMachineRequest &request);
+                void DescribeMachineAsync(const Model::DescribeMachineRequest& request, const DescribeMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMachineOutcomeCallable DescribeMachineCallable(const Model::DescribeMachineRequest& request);
+
+                /**
                  *查询TcaplusDB服务支持的地域列表
                  * @param req DescribeRegionsRequest
                  * @return DescribeRegionsOutcome
@@ -412,6 +431,15 @@ namespace TencentCloud
                 DescribeUinInWhitelistOutcome DescribeUinInWhitelist(const Model::DescribeUinInWhitelistRequest &request);
                 void DescribeUinInWhitelistAsync(const Model::DescribeUinInWhitelistRequest& request, const DescribeUinInWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUinInWhitelistOutcomeCallable DescribeUinInWhitelistCallable(const Model::DescribeUinInWhitelistRequest& request);
+
+                /**
+                 *修改独占集群机器
+                 * @param req ModifyClusterMachineRequest
+                 * @return ModifyClusterMachineOutcome
+                 */
+                ModifyClusterMachineOutcome ModifyClusterMachine(const Model::ModifyClusterMachineRequest &request);
+                void ModifyClusterMachineAsync(const Model::ModifyClusterMachineRequest& request, const ModifyClusterMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterMachineOutcomeCallable ModifyClusterMachineCallable(const Model::ModifyClusterMachineRequest& request);
 
                 /**
                  *修改指定的集群名称

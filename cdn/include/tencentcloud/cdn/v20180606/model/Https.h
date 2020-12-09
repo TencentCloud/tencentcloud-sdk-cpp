@@ -319,6 +319,28 @@ failed：部署失败
                      */
                     bool HstsHasBeenSet() const;
 
+                    /**
+                     * 获取Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TlsVersion Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetTlsVersion() const;
+
+                    /**
+                     * 设置Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TlsVersion Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTlsVersion(const std::vector<std::string>& _tlsVersion);
+
+                    /**
+                     * 判断参数 TlsVersion 是否已赋值
+                     * @return TlsVersion 是否已赋值
+                     */
+                    bool TlsVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -401,6 +423,13 @@ failed：部署失败
                      */
                     Hsts m_hsts;
                     bool m_hstsHasBeenSet;
+
+                    /**
+                     * Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_tlsVersion;
+                    bool m_tlsVersionHasBeenSet;
 
                 };
             }

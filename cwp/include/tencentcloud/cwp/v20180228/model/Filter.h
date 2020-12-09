@@ -89,6 +89,24 @@ namespace TencentCloud
                      */
                     bool ValuesHasBeenSet() const;
 
+                    /**
+                     * 获取模糊搜索
+                     * @return ExactMatch 模糊搜索
+                     */
+                    bool GetExactMatch() const;
+
+                    /**
+                     * 设置模糊搜索
+                     * @param ExactMatch 模糊搜索
+                     */
+                    void SetExactMatch(const bool& _exactMatch);
+
+                    /**
+                     * 判断参数 ExactMatch 是否已赋值
+                     * @return ExactMatch 是否已赋值
+                     */
+                    bool ExactMatchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +120,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
+
+                    /**
+                     * 模糊搜索
+                     */
+                    bool m_exactMatch;
+                    bool m_exactMatchHasBeenSet;
 
                 };
             }

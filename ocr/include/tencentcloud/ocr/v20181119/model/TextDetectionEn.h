@@ -87,17 +87,17 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取文本行坐标，以四个顶点坐标表示。
+                     * 获取文本行在原图中的四点坐标。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Polygon 文本行坐标，以四个顶点坐标表示。
+                     * @return Polygon 文本行在原图中的四点坐标。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> GetPolygon() const;
 
                     /**
-                     * 设置文本行坐标，以四个顶点坐标表示。
+                     * 设置文本行在原图中的四点坐标。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Polygon 文本行坐标，以四个顶点坐标表示。
+                     * @param Polygon 文本行在原图中的四点坐标。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPolygon(const std::vector<Coord>& _polygon);
@@ -127,14 +127,14 @@ namespace TencentCloud
                     bool AdvancedInfoHasBeenSet() const;
 
                     /**
-                     * 获取单词在原图中的四点坐标。
-                     * @return WordCoordPoint 单词在原图中的四点坐标。
+                     * 获取英文单词在原图中的四点坐标。
+                     * @return WordCoordPoint 英文单词在原图中的四点坐标。
                      */
                     std::vector<WordCoordPoint> GetWordCoordPoint() const;
 
                     /**
-                     * 设置单词在原图中的四点坐标。
-                     * @param WordCoordPoint 单词在原图中的四点坐标。
+                     * 设置英文单词在原图中的四点坐标。
+                     * @param WordCoordPoint 英文单词在原图中的四点坐标。
                      */
                     void SetWordCoordPoint(const std::vector<WordCoordPoint>& _wordCoordPoint);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 文本行坐标，以四个顶点坐标表示。
+                     * 文本行在原图中的四点坐标。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_polygon;
@@ -208,7 +208,7 @@ namespace TencentCloud
                     bool m_advancedInfoHasBeenSet;
 
                     /**
-                     * 单词在原图中的四点坐标。
+                     * 英文单词在原图中的四点坐标。
                      */
                     std::vector<WordCoordPoint> m_wordCoordPoint;
                     bool m_wordCoordPointHasBeenSet;

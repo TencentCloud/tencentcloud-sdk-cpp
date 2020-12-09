@@ -97,6 +97,24 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
+                     * 获取是否固化。0 不固化，1 固化。默认不固化。
+                     * @return IsPersistence 是否固化。0 不固化，1 固化。默认不固化。
+                     */
+                    int64_t GetIsPersistence() const;
+
+                    /**
+                     * 设置是否固化。0 不固化，1 固化。默认不固化。
+                     * @param IsPersistence 是否固化。0 不固化，1 固化。默认不固化。
+                     */
+                    void SetIsPersistence(const int64_t& _isPersistence);
+
+                    /**
+                     * 判断参数 IsPersistence 是否已赋值
+                     * @return IsPersistence 是否已赋值
+                     */
+                    bool IsPersistenceHasBeenSet() const;
+
+                    /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      */
@@ -133,6 +151,12 @@ namespace TencentCloud
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
+
+                    /**
+                     * 是否固化。0 不固化，1 固化。默认不固化。
+                     */
+                    int64_t m_isPersistence;
+                    bool m_isPersistenceHasBeenSet;
 
                     /**
                      * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。

@@ -32,7 +32,8 @@ DomainBaseInfo::DomainBaseInfo() :
     m_expirationDateHasBeenSet(false),
     m_domainStatusHasBeenSet(false),
     m_buyStatusHasBeenSet(false),
-    m_registrarTypeHasBeenSet(false)
+    m_registrarTypeHasBeenSet(false),
+    m_nameServerHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,19 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const Value &value)
         m_registrarTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("NameServer") && !value["NameServer"].IsNull())
+    {
+        if (!value["NameServer"].IsArray())
+            return CoreInternalOutcome(Error("response `DomainBaseInfo.NameServer` is not array type"));
+
+        const Value &tmpValue = value["NameServer"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_nameServer.push_back((*itr).GetString());
+        }
+        m_nameServerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -252,6 +266,19 @@ void DomainBaseInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "RegistrarType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_registrarType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameServerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NameServer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_nameServer.begin(); itr != m_nameServer.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -431,5 +458,21 @@ void DomainBaseInfo::SetRegistrarType(const string& _registrarType)
 bool DomainBaseInfo::RegistrarTypeHasBeenSet() const
 {
     return m_registrarTypeHasBeenSet;
+}
+
+vector<string> DomainBaseInfo::GetNameServer() const
+{
+    return m_nameServer;
+}
+
+void DomainBaseInfo::SetNameServer(const vector<string>& _nameServer)
+{
+    m_nameServer = _nameServer;
+    m_nameServerHasBeenSet = true;
+}
+
+bool DomainBaseInfo::NameServerHasBeenSet() const
+{
+    return m_nameServerHasBeenSet;
 }
 

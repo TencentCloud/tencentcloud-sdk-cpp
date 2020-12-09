@@ -26,7 +26,8 @@ using namespace std;
 ModifyDirectConnectGatewayAttributeRequest::ModifyDirectConnectGatewayAttributeRequest() :
     m_directConnectGatewayIdHasBeenSet(false),
     m_directConnectGatewayNameHasBeenSet(false),
-    m_ccnRouteTypeHasBeenSet(false)
+    m_ccnRouteTypeHasBeenSet(false),
+    m_modeTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string ModifyDirectConnectGatewayAttributeRequest::ToJsonString() const
         string key = "CcnRouteType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_ccnRouteType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_modeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void ModifyDirectConnectGatewayAttributeRequest::SetCcnRouteType(const string& _
 bool ModifyDirectConnectGatewayAttributeRequest::CcnRouteTypeHasBeenSet() const
 {
     return m_ccnRouteTypeHasBeenSet;
+}
+
+string ModifyDirectConnectGatewayAttributeRequest::GetModeType() const
+{
+    return m_modeType;
+}
+
+void ModifyDirectConnectGatewayAttributeRequest::SetModeType(const string& _modeType)
+{
+    m_modeType = _modeType;
+    m_modeTypeHasBeenSet = true;
+}
+
+bool ModifyDirectConnectGatewayAttributeRequest::ModeTypeHasBeenSet() const
+{
+    return m_modeTypeHasBeenSet;
 }
 
 

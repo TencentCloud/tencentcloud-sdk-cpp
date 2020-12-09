@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool PathMappingHasBeenSet() const;
 
                     /**
-                     * 获取api所在服务host
-                     * @return Host api所在服务host
+                     * 获取api所在服务host,限定外部Api填写。格式: "http://127.0.0.1:8080"
+                     * @return Host api所在服务host,限定外部Api填写。格式: "http://127.0.0.1:8080"
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置api所在服务host
-                     * @param Host api所在服务host
+                     * 设置api所在服务host,限定外部Api填写。格式: "http://127.0.0.1:8080"
+                     * @param Host api所在服务host,限定外部Api填写。格式: "http://127.0.0.1:8080"
                      */
                     void SetHost(const std::string& _host);
 
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_pathMappingHasBeenSet;
 
                     /**
-                     * api所在服务host
+                     * api所在服务host,限定外部Api填写。格式: "http://127.0.0.1:8080"
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

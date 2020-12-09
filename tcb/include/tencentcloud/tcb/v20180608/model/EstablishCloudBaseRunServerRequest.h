@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseEsInfo.h>
+#include <tencentcloud/tcb/v20180608/model/CloudBaseRunVpcInfo.h>
 
 
 namespace TencentCloud
@@ -205,6 +206,42 @@ namespace TencentCloud
                      */
                     bool SourceHasBeenSet() const;
 
+                    /**
+                     * 获取vpc信息
+                     * @return VpcInfo vpc信息
+                     */
+                    CloudBaseRunVpcInfo GetVpcInfo() const;
+
+                    /**
+                     * 设置vpc信息
+                     * @param VpcInfo vpc信息
+                     */
+                    void SetVpcInfo(const CloudBaseRunVpcInfo& _vpcInfo);
+
+                    /**
+                     * 判断参数 VpcInfo 是否已赋值
+                     * @return VpcInfo 是否已赋值
+                     */
+                    bool VpcInfoHasBeenSet() const;
+
+                    /**
+                     * 获取0/1=允许公网访问;2=关闭公网访问
+                     * @return PublicAccess 0/1=允许公网访问;2=关闭公网访问
+                     */
+                    int64_t GetPublicAccess() const;
+
+                    /**
+                     * 设置0/1=允许公网访问;2=关闭公网访问
+                     * @param PublicAccess 0/1=允许公网访问;2=关闭公网访问
+                     */
+                    void SetPublicAccess(const int64_t& _publicAccess);
+
+                    /**
+                     * 判断参数 PublicAccess 是否已赋值
+                     * @return PublicAccess 是否已赋值
+                     */
+                    bool PublicAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +297,18 @@ namespace TencentCloud
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
+
+                    /**
+                     * vpc信息
+                     */
+                    CloudBaseRunVpcInfo m_vpcInfo;
+                    bool m_vpcInfoHasBeenSet;
+
+                    /**
+                     * 0/1=允许公网访问;2=关闭公网访问
+                     */
+                    int64_t m_publicAccess;
+                    bool m_publicAccessHasBeenSet;
 
                 };
             }

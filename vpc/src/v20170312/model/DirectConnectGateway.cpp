@@ -34,7 +34,9 @@ DirectConnectGateway::DirectConnectGateway() :
     m_ccnRouteTypeHasBeenSet(false),
     m_enableBGPHasBeenSet(false),
     m_enableBGPCommunityHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false)
+    m_natGatewayIdHasBeenSet(false),
+    m_vXLANSupportHasBeenSet(false),
+    m_modeTypeHasBeenSet(false)
 {
 }
 
@@ -173,6 +175,29 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const Value &value)
         m_natGatewayIdHasBeenSet = true;
     }
 
+    if (value.HasMember("VXLANSupport") && !value["VXLANSupport"].IsNull())
+    {
+        if (!value["VXLANSupport"].IsArray())
+            return CoreInternalOutcome(Error("response `DirectConnectGateway.VXLANSupport` is not array type"));
+
+        const Value &tmpValue = value["VXLANSupport"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_vXLANSupport.push_back((*itr).GetBool());
+        }
+        m_vXLANSupportHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModeType") && !value["ModeType"].IsNull())
+    {
+        if (!value["ModeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectGateway.ModeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modeType = string(value["ModeType"].GetString());
+        m_modeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +307,27 @@ void DirectConnectGateway::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "NatGatewayId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_natGatewayId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vXLANSupportHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VXLANSupport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_vXLANSupport.begin(); itr != m_vXLANSupport.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetBool(*itr), allocator);
+        }
+    }
+
+    if (m_modeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_modeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -493,5 +539,37 @@ void DirectConnectGateway::SetNatGatewayId(const string& _natGatewayId)
 bool DirectConnectGateway::NatGatewayIdHasBeenSet() const
 {
     return m_natGatewayIdHasBeenSet;
+}
+
+vector<bool> DirectConnectGateway::GetVXLANSupport() const
+{
+    return m_vXLANSupport;
+}
+
+void DirectConnectGateway::SetVXLANSupport(const vector<bool>& _vXLANSupport)
+{
+    m_vXLANSupport = _vXLANSupport;
+    m_vXLANSupportHasBeenSet = true;
+}
+
+bool DirectConnectGateway::VXLANSupportHasBeenSet() const
+{
+    return m_vXLANSupportHasBeenSet;
+}
+
+string DirectConnectGateway::GetModeType() const
+{
+    return m_modeType;
+}
+
+void DirectConnectGateway::SetModeType(const string& _modeType)
+{
+    m_modeType = _modeType;
+    m_modeTypeHasBeenSet = true;
+}
+
+bool DirectConnectGateway::ModeTypeHasBeenSet() const
+{
+    return m_modeTypeHasBeenSet;
 }
 

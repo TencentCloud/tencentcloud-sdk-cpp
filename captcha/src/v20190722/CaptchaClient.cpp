@@ -341,6 +341,49 @@ CaptchaClient::DescribeCaptchaMiniResultOutcomeCallable CaptchaClient::DescribeC
     return task->get_future();
 }
 
+CaptchaClient::DescribeCaptchaMiniRiskResultOutcome CaptchaClient::DescribeCaptchaMiniRiskResult(const DescribeCaptchaMiniRiskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaMiniRiskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaMiniRiskResultResponse rsp = DescribeCaptchaMiniRiskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaMiniRiskResultOutcome(rsp);
+        else
+            return DescribeCaptchaMiniRiskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaMiniRiskResultOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaMiniRiskResultAsync(const DescribeCaptchaMiniRiskResultRequest& request, const DescribeCaptchaMiniRiskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaMiniRiskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaMiniRiskResultOutcomeCallable CaptchaClient::DescribeCaptchaMiniRiskResultCallable(const DescribeCaptchaMiniRiskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaMiniRiskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaMiniRiskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CaptchaClient::DescribeCaptchaOperDataOutcome CaptchaClient::DescribeCaptchaOperData(const DescribeCaptchaOperDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCaptchaOperData");
