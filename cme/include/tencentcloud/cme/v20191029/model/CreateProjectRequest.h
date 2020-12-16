@@ -25,6 +25,7 @@
 #include <tencentcloud/cme/v20191029/model/SwitcherProjectInput.h>
 #include <tencentcloud/cme/v20191029/model/LiveStreamClipProjectInput.h>
 #include <tencentcloud/cme/v20191029/model/VideoEditProjectInput.h>
+#include <tencentcloud/cme/v20191029/model/VideoSegmentationProjectInput.h>
 
 
 namespace TencentCloud
@@ -68,9 +69,11 @@ namespace TencentCloud
                      * 获取项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
                      * @return Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
                      */
                     std::string GetCategory() const;
 
@@ -78,9 +81,11 @@ namespace TencentCloud
                      * 设置项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
                      * @param Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
                      */
                     void SetCategory(const std::string& _category);
 
@@ -224,6 +229,24 @@ namespace TencentCloud
                      */
                     bool VideoEditProjectInputHasBeenSet() const;
 
+                    /**
+                     * 获取视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
+                     * @return VideoSegmentationProjectInput 视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
+                     */
+                    VideoSegmentationProjectInput GetVideoSegmentationProjectInput() const;
+
+                    /**
+                     * 设置视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
+                     * @param VideoSegmentationProjectInput 视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
+                     */
+                    void SetVideoSegmentationProjectInput(const VideoSegmentationProjectInput& _videoSegmentationProjectInput);
+
+                    /**
+                     * 判断参数 VideoSegmentationProjectInput 是否已赋值
+                     * @return VideoSegmentationProjectInput 是否已赋值
+                     */
+                    bool VideoSegmentationProjectInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +259,7 @@ namespace TencentCloud
                      * 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
@@ -283,6 +307,12 @@ namespace TencentCloud
                      */
                     VideoEditProjectInput m_videoEditProjectInput;
                     bool m_videoEditProjectInputHasBeenSet;
+
+                    /**
+                     * 视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。
+                     */
+                    VideoSegmentationProjectInput m_videoSegmentationProjectInput;
+                    bool m_videoSegmentationProjectInputHasBeenSet;
 
                 };
             }

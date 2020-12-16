@@ -446,14 +446,14 @@ namespace TencentCloud
                     bool MasterInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，可能的返回值：“HA”-高可用版；“FE”-金融版；“BASIC”-基础版
-                     * @return DeviceType 实例类型，可能的返回值：“HA”-高可用版；“FE”-金融版；“BASIC”-基础版
+                     * 获取实例类型
+                     * @return DeviceType 实例类型
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置实例类型，可能的返回值：“HA”-高可用版；“FE”-金融版；“BASIC”-基础版
-                     * @param DeviceType 实例类型，可能的返回值：“HA”-高可用版；“FE”-金融版；“BASIC”-基础版
+                     * 设置实例类型
+                     * @param DeviceType 实例类型
                      */
                     void SetDeviceType(const std::string& _deviceType);
 
@@ -954,7 +954,7 @@ namespace TencentCloud
                     bool m_masterInfoHasBeenSet;
 
                     /**
-                     * 实例类型，可能的返回值：“HA”-高可用版；“FE”-金融版；“BASIC”-基础版
+                     * 实例类型
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;

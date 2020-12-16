@@ -40,6 +40,92 @@ ImsClient::ImsClient(const Credential &credential, const string &region, const C
 }
 
 
+ImsClient::DescribeImageStatOutcome ImsClient::DescribeImageStat(const DescribeImageStatRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageStat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageStatResponse rsp = DescribeImageStatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageStatOutcome(rsp);
+        else
+            return DescribeImageStatOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageStatOutcome(outcome.GetError());
+    }
+}
+
+void ImsClient::DescribeImageStatAsync(const DescribeImageStatRequest& request, const DescribeImageStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageStat(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ImsClient::DescribeImageStatOutcomeCallable ImsClient::DescribeImageStatCallable(const DescribeImageStatRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageStatOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageStat(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ImsClient::DescribeImsListOutcome ImsClient::DescribeImsList(const DescribeImsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImsListResponse rsp = DescribeImsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImsListOutcome(rsp);
+        else
+            return DescribeImsListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImsListOutcome(outcome.GetError());
+    }
+}
+
+void ImsClient::DescribeImsListAsync(const DescribeImsListRequest& request, const DescribeImsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImsList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ImsClient::DescribeImsListOutcomeCallable ImsClient::DescribeImsListCallable(const DescribeImsListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImsListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImsList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ImsClient::ImageModerationOutcome ImsClient::ImageModeration(const ImageModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "ImageModeration");

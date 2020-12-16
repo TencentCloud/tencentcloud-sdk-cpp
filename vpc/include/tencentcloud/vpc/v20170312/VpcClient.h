@@ -67,6 +67,8 @@
 #include <tencentcloud/vpc/v20170312/model/CheckDefaultSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckNetDetectStateRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CheckNetDetectStateResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CloneSecurityGroupRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CloneSecurityGroupResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateAddressTemplateRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateAddressTemplateResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateAddressTemplateGroupRequest.h>
@@ -551,6 +553,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CheckNetDetectStateResponse> CheckNetDetectStateOutcome;
                 typedef std::future<CheckNetDetectStateOutcome> CheckNetDetectStateOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CheckNetDetectStateRequest&, CheckNetDetectStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckNetDetectStateAsyncHandler;
+                typedef Outcome<Error, Model::CloneSecurityGroupResponse> CloneSecurityGroupOutcome;
+                typedef std::future<CloneSecurityGroupOutcome> CloneSecurityGroupOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CloneSecurityGroupRequest&, CloneSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneSecurityGroupAsyncHandler;
                 typedef Outcome<Error, Model::CreateAddressTemplateResponse> CreateAddressTemplateOutcome;
                 typedef std::future<CreateAddressTemplateOutcome> CreateAddressTemplateOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateAddressTemplateRequest&, CreateAddressTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAddressTemplateAsyncHandler;
@@ -1392,6 +1397,15 @@ namespace TencentCloud
                 CheckNetDetectStateOutcome CheckNetDetectState(const Model::CheckNetDetectStateRequest &request);
                 void CheckNetDetectStateAsync(const Model::CheckNetDetectStateRequest& request, const CheckNetDetectStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckNetDetectStateOutcomeCallable CheckNetDetectStateCallable(const Model::CheckNetDetectStateRequest& request);
+
+                /**
+                 *本接口（CloneSecurityGroup）用于根据存量的安全组，克隆创建出同样规则配置的安全组。仅克隆安全组及其规则信息，不会克隆安全组标签信息。
+                 * @param req CloneSecurityGroupRequest
+                 * @return CloneSecurityGroupOutcome
+                 */
+                CloneSecurityGroupOutcome CloneSecurityGroup(const Model::CloneSecurityGroupRequest &request);
+                void CloneSecurityGroupAsync(const Model::CloneSecurityGroupRequest& request, const CloneSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloneSecurityGroupOutcomeCallable CloneSecurityGroupCallable(const Model::CloneSecurityGroupRequest& request);
 
                 /**
                  *本接口（CreateAddressTemplate）用于创建IP地址模版

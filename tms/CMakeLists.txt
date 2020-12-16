@@ -19,26 +19,44 @@ set(tms_public_header
   )
 
 set(tms_public_header_model
+  include/tencentcloud/tms/v20200713/model/Filters.h
+  include/tencentcloud/tms/v20200713/model/Overview.h
   include/tencentcloud/tms/v20200713/model/RiskDetails.h
+  include/tencentcloud/tms/v20200713/model/DescribeTextStatRequest.h
   include/tencentcloud/tms/v20200713/model/TextModerationRequest.h
-  include/tencentcloud/tms/v20200713/model/DetailResults.h
   include/tencentcloud/tms/v20200713/model/AccountTipoffAccessRequest.h
+  include/tencentcloud/tms/v20200713/model/TextLib.h
+  include/tencentcloud/tms/v20200713/model/TrendCount.h
+  include/tencentcloud/tms/v20200713/model/DescribeTextLibResponse.h
+  include/tencentcloud/tms/v20200713/model/DetailResults.h
+  include/tencentcloud/tms/v20200713/model/EvilCount.h
   include/tencentcloud/tms/v20200713/model/Device.h
   include/tencentcloud/tms/v20200713/model/TipoffResponse.h
   include/tencentcloud/tms/v20200713/model/AccountTipoffAccessResponse.h
+  include/tencentcloud/tms/v20200713/model/DescribeTextLibRequest.h
+  include/tencentcloud/tms/v20200713/model/DescribeTextStatResponse.h
   include/tencentcloud/tms/v20200713/model/TextModerationResponse.h
   include/tencentcloud/tms/v20200713/model/User.h
   )
 
 set(tms_src
   src/v20200713/TmsClient.cpp
+  src/v20200713/model/Filters.cpp
+  src/v20200713/model/Overview.cpp
   src/v20200713/model/RiskDetails.cpp
+  src/v20200713/model/DescribeTextStatRequest.cpp
   src/v20200713/model/TextModerationRequest.cpp
-  src/v20200713/model/DetailResults.cpp
   src/v20200713/model/AccountTipoffAccessRequest.cpp
+  src/v20200713/model/TextLib.cpp
+  src/v20200713/model/TrendCount.cpp
+  src/v20200713/model/DescribeTextLibResponse.cpp
+  src/v20200713/model/DetailResults.cpp
+  src/v20200713/model/EvilCount.cpp
   src/v20200713/model/Device.cpp
   src/v20200713/model/TipoffResponse.cpp
   src/v20200713/model/AccountTipoffAccessResponse.cpp
+  src/v20200713/model/DescribeTextLibRequest.cpp
+  src/v20200713/model/DescribeTextStatResponse.cpp
   src/v20200713/model/TextModerationResponse.cpp
   src/v20200713/model/User.cpp
   )

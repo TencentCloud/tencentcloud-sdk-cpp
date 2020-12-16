@@ -60,6 +60,7 @@
 #include <tencentcloud/cdn/v20180606/model/Tag.h>
 #include <tencentcloud/cdn/v20180606/model/AdvancedAuthentication.h>
 #include <tencentcloud/cdn/v20180606/model/OriginAuthentication.h>
+#include <tencentcloud/cdn/v20180606/model/Ipv6Access.h>
 
 
 namespace TencentCloud
@@ -1242,6 +1243,28 @@ off：不支持
                      */
                     bool OriginAuthenticationHasBeenSet() const;
 
+                    /**
+                     * 获取Ipv6访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6Access Ipv6访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Ipv6Access GetIpv6Access() const;
+
+                    /**
+                     * 设置Ipv6访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Ipv6Access Ipv6访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpv6Access(const Ipv6Access& _ipv6Access);
+
+                    /**
+                     * 判断参数 Ipv6Access 是否已赋值
+                     * @return Ipv6Access 是否已赋值
+                     */
+                    bool Ipv6AccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1608,6 +1631,13 @@ off：不支持
                      */
                     OriginAuthentication m_originAuthentication;
                     bool m_originAuthenticationHasBeenSet;
+
+                    /**
+                     * Ipv6访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Ipv6Access m_ipv6Access;
+                    bool m_ipv6AccessHasBeenSet;
 
                 };
             }

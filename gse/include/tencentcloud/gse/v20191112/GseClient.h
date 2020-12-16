@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/gse/v20191112/model/AttachCcnInstancesRequest.h>
 #include <tencentcloud/gse/v20191112/model/AttachCcnInstancesResponse.h>
+#include <tencentcloud/gse/v20191112/model/CopyFleetRequest.h>
+#include <tencentcloud/gse/v20191112/model/CopyFleetResponse.h>
 #include <tencentcloud/gse/v20191112/model/CreateAliasRequest.h>
 #include <tencentcloud/gse/v20191112/model/CreateAliasResponse.h>
 #include <tencentcloud/gse/v20191112/model/CreateAssetRequest.h>
@@ -168,6 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AttachCcnInstancesResponse> AttachCcnInstancesOutcome;
                 typedef std::future<AttachCcnInstancesOutcome> AttachCcnInstancesOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::AttachCcnInstancesRequest&, AttachCcnInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachCcnInstancesAsyncHandler;
+                typedef Outcome<Error, Model::CopyFleetResponse> CopyFleetOutcome;
+                typedef std::future<CopyFleetOutcome> CopyFleetOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::CopyFleetRequest&, CopyFleetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyFleetAsyncHandler;
                 typedef Outcome<Error, Model::CreateAliasResponse> CreateAliasOutcome;
                 typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::CreateAliasRequest&, CreateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAliasAsyncHandler;
@@ -368,6 +373,15 @@ namespace TencentCloud
                 AttachCcnInstancesOutcome AttachCcnInstances(const Model::AttachCcnInstancesRequest &request);
                 void AttachCcnInstancesAsync(const Model::AttachCcnInstancesRequest& request, const AttachCcnInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachCcnInstancesOutcomeCallable AttachCcnInstancesCallable(const Model::AttachCcnInstancesRequest& request);
+
+                /**
+                 *本接口（CopyFleet）用于复制服务器舰队。
+                 * @param req CopyFleetRequest
+                 * @return CopyFleetOutcome
+                 */
+                CopyFleetOutcome CopyFleet(const Model::CopyFleetRequest &request);
+                void CopyFleetAsync(const Model::CopyFleetRequest& request, const CopyFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CopyFleetOutcomeCallable CopyFleetCallable(const Model::CopyFleetRequest& request);
 
                 /**
                  *本接口（CreateAlias）用于创建别名。

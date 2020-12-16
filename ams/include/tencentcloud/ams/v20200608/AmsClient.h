@@ -29,6 +29,10 @@
 #include <tencentcloud/ams/v20200608/model/CreateAudioModerationTaskResponse.h>
 #include <tencentcloud/ams/v20200608/model/CreateBizConfigRequest.h>
 #include <tencentcloud/ams/v20200608/model/CreateBizConfigResponse.h>
+#include <tencentcloud/ams/v20200608/model/DescribeAmsListRequest.h>
+#include <tencentcloud/ams/v20200608/model/DescribeAmsListResponse.h>
+#include <tencentcloud/ams/v20200608/model/DescribeAudioStatRequest.h>
+#include <tencentcloud/ams/v20200608/model/DescribeAudioStatResponse.h>
 #include <tencentcloud/ams/v20200608/model/DescribeBizConfigRequest.h>
 #include <tencentcloud/ams/v20200608/model/DescribeBizConfigResponse.h>
 #include <tencentcloud/ams/v20200608/model/DescribeTaskDetailRequest.h>
@@ -56,6 +60,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateBizConfigResponse> CreateBizConfigOutcome;
                 typedef std::future<CreateBizConfigOutcome> CreateBizConfigOutcomeCallable;
                 typedef std::function<void(const AmsClient*, const Model::CreateBizConfigRequest&, CreateBizConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBizConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAmsListResponse> DescribeAmsListOutcome;
+                typedef std::future<DescribeAmsListOutcome> DescribeAmsListOutcomeCallable;
+                typedef std::function<void(const AmsClient*, const Model::DescribeAmsListRequest&, DescribeAmsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAmsListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAudioStatResponse> DescribeAudioStatOutcome;
+                typedef std::future<DescribeAudioStatOutcome> DescribeAudioStatOutcomeCallable;
+                typedef std::function<void(const AmsClient*, const Model::DescribeAudioStatRequest&, DescribeAudioStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAudioStatAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBizConfigResponse> DescribeBizConfigOutcome;
                 typedef std::future<DescribeBizConfigOutcome> DescribeBizConfigOutcomeCallable;
                 typedef std::function<void(const AmsClient*, const Model::DescribeBizConfigRequest&, DescribeBizConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizConfigAsyncHandler;
@@ -119,6 +129,24 @@ namespace TencentCloud
                 CreateBizConfigOutcome CreateBizConfig(const Model::CreateBizConfigRequest &request);
                 void CreateBizConfigAsync(const Model::CreateBizConfigRequest& request, const CreateBizConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBizConfigOutcomeCallable CreateBizConfigCallable(const Model::CreateBizConfigRequest& request);
+
+                /**
+                 *音频审核明细列表
+                 * @param req DescribeAmsListRequest
+                 * @return DescribeAmsListOutcome
+                 */
+                DescribeAmsListOutcome DescribeAmsList(const Model::DescribeAmsListRequest &request);
+                void DescribeAmsListAsync(const Model::DescribeAmsListRequest& request, const DescribeAmsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAmsListOutcomeCallable DescribeAmsListCallable(const Model::DescribeAmsListRequest& request);
+
+                /**
+                 *控制台识别统计
+                 * @param req DescribeAudioStatRequest
+                 * @return DescribeAudioStatOutcome
+                 */
+                DescribeAudioStatOutcome DescribeAudioStat(const Model::DescribeAudioStatRequest &request);
+                void DescribeAudioStatAsync(const Model::DescribeAudioStatRequest& request, const DescribeAudioStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAudioStatOutcomeCallable DescribeAudioStatCallable(const Model::DescribeAudioStatRequest& request);
 
                 /**
                  *查看单个配置

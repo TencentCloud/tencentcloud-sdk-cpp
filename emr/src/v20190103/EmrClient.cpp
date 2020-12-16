@@ -169,6 +169,49 @@ EmrClient::DescribeInstancesOutcomeCallable EmrClient::DescribeInstancesCallable
     return task->get_future();
 }
 
+EmrClient::DescribeJobFlowOutcome EmrClient::DescribeJobFlow(const DescribeJobFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobFlowResponse rsp = DescribeJobFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobFlowOutcome(rsp);
+        else
+            return DescribeJobFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobFlowOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeJobFlowAsync(const DescribeJobFlowRequest& request, const DescribeJobFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJobFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeJobFlowOutcomeCallable EmrClient::DescribeJobFlowCallable(const DescribeJobFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJobFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJobFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::InquiryPriceCreateInstanceOutcome EmrClient::InquiryPriceCreateInstance(const InquiryPriceCreateInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "InquiryPriceCreateInstance");
@@ -334,6 +377,49 @@ EmrClient::InquiryPriceUpdateInstanceOutcomeCallable EmrClient::InquiryPriceUpda
         [this, request]()
         {
             return this->InquiryPriceUpdateInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::RunJobFlowOutcome EmrClient::RunJobFlow(const RunJobFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunJobFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunJobFlowResponse rsp = RunJobFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunJobFlowOutcome(rsp);
+        else
+            return RunJobFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return RunJobFlowOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::RunJobFlowAsync(const RunJobFlowRequest& request, const RunJobFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunJobFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::RunJobFlowOutcomeCallable EmrClient::RunJobFlowCallable(const RunJobFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunJobFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->RunJobFlow(request);
         }
     );
 

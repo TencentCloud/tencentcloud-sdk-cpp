@@ -54,7 +54,8 @@ AddCdnDomainRequest::AddCdnDomainRequest() :
     m_specificConfigHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_originPullTimeoutHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_ipv6AccessHasBeenSet(false)
 {
 }
 
@@ -344,6 +345,15 @@ string AddCdnDomainRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ipv6AccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Access";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_ipv6Access.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -848,6 +858,22 @@ void AddCdnDomainRequest::SetTag(const vector<Tag>& _tag)
 bool AddCdnDomainRequest::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+Ipv6Access AddCdnDomainRequest::GetIpv6Access() const
+{
+    return m_ipv6Access;
+}
+
+void AddCdnDomainRequest::SetIpv6Access(const Ipv6Access& _ipv6Access)
+{
+    m_ipv6Access = _ipv6Access;
+    m_ipv6AccessHasBeenSet = true;
+}
+
+bool AddCdnDomainRequest::Ipv6AccessHasBeenSet() const
+{
+    return m_ipv6AccessHasBeenSet;
 }
 
 

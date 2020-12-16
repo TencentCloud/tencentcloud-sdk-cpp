@@ -58,7 +58,10 @@ CynosdbInstance::CynosdbInstance() :
     m_destroyTimeHasBeenSet(false),
     m_cynosVersionHasBeenSet(false),
     m_processingTaskHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_minCpuHasBeenSet(false),
+    m_maxCpuHasBeenSet(false),
+    m_serverlessStatusHasBeenSet(false)
 {
 }
 
@@ -437,6 +440,36 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const Value &value)
         m_renewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("MinCpu") && !value["MinCpu"].IsNull())
+    {
+        if (!value["MinCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbInstance.MinCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_minCpu = value["MinCpu"].GetDouble();
+        m_minCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxCpu") && !value["MaxCpu"].IsNull())
+    {
+        if (!value["MaxCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbInstance.MaxCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxCpu = value["MaxCpu"].GetDouble();
+        m_maxCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServerlessStatus") && !value["ServerlessStatus"].IsNull())
+    {
+        if (!value["ServerlessStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbInstance.ServerlessStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverlessStatus = string(value["ServerlessStatus"].GetString());
+        m_serverlessStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -738,6 +771,30 @@ void CynosdbInstance::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_minCpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MinCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minCpu, allocator);
+    }
+
+    if (m_maxCpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxCpu, allocator);
+    }
+
+    if (m_serverlessStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServerlessStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1333,5 +1390,53 @@ void CynosdbInstance::SetRenewFlag(const int64_t& _renewFlag)
 bool CynosdbInstance::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+double CynosdbInstance::GetMinCpu() const
+{
+    return m_minCpu;
+}
+
+void CynosdbInstance::SetMinCpu(const double& _minCpu)
+{
+    m_minCpu = _minCpu;
+    m_minCpuHasBeenSet = true;
+}
+
+bool CynosdbInstance::MinCpuHasBeenSet() const
+{
+    return m_minCpuHasBeenSet;
+}
+
+double CynosdbInstance::GetMaxCpu() const
+{
+    return m_maxCpu;
+}
+
+void CynosdbInstance::SetMaxCpu(const double& _maxCpu)
+{
+    m_maxCpu = _maxCpu;
+    m_maxCpuHasBeenSet = true;
+}
+
+bool CynosdbInstance::MaxCpuHasBeenSet() const
+{
+    return m_maxCpuHasBeenSet;
+}
+
+string CynosdbInstance::GetServerlessStatus() const
+{
+    return m_serverlessStatus;
+}
+
+void CynosdbInstance::SetServerlessStatus(const string& _serverlessStatus)
+{
+    m_serverlessStatus = _serverlessStatus;
+    m_serverlessStatusHasBeenSet = true;
+}
+
+bool CynosdbInstance::ServerlessStatusHasBeenSet() const
+{
+    return m_serverlessStatusHasBeenSet;
 }
 

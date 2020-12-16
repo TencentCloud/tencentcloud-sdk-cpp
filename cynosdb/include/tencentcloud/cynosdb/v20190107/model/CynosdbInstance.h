@@ -712,6 +712,68 @@ namespace TencentCloud
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取serverless实例cpu下限
+                     * @return MinCpu serverless实例cpu下限
+                     */
+                    double GetMinCpu() const;
+
+                    /**
+                     * 设置serverless实例cpu下限
+                     * @param MinCpu serverless实例cpu下限
+                     */
+                    void SetMinCpu(const double& _minCpu);
+
+                    /**
+                     * 判断参数 MinCpu 是否已赋值
+                     * @return MinCpu 是否已赋值
+                     */
+                    bool MinCpuHasBeenSet() const;
+
+                    /**
+                     * 获取serverless实例cpu上限
+                     * @return MaxCpu serverless实例cpu上限
+                     */
+                    double GetMaxCpu() const;
+
+                    /**
+                     * 设置serverless实例cpu上限
+                     * @param MaxCpu serverless实例cpu上限
+                     */
+                    void SetMaxCpu(const double& _maxCpu);
+
+                    /**
+                     * 判断参数 MaxCpu 是否已赋值
+                     * @return MaxCpu 是否已赋值
+                     */
+                    bool MaxCpuHasBeenSet() const;
+
+                    /**
+                     * 获取serverless实例状态, 可选值：
+resume
+pause
+                     * @return ServerlessStatus serverless实例状态, 可选值：
+resume
+pause
+                     */
+                    std::string GetServerlessStatus() const;
+
+                    /**
+                     * 设置serverless实例状态, 可选值：
+resume
+pause
+                     * @param ServerlessStatus serverless实例状态, 可选值：
+resume
+pause
+                     */
+                    void SetServerlessStatus(const std::string& _serverlessStatus);
+
+                    /**
+                     * 判断参数 ServerlessStatus 是否已赋值
+                     * @return ServerlessStatus 是否已赋值
+                     */
+                    bool ServerlessStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -935,6 +997,26 @@ namespace TencentCloud
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * serverless实例cpu下限
+                     */
+                    double m_minCpu;
+                    bool m_minCpuHasBeenSet;
+
+                    /**
+                     * serverless实例cpu上限
+                     */
+                    double m_maxCpu;
+                    bool m_maxCpuHasBeenSet;
+
+                    /**
+                     * serverless实例状态, 可选值：
+resume
+pause
+                     */
+                    std::string m_serverlessStatus;
+                    bool m_serverlessStatusHasBeenSet;
 
                 };
             }

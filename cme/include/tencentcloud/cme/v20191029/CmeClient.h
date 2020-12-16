@@ -69,10 +69,14 @@
 #include <tencentcloud/cme/v20191029/model/DescribeTeamsResponse.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataRequest.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataResponse.h>
+#include <tencentcloud/cme/v20191029/model/ExportVideoByVideoSegmentationDataRequest.h>
+#include <tencentcloud/cme/v20191029/model/ExportVideoByVideoSegmentationDataResponse.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoEditProjectRequest.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoEditProjectResponse.h>
 #include <tencentcloud/cme/v20191029/model/FlattenListMediaRequest.h>
 #include <tencentcloud/cme/v20191029/model/FlattenListMediaResponse.h>
+#include <tencentcloud/cme/v20191029/model/GenerateVideoSegmentationSchemeByAiRequest.h>
+#include <tencentcloud/cme/v20191029/model/GenerateVideoSegmentationSchemeByAiResponse.h>
 #include <tencentcloud/cme/v20191029/model/GrantResourceAuthorizationRequest.h>
 #include <tencentcloud/cme/v20191029/model/GrantResourceAuthorizationResponse.h>
 #include <tencentcloud/cme/v20191029/model/ImportMaterialRequest.h>
@@ -178,12 +182,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ExportVideoByEditorTrackDataResponse> ExportVideoByEditorTrackDataOutcome;
                 typedef std::future<ExportVideoByEditorTrackDataOutcome> ExportVideoByEditorTrackDataOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::ExportVideoByEditorTrackDataRequest&, ExportVideoByEditorTrackDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVideoByEditorTrackDataAsyncHandler;
+                typedef Outcome<Error, Model::ExportVideoByVideoSegmentationDataResponse> ExportVideoByVideoSegmentationDataOutcome;
+                typedef std::future<ExportVideoByVideoSegmentationDataOutcome> ExportVideoByVideoSegmentationDataOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::ExportVideoByVideoSegmentationDataRequest&, ExportVideoByVideoSegmentationDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVideoByVideoSegmentationDataAsyncHandler;
                 typedef Outcome<Error, Model::ExportVideoEditProjectResponse> ExportVideoEditProjectOutcome;
                 typedef std::future<ExportVideoEditProjectOutcome> ExportVideoEditProjectOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::ExportVideoEditProjectRequest&, ExportVideoEditProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVideoEditProjectAsyncHandler;
                 typedef Outcome<Error, Model::FlattenListMediaResponse> FlattenListMediaOutcome;
                 typedef std::future<FlattenListMediaOutcome> FlattenListMediaOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::FlattenListMediaRequest&, FlattenListMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlattenListMediaAsyncHandler;
+                typedef Outcome<Error, Model::GenerateVideoSegmentationSchemeByAiResponse> GenerateVideoSegmentationSchemeByAiOutcome;
+                typedef std::future<GenerateVideoSegmentationSchemeByAiOutcome> GenerateVideoSegmentationSchemeByAiOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::GenerateVideoSegmentationSchemeByAiRequest&, GenerateVideoSegmentationSchemeByAiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateVideoSegmentationSchemeByAiAsyncHandler;
                 typedef Outcome<Error, Model::GrantResourceAuthorizationResponse> GrantResourceAuthorizationOutcome;
                 typedef std::future<GrantResourceAuthorizationOutcome> GrantResourceAuthorizationOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::GrantResourceAuthorizationRequest&, GrantResourceAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GrantResourceAuthorizationAsyncHandler;
@@ -437,6 +447,15 @@ namespace TencentCloud
                 ExportVideoByEditorTrackDataOutcomeCallable ExportVideoByEditorTrackDataCallable(const Model::ExportVideoByEditorTrackDataRequest& request);
 
                 /**
+                 *使用视频智能拆条数据导出视频，将指定的视频拆条片段导出为一个视频。
+                 * @param req ExportVideoByVideoSegmentationDataRequest
+                 * @return ExportVideoByVideoSegmentationDataOutcome
+                 */
+                ExportVideoByVideoSegmentationDataOutcome ExportVideoByVideoSegmentationData(const Model::ExportVideoByVideoSegmentationDataRequest &request);
+                void ExportVideoByVideoSegmentationDataAsync(const Model::ExportVideoByVideoSegmentationDataRequest& request, const ExportVideoByVideoSegmentationDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportVideoByVideoSegmentationDataOutcomeCallable ExportVideoByVideoSegmentationDataCallable(const Model::ExportVideoByVideoSegmentationDataRequest& request);
+
+                /**
                  *导出视频编辑项目，支持指定输出的模板。
                  * @param req ExportVideoEditProjectRequest
                  * @return ExportVideoEditProjectOutcome
@@ -453,6 +472,15 @@ namespace TencentCloud
                 FlattenListMediaOutcome FlattenListMedia(const Model::FlattenListMediaRequest &request);
                 void FlattenListMediaAsync(const Model::FlattenListMediaRequest& request, const FlattenListMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FlattenListMediaOutcomeCallable FlattenListMediaCallable(const Model::FlattenListMediaRequest& request);
+
+                /**
+                 *发起视频智能拆条任务，支持智能生成和平精英集锦、王者荣耀集锦、足球集锦、篮球集锦 、人物集锦、新闻拆条等任务。
+                 * @param req GenerateVideoSegmentationSchemeByAiRequest
+                 * @return GenerateVideoSegmentationSchemeByAiOutcome
+                 */
+                GenerateVideoSegmentationSchemeByAiOutcome GenerateVideoSegmentationSchemeByAi(const Model::GenerateVideoSegmentationSchemeByAiRequest &request);
+                void GenerateVideoSegmentationSchemeByAiAsync(const Model::GenerateVideoSegmentationSchemeByAiRequest& request, const GenerateVideoSegmentationSchemeByAiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateVideoSegmentationSchemeByAiOutcomeCallable GenerateVideoSegmentationSchemeByAiCallable(const Model::GenerateVideoSegmentationSchemeByAiRequest& request);
 
                 /**
                  *资源所属实体对目标实体授予目标资源的相应权限。

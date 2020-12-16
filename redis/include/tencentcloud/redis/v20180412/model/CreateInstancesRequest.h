@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/redis/v20180412/model/RedisNodeInfo.h>
+#include <tencentcloud/redis/v20180412/model/ResourceTag.h>
 
 
 namespace TencentCloud
@@ -397,6 +398,24 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     bool NodeSetHasBeenSet() const;
 
+                    /**
+                     * 获取购买实例绑定标签
+                     * @return ResourceTags 购买实例绑定标签
+                     */
+                    std::vector<ResourceTag> GetResourceTags() const;
+
+                    /**
+                     * 设置购买实例绑定标签
+                     * @param ResourceTags 购买实例绑定标签
+                     */
+                    void SetResourceTags(const std::vector<ResourceTag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -515,6 +534,12 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     std::vector<RedisNodeInfo> m_nodeSet;
                     bool m_nodeSetHasBeenSet;
+
+                    /**
+                     * 购买实例绑定标签
+                     */
+                    std::vector<ResourceTag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

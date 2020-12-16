@@ -68,7 +68,8 @@ DCDBInstanceInfo::DCDBInstanceInfo() :
     m_wanStatusIpv6HasBeenSet(false),
     m_dcnFlagHasBeenSet(false),
     m_dcnStatusHasBeenSet(false),
-    m_dcnDstNumHasBeenSet(false)
+    m_dcnDstNumHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -557,6 +558,16 @@ CoreInternalOutcome DCDBInstanceInfo::Deserialize(const Value &value)
         m_dcnDstNumHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DCDBInstanceInfo.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = value["InstanceType"].GetInt64();
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -945,6 +956,14 @@ void DCDBInstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "DcnDstNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dcnDstNum, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceType, allocator);
     }
 
 }
@@ -1700,5 +1719,21 @@ void DCDBInstanceInfo::SetDcnDstNum(const int64_t& _dcnDstNum)
 bool DCDBInstanceInfo::DcnDstNumHasBeenSet() const
 {
     return m_dcnDstNumHasBeenSet;
+}
+
+int64_t DCDBInstanceInfo::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void DCDBInstanceInfo::SetInstanceType(const int64_t& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

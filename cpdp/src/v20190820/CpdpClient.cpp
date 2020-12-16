@@ -2663,6 +2663,49 @@ CpdpClient::QueryTransferDetailOutcomeCallable CpdpClient::QueryTransferDetailCa
     return task->get_future();
 }
 
+CpdpClient::QueryTransferResultOutcome CpdpClient::QueryTransferResult(const QueryTransferResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryTransferResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryTransferResultResponse rsp = QueryTransferResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryTransferResultOutcome(rsp);
+        else
+            return QueryTransferResultOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryTransferResultOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryTransferResultAsync(const QueryTransferResultRequest& request, const QueryTransferResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryTransferResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryTransferResultOutcomeCallable CpdpClient::QueryTransferResultCallable(const QueryTransferResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryTransferResultOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryTransferResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::RechargeByThirdPayOutcome CpdpClient::RechargeByThirdPay(const RechargeByThirdPayRequest &request)
 {
     auto outcome = MakeRequest(request, "RechargeByThirdPay");
@@ -3086,6 +3129,49 @@ CpdpClient::RevokeRechargeByThirdPayOutcomeCallable CpdpClient::RevokeRechargeBy
         [this, request]()
         {
             return this->RevokeRechargeByThirdPay(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::TransferSinglePayOutcome CpdpClient::TransferSinglePay(const TransferSinglePayRequest &request)
+{
+    auto outcome = MakeRequest(request, "TransferSinglePay");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TransferSinglePayResponse rsp = TransferSinglePayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TransferSinglePayOutcome(rsp);
+        else
+            return TransferSinglePayOutcome(o.GetError());
+    }
+    else
+    {
+        return TransferSinglePayOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::TransferSinglePayAsync(const TransferSinglePayRequest& request, const TransferSinglePayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TransferSinglePay(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::TransferSinglePayOutcomeCallable CpdpClient::TransferSinglePayCallable(const TransferSinglePayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TransferSinglePayOutcome()>>(
+        [this, request]()
+        {
+            return this->TransferSinglePay(request);
         }
     );
 

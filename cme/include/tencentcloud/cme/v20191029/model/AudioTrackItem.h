@@ -47,29 +47,33 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频素材来源类型。取值有：
+                     * 获取音频素材来源类型，取值有：
 <ul>
-<li>VOD ：素材来源 VOD 。</li>
-<li>CME ：视频来源 CME 。</li>
+<li>VOD ：素材来源于云点播文件 ；</li>
+<li>CME ：视频来源于制作云媒体文件 ；</li>
+<li>EXTERNAL ：视频来源于媒资绑定。</li>
 </ul>
-                     * @return SourceType 音频素材来源类型。取值有：
+                     * @return SourceType 音频素材来源类型，取值有：
 <ul>
-<li>VOD ：素材来源 VOD 。</li>
-<li>CME ：视频来源 CME 。</li>
+<li>VOD ：素材来源于云点播文件 ；</li>
+<li>CME ：视频来源于制作云媒体文件 ；</li>
+<li>EXTERNAL ：视频来源于媒资绑定。</li>
 </ul>
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置音频素材来源类型。取值有：
+                     * 设置音频素材来源类型，取值有：
 <ul>
-<li>VOD ：素材来源 VOD 。</li>
-<li>CME ：视频来源 CME 。</li>
+<li>VOD ：素材来源于云点播文件 ；</li>
+<li>CME ：视频来源于制作云媒体文件 ；</li>
+<li>EXTERNAL ：视频来源于媒资绑定。</li>
 </ul>
-                     * @param SourceType 音频素材来源类型。取值有：
+                     * @param SourceType 音频素材来源类型，取值有：
 <ul>
-<li>VOD ：素材来源 VOD 。</li>
-<li>CME ：视频来源 CME 。</li>
+<li>VOD ：素材来源于云点播文件 ；</li>
+<li>CME ：视频来源于制作云媒体文件 ；</li>
+<li>EXTERNAL ：视频来源于媒资绑定。</li>
 </ul>
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -82,21 +86,33 @@ namespace TencentCloud
 
                     /**
                      * 获取音频片段的媒体素材来源，可以是：
-<li>VOD 的媒体文件 ID 。</li>
-<li>CME 的素材 ID 。</li>
+<ul>
+<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>
+<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>
+<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>
+</ul>
                      * @return SourceMedia 音频片段的媒体素材来源，可以是：
-<li>VOD 的媒体文件 ID 。</li>
-<li>CME 的素材 ID 。</li>
+<ul>
+<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>
+<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>
+<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>
+</ul>
                      */
                     std::string GetSourceMedia() const;
 
                     /**
                      * 设置音频片段的媒体素材来源，可以是：
-<li>VOD 的媒体文件 ID 。</li>
-<li>CME 的素材 ID 。</li>
+<ul>
+<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>
+<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>
+<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>
+</ul>
                      * @param SourceMedia 音频片段的媒体素材来源，可以是：
-<li>VOD 的媒体文件 ID 。</li>
-<li>CME 的素材 ID 。</li>
+<ul>
+<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>
+<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>
+<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>
+</ul>
                      */
                     void SetSourceMedia(const std::string& _sourceMedia);
 
@@ -145,10 +161,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音频素材来源类型。取值有：
+                     * 音频素材来源类型，取值有：
 <ul>
-<li>VOD ：素材来源 VOD 。</li>
-<li>CME ：视频来源 CME 。</li>
+<li>VOD ：素材来源于云点播文件 ；</li>
+<li>CME ：视频来源于制作云媒体文件 ；</li>
+<li>EXTERNAL ：视频来源于媒资绑定。</li>
 </ul>
                      */
                     std::string m_sourceType;
@@ -156,8 +173,11 @@ namespace TencentCloud
 
                     /**
                      * 音频片段的媒体素材来源，可以是：
-<li>VOD 的媒体文件 ID 。</li>
-<li>CME 的素材 ID 。</li>
+<ul>
+<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>
+<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>
+<li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>
+</ul>
                      */
                     std::string m_sourceMedia;
                     bool m_sourceMediaHasBeenSet;

@@ -24,6 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeSubAppIdsRequest::DescribeSubAppIdsRequest() :
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -34,6 +36,22 @@ string DescribeSubAppIdsRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
 
     if (m_tagsHasBeenSet)
     {
@@ -57,6 +75,38 @@ string DescribeSubAppIdsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeSubAppIdsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeSubAppIdsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeSubAppIdsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeSubAppIdsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeSubAppIdsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeSubAppIdsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
 
 vector<ResourceTag> DescribeSubAppIdsRequest::GetTags() const
 {

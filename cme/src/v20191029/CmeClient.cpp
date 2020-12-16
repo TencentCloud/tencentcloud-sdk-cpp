@@ -1029,6 +1029,49 @@ CmeClient::ExportVideoByEditorTrackDataOutcomeCallable CmeClient::ExportVideoByE
     return task->get_future();
 }
 
+CmeClient::ExportVideoByVideoSegmentationDataOutcome CmeClient::ExportVideoByVideoSegmentationData(const ExportVideoByVideoSegmentationDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportVideoByVideoSegmentationData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportVideoByVideoSegmentationDataResponse rsp = ExportVideoByVideoSegmentationDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportVideoByVideoSegmentationDataOutcome(rsp);
+        else
+            return ExportVideoByVideoSegmentationDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportVideoByVideoSegmentationDataOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::ExportVideoByVideoSegmentationDataAsync(const ExportVideoByVideoSegmentationDataRequest& request, const ExportVideoByVideoSegmentationDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportVideoByVideoSegmentationData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::ExportVideoByVideoSegmentationDataOutcomeCallable CmeClient::ExportVideoByVideoSegmentationDataCallable(const ExportVideoByVideoSegmentationDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportVideoByVideoSegmentationDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportVideoByVideoSegmentationData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmeClient::ExportVideoEditProjectOutcome CmeClient::ExportVideoEditProject(const ExportVideoEditProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportVideoEditProject");
@@ -1108,6 +1151,49 @@ CmeClient::FlattenListMediaOutcomeCallable CmeClient::FlattenListMediaCallable(c
         [this, request]()
         {
             return this->FlattenListMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CmeClient::GenerateVideoSegmentationSchemeByAiOutcome CmeClient::GenerateVideoSegmentationSchemeByAi(const GenerateVideoSegmentationSchemeByAiRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateVideoSegmentationSchemeByAi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateVideoSegmentationSchemeByAiResponse rsp = GenerateVideoSegmentationSchemeByAiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateVideoSegmentationSchemeByAiOutcome(rsp);
+        else
+            return GenerateVideoSegmentationSchemeByAiOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateVideoSegmentationSchemeByAiOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::GenerateVideoSegmentationSchemeByAiAsync(const GenerateVideoSegmentationSchemeByAiRequest& request, const GenerateVideoSegmentationSchemeByAiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateVideoSegmentationSchemeByAi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::GenerateVideoSegmentationSchemeByAiOutcomeCallable CmeClient::GenerateVideoSegmentationSchemeByAiCallable(const GenerateVideoSegmentationSchemeByAiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateVideoSegmentationSchemeByAiOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateVideoSegmentationSchemeByAi(request);
         }
     );
 

@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeSubAppIdsResponse::DescribeSubAppIdsResponse() :
-    m_subAppIdInfoSetHasBeenSet(false)
+    m_subAppIdInfoSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeSubAppIdsResponse::Deserialize(const string &payload
         m_subAppIdInfoSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<SubAppIdInfo> DescribeSubAppIdsResponse::GetSubAppIdInfoSet() const
 bool DescribeSubAppIdsResponse::SubAppIdInfoSetHasBeenSet() const
 {
     return m_subAppIdInfoSetHasBeenSet;
+}
+
+uint64_t DescribeSubAppIdsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeSubAppIdsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

@@ -27,7 +27,8 @@ MediaProcessTaskTranscodeResult::MediaProcessTaskTranscodeResult() :
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_progressHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,16 @@ CoreInternalOutcome MediaProcessTaskTranscodeResult::Deserialize(const Value &va
         m_outputHasBeenSet = true;
     }
 
+    if (value.HasMember("Progress") && !value["Progress"].IsNull())
+    {
+        if (!value["Progress"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `MediaProcessTaskTranscodeResult.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_progress = value["Progress"].GetInt64();
+        m_progressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void MediaProcessTaskTranscodeResult::ToJsonObject(Value &value, Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_output.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_progressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Progress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progress, allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void MediaProcessTaskTranscodeResult::SetOutput(const MediaTranscodeItem& _outpu
 bool MediaProcessTaskTranscodeResult::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+int64_t MediaProcessTaskTranscodeResult::GetProgress() const
+{
+    return m_progress;
+}
+
+void MediaProcessTaskTranscodeResult::SetProgress(const int64_t& _progress)
+{
+    m_progress = _progress;
+    m_progressHasBeenSet = true;
+}
+
+bool MediaProcessTaskTranscodeResult::ProgressHasBeenSet() const
+{
+    return m_progressHasBeenSet;
 }
 

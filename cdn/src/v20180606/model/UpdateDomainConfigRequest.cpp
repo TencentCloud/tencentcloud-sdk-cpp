@@ -59,7 +59,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_urlRedirectHasBeenSet(false),
     m_accessPortHasBeenSet(false),
     m_advancedAuthenticationHasBeenSet(false),
-    m_originAuthenticationHasBeenSet(false)
+    m_originAuthenticationHasBeenSet(false),
+    m_ipv6AccessHasBeenSet(false)
 {
 }
 
@@ -392,6 +393,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_originAuthentication.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ipv6AccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Access";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_ipv6Access.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -976,6 +986,22 @@ void UpdateDomainConfigRequest::SetOriginAuthentication(const OriginAuthenticati
 bool UpdateDomainConfigRequest::OriginAuthenticationHasBeenSet() const
 {
     return m_originAuthenticationHasBeenSet;
+}
+
+Ipv6Access UpdateDomainConfigRequest::GetIpv6Access() const
+{
+    return m_ipv6Access;
+}
+
+void UpdateDomainConfigRequest::SetIpv6Access(const Ipv6Access& _ipv6Access)
+{
+    m_ipv6Access = _ipv6Access;
+    m_ipv6AccessHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::Ipv6AccessHasBeenSet() const
+{
+    return m_ipv6AccessHasBeenSet;
 }
 
 

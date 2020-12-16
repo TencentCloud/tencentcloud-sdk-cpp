@@ -567,6 +567,116 @@ timeRollback，时间点回档
                      */
                     bool ResourceTagsHasBeenSet() const;
 
+                    /**
+                     * 获取Db类型
+当DbType为MYSQL时可选(默认NORMAL)：
+<li>NORMAL</li>
+<li>SERVERLESS</li>
+                     * @return DbMode Db类型
+当DbType为MYSQL时可选(默认NORMAL)：
+<li>NORMAL</li>
+<li>SERVERLESS</li>
+                     */
+                    std::string GetDbMode() const;
+
+                    /**
+                     * 设置Db类型
+当DbType为MYSQL时可选(默认NORMAL)：
+<li>NORMAL</li>
+<li>SERVERLESS</li>
+                     * @param DbMode Db类型
+当DbType为MYSQL时可选(默认NORMAL)：
+<li>NORMAL</li>
+<li>SERVERLESS</li>
+                     */
+                    void SetDbMode(const std::string& _dbMode);
+
+                    /**
+                     * 判断参数 DbMode 是否已赋值
+                     * @return DbMode 是否已赋值
+                     */
+                    bool DbModeHasBeenSet() const;
+
+                    /**
+                     * 获取当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * @return MinCpu 当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     */
+                    double GetMinCpu() const;
+
+                    /**
+                     * 设置当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * @param MinCpu 当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     */
+                    void SetMinCpu(const double& _minCpu);
+
+                    /**
+                     * 判断参数 MinCpu 是否已赋值
+                     * @return MinCpu 是否已赋值
+                     */
+                    bool MinCpuHasBeenSet() const;
+
+                    /**
+                     * 获取当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * @return MaxCpu 当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     */
+                    double GetMaxCpu() const;
+
+                    /**
+                     * 设置当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * @param MaxCpu 当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     */
+                    void SetMaxCpu(const double& _maxCpu);
+
+                    /**
+                     * 判断参数 MaxCpu 是否已赋值
+                     * @return MaxCpu 是否已赋值
+                     */
+                    bool MaxCpuHasBeenSet() const;
+
+                    /**
+                     * 获取当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
+<li>yes</li>
+<li>no</li>
+                     * @return AutoPause 当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
+<li>yes</li>
+<li>no</li>
+                     */
+                    std::string GetAutoPause() const;
+
+                    /**
+                     * 设置当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
+<li>yes</li>
+<li>no</li>
+                     * @param AutoPause 当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
+<li>yes</li>
+<li>no</li>
+                     */
+                    void SetAutoPause(const std::string& _autoPause);
+
+                    /**
+                     * 判断参数 AutoPause 是否已赋值
+                     * @return AutoPause 是否已赋值
+                     */
+                    bool AutoPauseHasBeenSet() const;
+
+                    /**
+                     * 获取当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]
+                     * @return AutoPauseDelay 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]
+                     */
+                    int64_t GetAutoPauseDelay() const;
+
+                    /**
+                     * 设置当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]
+                     * @param AutoPauseDelay 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]
+                     */
+                    void SetAutoPauseDelay(const int64_t& _autoPauseDelay);
+
+                    /**
+                     * 判断参数 AutoPauseDelay 是否已赋值
+                     * @return AutoPauseDelay 是否已赋值
+                     */
+                    bool AutoPauseDelayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -741,6 +851,41 @@ timeRollback，时间点回档
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * Db类型
+当DbType为MYSQL时可选(默认NORMAL)：
+<li>NORMAL</li>
+<li>SERVERLESS</li>
+                     */
+                    std::string m_dbMode;
+                    bool m_dbModeHasBeenSet;
+
+                    /**
+                     * 当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     */
+                    double m_minCpu;
+                    bool m_minCpuHasBeenSet;
+
+                    /**
+                     * 当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     */
+                    double m_maxCpu;
+                    bool m_maxCpuHasBeenSet;
+
+                    /**
+                     * 当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
+<li>yes</li>
+<li>no</li>
+                     */
+                    std::string m_autoPause;
+                    bool m_autoPauseHasBeenSet;
+
+                    /**
+                     * 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]
+                     */
+                    int64_t m_autoPauseDelay;
+                    bool m_autoPauseDelayHasBeenSet;
 
                 };
             }

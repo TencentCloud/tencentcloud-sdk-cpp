@@ -47,7 +47,9 @@ CynosdbCluster::CynosdbCluster() :
     m_renewFlagHasBeenSet(false),
     m_processingTaskHasBeenSet(false),
     m_tasksHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_dbModeHasBeenSet(false),
+    m_serverlessStatusHasBeenSet(false)
 {
 }
 
@@ -336,6 +338,26 @@ CoreInternalOutcome CynosdbCluster::Deserialize(const Value &value)
         m_resourceTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("DbMode") && !value["DbMode"].IsNull())
+    {
+        if (!value["DbMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbCluster.DbMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbMode = string(value["DbMode"].GetString());
+        m_dbModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServerlessStatus") && !value["ServerlessStatus"].IsNull())
+    {
+        if (!value["ServerlessStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbCluster.ServerlessStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverlessStatus = string(value["ServerlessStatus"].GetString());
+        m_serverlessStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -563,6 +585,22 @@ void CynosdbCluster::ToJsonObject(Value &value, Document::AllocatorType& allocat
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dbModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DbMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_dbMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverlessStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServerlessStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -982,5 +1020,37 @@ void CynosdbCluster::SetResourceTags(const vector<Tag>& _resourceTags)
 bool CynosdbCluster::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string CynosdbCluster::GetDbMode() const
+{
+    return m_dbMode;
+}
+
+void CynosdbCluster::SetDbMode(const string& _dbMode)
+{
+    m_dbMode = _dbMode;
+    m_dbModeHasBeenSet = true;
+}
+
+bool CynosdbCluster::DbModeHasBeenSet() const
+{
+    return m_dbModeHasBeenSet;
+}
+
+string CynosdbCluster::GetServerlessStatus() const
+{
+    return m_serverlessStatus;
+}
+
+void CynosdbCluster::SetServerlessStatus(const string& _serverlessStatus)
+{
+    m_serverlessStatus = _serverlessStatus;
+    m_serverlessStatusHasBeenSet = true;
+}
+
+bool CynosdbCluster::ServerlessStatusHasBeenSet() const
+{
+    return m_serverlessStatusHasBeenSet;
 }
 

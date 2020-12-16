@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool InitFlagHasBeenSet() const;
 
                     /**
-                     * 获取镜像描述，多层镜像按顺序传入
-                     * @return ImageUrls 镜像描述，多层镜像按顺序传入
+                     * 获取镜像文件描述，多层镜像按顺序传入
+                     * @return ImageUrls 镜像文件描述，多层镜像按顺序传入
                      */
                     std::vector<ImageUrl> GetImageUrls() const;
 
                     /**
-                     * 设置镜像描述，多层镜像按顺序传入
-                     * @param ImageUrls 镜像描述，多层镜像按顺序传入
+                     * 设置镜像文件描述，多层镜像按顺序传入
+                     * @param ImageUrls 镜像文件描述，多层镜像按顺序传入
                      */
                     void SetImageUrls(const std::vector<ImageUrl>& _imageUrls);
 
@@ -208,7 +208,7 @@ namespace TencentCloud
                     bool m_initFlagHasBeenSet;
 
                     /**
-                     * 镜像描述，多层镜像按顺序传入
+                     * 镜像文件描述，多层镜像按顺序传入
                      */
                     std::vector<ImageUrl> m_imageUrls;
                     bool m_imageUrlsHasBeenSet;

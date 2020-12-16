@@ -98,37 +98,53 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取# Name
-按照名称进行过滤，可选
+                     * 获取<li>**Name**</li>
+按照【**版本名称**】进行过滤
 类型：string
 
-# Status
-按照版本状态过滤，形如VERSION_EDITING，PLAN_IN_PROGRESS等，可选
-类型：string
-                     * @return Filters # Name
-按照名称进行过滤，可选
+<li>**Status**</li>
+按照【**版本状态**】过滤，形如`VERSION_EDITING`，`PLAN_IN_PROGRESS`等
 类型：string
 
-# Status
-按照版本状态过滤，形如VERSION_EDITING，PLAN_IN_PROGRESS等，可选
+<li>**StackId**</li>
+按照版本所属的【**资源栈ID**】进行过滤，形如`stk-xxxxxx`
+类型：string
+                     * @return Filters <li>**Name**</li>
+按照【**版本名称**】进行过滤
+类型：string
+
+<li>**Status**</li>
+按照【**版本状态**】过滤，形如`VERSION_EDITING`，`PLAN_IN_PROGRESS`等
+类型：string
+
+<li>**StackId**</li>
+按照版本所属的【**资源栈ID**】进行过滤，形如`stk-xxxxxx`
 类型：string
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置# Name
-按照名称进行过滤，可选
+                     * 设置<li>**Name**</li>
+按照【**版本名称**】进行过滤
 类型：string
 
-# Status
-按照版本状态过滤，形如VERSION_EDITING，PLAN_IN_PROGRESS等，可选
-类型：string
-                     * @param Filters # Name
-按照名称进行过滤，可选
+<li>**Status**</li>
+按照【**版本状态**】过滤，形如`VERSION_EDITING`，`PLAN_IN_PROGRESS`等
 类型：string
 
-# Status
-按照版本状态过滤，形如VERSION_EDITING，PLAN_IN_PROGRESS等，可选
+<li>**StackId**</li>
+按照版本所属的【**资源栈ID**】进行过滤，形如`stk-xxxxxx`
+类型：string
+                     * @param Filters <li>**Name**</li>
+按照【**版本名称**】进行过滤
+类型：string
+
+<li>**Status**</li>
+按照【**版本状态**】过滤，形如`VERSION_EDITING`，`PLAN_IN_PROGRESS`等
+类型：string
+
+<li>**StackId**</li>
+按照版本所属的【**资源栈ID**】进行过滤，形如`stk-xxxxxx`
 类型：string
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -160,12 +176,16 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * # Name
-按照名称进行过滤，可选
+                     * <li>**Name**</li>
+按照【**版本名称**】进行过滤
 类型：string
 
-# Status
-按照版本状态过滤，形如VERSION_EDITING，PLAN_IN_PROGRESS等，可选
+<li>**Status**</li>
+按照【**版本状态**】过滤，形如`VERSION_EDITING`，`PLAN_IN_PROGRESS`等
+类型：string
+
+<li>**StackId**</li>
+按照版本所属的【**资源栈ID**】进行过滤，形如`stk-xxxxxx`
 类型：string
                      */
                     std::vector<Filter> m_filters;

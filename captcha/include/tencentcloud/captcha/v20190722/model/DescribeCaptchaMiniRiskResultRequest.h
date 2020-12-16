@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool ImeiHasBeenSet() const;
 
                     /**
-                     * 获取验证场景：1 活动防刷场景，2 登陆保护场景，3 注册保护场景。根据需求选择场景参数。
-                     * @return SceneCode 验证场景：1 活动防刷场景，2 登陆保护场景，3 注册保护场景。根据需求选择场景参数。
+                     * 获取验证场景：1 活动防刷场景，2 登录保护场景，3 注册保护场景。根据需求选择场景参数。
+                     * @return SceneCode 验证场景：1 活动防刷场景，2 登录保护场景，3 注册保护场景。根据需求选择场景参数。
                      */
                     int64_t GetSceneCode() const;
 
                     /**
-                     * 设置验证场景：1 活动防刷场景，2 登陆保护场景，3 注册保护场景。根据需求选择场景参数。
-                     * @param SceneCode 验证场景：1 活动防刷场景，2 登陆保护场景，3 注册保护场景。根据需求选择场景参数。
+                     * 设置验证场景：1 活动防刷场景，2 登录保护场景，3 注册保护场景。根据需求选择场景参数。
+                     * @param SceneCode 验证场景：1 活动防刷场景，2 登录保护场景，3 注册保护场景。根据需求选择场景参数。
                      */
                     void SetSceneCode(const int64_t& _sceneCode);
 
@@ -297,7 +297,7 @@ namespace TencentCloud
                     bool m_imeiHasBeenSet;
 
                     /**
-                     * 验证场景：1 活动防刷场景，2 登陆保护场景，3 注册保护场景。根据需求选择场景参数。
+                     * 验证场景：1 活动防刷场景，2 登录保护场景，3 注册保护场景。根据需求选择场景参数。
                      */
                     int64_t m_sceneCode;
                     bool m_sceneCodeHasBeenSet;

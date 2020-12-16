@@ -986,6 +986,49 @@ VpcClient::CheckNetDetectStateOutcomeCallable VpcClient::CheckNetDetectStateCall
     return task->get_future();
 }
 
+VpcClient::CloneSecurityGroupOutcome VpcClient::CloneSecurityGroup(const CloneSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloneSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloneSecurityGroupResponse rsp = CloneSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloneSecurityGroupOutcome(rsp);
+        else
+            return CloneSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CloneSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CloneSecurityGroupAsync(const CloneSecurityGroupRequest& request, const CloneSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloneSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CloneSecurityGroupOutcomeCallable VpcClient::CloneSecurityGroupCallable(const CloneSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloneSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CloneSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateAddressTemplateOutcome VpcClient::CreateAddressTemplate(const CreateAddressTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAddressTemplate");

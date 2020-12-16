@@ -145,6 +145,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryTransferBatchResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryTransferDetailRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryTransferDetailResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryTransferResultRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryTransferResultResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RechargeByThirdPayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RechargeByThirdPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RechargeMemberThirdPayRequest.h>
@@ -165,6 +167,8 @@
 #include <tencentcloud/cpdp/v20190820/model/RevokeMemberRechargeThirdPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RevokeRechargeByThirdPayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RevokeRechargeByThirdPayResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/TransferSinglePayRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/TransferSinglePayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnBindAcctRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UnBindAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnbindRelateAcctRequest.h>
@@ -370,6 +374,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryTransferDetailResponse> QueryTransferDetailOutcome;
                 typedef std::future<QueryTransferDetailOutcome> QueryTransferDetailOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryTransferDetailRequest&, QueryTransferDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTransferDetailAsyncHandler;
+                typedef Outcome<Error, Model::QueryTransferResultResponse> QueryTransferResultOutcome;
+                typedef std::future<QueryTransferResultOutcome> QueryTransferResultOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryTransferResultRequest&, QueryTransferResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTransferResultAsyncHandler;
                 typedef Outcome<Error, Model::RechargeByThirdPayResponse> RechargeByThirdPayOutcome;
                 typedef std::future<RechargeByThirdPayOutcome> RechargeByThirdPayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RechargeByThirdPayRequest&, RechargeByThirdPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RechargeByThirdPayAsyncHandler;
@@ -400,6 +407,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RevokeRechargeByThirdPayResponse> RevokeRechargeByThirdPayOutcome;
                 typedef std::future<RevokeRechargeByThirdPayOutcome> RevokeRechargeByThirdPayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RevokeRechargeByThirdPayRequest&, RevokeRechargeByThirdPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeRechargeByThirdPayAsyncHandler;
+                typedef Outcome<Error, Model::TransferSinglePayResponse> TransferSinglePayOutcome;
+                typedef std::future<TransferSinglePayOutcome> TransferSinglePayOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::TransferSinglePayRequest&, TransferSinglePayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferSinglePayAsyncHandler;
                 typedef Outcome<Error, Model::UnBindAcctResponse> UnBindAcctOutcome;
                 typedef std::future<UnBindAcctOutcome> UnBindAcctOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UnBindAcctRequest&, UnBindAcctOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindAcctAsyncHandler;
@@ -974,6 +984,15 @@ namespace TencentCloud
                 QueryTransferDetailOutcomeCallable QueryTransferDetailCallable(const Model::QueryTransferDetailRequest& request);
 
                 /**
+                 *智能代发-单笔代发转账查询接口
+                 * @param req QueryTransferResultRequest
+                 * @return QueryTransferResultOutcome
+                 */
+                QueryTransferResultOutcome QueryTransferResult(const Model::QueryTransferResultRequest &request);
+                void QueryTransferResultAsync(const Model::QueryTransferResultRequest& request, const QueryTransferResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryTransferResultOutcomeCallable QueryTransferResultCallable(const Model::QueryTransferResultRequest& request);
+
+                /**
                  *会员在途充值(经第三方支付渠道)接口
                  * @param req RechargeByThirdPayRequest
                  * @return RechargeByThirdPayOutcome
@@ -1062,6 +1081,15 @@ namespace TencentCloud
                 RevokeRechargeByThirdPayOutcome RevokeRechargeByThirdPay(const Model::RevokeRechargeByThirdPayRequest &request);
                 void RevokeRechargeByThirdPayAsync(const Model::RevokeRechargeByThirdPayRequest& request, const RevokeRechargeByThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RevokeRechargeByThirdPayOutcomeCallable RevokeRechargeByThirdPayCallable(const Model::RevokeRechargeByThirdPayRequest& request);
+
+                /**
+                 *智能代发-单笔代发转账接口
+                 * @param req TransferSinglePayRequest
+                 * @return TransferSinglePayOutcome
+                 */
+                TransferSinglePayOutcome TransferSinglePay(const Model::TransferSinglePayRequest &request);
+                void TransferSinglePayAsync(const Model::TransferSinglePayRequest& request, const TransferSinglePayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferSinglePayOutcomeCallable TransferSinglePayCallable(const Model::TransferSinglePayRequest& request);
 
                 /**
                  *商户解除绑定的提现银行卡

@@ -71,7 +71,8 @@ DetailDomain::DetailDomain() :
     m_accessPortHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_advancedAuthenticationHasBeenSet(false),
-    m_originAuthenticationHasBeenSet(false)
+    m_originAuthenticationHasBeenSet(false),
+    m_ipv6AccessHasBeenSet(false)
 {
 }
 
@@ -838,6 +839,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_originAuthenticationHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6Access") && !value["Ipv6Access"].IsNull())
+    {
+        if (!value["Ipv6Access"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.Ipv6Access` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ipv6Access.Deserialize(value["Ipv6Access"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ipv6AccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1290,6 +1308,15 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_originAuthentication.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ipv6AccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6Access";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_ipv6Access.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2093,5 +2120,21 @@ void DetailDomain::SetOriginAuthentication(const OriginAuthentication& _originAu
 bool DetailDomain::OriginAuthenticationHasBeenSet() const
 {
     return m_originAuthenticationHasBeenSet;
+}
+
+Ipv6Access DetailDomain::GetIpv6Access() const
+{
+    return m_ipv6Access;
+}
+
+void DetailDomain::SetIpv6Access(const Ipv6Access& _ipv6Access)
+{
+    m_ipv6Access = _ipv6Access;
+    m_ipv6AccessHasBeenSet = true;
+}
+
+bool DetailDomain::Ipv6AccessHasBeenSet() const
+{
+    return m_ipv6AccessHasBeenSet;
 }
 

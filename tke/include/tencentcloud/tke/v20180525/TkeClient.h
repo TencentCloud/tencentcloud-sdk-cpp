@@ -51,6 +51,8 @@
 #include <tencentcloud/tke/v20180525/model/CreateClusterRouteTableResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusDashboardRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusDashboardResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreatePrometheusTemplateRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreatePrometheusTemplateResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsRequest.h>
@@ -67,6 +69,10 @@
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteTableRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteTableResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeletePrometheusTemplateRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeletePrometheusTemplateResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeletePrometheusTemplateSyncRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeletePrometheusTemplateSyncResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsRequest.h>
@@ -97,6 +103,18 @@
 #include <tencentcloud/tke/v20180525/model/DescribeImagesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusAlertRuleRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusAlertRuleResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusOverviewsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusOverviewsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusTargetsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusTargetsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusTemplateSyncRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusTemplateSyncResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRegionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h>
@@ -109,8 +127,14 @@
 #include <tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateResponse.h>
 #include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolResponse.h>
+#include <tencentcloud/tke/v20180525/model/SyncPrometheusTemplateRequest.h>
+#include <tencentcloud/tke/v20180525/model/SyncPrometheusTemplateResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpgradeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/UpgradeClusterInstancesResponse.h>
 
@@ -169,6 +193,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreatePrometheusDashboardResponse> CreatePrometheusDashboardOutcome;
                 typedef std::future<CreatePrometheusDashboardOutcome> CreatePrometheusDashboardOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreatePrometheusDashboardRequest&, CreatePrometheusDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusDashboardAsyncHandler;
+                typedef Outcome<Error, Model::CreatePrometheusTemplateResponse> CreatePrometheusTemplateOutcome;
+                typedef std::future<CreatePrometheusTemplateOutcome> CreatePrometheusTemplateOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreatePrometheusTemplateRequest&, CreatePrometheusTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusTemplateAsyncHandler;
                 typedef Outcome<Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
                 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
@@ -193,6 +220,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteClusterRouteTableResponse> DeleteClusterRouteTableOutcome;
                 typedef std::future<DeleteClusterRouteTableOutcome> DeleteClusterRouteTableOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteClusterRouteTableRequest&, DeleteClusterRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterRouteTableAsyncHandler;
+                typedef Outcome<Error, Model::DeletePrometheusTemplateResponse> DeletePrometheusTemplateOutcome;
+                typedef std::future<DeletePrometheusTemplateOutcome> DeletePrometheusTemplateOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeletePrometheusTemplateRequest&, DeletePrometheusTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusTemplateAsyncHandler;
+                typedef Outcome<Error, Model::DeletePrometheusTemplateSyncResponse> DeletePrometheusTemplateSyncOutcome;
+                typedef std::future<DeletePrometheusTemplateSyncOutcome> DeletePrometheusTemplateSyncOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeletePrometheusTemplateSyncRequest&, DeletePrometheusTemplateSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusTemplateSyncAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClusterAsGroupOptionResponse> DescribeClusterAsGroupOptionOutcome;
                 typedef std::future<DescribeClusterAsGroupOptionOutcome> DescribeClusterAsGroupOptionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterAsGroupOptionRequest&, DescribeClusterAsGroupOptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAsGroupOptionAsyncHandler;
@@ -238,6 +271,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePrometheusAgentInstancesResponse> DescribePrometheusAgentInstancesOutcome;
                 typedef std::future<DescribePrometheusAgentInstancesOutcome> DescribePrometheusAgentInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribePrometheusAgentInstancesRequest&, DescribePrometheusAgentInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAgentInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribePrometheusAgentsResponse> DescribePrometheusAgentsOutcome;
+                typedef std::future<DescribePrometheusAgentsOutcome> DescribePrometheusAgentsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribePrometheusAgentsRequest&, DescribePrometheusAgentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAgentsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePrometheusAlertRuleResponse> DescribePrometheusAlertRuleOutcome;
+                typedef std::future<DescribePrometheusAlertRuleOutcome> DescribePrometheusAlertRuleOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribePrometheusAlertRuleRequest&, DescribePrometheusAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAlertRuleAsyncHandler;
+                typedef Outcome<Error, Model::DescribePrometheusOverviewsResponse> DescribePrometheusOverviewsOutcome;
+                typedef std::future<DescribePrometheusOverviewsOutcome> DescribePrometheusOverviewsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribePrometheusOverviewsRequest&, DescribePrometheusOverviewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusOverviewsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePrometheusTargetsResponse> DescribePrometheusTargetsOutcome;
+                typedef std::future<DescribePrometheusTargetsOutcome> DescribePrometheusTargetsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribePrometheusTargetsRequest&, DescribePrometheusTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusTargetsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePrometheusTemplateSyncResponse> DescribePrometheusTemplateSyncOutcome;
+                typedef std::future<DescribePrometheusTemplateSyncOutcome> DescribePrometheusTemplateSyncOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribePrometheusTemplateSyncRequest&, DescribePrometheusTemplateSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusTemplateSyncAsyncHandler;
+                typedef Outcome<Error, Model::DescribePrometheusTemplatesResponse> DescribePrometheusTemplatesOutcome;
+                typedef std::future<DescribePrometheusTemplatesOutcome> DescribePrometheusTemplatesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribePrometheusTemplatesRequest&, DescribePrometheusTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusTemplatesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -256,9 +307,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyClusterNodePoolResponse> ModifyClusterNodePoolOutcome;
                 typedef std::future<ModifyClusterNodePoolOutcome> ModifyClusterNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterNodePoolRequest&, ModifyClusterNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterNodePoolAsyncHandler;
+                typedef Outcome<Error, Model::ModifyNodePoolDesiredCapacityAboutAsgResponse> ModifyNodePoolDesiredCapacityAboutAsgOutcome;
+                typedef std::future<ModifyNodePoolDesiredCapacityAboutAsgOutcome> ModifyNodePoolDesiredCapacityAboutAsgOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyNodePoolDesiredCapacityAboutAsgRequest&, ModifyNodePoolDesiredCapacityAboutAsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodePoolDesiredCapacityAboutAsgAsyncHandler;
+                typedef Outcome<Error, Model::ModifyPrometheusTemplateResponse> ModifyPrometheusTemplateOutcome;
+                typedef std::future<ModifyPrometheusTemplateOutcome> ModifyPrometheusTemplateOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyPrometheusTemplateRequest&, ModifyPrometheusTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusTemplateAsyncHandler;
                 typedef Outcome<Error, Model::RemoveNodeFromNodePoolResponse> RemoveNodeFromNodePoolOutcome;
                 typedef std::future<RemoveNodeFromNodePoolOutcome> RemoveNodeFromNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::RemoveNodeFromNodePoolRequest&, RemoveNodeFromNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveNodeFromNodePoolAsyncHandler;
+                typedef Outcome<Error, Model::SyncPrometheusTemplateResponse> SyncPrometheusTemplateOutcome;
+                typedef std::future<SyncPrometheusTemplateOutcome> SyncPrometheusTemplateOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::SyncPrometheusTemplateRequest&, SyncPrometheusTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncPrometheusTemplateAsyncHandler;
                 typedef Outcome<Error, Model::UpgradeClusterInstancesResponse> UpgradeClusterInstancesOutcome;
                 typedef std::future<UpgradeClusterInstancesOutcome> UpgradeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UpgradeClusterInstancesRequest&, UpgradeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeClusterInstancesAsyncHandler;
@@ -392,6 +452,15 @@ namespace TencentCloud
                 CreatePrometheusDashboardOutcomeCallable CreatePrometheusDashboardCallable(const Model::CreatePrometheusDashboardRequest& request);
 
                 /**
+                 *创建一个云原生Prometheus模板实例
+                 * @param req CreatePrometheusTemplateRequest
+                 * @return CreatePrometheusTemplateOutcome
+                 */
+                CreatePrometheusTemplateOutcome CreatePrometheusTemplate(const Model::CreatePrometheusTemplateRequest &request);
+                void CreatePrometheusTemplateAsync(const Model::CreatePrometheusTemplateRequest& request, const CreatePrometheusTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrometheusTemplateOutcomeCallable CreatePrometheusTemplateCallable(const Model::CreatePrometheusTemplateRequest& request);
+
+                /**
                  *删除集群(YUNAPI V3版本)
                  * @param req DeleteClusterRequest
                  * @return DeleteClusterOutcome
@@ -462,6 +531,24 @@ namespace TencentCloud
                 DeleteClusterRouteTableOutcome DeleteClusterRouteTable(const Model::DeleteClusterRouteTableRequest &request);
                 void DeleteClusterRouteTableAsync(const Model::DeleteClusterRouteTableRequest& request, const DeleteClusterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteClusterRouteTableOutcomeCallable DeleteClusterRouteTableCallable(const Model::DeleteClusterRouteTableRequest& request);
+
+                /**
+                 *删除一个云原生Promehtheus配置模板
+                 * @param req DeletePrometheusTemplateRequest
+                 * @return DeletePrometheusTemplateOutcome
+                 */
+                DeletePrometheusTemplateOutcome DeletePrometheusTemplate(const Model::DeletePrometheusTemplateRequest &request);
+                void DeletePrometheusTemplateAsync(const Model::DeletePrometheusTemplateRequest& request, const DeletePrometheusTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePrometheusTemplateOutcomeCallable DeletePrometheusTemplateCallable(const Model::DeletePrometheusTemplateRequest& request);
+
+                /**
+                 *取消模板同步，这将会删除目标中该模板所生产的配置
+                 * @param req DeletePrometheusTemplateSyncRequest
+                 * @return DeletePrometheusTemplateSyncOutcome
+                 */
+                DeletePrometheusTemplateSyncOutcome DeletePrometheusTemplateSync(const Model::DeletePrometheusTemplateSyncRequest &request);
+                void DeletePrometheusTemplateSyncAsync(const Model::DeletePrometheusTemplateSyncRequest& request, const DeletePrometheusTemplateSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePrometheusTemplateSyncOutcomeCallable DeletePrometheusTemplateSyncCallable(const Model::DeletePrometheusTemplateSyncRequest& request);
 
                 /**
                  *集群弹性伸缩配置
@@ -599,6 +686,60 @@ namespace TencentCloud
                 DescribePrometheusAgentInstancesOutcomeCallable DescribePrometheusAgentInstancesCallable(const Model::DescribePrometheusAgentInstancesRequest& request);
 
                 /**
+                 *获取被关联集群列表
+                 * @param req DescribePrometheusAgentsRequest
+                 * @return DescribePrometheusAgentsOutcome
+                 */
+                DescribePrometheusAgentsOutcome DescribePrometheusAgents(const Model::DescribePrometheusAgentsRequest &request);
+                void DescribePrometheusAgentsAsync(const Model::DescribePrometheusAgentsRequest& request, const DescribePrometheusAgentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusAgentsOutcomeCallable DescribePrometheusAgentsCallable(const Model::DescribePrometheusAgentsRequest& request);
+
+                /**
+                 *获取告警规则列表
+                 * @param req DescribePrometheusAlertRuleRequest
+                 * @return DescribePrometheusAlertRuleOutcome
+                 */
+                DescribePrometheusAlertRuleOutcome DescribePrometheusAlertRule(const Model::DescribePrometheusAlertRuleRequest &request);
+                void DescribePrometheusAlertRuleAsync(const Model::DescribePrometheusAlertRuleRequest& request, const DescribePrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusAlertRuleOutcomeCallable DescribePrometheusAlertRuleCallable(const Model::DescribePrometheusAlertRuleRequest& request);
+
+                /**
+                 *获取实例列表
+                 * @param req DescribePrometheusOverviewsRequest
+                 * @return DescribePrometheusOverviewsOutcome
+                 */
+                DescribePrometheusOverviewsOutcome DescribePrometheusOverviews(const Model::DescribePrometheusOverviewsRequest &request);
+                void DescribePrometheusOverviewsAsync(const Model::DescribePrometheusOverviewsRequest& request, const DescribePrometheusOverviewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusOverviewsOutcomeCallable DescribePrometheusOverviewsCallable(const Model::DescribePrometheusOverviewsRequest& request);
+
+                /**
+                 *获取targets信息
+                 * @param req DescribePrometheusTargetsRequest
+                 * @return DescribePrometheusTargetsOutcome
+                 */
+                DescribePrometheusTargetsOutcome DescribePrometheusTargets(const Model::DescribePrometheusTargetsRequest &request);
+                void DescribePrometheusTargetsAsync(const Model::DescribePrometheusTargetsRequest& request, const DescribePrometheusTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusTargetsOutcomeCallable DescribePrometheusTargetsCallable(const Model::DescribePrometheusTargetsRequest& request);
+
+                /**
+                 *获取模板同步信息
+                 * @param req DescribePrometheusTemplateSyncRequest
+                 * @return DescribePrometheusTemplateSyncOutcome
+                 */
+                DescribePrometheusTemplateSyncOutcome DescribePrometheusTemplateSync(const Model::DescribePrometheusTemplateSyncRequest &request);
+                void DescribePrometheusTemplateSyncAsync(const Model::DescribePrometheusTemplateSyncRequest& request, const DescribePrometheusTemplateSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusTemplateSyncOutcomeCallable DescribePrometheusTemplateSyncCallable(const Model::DescribePrometheusTemplateSyncRequest& request);
+
+                /**
+                 *拉取模板列表，默认模板将总是在最前面
+                 * @param req DescribePrometheusTemplatesRequest
+                 * @return DescribePrometheusTemplatesOutcome
+                 */
+                DescribePrometheusTemplatesOutcome DescribePrometheusTemplates(const Model::DescribePrometheusTemplatesRequest &request);
+                void DescribePrometheusTemplatesAsync(const Model::DescribePrometheusTemplatesRequest& request, const DescribePrometheusTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusTemplatesOutcomeCallable DescribePrometheusTemplatesCallable(const Model::DescribePrometheusTemplatesRequest& request);
+
+                /**
                  *获取容器服务支持的所有地域
                  * @param req DescribeRegionsRequest
                  * @return DescribeRegionsOutcome
@@ -653,6 +794,24 @@ namespace TencentCloud
                 ModifyClusterNodePoolOutcomeCallable ModifyClusterNodePoolCallable(const Model::ModifyClusterNodePoolRequest& request);
 
                 /**
+                 *修改节点池关联伸缩组的期望实例数
+                 * @param req ModifyNodePoolDesiredCapacityAboutAsgRequest
+                 * @return ModifyNodePoolDesiredCapacityAboutAsgOutcome
+                 */
+                ModifyNodePoolDesiredCapacityAboutAsgOutcome ModifyNodePoolDesiredCapacityAboutAsg(const Model::ModifyNodePoolDesiredCapacityAboutAsgRequest &request);
+                void ModifyNodePoolDesiredCapacityAboutAsgAsync(const Model::ModifyNodePoolDesiredCapacityAboutAsgRequest& request, const ModifyNodePoolDesiredCapacityAboutAsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNodePoolDesiredCapacityAboutAsgOutcomeCallable ModifyNodePoolDesiredCapacityAboutAsgCallable(const Model::ModifyNodePoolDesiredCapacityAboutAsgRequest& request);
+
+                /**
+                 *修改模板内容
+                 * @param req ModifyPrometheusTemplateRequest
+                 * @return ModifyPrometheusTemplateOutcome
+                 */
+                ModifyPrometheusTemplateOutcome ModifyPrometheusTemplate(const Model::ModifyPrometheusTemplateRequest &request);
+                void ModifyPrometheusTemplateAsync(const Model::ModifyPrometheusTemplateRequest& request, const ModifyPrometheusTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPrometheusTemplateOutcomeCallable ModifyPrometheusTemplateCallable(const Model::ModifyPrometheusTemplateRequest& request);
+
+                /**
                  *移出节点池节点，但保留在集群内
                  * @param req RemoveNodeFromNodePoolRequest
                  * @return RemoveNodeFromNodePoolOutcome
@@ -660,6 +819,15 @@ namespace TencentCloud
                 RemoveNodeFromNodePoolOutcome RemoveNodeFromNodePool(const Model::RemoveNodeFromNodePoolRequest &request);
                 void RemoveNodeFromNodePoolAsync(const Model::RemoveNodeFromNodePoolRequest& request, const RemoveNodeFromNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveNodeFromNodePoolOutcomeCallable RemoveNodeFromNodePoolCallable(const Model::RemoveNodeFromNodePoolRequest& request);
+
+                /**
+                 *同步模板到实例或者集群
+                 * @param req SyncPrometheusTemplateRequest
+                 * @return SyncPrometheusTemplateOutcome
+                 */
+                SyncPrometheusTemplateOutcome SyncPrometheusTemplate(const Model::SyncPrometheusTemplateRequest &request);
+                void SyncPrometheusTemplateAsync(const Model::SyncPrometheusTemplateRequest& request, const SyncPrometheusTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncPrometheusTemplateOutcomeCallable SyncPrometheusTemplateCallable(const Model::SyncPrometheusTemplateRequest& request);
 
                 /**
                  *给集群的一批work节点进行升级 

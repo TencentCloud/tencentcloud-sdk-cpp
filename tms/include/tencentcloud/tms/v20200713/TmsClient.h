@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tms/v20200713/model/AccountTipoffAccessRequest.h>
 #include <tencentcloud/tms/v20200713/model/AccountTipoffAccessResponse.h>
+#include <tencentcloud/tms/v20200713/model/DescribeTextLibRequest.h>
+#include <tencentcloud/tms/v20200713/model/DescribeTextLibResponse.h>
+#include <tencentcloud/tms/v20200713/model/DescribeTextStatRequest.h>
+#include <tencentcloud/tms/v20200713/model/DescribeTextStatResponse.h>
 #include <tencentcloud/tms/v20200713/model/TextModerationRequest.h>
 #include <tencentcloud/tms/v20200713/model/TextModerationResponse.h>
 
@@ -44,6 +48,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AccountTipoffAccessResponse> AccountTipoffAccessOutcome;
                 typedef std::future<AccountTipoffAccessOutcome> AccountTipoffAccessOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::AccountTipoffAccessRequest&, AccountTipoffAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AccountTipoffAccessAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTextLibResponse> DescribeTextLibOutcome;
+                typedef std::future<DescribeTextLibOutcome> DescribeTextLibOutcomeCallable;
+                typedef std::function<void(const TmsClient*, const Model::DescribeTextLibRequest&, DescribeTextLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTextLibAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTextStatResponse> DescribeTextStatOutcome;
+                typedef std::future<DescribeTextStatOutcome> DescribeTextStatOutcomeCallable;
+                typedef std::function<void(const TmsClient*, const Model::DescribeTextStatRequest&, DescribeTextStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTextStatAsyncHandler;
                 typedef Outcome<Error, Model::TextModerationResponse> TextModerationOutcome;
                 typedef std::future<TextModerationOutcome> TextModerationOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::TextModerationRequest&, TextModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextModerationAsyncHandler;
@@ -58,6 +68,24 @@ namespace TencentCloud
                 AccountTipoffAccessOutcome AccountTipoffAccess(const Model::AccountTipoffAccessRequest &request);
                 void AccountTipoffAccessAsync(const Model::AccountTipoffAccessRequest& request, const AccountTipoffAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AccountTipoffAccessOutcomeCallable AccountTipoffAccessCallable(const Model::AccountTipoffAccessRequest& request);
+
+                /**
+                 *控制台获取用户词库列表
+                 * @param req DescribeTextLibRequest
+                 * @return DescribeTextLibOutcome
+                 */
+                DescribeTextLibOutcome DescribeTextLib(const Model::DescribeTextLibRequest &request);
+                void DescribeTextLibAsync(const Model::DescribeTextLibRequest& request, const DescribeTextLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTextLibOutcomeCallable DescribeTextLibCallable(const Model::DescribeTextLibRequest& request);
+
+                /**
+                 *控制台识别统计
+                 * @param req DescribeTextStatRequest
+                 * @return DescribeTextStatOutcome
+                 */
+                DescribeTextStatOutcome DescribeTextStat(const Model::DescribeTextStatRequest &request);
+                void DescribeTextStatAsync(const Model::DescribeTextStatRequest& request, const DescribeTextStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTextStatOutcomeCallable DescribeTextStatCallable(const Model::DescribeTextStatRequest& request);
 
                 /**
                  *文本内容检测（Text Moderation）服务使用了深度学习技术，识别涉黄、涉政、涉恐等有害内容，同时支持用户配置词库，打击自定义的违规文本。

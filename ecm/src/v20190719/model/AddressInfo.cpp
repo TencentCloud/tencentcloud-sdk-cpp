@@ -23,7 +23,8 @@ using namespace std;
 
 AddressInfo::AddressInfo() :
     m_publicIPAddressInfoHasBeenSet(false),
-    m_privateIPAddressInfoHasBeenSet(false)
+    m_privateIPAddressInfoHasBeenSet(false),
+    m_publicIPv6AddressInfoHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,23 @@ CoreInternalOutcome AddressInfo::Deserialize(const Value &value)
         m_privateIPAddressInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicIPv6AddressInfo") && !value["PublicIPv6AddressInfo"].IsNull())
+    {
+        if (!value["PublicIPv6AddressInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AddressInfo.PublicIPv6AddressInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_publicIPv6AddressInfo.Deserialize(value["PublicIPv6AddressInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_publicIPv6AddressInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +107,15 @@ void AddressInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_privateIPAddressInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_publicIPv6AddressInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PublicIPv6AddressInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_publicIPv6AddressInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -124,5 +151,21 @@ void AddressInfo::SetPrivateIPAddressInfo(const PrivateIPAddressInfo& _privateIP
 bool AddressInfo::PrivateIPAddressInfoHasBeenSet() const
 {
     return m_privateIPAddressInfoHasBeenSet;
+}
+
+PublicIPAddressInfo AddressInfo::GetPublicIPv6AddressInfo() const
+{
+    return m_publicIPv6AddressInfo;
+}
+
+void AddressInfo::SetPublicIPv6AddressInfo(const PublicIPAddressInfo& _publicIPv6AddressInfo)
+{
+    m_publicIPv6AddressInfo = _publicIPv6AddressInfo;
+    m_publicIPv6AddressInfoHasBeenSet = true;
+}
+
+bool AddressInfo::PublicIPv6AddressInfoHasBeenSet() const
+{
+    return m_publicIPv6AddressInfoHasBeenSet;
 }
 

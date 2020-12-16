@@ -51,7 +51,12 @@ CreateClustersRequest::CreateClustersRequest() :
     m_autoVoucherHasBeenSet(false),
     m_haCountHasBeenSet(false),
     m_orderSourceHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_dbModeHasBeenSet(false),
+    m_minCpuHasBeenSet(false),
+    m_maxCpuHasBeenSet(false),
+    m_autoPauseHasBeenSet(false),
+    m_autoPauseDelayHasBeenSet(false)
 {
 }
 
@@ -291,6 +296,46 @@ string CreateClustersRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dbModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DbMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_dbMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_minCpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MinCpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_minCpu, allocator);
+    }
+
+    if (m_maxCpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxCpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxCpu, allocator);
+    }
+
+    if (m_autoPauseHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoPause";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_autoPause.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoPauseDelayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoPauseDelay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoPauseDelay, allocator);
     }
 
 
@@ -747,6 +792,86 @@ void CreateClustersRequest::SetResourceTags(const vector<Tag>& _resourceTags)
 bool CreateClustersRequest::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string CreateClustersRequest::GetDbMode() const
+{
+    return m_dbMode;
+}
+
+void CreateClustersRequest::SetDbMode(const string& _dbMode)
+{
+    m_dbMode = _dbMode;
+    m_dbModeHasBeenSet = true;
+}
+
+bool CreateClustersRequest::DbModeHasBeenSet() const
+{
+    return m_dbModeHasBeenSet;
+}
+
+double CreateClustersRequest::GetMinCpu() const
+{
+    return m_minCpu;
+}
+
+void CreateClustersRequest::SetMinCpu(const double& _minCpu)
+{
+    m_minCpu = _minCpu;
+    m_minCpuHasBeenSet = true;
+}
+
+bool CreateClustersRequest::MinCpuHasBeenSet() const
+{
+    return m_minCpuHasBeenSet;
+}
+
+double CreateClustersRequest::GetMaxCpu() const
+{
+    return m_maxCpu;
+}
+
+void CreateClustersRequest::SetMaxCpu(const double& _maxCpu)
+{
+    m_maxCpu = _maxCpu;
+    m_maxCpuHasBeenSet = true;
+}
+
+bool CreateClustersRequest::MaxCpuHasBeenSet() const
+{
+    return m_maxCpuHasBeenSet;
+}
+
+string CreateClustersRequest::GetAutoPause() const
+{
+    return m_autoPause;
+}
+
+void CreateClustersRequest::SetAutoPause(const string& _autoPause)
+{
+    m_autoPause = _autoPause;
+    m_autoPauseHasBeenSet = true;
+}
+
+bool CreateClustersRequest::AutoPauseHasBeenSet() const
+{
+    return m_autoPauseHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetAutoPauseDelay() const
+{
+    return m_autoPauseDelay;
+}
+
+void CreateClustersRequest::SetAutoPauseDelay(const int64_t& _autoPauseDelay)
+{
+    m_autoPauseDelay = _autoPauseDelay;
+    m_autoPauseDelayHasBeenSet = true;
+}
+
+bool CreateClustersRequest::AutoPauseDelayHasBeenSet() const
+{
+    return m_autoPauseDelayHasBeenSet;
 }
 
 

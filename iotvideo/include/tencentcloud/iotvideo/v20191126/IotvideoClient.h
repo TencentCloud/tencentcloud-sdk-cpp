@@ -71,6 +71,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/DeleteTraceIdsResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DeliverStorageServiceRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DeliverStorageServiceResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/DescribeAccountBalanceRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/DescribeAccountBalanceResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeBindDevRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeBindDevResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeBindUsrRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/DescribeProductsResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribePubVersionsRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribePubVersionsResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/DescribeRechargeRecordsRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/DescribeRechargeRecordsResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeRegistrationStatusRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeRegistrationStatusResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeRunLogRequest.h>
@@ -233,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeliverStorageServiceResponse> DeliverStorageServiceOutcome;
                 typedef std::future<DeliverStorageServiceOutcome> DeliverStorageServiceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DeliverStorageServiceRequest&, DeliverStorageServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeliverStorageServiceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAccountBalanceResponse> DescribeAccountBalanceOutcome;
+                typedef std::future<DescribeAccountBalanceOutcome> DescribeAccountBalanceOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeAccountBalanceRequest&, DescribeAccountBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountBalanceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBindDevResponse> DescribeBindDevOutcome;
                 typedef std::future<DescribeBindDevOutcome> DescribeBindDevOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeBindDevRequest&, DescribeBindDevOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindDevAsyncHandler;
@@ -281,6 +288,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePubVersionsResponse> DescribePubVersionsOutcome;
                 typedef std::future<DescribePubVersionsOutcome> DescribePubVersionsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribePubVersionsRequest&, DescribePubVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePubVersionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRechargeRecordsResponse> DescribeRechargeRecordsOutcome;
+                typedef std::future<DescribeRechargeRecordsOutcome> DescribeRechargeRecordsOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeRechargeRecordsRequest&, DescribeRechargeRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRechargeRecordsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRegistrationStatusResponse> DescribeRegistrationStatusOutcome;
                 typedef std::future<DescribeRegistrationStatusOutcome> DescribeRegistrationStatusOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeRegistrationStatusRequest&, DescribeRegistrationStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegistrationStatusAsyncHandler;
@@ -573,6 +583,15 @@ namespace TencentCloud
                 DeliverStorageServiceOutcomeCallable DeliverStorageServiceCallable(const Model::DeliverStorageServiceRequest& request);
 
                 /**
+                 *客户可通过本接口获取账户余额信息, 默认接口请求频率限制：1次/秒
+                 * @param req DescribeAccountBalanceRequest
+                 * @return DescribeAccountBalanceOutcome
+                 */
+                DescribeAccountBalanceOutcome DescribeAccountBalance(const Model::DescribeAccountBalanceRequest &request);
+                void DescribeAccountBalanceAsync(const Model::DescribeAccountBalanceRequest& request, const DescribeAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountBalanceOutcomeCallable DescribeAccountBalanceCallable(const Model::DescribeAccountBalanceRequest& request);
+
+                /**
                  *本接口（DescribeBindDev）用于查询终端用户绑定的设备列表。
                  * @param req DescribeBindDevRequest
                  * @return DescribeBindDevOutcome
@@ -716,6 +735,15 @@ namespace TencentCloud
                 DescribePubVersionsOutcome DescribePubVersions(const Model::DescribePubVersionsRequest &request);
                 void DescribePubVersionsAsync(const Model::DescribePubVersionsRequest& request, const DescribePubVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePubVersionsOutcomeCallable DescribePubVersionsCallable(const Model::DescribePubVersionsRequest& request);
+
+                /**
+                 *客户可通过本接口获取充值记录信息, 一次最多返回50条记录。
+                 * @param req DescribeRechargeRecordsRequest
+                 * @return DescribeRechargeRecordsOutcome
+                 */
+                DescribeRechargeRecordsOutcome DescribeRechargeRecords(const Model::DescribeRechargeRecordsRequest &request);
+                void DescribeRechargeRecordsAsync(const Model::DescribeRechargeRecordsRequest& request, const DescribeRechargeRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRechargeRecordsOutcomeCallable DescribeRechargeRecordsCallable(const Model::DescribeRechargeRecordsRequest& request);
 
                 /**
                  *本接口（DescribeRegistrationStatus）用于查询终端用户的注册状态。

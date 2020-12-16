@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ims/v20200713/model/DescribeImageStatRequest.h>
+#include <tencentcloud/ims/v20200713/model/DescribeImageStatResponse.h>
+#include <tencentcloud/ims/v20200713/model/DescribeImsListRequest.h>
+#include <tencentcloud/ims/v20200713/model/DescribeImsListResponse.h>
 #include <tencentcloud/ims/v20200713/model/ImageModerationRequest.h>
 #include <tencentcloud/ims/v20200713/model/ImageModerationResponse.h>
 
@@ -39,11 +43,35 @@ namespace TencentCloud
                 ImsClient(const Credential &credential, const std::string &region);
                 ImsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::DescribeImageStatResponse> DescribeImageStatOutcome;
+                typedef std::future<DescribeImageStatOutcome> DescribeImageStatOutcomeCallable;
+                typedef std::function<void(const ImsClient*, const Model::DescribeImageStatRequest&, DescribeImageStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageStatAsyncHandler;
+                typedef Outcome<Error, Model::DescribeImsListResponse> DescribeImsListOutcome;
+                typedef std::future<DescribeImsListOutcome> DescribeImsListOutcomeCallable;
+                typedef std::function<void(const ImsClient*, const Model::DescribeImsListRequest&, DescribeImsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImsListAsyncHandler;
                 typedef Outcome<Error, Model::ImageModerationResponse> ImageModerationOutcome;
                 typedef std::future<ImageModerationOutcome> ImageModerationOutcomeCallable;
                 typedef std::function<void(const ImsClient*, const Model::ImageModerationRequest&, ImageModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageModerationAsyncHandler;
 
 
+
+                /**
+                 *控制台识别统计
+                 * @param req DescribeImageStatRequest
+                 * @return DescribeImageStatOutcome
+                 */
+                DescribeImageStatOutcome DescribeImageStat(const Model::DescribeImageStatRequest &request);
+                void DescribeImageStatAsync(const Model::DescribeImageStatRequest& request, const DescribeImageStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageStatOutcomeCallable DescribeImageStatCallable(const Model::DescribeImageStatRequest& request);
+
+                /**
+                 *图片机器审核明细
+                 * @param req DescribeImsListRequest
+                 * @return DescribeImsListOutcome
+                 */
+                DescribeImsListOutcome DescribeImsList(const Model::DescribeImsListRequest &request);
+                void DescribeImsListAsync(const Model::DescribeImsListRequest& request, const DescribeImsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImsListOutcomeCallable DescribeImsListCallable(const Model::DescribeImsListRequest& request);
 
                 /**
                  *图片内容检测服务（Image Moderation, IM）能自动扫描图片，识别涉黄、涉恐、涉政、涉毒等有害内容，同时支持用户配置图片黑名单，打击自定义的违规图片。

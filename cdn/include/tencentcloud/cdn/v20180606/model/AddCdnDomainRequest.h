@@ -48,6 +48,7 @@
 #include <tencentcloud/cdn/v20180606/model/SpecificConfig.h>
 #include <tencentcloud/cdn/v20180606/model/OriginPullTimeout.h>
 #include <tencentcloud/cdn/v20180606/model/Tag.h>
+#include <tencentcloud/cdn/v20180606/model/Ipv6Access.h>
 
 
 namespace TencentCloud
@@ -659,6 +660,24 @@ global：全球加速
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取Ipv6 访问配置
+                     * @return Ipv6Access Ipv6 访问配置
+                     */
+                    Ipv6Access GetIpv6Access() const;
+
+                    /**
+                     * 设置Ipv6 访问配置
+                     * @param Ipv6Access Ipv6 访问配置
+                     */
+                    void SetIpv6Access(const Ipv6Access& _ipv6Access);
+
+                    /**
+                     * 判断参数 Ipv6Access 是否已赋值
+                     * @return Ipv6Access 是否已赋值
+                     */
+                    bool Ipv6AccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -854,6 +873,12 @@ global：全球加速
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * Ipv6 访问配置
+                     */
+                    Ipv6Access m_ipv6Access;
+                    bool m_ipv6AccessHasBeenSet;
 
                 };
             }

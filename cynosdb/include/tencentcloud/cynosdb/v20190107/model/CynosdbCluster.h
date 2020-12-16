@@ -516,6 +516,50 @@ namespace TencentCloud
                      */
                     bool ResourceTagsHasBeenSet() const;
 
+                    /**
+                     * 获取Db类型(NORMAL, SERVERLESS)
+                     * @return DbMode Db类型(NORMAL, SERVERLESS)
+                     */
+                    std::string GetDbMode() const;
+
+                    /**
+                     * 设置Db类型(NORMAL, SERVERLESS)
+                     * @param DbMode Db类型(NORMAL, SERVERLESS)
+                     */
+                    void SetDbMode(const std::string& _dbMode);
+
+                    /**
+                     * 判断参数 DbMode 是否已赋值
+                     * @return DbMode 是否已赋值
+                     */
+                    bool DbModeHasBeenSet() const;
+
+                    /**
+                     * 获取当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+pause
+                     * @return ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+pause
+                     */
+                    std::string GetServerlessStatus() const;
+
+                    /**
+                     * 设置当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+pause
+                     * @param ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+pause
+                     */
+                    void SetServerlessStatus(const std::string& _serverlessStatus);
+
+                    /**
+                     * 判断参数 ServerlessStatus 是否已赋值
+                     * @return ServerlessStatus 是否已赋值
+                     */
+                    bool ServerlessStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -673,6 +717,20 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * Db类型(NORMAL, SERVERLESS)
+                     */
+                    std::string m_dbMode;
+                    bool m_dbModeHasBeenSet;
+
+                    /**
+                     * 当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+pause
+                     */
+                    std::string m_serverlessStatus;
+                    bool m_serverlessStatusHasBeenSet;
 
                 };
             }

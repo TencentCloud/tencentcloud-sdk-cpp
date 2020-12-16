@@ -92,6 +92,28 @@ namespace TencentCloud
                      */
                     bool PrivateIPAddressInfoHasBeenSet() const;
 
+                    /**
+                     * 获取实例的外网ipv6相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicIPv6AddressInfo 实例的外网ipv6相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PublicIPAddressInfo GetPublicIPv6AddressInfo() const;
+
+                    /**
+                     * 设置实例的外网ipv6相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicIPv6AddressInfo 实例的外网ipv6相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicIPv6AddressInfo(const PublicIPAddressInfo& _publicIPv6AddressInfo);
+
+                    /**
+                     * 判断参数 PublicIPv6AddressInfo 是否已赋值
+                     * @return PublicIPv6AddressInfo 是否已赋值
+                     */
+                    bool PublicIPv6AddressInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +129,13 @@ namespace TencentCloud
                      */
                     PrivateIPAddressInfo m_privateIPAddressInfo;
                     bool m_privateIPAddressInfoHasBeenSet;
+
+                    /**
+                     * 实例的外网ipv6相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PublicIPAddressInfo m_publicIPv6AddressInfo;
+                    bool m_publicIPv6AddressInfoHasBeenSet;
 
                 };
             }

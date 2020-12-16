@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取数字房间号
-                     * @return RoomId 数字房间号
+                     * 获取字符串房间号
+                     * @return RoomId 字符串房间号
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置数字房间号
-                     * @param RoomId 数字房间号
+                     * 设置字符串房间号
+                     * @param RoomId 字符串房间号
                      */
                     void SetRoomId(const std::string& _roomId);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 数字房间号
+                     * 字符串房间号
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;

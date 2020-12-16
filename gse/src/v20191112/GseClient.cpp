@@ -83,6 +83,49 @@ GseClient::AttachCcnInstancesOutcomeCallable GseClient::AttachCcnInstancesCallab
     return task->get_future();
 }
 
+GseClient::CopyFleetOutcome GseClient::CopyFleet(const CopyFleetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CopyFleet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CopyFleetResponse rsp = CopyFleetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CopyFleetOutcome(rsp);
+        else
+            return CopyFleetOutcome(o.GetError());
+    }
+    else
+    {
+        return CopyFleetOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::CopyFleetAsync(const CopyFleetRequest& request, const CopyFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CopyFleet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::CopyFleetOutcomeCallable GseClient::CopyFleetCallable(const CopyFleetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CopyFleetOutcome()>>(
+        [this, request]()
+        {
+            return this->CopyFleet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::CreateAliasOutcome GseClient::CreateAlias(const CreateAliasRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAlias");

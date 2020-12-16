@@ -27,7 +27,8 @@ ZoneInstanceCountISP::ZoneInstanceCountISP() :
     m_iSPHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_ipv6AddressCountHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,16 @@ CoreInternalOutcome ZoneInstanceCountISP::Deserialize(const Value &value)
         m_privateIpAddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6AddressCount") && !value["Ipv6AddressCount"].IsNull())
+    {
+        if (!value["Ipv6AddressCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.Ipv6AddressCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6AddressCount = value["Ipv6AddressCount"].GetInt64();
+        m_ipv6AddressCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -157,6 +168,14 @@ void ZoneInstanceCountISP::ToJsonObject(Value &value, Document::AllocatorType& a
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_ipv6AddressCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6AddressCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv6AddressCount, allocator);
     }
 
 }
@@ -256,5 +275,21 @@ void ZoneInstanceCountISP::SetPrivateIpAddresses(const vector<string>& _privateI
 bool ZoneInstanceCountISP::PrivateIpAddressesHasBeenSet() const
 {
     return m_privateIpAddressesHasBeenSet;
+}
+
+int64_t ZoneInstanceCountISP::GetIpv6AddressCount() const
+{
+    return m_ipv6AddressCount;
+}
+
+void ZoneInstanceCountISP::SetIpv6AddressCount(const int64_t& _ipv6AddressCount)
+{
+    m_ipv6AddressCount = _ipv6AddressCount;
+    m_ipv6AddressCountHasBeenSet = true;
+}
+
+bool ZoneInstanceCountISP::Ipv6AddressCountHasBeenSet() const
+{
+    return m_ipv6AddressCountHasBeenSet;
 }
 

@@ -44,6 +44,42 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     * @return Limit 分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     * @param Limit 分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页拉取的起始偏移量。默认值：0。
+                     * @return Offset 分页拉取的起始偏移量。默认值：0。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置分页拉取的起始偏移量。默认值：0。
+                     * @param Offset 分页拉取的起始偏移量。默认值：0。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
                      * 获取标签信息，查询指定标签的子应用列表。
                      * @return Tags 标签信息，查询指定标签的子应用列表。
                      */
@@ -62,6 +98,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页拉取的起始偏移量。默认值：0。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                     /**
                      * 标签信息，查询指定标签的子应用列表。

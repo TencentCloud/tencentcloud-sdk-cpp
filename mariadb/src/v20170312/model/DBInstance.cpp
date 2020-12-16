@@ -70,7 +70,8 @@ DBInstance::DBInstance() :
     m_dbVersionHasBeenSet(false),
     m_dcnFlagHasBeenSet(false),
     m_dcnStatusHasBeenSet(false),
-    m_dcnDstNumHasBeenSet(false)
+    m_dcnDstNumHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -569,6 +570,16 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_dcnDstNumHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = value["InstanceType"].GetInt64();
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -966,6 +977,14 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "DcnDstNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dcnDstNum, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceType, allocator);
     }
 
 }
@@ -1753,5 +1772,21 @@ void DBInstance::SetDcnDstNum(const int64_t& _dcnDstNum)
 bool DBInstance::DcnDstNumHasBeenSet() const
 {
     return m_dcnDstNumHasBeenSet;
+}
+
+int64_t DBInstance::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void DBInstance::SetInstanceType(const int64_t& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool DBInstance::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

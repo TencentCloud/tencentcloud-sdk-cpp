@@ -83,6 +83,92 @@ TmsClient::AccountTipoffAccessOutcomeCallable TmsClient::AccountTipoffAccessCall
     return task->get_future();
 }
 
+TmsClient::DescribeTextLibOutcome TmsClient::DescribeTextLib(const DescribeTextLibRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTextLib");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTextLibResponse rsp = DescribeTextLibResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTextLibOutcome(rsp);
+        else
+            return DescribeTextLibOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTextLibOutcome(outcome.GetError());
+    }
+}
+
+void TmsClient::DescribeTextLibAsync(const DescribeTextLibRequest& request, const DescribeTextLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTextLib(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TmsClient::DescribeTextLibOutcomeCallable TmsClient::DescribeTextLibCallable(const DescribeTextLibRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTextLibOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTextLib(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TmsClient::DescribeTextStatOutcome TmsClient::DescribeTextStat(const DescribeTextStatRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTextStat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTextStatResponse rsp = DescribeTextStatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTextStatOutcome(rsp);
+        else
+            return DescribeTextStatOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTextStatOutcome(outcome.GetError());
+    }
+}
+
+void TmsClient::DescribeTextStatAsync(const DescribeTextStatRequest& request, const DescribeTextStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTextStat(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TmsClient::DescribeTextStatOutcomeCallable TmsClient::DescribeTextStatCallable(const DescribeTextStatRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTextStatOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTextStat(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TmsClient::TextModerationOutcome TmsClient::TextModeration(const TextModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "TextModeration");

@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取单次获取的历史数据项目的最大数量
-                     * @return Size 单次获取的历史数据项目的最大数量
+                     * 获取单次获取的历史数据项目的最大数量, 缺省10
+                     * @return Size 单次获取的历史数据项目的最大数量, 缺省10
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置单次获取的历史数据项目的最大数量
-                     * @param Size 单次获取的历史数据项目的最大数量
+                     * 设置单次获取的历史数据项目的最大数量, 缺省10
+                     * @param Size 单次获取的历史数据项目的最大数量, 缺省10
                      */
                     void SetSize(const int64_t& _size);
 
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 单次获取的历史数据项目的最大数量
+                     * 单次获取的历史数据项目的最大数量, 缺省10
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
