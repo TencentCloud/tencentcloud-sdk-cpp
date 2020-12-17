@@ -29,13 +29,14 @@ EventContent::EventContent() :
     m_fileDeleteEventHasBeenSet(false),
     m_pullCompleteEventHasBeenSet(false),
     m_editMediaCompleteEventHasBeenSet(false),
-    m_wechatPublishCompleteEventHasBeenSet(false),
-    m_transcodeCompleteEventHasBeenSet(false),
-    m_concatCompleteEventHasBeenSet(false),
-    m_clipCompleteEventHasBeenSet(false),
-    m_createImageSpriteCompleteEventHasBeenSet(false),
-    m_snapshotByTimeOffsetCompleteEventHasBeenSet(false),
+    m_splitMediaCompleteEventHasBeenSet(false),
     m_composeMediaCompleteEventHasBeenSet(false),
+    m_clipCompleteEventHasBeenSet(false),
+    m_transcodeCompleteEventHasBeenSet(false),
+    m_createImageSpriteCompleteEventHasBeenSet(false),
+    m_concatCompleteEventHasBeenSet(false),
+    m_snapshotByTimeOffsetCompleteEventHasBeenSet(false),
+    m_wechatPublishCompleteEventHasBeenSet(false),
     m_wechatMiniProgramPublishCompleteEventHasBeenSet(false)
 {
 }
@@ -150,55 +151,38 @@ CoreInternalOutcome EventContent::Deserialize(const Value &value)
         m_editMediaCompleteEventHasBeenSet = true;
     }
 
-    if (value.HasMember("WechatPublishCompleteEvent") && !value["WechatPublishCompleteEvent"].IsNull())
+    if (value.HasMember("SplitMediaCompleteEvent") && !value["SplitMediaCompleteEvent"].IsNull())
     {
-        if (!value["WechatPublishCompleteEvent"].IsObject())
+        if (!value["SplitMediaCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.WechatPublishCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `EventContent.SplitMediaCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_wechatPublishCompleteEvent.Deserialize(value["WechatPublishCompleteEvent"]);
+        CoreInternalOutcome outcome = m_splitMediaCompleteEvent.Deserialize(value["SplitMediaCompleteEvent"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_wechatPublishCompleteEventHasBeenSet = true;
+        m_splitMediaCompleteEventHasBeenSet = true;
     }
 
-    if (value.HasMember("TranscodeCompleteEvent") && !value["TranscodeCompleteEvent"].IsNull())
+    if (value.HasMember("ComposeMediaCompleteEvent") && !value["ComposeMediaCompleteEvent"].IsNull())
     {
-        if (!value["TranscodeCompleteEvent"].IsObject())
+        if (!value["ComposeMediaCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.TranscodeCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `EventContent.ComposeMediaCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_transcodeCompleteEvent.Deserialize(value["TranscodeCompleteEvent"]);
+        CoreInternalOutcome outcome = m_composeMediaCompleteEvent.Deserialize(value["ComposeMediaCompleteEvent"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_transcodeCompleteEventHasBeenSet = true;
-    }
-
-    if (value.HasMember("ConcatCompleteEvent") && !value["ConcatCompleteEvent"].IsNull())
-    {
-        if (!value["ConcatCompleteEvent"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `EventContent.ConcatCompleteEvent` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_concatCompleteEvent.Deserialize(value["ConcatCompleteEvent"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_concatCompleteEventHasBeenSet = true;
+        m_composeMediaCompleteEventHasBeenSet = true;
     }
 
     if (value.HasMember("ClipCompleteEvent") && !value["ClipCompleteEvent"].IsNull())
@@ -218,6 +202,23 @@ CoreInternalOutcome EventContent::Deserialize(const Value &value)
         m_clipCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("TranscodeCompleteEvent") && !value["TranscodeCompleteEvent"].IsNull())
+    {
+        if (!value["TranscodeCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `EventContent.TranscodeCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_transcodeCompleteEvent.Deserialize(value["TranscodeCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_transcodeCompleteEventHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateImageSpriteCompleteEvent") && !value["CreateImageSpriteCompleteEvent"].IsNull())
     {
         if (!value["CreateImageSpriteCompleteEvent"].IsObject())
@@ -233,6 +234,23 @@ CoreInternalOutcome EventContent::Deserialize(const Value &value)
         }
 
         m_createImageSpriteCompleteEventHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConcatCompleteEvent") && !value["ConcatCompleteEvent"].IsNull())
+    {
+        if (!value["ConcatCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `EventContent.ConcatCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_concatCompleteEvent.Deserialize(value["ConcatCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_concatCompleteEventHasBeenSet = true;
     }
 
     if (value.HasMember("SnapshotByTimeOffsetCompleteEvent") && !value["SnapshotByTimeOffsetCompleteEvent"].IsNull())
@@ -252,21 +270,21 @@ CoreInternalOutcome EventContent::Deserialize(const Value &value)
         m_snapshotByTimeOffsetCompleteEventHasBeenSet = true;
     }
 
-    if (value.HasMember("ComposeMediaCompleteEvent") && !value["ComposeMediaCompleteEvent"].IsNull())
+    if (value.HasMember("WechatPublishCompleteEvent") && !value["WechatPublishCompleteEvent"].IsNull())
     {
-        if (!value["ComposeMediaCompleteEvent"].IsObject())
+        if (!value["WechatPublishCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.ComposeMediaCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `EventContent.WechatPublishCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_composeMediaCompleteEvent.Deserialize(value["ComposeMediaCompleteEvent"]);
+        CoreInternalOutcome outcome = m_wechatPublishCompleteEvent.Deserialize(value["WechatPublishCompleteEvent"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_composeMediaCompleteEventHasBeenSet = true;
+        m_wechatPublishCompleteEventHasBeenSet = true;
     }
 
     if (value.HasMember("WechatMiniProgramPublishCompleteEvent") && !value["WechatMiniProgramPublishCompleteEvent"].IsNull())
@@ -354,31 +372,22 @@ void EventContent::ToJsonObject(Value &value, Document::AllocatorType& allocator
         m_editMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_wechatPublishCompleteEventHasBeenSet)
+    if (m_splitMediaCompleteEventHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "WechatPublishCompleteEvent";
+        string key = "SplitMediaCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_wechatPublishCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+        m_splitMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_transcodeCompleteEventHasBeenSet)
+    if (m_composeMediaCompleteEventHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "TranscodeCompleteEvent";
+        string key = "ComposeMediaCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_transcodeCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_concatCompleteEventHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ConcatCompleteEvent";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_concatCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+        m_composeMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_clipCompleteEventHasBeenSet)
@@ -390,6 +399,15 @@ void EventContent::ToJsonObject(Value &value, Document::AllocatorType& allocator
         m_clipCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_transcodeCompleteEventHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TranscodeCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_transcodeCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_createImageSpriteCompleteEventHasBeenSet)
     {
         Value iKey(kStringType);
@@ -397,6 +415,15 @@ void EventContent::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_createImageSpriteCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_concatCompleteEventHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ConcatCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_concatCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_snapshotByTimeOffsetCompleteEventHasBeenSet)
@@ -408,13 +435,13 @@ void EventContent::ToJsonObject(Value &value, Document::AllocatorType& allocator
         m_snapshotByTimeOffsetCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_composeMediaCompleteEventHasBeenSet)
+    if (m_wechatPublishCompleteEventHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ComposeMediaCompleteEvent";
+        string key = "WechatPublishCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_composeMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+        m_wechatPublishCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_wechatMiniProgramPublishCompleteEventHasBeenSet)
@@ -541,52 +568,36 @@ bool EventContent::EditMediaCompleteEventHasBeenSet() const
     return m_editMediaCompleteEventHasBeenSet;
 }
 
-WechatPublishTask EventContent::GetWechatPublishCompleteEvent() const
+SplitMediaTask EventContent::GetSplitMediaCompleteEvent() const
 {
-    return m_wechatPublishCompleteEvent;
+    return m_splitMediaCompleteEvent;
 }
 
-void EventContent::SetWechatPublishCompleteEvent(const WechatPublishTask& _wechatPublishCompleteEvent)
+void EventContent::SetSplitMediaCompleteEvent(const SplitMediaTask& _splitMediaCompleteEvent)
 {
-    m_wechatPublishCompleteEvent = _wechatPublishCompleteEvent;
-    m_wechatPublishCompleteEventHasBeenSet = true;
+    m_splitMediaCompleteEvent = _splitMediaCompleteEvent;
+    m_splitMediaCompleteEventHasBeenSet = true;
 }
 
-bool EventContent::WechatPublishCompleteEventHasBeenSet() const
+bool EventContent::SplitMediaCompleteEventHasBeenSet() const
 {
-    return m_wechatPublishCompleteEventHasBeenSet;
+    return m_splitMediaCompleteEventHasBeenSet;
 }
 
-TranscodeTask2017 EventContent::GetTranscodeCompleteEvent() const
+ComposeMediaTask EventContent::GetComposeMediaCompleteEvent() const
 {
-    return m_transcodeCompleteEvent;
+    return m_composeMediaCompleteEvent;
 }
 
-void EventContent::SetTranscodeCompleteEvent(const TranscodeTask2017& _transcodeCompleteEvent)
+void EventContent::SetComposeMediaCompleteEvent(const ComposeMediaTask& _composeMediaCompleteEvent)
 {
-    m_transcodeCompleteEvent = _transcodeCompleteEvent;
-    m_transcodeCompleteEventHasBeenSet = true;
+    m_composeMediaCompleteEvent = _composeMediaCompleteEvent;
+    m_composeMediaCompleteEventHasBeenSet = true;
 }
 
-bool EventContent::TranscodeCompleteEventHasBeenSet() const
+bool EventContent::ComposeMediaCompleteEventHasBeenSet() const
 {
-    return m_transcodeCompleteEventHasBeenSet;
-}
-
-ConcatTask2017 EventContent::GetConcatCompleteEvent() const
-{
-    return m_concatCompleteEvent;
-}
-
-void EventContent::SetConcatCompleteEvent(const ConcatTask2017& _concatCompleteEvent)
-{
-    m_concatCompleteEvent = _concatCompleteEvent;
-    m_concatCompleteEventHasBeenSet = true;
-}
-
-bool EventContent::ConcatCompleteEventHasBeenSet() const
-{
-    return m_concatCompleteEventHasBeenSet;
+    return m_composeMediaCompleteEventHasBeenSet;
 }
 
 ClipTask2017 EventContent::GetClipCompleteEvent() const
@@ -605,6 +616,22 @@ bool EventContent::ClipCompleteEventHasBeenSet() const
     return m_clipCompleteEventHasBeenSet;
 }
 
+TranscodeTask2017 EventContent::GetTranscodeCompleteEvent() const
+{
+    return m_transcodeCompleteEvent;
+}
+
+void EventContent::SetTranscodeCompleteEvent(const TranscodeTask2017& _transcodeCompleteEvent)
+{
+    m_transcodeCompleteEvent = _transcodeCompleteEvent;
+    m_transcodeCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::TranscodeCompleteEventHasBeenSet() const
+{
+    return m_transcodeCompleteEventHasBeenSet;
+}
+
 CreateImageSpriteTask2017 EventContent::GetCreateImageSpriteCompleteEvent() const
 {
     return m_createImageSpriteCompleteEvent;
@@ -619,6 +646,22 @@ void EventContent::SetCreateImageSpriteCompleteEvent(const CreateImageSpriteTask
 bool EventContent::CreateImageSpriteCompleteEventHasBeenSet() const
 {
     return m_createImageSpriteCompleteEventHasBeenSet;
+}
+
+ConcatTask2017 EventContent::GetConcatCompleteEvent() const
+{
+    return m_concatCompleteEvent;
+}
+
+void EventContent::SetConcatCompleteEvent(const ConcatTask2017& _concatCompleteEvent)
+{
+    m_concatCompleteEvent = _concatCompleteEvent;
+    m_concatCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::ConcatCompleteEventHasBeenSet() const
+{
+    return m_concatCompleteEventHasBeenSet;
 }
 
 SnapshotByTimeOffsetTask2017 EventContent::GetSnapshotByTimeOffsetCompleteEvent() const
@@ -637,20 +680,20 @@ bool EventContent::SnapshotByTimeOffsetCompleteEventHasBeenSet() const
     return m_snapshotByTimeOffsetCompleteEventHasBeenSet;
 }
 
-ComposeMediaTask EventContent::GetComposeMediaCompleteEvent() const
+WechatPublishTask EventContent::GetWechatPublishCompleteEvent() const
 {
-    return m_composeMediaCompleteEvent;
+    return m_wechatPublishCompleteEvent;
 }
 
-void EventContent::SetComposeMediaCompleteEvent(const ComposeMediaTask& _composeMediaCompleteEvent)
+void EventContent::SetWechatPublishCompleteEvent(const WechatPublishTask& _wechatPublishCompleteEvent)
 {
-    m_composeMediaCompleteEvent = _composeMediaCompleteEvent;
-    m_composeMediaCompleteEventHasBeenSet = true;
+    m_wechatPublishCompleteEvent = _wechatPublishCompleteEvent;
+    m_wechatPublishCompleteEventHasBeenSet = true;
 }
 
-bool EventContent::ComposeMediaCompleteEventHasBeenSet() const
+bool EventContent::WechatPublishCompleteEventHasBeenSet() const
 {
-    return m_composeMediaCompleteEventHasBeenSet;
+    return m_wechatPublishCompleteEventHasBeenSet;
 }
 
 WechatMiniProgramPublishTask EventContent::GetWechatMiniProgramPublishCompleteEvent() const

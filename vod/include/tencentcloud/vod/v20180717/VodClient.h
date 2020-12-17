@@ -219,6 +219,8 @@
 #include <tencentcloud/vod/v20180717/model/SearchMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipRequest.h>
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipResponse.h>
+#include <tencentcloud/vod/v20180717/model/SplitMediaRequest.h>
+#include <tencentcloud/vod/v20180717/model/SplitMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishRequest.h>
 #include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishResponse.h>
 
@@ -529,6 +531,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SimpleHlsClipResponse> SimpleHlsClipOutcome;
                 typedef std::future<SimpleHlsClipOutcome> SimpleHlsClipOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SimpleHlsClipRequest&, SimpleHlsClipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SimpleHlsClipAsyncHandler;
+                typedef Outcome<Error, Model::SplitMediaResponse> SplitMediaOutcome;
+                typedef std::future<SplitMediaOutcome> SplitMediaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::SplitMediaRequest&, SplitMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SplitMediaAsyncHandler;
                 typedef Outcome<Error, Model::WeChatMiniProgramPublishResponse> WeChatMiniProgramPublishOutcome;
                 typedef std::future<WeChatMiniProgramPublishOutcome> WeChatMiniProgramPublishOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::WeChatMiniProgramPublishRequest&, WeChatMiniProgramPublishOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WeChatMiniProgramPublishAsyncHandler;
@@ -1592,6 +1597,15 @@ namespace TencentCloud
                 SimpleHlsClipOutcome SimpleHlsClip(const Model::SimpleHlsClipRequest &request);
                 void SimpleHlsClipAsync(const Model::SimpleHlsClipRequest& request, const SimpleHlsClipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SimpleHlsClipOutcomeCallable SimpleHlsClipCallable(const Model::SimpleHlsClipRequest& request);
+
+                /**
+                 *对点播视频进行拆条，生成多个新的点播视频。
+                 * @param req SplitMediaRequest
+                 * @return SplitMediaOutcome
+                 */
+                SplitMediaOutcome SplitMedia(const Model::SplitMediaRequest &request);
+                void SplitMediaAsync(const Model::SplitMediaRequest& request, const SplitMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SplitMediaOutcomeCallable SplitMediaCallable(const Model::SplitMediaRequest& request);
 
                 /**
                  *将点播视频发布到微信小程序，供微信小程序播放器播放。

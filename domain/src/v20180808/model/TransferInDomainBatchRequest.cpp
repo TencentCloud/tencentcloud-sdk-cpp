@@ -27,7 +27,8 @@ TransferInDomainBatchRequest::TransferInDomainBatchRequest() :
     m_domainsHasBeenSet(false),
     m_passWordsHasBeenSet(false),
     m_templateIdHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,14 @@ string TransferInDomainBatchRequest::ToJsonString() const
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
 
@@ -150,6 +159,22 @@ void TransferInDomainBatchRequest::SetPayMode(const int64_t& _payMode)
 bool TransferInDomainBatchRequest::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+int64_t TransferInDomainBatchRequest::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void TransferInDomainBatchRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool TransferInDomainBatchRequest::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 
 

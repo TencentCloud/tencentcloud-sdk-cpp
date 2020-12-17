@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool InternetChargeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     * @return BandwidthPackageId 带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     */
+                    std::string GetBandwidthPackageId() const;
+
+                    /**
+                     * 设置带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     * @param BandwidthPackageId 带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     */
+                    void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
+
+                    /**
+                     * 判断参数 BandwidthPackageId 是否已赋值
+                     * @return BandwidthPackageId 是否已赋值
+                     */
+                    bool BandwidthPackageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_internetChargeType;
                     bool m_internetChargeTypeHasBeenSet;
+
+                    /**
+                     * 带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     */
+                    std::string m_bandwidthPackageId;
+                    bool m_bandwidthPackageIdHasBeenSet;
 
                 };
             }

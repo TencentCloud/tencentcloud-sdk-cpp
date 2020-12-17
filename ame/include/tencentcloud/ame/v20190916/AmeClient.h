@@ -144,7 +144,7 @@ namespace TencentCloud
                 DescribeStationsOutcomeCallable DescribeStationsCallable(const Model::DescribeStationsRequest& request);
 
                 /**
-                 *客户上报用户数据功能，为了更好的为用户提供优质服务
+                 *客户上报用户数据功能，为了更好地为用户提供优质服务
                  * @param req ReportDataRequest
                  * @return ReportDataOutcome
                  */

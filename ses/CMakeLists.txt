@@ -1,0 +1,150 @@
+#
+# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(ses_public_header
+  include/tencentcloud/ses/v20201002/SesClient.h
+  )
+
+set(ses_public_header_model
+  include/tencentcloud/ses/v20201002/model/Simple.h
+  include/tencentcloud/ses/v20201002/model/ListEmailAddressRequest.h
+  include/tencentcloud/ses/v20201002/model/GetEmailIdentityResponse.h
+  include/tencentcloud/ses/v20201002/model/ListBlackEmailAddressRequest.h
+  include/tencentcloud/ses/v20201002/model/Template.h
+  include/tencentcloud/ses/v20201002/model/SendEmailRequest.h
+  include/tencentcloud/ses/v20201002/model/EmailSender.h
+  include/tencentcloud/ses/v20201002/model/DeleteEmailIdentityRequest.h
+  include/tencentcloud/ses/v20201002/model/UpdateEmailIdentityRequest.h
+  include/tencentcloud/ses/v20201002/model/GetEmailIdentityRequest.h
+  include/tencentcloud/ses/v20201002/model/DeleteEmailIdentityResponse.h
+  include/tencentcloud/ses/v20201002/model/GetStatisticsReportRequest.h
+  include/tencentcloud/ses/v20201002/model/DeleteEmailTemplateResponse.h
+  include/tencentcloud/ses/v20201002/model/Volume.h
+  include/tencentcloud/ses/v20201002/model/CreateEmailTemplateRequest.h
+  include/tencentcloud/ses/v20201002/model/UpdateEmailTemplateRequest.h
+  include/tencentcloud/ses/v20201002/model/UpdateEmailIdentityResponse.h
+  include/tencentcloud/ses/v20201002/model/DeleteEmailTemplateRequest.h
+  include/tencentcloud/ses/v20201002/model/DeleteBlackListResponse.h
+  include/tencentcloud/ses/v20201002/model/ListEmailTemplatesRequest.h
+  include/tencentcloud/ses/v20201002/model/DeleteBlackListRequest.h
+  include/tencentcloud/ses/v20201002/model/ListEmailTemplatesResponse.h
+  include/tencentcloud/ses/v20201002/model/SendEmailResponse.h
+  include/tencentcloud/ses/v20201002/model/ListBlackEmailAddressResponse.h
+  include/tencentcloud/ses/v20201002/model/TemplatesMetadata.h
+  include/tencentcloud/ses/v20201002/model/ListEmailIdentitiesResponse.h
+  include/tencentcloud/ses/v20201002/model/ListEmailAddressResponse.h
+  include/tencentcloud/ses/v20201002/model/TemplateContent.h
+  include/tencentcloud/ses/v20201002/model/GetStatisticsReportResponse.h
+  include/tencentcloud/ses/v20201002/model/DeleteEmailAddressRequest.h
+  include/tencentcloud/ses/v20201002/model/EmailIdentity.h
+  include/tencentcloud/ses/v20201002/model/BlackEmailAddress.h
+  include/tencentcloud/ses/v20201002/model/GetEmailTemplateRequest.h
+  include/tencentcloud/ses/v20201002/model/DeleteEmailAddressResponse.h
+  include/tencentcloud/ses/v20201002/model/CreateEmailIdentityResponse.h
+  include/tencentcloud/ses/v20201002/model/CreateEmailIdentityRequest.h
+  include/tencentcloud/ses/v20201002/model/CreateEmailAddressRequest.h
+  include/tencentcloud/ses/v20201002/model/CreateEmailTemplateResponse.h
+  include/tencentcloud/ses/v20201002/model/CreateEmailAddressResponse.h
+  include/tencentcloud/ses/v20201002/model/UpdateEmailTemplateResponse.h
+  include/tencentcloud/ses/v20201002/model/DNSAttributes.h
+  include/tencentcloud/ses/v20201002/model/GetEmailTemplateResponse.h
+  include/tencentcloud/ses/v20201002/model/ListEmailIdentitiesRequest.h
+  )
+
+set(ses_src
+  src/v20201002/SesClient.cpp
+  src/v20201002/model/Simple.cpp
+  src/v20201002/model/ListEmailAddressRequest.cpp
+  src/v20201002/model/GetEmailIdentityResponse.cpp
+  src/v20201002/model/ListBlackEmailAddressRequest.cpp
+  src/v20201002/model/Template.cpp
+  src/v20201002/model/SendEmailRequest.cpp
+  src/v20201002/model/EmailSender.cpp
+  src/v20201002/model/DeleteEmailIdentityRequest.cpp
+  src/v20201002/model/UpdateEmailIdentityRequest.cpp
+  src/v20201002/model/GetEmailIdentityRequest.cpp
+  src/v20201002/model/DeleteEmailIdentityResponse.cpp
+  src/v20201002/model/GetStatisticsReportRequest.cpp
+  src/v20201002/model/DeleteEmailTemplateResponse.cpp
+  src/v20201002/model/Volume.cpp
+  src/v20201002/model/CreateEmailTemplateRequest.cpp
+  src/v20201002/model/UpdateEmailTemplateRequest.cpp
+  src/v20201002/model/UpdateEmailIdentityResponse.cpp
+  src/v20201002/model/DeleteEmailTemplateRequest.cpp
+  src/v20201002/model/DeleteBlackListResponse.cpp
+  src/v20201002/model/ListEmailTemplatesRequest.cpp
+  src/v20201002/model/DeleteBlackListRequest.cpp
+  src/v20201002/model/ListEmailTemplatesResponse.cpp
+  src/v20201002/model/SendEmailResponse.cpp
+  src/v20201002/model/ListBlackEmailAddressResponse.cpp
+  src/v20201002/model/TemplatesMetadata.cpp
+  src/v20201002/model/ListEmailIdentitiesResponse.cpp
+  src/v20201002/model/ListEmailAddressResponse.cpp
+  src/v20201002/model/TemplateContent.cpp
+  src/v20201002/model/GetStatisticsReportResponse.cpp
+  src/v20201002/model/DeleteEmailAddressRequest.cpp
+  src/v20201002/model/EmailIdentity.cpp
+  src/v20201002/model/BlackEmailAddress.cpp
+  src/v20201002/model/GetEmailTemplateRequest.cpp
+  src/v20201002/model/DeleteEmailAddressResponse.cpp
+  src/v20201002/model/CreateEmailIdentityResponse.cpp
+  src/v20201002/model/CreateEmailIdentityRequest.cpp
+  src/v20201002/model/CreateEmailAddressRequest.cpp
+  src/v20201002/model/CreateEmailTemplateResponse.cpp
+  src/v20201002/model/CreateEmailAddressResponse.cpp
+  src/v20201002/model/UpdateEmailTemplateResponse.cpp
+  src/v20201002/model/DNSAttributes.cpp
+  src/v20201002/model/GetEmailTemplateResponse.cpp
+  src/v20201002/model/ListEmailIdentitiesRequest.cpp
+  )
+
+set(ses_include
+    include/tencentcloud/ses
+  )
+
+add_library(ses ${LIB_TYPE}
+  ${ses_public_header}
+  ${ses_public_header_model}
+  ${ses_src})
+
+set_target_properties(ses
+  PROPERTIES
+  LINKER_LANGUAGE CXX
+  ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+  OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}ses
+  )
+
+target_include_directories(ses
+  PRIVATE include
+    ${CMAKE_SOURCE_DIR}/core/include
+  )
+target_link_libraries(ses
+  core)
+
+#install(FILES ${ses_public_header}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/ses/v20201002)
+#install(FILES ${ses_public_header_model}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/ses/v20201002/model)
+install(DIRECTORY ${ses_include}
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
+
+install(TARGETS ses
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  )

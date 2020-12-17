@@ -137,22 +137,22 @@ namespace TencentCloud
                     bool StrategyHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Detail 描述
+                     * 获取访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
+                     * @return SourceType 访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
                      */
-                    std::string GetDetail() const;
+                    uint64_t GetSourceType() const;
 
                     /**
-                     * 设置描述
-                     * @param Detail 描述
+                     * 设置访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
+                     * @param SourceType 访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
                      */
-                    void SetDetail(const std::string& _detail);
+                    void SetSourceType(const uint64_t& _sourceType);
 
                     /**
-                     * 判断参数 Detail 是否已赋值
-                     * @return Detail 是否已赋值
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
                      */
-                    bool DetailHasBeenSet() const;
+                    bool SourceTypeHasBeenSet() const;
 
                     /**
                      * 获取方向，0：出站，1：入站
@@ -173,32 +173,32 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取源类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿
-                     * @return SourceType 源类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿
+                     * 获取描述
+                     * @return Detail 描述
                      */
-                    uint64_t GetSourceType() const;
+                    std::string GetDetail() const;
 
                     /**
-                     * 设置源类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿
-                     * @param SourceType 源类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿
+                     * 设置描述
+                     * @param Detail 描述
                      */
-                    void SetSourceType(const uint64_t& _sourceType);
+                    void SetDetail(const std::string& _detail);
 
                     /**
-                     * 判断参数 SourceType 是否已赋值
-                     * @return SourceType 是否已赋值
+                     * 判断参数 Detail 是否已赋值
+                     * @return Detail 是否已赋值
                      */
-                    bool SourceTypeHasBeenSet() const;
+                    bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取目的类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿
-                     * @return TargetType 目的类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿
+                     * 获取访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
+                     * @return TargetType 访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
                      */
                     uint64_t GetTargetType() const;
 
                     /**
-                     * 设置目的类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿
-                     * @param TargetType 目的类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿
+                     * 设置访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
+                     * @param TargetType 访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
                      */
                     void SetTargetType(const uint64_t& _targetType);
 
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取log
-                     * @return LogId log
+                     * 获取日志id，从告警处创建必传，其它为空
+                     * @return LogId 日志id，从告警处创建必传，其它为空
                      */
                     std::string GetLogId() const;
 
                     /**
-                     * 设置log
-                     * @param LogId log
+                     * 设置日志id，从告警处创建必传，其它为空
+                     * @param LogId 日志id，从告警处创建必传，其它为空
                      */
                     void SetLogId(const std::string& _logId);
 
@@ -299,14 +299,14 @@ namespace TencentCloud
                     bool CountryHasBeenSet() const;
 
                     /**
-                     * 获取云厂商，支持多个，以逗号分隔， 1:腾讯云（仅海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云
-                     * @return CloudCode 云厂商，支持多个，以逗号分隔， 1:腾讯云（仅海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云
+                     * 获取云厂商，支持多个，以逗号分隔， 1:腾讯云（仅中国香港及海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云
+                     * @return CloudCode 云厂商，支持多个，以逗号分隔， 1:腾讯云（仅中国香港及海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云
                      */
                     std::string GetCloudCode() const;
 
                     /**
-                     * 设置云厂商，支持多个，以逗号分隔， 1:腾讯云（仅海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云
-                     * @param CloudCode 云厂商，支持多个，以逗号分隔， 1:腾讯云（仅海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云
+                     * 设置云厂商，支持多个，以逗号分隔， 1:腾讯云（仅中国香港及海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云
+                     * @param CloudCode 云厂商，支持多个，以逗号分隔， 1:腾讯云（仅中国香港及海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云
                      */
                     void SetCloudCode(const std::string& _cloudCode);
 
@@ -335,14 +335,14 @@ namespace TencentCloud
                     bool IsRegionHasBeenSet() const;
 
                     /**
-                     * 获取地域名
-                     * @return CityName 地域名
+                     * 获取城市名
+                     * @return CityName 城市名
                      */
                     std::string GetCityName() const;
 
                     /**
-                     * 设置地域名
-                     * @param CityName 地域名
+                     * 设置城市名
+                     * @param CityName 城市名
                      */
                     void SetCityName(const std::string& _cityName);
 
@@ -353,14 +353,14 @@ namespace TencentCloud
                     bool CityNameHasBeenSet() const;
 
                     /**
-                     * 获取地域名
-                     * @return CountryName 地域名
+                     * 获取国家名
+                     * @return CountryName 国家名
                      */
                     std::string GetCountryName() const;
 
                     /**
-                     * 设置地域名
-                     * @param CountryName 地域名
+                     * 设置国家名
+                     * @param CountryName 国家名
                      */
                     void SetCountryName(const std::string& _countryName);
 
@@ -403,10 +403,10 @@ namespace TencentCloud
                     bool m_strategyHasBeenSet;
 
                     /**
-                     * 描述
+                     * 访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
                      */
-                    std::string m_detail;
-                    bool m_detailHasBeenSet;
+                    uint64_t m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
 
                     /**
                      * 方向，0：出站，1：入站
@@ -415,13 +415,13 @@ namespace TencentCloud
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 源类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿
+                     * 描述
                      */
-                    uint64_t m_sourceType;
-                    bool m_sourceTypeHasBeenSet;
+                    std::string m_detail;
+                    bool m_detailHasBeenSet;
 
                     /**
-                     * 目的类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿
+                     * 访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版
                      */
                     uint64_t m_targetType;
                     bool m_targetTypeHasBeenSet;
@@ -439,7 +439,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * log
+                     * 日志id，从告警处创建必传，其它为空
                      */
                     std::string m_logId;
                     bool m_logIdHasBeenSet;
@@ -457,7 +457,7 @@ namespace TencentCloud
                     bool m_countryHasBeenSet;
 
                     /**
-                     * 云厂商，支持多个，以逗号分隔， 1:腾讯云（仅海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云
+                     * 云厂商，支持多个，以逗号分隔， 1:腾讯云（仅中国香港及海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云
                      */
                     std::string m_cloudCode;
                     bool m_cloudCodeHasBeenSet;
@@ -469,13 +469,13 @@ namespace TencentCloud
                     bool m_isRegionHasBeenSet;
 
                     /**
-                     * 地域名
+                     * 城市名
                      */
                     std::string m_cityName;
                     bool m_cityNameHasBeenSet;
 
                     /**
-                     * 地域名
+                     * 国家名
                      */
                     std::string m_countryName;
                     bool m_countryNameHasBeenSet;

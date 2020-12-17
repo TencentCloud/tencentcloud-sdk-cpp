@@ -122,6 +122,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ModifyVpcAttributeRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstancesDeniedActionsResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteHaVipResponse.h
+  include/tencentcloud/ecm/v20190719/model/ReleaseIpv6AddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/TaskOutput.h
   include/tencentcloud/ecm/v20190719/model/ModuleCounter.h
   include/tencentcloud/ecm/v20190719/model/ReplaceSecurityGroupPolicyResponse.h
@@ -146,6 +147,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/HealthCheck.h
   include/tencentcloud/ecm/v20190719/model/DescribeSecurityGroupLimitsResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeAddressesResponse.h
+  include/tencentcloud/ecm/v20190719/model/AssignIpv6AddressesResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateRoutesResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteListenerRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeSecurityGroupsResponse.h
@@ -169,6 +171,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceRequest.h
   include/tencentcloud/ecm/v20190719/model/AddressTemplateSpecification.h
   include/tencentcloud/ecm/v20190719/model/DescribeConfigResponse.h
+  include/tencentcloud/ecm/v20190719/model/AssignIpv6AddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNetworkResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyDefaultSubnetResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyTargetWeightRequest.h
@@ -180,6 +183,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/Subnet.h
   include/tencentcloud/ecm/v20190719/model/ModifyVpcAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteLoadBalancerRequest.h
+  include/tencentcloud/ecm/v20190719/model/ModifyIpv6AddressesAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteVpcResponse.h
   include/tencentcloud/ecm/v20190719/model/Target.h
   include/tencentcloud/ecm/v20190719/model/RouteTableAssociation.h
@@ -199,6 +203,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeLoadBalanceTaskStatusRequest.h
   include/tencentcloud/ecm/v20190719/model/ImportCustomImageRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyHaVipAttributeResponse.h
+  include/tencentcloud/ecm/v20190719/model/ModifyIpv6AddressesAttributeRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeModuleDetailRequest.h
   include/tencentcloud/ecm/v20190719/model/DeleteRoutesRequest.h
   include/tencentcloud/ecm/v20190719/model/AssociateAddressRequest.h
@@ -325,6 +330,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ListenerHealth.h
   include/tencentcloud/ecm/v20190719/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeRouteConflictsRequest.h
+  include/tencentcloud/ecm/v20190719/model/ReleaseIpv6AddressesResponse.h
   include/tencentcloud/ecm/v20190719/model/LoadBalancer.h
   include/tencentcloud/ecm/v20190719/model/AddressInfo.h
   )
@@ -434,6 +440,7 @@ set(ecm_src
   src/v20190719/model/ModifyVpcAttributeRequest.cpp
   src/v20190719/model/DescribeInstancesDeniedActionsResponse.cpp
   src/v20190719/model/DeleteHaVipResponse.cpp
+  src/v20190719/model/ReleaseIpv6AddressesRequest.cpp
   src/v20190719/model/TaskOutput.cpp
   src/v20190719/model/ModuleCounter.cpp
   src/v20190719/model/ReplaceSecurityGroupPolicyResponse.cpp
@@ -458,6 +465,7 @@ set(ecm_src
   src/v20190719/model/HealthCheck.cpp
   src/v20190719/model/DescribeSecurityGroupLimitsResponse.cpp
   src/v20190719/model/DescribeAddressesResponse.cpp
+  src/v20190719/model/AssignIpv6AddressesResponse.cpp
   src/v20190719/model/CreateRoutesResponse.cpp
   src/v20190719/model/DeleteListenerRequest.cpp
   src/v20190719/model/DescribeSecurityGroupsResponse.cpp
@@ -481,6 +489,7 @@ set(ecm_src
   src/v20190719/model/DetachNetworkInterfaceRequest.cpp
   src/v20190719/model/AddressTemplateSpecification.cpp
   src/v20190719/model/DescribeConfigResponse.cpp
+  src/v20190719/model/AssignIpv6AddressesRequest.cpp
   src/v20190719/model/ModifyModuleNetworkResponse.cpp
   src/v20190719/model/ModifyDefaultSubnetResponse.cpp
   src/v20190719/model/ModifyTargetWeightRequest.cpp
@@ -492,6 +501,7 @@ set(ecm_src
   src/v20190719/model/Subnet.cpp
   src/v20190719/model/ModifyVpcAttributeResponse.cpp
   src/v20190719/model/DeleteLoadBalancerRequest.cpp
+  src/v20190719/model/ModifyIpv6AddressesAttributeResponse.cpp
   src/v20190719/model/DeleteVpcResponse.cpp
   src/v20190719/model/Target.cpp
   src/v20190719/model/RouteTableAssociation.cpp
@@ -511,6 +521,7 @@ set(ecm_src
   src/v20190719/model/DescribeLoadBalanceTaskStatusRequest.cpp
   src/v20190719/model/ImportCustomImageRequest.cpp
   src/v20190719/model/ModifyHaVipAttributeResponse.cpp
+  src/v20190719/model/ModifyIpv6AddressesAttributeRequest.cpp
   src/v20190719/model/DescribeModuleDetailRequest.cpp
   src/v20190719/model/DeleteRoutesRequest.cpp
   src/v20190719/model/AssociateAddressRequest.cpp
@@ -637,6 +648,7 @@ set(ecm_src
   src/v20190719/model/ListenerHealth.cpp
   src/v20190719/model/DisassociateSecurityGroupsResponse.cpp
   src/v20190719/model/DescribeRouteConflictsRequest.cpp
+  src/v20190719/model/ReleaseIpv6AddressesResponse.cpp
   src/v20190719/model/LoadBalancer.cpp
   src/v20190719/model/AddressInfo.cpp
   )

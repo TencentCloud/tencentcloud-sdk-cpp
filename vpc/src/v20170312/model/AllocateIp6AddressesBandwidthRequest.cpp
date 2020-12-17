@@ -26,7 +26,8 @@ using namespace std;
 AllocateIp6AddressesBandwidthRequest::AllocateIp6AddressesBandwidthRequest() :
     m_ip6AddressesHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
-    m_internetChargeTypeHasBeenSet(false)
+    m_internetChargeTypeHasBeenSet(false),
+    m_bandwidthPackageIdHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string AllocateIp6AddressesBandwidthRequest::ToJsonString() const
         string key = "InternetChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_internetChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthPackageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BandwidthPackageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_bandwidthPackageId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -120,6 +129,22 @@ void AllocateIp6AddressesBandwidthRequest::SetInternetChargeType(const string& _
 bool AllocateIp6AddressesBandwidthRequest::InternetChargeTypeHasBeenSet() const
 {
     return m_internetChargeTypeHasBeenSet;
+}
+
+string AllocateIp6AddressesBandwidthRequest::GetBandwidthPackageId() const
+{
+    return m_bandwidthPackageId;
+}
+
+void AllocateIp6AddressesBandwidthRequest::SetBandwidthPackageId(const string& _bandwidthPackageId)
+{
+    m_bandwidthPackageId = _bandwidthPackageId;
+    m_bandwidthPackageIdHasBeenSet = true;
+}
+
+bool AllocateIp6AddressesBandwidthRequest::BandwidthPackageIdHasBeenSet() const
+{
+    return m_bandwidthPackageIdHasBeenSet;
 }
 
 

@@ -212,6 +212,49 @@ CccClient::DescribeIMCdrsOutcomeCallable CccClient::DescribeIMCdrsCallable(const
     return task->get_future();
 }
 
+CccClient::DescribePSTNActiveSessionListOutcome CccClient::DescribePSTNActiveSessionList(const DescribePSTNActiveSessionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePSTNActiveSessionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePSTNActiveSessionListResponse rsp = DescribePSTNActiveSessionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePSTNActiveSessionListOutcome(rsp);
+        else
+            return DescribePSTNActiveSessionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePSTNActiveSessionListOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribePSTNActiveSessionListAsync(const DescribePSTNActiveSessionListRequest& request, const DescribePSTNActiveSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePSTNActiveSessionList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribePSTNActiveSessionListOutcomeCallable CccClient::DescribePSTNActiveSessionListCallable(const DescribePSTNActiveSessionListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePSTNActiveSessionListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePSTNActiveSessionList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeTelCallInfoOutcome CccClient::DescribeTelCallInfo(const DescribeTelCallInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTelCallInfo");

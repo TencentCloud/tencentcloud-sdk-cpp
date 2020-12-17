@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ecm/v20190719/model/AllocateAddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AllocateAddressesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/AssignIpv6AddressesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/AssignIpv6AddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AssignPrivateIpAddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AssignPrivateIpAddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AssociateAddressRequest.h>
@@ -187,6 +189,8 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyImageAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyIpv6AddressesAttributeRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyIpv6AddressesAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyListenerRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyListenerResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyLoadBalancerAttributesRequest.h>
@@ -221,6 +225,8 @@
 #include <tencentcloud/ecm/v20190719/model/RebootInstancesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ReleaseAddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ReleaseAddressesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ReleaseIpv6AddressesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ReleaseIpv6AddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ReplaceRouteTableAssociationRequest.h>
@@ -262,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AllocateAddressesResponse> AllocateAddressesOutcome;
                 typedef std::future<AllocateAddressesOutcome> AllocateAddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AllocateAddressesRequest&, AllocateAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateAddressesAsyncHandler;
+                typedef Outcome<Error, Model::AssignIpv6AddressesResponse> AssignIpv6AddressesOutcome;
+                typedef std::future<AssignIpv6AddressesOutcome> AssignIpv6AddressesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::AssignIpv6AddressesRequest&, AssignIpv6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignIpv6AddressesAsyncHandler;
                 typedef Outcome<Error, Model::AssignPrivateIpAddressesResponse> AssignPrivateIpAddressesOutcome;
                 typedef std::future<AssignPrivateIpAddressesOutcome> AssignPrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AssignPrivateIpAddressesRequest&, AssignPrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignPrivateIpAddressesAsyncHandler;
@@ -505,6 +514,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
                 typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyIpv6AddressesAttributeResponse> ModifyIpv6AddressesAttributeOutcome;
+                typedef std::future<ModifyIpv6AddressesAttributeOutcome> ModifyIpv6AddressesAttributeOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyIpv6AddressesAttributeRequest&, ModifyIpv6AddressesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpv6AddressesAttributeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyListenerResponse> ModifyListenerOutcome;
                 typedef std::future<ModifyListenerOutcome> ModifyListenerOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyListenerRequest&, ModifyListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyListenerAsyncHandler;
@@ -556,6 +568,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ReleaseAddressesResponse> ReleaseAddressesOutcome;
                 typedef std::future<ReleaseAddressesOutcome> ReleaseAddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ReleaseAddressesRequest&, ReleaseAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseAddressesAsyncHandler;
+                typedef Outcome<Error, Model::ReleaseIpv6AddressesResponse> ReleaseIpv6AddressesOutcome;
+                typedef std::future<ReleaseIpv6AddressesOutcome> ReleaseIpv6AddressesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ReleaseIpv6AddressesRequest&, ReleaseIpv6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseIpv6AddressesAsyncHandler;
                 typedef Outcome<Error, Model::RemovePrivateIpAddressesResponse> RemovePrivateIpAddressesOutcome;
                 typedef std::future<RemovePrivateIpAddressesOutcome> RemovePrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::RemovePrivateIpAddressesRequest&, RemovePrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemovePrivateIpAddressesAsyncHandler;
@@ -603,6 +618,15 @@ namespace TencentCloud
                 AllocateAddressesOutcome AllocateAddresses(const Model::AllocateAddressesRequest &request);
                 void AllocateAddressesAsync(const Model::AllocateAddressesRequest& request, const AllocateAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AllocateAddressesOutcomeCallable AllocateAddressesCallable(const Model::AllocateAddressesRequest& request);
+
+                /**
+                 *本接口（AssignIpv6Addresses）用于弹性网卡申请IPv6地址。
+                 * @param req AssignIpv6AddressesRequest
+                 * @return AssignIpv6AddressesOutcome
+                 */
+                AssignIpv6AddressesOutcome AssignIpv6Addresses(const Model::AssignIpv6AddressesRequest &request);
+                void AssignIpv6AddressesAsync(const Model::AssignIpv6AddressesRequest& request, const AssignIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssignIpv6AddressesOutcomeCallable AssignIpv6AddressesCallable(const Model::AssignIpv6AddressesRequest& request);
 
                 /**
                  *弹性网卡申请内网 IP
@@ -1359,6 +1383,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyInstancesAttributeOutcomeCallable ModifyInstancesAttributeCallable(const Model::ModifyInstancesAttributeRequest& request);
 
                 /**
+                 *本接口（ModifyIpv6AddressesAttribute）用于修改弹性网卡IPv6地址属性。
+                 * @param req ModifyIpv6AddressesAttributeRequest
+                 * @return ModifyIpv6AddressesAttributeOutcome
+                 */
+                ModifyIpv6AddressesAttributeOutcome ModifyIpv6AddressesAttribute(const Model::ModifyIpv6AddressesAttributeRequest &request);
+                void ModifyIpv6AddressesAttributeAsync(const Model::ModifyIpv6AddressesAttributeRequest& request, const ModifyIpv6AddressesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIpv6AddressesAttributeOutcomeCallable ModifyIpv6AddressesAttributeCallable(const Model::ModifyIpv6AddressesAttributeRequest& request);
+
+                /**
                  *修改负载均衡监听器属性。
                  * @param req ModifyListenerRequest
                  * @return ModifyListenerOutcome
@@ -1512,6 +1545,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ReleaseAddressesOutcome ReleaseAddresses(const Model::ReleaseAddressesRequest &request);
                 void ReleaseAddressesAsync(const Model::ReleaseAddressesRequest& request, const ReleaseAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReleaseAddressesOutcomeCallable ReleaseAddressesCallable(const Model::ReleaseAddressesRequest& request);
+
+                /**
+                 *本接口（UnassignIpv6Addresses）用于释放弹性网卡IPv6地址。
+                 * @param req ReleaseIpv6AddressesRequest
+                 * @return ReleaseIpv6AddressesOutcome
+                 */
+                ReleaseIpv6AddressesOutcome ReleaseIpv6Addresses(const Model::ReleaseIpv6AddressesRequest &request);
+                void ReleaseIpv6AddressesAsync(const Model::ReleaseIpv6AddressesRequest& request, const ReleaseIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleaseIpv6AddressesOutcomeCallable ReleaseIpv6AddressesCallable(const Model::ReleaseIpv6AddressesRequest& request);
 
                 /**
                  *弹性网卡退还内网 IP。

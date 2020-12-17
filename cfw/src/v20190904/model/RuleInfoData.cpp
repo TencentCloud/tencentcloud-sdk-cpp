@@ -27,9 +27,9 @@ RuleInfoData::RuleInfoData() :
     m_targetIpHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_strategyHasBeenSet(false),
-    m_detailHasBeenSet(false),
-    m_directionHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
+    m_directionHasBeenSet(false),
+    m_detailHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
     m_portHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -98,14 +98,14 @@ CoreInternalOutcome RuleInfoData::Deserialize(const Value &value)
         m_strategyHasBeenSet = true;
     }
 
-    if (value.HasMember("Detail") && !value["Detail"].IsNull())
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
     {
-        if (!value["Detail"].IsString())
+        if (!value["SourceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.Detail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RuleInfoData.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_detail = string(value["Detail"].GetString());
-        m_detailHasBeenSet = true;
+        m_sourceType = value["SourceType"].GetUint64();
+        m_sourceTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Direction") && !value["Direction"].IsNull())
@@ -118,14 +118,14 @@ CoreInternalOutcome RuleInfoData::Deserialize(const Value &value)
         m_directionHasBeenSet = true;
     }
 
-    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    if (value.HasMember("Detail") && !value["Detail"].IsNull())
     {
-        if (!value["SourceType"].IsUint64())
+        if (!value["Detail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RuleInfoData.Detail` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_sourceType = value["SourceType"].GetUint64();
-        m_sourceTypeHasBeenSet = true;
+        m_detail = string(value["Detail"].GetString());
+        m_detailHasBeenSet = true;
     }
 
     if (value.HasMember("TargetType") && !value["TargetType"].IsNull())
@@ -275,12 +275,12 @@ void RuleInfoData::ToJsonObject(Value &value, Document::AllocatorType& allocator
         value.AddMember(iKey, Value(m_strategy.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_detailHasBeenSet)
+    if (m_sourceTypeHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Detail";
+        string key = "SourceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_detail.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_sourceType, allocator);
     }
 
     if (m_directionHasBeenSet)
@@ -291,12 +291,12 @@ void RuleInfoData::ToJsonObject(Value &value, Document::AllocatorType& allocator
         value.AddMember(iKey, m_direction, allocator);
     }
 
-    if (m_sourceTypeHasBeenSet)
+    if (m_detailHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "SourceType";
+        string key = "Detail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_sourceType, allocator);
+        value.AddMember(iKey, Value(m_detail.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetTypeHasBeenSet)
@@ -462,20 +462,20 @@ bool RuleInfoData::StrategyHasBeenSet() const
     return m_strategyHasBeenSet;
 }
 
-string RuleInfoData::GetDetail() const
+uint64_t RuleInfoData::GetSourceType() const
 {
-    return m_detail;
+    return m_sourceType;
 }
 
-void RuleInfoData::SetDetail(const string& _detail)
+void RuleInfoData::SetSourceType(const uint64_t& _sourceType)
 {
-    m_detail = _detail;
-    m_detailHasBeenSet = true;
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
 }
 
-bool RuleInfoData::DetailHasBeenSet() const
+bool RuleInfoData::SourceTypeHasBeenSet() const
 {
-    return m_detailHasBeenSet;
+    return m_sourceTypeHasBeenSet;
 }
 
 uint64_t RuleInfoData::GetDirection() const
@@ -494,20 +494,20 @@ bool RuleInfoData::DirectionHasBeenSet() const
     return m_directionHasBeenSet;
 }
 
-uint64_t RuleInfoData::GetSourceType() const
+string RuleInfoData::GetDetail() const
 {
-    return m_sourceType;
+    return m_detail;
 }
 
-void RuleInfoData::SetSourceType(const uint64_t& _sourceType)
+void RuleInfoData::SetDetail(const string& _detail)
 {
-    m_sourceType = _sourceType;
-    m_sourceTypeHasBeenSet = true;
+    m_detail = _detail;
+    m_detailHasBeenSet = true;
 }
 
-bool RuleInfoData::SourceTypeHasBeenSet() const
+bool RuleInfoData::DetailHasBeenSet() const
 {
-    return m_sourceTypeHasBeenSet;
+    return m_detailHasBeenSet;
 }
 
 uint64_t RuleInfoData::GetTargetType() const

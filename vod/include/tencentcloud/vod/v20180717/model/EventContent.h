@@ -29,13 +29,14 @@
 #include <tencentcloud/vod/v20180717/model/FileDeleteTask.h>
 #include <tencentcloud/vod/v20180717/model/PullUploadTask.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaTask.h>
-#include <tencentcloud/vod/v20180717/model/WechatPublishTask.h>
-#include <tencentcloud/vod/v20180717/model/TranscodeTask2017.h>
-#include <tencentcloud/vod/v20180717/model/ConcatTask2017.h>
-#include <tencentcloud/vod/v20180717/model/ClipTask2017.h>
-#include <tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h>
-#include <tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTask2017.h>
+#include <tencentcloud/vod/v20180717/model/SplitMediaTask.h>
 #include <tencentcloud/vod/v20180717/model/ComposeMediaTask.h>
+#include <tencentcloud/vod/v20180717/model/ClipTask2017.h>
+#include <tencentcloud/vod/v20180717/model/TranscodeTask2017.h>
+#include <tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h>
+#include <tencentcloud/vod/v20180717/model/ConcatTask2017.h>
+#include <tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTask2017.h>
+#include <tencentcloud/vod/v20180717/model/WechatPublishTask.h>
 #include <tencentcloud/vod/v20180717/model/WechatMiniProgramPublishTask.h>
 
 
@@ -84,6 +85,7 @@ namespace TencentCloud
 <li>FileDeleted：视频删除完成；</li>
 <li>PullComplete：视频转拉完成；</li>
 <li>EditMediaComplete：视频编辑完成；</li>
+<li>SplitMediaComplete：视频拆分完成；</li>
 <li>WechatPublishComplete：微信发布完成；</li>
 <li>ComposeMediaComplete：制作媒体文件完成；</li>
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
@@ -99,6 +101,7 @@ namespace TencentCloud
 <li>FileDeleted：视频删除完成；</li>
 <li>PullComplete：视频转拉完成；</li>
 <li>EditMediaComplete：视频编辑完成；</li>
+<li>SplitMediaComplete：视频拆分完成；</li>
 <li>WechatPublishComplete：微信发布完成；</li>
 <li>ComposeMediaComplete：制作媒体文件完成；</li>
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
@@ -118,6 +121,7 @@ namespace TencentCloud
 <li>FileDeleted：视频删除完成；</li>
 <li>PullComplete：视频转拉完成；</li>
 <li>EditMediaComplete：视频编辑完成；</li>
+<li>SplitMediaComplete：视频拆分完成；</li>
 <li>WechatPublishComplete：微信发布完成；</li>
 <li>ComposeMediaComplete：制作媒体文件完成；</li>
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
@@ -133,6 +137,7 @@ namespace TencentCloud
 <li>FileDeleted：视频删除完成；</li>
 <li>PullComplete：视频转拉完成；</li>
 <li>EditMediaComplete：视频编辑完成；</li>
+<li>SplitMediaComplete：视频拆分完成；</li>
 <li>WechatPublishComplete：微信发布完成；</li>
 <li>ComposeMediaComplete：制作媒体文件完成；</li>
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
@@ -262,70 +267,48 @@ namespace TencentCloud
                     bool EditMediaCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
+                     * 获取视频拆条完成事件，当事件类型为 SplitMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WechatPublishCompleteEvent 微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
+                     * @return SplitMediaCompleteEvent 视频拆条完成事件，当事件类型为 SplitMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    WechatPublishTask GetWechatPublishCompleteEvent() const;
+                    SplitMediaTask GetSplitMediaCompleteEvent() const;
 
                     /**
-                     * 设置微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
+                     * 设置视频拆条完成事件，当事件类型为 SplitMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WechatPublishCompleteEvent 微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
+                     * @param SplitMediaCompleteEvent 视频拆条完成事件，当事件类型为 SplitMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetWechatPublishCompleteEvent(const WechatPublishTask& _wechatPublishCompleteEvent);
+                    void SetSplitMediaCompleteEvent(const SplitMediaTask& _splitMediaCompleteEvent);
 
                     /**
-                     * 判断参数 WechatPublishCompleteEvent 是否已赋值
-                     * @return WechatPublishCompleteEvent 是否已赋值
+                     * 判断参数 SplitMediaCompleteEvent 是否已赋值
+                     * @return SplitMediaCompleteEvent 是否已赋值
                      */
-                    bool WechatPublishCompleteEventHasBeenSet() const;
+                    bool SplitMediaCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+                     * 获取制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TranscodeCompleteEvent 视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+                     * @return ComposeMediaCompleteEvent 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    TranscodeTask2017 GetTranscodeCompleteEvent() const;
+                    ComposeMediaTask GetComposeMediaCompleteEvent() const;
 
                     /**
-                     * 设置视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+                     * 设置制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranscodeCompleteEvent 视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+                     * @param ComposeMediaCompleteEvent 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetTranscodeCompleteEvent(const TranscodeTask2017& _transcodeCompleteEvent);
+                    void SetComposeMediaCompleteEvent(const ComposeMediaTask& _composeMediaCompleteEvent);
 
                     /**
-                     * 判断参数 TranscodeCompleteEvent 是否已赋值
-                     * @return TranscodeCompleteEvent 是否已赋值
+                     * 判断参数 ComposeMediaCompleteEvent 是否已赋值
+                     * @return ComposeMediaCompleteEvent 是否已赋值
                      */
-                    bool TranscodeCompleteEventHasBeenSet() const;
-
-                    /**
-                     * 获取视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConcatCompleteEvent 视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    ConcatTask2017 GetConcatCompleteEvent() const;
-
-                    /**
-                     * 设置视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConcatCompleteEvent 视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetConcatCompleteEvent(const ConcatTask2017& _concatCompleteEvent);
-
-                    /**
-                     * 判断参数 ConcatCompleteEvent 是否已赋值
-                     * @return ConcatCompleteEvent 是否已赋值
-                     */
-                    bool ConcatCompleteEventHasBeenSet() const;
+                    bool ComposeMediaCompleteEventHasBeenSet() const;
 
                     /**
                      * 获取视频剪辑完成事件，当事件类型为 ClipComplete 时有效。
@@ -350,6 +333,28 @@ namespace TencentCloud
                     bool ClipCompleteEventHasBeenSet() const;
 
                     /**
+                     * 获取视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TranscodeCompleteEvent 视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TranscodeTask2017 GetTranscodeCompleteEvent() const;
+
+                    /**
+                     * 设置视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TranscodeCompleteEvent 视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTranscodeCompleteEvent(const TranscodeTask2017& _transcodeCompleteEvent);
+
+                    /**
+                     * 判断参数 TranscodeCompleteEvent 是否已赋值
+                     * @return TranscodeCompleteEvent 是否已赋值
+                     */
+                    bool TranscodeCompleteEventHasBeenSet() const;
+
+                    /**
                      * 获取视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateImageSpriteCompleteEvent 视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。
@@ -370,6 +375,28 @@ namespace TencentCloud
                      * @return CreateImageSpriteCompleteEvent 是否已赋值
                      */
                     bool CreateImageSpriteCompleteEventHasBeenSet() const;
+
+                    /**
+                     * 获取视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConcatCompleteEvent 视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ConcatTask2017 GetConcatCompleteEvent() const;
+
+                    /**
+                     * 设置视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConcatCompleteEvent 视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConcatCompleteEvent(const ConcatTask2017& _concatCompleteEvent);
+
+                    /**
+                     * 判断参数 ConcatCompleteEvent 是否已赋值
+                     * @return ConcatCompleteEvent 是否已赋值
+                     */
+                    bool ConcatCompleteEventHasBeenSet() const;
 
                     /**
                      * 获取视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。
@@ -394,26 +421,26 @@ namespace TencentCloud
                     bool SnapshotByTimeOffsetCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+                     * 获取微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComposeMediaCompleteEvent 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+                     * @return WechatPublishCompleteEvent 微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ComposeMediaTask GetComposeMediaCompleteEvent() const;
+                    WechatPublishTask GetWechatPublishCompleteEvent() const;
 
                     /**
-                     * 设置制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+                     * 设置微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ComposeMediaCompleteEvent 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+                     * @param WechatPublishCompleteEvent 微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetComposeMediaCompleteEvent(const ComposeMediaTask& _composeMediaCompleteEvent);
+                    void SetWechatPublishCompleteEvent(const WechatPublishTask& _wechatPublishCompleteEvent);
 
                     /**
-                     * 判断参数 ComposeMediaCompleteEvent 是否已赋值
-                     * @return ComposeMediaCompleteEvent 是否已赋值
+                     * 判断参数 WechatPublishCompleteEvent 是否已赋值
+                     * @return WechatPublishCompleteEvent 是否已赋值
                      */
-                    bool ComposeMediaCompleteEventHasBeenSet() const;
+                    bool WechatPublishCompleteEventHasBeenSet() const;
 
                     /**
                      * 获取微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
@@ -452,6 +479,7 @@ namespace TencentCloud
 <li>FileDeleted：视频删除完成；</li>
 <li>PullComplete：视频转拉完成；</li>
 <li>EditMediaComplete：视频编辑完成；</li>
+<li>SplitMediaComplete：视频拆分完成；</li>
 <li>WechatPublishComplete：微信发布完成；</li>
 <li>ComposeMediaComplete：制作媒体文件完成；</li>
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
@@ -501,25 +529,18 @@ namespace TencentCloud
                     bool m_editMediaCompleteEventHasBeenSet;
 
                     /**
-                     * 微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
+                     * 视频拆条完成事件，当事件类型为 SplitMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    WechatPublishTask m_wechatPublishCompleteEvent;
-                    bool m_wechatPublishCompleteEventHasBeenSet;
+                    SplitMediaTask m_splitMediaCompleteEvent;
+                    bool m_splitMediaCompleteEventHasBeenSet;
 
                     /**
-                     * 视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+                     * 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    TranscodeTask2017 m_transcodeCompleteEvent;
-                    bool m_transcodeCompleteEventHasBeenSet;
-
-                    /**
-                     * 视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    ConcatTask2017 m_concatCompleteEvent;
-                    bool m_concatCompleteEventHasBeenSet;
+                    ComposeMediaTask m_composeMediaCompleteEvent;
+                    bool m_composeMediaCompleteEventHasBeenSet;
 
                     /**
                      * 视频剪辑完成事件，当事件类型为 ClipComplete 时有效。
@@ -529,11 +550,25 @@ namespace TencentCloud
                     bool m_clipCompleteEventHasBeenSet;
 
                     /**
+                     * 视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TranscodeTask2017 m_transcodeCompleteEvent;
+                    bool m_transcodeCompleteEventHasBeenSet;
+
+                    /**
                      * 视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreateImageSpriteTask2017 m_createImageSpriteCompleteEvent;
                     bool m_createImageSpriteCompleteEventHasBeenSet;
+
+                    /**
+                     * 视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ConcatTask2017 m_concatCompleteEvent;
+                    bool m_concatCompleteEventHasBeenSet;
 
                     /**
                      * 视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。
@@ -543,11 +578,11 @@ namespace TencentCloud
                     bool m_snapshotByTimeOffsetCompleteEventHasBeenSet;
 
                     /**
-                     * 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+                     * 微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ComposeMediaTask m_composeMediaCompleteEvent;
-                    bool m_composeMediaCompleteEventHasBeenSet;
+                    WechatPublishTask m_wechatPublishCompleteEvent;
+                    bool m_wechatPublishCompleteEventHasBeenSet;
 
                     /**
                      * 微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。

@@ -34,13 +34,14 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_editMediaTaskHasBeenSet(false),
     m_wechatPublishTaskHasBeenSet(false),
     m_composeMediaTaskHasBeenSet(false),
+    m_splitMediaTaskHasBeenSet(false),
+    m_wechatMiniProgramPublishTaskHasBeenSet(false),
     m_pullUploadTaskHasBeenSet(false),
     m_transcodeTaskHasBeenSet(false),
-    m_snapshotByTimeOffsetTaskHasBeenSet(false),
     m_concatTaskHasBeenSet(false),
     m_clipTaskHasBeenSet(false),
     m_createImageSpriteTaskHasBeenSet(false),
-    m_wechatMiniProgramPublishTaskHasBeenSet(false)
+    m_snapshotByTimeOffsetTaskHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,40 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_composeMediaTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SplitMediaTask") && !rsp["SplitMediaTask"].IsNull())
+    {
+        if (!rsp["SplitMediaTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `SplitMediaTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_splitMediaTask.Deserialize(rsp["SplitMediaTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_splitMediaTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WechatMiniProgramPublishTask") && !rsp["WechatMiniProgramPublishTask"].IsNull())
+    {
+        if (!rsp["WechatMiniProgramPublishTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_wechatMiniProgramPublishTask.Deserialize(rsp["WechatMiniProgramPublishTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_wechatMiniProgramPublishTaskHasBeenSet = true;
+    }
+
     if (rsp.HasMember("PullUploadTask") && !rsp["PullUploadTask"].IsNull())
     {
         if (!rsp["PullUploadTask"].IsObject())
@@ -228,23 +263,6 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         }
 
         m_transcodeTaskHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("SnapshotByTimeOffsetTask") && !rsp["SnapshotByTimeOffsetTask"].IsNull())
-    {
-        if (!rsp["SnapshotByTimeOffsetTask"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTask` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_snapshotByTimeOffsetTask.Deserialize(rsp["SnapshotByTimeOffsetTask"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_snapshotByTimeOffsetTaskHasBeenSet = true;
     }
 
     if (rsp.HasMember("ConcatTask") && !rsp["ConcatTask"].IsNull())
@@ -298,21 +316,21 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_createImageSpriteTaskHasBeenSet = true;
     }
 
-    if (rsp.HasMember("WechatMiniProgramPublishTask") && !rsp["WechatMiniProgramPublishTask"].IsNull())
+    if (rsp.HasMember("SnapshotByTimeOffsetTask") && !rsp["SnapshotByTimeOffsetTask"].IsNull())
     {
-        if (!rsp["WechatMiniProgramPublishTask"].IsObject())
+        if (!rsp["SnapshotByTimeOffsetTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTask` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_wechatMiniProgramPublishTask.Deserialize(rsp["WechatMiniProgramPublishTask"]);
+        CoreInternalOutcome outcome = m_snapshotByTimeOffsetTask.Deserialize(rsp["SnapshotByTimeOffsetTask"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_wechatMiniProgramPublishTaskHasBeenSet = true;
+        m_snapshotByTimeOffsetTaskHasBeenSet = true;
     }
 
 
@@ -410,6 +428,26 @@ bool DescribeTaskDetailResponse::ComposeMediaTaskHasBeenSet() const
     return m_composeMediaTaskHasBeenSet;
 }
 
+SplitMediaTask DescribeTaskDetailResponse::GetSplitMediaTask() const
+{
+    return m_splitMediaTask;
+}
+
+bool DescribeTaskDetailResponse::SplitMediaTaskHasBeenSet() const
+{
+    return m_splitMediaTaskHasBeenSet;
+}
+
+WechatMiniProgramPublishTask DescribeTaskDetailResponse::GetWechatMiniProgramPublishTask() const
+{
+    return m_wechatMiniProgramPublishTask;
+}
+
+bool DescribeTaskDetailResponse::WechatMiniProgramPublishTaskHasBeenSet() const
+{
+    return m_wechatMiniProgramPublishTaskHasBeenSet;
+}
+
 PullUploadTask DescribeTaskDetailResponse::GetPullUploadTask() const
 {
     return m_pullUploadTask;
@@ -428,16 +466,6 @@ TranscodeTask2017 DescribeTaskDetailResponse::GetTranscodeTask() const
 bool DescribeTaskDetailResponse::TranscodeTaskHasBeenSet() const
 {
     return m_transcodeTaskHasBeenSet;
-}
-
-SnapshotByTimeOffsetTask2017 DescribeTaskDetailResponse::GetSnapshotByTimeOffsetTask() const
-{
-    return m_snapshotByTimeOffsetTask;
-}
-
-bool DescribeTaskDetailResponse::SnapshotByTimeOffsetTaskHasBeenSet() const
-{
-    return m_snapshotByTimeOffsetTaskHasBeenSet;
 }
 
 ConcatTask2017 DescribeTaskDetailResponse::GetConcatTask() const
@@ -470,14 +498,14 @@ bool DescribeTaskDetailResponse::CreateImageSpriteTaskHasBeenSet() const
     return m_createImageSpriteTaskHasBeenSet;
 }
 
-WechatMiniProgramPublishTask DescribeTaskDetailResponse::GetWechatMiniProgramPublishTask() const
+SnapshotByTimeOffsetTask2017 DescribeTaskDetailResponse::GetSnapshotByTimeOffsetTask() const
 {
-    return m_wechatMiniProgramPublishTask;
+    return m_snapshotByTimeOffsetTask;
 }
 
-bool DescribeTaskDetailResponse::WechatMiniProgramPublishTaskHasBeenSet() const
+bool DescribeTaskDetailResponse::SnapshotByTimeOffsetTaskHasBeenSet() const
 {
-    return m_wechatMiniProgramPublishTaskHasBeenSet;
+    return m_snapshotByTimeOffsetTaskHasBeenSet;
 }
 
 

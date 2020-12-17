@@ -4254,6 +4254,49 @@ VodClient::SimpleHlsClipOutcomeCallable VodClient::SimpleHlsClipCallable(const S
     return task->get_future();
 }
 
+VodClient::SplitMediaOutcome VodClient::SplitMedia(const SplitMediaRequest &request)
+{
+    auto outcome = MakeRequest(request, "SplitMedia");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SplitMediaResponse rsp = SplitMediaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SplitMediaOutcome(rsp);
+        else
+            return SplitMediaOutcome(o.GetError());
+    }
+    else
+    {
+        return SplitMediaOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::SplitMediaAsync(const SplitMediaRequest& request, const SplitMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SplitMedia(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::SplitMediaOutcomeCallable VodClient::SplitMediaCallable(const SplitMediaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SplitMediaOutcome()>>(
+        [this, request]()
+        {
+            return this->SplitMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::WeChatMiniProgramPublishOutcome VodClient::WeChatMiniProgramPublish(const WeChatMiniProgramPublishRequest &request)
 {
     auto outcome = MakeRequest(request, "WeChatMiniProgramPublish");

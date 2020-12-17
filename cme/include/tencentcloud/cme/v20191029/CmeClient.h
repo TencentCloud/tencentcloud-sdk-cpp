@@ -53,6 +53,8 @@
 #include <tencentcloud/cme/v20191029/model/DescribeLoginStatusResponse.h>
 #include <tencentcloud/cme/v20191029/model/DescribeMaterialsRequest.h>
 #include <tencentcloud/cme/v20191029/model/DescribeMaterialsResponse.h>
+#include <tencentcloud/cme/v20191029/model/DescribePlatformsRequest.h>
+#include <tencentcloud/cme/v20191029/model/DescribePlatformsResponse.h>
 #include <tencentcloud/cme/v20191029/model/DescribeProjectsRequest.h>
 #include <tencentcloud/cme/v20191029/model/DescribeProjectsResponse.h>
 #include <tencentcloud/cme/v20191029/model/DescribeResourceAuthorizationRequest.h>
@@ -158,6 +160,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeMaterialsResponse> DescribeMaterialsOutcome;
                 typedef std::future<DescribeMaterialsOutcome> DescribeMaterialsOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::DescribeMaterialsRequest&, DescribeMaterialsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaterialsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePlatformsResponse> DescribePlatformsOutcome;
+                typedef std::future<DescribePlatformsOutcome> DescribePlatformsOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::DescribePlatformsRequest&, DescribePlatformsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeProjectsResponse> DescribeProjectsOutcome;
                 typedef std::future<DescribeProjectsOutcome> DescribeProjectsOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::DescribeProjectsRequest&, DescribeProjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectsAsyncHandler;
@@ -371,6 +376,18 @@ namespace TencentCloud
                 DescribeMaterialsOutcome DescribeMaterials(const Model::DescribeMaterialsRequest &request);
                 void DescribeMaterialsAsync(const Model::DescribeMaterialsRequest& request, const DescribeMaterialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMaterialsOutcomeCallable DescribeMaterialsCallable(const Model::DescribeMaterialsRequest& request);
+
+                /**
+                 *<li>支持获取所创建的所有平台列表信息；</li>
+<li>支持获取指定的平台列表信息。</li>
+
+
+                 * @param req DescribePlatformsRequest
+                 * @return DescribePlatformsOutcome
+                 */
+                DescribePlatformsOutcome DescribePlatforms(const Model::DescribePlatformsRequest &request);
+                void DescribePlatformsAsync(const Model::DescribePlatformsRequest& request, const DescribePlatformsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlatformsOutcomeCallable DescribePlatformsCallable(const Model::DescribePlatformsRequest& request);
 
                 /**
                  *支持根据多种条件过滤出项目列表。

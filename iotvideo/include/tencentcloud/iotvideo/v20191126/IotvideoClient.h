@@ -457,7 +457,7 @@ namespace TencentCloud
                 CreateProductOutcomeCallable CreateProductCallable(const Model::CreateProductRequest& request);
 
                 /**
-                 *本接口（CreateStorage）用于购买云存套餐。
+                 *该接口已经停止维护，请勿使用
                  * @param req CreateStorageRequest
                  * @return CreateStorageOutcome
                  */

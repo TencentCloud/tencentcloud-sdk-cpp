@@ -384,6 +384,49 @@ TcbClient::CreateStaticStoreOutcomeCallable TcbClient::CreateStaticStoreCallable
     return task->get_future();
 }
 
+TcbClient::DeleteCloudBaseProjectLatestVersionOutcome TcbClient::DeleteCloudBaseProjectLatestVersion(const DeleteCloudBaseProjectLatestVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudBaseProjectLatestVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudBaseProjectLatestVersionResponse rsp = DeleteCloudBaseProjectLatestVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudBaseProjectLatestVersionOutcome(rsp);
+        else
+            return DeleteCloudBaseProjectLatestVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudBaseProjectLatestVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteCloudBaseProjectLatestVersionAsync(const DeleteCloudBaseProjectLatestVersionRequest& request, const DeleteCloudBaseProjectLatestVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudBaseProjectLatestVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DeleteCloudBaseProjectLatestVersionOutcomeCallable TcbClient::DeleteCloudBaseProjectLatestVersionCallable(const DeleteCloudBaseProjectLatestVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudBaseProjectLatestVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudBaseProjectLatestVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DeleteEndUserOutcome TcbClient::DeleteEndUser(const DeleteEndUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteEndUser");

@@ -26,7 +26,8 @@ using namespace std;
 RenewDomainBatchRequest::RenewDomainBatchRequest() :
     m_periodHasBeenSet(false),
     m_domainsHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string RenewDomainBatchRequest::ToJsonString() const
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
 
@@ -120,6 +129,22 @@ void RenewDomainBatchRequest::SetPayMode(const int64_t& _payMode)
 bool RenewDomainBatchRequest::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+int64_t RenewDomainBatchRequest::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void RenewDomainBatchRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool RenewDomainBatchRequest::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 
 

@@ -685,6 +685,49 @@ CmeClient::DescribeMaterialsOutcomeCallable CmeClient::DescribeMaterialsCallable
     return task->get_future();
 }
 
+CmeClient::DescribePlatformsOutcome CmeClient::DescribePlatforms(const DescribePlatformsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlatforms");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlatformsResponse rsp = DescribePlatformsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlatformsOutcome(rsp);
+        else
+            return DescribePlatformsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlatformsOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::DescribePlatformsAsync(const DescribePlatformsRequest& request, const DescribePlatformsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePlatforms(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::DescribePlatformsOutcomeCallable CmeClient::DescribePlatformsCallable(const DescribePlatformsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePlatformsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePlatforms(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmeClient::DescribeProjectsOutcome CmeClient::DescribeProjects(const DescribeProjectsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProjects");

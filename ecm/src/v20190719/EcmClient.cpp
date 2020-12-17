@@ -83,6 +83,49 @@ EcmClient::AllocateAddressesOutcomeCallable EcmClient::AllocateAddressesCallable
     return task->get_future();
 }
 
+EcmClient::AssignIpv6AddressesOutcome EcmClient::AssignIpv6Addresses(const AssignIpv6AddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssignIpv6Addresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssignIpv6AddressesResponse rsp = AssignIpv6AddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssignIpv6AddressesOutcome(rsp);
+        else
+            return AssignIpv6AddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return AssignIpv6AddressesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AssignIpv6AddressesAsync(const AssignIpv6AddressesRequest& request, const AssignIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssignIpv6Addresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AssignIpv6AddressesOutcomeCallable EcmClient::AssignIpv6AddressesCallable(const AssignIpv6AddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssignIpv6AddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->AssignIpv6Addresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::AssignPrivateIpAddressesOutcome EcmClient::AssignPrivateIpAddresses(const AssignPrivateIpAddressesRequest &request)
 {
     auto outcome = MakeRequest(request, "AssignPrivateIpAddresses");
@@ -3566,6 +3609,49 @@ EcmClient::ModifyInstancesAttributeOutcomeCallable EcmClient::ModifyInstancesAtt
     return task->get_future();
 }
 
+EcmClient::ModifyIpv6AddressesAttributeOutcome EcmClient::ModifyIpv6AddressesAttribute(const ModifyIpv6AddressesAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIpv6AddressesAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIpv6AddressesAttributeResponse rsp = ModifyIpv6AddressesAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIpv6AddressesAttributeOutcome(rsp);
+        else
+            return ModifyIpv6AddressesAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIpv6AddressesAttributeOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyIpv6AddressesAttributeAsync(const ModifyIpv6AddressesAttributeRequest& request, const ModifyIpv6AddressesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyIpv6AddressesAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyIpv6AddressesAttributeOutcomeCallable EcmClient::ModifyIpv6AddressesAttributeCallable(const ModifyIpv6AddressesAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyIpv6AddressesAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyIpv6AddressesAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ModifyListenerOutcome EcmClient::ModifyListener(const ModifyListenerRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyListener");
@@ -4290,6 +4376,49 @@ EcmClient::ReleaseAddressesOutcomeCallable EcmClient::ReleaseAddressesCallable(c
         [this, request]()
         {
             return this->ReleaseAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ReleaseIpv6AddressesOutcome EcmClient::ReleaseIpv6Addresses(const ReleaseIpv6AddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseIpv6Addresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseIpv6AddressesResponse rsp = ReleaseIpv6AddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseIpv6AddressesOutcome(rsp);
+        else
+            return ReleaseIpv6AddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseIpv6AddressesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ReleaseIpv6AddressesAsync(const ReleaseIpv6AddressesRequest& request, const ReleaseIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseIpv6Addresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ReleaseIpv6AddressesOutcomeCallable EcmClient::ReleaseIpv6AddressesCallable(const ReleaseIpv6AddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseIpv6AddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseIpv6Addresses(request);
         }
     );
 

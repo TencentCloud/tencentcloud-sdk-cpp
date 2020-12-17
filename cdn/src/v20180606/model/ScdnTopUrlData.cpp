@@ -24,7 +24,8 @@ using namespace std;
 ScdnTopUrlData::ScdnTopUrlData() :
     m_urlHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_timeHasBeenSet(false)
+    m_timeHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome ScdnTopUrlData::Deserialize(const Value &value)
         m_timeHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ScdnTopUrlData.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void ScdnTopUrlData::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_time.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void ScdnTopUrlData::SetTime(const string& _time)
 bool ScdnTopUrlData::TimeHasBeenSet() const
 {
     return m_timeHasBeenSet;
+}
+
+string ScdnTopUrlData::GetDomain() const
+{
+    return m_domain;
+}
+
+void ScdnTopUrlData::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool ScdnTopUrlData::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
