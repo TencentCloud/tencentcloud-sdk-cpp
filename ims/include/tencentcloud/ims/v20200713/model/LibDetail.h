@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取仅当Lable为Custom自定义关键词时有效，表示自定义库id
-                     * @return LibId 仅当Lable为Custom自定义关键词时有效，表示自定义库id
+                     * 获取仅当Label为Custom自定义关键词时有效，表示自定义库id
+                     * @return LibId 仅当Label为Custom自定义关键词时有效，表示自定义库id
                      */
                     std::string GetLibId() const;
 
                     /**
-                     * 设置仅当Lable为Custom自定义关键词时有效，表示自定义库id
-                     * @param LibId 仅当Lable为Custom自定义关键词时有效，表示自定义库id
+                     * 设置仅当Label为Custom自定义关键词时有效，表示自定义库id
+                     * @param LibId 仅当Label为Custom自定义关键词时有效，表示自定义库id
                      */
                     void SetLibId(const std::string& _libId);
 
@@ -83,17 +83,17 @@ namespace TencentCloud
                     bool LibIdHasBeenSet() const;
 
                     /**
-                     * 获取仅当Lable为Custom自定义关键词时有效，表示自定义库名称
+                     * 获取仅当Label为Custom自定义关键词时有效，表示自定义库名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LibName 仅当Lable为Custom自定义关键词时有效，表示自定义库名称
+                     * @return LibName 仅当Label为Custom自定义关键词时有效，表示自定义库名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLibName() const;
 
                     /**
-                     * 设置仅当Lable为Custom自定义关键词时有效，表示自定义库名称
+                     * 设置仅当Label为Custom自定义关键词时有效，表示自定义库名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LibName 仅当Lable为Custom自定义关键词时有效，表示自定义库名称
+                     * @param LibName 仅当Label为Custom自定义关键词时有效，表示自定义库名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLibName(const std::string& _libName);
@@ -123,14 +123,18 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片
-                     * @return Label 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片
+                     * 获取恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+以及其他令人反感、不安全或不适宜的内容类型。
+                     * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+以及其他令人反感、不安全或不适宜的内容类型。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片
-                     * @param Label 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片
+                     * 设置恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+以及其他令人反感、不安全或不适宜的内容类型。
+                     * @param Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+以及其他令人反感、不安全或不适宜的内容类型。
                      */
                     void SetLabel(const std::string& _label);
 
@@ -189,13 +193,13 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 仅当Lable为Custom自定义关键词时有效，表示自定义库id
+                     * 仅当Label为Custom自定义关键词时有效，表示自定义库id
                      */
                     std::string m_libId;
                     bool m_libIdHasBeenSet;
 
                     /**
-                     * 仅当Lable为Custom自定义关键词时有效，表示自定义库名称
+                     * 仅当Label为Custom自定义关键词时有效，表示自定义库名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_libName;
@@ -208,7 +212,8 @@ namespace TencentCloud
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片
+                     * 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+以及其他令人反感、不安全或不适宜的内容类型。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;

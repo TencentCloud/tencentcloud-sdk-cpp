@@ -651,6 +651,28 @@ REJECTED:拒绝
                      */
                     bool SignLawHasBeenSet() const;
 
+                    /**
+                     * 获取高速上云服务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudAttachId 高速上云服务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCloudAttachId() const;
+
+                    /**
+                     * 设置高速上云服务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CloudAttachId 高速上云服务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCloudAttachId(const std::string& _cloudAttachId);
+
+                    /**
+                     * 判断参数 CloudAttachId 是否已赋值
+                     * @return CloudAttachId 是否已赋值
+                     */
+                    bool CloudAttachIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -846,6 +868,13 @@ REJECTED:拒绝
                      */
                     bool m_signLaw;
                     bool m_signLawHasBeenSet;
+
+                    /**
+                     * 高速上云服务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cloudAttachId;
+                    bool m_cloudAttachIdHasBeenSet;
 
                 };
             }

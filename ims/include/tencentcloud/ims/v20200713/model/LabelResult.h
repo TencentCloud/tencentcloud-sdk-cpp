@@ -66,14 +66,18 @@ namespace TencentCloud
                     bool SceneHasBeenSet() const;
 
                     /**
-                     * 获取建议值，Block：打击，Review：待复审，Pass：正常
-                     * @return Suggestion 建议值，Block：打击，Review：待复审，Pass：正常
+                     * 获取建议您拿到判断结果后的执行操作。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
+                     * @return Suggestion 建议您拿到判断结果后的执行操作。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置建议值，Block：打击，Review：待复审，Pass：正常
-                     * @param Suggestion 建议值，Block：打击，Review：待复审，Pass：正常
+                     * 设置建议您拿到判断结果后的执行操作。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
+                     * @param Suggestion 建议您拿到判断结果后的执行操作。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
@@ -84,14 +88,18 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片
-                     * @return Label 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片
+                     * 获取恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
+以及令人反感、不安全或不适宜的内容类型。
+                     * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
+以及令人反感、不安全或不适宜的内容类型。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片
-                     * @param Label 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片
+                     * 设置恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
+以及令人反感、不安全或不适宜的内容类型。
+                     * @param Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
+以及令人反感、不安全或不适宜的内容类型。
                      */
                     void SetLabel(const std::string& _label);
 
@@ -172,13 +180,15 @@ namespace TencentCloud
                     bool m_sceneHasBeenSet;
 
                     /**
-                     * 建议值，Block：打击，Review：待复审，Pass：正常
+                     * 建议您拿到判断结果后的执行操作。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片
+                     * 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
+以及令人反感、不安全或不适宜的内容类型。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;

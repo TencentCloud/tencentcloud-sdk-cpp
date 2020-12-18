@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实体检测结果明细，当检测场景为政治实体、广告台标、二维码和人脸属性时表示模型检测目标框的标签名称、标签值、标签分数以及检测框的位置信息。
+                * 实体检测结果明细，当检测场景为实体、广告台标、二维码时表示模型检测目标框的标签名称、标签值、标签分数以及检测框的位置信息。
                 */
                 class ObjectDetail : public AbstractModel
                 {
@@ -86,20 +86,16 @@ namespace TencentCloud
                     /**
                      * 获取标签值，
 当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
-当标签为人脸属性，表示属性值，如Name为Age时 Value为18
                      * @return Value 标签值，
 当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
-当标签为人脸属性，表示属性值，如Name为Age时 Value为18
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置标签值，
 当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
-当标签为人脸属性，表示属性值，如Name为Age时 Value为18
                      * @param Value 标签值，
 当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
-当标签为人脸属性，表示属性值，如Name为Age时 Value为18
                      */
                     void SetValue(const std::string& _value);
 
@@ -162,7 +158,6 @@ namespace TencentCloud
                     /**
                      * 标签值，
 当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
-当标签为人脸属性，表示属性值，如Name为Age时 Value为18
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

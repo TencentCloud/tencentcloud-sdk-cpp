@@ -56,9 +56,9 @@ namespace TencentCloud
                     bool FusedImageHasBeenSet() const;
 
                     /**
-                     * 获取鉴政结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应
+                     * 获取不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReviewResultSet 鉴政结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应
+                     * @return ReviewResultSet 不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FuseFaceReviewResult> GetReviewResultSet() const;
@@ -78,7 +78,7 @@ namespace TencentCloud
                     bool m_fusedImageHasBeenSet;
 
                     /**
-                     * 鉴政结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应
+                     * 不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FuseFaceReviewResult> m_reviewResultSet;

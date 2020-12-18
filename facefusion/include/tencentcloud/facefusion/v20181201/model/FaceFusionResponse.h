@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取鉴政结果
-                     * @return ReviewResultSet 鉴政结果
+                     * 获取不适宜内容识别结果
+                     * @return ReviewResultSet 不适宜内容识别结果
                      */
                     std::vector<FuseFaceReviewResult> GetReviewResultSet() const;
 
@@ -76,7 +76,7 @@ namespace TencentCloud
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 鉴政结果
+                     * 不适宜内容识别结果
                      */
                     std::vector<FuseFaceReviewResult> m_reviewResultSet;
                     bool m_reviewResultSetHasBeenSet;

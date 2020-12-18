@@ -50,7 +50,8 @@ DirectConnectTunnel::DirectConnectTunnel() :
     m_directConnectGatewayNameHasBeenSet(false),
     m_vpcNameHasBeenSet(false),
     m_tencentBackupAddressHasBeenSet(false),
-    m_signLawHasBeenSet(false)
+    m_signLawHasBeenSet(false),
+    m_cloudAttachIdHasBeenSet(false)
 {
 }
 
@@ -376,6 +377,16 @@ CoreInternalOutcome DirectConnectTunnel::Deserialize(const Value &value)
         m_signLawHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudAttachId") && !value["CloudAttachId"].IsNull())
+    {
+        if (!value["CloudAttachId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.CloudAttachId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAttachId = string(value["CloudAttachId"].GetString());
+        m_cloudAttachIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -628,6 +639,14 @@ void DirectConnectTunnel::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "SignLaw";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_signLaw, allocator);
+    }
+
+    if (m_cloudAttachIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CloudAttachId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cloudAttachId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1095,5 +1114,21 @@ void DirectConnectTunnel::SetSignLaw(const bool& _signLaw)
 bool DirectConnectTunnel::SignLawHasBeenSet() const
 {
     return m_signLawHasBeenSet;
+}
+
+string DirectConnectTunnel::GetCloudAttachId() const
+{
+    return m_cloudAttachId;
+}
+
+void DirectConnectTunnel::SetCloudAttachId(const string& _cloudAttachId)
+{
+    m_cloudAttachId = _cloudAttachId;
+    m_cloudAttachIdHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::CloudAttachIdHasBeenSet() const
+{
+    return m_cloudAttachIdHasBeenSet;
 }
 

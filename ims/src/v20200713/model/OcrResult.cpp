@@ -27,7 +27,8 @@ OcrResult::OcrResult() :
     m_labelHasBeenSet(false),
     m_subLabelHasBeenSet(false),
     m_scoreHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_textHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome OcrResult::Deserialize(const Value &value)
         m_detailsHasBeenSet = true;
     }
 
+    if (value.HasMember("Text") && !value["Text"].IsNull())
+    {
+        if (!value["Text"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `OcrResult.Text` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_text = string(value["Text"].GetString());
+        m_textHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -166,6 +177,14 @@ void OcrResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_textHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Text";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -265,5 +284,21 @@ void OcrResult::SetDetails(const vector<OcrTextDetail>& _details)
 bool OcrResult::DetailsHasBeenSet() const
 {
     return m_detailsHasBeenSet;
+}
+
+string OcrResult::GetText() const
+{
+    return m_text;
+}
+
+void OcrResult::SetText(const string& _text)
+{
+    m_text = _text;
+    m_textHasBeenSet = true;
+}
+
+bool OcrResult::TextHasBeenSet() const
+{
+    return m_textHasBeenSet;
 }
 

@@ -169,6 +169,24 @@ namespace TencentCloud
                      */
                     bool IsPublicHasBeenSet() const;
 
+                    /**
+                     * 获取频点ID
+                     * @return FrequencyId 频点ID
+                     */
+                    std::string GetFrequencyId() const;
+
+                    /**
+                     * 设置频点ID
+                     * @param FrequencyId 频点ID
+                     */
+                    void SetFrequencyId(const std::string& _frequencyId);
+
+                    /**
+                     * 判断参数 FrequencyId 是否已赋值
+                     * @return FrequencyId 是否已赋值
+                     */
+                    bool FrequencyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     bool m_isPublic;
                     bool m_isPublicHasBeenSet;
+
+                    /**
+                     * 频点ID
+                     */
+                    std::string m_frequencyId;
+                    bool m_frequencyIdHasBeenSet;
 
                 };
             }

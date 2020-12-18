@@ -31,7 +31,8 @@ LoRaGatewayItem::LoRaGatewayItem() :
     m_locationHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_lastSeenAtHasBeenSet(false)
+    m_lastSeenAtHasBeenSet(false),
+    m_frequencyIdHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,16 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const Value &value)
         m_lastSeenAtHasBeenSet = true;
     }
 
+    if (value.HasMember("FrequencyId") && !value["FrequencyId"].IsNull())
+    {
+        if (!value["FrequencyId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoRaGatewayItem.FrequencyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_frequencyId = string(value["FrequencyId"].GetString());
+        m_frequencyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -233,6 +244,14 @@ void LoRaGatewayItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "LastSeenAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_lastSeenAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_frequencyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FrequencyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_frequencyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -396,5 +415,21 @@ void LoRaGatewayItem::SetLastSeenAt(const string& _lastSeenAt)
 bool LoRaGatewayItem::LastSeenAtHasBeenSet() const
 {
     return m_lastSeenAtHasBeenSet;
+}
+
+string LoRaGatewayItem::GetFrequencyId() const
+{
+    return m_frequencyId;
+}
+
+void LoRaGatewayItem::SetFrequencyId(const string& _frequencyId)
+{
+    m_frequencyId = _frequencyId;
+    m_frequencyIdHasBeenSet = true;
+}
+
+bool LoRaGatewayItem::FrequencyIdHasBeenSet() const
+{
+    return m_frequencyIdHasBeenSet;
 }
 

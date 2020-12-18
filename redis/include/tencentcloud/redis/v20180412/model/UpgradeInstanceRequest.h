@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/redis/v20180412/model/RedisNodeInfo.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,24 @@ namespace TencentCloud
                      */
                     bool RedisReplicasNumHasBeenSet() const;
 
+                    /**
+                     * 获取多AZ实例增加副本时的附带信息，非多AZ实例不需要传此参数。多AZ增加副本时此参数为必传参数，传入要增加的副本的信息，包括副本的可用区和副本的类型（NodeType为1）
+                     * @return NodeSet 多AZ实例增加副本时的附带信息，非多AZ实例不需要传此参数。多AZ增加副本时此参数为必传参数，传入要增加的副本的信息，包括副本的可用区和副本的类型（NodeType为1）
+                     */
+                    std::vector<RedisNodeInfo> GetNodeSet() const;
+
+                    /**
+                     * 设置多AZ实例增加副本时的附带信息，非多AZ实例不需要传此参数。多AZ增加副本时此参数为必传参数，传入要增加的副本的信息，包括副本的可用区和副本的类型（NodeType为1）
+                     * @param NodeSet 多AZ实例增加副本时的附带信息，非多AZ实例不需要传此参数。多AZ增加副本时此参数为必传参数，传入要增加的副本的信息，包括副本的可用区和副本的类型（NodeType为1）
+                     */
+                    void SetNodeSet(const std::vector<RedisNodeInfo>& _nodeSet);
+
+                    /**
+                     * 判断参数 NodeSet 是否已赋值
+                     * @return NodeSet 是否已赋值
+                     */
+                    bool NodeSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +158,12 @@ namespace TencentCloud
                      */
                     uint64_t m_redisReplicasNum;
                     bool m_redisReplicasNumHasBeenSet;
+
+                    /**
+                     * 多AZ实例增加副本时的附带信息，非多AZ实例不需要传此参数。多AZ增加副本时此参数为必传参数，传入要增加的副本的信息，包括副本的可用区和副本的类型（NodeType为1）
+                     */
+                    std::vector<RedisNodeInfo> m_nodeSet;
+                    bool m_nodeSetHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ CreateLoRaGatewayRequest::CreateLoRaGatewayRequest() :
     m_locationHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_positionDetailsHasBeenSet(false),
-    m_isPublicHasBeenSet(false)
+    m_isPublicHasBeenSet(false),
+    m_frequencyIdHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,14 @@ string CreateLoRaGatewayRequest::ToJsonString() const
         string key = "IsPublic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPublic, allocator);
+    }
+
+    if (m_frequencyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FrequencyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_frequencyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -216,6 +225,22 @@ void CreateLoRaGatewayRequest::SetIsPublic(const bool& _isPublic)
 bool CreateLoRaGatewayRequest::IsPublicHasBeenSet() const
 {
     return m_isPublicHasBeenSet;
+}
+
+string CreateLoRaGatewayRequest::GetFrequencyId() const
+{
+    return m_frequencyId;
+}
+
+void CreateLoRaGatewayRequest::SetFrequencyId(const string& _frequencyId)
+{
+    m_frequencyId = _frequencyId;
+    m_frequencyIdHasBeenSet = true;
+}
+
+bool CreateLoRaGatewayRequest::FrequencyIdHasBeenSet() const
+{
+    return m_frequencyIdHasBeenSet;
 }
 
 

@@ -38,7 +38,8 @@ CreateDirectConnectTunnelRequest::CreateDirectConnectTunnelRequest() :
     m_vlanHasBeenSet(false),
     m_tencentAddressHasBeenSet(false),
     m_customerAddressHasBeenSet(false),
-    m_tencentBackupAddressHasBeenSet(false)
+    m_tencentBackupAddressHasBeenSet(false),
+    m_cloudAttachIdHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,14 @@ string CreateDirectConnectTunnelRequest::ToJsonString() const
         string key = "TencentBackupAddress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_tencentBackupAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloudAttachIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CloudAttachId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cloudAttachId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -423,6 +432,22 @@ void CreateDirectConnectTunnelRequest::SetTencentBackupAddress(const string& _te
 bool CreateDirectConnectTunnelRequest::TencentBackupAddressHasBeenSet() const
 {
     return m_tencentBackupAddressHasBeenSet;
+}
+
+string CreateDirectConnectTunnelRequest::GetCloudAttachId() const
+{
+    return m_cloudAttachId;
+}
+
+void CreateDirectConnectTunnelRequest::SetCloudAttachId(const string& _cloudAttachId)
+{
+    m_cloudAttachId = _cloudAttachId;
+    m_cloudAttachIdHasBeenSet = true;
+}
+
+bool CreateDirectConnectTunnelRequest::CloudAttachIdHasBeenSet() const
+{
+    return m_cloudAttachIdHasBeenSet;
 }
 
 

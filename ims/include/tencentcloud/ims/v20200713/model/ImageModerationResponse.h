@@ -75,8 +75,10 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片。
-                     * @return Label 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片。
+                     * 获取恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
+以及令人反感、不安全或不适宜的内容类型。
+                     * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
+以及令人反感、不安全或不适宜的内容类型。
                      */
                     std::string GetLabel() const;
 
@@ -113,9 +115,9 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取识别模型的审核结果，包括涉黄、性感、涉暴、违法违规、等审核结果。
+                     * 获取智能模型的识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LabelResults 识别模型的审核结果，包括涉黄、性感、涉暴、违法违规、等审核结果。
+                     * @return LabelResults 智能模型的识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LabelResult> GetLabelResults() const;
@@ -127,9 +129,9 @@ namespace TencentCloud
                     bool LabelResultsHasBeenSet() const;
 
                     /**
-                     * 获取物体检测模型的审核结果，包括涉政实体、广告台标/二维码等物体坐标信息与内容审核信息。
+                     * 获取物体检测模型的审核结果，包括实体、广告台标/二维码等物体坐标信息与内容审核信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ObjectResults 物体检测模型的审核结果，包括涉政实体、广告台标/二维码等物体坐标信息与内容审核信息。
+                     * @return ObjectResults 物体检测模型的审核结果，包括实体、广告台标/二维码等物体坐标信息与内容审核信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ObjectResult> GetObjectResults() const;
@@ -141,9 +143,9 @@ namespace TencentCloud
                     bool ObjectResultsHasBeenSet() const;
 
                     /**
-                     * 获取OCR识别后的文本审核结果，包括文本所处图片的OCR坐标信息以及图片文本的审核结果。
+                     * 获取OCR识别后的文本识别结果，包括文本所处图片的OCR坐标信息以及图片文本的识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrResults OCR识别后的文本审核结果，包括文本所处图片的OCR坐标信息以及图片文本的审核结果。
+                     * @return OcrResults OCR识别后的文本识别结果，包括文本所处图片的OCR坐标信息以及图片文本的识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OcrResult> GetOcrResults() const;
@@ -156,10 +158,10 @@ namespace TencentCloud
 
                     /**
                      * 获取基于图片风险库识别的结果。
-风险库包括违规黑库与正常白库的结果。
+风险库包括不安全黑库与正常白库的结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibResults 基于图片风险库识别的结果。
-风险库包括违规黑库与正常白库的结果。
+风险库包括不安全黑库与正常白库的结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LibResult> GetLibResults() const;
@@ -227,7 +229,8 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义图片。
+                     * 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
+以及令人反感、不安全或不适宜的内容类型。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
@@ -246,21 +249,21 @@ namespace TencentCloud
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 识别模型的审核结果，包括涉黄、性感、涉暴、违法违规、等审核结果。
+                     * 智能模型的识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LabelResult> m_labelResults;
                     bool m_labelResultsHasBeenSet;
 
                     /**
-                     * 物体检测模型的审核结果，包括涉政实体、广告台标/二维码等物体坐标信息与内容审核信息。
+                     * 物体检测模型的审核结果，包括实体、广告台标/二维码等物体坐标信息与内容审核信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ObjectResult> m_objectResults;
                     bool m_objectResultsHasBeenSet;
 
                     /**
-                     * OCR识别后的文本审核结果，包括文本所处图片的OCR坐标信息以及图片文本的审核结果。
+                     * OCR识别后的文本识别结果，包括文本所处图片的OCR坐标信息以及图片文本的识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OcrResult> m_ocrResults;
@@ -268,7 +271,7 @@ namespace TencentCloud
 
                     /**
                      * 基于图片风险库识别的结果。
-风险库包括违规黑库与正常白库的结果。
+风险库包括不安全黑库与正常白库的结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LibResult> m_libResults;

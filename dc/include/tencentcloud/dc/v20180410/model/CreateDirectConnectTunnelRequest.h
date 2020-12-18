@@ -350,6 +350,24 @@ STATIC：静态
                      */
                     bool TencentBackupAddressHasBeenSet() const;
 
+                    /**
+                     * 获取高速上云服务ID
+                     * @return CloudAttachId 高速上云服务ID
+                     */
+                    std::string GetCloudAttachId() const;
+
+                    /**
+                     * 设置高速上云服务ID
+                     * @param CloudAttachId 高速上云服务ID
+                     */
+                    void SetCloudAttachId(const std::string& _cloudAttachId);
+
+                    /**
+                     * 判断参数 CloudAttachId 是否已赋值
+                     * @return CloudAttachId 是否已赋值
+                     */
+                    bool CloudAttachIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -450,6 +468,12 @@ STATIC：静态
                      */
                     std::string m_tencentBackupAddress;
                     bool m_tencentBackupAddressHasBeenSet;
+
+                    /**
+                     * 高速上云服务ID
+                     */
+                    std::string m_cloudAttachId;
+                    bool m_cloudAttachIdHasBeenSet;
 
                 };
             }

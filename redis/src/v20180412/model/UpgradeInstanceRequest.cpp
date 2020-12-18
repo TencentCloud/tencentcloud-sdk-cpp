@@ -27,7 +27,8 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_memSizeHasBeenSet(false),
     m_redisShardNumHasBeenSet(false),
-    m_redisReplicasNumHasBeenSet(false)
+    m_redisReplicasNumHasBeenSet(false),
+    m_nodeSetHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,21 @@ string UpgradeInstanceRequest::ToJsonString() const
         string key = "RedisReplicasNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_redisReplicasNum, allocator);
+    }
+
+    if (m_nodeSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeSet.begin(); itr != m_nodeSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -140,6 +156,22 @@ void UpgradeInstanceRequest::SetRedisReplicasNum(const uint64_t& _redisReplicasN
 bool UpgradeInstanceRequest::RedisReplicasNumHasBeenSet() const
 {
     return m_redisReplicasNumHasBeenSet;
+}
+
+vector<RedisNodeInfo> UpgradeInstanceRequest::GetNodeSet() const
+{
+    return m_nodeSet;
+}
+
+void UpgradeInstanceRequest::SetNodeSet(const vector<RedisNodeInfo>& _nodeSet)
+{
+    m_nodeSet = _nodeSet;
+    m_nodeSetHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::NodeSetHasBeenSet() const
+{
+    return m_nodeSetHasBeenSet;
 }
 
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的数据总条数
-                     * @return Total 返回的数据总条数
+                     * 获取返回当页数据总数
+                     * @return Total 返回当页数据总数
                      */
                     int64_t GetTotal() const;
 
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的数据总条数
+                     * 返回当页数据总数
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

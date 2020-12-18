@@ -15,10 +15,48 @@
 #
 
 set(chdfs_public_header
+  include/tencentcloud/chdfs/v20201112/ChdfsClient.h
   include/tencentcloud/chdfs/v20190718/ChdfsClient.h
   )
 
 set(chdfs_public_header_model
+  include/tencentcloud/chdfs/v20201112/model/CreateFileSystemResponse.h
+  include/tencentcloud/chdfs/v20201112/model/ModifyResourceTagsRequest.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeAccessRulesRequest.h
+  include/tencentcloud/chdfs/v20201112/model/AccessRule.h
+  include/tencentcloud/chdfs/v20201112/model/AccessGroup.h
+  include/tencentcloud/chdfs/v20201112/model/ModifyFileSystemResponse.h
+  include/tencentcloud/chdfs/v20201112/model/AssociateAccessGroupsRequest.h
+  include/tencentcloud/chdfs/v20201112/model/ModifyAccessGroupRequest.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeFileSystemsResponse.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeFileSystemRequest.h
+  include/tencentcloud/chdfs/v20201112/model/CreateMountPointRequest.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeAccessGroupsResponse.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeMountPointRequest.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeAccessGroupsRequest.h
+  include/tencentcloud/chdfs/v20201112/model/CreateMountPointResponse.h
+  include/tencentcloud/chdfs/v20201112/model/CreateFileSystemRequest.h
+  include/tencentcloud/chdfs/v20201112/model/DisassociateAccessGroupsRequest.h
+  include/tencentcloud/chdfs/v20201112/model/ModifyFileSystemRequest.h
+  include/tencentcloud/chdfs/v20201112/model/CreateAccessGroupResponse.h
+  include/tencentcloud/chdfs/v20201112/model/ModifyMountPointRequest.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeFileSystemResponse.h
+  include/tencentcloud/chdfs/v20201112/model/FileSystem.h
+  include/tencentcloud/chdfs/v20201112/model/DisassociateAccessGroupsResponse.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeAccessRulesResponse.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeFileSystemsRequest.h
+  include/tencentcloud/chdfs/v20201112/model/ModifyResourceTagsResponse.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeMountPointsResponse.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeAccessGroupResponse.h
+  include/tencentcloud/chdfs/v20201112/model/MountPoint.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeAccessGroupRequest.h
+  include/tencentcloud/chdfs/v20201112/model/AssociateAccessGroupsResponse.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeMountPointsRequest.h
+  include/tencentcloud/chdfs/v20201112/model/ModifyAccessGroupResponse.h
+  include/tencentcloud/chdfs/v20201112/model/Tag.h
+  include/tencentcloud/chdfs/v20201112/model/ModifyMountPointResponse.h
+  include/tencentcloud/chdfs/v20201112/model/CreateAccessGroupRequest.h
+  include/tencentcloud/chdfs/v20201112/model/DescribeMountPointResponse.h
   include/tencentcloud/chdfs/v20190718/model/CreateFileSystemResponse.h
   include/tencentcloud/chdfs/v20190718/model/AccessRule.h
   include/tencentcloud/chdfs/v20190718/model/DescribeFileSystemResponse.h
@@ -83,7 +121,45 @@ set(chdfs_public_header_model
   )
 
 set(chdfs_src
+  src/v20201112/ChdfsClient.cpp
   src/v20190718/ChdfsClient.cpp
+  src/v20201112/model/CreateFileSystemResponse.cpp
+  src/v20201112/model/ModifyResourceTagsRequest.cpp
+  src/v20201112/model/DescribeAccessRulesRequest.cpp
+  src/v20201112/model/AccessRule.cpp
+  src/v20201112/model/AccessGroup.cpp
+  src/v20201112/model/ModifyFileSystemResponse.cpp
+  src/v20201112/model/AssociateAccessGroupsRequest.cpp
+  src/v20201112/model/ModifyAccessGroupRequest.cpp
+  src/v20201112/model/DescribeFileSystemsResponse.cpp
+  src/v20201112/model/DescribeFileSystemRequest.cpp
+  src/v20201112/model/CreateMountPointRequest.cpp
+  src/v20201112/model/DescribeAccessGroupsResponse.cpp
+  src/v20201112/model/DescribeMountPointRequest.cpp
+  src/v20201112/model/DescribeAccessGroupsRequest.cpp
+  src/v20201112/model/CreateMountPointResponse.cpp
+  src/v20201112/model/CreateFileSystemRequest.cpp
+  src/v20201112/model/DisassociateAccessGroupsRequest.cpp
+  src/v20201112/model/ModifyFileSystemRequest.cpp
+  src/v20201112/model/CreateAccessGroupResponse.cpp
+  src/v20201112/model/ModifyMountPointRequest.cpp
+  src/v20201112/model/DescribeFileSystemResponse.cpp
+  src/v20201112/model/FileSystem.cpp
+  src/v20201112/model/DisassociateAccessGroupsResponse.cpp
+  src/v20201112/model/DescribeAccessRulesResponse.cpp
+  src/v20201112/model/DescribeFileSystemsRequest.cpp
+  src/v20201112/model/ModifyResourceTagsResponse.cpp
+  src/v20201112/model/DescribeMountPointsResponse.cpp
+  src/v20201112/model/DescribeAccessGroupResponse.cpp
+  src/v20201112/model/MountPoint.cpp
+  src/v20201112/model/DescribeAccessGroupRequest.cpp
+  src/v20201112/model/AssociateAccessGroupsResponse.cpp
+  src/v20201112/model/DescribeMountPointsRequest.cpp
+  src/v20201112/model/ModifyAccessGroupResponse.cpp
+  src/v20201112/model/Tag.cpp
+  src/v20201112/model/ModifyMountPointResponse.cpp
+  src/v20201112/model/CreateAccessGroupRequest.cpp
+  src/v20201112/model/DescribeMountPointResponse.cpp
   src/v20190718/model/CreateFileSystemResponse.cpp
   src/v20190718/model/AccessRule.cpp
   src/v20190718/model/DescribeFileSystemResponse.cpp

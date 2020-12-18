@@ -128,21 +128,13 @@ namespace TencentCloud
 
                     /**
                      * 获取动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
-
-静态转码这个参数不起作用
                      * @return ThumbnailResolution 动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
-
-静态转码这个参数不起作用
                      */
                     std::string GetThumbnailResolution() const;
 
                     /**
                      * 设置动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
-
-静态转码这个参数不起作用
                      * @param ThumbnailResolution 动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
-
-静态转码这个参数不起作用
                      */
                     void SetThumbnailResolution(const std::string& _thumbnailResolution);
 
@@ -213,8 +205,6 @@ tar.gz： 生成`.tar.gz`压缩包
 
                     /**
                      * 动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
-
-静态转码这个参数不起作用
                      */
                     std::string m_thumbnailResolution;
                     bool m_thumbnailResolutionHasBeenSet;
