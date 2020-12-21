@@ -33,7 +33,8 @@ TextModerationResponse::TextModerationResponse() :
     m_scoreHasBeenSet(false),
     m_detailResultsHasBeenSet(false),
     m_riskDetailsHasBeenSet(false),
-    m_extraHasBeenSet(false)
+    m_extraHasBeenSet(false),
+    m_dataIdHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,16 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
         m_extraHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DataId") && !rsp["DataId"].IsNull())
+    {
+        if (!rsp["DataId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DataId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataId = string(rsp["DataId"].GetString());
+        m_dataIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +288,16 @@ string TextModerationResponse::GetExtra() const
 bool TextModerationResponse::ExtraHasBeenSet() const
 {
     return m_extraHasBeenSet;
+}
+
+string TextModerationResponse::GetDataId() const
+{
+    return m_dataId;
+}
+
+bool TextModerationResponse::DataIdHasBeenSet() const
+{
+    return m_dataIdHasBeenSet;
 }
 
 

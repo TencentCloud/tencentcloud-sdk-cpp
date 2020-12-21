@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回列表数据
-                     * @return AmsDetailSet 返回列表数据
+                     * 获取返回列表数据----非必选，该参数暂未对外开放
+                     * @return AmsDetailSet 返回列表数据----非必选，该参数暂未对外开放
                      */
                     std::vector<AmsDetailInfo> GetAmsDetailSet() const;
 
@@ -82,7 +82,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回列表数据
+                     * 返回列表数据----非必选，该参数暂未对外开放
                      */
                     std::vector<AmsDetailInfo> m_amsDetailSet;
                     bool m_amsDetailSetHasBeenSet;

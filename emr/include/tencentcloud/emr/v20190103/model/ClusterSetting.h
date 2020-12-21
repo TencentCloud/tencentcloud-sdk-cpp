@@ -151,14 +151,14 @@ POSTPAID_BY_HOUR 按量计费，默认方式。
                     bool VPCSettingsHasBeenSet() const;
 
                     /**
-                     * 获取实例登陆配置。
-                     * @return LoginSettings 实例登陆配置。
+                     * 获取实例登录配置。
+                     * @return LoginSettings 实例登录配置。
                      */
                     LoginSettings GetLoginSettings() const;
 
                     /**
-                     * 设置实例登陆配置。
-                     * @param LoginSettings 实例登陆配置。
+                     * 设置实例登录配置。
+                     * @param LoginSettings 实例登录配置。
                      */
                     void SetLoginSettings(const LoginSettings& _loginSettings);
 
@@ -295,14 +295,14 @@ POSTPAID_BY_HOUR 按量计费，默认方式。
                     bool CbsEncryptFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否使用远程登陆，默认为false。
-                     * @return RemoteTcpDefaultPort 是否使用远程登陆，默认为false。
+                     * 获取是否使用远程登录，默认为false。
+                     * @return RemoteTcpDefaultPort 是否使用远程登录，默认为false。
                      */
                     bool GetRemoteTcpDefaultPort() const;
 
                     /**
-                     * 设置是否使用远程登陆，默认为false。
-                     * @param RemoteTcpDefaultPort 是否使用远程登陆，默认为false。
+                     * 设置是否使用远程登录，默认为false。
+                     * @param RemoteTcpDefaultPort 是否使用远程登录，默认为false。
                      */
                     void SetRemoteTcpDefaultPort(const bool& _remoteTcpDefaultPort);
 
@@ -347,7 +347,7 @@ POSTPAID_BY_HOUR 按量计费，默认方式。
                     bool m_vPCSettingsHasBeenSet;
 
                     /**
-                     * 实例登陆配置。
+                     * 实例登录配置。
                      */
                     LoginSettings m_loginSettings;
                     bool m_loginSettingsHasBeenSet;
@@ -395,7 +395,7 @@ POSTPAID_BY_HOUR 按量计费，默认方式。
                     bool m_cbsEncryptFlagHasBeenSet;
 
                     /**
-                     * 是否使用远程登陆，默认为false。
+                     * 是否使用远程登录，默认为false。
                      */
                     bool m_remoteTcpDefaultPort;
                     bool m_remoteTcpDefaultPortHasBeenSet;

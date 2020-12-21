@@ -25,8 +25,8 @@ using namespace std;
 
 TextModerationRequest::TextModerationRequest() :
     m_contentHasBeenSet(false),
-    m_dataIdHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
+    m_dataIdHasBeenSet(false),
     m_userHasBeenSet(false),
     m_deviceHasBeenSet(false)
 {
@@ -47,20 +47,20 @@ string TextModerationRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_dataIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "DataId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_dataId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_bizTypeHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "BizType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_bizType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_dataId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userHasBeenSet)
@@ -105,22 +105,6 @@ bool TextModerationRequest::ContentHasBeenSet() const
     return m_contentHasBeenSet;
 }
 
-string TextModerationRequest::GetDataId() const
-{
-    return m_dataId;
-}
-
-void TextModerationRequest::SetDataId(const string& _dataId)
-{
-    m_dataId = _dataId;
-    m_dataIdHasBeenSet = true;
-}
-
-bool TextModerationRequest::DataIdHasBeenSet() const
-{
-    return m_dataIdHasBeenSet;
-}
-
 string TextModerationRequest::GetBizType() const
 {
     return m_bizType;
@@ -135,6 +119,22 @@ void TextModerationRequest::SetBizType(const string& _bizType)
 bool TextModerationRequest::BizTypeHasBeenSet() const
 {
     return m_bizTypeHasBeenSet;
+}
+
+string TextModerationRequest::GetDataId() const
+{
+    return m_dataId;
+}
+
+void TextModerationRequest::SetDataId(const string& _dataId)
+{
+    m_dataId = _dataId;
+    m_dataIdHasBeenSet = true;
+}
+
+bool TextModerationRequest::DataIdHasBeenSet() const
+{
+    return m_dataIdHasBeenSet;
 }
 
 User TextModerationRequest::GetUser() const

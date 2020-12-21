@@ -35,7 +35,8 @@ NatGateway::NatGateway() :
     m_zoneHasBeenSet(false),
     m_directConnectGatewayIdsHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_securityGroupSetHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,19 @@ CoreInternalOutcome NatGateway::Deserialize(const Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupSet") && !value["SecurityGroupSet"].IsNull())
+    {
+        if (!value["SecurityGroupSet"].IsArray())
+            return CoreInternalOutcome(Error("response `NatGateway.SecurityGroupSet` is not array type"));
+
+        const Value &tmpValue = value["SecurityGroupSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupSet.push_back((*itr).GetString());
+        }
+        m_securityGroupSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -359,6 +373,19 @@ void NatGateway::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_securityGroupSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupSet.begin(); itr != m_securityGroupSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -587,5 +614,21 @@ void NatGateway::SetTagSet(const vector<Tag>& _tagSet)
 bool NatGateway::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+vector<string> NatGateway::GetSecurityGroupSet() const
+{
+    return m_securityGroupSet;
+}
+
+void NatGateway::SetSecurityGroupSet(const vector<string>& _securityGroupSet)
+{
+    m_securityGroupSet = _securityGroupSet;
+    m_securityGroupSetHasBeenSet = true;
+}
+
+bool NatGateway::SecurityGroupSetHasBeenSet() const
+{
+    return m_securityGroupSetHasBeenSet;
 }
 

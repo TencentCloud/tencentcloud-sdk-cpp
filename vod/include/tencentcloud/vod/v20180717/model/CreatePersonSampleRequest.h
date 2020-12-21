@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人物名称，长度限制：20 个字符。
-                     * @return Name 人物名称，长度限制：20 个字符。
+                     * 获取素材名称，长度限制：20 个字符。
+                     * @return Name 素材名称，长度限制：20 个字符。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置人物名称，长度限制：20 个字符。
-                     * @param Name 人物名称，长度限制：20 个字符。
+                     * 设置素材名称，长度限制：20 个字符。
+                     * @param Name 素材名称，长度限制：20 个字符。
                      */
                     void SetName(const std::string& _name);
 
@@ -61,26 +61,26 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取人物应用场景，可选值：
+                     * 获取素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
-2. Review：用于内容审核，等价于 Review.Face。
-3. All：用于内容识别、内容审核，等价于 1+2。
-                     * @return Usages 人物应用场景，可选值：
+2. Review：用于内容不适宜，等价于 Review.Face。
+3. All：包含以上全部，等价于 1+2。
+                     * @return Usages 素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
-2. Review：用于内容审核，等价于 Review.Face。
-3. All：用于内容识别、内容审核，等价于 1+2。
+2. Review：用于内容不适宜，等价于 Review.Face。
+3. All：包含以上全部，等价于 1+2。
                      */
                     std::vector<std::string> GetUsages() const;
 
                     /**
-                     * 设置人物应用场景，可选值：
+                     * 设置素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
-2. Review：用于内容审核，等价于 Review.Face。
-3. All：用于内容识别、内容审核，等价于 1+2。
-                     * @param Usages 人物应用场景，可选值：
+2. Review：用于内容不适宜，等价于 Review.Face。
+3. All：包含以上全部，等价于 1+2。
+                     * @param Usages 素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
-2. Review：用于内容审核，等价于 Review.Face。
-3. All：用于内容识别、内容审核，等价于 1+2。
+2. Review：用于内容不适宜，等价于 Review.Face。
+3. All：包含以上全部，等价于 1+2。
                      */
                     void SetUsages(const std::vector<std::string>& _usages);
 
@@ -91,14 +91,14 @@ namespace TencentCloud
                     bool UsagesHasBeenSet() const;
 
                     /**
-                     * 获取人物描述，长度限制：1024 个字符。
-                     * @return Description 人物描述，长度限制：1024 个字符。
+                     * 获取素材描述，长度限制：1024 个字符。
+                     * @return Description 素材描述，长度限制：1024 个字符。
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置人物描述，长度限制：1024 个字符。
-                     * @param Description 人物描述，长度限制：1024 个字符。
+                     * 设置素材描述，长度限制：1024 个字符。
+                     * @param Description 素材描述，长度限制：1024 个字符。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -109,18 +109,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
-                     * @return FaceContents 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     * 获取素材图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
+注意：图片必须是单人像五官较清晰的照片，像素不低于 200*200。
+                     * @return FaceContents 素材图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
+注意：图片必须是单人像五官较清晰的照片，像素不低于 200*200。
                      */
                     std::vector<std::string> GetFaceContents() const;
 
                     /**
-                     * 设置人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
-                     * @param FaceContents 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     * 设置素材图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
+注意：图片必须是单人像五官较清晰的照片，像素不低于 200*200。
+                     * @param FaceContents 素材图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
+注意：图片必须是单人像五官较清晰的照片，像素不低于 200*200。
                      */
                     void SetFaceContents(const std::vector<std::string>& _faceContents);
 
@@ -131,20 +131,20 @@ namespace TencentCloud
                     bool FaceContentsHasBeenSet() const;
 
                     /**
-                     * 获取人物标签
+                     * 获取素材标签
 <li>数组长度限制：20 个标签；</li>
 <li>单个标签长度限制：128 个字符。</li>
-                     * @return Tags 人物标签
+                     * @return Tags 素材标签
 <li>数组长度限制：20 个标签；</li>
 <li>单个标签长度限制：128 个字符。</li>
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置人物标签
+                     * 设置素材标签
 <li>数组长度限制：20 个标签；</li>
 <li>单个标签长度限制：128 个字符。</li>
-                     * @param Tags 人物标签
+                     * @param Tags 素材标签
 <li>数组长度限制：20 个标签；</li>
 <li>单个标签长度限制：128 个字符。</li>
                      */
@@ -177,35 +177,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人物名称，长度限制：20 个字符。
+                     * 素材名称，长度限制：20 个字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 人物应用场景，可选值：
+                     * 素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
-2. Review：用于内容审核，等价于 Review.Face。
-3. All：用于内容识别、内容审核，等价于 1+2。
+2. Review：用于内容不适宜，等价于 Review.Face。
+3. All：包含以上全部，等价于 1+2。
                      */
                     std::vector<std::string> m_usages;
                     bool m_usagesHasBeenSet;
 
                     /**
-                     * 人物描述，长度限制：1024 个字符。
+                     * 素材描述，长度限制：1024 个字符。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     * 素材图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
+注意：图片必须是单人像五官较清晰的照片，像素不低于 200*200。
                      */
                     std::vector<std::string> m_faceContents;
                     bool m_faceContentsHasBeenSet;
 
                     /**
-                     * 人物标签
+                     * 素材标签
 <li>数组长度限制：20 个标签；</li>
 <li>单个标签长度限制：128 个字符。</li>
                      */

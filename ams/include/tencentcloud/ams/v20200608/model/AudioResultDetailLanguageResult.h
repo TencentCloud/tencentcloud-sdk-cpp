@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取语种
+                     * 获取语言信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label 语种
+                     * @return Label 语言信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置语种
+                     * 设置语言信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 语种
+                     * @param Label 语言信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabel(const std::string& _label);
@@ -159,7 +159,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 语种
+                     * 语言信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;

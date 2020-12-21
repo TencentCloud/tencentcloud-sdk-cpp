@@ -25,7 +25,8 @@ MediaInfo::MediaInfo() :
     m_codecsHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+    m_heightHasBeenSet(false),
+    m_thumbnailHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome MediaInfo::Deserialize(const Value &value)
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("Thumbnail") && !value["Thumbnail"].IsNull())
+    {
+        if (!value["Thumbnail"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MediaInfo.Thumbnail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_thumbnail = string(value["Thumbnail"].GetString());
+        m_thumbnailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void MediaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_thumbnailHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Thumbnail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_thumbnail.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void MediaInfo::SetHeight(const int64_t& _height)
 bool MediaInfo::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+string MediaInfo::GetThumbnail() const
+{
+    return m_thumbnail;
+}
+
+void MediaInfo::SetThumbnail(const string& _thumbnail)
+{
+    m_thumbnail = _thumbnail;
+    m_thumbnailHasBeenSet = true;
+}
+
+bool MediaInfo::ThumbnailHasBeenSet() const
+{
+    return m_thumbnailHasBeenSet;
 }
 

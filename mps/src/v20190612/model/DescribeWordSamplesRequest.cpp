@@ -24,8 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeWordSamplesRequest::DescribeWordSamplesRequest() :
-    m_usagesHasBeenSet(false),
     m_keywordsHasBeenSet(false),
+    m_usagesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
@@ -39,19 +39,6 @@ string DescribeWordSamplesRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_usagesHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Usages";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_usages.begin(); itr != m_usages.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_keywordsHasBeenSet)
     {
         Value iKey(kStringType);
@@ -60,6 +47,19 @@ string DescribeWordSamplesRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_usagesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Usages";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_usages.begin(); itr != m_usages.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -102,22 +102,6 @@ string DescribeWordSamplesRequest::ToJsonString() const
 }
 
 
-vector<string> DescribeWordSamplesRequest::GetUsages() const
-{
-    return m_usages;
-}
-
-void DescribeWordSamplesRequest::SetUsages(const vector<string>& _usages)
-{
-    m_usages = _usages;
-    m_usagesHasBeenSet = true;
-}
-
-bool DescribeWordSamplesRequest::UsagesHasBeenSet() const
-{
-    return m_usagesHasBeenSet;
-}
-
 vector<string> DescribeWordSamplesRequest::GetKeywords() const
 {
     return m_keywords;
@@ -132,6 +116,22 @@ void DescribeWordSamplesRequest::SetKeywords(const vector<string>& _keywords)
 bool DescribeWordSamplesRequest::KeywordsHasBeenSet() const
 {
     return m_keywordsHasBeenSet;
+}
+
+vector<string> DescribeWordSamplesRequest::GetUsages() const
+{
+    return m_usages;
+}
+
+void DescribeWordSamplesRequest::SetUsages(const vector<string>& _usages)
+{
+    m_usages = _usages;
+    m_usagesHasBeenSet = true;
+}
+
+bool DescribeWordSamplesRequest::UsagesHasBeenSet() const
+{
+    return m_usagesHasBeenSet;
 }
 
 vector<string> DescribeWordSamplesRequest::GetTags() const

@@ -31,7 +31,8 @@ ScdnLogTaskDetail::ScdnLogTaskDetail() :
     m_statusHasBeenSet(false),
     m_taskIDHasBeenSet(false),
     m_attackTypeHasBeenSet(false),
-    m_defenceModeHasBeenSet(false)
+    m_defenceModeHasBeenSet(false),
+    m_conditionsHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,26 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const Value &value)
         m_defenceModeHasBeenSet = true;
     }
 
+    if (value.HasMember("Conditions") && !value["Conditions"].IsNull())
+    {
+        if (!value["Conditions"].IsArray())
+            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.Conditions` is not array type"));
+
+        const Value &tmpValue = value["Conditions"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ScdnEventLogConditions item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_conditions.push_back(item);
+        }
+        m_conditionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +246,21 @@ void ScdnLogTaskDetail::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "DefenceMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_defenceMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_conditionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Conditions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_conditions.begin(); itr != m_conditions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -388,5 +424,21 @@ void ScdnLogTaskDetail::SetDefenceMode(const string& _defenceMode)
 bool ScdnLogTaskDetail::DefenceModeHasBeenSet() const
 {
     return m_defenceModeHasBeenSet;
+}
+
+vector<ScdnEventLogConditions> ScdnLogTaskDetail::GetConditions() const
+{
+    return m_conditions;
+}
+
+void ScdnLogTaskDetail::SetConditions(const vector<ScdnEventLogConditions>& _conditions)
+{
+    m_conditions = _conditions;
+    m_conditionsHasBeenSet = true;
+}
+
+bool ScdnLogTaskDetail::ConditionsHasBeenSet() const
+{
+    return m_conditionsHasBeenSet;
 }
 

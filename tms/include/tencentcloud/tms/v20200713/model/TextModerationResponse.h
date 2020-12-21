@@ -71,10 +71,10 @@ namespace TencentCloud
                     bool EvilFlagHasBeenSet() const;
 
                     /**
-                     * 获取机器识别后判断违规所属类型。
-Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
-                     * @return Label 机器识别后判断违规所属类型。
-Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     * 获取恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+以及令人反感、不安全或不适宜的内容类型。
+                     * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+以及令人反感、不安全或不适宜的内容类型。
                      */
                     std::string GetLabel() const;
 
@@ -86,9 +86,9 @@ Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：�
 
                     /**
                      * 获取建议您拿到判断结果后的执行操作。
-Block：建议打击，Review：建议复审，Normal：建议通过。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
                      * @return Suggestion 建议您拿到判断结果后的执行操作。
-Block：建议打击，Review：建议复审，Normal：建议通过。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
                      */
                     std::string GetSuggestion() const;
 
@@ -170,6 +170,20 @@ Block：建议打击，Review：建议复审，Normal：建议通过。
                      */
                     bool ExtraHasBeenSet() const;
 
+                    /**
+                     * 获取请求参数中的DataId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataId 请求参数中的DataId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDataId() const;
+
+                    /**
+                     * 判断参数 DataId 是否已赋值
+                     * @return DataId 是否已赋值
+                     */
+                    bool DataIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -186,15 +200,15 @@ Block：建议打击，Review：建议复审，Normal：建议通过。
                     bool m_evilFlagHasBeenSet;
 
                     /**
-                     * 机器识别后判断违规所属类型。
-Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     * 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+以及令人反感、不安全或不适宜的内容类型。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 建议您拿到判断结果后的执行操作。
-Block：建议打击，Review：建议复审，Normal：建议通过。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
@@ -234,6 +248,13 @@ Block：建议打击，Review：建议复审，Normal：建议通过。
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
+
+                    /**
+                     * 请求参数中的DataId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataId;
+                    bool m_dataIdHasBeenSet;
 
                 };
             }

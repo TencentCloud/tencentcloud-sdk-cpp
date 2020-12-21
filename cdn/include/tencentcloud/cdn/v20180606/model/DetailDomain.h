@@ -61,6 +61,7 @@
 #include <tencentcloud/cdn/v20180606/model/AdvancedAuthentication.h>
 #include <tencentcloud/cdn/v20180606/model/OriginAuthentication.h>
 #include <tencentcloud/cdn/v20180606/model/Ipv6Access.h>
+#include <tencentcloud/cdn/v20180606/model/AdvanceConfig.h>
 
 
 namespace TencentCloud
@@ -1265,6 +1266,28 @@ off：不支持
                      */
                     bool Ipv6AccessHasBeenSet() const;
 
+                    /**
+                     * 获取高级配置集合。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvanceSet 高级配置集合。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvanceConfig> GetAdvanceSet() const;
+
+                    /**
+                     * 设置高级配置集合。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdvanceSet 高级配置集合。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdvanceSet(const std::vector<AdvanceConfig>& _advanceSet);
+
+                    /**
+                     * 判断参数 AdvanceSet 是否已赋值
+                     * @return AdvanceSet 是否已赋值
+                     */
+                    bool AdvanceSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1638,6 +1661,13 @@ off：不支持
                      */
                     Ipv6Access m_ipv6Access;
                     bool m_ipv6AccessHasBeenSet;
+
+                    /**
+                     * 高级配置集合。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvanceConfig> m_advanceSet;
+                    bool m_advanceSetHasBeenSet;
 
                 };
             }

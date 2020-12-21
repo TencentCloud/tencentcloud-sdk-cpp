@@ -26,7 +26,9 @@ using namespace std;
 ModifyNatGatewayAttributeRequest::ModifyNatGatewayAttributeRequest() :
     m_natGatewayIdHasBeenSet(false),
     m_natGatewayNameHasBeenSet(false),
-    m_internetMaxBandwidthOutHasBeenSet(false)
+    m_internetMaxBandwidthOutHasBeenSet(false),
+    m_modifySecurityGroupHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,27 @@ string ModifyNatGatewayAttributeRequest::ToJsonString() const
         string key = "InternetMaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
+    }
+
+    if (m_modifySecurityGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModifySecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modifySecurityGroup, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -115,6 +138,38 @@ void ModifyNatGatewayAttributeRequest::SetInternetMaxBandwidthOut(const uint64_t
 bool ModifyNatGatewayAttributeRequest::InternetMaxBandwidthOutHasBeenSet() const
 {
     return m_internetMaxBandwidthOutHasBeenSet;
+}
+
+bool ModifyNatGatewayAttributeRequest::GetModifySecurityGroup() const
+{
+    return m_modifySecurityGroup;
+}
+
+void ModifyNatGatewayAttributeRequest::SetModifySecurityGroup(const bool& _modifySecurityGroup)
+{
+    m_modifySecurityGroup = _modifySecurityGroup;
+    m_modifySecurityGroupHasBeenSet = true;
+}
+
+bool ModifyNatGatewayAttributeRequest::ModifySecurityGroupHasBeenSet() const
+{
+    return m_modifySecurityGroupHasBeenSet;
+}
+
+vector<string> ModifyNatGatewayAttributeRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void ModifyNatGatewayAttributeRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool ModifyNatGatewayAttributeRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

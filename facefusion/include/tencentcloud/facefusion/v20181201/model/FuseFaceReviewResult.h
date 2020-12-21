@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 人脸融合鉴黄鉴政返回参数item
+                * 人脸融合不适宜内容识别返回参数item
                 */
                 class FuseFaceReviewResult : public AbstractModel
                 {

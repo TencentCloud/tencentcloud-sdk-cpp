@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内容审核模板唯一标识。
-                     * @return Definition 内容审核模板唯一标识。
+                     * 获取内容智能识别模板唯一标识。
+                     * @return Definition 内容智能识别模板唯一标识。
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置内容审核模板唯一标识。
-                     * @param Definition 内容审核模板唯一标识。
+                     * 设置内容智能识别模板唯一标识。
+                     * @param Definition 内容智能识别模板唯一标识。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取内容审核模板名称，长度限制：64 个字符。
-                     * @return Name 内容审核模板名称，长度限制：64 个字符。
+                     * 获取内容智能识别模板名称，长度限制：64 个字符。
+                     * @return Name 内容智能识别模板名称，长度限制：64 个字符。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置内容审核模板名称，长度限制：64 个字符。
-                     * @param Name 内容审核模板名称，长度限制：64 个字符。
+                     * 设置内容智能识别模板名称，长度限制：64 个字符。
+                     * @param Name 内容智能识别模板名称，长度限制：64 个字符。
                      */
                     void SetName(const std::string& _name);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取内容审核模板描述信息，长度限制：256 个字符。
-                     * @return Comment 内容审核模板描述信息，长度限制：256 个字符。
+                     * 获取内容智能识别模板描述信息，长度限制：256 个字符。
+                     * @return Comment 内容智能识别模板描述信息，长度限制：256 个字符。
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置内容审核模板描述信息，长度限制：256 个字符。
-                     * @param Comment 内容审核模板描述信息，长度限制：256 个字符。
+                     * 设置内容智能识别模板描述信息，长度限制：256 个字符。
+                     * @param Comment 内容智能识别模板描述信息，长度限制：256 个字符。
                      */
                     void SetComment(const std::string& _comment);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取鉴黄控制参数。
-                     * @return PornConfigure 鉴黄控制参数。
+                     * 获取令人反感的信息的控制参数。
+                     * @return PornConfigure 令人反感的信息的控制参数。
                      */
                     PornConfigureInfoForUpdate GetPornConfigure() const;
 
                     /**
-                     * 设置鉴黄控制参数。
-                     * @param PornConfigure 鉴黄控制参数。
+                     * 设置令人反感的信息的控制参数。
+                     * @param PornConfigure 令人反感的信息的控制参数。
                      */
                     void SetPornConfigure(const PornConfigureInfoForUpdate& _pornConfigure);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool PornConfigureHasBeenSet() const;
 
                     /**
-                     * 获取鉴恐控制参数。
-                     * @return TerrorismConfigure 鉴恐控制参数。
+                     * 获取令人不安全的信息的控制参数。
+                     * @return TerrorismConfigure 令人不安全的信息的控制参数。
                      */
                     TerrorismConfigureInfoForUpdate GetTerrorismConfigure() const;
 
                     /**
-                     * 设置鉴恐控制参数。
-                     * @param TerrorismConfigure 鉴恐控制参数。
+                     * 设置令人不安全的信息的控制参数。
+                     * @param TerrorismConfigure 令人不安全的信息的控制参数。
                      */
                     void SetTerrorismConfigure(const TerrorismConfigureInfoForUpdate& _terrorismConfigure);
 
@@ -138,14 +138,14 @@ namespace TencentCloud
                     bool TerrorismConfigureHasBeenSet() const;
 
                     /**
-                     * 获取鉴政控制参数。
-                     * @return PoliticalConfigure 鉴政控制参数。
+                     * 获取令人不适宜的控制参数。
+                     * @return PoliticalConfigure 令人不适宜的控制参数。
                      */
                     PoliticalConfigureInfoForUpdate GetPoliticalConfigure() const;
 
                     /**
-                     * 设置鉴政控制参数。
-                     * @param PoliticalConfigure 鉴政控制参数。
+                     * 设置令人不适宜的控制参数。
+                     * @param PoliticalConfigure 令人不适宜的控制参数。
                      */
                     void SetPoliticalConfigure(const PoliticalConfigureInfoForUpdate& _politicalConfigure);
 
@@ -186,14 +186,14 @@ namespace TencentCloud
                     bool ProhibitedConfigureHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义内容审核控制参数。
-                     * @return UserDefineConfigure 用户自定义内容审核控制参数。
+                     * 获取用户自定义内容智能识别控制参数。
+                     * @return UserDefineConfigure 用户自定义内容智能识别控制参数。
                      */
                     UserDefineConfigureInfoForUpdate GetUserDefineConfigure() const;
 
                     /**
-                     * 设置用户自定义内容审核控制参数。
-                     * @param UserDefineConfigure 用户自定义内容审核控制参数。
+                     * 设置用户自定义内容智能识别控制参数。
+                     * @param UserDefineConfigure 用户自定义内容智能识别控制参数。
                      */
                     void SetUserDefineConfigure(const UserDefineConfigureInfoForUpdate& _userDefineConfigure);
 
@@ -206,37 +206,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 内容审核模板唯一标识。
+                     * 内容智能识别模板唯一标识。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 内容审核模板名称，长度限制：64 个字符。
+                     * 内容智能识别模板名称，长度限制：64 个字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 内容审核模板描述信息，长度限制：256 个字符。
+                     * 内容智能识别模板描述信息，长度限制：256 个字符。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 鉴黄控制参数。
+                     * 令人反感的信息的控制参数。
                      */
                     PornConfigureInfoForUpdate m_pornConfigure;
                     bool m_pornConfigureHasBeenSet;
 
                     /**
-                     * 鉴恐控制参数。
+                     * 令人不安全的信息的控制参数。
                      */
                     TerrorismConfigureInfoForUpdate m_terrorismConfigure;
                     bool m_terrorismConfigureHasBeenSet;
 
                     /**
-                     * 鉴政控制参数。
+                     * 令人不适宜的控制参数。
                      */
                     PoliticalConfigureInfoForUpdate m_politicalConfigure;
                     bool m_politicalConfigureHasBeenSet;
@@ -251,7 +251,7 @@ namespace TencentCloud
                     bool m_prohibitedConfigureHasBeenSet;
 
                     /**
-                     * 用户自定义内容审核控制参数。
+                     * 用户自定义内容智能识别控制参数。
                      */
                     UserDefineConfigureInfoForUpdate m_userDefineConfigure;
                     bool m_userDefineConfigureHasBeenSet;

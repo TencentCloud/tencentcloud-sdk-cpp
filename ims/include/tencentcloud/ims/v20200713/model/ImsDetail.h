@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取机器审核结果code 100 正常, 20001 政治 20002 色情 20006 涉毒违法 20007 谩骂 24001 暴恐 21000 综合 20105 广告引流 20103 性感
-                     * @return EvilType 机器审核结果code 100 正常, 20001 政治 20002 色情 20006 涉毒违法 20007 谩骂 24001 暴恐 21000 综合 20105 广告引流 20103 性感
+                     * 获取----非必选，该参数暂未对外开放
+                     * @return EvilType ----非必选，该参数暂未对外开放
                      */
                     int64_t GetEvilType() const;
 
                     /**
-                     * 设置机器审核结果code 100 正常, 20001 政治 20002 色情 20006 涉毒违法 20007 谩骂 24001 暴恐 21000 综合 20105 广告引流 20103 性感
-                     * @param EvilType 机器审核结果code 100 正常, 20001 政治 20002 色情 20006 涉毒违法 20007 谩骂 24001 暴恐 21000 综合 20105 广告引流 20103 性感
+                     * 设置----非必选，该参数暂未对外开放
+                     * @param EvilType ----非必选，该参数暂未对外开放
                      */
                     void SetEvilType(const int64_t& _evilType);
 
@@ -211,7 +211,7 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 机器审核结果code 100 正常, 20001 政治 20002 色情 20006 涉毒违法 20007 谩骂 24001 暴恐 21000 综合 20105 广告引流 20103 性感
+                     * ----非必选，该参数暂未对外开放
                      */
                     int64_t m_evilType;
                     bool m_evilTypeHasBeenSet;

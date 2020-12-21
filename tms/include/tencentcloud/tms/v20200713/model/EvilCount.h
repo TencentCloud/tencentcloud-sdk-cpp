@@ -47,46 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取违规类型：
-Terror	24001
-Porn	20002
-Polity	20001
-Ad	20105
-Abuse	20007	
-Illegal	20006	
-Spam	25001	
-Moan	26001
-                     * @return EvilType 违规类型：
-Terror	24001
-Porn	20002
-Polity	20001
-Ad	20105
-Abuse	20007	
-Illegal	20006	
-Spam	25001	
-Moan	26001
+                     * 获取----非必选，该参数功能暂未对外开放
+                     * @return EvilType ----非必选，该参数功能暂未对外开放
                      */
                     std::string GetEvilType() const;
 
                     /**
-                     * 设置违规类型：
-Terror	24001
-Porn	20002
-Polity	20001
-Ad	20105
-Abuse	20007	
-Illegal	20006	
-Spam	25001	
-Moan	26001
-                     * @param EvilType 违规类型：
-Terror	24001
-Porn	20002
-Polity	20001
-Ad	20105
-Abuse	20007	
-Illegal	20006	
-Spam	25001	
-Moan	26001
+                     * 设置----非必选，该参数功能暂未对外开放
+                     * @param EvilType ----非必选，该参数功能暂未对外开放
                      */
                     void SetEvilType(const std::string& _evilType);
 
@@ -117,15 +85,7 @@ Moan	26001
                 private:
 
                     /**
-                     * 违规类型：
-Terror	24001
-Porn	20002
-Polity	20001
-Ad	20105
-Abuse	20007	
-Illegal	20006	
-Spam	25001	
-Moan	26001
+                     * ----非必选，该参数功能暂未对外开放
                      */
                     std::string m_evilType;
                     bool m_evilTypeHasBeenSet;

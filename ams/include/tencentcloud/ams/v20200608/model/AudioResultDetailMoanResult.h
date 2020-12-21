@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定为Moan
+                     * 获取固定为Moan（呻吟）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label 固定为Moan
+                     * @return Label 固定为Moan（呻吟）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置固定为Moan
+                     * 设置固定为Moan（呻吟）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 固定为Moan
+                     * @param Label 固定为Moan（呻吟）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabel(const std::string& _label);
@@ -143,7 +143,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定为Moan
+                     * 固定为Moan（呻吟）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;

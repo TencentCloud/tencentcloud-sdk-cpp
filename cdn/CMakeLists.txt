@@ -95,6 +95,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/BotCookie.h
   include/tencentcloud/cdn/v20180606/model/DescribeCdnIpRequest.h
   include/tencentcloud/cdn/v20180606/model/Ipv6.h
+  include/tencentcloud/cdn/v20180606/model/ScdnEventLogConditions.h
   include/tencentcloud/cdn/v20180606/model/StatusCodeCache.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitResponse.h
   include/tencentcloud/cdn/v20180606/model/EnableClsLogTopicResponse.h
@@ -102,6 +103,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/OverseaConfig.h
   include/tencentcloud/cdn/v20180606/model/AddCdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/UserAgentFilterRule.h
+  include/tencentcloud/cdn/v20180606/model/UpdateDomainConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/Tag.h
   include/tencentcloud/cdn/v20180606/model/CacheConfigFollowOrigin.h
   include/tencentcloud/cdn/v20180606/model/MaxAgeRule.h
@@ -240,7 +242,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/LogSetInfo.h
   include/tencentcloud/cdn/v20180606/model/ListDiagnoseReportResponse.h
   include/tencentcloud/cdn/v20180606/model/SearchClsLogRequest.h
-  include/tencentcloud/cdn/v20180606/model/UpdateDomainConfigRequest.h
+  include/tencentcloud/cdn/v20180606/model/AdvanceConfig.h
   include/tencentcloud/cdn/v20180606/model/AwsPrivateAccess.h
   include/tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsResponse.h
   include/tencentcloud/cdn/v20180606/model/VideoSeek.h
@@ -351,6 +353,7 @@ set(cdn_src
   src/v20180606/model/BotCookie.cpp
   src/v20180606/model/DescribeCdnIpRequest.cpp
   src/v20180606/model/Ipv6.cpp
+  src/v20180606/model/ScdnEventLogConditions.cpp
   src/v20180606/model/StatusCodeCache.cpp
   src/v20180606/model/DescribeIpVisitResponse.cpp
   src/v20180606/model/EnableClsLogTopicResponse.cpp
@@ -358,6 +361,7 @@ set(cdn_src
   src/v20180606/model/OverseaConfig.cpp
   src/v20180606/model/AddCdnDomainRequest.cpp
   src/v20180606/model/UserAgentFilterRule.cpp
+  src/v20180606/model/UpdateDomainConfigRequest.cpp
   src/v20180606/model/Tag.cpp
   src/v20180606/model/CacheConfigFollowOrigin.cpp
   src/v20180606/model/MaxAgeRule.cpp
@@ -496,7 +500,7 @@ set(cdn_src
   src/v20180606/model/LogSetInfo.cpp
   src/v20180606/model/ListDiagnoseReportResponse.cpp
   src/v20180606/model/SearchClsLogRequest.cpp
-  src/v20180606/model/UpdateDomainConfigRequest.cpp
+  src/v20180606/model/AdvanceConfig.cpp
   src/v20180606/model/AwsPrivateAccess.cpp
   src/v20180606/model/ManageClsTopicDomainsResponse.cpp
   src/v20180606/model/VideoSeek.cpp

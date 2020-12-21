@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回列表数据
+                     * 获取返回列表数据----非必选，该参数暂未对外开放
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImsDetailSet 返回列表数据
+                     * @return ImsDetailSet 返回列表数据----非必选，该参数暂未对外开放
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImsDetail> GetImsDetailSet() const;
@@ -72,7 +72,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回列表数据
+                     * 返回列表数据----非必选，该参数暂未对外开放
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImsDetail> m_imsDetailSet;

@@ -51,20 +51,16 @@ namespace TencentCloud
                      * 获取场景
 Porn 色情
 Sexy 性感
-Polity 政治
-Illegal 违法
 Abuse 谩骂
-Terror 暴恐
 Ad 广告
+等多个识别场景
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scene 场景
 Porn 色情
 Sexy 性感
-Polity 政治
-Illegal 违法
 Abuse 谩骂
-Terror 暴恐
 Ad 广告
+等多个识别场景
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetScene() const;
@@ -73,20 +69,16 @@ Ad 广告
                      * 设置场景
 Porn 色情
 Sexy 性感
-Polity 政治
-Illegal 违法
 Abuse 谩骂
-Terror 暴恐
 Ad 广告
+等多个识别场景
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Scene 场景
 Porn 色情
 Sexy 性感
-Polity 政治
-Illegal 违法
 Abuse 谩骂
-Terror 暴恐
 Ad 广告
+等多个识别场景
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetScene(const std::string& _scene);
@@ -128,29 +120,21 @@ Ad 广告
                     bool HitFlagHasBeenSet() const;
 
                     /**
-                     * 获取审核建议，可选值：
-Pass 通过，
-Review 建议人审，
-Block 确认违规
+                     * 获取建议您拿到判断结果后的执行操作。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Suggestion 审核建议，可选值：
-Pass 通过，
-Review 建议人审，
-Block 确认违规
+                     * @return Suggestion 建议您拿到判断结果后的执行操作。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置审核建议，可选值：
-Pass 通过，
-Review 建议人审，
-Block 确认违规
+                     * 设置建议您拿到判断结果后的执行操作。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 审核建议，可选值：
-Pass 通过，
-Review 建议人审，
-Block 确认违规
+                     * @param Suggestion 建议您拿到判断结果后的执行操作。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -291,11 +275,9 @@ Block 确认违规
                      * 场景
 Porn 色情
 Sexy 性感
-Polity 政治
-Illegal 违法
 Abuse 谩骂
-Terror 暴恐
 Ad 广告
+等多个识别场景
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scene;
@@ -311,10 +293,8 @@ Ad 广告
                     bool m_hitFlagHasBeenSet;
 
                     /**
-                     * 审核建议，可选值：
-Pass 通过，
-Review 建议人审，
-Block 确认违规
+                     * 建议您拿到判断结果后的执行操作。
+建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;

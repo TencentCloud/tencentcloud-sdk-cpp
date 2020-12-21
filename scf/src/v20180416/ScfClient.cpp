@@ -427,6 +427,92 @@ ScfClient::DeleteNamespaceOutcomeCallable ScfClient::DeleteNamespaceCallable(con
     return task->get_future();
 }
 
+ScfClient::DeleteProvisionedConcurrencyConfigOutcome ScfClient::DeleteProvisionedConcurrencyConfig(const DeleteProvisionedConcurrencyConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProvisionedConcurrencyConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProvisionedConcurrencyConfigResponse rsp = DeleteProvisionedConcurrencyConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProvisionedConcurrencyConfigOutcome(rsp);
+        else
+            return DeleteProvisionedConcurrencyConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProvisionedConcurrencyConfigOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::DeleteProvisionedConcurrencyConfigAsync(const DeleteProvisionedConcurrencyConfigRequest& request, const DeleteProvisionedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteProvisionedConcurrencyConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::DeleteProvisionedConcurrencyConfigOutcomeCallable ScfClient::DeleteProvisionedConcurrencyConfigCallable(const DeleteProvisionedConcurrencyConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteProvisionedConcurrencyConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteProvisionedConcurrencyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::DeleteReservedConcurrencyConfigOutcome ScfClient::DeleteReservedConcurrencyConfig(const DeleteReservedConcurrencyConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReservedConcurrencyConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReservedConcurrencyConfigResponse rsp = DeleteReservedConcurrencyConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReservedConcurrencyConfigOutcome(rsp);
+        else
+            return DeleteReservedConcurrencyConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReservedConcurrencyConfigOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::DeleteReservedConcurrencyConfigAsync(const DeleteReservedConcurrencyConfigRequest& request, const DeleteReservedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReservedConcurrencyConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::DeleteReservedConcurrencyConfigOutcomeCallable ScfClient::DeleteReservedConcurrencyConfigCallable(const DeleteReservedConcurrencyConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReservedConcurrencyConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReservedConcurrencyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::DeleteTriggerOutcome ScfClient::DeleteTrigger(const DeleteTriggerRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTrigger");
@@ -678,6 +764,92 @@ ScfClient::GetLayerVersionOutcomeCallable ScfClient::GetLayerVersionCallable(con
         [this, request]()
         {
             return this->GetLayerVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::GetProvisionedConcurrencyConfigOutcome ScfClient::GetProvisionedConcurrencyConfig(const GetProvisionedConcurrencyConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetProvisionedConcurrencyConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetProvisionedConcurrencyConfigResponse rsp = GetProvisionedConcurrencyConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetProvisionedConcurrencyConfigOutcome(rsp);
+        else
+            return GetProvisionedConcurrencyConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return GetProvisionedConcurrencyConfigOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::GetProvisionedConcurrencyConfigAsync(const GetProvisionedConcurrencyConfigRequest& request, const GetProvisionedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetProvisionedConcurrencyConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::GetProvisionedConcurrencyConfigOutcomeCallable ScfClient::GetProvisionedConcurrencyConfigCallable(const GetProvisionedConcurrencyConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetProvisionedConcurrencyConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->GetProvisionedConcurrencyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::GetReservedConcurrencyConfigOutcome ScfClient::GetReservedConcurrencyConfig(const GetReservedConcurrencyConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetReservedConcurrencyConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetReservedConcurrencyConfigResponse rsp = GetReservedConcurrencyConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetReservedConcurrencyConfigOutcome(rsp);
+        else
+            return GetReservedConcurrencyConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return GetReservedConcurrencyConfigOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::GetReservedConcurrencyConfigAsync(const GetReservedConcurrencyConfigRequest& request, const GetReservedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetReservedConcurrencyConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::GetReservedConcurrencyConfigOutcomeCallable ScfClient::GetReservedConcurrencyConfigCallable(const GetReservedConcurrencyConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetReservedConcurrencyConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->GetReservedConcurrencyConfig(request);
         }
     );
 
@@ -1108,6 +1280,135 @@ ScfClient::PublishVersionOutcomeCallable ScfClient::PublishVersionCallable(const
         [this, request]()
         {
             return this->PublishVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::PutProvisionedConcurrencyConfigOutcome ScfClient::PutProvisionedConcurrencyConfig(const PutProvisionedConcurrencyConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutProvisionedConcurrencyConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutProvisionedConcurrencyConfigResponse rsp = PutProvisionedConcurrencyConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutProvisionedConcurrencyConfigOutcome(rsp);
+        else
+            return PutProvisionedConcurrencyConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return PutProvisionedConcurrencyConfigOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::PutProvisionedConcurrencyConfigAsync(const PutProvisionedConcurrencyConfigRequest& request, const PutProvisionedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutProvisionedConcurrencyConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::PutProvisionedConcurrencyConfigOutcomeCallable ScfClient::PutProvisionedConcurrencyConfigCallable(const PutProvisionedConcurrencyConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutProvisionedConcurrencyConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->PutProvisionedConcurrencyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::PutReservedConcurrencyConfigOutcome ScfClient::PutReservedConcurrencyConfig(const PutReservedConcurrencyConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutReservedConcurrencyConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutReservedConcurrencyConfigResponse rsp = PutReservedConcurrencyConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutReservedConcurrencyConfigOutcome(rsp);
+        else
+            return PutReservedConcurrencyConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return PutReservedConcurrencyConfigOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::PutReservedConcurrencyConfigAsync(const PutReservedConcurrencyConfigRequest& request, const PutReservedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutReservedConcurrencyConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::PutReservedConcurrencyConfigOutcomeCallable ScfClient::PutReservedConcurrencyConfigCallable(const PutReservedConcurrencyConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutReservedConcurrencyConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->PutReservedConcurrencyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::PutTotalConcurrencyConfigOutcome ScfClient::PutTotalConcurrencyConfig(const PutTotalConcurrencyConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutTotalConcurrencyConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutTotalConcurrencyConfigResponse rsp = PutTotalConcurrencyConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutTotalConcurrencyConfigOutcome(rsp);
+        else
+            return PutTotalConcurrencyConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return PutTotalConcurrencyConfigOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::PutTotalConcurrencyConfigAsync(const PutTotalConcurrencyConfigRequest& request, const PutTotalConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutTotalConcurrencyConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::PutTotalConcurrencyConfigOutcomeCallable ScfClient::PutTotalConcurrencyConfigCallable(const PutTotalConcurrencyConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutTotalConcurrencyConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->PutTotalConcurrencyConfig(request);
         }
     );
 

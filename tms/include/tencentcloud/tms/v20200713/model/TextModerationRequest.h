@@ -63,24 +63,6 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取数据ID，英文字母、下划线、-组成，不超过64个字符
-                     * @return DataId 数据ID，英文字母、下划线、-组成，不超过64个字符
-                     */
-                    std::string GetDataId() const;
-
-                    /**
-                     * 设置数据ID，英文字母、下划线、-组成，不超过64个字符
-                     * @param DataId 数据ID，英文字母、下划线、-组成，不超过64个字符
-                     */
-                    void SetDataId(const std::string& _dataId);
-
-                    /**
-                     * 判断参数 DataId 是否已赋值
-                     * @return DataId 是否已赋值
-                     */
-                    bool DataIdHasBeenSet() const;
-
-                    /**
                      * 获取该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。
                      * @return BizType 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。
                      */
@@ -97,6 +79,24 @@ namespace TencentCloud
                      * @return BizType 是否已赋值
                      */
                     bool BizTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据ID，英文字母、下划线、-组成，不超过64个字符
+                     * @return DataId 数据ID，英文字母、下划线、-组成，不超过64个字符
+                     */
+                    std::string GetDataId() const;
+
+                    /**
+                     * 设置数据ID，英文字母、下划线、-组成，不超过64个字符
+                     * @param DataId 数据ID，英文字母、下划线、-组成，不超过64个字符
+                     */
+                    void SetDataId(const std::string& _dataId);
+
+                    /**
+                     * 判断参数 DataId 是否已赋值
+                     * @return DataId 是否已赋值
+                     */
+                    bool DataIdHasBeenSet() const;
 
                     /**
                      * 获取账号相关信息字段，填入后可识别违规风险账号。
@@ -143,16 +143,16 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 数据ID，英文字母、下划线、-组成，不超过64个字符
-                     */
-                    std::string m_dataId;
-                    bool m_dataIdHasBeenSet;
-
-                    /**
                      * 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
+
+                    /**
+                     * 数据ID，英文字母、下划线、-组成，不超过64个字符
+                     */
+                    std::string m_dataId;
+                    bool m_dataIdHasBeenSet;
 
                     /**
                      * 账号相关信息字段，填入后可识别违规风险账号。

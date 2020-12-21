@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/ScdnEventLogConditions.h>
 
 
 namespace TencentCloud
@@ -342,6 +343,28 @@ DefenceMode映射如下：
                      */
                     bool DefenceModeHasBeenSet() const;
 
+                    /**
+                     * 获取查询条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Conditions 查询条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ScdnEventLogConditions> GetConditions() const;
+
+                    /**
+                     * 设置查询条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Conditions 查询条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConditions(const std::vector<ScdnEventLogConditions>& _conditions);
+
+                    /**
+                     * 判断参数 Conditions 是否已赋值
+                     * @return Conditions 是否已赋值
+                     */
+                    bool ConditionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +455,13 @@ DefenceMode映射如下：
                      */
                     std::string m_defenceMode;
                     bool m_defenceModeHasBeenSet;
+
+                    /**
+                     * 查询条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ScdnEventLogConditions> m_conditions;
+                    bool m_conditionsHasBeenSet;
 
                 };
             }

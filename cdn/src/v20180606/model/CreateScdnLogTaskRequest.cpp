@@ -31,7 +31,9 @@ CreateScdnLogTaskRequest::CreateScdnLogTaskRequest() :
     m_attackTypeHasBeenSet(false),
     m_defenceModeHasBeenSet(false),
     m_ipHasBeenSet(false),
-    m_domainsHasBeenSet(false)
+    m_domainsHasBeenSet(false),
+    m_attackTypesHasBeenSet(false),
+    m_conditionsHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,34 @@ string CreateScdnLogTaskRequest::ToJsonString() const
         for (auto itr = m_domains.begin(); itr != m_domains.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_attackTypesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttackTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_attackTypes.begin(); itr != m_attackTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_conditionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Conditions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_conditions.begin(); itr != m_conditions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -245,6 +275,38 @@ void CreateScdnLogTaskRequest::SetDomains(const vector<string>& _domains)
 bool CreateScdnLogTaskRequest::DomainsHasBeenSet() const
 {
     return m_domainsHasBeenSet;
+}
+
+vector<string> CreateScdnLogTaskRequest::GetAttackTypes() const
+{
+    return m_attackTypes;
+}
+
+void CreateScdnLogTaskRequest::SetAttackTypes(const vector<string>& _attackTypes)
+{
+    m_attackTypes = _attackTypes;
+    m_attackTypesHasBeenSet = true;
+}
+
+bool CreateScdnLogTaskRequest::AttackTypesHasBeenSet() const
+{
+    return m_attackTypesHasBeenSet;
+}
+
+vector<ScdnEventLogConditions> CreateScdnLogTaskRequest::GetConditions() const
+{
+    return m_conditions;
+}
+
+void CreateScdnLogTaskRequest::SetConditions(const vector<ScdnEventLogConditions>& _conditions)
+{
+    m_conditions = _conditions;
+    m_conditionsHasBeenSet = true;
+}
+
+bool CreateScdnLogTaskRequest::ConditionsHasBeenSet() const
+{
+    return m_conditionsHasBeenSet;
 }
 
 

@@ -27,8 +27,8 @@ ModifyContentReviewTemplateRequest::ModifyContentReviewTemplateRequest() :
     m_definitionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_pornConfigureHasBeenSet(false),
     m_terrorismConfigureHasBeenSet(false),
+    m_pornConfigureHasBeenSet(false),
     m_politicalConfigureHasBeenSet(false),
     m_prohibitedConfigureHasBeenSet(false),
     m_userDefineConfigureHasBeenSet(false),
@@ -69,15 +69,6 @@ string ModifyContentReviewTemplateRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_pornConfigureHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PornConfigure";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_pornConfigure.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_terrorismConfigureHasBeenSet)
     {
         Value iKey(kStringType);
@@ -85,6 +76,15 @@ string ModifyContentReviewTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_terrorismConfigure.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_pornConfigureHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PornConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_pornConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_politicalConfigureHasBeenSet)
@@ -194,22 +194,6 @@ bool ModifyContentReviewTemplateRequest::CommentHasBeenSet() const
     return m_commentHasBeenSet;
 }
 
-PornConfigureInfoForUpdate ModifyContentReviewTemplateRequest::GetPornConfigure() const
-{
-    return m_pornConfigure;
-}
-
-void ModifyContentReviewTemplateRequest::SetPornConfigure(const PornConfigureInfoForUpdate& _pornConfigure)
-{
-    m_pornConfigure = _pornConfigure;
-    m_pornConfigureHasBeenSet = true;
-}
-
-bool ModifyContentReviewTemplateRequest::PornConfigureHasBeenSet() const
-{
-    return m_pornConfigureHasBeenSet;
-}
-
 TerrorismConfigureInfoForUpdate ModifyContentReviewTemplateRequest::GetTerrorismConfigure() const
 {
     return m_terrorismConfigure;
@@ -224,6 +208,22 @@ void ModifyContentReviewTemplateRequest::SetTerrorismConfigure(const TerrorismCo
 bool ModifyContentReviewTemplateRequest::TerrorismConfigureHasBeenSet() const
 {
     return m_terrorismConfigureHasBeenSet;
+}
+
+PornConfigureInfoForUpdate ModifyContentReviewTemplateRequest::GetPornConfigure() const
+{
+    return m_pornConfigure;
+}
+
+void ModifyContentReviewTemplateRequest::SetPornConfigure(const PornConfigureInfoForUpdate& _pornConfigure)
+{
+    m_pornConfigure = _pornConfigure;
+    m_pornConfigureHasBeenSet = true;
+}
+
+bool ModifyContentReviewTemplateRequest::PornConfigureHasBeenSet() const
+{
+    return m_pornConfigureHasBeenSet;
 }
 
 PoliticalConfigureInfoForUpdate ModifyContentReviewTemplateRequest::GetPoliticalConfigure() const

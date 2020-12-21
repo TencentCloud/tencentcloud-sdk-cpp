@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人物 ID。
-                     * @return PersonId 人物 ID。
+                     * 获取素材 ID。
+                     * @return PersonId 素材 ID。
                      */
                     std::string GetPersonId() const;
 
                     /**
-                     * 设置人物 ID。
-                     * @param PersonId 人物 ID。
+                     * 设置素材 ID。
+                     * @param PersonId 素材 ID。
                      */
                     void SetPersonId(const std::string& _personId);
 
@@ -99,26 +99,26 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取人物应用场景，可选值：
+                     * 获取素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
-2. Review：用于内容审核，等价于 Review.Face。
-3. All：用于内容识别、内容审核，等价于 1+2。
-                     * @return Usages 人物应用场景，可选值：
+2. Review：用于不适宜的内容识别，等价于 Review.Face。
+3. All：用于内容识别、不适宜的内容识别，等价于 1+2。
+                     * @return Usages 素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
-2. Review：用于内容审核，等价于 Review.Face。
-3. All：用于内容识别、内容审核，等价于 1+2。
+2. Review：用于不适宜的内容识别，等价于 Review.Face。
+3. All：用于内容识别、不适宜的内容识别，等价于 1+2。
                      */
                     std::vector<std::string> GetUsages() const;
 
                     /**
-                     * 设置人物应用场景，可选值：
+                     * 设置素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
-2. Review：用于内容审核，等价于 Review.Face。
-3. All：用于内容识别、内容审核，等价于 1+2。
-                     * @param Usages 人物应用场景，可选值：
+2. Review：用于不适宜的内容识别，等价于 Review.Face。
+3. All：用于内容识别、不适宜的内容识别，等价于 1+2。
+                     * @param Usages 素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
-2. Review：用于内容审核，等价于 Review.Face。
-3. All：用于内容识别、内容审核，等价于 1+2。
+2. Review：用于不适宜的内容识别，等价于 Review.Face。
+3. All：用于内容识别、不适宜的内容识别，等价于 1+2。
                      */
                     void SetUsages(const std::vector<std::string>& _usages);
 
@@ -129,14 +129,14 @@ namespace TencentCloud
                     bool UsagesHasBeenSet() const;
 
                     /**
-                     * 获取人脸操作信息。
-                     * @return FaceOperationInfo 人脸操作信息。
+                     * 获取五官操作信息。
+                     * @return FaceOperationInfo 五官操作信息。
                      */
                     AiSampleFaceOperation GetFaceOperationInfo() const;
 
                     /**
-                     * 设置人脸操作信息。
-                     * @param FaceOperationInfo 人脸操作信息。
+                     * 设置五官操作信息。
+                     * @param FaceOperationInfo 五官操作信息。
                      */
                     void SetFaceOperationInfo(const AiSampleFaceOperation& _faceOperationInfo);
 
@@ -185,7 +185,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人物 ID。
+                     * 素材 ID。
                      */
                     std::string m_personId;
                     bool m_personIdHasBeenSet;
@@ -203,16 +203,16 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 人物应用场景，可选值：
+                     * 素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
-2. Review：用于内容审核，等价于 Review.Face。
-3. All：用于内容识别、内容审核，等价于 1+2。
+2. Review：用于不适宜的内容识别，等价于 Review.Face。
+3. All：用于内容识别、不适宜的内容识别，等价于 1+2。
                      */
                     std::vector<std::string> m_usages;
                     bool m_usagesHasBeenSet;
 
                     /**
-                     * 人脸操作信息。
+                     * 五官操作信息。
                      */
                     AiSampleFaceOperation m_faceOperationInfo;
                     bool m_faceOperationInfoHasBeenSet;

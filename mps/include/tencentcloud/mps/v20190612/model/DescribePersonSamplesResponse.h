@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取人物信息。
-                     * @return PersonSet 人物信息。
+                     * 获取素材信息。
+                     * @return PersonSet 素材信息。
                      */
                     std::vector<AiSamplePerson> GetPersonSet() const;
 
@@ -76,7 +76,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 人物信息。
+                     * 素材信息。
                      */
                     std::vector<AiSamplePerson> m_personSet;
                     bool m_personSetHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发起内容审核次数。
-                     * @return TotalCount 发起内容审核次数。
+                     * 获取发起内容智能识别次数。
+                     * @return TotalCount 发起内容智能识别次数。
                      */
                     int64_t GetTotalCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取内容审核总时长。
-                     * @return TotalDuration 内容审核总时长。
+                     * 获取内容智能识别总时长。
+                     * @return TotalDuration 内容智能识别总时长。
                      */
                     int64_t GetTotalDuration() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool TotalDurationHasBeenSet() const;
 
                     /**
-                     * 获取内容审核时长统计数据，每天一个数据。
-                     * @return Data 内容审核时长统计数据，每天一个数据。
+                     * 获取内容智能识别时长统计数据，每天一个数据。
+                     * @return Data 内容智能识别时长统计数据，每天一个数据。
                      */
                     std::vector<StatDataItem> GetData() const;
 
@@ -82,19 +82,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发起内容审核次数。
+                     * 发起内容智能识别次数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 内容审核总时长。
+                     * 内容智能识别总时长。
                      */
                     int64_t m_totalDuration;
                     bool m_totalDurationHasBeenSet;
 
                     /**
-                     * 内容审核时长统计数据，每天一个数据。
+                     * 内容智能识别时长统计数据，每天一个数据。
                      */
                     std::vector<StatDataItem> m_data;
                     bool m_dataHasBeenSet;

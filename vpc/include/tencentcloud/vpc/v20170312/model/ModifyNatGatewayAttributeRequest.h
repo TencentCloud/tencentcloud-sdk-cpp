@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
+                    /**
+                     * 获取是否修改NAT网关绑定的安全组。
+                     * @return ModifySecurityGroup 是否修改NAT网关绑定的安全组。
+                     */
+                    bool GetModifySecurityGroup() const;
+
+                    /**
+                     * 设置是否修改NAT网关绑定的安全组。
+                     * @param ModifySecurityGroup 是否修改NAT网关绑定的安全组。
+                     */
+                    void SetModifySecurityGroup(const bool& _modifySecurityGroup);
+
+                    /**
+                     * 判断参数 ModifySecurityGroup 是否已赋值
+                     * @return ModifySecurityGroup 是否已赋值
+                     */
+                    bool ModifySecurityGroupHasBeenSet() const;
+
+                    /**
+                     * 获取NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`
+                     * @return SecurityGroupIds NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`
+                     * @param SecurityGroupIds NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
+
+                    /**
+                     * 是否修改NAT网关绑定的安全组。
+                     */
+                    bool m_modifySecurityGroup;
+                    bool m_modifySecurityGroupHasBeenSet;
+
+                    /**
+                     * NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

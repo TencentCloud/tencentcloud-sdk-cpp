@@ -23,8 +23,8 @@ using namespace std;
 
 ImageResult::ImageResult() :
     m_hitFlagHasBeenSet(false),
-    m_labelHasBeenSet(false),
     m_suggestionHasBeenSet(false),
+    m_labelHasBeenSet(false),
     m_scoreHasBeenSet(false),
     m_resultsHasBeenSet(false),
     m_urlHasBeenSet(false),
@@ -47,16 +47,6 @@ CoreInternalOutcome ImageResult::Deserialize(const Value &value)
         m_hitFlagHasBeenSet = true;
     }
 
-    if (value.HasMember("Label") && !value["Label"].IsNull())
-    {
-        if (!value["Label"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `ImageResult.Label` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_label = string(value["Label"].GetString());
-        m_labelHasBeenSet = true;
-    }
-
     if (value.HasMember("Suggestion") && !value["Suggestion"].IsNull())
     {
         if (!value["Suggestion"].IsString())
@@ -65,6 +55,16 @@ CoreInternalOutcome ImageResult::Deserialize(const Value &value)
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Label") && !value["Label"].IsNull())
+    {
+        if (!value["Label"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(value["Label"].GetString());
+        m_labelHasBeenSet = true;
     }
 
     if (value.HasMember("Score") && !value["Score"].IsNull())
@@ -132,20 +132,20 @@ void ImageResult::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         value.AddMember(iKey, m_hitFlag, allocator);
     }
 
-    if (m_labelHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Label";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_suggestionHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreHasBeenSet)
@@ -206,22 +206,6 @@ bool ImageResult::HitFlagHasBeenSet() const
     return m_hitFlagHasBeenSet;
 }
 
-string ImageResult::GetLabel() const
-{
-    return m_label;
-}
-
-void ImageResult::SetLabel(const string& _label)
-{
-    m_label = _label;
-    m_labelHasBeenSet = true;
-}
-
-bool ImageResult::LabelHasBeenSet() const
-{
-    return m_labelHasBeenSet;
-}
-
 string ImageResult::GetSuggestion() const
 {
     return m_suggestion;
@@ -236,6 +220,22 @@ void ImageResult::SetSuggestion(const string& _suggestion)
 bool ImageResult::SuggestionHasBeenSet() const
 {
     return m_suggestionHasBeenSet;
+}
+
+string ImageResult::GetLabel() const
+{
+    return m_label;
+}
+
+void ImageResult::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool ImageResult::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
 }
 
 int64_t ImageResult::GetScore() const

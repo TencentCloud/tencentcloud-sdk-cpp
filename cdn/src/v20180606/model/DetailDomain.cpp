@@ -72,7 +72,8 @@ DetailDomain::DetailDomain() :
     m_tagHasBeenSet(false),
     m_advancedAuthenticationHasBeenSet(false),
     m_originAuthenticationHasBeenSet(false),
-    m_ipv6AccessHasBeenSet(false)
+    m_ipv6AccessHasBeenSet(false),
+    m_advanceSetHasBeenSet(false)
 {
 }
 
@@ -856,6 +857,26 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_ipv6AccessHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvanceSet") && !value["AdvanceSet"].IsNull())
+    {
+        if (!value["AdvanceSet"].IsArray())
+            return CoreInternalOutcome(Error("response `DetailDomain.AdvanceSet` is not array type"));
+
+        const Value &tmpValue = value["AdvanceSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AdvanceConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_advanceSet.push_back(item);
+        }
+        m_advanceSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1317,6 +1338,21 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_ipv6Access.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_advanceSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AdvanceSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_advanceSet.begin(); itr != m_advanceSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -2136,5 +2172,21 @@ void DetailDomain::SetIpv6Access(const Ipv6Access& _ipv6Access)
 bool DetailDomain::Ipv6AccessHasBeenSet() const
 {
     return m_ipv6AccessHasBeenSet;
+}
+
+vector<AdvanceConfig> DetailDomain::GetAdvanceSet() const
+{
+    return m_advanceSet;
+}
+
+void DetailDomain::SetAdvanceSet(const vector<AdvanceConfig>& _advanceSet)
+{
+    m_advanceSet = _advanceSet;
+    m_advanceSetHasBeenSet = true;
+}
+
+bool DetailDomain::AdvanceSetHasBeenSet() const
+{
+    return m_advanceSetHasBeenSet;
 }
 

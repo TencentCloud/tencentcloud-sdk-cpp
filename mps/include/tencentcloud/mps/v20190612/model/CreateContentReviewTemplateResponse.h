@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内容审核模板唯一标识。
-                     * @return Definition 内容审核模板唯一标识。
+                     * 获取内容智能识别模板唯一标识。
+                     * @return Definition 内容智能识别模板唯一标识。
                      */
                     int64_t GetDefinition() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 内容审核模板唯一标识。
+                     * 内容智能识别模板唯一标识。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

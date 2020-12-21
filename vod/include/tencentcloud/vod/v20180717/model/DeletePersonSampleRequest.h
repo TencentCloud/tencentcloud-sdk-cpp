@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人物 ID。
-                     * @return PersonId 人物 ID。
+                     * 获取素材 ID。
+                     * @return PersonId 素材 ID。
                      */
                     std::string GetPersonId() const;
 
                     /**
-                     * 设置人物 ID。
-                     * @param PersonId 人物 ID。
+                     * 设置素材 ID。
+                     * @param PersonId 素材 ID。
                      */
                     void SetPersonId(const std::string& _personId);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人物 ID。
+                     * 素材 ID。
                      */
                     std::string m_personId;
                     bool m_personIdHasBeenSet;

@@ -25,16 +25,22 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ie/v20200304/model/CreateEditingTaskRequest.h>
 #include <tencentcloud/ie/v20200304/model/CreateEditingTaskResponse.h>
+#include <tencentcloud/ie/v20200304/model/CreateMediaProcessTaskRequest.h>
+#include <tencentcloud/ie/v20200304/model/CreateMediaProcessTaskResponse.h>
 #include <tencentcloud/ie/v20200304/model/CreateMediaQualityRestorationTaskRequest.h>
 #include <tencentcloud/ie/v20200304/model/CreateMediaQualityRestorationTaskResponse.h>
 #include <tencentcloud/ie/v20200304/model/CreateQualityControlTaskRequest.h>
 #include <tencentcloud/ie/v20200304/model/CreateQualityControlTaskResponse.h>
 #include <tencentcloud/ie/v20200304/model/DescribeEditingTaskResultRequest.h>
 #include <tencentcloud/ie/v20200304/model/DescribeEditingTaskResultResponse.h>
+#include <tencentcloud/ie/v20200304/model/DescribeMediaProcessTaskResultRequest.h>
+#include <tencentcloud/ie/v20200304/model/DescribeMediaProcessTaskResultResponse.h>
 #include <tencentcloud/ie/v20200304/model/DescribeMediaQualityRestorationTaskRusultRequest.h>
 #include <tencentcloud/ie/v20200304/model/DescribeMediaQualityRestorationTaskRusultResponse.h>
 #include <tencentcloud/ie/v20200304/model/DescribeQualityControlTaskResultRequest.h>
 #include <tencentcloud/ie/v20200304/model/DescribeQualityControlTaskResultResponse.h>
+#include <tencentcloud/ie/v20200304/model/StopMediaProcessTaskRequest.h>
+#include <tencentcloud/ie/v20200304/model/StopMediaProcessTaskResponse.h>
 #include <tencentcloud/ie/v20200304/model/StopMediaQualityRestorationTaskRequest.h>
 #include <tencentcloud/ie/v20200304/model/StopMediaQualityRestorationTaskResponse.h>
 
@@ -54,6 +60,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateEditingTaskResponse> CreateEditingTaskOutcome;
                 typedef std::future<CreateEditingTaskOutcome> CreateEditingTaskOutcomeCallable;
                 typedef std::function<void(const IeClient*, const Model::CreateEditingTaskRequest&, CreateEditingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEditingTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateMediaProcessTaskResponse> CreateMediaProcessTaskOutcome;
+                typedef std::future<CreateMediaProcessTaskOutcome> CreateMediaProcessTaskOutcomeCallable;
+                typedef std::function<void(const IeClient*, const Model::CreateMediaProcessTaskRequest&, CreateMediaProcessTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMediaProcessTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateMediaQualityRestorationTaskResponse> CreateMediaQualityRestorationTaskOutcome;
                 typedef std::future<CreateMediaQualityRestorationTaskOutcome> CreateMediaQualityRestorationTaskOutcomeCallable;
                 typedef std::function<void(const IeClient*, const Model::CreateMediaQualityRestorationTaskRequest&, CreateMediaQualityRestorationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMediaQualityRestorationTaskAsyncHandler;
@@ -63,12 +72,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEditingTaskResultResponse> DescribeEditingTaskResultOutcome;
                 typedef std::future<DescribeEditingTaskResultOutcome> DescribeEditingTaskResultOutcomeCallable;
                 typedef std::function<void(const IeClient*, const Model::DescribeEditingTaskResultRequest&, DescribeEditingTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEditingTaskResultAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMediaProcessTaskResultResponse> DescribeMediaProcessTaskResultOutcome;
+                typedef std::future<DescribeMediaProcessTaskResultOutcome> DescribeMediaProcessTaskResultOutcomeCallable;
+                typedef std::function<void(const IeClient*, const Model::DescribeMediaProcessTaskResultRequest&, DescribeMediaProcessTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaProcessTaskResultAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMediaQualityRestorationTaskRusultResponse> DescribeMediaQualityRestorationTaskRusultOutcome;
                 typedef std::future<DescribeMediaQualityRestorationTaskRusultOutcome> DescribeMediaQualityRestorationTaskRusultOutcomeCallable;
                 typedef std::function<void(const IeClient*, const Model::DescribeMediaQualityRestorationTaskRusultRequest&, DescribeMediaQualityRestorationTaskRusultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaQualityRestorationTaskRusultAsyncHandler;
                 typedef Outcome<Error, Model::DescribeQualityControlTaskResultResponse> DescribeQualityControlTaskResultOutcome;
                 typedef std::future<DescribeQualityControlTaskResultOutcome> DescribeQualityControlTaskResultOutcomeCallable;
                 typedef std::function<void(const IeClient*, const Model::DescribeQualityControlTaskResultRequest&, DescribeQualityControlTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityControlTaskResultAsyncHandler;
+                typedef Outcome<Error, Model::StopMediaProcessTaskResponse> StopMediaProcessTaskOutcome;
+                typedef std::future<StopMediaProcessTaskOutcome> StopMediaProcessTaskOutcomeCallable;
+                typedef std::function<void(const IeClient*, const Model::StopMediaProcessTaskRequest&, StopMediaProcessTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMediaProcessTaskAsyncHandler;
                 typedef Outcome<Error, Model::StopMediaQualityRestorationTaskResponse> StopMediaQualityRestorationTaskOutcome;
                 typedef std::future<StopMediaQualityRestorationTaskOutcome> StopMediaQualityRestorationTaskOutcomeCallable;
                 typedef std::function<void(const IeClient*, const Model::StopMediaQualityRestorationTaskRequest&, StopMediaQualityRestorationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMediaQualityRestorationTaskAsyncHandler;
@@ -83,6 +98,15 @@ namespace TencentCloud
                 CreateEditingTaskOutcome CreateEditingTask(const Model::CreateEditingTaskRequest &request);
                 void CreateEditingTaskAsync(const Model::CreateEditingTaskRequest& request, const CreateEditingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEditingTaskOutcomeCallable CreateEditingTaskCallable(const Model::CreateEditingTaskRequest& request);
+
+                /**
+                 *用于创建编辑处理任务，如媒体截取、媒体编辑、媒体拼接、媒体字幕。
+                 * @param req CreateMediaProcessTaskRequest
+                 * @return CreateMediaProcessTaskOutcome
+                 */
+                CreateMediaProcessTaskOutcome CreateMediaProcessTask(const Model::CreateMediaProcessTaskRequest &request);
+                void CreateMediaProcessTaskAsync(const Model::CreateMediaProcessTaskRequest& request, const CreateMediaProcessTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMediaProcessTaskOutcomeCallable CreateMediaProcessTaskCallable(const Model::CreateMediaProcessTaskRequest& request);
 
                 /**
                  *创建画质重生任务，对视频进行转码、去噪、去划痕、去毛刺、超分、细节增强和色彩增强。
@@ -112,6 +136,15 @@ namespace TencentCloud
                 DescribeEditingTaskResultOutcomeCallable DescribeEditingTaskResultCallable(const Model::DescribeEditingTaskResultRequest& request);
 
                 /**
+                 *用于获取编辑处理任务的结果。
+                 * @param req DescribeMediaProcessTaskResultRequest
+                 * @return DescribeMediaProcessTaskResultOutcome
+                 */
+                DescribeMediaProcessTaskResultOutcome DescribeMediaProcessTaskResult(const Model::DescribeMediaProcessTaskResultRequest &request);
+                void DescribeMediaProcessTaskResultAsync(const Model::DescribeMediaProcessTaskResultRequest& request, const DescribeMediaProcessTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMediaProcessTaskResultOutcomeCallable DescribeMediaProcessTaskResultCallable(const Model::DescribeMediaProcessTaskResultRequest& request);
+
+                /**
                  *获取画质重生任务结果，查看结束后的文件信息
                  * @param req DescribeMediaQualityRestorationTaskRusultRequest
                  * @return DescribeMediaQualityRestorationTaskRusultOutcome
@@ -128,6 +161,15 @@ namespace TencentCloud
                 DescribeQualityControlTaskResultOutcome DescribeQualityControlTaskResult(const Model::DescribeQualityControlTaskResultRequest &request);
                 void DescribeQualityControlTaskResultAsync(const Model::DescribeQualityControlTaskResultRequest& request, const DescribeQualityControlTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQualityControlTaskResultOutcomeCallable DescribeQualityControlTaskResultCallable(const Model::DescribeQualityControlTaskResultRequest& request);
+
+                /**
+                 *用于停止正在进行中的编辑处理任务。
+                 * @param req StopMediaProcessTaskRequest
+                 * @return StopMediaProcessTaskOutcome
+                 */
+                StopMediaProcessTaskOutcome StopMediaProcessTask(const Model::StopMediaProcessTaskRequest &request);
+                void StopMediaProcessTaskAsync(const Model::StopMediaProcessTaskRequest& request, const StopMediaProcessTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopMediaProcessTaskOutcomeCallable StopMediaProcessTaskCallable(const Model::StopMediaProcessTaskRequest& request);
 
                 /**
                  *删除正在进行的画质重生任务

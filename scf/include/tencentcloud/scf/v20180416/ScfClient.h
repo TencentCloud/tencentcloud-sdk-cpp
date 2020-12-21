@@ -41,6 +41,10 @@
 #include <tencentcloud/scf/v20180416/model/DeleteLayerVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteNamespaceRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteNamespaceResponse.h>
+#include <tencentcloud/scf/v20180416/model/DeleteProvisionedConcurrencyConfigRequest.h>
+#include <tencentcloud/scf/v20180416/model/DeleteProvisionedConcurrencyConfigResponse.h>
+#include <tencentcloud/scf/v20180416/model/DeleteReservedConcurrencyConfigRequest.h>
+#include <tencentcloud/scf/v20180416/model/DeleteReservedConcurrencyConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteTriggerRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteTriggerResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetAliasRequest.h>
@@ -53,6 +57,10 @@
 #include <tencentcloud/scf/v20180416/model/GetFunctionLogsResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetLayerVersionRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetLayerVersionResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetProvisionedConcurrencyConfigRequest.h>
+#include <tencentcloud/scf/v20180416/model/GetProvisionedConcurrencyConfigResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetReservedConcurrencyConfigRequest.h>
+#include <tencentcloud/scf/v20180416/model/GetReservedConcurrencyConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/InvokeRequest.h>
 #include <tencentcloud/scf/v20180416/model/InvokeResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListAliasesRequest.h>
@@ -73,6 +81,12 @@
 #include <tencentcloud/scf/v20180416/model/PublishLayerVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/PublishVersionRequest.h>
 #include <tencentcloud/scf/v20180416/model/PublishVersionResponse.h>
+#include <tencentcloud/scf/v20180416/model/PutProvisionedConcurrencyConfigRequest.h>
+#include <tencentcloud/scf/v20180416/model/PutProvisionedConcurrencyConfigResponse.h>
+#include <tencentcloud/scf/v20180416/model/PutReservedConcurrencyConfigRequest.h>
+#include <tencentcloud/scf/v20180416/model/PutReservedConcurrencyConfigResponse.h>
+#include <tencentcloud/scf/v20180416/model/PutTotalConcurrencyConfigRequest.h>
+#include <tencentcloud/scf/v20180416/model/PutTotalConcurrencyConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateAliasRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateAliasResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeRequest.h>
@@ -122,6 +136,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteNamespaceResponse> DeleteNamespaceOutcome;
                 typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteNamespaceRequest&, DeleteNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAsyncHandler;
+                typedef Outcome<Error, Model::DeleteProvisionedConcurrencyConfigResponse> DeleteProvisionedConcurrencyConfigOutcome;
+                typedef std::future<DeleteProvisionedConcurrencyConfigOutcome> DeleteProvisionedConcurrencyConfigOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::DeleteProvisionedConcurrencyConfigRequest&, DeleteProvisionedConcurrencyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProvisionedConcurrencyConfigAsyncHandler;
+                typedef Outcome<Error, Model::DeleteReservedConcurrencyConfigResponse> DeleteReservedConcurrencyConfigOutcome;
+                typedef std::future<DeleteReservedConcurrencyConfigOutcome> DeleteReservedConcurrencyConfigOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::DeleteReservedConcurrencyConfigRequest&, DeleteReservedConcurrencyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReservedConcurrencyConfigAsyncHandler;
                 typedef Outcome<Error, Model::DeleteTriggerResponse> DeleteTriggerOutcome;
                 typedef std::future<DeleteTriggerOutcome> DeleteTriggerOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteTriggerRequest&, DeleteTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTriggerAsyncHandler;
@@ -140,6 +160,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetLayerVersionResponse> GetLayerVersionOutcome;
                 typedef std::future<GetLayerVersionOutcome> GetLayerVersionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetLayerVersionRequest&, GetLayerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLayerVersionAsyncHandler;
+                typedef Outcome<Error, Model::GetProvisionedConcurrencyConfigResponse> GetProvisionedConcurrencyConfigOutcome;
+                typedef std::future<GetProvisionedConcurrencyConfigOutcome> GetProvisionedConcurrencyConfigOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::GetProvisionedConcurrencyConfigRequest&, GetProvisionedConcurrencyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProvisionedConcurrencyConfigAsyncHandler;
+                typedef Outcome<Error, Model::GetReservedConcurrencyConfigResponse> GetReservedConcurrencyConfigOutcome;
+                typedef std::future<GetReservedConcurrencyConfigOutcome> GetReservedConcurrencyConfigOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::GetReservedConcurrencyConfigRequest&, GetReservedConcurrencyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetReservedConcurrencyConfigAsyncHandler;
                 typedef Outcome<Error, Model::InvokeResponse> InvokeOutcome;
                 typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::InvokeRequest&, InvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeAsyncHandler;
@@ -170,6 +196,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PublishVersionResponse> PublishVersionOutcome;
                 typedef std::future<PublishVersionOutcome> PublishVersionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::PublishVersionRequest&, PublishVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishVersionAsyncHandler;
+                typedef Outcome<Error, Model::PutProvisionedConcurrencyConfigResponse> PutProvisionedConcurrencyConfigOutcome;
+                typedef std::future<PutProvisionedConcurrencyConfigOutcome> PutProvisionedConcurrencyConfigOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::PutProvisionedConcurrencyConfigRequest&, PutProvisionedConcurrencyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutProvisionedConcurrencyConfigAsyncHandler;
+                typedef Outcome<Error, Model::PutReservedConcurrencyConfigResponse> PutReservedConcurrencyConfigOutcome;
+                typedef std::future<PutReservedConcurrencyConfigOutcome> PutReservedConcurrencyConfigOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::PutReservedConcurrencyConfigRequest&, PutReservedConcurrencyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutReservedConcurrencyConfigAsyncHandler;
+                typedef Outcome<Error, Model::PutTotalConcurrencyConfigResponse> PutTotalConcurrencyConfigOutcome;
+                typedef std::future<PutTotalConcurrencyConfigOutcome> PutTotalConcurrencyConfigOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::PutTotalConcurrencyConfigRequest&, PutTotalConcurrencyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutTotalConcurrencyConfigAsyncHandler;
                 typedef Outcome<Error, Model::UpdateAliasResponse> UpdateAliasOutcome;
                 typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateAliasRequest&, UpdateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAliasAsyncHandler;
@@ -274,6 +309,24 @@ namespace TencentCloud
                 DeleteNamespaceOutcomeCallable DeleteNamespaceCallable(const Model::DeleteNamespaceRequest& request);
 
                 /**
+                 *删除函数版本的预置并发配置。
+                 * @param req DeleteProvisionedConcurrencyConfigRequest
+                 * @return DeleteProvisionedConcurrencyConfigOutcome
+                 */
+                DeleteProvisionedConcurrencyConfigOutcome DeleteProvisionedConcurrencyConfig(const Model::DeleteProvisionedConcurrencyConfigRequest &request);
+                void DeleteProvisionedConcurrencyConfigAsync(const Model::DeleteProvisionedConcurrencyConfigRequest& request, const DeleteProvisionedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProvisionedConcurrencyConfigOutcomeCallable DeleteProvisionedConcurrencyConfigCallable(const Model::DeleteProvisionedConcurrencyConfigRequest& request);
+
+                /**
+                 *删除函数的保留并发配置。
+                 * @param req DeleteReservedConcurrencyConfigRequest
+                 * @return DeleteReservedConcurrencyConfigOutcome
+                 */
+                DeleteReservedConcurrencyConfigOutcome DeleteReservedConcurrencyConfig(const Model::DeleteReservedConcurrencyConfigRequest &request);
+                void DeleteReservedConcurrencyConfigAsync(const Model::DeleteReservedConcurrencyConfigRequest& request, const DeleteReservedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteReservedConcurrencyConfigOutcomeCallable DeleteReservedConcurrencyConfigCallable(const Model::DeleteReservedConcurrencyConfigRequest& request);
+
+                /**
                  *该接口根据参数传入删除已有的触发方式。
                  * @param req DeleteTriggerRequest
                  * @return DeleteTriggerOutcome
@@ -326,6 +379,24 @@ namespace TencentCloud
                 GetLayerVersionOutcome GetLayerVersion(const Model::GetLayerVersionRequest &request);
                 void GetLayerVersionAsync(const Model::GetLayerVersionRequest& request, const GetLayerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetLayerVersionOutcomeCallable GetLayerVersionCallable(const Model::GetLayerVersionRequest& request);
+
+                /**
+                 *获取函数或函数某一版本的预置并发详情。
+                 * @param req GetProvisionedConcurrencyConfigRequest
+                 * @return GetProvisionedConcurrencyConfigOutcome
+                 */
+                GetProvisionedConcurrencyConfigOutcome GetProvisionedConcurrencyConfig(const Model::GetProvisionedConcurrencyConfigRequest &request);
+                void GetProvisionedConcurrencyConfigAsync(const Model::GetProvisionedConcurrencyConfigRequest& request, const GetProvisionedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetProvisionedConcurrencyConfigOutcomeCallable GetProvisionedConcurrencyConfigCallable(const Model::GetProvisionedConcurrencyConfigRequest& request);
+
+                /**
+                 *获取函数的保留并发详情。
+                 * @param req GetReservedConcurrencyConfigRequest
+                 * @return GetReservedConcurrencyConfigOutcome
+                 */
+                GetReservedConcurrencyConfigOutcome GetReservedConcurrencyConfig(const Model::GetReservedConcurrencyConfigRequest &request);
+                void GetReservedConcurrencyConfigAsync(const Model::GetReservedConcurrencyConfigRequest& request, const GetReservedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetReservedConcurrencyConfigOutcomeCallable GetReservedConcurrencyConfigCallable(const Model::GetReservedConcurrencyConfigRequest& request);
 
                 /**
                  *该接口用于运行函数。
@@ -416,6 +487,33 @@ namespace TencentCloud
                 PublishVersionOutcome PublishVersion(const Model::PublishVersionRequest &request);
                 void PublishVersionAsync(const Model::PublishVersionRequest& request, const PublishVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PublishVersionOutcomeCallable PublishVersionCallable(const Model::PublishVersionRequest& request);
+
+                /**
+                 *设置函数某一非$LATEST版本的预置并发。
+                 * @param req PutProvisionedConcurrencyConfigRequest
+                 * @return PutProvisionedConcurrencyConfigOutcome
+                 */
+                PutProvisionedConcurrencyConfigOutcome PutProvisionedConcurrencyConfig(const Model::PutProvisionedConcurrencyConfigRequest &request);
+                void PutProvisionedConcurrencyConfigAsync(const Model::PutProvisionedConcurrencyConfigRequest& request, const PutProvisionedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutProvisionedConcurrencyConfigOutcomeCallable PutProvisionedConcurrencyConfigCallable(const Model::PutProvisionedConcurrencyConfigRequest& request);
+
+                /**
+                 *设置函数保留并发
+                 * @param req PutReservedConcurrencyConfigRequest
+                 * @return PutReservedConcurrencyConfigOutcome
+                 */
+                PutReservedConcurrencyConfigOutcome PutReservedConcurrencyConfig(const Model::PutReservedConcurrencyConfigRequest &request);
+                void PutReservedConcurrencyConfigAsync(const Model::PutReservedConcurrencyConfigRequest& request, const PutReservedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutReservedConcurrencyConfigOutcomeCallable PutReservedConcurrencyConfigCallable(const Model::PutReservedConcurrencyConfigRequest& request);
+
+                /**
+                 *修改账号并发限制配额
+                 * @param req PutTotalConcurrencyConfigRequest
+                 * @return PutTotalConcurrencyConfigOutcome
+                 */
+                PutTotalConcurrencyConfigOutcome PutTotalConcurrencyConfig(const Model::PutTotalConcurrencyConfigRequest &request);
+                void PutTotalConcurrencyConfigAsync(const Model::PutTotalConcurrencyConfigRequest& request, const PutTotalConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutTotalConcurrencyConfigOutcomeCallable PutTotalConcurrencyConfigCallable(const Model::PutTotalConcurrencyConfigRequest& request);
 
                 /**
                  *更新别名的配置

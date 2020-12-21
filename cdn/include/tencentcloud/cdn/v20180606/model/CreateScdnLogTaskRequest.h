@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/ScdnEventLogConditions.h>
 
 
 namespace TencentCloud
@@ -294,6 +295,42 @@ DefenceMode 映射如下：
                      */
                     bool DomainsHasBeenSet() const;
 
+                    /**
+                     * 获取指定攻击类型查询, 与 AttackType 参数同时有值时使用 AttackTypes 参数，不填默认查询全部攻击类型
+                     * @return AttackTypes 指定攻击类型查询, 与 AttackType 参数同时有值时使用 AttackTypes 参数，不填默认查询全部攻击类型
+                     */
+                    std::vector<std::string> GetAttackTypes() const;
+
+                    /**
+                     * 设置指定攻击类型查询, 与 AttackType 参数同时有值时使用 AttackTypes 参数，不填默认查询全部攻击类型
+                     * @param AttackTypes 指定攻击类型查询, 与 AttackType 参数同时有值时使用 AttackTypes 参数，不填默认查询全部攻击类型
+                     */
+                    void SetAttackTypes(const std::vector<std::string>& _attackTypes);
+
+                    /**
+                     * 判断参数 AttackTypes 是否已赋值
+                     * @return AttackTypes 是否已赋值
+                     */
+                    bool AttackTypesHasBeenSet() const;
+
+                    /**
+                     * 获取查询条件
+                     * @return Conditions 查询条件
+                     */
+                    std::vector<ScdnEventLogConditions> GetConditions() const;
+
+                    /**
+                     * 设置查询条件
+                     * @param Conditions 查询条件
+                     */
+                    void SetConditions(const std::vector<ScdnEventLogConditions>& _conditions);
+
+                    /**
+                     * 判断参数 Conditions 是否已赋值
+                     * @return Conditions 是否已赋值
+                     */
+                    bool ConditionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -370,6 +407,18 @@ DefenceMode 映射如下：
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
+
+                    /**
+                     * 指定攻击类型查询, 与 AttackType 参数同时有值时使用 AttackTypes 参数，不填默认查询全部攻击类型
+                     */
+                    std::vector<std::string> m_attackTypes;
+                    bool m_attackTypesHasBeenSet;
+
+                    /**
+                     * 查询条件
+                     */
+                    std::vector<ScdnEventLogConditions> m_conditions;
+                    bool m_conditionsHasBeenSet;
 
                 };
             }

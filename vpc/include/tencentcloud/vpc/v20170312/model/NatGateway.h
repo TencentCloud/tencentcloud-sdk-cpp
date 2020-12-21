@@ -317,6 +317,28 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取NAT网关绑定的安全组列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroupSet NAT网关绑定的安全组列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSecurityGroupSet() const;
+
+                    /**
+                     * 设置NAT网关绑定的安全组列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecurityGroupSet NAT网关绑定的安全组列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecurityGroupSet(const std::vector<std::string>& _securityGroupSet);
+
+                    /**
+                     * 判断参数 SecurityGroupSet 是否已赋值
+                     * @return SecurityGroupSet 是否已赋值
+                     */
+                    bool SecurityGroupSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,6 +428,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * NAT网关绑定的安全组列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_securityGroupSet;
+                    bool m_securityGroupSetHasBeenSet;
 
                 };
             }
