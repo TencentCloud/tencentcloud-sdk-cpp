@@ -42,7 +42,8 @@ AlarmHistory::AlarmHistory() :
     m_originIdHasBeenSet(false),
     m_alarmTypeHasBeenSet(false),
     m_eventIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_policyExistsHasBeenSet(false)
 {
 }
 
@@ -280,6 +281,16 @@ CoreInternalOutcome AlarmHistory::Deserialize(const Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyExists") && !value["PolicyExists"].IsNull())
+    {
+        if (!value["PolicyExists"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `AlarmHistory.PolicyExists` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyExists = value["PolicyExists"].GetInt64();
+        m_policyExistsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -475,6 +486,14 @@ void AlarmHistory::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyExistsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolicyExists";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_policyExists, allocator);
     }
 
 }
@@ -814,5 +833,21 @@ void AlarmHistory::SetRegion(const string& _region)
 bool AlarmHistory::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+int64_t AlarmHistory::GetPolicyExists() const
+{
+    return m_policyExists;
+}
+
+void AlarmHistory::SetPolicyExists(const int64_t& _policyExists)
+{
+    m_policyExists = _policyExists;
+    m_policyExistsHasBeenSet = true;
+}
+
+bool AlarmHistory::PolicyExistsHasBeenSet() const
+{
+    return m_policyExistsHasBeenSet;
 }
 

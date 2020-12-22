@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool CVMHasBeenSet() const;
 
                     /**
-                     * 获取数据库实例数。
-                     * @return CDB 数据库实例数。
+                     * 获取MySQL数据库实例数。
+                     * @return CDB MySQL数据库实例数。
                      */
                     uint64_t GetCDB() const;
 
                     /**
-                     * 设置数据库实例数。
-                     * @param CDB 数据库实例数。
+                     * 设置MySQL数据库实例数。
+                     * @param CDB MySQL数据库实例数。
                      */
                     void SetCDB(const uint64_t& _cDB);
 
@@ -206,7 +206,7 @@ namespace TencentCloud
                     bool m_cVMHasBeenSet;
 
                     /**
-                     * 数据库实例数。
+                     * MySQL数据库实例数。
                      */
                     uint64_t m_cDB;
                     bool m_cDBHasBeenSet;

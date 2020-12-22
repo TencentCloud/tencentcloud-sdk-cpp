@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流水记录号
+                     * 获取流水记录号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WaterId 流水记录号
+                     * @return WaterId 流水记录号。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetWaterId() const;
 
                     /**
-                     * 设置流水记录号
+                     * 设置流水记录号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WaterId 流水记录号
+                     * @param WaterId 流水记录号。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWaterId(const int64_t& _waterId);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool WaterIdHasBeenSet() const;
 
                     /**
-                     * 获取充值前的余额
+                     * 获取充值前的余额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BalanceBeforeRecharge 充值前的余额
+                     * @return BalanceBeforeRecharge 充值前的余额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetBalanceBeforeRecharge() const;
 
                     /**
-                     * 设置充值前的余额
+                     * 设置充值前的余额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BalanceBeforeRecharge 充值前的余额
+                     * @param BalanceBeforeRecharge 充值前的余额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBalanceBeforeRecharge(const int64_t& _balanceBeforeRecharge);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool BalanceBeforeRechargeHasBeenSet() const;
 
                     /**
-                     * 获取充值金额
+                     * 获取充值金额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Money 充值金额
+                     * @return Money 充值金额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetMoney() const;
 
                     /**
-                     * 设置充值金额
+                     * 设置充值金额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Money 充值金额
+                     * @param Money 充值金额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMoney(const int64_t& _money);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool MoneyHasBeenSet() const;
 
                     /**
-                     * 获取充值时间, UTC值
+                     * 获取充值时间, UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperateTime 充值时间, UTC值
+                     * @return OperateTime 充值时间, UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetOperateTime() const;
 
                     /**
-                     * 设置充值时间, UTC值
+                     * 设置充值时间, UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperateTime 充值时间, UTC值
+                     * @param OperateTime 充值时间, UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOperateTime(const int64_t& _operateTime);
@@ -137,28 +137,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流水记录号
+                     * 流水记录号。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_waterId;
                     bool m_waterIdHasBeenSet;
 
                     /**
-                     * 充值前的余额
+                     * 充值前的余额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_balanceBeforeRecharge;
                     bool m_balanceBeforeRechargeHasBeenSet;
 
                     /**
-                     * 充值金额
+                     * 充值金额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_money;
                     bool m_moneyHasBeenSet;
 
                     /**
-                     * 充值时间, UTC值
+                     * 充值时间, UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operateTime;

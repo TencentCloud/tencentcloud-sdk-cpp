@@ -31,7 +31,9 @@ ModifyClusterNodePoolRequest::ModifyClusterNodePoolRequest() :
     m_minNodesNumHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
-    m_enableAutoscaleHasBeenSet(false)
+    m_enableAutoscaleHasBeenSet(false),
+    m_osNameHasBeenSet(false),
+    m_osCustomizeTypeHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,22 @@ string ModifyClusterNodePoolRequest::ToJsonString() const
         string key = "EnableAutoscale";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableAutoscale, allocator);
+    }
+
+    if (m_osNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OsName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_osName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osCustomizeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OsCustomizeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -254,6 +272,38 @@ void ModifyClusterNodePoolRequest::SetEnableAutoscale(const bool& _enableAutosca
 bool ModifyClusterNodePoolRequest::EnableAutoscaleHasBeenSet() const
 {
     return m_enableAutoscaleHasBeenSet;
+}
+
+string ModifyClusterNodePoolRequest::GetOsName() const
+{
+    return m_osName;
+}
+
+void ModifyClusterNodePoolRequest::SetOsName(const string& _osName)
+{
+    m_osName = _osName;
+    m_osNameHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::OsNameHasBeenSet() const
+{
+    return m_osNameHasBeenSet;
+}
+
+string ModifyClusterNodePoolRequest::GetOsCustomizeType() const
+{
+    return m_osCustomizeType;
+}
+
+void ModifyClusterNodePoolRequest::SetOsCustomizeType(const string& _osCustomizeType)
+{
+    m_osCustomizeType = _osCustomizeType;
+    m_osCustomizeTypeHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::OsCustomizeTypeHasBeenSet() const
+{
+    return m_osCustomizeTypeHasBeenSet;
 }
 
 

@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @return VpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 获取VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+                     * @return VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @param VpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 设置VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+                     * @param VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -191,7 +191,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

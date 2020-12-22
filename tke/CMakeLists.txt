@@ -151,11 +151,13 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointRequest.h
   include/tencentcloud/tke/v20180525/model/PrometheusJobTargets.h
+  include/tencentcloud/tke/v20180525/model/ModifyClusterAsGroupOptionAttributeResponse.h
   include/tencentcloud/tke/v20180525/model/AddExistedInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroupOption.h
   include/tencentcloud/tke/v20180525/model/CreateClusterInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesRequest.h
+  include/tencentcloud/tke/v20180525/model/ModifyClusterAsGroupOptionAttributeRequest.h
   include/tencentcloud/tke/v20180525/model/ExistedInstancesForNode.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterRoutesRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterRouteRequest.h
@@ -178,6 +180,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/PrometheusTemplate.h
   include/tencentcloud/tke/v20180525/model/RunMonitorServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolResponse.h
+  include/tencentcloud/tke/v20180525/model/NodePoolOption.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceDataDiskMountSetting.h
   include/tencentcloud/tke/v20180525/model/PrometheusInstanceOverview.h
@@ -321,11 +324,13 @@ set(tke_src
   src/v20180525/model/DescribePrometheusAgentInstancesResponse.cpp
   src/v20180525/model/CreateClusterEndpointRequest.cpp
   src/v20180525/model/PrometheusJobTargets.cpp
+  src/v20180525/model/ModifyClusterAsGroupOptionAttributeResponse.cpp
   src/v20180525/model/AddExistedInstancesRequest.cpp
   src/v20180525/model/ClusterAsGroupOption.cpp
   src/v20180525/model/CreateClusterInstancesResponse.cpp
   src/v20180525/model/DescribeClusterNodePoolsRequest.cpp
   src/v20180525/model/DescribeClusterRouteTablesRequest.cpp
+  src/v20180525/model/ModifyClusterAsGroupOptionAttributeRequest.cpp
   src/v20180525/model/ExistedInstancesForNode.cpp
   src/v20180525/model/DescribeClusterRoutesRequest.cpp
   src/v20180525/model/DeleteClusterRouteRequest.cpp
@@ -348,6 +353,7 @@ set(tke_src
   src/v20180525/model/PrometheusTemplate.cpp
   src/v20180525/model/RunMonitorServiceEnabled.cpp
   src/v20180525/model/CreateClusterNodePoolResponse.cpp
+  src/v20180525/model/NodePoolOption.cpp
   src/v20180525/model/ModifyClusterAsGroupAttributeRequest.cpp
   src/v20180525/model/InstanceDataDiskMountSetting.cpp
   src/v20180525/model/PrometheusInstanceOverview.cpp

@@ -57,6 +57,38 @@ namespace TencentCloud
                      */
                     bool LivePackageInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取套餐包当前计费方式:
+-1: 无计费方式或获取失败
+0: 无计费方式
+201: 月结带宽
+202: 月结流量
+203: 日结带宽
+204: 日结流量
+205: 日结时长
+206: 月结时长
+304: 日结流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PackageBillMode 套餐包当前计费方式:
+-1: 无计费方式或获取失败
+0: 无计费方式
+201: 月结带宽
+202: 月结流量
+203: 日结带宽
+204: 日结流量
+205: 日结时长
+206: 月结时长
+304: 日结流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPackageBillMode() const;
+
+                    /**
+                     * 判断参数 PackageBillMode 是否已赋值
+                     * @return PackageBillMode 是否已赋值
+                     */
+                    bool PackageBillModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +97,22 @@ namespace TencentCloud
                      */
                     std::vector<LivePackageInfo> m_livePackageInfoList;
                     bool m_livePackageInfoListHasBeenSet;
+
+                    /**
+                     * 套餐包当前计费方式:
+-1: 无计费方式或获取失败
+0: 无计费方式
+201: 月结带宽
+202: 月结流量
+203: 日结带宽
+204: 日结流量
+205: 日结时长
+206: 月结时长
+304: 日结流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_packageBillMode;
+                    bool m_packageBillModeHasBeenSet;
 
                 };
             }

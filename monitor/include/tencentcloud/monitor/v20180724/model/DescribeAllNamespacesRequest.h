@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控 "MT_CUSTOM"=自定义监控
-                     * @return MonitorTypes 根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控 "MT_CUSTOM"=自定义监控
+                     * 获取根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控
+                     * @return MonitorTypes 根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控
                      */
                     std::vector<std::string> GetMonitorTypes() const;
 
                     /**
-                     * 设置根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控 "MT_CUSTOM"=自定义监控
-                     * @param MonitorTypes 根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控 "MT_CUSTOM"=自定义监控
+                     * 设置根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控
+                     * @param MonitorTypes 根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控
                      */
                     void SetMonitorTypes(const std::vector<std::string>& _monitorTypes);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控 "MT_CUSTOM"=自定义监控
+                     * 根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控
                      */
                     std::vector<std::string> m_monitorTypes;
                     bool m_monitorTypesHasBeenSet;

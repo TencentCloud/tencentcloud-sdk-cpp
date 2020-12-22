@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监控类型
-                     * @return MonitorTypes 监控类型
+                     * 获取监控类型，云产品监控为 MT_QCE
+                     * @return MonitorTypes 监控类型，云产品监控为 MT_QCE
                      */
                     std::vector<std::string> GetMonitorTypes() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监控类型
+                     * 监控类型，云产品监控为 MT_QCE
                      */
                     std::vector<std::string> m_monitorTypes;
                     bool m_monitorTypesHasBeenSet;

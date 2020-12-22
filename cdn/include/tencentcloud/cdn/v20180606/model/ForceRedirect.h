@@ -132,6 +132,28 @@ https：强制 https 跳转
                      */
                     bool RedirectStatusCodeHasBeenSet() const;
 
+                    /**
+                     * 获取强制跳转时是否返回增加的头部。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CarryHeaders 强制跳转时是否返回增加的头部。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCarryHeaders() const;
+
+                    /**
+                     * 设置强制跳转时是否返回增加的头部。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CarryHeaders 强制跳转时是否返回增加的头部。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCarryHeaders(const std::string& _carryHeaders);
+
+                    /**
+                     * 判断参数 CarryHeaders 是否已赋值
+                     * @return CarryHeaders 是否已赋值
+                     */
+                    bool CarryHeadersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -159,6 +181,13 @@ https：强制 https 跳转
                      */
                     int64_t m_redirectStatusCode;
                     bool m_redirectStatusCodeHasBeenSet;
+
+                    /**
+                     * 强制跳转时是否返回增加的头部。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_carryHeaders;
+                    bool m_carryHeadersHasBeenSet;
 
                 };
             }

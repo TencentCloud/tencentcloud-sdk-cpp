@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取路由策略ID。不能和RouteItemIds同时使用。
-                     * @return RouteIds 路由策略ID。不能和RouteItemIds同时使用。
+                     * 获取路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。
+                     * @return RouteIds 路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。
                      */
                     std::vector<uint64_t> GetRouteIds() const;
 
                     /**
-                     * 设置路由策略ID。不能和RouteItemIds同时使用。
-                     * @param RouteIds 路由策略ID。不能和RouteItemIds同时使用。
+                     * 设置路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。
+                     * @param RouteIds 路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。
                      */
                     void SetRouteIds(const std::vector<uint64_t>& _routeIds);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool RouteIdsHasBeenSet() const;
 
                     /**
-                     * 获取路由策略唯一ID。不能和RouteIds同时使用。
-                     * @return RouteItemIds 路由策略唯一ID。不能和RouteIds同时使用。
+                     * 获取路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。
+                     * @return RouteItemIds 路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。
                      */
                     std::vector<std::string> GetRouteItemIds() const;
 
                     /**
-                     * 设置路由策略唯一ID。不能和RouteIds同时使用。
-                     * @param RouteItemIds 路由策略唯一ID。不能和RouteIds同时使用。
+                     * 设置路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。
+                     * @param RouteItemIds 路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。
                      */
                     void SetRouteItemIds(const std::vector<std::string>& _routeItemIds);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_routeTableIdHasBeenSet;
 
                     /**
-                     * 路由策略ID。不能和RouteItemIds同时使用。
+                     * 路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。
                      */
                     std::vector<uint64_t> m_routeIds;
                     bool m_routeIdsHasBeenSet;
 
                     /**
-                     * 路由策略唯一ID。不能和RouteIds同时使用。
+                     * 路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。
                      */
                     std::vector<std::string> m_routeItemIds;
                     bool m_routeItemIdsHasBeenSet;

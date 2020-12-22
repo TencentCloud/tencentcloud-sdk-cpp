@@ -83,6 +83,92 @@ MonitorClient::BindingPolicyObjectOutcomeCallable MonitorClient::BindingPolicyOb
     return task->get_future();
 }
 
+MonitorClient::CreateAlarmNoticeOutcome MonitorClient::CreateAlarmNotice(const CreateAlarmNoticeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlarmNotice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlarmNoticeResponse rsp = CreateAlarmNoticeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlarmNoticeOutcome(rsp);
+        else
+            return CreateAlarmNoticeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlarmNoticeOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateAlarmNoticeAsync(const CreateAlarmNoticeRequest& request, const CreateAlarmNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAlarmNotice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateAlarmNoticeOutcomeCallable MonitorClient::CreateAlarmNoticeCallable(const CreateAlarmNoticeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAlarmNoticeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAlarmNotice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::CreateAlarmPolicyOutcome MonitorClient::CreateAlarmPolicy(const CreateAlarmPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlarmPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlarmPolicyResponse rsp = CreateAlarmPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlarmPolicyOutcome(rsp);
+        else
+            return CreateAlarmPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlarmPolicyOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateAlarmPolicyAsync(const CreateAlarmPolicyRequest& request, const CreateAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAlarmPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateAlarmPolicyOutcomeCallable MonitorClient::CreateAlarmPolicyCallable(const CreateAlarmPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAlarmPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAlarmPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreatePolicyGroupOutcome MonitorClient::CreatePolicyGroup(const CreatePolicyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePolicyGroup");
@@ -162,6 +248,92 @@ MonitorClient::CreateServiceDiscoveryOutcomeCallable MonitorClient::CreateServic
         [this, request]()
         {
             return this->CreateServiceDiscovery(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeleteAlarmNoticesOutcome MonitorClient::DeleteAlarmNotices(const DeleteAlarmNoticesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAlarmNotices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAlarmNoticesResponse rsp = DeleteAlarmNoticesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAlarmNoticesOutcome(rsp);
+        else
+            return DeleteAlarmNoticesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAlarmNoticesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteAlarmNoticesAsync(const DeleteAlarmNoticesRequest& request, const DeleteAlarmNoticesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAlarmNotices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteAlarmNoticesOutcomeCallable MonitorClient::DeleteAlarmNoticesCallable(const DeleteAlarmNoticesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAlarmNoticesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAlarmNotices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeleteAlarmPolicyOutcome MonitorClient::DeleteAlarmPolicy(const DeleteAlarmPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAlarmPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAlarmPolicyResponse rsp = DeleteAlarmPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAlarmPolicyOutcome(rsp);
+        else
+            return DeleteAlarmPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAlarmPolicyOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteAlarmPolicyAsync(const DeleteAlarmPolicyRequest& request, const DeleteAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAlarmPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteAlarmPolicyOutcomeCallable MonitorClient::DeleteAlarmPolicyCallable(const DeleteAlarmPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAlarmPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAlarmPolicy(request);
         }
     );
 
@@ -298,6 +470,49 @@ MonitorClient::DescribeAccidentEventListOutcomeCallable MonitorClient::DescribeA
     return task->get_future();
 }
 
+MonitorClient::DescribeAlarmEventsOutcome MonitorClient::DescribeAlarmEvents(const DescribeAlarmEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmEventsResponse rsp = DescribeAlarmEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmEventsOutcome(rsp);
+        else
+            return DescribeAlarmEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmEventsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmEventsAsync(const DescribeAlarmEventsRequest& request, const DescribeAlarmEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAlarmEventsOutcomeCallable MonitorClient::DescribeAlarmEventsCallable(const DescribeAlarmEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeAlarmHistoriesOutcome MonitorClient::DescribeAlarmHistories(const DescribeAlarmHistoriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAlarmHistories");
@@ -334,6 +549,264 @@ MonitorClient::DescribeAlarmHistoriesOutcomeCallable MonitorClient::DescribeAlar
         [this, request]()
         {
             return this->DescribeAlarmHistories(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeAlarmMetricsOutcome MonitorClient::DescribeAlarmMetrics(const DescribeAlarmMetricsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmMetrics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmMetricsResponse rsp = DescribeAlarmMetricsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmMetricsOutcome(rsp);
+        else
+            return DescribeAlarmMetricsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmMetricsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmMetricsAsync(const DescribeAlarmMetricsRequest& request, const DescribeAlarmMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmMetrics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAlarmMetricsOutcomeCallable MonitorClient::DescribeAlarmMetricsCallable(const DescribeAlarmMetricsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmMetricsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeAlarmNoticeOutcome MonitorClient::DescribeAlarmNotice(const DescribeAlarmNoticeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmNotice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmNoticeResponse rsp = DescribeAlarmNoticeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmNoticeOutcome(rsp);
+        else
+            return DescribeAlarmNoticeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmNoticeOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmNoticeAsync(const DescribeAlarmNoticeRequest& request, const DescribeAlarmNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmNotice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAlarmNoticeOutcomeCallable MonitorClient::DescribeAlarmNoticeCallable(const DescribeAlarmNoticeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmNoticeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmNotice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeAlarmNoticeCallbacksOutcome MonitorClient::DescribeAlarmNoticeCallbacks(const DescribeAlarmNoticeCallbacksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmNoticeCallbacks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmNoticeCallbacksResponse rsp = DescribeAlarmNoticeCallbacksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmNoticeCallbacksOutcome(rsp);
+        else
+            return DescribeAlarmNoticeCallbacksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmNoticeCallbacksOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmNoticeCallbacksAsync(const DescribeAlarmNoticeCallbacksRequest& request, const DescribeAlarmNoticeCallbacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmNoticeCallbacks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAlarmNoticeCallbacksOutcomeCallable MonitorClient::DescribeAlarmNoticeCallbacksCallable(const DescribeAlarmNoticeCallbacksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmNoticeCallbacksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmNoticeCallbacks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeAlarmNoticesOutcome MonitorClient::DescribeAlarmNotices(const DescribeAlarmNoticesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmNotices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmNoticesResponse rsp = DescribeAlarmNoticesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmNoticesOutcome(rsp);
+        else
+            return DescribeAlarmNoticesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmNoticesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmNoticesAsync(const DescribeAlarmNoticesRequest& request, const DescribeAlarmNoticesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmNotices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAlarmNoticesOutcomeCallable MonitorClient::DescribeAlarmNoticesCallable(const DescribeAlarmNoticesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmNoticesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmNotices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeAlarmPoliciesOutcome MonitorClient::DescribeAlarmPolicies(const DescribeAlarmPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmPoliciesResponse rsp = DescribeAlarmPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmPoliciesOutcome(rsp);
+        else
+            return DescribeAlarmPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmPoliciesAsync(const DescribeAlarmPoliciesRequest& request, const DescribeAlarmPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAlarmPoliciesOutcomeCallable MonitorClient::DescribeAlarmPoliciesCallable(const DescribeAlarmPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeAlarmPolicyOutcome MonitorClient::DescribeAlarmPolicy(const DescribeAlarmPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmPolicyResponse rsp = DescribeAlarmPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmPolicyOutcome(rsp);
+        else
+            return DescribeAlarmPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmPolicyOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmPolicyAsync(const DescribeAlarmPolicyRequest& request, const DescribeAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAlarmPolicyOutcomeCallable MonitorClient::DescribeAlarmPolicyCallable(const DescribeAlarmPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmPolicy(request);
         }
     );
 
@@ -857,6 +1330,264 @@ MonitorClient::GetMonitorDataOutcomeCallable MonitorClient::GetMonitorDataCallab
     return task->get_future();
 }
 
+MonitorClient::ModifyAlarmNoticeOutcome MonitorClient::ModifyAlarmNotice(const ModifyAlarmNoticeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAlarmNotice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAlarmNoticeResponse rsp = ModifyAlarmNoticeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAlarmNoticeOutcome(rsp);
+        else
+            return ModifyAlarmNoticeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAlarmNoticeOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyAlarmNoticeAsync(const ModifyAlarmNoticeRequest& request, const ModifyAlarmNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAlarmNotice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyAlarmNoticeOutcomeCallable MonitorClient::ModifyAlarmNoticeCallable(const ModifyAlarmNoticeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAlarmNoticeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAlarmNotice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::ModifyAlarmPolicyConditionOutcome MonitorClient::ModifyAlarmPolicyCondition(const ModifyAlarmPolicyConditionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAlarmPolicyCondition");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAlarmPolicyConditionResponse rsp = ModifyAlarmPolicyConditionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAlarmPolicyConditionOutcome(rsp);
+        else
+            return ModifyAlarmPolicyConditionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAlarmPolicyConditionOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyAlarmPolicyConditionAsync(const ModifyAlarmPolicyConditionRequest& request, const ModifyAlarmPolicyConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAlarmPolicyCondition(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyAlarmPolicyConditionOutcomeCallable MonitorClient::ModifyAlarmPolicyConditionCallable(const ModifyAlarmPolicyConditionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAlarmPolicyConditionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAlarmPolicyCondition(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::ModifyAlarmPolicyInfoOutcome MonitorClient::ModifyAlarmPolicyInfo(const ModifyAlarmPolicyInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAlarmPolicyInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAlarmPolicyInfoResponse rsp = ModifyAlarmPolicyInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAlarmPolicyInfoOutcome(rsp);
+        else
+            return ModifyAlarmPolicyInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAlarmPolicyInfoOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyAlarmPolicyInfoAsync(const ModifyAlarmPolicyInfoRequest& request, const ModifyAlarmPolicyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAlarmPolicyInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyAlarmPolicyInfoOutcomeCallable MonitorClient::ModifyAlarmPolicyInfoCallable(const ModifyAlarmPolicyInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAlarmPolicyInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAlarmPolicyInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::ModifyAlarmPolicyNoticeOutcome MonitorClient::ModifyAlarmPolicyNotice(const ModifyAlarmPolicyNoticeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAlarmPolicyNotice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAlarmPolicyNoticeResponse rsp = ModifyAlarmPolicyNoticeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAlarmPolicyNoticeOutcome(rsp);
+        else
+            return ModifyAlarmPolicyNoticeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAlarmPolicyNoticeOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyAlarmPolicyNoticeAsync(const ModifyAlarmPolicyNoticeRequest& request, const ModifyAlarmPolicyNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAlarmPolicyNotice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyAlarmPolicyNoticeOutcomeCallable MonitorClient::ModifyAlarmPolicyNoticeCallable(const ModifyAlarmPolicyNoticeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAlarmPolicyNoticeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAlarmPolicyNotice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::ModifyAlarmPolicyStatusOutcome MonitorClient::ModifyAlarmPolicyStatus(const ModifyAlarmPolicyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAlarmPolicyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAlarmPolicyStatusResponse rsp = ModifyAlarmPolicyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAlarmPolicyStatusOutcome(rsp);
+        else
+            return ModifyAlarmPolicyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAlarmPolicyStatusOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyAlarmPolicyStatusAsync(const ModifyAlarmPolicyStatusRequest& request, const ModifyAlarmPolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAlarmPolicyStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyAlarmPolicyStatusOutcomeCallable MonitorClient::ModifyAlarmPolicyStatusCallable(const ModifyAlarmPolicyStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAlarmPolicyStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAlarmPolicyStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::ModifyAlarmPolicyTasksOutcome MonitorClient::ModifyAlarmPolicyTasks(const ModifyAlarmPolicyTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAlarmPolicyTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAlarmPolicyTasksResponse rsp = ModifyAlarmPolicyTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAlarmPolicyTasksOutcome(rsp);
+        else
+            return ModifyAlarmPolicyTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAlarmPolicyTasksOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyAlarmPolicyTasksAsync(const ModifyAlarmPolicyTasksRequest& request, const ModifyAlarmPolicyTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAlarmPolicyTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyAlarmPolicyTasksOutcomeCallable MonitorClient::ModifyAlarmPolicyTasksCallable(const ModifyAlarmPolicyTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAlarmPolicyTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAlarmPolicyTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::ModifyAlarmReceiversOutcome MonitorClient::ModifyAlarmReceivers(const ModifyAlarmReceiversRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAlarmReceivers");
@@ -1022,6 +1753,49 @@ MonitorClient::SendCustomAlarmMsgOutcomeCallable MonitorClient::SendCustomAlarmM
         [this, request]()
         {
             return this->SendCustomAlarmMsg(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::SetDefaultAlarmPolicyOutcome MonitorClient::SetDefaultAlarmPolicy(const SetDefaultAlarmPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetDefaultAlarmPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetDefaultAlarmPolicyResponse rsp = SetDefaultAlarmPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetDefaultAlarmPolicyOutcome(rsp);
+        else
+            return SetDefaultAlarmPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return SetDefaultAlarmPolicyOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::SetDefaultAlarmPolicyAsync(const SetDefaultAlarmPolicyRequest& request, const SetDefaultAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetDefaultAlarmPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::SetDefaultAlarmPolicyOutcomeCallable MonitorClient::SetDefaultAlarmPolicyCallable(const SetDefaultAlarmPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetDefaultAlarmPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->SetDefaultAlarmPolicy(request);
         }
     );
 

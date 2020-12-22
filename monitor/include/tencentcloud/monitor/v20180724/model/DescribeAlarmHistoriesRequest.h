@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "MT_CUSTOM"=自定义监控 "MT_PROME"=prometheus监控
-                     * @return MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "MT_CUSTOM"=自定义监控 "MT_PROME"=prometheus监控
+                     * 获取根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "
+                     * @return MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "
                      */
                     std::vector<std::string> GetMonitorTypes() const;
 
                     /**
-                     * 设置根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "MT_CUSTOM"=自定义监控 "MT_PROME"=prometheus监控
-                     * @param MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "MT_CUSTOM"=自定义监控 "MT_PROME"=prometheus监控
+                     * 设置根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "
+                     * @param MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "
                      */
                     void SetMonitorTypes(const std::vector<std::string>& _monitorTypes);
 
@@ -206,14 +206,14 @@ namespace TencentCloud
                     bool AlarmStatusHasBeenSet() const;
 
                     /**
-                     * 获取根据项目ID过滤，-1=“-“项目 0=默认项目
-                     * @return ProjectIds 根据项目ID过滤，-1=“-“项目 0=默认项目
+                     * 获取根据项目ID过滤，-1=无项目 0=默认项目
+                     * @return ProjectIds 根据项目ID过滤，-1=无项目 0=默认项目
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
-                     * 设置根据项目ID过滤，-1=“-“项目 0=默认项目
-                     * @param ProjectIds 根据项目ID过滤，-1=“-“项目 0=默认项目
+                     * 设置根据项目ID过滤，-1=无项目 0=默认项目
+                     * @param ProjectIds 根据项目ID过滤，-1=无项目 0=默认项目
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
 
@@ -406,7 +406,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "MT_CUSTOM"=自定义监控 "MT_PROME"=prometheus监控
+                     * 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "
                      */
                     std::vector<std::string> m_monitorTypes;
                     bool m_monitorTypesHasBeenSet;
@@ -424,7 +424,7 @@ namespace TencentCloud
                     bool m_alarmStatusHasBeenSet;
 
                     /**
-                     * 根据项目ID过滤，-1=“-“项目 0=默认项目
+                     * 根据项目ID过滤，-1=无项目 0=默认项目
                      */
                     std::vector<int64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;

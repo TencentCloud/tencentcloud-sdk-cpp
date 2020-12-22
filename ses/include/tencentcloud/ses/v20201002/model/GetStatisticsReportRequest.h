@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取收件方邮箱类型，比如gmail.com
-                     * @return ReceivingMailboxType 收件方邮箱类型，比如gmail.com
+                     * 获取收件方邮箱类型，例如gmail.com
+                     * @return ReceivingMailboxType 收件方邮箱类型，例如gmail.com
                      */
                     std::string GetReceivingMailboxType() const;
 
                     /**
-                     * 设置收件方邮箱类型，比如gmail.com
-                     * @param ReceivingMailboxType 收件方邮箱类型，比如gmail.com
+                     * 设置收件方邮箱类型，例如gmail.com
+                     * @param ReceivingMailboxType 收件方邮箱类型，例如gmail.com
                      */
                     void SetReceivingMailboxType(const std::string& _receivingMailboxType);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 收件方邮箱类型，比如gmail.com
+                     * 收件方邮箱类型，例如gmail.com
                      */
                     std::string m_receivingMailboxType;
                     bool m_receivingMailboxTypeHasBeenSet;

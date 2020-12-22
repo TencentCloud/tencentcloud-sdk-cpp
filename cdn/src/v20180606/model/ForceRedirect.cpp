@@ -24,7 +24,8 @@ using namespace std;
 ForceRedirect::ForceRedirect() :
     m_switchHasBeenSet(false),
     m_redirectTypeHasBeenSet(false),
-    m_redirectStatusCodeHasBeenSet(false)
+    m_redirectStatusCodeHasBeenSet(false),
+    m_carryHeadersHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome ForceRedirect::Deserialize(const Value &value)
         m_redirectStatusCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("CarryHeaders") && !value["CarryHeaders"].IsNull())
+    {
+        if (!value["CarryHeaders"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ForceRedirect.CarryHeaders` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_carryHeaders = string(value["CarryHeaders"].GetString());
+        m_carryHeadersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void ForceRedirect::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "RedirectStatusCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_redirectStatusCode, allocator);
+    }
+
+    if (m_carryHeadersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CarryHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_carryHeaders.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void ForceRedirect::SetRedirectStatusCode(const int64_t& _redirectStatusCode)
 bool ForceRedirect::RedirectStatusCodeHasBeenSet() const
 {
     return m_redirectStatusCodeHasBeenSet;
+}
+
+string ForceRedirect::GetCarryHeaders() const
+{
+    return m_carryHeaders;
+}
+
+void ForceRedirect::SetCarryHeaders(const string& _carryHeaders)
+{
+    m_carryHeaders = _carryHeaders;
+    m_carryHeadersHasBeenSet = true;
+}
+
+bool ForceRedirect::CarryHeadersHasBeenSet() const
+{
+    return m_carryHeadersHasBeenSet;
 }
 

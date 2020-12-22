@@ -188,6 +188,42 @@ namespace TencentCloud
                      */
                     bool EnableAutoscaleHasBeenSet() const;
 
+                    /**
+                     * 获取操作系统名称
+                     * @return OsName 操作系统名称
+                     */
+                    std::string GetOsName() const;
+
+                    /**
+                     * 设置操作系统名称
+                     * @param OsName 操作系统名称
+                     */
+                    void SetOsName(const std::string& _osName);
+
+                    /**
+                     * 判断参数 OsName 是否已赋值
+                     * @return OsName 是否已赋值
+                     */
+                    bool OsNameHasBeenSet() const;
+
+                    /**
+                     * 获取镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * @return OsCustomizeType 镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     */
+                    std::string GetOsCustomizeType() const;
+
+                    /**
+                     * 设置镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * @param OsCustomizeType 镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     */
+                    void SetOsCustomizeType(const std::string& _osCustomizeType);
+
+                    /**
+                     * 判断参数 OsCustomizeType 是否已赋值
+                     * @return OsCustomizeType 是否已赋值
+                     */
+                    bool OsCustomizeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +273,18 @@ namespace TencentCloud
                      */
                     bool m_enableAutoscale;
                     bool m_enableAutoscaleHasBeenSet;
+
+                    /**
+                     * 操作系统名称
+                     */
+                    std::string m_osName;
+                    bool m_osNameHasBeenSet;
+
+                    /**
+                     * 镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     */
+                    std::string m_osCustomizeType;
+                    bool m_osCustomizeTypeHasBeenSet;
 
                 };
             }

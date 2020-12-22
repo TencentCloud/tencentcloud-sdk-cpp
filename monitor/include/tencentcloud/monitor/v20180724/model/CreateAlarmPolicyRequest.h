@@ -1,0 +1,320 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_MONITOR_V20180724_MODEL_CREATEALARMPOLICYREQUEST_H_
+#define TENCENTCLOUD_MONITOR_V20180724_MODEL_CREATEALARMPOLICYREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmPolicyCondition.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmPolicyEventCondition.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h>
+
+
+namespace TencentCloud
+{
+    namespace Monitor
+    {
+        namespace V20180724
+        {
+            namespace Model
+            {
+                /**
+                * CreateAlarmPolicy请求参数结构体
+                */
+                class CreateAlarmPolicyRequest : public AbstractModel
+                {
+                public:
+                    CreateAlarmPolicyRequest();
+                    ~CreateAlarmPolicyRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取固定值，为"monitor"
+                     * @return Module 固定值，为"monitor"
+                     */
+                    std::string GetModule() const;
+
+                    /**
+                     * 设置固定值，为"monitor"
+                     * @param Module 固定值，为"monitor"
+                     */
+                    void SetModule(const std::string& _module);
+
+                    /**
+                     * 判断参数 Module 是否已赋值
+                     * @return Module 是否已赋值
+                     */
+                    bool ModuleHasBeenSet() const;
+
+                    /**
+                     * 获取策略名称，不超过20字符
+                     * @return PolicyName 策略名称，不超过20字符
+                     */
+                    std::string GetPolicyName() const;
+
+                    /**
+                     * 设置策略名称，不超过20字符
+                     * @param PolicyName 策略名称，不超过20字符
+                     */
+                    void SetPolicyName(const std::string& _policyName);
+
+                    /**
+                     * 判断参数 PolicyName 是否已赋值
+                     * @return PolicyName 是否已赋值
+                     */
+                    bool PolicyNameHasBeenSet() const;
+
+                    /**
+                     * 获取监控类型 MT_QCE=云产品监控
+                     * @return MonitorType 监控类型 MT_QCE=云产品监控
+                     */
+                    std::string GetMonitorType() const;
+
+                    /**
+                     * 设置监控类型 MT_QCE=云产品监控
+                     * @param MonitorType 监控类型 MT_QCE=云产品监控
+                     */
+                    void SetMonitorType(const std::string& _monitorType);
+
+                    /**
+                     * 判断参数 MonitorType 是否已赋值
+                     * @return MonitorType 是否已赋值
+                     */
+                    bool MonitorTypeHasBeenSet() const;
+
+                    /**
+                     * 获取告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     * @return Namespace 告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     * @param Namespace 告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取备注，不超过100字符，仅支持中英文、数字、下划线、-
+                     * @return Remark 备注，不超过100字符，仅支持中英文、数字、下划线、-
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注，不超过100字符，仅支持中英文、数字、下划线、-
+                     * @param Remark 备注，不超过100字符，仅支持中英文、数字、下划线、-
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用 0=停用 1=启用，可不传 默认为1
+                     * @return Enable 是否启用 0=停用 1=启用，可不传 默认为1
+                     */
+                    int64_t GetEnable() const;
+
+                    /**
+                     * 设置是否启用 0=停用 1=启用，可不传 默认为1
+                     * @param Enable 是否启用 0=停用 1=启用，可不传 默认为1
+                     */
+                    void SetEnable(const int64_t& _enable);
+
+                    /**
+                     * 判断参数 Enable 是否已赋值
+                     * @return Enable 是否已赋值
+                     */
+                    bool EnableHasBeenSet() const;
+
+                    /**
+                     * 获取项目 Id -1=无项目 0=默认项目，可不传 默认为-1
+                     * @return ProjectId 项目 Id -1=无项目 0=默认项目，可不传 默认为-1
+                     */
+                    int64_t GetProjectId() const;
+
+                    /**
+                     * 设置项目 Id -1=无项目 0=默认项目，可不传 默认为-1
+                     * @param ProjectId 项目 Id -1=无项目 0=默认项目，可不传 默认为-1
+                     */
+                    void SetProjectId(const int64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取指标触发条件
+                     * @return Condition 指标触发条件
+                     */
+                    AlarmPolicyCondition GetCondition() const;
+
+                    /**
+                     * 设置指标触发条件
+                     * @param Condition 指标触发条件
+                     */
+                    void SetCondition(const AlarmPolicyCondition& _condition);
+
+                    /**
+                     * 判断参数 Condition 是否已赋值
+                     * @return Condition 是否已赋值
+                     */
+                    bool ConditionHasBeenSet() const;
+
+                    /**
+                     * 获取事件触发条件
+                     * @return EventCondition 事件触发条件
+                     */
+                    AlarmPolicyEventCondition GetEventCondition() const;
+
+                    /**
+                     * 设置事件触发条件
+                     * @param EventCondition 事件触发条件
+                     */
+                    void SetEventCondition(const AlarmPolicyEventCondition& _eventCondition);
+
+                    /**
+                     * 判断参数 EventCondition 是否已赋值
+                     * @return EventCondition 是否已赋值
+                     */
+                    bool EventConditionHasBeenSet() const;
+
+                    /**
+                     * 获取通知规则 Id 列表，由 DescribeAlarmNotices 获得
+                     * @return NoticeIds 通知规则 Id 列表，由 DescribeAlarmNotices 获得
+                     */
+                    std::vector<std::string> GetNoticeIds() const;
+
+                    /**
+                     * 设置通知规则 Id 列表，由 DescribeAlarmNotices 获得
+                     * @param NoticeIds 通知规则 Id 列表，由 DescribeAlarmNotices 获得
+                     */
+                    void SetNoticeIds(const std::vector<std::string>& _noticeIds);
+
+                    /**
+                     * 判断参数 NoticeIds 是否已赋值
+                     * @return NoticeIds 是否已赋值
+                     */
+                    bool NoticeIdsHasBeenSet() const;
+
+                    /**
+                     * 获取触发任务列表
+                     * @return TriggerTasks 触发任务列表
+                     */
+                    std::vector<AlarmPolicyTriggerTask> GetTriggerTasks() const;
+
+                    /**
+                     * 设置触发任务列表
+                     * @param TriggerTasks 触发任务列表
+                     */
+                    void SetTriggerTasks(const std::vector<AlarmPolicyTriggerTask>& _triggerTasks);
+
+                    /**
+                     * 判断参数 TriggerTasks 是否已赋值
+                     * @return TriggerTasks 是否已赋值
+                     */
+                    bool TriggerTasksHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 固定值，为"monitor"
+                     */
+                    std::string m_module;
+                    bool m_moduleHasBeenSet;
+
+                    /**
+                     * 策略名称，不超过20字符
+                     */
+                    std::string m_policyName;
+                    bool m_policyNameHasBeenSet;
+
+                    /**
+                     * 监控类型 MT_QCE=云产品监控
+                     */
+                    std::string m_monitorType;
+                    bool m_monitorTypeHasBeenSet;
+
+                    /**
+                     * 告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 备注，不超过100字符，仅支持中英文、数字、下划线、-
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 是否启用 0=停用 1=启用，可不传 默认为1
+                     */
+                    int64_t m_enable;
+                    bool m_enableHasBeenSet;
+
+                    /**
+                     * 项目 Id -1=无项目 0=默认项目，可不传 默认为-1
+                     */
+                    int64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 指标触发条件
+                     */
+                    AlarmPolicyCondition m_condition;
+                    bool m_conditionHasBeenSet;
+
+                    /**
+                     * 事件触发条件
+                     */
+                    AlarmPolicyEventCondition m_eventCondition;
+                    bool m_eventConditionHasBeenSet;
+
+                    /**
+                     * 通知规则 Id 列表，由 DescribeAlarmNotices 获得
+                     */
+                    std::vector<std::string> m_noticeIds;
+                    bool m_noticeIdsHasBeenSet;
+
+                    /**
+                     * 触发任务列表
+                     */
+                    std::vector<AlarmPolicyTriggerTask> m_triggerTasks;
+                    bool m_triggerTasksHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_MONITOR_V20180724_MODEL_CREATEALARMPOLICYREQUEST_H_

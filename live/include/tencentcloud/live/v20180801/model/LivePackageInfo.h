@@ -94,9 +94,11 @@ namespace TencentCloud
                      * 获取使用量。
 注意：当为流量包时单位为字节。
 当为转码包时单位为分钟。
+当为连麦包时单位为小时。
                      * @return Used 使用量。
 注意：当为流量包时单位为字节。
 当为转码包时单位为分钟。
+当为连麦包时单位为小时。
                      */
                     int64_t GetUsed() const;
 
@@ -104,9 +106,11 @@ namespace TencentCloud
                      * 设置使用量。
 注意：当为流量包时单位为字节。
 当为转码包时单位为分钟。
+当为连麦包时单位为小时。
                      * @param Used 使用量。
 注意：当为流量包时单位为字节。
 当为转码包时单位为分钟。
+当为连麦包时单位为小时。
                      */
                     void SetUsed(const int64_t& _used);
 
@@ -120,9 +124,11 @@ namespace TencentCloud
                      * 获取剩余量。
 注意：当为流量包时单位为字节。
 当为转码包时单位为分钟。
+当为连麦包时单位为小时。
                      * @return Left 剩余量。
 注意：当为流量包时单位为字节。
 当为转码包时单位为分钟。
+当为连麦包时单位为小时。
                      */
                     int64_t GetLeft() const;
 
@@ -130,9 +136,11 @@ namespace TencentCloud
                      * 设置剩余量。
 注意：当为流量包时单位为字节。
 当为转码包时单位为分钟。
+当为连麦包时单位为小时。
                      * @param Left 剩余量。
 注意：当为流量包时单位为字节。
 当为转码包时单位为分钟。
+当为连麦包时单位为小时。
                      */
                     void SetLeft(const int64_t& _left);
 
@@ -183,10 +191,12 @@ namespace TencentCloud
 0: 流量包。
 1: 普通转码包。
 2: 极速高清包。
+3: 连麦包。
                      * @return Type 包类型，可选值:
 0: 流量包。
 1: 普通转码包。
 2: 极速高清包。
+3: 连麦包。
                      */
                     int64_t GetType() const;
 
@@ -195,10 +205,12 @@ namespace TencentCloud
 0: 流量包。
 1: 普通转码包。
 2: 极速高清包。
+3: 连麦包。
                      * @param Type 包类型，可选值:
 0: 流量包。
 1: 普通转码包。
 2: 极速高清包。
+3: 连麦包。
                      */
                     void SetType(const int64_t& _type);
 
@@ -213,10 +225,16 @@ namespace TencentCloud
 0: 未使用。
 1: 使用中。
 2: 已过期。
+3: 已冻结。
+4: 已耗尽。
+5: 已退款
                      * @return Status 包状态，可选值:
 0: 未使用。
 1: 使用中。
 2: 已过期。
+3: 已冻结。
+4: 已耗尽。
+5: 已退款
                      */
                     int64_t GetStatus() const;
 
@@ -225,10 +243,16 @@ namespace TencentCloud
 0: 未使用。
 1: 使用中。
 2: 已过期。
+3: 已冻结。
+4: 已耗尽。
+5: 已退款
                      * @param Status 包状态，可选值:
 0: 未使用。
 1: 使用中。
 2: 已过期。
+3: 已冻结。
+4: 已耗尽。
+5: 已退款
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -258,6 +282,7 @@ namespace TencentCloud
                      * 使用量。
 注意：当为流量包时单位为字节。
 当为转码包时单位为分钟。
+当为连麦包时单位为小时。
                      */
                     int64_t m_used;
                     bool m_usedHasBeenSet;
@@ -266,6 +291,7 @@ namespace TencentCloud
                      * 剩余量。
 注意：当为流量包时单位为字节。
 当为转码包时单位为分钟。
+当为连麦包时单位为小时。
                      */
                     int64_t m_left;
                     bool m_leftHasBeenSet;
@@ -287,6 +313,7 @@ namespace TencentCloud
 0: 流量包。
 1: 普通转码包。
 2: 极速高清包。
+3: 连麦包。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -296,6 +323,9 @@ namespace TencentCloud
 0: 未使用。
 1: 使用中。
 2: 已过期。
+3: 已冻结。
+4: 已耗尽。
+5: 已退款
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

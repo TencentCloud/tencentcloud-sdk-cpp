@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ip地址库协议类型，目前支持"ipv4"和"ipv6"。
-                     * @return Type ip地址库协议类型，目前支持"ipv4"和"ipv6"。
+                     * 获取IP地理位置库协议类型，目前支持"ipv4"和"ipv6"。
+                     * @return Type IP地理位置库协议类型，目前支持"ipv4"和"ipv6"。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置ip地址库协议类型，目前支持"ipv4"和"ipv6"。
-                     * @param Type ip地址库协议类型，目前支持"ipv4"和"ipv6"。
+                     * 设置IP地理位置库协议类型，目前支持"ipv4"和"ipv6"。
+                     * @param Type IP地理位置库协议类型，目前支持"ipv4"和"ipv6"。
                      */
                     void SetType(const std::string& _type);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ip地址库协议类型，目前支持"ipv4"和"ipv6"。
+                     * IP地理位置库协议类型，目前支持"ipv4"和"ipv6"。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

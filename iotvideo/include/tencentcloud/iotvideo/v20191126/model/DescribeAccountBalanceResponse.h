@@ -43,9 +43,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账户类型 1=设备接入;2=云存
+                     * 获取账户类型 1=设备接入;2=云存。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountType 账户类型 1=设备接入;2=云存
+                     * @return AccountType 账户类型 1=设备接入;2=云存。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetAccountType() const;
@@ -57,9 +57,9 @@ namespace TencentCloud
                     bool AccountTypeHasBeenSet() const;
 
                     /**
-                     * 获取余额
+                     * 获取余额, 单位 : 分(人民币)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Balance 余额
+                     * @return Balance 余额, 单位 : 分(人民币)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetBalance() const;
@@ -71,9 +71,9 @@ namespace TencentCloud
                     bool BalanceHasBeenSet() const;
 
                     /**
-                     * 获取账户状态，1=正常；8=冻结；9=销户
+                     * 获取账户状态，1=正常；8=冻结；9=销户。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return State 账户状态，1=正常；8=冻结；9=销户
+                     * @return State 账户状态，1=正常；8=冻结；9=销户。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetState() const;
@@ -85,9 +85,9 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取最后修改时间，UTC值
+                     * 获取最后修改时间，UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastUpdateTime 最后修改时间，UTC值
+                     * @return LastUpdateTime 最后修改时间，UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetLastUpdateTime() const;
@@ -101,28 +101,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账户类型 1=设备接入;2=云存
+                     * 账户类型 1=设备接入;2=云存。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_accountType;
                     bool m_accountTypeHasBeenSet;
 
                     /**
-                     * 余额
+                     * 余额, 单位 : 分(人民币)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_balance;
                     bool m_balanceHasBeenSet;
 
                     /**
-                     * 账户状态，1=正常；8=冻结；9=销户
+                     * 账户状态，1=正常；8=冻结；9=销户。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 最后修改时间，UTC值
+                     * 最后修改时间，UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastUpdateTime;

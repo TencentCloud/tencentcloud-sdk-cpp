@@ -46,9 +46,11 @@ namespace TencentCloud
                      * 获取包类型，可选值：
 0：流量包；
 1：转码包。
+2: 连麦包。
                      * @return PackageType 包类型，可选值：
 0：流量包；
 1：转码包。
+2: 连麦包。
                      */
                     int64_t GetPackageType() const;
 
@@ -56,9 +58,11 @@ namespace TencentCloud
                      * 设置包类型，可选值：
 0：流量包；
 1：转码包。
+2: 连麦包。
                      * @param PackageType 包类型，可选值：
 0：流量包；
 1：转码包。
+2: 连麦包。
                      */
                     void SetPackageType(const int64_t& _packageType);
 
@@ -74,6 +78,7 @@ namespace TencentCloud
                      * 包类型，可选值：
 0：流量包；
 1：转码包。
+2: 连麦包。
                      */
                     int64_t m_packageType;
                     bool m_packageTypeHasBeenSet;

@@ -25,7 +25,8 @@ TemplatesMetadata::TemplatesMetadata() :
     m_createdTimestampHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_templateStatusHasBeenSet(false),
-    m_templateIDHasBeenSet(false)
+    m_templateIDHasBeenSet(false),
+    m_reviewReasonHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome TemplatesMetadata::Deserialize(const Value &value)
         m_templateIDHasBeenSet = true;
     }
 
+    if (value.HasMember("ReviewReason") && !value["ReviewReason"].IsNull())
+    {
+        if (!value["ReviewReason"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TemplatesMetadata.ReviewReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reviewReason = string(value["ReviewReason"].GetString());
+        m_reviewReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void TemplatesMetadata::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "TemplateID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateID, allocator);
+    }
+
+    if (m_reviewReasonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReviewReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_reviewReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void TemplatesMetadata::SetTemplateID(const uint64_t& _templateID)
 bool TemplatesMetadata::TemplateIDHasBeenSet() const
 {
     return m_templateIDHasBeenSet;
+}
+
+string TemplatesMetadata::GetReviewReason() const
+{
+    return m_reviewReason;
+}
+
+void TemplatesMetadata::SetReviewReason(const string& _reviewReason)
+{
+    m_reviewReason = _reviewReason;
+    m_reviewReasonHasBeenSet = true;
+}
+
+bool TemplatesMetadata::ReviewReasonHasBeenSet() const
+{
+    return m_reviewReasonHasBeenSet;
 }
 

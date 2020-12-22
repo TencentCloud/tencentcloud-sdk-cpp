@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取您的发信域名，建议使用三级以上域名。比如：mail.qcloud.com。
-                     * @return EmailIdentity 您的发信域名，建议使用三级以上域名。比如：mail.qcloud.com。
+                     * 获取您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。
+                     * @return EmailIdentity 您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。
                      */
                     std::string GetEmailIdentity() const;
 
                     /**
-                     * 设置您的发信域名，建议使用三级以上域名。比如：mail.qcloud.com。
-                     * @param EmailIdentity 您的发信域名，建议使用三级以上域名。比如：mail.qcloud.com。
+                     * 设置您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。
+                     * @param EmailIdentity 您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。
                      */
                     void SetEmailIdentity(const std::string& _emailIdentity);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 您的发信域名，建议使用三级以上域名。比如：mail.qcloud.com。
+                     * 您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。
                      */
                     std::string m_emailIdentity;
                     bool m_emailIdentityHasBeenSet;

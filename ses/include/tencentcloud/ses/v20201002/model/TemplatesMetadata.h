@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取模板状态。1-审核中|0-已通过|其它-不可用
-                     * @return TemplateStatus 模板状态。1-审核中|0-已通过|其它-不可用
+                     * 获取模板状态。1-审核中|0-已通过|2-拒绝|其它-不可用
+                     * @return TemplateStatus 模板状态。1-审核中|0-已通过|2-拒绝|其它-不可用
                      */
                     int64_t GetTemplateStatus() const;
 
                     /**
-                     * 设置模板状态。1-审核中|0-已通过|其它-不可用
-                     * @param TemplateStatus 模板状态。1-审核中|0-已通过|其它-不可用
+                     * 设置模板状态。1-审核中|0-已通过|2-拒绝|其它-不可用
+                     * @param TemplateStatus 模板状态。1-审核中|0-已通过|2-拒绝|其它-不可用
                      */
                     void SetTemplateStatus(const int64_t& _templateStatus);
 
@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool TemplateIDHasBeenSet() const;
 
+                    /**
+                     * 获取审核原因
+                     * @return ReviewReason 审核原因
+                     */
+                    std::string GetReviewReason() const;
+
+                    /**
+                     * 设置审核原因
+                     * @param ReviewReason 审核原因
+                     */
+                    void SetReviewReason(const std::string& _reviewReason);
+
+                    /**
+                     * 判断参数 ReviewReason 是否已赋值
+                     * @return ReviewReason 是否已赋值
+                     */
+                    bool ReviewReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,7 +151,7 @@ namespace TencentCloud
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 模板状态。1-审核中|0-已通过|其它-不可用
+                     * 模板状态。1-审核中|0-已通过|2-拒绝|其它-不可用
                      */
                     int64_t m_templateStatus;
                     bool m_templateStatusHasBeenSet;
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     uint64_t m_templateID;
                     bool m_templateIDHasBeenSet;
+
+                    /**
+                     * 审核原因
+                     */
+                    std::string m_reviewReason;
+                    bool m_reviewReasonHasBeenSet;
 
                 };
             }

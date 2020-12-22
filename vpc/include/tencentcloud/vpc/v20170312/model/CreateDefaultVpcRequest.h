@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子网所在的可用区ID，不指定将随机选择可用区
-                     * @return Zone 子网所在的可用区ID，不指定将随机选择可用区
+                     * 获取子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。
+                     * @return Zone 子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置子网所在的可用区ID，不指定将随机选择可用区
-                     * @param Zone 子网所在的可用区ID，不指定将随机选择可用区
+                     * 设置子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。
+                     * @param Zone 子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。
                      */
                     void SetZone(const std::string& _zone);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取是否强制返回默认VPC
-                     * @return Force 是否强制返回默认VPC
+                     * 获取是否强制返回默认VPC。
+                     * @return Force 是否强制返回默认VPC。
                      */
                     bool GetForce() const;
 
                     /**
-                     * 设置是否强制返回默认VPC
-                     * @param Force 是否强制返回默认VPC
+                     * 设置是否强制返回默认VPC。
+                     * @param Force 是否强制返回默认VPC。
                      */
                     void SetForce(const bool& _force);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子网所在的可用区ID，不指定将随机选择可用区
+                     * 子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 是否强制返回默认VPC
+                     * 是否强制返回默认VPC。
                      */
                     bool m_force;
                     bool m_forceHasBeenSet;

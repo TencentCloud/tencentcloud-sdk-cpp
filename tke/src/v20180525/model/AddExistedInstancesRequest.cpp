@@ -30,7 +30,8 @@ AddExistedInstancesRequest::AddExistedInstancesRequest() :
     m_enhancedServiceHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_hostNameHasBeenSet(false)
+    m_hostNameHasBeenSet(false),
+    m_nodePoolHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,15 @@ string AddExistedInstancesRequest::ToJsonString() const
         string key = "HostName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodePoolHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodePool";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_nodePool.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -228,6 +238,22 @@ void AddExistedInstancesRequest::SetHostName(const string& _hostName)
 bool AddExistedInstancesRequest::HostNameHasBeenSet() const
 {
     return m_hostNameHasBeenSet;
+}
+
+NodePoolOption AddExistedInstancesRequest::GetNodePool() const
+{
+    return m_nodePool;
+}
+
+void AddExistedInstancesRequest::SetNodePool(const NodePoolOption& _nodePool)
+{
+    m_nodePool = _nodePool;
+    m_nodePoolHasBeenSet = true;
+}
+
+bool AddExistedInstancesRequest::NodePoolHasBeenSet() const
+{
+    return m_nodePoolHasBeenSet;
 }
 
 

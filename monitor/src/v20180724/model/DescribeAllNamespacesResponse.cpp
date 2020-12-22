@@ -26,7 +26,9 @@ using namespace std;
 
 DescribeAllNamespacesResponse::DescribeAllNamespacesResponse() :
     m_qceNamespacesHasBeenSet(false),
-    m_customNamespacesHasBeenSet(false)
+    m_customNamespacesHasBeenSet(false),
+    m_qceNamespacesNewHasBeenSet(false),
+    m_customNamespacesNewHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,46 @@ CoreInternalOutcome DescribeAllNamespacesResponse::Deserialize(const string &pay
         m_customNamespacesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("QceNamespacesNew") && !rsp["QceNamespacesNew"].IsNull())
+    {
+        if (!rsp["QceNamespacesNew"].IsArray())
+            return CoreInternalOutcome(Error("response `QceNamespacesNew` is not array type"));
+
+        const Value &tmpValue = rsp["QceNamespacesNew"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CommonNamespace item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_qceNamespacesNew.push_back(item);
+        }
+        m_qceNamespacesNewHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CustomNamespacesNew") && !rsp["CustomNamespacesNew"].IsNull())
+    {
+        if (!rsp["CustomNamespacesNew"].IsArray())
+            return CoreInternalOutcome(Error("response `CustomNamespacesNew` is not array type"));
+
+        const Value &tmpValue = rsp["CustomNamespacesNew"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CommonNamespace item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customNamespacesNew.push_back(item);
+        }
+        m_customNamespacesNewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -121,6 +163,26 @@ CommonNamespace DescribeAllNamespacesResponse::GetCustomNamespaces() const
 bool DescribeAllNamespacesResponse::CustomNamespacesHasBeenSet() const
 {
     return m_customNamespacesHasBeenSet;
+}
+
+vector<CommonNamespace> DescribeAllNamespacesResponse::GetQceNamespacesNew() const
+{
+    return m_qceNamespacesNew;
+}
+
+bool DescribeAllNamespacesResponse::QceNamespacesNewHasBeenSet() const
+{
+    return m_qceNamespacesNewHasBeenSet;
+}
+
+vector<CommonNamespace> DescribeAllNamespacesResponse::GetCustomNamespacesNew() const
+{
+    return m_customNamespacesNew;
+}
+
+bool DescribeAllNamespacesResponse::CustomNamespacesNewHasBeenSet() const
+{
+    return m_customNamespacesNewHasBeenSet;
 }
 
 

@@ -2147,6 +2147,49 @@ TkeClient::ModifyClusterAsGroupAttributeOutcomeCallable TkeClient::ModifyCluster
     return task->get_future();
 }
 
+TkeClient::ModifyClusterAsGroupOptionAttributeOutcome TkeClient::ModifyClusterAsGroupOptionAttribute(const ModifyClusterAsGroupOptionAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterAsGroupOptionAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterAsGroupOptionAttributeResponse rsp = ModifyClusterAsGroupOptionAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterAsGroupOptionAttributeOutcome(rsp);
+        else
+            return ModifyClusterAsGroupOptionAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterAsGroupOptionAttributeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterAsGroupOptionAttributeAsync(const ModifyClusterAsGroupOptionAttributeRequest& request, const ModifyClusterAsGroupOptionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterAsGroupOptionAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterAsGroupOptionAttributeOutcomeCallable TkeClient::ModifyClusterAsGroupOptionAttributeCallable(const ModifyClusterAsGroupOptionAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterAsGroupOptionAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterAsGroupOptionAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::ModifyClusterAttributeOutcome TkeClient::ModifyClusterAttribute(const ModifyClusterAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterAttribute");

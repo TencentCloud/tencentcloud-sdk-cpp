@@ -24,6 +24,7 @@
 #include <tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h>
 #include <tencentcloud/tke/v20180525/model/EnhancedService.h>
 #include <tencentcloud/tke/v20180525/model/LoginSettings.h>
+#include <tencentcloud/tke/v20180525/model/NodePoolOption.h>
 
 
 namespace TencentCloud
@@ -64,14 +65,14 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取实例列表
-                     * @return InstanceIds 实例列表
+                     * 获取实例列表，不支持竞价实例
+                     * @return InstanceIds 实例列表，不支持竞价实例
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例列表
-                     * @param InstanceIds 实例列表
+                     * 设置实例列表，不支持竞价实例
+                     * @param InstanceIds 实例列表，不支持竞价实例
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -171,6 +172,24 @@ namespace TencentCloud
                      */
                     bool HostNameHasBeenSet() const;
 
+                    /**
+                     * 获取节点池选项
+                     * @return NodePool 节点池选项
+                     */
+                    NodePoolOption GetNodePool() const;
+
+                    /**
+                     * 设置节点池选项
+                     * @param NodePool 节点池选项
+                     */
+                    void SetNodePool(const NodePoolOption& _nodePool);
+
+                    /**
+                     * 判断参数 NodePool 是否已赋值
+                     * @return NodePool 是否已赋值
+                     */
+                    bool NodePoolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,7 +199,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 实例列表
+                     * 实例列表，不支持竞价实例
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -214,6 +233,12 @@ namespace TencentCloud
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
+
+                    /**
+                     * 节点池选项
+                     */
+                    NodePoolOption m_nodePool;
+                    bool m_nodePoolHasBeenSet;
 
                 };
             }

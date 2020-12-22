@@ -1,0 +1,459 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/monitor/v20180724/model/UserNotice.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Monitor::V20180724::Model;
+using namespace rapidjson;
+using namespace std;
+
+UserNotice::UserNotice() :
+    m_receiverTypeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_noticeWayHasBeenSet(false),
+    m_userIdsHasBeenSet(false),
+    m_groupIdsHasBeenSet(false),
+    m_phoneOrderHasBeenSet(false),
+    m_phoneCircleTimesHasBeenSet(false),
+    m_phoneInnerIntervalHasBeenSet(false),
+    m_phoneCircleIntervalHasBeenSet(false),
+    m_needPhoneArriveNoticeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome UserNotice::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("ReceiverType") && !value["ReceiverType"].IsNull())
+    {
+        if (!value["ReceiverType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `UserNotice.ReceiverType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_receiverType = string(value["ReceiverType"].GetString());
+        m_receiverTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `UserNotice.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = value["StartTime"].GetInt64();
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `UserNotice.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = value["EndTime"].GetInt64();
+        m_endTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NoticeWay") && !value["NoticeWay"].IsNull())
+    {
+        if (!value["NoticeWay"].IsArray())
+            return CoreInternalOutcome(Error("response `UserNotice.NoticeWay` is not array type"));
+
+        const Value &tmpValue = value["NoticeWay"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_noticeWay.push_back((*itr).GetString());
+        }
+        m_noticeWayHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserIds") && !value["UserIds"].IsNull())
+    {
+        if (!value["UserIds"].IsArray())
+            return CoreInternalOutcome(Error("response `UserNotice.UserIds` is not array type"));
+
+        const Value &tmpValue = value["UserIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_userIds.push_back((*itr).GetInt64());
+        }
+        m_userIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupIds") && !value["GroupIds"].IsNull())
+    {
+        if (!value["GroupIds"].IsArray())
+            return CoreInternalOutcome(Error("response `UserNotice.GroupIds` is not array type"));
+
+        const Value &tmpValue = value["GroupIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_groupIds.push_back((*itr).GetInt64());
+        }
+        m_groupIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("PhoneOrder") && !value["PhoneOrder"].IsNull())
+    {
+        if (!value["PhoneOrder"].IsArray())
+            return CoreInternalOutcome(Error("response `UserNotice.PhoneOrder` is not array type"));
+
+        const Value &tmpValue = value["PhoneOrder"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_phoneOrder.push_back((*itr).GetInt64());
+        }
+        m_phoneOrderHasBeenSet = true;
+    }
+
+    if (value.HasMember("PhoneCircleTimes") && !value["PhoneCircleTimes"].IsNull())
+    {
+        if (!value["PhoneCircleTimes"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `UserNotice.PhoneCircleTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_phoneCircleTimes = value["PhoneCircleTimes"].GetInt64();
+        m_phoneCircleTimesHasBeenSet = true;
+    }
+
+    if (value.HasMember("PhoneInnerInterval") && !value["PhoneInnerInterval"].IsNull())
+    {
+        if (!value["PhoneInnerInterval"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `UserNotice.PhoneInnerInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_phoneInnerInterval = value["PhoneInnerInterval"].GetInt64();
+        m_phoneInnerIntervalHasBeenSet = true;
+    }
+
+    if (value.HasMember("PhoneCircleInterval") && !value["PhoneCircleInterval"].IsNull())
+    {
+        if (!value["PhoneCircleInterval"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `UserNotice.PhoneCircleInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_phoneCircleInterval = value["PhoneCircleInterval"].GetInt64();
+        m_phoneCircleIntervalHasBeenSet = true;
+    }
+
+    if (value.HasMember("NeedPhoneArriveNotice") && !value["NeedPhoneArriveNotice"].IsNull())
+    {
+        if (!value["NeedPhoneArriveNotice"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `UserNotice.NeedPhoneArriveNotice` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_needPhoneArriveNotice = value["NeedPhoneArriveNotice"].GetInt64();
+        m_needPhoneArriveNoticeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void UserNotice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_receiverTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReceiverType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_receiverType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_noticeWayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NoticeWay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_noticeWay.begin(); itr != m_noticeWay.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_userIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_userIds.begin(); itr != m_userIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_groupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_phoneOrderHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PhoneOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_phoneOrder.begin(); itr != m_phoneOrder.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_phoneCircleTimesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PhoneCircleTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_phoneCircleTimes, allocator);
+    }
+
+    if (m_phoneInnerIntervalHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PhoneInnerInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_phoneInnerInterval, allocator);
+    }
+
+    if (m_phoneCircleIntervalHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PhoneCircleInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_phoneCircleInterval, allocator);
+    }
+
+    if (m_needPhoneArriveNoticeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedPhoneArriveNotice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needPhoneArriveNotice, allocator);
+    }
+
+}
+
+
+string UserNotice::GetReceiverType() const
+{
+    return m_receiverType;
+}
+
+void UserNotice::SetReceiverType(const string& _receiverType)
+{
+    m_receiverType = _receiverType;
+    m_receiverTypeHasBeenSet = true;
+}
+
+bool UserNotice::ReceiverTypeHasBeenSet() const
+{
+    return m_receiverTypeHasBeenSet;
+}
+
+int64_t UserNotice::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void UserNotice::SetStartTime(const int64_t& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool UserNotice::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+int64_t UserNotice::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void UserNotice::SetEndTime(const int64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool UserNotice::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+vector<string> UserNotice::GetNoticeWay() const
+{
+    return m_noticeWay;
+}
+
+void UserNotice::SetNoticeWay(const vector<string>& _noticeWay)
+{
+    m_noticeWay = _noticeWay;
+    m_noticeWayHasBeenSet = true;
+}
+
+bool UserNotice::NoticeWayHasBeenSet() const
+{
+    return m_noticeWayHasBeenSet;
+}
+
+vector<int64_t> UserNotice::GetUserIds() const
+{
+    return m_userIds;
+}
+
+void UserNotice::SetUserIds(const vector<int64_t>& _userIds)
+{
+    m_userIds = _userIds;
+    m_userIdsHasBeenSet = true;
+}
+
+bool UserNotice::UserIdsHasBeenSet() const
+{
+    return m_userIdsHasBeenSet;
+}
+
+vector<int64_t> UserNotice::GetGroupIds() const
+{
+    return m_groupIds;
+}
+
+void UserNotice::SetGroupIds(const vector<int64_t>& _groupIds)
+{
+    m_groupIds = _groupIds;
+    m_groupIdsHasBeenSet = true;
+}
+
+bool UserNotice::GroupIdsHasBeenSet() const
+{
+    return m_groupIdsHasBeenSet;
+}
+
+vector<int64_t> UserNotice::GetPhoneOrder() const
+{
+    return m_phoneOrder;
+}
+
+void UserNotice::SetPhoneOrder(const vector<int64_t>& _phoneOrder)
+{
+    m_phoneOrder = _phoneOrder;
+    m_phoneOrderHasBeenSet = true;
+}
+
+bool UserNotice::PhoneOrderHasBeenSet() const
+{
+    return m_phoneOrderHasBeenSet;
+}
+
+int64_t UserNotice::GetPhoneCircleTimes() const
+{
+    return m_phoneCircleTimes;
+}
+
+void UserNotice::SetPhoneCircleTimes(const int64_t& _phoneCircleTimes)
+{
+    m_phoneCircleTimes = _phoneCircleTimes;
+    m_phoneCircleTimesHasBeenSet = true;
+}
+
+bool UserNotice::PhoneCircleTimesHasBeenSet() const
+{
+    return m_phoneCircleTimesHasBeenSet;
+}
+
+int64_t UserNotice::GetPhoneInnerInterval() const
+{
+    return m_phoneInnerInterval;
+}
+
+void UserNotice::SetPhoneInnerInterval(const int64_t& _phoneInnerInterval)
+{
+    m_phoneInnerInterval = _phoneInnerInterval;
+    m_phoneInnerIntervalHasBeenSet = true;
+}
+
+bool UserNotice::PhoneInnerIntervalHasBeenSet() const
+{
+    return m_phoneInnerIntervalHasBeenSet;
+}
+
+int64_t UserNotice::GetPhoneCircleInterval() const
+{
+    return m_phoneCircleInterval;
+}
+
+void UserNotice::SetPhoneCircleInterval(const int64_t& _phoneCircleInterval)
+{
+    m_phoneCircleInterval = _phoneCircleInterval;
+    m_phoneCircleIntervalHasBeenSet = true;
+}
+
+bool UserNotice::PhoneCircleIntervalHasBeenSet() const
+{
+    return m_phoneCircleIntervalHasBeenSet;
+}
+
+int64_t UserNotice::GetNeedPhoneArriveNotice() const
+{
+    return m_needPhoneArriveNotice;
+}
+
+void UserNotice::SetNeedPhoneArriveNotice(const int64_t& _needPhoneArriveNotice)
+{
+    m_needPhoneArriveNotice = _needPhoneArriveNotice;
+    m_needPhoneArriveNoticeHasBeenSet = true;
+}
+
+bool UserNotice::NeedPhoneArriveNoticeHasBeenSet() const
+{
+    return m_needPhoneArriveNoticeHasBeenSet;
+}
+

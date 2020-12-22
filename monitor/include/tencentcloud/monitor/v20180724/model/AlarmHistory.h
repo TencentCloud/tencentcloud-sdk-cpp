@@ -425,6 +425,24 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取策略是否存在 0=不存在 1=存在
+                     * @return PolicyExists 策略是否存在 0=不存在 1=存在
+                     */
+                    int64_t GetPolicyExists() const;
+
+                    /**
+                     * 设置策略是否存在 0=不存在 1=存在
+                     * @param PolicyExists 策略是否存在 0=不存在 1=存在
+                     */
+                    void SetPolicyExists(const int64_t& _policyExists);
+
+                    /**
+                     * 判断参数 PolicyExists 是否已赋值
+                     * @return PolicyExists 是否已赋值
+                     */
+                    bool PolicyExistsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -552,6 +570,12 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 策略是否存在 0=不存在 1=存在
+                     */
+                    int64_t m_policyExists;
+                    bool m_policyExistsHasBeenSet;
 
                 };
             }

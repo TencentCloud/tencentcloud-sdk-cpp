@@ -337,17 +337,17 @@ ip：IP 列表作为源站
                     bool BasePathHasBeenSet() const;
 
                     /**
-                     * 获取分路径回源配置规则
+                     * 获取回源路径重写规则配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PathRules 分路径回源配置规则
+                     * @return PathRules 回源路径重写规则配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PathRule> GetPathRules() const;
 
                     /**
-                     * 设置分路径回源配置规则
+                     * 设置回源路径重写规则配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PathRules 分路径回源配置规则
+                     * @param PathRules 回源路径重写规则配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPathRules(const std::vector<PathRule>& _pathRules);
@@ -445,7 +445,7 @@ ip：IP 列表作为源站
                     bool m_basePathHasBeenSet;
 
                     /**
-                     * 分路径回源配置规则
+                     * 回源路径重写规则配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PathRule> m_pathRules;

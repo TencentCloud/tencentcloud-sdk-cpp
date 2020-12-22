@@ -25,18 +25,40 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyObjectRequest.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyObjectResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateAlarmPolicyRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateAlarmPolicyResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteAlarmNoticesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteAlarmNoticesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAccidentEventListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAccidentEventListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmEventsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmEventsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmHistoriesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmHistoriesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmMetricsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmMetricsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeCallbacksRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeCallbacksResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmNoticesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmNoticesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmPoliciesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmPoliciesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmPolicyRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmPolicyResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAllNamespacesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAllNamespacesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeBaseMetricsRequest.h>
@@ -61,6 +83,18 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyInfoRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyInfoResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyNoticeRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyNoticeResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyStatusRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyStatusResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyTasksRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyTasksResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPolicyGroupRequest.h>
@@ -69,6 +103,8 @@
 #include <tencentcloud/monitor/v20180724/model/PutMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h>
 #include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgResponse.h>
+#include <tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyRequest.h>
+#include <tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingPolicyObjectRequest.h>
@@ -92,12 +128,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BindingPolicyObjectResponse> BindingPolicyObjectOutcome;
                 typedef std::future<BindingPolicyObjectOutcome> BindingPolicyObjectOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::BindingPolicyObjectRequest&, BindingPolicyObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindingPolicyObjectAsyncHandler;
+                typedef Outcome<Error, Model::CreateAlarmNoticeResponse> CreateAlarmNoticeOutcome;
+                typedef std::future<CreateAlarmNoticeOutcome> CreateAlarmNoticeOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateAlarmNoticeRequest&, CreateAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmNoticeAsyncHandler;
+                typedef Outcome<Error, Model::CreateAlarmPolicyResponse> CreateAlarmPolicyOutcome;
+                typedef std::future<CreateAlarmPolicyOutcome> CreateAlarmPolicyOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateAlarmPolicyRequest&, CreateAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmPolicyAsyncHandler;
                 typedef Outcome<Error, Model::CreatePolicyGroupResponse> CreatePolicyGroupOutcome;
                 typedef std::future<CreatePolicyGroupOutcome> CreatePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreatePolicyGroupRequest&, CreatePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyGroupAsyncHandler;
                 typedef Outcome<Error, Model::CreateServiceDiscoveryResponse> CreateServiceDiscoveryOutcome;
                 typedef std::future<CreateServiceDiscoveryOutcome> CreateServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateServiceDiscoveryRequest&, CreateServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceDiscoveryAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAlarmNoticesResponse> DeleteAlarmNoticesOutcome;
+                typedef std::future<DeleteAlarmNoticesOutcome> DeleteAlarmNoticesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteAlarmNoticesRequest&, DeleteAlarmNoticesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmNoticesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAlarmPolicyResponse> DeleteAlarmPolicyOutcome;
+                typedef std::future<DeleteAlarmPolicyOutcome> DeleteAlarmPolicyOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteAlarmPolicyRequest&, DeleteAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmPolicyAsyncHandler;
                 typedef Outcome<Error, Model::DeletePolicyGroupResponse> DeletePolicyGroupOutcome;
                 typedef std::future<DeletePolicyGroupOutcome> DeletePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeletePolicyGroupRequest&, DeletePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyGroupAsyncHandler;
@@ -107,9 +155,30 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAccidentEventListResponse> DescribeAccidentEventListOutcome;
                 typedef std::future<DescribeAccidentEventListOutcome> DescribeAccidentEventListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAccidentEventListRequest&, DescribeAccidentEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccidentEventListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAlarmEventsResponse> DescribeAlarmEventsOutcome;
+                typedef std::future<DescribeAlarmEventsOutcome> DescribeAlarmEventsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmEventsRequest&, DescribeAlarmEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmEventsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAlarmHistoriesResponse> DescribeAlarmHistoriesOutcome;
                 typedef std::future<DescribeAlarmHistoriesOutcome> DescribeAlarmHistoriesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmHistoriesRequest&, DescribeAlarmHistoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmHistoriesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAlarmMetricsResponse> DescribeAlarmMetricsOutcome;
+                typedef std::future<DescribeAlarmMetricsOutcome> DescribeAlarmMetricsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmMetricsRequest&, DescribeAlarmMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmMetricsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAlarmNoticeResponse> DescribeAlarmNoticeOutcome;
+                typedef std::future<DescribeAlarmNoticeOutcome> DescribeAlarmNoticeOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmNoticeRequest&, DescribeAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmNoticeAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAlarmNoticeCallbacksResponse> DescribeAlarmNoticeCallbacksOutcome;
+                typedef std::future<DescribeAlarmNoticeCallbacksOutcome> DescribeAlarmNoticeCallbacksOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmNoticeCallbacksRequest&, DescribeAlarmNoticeCallbacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmNoticeCallbacksAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAlarmNoticesResponse> DescribeAlarmNoticesOutcome;
+                typedef std::future<DescribeAlarmNoticesOutcome> DescribeAlarmNoticesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmNoticesRequest&, DescribeAlarmNoticesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmNoticesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAlarmPoliciesResponse> DescribeAlarmPoliciesOutcome;
+                typedef std::future<DescribeAlarmPoliciesOutcome> DescribeAlarmPoliciesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmPoliciesRequest&, DescribeAlarmPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmPoliciesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAlarmPolicyResponse> DescribeAlarmPolicyOutcome;
+                typedef std::future<DescribeAlarmPolicyOutcome> DescribeAlarmPolicyOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmPolicyRequest&, DescribeAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmPolicyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAllNamespacesResponse> DescribeAllNamespacesOutcome;
                 typedef std::future<DescribeAllNamespacesOutcome> DescribeAllNamespacesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAllNamespacesRequest&, DescribeAllNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllNamespacesAsyncHandler;
@@ -146,6 +215,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetMonitorDataResponse> GetMonitorDataOutcome;
                 typedef std::future<GetMonitorDataOutcome> GetMonitorDataOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::GetMonitorDataRequest&, GetMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMonitorDataAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAlarmNoticeResponse> ModifyAlarmNoticeOutcome;
+                typedef std::future<ModifyAlarmNoticeOutcome> ModifyAlarmNoticeOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmNoticeRequest&, ModifyAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmNoticeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAlarmPolicyConditionResponse> ModifyAlarmPolicyConditionOutcome;
+                typedef std::future<ModifyAlarmPolicyConditionOutcome> ModifyAlarmPolicyConditionOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmPolicyConditionRequest&, ModifyAlarmPolicyConditionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmPolicyConditionAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAlarmPolicyInfoResponse> ModifyAlarmPolicyInfoOutcome;
+                typedef std::future<ModifyAlarmPolicyInfoOutcome> ModifyAlarmPolicyInfoOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmPolicyInfoRequest&, ModifyAlarmPolicyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmPolicyInfoAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAlarmPolicyNoticeResponse> ModifyAlarmPolicyNoticeOutcome;
+                typedef std::future<ModifyAlarmPolicyNoticeOutcome> ModifyAlarmPolicyNoticeOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmPolicyNoticeRequest&, ModifyAlarmPolicyNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmPolicyNoticeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAlarmPolicyStatusResponse> ModifyAlarmPolicyStatusOutcome;
+                typedef std::future<ModifyAlarmPolicyStatusOutcome> ModifyAlarmPolicyStatusOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmPolicyStatusRequest&, ModifyAlarmPolicyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmPolicyStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAlarmPolicyTasksResponse> ModifyAlarmPolicyTasksOutcome;
+                typedef std::future<ModifyAlarmPolicyTasksOutcome> ModifyAlarmPolicyTasksOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmPolicyTasksRequest&, ModifyAlarmPolicyTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmPolicyTasksAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAlarmReceiversResponse> ModifyAlarmReceiversOutcome;
                 typedef std::future<ModifyAlarmReceiversOutcome> ModifyAlarmReceiversOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmReceiversRequest&, ModifyAlarmReceiversOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmReceiversAsyncHandler;
@@ -158,6 +245,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SendCustomAlarmMsgResponse> SendCustomAlarmMsgOutcome;
                 typedef std::future<SendCustomAlarmMsgOutcome> SendCustomAlarmMsgOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::SendCustomAlarmMsgRequest&, SendCustomAlarmMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendCustomAlarmMsgAsyncHandler;
+                typedef Outcome<Error, Model::SetDefaultAlarmPolicyResponse> SetDefaultAlarmPolicyOutcome;
+                typedef std::future<SetDefaultAlarmPolicyOutcome> SetDefaultAlarmPolicyOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::SetDefaultAlarmPolicyRequest&, SetDefaultAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDefaultAlarmPolicyAsyncHandler;
                 typedef Outcome<Error, Model::UnBindingAllPolicyObjectResponse> UnBindingAllPolicyObjectOutcome;
                 typedef std::future<UnBindingAllPolicyObjectOutcome> UnBindingAllPolicyObjectOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UnBindingAllPolicyObjectRequest&, UnBindingAllPolicyObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindingAllPolicyObjectAsyncHandler;
@@ -180,6 +270,24 @@ namespace TencentCloud
                 BindingPolicyObjectOutcomeCallable BindingPolicyObjectCallable(const Model::BindingPolicyObjectRequest& request);
 
                 /**
+                 *云监控告警创建告警通知模板
+                 * @param req CreateAlarmNoticeRequest
+                 * @return CreateAlarmNoticeOutcome
+                 */
+                CreateAlarmNoticeOutcome CreateAlarmNotice(const Model::CreateAlarmNoticeRequest &request);
+                void CreateAlarmNoticeAsync(const Model::CreateAlarmNoticeRequest& request, const CreateAlarmNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAlarmNoticeOutcomeCallable CreateAlarmNoticeCallable(const Model::CreateAlarmNoticeRequest& request);
+
+                /**
+                 *创建告警策略
+                 * @param req CreateAlarmPolicyRequest
+                 * @return CreateAlarmPolicyOutcome
+                 */
+                CreateAlarmPolicyOutcome CreateAlarmPolicy(const Model::CreateAlarmPolicyRequest &request);
+                void CreateAlarmPolicyAsync(const Model::CreateAlarmPolicyRequest& request, const CreateAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAlarmPolicyOutcomeCallable CreateAlarmPolicyCallable(const Model::CreateAlarmPolicyRequest& request);
+
+                /**
                  *增加策略组
                  * @param req CreatePolicyGroupRequest
                  * @return CreatePolicyGroupOutcome
@@ -198,6 +306,24 @@ namespace TencentCloud
                 CreateServiceDiscoveryOutcome CreateServiceDiscovery(const Model::CreateServiceDiscoveryRequest &request);
                 void CreateServiceDiscoveryAsync(const Model::CreateServiceDiscoveryRequest& request, const CreateServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateServiceDiscoveryOutcomeCallable CreateServiceDiscoveryCallable(const Model::CreateServiceDiscoveryRequest& request);
+
+                /**
+                 *云监控告警删除告警通知模板
+                 * @param req DeleteAlarmNoticesRequest
+                 * @return DeleteAlarmNoticesOutcome
+                 */
+                DeleteAlarmNoticesOutcome DeleteAlarmNotices(const Model::DeleteAlarmNoticesRequest &request);
+                void DeleteAlarmNoticesAsync(const Model::DeleteAlarmNoticesRequest& request, const DeleteAlarmNoticesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAlarmNoticesOutcomeCallable DeleteAlarmNoticesCallable(const Model::DeleteAlarmNoticesRequest& request);
+
+                /**
+                 *删除告警策略
+                 * @param req DeleteAlarmPolicyRequest
+                 * @return DeleteAlarmPolicyOutcome
+                 */
+                DeleteAlarmPolicyOutcome DeleteAlarmPolicy(const Model::DeleteAlarmPolicyRequest &request);
+                void DeleteAlarmPolicyAsync(const Model::DeleteAlarmPolicyRequest& request, const DeleteAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAlarmPolicyOutcomeCallable DeleteAlarmPolicyCallable(const Model::DeleteAlarmPolicyRequest& request);
 
                 /**
                  *删除告警策略组
@@ -229,13 +355,76 @@ namespace TencentCloud
                 DescribeAccidentEventListOutcomeCallable DescribeAccidentEventListCallable(const Model::DescribeAccidentEventListRequest& request);
 
                 /**
-                 *告警2.0-告警历史列表
+                 *查询告警事件列表
+                 * @param req DescribeAlarmEventsRequest
+                 * @return DescribeAlarmEventsOutcome
+                 */
+                DescribeAlarmEventsOutcome DescribeAlarmEvents(const Model::DescribeAlarmEventsRequest &request);
+                void DescribeAlarmEventsAsync(const Model::DescribeAlarmEventsRequest& request, const DescribeAlarmEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmEventsOutcomeCallable DescribeAlarmEventsCallable(const Model::DescribeAlarmEventsRequest& request);
+
+                /**
+                 *告警历史列表
                  * @param req DescribeAlarmHistoriesRequest
                  * @return DescribeAlarmHistoriesOutcome
                  */
                 DescribeAlarmHistoriesOutcome DescribeAlarmHistories(const Model::DescribeAlarmHistoriesRequest &request);
                 void DescribeAlarmHistoriesAsync(const Model::DescribeAlarmHistoriesRequest& request, const DescribeAlarmHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlarmHistoriesOutcomeCallable DescribeAlarmHistoriesCallable(const Model::DescribeAlarmHistoriesRequest& request);
+
+                /**
+                 *查询告警指标列表
+                 * @param req DescribeAlarmMetricsRequest
+                 * @return DescribeAlarmMetricsOutcome
+                 */
+                DescribeAlarmMetricsOutcome DescribeAlarmMetrics(const Model::DescribeAlarmMetricsRequest &request);
+                void DescribeAlarmMetricsAsync(const Model::DescribeAlarmMetricsRequest& request, const DescribeAlarmMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmMetricsOutcomeCallable DescribeAlarmMetricsCallable(const Model::DescribeAlarmMetricsRequest& request);
+
+                /**
+                 *云监控告警获取告警通知模板详情
+                 * @param req DescribeAlarmNoticeRequest
+                 * @return DescribeAlarmNoticeOutcome
+                 */
+                DescribeAlarmNoticeOutcome DescribeAlarmNotice(const Model::DescribeAlarmNoticeRequest &request);
+                void DescribeAlarmNoticeAsync(const Model::DescribeAlarmNoticeRequest& request, const DescribeAlarmNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmNoticeOutcomeCallable DescribeAlarmNoticeCallable(const Model::DescribeAlarmNoticeRequest& request);
+
+                /**
+                 *云监控告警获取告警通知模板所有回调URL
+                 * @param req DescribeAlarmNoticeCallbacksRequest
+                 * @return DescribeAlarmNoticeCallbacksOutcome
+                 */
+                DescribeAlarmNoticeCallbacksOutcome DescribeAlarmNoticeCallbacks(const Model::DescribeAlarmNoticeCallbacksRequest &request);
+                void DescribeAlarmNoticeCallbacksAsync(const Model::DescribeAlarmNoticeCallbacksRequest& request, const DescribeAlarmNoticeCallbacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmNoticeCallbacksOutcomeCallable DescribeAlarmNoticeCallbacksCallable(const Model::DescribeAlarmNoticeCallbacksRequest& request);
+
+                /**
+                 *云监控告警查询告警通知模板列表
+                 * @param req DescribeAlarmNoticesRequest
+                 * @return DescribeAlarmNoticesOutcome
+                 */
+                DescribeAlarmNoticesOutcome DescribeAlarmNotices(const Model::DescribeAlarmNoticesRequest &request);
+                void DescribeAlarmNoticesAsync(const Model::DescribeAlarmNoticesRequest& request, const DescribeAlarmNoticesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmNoticesOutcomeCallable DescribeAlarmNoticesCallable(const Model::DescribeAlarmNoticesRequest& request);
+
+                /**
+                 *告警策略列表
+                 * @param req DescribeAlarmPoliciesRequest
+                 * @return DescribeAlarmPoliciesOutcome
+                 */
+                DescribeAlarmPoliciesOutcome DescribeAlarmPolicies(const Model::DescribeAlarmPoliciesRequest &request);
+                void DescribeAlarmPoliciesAsync(const Model::DescribeAlarmPoliciesRequest& request, const DescribeAlarmPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmPoliciesOutcomeCallable DescribeAlarmPoliciesCallable(const Model::DescribeAlarmPoliciesRequest& request);
+
+                /**
+                 *告警策略详情
+                 * @param req DescribeAlarmPolicyRequest
+                 * @return DescribeAlarmPolicyOutcome
+                 */
+                DescribeAlarmPolicyOutcome DescribeAlarmPolicy(const Model::DescribeAlarmPolicyRequest &request);
+                void DescribeAlarmPolicyAsync(const Model::DescribeAlarmPolicyRequest& request, const DescribeAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmPolicyOutcomeCallable DescribeAlarmPolicyCallable(const Model::DescribeAlarmPolicyRequest& request);
 
                 /**
                  *拉取所有名字空间
@@ -350,6 +539,60 @@ namespace TencentCloud
                 GetMonitorDataOutcomeCallable GetMonitorDataCallable(const Model::GetMonitorDataRequest& request);
 
                 /**
+                 *云监控告警编辑告警通知模板
+                 * @param req ModifyAlarmNoticeRequest
+                 * @return ModifyAlarmNoticeOutcome
+                 */
+                ModifyAlarmNoticeOutcome ModifyAlarmNotice(const Model::ModifyAlarmNoticeRequest &request);
+                void ModifyAlarmNoticeAsync(const Model::ModifyAlarmNoticeRequest& request, const ModifyAlarmNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAlarmNoticeOutcomeCallable ModifyAlarmNoticeCallable(const Model::ModifyAlarmNoticeRequest& request);
+
+                /**
+                 *编辑告警策略触发条件
+                 * @param req ModifyAlarmPolicyConditionRequest
+                 * @return ModifyAlarmPolicyConditionOutcome
+                 */
+                ModifyAlarmPolicyConditionOutcome ModifyAlarmPolicyCondition(const Model::ModifyAlarmPolicyConditionRequest &request);
+                void ModifyAlarmPolicyConditionAsync(const Model::ModifyAlarmPolicyConditionRequest& request, const ModifyAlarmPolicyConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAlarmPolicyConditionOutcomeCallable ModifyAlarmPolicyConditionCallable(const Model::ModifyAlarmPolicyConditionRequest& request);
+
+                /**
+                 *告警2.0编辑告警策略基本信息，包括策略名、备注
+                 * @param req ModifyAlarmPolicyInfoRequest
+                 * @return ModifyAlarmPolicyInfoOutcome
+                 */
+                ModifyAlarmPolicyInfoOutcome ModifyAlarmPolicyInfo(const Model::ModifyAlarmPolicyInfoRequest &request);
+                void ModifyAlarmPolicyInfoAsync(const Model::ModifyAlarmPolicyInfoRequest& request, const ModifyAlarmPolicyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAlarmPolicyInfoOutcomeCallable ModifyAlarmPolicyInfoCallable(const Model::ModifyAlarmPolicyInfoRequest& request);
+
+                /**
+                 *云监控告警修改告警策略绑定的告警通知模板
+                 * @param req ModifyAlarmPolicyNoticeRequest
+                 * @return ModifyAlarmPolicyNoticeOutcome
+                 */
+                ModifyAlarmPolicyNoticeOutcome ModifyAlarmPolicyNotice(const Model::ModifyAlarmPolicyNoticeRequest &request);
+                void ModifyAlarmPolicyNoticeAsync(const Model::ModifyAlarmPolicyNoticeRequest& request, const ModifyAlarmPolicyNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAlarmPolicyNoticeOutcomeCallable ModifyAlarmPolicyNoticeCallable(const Model::ModifyAlarmPolicyNoticeRequest& request);
+
+                /**
+                 *修改告警策略的启停状态
+                 * @param req ModifyAlarmPolicyStatusRequest
+                 * @return ModifyAlarmPolicyStatusOutcome
+                 */
+                ModifyAlarmPolicyStatusOutcome ModifyAlarmPolicyStatus(const Model::ModifyAlarmPolicyStatusRequest &request);
+                void ModifyAlarmPolicyStatusAsync(const Model::ModifyAlarmPolicyStatusRequest& request, const ModifyAlarmPolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAlarmPolicyStatusOutcomeCallable ModifyAlarmPolicyStatusCallable(const Model::ModifyAlarmPolicyStatusRequest& request);
+
+                /**
+                 *云监控告警修改告警策略的触发任务，TriggerTasks字段放触发任务列表，TriggerTasks传空数组时，代表解绑该策略的所有触发任务。
+                 * @param req ModifyAlarmPolicyTasksRequest
+                 * @return ModifyAlarmPolicyTasksOutcome
+                 */
+                ModifyAlarmPolicyTasksOutcome ModifyAlarmPolicyTasks(const Model::ModifyAlarmPolicyTasksRequest &request);
+                void ModifyAlarmPolicyTasksAsync(const Model::ModifyAlarmPolicyTasksRequest& request, const ModifyAlarmPolicyTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAlarmPolicyTasksOutcomeCallable ModifyAlarmPolicyTasksCallable(const Model::ModifyAlarmPolicyTasksRequest& request);
+
+                /**
                  *修改告警接收人
                  * @param req ModifyAlarmReceiversRequest
                  * @return ModifyAlarmReceiversOutcome
@@ -390,6 +633,16 @@ namespace TencentCloud
                 SendCustomAlarmMsgOutcome SendCustomAlarmMsg(const Model::SendCustomAlarmMsgRequest &request);
                 void SendCustomAlarmMsgAsync(const Model::SendCustomAlarmMsgRequest& request, const SendCustomAlarmMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SendCustomAlarmMsgOutcomeCallable SendCustomAlarmMsgCallable(const Model::SendCustomAlarmMsgRequest& request);
+
+                /**
+                 *设置一个策略为该告警策略类型、该项目的默认告警策略。
+同一项目下相同的告警策略类型，就会被设置为非默认。
+                 * @param req SetDefaultAlarmPolicyRequest
+                 * @return SetDefaultAlarmPolicyOutcome
+                 */
+                SetDefaultAlarmPolicyOutcome SetDefaultAlarmPolicy(const Model::SetDefaultAlarmPolicyRequest &request);
+                void SetDefaultAlarmPolicyAsync(const Model::SetDefaultAlarmPolicyRequest& request, const SetDefaultAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetDefaultAlarmPolicyOutcomeCallable SetDefaultAlarmPolicyCallable(const Model::SetDefaultAlarmPolicyRequest& request);
 
                 /**
                  *删除全部的关联对象

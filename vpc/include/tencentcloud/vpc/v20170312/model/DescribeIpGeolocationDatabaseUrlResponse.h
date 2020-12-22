@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP地址库下载链接地址
-                     * @return DownLoadUrl IP地址库下载链接地址
+                     * 获取IP地理位置库下载链接地址。
+                     * @return DownLoadUrl IP地理位置库下载链接地址。
                      */
                     std::string GetDownLoadUrl() const;
 
@@ -69,7 +69,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IP地址库下载链接地址
+                     * IP地理位置库下载链接地址。
                      */
                     std::string m_downLoadUrl;
                     bool m_downLoadUrlHasBeenSet;

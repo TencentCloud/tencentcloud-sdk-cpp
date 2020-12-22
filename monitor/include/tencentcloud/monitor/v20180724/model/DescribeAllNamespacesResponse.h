@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云产品的名字空间
-                     * @return QceNamespaces 云产品的名字空间
+                     * 获取云产品的告警策略类型，已废弃
+                     * @return QceNamespaces 云产品的告警策略类型，已废弃
                      */
                     CommonNamespace GetQceNamespaces() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool QceNamespacesHasBeenSet() const;
 
                     /**
-                     * 获取自定义监控的命名空间
-                     * @return CustomNamespaces 自定义监控的命名空间
+                     * 获取其他告警策略类型，已废弃
+                     * @return CustomNamespaces 其他告警策略类型，已废弃
                      */
                     CommonNamespace GetCustomNamespaces() const;
 
@@ -67,19 +67,55 @@ namespace TencentCloud
                      */
                     bool CustomNamespacesHasBeenSet() const;
 
+                    /**
+                     * 获取云产品的告警策略类型
+                     * @return QceNamespacesNew 云产品的告警策略类型
+                     */
+                    std::vector<CommonNamespace> GetQceNamespacesNew() const;
+
+                    /**
+                     * 判断参数 QceNamespacesNew 是否已赋值
+                     * @return QceNamespacesNew 是否已赋值
+                     */
+                    bool QceNamespacesNewHasBeenSet() const;
+
+                    /**
+                     * 获取其他告警策略类型，暂不支持
+                     * @return CustomNamespacesNew 其他告警策略类型，暂不支持
+                     */
+                    std::vector<CommonNamespace> GetCustomNamespacesNew() const;
+
+                    /**
+                     * 判断参数 CustomNamespacesNew 是否已赋值
+                     * @return CustomNamespacesNew 是否已赋值
+                     */
+                    bool CustomNamespacesNewHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云产品的名字空间
+                     * 云产品的告警策略类型，已废弃
                      */
                     CommonNamespace m_qceNamespaces;
                     bool m_qceNamespacesHasBeenSet;
 
                     /**
-                     * 自定义监控的命名空间
+                     * 其他告警策略类型，已废弃
                      */
                     CommonNamespace m_customNamespaces;
                     bool m_customNamespacesHasBeenSet;
+
+                    /**
+                     * 云产品的告警策略类型
+                     */
+                    std::vector<CommonNamespace> m_qceNamespacesNew;
+                    bool m_qceNamespacesNewHasBeenSet;
+
+                    /**
+                     * 其他告警策略类型，暂不支持
+                     */
+                    std::vector<CommonNamespace> m_customNamespacesNew;
+                    bool m_customNamespacesNewHasBeenSet;
 
                 };
             }

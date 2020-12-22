@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeLivePackageInfoResponse::DescribeLivePackageInfoResponse() :
-    m_livePackageInfoListHasBeenSet(false)
+    m_livePackageInfoListHasBeenSet(false),
+    m_packageBillModeHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeLivePackageInfoResponse::Deserialize(const string &p
         m_livePackageInfoListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PackageBillMode") && !rsp["PackageBillMode"].IsNull())
+    {
+        if (!rsp["PackageBillMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PackageBillMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageBillMode = rsp["PackageBillMode"].GetInt64();
+        m_packageBillModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<LivePackageInfo> DescribeLivePackageInfoResponse::GetLivePackageInfoList(
 bool DescribeLivePackageInfoResponse::LivePackageInfoListHasBeenSet() const
 {
     return m_livePackageInfoListHasBeenSet;
+}
+
+int64_t DescribeLivePackageInfoResponse::GetPackageBillMode() const
+{
+    return m_packageBillMode;
+}
+
+bool DescribeLivePackageInfoResponse::PackageBillModeHasBeenSet() const
+{
+    return m_packageBillModeHasBeenSet;
 }
 
 

@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发信邮件地址。比如：noreply@mail.qcloud.com。
-                     * @return FromEmailAddress 发信邮件地址。比如：noreply@mail.qcloud.com。
+                     * 获取发信邮件地址。例如：noreply@mail.qcloud.com。
+                     * @return FromEmailAddress 发信邮件地址。例如：noreply@mail.qcloud.com。
                      */
                     std::string GetFromEmailAddress() const;
 
                     /**
-                     * 设置发信邮件地址。比如：noreply@mail.qcloud.com。
-                     * @param FromEmailAddress 发信邮件地址。比如：noreply@mail.qcloud.com。
+                     * 设置发信邮件地址。例如：noreply@mail.qcloud.com。
+                     * @param FromEmailAddress 发信邮件地址。例如：noreply@mail.qcloud.com。
                      */
                     void SetFromEmailAddress(const std::string& _fromEmailAddress);
 
@@ -155,7 +155,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发信邮件地址。比如：noreply@mail.qcloud.com。
+                     * 发信邮件地址。例如：noreply@mail.qcloud.com。
                      */
                     std::string m_fromEmailAddress;
                     bool m_fromEmailAddressHasBeenSet;
