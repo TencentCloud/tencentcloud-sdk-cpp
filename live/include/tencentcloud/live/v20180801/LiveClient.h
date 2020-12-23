@@ -97,6 +97,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCallbackRecordsListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCallbackRecordsListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeDeliverBandwidthListRequest.h>
@@ -362,6 +364,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBillBandwidthAndFluxListResponse> DescribeBillBandwidthAndFluxListOutcome;
                 typedef std::future<DescribeBillBandwidthAndFluxListOutcome> DescribeBillBandwidthAndFluxListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeBillBandwidthAndFluxListRequest&, DescribeBillBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillBandwidthAndFluxListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCallbackRecordsListResponse> DescribeCallbackRecordsListOutcome;
+                typedef std::future<DescribeCallbackRecordsListOutcome> DescribeCallbackRecordsListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCallbackRecordsListRequest&, DescribeCallbackRecordsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallbackRecordsListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeConcurrentRecordStreamNumResponse> DescribeConcurrentRecordStreamNumOutcome;
                 typedef std::future<DescribeConcurrentRecordStreamNumOutcome> DescribeConcurrentRecordStreamNumOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeConcurrentRecordStreamNumRequest&, DescribeConcurrentRecordStreamNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrentRecordStreamNumAsyncHandler;
@@ -953,6 +958,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeBillBandwidthAndFluxListOutcome DescribeBillBandwidthAndFluxList(const Model::DescribeBillBandwidthAndFluxListRequest &request);
                 void DescribeBillBandwidthAndFluxListAsync(const Model::DescribeBillBandwidthAndFluxListRequest& request, const DescribeBillBandwidthAndFluxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillBandwidthAndFluxListOutcomeCallable DescribeBillBandwidthAndFluxListCallable(const Model::DescribeBillBandwidthAndFluxListRequest& request);
+
+                /**
+                 *回调事件查询
+                 * @param req DescribeCallbackRecordsListRequest
+                 * @return DescribeCallbackRecordsListOutcome
+                 */
+                DescribeCallbackRecordsListOutcome DescribeCallbackRecordsList(const Model::DescribeCallbackRecordsListRequest &request);
+                void DescribeCallbackRecordsListAsync(const Model::DescribeCallbackRecordsListRequest& request, const DescribeCallbackRecordsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCallbackRecordsListOutcomeCallable DescribeCallbackRecordsListCallable(const Model::DescribeCallbackRecordsListRequest& request);
 
                 /**
                  *查询并发录制路数，对慢直播和普通直播适用。

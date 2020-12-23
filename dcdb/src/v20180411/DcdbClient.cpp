@@ -1072,6 +1072,49 @@ DcdbClient::DescribeSqlLogsOutcomeCallable DcdbClient::DescribeSqlLogsCallable(c
     return task->get_future();
 }
 
+DcdbClient::DescribeUserTasksOutcome DcdbClient::DescribeUserTasks(const DescribeUserTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserTasksResponse rsp = DescribeUserTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserTasksOutcome(rsp);
+        else
+            return DescribeUserTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserTasksOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeUserTasksAsync(const DescribeUserTasksRequest& request, const DescribeUserTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeUserTasksOutcomeCallable DcdbClient::DescribeUserTasksCallable(const DescribeUserTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::FlushBinlogOutcome DcdbClient::FlushBinlog(const FlushBinlogRequest &request)
 {
     auto outcome = MakeRequest(request, "FlushBinlog");

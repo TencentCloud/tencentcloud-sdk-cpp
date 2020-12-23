@@ -1631,6 +1631,49 @@ LiveClient::DescribeBillBandwidthAndFluxListOutcomeCallable LiveClient::Describe
     return task->get_future();
 }
 
+LiveClient::DescribeCallbackRecordsListOutcome LiveClient::DescribeCallbackRecordsList(const DescribeCallbackRecordsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCallbackRecordsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCallbackRecordsListResponse rsp = DescribeCallbackRecordsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCallbackRecordsListOutcome(rsp);
+        else
+            return DescribeCallbackRecordsListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCallbackRecordsListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeCallbackRecordsListAsync(const DescribeCallbackRecordsListRequest& request, const DescribeCallbackRecordsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCallbackRecordsList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeCallbackRecordsListOutcomeCallable LiveClient::DescribeCallbackRecordsListCallable(const DescribeCallbackRecordsListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCallbackRecordsListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCallbackRecordsList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeConcurrentRecordStreamNumOutcome LiveClient::DescribeConcurrentRecordStreamNum(const DescribeConcurrentRecordStreamNumRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeConcurrentRecordStreamNum");

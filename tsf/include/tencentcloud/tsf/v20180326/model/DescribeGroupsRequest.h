@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool GroupResourceTypeListHasBeenSet() const;
 
+                    /**
+                     * 获取部署组状态过滤字段
+                     * @return Status 部署组状态过滤字段
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置部署组状态过滤字段
+                     * @param Status 部署组状态过滤字段
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_groupResourceTypeList;
                     bool m_groupResourceTypeListHasBeenSet;
+
+                    /**
+                     * 部署组状态过滤字段
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

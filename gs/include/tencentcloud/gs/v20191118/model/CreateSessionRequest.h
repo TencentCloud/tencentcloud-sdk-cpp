@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取【将废弃】资源池编号，比如1表示正式，2表示测试
-                     * @return SetNo 【将废弃】资源池编号，比如1表示正式，2表示测试
+                     * 获取【废弃】资源池编号
+                     * @return SetNo 【废弃】资源池编号
                      */
                     uint64_t GetSetNo() const;
 
                     /**
-                     * 设置【将废弃】资源池编号，比如1表示正式，2表示测试
-                     * @param SetNo 【将废弃】资源池编号，比如1表示正式，2表示测试
+                     * 设置【废弃】资源池编号
+                     * @param SetNo 【废弃】资源池编号
                      */
                     void SetSetNo(const uint64_t& _setNo);
 
@@ -375,7 +375,7 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 【将废弃】资源池编号，比如1表示正式，2表示测试
+                     * 【废弃】资源池编号
                      */
                     uint64_t m_setNo;
                     bool m_setNoHasBeenSet;

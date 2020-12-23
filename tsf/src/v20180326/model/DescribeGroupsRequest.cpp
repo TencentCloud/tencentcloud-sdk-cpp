@@ -32,7 +32,8 @@ DescribeGroupsRequest::DescribeGroupsRequest() :
     m_limitHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_groupResourceTypeListHasBeenSet(false)
+    m_groupResourceTypeListHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,14 @@ string DescribeGroupsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -270,6 +279,22 @@ void DescribeGroupsRequest::SetGroupResourceTypeList(const vector<string>& _grou
 bool DescribeGroupsRequest::GroupResourceTypeListHasBeenSet() const
 {
     return m_groupResourceTypeListHasBeenSet;
+}
+
+string DescribeGroupsRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeGroupsRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeGroupsRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

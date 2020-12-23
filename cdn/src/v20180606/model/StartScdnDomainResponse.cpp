@@ -14,24 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gs/v20191118/model/CreateSessionResponse.h>
+#include <tencentcloud/cdn/v20180606/model/StartScdnDomainResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gs::V20191118::Model;
+using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateSessionResponse::CreateSessionResponse() :
-    m_serverSessionHasBeenSet(false),
-    m_roleNumberHasBeenSet(false),
-    m_roleHasBeenSet(false)
+StartScdnDomainResponse::StartScdnDomainResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateSessionResponse::Deserialize(const string &payload)
+CoreInternalOutcome StartScdnDomainResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -65,34 +63,14 @@ CoreInternalOutcome CreateSessionResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("ServerSession") && !rsp["ServerSession"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["ServerSession"].IsString())
+        if (!rsp["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerSession` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_serverSession = string(rsp["ServerSession"].GetString());
-        m_serverSessionHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("RoleNumber") && !rsp["RoleNumber"].IsNull())
-    {
-        if (!rsp["RoleNumber"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `RoleNumber` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_roleNumber = string(rsp["RoleNumber"].GetString());
-        m_roleNumberHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Role") && !rsp["Role"].IsNull())
-    {
-        if (!rsp["Role"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Role` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_role = string(rsp["Role"].GetString());
-        m_roleHasBeenSet = true;
+        m_result = string(rsp["Result"].GetString());
+        m_resultHasBeenSet = true;
     }
 
 
@@ -100,34 +78,14 @@ CoreInternalOutcome CreateSessionResponse::Deserialize(const string &payload)
 }
 
 
-string CreateSessionResponse::GetServerSession() const
+string StartScdnDomainResponse::GetResult() const
 {
-    return m_serverSession;
+    return m_result;
 }
 
-bool CreateSessionResponse::ServerSessionHasBeenSet() const
+bool StartScdnDomainResponse::ResultHasBeenSet() const
 {
-    return m_serverSessionHasBeenSet;
-}
-
-string CreateSessionResponse::GetRoleNumber() const
-{
-    return m_roleNumber;
-}
-
-bool CreateSessionResponse::RoleNumberHasBeenSet() const
-{
-    return m_roleNumberHasBeenSet;
-}
-
-string CreateSessionResponse::GetRole() const
-{
-    return m_role;
-}
-
-bool CreateSessionResponse::RoleHasBeenSet() const
-{
-    return m_roleHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

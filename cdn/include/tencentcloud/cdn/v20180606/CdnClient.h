@@ -83,6 +83,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribePushTasksResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeScdnConfigRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeScdnConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnTopDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeScdnTopDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h>
@@ -107,6 +109,8 @@
 #include <tencentcloud/cdn/v20180606/model/ListClsTopicDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListDiagnoseReportRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListDiagnoseReportResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ListScdnDomainsRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ListScdnDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataRequest.h>
@@ -123,8 +127,12 @@
 #include <tencentcloud/cdn/v20180606/model/SearchClsLogResponse.h>
 #include <tencentcloud/cdn/v20180606/model/StartCdnDomainRequest.h>
 #include <tencentcloud/cdn/v20180606/model/StartCdnDomainResponse.h>
+#include <tencentcloud/cdn/v20180606/model/StartScdnDomainRequest.h>
+#include <tencentcloud/cdn/v20180606/model/StartScdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/StopCdnDomainRequest.h>
 #include <tencentcloud/cdn/v20180606/model/StopCdnDomainResponse.h>
+#include <tencentcloud/cdn/v20180606/model/StopScdnDomainRequest.h>
+#include <tencentcloud/cdn/v20180606/model/StopScdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/UpdateDomainConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/UpdateDomainConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/UpdateImageConfigRequest.h>
@@ -239,6 +247,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeReportDataResponse> DescribeReportDataOutcome;
                 typedef std::future<DescribeReportDataOutcome> DescribeReportDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeReportDataRequest&, DescribeReportDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportDataAsyncHandler;
+                typedef Outcome<Error, Model::DescribeScdnConfigResponse> DescribeScdnConfigOutcome;
+                typedef std::future<DescribeScdnConfigOutcome> DescribeScdnConfigOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeScdnConfigRequest&, DescribeScdnConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnConfigAsyncHandler;
                 typedef Outcome<Error, Model::DescribeScdnTopDataResponse> DescribeScdnTopDataOutcome;
                 typedef std::future<DescribeScdnTopDataOutcome> DescribeScdnTopDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeScdnTopDataRequest&, DescribeScdnTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnTopDataAsyncHandler;
@@ -275,6 +286,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListDiagnoseReportResponse> ListDiagnoseReportOutcome;
                 typedef std::future<ListDiagnoseReportOutcome> ListDiagnoseReportOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListDiagnoseReportRequest&, ListDiagnoseReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDiagnoseReportAsyncHandler;
+                typedef Outcome<Error, Model::ListScdnDomainsResponse> ListScdnDomainsOutcome;
+                typedef std::future<ListScdnDomainsOutcome> ListScdnDomainsOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ListScdnDomainsRequest&, ListScdnDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScdnDomainsAsyncHandler;
                 typedef Outcome<Error, Model::ListScdnLogTasksResponse> ListScdnLogTasksOutcome;
                 typedef std::future<ListScdnLogTasksOutcome> ListScdnLogTasksOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListScdnLogTasksRequest&, ListScdnLogTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScdnLogTasksAsyncHandler;
@@ -299,9 +313,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StartCdnDomainResponse> StartCdnDomainOutcome;
                 typedef std::future<StartCdnDomainOutcome> StartCdnDomainOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::StartCdnDomainRequest&, StartCdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartCdnDomainAsyncHandler;
+                typedef Outcome<Error, Model::StartScdnDomainResponse> StartScdnDomainOutcome;
+                typedef std::future<StartScdnDomainOutcome> StartScdnDomainOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::StartScdnDomainRequest&, StartScdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartScdnDomainAsyncHandler;
                 typedef Outcome<Error, Model::StopCdnDomainResponse> StopCdnDomainOutcome;
                 typedef std::future<StopCdnDomainOutcome> StopCdnDomainOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::StopCdnDomainRequest&, StopCdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopCdnDomainAsyncHandler;
+                typedef Outcome<Error, Model::StopScdnDomainResponse> StopScdnDomainOutcome;
+                typedef std::future<StopScdnDomainOutcome> StopScdnDomainOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::StopScdnDomainRequest&, StopScdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopScdnDomainAsyncHandler;
                 typedef Outcome<Error, Model::UpdateDomainConfigResponse> UpdateDomainConfigOutcome;
                 typedef std::future<UpdateDomainConfigOutcome> UpdateDomainConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::UpdateDomainConfigRequest&, UpdateDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDomainConfigAsyncHandler;
@@ -616,6 +636,15 @@ namespace TencentCloud
                 DescribeReportDataOutcomeCallable DescribeReportDataCallable(const Model::DescribeReportDataRequest& request);
 
                 /**
+                 *DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置
+                 * @param req DescribeScdnConfigRequest
+                 * @return DescribeScdnConfigOutcome
+                 */
+                DescribeScdnConfigOutcome DescribeScdnConfig(const Model::DescribeScdnConfigRequest &request);
+                void DescribeScdnConfigAsync(const Model::DescribeScdnConfigRequest& request, const DescribeScdnConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScdnConfigOutcomeCallable DescribeScdnConfigCallable(const Model::DescribeScdnConfigRequest& request);
+
+                /**
                  *获取SCDN的Top数据
                  * @param req DescribeScdnTopDataRequest
                  * @return DescribeScdnTopDataOutcome
@@ -726,6 +755,15 @@ namespace TencentCloud
                 ListDiagnoseReportOutcomeCallable ListDiagnoseReportCallable(const Model::ListDiagnoseReportRequest& request);
 
                 /**
+                 *ListScdnDomains 用于查询 SCDN 安全加速域名列表，及域名基本配置信息
+                 * @param req ListScdnDomainsRequest
+                 * @return ListScdnDomainsOutcome
+                 */
+                ListScdnDomainsOutcome ListScdnDomains(const Model::ListScdnDomainsRequest &request);
+                void ListScdnDomainsAsync(const Model::ListScdnDomainsRequest& request, const ListScdnDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListScdnDomainsOutcomeCallable ListScdnDomainsCallable(const Model::ListScdnDomainsRequest& request);
+
+                /**
                  *ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息
                  * @param req ListScdnLogTasksRequest
                  * @return ListScdnLogTasksOutcome
@@ -809,6 +847,15 @@ namespace TencentCloud
                 StartCdnDomainOutcomeCallable StartCdnDomainCallable(const Model::StartCdnDomainRequest& request);
 
                 /**
+                 *StartScdnDomain 用于开启域名的安全防护配置
+                 * @param req StartScdnDomainRequest
+                 * @return StartScdnDomainOutcome
+                 */
+                StartScdnDomainOutcome StartScdnDomain(const Model::StartScdnDomainRequest &request);
+                void StartScdnDomainAsync(const Model::StartScdnDomainRequest& request, const StartScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartScdnDomainOutcomeCallable StartScdnDomainCallable(const Model::StartScdnDomainRequest& request);
+
+                /**
                  *StopCdnDomain 用于停止域名的加速服务。
 注意：停止加速服务后，访问至加速节点的请求将会直接返回 404。为避免对您的业务造成影响，请在停止加速服务前将解析切走。
                  * @param req StopCdnDomainRequest
@@ -817,6 +864,15 @@ namespace TencentCloud
                 StopCdnDomainOutcome StopCdnDomain(const Model::StopCdnDomainRequest &request);
                 void StopCdnDomainAsync(const Model::StopCdnDomainRequest& request, const StopCdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopCdnDomainOutcomeCallable StopCdnDomainCallable(const Model::StopCdnDomainRequest& request);
+
+                /**
+                 *StopScdnDomain 用于关闭域名的安全防护配置
+                 * @param req StopScdnDomainRequest
+                 * @return StopScdnDomainOutcome
+                 */
+                StopScdnDomainOutcome StopScdnDomain(const Model::StopScdnDomainRequest &request);
+                void StopScdnDomainAsync(const Model::StopScdnDomainRequest& request, const StopScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopScdnDomainOutcomeCallable StopScdnDomainCallable(const Model::StopScdnDomainRequest& request);
 
                 /**
                  *UpdateDomainConfig 用于修改内容分发网络加速域名配置信息

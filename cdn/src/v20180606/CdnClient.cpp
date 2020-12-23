@@ -1330,6 +1330,49 @@ CdnClient::DescribeReportDataOutcomeCallable CdnClient::DescribeReportDataCallab
     return task->get_future();
 }
 
+CdnClient::DescribeScdnConfigOutcome CdnClient::DescribeScdnConfig(const DescribeScdnConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScdnConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScdnConfigResponse rsp = DescribeScdnConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScdnConfigOutcome(rsp);
+        else
+            return DescribeScdnConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScdnConfigOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeScdnConfigAsync(const DescribeScdnConfigRequest& request, const DescribeScdnConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScdnConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeScdnConfigOutcomeCallable CdnClient::DescribeScdnConfigCallable(const DescribeScdnConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScdnConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScdnConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeScdnTopDataOutcome CdnClient::DescribeScdnTopData(const DescribeScdnTopDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScdnTopData");
@@ -1846,6 +1889,49 @@ CdnClient::ListDiagnoseReportOutcomeCallable CdnClient::ListDiagnoseReportCallab
     return task->get_future();
 }
 
+CdnClient::ListScdnDomainsOutcome CdnClient::ListScdnDomains(const ListScdnDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListScdnDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListScdnDomainsResponse rsp = ListScdnDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListScdnDomainsOutcome(rsp);
+        else
+            return ListScdnDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListScdnDomainsOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ListScdnDomainsAsync(const ListScdnDomainsRequest& request, const ListScdnDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListScdnDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ListScdnDomainsOutcomeCallable CdnClient::ListScdnDomainsCallable(const ListScdnDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListScdnDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListScdnDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::ListScdnLogTasksOutcome CdnClient::ListScdnLogTasks(const ListScdnLogTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "ListScdnLogTasks");
@@ -2190,6 +2276,49 @@ CdnClient::StartCdnDomainOutcomeCallable CdnClient::StartCdnDomainCallable(const
     return task->get_future();
 }
 
+CdnClient::StartScdnDomainOutcome CdnClient::StartScdnDomain(const StartScdnDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartScdnDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartScdnDomainResponse rsp = StartScdnDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartScdnDomainOutcome(rsp);
+        else
+            return StartScdnDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return StartScdnDomainOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::StartScdnDomainAsync(const StartScdnDomainRequest& request, const StartScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartScdnDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::StartScdnDomainOutcomeCallable CdnClient::StartScdnDomainCallable(const StartScdnDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartScdnDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->StartScdnDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::StopCdnDomainOutcome CdnClient::StopCdnDomain(const StopCdnDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "StopCdnDomain");
@@ -2226,6 +2355,49 @@ CdnClient::StopCdnDomainOutcomeCallable CdnClient::StopCdnDomainCallable(const S
         [this, request]()
         {
             return this->StopCdnDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::StopScdnDomainOutcome CdnClient::StopScdnDomain(const StopScdnDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopScdnDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopScdnDomainResponse rsp = StopScdnDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopScdnDomainOutcome(rsp);
+        else
+            return StopScdnDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return StopScdnDomainOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::StopScdnDomainAsync(const StopScdnDomainRequest& request, const StopScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopScdnDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::StopScdnDomainOutcomeCallable CdnClient::StopScdnDomainCallable(const StopScdnDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopScdnDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->StopScdnDomain(request);
         }
     );
 

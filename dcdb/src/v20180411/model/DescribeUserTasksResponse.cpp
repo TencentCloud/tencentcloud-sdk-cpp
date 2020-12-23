@@ -14,24 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gs/v20191118/model/CreateSessionResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeUserTasksResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gs::V20191118::Model;
+using namespace TencentCloud::Dcdb::V20180411::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateSessionResponse::CreateSessionResponse() :
-    m_serverSessionHasBeenSet(false),
-    m_roleNumberHasBeenSet(false),
-    m_roleHasBeenSet(false)
+DescribeUserTasksResponse::DescribeUserTasksResponse() :
+    m_totalCountHasBeenSet(false),
+    m_flowSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateSessionResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeUserTasksResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -65,34 +64,34 @@ CoreInternalOutcome CreateSessionResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("ServerSession") && !rsp["ServerSession"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["ServerSession"].IsString())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServerSession` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_serverSession = string(rsp["ServerSession"].GetString());
-        m_serverSessionHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("RoleNumber") && !rsp["RoleNumber"].IsNull())
+    if (rsp.HasMember("FlowSet") && !rsp["FlowSet"].IsNull())
     {
-        if (!rsp["RoleNumber"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `RoleNumber` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_roleNumber = string(rsp["RoleNumber"].GetString());
-        m_roleNumberHasBeenSet = true;
-    }
+        if (!rsp["FlowSet"].IsArray())
+            return CoreInternalOutcome(Error("response `FlowSet` is not array type"));
 
-    if (rsp.HasMember("Role") && !rsp["Role"].IsNull())
-    {
-        if (!rsp["Role"].IsString())
+        const Value &tmpValue = rsp["FlowSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Error("response `Role` IsString=false incorrectly").SetRequestId(requestId));
+            UserTaskInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_flowSet.push_back(item);
         }
-        m_role = string(rsp["Role"].GetString());
-        m_roleHasBeenSet = true;
+        m_flowSetHasBeenSet = true;
     }
 
 
@@ -100,34 +99,24 @@ CoreInternalOutcome CreateSessionResponse::Deserialize(const string &payload)
 }
 
 
-string CreateSessionResponse::GetServerSession() const
+int64_t DescribeUserTasksResponse::GetTotalCount() const
 {
-    return m_serverSession;
+    return m_totalCount;
 }
 
-bool CreateSessionResponse::ServerSessionHasBeenSet() const
+bool DescribeUserTasksResponse::TotalCountHasBeenSet() const
 {
-    return m_serverSessionHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-string CreateSessionResponse::GetRoleNumber() const
+vector<UserTaskInfo> DescribeUserTasksResponse::GetFlowSet() const
 {
-    return m_roleNumber;
+    return m_flowSet;
 }
 
-bool CreateSessionResponse::RoleNumberHasBeenSet() const
+bool DescribeUserTasksResponse::FlowSetHasBeenSet() const
 {
-    return m_roleNumberHasBeenSet;
-}
-
-string CreateSessionResponse::GetRole() const
-{
-    return m_role;
-}
-
-bool CreateSessionResponse::RoleHasBeenSet() const
-{
-    return m_roleHasBeenSet;
+    return m_flowSetHasBeenSet;
 }
 
 

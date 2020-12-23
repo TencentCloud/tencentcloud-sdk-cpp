@@ -43,14 +43,30 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色的资源描述。例如：qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
-                     * @return RoleArn 角色的资源描述。例如：qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
+                     * 获取角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+普通角色：
+qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
+服务角色：
+qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName
+                     * @return RoleArn 角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+普通角色：
+qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
+服务角色：
+qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName
                      */
                     std::string GetRoleArn() const;
 
                     /**
-                     * 设置角色的资源描述。例如：qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
-                     * @param RoleArn 角色的资源描述。例如：qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
+                     * 设置角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+普通角色：
+qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
+服务角色：
+qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName
+                     * @param RoleArn 角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+普通角色：
+qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
+服务角色：
+qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName
                      */
                     void SetRoleArn(const std::string& _roleArn);
 
@@ -61,14 +77,18 @@ namespace TencentCloud
                     bool RoleArnHasBeenSet() const;
 
                     /**
-                     * 获取临时会话名称，由用户自定义名称
-                     * @return RoleSessionName 临时会话名称，由用户自定义名称
+                     * 获取临时会话名称，由用户自定义名称。
+长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\w+=,.@_-]*
+                     * @return RoleSessionName 临时会话名称，由用户自定义名称。
+长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\w+=,.@_-]*
                      */
                     std::string GetRoleSessionName() const;
 
                     /**
-                     * 设置临时会话名称，由用户自定义名称
-                     * @param RoleSessionName 临时会话名称，由用户自定义名称
+                     * 设置临时会话名称，由用户自定义名称。
+长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\w+=,.@_-]*
+                     * @param RoleSessionName 临时会话名称，由用户自定义名称。
+长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\w+=,.@_-]*
                      */
                     void SetRoleSessionName(const std::string& _roleSessionName);
 
@@ -130,16 +150,43 @@ namespace TencentCloud
                      */
                     bool PolicyHasBeenSet() const;
 
+                    /**
+                     * 获取角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\w+=,.@:\/-]*
+                     * @return ExternalId 角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\w+=,.@:\/-]*
+                     */
+                    std::string GetExternalId() const;
+
+                    /**
+                     * 设置角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\w+=,.@:\/-]*
+                     * @param ExternalId 角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\w+=,.@:\/-]*
+                     */
+                    void SetExternalId(const std::string& _externalId);
+
+                    /**
+                     * 判断参数 ExternalId 是否已赋值
+                     * @return ExternalId 是否已赋值
+                     */
+                    bool ExternalIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 角色的资源描述。例如：qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
+                     * 角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+普通角色：
+qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
+服务角色：
+qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName
                      */
                     std::string m_roleArn;
                     bool m_roleArnHasBeenSet;
 
                     /**
-                     * 临时会话名称，由用户自定义名称
+                     * 临时会话名称，由用户自定义名称。
+长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\w+=,.@_-]*
                      */
                     std::string m_roleSessionName;
                     bool m_roleSessionNameHasBeenSet;
@@ -159,6 +206,13 @@ namespace TencentCloud
                      */
                     std::string m_policy;
                     bool m_policyHasBeenSet;
+
+                    /**
+                     * 角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\w+=,.@:\/-]*
+                     */
+                    std::string m_externalId;
+                    bool m_externalIdHasBeenSet;
 
                 };
             }

@@ -192,38 +192,38 @@ namespace TencentCloud
                     bool DeletionProtectionHasBeenSet() const;
 
                     /**
-                     * 获取集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs+bpf，此参数仅在使用ipvs+bpf模式时使用，三种网络模式的参数设置关系如下：
+                     * 获取集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs-bpf，此参数仅在使用ipvs-bpf模式时使用，三种网络模式的参数设置关系如下：
 iptables模式：IPVS和KubeProxyMode都不设置
 ipvs模式: 设置IPVS为true, KubeProxyMode不设置
 ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
 使用ipvs-bpf的网络模式需要满足以下条件：
 1. 集群版本必须为1.14及以上；
-2. 系统镜像必须是tke定制的镜像如: ubuntu TKE-optimized、centos TKE-optimized；
-                     * @return KubeProxyMode 集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs+bpf，此参数仅在使用ipvs+bpf模式时使用，三种网络模式的参数设置关系如下：
+2. 系统镜像必须是: Tencent Linux 2.4；
+                     * @return KubeProxyMode 集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs-bpf，此参数仅在使用ipvs-bpf模式时使用，三种网络模式的参数设置关系如下：
 iptables模式：IPVS和KubeProxyMode都不设置
 ipvs模式: 设置IPVS为true, KubeProxyMode不设置
 ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
 使用ipvs-bpf的网络模式需要满足以下条件：
 1. 集群版本必须为1.14及以上；
-2. 系统镜像必须是tke定制的镜像如: ubuntu TKE-optimized、centos TKE-optimized；
+2. 系统镜像必须是: Tencent Linux 2.4；
                      */
                     std::string GetKubeProxyMode() const;
 
                     /**
-                     * 设置集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs+bpf，此参数仅在使用ipvs+bpf模式时使用，三种网络模式的参数设置关系如下：
+                     * 设置集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs-bpf，此参数仅在使用ipvs-bpf模式时使用，三种网络模式的参数设置关系如下：
 iptables模式：IPVS和KubeProxyMode都不设置
 ipvs模式: 设置IPVS为true, KubeProxyMode不设置
 ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
 使用ipvs-bpf的网络模式需要满足以下条件：
 1. 集群版本必须为1.14及以上；
-2. 系统镜像必须是tke定制的镜像如: ubuntu TKE-optimized、centos TKE-optimized；
-                     * @param KubeProxyMode 集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs+bpf，此参数仅在使用ipvs+bpf模式时使用，三种网络模式的参数设置关系如下：
+2. 系统镜像必须是: Tencent Linux 2.4；
+                     * @param KubeProxyMode 集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs-bpf，此参数仅在使用ipvs-bpf模式时使用，三种网络模式的参数设置关系如下：
 iptables模式：IPVS和KubeProxyMode都不设置
 ipvs模式: 设置IPVS为true, KubeProxyMode不设置
 ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
 使用ipvs-bpf的网络模式需要满足以下条件：
 1. 集群版本必须为1.14及以上；
-2. 系统镜像必须是tke定制的镜像如: ubuntu TKE-optimized、centos TKE-optimized；
+2. 系统镜像必须是: Tencent Linux 2.4；
                      */
                     void SetKubeProxyMode(const std::string& _kubeProxyMode);
 
@@ -374,13 +374,13 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                     bool m_deletionProtectionHasBeenSet;
 
                     /**
-                     * 集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs+bpf，此参数仅在使用ipvs+bpf模式时使用，三种网络模式的参数设置关系如下：
+                     * 集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs-bpf，此参数仅在使用ipvs-bpf模式时使用，三种网络模式的参数设置关系如下：
 iptables模式：IPVS和KubeProxyMode都不设置
 ipvs模式: 设置IPVS为true, KubeProxyMode不设置
 ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
 使用ipvs-bpf的网络模式需要满足以下条件：
 1. 集群版本必须为1.14及以上；
-2. 系统镜像必须是tke定制的镜像如: ubuntu TKE-optimized、centos TKE-optimized；
+2. 系统镜像必须是: Tencent Linux 2.4；
                      */
                     std::string m_kubeProxyMode;
                     bool m_kubeProxyModeHasBeenSet;

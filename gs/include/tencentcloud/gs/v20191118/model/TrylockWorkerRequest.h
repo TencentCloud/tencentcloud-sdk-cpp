@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool GameIdHasBeenSet() const;
 
                     /**
-                     * 获取游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等
-                     * @return GameRegion 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等
+                     * 获取游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器
+                     * @return GameRegion 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器
                      */
                     std::string GetGameRegion() const;
 
                     /**
-                     * 设置游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等
-                     * @param GameRegion 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等
+                     * 设置游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器
+                     * @param GameRegion 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器
                      */
                     void SetGameRegion(const std::string& _gameRegion);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool GameRegionHasBeenSet() const;
 
                     /**
-                     * 获取资源池编号，1表示共用，2表示测试
-                     * @return SetNo 资源池编号，1表示共用，2表示测试
+                     * 获取【废弃】资源池编号
+                     * @return SetNo 【废弃】资源池编号
                      */
                     uint64_t GetSetNo() const;
 
                     /**
-                     * 设置资源池编号，1表示共用，2表示测试
-                     * @param SetNo 资源池编号，1表示共用，2表示测试
+                     * 设置【废弃】资源池编号
+                     * @param SetNo 【废弃】资源池编号
                      */
                     void SetSetNo(const uint64_t& _setNo);
 
@@ -165,13 +165,13 @@ namespace TencentCloud
                     bool m_gameIdHasBeenSet;
 
                     /**
-                     * 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等
+                     * 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器
                      */
                     std::string m_gameRegion;
                     bool m_gameRegionHasBeenSet;
 
                     /**
-                     * 资源池编号，1表示共用，2表示测试
+                     * 【废弃】资源池编号
                      */
                     uint64_t m_setNo;
                     bool m_setNoHasBeenSet;

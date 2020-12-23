@@ -27,7 +27,8 @@ AssumeRoleRequest::AssumeRoleRequest() :
     m_roleArnHasBeenSet(false),
     m_roleSessionNameHasBeenSet(false),
     m_durationSecondsHasBeenSet(false),
-    m_policyHasBeenSet(false)
+    m_policyHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string AssumeRoleRequest::ToJsonString() const
         string key = "Policy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_policy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExternalId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_externalId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void AssumeRoleRequest::SetPolicy(const string& _policy)
 bool AssumeRoleRequest::PolicyHasBeenSet() const
 {
     return m_policyHasBeenSet;
+}
+
+string AssumeRoleRequest::GetExternalId() const
+{
+    return m_externalId;
+}
+
+void AssumeRoleRequest::SetExternalId(const string& _externalId)
+{
+    m_externalId = _externalId;
+    m_externalIdHasBeenSet = true;
+}
+
+bool AssumeRoleRequest::ExternalIdHasBeenSet() const
+{
+    return m_externalIdHasBeenSet;
 }
 
 
