@@ -1,0 +1,230 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_SSA_V20180608_SSACLIENT_H_
+#define TENCENTCLOUD_SSA_V20180608_SSACLIENT_H_
+
+#include <functional>
+#include <future>
+#include <tencentcloud/core/AbstractClient.h>
+#include <tencentcloud/core/Credential.h>
+#include <tencentcloud/core/profile/ClientProfile.h>
+#include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeAssetDetailRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeAssetDetailResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeAssetListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeAssetListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeAssetsMappingListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeAssetsMappingListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeCheckConfigAssetListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeCheckConfigAssetListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeCheckConfigDetailRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeCheckConfigDetailResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeComplianceDetailRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeComplianceDetailResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeComplianceListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeComplianceListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeConfigListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeConfigListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeEventDetailRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeEventDetailResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeVulListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeVulListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubRequest.h>
+#include <tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubResponse.h>
+
+
+namespace TencentCloud
+{
+    namespace Ssa
+    {
+        namespace V20180608
+        {
+            class SsaClient : public AbstractClient
+            {
+            public:
+                SsaClient(const Credential &credential, const std::string &region);
+                SsaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
+
+                typedef Outcome<Error, Model::DescribeAssetDetailResponse> DescribeAssetDetailOutcome;
+                typedef std::future<DescribeAssetDetailOutcome> DescribeAssetDetailOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeAssetDetailRequest&, DescribeAssetDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAssetListResponse> DescribeAssetListOutcome;
+                typedef std::future<DescribeAssetListOutcome> DescribeAssetListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeAssetListRequest&, DescribeAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAssetsMappingListResponse> DescribeAssetsMappingListOutcome;
+                typedef std::future<DescribeAssetsMappingListOutcome> DescribeAssetsMappingListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeAssetsMappingListRequest&, DescribeAssetsMappingListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetsMappingListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCheckConfigAssetListResponse> DescribeCheckConfigAssetListOutcome;
+                typedef std::future<DescribeCheckConfigAssetListOutcome> DescribeCheckConfigAssetListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeCheckConfigAssetListRequest&, DescribeCheckConfigAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckConfigAssetListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCheckConfigDetailResponse> DescribeCheckConfigDetailOutcome;
+                typedef std::future<DescribeCheckConfigDetailOutcome> DescribeCheckConfigDetailOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeCheckConfigDetailRequest&, DescribeCheckConfigDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckConfigDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeComplianceDetailResponse> DescribeComplianceDetailOutcome;
+                typedef std::future<DescribeComplianceDetailOutcome> DescribeComplianceDetailOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeComplianceDetailRequest&, DescribeComplianceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComplianceDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeComplianceListResponse> DescribeComplianceListOutcome;
+                typedef std::future<DescribeComplianceListOutcome> DescribeComplianceListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeComplianceListRequest&, DescribeComplianceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComplianceListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeConfigListResponse> DescribeConfigListOutcome;
+                typedef std::future<DescribeConfigListOutcome> DescribeConfigListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeConfigListRequest&, DescribeConfigListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEventDetailResponse> DescribeEventDetailOutcome;
+                typedef std::future<DescribeEventDetailOutcome> DescribeEventDetailOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeEventDetailRequest&, DescribeEventDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLeakDetectionListResponse> DescribeLeakDetectionListOutcome;
+                typedef std::future<DescribeLeakDetectionListOutcome> DescribeLeakDetectionListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeLeakDetectionListRequest&, DescribeLeakDetectionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLeakDetectionListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSafetyEventListResponse> DescribeSafetyEventListOutcome;
+                typedef std::future<DescribeSafetyEventListOutcome> DescribeSafetyEventListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeSafetyEventListRequest&, DescribeSafetyEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafetyEventListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVulListResponse> DescribeVulListOutcome;
+                typedef std::future<DescribeVulListOutcome> DescribeVulListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeVulListRequest&, DescribeVulListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulListAsyncHandler;
+                typedef Outcome<Error, Model::SaDivulgeDataQueryPubResponse> SaDivulgeDataQueryPubOutcome;
+                typedef std::future<SaDivulgeDataQueryPubOutcome> SaDivulgeDataQueryPubOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::SaDivulgeDataQueryPubRequest&, SaDivulgeDataQueryPubOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaDivulgeDataQueryPubAsyncHandler;
+
+
+
+                /**
+                 *资产安全页资产详情
+                 * @param req DescribeAssetDetailRequest
+                 * @return DescribeAssetDetailOutcome
+                 */
+                DescribeAssetDetailOutcome DescribeAssetDetail(const Model::DescribeAssetDetailRequest &request);
+                void DescribeAssetDetailAsync(const Model::DescribeAssetDetailRequest& request, const DescribeAssetDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetDetailOutcomeCallable DescribeAssetDetailCallable(const Model::DescribeAssetDetailRequest& request);
+
+                /**
+                 *资产安全资产列表
+                 * @param req DescribeAssetListRequest
+                 * @return DescribeAssetListOutcome
+                 */
+                DescribeAssetListOutcome DescribeAssetList(const Model::DescribeAssetListRequest &request);
+                void DescribeAssetListAsync(const Model::DescribeAssetListRequest& request, const DescribeAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetListOutcomeCallable DescribeAssetListCallable(const Model::DescribeAssetListRequest& request);
+
+                /**
+                 *资产测绘-测绘列表
+                 * @param req DescribeAssetsMappingListRequest
+                 * @return DescribeAssetsMappingListOutcome
+                 */
+                DescribeAssetsMappingListOutcome DescribeAssetsMappingList(const Model::DescribeAssetsMappingListRequest &request);
+                void DescribeAssetsMappingListAsync(const Model::DescribeAssetsMappingListRequest& request, const DescribeAssetsMappingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetsMappingListOutcomeCallable DescribeAssetsMappingListCallable(const Model::DescribeAssetsMappingListRequest& request);
+
+                /**
+                 *云安全配置管理资产组列表
+                 * @param req DescribeCheckConfigAssetListRequest
+                 * @return DescribeCheckConfigAssetListOutcome
+                 */
+                DescribeCheckConfigAssetListOutcome DescribeCheckConfigAssetList(const Model::DescribeCheckConfigAssetListRequest &request);
+                void DescribeCheckConfigAssetListAsync(const Model::DescribeCheckConfigAssetListRequest& request, const DescribeCheckConfigAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCheckConfigAssetListOutcomeCallable DescribeCheckConfigAssetListCallable(const Model::DescribeCheckConfigAssetListRequest& request);
+
+                /**
+                 *云安全配置检查项详情
+                 * @param req DescribeCheckConfigDetailRequest
+                 * @return DescribeCheckConfigDetailOutcome
+                 */
+                DescribeCheckConfigDetailOutcome DescribeCheckConfigDetail(const Model::DescribeCheckConfigDetailRequest &request);
+                void DescribeCheckConfigDetailAsync(const Model::DescribeCheckConfigDetailRequest& request, const DescribeCheckConfigDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCheckConfigDetailOutcomeCallable DescribeCheckConfigDetailCallable(const Model::DescribeCheckConfigDetailRequest& request);
+
+                /**
+                 *合规管理检查项详情
+                 * @param req DescribeComplianceDetailRequest
+                 * @return DescribeComplianceDetailOutcome
+                 */
+                DescribeComplianceDetailOutcome DescribeComplianceDetail(const Model::DescribeComplianceDetailRequest &request);
+                void DescribeComplianceDetailAsync(const Model::DescribeComplianceDetailRequest& request, const DescribeComplianceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeComplianceDetailOutcomeCallable DescribeComplianceDetailCallable(const Model::DescribeComplianceDetailRequest& request);
+
+                /**
+                 *合规管理总览页检查项列表
+                 * @param req DescribeComplianceListRequest
+                 * @return DescribeComplianceListOutcome
+                 */
+                DescribeComplianceListOutcome DescribeComplianceList(const Model::DescribeComplianceListRequest &request);
+                void DescribeComplianceListAsync(const Model::DescribeComplianceListRequest& request, const DescribeComplianceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeComplianceListOutcomeCallable DescribeComplianceListCallable(const Model::DescribeComplianceListRequest& request);
+
+                /**
+                 *云配置检查项总览页检查项列表
+                 * @param req DescribeConfigListRequest
+                 * @return DescribeConfigListOutcome
+                 */
+                DescribeConfigListOutcome DescribeConfigList(const Model::DescribeConfigListRequest &request);
+                void DescribeConfigListAsync(const Model::DescribeConfigListRequest& request, const DescribeConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigListOutcomeCallable DescribeConfigListCallable(const Model::DescribeConfigListRequest& request);
+
+                /**
+                 *获取安全事件详情
+                 * @param req DescribeEventDetailRequest
+                 * @return DescribeEventDetailOutcome
+                 */
+                DescribeEventDetailOutcome DescribeEventDetail(const Model::DescribeEventDetailRequest &request);
+                void DescribeEventDetailAsync(const Model::DescribeEventDetailRequest& request, const DescribeEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventDetailOutcomeCallable DescribeEventDetailCallable(const Model::DescribeEventDetailRequest& request);
+
+                /**
+                 *获取泄露列表
+                 * @param req DescribeLeakDetectionListRequest
+                 * @return DescribeLeakDetectionListOutcome
+                 */
+                DescribeLeakDetectionListOutcome DescribeLeakDetectionList(const Model::DescribeLeakDetectionListRequest &request);
+                void DescribeLeakDetectionListAsync(const Model::DescribeLeakDetectionListRequest& request, const DescribeLeakDetectionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLeakDetectionListOutcomeCallable DescribeLeakDetectionListCallable(const Model::DescribeLeakDetectionListRequest& request);
+
+                /**
+                 *获取安全事件列表
+                 * @param req DescribeSafetyEventListRequest
+                 * @return DescribeSafetyEventListOutcome
+                 */
+                DescribeSafetyEventListOutcome DescribeSafetyEventList(const Model::DescribeSafetyEventListRequest &request);
+                void DescribeSafetyEventListAsync(const Model::DescribeSafetyEventListRequest& request, const DescribeSafetyEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSafetyEventListOutcomeCallable DescribeSafetyEventListCallable(const Model::DescribeSafetyEventListRequest& request);
+
+                /**
+                 *漏洞管理页，获取漏洞列表
+                 * @param req DescribeVulListRequest
+                 * @return DescribeVulListOutcome
+                 */
+                DescribeVulListOutcome DescribeVulList(const Model::DescribeVulListRequest &request);
+                void DescribeVulListAsync(const Model::DescribeVulListRequest& request, const DescribeVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulListOutcomeCallable DescribeVulListCallable(const Model::DescribeVulListRequest& request);
+
+                /**
+                 *查询【通用字段】【泄露监测数据列表】
+                 * @param req SaDivulgeDataQueryPubRequest
+                 * @return SaDivulgeDataQueryPubOutcome
+                 */
+                SaDivulgeDataQueryPubOutcome SaDivulgeDataQueryPub(const Model::SaDivulgeDataQueryPubRequest &request);
+                void SaDivulgeDataQueryPubAsync(const Model::SaDivulgeDataQueryPubRequest& request, const SaDivulgeDataQueryPubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SaDivulgeDataQueryPubOutcomeCallable SaDivulgeDataQueryPubCallable(const Model::SaDivulgeDataQueryPubRequest& request);
+
+            };
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_SSA_V20180608_SSACLIENT_H_

@@ -27,7 +27,8 @@ PushUrlsCacheRequest::PushUrlsCacheRequest() :
     m_urlsHasBeenSet(false),
     m_userAgentHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_layerHasBeenSet(false)
+    m_layerHasBeenSet(false),
+    m_parseM3U8HasBeenSet(false)
 {
 }
 
@@ -73,6 +74,14 @@ string PushUrlsCacheRequest::ToJsonString() const
         string key = "Layer";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_layer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parseM3U8HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ParseM3U8";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_parseM3U8, allocator);
     }
 
 
@@ -145,6 +154,22 @@ void PushUrlsCacheRequest::SetLayer(const string& _layer)
 bool PushUrlsCacheRequest::LayerHasBeenSet() const
 {
     return m_layerHasBeenSet;
+}
+
+bool PushUrlsCacheRequest::GetParseM3U8() const
+{
+    return m_parseM3U8;
+}
+
+void PushUrlsCacheRequest::SetParseM3U8(const bool& _parseM3U8)
+{
+    m_parseM3U8 = _parseM3U8;
+    m_parseM3U8HasBeenSet = true;
+}
+
+bool PushUrlsCacheRequest::ParseM3U8HasBeenSet() const
+{
+    return m_parseM3U8HasBeenSet;
 }
 
 

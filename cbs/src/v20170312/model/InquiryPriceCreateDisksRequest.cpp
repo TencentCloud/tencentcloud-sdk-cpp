@@ -29,7 +29,8 @@ InquiryPriceCreateDisksRequest::InquiryPriceCreateDisksRequest() :
     m_diskChargeTypeHasBeenSet(false),
     m_diskChargePrepaidHasBeenSet(false),
     m_diskCountHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string InquiryPriceCreateDisksRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 
@@ -191,6 +200,22 @@ void InquiryPriceCreateDisksRequest::SetProjectId(const uint64_t& _projectId)
 bool InquiryPriceCreateDisksRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+uint64_t InquiryPriceCreateDisksRequest::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void InquiryPriceCreateDisksRequest::SetThroughputPerformance(const uint64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDisksRequest::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 
 

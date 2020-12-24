@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/partners/v20180321/model/DealGoodsPriceElem.h>
+#include <tencentcloud/partners/v20180321/model/ProductInfoElem.h>
 
 
 namespace TencentCloud
@@ -581,6 +582,28 @@ namespace TencentCloud
                      */
                     bool OverdueTimeHasBeenSet() const;
 
+                    /**
+                     * 获取产品详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductInfo 产品详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ProductInfoElem> GetProductInfo() const;
+
+                    /**
+                     * 设置产品详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductInfo 产品详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductInfo(const std::vector<ProductInfoElem>& _productInfo);
+
+                    /**
+                     * 判断参数 ProductInfo 是否已赋值
+                     * @return ProductInfo 是否已赋值
+                     */
+                    bool ProductInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -753,6 +776,13 @@ namespace TencentCloud
                      */
                     std::string m_overdueTime;
                     bool m_overdueTimeHasBeenSet;
+
+                    /**
+                     * 产品详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ProductInfoElem> m_productInfo;
+                    bool m_productInfoHasBeenSet;
 
                 };
             }

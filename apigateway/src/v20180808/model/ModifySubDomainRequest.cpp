@@ -30,7 +30,8 @@ ModifySubDomainRequest::ModifySubDomainRequest() :
     m_certificateIdHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_pathMappingSetHasBeenSet(false),
-    m_netTypeHasBeenSet(false)
+    m_netTypeHasBeenSet(false),
+    m_isForcedHttpsHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,14 @@ string ModifySubDomainRequest::ToJsonString() const
         string key = "NetType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_netType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isForcedHttpsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsForcedHttps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isForcedHttps, allocator);
     }
 
 
@@ -222,6 +231,22 @@ void ModifySubDomainRequest::SetNetType(const string& _netType)
 bool ModifySubDomainRequest::NetTypeHasBeenSet() const
 {
     return m_netTypeHasBeenSet;
+}
+
+bool ModifySubDomainRequest::GetIsForcedHttps() const
+{
+    return m_isForcedHttps;
+}
+
+void ModifySubDomainRequest::SetIsForcedHttps(const bool& _isForcedHttps)
+{
+    m_isForcedHttps = _isForcedHttps;
+    m_isForcedHttpsHasBeenSet = true;
+}
+
+bool ModifySubDomainRequest::IsForcedHttpsHasBeenSet() const
+{
+    return m_isForcedHttpsHasBeenSet;
 }
 
 

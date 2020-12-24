@@ -169,6 +169,24 @@ namespace TencentCloud
                      */
                     bool NetTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。
+                     * @return IsForcedHttps 是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。
+                     */
+                    bool GetIsForcedHttps() const;
+
+                    /**
+                     * 设置是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。
+                     * @param IsForcedHttps 是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。
+                     */
+                    void SetIsForcedHttps(const bool& _isForcedHttps);
+
+                    /**
+                     * 判断参数 IsForcedHttps 是否已赋值
+                     * @return IsForcedHttps 是否已赋值
+                     */
+                    bool IsForcedHttpsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
+
+                    /**
+                     * 是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。
+                     */
+                    bool m_isForcedHttps;
+                    bool m_isForcedHttpsHasBeenSet;
 
                 };
             }

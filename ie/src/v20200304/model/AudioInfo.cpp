@@ -25,7 +25,8 @@ AudioInfo::AudioInfo() :
     m_bitrateHasBeenSet(false),
     m_codecHasBeenSet(false),
     m_channelHasBeenSet(false),
-    m_sampleRateHasBeenSet(false)
+    m_sampleRateHasBeenSet(false),
+    m_denoiseHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,23 @@ CoreInternalOutcome AudioInfo::Deserialize(const Value &value)
         m_sampleRateHasBeenSet = true;
     }
 
+    if (value.HasMember("Denoise") && !value["Denoise"].IsNull())
+    {
+        if (!value["Denoise"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AudioInfo.Denoise` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_denoise.Deserialize(value["Denoise"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_denoiseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +129,15 @@ void AudioInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "SampleRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sampleRate, allocator);
+    }
+
+    if (m_denoiseHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Denoise";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_denoise.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -178,5 +205,21 @@ void AudioInfo::SetSampleRate(const int64_t& _sampleRate)
 bool AudioInfo::SampleRateHasBeenSet() const
 {
     return m_sampleRateHasBeenSet;
+}
+
+Denoise AudioInfo::GetDenoise() const
+{
+    return m_denoise;
+}
+
+void AudioInfo::SetDenoise(const Denoise& _denoise)
+{
+    m_denoise = _denoise;
+    m_denoiseHasBeenSet = true;
+}
+
+bool AudioInfo::DenoiseHasBeenSet() const
+{
+    return m_denoiseHasBeenSet;
 }
 

@@ -38,7 +38,8 @@ VersionData::VersionData() :
     m_uploadTimeHasBeenSet(false),
     m_modifyTimesHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_contentsHasBeenSet(false)
+    m_contentsHasBeenSet(false),
+    m_aliveInMonthCntHasBeenSet(false)
 {
 }
 
@@ -224,6 +225,16 @@ CoreInternalOutcome VersionData::Deserialize(const Value &value)
         m_contentsHasBeenSet = true;
     }
 
+    if (value.HasMember("AliveInMonthCnt") && !value["AliveInMonthCnt"].IsNull())
+    {
+        if (!value["AliveInMonthCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VersionData.AliveInMonthCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliveInMonthCnt = value["AliveInMonthCnt"].GetUint64();
+        m_aliveInMonthCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -366,6 +377,14 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_contents.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aliveInMonthCntHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AliveInMonthCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aliveInMonthCnt, allocator);
     }
 
 }
@@ -641,5 +660,21 @@ void VersionData::SetContents(const Contents& _contents)
 bool VersionData::ContentsHasBeenSet() const
 {
     return m_contentsHasBeenSet;
+}
+
+uint64_t VersionData::GetAliveInMonthCnt() const
+{
+    return m_aliveInMonthCnt;
+}
+
+void VersionData::SetAliveInMonthCnt(const uint64_t& _aliveInMonthCnt)
+{
+    m_aliveInMonthCnt = _aliveInMonthCnt;
+    m_aliveInMonthCntHasBeenSet = true;
+}
+
+bool VersionData::AliveInMonthCntHasBeenSet() const
+{
+    return m_aliveInMonthCntHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ using namespace TencentCloud::Apigateway::V20180808::Model;
 using namespace rapidjson;
 using namespace std;
 
-BindSubDomainResponse::BindSubDomainResponse()
+BindSubDomainResponse::BindSubDomainResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,29 @@ CoreInternalOutcome BindSubDomainResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    {
+        if (!rsp["Result"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Result` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_result = rsp["Result"].GetBool();
+        m_resultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+bool BindSubDomainResponse::GetResult() const
+{
+    return m_result;
+}
+
+bool BindSubDomainResponse::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
+}
 
 

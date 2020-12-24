@@ -20,6 +20,7 @@ set(ie_public_header
 
 set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/MediaJoiningTaskResult.h
+  include/tencentcloud/ie/v20200304/model/Denoise.h
   include/tencentcloud/ie/v20200304/model/StripTaskResultItem.h
   include/tencentcloud/ie/v20200304/model/CosAuthMode.h
   include/tencentcloud/ie/v20200304/model/OpeningEndingTaskResultItem.h
@@ -111,6 +112,7 @@ set(ie_public_header_model
 set(ie_src
   src/v20200304/IeClient.cpp
   src/v20200304/model/MediaJoiningTaskResult.cpp
+  src/v20200304/model/Denoise.cpp
   src/v20200304/model/StripTaskResultItem.cpp
   src/v20200304/model/CosAuthMode.cpp
   src/v20200304/model/OpeningEndingTaskResultItem.cpp

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ie/v20200304/model/Denoise.h>
 
 
 namespace TencentCloud
@@ -134,6 +135,24 @@ namespace TencentCloud
                      */
                     bool SampleRateHasBeenSet() const;
 
+                    /**
+                     * 获取音频降噪信息
+                     * @return Denoise 音频降噪信息
+                     */
+                    Denoise GetDenoise() const;
+
+                    /**
+                     * 设置音频降噪信息
+                     * @param Denoise 音频降噪信息
+                     */
+                    void SetDenoise(const Denoise& _denoise);
+
+                    /**
+                     * 判断参数 Denoise 是否已赋值
+                     * @return Denoise 是否已赋值
+                     */
+                    bool DenoiseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +182,12 @@ namespace TencentCloud
                      */
                     int64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
+
+                    /**
+                     * 音频降噪信息
+                     */
+                    Denoise m_denoise;
+                    bool m_denoiseHasBeenSet;
 
                 };
             }

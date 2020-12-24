@@ -49,6 +49,10 @@
 #include <tencentcloud/faceid/v20180301/model/GetFaceIdTokenResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetRealNameAuthResultRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetRealNameAuthResultResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h>
@@ -122,6 +126,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetLiveCodeResponse> GetLiveCodeOutcome;
                 typedef std::future<GetLiveCodeOutcome> GetLiveCodeOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetLiveCodeRequest&, GetLiveCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLiveCodeAsyncHandler;
+                typedef Outcome<Error, Model::GetRealNameAuthResultResponse> GetRealNameAuthResultOutcome;
+                typedef std::future<GetRealNameAuthResultOutcome> GetRealNameAuthResultOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetRealNameAuthResultRequest&, GetRealNameAuthResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRealNameAuthResultAsyncHandler;
+                typedef Outcome<Error, Model::GetRealNameAuthTokenResponse> GetRealNameAuthTokenOutcome;
+                typedef std::future<GetRealNameAuthTokenOutcome> GetRealNameAuthTokenOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetRealNameAuthTokenRequest&, GetRealNameAuthTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRealNameAuthTokenAsyncHandler;
                 typedef Outcome<Error, Model::IdCardOCRVerificationResponse> IdCardOCRVerificationOutcome;
                 typedef std::future<IdCardOCRVerificationOutcome> IdCardOCRVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::IdCardOCRVerificationRequest&, IdCardOCRVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IdCardOCRVerificationAsyncHandler;
@@ -271,6 +281,24 @@ namespace TencentCloud
                 GetLiveCodeOutcome GetLiveCode(const Model::GetLiveCodeRequest &request);
                 void GetLiveCodeAsync(const Model::GetLiveCodeRequest& request, const GetLiveCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetLiveCodeOutcomeCallable GetLiveCodeCallable(const Model::GetLiveCodeRequest& request);
+
+                /**
+                 *获取微信实名认证结果
+                 * @param req GetRealNameAuthResultRequest
+                 * @return GetRealNameAuthResultOutcome
+                 */
+                GetRealNameAuthResultOutcome GetRealNameAuthResult(const Model::GetRealNameAuthResultRequest &request);
+                void GetRealNameAuthResultAsync(const Model::GetRealNameAuthResultRequest& request, const GetRealNameAuthResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRealNameAuthResultOutcomeCallable GetRealNameAuthResultCallable(const Model::GetRealNameAuthResultRequest& request);
+
+                /**
+                 *微信实名认证授权
+                 * @param req GetRealNameAuthTokenRequest
+                 * @return GetRealNameAuthTokenOutcome
+                 */
+                GetRealNameAuthTokenOutcome GetRealNameAuthToken(const Model::GetRealNameAuthTokenRequest &request);
+                void GetRealNameAuthTokenAsync(const Model::GetRealNameAuthTokenRequest& request, const GetRealNameAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRealNameAuthTokenOutcomeCallable GetRealNameAuthTokenCallable(const Model::GetRealNameAuthTokenRequest& request);
 
                 /**
                  *本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。

@@ -31,7 +31,8 @@ BindSubDomainRequest::BindSubDomainRequest() :
     m_isDefaultMappingHasBeenSet(false),
     m_netSubDomainHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
-    m_pathMappingSetHasBeenSet(false)
+    m_pathMappingSetHasBeenSet(false),
+    m_isForcedHttpsHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string BindSubDomainRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isForcedHttpsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsForcedHttps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isForcedHttps, allocator);
     }
 
 
@@ -247,6 +256,22 @@ void BindSubDomainRequest::SetPathMappingSet(const vector<PathMapping>& _pathMap
 bool BindSubDomainRequest::PathMappingSetHasBeenSet() const
 {
     return m_pathMappingSetHasBeenSet;
+}
+
+bool BindSubDomainRequest::GetIsForcedHttps() const
+{
+    return m_isForcedHttps;
+}
+
+void BindSubDomainRequest::SetIsForcedHttps(const bool& _isForcedHttps)
+{
+    m_isForcedHttps = _isForcedHttps;
+    m_isForcedHttpsHasBeenSet = true;
+}
+
+bool BindSubDomainRequest::IsForcedHttpsHasBeenSet() const
+{
+    return m_isForcedHttpsHasBeenSet;
 }
 
 

@@ -421,6 +421,28 @@ namespace TencentCloud
                      */
                     bool ContentsHasBeenSet() const;
 
+                    /**
+                     * 获取月活设备数，当月第一天开始有上线的设备数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AliveInMonthCnt 月活设备数，当月第一天开始有上线的设备数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetAliveInMonthCnt() const;
+
+                    /**
+                     * 设置月活设备数，当月第一天开始有上线的设备数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AliveInMonthCnt 月活设备数，当月第一天开始有上线的设备数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAliveInMonthCnt(const uint64_t& _aliveInMonthCnt);
+
+                    /**
+                     * 判断参数 AliveInMonthCnt 是否已赋值
+                     * @return AliveInMonthCnt 是否已赋值
+                     */
+                    bool AliveInMonthCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -541,6 +563,13 @@ namespace TencentCloud
                      */
                     Contents m_contents;
                     bool m_contentsHasBeenSet;
+
+                    /**
+                     * 月活设备数，当月第一天开始有上线的设备数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_aliveInMonthCnt;
+                    bool m_aliveInMonthCntHasBeenSet;
 
                 };
             }

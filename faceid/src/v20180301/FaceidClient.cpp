@@ -599,6 +599,92 @@ FaceidClient::GetLiveCodeOutcomeCallable FaceidClient::GetLiveCodeCallable(const
     return task->get_future();
 }
 
+FaceidClient::GetRealNameAuthResultOutcome FaceidClient::GetRealNameAuthResult(const GetRealNameAuthResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRealNameAuthResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRealNameAuthResultResponse rsp = GetRealNameAuthResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRealNameAuthResultOutcome(rsp);
+        else
+            return GetRealNameAuthResultOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRealNameAuthResultOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::GetRealNameAuthResultAsync(const GetRealNameAuthResultRequest& request, const GetRealNameAuthResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetRealNameAuthResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::GetRealNameAuthResultOutcomeCallable FaceidClient::GetRealNameAuthResultCallable(const GetRealNameAuthResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetRealNameAuthResultOutcome()>>(
+        [this, request]()
+        {
+            return this->GetRealNameAuthResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FaceidClient::GetRealNameAuthTokenOutcome FaceidClient::GetRealNameAuthToken(const GetRealNameAuthTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRealNameAuthToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRealNameAuthTokenResponse rsp = GetRealNameAuthTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRealNameAuthTokenOutcome(rsp);
+        else
+            return GetRealNameAuthTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRealNameAuthTokenOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::GetRealNameAuthTokenAsync(const GetRealNameAuthTokenRequest& request, const GetRealNameAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetRealNameAuthToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::GetRealNameAuthTokenOutcomeCallable FaceidClient::GetRealNameAuthTokenCallable(const GetRealNameAuthTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetRealNameAuthTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->GetRealNameAuthToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::IdCardOCRVerificationOutcome FaceidClient::IdCardOCRVerification(const IdCardOCRVerificationRequest &request)
 {
     auto outcome = MakeRequest(request, "IdCardOCRVerification");

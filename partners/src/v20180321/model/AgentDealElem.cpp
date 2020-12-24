@@ -46,7 +46,8 @@ AgentDealElem::AgentDealElem() :
     m_salesUinHasBeenSet(false),
     m_payerModeHasBeenSet(false),
     m_activityIdHasBeenSet(false),
-    m_overdueTimeHasBeenSet(false)
+    m_overdueTimeHasBeenSet(false),
+    m_productInfoHasBeenSet(false)
 {
 }
 
@@ -312,6 +313,26 @@ CoreInternalOutcome AgentDealElem::Deserialize(const Value &value)
         m_overdueTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductInfo") && !value["ProductInfo"].IsNull())
+    {
+        if (!value["ProductInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `AgentDealElem.ProductInfo` is not array type"));
+
+        const Value &tmpValue = value["ProductInfo"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ProductInfoElem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_productInfo.push_back(item);
+        }
+        m_productInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -518,6 +539,21 @@ void AgentDealElem::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "OverdueTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_overdueTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_productInfo.begin(); itr != m_productInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -921,5 +957,21 @@ void AgentDealElem::SetOverdueTime(const string& _overdueTime)
 bool AgentDealElem::OverdueTimeHasBeenSet() const
 {
     return m_overdueTimeHasBeenSet;
+}
+
+vector<ProductInfoElem> AgentDealElem::GetProductInfo() const
+{
+    return m_productInfo;
+}
+
+void AgentDealElem::SetProductInfo(const vector<ProductInfoElem>& _productInfo)
+{
+    m_productInfo = _productInfo;
+    m_productInfoHasBeenSet = true;
+}
+
+bool AgentDealElem::ProductInfoHasBeenSet() const
+{
+    return m_productInfoHasBeenSet;
 }
 
