@@ -280,6 +280,28 @@ namespace TencentCloud
                      */
                     bool NqaInfoHasBeenSet() const;
 
+                    /**
+                     * 获取0：停用IPv6
+1: 启用IPv6
+                     * @return IPv6Enable 0：停用IPv6
+1: 启用IPv6
+                     */
+                    int64_t GetIPv6Enable() const;
+
+                    /**
+                     * 设置0：停用IPv6
+1: 启用IPv6
+                     * @param IPv6Enable 0：停用IPv6
+1: 启用IPv6
+                     */
+                    void SetIPv6Enable(const int64_t& _iPv6Enable);
+
+                    /**
+                     * 判断参数 IPv6Enable 是否已赋值
+                     * @return IPv6Enable 是否已赋值
+                     */
+                    bool IPv6EnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +381,13 @@ namespace TencentCloud
                      */
                     NQAInfo m_nqaInfo;
                     bool m_nqaInfoHasBeenSet;
+
+                    /**
+                     * 0：停用IPv6
+1: 启用IPv6
+                     */
+                    int64_t m_iPv6Enable;
+                    bool m_iPv6EnableHasBeenSet;
 
                 };
             }

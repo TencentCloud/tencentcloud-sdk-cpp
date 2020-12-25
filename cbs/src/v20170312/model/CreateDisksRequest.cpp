@@ -35,7 +35,8 @@ CreateDisksRequest::CreateDisksRequest() :
     m_clientTokenHasBeenSet(false),
     m_encryptHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_shareableHasBeenSet(false)
+    m_shareableHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,14 @@ string CreateDisksRequest::ToJsonString() const
         string key = "Shareable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shareable, allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 
@@ -349,6 +358,22 @@ void CreateDisksRequest::SetShareable(const bool& _shareable)
 bool CreateDisksRequest::ShareableHasBeenSet() const
 {
     return m_shareableHasBeenSet;
+}
+
+uint64_t CreateDisksRequest::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void CreateDisksRequest::SetThroughputPerformance(const uint64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool CreateDisksRequest::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 
 

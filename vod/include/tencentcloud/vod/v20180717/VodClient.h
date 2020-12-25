@@ -165,6 +165,8 @@
 #include <tencentcloud/vod/v20180717/model/ForbidMediaDistributionResponse.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipRequest.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipResponse.h>
+#include <tencentcloud/vod/v20180717/model/ManageTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/ManageTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAIAnalysisTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAIAnalysisTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAIRecognitionTemplateRequest.h>
@@ -450,6 +452,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::LiveRealTimeClipResponse> LiveRealTimeClipOutcome;
                 typedef std::future<LiveRealTimeClipOutcome> LiveRealTimeClipOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::LiveRealTimeClipRequest&, LiveRealTimeClipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LiveRealTimeClipAsyncHandler;
+                typedef Outcome<Error, Model::ManageTaskResponse> ManageTaskOutcome;
+                typedef std::future<ManageTaskOutcome> ManageTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ManageTaskRequest&, ManageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageTaskAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAIAnalysisTemplateResponse> ModifyAIAnalysisTemplateOutcome;
                 typedef std::future<ModifyAIAnalysisTemplateOutcome> ModifyAIAnalysisTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyAIAnalysisTemplateRequest&, ModifyAIAnalysisTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAIAnalysisTemplateAsyncHandler;
@@ -1275,6 +1280,15 @@ namespace TencentCloud
                 LiveRealTimeClipOutcome LiveRealTimeClip(const Model::LiveRealTimeClipRequest &request);
                 void LiveRealTimeClipAsync(const Model::LiveRealTimeClipRequest& request, const LiveRealTimeClipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 LiveRealTimeClipOutcomeCallable LiveRealTimeClipCallable(const Model::LiveRealTimeClipRequest& request);
+
+                /**
+                 *对已发起的任务进行管理。
+                 * @param req ManageTaskRequest
+                 * @return ManageTaskOutcome
+                 */
+                ManageTaskOutcome ManageTask(const Model::ManageTaskRequest &request);
+                void ManageTaskAsync(const Model::ManageTaskRequest& request, const ManageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ManageTaskOutcomeCallable ManageTaskCallable(const Model::ManageTaskRequest& request);
 
                 /**
                  *修改用户自定义视频内容分析模板。

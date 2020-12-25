@@ -83,6 +83,49 @@ DcClient::AcceptDirectConnectTunnelOutcomeCallable DcClient::AcceptDirectConnect
     return task->get_future();
 }
 
+DcClient::ApplyInternetAddressOutcome DcClient::ApplyInternetAddress(const ApplyInternetAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyInternetAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyInternetAddressResponse rsp = ApplyInternetAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyInternetAddressOutcome(rsp);
+        else
+            return ApplyInternetAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyInternetAddressOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::ApplyInternetAddressAsync(const ApplyInternetAddressRequest& request, const ApplyInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyInternetAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::ApplyInternetAddressOutcomeCallable DcClient::ApplyInternetAddressCallable(const ApplyInternetAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyInternetAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyInternetAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcClient::CreateDirectConnectOutcome DcClient::CreateDirectConnect(const CreateDirectConnectRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDirectConnect");
@@ -427,6 +470,135 @@ DcClient::DescribeDirectConnectsOutcomeCallable DcClient::DescribeDirectConnects
     return task->get_future();
 }
 
+DcClient::DescribeInternetAddressOutcome DcClient::DescribeInternetAddress(const DescribeInternetAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInternetAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInternetAddressResponse rsp = DescribeInternetAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInternetAddressOutcome(rsp);
+        else
+            return DescribeInternetAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInternetAddressOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::DescribeInternetAddressAsync(const DescribeInternetAddressRequest& request, const DescribeInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInternetAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::DescribeInternetAddressOutcomeCallable DcClient::DescribeInternetAddressCallable(const DescribeInternetAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInternetAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInternetAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcClient::DescribeInternetAddressQuotaOutcome DcClient::DescribeInternetAddressQuota(const DescribeInternetAddressQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInternetAddressQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInternetAddressQuotaResponse rsp = DescribeInternetAddressQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInternetAddressQuotaOutcome(rsp);
+        else
+            return DescribeInternetAddressQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInternetAddressQuotaOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::DescribeInternetAddressQuotaAsync(const DescribeInternetAddressQuotaRequest& request, const DescribeInternetAddressQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInternetAddressQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::DescribeInternetAddressQuotaOutcomeCallable DcClient::DescribeInternetAddressQuotaCallable(const DescribeInternetAddressQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInternetAddressQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInternetAddressQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcClient::DescribeInternetAddressStatisticsOutcome DcClient::DescribeInternetAddressStatistics(const DescribeInternetAddressStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInternetAddressStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInternetAddressStatisticsResponse rsp = DescribeInternetAddressStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInternetAddressStatisticsOutcome(rsp);
+        else
+            return DescribeInternetAddressStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInternetAddressStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::DescribeInternetAddressStatisticsAsync(const DescribeInternetAddressStatisticsRequest& request, const DescribeInternetAddressStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInternetAddressStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::DescribeInternetAddressStatisticsOutcomeCallable DcClient::DescribeInternetAddressStatisticsCallable(const DescribeInternetAddressStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInternetAddressStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInternetAddressStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcClient::DescribePublicDirectConnectTunnelRoutesOutcome DcClient::DescribePublicDirectConnectTunnelRoutes(const DescribePublicDirectConnectTunnelRoutesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePublicDirectConnectTunnelRoutes");
@@ -463,6 +635,92 @@ DcClient::DescribePublicDirectConnectTunnelRoutesOutcomeCallable DcClient::Descr
         [this, request]()
         {
             return this->DescribePublicDirectConnectTunnelRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcClient::DisableInternetAddressOutcome DcClient::DisableInternetAddress(const DisableInternetAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableInternetAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableInternetAddressResponse rsp = DisableInternetAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableInternetAddressOutcome(rsp);
+        else
+            return DisableInternetAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableInternetAddressOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::DisableInternetAddressAsync(const DisableInternetAddressRequest& request, const DisableInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableInternetAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::DisableInternetAddressOutcomeCallable DcClient::DisableInternetAddressCallable(const DisableInternetAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableInternetAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableInternetAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcClient::EnableInternetAddressOutcome DcClient::EnableInternetAddress(const EnableInternetAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableInternetAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableInternetAddressResponse rsp = EnableInternetAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableInternetAddressOutcome(rsp);
+        else
+            return EnableInternetAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableInternetAddressOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::EnableInternetAddressAsync(const EnableInternetAddressRequest& request, const EnableInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableInternetAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::EnableInternetAddressOutcomeCallable DcClient::EnableInternetAddressCallable(const EnableInternetAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableInternetAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableInternetAddress(request);
         }
     );
 
@@ -635,6 +893,49 @@ DcClient::RejectDirectConnectTunnelOutcomeCallable DcClient::RejectDirectConnect
         [this, request]()
         {
             return this->RejectDirectConnectTunnel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcClient::ReleaseInternetAddressOutcome DcClient::ReleaseInternetAddress(const ReleaseInternetAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseInternetAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseInternetAddressResponse rsp = ReleaseInternetAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseInternetAddressOutcome(rsp);
+        else
+            return ReleaseInternetAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseInternetAddressOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::ReleaseInternetAddressAsync(const ReleaseInternetAddressRequest& request, const ReleaseInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseInternetAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::ReleaseInternetAddressOutcomeCallable DcClient::ReleaseInternetAddressCallable(const ReleaseInternetAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseInternetAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseInternetAddress(request);
         }
     );
 

@@ -29,10 +29,9 @@ CreateClustersRequest::CreateClustersRequest() :
     m_subnetIdHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
     m_dbVersionHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_storageLimitHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_adminPasswordHasBeenSet(false),
@@ -44,6 +43,7 @@ CreateClustersRequest::CreateClustersRequest() :
     m_originalClusterIdHasBeenSet(false),
     m_expectTimeHasBeenSet(false),
     m_expectTimeThreshHasBeenSet(false),
+    m_storageLimitHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
@@ -107,6 +107,14 @@ string CreateClustersRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_dbVersion.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_projectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
+    }
+
     if (m_cpuHasBeenSet)
     {
         Value iKey(kStringType);
@@ -121,22 +129,6 @@ string CreateClustersRequest::ToJsonString() const
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_memory, allocator);
-    }
-
-    if (m_storageLimitHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "StorageLimit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_storageLimit, allocator);
-    }
-
-    if (m_projectIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ProjectId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_projectId, allocator);
     }
 
     if (m_storageHasBeenSet)
@@ -225,6 +217,14 @@ string CreateClustersRequest::ToJsonString() const
         string key = "ExpectTimeThresh";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_expectTimeThresh, allocator);
+    }
+
+    if (m_storageLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StorageLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storageLimit, allocator);
     }
 
     if (m_instanceCountHasBeenSet)
@@ -426,6 +426,22 @@ bool CreateClustersRequest::DbVersionHasBeenSet() const
     return m_dbVersionHasBeenSet;
 }
 
+int64_t CreateClustersRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void CreateClustersRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool CreateClustersRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
 int64_t CreateClustersRequest::GetCpu() const
 {
     return m_cpu;
@@ -456,38 +472,6 @@ void CreateClustersRequest::SetMemory(const int64_t& _memory)
 bool CreateClustersRequest::MemoryHasBeenSet() const
 {
     return m_memoryHasBeenSet;
-}
-
-int64_t CreateClustersRequest::GetStorageLimit() const
-{
-    return m_storageLimit;
-}
-
-void CreateClustersRequest::SetStorageLimit(const int64_t& _storageLimit)
-{
-    m_storageLimit = _storageLimit;
-    m_storageLimitHasBeenSet = true;
-}
-
-bool CreateClustersRequest::StorageLimitHasBeenSet() const
-{
-    return m_storageLimitHasBeenSet;
-}
-
-int64_t CreateClustersRequest::GetProjectId() const
-{
-    return m_projectId;
-}
-
-void CreateClustersRequest::SetProjectId(const int64_t& _projectId)
-{
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
-}
-
-bool CreateClustersRequest::ProjectIdHasBeenSet() const
-{
-    return m_projectIdHasBeenSet;
 }
 
 int64_t CreateClustersRequest::GetStorage() const
@@ -664,6 +648,22 @@ void CreateClustersRequest::SetExpectTimeThresh(const uint64_t& _expectTimeThres
 bool CreateClustersRequest::ExpectTimeThreshHasBeenSet() const
 {
     return m_expectTimeThreshHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetStorageLimit() const
+{
+    return m_storageLimit;
+}
+
+void CreateClustersRequest::SetStorageLimit(const int64_t& _storageLimit)
+{
+    m_storageLimit = _storageLimit;
+    m_storageLimitHasBeenSet = true;
+}
+
+bool CreateClustersRequest::StorageLimitHasBeenSet() const
+{
+    return m_storageLimitHasBeenSet;
 }
 
 int64_t CreateClustersRequest::GetInstanceCount() const

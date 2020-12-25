@@ -270,7 +270,7 @@ namespace TencentCloud
                 BindingPolicyObjectOutcomeCallable BindingPolicyObjectCallable(const Model::BindingPolicyObjectRequest& request);
 
                 /**
-                 *云监控告警创建告警通知模板
+                 *创建通知模板
                  * @param req CreateAlarmNoticeRequest
                  * @return CreateAlarmNoticeOutcome
                  */
@@ -364,7 +364,7 @@ namespace TencentCloud
                 DescribeAlarmEventsOutcomeCallable DescribeAlarmEventsCallable(const Model::DescribeAlarmEventsRequest& request);
 
                 /**
-                 *告警历史列表
+                 *查询告警历史
                  * @param req DescribeAlarmHistoriesRequest
                  * @return DescribeAlarmHistoriesOutcome
                  */
@@ -382,7 +382,7 @@ namespace TencentCloud
                 DescribeAlarmMetricsOutcomeCallable DescribeAlarmMetricsCallable(const Model::DescribeAlarmMetricsRequest& request);
 
                 /**
-                 *云监控告警获取告警通知模板详情
+                 *查询单个通知模板的详情
                  * @param req DescribeAlarmNoticeRequest
                  * @return DescribeAlarmNoticeOutcome
                  */
@@ -400,7 +400,7 @@ namespace TencentCloud
                 DescribeAlarmNoticeCallbacksOutcomeCallable DescribeAlarmNoticeCallbacksCallable(const Model::DescribeAlarmNoticeCallbacksRequest& request);
 
                 /**
-                 *云监控告警查询告警通知模板列表
+                 *查询通知模板列表
                  * @param req DescribeAlarmNoticesRequest
                  * @return DescribeAlarmNoticesOutcome
                  */
@@ -409,7 +409,7 @@ namespace TencentCloud
                 DescribeAlarmNoticesOutcomeCallable DescribeAlarmNoticesCallable(const Model::DescribeAlarmNoticesRequest& request);
 
                 /**
-                 *告警策略列表
+                 *查询告警策略列表
                  * @param req DescribeAlarmPoliciesRequest
                  * @return DescribeAlarmPoliciesOutcome
                  */
@@ -418,7 +418,7 @@ namespace TencentCloud
                 DescribeAlarmPoliciesOutcomeCallable DescribeAlarmPoliciesCallable(const Model::DescribeAlarmPoliciesRequest& request);
 
                 /**
-                 *告警策略详情
+                 *获取单个告警策略详情
                  * @param req DescribeAlarmPolicyRequest
                  * @return DescribeAlarmPolicyOutcome
                  */
@@ -427,7 +427,7 @@ namespace TencentCloud
                 DescribeAlarmPolicyOutcomeCallable DescribeAlarmPolicyCallable(const Model::DescribeAlarmPolicyRequest& request);
 
                 /**
-                 *拉取所有名字空间
+                 *查询所有名字空间
                  * @param req DescribeAllNamespacesRequest
                  * @return DescribeAllNamespacesOutcome
                  */
@@ -575,7 +575,7 @@ namespace TencentCloud
                 ModifyAlarmPolicyNoticeOutcomeCallable ModifyAlarmPolicyNoticeCallable(const Model::ModifyAlarmPolicyNoticeRequest& request);
 
                 /**
-                 *修改告警策略的启停状态
+                 *启停告警策略
                  * @param req ModifyAlarmPolicyStatusRequest
                  * @return ModifyAlarmPolicyStatusOutcome
                  */

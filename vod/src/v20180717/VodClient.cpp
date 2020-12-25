@@ -3093,6 +3093,49 @@ VodClient::LiveRealTimeClipOutcomeCallable VodClient::LiveRealTimeClipCallable(c
     return task->get_future();
 }
 
+VodClient::ManageTaskOutcome VodClient::ManageTask(const ManageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ManageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ManageTaskResponse rsp = ManageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ManageTaskOutcome(rsp);
+        else
+            return ManageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ManageTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ManageTaskAsync(const ManageTaskRequest& request, const ManageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ManageTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ManageTaskOutcomeCallable VodClient::ManageTaskCallable(const ManageTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ManageTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ManageTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ModifyAIAnalysisTemplateOutcome VodClient::ModifyAIAnalysisTemplate(const ModifyAIAnalysisTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAIAnalysisTemplate");

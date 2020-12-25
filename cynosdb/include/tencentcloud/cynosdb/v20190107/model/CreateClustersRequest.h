@@ -142,60 +142,6 @@ namespace TencentCloud
                     bool DbVersionHasBeenSet() const;
 
                     /**
-                     * 获取Cpu核数
-                     * @return Cpu Cpu核数
-                     */
-                    int64_t GetCpu() const;
-
-                    /**
-                     * 设置Cpu核数
-                     * @param Cpu Cpu核数
-                     */
-                    void SetCpu(const int64_t& _cpu);
-
-                    /**
-                     * 判断参数 Cpu 是否已赋值
-                     * @return Cpu 是否已赋值
-                     */
-                    bool CpuHasBeenSet() const;
-
-                    /**
-                     * 获取内存
-                     * @return Memory 内存
-                     */
-                    int64_t GetMemory() const;
-
-                    /**
-                     * 设置内存
-                     * @param Memory 内存
-                     */
-                    void SetMemory(const int64_t& _memory);
-
-                    /**
-                     * 判断参数 Memory 是否已赋值
-                     * @return Memory 是否已赋值
-                     */
-                    bool MemoryHasBeenSet() const;
-
-                    /**
-                     * 获取存储上限，单位GB
-                     * @return StorageLimit 存储上限，单位GB
-                     */
-                    int64_t GetStorageLimit() const;
-
-                    /**
-                     * 设置存储上限，单位GB
-                     * @param StorageLimit 存储上限，单位GB
-                     */
-                    void SetStorageLimit(const int64_t& _storageLimit);
-
-                    /**
-                     * 判断参数 StorageLimit 是否已赋值
-                     * @return StorageLimit 是否已赋值
-                     */
-                    bool StorageLimitHasBeenSet() const;
-
-                    /**
                      * 获取所属项目ID
                      * @return ProjectId 所属项目ID
                      */
@@ -212,6 +158,42 @@ namespace TencentCloud
                      * @return ProjectId 是否已赋值
                      */
                     bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取普通实例Cpu核数
+                     * @return Cpu 普通实例Cpu核数
+                     */
+                    int64_t GetCpu() const;
+
+                    /**
+                     * 设置普通实例Cpu核数
+                     * @param Cpu 普通实例Cpu核数
+                     */
+                    void SetCpu(const int64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取普通实例内存
+                     * @return Memory 普通实例内存
+                     */
+                    int64_t GetMemory() const;
+
+                    /**
+                     * 设置普通实例内存
+                     * @param Memory 普通实例内存
+                     */
+                    void SetMemory(const int64_t& _memory);
+
+                    /**
+                     * 判断参数 Memory 是否已赋值
+                     * @return Memory 是否已赋值
+                     */
+                    bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取存储
@@ -424,6 +406,24 @@ timeRollback，时间点回档
                     bool ExpectTimeThreshHasBeenSet() const;
 
                     /**
+                     * 获取普通实例存储上限，单位GB
+                     * @return StorageLimit 普通实例存储上限，单位GB
+                     */
+                    int64_t GetStorageLimit() const;
+
+                    /**
+                     * 设置普通实例存储上限，单位GB
+                     * @param StorageLimit 普通实例存储上限，单位GB
+                     */
+                    void SetStorageLimit(const int64_t& _storageLimit);
+
+                    /**
+                     * 判断参数 StorageLimit 是否已赋值
+                     * @return StorageLimit 是否已赋值
+                     */
+                    bool StorageLimitHasBeenSet() const;
+
+                    /**
                      * 获取实例数量
                      * @return InstanceCount 实例数量
                      */
@@ -598,14 +598,18 @@ timeRollback，时间点回档
                     bool DbModeHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @return MinCpu 当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 获取当DbMode为SEVERLESS时必填
+cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * @return MinCpu 当DbMode为SEVERLESS时必填
+cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     double GetMinCpu() const;
 
                     /**
-                     * 设置当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @param MinCpu 当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 设置当DbMode为SEVERLESS时必填
+cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * @param MinCpu 当DbMode为SEVERLESS时必填
+cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     void SetMinCpu(const double& _minCpu);
 
@@ -616,14 +620,18 @@ timeRollback，时间点回档
                     bool MinCpuHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @return MaxCpu 当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 获取当DbMode为SEVERLESS时必填：
+cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * @return MaxCpu 当DbMode为SEVERLESS时必填：
+cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     double GetMaxCpu() const;
 
                     /**
-                     * 设置当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @param MaxCpu 当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 设置当DbMode为SEVERLESS时必填：
+cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * @param MaxCpu 当DbMode为SEVERLESS时必填：
+cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     void SetMaxCpu(const double& _maxCpu);
 
@@ -637,9 +645,11 @@ timeRollback，时间点回档
                      * 获取当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
 <li>yes</li>
 <li>no</li>
+默认值:yes
                      * @return AutoPause 当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
 <li>yes</li>
 <li>no</li>
+默认值:yes
                      */
                     std::string GetAutoPause() const;
 
@@ -647,9 +657,11 @@ timeRollback，时间点回档
                      * 设置当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
 <li>yes</li>
 <li>no</li>
+默认值:yes
                      * @param AutoPause 当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
 <li>yes</li>
 <li>no</li>
+默认值:yes
                      */
                     void SetAutoPause(const std::string& _autoPause);
 
@@ -660,14 +672,18 @@ timeRollback，时间点回档
                     bool AutoPauseHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]
-                     * @return AutoPauseDelay 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]
+                     * 获取当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
+默认值:600
+                     * @return AutoPauseDelay 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
+默认值:600
                      */
                     int64_t GetAutoPauseDelay() const;
 
                     /**
-                     * 设置当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]
-                     * @param AutoPauseDelay 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]
+                     * 设置当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
+默认值:600
+                     * @param AutoPauseDelay 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
+默认值:600
                      */
                     void SetAutoPauseDelay(const int64_t& _autoPauseDelay);
 
@@ -712,28 +728,22 @@ timeRollback，时间点回档
                     bool m_dbVersionHasBeenSet;
 
                     /**
-                     * Cpu核数
+                     * 所属项目ID
+                     */
+                    int64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 普通实例Cpu核数
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存
+                     * 普通实例内存
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
-
-                    /**
-                     * 存储上限，单位GB
-                     */
-                    int64_t m_storageLimit;
-                    bool m_storageLimitHasBeenSet;
-
-                    /**
-                     * 所属项目ID
-                     */
-                    int64_t m_projectId;
-                    bool m_projectIdHasBeenSet;
 
                     /**
                      * 存储
@@ -805,6 +815,12 @@ timeRollback，时间点回档
                     bool m_expectTimeThreshHasBeenSet;
 
                     /**
+                     * 普通实例存储上限，单位GB
+                     */
+                    int64_t m_storageLimit;
+                    bool m_storageLimitHasBeenSet;
+
+                    /**
                      * 实例数量
                      */
                     int64_t m_instanceCount;
@@ -862,13 +878,15 @@ timeRollback，时间点回档
                     bool m_dbModeHasBeenSet;
 
                     /**
-                     * 当DbMode为SEVERLESS时的cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 当DbMode为SEVERLESS时必填
+cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     double m_minCpu;
                     bool m_minCpuHasBeenSet;
 
                     /**
-                     * 当DbMode为SEVERLESS时的cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 当DbMode为SEVERLESS时必填：
+cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     double m_maxCpu;
                     bool m_maxCpuHasBeenSet;
@@ -877,12 +895,14 @@ timeRollback，时间点回档
                      * 当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围
 <li>yes</li>
 <li>no</li>
+默认值:yes
                      */
                     std::string m_autoPause;
                     bool m_autoPauseHasBeenSet;
 
                     /**
-                     * 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，可选范围[60,INF]
+                     * 当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
+默认值:600
                      */
                     int64_t m_autoPauseDelay;
                     bool m_autoPauseDelayHasBeenSet;

@@ -685,6 +685,116 @@ REJECTED:拒绝
                      */
                     bool BgpStatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IPv6Enable 是否开启IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIPv6Enable() const;
+
+                    /**
+                     * 设置是否开启IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IPv6Enable 是否开启IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIPv6Enable(const int64_t& _iPv6Enable);
+
+                    /**
+                     * 判断参数 IPv6Enable 是否已赋值
+                     * @return IPv6Enable 是否已赋值
+                     */
+                    bool IPv6EnableHasBeenSet() const;
+
+                    /**
+                     * 获取腾讯侧互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TencentIPv6Address 腾讯侧互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTencentIPv6Address() const;
+
+                    /**
+                     * 设置腾讯侧互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TencentIPv6Address 腾讯侧互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTencentIPv6Address(const std::string& _tencentIPv6Address);
+
+                    /**
+                     * 判断参数 TencentIPv6Address 是否已赋值
+                     * @return TencentIPv6Address 是否已赋值
+                     */
+                    bool TencentIPv6AddressHasBeenSet() const;
+
+                    /**
+                     * 获取腾讯侧备用互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TencentBackupIPv6Address 腾讯侧备用互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTencentBackupIPv6Address() const;
+
+                    /**
+                     * 设置腾讯侧备用互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TencentBackupIPv6Address 腾讯侧备用互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTencentBackupIPv6Address(const std::string& _tencentBackupIPv6Address);
+
+                    /**
+                     * 判断参数 TencentBackupIPv6Address 是否已赋值
+                     * @return TencentBackupIPv6Address 是否已赋值
+                     */
+                    bool TencentBackupIPv6AddressHasBeenSet() const;
+
+                    /**
+                     * 获取BGPv6状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BgpIPv6Status BGPv6状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BGPStatus GetBgpIPv6Status() const;
+
+                    /**
+                     * 设置BGPv6状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BgpIPv6Status BGPv6状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBgpIPv6Status(const BGPStatus& _bgpIPv6Status);
+
+                    /**
+                     * 判断参数 BgpIPv6Status 是否已赋值
+                     * @return BgpIPv6Status 是否已赋值
+                     */
+                    bool BgpIPv6StatusHasBeenSet() const;
+
+                    /**
+                     * 获取用户侧互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomerIPv6Address 用户侧互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCustomerIPv6Address() const;
+
+                    /**
+                     * 设置用户侧互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CustomerIPv6Address 用户侧互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCustomerIPv6Address(const std::string& _customerIPv6Address);
+
+                    /**
+                     * 判断参数 CustomerIPv6Address 是否已赋值
+                     * @return CustomerIPv6Address 是否已赋值
+                     */
+                    bool CustomerIPv6AddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -894,6 +1004,41 @@ REJECTED:拒绝
                      */
                     BGPStatus m_bgpStatus;
                     bool m_bgpStatusHasBeenSet;
+
+                    /**
+                     * 是否开启IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_iPv6Enable;
+                    bool m_iPv6EnableHasBeenSet;
+
+                    /**
+                     * 腾讯侧互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tencentIPv6Address;
+                    bool m_tencentIPv6AddressHasBeenSet;
+
+                    /**
+                     * 腾讯侧备用互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tencentBackupIPv6Address;
+                    bool m_tencentBackupIPv6AddressHasBeenSet;
+
+                    /**
+                     * BGPv6状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BGPStatus m_bgpIPv6Status;
+                    bool m_bgpIPv6StatusHasBeenSet;
+
+                    /**
+                     * 用户侧互联IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_customerIPv6Address;
+                    bool m_customerIPv6AddressHasBeenSet;
 
                 };
             }

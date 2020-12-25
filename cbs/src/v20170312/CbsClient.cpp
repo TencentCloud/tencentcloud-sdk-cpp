@@ -857,6 +857,49 @@ CbsClient::GetSnapOverviewOutcomeCallable CbsClient::GetSnapOverviewCallable(con
     return task->get_future();
 }
 
+CbsClient::InquirePriceModifyDiskExtraPerformanceOutcome CbsClient::InquirePriceModifyDiskExtraPerformance(const InquirePriceModifyDiskExtraPerformanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceModifyDiskExtraPerformance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceModifyDiskExtraPerformanceResponse rsp = InquirePriceModifyDiskExtraPerformanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceModifyDiskExtraPerformanceOutcome(rsp);
+        else
+            return InquirePriceModifyDiskExtraPerformanceOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceModifyDiskExtraPerformanceOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::InquirePriceModifyDiskExtraPerformanceAsync(const InquirePriceModifyDiskExtraPerformanceRequest& request, const InquirePriceModifyDiskExtraPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceModifyDiskExtraPerformance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::InquirePriceModifyDiskExtraPerformanceOutcomeCallable CbsClient::InquirePriceModifyDiskExtraPerformanceCallable(const InquirePriceModifyDiskExtraPerformanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceModifyDiskExtraPerformanceOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceModifyDiskExtraPerformance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::InquiryPriceCreateDisksOutcome CbsClient::InquiryPriceCreateDisks(const InquiryPriceCreateDisksRequest &request)
 {
     auto outcome = MakeRequest(request, "InquiryPriceCreateDisks");
@@ -1065,6 +1108,49 @@ CbsClient::ModifyDiskAttributesOutcomeCallable CbsClient::ModifyDiskAttributesCa
         [this, request]()
         {
             return this->ModifyDiskAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CbsClient::ModifyDiskExtraPerformanceOutcome CbsClient::ModifyDiskExtraPerformance(const ModifyDiskExtraPerformanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDiskExtraPerformance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDiskExtraPerformanceResponse rsp = ModifyDiskExtraPerformanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDiskExtraPerformanceOutcome(rsp);
+        else
+            return ModifyDiskExtraPerformanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDiskExtraPerformanceOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::ModifyDiskExtraPerformanceAsync(const ModifyDiskExtraPerformanceRequest& request, const ModifyDiskExtraPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDiskExtraPerformance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::ModifyDiskExtraPerformanceOutcomeCallable CbsClient::ModifyDiskExtraPerformanceCallable(const ModifyDiskExtraPerformanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDiskExtraPerformanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDiskExtraPerformance(request);
         }
     );
 

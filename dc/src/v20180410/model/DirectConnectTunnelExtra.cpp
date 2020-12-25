@@ -54,7 +54,12 @@ DirectConnectTunnelExtra::DirectConnectTunnelExtra() :
     m_signLawHasBeenSet(false),
     m_bfdInfoHasBeenSet(false),
     m_nqaInfoHasBeenSet(false),
-    m_bgpStatusHasBeenSet(false)
+    m_bgpStatusHasBeenSet(false),
+    m_iPv6EnableHasBeenSet(false),
+    m_tencentIPv6AddressHasBeenSet(false),
+    m_tencentBackupIPv6AddressHasBeenSet(false),
+    m_bgpIPv6StatusHasBeenSet(false),
+    m_customerIPv6AddressHasBeenSet(false)
 {
 }
 
@@ -441,6 +446,63 @@ CoreInternalOutcome DirectConnectTunnelExtra::Deserialize(const Value &value)
         m_bgpStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("IPv6Enable") && !value["IPv6Enable"].IsNull())
+    {
+        if (!value["IPv6Enable"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnelExtra.IPv6Enable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPv6Enable = value["IPv6Enable"].GetInt64();
+        m_iPv6EnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("TencentIPv6Address") && !value["TencentIPv6Address"].IsNull())
+    {
+        if (!value["TencentIPv6Address"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnelExtra.TencentIPv6Address` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tencentIPv6Address = string(value["TencentIPv6Address"].GetString());
+        m_tencentIPv6AddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("TencentBackupIPv6Address") && !value["TencentBackupIPv6Address"].IsNull())
+    {
+        if (!value["TencentBackupIPv6Address"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnelExtra.TencentBackupIPv6Address` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tencentBackupIPv6Address = string(value["TencentBackupIPv6Address"].GetString());
+        m_tencentBackupIPv6AddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("BgpIPv6Status") && !value["BgpIPv6Status"].IsNull())
+    {
+        if (!value["BgpIPv6Status"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnelExtra.BgpIPv6Status` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_bgpIPv6Status.Deserialize(value["BgpIPv6Status"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bgpIPv6StatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomerIPv6Address") && !value["CustomerIPv6Address"].IsNull())
+    {
+        if (!value["CustomerIPv6Address"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnelExtra.CustomerIPv6Address` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customerIPv6Address = string(value["CustomerIPv6Address"].GetString());
+        m_customerIPv6AddressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -728,6 +790,47 @@ void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorTyp
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_bgpStatus.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_iPv6EnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IPv6Enable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iPv6Enable, allocator);
+    }
+
+    if (m_tencentIPv6AddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TencentIPv6Address";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_tencentIPv6Address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tencentBackupIPv6AddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TencentBackupIPv6Address";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_tencentBackupIPv6Address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bgpIPv6StatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BgpIPv6Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_bgpIPv6Status.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_customerIPv6AddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CustomerIPv6Address";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_customerIPv6Address.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1259,5 +1362,85 @@ void DirectConnectTunnelExtra::SetBgpStatus(const BGPStatus& _bgpStatus)
 bool DirectConnectTunnelExtra::BgpStatusHasBeenSet() const
 {
     return m_bgpStatusHasBeenSet;
+}
+
+int64_t DirectConnectTunnelExtra::GetIPv6Enable() const
+{
+    return m_iPv6Enable;
+}
+
+void DirectConnectTunnelExtra::SetIPv6Enable(const int64_t& _iPv6Enable)
+{
+    m_iPv6Enable = _iPv6Enable;
+    m_iPv6EnableHasBeenSet = true;
+}
+
+bool DirectConnectTunnelExtra::IPv6EnableHasBeenSet() const
+{
+    return m_iPv6EnableHasBeenSet;
+}
+
+string DirectConnectTunnelExtra::GetTencentIPv6Address() const
+{
+    return m_tencentIPv6Address;
+}
+
+void DirectConnectTunnelExtra::SetTencentIPv6Address(const string& _tencentIPv6Address)
+{
+    m_tencentIPv6Address = _tencentIPv6Address;
+    m_tencentIPv6AddressHasBeenSet = true;
+}
+
+bool DirectConnectTunnelExtra::TencentIPv6AddressHasBeenSet() const
+{
+    return m_tencentIPv6AddressHasBeenSet;
+}
+
+string DirectConnectTunnelExtra::GetTencentBackupIPv6Address() const
+{
+    return m_tencentBackupIPv6Address;
+}
+
+void DirectConnectTunnelExtra::SetTencentBackupIPv6Address(const string& _tencentBackupIPv6Address)
+{
+    m_tencentBackupIPv6Address = _tencentBackupIPv6Address;
+    m_tencentBackupIPv6AddressHasBeenSet = true;
+}
+
+bool DirectConnectTunnelExtra::TencentBackupIPv6AddressHasBeenSet() const
+{
+    return m_tencentBackupIPv6AddressHasBeenSet;
+}
+
+BGPStatus DirectConnectTunnelExtra::GetBgpIPv6Status() const
+{
+    return m_bgpIPv6Status;
+}
+
+void DirectConnectTunnelExtra::SetBgpIPv6Status(const BGPStatus& _bgpIPv6Status)
+{
+    m_bgpIPv6Status = _bgpIPv6Status;
+    m_bgpIPv6StatusHasBeenSet = true;
+}
+
+bool DirectConnectTunnelExtra::BgpIPv6StatusHasBeenSet() const
+{
+    return m_bgpIPv6StatusHasBeenSet;
+}
+
+string DirectConnectTunnelExtra::GetCustomerIPv6Address() const
+{
+    return m_customerIPv6Address;
+}
+
+void DirectConnectTunnelExtra::SetCustomerIPv6Address(const string& _customerIPv6Address)
+{
+    m_customerIPv6Address = _customerIPv6Address;
+    m_customerIPv6AddressHasBeenSet = true;
+}
+
+bool DirectConnectTunnelExtra::CustomerIPv6AddressHasBeenSet() const
+{
+    return m_customerIPv6AddressHasBeenSet;
 }
 

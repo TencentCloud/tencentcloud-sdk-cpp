@@ -61,6 +61,8 @@
 #include <tencentcloud/cbs/v20170312/model/DetachDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/GetSnapOverviewRequest.h>
 #include <tencentcloud/cbs/v20170312/model/GetSnapOverviewResponse.h>
+#include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskExtraPerformanceRequest.h>
+#include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskExtraPerformanceResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceRenewDisksRequest.h>
@@ -71,6 +73,8 @@
 #include <tencentcloud/cbs/v20170312/model/ModifyAutoSnapshotPolicyAttributeResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDiskAttributesRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDiskAttributesResponse.h>
+#include <tencentcloud/cbs/v20170312/model/ModifyDiskExtraPerformanceRequest.h>
+#include <tencentcloud/cbs/v20170312/model/ModifyDiskExtraPerformanceResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDisksChargeTypeRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDisksChargeTypeResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDisksRenewFlagRequest.h>
@@ -158,6 +162,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetSnapOverviewResponse> GetSnapOverviewOutcome;
                 typedef std::future<GetSnapOverviewOutcome> GetSnapOverviewOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::GetSnapOverviewRequest&, GetSnapOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSnapOverviewAsyncHandler;
+                typedef Outcome<Error, Model::InquirePriceModifyDiskExtraPerformanceResponse> InquirePriceModifyDiskExtraPerformanceOutcome;
+                typedef std::future<InquirePriceModifyDiskExtraPerformanceOutcome> InquirePriceModifyDiskExtraPerformanceOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::InquirePriceModifyDiskExtraPerformanceRequest&, InquirePriceModifyDiskExtraPerformanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyDiskExtraPerformanceAsyncHandler;
                 typedef Outcome<Error, Model::InquiryPriceCreateDisksResponse> InquiryPriceCreateDisksOutcome;
                 typedef std::future<InquiryPriceCreateDisksOutcome> InquiryPriceCreateDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::InquiryPriceCreateDisksRequest&, InquiryPriceCreateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateDisksAsyncHandler;
@@ -173,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyDiskAttributesResponse> ModifyDiskAttributesOutcome;
                 typedef std::future<ModifyDiskAttributesOutcome> ModifyDiskAttributesOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ModifyDiskAttributesRequest&, ModifyDiskAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskAttributesAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDiskExtraPerformanceResponse> ModifyDiskExtraPerformanceOutcome;
+                typedef std::future<ModifyDiskExtraPerformanceOutcome> ModifyDiskExtraPerformanceOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::ModifyDiskExtraPerformanceRequest&, ModifyDiskExtraPerformanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskExtraPerformanceAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDisksChargeTypeResponse> ModifyDisksChargeTypeOutcome;
                 typedef std::future<ModifyDisksChargeTypeOutcome> ModifyDisksChargeTypeOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ModifyDisksChargeTypeRequest&, ModifyDisksChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksChargeTypeAsyncHandler;
@@ -418,6 +428,15 @@ namespace TencentCloud
                 GetSnapOverviewOutcomeCallable GetSnapOverviewCallable(const Model::GetSnapOverviewRequest& request);
 
                 /**
+                 *本接口（InquirePriceModifyDiskExtraPerformance）用于调整云硬盘额外性能询价。
+                 * @param req InquirePriceModifyDiskExtraPerformanceRequest
+                 * @return InquirePriceModifyDiskExtraPerformanceOutcome
+                 */
+                InquirePriceModifyDiskExtraPerformanceOutcome InquirePriceModifyDiskExtraPerformance(const Model::InquirePriceModifyDiskExtraPerformanceRequest &request);
+                void InquirePriceModifyDiskExtraPerformanceAsync(const Model::InquirePriceModifyDiskExtraPerformanceRequest& request, const InquirePriceModifyDiskExtraPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceModifyDiskExtraPerformanceOutcomeCallable InquirePriceModifyDiskExtraPerformanceCallable(const Model::InquirePriceModifyDiskExtraPerformanceRequest& request);
+
+                /**
                  *本接口（InquiryPriceCreateDisks）用于创建云硬盘询价。
 
 * 支持查询创建多块云硬盘的价格，此时返回结果为总价格。
@@ -474,6 +493,17 @@ namespace TencentCloud
                 ModifyDiskAttributesOutcome ModifyDiskAttributes(const Model::ModifyDiskAttributesRequest &request);
                 void ModifyDiskAttributesAsync(const Model::ModifyDiskAttributesRequest& request, const ModifyDiskAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDiskAttributesOutcomeCallable ModifyDiskAttributesCallable(const Model::ModifyDiskAttributesRequest& request);
+
+                /**
+                 *本接口（ModifyDiskExtraPerformance）用于调整云硬盘额外的性能。
+
+* 目前仅支持极速型SSD云硬盘（CLOUD_TSSD）和高性能SSD云硬盘(CLOUD_HSSD)。
+                 * @param req ModifyDiskExtraPerformanceRequest
+                 * @return ModifyDiskExtraPerformanceOutcome
+                 */
+                ModifyDiskExtraPerformanceOutcome ModifyDiskExtraPerformance(const Model::ModifyDiskExtraPerformanceRequest &request);
+                void ModifyDiskExtraPerformanceAsync(const Model::ModifyDiskExtraPerformanceRequest& request, const ModifyDiskExtraPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDiskExtraPerformanceOutcomeCallable ModifyDiskExtraPerformanceCallable(const Model::ModifyDiskExtraPerformanceRequest& request);
 
                 /**
                  *接口请求域名： cbs.tencentcloudapi.com 。

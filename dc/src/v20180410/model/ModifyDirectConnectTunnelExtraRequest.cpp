@@ -36,7 +36,8 @@ ModifyDirectConnectTunnelExtraRequest::ModifyDirectConnectTunnelExtraRequest() :
     m_bfdEnableHasBeenSet(false),
     m_nqaEnableHasBeenSet(false),
     m_bfdInfoHasBeenSet(false),
-    m_nqaInfoHasBeenSet(false)
+    m_nqaInfoHasBeenSet(false),
+    m_iPv6EnableHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string ModifyDirectConnectTunnelExtraRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_nqaInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_iPv6EnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IPv6Enable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_iPv6Enable, allocator);
     }
 
 
@@ -369,6 +378,22 @@ void ModifyDirectConnectTunnelExtraRequest::SetNqaInfo(const NQAInfo& _nqaInfo)
 bool ModifyDirectConnectTunnelExtraRequest::NqaInfoHasBeenSet() const
 {
     return m_nqaInfoHasBeenSet;
+}
+
+int64_t ModifyDirectConnectTunnelExtraRequest::GetIPv6Enable() const
+{
+    return m_iPv6Enable;
+}
+
+void ModifyDirectConnectTunnelExtraRequest::SetIPv6Enable(const int64_t& _iPv6Enable)
+{
+    m_iPv6Enable = _iPv6Enable;
+    m_iPv6EnableHasBeenSet = true;
+}
+
+bool ModifyDirectConnectTunnelExtraRequest::IPv6EnableHasBeenSet() const
+{
+    return m_iPv6EnableHasBeenSet;
 }
 
 

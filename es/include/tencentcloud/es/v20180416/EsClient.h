@@ -33,6 +33,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstancesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstancesResponse.h>
+#include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h>
+#include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartKibanaRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdatePluginsRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdatePluginsResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesResponse.h>
 #include <tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h>
@@ -76,6 +80,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Error, Model::GetRequestTargetNodeTypesResponse> GetRequestTargetNodeTypesOutcome;
+                typedef std::future<GetRequestTargetNodeTypesOutcome> GetRequestTargetNodeTypesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::GetRequestTargetNodeTypesRequest&, GetRequestTargetNodeTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRequestTargetNodeTypesAsyncHandler;
                 typedef Outcome<Error, Model::RestartInstanceResponse> RestartInstanceOutcome;
                 typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartInstanceRequest&, RestartInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
@@ -91,6 +98,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdatePluginsResponse> UpdatePluginsOutcome;
                 typedef std::future<UpdatePluginsOutcome> UpdatePluginsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdatePluginsRequest&, UpdatePluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePluginsAsyncHandler;
+                typedef Outcome<Error, Model::UpdateRequestTargetNodeTypesResponse> UpdateRequestTargetNodeTypesOutcome;
+                typedef std::future<UpdateRequestTargetNodeTypesOutcome> UpdateRequestTargetNodeTypesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateRequestTargetNodeTypesRequest&, UpdateRequestTargetNodeTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRequestTargetNodeTypesAsyncHandler;
                 typedef Outcome<Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
                 typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
@@ -146,6 +156,15 @@ namespace TencentCloud
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
+                 *获取接收客户端请求的节点类型
+                 * @param req GetRequestTargetNodeTypesRequest
+                 * @return GetRequestTargetNodeTypesOutcome
+                 */
+                GetRequestTargetNodeTypesOutcome GetRequestTargetNodeTypes(const Model::GetRequestTargetNodeTypesRequest &request);
+                void GetRequestTargetNodeTypesAsync(const Model::GetRequestTargetNodeTypesRequest& request, const GetRequestTargetNodeTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRequestTargetNodeTypesOutcomeCallable GetRequestTargetNodeTypesCallable(const Model::GetRequestTargetNodeTypesRequest& request);
+
+                /**
                  *重启ES集群实例(用于系统版本更新等操作) 
                  * @param req RestartInstanceRequest
                  * @return RestartInstanceOutcome
@@ -196,6 +215,15 @@ namespace TencentCloud
                 UpdatePluginsOutcome UpdatePlugins(const Model::UpdatePluginsRequest &request);
                 void UpdatePluginsAsync(const Model::UpdatePluginsRequest& request, const UpdatePluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdatePluginsOutcomeCallable UpdatePluginsCallable(const Model::UpdatePluginsRequest& request);
+
+                /**
+                 *更新接收客户端请求的节点类型
+                 * @param req UpdateRequestTargetNodeTypesRequest
+                 * @return UpdateRequestTargetNodeTypesOutcome
+                 */
+                UpdateRequestTargetNodeTypesOutcome UpdateRequestTargetNodeTypes(const Model::UpdateRequestTargetNodeTypesRequest &request);
+                void UpdateRequestTargetNodeTypesAsync(const Model::UpdateRequestTargetNodeTypesRequest& request, const UpdateRequestTargetNodeTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateRequestTargetNodeTypesOutcomeCallable UpdateRequestTargetNodeTypesCallable(const Model::UpdateRequestTargetNodeTypesRequest& request);
 
                 /**
                  *升级ES集群版本

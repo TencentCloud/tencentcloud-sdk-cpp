@@ -23,6 +23,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/LocalDiskInfo.h
   include/tencentcloud/es/v20180416/model/TaskDetail.h
   include/tencentcloud/es/v20180416/model/NodeInfo.h
+  include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h
   include/tencentcloud/es/v20180416/model/OperationDetail.h
   include/tencentcloud/es/v20180416/model/EsPublicAcl.h
@@ -31,6 +32,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/RestartKibanaRequest.h
   include/tencentcloud/es/v20180416/model/CreateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsRequest.h
+  include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesRequest.h
   include/tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h
   include/tencentcloud/es/v20180416/model/CosBackup.h
   include/tencentcloud/es/v20180416/model/TagInfo.h
@@ -49,6 +51,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h
   include/tencentcloud/es/v20180416/model/RestartNodesRequest.h
   include/tencentcloud/es/v20180416/model/UpdatePluginsRequest.h
+  include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesResponse.h
   include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
   include/tencentcloud/es/v20180416/model/EsAcl.h
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
@@ -58,6 +61,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h
+  include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesResponse.h
   include/tencentcloud/es/v20180416/model/RestartKibanaResponse.h
   include/tencentcloud/es/v20180416/model/Operation.h
   )
@@ -68,6 +72,7 @@ set(es_src
   src/v20180416/model/LocalDiskInfo.cpp
   src/v20180416/model/TaskDetail.cpp
   src/v20180416/model/NodeInfo.cpp
+  src/v20180416/model/GetRequestTargetNodeTypesRequest.cpp
   src/v20180416/model/DescribeInstanceOperationsRequest.cpp
   src/v20180416/model/OperationDetail.cpp
   src/v20180416/model/EsPublicAcl.cpp
@@ -76,6 +81,7 @@ set(es_src
   src/v20180416/model/RestartKibanaRequest.cpp
   src/v20180416/model/CreateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceLogsRequest.cpp
+  src/v20180416/model/UpdateRequestTargetNodeTypesRequest.cpp
   src/v20180416/model/UpgradeLicenseRequest.cpp
   src/v20180416/model/CosBackup.cpp
   src/v20180416/model/TagInfo.cpp
@@ -94,6 +100,7 @@ set(es_src
   src/v20180416/model/DescribeInstanceOperationsResponse.cpp
   src/v20180416/model/RestartNodesRequest.cpp
   src/v20180416/model/UpdatePluginsRequest.cpp
+  src/v20180416/model/UpdateRequestTargetNodeTypesResponse.cpp
   src/v20180416/model/UpgradeLicenseResponse.cpp
   src/v20180416/model/EsAcl.cpp
   src/v20180416/model/MasterNodeInfo.cpp
@@ -103,6 +110,7 @@ set(es_src
   src/v20180416/model/UpgradeInstanceResponse.cpp
   src/v20180416/model/UpdateInstanceResponse.cpp
   src/v20180416/model/UpgradeInstanceRequest.cpp
+  src/v20180416/model/GetRequestTargetNodeTypesResponse.cpp
   src/v20180416/model/RestartKibanaResponse.cpp
   src/v20180416/model/Operation.cpp
   )

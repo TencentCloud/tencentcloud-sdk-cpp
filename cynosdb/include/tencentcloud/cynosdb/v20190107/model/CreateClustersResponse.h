@@ -71,9 +71,9 @@ namespace TencentCloud
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取资源ID列表
+                     * 获取资源ID列表（异步发货可能无法返回该字段, 强烈建议使用dealNames字段查询接口DescribeResourcesByDealName获取异步发货的资源ID）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceIds 资源ID列表
+                     * @return ResourceIds 资源ID列表（异步发货可能无法返回该字段, 强烈建议使用dealNames字段查询接口DescribeResourcesByDealName获取异步发货的资源ID）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetResourceIds() const;
@@ -85,9 +85,9 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取集群ID列表
+                     * 获取集群ID列表（异步发货可能不返回该字段, 强烈建议使用dealNames查询接口DescribeResourcesByDealName获取异步发货的集群ID）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterIds 集群ID列表
+                     * @return ClusterIds 集群ID列表（异步发货可能不返回该字段, 强烈建议使用dealNames查询接口DescribeResourcesByDealName获取异步发货的集群ID）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetClusterIds() const;
@@ -129,14 +129,14 @@ namespace TencentCloud
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * 资源ID列表
+                     * 资源ID列表（异步发货可能无法返回该字段, 强烈建议使用dealNames字段查询接口DescribeResourcesByDealName获取异步发货的资源ID）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 集群ID列表
+                     * 集群ID列表（异步发货可能不返回该字段, 强烈建议使用dealNames查询接口DescribeResourcesByDealName获取异步发货的集群ID）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_clusterIds;
