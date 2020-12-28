@@ -29,7 +29,8 @@ DescribeScdnConfigResponse::DescribeScdnConfigResponse() :
     m_wafHasBeenSet(false),
     m_cCHasBeenSet(false),
     m_ddosHasBeenSet(false),
-    m_botHasBeenSet(false)
+    m_botHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,16 @@ CoreInternalOutcome DescribeScdnConfigResponse::Deserialize(const string &payloa
         m_botHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,16 @@ ScdnBotConfig DescribeScdnConfigResponse::GetBot() const
 bool DescribeScdnConfigResponse::BotHasBeenSet() const
 {
     return m_botHasBeenSet;
+}
+
+string DescribeScdnConfigResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeScdnConfigResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

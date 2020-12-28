@@ -34,7 +34,8 @@ DescribeBillDetailRequest::DescribeBillDetailRequest() :
     m_productCodeHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_actionTypeHasBeenSet(false)
+    m_actionTypeHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string DescribeBillDetailRequest::ToJsonString() const
         string key = "ActionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_actionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
     }
 
 
@@ -315,6 +324,22 @@ void DescribeBillDetailRequest::SetActionType(const string& _actionType)
 bool DescribeBillDetailRequest::ActionTypeHasBeenSet() const
 {
     return m_actionTypeHasBeenSet;
+}
+
+int64_t DescribeBillDetailRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DescribeBillDetailRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DescribeBillDetailRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

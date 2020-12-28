@@ -25,7 +25,8 @@ using namespace std;
 
 ListScdnDomainsRequest::ListScdnDomainsRequest() :
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string ListScdnDomainsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void ListScdnDomainsRequest::SetLimit(const int64_t& _limit)
 bool ListScdnDomainsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string ListScdnDomainsRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void ListScdnDomainsRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool ListScdnDomainsRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 

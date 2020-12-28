@@ -44,7 +44,8 @@ BillDetail::BillDetail() :
     m_businessCodeHasBeenSet(false),
     m_productCodeHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
-    m_regionIdHasBeenSet(false)
+    m_regionIdHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -303,6 +304,16 @@ CoreInternalOutcome BillDetail::Deserialize(const Value &value)
         m_regionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `BillDetail.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = value["ProjectId"].GetInt64();
+        m_projectIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -506,6 +517,14 @@ void BillDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_regionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectId, allocator);
     }
 
 }
@@ -877,5 +896,21 @@ void BillDetail::SetRegionId(const string& _regionId)
 bool BillDetail::RegionIdHasBeenSet() const
 {
     return m_regionIdHasBeenSet;
+}
+
+int64_t BillDetail::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void BillDetail::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool BillDetail::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 

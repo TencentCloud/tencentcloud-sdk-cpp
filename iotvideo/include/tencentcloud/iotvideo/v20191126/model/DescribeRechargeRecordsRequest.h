@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账户类型 1:设备接入 2:云存
-                     * @return AccountType 账户类型 1:设备接入 2:云存
+                     * 获取账户类型 1:设备接入 2:云存。
+                     * @return AccountType 账户类型 1:设备接入 2:云存。
                      */
                     int64_t GetAccountType() const;
 
                     /**
-                     * 设置账户类型 1:设备接入 2:云存
-                     * @param AccountType 账户类型 1:设备接入 2:云存
+                     * 设置账户类型 1:设备接入 2:云存。
+                     * @param AccountType 账户类型 1:设备接入 2:云存。
                      */
                     void SetAccountType(const int64_t& _accountType);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool AccountTypeHasBeenSet() const;
 
                     /**
-                     * 获取从第几条记录开始显示
-                     * @return Offset 从第几条记录开始显示
+                     * 获取从第几条记录开始显示, 默认值为0。
+                     * @return Offset 从第几条记录开始显示, 默认值为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置从第几条记录开始显示
-                     * @param Offset 从第几条记录开始显示
+                     * 设置从第几条记录开始显示, 默认值为0。
+                     * @param Offset 从第几条记录开始显示, 默认值为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取总共查询多少条记录
-                     * @return Limit 总共查询多少条记录
+                     * 获取总共查询多少条记录，默认为值50。
+                     * @return Limit 总共查询多少条记录，默认为值50。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置总共查询多少条记录
-                     * @param Limit 总共查询多少条记录
+                     * 设置总共查询多少条记录，默认为值50。
+                     * @param Limit 总共查询多少条记录，默认为值50。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账户类型 1:设备接入 2:云存
+                     * 账户类型 1:设备接入 2:云存。
                      */
                     int64_t m_accountType;
                     bool m_accountTypeHasBeenSet;
 
                     /**
-                     * 从第几条记录开始显示
+                     * 从第几条记录开始显示, 默认值为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 总共查询多少条记录
+                     * 总共查询多少条记录，默认为值50。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

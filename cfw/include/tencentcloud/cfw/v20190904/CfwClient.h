@@ -25,16 +25,26 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupApiRulesRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupApiRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupAllRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupAllRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeRuleOverviewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeRuleOverviewResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSwitchListsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSwitchListsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSyncAssetStatusRequest.h>
@@ -51,6 +61,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyAllSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyItemSwitchStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyItemSwitchStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupAllRuleStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupAllRuleStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySequenceRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySequenceRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyTableStatusRequest.h>
@@ -74,21 +86,36 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAcRulesResponse> CreateAcRulesOutcome;
                 typedef std::future<CreateAcRulesOutcome> CreateAcRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateAcRulesRequest&, CreateAcRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAcRulesAsyncHandler;
+                typedef Outcome<Error, Model::CreateSecurityGroupApiRulesResponse> CreateSecurityGroupApiRulesOutcome;
+                typedef std::future<CreateSecurityGroupApiRulesOutcome> CreateSecurityGroupApiRulesOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateSecurityGroupApiRulesRequest&, CreateSecurityGroupApiRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityGroupApiRulesAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAcRuleResponse> DeleteAcRuleOutcome;
                 typedef std::future<DeleteAcRuleOutcome> DeleteAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteAcRuleRequest&, DeleteAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAcRuleAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAllAccessControlRuleResponse> DeleteAllAccessControlRuleOutcome;
                 typedef std::future<DeleteAllAccessControlRuleOutcome> DeleteAllAccessControlRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteAllAccessControlRuleRequest&, DeleteAllAccessControlRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllAccessControlRuleAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSecurityGroupAllRuleResponse> DeleteSecurityGroupAllRuleOutcome;
+                typedef std::future<DeleteSecurityGroupAllRuleOutcome> DeleteSecurityGroupAllRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DeleteSecurityGroupAllRuleRequest&, DeleteSecurityGroupAllRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupAllRuleAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSecurityGroupRuleResponse> DeleteSecurityGroupRuleOutcome;
+                typedef std::future<DeleteSecurityGroupRuleOutcome> DeleteSecurityGroupRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DeleteSecurityGroupRuleRequest&, DeleteSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupRuleAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAcListsResponse> DescribeAcListsOutcome;
                 typedef std::future<DescribeAcListsOutcome> DescribeAcListsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAcListsRequest&, DescribeAcListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAcListsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAssociatedInstanceListResponse> DescribeAssociatedInstanceListOutcome;
+                typedef std::future<DescribeAssociatedInstanceListOutcome> DescribeAssociatedInstanceListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeAssociatedInstanceListRequest&, DescribeAssociatedInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssociatedInstanceListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNatRuleOverviewResponse> DescribeNatRuleOverviewOutcome;
                 typedef std::future<DescribeNatRuleOverviewOutcome> DescribeNatRuleOverviewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatRuleOverviewRequest&, DescribeNatRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatRuleOverviewAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRuleOverviewResponse> DescribeRuleOverviewOutcome;
                 typedef std::future<DescribeRuleOverviewOutcome> DescribeRuleOverviewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeRuleOverviewRequest&, DescribeRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleOverviewAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSecurityGroupListResponse> DescribeSecurityGroupListOutcome;
+                typedef std::future<DescribeSecurityGroupListOutcome> DescribeSecurityGroupListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeSecurityGroupListRequest&, DescribeSecurityGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSwitchListsResponse> DescribeSwitchListsOutcome;
                 typedef std::future<DescribeSwitchListsOutcome> DescribeSwitchListsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeSwitchListsRequest&, DescribeSwitchListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSwitchListsAsyncHandler;
@@ -113,6 +140,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyItemSwitchStatusResponse> ModifyItemSwitchStatusOutcome;
                 typedef std::future<ModifyItemSwitchStatusOutcome> ModifyItemSwitchStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyItemSwitchStatusRequest&, ModifyItemSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyItemSwitchStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifySecurityGroupAllRuleStatusResponse> ModifySecurityGroupAllRuleStatusOutcome;
+                typedef std::future<ModifySecurityGroupAllRuleStatusOutcome> ModifySecurityGroupAllRuleStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifySecurityGroupAllRuleStatusRequest&, ModifySecurityGroupAllRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupAllRuleStatusAsyncHandler;
                 typedef Outcome<Error, Model::ModifySequenceRulesResponse> ModifySequenceRulesOutcome;
                 typedef std::future<ModifySequenceRulesOutcome> ModifySequenceRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifySequenceRulesRequest&, ModifySequenceRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySequenceRulesAsyncHandler;
@@ -135,6 +165,15 @@ namespace TencentCloud
                 CreateAcRulesOutcomeCallable CreateAcRulesCallable(const Model::CreateAcRulesRequest& request);
 
                 /**
+                 *创建安全组API规则
+                 * @param req CreateSecurityGroupApiRulesRequest
+                 * @return CreateSecurityGroupApiRulesOutcome
+                 */
+                CreateSecurityGroupApiRulesOutcome CreateSecurityGroupApiRules(const Model::CreateSecurityGroupApiRulesRequest &request);
+                void CreateSecurityGroupApiRulesAsync(const Model::CreateSecurityGroupApiRulesRequest& request, const CreateSecurityGroupApiRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityGroupApiRulesOutcomeCallable CreateSecurityGroupApiRulesCallable(const Model::CreateSecurityGroupApiRulesRequest& request);
+
+                /**
                  *删除规则
                  * @param req DeleteAcRuleRequest
                  * @return DeleteAcRuleOutcome
@@ -153,6 +192,24 @@ namespace TencentCloud
                 DeleteAllAccessControlRuleOutcomeCallable DeleteAllAccessControlRuleCallable(const Model::DeleteAllAccessControlRuleRequest& request);
 
                 /**
+                 *删除全部规则
+                 * @param req DeleteSecurityGroupAllRuleRequest
+                 * @return DeleteSecurityGroupAllRuleOutcome
+                 */
+                DeleteSecurityGroupAllRuleOutcome DeleteSecurityGroupAllRule(const Model::DeleteSecurityGroupAllRuleRequest &request);
+                void DeleteSecurityGroupAllRuleAsync(const Model::DeleteSecurityGroupAllRuleRequest& request, const DeleteSecurityGroupAllRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityGroupAllRuleOutcomeCallable DeleteSecurityGroupAllRuleCallable(const Model::DeleteSecurityGroupAllRuleRequest& request);
+
+                /**
+                 *删除规则
+                 * @param req DeleteSecurityGroupRuleRequest
+                 * @return DeleteSecurityGroupRuleOutcome
+                 */
+                DeleteSecurityGroupRuleOutcome DeleteSecurityGroupRule(const Model::DeleteSecurityGroupRuleRequest &request);
+                void DeleteSecurityGroupRuleAsync(const Model::DeleteSecurityGroupRuleRequest& request, const DeleteSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityGroupRuleOutcomeCallable DeleteSecurityGroupRuleCallable(const Model::DeleteSecurityGroupRuleRequest& request);
+
+                /**
                  *访问控制列表
                  * @param req DescribeAcListsRequest
                  * @return DescribeAcListsOutcome
@@ -160,6 +217,15 @@ namespace TencentCloud
                 DescribeAcListsOutcome DescribeAcLists(const Model::DescribeAcListsRequest &request);
                 void DescribeAcListsAsync(const Model::DescribeAcListsRequest& request, const DescribeAcListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAcListsOutcomeCallable DescribeAcListsCallable(const Model::DescribeAcListsRequest& request);
+
+                /**
+                 *获取安全组关联实例列表
+                 * @param req DescribeAssociatedInstanceListRequest
+                 * @return DescribeAssociatedInstanceListOutcome
+                 */
+                DescribeAssociatedInstanceListOutcome DescribeAssociatedInstanceList(const Model::DescribeAssociatedInstanceListRequest &request);
+                void DescribeAssociatedInstanceListAsync(const Model::DescribeAssociatedInstanceListRequest& request, const DescribeAssociatedInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssociatedInstanceListOutcomeCallable DescribeAssociatedInstanceListCallable(const Model::DescribeAssociatedInstanceListRequest& request);
 
                 /**
                  *nat规则列表概况
@@ -178,6 +244,15 @@ namespace TencentCloud
                 DescribeRuleOverviewOutcome DescribeRuleOverview(const Model::DescribeRuleOverviewRequest &request);
                 void DescribeRuleOverviewAsync(const Model::DescribeRuleOverviewRequest& request, const DescribeRuleOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRuleOverviewOutcomeCallable DescribeRuleOverviewCallable(const Model::DescribeRuleOverviewRequest& request);
+
+                /**
+                 *查询安全组规则列表
+                 * @param req DescribeSecurityGroupListRequest
+                 * @return DescribeSecurityGroupListOutcome
+                 */
+                DescribeSecurityGroupListOutcome DescribeSecurityGroupList(const Model::DescribeSecurityGroupListRequest &request);
+                void DescribeSecurityGroupListAsync(const Model::DescribeSecurityGroupListRequest& request, const DescribeSecurityGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityGroupListOutcomeCallable DescribeSecurityGroupListCallable(const Model::DescribeSecurityGroupListRequest& request);
 
                 /**
                  *防火墙开关列表
@@ -250,6 +325,15 @@ namespace TencentCloud
                 ModifyItemSwitchStatusOutcome ModifyItemSwitchStatus(const Model::ModifyItemSwitchStatusRequest &request);
                 void ModifyItemSwitchStatusAsync(const Model::ModifyItemSwitchStatusRequest& request, const ModifyItemSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyItemSwitchStatusOutcomeCallable ModifyItemSwitchStatusCallable(const Model::ModifyItemSwitchStatusRequest& request);
+
+                /**
+                 *启用停用全部规则
+                 * @param req ModifySecurityGroupAllRuleStatusRequest
+                 * @return ModifySecurityGroupAllRuleStatusOutcome
+                 */
+                ModifySecurityGroupAllRuleStatusOutcome ModifySecurityGroupAllRuleStatus(const Model::ModifySecurityGroupAllRuleStatusRequest &request);
+                void ModifySecurityGroupAllRuleStatusAsync(const Model::ModifySecurityGroupAllRuleStatusRequest& request, const ModifySecurityGroupAllRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityGroupAllRuleStatusOutcomeCallable ModifySecurityGroupAllRuleStatusCallable(const Model::ModifySecurityGroupAllRuleStatusRequest& request);
 
                 /**
                  *修改规则执行顺序

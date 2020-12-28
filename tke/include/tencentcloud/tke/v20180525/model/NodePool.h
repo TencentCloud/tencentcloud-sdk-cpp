@@ -299,6 +299,72 @@ namespace TencentCloud
                      */
                     bool DesiredNodesNumHasBeenSet() const;
 
+                    /**
+                     * 获取节点池osName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodePoolOs 节点池osName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNodePoolOs() const;
+
+                    /**
+                     * 设置节点池osName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodePoolOs 节点池osName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodePoolOs(const std::string& _nodePoolOs);
+
+                    /**
+                     * 判断参数 NodePoolOs 是否已赋值
+                     * @return NodePoolOs 是否已赋值
+                     */
+                    bool NodePoolOsHasBeenSet() const;
+
+                    /**
+                     * 获取容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOsCustomizeType() const;
+
+                    /**
+                     * 设置容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOsCustomizeType(const std::string& _osCustomizeType);
+
+                    /**
+                     * 判断参数 OsCustomizeType 是否已赋值
+                     * @return OsCustomizeType 是否已赋值
+                     */
+                    bool OsCustomizeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取镜像id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageId 镜像id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetImageId() const;
+
+                    /**
+                     * 设置镜像id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageId 镜像id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageId(const std::string& _imageId);
+
+                    /**
+                     * 判断参数 ImageId 是否已赋值
+                     * @return ImageId 是否已赋值
+                     */
+                    bool ImageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -382,6 +448,27 @@ namespace TencentCloud
                      */
                     int64_t m_desiredNodesNum;
                     bool m_desiredNodesNumHasBeenSet;
+
+                    /**
+                     * 节点池osName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nodePoolOs;
+                    bool m_nodePoolOsHasBeenSet;
+
+                    /**
+                     * 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_osCustomizeType;
+                    bool m_osCustomizeTypeHasBeenSet;
+
+                    /**
+                     * 镜像id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imageId;
+                    bool m_imageIdHasBeenSet;
 
                 };
             }

@@ -34,7 +34,10 @@ NodePool::NodePool() :
     m_autoscalingGroupStatusHasBeenSet(false),
     m_maxNodesNumHasBeenSet(false),
     m_minNodesNumHasBeenSet(false),
-    m_desiredNodesNumHasBeenSet(false)
+    m_desiredNodesNumHasBeenSet(false),
+    m_nodePoolOsHasBeenSet(false),
+    m_osCustomizeTypeHasBeenSet(false),
+    m_imageIdHasBeenSet(false)
 {
 }
 
@@ -200,6 +203,36 @@ CoreInternalOutcome NodePool::Deserialize(const Value &value)
         m_desiredNodesNumHasBeenSet = true;
     }
 
+    if (value.HasMember("NodePoolOs") && !value["NodePoolOs"].IsNull())
+    {
+        if (!value["NodePoolOs"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NodePool.NodePoolOs` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodePoolOs = string(value["NodePoolOs"].GetString());
+        m_nodePoolOsHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsCustomizeType") && !value["OsCustomizeType"].IsNull())
+    {
+        if (!value["OsCustomizeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NodePool.OsCustomizeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osCustomizeType = string(value["OsCustomizeType"].GetString());
+        m_osCustomizeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageId") && !value["ImageId"].IsNull())
+    {
+        if (!value["ImageId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NodePool.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageId = string(value["ImageId"].GetString());
+        m_imageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +357,30 @@ void NodePool::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "DesiredNodesNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredNodesNum, allocator);
+    }
+
+    if (m_nodePoolOsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodePoolOs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_nodePoolOs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osCustomizeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OsCustomizeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -535,5 +592,53 @@ void NodePool::SetDesiredNodesNum(const int64_t& _desiredNodesNum)
 bool NodePool::DesiredNodesNumHasBeenSet() const
 {
     return m_desiredNodesNumHasBeenSet;
+}
+
+string NodePool::GetNodePoolOs() const
+{
+    return m_nodePoolOs;
+}
+
+void NodePool::SetNodePoolOs(const string& _nodePoolOs)
+{
+    m_nodePoolOs = _nodePoolOs;
+    m_nodePoolOsHasBeenSet = true;
+}
+
+bool NodePool::NodePoolOsHasBeenSet() const
+{
+    return m_nodePoolOsHasBeenSet;
+}
+
+string NodePool::GetOsCustomizeType() const
+{
+    return m_osCustomizeType;
+}
+
+void NodePool::SetOsCustomizeType(const string& _osCustomizeType)
+{
+    m_osCustomizeType = _osCustomizeType;
+    m_osCustomizeTypeHasBeenSet = true;
+}
+
+bool NodePool::OsCustomizeTypeHasBeenSet() const
+{
+    return m_osCustomizeTypeHasBeenSet;
+}
+
+string NodePool::GetImageId() const
+{
+    return m_imageId;
+}
+
+void NodePool::SetImageId(const string& _imageId)
+{
+    m_imageId = _imageId;
+    m_imageIdHasBeenSet = true;
+}
+
+bool NodePool::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
 }
 

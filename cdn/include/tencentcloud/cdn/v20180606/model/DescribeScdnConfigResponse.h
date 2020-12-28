@@ -107,6 +107,20 @@ namespace TencentCloud
                      */
                     bool BotHasBeenSet() const;
 
+                    /**
+                     * 获取当前状态，取值online | offline
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 当前状态，取值online | offline
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,6 +152,13 @@ namespace TencentCloud
                      */
                     ScdnBotConfig m_bot;
                     bool m_botHasBeenSet;
+
+                    /**
+                     * 当前状态，取值online | offline
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

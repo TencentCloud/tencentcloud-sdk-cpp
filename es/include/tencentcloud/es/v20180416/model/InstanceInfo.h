@@ -1075,6 +1075,28 @@ namespace TencentCloud
                      */
                     bool SceneTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Kibana配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KibanaConfig Kibana配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKibanaConfig() const;
+
+                    /**
+                     * 设置Kibana配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KibanaConfig Kibana配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKibanaConfig(const std::string& _kibanaConfig);
+
+                    /**
+                     * 判断参数 KibanaConfig 是否已赋值
+                     * @return KibanaConfig 是否已赋值
+                     */
+                    bool KibanaConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1411,6 +1433,13 @@ namespace TencentCloud
                      */
                     int64_t m_sceneType;
                     bool m_sceneTypeHasBeenSet;
+
+                    /**
+                     * Kibana配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kibanaConfig;
+                    bool m_kibanaConfigHasBeenSet;
 
                 };
             }

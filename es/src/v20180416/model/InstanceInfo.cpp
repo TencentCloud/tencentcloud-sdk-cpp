@@ -74,7 +74,8 @@ InstanceInfo::InstanceInfo() :
     m_kibanaPublicAccessHasBeenSet(false),
     m_kibanaPrivateAccessHasBeenSet(false),
     m_securityTypeHasBeenSet(false),
-    m_sceneTypeHasBeenSet(false)
+    m_sceneTypeHasBeenSet(false),
+    m_kibanaConfigHasBeenSet(false)
 {
 }
 
@@ -678,6 +679,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const Value &value)
         m_sceneTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("KibanaConfig") && !value["KibanaConfig"].IsNull())
+    {
+        if (!value["KibanaConfig"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.KibanaConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kibanaConfig = string(value["KibanaConfig"].GetString());
+        m_kibanaConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1133,6 +1144,14 @@ void InstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "SceneType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sceneType, allocator);
+    }
+
+    if (m_kibanaConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KibanaConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_kibanaConfig.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1984,5 +2003,21 @@ void InstanceInfo::SetSceneType(const int64_t& _sceneType)
 bool InstanceInfo::SceneTypeHasBeenSet() const
 {
     return m_sceneTypeHasBeenSet;
+}
+
+string InstanceInfo::GetKibanaConfig() const
+{
+    return m_kibanaConfig;
+}
+
+void InstanceInfo::SetKibanaConfig(const string& _kibanaConfig)
+{
+    m_kibanaConfig = _kibanaConfig;
+    m_kibanaConfigHasBeenSet = true;
+}
+
+bool InstanceInfo::KibanaConfigHasBeenSet() const
+{
+    return m_kibanaConfigHasBeenSet;
 }
 

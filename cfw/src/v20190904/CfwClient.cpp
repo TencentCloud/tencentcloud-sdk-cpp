@@ -83,6 +83,49 @@ CfwClient::CreateAcRulesOutcomeCallable CfwClient::CreateAcRulesCallable(const C
     return task->get_future();
 }
 
+CfwClient::CreateSecurityGroupApiRulesOutcome CfwClient::CreateSecurityGroupApiRules(const CreateSecurityGroupApiRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSecurityGroupApiRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSecurityGroupApiRulesResponse rsp = CreateSecurityGroupApiRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSecurityGroupApiRulesOutcome(rsp);
+        else
+            return CreateSecurityGroupApiRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSecurityGroupApiRulesOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateSecurityGroupApiRulesAsync(const CreateSecurityGroupApiRulesRequest& request, const CreateSecurityGroupApiRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSecurityGroupApiRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateSecurityGroupApiRulesOutcomeCallable CfwClient::CreateSecurityGroupApiRulesCallable(const CreateSecurityGroupApiRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSecurityGroupApiRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSecurityGroupApiRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DeleteAcRuleOutcome CfwClient::DeleteAcRule(const DeleteAcRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAcRule");
@@ -169,6 +212,92 @@ CfwClient::DeleteAllAccessControlRuleOutcomeCallable CfwClient::DeleteAllAccessC
     return task->get_future();
 }
 
+CfwClient::DeleteSecurityGroupAllRuleOutcome CfwClient::DeleteSecurityGroupAllRule(const DeleteSecurityGroupAllRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSecurityGroupAllRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSecurityGroupAllRuleResponse rsp = DeleteSecurityGroupAllRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSecurityGroupAllRuleOutcome(rsp);
+        else
+            return DeleteSecurityGroupAllRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSecurityGroupAllRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DeleteSecurityGroupAllRuleAsync(const DeleteSecurityGroupAllRuleRequest& request, const DeleteSecurityGroupAllRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSecurityGroupAllRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DeleteSecurityGroupAllRuleOutcomeCallable CfwClient::DeleteSecurityGroupAllRuleCallable(const DeleteSecurityGroupAllRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSecurityGroupAllRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSecurityGroupAllRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DeleteSecurityGroupRuleOutcome CfwClient::DeleteSecurityGroupRule(const DeleteSecurityGroupRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSecurityGroupRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSecurityGroupRuleResponse rsp = DeleteSecurityGroupRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSecurityGroupRuleOutcome(rsp);
+        else
+            return DeleteSecurityGroupRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSecurityGroupRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DeleteSecurityGroupRuleAsync(const DeleteSecurityGroupRuleRequest& request, const DeleteSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSecurityGroupRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DeleteSecurityGroupRuleOutcomeCallable CfwClient::DeleteSecurityGroupRuleCallable(const DeleteSecurityGroupRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSecurityGroupRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSecurityGroupRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeAcListsOutcome CfwClient::DescribeAcLists(const DescribeAcListsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAcLists");
@@ -205,6 +334,49 @@ CfwClient::DescribeAcListsOutcomeCallable CfwClient::DescribeAcListsCallable(con
         [this, request]()
         {
             return this->DescribeAcLists(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeAssociatedInstanceListOutcome CfwClient::DescribeAssociatedInstanceList(const DescribeAssociatedInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssociatedInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssociatedInstanceListResponse rsp = DescribeAssociatedInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssociatedInstanceListOutcome(rsp);
+        else
+            return DescribeAssociatedInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssociatedInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeAssociatedInstanceListAsync(const DescribeAssociatedInstanceListRequest& request, const DescribeAssociatedInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssociatedInstanceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeAssociatedInstanceListOutcomeCallable CfwClient::DescribeAssociatedInstanceListCallable(const DescribeAssociatedInstanceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssociatedInstanceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssociatedInstanceList(request);
         }
     );
 
@@ -291,6 +463,49 @@ CfwClient::DescribeRuleOverviewOutcomeCallable CfwClient::DescribeRuleOverviewCa
         [this, request]()
         {
             return this->DescribeRuleOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeSecurityGroupListOutcome CfwClient::DescribeSecurityGroupList(const DescribeSecurityGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityGroupListResponse rsp = DescribeSecurityGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityGroupListOutcome(rsp);
+        else
+            return DescribeSecurityGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityGroupListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeSecurityGroupListAsync(const DescribeSecurityGroupListRequest& request, const DescribeSecurityGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeSecurityGroupListOutcomeCallable CfwClient::DescribeSecurityGroupListCallable(const DescribeSecurityGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityGroupList(request);
         }
     );
 
@@ -635,6 +850,49 @@ CfwClient::ModifyItemSwitchStatusOutcomeCallable CfwClient::ModifyItemSwitchStat
         [this, request]()
         {
             return this->ModifyItemSwitchStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::ModifySecurityGroupAllRuleStatusOutcome CfwClient::ModifySecurityGroupAllRuleStatus(const ModifySecurityGroupAllRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecurityGroupAllRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecurityGroupAllRuleStatusResponse rsp = ModifySecurityGroupAllRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecurityGroupAllRuleStatusOutcome(rsp);
+        else
+            return ModifySecurityGroupAllRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecurityGroupAllRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifySecurityGroupAllRuleStatusAsync(const ModifySecurityGroupAllRuleStatusRequest& request, const ModifySecurityGroupAllRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecurityGroupAllRuleStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifySecurityGroupAllRuleStatusOutcomeCallable CfwClient::ModifySecurityGroupAllRuleStatusCallable(const ModifySecurityGroupAllRuleStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecurityGroupAllRuleStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecurityGroupAllRuleStatus(request);
         }
     );
 
