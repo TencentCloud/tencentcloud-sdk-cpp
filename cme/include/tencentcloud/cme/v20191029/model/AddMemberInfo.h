@@ -82,6 +82,32 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取团队成员角色，不填则默认添加普通成员。可选值：
+<li>Admin：团队管理员；</li>
+<li>Member：普通成员。</li>
+                     * @return Role 团队成员角色，不填则默认添加普通成员。可选值：
+<li>Admin：团队管理员；</li>
+<li>Member：普通成员。</li>
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置团队成员角色，不填则默认添加普通成员。可选值：
+<li>Admin：团队管理员；</li>
+<li>Member：普通成员。</li>
+                     * @param Role 团队成员角色，不填则默认添加普通成员。可选值：
+<li>Admin：团队管理员；</li>
+<li>Member：普通成员。</li>
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     */
+                    bool RoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +121,14 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 团队成员角色，不填则默认添加普通成员。可选值：
+<li>Admin：团队管理员；</li>
+<li>Member：普通成员。</li>
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace std;
 
 AddMemberInfo::AddMemberInfo() :
     m_memberIdHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_roleHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome AddMemberInfo::Deserialize(const Value &value)
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("Role") && !value["Role"].IsNull())
+    {
+        if (!value["Role"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AddMemberInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_role = string(value["Role"].GetString());
+        m_roleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void AddMemberInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void AddMemberInfo::SetRemark(const string& _remark)
 bool AddMemberInfo::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string AddMemberInfo::GetRole() const
+{
+    return m_role;
+}
+
+void AddMemberInfo::SetRole(const string& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool AddMemberInfo::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
 }
 

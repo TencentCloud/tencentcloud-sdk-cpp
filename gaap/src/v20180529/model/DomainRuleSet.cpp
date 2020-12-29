@@ -39,7 +39,8 @@ DomainRuleSet::DomainRuleSet() :
     m_gaapCertificateAliasHasBeenSet(false),
     m_realServerCertificateDomainHasBeenSet(false),
     m_polyClientCertificateAliasInfoHasBeenSet(false),
-    m_polyRealServerCertificateAliasInfoHasBeenSet(false)
+    m_polyRealServerCertificateAliasInfoHasBeenSet(false),
+    m_domainStatusHasBeenSet(false)
 {
 }
 
@@ -258,6 +259,16 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const Value &value)
         m_polyRealServerCertificateAliasInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("DomainStatus") && !value["DomainStatus"].IsNull())
+    {
+        if (!value["DomainStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DomainRuleSet.DomainStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainStatus = value["DomainStatus"].GetUint64();
+        m_domainStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -428,6 +439,14 @@ void DomainRuleSet::ToJsonObject(Value &value, Document::AllocatorType& allocato
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_domainStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DomainStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_domainStatus, allocator);
     }
 
 }
@@ -719,5 +738,21 @@ void DomainRuleSet::SetPolyRealServerCertificateAliasInfo(const vector<Certifica
 bool DomainRuleSet::PolyRealServerCertificateAliasInfoHasBeenSet() const
 {
     return m_polyRealServerCertificateAliasInfoHasBeenSet;
+}
+
+uint64_t DomainRuleSet::GetDomainStatus() const
+{
+    return m_domainStatus;
+}
+
+void DomainRuleSet::SetDomainStatus(const uint64_t& _domainStatus)
+{
+    m_domainStatus = _domainStatus;
+    m_domainStatusHasBeenSet = true;
+}
+
+bool DomainRuleSet::DomainStatusHasBeenSet() const
+{
+    return m_domainStatusHasBeenSet;
 }
 

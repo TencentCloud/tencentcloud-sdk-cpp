@@ -197,6 +197,8 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyLoadBalancerAttributesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleConfigRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleConfigResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyModuleDisableWanIpRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyModuleDisableWanIpResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleIpDirectRequest.h>
@@ -526,6 +528,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyModuleConfigResponse> ModifyModuleConfigOutcome;
                 typedef std::future<ModifyModuleConfigOutcome> ModifyModuleConfigOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyModuleConfigRequest&, ModifyModuleConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleConfigAsyncHandler;
+                typedef Outcome<Error, Model::ModifyModuleDisableWanIpResponse> ModifyModuleDisableWanIpOutcome;
+                typedef std::future<ModifyModuleDisableWanIpOutcome> ModifyModuleDisableWanIpOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyModuleDisableWanIpRequest&, ModifyModuleDisableWanIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleDisableWanIpAsyncHandler;
                 typedef Outcome<Error, Model::ModifyModuleImageResponse> ModifyModuleImageOutcome;
                 typedef std::future<ModifyModuleImageOutcome> ModifyModuleImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyModuleImageRequest&, ModifyModuleImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleImageAsyncHandler;
@@ -1417,6 +1422,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyModuleConfigOutcome ModifyModuleConfig(const Model::ModifyModuleConfigRequest &request);
                 void ModifyModuleConfigAsync(const Model::ModifyModuleConfigRequest& request, const ModifyModuleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyModuleConfigOutcomeCallable ModifyModuleConfigCallable(const Model::ModifyModuleConfigRequest& request);
+
+                /**
+                 *修改模块是否禁止分配外网ip的属性。
+                 * @param req ModifyModuleDisableWanIpRequest
+                 * @return ModifyModuleDisableWanIpOutcome
+                 */
+                ModifyModuleDisableWanIpOutcome ModifyModuleDisableWanIp(const Model::ModifyModuleDisableWanIpRequest &request);
+                void ModifyModuleDisableWanIpAsync(const Model::ModifyModuleDisableWanIpRequest& request, const ModifyModuleDisableWanIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyModuleDisableWanIpOutcomeCallable ModifyModuleDisableWanIpCallable(const Model::ModifyModuleDisableWanIpRequest& request);
 
                 /**
                  *修改模块的默认镜像

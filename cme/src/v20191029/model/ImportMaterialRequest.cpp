@@ -25,9 +25,11 @@ using namespace std;
 
 ImportMaterialRequest::ImportMaterialRequest() :
     m_platformHasBeenSet(false),
-    m_vodFileIdHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_vodFileIdHasBeenSet(false),
+    m_externalMediaInfoHasBeenSet(false),
     m_classPathHasBeenSet(false),
     m_preProcessDefinitionHasBeenSet(false),
     m_operatorHasBeenSet(false)
@@ -49,14 +51,6 @@ string ImportMaterialRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_platform.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_vodFileIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "VodFileId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_vodFileId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_ownerHasBeenSet)
     {
         Value iKey(kStringType);
@@ -72,6 +66,31 @@ string ImportMaterialRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vodFileIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VodFileId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_vodFileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalMediaInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExternalMediaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_externalMediaInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_classPathHasBeenSet)
@@ -122,22 +141,6 @@ bool ImportMaterialRequest::PlatformHasBeenSet() const
     return m_platformHasBeenSet;
 }
 
-string ImportMaterialRequest::GetVodFileId() const
-{
-    return m_vodFileId;
-}
-
-void ImportMaterialRequest::SetVodFileId(const string& _vodFileId)
-{
-    m_vodFileId = _vodFileId;
-    m_vodFileIdHasBeenSet = true;
-}
-
-bool ImportMaterialRequest::VodFileIdHasBeenSet() const
-{
-    return m_vodFileIdHasBeenSet;
-}
-
 Entity ImportMaterialRequest::GetOwner() const
 {
     return m_owner;
@@ -168,6 +171,54 @@ void ImportMaterialRequest::SetName(const string& _name)
 bool ImportMaterialRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string ImportMaterialRequest::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void ImportMaterialRequest::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool ImportMaterialRequest::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+string ImportMaterialRequest::GetVodFileId() const
+{
+    return m_vodFileId;
+}
+
+void ImportMaterialRequest::SetVodFileId(const string& _vodFileId)
+{
+    m_vodFileId = _vodFileId;
+    m_vodFileIdHasBeenSet = true;
+}
+
+bool ImportMaterialRequest::VodFileIdHasBeenSet() const
+{
+    return m_vodFileIdHasBeenSet;
+}
+
+ExternalMediaInfo ImportMaterialRequest::GetExternalMediaInfo() const
+{
+    return m_externalMediaInfo;
+}
+
+void ImportMaterialRequest::SetExternalMediaInfo(const ExternalMediaInfo& _externalMediaInfo)
+{
+    m_externalMediaInfo = _externalMediaInfo;
+    m_externalMediaInfoHasBeenSet = true;
+}
+
+bool ImportMaterialRequest::ExternalMediaInfoHasBeenSet() const
+{
+    return m_externalMediaInfoHasBeenSet;
 }
 
 string ImportMaterialRequest::GetClassPath() const

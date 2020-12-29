@@ -25,6 +25,7 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeTeamsResponse::DescribeTeamsResponse() :
+    m_totalCountHasBeenSet(false),
     m_teamSetHasBeenSet(false)
 {
 }
@@ -63,6 +64,16 @@ CoreInternalOutcome DescribeTeamsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
     if (rsp.HasMember("TeamSet") && !rsp["TeamSet"].IsNull())
     {
         if (!rsp["TeamSet"].IsArray())
@@ -87,6 +98,16 @@ CoreInternalOutcome DescribeTeamsResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+
+uint64_t DescribeTeamsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeTeamsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 vector<TeamInfo> DescribeTeamsResponse::GetTeamSet() const
 {

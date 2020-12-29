@@ -44,6 +44,18 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取符合条件的记录总数。
+                     * @return TotalCount 符合条件的记录总数。
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
                      * 获取团队列表。
                      * @return TeamSet 团队列表。
                      */
@@ -56,6 +68,12 @@ namespace TencentCloud
                     bool TeamSetHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 符合条件的记录总数。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                     /**
                      * 团队列表。

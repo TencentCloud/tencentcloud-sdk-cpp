@@ -138,6 +138,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/TaskBaseInfo.h
   include/tencentcloud/cme/v20191029/model/DeleteClassResponse.h
   include/tencentcloud/cme/v20191029/model/LiveStreamClipProjectInput.h
+  include/tencentcloud/cme/v20191029/model/ExternalMediaInfo.h
   include/tencentcloud/cme/v20191029/model/LinkMaterialInfo.h
   include/tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataResponse.h
   include/tencentcloud/cme/v20191029/model/GrantResourceAuthorizationRequest.h
@@ -267,6 +268,7 @@ set(cme_src
   src/v20191029/model/TaskBaseInfo.cpp
   src/v20191029/model/DeleteClassResponse.cpp
   src/v20191029/model/LiveStreamClipProjectInput.cpp
+  src/v20191029/model/ExternalMediaInfo.cpp
   src/v20191029/model/LinkMaterialInfo.cpp
   src/v20191029/model/ExportVideoByEditorTrackDataResponse.cpp
   src/v20191029/model/GrantResourceAuthorizationRequest.cpp

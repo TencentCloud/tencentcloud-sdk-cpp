@@ -24,7 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeRuleRealServersRequest::DescribeRuleRealServersRequest() :
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,22 @@ string DescribeRuleRealServersRequest::ToJsonString() const
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -65,6 +83,38 @@ void DescribeRuleRealServersRequest::SetRuleId(const string& _ruleId)
 bool DescribeRuleRealServersRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+uint64_t DescribeRuleRealServersRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeRuleRealServersRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeRuleRealServersRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeRuleRealServersRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeRuleRealServersRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeRuleRealServersRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

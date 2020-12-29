@@ -446,7 +446,7 @@ namespace TencentCloud
                 DescribeTeamMembersOutcomeCallable DescribeTeamMembersCallable(const Model::DescribeTeamMembersRequest& request);
 
                 /**
-                 *获取指定团队的信息。
+                 *获取指定团队的信息，拉取团队信息列表。
                  * @param req DescribeTeamsRequest
                  * @return DescribeTeamsOutcome
                  */
@@ -509,7 +509,7 @@ namespace TencentCloud
                 GrantResourceAuthorizationOutcomeCallable GrantResourceAuthorizationCallable(const Model::GrantResourceAuthorizationRequest& request);
 
                 /**
-                 *将云点播媒资文件导入到云剪素材库。
+                 *将云点播媒资文件导入到云剪媒体资源库。
                  * @param req ImportMaterialRequest
                  * @return ImportMaterialOutcome
                  */
@@ -518,7 +518,7 @@ namespace TencentCloud
                 ImportMaterialOutcomeCallable ImportMaterialCallable(const Model::ImportMaterialRequest& request);
 
                 /**
-                 *将云点播中的媒资添加到素材库中，供后续视频编辑使用。
+                 *将云点播中的媒资或者用户自有媒资文件添加到媒体库中，供后续视频编辑使用。
                  * @param req ImportMediaToProjectRequest
                  * @return ImportMediaToProjectOutcome
                  */

@@ -27,7 +27,10 @@ RuleCheckParams::RuleCheckParams() :
     m_pathHasBeenSet(false),
     m_methodHasBeenSet(false),
     m_statusCodeHasBeenSet(false),
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_failedCountInterHasBeenSet(false),
+    m_failedThresholdHasBeenSet(false),
+    m_blockInterHasBeenSet(false)
 {
 }
 
@@ -99,6 +102,36 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const Value &value)
         m_domainHasBeenSet = true;
     }
 
+    if (value.HasMember("FailedCountInter") && !value["FailedCountInter"].IsNull())
+    {
+        if (!value["FailedCountInter"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `RuleCheckParams.FailedCountInter` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failedCountInter = value["FailedCountInter"].GetUint64();
+        m_failedCountInterHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailedThreshold") && !value["FailedThreshold"].IsNull())
+    {
+        if (!value["FailedThreshold"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `RuleCheckParams.FailedThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failedThreshold = value["FailedThreshold"].GetUint64();
+        m_failedThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BlockInter") && !value["BlockInter"].IsNull())
+    {
+        if (!value["BlockInter"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `RuleCheckParams.BlockInter` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_blockInter = value["BlockInter"].GetUint64();
+        m_blockInterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -157,6 +190,30 @@ void RuleCheckParams::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failedCountInterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FailedCountInter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failedCountInter, allocator);
+    }
+
+    if (m_failedThresholdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FailedThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failedThreshold, allocator);
+    }
+
+    if (m_blockInterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BlockInter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blockInter, allocator);
     }
 
 }
@@ -256,5 +313,53 @@ void RuleCheckParams::SetDomain(const string& _domain)
 bool RuleCheckParams::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+uint64_t RuleCheckParams::GetFailedCountInter() const
+{
+    return m_failedCountInter;
+}
+
+void RuleCheckParams::SetFailedCountInter(const uint64_t& _failedCountInter)
+{
+    m_failedCountInter = _failedCountInter;
+    m_failedCountInterHasBeenSet = true;
+}
+
+bool RuleCheckParams::FailedCountInterHasBeenSet() const
+{
+    return m_failedCountInterHasBeenSet;
+}
+
+uint64_t RuleCheckParams::GetFailedThreshold() const
+{
+    return m_failedThreshold;
+}
+
+void RuleCheckParams::SetFailedThreshold(const uint64_t& _failedThreshold)
+{
+    m_failedThreshold = _failedThreshold;
+    m_failedThresholdHasBeenSet = true;
+}
+
+bool RuleCheckParams::FailedThresholdHasBeenSet() const
+{
+    return m_failedThresholdHasBeenSet;
+}
+
+uint64_t RuleCheckParams::GetBlockInter() const
+{
+    return m_blockInter;
+}
+
+void RuleCheckParams::SetBlockInter(const uint64_t& _blockInter)
+{
+    m_blockInter = _blockInter;
+    m_blockInterHasBeenSet = true;
+}
+
+bool RuleCheckParams::BlockInterHasBeenSet() const
+{
+    return m_blockInterHasBeenSet;
 }
 

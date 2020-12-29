@@ -25,7 +25,9 @@ using namespace std;
 
 DescribeTeamsRequest::DescribeTeamsRequest() :
     m_platformHasBeenSet(false),
-    m_teamIdsHasBeenSet(false)
+    m_teamIdsHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,22 @@ string DescribeTeamsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -95,6 +113,38 @@ void DescribeTeamsRequest::SetTeamIds(const vector<string>& _teamIds)
 bool DescribeTeamsRequest::TeamIdsHasBeenSet() const
 {
     return m_teamIdsHasBeenSet;
+}
+
+uint64_t DescribeTeamsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeTeamsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeTeamsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeTeamsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeTeamsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeTeamsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

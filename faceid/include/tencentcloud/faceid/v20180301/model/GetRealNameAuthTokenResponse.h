@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool AuthTokenHasBeenSet() const;
 
                     /**
-                     * 获取实名认证授权地址，认证发起方需要重定向到这个地址获取认证用户的授权
-                     * @return RedirectURL 实名认证授权地址，认证发起方需要重定向到这个地址获取认证用户的授权
+                     * 获取实名认证授权地址，认证发起方需要重定向到这个地址获取认证用户的授权，仅能在微信环境下打开。
+                     * @return RedirectURL 实名认证授权地址，认证发起方需要重定向到这个地址获取认证用户的授权，仅能在微信环境下打开。
                      */
                     std::string GetRedirectURL() const;
 
@@ -75,7 +75,7 @@ namespace TencentCloud
                     bool m_authTokenHasBeenSet;
 
                     /**
-                     * 实名认证授权地址，认证发起方需要重定向到这个地址获取认证用户的授权
+                     * 实名认证授权地址，认证发起方需要重定向到这个地址获取认证用户的授权，仅能在微信环境下打开。
                      */
                     std::string m_redirectURL;
                     bool m_redirectURLHasBeenSet;

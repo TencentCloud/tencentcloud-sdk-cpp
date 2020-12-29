@@ -3781,6 +3781,49 @@ EcmClient::ModifyModuleConfigOutcomeCallable EcmClient::ModifyModuleConfigCallab
     return task->get_future();
 }
 
+EcmClient::ModifyModuleDisableWanIpOutcome EcmClient::ModifyModuleDisableWanIp(const ModifyModuleDisableWanIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModuleDisableWanIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModuleDisableWanIpResponse rsp = ModifyModuleDisableWanIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModuleDisableWanIpOutcome(rsp);
+        else
+            return ModifyModuleDisableWanIpOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModuleDisableWanIpOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyModuleDisableWanIpAsync(const ModifyModuleDisableWanIpRequest& request, const ModifyModuleDisableWanIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyModuleDisableWanIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyModuleDisableWanIpOutcomeCallable EcmClient::ModifyModuleDisableWanIpCallable(const ModifyModuleDisableWanIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyModuleDisableWanIpOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyModuleDisableWanIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ModifyModuleImageOutcome EcmClient::ModifyModuleImage(const ModifyModuleImageRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyModuleImage");

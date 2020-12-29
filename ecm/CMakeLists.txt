@@ -178,7 +178,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/CreateSubnetRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeModuleDetailResponse.h
   include/tencentcloud/ecm/v20190719/model/TaskInput.h
-  include/tencentcloud/ecm/v20190719/model/StopInstancesRequest.h
+  include/tencentcloud/ecm/v20190719/model/ModifyModuleDisableWanIpRequest.h
   include/tencentcloud/ecm/v20190719/model/Backend.h
   include/tencentcloud/ecm/v20190719/model/Subnet.h
   include/tencentcloud/ecm/v20190719/model/ModifyVpcAttributeResponse.h
@@ -196,6 +196,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/MigratePrivateIpAddressResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateImageRequest.h
   include/tencentcloud/ecm/v20190719/model/DeleteRouteTableResponse.h
+  include/tencentcloud/ecm/v20190719/model/ModifyModuleDisableWanIpResponse.h
   include/tencentcloud/ecm/v20190719/model/EnhancedService.h
   include/tencentcloud/ecm/v20190719/model/CreateListenerResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteModuleResponse.h
@@ -306,6 +307,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/Country.h
   include/tencentcloud/ecm/v20190719/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeRouteTablesResponse.h
+  include/tencentcloud/ecm/v20190719/model/StopInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifySubnetAttributeRequest.h
   include/tencentcloud/ecm/v20190719/model/AllocateAddressesResponse.h
   include/tencentcloud/ecm/v20190719/model/DisassociateAddressRequest.h
@@ -496,7 +498,7 @@ set(ecm_src
   src/v20190719/model/CreateSubnetRequest.cpp
   src/v20190719/model/DescribeModuleDetailResponse.cpp
   src/v20190719/model/TaskInput.cpp
-  src/v20190719/model/StopInstancesRequest.cpp
+  src/v20190719/model/ModifyModuleDisableWanIpRequest.cpp
   src/v20190719/model/Backend.cpp
   src/v20190719/model/Subnet.cpp
   src/v20190719/model/ModifyVpcAttributeResponse.cpp
@@ -514,6 +516,7 @@ set(ecm_src
   src/v20190719/model/MigratePrivateIpAddressResponse.cpp
   src/v20190719/model/CreateImageRequest.cpp
   src/v20190719/model/DeleteRouteTableResponse.cpp
+  src/v20190719/model/ModifyModuleDisableWanIpResponse.cpp
   src/v20190719/model/EnhancedService.cpp
   src/v20190719/model/CreateListenerResponse.cpp
   src/v20190719/model/DeleteModuleResponse.cpp
@@ -624,6 +627,7 @@ set(ecm_src
   src/v20190719/model/Country.cpp
   src/v20190719/model/DisassociateSecurityGroupsRequest.cpp
   src/v20190719/model/DescribeRouteTablesResponse.cpp
+  src/v20190719/model/StopInstancesRequest.cpp
   src/v20190719/model/ModifySubnetAttributeRequest.cpp
   src/v20190719/model/AllocateAddressesResponse.cpp
   src/v20190719/model/DisassociateAddressRequest.cpp

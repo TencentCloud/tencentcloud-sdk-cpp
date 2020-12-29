@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/Entity.h>
+#include <tencentcloud/cme/v20191029/model/ExternalMediaInfo.h>
 
 
 namespace TencentCloud
@@ -62,32 +63,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取云点播媒资 FileId。
-                     * @return VodFileId 云点播媒资 FileId。
-                     */
-                    std::string GetVodFileId() const;
-
-                    /**
-                     * 设置云点播媒资 FileId。
-                     * @param VodFileId 云点播媒资 FileId。
-                     */
-                    void SetVodFileId(const std::string& _vodFileId);
-
-                    /**
-                     * 判断参数 VodFileId 是否已赋值
-                     * @return VodFileId 是否已赋值
-                     */
-                    bool VodFileIdHasBeenSet() const;
-
-                    /**
-                     * 获取素材归属者。
-                     * @return Owner 素材归属者。
+                     * 获取媒体归属者，团队或个人。
+                     * @return Owner 媒体归属者，团队或个人。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置素材归属者。
-                     * @param Owner 素材归属者。
+                     * 设置媒体归属者，团队或个人。
+                     * @param Owner 媒体归属者，团队或个人。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -98,14 +81,14 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取素材名称，不能超过30个字符。
-                     * @return Name 素材名称，不能超过30个字符。
+                     * 获取媒体名称，不能超过30个字符。
+                     * @return Name 媒体名称，不能超过30个字符。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置素材名称，不能超过30个字符。
-                     * @param Name 素材名称，不能超过30个字符。
+                     * 设置媒体名称，不能超过30个字符。
+                     * @param Name 媒体名称，不能超过30个字符。
                      */
                     void SetName(const std::string& _name);
 
@@ -116,14 +99,80 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取素材分类路径，形如："/a/b"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。
-                     * @return ClassPath 素材分类路径，形如："/a/b"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。
+                     * 获取导入媒资类型，取值：
+<li>VOD：云点播文件；</li>
+<li>EXTERNAL：媒资绑定。</li>
+注意：如果不填默认为云点播文件。
+                     * @return SourceType 导入媒资类型，取值：
+<li>VOD：云点播文件；</li>
+<li>EXTERNAL：媒资绑定。</li>
+注意：如果不填默认为云点播文件。
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 设置导入媒资类型，取值：
+<li>VOD：云点播文件；</li>
+<li>EXTERNAL：媒资绑定。</li>
+注意：如果不填默认为云点播文件。
+                     * @param SourceType 导入媒资类型，取值：
+<li>VOD：云点播文件；</li>
+<li>EXTERNAL：媒资绑定。</li>
+注意：如果不填默认为云点播文件。
+                     */
+                    void SetSourceType(const std::string& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取云点播媒资 FileId，仅当 SourceType 为 VOD 时有效。
+                     * @return VodFileId 云点播媒资 FileId，仅当 SourceType 为 VOD 时有效。
+                     */
+                    std::string GetVodFileId() const;
+
+                    /**
+                     * 设置云点播媒资 FileId，仅当 SourceType 为 VOD 时有效。
+                     * @param VodFileId 云点播媒资 FileId，仅当 SourceType 为 VOD 时有效。
+                     */
+                    void SetVodFileId(const std::string& _vodFileId);
+
+                    /**
+                     * 判断参数 VodFileId 是否已赋值
+                     * @return VodFileId 是否已赋值
+                     */
+                    bool VodFileIdHasBeenSet() const;
+
+                    /**
+                     * 获取原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。
+                     * @return ExternalMediaInfo 原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。
+                     */
+                    ExternalMediaInfo GetExternalMediaInfo() const;
+
+                    /**
+                     * 设置原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。
+                     * @param ExternalMediaInfo 原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。
+                     */
+                    void SetExternalMediaInfo(const ExternalMediaInfo& _externalMediaInfo);
+
+                    /**
+                     * 判断参数 ExternalMediaInfo 是否已赋值
+                     * @return ExternalMediaInfo 是否已赋值
+                     */
+                    bool ExternalMediaInfoHasBeenSet() const;
+
+                    /**
+                     * 获取媒体分类路径，形如："/a/b"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。
+                     * @return ClassPath 媒体分类路径，形如："/a/b"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。
                      */
                     std::string GetClassPath() const;
 
                     /**
-                     * 设置素材分类路径，形如："/a/b"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。
-                     * @param ClassPath 素材分类路径，形如："/a/b"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。
+                     * 设置媒体分类路径，形如："/a/b"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。
+                     * @param ClassPath 媒体分类路径，形如："/a/b"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。
                      */
                     void SetClassPath(const std::string& _classPath);
 
@@ -134,17 +183,17 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取素材预处理任务模板 ID。取值：
+                     * 获取媒体预处理任务模板 ID。取值：
 <li>10：进行编辑预处理。</li>
-                     * @return PreProcessDefinition 素材预处理任务模板 ID。取值：
+                     * @return PreProcessDefinition 媒体预处理任务模板 ID。取值：
 <li>10：进行编辑预处理。</li>
                      */
                     int64_t GetPreProcessDefinition() const;
 
                     /**
-                     * 设置素材预处理任务模板 ID。取值：
+                     * 设置媒体预处理任务模板 ID。取值：
 <li>10：进行编辑预处理。</li>
-                     * @param PreProcessDefinition 素材预处理任务模板 ID。取值：
+                     * @param PreProcessDefinition 媒体预处理任务模板 ID。取值：
 <li>10：进行编辑预处理。</li>
                      */
                     void SetPreProcessDefinition(const int64_t& _preProcessDefinition);
@@ -182,31 +231,46 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 云点播媒资 FileId。
-                     */
-                    std::string m_vodFileId;
-                    bool m_vodFileIdHasBeenSet;
-
-                    /**
-                     * 素材归属者。
+                     * 媒体归属者，团队或个人。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 素材名称，不能超过30个字符。
+                     * 媒体名称，不能超过30个字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 素材分类路径，形如："/a/b"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。
+                     * 导入媒资类型，取值：
+<li>VOD：云点播文件；</li>
+<li>EXTERNAL：媒资绑定。</li>
+注意：如果不填默认为云点播文件。
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
+
+                    /**
+                     * 云点播媒资 FileId，仅当 SourceType 为 VOD 时有效。
+                     */
+                    std::string m_vodFileId;
+                    bool m_vodFileIdHasBeenSet;
+
+                    /**
+                     * 原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。
+                     */
+                    ExternalMediaInfo m_externalMediaInfo;
+                    bool m_externalMediaInfoHasBeenSet;
+
+                    /**
+                     * 媒体分类路径，形如："/a/b"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;
 
                     /**
-                     * 素材预处理任务模板 ID。取值：
+                     * 媒体预处理任务模板 ID。取值：
 <li>10：进行编辑预处理。</li>
                      */
                     int64_t m_preProcessDefinition;

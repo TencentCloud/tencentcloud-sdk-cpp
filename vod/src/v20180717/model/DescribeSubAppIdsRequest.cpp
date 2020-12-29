@@ -24,9 +24,10 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeSubAppIdsRequest::DescribeSubAppIdsRequest() :
-    m_limitHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -37,20 +38,12 @@ string DescribeSubAppIdsRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_limitHasBeenSet)
+    if (m_nameHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Limit";
+        string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -68,6 +61,22 @@ string DescribeSubAppIdsRequest::ToJsonString() const
         }
     }
 
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -76,20 +85,36 @@ string DescribeSubAppIdsRequest::ToJsonString() const
 }
 
 
-uint64_t DescribeSubAppIdsRequest::GetLimit() const
+string DescribeSubAppIdsRequest::GetName() const
 {
-    return m_limit;
+    return m_name;
 }
 
-void DescribeSubAppIdsRequest::SetLimit(const uint64_t& _limit)
+void DescribeSubAppIdsRequest::SetName(const string& _name)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_name = _name;
+    m_nameHasBeenSet = true;
 }
 
-bool DescribeSubAppIdsRequest::LimitHasBeenSet() const
+bool DescribeSubAppIdsRequest::NameHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_nameHasBeenSet;
+}
+
+vector<ResourceTag> DescribeSubAppIdsRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeSubAppIdsRequest::SetTags(const vector<ResourceTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeSubAppIdsRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 uint64_t DescribeSubAppIdsRequest::GetOffset() const
@@ -108,20 +133,20 @@ bool DescribeSubAppIdsRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-vector<ResourceTag> DescribeSubAppIdsRequest::GetTags() const
+uint64_t DescribeSubAppIdsRequest::GetLimit() const
 {
-    return m_tags;
+    return m_limit;
 }
 
-void DescribeSubAppIdsRequest::SetTags(const vector<ResourceTag>& _tags)
+void DescribeSubAppIdsRequest::SetLimit(const uint64_t& _limit)
 {
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool DescribeSubAppIdsRequest::TagsHasBeenSet() const
+bool DescribeSubAppIdsRequest::LimitHasBeenSet() const
 {
-    return m_tagsHasBeenSet;
+    return m_limitHasBeenSet;
 }
 
 

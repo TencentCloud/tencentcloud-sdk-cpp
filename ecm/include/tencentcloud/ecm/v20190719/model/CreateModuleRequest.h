@@ -231,6 +231,24 @@ namespace TencentCloud
                      */
                     bool DefaultBandWidthInHasBeenSet() const;
 
+                    /**
+                     * 获取是否禁止分配外网IP
+                     * @return DisableWanIp 是否禁止分配外网IP
+                     */
+                    bool GetDisableWanIp() const;
+
+                    /**
+                     * 设置是否禁止分配外网IP
+                     * @param DisableWanIp 是否禁止分配外网IP
+                     */
+                    void SetDisableWanIp(const bool& _disableWanIp);
+
+                    /**
+                     * 判断参数 DisableWanIp 是否已赋值
+                     * @return DisableWanIp 是否已赋值
+                     */
+                    bool DisableWanIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,6 +312,12 @@ namespace TencentCloud
                      */
                     int64_t m_defaultBandWidthIn;
                     bool m_defaultBandWidthInHasBeenSet;
+
+                    /**
+                     * 是否禁止分配外网IP
+                     */
+                    bool m_disableWanIp;
+                    bool m_disableWanIpHasBeenSet;
 
                 };
             }

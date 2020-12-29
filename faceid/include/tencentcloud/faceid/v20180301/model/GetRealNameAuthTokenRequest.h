@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool IDCardHasBeenSet() const;
 
                     /**
-                     * 获取回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方
-                     * @return CallbackURL 回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方
+                     * 获取回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方。仅支持http或https协议。
+                     * @return CallbackURL 回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方。仅支持http或https协议。
                      */
                     std::string GetCallbackURL() const;
 
                     /**
-                     * 设置回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方
-                     * @param CallbackURL 回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方
+                     * 设置回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方。仅支持http或https协议。
+                     * @param CallbackURL 回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方。仅支持http或https协议。
                      */
                     void SetCallbackURL(const std::string& _callbackURL);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_iDCardHasBeenSet;
 
                     /**
-                     * 回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方
+                     * 回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方。仅支持http或https协议。
                      */
                     std::string m_callbackURL;
                     bool m_callbackURLHasBeenSet;

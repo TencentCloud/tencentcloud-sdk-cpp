@@ -26,7 +26,9 @@ using namespace std;
 ImportMediaToProjectRequest::ImportMediaToProjectRequest() :
     m_platformHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
     m_vodFileIdHasBeenSet(false),
+    m_externalMediaInfoHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_preProcessDefinitionHasBeenSet(false)
 {
@@ -55,12 +57,29 @@ string ImportMediaToProjectRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_sourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_vodFileIdHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "VodFileId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_vodFileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalMediaInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExternalMediaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_externalMediaInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -119,6 +138,22 @@ bool ImportMediaToProjectRequest::ProjectIdHasBeenSet() const
     return m_projectIdHasBeenSet;
 }
 
+string ImportMediaToProjectRequest::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void ImportMediaToProjectRequest::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool ImportMediaToProjectRequest::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
 string ImportMediaToProjectRequest::GetVodFileId() const
 {
     return m_vodFileId;
@@ -133,6 +168,22 @@ void ImportMediaToProjectRequest::SetVodFileId(const string& _vodFileId)
 bool ImportMediaToProjectRequest::VodFileIdHasBeenSet() const
 {
     return m_vodFileIdHasBeenSet;
+}
+
+ExternalMediaInfo ImportMediaToProjectRequest::GetExternalMediaInfo() const
+{
+    return m_externalMediaInfo;
+}
+
+void ImportMediaToProjectRequest::SetExternalMediaInfo(const ExternalMediaInfo& _externalMediaInfo)
+{
+    m_externalMediaInfo = _externalMediaInfo;
+    m_externalMediaInfoHasBeenSet = true;
+}
+
+bool ImportMediaToProjectRequest::ExternalMediaInfoHasBeenSet() const
+{
+    return m_externalMediaInfoHasBeenSet;
 }
 
 string ImportMediaToProjectRequest::GetName() const

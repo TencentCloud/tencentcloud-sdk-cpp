@@ -33,7 +33,8 @@ CreateModuleRequest::CreateModuleRequest() :
     m_closeIpDirectHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
-    m_defaultBandWidthInHasBeenSet(false)
+    m_defaultBandWidthInHasBeenSet(false),
+    m_disableWanIpHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,14 @@ string CreateModuleRequest::ToJsonString() const
         string key = "DefaultBandWidthIn";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultBandWidthIn, allocator);
+    }
+
+    if (m_disableWanIpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DisableWanIp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableWanIp, allocator);
     }
 
 
@@ -302,6 +311,22 @@ void CreateModuleRequest::SetDefaultBandWidthIn(const int64_t& _defaultBandWidth
 bool CreateModuleRequest::DefaultBandWidthInHasBeenSet() const
 {
     return m_defaultBandWidthInHasBeenSet;
+}
+
+bool CreateModuleRequest::GetDisableWanIp() const
+{
+    return m_disableWanIp;
+}
+
+void CreateModuleRequest::SetDisableWanIp(const bool& _disableWanIp)
+{
+    m_disableWanIp = _disableWanIp;
+    m_disableWanIpHasBeenSet = true;
+}
+
+bool CreateModuleRequest::DisableWanIpHasBeenSet() const
+{
+    return m_disableWanIpHasBeenSet;
 }
 
 

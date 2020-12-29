@@ -44,22 +44,40 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页拉取的最大返回结果数。默认值：200；最大值：200。
-                     * @return Limit 分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     * 获取子应用名称。
+                     * @return Name 子应用名称。
                      */
-                    uint64_t GetLimit() const;
+                    std::string GetName() const;
 
                     /**
-                     * 设置分页拉取的最大返回结果数。默认值：200；最大值：200。
-                     * @param Limit 分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     * 设置子应用名称。
+                     * @param Name 子应用名称。
                      */
-                    void SetLimit(const uint64_t& _limit);
+                    void SetName(const std::string& _name);
 
                     /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
                      */
-                    bool LimitHasBeenSet() const;
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取标签信息，查询指定标签的子应用列表。
+                     * @return Tags 标签信息，查询指定标签的子应用列表。
+                     */
+                    std::vector<ResourceTag> GetTags() const;
+
+                    /**
+                     * 设置标签信息，查询指定标签的子应用列表。
+                     * @param Tags 标签信息，查询指定标签的子应用列表。
+                     */
+                    void SetTags(const std::vector<ResourceTag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
 
                     /**
                      * 获取分页拉取的起始偏移量。默认值：0。
@@ -80,30 +98,36 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取标签信息，查询指定标签的子应用列表。
-                     * @return Tags 标签信息，查询指定标签的子应用列表。
+                     * 获取分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     * @return Limit 分页拉取的最大返回结果数。默认值：200；最大值：200。
                      */
-                    std::vector<ResourceTag> GetTags() const;
+                    uint64_t GetLimit() const;
 
                     /**
-                     * 设置标签信息，查询指定标签的子应用列表。
-                     * @param Tags 标签信息，查询指定标签的子应用列表。
+                     * 设置分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     * @param Limit 分页拉取的最大返回结果数。默认值：200；最大值：200。
                      */
-                    void SetTags(const std::vector<ResourceTag>& _tags);
+                    void SetLimit(const uint64_t& _limit);
 
                     /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
                      */
-                    bool TagsHasBeenSet() const;
+                    bool LimitHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     * 子应用名称。
                      */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 标签信息，查询指定标签的子应用列表。
+                     */
+                    std::vector<ResourceTag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                     /**
                      * 分页拉取的起始偏移量。默认值：0。
@@ -112,10 +136,10 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 标签信息，查询指定标签的子应用列表。
+                     * 分页拉取的最大返回结果数。默认值：200；最大值：200。
                      */
-                    std::vector<ResourceTag> m_tags;
-                    bool m_tagsHasBeenSet;
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

@@ -460,6 +460,40 @@ namespace TencentCloud
                      */
                     bool PolyRealServerCertificateAliasInfoHasBeenSet() const;
 
+                    /**
+                     * 获取域名的状态。
+0表示运行中，
+1表示变更中，
+2表示删除中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DomainStatus 域名的状态。
+0表示运行中，
+1表示变更中，
+2表示删除中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDomainStatus() const;
+
+                    /**
+                     * 设置域名的状态。
+0表示运行中，
+1表示变更中，
+2表示删除中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DomainStatus 域名的状态。
+0表示运行中，
+1表示变更中，
+2表示删除中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDomainStatus(const uint64_t& _domainStatus);
+
+                    /**
+                     * 判断参数 DomainStatus 是否已赋值
+                     * @return DomainStatus 是否已赋值
+                     */
+                    bool DomainStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -591,6 +625,16 @@ namespace TencentCloud
                      */
                     std::vector<CertificateAliasInfo> m_polyRealServerCertificateAliasInfo;
                     bool m_polyRealServerCertificateAliasInfoHasBeenSet;
+
+                    /**
+                     * 域名的状态。
+0表示运行中，
+1表示变更中，
+2表示删除中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_domainStatus;
+                    bool m_domainStatusHasBeenSet;
 
                 };
             }

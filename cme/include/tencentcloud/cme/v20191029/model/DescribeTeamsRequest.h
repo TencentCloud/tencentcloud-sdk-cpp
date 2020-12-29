@@ -78,6 +78,42 @@ namespace TencentCloud
                      */
                     bool TeamIdsHasBeenSet() const;
 
+                    /**
+                     * 获取分页偏移量，默认值：0。
+                     * @return Offset 分页偏移量，默认值：0。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置分页偏移量，默认值：0。
+                     * @param Offset 分页偏移量，默认值：0。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取返回记录条数，默认值：20，最大值：30。
+                     * @return Limit 返回记录条数，默认值：20，最大值：30。
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置返回记录条数，默认值：20，最大值：30。
+                     * @param Limit 返回记录条数，默认值：20，最大值：30。
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +127,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_teamIds;
                     bool m_teamIdsHasBeenSet;
+
+                    /**
+                     * 分页偏移量，默认值：0。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 返回记录条数，默认值：20，最大值：30。
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }
