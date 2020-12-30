@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询开始日期。
-                     * @return StartTime 查询开始日期。
+                     * 获取查询开始日期，格式为YYYY-MM-DD。
+                     * @return StartTime 查询开始日期，格式为YYYY-MM-DD。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询开始日期。
-                     * @param StartTime 查询开始日期。
+                     * 设置查询开始日期，格式为YYYY-MM-DD。
+                     * @param StartTime 查询开始日期，格式为YYYY-MM-DD。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -61,14 +61,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束日期。
-                     * @return EndTime 查询结束日期。
+                     * 获取查询结束日期，格式为YYYY-MM-DD。
+单次查询统计区间最多不能超过31天。
+                     * @return EndTime 查询结束日期，格式为YYYY-MM-DD。
+单次查询统计区间最多不能超过31天。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束日期。
-                     * @param EndTime 查询结束日期。
+                     * 设置查询结束日期，格式为YYYY-MM-DD。
+单次查询统计区间最多不能超过31天。
+                     * @param EndTime 查询结束日期，格式为YYYY-MM-DD。
+单次查询统计区间最多不能超过31天。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -99,13 +103,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询开始日期。
+                     * 查询开始日期，格式为YYYY-MM-DD。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束日期。
+                     * 查询结束日期，格式为YYYY-MM-DD。
+单次查询统计区间最多不能超过31天。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

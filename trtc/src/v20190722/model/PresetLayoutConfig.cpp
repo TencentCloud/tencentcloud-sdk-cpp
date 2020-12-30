@@ -29,7 +29,9 @@ PresetLayoutConfig::PresetLayoutConfig() :
     m_locationXHasBeenSet(false),
     m_locationYHasBeenSet(false),
     m_zOrderHasBeenSet(false),
-    m_renderModeHasBeenSet(false)
+    m_renderModeHasBeenSet(false),
+    m_mixInputTypeHasBeenSet(false),
+    m_placeImageIdHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,26 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const Value &value)
         m_renderModeHasBeenSet = true;
     }
 
+    if (value.HasMember("MixInputType") && !value["MixInputType"].IsNull())
+    {
+        if (!value["MixInputType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PresetLayoutConfig.MixInputType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mixInputType = value["MixInputType"].GetUint64();
+        m_mixInputTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlaceImageId") && !value["PlaceImageId"].IsNull())
+    {
+        if (!value["PlaceImageId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PresetLayoutConfig.PlaceImageId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_placeImageId = value["PlaceImageId"].GetUint64();
+        m_placeImageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +209,22 @@ void PresetLayoutConfig::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "RenderMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renderMode, allocator);
+    }
+
+    if (m_mixInputTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MixInputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mixInputType, allocator);
+    }
+
+    if (m_placeImageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PlaceImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_placeImageId, allocator);
     }
 
 }
@@ -318,5 +356,37 @@ void PresetLayoutConfig::SetRenderMode(const uint64_t& _renderMode)
 bool PresetLayoutConfig::RenderModeHasBeenSet() const
 {
     return m_renderModeHasBeenSet;
+}
+
+uint64_t PresetLayoutConfig::GetMixInputType() const
+{
+    return m_mixInputType;
+}
+
+void PresetLayoutConfig::SetMixInputType(const uint64_t& _mixInputType)
+{
+    m_mixInputType = _mixInputType;
+    m_mixInputTypeHasBeenSet = true;
+}
+
+bool PresetLayoutConfig::MixInputTypeHasBeenSet() const
+{
+    return m_mixInputTypeHasBeenSet;
+}
+
+uint64_t PresetLayoutConfig::GetPlaceImageId() const
+{
+    return m_placeImageId;
+}
+
+void PresetLayoutConfig::SetPlaceImageId(const uint64_t& _placeImageId)
+{
+    m_placeImageId = _placeImageId;
+    m_placeImageIdHasBeenSet = true;
+}
+
+bool PresetLayoutConfig::PlaceImageIdHasBeenSet() const
+{
+    return m_placeImageIdHasBeenSet;
 }
 

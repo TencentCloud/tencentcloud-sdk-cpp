@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool ZOrderHasBeenSet() const;
 
                     /**
-                     * 获取该画面在输出时的显示模式：0为裁剪，1为缩放，不填默认为0。
-                     * @return RenderMode 该画面在输出时的显示模式：0为裁剪，1为缩放，不填默认为0。
+                     * 获取该画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。
+                     * @return RenderMode 该画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。
                      */
                     uint64_t GetRenderMode() const;
 
                     /**
-                     * 设置该画面在输出时的显示模式：0为裁剪，1为缩放，不填默认为0。
-                     * @param RenderMode 该画面在输出时的显示模式：0为裁剪，1为缩放，不填默认为0。
+                     * 设置该画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。
+                     * @param RenderMode 该画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。
                      */
                     void SetRenderMode(const uint64_t& _renderMode);
 
@@ -189,6 +189,42 @@ namespace TencentCloud
                      * @return RenderMode 是否已赋值
                      */
                     bool RenderModeHasBeenSet() const;
+
+                    /**
+                     * 获取该当前位置用户混入的流类型：0为混入音视频，1为只混入视频，2为只混入音频。默认为0，建议配合指定用户ID使用。
+                     * @return MixInputType 该当前位置用户混入的流类型：0为混入音视频，1为只混入视频，2为只混入音频。默认为0，建议配合指定用户ID使用。
+                     */
+                    uint64_t GetMixInputType() const;
+
+                    /**
+                     * 设置该当前位置用户混入的流类型：0为混入音视频，1为只混入视频，2为只混入音频。默认为0，建议配合指定用户ID使用。
+                     * @param MixInputType 该当前位置用户混入的流类型：0为混入音视频，1为只混入视频，2为只混入音频。默认为0，建议配合指定用户ID使用。
+                     */
+                    void SetMixInputType(const uint64_t& _mixInputType);
+
+                    /**
+                     * 判断参数 MixInputType 是否已赋值
+                     * @return MixInputType 是否已赋值
+                     */
+                    bool MixInputTypeHasBeenSet() const;
+
+                    /**
+                     * 获取占位图ID。实时音视频控制台上传并生成，https://cloud.tencent.com/document/product/647/50769
+                     * @return PlaceImageId 占位图ID。实时音视频控制台上传并生成，https://cloud.tencent.com/document/product/647/50769
+                     */
+                    uint64_t GetPlaceImageId() const;
+
+                    /**
+                     * 设置占位图ID。实时音视频控制台上传并生成，https://cloud.tencent.com/document/product/647/50769
+                     * @param PlaceImageId 占位图ID。实时音视频控制台上传并生成，https://cloud.tencent.com/document/product/647/50769
+                     */
+                    void SetPlaceImageId(const uint64_t& _placeImageId);
+
+                    /**
+                     * 判断参数 PlaceImageId 是否已赋值
+                     * @return PlaceImageId 是否已赋值
+                     */
+                    bool PlaceImageIdHasBeenSet() const;
 
                 private:
 
@@ -235,10 +271,22 @@ namespace TencentCloud
                     bool m_zOrderHasBeenSet;
 
                     /**
-                     * 该画面在输出时的显示模式：0为裁剪，1为缩放，不填默认为0。
+                     * 该画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。
                      */
                     uint64_t m_renderMode;
                     bool m_renderModeHasBeenSet;
+
+                    /**
+                     * 该当前位置用户混入的流类型：0为混入音视频，1为只混入视频，2为只混入音频。默认为0，建议配合指定用户ID使用。
+                     */
+                    uint64_t m_mixInputType;
+                    bool m_mixInputTypeHasBeenSet;
+
+                    /**
+                     * 占位图ID。实时音视频控制台上传并生成，https://cloud.tencent.com/document/product/647/50769
+                     */
+                    uint64_t m_placeImageId;
+                    bool m_placeImageIdHasBeenSet;
 
                 };
             }

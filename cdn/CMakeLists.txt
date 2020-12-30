@@ -164,6 +164,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/RangeOriginPull.h
   include/tencentcloud/cdn/v20180606/model/ListScdnLogTasksRequest.h
   include/tencentcloud/cdn/v20180606/model/SearchClsLogResponse.h
+  include/tencentcloud/cdn/v20180606/model/PathBasedOriginRule.h
   include/tencentcloud/cdn/v20180606/model/PushUrlsCacheRequest.h
   include/tencentcloud/cdn/v20180606/model/MainlandConfig.h
   include/tencentcloud/cdn/v20180606/model/DescribeReportDataRequest.h
@@ -431,6 +432,7 @@ set(cdn_src
   src/v20180606/model/RangeOriginPull.cpp
   src/v20180606/model/ListScdnLogTasksRequest.cpp
   src/v20180606/model/SearchClsLogResponse.cpp
+  src/v20180606/model/PathBasedOriginRule.cpp
   src/v20180606/model/PushUrlsCacheRequest.cpp
   src/v20180606/model/MainlandConfig.cpp
   src/v20180606/model/DescribeReportDataRequest.cpp

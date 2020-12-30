@@ -31,7 +31,8 @@ Origin::Origin() :
     m_backupOriginTypeHasBeenSet(false),
     m_backupServerNameHasBeenSet(false),
     m_basePathHasBeenSet(false),
-    m_pathRulesHasBeenSet(false)
+    m_pathRulesHasBeenSet(false),
+    m_pathBasedOriginHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,26 @@ CoreInternalOutcome Origin::Deserialize(const Value &value)
         m_pathRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("PathBasedOrigin") && !value["PathBasedOrigin"].IsNull())
+    {
+        if (!value["PathBasedOrigin"].IsArray())
+            return CoreInternalOutcome(Error("response `Origin.PathBasedOrigin` is not array type"));
+
+        const Value &tmpValue = value["PathBasedOrigin"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PathBasedOriginRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_pathBasedOrigin.push_back(item);
+        }
+        m_pathBasedOriginHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -254,6 +275,21 @@ void Origin::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
         int i=0;
         for (auto itr = m_pathRules.begin(); itr != m_pathRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_pathBasedOriginHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PathBasedOrigin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_pathBasedOrigin.begin(); itr != m_pathBasedOrigin.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -421,5 +457,21 @@ void Origin::SetPathRules(const vector<PathRule>& _pathRules)
 bool Origin::PathRulesHasBeenSet() const
 {
     return m_pathRulesHasBeenSet;
+}
+
+vector<PathBasedOriginRule> Origin::GetPathBasedOrigin() const
+{
+    return m_pathBasedOrigin;
+}
+
+void Origin::SetPathBasedOrigin(const vector<PathBasedOriginRule>& _pathBasedOrigin)
+{
+    m_pathBasedOrigin = _pathBasedOrigin;
+    m_pathBasedOriginHasBeenSet = true;
+}
+
+bool Origin::PathBasedOriginHasBeenSet() const
+{
+    return m_pathBasedOriginHasBeenSet;
 }
 

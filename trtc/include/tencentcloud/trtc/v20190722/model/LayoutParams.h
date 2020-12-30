@@ -174,6 +174,24 @@ namespace TencentCloud
                      */
                     bool PresetLayoutConfigHasBeenSet() const;
 
+                    /**
+                     * 获取自定义模板中有效，设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。
+                     * @return PlaceHolderMode 自定义模板中有效，设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。
+                     */
+                    uint64_t GetPlaceHolderMode() const;
+
+                    /**
+                     * 设置自定义模板中有效，设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。
+                     * @param PlaceHolderMode 自定义模板中有效，设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。
+                     */
+                    void SetPlaceHolderMode(const uint64_t& _placeHolderMode);
+
+                    /**
+                     * 判断参数 PlaceHolderMode 是否已赋值
+                     * @return PlaceHolderMode 是否已赋值
+                     */
+                    bool PlaceHolderModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +235,12 @@ namespace TencentCloud
                      */
                     std::vector<PresetLayoutConfig> m_presetLayoutConfig;
                     bool m_presetLayoutConfigHasBeenSet;
+
+                    /**
+                     * 自定义模板中有效，设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。
+                     */
+                    uint64_t m_placeHolderMode;
+                    bool m_placeHolderModeHasBeenSet;
 
                 };
             }

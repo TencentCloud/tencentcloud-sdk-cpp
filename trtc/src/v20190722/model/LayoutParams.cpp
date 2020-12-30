@@ -28,7 +28,8 @@ LayoutParams::LayoutParams() :
     m_smallVideoLayoutParamsHasBeenSet(false),
     m_mainVideoRightAlignHasBeenSet(false),
     m_mixVideoUidsHasBeenSet(false),
-    m_presetLayoutConfigHasBeenSet(false)
+    m_presetLayoutConfigHasBeenSet(false),
+    m_placeHolderModeHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
         m_presetLayoutConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("PlaceHolderMode") && !value["PlaceHolderMode"].IsNull())
+    {
+        if (!value["PlaceHolderMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `LayoutParams.PlaceHolderMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_placeHolderMode = value["PlaceHolderMode"].GetUint64();
+        m_placeHolderModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -201,6 +212,14 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_placeHolderModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PlaceHolderMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_placeHolderMode, allocator);
     }
 
 }
@@ -316,5 +335,21 @@ void LayoutParams::SetPresetLayoutConfig(const vector<PresetLayoutConfig>& _pres
 bool LayoutParams::PresetLayoutConfigHasBeenSet() const
 {
     return m_presetLayoutConfigHasBeenSet;
+}
+
+uint64_t LayoutParams::GetPlaceHolderMode() const
+{
+    return m_placeHolderMode;
+}
+
+void LayoutParams::SetPlaceHolderMode(const uint64_t& _placeHolderMode)
+{
+    m_placeHolderMode = _placeHolderMode;
+    m_placeHolderModeHasBeenSet = true;
+}
+
+bool LayoutParams::PlaceHolderModeHasBeenSet() const
+{
+    return m_placeHolderModeHasBeenSet;
 }
 

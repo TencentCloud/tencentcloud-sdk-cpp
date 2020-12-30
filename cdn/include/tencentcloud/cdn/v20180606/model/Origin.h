@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/PathRule.h>
+#include <tencentcloud/cdn/v20180606/model/PathBasedOriginRule.h>
 
 
 namespace TencentCloud
@@ -358,6 +359,28 @@ ip：IP 列表作为源站
                      */
                     bool PathRulesHasBeenSet() const;
 
+                    /**
+                     * 获取分路径回源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PathBasedOrigin 分路径回源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PathBasedOriginRule> GetPathBasedOrigin() const;
+
+                    /**
+                     * 设置分路径回源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PathBasedOrigin 分路径回源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPathBasedOrigin(const std::vector<PathBasedOriginRule>& _pathBasedOrigin);
+
+                    /**
+                     * 判断参数 PathBasedOrigin 是否已赋值
+                     * @return PathBasedOrigin 是否已赋值
+                     */
+                    bool PathBasedOriginHasBeenSet() const;
+
                 private:
 
                     /**
@@ -450,6 +473,13 @@ ip：IP 列表作为源站
                      */
                     std::vector<PathRule> m_pathRules;
                     bool m_pathRulesHasBeenSet;
+
+                    /**
+                     * 分路径回源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PathBasedOriginRule> m_pathBasedOrigin;
+                    bool m_pathBasedOriginHasBeenSet;
 
                 };
             }
