@@ -222,6 +222,32 @@ namespace TencentCloud
                      */
                     bool MainlandOrOverseaHasBeenSet() const;
 
+                    /**
+                     * 获取ip类型：
+“Ipv6”：Ipv6数据
+如果为空，查询总的数据；
+                     * @return IpType ip类型：
+“Ipv6”：Ipv6数据
+如果为空，查询总的数据；
+                     */
+                    std::string GetIpType() const;
+
+                    /**
+                     * 设置ip类型：
+“Ipv6”：Ipv6数据
+如果为空，查询总的数据；
+                     * @param IpType ip类型：
+“Ipv6”：Ipv6数据
+如果为空，查询总的数据；
+                     */
+                    void SetIpType(const std::string& _ipType);
+
+                    /**
+                     * 判断参数 IpType 是否已赋值
+                     * @return IpType 是否已赋值
+                     */
+                    bool IpTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +306,14 @@ namespace TencentCloud
                      */
                     std::string m_mainlandOrOversea;
                     bool m_mainlandOrOverseaHasBeenSet;
+
+                    /**
+                     * ip类型：
+“Ipv6”：Ipv6数据
+如果为空，查询总的数据；
+                     */
+                    std::string m_ipType;
+                    bool m_ipTypeHasBeenSet;
 
                 };
             }

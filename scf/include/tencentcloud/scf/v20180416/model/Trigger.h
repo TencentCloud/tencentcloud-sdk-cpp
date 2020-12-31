@@ -244,6 +244,24 @@ namespace TencentCloud
                      */
                     bool TriggerAttributeHasBeenSet() const;
 
+                    /**
+                     * 获取触发器绑定的别名或版本
+                     * @return Qualifier 触发器绑定的别名或版本
+                     */
+                    std::string GetQualifier() const;
+
+                    /**
+                     * 设置触发器绑定的别名或版本
+                     * @param Qualifier 触发器绑定的别名或版本
+                     */
+                    void SetQualifier(const std::string& _qualifier);
+
+                    /**
+                     * 判断参数 Qualifier 是否已赋值
+                     * @return Qualifier 是否已赋值
+                     */
+                    bool QualifierHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +329,12 @@ namespace TencentCloud
                      */
                     std::string m_triggerAttribute;
                     bool m_triggerAttributeHasBeenSet;
+
+                    /**
+                     * 触发器绑定的别名或版本
+                     */
+                    std::string m_qualifier;
+                    bool m_qualifierHasBeenSet;
 
                 };
             }

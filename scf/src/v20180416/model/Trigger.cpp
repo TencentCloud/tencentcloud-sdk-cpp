@@ -32,7 +32,8 @@ Trigger::Trigger() :
     m_availableStatusHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_bindStatusHasBeenSet(false),
-    m_triggerAttributeHasBeenSet(false)
+    m_triggerAttributeHasBeenSet(false),
+    m_qualifierHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome Trigger::Deserialize(const Value &value)
         m_triggerAttributeHasBeenSet = true;
     }
 
+    if (value.HasMember("Qualifier") && !value["Qualifier"].IsNull())
+    {
+        if (!value["Qualifier"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Trigger.Qualifier` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualifier = string(value["Qualifier"].GetString());
+        m_qualifierHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +255,14 @@ void Trigger::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "TriggerAttribute";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_triggerAttribute.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualifierHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Qualifier";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_qualifier.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -423,5 +442,21 @@ void Trigger::SetTriggerAttribute(const string& _triggerAttribute)
 bool Trigger::TriggerAttributeHasBeenSet() const
 {
     return m_triggerAttributeHasBeenSet;
+}
+
+string Trigger::GetQualifier() const
+{
+    return m_qualifier;
+}
+
+void Trigger::SetQualifier(const string& _qualifier)
+{
+    m_qualifier = _qualifier;
+    m_qualifierHasBeenSet = true;
+}
+
+bool Trigger::QualifierHasBeenSet() const
+{
+    return m_qualifierHasBeenSet;
 }
 

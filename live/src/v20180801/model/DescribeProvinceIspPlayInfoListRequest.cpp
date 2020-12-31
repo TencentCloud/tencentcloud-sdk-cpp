@@ -31,7 +31,8 @@ DescribeProvinceIspPlayInfoListRequest::DescribeProvinceIspPlayInfoListRequest()
     m_playDomainsHasBeenSet(false),
     m_provinceNamesHasBeenSet(false),
     m_ispNamesHasBeenSet(false),
-    m_mainlandOrOverseaHasBeenSet(false)
+    m_mainlandOrOverseaHasBeenSet(false),
+    m_ipTypeHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string DescribeProvinceIspPlayInfoListRequest::ToJsonString() const
         string key = "MainlandOrOversea";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_mainlandOrOversea.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IpType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_ipType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -255,6 +264,22 @@ void DescribeProvinceIspPlayInfoListRequest::SetMainlandOrOversea(const string& 
 bool DescribeProvinceIspPlayInfoListRequest::MainlandOrOverseaHasBeenSet() const
 {
     return m_mainlandOrOverseaHasBeenSet;
+}
+
+string DescribeProvinceIspPlayInfoListRequest::GetIpType() const
+{
+    return m_ipType;
+}
+
+void DescribeProvinceIspPlayInfoListRequest::SetIpType(const string& _ipType)
+{
+    m_ipType = _ipType;
+    m_ipTypeHasBeenSet = true;
+}
+
+bool DescribeProvinceIspPlayInfoListRequest::IpTypeHasBeenSet() const
+{
+    return m_ipTypeHasBeenSet;
 }
 
 
