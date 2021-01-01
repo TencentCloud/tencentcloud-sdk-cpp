@@ -73,6 +73,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePostpayFreeQuotasRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePostpayFreeQuotasResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h>
@@ -180,6 +182,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeExtraPkgBillingInfoResponse> DescribeExtraPkgBillingInfoOutcome;
                 typedef std::future<DescribeExtraPkgBillingInfoOutcome> DescribeExtraPkgBillingInfoOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeExtraPkgBillingInfoRequest&, DescribeExtraPkgBillingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtraPkgBillingInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribePostpayFreeQuotasResponse> DescribePostpayFreeQuotasOutcome;
+                typedef std::future<DescribePostpayFreeQuotasOutcome> DescribePostpayFreeQuotasOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribePostpayFreeQuotasRequest&, DescribePostpayFreeQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePostpayFreeQuotasAsyncHandler;
                 typedef Outcome<Error, Model::DescribePostpayPackageFreeQuotasResponse> DescribePostpayPackageFreeQuotasOutcome;
                 typedef std::future<DescribePostpayPackageFreeQuotasOutcome> DescribePostpayPackageFreeQuotasOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribePostpayPackageFreeQuotasRequest&, DescribePostpayPackageFreeQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePostpayPackageFreeQuotasAsyncHandler;
@@ -434,6 +439,15 @@ namespace TencentCloud
                 DescribeExtraPkgBillingInfoOutcome DescribeExtraPkgBillingInfo(const Model::DescribeExtraPkgBillingInfoRequest &request);
                 void DescribeExtraPkgBillingInfoAsync(const Model::DescribeExtraPkgBillingInfoRequest& request, const DescribeExtraPkgBillingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExtraPkgBillingInfoOutcomeCallable DescribeExtraPkgBillingInfoCallable(const Model::DescribeExtraPkgBillingInfoRequest& request);
+
+                /**
+                 *查询后付费资源免费量
+                 * @param req DescribePostpayFreeQuotasRequest
+                 * @return DescribePostpayFreeQuotasOutcome
+                 */
+                DescribePostpayFreeQuotasOutcome DescribePostpayFreeQuotas(const Model::DescribePostpayFreeQuotasRequest &request);
+                void DescribePostpayFreeQuotasAsync(const Model::DescribePostpayFreeQuotasRequest& request, const DescribePostpayFreeQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePostpayFreeQuotasOutcomeCallable DescribePostpayFreeQuotasCallable(const Model::DescribePostpayFreeQuotasRequest& request);
 
                 /**
                  *获取后付费免费额度

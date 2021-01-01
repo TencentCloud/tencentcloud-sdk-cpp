@@ -1115,6 +1115,49 @@ TcbClient::DescribeExtraPkgBillingInfoOutcomeCallable TcbClient::DescribeExtraPk
     return task->get_future();
 }
 
+TcbClient::DescribePostpayFreeQuotasOutcome TcbClient::DescribePostpayFreeQuotas(const DescribePostpayFreeQuotasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePostpayFreeQuotas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePostpayFreeQuotasResponse rsp = DescribePostpayFreeQuotasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePostpayFreeQuotasOutcome(rsp);
+        else
+            return DescribePostpayFreeQuotasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePostpayFreeQuotasOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribePostpayFreeQuotasAsync(const DescribePostpayFreeQuotasRequest& request, const DescribePostpayFreeQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePostpayFreeQuotas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribePostpayFreeQuotasOutcomeCallable TcbClient::DescribePostpayFreeQuotasCallable(const DescribePostpayFreeQuotasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePostpayFreeQuotasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePostpayFreeQuotas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribePostpayPackageFreeQuotasOutcome TcbClient::DescribePostpayPackageFreeQuotas(const DescribePostpayPackageFreeQuotasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePostpayPackageFreeQuotas");

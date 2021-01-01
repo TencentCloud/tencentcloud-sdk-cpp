@@ -352,14 +352,14 @@ namespace TencentCloud
                     bool SlaveZoneHasBeenSet() const;
 
                     /**
-                     * 获取备库 2 的可用区信息，默认为空，购买强同步主实例时可指定该参数，购买其他类型实例时指定该参数无意义。
-                     * @return BackupZone 备库 2 的可用区信息，默认为空，购买强同步主实例时可指定该参数，购买其他类型实例时指定该参数无意义。
+                     * 获取备库 2 的可用区信息，默认为空，购买三节点主实例时可指定该参数，购买其他类型实例时指定该参数无意义。
+                     * @return BackupZone 备库 2 的可用区信息，默认为空，购买三节点主实例时可指定该参数，购买其他类型实例时指定该参数无意义。
                      */
                     std::string GetBackupZone() const;
 
                     /**
-                     * 设置备库 2 的可用区信息，默认为空，购买强同步主实例时可指定该参数，购买其他类型实例时指定该参数无意义。
-                     * @param BackupZone 备库 2 的可用区信息，默认为空，购买强同步主实例时可指定该参数，购买其他类型实例时指定该参数无意义。
+                     * 设置备库 2 的可用区信息，默认为空，购买三节点主实例时可指定该参数，购买其他类型实例时指定该参数无意义。
+                     * @param BackupZone 备库 2 的可用区信息，默认为空，购买三节点主实例时可指定该参数，购买其他类型实例时指定该参数无意义。
                      */
                     void SetBackupZone(const std::string& _backupZone);
 
@@ -654,7 +654,7 @@ namespace TencentCloud
                     bool m_slaveZoneHasBeenSet;
 
                     /**
-                     * 备库 2 的可用区信息，默认为空，购买强同步主实例时可指定该参数，购买其他类型实例时指定该参数无意义。
+                     * 备库 2 的可用区信息，默认为空，购买三节点主实例时可指定该参数，购买其他类型实例时指定该参数无意义。
                      */
                     std::string m_backupZone;
                     bool m_backupZoneHasBeenSet;
