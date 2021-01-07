@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PureAudioStreamHasBeenSet() const;
 
                     /**
-                     * 获取自定义录制文件名
-                     * @return RecordId 自定义录制文件名
+                     * 获取自定义录制文件名。请先在实时音视频控制台开通录制功能，https://cloud.tencent.com/document/product/647/50768
+                     * @return RecordId 自定义录制文件名。请先在实时音视频控制台开通录制功能，https://cloud.tencent.com/document/product/647/50768
                      */
                     std::string GetRecordId() const;
 
                     /**
-                     * 设置自定义录制文件名
-                     * @param RecordId 自定义录制文件名
+                     * 设置自定义录制文件名。请先在实时音视频控制台开通录制功能，https://cloud.tencent.com/document/product/647/50768
+                     * @param RecordId 自定义录制文件名。请先在实时音视频控制台开通录制功能，https://cloud.tencent.com/document/product/647/50768
                      */
                     void SetRecordId(const std::string& _recordId);
 
@@ -133,7 +133,7 @@ namespace TencentCloud
                     bool m_pureAudioStreamHasBeenSet;
 
                     /**
-                     * 自定义录制文件名
+                     * 自定义录制文件名。请先在实时音视频控制台开通录制功能，https://cloud.tencent.com/document/product/647/50768
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;

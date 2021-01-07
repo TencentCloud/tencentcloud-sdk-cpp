@@ -43,25 +43,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片的 Base64 值。
-支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
-支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
+                     * 获取图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @return ImageBase64 图片的 Base64 值。
-支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
-支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
+                     * @return ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置图片的 Base64 值。
-支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
-支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
+                     * 设置图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param ImageBase64 图片的 Base64 值。
-支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
-支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
+                     * @param ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -73,30 +65,18 @@ namespace TencentCloud
                     bool ImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取图片的 Url 地址。
-支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
-支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
-图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
-非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @return ImageUrl 图片的 Url 地址。
-支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
-支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
-图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
-非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 获取图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
+建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * @return ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
+建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
                      */
                     std::string GetImageUrl() const;
 
                     /**
-                     * 设置图片的 Url 地址。
-支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
-支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
-图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
-非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param ImageUrl 图片的 Url 地址。
-支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
-支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
-图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
-非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 设置图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
+建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * @param ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
+建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
@@ -106,26 +86,141 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回预处理（精确剪裁对齐）后的银行卡图片数据，默认false。
+                     * @return RetBorderCutImage 是否返回预处理（精确剪裁对齐）后的银行卡图片数据，默认false。
+                     */
+                    bool GetRetBorderCutImage() const;
+
+                    /**
+                     * 设置是否返回预处理（精确剪裁对齐）后的银行卡图片数据，默认false。
+                     * @param RetBorderCutImage 是否返回预处理（精确剪裁对齐）后的银行卡图片数据，默认false。
+                     */
+                    void SetRetBorderCutImage(const bool& _retBorderCutImage);
+
+                    /**
+                     * 判断参数 RetBorderCutImage 是否已赋值
+                     * @return RetBorderCutImage 是否已赋值
+                     */
+                    bool RetBorderCutImageHasBeenSet() const;
+
+                    /**
+                     * 获取是否返回卡号的切图图片数据，默认false。
+                     * @return RetCardNoImage 是否返回卡号的切图图片数据，默认false。
+                     */
+                    bool GetRetCardNoImage() const;
+
+                    /**
+                     * 设置是否返回卡号的切图图片数据，默认false。
+                     * @param RetCardNoImage 是否返回卡号的切图图片数据，默认false。
+                     */
+                    void SetRetCardNoImage(const bool& _retCardNoImage);
+
+                    /**
+                     * 判断参数 RetCardNoImage 是否已赋值
+                     * @return RetCardNoImage 是否已赋值
+                     */
+                    bool RetCardNoImageHasBeenSet() const;
+
+                    /**
+                     * 获取复印件检测开关，如果输入的图片是银行卡复印件图片则返回告警，默认false。
+                     * @return EnableCopyCheck 复印件检测开关，如果输入的图片是银行卡复印件图片则返回告警，默认false。
+                     */
+                    bool GetEnableCopyCheck() const;
+
+                    /**
+                     * 设置复印件检测开关，如果输入的图片是银行卡复印件图片则返回告警，默认false。
+                     * @param EnableCopyCheck 复印件检测开关，如果输入的图片是银行卡复印件图片则返回告警，默认false。
+                     */
+                    void SetEnableCopyCheck(const bool& _enableCopyCheck);
+
+                    /**
+                     * 判断参数 EnableCopyCheck 是否已赋值
+                     * @return EnableCopyCheck 是否已赋值
+                     */
+                    bool EnableCopyCheckHasBeenSet() const;
+
+                    /**
+                     * 获取翻拍检测开关，如果输入的图片是银行卡翻拍图片则返回告警，默认false。
+                     * @return EnableReshootCheck 翻拍检测开关，如果输入的图片是银行卡翻拍图片则返回告警，默认false。
+                     */
+                    bool GetEnableReshootCheck() const;
+
+                    /**
+                     * 设置翻拍检测开关，如果输入的图片是银行卡翻拍图片则返回告警，默认false。
+                     * @param EnableReshootCheck 翻拍检测开关，如果输入的图片是银行卡翻拍图片则返回告警，默认false。
+                     */
+                    void SetEnableReshootCheck(const bool& _enableReshootCheck);
+
+                    /**
+                     * 判断参数 EnableReshootCheck 是否已赋值
+                     * @return EnableReshootCheck 是否已赋值
+                     */
+                    bool EnableReshootCheckHasBeenSet() const;
+
+                    /**
+                     * 获取边框遮挡检测开关，如果输入的图片是银行卡边框被遮挡则返回告警，默认false。
+                     * @return EnableBorderCheck 边框遮挡检测开关，如果输入的图片是银行卡边框被遮挡则返回告警，默认false。
+                     */
+                    bool GetEnableBorderCheck() const;
+
+                    /**
+                     * 设置边框遮挡检测开关，如果输入的图片是银行卡边框被遮挡则返回告警，默认false。
+                     * @param EnableBorderCheck 边框遮挡检测开关，如果输入的图片是银行卡边框被遮挡则返回告警，默认false。
+                     */
+                    void SetEnableBorderCheck(const bool& _enableBorderCheck);
+
+                    /**
+                     * 判断参数 EnableBorderCheck 是否已赋值
+                     * @return EnableBorderCheck 是否已赋值
+                     */
+                    bool EnableBorderCheckHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 图片的 Base64 值。
-支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
-支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
+                     * 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
 
                     /**
-                     * 图片的 Url 地址。
-支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
-支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
-图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
-非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
+建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 是否返回预处理（精确剪裁对齐）后的银行卡图片数据，默认false。
+                     */
+                    bool m_retBorderCutImage;
+                    bool m_retBorderCutImageHasBeenSet;
+
+                    /**
+                     * 是否返回卡号的切图图片数据，默认false。
+                     */
+                    bool m_retCardNoImage;
+                    bool m_retCardNoImageHasBeenSet;
+
+                    /**
+                     * 复印件检测开关，如果输入的图片是银行卡复印件图片则返回告警，默认false。
+                     */
+                    bool m_enableCopyCheck;
+                    bool m_enableCopyCheckHasBeenSet;
+
+                    /**
+                     * 翻拍检测开关，如果输入的图片是银行卡翻拍图片则返回告警，默认false。
+                     */
+                    bool m_enableReshootCheck;
+                    bool m_enableReshootCheckHasBeenSet;
+
+                    /**
+                     * 边框遮挡检测开关，如果输入的图片是银行卡边框被遮挡则返回告警，默认false。
+                     */
+                    bool m_enableBorderCheck;
+                    bool m_enableBorderCheckHasBeenSet;
 
                 };
             }

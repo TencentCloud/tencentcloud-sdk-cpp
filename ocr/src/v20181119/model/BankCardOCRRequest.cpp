@@ -25,7 +25,12 @@ using namespace std;
 
 BankCardOCRRequest::BankCardOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_retBorderCutImageHasBeenSet(false),
+    m_retCardNoImageHasBeenSet(false),
+    m_enableCopyCheckHasBeenSet(false),
+    m_enableReshootCheckHasBeenSet(false),
+    m_enableBorderCheckHasBeenSet(false)
 {
 }
 
@@ -50,6 +55,46 @@ string BankCardOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retBorderCutImageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RetBorderCutImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retBorderCutImage, allocator);
+    }
+
+    if (m_retCardNoImageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RetCardNoImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retCardNoImage, allocator);
+    }
+
+    if (m_enableCopyCheckHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableCopyCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCopyCheck, allocator);
+    }
+
+    if (m_enableReshootCheckHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableReshootCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableReshootCheck, allocator);
+    }
+
+    if (m_enableBorderCheckHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableBorderCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableBorderCheck, allocator);
     }
 
 
@@ -90,6 +135,86 @@ void BankCardOCRRequest::SetImageUrl(const string& _imageUrl)
 bool BankCardOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool BankCardOCRRequest::GetRetBorderCutImage() const
+{
+    return m_retBorderCutImage;
+}
+
+void BankCardOCRRequest::SetRetBorderCutImage(const bool& _retBorderCutImage)
+{
+    m_retBorderCutImage = _retBorderCutImage;
+    m_retBorderCutImageHasBeenSet = true;
+}
+
+bool BankCardOCRRequest::RetBorderCutImageHasBeenSet() const
+{
+    return m_retBorderCutImageHasBeenSet;
+}
+
+bool BankCardOCRRequest::GetRetCardNoImage() const
+{
+    return m_retCardNoImage;
+}
+
+void BankCardOCRRequest::SetRetCardNoImage(const bool& _retCardNoImage)
+{
+    m_retCardNoImage = _retCardNoImage;
+    m_retCardNoImageHasBeenSet = true;
+}
+
+bool BankCardOCRRequest::RetCardNoImageHasBeenSet() const
+{
+    return m_retCardNoImageHasBeenSet;
+}
+
+bool BankCardOCRRequest::GetEnableCopyCheck() const
+{
+    return m_enableCopyCheck;
+}
+
+void BankCardOCRRequest::SetEnableCopyCheck(const bool& _enableCopyCheck)
+{
+    m_enableCopyCheck = _enableCopyCheck;
+    m_enableCopyCheckHasBeenSet = true;
+}
+
+bool BankCardOCRRequest::EnableCopyCheckHasBeenSet() const
+{
+    return m_enableCopyCheckHasBeenSet;
+}
+
+bool BankCardOCRRequest::GetEnableReshootCheck() const
+{
+    return m_enableReshootCheck;
+}
+
+void BankCardOCRRequest::SetEnableReshootCheck(const bool& _enableReshootCheck)
+{
+    m_enableReshootCheck = _enableReshootCheck;
+    m_enableReshootCheckHasBeenSet = true;
+}
+
+bool BankCardOCRRequest::EnableReshootCheckHasBeenSet() const
+{
+    return m_enableReshootCheckHasBeenSet;
+}
+
+bool BankCardOCRRequest::GetEnableBorderCheck() const
+{
+    return m_enableBorderCheck;
+}
+
+void BankCardOCRRequest::SetEnableBorderCheck(const bool& _enableBorderCheck)
+{
+    m_enableBorderCheck = _enableBorderCheck;
+    m_enableBorderCheckHasBeenSet = true;
+}
+
+bool BankCardOCRRequest::EnableBorderCheckHasBeenSet() const
+{
+    return m_enableBorderCheckHasBeenSet;
 }
 
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取id值
-                     * @return Id id值
+                     * 获取删除规则对应的id值 669872
+                     * @return Id 删除规则对应的id值 669872
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置id值
-                     * @param Id id值
+                     * 设置删除规则对应的id值 669872
+                     * @param Id 删除规则对应的id值 669872
                      */
                     void SetId(const uint64_t& _id);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取出站还是入站
-                     * @return Direction 出站还是入站
+                     * 获取方向，0：出站，1：入站
+                     * @return Direction 方向，0：出站，1：入站
                      */
                     uint64_t GetDirection() const;
 
                     /**
-                     * 设置出站还是入站
-                     * @param Direction 出站还是入站
+                     * 设置方向，0：出站，1：入站
+                     * @param Direction 方向，0：出站，1：入站
                      */
                     void SetDirection(const uint64_t& _direction);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取EdgeId值
-                     * @return EdgeId EdgeId值
+                     * 获取EdgeId值两个vpc间的边id
+                     * @return EdgeId EdgeId值两个vpc间的边id
                      */
                     std::string GetEdgeId() const;
 
                     /**
-                     * 设置EdgeId值
-                     * @param EdgeId EdgeId值
+                     * 设置EdgeId值两个vpc间的边id
+                     * @param EdgeId EdgeId值两个vpc间的边id
                      */
                     void SetEdgeId(const std::string& _edgeId);
 
@@ -117,19 +117,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * id值
+                     * 删除规则对应的id值 669872
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 出站还是入站
+                     * 方向，0：出站，1：入站
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;
 
                     /**
-                     * EdgeId值
+                     * EdgeId值两个vpc间的边id
                      */
                     std::string m_edgeId;
                     bool m_edgeIdHasBeenSet;

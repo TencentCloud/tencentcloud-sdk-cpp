@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取0：添加，1：插入
-                     * @return Type 0：添加，1：插入
+                     * 获取0：添加（默认），1：插入
+                     * @return Type 0：添加（默认），1：插入
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置0：添加，1：插入
-                     * @param Type 0：添加，1：插入
+                     * 设置0：添加（默认），1：插入
+                     * @param Type 0：添加（默认），1：插入
                      */
                     void SetType(const uint64_t& _type);
 
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 0：添加，1：插入
+                     * 0：添加（默认），1：插入
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取方向，0：出站，1：入站
-                     * @return Direction 方向，0：出站，1：入站
+                     * 获取方向，0：出站，1：入站  默认值是 0
+                     * @return Direction 方向，0：出站，1：入站  默认值是 0
                      */
                     uint64_t GetDirection() const;
 
                     /**
-                     * 设置方向，0：出站，1：入站
-                     * @param Direction 方向，0：出站，1：入站
+                     * 设置方向，0：出站，1：入站  默认值是 0
+                     * @param Direction 方向，0：出站，1：入站  默认值是 0
                      */
                     void SetDirection(const uint64_t& _direction);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取VPC间防火墙开关ID
-                     * @return EdgeId VPC间防火墙开关ID
+                     * 获取VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’
+                     * @return EdgeId VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’
                      */
                     std::string GetEdgeId() const;
 
                     /**
-                     * 设置VPC间防火墙开关ID
-                     * @param EdgeId VPC间防火墙开关ID
+                     * 设置VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’
+                     * @param EdgeId VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’
                      */
                     void SetEdgeId(const std::string& _edgeId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool EdgeIdHasBeenSet() const;
 
                     /**
-                     * 获取nat地域
-                     * @return Area nat地域
+                     * 获取nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’
+                     * @return Area nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置nat地域
-                     * @param Area nat地域
+                     * 设置nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’
+                     * @param Area nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’
                      */
                     void SetArea(const std::string& _area);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 方向，0：出站，1：入站
+                     * 方向，0：出站，1：入站  默认值是 0
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;
 
                     /**
-                     * VPC间防火墙开关ID
+                     * VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’
                      */
                     std::string m_edgeId;
                     bool m_edgeIdHasBeenSet;
 
                     /**
-                     * nat地域
+                     * nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

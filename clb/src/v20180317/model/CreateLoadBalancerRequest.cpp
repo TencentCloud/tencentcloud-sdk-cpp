@@ -43,7 +43,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_clientTokenHasBeenSet(false),
     m_snatProHasBeenSet(false),
     m_snatIpsHasBeenSet(false),
-    m_clusterTagHasBeenSet(false)
+    m_clusterTagHasBeenSet(false),
+    m_eipAddressIdHasBeenSet(false)
 {
 }
 
@@ -228,6 +229,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "ClusterTag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clusterTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eipAddressIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EipAddressId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_eipAddressId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -556,6 +565,22 @@ void CreateLoadBalancerRequest::SetClusterTag(const string& _clusterTag)
 bool CreateLoadBalancerRequest::ClusterTagHasBeenSet() const
 {
     return m_clusterTagHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetEipAddressId() const
+{
+    return m_eipAddressId;
+}
+
+void CreateLoadBalancerRequest::SetEipAddressId(const string& _eipAddressId)
+{
+    m_eipAddressId = _eipAddressId;
+    m_eipAddressIdHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::EipAddressIdHasBeenSet() const
+{
+    return m_eipAddressIdHasBeenSet;
 }
 
 

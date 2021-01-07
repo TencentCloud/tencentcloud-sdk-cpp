@@ -73,7 +73,9 @@ DetailDomain::DetailDomain() :
     m_advancedAuthenticationHasBeenSet(false),
     m_originAuthenticationHasBeenSet(false),
     m_ipv6AccessHasBeenSet(false),
-    m_advanceSetHasBeenSet(false)
+    m_advanceSetHasBeenSet(false),
+    m_offlineCacheHasBeenSet(false),
+    m_originCombineHasBeenSet(false)
 {
 }
 
@@ -877,6 +879,40 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_advanceSetHasBeenSet = true;
     }
 
+    if (value.HasMember("OfflineCache") && !value["OfflineCache"].IsNull())
+    {
+        if (!value["OfflineCache"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.OfflineCache` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_offlineCache.Deserialize(value["OfflineCache"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_offlineCacheHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginCombine") && !value["OriginCombine"].IsNull())
+    {
+        if (!value["OriginCombine"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.OriginCombine` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_originCombine.Deserialize(value["OriginCombine"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_originCombineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1353,6 +1389,24 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_offlineCacheHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OfflineCache";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_offlineCache.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_originCombineHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginCombine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_originCombine.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2188,5 +2242,37 @@ void DetailDomain::SetAdvanceSet(const vector<AdvanceConfig>& _advanceSet)
 bool DetailDomain::AdvanceSetHasBeenSet() const
 {
     return m_advanceSetHasBeenSet;
+}
+
+OfflineCache DetailDomain::GetOfflineCache() const
+{
+    return m_offlineCache;
+}
+
+void DetailDomain::SetOfflineCache(const OfflineCache& _offlineCache)
+{
+    m_offlineCache = _offlineCache;
+    m_offlineCacheHasBeenSet = true;
+}
+
+bool DetailDomain::OfflineCacheHasBeenSet() const
+{
+    return m_offlineCacheHasBeenSet;
+}
+
+OriginCombine DetailDomain::GetOriginCombine() const
+{
+    return m_originCombine;
+}
+
+void DetailDomain::SetOriginCombine(const OriginCombine& _originCombine)
+{
+    m_originCombine = _originCombine;
+    m_originCombineHasBeenSet = true;
+}
+
+bool DetailDomain::OriginCombineHasBeenSet() const
+{
+    return m_originCombineHasBeenSet;
 }
 

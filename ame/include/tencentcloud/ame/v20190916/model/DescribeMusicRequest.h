@@ -79,18 +79,18 @@ namespace TencentCloud
                     bool IdentityIdHasBeenSet() const;
 
                     /**
-                     * 获取基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。
-高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。
-                     * @return SubItemType 基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。
-高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。
+                     * 获取MP3-64K-FTD-P  为获取64kbps歌曲热门片段。
+MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
+                     * @return SubItemType MP3-64K-FTD-P  为获取64kbps歌曲热门片段。
+MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
                      */
                     std::string GetSubItemType() const;
 
                     /**
-                     * 设置基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。
-高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。
-                     * @param SubItemType 基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。
-高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。
+                     * 设置MP3-64K-FTD-P  为获取64kbps歌曲热门片段。
+MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
+                     * @param SubItemType MP3-64K-FTD-P  为获取64kbps歌曲热门片段。
+MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
                      */
                     void SetSubItemType(const std::string& _subItemType);
 
@@ -137,8 +137,8 @@ Values:Y , N(default)
                     bool m_identityIdHasBeenSet;
 
                     /**
-                     * 基础版：入参 MP3-64K-FTD-P  获取64kbps歌曲热门片段。
-高级/商用版：入参 MP3-320K-FTD 获取320kbps已核验歌曲完整资源。
+                     * MP3-64K-FTD-P  为获取64kbps歌曲热门片段。
+MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
                      */
                     std::string m_subItemType;
                     bool m_subItemTypeHasBeenSet;

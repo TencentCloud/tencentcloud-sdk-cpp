@@ -267,6 +267,72 @@ namespace TencentCloud
                      */
                     bool TagSpecificationHasBeenSet() const;
 
+                    /**
+                     * 获取实例过期时间（预付费）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpiredAt 实例过期时间（预付费）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExpiredAt() const;
+
+                    /**
+                     * 设置实例过期时间（预付费）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExpiredAt 实例过期时间（预付费）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExpiredAt(const std::string& _expiredAt);
+
+                    /**
+                     * 判断参数 ExpiredAt 是否已赋值
+                     * @return ExpiredAt 是否已赋值
+                     */
+                    bool ExpiredAtHasBeenSet() const;
+
+                    /**
+                     * 获取实例付费类型，0表示后付费，1表示预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayMod 实例付费类型，0表示后付费，1表示预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPayMod() const;
+
+                    /**
+                     * 设置实例付费类型，0表示后付费，1表示预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayMod 实例付费类型，0表示后付费，1表示预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayMod(const int64_t& _payMod);
+
+                    /**
+                     * 判断参数 PayMod 是否已赋值
+                     * @return PayMod 是否已赋值
+                     */
+                    bool PayModHasBeenSet() const;
+
+                    /**
+                     * 获取预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RenewFlag 预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRenewFlag() const;
+
+                    /**
+                     * 设置预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RenewFlag 预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRenewFlag(const int64_t& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +407,27 @@ namespace TencentCloud
                      */
                     TagSpecification m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
+
+                    /**
+                     * 实例过期时间（预付费）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_expiredAt;
+                    bool m_expiredAtHasBeenSet;
+
+                    /**
+                     * 实例付费类型，0表示后付费，1表示预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_payMod;
+                    bool m_payModHasBeenSet;
+
+                    /**
+                     * 预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
 
                 };
             }

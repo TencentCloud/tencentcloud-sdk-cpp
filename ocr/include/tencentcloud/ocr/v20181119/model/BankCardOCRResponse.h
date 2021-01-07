@@ -67,8 +67,8 @@ namespace TencentCloud
                     bool BankInfoHasBeenSet() const;
 
                     /**
-                     * 获取有效期
-                     * @return ValidDate 有效期
+                     * 获取有效期，格式如：07/2023
+                     * @return ValidDate 有效期，格式如：07/2023
                      */
                     std::string GetValidDate() const;
 
@@ -77,6 +77,84 @@ namespace TencentCloud
                      * @return ValidDate 是否已赋值
                      */
                     bool ValidDateHasBeenSet() const;
+
+                    /**
+                     * 获取卡类型
+                     * @return CardType 卡类型
+                     */
+                    std::string GetCardType() const;
+
+                    /**
+                     * 判断参数 CardType 是否已赋值
+                     * @return CardType 是否已赋值
+                     */
+                    bool CardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取卡名字
+                     * @return CardName 卡名字
+                     */
+                    std::string GetCardName() const;
+
+                    /**
+                     * 判断参数 CardName 是否已赋值
+                     * @return CardName 是否已赋值
+                     */
+                    bool CardNameHasBeenSet() const;
+
+                    /**
+                     * 获取切片图片数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BorderCutImage 切片图片数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBorderCutImage() const;
+
+                    /**
+                     * 判断参数 BorderCutImage 是否已赋值
+                     * @return BorderCutImage 是否已赋值
+                     */
+                    bool BorderCutImageHasBeenSet() const;
+
+                    /**
+                     * 获取卡号图片数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CardNoImage 卡号图片数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCardNoImage() const;
+
+                    /**
+                     * 判断参数 CardNoImage 是否已赋值
+                     * @return CardNoImage 是否已赋值
+                     */
+                    bool CardNoImageHasBeenSet() const;
+
+                    /**
+                     * 获取WarningCode 告警码列表和释义：
+-9110:银行卡日期无效; 
+-9111:银行卡边框不完整; 
+-9112:银行卡图片反光;
+-9113:银行卡复印件;
+-9114:银行卡翻拍件
+（告警码可以同时存在多个）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarningCode WarningCode 告警码列表和释义：
+-9110:银行卡日期无效; 
+-9111:银行卡边框不完整; 
+-9112:银行卡图片反光;
+-9113:银行卡复印件;
+-9114:银行卡翻拍件
+（告警码可以同时存在多个）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetWarningCode() const;
+
+                    /**
+                     * 判断参数 WarningCode 是否已赋值
+                     * @return WarningCode 是否已赋值
+                     */
+                    bool WarningCodeHasBeenSet() const;
 
                 private:
 
@@ -93,10 +171,49 @@ namespace TencentCloud
                     bool m_bankInfoHasBeenSet;
 
                     /**
-                     * 有效期
+                     * 有效期，格式如：07/2023
                      */
                     std::string m_validDate;
                     bool m_validDateHasBeenSet;
+
+                    /**
+                     * 卡类型
+                     */
+                    std::string m_cardType;
+                    bool m_cardTypeHasBeenSet;
+
+                    /**
+                     * 卡名字
+                     */
+                    std::string m_cardName;
+                    bool m_cardNameHasBeenSet;
+
+                    /**
+                     * 切片图片数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_borderCutImage;
+                    bool m_borderCutImageHasBeenSet;
+
+                    /**
+                     * 卡号图片数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cardNoImage;
+                    bool m_cardNoImageHasBeenSet;
+
+                    /**
+                     * WarningCode 告警码列表和释义：
+-9110:银行卡日期无效; 
+-9111:银行卡边框不完整; 
+-9112:银行卡图片反光;
+-9113:银行卡复印件;
+-9114:银行卡翻拍件
+（告警码可以同时存在多个）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_warningCode;
+                    bool m_warningCodeHasBeenSet;
 
                 };
             }

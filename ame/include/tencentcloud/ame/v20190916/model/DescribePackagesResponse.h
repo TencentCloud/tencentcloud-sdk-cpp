@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取已购曲库包数组
+                     * 获取已购曲库包列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Packages 已购曲库包数组
+                     * @return Packages 已购曲库包列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Package> GetPackages() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 已购曲库包数组
+                     * 已购曲库包列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Package> m_packages;

@@ -29,7 +29,8 @@ SubAccountInfo::SubAccountInfo() :
     m_consoleLoginHasBeenSet(false),
     m_phoneNumHasBeenSet(false),
     m_countryCodeHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_emailHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const Value &value)
         m_emailHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubAccountInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void SubAccountInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Email";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_email.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void SubAccountInfo::SetEmail(const string& _email)
 bool SubAccountInfo::EmailHasBeenSet() const
 {
     return m_emailHasBeenSet;
+}
+
+string SubAccountInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void SubAccountInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool SubAccountInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

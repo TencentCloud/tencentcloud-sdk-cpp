@@ -55,7 +55,8 @@ AddCdnDomainRequest::AddCdnDomainRequest() :
     m_areaHasBeenSet(false),
     m_originPullTimeoutHasBeenSet(false),
     m_tagHasBeenSet(false),
-    m_ipv6AccessHasBeenSet(false)
+    m_ipv6AccessHasBeenSet(false),
+    m_offlineCacheHasBeenSet(false)
 {
 }
 
@@ -354,6 +355,15 @@ string AddCdnDomainRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_ipv6Access.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_offlineCacheHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OfflineCache";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_offlineCache.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -874,6 +884,22 @@ void AddCdnDomainRequest::SetIpv6Access(const Ipv6Access& _ipv6Access)
 bool AddCdnDomainRequest::Ipv6AccessHasBeenSet() const
 {
     return m_ipv6AccessHasBeenSet;
+}
+
+OfflineCache AddCdnDomainRequest::GetOfflineCache() const
+{
+    return m_offlineCache;
+}
+
+void AddCdnDomainRequest::SetOfflineCache(const OfflineCache& _offlineCache)
+{
+    m_offlineCache = _offlineCache;
+    m_offlineCacheHasBeenSet = true;
+}
+
+bool AddCdnDomainRequest::OfflineCacheHasBeenSet() const
+{
+    return m_offlineCacheHasBeenSet;
 }
 
 

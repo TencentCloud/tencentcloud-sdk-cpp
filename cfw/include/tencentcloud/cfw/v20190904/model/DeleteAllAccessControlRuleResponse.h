@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态值
-                     * @return Status 状态值
+                     * 获取状态值 0: 修改成功, !0: 修改失败
+                     * @return Status 状态值 0: 修改成功, !0: 修改失败
                      */
                     int64_t GetStatus() const;
 
@@ -55,9 +55,9 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取返回多余信息
+                     * 获取删除了几条访问控制规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Info 返回多余信息
+                     * @return Info 删除了几条访问控制规则
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetInfo() const;
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态值
+                     * 状态值 0: 修改成功, !0: 修改失败
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 返回多余信息
+                     * 删除了几条访问控制规则
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_info;

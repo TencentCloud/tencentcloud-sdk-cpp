@@ -119,6 +119,8 @@
 #include <tencentcloud/cam/v20190116/model/ListUsersResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListUsersForGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListUsersForGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/ListWeChatWorkSubAccountsRequest.h>
+#include <tencentcloud/cam/v20190116/model/ListWeChatWorkSubAccountsResponse.h>
 #include <tencentcloud/cam/v20190116/model/PutRolePermissionsBoundaryRequest.h>
 #include <tencentcloud/cam/v20190116/model/PutRolePermissionsBoundaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/PutUserPermissionsBoundaryRequest.h>
@@ -301,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListUsersForGroupResponse> ListUsersForGroupOutcome;
                 typedef std::future<ListUsersForGroupOutcome> ListUsersForGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListUsersForGroupRequest&, ListUsersForGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersForGroupAsyncHandler;
+                typedef Outcome<Error, Model::ListWeChatWorkSubAccountsResponse> ListWeChatWorkSubAccountsOutcome;
+                typedef std::future<ListWeChatWorkSubAccountsOutcome> ListWeChatWorkSubAccountsOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::ListWeChatWorkSubAccountsRequest&, ListWeChatWorkSubAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWeChatWorkSubAccountsAsyncHandler;
                 typedef Outcome<Error, Model::PutRolePermissionsBoundaryResponse> PutRolePermissionsBoundaryOutcome;
                 typedef std::future<PutRolePermissionsBoundaryOutcome> PutRolePermissionsBoundaryOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::PutRolePermissionsBoundaryRequest&, PutRolePermissionsBoundaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutRolePermissionsBoundaryAsyncHandler;
@@ -771,6 +776,15 @@ namespace TencentCloud
                 ListUsersForGroupOutcome ListUsersForGroup(const Model::ListUsersForGroupRequest &request);
                 void ListUsersForGroupAsync(const Model::ListUsersForGroupRequest& request, const ListUsersForGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListUsersForGroupOutcomeCallable ListUsersForGroupCallable(const Model::ListUsersForGroupRequest& request);
+
+                /**
+                 *获取企业微信子用户列表
+                 * @param req ListWeChatWorkSubAccountsRequest
+                 * @return ListWeChatWorkSubAccountsOutcome
+                 */
+                ListWeChatWorkSubAccountsOutcome ListWeChatWorkSubAccounts(const Model::ListWeChatWorkSubAccountsRequest &request);
+                void ListWeChatWorkSubAccountsAsync(const Model::ListWeChatWorkSubAccountsRequest& request, const ListWeChatWorkSubAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListWeChatWorkSubAccountsOutcomeCallable ListWeChatWorkSubAccountsCallable(const Model::ListWeChatWorkSubAccountsRequest& request);
 
                 /**
                  *设置角色权限边界

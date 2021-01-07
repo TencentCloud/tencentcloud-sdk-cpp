@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取镜像所需系统盘大小
-                     * @return RequiredSystemDiskSize 镜像所需系统盘大小
+                     * 获取镜像所需系统盘大小。
+                     * @return RequiredSystemDiskSize 镜像所需系统盘大小。
                      */
                     int64_t GetRequiredSystemDiskSize() const;
 
                     /**
-                     * 设置镜像所需系统盘大小
-                     * @param RequiredSystemDiskSize 镜像所需系统盘大小
+                     * 设置镜像所需系统盘大小。
+                     * @param RequiredSystemDiskSize 镜像所需系统盘大小。
                      */
                     void SetRequiredSystemDiskSize(const int64_t& _requiredSystemDiskSize);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool RequiredSystemDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取镜像状态，取值：ONLINE、OFFLINE
-                     * @return BlueprintState 镜像状态，取值：ONLINE、OFFLINE
+                     * 获取镜像状态。
+                     * @return BlueprintState 镜像状态。
                      */
                     std::string GetBlueprintState() const;
 
                     /**
-                     * 设置镜像状态，取值：ONLINE、OFFLINE
-                     * @param BlueprintState 镜像状态，取值：ONLINE、OFFLINE
+                     * 设置镜像状态。
+                     * @param BlueprintState 镜像状态。
                      */
                     void SetBlueprintState(const std::string& _blueprintState);
 
@@ -301,13 +301,13 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 镜像所需系统盘大小
+                     * 镜像所需系统盘大小。
                      */
                     int64_t m_requiredSystemDiskSize;
                     bool m_requiredSystemDiskSizeHasBeenSet;
 
                     /**
-                     * 镜像状态，取值：ONLINE、OFFLINE
+                     * 镜像状态。
                      */
                     std::string m_blueprintState;
                     bool m_blueprintStateHasBeenSet;

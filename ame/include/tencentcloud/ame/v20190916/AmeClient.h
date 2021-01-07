@@ -23,6 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ame/v20190916/model/DescribeAuthInfoRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeAuthInfoResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribeCloudMusicRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeCloudMusicResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribeCloudMusicPurchasedRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeCloudMusicPurchasedResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeItemByIdRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeItemByIdResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeItemsRequest.h>
@@ -53,6 +59,15 @@ namespace TencentCloud
                 AmeClient(const Credential &credential, const std::string &region);
                 AmeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::DescribeAuthInfoResponse> DescribeAuthInfoOutcome;
+                typedef std::future<DescribeAuthInfoOutcome> DescribeAuthInfoOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeAuthInfoRequest&, DescribeAuthInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudMusicResponse> DescribeCloudMusicOutcome;
+                typedef std::future<DescribeCloudMusicOutcome> DescribeCloudMusicOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeCloudMusicRequest&, DescribeCloudMusicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudMusicAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudMusicPurchasedResponse> DescribeCloudMusicPurchasedOutcome;
+                typedef std::future<DescribeCloudMusicPurchasedOutcome> DescribeCloudMusicPurchasedOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeCloudMusicPurchasedRequest&, DescribeCloudMusicPurchasedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudMusicPurchasedAsyncHandler;
                 typedef Outcome<Error, Model::DescribeItemByIdResponse> DescribeItemByIdOutcome;
                 typedef std::future<DescribeItemByIdOutcome> DescribeItemByIdOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeItemByIdRequest&, DescribeItemByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeItemByIdAsyncHandler;
@@ -81,6 +96,33 @@ namespace TencentCloud
 
 
                 /**
+                 *获取授权项目信息列表
+                 * @param req DescribeAuthInfoRequest
+                 * @return DescribeAuthInfoOutcome
+                 */
+                DescribeAuthInfoOutcome DescribeAuthInfo(const Model::DescribeAuthInfoRequest &request);
+                void DescribeAuthInfoAsync(const Model::DescribeAuthInfoRequest& request, const DescribeAuthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuthInfoOutcomeCallable DescribeAuthInfoCallable(const Model::DescribeAuthInfoRequest& request);
+
+                /**
+                 *获取云音乐播放信息接口
+                 * @param req DescribeCloudMusicRequest
+                 * @return DescribeCloudMusicOutcome
+                 */
+                DescribeCloudMusicOutcome DescribeCloudMusic(const Model::DescribeCloudMusicRequest &request);
+                void DescribeCloudMusicAsync(const Model::DescribeCloudMusicRequest& request, const DescribeCloudMusicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudMusicOutcomeCallable DescribeCloudMusicCallable(const Model::DescribeCloudMusicRequest& request);
+
+                /**
+                 *获取授权项目下已购云音乐列表
+                 * @param req DescribeCloudMusicPurchasedRequest
+                 * @return DescribeCloudMusicPurchasedOutcome
+                 */
+                DescribeCloudMusicPurchasedOutcome DescribeCloudMusicPurchased(const Model::DescribeCloudMusicPurchasedRequest &request);
+                void DescribeCloudMusicPurchasedAsync(const Model::DescribeCloudMusicPurchasedRequest& request, const DescribeCloudMusicPurchasedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudMusicPurchasedOutcomeCallable DescribeCloudMusicPurchasedCallable(const Model::DescribeCloudMusicPurchasedRequest& request);
+
+                /**
                  *根据歌曲ID查询歌曲信息
                  * @param req DescribeItemByIdRequest
                  * @return DescribeItemByIdOutcome
@@ -90,7 +132,7 @@ namespace TencentCloud
                 DescribeItemByIdOutcomeCallable DescribeItemByIdCallable(const Model::DescribeItemByIdRequest& request);
 
                 /**
-                 *分类内容下歌曲列表获取，根据CategoryID或CategoryCode
+                 *该服务后续会停用，不再建议使用
                  * @param req DescribeItemsRequest
                  * @return DescribeItemsOutcome
                  */
@@ -108,7 +150,7 @@ namespace TencentCloud
                 DescribeLyricOutcomeCallable DescribeLyricCallable(const Model::DescribeLyricRequest& request);
 
                 /**
-                 *根据接口的模式及歌曲ID来取得对应权限的歌曲播放地址等信息。
+                 *获取曲库包歌曲播放信息接口
                  * @param req DescribeMusicRequest
                  * @return DescribeMusicOutcome
                  */
@@ -117,7 +159,7 @@ namespace TencentCloud
                 DescribeMusicOutcomeCallable DescribeMusicCallable(const Model::DescribeMusicRequest& request);
 
                 /**
-                 *查询曲库包已核验歌曲列表接口
+                 *获取曲库包下已核销歌曲列表接口
                  * @param req DescribePackageItemsRequest
                  * @return DescribePackageItemsOutcome
                  */
@@ -126,7 +168,7 @@ namespace TencentCloud
                 DescribePackageItemsOutcomeCallable DescribePackageItemsCallable(const Model::DescribePackageItemsRequest& request);
 
                 /**
-                 *查询已购曲库包列表接口
+                 *获取已购曲库包列表接口
                  * @param req DescribePackagesRequest
                  * @return DescribePackagesOutcome
                  */
@@ -135,7 +177,7 @@ namespace TencentCloud
                 DescribePackagesOutcomeCallable DescribePackagesCallable(const Model::DescribePackagesRequest& request);
 
                 /**
-                 *获取素材库列表时使用
+                 *该服务后续会停用，不再建议使用
                  * @param req DescribeStationsRequest
                  * @return DescribeStationsOutcome
                  */

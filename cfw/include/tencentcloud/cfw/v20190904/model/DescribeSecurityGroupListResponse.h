@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-                     * @return Total 总条数
+                     * 获取列表当前规则总条数
+                     * @return Total 列表当前规则总条数
                      */
                     uint64_t GetTotal() const;
 
@@ -96,7 +96,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总条数
+                     * 列表当前规则总条数
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

@@ -60,7 +60,9 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_accessPortHasBeenSet(false),
     m_advancedAuthenticationHasBeenSet(false),
     m_originAuthenticationHasBeenSet(false),
-    m_ipv6AccessHasBeenSet(false)
+    m_ipv6AccessHasBeenSet(false),
+    m_offlineCacheHasBeenSet(false),
+    m_originCombineHasBeenSet(false)
 {
 }
 
@@ -402,6 +404,24 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_ipv6Access.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_offlineCacheHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OfflineCache";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_offlineCache.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_originCombineHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginCombine";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_originCombine.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1002,6 +1022,38 @@ void UpdateDomainConfigRequest::SetIpv6Access(const Ipv6Access& _ipv6Access)
 bool UpdateDomainConfigRequest::Ipv6AccessHasBeenSet() const
 {
     return m_ipv6AccessHasBeenSet;
+}
+
+OfflineCache UpdateDomainConfigRequest::GetOfflineCache() const
+{
+    return m_offlineCache;
+}
+
+void UpdateDomainConfigRequest::SetOfflineCache(const OfflineCache& _offlineCache)
+{
+    m_offlineCache = _offlineCache;
+    m_offlineCacheHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::OfflineCacheHasBeenSet() const
+{
+    return m_offlineCacheHasBeenSet;
+}
+
+OriginCombine UpdateDomainConfigRequest::GetOriginCombine() const
+{
+    return m_originCombine;
+}
+
+void UpdateDomainConfigRequest::SetOriginCombine(const OriginCombine& _originCombine)
+{
+    m_originCombine = _originCombine;
+    m_originCombineHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::OriginCombineHasBeenSet() const
+{
+    return m_originCombineHasBeenSet;
 }
 
 

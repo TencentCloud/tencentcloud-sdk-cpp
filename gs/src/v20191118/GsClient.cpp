@@ -83,6 +83,49 @@ GsClient::CreateSessionOutcomeCallable GsClient::CreateSessionCallable(const Cre
     return task->get_future();
 }
 
+GsClient::SaveGameArchiveOutcome GsClient::SaveGameArchive(const SaveGameArchiveRequest &request)
+{
+    auto outcome = MakeRequest(request, "SaveGameArchive");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SaveGameArchiveResponse rsp = SaveGameArchiveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SaveGameArchiveOutcome(rsp);
+        else
+            return SaveGameArchiveOutcome(o.GetError());
+    }
+    else
+    {
+        return SaveGameArchiveOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::SaveGameArchiveAsync(const SaveGameArchiveRequest& request, const SaveGameArchiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SaveGameArchive(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::SaveGameArchiveOutcomeCallable GsClient::SaveGameArchiveCallable(const SaveGameArchiveRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SaveGameArchiveOutcome()>>(
+        [this, request]()
+        {
+            return this->SaveGameArchive(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::StopGameOutcome GsClient::StopGame(const StopGameRequest &request)
 {
     auto outcome = MakeRequest(request, "StopGame");
@@ -119,6 +162,49 @@ GsClient::StopGameOutcomeCallable GsClient::StopGameCallable(const StopGameReque
         [this, request]()
         {
             return this->StopGame(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::SwitchGameArchiveOutcome GsClient::SwitchGameArchive(const SwitchGameArchiveRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchGameArchive");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchGameArchiveResponse rsp = SwitchGameArchiveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchGameArchiveOutcome(rsp);
+        else
+            return SwitchGameArchiveOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchGameArchiveOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::SwitchGameArchiveAsync(const SwitchGameArchiveRequest& request, const SwitchGameArchiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchGameArchive(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::SwitchGameArchiveOutcomeCallable GsClient::SwitchGameArchiveCallable(const SwitchGameArchiveRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchGameArchiveOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchGameArchive(request);
         }
     );
 

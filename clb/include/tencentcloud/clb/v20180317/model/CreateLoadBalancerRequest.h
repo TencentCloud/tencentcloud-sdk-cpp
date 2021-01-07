@@ -418,6 +418,24 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool ClusterTagHasBeenSet() const;
 
+                    /**
+                     * 获取EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP
+                     * @return EipAddressId EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP
+                     */
+                    std::string GetEipAddressId() const;
+
+                    /**
+                     * 设置EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP
+                     * @param EipAddressId EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP
+                     */
+                    void SetEipAddressId(const std::string& _eipAddressId);
+
+                    /**
+                     * 判断参数 EipAddressId 是否已赋值
+                     * @return EipAddressId 是否已赋值
+                     */
+                    bool EipAddressIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -542,6 +560,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_clusterTag;
                     bool m_clusterTagHasBeenSet;
+
+                    /**
+                     * EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP
+                     */
+                    std::string m_eipAddressId;
+                    bool m_eipAddressIdHasBeenSet;
 
                 };
             }

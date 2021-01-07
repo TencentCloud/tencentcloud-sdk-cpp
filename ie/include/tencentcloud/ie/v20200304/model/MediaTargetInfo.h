@@ -50,13 +50,13 @@ namespace TencentCloud
                     /**
                      * 获取目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。
 
-注1：部分子服务支持站位符，形式为： {parameter}
-预设parameter：
+注1：部分子服务支持占位符，形式为： {parameter}
+预设parameter有：
 index：序号；
                      * @return FileName 目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。
 
-注1：部分子服务支持站位符，形式为： {parameter}
-预设parameter：
+注1：部分子服务支持占位符，形式为： {parameter}
+预设parameter有：
 index：序号；
                      */
                     std::string GetFileName() const;
@@ -64,13 +64,13 @@ index：序号；
                     /**
                      * 设置目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。
 
-注1：部分子服务支持站位符，形式为： {parameter}
-预设parameter：
+注1：部分子服务支持占位符，形式为： {parameter}
+预设parameter有：
 index：序号；
                      * @param FileName 目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。
 
-注1：部分子服务支持站位符，形式为： {parameter}
-预设parameter：
+注1：部分子服务支持占位符，形式为： {parameter}
+预设parameter有：
 index：序号；
                      */
                     void SetFileName(const std::string& _fileName);
@@ -148,8 +148,8 @@ NoListFile：不存储结果列表。
                     /**
                      * 目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。
 
-注1：部分子服务支持站位符，形式为： {parameter}
-预设parameter：
+注1：部分子服务支持占位符，形式为： {parameter}
+预设parameter有：
 index：序号；
                      */
                     std::string m_fileName;

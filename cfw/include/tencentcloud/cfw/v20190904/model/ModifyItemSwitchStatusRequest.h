@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取0: 边界防火墙开关，1：vpc防火墙开关
-                     * @return Type 0: 边界防火墙开关，1：vpc防火墙开关
+                     * 获取0: 互联网边界边界防火墙开关，1：vpc防火墙开关
+                     * @return Type 0: 互联网边界边界防火墙开关，1：vpc防火墙开关
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置0: 边界防火墙开关，1：vpc防火墙开关
-                     * @param Type 0: 边界防火墙开关，1：vpc防火墙开关
+                     * 设置0: 互联网边界边界防火墙开关，1：vpc防火墙开关
+                     * @param Type 0: 互联网边界边界防火墙开关，1：vpc防火墙开关
                      */
                     void SetType(const uint64_t& _type);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 0: 边界防火墙开关，1：vpc防火墙开关
+                     * 0: 互联网边界边界防火墙开关，1：vpc防火墙开关
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

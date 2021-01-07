@@ -66,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取HAVIP名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HaVipName HAVIP名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHaVipName() const;
 
                     /**
                      * 设置HAVIP名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param HaVipName HAVIP名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHaVipName(const std::string& _haVipName);
 
@@ -160,17 +156,13 @@ namespace TencentCloud
 
                     /**
                      * 获取被绑定的实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 被绑定的实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置被绑定的实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param InstanceId 被绑定的实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -182,17 +174,13 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定EIP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressIp 绑定EIP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAddressIp() const;
 
                     /**
                      * 设置绑定EIP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AddressIp 绑定EIP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAddressIp(const std::string& _addressIp);
 
@@ -248,17 +236,13 @@ UNBIND：未绑定。
 
                     /**
                      * 获取使用havip的业务标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Business 使用havip的业务标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置使用havip的业务标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Business 使用havip的业务标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBusiness(const std::string& _business);
 
@@ -278,7 +262,6 @@ UNBIND：未绑定。
 
                     /**
                      * HAVIP名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_haVipName;
                     bool m_haVipNameHasBeenSet;
@@ -309,14 +292,12 @@ UNBIND：未绑定。
 
                     /**
                      * 被绑定的实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 绑定EIP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addressIp;
                     bool m_addressIpHasBeenSet;
@@ -337,7 +318,6 @@ UNBIND：未绑定。
 
                     /**
                      * 使用havip的业务标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;

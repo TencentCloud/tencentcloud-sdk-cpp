@@ -35,7 +35,8 @@ AmsDetailInfo::AmsDetailInfo() :
     m_thumbnailHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_detailCountHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,16 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const Value &value)
         m_requestIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AmsDetailInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,14 @@ void AmsDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "RequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_requestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +563,21 @@ void AmsDetailInfo::SetRequestId(const string& _requestId)
 bool AmsDetailInfo::RequestIdHasBeenSet() const
 {
     return m_requestIdHasBeenSet;
+}
+
+string AmsDetailInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void AmsDetailInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool AmsDetailInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

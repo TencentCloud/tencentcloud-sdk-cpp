@@ -141,6 +141,8 @@
 #include <tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerResponse.h>
+#include <tencentcloud/tcr/v20190924/model/RenewInstanceRequest.h>
+#include <tencentcloud/tcr/v20190924/model/RenewInstanceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ValidateRepositoryExistPersonalRequest.h>
@@ -336,6 +338,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyWebhookTriggerResponse> ModifyWebhookTriggerOutcome;
                 typedef std::future<ModifyWebhookTriggerOutcome> ModifyWebhookTriggerOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyWebhookTriggerRequest&, ModifyWebhookTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebhookTriggerAsyncHandler;
+                typedef Outcome<Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
+                typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::RenewInstanceRequest&, RenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
                 typedef Outcome<Error, Model::ValidateNamespaceExistPersonalResponse> ValidateNamespaceExistPersonalOutcome;
                 typedef std::future<ValidateNamespaceExistPersonalOutcome> ValidateNamespaceExistPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ValidateNamespaceExistPersonalRequest&, ValidateNamespaceExistPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ValidateNamespaceExistPersonalAsyncHandler;
@@ -875,6 +880,15 @@ namespace TencentCloud
                 ModifyWebhookTriggerOutcome ModifyWebhookTrigger(const Model::ModifyWebhookTriggerRequest &request);
                 void ModifyWebhookTriggerAsync(const Model::ModifyWebhookTriggerRequest& request, const ModifyWebhookTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWebhookTriggerOutcomeCallable ModifyWebhookTriggerCallable(const Model::ModifyWebhookTriggerRequest& request);
+
+                /**
+                 *预付费实例续费，同时支持按量计费转包年包月
+                 * @param req RenewInstanceRequest
+                 * @return RenewInstanceOutcome
+                 */
+                RenewInstanceOutcome RenewInstance(const Model::RenewInstanceRequest &request);
+                void RenewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewInstanceOutcomeCallable RenewInstanceCallable(const Model::RenewInstanceRequest& request);
 
                 /**
                  *查询个人版用户命名空间是否存在

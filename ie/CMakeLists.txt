@@ -30,18 +30,20 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/IntervalTime.h
   include/tencentcloud/ie/v20200304/model/LowLightEnhance.h
   include/tencentcloud/ie/v20200304/model/MuxInfo.h
+  include/tencentcloud/ie/v20200304/model/TargetVideoInfo.h
   include/tencentcloud/ie/v20200304/model/VideoInfo.h
-  include/tencentcloud/ie/v20200304/model/CoverEditingInfo.h
   include/tencentcloud/ie/v20200304/model/DescribeQualityControlTaskResultRequest.h
   include/tencentcloud/ie/v20200304/model/DescribeMediaQualityRestorationTaskRusultResponse.h
   include/tencentcloud/ie/v20200304/model/DarInfo.h
   include/tencentcloud/ie/v20200304/model/CreateQualityControlTaskResponse.h
   include/tencentcloud/ie/v20200304/model/SubTaskTranscodeInfo.h
   include/tencentcloud/ie/v20200304/model/CreateQualityControlTaskRequest.h
+  include/tencentcloud/ie/v20200304/model/FrameTagRec.h
   include/tencentcloud/ie/v20200304/model/HighlightsTaskResultItem.h
   include/tencentcloud/ie/v20200304/model/CreateMediaQualityRestorationTaskResponse.h
   include/tencentcloud/ie/v20200304/model/Sharp.h
-  include/tencentcloud/ie/v20200304/model/StopMediaProcessTaskResponse.h
+  include/tencentcloud/ie/v20200304/model/MediaRecognitionTaskResult.h
+  include/tencentcloud/ie/v20200304/model/MediaRecognitionInfo.h
   include/tencentcloud/ie/v20200304/model/SaveInfo.h
   include/tencentcloud/ie/v20200304/model/ScratchRepair.h
   include/tencentcloud/ie/v20200304/model/ArtifactReduction.h
@@ -50,6 +52,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/StripEditingInfo.h
   include/tencentcloud/ie/v20200304/model/EditingInfo.h
   include/tencentcloud/ie/v20200304/model/CreateMediaProcessTaskRequest.h
+  include/tencentcloud/ie/v20200304/model/SubtitleResult.h
   include/tencentcloud/ie/v20200304/model/CreateMediaProcessTaskResponse.h
   include/tencentcloud/ie/v20200304/model/TaskResultFile.h
   include/tencentcloud/ie/v20200304/model/CreateEditingTaskResponse.h
@@ -57,6 +60,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/MediaSourceInfo.h
   include/tencentcloud/ie/v20200304/model/CallbackInfo.h
   include/tencentcloud/ie/v20200304/model/SectionTime.h
+  include/tencentcloud/ie/v20200304/model/SubtitleRec.h
   include/tencentcloud/ie/v20200304/model/PicMarkInfoItem.h
   include/tencentcloud/ie/v20200304/model/MediaJoiningInfo.h
   include/tencentcloud/ie/v20200304/model/DescribeMediaQualityRestorationTaskRusultRequest.h
@@ -72,7 +76,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/DescribeEditingTaskResultRequest.h
   include/tencentcloud/ie/v20200304/model/AudioInfoResultItem.h
   include/tencentcloud/ie/v20200304/model/EditInfo.h
-  include/tencentcloud/ie/v20200304/model/VideoEnhance.h
+  include/tencentcloud/ie/v20200304/model/StopMediaProcessTaskResponse.h
   include/tencentcloud/ie/v20200304/model/DescribeEditingTaskResultResponse.h
   include/tencentcloud/ie/v20200304/model/QualityControlInfoTaskResult.h
   include/tencentcloud/ie/v20200304/model/MediaQualityRestorationTaskResult.h
@@ -86,11 +90,14 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/HighlightsEditingInfo.h
   include/tencentcloud/ie/v20200304/model/FileInfo.h
   include/tencentcloud/ie/v20200304/model/OpeningEndingTaskResult.h
+  include/tencentcloud/ie/v20200304/model/VideoEnhance.h
   include/tencentcloud/ie/v20200304/model/QualityControlResultItems.h
+  include/tencentcloud/ie/v20200304/model/FrameTagItem.h
   include/tencentcloud/ie/v20200304/model/QualityControlItem.h
   include/tencentcloud/ie/v20200304/model/CoverTaskResult.h
   include/tencentcloud/ie/v20200304/model/TagTaskResult.h
   include/tencentcloud/ie/v20200304/model/CosInfo.h
+  include/tencentcloud/ie/v20200304/model/FrameTagResult.h
   include/tencentcloud/ie/v20200304/model/MediaCuttingTimeInfo.h
   include/tencentcloud/ie/v20200304/model/TargetInfo.h
   include/tencentcloud/ie/v20200304/model/CreateMediaQualityRestorationTaskRequest.h
@@ -99,12 +106,14 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/FaceProtect.h
   include/tencentcloud/ie/v20200304/model/VideoInfoResultItem.h
   include/tencentcloud/ie/v20200304/model/StopMediaProcessTaskRequest.h
-  include/tencentcloud/ie/v20200304/model/TargetVideoInfo.h
+  include/tencentcloud/ie/v20200304/model/CoverEditingInfo.h
+  include/tencentcloud/ie/v20200304/model/SubtitleItem.h
   include/tencentcloud/ie/v20200304/model/DescribeMediaProcessTaskResultRequest.h
   include/tencentcloud/ie/v20200304/model/MediaProcessTaskResult.h
   include/tencentcloud/ie/v20200304/model/EditingTaskResult.h
   include/tencentcloud/ie/v20200304/model/MediaProcessInfo.h
   include/tencentcloud/ie/v20200304/model/ClassificationTaskResult.h
+  include/tencentcloud/ie/v20200304/model/TagItem.h
   include/tencentcloud/ie/v20200304/model/DescribeMediaProcessTaskResultResponse.h
   include/tencentcloud/ie/v20200304/model/HighlightsTaskResultItemSegment.h
   )
@@ -122,18 +131,20 @@ set(ie_src
   src/v20200304/model/IntervalTime.cpp
   src/v20200304/model/LowLightEnhance.cpp
   src/v20200304/model/MuxInfo.cpp
+  src/v20200304/model/TargetVideoInfo.cpp
   src/v20200304/model/VideoInfo.cpp
-  src/v20200304/model/CoverEditingInfo.cpp
   src/v20200304/model/DescribeQualityControlTaskResultRequest.cpp
   src/v20200304/model/DescribeMediaQualityRestorationTaskRusultResponse.cpp
   src/v20200304/model/DarInfo.cpp
   src/v20200304/model/CreateQualityControlTaskResponse.cpp
   src/v20200304/model/SubTaskTranscodeInfo.cpp
   src/v20200304/model/CreateQualityControlTaskRequest.cpp
+  src/v20200304/model/FrameTagRec.cpp
   src/v20200304/model/HighlightsTaskResultItem.cpp
   src/v20200304/model/CreateMediaQualityRestorationTaskResponse.cpp
   src/v20200304/model/Sharp.cpp
-  src/v20200304/model/StopMediaProcessTaskResponse.cpp
+  src/v20200304/model/MediaRecognitionTaskResult.cpp
+  src/v20200304/model/MediaRecognitionInfo.cpp
   src/v20200304/model/SaveInfo.cpp
   src/v20200304/model/ScratchRepair.cpp
   src/v20200304/model/ArtifactReduction.cpp
@@ -142,6 +153,7 @@ set(ie_src
   src/v20200304/model/StripEditingInfo.cpp
   src/v20200304/model/EditingInfo.cpp
   src/v20200304/model/CreateMediaProcessTaskRequest.cpp
+  src/v20200304/model/SubtitleResult.cpp
   src/v20200304/model/CreateMediaProcessTaskResponse.cpp
   src/v20200304/model/TaskResultFile.cpp
   src/v20200304/model/CreateEditingTaskResponse.cpp
@@ -149,6 +161,7 @@ set(ie_src
   src/v20200304/model/MediaSourceInfo.cpp
   src/v20200304/model/CallbackInfo.cpp
   src/v20200304/model/SectionTime.cpp
+  src/v20200304/model/SubtitleRec.cpp
   src/v20200304/model/PicMarkInfoItem.cpp
   src/v20200304/model/MediaJoiningInfo.cpp
   src/v20200304/model/DescribeMediaQualityRestorationTaskRusultRequest.cpp
@@ -164,7 +177,7 @@ set(ie_src
   src/v20200304/model/DescribeEditingTaskResultRequest.cpp
   src/v20200304/model/AudioInfoResultItem.cpp
   src/v20200304/model/EditInfo.cpp
-  src/v20200304/model/VideoEnhance.cpp
+  src/v20200304/model/StopMediaProcessTaskResponse.cpp
   src/v20200304/model/DescribeEditingTaskResultResponse.cpp
   src/v20200304/model/QualityControlInfoTaskResult.cpp
   src/v20200304/model/MediaQualityRestorationTaskResult.cpp
@@ -178,11 +191,14 @@ set(ie_src
   src/v20200304/model/HighlightsEditingInfo.cpp
   src/v20200304/model/FileInfo.cpp
   src/v20200304/model/OpeningEndingTaskResult.cpp
+  src/v20200304/model/VideoEnhance.cpp
   src/v20200304/model/QualityControlResultItems.cpp
+  src/v20200304/model/FrameTagItem.cpp
   src/v20200304/model/QualityControlItem.cpp
   src/v20200304/model/CoverTaskResult.cpp
   src/v20200304/model/TagTaskResult.cpp
   src/v20200304/model/CosInfo.cpp
+  src/v20200304/model/FrameTagResult.cpp
   src/v20200304/model/MediaCuttingTimeInfo.cpp
   src/v20200304/model/TargetInfo.cpp
   src/v20200304/model/CreateMediaQualityRestorationTaskRequest.cpp
@@ -191,12 +207,14 @@ set(ie_src
   src/v20200304/model/FaceProtect.cpp
   src/v20200304/model/VideoInfoResultItem.cpp
   src/v20200304/model/StopMediaProcessTaskRequest.cpp
-  src/v20200304/model/TargetVideoInfo.cpp
+  src/v20200304/model/CoverEditingInfo.cpp
+  src/v20200304/model/SubtitleItem.cpp
   src/v20200304/model/DescribeMediaProcessTaskResultRequest.cpp
   src/v20200304/model/MediaProcessTaskResult.cpp
   src/v20200304/model/EditingTaskResult.cpp
   src/v20200304/model/MediaProcessInfo.cpp
   src/v20200304/model/ClassificationTaskResult.cpp
+  src/v20200304/model/TagItem.cpp
   src/v20200304/model/DescribeMediaProcessTaskResultResponse.cpp
   src/v20200304/model/HighlightsTaskResultItemSegment.cpp
   )

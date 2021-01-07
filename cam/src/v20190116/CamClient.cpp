@@ -2104,6 +2104,49 @@ CamClient::ListUsersForGroupOutcomeCallable CamClient::ListUsersForGroupCallable
     return task->get_future();
 }
 
+CamClient::ListWeChatWorkSubAccountsOutcome CamClient::ListWeChatWorkSubAccounts(const ListWeChatWorkSubAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListWeChatWorkSubAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListWeChatWorkSubAccountsResponse rsp = ListWeChatWorkSubAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListWeChatWorkSubAccountsOutcome(rsp);
+        else
+            return ListWeChatWorkSubAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListWeChatWorkSubAccountsOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::ListWeChatWorkSubAccountsAsync(const ListWeChatWorkSubAccountsRequest& request, const ListWeChatWorkSubAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListWeChatWorkSubAccounts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::ListWeChatWorkSubAccountsOutcomeCallable CamClient::ListWeChatWorkSubAccountsCallable(const ListWeChatWorkSubAccountsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListWeChatWorkSubAccountsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListWeChatWorkSubAccounts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::PutRolePermissionsBoundaryOutcome CamClient::PutRolePermissionsBoundary(const PutRolePermissionsBoundaryRequest &request)
 {
     auto outcome = MakeRequest(request, "PutRolePermissionsBoundary");

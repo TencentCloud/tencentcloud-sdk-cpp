@@ -24,7 +24,8 @@ using namespace std;
 MediaProcessInfo::MediaProcessInfo() :
     m_typeHasBeenSet(false),
     m_mediaCuttingInfoHasBeenSet(false),
-    m_mediaJoiningInfoHasBeenSet(false)
+    m_mediaJoiningInfoHasBeenSet(false),
+    m_mediaRecognitionInfoHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,23 @@ CoreInternalOutcome MediaProcessInfo::Deserialize(const Value &value)
         m_mediaJoiningInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("MediaRecognitionInfo") && !value["MediaRecognitionInfo"].IsNull())
+    {
+        if (!value["MediaRecognitionInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MediaProcessInfo.MediaRecognitionInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mediaRecognitionInfo.Deserialize(value["MediaRecognitionInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mediaRecognitionInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +126,15 @@ void MediaProcessInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_mediaJoiningInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mediaRecognitionInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MediaRecognitionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_mediaRecognitionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -159,5 +186,21 @@ void MediaProcessInfo::SetMediaJoiningInfo(const MediaJoiningInfo& _mediaJoining
 bool MediaProcessInfo::MediaJoiningInfoHasBeenSet() const
 {
     return m_mediaJoiningInfoHasBeenSet;
+}
+
+MediaRecognitionInfo MediaProcessInfo::GetMediaRecognitionInfo() const
+{
+    return m_mediaRecognitionInfo;
+}
+
+void MediaProcessInfo::SetMediaRecognitionInfo(const MediaRecognitionInfo& _mediaRecognitionInfo)
+{
+    m_mediaRecognitionInfo = _mediaRecognitionInfo;
+    m_mediaRecognitionInfoHasBeenSet = true;
+}
+
+bool MediaProcessInfo::MediaRecognitionInfoHasBeenSet() const
+{
+    return m_mediaRecognitionInfoHasBeenSet;
 }
 

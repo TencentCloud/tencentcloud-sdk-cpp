@@ -2577,6 +2577,49 @@ TcrClient::ModifyWebhookTriggerOutcomeCallable TcrClient::ModifyWebhookTriggerCa
     return task->get_future();
 }
 
+TcrClient::RenewInstanceOutcome TcrClient::RenewInstance(const RenewInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewInstanceResponse rsp = RenewInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewInstanceOutcome(rsp);
+        else
+            return RenewInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::RenewInstanceAsync(const RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::RenewInstanceOutcomeCallable TcrClient::RenewInstanceCallable(const RenewInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::ValidateNamespaceExistPersonalOutcome TcrClient::ValidateNamespaceExistPersonal(const ValidateNamespaceExistPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "ValidateNamespaceExistPersonal");

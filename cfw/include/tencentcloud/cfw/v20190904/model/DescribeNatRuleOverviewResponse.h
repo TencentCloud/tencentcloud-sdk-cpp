@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool TotalNumHasBeenSet() const;
 
                     /**
-                     * 获取访问规则剩余条数
-                     * @return RemainNum 访问规则剩余条数
+                     * 获取访问控制规则剩余配额
+                     * @return RemainNum 访问控制规则剩余配额
                      */
                     int64_t GetRemainNum() const;
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_totalNumHasBeenSet;
 
                     /**
-                     * 访问规则剩余条数
+                     * 访问控制规则剩余配额
                      */
                     int64_t m_remainNum;
                     bool m_remainNumHasBeenSet;

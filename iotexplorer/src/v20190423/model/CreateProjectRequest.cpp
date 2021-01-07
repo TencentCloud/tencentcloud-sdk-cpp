@@ -25,7 +25,8 @@ using namespace std;
 
 CreateProjectRequest::CreateProjectRequest() :
     m_projectNameHasBeenSet(false),
-    m_projectDescHasBeenSet(false)
+    m_projectDescHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateProjectRequest::ToJsonString() const
         string key = "ProjectDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_projectDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateProjectRequest::SetProjectDesc(const string& _projectDesc)
 bool CreateProjectRequest::ProjectDescHasBeenSet() const
 {
     return m_projectDescHasBeenSet;
+}
+
+string CreateProjectRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreateProjectRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreateProjectRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/CloneAccountRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/CloneAccountResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/CloseDBExtranetAccessRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDatabasesRequest.h>
@@ -71,6 +75,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeOrdersResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribePriceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribePriceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeProjectSecurityGroupsRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeProjectSecurityGroupsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeRenewalPriceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeRenewalPriceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeSaleInfoRequest.h>
@@ -79,6 +85,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeSqlLogsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/FlushBinlogRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/FlushBinlogResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesRequest.h>
@@ -91,6 +99,8 @@
 #include <tencentcloud/mariadb/v20170312/model/ModifyBackupTimeResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBInstancesProjectRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBInstancesProjectResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBParametersRequest.h>
@@ -121,6 +131,9 @@ namespace TencentCloud
                 MariadbClient(const Credential &credential, const std::string &region);
                 MariadbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
+                typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::CloneAccountResponse> CloneAccountOutcome;
                 typedef std::future<CloneAccountOutcome> CloneAccountOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::CloneAccountRequest&, CloneAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneAccountAsyncHandler;
@@ -175,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDBResourceUsageDetailsResponse> DescribeDBResourceUsageDetailsOutcome;
                 typedef std::future<DescribeDBResourceUsageDetailsOutcome> DescribeDBResourceUsageDetailsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBResourceUsageDetailsRequest&, DescribeDBResourceUsageDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBResourceUsageDetailsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
+                typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBSlowLogsResponse> DescribeDBSlowLogsOutcome;
                 typedef std::future<DescribeDBSlowLogsOutcome> DescribeDBSlowLogsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBSlowLogsRequest&, DescribeDBSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSlowLogsAsyncHandler;
@@ -193,6 +209,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePriceResponse> DescribePriceOutcome;
                 typedef std::future<DescribePriceOutcome> DescribePriceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribePriceRequest&, DescribePriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeProjectSecurityGroupsResponse> DescribeProjectSecurityGroupsOutcome;
+                typedef std::future<DescribeProjectSecurityGroupsOutcome> DescribeProjectSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeProjectSecurityGroupsRequest&, DescribeProjectSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRenewalPriceResponse> DescribeRenewalPriceOutcome;
                 typedef std::future<DescribeRenewalPriceOutcome> DescribeRenewalPriceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeRenewalPriceRequest&, DescribeRenewalPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRenewalPriceAsyncHandler;
@@ -205,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUpgradePriceResponse> DescribeUpgradePriceOutcome;
                 typedef std::future<DescribeUpgradePriceOutcome> DescribeUpgradePriceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeUpgradePriceRequest&, DescribeUpgradePriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradePriceAsyncHandler;
+                typedef Outcome<Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
+                typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::FlushBinlogResponse> FlushBinlogOutcome;
                 typedef std::future<FlushBinlogOutcome> FlushBinlogOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::FlushBinlogRequest&, FlushBinlogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlushBinlogAsyncHandler;
@@ -223,6 +245,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
+                typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDBInstancesProjectResponse> ModifyDBInstancesProjectOutcome;
                 typedef std::future<ModifyDBInstancesProjectOutcome> ModifyDBInstancesProjectOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyDBInstancesProjectRequest&, ModifyDBInstancesProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstancesProjectAsyncHandler;
@@ -249,6 +274,15 @@ namespace TencentCloud
                 typedef std::function<void(const MariadbClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
 
 
+
+                /**
+                 *本接口 (AssociateSecurityGroups) 用于安全组批量绑定云资源。
+                 * @param req AssociateSecurityGroupsRequest
+                 * @return AssociateSecurityGroupsOutcome
+                 */
+                AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
+                void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
 
                 /**
                  *本接口（CloneAccount）用于克隆实例账户。
@@ -416,6 +450,15 @@ namespace TencentCloud
                 DescribeDBResourceUsageDetailsOutcomeCallable DescribeDBResourceUsageDetailsCallable(const Model::DescribeDBResourceUsageDetailsRequest& request);
 
                 /**
+                 *本接口（DescribeDBSecurityGroups）用于查询实例安全组信息
+                 * @param req DescribeDBSecurityGroupsRequest
+                 * @return DescribeDBSecurityGroupsOutcome
+                 */
+                DescribeDBSecurityGroupsOutcome DescribeDBSecurityGroups(const Model::DescribeDBSecurityGroupsRequest &request);
+                void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
+
+                /**
                  *本接口(DescribeDBSlowLogs)用于查询慢查询日志列表。
                  * @param req DescribeDBSlowLogsRequest
                  * @return DescribeDBSlowLogsOutcome
@@ -470,6 +513,15 @@ namespace TencentCloud
                 DescribePriceOutcomeCallable DescribePriceCallable(const Model::DescribePriceRequest& request);
 
                 /**
+                 *本接口（DescribeProjectSecurityGroups）用于查询项目安全组信息
+                 * @param req DescribeProjectSecurityGroupsRequest
+                 * @return DescribeProjectSecurityGroupsOutcome
+                 */
+                DescribeProjectSecurityGroupsOutcome DescribeProjectSecurityGroups(const Model::DescribeProjectSecurityGroupsRequest &request);
+                void DescribeProjectSecurityGroupsAsync(const Model::DescribeProjectSecurityGroupsRequest& request, const DescribeProjectSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProjectSecurityGroupsOutcomeCallable DescribeProjectSecurityGroupsCallable(const Model::DescribeProjectSecurityGroupsRequest& request);
+
+                /**
                  *本接口（DescribeRenewalPrice）用于在续费云数据库实例时，查询续费的价格。
                  * @param req DescribeRenewalPriceRequest
                  * @return DescribeRenewalPriceOutcome
@@ -504,6 +556,15 @@ namespace TencentCloud
                 DescribeUpgradePriceOutcome DescribeUpgradePrice(const Model::DescribeUpgradePriceRequest &request);
                 void DescribeUpgradePriceAsync(const Model::DescribeUpgradePriceRequest& request, const DescribeUpgradePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUpgradePriceOutcomeCallable DescribeUpgradePriceCallable(const Model::DescribeUpgradePriceRequest& request);
+
+                /**
+                 *本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。
+                 * @param req DisassociateSecurityGroupsRequest
+                 * @return DisassociateSecurityGroupsOutcome
+                 */
+                DisassociateSecurityGroupsOutcome DisassociateSecurityGroups(const Model::DisassociateSecurityGroupsRequest &request);
+                void DisassociateSecurityGroupsAsync(const Model::DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
 
                 /**
                  *相当于在mysqld中执行flush logs，完成切分的binlog将展示在实例控制台binlog列表里。
@@ -560,6 +621,15 @@ namespace TencentCloud
                 ModifyDBInstanceNameOutcome ModifyDBInstanceName(const Model::ModifyDBInstanceNameRequest &request);
                 void ModifyDBInstanceNameAsync(const Model::ModifyDBInstanceNameRequest& request, const ModifyDBInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceNameOutcomeCallable ModifyDBInstanceNameCallable(const Model::ModifyDBInstanceNameRequest& request);
+
+                /**
+                 *本接口（ModifyDBInstanceSecurityGroups）用于修改云数据库安全组
+                 * @param req ModifyDBInstanceSecurityGroupsRequest
+                 * @return ModifyDBInstanceSecurityGroupsOutcome
+                 */
+                ModifyDBInstanceSecurityGroupsOutcome ModifyDBInstanceSecurityGroups(const Model::ModifyDBInstanceSecurityGroupsRequest &request);
+                void ModifyDBInstanceSecurityGroupsAsync(const Model::ModifyDBInstanceSecurityGroupsRequest& request, const ModifyDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceSecurityGroupsOutcomeCallable ModifyDBInstanceSecurityGroupsCallable(const Model::ModifyDBInstanceSecurityGroupsRequest& request);
 
                 /**
                  *本接口（ModifyDBInstancesProject）用于修改云数据库实例所属项目。

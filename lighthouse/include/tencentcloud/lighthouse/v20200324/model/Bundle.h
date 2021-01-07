@@ -297,6 +297,36 @@ namespace TencentCloud
                      */
                     bool BundleTypeHasBeenSet() const;
 
+                    /**
+                     * 获取套餐展示标签.
+取值范围:
+"ACTIVITY": 活动套餐,
+"NORMAL": 普通套餐
+                     * @return BundleDisplayLabel 套餐展示标签.
+取值范围:
+"ACTIVITY": 活动套餐,
+"NORMAL": 普通套餐
+                     */
+                    std::string GetBundleDisplayLabel() const;
+
+                    /**
+                     * 设置套餐展示标签.
+取值范围:
+"ACTIVITY": 活动套餐,
+"NORMAL": 普通套餐
+                     * @param BundleDisplayLabel 套餐展示标签.
+取值范围:
+"ACTIVITY": 活动套餐,
+"NORMAL": 普通套餐
+                     */
+                    void SetBundleDisplayLabel(const std::string& _bundleDisplayLabel);
+
+                    /**
+                     * 判断参数 BundleDisplayLabel 是否已赋值
+                     * @return BundleDisplayLabel 是否已赋值
+                     */
+                    bool BundleDisplayLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +410,15 @@ namespace TencentCloud
                      */
                     std::string m_bundleType;
                     bool m_bundleTypeHasBeenSet;
+
+                    /**
+                     * 套餐展示标签.
+取值范围:
+"ACTIVITY": 活动套餐,
+"NORMAL": 普通套餐
+                     */
+                    std::string m_bundleDisplayLabel;
+                    bool m_bundleDisplayLabelHasBeenSet;
 
                 };
             }

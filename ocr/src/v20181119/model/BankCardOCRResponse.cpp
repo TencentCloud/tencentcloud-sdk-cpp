@@ -27,7 +27,12 @@ using namespace std;
 BankCardOCRResponse::BankCardOCRResponse() :
     m_cardNoHasBeenSet(false),
     m_bankInfoHasBeenSet(false),
-    m_validDateHasBeenSet(false)
+    m_validDateHasBeenSet(false),
+    m_cardTypeHasBeenSet(false),
+    m_cardNameHasBeenSet(false),
+    m_borderCutImageHasBeenSet(false),
+    m_cardNoImageHasBeenSet(false),
+    m_warningCodeHasBeenSet(false)
 {
 }
 
@@ -95,6 +100,59 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
         m_validDateHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CardType") && !rsp["CardType"].IsNull())
+    {
+        if (!rsp["CardType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardType = string(rsp["CardType"].GetString());
+        m_cardTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CardName") && !rsp["CardName"].IsNull())
+    {
+        if (!rsp["CardName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CardName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardName = string(rsp["CardName"].GetString());
+        m_cardNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BorderCutImage") && !rsp["BorderCutImage"].IsNull())
+    {
+        if (!rsp["BorderCutImage"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BorderCutImage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_borderCutImage = string(rsp["BorderCutImage"].GetString());
+        m_borderCutImageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CardNoImage") && !rsp["CardNoImage"].IsNull())
+    {
+        if (!rsp["CardNoImage"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CardNoImage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardNoImage = string(rsp["CardNoImage"].GetString());
+        m_cardNoImageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WarningCode") && !rsp["WarningCode"].IsNull())
+    {
+        if (!rsp["WarningCode"].IsArray())
+            return CoreInternalOutcome(Error("response `WarningCode` is not array type"));
+
+        const Value &tmpValue = rsp["WarningCode"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_warningCode.push_back((*itr).GetInt64());
+        }
+        m_warningCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +186,56 @@ string BankCardOCRResponse::GetValidDate() const
 bool BankCardOCRResponse::ValidDateHasBeenSet() const
 {
     return m_validDateHasBeenSet;
+}
+
+string BankCardOCRResponse::GetCardType() const
+{
+    return m_cardType;
+}
+
+bool BankCardOCRResponse::CardTypeHasBeenSet() const
+{
+    return m_cardTypeHasBeenSet;
+}
+
+string BankCardOCRResponse::GetCardName() const
+{
+    return m_cardName;
+}
+
+bool BankCardOCRResponse::CardNameHasBeenSet() const
+{
+    return m_cardNameHasBeenSet;
+}
+
+string BankCardOCRResponse::GetBorderCutImage() const
+{
+    return m_borderCutImage;
+}
+
+bool BankCardOCRResponse::BorderCutImageHasBeenSet() const
+{
+    return m_borderCutImageHasBeenSet;
+}
+
+string BankCardOCRResponse::GetCardNoImage() const
+{
+    return m_cardNoImage;
+}
+
+bool BankCardOCRResponse::CardNoImageHasBeenSet() const
+{
+    return m_cardNoImageHasBeenSet;
+}
+
+vector<int64_t> BankCardOCRResponse::GetWarningCode() const
+{
+    return m_warningCode;
+}
+
+bool BankCardOCRResponse::WarningCodeHasBeenSet() const
+{
+    return m_warningCodeHasBeenSet;
 }
 
 

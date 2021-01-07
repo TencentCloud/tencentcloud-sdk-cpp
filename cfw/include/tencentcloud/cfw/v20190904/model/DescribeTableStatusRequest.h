@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EdgeId值
-                     * @return EdgeId EdgeId值
+                     * 获取EdgeId值两个vpc间的边id vpc填Edgeid，不要填Area；
+                     * @return EdgeId EdgeId值两个vpc间的边id vpc填Edgeid，不要填Area；
                      */
                     std::string GetEdgeId() const;
 
                     /**
-                     * 设置EdgeId值
-                     * @param EdgeId EdgeId值
+                     * 设置EdgeId值两个vpc间的边id vpc填Edgeid，不要填Area；
+                     * @param EdgeId EdgeId值两个vpc间的边id vpc填Edgeid，不要填Area；
                      */
                     void SetEdgeId(const std::string& _edgeId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool EdgeIdHasBeenSet() const;
 
                     /**
-                     * 获取状态值，0：检查表的状态
-                     * @return Status 状态值，0：检查表的状态
+                     * 获取状态值，0：检查表的状态 确实只有一个默认值
+                     * @return Status 状态值，0：检查表的状态 确实只有一个默认值
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态值，0：检查表的状态
-                     * @param Status 状态值，0：检查表的状态
+                     * 设置状态值，0：检查表的状态 确实只有一个默认值
+                     * @param Status 状态值，0：检查表的状态 确实只有一个默认值
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Nat所在地域
-                     * @return Area Nat所在地域
+                     * 获取Nat所在地域 NAT填Area，不要填Edgeid；
+                     * @return Area Nat所在地域 NAT填Area，不要填Edgeid；
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置Nat所在地域
-                     * @param Area Nat所在地域
+                     * 设置Nat所在地域 NAT填Area，不要填Edgeid；
+                     * @param Area Nat所在地域 NAT填Area，不要填Edgeid；
                      */
                     void SetArea(const std::string& _area);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取方向，0：出站，1：入站
-                     * @return Direction 方向，0：出站，1：入站
+                     * 获取方向，0：出站，1：入站 默认值为 0
+                     * @return Direction 方向，0：出站，1：入站 默认值为 0
                      */
                     uint64_t GetDirection() const;
 
                     /**
-                     * 设置方向，0：出站，1：入站
-                     * @param Direction 方向，0：出站，1：入站
+                     * 设置方向，0：出站，1：入站 默认值为 0
+                     * @param Direction 方向，0：出站，1：入站 默认值为 0
                      */
                     void SetDirection(const uint64_t& _direction);
 
@@ -117,25 +117,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EdgeId值
+                     * EdgeId值两个vpc间的边id vpc填Edgeid，不要填Area；
                      */
                     std::string m_edgeId;
                     bool m_edgeIdHasBeenSet;
 
                     /**
-                     * 状态值，0：检查表的状态
+                     * 状态值，0：检查表的状态 确实只有一个默认值
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Nat所在地域
+                     * Nat所在地域 NAT填Area，不要填Edgeid；
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 方向，0：出站，1：入站
+                     * 方向，0：出站，1：入站 默认值为 0
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;

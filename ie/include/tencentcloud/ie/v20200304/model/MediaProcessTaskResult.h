@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ie/v20200304/model/MediaCuttingTaskResult.h>
 #include <tencentcloud/ie/v20200304/model/MediaJoiningTaskResult.h>
+#include <tencentcloud/ie/v20200304/model/MediaRecognitionTaskResult.h>
 
 
 namespace TencentCloud
@@ -75,11 +76,13 @@ namespace TencentCloud
 MediaEditing：视频编辑（待上线）；
 MediaCutting：视频剪切；
 MediaJoining：视频拼接。
+MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 编辑处理任务类型，取值：
 MediaEditing：视频编辑（待上线）；
 MediaCutting：视频剪切；
 MediaJoining：视频拼接。
+MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetType() const;
@@ -89,11 +92,13 @@ MediaJoining：视频拼接。
 MediaEditing：视频编辑（待上线）；
 MediaCutting：视频剪切；
 MediaJoining：视频拼接。
+MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Type 编辑处理任务类型，取值：
 MediaEditing：视频编辑（待上线）；
 MediaCutting：视频剪切；
 MediaJoining：视频拼接。
+MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetType(const std::string& _type);
@@ -252,6 +257,28 @@ MediaJoining：视频拼接。
                      */
                     bool MediaJoiningTaskResultHasBeenSet() const;
 
+                    /**
+                     * 获取媒体识别任务处理结果，当Type=MediaRecognition时才有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MediaRecognitionTaskResult 媒体识别任务处理结果，当Type=MediaRecognition时才有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaRecognitionTaskResult GetMediaRecognitionTaskResult() const;
+
+                    /**
+                     * 设置媒体识别任务处理结果，当Type=MediaRecognition时才有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MediaRecognitionTaskResult 媒体识别任务处理结果，当Type=MediaRecognition时才有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMediaRecognitionTaskResult(const MediaRecognitionTaskResult& _mediaRecognitionTaskResult);
+
+                    /**
+                     * 判断参数 MediaRecognitionTaskResult 是否已赋值
+                     * @return MediaRecognitionTaskResult 是否已赋值
+                     */
+                    bool MediaRecognitionTaskResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,6 +293,7 @@ MediaJoining：视频拼接。
 MediaEditing：视频编辑（待上线）；
 MediaCutting：视频剪切；
 MediaJoining：视频拼接。
+MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
@@ -316,6 +344,13 @@ MediaJoining：视频拼接。
                      */
                     MediaJoiningTaskResult m_mediaJoiningTaskResult;
                     bool m_mediaJoiningTaskResultHasBeenSet;
+
+                    /**
+                     * 媒体识别任务处理结果，当Type=MediaRecognition时才有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaRecognitionTaskResult m_mediaRecognitionTaskResult;
+                    bool m_mediaRecognitionTaskResultHasBeenSet;
 
                 };
             }

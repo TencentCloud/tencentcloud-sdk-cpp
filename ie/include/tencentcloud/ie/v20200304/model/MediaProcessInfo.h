@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ie/v20200304/model/MediaCuttingInfo.h>
 #include <tencentcloud/ie/v20200304/model/MediaJoiningInfo.h>
+#include <tencentcloud/ie/v20200304/model/MediaRecognitionInfo.h>
 
 
 namespace TencentCloud
@@ -53,10 +54,12 @@ namespace TencentCloud
 MediaEditing：媒体编辑（待上线）；
 MediaCutting：媒体剪切；
 MediaJoining：媒体拼接。
+MediaRecognition: 媒体识别。
                      * @return Type 编辑处理任务类型，可选值：
 MediaEditing：媒体编辑（待上线）；
 MediaCutting：媒体剪切；
 MediaJoining：媒体拼接。
+MediaRecognition: 媒体识别。
                      */
                     std::string GetType() const;
 
@@ -65,10 +68,12 @@ MediaJoining：媒体拼接。
 MediaEditing：媒体编辑（待上线）；
 MediaCutting：媒体剪切；
 MediaJoining：媒体拼接。
+MediaRecognition: 媒体识别。
                      * @param Type 编辑处理任务类型，可选值：
 MediaEditing：媒体编辑（待上线）；
 MediaCutting：媒体剪切；
 MediaJoining：媒体拼接。
+MediaRecognition: 媒体识别。
                      */
                     void SetType(const std::string& _type);
 
@@ -114,6 +119,24 @@ MediaJoining：媒体拼接。
                      */
                     bool MediaJoiningInfoHasBeenSet() const;
 
+                    /**
+                     * 获取媒体识别任务参数，Type=MediaRecognition时必选
+                     * @return MediaRecognitionInfo 媒体识别任务参数，Type=MediaRecognition时必选
+                     */
+                    MediaRecognitionInfo GetMediaRecognitionInfo() const;
+
+                    /**
+                     * 设置媒体识别任务参数，Type=MediaRecognition时必选
+                     * @param MediaRecognitionInfo 媒体识别任务参数，Type=MediaRecognition时必选
+                     */
+                    void SetMediaRecognitionInfo(const MediaRecognitionInfo& _mediaRecognitionInfo);
+
+                    /**
+                     * 判断参数 MediaRecognitionInfo 是否已赋值
+                     * @return MediaRecognitionInfo 是否已赋值
+                     */
+                    bool MediaRecognitionInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,6 +144,7 @@ MediaJoining：媒体拼接。
 MediaEditing：媒体编辑（待上线）；
 MediaCutting：媒体剪切；
 MediaJoining：媒体拼接。
+MediaRecognition: 媒体识别。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -136,6 +160,12 @@ MediaJoining：媒体拼接。
                      */
                     MediaJoiningInfo m_mediaJoiningInfo;
                     bool m_mediaJoiningInfoHasBeenSet;
+
+                    /**
+                     * 媒体识别任务参数，Type=MediaRecognition时必选
+                     */
+                    MediaRecognitionInfo m_mediaRecognitionInfo;
+                    bool m_mediaRecognitionInfoHasBeenSet;
 
                 };
             }

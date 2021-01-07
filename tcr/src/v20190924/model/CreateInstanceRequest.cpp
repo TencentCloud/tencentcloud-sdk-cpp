@@ -26,7 +26,8 @@ using namespace std;
 CreateInstanceRequest::CreateInstanceRequest() :
     m_registryNameHasBeenSet(false),
     m_registryTypeHasBeenSet(false),
-    m_tagSpecificationHasBeenSet(false)
+    m_tagSpecificationHasBeenSet(false),
+    m_registryChargeTypeHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,14 @@ string CreateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_tagSpecification.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_registryChargeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegistryChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_registryChargeType, allocator);
     }
 
 
@@ -116,6 +125,22 @@ void CreateInstanceRequest::SetTagSpecification(const TagSpecification& _tagSpec
 bool CreateInstanceRequest::TagSpecificationHasBeenSet() const
 {
     return m_tagSpecificationHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetRegistryChargeType() const
+{
+    return m_registryChargeType;
+}
+
+void CreateInstanceRequest::SetRegistryChargeType(const int64_t& _registryChargeType)
+{
+    m_registryChargeType = _registryChargeType;
+    m_registryChargeTypeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::RegistryChargeTypeHasBeenSet() const
+{
+    return m_registryChargeTypeHasBeenSet;
 }
 
 

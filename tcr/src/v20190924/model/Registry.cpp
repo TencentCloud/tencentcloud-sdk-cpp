@@ -33,7 +33,10 @@ Registry::Registry() :
     m_enableAnonymousHasBeenSet(false),
     m_tokenValidTimeHasBeenSet(false),
     m_internalEndpointHasBeenSet(false),
-    m_tagSpecificationHasBeenSet(false)
+    m_tagSpecificationHasBeenSet(false),
+    m_expiredAtHasBeenSet(false),
+    m_payModHasBeenSet(false),
+    m_renewFlagHasBeenSet(false)
 {
 }
 
@@ -169,6 +172,36 @@ CoreInternalOutcome Registry::Deserialize(const Value &value)
         m_tagSpecificationHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpiredAt") && !value["ExpiredAt"].IsNull())
+    {
+        if (!value["ExpiredAt"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Registry.ExpiredAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiredAt = string(value["ExpiredAt"].GetString());
+        m_expiredAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayMod") && !value["PayMod"].IsNull())
+    {
+        if (!value["PayMod"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Registry.PayMod` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMod = value["PayMod"].GetInt64();
+        m_payModHasBeenSet = true;
+    }
+
+    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    {
+        if (!value["RenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Registry.RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = value["RenewFlag"].GetInt64();
+        m_renewFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -271,6 +304,30 @@ void Registry::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_tagSpecification.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_expiredAtHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExpiredAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_expiredAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayMod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payMod, allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renewFlag, allocator);
     }
 
 }
@@ -466,5 +523,53 @@ void Registry::SetTagSpecification(const TagSpecification& _tagSpecification)
 bool Registry::TagSpecificationHasBeenSet() const
 {
     return m_tagSpecificationHasBeenSet;
+}
+
+string Registry::GetExpiredAt() const
+{
+    return m_expiredAt;
+}
+
+void Registry::SetExpiredAt(const string& _expiredAt)
+{
+    m_expiredAt = _expiredAt;
+    m_expiredAtHasBeenSet = true;
+}
+
+bool Registry::ExpiredAtHasBeenSet() const
+{
+    return m_expiredAtHasBeenSet;
+}
+
+int64_t Registry::GetPayMod() const
+{
+    return m_payMod;
+}
+
+void Registry::SetPayMod(const int64_t& _payMod)
+{
+    m_payMod = _payMod;
+    m_payModHasBeenSet = true;
+}
+
+bool Registry::PayModHasBeenSet() const
+{
+    return m_payModHasBeenSet;
+}
+
+int64_t Registry::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void Registry::SetRenewFlag(const int64_t& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool Registry::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
 }
 

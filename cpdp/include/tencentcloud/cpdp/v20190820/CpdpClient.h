@@ -107,6 +107,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryBankTransactionDetailsResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBankWithdrawCashDetailsRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBankWithdrawCashDetailsResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceRequest.h>
@@ -317,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryBankWithdrawCashDetailsResponse> QueryBankWithdrawCashDetailsOutcome;
                 typedef std::future<QueryBankWithdrawCashDetailsOutcome> QueryBankWithdrawCashDetailsOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryBankWithdrawCashDetailsRequest&, QueryBankWithdrawCashDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBankWithdrawCashDetailsAsyncHandler;
+                typedef Outcome<Error, Model::QueryBillDownloadURLResponse> QueryBillDownloadURLOutcome;
+                typedef std::future<QueryBillDownloadURLOutcome> QueryBillDownloadURLOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryBillDownloadURLRequest&, QueryBillDownloadURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBillDownloadURLAsyncHandler;
                 typedef Outcome<Error, Model::QueryCommonTransferRechargeResponse> QueryCommonTransferRechargeOutcome;
                 typedef std::future<QueryCommonTransferRechargeOutcome> QueryCommonTransferRechargeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCommonTransferRechargeRequest&, QueryCommonTransferRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCommonTransferRechargeAsyncHandler;
@@ -810,6 +815,15 @@ namespace TencentCloud
                 QueryBankWithdrawCashDetailsOutcome QueryBankWithdrawCashDetails(const Model::QueryBankWithdrawCashDetailsRequest &request);
                 void QueryBankWithdrawCashDetailsAsync(const Model::QueryBankWithdrawCashDetailsRequest& request, const QueryBankWithdrawCashDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryBankWithdrawCashDetailsOutcomeCallable QueryBankWithdrawCashDetailsCallable(const Model::QueryBankWithdrawCashDetailsRequest& request);
+
+                /**
+                 *获取单笔代发转账对账单下载URL
+                 * @param req QueryBillDownloadURLRequest
+                 * @return QueryBillDownloadURLOutcome
+                 */
+                QueryBillDownloadURLOutcome QueryBillDownloadURL(const Model::QueryBillDownloadURLRequest &request);
+                void QueryBillDownloadURLAsync(const Model::QueryBillDownloadURLRequest& request, const QueryBillDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryBillDownloadURLOutcomeCallable QueryBillDownloadURLCallable(const Model::QueryBillDownloadURLRequest& request);
 
                 /**
                  *查询普通转账充值明细。接口用于查询会员主动转账进资金汇总账户的明细情况。若会员使用绑定账号转入，则直接入账到会员子账户。若未使用绑定账号转入，则系统无法自动清分到对应子账户，则转入挂账子账户由平台自行清分。若是 “见证+收单充值”T0充值记录时备注Note为“见证+收单充值,订单号” 此接口可以查到T0到账的“见证+收单充值”充值记录。

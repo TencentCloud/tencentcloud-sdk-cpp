@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool DealIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID(该字段灰度中，部分地域不可见)
-                     * @return InstanceIds 实例ID(该字段灰度中，部分地域不可见)
+                     * 获取实例ID
+                     * @return InstanceIds 实例ID
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
@@ -75,7 +75,7 @@ namespace TencentCloud
                     bool m_dealIdHasBeenSet;
 
                     /**
-                     * 实例ID(该字段灰度中，部分地域不可见)
+                     * 实例ID
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

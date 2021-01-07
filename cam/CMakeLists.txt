@@ -54,6 +54,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/RemoveUserFromGroupRequest.h
   include/tencentcloud/cam/v20190116/model/CreatePolicyVersionResponse.h
   include/tencentcloud/cam/v20190116/model/ListPoliciesResponse.h
+  include/tencentcloud/cam/v20190116/model/WeChatWorkSubAccount.h
   include/tencentcloud/cam/v20190116/model/OffsiteFlag.h
   include/tencentcloud/cam/v20190116/model/GroupIdOfUidInfo.h
   include/tencentcloud/cam/v20190116/model/UpdateRoleDescriptionRequest.h
@@ -72,6 +73,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/AddUserRequest.h
   include/tencentcloud/cam/v20190116/model/LoginActionFlag.h
   include/tencentcloud/cam/v20190116/model/DeleteRoleRequest.h
+  include/tencentcloud/cam/v20190116/model/ListWeChatWorkSubAccountsRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateRoleConsoleLoginRequest.h
   include/tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoResponse.h
   include/tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyResponse.h
@@ -85,6 +87,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/SAMLProviderInfo.h
   include/tencentcloud/cam/v20190116/model/UpdateSAMLProviderResponse.h
   include/tencentcloud/cam/v20190116/model/UpdateUserRequest.h
+  include/tencentcloud/cam/v20190116/model/ListWeChatWorkSubAccountsResponse.h
   include/tencentcloud/cam/v20190116/model/CreateSAMLProviderRequest.h
   include/tencentcloud/cam/v20190116/model/AttachPolicyInfo.h
   include/tencentcloud/cam/v20190116/model/PutRolePermissionsBoundaryRequest.h
@@ -194,6 +197,7 @@ set(cam_src
   src/v20190116/model/RemoveUserFromGroupRequest.cpp
   src/v20190116/model/CreatePolicyVersionResponse.cpp
   src/v20190116/model/ListPoliciesResponse.cpp
+  src/v20190116/model/WeChatWorkSubAccount.cpp
   src/v20190116/model/OffsiteFlag.cpp
   src/v20190116/model/GroupIdOfUidInfo.cpp
   src/v20190116/model/UpdateRoleDescriptionRequest.cpp
@@ -212,6 +216,7 @@ set(cam_src
   src/v20190116/model/AddUserRequest.cpp
   src/v20190116/model/LoginActionFlag.cpp
   src/v20190116/model/DeleteRoleRequest.cpp
+  src/v20190116/model/ListWeChatWorkSubAccountsRequest.cpp
   src/v20190116/model/UpdateRoleConsoleLoginRequest.cpp
   src/v20190116/model/GetCustomMFATokenInfoResponse.cpp
   src/v20190116/model/UpdateAssumeRolePolicyResponse.cpp
@@ -225,6 +230,7 @@ set(cam_src
   src/v20190116/model/SAMLProviderInfo.cpp
   src/v20190116/model/UpdateSAMLProviderResponse.cpp
   src/v20190116/model/UpdateUserRequest.cpp
+  src/v20190116/model/ListWeChatWorkSubAccountsResponse.cpp
   src/v20190116/model/CreateSAMLProviderRequest.cpp
   src/v20190116/model/AttachPolicyInfo.cpp
   src/v20190116/model/PutRolePermissionsBoundaryRequest.cpp

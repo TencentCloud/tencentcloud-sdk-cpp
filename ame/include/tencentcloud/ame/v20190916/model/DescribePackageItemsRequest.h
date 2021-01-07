@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单id
-                     * @return OrderId 订单id
+                     * 获取订单id，从获取已购曲库包列表中获取
+                     * @return OrderId 订单id，从获取已购曲库包列表中获取
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置订单id
-                     * @param OrderId 订单id
+                     * 设置订单id，从获取已购曲库包列表中获取
+                     * @param OrderId 订单id，从获取已购曲库包列表中获取
                      */
                     void SetOrderId(const std::string& _orderId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取默认0
-                     * @return Offset 默认0
+                     * 获取默认0，Offset=Offset+Length
+                     * @return Offset 默认0，Offset=Offset+Length
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置默认0
-                     * @param Offset 默认0
+                     * 设置默认0，Offset=Offset+Length
+                     * @param Offset 默认0，Offset=Offset+Length
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -99,13 +99,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单id
+                     * 订单id，从获取已购曲库包列表中获取
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 默认0
+                     * 默认0，Offset=Offset+Length
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

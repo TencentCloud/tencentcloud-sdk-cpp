@@ -25,8 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/gs/v20191118/model/CreateSessionRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateSessionResponse.h>
+#include <tencentcloud/gs/v20191118/model/SaveGameArchiveRequest.h>
+#include <tencentcloud/gs/v20191118/model/SaveGameArchiveResponse.h>
 #include <tencentcloud/gs/v20191118/model/StopGameRequest.h>
 #include <tencentcloud/gs/v20191118/model/StopGameResponse.h>
+#include <tencentcloud/gs/v20191118/model/SwitchGameArchiveRequest.h>
+#include <tencentcloud/gs/v20191118/model/SwitchGameArchiveResponse.h>
 #include <tencentcloud/gs/v20191118/model/TrylockWorkerRequest.h>
 #include <tencentcloud/gs/v20191118/model/TrylockWorkerResponse.h>
 
@@ -46,9 +50,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateSessionResponse> CreateSessionOutcome;
                 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateSessionRequest&, CreateSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSessionAsyncHandler;
+                typedef Outcome<Error, Model::SaveGameArchiveResponse> SaveGameArchiveOutcome;
+                typedef std::future<SaveGameArchiveOutcome> SaveGameArchiveOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::SaveGameArchiveRequest&, SaveGameArchiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveGameArchiveAsyncHandler;
                 typedef Outcome<Error, Model::StopGameResponse> StopGameOutcome;
                 typedef std::future<StopGameOutcome> StopGameOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::StopGameRequest&, StopGameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGameAsyncHandler;
+                typedef Outcome<Error, Model::SwitchGameArchiveResponse> SwitchGameArchiveOutcome;
+                typedef std::future<SwitchGameArchiveOutcome> SwitchGameArchiveOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::SwitchGameArchiveRequest&, SwitchGameArchiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchGameArchiveAsyncHandler;
                 typedef Outcome<Error, Model::TrylockWorkerResponse> TrylockWorkerOutcome;
                 typedef std::future<TrylockWorkerOutcome> TrylockWorkerOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::TrylockWorkerRequest&, TrylockWorkerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TrylockWorkerAsyncHandler;
@@ -65,6 +75,15 @@ namespace TencentCloud
                 CreateSessionOutcomeCallable CreateSessionCallable(const Model::CreateSessionRequest& request);
 
                 /**
+                 *保存游戏存档
+                 * @param req SaveGameArchiveRequest
+                 * @return SaveGameArchiveOutcome
+                 */
+                SaveGameArchiveOutcome SaveGameArchive(const Model::SaveGameArchiveRequest &request);
+                void SaveGameArchiveAsync(const Model::SaveGameArchiveRequest& request, const SaveGameArchiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SaveGameArchiveOutcomeCallable SaveGameArchiveCallable(const Model::SaveGameArchiveRequest& request);
+
+                /**
                  *强制退出游戏
                  * @param req StopGameRequest
                  * @return StopGameOutcome
@@ -72,6 +91,15 @@ namespace TencentCloud
                 StopGameOutcome StopGame(const Model::StopGameRequest &request);
                 void StopGameAsync(const Model::StopGameRequest& request, const StopGameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopGameOutcomeCallable StopGameCallable(const Model::StopGameRequest& request);
+
+                /**
+                 *切换游戏存档
+                 * @param req SwitchGameArchiveRequest
+                 * @return SwitchGameArchiveOutcome
+                 */
+                SwitchGameArchiveOutcome SwitchGameArchive(const Model::SwitchGameArchiveRequest &request);
+                void SwitchGameArchiveAsync(const Model::SwitchGameArchiveRequest& request, const SwitchGameArchiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchGameArchiveOutcomeCallable SwitchGameArchiveCallable(const Model::SwitchGameArchiveRequest& request);
 
                 /**
                  *尝试锁定机器

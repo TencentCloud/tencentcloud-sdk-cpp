@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板ID
-                     * @return TemplateId 模板ID
+                     * 获取模板ID。详情请查看：[获取模板列表](https://cloud.tencent.com/document/product/242/48940)
+                     * @return TemplateId 模板ID。详情请查看：[获取模板列表](https://cloud.tencent.com/document/product/242/48940)
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板ID
-                     * @param TemplateId 模板ID
+                     * 设置模板ID。详情请查看：[获取模板列表](https://cloud.tencent.com/document/product/242/48940)
+                     * @param TemplateId 模板ID。详情请查看：[获取模板列表](https://cloud.tencent.com/document/product/242/48940)
                      */
                     void SetTemplateId(const std::string& _templateId);
 
@@ -143,7 +143,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板ID
+                     * 模板ID。详情请查看：[获取模板列表](https://cloud.tencent.com/document/product/242/48940)
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

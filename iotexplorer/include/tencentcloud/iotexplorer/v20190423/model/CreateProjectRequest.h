@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool ProjectDescHasBeenSet() const;
 
+                    /**
+                     * 获取实例ID，不带实例ID，默认为公共实例
+                     * @return InstanceId 实例ID，不带实例ID，默认为公共实例
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例ID，不带实例ID，默认为公共实例
+                     * @param InstanceId 实例ID，不带实例ID，默认为公共实例
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_projectDesc;
                     bool m_projectDescHasBeenSet;
+
+                    /**
+                     * 实例ID，不带实例ID，默认为公共实例
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

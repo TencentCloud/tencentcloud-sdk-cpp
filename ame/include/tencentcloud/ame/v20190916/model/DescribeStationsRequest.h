@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取offset (Default = 0)，(当前页-1) * Limit
-                     * @return Offset offset (Default = 0)，(当前页-1) * Limit
+                     * 获取offset (Default = 0)，Offset=Offset+Limit
+                     * @return Offset offset (Default = 0)，Offset=Offset+Limit
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置offset (Default = 0)，(当前页-1) * Limit
-                     * @param Offset offset (Default = 0)，(当前页-1) * Limit
+                     * 设置offset (Default = 0)，Offset=Offset+Limit
+                     * @param Offset offset (Default = 0)，Offset=Offset+Limit
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * offset (Default = 0)，(当前页-1) * Limit
+                     * offset (Default = 0)，Offset=Offset+Limit
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

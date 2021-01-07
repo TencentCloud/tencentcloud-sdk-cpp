@@ -53,6 +53,8 @@
 #include <tencentcloud/cdn/v20180606/model/AdvancedAuthentication.h>
 #include <tencentcloud/cdn/v20180606/model/OriginAuthentication.h>
 #include <tencentcloud/cdn/v20180606/model/Ipv6Access.h>
+#include <tencentcloud/cdn/v20180606/model/OfflineCache.h>
+#include <tencentcloud/cdn/v20180606/model/OriginCombine.h>
 
 
 namespace TencentCloud
@@ -768,6 +770,42 @@ global：全球加速
                      */
                     bool Ipv6AccessHasBeenSet() const;
 
+                    /**
+                     * 获取离线缓存
+                     * @return OfflineCache 离线缓存
+                     */
+                    OfflineCache GetOfflineCache() const;
+
+                    /**
+                     * 设置离线缓存
+                     * @param OfflineCache 离线缓存
+                     */
+                    void SetOfflineCache(const OfflineCache& _offlineCache);
+
+                    /**
+                     * 判断参数 OfflineCache 是否已赋值
+                     * @return OfflineCache 是否已赋值
+                     */
+                    bool OfflineCacheHasBeenSet() const;
+
+                    /**
+                     * 获取合并回源
+                     * @return OriginCombine 合并回源
+                     */
+                    OriginCombine GetOriginCombine() const;
+
+                    /**
+                     * 设置合并回源
+                     * @param OriginCombine 合并回源
+                     */
+                    void SetOriginCombine(const OriginCombine& _originCombine);
+
+                    /**
+                     * 判断参数 OriginCombine 是否已赋值
+                     * @return OriginCombine 是否已赋值
+                     */
+                    bool OriginCombineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -998,6 +1036,18 @@ global：全球加速
                      */
                     Ipv6Access m_ipv6Access;
                     bool m_ipv6AccessHasBeenSet;
+
+                    /**
+                     * 离线缓存
+                     */
+                    OfflineCache m_offlineCache;
+                    bool m_offlineCacheHasBeenSet;
+
+                    /**
+                     * 合并回源
+                     */
+                    OriginCombine m_originCombine;
+                    bool m_originCombineHasBeenSet;
 
                 };
             }

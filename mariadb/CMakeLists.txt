@@ -28,10 +28,13 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeRenewalPriceResponse.h
   include/tencentcloud/mariadb/v20170312/model/CreateTmpInstancesRequest.h
   include/tencentcloud/mariadb/v20170312/model/RestartDBInstancesResponse.h
+  include/tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/FlushBinlogResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeProjectSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateAccountRequest.h
   include/tencentcloud/mariadb/v20170312/model/InitDBInstancesResponse.h
@@ -50,13 +53,16 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDBLogFilesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeOrdersResponse.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/ResetAccountPasswordRequest.h
   include/tencentcloud/mariadb/v20170312/model/CopyAccountPrivilegesResponse.h
   include/tencentcloud/mariadb/v20170312/model/CloneAccountRequest.h
   include/tencentcloud/mariadb/v20170312/model/ParamModifyResult.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstancesRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeSaleInfoRequest.h
   include/tencentcloud/mariadb/v20170312/model/RenewDBInstanceRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeProjectSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeSqlLogsRequest.h
   include/tencentcloud/mariadb/v20170312/model/ResetAccountPasswordResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsRequest.h
@@ -69,15 +75,19 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DBParamValue.h
   include/tencentcloud/mariadb/v20170312/model/SpecConfigInfo.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBParametersRequest.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/ZonesInfo.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBParametersResponse.h
   include/tencentcloud/mariadb/v20170312/model/CopyAccountPrivilegesRequest.h
+  include/tencentcloud/mariadb/v20170312/model/SecurityGroup.h
   include/tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/mariadb/v20170312/model/ModifyBackupTimeRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateTmpInstancesResponse.h
   include/tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceRequest.h
+  include/tencentcloud/mariadb/v20170312/model/SecurityGroupBound.h
   include/tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceResponse.h
+  include/tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DBInstance.h
   include/tencentcloud/mariadb/v20170312/model/DescribePriceResponse.h
   include/tencentcloud/mariadb/v20170312/model/InitDBInstancesRequest.h
@@ -111,6 +121,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/LogFileInfo.h
   include/tencentcloud/mariadb/v20170312/model/RestartDBInstancesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DBAccount.h
   include/tencentcloud/mariadb/v20170312/model/DescribeAccountPrivilegesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceDetailsResponse.h
@@ -123,6 +134,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/FlushBinlogRequest.h
   include/tencentcloud/mariadb/v20170312/model/MonitorData.h
   include/tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DeleteAccountResponse.h
   )
@@ -138,10 +150,13 @@ set(mariadb_src
   src/v20170312/model/DescribeRenewalPriceResponse.cpp
   src/v20170312/model/CreateTmpInstancesRequest.cpp
   src/v20170312/model/RestartDBInstancesResponse.cpp
+  src/v20170312/model/AssociateSecurityGroupsRequest.cpp
   src/v20170312/model/DescribeUpgradePriceRequest.cpp
   src/v20170312/model/FlushBinlogResponse.cpp
+  src/v20170312/model/DescribeDBSecurityGroupsResponse.cpp
   src/v20170312/model/DescribeDBResourceUsageDetailsResponse.cpp
   src/v20170312/model/DescribeDBInstanceSpecsResponse.cpp
+  src/v20170312/model/DescribeProjectSecurityGroupsRequest.cpp
   src/v20170312/model/DescribeDBSlowLogsRequest.cpp
   src/v20170312/model/CreateAccountRequest.cpp
   src/v20170312/model/InitDBInstancesResponse.cpp
@@ -160,13 +175,16 @@ set(mariadb_src
   src/v20170312/model/DescribeDBLogFilesRequest.cpp
   src/v20170312/model/DescribeDBResourceUsageResponse.cpp
   src/v20170312/model/DescribeOrdersResponse.cpp
+  src/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20170312/model/ResetAccountPasswordRequest.cpp
   src/v20170312/model/CopyAccountPrivilegesResponse.cpp
   src/v20170312/model/CloneAccountRequest.cpp
   src/v20170312/model/ParamModifyResult.cpp
   src/v20170312/model/DescribeDBInstancesRequest.cpp
+  src/v20170312/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20170312/model/DescribeSaleInfoRequest.cpp
   src/v20170312/model/RenewDBInstanceRequest.cpp
+  src/v20170312/model/DescribeProjectSecurityGroupsResponse.cpp
   src/v20170312/model/DescribeSqlLogsRequest.cpp
   src/v20170312/model/ResetAccountPasswordResponse.cpp
   src/v20170312/model/DescribeDBInstanceSpecsRequest.cpp
@@ -179,15 +197,19 @@ set(mariadb_src
   src/v20170312/model/DBParamValue.cpp
   src/v20170312/model/SpecConfigInfo.cpp
   src/v20170312/model/ModifyDBParametersRequest.cpp
+  src/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.cpp
   src/v20170312/model/ZonesInfo.cpp
   src/v20170312/model/ModifyDBParametersResponse.cpp
   src/v20170312/model/CopyAccountPrivilegesRequest.cpp
+  src/v20170312/model/SecurityGroup.cpp
   src/v20170312/model/OpenDBExtranetAccessResponse.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
   src/v20170312/model/ModifyBackupTimeRequest.cpp
   src/v20170312/model/CreateTmpInstancesResponse.cpp
   src/v20170312/model/UpgradeDBInstanceRequest.cpp
+  src/v20170312/model/SecurityGroupBound.cpp
   src/v20170312/model/DescribeUpgradePriceResponse.cpp
+  src/v20170312/model/AssociateSecurityGroupsResponse.cpp
   src/v20170312/model/DBInstance.cpp
   src/v20170312/model/DescribePriceResponse.cpp
   src/v20170312/model/InitDBInstancesRequest.cpp
@@ -221,6 +243,7 @@ set(mariadb_src
   src/v20170312/model/LogFileInfo.cpp
   src/v20170312/model/RestartDBInstancesRequest.cpp
   src/v20170312/model/DescribeDBResourceUsageDetailsRequest.cpp
+  src/v20170312/model/DisassociateSecurityGroupsRequest.cpp
   src/v20170312/model/DBAccount.cpp
   src/v20170312/model/DescribeAccountPrivilegesRequest.cpp
   src/v20170312/model/DescribeDBPerformanceDetailsResponse.cpp
@@ -233,6 +256,7 @@ set(mariadb_src
   src/v20170312/model/FlushBinlogRequest.cpp
   src/v20170312/model/MonitorData.cpp
   src/v20170312/model/ModifyLogFileRetentionPeriodResponse.cpp
+  src/v20170312/model/DisassociateSecurityGroupsResponse.cpp
   src/v20170312/model/DescribeDBPerformanceRequest.cpp
   src/v20170312/model/DeleteAccountResponse.cpp
   )

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙状态
-                     * @return Status 防火墙状态
+                     * 获取防火墙状态  0: 关闭，1：开启
+                     * @return Status 防火墙状态  0: 关闭，1：开启
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置防火墙状态
-                     * @param Status 防火墙状态
+                     * 设置防火墙状态  0: 关闭，1：开启
+                     * @param Status 防火墙状态  0: 关闭，1：开启
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取资产类型
-                     * @return Type 资产类型
+                     * 获取资产类型 CVM/NAT/VPN/CLB/其它
+                     * @return Type 资产类型 CVM/NAT/VPN/CLB/其它
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置资产类型
-                     * @param Type 资产类型
+                     * 设置资产类型 CVM/NAT/VPN/CLB/其它
+                     * @param Type 资产类型 CVM/NAT/VPN/CLB/其它
                      */
                     void SetType(const std::string& _type);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Area 地域
+                     * 获取地域 上海/重庆/广州，等等
+                     * @return Area 地域 上海/重庆/广州，等等
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置地域
-                     * @param Area 地域
+                     * 设置地域 上海/重庆/广州，等等
+                     * @param Area 地域 上海/重庆/广州，等等
                      */
                     void SetArea(const std::string& _area);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取搜索值
-                     * @return SearchValue 搜索值
+                     * 获取搜索值  例子："{"common":"106.54.189.45"}"
+                     * @return SearchValue 搜索值  例子："{"common":"106.54.189.45"}"
                      */
                     std::string GetSearchValue() const;
 
                     /**
-                     * 设置搜索值
-                     * @param SearchValue 搜索值
+                     * 设置搜索值  例子："{"common":"106.54.189.45"}"
+                     * @param SearchValue 搜索值  例子："{"common":"106.54.189.45"}"
                      */
                     void SetSearchValue(const std::string& _searchValue);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool SearchValueHasBeenSet() const;
 
                     /**
-                     * 获取条数
-                     * @return Limit 条数
+                     * 获取条数  默认值:10
+                     * @return Limit 条数  默认值:10
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置条数
-                     * @param Limit 条数
+                     * 设置条数  默认值:10
+                     * @param Limit 条数  默认值:10
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移值
-                     * @return Offset 偏移值
+                     * 获取偏移值 默认值: 0
+                     * @return Offset 偏移值 默认值: 0
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移值
-                     * @param Offset 偏移值
+                     * 设置偏移值 默认值: 0
+                     * @param Offset 偏移值 默认值: 0
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return By 排序字段
+                     * 获取排序字段 PortTimes(风险端口数)
+                     * @return By 排序字段 PortTimes(风险端口数)
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段
-                     * @param By 排序字段
+                     * 设置排序字段 PortTimes(风险端口数)
+                     * @param By 排序字段 PortTimes(风险端口数)
                      */
                     void SetBy(const std::string& _by);
 
@@ -189,37 +189,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙状态
+                     * 防火墙状态  0: 关闭，1：开启
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 资产类型
+                     * 资产类型 CVM/NAT/VPN/CLB/其它
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 地域
+                     * 地域 上海/重庆/广州，等等
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 搜索值
+                     * 搜索值  例子："{"common":"106.54.189.45"}"
                      */
                     std::string m_searchValue;
                     bool m_searchValueHasBeenSet;
 
                     /**
-                     * 条数
+                     * 条数  默认值:10
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移值
+                     * 偏移值 默认值: 0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * 排序字段 PortTimes(风险端口数)
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

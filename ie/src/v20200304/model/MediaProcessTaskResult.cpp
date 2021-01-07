@@ -29,7 +29,8 @@ MediaProcessTaskResult::MediaProcessTaskResult() :
     m_errCodeHasBeenSet(false),
     m_errMsgHasBeenSet(false),
     m_mediaCuttingTaskResultHasBeenSet(false),
-    m_mediaJoiningTaskResultHasBeenSet(false)
+    m_mediaJoiningTaskResultHasBeenSet(false),
+    m_mediaRecognitionTaskResultHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,23 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const Value &value)
         m_mediaJoiningTaskResultHasBeenSet = true;
     }
 
+    if (value.HasMember("MediaRecognitionTaskResult") && !value["MediaRecognitionTaskResult"].IsNull())
+    {
+        if (!value["MediaRecognitionTaskResult"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.MediaRecognitionTaskResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mediaRecognitionTaskResult.Deserialize(value["MediaRecognitionTaskResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mediaRecognitionTaskResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +221,15 @@ void MediaProcessTaskResult::ToJsonObject(Value &value, Document::AllocatorType&
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_mediaJoiningTaskResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mediaRecognitionTaskResultHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MediaRecognitionTaskResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_mediaRecognitionTaskResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -334,5 +361,21 @@ void MediaProcessTaskResult::SetMediaJoiningTaskResult(const MediaJoiningTaskRes
 bool MediaProcessTaskResult::MediaJoiningTaskResultHasBeenSet() const
 {
     return m_mediaJoiningTaskResultHasBeenSet;
+}
+
+MediaRecognitionTaskResult MediaProcessTaskResult::GetMediaRecognitionTaskResult() const
+{
+    return m_mediaRecognitionTaskResult;
+}
+
+void MediaProcessTaskResult::SetMediaRecognitionTaskResult(const MediaRecognitionTaskResult& _mediaRecognitionTaskResult)
+{
+    m_mediaRecognitionTaskResult = _mediaRecognitionTaskResult;
+    m_mediaRecognitionTaskResultHasBeenSet = true;
+}
+
+bool MediaProcessTaskResult::MediaRecognitionTaskResultHasBeenSet() const
+{
+    return m_mediaRecognitionTaskResultHasBeenSet;
 }
 

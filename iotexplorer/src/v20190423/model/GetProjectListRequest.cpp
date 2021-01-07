@@ -25,7 +25,8 @@ using namespace std;
 
 GetProjectListRequest::GetProjectListRequest() :
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string GetProjectListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void GetProjectListRequest::SetLimit(const int64_t& _limit)
 bool GetProjectListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string GetProjectListRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void GetProjectListRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool GetProjectListRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

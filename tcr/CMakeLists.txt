@@ -39,6 +39,8 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/AutoDelStrategyInfo.h
   include/tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalRequest.h
+  include/tencentcloud/tcr/v20190924/model/RegistryChargePrepaid.h
+  include/tencentcloud/tcr/v20190924/model/RenewInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/Registry.h
   include/tencentcloud/tcr/v20190924/model/DescribeRepositoriesResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteInstanceTokenResponse.h
@@ -49,6 +51,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/NamespaceInfo.h
+  include/tencentcloud/tcr/v20190924/model/RenewInstanceRequest.h
   include/tencentcloud/tcr/v20190924/model/Limit.h
   include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteRepositoryResponse.h
@@ -207,6 +210,8 @@ set(tcr_src
   src/v20190924/model/CreateApplicationTriggerPersonalRequest.cpp
   src/v20190924/model/AutoDelStrategyInfo.cpp
   src/v20190924/model/ValidateNamespaceExistPersonalRequest.cpp
+  src/v20190924/model/RegistryChargePrepaid.cpp
+  src/v20190924/model/RenewInstanceResponse.cpp
   src/v20190924/model/Registry.cpp
   src/v20190924/model/DescribeRepositoriesResponse.cpp
   src/v20190924/model/DeleteInstanceTokenResponse.cpp
@@ -217,6 +222,7 @@ set(tcr_src
   src/v20190924/model/DescribeApplicationTriggerPersonalRequest.cpp
   src/v20190924/model/DeleteNamespacePersonalRequest.cpp
   src/v20190924/model/NamespaceInfo.cpp
+  src/v20190924/model/RenewInstanceRequest.cpp
   src/v20190924/model/Limit.cpp
   src/v20190924/model/DescribeReplicationInstancesRequest.cpp
   src/v20190924/model/DeleteRepositoryResponse.cpp

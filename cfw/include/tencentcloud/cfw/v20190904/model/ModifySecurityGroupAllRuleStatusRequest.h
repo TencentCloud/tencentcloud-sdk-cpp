@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态，0：全部停用，1：全部启用
-                     * @return Status 状态，0：全部停用，1：全部启用
+                     * 获取列表规则状态，0：全部停用，1：全部启用
+                     * @return Status 列表规则状态，0：全部停用，1：全部启用
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态，0：全部停用，1：全部启用
-                     * @param Status 状态，0：全部停用，1：全部启用
+                     * 设置列表规则状态，0：全部停用，1：全部启用
+                     * @param Status 列表规则状态，0：全部停用，1：全部启用
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态，0：全部停用，1：全部启用
+                     * 列表规则状态，0：全部停用，1：全部启用
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

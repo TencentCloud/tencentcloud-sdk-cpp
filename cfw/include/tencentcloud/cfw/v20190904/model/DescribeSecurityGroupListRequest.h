@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云地域的英文简写
-                     * @return Area 腾讯云地域的英文简写
+                     * 获取地域代码（例: ap-guangzhou),支持腾讯云全部地域
+                     * @return Area 地域代码（例: ap-guangzhou),支持腾讯云全部地域
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置腾讯云地域的英文简写
-                     * @param Area 腾讯云地域的英文简写
+                     * 设置地域代码（例: ap-guangzhou),支持腾讯云全部地域
+                     * @param Area 地域代码（例: ap-guangzhou),支持腾讯云全部地域
                      */
                     void SetArea(const std::string& _area);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 腾讯云地域的英文简写
+                     * 地域代码（例: ap-guangzhou),支持腾讯云全部地域
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

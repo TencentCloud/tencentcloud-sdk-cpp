@@ -62,6 +62,8 @@
 #include <tencentcloud/cdn/v20180606/model/OriginAuthentication.h>
 #include <tencentcloud/cdn/v20180606/model/Ipv6Access.h>
 #include <tencentcloud/cdn/v20180606/model/AdvanceConfig.h>
+#include <tencentcloud/cdn/v20180606/model/OfflineCache.h>
+#include <tencentcloud/cdn/v20180606/model/OriginCombine.h>
 
 
 namespace TencentCloud
@@ -1288,6 +1290,50 @@ off：不支持
                      */
                     bool AdvanceSetHasBeenSet() const;
 
+                    /**
+                     * 获取离线缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OfflineCache 离线缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OfflineCache GetOfflineCache() const;
+
+                    /**
+                     * 设置离线缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OfflineCache 离线缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOfflineCache(const OfflineCache& _offlineCache);
+
+                    /**
+                     * 判断参数 OfflineCache 是否已赋值
+                     * @return OfflineCache 是否已赋值
+                     */
+                    bool OfflineCacheHasBeenSet() const;
+
+                    /**
+                     * 获取合并回源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginCombine 合并回源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OriginCombine GetOriginCombine() const;
+
+                    /**
+                     * 设置合并回源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginCombine 合并回源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginCombine(const OriginCombine& _originCombine);
+
+                    /**
+                     * 判断参数 OriginCombine 是否已赋值
+                     * @return OriginCombine 是否已赋值
+                     */
+                    bool OriginCombineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1668,6 +1714,20 @@ off：不支持
                      */
                     std::vector<AdvanceConfig> m_advanceSet;
                     bool m_advanceSetHasBeenSet;
+
+                    /**
+                     * 离线缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OfflineCache m_offlineCache;
+                    bool m_offlineCacheHasBeenSet;
+
+                    /**
+                     * 合并回源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OriginCombine m_originCombine;
+                    bool m_originCombineHasBeenSet;
 
                 };
             }

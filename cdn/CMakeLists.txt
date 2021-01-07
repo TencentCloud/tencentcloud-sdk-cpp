@@ -242,7 +242,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ClientInfo.h
   include/tencentcloud/cdn/v20180606/model/DescribePurgeTasksRequest.h
   include/tencentcloud/cdn/v20180606/model/PushUrlsCacheResponse.h
-  include/tencentcloud/cdn/v20180606/model/StopCdnDomainResponse.h
+  include/tencentcloud/cdn/v20180606/model/OriginCombine.h
   include/tencentcloud/cdn/v20180606/model/QueryStringKey.h
   include/tencentcloud/cdn/v20180606/model/ListTopDataResponse.h
   include/tencentcloud/cdn/v20180606/model/MaxAge.h
@@ -279,7 +279,9 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/StopScdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/ScdnTypeData.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsRequest.h
+  include/tencentcloud/cdn/v20180606/model/OfflineCache.h
   include/tencentcloud/cdn/v20180606/model/CreateEdgePackTaskRequest.h
+  include/tencentcloud/cdn/v20180606/model/StopCdnDomainResponse.h
   include/tencentcloud/cdn/v20180606/model/UrlRedirectRule.h
   include/tencentcloud/cdn/v20180606/model/DiagnoseList.h
   include/tencentcloud/cdn/v20180606/model/IpFilterPathRule.h
@@ -510,7 +512,7 @@ set(cdn_src
   src/v20180606/model/ClientInfo.cpp
   src/v20180606/model/DescribePurgeTasksRequest.cpp
   src/v20180606/model/PushUrlsCacheResponse.cpp
-  src/v20180606/model/StopCdnDomainResponse.cpp
+  src/v20180606/model/OriginCombine.cpp
   src/v20180606/model/QueryStringKey.cpp
   src/v20180606/model/ListTopDataResponse.cpp
   src/v20180606/model/MaxAge.cpp
@@ -547,7 +549,9 @@ set(cdn_src
   src/v20180606/model/StopScdnDomainRequest.cpp
   src/v20180606/model/ScdnTypeData.cpp
   src/v20180606/model/DescribeDomainsRequest.cpp
+  src/v20180606/model/OfflineCache.cpp
   src/v20180606/model/CreateEdgePackTaskRequest.cpp
+  src/v20180606/model/StopCdnDomainResponse.cpp
   src/v20180606/model/UrlRedirectRule.cpp
   src/v20180606/model/DiagnoseList.cpp
   src/v20180606/model/IpFilterPathRule.cpp

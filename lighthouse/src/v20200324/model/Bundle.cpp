@@ -34,7 +34,8 @@ Bundle::Bundle() :
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_internetChargeTypeHasBeenSet(false),
     m_bundleSalesStateHasBeenSet(false),
-    m_bundleTypeHasBeenSet(false)
+    m_bundleTypeHasBeenSet(false),
+    m_bundleDisplayLabelHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,16 @@ CoreInternalOutcome Bundle::Deserialize(const Value &value)
         m_bundleTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BundleDisplayLabel") && !value["BundleDisplayLabel"].IsNull())
+    {
+        if (!value["BundleDisplayLabel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Bundle.BundleDisplayLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleDisplayLabel = string(value["BundleDisplayLabel"].GetString());
+        m_bundleDisplayLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -290,6 +301,14 @@ void Bundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "BundleType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_bundleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleDisplayLabelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BundleDisplayLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_bundleDisplayLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -501,5 +520,21 @@ void Bundle::SetBundleType(const string& _bundleType)
 bool Bundle::BundleTypeHasBeenSet() const
 {
     return m_bundleTypeHasBeenSet;
+}
+
+string Bundle::GetBundleDisplayLabel() const
+{
+    return m_bundleDisplayLabel;
+}
+
+void Bundle::SetBundleDisplayLabel(const string& _bundleDisplayLabel)
+{
+    m_bundleDisplayLabel = _bundleDisplayLabel;
+    m_bundleDisplayLabelHasBeenSet = true;
+}
+
+bool Bundle::BundleDisplayLabelHasBeenSet() const
+{
+    return m_bundleDisplayLabelHasBeenSet;
 }
 

@@ -40,6 +40,135 @@ AmeClient::AmeClient(const Credential &credential, const string &region, const C
 }
 
 
+AmeClient::DescribeAuthInfoOutcome AmeClient::DescribeAuthInfo(const DescribeAuthInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuthInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuthInfoResponse rsp = DescribeAuthInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuthInfoOutcome(rsp);
+        else
+            return DescribeAuthInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuthInfoOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribeAuthInfoAsync(const DescribeAuthInfoRequest& request, const DescribeAuthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuthInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribeAuthInfoOutcomeCallable AmeClient::DescribeAuthInfoCallable(const DescribeAuthInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuthInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuthInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AmeClient::DescribeCloudMusicOutcome AmeClient::DescribeCloudMusic(const DescribeCloudMusicRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudMusic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudMusicResponse rsp = DescribeCloudMusicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudMusicOutcome(rsp);
+        else
+            return DescribeCloudMusicOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudMusicOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribeCloudMusicAsync(const DescribeCloudMusicRequest& request, const DescribeCloudMusicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudMusic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribeCloudMusicOutcomeCallable AmeClient::DescribeCloudMusicCallable(const DescribeCloudMusicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudMusicOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudMusic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AmeClient::DescribeCloudMusicPurchasedOutcome AmeClient::DescribeCloudMusicPurchased(const DescribeCloudMusicPurchasedRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudMusicPurchased");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudMusicPurchasedResponse rsp = DescribeCloudMusicPurchasedResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudMusicPurchasedOutcome(rsp);
+        else
+            return DescribeCloudMusicPurchasedOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudMusicPurchasedOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribeCloudMusicPurchasedAsync(const DescribeCloudMusicPurchasedRequest& request, const DescribeCloudMusicPurchasedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudMusicPurchased(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribeCloudMusicPurchasedOutcomeCallable AmeClient::DescribeCloudMusicPurchasedCallable(const DescribeCloudMusicPurchasedRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudMusicPurchasedOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudMusicPurchased(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::DescribeItemByIdOutcome AmeClient::DescribeItemById(const DescribeItemByIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeItemById");

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/CloneAccountRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/CloneAccountResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/CloseDBExtranetAccessRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBLogFilesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBParametersRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBParametersResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDCDBInstancesRequest.h>
@@ -65,6 +69,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeProjectsRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeProjectsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeShardSpecRequest.h>
@@ -73,6 +79,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeSqlLogsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeUserTasksRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeUserTasksResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DisassociateSecurityGroupsRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DisassociateSecurityGroupsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/FlushBinlogRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/FlushBinlogResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/GrantAccountPrivilegesRequest.h>
@@ -81,6 +89,8 @@
 #include <tencentcloud/dcdb/v20180411/model/InitDCDBInstancesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyDBInstanceSecurityGroupsRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyDBInstancesProjectRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyDBInstancesProjectResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyDBParametersRequest.h>
@@ -109,6 +119,9 @@ namespace TencentCloud
                 DcdbClient(const Credential &credential, const std::string &region);
                 DcdbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
+                typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::CloneAccountResponse> CloneAccountOutcome;
                 typedef std::future<CloneAccountOutcome> CloneAccountOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::CloneAccountRequest&, CloneAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneAccountAsyncHandler;
@@ -139,6 +152,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDBParametersResponse> DescribeDBParametersOutcome;
                 typedef std::future<DescribeDBParametersOutcome> DescribeDBParametersOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDBParametersRequest&, DescribeDBParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBParametersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
+                typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBSyncModeResponse> DescribeDBSyncModeOutcome;
                 typedef std::future<DescribeDBSyncModeOutcome> DescribeDBSyncModeOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDBSyncModeRequest&, DescribeDBSyncModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSyncModeAsyncHandler;
@@ -172,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeProjectSecurityGroupsResponse> DescribeProjectSecurityGroupsOutcome;
+                typedef std::future<DescribeProjectSecurityGroupsOutcome> DescribeProjectSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeProjectSecurityGroupsRequest&, DescribeProjectSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeProjectsResponse> DescribeProjectsOutcome;
                 typedef std::future<DescribeProjectsOutcome> DescribeProjectsOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeProjectsRequest&, DescribeProjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectsAsyncHandler;
@@ -184,6 +203,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUserTasksResponse> DescribeUserTasksOutcome;
                 typedef std::future<DescribeUserTasksOutcome> DescribeUserTasksOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeUserTasksRequest&, DescribeUserTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserTasksAsyncHandler;
+                typedef Outcome<Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
+                typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::FlushBinlogResponse> FlushBinlogOutcome;
                 typedef std::future<FlushBinlogOutcome> FlushBinlogOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::FlushBinlogRequest&, FlushBinlogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlushBinlogAsyncHandler;
@@ -196,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAccountDescriptionResponse> ModifyAccountDescriptionOutcome;
                 typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::ModifyAccountDescriptionRequest&, ModifyAccountDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
+                typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDBInstancesProjectResponse> ModifyDBInstancesProjectOutcome;
                 typedef std::future<ModifyDBInstancesProjectOutcome> ModifyDBInstancesProjectOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::ModifyDBInstancesProjectRequest&, ModifyDBInstancesProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstancesProjectAsyncHandler;
@@ -219,6 +244,15 @@ namespace TencentCloud
                 typedef std::function<void(const DcdbClient*, const Model::UpgradeDCDBInstanceRequest&, UpgradeDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDCDBInstanceAsyncHandler;
 
 
+
+                /**
+                 *本接口 (AssociateSecurityGroups) 用于安全组批量绑定云资源。
+                 * @param req AssociateSecurityGroupsRequest
+                 * @return AssociateSecurityGroupsOutcome
+                 */
+                AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
+                void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
 
                 /**
                  *本接口（CloneAccount）用于克隆实例账户。
@@ -311,6 +345,15 @@ namespace TencentCloud
                 DescribeDBParametersOutcome DescribeDBParameters(const Model::DescribeDBParametersRequest &request);
                 void DescribeDBParametersAsync(const Model::DescribeDBParametersRequest& request, const DescribeDBParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBParametersOutcomeCallable DescribeDBParametersCallable(const Model::DescribeDBParametersRequest& request);
+
+                /**
+                 *本接口（DescribeDBSecurityGroups）用于查询实例安全组信息
+                 * @param req DescribeDBSecurityGroupsRequest
+                 * @return DescribeDBSecurityGroupsOutcome
+                 */
+                DescribeDBSecurityGroupsOutcome DescribeDBSecurityGroups(const Model::DescribeDBSecurityGroupsRequest &request);
+                void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
 
                 /**
                  *本接口（DescribeDBSyncMode）用于查询云数据库实例的同步模式。
@@ -413,6 +456,15 @@ namespace TencentCloud
                 DescribeOrdersOutcomeCallable DescribeOrdersCallable(const Model::DescribeOrdersRequest& request);
 
                 /**
+                 *本接口（DescribeProjectSecurityGroups）用于查询项目安全组信息
+                 * @param req DescribeProjectSecurityGroupsRequest
+                 * @return DescribeProjectSecurityGroupsOutcome
+                 */
+                DescribeProjectSecurityGroupsOutcome DescribeProjectSecurityGroups(const Model::DescribeProjectSecurityGroupsRequest &request);
+                void DescribeProjectSecurityGroupsAsync(const Model::DescribeProjectSecurityGroupsRequest& request, const DescribeProjectSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProjectSecurityGroupsOutcomeCallable DescribeProjectSecurityGroupsCallable(const Model::DescribeProjectSecurityGroupsRequest& request);
+
+                /**
                  *本接口（DescribeProjects）用于查询项目列表
                  * @param req DescribeProjectsRequest
                  * @return DescribeProjectsOutcome
@@ -447,6 +499,15 @@ namespace TencentCloud
                 DescribeUserTasksOutcome DescribeUserTasks(const Model::DescribeUserTasksRequest &request);
                 void DescribeUserTasksAsync(const Model::DescribeUserTasksRequest& request, const DescribeUserTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserTasksOutcomeCallable DescribeUserTasksCallable(const Model::DescribeUserTasksRequest& request);
+
+                /**
+                 *本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。
+                 * @param req DisassociateSecurityGroupsRequest
+                 * @return DisassociateSecurityGroupsOutcome
+                 */
+                DisassociateSecurityGroupsOutcome DisassociateSecurityGroups(const Model::DisassociateSecurityGroupsRequest &request);
+                void DisassociateSecurityGroupsAsync(const Model::DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
 
                 /**
                  *相当于在所有分片的mysqld中执行flush logs，完成切分的binlog将展示在各个分片控制台binlog列表里。
@@ -485,6 +546,15 @@ namespace TencentCloud
                 ModifyAccountDescriptionOutcome ModifyAccountDescription(const Model::ModifyAccountDescriptionRequest &request);
                 void ModifyAccountDescriptionAsync(const Model::ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAccountDescriptionOutcomeCallable ModifyAccountDescriptionCallable(const Model::ModifyAccountDescriptionRequest& request);
+
+                /**
+                 *本接口（ModifyDBInstanceSecurityGroups）用于修改云数据库安全组
+                 * @param req ModifyDBInstanceSecurityGroupsRequest
+                 * @return ModifyDBInstanceSecurityGroupsOutcome
+                 */
+                ModifyDBInstanceSecurityGroupsOutcome ModifyDBInstanceSecurityGroups(const Model::ModifyDBInstanceSecurityGroupsRequest &request);
+                void ModifyDBInstanceSecurityGroupsAsync(const Model::ModifyDBInstanceSecurityGroupsRequest& request, const ModifyDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceSecurityGroupsOutcomeCallable ModifyDBInstanceSecurityGroupsCallable(const Model::ModifyDBInstanceSecurityGroupsRequest& request);
 
                 /**
                  *本接口（ModifyDBInstancesProject）用于修改云数据库实例所属项目。

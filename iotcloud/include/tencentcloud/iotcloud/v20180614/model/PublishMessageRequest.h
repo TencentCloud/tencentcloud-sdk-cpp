@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool QosHasBeenSet() const;
 
+                    /**
+                     * 获取Payload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备
+                     * @return PayloadEncoding Payload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备
+                     */
+                    std::string GetPayloadEncoding() const;
+
+                    /**
+                     * 设置Payload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备
+                     * @param PayloadEncoding Payload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备
+                     */
+                    void SetPayloadEncoding(const std::string& _payloadEncoding);
+
+                    /**
+                     * 判断参数 PayloadEncoding 是否已赋值
+                     * @return PayloadEncoding 是否已赋值
+                     */
+                    bool PayloadEncodingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     uint64_t m_qos;
                     bool m_qosHasBeenSet;
+
+                    /**
+                     * Payload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备
+                     */
+                    std::string m_payloadEncoding;
+                    bool m_payloadEncodingHasBeenSet;
 
                 };
             }

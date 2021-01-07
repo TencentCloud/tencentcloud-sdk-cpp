@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取0：出向，1：入向
-                     * @return Direction 0：出向，1：入向
+                     * 获取方向，0：出向，1：入向
+                     * @return Direction 方向，0：出向，1：入向
                      */
                     uint64_t GetDirection() const;
 
                     /**
-                     * 设置0：出向，1：入向
-                     * @param Direction 0：出向，1：入向
+                     * 设置方向，0：出向，1：入向
+                     * @param Direction 方向，0：出向，1：入向
                      */
                     void SetDirection(const uint64_t& _direction);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 0：出向，1：入向
+                     * 方向，0：出向，1：入向
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;

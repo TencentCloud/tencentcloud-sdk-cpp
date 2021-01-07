@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TrafficPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取流量包生效周期内的总流量，单位字节。
-                     * @return TrafficUsed 流量包生效周期内的总流量，单位字节。
+                     * 获取流量包生效周期内已使用流量，单位字节。
+                     * @return TrafficUsed 流量包生效周期内已使用流量，单位字节。
                      */
                     int64_t GetTrafficUsed() const;
 
                     /**
-                     * 设置流量包生效周期内的总流量，单位字节。
-                     * @param TrafficUsed 流量包生效周期内的总流量，单位字节。
+                     * 设置流量包生效周期内已使用流量，单位字节。
+                     * @param TrafficUsed 流量包生效周期内已使用流量，单位字节。
                      */
                     void SetTrafficUsed(const int64_t& _trafficUsed);
 
@@ -249,7 +249,7 @@ namespace TencentCloud
                     bool m_trafficPackageIdHasBeenSet;
 
                     /**
-                     * 流量包生效周期内的总流量，单位字节。
+                     * 流量包生效周期内已使用流量，单位字节。
                      */
                     int64_t m_trafficUsed;
                     bool m_trafficUsedHasBeenSet;

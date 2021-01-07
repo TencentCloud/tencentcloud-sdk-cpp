@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EdgeId值
-                     * @return EdgeId EdgeId值
+                     * 获取EdgeId值两个vpc间的边id
+                     * @return EdgeId EdgeId值两个vpc间的边id
                      */
                     std::string GetEdgeId() const;
 
                     /**
-                     * 设置EdgeId值
-                     * @param EdgeId EdgeId值
+                     * 设置EdgeId值两个vpc间的边id
+                     * @param EdgeId EdgeId值两个vpc间的边id
                      */
                     void SetEdgeId(const std::string& _edgeId);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EdgeId值
+                     * EdgeId值两个vpc间的边id
                      */
                     std::string m_edgeId;
                     bool m_edgeIdHasBeenSet;

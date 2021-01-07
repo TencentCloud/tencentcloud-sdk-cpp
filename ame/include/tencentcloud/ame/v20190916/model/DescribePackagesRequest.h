@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认0
-                     * @return Offset 默认0
+                     * 获取默认0，Offset=Offset+Length
+                     * @return Offset 默认0，Offset=Offset+Length
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置默认0
-                     * @param Offset 默认0
+                     * 设置默认0，Offset=Offset+Length
+                     * @param Offset 默认0，Offset=Offset+Length
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 默认0
+                     * 默认0，Offset=Offset+Length
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
