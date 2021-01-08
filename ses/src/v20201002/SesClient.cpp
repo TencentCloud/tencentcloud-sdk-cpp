@@ -427,6 +427,49 @@ SesClient::GetEmailTemplateOutcomeCallable SesClient::GetEmailTemplateCallable(c
     return task->get_future();
 }
 
+SesClient::GetSendEmailStatusOutcome SesClient::GetSendEmailStatus(const GetSendEmailStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetSendEmailStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetSendEmailStatusResponse rsp = GetSendEmailStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetSendEmailStatusOutcome(rsp);
+        else
+            return GetSendEmailStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return GetSendEmailStatusOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::GetSendEmailStatusAsync(const GetSendEmailStatusRequest& request, const GetSendEmailStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetSendEmailStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::GetSendEmailStatusOutcomeCallable SesClient::GetSendEmailStatusCallable(const GetSendEmailStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetSendEmailStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->GetSendEmailStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SesClient::GetStatisticsReportOutcome SesClient::GetStatisticsReport(const GetStatisticsReportRequest &request)
 {
     auto outcome = MakeRequest(request, "GetStatisticsReport");

@@ -24,11 +24,11 @@ using namespace rapidjson;
 using namespace std;
 
 RunInstancesRequest::RunInstancesRequest() :
-    m_placementHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
+    m_placementHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_systemDiskHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
     m_virtualPrivateCloudHasBeenSet(false),
@@ -58,23 +58,6 @@ string RunInstancesRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_placementHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Placement";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_placement.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_imageIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ImageId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_instanceChargeTypeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -92,12 +75,29 @@ string RunInstancesRequest::ToJsonString() const
         m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_placementHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Placement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_placement.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_instanceTypeHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_systemDiskHasBeenSet)
@@ -291,38 +291,6 @@ string RunInstancesRequest::ToJsonString() const
 }
 
 
-Placement RunInstancesRequest::GetPlacement() const
-{
-    return m_placement;
-}
-
-void RunInstancesRequest::SetPlacement(const Placement& _placement)
-{
-    m_placement = _placement;
-    m_placementHasBeenSet = true;
-}
-
-bool RunInstancesRequest::PlacementHasBeenSet() const
-{
-    return m_placementHasBeenSet;
-}
-
-string RunInstancesRequest::GetImageId() const
-{
-    return m_imageId;
-}
-
-void RunInstancesRequest::SetImageId(const string& _imageId)
-{
-    m_imageId = _imageId;
-    m_imageIdHasBeenSet = true;
-}
-
-bool RunInstancesRequest::ImageIdHasBeenSet() const
-{
-    return m_imageIdHasBeenSet;
-}
-
 string RunInstancesRequest::GetInstanceChargeType() const
 {
     return m_instanceChargeType;
@@ -355,6 +323,22 @@ bool RunInstancesRequest::InstanceChargePrepaidHasBeenSet() const
     return m_instanceChargePrepaidHasBeenSet;
 }
 
+Placement RunInstancesRequest::GetPlacement() const
+{
+    return m_placement;
+}
+
+void RunInstancesRequest::SetPlacement(const Placement& _placement)
+{
+    m_placement = _placement;
+    m_placementHasBeenSet = true;
+}
+
+bool RunInstancesRequest::PlacementHasBeenSet() const
+{
+    return m_placementHasBeenSet;
+}
+
 string RunInstancesRequest::GetInstanceType() const
 {
     return m_instanceType;
@@ -369,6 +353,22 @@ void RunInstancesRequest::SetInstanceType(const string& _instanceType)
 bool RunInstancesRequest::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+string RunInstancesRequest::GetImageId() const
+{
+    return m_imageId;
+}
+
+void RunInstancesRequest::SetImageId(const string& _imageId)
+{
+    m_imageId = _imageId;
+    m_imageIdHasBeenSet = true;
+}
+
+bool RunInstancesRequest::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
 }
 
 SystemDisk RunInstancesRequest::GetSystemDisk() const

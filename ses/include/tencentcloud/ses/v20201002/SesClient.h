@@ -41,6 +41,8 @@
 #include <tencentcloud/ses/v20201002/model/GetEmailIdentityResponse.h>
 #include <tencentcloud/ses/v20201002/model/GetEmailTemplateRequest.h>
 #include <tencentcloud/ses/v20201002/model/GetEmailTemplateResponse.h>
+#include <tencentcloud/ses/v20201002/model/GetSendEmailStatusRequest.h>
+#include <tencentcloud/ses/v20201002/model/GetSendEmailStatusResponse.h>
 #include <tencentcloud/ses/v20201002/model/GetStatisticsReportRequest.h>
 #include <tencentcloud/ses/v20201002/model/GetStatisticsReportResponse.h>
 #include <tencentcloud/ses/v20201002/model/ListBlackEmailAddressRequest.h>
@@ -98,6 +100,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetEmailTemplateResponse> GetEmailTemplateOutcome;
                 typedef std::future<GetEmailTemplateOutcome> GetEmailTemplateOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::GetEmailTemplateRequest&, GetEmailTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEmailTemplateAsyncHandler;
+                typedef Outcome<Error, Model::GetSendEmailStatusResponse> GetSendEmailStatusOutcome;
+                typedef std::future<GetSendEmailStatusOutcome> GetSendEmailStatusOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::GetSendEmailStatusRequest&, GetSendEmailStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSendEmailStatusAsyncHandler;
                 typedef Outcome<Error, Model::GetStatisticsReportResponse> GetStatisticsReportOutcome;
                 typedef std::future<GetStatisticsReportOutcome> GetStatisticsReportOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::GetStatisticsReportRequest&, GetStatisticsReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetStatisticsReportAsyncHandler;
@@ -206,6 +211,15 @@ namespace TencentCloud
                 GetEmailTemplateOutcome GetEmailTemplate(const Model::GetEmailTemplateRequest &request);
                 void GetEmailTemplateAsync(const Model::GetEmailTemplateRequest& request, const GetEmailTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetEmailTemplateOutcomeCallable GetEmailTemplateCallable(const Model::GetEmailTemplateRequest& request);
+
+                /**
+                 *获取邮件发送状态。仅支持查询90天之内的数据
+                 * @param req GetSendEmailStatusRequest
+                 * @return GetSendEmailStatusOutcome
+                 */
+                GetSendEmailStatusOutcome GetSendEmailStatus(const Model::GetSendEmailStatusRequest &request);
+                void GetSendEmailStatusAsync(const Model::GetSendEmailStatusRequest& request, const GetSendEmailStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSendEmailStatusOutcomeCallable GetSendEmailStatusCallable(const Model::GetSendEmailStatusRequest& request);
 
                 /**
                  *获取近期发送的统计情况，包含发送量、送达率、打开率、退信率等一系列数据。最大跨度为14天。

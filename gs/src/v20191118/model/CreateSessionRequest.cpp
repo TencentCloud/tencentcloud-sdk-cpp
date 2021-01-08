@@ -39,7 +39,8 @@ CreateSessionRequest::CreateSessionRequest() :
     m_userIpHasBeenSet(false),
     m_optimizationHasBeenSet(false),
     m_hostUserIdHasBeenSet(false),
-    m_roleHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_gameContextHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,14 @@ string CreateSessionRequest::ToJsonString() const
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_role.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gameContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GameContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_gameContext.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -440,6 +449,22 @@ void CreateSessionRequest::SetRole(const string& _role)
 bool CreateSessionRequest::RoleHasBeenSet() const
 {
     return m_roleHasBeenSet;
+}
+
+string CreateSessionRequest::GetGameContext() const
+{
+    return m_gameContext;
+}
+
+void CreateSessionRequest::SetGameContext(const string& _gameContext)
+{
+    m_gameContext = _gameContext;
+    m_gameContextHasBeenSet = true;
+}
+
+bool CreateSessionRequest::GameContextHasBeenSet() const
+{
+    return m_gameContextHasBeenSet;
 }
 
 

@@ -330,6 +330,24 @@ namespace TencentCloud
                      */
                     bool RoleHasBeenSet() const;
 
+                    /**
+                     * 获取游戏相关参数
+                     * @return GameContext 游戏相关参数
+                     */
+                    std::string GetGameContext() const;
+
+                    /**
+                     * 设置游戏相关参数
+                     * @param GameContext 游戏相关参数
+                     */
+                    void SetGameContext(const std::string& _gameContext);
+
+                    /**
+                     * 判断参数 GameContext 是否已赋值
+                     * @return GameContext 是否已赋值
+                     */
+                    bool GameContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +445,12 @@ namespace TencentCloud
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
+
+                    /**
+                     * 游戏相关参数
+                     */
+                    std::string m_gameContext;
+                    bool m_gameContextHasBeenSet;
 
                 };
             }
