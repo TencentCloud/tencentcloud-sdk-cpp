@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime，默认ModTime
-                     * @return OrderBy 根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime，默认ModTime
+                     * 获取根据哪个字段进行返回结果排序,支持以下字段：add_time，mod_time，默认mod_time
+                     * @return OrderBy 根据哪个字段进行返回结果排序,支持以下字段：add_time，mod_time，默认mod_time
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime，默认ModTime
-                     * @param OrderBy 根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime，默认ModTime
+                     * 设置根据哪个字段进行返回结果排序,支持以下字段：add_time，mod_time，默认mod_time
+                     * @param OrderBy 根据哪个字段进行返回结果排序,支持以下字段：add_time，mod_time，默认mod_time
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime，默认ModTime
+                     * 根据哪个字段进行返回结果排序,支持以下字段：add_time，mod_time，默认mod_time
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;

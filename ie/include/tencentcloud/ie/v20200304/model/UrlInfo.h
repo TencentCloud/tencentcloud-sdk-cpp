@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频 URL。音视频支持mp4、ts等格式；直播流支持flv、rtmp格式。
-注意：目前智能编辑还不支持直播流场景。
-                     * @return Url 视频 URL。音视频支持mp4、ts等格式；直播流支持flv、rtmp格式。
-注意：目前智能编辑还不支持直播流场景。
+                     * 获取视频 URL。
+注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；
+                     * @return Url 视频 URL。
+注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置视频 URL。音视频支持mp4、ts等格式；直播流支持flv、rtmp格式。
-注意：目前智能编辑还不支持直播流场景。
-                     * @param Url 视频 URL。音视频支持mp4、ts等格式；直播流支持flv、rtmp格式。
-注意：目前智能编辑还不支持直播流场景。
+                     * 设置视频 URL。
+注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；
+                     * @param Url 视频 URL。
+注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；
                      */
                     void SetUrl(const std::string& _url);
 
@@ -119,8 +119,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频 URL。音视频支持mp4、ts等格式；直播流支持flv、rtmp格式。
-注意：目前智能编辑还不支持直播流场景。
+                     * 视频 URL。
+注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

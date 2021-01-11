@@ -1287,6 +1287,49 @@ MonitorClient::DescribeServiceDiscoveryOutcomeCallable MonitorClient::DescribeSe
     return task->get_future();
 }
 
+MonitorClient::DescribeStatisticDataOutcome MonitorClient::DescribeStatisticData(const DescribeStatisticDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStatisticData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStatisticDataResponse rsp = DescribeStatisticDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStatisticDataOutcome(rsp);
+        else
+            return DescribeStatisticDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStatisticDataOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeStatisticDataAsync(const DescribeStatisticDataRequest& request, const DescribeStatisticDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStatisticData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeStatisticDataOutcomeCallable MonitorClient::DescribeStatisticDataCallable(const DescribeStatisticDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStatisticDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStatisticData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::GetMonitorDataOutcome MonitorClient::GetMonitorData(const GetMonitorDataRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMonitorData");

@@ -20,6 +20,7 @@ set(monitor_public_header
 
 set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManual.h
+  include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyNoticeResponse.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyInfoRequest.h
   include/tencentcloud/monitor/v20180724/model/CreatePolicyGroupEventCondition.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListRequest.h
@@ -43,13 +44,15 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/CreatePolicyGroupResponse.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyTasksResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeBaseMetricsResponse.h
-  include/tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h
+  include/tencentcloud/monitor/v20180724/model/MetricDataPoint.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualContinueTime.h
   include/tencentcloud/monitor/v20180724/model/CommonNamespace.h
   include/tencentcloud/monitor/v20180724/model/GetMonitorDataRequest.h
   include/tencentcloud/monitor/v20180724/model/DataPoint.h
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmPoliciesResponse.h
+  include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyStatusRequest.h
   include/tencentcloud/monitor/v20180724/model/ConditionsTemp.h
+  include/tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualPeriod.h
   include/tencentcloud/monitor/v20180724/model/UnBindingPolicyObjectRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryRequest.h
@@ -82,6 +85,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionResponse.h
   include/tencentcloud/monitor/v20180724/model/Dimension.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstance.h
+  include/tencentcloud/monitor/v20180724/model/Point.h
   include/tencentcloud/monitor/v20180724/model/ModifyPolicyGroupEventCondition.h
   include/tencentcloud/monitor/v20180724/model/Metric.h
   include/tencentcloud/monitor/v20180724/model/ModifyPolicyGroupRequest.h
@@ -91,7 +95,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/UserNotice.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyFilter.h
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeCallbacksResponse.h
-  include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyNoticeResponse.h
+  include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyStatusResponse.h
   include/tencentcloud/monitor/v20180724/model/Instance.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectDimension.h
@@ -107,6 +111,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/AlarmEvent.h
   include/tencentcloud/monitor/v20180724/model/ModifyPolicyGroupResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualCalcType.h
+  include/tencentcloud/monitor/v20180724/model/MetricData.h
   include/tencentcloud/monitor/v20180724/model/DeletePolicyGroupRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoCondition.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListResponse.h
@@ -126,7 +131,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/AlarmNotice.h
   include/tencentcloud/monitor/v20180724/model/MetricConfig.h
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmEventsRequest.h
-  include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionRequest.h
+  include/tencentcloud/monitor/v20180724/model/MidQueryCondition.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeAccidentEventListAlarms.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductListResponse.h
@@ -139,6 +144,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/CreatePolicyGroupRequest.h
   include/tencentcloud/monitor/v20180724/model/CreatePolicyGroupCondition.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoReceiverInfo.h
+  include/tencentcloud/monitor/v20180724/model/DescribeStatisticDataResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListEventMetric.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupListRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeBasicAlarmListRequest.h
@@ -150,7 +156,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstanceGroup.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListEventsGroupInfo.h
-  include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyStatusRequest.h
+  include/tencentcloud/monitor/v20180724/model/DescribeStatisticDataRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListDimension.h
   include/tencentcloud/monitor/v20180724/model/CreateAlarmNoticeRequest.h
@@ -173,6 +179,7 @@ set(monitor_public_header_model
 set(monitor_src
   src/v20180724/MonitorClient.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManual.cpp
+  src/v20180724/model/ModifyAlarmPolicyNoticeResponse.cpp
   src/v20180724/model/ModifyAlarmPolicyInfoRequest.cpp
   src/v20180724/model/CreatePolicyGroupEventCondition.cpp
   src/v20180724/model/DescribeProductEventListRequest.cpp
@@ -196,13 +203,15 @@ set(monitor_src
   src/v20180724/model/CreatePolicyGroupResponse.cpp
   src/v20180724/model/ModifyAlarmPolicyTasksResponse.cpp
   src/v20180724/model/DescribeBaseMetricsResponse.cpp
-  src/v20180724/model/SendCustomAlarmMsgRequest.cpp
+  src/v20180724/model/MetricDataPoint.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualContinueTime.cpp
   src/v20180724/model/CommonNamespace.cpp
   src/v20180724/model/GetMonitorDataRequest.cpp
   src/v20180724/model/DataPoint.cpp
   src/v20180724/model/DescribeAlarmPoliciesResponse.cpp
+  src/v20180724/model/ModifyAlarmPolicyStatusRequest.cpp
   src/v20180724/model/ConditionsTemp.cpp
+  src/v20180724/model/SendCustomAlarmMsgRequest.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualPeriod.cpp
   src/v20180724/model/UnBindingPolicyObjectRequest.cpp
   src/v20180724/model/DescribeServiceDiscoveryRequest.cpp
@@ -235,6 +244,7 @@ set(monitor_src
   src/v20180724/model/ModifyAlarmPolicyConditionResponse.cpp
   src/v20180724/model/Dimension.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListInstance.cpp
+  src/v20180724/model/Point.cpp
   src/v20180724/model/ModifyPolicyGroupEventCondition.cpp
   src/v20180724/model/Metric.cpp
   src/v20180724/model/ModifyPolicyGroupRequest.cpp
@@ -244,7 +254,7 @@ set(monitor_src
   src/v20180724/model/UserNotice.cpp
   src/v20180724/model/AlarmPolicyFilter.cpp
   src/v20180724/model/DescribeAlarmNoticeCallbacksResponse.cpp
-  src/v20180724/model/ModifyAlarmPolicyNoticeResponse.cpp
+  src/v20180724/model/ModifyAlarmPolicyConditionRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyStatusResponse.cpp
   src/v20180724/model/Instance.cpp
   src/v20180724/model/BindingPolicyObjectDimension.cpp
@@ -260,6 +270,7 @@ set(monitor_src
   src/v20180724/model/AlarmEvent.cpp
   src/v20180724/model/ModifyPolicyGroupResponse.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualCalcType.cpp
+  src/v20180724/model/MetricData.cpp
   src/v20180724/model/DeletePolicyGroupRequest.cpp
   src/v20180724/model/DescribePolicyGroupInfoCondition.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListResponse.cpp
@@ -279,7 +290,7 @@ set(monitor_src
   src/v20180724/model/AlarmNotice.cpp
   src/v20180724/model/MetricConfig.cpp
   src/v20180724/model/DescribeAlarmEventsRequest.cpp
-  src/v20180724/model/ModifyAlarmPolicyConditionRequest.cpp
+  src/v20180724/model/MidQueryCondition.cpp
   src/v20180724/model/ModifyAlarmNoticeResponse.cpp
   src/v20180724/model/DescribeAccidentEventListAlarms.cpp
   src/v20180724/model/DescribeProductListResponse.cpp
@@ -292,6 +303,7 @@ set(monitor_src
   src/v20180724/model/CreatePolicyGroupRequest.cpp
   src/v20180724/model/CreatePolicyGroupCondition.cpp
   src/v20180724/model/DescribePolicyGroupInfoReceiverInfo.cpp
+  src/v20180724/model/DescribeStatisticDataResponse.cpp
   src/v20180724/model/DescribePolicyConditionListEventMetric.cpp
   src/v20180724/model/DescribePolicyGroupListRequest.cpp
   src/v20180724/model/DescribeBasicAlarmListRequest.cpp
@@ -303,7 +315,7 @@ set(monitor_src
   src/v20180724/model/DescribeAlarmNoticeResponse.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListInstanceGroup.cpp
   src/v20180724/model/DescribeProductEventListEventsGroupInfo.cpp
-  src/v20180724/model/ModifyAlarmPolicyStatusRequest.cpp
+  src/v20180724/model/DescribeStatisticDataRequest.cpp
   src/v20180724/model/DescribeAlarmNoticeRequest.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListDimension.cpp
   src/v20180724/model/CreateAlarmNoticeRequest.cpp

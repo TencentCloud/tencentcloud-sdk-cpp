@@ -28,7 +28,8 @@ StartMCUMixTranscodeRequest::StartMCUMixTranscodeRequest() :
     m_roomIdHasBeenSet(false),
     m_outputParamsHasBeenSet(false),
     m_encodeParamsHasBeenSet(false),
-    m_layoutParamsHasBeenSet(false)
+    m_layoutParamsHasBeenSet(false),
+    m_publishCdnParamsHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,15 @@ string StartMCUMixTranscodeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_layoutParams.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_publishCdnParamsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PublishCdnParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_publishCdnParams.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -168,6 +178,22 @@ void StartMCUMixTranscodeRequest::SetLayoutParams(const LayoutParams& _layoutPar
 bool StartMCUMixTranscodeRequest::LayoutParamsHasBeenSet() const
 {
     return m_layoutParamsHasBeenSet;
+}
+
+PublishCdnParams StartMCUMixTranscodeRequest::GetPublishCdnParams() const
+{
+    return m_publishCdnParams;
+}
+
+void StartMCUMixTranscodeRequest::SetPublishCdnParams(const PublishCdnParams& _publishCdnParams)
+{
+    m_publishCdnParams = _publishCdnParams;
+    m_publishCdnParamsHasBeenSet = true;
+}
+
+bool StartMCUMixTranscodeRequest::PublishCdnParamsHasBeenSet() const
+{
+    return m_publishCdnParamsHasBeenSet;
 }
 
 

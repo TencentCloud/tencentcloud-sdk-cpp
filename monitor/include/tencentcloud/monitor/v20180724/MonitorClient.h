@@ -81,6 +81,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeProductListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeStatisticDataRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeStatisticDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeRequest.h>
@@ -212,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeServiceDiscoveryResponse> DescribeServiceDiscoveryOutcome;
                 typedef std::future<DescribeServiceDiscoveryOutcome> DescribeServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeServiceDiscoveryRequest&, DescribeServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceDiscoveryAsyncHandler;
+                typedef Outcome<Error, Model::DescribeStatisticDataResponse> DescribeStatisticDataOutcome;
+                typedef std::future<DescribeStatisticDataOutcome> DescribeStatisticDataOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeStatisticDataRequest&, DescribeStatisticDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStatisticDataAsyncHandler;
                 typedef Outcome<Error, Model::GetMonitorDataResponse> GetMonitorDataOutcome;
                 typedef std::future<GetMonitorDataOutcome> GetMonitorDataOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::GetMonitorDataRequest&, GetMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMonitorDataAsyncHandler;
@@ -526,6 +531,15 @@ namespace TencentCloud
                 DescribeServiceDiscoveryOutcome DescribeServiceDiscovery(const Model::DescribeServiceDiscoveryRequest &request);
                 void DescribeServiceDiscoveryAsync(const Model::DescribeServiceDiscoveryRequest& request, const DescribeServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServiceDiscoveryOutcomeCallable DescribeServiceDiscoveryCallable(const Model::DescribeServiceDiscoveryRequest& request);
+
+                /**
+                 *根据维度条件查询监控数据
+                 * @param req DescribeStatisticDataRequest
+                 * @return DescribeStatisticDataOutcome
+                 */
+                DescribeStatisticDataOutcome DescribeStatisticData(const Model::DescribeStatisticDataRequest &request);
+                void DescribeStatisticDataAsync(const Model::DescribeStatisticDataRequest& request, const DescribeStatisticDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStatisticDataOutcomeCallable DescribeStatisticDataCallable(const Model::DescribeStatisticDataRequest& request);
 
                 /**
                  *获取云产品的监控数据。传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。

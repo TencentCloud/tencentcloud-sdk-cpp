@@ -74,6 +74,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h
   include/tencentcloud/trtc/v20190722/model/SdkAppIdTrtcUsage.h
   include/tencentcloud/trtc/v20190722/model/DescribeTrtcInteractiveTimeRequest.h
+  include/tencentcloud/trtc/v20190722/model/PublishCdnParams.h
   include/tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeDetailEventRequest.h
   include/tencentcloud/trtc/v20190722/model/AbnormalExperience.h
@@ -141,6 +142,7 @@ set(trtc_src
   src/v20190722/model/DescribeCallDetailResponse.cpp
   src/v20190722/model/SdkAppIdTrtcUsage.cpp
   src/v20190722/model/DescribeTrtcInteractiveTimeRequest.cpp
+  src/v20190722/model/PublishCdnParams.cpp
   src/v20190722/model/DescribeRoomInformationRequest.cpp
   src/v20190722/model/DescribeDetailEventRequest.cpp
   src/v20190722/model/AbnormalExperience.cpp

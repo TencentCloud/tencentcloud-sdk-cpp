@@ -24,6 +24,7 @@
 #include <tencentcloud/trtc/v20190722/model/OutputParams.h>
 #include <tencentcloud/trtc/v20190722/model/EncodeParams.h>
 #include <tencentcloud/trtc/v20190722/model/LayoutParams.h>
+#include <tencentcloud/trtc/v20190722/model/PublishCdnParams.h>
 
 
 namespace TencentCloud
@@ -135,6 +136,24 @@ namespace TencentCloud
                      */
                     bool LayoutParamsHasBeenSet() const;
 
+                    /**
+                     * 获取第三方CDN转推参数。
+                     * @return PublishCdnParams 第三方CDN转推参数。
+                     */
+                    PublishCdnParams GetPublishCdnParams() const;
+
+                    /**
+                     * 设置第三方CDN转推参数。
+                     * @param PublishCdnParams 第三方CDN转推参数。
+                     */
+                    void SetPublishCdnParams(const PublishCdnParams& _publishCdnParams);
+
+                    /**
+                     * 判断参数 PublishCdnParams 是否已赋值
+                     * @return PublishCdnParams 是否已赋值
+                     */
+                    bool PublishCdnParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -166,6 +185,12 @@ namespace TencentCloud
                      */
                     LayoutParams m_layoutParams;
                     bool m_layoutParamsHasBeenSet;
+
+                    /**
+                     * 第三方CDN转推参数。
+                     */
+                    PublishCdnParams m_publishCdnParams;
+                    bool m_publishCdnParamsHasBeenSet;
 
                 };
             }
