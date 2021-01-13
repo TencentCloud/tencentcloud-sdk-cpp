@@ -558,7 +558,7 @@ namespace TencentCloud
                      * @return RegistrationId 实例注册id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t GetRegistrationId() const;
+                    std::string GetRegistrationId() const;
 
                     /**
                      * 设置实例注册id
@@ -566,7 +566,7 @@ namespace TencentCloud
                      * @param RegistrationId 实例注册id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetRegistrationId(const int64_t& _registrationId);
+                    void SetRegistrationId(const std::string& _registrationId);
 
                     /**
                      * 判断参数 RegistrationId 是否已赋值
@@ -763,7 +763,7 @@ namespace TencentCloud
                      * 实例注册id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_registrationId;
+                    std::string m_registrationId;
                     bool m_registrationIdHasBeenSet;
 
                     /**

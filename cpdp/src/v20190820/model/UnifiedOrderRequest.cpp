@@ -48,7 +48,8 @@ UnifiedOrderRequest::UnifiedOrderRequest() :
     m_wxSubOpenIdHasBeenSet(false),
     m_midasEnvironmentHasBeenSet(false),
     m_wxAppIdHasBeenSet(false),
-    m_wxSubAppIdHasBeenSet(false)
+    m_wxSubAppIdHasBeenSet(false),
+    m_paymentNotifyUrlHasBeenSet(false)
 {
 }
 
@@ -264,6 +265,14 @@ string UnifiedOrderRequest::ToJsonString() const
         string key = "WxSubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_wxSubAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paymentNotifyUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PaymentNotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_paymentNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -672,6 +681,22 @@ void UnifiedOrderRequest::SetWxSubAppId(const string& _wxSubAppId)
 bool UnifiedOrderRequest::WxSubAppIdHasBeenSet() const
 {
     return m_wxSubAppIdHasBeenSet;
+}
+
+string UnifiedOrderRequest::GetPaymentNotifyUrl() const
+{
+    return m_paymentNotifyUrl;
+}
+
+void UnifiedOrderRequest::SetPaymentNotifyUrl(const string& _paymentNotifyUrl)
+{
+    m_paymentNotifyUrl = _paymentNotifyUrl;
+    m_paymentNotifyUrlHasBeenSet = true;
+}
+
+bool UnifiedOrderRequest::PaymentNotifyUrlHasBeenSet() const
+{
+    return m_paymentNotifyUrlHasBeenSet;
 }
 
 

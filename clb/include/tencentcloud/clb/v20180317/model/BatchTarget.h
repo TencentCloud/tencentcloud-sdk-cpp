@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取子机ID
-                     * @return InstanceId 子机ID
+                     * 获取子机ID。表示绑定主网卡主IP
+                     * @return InstanceId 子机ID。表示绑定主网卡主IP
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置子机ID
-                     * @param InstanceId 子机ID
+                     * 设置子机ID。表示绑定主网卡主IP
+                     * @param InstanceId 子机ID。表示绑定主网卡主IP
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡ip
-                     * @return EniIp 弹性网卡ip
+                     * 获取弹性网卡ip或其他内网IP。如果是双栈IPV6子机，必须传该参数。
+                     * @return EniIp 弹性网卡ip或其他内网IP。如果是双栈IPV6子机，必须传该参数。
                      */
                     std::string GetEniIp() const;
 
                     /**
-                     * 设置弹性网卡ip
-                     * @param EniIp 弹性网卡ip
+                     * 设置弹性网卡ip或其他内网IP。如果是双栈IPV6子机，必须传该参数。
+                     * @param EniIp 弹性网卡ip或其他内网IP。如果是双栈IPV6子机，必须传该参数。
                      */
                     void SetEniIp(const std::string& _eniIp);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool EniIpHasBeenSet() const;
 
                     /**
-                     * 获取子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
-                     * @return Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * 获取子机权重，范围[0, 100]。绑定时如果不存在，则默认为10
+                     * @return Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
-                     * @param Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * 设置子机权重，范围[0, 100]。绑定时如果不存在，则默认为10
+                     * @param Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -169,19 +169,19 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 子机ID
+                     * 子机ID。表示绑定主网卡主IP
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 弹性网卡ip
+                     * 弹性网卡ip或其他内网IP。如果是双栈IPV6子机，必须传该参数。
                      */
                     std::string m_eniIp;
                     bool m_eniIpHasBeenSet;
 
                     /**
-                     * 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

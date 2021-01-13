@@ -71,14 +71,14 @@ namespace TencentCloud
                     bool FromEmailAddressHasBeenSet() const;
 
                     /**
-                     * 获取收信人邮箱地址
-                     * @return Destination 收信人邮箱地址
+                     * 获取收信人邮箱地址，最多支持群发50人。
+                     * @return Destination 收信人邮箱地址，最多支持群发50人。
                      */
                     std::vector<std::string> GetDestination() const;
 
                     /**
-                     * 设置收信人邮箱地址
-                     * @param Destination 收信人邮箱地址
+                     * 设置收信人邮箱地址，最多支持群发50人。
+                     * @param Destination 收信人邮箱地址，最多支持群发50人。
                      */
                     void SetDestination(const std::vector<std::string>& _destination);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_fromEmailAddressHasBeenSet;
 
                     /**
-                     * 收信人邮箱地址
+                     * 收信人邮箱地址，最多支持群发50人。
                      */
                     std::vector<std::string> m_destination;
                     bool m_destinationHasBeenSet;

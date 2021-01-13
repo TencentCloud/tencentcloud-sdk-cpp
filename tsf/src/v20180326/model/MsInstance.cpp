@@ -287,11 +287,11 @@ CoreInternalOutcome MsInstance::Deserialize(const Value &value)
 
     if (value.HasMember("RegistrationId") && !value["RegistrationId"].IsNull())
     {
-        if (!value["RegistrationId"].IsInt64())
+        if (!value["RegistrationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.RegistrationId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MsInstance.RegistrationId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_registrationId = value["RegistrationId"].GetInt64();
+        m_registrationId = string(value["RegistrationId"].GetString());
         m_registrationIdHasBeenSet = true;
     }
 
@@ -501,7 +501,7 @@ void MsInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         Value iKey(kStringType);
         string key = "RegistrationId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_registrationId, allocator);
+        value.AddMember(iKey, Value(m_registrationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hiddenStatusHasBeenSet)
@@ -883,12 +883,12 @@ bool MsInstance::LastHeartbeatTimeHasBeenSet() const
     return m_lastHeartbeatTimeHasBeenSet;
 }
 
-int64_t MsInstance::GetRegistrationId() const
+string MsInstance::GetRegistrationId() const
 {
     return m_registrationId;
 }
 
-void MsInstance::SetRegistrationId(const int64_t& _registrationId)
+void MsInstance::SetRegistrationId(const string& _registrationId)
 {
     m_registrationId = _registrationId;
     m_registrationIdHasBeenSet = true;

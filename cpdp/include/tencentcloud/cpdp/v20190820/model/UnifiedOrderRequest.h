@@ -517,6 +517,24 @@ development: 开发环境
                      */
                     bool WxSubAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取支付通知地址
+                     * @return PaymentNotifyUrl 支付通知地址
+                     */
+                    std::string GetPaymentNotifyUrl() const;
+
+                    /**
+                     * 设置支付通知地址
+                     * @param PaymentNotifyUrl 支付通知地址
+                     */
+                    void SetPaymentNotifyUrl(const std::string& _paymentNotifyUrl);
+
+                    /**
+                     * 判断参数 PaymentNotifyUrl 是否已赋值
+                     * @return PaymentNotifyUrl 是否已赋值
+                     */
+                    bool PaymentNotifyUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -674,6 +692,12 @@ development: 开发环境
                      */
                     std::string m_wxSubAppId;
                     bool m_wxSubAppIdHasBeenSet;
+
+                    /**
+                     * 支付通知地址
+                     */
+                    std::string m_paymentNotifyUrl;
+                    bool m_paymentNotifyUrlHasBeenSet;
 
                 };
             }
