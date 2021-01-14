@@ -29,7 +29,8 @@ DescribeErrorLogDataRequest::DescribeErrorLogDataRequest() :
     m_endTimeHasBeenSet(false),
     m_keyWordsHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_instTypeHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,14 @@ string DescribeErrorLogDataRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_instTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -195,6 +204,22 @@ void DescribeErrorLogDataRequest::SetOffset(const int64_t& _offset)
 bool DescribeErrorLogDataRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeErrorLogDataRequest::GetInstType() const
+{
+    return m_instType;
+}
+
+void DescribeErrorLogDataRequest::SetInstType(const string& _instType)
+{
+    m_instType = _instType;
+    m_instTypeHasBeenSet = true;
+}
+
+bool DescribeErrorLogDataRequest::InstTypeHasBeenSet() const
+{
+    return m_instTypeHasBeenSet;
 }
 
 

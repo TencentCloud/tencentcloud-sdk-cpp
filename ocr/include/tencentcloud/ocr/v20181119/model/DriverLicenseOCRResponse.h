@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取出生日期
-                     * @return DateOfBirth 出生日期
+                     * 获取出生日期（YYYY-MM-DD）
+                     * @return DateOfBirth 出生日期（YYYY-MM-DD）
                      */
                     std::string GetDateOfBirth() const;
 
@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool DateOfBirthHasBeenSet() const;
 
                     /**
-                     * 获取初次领证日期
-                     * @return DateOfFirstIssue 初次领证日期
+                     * 获取初次领证日期（YYYY-MM-DD）
+                     * @return DateOfFirstIssue 初次领证日期（YYYY-MM-DD）
                      */
                     std::string GetDateOfFirstIssue() const;
 
@@ -127,8 +127,8 @@ namespace TencentCloud
                     bool ClassHasBeenSet() const;
 
                     /**
-                     * 获取有效期开始时间
-                     * @return StartDate 有效期开始时间
+                     * 获取有效期开始时间（YYYY-MM-DD）
+                     * @return StartDate 有效期开始时间（YYYY-MM-DD）
                      */
                     std::string GetStartDate() const;
 
@@ -139,8 +139,8 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取有效期截止时间
-                     * @return EndDate 有效期截止时间
+                     * 获取有效期截止时间（YYYY-MM-DD）
+                     * @return EndDate 有效期截止时间（YYYY-MM-DD）
                      */
                     std::string GetEndDate() const;
 
@@ -226,6 +226,18 @@ WARN_DRIVER_LICENSE_PS_CARD ps告警
                      */
                     bool RecognizeWarnMsgHasBeenSet() const;
 
+                    /**
+                     * 获取发证单位
+                     * @return IssuingAuthority 发证单位
+                     */
+                    std::string GetIssuingAuthority() const;
+
+                    /**
+                     * 判断参数 IssuingAuthority 是否已赋值
+                     * @return IssuingAuthority 是否已赋值
+                     */
+                    bool IssuingAuthorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -253,13 +265,13 @@ WARN_DRIVER_LICENSE_PS_CARD ps告警
                     bool m_addressHasBeenSet;
 
                     /**
-                     * 出生日期
+                     * 出生日期（YYYY-MM-DD）
                      */
                     std::string m_dateOfBirth;
                     bool m_dateOfBirthHasBeenSet;
 
                     /**
-                     * 初次领证日期
+                     * 初次领证日期（YYYY-MM-DD）
                      */
                     std::string m_dateOfFirstIssue;
                     bool m_dateOfFirstIssueHasBeenSet;
@@ -271,13 +283,13 @@ WARN_DRIVER_LICENSE_PS_CARD ps告警
                     bool m_classHasBeenSet;
 
                     /**
-                     * 有效期开始时间
+                     * 有效期开始时间（YYYY-MM-DD）
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 有效期截止时间
+                     * 有效期截止时间（YYYY-MM-DD）
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
@@ -319,6 +331,12 @@ WARN_DRIVER_LICENSE_PS_CARD ps告警
                      */
                     std::vector<std::string> m_recognizeWarnMsg;
                     bool m_recognizeWarnMsgHasBeenSet;
+
+                    /**
+                     * 发证单位
+                     */
+                    std::string m_issuingAuthority;
+                    bool m_issuingAuthorityHasBeenSet;
 
                 };
             }

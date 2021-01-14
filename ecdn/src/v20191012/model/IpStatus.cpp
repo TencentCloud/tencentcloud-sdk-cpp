@@ -26,7 +26,8 @@ IpStatus::IpStatus() :
     m_districtHasBeenSet(false),
     m_ispHasBeenSet(false),
     m_cityHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome IpStatus::Deserialize(const Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IpStatus.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void IpStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void IpStatus::SetStatus(const string& _status)
 bool IpStatus::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string IpStatus::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void IpStatus::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool IpStatus::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

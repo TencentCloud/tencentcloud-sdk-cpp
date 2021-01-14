@@ -38,7 +38,8 @@ DriverLicenseOCRResponse::DriverLicenseOCRResponse() :
     m_archivesCodeHasBeenSet(false),
     m_recordHasBeenSet(false),
     m_recognizeWarnCodeHasBeenSet(false),
-    m_recognizeWarnMsgHasBeenSet(false)
+    m_recognizeWarnMsgHasBeenSet(false),
+    m_issuingAuthorityHasBeenSet(false)
 {
 }
 
@@ -222,6 +223,16 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
         m_recognizeWarnMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IssuingAuthority") && !rsp["IssuingAuthority"].IsNull())
+    {
+        if (!rsp["IssuingAuthority"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IssuingAuthority` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issuingAuthority = string(rsp["IssuingAuthority"].GetString());
+        m_issuingAuthorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +376,16 @@ vector<string> DriverLicenseOCRResponse::GetRecognizeWarnMsg() const
 bool DriverLicenseOCRResponse::RecognizeWarnMsgHasBeenSet() const
 {
     return m_recognizeWarnMsgHasBeenSet;
+}
+
+string DriverLicenseOCRResponse::GetIssuingAuthority() const
+{
+    return m_issuingAuthority;
+}
+
+bool DriverLicenseOCRResponse::IssuingAuthorityHasBeenSet() const
+{
+    return m_issuingAuthorityHasBeenSet;
 }
 
 

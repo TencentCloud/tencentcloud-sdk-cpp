@@ -167,11 +167,11 @@ namespace TencentCloud
                     /**
                      * 获取查询的存储区域，有效值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>outside Chinese Mainland：中国境外。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
 默认值为 Chinese Mainland。
                      * @return Area 查询的存储区域，有效值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>outside Chinese Mainland：中国境外。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
 默认值为 Chinese Mainland。
                      */
                     std::string GetArea() const;
@@ -179,11 +179,11 @@ namespace TencentCloud
                     /**
                      * 设置查询的存储区域，有效值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>outside Chinese Mainland：中国境外。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
 默认值为 Chinese Mainland。
                      * @param Area 查询的存储区域，有效值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>outside Chinese Mainland：中国境外。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
 默认值为 Chinese Mainland。
                      */
                     void SetArea(const std::string& _area);
@@ -237,7 +237,7 @@ namespace TencentCloud
                     /**
                      * 查询的存储区域，有效值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>outside Chinese Mainland：中国境外。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
 默认值为 Chinese Mainland。
                      */
                     std::string m_area;

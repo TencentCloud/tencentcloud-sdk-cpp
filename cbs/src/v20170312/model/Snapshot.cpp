@@ -39,7 +39,8 @@ Snapshot::Snapshot() :
     m_imagesHasBeenSet(false),
     m_imageCountHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
-    m_shareReferenceHasBeenSet(false)
+    m_shareReferenceHasBeenSet(false),
+    m_timeStartShareHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome Snapshot::Deserialize(const Value &value)
         m_shareReferenceHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeStartShare") && !value["TimeStartShare"].IsNull())
+    {
+        if (!value["TimeStartShare"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Snapshot.TimeStartShare` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeStartShare = string(value["TimeStartShare"].GetString());
+        m_timeStartShareHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -410,6 +421,14 @@ void Snapshot::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "ShareReference";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shareReference, allocator);
+    }
+
+    if (m_timeStartShareHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TimeStartShare";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_timeStartShare.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -701,5 +720,21 @@ void Snapshot::SetShareReference(const uint64_t& _shareReference)
 bool Snapshot::ShareReferenceHasBeenSet() const
 {
     return m_shareReferenceHasBeenSet;
+}
+
+string Snapshot::GetTimeStartShare() const
+{
+    return m_timeStartShare;
+}
+
+void Snapshot::SetTimeStartShare(const string& _timeStartShare)
+{
+    m_timeStartShare = _timeStartShare;
+    m_timeStartShareHasBeenSet = true;
+}
+
+bool Snapshot::TimeStartShareHasBeenSet() const
+{
+    return m_timeStartShareHasBeenSet;
 }
 

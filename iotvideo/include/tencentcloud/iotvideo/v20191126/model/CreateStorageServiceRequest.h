@@ -56,6 +56,8 @@ ye1m30d ：事件30天存储月套餐 。
 ye1y3d ：事件3天存储年套餐。
 ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
+yc1w7d : 全时7天存储周套餐。
+ye1w7d : 事件7天存储周套餐。
                      * @return PkgId 云存套餐ID：
 yc1m3d ： 全时3天存储月套餐。
 yc1m7d ： 全时7天存储月套餐。
@@ -69,6 +71,8 @@ ye1m30d ：事件30天存储月套餐 。
 ye1y3d ：事件3天存储年套餐。
 ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
+yc1w7d : 全时7天存储周套餐。
+ye1w7d : 事件7天存储周套餐。
                      */
                     std::string GetPkgId() const;
 
@@ -86,6 +90,8 @@ ye1m30d ：事件30天存储月套餐 。
 ye1y3d ：事件3天存储年套餐。
 ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
+yc1w7d : 全时7天存储周套餐。
+ye1w7d : 事件7天存储周套餐。
                      * @param PkgId 云存套餐ID：
 yc1m3d ： 全时3天存储月套餐。
 yc1m7d ： 全时7天存储月套餐。
@@ -99,6 +105,8 @@ ye1m30d ：事件30天存储月套餐 。
 ye1y3d ：事件3天存储年套餐。
 ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
+yc1w7d : 全时7天存储周套餐。
+ye1w7d : 事件7天存储周套餐。
                      */
                     void SetPkgId(const std::string& _pkgId);
 
@@ -145,14 +153,14 @@ ye1y30d ：事件30天存储年套餐。
                     bool OrderCountHasBeenSet() const;
 
                     /**
-                     * 获取云存服务所在的区域,如ap-guangzhou,ap-singapore
-                     * @return StorageRegion 云存服务所在的区域,如ap-guangzhou,ap-singapore
+                     * 获取云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt
+                     * @return StorageRegion 云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt
                      */
                     std::string GetStorageRegion() const;
 
                     /**
-                     * 设置云存服务所在的区域,如ap-guangzhou,ap-singapore
-                     * @param StorageRegion 云存服务所在的区域,如ap-guangzhou,ap-singapore
+                     * 设置云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt
+                     * @param StorageRegion 云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt
                      */
                     void SetStorageRegion(const std::string& _storageRegion);
 
@@ -232,6 +240,8 @@ ye1m30d ：事件30天存储月套餐 。
 ye1y3d ：事件3天存储年套餐。
 ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
+yc1w7d : 全时7天存储周套餐。
+ye1w7d : 事件7天存储周套餐。
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
@@ -249,7 +259,7 @@ ye1y30d ：事件30天存储年套餐。
                     bool m_orderCountHasBeenSet;
 
                     /**
-                     * 云存服务所在的区域,如ap-guangzhou,ap-singapore
+                     * 云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt
                      */
                     std::string m_storageRegion;
                     bool m_storageRegionHasBeenSet;

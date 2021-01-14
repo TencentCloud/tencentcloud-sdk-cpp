@@ -33,7 +33,8 @@ DescribeSlowLogDataRequest::DescribeSlowLogDataRequest() :
     m_sortByHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_instTypeHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,14 @@ string DescribeSlowLogDataRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_instTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -305,6 +314,22 @@ void DescribeSlowLogDataRequest::SetLimit(const int64_t& _limit)
 bool DescribeSlowLogDataRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeSlowLogDataRequest::GetInstType() const
+{
+    return m_instType;
+}
+
+void DescribeSlowLogDataRequest::SetInstType(const string& _instType)
+{
+    m_instType = _instType;
+    m_instTypeHasBeenSet = true;
+}
+
+bool DescribeSlowLogDataRequest::InstTypeHasBeenSet() const
+{
+    return m_instTypeHasBeenSet;
 }
 
 

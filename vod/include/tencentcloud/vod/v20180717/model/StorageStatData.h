@@ -49,20 +49,20 @@ namespace TencentCloud
                     /**
                      * 获取点播存储的计费区域，可能值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>outside Chinese Mainland：中国境外。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
                      * @return Area 点播存储的计费区域，可能值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>outside Chinese Mainland：中国境外。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置点播存储的计费区域，可能值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>outside Chinese Mainland：中国境外。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
                      * @param Area 点播存储的计费区域，可能值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>outside Chinese Mainland：中国境外。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
                      */
                     void SetArea(const std::string& _area);
 
@@ -131,7 +131,7 @@ namespace TencentCloud
                     /**
                      * 点播存储的计费区域，可能值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>outside Chinese Mainland：中国境外。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

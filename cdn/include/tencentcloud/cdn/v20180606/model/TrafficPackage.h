@@ -256,6 +256,78 @@ disabled：未启用
                      */
                     bool ChannelHasBeenSet() const;
 
+                    /**
+                     * 获取流量包生效区域，目前仅支持mainland
+                     * @return Area 流量包生效区域，目前仅支持mainland
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置流量包生效区域，目前仅支持mainland
+                     * @param Area 流量包生效区域，目前仅支持mainland
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
+                    /**
+                     * 获取流量包生命周期月数
+                     * @return LifeTimeMonth 流量包生命周期月数
+                     */
+                    int64_t GetLifeTimeMonth() const;
+
+                    /**
+                     * 设置流量包生命周期月数
+                     * @param LifeTimeMonth 流量包生命周期月数
+                     */
+                    void SetLifeTimeMonth(const int64_t& _lifeTimeMonth);
+
+                    /**
+                     * 判断参数 LifeTimeMonth 是否已赋值
+                     * @return LifeTimeMonth 是否已赋值
+                     */
+                    bool LifeTimeMonthHasBeenSet() const;
+
+                    /**
+                     * 获取流量包是否支持续订
+                     * @return ExtensionAvailable 流量包是否支持续订
+                     */
+                    bool GetExtensionAvailable() const;
+
+                    /**
+                     * 设置流量包是否支持续订
+                     * @param ExtensionAvailable 流量包是否支持续订
+                     */
+                    void SetExtensionAvailable(const bool& _extensionAvailable);
+
+                    /**
+                     * 判断参数 ExtensionAvailable 是否已赋值
+                     * @return ExtensionAvailable 是否已赋值
+                     */
+                    bool ExtensionAvailableHasBeenSet() const;
+
+                    /**
+                     * 获取流量包是否支持退费
+                     * @return RefundAvailable 流量包是否支持退费
+                     */
+                    bool GetRefundAvailable() const;
+
+                    /**
+                     * 设置流量包是否支持退费
+                     * @param RefundAvailable 流量包是否支持退费
+                     */
+                    void SetRefundAvailable(const bool& _refundAvailable);
+
+                    /**
+                     * 判断参数 RefundAvailable 是否已赋值
+                     * @return RefundAvailable 是否已赋值
+                     */
+                    bool RefundAvailableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -326,6 +398,30 @@ disabled：未启用
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
+
+                    /**
+                     * 流量包生效区域，目前仅支持mainland
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
+
+                    /**
+                     * 流量包生命周期月数
+                     */
+                    int64_t m_lifeTimeMonth;
+                    bool m_lifeTimeMonthHasBeenSet;
+
+                    /**
+                     * 流量包是否支持续订
+                     */
+                    bool m_extensionAvailable;
+                    bool m_extensionAvailableHasBeenSet;
+
+                    /**
+                     * 流量包是否支持退费
+                     */
+                    bool m_refundAvailable;
+                    bool m_refundAvailableHasBeenSet;
 
                 };
             }

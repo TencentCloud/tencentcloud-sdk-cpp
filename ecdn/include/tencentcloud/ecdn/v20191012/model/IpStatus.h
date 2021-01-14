@@ -144,6 +144,24 @@ offline：下线状态
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取节点 IP 添加时间
+                     * @return CreateTime 节点 IP 添加时间
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置节点 IP 添加时间
+                     * @param CreateTime 节点 IP 添加时间
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,6 +195,12 @@ offline：下线状态
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 节点 IP 添加时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

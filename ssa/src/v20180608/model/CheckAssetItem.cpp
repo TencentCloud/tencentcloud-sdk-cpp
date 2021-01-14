@@ -33,7 +33,8 @@ CheckAssetItem::CheckAssetItem() :
     m_isCheckedHasBeenSet(false),
     m_assetInfoHasBeenSet(false),
     m_assetIdHasBeenSet(false),
-    m_detailHasBeenSet(false)
+    m_detailHasBeenSet(false),
+    m_remarksHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const Value &value)
         m_detailHasBeenSet = true;
     }
 
+    if (value.HasMember("Remarks") && !value["Remarks"].IsNull())
+    {
+        if (!value["Remarks"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CheckAssetItem.Remarks` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remarks = string(value["Remarks"].GetString());
+        m_remarksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +274,14 @@ void CheckAssetItem::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Detail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_detail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarksHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remarks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_remarks.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -458,5 +477,21 @@ void CheckAssetItem::SetDetail(const string& _detail)
 bool CheckAssetItem::DetailHasBeenSet() const
 {
     return m_detailHasBeenSet;
+}
+
+string CheckAssetItem::GetRemarks() const
+{
+    return m_remarks;
+}
+
+void CheckAssetItem::SetRemarks(const string& _remarks)
+{
+    m_remarks = _remarks;
+    m_remarksHasBeenSet = true;
+}
+
+bool CheckAssetItem::RemarksHasBeenSet() const
+{
+    return m_remarksHasBeenSet;
 }
 

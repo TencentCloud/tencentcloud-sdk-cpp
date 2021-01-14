@@ -29,7 +29,12 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_instanceTypesHasBeenSet(false),
     m_instanceTypesCheckPolicyHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_internetAccessibleHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false),
+    m_instanceChargePrepaidHasBeenSet(false),
+    m_instanceMarketOptionsHasBeenSet(false)
 {
 }
 
@@ -91,6 +96,54 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_internetAccessibleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetAccessible";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_internetAccessible.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceChargePrepaidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_instanceMarketOptionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceMarketOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_instanceMarketOptions.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -195,6 +248,86 @@ void ModifyLaunchConfigurationAttributesRequest::SetUserData(const string& _user
 bool ModifyLaunchConfigurationAttributesRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+vector<string> ModifyLaunchConfigurationAttributesRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
+}
+
+InternetAccessible ModifyLaunchConfigurationAttributesRequest::GetInternetAccessible() const
+{
+    return m_internetAccessible;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetInternetAccessible(const InternetAccessible& _internetAccessible)
+{
+    m_internetAccessible = _internetAccessible;
+    m_internetAccessibleHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::InternetAccessibleHasBeenSet() const
+{
+    return m_internetAccessibleHasBeenSet;
+}
+
+string ModifyLaunchConfigurationAttributesRequest::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetInstanceChargeType(const string& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
+}
+
+InstanceChargePrepaid ModifyLaunchConfigurationAttributesRequest::GetInstanceChargePrepaid() const
+{
+    return m_instanceChargePrepaid;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid)
+{
+    m_instanceChargePrepaid = _instanceChargePrepaid;
+    m_instanceChargePrepaidHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::InstanceChargePrepaidHasBeenSet() const
+{
+    return m_instanceChargePrepaidHasBeenSet;
+}
+
+InstanceMarketOptionsRequest ModifyLaunchConfigurationAttributesRequest::GetInstanceMarketOptions() const
+{
+    return m_instanceMarketOptions;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetInstanceMarketOptions(const InstanceMarketOptionsRequest& _instanceMarketOptions)
+{
+    m_instanceMarketOptions = _instanceMarketOptions;
+    m_instanceMarketOptionsHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::InstanceMarketOptionsHasBeenSet() const
+{
+    return m_instanceMarketOptionsHasBeenSet;
 }
 
 

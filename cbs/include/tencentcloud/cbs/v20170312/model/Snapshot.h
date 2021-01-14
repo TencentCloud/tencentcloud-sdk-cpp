@@ -355,14 +355,14 @@ namespace TencentCloud
                     bool SnapshotTypeHasBeenSet() const;
 
                     /**
-                     * 获取快照当前被共享数
-                     * @return ShareReference 快照当前被共享数
+                     * 获取快照当前被共享数。
+                     * @return ShareReference 快照当前被共享数。
                      */
                     uint64_t GetShareReference() const;
 
                     /**
-                     * 设置快照当前被共享数
-                     * @param ShareReference 快照当前被共享数
+                     * 设置快照当前被共享数。
+                     * @param ShareReference 快照当前被共享数。
                      */
                     void SetShareReference(const uint64_t& _shareReference);
 
@@ -371,6 +371,24 @@ namespace TencentCloud
                      * @return ShareReference 是否已赋值
                      */
                     bool ShareReferenceHasBeenSet() const;
+
+                    /**
+                     * 获取快照开始共享的时间。
+                     * @return TimeStartShare 快照开始共享的时间。
+                     */
+                    std::string GetTimeStartShare() const;
+
+                    /**
+                     * 设置快照开始共享的时间。
+                     * @param TimeStartShare 快照开始共享的时间。
+                     */
+                    void SetTimeStartShare(const std::string& _timeStartShare);
+
+                    /**
+                     * 判断参数 TimeStartShare 是否已赋值
+                     * @return TimeStartShare 是否已赋值
+                     */
+                    bool TimeStartShareHasBeenSet() const;
 
                 private:
 
@@ -477,10 +495,16 @@ namespace TencentCloud
                     bool m_snapshotTypeHasBeenSet;
 
                     /**
-                     * 快照当前被共享数
+                     * 快照当前被共享数。
                      */
                     uint64_t m_shareReference;
                     bool m_shareReferenceHasBeenSet;
+
+                    /**
+                     * 快照开始共享的时间。
+                     */
+                    std::string m_timeStartShare;
+                    bool m_timeStartShareHasBeenSet;
 
                 };
             }

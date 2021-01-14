@@ -266,6 +266,24 @@ namespace TencentCloud
                      */
                     bool DetailHasBeenSet() const;
 
+                    /**
+                     * 获取备注内容
+                     * @return Remarks 备注内容
+                     */
+                    std::string GetRemarks() const;
+
+                    /**
+                     * 设置备注内容
+                     * @param Remarks 备注内容
+                     */
+                    void SetRemarks(const std::string& _remarks);
+
+                    /**
+                     * 判断参数 Remarks 是否已赋值
+                     * @return Remarks 是否已赋值
+                     */
+                    bool RemarksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +358,12 @@ namespace TencentCloud
                      */
                     std::string m_detail;
                     bool m_detailHasBeenSet;
+
+                    /**
+                     * 备注内容
+                     */
+                    std::string m_remarks;
+                    bool m_remarksHasBeenSet;
 
                 };
             }

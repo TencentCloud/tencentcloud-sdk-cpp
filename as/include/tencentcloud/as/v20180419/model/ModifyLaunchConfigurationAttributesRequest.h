@@ -21,6 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/as/v20180419/model/InternetAccessible.h>
+#include <tencentcloud/as/v20180419/model/InstanceChargePrepaid.h>
+#include <tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h>
 
 
 namespace TencentCloud
@@ -174,6 +177,120 @@ namespace TencentCloud
                      */
                     bool UserDataHasBeenSet() const;
 
+                    /**
+                     * 获取实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。
+若指定该参数，请至少提供一个安全组，列表顺序有先后。
+                     * @return SecurityGroupIds 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。
+若指定该参数，请至少提供一个安全组，列表顺序有先后。
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。
+若指定该参数，请至少提供一个安全组，列表顺序有先后。
+                     * @param SecurityGroupIds 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。
+若指定该参数，请至少提供一个安全组，列表顺序有先后。
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取公网带宽相关信息设置。
+                     * @return InternetAccessible 公网带宽相关信息设置。
+                     */
+                    InternetAccessible GetInternetAccessible() const;
+
+                    /**
+                     * 设置公网带宽相关信息设置。
+                     * @param InternetAccessible 公网带宽相关信息设置。
+                     */
+                    void SetInternetAccessible(const InternetAccessible& _internetAccessible);
+
+                    /**
+                     * 判断参数 InternetAccessible 是否已赋值
+                     * @return InternetAccessible 是否已赋值
+                     */
+                    bool InternetAccessibleHasBeenSet() const;
+
+                    /**
+                     * 获取实例计费类型。具体取值范围如下：
+<br><li>POSTPAID_BY_HOUR：按小时后付费
+<br><li>SPOTPAID：竞价付费
+<br><li>PREPAID：预付费，即包年包月
+                     * @return InstanceChargeType 实例计费类型。具体取值范围如下：
+<br><li>POSTPAID_BY_HOUR：按小时后付费
+<br><li>SPOTPAID：竞价付费
+<br><li>PREPAID：预付费，即包年包月
+                     */
+                    std::string GetInstanceChargeType() const;
+
+                    /**
+                     * 设置实例计费类型。具体取值范围如下：
+<br><li>POSTPAID_BY_HOUR：按小时后付费
+<br><li>SPOTPAID：竞价付费
+<br><li>PREPAID：预付费，即包年包月
+                     * @param InstanceChargeType 实例计费类型。具体取值范围如下：
+<br><li>POSTPAID_BY_HOUR：按小时后付费
+<br><li>SPOTPAID：竞价付费
+<br><li>PREPAID：预付费，即包年包月
+                     */
+                    void SetInstanceChargeType(const std::string& _instanceChargeType);
+
+                    /**
+                     * 判断参数 InstanceChargeType 是否已赋值
+                     * @return InstanceChargeType 是否已赋值
+                     */
+                    bool InstanceChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。
+                     * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。
+                     */
+                    InstanceChargePrepaid GetInstanceChargePrepaid() const;
+
+                    /**
+                     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。
+                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。
+                     */
+                    void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
+
+                    /**
+                     * 判断参数 InstanceChargePrepaid 是否已赋值
+                     * @return InstanceChargePrepaid 是否已赋值
+                     */
+                    bool InstanceChargePrepaidHasBeenSet() const;
+
+                    /**
+                     * 获取实例的市场相关选项，如竞价实例相关参数。
+若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。
+                     * @return InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数。
+若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。
+                     */
+                    InstanceMarketOptionsRequest GetInstanceMarketOptions() const;
+
+                    /**
+                     * 设置实例的市场相关选项，如竞价实例相关参数。
+若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。
+                     * @param InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数。
+若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。
+                     */
+                    void SetInstanceMarketOptions(const InstanceMarketOptionsRequest& _instanceMarketOptions);
+
+                    /**
+                     * 判断参数 InstanceMarketOptions 是否已赋值
+                     * @return InstanceMarketOptions 是否已赋值
+                     */
+                    bool InstanceMarketOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +334,42 @@ namespace TencentCloud
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
+
+                    /**
+                     * 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。
+若指定该参数，请至少提供一个安全组，列表顺序有先后。
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 公网带宽相关信息设置。
+                     */
+                    InternetAccessible m_internetAccessible;
+                    bool m_internetAccessibleHasBeenSet;
+
+                    /**
+                     * 实例计费类型。具体取值范围如下：
+<br><li>POSTPAID_BY_HOUR：按小时后付费
+<br><li>SPOTPAID：竞价付费
+<br><li>PREPAID：预付费，即包年包月
+                     */
+                    std::string m_instanceChargeType;
+                    bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。
+                     */
+                    InstanceChargePrepaid m_instanceChargePrepaid;
+                    bool m_instanceChargePrepaidHasBeenSet;
+
+                    /**
+                     * 实例的市场相关选项，如竞价实例相关参数。
+若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。
+                     */
+                    InstanceMarketOptionsRequest m_instanceMarketOptions;
+                    bool m_instanceMarketOptionsHasBeenSet;
 
                 };
             }

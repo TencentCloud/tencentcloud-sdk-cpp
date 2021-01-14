@@ -26,7 +26,8 @@ ImageProcessingTemplate::ImageProcessingTemplate() :
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_operationsHasBeenSet(false)
+    m_operationsHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ImageProcessingTemplate::Deserialize(const Value &value)
         m_operationsHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageProcessingTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -147,6 +158,14 @@ void ImageProcessingTemplate::ToJsonObject(Value &value, Document::AllocatorType
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -230,5 +249,21 @@ void ImageProcessingTemplate::SetOperations(const vector<ImageOperation>& _opera
 bool ImageProcessingTemplate::OperationsHasBeenSet() const
 {
     return m_operationsHasBeenSet;
+}
+
+string ImageProcessingTemplate::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ImageProcessingTemplate::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ImageProcessingTemplate::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

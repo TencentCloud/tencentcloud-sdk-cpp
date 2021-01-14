@@ -32,7 +32,11 @@ TrafficPackage::TrafficPackage() :
     m_expireTimeHasBeenSet(false),
     m_contractExtensionHasBeenSet(false),
     m_autoExtensionHasBeenSet(false),
-    m_channelHasBeenSet(false)
+    m_channelHasBeenSet(false),
+    m_areaHasBeenSet(false),
+    m_lifeTimeMonthHasBeenSet(false),
+    m_extensionAvailableHasBeenSet(false),
+    m_refundAvailableHasBeenSet(false)
 {
 }
 
@@ -151,6 +155,46 @@ CoreInternalOutcome TrafficPackage::Deserialize(const Value &value)
         m_channelHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TrafficPackage.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
+    if (value.HasMember("LifeTimeMonth") && !value["LifeTimeMonth"].IsNull())
+    {
+        if (!value["LifeTimeMonth"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TrafficPackage.LifeTimeMonth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lifeTimeMonth = value["LifeTimeMonth"].GetInt64();
+        m_lifeTimeMonthHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtensionAvailable") && !value["ExtensionAvailable"].IsNull())
+    {
+        if (!value["ExtensionAvailable"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `TrafficPackage.ExtensionAvailable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_extensionAvailable = value["ExtensionAvailable"].GetBool();
+        m_extensionAvailableHasBeenSet = true;
+    }
+
+    if (value.HasMember("RefundAvailable") && !value["RefundAvailable"].IsNull())
+    {
+        if (!value["RefundAvailable"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `TrafficPackage.RefundAvailable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_refundAvailable = value["RefundAvailable"].GetBool();
+        m_refundAvailableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +288,38 @@ void TrafficPackage::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_channel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lifeTimeMonthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LifeTimeMonth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lifeTimeMonth, allocator);
+    }
+
+    if (m_extensionAvailableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtensionAvailable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_extensionAvailable, allocator);
+    }
+
+    if (m_refundAvailableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RefundAvailable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_refundAvailable, allocator);
     }
 
 }
@@ -423,5 +499,69 @@ void TrafficPackage::SetChannel(const string& _channel)
 bool TrafficPackage::ChannelHasBeenSet() const
 {
     return m_channelHasBeenSet;
+}
+
+string TrafficPackage::GetArea() const
+{
+    return m_area;
+}
+
+void TrafficPackage::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool TrafficPackage::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
+}
+
+int64_t TrafficPackage::GetLifeTimeMonth() const
+{
+    return m_lifeTimeMonth;
+}
+
+void TrafficPackage::SetLifeTimeMonth(const int64_t& _lifeTimeMonth)
+{
+    m_lifeTimeMonth = _lifeTimeMonth;
+    m_lifeTimeMonthHasBeenSet = true;
+}
+
+bool TrafficPackage::LifeTimeMonthHasBeenSet() const
+{
+    return m_lifeTimeMonthHasBeenSet;
+}
+
+bool TrafficPackage::GetExtensionAvailable() const
+{
+    return m_extensionAvailable;
+}
+
+void TrafficPackage::SetExtensionAvailable(const bool& _extensionAvailable)
+{
+    m_extensionAvailable = _extensionAvailable;
+    m_extensionAvailableHasBeenSet = true;
+}
+
+bool TrafficPackage::ExtensionAvailableHasBeenSet() const
+{
+    return m_extensionAvailableHasBeenSet;
+}
+
+bool TrafficPackage::GetRefundAvailable() const
+{
+    return m_refundAvailable;
+}
+
+void TrafficPackage::SetRefundAvailable(const bool& _refundAvailable)
+{
+    m_refundAvailable = _refundAvailable;
+    m_refundAvailableHasBeenSet = true;
+}
+
+bool TrafficPackage::RefundAvailableHasBeenSet() const
+{
+    return m_refundAvailableHasBeenSet;
 }
 

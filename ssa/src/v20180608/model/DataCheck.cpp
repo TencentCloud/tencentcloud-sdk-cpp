@@ -30,7 +30,8 @@ DataCheck::DataCheck() :
     m_isIgnoredHasBeenSet(false),
     m_riskCountHasBeenSet(false),
     m_isCheckedHasBeenSet(false),
-    m_assetTotalHasBeenSet(false)
+    m_assetTotalHasBeenSet(false),
+    m_remarksHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome DataCheck::Deserialize(const Value &value)
         m_assetTotalHasBeenSet = true;
     }
 
+    if (value.HasMember("Remarks") && !value["Remarks"].IsNull())
+    {
+        if (!value["Remarks"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DataCheck.Remarks` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remarks = string(value["Remarks"].GetString());
+        m_remarksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void DataCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "AssetTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_assetTotal, allocator);
+    }
+
+    if (m_remarksHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remarks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_remarks.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void DataCheck::SetAssetTotal(const int64_t& _assetTotal)
 bool DataCheck::AssetTotalHasBeenSet() const
 {
     return m_assetTotalHasBeenSet;
+}
+
+string DataCheck::GetRemarks() const
+{
+    return m_remarks;
+}
+
+void DataCheck::SetRemarks(const string& _remarks)
+{
+    m_remarks = _remarks;
+    m_remarksHasBeenSet = true;
+}
+
+bool DataCheck::RemarksHasBeenSet() const
+{
+    return m_remarksHasBeenSet;
 }
 

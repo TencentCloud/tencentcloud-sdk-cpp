@@ -255,6 +255,49 @@ SsaClient::DescribeCheckConfigDetailOutcomeCallable SsaClient::DescribeCheckConf
     return task->get_future();
 }
 
+SsaClient::DescribeComplianceAssetListOutcome SsaClient::DescribeComplianceAssetList(const DescribeComplianceAssetListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeComplianceAssetList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeComplianceAssetListResponse rsp = DescribeComplianceAssetListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeComplianceAssetListOutcome(rsp);
+        else
+            return DescribeComplianceAssetListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeComplianceAssetListOutcome(outcome.GetError());
+    }
+}
+
+void SsaClient::DescribeComplianceAssetListAsync(const DescribeComplianceAssetListRequest& request, const DescribeComplianceAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeComplianceAssetList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsaClient::DescribeComplianceAssetListOutcomeCallable SsaClient::DescribeComplianceAssetListCallable(const DescribeComplianceAssetListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeComplianceAssetListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeComplianceAssetList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsaClient::DescribeComplianceDetailOutcome SsaClient::DescribeComplianceDetail(const DescribeComplianceDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeComplianceDetail");
@@ -506,6 +549,49 @@ SsaClient::DescribeSafetyEventListOutcomeCallable SsaClient::DescribeSafetyEvent
         [this, request]()
         {
             return this->DescribeSafetyEventList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SsaClient::DescribeVulDetailOutcome SsaClient::DescribeVulDetail(const DescribeVulDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulDetailResponse rsp = DescribeVulDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulDetailOutcome(rsp);
+        else
+            return DescribeVulDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulDetailOutcome(outcome.GetError());
+    }
+}
+
+void SsaClient::DescribeVulDetailAsync(const DescribeVulDetailRequest& request, const DescribeVulDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsaClient::DescribeVulDetailOutcomeCallable SsaClient::DescribeVulDetailCallable(const DescribeVulDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulDetail(request);
         }
     );
 

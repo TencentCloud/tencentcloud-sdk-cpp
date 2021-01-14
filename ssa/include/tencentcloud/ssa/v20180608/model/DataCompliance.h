@@ -366,6 +366,28 @@ namespace TencentCloud
                      */
                     bool AssetTotalHasBeenSet() const;
 
+                    /**
+                     * 获取忽略内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Remarks 忽略内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRemarks() const;
+
+                    /**
+                     * 设置忽略内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Remarks 忽略内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemarks(const std::string& _remarks);
+
+                    /**
+                     * 判断参数 Remarks 是否已赋值
+                     * @return Remarks 是否已赋值
+                     */
+                    bool RemarksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -471,6 +493,13 @@ namespace TencentCloud
                      */
                     int64_t m_assetTotal;
                     bool m_assetTotalHasBeenSet;
+
+                    /**
+                     * 忽略内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_remarks;
+                    bool m_remarksHasBeenSet;
 
                 };
             }

@@ -23,8 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/mgobe/v20201014/model/ChangeRoomPlayerProfileRequest.h>
+#include <tencentcloud/mgobe/v20201014/model/ChangeRoomPlayerProfileResponse.h>
+#include <tencentcloud/mgobe/v20201014/model/ChangeRoomPlayerStatusRequest.h>
+#include <tencentcloud/mgobe/v20201014/model/ChangeRoomPlayerStatusResponse.h>
 #include <tencentcloud/mgobe/v20201014/model/DismissRoomRequest.h>
 #include <tencentcloud/mgobe/v20201014/model/DismissRoomResponse.h>
+#include <tencentcloud/mgobe/v20201014/model/ModifyRoomRequest.h>
+#include <tencentcloud/mgobe/v20201014/model/ModifyRoomResponse.h>
+#include <tencentcloud/mgobe/v20201014/model/RemoveRoomPlayerRequest.h>
+#include <tencentcloud/mgobe/v20201014/model/RemoveRoomPlayerResponse.h>
 
 
 namespace TencentCloud
@@ -39,11 +47,41 @@ namespace TencentCloud
                 MgobeClient(const Credential &credential, const std::string &region);
                 MgobeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::ChangeRoomPlayerProfileResponse> ChangeRoomPlayerProfileOutcome;
+                typedef std::future<ChangeRoomPlayerProfileOutcome> ChangeRoomPlayerProfileOutcomeCallable;
+                typedef std::function<void(const MgobeClient*, const Model::ChangeRoomPlayerProfileRequest&, ChangeRoomPlayerProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeRoomPlayerProfileAsyncHandler;
+                typedef Outcome<Error, Model::ChangeRoomPlayerStatusResponse> ChangeRoomPlayerStatusOutcome;
+                typedef std::future<ChangeRoomPlayerStatusOutcome> ChangeRoomPlayerStatusOutcomeCallable;
+                typedef std::function<void(const MgobeClient*, const Model::ChangeRoomPlayerStatusRequest&, ChangeRoomPlayerStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeRoomPlayerStatusAsyncHandler;
                 typedef Outcome<Error, Model::DismissRoomResponse> DismissRoomOutcome;
                 typedef std::future<DismissRoomOutcome> DismissRoomOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::DismissRoomRequest&, DismissRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomAsyncHandler;
+                typedef Outcome<Error, Model::ModifyRoomResponse> ModifyRoomOutcome;
+                typedef std::future<ModifyRoomOutcome> ModifyRoomOutcomeCallable;
+                typedef std::function<void(const MgobeClient*, const Model::ModifyRoomRequest&, ModifyRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoomAsyncHandler;
+                typedef Outcome<Error, Model::RemoveRoomPlayerResponse> RemoveRoomPlayerOutcome;
+                typedef std::future<RemoveRoomPlayerOutcome> RemoveRoomPlayerOutcomeCallable;
+                typedef std::function<void(const MgobeClient*, const Model::RemoveRoomPlayerRequest&, RemoveRoomPlayerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveRoomPlayerAsyncHandler;
 
 
+
+                /**
+                 *修改房间玩家自定义属性
+                 * @param req ChangeRoomPlayerProfileRequest
+                 * @return ChangeRoomPlayerProfileOutcome
+                 */
+                ChangeRoomPlayerProfileOutcome ChangeRoomPlayerProfile(const Model::ChangeRoomPlayerProfileRequest &request);
+                void ChangeRoomPlayerProfileAsync(const Model::ChangeRoomPlayerProfileRequest& request, const ChangeRoomPlayerProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChangeRoomPlayerProfileOutcomeCallable ChangeRoomPlayerProfileCallable(const Model::ChangeRoomPlayerProfileRequest& request);
+
+                /**
+                 *修改玩家自定义状态
+                 * @param req ChangeRoomPlayerStatusRequest
+                 * @return ChangeRoomPlayerStatusOutcome
+                 */
+                ChangeRoomPlayerStatusOutcome ChangeRoomPlayerStatus(const Model::ChangeRoomPlayerStatusRequest &request);
+                void ChangeRoomPlayerStatusAsync(const Model::ChangeRoomPlayerStatusRequest& request, const ChangeRoomPlayerStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChangeRoomPlayerStatusOutcomeCallable ChangeRoomPlayerStatusCallable(const Model::ChangeRoomPlayerStatusRequest& request);
 
                 /**
                  *通过game_id、room_id解散房间
@@ -53,6 +91,24 @@ namespace TencentCloud
                 DismissRoomOutcome DismissRoom(const Model::DismissRoomRequest &request);
                 void DismissRoomAsync(const Model::DismissRoomRequest& request, const DismissRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DismissRoomOutcomeCallable DismissRoomCallable(const Model::DismissRoomRequest& request);
+
+                /**
+                 *修改房间
+                 * @param req ModifyRoomRequest
+                 * @return ModifyRoomOutcome
+                 */
+                ModifyRoomOutcome ModifyRoom(const Model::ModifyRoomRequest &request);
+                void ModifyRoomAsync(const Model::ModifyRoomRequest& request, const ModifyRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoomOutcomeCallable ModifyRoomCallable(const Model::ModifyRoomRequest& request);
+
+                /**
+                 *踢出房间玩家
+                 * @param req RemoveRoomPlayerRequest
+                 * @return RemoveRoomPlayerOutcome
+                 */
+                RemoveRoomPlayerOutcome RemoveRoomPlayer(const Model::RemoveRoomPlayerRequest &request);
+                void RemoveRoomPlayerAsync(const Model::RemoveRoomPlayerRequest& request, const RemoveRoomPlayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveRoomPlayerOutcomeCallable RemoveRoomPlayerCallable(const Model::RemoveRoomPlayerRequest& request);
 
             };
         }

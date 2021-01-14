@@ -222,6 +222,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取仅在实例为主实例或者灾备实例时生效，可选值：slave，代表拉取从机的日志。
+                     * @return InstType 仅在实例为主实例或者灾备实例时生效，可选值：slave，代表拉取从机的日志。
+                     */
+                    std::string GetInstType() const;
+
+                    /**
+                     * 设置仅在实例为主实例或者灾备实例时生效，可选值：slave，代表拉取从机的日志。
+                     * @param InstType 仅在实例为主实例或者灾备实例时生效，可选值：slave，代表拉取从机的日志。
+                     */
+                    void SetInstType(const std::string& _instType);
+
+                    /**
+                     * 判断参数 InstType 是否已赋值
+                     * @return InstType 是否已赋值
+                     */
+                    bool InstTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 仅在实例为主实例或者灾备实例时生效，可选值：slave，代表拉取从机的日志。
+                     */
+                    std::string m_instType;
+                    bool m_instTypeHasBeenSet;
 
                 };
             }

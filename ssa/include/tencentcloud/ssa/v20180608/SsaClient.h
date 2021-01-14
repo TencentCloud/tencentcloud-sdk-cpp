@@ -33,6 +33,8 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeCheckConfigAssetListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeCheckConfigDetailRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeCheckConfigDetailResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeComplianceAssetListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeComplianceAssetListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeComplianceDetailRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeComplianceDetailResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeComplianceListRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeVulDetailRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeVulDetailResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeVulListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeVulListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubRequest.h>
@@ -78,6 +82,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCheckConfigDetailResponse> DescribeCheckConfigDetailOutcome;
                 typedef std::future<DescribeCheckConfigDetailOutcome> DescribeCheckConfigDetailOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeCheckConfigDetailRequest&, DescribeCheckConfigDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckConfigDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeComplianceAssetListResponse> DescribeComplianceAssetListOutcome;
+                typedef std::future<DescribeComplianceAssetListOutcome> DescribeComplianceAssetListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeComplianceAssetListRequest&, DescribeComplianceAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComplianceAssetListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeComplianceDetailResponse> DescribeComplianceDetailOutcome;
                 typedef std::future<DescribeComplianceDetailOutcome> DescribeComplianceDetailOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeComplianceDetailRequest&, DescribeComplianceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComplianceDetailAsyncHandler;
@@ -96,6 +103,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSafetyEventListResponse> DescribeSafetyEventListOutcome;
                 typedef std::future<DescribeSafetyEventListOutcome> DescribeSafetyEventListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSafetyEventListRequest&, DescribeSafetyEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafetyEventListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVulDetailResponse> DescribeVulDetailOutcome;
+                typedef std::future<DescribeVulDetailOutcome> DescribeVulDetailOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeVulDetailRequest&, DescribeVulDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulDetailAsyncHandler;
                 typedef Outcome<Error, Model::DescribeVulListResponse> DescribeVulListOutcome;
                 typedef std::future<DescribeVulListOutcome> DescribeVulListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeVulListRequest&, DescribeVulListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulListAsyncHandler;
@@ -151,6 +161,15 @@ namespace TencentCloud
                 DescribeCheckConfigDetailOutcomeCallable DescribeCheckConfigDetailCallable(const Model::DescribeCheckConfigDetailRequest& request);
 
                 /**
+                 *合规管理-资产列表
+                 * @param req DescribeComplianceAssetListRequest
+                 * @return DescribeComplianceAssetListOutcome
+                 */
+                DescribeComplianceAssetListOutcome DescribeComplianceAssetList(const Model::DescribeComplianceAssetListRequest &request);
+                void DescribeComplianceAssetListAsync(const Model::DescribeComplianceAssetListRequest& request, const DescribeComplianceAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeComplianceAssetListOutcomeCallable DescribeComplianceAssetListCallable(const Model::DescribeComplianceAssetListRequest& request);
+
+                /**
                  *合规管理检查项详情
                  * @param req DescribeComplianceDetailRequest
                  * @return DescribeComplianceDetailOutcome
@@ -203,6 +222,15 @@ namespace TencentCloud
                 DescribeSafetyEventListOutcome DescribeSafetyEventList(const Model::DescribeSafetyEventListRequest &request);
                 void DescribeSafetyEventListAsync(const Model::DescribeSafetyEventListRequest& request, const DescribeSafetyEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSafetyEventListOutcomeCallable DescribeSafetyEventListCallable(const Model::DescribeSafetyEventListRequest& request);
+
+                /**
+                 *漏洞列表页，获取漏洞详情信息
+                 * @param req DescribeVulDetailRequest
+                 * @return DescribeVulDetailOutcome
+                 */
+                DescribeVulDetailOutcome DescribeVulDetail(const Model::DescribeVulDetailRequest &request);
+                void DescribeVulDetailAsync(const Model::DescribeVulDetailRequest& request, const DescribeVulDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulDetailOutcomeCallable DescribeVulDetailCallable(const Model::DescribeVulDetailRequest& request);
 
                 /**
                  *漏洞管理页，获取漏洞列表
