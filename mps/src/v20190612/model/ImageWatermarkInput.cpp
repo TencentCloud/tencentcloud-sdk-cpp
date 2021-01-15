@@ -24,7 +24,8 @@ using namespace std;
 ImageWatermarkInput::ImageWatermarkInput() :
     m_imageContentHasBeenSet(false),
     m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+    m_heightHasBeenSet(false),
+    m_repeatTypeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome ImageWatermarkInput::Deserialize(const Value &value)
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("RepeatType") && !value["RepeatType"].IsNull())
+    {
+        if (!value["RepeatType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageWatermarkInput.RepeatType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repeatType = string(value["RepeatType"].GetString());
+        m_repeatTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void ImageWatermarkInput::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_height.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repeatTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepeatType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_repeatType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void ImageWatermarkInput::SetHeight(const string& _height)
 bool ImageWatermarkInput::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+string ImageWatermarkInput::GetRepeatType() const
+{
+    return m_repeatType;
+}
+
+void ImageWatermarkInput::SetRepeatType(const string& _repeatType)
+{
+    m_repeatType = _repeatType;
+    m_repeatTypeHasBeenSet = true;
+}
+
+bool ImageWatermarkInput::RepeatTypeHasBeenSet() const
+{
+    return m_repeatTypeHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ using namespace std;
 VatInvoiceOCRResponse::VatInvoiceOCRResponse() :
     m_vatInvoiceInfosHasBeenSet(false),
     m_itemsHasBeenSet(false),
-    m_pdfPageSizeHasBeenSet(false)
+    m_pdfPageSizeHasBeenSet(false),
+    m_angleHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,16 @@ CoreInternalOutcome VatInvoiceOCRResponse::Deserialize(const string &payload)
         m_pdfPageSizeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
+    {
+        if (!rsp["Angle"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angle = rsp["Angle"].GetDouble();
+        m_angleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,16 @@ int64_t VatInvoiceOCRResponse::GetPdfPageSize() const
 bool VatInvoiceOCRResponse::PdfPageSizeHasBeenSet() const
 {
     return m_pdfPageSizeHasBeenSet;
+}
+
+double VatInvoiceOCRResponse::GetAngle() const
+{
+    return m_angle;
+}
+
+bool VatInvoiceOCRResponse::AngleHasBeenSet() const
+{
+    return m_angleHasBeenSet;
 }
 
 

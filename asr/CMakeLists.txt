@@ -21,8 +21,10 @@ set(asr_public_header
 set(asr_public_header_model
   include/tencentcloud/asr/v20190614/model/SetVocabStateResponse.h
   include/tencentcloud/asr/v20190614/model/CreateCustomizationResponse.h
+  include/tencentcloud/asr/v20190614/model/DescribeAsyncRecognitionTasksRequest.h
   include/tencentcloud/asr/v20190614/model/ModifyCustomizationStateRequest.h
   include/tencentcloud/asr/v20190614/model/GetAsrVocabResponse.h
+  include/tencentcloud/asr/v20190614/model/CreateAsyncRecognitionTaskRequest.h
   include/tencentcloud/asr/v20190614/model/HotWord.h
   include/tencentcloud/asr/v20190614/model/GetAsrVocabRequest.h
   include/tencentcloud/asr/v20190614/model/DescribeTaskStatusResponse.h
@@ -32,16 +34,17 @@ set(asr_public_header_model
   include/tencentcloud/asr/v20190614/model/DownloadAsrVocabResponse.h
   include/tencentcloud/asr/v20190614/model/CreateRecTaskResponse.h
   include/tencentcloud/asr/v20190614/model/ModifyCustomizationResponse.h
-  include/tencentcloud/asr/v20190614/model/ModifyCustomizationStateResponse.h
+  include/tencentcloud/asr/v20190614/model/CreateAsyncRecognitionTaskResponse.h
   include/tencentcloud/asr/v20190614/model/DeleteAsrVocabResponse.h
   include/tencentcloud/asr/v20190614/model/DownloadCustomizationResponse.h
-  include/tencentcloud/asr/v20190614/model/GetAsrVocabListRequest.h
   include/tencentcloud/asr/v20190614/model/CreateRecTaskRequest.h
+  include/tencentcloud/asr/v20190614/model/GetAsrVocabListRequest.h
   include/tencentcloud/asr/v20190614/model/GetCustomizationListResponse.h
   include/tencentcloud/asr/v20190614/model/DownloadAsrVocabRequest.h
   include/tencentcloud/asr/v20190614/model/SetVocabStateRequest.h
   include/tencentcloud/asr/v20190614/model/Vocab.h
   include/tencentcloud/asr/v20190614/model/Task.h
+  include/tencentcloud/asr/v20190614/model/AsyncRecognitionTasks.h
   include/tencentcloud/asr/v20190614/model/ModifyCustomizationRequest.h
   include/tencentcloud/asr/v20190614/model/DeleteCustomizationResponse.h
   include/tencentcloud/asr/v20190614/model/TaskStatus.h
@@ -56,6 +59,9 @@ set(asr_public_header_model
   include/tencentcloud/asr/v20190614/model/CreateAsrVocabResponse.h
   include/tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h
   include/tencentcloud/asr/v20190614/model/DeleteCustomizationRequest.h
+  include/tencentcloud/asr/v20190614/model/AsyncRecognitionTaskInfo.h
+  include/tencentcloud/asr/v20190614/model/ModifyCustomizationStateResponse.h
+  include/tencentcloud/asr/v20190614/model/DescribeAsyncRecognitionTasksResponse.h
   include/tencentcloud/asr/v20190614/model/GetAsrVocabListResponse.h
   include/tencentcloud/asr/v20190614/model/SentenceWords.h
   include/tencentcloud/asr/v20190614/model/DownloadCustomizationRequest.h
@@ -65,8 +71,10 @@ set(asr_src
   src/v20190614/AsrClient.cpp
   src/v20190614/model/SetVocabStateResponse.cpp
   src/v20190614/model/CreateCustomizationResponse.cpp
+  src/v20190614/model/DescribeAsyncRecognitionTasksRequest.cpp
   src/v20190614/model/ModifyCustomizationStateRequest.cpp
   src/v20190614/model/GetAsrVocabResponse.cpp
+  src/v20190614/model/CreateAsyncRecognitionTaskRequest.cpp
   src/v20190614/model/HotWord.cpp
   src/v20190614/model/GetAsrVocabRequest.cpp
   src/v20190614/model/DescribeTaskStatusResponse.cpp
@@ -76,16 +84,17 @@ set(asr_src
   src/v20190614/model/DownloadAsrVocabResponse.cpp
   src/v20190614/model/CreateRecTaskResponse.cpp
   src/v20190614/model/ModifyCustomizationResponse.cpp
-  src/v20190614/model/ModifyCustomizationStateResponse.cpp
+  src/v20190614/model/CreateAsyncRecognitionTaskResponse.cpp
   src/v20190614/model/DeleteAsrVocabResponse.cpp
   src/v20190614/model/DownloadCustomizationResponse.cpp
-  src/v20190614/model/GetAsrVocabListRequest.cpp
   src/v20190614/model/CreateRecTaskRequest.cpp
+  src/v20190614/model/GetAsrVocabListRequest.cpp
   src/v20190614/model/GetCustomizationListResponse.cpp
   src/v20190614/model/DownloadAsrVocabRequest.cpp
   src/v20190614/model/SetVocabStateRequest.cpp
   src/v20190614/model/Vocab.cpp
   src/v20190614/model/Task.cpp
+  src/v20190614/model/AsyncRecognitionTasks.cpp
   src/v20190614/model/ModifyCustomizationRequest.cpp
   src/v20190614/model/DeleteCustomizationResponse.cpp
   src/v20190614/model/TaskStatus.cpp
@@ -100,6 +109,9 @@ set(asr_src
   src/v20190614/model/CreateAsrVocabResponse.cpp
   src/v20190614/model/SentenceRecognitionResponse.cpp
   src/v20190614/model/DeleteCustomizationRequest.cpp
+  src/v20190614/model/AsyncRecognitionTaskInfo.cpp
+  src/v20190614/model/ModifyCustomizationStateResponse.cpp
+  src/v20190614/model/DescribeAsyncRecognitionTasksResponse.cpp
   src/v20190614/model/GetAsrVocabListResponse.cpp
   src/v20190614/model/SentenceWords.cpp
   src/v20190614/model/DownloadCustomizationRequest.cpp

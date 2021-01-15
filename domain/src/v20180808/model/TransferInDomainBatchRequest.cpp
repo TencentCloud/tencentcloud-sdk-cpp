@@ -28,7 +28,8 @@ TransferInDomainBatchRequest::TransferInDomainBatchRequest() :
     m_passWordsHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_lockTransferHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string TransferInDomainBatchRequest::ToJsonString() const
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_lockTransferHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LockTransfer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_lockTransfer, allocator);
     }
 
 
@@ -175,6 +184,22 @@ void TransferInDomainBatchRequest::SetAutoRenewFlag(const int64_t& _autoRenewFla
 bool TransferInDomainBatchRequest::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+bool TransferInDomainBatchRequest::GetLockTransfer() const
+{
+    return m_lockTransfer;
+}
+
+void TransferInDomainBatchRequest::SetLockTransfer(const bool& _lockTransfer)
+{
+    m_lockTransfer = _lockTransfer;
+    m_lockTransferHasBeenSet = true;
+}
+
+bool TransferInDomainBatchRequest::LockTransferHasBeenSet() const
+{
+    return m_lockTransferHasBeenSet;
 }
 
 

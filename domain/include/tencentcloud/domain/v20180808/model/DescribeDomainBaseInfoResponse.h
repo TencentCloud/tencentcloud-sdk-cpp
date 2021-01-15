@@ -55,6 +55,20 @@ namespace TencentCloud
                      */
                     bool DomainInfoHasBeenSet() const;
 
+                    /**
+                     * 获取用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uin 用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     */
+                    bool UinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +76,13 @@ namespace TencentCloud
                      */
                     DomainBaseInfo m_domainInfo;
                     bool m_domainInfoHasBeenSet;
+
+                    /**
+                     * 用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
 
                 };
             }

@@ -27,7 +27,8 @@ RecognizeTableOCRRequest::RecognizeTableOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_isPdfHasBeenSet(false),
-    m_pdfPageNumberHasBeenSet(false)
+    m_pdfPageNumberHasBeenSet(false),
+    m_tableLanguageHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string RecognizeTableOCRRequest::ToJsonString() const
         string key = "PdfPageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pdfPageNumber, allocator);
+    }
+
+    if (m_tableLanguageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TableLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_tableLanguage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void RecognizeTableOCRRequest::SetPdfPageNumber(const uint64_t& _pdfPageNumber)
 bool RecognizeTableOCRRequest::PdfPageNumberHasBeenSet() const
 {
     return m_pdfPageNumberHasBeenSet;
+}
+
+string RecognizeTableOCRRequest::GetTableLanguage() const
+{
+    return m_tableLanguage;
+}
+
+void RecognizeTableOCRRequest::SetTableLanguage(const string& _tableLanguage)
+{
+    m_tableLanguage = _tableLanguage;
+    m_tableLanguageHasBeenSet = true;
+}
+
+bool RecognizeTableOCRRequest::TableLanguageHasBeenSet() const
+{
+    return m_tableLanguageHasBeenSet;
 }
 
 

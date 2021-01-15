@@ -422,6 +422,46 @@ xinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公
                      */
                     bool NameServerHasBeenSet() const;
 
+                    /**
+                     * 获取true：开启锁定
+false：关闭锁定
+                     * @return LockTransfer true：开启锁定
+false：关闭锁定
+                     */
+                    bool GetLockTransfer() const;
+
+                    /**
+                     * 设置true：开启锁定
+false：关闭锁定
+                     * @param LockTransfer true：开启锁定
+false：关闭锁定
+                     */
+                    void SetLockTransfer(const bool& _lockTransfer);
+
+                    /**
+                     * 判断参数 LockTransfer 是否已赋值
+                     * @return LockTransfer 是否已赋值
+                     */
+                    bool LockTransferHasBeenSet() const;
+
+                    /**
+                     * 获取锁定结束时间
+                     * @return LockEndTime 锁定结束时间
+                     */
+                    std::string GetLockEndTime() const;
+
+                    /**
+                     * 设置锁定结束时间
+                     * @param LockEndTime 锁定结束时间
+                     */
+                    void SetLockEndTime(const std::string& _lockEndTime);
+
+                    /**
+                     * 判断参数 LockEndTime 是否已赋值
+                     * @return LockEndTime 是否已赋值
+                     */
+                    bool LockEndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -535,6 +575,19 @@ xinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公
                      */
                     std::vector<std::string> m_nameServer;
                     bool m_nameServerHasBeenSet;
+
+                    /**
+                     * true：开启锁定
+false：关闭锁定
+                     */
+                    bool m_lockTransfer;
+                    bool m_lockTransferHasBeenSet;
+
+                    /**
+                     * 锁定结束时间
+                     */
+                    std::string m_lockEndTime;
+                    bool m_lockEndTimeHasBeenSet;
 
                 };
             }

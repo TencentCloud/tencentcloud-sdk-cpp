@@ -65,14 +65,26 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取动图在视频中的开始时间，单位为秒。
-                     * @return StartTimeOffset 动图在视频中的开始时间，单位为秒。
+                     * 获取动图在视频中的起始时间偏移，单位为秒。
+<li>不填或填0，表示从视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示从视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示从视频结束 n 秒前的位置开始。</li>
+                     * @return StartTimeOffset 动图在视频中的起始时间偏移，单位为秒。
+<li>不填或填0，表示从视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示从视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示从视频结束 n 秒前的位置开始。</li>
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置动图在视频中的开始时间，单位为秒。
-                     * @param StartTimeOffset 动图在视频中的开始时间，单位为秒。
+                     * 设置动图在视频中的起始时间偏移，单位为秒。
+<li>不填或填0，表示从视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示从视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示从视频结束 n 秒前的位置开始。</li>
+                     * @param StartTimeOffset 动图在视频中的起始时间偏移，单位为秒。
+<li>不填或填0，表示从视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示从视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示从视频结束 n 秒前的位置开始。</li>
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
@@ -83,14 +95,26 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取动图在视频中的结束时间，单位为秒。
-                     * @return EndTimeOffset 动图在视频中的结束时间，单位为秒。
+                     * 获取动图在视频中的终止时间偏移，单位为秒。
+<li>不填或填0，表示持续到视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示持续到视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示持续到视频结束 n 秒前终止。</li>
+                     * @return EndTimeOffset 动图在视频中的终止时间偏移，单位为秒。
+<li>不填或填0，表示持续到视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示持续到视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示持续到视频结束 n 秒前终止。</li>
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置动图在视频中的结束时间，单位为秒。
-                     * @param EndTimeOffset 动图在视频中的结束时间，单位为秒。
+                     * 设置动图在视频中的终止时间偏移，单位为秒。
+<li>不填或填0，表示持续到视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示持续到视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示持续到视频结束 n 秒前终止。</li>
+                     * @param EndTimeOffset 动图在视频中的终止时间偏移，单位为秒。
+<li>不填或填0，表示持续到视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示持续到视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示持续到视频结束 n 秒前终止。</li>
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
@@ -109,13 +133,19 @@ namespace TencentCloud
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 动图在视频中的开始时间，单位为秒。
+                     * 动图在视频中的起始时间偏移，单位为秒。
+<li>不填或填0，表示从视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示从视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示从视频结束 n 秒前的位置开始。</li>
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * 动图在视频中的结束时间，单位为秒。
+                     * 动图在视频中的终止时间偏移，单位为秒。
+<li>不填或填0，表示持续到视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示持续到视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示持续到视频结束 n 秒前终止。</li>
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

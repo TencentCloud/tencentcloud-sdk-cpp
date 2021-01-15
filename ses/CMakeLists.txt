@@ -23,6 +23,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/ListEmailAddressRequest.h
   include/tencentcloud/ses/v20201002/model/GetEmailIdentityResponse.h
   include/tencentcloud/ses/v20201002/model/ListBlackEmailAddressRequest.h
+  include/tencentcloud/ses/v20201002/model/Attachment.h
   include/tencentcloud/ses/v20201002/model/Template.h
   include/tencentcloud/ses/v20201002/model/GetSendEmailStatusResponse.h
   include/tencentcloud/ses/v20201002/model/SendEmailRequest.h
@@ -73,6 +74,7 @@ set(ses_src
   src/v20201002/model/ListEmailAddressRequest.cpp
   src/v20201002/model/GetEmailIdentityResponse.cpp
   src/v20201002/model/ListBlackEmailAddressRequest.cpp
+  src/v20201002/model/Attachment.cpp
   src/v20201002/model/Template.cpp
   src/v20201002/model/GetSendEmailStatusResponse.cpp
   src/v20201002/model/SendEmailRequest.cpp

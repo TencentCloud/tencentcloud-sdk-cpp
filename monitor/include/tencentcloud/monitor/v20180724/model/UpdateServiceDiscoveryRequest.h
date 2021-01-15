@@ -104,9 +104,11 @@ namespace TencentCloud
                      * 获取服务发现类型，取值如下：
 <li> 1 = ServiceMonitor</li>
 <li> 2 = PodMonitor</li>
+<li> 3 = JobMonitor</li>
                      * @return Type 服务发现类型，取值如下：
 <li> 1 = ServiceMonitor</li>
 <li> 2 = PodMonitor</li>
+<li> 3 = JobMonitor</li>
                      */
                     int64_t GetType() const;
 
@@ -114,9 +116,11 @@ namespace TencentCloud
                      * 设置服务发现类型，取值如下：
 <li> 1 = ServiceMonitor</li>
 <li> 2 = PodMonitor</li>
+<li> 3 = JobMonitor</li>
                      * @param Type 服务发现类型，取值如下：
 <li> 1 = ServiceMonitor</li>
 <li> 2 = PodMonitor</li>
+<li> 3 = JobMonitor</li>
                      */
                     void SetType(const int64_t& _type);
 
@@ -169,6 +173,7 @@ namespace TencentCloud
                      * 服务发现类型，取值如下：
 <li> 1 = ServiceMonitor</li>
 <li> 2 = PodMonitor</li>
+<li> 3 = JobMonitor</li>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

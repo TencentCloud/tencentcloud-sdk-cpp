@@ -130,6 +130,24 @@ namespace TencentCloud
                      */
                     bool PdfPageNumberHasBeenSet() const;
 
+                    /**
+                     * 获取语言，zh：中英文（默认）jap：日文
+                     * @return TableLanguage 语言，zh：中英文（默认）jap：日文
+                     */
+                    std::string GetTableLanguage() const;
+
+                    /**
+                     * 设置语言，zh：中英文（默认）jap：日文
+                     * @param TableLanguage 语言，zh：中英文（默认）jap：日文
+                     */
+                    void SetTableLanguage(const std::string& _tableLanguage);
+
+                    /**
+                     * 判断参数 TableLanguage 是否已赋值
+                     * @return TableLanguage 是否已赋值
+                     */
+                    bool TableLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -159,6 +177,12 @@ namespace TencentCloud
                      */
                     uint64_t m_pdfPageNumber;
                     bool m_pdfPageNumberHasBeenSet;
+
+                    /**
+                     * 语言，zh：中英文（默认）jap：日文
+                     */
+                    std::string m_tableLanguage;
+                    bool m_tableLanguageHasBeenSet;
 
                 };
             }

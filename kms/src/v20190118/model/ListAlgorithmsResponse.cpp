@@ -26,7 +26,8 @@ using namespace std;
 
 ListAlgorithmsResponse::ListAlgorithmsResponse() :
     m_symmetricAlgorithmsHasBeenSet(false),
-    m_asymmetricAlgorithmsHasBeenSet(false)
+    m_asymmetricAlgorithmsHasBeenSet(false),
+    m_asymmetricSignVerifyAlgorithmsHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,26 @@ CoreInternalOutcome ListAlgorithmsResponse::Deserialize(const string &payload)
         m_asymmetricAlgorithmsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AsymmetricSignVerifyAlgorithms") && !rsp["AsymmetricSignVerifyAlgorithms"].IsNull())
+    {
+        if (!rsp["AsymmetricSignVerifyAlgorithms"].IsArray())
+            return CoreInternalOutcome(Error("response `AsymmetricSignVerifyAlgorithms` is not array type"));
+
+        const Value &tmpValue = rsp["AsymmetricSignVerifyAlgorithms"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AlgorithmInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_asymmetricSignVerifyAlgorithms.push_back(item);
+        }
+        m_asymmetricSignVerifyAlgorithmsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +148,16 @@ vector<AlgorithmInfo> ListAlgorithmsResponse::GetAsymmetricAlgorithms() const
 bool ListAlgorithmsResponse::AsymmetricAlgorithmsHasBeenSet() const
 {
     return m_asymmetricAlgorithmsHasBeenSet;
+}
+
+vector<AlgorithmInfo> ListAlgorithmsResponse::GetAsymmetricSignVerifyAlgorithms() const
+{
+    return m_asymmetricSignVerifyAlgorithms;
+}
+
+bool ListAlgorithmsResponse::AsymmetricSignVerifyAlgorithmsHasBeenSet() const
+{
+    return m_asymmetricSignVerifyAlgorithmsHasBeenSet;
 }
 
 

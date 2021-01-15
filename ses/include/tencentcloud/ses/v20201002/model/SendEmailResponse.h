@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接受消息时生成的消息的唯一标识符。
-                     * @return MessageId 接受消息时生成的消息的唯一标识符。
+                     * 获取接受消息生成的唯一消息标识符。
+                     * @return MessageId 接受消息生成的唯一消息标识符。
                      */
                     std::string GetMessageId() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接受消息时生成的消息的唯一标识符。
+                     * 接受消息生成的唯一消息标识符。
                      */
                     std::string m_messageId;
                     bool m_messageIdHasBeenSet;

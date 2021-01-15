@@ -771,6 +771,49 @@ TiwClient::StartOnlineRecordOutcomeCallable TiwClient::StartOnlineRecordCallable
     return task->get_future();
 }
 
+TiwClient::StartWhiteboardPushOutcome TiwClient::StartWhiteboardPush(const StartWhiteboardPushRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartWhiteboardPush");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartWhiteboardPushResponse rsp = StartWhiteboardPushResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartWhiteboardPushOutcome(rsp);
+        else
+            return StartWhiteboardPushOutcome(o.GetError());
+    }
+    else
+    {
+        return StartWhiteboardPushOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::StartWhiteboardPushAsync(const StartWhiteboardPushRequest& request, const StartWhiteboardPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartWhiteboardPush(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::StartWhiteboardPushOutcomeCallable TiwClient::StartWhiteboardPushCallable(const StartWhiteboardPushRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartWhiteboardPushOutcome()>>(
+        [this, request]()
+        {
+            return this->StartWhiteboardPush(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::StopOnlineRecordOutcome TiwClient::StopOnlineRecord(const StopOnlineRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "StopOnlineRecord");
@@ -807,6 +850,49 @@ TiwClient::StopOnlineRecordOutcomeCallable TiwClient::StopOnlineRecordCallable(c
         [this, request]()
         {
             return this->StopOnlineRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::StopWhiteboardPushOutcome TiwClient::StopWhiteboardPush(const StopWhiteboardPushRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopWhiteboardPush");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopWhiteboardPushResponse rsp = StopWhiteboardPushResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopWhiteboardPushOutcome(rsp);
+        else
+            return StopWhiteboardPushOutcome(o.GetError());
+    }
+    else
+    {
+        return StopWhiteboardPushOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::StopWhiteboardPushAsync(const StopWhiteboardPushRequest& request, const StopWhiteboardPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopWhiteboardPush(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::StopWhiteboardPushOutcomeCallable TiwClient::StopWhiteboardPushCallable(const StopWhiteboardPushRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopWhiteboardPushOutcome()>>(
+        [this, request]()
+        {
+            return this->StopWhiteboardPush(request);
         }
     );
 

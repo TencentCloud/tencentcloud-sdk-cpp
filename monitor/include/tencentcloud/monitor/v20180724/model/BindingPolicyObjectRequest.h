@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略分组Id
-                     * @return GroupId 策略分组Id
+                     * 获取策略组id，如传入PolicyId则该字段可传入任意值
+                     * @return GroupId 策略组id，如传入PolicyId则该字段可传入任意值
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略分组Id
-                     * @param GroupId 策略分组Id
+                     * 设置策略组id，如传入PolicyId则该字段可传入任意值
+                     * @param GroupId 策略组id，如传入PolicyId则该字段可传入任意值
                      */
                     void SetGroupId(const int64_t& _groupId);
 
@@ -115,10 +115,28 @@ namespace TencentCloud
                      */
                     bool DimensionsHasBeenSet() const;
 
+                    /**
+                     * 获取告警策略ID，使用此字段时GroupId可传入任意值
+                     * @return PolicyId 告警策略ID，使用此字段时GroupId可传入任意值
+                     */
+                    std::string GetPolicyId() const;
+
+                    /**
+                     * 设置告警策略ID，使用此字段时GroupId可传入任意值
+                     * @param PolicyId 告警策略ID，使用此字段时GroupId可传入任意值
+                     */
+                    void SetPolicyId(const std::string& _policyId);
+
+                    /**
+                     * 判断参数 PolicyId 是否已赋值
+                     * @return PolicyId 是否已赋值
+                     */
+                    bool PolicyIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 策略分组Id
+                     * 策略组id，如传入PolicyId则该字段可传入任意值
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -140,6 +158,12 @@ namespace TencentCloud
                      */
                     std::vector<BindingPolicyObjectDimension> m_dimensions;
                     bool m_dimensionsHasBeenSet;
+
+                    /**
+                     * 告警策略ID，使用此字段时GroupId可传入任意值
+                     */
+                    std::string m_policyId;
+                    bool m_policyIdHasBeenSet;
 
                 };
             }

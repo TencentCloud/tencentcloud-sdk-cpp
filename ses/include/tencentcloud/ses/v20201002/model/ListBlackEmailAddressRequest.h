@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始日期
-                     * @return StartDate 开始日期
+                     * 获取开始日期，格式为YYYY-MM-DD
+                     * @return StartDate 开始日期，格式为YYYY-MM-DD
                      */
                     std::string GetStartDate() const;
 
                     /**
-                     * 设置开始日期
-                     * @param StartDate 开始日期
+                     * 设置开始日期，格式为YYYY-MM-DD
+                     * @param StartDate 开始日期，格式为YYYY-MM-DD
                      */
                     void SetStartDate(const std::string& _startDate);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取结束日期
-                     * @return EndDate 结束日期
+                     * 获取结束日期，格式为YYYY-MM-DD
+                     * @return EndDate 结束日期，格式为YYYY-MM-DD
                      */
                     std::string GetEndDate() const;
 
                     /**
-                     * 设置结束日期
-                     * @param EndDate 结束日期
+                     * 设置结束日期，格式为YYYY-MM-DD
+                     * @param EndDate 结束日期，格式为YYYY-MM-DD
                      */
                     void SetEndDate(const std::string& _endDate);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取规范，配合Limit使用
-                     * @return Offset 规范，配合Limit使用
+                     * 获取规范，配合Limit使用，Limit最大取值为100
+                     * @return Offset 规范，配合Limit使用，Limit最大取值为100
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置规范，配合Limit使用
-                     * @param Offset 规范，配合Limit使用
+                     * 设置规范，配合Limit使用，Limit最大取值为100
+                     * @param Offset 规范，配合Limit使用，Limit最大取值为100
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -153,13 +153,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始日期
+                     * 开始日期，格式为YYYY-MM-DD
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 结束日期
+                     * 结束日期，格式为YYYY-MM-DD
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 规范，配合Limit使用
+                     * 规范，配合Limit使用，Limit最大取值为100
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

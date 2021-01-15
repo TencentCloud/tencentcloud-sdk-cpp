@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ses/v20201002/model/Template.h>
 #include <tencentcloud/ses/v20201002/model/Simple.h>
+#include <tencentcloud/ses/v20201002/model/Attachment.h>
 
 
 namespace TencentCloud
@@ -71,14 +72,14 @@ namespace TencentCloud
                     bool FromEmailAddressHasBeenSet() const;
 
                     /**
-                     * 获取收信人邮箱地址，最多支持群发50人。
-                     * @return Destination 收信人邮箱地址，最多支持群发50人。
+                     * 获取收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
+                     * @return Destination 收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
                      */
                     std::vector<std::string> GetDestination() const;
 
                     /**
-                     * 设置收信人邮箱地址，最多支持群发50人。
-                     * @param Destination 收信人邮箱地址，最多支持群发50人。
+                     * 设置收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
+                     * @param Destination 收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
                      */
                     void SetDestination(const std::vector<std::string>& _destination);
 
@@ -107,14 +108,14 @@ namespace TencentCloud
                     bool SubjectHasBeenSet() const;
 
                     /**
-                     * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
-                     * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
+                     * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
                      */
                     std::string GetReplyToAddresses() const;
 
                     /**
-                     * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
-                     * @param ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
+                     * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * @param ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
                      */
                     void SetReplyToAddresses(const std::string& _replyToAddresses);
 
@@ -160,6 +161,24 @@ namespace TencentCloud
                      */
                     bool SimpleHasBeenSet() const;
 
+                    /**
+                     * 获取需要发送附件时，填写附件相关参数。
+                     * @return Attachments 需要发送附件时，填写附件相关参数。
+                     */
+                    std::vector<Attachment> GetAttachments() const;
+
+                    /**
+                     * 设置需要发送附件时，填写附件相关参数。
+                     * @param Attachments 需要发送附件时，填写附件相关参数。
+                     */
+                    void SetAttachments(const std::vector<Attachment>& _attachments);
+
+                    /**
+                     * 判断参数 Attachments 是否已赋值
+                     * @return Attachments 是否已赋值
+                     */
+                    bool AttachmentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,7 +190,7 @@ namespace TencentCloud
                     bool m_fromEmailAddressHasBeenSet;
 
                     /**
-                     * 收信人邮箱地址，最多支持群发50人。
+                     * 收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
                      */
                     std::vector<std::string> m_destination;
                     bool m_destinationHasBeenSet;
@@ -183,7 +202,7 @@ namespace TencentCloud
                     bool m_subjectHasBeenSet;
 
                     /**
-                     * 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
+                     * 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
                      */
                     std::string m_replyToAddresses;
                     bool m_replyToAddressesHasBeenSet;
@@ -199,6 +218,12 @@ namespace TencentCloud
                      */
                     Simple m_simple;
                     bool m_simpleHasBeenSet;
+
+                    /**
+                     * 需要发送附件时，填写附件相关参数。
+                     */
+                    std::vector<Attachment> m_attachments;
+                    bool m_attachmentsHasBeenSet;
 
                 };
             }

@@ -140,6 +140,32 @@ namespace TencentCloud
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取true： 开启60天内禁止转移注册商锁定
+false：关闭60天内禁止转移注册商锁定
+默认 true
+                     * @return LockTransfer true： 开启60天内禁止转移注册商锁定
+false：关闭60天内禁止转移注册商锁定
+默认 true
+                     */
+                    bool GetLockTransfer() const;
+
+                    /**
+                     * 设置true： 开启60天内禁止转移注册商锁定
+false：关闭60天内禁止转移注册商锁定
+默认 true
+                     * @param LockTransfer true： 开启60天内禁止转移注册商锁定
+false：关闭60天内禁止转移注册商锁定
+默认 true
+                     */
+                    void SetLockTransfer(const bool& _lockTransfer);
+
+                    /**
+                     * 判断参数 LockTransfer 是否已赋值
+                     * @return LockTransfer 是否已赋值
+                     */
+                    bool LockTransferHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +199,14 @@ namespace TencentCloud
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * true： 开启60天内禁止转移注册商锁定
+false：关闭60天内禁止转移注册商锁定
+默认 true
+                     */
+                    bool m_lockTransfer;
+                    bool m_lockTransferHasBeenSet;
 
                 };
             }

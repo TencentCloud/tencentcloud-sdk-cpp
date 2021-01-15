@@ -27,7 +27,8 @@ using namespace std;
 RecognizeTableOCRResponse::RecognizeTableOCRResponse() :
     m_tableDetectionsHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_pdfPageSizeHasBeenSet(false)
+    m_pdfPageSizeHasBeenSet(false),
+    m_angleHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome RecognizeTableOCRResponse::Deserialize(const string &payload
         m_pdfPageSizeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
+    {
+        if (!rsp["Angle"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angle = rsp["Angle"].GetDouble();
+        m_angleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +149,16 @@ int64_t RecognizeTableOCRResponse::GetPdfPageSize() const
 bool RecognizeTableOCRResponse::PdfPageSizeHasBeenSet() const
 {
     return m_pdfPageSizeHasBeenSet;
+}
+
+double RecognizeTableOCRResponse::GetAngle() const
+{
+    return m_angle;
+}
+
+bool RecognizeTableOCRResponse::AngleHasBeenSet() const
+{
+    return m_angleHasBeenSet;
 }
 
 

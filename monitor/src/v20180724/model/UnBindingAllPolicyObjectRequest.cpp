@@ -25,7 +25,8 @@ using namespace std;
 
 UnBindingAllPolicyObjectRequest::UnBindingAllPolicyObjectRequest() :
     m_moduleHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_policyIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string UnBindingAllPolicyObjectRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void UnBindingAllPolicyObjectRequest::SetGroupId(const int64_t& _groupId)
 bool UnBindingAllPolicyObjectRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+string UnBindingAllPolicyObjectRequest::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void UnBindingAllPolicyObjectRequest::SetPolicyId(const string& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool UnBindingAllPolicyObjectRequest::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
 }
 
 

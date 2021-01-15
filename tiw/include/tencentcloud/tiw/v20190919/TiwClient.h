@@ -57,8 +57,12 @@
 #include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyResponse.h>
 #include <tencentcloud/tiw/v20190919/model/StartOnlineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/StartOnlineRecordResponse.h>
+#include <tencentcloud/tiw/v20190919/model/StartWhiteboardPushRequest.h>
+#include <tencentcloud/tiw/v20190919/model/StartWhiteboardPushResponse.h>
 #include <tencentcloud/tiw/v20190919/model/StopOnlineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/StopOnlineRecordResponse.h>
+#include <tencentcloud/tiw/v20190919/model/StopWhiteboardPushRequest.h>
+#include <tencentcloud/tiw/v20190919/model/StopWhiteboardPushResponse.h>
 
 
 namespace TencentCloud
@@ -124,9 +128,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StartOnlineRecordResponse> StartOnlineRecordOutcome;
                 typedef std::future<StartOnlineRecordOutcome> StartOnlineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::StartOnlineRecordRequest&, StartOnlineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartOnlineRecordAsyncHandler;
+                typedef Outcome<Error, Model::StartWhiteboardPushResponse> StartWhiteboardPushOutcome;
+                typedef std::future<StartWhiteboardPushOutcome> StartWhiteboardPushOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::StartWhiteboardPushRequest&, StartWhiteboardPushOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartWhiteboardPushAsyncHandler;
                 typedef Outcome<Error, Model::StopOnlineRecordResponse> StopOnlineRecordOutcome;
                 typedef std::future<StopOnlineRecordOutcome> StopOnlineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::StopOnlineRecordRequest&, StopOnlineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopOnlineRecordAsyncHandler;
+                typedef Outcome<Error, Model::StopWhiteboardPushResponse> StopWhiteboardPushOutcome;
+                typedef std::future<StopWhiteboardPushOutcome> StopWhiteboardPushOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::StopWhiteboardPushRequest&, StopWhiteboardPushOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopWhiteboardPushAsyncHandler;
 
 
 
@@ -284,6 +294,15 @@ namespace TencentCloud
                 StartOnlineRecordOutcomeCallable StartOnlineRecordCallable(const Model::StartOnlineRecordRequest& request);
 
                 /**
+                 *发起一个白板推流任务
+                 * @param req StartWhiteboardPushRequest
+                 * @return StartWhiteboardPushOutcome
+                 */
+                StartWhiteboardPushOutcome StartWhiteboardPush(const Model::StartWhiteboardPushRequest &request);
+                void StartWhiteboardPushAsync(const Model::StartWhiteboardPushRequest& request, const StartWhiteboardPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartWhiteboardPushOutcomeCallable StartWhiteboardPushCallable(const Model::StartWhiteboardPushRequest& request);
+
+                /**
                  *停止实时录制
                  * @param req StopOnlineRecordRequest
                  * @return StopOnlineRecordOutcome
@@ -291,6 +310,15 @@ namespace TencentCloud
                 StopOnlineRecordOutcome StopOnlineRecord(const Model::StopOnlineRecordRequest &request);
                 void StopOnlineRecordAsync(const Model::StopOnlineRecordRequest& request, const StopOnlineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopOnlineRecordOutcomeCallable StopOnlineRecordCallable(const Model::StopOnlineRecordRequest& request);
+
+                /**
+                 *停止白板推流任务
+                 * @param req StopWhiteboardPushRequest
+                 * @return StopWhiteboardPushOutcome
+                 */
+                StopWhiteboardPushOutcome StopWhiteboardPush(const Model::StopWhiteboardPushRequest &request);
+                void StopWhiteboardPushAsync(const Model::StopWhiteboardPushRequest& request, const StopWhiteboardPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopWhiteboardPushOutcomeCallable StopWhiteboardPushCallable(const Model::StopWhiteboardPushRequest& request);
 
             };
         }

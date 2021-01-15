@@ -1932,6 +1932,49 @@ KmsClient::ScheduleKeyDeletionOutcomeCallable KmsClient::ScheduleKeyDeletionCall
     return task->get_future();
 }
 
+KmsClient::SignByAsymmetricKeyOutcome KmsClient::SignByAsymmetricKey(const SignByAsymmetricKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "SignByAsymmetricKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SignByAsymmetricKeyResponse rsp = SignByAsymmetricKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SignByAsymmetricKeyOutcome(rsp);
+        else
+            return SignByAsymmetricKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return SignByAsymmetricKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::SignByAsymmetricKeyAsync(const SignByAsymmetricKeyRequest& request, const SignByAsymmetricKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SignByAsymmetricKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::SignByAsymmetricKeyOutcomeCallable KmsClient::SignByAsymmetricKeyCallable(const SignByAsymmetricKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SignByAsymmetricKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->SignByAsymmetricKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::UnbindCloudResourceOutcome KmsClient::UnbindCloudResource(const UnbindCloudResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "UnbindCloudResource");
@@ -2054,6 +2097,49 @@ KmsClient::UpdateKeyDescriptionOutcomeCallable KmsClient::UpdateKeyDescriptionCa
         [this, request]()
         {
             return this->UpdateKeyDescription(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::VerifyByAsymmetricKeyOutcome KmsClient::VerifyByAsymmetricKey(const VerifyByAsymmetricKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyByAsymmetricKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyByAsymmetricKeyResponse rsp = VerifyByAsymmetricKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyByAsymmetricKeyOutcome(rsp);
+        else
+            return VerifyByAsymmetricKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyByAsymmetricKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::VerifyByAsymmetricKeyAsync(const VerifyByAsymmetricKeyRequest& request, const VerifyByAsymmetricKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyByAsymmetricKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::VerifyByAsymmetricKeyOutcomeCallable KmsClient::VerifyByAsymmetricKeyCallable(const VerifyByAsymmetricKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyByAsymmetricKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyByAsymmetricKey(request);
         }
     );
 

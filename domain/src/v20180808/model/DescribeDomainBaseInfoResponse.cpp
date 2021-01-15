@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeDomainBaseInfoResponse::DescribeDomainBaseInfoResponse() :
-    m_domainInfoHasBeenSet(false)
+    m_domainInfoHasBeenSet(false),
+    m_uinHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome DescribeDomainBaseInfoResponse::Deserialize(const string &pa
         m_domainInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Uin") && !rsp["Uin"].IsNull())
+    {
+        if (!rsp["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(rsp["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -93,6 +104,16 @@ DomainBaseInfo DescribeDomainBaseInfoResponse::GetDomainInfo() const
 bool DescribeDomainBaseInfoResponse::DomainInfoHasBeenSet() const
 {
     return m_domainInfoHasBeenSet;
+}
+
+string DescribeDomainBaseInfoResponse::GetUin() const
+{
+    return m_uin;
+}
+
+bool DescribeDomainBaseInfoResponse::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
 }
 
 

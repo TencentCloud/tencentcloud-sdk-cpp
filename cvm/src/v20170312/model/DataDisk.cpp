@@ -28,7 +28,8 @@ DataDisk::DataDisk() :
     m_deleteWithInstanceHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_encryptHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome DataDisk::Deserialize(const Value &value)
         m_kmsKeyIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ThroughputPerformance") && !value["ThroughputPerformance"].IsNull())
+    {
+        if (!value["ThroughputPerformance"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DataDisk.ThroughputPerformance` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_throughputPerformance = value["ThroughputPerformance"].GetInt64();
+        m_throughputPerformanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void DataDisk::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "KmsKeyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void DataDisk::SetKmsKeyId(const string& _kmsKeyId)
 bool DataDisk::KmsKeyIdHasBeenSet() const
 {
     return m_kmsKeyIdHasBeenSet;
+}
+
+int64_t DataDisk::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void DataDisk::SetThroughputPerformance(const int64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool DataDisk::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 

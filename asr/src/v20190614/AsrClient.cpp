@@ -83,6 +83,49 @@ AsrClient::CreateAsrVocabOutcomeCallable AsrClient::CreateAsrVocabCallable(const
     return task->get_future();
 }
 
+AsrClient::CreateAsyncRecognitionTaskOutcome AsrClient::CreateAsyncRecognitionTask(const CreateAsyncRecognitionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAsyncRecognitionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAsyncRecognitionTaskResponse rsp = CreateAsyncRecognitionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAsyncRecognitionTaskOutcome(rsp);
+        else
+            return CreateAsyncRecognitionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAsyncRecognitionTaskOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::CreateAsyncRecognitionTaskAsync(const CreateAsyncRecognitionTaskRequest& request, const CreateAsyncRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAsyncRecognitionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::CreateAsyncRecognitionTaskOutcomeCallable AsrClient::CreateAsyncRecognitionTaskCallable(const CreateAsyncRecognitionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAsyncRecognitionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAsyncRecognitionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::CreateCustomizationOutcome AsrClient::CreateCustomization(const CreateCustomizationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustomization");
@@ -248,6 +291,49 @@ AsrClient::DeleteCustomizationOutcomeCallable AsrClient::DeleteCustomizationCall
         [this, request]()
         {
             return this->DeleteCustomization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::DescribeAsyncRecognitionTasksOutcome AsrClient::DescribeAsyncRecognitionTasks(const DescribeAsyncRecognitionTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAsyncRecognitionTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAsyncRecognitionTasksResponse rsp = DescribeAsyncRecognitionTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAsyncRecognitionTasksOutcome(rsp);
+        else
+            return DescribeAsyncRecognitionTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAsyncRecognitionTasksOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::DescribeAsyncRecognitionTasksAsync(const DescribeAsyncRecognitionTasksRequest& request, const DescribeAsyncRecognitionTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAsyncRecognitionTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::DescribeAsyncRecognitionTasksOutcomeCallable AsrClient::DescribeAsyncRecognitionTasksCallable(const DescribeAsyncRecognitionTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAsyncRecognitionTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAsyncRecognitionTasks(request);
         }
     );
 

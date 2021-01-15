@@ -1,0 +1,952 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/oceanus/v20190422/model/JobV1.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Oceanus::V20190422::Model;
+using namespace rapidjson;
+using namespace std;
+
+JobV1::JobV1() :
+    m_jobIdHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_ownerUinHasBeenSet(false),
+    m_creatorUinHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_stopTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_totalRunMillisHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_lastOpResultHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_latestJobConfigVersionHasBeenSet(false),
+    m_publishedJobConfigVersionHasBeenSet(false),
+    m_runningCuNumHasBeenSet(false),
+    m_cuMemHasBeenSet(false),
+    m_statusDescHasBeenSet(false),
+    m_currentRunMillisHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_webUIUrlHasBeenSet(false),
+    m_schedulerTypeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome JobV1::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("JobId") && !value["JobId"].IsNull())
+    {
+        if (!value["JobId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.JobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobId = string(value["JobId"].GetString());
+        m_jobIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetInt64();
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerUin") && !value["OwnerUin"].IsNull())
+    {
+        if (!value["OwnerUin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerUin = string(value["OwnerUin"].GetString());
+        m_ownerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatorUin") && !value["CreatorUin"].IsNull())
+    {
+        if (!value["CreatorUin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.CreatorUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creatorUin = string(value["CreatorUin"].GetString());
+        m_creatorUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobType") && !value["JobType"].IsNull())
+    {
+        if (!value["JobType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.JobType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobType = value["JobType"].GetInt64();
+        m_jobTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("StopTime") && !value["StopTime"].IsNull())
+    {
+        if (!value["StopTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.StopTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stopTime = string(value["StopTime"].GetString());
+        m_stopTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalRunMillis") && !value["TotalRunMillis"].IsNull())
+    {
+        if (!value["TotalRunMillis"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.TotalRunMillis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalRunMillis = value["TotalRunMillis"].GetInt64();
+        m_totalRunMillisHasBeenSet = true;
+    }
+
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastOpResult") && !value["LastOpResult"].IsNull())
+    {
+        if (!value["LastOpResult"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.LastOpResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastOpResult = string(value["LastOpResult"].GetString());
+        m_lastOpResultHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestJobConfigVersion") && !value["LatestJobConfigVersion"].IsNull())
+    {
+        if (!value["LatestJobConfigVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.LatestJobConfigVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestJobConfigVersion = value["LatestJobConfigVersion"].GetInt64();
+        m_latestJobConfigVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublishedJobConfigVersion") && !value["PublishedJobConfigVersion"].IsNull())
+    {
+        if (!value["PublishedJobConfigVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.PublishedJobConfigVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_publishedJobConfigVersion = value["PublishedJobConfigVersion"].GetInt64();
+        m_publishedJobConfigVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningCuNum") && !value["RunningCuNum"].IsNull())
+    {
+        if (!value["RunningCuNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.RunningCuNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningCuNum = value["RunningCuNum"].GetInt64();
+        m_runningCuNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("CuMem") && !value["CuMem"].IsNull())
+    {
+        if (!value["CuMem"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.CuMem` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cuMem = value["CuMem"].GetInt64();
+        m_cuMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("StatusDesc") && !value["StatusDesc"].IsNull())
+    {
+        if (!value["StatusDesc"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusDesc = string(value["StatusDesc"].GetString());
+        m_statusDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurrentRunMillis") && !value["CurrentRunMillis"].IsNull())
+    {
+        if (!value["CurrentRunMillis"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.CurrentRunMillis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentRunMillis = value["CurrentRunMillis"].GetInt64();
+        m_currentRunMillisHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WebUIUrl") && !value["WebUIUrl"].IsNull())
+    {
+        if (!value["WebUIUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.WebUIUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webUIUrl = string(value["WebUIUrl"].GetString());
+        m_webUIUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchedulerType") && !value["SchedulerType"].IsNull())
+    {
+        if (!value["SchedulerType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.SchedulerType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_schedulerType = value["SchedulerType"].GetInt64();
+        m_schedulerTypeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void JobV1::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_jobIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "JobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_ownerUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OwnerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_ownerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreatorUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_creatorUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobType, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stopTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StopTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_stopTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalRunMillisHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TotalRunMillis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalRunMillis, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastOpResultHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LastOpResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_lastOpResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestJobConfigVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LatestJobConfigVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_latestJobConfigVersion, allocator);
+    }
+
+    if (m_publishedJobConfigVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PublishedJobConfigVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_publishedJobConfigVersion, allocator);
+    }
+
+    if (m_runningCuNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RunningCuNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningCuNum, allocator);
+    }
+
+    if (m_cuMemHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CuMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cuMem, allocator);
+    }
+
+    if (m_statusDescHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StatusDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_statusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_currentRunMillisHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CurrentRunMillis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentRunMillis, allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webUIUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WebUIUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_webUIUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schedulerTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SchedulerType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_schedulerType, allocator);
+    }
+
+}
+
+
+string JobV1::GetJobId() const
+{
+    return m_jobId;
+}
+
+void JobV1::SetJobId(const string& _jobId)
+{
+    m_jobId = _jobId;
+    m_jobIdHasBeenSet = true;
+}
+
+bool JobV1::JobIdHasBeenSet() const
+{
+    return m_jobIdHasBeenSet;
+}
+
+string JobV1::GetRegion() const
+{
+    return m_region;
+}
+
+void JobV1::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool JobV1::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string JobV1::GetZone() const
+{
+    return m_zone;
+}
+
+void JobV1::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool JobV1::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+int64_t JobV1::GetAppId() const
+{
+    return m_appId;
+}
+
+void JobV1::SetAppId(const int64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool JobV1::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string JobV1::GetOwnerUin() const
+{
+    return m_ownerUin;
+}
+
+void JobV1::SetOwnerUin(const string& _ownerUin)
+{
+    m_ownerUin = _ownerUin;
+    m_ownerUinHasBeenSet = true;
+}
+
+bool JobV1::OwnerUinHasBeenSet() const
+{
+    return m_ownerUinHasBeenSet;
+}
+
+string JobV1::GetCreatorUin() const
+{
+    return m_creatorUin;
+}
+
+void JobV1::SetCreatorUin(const string& _creatorUin)
+{
+    m_creatorUin = _creatorUin;
+    m_creatorUinHasBeenSet = true;
+}
+
+bool JobV1::CreatorUinHasBeenSet() const
+{
+    return m_creatorUinHasBeenSet;
+}
+
+string JobV1::GetName() const
+{
+    return m_name;
+}
+
+void JobV1::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool JobV1::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+int64_t JobV1::GetJobType() const
+{
+    return m_jobType;
+}
+
+void JobV1::SetJobType(const int64_t& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool JobV1::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+int64_t JobV1::GetStatus() const
+{
+    return m_status;
+}
+
+void JobV1::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool JobV1::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string JobV1::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void JobV1::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool JobV1::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string JobV1::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void JobV1::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool JobV1::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string JobV1::GetStopTime() const
+{
+    return m_stopTime;
+}
+
+void JobV1::SetStopTime(const string& _stopTime)
+{
+    m_stopTime = _stopTime;
+    m_stopTimeHasBeenSet = true;
+}
+
+bool JobV1::StopTimeHasBeenSet() const
+{
+    return m_stopTimeHasBeenSet;
+}
+
+string JobV1::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void JobV1::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool JobV1::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+int64_t JobV1::GetTotalRunMillis() const
+{
+    return m_totalRunMillis;
+}
+
+void JobV1::SetTotalRunMillis(const int64_t& _totalRunMillis)
+{
+    m_totalRunMillis = _totalRunMillis;
+    m_totalRunMillisHasBeenSet = true;
+}
+
+bool JobV1::TotalRunMillisHasBeenSet() const
+{
+    return m_totalRunMillisHasBeenSet;
+}
+
+string JobV1::GetRemark() const
+{
+    return m_remark;
+}
+
+void JobV1::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool JobV1::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
+string JobV1::GetLastOpResult() const
+{
+    return m_lastOpResult;
+}
+
+void JobV1::SetLastOpResult(const string& _lastOpResult)
+{
+    m_lastOpResult = _lastOpResult;
+    m_lastOpResultHasBeenSet = true;
+}
+
+bool JobV1::LastOpResultHasBeenSet() const
+{
+    return m_lastOpResultHasBeenSet;
+}
+
+string JobV1::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void JobV1::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool JobV1::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
+}
+
+int64_t JobV1::GetLatestJobConfigVersion() const
+{
+    return m_latestJobConfigVersion;
+}
+
+void JobV1::SetLatestJobConfigVersion(const int64_t& _latestJobConfigVersion)
+{
+    m_latestJobConfigVersion = _latestJobConfigVersion;
+    m_latestJobConfigVersionHasBeenSet = true;
+}
+
+bool JobV1::LatestJobConfigVersionHasBeenSet() const
+{
+    return m_latestJobConfigVersionHasBeenSet;
+}
+
+int64_t JobV1::GetPublishedJobConfigVersion() const
+{
+    return m_publishedJobConfigVersion;
+}
+
+void JobV1::SetPublishedJobConfigVersion(const int64_t& _publishedJobConfigVersion)
+{
+    m_publishedJobConfigVersion = _publishedJobConfigVersion;
+    m_publishedJobConfigVersionHasBeenSet = true;
+}
+
+bool JobV1::PublishedJobConfigVersionHasBeenSet() const
+{
+    return m_publishedJobConfigVersionHasBeenSet;
+}
+
+int64_t JobV1::GetRunningCuNum() const
+{
+    return m_runningCuNum;
+}
+
+void JobV1::SetRunningCuNum(const int64_t& _runningCuNum)
+{
+    m_runningCuNum = _runningCuNum;
+    m_runningCuNumHasBeenSet = true;
+}
+
+bool JobV1::RunningCuNumHasBeenSet() const
+{
+    return m_runningCuNumHasBeenSet;
+}
+
+int64_t JobV1::GetCuMem() const
+{
+    return m_cuMem;
+}
+
+void JobV1::SetCuMem(const int64_t& _cuMem)
+{
+    m_cuMem = _cuMem;
+    m_cuMemHasBeenSet = true;
+}
+
+bool JobV1::CuMemHasBeenSet() const
+{
+    return m_cuMemHasBeenSet;
+}
+
+string JobV1::GetStatusDesc() const
+{
+    return m_statusDesc;
+}
+
+void JobV1::SetStatusDesc(const string& _statusDesc)
+{
+    m_statusDesc = _statusDesc;
+    m_statusDescHasBeenSet = true;
+}
+
+bool JobV1::StatusDescHasBeenSet() const
+{
+    return m_statusDescHasBeenSet;
+}
+
+int64_t JobV1::GetCurrentRunMillis() const
+{
+    return m_currentRunMillis;
+}
+
+void JobV1::SetCurrentRunMillis(const int64_t& _currentRunMillis)
+{
+    m_currentRunMillis = _currentRunMillis;
+    m_currentRunMillisHasBeenSet = true;
+}
+
+bool JobV1::CurrentRunMillisHasBeenSet() const
+{
+    return m_currentRunMillisHasBeenSet;
+}
+
+string JobV1::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void JobV1::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool JobV1::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string JobV1::GetWebUIUrl() const
+{
+    return m_webUIUrl;
+}
+
+void JobV1::SetWebUIUrl(const string& _webUIUrl)
+{
+    m_webUIUrl = _webUIUrl;
+    m_webUIUrlHasBeenSet = true;
+}
+
+bool JobV1::WebUIUrlHasBeenSet() const
+{
+    return m_webUIUrlHasBeenSet;
+}
+
+int64_t JobV1::GetSchedulerType() const
+{
+    return m_schedulerType;
+}
+
+void JobV1::SetSchedulerType(const int64_t& _schedulerType)
+{
+    m_schedulerType = _schedulerType;
+    m_schedulerTypeHasBeenSet = true;
+}
+
+bool JobV1::SchedulerTypeHasBeenSet() const
+{
+    return m_schedulerTypeHasBeenSet;
+}
+

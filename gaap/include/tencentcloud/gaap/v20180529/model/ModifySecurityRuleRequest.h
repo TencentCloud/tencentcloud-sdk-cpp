@@ -96,6 +96,94 @@ namespace TencentCloud
                      */
                     bool PolicyIdHasBeenSet() const;
 
+                    /**
+                     * 获取安全规则动作
+                     * @return RuleAction 安全规则动作
+                     */
+                    std::string GetRuleAction() const;
+
+                    /**
+                     * 设置安全规则动作
+                     * @param RuleAction 安全规则动作
+                     */
+                    void SetRuleAction(const std::string& _ruleAction);
+
+                    /**
+                     * 判断参数 RuleAction 是否已赋值
+                     * @return RuleAction 是否已赋值
+                     */
+                    bool RuleActionHasBeenSet() const;
+
+                    /**
+                     * 获取规则关联地址，格式需要满足CIDR网络地址规范
+                     * @return SourceCidr 规则关联地址，格式需要满足CIDR网络地址规范
+                     */
+                    std::string GetSourceCidr() const;
+
+                    /**
+                     * 设置规则关联地址，格式需要满足CIDR网络地址规范
+                     * @param SourceCidr 规则关联地址，格式需要满足CIDR网络地址规范
+                     */
+                    void SetSourceCidr(const std::string& _sourceCidr);
+
+                    /**
+                     * 判断参数 SourceCidr 是否已赋值
+                     * @return SourceCidr 是否已赋值
+                     */
+                    bool SourceCidrHasBeenSet() const;
+
+                    /**
+                     * 获取协议类型
+                     * @return Protocol 协议类型
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置协议类型
+                     * @param Protocol 协议类型
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取端口范围，支持以下格式
+单个端口: 80
+多个端口: 80,443
+连续端口: 3306-20000
+所有端口: ALL
+                     * @return DestPortRange 端口范围，支持以下格式
+单个端口: 80
+多个端口: 80,443
+连续端口: 3306-20000
+所有端口: ALL
+                     */
+                    std::string GetDestPortRange() const;
+
+                    /**
+                     * 设置端口范围，支持以下格式
+单个端口: 80
+多个端口: 80,443
+连续端口: 3306-20000
+所有端口: ALL
+                     * @param DestPortRange 端口范围，支持以下格式
+单个端口: 80
+多个端口: 80,443
+连续端口: 3306-20000
+所有端口: ALL
+                     */
+                    void SetDestPortRange(const std::string& _destPortRange);
+
+                    /**
+                     * 判断参数 DestPortRange 是否已赋值
+                     * @return DestPortRange 是否已赋值
+                     */
+                    bool DestPortRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +203,34 @@ namespace TencentCloud
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
+
+                    /**
+                     * 安全规则动作
+                     */
+                    std::string m_ruleAction;
+                    bool m_ruleActionHasBeenSet;
+
+                    /**
+                     * 规则关联地址，格式需要满足CIDR网络地址规范
+                     */
+                    std::string m_sourceCidr;
+                    bool m_sourceCidrHasBeenSet;
+
+                    /**
+                     * 协议类型
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
+
+                    /**
+                     * 端口范围，支持以下格式
+单个端口: 80
+多个端口: 80,443
+连续端口: 3306-20000
+所有端口: ALL
+                     */
+                    std::string m_destPortRange;
+                    bool m_destPortRangeHasBeenSet;
 
                 };
             }

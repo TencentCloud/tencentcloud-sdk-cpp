@@ -27,7 +27,8 @@ BindingPolicyObjectRequest::BindingPolicyObjectRequest() :
     m_groupIdHasBeenSet(false),
     m_moduleHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
+    m_dimensionsHasBeenSet(false),
+    m_policyIdHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,14 @@ string BindingPolicyObjectRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -147,6 +156,22 @@ void BindingPolicyObjectRequest::SetDimensions(const vector<BindingPolicyObjectD
 bool BindingPolicyObjectRequest::DimensionsHasBeenSet() const
 {
     return m_dimensionsHasBeenSet;
+}
+
+string BindingPolicyObjectRequest::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void BindingPolicyObjectRequest::SetPolicyId(const string& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool BindingPolicyObjectRequest::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
 }
 
 

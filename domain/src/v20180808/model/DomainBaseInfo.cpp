@@ -33,7 +33,9 @@ DomainBaseInfo::DomainBaseInfo() :
     m_domainStatusHasBeenSet(false),
     m_buyStatusHasBeenSet(false),
     m_registrarTypeHasBeenSet(false),
-    m_nameServerHasBeenSet(false)
+    m_nameServerHasBeenSet(false),
+    m_lockTransferHasBeenSet(false),
+    m_lockEndTimeHasBeenSet(false)
 {
 }
 
@@ -168,6 +170,26 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const Value &value)
         m_nameServerHasBeenSet = true;
     }
 
+    if (value.HasMember("LockTransfer") && !value["LockTransfer"].IsNull())
+    {
+        if (!value["LockTransfer"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DomainBaseInfo.LockTransfer` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockTransfer = value["LockTransfer"].GetBool();
+        m_lockTransferHasBeenSet = true;
+    }
+
+    if (value.HasMember("LockEndTime") && !value["LockEndTime"].IsNull())
+    {
+        if (!value["LockEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainBaseInfo.LockEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockEndTime = string(value["LockEndTime"].GetString());
+        m_lockEndTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +301,22 @@ void DomainBaseInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_lockTransferHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LockTransfer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lockTransfer, allocator);
+    }
+
+    if (m_lockEndTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LockEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_lockEndTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -474,5 +512,37 @@ void DomainBaseInfo::SetNameServer(const vector<string>& _nameServer)
 bool DomainBaseInfo::NameServerHasBeenSet() const
 {
     return m_nameServerHasBeenSet;
+}
+
+bool DomainBaseInfo::GetLockTransfer() const
+{
+    return m_lockTransfer;
+}
+
+void DomainBaseInfo::SetLockTransfer(const bool& _lockTransfer)
+{
+    m_lockTransfer = _lockTransfer;
+    m_lockTransferHasBeenSet = true;
+}
+
+bool DomainBaseInfo::LockTransferHasBeenSet() const
+{
+    return m_lockTransferHasBeenSet;
+}
+
+string DomainBaseInfo::GetLockEndTime() const
+{
+    return m_lockEndTime;
+}
+
+void DomainBaseInfo::SetLockEndTime(const string& _lockEndTime)
+{
+    m_lockEndTime = _lockEndTime;
+    m_lockEndTimeHasBeenSet = true;
+}
+
+bool DomainBaseInfo::LockEndTimeHasBeenSet() const
+{
+    return m_lockEndTimeHasBeenSet;
 }
 

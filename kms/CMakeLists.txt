@@ -28,6 +28,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DisableWhiteBoxKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DisableKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxServiceStatusRequest.h
+  include/tencentcloud/kms/v20190118/model/VerifyByAsymmetricKeyRequest.h
   include/tencentcloud/kms/v20190118/model/DescribeKeyRequest.h
   include/tencentcloud/kms/v20190118/model/WhiteboxKeyInfo.h
   include/tencentcloud/kms/v20190118/model/ListAlgorithmsResponse.h
@@ -50,6 +51,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/GetServiceStatusRequest.h
   include/tencentcloud/kms/v20190118/model/EnableWhiteBoxKeysResponse.h
   include/tencentcloud/kms/v20190118/model/ArchiveKeyResponse.h
+  include/tencentcloud/kms/v20190118/model/VerifyByAsymmetricKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyRequest.h
   include/tencentcloud/kms/v20190118/model/GetParametersForImportResponse.h
   include/tencentcloud/kms/v20190118/model/DecryptResponse.h
@@ -103,6 +105,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/EnableKeyRotationResponse.h
   include/tencentcloud/kms/v20190118/model/BindCloudResourceResponse.h
   include/tencentcloud/kms/v20190118/model/EnableKeysResponse.h
+  include/tencentcloud/kms/v20190118/model/SignByAsymmetricKeyRequest.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsRequest.h
   include/tencentcloud/kms/v20190118/model/GetRegionsRequest.h
   include/tencentcloud/kms/v20190118/model/EncryptByWhiteBoxRequest.h
@@ -113,6 +116,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/GetPublicKeyResponse.h
   include/tencentcloud/kms/v20190118/model/BindCloudResourceRequest.h
   include/tencentcloud/kms/v20190118/model/TagFilter.h
+  include/tencentcloud/kms/v20190118/model/SignByAsymmetricKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.h
   include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionRequest.h
@@ -133,6 +137,7 @@ set(kms_src
   src/v20190118/model/DisableWhiteBoxKeyResponse.cpp
   src/v20190118/model/DisableKeyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxServiceStatusRequest.cpp
+  src/v20190118/model/VerifyByAsymmetricKeyRequest.cpp
   src/v20190118/model/DescribeKeyRequest.cpp
   src/v20190118/model/WhiteboxKeyInfo.cpp
   src/v20190118/model/ListAlgorithmsResponse.cpp
@@ -155,6 +160,7 @@ set(kms_src
   src/v20190118/model/GetServiceStatusRequest.cpp
   src/v20190118/model/EnableWhiteBoxKeysResponse.cpp
   src/v20190118/model/ArchiveKeyResponse.cpp
+  src/v20190118/model/VerifyByAsymmetricKeyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxKeyRequest.cpp
   src/v20190118/model/GetParametersForImportResponse.cpp
   src/v20190118/model/DecryptResponse.cpp
@@ -208,6 +214,7 @@ set(kms_src
   src/v20190118/model/EnableKeyRotationResponse.cpp
   src/v20190118/model/BindCloudResourceResponse.cpp
   src/v20190118/model/EnableKeysResponse.cpp
+  src/v20190118/model/SignByAsymmetricKeyRequest.cpp
   src/v20190118/model/DescribeWhiteBoxDeviceFingerprintsRequest.cpp
   src/v20190118/model/GetRegionsRequest.cpp
   src/v20190118/model/EncryptByWhiteBoxRequest.cpp
@@ -218,6 +225,7 @@ set(kms_src
   src/v20190118/model/GetPublicKeyResponse.cpp
   src/v20190118/model/BindCloudResourceRequest.cpp
   src/v20190118/model/TagFilter.cpp
+  src/v20190118/model/SignByAsymmetricKeyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.cpp
   src/v20190118/model/UpdateKeyDescriptionRequest.cpp

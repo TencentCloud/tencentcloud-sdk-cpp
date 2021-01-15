@@ -15,10 +15,14 @@
 #
 
 set(sms_public_header
+  include/tencentcloud/sms/v20210111/SmsClient.h
   include/tencentcloud/sms/v20190711/SmsClient.h
   )
 
 set(sms_public_header_model
+  include/tencentcloud/sms/v20210111/model/DescribeTemplateListStatus.h
+  include/tencentcloud/sms/v20210111/model/DescribeSmsTemplateListResponse.h
+  include/tencentcloud/sms/v20210111/model/DescribeSmsTemplateListRequest.h
   include/tencentcloud/sms/v20190711/model/PullSmsReplyStatusRequest.h
   include/tencentcloud/sms/v20190711/model/DeleteSmsTemplateResponse.h
   include/tencentcloud/sms/v20190711/model/ModifySmsTemplateResponse.h
@@ -68,7 +72,11 @@ set(sms_public_header_model
   )
 
 set(sms_src
+  src/v20210111/SmsClient.cpp
   src/v20190711/SmsClient.cpp
+  src/v20210111/model/DescribeTemplateListStatus.cpp
+  src/v20210111/model/DescribeSmsTemplateListResponse.cpp
+  src/v20210111/model/DescribeSmsTemplateListRequest.cpp
   src/v20190711/model/PullSmsReplyStatusRequest.cpp
   src/v20190711/model/DeleteSmsTemplateResponse.cpp
   src/v20190711/model/ModifySmsTemplateResponse.cpp

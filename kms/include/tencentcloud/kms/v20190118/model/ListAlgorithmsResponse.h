@@ -67,6 +67,18 @@ namespace TencentCloud
                      */
                     bool AsymmetricAlgorithmsHasBeenSet() const;
 
+                    /**
+                     * 获取本地区支持的非对称签名验签算法
+                     * @return AsymmetricSignVerifyAlgorithms 本地区支持的非对称签名验签算法
+                     */
+                    std::vector<AlgorithmInfo> GetAsymmetricSignVerifyAlgorithms() const;
+
+                    /**
+                     * 判断参数 AsymmetricSignVerifyAlgorithms 是否已赋值
+                     * @return AsymmetricSignVerifyAlgorithms 是否已赋值
+                     */
+                    bool AsymmetricSignVerifyAlgorithmsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +92,12 @@ namespace TencentCloud
                      */
                     std::vector<AlgorithmInfo> m_asymmetricAlgorithms;
                     bool m_asymmetricAlgorithmsHasBeenSet;
+
+                    /**
+                     * 本地区支持的非对称签名验签算法
+                     */
+                    std::vector<AlgorithmInfo> m_asymmetricSignVerifyAlgorithms;
+                    bool m_asymmetricSignVerifyAlgorithmsHasBeenSet;
 
                 };
             }

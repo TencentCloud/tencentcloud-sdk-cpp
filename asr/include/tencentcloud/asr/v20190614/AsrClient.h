@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/asr/v20190614/model/CreateAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/CreateAsrVocabResponse.h>
+#include <tencentcloud/asr/v20190614/model/CreateAsyncRecognitionTaskRequest.h>
+#include <tencentcloud/asr/v20190614/model/CreateAsyncRecognitionTaskResponse.h>
 #include <tencentcloud/asr/v20190614/model/CreateCustomizationRequest.h>
 #include <tencentcloud/asr/v20190614/model/CreateCustomizationResponse.h>
 #include <tencentcloud/asr/v20190614/model/CreateRecTaskRequest.h>
@@ -33,6 +35,8 @@
 #include <tencentcloud/asr/v20190614/model/DeleteAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/DeleteCustomizationRequest.h>
 #include <tencentcloud/asr/v20190614/model/DeleteCustomizationResponse.h>
+#include <tencentcloud/asr/v20190614/model/DescribeAsyncRecognitionTasksRequest.h>
+#include <tencentcloud/asr/v20190614/model/DescribeAsyncRecognitionTasksResponse.h>
 #include <tencentcloud/asr/v20190614/model/DescribeTaskStatusRequest.h>
 #include <tencentcloud/asr/v20190614/model/DescribeTaskStatusResponse.h>
 #include <tencentcloud/asr/v20190614/model/DownloadAsrVocabRequest.h>
@@ -72,6 +76,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAsrVocabResponse> CreateAsrVocabOutcome;
                 typedef std::future<CreateAsrVocabOutcome> CreateAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::CreateAsrVocabRequest&, CreateAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsrVocabAsyncHandler;
+                typedef Outcome<Error, Model::CreateAsyncRecognitionTaskResponse> CreateAsyncRecognitionTaskOutcome;
+                typedef std::future<CreateAsyncRecognitionTaskOutcome> CreateAsyncRecognitionTaskOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::CreateAsyncRecognitionTaskRequest&, CreateAsyncRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsyncRecognitionTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateCustomizationResponse> CreateCustomizationOutcome;
                 typedef std::future<CreateCustomizationOutcome> CreateCustomizationOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::CreateCustomizationRequest&, CreateCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomizationAsyncHandler;
@@ -84,6 +91,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteCustomizationResponse> DeleteCustomizationOutcome;
                 typedef std::future<DeleteCustomizationOutcome> DeleteCustomizationOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::DeleteCustomizationRequest&, DeleteCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomizationAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAsyncRecognitionTasksResponse> DescribeAsyncRecognitionTasksOutcome;
+                typedef std::future<DescribeAsyncRecognitionTasksOutcome> DescribeAsyncRecognitionTasksOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::DescribeAsyncRecognitionTasksRequest&, DescribeAsyncRecognitionTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncRecognitionTasksAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
                 typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
@@ -135,6 +145,20 @@ namespace TencentCloud
                 CreateAsrVocabOutcomeCallable CreateAsrVocabCallable(const Model::CreateAsrVocabRequest& request);
 
                 /**
+                 *本接口用于对语音流进行准实时识别，通过异步回调来返回识别结果。
+<br>• 支持rtmp、hls、rtsp等流媒体协议，以及各类基于http协议的直播流
+<br>• 音频流时长无限制，服务会自动拉取音频流数据，若连续10分钟拉不到流数据时，服务会终止识别任务
+<br>• 服务通过回调的方式来提供识别结果，用户需要提供CallbackUrl
+<br>• 签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。
+<br>• 默认单账号限制并发数为20路，如您有提高并发限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。
+                 * @param req CreateAsyncRecognitionTaskRequest
+                 * @return CreateAsyncRecognitionTaskOutcome
+                 */
+                CreateAsyncRecognitionTaskOutcome CreateAsyncRecognitionTask(const Model::CreateAsyncRecognitionTaskRequest &request);
+                void CreateAsyncRecognitionTaskAsync(const Model::CreateAsyncRecognitionTaskRequest& request, const CreateAsyncRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAsyncRecognitionTaskOutcomeCallable CreateAsyncRecognitionTaskCallable(const Model::CreateAsyncRecognitionTaskRequest& request);
+
+                /**
                  *用户使用该接口可以创建自学习模型，以供识别调用
                  * @param req CreateCustomizationRequest
                  * @return CreateCustomizationOutcome
@@ -180,6 +204,16 @@ namespace TencentCloud
                 DeleteCustomizationOutcome DeleteCustomization(const Model::DeleteCustomizationRequest &request);
                 void DeleteCustomizationAsync(const Model::DeleteCustomizationRequest& request, const DeleteCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCustomizationOutcomeCallable DeleteCustomizationCallable(const Model::DeleteCustomizationRequest& request);
+
+                /**
+                 *本接口用于查询当前在运行的语音流异步识别任务列表。
+<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。
+                 * @param req DescribeAsyncRecognitionTasksRequest
+                 * @return DescribeAsyncRecognitionTasksOutcome
+                 */
+                DescribeAsyncRecognitionTasksOutcome DescribeAsyncRecognitionTasks(const Model::DescribeAsyncRecognitionTasksRequest &request);
+                void DescribeAsyncRecognitionTasksAsync(const Model::DescribeAsyncRecognitionTasksRequest& request, const DescribeAsyncRecognitionTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAsyncRecognitionTasksOutcomeCallable DescribeAsyncRecognitionTasksCallable(const Model::DescribeAsyncRecognitionTasksRequest& request);
 
                 /**
                  *在调用录音文件识别请求接口后，有回调和轮询两种方式获取识别结果。

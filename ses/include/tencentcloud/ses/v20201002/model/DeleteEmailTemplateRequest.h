@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除发信模版
-                     * @return TemplateID 删除发信模版
+                     * 获取模版ID
+                     * @return TemplateID 模版ID
                      */
                     uint64_t GetTemplateID() const;
 
                     /**
-                     * 设置删除发信模版
-                     * @param TemplateID 删除发信模版
+                     * 设置模版ID
+                     * @param TemplateID 模版ID
                      */
                     void SetTemplateID(const uint64_t& _templateID);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 删除发信模版
+                     * 模版ID
                      */
                     uint64_t m_templateID;
                     bool m_templateIDHasBeenSet;

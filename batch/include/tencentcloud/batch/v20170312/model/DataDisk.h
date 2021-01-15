@@ -228,6 +228,28 @@ namespace TencentCloud
                      */
                     bool KmsKeyIdHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘性能，单位：MB/s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ThroughputPerformance 云硬盘性能，单位：MB/s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetThroughputPerformance() const;
+
+                    /**
+                     * 设置云硬盘性能，单位：MB/s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ThroughputPerformance 云硬盘性能，单位：MB/s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetThroughputPerformance(const int64_t& _throughputPerformance);
+
+                    /**
+                     * 判断参数 ThroughputPerformance 是否已赋值
+                     * @return ThroughputPerformance 是否已赋值
+                     */
+                    bool ThroughputPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,6 +307,13 @@ namespace TencentCloud
                      */
                     std::string m_kmsKeyId;
                     bool m_kmsKeyIdHasBeenSet;
+
+                    /**
+                     * 云硬盘性能，单位：MB/s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_throughputPerformance;
+                    bool m_throughputPerformanceHasBeenSet;
 
                 };
             }

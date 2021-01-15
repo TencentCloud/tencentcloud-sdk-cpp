@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 GeneralHandwritingOCRResponse::GeneralHandwritingOCRResponse() :
-    m_textDetectionsHasBeenSet(false)
+    m_textDetectionsHasBeenSet(false),
+    m_angelHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome GeneralHandwritingOCRResponse::Deserialize(const string &pay
         m_textDetectionsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angel") && !rsp["Angel"].IsNull())
+    {
+        if (!rsp["Angel"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `Angel` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angel = rsp["Angel"].GetDouble();
+        m_angelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<TextGeneralHandwriting> GeneralHandwritingOCRResponse::GetTextDetections(
 bool GeneralHandwritingOCRResponse::TextDetectionsHasBeenSet() const
 {
     return m_textDetectionsHasBeenSet;
+}
+
+double GeneralHandwritingOCRResponse::GetAngel() const
+{
+    return m_angel;
+}
+
+bool GeneralHandwritingOCRResponse::AngelHasBeenSet() const
+{
+    return m_angelHasBeenSet;
 }
 
 

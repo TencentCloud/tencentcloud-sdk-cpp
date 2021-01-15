@@ -23,7 +23,9 @@ using namespace std;
 
 TableDetectInfo::TableDetectInfo() :
     m_cellsHasBeenSet(false),
-    m_titlesHasBeenSet(false)
+    m_titlesHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_tableCoordPointHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,36 @@ CoreInternalOutcome TableDetectInfo::Deserialize(const Value &value)
         m_titlesHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TableDetectInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetInt64();
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableCoordPoint") && !value["TableCoordPoint"].IsNull())
+    {
+        if (!value["TableCoordPoint"].IsArray())
+            return CoreInternalOutcome(Error("response `TableDetectInfo.TableCoordPoint` is not array type"));
+
+        const Value &tmpValue = value["TableCoordPoint"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Coord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tableCoordPoint.push_back(item);
+        }
+        m_tableCoordPointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -103,6 +135,29 @@ void TableDetectInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
         int i=0;
         for (auto itr = m_titles.begin(); itr != m_titles.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_tableCoordPointHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TableCoordPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tableCoordPoint.begin(); itr != m_tableCoordPoint.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -142,5 +197,37 @@ void TableDetectInfo::SetTitles(const vector<TableTitle>& _titles)
 bool TableDetectInfo::TitlesHasBeenSet() const
 {
     return m_titlesHasBeenSet;
+}
+
+int64_t TableDetectInfo::GetType() const
+{
+    return m_type;
+}
+
+void TableDetectInfo::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool TableDetectInfo::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+vector<Coord> TableDetectInfo::GetTableCoordPoint() const
+{
+    return m_tableCoordPoint;
+}
+
+void TableDetectInfo::SetTableCoordPoint(const vector<Coord>& _tableCoordPoint)
+{
+    m_tableCoordPoint = _tableCoordPoint;
+    m_tableCoordPointHasBeenSet = true;
+}
+
+bool TableDetectInfo::TableCoordPointHasBeenSet() const
+{
+    return m_tableCoordPointHasBeenSet;
 }
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取您的发信地址，上限为10个
-                     * @return EmailAddress 您的发信地址，上限为10个
+                     * 获取您的发信地址（发信地址总数上限为10个）
+                     * @return EmailAddress 您的发信地址（发信地址总数上限为10个）
                      */
                     std::string GetEmailAddress() const;
 
                     /**
-                     * 设置您的发信地址，上限为10个
-                     * @param EmailAddress 您的发信地址，上限为10个
+                     * 设置您的发信地址（发信地址总数上限为10个）
+                     * @param EmailAddress 您的发信地址（发信地址总数上限为10个）
                      */
                     void SetEmailAddress(const std::string& _emailAddress);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 您的发信地址，上限为10个
+                     * 您的发信地址（发信地址总数上限为10个）
                      */
                     std::string m_emailAddress;
                     bool m_emailAddressHasBeenSet;

@@ -29,7 +29,8 @@ SendEmailRequest::SendEmailRequest() :
     m_subjectHasBeenSet(false),
     m_replyToAddressesHasBeenSet(false),
     m_templateHasBeenSet(false),
-    m_simpleHasBeenSet(false)
+    m_simpleHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,21 @@ string SendEmailRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_simple.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_attachmentsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Attachments";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_attachments.begin(); itr != m_attachments.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -197,6 +213,22 @@ void SendEmailRequest::SetSimple(const Simple& _simple)
 bool SendEmailRequest::SimpleHasBeenSet() const
 {
     return m_simpleHasBeenSet;
+}
+
+vector<Attachment> SendEmailRequest::GetAttachments() const
+{
+    return m_attachments;
+}
+
+void SendEmailRequest::SetAttachments(const vector<Attachment>& _attachments)
+{
+    m_attachments = _attachments;
+    m_attachmentsHasBeenSet = true;
+}
+
+bool SendEmailRequest::AttachmentsHasBeenSet() const
+{
+    return m_attachmentsHasBeenSet;
 }
 
 

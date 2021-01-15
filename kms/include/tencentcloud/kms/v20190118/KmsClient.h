@@ -111,12 +111,16 @@
 #include <tencentcloud/kms/v20190118/model/ReEncryptResponse.h>
 #include <tencentcloud/kms/v20190118/model/ScheduleKeyDeletionRequest.h>
 #include <tencentcloud/kms/v20190118/model/ScheduleKeyDeletionResponse.h>
+#include <tencentcloud/kms/v20190118/model/SignByAsymmetricKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/SignByAsymmetricKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/UnbindCloudResourceRequest.h>
 #include <tencentcloud/kms/v20190118/model/UnbindCloudResourceResponse.h>
 #include <tencentcloud/kms/v20190118/model/UpdateAliasRequest.h>
 #include <tencentcloud/kms/v20190118/model/UpdateAliasResponse.h>
 #include <tencentcloud/kms/v20190118/model/UpdateKeyDescriptionRequest.h>
 #include <tencentcloud/kms/v20190118/model/UpdateKeyDescriptionResponse.h>
+#include <tencentcloud/kms/v20190118/model/VerifyByAsymmetricKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/VerifyByAsymmetricKeyResponse.h>
 
 
 namespace TencentCloud
@@ -263,6 +267,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ScheduleKeyDeletionResponse> ScheduleKeyDeletionOutcome;
                 typedef std::future<ScheduleKeyDeletionOutcome> ScheduleKeyDeletionOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ScheduleKeyDeletionRequest&, ScheduleKeyDeletionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScheduleKeyDeletionAsyncHandler;
+                typedef Outcome<Error, Model::SignByAsymmetricKeyResponse> SignByAsymmetricKeyOutcome;
+                typedef std::future<SignByAsymmetricKeyOutcome> SignByAsymmetricKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::SignByAsymmetricKeyRequest&, SignByAsymmetricKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SignByAsymmetricKeyAsyncHandler;
                 typedef Outcome<Error, Model::UnbindCloudResourceResponse> UnbindCloudResourceOutcome;
                 typedef std::future<UnbindCloudResourceOutcome> UnbindCloudResourceOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::UnbindCloudResourceRequest&, UnbindCloudResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindCloudResourceAsyncHandler;
@@ -272,6 +279,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdateKeyDescriptionResponse> UpdateKeyDescriptionOutcome;
                 typedef std::future<UpdateKeyDescriptionOutcome> UpdateKeyDescriptionOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::UpdateKeyDescriptionRequest&, UpdateKeyDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateKeyDescriptionAsyncHandler;
+                typedef Outcome<Error, Model::VerifyByAsymmetricKeyResponse> VerifyByAsymmetricKeyOutcome;
+                typedef std::future<VerifyByAsymmetricKeyOutcome> VerifyByAsymmetricKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::VerifyByAsymmetricKeyRequest&, VerifyByAsymmetricKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyByAsymmetricKeyAsyncHandler;
 
 
 
@@ -673,6 +683,16 @@ namespace TencentCloud
                 ScheduleKeyDeletionOutcomeCallable ScheduleKeyDeletionCallable(const Model::ScheduleKeyDeletionRequest& request);
 
                 /**
+                 *非对称密钥签名。
+注意：只有成功创建了KeyUsage= ASYMMETRIC_SIGN_VERIFY_SM2 的密钥才可以使用签名功能
+                 * @param req SignByAsymmetricKeyRequest
+                 * @return SignByAsymmetricKeyOutcome
+                 */
+                SignByAsymmetricKeyOutcome SignByAsymmetricKey(const Model::SignByAsymmetricKeyRequest &request);
+                void SignByAsymmetricKeyAsync(const Model::SignByAsymmetricKeyRequest& request, const SignByAsymmetricKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SignByAsymmetricKeyOutcomeCallable SignByAsymmetricKeyCallable(const Model::SignByAsymmetricKeyRequest& request);
+
+                /**
                  *删除指定（key, 资源，云产品）的记录，以表明：指定的云产品的资源已不再使用当前的key。
                  * @param req UnbindCloudResourceRequest
                  * @return UnbindCloudResourceOutcome
@@ -698,6 +718,15 @@ namespace TencentCloud
                 UpdateKeyDescriptionOutcome UpdateKeyDescription(const Model::UpdateKeyDescriptionRequest &request);
                 void UpdateKeyDescriptionAsync(const Model::UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateKeyDescriptionOutcomeCallable UpdateKeyDescriptionCallable(const Model::UpdateKeyDescriptionRequest& request);
+
+                /**
+                 *使用非对称密钥验签
+                 * @param req VerifyByAsymmetricKeyRequest
+                 * @return VerifyByAsymmetricKeyOutcome
+                 */
+                VerifyByAsymmetricKeyOutcome VerifyByAsymmetricKey(const Model::VerifyByAsymmetricKeyRequest &request);
+                void VerifyByAsymmetricKeyAsync(const Model::VerifyByAsymmetricKeyRequest& request, const VerifyByAsymmetricKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyByAsymmetricKeyOutcomeCallable VerifyByAsymmetricKeyCallable(const Model::VerifyByAsymmetricKeyRequest& request);
 
             };
         }

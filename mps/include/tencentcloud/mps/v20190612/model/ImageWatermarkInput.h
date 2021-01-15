@@ -124,6 +124,36 @@ namespace TencentCloud
                      */
                     bool HeightHasBeenSet() const;
 
+                    /**
+                     * 获取水印重复类型。使用场景：水印为动态图像。取值范围：
+<li>once：动态水印播放完后，不再出现；</li>
+<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
+<li>repeat：水印循环播放，直到视频结束（默认值）。</li>
+                     * @return RepeatType 水印重复类型。使用场景：水印为动态图像。取值范围：
+<li>once：动态水印播放完后，不再出现；</li>
+<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
+<li>repeat：水印循环播放，直到视频结束（默认值）。</li>
+                     */
+                    std::string GetRepeatType() const;
+
+                    /**
+                     * 设置水印重复类型。使用场景：水印为动态图像。取值范围：
+<li>once：动态水印播放完后，不再出现；</li>
+<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
+<li>repeat：水印循环播放，直到视频结束（默认值）。</li>
+                     * @param RepeatType 水印重复类型。使用场景：水印为动态图像。取值范围：
+<li>once：动态水印播放完后，不再出现；</li>
+<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
+<li>repeat：水印循环播放，直到视频结束（默认值）。</li>
+                     */
+                    void SetRepeatType(const std::string& _repeatType);
+
+                    /**
+                     * 判断参数 RepeatType 是否已赋值
+                     * @return RepeatType 是否已赋值
+                     */
+                    bool RepeatTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -149,6 +179,15 @@ namespace TencentCloud
                      */
                     std::string m_height;
                     bool m_heightHasBeenSet;
+
+                    /**
+                     * 水印重复类型。使用场景：水印为动态图像。取值范围：
+<li>once：动态水印播放完后，不再出现；</li>
+<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
+<li>repeat：水印循环播放，直到视频结束（默认值）。</li>
+                     */
+                    std::string m_repeatType;
+                    bool m_repeatTypeHasBeenSet;
 
                 };
             }

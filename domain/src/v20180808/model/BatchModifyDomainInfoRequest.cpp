@@ -25,7 +25,8 @@ using namespace std;
 
 BatchModifyDomainInfoRequest::BatchModifyDomainInfoRequest() :
     m_domainsHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_lockTransferHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string BatchModifyDomainInfoRequest::ToJsonString() const
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lockTransferHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LockTransfer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_lockTransfer, allocator);
     }
 
 
@@ -95,6 +104,22 @@ void BatchModifyDomainInfoRequest::SetTemplateId(const string& _templateId)
 bool BatchModifyDomainInfoRequest::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+bool BatchModifyDomainInfoRequest::GetLockTransfer() const
+{
+    return m_lockTransfer;
+}
+
+void BatchModifyDomainInfoRequest::SetLockTransfer(const bool& _lockTransfer)
+{
+    m_lockTransfer = _lockTransfer;
+    m_lockTransferHasBeenSet = true;
+}
+
+bool BatchModifyDomainInfoRequest::LockTransferHasBeenSet() const
+{
+    return m_lockTransferHasBeenSet;
 }
 
 
