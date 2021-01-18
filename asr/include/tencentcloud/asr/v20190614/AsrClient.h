@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/asr/v20190614/model/CloseAsyncRecognitionTaskRequest.h>
+#include <tencentcloud/asr/v20190614/model/CloseAsyncRecognitionTaskResponse.h>
 #include <tencentcloud/asr/v20190614/model/CreateAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/CreateAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/CreateAsyncRecognitionTaskRequest.h>
@@ -73,6 +75,9 @@ namespace TencentCloud
                 AsrClient(const Credential &credential, const std::string &region);
                 AsrClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CloseAsyncRecognitionTaskResponse> CloseAsyncRecognitionTaskOutcome;
+                typedef std::future<CloseAsyncRecognitionTaskOutcome> CloseAsyncRecognitionTaskOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::CloseAsyncRecognitionTaskRequest&, CloseAsyncRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAsyncRecognitionTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateAsrVocabResponse> CreateAsrVocabOutcome;
                 typedef std::future<CreateAsrVocabOutcome> CreateAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::CreateAsrVocabRequest&, CreateAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsrVocabAsyncHandler;
@@ -129,6 +134,15 @@ namespace TencentCloud
                 typedef std::function<void(const AsrClient*, const Model::UpdateAsrVocabRequest&, UpdateAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAsrVocabAsyncHandler;
 
 
+
+                /**
+                 *本接口用于关闭语音流异步识别任务。
+                 * @param req CloseAsyncRecognitionTaskRequest
+                 * @return CloseAsyncRecognitionTaskOutcome
+                 */
+                CloseAsyncRecognitionTaskOutcome CloseAsyncRecognitionTask(const Model::CloseAsyncRecognitionTaskRequest &request);
+                void CloseAsyncRecognitionTaskAsync(const Model::CloseAsyncRecognitionTaskRequest& request, const CloseAsyncRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseAsyncRecognitionTaskOutcomeCallable CloseAsyncRecognitionTaskCallable(const Model::CloseAsyncRecognitionTaskRequest& request);
 
                 /**
                  *用户通过本接口进行热词表的创建。

@@ -1,0 +1,120 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cynosdb/v20190107/model/BillingResourceInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cynosdb::V20190107::Model;
+using namespace rapidjson;
+using namespace std;
+
+BillingResourceInfo::BillingResourceInfo() :
+    m_clusterIdHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome BillingResourceInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillingResourceInfo.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceIds") && !value["InstanceIds"].IsNull())
+    {
+        if (!value["InstanceIds"].IsArray())
+            return CoreInternalOutcome(Error("response `BillingResourceInfo.InstanceIds` is not array type"));
+
+        const Value &tmpValue = value["InstanceIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_instanceIds.push_back((*itr).GetString());
+        }
+        m_instanceIdsHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void BillingResourceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+}
+
+
+string BillingResourceInfo::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void BillingResourceInfo::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool BillingResourceInfo::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+vector<string> BillingResourceInfo::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void BillingResourceInfo::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool BillingResourceInfo::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
+

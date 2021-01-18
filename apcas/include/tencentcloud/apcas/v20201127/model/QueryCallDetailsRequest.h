@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求类型:1,人群特征洞察统计 2购车意向预测统计
-                     * @return Type 请求类型:1,人群特征洞察统计 2购车意向预测统计
+                     * 获取请求类型 1:人群特征洞察统计 2:购车意向预测统计
+                     * @return Type 请求类型 1:人群特征洞察统计 2:购车意向预测统计
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置请求类型:1,人群特征洞察统计 2购车意向预测统计
-                     * @param Type 请求类型:1,人群特征洞察统计 2购车意向预测统计
+                     * 设置请求类型 1:人群特征洞察统计 2:购车意向预测统计
+                     * @param Type 请求类型 1:人群特征洞察统计 2:购车意向预测统计
                      */
                     void SetType(const uint64_t& _type);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳(毫秒）
-                     * @return EndTime 结束时间戳(毫秒）
+                     * 获取结束时间戳（毫秒）
+                     * @return EndTime 结束时间戳（毫秒）
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间戳(毫秒）
-                     * @param EndTime 结束时间戳(毫秒）
+                     * 设置结束时间戳（毫秒）
+                     * @param EndTime 结束时间戳（毫秒）
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求类型:1,人群特征洞察统计 2购车意向预测统计
+                     * 请求类型 1:人群特征洞察统计 2:购车意向预测统计
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间戳(毫秒）
+                     * 结束时间戳（毫秒）
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

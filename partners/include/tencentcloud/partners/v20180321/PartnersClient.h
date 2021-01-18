@@ -51,6 +51,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeSalesmansRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeSalesmansResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeUnbindClientListRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeUnbindClientListResponse.h>
 #include <tencentcloud/partners/v20180321/model/ModifyClientRemarkRequest.h>
 #include <tencentcloud/partners/v20180321/model/ModifyClientRemarkResponse.h>
 #include <tencentcloud/partners/v20180321/model/RemovePayRelationForClientRequest.h>
@@ -111,6 +113,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSalesmansResponse> DescribeSalesmansOutcome;
                 typedef std::future<DescribeSalesmansOutcome> DescribeSalesmansOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeSalesmansRequest&, DescribeSalesmansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSalesmansAsyncHandler;
+                typedef Outcome<Error, Model::DescribeUnbindClientListResponse> DescribeUnbindClientListOutcome;
+                typedef std::future<DescribeUnbindClientListOutcome> DescribeUnbindClientListOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeUnbindClientListRequest&, DescribeUnbindClientListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnbindClientListAsyncHandler;
                 typedef Outcome<Error, Model::ModifyClientRemarkResponse> ModifyClientRemarkOutcome;
                 typedef std::future<ModifyClientRemarkOutcome> ModifyClientRemarkOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::ModifyClientRemarkRequest&, ModifyClientRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClientRemarkAsyncHandler;
@@ -245,6 +250,15 @@ namespace TencentCloud
                 DescribeSalesmansOutcome DescribeSalesmans(const Model::DescribeSalesmansRequest &request);
                 void DescribeSalesmansAsync(const Model::DescribeSalesmansRequest& request, const DescribeSalesmansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSalesmansOutcomeCallable DescribeSalesmansCallable(const Model::DescribeSalesmansRequest& request);
+
+                /**
+                 *代理商名下客户解绑记录查询接口
+                 * @param req DescribeUnbindClientListRequest
+                 * @return DescribeUnbindClientListOutcome
+                 */
+                DescribeUnbindClientListOutcome DescribeUnbindClientList(const Model::DescribeUnbindClientListRequest &request);
+                void DescribeUnbindClientListAsync(const Model::DescribeUnbindClientListRequest& request, const DescribeUnbindClientListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUnbindClientListOutcomeCallable DescribeUnbindClientListCallable(const Model::DescribeUnbindClientListRequest& request);
 
                 /**
                  *代理商可以对名下客户添加备注、修改备注

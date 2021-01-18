@@ -40,6 +40,49 @@ AsrClient::AsrClient(const Credential &credential, const string &region, const C
 }
 
 
+AsrClient::CloseAsyncRecognitionTaskOutcome AsrClient::CloseAsyncRecognitionTask(const CloseAsyncRecognitionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseAsyncRecognitionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseAsyncRecognitionTaskResponse rsp = CloseAsyncRecognitionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseAsyncRecognitionTaskOutcome(rsp);
+        else
+            return CloseAsyncRecognitionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseAsyncRecognitionTaskOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::CloseAsyncRecognitionTaskAsync(const CloseAsyncRecognitionTaskRequest& request, const CloseAsyncRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseAsyncRecognitionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::CloseAsyncRecognitionTaskOutcomeCallable AsrClient::CloseAsyncRecognitionTaskCallable(const CloseAsyncRecognitionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseAsyncRecognitionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseAsyncRecognitionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::CreateAsrVocabOutcome AsrClient::CreateAsrVocab(const CreateAsrVocabRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAsrVocab");

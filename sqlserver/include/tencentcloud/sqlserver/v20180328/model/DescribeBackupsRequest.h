@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool BackupIdHasBeenSet() const;
 
+                    /**
+                     * 获取按照备份的库名称筛选，不填则不筛选此项
+                     * @return DatabaseName 按照备份的库名称筛选，不填则不筛选此项
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置按照备份的库名称筛选，不填则不筛选此项
+                     * @param DatabaseName 按照备份的库名称筛选，不填则不筛选此项
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     uint64_t m_backupId;
                     bool m_backupIdHasBeenSet;
+
+                    /**
+                     * 按照备份的库名称筛选，不填则不筛选此项
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
 
                 };
             }

@@ -26,6 +26,7 @@
 #include <tencentcloud/tcb/v20180608/model/CloudBaseRunImageSecretInfo.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseRunVolumeMount.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseEsInfo.h>
+#include <tencentcloud/tcb/v20180608/model/CloudBaseRunSideSpec.h>
 
 
 namespace TencentCloud
@@ -623,6 +624,42 @@ namespace TencentCloud
                      */
                     bool ServerPathHasBeenSet() const;
 
+                    /**
+                     * 获取镜像复用的key
+                     * @return ImageReuseKey 镜像复用的key
+                     */
+                    std::string GetImageReuseKey() const;
+
+                    /**
+                     * 设置镜像复用的key
+                     * @param ImageReuseKey 镜像复用的key
+                     */
+                    void SetImageReuseKey(const std::string& _imageReuseKey);
+
+                    /**
+                     * 判断参数 ImageReuseKey 是否已赋值
+                     * @return ImageReuseKey 是否已赋值
+                     */
+                    bool ImageReuseKeyHasBeenSet() const;
+
+                    /**
+                     * 获取容器的描述文件
+                     * @return SidecarSpecs 容器的描述文件
+                     */
+                    std::vector<CloudBaseRunSideSpec> GetSidecarSpecs() const;
+
+                    /**
+                     * 设置容器的描述文件
+                     * @param SidecarSpecs 容器的描述文件
+                     */
+                    void SetSidecarSpecs(const std::vector<CloudBaseRunSideSpec>& _sidecarSpecs);
+
+                    /**
+                     * 判断参数 SidecarSpecs 是否已赋值
+                     * @return SidecarSpecs 是否已赋值
+                     */
+                    bool SidecarSpecsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -816,6 +853,18 @@ namespace TencentCloud
                      */
                     std::string m_serverPath;
                     bool m_serverPathHasBeenSet;
+
+                    /**
+                     * 镜像复用的key
+                     */
+                    std::string m_imageReuseKey;
+                    bool m_imageReuseKeyHasBeenSet;
+
+                    /**
+                     * 容器的描述文件
+                     */
+                    std::vector<CloudBaseRunSideSpec> m_sidecarSpecs;
+                    bool m_sidecarSpecsHasBeenSet;
 
                 };
             }

@@ -55,7 +55,9 @@ CreateCloudBaseRunServerVersionRequest::CreateCloudBaseRunServerVersionRequest()
     m_esInfoHasBeenSet(false),
     m_enableUnionHasBeenSet(false),
     m_operatorRemarkHasBeenSet(false),
-    m_serverPathHasBeenSet(false)
+    m_serverPathHasBeenSet(false),
+    m_imageReuseKeyHasBeenSet(false),
+    m_sidecarSpecsHasBeenSet(false)
 {
 }
 
@@ -331,6 +333,29 @@ string CreateCloudBaseRunServerVersionRequest::ToJsonString() const
         string key = "ServerPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_serverPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageReuseKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageReuseKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_imageReuseKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sidecarSpecsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SidecarSpecs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sidecarSpecs.begin(); itr != m_sidecarSpecs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -851,6 +876,38 @@ void CreateCloudBaseRunServerVersionRequest::SetServerPath(const string& _server
 bool CreateCloudBaseRunServerVersionRequest::ServerPathHasBeenSet() const
 {
     return m_serverPathHasBeenSet;
+}
+
+string CreateCloudBaseRunServerVersionRequest::GetImageReuseKey() const
+{
+    return m_imageReuseKey;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetImageReuseKey(const string& _imageReuseKey)
+{
+    m_imageReuseKey = _imageReuseKey;
+    m_imageReuseKeyHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::ImageReuseKeyHasBeenSet() const
+{
+    return m_imageReuseKeyHasBeenSet;
+}
+
+vector<CloudBaseRunSideSpec> CreateCloudBaseRunServerVersionRequest::GetSidecarSpecs() const
+{
+    return m_sidecarSpecs;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetSidecarSpecs(const vector<CloudBaseRunSideSpec>& _sidecarSpecs)
+{
+    m_sidecarSpecs = _sidecarSpecs;
+    m_sidecarSpecsHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::SidecarSpecsHasBeenSet() const
+{
+    return m_sidecarSpecsHasBeenSet;
 }
 
 

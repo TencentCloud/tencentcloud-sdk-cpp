@@ -642,6 +642,49 @@ CynosdbClient::DescribeProjectSecurityGroupsOutcomeCallable CynosdbClient::Descr
     return task->get_future();
 }
 
+CynosdbClient::DescribeResourcesByDealNameOutcome CynosdbClient::DescribeResourcesByDealName(const DescribeResourcesByDealNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourcesByDealName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourcesByDealNameResponse rsp = DescribeResourcesByDealNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourcesByDealNameOutcome(rsp);
+        else
+            return DescribeResourcesByDealNameOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourcesByDealNameOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeResourcesByDealNameAsync(const DescribeResourcesByDealNameRequest& request, const DescribeResourcesByDealNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourcesByDealName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeResourcesByDealNameOutcomeCallable CynosdbClient::DescribeResourcesByDealNameCallable(const DescribeResourcesByDealNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourcesByDealNameOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourcesByDealName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeRollbackTimeRangeOutcome CynosdbClient::DescribeRollbackTimeRange(const DescribeRollbackTimeRangeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRollbackTimeRange");

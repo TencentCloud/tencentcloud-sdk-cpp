@@ -31,6 +31,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupConfigRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeResourcesByDealNameResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAccountsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/IsolateInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodResponse.h
@@ -57,15 +58,17 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstancesRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeResourcesByDealNameRequest.h
   include/tencentcloud/cynosdb/v20190107/model/IsolateInstanceResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupListRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeRequest.h
   include/tencentcloud/cynosdb/v20190107/model/QueryFilter.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstance.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAccountsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailResponse.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineInstanceRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/BillingResourceInfo.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ObjectTask.h
@@ -100,6 +103,7 @@ set(cynosdb_src
   src/v20190107/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20190107/model/DescribeBackupConfigRequest.cpp
   src/v20190107/model/DescribeClusterInstanceGrpsRequest.cpp
+  src/v20190107/model/DescribeResourcesByDealNameResponse.cpp
   src/v20190107/model/DescribeAccountsRequest.cpp
   src/v20190107/model/IsolateInstanceRequest.cpp
   src/v20190107/model/DescribeMaintainPeriodResponse.cpp
@@ -126,15 +130,17 @@ set(cynosdb_src
   src/v20190107/model/DescribeInstanceDetailRequest.cpp
   src/v20190107/model/ModifyMaintainPeriodConfigResponse.cpp
   src/v20190107/model/DescribeInstancesRequest.cpp
+  src/v20190107/model/DescribeResourcesByDealNameRequest.cpp
   src/v20190107/model/IsolateInstanceResponse.cpp
   src/v20190107/model/DescribeBackupListRequest.cpp
+  src/v20190107/model/DescribeRollbackTimeRangeRequest.cpp
   src/v20190107/model/QueryFilter.cpp
   src/v20190107/model/CynosdbInstance.cpp
   src/v20190107/model/DescribeAccountsResponse.cpp
   src/v20190107/model/UpgradeInstanceRequest.cpp
   src/v20190107/model/DescribeInstanceDetailResponse.cpp
   src/v20190107/model/OfflineInstanceRequest.cpp
-  src/v20190107/model/DescribeRollbackTimeRangeRequest.cpp
+  src/v20190107/model/BillingResourceInfo.cpp
   src/v20190107/model/OfflineClusterResponse.cpp
   src/v20190107/model/DescribeInstanceSpecsResponse.cpp
   src/v20190107/model/ObjectTask.cpp

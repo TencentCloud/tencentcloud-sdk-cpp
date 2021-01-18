@@ -32,7 +32,8 @@ DescribeBackupsRequest::DescribeBackupsRequest() :
     m_backupNameHasBeenSet(false),
     m_strategyHasBeenSet(false),
     m_backupWayHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
+    m_backupIdHasBeenSet(false),
+    m_databaseNameHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string DescribeBackupsRequest::ToJsonString() const
         string key = "BackupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupId, allocator);
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_databaseName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -265,6 +274,22 @@ void DescribeBackupsRequest::SetBackupId(const uint64_t& _backupId)
 bool DescribeBackupsRequest::BackupIdHasBeenSet() const
 {
     return m_backupIdHasBeenSet;
+}
+
+string DescribeBackupsRequest::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void DescribeBackupsRequest::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
 }
 
 

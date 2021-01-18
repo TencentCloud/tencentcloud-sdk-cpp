@@ -642,6 +642,49 @@ PartnersClient::DescribeSalesmansOutcomeCallable PartnersClient::DescribeSalesma
     return task->get_future();
 }
 
+PartnersClient::DescribeUnbindClientListOutcome PartnersClient::DescribeUnbindClientList(const DescribeUnbindClientListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUnbindClientList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUnbindClientListResponse rsp = DescribeUnbindClientListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUnbindClientListOutcome(rsp);
+        else
+            return DescribeUnbindClientListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUnbindClientListOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeUnbindClientListAsync(const DescribeUnbindClientListRequest& request, const DescribeUnbindClientListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUnbindClientList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeUnbindClientListOutcomeCallable PartnersClient::DescribeUnbindClientListCallable(const DescribeUnbindClientListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUnbindClientListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUnbindClientList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::ModifyClientRemarkOutcome PartnersClient::ModifyClientRemark(const ModifyClientRemarkRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClientRemark");

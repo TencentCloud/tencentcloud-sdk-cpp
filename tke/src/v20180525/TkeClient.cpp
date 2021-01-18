@@ -1115,6 +1115,49 @@ TkeClient::DeletePrometheusTemplateSyncOutcomeCallable TkeClient::DeletePromethe
     return task->get_future();
 }
 
+TkeClient::DescribeAvailableClusterVersionOutcome TkeClient::DescribeAvailableClusterVersion(const DescribeAvailableClusterVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAvailableClusterVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAvailableClusterVersionResponse rsp = DescribeAvailableClusterVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAvailableClusterVersionOutcome(rsp);
+        else
+            return DescribeAvailableClusterVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAvailableClusterVersionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeAvailableClusterVersionAsync(const DescribeAvailableClusterVersionRequest& request, const DescribeAvailableClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAvailableClusterVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeAvailableClusterVersionOutcomeCallable TkeClient::DescribeAvailableClusterVersionCallable(const DescribeAvailableClusterVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAvailableClusterVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAvailableClusterVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClusterAsGroupOptionOutcome TkeClient::DescribeClusterAsGroupOption(const DescribeClusterAsGroupOptionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterAsGroupOption");
@@ -2104,6 +2147,49 @@ TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTa
     return task->get_future();
 }
 
+TkeClient::GetUpgradeInstanceProgressOutcome TkeClient::GetUpgradeInstanceProgress(const GetUpgradeInstanceProgressRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetUpgradeInstanceProgress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetUpgradeInstanceProgressResponse rsp = GetUpgradeInstanceProgressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetUpgradeInstanceProgressOutcome(rsp);
+        else
+            return GetUpgradeInstanceProgressOutcome(o.GetError());
+    }
+    else
+    {
+        return GetUpgradeInstanceProgressOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::GetUpgradeInstanceProgressAsync(const GetUpgradeInstanceProgressRequest& request, const GetUpgradeInstanceProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetUpgradeInstanceProgress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::GetUpgradeInstanceProgressOutcomeCallable TkeClient::GetUpgradeInstanceProgressCallable(const GetUpgradeInstanceProgressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetUpgradeInstanceProgressOutcome()>>(
+        [this, request]()
+        {
+            return this->GetUpgradeInstanceProgress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::ModifyClusterAsGroupAttributeOutcome TkeClient::ModifyClusterAsGroupAttribute(const ModifyClusterAsGroupAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterAsGroupAttribute");
@@ -2484,6 +2570,49 @@ TkeClient::SyncPrometheusTemplateOutcomeCallable TkeClient::SyncPrometheusTempla
         [this, request]()
         {
             return this->SyncPrometheusTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UpdateClusterVersionOutcome TkeClient::UpdateClusterVersion(const UpdateClusterVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateClusterVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateClusterVersionResponse rsp = UpdateClusterVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateClusterVersionOutcome(rsp);
+        else
+            return UpdateClusterVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateClusterVersionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UpdateClusterVersionAsync(const UpdateClusterVersionRequest& request, const UpdateClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateClusterVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UpdateClusterVersionOutcomeCallable TkeClient::UpdateClusterVersionCallable(const UpdateClusterVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateClusterVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateClusterVersion(request);
         }
     );
 

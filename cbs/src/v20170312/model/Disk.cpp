@@ -54,7 +54,8 @@ Disk::Disk() :
     m_instanceIdListHasBeenSet(false),
     m_snapshotCountHasBeenSet(false),
     m_snapshotSizeHasBeenSet(false),
-    m_backupDiskHasBeenSet(false)
+    m_backupDiskHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -416,6 +417,16 @@ CoreInternalOutcome Disk::Deserialize(const Value &value)
         m_backupDiskHasBeenSet = true;
     }
 
+    if (value.HasMember("ThroughputPerformance") && !value["ThroughputPerformance"].IsNull())
+    {
+        if (!value["ThroughputPerformance"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Disk.ThroughputPerformance` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_throughputPerformance = value["ThroughputPerformance"].GetUint64();
+        m_throughputPerformanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -703,6 +714,14 @@ void Disk::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "BackupDisk";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backupDisk, allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 }
@@ -1234,5 +1253,21 @@ void Disk::SetBackupDisk(const bool& _backupDisk)
 bool Disk::BackupDiskHasBeenSet() const
 {
     return m_backupDiskHasBeenSet;
+}
+
+uint64_t Disk::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void Disk::SetThroughputPerformance(const uint64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool Disk::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 
