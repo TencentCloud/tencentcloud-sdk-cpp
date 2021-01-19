@@ -28,7 +28,8 @@ Alias::Alias() :
     m_descriptionHasBeenSet(false),
     m_routingStrategyHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,26 @@ CoreInternalOutcome Alias::Deserialize(const Value &value)
         m_lastUpdatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `Alias.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -176,6 +197,21 @@ void Alias::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "LastUpdatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_lastUpdatedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -291,5 +327,21 @@ void Alias::SetLastUpdatedTime(const string& _lastUpdatedTime)
 bool Alias::LastUpdatedTimeHasBeenSet() const
 {
     return m_lastUpdatedTimeHasBeenSet;
+}
+
+vector<Tag> Alias::GetTags() const
+{
+    return m_tags;
+}
+
+void Alias::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool Alias::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

@@ -139,6 +139,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/SwitchForUpgradeResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupSummariesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsRequest.h
+  include/tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveRequest.h
   include/tencentcloud/cdb/v20170320/model/StopRollbackResponse.h
   include/tencentcloud/cdb/v20170320/model/ParamTemplateInfo.h
   include/tencentcloud/cdb/v20170320/model/ModifyAutoRenewFlagResponse.h
@@ -154,6 +155,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/BackupItem.h
   include/tencentcloud/cdb/v20170320/model/DatabaseName.h
   include/tencentcloud/cdb/v20170320/model/AuditFilter.h
+  include/tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupConfigResponse.h
   include/tencentcloud/cdb/v20170320/model/DeleteDeployGroupsResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceSecurityGroupsRequest.h
@@ -436,6 +438,7 @@ set(cdb_src
   src/v20170320/model/SwitchForUpgradeResponse.cpp
   src/v20170320/model/DescribeBackupSummariesResponse.cpp
   src/v20170320/model/DescribeInstanceParamRecordsRequest.cpp
+  src/v20170320/model/SwitchDBInstanceMasterSlaveRequest.cpp
   src/v20170320/model/StopRollbackResponse.cpp
   src/v20170320/model/ParamTemplateInfo.cpp
   src/v20170320/model/ModifyAutoRenewFlagResponse.cpp
@@ -451,6 +454,7 @@ set(cdb_src
   src/v20170320/model/BackupItem.cpp
   src/v20170320/model/DatabaseName.cpp
   src/v20170320/model/AuditFilter.cpp
+  src/v20170320/model/SwitchDBInstanceMasterSlaveResponse.cpp
   src/v20170320/model/DescribeBackupConfigResponse.cpp
   src/v20170320/model/DeleteDeployGroupsResponse.cpp
   src/v20170320/model/ModifyDBInstanceSecurityGroupsRequest.cpp

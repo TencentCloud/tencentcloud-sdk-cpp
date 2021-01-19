@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool ImageSenseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)
+                     * @return LayeredGalleryIds 分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)
+                     */
+                    std::vector<int64_t> GetLayeredGalleryIds() const;
+
+                    /**
+                     * 设置分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)
+                     * @param LayeredGalleryIds 分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)
+                     */
+                    void SetLayeredGalleryIds(const std::vector<int64_t>& _layeredGalleryIds);
+
+                    /**
+                     * 判断参数 LayeredGalleryIds 是否已赋值
+                     * @return LayeredGalleryIds 是否已赋值
+                     */
+                    bool LayeredGalleryIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_imageSenseType;
                     bool m_imageSenseTypeHasBeenSet;
+
+                    /**
+                     * 分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)
+                     */
+                    std::vector<int64_t> m_layeredGalleryIds;
+                    bool m_layeredGalleryIdsHasBeenSet;
 
                 };
             }

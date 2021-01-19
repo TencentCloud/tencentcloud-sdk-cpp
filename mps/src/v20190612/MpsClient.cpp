@@ -2749,6 +2749,49 @@ MpsClient::ProcessMediaOutcomeCallable MpsClient::ProcessMediaCallable(const Pro
     return task->get_future();
 }
 
+MpsClient::RecognizeMediaForZhiXueOutcome MpsClient::RecognizeMediaForZhiXue(const RecognizeMediaForZhiXueRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeMediaForZhiXue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeMediaForZhiXueResponse rsp = RecognizeMediaForZhiXueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeMediaForZhiXueOutcome(rsp);
+        else
+            return RecognizeMediaForZhiXueOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeMediaForZhiXueOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::RecognizeMediaForZhiXueAsync(const RecognizeMediaForZhiXueRequest& request, const RecognizeMediaForZhiXueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeMediaForZhiXue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::RecognizeMediaForZhiXueOutcomeCallable MpsClient::RecognizeMediaForZhiXueCallable(const RecognizeMediaForZhiXueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeMediaForZhiXueOutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeMediaForZhiXue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::ResetWorkflowOutcome MpsClient::ResetWorkflow(const ResetWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetWorkflow");

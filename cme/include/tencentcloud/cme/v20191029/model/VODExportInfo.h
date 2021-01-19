@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool ClassIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台发布信息列表。
-                     * @return ThirdPartyPublishInfos 第三方平台发布信息列表。
+                     * 获取第三方平台发布信息列表。暂未正式对外，请勿使用。
+                     * @return ThirdPartyPublishInfos 第三方平台发布信息列表。暂未正式对外，请勿使用。
                      */
                     std::vector<ThirdPartyPublishInfo> GetThirdPartyPublishInfos() const;
 
                     /**
-                     * 设置第三方平台发布信息列表。
-                     * @param ThirdPartyPublishInfos 第三方平台发布信息列表。
+                     * 设置第三方平台发布信息列表。暂未正式对外，请勿使用。
+                     * @param ThirdPartyPublishInfos 第三方平台发布信息列表。暂未正式对外，请勿使用。
                      */
                     void SetThirdPartyPublishInfos(const std::vector<ThirdPartyPublishInfo>& _thirdPartyPublishInfos);
 
@@ -116,7 +116,7 @@ namespace TencentCloud
                     bool m_classIdHasBeenSet;
 
                     /**
-                     * 第三方平台发布信息列表。
+                     * 第三方平台发布信息列表。暂未正式对外，请勿使用。
                      */
                     std::vector<ThirdPartyPublishInfo> m_thirdPartyPublishInfos;
                     bool m_thirdPartyPublishInfosHasBeenSet;

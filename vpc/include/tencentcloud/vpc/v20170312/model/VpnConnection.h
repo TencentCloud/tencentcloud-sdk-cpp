@@ -319,6 +319,78 @@ namespace TencentCloud
                      */
                     bool IPSECOptionsSpecificationHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持健康状态探测
+                     * @return EnableHealthCheck 是否支持健康状态探测
+                     */
+                    bool GetEnableHealthCheck() const;
+
+                    /**
+                     * 设置是否支持健康状态探测
+                     * @param EnableHealthCheck 是否支持健康状态探测
+                     */
+                    void SetEnableHealthCheck(const bool& _enableHealthCheck);
+
+                    /**
+                     * 判断参数 EnableHealthCheck 是否已赋值
+                     * @return EnableHealthCheck 是否已赋值
+                     */
+                    bool EnableHealthCheckHasBeenSet() const;
+
+                    /**
+                     * 获取本端探测ip
+                     * @return HealthCheckLocalIp 本端探测ip
+                     */
+                    std::string GetHealthCheckLocalIp() const;
+
+                    /**
+                     * 设置本端探测ip
+                     * @param HealthCheckLocalIp 本端探测ip
+                     */
+                    void SetHealthCheckLocalIp(const std::string& _healthCheckLocalIp);
+
+                    /**
+                     * 判断参数 HealthCheckLocalIp 是否已赋值
+                     * @return HealthCheckLocalIp 是否已赋值
+                     */
+                    bool HealthCheckLocalIpHasBeenSet() const;
+
+                    /**
+                     * 获取对端探测ip
+                     * @return HealthCheckRemoteIp 对端探测ip
+                     */
+                    std::string GetHealthCheckRemoteIp() const;
+
+                    /**
+                     * 设置对端探测ip
+                     * @param HealthCheckRemoteIp 对端探测ip
+                     */
+                    void SetHealthCheckRemoteIp(const std::string& _healthCheckRemoteIp);
+
+                    /**
+                     * 判断参数 HealthCheckRemoteIp 是否已赋值
+                     * @return HealthCheckRemoteIp 是否已赋值
+                     */
+                    bool HealthCheckRemoteIpHasBeenSet() const;
+
+                    /**
+                     * 获取通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     * @return HealthCheckStatus 通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     */
+                    std::string GetHealthCheckStatus() const;
+
+                    /**
+                     * 设置通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     * @param HealthCheckStatus 通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     */
+                    void SetHealthCheckStatus(const std::string& _healthCheckStatus);
+
+                    /**
+                     * 判断参数 HealthCheckStatus 是否已赋值
+                     * @return HealthCheckStatus 是否已赋值
+                     */
+                    bool HealthCheckStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -410,6 +482,30 @@ namespace TencentCloud
                      */
                     IPSECOptionsSpecification m_iPSECOptionsSpecification;
                     bool m_iPSECOptionsSpecificationHasBeenSet;
+
+                    /**
+                     * 是否支持健康状态探测
+                     */
+                    bool m_enableHealthCheck;
+                    bool m_enableHealthCheckHasBeenSet;
+
+                    /**
+                     * 本端探测ip
+                     */
+                    std::string m_healthCheckLocalIp;
+                    bool m_healthCheckLocalIpHasBeenSet;
+
+                    /**
+                     * 对端探测ip
+                     */
+                    std::string m_healthCheckRemoteIp;
+                    bool m_healthCheckRemoteIpHasBeenSet;
+
+                    /**
+                     * 通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     */
+                    std::string m_healthCheckStatus;
+                    bool m_healthCheckStatusHasBeenSet;
 
                 };
             }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CME_V20191029_MODEL_CREATELINKRESPONSE_H_
-#define TENCENTCLOUD_CME_V20191029_MODEL_CREATELINKRESPONSE_H_
+#ifndef TENCENTCLOUD_MPS_V20190612_MODEL_RECOGNIZEMEDIAFORZHIXUERESPONSE_H_
+#define TENCENTCLOUD_MPS_V20190612_MODEL_RECOGNIZEMEDIAFORZHIXUERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,42 +25,42 @@
 
 namespace TencentCloud
 {
-    namespace Cme
+    namespace Mps
     {
-        namespace V20191029
+        namespace V20190612
         {
             namespace Model
             {
                 /**
-                * CreateLink返回参数结构体
+                * RecognizeMediaForZhiXue返回参数结构体
                 */
-                class CreateLinkResponse : public AbstractModel
+                class RecognizeMediaForZhiXueResponse : public AbstractModel
                 {
                 public:
-                    CreateLinkResponse();
-                    ~CreateLinkResponse() = default;
+                    RecognizeMediaForZhiXueResponse();
+                    ~RecognizeMediaForZhiXueResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取新建链接的媒体 Id。
-                     * @return MaterialId 新建链接的媒体 Id。
+                     * 获取任务 ID，可以通过该 ID 查询任务状态和结果。
+                     * @return TaskId 任务 ID，可以通过该 ID 查询任务状态和结果。
                      */
-                    std::string GetMaterialId() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 判断参数 MaterialId 是否已赋值
-                     * @return MaterialId 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      */
-                    bool MaterialIdHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 新建链接的媒体 Id。
+                     * 任务 ID，可以通过该 ID 查询任务状态和结果。
                      */
-                    std::string m_materialId;
-                    bool m_materialIdHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -68,4 +68,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CME_V20191029_MODEL_CREATELINKRESPONSE_H_
+#endif // !TENCENTCLOUD_MPS_V20190612_MODEL_RECOGNIZEMEDIAFORZHIXUERESPONSE_H_

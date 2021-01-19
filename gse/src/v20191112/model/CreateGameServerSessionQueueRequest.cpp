@@ -27,7 +27,8 @@ CreateGameServerSessionQueueRequest::CreateGameServerSessionQueueRequest() :
     m_nameHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_playerLatencyPoliciesHasBeenSet(false),
-    m_timeoutInSecondsHasBeenSet(false)
+    m_timeoutInSecondsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,21 @@ string CreateGameServerSessionQueueRequest::ToJsonString() const
         string key = "TimeoutInSeconds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeoutInSeconds, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -154,6 +170,22 @@ void CreateGameServerSessionQueueRequest::SetTimeoutInSeconds(const uint64_t& _t
 bool CreateGameServerSessionQueueRequest::TimeoutInSecondsHasBeenSet() const
 {
     return m_timeoutInSecondsHasBeenSet;
+}
+
+vector<Tag> CreateGameServerSessionQueueRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateGameServerSessionQueueRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateGameServerSessionQueueRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

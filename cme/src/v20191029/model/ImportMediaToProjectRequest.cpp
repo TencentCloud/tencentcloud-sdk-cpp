@@ -30,7 +30,8 @@ ImportMediaToProjectRequest::ImportMediaToProjectRequest() :
     m_vodFileIdHasBeenSet(false),
     m_externalMediaInfoHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_preProcessDefinitionHasBeenSet(false)
+    m_preProcessDefinitionHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,14 @@ string ImportMediaToProjectRequest::ToJsonString() const
         string key = "PreProcessDefinition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_preProcessDefinition, allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -216,6 +225,22 @@ void ImportMediaToProjectRequest::SetPreProcessDefinition(const int64_t& _prePro
 bool ImportMediaToProjectRequest::PreProcessDefinitionHasBeenSet() const
 {
     return m_preProcessDefinitionHasBeenSet;
+}
+
+string ImportMediaToProjectRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ImportMediaToProjectRequest::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ImportMediaToProjectRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

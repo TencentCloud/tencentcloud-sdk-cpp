@@ -37,7 +37,8 @@ CopyFleetRequest::CopyFleetRequest() :
     m_runtimeConfigurationHasBeenSet(false),
     m_gameServerSessionProtectionTimeLimitHasBeenSet(false),
     m_selectedScalingTypeHasBeenSet(false),
-    m_selectedCcnTypeHasBeenSet(false)
+    m_selectedCcnTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,21 @@ string CopyFleetRequest::ToJsonString() const
         string key = "SelectedCcnType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_selectedCcnType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -399,6 +415,22 @@ void CopyFleetRequest::SetSelectedCcnType(const string& _selectedCcnType)
 bool CopyFleetRequest::SelectedCcnTypeHasBeenSet() const
 {
     return m_selectedCcnTypeHasBeenSet;
+}
+
+vector<Tag> CopyFleetRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CopyFleetRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CopyFleetRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

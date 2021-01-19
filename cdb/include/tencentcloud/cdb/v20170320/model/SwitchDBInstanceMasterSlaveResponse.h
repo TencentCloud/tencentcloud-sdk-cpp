@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CME_V20191029_MODEL_CREATELINKRESPONSE_H_
-#define TENCENTCLOUD_CME_V20191029_MODEL_CREATELINKRESPONSE_H_
+#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_SWITCHDBINSTANCEMASTERSLAVERESPONSE_H_
+#define TENCENTCLOUD_CDB_V20170320_MODEL_SWITCHDBINSTANCEMASTERSLAVERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,42 +25,42 @@
 
 namespace TencentCloud
 {
-    namespace Cme
+    namespace Cdb
     {
-        namespace V20191029
+        namespace V20170320
         {
             namespace Model
             {
                 /**
-                * CreateLink返回参数结构体
+                * SwitchDBInstanceMasterSlave返回参数结构体
                 */
-                class CreateLinkResponse : public AbstractModel
+                class SwitchDBInstanceMasterSlaveResponse : public AbstractModel
                 {
                 public:
-                    CreateLinkResponse();
-                    ~CreateLinkResponse() = default;
+                    SwitchDBInstanceMasterSlaveResponse();
+                    ~SwitchDBInstanceMasterSlaveResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取新建链接的媒体 Id。
-                     * @return MaterialId 新建链接的媒体 Id。
+                     * 获取异步任务 ID。
+                     * @return AsyncRequestId 异步任务 ID。
                      */
-                    std::string GetMaterialId() const;
+                    std::string GetAsyncRequestId() const;
 
                     /**
-                     * 判断参数 MaterialId 是否已赋值
-                     * @return MaterialId 是否已赋值
+                     * 判断参数 AsyncRequestId 是否已赋值
+                     * @return AsyncRequestId 是否已赋值
                      */
-                    bool MaterialIdHasBeenSet() const;
+                    bool AsyncRequestIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 新建链接的媒体 Id。
+                     * 异步任务 ID。
                      */
-                    std::string m_materialId;
-                    bool m_materialIdHasBeenSet;
+                    std::string m_asyncRequestId;
+                    bool m_asyncRequestIdHasBeenSet;
 
                 };
             }
@@ -68,4 +68,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CME_V20191029_MODEL_CREATELINKRESPONSE_H_
+#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_SWITCHDBINSTANCEMASTERSLAVERESPONSE_H_

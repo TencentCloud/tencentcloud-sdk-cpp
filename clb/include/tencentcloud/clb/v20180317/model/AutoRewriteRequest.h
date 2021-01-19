@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool DomainsHasBeenSet() const;
 
+                    /**
+                     * 获取重定向状态码，可取值301,302,307
+                     * @return RewriteCodes 重定向状态码，可取值301,302,307
+                     */
+                    std::vector<int64_t> GetRewriteCodes() const;
+
+                    /**
+                     * 设置重定向状态码，可取值301,302,307
+                     * @param RewriteCodes 重定向状态码，可取值301,302,307
+                     */
+                    void SetRewriteCodes(const std::vector<int64_t>& _rewriteCodes);
+
+                    /**
+                     * 判断参数 RewriteCodes 是否已赋值
+                     * @return RewriteCodes 是否已赋值
+                     */
+                    bool RewriteCodesHasBeenSet() const;
+
+                    /**
+                     * 获取重定向是否携带匹配的url
+                     * @return TakeUrls 重定向是否携带匹配的url
+                     */
+                    std::vector<bool> GetTakeUrls() const;
+
+                    /**
+                     * 设置重定向是否携带匹配的url
+                     * @param TakeUrls 重定向是否携带匹配的url
+                     */
+                    void SetTakeUrls(const std::vector<bool>& _takeUrls);
+
+                    /**
+                     * 判断参数 TakeUrls 是否已赋值
+                     * @return TakeUrls 是否已赋值
+                     */
+                    bool TakeUrlsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
+
+                    /**
+                     * 重定向状态码，可取值301,302,307
+                     */
+                    std::vector<int64_t> m_rewriteCodes;
+                    bool m_rewriteCodesHasBeenSet;
+
+                    /**
+                     * 重定向是否携带匹配的url
+                     */
+                    std::vector<bool> m_takeUrls;
+                    bool m_takeUrlsHasBeenSet;
 
                 };
             }

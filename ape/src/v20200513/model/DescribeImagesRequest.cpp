@@ -28,7 +28,8 @@ DescribeImagesRequest::DescribeImagesRequest() :
     m_limitHasBeenSet(false),
     m_keywordHasBeenSet(false),
     m_orientationHasBeenSet(false),
-    m_imageSenseTypeHasBeenSet(false)
+    m_imageSenseTypeHasBeenSet(false),
+    m_layeredGalleryIdsHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,19 @@ string DescribeImagesRequest::ToJsonString() const
         string key = "ImageSenseType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageSenseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_layeredGalleryIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LayeredGalleryIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_layeredGalleryIds.begin(); itr != m_layeredGalleryIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -165,6 +179,22 @@ void DescribeImagesRequest::SetImageSenseType(const string& _imageSenseType)
 bool DescribeImagesRequest::ImageSenseTypeHasBeenSet() const
 {
     return m_imageSenseTypeHasBeenSet;
+}
+
+vector<int64_t> DescribeImagesRequest::GetLayeredGalleryIds() const
+{
+    return m_layeredGalleryIds;
+}
+
+void DescribeImagesRequest::SetLayeredGalleryIds(const vector<int64_t>& _layeredGalleryIds)
+{
+    m_layeredGalleryIds = _layeredGalleryIds;
+    m_layeredGalleryIdsHasBeenSet = true;
+}
+
+bool DescribeImagesRequest::LayeredGalleryIdsHasBeenSet() const
+{
+    return m_layeredGalleryIdsHasBeenSet;
 }
 
 

@@ -63,6 +63,7 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/GetUploadFederationTokenResponse.h
   include/tencentcloud/gse/v20191112/model/DeleteScalingPolicyResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeFleetStatisticSummaryRequest.h
+  include/tencentcloud/gse/v20191112/model/Tag.h
   include/tencentcloud/gse/v20191112/model/PlayerDataMap.h
   include/tencentcloud/gse/v20191112/model/ResolveAliasResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeInstancesExtendResponse.h
@@ -239,6 +240,7 @@ set(gse_src
   src/v20191112/model/GetUploadFederationTokenResponse.cpp
   src/v20191112/model/DeleteScalingPolicyResponse.cpp
   src/v20191112/model/DescribeFleetStatisticSummaryRequest.cpp
+  src/v20191112/model/Tag.cpp
   src/v20191112/model/PlayerDataMap.cpp
   src/v20191112/model/ResolveAliasResponse.cpp
   src/v20191112/model/DescribeInstancesExtendResponse.cpp

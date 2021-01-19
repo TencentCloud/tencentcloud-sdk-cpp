@@ -64,20 +64,20 @@ namespace TencentCloud
                     /**
                      * 获取链接类型，取值有:
 <li>CLASS: 分类链接；</li>
-<li> MATERIAL：素材链接。</li>
+<li> MATERIAL：媒体文件链接。</li>
                      * @return Type 链接类型，取值有:
 <li>CLASS: 分类链接；</li>
-<li> MATERIAL：素材链接。</li>
+<li> MATERIAL：媒体文件链接。</li>
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置链接类型，取值有:
 <li>CLASS: 分类链接；</li>
-<li> MATERIAL：素材链接。</li>
+<li> MATERIAL：媒体文件链接。</li>
                      * @param Type 链接类型，取值有:
 <li>CLASS: 分类链接；</li>
-<li> MATERIAL：素材链接。</li>
+<li> MATERIAL：媒体文件链接。</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -106,14 +106,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取链接归属实体。
-                     * @return Owner 链接归属实体。
+                     * 获取链接归属者。
+                     * @return Owner 链接归属者。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置链接归属实体。
-                     * @param Owner 链接归属实体。
+                     * 设置链接归属者。
+                     * @param Owner 链接归属者。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -125,20 +125,20 @@ namespace TencentCloud
 
                     /**
                      * 获取目标资源Id。取值：
-<li>当 Type 为 MATERIAL 时填素材 ID；</li>
+<li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
                      * @return DestinationId 目标资源Id。取值：
-<li>当 Type 为 MATERIAL 时填素材 ID；</li>
+<li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
                      */
                     std::string GetDestinationId() const;
 
                     /**
                      * 设置目标资源Id。取值：
-<li>当 Type 为 MATERIAL 时填素材 ID；</li>
+<li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
                      * @param DestinationId 目标资源Id。取值：
-<li>当 Type 为 MATERIAL 时填素材 ID；</li>
+<li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
                      */
                     void SetDestinationId(const std::string& _destinationId);
@@ -214,7 +214,7 @@ namespace TencentCloud
                     /**
                      * 链接类型，取值有:
 <li>CLASS: 分类链接；</li>
-<li> MATERIAL：素材链接。</li>
+<li> MATERIAL：媒体文件链接。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -226,14 +226,14 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 链接归属实体。
+                     * 链接归属者。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
                      * 目标资源Id。取值：
-<li>当 Type 为 MATERIAL 时填素材 ID；</li>
+<li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
                      */
                     std::string m_destinationId;

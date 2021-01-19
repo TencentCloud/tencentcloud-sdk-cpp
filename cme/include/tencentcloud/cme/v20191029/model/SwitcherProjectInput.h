@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导播台停止时间。
-                     * @return StopTime 导播台停止时间。
+                     * 获取导播台停止时间，格式按照 ISO 8601 标准表示。若不填，该值默认为当前时间加七天。
+                     * @return StopTime 导播台停止时间，格式按照 ISO 8601 标准表示。若不填，该值默认为当前时间加七天。
                      */
                     std::string GetStopTime() const;
 
                     /**
-                     * 设置导播台停止时间。
-                     * @param StopTime 导播台停止时间。
+                     * 设置导播台停止时间，格式按照 ISO 8601 标准表示。若不填，该值默认为当前时间加七天。
+                     * @param StopTime 导播台停止时间，格式按照 ISO 8601 标准表示。若不填，该值默认为当前时间加七天。
                      */
                     void SetStopTime(const std::string& _stopTime);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool StopTimeHasBeenSet() const;
 
                     /**
-                     * 获取导播台主监输出配置信息。
-                     * @return PgmOutputConfig 导播台主监输出配置信息。
+                     * 获取导播台主监输出配置信息。若不填，默认输出 720P。
+                     * @return PgmOutputConfig 导播台主监输出配置信息。若不填，默认输出 720P。
                      */
                     SwitcherPgmOutputConfig GetPgmOutputConfig() const;
 
                     /**
-                     * 设置导播台主监输出配置信息。
-                     * @param PgmOutputConfig 导播台主监输出配置信息。
+                     * 设置导播台主监输出配置信息。若不填，默认输出 720P。
+                     * @param PgmOutputConfig 导播台主监输出配置信息。若不填，默认输出 720P。
                      */
                     void SetPgmOutputConfig(const SwitcherPgmOutputConfig& _pgmOutputConfig);
 
@@ -86,13 +86,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导播台停止时间。
+                     * 导播台停止时间，格式按照 ISO 8601 标准表示。若不填，该值默认为当前时间加七天。
                      */
                     std::string m_stopTime;
                     bool m_stopTimeHasBeenSet;
 
                     /**
-                     * 导播台主监输出配置信息。
+                     * 导播台主监输出配置信息。若不填，默认输出 720P。
                      */
                     SwitcherPgmOutputConfig m_pgmOutputConfig;
                     bool m_pgmOutputConfigHasBeenSet;

@@ -149,6 +149,8 @@
 #include <tencentcloud/mps/v20190612/model/ProcessLiveStreamResponse.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaRequest.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaResponse.h>
+#include <tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueRequest.h>
+#include <tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueResponse.h>
 #include <tencentcloud/mps/v20190612/model/ResetWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/ResetWorkflowResponse.h>
 
@@ -354,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ProcessMediaResponse> ProcessMediaOutcome;
                 typedef std::future<ProcessMediaOutcome> ProcessMediaOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ProcessMediaRequest&, ProcessMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaAsyncHandler;
+                typedef Outcome<Error, Model::RecognizeMediaForZhiXueResponse> RecognizeMediaForZhiXueOutcome;
+                typedef std::future<RecognizeMediaForZhiXueOutcome> RecognizeMediaForZhiXueOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::RecognizeMediaForZhiXueRequest&, RecognizeMediaForZhiXueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeMediaForZhiXueAsyncHandler;
                 typedef Outcome<Error, Model::ResetWorkflowResponse> ResetWorkflowOutcome;
                 typedef std::future<ResetWorkflowOutcome> ResetWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ResetWorkflowRequest&, ResetWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetWorkflowAsyncHandler;
@@ -963,6 +968,15 @@ namespace TencentCloud
                 ProcessMediaOutcome ProcessMedia(const Model::ProcessMediaRequest &request);
                 void ProcessMediaAsync(const Model::ProcessMediaRequest& request, const ProcessMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ProcessMediaOutcomeCallable ProcessMediaCallable(const Model::ProcessMediaRequest& request);
+
+                /**
+                 *智能媒体识别，包含表情和动作识别。仅用于智学，其他调用无效。
+                 * @param req RecognizeMediaForZhiXueRequest
+                 * @return RecognizeMediaForZhiXueOutcome
+                 */
+                RecognizeMediaForZhiXueOutcome RecognizeMediaForZhiXue(const Model::RecognizeMediaForZhiXueRequest &request);
+                void RecognizeMediaForZhiXueAsync(const Model::RecognizeMediaForZhiXueRequest& request, const RecognizeMediaForZhiXueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeMediaForZhiXueOutcomeCallable RecognizeMediaForZhiXueCallable(const Model::RecognizeMediaForZhiXueRequest& request);
 
                 /**
                  *重新设置一个已经存在且处于禁用状态的工作流。

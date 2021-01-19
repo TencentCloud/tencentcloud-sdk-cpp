@@ -29,7 +29,8 @@ ExportVideoEditProjectRequest::ExportVideoEditProjectRequest() :
     m_definitionHasBeenSet(false),
     m_exportDestinationHasBeenSet(false),
     m_cMEExportInfoHasBeenSet(false),
-    m_vODExportInfoHasBeenSet(false)
+    m_vODExportInfoHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string ExportVideoEditProjectRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_vODExportInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -192,6 +201,22 @@ void ExportVideoEditProjectRequest::SetVODExportInfo(const VODExportInfo& _vODEx
 bool ExportVideoEditProjectRequest::VODExportInfoHasBeenSet() const
 {
     return m_vODExportInfoHasBeenSet;
+}
+
+string ExportVideoEditProjectRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ExportVideoEditProjectRequest::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ExportVideoEditProjectRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

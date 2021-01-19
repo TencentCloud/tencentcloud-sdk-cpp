@@ -77,14 +77,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取导播台输出宽。
-                     * @return Width 导播台输出宽。
+                     * 获取导播台输出宽，单位：像素。
+                     * @return Width 导播台输出宽，单位：像素。
                      */
                     uint64_t GetWidth() const;
 
                     /**
-                     * 设置导播台输出宽。
-                     * @param Width 导播台输出宽。
+                     * 设置导播台输出宽，单位：像素。
+                     * @param Width 导播台输出宽，单位：像素。
                      */
                     void SetWidth(const uint64_t& _width);
 
@@ -95,14 +95,14 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取导播台输出高。
-                     * @return Height 导播台输出高。
+                     * 获取导播台输出高，单位：像素。
+                     * @return Height 导播台输出高，单位：像素。
                      */
                     uint64_t GetHeight() const;
 
                     /**
-                     * 设置导播台输出高。
-                     * @param Height 导播台输出高。
+                     * 设置导播台输出高，单位：像素。
+                     * @param Height 导播台输出高，单位：像素。
                      */
                     void SetHeight(const uint64_t& _height);
 
@@ -113,14 +113,14 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取导播台输出帧率。
-                     * @return Fps 导播台输出帧率。
+                     * 获取导播台输出帧率，单位：帧/秒
+                     * @return Fps 导播台输出帧率，单位：帧/秒
                      */
                     uint64_t GetFps() const;
 
                     /**
-                     * 设置导播台输出帧率。
-                     * @param Fps 导播台输出帧率。
+                     * 设置导播台输出帧率，单位：帧/秒
+                     * @param Fps 导播台输出帧率，单位：帧/秒
                      */
                     void SetFps(const uint64_t& _fps);
 
@@ -131,14 +131,14 @@ namespace TencentCloud
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取导播台输出码率。
-                     * @return BitRate 导播台输出码率。
+                     * 获取导播台输出码率， 单位：bit/s。
+                     * @return BitRate 导播台输出码率， 单位：bit/s。
                      */
                     uint64_t GetBitRate() const;
 
                     /**
-                     * 设置导播台输出码率。
-                     * @param BitRate 导播台输出码率。
+                     * 设置导播台输出码率， 单位：bit/s。
+                     * @param BitRate 导播台输出码率， 单位：bit/s。
                      */
                     void SetBitRate(const uint64_t& _bitRate);
 
@@ -160,25 +160,25 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 导播台输出宽。
+                     * 导播台输出宽，单位：像素。
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 导播台输出高。
+                     * 导播台输出高，单位：像素。
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 导播台输出帧率。
+                     * 导播台输出帧率，单位：帧/秒
                      */
                     uint64_t m_fps;
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 导播台输出码率。
+                     * 导播台输出码率， 单位：bit/s。
                      */
                     uint64_t m_bitRate;
                     bool m_bitRateHasBeenSet;

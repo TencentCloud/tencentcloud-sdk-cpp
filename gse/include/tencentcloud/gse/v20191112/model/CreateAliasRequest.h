@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/gse/v20191112/model/RoutingStrategy.h>
+#include <tencentcloud/gse/v20191112/model/Tag.h>
 
 
 namespace TencentCloud
@@ -97,6 +98,24 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取标签列表，最大长度50组
+                     * @return Tags 标签列表，最大长度50组
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签列表，最大长度50组
+                     * @param Tags 标签列表，最大长度50组
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +135,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 标签列表，最大长度50组
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -93,6 +93,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/UserDefineAsrTextReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/DescribeWordSamplesResponse.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskFrameTagOutput.h
+  include/tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueRequest.h
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskAdaptiveDynamicStreamingResult.h
   include/tencentcloud/mps/v20190612/model/OcrWordsConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/WatermarkTemplate.h
@@ -172,6 +173,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ImageWatermarkTemplate.h
   include/tencentcloud/mps/v20190612/model/AsrWordsConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/LiveStreamAsrWordsRecognitionResult.h
+  include/tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueResponse.h
   include/tencentcloud/mps/v20190612/model/AiSamplePerson.h
   include/tencentcloud/mps/v20190612/model/DescribeWorkflowsResponse.h
   include/tencentcloud/mps/v20190612/model/AsrWordsConfigureInfoForUpdate.h
@@ -223,6 +225,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/ProhibitedAsrReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/AiReviewPoliticalAsrTaskInput.h
+  include/tencentcloud/mps/v20190612/model/ActionConfigInfo.h
   include/tencentcloud/mps/v20190612/model/MediaAiAnalysisTagItem.h
   include/tencentcloud/mps/v20190612/model/TranscodeTemplate.h
   include/tencentcloud/mps/v20190612/model/PornOcrReviewTemplateInfo.h
@@ -276,6 +279,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/LiveStreamOcrFullTextRecognitionResult.h
   include/tencentcloud/mps/v20190612/model/ModifyTranscodeTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/MediaMetaData.h
+  include/tencentcloud/mps/v20190612/model/ExpressionConfigInfo.h
   include/tencentcloud/mps/v20190612/model/VideoTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/CreateContentReviewTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesRequest.h
@@ -453,6 +457,7 @@ set(mps_src
   src/v20190612/model/UserDefineAsrTextReviewTemplateInfo.cpp
   src/v20190612/model/DescribeWordSamplesResponse.cpp
   src/v20190612/model/AiAnalysisTaskFrameTagOutput.cpp
+  src/v20190612/model/RecognizeMediaForZhiXueRequest.cpp
   src/v20190612/model/MediaProcessTaskAdaptiveDynamicStreamingResult.cpp
   src/v20190612/model/OcrWordsConfigureInfoForUpdate.cpp
   src/v20190612/model/WatermarkTemplate.cpp
@@ -532,6 +537,7 @@ set(mps_src
   src/v20190612/model/ImageWatermarkTemplate.cpp
   src/v20190612/model/AsrWordsConfigureInfo.cpp
   src/v20190612/model/LiveStreamAsrWordsRecognitionResult.cpp
+  src/v20190612/model/RecognizeMediaForZhiXueResponse.cpp
   src/v20190612/model/AiSamplePerson.cpp
   src/v20190612/model/DescribeWorkflowsResponse.cpp
   src/v20190612/model/AsrWordsConfigureInfoForUpdate.cpp
@@ -583,6 +589,7 @@ set(mps_src
   src/v20190612/model/CreateSampleSnapshotTemplateResponse.cpp
   src/v20190612/model/ProhibitedAsrReviewTemplateInfo.cpp
   src/v20190612/model/AiReviewPoliticalAsrTaskInput.cpp
+  src/v20190612/model/ActionConfigInfo.cpp
   src/v20190612/model/MediaAiAnalysisTagItem.cpp
   src/v20190612/model/TranscodeTemplate.cpp
   src/v20190612/model/PornOcrReviewTemplateInfo.cpp
@@ -636,6 +643,7 @@ set(mps_src
   src/v20190612/model/LiveStreamOcrFullTextRecognitionResult.cpp
   src/v20190612/model/ModifyTranscodeTemplateResponse.cpp
   src/v20190612/model/MediaMetaData.cpp
+  src/v20190612/model/ExpressionConfigInfo.cpp
   src/v20190612/model/VideoTemplateInfoForUpdate.cpp
   src/v20190612/model/CreateContentReviewTemplateRequest.cpp
   src/v20190612/model/DescribeContentReviewTemplatesRequest.cpp

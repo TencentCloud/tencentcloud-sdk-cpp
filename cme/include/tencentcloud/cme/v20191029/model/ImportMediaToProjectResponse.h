@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取素材 Id。
-                     * @return MaterialId 素材 Id。
+                     * 获取媒体 Id。
+                     * @return MaterialId 媒体 Id。
                      */
                     std::string GetMaterialId() const;
 
@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool MaterialIdHasBeenSet() const;
 
                     /**
-                     * 获取素材预处理任务 ID，如果未指定发起预处理任务则为空。
-                     * @return TaskId 素材预处理任务 ID，如果未指定发起预处理任务则为空。
+                     * 获取媒体预处理任务 ID，如果未指定发起预处理任务则为空。
+                     * @return TaskId 媒体预处理任务 ID，如果未指定发起预处理任务则为空。
                      */
                     std::string GetTaskId() const;
 
@@ -69,13 +69,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 素材 Id。
+                     * 媒体 Id。
                      */
                     std::string m_materialId;
                     bool m_materialIdHasBeenSet;
 
                     /**
-                     * 素材预处理任务 ID，如果未指定发起预处理任务则为空。
+                     * 媒体预处理任务 ID，如果未指定发起预处理任务则为空。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

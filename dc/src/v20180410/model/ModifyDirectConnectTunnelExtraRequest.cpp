@@ -37,7 +37,8 @@ ModifyDirectConnectTunnelExtraRequest::ModifyDirectConnectTunnelExtraRequest() :
     m_nqaEnableHasBeenSet(false),
     m_bfdInfoHasBeenSet(false),
     m_nqaInfoHasBeenSet(false),
-    m_iPv6EnableHasBeenSet(false)
+    m_iPv6EnableHasBeenSet(false),
+    m_customerIDCRoutesHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,21 @@ string ModifyDirectConnectTunnelExtraRequest::ToJsonString() const
         string key = "IPv6Enable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_iPv6Enable, allocator);
+    }
+
+    if (m_customerIDCRoutesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CustomerIDCRoutes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customerIDCRoutes.begin(); itr != m_customerIDCRoutes.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -394,6 +410,22 @@ void ModifyDirectConnectTunnelExtraRequest::SetIPv6Enable(const int64_t& _iPv6En
 bool ModifyDirectConnectTunnelExtraRequest::IPv6EnableHasBeenSet() const
 {
     return m_iPv6EnableHasBeenSet;
+}
+
+vector<RouteFilterPrefix> ModifyDirectConnectTunnelExtraRequest::GetCustomerIDCRoutes() const
+{
+    return m_customerIDCRoutes;
+}
+
+void ModifyDirectConnectTunnelExtraRequest::SetCustomerIDCRoutes(const vector<RouteFilterPrefix>& _customerIDCRoutes)
+{
+    m_customerIDCRoutes = _customerIDCRoutes;
+    m_customerIDCRoutesHasBeenSet = true;
+}
+
+bool ModifyDirectConnectTunnelExtraRequest::CustomerIDCRoutesHasBeenSet() const
+{
+    return m_customerIDCRoutesHasBeenSet;
 }
 
 

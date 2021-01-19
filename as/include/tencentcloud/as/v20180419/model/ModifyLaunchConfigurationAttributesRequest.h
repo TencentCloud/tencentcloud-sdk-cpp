@@ -201,13 +201,17 @@ namespace TencentCloud
 
                     /**
                      * 获取公网带宽相关信息设置。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      * @return InternetAccessible 公网带宽相关信息设置。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
                      * 设置公网带宽相关信息设置。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      * @param InternetAccessible 公网带宽相关信息设置。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
 
@@ -250,16 +254,20 @@ namespace TencentCloud
                     /**
                      * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
 若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
 若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
                      * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
 若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
 若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
 
@@ -272,16 +280,20 @@ namespace TencentCloud
                     /**
                      * 获取实例的市场相关选项，如竞价实例相关参数。
 若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      * @return InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数。
 若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      */
                     InstanceMarketOptionsRequest GetInstanceMarketOptions() const;
 
                     /**
                      * 设置实例的市场相关选项，如竞价实例相关参数。
 若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      * @param InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数。
 若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      */
                     void SetInstanceMarketOptions(const InstanceMarketOptionsRequest& _instanceMarketOptions);
 
@@ -344,6 +356,7 @@ namespace TencentCloud
 
                     /**
                      * 公网带宽相关信息设置。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      */
                     InternetAccessible m_internetAccessible;
                     bool m_internetAccessibleHasBeenSet;
@@ -360,6 +373,7 @@ namespace TencentCloud
                     /**
                      * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
 若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      */
                     InstanceChargePrepaid m_instanceChargePrepaid;
                     bool m_instanceChargePrepaidHasBeenSet;
@@ -367,6 +381,7 @@ namespace TencentCloud
                     /**
                      * 实例的市场相关选项，如竞价实例相关参数。
 若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。
+本字段属复杂类型，修改时采取整字段全覆盖模式。即只修改复杂类型内部一个子字段时，也请提供全部所需子字段。
                      */
                     InstanceMarketOptionsRequest m_instanceMarketOptions;
                     bool m_instanceMarketOptionsHasBeenSet;

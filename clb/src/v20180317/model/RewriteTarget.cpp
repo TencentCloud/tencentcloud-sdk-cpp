@@ -23,7 +23,10 @@ using namespace std;
 
 RewriteTarget::RewriteTarget() :
     m_targetListenerIdHasBeenSet(false),
-    m_targetLocationIdHasBeenSet(false)
+    m_targetLocationIdHasBeenSet(false),
+    m_rewriteCodeHasBeenSet(false),
+    m_takeUrlHasBeenSet(false),
+    m_rewriteTypeHasBeenSet(false)
 {
 }
 
@@ -52,6 +55,36 @@ CoreInternalOutcome RewriteTarget::Deserialize(const Value &value)
         m_targetLocationIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RewriteCode") && !value["RewriteCode"].IsNull())
+    {
+        if (!value["RewriteCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `RewriteTarget.RewriteCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rewriteCode = value["RewriteCode"].GetInt64();
+        m_rewriteCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TakeUrl") && !value["TakeUrl"].IsNull())
+    {
+        if (!value["TakeUrl"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `RewriteTarget.TakeUrl` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_takeUrl = value["TakeUrl"].GetBool();
+        m_takeUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("RewriteType") && !value["RewriteType"].IsNull())
+    {
+        if (!value["RewriteType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RewriteTarget.RewriteType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rewriteType = string(value["RewriteType"].GetString());
+        m_rewriteTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +106,30 @@ void RewriteTarget::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "TargetLocationId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_targetLocationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rewriteCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RewriteCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rewriteCode, allocator);
+    }
+
+    if (m_takeUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TakeUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_takeUrl, allocator);
+    }
+
+    if (m_rewriteTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RewriteType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_rewriteType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -108,5 +165,53 @@ void RewriteTarget::SetTargetLocationId(const string& _targetLocationId)
 bool RewriteTarget::TargetLocationIdHasBeenSet() const
 {
     return m_targetLocationIdHasBeenSet;
+}
+
+int64_t RewriteTarget::GetRewriteCode() const
+{
+    return m_rewriteCode;
+}
+
+void RewriteTarget::SetRewriteCode(const int64_t& _rewriteCode)
+{
+    m_rewriteCode = _rewriteCode;
+    m_rewriteCodeHasBeenSet = true;
+}
+
+bool RewriteTarget::RewriteCodeHasBeenSet() const
+{
+    return m_rewriteCodeHasBeenSet;
+}
+
+bool RewriteTarget::GetTakeUrl() const
+{
+    return m_takeUrl;
+}
+
+void RewriteTarget::SetTakeUrl(const bool& _takeUrl)
+{
+    m_takeUrl = _takeUrl;
+    m_takeUrlHasBeenSet = true;
+}
+
+bool RewriteTarget::TakeUrlHasBeenSet() const
+{
+    return m_takeUrlHasBeenSet;
+}
+
+string RewriteTarget::GetRewriteType() const
+{
+    return m_rewriteType;
+}
+
+void RewriteTarget::SetRewriteType(const string& _rewriteType)
+{
+    m_rewriteType = _rewriteType;
+    m_rewriteTypeHasBeenSet = true;
+}
+
+bool RewriteTarget::RewriteTypeHasBeenSet() const
+{
+    return m_rewriteTypeHasBeenSet;
 }
 

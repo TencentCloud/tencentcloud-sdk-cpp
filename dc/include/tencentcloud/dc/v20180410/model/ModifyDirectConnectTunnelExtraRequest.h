@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool BgpPeerHasBeenSet() const;
 
                     /**
-                     * 获取用户侧网段地址
-                     * @return RouteFilterPrefixes 用户侧网段地址
+                     * 获取用户侧过滤网段地址
+                     * @return RouteFilterPrefixes 用户侧过滤网段地址
                      */
                     RouteFilterPrefix GetRouteFilterPrefixes() const;
 
                     /**
-                     * 设置用户侧网段地址
-                     * @param RouteFilterPrefixes 用户侧网段地址
+                     * 设置用户侧过滤网段地址
+                     * @param RouteFilterPrefixes 用户侧过滤网段地址
                      */
                     void SetRouteFilterPrefixes(const RouteFilterPrefix& _routeFilterPrefixes);
 
@@ -302,6 +302,24 @@ namespace TencentCloud
                      */
                     bool IPv6EnableHasBeenSet() const;
 
+                    /**
+                     * 获取去往用户侧的路由信息
+                     * @return CustomerIDCRoutes 去往用户侧的路由信息
+                     */
+                    std::vector<RouteFilterPrefix> GetCustomerIDCRoutes() const;
+
+                    /**
+                     * 设置去往用户侧的路由信息
+                     * @param CustomerIDCRoutes 去往用户侧的路由信息
+                     */
+                    void SetCustomerIDCRoutes(const std::vector<RouteFilterPrefix>& _customerIDCRoutes);
+
+                    /**
+                     * 判断参数 CustomerIDCRoutes 是否已赋值
+                     * @return CustomerIDCRoutes 是否已赋值
+                     */
+                    bool CustomerIDCRoutesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,7 +341,7 @@ namespace TencentCloud
                     bool m_bgpPeerHasBeenSet;
 
                     /**
-                     * 用户侧网段地址
+                     * 用户侧过滤网段地址
                      */
                     RouteFilterPrefix m_routeFilterPrefixes;
                     bool m_routeFilterPrefixesHasBeenSet;
@@ -388,6 +406,12 @@ namespace TencentCloud
                      */
                     int64_t m_iPv6Enable;
                     bool m_iPv6EnableHasBeenSet;
+
+                    /**
+                     * 去往用户侧的路由信息
+                     */
+                    std::vector<RouteFilterPrefix> m_customerIDCRoutes;
+                    bool m_customerIDCRoutesHasBeenSet;
 
                 };
             }

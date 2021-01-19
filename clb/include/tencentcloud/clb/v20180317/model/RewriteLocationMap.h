@@ -82,6 +82,60 @@ namespace TencentCloud
                      */
                     bool TargetLocationIdHasBeenSet() const;
 
+                    /**
+                     * 获取重定向状态码，可取值301,302,307
+                     * @return RewriteCode 重定向状态码，可取值301,302,307
+                     */
+                    int64_t GetRewriteCode() const;
+
+                    /**
+                     * 设置重定向状态码，可取值301,302,307
+                     * @param RewriteCode 重定向状态码，可取值301,302,307
+                     */
+                    void SetRewriteCode(const int64_t& _rewriteCode);
+
+                    /**
+                     * 判断参数 RewriteCode 是否已赋值
+                     * @return RewriteCode 是否已赋值
+                     */
+                    bool RewriteCodeHasBeenSet() const;
+
+                    /**
+                     * 获取重定向是否携带匹配的url，配置RewriteCode时必填
+                     * @return TakeUrl 重定向是否携带匹配的url，配置RewriteCode时必填
+                     */
+                    bool GetTakeUrl() const;
+
+                    /**
+                     * 设置重定向是否携带匹配的url，配置RewriteCode时必填
+                     * @param TakeUrl 重定向是否携带匹配的url，配置RewriteCode时必填
+                     */
+                    void SetTakeUrl(const bool& _takeUrl);
+
+                    /**
+                     * 判断参数 TakeUrl 是否已赋值
+                     * @return TakeUrl 是否已赋值
+                     */
+                    bool TakeUrlHasBeenSet() const;
+
+                    /**
+                     * 获取源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填
+                     * @return SourceDomain 源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填
+                     */
+                    std::string GetSourceDomain() const;
+
+                    /**
+                     * 设置源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填
+                     * @param SourceDomain 源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填
+                     */
+                    void SetSourceDomain(const std::string& _sourceDomain);
+
+                    /**
+                     * 判断参数 SourceDomain 是否已赋值
+                     * @return SourceDomain 是否已赋值
+                     */
+                    bool SourceDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +149,24 @@ namespace TencentCloud
                      */
                     std::string m_targetLocationId;
                     bool m_targetLocationIdHasBeenSet;
+
+                    /**
+                     * 重定向状态码，可取值301,302,307
+                     */
+                    int64_t m_rewriteCode;
+                    bool m_rewriteCodeHasBeenSet;
+
+                    /**
+                     * 重定向是否携带匹配的url，配置RewriteCode时必填
+                     */
+                    bool m_takeUrl;
+                    bool m_takeUrlHasBeenSet;
+
+                    /**
+                     * 源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填
+                     */
+                    std::string m_sourceDomain;
+                    bool m_sourceDomainHasBeenSet;
 
                 };
             }

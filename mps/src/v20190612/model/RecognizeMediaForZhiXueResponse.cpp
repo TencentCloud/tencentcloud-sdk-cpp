@@ -14,24 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h>
+#include <tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcb::V20180608::Model;
+using namespace TencentCloud::Mps::V20190612::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeQuotaDataResponse::DescribeQuotaDataResponse() :
-    m_metricNameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_subValueHasBeenSet(false)
+RecognizeMediaForZhiXueResponse::RecognizeMediaForZhiXueResponse() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeQuotaDataResponse::Deserialize(const string &payload)
+CoreInternalOutcome RecognizeMediaForZhiXueResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -65,34 +63,14 @@ CoreInternalOutcome DescribeQuotaDataResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("MetricName") && !rsp["MetricName"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["MetricName"].IsString())
+        if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_metricName = string(rsp["MetricName"].GetString());
-        m_metricNameHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Value") && !rsp["Value"].IsNull())
-    {
-        if (!rsp["Value"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `Value` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_value = rsp["Value"].GetInt64();
-        m_valueHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("SubValue") && !rsp["SubValue"].IsNull())
-    {
-        if (!rsp["SubValue"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `SubValue` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_subValue = string(rsp["SubValue"].GetString());
-        m_subValueHasBeenSet = true;
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
     }
 
 
@@ -100,34 +78,14 @@ CoreInternalOutcome DescribeQuotaDataResponse::Deserialize(const string &payload
 }
 
 
-string DescribeQuotaDataResponse::GetMetricName() const
+string RecognizeMediaForZhiXueResponse::GetTaskId() const
 {
-    return m_metricName;
+    return m_taskId;
 }
 
-bool DescribeQuotaDataResponse::MetricNameHasBeenSet() const
+bool RecognizeMediaForZhiXueResponse::TaskIdHasBeenSet() const
 {
-    return m_metricNameHasBeenSet;
-}
-
-int64_t DescribeQuotaDataResponse::GetValue() const
-{
-    return m_value;
-}
-
-bool DescribeQuotaDataResponse::ValueHasBeenSet() const
-{
-    return m_valueHasBeenSet;
-}
-
-string DescribeQuotaDataResponse::GetSubValue() const
-{
-    return m_subValue;
-}
-
-bool DescribeQuotaDataResponse::SubValueHasBeenSet() const
-{
-    return m_subValueHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

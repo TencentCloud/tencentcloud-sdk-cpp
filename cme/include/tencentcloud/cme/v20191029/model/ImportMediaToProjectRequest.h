@@ -110,14 +110,14 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取云点播媒资文件Id，当 SourceType 取值 VOD 或者缺省的时候必填。
-                     * @return VodFileId 云点播媒资文件Id，当 SourceType 取值 VOD 或者缺省的时候必填。
+                     * 获取云点播媒资文件 Id，当 SourceType 取值 VOD 或者缺省的时候必填。
+                     * @return VodFileId 云点播媒资文件 Id，当 SourceType 取值 VOD 或者缺省的时候必填。
                      */
                     std::string GetVodFileId() const;
 
                     /**
-                     * 设置云点播媒资文件Id，当 SourceType 取值 VOD 或者缺省的时候必填。
-                     * @param VodFileId 云点播媒资文件Id，当 SourceType 取值 VOD 或者缺省的时候必填。
+                     * 设置云点播媒资文件 Id，当 SourceType 取值 VOD 或者缺省的时候必填。
+                     * @param VodFileId 云点播媒资文件 Id，当 SourceType 取值 VOD 或者缺省的时候必填。
                      */
                     void SetVodFileId(const std::string& _vodFileId);
 
@@ -189,6 +189,24 @@ namespace TencentCloud
                      */
                     bool PreProcessDefinitionHasBeenSet() const;
 
+                    /**
+                     * 获取操作者。填写用户的 Id，用于标识调用者及校验项目和媒体文件访问权限。
+                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验项目和媒体文件访问权限。
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置操作者。填写用户的 Id，用于标识调用者及校验项目和媒体文件访问权限。
+                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验项目和媒体文件访问权限。
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,7 +231,7 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 云点播媒资文件Id，当 SourceType 取值 VOD 或者缺省的时候必填。
+                     * 云点播媒资文件 Id，当 SourceType 取值 VOD 或者缺省的时候必填。
                      */
                     std::string m_vodFileId;
                     bool m_vodFileIdHasBeenSet;
@@ -237,6 +255,12 @@ namespace TencentCloud
                      */
                     int64_t m_preProcessDefinition;
                     bool m_preProcessDefinitionHasBeenSet;
+
+                    /**
+                     * 操作者。填写用户的 Id，用于标识调用者及校验项目和媒体文件访问权限。
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

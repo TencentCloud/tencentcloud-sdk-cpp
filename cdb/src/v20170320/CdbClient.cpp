@@ -4684,6 +4684,49 @@ CdbClient::StopRollbackOutcomeCallable CdbClient::StopRollbackCallable(const Sto
     return task->get_future();
 }
 
+CdbClient::SwitchDBInstanceMasterSlaveOutcome CdbClient::SwitchDBInstanceMasterSlave(const SwitchDBInstanceMasterSlaveRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchDBInstanceMasterSlave");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchDBInstanceMasterSlaveResponse rsp = SwitchDBInstanceMasterSlaveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchDBInstanceMasterSlaveOutcome(rsp);
+        else
+            return SwitchDBInstanceMasterSlaveOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchDBInstanceMasterSlaveOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::SwitchDBInstanceMasterSlaveAsync(const SwitchDBInstanceMasterSlaveRequest& request, const SwitchDBInstanceMasterSlaveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchDBInstanceMasterSlave(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::SwitchDBInstanceMasterSlaveOutcomeCallable CdbClient::SwitchDBInstanceMasterSlaveCallable(const SwitchDBInstanceMasterSlaveRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchDBInstanceMasterSlaveOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchDBInstanceMasterSlave(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::SwitchForUpgradeOutcome CdbClient::SwitchForUpgrade(const SwitchForUpgradeRequest &request)
 {
     auto outcome = MakeRequest(request, "SwitchForUpgrade");

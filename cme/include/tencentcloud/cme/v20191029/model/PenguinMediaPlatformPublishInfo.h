@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取视频分类，详见企鹅号官网视频分类。
-                     * @return Category 视频分类，详见企鹅号官网视频分类。
+                     * 获取视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。
+                     * @return Category 视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。
                      */
                     int64_t GetCategory() const;
 
                     /**
-                     * 设置视频分类，详见企鹅号官网视频分类。
-                     * @param Category 视频分类，详见企鹅号官网视频分类。
+                     * 设置视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。
+                     * @param Category 视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。
                      */
                     void SetCategory(const int64_t& _category);
 
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 视频分类，详见企鹅号官网视频分类。
+                     * 视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。
                      */
                     int64_t m_category;
                     bool m_categoryHasBeenSet;

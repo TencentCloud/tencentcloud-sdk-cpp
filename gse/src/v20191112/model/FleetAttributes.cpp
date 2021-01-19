@@ -37,7 +37,8 @@ FleetAttributes::FleetAttributes() :
     m_stoppedActionsHasBeenSet(false),
     m_terminationTimeHasBeenSet(false),
     m_gameServerSessionProtectionTimeLimitHasBeenSet(false),
-    m_billingStatusHasBeenSet(false)
+    m_billingStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,26 @@ CoreInternalOutcome FleetAttributes::Deserialize(const Value &value)
         m_billingStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `FleetAttributes.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +376,21 @@ void FleetAttributes::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "BillingStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_billingStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -614,5 +650,21 @@ void FleetAttributes::SetBillingStatus(const string& _billingStatus)
 bool FleetAttributes::BillingStatusHasBeenSet() const
 {
     return m_billingStatusHasBeenSet;
+}
+
+vector<Tag> FleetAttributes::GetTags() const
+{
+    return m_tags;
+}
+
+void FleetAttributes::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool FleetAttributes::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

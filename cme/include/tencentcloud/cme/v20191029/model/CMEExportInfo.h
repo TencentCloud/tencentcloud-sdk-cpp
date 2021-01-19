@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导出的归属者。
-                     * @return Owner 导出的归属者。
+                     * 获取导出媒体归属，个人或团队。
+                     * @return Owner 导出媒体归属，个人或团队。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置导出的归属者。
-                     * @param Owner 导出的归属者。
+                     * 设置导出媒体归属，个人或团队。
+                     * @param Owner 导出媒体归属，个人或团队。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取导出的素材名称，不得超过30个字符。
-                     * @return Name 导出的素材名称，不得超过30个字符。
+                     * 获取导出的媒体名称，不得超过30个字符。
+                     * @return Name 导出的媒体名称，不得超过30个字符。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置导出的素材名称，不得超过30个字符。
-                     * @param Name 导出的素材名称，不得超过30个字符。
+                     * 设置导出的媒体名称，不得超过30个字符。
+                     * @param Name 导出的媒体名称，不得超过30个字符。
                      */
                     void SetName(const std::string& _name);
 
@@ -85,14 +85,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取导出的素材信息，不得超过50个字符。
-                     * @return Description 导出的素材信息，不得超过50个字符。
+                     * 获取导出的媒体信息，不得超过50个字符。
+                     * @return Description 导出的媒体信息，不得超过50个字符。
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置导出的素材信息，不得超过50个字符。
-                     * @param Description 导出的素材信息，不得超过50个字符。
+                     * 设置导出的媒体信息，不得超过50个字符。
+                     * @param Description 导出的媒体信息，不得超过50个字符。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取导出的素材分类路径，长度不能超过15字符。
-                     * @return ClassPath 导出的素材分类路径，长度不能超过15字符。
+                     * 获取导出的媒体分类路径，长度不能超过15字符。
+                     * @return ClassPath 导出的媒体分类路径，长度不能超过15字符。
                      */
                     std::string GetClassPath() const;
 
                     /**
-                     * 设置导出的素材分类路径，长度不能超过15字符。
-                     * @param ClassPath 导出的素材分类路径，长度不能超过15字符。
+                     * 设置导出的媒体分类路径，长度不能超过15字符。
+                     * @param ClassPath 导出的媒体分类路径，长度不能超过15字符。
                      */
                     void SetClassPath(const std::string& _classPath);
 
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取导出的素材标签，单个标签不得超过10个字符。
-                     * @return TagSet 导出的素材标签，单个标签不得超过10个字符。
+                     * 获取导出的媒体标签，单个标签不得超过10个字符。
+                     * @return TagSet 导出的媒体标签，单个标签不得超过10个字符。
                      */
                     std::vector<std::string> GetTagSet() const;
 
                     /**
-                     * 设置导出的素材标签，单个标签不得超过10个字符。
-                     * @param TagSet 导出的素材标签，单个标签不得超过10个字符。
+                     * 设置导出的媒体标签，单个标签不得超过10个字符。
+                     * @param TagSet 导出的媒体标签，单个标签不得超过10个字符。
                      */
                     void SetTagSet(const std::vector<std::string>& _tagSet);
 
@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台发布信息列表。
-                     * @return ThirdPartyPublishInfos 第三方平台发布信息列表。
+                     * 获取第三方平台发布信息列表。暂未正式对外，请勿使用。
+                     * @return ThirdPartyPublishInfos 第三方平台发布信息列表。暂未正式对外，请勿使用。
                      */
                     std::vector<ThirdPartyPublishInfo> GetThirdPartyPublishInfos() const;
 
                     /**
-                     * 设置第三方平台发布信息列表。
-                     * @param ThirdPartyPublishInfos 第三方平台发布信息列表。
+                     * 设置第三方平台发布信息列表。暂未正式对外，请勿使用。
+                     * @param ThirdPartyPublishInfos 第三方平台发布信息列表。暂未正式对外，请勿使用。
                      */
                     void SetThirdPartyPublishInfos(const std::vector<ThirdPartyPublishInfo>& _thirdPartyPublishInfos);
 
@@ -159,37 +159,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导出的归属者。
+                     * 导出媒体归属，个人或团队。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 导出的素材名称，不得超过30个字符。
+                     * 导出的媒体名称，不得超过30个字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 导出的素材信息，不得超过50个字符。
+                     * 导出的媒体信息，不得超过50个字符。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 导出的素材分类路径，长度不能超过15字符。
+                     * 导出的媒体分类路径，长度不能超过15字符。
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;
 
                     /**
-                     * 导出的素材标签，单个标签不得超过10个字符。
+                     * 导出的媒体标签，单个标签不得超过10个字符。
                      */
                     std::vector<std::string> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 第三方平台发布信息列表。
+                     * 第三方平台发布信息列表。暂未正式对外，请勿使用。
                      */
                     std::vector<ThirdPartyPublishInfo> m_thirdPartyPublishInfos;
                     bool m_thirdPartyPublishInfosHasBeenSet;

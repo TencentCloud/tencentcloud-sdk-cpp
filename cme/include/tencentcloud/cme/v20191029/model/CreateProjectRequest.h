@@ -114,40 +114,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取画布宽高比，取值有：
-<li>16:9；</li>
-<li>9:16。</li>
-                     * @return AspectRatio 画布宽高比，取值有：
-<li>16:9；</li>
-<li>9:16。</li>
-                     */
-                    std::string GetAspectRatio() const;
-
-                    /**
-                     * 设置画布宽高比，取值有：
-<li>16:9；</li>
-<li>9:16。</li>
-                     * @param AspectRatio 画布宽高比，取值有：
-<li>16:9；</li>
-<li>9:16。</li>
-                     */
-                    void SetAspectRatio(const std::string& _aspectRatio);
-
-                    /**
-                     * 判断参数 AspectRatio 是否已赋值
-                     * @return AspectRatio 是否已赋值
-                     */
-                    bool AspectRatioHasBeenSet() const;
-
-                    /**
-                     * 获取归属者。
-                     * @return Owner 归属者。
+                     * 获取项目归属者。
+                     * @return Owner 项目归属者。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置归属者。
-                     * @param Owner 归属者。
+                     * 设置项目归属者。
+                     * @param Owner 项目归属者。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -156,6 +130,36 @@ namespace TencentCloud
                      * @return Owner 是否已赋值
                      */
                     bool OwnerHasBeenSet() const;
+
+                    /**
+                     * 获取画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16。</li>
+该字段即将废弃，当项目类型为 VIDEO_EDIT 时，请在 VideoEditProjectInput 信息中填写该值；当项目类型为 VIDEO_SEGMENTATION 时，请在VideoSegmentationProjectInput 中填写该值。其他项目类型可不填。
+                     * @return AspectRatio 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16。</li>
+该字段即将废弃，当项目类型为 VIDEO_EDIT 时，请在 VideoEditProjectInput 信息中填写该值；当项目类型为 VIDEO_SEGMENTATION 时，请在VideoSegmentationProjectInput 中填写该值。其他项目类型可不填。
+                     */
+                    std::string GetAspectRatio() const;
+
+                    /**
+                     * 设置画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16。</li>
+该字段即将废弃，当项目类型为 VIDEO_EDIT 时，请在 VideoEditProjectInput 信息中填写该值；当项目类型为 VIDEO_SEGMENTATION 时，请在VideoSegmentationProjectInput 中填写该值。其他项目类型可不填。
+                     * @param AspectRatio 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16。</li>
+该字段即将废弃，当项目类型为 VIDEO_EDIT 时，请在 VideoEditProjectInput 信息中填写该值；当项目类型为 VIDEO_SEGMENTATION 时，请在VideoSegmentationProjectInput 中填写该值。其他项目类型可不填。
+                     */
+                    void SetAspectRatio(const std::string& _aspectRatio);
+
+                    /**
+                     * 判断参数 AspectRatio 是否已赋值
+                     * @return AspectRatio 是否已赋值
+                     */
+                    bool AspectRatioHasBeenSet() const;
 
                     /**
                      * 获取项目描述信息。
@@ -271,18 +275,19 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 画布宽高比，取值有：
-<li>16:9；</li>
-<li>9:16。</li>
-                     */
-                    std::string m_aspectRatio;
-                    bool m_aspectRatioHasBeenSet;
-
-                    /**
-                     * 归属者。
+                     * 项目归属者。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
+
+                    /**
+                     * 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16。</li>
+该字段即将废弃，当项目类型为 VIDEO_EDIT 时，请在 VideoEditProjectInput 信息中填写该值；当项目类型为 VIDEO_SEGMENTATION 时，请在VideoSegmentationProjectInput 中填写该值。其他项目类型可不填。
+                     */
+                    std::string m_aspectRatio;
+                    bool m_aspectRatioHasBeenSet;
 
                     /**
                      * 项目描述信息。

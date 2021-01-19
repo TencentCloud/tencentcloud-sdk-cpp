@@ -35,7 +35,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_resourceCreationLimitPolicyHasBeenSet(false),
     m_runtimeConfigurationHasBeenSet(false),
     m_subNetIdHasBeenSet(false),
-    m_gameServerSessionProtectionTimeLimitHasBeenSet(false)
+    m_gameServerSessionProtectionTimeLimitHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,21 @@ string CreateFleetRequest::ToJsonString() const
         string key = "GameServerSessionProtectionTimeLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_gameServerSessionProtectionTimeLimit, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -349,6 +365,22 @@ void CreateFleetRequest::SetGameServerSessionProtectionTimeLimit(const int64_t& 
 bool CreateFleetRequest::GameServerSessionProtectionTimeLimitHasBeenSet() const
 {
     return m_gameServerSessionProtectionTimeLimitHasBeenSet;
+}
+
+vector<Tag> CreateFleetRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateFleetRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateFleetRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

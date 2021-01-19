@@ -34,7 +34,8 @@ Asset::Asset() :
     m_imageIdHasBeenSet(false),
     m_osTypeHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_sharingStatusHasBeenSet(false)
+    m_sharingStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,26 @@ CoreInternalOutcome Asset::Deserialize(const Value &value)
         m_sharingStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `Asset.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +303,21 @@ void Asset::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "SharingStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_sharingStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -493,5 +529,21 @@ void Asset::SetSharingStatus(const string& _sharingStatus)
 bool Asset::SharingStatusHasBeenSet() const
 {
     return m_sharingStatusHasBeenSet;
+}
+
+vector<Tag> Asset::GetTags() const
+{
+    return m_tags;
+}
+
+void Asset::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool Asset::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

@@ -239,6 +239,8 @@
 #include <tencentcloud/cdb/v20170320/model/StopDelayReplicationResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StopRollbackRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StopRollbackResponse.h>
+#include <tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveRequest.h>
+#include <tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeDBInstanceRequest.h>
@@ -585,6 +587,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StopRollbackResponse> StopRollbackOutcome;
                 typedef std::future<StopRollbackOutcome> StopRollbackOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StopRollbackRequest&, StopRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRollbackAsyncHandler;
+                typedef Outcome<Error, Model::SwitchDBInstanceMasterSlaveResponse> SwitchDBInstanceMasterSlaveOutcome;
+                typedef std::future<SwitchDBInstanceMasterSlaveOutcome> SwitchDBInstanceMasterSlaveOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::SwitchDBInstanceMasterSlaveRequest&, SwitchDBInstanceMasterSlaveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDBInstanceMasterSlaveAsyncHandler;
                 typedef Outcome<Error, Model::SwitchForUpgradeResponse> SwitchForUpgradeOutcome;
                 typedef std::future<SwitchForUpgradeOutcome> SwitchForUpgradeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::SwitchForUpgradeRequest&, SwitchForUpgradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchForUpgradeAsyncHandler;
@@ -1608,6 +1613,15 @@ namespace TencentCloud
                 StopRollbackOutcome StopRollback(const Model::StopRollbackRequest &request);
                 void StopRollbackAsync(const Model::StopRollbackRequest& request, const StopRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopRollbackOutcomeCallable StopRollbackCallable(const Model::StopRollbackRequest& request);
+
+                /**
+                 *该接口 (SwitchDBInstanceMasterSlave) 支持用户主动切换实例主从角色。
+                 * @param req SwitchDBInstanceMasterSlaveRequest
+                 * @return SwitchDBInstanceMasterSlaveOutcome
+                 */
+                SwitchDBInstanceMasterSlaveOutcome SwitchDBInstanceMasterSlave(const Model::SwitchDBInstanceMasterSlaveRequest &request);
+                void SwitchDBInstanceMasterSlaveAsync(const Model::SwitchDBInstanceMasterSlaveRequest& request, const SwitchDBInstanceMasterSlaveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchDBInstanceMasterSlaveOutcomeCallable SwitchDBInstanceMasterSlaveCallable(const Model::SwitchDBInstanceMasterSlaveRequest& request);
 
                 /**
                  *本接口(SwitchForUpgrade)用于切换访问新实例，针对主升级中的实例处于待切换状态时，用户可主动发起该流程。

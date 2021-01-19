@@ -36,7 +36,11 @@ VpnConnection::VpnConnection() :
     m_netStatusHasBeenSet(false),
     m_securityPolicyDatabaseSetHasBeenSet(false),
     m_iKEOptionsSpecificationHasBeenSet(false),
-    m_iPSECOptionsSpecificationHasBeenSet(false)
+    m_iPSECOptionsSpecificationHasBeenSet(false),
+    m_enableHealthCheckHasBeenSet(false),
+    m_healthCheckLocalIpHasBeenSet(false),
+    m_healthCheckRemoteIpHasBeenSet(false),
+    m_healthCheckStatusHasBeenSet(false)
 {
 }
 
@@ -219,6 +223,46 @@ CoreInternalOutcome VpnConnection::Deserialize(const Value &value)
         m_iPSECOptionsSpecificationHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableHealthCheck") && !value["EnableHealthCheck"].IsNull())
+    {
+        if (!value["EnableHealthCheck"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `VpnConnection.EnableHealthCheck` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableHealthCheck = value["EnableHealthCheck"].GetBool();
+        m_enableHealthCheckHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheckLocalIp") && !value["HealthCheckLocalIp"].IsNull())
+    {
+        if (!value["HealthCheckLocalIp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VpnConnection.HealthCheckLocalIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthCheckLocalIp = string(value["HealthCheckLocalIp"].GetString());
+        m_healthCheckLocalIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheckRemoteIp") && !value["HealthCheckRemoteIp"].IsNull())
+    {
+        if (!value["HealthCheckRemoteIp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VpnConnection.HealthCheckRemoteIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthCheckRemoteIp = string(value["HealthCheckRemoteIp"].GetString());
+        m_healthCheckRemoteIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheckStatus") && !value["HealthCheckStatus"].IsNull())
+    {
+        if (!value["HealthCheckStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VpnConnection.HealthCheckStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthCheckStatus = string(value["HealthCheckStatus"].GetString());
+        m_healthCheckStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -353,6 +397,38 @@ void VpnConnection::ToJsonObject(Value &value, Document::AllocatorType& allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_iPSECOptionsSpecification.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enableHealthCheckHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableHealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableHealthCheck, allocator);
+    }
+
+    if (m_healthCheckLocalIpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthCheckLocalIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_healthCheckLocalIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckRemoteIpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthCheckRemoteIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_healthCheckRemoteIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthCheckStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_healthCheckStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -596,5 +672,69 @@ void VpnConnection::SetIPSECOptionsSpecification(const IPSECOptionsSpecification
 bool VpnConnection::IPSECOptionsSpecificationHasBeenSet() const
 {
     return m_iPSECOptionsSpecificationHasBeenSet;
+}
+
+bool VpnConnection::GetEnableHealthCheck() const
+{
+    return m_enableHealthCheck;
+}
+
+void VpnConnection::SetEnableHealthCheck(const bool& _enableHealthCheck)
+{
+    m_enableHealthCheck = _enableHealthCheck;
+    m_enableHealthCheckHasBeenSet = true;
+}
+
+bool VpnConnection::EnableHealthCheckHasBeenSet() const
+{
+    return m_enableHealthCheckHasBeenSet;
+}
+
+string VpnConnection::GetHealthCheckLocalIp() const
+{
+    return m_healthCheckLocalIp;
+}
+
+void VpnConnection::SetHealthCheckLocalIp(const string& _healthCheckLocalIp)
+{
+    m_healthCheckLocalIp = _healthCheckLocalIp;
+    m_healthCheckLocalIpHasBeenSet = true;
+}
+
+bool VpnConnection::HealthCheckLocalIpHasBeenSet() const
+{
+    return m_healthCheckLocalIpHasBeenSet;
+}
+
+string VpnConnection::GetHealthCheckRemoteIp() const
+{
+    return m_healthCheckRemoteIp;
+}
+
+void VpnConnection::SetHealthCheckRemoteIp(const string& _healthCheckRemoteIp)
+{
+    m_healthCheckRemoteIp = _healthCheckRemoteIp;
+    m_healthCheckRemoteIpHasBeenSet = true;
+}
+
+bool VpnConnection::HealthCheckRemoteIpHasBeenSet() const
+{
+    return m_healthCheckRemoteIpHasBeenSet;
+}
+
+string VpnConnection::GetHealthCheckStatus() const
+{
+    return m_healthCheckStatus;
+}
+
+void VpnConnection::SetHealthCheckStatus(const string& _healthCheckStatus)
+{
+    m_healthCheckStatus = _healthCheckStatus;
+    m_healthCheckStatusHasBeenSet = true;
+}
+
+bool VpnConnection::HealthCheckStatusHasBeenSet() const
+{
+    return m_healthCheckStatusHasBeenSet;
 }
 

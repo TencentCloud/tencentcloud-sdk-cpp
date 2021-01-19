@@ -27,8 +27,8 @@ CreateProjectRequest::CreateProjectRequest() :
     m_platformHasBeenSet(false),
     m_categoryHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_aspectRatioHasBeenSet(false),
     m_ownerHasBeenSet(false),
+    m_aspectRatioHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_switcherProjectInputHasBeenSet(false),
     m_liveStreamClipProjectInputHasBeenSet(false),
@@ -68,14 +68,6 @@ string CreateProjectRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_aspectRatioHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "AspectRatio";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_ownerHasBeenSet)
     {
         Value iKey(kStringType);
@@ -83,6 +75,14 @@ string CreateProjectRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_owner.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aspectRatioHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AspectRatio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -185,22 +185,6 @@ bool CreateProjectRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-string CreateProjectRequest::GetAspectRatio() const
-{
-    return m_aspectRatio;
-}
-
-void CreateProjectRequest::SetAspectRatio(const string& _aspectRatio)
-{
-    m_aspectRatio = _aspectRatio;
-    m_aspectRatioHasBeenSet = true;
-}
-
-bool CreateProjectRequest::AspectRatioHasBeenSet() const
-{
-    return m_aspectRatioHasBeenSet;
-}
-
 Entity CreateProjectRequest::GetOwner() const
 {
     return m_owner;
@@ -215,6 +199,22 @@ void CreateProjectRequest::SetOwner(const Entity& _owner)
 bool CreateProjectRequest::OwnerHasBeenSet() const
 {
     return m_ownerHasBeenSet;
+}
+
+string CreateProjectRequest::GetAspectRatio() const
+{
+    return m_aspectRatio;
+}
+
+void CreateProjectRequest::SetAspectRatio(const string& _aspectRatio)
+{
+    m_aspectRatio = _aspectRatio;
+    m_aspectRatioHasBeenSet = true;
+}
+
+bool CreateProjectRequest::AspectRatioHasBeenSet() const
+{
+    return m_aspectRatioHasBeenSet;
 }
 
 string CreateProjectRequest::GetDescription() const

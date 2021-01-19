@@ -26,7 +26,9 @@ using namespace std;
 AutoRewriteRequest::AutoRewriteRequest() :
     m_loadBalancerIdHasBeenSet(false),
     m_listenerIdHasBeenSet(false),
-    m_domainsHasBeenSet(false)
+    m_domainsHasBeenSet(false),
+    m_rewriteCodesHasBeenSet(false),
+    m_takeUrlsHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,32 @@ string AutoRewriteRequest::ToJsonString() const
         for (auto itr = m_domains.begin(); itr != m_domains.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_rewriteCodesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RewriteCodes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_rewriteCodes.begin(); itr != m_rewriteCodes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_takeUrlsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TakeUrls";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_takeUrls.begin(); itr != m_takeUrls.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetBool(*itr), allocator);
         }
     }
 
@@ -120,6 +148,38 @@ void AutoRewriteRequest::SetDomains(const vector<string>& _domains)
 bool AutoRewriteRequest::DomainsHasBeenSet() const
 {
     return m_domainsHasBeenSet;
+}
+
+vector<int64_t> AutoRewriteRequest::GetRewriteCodes() const
+{
+    return m_rewriteCodes;
+}
+
+void AutoRewriteRequest::SetRewriteCodes(const vector<int64_t>& _rewriteCodes)
+{
+    m_rewriteCodes = _rewriteCodes;
+    m_rewriteCodesHasBeenSet = true;
+}
+
+bool AutoRewriteRequest::RewriteCodesHasBeenSet() const
+{
+    return m_rewriteCodesHasBeenSet;
+}
+
+vector<bool> AutoRewriteRequest::GetTakeUrls() const
+{
+    return m_takeUrls;
+}
+
+void AutoRewriteRequest::SetTakeUrls(const vector<bool>& _takeUrls)
+{
+    m_takeUrls = _takeUrls;
+    m_takeUrlsHasBeenSet = true;
+}
+
+bool AutoRewriteRequest::TakeUrlsHasBeenSet() const
+{
+    return m_takeUrlsHasBeenSet;
 }
 
 

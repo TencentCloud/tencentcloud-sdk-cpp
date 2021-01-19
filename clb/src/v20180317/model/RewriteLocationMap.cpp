@@ -23,7 +23,10 @@ using namespace std;
 
 RewriteLocationMap::RewriteLocationMap() :
     m_sourceLocationIdHasBeenSet(false),
-    m_targetLocationIdHasBeenSet(false)
+    m_targetLocationIdHasBeenSet(false),
+    m_rewriteCodeHasBeenSet(false),
+    m_takeUrlHasBeenSet(false),
+    m_sourceDomainHasBeenSet(false)
 {
 }
 
@@ -52,6 +55,36 @@ CoreInternalOutcome RewriteLocationMap::Deserialize(const Value &value)
         m_targetLocationIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RewriteCode") && !value["RewriteCode"].IsNull())
+    {
+        if (!value["RewriteCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `RewriteLocationMap.RewriteCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rewriteCode = value["RewriteCode"].GetInt64();
+        m_rewriteCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TakeUrl") && !value["TakeUrl"].IsNull())
+    {
+        if (!value["TakeUrl"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `RewriteLocationMap.TakeUrl` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_takeUrl = value["TakeUrl"].GetBool();
+        m_takeUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceDomain") && !value["SourceDomain"].IsNull())
+    {
+        if (!value["SourceDomain"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RewriteLocationMap.SourceDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceDomain = string(value["SourceDomain"].GetString());
+        m_sourceDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +106,30 @@ void RewriteLocationMap::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "TargetLocationId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_targetLocationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rewriteCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RewriteCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rewriteCode, allocator);
+    }
+
+    if (m_takeUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TakeUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_takeUrl, allocator);
+    }
+
+    if (m_sourceDomainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SourceDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sourceDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -108,5 +165,53 @@ void RewriteLocationMap::SetTargetLocationId(const string& _targetLocationId)
 bool RewriteLocationMap::TargetLocationIdHasBeenSet() const
 {
     return m_targetLocationIdHasBeenSet;
+}
+
+int64_t RewriteLocationMap::GetRewriteCode() const
+{
+    return m_rewriteCode;
+}
+
+void RewriteLocationMap::SetRewriteCode(const int64_t& _rewriteCode)
+{
+    m_rewriteCode = _rewriteCode;
+    m_rewriteCodeHasBeenSet = true;
+}
+
+bool RewriteLocationMap::RewriteCodeHasBeenSet() const
+{
+    return m_rewriteCodeHasBeenSet;
+}
+
+bool RewriteLocationMap::GetTakeUrl() const
+{
+    return m_takeUrl;
+}
+
+void RewriteLocationMap::SetTakeUrl(const bool& _takeUrl)
+{
+    m_takeUrl = _takeUrl;
+    m_takeUrlHasBeenSet = true;
+}
+
+bool RewriteLocationMap::TakeUrlHasBeenSet() const
+{
+    return m_takeUrlHasBeenSet;
+}
+
+string RewriteLocationMap::GetSourceDomain() const
+{
+    return m_sourceDomain;
+}
+
+void RewriteLocationMap::SetSourceDomain(const string& _sourceDomain)
+{
+    m_sourceDomain = _sourceDomain;
+    m_sourceDomainHasBeenSet = true;
+}
+
+bool RewriteLocationMap::SourceDomainHasBeenSet() const
+{
+    return m_sourceDomainHasBeenSet;
 }
 

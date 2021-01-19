@@ -47,13 +47,13 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频素材来源类型，取值有：
+                     * 获取音频媒体来源类型，取值有：
 <ul>
 <li>VOD ：素材来源于云点播文件 ；</li>
 <li>CME ：视频来源于制作云媒体文件 ；</li>
 <li>EXTERNAL ：视频来源于媒资绑定。</li>
 </ul>
-                     * @return SourceType 音频素材来源类型，取值有：
+                     * @return SourceType 音频媒体来源类型，取值有：
 <ul>
 <li>VOD ：素材来源于云点播文件 ；</li>
 <li>CME ：视频来源于制作云媒体文件 ；</li>
@@ -63,13 +63,13 @@ namespace TencentCloud
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置音频素材来源类型，取值有：
+                     * 设置音频媒体来源类型，取值有：
 <ul>
 <li>VOD ：素材来源于云点播文件 ；</li>
 <li>CME ：视频来源于制作云媒体文件 ；</li>
 <li>EXTERNAL ：视频来源于媒资绑定。</li>
 </ul>
-                     * @param SourceType 音频素材来源类型，取值有：
+                     * @param SourceType 音频媒体来源类型，取值有：
 <ul>
 <li>VOD ：素材来源于云点播文件 ；</li>
 <li>CME ：视频来源于制作云媒体文件 ；</li>
@@ -85,32 +85,32 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取音频片段的媒体素材来源，可以是：
+                     * 获取音频片段的媒体来源，可以是：
 <ul>
-<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>
-<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>
+<li>当 SourceType 为 VOD 时，为云点播的媒体文件 FileId ，会默认将该 FileId 导入到项目中 ；</li>
+<li>当 SourceType 为 CME 时，为制作云的媒体 ID，项目归属者必须对该云媒资有访问权限；</li>
 <li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>
 </ul>
-                     * @return SourceMedia 音频片段的媒体素材来源，可以是：
+                     * @return SourceMedia 音频片段的媒体来源，可以是：
 <ul>
-<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>
-<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>
+<li>当 SourceType 为 VOD 时，为云点播的媒体文件 FileId ，会默认将该 FileId 导入到项目中 ；</li>
+<li>当 SourceType 为 CME 时，为制作云的媒体 ID，项目归属者必须对该云媒资有访问权限；</li>
 <li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>
 </ul>
                      */
                     std::string GetSourceMedia() const;
 
                     /**
-                     * 设置音频片段的媒体素材来源，可以是：
+                     * 设置音频片段的媒体来源，可以是：
 <ul>
-<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>
-<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>
+<li>当 SourceType 为 VOD 时，为云点播的媒体文件 FileId ，会默认将该 FileId 导入到项目中 ；</li>
+<li>当 SourceType 为 CME 时，为制作云的媒体 ID，项目归属者必须对该云媒资有访问权限；</li>
 <li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>
 </ul>
-                     * @param SourceMedia 音频片段的媒体素材来源，可以是：
+                     * @param SourceMedia 音频片段的媒体来源，可以是：
 <ul>
-<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>
-<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>
+<li>当 SourceType 为 VOD 时，为云点播的媒体文件 FileId ，会默认将该 FileId 导入到项目中 ；</li>
+<li>当 SourceType 为 CME 时，为制作云的媒体 ID，项目归属者必须对该云媒资有访问权限；</li>
 <li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>
 </ul>
                      */
@@ -123,14 +123,14 @@ namespace TencentCloud
                     bool SourceMediaHasBeenSet() const;
 
                     /**
-                     * 获取音频片段取自素材文件的起始时间，单位为秒。0 表示从素材开始位置截取。默认为0。
-                     * @return SourceMediaStartTime 音频片段取自素材文件的起始时间，单位为秒。0 表示从素材开始位置截取。默认为0。
+                     * 获取音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。
+                     * @return SourceMediaStartTime 音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。
                      */
                     double GetSourceMediaStartTime() const;
 
                     /**
-                     * 设置音频片段取自素材文件的起始时间，单位为秒。0 表示从素材开始位置截取。默认为0。
-                     * @param SourceMediaStartTime 音频片段取自素材文件的起始时间，单位为秒。0 表示从素材开始位置截取。默认为0。
+                     * 设置音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。
+                     * @param SourceMediaStartTime 音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。
                      */
                     void SetSourceMediaStartTime(const double& _sourceMediaStartTime);
 
@@ -141,14 +141,14 @@ namespace TencentCloud
                     bool SourceMediaStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取音频片段的时长，单位为秒。默认和素材本身长度一致，表示截取全部素材。
-                     * @return Duration 音频片段的时长，单位为秒。默认和素材本身长度一致，表示截取全部素材。
+                     * 获取音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。
+                     * @return Duration 音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置音频片段的时长，单位为秒。默认和素材本身长度一致，表示截取全部素材。
-                     * @param Duration 音频片段的时长，单位为秒。默认和素材本身长度一致，表示截取全部素材。
+                     * 设置音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。
+                     * @param Duration 音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。
                      */
                     void SetDuration(const double& _duration);
 
@@ -161,7 +161,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音频素材来源类型，取值有：
+                     * 音频媒体来源类型，取值有：
 <ul>
 <li>VOD ：素材来源于云点播文件 ；</li>
 <li>CME ：视频来源于制作云媒体文件 ；</li>
@@ -172,10 +172,10 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 音频片段的媒体素材来源，可以是：
+                     * 音频片段的媒体来源，可以是：
 <ul>
-<li>当 SourceType 为 VOD 时，为云点播的媒体文件 ID ；</li>
-<li>当 SourceType 为 CME 时，为制作云的媒体 ID；</li>
+<li>当 SourceType 为 VOD 时，为云点播的媒体文件 FileId ，会默认将该 FileId 导入到项目中 ；</li>
+<li>当 SourceType 为 CME 时，为制作云的媒体 ID，项目归属者必须对该云媒资有访问权限；</li>
 <li>当 SourceType 为 EXTERNAL 时，为媒资绑定的 Definition 与 MediaKey 中间用冒号分隔合并后的字符串，格式为 Definition:MediaKey 。</li>
 </ul>
                      */
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_sourceMediaHasBeenSet;
 
                     /**
-                     * 音频片段取自素材文件的起始时间，单位为秒。0 表示从素材开始位置截取。默认为0。
+                     * 音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。
                      */
                     double m_sourceMediaStartTime;
                     bool m_sourceMediaStartTimeHasBeenSet;
 
                     /**
-                     * 音频片段的时长，单位为秒。默认和素材本身长度一致，表示截取全部素材。
+                     * 音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;

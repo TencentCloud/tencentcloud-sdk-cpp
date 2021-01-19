@@ -112,20 +112,20 @@ namespace TencentCloud
 
                     /**
                      * 获取导出目标。
-<li>CME：云剪，即导出为云剪素材；</li>
+<li>CME：云剪，即导出为云剪媒体；</li>
 <li>VOD：云点播，即导出为云点播媒资。</li>
                      * @return ExportDestination 导出目标。
-<li>CME：云剪，即导出为云剪素材；</li>
+<li>CME：云剪，即导出为云剪媒体；</li>
 <li>VOD：云点播，即导出为云点播媒资。</li>
                      */
                     std::string GetExportDestination() const;
 
                     /**
                      * 设置导出目标。
-<li>CME：云剪，即导出为云剪素材；</li>
+<li>CME：云剪，即导出为云剪媒体；</li>
 <li>VOD：云点播，即导出为云点播媒资。</li>
                      * @param ExportDestination 导出目标。
-<li>CME：云剪，即导出为云剪素材；</li>
+<li>CME：云剪，即导出为云剪媒体；</li>
 <li>VOD：云点播，即导出为云点播媒资。</li>
                      */
                     void SetExportDestination(const std::string& _exportDestination);
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool ExportDestinationHasBeenSet() const;
 
                     /**
-                     * 获取导出的云剪素材信息。指定 ExportDestination = CME 时有效。
-                     * @return CMEExportInfo 导出的云剪素材信息。指定 ExportDestination = CME 时有效。
+                     * 获取导出的云剪媒体信息。指定 ExportDestination = CME 时有效。
+                     * @return CMEExportInfo 导出的云剪媒体信息。指定 ExportDestination = CME 时有效。
                      */
                     CMEExportInfo GetCMEExportInfo() const;
 
                     /**
-                     * 设置导出的云剪素材信息。指定 ExportDestination = CME 时有效。
-                     * @param CMEExportInfo 导出的云剪素材信息。指定 ExportDestination = CME 时有效。
+                     * 设置导出的云剪媒体信息。指定 ExportDestination = CME 时有效。
+                     * @param CMEExportInfo 导出的云剪媒体信息。指定 ExportDestination = CME 时有效。
                      */
                     void SetCMEExportInfo(const CMEExportInfo& _cMEExportInfo);
 
@@ -172,6 +172,24 @@ namespace TencentCloud
                      */
                     bool VODExportInfoHasBeenSet() const;
 
+                    /**
+                     * 获取操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
+                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
+                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,14 +215,14 @@ namespace TencentCloud
 
                     /**
                      * 导出目标。
-<li>CME：云剪，即导出为云剪素材；</li>
+<li>CME：云剪，即导出为云剪媒体；</li>
 <li>VOD：云点播，即导出为云点播媒资。</li>
                      */
                     std::string m_exportDestination;
                     bool m_exportDestinationHasBeenSet;
 
                     /**
-                     * 导出的云剪素材信息。指定 ExportDestination = CME 时有效。
+                     * 导出的云剪媒体信息。指定 ExportDestination = CME 时有效。
                      */
                     CMEExportInfo m_cMEExportInfo;
                     bool m_cMEExportInfoHasBeenSet;
@@ -214,6 +232,12 @@ namespace TencentCloud
                      */
                     VODExportInfo m_vODExportInfo;
                     bool m_vODExportInfoHasBeenSet;
+
+                    /**
+                     * 操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }
