@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽包类型，包括'BGP'，'SINGLEISP'，'ANYCAST'
-                     * @return NetworkType 带宽包类型，包括'BGP'，'SINGLEISP'，'ANYCAST'
+                     * 获取带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'
+                     * @return NetworkType 带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置带宽包类型，包括'BGP'，'SINGLEISP'，'ANYCAST'
-                     * @param NetworkType 带宽包类型，包括'BGP'，'SINGLEISP'，'ANYCAST'
+                     * 设置带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'
+                     * @param NetworkType 带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'
                      */
                     void SetNetworkType(const std::string& _networkType);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool BandwidthPackageCountHasBeenSet() const;
 
                     /**
-                     * 获取带宽包限速大小。单位：Mbps，-1表示不限速。
-                     * @return InternetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。
+                     * 获取带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
+                     * @return InternetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
                      */
                     int64_t GetInternetMaxBandwidth() const;
 
                     /**
-                     * 设置带宽包限速大小。单位：Mbps，-1表示不限速。
-                     * @param InternetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。
+                     * 设置带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
+                     * @param InternetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
                      */
                     void SetInternetMaxBandwidth(const int64_t& _internetMaxBandwidth);
 
@@ -172,7 +172,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 带宽包类型，包括'BGP'，'SINGLEISP'，'ANYCAST'
+                     * 带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_bandwidthPackageCountHasBeenSet;
 
                     /**
-                     * 带宽包限速大小。单位：Mbps，-1表示不限速。
+                     * 带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
                      */
                     int64_t m_internetMaxBandwidth;
                     bool m_internetMaxBandwidthHasBeenSet;

@@ -1,0 +1,201 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TSF_V20180326_MODEL_PATHREWRITE_H_
+#define TENCENTCLOUD_TSF_V20180326_MODEL_PATHREWRITE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Tsf
+    {
+        namespace V20180326
+        {
+            namespace Model
+            {
+                /**
+                * 路径重写
+                */
+                class PathRewrite : public AbstractModel
+                {
+                public:
+                    PathRewrite();
+                    ~PathRewrite() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取路径重写规则ID
+                     * @return PathRewriteId 路径重写规则ID
+                     */
+                    std::string GetPathRewriteId() const;
+
+                    /**
+                     * 设置路径重写规则ID
+                     * @param PathRewriteId 路径重写规则ID
+                     */
+                    void SetPathRewriteId(const std::string& _pathRewriteId);
+
+                    /**
+                     * 判断参数 PathRewriteId 是否已赋值
+                     * @return PathRewriteId 是否已赋值
+                     */
+                    bool PathRewriteIdHasBeenSet() const;
+
+                    /**
+                     * 获取网关部署组ID
+                     * @return GatewayGroupId 网关部署组ID
+                     */
+                    std::string GetGatewayGroupId() const;
+
+                    /**
+                     * 设置网关部署组ID
+                     * @param GatewayGroupId 网关部署组ID
+                     */
+                    void SetGatewayGroupId(const std::string& _gatewayGroupId);
+
+                    /**
+                     * 判断参数 GatewayGroupId 是否已赋值
+                     * @return GatewayGroupId 是否已赋值
+                     */
+                    bool GatewayGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取正则表达式
+                     * @return Regex 正则表达式
+                     */
+                    std::string GetRegex() const;
+
+                    /**
+                     * 设置正则表达式
+                     * @param Regex 正则表达式
+                     */
+                    void SetRegex(const std::string& _regex);
+
+                    /**
+                     * 判断参数 Regex 是否已赋值
+                     * @return Regex 是否已赋值
+                     */
+                    bool RegexHasBeenSet() const;
+
+                    /**
+                     * 获取替换的内容
+                     * @return Replacement 替换的内容
+                     */
+                    std::string GetReplacement() const;
+
+                    /**
+                     * 设置替换的内容
+                     * @param Replacement 替换的内容
+                     */
+                    void SetReplacement(const std::string& _replacement);
+
+                    /**
+                     * 判断参数 Replacement 是否已赋值
+                     * @return Replacement 是否已赋值
+                     */
+                    bool ReplacementHasBeenSet() const;
+
+                    /**
+                     * 获取是否屏蔽映射后路径，Y: 是 N: 否
+                     * @return Blocked 是否屏蔽映射后路径，Y: 是 N: 否
+                     */
+                    std::string GetBlocked() const;
+
+                    /**
+                     * 设置是否屏蔽映射后路径，Y: 是 N: 否
+                     * @param Blocked 是否屏蔽映射后路径，Y: 是 N: 否
+                     */
+                    void SetBlocked(const std::string& _blocked);
+
+                    /**
+                     * 判断参数 Blocked 是否已赋值
+                     * @return Blocked 是否已赋值
+                     */
+                    bool BlockedHasBeenSet() const;
+
+                    /**
+                     * 获取规则顺序，越小优先级越高
+                     * @return Order 规则顺序，越小优先级越高
+                     */
+                    int64_t GetOrder() const;
+
+                    /**
+                     * 设置规则顺序，越小优先级越高
+                     * @param Order 规则顺序，越小优先级越高
+                     */
+                    void SetOrder(const int64_t& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     */
+                    bool OrderHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 路径重写规则ID
+                     */
+                    std::string m_pathRewriteId;
+                    bool m_pathRewriteIdHasBeenSet;
+
+                    /**
+                     * 网关部署组ID
+                     */
+                    std::string m_gatewayGroupId;
+                    bool m_gatewayGroupIdHasBeenSet;
+
+                    /**
+                     * 正则表达式
+                     */
+                    std::string m_regex;
+                    bool m_regexHasBeenSet;
+
+                    /**
+                     * 替换的内容
+                     */
+                    std::string m_replacement;
+                    bool m_replacementHasBeenSet;
+
+                    /**
+                     * 是否屏蔽映射后路径，Y: 是 N: 否
+                     */
+                    std::string m_blocked;
+                    bool m_blockedHasBeenSet;
+
+                    /**
+                     * 规则顺序，越小优先级越高
+                     */
+                    int64_t m_order;
+                    bool m_orderHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TSF_V20180326_MODEL_PATHREWRITE_H_

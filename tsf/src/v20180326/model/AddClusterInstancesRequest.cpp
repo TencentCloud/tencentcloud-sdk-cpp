@@ -33,7 +33,9 @@ AddClusterInstancesRequest::AddClusterInstancesRequest() :
     m_sgIdHasBeenSet(false),
     m_instanceImportModeHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
-    m_featureIdListHasBeenSet(false)
+    m_featureIdListHasBeenSet(false),
+    m_instanceAdvancedSettingsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -129,6 +131,28 @@ string AddClusterInstancesRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_featureIdList.begin(); itr != m_featureIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceAdvancedSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceAdvancedSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_instanceAdvancedSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -300,6 +324,38 @@ void AddClusterInstancesRequest::SetFeatureIdList(const vector<string>& _feature
 bool AddClusterInstancesRequest::FeatureIdListHasBeenSet() const
 {
     return m_featureIdListHasBeenSet;
+}
+
+InstanceAdvancedSettings AddClusterInstancesRequest::GetInstanceAdvancedSettings() const
+{
+    return m_instanceAdvancedSettings;
+}
+
+void AddClusterInstancesRequest::SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings)
+{
+    m_instanceAdvancedSettings = _instanceAdvancedSettings;
+    m_instanceAdvancedSettingsHasBeenSet = true;
+}
+
+bool AddClusterInstancesRequest::InstanceAdvancedSettingsHasBeenSet() const
+{
+    return m_instanceAdvancedSettingsHasBeenSet;
+}
+
+vector<string> AddClusterInstancesRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void AddClusterInstancesRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool AddClusterInstancesRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

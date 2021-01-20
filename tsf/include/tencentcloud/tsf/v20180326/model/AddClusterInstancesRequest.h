@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/InstanceAdvancedSettings.h>
 
 
 namespace TencentCloud
@@ -222,6 +223,42 @@ namespace TencentCloud
                      */
                     bool FeatureIdListHasBeenSet() const;
 
+                    /**
+                     * 获取实例额外需要设置参数信息
+                     * @return InstanceAdvancedSettings 实例额外需要设置参数信息
+                     */
+                    InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
+
+                    /**
+                     * 设置实例额外需要设置参数信息
+                     * @param InstanceAdvancedSettings 实例额外需要设置参数信息
+                     */
+                    void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
+
+                    /**
+                     * 判断参数 InstanceAdvancedSettings 是否已赋值
+                     * @return InstanceAdvancedSettings 是否已赋值
+                     */
+                    bool InstanceAdvancedSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取部署组ID
+                     * @return SecurityGroupIds 部署组ID
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置部署组ID
+                     * @param SecurityGroupIds 部署组ID
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +320,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_featureIdList;
                     bool m_featureIdListHasBeenSet;
+
+                    /**
+                     * 实例额外需要设置参数信息
+                     */
+                    InstanceAdvancedSettings m_instanceAdvancedSettings;
+                    bool m_instanceAdvancedSettingsHasBeenSet;
+
+                    /**
+                     * 部署组ID
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

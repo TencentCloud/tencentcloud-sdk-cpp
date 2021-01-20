@@ -28,7 +28,8 @@ DescribeProducersRequest::DescribeProducersRequest() :
     m_topicNameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_producerNameHasBeenSet(false)
+    m_producerNameHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string DescribeProducersRequest::ToJsonString() const
         string key = "ProducerName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_producerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void DescribeProducersRequest::SetProducerName(const string& _producerName)
 bool DescribeProducersRequest::ProducerNameHasBeenSet() const
 {
     return m_producerNameHasBeenSet;
+}
+
+string DescribeProducersRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeProducersRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeProducersRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

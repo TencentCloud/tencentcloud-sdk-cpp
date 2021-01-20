@@ -28,7 +28,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_topicNameHasBeenSet(false),
     m_partitionsHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateTopicRequest::SetRemark(const string& _remark)
 bool CreateTopicRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateTopicRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void CreateTopicRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool CreateTopicRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

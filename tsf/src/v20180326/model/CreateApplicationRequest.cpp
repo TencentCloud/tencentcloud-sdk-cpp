@@ -30,7 +30,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_applicationDescHasBeenSet(false),
     m_applicationLogConfigHasBeenSet(false),
     m_applicationResourceTypeHasBeenSet(false),
-    m_applicationRuntimeTypeHasBeenSet(false)
+    m_applicationRuntimeTypeHasBeenSet(false),
+    m_programIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string CreateApplicationRequest::ToJsonString() const
         string key = "ApplicationRuntimeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_applicationRuntimeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_programIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProgramId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_programId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void CreateApplicationRequest::SetApplicationRuntimeType(const string& _applicat
 bool CreateApplicationRequest::ApplicationRuntimeTypeHasBeenSet() const
 {
     return m_applicationRuntimeTypeHasBeenSet;
+}
+
+string CreateApplicationRequest::GetProgramId() const
+{
+    return m_programId;
+}
+
+void CreateApplicationRequest::SetProgramId(const string& _programId)
+{
+    m_programId = _programId;
+    m_programIdHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::ProgramIdHasBeenSet() const
+{
+    return m_programIdHasBeenSet;
 }
 
 

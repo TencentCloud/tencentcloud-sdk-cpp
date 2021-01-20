@@ -27,6 +27,8 @@
 #include <tencentcloud/tcr/v20190924/model/BatchDeleteImagePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/BatchDeleteRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/BatchDeleteRepositoryPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CheckInstanceNameRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CheckInstanceNameResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalRequest.h>
@@ -167,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BatchDeleteRepositoryPersonalResponse> BatchDeleteRepositoryPersonalOutcome;
                 typedef std::future<BatchDeleteRepositoryPersonalOutcome> BatchDeleteRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::BatchDeleteRepositoryPersonalRequest&, BatchDeleteRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteRepositoryPersonalAsyncHandler;
+                typedef Outcome<Error, Model::CheckInstanceNameResponse> CheckInstanceNameOutcome;
+                typedef std::future<CheckInstanceNameOutcome> CheckInstanceNameOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CheckInstanceNameRequest&, CheckInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckInstanceNameAsyncHandler;
                 typedef Outcome<Error, Model::CreateApplicationTriggerPersonalResponse> CreateApplicationTriggerPersonalOutcome;
                 typedef std::future<CreateApplicationTriggerPersonalOutcome> CreateApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateApplicationTriggerPersonalRequest&, CreateApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationTriggerPersonalAsyncHandler;
@@ -367,6 +372,15 @@ namespace TencentCloud
                 BatchDeleteRepositoryPersonalOutcome BatchDeleteRepositoryPersonal(const Model::BatchDeleteRepositoryPersonalRequest &request);
                 void BatchDeleteRepositoryPersonalAsync(const Model::BatchDeleteRepositoryPersonalRequest& request, const BatchDeleteRepositoryPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchDeleteRepositoryPersonalOutcomeCallable BatchDeleteRepositoryPersonalCallable(const Model::BatchDeleteRepositoryPersonalRequest& request);
+
+                /**
+                 *检查待创建的实例名称是否符合规范
+                 * @param req CheckInstanceNameRequest
+                 * @return CheckInstanceNameOutcome
+                 */
+                CheckInstanceNameOutcome CheckInstanceName(const Model::CheckInstanceNameRequest &request);
+                void CheckInstanceNameAsync(const Model::CheckInstanceNameRequest& request, const CheckInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckInstanceNameOutcomeCallable CheckInstanceNameCallable(const Model::CheckInstanceNameRequest& request);
 
                 /**
                  *用于创建应用更新触发器

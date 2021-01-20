@@ -710,6 +710,50 @@ Public：公网属性， Private：内网属性。
                      */
                     bool IsolationHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡绑定的安全组列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroup 负载均衡绑定的安全组列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSecurityGroup() const;
+
+                    /**
+                     * 设置负载均衡绑定的安全组列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecurityGroup 负载均衡绑定的安全组列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecurityGroup(const std::vector<std::string>& _securityGroup);
+
+                    /**
+                     * 判断参数 SecurityGroup 是否已赋值
+                     * @return SecurityGroup 是否已赋值
+                     */
+                    bool SecurityGroupHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡安全组上移特性是否开启标识。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancerPassToTarget 负载均衡安全组上移特性是否开启标识。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetLoadBalancerPassToTarget() const;
+
+                    /**
+                     * 设置负载均衡安全组上移特性是否开启标识。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LoadBalancerPassToTarget 负载均衡安全组上移特性是否开启标识。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLoadBalancerPassToTarget(const uint64_t& _loadBalancerPassToTarget);
+
+                    /**
+                     * 判断参数 LoadBalancerPassToTarget 是否已赋值
+                     * @return LoadBalancerPassToTarget 是否已赋值
+                     */
+                    bool LoadBalancerPassToTargetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -921,6 +965,20 @@ Public：公网属性， Private：内网属性。
                      */
                     uint64_t m_isolation;
                     bool m_isolationHasBeenSet;
+
+                    /**
+                     * 负载均衡绑定的安全组列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_securityGroup;
+                    bool m_securityGroupHasBeenSet;
+
+                    /**
+                     * 负载均衡安全组上移特性是否开启标识。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_loadBalancerPassToTarget;
+                    bool m_loadBalancerPassToTargetHasBeenSet;
 
                 };
             }

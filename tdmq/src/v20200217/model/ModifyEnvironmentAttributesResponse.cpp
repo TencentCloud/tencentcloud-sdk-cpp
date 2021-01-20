@@ -27,7 +27,8 @@ using namespace std;
 ModifyEnvironmentAttributesResponse::ModifyEnvironmentAttributesResponse() :
     m_environmentIdHasBeenSet(false),
     m_msgTTLHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ModifyEnvironmentAttributesResponse::Deserialize(const strin
         m_remarkHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NamespaceId") && !rsp["NamespaceId"].IsNull())
+    {
+        if (!rsp["NamespaceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceId = string(rsp["NamespaceId"].GetString());
+        m_namespaceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +139,16 @@ string ModifyEnvironmentAttributesResponse::GetRemark() const
 bool ModifyEnvironmentAttributesResponse::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string ModifyEnvironmentAttributesResponse::GetNamespaceId() const
+{
+    return m_namespaceId;
+}
+
+bool ModifyEnvironmentAttributesResponse::NamespaceIdHasBeenSet() const
+{
+    return m_namespaceIdHasBeenSet;
 }
 
 

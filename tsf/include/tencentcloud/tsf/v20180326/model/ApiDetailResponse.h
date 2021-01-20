@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ApiDetailResponse
+                * ApiDetailResponse描述
                 */
                 class ApiDetailResponse : public AbstractModel
                 {
@@ -173,6 +173,28 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取API 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description API 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置API 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Description API 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -214,6 +236,13 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * API 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

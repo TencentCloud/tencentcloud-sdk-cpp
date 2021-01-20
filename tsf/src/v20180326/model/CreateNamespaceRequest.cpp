@@ -30,7 +30,8 @@ CreateNamespaceRequest::CreateNamespaceRequest() :
     m_namespaceResourceTypeHasBeenSet(false),
     m_namespaceTypeHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_isHaEnableHasBeenSet(false)
+    m_isHaEnableHasBeenSet(false),
+    m_programIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string CreateNamespaceRequest::ToJsonString() const
         string key = "IsHaEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_isHaEnable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_programIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProgramId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_programId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void CreateNamespaceRequest::SetIsHaEnable(const string& _isHaEnable)
 bool CreateNamespaceRequest::IsHaEnableHasBeenSet() const
 {
     return m_isHaEnableHasBeenSet;
+}
+
+string CreateNamespaceRequest::GetProgramId() const
+{
+    return m_programId;
+}
+
+void CreateNamespaceRequest::SetProgramId(const string& _programId)
+{
+    m_programId = _programId;
+    m_programIdHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::ProgramIdHasBeenSet() const
+{
+    return m_programIdHasBeenSet;
 }
 
 

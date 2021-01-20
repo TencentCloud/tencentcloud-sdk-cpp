@@ -32,7 +32,8 @@ ApplicationForPage::ApplicationForPage() :
     m_updateTimeHasBeenSet(false),
     m_applicationResourceTypeHasBeenSet(false),
     m_applicationRuntimeTypeHasBeenSet(false),
-    m_apigatewayServiceIdHasBeenSet(false)
+    m_apigatewayServiceIdHasBeenSet(false),
+    m_applicationRemarkNameHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome ApplicationForPage::Deserialize(const Value &value)
         m_apigatewayServiceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationRemarkName") && !value["ApplicationRemarkName"].IsNull())
+    {
+        if (!value["ApplicationRemarkName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ApplicationForPage.ApplicationRemarkName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationRemarkName = string(value["ApplicationRemarkName"].GetString());
+        m_applicationRemarkNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +255,14 @@ void ApplicationForPage::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "ApigatewayServiceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_apigatewayServiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationRemarkNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationRemarkName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationRemarkName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -423,5 +442,21 @@ void ApplicationForPage::SetApigatewayServiceId(const string& _apigatewayService
 bool ApplicationForPage::ApigatewayServiceIdHasBeenSet() const
 {
     return m_apigatewayServiceIdHasBeenSet;
+}
+
+string ApplicationForPage::GetApplicationRemarkName() const
+{
+    return m_applicationRemarkName;
+}
+
+void ApplicationForPage::SetApplicationRemarkName(const string& _applicationRemarkName)
+{
+    m_applicationRemarkName = _applicationRemarkName;
+    m_applicationRemarkNameHasBeenSet = true;
+}
+
+bool ApplicationForPage::ApplicationRemarkNameHasBeenSet() const
+{
+    return m_applicationRemarkNameHasBeenSet;
 }
 

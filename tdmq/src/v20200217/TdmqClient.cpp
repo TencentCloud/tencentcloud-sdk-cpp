@@ -40,6 +40,49 @@ TdmqClient::TdmqClient(const Credential &credential, const string &region, const
 }
 
 
+TdmqClient::CreateClusterOutcome TdmqClient::CreateCluster(const CreateClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterResponse rsp = CreateClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterOutcome(rsp);
+        else
+            return CreateClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateClusterOutcomeCallable TdmqClient::CreateClusterCallable(const CreateClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::CreateEnvironmentOutcome TdmqClient::CreateEnvironment(const CreateEnvironmentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEnvironment");
@@ -169,6 +212,49 @@ TdmqClient::CreateTopicOutcomeCallable TdmqClient::CreateTopicCallable(const Cre
     return task->get_future();
 }
 
+TdmqClient::DeleteClusterOutcome TdmqClient::DeleteCluster(const DeleteClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterResponse rsp = DeleteClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterOutcome(rsp);
+        else
+            return DeleteClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteClusterOutcomeCallable TdmqClient::DeleteClusterCallable(const DeleteClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DeleteEnvironmentsOutcome TdmqClient::DeleteEnvironments(const DeleteEnvironmentsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteEnvironments");
@@ -291,6 +377,178 @@ TdmqClient::DeleteTopicsOutcomeCallable TdmqClient::DeleteTopicsCallable(const D
         [this, request]()
         {
             return this->DeleteTopics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeBindClustersOutcome TdmqClient::DescribeBindClusters(const DescribeBindClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBindClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBindClustersResponse rsp = DescribeBindClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBindClustersOutcome(rsp);
+        else
+            return DescribeBindClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBindClustersOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeBindClustersAsync(const DescribeBindClustersRequest& request, const DescribeBindClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBindClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeBindClustersOutcomeCallable TdmqClient::DescribeBindClustersCallable(const DescribeBindClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBindClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBindClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeBindVpcsOutcome TdmqClient::DescribeBindVpcs(const DescribeBindVpcsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBindVpcs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBindVpcsResponse rsp = DescribeBindVpcsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBindVpcsOutcome(rsp);
+        else
+            return DescribeBindVpcsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBindVpcsOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeBindVpcsAsync(const DescribeBindVpcsRequest& request, const DescribeBindVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBindVpcs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeBindVpcsOutcomeCallable TdmqClient::DescribeBindVpcsCallable(const DescribeBindVpcsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBindVpcsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBindVpcs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeClusterDetailOutcome TdmqClient::DescribeClusterDetail(const DescribeClusterDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterDetailResponse rsp = DescribeClusterDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterDetailOutcome(rsp);
+        else
+            return DescribeClusterDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeClusterDetailAsync(const DescribeClusterDetailRequest& request, const DescribeClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeClusterDetailOutcomeCallable TdmqClient::DescribeClusterDetailCallable(const DescribeClusterDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeClustersOutcome TdmqClient::DescribeClusters(const DescribeClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClustersResponse rsp = DescribeClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClustersOutcome(rsp);
+        else
+            return DescribeClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClustersOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeClustersOutcomeCallable TdmqClient::DescribeClustersCallable(const DescribeClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusters(request);
         }
     );
 
@@ -549,6 +807,49 @@ TdmqClient::DescribeTopicsOutcomeCallable TdmqClient::DescribeTopicsCallable(con
         [this, request]()
         {
             return this->DescribeTopics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::ModifyClusterOutcome TdmqClient::ModifyCluster(const ModifyClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterResponse rsp = ModifyClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterOutcome(rsp);
+        else
+            return ModifyClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyClusterOutcomeCallable TdmqClient::ModifyClusterCallable(const ModifyClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCluster(request);
         }
     );
 

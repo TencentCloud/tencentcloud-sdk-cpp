@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 环境信息
+                * 命名空间信息
                 */
                 class Environment : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境（命名空间）名称
-                     * @return EnvironmentId 环境（命名空间）名称
+                     * 获取命名空间名称
+                     * @return EnvironmentId 命名空间名称
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
-                     * 设置环境（命名空间）名称
-                     * @param EnvironmentId 环境（命名空间）名称
+                     * 设置命名空间名称
+                     * @param EnvironmentId 命名空间名称
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
@@ -136,10 +136,46 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取命名空间ID
+                     * @return NamespaceId 命名空间ID
+                     */
+                    std::string GetNamespaceId() const;
+
+                    /**
+                     * 设置命名空间ID
+                     * @param NamespaceId 命名空间ID
+                     */
+                    void SetNamespaceId(const std::string& _namespaceId);
+
+                    /**
+                     * 判断参数 NamespaceId 是否已赋值
+                     * @return NamespaceId 是否已赋值
+                     */
+                    bool NamespaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间名称
+                     * @return NamespaceName 命名空间名称
+                     */
+                    std::string GetNamespaceName() const;
+
+                    /**
+                     * 设置命名空间名称
+                     * @param NamespaceName 命名空间名称
+                     */
+                    void SetNamespaceName(const std::string& _namespaceName);
+
+                    /**
+                     * 判断参数 NamespaceName 是否已赋值
+                     * @return NamespaceName 是否已赋值
+                     */
+                    bool NamespaceNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 环境（命名空间）名称
+                     * 命名空间名称
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
@@ -167,6 +203,18 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 命名空间ID
+                     */
+                    std::string m_namespaceId;
+                    bool m_namespaceIdHasBeenSet;
+
+                    /**
+                     * 命名空间名称
+                     */
+                    std::string m_namespaceName;
+                    bool m_namespaceNameHasBeenSet;
 
                 };
             }

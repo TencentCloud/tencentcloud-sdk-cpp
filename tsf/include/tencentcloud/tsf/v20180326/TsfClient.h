@@ -59,6 +59,8 @@
 #include <tencentcloud/tsf/v20180326/model/CreateMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateNamespaceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateNamespaceResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreatePathRewritesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreatePathRewritesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreatePublicConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreatePublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateRepositoryRequest.h>
@@ -87,6 +89,8 @@
 #include <tencentcloud/tsf/v20180326/model/DeleteMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteNamespaceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteNamespaceResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeletePathRewritesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DeletePathRewritesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeletePkgsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeletePkgsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeletePublicConfigRequest.h>
@@ -175,6 +179,10 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMsApiListRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMsApiListResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePathRewriteRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePathRewriteResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePathRewritesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePathRewritesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePkgsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePkgsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePodInstancesRequest.h>
@@ -237,6 +245,8 @@
 #include <tencentcloud/tsf/v20180326/model/ModifyLaneRuleResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyMicroserviceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyMicroserviceResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyPathRewriteRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyPathRewriteResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyTaskRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoRequest.h>
@@ -363,6 +373,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateNamespaceResponse> CreateNamespaceOutcome;
                 typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateNamespaceRequest&, CreateNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespaceAsyncHandler;
+                typedef Outcome<Error, Model::CreatePathRewritesResponse> CreatePathRewritesOutcome;
+                typedef std::future<CreatePathRewritesOutcome> CreatePathRewritesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreatePathRewritesRequest&, CreatePathRewritesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePathRewritesAsyncHandler;
                 typedef Outcome<Error, Model::CreatePublicConfigResponse> CreatePublicConfigOutcome;
                 typedef std::future<CreatePublicConfigOutcome> CreatePublicConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreatePublicConfigRequest&, CreatePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePublicConfigAsyncHandler;
@@ -405,6 +418,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteNamespaceResponse> DeleteNamespaceOutcome;
                 typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteNamespaceRequest&, DeleteNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAsyncHandler;
+                typedef Outcome<Error, Model::DeletePathRewritesResponse> DeletePathRewritesOutcome;
+                typedef std::future<DeletePathRewritesOutcome> DeletePathRewritesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DeletePathRewritesRequest&, DeletePathRewritesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePathRewritesAsyncHandler;
                 typedef Outcome<Error, Model::DeletePkgsResponse> DeletePkgsOutcome;
                 typedef std::future<DeletePkgsOutcome> DeletePkgsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeletePkgsRequest&, DeletePkgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePkgsAsyncHandler;
@@ -537,6 +553,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeMsApiListResponse> DescribeMsApiListOutcome;
                 typedef std::future<DescribeMsApiListOutcome> DescribeMsApiListOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeMsApiListRequest&, DescribeMsApiListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMsApiListAsyncHandler;
+                typedef Outcome<Error, Model::DescribePathRewriteResponse> DescribePathRewriteOutcome;
+                typedef std::future<DescribePathRewriteOutcome> DescribePathRewriteOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribePathRewriteRequest&, DescribePathRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePathRewriteAsyncHandler;
+                typedef Outcome<Error, Model::DescribePathRewritesResponse> DescribePathRewritesOutcome;
+                typedef std::future<DescribePathRewritesOutcome> DescribePathRewritesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribePathRewritesRequest&, DescribePathRewritesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePathRewritesAsyncHandler;
                 typedef Outcome<Error, Model::DescribePkgsResponse> DescribePkgsOutcome;
                 typedef std::future<DescribePkgsOutcome> DescribePkgsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribePkgsRequest&, DescribePkgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePkgsAsyncHandler;
@@ -630,6 +652,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyMicroserviceResponse> ModifyMicroserviceOutcome;
                 typedef std::future<ModifyMicroserviceOutcome> ModifyMicroserviceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyMicroserviceRequest&, ModifyMicroserviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMicroserviceAsyncHandler;
+                typedef Outcome<Error, Model::ModifyPathRewriteResponse> ModifyPathRewriteOutcome;
+                typedef std::future<ModifyPathRewriteOutcome> ModifyPathRewriteOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ModifyPathRewriteRequest&, ModifyPathRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPathRewriteAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTaskResponse> ModifyTaskOutcome;
                 typedef std::future<ModifyTaskOutcome> ModifyTaskOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyTaskRequest&, ModifyTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskAsyncHandler;
@@ -883,6 +908,15 @@ namespace TencentCloud
                 CreateNamespaceOutcomeCallable CreateNamespaceCallable(const Model::CreateNamespaceRequest& request);
 
                 /**
+                 *创建路径重写
+                 * @param req CreatePathRewritesRequest
+                 * @return CreatePathRewritesOutcome
+                 */
+                CreatePathRewritesOutcome CreatePathRewrites(const Model::CreatePathRewritesRequest &request);
+                void CreatePathRewritesAsync(const Model::CreatePathRewritesRequest& request, const CreatePathRewritesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePathRewritesOutcomeCallable CreatePathRewritesCallable(const Model::CreatePathRewritesRequest& request);
+
+                /**
                  *创建公共配置项
                  * @param req CreatePublicConfigRequest
                  * @return CreatePublicConfigOutcome
@@ -1007,6 +1041,15 @@ namespace TencentCloud
                 DeleteNamespaceOutcome DeleteNamespace(const Model::DeleteNamespaceRequest &request);
                 void DeleteNamespaceAsync(const Model::DeleteNamespaceRequest& request, const DeleteNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNamespaceOutcomeCallable DeleteNamespaceCallable(const Model::DeleteNamespaceRequest& request);
+
+                /**
+                 *删除路径重写
+                 * @param req DeletePathRewritesRequest
+                 * @return DeletePathRewritesOutcome
+                 */
+                DeletePathRewritesOutcome DeletePathRewrites(const Model::DeletePathRewritesRequest &request);
+                void DeletePathRewritesAsync(const Model::DeletePathRewritesRequest& request, const DeletePathRewritesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePathRewritesOutcomeCallable DeletePathRewritesCallable(const Model::DeletePathRewritesRequest& request);
 
                 /**
                  *从软件仓库批量删除程序包。
@@ -1407,6 +1450,24 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeMsApiListOutcomeCallable DescribeMsApiListCallable(const Model::DescribeMsApiListRequest& request);
 
                 /**
+                 *查询路径重写
+                 * @param req DescribePathRewriteRequest
+                 * @return DescribePathRewriteOutcome
+                 */
+                DescribePathRewriteOutcome DescribePathRewrite(const Model::DescribePathRewriteRequest &request);
+                void DescribePathRewriteAsync(const Model::DescribePathRewriteRequest& request, const DescribePathRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePathRewriteOutcomeCallable DescribePathRewriteCallable(const Model::DescribePathRewriteRequest& request);
+
+                /**
+                 *查询路径重写列表
+                 * @param req DescribePathRewritesRequest
+                 * @return DescribePathRewritesOutcome
+                 */
+                DescribePathRewritesOutcome DescribePathRewrites(const Model::DescribePathRewritesRequest &request);
+                void DescribePathRewritesAsync(const Model::DescribePathRewritesRequest& request, const DescribePathRewritesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePathRewritesOutcomeCallable DescribePathRewritesCallable(const Model::DescribePathRewritesRequest& request);
+
+                /**
                  *无
                  * @param req DescribePkgsRequest
                  * @return DescribePkgsOutcome
@@ -1685,6 +1746,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ModifyMicroserviceOutcome ModifyMicroservice(const Model::ModifyMicroserviceRequest &request);
                 void ModifyMicroserviceAsync(const Model::ModifyMicroserviceRequest& request, const ModifyMicroserviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMicroserviceOutcomeCallable ModifyMicroserviceCallable(const Model::ModifyMicroserviceRequest& request);
+
+                /**
+                 *修改路径重写
+                 * @param req ModifyPathRewriteRequest
+                 * @return ModifyPathRewriteOutcome
+                 */
+                ModifyPathRewriteOutcome ModifyPathRewrite(const Model::ModifyPathRewriteRequest &request);
+                void ModifyPathRewriteAsync(const Model::ModifyPathRewriteRequest& request, const ModifyPathRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPathRewriteOutcomeCallable ModifyPathRewriteCallable(const Model::ModifyPathRewriteRequest& request);
 
                 /**
                  *修改任务

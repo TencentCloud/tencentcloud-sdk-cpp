@@ -24,7 +24,8 @@ using namespace std;
 AddInstanceResult::AddInstanceResult() :
     m_failedInstanceIdsHasBeenSet(false),
     m_succInstanceIdsHasBeenSet(false),
-    m_timeoutInstanceIdsHasBeenSet(false)
+    m_timeoutInstanceIdsHasBeenSet(false),
+    m_failedReasonsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ CoreInternalOutcome AddInstanceResult::Deserialize(const Value &value)
         m_timeoutInstanceIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("FailedReasons") && !value["FailedReasons"].IsNull())
+    {
+        if (!value["FailedReasons"].IsArray())
+            return CoreInternalOutcome(Error("response `AddInstanceResult.FailedReasons` is not array type"));
+
+        const Value &tmpValue = value["FailedReasons"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_failedReasons.push_back((*itr).GetString());
+        }
+        m_failedReasonsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -113,6 +127,19 @@ void AddInstanceResult::ToJsonObject(Value &value, Document::AllocatorType& allo
         value.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_timeoutInstanceIds.begin(); itr != m_timeoutInstanceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_failedReasonsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FailedReasons";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_failedReasons.begin(); itr != m_failedReasons.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -167,5 +194,21 @@ void AddInstanceResult::SetTimeoutInstanceIds(const vector<string>& _timeoutInst
 bool AddInstanceResult::TimeoutInstanceIdsHasBeenSet() const
 {
     return m_timeoutInstanceIdsHasBeenSet;
+}
+
+vector<string> AddInstanceResult::GetFailedReasons() const
+{
+    return m_failedReasons;
+}
+
+void AddInstanceResult::SetFailedReasons(const vector<string>& _failedReasons)
+{
+    m_failedReasons = _failedReasons;
+    m_failedReasonsHasBeenSet = true;
+}
+
+bool AddInstanceResult::FailedReasonsHasBeenSet() const
+{
+    return m_failedReasonsHasBeenSet;
 }
 

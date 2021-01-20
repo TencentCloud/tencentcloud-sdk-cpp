@@ -19,6 +19,7 @@ set(tcr_public_header
   )
 
 set(tcr_public_header_model
+  include/tencentcloud/tcr/v20190924/model/DuplicateImagePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImagePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/WebhookTarget.h
@@ -153,6 +154,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/ManageInternalEndpointResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeRepositoryFilterPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeFavorRepositoryPersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/CheckInstanceNameResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryAccessPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateInstanceTokenRequest.h
@@ -171,7 +173,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/TriggerResp.h
   include/tencentcloud/tcr/v20190924/model/CreateRepositoryResponse.h
   include/tencentcloud/tcr/v20190924/model/RespLimit.h
-  include/tencentcloud/tcr/v20190924/model/DuplicateImagePersonalRequest.h
+  include/tencentcloud/tcr/v20190924/model/CheckInstanceNameRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeInstanceTokenResponse.h
   include/tencentcloud/tcr/v20190924/model/SameImagesResp.h
   include/tencentcloud/tcr/v20190924/model/CreateNamespacePersonalRequest.h
@@ -190,6 +192,7 @@ set(tcr_public_header_model
 
 set(tcr_src
   src/v20190924/TcrClient.cpp
+  src/v20190924/model/DuplicateImagePersonalRequest.cpp
   src/v20190924/model/DescribeImagePersonalResponse.cpp
   src/v20190924/model/DescribeUserQuotaPersonalRequest.cpp
   src/v20190924/model/WebhookTarget.cpp
@@ -324,6 +327,7 @@ set(tcr_src
   src/v20190924/model/ManageInternalEndpointResponse.cpp
   src/v20190924/model/DescribeRepositoryFilterPersonalResponse.cpp
   src/v20190924/model/DescribeFavorRepositoryPersonalResponse.cpp
+  src/v20190924/model/CheckInstanceNameResponse.cpp
   src/v20190924/model/ModifyRepositoryAccessPersonalResponse.cpp
   src/v20190924/model/ModifyApplicationTriggerPersonalRequest.cpp
   src/v20190924/model/CreateInstanceTokenRequest.cpp
@@ -342,7 +346,7 @@ set(tcr_src
   src/v20190924/model/TriggerResp.cpp
   src/v20190924/model/CreateRepositoryResponse.cpp
   src/v20190924/model/RespLimit.cpp
-  src/v20190924/model/DuplicateImagePersonalRequest.cpp
+  src/v20190924/model/CheckInstanceNameRequest.cpp
   src/v20190924/model/DescribeInstanceTokenResponse.cpp
   src/v20190924/model/SameImagesResp.cpp
   src/v20190924/model/CreateNamespacePersonalRequest.cpp

@@ -19,22 +19,37 @@ set(tdmq_public_header
   )
 
 set(tdmq_public_header_model
+  include/tencentcloud/tdmq/v20200217/model/DeleteTopicsResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeBindClustersResponse.h
+  include/tencentcloud/tdmq/v20200217/model/SubscriptionTopic.h
   include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsRequest.h
   include/tencentcloud/tdmq/v20200217/model/Environment.h
+  include/tencentcloud/tdmq/v20200217/model/VpcBindRecord.h
+  include/tencentcloud/tdmq/v20200217/model/DeleteClusterResponse.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesRequest.h
   include/tencentcloud/tdmq/v20200217/model/PartitionsTopic.h
-  include/tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeBindClustersRequest.h
+  include/tencentcloud/tdmq/v20200217/model/CreateClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h
-  include/tencentcloud/tdmq/v20200217/model/Topic.h
+  include/tencentcloud/tdmq/v20200217/model/EnvironmentRole.h
+  include/tencentcloud/tdmq/v20200217/model/CreateClusterRequest.h
+  include/tencentcloud/tdmq/v20200217/model/BindCluster.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateTopicResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeClusterDetailRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyTopicResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeClustersRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeProducersRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesResponse.h
+  include/tencentcloud/tdmq/v20200217/model/TopicRecord.h
   include/tencentcloud/tdmq/v20200217/model/Subscription.h
-  include/tencentcloud/tdmq/v20200217/model/DeleteTopicsResponse.h
-  include/tencentcloud/tdmq/v20200217/model/SubscriptionTopic.h
+  include/tencentcloud/tdmq/v20200217/model/DeleteClusterRequest.h
+  include/tencentcloud/tdmq/v20200217/model/FilterSubscription.h
+  include/tencentcloud/tdmq/v20200217/model/Tag.h
   include/tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeProducersResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateTopicRequest.h
@@ -45,8 +60,9 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateSubscriptionRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyTopicRequest.h
+  include/tencentcloud/tdmq/v20200217/model/Topic.h
   include/tencentcloud/tdmq/v20200217/model/Consumer.h
-  include/tencentcloud/tdmq/v20200217/model/FilterSubscription.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeBindVpcsResponse.h
   include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateEnvironmentResponse.h
@@ -56,31 +72,48 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/CreateSubscriptionResponse.h
   include/tencentcloud/tdmq/v20200217/model/ConsumersSchedule.h
   include/tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsRequest.h
-  include/tencentcloud/tdmq/v20200217/model/EnvironmentRole.h
-  include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsRequest.h
-  include/tencentcloud/tdmq/v20200217/model/TopicRecord.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeClusterDetailResponse.h
+  include/tencentcloud/tdmq/v20200217/model/Cluster.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeBindVpcsRequest.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeClustersResponse.h
+  include/tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateEnvironmentRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesRequest.h
   )
 
 set(tdmq_src
   src/v20200217/TdmqClient.cpp
+  src/v20200217/model/DeleteTopicsResponse.cpp
+  src/v20200217/model/DescribeBindClustersResponse.cpp
+  src/v20200217/model/SubscriptionTopic.cpp
   src/v20200217/model/ModifyEnvironmentAttributesRequest.cpp
   src/v20200217/model/DescribeSubscriptionsRequest.cpp
   src/v20200217/model/Environment.cpp
+  src/v20200217/model/VpcBindRecord.cpp
+  src/v20200217/model/DeleteClusterResponse.cpp
+  src/v20200217/model/ModifyClusterRequest.cpp
   src/v20200217/model/DescribeEnvironmentAttributesRequest.cpp
   src/v20200217/model/PartitionsTopic.cpp
-  src/v20200217/model/ResetMsgSubOffsetByTimestampResponse.cpp
+  src/v20200217/model/DescribeBindClustersRequest.cpp
+  src/v20200217/model/CreateClusterResponse.cpp
   src/v20200217/model/DescribeTopicsResponse.cpp
-  src/v20200217/model/Topic.cpp
+  src/v20200217/model/EnvironmentRole.cpp
+  src/v20200217/model/CreateClusterRequest.cpp
+  src/v20200217/model/BindCluster.cpp
+  src/v20200217/model/ModifyClusterResponse.cpp
   src/v20200217/model/CreateTopicResponse.cpp
+  src/v20200217/model/DescribeClusterDetailRequest.cpp
   src/v20200217/model/DescribeEnvironmentsResponse.cpp
+  src/v20200217/model/DescribeEnvironmentsRequest.cpp
   src/v20200217/model/ModifyTopicResponse.cpp
+  src/v20200217/model/DescribeClustersRequest.cpp
   src/v20200217/model/DescribeProducersRequest.cpp
   src/v20200217/model/DescribeEnvironmentAttributesResponse.cpp
+  src/v20200217/model/TopicRecord.cpp
   src/v20200217/model/Subscription.cpp
-  src/v20200217/model/DeleteTopicsResponse.cpp
-  src/v20200217/model/SubscriptionTopic.cpp
+  src/v20200217/model/DeleteClusterRequest.cpp
+  src/v20200217/model/FilterSubscription.cpp
+  src/v20200217/model/Tag.cpp
   src/v20200217/model/DescribeSubscriptionsResponse.cpp
   src/v20200217/model/DescribeProducersResponse.cpp
   src/v20200217/model/CreateTopicRequest.cpp
@@ -91,8 +124,9 @@ set(tdmq_src
   src/v20200217/model/DescribeEnvironmentRolesResponse.cpp
   src/v20200217/model/CreateSubscriptionRequest.cpp
   src/v20200217/model/ModifyTopicRequest.cpp
+  src/v20200217/model/Topic.cpp
   src/v20200217/model/Consumer.cpp
-  src/v20200217/model/FilterSubscription.cpp
+  src/v20200217/model/DescribeBindVpcsResponse.cpp
   src/v20200217/model/ModifyEnvironmentAttributesResponse.cpp
   src/v20200217/model/DeleteSubscriptionsRequest.cpp
   src/v20200217/model/CreateEnvironmentResponse.cpp
@@ -102,9 +136,11 @@ set(tdmq_src
   src/v20200217/model/CreateSubscriptionResponse.cpp
   src/v20200217/model/ConsumersSchedule.cpp
   src/v20200217/model/DeleteEnvironmentsRequest.cpp
-  src/v20200217/model/EnvironmentRole.cpp
-  src/v20200217/model/DescribeEnvironmentsRequest.cpp
-  src/v20200217/model/TopicRecord.cpp
+  src/v20200217/model/DescribeClusterDetailResponse.cpp
+  src/v20200217/model/Cluster.cpp
+  src/v20200217/model/DescribeBindVpcsRequest.cpp
+  src/v20200217/model/DescribeClustersResponse.cpp
+  src/v20200217/model/ResetMsgSubOffsetByTimestampResponse.cpp
   src/v20200217/model/CreateEnvironmentRequest.cpp
   src/v20200217/model/DescribeEnvironmentRolesRequest.cpp
   )

@@ -27,7 +27,8 @@ ApiDetailResponse::ApiDetailResponse() :
     m_definitionsHasBeenSet(false),
     m_requestContentTypeHasBeenSet(false),
     m_canRunHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ApiDetailResponse.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +211,14 @@ void ApiDetailResponse::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void ApiDetailResponse::SetStatus(const int64_t& _status)
 bool ApiDetailResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string ApiDetailResponse::GetDescription() const
+{
+    return m_description;
+}
+
+void ApiDetailResponse::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ApiDetailResponse::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

@@ -28,7 +28,9 @@ CreateSubscriptionRequest::CreateSubscriptionRequest() :
     m_topicNameHasBeenSet(false),
     m_subscriptionNameHasBeenSet(false),
     m_isIdempotentHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_autoCreatePolicyTopicHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,22 @@ string CreateSubscriptionRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoCreatePolicyTopicHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoCreatePolicyTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoCreatePolicyTopic, allocator);
     }
 
 
@@ -165,6 +183,38 @@ void CreateSubscriptionRequest::SetRemark(const string& _remark)
 bool CreateSubscriptionRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateSubscriptionRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void CreateSubscriptionRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool CreateSubscriptionRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+bool CreateSubscriptionRequest::GetAutoCreatePolicyTopic() const
+{
+    return m_autoCreatePolicyTopic;
+}
+
+void CreateSubscriptionRequest::SetAutoCreatePolicyTopic(const bool& _autoCreatePolicyTopic)
+{
+    m_autoCreatePolicyTopic = _autoCreatePolicyTopic;
+    m_autoCreatePolicyTopicHasBeenSet = true;
+}
+
+bool CreateSubscriptionRequest::AutoCreatePolicyTopicHasBeenSet() const
+{
+    return m_autoCreatePolicyTopicHasBeenSet;
 }
 
 

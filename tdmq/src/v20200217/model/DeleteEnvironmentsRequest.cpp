@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DeleteEnvironmentsRequest::DeleteEnvironmentsRequest() :
-    m_environmentIdsHasBeenSet(false)
+    m_environmentIdsHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,14 @@ string DeleteEnvironmentsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -70,6 +79,22 @@ void DeleteEnvironmentsRequest::SetEnvironmentIds(const vector<string>& _environ
 bool DeleteEnvironmentsRequest::EnvironmentIdsHasBeenSet() const
 {
     return m_environmentIdsHasBeenSet;
+}
+
+string DeleteEnvironmentsRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DeleteEnvironmentsRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DeleteEnvironmentsRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

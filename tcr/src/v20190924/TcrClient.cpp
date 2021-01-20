@@ -126,6 +126,49 @@ TcrClient::BatchDeleteRepositoryPersonalOutcomeCallable TcrClient::BatchDeleteRe
     return task->get_future();
 }
 
+TcrClient::CheckInstanceNameOutcome TcrClient::CheckInstanceName(const CheckInstanceNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckInstanceName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckInstanceNameResponse rsp = CheckInstanceNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckInstanceNameOutcome(rsp);
+        else
+            return CheckInstanceNameOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckInstanceNameOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CheckInstanceNameAsync(const CheckInstanceNameRequest& request, const CheckInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckInstanceName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CheckInstanceNameOutcomeCallable TcrClient::CheckInstanceNameCallable(const CheckInstanceNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckInstanceNameOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckInstanceName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::CreateApplicationTriggerPersonalOutcome TcrClient::CreateApplicationTriggerPersonal(const CreateApplicationTriggerPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApplicationTriggerPersonal");

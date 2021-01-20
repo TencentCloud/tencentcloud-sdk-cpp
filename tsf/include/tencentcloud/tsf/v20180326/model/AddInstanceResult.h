@@ -112,6 +112,28 @@ namespace TencentCloud
                      */
                     bool TimeoutInstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取失败的节点的失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailedReasons 失败的节点的失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetFailedReasons() const;
+
+                    /**
+                     * 设置失败的节点的失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FailedReasons 失败的节点的失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFailedReasons(const std::vector<std::string>& _failedReasons);
+
+                    /**
+                     * 判断参数 FailedReasons 是否已赋值
+                     * @return FailedReasons 是否已赋值
+                     */
+                    bool FailedReasonsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +156,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_timeoutInstanceIds;
                     bool m_timeoutInstanceIdsHasBeenSet;
+
+                    /**
+                     * 失败的节点的失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_failedReasons;
+                    bool m_failedReasonsHasBeenSet;
 
                 };
             }

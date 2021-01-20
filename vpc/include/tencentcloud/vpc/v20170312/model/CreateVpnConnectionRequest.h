@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @return VpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 获取VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+                     * @return VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @param VpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 设置VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+                     * @param VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -208,10 +208,64 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持隧道内健康检查
+                     * @return EnableHealthCheck 是否支持隧道内健康检查
+                     */
+                    bool GetEnableHealthCheck() const;
+
+                    /**
+                     * 设置是否支持隧道内健康检查
+                     * @param EnableHealthCheck 是否支持隧道内健康检查
+                     */
+                    void SetEnableHealthCheck(const bool& _enableHealthCheck);
+
+                    /**
+                     * 判断参数 EnableHealthCheck 是否已赋值
+                     * @return EnableHealthCheck 是否已赋值
+                     */
+                    bool EnableHealthCheckHasBeenSet() const;
+
+                    /**
+                     * 获取健康检查本端地址
+                     * @return HealthCheckLocalIp 健康检查本端地址
+                     */
+                    std::string GetHealthCheckLocalIp() const;
+
+                    /**
+                     * 设置健康检查本端地址
+                     * @param HealthCheckLocalIp 健康检查本端地址
+                     */
+                    void SetHealthCheckLocalIp(const std::string& _healthCheckLocalIp);
+
+                    /**
+                     * 判断参数 HealthCheckLocalIp 是否已赋值
+                     * @return HealthCheckLocalIp 是否已赋值
+                     */
+                    bool HealthCheckLocalIpHasBeenSet() const;
+
+                    /**
+                     * 获取健康检查对端地址
+                     * @return HealthCheckRemoteIp 健康检查对端地址
+                     */
+                    std::string GetHealthCheckRemoteIp() const;
+
+                    /**
+                     * 设置健康检查对端地址
+                     * @param HealthCheckRemoteIp 健康检查对端地址
+                     */
+                    void SetHealthCheckRemoteIp(const std::string& _healthCheckRemoteIp);
+
+                    /**
+                     * 判断参数 HealthCheckRemoteIp 是否已赋值
+                     * @return HealthCheckRemoteIp 是否已赋值
+                     */
+                    bool HealthCheckRemoteIpHasBeenSet() const;
+
                 private:
 
                     /**
-                     * VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -263,6 +317,24 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否支持隧道内健康检查
+                     */
+                    bool m_enableHealthCheck;
+                    bool m_enableHealthCheckHasBeenSet;
+
+                    /**
+                     * 健康检查本端地址
+                     */
+                    std::string m_healthCheckLocalIp;
+                    bool m_healthCheckLocalIpHasBeenSet;
+
+                    /**
+                     * 健康检查对端地址
+                     */
+                    std::string m_healthCheckRemoteIp;
+                    bool m_healthCheckRemoteIpHasBeenSet;
 
                 };
             }

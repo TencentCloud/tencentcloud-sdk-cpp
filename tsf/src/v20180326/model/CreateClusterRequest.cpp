@@ -32,7 +32,10 @@ CreateClusterRequest::CreateClusterRequest() :
     m_tsfRegionIdHasBeenSet(false),
     m_tsfZoneIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_clusterVersionHasBeenSet(false)
+    m_clusterVersionHasBeenSet(false),
+    m_maxNodePodNumHasBeenSet(false),
+    m_maxClusterServiceNumHasBeenSet(false),
+    m_programIdHasBeenSet(false)
 {
 }
 
@@ -113,6 +116,30 @@ string CreateClusterRequest::ToJsonString() const
         string key = "ClusterVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clusterVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxNodePodNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxNodePodNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxNodePodNum, allocator);
+    }
+
+    if (m_maxClusterServiceNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxClusterServiceNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxClusterServiceNum, allocator);
+    }
+
+    if (m_programIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProgramId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_programId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -265,6 +292,54 @@ void CreateClusterRequest::SetClusterVersion(const string& _clusterVersion)
 bool CreateClusterRequest::ClusterVersionHasBeenSet() const
 {
     return m_clusterVersionHasBeenSet;
+}
+
+uint64_t CreateClusterRequest::GetMaxNodePodNum() const
+{
+    return m_maxNodePodNum;
+}
+
+void CreateClusterRequest::SetMaxNodePodNum(const uint64_t& _maxNodePodNum)
+{
+    m_maxNodePodNum = _maxNodePodNum;
+    m_maxNodePodNumHasBeenSet = true;
+}
+
+bool CreateClusterRequest::MaxNodePodNumHasBeenSet() const
+{
+    return m_maxNodePodNumHasBeenSet;
+}
+
+uint64_t CreateClusterRequest::GetMaxClusterServiceNum() const
+{
+    return m_maxClusterServiceNum;
+}
+
+void CreateClusterRequest::SetMaxClusterServiceNum(const uint64_t& _maxClusterServiceNum)
+{
+    m_maxClusterServiceNum = _maxClusterServiceNum;
+    m_maxClusterServiceNumHasBeenSet = true;
+}
+
+bool CreateClusterRequest::MaxClusterServiceNumHasBeenSet() const
+{
+    return m_maxClusterServiceNumHasBeenSet;
+}
+
+string CreateClusterRequest::GetProgramId() const
+{
+    return m_programId;
+}
+
+void CreateClusterRequest::SetProgramId(const string& _programId)
+{
+    m_programId = _programId;
+    m_programIdHasBeenSet = true;
+}
+
+bool CreateClusterRequest::ProgramIdHasBeenSet() const
+{
+    return m_programIdHasBeenSet;
 }
 
 

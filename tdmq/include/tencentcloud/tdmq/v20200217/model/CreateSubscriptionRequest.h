@@ -132,6 +132,42 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取Pulsar 集群的ID
+                     * @return ClusterId Pulsar 集群的ID
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置Pulsar 集群的ID
+                     * @param ClusterId Pulsar 集群的ID
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动创建死信和重试主题，True 表示创建，False表示不创建，默认自动创建死信和重试主题。
+                     * @return AutoCreatePolicyTopic 是否自动创建死信和重试主题，True 表示创建，False表示不创建，默认自动创建死信和重试主题。
+                     */
+                    bool GetAutoCreatePolicyTopic() const;
+
+                    /**
+                     * 设置是否自动创建死信和重试主题，True 表示创建，False表示不创建，默认自动创建死信和重试主题。
+                     * @param AutoCreatePolicyTopic 是否自动创建死信和重试主题，True 表示创建，False表示不创建，默认自动创建死信和重试主题。
+                     */
+                    void SetAutoCreatePolicyTopic(const bool& _autoCreatePolicyTopic);
+
+                    /**
+                     * 判断参数 AutoCreatePolicyTopic 是否已赋值
+                     * @return AutoCreatePolicyTopic 是否已赋值
+                     */
+                    bool AutoCreatePolicyTopicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +199,18 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * Pulsar 集群的ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 是否自动创建死信和重试主题，True 表示创建，False表示不创建，默认自动创建死信和重试主题。
+                     */
+                    bool m_autoCreatePolicyTopic;
+                    bool m_autoCreatePolicyTopicHasBeenSet;
 
                 };
             }

@@ -26,7 +26,9 @@ Environment::Environment() :
     m_remarkHasBeenSet(false),
     m_msgTTLHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false),
+    m_namespaceNameHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,26 @@ CoreInternalOutcome Environment::Deserialize(const Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("NamespaceId") && !value["NamespaceId"].IsNull())
+    {
+        if (!value["NamespaceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Environment.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceId = string(value["NamespaceId"].GetString());
+        m_namespaceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("NamespaceName") && !value["NamespaceName"].IsNull())
+    {
+        if (!value["NamespaceName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Environment.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceName = string(value["NamespaceName"].GetString());
+        m_namespaceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +152,22 @@ void Environment::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_namespaceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +251,37 @@ void Environment::SetUpdateTime(const string& _updateTime)
 bool Environment::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string Environment::GetNamespaceId() const
+{
+    return m_namespaceId;
+}
+
+void Environment::SetNamespaceId(const string& _namespaceId)
+{
+    m_namespaceId = _namespaceId;
+    m_namespaceIdHasBeenSet = true;
+}
+
+bool Environment::NamespaceIdHasBeenSet() const
+{
+    return m_namespaceIdHasBeenSet;
+}
+
+string Environment::GetNamespaceName() const
+{
+    return m_namespaceName;
+}
+
+void Environment::SetNamespaceName(const string& _namespaceName)
+{
+    m_namespaceName = _namespaceName;
+    m_namespaceNameHasBeenSet = true;
+}
+
+bool Environment::NamespaceNameHasBeenSet() const
+{
+    return m_namespaceNameHasBeenSet;
 }
 

@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool IsHaEnableHasBeenSet() const;
 
+                    /**
+                     * 获取需要绑定的数据集ID
+                     * @return ProgramId 需要绑定的数据集ID
+                     */
+                    std::string GetProgramId() const;
+
+                    /**
+                     * 设置需要绑定的数据集ID
+                     * @param ProgramId 需要绑定的数据集ID
+                     */
+                    void SetProgramId(const std::string& _programId);
+
+                    /**
+                     * 判断参数 ProgramId 是否已赋值
+                     * @return ProgramId 是否已赋值
+                     */
+                    bool ProgramIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_isHaEnable;
                     bool m_isHaEnableHasBeenSet;
+
+                    /**
+                     * 需要绑定的数据集ID
+                     */
+                    std::string m_programId;
+                    bool m_programIdHasBeenSet;
 
                 };
             }

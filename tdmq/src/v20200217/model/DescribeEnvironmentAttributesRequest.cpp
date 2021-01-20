@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeEnvironmentAttributesRequest::DescribeEnvironmentAttributesRequest() :
-    m_environmentIdHasBeenSet(false)
+    m_environmentIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string DescribeEnvironmentAttributesRequest::ToJsonString() const
         string key = "EnvironmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_environmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void DescribeEnvironmentAttributesRequest::SetEnvironmentId(const string& _envir
 bool DescribeEnvironmentAttributesRequest::EnvironmentIdHasBeenSet() const
 {
     return m_environmentIdHasBeenSet;
+}
+
+string DescribeEnvironmentAttributesRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeEnvironmentAttributesRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeEnvironmentAttributesRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

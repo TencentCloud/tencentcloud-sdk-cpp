@@ -29,7 +29,8 @@ DescribeSubscriptionsRequest::DescribeSubscriptionsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_subscriptionNameHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,14 @@ string DescribeSubscriptionsRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -197,6 +206,22 @@ void DescribeSubscriptionsRequest::SetFilters(const vector<FilterSubscription>& 
 bool DescribeSubscriptionsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeSubscriptionsRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeSubscriptionsRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeSubscriptionsRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

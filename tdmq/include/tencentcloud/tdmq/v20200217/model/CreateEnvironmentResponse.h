@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境（命名空间）名称。
-                     * @return EnvironmentId 环境（命名空间）名称。
+                     * 获取命名空间名称。
+                     * @return EnvironmentId 命名空间名称。
                      */
                     std::string GetEnvironmentId() const;
 
@@ -80,10 +80,22 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取命名空间ID
+                     * @return NamespaceId 命名空间ID
+                     */
+                    std::string GetNamespaceId() const;
+
+                    /**
+                     * 判断参数 NamespaceId 是否已赋值
+                     * @return NamespaceId 是否已赋值
+                     */
+                    bool NamespaceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 环境（命名空间）名称。
+                     * 命名空间名称。
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
@@ -100,6 +112,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 命名空间ID
+                     */
+                    std::string m_namespaceId;
+                    bool m_namespaceIdHasBeenSet;
 
                 };
             }

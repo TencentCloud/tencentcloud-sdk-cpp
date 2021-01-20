@@ -153,6 +153,60 @@ namespace TencentCloud
                      */
                     bool IPSECOptionsSpecificationHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用通道健康检查
+                     * @return EnableHealthCheck 是否启用通道健康检查
+                     */
+                    bool GetEnableHealthCheck() const;
+
+                    /**
+                     * 设置是否启用通道健康检查
+                     * @param EnableHealthCheck 是否启用通道健康检查
+                     */
+                    void SetEnableHealthCheck(const bool& _enableHealthCheck);
+
+                    /**
+                     * 判断参数 EnableHealthCheck 是否已赋值
+                     * @return EnableHealthCheck 是否已赋值
+                     */
+                    bool EnableHealthCheckHasBeenSet() const;
+
+                    /**
+                     * 获取本端通道探测ip
+                     * @return HealthCheckLocalIp 本端通道探测ip
+                     */
+                    std::string GetHealthCheckLocalIp() const;
+
+                    /**
+                     * 设置本端通道探测ip
+                     * @param HealthCheckLocalIp 本端通道探测ip
+                     */
+                    void SetHealthCheckLocalIp(const std::string& _healthCheckLocalIp);
+
+                    /**
+                     * 判断参数 HealthCheckLocalIp 是否已赋值
+                     * @return HealthCheckLocalIp 是否已赋值
+                     */
+                    bool HealthCheckLocalIpHasBeenSet() const;
+
+                    /**
+                     * 获取对端通道探测ip
+                     * @return HealthCheckRemoteIp 对端通道探测ip
+                     */
+                    std::string GetHealthCheckRemoteIp() const;
+
+                    /**
+                     * 设置对端通道探测ip
+                     * @param HealthCheckRemoteIp 对端通道探测ip
+                     */
+                    void SetHealthCheckRemoteIp(const std::string& _healthCheckRemoteIp);
+
+                    /**
+                     * 判断参数 HealthCheckRemoteIp 是否已赋值
+                     * @return HealthCheckRemoteIp 是否已赋值
+                     */
+                    bool HealthCheckRemoteIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -190,6 +244,24 @@ namespace TencentCloud
                      */
                     IPSECOptionsSpecification m_iPSECOptionsSpecification;
                     bool m_iPSECOptionsSpecificationHasBeenSet;
+
+                    /**
+                     * 是否启用通道健康检查
+                     */
+                    bool m_enableHealthCheck;
+                    bool m_enableHealthCheckHasBeenSet;
+
+                    /**
+                     * 本端通道探测ip
+                     */
+                    std::string m_healthCheckLocalIp;
+                    bool m_healthCheckLocalIpHasBeenSet;
+
+                    /**
+                     * 对端通道探测ip
+                     */
+                    std::string m_healthCheckRemoteIp;
+                    bool m_healthCheckRemoteIpHasBeenSet;
 
                 };
             }

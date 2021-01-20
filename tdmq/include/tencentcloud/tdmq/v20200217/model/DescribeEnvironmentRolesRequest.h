@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取Pulsar 集群的ID
+                     * @return ClusterId Pulsar 集群的ID
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置Pulsar 集群的ID
+                     * @param ClusterId Pulsar 集群的ID
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取角色名称
+                     * @return RoleName 角色名称
+                     */
+                    std::string GetRoleName() const;
+
+                    /**
+                     * 设置角色名称
+                     * @param RoleName 角色名称
+                     */
+                    void SetRoleName(const std::string& _roleName);
+
+                    /**
+                     * 判断参数 RoleName 是否已赋值
+                     * @return RoleName 是否已赋值
+                     */
+                    bool RoleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * Pulsar 集群的ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 角色名称
+                     */
+                    std::string m_roleName;
+                    bool m_roleNameHasBeenSet;
 
                 };
             }

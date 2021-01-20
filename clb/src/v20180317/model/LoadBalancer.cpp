@@ -69,7 +69,8 @@ LoadBalancer::LoadBalancer() :
     m_localBgpHasBeenSet(false),
     m_clusterTagHasBeenSet(false),
     m_mixIpTargetHasBeenSet(false),
-    m_zonesHasBeenSet(false)
+    m_zonesHasBeenSet(false),
+    m_nfvInfoHasBeenSet(false)
 {
 }
 
@@ -639,6 +640,16 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_zonesHasBeenSet = true;
     }
 
+    if (value.HasMember("NfvInfo") && !value["NfvInfo"].IsNull())
+    {
+        if (!value["NfvInfo"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.NfvInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nfvInfo = string(value["NfvInfo"].GetString());
+        m_nfvInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1070,6 +1081,14 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_nfvInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NfvInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_nfvInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1841,5 +1860,21 @@ void LoadBalancer::SetZones(const vector<string>& _zones)
 bool LoadBalancer::ZonesHasBeenSet() const
 {
     return m_zonesHasBeenSet;
+}
+
+string LoadBalancer::GetNfvInfo() const
+{
+    return m_nfvInfo;
+}
+
+void LoadBalancer::SetNfvInfo(const string& _nfvInfo)
+{
+    m_nfvInfo = _nfvInfo;
+    m_nfvInfoHasBeenSet = true;
+}
+
+bool LoadBalancer::NfvInfoHasBeenSet() const
+{
+    return m_nfvInfoHasBeenSet;
 }
 

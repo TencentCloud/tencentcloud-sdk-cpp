@@ -204,6 +204,60 @@ namespace TencentCloud
                      */
                     bool ClusterVersionHasBeenSet() const;
 
+                    /**
+                     * 获取集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。
+                     * @return MaxNodePodNum 集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。
+                     */
+                    uint64_t GetMaxNodePodNum() const;
+
+                    /**
+                     * 设置集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。
+                     * @param MaxNodePodNum 集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。
+                     */
+                    void SetMaxNodePodNum(const uint64_t& _maxNodePodNum);
+
+                    /**
+                     * 判断参数 MaxNodePodNum 是否已赋值
+                     * @return MaxNodePodNum 是否已赋值
+                     */
+                    bool MaxNodePodNumHasBeenSet() const;
+
+                    /**
+                     * 获取集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。
+                     * @return MaxClusterServiceNum 集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。
+                     */
+                    uint64_t GetMaxClusterServiceNum() const;
+
+                    /**
+                     * 设置集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。
+                     * @param MaxClusterServiceNum 集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。
+                     */
+                    void SetMaxClusterServiceNum(const uint64_t& _maxClusterServiceNum);
+
+                    /**
+                     * 判断参数 MaxClusterServiceNum 是否已赋值
+                     * @return MaxClusterServiceNum 是否已赋值
+                     */
+                    bool MaxClusterServiceNumHasBeenSet() const;
+
+                    /**
+                     * 获取需要绑定的数据集ID
+                     * @return ProgramId 需要绑定的数据集ID
+                     */
+                    std::string GetProgramId() const;
+
+                    /**
+                     * 设置需要绑定的数据集ID
+                     * @param ProgramId 需要绑定的数据集ID
+                     */
+                    void SetProgramId(const std::string& _programId);
+
+                    /**
+                     * 判断参数 ProgramId 是否已赋值
+                     * @return ProgramId 是否已赋值
+                     */
+                    bool ProgramIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +313,24 @@ namespace TencentCloud
                      */
                     std::string m_clusterVersion;
                     bool m_clusterVersionHasBeenSet;
+
+                    /**
+                     * 集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。
+                     */
+                    uint64_t m_maxNodePodNum;
+                    bool m_maxNodePodNumHasBeenSet;
+
+                    /**
+                     * 集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。
+                     */
+                    uint64_t m_maxClusterServiceNum;
+                    bool m_maxClusterServiceNumHasBeenSet;
+
+                    /**
+                     * 需要绑定的数据集ID
+                     */
+                    std::string m_programId;
+                    bool m_programIdHasBeenSet;
 
                 };
             }

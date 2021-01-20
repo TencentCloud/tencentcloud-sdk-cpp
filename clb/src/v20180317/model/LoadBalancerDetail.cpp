@@ -51,7 +51,9 @@ LoadBalancerDetail::LoadBalancerDetail() :
     m_targetAddressHasBeenSet(false),
     m_targetPortHasBeenSet(false),
     m_targetWeightHasBeenSet(false),
-    m_isolationHasBeenSet(false)
+    m_isolationHasBeenSet(false),
+    m_securityGroupHasBeenSet(false),
+    m_loadBalancerPassToTargetHasBeenSet(false)
 {
 }
 
@@ -391,6 +393,29 @@ CoreInternalOutcome LoadBalancerDetail::Deserialize(const Value &value)
         m_isolationHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroup") && !value["SecurityGroup"].IsNull())
+    {
+        if (!value["SecurityGroup"].IsArray())
+            return CoreInternalOutcome(Error("response `LoadBalancerDetail.SecurityGroup` is not array type"));
+
+        const Value &tmpValue = value["SecurityGroup"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroup.push_back((*itr).GetString());
+        }
+        m_securityGroupHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadBalancerPassToTarget") && !value["LoadBalancerPassToTarget"].IsNull())
+    {
+        if (!value["LoadBalancerPassToTarget"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancerDetail.LoadBalancerPassToTarget` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancerPassToTarget = value["LoadBalancerPassToTarget"].GetUint64();
+        m_loadBalancerPassToTargetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -646,6 +671,27 @@ void LoadBalancerDetail::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "Isolation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isolation, allocator);
+    }
+
+    if (m_securityGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroup.begin(); itr != m_securityGroup.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_loadBalancerPassToTargetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LoadBalancerPassToTarget";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
     }
 
 }
@@ -1129,5 +1175,37 @@ void LoadBalancerDetail::SetIsolation(const uint64_t& _isolation)
 bool LoadBalancerDetail::IsolationHasBeenSet() const
 {
     return m_isolationHasBeenSet;
+}
+
+vector<string> LoadBalancerDetail::GetSecurityGroup() const
+{
+    return m_securityGroup;
+}
+
+void LoadBalancerDetail::SetSecurityGroup(const vector<string>& _securityGroup)
+{
+    m_securityGroup = _securityGroup;
+    m_securityGroupHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::SecurityGroupHasBeenSet() const
+{
+    return m_securityGroupHasBeenSet;
+}
+
+uint64_t LoadBalancerDetail::GetLoadBalancerPassToTarget() const
+{
+    return m_loadBalancerPassToTarget;
+}
+
+void LoadBalancerDetail::SetLoadBalancerPassToTarget(const uint64_t& _loadBalancerPassToTarget)
+{
+    m_loadBalancerPassToTarget = _loadBalancerPassToTarget;
+    m_loadBalancerPassToTargetHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::LoadBalancerPassToTargetHasBeenSet() const
+{
+    return m_loadBalancerPassToTargetHasBeenSet;
 }
 

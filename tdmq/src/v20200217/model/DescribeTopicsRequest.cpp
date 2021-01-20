@@ -28,7 +28,8 @@ DescribeTopicsRequest::DescribeTopicsRequest() :
     m_topicNameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_topicTypeHasBeenSet(false)
+    m_topicTypeHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string DescribeTopicsRequest::ToJsonString() const
         string key = "TopicType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_topicType, allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void DescribeTopicsRequest::SetTopicType(const uint64_t& _topicType)
 bool DescribeTopicsRequest::TopicTypeHasBeenSet() const
 {
     return m_topicTypeHasBeenSet;
+}
+
+string DescribeTopicsRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeTopicsRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeTopicsRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

@@ -288,6 +288,28 @@ namespace TencentCloud
                      */
                     bool ApigatewayServiceIdHasBeenSet() const;
 
+                    /**
+                     * 获取应用备注名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationRemarkName 应用备注名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationRemarkName() const;
+
+                    /**
+                     * 设置应用备注名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationRemarkName 应用备注名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationRemarkName(const std::string& _applicationRemarkName);
+
+                    /**
+                     * 判断参数 ApplicationRemarkName 是否已赋值
+                     * @return ApplicationRemarkName 是否已赋值
+                     */
+                    bool ApplicationRemarkNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -366,6 +388,13 @@ namespace TencentCloud
                      */
                     std::string m_apigatewayServiceId;
                     bool m_apigatewayServiceIdHasBeenSet;
+
+                    /**
+                     * 应用备注名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationRemarkName;
+                    bool m_applicationRemarkNameHasBeenSet;
 
                 };
             }

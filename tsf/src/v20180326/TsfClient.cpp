@@ -814,6 +814,49 @@ TsfClient::CreateNamespaceOutcomeCallable TsfClient::CreateNamespaceCallable(con
     return task->get_future();
 }
 
+TsfClient::CreatePathRewritesOutcome TsfClient::CreatePathRewrites(const CreatePathRewritesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePathRewrites");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePathRewritesResponse rsp = CreatePathRewritesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePathRewritesOutcome(rsp);
+        else
+            return CreatePathRewritesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePathRewritesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreatePathRewritesAsync(const CreatePathRewritesRequest& request, const CreatePathRewritesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePathRewrites(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreatePathRewritesOutcomeCallable TsfClient::CreatePathRewritesCallable(const CreatePathRewritesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePathRewritesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePathRewrites(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreatePublicConfigOutcome TsfClient::CreatePublicConfig(const CreatePublicConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePublicConfig");
@@ -1409,6 +1452,49 @@ TsfClient::DeleteNamespaceOutcomeCallable TsfClient::DeleteNamespaceCallable(con
         [this, request]()
         {
             return this->DeleteNamespace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DeletePathRewritesOutcome TsfClient::DeletePathRewrites(const DeletePathRewritesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePathRewrites");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePathRewritesResponse rsp = DeletePathRewritesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePathRewritesOutcome(rsp);
+        else
+            return DeletePathRewritesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePathRewritesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeletePathRewritesAsync(const DeletePathRewritesRequest& request, const DeletePathRewritesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePathRewrites(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeletePathRewritesOutcomeCallable TsfClient::DeletePathRewritesCallable(const DeletePathRewritesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePathRewritesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePathRewrites(request);
         }
     );
 
@@ -3308,6 +3394,92 @@ TsfClient::DescribeMsApiListOutcomeCallable TsfClient::DescribeMsApiListCallable
     return task->get_future();
 }
 
+TsfClient::DescribePathRewriteOutcome TsfClient::DescribePathRewrite(const DescribePathRewriteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePathRewrite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePathRewriteResponse rsp = DescribePathRewriteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePathRewriteOutcome(rsp);
+        else
+            return DescribePathRewriteOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePathRewriteOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribePathRewriteAsync(const DescribePathRewriteRequest& request, const DescribePathRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePathRewrite(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribePathRewriteOutcomeCallable TsfClient::DescribePathRewriteCallable(const DescribePathRewriteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePathRewriteOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePathRewrite(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribePathRewritesOutcome TsfClient::DescribePathRewrites(const DescribePathRewritesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePathRewrites");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePathRewritesResponse rsp = DescribePathRewritesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePathRewritesOutcome(rsp);
+        else
+            return DescribePathRewritesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePathRewritesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribePathRewritesAsync(const DescribePathRewritesRequest& request, const DescribePathRewritesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePathRewrites(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribePathRewritesOutcomeCallable TsfClient::DescribePathRewritesCallable(const DescribePathRewritesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePathRewritesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePathRewrites(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribePkgsOutcome TsfClient::DescribePkgs(const DescribePkgsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePkgs");
@@ -4634,6 +4806,49 @@ TsfClient::ModifyMicroserviceOutcomeCallable TsfClient::ModifyMicroserviceCallab
         [this, request]()
         {
             return this->ModifyMicroservice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ModifyPathRewriteOutcome TsfClient::ModifyPathRewrite(const ModifyPathRewriteRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPathRewrite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPathRewriteResponse rsp = ModifyPathRewriteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPathRewriteOutcome(rsp);
+        else
+            return ModifyPathRewriteOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPathRewriteOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ModifyPathRewriteAsync(const ModifyPathRewriteRequest& request, const ModifyPathRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPathRewrite(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ModifyPathRewriteOutcomeCallable TsfClient::ModifyPathRewriteCallable(const ModifyPathRewriteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPathRewriteOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPathRewrite(request);
         }
     );
 

@@ -23,18 +23,30 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateSubscriptionRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateSubscriptionResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateTopicRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateTopicResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteTopicsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeBindClustersRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeBindClustersResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeBindVpcsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeBindVpcsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeClusterDetailRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeClusterDetailResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeClustersRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeClustersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesRequest.h>
@@ -47,6 +59,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyClusterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyTopicRequest.h>
@@ -67,6 +81,9 @@ namespace TencentCloud
                 TdmqClient(const Credential &credential, const std::string &region);
                 TdmqClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateClusterResponse> CreateClusterOutcome;
+                typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
                 typedef Outcome<Error, Model::CreateEnvironmentResponse> CreateEnvironmentOutcome;
                 typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateEnvironmentRequest&, CreateEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentAsyncHandler;
@@ -76,6 +93,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
+                typedef Outcome<Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
+                typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
                 typedef Outcome<Error, Model::DeleteEnvironmentsResponse> DeleteEnvironmentsOutcome;
                 typedef std::future<DeleteEnvironmentsOutcome> DeleteEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteEnvironmentsRequest&, DeleteEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentsAsyncHandler;
@@ -85,6 +105,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteTopicsResponse> DeleteTopicsOutcome;
                 typedef std::future<DeleteTopicsOutcome> DeleteTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteTopicsRequest&, DeleteTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBindClustersResponse> DescribeBindClustersOutcome;
+                typedef std::future<DescribeBindClustersOutcome> DescribeBindClustersOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeBindClustersRequest&, DescribeBindClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindClustersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBindVpcsResponse> DescribeBindVpcsOutcome;
+                typedef std::future<DescribeBindVpcsOutcome> DescribeBindVpcsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeBindVpcsRequest&, DescribeBindVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindVpcsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterDetailResponse> DescribeClusterDetailOutcome;
+                typedef std::future<DescribeClusterDetailOutcome> DescribeClusterDetailOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeClusterDetailRequest&, DescribeClusterDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
+                typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEnvironmentAttributesResponse> DescribeEnvironmentAttributesOutcome;
                 typedef std::future<DescribeEnvironmentAttributesOutcome> DescribeEnvironmentAttributesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeEnvironmentAttributesRequest&, DescribeEnvironmentAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentAttributesAsyncHandler;
@@ -103,6 +135,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
                 typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
+                typedef Outcome<Error, Model::ModifyClusterResponse> ModifyClusterOutcome;
+                typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyClusterRequest&, ModifyClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAsyncHandler;
                 typedef Outcome<Error, Model::ModifyEnvironmentAttributesResponse> ModifyEnvironmentAttributesOutcome;
                 typedef std::future<ModifyEnvironmentAttributesOutcome> ModifyEnvironmentAttributesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyEnvironmentAttributesRequest&, ModifyEnvironmentAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentAttributesAsyncHandler;
@@ -114,6 +149,15 @@ namespace TencentCloud
                 typedef std::function<void(const TdmqClient*, const Model::ResetMsgSubOffsetByTimestampRequest&, ResetMsgSubOffsetByTimestampOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetMsgSubOffsetByTimestampAsyncHandler;
 
 
+
+                /**
+                 *创建用户的集群
+                 * @param req CreateClusterRequest
+                 * @return CreateClusterOutcome
+                 */
+                CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest &request);
+                void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
 
                 /**
                  *用于在用户账户下创建消息队列 Tdmq环境（命名空间）
@@ -143,6 +187,15 @@ namespace TencentCloud
                 CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
 
                 /**
+                 *删除集群
+                 * @param req DeleteClusterRequest
+                 * @return DeleteClusterOutcome
+                 */
+                DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest &request);
+                void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request);
+
+                /**
                  *批量删除租户下的环境
                  * @param req DeleteEnvironmentsRequest
                  * @return DeleteEnvironmentsOutcome
@@ -168,6 +221,42 @@ namespace TencentCloud
                 DeleteTopicsOutcome DeleteTopics(const Model::DeleteTopicsRequest &request);
                 void DeleteTopicsAsync(const Model::DeleteTopicsRequest& request, const DeleteTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTopicsOutcomeCallable DeleteTopicsCallable(const Model::DeleteTopicsRequest& request);
+
+                /**
+                 *获取用户绑定的专享集群列表
+                 * @param req DescribeBindClustersRequest
+                 * @return DescribeBindClustersOutcome
+                 */
+                DescribeBindClustersOutcome DescribeBindClusters(const Model::DescribeBindClustersRequest &request);
+                void DescribeBindClustersAsync(const Model::DescribeBindClustersRequest& request, const DescribeBindClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBindClustersOutcomeCallable DescribeBindClustersCallable(const Model::DescribeBindClustersRequest& request);
+
+                /**
+                 *获取租户VPC绑定关系
+                 * @param req DescribeBindVpcsRequest
+                 * @return DescribeBindVpcsOutcome
+                 */
+                DescribeBindVpcsOutcome DescribeBindVpcs(const Model::DescribeBindVpcsRequest &request);
+                void DescribeBindVpcsAsync(const Model::DescribeBindVpcsRequest& request, const DescribeBindVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBindVpcsOutcomeCallable DescribeBindVpcsCallable(const Model::DescribeBindVpcsRequest& request);
+
+                /**
+                 *获取集群的详细信息
+                 * @param req DescribeClusterDetailRequest
+                 * @return DescribeClusterDetailOutcome
+                 */
+                DescribeClusterDetailOutcome DescribeClusterDetail(const Model::DescribeClusterDetailRequest &request);
+                void DescribeClusterDetailAsync(const Model::DescribeClusterDetailRequest& request, const DescribeClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterDetailOutcomeCallable DescribeClusterDetailCallable(const Model::DescribeClusterDetailRequest& request);
+
+                /**
+                 *获取集群列表
+                 * @param req DescribeClustersRequest
+                 * @return DescribeClustersOutcome
+                 */
+                DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest &request);
+                void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
 
                 /**
                  *获取指定环境的属性
@@ -222,6 +311,15 @@ namespace TencentCloud
                 DescribeTopicsOutcome DescribeTopics(const Model::DescribeTopicsRequest &request);
                 void DescribeTopicsAsync(const Model::DescribeTopicsRequest& request, const DescribeTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicsOutcomeCallable DescribeTopicsCallable(const Model::DescribeTopicsRequest& request);
+
+                /**
+                 *更新集群信息
+                 * @param req ModifyClusterRequest
+                 * @return ModifyClusterOutcome
+                 */
+                ModifyClusterOutcome ModifyCluster(const Model::ModifyClusterRequest &request);
+                void ModifyClusterAsync(const Model::ModifyClusterRequest& request, const ModifyClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterOutcomeCallable ModifyClusterCallable(const Model::ModifyClusterRequest& request);
 
                 /**
                  *修改指定环境的属性值

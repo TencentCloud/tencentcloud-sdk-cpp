@@ -26,7 +26,9 @@ using namespace std;
 DescribeEnvironmentRolesRequest::DescribeEnvironmentRolesRequest() :
     m_environmentIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_roleNameHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string DescribeEnvironmentRolesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RoleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_roleName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +133,38 @@ void DescribeEnvironmentRolesRequest::SetLimit(const int64_t& _limit)
 bool DescribeEnvironmentRolesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeEnvironmentRolesRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeEnvironmentRolesRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeEnvironmentRolesRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string DescribeEnvironmentRolesRequest::GetRoleName() const
+{
+    return m_roleName;
+}
+
+void DescribeEnvironmentRolesRequest::SetRoleName(const string& _roleName)
+{
+    m_roleName = _roleName;
+    m_roleNameHasBeenSet = true;
+}
+
+bool DescribeEnvironmentRolesRequest::RoleNameHasBeenSet() const
+{
+    return m_roleNameHasBeenSet;
 }
 
 

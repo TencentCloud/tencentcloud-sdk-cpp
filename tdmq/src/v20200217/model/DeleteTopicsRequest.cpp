@@ -24,7 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 DeleteTopicsRequest::DeleteTopicsRequest() :
-    m_topicSetsHasBeenSet(false)
+    m_topicSetsHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_environmentIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,22 @@ string DeleteTopicsRequest::ToJsonString() const
         }
     }
 
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnvironmentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_environmentId.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -72,6 +90,38 @@ void DeleteTopicsRequest::SetTopicSets(const vector<TopicRecord>& _topicSets)
 bool DeleteTopicsRequest::TopicSetsHasBeenSet() const
 {
     return m_topicSetsHasBeenSet;
+}
+
+string DeleteTopicsRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DeleteTopicsRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DeleteTopicsRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string DeleteTopicsRequest::GetEnvironmentId() const
+{
+    return m_environmentId;
+}
+
+void DeleteTopicsRequest::SetEnvironmentId(const string& _environmentId)
+{
+    m_environmentId = _environmentId;
+    m_environmentIdHasBeenSet = true;
+}
+
+bool DeleteTopicsRequest::EnvironmentIdHasBeenSet() const
+{
+    return m_environmentIdHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ using namespace std;
 ModifyEnvironmentAttributesRequest::ModifyEnvironmentAttributesRequest() :
     m_environmentIdHasBeenSet(false),
     m_msgTTLHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string ModifyEnvironmentAttributesRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void ModifyEnvironmentAttributesRequest::SetRemark(const string& _remark)
 bool ModifyEnvironmentAttributesRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string ModifyEnvironmentAttributesRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void ModifyEnvironmentAttributesRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool ModifyEnvironmentAttributesRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

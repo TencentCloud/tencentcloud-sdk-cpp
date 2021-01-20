@@ -1098,6 +1098,28 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool ZonesHasBeenSet() const;
 
+                    /**
+                     * 获取CLB是否为NFV，空：不是，l7nfv：七层是NFV。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NfvInfo CLB是否为NFV，空：不是，l7nfv：七层是NFV。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNfvInfo() const;
+
+                    /**
+                     * 设置CLB是否为NFV，空：不是，l7nfv：七层是NFV。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NfvInfo CLB是否为NFV，空：不是，l7nfv：七层是NFV。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNfvInfo(const std::string& _nfvInfo);
+
+                    /**
+                     * 判断参数 NfvInfo 是否已赋值
+                     * @return NfvInfo 是否已赋值
+                     */
+                    bool NfvInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1432,6 +1454,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
+
+                    /**
+                     * CLB是否为NFV，空：不是，l7nfv：七层是NFV。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nfvInfo;
+                    bool m_nfvInfoHasBeenSet;
 
                 };
             }
