@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境（命名空间）
-                     * @return EnvironmentId 环境（命名空间）
+                     * 获取环境（命名空间）名称。
+                     * @return EnvironmentId 环境（命名空间）名称。
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
-                     * 设置环境（命名空间）
-                     * @param EnvironmentId 环境（命名空间）
+                     * 设置环境（命名空间）名称。
+                     * @param EnvironmentId 环境（命名空间）名称。
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境（命名空间）
+                     * 环境（命名空间）名称。
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;

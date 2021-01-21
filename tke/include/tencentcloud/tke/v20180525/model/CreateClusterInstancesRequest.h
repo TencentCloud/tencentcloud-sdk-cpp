@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool InstanceAdvancedSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取校验规则相关选项，可配置跳过某些校验规则。目前支持GlobalRouteCIDRCheck（跳过GlobalRouter的相关校验），VpcCniCIDRCheck（跳过VpcCni相关校验）
+                     * @return SkipValidateOptions 校验规则相关选项，可配置跳过某些校验规则。目前支持GlobalRouteCIDRCheck（跳过GlobalRouter的相关校验），VpcCniCIDRCheck（跳过VpcCni相关校验）
+                     */
+                    std::vector<std::string> GetSkipValidateOptions() const;
+
+                    /**
+                     * 设置校验规则相关选项，可配置跳过某些校验规则。目前支持GlobalRouteCIDRCheck（跳过GlobalRouter的相关校验），VpcCniCIDRCheck（跳过VpcCni相关校验）
+                     * @param SkipValidateOptions 校验规则相关选项，可配置跳过某些校验规则。目前支持GlobalRouteCIDRCheck（跳过GlobalRouter的相关校验），VpcCniCIDRCheck（跳过VpcCni相关校验）
+                     */
+                    void SetSkipValidateOptions(const std::vector<std::string>& _skipValidateOptions);
+
+                    /**
+                     * 判断参数 SkipValidateOptions 是否已赋值
+                     * @return SkipValidateOptions 是否已赋值
+                     */
+                    bool SkipValidateOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     InstanceAdvancedSettings m_instanceAdvancedSettings;
                     bool m_instanceAdvancedSettingsHasBeenSet;
+
+                    /**
+                     * 校验规则相关选项，可配置跳过某些校验规则。目前支持GlobalRouteCIDRCheck（跳过GlobalRouter的相关校验），VpcCniCIDRCheck（跳过VpcCni相关校验）
+                     */
+                    std::vector<std::string> m_skipValidateOptions;
+                    bool m_skipValidateOptionsHasBeenSet;
 
                 };
             }

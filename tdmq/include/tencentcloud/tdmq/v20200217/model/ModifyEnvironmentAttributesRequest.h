@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境（命名空间）名称。
-                     * @return EnvironmentId 环境（命名空间）名称。
+                     * 获取命名空间名称。
+                     * @return EnvironmentId 命名空间名称。
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
-                     * 设置环境（命名空间）名称。
-                     * @param EnvironmentId 环境（命名空间）名称。
+                     * 设置命名空间名称。
+                     * @param EnvironmentId 命名空间名称。
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取Pulsar 集群的ID
-                     * @return ClusterId Pulsar 集群的ID
+                     * 获取集群ID
+                     * @return ClusterId 集群ID
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置Pulsar 集群的ID
-                     * @param ClusterId Pulsar 集群的ID
+                     * 设置集群ID
+                     * @param ClusterId 集群ID
                      */
                     void SetClusterId(const std::string& _clusterId);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境（命名空间）名称。
+                     * 命名空间名称。
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * Pulsar 集群的ID
+                     * 集群ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

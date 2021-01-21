@@ -369,17 +369,17 @@ namespace TencentCloud
                     bool SessionTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）
+                     * 获取是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KeepaliveEnable 是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）
+                     * @return KeepaliveEnable 是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetKeepaliveEnable() const;
 
                     /**
-                     * 设置是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）
+                     * 设置是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeepaliveEnable 是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）
+                     * @param KeepaliveEnable 是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetKeepaliveEnable(const int64_t& _keepaliveEnable);
@@ -389,6 +389,28 @@ namespace TencentCloud
                      * @return KeepaliveEnable 是否已赋值
                      */
                     bool KeepaliveEnableHasBeenSet() const;
+
+                    /**
+                     * 获取仅支持Nat64 CLB TCP监听器
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Toa 仅支持Nat64 CLB TCP监听器
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetToa() const;
+
+                    /**
+                     * 设置仅支持Nat64 CLB TCP监听器
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Toa 仅支持Nat64 CLB TCP监听器
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetToa(const bool& _toa);
+
+                    /**
+                     * 判断参数 Toa 是否已赋值
+                     * @return Toa 是否已赋值
+                     */
+                    bool ToaHasBeenSet() const;
 
                 private:
 
@@ -495,11 +517,18 @@ namespace TencentCloud
                     bool m_sessionTypeHasBeenSet;
 
                     /**
-                     * 是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）
+                     * 是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;
+
+                    /**
+                     * 仅支持Nat64 CLB TCP监听器
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_toa;
+                    bool m_toaHasBeenSet;
 
                 };
             }

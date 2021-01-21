@@ -29,7 +29,8 @@ CreateTranscodeRequest::CreateTranscodeRequest() :
     m_isStaticPPTHasBeenSet(false),
     m_minResolutionHasBeenSet(false),
     m_thumbnailResolutionHasBeenSet(false),
-    m_compressFileTypeHasBeenSet(false)
+    m_compressFileTypeHasBeenSet(false),
+    m_extraDataHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string CreateTranscodeRequest::ToJsonString() const
         string key = "CompressFileType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_compressFileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraDataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtraData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extraData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void CreateTranscodeRequest::SetCompressFileType(const string& _compressFileType
 bool CreateTranscodeRequest::CompressFileTypeHasBeenSet() const
 {
     return m_compressFileTypeHasBeenSet;
+}
+
+string CreateTranscodeRequest::GetExtraData() const
+{
+    return m_extraData;
+}
+
+void CreateTranscodeRequest::SetExtraData(const string& _extraData)
+{
+    m_extraData = _extraData;
+    m_extraDataHasBeenSet = true;
+}
+
+bool CreateTranscodeRequest::ExtraDataHasBeenSet() const
+{
+    return m_extraDataHasBeenSet;
 }
 
 

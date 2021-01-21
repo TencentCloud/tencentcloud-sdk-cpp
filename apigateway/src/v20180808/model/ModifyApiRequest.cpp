@@ -68,7 +68,10 @@ ModifyApiRequest::ModifyApiRequest() :
     m_authRelationApiIdHasBeenSet(false),
     m_serviceParametersHasBeenSet(false),
     m_oauthConfigHasBeenSet(false),
-    m_responseErrorCodesHasBeenSet(false)
+    m_responseErrorCodesHasBeenSet(false),
+    m_isBase64EncodedHasBeenSet(false),
+    m_isBase64TriggerHasBeenSet(false),
+    m_base64EncodedTriggerRulesHasBeenSet(false)
 {
 }
 
@@ -475,6 +478,37 @@ string ModifyApiRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_responseErrorCodes.begin(); itr != m_responseErrorCodes.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isBase64EncodedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsBase64Encoded";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isBase64Encoded, allocator);
+    }
+
+    if (m_isBase64TriggerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsBase64Trigger";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isBase64Trigger, allocator);
+    }
+
+    if (m_base64EncodedTriggerRulesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Base64EncodedTriggerRules";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_base64EncodedTriggerRules.begin(); itr != m_base64EncodedTriggerRules.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -1207,6 +1241,54 @@ void ModifyApiRequest::SetResponseErrorCodes(const vector<ResponseErrorCodeReq>&
 bool ModifyApiRequest::ResponseErrorCodesHasBeenSet() const
 {
     return m_responseErrorCodesHasBeenSet;
+}
+
+bool ModifyApiRequest::GetIsBase64Encoded() const
+{
+    return m_isBase64Encoded;
+}
+
+void ModifyApiRequest::SetIsBase64Encoded(const bool& _isBase64Encoded)
+{
+    m_isBase64Encoded = _isBase64Encoded;
+    m_isBase64EncodedHasBeenSet = true;
+}
+
+bool ModifyApiRequest::IsBase64EncodedHasBeenSet() const
+{
+    return m_isBase64EncodedHasBeenSet;
+}
+
+bool ModifyApiRequest::GetIsBase64Trigger() const
+{
+    return m_isBase64Trigger;
+}
+
+void ModifyApiRequest::SetIsBase64Trigger(const bool& _isBase64Trigger)
+{
+    m_isBase64Trigger = _isBase64Trigger;
+    m_isBase64TriggerHasBeenSet = true;
+}
+
+bool ModifyApiRequest::IsBase64TriggerHasBeenSet() const
+{
+    return m_isBase64TriggerHasBeenSet;
+}
+
+vector<Base64EncodedTriggerRule> ModifyApiRequest::GetBase64EncodedTriggerRules() const
+{
+    return m_base64EncodedTriggerRules;
+}
+
+void ModifyApiRequest::SetBase64EncodedTriggerRules(const vector<Base64EncodedTriggerRule>& _base64EncodedTriggerRules)
+{
+    m_base64EncodedTriggerRules = _base64EncodedTriggerRules;
+    m_base64EncodedTriggerRulesHasBeenSet = true;
+}
+
+bool ModifyApiRequest::Base64EncodedTriggerRulesHasBeenSet() const
+{
+    return m_base64EncodedTriggerRulesHasBeenSet;
 }
 
 

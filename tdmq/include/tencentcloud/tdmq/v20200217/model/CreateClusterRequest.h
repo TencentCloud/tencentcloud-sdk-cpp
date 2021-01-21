@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
-                     * @return BindClusterId 用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
+                     * 获取用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
+                     * @return BindClusterId 用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
                      */
                     uint64_t GetBindClusterId() const;
 
                     /**
-                     * 设置用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
-                     * @param BindClusterId 用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
+                     * 设置用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
+                     * @param BindClusterId 用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
                      */
                     void SetBindClusterId(const uint64_t& _bindClusterId);
 
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
+                     * 用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
                      */
                     uint64_t m_bindClusterId;
                     bool m_bindClusterIdHasBeenSet;

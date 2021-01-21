@@ -160,6 +160,28 @@ namespace TencentCloud
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取计算周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Interval 计算周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInterval() const;
+
+                    /**
+                     * 设置计算周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Interval 计算周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInterval(const std::string& _interval);
+
+                    /**
+                     * 判断参数 Interval 是否已赋值
+                     * @return Interval 是否已赋值
+                     */
+                    bool IntervalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +220,13 @@ namespace TencentCloud
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 计算周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_interval;
+                    bool m_intervalHasBeenSet;
 
                 };
             }

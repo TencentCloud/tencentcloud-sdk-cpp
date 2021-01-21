@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群的ID
-                     * @return ClusterId 集群的ID
+                     * 获取Pulsar 集群的ID
+                     * @return ClusterId Pulsar 集群的ID
                      */
                     std::string GetClusterId() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群的ID
+                     * Pulsar 集群的ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

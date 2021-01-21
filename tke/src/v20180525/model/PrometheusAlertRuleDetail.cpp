@@ -27,7 +27,8 @@ PrometheusAlertRuleDetail::PrometheusAlertRuleDetail() :
     m_updatedAtHasBeenSet(false),
     m_notificationHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_intervalHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,16 @@ CoreInternalOutcome PrometheusAlertRuleDetail::Deserialize(const Value &value)
         m_templateIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Interval") && !value["Interval"].IsNull())
+    {
+        if (!value["Interval"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrometheusAlertRuleDetail.Interval` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_interval = string(value["Interval"].GetString());
+        m_intervalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -174,6 +185,14 @@ void PrometheusAlertRuleDetail::ToJsonObject(Value &value, Document::AllocatorTy
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intervalHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Interval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_interval.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -273,5 +292,21 @@ void PrometheusAlertRuleDetail::SetTemplateId(const string& _templateId)
 bool PrometheusAlertRuleDetail::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+string PrometheusAlertRuleDetail::GetInterval() const
+{
+    return m_interval;
+}
+
+void PrometheusAlertRuleDetail::SetInterval(const string& _interval)
+{
+    m_interval = _interval;
+    m_intervalHasBeenSet = true;
+}
+
+bool PrometheusAlertRuleDetail::IntervalHasBeenSet() const
+{
+    return m_intervalHasBeenSet;
 }
 

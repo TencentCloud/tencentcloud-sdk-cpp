@@ -29,7 +29,8 @@ CreateVideoGenerationTaskRequest::CreateVideoGenerationTaskRequest() :
     m_whiteboardHasBeenSet(false),
     m_concatHasBeenSet(false),
     m_mixStreamHasBeenSet(false),
-    m_recordControlHasBeenSet(false)
+    m_recordControlHasBeenSet(false),
+    m_extraDataHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string CreateVideoGenerationTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_recordControl.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_extraDataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtraData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extraData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void CreateVideoGenerationTaskRequest::SetRecordControl(const RecordControl& _re
 bool CreateVideoGenerationTaskRequest::RecordControlHasBeenSet() const
 {
     return m_recordControlHasBeenSet;
+}
+
+string CreateVideoGenerationTaskRequest::GetExtraData() const
+{
+    return m_extraData;
+}
+
+void CreateVideoGenerationTaskRequest::SetExtraData(const string& _extraData)
+{
+    m_extraData = _extraData;
+    m_extraDataHasBeenSet = true;
+}
+
+bool CreateVideoGenerationTaskRequest::ExtraDataHasBeenSet() const
+{
+    return m_extraDataHasBeenSet;
 }
 
 

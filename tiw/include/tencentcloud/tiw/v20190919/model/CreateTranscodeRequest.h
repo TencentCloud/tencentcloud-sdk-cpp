@@ -174,6 +174,24 @@ tar.gz： 生成`.tar.gz`压缩包
                      */
                     bool CompressFileTypeHasBeenSet() const;
 
+                    /**
+                     * 获取内部参数
+                     * @return ExtraData 内部参数
+                     */
+                    std::string GetExtraData() const;
+
+                    /**
+                     * 设置内部参数
+                     * @param ExtraData 内部参数
+                     */
+                    void SetExtraData(const std::string& _extraData);
+
+                    /**
+                     * 判断参数 ExtraData 是否已赋值
+                     * @return ExtraData 是否已赋值
+                     */
+                    bool ExtraDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +235,12 @@ tar.gz： 生成`.tar.gz`压缩包
                      */
                     std::string m_compressFileType;
                     bool m_compressFileTypeHasBeenSet;
+
+                    /**
+                     * 内部参数
+                     */
+                    std::string m_extraData;
+                    bool m_extraDataHasBeenSet;
 
                 };
             }

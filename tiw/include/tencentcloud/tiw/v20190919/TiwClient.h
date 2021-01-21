@@ -39,6 +39,10 @@
 #include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeWhiteboardPushRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeWhiteboardPushResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeWhiteboardPushCallbackRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeWhiteboardPushCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/PauseOnlineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/PauseOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/ResumeOnlineRecordRequest.h>
@@ -55,6 +59,10 @@
 #include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyRequest.h>
 #include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyResponse.h>
+#include <tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackRequest.h>
+#include <tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackResponse.h>
+#include <tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackKeyRequest.h>
+#include <tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackKeyResponse.h>
 #include <tencentcloud/tiw/v20190919/model/StartOnlineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/StartOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/StartWhiteboardPushRequest.h>
@@ -101,6 +109,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeVideoGenerationTaskCallbackResponse> DescribeVideoGenerationTaskCallbackOutcome;
                 typedef std::future<DescribeVideoGenerationTaskCallbackOutcome> DescribeVideoGenerationTaskCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeVideoGenerationTaskCallbackRequest&, DescribeVideoGenerationTaskCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoGenerationTaskCallbackAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWhiteboardPushResponse> DescribeWhiteboardPushOutcome;
+                typedef std::future<DescribeWhiteboardPushOutcome> DescribeWhiteboardPushOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeWhiteboardPushRequest&, DescribeWhiteboardPushOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteboardPushAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWhiteboardPushCallbackResponse> DescribeWhiteboardPushCallbackOutcome;
+                typedef std::future<DescribeWhiteboardPushCallbackOutcome> DescribeWhiteboardPushCallbackOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeWhiteboardPushCallbackRequest&, DescribeWhiteboardPushCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteboardPushCallbackAsyncHandler;
                 typedef Outcome<Error, Model::PauseOnlineRecordResponse> PauseOnlineRecordOutcome;
                 typedef std::future<PauseOnlineRecordOutcome> PauseOnlineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::PauseOnlineRecordRequest&, PauseOnlineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseOnlineRecordAsyncHandler;
@@ -125,6 +139,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SetVideoGenerationTaskCallbackKeyResponse> SetVideoGenerationTaskCallbackKeyOutcome;
                 typedef std::future<SetVideoGenerationTaskCallbackKeyOutcome> SetVideoGenerationTaskCallbackKeyOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::SetVideoGenerationTaskCallbackKeyRequest&, SetVideoGenerationTaskCallbackKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVideoGenerationTaskCallbackKeyAsyncHandler;
+                typedef Outcome<Error, Model::SetWhiteboardPushCallbackResponse> SetWhiteboardPushCallbackOutcome;
+                typedef std::future<SetWhiteboardPushCallbackOutcome> SetWhiteboardPushCallbackOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::SetWhiteboardPushCallbackRequest&, SetWhiteboardPushCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetWhiteboardPushCallbackAsyncHandler;
+                typedef Outcome<Error, Model::SetWhiteboardPushCallbackKeyResponse> SetWhiteboardPushCallbackKeyOutcome;
+                typedef std::future<SetWhiteboardPushCallbackKeyOutcome> SetWhiteboardPushCallbackKeyOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::SetWhiteboardPushCallbackKeyRequest&, SetWhiteboardPushCallbackKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetWhiteboardPushCallbackKeyAsyncHandler;
                 typedef Outcome<Error, Model::StartOnlineRecordResponse> StartOnlineRecordOutcome;
                 typedef std::future<StartOnlineRecordOutcome> StartOnlineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::StartOnlineRecordRequest&, StartOnlineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartOnlineRecordAsyncHandler;
@@ -213,6 +233,24 @@ namespace TencentCloud
                 DescribeVideoGenerationTaskCallbackOutcomeCallable DescribeVideoGenerationTaskCallbackCallable(const Model::DescribeVideoGenerationTaskCallbackRequest& request);
 
                 /**
+                 *查询推流任务状态与结果
+                 * @param req DescribeWhiteboardPushRequest
+                 * @return DescribeWhiteboardPushOutcome
+                 */
+                DescribeWhiteboardPushOutcome DescribeWhiteboardPush(const Model::DescribeWhiteboardPushRequest &request);
+                void DescribeWhiteboardPushAsync(const Model::DescribeWhiteboardPushRequest& request, const DescribeWhiteboardPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWhiteboardPushOutcomeCallable DescribeWhiteboardPushCallable(const Model::DescribeWhiteboardPushRequest& request);
+
+                /**
+                 *查询白板推流回调地址
+                 * @param req DescribeWhiteboardPushCallbackRequest
+                 * @return DescribeWhiteboardPushCallbackOutcome
+                 */
+                DescribeWhiteboardPushCallbackOutcome DescribeWhiteboardPushCallback(const Model::DescribeWhiteboardPushCallbackRequest &request);
+                void DescribeWhiteboardPushCallbackAsync(const Model::DescribeWhiteboardPushCallbackRequest& request, const DescribeWhiteboardPushCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWhiteboardPushCallbackOutcomeCallable DescribeWhiteboardPushCallbackCallable(const Model::DescribeWhiteboardPushCallbackRequest& request);
+
+                /**
                  *暂停实时录制
                  * @param req PauseOnlineRecordRequest
                  * @return PauseOnlineRecordOutcome
@@ -283,6 +321,24 @@ namespace TencentCloud
                 SetVideoGenerationTaskCallbackKeyOutcome SetVideoGenerationTaskCallbackKey(const Model::SetVideoGenerationTaskCallbackKeyRequest &request);
                 void SetVideoGenerationTaskCallbackKeyAsync(const Model::SetVideoGenerationTaskCallbackKeyRequest& request, const SetVideoGenerationTaskCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetVideoGenerationTaskCallbackKeyOutcomeCallable SetVideoGenerationTaskCallbackKeyCallable(const Model::SetVideoGenerationTaskCallbackKeyRequest& request);
+
+                /**
+                 *设置白板推流回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40257
+                 * @param req SetWhiteboardPushCallbackRequest
+                 * @return SetWhiteboardPushCallbackOutcome
+                 */
+                SetWhiteboardPushCallbackOutcome SetWhiteboardPushCallback(const Model::SetWhiteboardPushCallbackRequest &request);
+                void SetWhiteboardPushCallbackAsync(const Model::SetWhiteboardPushCallbackRequest& request, const SetWhiteboardPushCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetWhiteboardPushCallbackOutcomeCallable SetWhiteboardPushCallbackCallable(const Model::SetWhiteboardPushCallbackRequest& request);
+
+                /**
+                 *设置白板推流回调鉴权密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257
+                 * @param req SetWhiteboardPushCallbackKeyRequest
+                 * @return SetWhiteboardPushCallbackKeyOutcome
+                 */
+                SetWhiteboardPushCallbackKeyOutcome SetWhiteboardPushCallbackKey(const Model::SetWhiteboardPushCallbackKeyRequest &request);
+                void SetWhiteboardPushCallbackKeyAsync(const Model::SetWhiteboardPushCallbackKeyRequest& request, const SetWhiteboardPushCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetWhiteboardPushCallbackKeyOutcomeCallable SetWhiteboardPushCallbackKeyCallable(const Model::SetWhiteboardPushCallbackKeyRequest& request);
 
                 /**
                  *发起一个实时录制任务

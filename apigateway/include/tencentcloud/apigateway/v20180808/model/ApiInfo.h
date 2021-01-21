@@ -35,6 +35,7 @@
 #include <tencentcloud/apigateway/v20180808/model/TsfLoadBalanceConfResp.h>
 #include <tencentcloud/apigateway/v20180808/model/HealthCheckConf.h>
 #include <tencentcloud/apigateway/v20180808/model/Tag.h>
+#include <tencentcloud/apigateway/v20180808/model/Base64EncodedTriggerRule.h>
 
 
 namespace TencentCloud
@@ -1113,6 +1114,72 @@ namespace TencentCloud
                      */
                     bool EnvironmentsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启Base64编码，只有后端为scf时才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsBase64Encoded 是否开启Base64编码，只有后端为scf时才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsBase64Encoded() const;
+
+                    /**
+                     * 设置是否开启Base64编码，只有后端为scf时才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsBase64Encoded 是否开启Base64编码，只有后端为scf时才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsBase64Encoded(const bool& _isBase64Encoded);
+
+                    /**
+                     * 判断参数 IsBase64Encoded 是否已赋值
+                     * @return IsBase64Encoded 是否已赋值
+                     */
+                    bool IsBase64EncodedHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启Base64编码的header触发，只有后端为scf时才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsBase64Trigger 是否开启Base64编码的header触发，只有后端为scf时才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsBase64Trigger() const;
+
+                    /**
+                     * 设置是否开启Base64编码的header触发，只有后端为scf时才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsBase64Trigger 是否开启Base64编码的header触发，只有后端为scf时才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsBase64Trigger(const bool& _isBase64Trigger);
+
+                    /**
+                     * 判断参数 IsBase64Trigger 是否已赋值
+                     * @return IsBase64Trigger 是否已赋值
+                     */
+                    bool IsBase64TriggerHasBeenSet() const;
+
+                    /**
+                     * 获取Header触发规则，总规则数量不超过10。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Base64EncodedTriggerRules Header触发规则，总规则数量不超过10。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Base64EncodedTriggerRule> GetBase64EncodedTriggerRules() const;
+
+                    /**
+                     * 设置Header触发规则，总规则数量不超过10。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Base64EncodedTriggerRules Header触发规则，总规则数量不超过10。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBase64EncodedTriggerRules(const std::vector<Base64EncodedTriggerRule>& _base64EncodedTriggerRules);
+
+                    /**
+                     * 判断参数 Base64EncodedTriggerRules 是否已赋值
+                     * @return Base64EncodedTriggerRules 是否已赋值
+                     */
+                    bool Base64EncodedTriggerRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1450,6 +1517,27 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_environments;
                     bool m_environmentsHasBeenSet;
+
+                    /**
+                     * 是否开启Base64编码，只有后端为scf时才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isBase64Encoded;
+                    bool m_isBase64EncodedHasBeenSet;
+
+                    /**
+                     * 是否开启Base64编码的header触发，只有后端为scf时才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isBase64Trigger;
+                    bool m_isBase64TriggerHasBeenSet;
+
+                    /**
+                     * Header触发规则，总规则数量不超过10。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Base64EncodedTriggerRule> m_base64EncodedTriggerRules;
+                    bool m_base64EncodedTriggerRulesHasBeenSet;
 
                 };
             }

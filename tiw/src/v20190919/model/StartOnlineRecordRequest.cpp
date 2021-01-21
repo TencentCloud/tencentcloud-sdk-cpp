@@ -36,7 +36,8 @@ StartOnlineRecordRequest::StartOnlineRecordRequest() :
     m_audioFileNeededHasBeenSet(false),
     m_recordControlHasBeenSet(false),
     m_recordModeHasBeenSet(false),
-    m_chatGroupIdHasBeenSet(false)
+    m_chatGroupIdHasBeenSet(false),
+    m_extraDataHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,14 @@ string StartOnlineRecordRequest::ToJsonString() const
         string key = "ChatGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_chatGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraDataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtraData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extraData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -374,6 +383,22 @@ void StartOnlineRecordRequest::SetChatGroupId(const string& _chatGroupId)
 bool StartOnlineRecordRequest::ChatGroupIdHasBeenSet() const
 {
     return m_chatGroupIdHasBeenSet;
+}
+
+string StartOnlineRecordRequest::GetExtraData() const
+{
+    return m_extraData;
+}
+
+void StartOnlineRecordRequest::SetExtraData(const string& _extraData)
+{
+    m_extraData = _extraData;
+    m_extraDataHasBeenSet = true;
+}
+
+bool StartOnlineRecordRequest::ExtraDataHasBeenSet() const
+{
+    return m_extraDataHasBeenSet;
 }
 
 

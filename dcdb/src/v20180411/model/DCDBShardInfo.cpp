@@ -45,7 +45,8 @@ DCDBShardInfo::DCDBShardInfo() :
     m_paymodeHasBeenSet(false),
     m_shardMasterZoneHasBeenSet(false),
     m_shardSlaveZonesHasBeenSet(false),
-    m_cpuHasBeenSet(false)
+    m_cpuHasBeenSet(false),
+    m_rangeHasBeenSet(false)
 {
 }
 
@@ -297,6 +298,16 @@ CoreInternalOutcome DCDBShardInfo::Deserialize(const Value &value)
         m_cpuHasBeenSet = true;
     }
 
+    if (value.HasMember("Range") && !value["Range"].IsNull())
+    {
+        if (!value["Range"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DCDBShardInfo.Range` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_range = string(value["Range"].GetString());
+        m_rangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -499,6 +510,14 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_rangeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Range";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_range.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -886,5 +905,21 @@ void DCDBShardInfo::SetCpu(const int64_t& _cpu)
 bool DCDBShardInfo::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+string DCDBShardInfo::GetRange() const
+{
+    return m_range;
+}
+
+void DCDBShardInfo::SetRange(const string& _range)
+{
+    m_range = _range;
+    m_rangeHasBeenSet = true;
+}
+
+bool DCDBShardInfo::RangeHasBeenSet() const
+{
+    return m_rangeHasBeenSet;
 }
 

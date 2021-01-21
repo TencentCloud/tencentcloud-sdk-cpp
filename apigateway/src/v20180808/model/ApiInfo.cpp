@@ -69,7 +69,10 @@ ApiInfo::ApiInfo() :
     m_serviceTsfHealthCheckConfHasBeenSet(false),
     m_enableCORSHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_environmentsHasBeenSet(false)
+    m_environmentsHasBeenSet(false),
+    m_isBase64EncodedHasBeenSet(false),
+    m_isBase64TriggerHasBeenSet(false),
+    m_base64EncodedTriggerRulesHasBeenSet(false)
 {
 }
 
@@ -659,6 +662,46 @@ CoreInternalOutcome ApiInfo::Deserialize(const Value &value)
         m_environmentsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsBase64Encoded") && !value["IsBase64Encoded"].IsNull())
+    {
+        if (!value["IsBase64Encoded"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ApiInfo.IsBase64Encoded` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isBase64Encoded = value["IsBase64Encoded"].GetBool();
+        m_isBase64EncodedHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsBase64Trigger") && !value["IsBase64Trigger"].IsNull())
+    {
+        if (!value["IsBase64Trigger"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ApiInfo.IsBase64Trigger` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isBase64Trigger = value["IsBase64Trigger"].GetBool();
+        m_isBase64TriggerHasBeenSet = true;
+    }
+
+    if (value.HasMember("Base64EncodedTriggerRules") && !value["Base64EncodedTriggerRules"].IsNull())
+    {
+        if (!value["Base64EncodedTriggerRules"].IsArray())
+            return CoreInternalOutcome(Error("response `ApiInfo.Base64EncodedTriggerRules` is not array type"));
+
+        const Value &tmpValue = value["Base64EncodedTriggerRules"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Base64EncodedTriggerRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_base64EncodedTriggerRules.push_back(item);
+        }
+        m_base64EncodedTriggerRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1104,6 +1147,37 @@ void ApiInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         for (auto itr = m_environments.begin(); itr != m_environments.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isBase64EncodedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsBase64Encoded";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isBase64Encoded, allocator);
+    }
+
+    if (m_isBase64TriggerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsBase64Trigger";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isBase64Trigger, allocator);
+    }
+
+    if (m_base64EncodedTriggerRulesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Base64EncodedTriggerRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_base64EncodedTriggerRules.begin(); itr != m_base64EncodedTriggerRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -1876,5 +1950,53 @@ void ApiInfo::SetEnvironments(const vector<string>& _environments)
 bool ApiInfo::EnvironmentsHasBeenSet() const
 {
     return m_environmentsHasBeenSet;
+}
+
+bool ApiInfo::GetIsBase64Encoded() const
+{
+    return m_isBase64Encoded;
+}
+
+void ApiInfo::SetIsBase64Encoded(const bool& _isBase64Encoded)
+{
+    m_isBase64Encoded = _isBase64Encoded;
+    m_isBase64EncodedHasBeenSet = true;
+}
+
+bool ApiInfo::IsBase64EncodedHasBeenSet() const
+{
+    return m_isBase64EncodedHasBeenSet;
+}
+
+bool ApiInfo::GetIsBase64Trigger() const
+{
+    return m_isBase64Trigger;
+}
+
+void ApiInfo::SetIsBase64Trigger(const bool& _isBase64Trigger)
+{
+    m_isBase64Trigger = _isBase64Trigger;
+    m_isBase64TriggerHasBeenSet = true;
+}
+
+bool ApiInfo::IsBase64TriggerHasBeenSet() const
+{
+    return m_isBase64TriggerHasBeenSet;
+}
+
+vector<Base64EncodedTriggerRule> ApiInfo::GetBase64EncodedTriggerRules() const
+{
+    return m_base64EncodedTriggerRules;
+}
+
+void ApiInfo::SetBase64EncodedTriggerRules(const vector<Base64EncodedTriggerRule>& _base64EncodedTriggerRules)
+{
+    m_base64EncodedTriggerRules = _base64EncodedTriggerRules;
+    m_base64EncodedTriggerRulesHasBeenSet = true;
+}
+
+bool ApiInfo::Base64EncodedTriggerRulesHasBeenSet() const
+{
+    return m_base64EncodedTriggerRulesHasBeenSet;
 }
 

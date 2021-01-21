@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境（命名空间）名称，模糊搜索。
-                     * @return EnvironmentId 环境（命名空间）名称，模糊搜索。
+                     * 获取命名空间名称，模糊搜索。
+                     * @return EnvironmentId 命名空间名称，模糊搜索。
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
-                     * 设置环境（命名空间）名称，模糊搜索。
-                     * @param EnvironmentId 环境（命名空间）名称，模糊搜索。
+                     * 设置命名空间名称，模糊搜索。
+                     * @param EnvironmentId 命名空间名称，模糊搜索。
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
@@ -96,10 +96,28 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取Pulsar 集群的ID
+                     * @return ClusterId Pulsar 集群的ID
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置Pulsar 集群的ID
+                     * @param ClusterId Pulsar 集群的ID
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 环境（命名空间）名称，模糊搜索。
+                     * 命名空间名称，模糊搜索。
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * Pulsar 集群的ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }

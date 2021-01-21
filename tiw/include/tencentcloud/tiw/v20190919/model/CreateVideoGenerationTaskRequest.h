@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool RecordControlHasBeenSet() const;
 
+                    /**
+                     * 获取内部参数
+                     * @return ExtraData 内部参数
+                     */
+                    std::string GetExtraData() const;
+
+                    /**
+                     * 设置内部参数
+                     * @param ExtraData 内部参数
+                     */
+                    void SetExtraData(const std::string& _extraData);
+
+                    /**
+                     * 判断参数 ExtraData 是否已赋值
+                     * @return ExtraData 是否已赋值
+                     */
+                    bool ExtraDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -231,6 +249,12 @@ namespace TencentCloud
                      */
                     RecordControl m_recordControl;
                     bool m_recordControlHasBeenSet;
+
+                    /**
+                     * 内部参数
+                     */
+                    std::string m_extraData;
+                    bool m_extraDataHasBeenSet;
 
                 };
             }

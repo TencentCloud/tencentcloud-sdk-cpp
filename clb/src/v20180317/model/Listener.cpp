@@ -37,7 +37,8 @@ Listener::Listener() :
     m_targetTypeHasBeenSet(false),
     m_targetGroupHasBeenSet(false),
     m_sessionTypeHasBeenSet(false),
-    m_keepaliveEnableHasBeenSet(false)
+    m_keepaliveEnableHasBeenSet(false),
+    m_toaHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome Listener::Deserialize(const Value &value)
         m_keepaliveEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("Toa") && !value["Toa"].IsNull())
+    {
+        if (!value["Toa"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Listener.Toa` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_toa = value["Toa"].GetBool();
+        m_toaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -380,6 +391,14 @@ void Listener::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "KeepaliveEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keepaliveEnable, allocator);
+    }
+
+    if (m_toaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Toa";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_toa, allocator);
     }
 
 }
@@ -639,5 +658,21 @@ void Listener::SetKeepaliveEnable(const int64_t& _keepaliveEnable)
 bool Listener::KeepaliveEnableHasBeenSet() const
 {
     return m_keepaliveEnableHasBeenSet;
+}
+
+bool Listener::GetToa() const
+{
+    return m_toa;
+}
+
+void Listener::SetToa(const bool& _toa)
+{
+    m_toa = _toa;
+    m_toaHasBeenSet = true;
+}
+
+bool Listener::ToaHasBeenSet() const
+{
+    return m_toaHasBeenSet;
 }
 

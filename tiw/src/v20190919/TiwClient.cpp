@@ -384,6 +384,92 @@ TiwClient::DescribeVideoGenerationTaskCallbackOutcomeCallable TiwClient::Describ
     return task->get_future();
 }
 
+TiwClient::DescribeWhiteboardPushOutcome TiwClient::DescribeWhiteboardPush(const DescribeWhiteboardPushRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteboardPush");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteboardPushResponse rsp = DescribeWhiteboardPushResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteboardPushOutcome(rsp);
+        else
+            return DescribeWhiteboardPushOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteboardPushOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeWhiteboardPushAsync(const DescribeWhiteboardPushRequest& request, const DescribeWhiteboardPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteboardPush(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeWhiteboardPushOutcomeCallable TiwClient::DescribeWhiteboardPushCallable(const DescribeWhiteboardPushRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteboardPushOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteboardPush(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeWhiteboardPushCallbackOutcome TiwClient::DescribeWhiteboardPushCallback(const DescribeWhiteboardPushCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteboardPushCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteboardPushCallbackResponse rsp = DescribeWhiteboardPushCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteboardPushCallbackOutcome(rsp);
+        else
+            return DescribeWhiteboardPushCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteboardPushCallbackOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeWhiteboardPushCallbackAsync(const DescribeWhiteboardPushCallbackRequest& request, const DescribeWhiteboardPushCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteboardPushCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeWhiteboardPushCallbackOutcomeCallable TiwClient::DescribeWhiteboardPushCallbackCallable(const DescribeWhiteboardPushCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteboardPushCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteboardPushCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::PauseOnlineRecordOutcome TiwClient::PauseOnlineRecord(const PauseOnlineRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "PauseOnlineRecord");
@@ -721,6 +807,92 @@ TiwClient::SetVideoGenerationTaskCallbackKeyOutcomeCallable TiwClient::SetVideoG
         [this, request]()
         {
             return this->SetVideoGenerationTaskCallbackKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::SetWhiteboardPushCallbackOutcome TiwClient::SetWhiteboardPushCallback(const SetWhiteboardPushCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetWhiteboardPushCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetWhiteboardPushCallbackResponse rsp = SetWhiteboardPushCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetWhiteboardPushCallbackOutcome(rsp);
+        else
+            return SetWhiteboardPushCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return SetWhiteboardPushCallbackOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::SetWhiteboardPushCallbackAsync(const SetWhiteboardPushCallbackRequest& request, const SetWhiteboardPushCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetWhiteboardPushCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::SetWhiteboardPushCallbackOutcomeCallable TiwClient::SetWhiteboardPushCallbackCallable(const SetWhiteboardPushCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetWhiteboardPushCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->SetWhiteboardPushCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::SetWhiteboardPushCallbackKeyOutcome TiwClient::SetWhiteboardPushCallbackKey(const SetWhiteboardPushCallbackKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetWhiteboardPushCallbackKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetWhiteboardPushCallbackKeyResponse rsp = SetWhiteboardPushCallbackKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetWhiteboardPushCallbackKeyOutcome(rsp);
+        else
+            return SetWhiteboardPushCallbackKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return SetWhiteboardPushCallbackKeyOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::SetWhiteboardPushCallbackKeyAsync(const SetWhiteboardPushCallbackKeyRequest& request, const SetWhiteboardPushCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetWhiteboardPushCallbackKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::SetWhiteboardPushCallbackKeyOutcomeCallable TiwClient::SetWhiteboardPushCallbackKeyCallable(const SetWhiteboardPushCallbackKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetWhiteboardPushCallbackKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->SetWhiteboardPushCallbackKey(request);
         }
     );
 

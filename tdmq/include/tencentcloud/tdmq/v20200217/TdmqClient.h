@@ -160,7 +160,7 @@ namespace TencentCloud
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
 
                 /**
-                 *用于在用户账户下创建消息队列 Tdmq环境（命名空间）
+                 *用于在用户账户下创建消息队列 Tdmq 命名空间
                  * @param req CreateEnvironmentRequest
                  * @return CreateEnvironmentOutcome
                  */
@@ -196,7 +196,7 @@ namespace TencentCloud
                 DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request);
 
                 /**
-                 *批量删除租户下的环境
+                 *批量删除租户下的命名空间
                  * @param req DeleteEnvironmentsRequest
                  * @return DeleteEnvironmentsOutcome
                  */
@@ -259,7 +259,7 @@ namespace TencentCloud
                 DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
 
                 /**
-                 *获取指定环境的属性
+                 *获取指定命名空间的属性
                  * @param req DescribeEnvironmentAttributesRequest
                  * @return DescribeEnvironmentAttributesOutcome
                  */
@@ -268,7 +268,7 @@ namespace TencentCloud
                 DescribeEnvironmentAttributesOutcomeCallable DescribeEnvironmentAttributesCallable(const Model::DescribeEnvironmentAttributesRequest& request);
 
                 /**
-                 *获取环境角色列表
+                 *获取命名空间角色列表
                  * @param req DescribeEnvironmentRolesRequest
                  * @return DescribeEnvironmentRolesOutcome
                  */
@@ -277,7 +277,7 @@ namespace TencentCloud
                 DescribeEnvironmentRolesOutcomeCallable DescribeEnvironmentRolesCallable(const Model::DescribeEnvironmentRolesRequest& request);
 
                 /**
-                 *获取租户下环境列表
+                 *获取租户下命名空间列表
                  * @param req DescribeEnvironmentsRequest
                  * @return DescribeEnvironmentsOutcome
                  */
@@ -322,7 +322,7 @@ namespace TencentCloud
                 ModifyClusterOutcomeCallable ModifyClusterCallable(const Model::ModifyClusterRequest& request);
 
                 /**
-                 *修改指定环境的属性值
+                 *修改指定命名空间的属性值
                  * @param req ModifyEnvironmentAttributesRequest
                  * @return ModifyEnvironmentAttributesOutcome
                  */

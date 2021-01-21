@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群Id，需要更新的集群Id。
-                     * @return ClusterId 集群Id，需要更新的集群Id。
+                     * 获取Pulsar 集群的ID，需要更新的集群Id。
+                     * @return ClusterId Pulsar 集群的ID，需要更新的集群Id。
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群Id，需要更新的集群Id。
-                     * @param ClusterId 集群Id，需要更新的集群Id。
+                     * 设置Pulsar 集群的ID，需要更新的集群Id。
+                     * @param ClusterId Pulsar 集群的ID，需要更新的集群Id。
                      */
                     void SetClusterId(const std::string& _clusterId);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群Id，需要更新的集群Id。
+                     * Pulsar 集群的ID，需要更新的集群Id。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

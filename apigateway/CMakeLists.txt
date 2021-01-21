@@ -192,6 +192,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/ApiInfo.h
   include/tencentcloud/apigateway/v20180808/model/EnvironmentStrategy.h
   include/tencentcloud/apigateway/v20180808/model/EnableApiKeyRequest.h
+  include/tencentcloud/apigateway/v20180808/model/Base64EncodedTriggerRule.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServicesStatusResponse.h
   include/tencentcloud/apigateway/v20180808/model/CreateApiKeyRequest.h
   )
@@ -371,6 +372,7 @@ set(apigateway_src
   src/v20180808/model/ApiInfo.cpp
   src/v20180808/model/EnvironmentStrategy.cpp
   src/v20180808/model/EnableApiKeyRequest.cpp
+  src/v20180808/model/Base64EncodedTriggerRule.cpp
   src/v20180808/model/DescribeServicesStatusResponse.cpp
   src/v20180808/model/CreateApiKeyRequest.cpp
   )

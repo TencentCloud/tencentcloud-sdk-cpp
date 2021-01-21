@@ -26,7 +26,8 @@ using namespace std;
 DescribeEnvironmentsRequest::DescribeEnvironmentsRequest() :
     m_environmentIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DescribeEnvironmentsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DescribeEnvironmentsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeEnvironmentsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeEnvironmentsRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeEnvironmentsRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeEnvironmentsRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

@@ -490,6 +490,24 @@ namespace TencentCloud
                      */
                     bool CpuHasBeenSet() const;
 
+                    /**
+                     * 获取分片ShardKey的范围（总共64个哈希值），例如： 0-31，32-63
+                     * @return Range 分片ShardKey的范围（总共64个哈希值），例如： 0-31，32-63
+                     */
+                    std::string GetRange() const;
+
+                    /**
+                     * 设置分片ShardKey的范围（总共64个哈希值），例如： 0-31，32-63
+                     * @param Range 分片ShardKey的范围（总共64个哈希值），例如： 0-31，32-63
+                     */
+                    void SetRange(const std::string& _range);
+
+                    /**
+                     * 判断参数 Range 是否已赋值
+                     * @return Range 是否已赋值
+                     */
+                    bool RangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -638,6 +656,12 @@ namespace TencentCloud
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
+
+                    /**
+                     * 分片ShardKey的范围（总共64个哈希值），例如： 0-31，32-63
+                     */
+                    std::string m_range;
+                    bool m_rangeHasBeenSet;
 
                 };
             }

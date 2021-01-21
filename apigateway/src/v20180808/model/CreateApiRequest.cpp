@@ -68,7 +68,8 @@ CreateApiRequest::CreateApiRequest() :
     m_oauthConfigHasBeenSet(false),
     m_responseErrorCodesHasBeenSet(false),
     m_targetNamespaceIdHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+    m_userTypeHasBeenSet(false),
+    m_isBase64EncodedHasBeenSet(false)
 {
 }
 
@@ -485,6 +486,14 @@ string CreateApiRequest::ToJsonString() const
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_userType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isBase64EncodedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsBase64Encoded";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isBase64Encoded, allocator);
     }
 
 
@@ -1213,6 +1222,22 @@ void CreateApiRequest::SetUserType(const string& _userType)
 bool CreateApiRequest::UserTypeHasBeenSet() const
 {
     return m_userTypeHasBeenSet;
+}
+
+bool CreateApiRequest::GetIsBase64Encoded() const
+{
+    return m_isBase64Encoded;
+}
+
+void CreateApiRequest::SetIsBase64Encoded(const bool& _isBase64Encoded)
+{
+    m_isBase64Encoded = _isBase64Encoded;
+    m_isBase64EncodedHasBeenSet = true;
+}
+
+bool CreateApiRequest::IsBase64EncodedHasBeenSet() const
+{
+    return m_isBase64EncodedHasBeenSet;
 }
 
 

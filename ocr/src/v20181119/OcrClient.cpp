@@ -2663,6 +2663,49 @@ OcrClient::VerifyBizLicenseOutcomeCallable OcrClient::VerifyBizLicenseCallable(c
     return task->get_future();
 }
 
+OcrClient::VerifyOfdVatInvoiceOCROutcome OcrClient::VerifyOfdVatInvoiceOCR(const VerifyOfdVatInvoiceOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyOfdVatInvoiceOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyOfdVatInvoiceOCRResponse rsp = VerifyOfdVatInvoiceOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyOfdVatInvoiceOCROutcome(rsp);
+        else
+            return VerifyOfdVatInvoiceOCROutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyOfdVatInvoiceOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::VerifyOfdVatInvoiceOCRAsync(const VerifyOfdVatInvoiceOCRRequest& request, const VerifyOfdVatInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyOfdVatInvoiceOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::VerifyOfdVatInvoiceOCROutcomeCallable OcrClient::VerifyOfdVatInvoiceOCRCallable(const VerifyOfdVatInvoiceOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyOfdVatInvoiceOCROutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyOfdVatInvoiceOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::VinOCROutcome OcrClient::VinOCR(const VinOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "VinOCR");

@@ -26,7 +26,8 @@ using namespace std;
 CreateClusterInstancesRequest::CreateClusterInstancesRequest() :
     m_clusterIdHasBeenSet(false),
     m_runInstanceParaHasBeenSet(false),
-    m_instanceAdvancedSettingsHasBeenSet(false)
+    m_instanceAdvancedSettingsHasBeenSet(false),
+    m_skipValidateOptionsHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,19 @@ string CreateClusterInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_instanceAdvancedSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_skipValidateOptionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SkipValidateOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_skipValidateOptions.begin(); itr != m_skipValidateOptions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -116,6 +130,22 @@ void CreateClusterInstancesRequest::SetInstanceAdvancedSettings(const InstanceAd
 bool CreateClusterInstancesRequest::InstanceAdvancedSettingsHasBeenSet() const
 {
     return m_instanceAdvancedSettingsHasBeenSet;
+}
+
+vector<string> CreateClusterInstancesRequest::GetSkipValidateOptions() const
+{
+    return m_skipValidateOptions;
+}
+
+void CreateClusterInstancesRequest::SetSkipValidateOptions(const vector<string>& _skipValidateOptions)
+{
+    m_skipValidateOptions = _skipValidateOptions;
+    m_skipValidateOptionsHasBeenSet = true;
+}
+
+bool CreateClusterInstancesRequest::SkipValidateOptionsHasBeenSet() const
+{
+    return m_skipValidateOptionsHasBeenSet;
 }
 
 

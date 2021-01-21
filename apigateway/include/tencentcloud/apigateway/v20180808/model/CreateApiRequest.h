@@ -863,6 +863,24 @@ namespace TencentCloud
                      */
                     bool UserTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否打开Base64编码，只有后端是scf时才会生效。
+                     * @return IsBase64Encoded 是否打开Base64编码，只有后端是scf时才会生效。
+                     */
+                    bool GetIsBase64Encoded() const;
+
+                    /**
+                     * 设置是否打开Base64编码，只有后端是scf时才会生效。
+                     * @param IsBase64Encoded 是否打开Base64编码，只有后端是scf时才会生效。
+                     */
+                    void SetIsBase64Encoded(const bool& _isBase64Encoded);
+
+                    /**
+                     * 判断参数 IsBase64Encoded 是否已赋值
+                     * @return IsBase64Encoded 是否已赋值
+                     */
+                    bool IsBase64EncodedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1134,6 +1152,12 @@ namespace TencentCloud
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
+
+                    /**
+                     * 是否打开Base64编码，只有后端是scf时才会生效。
+                     */
+                    bool m_isBase64Encoded;
+                    bool m_isBase64EncodedHasBeenSet;
 
                 };
             }

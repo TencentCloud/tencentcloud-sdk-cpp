@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境（命名空间）记录数。
-                     * @return TotalCount 环境（命名空间）记录数。
+                     * 获取命名空间记录数。
+                     * @return TotalCount 命名空间记录数。
                      */
                     uint64_t GetTotalCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取环境（命名空间）集合数组。
-                     * @return EnvironmentSet 环境（命名空间）集合数组。
+                     * 获取命名空间集合数组。
+                     * @return EnvironmentSet 命名空间集合数组。
                      */
                     std::vector<Environment> GetEnvironmentSet() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境（命名空间）记录数。
+                     * 命名空间记录数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 环境（命名空间）集合数组。
+                     * 命名空间集合数组。
                      */
                     std::vector<Environment> m_environmentSet;
                     bool m_environmentSetHasBeenSet;

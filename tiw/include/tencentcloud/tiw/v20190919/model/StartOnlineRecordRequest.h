@@ -324,6 +324,24 @@ VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通�
                      */
                     bool ChatGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取内部参数
+                     * @return ExtraData 内部参数
+                     */
+                    std::string GetExtraData() const;
+
+                    /**
+                     * 设置内部参数
+                     * @param ExtraData 内部参数
+                     */
+                    void SetExtraData(const std::string& _extraData);
+
+                    /**
+                     * 判断参数 ExtraData 是否已赋值
+                     * @return ExtraData 是否已赋值
+                     */
+                    bool ExtraDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -414,6 +432,12 @@ VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通�
                      */
                     std::string m_chatGroupId;
                     bool m_chatGroupIdHasBeenSet;
+
+                    /**
+                     * 内部参数
+                     */
+                    std::string m_extraData;
+                    bool m_extraDataHasBeenSet;
 
                 };
             }

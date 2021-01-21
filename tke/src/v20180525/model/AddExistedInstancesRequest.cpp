@@ -29,9 +29,10 @@ AddExistedInstancesRequest::AddExistedInstancesRequest() :
     m_instanceAdvancedSettingsHasBeenSet(false),
     m_enhancedServiceHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
     m_hostNameHasBeenSet(false),
-    m_nodePoolHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_nodePoolHasBeenSet(false),
+    m_skipValidateOptionsHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string AddExistedInstancesRequest::ToJsonString() const
         m_loginSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_hostNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_securityGroupIdsHasBeenSet)
     {
         Value iKey(kStringType);
@@ -103,14 +112,6 @@ string AddExistedInstancesRequest::ToJsonString() const
         }
     }
 
-    if (m_hostNameHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "HostName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_hostName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_nodePoolHasBeenSet)
     {
         Value iKey(kStringType);
@@ -118,6 +119,19 @@ string AddExistedInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_nodePool.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_skipValidateOptionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SkipValidateOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_skipValidateOptions.begin(); itr != m_skipValidateOptions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -208,22 +222,6 @@ bool AddExistedInstancesRequest::LoginSettingsHasBeenSet() const
     return m_loginSettingsHasBeenSet;
 }
 
-vector<string> AddExistedInstancesRequest::GetSecurityGroupIds() const
-{
-    return m_securityGroupIds;
-}
-
-void AddExistedInstancesRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
-{
-    m_securityGroupIds = _securityGroupIds;
-    m_securityGroupIdsHasBeenSet = true;
-}
-
-bool AddExistedInstancesRequest::SecurityGroupIdsHasBeenSet() const
-{
-    return m_securityGroupIdsHasBeenSet;
-}
-
 string AddExistedInstancesRequest::GetHostName() const
 {
     return m_hostName;
@@ -240,6 +238,22 @@ bool AddExistedInstancesRequest::HostNameHasBeenSet() const
     return m_hostNameHasBeenSet;
 }
 
+vector<string> AddExistedInstancesRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void AddExistedInstancesRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool AddExistedInstancesRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
+}
+
 NodePoolOption AddExistedInstancesRequest::GetNodePool() const
 {
     return m_nodePool;
@@ -254,6 +268,22 @@ void AddExistedInstancesRequest::SetNodePool(const NodePoolOption& _nodePool)
 bool AddExistedInstancesRequest::NodePoolHasBeenSet() const
 {
     return m_nodePoolHasBeenSet;
+}
+
+vector<string> AddExistedInstancesRequest::GetSkipValidateOptions() const
+{
+    return m_skipValidateOptions;
+}
+
+void AddExistedInstancesRequest::SetSkipValidateOptions(const vector<string>& _skipValidateOptions)
+{
+    m_skipValidateOptions = _skipValidateOptions;
+    m_skipValidateOptionsHasBeenSet = true;
+}
+
+bool AddExistedInstancesRequest::SkipValidateOptionsHasBeenSet() const
+{
+    return m_skipValidateOptionsHasBeenSet;
 }
 
 
