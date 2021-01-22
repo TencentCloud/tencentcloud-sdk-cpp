@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool RegistryNameHasBeenSet() const;
 
                     /**
-                     * 获取企业版实例类型
-                     * @return RegistryType 企业版实例类型
+                     * 获取企业版实例类型（basic 基础版；standard 标准版；premium 高级版）
+                     * @return RegistryType 企业版实例类型（basic 基础版；standard 标准版；premium 高级版）
                      */
                     std::string GetRegistryType() const;
 
                     /**
-                     * 设置企业版实例类型
-                     * @param RegistryType 企业版实例类型
+                     * 设置企业版实例类型（basic 基础版；standard 标准版；premium 高级版）
+                     * @param RegistryType 企业版实例类型（basic 基础版；standard 标准版；premium 高级版）
                      */
                     void SetRegistryType(const std::string& _registryType);
 
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_registryNameHasBeenSet;
 
                     /**
-                     * 企业版实例类型
+                     * 企业版实例类型（basic 基础版；standard 标准版；premium 高级版）
                      */
                     std::string m_registryType;
                     bool m_registryTypeHasBeenSet;

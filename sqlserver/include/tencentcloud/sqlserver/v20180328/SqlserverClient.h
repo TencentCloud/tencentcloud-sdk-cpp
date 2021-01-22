@@ -119,6 +119,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNameRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNameResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNetworkRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNetworkResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceProjectRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceProjectResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceRenewFlagRequest.h>
@@ -325,6 +327,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDBInstanceNetworkResponse> ModifyDBInstanceNetworkOutcome;
+                typedef std::future<ModifyDBInstanceNetworkOutcome> ModifyDBInstanceNetworkOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyDBInstanceNetworkRequest&, ModifyDBInstanceNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNetworkAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDBInstanceProjectResponse> ModifyDBInstanceProjectOutcome;
                 typedef std::future<ModifyDBInstanceProjectOutcome> ModifyDBInstanceProjectOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDBInstanceProjectRequest&, ModifyDBInstanceProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceProjectAsyncHandler;
@@ -831,6 +836,15 @@ namespace TencentCloud
                 ModifyDBInstanceNameOutcome ModifyDBInstanceName(const Model::ModifyDBInstanceNameRequest &request);
                 void ModifyDBInstanceNameAsync(const Model::ModifyDBInstanceNameRequest& request, const ModifyDBInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceNameOutcomeCallable ModifyDBInstanceNameCallable(const Model::ModifyDBInstanceNameRequest& request);
+
+                /**
+                 *本接口（ModifyDBInstanceNetwork）用于修改运行中实例的网络，仅支持从VPC网络到VPC网络的转换
+                 * @param req ModifyDBInstanceNetworkRequest
+                 * @return ModifyDBInstanceNetworkOutcome
+                 */
+                ModifyDBInstanceNetworkOutcome ModifyDBInstanceNetwork(const Model::ModifyDBInstanceNetworkRequest &request);
+                void ModifyDBInstanceNetworkAsync(const Model::ModifyDBInstanceNetworkRequest& request, const ModifyDBInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceNetworkOutcomeCallable ModifyDBInstanceNetworkCallable(const Model::ModifyDBInstanceNetworkRequest& request);
 
                 /**
                  *本接口（ModifyDBInstanceProject）用于修改数据库实例所属项目。

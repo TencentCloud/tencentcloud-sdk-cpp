@@ -62,6 +62,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/ModifyMaintenanceSpanResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ZoneInfo.h
   include/tencentcloud/sqlserver/v20180328/model/InquiryPriceCreateDBInstancesRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNetworkRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupByFlowIdResponse.h
   include/tencentcloud/sqlserver/v20180328/model/RecycleDBInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusRequest.h
@@ -132,6 +133,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/InquiryPriceRenewDBInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/TerminateDBInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DbRollbackTimeInfo.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNetworkResponse.h
   include/tencentcloud/sqlserver/v20180328/model/AssociateSecurityGroupsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupListRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateBackupResponse.h
@@ -156,6 +158,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DBPrivilege.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeOrdersRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupDetailsResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/ResourceTag.h
   include/tencentcloud/sqlserver/v20180328/model/RecycleDBInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DeleteAccountRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupByReadOnlyInstanceRequest.h
@@ -246,6 +249,7 @@ set(sqlserver_src
   src/v20180328/model/ModifyMaintenanceSpanResponse.cpp
   src/v20180328/model/ZoneInfo.cpp
   src/v20180328/model/InquiryPriceCreateDBInstancesRequest.cpp
+  src/v20180328/model/ModifyDBInstanceNetworkRequest.cpp
   src/v20180328/model/DescribeBackupByFlowIdResponse.cpp
   src/v20180328/model/RecycleDBInstanceRequest.cpp
   src/v20180328/model/DescribeFlowStatusRequest.cpp
@@ -316,6 +320,7 @@ set(sqlserver_src
   src/v20180328/model/InquiryPriceRenewDBInstanceRequest.cpp
   src/v20180328/model/TerminateDBInstanceResponse.cpp
   src/v20180328/model/DbRollbackTimeInfo.cpp
+  src/v20180328/model/ModifyDBInstanceNetworkResponse.cpp
   src/v20180328/model/AssociateSecurityGroupsResponse.cpp
   src/v20180328/model/DescribeReadOnlyGroupListRequest.cpp
   src/v20180328/model/CreateBackupResponse.cpp
@@ -340,6 +345,7 @@ set(sqlserver_src
   src/v20180328/model/DBPrivilege.cpp
   src/v20180328/model/DescribeOrdersRequest.cpp
   src/v20180328/model/DescribeReadOnlyGroupDetailsResponse.cpp
+  src/v20180328/model/ResourceTag.cpp
   src/v20180328/model/RecycleDBInstanceResponse.cpp
   src/v20180328/model/DeleteAccountRequest.cpp
   src/v20180328/model/DescribeReadOnlyGroupByReadOnlyInstanceRequest.cpp

@@ -42,7 +42,8 @@ CreateReadOnlyDBInstancesRequest::CreateReadOnlyDBInstancesRequest() :
     m_periodHasBeenSet(false),
     m_securityGroupListHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_voucherIdsHasBeenSet(false)
+    m_voucherIdsHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,21 @@ string CreateReadOnlyDBInstancesRequest::ToJsonString() const
         for (auto itr = m_voucherIds.begin(); itr != m_voucherIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -525,6 +541,22 @@ void CreateReadOnlyDBInstancesRequest::SetVoucherIds(const vector<string>& _vouc
 bool CreateReadOnlyDBInstancesRequest::VoucherIdsHasBeenSet() const
 {
     return m_voucherIdsHasBeenSet;
+}
+
+vector<ResourceTag> CreateReadOnlyDBInstancesRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateReadOnlyDBInstancesRequest::SetResourceTags(const vector<ResourceTag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstancesRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

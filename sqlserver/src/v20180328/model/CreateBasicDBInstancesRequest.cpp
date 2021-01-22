@@ -42,7 +42,8 @@ CreateBasicDBInstancesRequest::CreateBasicDBInstancesRequest() :
     m_voucherIdsHasBeenSet(false),
     m_weeklyHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_spanHasBeenSet(false)
+    m_spanHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,21 @@ string CreateBasicDBInstancesRequest::ToJsonString() const
         string key = "Span";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_span, allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -530,6 +546,22 @@ void CreateBasicDBInstancesRequest::SetSpan(const int64_t& _span)
 bool CreateBasicDBInstancesRequest::SpanHasBeenSet() const
 {
     return m_spanHasBeenSet;
+}
+
+vector<ResourceTag> CreateBasicDBInstancesRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateBasicDBInstancesRequest::SetResourceTags(const vector<ResourceTag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateBasicDBInstancesRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

@@ -234,6 +234,114 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例内网地址列表，格式如：172.1.0.12
+                     * @return VipSet 实例内网地址列表，格式如：172.1.0.12
+                     */
+                    std::vector<std::string> GetVipSet() const;
+
+                    /**
+                     * 设置实例内网地址列表，格式如：172.1.0.12
+                     * @param VipSet 实例内网地址列表，格式如：172.1.0.12
+                     */
+                    void SetVipSet(const std::vector<std::string>& _vipSet);
+
+                    /**
+                     * 判断参数 VipSet 是否已赋值
+                     * @return VipSet 是否已赋值
+                     */
+                    bool VipSetHasBeenSet() const;
+
+                    /**
+                     * 获取实例名称列表，模糊查询
+                     * @return InstanceNameSet 实例名称列表，模糊查询
+                     */
+                    std::vector<std::string> GetInstanceNameSet() const;
+
+                    /**
+                     * 设置实例名称列表，模糊查询
+                     * @param InstanceNameSet 实例名称列表，模糊查询
+                     */
+                    void SetInstanceNameSet(const std::vector<std::string>& _instanceNameSet);
+
+                    /**
+                     * 判断参数 InstanceNameSet 是否已赋值
+                     * @return InstanceNameSet 是否已赋值
+                     */
+                    bool InstanceNameSetHasBeenSet() const;
+
+                    /**
+                     * 获取实例版本代号列表，格式如：2008R2，2012SP3等
+                     * @return VersionSet 实例版本代号列表，格式如：2008R2，2012SP3等
+                     */
+                    std::vector<std::string> GetVersionSet() const;
+
+                    /**
+                     * 设置实例版本代号列表，格式如：2008R2，2012SP3等
+                     * @param VersionSet 实例版本代号列表，格式如：2008R2，2012SP3等
+                     */
+                    void SetVersionSet(const std::vector<std::string>& _versionSet);
+
+                    /**
+                     * 判断参数 VersionSet 是否已赋值
+                     * @return VersionSet 是否已赋值
+                     */
+                    bool VersionSetHasBeenSet() const;
+
+                    /**
+                     * 获取实例可用区，格式如：ap-guangzhou-2
+                     * @return Zone 实例可用区，格式如：ap-guangzhou-2
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置实例可用区，格式如：ap-guangzhou-2
+                     * @param Zone 实例可用区，格式如：ap-guangzhou-2
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取实例标签列表
+                     * @return TagKeys 实例标签列表
+                     */
+                    std::vector<std::string> GetTagKeys() const;
+
+                    /**
+                     * 设置实例标签列表
+                     * @param TagKeys 实例标签列表
+                     */
+                    void SetTagKeys(const std::vector<std::string>& _tagKeys);
+
+                    /**
+                     * 判断参数 TagKeys 是否已赋值
+                     * @return TagKeys 是否已赋值
+                     */
+                    bool TagKeysHasBeenSet() const;
+
+                    /**
+                     * 获取模糊查询关键字，支持实例id、实例名、内网ip
+                     * @return SearchKey 模糊查询关键字，支持实例id、实例名、内网ip
+                     */
+                    std::string GetSearchKey() const;
+
+                    /**
+                     * 设置模糊查询关键字，支持实例id、实例名、内网ip
+                     * @param SearchKey 模糊查询关键字，支持实例id、实例名、内网ip
+                     */
+                    void SetSearchKey(const std::string& _searchKey);
+
+                    /**
+                     * 判断参数 SearchKey 是否已赋值
+                     * @return SearchKey 是否已赋值
+                     */
+                    bool SearchKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -295,6 +403,42 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 实例内网地址列表，格式如：172.1.0.12
+                     */
+                    std::vector<std::string> m_vipSet;
+                    bool m_vipSetHasBeenSet;
+
+                    /**
+                     * 实例名称列表，模糊查询
+                     */
+                    std::vector<std::string> m_instanceNameSet;
+                    bool m_instanceNameSetHasBeenSet;
+
+                    /**
+                     * 实例版本代号列表，格式如：2008R2，2012SP3等
+                     */
+                    std::vector<std::string> m_versionSet;
+                    bool m_versionSetHasBeenSet;
+
+                    /**
+                     * 实例可用区，格式如：ap-guangzhou-2
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 实例标签列表
+                     */
+                    std::vector<std::string> m_tagKeys;
+                    bool m_tagKeysHasBeenSet;
+
+                    /**
+                     * 模糊查询关键字，支持实例id、实例名、内网ip
+                     */
+                    std::string m_searchKey;
+                    bool m_searchKeyHasBeenSet;
 
                 };
             }

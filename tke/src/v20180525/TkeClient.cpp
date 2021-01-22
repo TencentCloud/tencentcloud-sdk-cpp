@@ -599,6 +599,49 @@ TkeClient::CreateClusterRouteTableOutcomeCallable TkeClient::CreateClusterRouteT
     return task->get_future();
 }
 
+TkeClient::CreateEKSClusterOutcome TkeClient::CreateEKSCluster(const CreateEKSClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEKSCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEKSClusterResponse rsp = CreateEKSClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEKSClusterOutcome(rsp);
+        else
+            return CreateEKSClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEKSClusterOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateEKSClusterAsync(const CreateEKSClusterRequest& request, const CreateEKSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEKSCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateEKSClusterOutcomeCallable TkeClient::CreateEKSClusterCallable(const CreateEKSClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEKSClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEKSCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreatePrometheusDashboardOutcome TkeClient::CreatePrometheusDashboard(const CreatePrometheusDashboardRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrometheusDashboard");
@@ -1022,6 +1065,49 @@ TkeClient::DeleteClusterRouteTableOutcomeCallable TkeClient::DeleteClusterRouteT
         [this, request]()
         {
             return this->DeleteClusterRouteTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteEKSClusterOutcome TkeClient::DeleteEKSCluster(const DeleteEKSClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEKSCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEKSClusterResponse rsp = DeleteEKSClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEKSClusterOutcome(rsp);
+        else
+            return DeleteEKSClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEKSClusterOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteEKSClusterAsync(const DeleteEKSClusterRequest& request, const DeleteEKSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEKSCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteEKSClusterOutcomeCallable TkeClient::DeleteEKSClusterCallable(const DeleteEKSClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEKSClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEKSCluster(request);
         }
     );
 
@@ -1667,6 +1753,92 @@ TkeClient::DescribeClustersOutcomeCallable TkeClient::DescribeClustersCallable(c
         [this, request]()
         {
             return this->DescribeClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeEKSClusterCredentialOutcome TkeClient::DescribeEKSClusterCredential(const DescribeEKSClusterCredentialRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEKSClusterCredential");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEKSClusterCredentialResponse rsp = DescribeEKSClusterCredentialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEKSClusterCredentialOutcome(rsp);
+        else
+            return DescribeEKSClusterCredentialOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEKSClusterCredentialOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEKSClusterCredentialAsync(const DescribeEKSClusterCredentialRequest& request, const DescribeEKSClusterCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEKSClusterCredential(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEKSClusterCredentialOutcomeCallable TkeClient::DescribeEKSClusterCredentialCallable(const DescribeEKSClusterCredentialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEKSClusterCredentialOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEKSClusterCredential(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeEKSClustersOutcome TkeClient::DescribeEKSClusters(const DescribeEKSClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEKSClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEKSClustersResponse rsp = DescribeEKSClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEKSClustersOutcome(rsp);
+        else
+            return DescribeEKSClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEKSClustersOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEKSClustersAsync(const DescribeEKSClustersRequest& request, const DescribeEKSClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEKSClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEKSClustersOutcomeCallable TkeClient::DescribeEKSClustersCallable(const DescribeEKSClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEKSClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEKSClusters(request);
         }
     );
 
@@ -2613,6 +2785,49 @@ TkeClient::UpdateClusterVersionOutcomeCallable TkeClient::UpdateClusterVersionCa
         [this, request]()
         {
             return this->UpdateClusterVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UpdateEKSClusterOutcome TkeClient::UpdateEKSCluster(const UpdateEKSClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateEKSCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateEKSClusterResponse rsp = UpdateEKSClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateEKSClusterOutcome(rsp);
+        else
+            return UpdateEKSClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateEKSClusterOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UpdateEKSClusterAsync(const UpdateEKSClusterRequest& request, const UpdateEKSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateEKSCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UpdateEKSClusterOutcomeCallable TkeClient::UpdateEKSClusterCallable(const UpdateEKSClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateEKSClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateEKSCluster(request);
         }
     );
 

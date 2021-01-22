@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bda/v20200324/model/ImageRect.h>
 
 
 namespace TencentCloud
@@ -66,6 +67,20 @@ namespace TencentCloud
                      */
                     bool MaskImageHasBeenSet() const;
 
+                    /**
+                     * 获取坐标信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageRects 坐标信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ImageRect> GetImageRects() const;
+
+                    /**
+                     * 判断参数 ImageRects 是否已赋值
+                     * @return ImageRects 是否已赋值
+                     */
+                    bool ImageRectsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +94,13 @@ namespace TencentCloud
                      */
                     std::string m_maskImage;
                     bool m_maskImageHasBeenSet;
+
+                    /**
+                     * 坐标信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ImageRect> m_imageRects;
+                    bool m_imageRectsHasBeenSet;
 
                 };
             }

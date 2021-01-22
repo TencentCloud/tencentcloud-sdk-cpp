@@ -126,6 +126,49 @@ ChdfsClient::CreateAccessGroupOutcomeCallable ChdfsClient::CreateAccessGroupCall
     return task->get_future();
 }
 
+ChdfsClient::CreateAccessRulesOutcome ChdfsClient::CreateAccessRules(const CreateAccessRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccessRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccessRulesResponse rsp = CreateAccessRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccessRulesOutcome(rsp);
+        else
+            return CreateAccessRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccessRulesOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::CreateAccessRulesAsync(const CreateAccessRulesRequest& request, const CreateAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccessRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::CreateAccessRulesOutcomeCallable ChdfsClient::CreateAccessRulesCallable(const CreateAccessRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccessRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccessRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ChdfsClient::CreateFileSystemOutcome ChdfsClient::CreateFileSystem(const CreateFileSystemRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFileSystem");
@@ -169,6 +212,49 @@ ChdfsClient::CreateFileSystemOutcomeCallable ChdfsClient::CreateFileSystemCallab
     return task->get_future();
 }
 
+ChdfsClient::CreateLifeCycleRulesOutcome ChdfsClient::CreateLifeCycleRules(const CreateLifeCycleRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLifeCycleRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLifeCycleRulesResponse rsp = CreateLifeCycleRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLifeCycleRulesOutcome(rsp);
+        else
+            return CreateLifeCycleRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLifeCycleRulesOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::CreateLifeCycleRulesAsync(const CreateLifeCycleRulesRequest& request, const CreateLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLifeCycleRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::CreateLifeCycleRulesOutcomeCallable ChdfsClient::CreateLifeCycleRulesCallable(const CreateLifeCycleRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLifeCycleRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLifeCycleRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ChdfsClient::CreateMountPointOutcome ChdfsClient::CreateMountPoint(const CreateMountPointRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMountPoint");
@@ -205,6 +291,264 @@ ChdfsClient::CreateMountPointOutcomeCallable ChdfsClient::CreateMountPointCallab
         [this, request]()
         {
             return this->CreateMountPoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ChdfsClient::CreateRestoreTasksOutcome ChdfsClient::CreateRestoreTasks(const CreateRestoreTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRestoreTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRestoreTasksResponse rsp = CreateRestoreTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRestoreTasksOutcome(rsp);
+        else
+            return CreateRestoreTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRestoreTasksOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::CreateRestoreTasksAsync(const CreateRestoreTasksRequest& request, const CreateRestoreTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRestoreTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::CreateRestoreTasksOutcomeCallable ChdfsClient::CreateRestoreTasksCallable(const CreateRestoreTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRestoreTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRestoreTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ChdfsClient::DeleteAccessGroupOutcome ChdfsClient::DeleteAccessGroup(const DeleteAccessGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccessGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccessGroupResponse rsp = DeleteAccessGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccessGroupOutcome(rsp);
+        else
+            return DeleteAccessGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccessGroupOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DeleteAccessGroupAsync(const DeleteAccessGroupRequest& request, const DeleteAccessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAccessGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::DeleteAccessGroupOutcomeCallable ChdfsClient::DeleteAccessGroupCallable(const DeleteAccessGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAccessGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAccessGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ChdfsClient::DeleteAccessRulesOutcome ChdfsClient::DeleteAccessRules(const DeleteAccessRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccessRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccessRulesResponse rsp = DeleteAccessRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccessRulesOutcome(rsp);
+        else
+            return DeleteAccessRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccessRulesOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DeleteAccessRulesAsync(const DeleteAccessRulesRequest& request, const DeleteAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAccessRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::DeleteAccessRulesOutcomeCallable ChdfsClient::DeleteAccessRulesCallable(const DeleteAccessRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAccessRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAccessRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ChdfsClient::DeleteFileSystemOutcome ChdfsClient::DeleteFileSystem(const DeleteFileSystemRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFileSystem");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFileSystemResponse rsp = DeleteFileSystemResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFileSystemOutcome(rsp);
+        else
+            return DeleteFileSystemOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFileSystemOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DeleteFileSystemAsync(const DeleteFileSystemRequest& request, const DeleteFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFileSystem(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::DeleteFileSystemOutcomeCallable ChdfsClient::DeleteFileSystemCallable(const DeleteFileSystemRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFileSystemOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFileSystem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ChdfsClient::DeleteLifeCycleRulesOutcome ChdfsClient::DeleteLifeCycleRules(const DeleteLifeCycleRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLifeCycleRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLifeCycleRulesResponse rsp = DeleteLifeCycleRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLifeCycleRulesOutcome(rsp);
+        else
+            return DeleteLifeCycleRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLifeCycleRulesOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DeleteLifeCycleRulesAsync(const DeleteLifeCycleRulesRequest& request, const DeleteLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLifeCycleRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::DeleteLifeCycleRulesOutcomeCallable ChdfsClient::DeleteLifeCycleRulesCallable(const DeleteLifeCycleRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLifeCycleRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLifeCycleRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ChdfsClient::DeleteMountPointOutcome ChdfsClient::DeleteMountPoint(const DeleteMountPointRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMountPoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMountPointResponse rsp = DeleteMountPointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMountPointOutcome(rsp);
+        else
+            return DeleteMountPointOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMountPointOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DeleteMountPointAsync(const DeleteMountPointRequest& request, const DeleteMountPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMountPoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::DeleteMountPointOutcomeCallable ChdfsClient::DeleteMountPointCallable(const DeleteMountPointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMountPointOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMountPoint(request);
         }
     );
 
@@ -427,6 +771,49 @@ ChdfsClient::DescribeFileSystemsOutcomeCallable ChdfsClient::DescribeFileSystems
     return task->get_future();
 }
 
+ChdfsClient::DescribeLifeCycleRulesOutcome ChdfsClient::DescribeLifeCycleRules(const DescribeLifeCycleRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLifeCycleRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLifeCycleRulesResponse rsp = DescribeLifeCycleRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLifeCycleRulesOutcome(rsp);
+        else
+            return DescribeLifeCycleRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLifeCycleRulesOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DescribeLifeCycleRulesAsync(const DescribeLifeCycleRulesRequest& request, const DescribeLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLifeCycleRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::DescribeLifeCycleRulesOutcomeCallable ChdfsClient::DescribeLifeCycleRulesCallable(const DescribeLifeCycleRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLifeCycleRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLifeCycleRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ChdfsClient::DescribeMountPointOutcome ChdfsClient::DescribeMountPoint(const DescribeMountPointRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMountPoint");
@@ -506,6 +893,92 @@ ChdfsClient::DescribeMountPointsOutcomeCallable ChdfsClient::DescribeMountPoints
         [this, request]()
         {
             return this->DescribeMountPoints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ChdfsClient::DescribeResourceTagsOutcome ChdfsClient::DescribeResourceTags(const DescribeResourceTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceTagsResponse rsp = DescribeResourceTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceTagsOutcome(rsp);
+        else
+            return DescribeResourceTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceTagsOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DescribeResourceTagsAsync(const DescribeResourceTagsRequest& request, const DescribeResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::DescribeResourceTagsOutcomeCallable ChdfsClient::DescribeResourceTagsCallable(const DescribeResourceTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ChdfsClient::DescribeRestoreTasksOutcome ChdfsClient::DescribeRestoreTasks(const DescribeRestoreTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRestoreTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRestoreTasksResponse rsp = DescribeRestoreTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRestoreTasksOutcome(rsp);
+        else
+            return DescribeRestoreTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRestoreTasksOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DescribeRestoreTasksAsync(const DescribeRestoreTasksRequest& request, const DescribeRestoreTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRestoreTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::DescribeRestoreTasksOutcomeCallable ChdfsClient::DescribeRestoreTasksCallable(const DescribeRestoreTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRestoreTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRestoreTasks(request);
         }
     );
 
@@ -599,6 +1072,49 @@ ChdfsClient::ModifyAccessGroupOutcomeCallable ChdfsClient::ModifyAccessGroupCall
     return task->get_future();
 }
 
+ChdfsClient::ModifyAccessRulesOutcome ChdfsClient::ModifyAccessRules(const ModifyAccessRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccessRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccessRulesResponse rsp = ModifyAccessRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccessRulesOutcome(rsp);
+        else
+            return ModifyAccessRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccessRulesOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::ModifyAccessRulesAsync(const ModifyAccessRulesRequest& request, const ModifyAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccessRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::ModifyAccessRulesOutcomeCallable ChdfsClient::ModifyAccessRulesCallable(const ModifyAccessRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccessRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccessRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ChdfsClient::ModifyFileSystemOutcome ChdfsClient::ModifyFileSystem(const ModifyFileSystemRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyFileSystem");
@@ -635,6 +1151,49 @@ ChdfsClient::ModifyFileSystemOutcomeCallable ChdfsClient::ModifyFileSystemCallab
         [this, request]()
         {
             return this->ModifyFileSystem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ChdfsClient::ModifyLifeCycleRulesOutcome ChdfsClient::ModifyLifeCycleRules(const ModifyLifeCycleRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLifeCycleRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLifeCycleRulesResponse rsp = ModifyLifeCycleRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLifeCycleRulesOutcome(rsp);
+        else
+            return ModifyLifeCycleRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLifeCycleRulesOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::ModifyLifeCycleRulesAsync(const ModifyLifeCycleRulesRequest& request, const ModifyLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLifeCycleRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChdfsClient::ModifyLifeCycleRulesOutcomeCallable ChdfsClient::ModifyLifeCycleRulesCallable(const ModifyLifeCycleRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLifeCycleRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLifeCycleRules(request);
         }
     );
 

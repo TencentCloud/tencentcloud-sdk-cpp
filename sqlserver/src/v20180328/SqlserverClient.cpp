@@ -2104,6 +2104,49 @@ SqlserverClient::ModifyDBInstanceNameOutcomeCallable SqlserverClient::ModifyDBIn
     return task->get_future();
 }
 
+SqlserverClient::ModifyDBInstanceNetworkOutcome SqlserverClient::ModifyDBInstanceNetwork(const ModifyDBInstanceNetworkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceNetwork");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceNetworkResponse rsp = ModifyDBInstanceNetworkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceNetworkOutcome(rsp);
+        else
+            return ModifyDBInstanceNetworkOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceNetworkOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyDBInstanceNetworkAsync(const ModifyDBInstanceNetworkRequest& request, const ModifyDBInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceNetwork(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyDBInstanceNetworkOutcomeCallable SqlserverClient::ModifyDBInstanceNetworkCallable(const ModifyDBInstanceNetworkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceNetworkOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceNetwork(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::ModifyDBInstanceProjectOutcome SqlserverClient::ModifyDBInstanceProject(const ModifyDBInstanceProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceProject");

@@ -1,0 +1,270 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TKE_V20180525_MODEL_CREATEEKSCLUSTERREQUEST_H_
+#define TENCENTCLOUD_TKE_V20180525_MODEL_CREATEEKSCLUSTERREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/DnsServerConf.h>
+
+
+namespace TencentCloud
+{
+    namespace Tke
+    {
+        namespace V20180525
+        {
+            namespace Model
+            {
+                /**
+                * CreateEKSCluster请求参数结构体
+                */
+                class CreateEKSClusterRequest : public AbstractModel
+                {
+                public:
+                    CreateEKSClusterRequest();
+                    ~CreateEKSClusterRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取k8s版本号。可为1.14.4, 1.12.8。
+                     * @return K8SVersion k8s版本号。可为1.14.4, 1.12.8。
+                     */
+                    std::string GetK8SVersion() const;
+
+                    /**
+                     * 设置k8s版本号。可为1.14.4, 1.12.8。
+                     * @param K8SVersion k8s版本号。可为1.14.4, 1.12.8。
+                     */
+                    void SetK8SVersion(const std::string& _k8SVersion);
+
+                    /**
+                     * 判断参数 K8SVersion 是否已赋值
+                     * @return K8SVersion 是否已赋值
+                     */
+                    bool K8SVersionHasBeenSet() const;
+
+                    /**
+                     * 获取vpc 的Id
+                     * @return VpcId vpc 的Id
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置vpc 的Id
+                     * @param VpcId vpc 的Id
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群名称
+                     * @return ClusterName 集群名称
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置集群名称
+                     * @param ClusterName 集群名称
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
+                    /**
+                     * 获取子网Id 列表
+                     * @return SubnetIds 子网Id 列表
+                     */
+                    std::vector<std::string> GetSubnetIds() const;
+
+                    /**
+                     * 设置子网Id 列表
+                     * @param SubnetIds 子网Id 列表
+                     */
+                    void SetSubnetIds(const std::vector<std::string>& _subnetIds);
+
+                    /**
+                     * 判断参数 SubnetIds 是否已赋值
+                     * @return SubnetIds 是否已赋值
+                     */
+                    bool SubnetIdsHasBeenSet() const;
+
+                    /**
+                     * 获取集群描述信息
+                     * @return ClusterDesc 集群描述信息
+                     */
+                    std::string GetClusterDesc() const;
+
+                    /**
+                     * 设置集群描述信息
+                     * @param ClusterDesc 集群描述信息
+                     */
+                    void SetClusterDesc(const std::string& _clusterDesc);
+
+                    /**
+                     * 判断参数 ClusterDesc 是否已赋值
+                     * @return ClusterDesc 是否已赋值
+                     */
+                    bool ClusterDescHasBeenSet() const;
+
+                    /**
+                     * 获取Serivce 所在子网Id
+                     * @return ServiceSubnetId Serivce 所在子网Id
+                     */
+                    std::string GetServiceSubnetId() const;
+
+                    /**
+                     * 设置Serivce 所在子网Id
+                     * @param ServiceSubnetId Serivce 所在子网Id
+                     */
+                    void SetServiceSubnetId(const std::string& _serviceSubnetId);
+
+                    /**
+                     * 判断参数 ServiceSubnetId 是否已赋值
+                     * @return ServiceSubnetId 是否已赋值
+                     */
+                    bool ServiceSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群自定义的Dns服务器信息
+                     * @return DnsServers 集群自定义的Dns服务器信息
+                     */
+                    std::vector<DnsServerConf> GetDnsServers() const;
+
+                    /**
+                     * 设置集群自定义的Dns服务器信息
+                     * @param DnsServers 集群自定义的Dns服务器信息
+                     */
+                    void SetDnsServers(const std::vector<DnsServerConf>& _dnsServers);
+
+                    /**
+                     * 判断参数 DnsServers 是否已赋值
+                     * @return DnsServers 是否已赋值
+                     */
+                    bool DnsServersHasBeenSet() const;
+
+                    /**
+                     * 获取扩展参数。须是map[string]string 的json 格式。
+                     * @return ExtraParam 扩展参数。须是map[string]string 的json 格式。
+                     */
+                    std::string GetExtraParam() const;
+
+                    /**
+                     * 设置扩展参数。须是map[string]string 的json 格式。
+                     * @param ExtraParam 扩展参数。须是map[string]string 的json 格式。
+                     */
+                    void SetExtraParam(const std::string& _extraParam);
+
+                    /**
+                     * 判断参数 ExtraParam 是否已赋值
+                     * @return ExtraParam 是否已赋值
+                     */
+                    bool ExtraParamHasBeenSet() const;
+
+                    /**
+                     * 获取是否在用户集群内开启Dns。默认为true
+                     * @return EnableVpcCoreDNS 是否在用户集群内开启Dns。默认为true
+                     */
+                    bool GetEnableVpcCoreDNS() const;
+
+                    /**
+                     * 设置是否在用户集群内开启Dns。默认为true
+                     * @param EnableVpcCoreDNS 是否在用户集群内开启Dns。默认为true
+                     */
+                    void SetEnableVpcCoreDNS(const bool& _enableVpcCoreDNS);
+
+                    /**
+                     * 判断参数 EnableVpcCoreDNS 是否已赋值
+                     * @return EnableVpcCoreDNS 是否已赋值
+                     */
+                    bool EnableVpcCoreDNSHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * k8s版本号。可为1.14.4, 1.12.8。
+                     */
+                    std::string m_k8SVersion;
+                    bool m_k8SVersionHasBeenSet;
+
+                    /**
+                     * vpc 的Id
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 集群名称
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 子网Id 列表
+                     */
+                    std::vector<std::string> m_subnetIds;
+                    bool m_subnetIdsHasBeenSet;
+
+                    /**
+                     * 集群描述信息
+                     */
+                    std::string m_clusterDesc;
+                    bool m_clusterDescHasBeenSet;
+
+                    /**
+                     * Serivce 所在子网Id
+                     */
+                    std::string m_serviceSubnetId;
+                    bool m_serviceSubnetIdHasBeenSet;
+
+                    /**
+                     * 集群自定义的Dns服务器信息
+                     */
+                    std::vector<DnsServerConf> m_dnsServers;
+                    bool m_dnsServersHasBeenSet;
+
+                    /**
+                     * 扩展参数。须是map[string]string 的json 格式。
+                     */
+                    std::string m_extraParam;
+                    bool m_extraParamHasBeenSet;
+
+                    /**
+                     * 是否在用户集群内开启Dns。默认为true
+                     */
+                    bool m_enableVpcCoreDNS;
+                    bool m_enableVpcCoreDNSHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TKE_V20180525_MODEL_CREATEEKSCLUSTERREQUEST_H_

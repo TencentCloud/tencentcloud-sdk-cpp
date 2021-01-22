@@ -150,6 +150,60 @@ namespace TencentCloud
                      */
                     bool CpuHasBeenSet() const;
 
+                    /**
+                     * 获取升级sqlserver的版本，目前支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise）版本等。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息，版本不支持降级，不填则不修改版本
+                     * @return DBVersion 升级sqlserver的版本，目前支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise）版本等。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息，版本不支持降级，不填则不修改版本
+                     */
+                    std::string GetDBVersion() const;
+
+                    /**
+                     * 设置升级sqlserver的版本，目前支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise）版本等。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息，版本不支持降级，不填则不修改版本
+                     * @param DBVersion 升级sqlserver的版本，目前支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise）版本等。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息，版本不支持降级，不填则不修改版本
+                     */
+                    void SetDBVersion(const std::string& _dBVersion);
+
+                    /**
+                     * 判断参数 DBVersion 是否已赋值
+                     * @return DBVersion 是否已赋值
+                     */
+                    bool DBVersionHasBeenSet() const;
+
+                    /**
+                     * 获取升级sqlserver的高可用架构,从镜像容灾升级到always on集群容灾，仅支持2017及以上版本且支持always on高可用的实例，不支持降级到镜像方式容灾，CLUSTER-升级为always on容灾，不填则不修改高可用架构
+                     * @return HAType 升级sqlserver的高可用架构,从镜像容灾升级到always on集群容灾，仅支持2017及以上版本且支持always on高可用的实例，不支持降级到镜像方式容灾，CLUSTER-升级为always on容灾，不填则不修改高可用架构
+                     */
+                    std::string GetHAType() const;
+
+                    /**
+                     * 设置升级sqlserver的高可用架构,从镜像容灾升级到always on集群容灾，仅支持2017及以上版本且支持always on高可用的实例，不支持降级到镜像方式容灾，CLUSTER-升级为always on容灾，不填则不修改高可用架构
+                     * @param HAType 升级sqlserver的高可用架构,从镜像容灾升级到always on集群容灾，仅支持2017及以上版本且支持always on高可用的实例，不支持降级到镜像方式容灾，CLUSTER-升级为always on容灾，不填则不修改高可用架构
+                     */
+                    void SetHAType(const std::string& _hAType);
+
+                    /**
+                     * 判断参数 HAType 是否已赋值
+                     * @return HAType 是否已赋值
+                     */
+                    bool HATypeHasBeenSet() const;
+
+                    /**
+                     * 获取修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区
+                     * @return MultiZones 修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区
+                     */
+                    std::string GetMultiZones() const;
+
+                    /**
+                     * 设置修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区
+                     * @param MultiZones 修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区
+                     */
+                    void SetMultiZones(const std::string& _multiZones);
+
+                    /**
+                     * 判断参数 MultiZones 是否已赋值
+                     * @return MultiZones 是否已赋值
+                     */
+                    bool MultiZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +241,24 @@ namespace TencentCloud
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
+
+                    /**
+                     * 升级sqlserver的版本，目前支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise）版本等。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息，版本不支持降级，不填则不修改版本
+                     */
+                    std::string m_dBVersion;
+                    bool m_dBVersionHasBeenSet;
+
+                    /**
+                     * 升级sqlserver的高可用架构,从镜像容灾升级到always on集群容灾，仅支持2017及以上版本且支持always on高可用的实例，不支持降级到镜像方式容灾，CLUSTER-升级为always on容灾，不填则不修改高可用架构
+                     */
+                    std::string m_hAType;
+                    bool m_hATypeHasBeenSet;
+
+                    /**
+                     * 修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区
+                     */
+                    std::string m_multiZones;
+                    bool m_multiZonesHasBeenSet;
 
                 };
             }

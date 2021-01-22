@@ -29,7 +29,10 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_storageHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
-    m_cpuHasBeenSet(false)
+    m_cpuHasBeenSet(false),
+    m_dBVersionHasBeenSet(false),
+    m_hATypeHasBeenSet(false),
+    m_multiZonesHasBeenSet(false)
 {
 }
 
@@ -91,6 +94,30 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_dBVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DBVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_dBVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hATypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HAType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_hAType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiZonesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MultiZones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_multiZones.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -195,6 +222,54 @@ void UpgradeDBInstanceRequest::SetCpu(const int64_t& _cpu)
 bool UpgradeDBInstanceRequest::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+string UpgradeDBInstanceRequest::GetDBVersion() const
+{
+    return m_dBVersion;
+}
+
+void UpgradeDBInstanceRequest::SetDBVersion(const string& _dBVersion)
+{
+    m_dBVersion = _dBVersion;
+    m_dBVersionHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::DBVersionHasBeenSet() const
+{
+    return m_dBVersionHasBeenSet;
+}
+
+string UpgradeDBInstanceRequest::GetHAType() const
+{
+    return m_hAType;
+}
+
+void UpgradeDBInstanceRequest::SetHAType(const string& _hAType)
+{
+    m_hAType = _hAType;
+    m_hATypeHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::HATypeHasBeenSet() const
+{
+    return m_hATypeHasBeenSet;
+}
+
+string UpgradeDBInstanceRequest::GetMultiZones() const
+{
+    return m_multiZones;
+}
+
+void UpgradeDBInstanceRequest::SetMultiZones(const string& _multiZones)
+{
+    m_multiZones = _multiZones;
+    m_multiZonesHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::MultiZonesHasBeenSet() const
+{
+    return m_multiZonesHasBeenSet;
 }
 
 

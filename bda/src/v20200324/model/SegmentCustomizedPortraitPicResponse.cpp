@@ -26,7 +26,8 @@ using namespace std;
 
 SegmentCustomizedPortraitPicResponse::SegmentCustomizedPortraitPicResponse() :
     m_portraitImageHasBeenSet(false),
-    m_maskImageHasBeenSet(false)
+    m_maskImageHasBeenSet(false),
+    m_imageRectsHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,26 @@ CoreInternalOutcome SegmentCustomizedPortraitPicResponse::Deserialize(const stri
         m_maskImageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageRects") && !rsp["ImageRects"].IsNull())
+    {
+        if (!rsp["ImageRects"].IsArray())
+            return CoreInternalOutcome(Error("response `ImageRects` is not array type"));
+
+        const Value &tmpValue = rsp["ImageRects"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ImageRect item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_imageRects.push_back(item);
+        }
+        m_imageRectsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +128,16 @@ string SegmentCustomizedPortraitPicResponse::GetMaskImage() const
 bool SegmentCustomizedPortraitPicResponse::MaskImageHasBeenSet() const
 {
     return m_maskImageHasBeenSet;
+}
+
+vector<ImageRect> SegmentCustomizedPortraitPicResponse::GetImageRects() const
+{
+    return m_imageRects;
+}
+
+bool SegmentCustomizedPortraitPicResponse::ImageRectsHasBeenSet() const
+{
+    return m_imageRectsHasBeenSet;
 }
 
 

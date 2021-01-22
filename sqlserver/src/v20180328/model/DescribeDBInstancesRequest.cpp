@@ -31,7 +31,13 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_instanceIdSetHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_vipSetHasBeenSet(false),
+    m_instanceNameSetHasBeenSet(false),
+    m_versionSetHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_tagKeysHasBeenSet(false),
+    m_searchKeyHasBeenSet(false)
 {
 }
 
@@ -109,6 +115,74 @@ string DescribeDBInstancesRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vipSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VipSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_vipSet.begin(); itr != m_vipSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceNameSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceNameSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceNameSet.begin(); itr != m_instanceNameSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_versionSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VersionSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_versionSet.begin(); itr != m_versionSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagKeysHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagKeys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagKeys.begin(); itr != m_tagKeys.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_searchKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SearchKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_searchKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -245,6 +319,102 @@ void DescribeDBInstancesRequest::SetSubnetId(const string& _subnetId)
 bool DescribeDBInstancesRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetVipSet() const
+{
+    return m_vipSet;
+}
+
+void DescribeDBInstancesRequest::SetVipSet(const vector<string>& _vipSet)
+{
+    m_vipSet = _vipSet;
+    m_vipSetHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::VipSetHasBeenSet() const
+{
+    return m_vipSetHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetInstanceNameSet() const
+{
+    return m_instanceNameSet;
+}
+
+void DescribeDBInstancesRequest::SetInstanceNameSet(const vector<string>& _instanceNameSet)
+{
+    m_instanceNameSet = _instanceNameSet;
+    m_instanceNameSetHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::InstanceNameSetHasBeenSet() const
+{
+    return m_instanceNameSetHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetVersionSet() const
+{
+    return m_versionSet;
+}
+
+void DescribeDBInstancesRequest::SetVersionSet(const vector<string>& _versionSet)
+{
+    m_versionSet = _versionSet;
+    m_versionSetHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::VersionSetHasBeenSet() const
+{
+    return m_versionSetHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void DescribeDBInstancesRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetTagKeys() const
+{
+    return m_tagKeys;
+}
+
+void DescribeDBInstancesRequest::SetTagKeys(const vector<string>& _tagKeys)
+{
+    m_tagKeys = _tagKeys;
+    m_tagKeysHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::TagKeysHasBeenSet() const
+{
+    return m_tagKeysHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetSearchKey() const
+{
+    return m_searchKey;
+}
+
+void DescribeDBInstancesRequest::SetSearchKey(const string& _searchKey)
+{
+    m_searchKey = _searchKey;
+    m_searchKeyHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::SearchKeyHasBeenSet() const
+{
+    return m_searchKeyHasBeenSet;
 }
 
 

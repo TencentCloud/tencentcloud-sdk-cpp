@@ -57,7 +57,8 @@ DBInstance::DBInstance() :
     m_isolateOperatorHasBeenSet(false),
     m_subFlagHasBeenSet(false),
     m_rOFlagHasBeenSet(false),
-    m_hAFlagHasBeenSet(false)
+    m_hAFlagHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -426,6 +427,26 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_hAFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceTags") && !value["ResourceTags"].IsNull())
+    {
+        if (!value["ResourceTags"].IsArray())
+            return CoreInternalOutcome(Error("response `DBInstance.ResourceTags` is not array type"));
+
+        const Value &tmpValue = value["ResourceTags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResourceTag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceTags.push_back(item);
+        }
+        m_resourceTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -719,6 +740,21 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "HAFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_hAFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1298,5 +1334,21 @@ void DBInstance::SetHAFlag(const string& _hAFlag)
 bool DBInstance::HAFlagHasBeenSet() const
 {
     return m_hAFlagHasBeenSet;
+}
+
+vector<ResourceTag> DBInstance::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void DBInstance::SetResourceTags(const vector<ResourceTag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool DBInstance::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 

@@ -42,7 +42,8 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_startTimeHasBeenSet(false),
     m_spanHasBeenSet(false),
     m_hATypeHasBeenSet(false),
-    m_multiZonesHasBeenSet(false)
+    m_multiZonesHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,21 @@ string CreateDBInstancesRequest::ToJsonString() const
         string key = "MultiZones";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_multiZones, allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -530,6 +546,22 @@ void CreateDBInstancesRequest::SetMultiZones(const bool& _multiZones)
 bool CreateDBInstancesRequest::MultiZonesHasBeenSet() const
 {
     return m_multiZonesHasBeenSet;
+}
+
+vector<ResourceTag> CreateDBInstancesRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateDBInstancesRequest::SetResourceTags(const vector<ResourceTag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

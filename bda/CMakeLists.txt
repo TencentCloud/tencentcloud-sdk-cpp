@@ -61,6 +61,7 @@ set(bda_public_header_model
   include/tencentcloud/bda/v20200324/model/SegmentPortraitPicRequest.h
   include/tencentcloud/bda/v20200324/model/UpperBodyClothColor.h
   include/tencentcloud/bda/v20200324/model/GetGroupListRequest.h
+  include/tencentcloud/bda/v20200324/model/ImageRect.h
   include/tencentcloud/bda/v20200324/model/BodyDetectResult.h
   include/tencentcloud/bda/v20200324/model/Orientation.h
   include/tencentcloud/bda/v20200324/model/BodyJointsResult.h
@@ -125,6 +126,7 @@ set(bda_src
   src/v20200324/model/SegmentPortraitPicRequest.cpp
   src/v20200324/model/UpperBodyClothColor.cpp
   src/v20200324/model/GetGroupListRequest.cpp
+  src/v20200324/model/ImageRect.cpp
   src/v20200324/model/BodyDetectResult.cpp
   src/v20200324/model/Orientation.cpp
   src/v20200324/model/BodyJointsResult.cpp
