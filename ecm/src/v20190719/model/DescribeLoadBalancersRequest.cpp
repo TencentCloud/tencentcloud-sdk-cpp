@@ -33,7 +33,8 @@ DescribeLoadBalancersRequest::DescribeLoadBalancersRequest() :
     m_limitHasBeenSet(false),
     m_withBackendHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_securityGroupHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,14 @@ string DescribeLoadBalancersRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_securityGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_securityGroup.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -312,6 +321,22 @@ void DescribeLoadBalancersRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeLoadBalancersRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeLoadBalancersRequest::GetSecurityGroup() const
+{
+    return m_securityGroup;
+}
+
+void DescribeLoadBalancersRequest::SetSecurityGroup(const string& _securityGroup)
+{
+    m_securityGroup = _securityGroup;
+    m_securityGroupHasBeenSet = true;
+}
+
+bool DescribeLoadBalancersRequest::SecurityGroupHasBeenSet() const
+{
+    return m_securityGroupHasBeenSet;
 }
 
 

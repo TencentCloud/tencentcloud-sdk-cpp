@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取区域。
-                     * @return EcmRegion 区域。
+                     * 获取ECM区域，形如ap-xian-ecm。
+                     * @return EcmRegion ECM区域，形如ap-xian-ecm。
                      */
                     std::string GetEcmRegion() const;
 
                     /**
-                     * 设置区域。
-                     * @param EcmRegion 区域。
+                     * 设置ECM区域，形如ap-xian-ecm。
+                     * @param EcmRegion ECM区域，形如ap-xian-ecm。
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
@@ -192,10 +192,28 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取安全组。
+                     * @return SecurityGroups 安全组。
+                     */
+                    std::vector<std::string> GetSecurityGroups() const;
+
+                    /**
+                     * 设置安全组。
+                     * @param SecurityGroups 安全组。
+                     */
+                    void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
+
+                    /**
+                     * 判断参数 SecurityGroups 是否已赋值
+                     * @return SecurityGroups 是否已赋值
+                     */
+                    bool SecurityGroupsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 区域。
+                     * ECM区域，形如ap-xian-ecm。
                      */
                     std::string m_ecmRegion;
                     bool m_ecmRegionHasBeenSet;
@@ -242,6 +260,12 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 安全组。
+                     */
+                    std::vector<std::string> m_securityGroups;
+                    bool m_securityGroupsHasBeenSet;
 
                 };
             }

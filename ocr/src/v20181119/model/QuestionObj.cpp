@@ -26,7 +26,8 @@ QuestionObj::QuestionObj() :
     m_questionTextTypeHasBeenSet(false),
     m_questionTextHasBeenSet(false),
     m_questionOptionsHasBeenSet(false),
-    m_questionSubquestionHasBeenSet(false)
+    m_questionSubquestionHasBeenSet(false),
+    m_questionImageCoordsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,26 @@ CoreInternalOutcome QuestionObj::Deserialize(const Value &value)
         m_questionSubquestionHasBeenSet = true;
     }
 
+    if (value.HasMember("QuestionImageCoords") && !value["QuestionImageCoords"].IsNull())
+    {
+        if (!value["QuestionImageCoords"].IsArray())
+            return CoreInternalOutcome(Error("response `QuestionObj.QuestionImageCoords` is not array type"));
+
+        const Value &tmpValue = value["QuestionImageCoords"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Rect item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_questionImageCoords.push_back(item);
+        }
+        m_questionImageCoordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +151,21 @@ void QuestionObj::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "QuestionSubquestion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_questionSubquestion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_questionImageCoordsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QuestionImageCoords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_questionImageCoords.begin(); itr != m_questionImageCoords.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -213,5 +249,21 @@ void QuestionObj::SetQuestionSubquestion(const string& _questionSubquestion)
 bool QuestionObj::QuestionSubquestionHasBeenSet() const
 {
     return m_questionSubquestionHasBeenSet;
+}
+
+vector<Rect> QuestionObj::GetQuestionImageCoords() const
+{
+    return m_questionImageCoords;
+}
+
+void QuestionObj::SetQuestionImageCoords(const vector<Rect>& _questionImageCoords)
+{
+    m_questionImageCoords = _questionImageCoords;
+    m_questionImageCoordsHasBeenSet = true;
+}
+
+bool QuestionObj::QuestionImageCoordsHasBeenSet() const
+{
+    return m_questionImageCoordsHasBeenSet;
 }
 

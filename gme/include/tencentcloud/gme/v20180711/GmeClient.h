@@ -27,6 +27,8 @@
 #include <tencentcloud/gme/v20180711/model/CreateAppResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeAppStatisticsRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeAppStatisticsResponse.h>
+#include <tencentcloud/gme/v20180711/model/DescribeApplicationDataRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeApplicationDataResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h>
@@ -61,6 +63,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAppStatisticsResponse> DescribeAppStatisticsOutcome;
                 typedef std::future<DescribeAppStatisticsOutcome> DescribeAppStatisticsOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeAppStatisticsRequest&, DescribeAppStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppStatisticsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeApplicationDataResponse> DescribeApplicationDataOutcome;
+                typedef std::future<DescribeApplicationDataOutcome> DescribeApplicationDataOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeApplicationDataRequest&, DescribeApplicationDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationDataAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFilterResultResponse> DescribeFilterResultOutcome;
                 typedef std::future<DescribeFilterResultOutcome> DescribeFilterResultOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeFilterResultRequest&, DescribeFilterResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilterResultAsyncHandler;
@@ -102,6 +107,15 @@ namespace TencentCloud
                 DescribeAppStatisticsOutcome DescribeAppStatistics(const Model::DescribeAppStatisticsRequest &request);
                 void DescribeAppStatisticsAsync(const Model::DescribeAppStatisticsRequest& request, const DescribeAppStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAppStatisticsOutcomeCallable DescribeAppStatisticsCallable(const Model::DescribeAppStatisticsRequest& request);
+
+                /**
+                 *本接口(DescribeApplicationData)用于获取数据详情信息，最多可拉取最近90天的数据。
+                 * @param req DescribeApplicationDataRequest
+                 * @return DescribeApplicationDataOutcome
+                 */
+                DescribeApplicationDataOutcome DescribeApplicationData(const Model::DescribeApplicationDataRequest &request);
+                void DescribeApplicationDataAsync(const Model::DescribeApplicationDataRequest& request, const DescribeApplicationDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApplicationDataOutcomeCallable DescribeApplicationDataCallable(const Model::DescribeApplicationDataRequest& request);
 
                 /**
                  *根据应用ID和文件ID查询识别结果

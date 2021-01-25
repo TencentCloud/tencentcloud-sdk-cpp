@@ -36,6 +36,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/UploadCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/UploadConfirmLetterRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateDetailRequest.h
+  include/tencentcloud/ssl/v20191205/model/Tags.h
   include/tencentcloud/ssl/v20191205/model/ApplyCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/ReplaceCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/UploadRevokeLetterResponse.h
@@ -88,6 +89,7 @@ set(ssl_src
   src/v20191205/model/UploadCertificateRequest.cpp
   src/v20191205/model/UploadConfirmLetterRequest.cpp
   src/v20191205/model/DescribeCertificateDetailRequest.cpp
+  src/v20191205/model/Tags.cpp
   src/v20191205/model/ApplyCertificateRequest.cpp
   src/v20191205/model/ReplaceCertificateRequest.cpp
   src/v20191205/model/UploadRevokeLetterResponse.cpp

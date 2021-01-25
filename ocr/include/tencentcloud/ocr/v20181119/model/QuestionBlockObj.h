@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/QuestionObj.h>
+#include <tencentcloud/ocr/v20181119/model/Rect.h>
 
 
 namespace TencentCloud
@@ -65,6 +66,24 @@ namespace TencentCloud
                      */
                     bool QuestionArrHasBeenSet() const;
 
+                    /**
+                     * 获取题目主体区域检测框在图片中的像素坐标
+                     * @return QuestionBboxCoord 题目主体区域检测框在图片中的像素坐标
+                     */
+                    Rect GetQuestionBboxCoord() const;
+
+                    /**
+                     * 设置题目主体区域检测框在图片中的像素坐标
+                     * @param QuestionBboxCoord 题目主体区域检测框在图片中的像素坐标
+                     */
+                    void SetQuestionBboxCoord(const Rect& _questionBboxCoord);
+
+                    /**
+                     * 判断参数 QuestionBboxCoord 是否已赋值
+                     * @return QuestionBboxCoord 是否已赋值
+                     */
+                    bool QuestionBboxCoordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -72,6 +91,12 @@ namespace TencentCloud
                      */
                     std::vector<QuestionObj> m_questionArr;
                     bool m_questionArrHasBeenSet;
+
+                    /**
+                     * 题目主体区域检测框在图片中的像素坐标
+                     */
+                    Rect m_questionBboxCoord;
+                    bool m_questionBboxCoordHasBeenSet;
 
                 };
             }

@@ -24,8 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeNetworkAclsRequest::DescribeNetworkAclsRequest() :
-    m_networkAclIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_networkAclIdsHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -37,19 +37,6 @@ string DescribeNetworkAclsRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_networkAclIdsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "NetworkAclIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_networkAclIds.begin(); itr != m_networkAclIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
 
     if (m_filtersHasBeenSet)
     {
@@ -63,6 +50,19 @@ string DescribeNetworkAclsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_networkAclIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NetworkAclIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_networkAclIds.begin(); itr != m_networkAclIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -90,22 +90,6 @@ string DescribeNetworkAclsRequest::ToJsonString() const
 }
 
 
-vector<string> DescribeNetworkAclsRequest::GetNetworkAclIds() const
-{
-    return m_networkAclIds;
-}
-
-void DescribeNetworkAclsRequest::SetNetworkAclIds(const vector<string>& _networkAclIds)
-{
-    m_networkAclIds = _networkAclIds;
-    m_networkAclIdsHasBeenSet = true;
-}
-
-bool DescribeNetworkAclsRequest::NetworkAclIdsHasBeenSet() const
-{
-    return m_networkAclIdsHasBeenSet;
-}
-
 vector<Filter> DescribeNetworkAclsRequest::GetFilters() const
 {
     return m_filters;
@@ -120,6 +104,22 @@ void DescribeNetworkAclsRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeNetworkAclsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<string> DescribeNetworkAclsRequest::GetNetworkAclIds() const
+{
+    return m_networkAclIds;
+}
+
+void DescribeNetworkAclsRequest::SetNetworkAclIds(const vector<string>& _networkAclIds)
+{
+    m_networkAclIds = _networkAclIds;
+    m_networkAclIdsHasBeenSet = true;
+}
+
+bool DescribeNetworkAclsRequest::NetworkAclIdsHasBeenSet() const
+{
+    return m_networkAclIdsHasBeenSet;
 }
 
 uint64_t DescribeNetworkAclsRequest::GetOffset() const

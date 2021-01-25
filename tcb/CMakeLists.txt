@@ -44,9 +44,10 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/EndUserInfo.h
-  include/tencentcloud/tcb/v20180608/model/DescribeEndUserLoginStatisticResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeSmsQuotasRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h
   include/tencentcloud/tcb/v20180608/model/KVPair.h
+  include/tencentcloud/tcb/v20180608/model/SmsFreeQuota.h
   include/tencentcloud/tcb/v20180608/model/FunctionInfo.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h
@@ -54,8 +55,9 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h
-  include/tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteEndUserRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEndUserLoginStatisticResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceResponse.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteEndUserResponse.h
@@ -86,6 +88,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/PlatformStatistic.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunNfsVolumeSource.h
+  include/tencentcloud/tcb/v20180608/model/DescribeSmsQuotasResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunImageSecretInfo.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeDownloadFileResponse.h
@@ -145,9 +148,10 @@ set(tcb_src
   src/v20180608/model/ModifyDatabaseACLRequest.cpp
   src/v20180608/model/DestroyStaticStoreRequest.cpp
   src/v20180608/model/EndUserInfo.cpp
-  src/v20180608/model/DescribeEndUserLoginStatisticResponse.cpp
+  src/v20180608/model/DescribeSmsQuotasRequest.cpp
   src/v20180608/model/DescribeQuotaDataResponse.cpp
   src/v20180608/model/KVPair.cpp
+  src/v20180608/model/SmsFreeQuota.cpp
   src/v20180608/model/FunctionInfo.cpp
   src/v20180608/model/CommonServiceAPIRequest.cpp
   src/v20180608/model/CreateStaticStoreRequest.cpp
@@ -155,8 +159,9 @@ set(tcb_src
   src/v20180608/model/CreateAuthDomainResponse.cpp
   src/v20180608/model/DescribeEnvsRequest.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoRequest.cpp
-  src/v20180608/model/DescribeEnvFreeQuotaRequest.cpp
   src/v20180608/model/DeleteEndUserRequest.cpp
+  src/v20180608/model/DescribeEnvFreeQuotaRequest.cpp
+  src/v20180608/model/DescribeEndUserLoginStatisticResponse.cpp
   src/v20180608/model/CreateCloudBaseRunResourceResponse.cpp
   src/v20180608/model/DestroyStaticStoreResponse.cpp
   src/v20180608/model/DeleteEndUserResponse.cpp
@@ -187,6 +192,7 @@ set(tcb_src
   src/v20180608/model/PlatformStatistic.cpp
   src/v20180608/model/DeleteCloudBaseProjectLatestVersionRequest.cpp
   src/v20180608/model/CloudBaseRunNfsVolumeSource.cpp
+  src/v20180608/model/DescribeSmsQuotasResponse.cpp
   src/v20180608/model/CloudBaseRunImageSecretInfo.cpp
   src/v20180608/model/ModifyEnvResponse.cpp
   src/v20180608/model/DescribeDownloadFileResponse.cpp

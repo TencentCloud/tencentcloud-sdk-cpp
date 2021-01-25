@@ -34,7 +34,9 @@ LoadBalancer::LoadBalancer() :
     m_vpcIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vipIspHasBeenSet(false),
-    m_networkAttributesHasBeenSet(false)
+    m_networkAttributesHasBeenSet(false),
+    m_secureGroupsHasBeenSet(false),
+    m_loadBalancerPassToTargetHasBeenSet(false)
 {
 }
 
@@ -200,6 +202,29 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_networkAttributesHasBeenSet = true;
     }
 
+    if (value.HasMember("SecureGroups") && !value["SecureGroups"].IsNull())
+    {
+        if (!value["SecureGroups"].IsArray())
+            return CoreInternalOutcome(Error("response `LoadBalancer.SecureGroups` is not array type"));
+
+        const Value &tmpValue = value["SecureGroups"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_secureGroups.push_back((*itr).GetString());
+        }
+        m_secureGroupsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadBalancerPassToTarget") && !value["LoadBalancerPassToTarget"].IsNull())
+    {
+        if (!value["LoadBalancerPassToTarget"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.LoadBalancerPassToTarget` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancerPassToTarget = value["LoadBalancerPassToTarget"].GetBool();
+        m_loadBalancerPassToTargetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -323,6 +348,27 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_networkAttributes.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_secureGroupsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecureGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_secureGroups.begin(); itr != m_secureGroups.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_loadBalancerPassToTargetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LoadBalancerPassToTarget";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
     }
 
 }
@@ -534,5 +580,37 @@ void LoadBalancer::SetNetworkAttributes(const LoadBalancerInternetAccessible& _n
 bool LoadBalancer::NetworkAttributesHasBeenSet() const
 {
     return m_networkAttributesHasBeenSet;
+}
+
+vector<string> LoadBalancer::GetSecureGroups() const
+{
+    return m_secureGroups;
+}
+
+void LoadBalancer::SetSecureGroups(const vector<string>& _secureGroups)
+{
+    m_secureGroups = _secureGroups;
+    m_secureGroupsHasBeenSet = true;
+}
+
+bool LoadBalancer::SecureGroupsHasBeenSet() const
+{
+    return m_secureGroupsHasBeenSet;
+}
+
+bool LoadBalancer::GetLoadBalancerPassToTarget() const
+{
+    return m_loadBalancerPassToTarget;
+}
+
+void LoadBalancer::SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget)
+{
+    m_loadBalancerPassToTarget = _loadBalancerPassToTarget;
+    m_loadBalancerPassToTargetHasBeenSet = true;
+}
+
+bool LoadBalancer::LoadBalancerPassToTargetHasBeenSet() const
+{
+    return m_loadBalancerPassToTargetHasBeenSet;
 }
 

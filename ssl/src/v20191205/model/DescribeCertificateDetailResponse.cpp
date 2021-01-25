@@ -57,7 +57,8 @@ DescribeCertificateDetailResponse::DescribeCertificateDetailResponse() :
     m_isVulnerabilityHasBeenSet(false),
     m_submittedDataHasBeenSet(false),
     m_renewAbleHasBeenSet(false),
-    m_deployableHasBeenSet(false)
+    m_deployableHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -449,6 +450,26 @@ CoreInternalOutcome DescribeCertificateDetailResponse::Deserialize(const string 
         m_deployableHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
+    {
+        if (!rsp["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+
+        const Value &tmpValue = rsp["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tags item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -782,6 +803,16 @@ bool DescribeCertificateDetailResponse::GetDeployable() const
 bool DescribeCertificateDetailResponse::DeployableHasBeenSet() const
 {
     return m_deployableHasBeenSet;
+}
+
+vector<Tags> DescribeCertificateDetailResponse::GetTags() const
+{
+    return m_tags;
+}
+
+bool DescribeCertificateDetailResponse::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

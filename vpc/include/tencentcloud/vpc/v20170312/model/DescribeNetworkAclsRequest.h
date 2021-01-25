@@ -44,24 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。
-                     * @return NetworkAclIds 网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。
-                     */
-                    std::vector<std::string> GetNetworkAclIds() const;
-
-                    /**
-                     * 设置网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。
-                     * @param NetworkAclIds 网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。
-                     */
-                    void SetNetworkAclIds(const std::vector<std::string>& _networkAclIds);
-
-                    /**
-                     * 判断参数 NetworkAclIds 是否已赋值
-                     * @return NetworkAclIds 是否已赋值
-                     */
-                    bool NetworkAclIdsHasBeenSet() const;
-
-                    /**
                      * 获取过滤条件，参数不支持同时指定NetworkAclIds和Filters。
 <li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678。</li>
 <li>network-acl-id - String - （过滤条件）网络ACL实例ID，形如：acl-12345678。</li>
@@ -90,6 +72,24 @@ namespace TencentCloud
                      * @return Filters 是否已赋值
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。
+                     * @return NetworkAclIds 网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。
+                     */
+                    std::vector<std::string> GetNetworkAclIds() const;
+
+                    /**
+                     * 设置网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。
+                     * @param NetworkAclIds 网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。
+                     */
+                    void SetNetworkAclIds(const std::vector<std::string>& _networkAclIds);
+
+                    /**
+                     * 判断参数 NetworkAclIds 是否已赋值
+                     * @return NetworkAclIds 是否已赋值
+                     */
+                    bool NetworkAclIdsHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
@@ -130,12 +130,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。
-                     */
-                    std::vector<std::string> m_networkAclIds;
-                    bool m_networkAclIdsHasBeenSet;
-
-                    /**
                      * 过滤条件，参数不支持同时指定NetworkAclIds和Filters。
 <li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678。</li>
 <li>network-acl-id - String - （过滤条件）网络ACL实例ID，形如：acl-12345678。</li>
@@ -143,6 +137,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。
+                     */
+                    std::vector<std::string> m_networkAclIds;
+                    bool m_networkAclIdsHasBeenSet;
 
                     /**
                      * 偏移量，默认为0。

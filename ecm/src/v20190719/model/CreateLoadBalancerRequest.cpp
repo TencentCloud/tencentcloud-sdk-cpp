@@ -31,7 +31,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_vpcIdHasBeenSet(false),
     m_numberHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,19 @@ string CreateLoadBalancerRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_securityGroupsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroups";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroups.begin(); itr != m_securityGroups.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -248,6 +262,22 @@ void CreateLoadBalancerRequest::SetTags(const vector<TagInfo>& _tags)
 bool CreateLoadBalancerRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<string> CreateLoadBalancerRequest::GetSecurityGroups() const
+{
+    return m_securityGroups;
+}
+
+void CreateLoadBalancerRequest::SetSecurityGroups(const vector<string>& _securityGroups)
+{
+    m_securityGroups = _securityGroups;
+    m_securityGroupsHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::SecurityGroupsHasBeenSet() const
+{
+    return m_securityGroupsHasBeenSet;
 }
 
 

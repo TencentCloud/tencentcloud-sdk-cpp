@@ -47,7 +47,8 @@ JobV1::JobV1() :
     m_currentRunMillisHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_webUIUrlHasBeenSet(false),
-    m_schedulerTypeHasBeenSet(false)
+    m_schedulerTypeHasBeenSet(false),
+    m_clusterStatusHasBeenSet(false)
 {
 }
 
@@ -316,6 +317,16 @@ CoreInternalOutcome JobV1::Deserialize(const Value &value)
         m_schedulerTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterStatus") && !value["ClusterStatus"].IsNull())
+    {
+        if (!value["ClusterStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.ClusterStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterStatus = value["ClusterStatus"].GetInt64();
+        m_clusterStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -529,6 +540,14 @@ void JobV1::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "SchedulerType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_schedulerType, allocator);
+    }
+
+    if (m_clusterStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterStatus, allocator);
     }
 
 }
@@ -948,5 +967,21 @@ void JobV1::SetSchedulerType(const int64_t& _schedulerType)
 bool JobV1::SchedulerTypeHasBeenSet() const
 {
     return m_schedulerTypeHasBeenSet;
+}
+
+int64_t JobV1::GetClusterStatus() const
+{
+    return m_clusterStatus;
+}
+
+void JobV1::SetClusterStatus(const int64_t& _clusterStatus)
+{
+    m_clusterStatus = _clusterStatus;
+    m_clusterStatusHasBeenSet = true;
+}
+
+bool JobV1::ClusterStatusHasBeenSet() const
+{
+    return m_clusterStatusHasBeenSet;
 }
 

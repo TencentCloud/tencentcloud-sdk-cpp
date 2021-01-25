@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool InternetChargeInfoHasBeenSet() const;
 
+                    /**
+                     * 获取Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。
+                     * @return LoadBalancerPassToTarget Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。
+                     */
+                    bool GetLoadBalancerPassToTarget() const;
+
+                    /**
+                     * 设置Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。
+                     * @param LoadBalancerPassToTarget Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。
+                     */
+                    void SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget);
+
+                    /**
+                     * 判断参数 LoadBalancerPassToTarget 是否已赋值
+                     * @return LoadBalancerPassToTarget 是否已赋值
+                     */
+                    bool LoadBalancerPassToTargetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     LoadBalancerInternetAccessible m_internetChargeInfo;
                     bool m_internetChargeInfoHasBeenSet;
+
+                    /**
+                     * Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。
+                     */
+                    bool m_loadBalancerPassToTarget;
+                    bool m_loadBalancerPassToTargetHasBeenSet;
 
                 };
             }

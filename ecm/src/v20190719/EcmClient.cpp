@@ -4856,6 +4856,92 @@ EcmClient::RunInstancesOutcomeCallable EcmClient::RunInstancesCallable(const Run
     return task->get_future();
 }
 
+EcmClient::SetLoadBalancerSecurityGroupsOutcome EcmClient::SetLoadBalancerSecurityGroups(const SetLoadBalancerSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetLoadBalancerSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetLoadBalancerSecurityGroupsResponse rsp = SetLoadBalancerSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetLoadBalancerSecurityGroupsOutcome(rsp);
+        else
+            return SetLoadBalancerSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return SetLoadBalancerSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::SetLoadBalancerSecurityGroupsAsync(const SetLoadBalancerSecurityGroupsRequest& request, const SetLoadBalancerSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetLoadBalancerSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::SetLoadBalancerSecurityGroupsOutcomeCallable EcmClient::SetLoadBalancerSecurityGroupsCallable(const SetLoadBalancerSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetLoadBalancerSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->SetLoadBalancerSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::SetSecurityGroupForLoadbalancersOutcome EcmClient::SetSecurityGroupForLoadbalancers(const SetSecurityGroupForLoadbalancersRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetSecurityGroupForLoadbalancers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetSecurityGroupForLoadbalancersResponse rsp = SetSecurityGroupForLoadbalancersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetSecurityGroupForLoadbalancersOutcome(rsp);
+        else
+            return SetSecurityGroupForLoadbalancersOutcome(o.GetError());
+    }
+    else
+    {
+        return SetSecurityGroupForLoadbalancersOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::SetSecurityGroupForLoadbalancersAsync(const SetSecurityGroupForLoadbalancersRequest& request, const SetSecurityGroupForLoadbalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetSecurityGroupForLoadbalancers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::SetSecurityGroupForLoadbalancersOutcomeCallable EcmClient::SetSecurityGroupForLoadbalancersCallable(const SetSecurityGroupForLoadbalancersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetSecurityGroupForLoadbalancersOutcome()>>(
+        [this, request]()
+        {
+            return this->SetSecurityGroupForLoadbalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::StartInstancesOutcome EcmClient::StartInstances(const StartInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "StartInstances");

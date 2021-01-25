@@ -1244,6 +1244,49 @@ TcbClient::DescribeQuotaDataOutcomeCallable TcbClient::DescribeQuotaDataCallable
     return task->get_future();
 }
 
+TcbClient::DescribeSmsQuotasOutcome TcbClient::DescribeSmsQuotas(const DescribeSmsQuotasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSmsQuotas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSmsQuotasResponse rsp = DescribeSmsQuotasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSmsQuotasOutcome(rsp);
+        else
+            return DescribeSmsQuotasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSmsQuotasOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeSmsQuotasAsync(const DescribeSmsQuotasRequest& request, const DescribeSmsQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSmsQuotas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeSmsQuotasOutcomeCallable TcbClient::DescribeSmsQuotasCallable(const DescribeSmsQuotasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSmsQuotasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSmsQuotas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DestroyEnvOutcome TcbClient::DestroyEnv(const DestroyEnvRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyEnv");

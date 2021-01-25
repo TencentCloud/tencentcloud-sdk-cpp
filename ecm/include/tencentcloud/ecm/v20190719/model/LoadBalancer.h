@@ -339,6 +339,50 @@ namespace TencentCloud
                      */
                     bool NetworkAttributesHasBeenSet() const;
 
+                    /**
+                     * 获取安全组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecureGroups 安全组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSecureGroups() const;
+
+                    /**
+                     * 设置安全组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecureGroups 安全组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecureGroups(const std::vector<std::string>& _secureGroups);
+
+                    /**
+                     * 判断参数 SecureGroups 是否已赋值
+                     * @return SecureGroups 是否已赋值
+                     */
+                    bool SecureGroupsHasBeenSet() const;
+
+                    /**
+                     * 获取后端机器是否放通来自ELB的流量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancerPassToTarget 后端机器是否放通来自ELB的流量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetLoadBalancerPassToTarget() const;
+
+                    /**
+                     * 设置后端机器是否放通来自ELB的流量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LoadBalancerPassToTarget 后端机器是否放通来自ELB的流量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget);
+
+                    /**
+                     * 判断参数 LoadBalancerPassToTarget 是否已赋值
+                     * @return LoadBalancerPassToTarget 是否已赋值
+                     */
+                    bool LoadBalancerPassToTargetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +476,20 @@ namespace TencentCloud
                      */
                     LoadBalancerInternetAccessible m_networkAttributes;
                     bool m_networkAttributesHasBeenSet;
+
+                    /**
+                     * 安全组。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_secureGroups;
+                    bool m_secureGroupsHasBeenSet;
+
+                    /**
+                     * 后端机器是否放通来自ELB的流量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_loadBalancerPassToTarget;
+                    bool m_loadBalancerPassToTargetHasBeenSet;
 
                 };
             }

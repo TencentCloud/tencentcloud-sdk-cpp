@@ -22,7 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 QuestionBlockObj::QuestionBlockObj() :
-    m_questionArrHasBeenSet(false)
+    m_questionArrHasBeenSet(false),
+    m_questionBboxCoordHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,23 @@ CoreInternalOutcome QuestionBlockObj::Deserialize(const Value &value)
         m_questionArrHasBeenSet = true;
     }
 
+    if (value.HasMember("QuestionBboxCoord") && !value["QuestionBboxCoord"].IsNull())
+    {
+        if (!value["QuestionBboxCoord"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `QuestionBlockObj.QuestionBboxCoord` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_questionBboxCoord.Deserialize(value["QuestionBboxCoord"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_questionBboxCoordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +91,15 @@ void QuestionBlockObj::ToJsonObject(Value &value, Document::AllocatorType& alloc
         }
     }
 
+    if (m_questionBboxCoordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QuestionBboxCoord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_questionBboxCoord.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
 
@@ -90,5 +117,21 @@ void QuestionBlockObj::SetQuestionArr(const vector<QuestionObj>& _questionArr)
 bool QuestionBlockObj::QuestionArrHasBeenSet() const
 {
     return m_questionArrHasBeenSet;
+}
+
+Rect QuestionBlockObj::GetQuestionBboxCoord() const
+{
+    return m_questionBboxCoord;
+}
+
+void QuestionBlockObj::SetQuestionBboxCoord(const Rect& _questionBboxCoord)
+{
+    m_questionBboxCoord = _questionBboxCoord;
+    m_questionBboxCoordHasBeenSet = true;
+}
+
+bool QuestionBlockObj::QuestionBboxCoordHasBeenSet() const
+{
+    return m_questionBboxCoordHasBeenSet;
 }
 

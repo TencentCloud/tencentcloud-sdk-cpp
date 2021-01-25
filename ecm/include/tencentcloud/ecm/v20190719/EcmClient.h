@@ -247,6 +247,10 @@
 #include <tencentcloud/ecm/v20190719/model/ResetRoutesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/RunInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/RunInstancesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/SetLoadBalancerSecurityGroupsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/SetLoadBalancerSecurityGroupsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/SetSecurityGroupForLoadbalancersRequest.h>
+#include <tencentcloud/ecm/v20190719/model/SetSecurityGroupForLoadbalancersResponse.h>
 #include <tencentcloud/ecm/v20190719/model/StartInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/StartInstancesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/StopInstancesRequest.h>
@@ -603,6 +607,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RunInstancesResponse> RunInstancesOutcome;
                 typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::RunInstancesRequest&, RunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
+                typedef Outcome<Error, Model::SetLoadBalancerSecurityGroupsResponse> SetLoadBalancerSecurityGroupsOutcome;
+                typedef std::future<SetLoadBalancerSecurityGroupsOutcome> SetLoadBalancerSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::SetLoadBalancerSecurityGroupsRequest&, SetLoadBalancerSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::SetSecurityGroupForLoadbalancersResponse> SetSecurityGroupForLoadbalancersOutcome;
+                typedef std::future<SetSecurityGroupForLoadbalancersOutcome> SetSecurityGroupForLoadbalancersOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::SetSecurityGroupForLoadbalancersRequest&, SetSecurityGroupForLoadbalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetSecurityGroupForLoadbalancersAsyncHandler;
                 typedef Outcome<Error, Model::StartInstancesResponse> StartInstancesOutcome;
                 typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::StartInstancesRequest&, StartInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartInstancesAsyncHandler;
@@ -1650,6 +1660,24 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 RunInstancesOutcome RunInstances(const Model::RunInstancesRequest &request);
                 void RunInstancesAsync(const Model::RunInstancesRequest& request, const RunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunInstancesOutcomeCallable RunInstancesCallable(const Model::RunInstancesRequest& request);
+
+                /**
+                 *设置负载均衡实例的安全组。
+                 * @param req SetLoadBalancerSecurityGroupsRequest
+                 * @return SetLoadBalancerSecurityGroupsOutcome
+                 */
+                SetLoadBalancerSecurityGroupsOutcome SetLoadBalancerSecurityGroups(const Model::SetLoadBalancerSecurityGroupsRequest &request);
+                void SetLoadBalancerSecurityGroupsAsync(const Model::SetLoadBalancerSecurityGroupsRequest& request, const SetLoadBalancerSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetLoadBalancerSecurityGroupsOutcomeCallable SetLoadBalancerSecurityGroupsCallable(const Model::SetLoadBalancerSecurityGroupsRequest& request);
+
+                /**
+                 *绑定或解绑一个安全组到多个负载均衡实例。
+                 * @param req SetSecurityGroupForLoadbalancersRequest
+                 * @return SetSecurityGroupForLoadbalancersOutcome
+                 */
+                SetSecurityGroupForLoadbalancersOutcome SetSecurityGroupForLoadbalancers(const Model::SetSecurityGroupForLoadbalancersRequest &request);
+                void SetSecurityGroupForLoadbalancersAsync(const Model::SetSecurityGroupForLoadbalancersRequest& request, const SetSecurityGroupForLoadbalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetSecurityGroupForLoadbalancersOutcomeCallable SetSecurityGroupForLoadbalancersCallable(const Model::SetSecurityGroupForLoadbalancersRequest& request);
 
                 /**
                  *只有状态为STOPPED的实例才可以进行此操作；接口调用成功时，实例会进入STARTING状态；启动实例成功时，实例会进入RUNNING状态。

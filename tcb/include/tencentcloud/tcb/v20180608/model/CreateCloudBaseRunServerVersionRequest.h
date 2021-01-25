@@ -607,14 +607,14 @@ namespace TencentCloud
                     bool OperatorRemarkHasBeenSet() const;
 
                     /**
-                     * 获取服务路劲
-                     * @return ServerPath 服务路劲
+                     * 获取服务路径
+                     * @return ServerPath 服务路径
                      */
                     std::string GetServerPath() const;
 
                     /**
-                     * 设置服务路劲
-                     * @param ServerPath 服务路劲
+                     * 设置服务路径
+                     * @param ServerPath 服务路径
                      */
                     void SetServerPath(const std::string& _serverPath);
 
@@ -849,7 +849,7 @@ namespace TencentCloud
                     bool m_operatorRemarkHasBeenSet;
 
                     /**
-                     * 服务路劲
+                     * 服务路径
                      */
                     std::string m_serverPath;
                     bool m_serverPathHasBeenSet;

@@ -30,6 +30,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/BatchModifyTargetWeightResponse.h
   include/tencentcloud/ecm/v20190719/model/InstanceStatistic.h
   include/tencentcloud/ecm/v20190719/model/CreateRoutesRequest.h
+  include/tencentcloud/ecm/v20190719/model/SetSecurityGroupForLoadbalancersRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateLoadBalancerRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeHaVipsResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleSecurityGroupsRequest.h
@@ -49,6 +50,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/StartInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/HaVip.h
   include/tencentcloud/ecm/v20190719/model/RouteConflict.h
+  include/tencentcloud/ecm/v20190719/model/SetLoadBalancerSecurityGroupsResponse.h
   include/tencentcloud/ecm/v20190719/model/EipQuota.h
   include/tencentcloud/ecm/v20190719/model/DeleteSubnetResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyAddressesBandwidthResponse.h
@@ -60,6 +62,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/NetworkInterface.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleSecurityGroupsResponse.h
   include/tencentcloud/ecm/v20190719/model/SrcImage.h
+  include/tencentcloud/ecm/v20190719/model/SetSecurityGroupForLoadbalancersResponse.h
   include/tencentcloud/ecm/v20190719/model/InstanceTypeConfig.h
   include/tencentcloud/ecm/v20190719/model/DescribeNodeResponse.h
   include/tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesResponse.h
@@ -130,7 +133,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/RuleHealth.h
   include/tencentcloud/ecm/v20190719/model/Listener.h
   include/tencentcloud/ecm/v20190719/model/ModifyLoadBalancerAttributesResponse.h
-  include/tencentcloud/ecm/v20190719/model/Tag.h
+  include/tencentcloud/ecm/v20190719/model/SetLoadBalancerSecurityGroupsRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetRequest.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesMaxBandwidthResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteSecurityGroupResponse.h
@@ -299,6 +302,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/AssignPrivateIpAddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesPasswordRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyImageAttributeRequest.h
+  include/tencentcloud/ecm/v20190719/model/Tag.h
   include/tencentcloud/ecm/v20190719/model/OperatorAction.h
   include/tencentcloud/ecm/v20190719/model/CreateVpcRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateLoadBalancerResponse.h
@@ -350,6 +354,7 @@ set(ecm_src
   src/v20190719/model/BatchModifyTargetWeightResponse.cpp
   src/v20190719/model/InstanceStatistic.cpp
   src/v20190719/model/CreateRoutesRequest.cpp
+  src/v20190719/model/SetSecurityGroupForLoadbalancersRequest.cpp
   src/v20190719/model/CreateLoadBalancerRequest.cpp
   src/v20190719/model/DescribeHaVipsResponse.cpp
   src/v20190719/model/ModifyModuleSecurityGroupsRequest.cpp
@@ -369,6 +374,7 @@ set(ecm_src
   src/v20190719/model/StartInstancesRequest.cpp
   src/v20190719/model/HaVip.cpp
   src/v20190719/model/RouteConflict.cpp
+  src/v20190719/model/SetLoadBalancerSecurityGroupsResponse.cpp
   src/v20190719/model/EipQuota.cpp
   src/v20190719/model/DeleteSubnetResponse.cpp
   src/v20190719/model/ModifyAddressesBandwidthResponse.cpp
@@ -380,6 +386,7 @@ set(ecm_src
   src/v20190719/model/NetworkInterface.cpp
   src/v20190719/model/ModifyModuleSecurityGroupsResponse.cpp
   src/v20190719/model/SrcImage.cpp
+  src/v20190719/model/SetSecurityGroupForLoadbalancersResponse.cpp
   src/v20190719/model/InstanceTypeConfig.cpp
   src/v20190719/model/DescribeNodeResponse.cpp
   src/v20190719/model/RemovePrivateIpAddressesResponse.cpp
@@ -450,7 +457,7 @@ set(ecm_src
   src/v20190719/model/RuleHealth.cpp
   src/v20190719/model/Listener.cpp
   src/v20190719/model/ModifyLoadBalancerAttributesResponse.cpp
-  src/v20190719/model/Tag.cpp
+  src/v20190719/model/SetLoadBalancerSecurityGroupsRequest.cpp
   src/v20190719/model/DescribeDefaultSubnetRequest.cpp
   src/v20190719/model/ResetInstancesMaxBandwidthResponse.cpp
   src/v20190719/model/DeleteSecurityGroupResponse.cpp
@@ -619,6 +626,7 @@ set(ecm_src
   src/v20190719/model/AssignPrivateIpAddressesRequest.cpp
   src/v20190719/model/ResetInstancesPasswordRequest.cpp
   src/v20190719/model/ModifyImageAttributeRequest.cpp
+  src/v20190719/model/Tag.cpp
   src/v20190719/model/OperatorAction.cpp
   src/v20190719/model/CreateVpcRequest.cpp
   src/v20190719/model/CreateLoadBalancerResponse.cpp

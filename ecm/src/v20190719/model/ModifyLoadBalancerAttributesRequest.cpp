@@ -26,7 +26,8 @@ using namespace std;
 ModifyLoadBalancerAttributesRequest::ModifyLoadBalancerAttributesRequest() :
     m_loadBalancerIdHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
-    m_internetChargeInfoHasBeenSet(false)
+    m_internetChargeInfoHasBeenSet(false),
+    m_loadBalancerPassToTargetHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,14 @@ string ModifyLoadBalancerAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_internetChargeInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_loadBalancerPassToTargetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LoadBalancerPassToTarget";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
     }
 
 
@@ -116,6 +125,22 @@ void ModifyLoadBalancerAttributesRequest::SetInternetChargeInfo(const LoadBalanc
 bool ModifyLoadBalancerAttributesRequest::InternetChargeInfoHasBeenSet() const
 {
     return m_internetChargeInfoHasBeenSet;
+}
+
+bool ModifyLoadBalancerAttributesRequest::GetLoadBalancerPassToTarget() const
+{
+    return m_loadBalancerPassToTarget;
+}
+
+void ModifyLoadBalancerAttributesRequest::SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget)
+{
+    m_loadBalancerPassToTarget = _loadBalancerPassToTarget;
+    m_loadBalancerPassToTargetHasBeenSet = true;
+}
+
+bool ModifyLoadBalancerAttributesRequest::LoadBalancerPassToTargetHasBeenSet() const
+{
+    return m_loadBalancerPassToTargetHasBeenSet;
 }
 
 

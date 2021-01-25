@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/Rect.h>
 
 
 namespace TencentCloud
@@ -148,6 +149,24 @@ namespace TencentCloud
                      */
                     bool QuestionSubquestionHasBeenSet() const;
 
+                    /**
+                     * 获取示意图检测框在的图片中的像素坐标
+                     * @return QuestionImageCoords 示意图检测框在的图片中的像素坐标
+                     */
+                    std::vector<Rect> GetQuestionImageCoords() const;
+
+                    /**
+                     * 设置示意图检测框在的图片中的像素坐标
+                     * @param QuestionImageCoords 示意图检测框在的图片中的像素坐标
+                     */
+                    void SetQuestionImageCoords(const std::vector<Rect>& _questionImageCoords);
+
+                    /**
+                     * 判断参数 QuestionImageCoords 是否已赋值
+                     * @return QuestionImageCoords 是否已赋值
+                     */
+                    bool QuestionImageCoordsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +201,12 @@ namespace TencentCloud
                      */
                     std::string m_questionSubquestion;
                     bool m_questionSubquestionHasBeenSet;
+
+                    /**
+                     * 示意图检测框在的图片中的像素坐标
+                     */
+                    std::vector<Rect> m_questionImageCoords;
+                    bool m_questionImageCoordsHasBeenSet;
 
                 };
             }

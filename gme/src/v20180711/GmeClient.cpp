@@ -126,6 +126,49 @@ GmeClient::DescribeAppStatisticsOutcomeCallable GmeClient::DescribeAppStatistics
     return task->get_future();
 }
 
+GmeClient::DescribeApplicationDataOutcome GmeClient::DescribeApplicationData(const DescribeApplicationDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationDataResponse rsp = DescribeApplicationDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationDataOutcome(rsp);
+        else
+            return DescribeApplicationDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationDataOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeApplicationDataAsync(const DescribeApplicationDataRequest& request, const DescribeApplicationDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApplicationData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeApplicationDataOutcomeCallable GmeClient::DescribeApplicationDataCallable(const DescribeApplicationDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApplicationDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApplicationData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::DescribeFilterResultOutcome GmeClient::DescribeFilterResult(const DescribeFilterResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFilterResult");

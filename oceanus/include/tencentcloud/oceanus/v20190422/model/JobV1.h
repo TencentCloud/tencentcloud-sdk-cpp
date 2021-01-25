@@ -618,6 +618,28 @@ namespace TencentCloud
                      */
                     bool SchedulerTypeHasBeenSet() const;
 
+                    /**
+                     * 获取作业所在集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterStatus 作业所在集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetClusterStatus() const;
+
+                    /**
+                     * 设置作业所在集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterStatus 作业所在集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterStatus(const int64_t& _clusterStatus);
+
+                    /**
+                     * 判断参数 ClusterStatus 是否已赋值
+                     * @return ClusterStatus 是否已赋值
+                     */
+                    bool ClusterStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -801,6 +823,13 @@ namespace TencentCloud
                      */
                     int64_t m_schedulerType;
                     bool m_schedulerTypeHasBeenSet;
+
+                    /**
+                     * 作业所在集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clusterStatus;
+                    bool m_clusterStatusHasBeenSet;
 
                 };
             }

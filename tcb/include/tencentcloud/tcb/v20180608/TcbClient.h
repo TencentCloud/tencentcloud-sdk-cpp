@@ -79,6 +79,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeSmsQuotasRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeSmsQuotasResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
@@ -191,6 +193,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeQuotaDataResponse> DescribeQuotaDataOutcome;
                 typedef std::future<DescribeQuotaDataOutcome> DescribeQuotaDataOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeQuotaDataRequest&, DescribeQuotaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaDataAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSmsQuotasResponse> DescribeSmsQuotasOutcome;
+                typedef std::future<DescribeSmsQuotasOutcome> DescribeSmsQuotasOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeSmsQuotasRequest&, DescribeSmsQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmsQuotasAsyncHandler;
                 typedef Outcome<Error, Model::DestroyEnvResponse> DestroyEnvOutcome;
                 typedef std::future<DestroyEnvOutcome> DestroyEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyEnvRequest&, DestroyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyEnvAsyncHandler;
@@ -466,6 +471,18 @@ namespace TencentCloud
                 DescribeQuotaDataOutcome DescribeQuotaData(const Model::DescribeQuotaDataRequest &request);
                 void DescribeQuotaDataAsync(const Model::DescribeQuotaDataRequest& request, const DescribeQuotaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQuotaDataOutcomeCallable DescribeQuotaDataCallable(const Model::DescribeQuotaDataRequest& request);
+
+                /**
+                 *查询后付费短信资源量
+1 有免费包的返回SmsFreeQuota结构所有字段
+2 没有免费包，有付费包，付费返回复用SmsFreeQuota结构，其中只有 TodayUsedQuota 字段有效
+3 都没有返回为空数组
+                 * @param req DescribeSmsQuotasRequest
+                 * @return DescribeSmsQuotasOutcome
+                 */
+                DescribeSmsQuotasOutcome DescribeSmsQuotas(const Model::DescribeSmsQuotasRequest &request);
+                void DescribeSmsQuotasAsync(const Model::DescribeSmsQuotasRequest& request, const DescribeSmsQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSmsQuotasOutcomeCallable DescribeSmsQuotasCallable(const Model::DescribeSmsQuotasRequest& request);
 
                 /**
                  *销毁环境

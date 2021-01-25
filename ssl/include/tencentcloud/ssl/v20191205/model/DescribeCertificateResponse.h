@@ -24,6 +24,7 @@
 #include <tencentcloud/ssl/v20191205/model/CertificateExtra.h>
 #include <tencentcloud/ssl/v20191205/model/DvAuthDetail.h>
 #include <tencentcloud/ssl/v20191205/model/SubmittedData.h>
+#include <tencentcloud/ssl/v20191205/model/Tags.h>
 
 
 namespace TencentCloud
@@ -479,6 +480,20 @@ namespace TencentCloud
                      */
                     bool DeployableHasBeenSet() const;
 
+                    /**
+                     * 获取标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tags> GetTags() const;
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -697,6 +712,13 @@ namespace TencentCloud
                      */
                     bool m_deployable;
                     bool m_deployableHasBeenSet;
+
+                    /**
+                     * 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tags> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }
