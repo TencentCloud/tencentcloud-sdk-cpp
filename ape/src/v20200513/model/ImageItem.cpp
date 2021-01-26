@@ -27,7 +27,8 @@ ImageItem::ImageItem() :
     m_descriptionHasBeenSet(false),
     m_previewUrlHasBeenSet(false),
     m_thumbUrlHasBeenSet(false),
-    m_vendorHasBeenSet(false)
+    m_vendorHasBeenSet(false),
+    m_keywordsHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome ImageItem::Deserialize(const Value &value)
         m_vendorHasBeenSet = true;
     }
 
+    if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
+    {
+        if (!value["Keywords"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageItem.Keywords` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keywords = string(value["Keywords"].GetString());
+        m_keywordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void ImageItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Vendor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_vendor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keywordsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Keywords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_keywords.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void ImageItem::SetVendor(const string& _vendor)
 bool ImageItem::VendorHasBeenSet() const
 {
     return m_vendorHasBeenSet;
+}
+
+string ImageItem::GetKeywords() const
+{
+    return m_keywords;
+}
+
+void ImageItem::SetKeywords(const string& _keywords)
+{
+    m_keywords = _keywords;
+    m_keywordsHasBeenSet = true;
+}
+
+bool ImageItem::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
 }
 

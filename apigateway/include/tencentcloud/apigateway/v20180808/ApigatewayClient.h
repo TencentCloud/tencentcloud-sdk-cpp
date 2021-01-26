@@ -75,6 +75,8 @@
 #include <tencentcloud/apigateway/v20180808/model/DescribeIPStrategysStatusResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeLogSearchRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeLogSearchResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribePluginsRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribePluginsResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeServiceRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeServiceResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeServiceEnvironmentListRequest.h>
@@ -231,6 +233,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeLogSearchResponse> DescribeLogSearchOutcome;
                 typedef std::future<DescribeLogSearchOutcome> DescribeLogSearchOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeLogSearchRequest&, DescribeLogSearchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogSearchAsyncHandler;
+                typedef Outcome<Error, Model::DescribePluginsResponse> DescribePluginsOutcome;
+                typedef std::future<DescribePluginsOutcome> DescribePluginsOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribePluginsRequest&, DescribePluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeServiceResponse> DescribeServiceOutcome;
                 typedef std::future<DescribeServiceOutcome> DescribeServiceOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeServiceRequest&, DescribeServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceAsyncHandler;
@@ -575,6 +580,15 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DescribeLogSearchOutcome DescribeLogSearch(const Model::DescribeLogSearchRequest &request);
                 void DescribeLogSearchAsync(const Model::DescribeLogSearchRequest& request, const DescribeLogSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogSearchOutcomeCallable DescribeLogSearchCallable(const Model::DescribeLogSearchRequest& request);
+
+                /**
+                 *展示插件列表和详情，支持分页，支持按照插件类型查询，支持按照插件ID批量查询，支持按照插件名称查询。
+                 * @param req DescribePluginsRequest
+                 * @return DescribePluginsOutcome
+                 */
+                DescribePluginsOutcome DescribePlugins(const Model::DescribePluginsRequest &request);
+                void DescribePluginsAsync(const Model::DescribePluginsRequest& request, const DescribePluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePluginsOutcomeCallable DescribePluginsCallable(const Model::DescribePluginsRequest& request);
 
                 /**
                  *本接口（DescribeService）用于查询一个服务的详细信息、包括服务的描述、域名、协议、创建时间、发布情况等信息。

@@ -189,6 +189,42 @@ namespace TencentCloud
                      */
                     bool TaintsHasBeenSet() const;
 
+                    /**
+                     * 获取节点池os
+                     * @return NodePoolOs 节点池os
+                     */
+                    std::string GetNodePoolOs() const;
+
+                    /**
+                     * 设置节点池os
+                     * @param NodePoolOs 节点池os
+                     */
+                    void SetNodePoolOs(const std::string& _nodePoolOs);
+
+                    /**
+                     * 判断参数 NodePoolOs 是否已赋值
+                     * @return NodePoolOs 是否已赋值
+                     */
+                    bool NodePoolOsHasBeenSet() const;
+
+                    /**
+                     * 获取容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * @return OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     */
+                    std::string GetOsCustomizeType() const;
+
+                    /**
+                     * 设置容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * @param OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     */
+                    void SetOsCustomizeType(const std::string& _osCustomizeType);
+
+                    /**
+                     * 判断参数 OsCustomizeType 是否已赋值
+                     * @return OsCustomizeType 是否已赋值
+                     */
+                    bool OsCustomizeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +274,18 @@ namespace TencentCloud
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
+
+                    /**
+                     * 节点池os
+                     */
+                    std::string m_nodePoolOs;
+                    bool m_nodePoolOsHasBeenSet;
+
+                    /**
+                     * 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     */
+                    std::string m_osCustomizeType;
+                    bool m_osCustomizeTypeHasBeenSet;
 
                 };
             }

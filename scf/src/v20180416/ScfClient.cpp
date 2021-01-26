@@ -943,6 +943,49 @@ ScfClient::ListAliasesOutcomeCallable ScfClient::ListAliasesCallable(const ListA
     return task->get_future();
 }
 
+ScfClient::ListAsyncEventsOutcome ScfClient::ListAsyncEvents(const ListAsyncEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAsyncEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAsyncEventsResponse rsp = ListAsyncEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAsyncEventsOutcome(rsp);
+        else
+            return ListAsyncEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAsyncEventsOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::ListAsyncEventsAsync(const ListAsyncEventsRequest& request, const ListAsyncEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAsyncEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::ListAsyncEventsOutcomeCallable ScfClient::ListAsyncEventsCallable(const ListAsyncEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAsyncEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAsyncEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::ListFunctionsOutcome ScfClient::ListFunctions(const ListFunctionsRequest &request)
 {
     auto outcome = MakeRequest(request, "ListFunctions");
@@ -1409,6 +1452,49 @@ ScfClient::PutTotalConcurrencyConfigOutcomeCallable ScfClient::PutTotalConcurren
         [this, request]()
         {
             return this->PutTotalConcurrencyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::TerminateAsyncEventOutcome ScfClient::TerminateAsyncEvent(const TerminateAsyncEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateAsyncEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateAsyncEventResponse rsp = TerminateAsyncEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateAsyncEventOutcome(rsp);
+        else
+            return TerminateAsyncEventOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateAsyncEventOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::TerminateAsyncEventAsync(const TerminateAsyncEventRequest& request, const TerminateAsyncEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateAsyncEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::TerminateAsyncEventOutcomeCallable ScfClient::TerminateAsyncEventCallable(const TerminateAsyncEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateAsyncEventOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateAsyncEvent(request);
         }
     );
 

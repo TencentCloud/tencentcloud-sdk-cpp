@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool AfterHasBeenSet() const;
 
                     /**
-                     * 获取<li>小于等于此时间（结束时间）。</li>
+                     * 获取<li>小于此时间（结束时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
-                     * @return Before <li>小于等于此时间（结束时间）。</li>
+                     * @return Before <li>小于此时间（结束时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      */
                     std::string GetBefore() const;
 
                     /**
-                     * 设置<li>小于等于此时间（结束时间）。</li>
+                     * 设置<li>小于此时间（结束时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
-                     * @param Before <li>小于等于此时间（结束时间）。</li>
+                     * @param Before <li>小于此时间（结束时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      */
                     void SetBefore(const std::string& _before);
@@ -100,7 +100,7 @@ namespace TencentCloud
                     bool m_afterHasBeenSet;
 
                     /**
-                     * <li>小于等于此时间（结束时间）。</li>
+                     * <li>小于此时间（结束时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      */
                     std::string m_before;

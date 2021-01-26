@@ -31,7 +31,9 @@ CreateClusterNodePoolRequest::CreateClusterNodePoolRequest() :
     m_enableAutoscaleHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_taintsHasBeenSet(false)
+    m_taintsHasBeenSet(false),
+    m_nodePoolOsHasBeenSet(false),
+    m_osCustomizeTypeHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,22 @@ string CreateClusterNodePoolRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nodePoolOsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodePoolOs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_nodePoolOs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osCustomizeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OsCustomizeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -255,6 +273,38 @@ void CreateClusterNodePoolRequest::SetTaints(const vector<Taint>& _taints)
 bool CreateClusterNodePoolRequest::TaintsHasBeenSet() const
 {
     return m_taintsHasBeenSet;
+}
+
+string CreateClusterNodePoolRequest::GetNodePoolOs() const
+{
+    return m_nodePoolOs;
+}
+
+void CreateClusterNodePoolRequest::SetNodePoolOs(const string& _nodePoolOs)
+{
+    m_nodePoolOs = _nodePoolOs;
+    m_nodePoolOsHasBeenSet = true;
+}
+
+bool CreateClusterNodePoolRequest::NodePoolOsHasBeenSet() const
+{
+    return m_nodePoolOsHasBeenSet;
+}
+
+string CreateClusterNodePoolRequest::GetOsCustomizeType() const
+{
+    return m_osCustomizeType;
+}
+
+void CreateClusterNodePoolRequest::SetOsCustomizeType(const string& _osCustomizeType)
+{
+    m_osCustomizeType = _osCustomizeType;
+    m_osCustomizeTypeHasBeenSet = true;
+}
+
+bool CreateClusterNodePoolRequest::OsCustomizeTypeHasBeenSet() const
+{
+    return m_osCustomizeTypeHasBeenSet;
 }
 
 

@@ -40,7 +40,8 @@ Machine::Machine() :
     m_invasionNumHasBeenSet(false),
     m_regionInfoHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
-    m_licenseStatusHasBeenSet(false)
+    m_licenseStatusHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,16 @@ CoreInternalOutcome Machine::Deserialize(const Value &value)
         m_licenseStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Machine.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = value["ProjectId"].GetInt64();
+        m_projectIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -421,6 +432,14 @@ void Machine::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "LicenseStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_licenseStatus, allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectId, allocator);
     }
 
 }
@@ -728,5 +747,21 @@ void Machine::SetLicenseStatus(const uint64_t& _licenseStatus)
 bool Machine::LicenseStatusHasBeenSet() const
 {
     return m_licenseStatusHasBeenSet;
+}
+
+int64_t Machine::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void Machine::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool Machine::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 

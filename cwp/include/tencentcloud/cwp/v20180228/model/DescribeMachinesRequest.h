@@ -157,6 +157,24 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取机器所属业务ID列表
+                     * @return ProjectIds 机器所属业务ID列表
+                     */
+                    std::vector<uint64_t> GetProjectIds() const;
+
+                    /**
+                     * 设置机器所属业务ID列表
+                     * @param ProjectIds 机器所属业务ID列表
+                     */
+                    void SetProjectIds(const std::vector<uint64_t>& _projectIds);
+
+                    /**
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
+                     */
+                    bool ProjectIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -194,6 +212,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 机器所属业务ID列表
+                     */
+                    std::vector<uint64_t> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
 
                 };
             }

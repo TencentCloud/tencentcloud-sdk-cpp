@@ -1158,6 +1158,49 @@ ApigatewayClient::DescribeLogSearchOutcomeCallable ApigatewayClient::DescribeLog
     return task->get_future();
 }
 
+ApigatewayClient::DescribePluginsOutcome ApigatewayClient::DescribePlugins(const DescribePluginsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlugins");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePluginsResponse rsp = DescribePluginsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePluginsOutcome(rsp);
+        else
+            return DescribePluginsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePluginsOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribePluginsAsync(const DescribePluginsRequest& request, const DescribePluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePlugins(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribePluginsOutcomeCallable ApigatewayClient::DescribePluginsCallable(const DescribePluginsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePluginsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePlugins(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::DescribeServiceOutcome ApigatewayClient::DescribeService(const DescribeServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeService");

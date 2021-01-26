@@ -69,6 +69,10 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTasksResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DisableRestProxyRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DisableRestProxyResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/EnableRestProxyRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/EnableRestProxyResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterMachineRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterMachineResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameRequest.h>
@@ -180,6 +184,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUinInWhitelistResponse> DescribeUinInWhitelistOutcome;
                 typedef std::future<DescribeUinInWhitelistOutcome> DescribeUinInWhitelistOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeUinInWhitelistRequest&, DescribeUinInWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUinInWhitelistAsyncHandler;
+                typedef Outcome<Error, Model::DisableRestProxyResponse> DisableRestProxyOutcome;
+                typedef std::future<DisableRestProxyOutcome> DisableRestProxyOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DisableRestProxyRequest&, DisableRestProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableRestProxyAsyncHandler;
+                typedef Outcome<Error, Model::EnableRestProxyResponse> EnableRestProxyOutcome;
+                typedef std::future<EnableRestProxyOutcome> EnableRestProxyOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::EnableRestProxyRequest&, EnableRestProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableRestProxyAsyncHandler;
                 typedef Outcome<Error, Model::ModifyClusterMachineResponse> ModifyClusterMachineOutcome;
                 typedef std::future<ModifyClusterMachineOutcome> ModifyClusterMachineOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyClusterMachineRequest&, ModifyClusterMachineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterMachineAsyncHandler;
@@ -431,6 +441,24 @@ namespace TencentCloud
                 DescribeUinInWhitelistOutcome DescribeUinInWhitelist(const Model::DescribeUinInWhitelistRequest &request);
                 void DescribeUinInWhitelistAsync(const Model::DescribeUinInWhitelistRequest& request, const DescribeUinInWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUinInWhitelistOutcomeCallable DescribeUinInWhitelistCallable(const Model::DescribeUinInWhitelistRequest& request);
+
+                /**
+                 *当restful api为关闭状态时，可以通过此接口关闭restful api
+                 * @param req DisableRestProxyRequest
+                 * @return DisableRestProxyOutcome
+                 */
+                DisableRestProxyOutcome DisableRestProxy(const Model::DisableRestProxyRequest &request);
+                void DisableRestProxyAsync(const Model::DisableRestProxyRequest& request, const DisableRestProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableRestProxyOutcomeCallable DisableRestProxyCallable(const Model::DisableRestProxyRequest& request);
+
+                /**
+                 *当restful api为关闭状态时，可以通过此接口开启restful apu
+                 * @param req EnableRestProxyRequest
+                 * @return EnableRestProxyOutcome
+                 */
+                EnableRestProxyOutcome EnableRestProxy(const Model::EnableRestProxyRequest &request);
+                void EnableRestProxyAsync(const Model::EnableRestProxyRequest& request, const EnableRestProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableRestProxyOutcomeCallable EnableRestProxyCallable(const Model::EnableRestProxyRequest& request);
 
                 /**
                  *修改独占集群机器

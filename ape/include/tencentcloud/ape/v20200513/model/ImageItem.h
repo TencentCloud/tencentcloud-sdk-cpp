@@ -154,6 +154,24 @@ namespace TencentCloud
                      */
                     bool VendorHasBeenSet() const;
 
+                    /**
+                     * 获取图片关键词
+                     * @return Keywords 图片关键词
+                     */
+                    std::string GetKeywords() const;
+
+                    /**
+                     * 设置图片关键词
+                     * @param Keywords 图片关键词
+                     */
+                    void SetKeywords(const std::string& _keywords);
+
+                    /**
+                     * 判断参数 Keywords 是否已赋值
+                     * @return Keywords 是否已赋值
+                     */
+                    bool KeywordsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +209,12 @@ namespace TencentCloud
                      */
                     std::string m_vendor;
                     bool m_vendorHasBeenSet;
+
+                    /**
+                     * 图片关键词
+                     */
+                    std::string m_keywords;
+                    bool m_keywordsHasBeenSet;
 
                 };
             }

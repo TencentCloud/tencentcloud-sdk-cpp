@@ -27,6 +27,10 @@
 #include <tencentcloud/mgobe/v20201014/model/ChangeRoomPlayerProfileResponse.h>
 #include <tencentcloud/mgobe/v20201014/model/ChangeRoomPlayerStatusRequest.h>
 #include <tencentcloud/mgobe/v20201014/model/ChangeRoomPlayerStatusResponse.h>
+#include <tencentcloud/mgobe/v20201014/model/DescribePlayerRequest.h>
+#include <tencentcloud/mgobe/v20201014/model/DescribePlayerResponse.h>
+#include <tencentcloud/mgobe/v20201014/model/DescribeRoomRequest.h>
+#include <tencentcloud/mgobe/v20201014/model/DescribeRoomResponse.h>
 #include <tencentcloud/mgobe/v20201014/model/DismissRoomRequest.h>
 #include <tencentcloud/mgobe/v20201014/model/DismissRoomResponse.h>
 #include <tencentcloud/mgobe/v20201014/model/ModifyRoomRequest.h>
@@ -53,6 +57,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ChangeRoomPlayerStatusResponse> ChangeRoomPlayerStatusOutcome;
                 typedef std::future<ChangeRoomPlayerStatusOutcome> ChangeRoomPlayerStatusOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::ChangeRoomPlayerStatusRequest&, ChangeRoomPlayerStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeRoomPlayerStatusAsyncHandler;
+                typedef Outcome<Error, Model::DescribePlayerResponse> DescribePlayerOutcome;
+                typedef std::future<DescribePlayerOutcome> DescribePlayerOutcomeCallable;
+                typedef std::function<void(const MgobeClient*, const Model::DescribePlayerRequest&, DescribePlayerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlayerAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRoomResponse> DescribeRoomOutcome;
+                typedef std::future<DescribeRoomOutcome> DescribeRoomOutcomeCallable;
+                typedef std::function<void(const MgobeClient*, const Model::DescribeRoomRequest&, DescribeRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomAsyncHandler;
                 typedef Outcome<Error, Model::DismissRoomResponse> DismissRoomOutcome;
                 typedef std::future<DismissRoomOutcome> DismissRoomOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::DismissRoomRequest&, DismissRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomAsyncHandler;
@@ -82,6 +92,24 @@ namespace TencentCloud
                 ChangeRoomPlayerStatusOutcome ChangeRoomPlayerStatus(const Model::ChangeRoomPlayerStatusRequest &request);
                 void ChangeRoomPlayerStatusAsync(const Model::ChangeRoomPlayerStatusRequest& request, const ChangeRoomPlayerStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChangeRoomPlayerStatusOutcomeCallable ChangeRoomPlayerStatusCallable(const Model::ChangeRoomPlayerStatusRequest& request);
+
+                /**
+                 *该接口用于查询玩家信息。支持两种用法，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。
+                 * @param req DescribePlayerRequest
+                 * @return DescribePlayerOutcome
+                 */
+                DescribePlayerOutcome DescribePlayer(const Model::DescribePlayerRequest &request);
+                void DescribePlayerAsync(const Model::DescribePlayerRequest& request, const DescribePlayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlayerOutcomeCallable DescribePlayerCallable(const Model::DescribePlayerRequest& request);
+
+                /**
+                 *该接口用于查询房间信息。支持两种用法，当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，玩家Id可不传，按照房间Id查询房间信息。
+                 * @param req DescribeRoomRequest
+                 * @return DescribeRoomOutcome
+                 */
+                DescribeRoomOutcome DescribeRoom(const Model::DescribeRoomRequest &request);
+                void DescribeRoomAsync(const Model::DescribeRoomRequest& request, const DescribeRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoomOutcomeCallable DescribeRoomCallable(const Model::DescribeRoomRequest& request);
 
                 /**
                  *通过game_id、room_id解散房间

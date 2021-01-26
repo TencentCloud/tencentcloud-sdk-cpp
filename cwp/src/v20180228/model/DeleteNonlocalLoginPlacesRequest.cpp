@@ -24,7 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 DeleteNonlocalLoginPlacesRequest::DeleteNonlocalLoginPlacesRequest() :
-    m_idsHasBeenSet(false)
+    m_delTypeHasBeenSet(false),
+    m_idsHasBeenSet(false),
+    m_ipHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,14 @@ string DeleteNonlocalLoginPlacesRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_delTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DelType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_delType.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_idsHasBeenSet)
     {
@@ -48,6 +58,19 @@ string DeleteNonlocalLoginPlacesRequest::ToJsonString() const
         }
     }
 
+    if (m_ipHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_ip.begin(); itr != m_ip.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -55,6 +78,22 @@ string DeleteNonlocalLoginPlacesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteNonlocalLoginPlacesRequest::GetDelType() const
+{
+    return m_delType;
+}
+
+void DeleteNonlocalLoginPlacesRequest::SetDelType(const string& _delType)
+{
+    m_delType = _delType;
+    m_delTypeHasBeenSet = true;
+}
+
+bool DeleteNonlocalLoginPlacesRequest::DelTypeHasBeenSet() const
+{
+    return m_delTypeHasBeenSet;
+}
 
 vector<uint64_t> DeleteNonlocalLoginPlacesRequest::GetIds() const
 {
@@ -70,6 +109,22 @@ void DeleteNonlocalLoginPlacesRequest::SetIds(const vector<uint64_t>& _ids)
 bool DeleteNonlocalLoginPlacesRequest::IdsHasBeenSet() const
 {
     return m_idsHasBeenSet;
+}
+
+vector<string> DeleteNonlocalLoginPlacesRequest::GetIp() const
+{
+    return m_ip;
+}
+
+void DeleteNonlocalLoginPlacesRequest::SetIp(const vector<string>& _ip)
+{
+    m_ip = _ip;
+    m_ipHasBeenSet = true;
+}
+
+bool DeleteNonlocalLoginPlacesRequest::IpHasBeenSet() const
+{
+    return m_ipHasBeenSet;
 }
 
 

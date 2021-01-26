@@ -126,6 +126,92 @@ MgobeClient::ChangeRoomPlayerStatusOutcomeCallable MgobeClient::ChangeRoomPlayer
     return task->get_future();
 }
 
+MgobeClient::DescribePlayerOutcome MgobeClient::DescribePlayer(const DescribePlayerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlayer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlayerResponse rsp = DescribePlayerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlayerOutcome(rsp);
+        else
+            return DescribePlayerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlayerOutcome(outcome.GetError());
+    }
+}
+
+void MgobeClient::DescribePlayerAsync(const DescribePlayerRequest& request, const DescribePlayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePlayer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MgobeClient::DescribePlayerOutcomeCallable MgobeClient::DescribePlayerCallable(const DescribePlayerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePlayerOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePlayer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MgobeClient::DescribeRoomOutcome MgobeClient::DescribeRoom(const DescribeRoomRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoomResponse rsp = DescribeRoomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoomOutcome(rsp);
+        else
+            return DescribeRoomOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoomOutcome(outcome.GetError());
+    }
+}
+
+void MgobeClient::DescribeRoomAsync(const DescribeRoomRequest& request, const DescribeRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoom(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MgobeClient::DescribeRoomOutcomeCallable MgobeClient::DescribeRoomCallable(const DescribeRoomRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoomOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoom(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MgobeClient::DismissRoomOutcome MgobeClient::DismissRoom(const DismissRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "DismissRoom");

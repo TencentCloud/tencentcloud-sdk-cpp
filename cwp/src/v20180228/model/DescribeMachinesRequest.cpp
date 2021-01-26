@@ -28,7 +28,8 @@ DescribeMachinesRequest::DescribeMachinesRequest() :
     m_machineRegionHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_projectIdsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,19 @@ string DescribeMachinesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
         }
     }
 
@@ -172,6 +186,22 @@ void DescribeMachinesRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeMachinesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<uint64_t> DescribeMachinesRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeMachinesRequest::SetProjectIds(const vector<uint64_t>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeMachinesRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
 }
 
 

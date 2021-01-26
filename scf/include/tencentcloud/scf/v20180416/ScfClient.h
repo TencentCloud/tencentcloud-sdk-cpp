@@ -65,6 +65,8 @@
 #include <tencentcloud/scf/v20180416/model/InvokeResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListAliasesRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListAliasesResponse.h>
+#include <tencentcloud/scf/v20180416/model/ListAsyncEventsRequest.h>
+#include <tencentcloud/scf/v20180416/model/ListAsyncEventsResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListFunctionsRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListFunctionsResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListLayerVersionsRequest.h>
@@ -87,6 +89,8 @@
 #include <tencentcloud/scf/v20180416/model/PutReservedConcurrencyConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/PutTotalConcurrencyConfigRequest.h>
 #include <tencentcloud/scf/v20180416/model/PutTotalConcurrencyConfigResponse.h>
+#include <tencentcloud/scf/v20180416/model/TerminateAsyncEventRequest.h>
+#include <tencentcloud/scf/v20180416/model/TerminateAsyncEventResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateAliasRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateAliasResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeRequest.h>
@@ -172,6 +176,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListAliasesResponse> ListAliasesOutcome;
                 typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListAliasesRequest&, ListAliasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAliasesAsyncHandler;
+                typedef Outcome<Error, Model::ListAsyncEventsResponse> ListAsyncEventsOutcome;
+                typedef std::future<ListAsyncEventsOutcome> ListAsyncEventsOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::ListAsyncEventsRequest&, ListAsyncEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAsyncEventsAsyncHandler;
                 typedef Outcome<Error, Model::ListFunctionsResponse> ListFunctionsOutcome;
                 typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListFunctionsRequest&, ListFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFunctionsAsyncHandler;
@@ -205,6 +212,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PutTotalConcurrencyConfigResponse> PutTotalConcurrencyConfigOutcome;
                 typedef std::future<PutTotalConcurrencyConfigOutcome> PutTotalConcurrencyConfigOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::PutTotalConcurrencyConfigRequest&, PutTotalConcurrencyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutTotalConcurrencyConfigAsyncHandler;
+                typedef Outcome<Error, Model::TerminateAsyncEventResponse> TerminateAsyncEventOutcome;
+                typedef std::future<TerminateAsyncEventOutcome> TerminateAsyncEventOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::TerminateAsyncEventRequest&, TerminateAsyncEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateAsyncEventAsyncHandler;
                 typedef Outcome<Error, Model::UpdateAliasResponse> UpdateAliasOutcome;
                 typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateAliasRequest&, UpdateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAliasAsyncHandler;
@@ -417,6 +427,15 @@ namespace TencentCloud
                 ListAliasesOutcomeCallable ListAliasesCallable(const Model::ListAliasesRequest& request);
 
                 /**
+                 *拉取函数异步事件列表
+                 * @param req ListAsyncEventsRequest
+                 * @return ListAsyncEventsOutcome
+                 */
+                ListAsyncEventsOutcome ListAsyncEvents(const Model::ListAsyncEventsRequest &request);
+                void ListAsyncEventsAsync(const Model::ListAsyncEventsRequest& request, const ListAsyncEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAsyncEventsOutcomeCallable ListAsyncEventsCallable(const Model::ListAsyncEventsRequest& request);
+
+                /**
                  *该接口根据传入的查询参数返回相关函数信息。
                  * @param req ListFunctionsRequest
                  * @return ListFunctionsOutcome
@@ -514,6 +533,15 @@ namespace TencentCloud
                 PutTotalConcurrencyConfigOutcome PutTotalConcurrencyConfig(const Model::PutTotalConcurrencyConfigRequest &request);
                 void PutTotalConcurrencyConfigAsync(const Model::PutTotalConcurrencyConfigRequest& request, const PutTotalConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PutTotalConcurrencyConfigOutcomeCallable PutTotalConcurrencyConfigCallable(const Model::PutTotalConcurrencyConfigRequest& request);
+
+                /**
+                 *终止正在运行中的函数异步事件
+                 * @param req TerminateAsyncEventRequest
+                 * @return TerminateAsyncEventOutcome
+                 */
+                TerminateAsyncEventOutcome TerminateAsyncEvent(const Model::TerminateAsyncEventRequest &request);
+                void TerminateAsyncEventAsync(const Model::TerminateAsyncEventRequest& request, const TerminateAsyncEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateAsyncEventOutcomeCallable TerminateAsyncEventCallable(const Model::TerminateAsyncEventRequest& request);
 
                 /**
                  *更新别名的配置

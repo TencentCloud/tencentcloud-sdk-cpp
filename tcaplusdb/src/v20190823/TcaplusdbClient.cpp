@@ -1029,6 +1029,92 @@ TcaplusdbClient::DescribeUinInWhitelistOutcomeCallable TcaplusdbClient::Describe
     return task->get_future();
 }
 
+TcaplusdbClient::DisableRestProxyOutcome TcaplusdbClient::DisableRestProxy(const DisableRestProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableRestProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableRestProxyResponse rsp = DisableRestProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableRestProxyOutcome(rsp);
+        else
+            return DisableRestProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableRestProxyOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DisableRestProxyAsync(const DisableRestProxyRequest& request, const DisableRestProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableRestProxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DisableRestProxyOutcomeCallable TcaplusdbClient::DisableRestProxyCallable(const DisableRestProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableRestProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableRestProxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::EnableRestProxyOutcome TcaplusdbClient::EnableRestProxy(const EnableRestProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableRestProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableRestProxyResponse rsp = EnableRestProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableRestProxyOutcome(rsp);
+        else
+            return EnableRestProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableRestProxyOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::EnableRestProxyAsync(const EnableRestProxyRequest& request, const EnableRestProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableRestProxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::EnableRestProxyOutcomeCallable TcaplusdbClient::EnableRestProxyCallable(const EnableRestProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableRestProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableRestProxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::ModifyClusterMachineOutcome TcaplusdbClient::ModifyClusterMachine(const ModifyClusterMachineRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterMachine");

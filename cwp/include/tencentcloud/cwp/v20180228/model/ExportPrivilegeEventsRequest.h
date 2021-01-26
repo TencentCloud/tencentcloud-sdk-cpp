@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/Filters.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取过滤参数
+                     * @return Filters 过滤参数
+                     */
+                    std::vector<Filters> GetFilters() const;
+
+                    /**
+                     * 设置过滤参数
+                     * @param Filters 过滤参数
+                     */
+                    void SetFilters(const std::vector<Filters>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 过滤参数
+                     */
+                    std::vector<Filters> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }
