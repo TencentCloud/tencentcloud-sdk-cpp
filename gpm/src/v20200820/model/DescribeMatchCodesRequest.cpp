@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeMatchCodesRequest::DescribeMatchCodesRequest() :
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_matchCodeHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeMatchCodesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_matchCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MatchCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_matchCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeMatchCodesRequest::SetLimit(const int64_t& _limit)
 bool DescribeMatchCodesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeMatchCodesRequest::GetMatchCode() const
+{
+    return m_matchCode;
+}
+
+void DescribeMatchCodesRequest::SetMatchCode(const string& _matchCode)
+{
+    m_matchCode = _matchCode;
+    m_matchCodeHasBeenSet = true;
+}
+
+bool DescribeMatchCodesRequest::MatchCodeHasBeenSet() const
+{
+    return m_matchCodeHasBeenSet;
 }
 
 

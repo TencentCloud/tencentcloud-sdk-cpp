@@ -50,6 +50,7 @@ endif()
 
 add_subdirectory(core)
 add_subdirectory(as)
+add_subdirectory(rce)
 add_subdirectory(af)
 add_subdirectory(ssl)
 add_subdirectory(gme)

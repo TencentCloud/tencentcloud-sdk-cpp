@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模板参数，若模板没有参数，请提供为空数组。
-                     * @return TemplateParamSet 模板参数，若模板没有参数，请提供为空数组。
-                     */
-                    std::vector<std::string> GetTemplateParamSet() const;
-
-                    /**
-                     * 设置模板参数，若模板没有参数，请提供为空数组。
-                     * @param TemplateParamSet 模板参数，若模板没有参数，请提供为空数组。
-                     */
-                    void SetTemplateParamSet(const std::vector<std::string>& _templateParamSet);
-
-                    /**
-                     * 判断参数 TemplateParamSet 是否已赋值
-                     * @return TemplateParamSet 是否已赋值
-                     */
-                    bool TemplateParamSetHasBeenSet() const;
-
-                    /**
                      * 获取被叫手机号码，采用 e.164 标准，格式为+[国家或地区码][用户号码]。
 例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
                      * @return CalledNumber 被叫手机号码，采用 e.164 标准，格式为+[国家或地区码][用户号码]。
@@ -117,6 +99,24 @@ namespace TencentCloud
                      * @return VoiceSdkAppid 是否已赋值
                      */
                     bool VoiceSdkAppidHasBeenSet() const;
+
+                    /**
+                     * 获取模板参数，若模板没有参数，请提供为空数组。
+                     * @return TemplateParamSet 模板参数，若模板没有参数，请提供为空数组。
+                     */
+                    std::vector<std::string> GetTemplateParamSet() const;
+
+                    /**
+                     * 设置模板参数，若模板没有参数，请提供为空数组。
+                     * @param TemplateParamSet 模板参数，若模板没有参数，请提供为空数组。
+                     */
+                    void SetTemplateParamSet(const std::vector<std::string>& _templateParamSet);
+
+                    /**
+                     * 判断参数 TemplateParamSet 是否已赋值
+                     * @return TemplateParamSet 是否已赋值
+                     */
+                    bool TemplateParamSetHasBeenSet() const;
 
                     /**
                      * 获取播放次数，可选，最多3次，默认2次。
@@ -163,12 +163,6 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模板参数，若模板没有参数，请提供为空数组。
-                     */
-                    std::vector<std::string> m_templateParamSet;
-                    bool m_templateParamSetHasBeenSet;
-
-                    /**
                      * 被叫手机号码，采用 e.164 标准，格式为+[国家或地区码][用户号码]。
 例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
                      */
@@ -180,6 +174,12 @@ namespace TencentCloud
                      */
                     std::string m_voiceSdkAppid;
                     bool m_voiceSdkAppidHasBeenSet;
+
+                    /**
+                     * 模板参数，若模板没有参数，请提供为空数组。
+                     */
+                    std::vector<std::string> m_templateParamSet;
+                    bool m_templateParamSetHasBeenSet;
 
                     /**
                      * 播放次数，可选，最多3次，默认2次。

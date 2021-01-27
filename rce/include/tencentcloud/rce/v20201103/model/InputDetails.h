@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_GPM_V20200820_MODEL_MTICKET_H_
-#define TENCENTCLOUD_GPM_V20200820_MODEL_MTICKET_H_
+#ifndef TENCENTCLOUD_RCE_V20201103_MODEL_INPUTDETAILS_H_
+#define TENCENTCLOUD_RCE_V20201103_MODEL_INPUTDETAILS_H_
 
 #include <string>
 #include <vector>
@@ -28,73 +28,73 @@
 
 namespace TencentCloud
 {
-    namespace Gpm
+    namespace Rce
     {
-        namespace V20200820
+        namespace V20201103
         {
             namespace Model
             {
                 /**
-                * matchCode和匹配票据 ID组合结构
+                * 入参的详细参数信息
                 */
-                class MTicket : public AbstractModel
+                class InputDetails : public AbstractModel
                 {
                 public:
-                    MTicket();
-                    ~MTicket() = default;
+                    InputDetails();
+                    ~InputDetails() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取匹配Code
-                     * @return MatchCode 匹配Code
+                     * 获取字段名称
+                     * @return FieldName 字段名称
                      */
-                    std::string GetMatchCode() const;
+                    std::string GetFieldName() const;
 
                     /**
-                     * 设置匹配Code
-                     * @param MatchCode 匹配Code
+                     * 设置字段名称
+                     * @param FieldName 字段名称
                      */
-                    void SetMatchCode(const std::string& _matchCode);
+                    void SetFieldName(const std::string& _fieldName);
 
                     /**
-                     * 判断参数 MatchCode 是否已赋值
-                     * @return MatchCode 是否已赋值
+                     * 判断参数 FieldName 是否已赋值
+                     * @return FieldName 是否已赋值
                      */
-                    bool MatchCodeHasBeenSet() const;
+                    bool FieldNameHasBeenSet() const;
 
                     /**
-                     * 获取匹配票据 ID
-                     * @return MatchTicketId 匹配票据 ID
+                     * 获取字段值
+                     * @return FieldValue 字段值
                      */
-                    std::string GetMatchTicketId() const;
+                    std::string GetFieldValue() const;
 
                     /**
-                     * 设置匹配票据 ID
-                     * @param MatchTicketId 匹配票据 ID
+                     * 设置字段值
+                     * @param FieldValue 字段值
                      */
-                    void SetMatchTicketId(const std::string& _matchTicketId);
+                    void SetFieldValue(const std::string& _fieldValue);
 
                     /**
-                     * 判断参数 MatchTicketId 是否已赋值
-                     * @return MatchTicketId 是否已赋值
+                     * 判断参数 FieldValue 是否已赋值
+                     * @return FieldValue 是否已赋值
                      */
-                    bool MatchTicketIdHasBeenSet() const;
+                    bool FieldValueHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 匹配Code
+                     * 字段名称
                      */
-                    std::string m_matchCode;
-                    bool m_matchCodeHasBeenSet;
+                    std::string m_fieldName;
+                    bool m_fieldNameHasBeenSet;
 
                     /**
-                     * 匹配票据 ID
+                     * 字段值
                      */
-                    std::string m_matchTicketId;
-                    bool m_matchTicketIdHasBeenSet;
+                    std::string m_fieldValue;
+                    bool m_fieldValueHasBeenSet;
 
                 };
             }
@@ -102,4 +102,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_GPM_V20200820_MODEL_MTICKET_H_
+#endif // !TENCENTCLOUD_RCE_V20201103_MODEL_INPUTDETAILS_H_

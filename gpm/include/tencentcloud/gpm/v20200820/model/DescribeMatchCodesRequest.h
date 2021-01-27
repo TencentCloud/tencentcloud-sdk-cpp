@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取搜索的字符串
+                     * @return MatchCode 搜索的字符串
+                     */
+                    std::string GetMatchCode() const;
+
+                    /**
+                     * 设置搜索的字符串
+                     * @param MatchCode 搜索的字符串
+                     */
+                    void SetMatchCode(const std::string& _matchCode);
+
+                    /**
+                     * 判断参数 MatchCode 是否已赋值
+                     * @return MatchCode 是否已赋值
+                     */
+                    bool MatchCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 搜索的字符串
+                     */
+                    std::string m_matchCode;
+                    bool m_matchCodeHasBeenSet;
 
                 };
             }

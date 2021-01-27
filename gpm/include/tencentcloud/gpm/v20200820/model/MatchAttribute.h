@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool NumberValueHasBeenSet() const;
 
                     /**
-                     * 获取字符串属性值 长度 1024 默认 ""
-                     * @return StringValue 字符串属性值 长度 1024 默认 ""
+                     * 获取字符串属性值 长度 128 默认 ""
+                     * @return StringValue 字符串属性值 长度 128 默认 ""
                      */
                     std::string GetStringValue() const;
 
                     /**
-                     * 设置字符串属性值 长度 1024 默认 ""
-                     * @param StringValue 字符串属性值 长度 1024 默认 ""
+                     * 设置字符串属性值 长度 128 默认 ""
+                     * @param StringValue 字符串属性值 长度 128 默认 ""
                      */
                     void SetStringValue(const std::string& _stringValue);
 
@@ -176,7 +176,7 @@ namespace TencentCloud
                     bool m_numberValueHasBeenSet;
 
                     /**
-                     * 字符串属性值 长度 1024 默认 ""
+                     * 字符串属性值 长度 128 默认 ""
                      */
                     std::string m_stringValue;
                     bool m_stringValueHasBeenSet;

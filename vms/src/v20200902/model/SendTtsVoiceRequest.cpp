@@ -25,9 +25,9 @@ using namespace std;
 
 SendTtsVoiceRequest::SendTtsVoiceRequest() :
     m_templateIdHasBeenSet(false),
-    m_templateParamSetHasBeenSet(false),
     m_calledNumberHasBeenSet(false),
     m_voiceSdkAppidHasBeenSet(false),
+    m_templateParamSetHasBeenSet(false),
     m_playTimesHasBeenSet(false),
     m_sessionContextHasBeenSet(false)
 {
@@ -48,19 +48,6 @@ string SendTtsVoiceRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_templateParamSetHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "TemplateParamSet";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_templateParamSet.begin(); itr != m_templateParamSet.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_calledNumberHasBeenSet)
     {
         Value iKey(kStringType);
@@ -75,6 +62,19 @@ string SendTtsVoiceRequest::ToJsonString() const
         string key = "VoiceSdkAppid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_voiceSdkAppid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateParamSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TemplateParamSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_templateParamSet.begin(); itr != m_templateParamSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_playTimesHasBeenSet)
@@ -117,22 +117,6 @@ bool SendTtsVoiceRequest::TemplateIdHasBeenSet() const
     return m_templateIdHasBeenSet;
 }
 
-vector<string> SendTtsVoiceRequest::GetTemplateParamSet() const
-{
-    return m_templateParamSet;
-}
-
-void SendTtsVoiceRequest::SetTemplateParamSet(const vector<string>& _templateParamSet)
-{
-    m_templateParamSet = _templateParamSet;
-    m_templateParamSetHasBeenSet = true;
-}
-
-bool SendTtsVoiceRequest::TemplateParamSetHasBeenSet() const
-{
-    return m_templateParamSetHasBeenSet;
-}
-
 string SendTtsVoiceRequest::GetCalledNumber() const
 {
     return m_calledNumber;
@@ -163,6 +147,22 @@ void SendTtsVoiceRequest::SetVoiceSdkAppid(const string& _voiceSdkAppid)
 bool SendTtsVoiceRequest::VoiceSdkAppidHasBeenSet() const
 {
     return m_voiceSdkAppidHasBeenSet;
+}
+
+vector<string> SendTtsVoiceRequest::GetTemplateParamSet() const
+{
+    return m_templateParamSet;
+}
+
+void SendTtsVoiceRequest::SetTemplateParamSet(const vector<string>& _templateParamSet)
+{
+    m_templateParamSet = _templateParamSet;
+    m_templateParamSetHasBeenSet = true;
+}
+
+bool SendTtsVoiceRequest::TemplateParamSetHasBeenSet() const
+{
+    return m_templateParamSetHasBeenSet;
 }
 
 uint64_t SendTtsVoiceRequest::GetPlayTimes() const

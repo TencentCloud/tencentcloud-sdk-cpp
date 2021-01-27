@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 匹配请求信息
+                * 匹配票据信息
                 */
                 class MatchTicket : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取MatchTicketId 长度 128 [a-zA-Z0-9-\.]*
-                     * @return Id MatchTicketId 长度 128 [a-zA-Z0-9-\.]*
+                     * 获取匹配票据 ID长度 128 [a-zA-Z0-9-\.]*
+                     * @return Id 匹配票据 ID长度 128 [a-zA-Z0-9-\.]*
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置MatchTicketId 长度 128 [a-zA-Z0-9-\.]*
-                     * @param Id MatchTicketId 长度 128 [a-zA-Z0-9-\.]*
+                     * 设置匹配票据 ID长度 128 [a-zA-Z0-9-\.]*
+                     * @param Id 匹配票据 ID长度 128 [a-zA-Z0-9-\.]*
                      */
                     void SetId(const std::string& _id);
 
@@ -250,7 +250,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * MatchTicketId 长度 128 [a-zA-Z0-9-\.]*
+                     * 匹配票据 ID长度 128 [a-zA-Z0-9-\.]*
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

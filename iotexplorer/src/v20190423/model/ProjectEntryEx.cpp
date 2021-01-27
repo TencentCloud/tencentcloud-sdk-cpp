@@ -29,7 +29,8 @@ ProjectEntryEx::ProjectEntryEx() :
     m_updateTimeHasBeenSet(false),
     m_productCountHasBeenSet(false),
     m_nativeAppCountHasBeenSet(false),
-    m_webAppCountHasBeenSet(false)
+    m_webAppCountHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const Value &value)
         m_webAppCountHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProjectEntryEx.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void ProjectEntryEx::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "WebAppCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_webAppCount, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void ProjectEntryEx::SetWebAppCount(const uint64_t& _webAppCount)
 bool ProjectEntryEx::WebAppCountHasBeenSet() const
 {
     return m_webAppCountHasBeenSet;
+}
+
+string ProjectEntryEx::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ProjectEntryEx::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ProjectEntryEx::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

@@ -190,6 +190,28 @@ namespace TencentCloud
                      */
                     bool WebAppCountHasBeenSet() const;
 
+                    /**
+                     * 获取实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceId 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +261,13 @@ namespace TencentCloud
                      */
                     uint64_t m_webAppCount;
                     bool m_webAppCountHasBeenSet;
+
+                    /**
+                     * 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }
