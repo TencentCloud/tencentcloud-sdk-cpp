@@ -83,6 +83,49 @@ SqlserverClient::AssociateSecurityGroupsOutcomeCallable SqlserverClient::Associa
     return task->get_future();
 }
 
+SqlserverClient::CloneDBOutcome SqlserverClient::CloneDB(const CloneDBRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloneDB");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloneDBResponse rsp = CloneDBResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloneDBOutcome(rsp);
+        else
+            return CloneDBOutcome(o.GetError());
+    }
+    else
+    {
+        return CloneDBOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::CloneDBAsync(const CloneDBRequest& request, const CloneDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloneDB(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::CloneDBOutcomeCallable SqlserverClient::CloneDBCallable(const CloneDBRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloneDBOutcome()>>(
+        [this, request]()
+        {
+            return this->CloneDB(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::CompleteExpansionOutcome SqlserverClient::CompleteExpansion(const CompleteExpansionRequest &request)
 {
     auto outcome = MakeRequest(request, "CompleteExpansion");

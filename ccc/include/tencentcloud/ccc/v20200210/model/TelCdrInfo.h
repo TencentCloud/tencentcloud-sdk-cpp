@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ccc/v20200210/model/SeatUserInfo.h>
+#include <tencentcloud/ccc/v20200210/model/ServeParticipant.h>
+#include <tencentcloud/ccc/v20200210/model/IVRKeyPressedElement.h>
 
 
 namespace TencentCloud
@@ -192,14 +194,14 @@ namespace TencentCloud
                     bool EndStatusHasBeenSet() const;
 
                     /**
-                     * 获取技能组
-                     * @return SkillGroup 技能组
+                     * 获取技能组名称
+                     * @return SkillGroup 技能组名称
                      */
                     std::string GetSkillGroup() const;
 
                     /**
-                     * 设置技能组
-                     * @param SkillGroup 技能组
+                     * 设置技能组名称
+                     * @param SkillGroup 技能组名称
                      */
                     void SetSkillGroup(const std::string& _skillGroup);
 
@@ -226,6 +228,320 @@ namespace TencentCloud
                      * @return CallerLocation 是否已赋值
                      */
                     bool CallerLocationHasBeenSet() const;
+
+                    /**
+                     * 获取IVR 阶段耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IVRDuration IVR 阶段耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIVRDuration() const;
+
+                    /**
+                     * 设置IVR 阶段耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IVRDuration IVR 阶段耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIVRDuration(const int64_t& _iVRDuration);
+
+                    /**
+                     * 判断参数 IVRDuration 是否已赋值
+                     * @return IVRDuration 是否已赋值
+                     */
+                    bool IVRDurationHasBeenSet() const;
+
+                    /**
+                     * 获取振铃时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RingTimestamp 振铃时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRingTimestamp() const;
+
+                    /**
+                     * 设置振铃时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RingTimestamp 振铃时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRingTimestamp(const int64_t& _ringTimestamp);
+
+                    /**
+                     * 判断参数 RingTimestamp 是否已赋值
+                     * @return RingTimestamp 是否已赋值
+                     */
+                    bool RingTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取接听时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AcceptTimestamp 接听时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAcceptTimestamp() const;
+
+                    /**
+                     * 设置接听时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AcceptTimestamp 接听时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAcceptTimestamp(const int64_t& _acceptTimestamp);
+
+                    /**
+                     * 判断参数 AcceptTimestamp 是否已赋值
+                     * @return AcceptTimestamp 是否已赋值
+                     */
+                    bool AcceptTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndedTimestamp 结束时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEndedTimestamp() const;
+
+                    /**
+                     * 设置结束时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EndedTimestamp 结束时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEndedTimestamp(const int64_t& _endedTimestamp);
+
+                    /**
+                     * 判断参数 EndedTimestamp 是否已赋值
+                     * @return EndedTimestamp 是否已赋值
+                     */
+                    bool EndedTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取IVR 按键信息 ，e.g. ["1","2","3"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IVRKeyPressed IVR 按键信息 ，e.g. ["1","2","3"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetIVRKeyPressed() const;
+
+                    /**
+                     * 设置IVR 按键信息 ，e.g. ["1","2","3"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IVRKeyPressed IVR 按键信息 ，e.g. ["1","2","3"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIVRKeyPressed(const std::vector<std::string>& _iVRKeyPressed);
+
+                    /**
+                     * 判断参数 IVRKeyPressed 是否已赋值
+                     * @return IVRKeyPressed 是否已赋值
+                     */
+                    bool IVRKeyPressedHasBeenSet() const;
+
+                    /**
+                     * 获取挂机方 seat 坐席 user 用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HungUpSide 挂机方 seat 坐席 user 用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHungUpSide() const;
+
+                    /**
+                     * 设置挂机方 seat 坐席 user 用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HungUpSide 挂机方 seat 坐席 user 用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHungUpSide(const std::string& _hungUpSide);
+
+                    /**
+                     * 判断参数 HungUpSide 是否已赋值
+                     * @return HungUpSide 是否已赋值
+                     */
+                    bool HungUpSideHasBeenSet() const;
+
+                    /**
+                     * 获取服务参与者列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServeParticipants 服务参与者列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServeParticipant> GetServeParticipants() const;
+
+                    /**
+                     * 设置服务参与者列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServeParticipants 服务参与者列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServeParticipants(const std::vector<ServeParticipant>& _serveParticipants);
+
+                    /**
+                     * 判断参数 ServeParticipants 是否已赋值
+                     * @return ServeParticipants 是否已赋值
+                     */
+                    bool ServeParticipantsHasBeenSet() const;
+
+                    /**
+                     * 获取技能组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SkillGroupId 技能组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSkillGroupId() const;
+
+                    /**
+                     * 设置技能组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SkillGroupId 技能组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSkillGroupId(const int64_t& _skillGroupId);
+
+                    /**
+                     * 判断参数 SkillGroupId 是否已赋值
+                     * @return SkillGroupId 是否已赋值
+                     */
+                    bool SkillGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取ok 正常结束 
+unconnected	未接通
+seatGiveUp	坐席未接
+seatForward	坐席转接
+ivrGiveUp	IVR期间用户放弃
+waitingGiveUp	会话排队期间用户放弃
+ringingGiveUp	会话振铃期间用户放弃
+error	系统错误
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndStatusString ok 正常结束 
+unconnected	未接通
+seatGiveUp	坐席未接
+seatForward	坐席转接
+ivrGiveUp	IVR期间用户放弃
+waitingGiveUp	会话排队期间用户放弃
+ringingGiveUp	会话振铃期间用户放弃
+error	系统错误
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEndStatusString() const;
+
+                    /**
+                     * 设置ok 正常结束 
+unconnected	未接通
+seatGiveUp	坐席未接
+seatForward	坐席转接
+ivrGiveUp	IVR期间用户放弃
+waitingGiveUp	会话排队期间用户放弃
+ringingGiveUp	会话振铃期间用户放弃
+error	系统错误
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EndStatusString ok 正常结束 
+unconnected	未接通
+seatGiveUp	坐席未接
+seatForward	坐席转接
+ivrGiveUp	IVR期间用户放弃
+waitingGiveUp	会话排队期间用户放弃
+ringingGiveUp	会话振铃期间用户放弃
+error	系统错误
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEndStatusString(const std::string& _endStatusString);
+
+                    /**
+                     * 判断参数 EndStatusString 是否已赋值
+                     * @return EndStatusString 是否已赋值
+                     */
+                    bool EndStatusStringHasBeenSet() const;
+
+                    /**
+                     * 获取会话开始时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartTimestamp 会话开始时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStartTimestamp() const;
+
+                    /**
+                     * 设置会话开始时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartTimestamp 会话开始时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartTimestamp(const int64_t& _startTimestamp);
+
+                    /**
+                     * 判断参数 StartTimestamp 是否已赋值
+                     * @return StartTimestamp 是否已赋值
+                     */
+                    bool StartTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取进入排队时间，Unix 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QueuedTimestamp 进入排队时间，Unix 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetQueuedTimestamp() const;
+
+                    /**
+                     * 设置进入排队时间，Unix 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QueuedTimestamp 进入排队时间，Unix 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQueuedTimestamp(const int64_t& _queuedTimestamp);
+
+                    /**
+                     * 判断参数 QueuedTimestamp 是否已赋值
+                     * @return QueuedTimestamp 是否已赋值
+                     */
+                    bool QueuedTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取后置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PostIVRKeyPressed 后置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IVRKeyPressedElement> GetPostIVRKeyPressed() const;
+
+                    /**
+                     * 设置后置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PostIVRKeyPressed 后置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPostIVRKeyPressed(const std::vector<IVRKeyPressedElement>& _postIVRKeyPressed);
+
+                    /**
+                     * 判断参数 PostIVRKeyPressed 是否已赋值
+                     * @return PostIVRKeyPressed 是否已赋值
+                     */
+                    bool PostIVRKeyPressedHasBeenSet() const;
+
+                    /**
+                     * 获取排队技能组Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QueuedSkillGroupId 排队技能组Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetQueuedSkillGroupId() const;
+
+                    /**
+                     * 设置排队技能组Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QueuedSkillGroupId 排队技能组Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQueuedSkillGroupId(const int64_t& _queuedSkillGroupId);
+
+                    /**
+                     * 判断参数 QueuedSkillGroupId 是否已赋值
+                     * @return QueuedSkillGroupId 是否已赋值
+                     */
+                    bool QueuedSkillGroupIdHasBeenSet() const;
 
                 private:
 
@@ -278,7 +594,7 @@ namespace TencentCloud
                     bool m_endStatusHasBeenSet;
 
                     /**
-                     * 技能组
+                     * 技能组名称
                      */
                     std::string m_skillGroup;
                     bool m_skillGroupHasBeenSet;
@@ -288,6 +604,104 @@ namespace TencentCloud
                      */
                     std::string m_callerLocation;
                     bool m_callerLocationHasBeenSet;
+
+                    /**
+                     * IVR 阶段耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_iVRDuration;
+                    bool m_iVRDurationHasBeenSet;
+
+                    /**
+                     * 振铃时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ringTimestamp;
+                    bool m_ringTimestampHasBeenSet;
+
+                    /**
+                     * 接听时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_acceptTimestamp;
+                    bool m_acceptTimestampHasBeenSet;
+
+                    /**
+                     * 结束时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_endedTimestamp;
+                    bool m_endedTimestampHasBeenSet;
+
+                    /**
+                     * IVR 按键信息 ，e.g. ["1","2","3"]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_iVRKeyPressed;
+                    bool m_iVRKeyPressedHasBeenSet;
+
+                    /**
+                     * 挂机方 seat 坐席 user 用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hungUpSide;
+                    bool m_hungUpSideHasBeenSet;
+
+                    /**
+                     * 服务参与者列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServeParticipant> m_serveParticipants;
+                    bool m_serveParticipantsHasBeenSet;
+
+                    /**
+                     * 技能组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_skillGroupId;
+                    bool m_skillGroupIdHasBeenSet;
+
+                    /**
+                     * ok 正常结束 
+unconnected	未接通
+seatGiveUp	坐席未接
+seatForward	坐席转接
+ivrGiveUp	IVR期间用户放弃
+waitingGiveUp	会话排队期间用户放弃
+ringingGiveUp	会话振铃期间用户放弃
+error	系统错误
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_endStatusString;
+                    bool m_endStatusStringHasBeenSet;
+
+                    /**
+                     * 会话开始时间戳，UNIX 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_startTimestamp;
+                    bool m_startTimestampHasBeenSet;
+
+                    /**
+                     * 进入排队时间，Unix 秒级时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_queuedTimestamp;
+                    bool m_queuedTimestampHasBeenSet;
+
+                    /**
+                     * 后置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IVRKeyPressedElement> m_postIVRKeyPressed;
+                    bool m_postIVRKeyPressedHasBeenSet;
+
+                    /**
+                     * 排队技能组Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_queuedSkillGroupId;
+                    bool m_queuedSkillGroupIdHasBeenSet;
 
                 };
             }

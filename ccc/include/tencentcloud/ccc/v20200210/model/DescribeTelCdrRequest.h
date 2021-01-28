@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数，上限 100
-                     * @return Limit 返回记录条数，上限 100
+                     * 获取返回数据条数，上限（deprecated）
+                     * @return Limit 返回数据条数，上限（deprecated）
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数，上限 100
-                     * @param Limit 返回记录条数，上限 100
+                     * 设置返回数据条数，上限（deprecated）
+                     * @param Limit 返回数据条数，上限（deprecated）
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移（deprecated）
+                     * @return Offset 偏移（deprecated）
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移（deprecated）
+                     * @param Offset 偏移（deprecated）
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取实例 ID（deprecated）
+                     * @return InstanceId 实例 ID（deprecated）
                      */
                     int64_t GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * 设置实例 ID（deprecated）
+                     * @param InstanceId 实例 ID（deprecated）
                      */
                     void SetInstanceId(const int64_t& _instanceId);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取应用ID。
-                     * @return SdkAppId 应用ID。
+                     * 获取应用 ID
+                     * @return SdkAppId 应用 ID
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用ID。
-                     * @param SdkAppId 应用ID。
+                     * 设置应用 ID
+                     * @param SdkAppId 应用 ID
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
@@ -149,6 +149,42 @@ namespace TencentCloud
                      * @return SdkAppId 是否已赋值
                      */
                     bool SdkAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取分页尺寸，上限 100
+                     * @return PageSize 分页尺寸，上限 100
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置分页尺寸，上限 100
+                     * @param PageSize 分页尺寸，上限 100
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取分页页码，从 0 开始
+                     * @return PageNumber 分页页码，从 0 开始
+                     */
+                    int64_t GetPageNumber() const;
+
+                    /**
+                     * 设置分页页码，从 0 开始
+                     * @param PageNumber 分页页码，从 0 开始
+                     */
+                    void SetPageNumber(const int64_t& _pageNumber);
+
+                    /**
+                     * 判断参数 PageNumber 是否已赋值
+                     * @return PageNumber 是否已赋值
+                     */
+                    bool PageNumberHasBeenSet() const;
 
                 private:
 
@@ -165,28 +201,40 @@ namespace TencentCloud
                     bool m_endTimeStampHasBeenSet;
 
                     /**
-                     * 返回记录条数，上限 100
+                     * 返回数据条数，上限（deprecated）
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移（deprecated）
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 实例 ID
+                     * 实例 ID（deprecated）
                      */
                     int64_t m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 应用ID。
+                     * 应用 ID
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * 分页尺寸，上限 100
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 分页页码，从 0 开始
+                     */
+                    int64_t m_pageNumber;
+                    bool m_pageNumberHasBeenSet;
 
                 };
             }

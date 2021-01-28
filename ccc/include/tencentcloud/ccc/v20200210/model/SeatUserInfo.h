@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool MailHasBeenSet() const;
 
                     /**
-                     * 获取坐席电话号码
-                     * @return Phone 坐席电话号码
+                     * 获取坐席电话号码（带0086前缀）
+                     * @return Phone 坐席电话号码（带0086前缀）
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置坐席电话号码
-                     * @param Phone 坐席电话号码
+                     * 设置坐席电话号码（带0086前缀）
+                     * @param Phone 坐席电话号码（带0086前缀）
                      */
                     void SetPhone(const std::string& _phone);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_mailHasBeenSet;
 
                     /**
-                     * 坐席电话号码
+                     * 坐席电话号码（带0086前缀）
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;

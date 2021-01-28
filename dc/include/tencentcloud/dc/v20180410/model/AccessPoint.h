@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dc/v20180410/model/Coordinate.h>
 
 
 namespace TencentCloud
@@ -176,6 +177,50 @@ namespace TencentCloud
                      */
                     bool AvailablePortTypeHasBeenSet() const;
 
+                    /**
+                     * 获取接入点经纬度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Coordinate 接入点经纬度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Coordinate GetCoordinate() const;
+
+                    /**
+                     * 设置接入点经纬度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Coordinate 接入点经纬度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCoordinate(const Coordinate& _coordinate);
+
+                    /**
+                     * 判断参数 Coordinate 是否已赋值
+                     * @return Coordinate 是否已赋值
+                     */
+                    bool CoordinateHasBeenSet() const;
+
+                    /**
+                     * 获取接入点所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return City 接入点所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCity() const;
+
+                    /**
+                     * 设置接入点所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param City 接入点所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCity(const std::string& _city);
+
+                    /**
+                     * 判断参数 City 是否已赋值
+                     * @return City 是否已赋值
+                     */
+                    bool CityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +265,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_availablePortType;
                     bool m_availablePortTypeHasBeenSet;
+
+                    /**
+                     * 接入点经纬度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Coordinate m_coordinate;
+                    bool m_coordinateHasBeenSet;
+
+                    /**
+                     * 接入点所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_city;
+                    bool m_cityHasBeenSet;
 
                 };
             }

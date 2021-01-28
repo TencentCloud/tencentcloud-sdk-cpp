@@ -81,11 +81,11 @@ CoreInternalOutcome PrepayPrice::Deserialize(const Value &value)
 
     if (value.HasMember("UnitPrice") && !value["UnitPrice"].IsNull())
     {
-        if (!value["UnitPrice"].IsString())
+        if (!value["UnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.UnitPrice` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PrepayPrice.UnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_unitPrice = string(value["UnitPrice"].GetString());
+        m_unitPrice = value["UnitPrice"].GetDouble();
         m_unitPriceHasBeenSet = true;
     }
 
@@ -101,11 +101,11 @@ CoreInternalOutcome PrepayPrice::Deserialize(const Value &value)
 
     if (value.HasMember("UnitPriceDiscount") && !value["UnitPriceDiscount"].IsNull())
     {
-        if (!value["UnitPriceDiscount"].IsString())
+        if (!value["UnitPriceDiscount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.UnitPriceDiscount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PrepayPrice.UnitPriceDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_unitPriceDiscount = string(value["UnitPriceDiscount"].GetString());
+        m_unitPriceDiscount = value["UnitPriceDiscount"].GetDouble();
         m_unitPriceDiscountHasBeenSet = true;
     }
 
@@ -173,7 +173,7 @@ void PrepayPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         Value iKey(kStringType);
         string key = "UnitPrice";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unitPrice.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_unitPrice, allocator);
     }
 
     if (m_chargeUnitHasBeenSet)
@@ -189,7 +189,7 @@ void PrepayPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         Value iKey(kStringType);
         string key = "UnitPriceDiscount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unitPriceDiscount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_unitPriceDiscount, allocator);
     }
 
     if (m_unitPriceHighHasBeenSet)
@@ -275,12 +275,12 @@ bool PrepayPrice::DiscountPriceHighHasBeenSet() const
     return m_discountPriceHighHasBeenSet;
 }
 
-string PrepayPrice::GetUnitPrice() const
+double PrepayPrice::GetUnitPrice() const
 {
     return m_unitPrice;
 }
 
-void PrepayPrice::SetUnitPrice(const string& _unitPrice)
+void PrepayPrice::SetUnitPrice(const double& _unitPrice)
 {
     m_unitPrice = _unitPrice;
     m_unitPriceHasBeenSet = true;
@@ -307,12 +307,12 @@ bool PrepayPrice::ChargeUnitHasBeenSet() const
     return m_chargeUnitHasBeenSet;
 }
 
-string PrepayPrice::GetUnitPriceDiscount() const
+double PrepayPrice::GetUnitPriceDiscount() const
 {
     return m_unitPriceDiscount;
 }
 
-void PrepayPrice::SetUnitPriceDiscount(const string& _unitPriceDiscount)
+void PrepayPrice::SetUnitPriceDiscount(const double& _unitPriceDiscount)
 {
     m_unitPriceDiscount = _unitPriceDiscount;
     m_unitPriceDiscountHasBeenSet = true;

@@ -57,7 +57,8 @@ ContainerGroupDetail::ContainerGroupDetail() :
     m_instanceCountHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
     m_maxSurgeHasBeenSet(false),
-    m_maxUnavailableHasBeenSet(false)
+    m_maxUnavailableHasBeenSet(false),
+    m_healthCheckSettingsHasBeenSet(false)
 {
 }
 
@@ -446,6 +447,23 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const Value &value)
         m_maxUnavailableHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthCheckSettings") && !value["HealthCheckSettings"].IsNull())
+    {
+        if (!value["HealthCheckSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ContainerGroupDetail.HealthCheckSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthCheckSettings.Deserialize(value["HealthCheckSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthCheckSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -753,6 +771,15 @@ void ContainerGroupDetail::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "MaxUnavailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_maxUnavailable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthCheckSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_healthCheckSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1332,5 +1359,21 @@ void ContainerGroupDetail::SetMaxUnavailable(const string& _maxUnavailable)
 bool ContainerGroupDetail::MaxUnavailableHasBeenSet() const
 {
     return m_maxUnavailableHasBeenSet;
+}
+
+HealthCheckSettings ContainerGroupDetail::GetHealthCheckSettings() const
+{
+    return m_healthCheckSettings;
+}
+
+void ContainerGroupDetail::SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings)
+{
+    m_healthCheckSettings = _healthCheckSettings;
+    m_healthCheckSettingsHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::HealthCheckSettingsHasBeenSet() const
+{
+    return m_healthCheckSettingsHasBeenSet;
 }
 

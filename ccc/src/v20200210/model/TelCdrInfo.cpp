@@ -31,7 +31,20 @@ TelCdrInfo::TelCdrInfo() :
     m_seatUserHasBeenSet(false),
     m_endStatusHasBeenSet(false),
     m_skillGroupHasBeenSet(false),
-    m_callerLocationHasBeenSet(false)
+    m_callerLocationHasBeenSet(false),
+    m_iVRDurationHasBeenSet(false),
+    m_ringTimestampHasBeenSet(false),
+    m_acceptTimestampHasBeenSet(false),
+    m_endedTimestampHasBeenSet(false),
+    m_iVRKeyPressedHasBeenSet(false),
+    m_hungUpSideHasBeenSet(false),
+    m_serveParticipantsHasBeenSet(false),
+    m_skillGroupIdHasBeenSet(false),
+    m_endStatusStringHasBeenSet(false),
+    m_startTimestampHasBeenSet(false),
+    m_queuedTimestampHasBeenSet(false),
+    m_postIVRKeyPressedHasBeenSet(false),
+    m_queuedSkillGroupIdHasBeenSet(false)
 {
 }
 
@@ -147,6 +160,159 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const Value &value)
         m_callerLocationHasBeenSet = true;
     }
 
+    if (value.HasMember("IVRDuration") && !value["IVRDuration"].IsNull())
+    {
+        if (!value["IVRDuration"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.IVRDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iVRDuration = value["IVRDuration"].GetInt64();
+        m_iVRDurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("RingTimestamp") && !value["RingTimestamp"].IsNull())
+    {
+        if (!value["RingTimestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.RingTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ringTimestamp = value["RingTimestamp"].GetInt64();
+        m_ringTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("AcceptTimestamp") && !value["AcceptTimestamp"].IsNull())
+    {
+        if (!value["AcceptTimestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.AcceptTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_acceptTimestamp = value["AcceptTimestamp"].GetInt64();
+        m_acceptTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndedTimestamp") && !value["EndedTimestamp"].IsNull())
+    {
+        if (!value["EndedTimestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.EndedTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_endedTimestamp = value["EndedTimestamp"].GetInt64();
+        m_endedTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("IVRKeyPressed") && !value["IVRKeyPressed"].IsNull())
+    {
+        if (!value["IVRKeyPressed"].IsArray())
+            return CoreInternalOutcome(Error("response `TelCdrInfo.IVRKeyPressed` is not array type"));
+
+        const Value &tmpValue = value["IVRKeyPressed"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_iVRKeyPressed.push_back((*itr).GetString());
+        }
+        m_iVRKeyPressedHasBeenSet = true;
+    }
+
+    if (value.HasMember("HungUpSide") && !value["HungUpSide"].IsNull())
+    {
+        if (!value["HungUpSide"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.HungUpSide` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hungUpSide = string(value["HungUpSide"].GetString());
+        m_hungUpSideHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServeParticipants") && !value["ServeParticipants"].IsNull())
+    {
+        if (!value["ServeParticipants"].IsArray())
+            return CoreInternalOutcome(Error("response `TelCdrInfo.ServeParticipants` is not array type"));
+
+        const Value &tmpValue = value["ServeParticipants"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ServeParticipant item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serveParticipants.push_back(item);
+        }
+        m_serveParticipantsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SkillGroupId") && !value["SkillGroupId"].IsNull())
+    {
+        if (!value["SkillGroupId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_skillGroupId = value["SkillGroupId"].GetInt64();
+        m_skillGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndStatusString") && !value["EndStatusString"].IsNull())
+    {
+        if (!value["EndStatusString"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.EndStatusString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endStatusString = string(value["EndStatusString"].GetString());
+        m_endStatusStringHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTimestamp") && !value["StartTimestamp"].IsNull())
+    {
+        if (!value["StartTimestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.StartTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTimestamp = value["StartTimestamp"].GetInt64();
+        m_startTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueuedTimestamp") && !value["QueuedTimestamp"].IsNull())
+    {
+        if (!value["QueuedTimestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.QueuedTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_queuedTimestamp = value["QueuedTimestamp"].GetInt64();
+        m_queuedTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("PostIVRKeyPressed") && !value["PostIVRKeyPressed"].IsNull())
+    {
+        if (!value["PostIVRKeyPressed"].IsArray())
+            return CoreInternalOutcome(Error("response `TelCdrInfo.PostIVRKeyPressed` is not array type"));
+
+        const Value &tmpValue = value["PostIVRKeyPressed"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IVRKeyPressedElement item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_postIVRKeyPressed.push_back(item);
+        }
+        m_postIVRKeyPressedHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueuedSkillGroupId") && !value["QueuedSkillGroupId"].IsNull())
+    {
+        if (!value["QueuedSkillGroupId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.QueuedSkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_queuedSkillGroupId = value["QueuedSkillGroupId"].GetInt64();
+        m_queuedSkillGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -233,6 +399,129 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "CallerLocation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_callerLocation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iVRDurationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IVRDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iVRDuration, allocator);
+    }
+
+    if (m_ringTimestampHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RingTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ringTimestamp, allocator);
+    }
+
+    if (m_acceptTimestampHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AcceptTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_acceptTimestamp, allocator);
+    }
+
+    if (m_endedTimestampHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndedTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endedTimestamp, allocator);
+    }
+
+    if (m_iVRKeyPressedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IVRKeyPressed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_iVRKeyPressed.begin(); itr != m_iVRKeyPressed.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_hungUpSideHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HungUpSide";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_hungUpSide.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serveParticipantsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServeParticipants";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serveParticipants.begin(); itr != m_serveParticipants.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_skillGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SkillGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_skillGroupId, allocator);
+    }
+
+    if (m_endStatusStringHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndStatusString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_endStatusString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimestampHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTimestamp, allocator);
+    }
+
+    if (m_queuedTimestampHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QueuedTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_queuedTimestamp, allocator);
+    }
+
+    if (m_postIVRKeyPressedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PostIVRKeyPressed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_postIVRKeyPressed.begin(); itr != m_postIVRKeyPressed.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_queuedSkillGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QueuedSkillGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_queuedSkillGroupId, allocator);
     }
 
 }
@@ -396,5 +685,213 @@ void TelCdrInfo::SetCallerLocation(const string& _callerLocation)
 bool TelCdrInfo::CallerLocationHasBeenSet() const
 {
     return m_callerLocationHasBeenSet;
+}
+
+int64_t TelCdrInfo::GetIVRDuration() const
+{
+    return m_iVRDuration;
+}
+
+void TelCdrInfo::SetIVRDuration(const int64_t& _iVRDuration)
+{
+    m_iVRDuration = _iVRDuration;
+    m_iVRDurationHasBeenSet = true;
+}
+
+bool TelCdrInfo::IVRDurationHasBeenSet() const
+{
+    return m_iVRDurationHasBeenSet;
+}
+
+int64_t TelCdrInfo::GetRingTimestamp() const
+{
+    return m_ringTimestamp;
+}
+
+void TelCdrInfo::SetRingTimestamp(const int64_t& _ringTimestamp)
+{
+    m_ringTimestamp = _ringTimestamp;
+    m_ringTimestampHasBeenSet = true;
+}
+
+bool TelCdrInfo::RingTimestampHasBeenSet() const
+{
+    return m_ringTimestampHasBeenSet;
+}
+
+int64_t TelCdrInfo::GetAcceptTimestamp() const
+{
+    return m_acceptTimestamp;
+}
+
+void TelCdrInfo::SetAcceptTimestamp(const int64_t& _acceptTimestamp)
+{
+    m_acceptTimestamp = _acceptTimestamp;
+    m_acceptTimestampHasBeenSet = true;
+}
+
+bool TelCdrInfo::AcceptTimestampHasBeenSet() const
+{
+    return m_acceptTimestampHasBeenSet;
+}
+
+int64_t TelCdrInfo::GetEndedTimestamp() const
+{
+    return m_endedTimestamp;
+}
+
+void TelCdrInfo::SetEndedTimestamp(const int64_t& _endedTimestamp)
+{
+    m_endedTimestamp = _endedTimestamp;
+    m_endedTimestampHasBeenSet = true;
+}
+
+bool TelCdrInfo::EndedTimestampHasBeenSet() const
+{
+    return m_endedTimestampHasBeenSet;
+}
+
+vector<string> TelCdrInfo::GetIVRKeyPressed() const
+{
+    return m_iVRKeyPressed;
+}
+
+void TelCdrInfo::SetIVRKeyPressed(const vector<string>& _iVRKeyPressed)
+{
+    m_iVRKeyPressed = _iVRKeyPressed;
+    m_iVRKeyPressedHasBeenSet = true;
+}
+
+bool TelCdrInfo::IVRKeyPressedHasBeenSet() const
+{
+    return m_iVRKeyPressedHasBeenSet;
+}
+
+string TelCdrInfo::GetHungUpSide() const
+{
+    return m_hungUpSide;
+}
+
+void TelCdrInfo::SetHungUpSide(const string& _hungUpSide)
+{
+    m_hungUpSide = _hungUpSide;
+    m_hungUpSideHasBeenSet = true;
+}
+
+bool TelCdrInfo::HungUpSideHasBeenSet() const
+{
+    return m_hungUpSideHasBeenSet;
+}
+
+vector<ServeParticipant> TelCdrInfo::GetServeParticipants() const
+{
+    return m_serveParticipants;
+}
+
+void TelCdrInfo::SetServeParticipants(const vector<ServeParticipant>& _serveParticipants)
+{
+    m_serveParticipants = _serveParticipants;
+    m_serveParticipantsHasBeenSet = true;
+}
+
+bool TelCdrInfo::ServeParticipantsHasBeenSet() const
+{
+    return m_serveParticipantsHasBeenSet;
+}
+
+int64_t TelCdrInfo::GetSkillGroupId() const
+{
+    return m_skillGroupId;
+}
+
+void TelCdrInfo::SetSkillGroupId(const int64_t& _skillGroupId)
+{
+    m_skillGroupId = _skillGroupId;
+    m_skillGroupIdHasBeenSet = true;
+}
+
+bool TelCdrInfo::SkillGroupIdHasBeenSet() const
+{
+    return m_skillGroupIdHasBeenSet;
+}
+
+string TelCdrInfo::GetEndStatusString() const
+{
+    return m_endStatusString;
+}
+
+void TelCdrInfo::SetEndStatusString(const string& _endStatusString)
+{
+    m_endStatusString = _endStatusString;
+    m_endStatusStringHasBeenSet = true;
+}
+
+bool TelCdrInfo::EndStatusStringHasBeenSet() const
+{
+    return m_endStatusStringHasBeenSet;
+}
+
+int64_t TelCdrInfo::GetStartTimestamp() const
+{
+    return m_startTimestamp;
+}
+
+void TelCdrInfo::SetStartTimestamp(const int64_t& _startTimestamp)
+{
+    m_startTimestamp = _startTimestamp;
+    m_startTimestampHasBeenSet = true;
+}
+
+bool TelCdrInfo::StartTimestampHasBeenSet() const
+{
+    return m_startTimestampHasBeenSet;
+}
+
+int64_t TelCdrInfo::GetQueuedTimestamp() const
+{
+    return m_queuedTimestamp;
+}
+
+void TelCdrInfo::SetQueuedTimestamp(const int64_t& _queuedTimestamp)
+{
+    m_queuedTimestamp = _queuedTimestamp;
+    m_queuedTimestampHasBeenSet = true;
+}
+
+bool TelCdrInfo::QueuedTimestampHasBeenSet() const
+{
+    return m_queuedTimestampHasBeenSet;
+}
+
+vector<IVRKeyPressedElement> TelCdrInfo::GetPostIVRKeyPressed() const
+{
+    return m_postIVRKeyPressed;
+}
+
+void TelCdrInfo::SetPostIVRKeyPressed(const vector<IVRKeyPressedElement>& _postIVRKeyPressed)
+{
+    m_postIVRKeyPressed = _postIVRKeyPressed;
+    m_postIVRKeyPressedHasBeenSet = true;
+}
+
+bool TelCdrInfo::PostIVRKeyPressedHasBeenSet() const
+{
+    return m_postIVRKeyPressedHasBeenSet;
+}
+
+int64_t TelCdrInfo::GetQueuedSkillGroupId() const
+{
+    return m_queuedSkillGroupId;
+}
+
+void TelCdrInfo::SetQueuedSkillGroupId(const int64_t& _queuedSkillGroupId)
+{
+    m_queuedSkillGroupId = _queuedSkillGroupId;
+    m_queuedSkillGroupIdHasBeenSet = true;
+}
+
+bool TelCdrInfo::QueuedSkillGroupIdHasBeenSet() const
+{
+    return m_queuedSkillGroupIdHasBeenSet;
 }
 

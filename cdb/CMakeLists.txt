@@ -73,6 +73,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/OpenDBInstanceGTIDResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBZoneConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceRebootTimeResponse.h
+  include/tencentcloud/cdb/v20170320/model/SwitchDrInstanceToMasterRequest.h
   include/tencentcloud/cdb/v20170320/model/DeleteParamTemplateRequest.h
   include/tencentcloud/cdb/v20170320/model/DrInfo.h
   include/tencentcloud/cdb/v20170320/model/RoGroup.h
@@ -215,6 +216,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeBackupTablesRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogsResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyRoTypeRequest.h
+  include/tencentcloud/cdb/v20170320/model/SwitchDrInstanceToMasterResponse.h
   include/tencentcloud/cdb/v20170320/model/DatabasePrivilege.h
   include/tencentcloud/cdb/v20170320/model/RoGroupAttr.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditConfigResponse.h
@@ -372,6 +374,7 @@ set(cdb_src
   src/v20170320/model/OpenDBInstanceGTIDResponse.cpp
   src/v20170320/model/DescribeDBZoneConfigRequest.cpp
   src/v20170320/model/DescribeDBInstanceRebootTimeResponse.cpp
+  src/v20170320/model/SwitchDrInstanceToMasterRequest.cpp
   src/v20170320/model/DeleteParamTemplateRequest.cpp
   src/v20170320/model/DrInfo.cpp
   src/v20170320/model/RoGroup.cpp
@@ -514,6 +517,7 @@ set(cdb_src
   src/v20170320/model/DescribeBackupTablesRequest.cpp
   src/v20170320/model/DescribeBinlogsResponse.cpp
   src/v20170320/model/ModifyRoTypeRequest.cpp
+  src/v20170320/model/SwitchDrInstanceToMasterResponse.cpp
   src/v20170320/model/DatabasePrivilege.cpp
   src/v20170320/model/RoGroupAttr.cpp
   src/v20170320/model/ModifyAuditConfigResponse.cpp

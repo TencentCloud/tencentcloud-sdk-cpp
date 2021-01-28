@@ -33,6 +33,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeSeatUserListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeSeatUserListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h>
@@ -66,6 +68,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePSTNActiveSessionListResponse> DescribePSTNActiveSessionListOutcome;
                 typedef std::future<DescribePSTNActiveSessionListOutcome> DescribePSTNActiveSessionListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribePSTNActiveSessionListRequest&, DescribePSTNActiveSessionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePSTNActiveSessionListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSeatUserListResponse> DescribeSeatUserListOutcome;
+                typedef std::future<DescribeSeatUserListOutcome> DescribeSeatUserListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeSeatUserListRequest&, DescribeSeatUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSeatUserListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTelCallInfoResponse> DescribeTelCallInfoOutcome;
                 typedef std::future<DescribeTelCallInfoOutcome> DescribeTelCallInfoOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelCallInfoRequest&, DescribeTelCallInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelCallInfoAsyncHandler;
@@ -119,6 +124,15 @@ namespace TencentCloud
                 DescribePSTNActiveSessionListOutcome DescribePSTNActiveSessionList(const Model::DescribePSTNActiveSessionListRequest &request);
                 void DescribePSTNActiveSessionListAsync(const Model::DescribePSTNActiveSessionListRequest& request, const DescribePSTNActiveSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePSTNActiveSessionListOutcomeCallable DescribePSTNActiveSessionListCallable(const Model::DescribePSTNActiveSessionListRequest& request);
+
+                /**
+                 *获取坐席用户列表
+                 * @param req DescribeSeatUserListRequest
+                 * @return DescribeSeatUserListOutcome
+                 */
+                DescribeSeatUserListOutcome DescribeSeatUserList(const Model::DescribeSeatUserListRequest &request);
+                void DescribeSeatUserListAsync(const Model::DescribeSeatUserListRequest& request, const DescribeSeatUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSeatUserListOutcomeCallable DescribeSeatUserListCallable(const Model::DescribeSeatUserListRequest& request);
 
                 /**
                  *按实例获取电话消耗统计

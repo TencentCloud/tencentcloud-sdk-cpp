@@ -28,7 +28,9 @@ AccessPoint::AccessPoint() :
     m_locationHasBeenSet(false),
     m_lineOperatorHasBeenSet(false),
     m_regionIdHasBeenSet(false),
-    m_availablePortTypeHasBeenSet(false)
+    m_availablePortTypeHasBeenSet(false),
+    m_coordinateHasBeenSet(false),
+    m_cityHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,33 @@ CoreInternalOutcome AccessPoint::Deserialize(const Value &value)
         m_availablePortTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Coordinate") && !value["Coordinate"].IsNull())
+    {
+        if (!value["Coordinate"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AccessPoint.Coordinate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_coordinate.Deserialize(value["Coordinate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_coordinateHasBeenSet = true;
+    }
+
+    if (value.HasMember("City") && !value["City"].IsNull())
+    {
+        if (!value["City"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AccessPoint.City` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_city = string(value["City"].GetString());
+        m_cityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +213,23 @@ void AccessPoint::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_coordinateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Coordinate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_coordinate.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "City";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_city.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +345,37 @@ void AccessPoint::SetAvailablePortType(const vector<string>& _availablePortType)
 bool AccessPoint::AvailablePortTypeHasBeenSet() const
 {
     return m_availablePortTypeHasBeenSet;
+}
+
+Coordinate AccessPoint::GetCoordinate() const
+{
+    return m_coordinate;
+}
+
+void AccessPoint::SetCoordinate(const Coordinate& _coordinate)
+{
+    m_coordinate = _coordinate;
+    m_coordinateHasBeenSet = true;
+}
+
+bool AccessPoint::CoordinateHasBeenSet() const
+{
+    return m_coordinateHasBeenSet;
+}
+
+string AccessPoint::GetCity() const
+{
+    return m_city;
+}
+
+void AccessPoint::SetCity(const string& _city)
+{
+    m_city = _city;
+    m_cityHasBeenSet = true;
+}
+
+bool AccessPoint::CityHasBeenSet() const
+{
+    return m_cityHasBeenSet;
 }
 

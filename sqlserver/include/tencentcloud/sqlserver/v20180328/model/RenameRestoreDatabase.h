@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 用于RestoreInstance，RollbackInstance，CreateMigration 等接口；对恢复的库进行重命名，且支持选择要恢复的库。
+                * 用于RestoreInstance，RollbackInstance，CreateMigration、CloneDB 等接口；对恢复的库进行重命名，且支持选择要恢复的库。
                 */
                 class RenameRestoreDatabase : public AbstractModel
                 {
@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool OldNameHasBeenSet() const;
 
                     /**
-                     * 获取库的新名字，如果不填则按照系统默认方式命名恢复的库。在用于离线迁移任务时，不填则按照OldName命名，OldName和NewName不能同时不填。
-                     * @return NewName 库的新名字，如果不填则按照系统默认方式命名恢复的库。在用于离线迁移任务时，不填则按照OldName命名，OldName和NewName不能同时不填。
+                     * 获取库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复
+                     * @return NewName 库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复
                      */
                     std::string GetNewName() const;
 
                     /**
-                     * 设置库的新名字，如果不填则按照系统默认方式命名恢复的库。在用于离线迁移任务时，不填则按照OldName命名，OldName和NewName不能同时不填。
-                     * @param NewName 库的新名字，如果不填则按照系统默认方式命名恢复的库。在用于离线迁移任务时，不填则按照OldName命名，OldName和NewName不能同时不填。
+                     * 设置库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复
+                     * @param NewName 库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复
                      */
                     void SetNewName(const std::string& _newName);
 
@@ -96,7 +96,7 @@ namespace TencentCloud
                     bool m_oldNameHasBeenSet;
 
                     /**
-                     * 库的新名字，如果不填则按照系统默认方式命名恢复的库。在用于离线迁移任务时，不填则按照OldName命名，OldName和NewName不能同时不填。
+                     * 库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复
                      */
                     std::string m_newName;
                     bool m_newNameHasBeenSet;

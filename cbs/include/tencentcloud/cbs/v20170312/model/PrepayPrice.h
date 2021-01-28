@@ -48,13 +48,17 @@ namespace TencentCloud
 
                     /**
                      * 获取预付费云盘或快照预支费用的原价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalPrice 预付费云盘或快照预支费用的原价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 设置预付费云盘或快照预支费用的原价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param OriginalPrice 预付费云盘或快照预支费用的原价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOriginalPrice(const double& _originalPrice);
 
@@ -66,13 +70,17 @@ namespace TencentCloud
 
                     /**
                      * 获取预付费云盘或快照预支费用的折扣价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountPrice 预付费云盘或快照预支费用的折扣价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置预付费云盘或快照预支费用的折扣价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param DiscountPrice 预付费云盘或快照预支费用的折扣价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiscountPrice(const double& _discountPrice);
 
@@ -84,13 +92,17 @@ namespace TencentCloud
 
                     /**
                      * 获取高精度预付费云盘或快照预支费用的原价，单位：元
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalPriceHigh 高精度预付费云盘或快照预支费用的原价，单位：元
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOriginalPriceHigh() const;
 
                     /**
                      * 设置高精度预付费云盘或快照预支费用的原价，单位：元
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param OriginalPriceHigh 高精度预付费云盘或快照预支费用的原价，单位：元
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOriginalPriceHigh(const std::string& _originalPriceHigh);
 
@@ -102,13 +114,17 @@ namespace TencentCloud
 
                     /**
                      * 获取高精度预付费云盘或快照预支费用的折扣价，单位：元
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountPriceHigh 高精度预付费云盘或快照预支费用的折扣价，单位：元
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDiscountPriceHigh() const;
 
                     /**
                      * 设置高精度预付费云盘或快照预支费用的折扣价，单位：元
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param DiscountPriceHigh 高精度预付费云盘或快照预支费用的折扣价，单位：元
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiscountPriceHigh(const std::string& _discountPriceHigh);
 
@@ -124,7 +140,7 @@ namespace TencentCloud
                      * @return UnitPrice 后付费云盘原单价，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetUnitPrice() const;
+                    double GetUnitPrice() const;
 
                     /**
                      * 设置后付费云盘原单价，单位：元。
@@ -132,7 +148,7 @@ namespace TencentCloud
                      * @param UnitPrice 后付费云盘原单价，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetUnitPrice(const std::string& _unitPrice);
+                    void SetUnitPrice(const double& _unitPrice);
 
                     /**
                      * 判断参数 UnitPrice 是否已赋值
@@ -168,7 +184,7 @@ namespace TencentCloud
                      * @return UnitPriceDiscount 后付费云盘折扣单价，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetUnitPriceDiscount() const;
+                    double GetUnitPriceDiscount() const;
 
                     /**
                      * 设置后付费云盘折扣单价，单位：元。
@@ -176,7 +192,7 @@ namespace TencentCloud
                      * @param UnitPriceDiscount 后付费云盘折扣单价，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetUnitPriceDiscount(const std::string& _unitPriceDiscount);
+                    void SetUnitPriceDiscount(const double& _unitPriceDiscount);
 
                     /**
                      * 判断参数 UnitPriceDiscount 是否已赋值
@@ -232,24 +248,28 @@ namespace TencentCloud
 
                     /**
                      * 预付费云盘或快照预支费用的原价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
                      * 预付费云盘或快照预支费用的折扣价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;
 
                     /**
                      * 高精度预付费云盘或快照预支费用的原价，单位：元
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalPriceHigh;
                     bool m_originalPriceHighHasBeenSet;
 
                     /**
                      * 高精度预付费云盘或快照预支费用的折扣价，单位：元
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_discountPriceHigh;
                     bool m_discountPriceHighHasBeenSet;
@@ -258,7 +278,7 @@ namespace TencentCloud
                      * 后付费云盘原单价，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_unitPrice;
+                    double m_unitPrice;
                     bool m_unitPriceHasBeenSet;
 
                     /**
@@ -272,7 +292,7 @@ namespace TencentCloud
                      * 后付费云盘折扣单价，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_unitPriceDiscount;
+                    double m_unitPriceDiscount;
                     bool m_unitPriceDiscountHasBeenSet;
 
                     /**

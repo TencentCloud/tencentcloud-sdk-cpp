@@ -29,7 +29,9 @@ DescribeTelCdrRequest::DescribeTelCdrRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_sdkAppIdHasBeenSet(false)
+    m_sdkAppIdHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
+    m_pageNumberHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,22 @@ string DescribeTelCdrRequest::ToJsonString() const
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sdkAppId, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_pageNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
     }
 
 
@@ -190,6 +208,38 @@ void DescribeTelCdrRequest::SetSdkAppId(const int64_t& _sdkAppId)
 bool DescribeTelCdrRequest::SdkAppIdHasBeenSet() const
 {
     return m_sdkAppIdHasBeenSet;
+}
+
+int64_t DescribeTelCdrRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeTelCdrRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeTelCdrRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
+
+int64_t DescribeTelCdrRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void DescribeTelCdrRequest::SetPageNumber(const int64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool DescribeTelCdrRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
 }
 
 

@@ -20,49 +20,57 @@ set(ccc_public_header
 
 set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListRequest.h
-  include/tencentcloud/ccc/v20200210/model/DescribeTelCallInfoResponse.h
-  include/tencentcloud/ccc/v20200210/model/SeatUserInfo.h
-  include/tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h
+  include/tencentcloud/ccc/v20200210/model/IVRKeyPressedElement.h
+  include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h
+  include/tencentcloud/ccc/v20200210/model/CreateStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeIMCdrsResponse.h
-  include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h
-  include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h
-  include/tencentcloud/ccc/v20200210/model/MessageBody.h
-  include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h
-  include/tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h
-  include/tencentcloud/ccc/v20200210/model/CreateStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/TelCdrInfo.h
-  include/tencentcloud/ccc/v20200210/model/PSTNSessionInfo.h
-  include/tencentcloud/ccc/v20200210/model/CreateStaffRequest.h
+  include/tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h
-  include/tencentcloud/ccc/v20200210/model/Message.h
   include/tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListResponse.h
   include/tencentcloud/ccc/v20200210/model/IMCdrInfo.h
+  include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h
+  include/tencentcloud/ccc/v20200210/model/ServeParticipant.h
+  include/tencentcloud/ccc/v20200210/model/DescribeSeatUserListResponse.h
+  include/tencentcloud/ccc/v20200210/model/DescribeSeatUserListRequest.h
+  include/tencentcloud/ccc/v20200210/model/DescribeTelCallInfoResponse.h
+  include/tencentcloud/ccc/v20200210/model/CreateStaffRequest.h
+  include/tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h
+  include/tencentcloud/ccc/v20200210/model/MessageBody.h
+  include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h
+  include/tencentcloud/ccc/v20200210/model/SeatUserInfo.h
+  include/tencentcloud/ccc/v20200210/model/PSTNSessionInfo.h
+  include/tencentcloud/ccc/v20200210/model/Message.h
   )
 
 set(ccc_src
   src/v20200210/CccClient.cpp
   src/v20200210/model/DescribePSTNActiveSessionListRequest.cpp
-  src/v20200210/model/DescribeTelCallInfoResponse.cpp
-  src/v20200210/model/SeatUserInfo.cpp
-  src/v20200210/model/DescribeTelCdrRequest.cpp
+  src/v20200210/model/IVRKeyPressedElement.cpp
+  src/v20200210/model/CreateSDKLoginTokenResponse.cpp
+  src/v20200210/model/CreateStaffResponse.cpp
   src/v20200210/model/DescribeTelCdrResponse.cpp
   src/v20200210/model/DescribeIMCdrsResponse.cpp
-  src/v20200210/model/DescribeChatMessagesRequest.cpp
-  src/v20200210/model/CreateSDKLoginTokenResponse.cpp
   src/v20200210/model/DescribeIMCdrsRequest.cpp
-  src/v20200210/model/MessageBody.cpp
-  src/v20200210/model/CreateSDKLoginTokenRequest.cpp
-  src/v20200210/model/DescribeTelCallInfoRequest.cpp
-  src/v20200210/model/CreateStaffResponse.cpp
   src/v20200210/model/TelCdrInfo.cpp
-  src/v20200210/model/PSTNSessionInfo.cpp
-  src/v20200210/model/CreateStaffRequest.cpp
+  src/v20200210/model/DescribeTelCallInfoRequest.cpp
   src/v20200210/model/DescribeChatMessagesResponse.cpp
-  src/v20200210/model/Message.cpp
   src/v20200210/model/DescribePSTNActiveSessionListResponse.cpp
   src/v20200210/model/IMCdrInfo.cpp
+  src/v20200210/model/DescribeChatMessagesRequest.cpp
+  src/v20200210/model/ServeParticipant.cpp
+  src/v20200210/model/DescribeSeatUserListResponse.cpp
+  src/v20200210/model/DescribeSeatUserListRequest.cpp
+  src/v20200210/model/DescribeTelCallInfoResponse.cpp
+  src/v20200210/model/CreateStaffRequest.cpp
+  src/v20200210/model/DescribeTelCdrRequest.cpp
+  src/v20200210/model/MessageBody.cpp
+  src/v20200210/model/CreateSDKLoginTokenRequest.cpp
+  src/v20200210/model/SeatUserInfo.cpp
+  src/v20200210/model/PSTNSessionInfo.cpp
+  src/v20200210/model/Message.cpp
   )
 
 set(ccc_include

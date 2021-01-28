@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/sqlserver/v20180328/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/AssociateSecurityGroupsResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/CloneDBRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/CloneDBResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/CompleteExpansionRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/CompleteExpansionResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/CompleteMigrationRequest.h>
@@ -186,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::CloneDBResponse> CloneDBOutcome;
+                typedef std::future<CloneDBOutcome> CloneDBOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::CloneDBRequest&, CloneDBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneDBAsyncHandler;
                 typedef Outcome<Error, Model::CompleteExpansionResponse> CompleteExpansionOutcome;
                 typedef std::future<CompleteExpansionOutcome> CompleteExpansionOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::CompleteExpansionRequest&, CompleteExpansionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompleteExpansionAsyncHandler;
@@ -413,6 +418,15 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
                 void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
+
+                /**
+                 *本接口（CloneDB）用于克隆数据库，只支持克隆到本实例，克隆时必须指定新库名称。
+                 * @param req CloneDBRequest
+                 * @return CloneDBOutcome
+                 */
+                CloneDBOutcome CloneDB(const Model::CloneDBRequest &request);
+                void CloneDBAsync(const Model::CloneDBRequest& request, const CloneDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloneDBOutcomeCallable CloneDBCallable(const Model::CloneDBRequest& request);
 
                 /**
                  *本接口（CompleteExpansion）在实例发起扩容后，实例状态处于“升级待切换”时，可立即完成实例升级切换操作，无需等待可维护时间窗。本接口需要在实例低峰时调用，在完全切换成功前，存在部分库不可访问的风险。

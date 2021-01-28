@@ -241,6 +241,8 @@
 #include <tencentcloud/cdb/v20170320/model/StopRollbackResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveRequest.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveResponse.h>
+#include <tencentcloud/cdb/v20170320/model/SwitchDrInstanceToMasterRequest.h>
+#include <tencentcloud/cdb/v20170320/model/SwitchDrInstanceToMasterResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeDBInstanceRequest.h>
@@ -590,6 +592,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SwitchDBInstanceMasterSlaveResponse> SwitchDBInstanceMasterSlaveOutcome;
                 typedef std::future<SwitchDBInstanceMasterSlaveOutcome> SwitchDBInstanceMasterSlaveOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::SwitchDBInstanceMasterSlaveRequest&, SwitchDBInstanceMasterSlaveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDBInstanceMasterSlaveAsyncHandler;
+                typedef Outcome<Error, Model::SwitchDrInstanceToMasterResponse> SwitchDrInstanceToMasterOutcome;
+                typedef std::future<SwitchDrInstanceToMasterOutcome> SwitchDrInstanceToMasterOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::SwitchDrInstanceToMasterRequest&, SwitchDrInstanceToMasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDrInstanceToMasterAsyncHandler;
                 typedef Outcome<Error, Model::SwitchForUpgradeResponse> SwitchForUpgradeOutcome;
                 typedef std::future<SwitchForUpgradeOutcome> SwitchForUpgradeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::SwitchForUpgradeRequest&, SwitchForUpgradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchForUpgradeAsyncHandler;
@@ -1622,6 +1627,15 @@ namespace TencentCloud
                 SwitchDBInstanceMasterSlaveOutcome SwitchDBInstanceMasterSlave(const Model::SwitchDBInstanceMasterSlaveRequest &request);
                 void SwitchDBInstanceMasterSlaveAsync(const Model::SwitchDBInstanceMasterSlaveRequest& request, const SwitchDBInstanceMasterSlaveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchDBInstanceMasterSlaveOutcomeCallable SwitchDBInstanceMasterSlaveCallable(const Model::SwitchDBInstanceMasterSlaveRequest& request);
+
+                /**
+                 *本接口(SwitchDrInstanceToMaster)用于将云数据库灾备实例切换为主实例，注意请求必须发到灾备实例所在的地域。
+                 * @param req SwitchDrInstanceToMasterRequest
+                 * @return SwitchDrInstanceToMasterOutcome
+                 */
+                SwitchDrInstanceToMasterOutcome SwitchDrInstanceToMaster(const Model::SwitchDrInstanceToMasterRequest &request);
+                void SwitchDrInstanceToMasterAsync(const Model::SwitchDrInstanceToMasterRequest& request, const SwitchDrInstanceToMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchDrInstanceToMasterOutcomeCallable SwitchDrInstanceToMasterCallable(const Model::SwitchDrInstanceToMasterRequest& request);
 
                 /**
                  *本接口(SwitchForUpgrade)用于切换访问新实例，针对主升级中的实例处于待切换状态时，用户可主动发起该流程。

@@ -4727,6 +4727,49 @@ CdbClient::SwitchDBInstanceMasterSlaveOutcomeCallable CdbClient::SwitchDBInstanc
     return task->get_future();
 }
 
+CdbClient::SwitchDrInstanceToMasterOutcome CdbClient::SwitchDrInstanceToMaster(const SwitchDrInstanceToMasterRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchDrInstanceToMaster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchDrInstanceToMasterResponse rsp = SwitchDrInstanceToMasterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchDrInstanceToMasterOutcome(rsp);
+        else
+            return SwitchDrInstanceToMasterOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchDrInstanceToMasterOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::SwitchDrInstanceToMasterAsync(const SwitchDrInstanceToMasterRequest& request, const SwitchDrInstanceToMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchDrInstanceToMaster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::SwitchDrInstanceToMasterOutcomeCallable CdbClient::SwitchDrInstanceToMasterCallable(const SwitchDrInstanceToMasterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchDrInstanceToMasterOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchDrInstanceToMaster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::SwitchForUpgradeOutcome CdbClient::SwitchForUpgrade(const SwitchForUpgradeRequest &request)
 {
     auto outcome = MakeRequest(request, "SwitchForUpgrade");

@@ -23,7 +23,7 @@ set(dc_public_header_model
   include/tencentcloud/dc/v20180410/model/BgpPeer.h
   include/tencentcloud/dc/v20180410/model/DirectConnectTunnelRoute.h
   include/tencentcloud/dc/v20180410/model/RejectDirectConnectTunnelRequest.h
-  include/tencentcloud/dc/v20180410/model/ModifyDirectConnectAttributeRequest.h
+  include/tencentcloud/dc/v20180410/model/Coordinate.h
   include/tencentcloud/dc/v20180410/model/CreateDirectConnectResponse.h
   include/tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelExtraRequest.h
   include/tencentcloud/dc/v20180410/model/DescribePublicDirectConnectTunnelRoutesRequest.h
@@ -49,6 +49,7 @@ set(dc_public_header_model
   include/tencentcloud/dc/v20180410/model/DescribeAccessPointsRequest.h
   include/tencentcloud/dc/v20180410/model/AcceptDirectConnectTunnelResponse.h
   include/tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelsRequest.h
+  include/tencentcloud/dc/v20180410/model/ModifyDirectConnectAttributeRequest.h
   include/tencentcloud/dc/v20180410/model/DescribeInternetAddressResponse.h
   include/tencentcloud/dc/v20180410/model/ModifyDirectConnectTunnelAttributeRequest.h
   include/tencentcloud/dc/v20180410/model/Filter.h
@@ -83,7 +84,7 @@ set(dc_src
   src/v20180410/model/BgpPeer.cpp
   src/v20180410/model/DirectConnectTunnelRoute.cpp
   src/v20180410/model/RejectDirectConnectTunnelRequest.cpp
-  src/v20180410/model/ModifyDirectConnectAttributeRequest.cpp
+  src/v20180410/model/Coordinate.cpp
   src/v20180410/model/CreateDirectConnectResponse.cpp
   src/v20180410/model/DescribeDirectConnectTunnelExtraRequest.cpp
   src/v20180410/model/DescribePublicDirectConnectTunnelRoutesRequest.cpp
@@ -109,6 +110,7 @@ set(dc_src
   src/v20180410/model/DescribeAccessPointsRequest.cpp
   src/v20180410/model/AcceptDirectConnectTunnelResponse.cpp
   src/v20180410/model/DescribeDirectConnectTunnelsRequest.cpp
+  src/v20180410/model/ModifyDirectConnectAttributeRequest.cpp
   src/v20180410/model/DescribeInternetAddressResponse.cpp
   src/v20180410/model/ModifyDirectConnectTunnelAttributeRequest.cpp
   src/v20180410/model/Filter.cpp

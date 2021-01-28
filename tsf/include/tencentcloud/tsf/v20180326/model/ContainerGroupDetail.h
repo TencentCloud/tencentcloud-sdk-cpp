@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/ProtocolPort.h>
 #include <tencentcloud/tsf/v20180326/model/Env.h>
+#include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
 
 
 namespace TencentCloud
@@ -840,6 +841,28 @@ namespace TencentCloud
                      */
                     bool MaxUnavailableHasBeenSet() const;
 
+                    /**
+                     * 获取部署组健康检查设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthCheckSettings 部署组健康检查设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HealthCheckSettings GetHealthCheckSettings() const;
+
+                    /**
+                     * 设置部署组健康检查设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HealthCheckSettings 部署组健康检查设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings);
+
+                    /**
+                     * 判断参数 HealthCheckSettings 是否已赋值
+                     * @return HealthCheckSettings 是否已赋值
+                     */
+                    bool HealthCheckSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1093,6 +1116,13 @@ namespace TencentCloud
                      */
                     std::string m_maxUnavailable;
                     bool m_maxUnavailableHasBeenSet;
+
+                    /**
+                     * 部署组健康检查设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HealthCheckSettings m_healthCheckSettings;
+                    bool m_healthCheckSettingsHasBeenSet;
 
                 };
             }
