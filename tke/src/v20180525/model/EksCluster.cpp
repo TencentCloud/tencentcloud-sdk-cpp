@@ -33,7 +33,8 @@ EksCluster::EksCluster() :
     m_serviceSubnetIdHasBeenSet(false),
     m_dnsServersHasBeenSet(false),
     m_needDeleteCbsHasBeenSet(false),
-    m_enableVpcCoreDNSHasBeenSet(false)
+    m_enableVpcCoreDNSHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,26 @@ CoreInternalOutcome EksCluster::Deserialize(const Value &value)
         m_enableVpcCoreDNSHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSpecification") && !value["TagSpecification"].IsNull())
+    {
+        if (!value["TagSpecification"].IsArray())
+            return CoreInternalOutcome(Error("response `EksCluster.TagSpecification` is not array type"));
+
+        const Value &tmpValue = value["TagSpecification"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagSpecification item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSpecification.push_back(item);
+        }
+        m_tagSpecificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -288,6 +309,21 @@ void EksCluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "EnableVpcCoreDNS";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableVpcCoreDNS, allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSpecification.begin(); itr != m_tagSpecification.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -483,5 +519,21 @@ void EksCluster::SetEnableVpcCoreDNS(const bool& _enableVpcCoreDNS)
 bool EksCluster::EnableVpcCoreDNSHasBeenSet() const
 {
     return m_enableVpcCoreDNSHasBeenSet;
+}
+
+vector<TagSpecification> EksCluster::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void EksCluster::SetTagSpecification(const vector<TagSpecification>& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool EksCluster::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 

@@ -55,6 +55,18 @@ namespace TencentCloud
                      */
                     bool TextDetectionsHasBeenSet() const;
 
+                    /**
+                     * 获取图片横屏的角度(90度或270度)
+                     * @return Angle 图片横屏的角度(90度或270度)
+                     */
+                    double GetAngle() const;
+
+                    /**
+                     * 判断参数 Angle 是否已赋值
+                     * @return Angle 是否已赋值
+                     */
+                    bool AngleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +74,12 @@ namespace TencentCloud
                      */
                     std::vector<TextArithmetic> m_textDetections;
                     bool m_textDetectionsHasBeenSet;
+
+                    /**
+                     * 图片横屏的角度(90度或270度)
+                     */
+                    double m_angle;
+                    bool m_angleHasBeenSet;
 
                 };
             }

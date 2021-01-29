@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 ArithmeticOCRResponse::ArithmeticOCRResponse() :
-    m_textDetectionsHasBeenSet(false)
+    m_textDetectionsHasBeenSet(false),
+    m_angleHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome ArithmeticOCRResponse::Deserialize(const string &payload)
         m_textDetectionsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
+    {
+        if (!rsp["Angle"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angle = rsp["Angle"].GetDouble();
+        m_angleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<TextArithmetic> ArithmeticOCRResponse::GetTextDetections() const
 bool ArithmeticOCRResponse::TextDetectionsHasBeenSet() const
 {
     return m_textDetectionsHasBeenSet;
+}
+
+double ArithmeticOCRResponse::GetAngle() const
+{
+    return m_angle;
+}
+
+bool ArithmeticOCRResponse::AngleHasBeenSet() const
+{
+    return m_angleHasBeenSet;
 }
 
 

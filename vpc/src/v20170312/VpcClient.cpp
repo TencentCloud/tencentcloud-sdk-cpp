@@ -1760,6 +1760,49 @@ VpcClient::CreateNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable Vp
     return task->get_future();
 }
 
+VpcClient::CreateNatGatewaySourceIpTranslationNatRuleOutcome VpcClient::CreateNatGatewaySourceIpTranslationNatRule(const CreateNatGatewaySourceIpTranslationNatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNatGatewaySourceIpTranslationNatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNatGatewaySourceIpTranslationNatRuleResponse rsp = CreateNatGatewaySourceIpTranslationNatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNatGatewaySourceIpTranslationNatRuleOutcome(rsp);
+        else
+            return CreateNatGatewaySourceIpTranslationNatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNatGatewaySourceIpTranslationNatRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateNatGatewaySourceIpTranslationNatRuleAsync(const CreateNatGatewaySourceIpTranslationNatRuleRequest& request, const CreateNatGatewaySourceIpTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNatGatewaySourceIpTranslationNatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateNatGatewaySourceIpTranslationNatRuleOutcomeCallable VpcClient::CreateNatGatewaySourceIpTranslationNatRuleCallable(const CreateNatGatewaySourceIpTranslationNatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNatGatewaySourceIpTranslationNatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNatGatewaySourceIpTranslationNatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateNetDetectOutcome VpcClient::CreateNetDetect(const CreateNetDetectRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNetDetect");
@@ -3000,6 +3043,49 @@ VpcClient::DeleteNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable Vp
         [this, request]()
         {
             return this->DeleteNatGatewayDestinationIpPortTranslationNatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteNatGatewaySourceIpTranslationNatRuleOutcome VpcClient::DeleteNatGatewaySourceIpTranslationNatRule(const DeleteNatGatewaySourceIpTranslationNatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNatGatewaySourceIpTranslationNatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNatGatewaySourceIpTranslationNatRuleResponse rsp = DeleteNatGatewaySourceIpTranslationNatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNatGatewaySourceIpTranslationNatRuleOutcome(rsp);
+        else
+            return DeleteNatGatewaySourceIpTranslationNatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNatGatewaySourceIpTranslationNatRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteNatGatewaySourceIpTranslationNatRuleAsync(const DeleteNatGatewaySourceIpTranslationNatRuleRequest& request, const DeleteNatGatewaySourceIpTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNatGatewaySourceIpTranslationNatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteNatGatewaySourceIpTranslationNatRuleOutcomeCallable VpcClient::DeleteNatGatewaySourceIpTranslationNatRuleCallable(const DeleteNatGatewaySourceIpTranslationNatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNatGatewaySourceIpTranslationNatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNatGatewaySourceIpTranslationNatRule(request);
         }
     );
 
@@ -4935,6 +5021,49 @@ VpcClient::DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcomeCallable
         [this, request]()
         {
             return this->DescribeNatGatewayDestinationIpPortTranslationNatRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeNatGatewaySourceIpTranslationNatRulesOutcome VpcClient::DescribeNatGatewaySourceIpTranslationNatRules(const DescribeNatGatewaySourceIpTranslationNatRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatGatewaySourceIpTranslationNatRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatGatewaySourceIpTranslationNatRulesResponse rsp = DescribeNatGatewaySourceIpTranslationNatRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatGatewaySourceIpTranslationNatRulesOutcome(rsp);
+        else
+            return DescribeNatGatewaySourceIpTranslationNatRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatGatewaySourceIpTranslationNatRulesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeNatGatewaySourceIpTranslationNatRulesAsync(const DescribeNatGatewaySourceIpTranslationNatRulesRequest& request, const DescribeNatGatewaySourceIpTranslationNatRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNatGatewaySourceIpTranslationNatRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeNatGatewaySourceIpTranslationNatRulesOutcomeCallable VpcClient::DescribeNatGatewaySourceIpTranslationNatRulesCallable(const DescribeNatGatewaySourceIpTranslationNatRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNatGatewaySourceIpTranslationNatRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNatGatewaySourceIpTranslationNatRules(request);
         }
     );
 
@@ -8124,6 +8253,49 @@ VpcClient::ModifyNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable Vp
     return task->get_future();
 }
 
+VpcClient::ModifyNatGatewaySourceIpTranslationNatRuleOutcome VpcClient::ModifyNatGatewaySourceIpTranslationNatRule(const ModifyNatGatewaySourceIpTranslationNatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNatGatewaySourceIpTranslationNatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNatGatewaySourceIpTranslationNatRuleResponse rsp = ModifyNatGatewaySourceIpTranslationNatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNatGatewaySourceIpTranslationNatRuleOutcome(rsp);
+        else
+            return ModifyNatGatewaySourceIpTranslationNatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNatGatewaySourceIpTranslationNatRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyNatGatewaySourceIpTranslationNatRuleAsync(const ModifyNatGatewaySourceIpTranslationNatRuleRequest& request, const ModifyNatGatewaySourceIpTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNatGatewaySourceIpTranslationNatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyNatGatewaySourceIpTranslationNatRuleOutcomeCallable VpcClient::ModifyNatGatewaySourceIpTranslationNatRuleCallable(const ModifyNatGatewaySourceIpTranslationNatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNatGatewaySourceIpTranslationNatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNatGatewaySourceIpTranslationNatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyNetDetectOutcome VpcClient::ModifyNetDetect(const ModifyNetDetectRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyNetDetect");
@@ -8762,6 +8934,49 @@ VpcClient::ModifyVpnGatewayCcnRoutesOutcomeCallable VpcClient::ModifyVpnGatewayC
         [this, request]()
         {
             return this->ModifyVpnGatewayCcnRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::NotifyRoutesOutcome VpcClient::NotifyRoutes(const NotifyRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "NotifyRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        NotifyRoutesResponse rsp = NotifyRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return NotifyRoutesOutcome(rsp);
+        else
+            return NotifyRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return NotifyRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::NotifyRoutesAsync(const NotifyRoutesRequest& request, const NotifyRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->NotifyRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::NotifyRoutesOutcomeCallable VpcClient::NotifyRoutesCallable(const NotifyRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<NotifyRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->NotifyRoutes(request);
         }
     );
 
@@ -9708,6 +9923,49 @@ VpcClient::UnassignPrivateIpAddressesOutcomeCallable VpcClient::UnassignPrivateI
         [this, request]()
         {
             return this->UnassignPrivateIpAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::WithdrawNotifyRoutesOutcome VpcClient::WithdrawNotifyRoutes(const WithdrawNotifyRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "WithdrawNotifyRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        WithdrawNotifyRoutesResponse rsp = WithdrawNotifyRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return WithdrawNotifyRoutesOutcome(rsp);
+        else
+            return WithdrawNotifyRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return WithdrawNotifyRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::WithdrawNotifyRoutesAsync(const WithdrawNotifyRoutesRequest& request, const WithdrawNotifyRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->WithdrawNotifyRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::WithdrawNotifyRoutesOutcomeCallable VpcClient::WithdrawNotifyRoutesCallable(const WithdrawNotifyRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<WithdrawNotifyRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->WithdrawNotifyRoutes(request);
         }
     );
 

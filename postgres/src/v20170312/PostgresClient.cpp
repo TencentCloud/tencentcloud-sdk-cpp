@@ -40,6 +40,49 @@ PostgresClient::PostgresClient(const Credential &credential, const string &regio
 }
 
 
+PostgresClient::AddDBInstanceToReadOnlyGroupOutcome PostgresClient::AddDBInstanceToReadOnlyGroup(const AddDBInstanceToReadOnlyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddDBInstanceToReadOnlyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddDBInstanceToReadOnlyGroupResponse rsp = AddDBInstanceToReadOnlyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddDBInstanceToReadOnlyGroupOutcome(rsp);
+        else
+            return AddDBInstanceToReadOnlyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return AddDBInstanceToReadOnlyGroupOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::AddDBInstanceToReadOnlyGroupAsync(const AddDBInstanceToReadOnlyGroupRequest& request, const AddDBInstanceToReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddDBInstanceToReadOnlyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::AddDBInstanceToReadOnlyGroupOutcomeCallable PostgresClient::AddDBInstanceToReadOnlyGroupCallable(const AddDBInstanceToReadOnlyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddDBInstanceToReadOnlyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->AddDBInstanceToReadOnlyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CloseDBExtranetAccessOutcome PostgresClient::CloseDBExtranetAccess(const CloseDBExtranetAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseDBExtranetAccess");
@@ -169,6 +212,92 @@ PostgresClient::CreateDBInstancesOutcomeCallable PostgresClient::CreateDBInstanc
     return task->get_future();
 }
 
+PostgresClient::CreateReadOnlyDBInstanceOutcome PostgresClient::CreateReadOnlyDBInstance(const CreateReadOnlyDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateReadOnlyDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateReadOnlyDBInstanceResponse rsp = CreateReadOnlyDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateReadOnlyDBInstanceOutcome(rsp);
+        else
+            return CreateReadOnlyDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateReadOnlyDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateReadOnlyDBInstanceAsync(const CreateReadOnlyDBInstanceRequest& request, const CreateReadOnlyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateReadOnlyDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CreateReadOnlyDBInstanceOutcomeCallable PostgresClient::CreateReadOnlyDBInstanceCallable(const CreateReadOnlyDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateReadOnlyDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateReadOnlyDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::CreateReadOnlyGroupOutcome PostgresClient::CreateReadOnlyGroup(const CreateReadOnlyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateReadOnlyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateReadOnlyGroupResponse rsp = CreateReadOnlyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateReadOnlyGroupOutcome(rsp);
+        else
+            return CreateReadOnlyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateReadOnlyGroupOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateReadOnlyGroupAsync(const CreateReadOnlyGroupRequest& request, const CreateReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateReadOnlyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CreateReadOnlyGroupOutcomeCallable PostgresClient::CreateReadOnlyGroupCallable(const CreateReadOnlyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateReadOnlyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateReadOnlyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CreateServerlessDBInstanceOutcome PostgresClient::CreateServerlessDBInstance(const CreateServerlessDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateServerlessDBInstance");
@@ -205,6 +334,49 @@ PostgresClient::CreateServerlessDBInstanceOutcomeCallable PostgresClient::Create
         [this, request]()
         {
             return this->CreateServerlessDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DeleteReadOnlyGroupOutcome PostgresClient::DeleteReadOnlyGroup(const DeleteReadOnlyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReadOnlyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReadOnlyGroupResponse rsp = DeleteReadOnlyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReadOnlyGroupOutcome(rsp);
+        else
+            return DeleteReadOnlyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReadOnlyGroupOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteReadOnlyGroupAsync(const DeleteReadOnlyGroupRequest& request, const DeleteReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReadOnlyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DeleteReadOnlyGroupOutcomeCallable PostgresClient::DeleteReadOnlyGroupCallable(const DeleteReadOnlyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReadOnlyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReadOnlyGroup(request);
         }
     );
 
@@ -685,6 +857,49 @@ PostgresClient::DescribeProductConfigOutcomeCallable PostgresClient::DescribePro
     return task->get_future();
 }
 
+PostgresClient::DescribeReadOnlyGroupsOutcome PostgresClient::DescribeReadOnlyGroups(const DescribeReadOnlyGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReadOnlyGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReadOnlyGroupsResponse rsp = DescribeReadOnlyGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReadOnlyGroupsOutcome(rsp);
+        else
+            return DescribeReadOnlyGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReadOnlyGroupsOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeReadOnlyGroupsAsync(const DescribeReadOnlyGroupsRequest& request, const DescribeReadOnlyGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReadOnlyGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeReadOnlyGroupsOutcomeCallable PostgresClient::DescribeReadOnlyGroupsCallable(const DescribeReadOnlyGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReadOnlyGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReadOnlyGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeRegionsOutcome PostgresClient::DescribeRegions(const DescribeRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRegions");
@@ -1115,6 +1330,49 @@ PostgresClient::ModifyDBInstanceNameOutcomeCallable PostgresClient::ModifyDBInst
     return task->get_future();
 }
 
+PostgresClient::ModifyDBInstanceReadOnlyGroupOutcome PostgresClient::ModifyDBInstanceReadOnlyGroup(const ModifyDBInstanceReadOnlyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceReadOnlyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceReadOnlyGroupResponse rsp = ModifyDBInstanceReadOnlyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceReadOnlyGroupOutcome(rsp);
+        else
+            return ModifyDBInstanceReadOnlyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceReadOnlyGroupOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDBInstanceReadOnlyGroupAsync(const ModifyDBInstanceReadOnlyGroupRequest& request, const ModifyDBInstanceReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceReadOnlyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyDBInstanceReadOnlyGroupOutcomeCallable PostgresClient::ModifyDBInstanceReadOnlyGroupCallable(const ModifyDBInstanceReadOnlyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceReadOnlyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceReadOnlyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::ModifyDBInstancesProjectOutcome PostgresClient::ModifyDBInstancesProject(const ModifyDBInstancesProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstancesProject");
@@ -1151,6 +1409,49 @@ PostgresClient::ModifyDBInstancesProjectOutcomeCallable PostgresClient::ModifyDB
         [this, request]()
         {
             return this->ModifyDBInstancesProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::ModifyReadOnlyGroupConfigOutcome PostgresClient::ModifyReadOnlyGroupConfig(const ModifyReadOnlyGroupConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyReadOnlyGroupConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyReadOnlyGroupConfigResponse rsp = ModifyReadOnlyGroupConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyReadOnlyGroupConfigOutcome(rsp);
+        else
+            return ModifyReadOnlyGroupConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyReadOnlyGroupConfigOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyReadOnlyGroupConfigAsync(const ModifyReadOnlyGroupConfigRequest& request, const ModifyReadOnlyGroupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyReadOnlyGroupConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyReadOnlyGroupConfigOutcomeCallable PostgresClient::ModifyReadOnlyGroupConfigCallable(const ModifyReadOnlyGroupConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyReadOnlyGroupConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyReadOnlyGroupConfig(request);
         }
     );
 
@@ -1237,6 +1538,92 @@ PostgresClient::OpenServerlessDBExtranetAccessOutcomeCallable PostgresClient::Op
         [this, request]()
         {
             return this->OpenServerlessDBExtranetAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::RebalanceReadOnlyGroupOutcome PostgresClient::RebalanceReadOnlyGroup(const RebalanceReadOnlyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "RebalanceReadOnlyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RebalanceReadOnlyGroupResponse rsp = RebalanceReadOnlyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RebalanceReadOnlyGroupOutcome(rsp);
+        else
+            return RebalanceReadOnlyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return RebalanceReadOnlyGroupOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::RebalanceReadOnlyGroupAsync(const RebalanceReadOnlyGroupRequest& request, const RebalanceReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RebalanceReadOnlyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::RebalanceReadOnlyGroupOutcomeCallable PostgresClient::RebalanceReadOnlyGroupCallable(const RebalanceReadOnlyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RebalanceReadOnlyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->RebalanceReadOnlyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::RemoveDBInstanceFromReadOnlyGroupOutcome PostgresClient::RemoveDBInstanceFromReadOnlyGroup(const RemoveDBInstanceFromReadOnlyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveDBInstanceFromReadOnlyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveDBInstanceFromReadOnlyGroupResponse rsp = RemoveDBInstanceFromReadOnlyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveDBInstanceFromReadOnlyGroupOutcome(rsp);
+        else
+            return RemoveDBInstanceFromReadOnlyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveDBInstanceFromReadOnlyGroupOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::RemoveDBInstanceFromReadOnlyGroupAsync(const RemoveDBInstanceFromReadOnlyGroupRequest& request, const RemoveDBInstanceFromReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveDBInstanceFromReadOnlyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::RemoveDBInstanceFromReadOnlyGroupOutcomeCallable PostgresClient::RemoveDBInstanceFromReadOnlyGroupCallable(const RemoveDBInstanceFromReadOnlyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveDBInstanceFromReadOnlyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveDBInstanceFromReadOnlyGroup(request);
         }
     );
 

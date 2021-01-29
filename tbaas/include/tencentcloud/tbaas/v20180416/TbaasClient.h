@@ -27,6 +27,8 @@
 #include <tencentcloud/tbaas/v20180416/model/ApplyUserCertResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/BlockByNumberHandlerRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/BlockByNumberHandlerResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/CreateChaincodeAndInstallForUserRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/CreateChaincodeAndInstallForUserResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/DeployDynamicContractHandlerRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/DeployDynamicContractHandlerResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/DownloadUserCertRequest.h>
@@ -37,18 +39,32 @@
 #include <tencentcloud/tbaas/v20180416/model/GetBlockListHandlerResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetBlockTransactionListForUserRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetBlockTransactionListForUserResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetChaincodeCompileLogForUserRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetChaincodeCompileLogForUserResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetChaincodeInitializeResultForUserRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetChaincodeInitializeResultForUserResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetChaincodeLogForUserRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetChaincodeLogForUserResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetChannelListForUserRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetChannelListForUserResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetClusterListForUserRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetClusterListForUserResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetClusterSummaryRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetClusterSummaryResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetInvokeTxRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetInvokeTxResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetPeerLogForUserRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetPeerLogForUserResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransByHashHandlerRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransByHashHandlerResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransListHandlerRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransListHandlerResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/InitializeChaincodeForUserRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/InitializeChaincodeForUserResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryRequest.h>
@@ -79,6 +95,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BlockByNumberHandlerResponse> BlockByNumberHandlerOutcome;
                 typedef std::future<BlockByNumberHandlerOutcome> BlockByNumberHandlerOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::BlockByNumberHandlerRequest&, BlockByNumberHandlerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BlockByNumberHandlerAsyncHandler;
+                typedef Outcome<Error, Model::CreateChaincodeAndInstallForUserResponse> CreateChaincodeAndInstallForUserOutcome;
+                typedef std::future<CreateChaincodeAndInstallForUserOutcome> CreateChaincodeAndInstallForUserOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::CreateChaincodeAndInstallForUserRequest&, CreateChaincodeAndInstallForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChaincodeAndInstallForUserAsyncHandler;
                 typedef Outcome<Error, Model::DeployDynamicContractHandlerResponse> DeployDynamicContractHandlerOutcome;
                 typedef std::future<DeployDynamicContractHandlerOutcome> DeployDynamicContractHandlerOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::DeployDynamicContractHandlerRequest&, DeployDynamicContractHandlerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployDynamicContractHandlerAsyncHandler;
@@ -94,6 +113,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetBlockTransactionListForUserResponse> GetBlockTransactionListForUserOutcome;
                 typedef std::future<GetBlockTransactionListForUserOutcome> GetBlockTransactionListForUserOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetBlockTransactionListForUserRequest&, GetBlockTransactionListForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBlockTransactionListForUserAsyncHandler;
+                typedef Outcome<Error, Model::GetChaincodeCompileLogForUserResponse> GetChaincodeCompileLogForUserOutcome;
+                typedef std::future<GetChaincodeCompileLogForUserOutcome> GetChaincodeCompileLogForUserOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetChaincodeCompileLogForUserRequest&, GetChaincodeCompileLogForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetChaincodeCompileLogForUserAsyncHandler;
+                typedef Outcome<Error, Model::GetChaincodeInitializeResultForUserResponse> GetChaincodeInitializeResultForUserOutcome;
+                typedef std::future<GetChaincodeInitializeResultForUserOutcome> GetChaincodeInitializeResultForUserOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetChaincodeInitializeResultForUserRequest&, GetChaincodeInitializeResultForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetChaincodeInitializeResultForUserAsyncHandler;
+                typedef Outcome<Error, Model::GetChaincodeLogForUserResponse> GetChaincodeLogForUserOutcome;
+                typedef std::future<GetChaincodeLogForUserOutcome> GetChaincodeLogForUserOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetChaincodeLogForUserRequest&, GetChaincodeLogForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetChaincodeLogForUserAsyncHandler;
+                typedef Outcome<Error, Model::GetChannelListForUserResponse> GetChannelListForUserOutcome;
+                typedef std::future<GetChannelListForUserOutcome> GetChannelListForUserOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetChannelListForUserRequest&, GetChannelListForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetChannelListForUserAsyncHandler;
+                typedef Outcome<Error, Model::GetClusterListForUserResponse> GetClusterListForUserOutcome;
+                typedef std::future<GetClusterListForUserOutcome> GetClusterListForUserOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetClusterListForUserRequest&, GetClusterListForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterListForUserAsyncHandler;
                 typedef Outcome<Error, Model::GetClusterSummaryResponse> GetClusterSummaryOutcome;
                 typedef std::future<GetClusterSummaryOutcome> GetClusterSummaryOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetClusterSummaryRequest&, GetClusterSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterSummaryAsyncHandler;
@@ -103,6 +137,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetLatesdTransactionListResponse> GetLatesdTransactionListOutcome;
                 typedef std::future<GetLatesdTransactionListOutcome> GetLatesdTransactionListOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetLatesdTransactionListRequest&, GetLatesdTransactionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLatesdTransactionListAsyncHandler;
+                typedef Outcome<Error, Model::GetPeerLogForUserResponse> GetPeerLogForUserOutcome;
+                typedef std::future<GetPeerLogForUserOutcome> GetPeerLogForUserOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetPeerLogForUserRequest&, GetPeerLogForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPeerLogForUserAsyncHandler;
                 typedef Outcome<Error, Model::GetTransByHashHandlerResponse> GetTransByHashHandlerOutcome;
                 typedef std::future<GetTransByHashHandlerOutcome> GetTransByHashHandlerOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetTransByHashHandlerRequest&, GetTransByHashHandlerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTransByHashHandlerAsyncHandler;
@@ -112,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetTransactionDetailForUserResponse> GetTransactionDetailForUserOutcome;
                 typedef std::future<GetTransactionDetailForUserOutcome> GetTransactionDetailForUserOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetTransactionDetailForUserRequest&, GetTransactionDetailForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTransactionDetailForUserAsyncHandler;
+                typedef Outcome<Error, Model::InitializeChaincodeForUserResponse> InitializeChaincodeForUserOutcome;
+                typedef std::future<InitializeChaincodeForUserOutcome> InitializeChaincodeForUserOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::InitializeChaincodeForUserRequest&, InitializeChaincodeForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitializeChaincodeForUserAsyncHandler;
                 typedef Outcome<Error, Model::InvokeResponse> InvokeOutcome;
                 typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::InvokeRequest&, InvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeAsyncHandler;
@@ -147,6 +187,15 @@ namespace TencentCloud
                 BlockByNumberHandlerOutcome BlockByNumberHandler(const Model::BlockByNumberHandlerRequest &request);
                 void BlockByNumberHandlerAsync(const Model::BlockByNumberHandlerRequest& request, const BlockByNumberHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BlockByNumberHandlerOutcomeCallable BlockByNumberHandlerCallable(const Model::BlockByNumberHandlerRequest& request);
+
+                /**
+                 *创建并安装合约
+                 * @param req CreateChaincodeAndInstallForUserRequest
+                 * @return CreateChaincodeAndInstallForUserOutcome
+                 */
+                CreateChaincodeAndInstallForUserOutcome CreateChaincodeAndInstallForUser(const Model::CreateChaincodeAndInstallForUserRequest &request);
+                void CreateChaincodeAndInstallForUserAsync(const Model::CreateChaincodeAndInstallForUserRequest& request, const CreateChaincodeAndInstallForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateChaincodeAndInstallForUserOutcomeCallable CreateChaincodeAndInstallForUserCallable(const Model::CreateChaincodeAndInstallForUserRequest& request);
 
                 /**
                  *动态部署合约
@@ -194,6 +243,51 @@ namespace TencentCloud
                 GetBlockTransactionListForUserOutcomeCallable GetBlockTransactionListForUserCallable(const Model::GetBlockTransactionListForUserRequest& request);
 
                 /**
+                 *获取合约编译日志
+                 * @param req GetChaincodeCompileLogForUserRequest
+                 * @return GetChaincodeCompileLogForUserOutcome
+                 */
+                GetChaincodeCompileLogForUserOutcome GetChaincodeCompileLogForUser(const Model::GetChaincodeCompileLogForUserRequest &request);
+                void GetChaincodeCompileLogForUserAsync(const Model::GetChaincodeCompileLogForUserRequest& request, const GetChaincodeCompileLogForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetChaincodeCompileLogForUserOutcomeCallable GetChaincodeCompileLogForUserCallable(const Model::GetChaincodeCompileLogForUserRequest& request);
+
+                /**
+                 *实例化结果查询
+                 * @param req GetChaincodeInitializeResultForUserRequest
+                 * @return GetChaincodeInitializeResultForUserOutcome
+                 */
+                GetChaincodeInitializeResultForUserOutcome GetChaincodeInitializeResultForUser(const Model::GetChaincodeInitializeResultForUserRequest &request);
+                void GetChaincodeInitializeResultForUserAsync(const Model::GetChaincodeInitializeResultForUserRequest& request, const GetChaincodeInitializeResultForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetChaincodeInitializeResultForUserOutcomeCallable GetChaincodeInitializeResultForUserCallable(const Model::GetChaincodeInitializeResultForUserRequest& request);
+
+                /**
+                 *获取合约容器日志
+                 * @param req GetChaincodeLogForUserRequest
+                 * @return GetChaincodeLogForUserOutcome
+                 */
+                GetChaincodeLogForUserOutcome GetChaincodeLogForUser(const Model::GetChaincodeLogForUserRequest &request);
+                void GetChaincodeLogForUserAsync(const Model::GetChaincodeLogForUserRequest& request, const GetChaincodeLogForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetChaincodeLogForUserOutcomeCallable GetChaincodeLogForUserCallable(const Model::GetChaincodeLogForUserRequest& request);
+
+                /**
+                 *获取通道列表
+                 * @param req GetChannelListForUserRequest
+                 * @return GetChannelListForUserOutcome
+                 */
+                GetChannelListForUserOutcome GetChannelListForUser(const Model::GetChannelListForUserRequest &request);
+                void GetChannelListForUserAsync(const Model::GetChannelListForUserRequest& request, const GetChannelListForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetChannelListForUserOutcomeCallable GetChannelListForUserCallable(const Model::GetChannelListForUserRequest& request);
+
+                /**
+                 *获取该用户的网络列表。网络信息中包含组织信息，但仅包含该用户所在组织的信息。
+                 * @param req GetClusterListForUserRequest
+                 * @return GetClusterListForUserOutcome
+                 */
+                GetClusterListForUserOutcome GetClusterListForUser(const Model::GetClusterListForUserRequest &request);
+                void GetClusterListForUserAsync(const Model::GetClusterListForUserRequest& request, const GetClusterListForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetClusterListForUserOutcomeCallable GetClusterListForUserCallable(const Model::GetClusterListForUserRequest& request);
+
+                /**
                  *获取区块链网络概要
                  * @param req GetClusterSummaryRequest
                  * @return GetClusterSummaryOutcome
@@ -221,6 +315,15 @@ namespace TencentCloud
                 GetLatesdTransactionListOutcomeCallable GetLatesdTransactionListCallable(const Model::GetLatesdTransactionListRequest& request);
 
                 /**
+                 *获取节点日志
+                 * @param req GetPeerLogForUserRequest
+                 * @return GetPeerLogForUserOutcome
+                 */
+                GetPeerLogForUserOutcome GetPeerLogForUser(const Model::GetPeerLogForUserRequest &request);
+                void GetPeerLogForUserAsync(const Model::GetPeerLogForUserRequest& request, const GetPeerLogForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPeerLogForUserOutcomeCallable GetPeerLogForUserCallable(const Model::GetPeerLogForUserRequest& request);
+
+                /**
                  *Bcos根据交易哈希查看交易详细信息
                  * @param req GetTransByHashHandlerRequest
                  * @return GetTransByHashHandlerOutcome
@@ -246,6 +349,15 @@ namespace TencentCloud
                 GetTransactionDetailForUserOutcome GetTransactionDetailForUser(const Model::GetTransactionDetailForUserRequest &request);
                 void GetTransactionDetailForUserAsync(const Model::GetTransactionDetailForUserRequest& request, const GetTransactionDetailForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTransactionDetailForUserOutcomeCallable GetTransactionDetailForUserCallable(const Model::GetTransactionDetailForUserRequest& request);
+
+                /**
+                 *实例化合约
+                 * @param req InitializeChaincodeForUserRequest
+                 * @return InitializeChaincodeForUserOutcome
+                 */
+                InitializeChaincodeForUserOutcome InitializeChaincodeForUser(const Model::InitializeChaincodeForUserRequest &request);
+                void InitializeChaincodeForUserAsync(const Model::InitializeChaincodeForUserRequest& request, const InitializeChaincodeForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InitializeChaincodeForUserOutcomeCallable InitializeChaincodeForUserCallable(const Model::InitializeChaincodeForUserRequest& request);
 
                 /**
                  *新增交易

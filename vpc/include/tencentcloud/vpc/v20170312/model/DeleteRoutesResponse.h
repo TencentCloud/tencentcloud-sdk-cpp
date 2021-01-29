@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Route.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,25 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取已删除的路由策略详情。
+                     * @return RouteSet 已删除的路由策略详情。
+                     */
+                    std::vector<Route> GetRouteSet() const;
+
+                    /**
+                     * 判断参数 RouteSet 是否已赋值
+                     * @return RouteSet 是否已赋值
+                     */
+                    bool RouteSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 已删除的路由策略详情。
+                     */
+                    std::vector<Route> m_routeSet;
+                    bool m_routeSetHasBeenSet;
 
                 };
             }

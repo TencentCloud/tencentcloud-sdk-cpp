@@ -27,6 +27,8 @@
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CommonServiceAPIResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateAndDeployCloudBaseProjectRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateAndDeployCloudBaseProjectResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateAuthDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectLatestVersionListRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectLatestVersionListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceForExtendRequest.h>
@@ -115,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CommonServiceAPIResponse> CommonServiceAPIOutcome;
                 typedef std::future<CommonServiceAPIOutcome> CommonServiceAPIOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CommonServiceAPIRequest&, CommonServiceAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommonServiceAPIAsyncHandler;
+                typedef Outcome<Error, Model::CreateAndDeployCloudBaseProjectResponse> CreateAndDeployCloudBaseProjectOutcome;
+                typedef std::future<CreateAndDeployCloudBaseProjectOutcome> CreateAndDeployCloudBaseProjectOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateAndDeployCloudBaseProjectRequest&, CreateAndDeployCloudBaseProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndDeployCloudBaseProjectAsyncHandler;
                 typedef Outcome<Error, Model::CreateAuthDomainResponse> CreateAuthDomainOutcome;
                 typedef std::future<CreateAuthDomainOutcome> CreateAuthDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateAuthDomainRequest&, CreateAuthDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthDomainAsyncHandler;
@@ -145,6 +152,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCloudBaseBuildServiceResponse> DescribeCloudBaseBuildServiceOutcome;
                 typedef std::future<DescribeCloudBaseBuildServiceOutcome> DescribeCloudBaseBuildServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseBuildServiceRequest&, DescribeCloudBaseBuildServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseBuildServiceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudBaseProjectLatestVersionListResponse> DescribeCloudBaseProjectLatestVersionListOutcome;
+                typedef std::future<DescribeCloudBaseProjectLatestVersionListOutcome> DescribeCloudBaseProjectLatestVersionListOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseProjectLatestVersionListRequest&, DescribeCloudBaseProjectLatestVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseProjectLatestVersionListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCloudBaseRunResourceResponse> DescribeCloudBaseRunResourceOutcome;
                 typedef std::future<DescribeCloudBaseRunResourceOutcome> DescribeCloudBaseRunResourceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunResourceRequest&, DescribeCloudBaseRunResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunResourceAsyncHandler;
@@ -239,6 +249,15 @@ namespace TencentCloud
                 CommonServiceAPIOutcomeCallable CommonServiceAPICallable(const Model::CommonServiceAPIRequest& request);
 
                 /**
+                 *创建云开发项目
+                 * @param req CreateAndDeployCloudBaseProjectRequest
+                 * @return CreateAndDeployCloudBaseProjectOutcome
+                 */
+                CreateAndDeployCloudBaseProjectOutcome CreateAndDeployCloudBaseProject(const Model::CreateAndDeployCloudBaseProjectRequest &request);
+                void CreateAndDeployCloudBaseProjectAsync(const Model::CreateAndDeployCloudBaseProjectRequest& request, const CreateAndDeployCloudBaseProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAndDeployCloudBaseProjectOutcomeCallable CreateAndDeployCloudBaseProjectCallable(const Model::CreateAndDeployCloudBaseProjectRequest& request);
+
+                /**
                  *增加安全域名
                  * @param req CreateAuthDomainRequest
                  * @return CreateAuthDomainOutcome
@@ -327,6 +346,15 @@ namespace TencentCloud
                 DescribeCloudBaseBuildServiceOutcome DescribeCloudBaseBuildService(const Model::DescribeCloudBaseBuildServiceRequest &request);
                 void DescribeCloudBaseBuildServiceAsync(const Model::DescribeCloudBaseBuildServiceRequest& request, const DescribeCloudBaseBuildServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudBaseBuildServiceOutcomeCallable DescribeCloudBaseBuildServiceCallable(const Model::DescribeCloudBaseBuildServiceRequest& request);
+
+                /**
+                 *获取云开发项目列表
+                 * @param req DescribeCloudBaseProjectLatestVersionListRequest
+                 * @return DescribeCloudBaseProjectLatestVersionListOutcome
+                 */
+                DescribeCloudBaseProjectLatestVersionListOutcome DescribeCloudBaseProjectLatestVersionList(const Model::DescribeCloudBaseProjectLatestVersionListRequest &request);
+                void DescribeCloudBaseProjectLatestVersionListAsync(const Model::DescribeCloudBaseProjectLatestVersionListRequest& request, const DescribeCloudBaseProjectLatestVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseProjectLatestVersionListOutcomeCallable DescribeCloudBaseProjectLatestVersionListCallable(const Model::DescribeCloudBaseProjectLatestVersionListRequest& request);
 
                 /**
                  *查看容器托管的集群状态

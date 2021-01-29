@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool CaptchaAppIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间
-                     * @return Start 查询开始时间
+                     * 获取查询开始时间 例如：20200909
+                     * @return Start 查询开始时间 例如：20200909
                      */
                     int64_t GetStart() const;
 
                     /**
-                     * 设置查询开始时间
-                     * @param Start 查询开始时间
+                     * 设置查询开始时间 例如：20200909
+                     * @param Start 查询开始时间 例如：20200909
                      */
                     void SetStart(const int64_t& _start);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_captchaAppIdHasBeenSet;
 
                     /**
-                     * 查询开始时间
+                     * 查询开始时间 例如：20200909
                      */
                     int64_t m_start;
                     bool m_startHasBeenSet;

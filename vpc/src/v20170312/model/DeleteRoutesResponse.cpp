@@ -24,7 +24,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace rapidjson;
 using namespace std;
 
-DeleteRoutesResponse::DeleteRoutesResponse()
+DeleteRoutesResponse::DeleteRoutesResponse() :
+    m_routeSetHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,39 @@ CoreInternalOutcome DeleteRoutesResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("RouteSet") && !rsp["RouteSet"].IsNull())
+    {
+        if (!rsp["RouteSet"].IsArray())
+            return CoreInternalOutcome(Error("response `RouteSet` is not array type"));
+
+        const Value &tmpValue = rsp["RouteSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Route item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_routeSet.push_back(item);
+        }
+        m_routeSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<Route> DeleteRoutesResponse::GetRouteSet() const
+{
+    return m_routeSet;
+}
+
+bool DeleteRoutesResponse::RouteSetHasBeenSet() const
+{
+    return m_routeSetHasBeenSet;
+}
 
 

@@ -488,6 +488,28 @@ namespace TencentCloud
                      */
                     bool GroupInfoHasBeenSet() const;
 
+                    /**
+                     * 获取显示名称ViewName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ViewName 显示名称ViewName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetViewName() const;
+
+                    /**
+                     * 设置显示名称ViewName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ViewName 显示名称ViewName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetViewName(const std::string& _viewName);
+
+                    /**
+                     * 判断参数 ViewName 是否已赋值
+                     * @return ViewName 是否已赋值
+                     */
+                    bool ViewNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -629,6 +651,13 @@ namespace TencentCloud
                      */
                     std::vector<DescribeProductEventListEventsGroupInfo> m_groupInfo;
                     bool m_groupInfoHasBeenSet;
+
+                    /**
+                     * 显示名称ViewName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_viewName;
+                    bool m_viewNameHasBeenSet;
 
                 };
             }

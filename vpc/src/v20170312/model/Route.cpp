@@ -31,7 +31,8 @@ Route::Route() :
     m_routeTypeHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
     m_destinationIpv6CidrBlockHasBeenSet(false),
-    m_routeItemIdHasBeenSet(false)
+    m_routeItemIdHasBeenSet(false),
+    m_publishedToVbcHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome Route::Deserialize(const Value &value)
         m_routeItemIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PublishedToVbc") && !value["PublishedToVbc"].IsNull())
+    {
+        if (!value["PublishedToVbc"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Route.PublishedToVbc` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_publishedToVbc = value["PublishedToVbc"].GetBool();
+        m_publishedToVbcHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +236,14 @@ void Route::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "RouteItemId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_routeItemId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publishedToVbcHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PublishedToVbc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_publishedToVbc, allocator);
     }
 
 }
@@ -388,5 +407,21 @@ void Route::SetRouteItemId(const string& _routeItemId)
 bool Route::RouteItemIdHasBeenSet() const
 {
     return m_routeItemIdHasBeenSet;
+}
+
+bool Route::GetPublishedToVbc() const
+{
+    return m_publishedToVbc;
+}
+
+void Route::SetPublishedToVbc(const bool& _publishedToVbc)
+{
+    m_publishedToVbc = _publishedToVbc;
+    m_publishedToVbcHasBeenSet = true;
+}
+
+bool Route::PublishedToVbcHasBeenSet() const
+{
+    return m_publishedToVbcHasBeenSet;
 }
 

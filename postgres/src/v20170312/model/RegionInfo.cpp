@@ -25,7 +25,8 @@ RegionInfo::RegionInfo() :
     m_regionHasBeenSet(false),
     m_regionNameHasBeenSet(false),
     m_regionIdHasBeenSet(false),
-    m_regionStateHasBeenSet(false)
+    m_regionStateHasBeenSet(false),
+    m_supportInternationalHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome RegionInfo::Deserialize(const Value &value)
         m_regionStateHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportInternational") && !value["SupportInternational"].IsNull())
+    {
+        if (!value["SupportInternational"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `RegionInfo.SupportInternational` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportInternational = value["SupportInternational"].GetUint64();
+        m_supportInternationalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void RegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "RegionState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_regionState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportInternationalHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SupportInternational";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportInternational, allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void RegionInfo::SetRegionState(const string& _regionState)
 bool RegionInfo::RegionStateHasBeenSet() const
 {
     return m_regionStateHasBeenSet;
+}
+
+uint64_t RegionInfo::GetSupportInternational() const
+{
+    return m_supportInternational;
+}
+
+void RegionInfo::SetSupportInternational(const uint64_t& _supportInternational)
+{
+    m_supportInternational = _supportInternational;
+    m_supportInternationalHasBeenSet = true;
+}
+
+bool RegionInfo::SupportInternationalHasBeenSet() const
+{
+    return m_supportInternationalHasBeenSet;
 }
 

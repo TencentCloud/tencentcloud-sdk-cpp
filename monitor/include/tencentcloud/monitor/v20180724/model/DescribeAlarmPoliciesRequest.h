@@ -330,6 +330,24 @@ namespace TencentCloud
                      */
                     bool EnableHasBeenSet() const;
 
+                    /**
+                     * 获取是否未配置通知规则，1：未配置，0：配置
+                     * @return NotBindingNoticeRule 是否未配置通知规则，1：未配置，0：配置
+                     */
+                    int64_t GetNotBindingNoticeRule() const;
+
+                    /**
+                     * 设置是否未配置通知规则，1：未配置，0：配置
+                     * @param NotBindingNoticeRule 是否未配置通知规则，1：未配置，0：配置
+                     */
+                    void SetNotBindingNoticeRule(const int64_t& _notBindingNoticeRule);
+
+                    /**
+                     * 判断参数 NotBindingNoticeRule 是否已赋值
+                     * @return NotBindingNoticeRule 是否已赋值
+                     */
+                    bool NotBindingNoticeRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +445,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_enable;
                     bool m_enableHasBeenSet;
+
+                    /**
+                     * 是否未配置通知规则，1：未配置，0：配置
+                     */
+                    int64_t m_notBindingNoticeRule;
+                    bool m_notBindingNoticeRuleHasBeenSet;
 
                 };
             }

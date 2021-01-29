@@ -41,7 +41,8 @@ DescribeProductEventListEvents::DescribeProductEventListEvents() :
     m_dimensionsHasBeenSet(false),
     m_additionMsgHasBeenSet(false),
     m_isAlarmConfigHasBeenSet(false),
-    m_groupInfoHasBeenSet(false)
+    m_groupInfoHasBeenSet(false),
+    m_viewNameHasBeenSet(false)
 {
 }
 
@@ -280,6 +281,16 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const Value &val
         m_groupInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ViewName") && !value["ViewName"].IsNull())
+    {
+        if (!value["ViewName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.ViewName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_viewName = string(value["ViewName"].GetString());
+        m_viewNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -466,6 +477,14 @@ void DescribeProductEventListEvents::ToJsonObject(Value &value, Document::Alloca
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_viewNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ViewName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_viewName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -789,5 +808,21 @@ void DescribeProductEventListEvents::SetGroupInfo(const vector<DescribeProductEv
 bool DescribeProductEventListEvents::GroupInfoHasBeenSet() const
 {
     return m_groupInfoHasBeenSet;
+}
+
+string DescribeProductEventListEvents::GetViewName() const
+{
+    return m_viewName;
+}
+
+void DescribeProductEventListEvents::SetViewName(const string& _viewName)
+{
+    m_viewName = _viewName;
+    m_viewNameHasBeenSet = true;
+}
+
+bool DescribeProductEventListEvents::ViewNameHasBeenSet() const
+{
+    return m_viewNameHasBeenSet;
 }
 

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/DnsServerConf.h>
+#include <tencentcloud/tke/v20180525/model/TagSpecification.h>
 
 
 namespace TencentCloud
@@ -263,6 +264,28 @@ namespace TencentCloud
                      */
                     bool EnableVpcCoreDNSHasBeenSet() const;
 
+                    /**
+                     * 获取标签描述列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagSpecification 标签描述列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagSpecification> GetTagSpecification() const;
+
+                    /**
+                     * 设置标签描述列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagSpecification 标签描述列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagSpecification(const std::vector<TagSpecification>& _tagSpecification);
+
+                    /**
+                     * 判断参数 TagSpecification 是否已赋值
+                     * @return TagSpecification 是否已赋值
+                     */
+                    bool TagSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +359,13 @@ namespace TencentCloud
                      */
                     bool m_enableVpcCoreDNS;
                     bool m_enableVpcCoreDNSHasBeenSet;
+
+                    /**
+                     * 标签描述列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagSpecification> m_tagSpecification;
+                    bool m_tagSpecificationHasBeenSet;
 
                 };
             }

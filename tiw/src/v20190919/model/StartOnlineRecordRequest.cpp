@@ -37,6 +37,7 @@ StartOnlineRecordRequest::StartOnlineRecordRequest() :
     m_recordControlHasBeenSet(false),
     m_recordModeHasBeenSet(false),
     m_chatGroupIdHasBeenSet(false),
+    m_autoStopTimeoutHasBeenSet(false),
     m_extraDataHasBeenSet(false)
 {
 }
@@ -159,6 +160,14 @@ string StartOnlineRecordRequest::ToJsonString() const
         string key = "ChatGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_chatGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoStopTimeoutHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoStopTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoStopTimeout, allocator);
     }
 
     if (m_extraDataHasBeenSet)
@@ -383,6 +392,22 @@ void StartOnlineRecordRequest::SetChatGroupId(const string& _chatGroupId)
 bool StartOnlineRecordRequest::ChatGroupIdHasBeenSet() const
 {
     return m_chatGroupIdHasBeenSet;
+}
+
+int64_t StartOnlineRecordRequest::GetAutoStopTimeout() const
+{
+    return m_autoStopTimeout;
+}
+
+void StartOnlineRecordRequest::SetAutoStopTimeout(const int64_t& _autoStopTimeout)
+{
+    m_autoStopTimeout = _autoStopTimeout;
+    m_autoStopTimeoutHasBeenSet = true;
+}
+
+bool StartOnlineRecordRequest::AutoStopTimeoutHasBeenSet() const
+{
+    return m_autoStopTimeoutHasBeenSet;
 }
 
 string StartOnlineRecordRequest::GetExtraData() const

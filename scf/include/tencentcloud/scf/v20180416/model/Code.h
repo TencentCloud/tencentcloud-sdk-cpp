@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对象存储桶名称
-                     * @return CosBucketName 对象存储桶名称
+                     * 获取对象存储桶名称（填写存储桶名称自定义部分，不包含-appid）
+                     * @return CosBucketName 对象存储桶名称（填写存储桶名称自定义部分，不包含-appid）
                      */
                     std::string GetCosBucketName() const;
 
                     /**
-                     * 设置对象存储桶名称
-                     * @param CosBucketName 对象存储桶名称
+                     * 设置对象存储桶名称（填写存储桶名称自定义部分，不包含-appid）
+                     * @param CosBucketName 对象存储桶名称（填写存储桶名称自定义部分，不包含-appid）
                      */
                     void SetCosBucketName(const std::string& _cosBucketName);
 
@@ -301,7 +301,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对象存储桶名称
+                     * 对象存储桶名称（填写存储桶名称自定义部分，不包含-appid）
                      */
                     std::string m_cosBucketName;
                     bool m_cosBucketNameHasBeenSet;

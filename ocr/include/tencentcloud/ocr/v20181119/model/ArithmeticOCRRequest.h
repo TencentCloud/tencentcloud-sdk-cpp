@@ -106,6 +106,114 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取用于选择是否支持横屏拍摄。打开则支持横屏拍摄图片角度判断，角度信息在返回参数的angle中，默认值为true
+                     * @return SupportHorizontalImage 用于选择是否支持横屏拍摄。打开则支持横屏拍摄图片角度判断，角度信息在返回参数的angle中，默认值为true
+                     */
+                    bool GetSupportHorizontalImage() const;
+
+                    /**
+                     * 设置用于选择是否支持横屏拍摄。打开则支持横屏拍摄图片角度判断，角度信息在返回参数的angle中，默认值为true
+                     * @param SupportHorizontalImage 用于选择是否支持横屏拍摄。打开则支持横屏拍摄图片角度判断，角度信息在返回参数的angle中，默认值为true
+                     */
+                    void SetSupportHorizontalImage(const bool& _supportHorizontalImage);
+
+                    /**
+                     * 判断参数 SupportHorizontalImage 是否已赋值
+                     * @return SupportHorizontalImage 是否已赋值
+                     */
+                    bool SupportHorizontalImageHasBeenSet() const;
+
+                    /**
+                     * 获取是否拒绝非速算图，打开则拒绝非速算图(注：非速算图是指风景人物等明显不是速算图片的图片)，默认值为false
+                     * @return RejectNonArithmeticPic 是否拒绝非速算图，打开则拒绝非速算图(注：非速算图是指风景人物等明显不是速算图片的图片)，默认值为false
+                     */
+                    bool GetRejectNonArithmeticPic() const;
+
+                    /**
+                     * 设置是否拒绝非速算图，打开则拒绝非速算图(注：非速算图是指风景人物等明显不是速算图片的图片)，默认值为false
+                     * @param RejectNonArithmeticPic 是否拒绝非速算图，打开则拒绝非速算图(注：非速算图是指风景人物等明显不是速算图片的图片)，默认值为false
+                     */
+                    void SetRejectNonArithmeticPic(const bool& _rejectNonArithmeticPic);
+
+                    /**
+                     * 判断参数 RejectNonArithmeticPic 是否已赋值
+                     * @return RejectNonArithmeticPic 是否已赋值
+                     */
+                    bool RejectNonArithmeticPicHasBeenSet() const;
+
+                    /**
+                     * 获取是否展开耦合算式中的竖式计算，默认值为false
+                     * @return EnableDispRelatedVertical 是否展开耦合算式中的竖式计算，默认值为false
+                     */
+                    bool GetEnableDispRelatedVertical() const;
+
+                    /**
+                     * 设置是否展开耦合算式中的竖式计算，默认值为false
+                     * @param EnableDispRelatedVertical 是否展开耦合算式中的竖式计算，默认值为false
+                     */
+                    void SetEnableDispRelatedVertical(const bool& _enableDispRelatedVertical);
+
+                    /**
+                     * 判断参数 EnableDispRelatedVertical 是否已赋值
+                     * @return EnableDispRelatedVertical 是否已赋值
+                     */
+                    bool EnableDispRelatedVerticalHasBeenSet() const;
+
+                    /**
+                     * 获取是否展示竖式算式的中间结果和格式控制字符，默认值为false
+                     * @return EnableDispMidResult 是否展示竖式算式的中间结果和格式控制字符，默认值为false
+                     */
+                    bool GetEnableDispMidResult() const;
+
+                    /**
+                     * 设置是否展示竖式算式的中间结果和格式控制字符，默认值为false
+                     * @param EnableDispMidResult 是否展示竖式算式的中间结果和格式控制字符，默认值为false
+                     */
+                    void SetEnableDispMidResult(const bool& _enableDispMidResult);
+
+                    /**
+                     * 判断参数 EnableDispMidResult 是否已赋值
+                     * @return EnableDispMidResult 是否已赋值
+                     */
+                    bool EnableDispMidResultHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启pdf识别，默认值为true
+                     * @return EnablePdfRecognize 是否开启pdf识别，默认值为true
+                     */
+                    bool GetEnablePdfRecognize() const;
+
+                    /**
+                     * 设置是否开启pdf识别，默认值为true
+                     * @param EnablePdfRecognize 是否开启pdf识别，默认值为true
+                     */
+                    void SetEnablePdfRecognize(const bool& _enablePdfRecognize);
+
+                    /**
+                     * 判断参数 EnablePdfRecognize 是否已赋值
+                     * @return EnablePdfRecognize 是否已赋值
+                     */
+                    bool EnablePdfRecognizeHasBeenSet() const;
+
+                    /**
+                     * 获取pdf页码，从0开始，默认为0
+                     * @return PdfPageIndex pdf页码，从0开始，默认为0
+                     */
+                    int64_t GetPdfPageIndex() const;
+
+                    /**
+                     * 设置pdf页码，从0开始，默认为0
+                     * @param PdfPageIndex pdf页码，从0开始，默认为0
+                     */
+                    void SetPdfPageIndex(const int64_t& _pdfPageIndex);
+
+                    /**
+                     * 判断参数 PdfPageIndex 是否已赋值
+                     * @return PdfPageIndex 是否已赋值
+                     */
+                    bool PdfPageIndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +234,42 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 用于选择是否支持横屏拍摄。打开则支持横屏拍摄图片角度判断，角度信息在返回参数的angle中，默认值为true
+                     */
+                    bool m_supportHorizontalImage;
+                    bool m_supportHorizontalImageHasBeenSet;
+
+                    /**
+                     * 是否拒绝非速算图，打开则拒绝非速算图(注：非速算图是指风景人物等明显不是速算图片的图片)，默认值为false
+                     */
+                    bool m_rejectNonArithmeticPic;
+                    bool m_rejectNonArithmeticPicHasBeenSet;
+
+                    /**
+                     * 是否展开耦合算式中的竖式计算，默认值为false
+                     */
+                    bool m_enableDispRelatedVertical;
+                    bool m_enableDispRelatedVerticalHasBeenSet;
+
+                    /**
+                     * 是否展示竖式算式的中间结果和格式控制字符，默认值为false
+                     */
+                    bool m_enableDispMidResult;
+                    bool m_enableDispMidResultHasBeenSet;
+
+                    /**
+                     * 是否开启pdf识别，默认值为true
+                     */
+                    bool m_enablePdfRecognize;
+                    bool m_enablePdfRecognizeHasBeenSet;
+
+                    /**
+                     * pdf页码，从0开始，默认为0
+                     */
+                    int64_t m_pdfPageIndex;
+                    bool m_pdfPageIndexHasBeenSet;
 
                 };
             }

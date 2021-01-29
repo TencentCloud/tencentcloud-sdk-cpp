@@ -29,6 +29,7 @@
 #include <tencentcloud/monitor/v20180724/model/AlarmNotice.h>
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h>
 #include <tencentcloud/monitor/v20180724/model/ConditionsTemp.h>
+#include <tencentcloud/monitor/v20180724/model/TagInstance.h>
 
 
 namespace TencentCloud
@@ -679,6 +680,28 @@ namespace TencentCloud
                      */
                     bool OriginIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagInstances 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInstance> GetTagInstances() const;
+
+                    /**
+                     * 设置标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagInstances 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagInstances(const std::vector<TagInstance>& _tagInstances);
+
+                    /**
+                     * 判断参数 TagInstances 是否已赋值
+                     * @return TagInstances 是否已赋值
+                     */
+                    bool TagInstancesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -879,6 +902,13 @@ namespace TencentCloud
                      */
                     std::string m_originId;
                     bool m_originIdHasBeenSet;
+
+                    /**
+                     * 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInstance> m_tagInstances;
+                    bool m_tagInstancesHasBeenSet;
 
                 };
             }

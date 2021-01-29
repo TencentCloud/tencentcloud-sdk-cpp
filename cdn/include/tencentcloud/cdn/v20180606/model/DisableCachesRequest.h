@@ -43,17 +43,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要禁用的 URL 列表
+                     * 获取禁用的 URL 列表（分协议生效，必须包含http://或https://）
 每次最多可提交 100 条，每日最多可提交 3000 条
-                     * @return Urls 需要禁用的 URL 列表
+                     * @return Urls 禁用的 URL 列表（分协议生效，必须包含http://或https://）
 每次最多可提交 100 条，每日最多可提交 3000 条
                      */
                     std::vector<std::string> GetUrls() const;
 
                     /**
-                     * 设置需要禁用的 URL 列表
+                     * 设置禁用的 URL 列表（分协议生效，必须包含http://或https://）
 每次最多可提交 100 条，每日最多可提交 3000 条
-                     * @param Urls 需要禁用的 URL 列表
+                     * @param Urls 禁用的 URL 列表（分协议生效，必须包含http://或https://）
 每次最多可提交 100 条，每日最多可提交 3000 条
                      */
                     void SetUrls(const std::vector<std::string>& _urls);
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要禁用的 URL 列表
+                     * 禁用的 URL 列表（分协议生效，必须包含http://或https://）
 每次最多可提交 100 条，每日最多可提交 3000 条
                      */
                     std::vector<std::string> m_urls;

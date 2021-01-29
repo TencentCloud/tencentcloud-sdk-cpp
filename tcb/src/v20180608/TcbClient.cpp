@@ -126,6 +126,49 @@ TcbClient::CommonServiceAPIOutcomeCallable TcbClient::CommonServiceAPICallable(c
     return task->get_future();
 }
 
+TcbClient::CreateAndDeployCloudBaseProjectOutcome TcbClient::CreateAndDeployCloudBaseProject(const CreateAndDeployCloudBaseProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndDeployCloudBaseProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndDeployCloudBaseProjectResponse rsp = CreateAndDeployCloudBaseProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndDeployCloudBaseProjectOutcome(rsp);
+        else
+            return CreateAndDeployCloudBaseProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndDeployCloudBaseProjectOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateAndDeployCloudBaseProjectAsync(const CreateAndDeployCloudBaseProjectRequest& request, const CreateAndDeployCloudBaseProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndDeployCloudBaseProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CreateAndDeployCloudBaseProjectOutcomeCallable TcbClient::CreateAndDeployCloudBaseProjectCallable(const CreateAndDeployCloudBaseProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndDeployCloudBaseProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndDeployCloudBaseProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::CreateAuthDomainOutcome TcbClient::CreateAuthDomain(const CreateAuthDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAuthDomain");
@@ -549,6 +592,49 @@ TcbClient::DescribeCloudBaseBuildServiceOutcomeCallable TcbClient::DescribeCloud
         [this, request]()
         {
             return this->DescribeCloudBaseBuildService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeCloudBaseProjectLatestVersionListOutcome TcbClient::DescribeCloudBaseProjectLatestVersionList(const DescribeCloudBaseProjectLatestVersionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseProjectLatestVersionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseProjectLatestVersionListResponse rsp = DescribeCloudBaseProjectLatestVersionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseProjectLatestVersionListOutcome(rsp);
+        else
+            return DescribeCloudBaseProjectLatestVersionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseProjectLatestVersionListOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseProjectLatestVersionListAsync(const DescribeCloudBaseProjectLatestVersionListRequest& request, const DescribeCloudBaseProjectLatestVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseProjectLatestVersionList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseProjectLatestVersionListOutcomeCallable TcbClient::DescribeCloudBaseProjectLatestVersionListCallable(const DescribeCloudBaseProjectLatestVersionListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseProjectLatestVersionListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseProjectLatestVersionList(request);
         }
     );
 

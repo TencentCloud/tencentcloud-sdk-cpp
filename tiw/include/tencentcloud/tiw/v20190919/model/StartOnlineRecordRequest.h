@@ -325,14 +325,40 @@ VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通�
                     bool ChatGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取内部参数
-                     * @return ExtraData 内部参数
+                     * 获取自动停止录制超时时间，单位秒，取值范围[300, 86400], 默认值为300秒。
+
+当超过设定时间房间内没有音视频上行且没有白板操作的时候，录制服务会自动停止当前录制任务。
+                     * @return AutoStopTimeout 自动停止录制超时时间，单位秒，取值范围[300, 86400], 默认值为300秒。
+
+当超过设定时间房间内没有音视频上行且没有白板操作的时候，录制服务会自动停止当前录制任务。
+                     */
+                    int64_t GetAutoStopTimeout() const;
+
+                    /**
+                     * 设置自动停止录制超时时间，单位秒，取值范围[300, 86400], 默认值为300秒。
+
+当超过设定时间房间内没有音视频上行且没有白板操作的时候，录制服务会自动停止当前录制任务。
+                     * @param AutoStopTimeout 自动停止录制超时时间，单位秒，取值范围[300, 86400], 默认值为300秒。
+
+当超过设定时间房间内没有音视频上行且没有白板操作的时候，录制服务会自动停止当前录制任务。
+                     */
+                    void SetAutoStopTimeout(const int64_t& _autoStopTimeout);
+
+                    /**
+                     * 判断参数 AutoStopTimeout 是否已赋值
+                     * @return AutoStopTimeout 是否已赋值
+                     */
+                    bool AutoStopTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取内部参数，可忽略
+                     * @return ExtraData 内部参数，可忽略
                      */
                     std::string GetExtraData() const;
 
                     /**
-                     * 设置内部参数
-                     * @param ExtraData 内部参数
+                     * 设置内部参数，可忽略
+                     * @param ExtraData 内部参数，可忽略
                      */
                     void SetExtraData(const std::string& _extraData);
 
@@ -434,7 +460,15 @@ VIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通�
                     bool m_chatGroupIdHasBeenSet;
 
                     /**
-                     * 内部参数
+                     * 自动停止录制超时时间，单位秒，取值范围[300, 86400], 默认值为300秒。
+
+当超过设定时间房间内没有音视频上行且没有白板操作的时候，录制服务会自动停止当前录制任务。
+                     */
+                    int64_t m_autoStopTimeout;
+                    bool m_autoStopTimeoutHasBeenSet;
+
+                    /**
+                     * 内部参数，可忽略
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;

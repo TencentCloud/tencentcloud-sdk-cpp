@@ -28,7 +28,8 @@ TextArithmetic::TextArithmetic() :
     m_polygonHasBeenSet(false),
     m_advancedInfoHasBeenSet(false),
     m_itemCoordHasBeenSet(false),
-    m_expressionTypeHasBeenSet(false)
+    m_expressionTypeHasBeenSet(false),
+    m_answerHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,16 @@ CoreInternalOutcome TextArithmetic::Deserialize(const Value &value)
         m_expressionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Answer") && !value["Answer"].IsNull())
+    {
+        if (!value["Answer"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TextArithmetic.Answer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_answer = string(value["Answer"].GetString());
+        m_answerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -193,6 +204,14 @@ void TextArithmetic::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "ExpressionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_expressionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_answerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Answer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_answer.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -308,5 +327,21 @@ void TextArithmetic::SetExpressionType(const string& _expressionType)
 bool TextArithmetic::ExpressionTypeHasBeenSet() const
 {
     return m_expressionTypeHasBeenSet;
+}
+
+string TextArithmetic::GetAnswer() const
+{
+    return m_answer;
+}
+
+void TextArithmetic::SetAnswer(const string& _answer)
+{
+    m_answer = _answer;
+    m_answerHasBeenSet = true;
+}
+
+bool TextArithmetic::AnswerHasBeenSet() const
+{
+    return m_answerHasBeenSet;
 }
 

@@ -32,7 +32,8 @@ CreateEKSClusterRequest::CreateEKSClusterRequest() :
     m_serviceSubnetIdHasBeenSet(false),
     m_dnsServersHasBeenSet(false),
     m_extraParamHasBeenSet(false),
-    m_enableVpcCoreDNSHasBeenSet(false)
+    m_enableVpcCoreDNSHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,21 @@ string CreateEKSClusterRequest::ToJsonString() const
         string key = "EnableVpcCoreDNS";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableVpcCoreDNS, allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSpecification.begin(); itr != m_tagSpecification.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -277,6 +293,22 @@ void CreateEKSClusterRequest::SetEnableVpcCoreDNS(const bool& _enableVpcCoreDNS)
 bool CreateEKSClusterRequest::EnableVpcCoreDNSHasBeenSet() const
 {
     return m_enableVpcCoreDNSHasBeenSet;
+}
+
+vector<TagSpecification> CreateEKSClusterRequest::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void CreateEKSClusterRequest::SetTagSpecification(const vector<TagSpecification>& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool CreateEKSClusterRequest::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 
 

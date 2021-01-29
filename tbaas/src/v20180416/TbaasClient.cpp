@@ -126,6 +126,49 @@ TbaasClient::BlockByNumberHandlerOutcomeCallable TbaasClient::BlockByNumberHandl
     return task->get_future();
 }
 
+TbaasClient::CreateChaincodeAndInstallForUserOutcome TbaasClient::CreateChaincodeAndInstallForUser(const CreateChaincodeAndInstallForUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateChaincodeAndInstallForUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateChaincodeAndInstallForUserResponse rsp = CreateChaincodeAndInstallForUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateChaincodeAndInstallForUserOutcome(rsp);
+        else
+            return CreateChaincodeAndInstallForUserOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateChaincodeAndInstallForUserOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::CreateChaincodeAndInstallForUserAsync(const CreateChaincodeAndInstallForUserRequest& request, const CreateChaincodeAndInstallForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateChaincodeAndInstallForUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::CreateChaincodeAndInstallForUserOutcomeCallable TbaasClient::CreateChaincodeAndInstallForUserCallable(const CreateChaincodeAndInstallForUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateChaincodeAndInstallForUserOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateChaincodeAndInstallForUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::DeployDynamicContractHandlerOutcome TbaasClient::DeployDynamicContractHandler(const DeployDynamicContractHandlerRequest &request)
 {
     auto outcome = MakeRequest(request, "DeployDynamicContractHandler");
@@ -341,6 +384,221 @@ TbaasClient::GetBlockTransactionListForUserOutcomeCallable TbaasClient::GetBlock
     return task->get_future();
 }
 
+TbaasClient::GetChaincodeCompileLogForUserOutcome TbaasClient::GetChaincodeCompileLogForUser(const GetChaincodeCompileLogForUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetChaincodeCompileLogForUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetChaincodeCompileLogForUserResponse rsp = GetChaincodeCompileLogForUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetChaincodeCompileLogForUserOutcome(rsp);
+        else
+            return GetChaincodeCompileLogForUserOutcome(o.GetError());
+    }
+    else
+    {
+        return GetChaincodeCompileLogForUserOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetChaincodeCompileLogForUserAsync(const GetChaincodeCompileLogForUserRequest& request, const GetChaincodeCompileLogForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetChaincodeCompileLogForUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetChaincodeCompileLogForUserOutcomeCallable TbaasClient::GetChaincodeCompileLogForUserCallable(const GetChaincodeCompileLogForUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetChaincodeCompileLogForUserOutcome()>>(
+        [this, request]()
+        {
+            return this->GetChaincodeCompileLogForUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetChaincodeInitializeResultForUserOutcome TbaasClient::GetChaincodeInitializeResultForUser(const GetChaincodeInitializeResultForUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetChaincodeInitializeResultForUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetChaincodeInitializeResultForUserResponse rsp = GetChaincodeInitializeResultForUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetChaincodeInitializeResultForUserOutcome(rsp);
+        else
+            return GetChaincodeInitializeResultForUserOutcome(o.GetError());
+    }
+    else
+    {
+        return GetChaincodeInitializeResultForUserOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetChaincodeInitializeResultForUserAsync(const GetChaincodeInitializeResultForUserRequest& request, const GetChaincodeInitializeResultForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetChaincodeInitializeResultForUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetChaincodeInitializeResultForUserOutcomeCallable TbaasClient::GetChaincodeInitializeResultForUserCallable(const GetChaincodeInitializeResultForUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetChaincodeInitializeResultForUserOutcome()>>(
+        [this, request]()
+        {
+            return this->GetChaincodeInitializeResultForUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetChaincodeLogForUserOutcome TbaasClient::GetChaincodeLogForUser(const GetChaincodeLogForUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetChaincodeLogForUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetChaincodeLogForUserResponse rsp = GetChaincodeLogForUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetChaincodeLogForUserOutcome(rsp);
+        else
+            return GetChaincodeLogForUserOutcome(o.GetError());
+    }
+    else
+    {
+        return GetChaincodeLogForUserOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetChaincodeLogForUserAsync(const GetChaincodeLogForUserRequest& request, const GetChaincodeLogForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetChaincodeLogForUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetChaincodeLogForUserOutcomeCallable TbaasClient::GetChaincodeLogForUserCallable(const GetChaincodeLogForUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetChaincodeLogForUserOutcome()>>(
+        [this, request]()
+        {
+            return this->GetChaincodeLogForUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetChannelListForUserOutcome TbaasClient::GetChannelListForUser(const GetChannelListForUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetChannelListForUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetChannelListForUserResponse rsp = GetChannelListForUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetChannelListForUserOutcome(rsp);
+        else
+            return GetChannelListForUserOutcome(o.GetError());
+    }
+    else
+    {
+        return GetChannelListForUserOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetChannelListForUserAsync(const GetChannelListForUserRequest& request, const GetChannelListForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetChannelListForUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetChannelListForUserOutcomeCallable TbaasClient::GetChannelListForUserCallable(const GetChannelListForUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetChannelListForUserOutcome()>>(
+        [this, request]()
+        {
+            return this->GetChannelListForUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetClusterListForUserOutcome TbaasClient::GetClusterListForUser(const GetClusterListForUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetClusterListForUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetClusterListForUserResponse rsp = GetClusterListForUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetClusterListForUserOutcome(rsp);
+        else
+            return GetClusterListForUserOutcome(o.GetError());
+    }
+    else
+    {
+        return GetClusterListForUserOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetClusterListForUserAsync(const GetClusterListForUserRequest& request, const GetClusterListForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetClusterListForUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetClusterListForUserOutcomeCallable TbaasClient::GetClusterListForUserCallable(const GetClusterListForUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetClusterListForUserOutcome()>>(
+        [this, request]()
+        {
+            return this->GetClusterListForUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::GetClusterSummaryOutcome TbaasClient::GetClusterSummary(const GetClusterSummaryRequest &request)
 {
     auto outcome = MakeRequest(request, "GetClusterSummary");
@@ -470,6 +728,49 @@ TbaasClient::GetLatesdTransactionListOutcomeCallable TbaasClient::GetLatesdTrans
     return task->get_future();
 }
 
+TbaasClient::GetPeerLogForUserOutcome TbaasClient::GetPeerLogForUser(const GetPeerLogForUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPeerLogForUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPeerLogForUserResponse rsp = GetPeerLogForUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPeerLogForUserOutcome(rsp);
+        else
+            return GetPeerLogForUserOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPeerLogForUserOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetPeerLogForUserAsync(const GetPeerLogForUserRequest& request, const GetPeerLogForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPeerLogForUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetPeerLogForUserOutcomeCallable TbaasClient::GetPeerLogForUserCallable(const GetPeerLogForUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPeerLogForUserOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPeerLogForUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::GetTransByHashHandlerOutcome TbaasClient::GetTransByHashHandler(const GetTransByHashHandlerRequest &request)
 {
     auto outcome = MakeRequest(request, "GetTransByHashHandler");
@@ -592,6 +893,49 @@ TbaasClient::GetTransactionDetailForUserOutcomeCallable TbaasClient::GetTransact
         [this, request]()
         {
             return this->GetTransactionDetailForUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::InitializeChaincodeForUserOutcome TbaasClient::InitializeChaincodeForUser(const InitializeChaincodeForUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "InitializeChaincodeForUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InitializeChaincodeForUserResponse rsp = InitializeChaincodeForUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InitializeChaincodeForUserOutcome(rsp);
+        else
+            return InitializeChaincodeForUserOutcome(o.GetError());
+    }
+    else
+    {
+        return InitializeChaincodeForUserOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::InitializeChaincodeForUserAsync(const InitializeChaincodeForUserRequest& request, const InitializeChaincodeForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InitializeChaincodeForUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::InitializeChaincodeForUserOutcomeCallable TbaasClient::InitializeChaincodeForUserCallable(const InitializeChaincodeForUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InitializeChaincodeForUserOutcome()>>(
+        [this, request]()
+        {
+            return this->InitializeChaincodeForUser(request);
         }
     );
 

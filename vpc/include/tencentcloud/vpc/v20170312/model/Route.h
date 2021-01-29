@@ -282,6 +282,28 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                      */
                     bool RouteItemIdHasBeenSet() const;
 
+                    /**
+                     * 获取路由策略是否发布到云联网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublishedToVbc 路由策略是否发布到云联网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetPublishedToVbc() const;
+
+                    /**
+                     * 设置路由策略是否发布到云联网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublishedToVbc 路由策略是否发布到云联网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublishedToVbc(const bool& _publishedToVbc);
+
+                    /**
+                     * 判断参数 PublishedToVbc 是否已赋值
+                     * @return PublishedToVbc 是否已赋值
+                     */
+                    bool PublishedToVbcHasBeenSet() const;
+
                 private:
 
                     /**
@@ -357,6 +379,13 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                      */
                     std::string m_routeItemId;
                     bool m_routeItemIdHasBeenSet;
+
+                    /**
+                     * 路由策略是否发布到云联网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_publishedToVbc;
+                    bool m_publishedToVbcHasBeenSet;
 
                 };
             }

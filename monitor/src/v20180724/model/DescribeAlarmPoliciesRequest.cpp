@@ -39,7 +39,8 @@ DescribeAlarmPoliciesRequest::DescribeAlarmPoliciesRequest() :
     m_projectIdsHasBeenSet(false),
     m_noticeIdsHasBeenSet(false),
     m_ruleTypesHasBeenSet(false),
-    m_enableHasBeenSet(false)
+    m_enableHasBeenSet(false),
+    m_notBindingNoticeRuleHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,14 @@ string DescribeAlarmPoliciesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_notBindingNoticeRuleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NotBindingNoticeRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_notBindingNoticeRule, allocator);
     }
 
 
@@ -485,6 +494,22 @@ void DescribeAlarmPoliciesRequest::SetEnable(const vector<int64_t>& _enable)
 bool DescribeAlarmPoliciesRequest::EnableHasBeenSet() const
 {
     return m_enableHasBeenSet;
+}
+
+int64_t DescribeAlarmPoliciesRequest::GetNotBindingNoticeRule() const
+{
+    return m_notBindingNoticeRule;
+}
+
+void DescribeAlarmPoliciesRequest::SetNotBindingNoticeRule(const int64_t& _notBindingNoticeRule)
+{
+    m_notBindingNoticeRule = _notBindingNoticeRule;
+    m_notBindingNoticeRuleHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::NotBindingNoticeRuleHasBeenSet() const
+{
+    return m_notBindingNoticeRuleHasBeenSet;
 }
 
 

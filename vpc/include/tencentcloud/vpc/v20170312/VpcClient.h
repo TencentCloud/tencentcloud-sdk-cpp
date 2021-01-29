@@ -103,6 +103,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateNatGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNatGatewayDestinationIpPortTranslationNatRuleRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNatGatewayDestinationIpPortTranslationNatRuleResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateNatGatewaySourceIpTranslationNatRuleRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateNatGatewaySourceIpTranslationNatRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetDetectRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetDetectResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkAclRequest.h>
@@ -161,6 +163,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteNatGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNatGatewayDestinationIpPortTranslationNatRuleResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteNatGatewaySourceIpTranslationNatRuleRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteNatGatewaySourceIpTranslationNatRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetDetectRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetDetectResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclRequest.h>
@@ -251,6 +255,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeIpGeolocationInfosResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetDetectStatesRequest.h>
@@ -399,6 +405,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayDestinationIpPortTranslationNatRuleRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayDestinationIpPortTranslationNatRuleResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyNatGatewaySourceIpTranslationNatRuleRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyNatGatewaySourceIpTranslationNatRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNetDetectRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNetDetectResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNetworkAclAttributeRequest.h>
@@ -429,6 +437,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayCcnRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayCcnRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/NotifyRoutesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/NotifyRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/RejectAttachCcnInstancesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/RejectAttachCcnInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReleaseAddressesRequest.h>
@@ -473,6 +483,8 @@
 #include <tencentcloud/vpc/v20170312/model/UnassignIpv6SubnetCidrBlockResponse.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignPrivateIpAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignPrivateIpAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesResponse.h>
 
 
 namespace TencentCloud
@@ -607,6 +619,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateNatGatewayDestinationIpPortTranslationNatRuleResponse> CreateNatGatewayDestinationIpPortTranslationNatRuleOutcome;
                 typedef std::future<CreateNatGatewayDestinationIpPortTranslationNatRuleOutcome> CreateNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateNatGatewayDestinationIpPortTranslationNatRuleRequest&, CreateNatGatewayDestinationIpPortTranslationNatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatGatewayDestinationIpPortTranslationNatRuleAsyncHandler;
+                typedef Outcome<Error, Model::CreateNatGatewaySourceIpTranslationNatRuleResponse> CreateNatGatewaySourceIpTranslationNatRuleOutcome;
+                typedef std::future<CreateNatGatewaySourceIpTranslationNatRuleOutcome> CreateNatGatewaySourceIpTranslationNatRuleOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateNatGatewaySourceIpTranslationNatRuleRequest&, CreateNatGatewaySourceIpTranslationNatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatGatewaySourceIpTranslationNatRuleAsyncHandler;
                 typedef Outcome<Error, Model::CreateNetDetectResponse> CreateNetDetectOutcome;
                 typedef std::future<CreateNetDetectOutcome> CreateNetDetectOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateNetDetectRequest&, CreateNetDetectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetDetectAsyncHandler;
@@ -694,6 +709,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteNatGatewayDestinationIpPortTranslationNatRuleResponse> DeleteNatGatewayDestinationIpPortTranslationNatRuleOutcome;
                 typedef std::future<DeleteNatGatewayDestinationIpPortTranslationNatRuleOutcome> DeleteNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest&, DeleteNatGatewayDestinationIpPortTranslationNatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNatGatewayDestinationIpPortTranslationNatRuleAsyncHandler;
+                typedef Outcome<Error, Model::DeleteNatGatewaySourceIpTranslationNatRuleResponse> DeleteNatGatewaySourceIpTranslationNatRuleOutcome;
+                typedef std::future<DeleteNatGatewaySourceIpTranslationNatRuleOutcome> DeleteNatGatewaySourceIpTranslationNatRuleOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteNatGatewaySourceIpTranslationNatRuleRequest&, DeleteNatGatewaySourceIpTranslationNatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNatGatewaySourceIpTranslationNatRuleAsyncHandler;
                 typedef Outcome<Error, Model::DeleteNetDetectResponse> DeleteNetDetectOutcome;
                 typedef std::future<DeleteNetDetectOutcome> DeleteNetDetectOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteNetDetectRequest&, DeleteNetDetectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetDetectAsyncHandler;
@@ -829,6 +847,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse> DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome;
                 typedef std::future<DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome> DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest&, DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayDestinationIpPortTranslationNatRulesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNatGatewaySourceIpTranslationNatRulesResponse> DescribeNatGatewaySourceIpTranslationNatRulesOutcome;
+                typedef std::future<DescribeNatGatewaySourceIpTranslationNatRulesOutcome> DescribeNatGatewaySourceIpTranslationNatRulesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest&, DescribeNatGatewaySourceIpTranslationNatRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaySourceIpTranslationNatRulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNatGatewaysResponse> DescribeNatGatewaysOutcome;
                 typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewaysRequest&, DescribeNatGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaysAsyncHandler;
@@ -1051,6 +1072,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyNatGatewayDestinationIpPortTranslationNatRuleResponse> ModifyNatGatewayDestinationIpPortTranslationNatRuleOutcome;
                 typedef std::future<ModifyNatGatewayDestinationIpPortTranslationNatRuleOutcome> ModifyNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyNatGatewayDestinationIpPortTranslationNatRuleRequest&, ModifyNatGatewayDestinationIpPortTranslationNatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatGatewayDestinationIpPortTranslationNatRuleAsyncHandler;
+                typedef Outcome<Error, Model::ModifyNatGatewaySourceIpTranslationNatRuleResponse> ModifyNatGatewaySourceIpTranslationNatRuleOutcome;
+                typedef std::future<ModifyNatGatewaySourceIpTranslationNatRuleOutcome> ModifyNatGatewaySourceIpTranslationNatRuleOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyNatGatewaySourceIpTranslationNatRuleRequest&, ModifyNatGatewaySourceIpTranslationNatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatGatewaySourceIpTranslationNatRuleAsyncHandler;
                 typedef Outcome<Error, Model::ModifyNetDetectResponse> ModifyNetDetectOutcome;
                 typedef std::future<ModifyNetDetectOutcome> ModifyNetDetectOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyNetDetectRequest&, ModifyNetDetectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetDetectAsyncHandler;
@@ -1096,6 +1120,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyVpnGatewayCcnRoutesResponse> ModifyVpnGatewayCcnRoutesOutcome;
                 typedef std::future<ModifyVpnGatewayCcnRoutesOutcome> ModifyVpnGatewayCcnRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpnGatewayCcnRoutesRequest&, ModifyVpnGatewayCcnRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpnGatewayCcnRoutesAsyncHandler;
+                typedef Outcome<Error, Model::NotifyRoutesResponse> NotifyRoutesOutcome;
+                typedef std::future<NotifyRoutesOutcome> NotifyRoutesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::NotifyRoutesRequest&, NotifyRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> NotifyRoutesAsyncHandler;
                 typedef Outcome<Error, Model::RejectAttachCcnInstancesResponse> RejectAttachCcnInstancesOutcome;
                 typedef std::future<RejectAttachCcnInstancesOutcome> RejectAttachCcnInstancesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::RejectAttachCcnInstancesRequest&, RejectAttachCcnInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RejectAttachCcnInstancesAsyncHandler;
@@ -1162,6 +1189,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UnassignPrivateIpAddressesResponse> UnassignPrivateIpAddressesOutcome;
                 typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::UnassignPrivateIpAddressesRequest&, UnassignPrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnassignPrivateIpAddressesAsyncHandler;
+                typedef Outcome<Error, Model::WithdrawNotifyRoutesResponse> WithdrawNotifyRoutesOutcome;
+                typedef std::future<WithdrawNotifyRoutesOutcome> WithdrawNotifyRoutesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::WithdrawNotifyRoutesRequest&, WithdrawNotifyRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawNotifyRoutesAsyncHandler;
 
 
 
@@ -1580,6 +1610,15 @@ namespace TencentCloud
                 CreateNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable CreateNatGatewayDestinationIpPortTranslationNatRuleCallable(const Model::CreateNatGatewayDestinationIpPortTranslationNatRuleRequest& request);
 
                 /**
+                 *本接口(CreateNatGatewaySourceIpTranslationNatRule)用于创建NAT网关SNAT规则
+                 * @param req CreateNatGatewaySourceIpTranslationNatRuleRequest
+                 * @return CreateNatGatewaySourceIpTranslationNatRuleOutcome
+                 */
+                CreateNatGatewaySourceIpTranslationNatRuleOutcome CreateNatGatewaySourceIpTranslationNatRule(const Model::CreateNatGatewaySourceIpTranslationNatRuleRequest &request);
+                void CreateNatGatewaySourceIpTranslationNatRuleAsync(const Model::CreateNatGatewaySourceIpTranslationNatRuleRequest& request, const CreateNatGatewaySourceIpTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNatGatewaySourceIpTranslationNatRuleOutcomeCallable CreateNatGatewaySourceIpTranslationNatRuleCallable(const Model::CreateNatGatewaySourceIpTranslationNatRuleRequest& request);
+
+                /**
                  *本接口(CreateNetDetect)用于创建网络探测。
                  * @param req CreateNetDetectRequest
                  * @return CreateNetDetectOutcome
@@ -1902,6 +1941,15 @@ namespace TencentCloud
                 DeleteNatGatewayDestinationIpPortTranslationNatRuleOutcome DeleteNatGatewayDestinationIpPortTranslationNatRule(const Model::DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest &request);
                 void DeleteNatGatewayDestinationIpPortTranslationNatRuleAsync(const Model::DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest& request, const DeleteNatGatewayDestinationIpPortTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable DeleteNatGatewayDestinationIpPortTranslationNatRuleCallable(const Model::DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest& request);
+
+                /**
+                 *本接口（DeleteNatGatewaySourceIpTranslationNatRule）用于删除NAT网关端口SNAT转发规则。
+                 * @param req DeleteNatGatewaySourceIpTranslationNatRuleRequest
+                 * @return DeleteNatGatewaySourceIpTranslationNatRuleOutcome
+                 */
+                DeleteNatGatewaySourceIpTranslationNatRuleOutcome DeleteNatGatewaySourceIpTranslationNatRule(const Model::DeleteNatGatewaySourceIpTranslationNatRuleRequest &request);
+                void DeleteNatGatewaySourceIpTranslationNatRuleAsync(const Model::DeleteNatGatewaySourceIpTranslationNatRuleRequest& request, const DeleteNatGatewaySourceIpTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNatGatewaySourceIpTranslationNatRuleOutcomeCallable DeleteNatGatewaySourceIpTranslationNatRuleCallable(const Model::DeleteNatGatewaySourceIpTranslationNatRuleRequest& request);
 
                 /**
                  *本接口(DeleteNetDetect)用于删除网络探测实例。
@@ -2322,6 +2370,15 @@ namespace TencentCloud
                 DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome DescribeNatGatewayDestinationIpPortTranslationNatRules(const Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest &request);
                 void DescribeNatGatewayDestinationIpPortTranslationNatRulesAsync(const Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest& request, const DescribeNatGatewayDestinationIpPortTranslationNatRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcomeCallable DescribeNatGatewayDestinationIpPortTranslationNatRulesCallable(const Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest& request);
+
+                /**
+                 *本接口（DescribeNatGatewaySourceIpTranslationNatRules）用于查询NAT网关SNAT转发规则对象数组。
+                 * @param req DescribeNatGatewaySourceIpTranslationNatRulesRequest
+                 * @return DescribeNatGatewaySourceIpTranslationNatRulesOutcome
+                 */
+                DescribeNatGatewaySourceIpTranslationNatRulesOutcome DescribeNatGatewaySourceIpTranslationNatRules(const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest &request);
+                void DescribeNatGatewaySourceIpTranslationNatRulesAsync(const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest& request, const DescribeNatGatewaySourceIpTranslationNatRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatGatewaySourceIpTranslationNatRulesOutcomeCallable DescribeNatGatewaySourceIpTranslationNatRulesCallable(const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest& request);
 
                 /**
                  *本接口（DescribeNatGateways）用于查询 NAT 网关。
@@ -3036,6 +3093,15 @@ LimitTypes取值范围：
                 ModifyNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable ModifyNatGatewayDestinationIpPortTranslationNatRuleCallable(const Model::ModifyNatGatewayDestinationIpPortTranslationNatRuleRequest& request);
 
                 /**
+                 *本接口（ModifyNatGatewaySourceIpTranslationNatRule）用于修改NAT网关SNAT转发规则。
+                 * @param req ModifyNatGatewaySourceIpTranslationNatRuleRequest
+                 * @return ModifyNatGatewaySourceIpTranslationNatRuleOutcome
+                 */
+                ModifyNatGatewaySourceIpTranslationNatRuleOutcome ModifyNatGatewaySourceIpTranslationNatRule(const Model::ModifyNatGatewaySourceIpTranslationNatRuleRequest &request);
+                void ModifyNatGatewaySourceIpTranslationNatRuleAsync(const Model::ModifyNatGatewaySourceIpTranslationNatRuleRequest& request, const ModifyNatGatewaySourceIpTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNatGatewaySourceIpTranslationNatRuleOutcomeCallable ModifyNatGatewaySourceIpTranslationNatRuleCallable(const Model::ModifyNatGatewaySourceIpTranslationNatRuleRequest& request);
+
+                /**
                  *本接口(ModifyNetDetect)用于修改网络探测参数。
                  * @param req ModifyNetDetectRequest
                  * @return ModifyNetDetectOutcome
@@ -3186,6 +3252,15 @@ LimitTypes取值范围：
                 ModifyVpnGatewayCcnRoutesOutcome ModifyVpnGatewayCcnRoutes(const Model::ModifyVpnGatewayCcnRoutesRequest &request);
                 void ModifyVpnGatewayCcnRoutesAsync(const Model::ModifyVpnGatewayCcnRoutesRequest& request, const ModifyVpnGatewayCcnRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVpnGatewayCcnRoutesOutcomeCallable ModifyVpnGatewayCcnRoutesCallable(const Model::ModifyVpnGatewayCcnRoutesRequest& request);
+
+                /**
+                 *路由表列表页操作增加“发布到云联网”，用于发布路由到云联网。
+                 * @param req NotifyRoutesRequest
+                 * @return NotifyRoutesOutcome
+                 */
+                NotifyRoutesOutcome NotifyRoutes(const Model::NotifyRoutesRequest &request);
+                void NotifyRoutesAsync(const Model::NotifyRoutesRequest& request, const NotifyRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                NotifyRoutesOutcomeCallable NotifyRoutesCallable(const Model::NotifyRoutesRequest& request);
 
                 /**
                  *本接口（RejectAttachCcnInstances）用于跨账号关联实例时，云联网所有者拒绝关联操作。
@@ -3396,6 +3471,15 @@ LimitTypes取值范围：
                 UnassignPrivateIpAddressesOutcome UnassignPrivateIpAddresses(const Model::UnassignPrivateIpAddressesRequest &request);
                 void UnassignPrivateIpAddressesAsync(const Model::UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnassignPrivateIpAddressesOutcomeCallable UnassignPrivateIpAddressesCallable(const Model::UnassignPrivateIpAddressesRequest& request);
+
+                /**
+                 *路由表列表页操作增加“从云联网撤销”，用于撤销已发布到云联网的路由。
+                 * @param req WithdrawNotifyRoutesRequest
+                 * @return WithdrawNotifyRoutesOutcome
+                 */
+                WithdrawNotifyRoutesOutcome WithdrawNotifyRoutes(const Model::WithdrawNotifyRoutesRequest &request);
+                void WithdrawNotifyRoutesAsync(const Model::WithdrawNotifyRoutesRequest& request, const WithdrawNotifyRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                WithdrawNotifyRoutesOutcomeCallable WithdrawNotifyRoutesCallable(const Model::WithdrawNotifyRoutesRequest& request);
 
             };
         }

@@ -29,7 +29,8 @@ RouteTable::RouteTable() :
     m_routeSetHasBeenSet(false),
     m_mainHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_localCidrForCcnHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,26 @@ CoreInternalOutcome RouteTable::Deserialize(const Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("LocalCidrForCcn") && !value["LocalCidrForCcn"].IsNull())
+    {
+        if (!value["LocalCidrForCcn"].IsArray())
+            return CoreInternalOutcome(Error("response `RouteTable.LocalCidrForCcn` is not array type"));
+
+        const Value &tmpValue = value["LocalCidrForCcn"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CidrForCcn item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_localCidrForCcn.push_back(item);
+        }
+        m_localCidrForCcnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -234,6 +255,21 @@ void RouteTable::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
         int i=0;
         for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_localCidrForCcnHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LocalCidrForCcn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_localCidrForCcn.begin(); itr != m_localCidrForCcn.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -369,5 +405,21 @@ void RouteTable::SetTagSet(const vector<Tag>& _tagSet)
 bool RouteTable::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+vector<CidrForCcn> RouteTable::GetLocalCidrForCcn() const
+{
+    return m_localCidrForCcn;
+}
+
+void RouteTable::SetLocalCidrForCcn(const vector<CidrForCcn>& _localCidrForCcn)
+{
+    m_localCidrForCcn = _localCidrForCcn;
+    m_localCidrForCcnHasBeenSet = true;
+}
+
+bool RouteTable::LocalCidrForCcnHasBeenSet() const
+{
+    return m_localCidrForCcnHasBeenSet;
 }
 

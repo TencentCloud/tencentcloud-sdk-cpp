@@ -27,6 +27,7 @@
 #include <tencentcloud/vpc/v20170312/model/RouteTableAssociation.h>
 #include <tencentcloud/vpc/v20170312/model/Route.h>
 #include <tencentcloud/vpc/v20170312/model/Tag.h>
+#include <tencentcloud/vpc/v20170312/model/CidrForCcn.h>
 
 
 namespace TencentCloud
@@ -193,6 +194,28 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取local路由是否发布云联网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalCidrForCcn local路由是否发布云联网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CidrForCcn> GetLocalCidrForCcn() const;
+
+                    /**
+                     * 设置local路由是否发布云联网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LocalCidrForCcn local路由是否发布云联网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocalCidrForCcn(const std::vector<CidrForCcn>& _localCidrForCcn);
+
+                    /**
+                     * 判断参数 LocalCidrForCcn 是否已赋值
+                     * @return LocalCidrForCcn 是否已赋值
+                     */
+                    bool LocalCidrForCcnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +265,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * local路由是否发布云联网。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CidrForCcn> m_localCidrForCcn;
+                    bool m_localCidrForCcnHasBeenSet;
 
                 };
             }

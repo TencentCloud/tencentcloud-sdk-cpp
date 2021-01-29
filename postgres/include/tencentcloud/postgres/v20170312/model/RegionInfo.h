@@ -118,6 +118,28 @@ namespace TencentCloud
                      */
                     bool RegionStateHasBeenSet() const;
 
+                    /**
+                     * 获取该地域是否支持国际站售卖，0：不支持，1：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportInternational 该地域是否支持国际站售卖，0：不支持，1：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSupportInternational() const;
+
+                    /**
+                     * 设置该地域是否支持国际站售卖，0：不支持，1：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SupportInternational 该地域是否支持国际站售卖，0：不支持，1：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSupportInternational(const uint64_t& _supportInternational);
+
+                    /**
+                     * 判断参数 SupportInternational 是否已赋值
+                     * @return SupportInternational 是否已赋值
+                     */
+                    bool SupportInternationalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +165,13 @@ namespace TencentCloud
                      */
                     std::string m_regionState;
                     bool m_regionStateHasBeenSet;
+
+                    /**
+                     * 该地域是否支持国际站售卖，0：不支持，1：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_supportInternational;
+                    bool m_supportInternationalHasBeenSet;
 
                 };
             }

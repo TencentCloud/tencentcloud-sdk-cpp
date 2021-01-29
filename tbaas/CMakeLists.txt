@@ -19,33 +19,50 @@ set(tbaas_public_header
   )
 
 set(tbaas_public_header_model
+  include/tencentcloud/tbaas/v20180416/model/PeerDetailForUser.h
   include/tencentcloud/tbaas/v20180416/model/QueryRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetChaincodeInitializeResultForUserResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetClusterListForUserResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockTransactionListForUserResponse.h
   include/tencentcloud/tbaas/v20180416/model/SendTransactionHandlerResponse.h
   include/tencentcloud/tbaas/v20180416/model/ApplyUserCertRequest.h
   include/tencentcloud/tbaas/v20180416/model/TransByDynamicContractHandlerRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetTransListHandlerResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetChaincodeInitializeResultForUserRequest.h
+  include/tencentcloud/tbaas/v20180416/model/InitializeChaincodeForUserRequest.h
   include/tencentcloud/tbaas/v20180416/model/DeployDynamicContractHandlerResponse.h
   include/tencentcloud/tbaas/v20180416/model/ApplyUserCertResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetChaincodeCompileLogForUserRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetInvokeTxRequest.h
-  include/tencentcloud/tbaas/v20180416/model/InvokeResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetPeerLogForUserResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetTransListHandlerRequest.h
   include/tencentcloud/tbaas/v20180416/model/DownloadUserCertResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetChaincodeLogForUserRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h
+  include/tencentcloud/tbaas/v20180416/model/InvokeResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockListResponse.h
   include/tencentcloud/tbaas/v20180416/model/SrvInvokeRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetClusterSummaryRequest.h
   include/tencentcloud/tbaas/v20180416/model/BlockByNumberHandlerResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetTransByHashHandlerResponse.h
   include/tencentcloud/tbaas/v20180416/model/DeployDynamicContractHandlerRequest.h
+  include/tencentcloud/tbaas/v20180416/model/ClusterDetailForUser.h
+  include/tencentcloud/tbaas/v20180416/model/GetPeerLogForUserRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListResponse.h
   include/tencentcloud/tbaas/v20180416/model/DownloadUserCertRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetClusterSummaryResponse.h
   include/tencentcloud/tbaas/v20180416/model/TransByDynamicContractHandlerResponse.h
   include/tencentcloud/tbaas/v20180416/model/PeerSet.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockTransactionListForUserRequest.h
+  include/tencentcloud/tbaas/v20180416/model/CreateChaincodeAndInstallForUserRequest.h
   include/tencentcloud/tbaas/v20180416/model/SrvInvokeResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockListHandlerRequest.h
-  include/tencentcloud/tbaas/v20180416/model/GetClusterSummaryRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetChaincodeLogForUserResponse.h
+  include/tencentcloud/tbaas/v20180416/model/LogDetailForUser.h
+  include/tencentcloud/tbaas/v20180416/model/InitializeChaincodeForUserResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GroupDetailForUser.h
+  include/tencentcloud/tbaas/v20180416/model/GetClusterListForUserRequest.h
   include/tencentcloud/tbaas/v20180416/model/Block.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockListRequest.h
   include/tencentcloud/tbaas/v20180416/model/BcosTransInfo.h
@@ -53,45 +70,66 @@ set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/GetInvokeTxResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockListHandlerResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserResponse.h
-  include/tencentcloud/tbaas/v20180416/model/GetTransListHandlerRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetChannelListForUserResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetChaincodeCompileLogForUserResponse.h
   include/tencentcloud/tbaas/v20180416/model/SendTransactionHandlerRequest.h
   include/tencentcloud/tbaas/v20180416/model/TransactionItem.h
   include/tencentcloud/tbaas/v20180416/model/BlockByNumberHandlerRequest.h
   include/tencentcloud/tbaas/v20180416/model/BcosBlockObj.h
+  include/tencentcloud/tbaas/v20180416/model/ChannelDetailForUser.h
   include/tencentcloud/tbaas/v20180416/model/GetTransByHashHandlerRequest.h
+  include/tencentcloud/tbaas/v20180416/model/CreateChaincodeAndInstallForUserResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetChannelListForUserRequest.h
   include/tencentcloud/tbaas/v20180416/model/QueryResponse.h
   include/tencentcloud/tbaas/v20180416/model/EndorserGroup.h
   )
 
 set(tbaas_src
   src/v20180416/TbaasClient.cpp
+  src/v20180416/model/PeerDetailForUser.cpp
   src/v20180416/model/QueryRequest.cpp
+  src/v20180416/model/GetChaincodeInitializeResultForUserResponse.cpp
+  src/v20180416/model/GetClusterListForUserResponse.cpp
   src/v20180416/model/GetBlockTransactionListForUserResponse.cpp
   src/v20180416/model/SendTransactionHandlerResponse.cpp
   src/v20180416/model/ApplyUserCertRequest.cpp
   src/v20180416/model/TransByDynamicContractHandlerRequest.cpp
   src/v20180416/model/GetTransListHandlerResponse.cpp
+  src/v20180416/model/GetChaincodeInitializeResultForUserRequest.cpp
+  src/v20180416/model/InitializeChaincodeForUserRequest.cpp
   src/v20180416/model/DeployDynamicContractHandlerResponse.cpp
   src/v20180416/model/ApplyUserCertResponse.cpp
+  src/v20180416/model/GetChaincodeCompileLogForUserRequest.cpp
   src/v20180416/model/GetInvokeTxRequest.cpp
-  src/v20180416/model/InvokeResponse.cpp
+  src/v20180416/model/GetPeerLogForUserResponse.cpp
+  src/v20180416/model/GetTransListHandlerRequest.cpp
   src/v20180416/model/DownloadUserCertResponse.cpp
+  src/v20180416/model/GetChaincodeLogForUserRequest.cpp
   src/v20180416/model/GetLatesdTransactionListRequest.cpp
+  src/v20180416/model/InvokeResponse.cpp
   src/v20180416/model/GetTransactionDetailForUserRequest.cpp
   src/v20180416/model/GetBlockListResponse.cpp
   src/v20180416/model/SrvInvokeRequest.cpp
+  src/v20180416/model/GetClusterSummaryRequest.cpp
   src/v20180416/model/BlockByNumberHandlerResponse.cpp
   src/v20180416/model/GetTransByHashHandlerResponse.cpp
   src/v20180416/model/DeployDynamicContractHandlerRequest.cpp
+  src/v20180416/model/ClusterDetailForUser.cpp
+  src/v20180416/model/GetPeerLogForUserRequest.cpp
   src/v20180416/model/GetLatesdTransactionListResponse.cpp
   src/v20180416/model/DownloadUserCertRequest.cpp
   src/v20180416/model/GetClusterSummaryResponse.cpp
   src/v20180416/model/TransByDynamicContractHandlerResponse.cpp
   src/v20180416/model/PeerSet.cpp
   src/v20180416/model/GetBlockTransactionListForUserRequest.cpp
+  src/v20180416/model/CreateChaincodeAndInstallForUserRequest.cpp
   src/v20180416/model/SrvInvokeResponse.cpp
   src/v20180416/model/GetBlockListHandlerRequest.cpp
-  src/v20180416/model/GetClusterSummaryRequest.cpp
+  src/v20180416/model/GetChaincodeLogForUserResponse.cpp
+  src/v20180416/model/LogDetailForUser.cpp
+  src/v20180416/model/InitializeChaincodeForUserResponse.cpp
+  src/v20180416/model/GroupDetailForUser.cpp
+  src/v20180416/model/GetClusterListForUserRequest.cpp
   src/v20180416/model/Block.cpp
   src/v20180416/model/GetBlockListRequest.cpp
   src/v20180416/model/BcosTransInfo.cpp
@@ -99,12 +137,16 @@ set(tbaas_src
   src/v20180416/model/GetInvokeTxResponse.cpp
   src/v20180416/model/GetBlockListHandlerResponse.cpp
   src/v20180416/model/GetTransactionDetailForUserResponse.cpp
-  src/v20180416/model/GetTransListHandlerRequest.cpp
+  src/v20180416/model/GetChannelListForUserResponse.cpp
+  src/v20180416/model/GetChaincodeCompileLogForUserResponse.cpp
   src/v20180416/model/SendTransactionHandlerRequest.cpp
   src/v20180416/model/TransactionItem.cpp
   src/v20180416/model/BlockByNumberHandlerRequest.cpp
   src/v20180416/model/BcosBlockObj.cpp
+  src/v20180416/model/ChannelDetailForUser.cpp
   src/v20180416/model/GetTransByHashHandlerRequest.cpp
+  src/v20180416/model/CreateChaincodeAndInstallForUserResponse.cpp
+  src/v20180416/model/GetChannelListForUserRequest.cpp
   src/v20180416/model/QueryResponse.cpp
   src/v20180416/model/EndorserGroup.cpp
   )

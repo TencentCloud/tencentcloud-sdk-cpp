@@ -49,7 +49,8 @@ AlarmPolicy::AlarmPolicy() :
     m_instanceSumHasBeenSet(false),
     m_instanceGroupNameHasBeenSet(false),
     m_ruleTypeHasBeenSet(false),
-    m_originIdHasBeenSet(false)
+    m_originIdHasBeenSet(false),
+    m_tagInstancesHasBeenSet(false)
 {
 }
 
@@ -385,6 +386,26 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const Value &value)
         m_originIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TagInstances") && !value["TagInstances"].IsNull())
+    {
+        if (!value["TagInstances"].IsArray())
+            return CoreInternalOutcome(Error("response `AlarmPolicy.TagInstances` is not array type"));
+
+        const Value &tmpValue = value["TagInstances"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInstance item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagInstances.push_back(item);
+        }
+        m_tagInstancesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -641,6 +662,21 @@ void AlarmPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "OriginId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_originId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagInstancesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagInstances";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagInstances.begin(); itr != m_tagInstances.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1092,5 +1128,21 @@ void AlarmPolicy::SetOriginId(const string& _originId)
 bool AlarmPolicy::OriginIdHasBeenSet() const
 {
     return m_originIdHasBeenSet;
+}
+
+vector<TagInstance> AlarmPolicy::GetTagInstances() const
+{
+    return m_tagInstances;
+}
+
+void AlarmPolicy::SetTagInstances(const vector<TagInstance>& _tagInstances)
+{
+    m_tagInstances = _tagInstances;
+    m_tagInstancesHasBeenSet = true;
+}
+
+bool AlarmPolicy::TagInstancesHasBeenSet() const
+{
+    return m_tagInstancesHasBeenSet;
 }
 

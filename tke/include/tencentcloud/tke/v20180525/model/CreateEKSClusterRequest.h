@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/DnsServerConf.h>
+#include <tencentcloud/tke/v20180525/model/TagSpecification.h>
 
 
 namespace TencentCloud
@@ -205,6 +206,24 @@ namespace TencentCloud
                      */
                     bool EnableVpcCoreDNSHasBeenSet() const;
 
+                    /**
+                     * 获取标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到集群实例。
+                     * @return TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到集群实例。
+                     */
+                    std::vector<TagSpecification> GetTagSpecification() const;
+
+                    /**
+                     * 设置标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到集群实例。
+                     * @param TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到集群实例。
+                     */
+                    void SetTagSpecification(const std::vector<TagSpecification>& _tagSpecification);
+
+                    /**
+                     * 判断参数 TagSpecification 是否已赋值
+                     * @return TagSpecification 是否已赋值
+                     */
+                    bool TagSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +279,12 @@ namespace TencentCloud
                      */
                     bool m_enableVpcCoreDNS;
                     bool m_enableVpcCoreDNSHasBeenSet;
+
+                    /**
+                     * 标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到集群实例。
+                     */
+                    std::vector<TagSpecification> m_tagSpecification;
+                    bool m_tagSpecificationHasBeenSet;
 
                 };
             }
