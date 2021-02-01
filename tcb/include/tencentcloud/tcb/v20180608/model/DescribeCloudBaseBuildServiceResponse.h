@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool UploadUrlHasBeenSet() const;
 
                     /**
-                     * 获取heder
-                     * @return UploadHeaders heder
+                     * 获取上传heder
+                     * @return UploadHeaders 上传heder
                      */
                     std::vector<KVPair> GetUploadHeaders() const;
 
@@ -91,6 +91,34 @@ namespace TencentCloud
                      */
                     bool PackageVersionHasBeenSet() const;
 
+                    /**
+                     * 获取下载链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DownloadUrl 下载链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDownloadUrl() const;
+
+                    /**
+                     * 判断参数 DownloadUrl 是否已赋值
+                     * @return DownloadUrl 是否已赋值
+                     */
+                    bool DownloadUrlHasBeenSet() const;
+
+                    /**
+                     * 获取下载Httpheader
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DownloadHeaders 下载Httpheader
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KVPair> GetDownloadHeaders() const;
+
+                    /**
+                     * 判断参数 DownloadHeaders 是否已赋值
+                     * @return DownloadHeaders 是否已赋值
+                     */
+                    bool DownloadHeadersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,7 +128,7 @@ namespace TencentCloud
                     bool m_uploadUrlHasBeenSet;
 
                     /**
-                     * heder
+                     * 上传heder
                      */
                     std::vector<KVPair> m_uploadHeaders;
                     bool m_uploadHeadersHasBeenSet;
@@ -116,6 +144,20 @@ namespace TencentCloud
                      */
                     std::string m_packageVersion;
                     bool m_packageVersionHasBeenSet;
+
+                    /**
+                     * 下载链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_downloadUrl;
+                    bool m_downloadUrlHasBeenSet;
+
+                    /**
+                     * 下载Httpheader
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KVPair> m_downloadHeaders;
+                    bool m_downloadHeadersHasBeenSet;
 
                 };
             }

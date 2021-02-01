@@ -2534,6 +2534,92 @@ GseClient::UpdateAssetOutcomeCallable GseClient::UpdateAssetCallable(const Updat
     return task->get_future();
 }
 
+GseClient::UpdateBucketAccelerateOptOutcome GseClient::UpdateBucketAccelerateOpt(const UpdateBucketAccelerateOptRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateBucketAccelerateOpt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateBucketAccelerateOptResponse rsp = UpdateBucketAccelerateOptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateBucketAccelerateOptOutcome(rsp);
+        else
+            return UpdateBucketAccelerateOptOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateBucketAccelerateOptOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::UpdateBucketAccelerateOptAsync(const UpdateBucketAccelerateOptRequest& request, const UpdateBucketAccelerateOptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateBucketAccelerateOpt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::UpdateBucketAccelerateOptOutcomeCallable GseClient::UpdateBucketAccelerateOptCallable(const UpdateBucketAccelerateOptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateBucketAccelerateOptOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateBucketAccelerateOpt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::UpdateBucketCORSOptOutcome GseClient::UpdateBucketCORSOpt(const UpdateBucketCORSOptRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateBucketCORSOpt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateBucketCORSOptResponse rsp = UpdateBucketCORSOptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateBucketCORSOptOutcome(rsp);
+        else
+            return UpdateBucketCORSOptOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateBucketCORSOptOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::UpdateBucketCORSOptAsync(const UpdateBucketCORSOptRequest& request, const UpdateBucketCORSOptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateBucketCORSOpt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::UpdateBucketCORSOptOutcomeCallable GseClient::UpdateBucketCORSOptCallable(const UpdateBucketCORSOptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateBucketCORSOptOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateBucketCORSOpt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::UpdateFleetAttributesOutcome GseClient::UpdateFleetAttributes(const UpdateFleetAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateFleetAttributes");

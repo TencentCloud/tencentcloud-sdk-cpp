@@ -28,7 +28,9 @@ DescribeCloudBaseBuildServiceResponse::DescribeCloudBaseBuildServiceResponse() :
     m_uploadUrlHasBeenSet(false),
     m_uploadHeadersHasBeenSet(false),
     m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false)
+    m_packageVersionHasBeenSet(false),
+    m_downloadUrlHasBeenSet(false),
+    m_downloadHeadersHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,36 @@ CoreInternalOutcome DescribeCloudBaseBuildServiceResponse::Deserialize(const str
         m_packageVersionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DownloadUrl") && !rsp["DownloadUrl"].IsNull())
+    {
+        if (!rsp["DownloadUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_downloadUrl = string(rsp["DownloadUrl"].GetString());
+        m_downloadUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DownloadHeaders") && !rsp["DownloadHeaders"].IsNull())
+    {
+        if (!rsp["DownloadHeaders"].IsArray())
+            return CoreInternalOutcome(Error("response `DownloadHeaders` is not array type"));
+
+        const Value &tmpValue = rsp["DownloadHeaders"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KVPair item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_downloadHeaders.push_back(item);
+        }
+        m_downloadHeadersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -159,6 +191,26 @@ string DescribeCloudBaseBuildServiceResponse::GetPackageVersion() const
 bool DescribeCloudBaseBuildServiceResponse::PackageVersionHasBeenSet() const
 {
     return m_packageVersionHasBeenSet;
+}
+
+string DescribeCloudBaseBuildServiceResponse::GetDownloadUrl() const
+{
+    return m_downloadUrl;
+}
+
+bool DescribeCloudBaseBuildServiceResponse::DownloadUrlHasBeenSet() const
+{
+    return m_downloadUrlHasBeenSet;
+}
+
+vector<KVPair> DescribeCloudBaseBuildServiceResponse::GetDownloadHeaders() const
+{
+    return m_downloadHeaders;
+}
+
+bool DescribeCloudBaseBuildServiceResponse::DownloadHeadersHasBeenSet() const
+{
+    return m_downloadHeadersHasBeenSet;
 }
 
 

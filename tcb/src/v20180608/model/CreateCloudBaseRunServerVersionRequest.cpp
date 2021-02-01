@@ -57,7 +57,8 @@ CreateCloudBaseRunServerVersionRequest::CreateCloudBaseRunServerVersionRequest()
     m_operatorRemarkHasBeenSet(false),
     m_serverPathHasBeenSet(false),
     m_imageReuseKeyHasBeenSet(false),
-    m_sidecarSpecsHasBeenSet(false)
+    m_sidecarSpecsHasBeenSet(false),
+    m_securityHasBeenSet(false)
 {
 }
 
@@ -356,6 +357,15 @@ string CreateCloudBaseRunServerVersionRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_securityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Security";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_security.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -908,6 +918,22 @@ void CreateCloudBaseRunServerVersionRequest::SetSidecarSpecs(const vector<CloudB
 bool CreateCloudBaseRunServerVersionRequest::SidecarSpecsHasBeenSet() const
 {
     return m_sidecarSpecsHasBeenSet;
+}
+
+CloudBaseSecurityContext CreateCloudBaseRunServerVersionRequest::GetSecurity() const
+{
+    return m_security;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetSecurity(const CloudBaseSecurityContext& _security)
+{
+    m_security = _security;
+    m_securityHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::SecurityHasBeenSet() const
+{
+    return m_securityHasBeenSet;
 }
 
 

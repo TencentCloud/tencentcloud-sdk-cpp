@@ -28,7 +28,8 @@ CloudBaseRunSideSpec::CloudBaseRunSideSpec() :
     m_envVarHasBeenSet(false),
     m_initialDelaySecondsHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_memHasBeenSet(false)
+    m_memHasBeenSet(false),
+    m_securityHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,23 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const Value &value)
         m_memHasBeenSet = true;
     }
 
+    if (value.HasMember("Security") && !value["Security"].IsNull())
+    {
+        if (!value["Security"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.Security` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_security.Deserialize(value["Security"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_securityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +186,15 @@ void CloudBaseRunSideSpec::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "Mem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mem, allocator);
+    }
+
+    if (m_securityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Security";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_security.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -283,5 +310,21 @@ void CloudBaseRunSideSpec::SetMem(const int64_t& _mem)
 bool CloudBaseRunSideSpec::MemHasBeenSet() const
 {
     return m_memHasBeenSet;
+}
+
+CloudBaseSecurityContext CloudBaseRunSideSpec::GetSecurity() const
+{
+    return m_security;
+}
+
+void CloudBaseRunSideSpec::SetSecurity(const CloudBaseSecurityContext& _security)
+{
+    m_security = _security;
+    m_securityHasBeenSet = true;
+}
+
+bool CloudBaseRunSideSpec::SecurityHasBeenSet() const
+{
+    return m_securityHasBeenSet;
 }
 

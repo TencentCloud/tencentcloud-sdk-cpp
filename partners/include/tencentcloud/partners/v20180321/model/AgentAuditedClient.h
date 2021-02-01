@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool HasOverdueBillHasBeenSet() const;
 
                     /**
-                     * 获取客户类型：可以为new(新拓)/assign(指定)/old(存量)/空
-                     * @return ClientType 客户类型：可以为new(新拓)/assign(指定)/old(存量)/空
+                     * 获取客户类型：可以为new(新拓)/assign(指定)/old(存量)/direct(直销)/direct_newopp(直销(新商机))/空
+                     * @return ClientType 客户类型：可以为new(新拓)/assign(指定)/old(存量)/direct(直销)/direct_newopp(直销(新商机))/空
                      */
                     std::string GetClientType() const;
 
                     /**
-                     * 设置客户类型：可以为new(新拓)/assign(指定)/old(存量)/空
-                     * @param ClientType 客户类型：可以为new(新拓)/assign(指定)/old(存量)/空
+                     * 设置客户类型：可以为new(新拓)/assign(指定)/old(存量)/direct(直销)/direct_newopp(直销(新商机))/空
+                     * @param ClientType 客户类型：可以为new(新拓)/assign(指定)/old(存量)/direct(直销)/direct_newopp(直销(新商机))/空
                      */
                     void SetClientType(const std::string& _clientType);
 
@@ -415,7 +415,7 @@ namespace TencentCloud
                     bool m_hasOverdueBillHasBeenSet;
 
                     /**
-                     * 客户类型：可以为new(新拓)/assign(指定)/old(存量)/空
+                     * 客户类型：可以为new(新拓)/assign(指定)/old(存量)/direct(直销)/direct_newopp(直销(新商机))/空
                      */
                     std::string m_clientType;
                     bool m_clientTypeHasBeenSet;

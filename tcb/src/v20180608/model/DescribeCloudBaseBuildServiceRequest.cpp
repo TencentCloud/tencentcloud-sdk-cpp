@@ -26,7 +26,8 @@ using namespace std;
 DescribeCloudBaseBuildServiceRequest::DescribeCloudBaseBuildServiceRequest() :
     m_envIdHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
-    m_cIBusinessHasBeenSet(false)
+    m_cIBusinessHasBeenSet(false),
+    m_serviceVersionHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DescribeCloudBaseBuildServiceRequest::ToJsonString() const
         string key = "CIBusiness";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_cIBusiness.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_serviceVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DescribeCloudBaseBuildServiceRequest::SetCIBusiness(const string& _cIBusine
 bool DescribeCloudBaseBuildServiceRequest::CIBusinessHasBeenSet() const
 {
     return m_cIBusinessHasBeenSet;
+}
+
+string DescribeCloudBaseBuildServiceRequest::GetServiceVersion() const
+{
+    return m_serviceVersion;
+}
+
+void DescribeCloudBaseBuildServiceRequest::SetServiceVersion(const string& _serviceVersion)
+{
+    m_serviceVersion = _serviceVersion;
+    m_serviceVersionHasBeenSet = true;
+}
+
+bool DescribeCloudBaseBuildServiceRequest::ServiceVersionHasBeenSet() const
+{
+    return m_serviceVersionHasBeenSet;
 }
 
 

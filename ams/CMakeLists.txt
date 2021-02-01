@@ -15,10 +15,33 @@
 #
 
 set(ams_public_header
+  include/tencentcloud/ams/v20201229/AmsClient.h
   include/tencentcloud/ams/v20200608/AmsClient.h
   )
 
 set(ams_public_header_model
+  include/tencentcloud/ams/v20201229/model/DescribeTasksRequest.h
+  include/tencentcloud/ams/v20201229/model/StorageInfo.h
+  include/tencentcloud/ams/v20201229/model/BucketInfo.h
+  include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskResponse.h
+  include/tencentcloud/ams/v20201229/model/TaskResult.h
+  include/tencentcloud/ams/v20201229/model/CancelTaskRequest.h
+  include/tencentcloud/ams/v20201229/model/DescribeTaskDetailResponse.h
+  include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskRequest.h
+  include/tencentcloud/ams/v20201229/model/TaskInput.h
+  include/tencentcloud/ams/v20201229/model/DescribeTaskDetailRequest.h
+  include/tencentcloud/ams/v20201229/model/TaskLabel.h
+  include/tencentcloud/ams/v20201229/model/TaskFilter.h
+  include/tencentcloud/ams/v20201229/model/InputInfo.h
+  include/tencentcloud/ams/v20201229/model/DescribeTasksResponse.h
+  include/tencentcloud/ams/v20201229/model/AudioResultDetailLanguageResult.h
+  include/tencentcloud/ams/v20201229/model/CancelTaskResponse.h
+  include/tencentcloud/ams/v20201229/model/AudioResultDetailTextResult.h
+  include/tencentcloud/ams/v20201229/model/AudioResult.h
+  include/tencentcloud/ams/v20201229/model/AudioResultDetailMoanResult.h
+  include/tencentcloud/ams/v20201229/model/TaskData.h
+  include/tencentcloud/ams/v20201229/model/MediaInfo.h
+  include/tencentcloud/ams/v20201229/model/AudioSegments.h
   include/tencentcloud/ams/v20200608/model/ImageSegments.h
   include/tencentcloud/ams/v20200608/model/ImageResultResult.h
   include/tencentcloud/ams/v20200608/model/InputInfo.h
@@ -61,7 +84,30 @@ set(ams_public_header_model
   )
 
 set(ams_src
+  src/v20201229/AmsClient.cpp
   src/v20200608/AmsClient.cpp
+  src/v20201229/model/DescribeTasksRequest.cpp
+  src/v20201229/model/StorageInfo.cpp
+  src/v20201229/model/BucketInfo.cpp
+  src/v20201229/model/CreateAudioModerationTaskResponse.cpp
+  src/v20201229/model/TaskResult.cpp
+  src/v20201229/model/CancelTaskRequest.cpp
+  src/v20201229/model/DescribeTaskDetailResponse.cpp
+  src/v20201229/model/CreateAudioModerationTaskRequest.cpp
+  src/v20201229/model/TaskInput.cpp
+  src/v20201229/model/DescribeTaskDetailRequest.cpp
+  src/v20201229/model/TaskLabel.cpp
+  src/v20201229/model/TaskFilter.cpp
+  src/v20201229/model/InputInfo.cpp
+  src/v20201229/model/DescribeTasksResponse.cpp
+  src/v20201229/model/AudioResultDetailLanguageResult.cpp
+  src/v20201229/model/CancelTaskResponse.cpp
+  src/v20201229/model/AudioResultDetailTextResult.cpp
+  src/v20201229/model/AudioResult.cpp
+  src/v20201229/model/AudioResultDetailMoanResult.cpp
+  src/v20201229/model/TaskData.cpp
+  src/v20201229/model/MediaInfo.cpp
+  src/v20201229/model/AudioSegments.cpp
   src/v20200608/model/ImageSegments.cpp
   src/v20200608/model/ImageResultResult.cpp
   src/v20200608/model/InputInfo.cpp

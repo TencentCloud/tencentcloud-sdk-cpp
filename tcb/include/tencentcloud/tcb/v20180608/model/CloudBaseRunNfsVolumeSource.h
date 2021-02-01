@@ -100,6 +100,42 @@ namespace TencentCloud
                      */
                     bool ReadOnlyHasBeenSet() const;
 
+                    /**
+                     * 获取secret名称
+                     * @return SecretName secret名称
+                     */
+                    std::string GetSecretName() const;
+
+                    /**
+                     * 设置secret名称
+                     * @param SecretName secret名称
+                     */
+                    void SetSecretName(const std::string& _secretName);
+
+                    /**
+                     * 判断参数 SecretName 是否已赋值
+                     * @return SecretName 是否已赋值
+                     */
+                    bool SecretNameHasBeenSet() const;
+
+                    /**
+                     * 获取临时目录
+                     * @return EnableEmptyDirVolume 临时目录
+                     */
+                    bool GetEnableEmptyDirVolume() const;
+
+                    /**
+                     * 设置临时目录
+                     * @param EnableEmptyDirVolume 临时目录
+                     */
+                    void SetEnableEmptyDirVolume(const bool& _enableEmptyDirVolume);
+
+                    /**
+                     * 判断参数 EnableEmptyDirVolume 是否已赋值
+                     * @return EnableEmptyDirVolume 是否已赋值
+                     */
+                    bool EnableEmptyDirVolumeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +155,18 @@ namespace TencentCloud
                      */
                     bool m_readOnly;
                     bool m_readOnlyHasBeenSet;
+
+                    /**
+                     * secret名称
+                     */
+                    std::string m_secretName;
+                    bool m_secretNameHasBeenSet;
+
+                    /**
+                     * 临时目录
+                     */
+                    bool m_enableEmptyDirVolume;
+                    bool m_enableEmptyDirVolumeHasBeenSet;
 
                 };
             }

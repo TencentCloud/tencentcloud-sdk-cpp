@@ -27,6 +27,10 @@
 #include <tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateMailProfileResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/CreateSecurityAuditLogExportTaskRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/CreateSecurityAuditLogExportTaskResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DeleteSecurityAuditLogExportTasksRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DeleteSecurityAuditLogExportTasksResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeAllUserContactRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeAllUserContactResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeAllUserGroupRequest.h>
@@ -37,6 +41,10 @@
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBDiagHistoryResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBSpaceStatusRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBSpaceStatusResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogDownloadUrlsRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogDownloadUrlsResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogExportTasksRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogExportTasksResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTopSqlsRequest.h>
@@ -67,6 +75,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateMailProfileResponse> CreateMailProfileOutcome;
                 typedef std::future<CreateMailProfileOutcome> CreateMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateMailProfileRequest&, CreateMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMailProfileAsyncHandler;
+                typedef Outcome<Error, Model::CreateSecurityAuditLogExportTaskResponse> CreateSecurityAuditLogExportTaskOutcome;
+                typedef std::future<CreateSecurityAuditLogExportTaskOutcome> CreateSecurityAuditLogExportTaskOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateSecurityAuditLogExportTaskRequest&, CreateSecurityAuditLogExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityAuditLogExportTaskAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSecurityAuditLogExportTasksResponse> DeleteSecurityAuditLogExportTasksOutcome;
+                typedef std::future<DeleteSecurityAuditLogExportTasksOutcome> DeleteSecurityAuditLogExportTasksOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DeleteSecurityAuditLogExportTasksRequest&, DeleteSecurityAuditLogExportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityAuditLogExportTasksAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAllUserContactResponse> DescribeAllUserContactOutcome;
                 typedef std::future<DescribeAllUserContactOutcome> DescribeAllUserContactOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeAllUserContactRequest&, DescribeAllUserContactOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllUserContactAsyncHandler;
@@ -82,6 +96,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDBSpaceStatusResponse> DescribeDBSpaceStatusOutcome;
                 typedef std::future<DescribeDBSpaceStatusOutcome> DescribeDBSpaceStatusOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBSpaceStatusRequest&, DescribeDBSpaceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSpaceStatusAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSecurityAuditLogDownloadUrlsResponse> DescribeSecurityAuditLogDownloadUrlsOutcome;
+                typedef std::future<DescribeSecurityAuditLogDownloadUrlsOutcome> DescribeSecurityAuditLogDownloadUrlsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeSecurityAuditLogDownloadUrlsRequest&, DescribeSecurityAuditLogDownloadUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAuditLogDownloadUrlsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSecurityAuditLogExportTasksResponse> DescribeSecurityAuditLogExportTasksOutcome;
+                typedef std::future<DescribeSecurityAuditLogExportTasksOutcome> DescribeSecurityAuditLogExportTasksOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeSecurityAuditLogExportTasksRequest&, DescribeSecurityAuditLogExportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAuditLogExportTasksAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSlowLogTimeSeriesStatsResponse> DescribeSlowLogTimeSeriesStatsOutcome;
                 typedef std::future<DescribeSlowLogTimeSeriesStatsOutcome> DescribeSlowLogTimeSeriesStatsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSlowLogTimeSeriesStatsRequest&, DescribeSlowLogTimeSeriesStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogTimeSeriesStatsAsyncHandler;
@@ -117,6 +137,24 @@ namespace TencentCloud
                 CreateMailProfileOutcome CreateMailProfile(const Model::CreateMailProfileRequest &request);
                 void CreateMailProfileAsync(const Model::CreateMailProfileRequest& request, const CreateMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMailProfileOutcomeCallable CreateMailProfileCallable(const Model::CreateMailProfileRequest& request);
+
+                /**
+                 *创建安全审计日志导出任务。
+                 * @param req CreateSecurityAuditLogExportTaskRequest
+                 * @return CreateSecurityAuditLogExportTaskOutcome
+                 */
+                CreateSecurityAuditLogExportTaskOutcome CreateSecurityAuditLogExportTask(const Model::CreateSecurityAuditLogExportTaskRequest &request);
+                void CreateSecurityAuditLogExportTaskAsync(const Model::CreateSecurityAuditLogExportTaskRequest& request, const CreateSecurityAuditLogExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityAuditLogExportTaskOutcomeCallable CreateSecurityAuditLogExportTaskCallable(const Model::CreateSecurityAuditLogExportTaskRequest& request);
+
+                /**
+                 *删除安全审计日志导出任务。
+                 * @param req DeleteSecurityAuditLogExportTasksRequest
+                 * @return DeleteSecurityAuditLogExportTasksOutcome
+                 */
+                DeleteSecurityAuditLogExportTasksOutcome DeleteSecurityAuditLogExportTasks(const Model::DeleteSecurityAuditLogExportTasksRequest &request);
+                void DeleteSecurityAuditLogExportTasksAsync(const Model::DeleteSecurityAuditLogExportTasksRequest& request, const DeleteSecurityAuditLogExportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityAuditLogExportTasksOutcomeCallable DeleteSecurityAuditLogExportTasksCallable(const Model::DeleteSecurityAuditLogExportTasksRequest& request);
 
                 /**
                  *获取邮件发送中联系人的相关信息。
@@ -162,6 +200,24 @@ namespace TencentCloud
                 DescribeDBSpaceStatusOutcome DescribeDBSpaceStatus(const Model::DescribeDBSpaceStatusRequest &request);
                 void DescribeDBSpaceStatusAsync(const Model::DescribeDBSpaceStatusRequest& request, const DescribeDBSpaceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBSpaceStatusOutcomeCallable DescribeDBSpaceStatusCallable(const Model::DescribeDBSpaceStatusRequest& request);
+
+                /**
+                 *查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。
+                 * @param req DescribeSecurityAuditLogDownloadUrlsRequest
+                 * @return DescribeSecurityAuditLogDownloadUrlsOutcome
+                 */
+                DescribeSecurityAuditLogDownloadUrlsOutcome DescribeSecurityAuditLogDownloadUrls(const Model::DescribeSecurityAuditLogDownloadUrlsRequest &request);
+                void DescribeSecurityAuditLogDownloadUrlsAsync(const Model::DescribeSecurityAuditLogDownloadUrlsRequest& request, const DescribeSecurityAuditLogDownloadUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityAuditLogDownloadUrlsOutcomeCallable DescribeSecurityAuditLogDownloadUrlsCallable(const Model::DescribeSecurityAuditLogDownloadUrlsRequest& request);
+
+                /**
+                 *查询安全审计日志导出任务列表。
+                 * @param req DescribeSecurityAuditLogExportTasksRequest
+                 * @return DescribeSecurityAuditLogExportTasksOutcome
+                 */
+                DescribeSecurityAuditLogExportTasksOutcome DescribeSecurityAuditLogExportTasks(const Model::DescribeSecurityAuditLogExportTasksRequest &request);
+                void DescribeSecurityAuditLogExportTasksAsync(const Model::DescribeSecurityAuditLogExportTasksRequest& request, const DescribeSecurityAuditLogExportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityAuditLogExportTasksOutcomeCallable DescribeSecurityAuditLogExportTasksCallable(const Model::DescribeSecurityAuditLogExportTasksRequest& request);
 
                 /**
                  *获取慢日志统计柱状图。

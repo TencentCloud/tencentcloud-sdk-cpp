@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/CloudBaseSecurityContext.h>
 
 
 namespace TencentCloud
@@ -200,6 +201,28 @@ namespace TencentCloud
                      */
                     bool MemHasBeenSet() const;
 
+                    /**
+                     * 获取安全特性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Security 安全特性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CloudBaseSecurityContext GetSecurity() const;
+
+                    /**
+                     * 设置安全特性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Security 安全特性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecurity(const CloudBaseSecurityContext& _security);
+
+                    /**
+                     * 判断参数 Security 是否已赋值
+                     * @return Security 是否已赋值
+                     */
+                    bool SecurityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +273,13 @@ namespace TencentCloud
                      */
                     int64_t m_mem;
                     bool m_memHasBeenSet;
+
+                    /**
+                     * 安全特性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CloudBaseSecurityContext m_security;
+                    bool m_securityHasBeenSet;
 
                 };
             }

@@ -27,6 +27,7 @@
 #include <tencentcloud/tcb/v20180608/model/CloudBaseRunVolumeMount.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseEsInfo.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseRunSideSpec.h>
+#include <tencentcloud/tcb/v20180608/model/CloudBaseSecurityContext.h>
 
 
 namespace TencentCloud
@@ -660,6 +661,24 @@ namespace TencentCloud
                      */
                     bool SidecarSpecsHasBeenSet() const;
 
+                    /**
+                     * 获取安全特性
+                     * @return Security 安全特性
+                     */
+                    CloudBaseSecurityContext GetSecurity() const;
+
+                    /**
+                     * 设置安全特性
+                     * @param Security 安全特性
+                     */
+                    void SetSecurity(const CloudBaseSecurityContext& _security);
+
+                    /**
+                     * 判断参数 Security 是否已赋值
+                     * @return Security 是否已赋值
+                     */
+                    bool SecurityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -865,6 +884,12 @@ namespace TencentCloud
                      */
                     std::vector<CloudBaseRunSideSpec> m_sidecarSpecs;
                     bool m_sidecarSpecsHasBeenSet;
+
+                    /**
+                     * 安全特性
+                     */
+                    CloudBaseSecurityContext m_security;
+                    bool m_securityHasBeenSet;
 
                 };
             }

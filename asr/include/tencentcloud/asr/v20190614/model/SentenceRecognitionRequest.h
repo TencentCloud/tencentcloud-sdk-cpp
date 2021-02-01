@@ -88,7 +88,8 @@ namespace TencentCloud
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
-•16k_wuu-SH：16k 上海话方言。
+•16k_wuu-SH：16k 上海话方言；
+•16k_zh_medical：16k 医疗。
                      * @return EngSerViceType 引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
@@ -98,7 +99,8 @@ namespace TencentCloud
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
-•16k_wuu-SH：16k 上海话方言。
+•16k_wuu-SH：16k 上海话方言；
+•16k_zh_medical：16k 医疗。
                      */
                     std::string GetEngSerViceType() const;
 
@@ -112,7 +114,8 @@ namespace TencentCloud
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
-•16k_wuu-SH：16k 上海话方言。
+•16k_wuu-SH：16k 上海话方言；
+•16k_zh_medical：16k 医疗。
                      * @param EngSerViceType 引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
@@ -122,7 +125,8 @@ namespace TencentCloud
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
-•16k_wuu-SH：16k 上海话方言。
+•16k_wuu-SH：16k 上海话方言；
+•16k_zh_medical：16k 医疗。
                      */
                     void SetEngSerViceType(const std::string& _engSerViceType);
 
@@ -372,7 +376,8 @@ namespace TencentCloud
 • 16k_en：16k 英语；
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
-•16k_wuu-SH：16k 上海话方言。
+•16k_wuu-SH：16k 上海话方言；
+•16k_zh_medical：16k 医疗。
                      */
                     std::string m_engSerViceType;
                     bool m_engSerViceTypeHasBeenSet;

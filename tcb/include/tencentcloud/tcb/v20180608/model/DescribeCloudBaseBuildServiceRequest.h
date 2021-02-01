@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool CIBusinessHasBeenSet() const;
 
+                    /**
+                     * 获取服务版本
+                     * @return ServiceVersion 服务版本
+                     */
+                    std::string GetServiceVersion() const;
+
+                    /**
+                     * 设置服务版本
+                     * @param ServiceVersion 服务版本
+                     */
+                    void SetServiceVersion(const std::string& _serviceVersion);
+
+                    /**
+                     * 判断参数 ServiceVersion 是否已赋值
+                     * @return ServiceVersion 是否已赋值
+                     */
+                    bool ServiceVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_cIBusiness;
                     bool m_cIBusinessHasBeenSet;
+
+                    /**
+                     * 服务版本
+                     */
+                    std::string m_serviceVersion;
+                    bool m_serviceVersionHasBeenSet;
 
                 };
             }

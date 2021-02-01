@@ -139,6 +139,10 @@
 #include <tencentcloud/gse/v20191112/model/UpdateAliasResponse.h>
 #include <tencentcloud/gse/v20191112/model/UpdateAssetRequest.h>
 #include <tencentcloud/gse/v20191112/model/UpdateAssetResponse.h>
+#include <tencentcloud/gse/v20191112/model/UpdateBucketAccelerateOptRequest.h>
+#include <tencentcloud/gse/v20191112/model/UpdateBucketAccelerateOptResponse.h>
+#include <tencentcloud/gse/v20191112/model/UpdateBucketCORSOptRequest.h>
+#include <tencentcloud/gse/v20191112/model/UpdateBucketCORSOptResponse.h>
 #include <tencentcloud/gse/v20191112/model/UpdateFleetAttributesRequest.h>
 #include <tencentcloud/gse/v20191112/model/UpdateFleetAttributesResponse.h>
 #include <tencentcloud/gse/v20191112/model/UpdateFleetCapacityRequest.h>
@@ -341,6 +345,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdateAssetResponse> UpdateAssetOutcome;
                 typedef std::future<UpdateAssetOutcome> UpdateAssetOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::UpdateAssetRequest&, UpdateAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAssetAsyncHandler;
+                typedef Outcome<Error, Model::UpdateBucketAccelerateOptResponse> UpdateBucketAccelerateOptOutcome;
+                typedef std::future<UpdateBucketAccelerateOptOutcome> UpdateBucketAccelerateOptOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::UpdateBucketAccelerateOptRequest&, UpdateBucketAccelerateOptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBucketAccelerateOptAsyncHandler;
+                typedef Outcome<Error, Model::UpdateBucketCORSOptResponse> UpdateBucketCORSOptOutcome;
+                typedef std::future<UpdateBucketCORSOptOutcome> UpdateBucketCORSOptOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::UpdateBucketCORSOptRequest&, UpdateBucketCORSOptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBucketCORSOptAsyncHandler;
                 typedef Outcome<Error, Model::UpdateFleetAttributesResponse> UpdateFleetAttributesOutcome;
                 typedef std::future<UpdateFleetAttributesOutcome> UpdateFleetAttributesOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::UpdateFleetAttributesRequest&, UpdateFleetAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFleetAttributesAsyncHandler;
@@ -999,6 +1009,24 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateAssetOutcome UpdateAsset(const Model::UpdateAssetRequest &request);
                 void UpdateAssetAsync(const Model::UpdateAssetRequest& request, const UpdateAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAssetOutcomeCallable UpdateAssetCallable(const Model::UpdateAssetRequest& request);
+
+                /**
+                 *本接口（UpdateBucketAccelerateOpt）用于开启cos全球加速。
+                 * @param req UpdateBucketAccelerateOptRequest
+                 * @return UpdateBucketAccelerateOptOutcome
+                 */
+                UpdateBucketAccelerateOptOutcome UpdateBucketAccelerateOpt(const Model::UpdateBucketAccelerateOptRequest &request);
+                void UpdateBucketAccelerateOptAsync(const Model::UpdateBucketAccelerateOptRequest& request, const UpdateBucketAccelerateOptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateBucketAccelerateOptOutcomeCallable UpdateBucketAccelerateOptCallable(const Model::UpdateBucketAccelerateOptRequest& request);
+
+                /**
+                 *本接口（UpdateBucketCORSOpt）用于设置cos跨域访问。
+                 * @param req UpdateBucketCORSOptRequest
+                 * @return UpdateBucketCORSOptOutcome
+                 */
+                UpdateBucketCORSOptOutcome UpdateBucketCORSOpt(const Model::UpdateBucketCORSOptRequest &request);
+                void UpdateBucketCORSOptAsync(const Model::UpdateBucketCORSOptRequest& request, const UpdateBucketCORSOptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateBucketCORSOptOutcomeCallable UpdateBucketCORSOptCallable(const Model::UpdateBucketCORSOptRequest& request);
 
                 /**
                  *本接口（UpdateFleetAttributes）用于更新服务器舰队属性。

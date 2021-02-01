@@ -24,7 +24,9 @@ using namespace std;
 CloudBaseRunNfsVolumeSource::CloudBaseRunNfsVolumeSource() :
     m_serverHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_readOnlyHasBeenSet(false)
+    m_readOnlyHasBeenSet(false),
+    m_secretNameHasBeenSet(false),
+    m_enableEmptyDirVolumeHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,26 @@ CoreInternalOutcome CloudBaseRunNfsVolumeSource::Deserialize(const Value &value)
         m_readOnlyHasBeenSet = true;
     }
 
+    if (value.HasMember("SecretName") && !value["SecretName"].IsNull())
+    {
+        if (!value["SecretName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CloudBaseRunNfsVolumeSource.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretName = string(value["SecretName"].GetString());
+        m_secretNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableEmptyDirVolume") && !value["EnableEmptyDirVolume"].IsNull())
+    {
+        if (!value["EnableEmptyDirVolume"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `CloudBaseRunNfsVolumeSource.EnableEmptyDirVolume` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableEmptyDirVolume = value["EnableEmptyDirVolume"].GetBool();
+        m_enableEmptyDirVolumeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +114,22 @@ void CloudBaseRunNfsVolumeSource::ToJsonObject(Value &value, Document::Allocator
         string key = "ReadOnly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readOnly, allocator);
+    }
+
+    if (m_secretNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecretName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_secretName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableEmptyDirVolumeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableEmptyDirVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableEmptyDirVolume, allocator);
     }
 
 }
@@ -143,5 +181,37 @@ void CloudBaseRunNfsVolumeSource::SetReadOnly(const bool& _readOnly)
 bool CloudBaseRunNfsVolumeSource::ReadOnlyHasBeenSet() const
 {
     return m_readOnlyHasBeenSet;
+}
+
+string CloudBaseRunNfsVolumeSource::GetSecretName() const
+{
+    return m_secretName;
+}
+
+void CloudBaseRunNfsVolumeSource::SetSecretName(const string& _secretName)
+{
+    m_secretName = _secretName;
+    m_secretNameHasBeenSet = true;
+}
+
+bool CloudBaseRunNfsVolumeSource::SecretNameHasBeenSet() const
+{
+    return m_secretNameHasBeenSet;
+}
+
+bool CloudBaseRunNfsVolumeSource::GetEnableEmptyDirVolume() const
+{
+    return m_enableEmptyDirVolume;
+}
+
+void CloudBaseRunNfsVolumeSource::SetEnableEmptyDirVolume(const bool& _enableEmptyDirVolume)
+{
+    m_enableEmptyDirVolume = _enableEmptyDirVolume;
+    m_enableEmptyDirVolumeHasBeenSet = true;
+}
+
+bool CloudBaseRunNfsVolumeSource::EnableEmptyDirVolumeHasBeenSet() const
+{
+    return m_enableEmptyDirVolumeHasBeenSet;
 }
 
