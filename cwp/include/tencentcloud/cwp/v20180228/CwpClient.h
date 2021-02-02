@@ -576,7 +576,7 @@ namespace TencentCloud
 
 
                 /**
-                 *本接口（AddLoginWhiteList）用于添加白名单规则
+                 *本接口用于新增异地登录白名单规则。
                  * @param req AddLoginWhiteListRequest
                  * @return AddLoginWhiteListOutcome
                  */
@@ -675,7 +675,7 @@ namespace TencentCloud
                 DeleteBruteAttacksOutcomeCallable DeleteBruteAttacksCallable(const Model::DeleteBruteAttacksRequest& request);
 
                 /**
-                 *删除白名单规则
+                 *本接口用于删除异地登录白名单规则。
                  * @param req DeleteLoginWhiteListRequest
                  * @return DeleteLoginWhiteListOutcome
                  */
@@ -1407,7 +1407,7 @@ namespace TencentCloud
                 ModifyAutoOpenProVersionConfigOutcomeCallable ModifyAutoOpenProVersionConfigCallable(const Model::ModifyAutoOpenProVersionConfigRequest& request);
 
                 /**
-                 *编辑白名单规则
+                 *本接口用于编辑异地登录白名单规则。
                  * @param req ModifyLoginWhiteListRequest
                  * @return ModifyLoginWhiteListOutcome
                  */

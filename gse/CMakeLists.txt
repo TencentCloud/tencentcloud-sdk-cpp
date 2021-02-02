@@ -43,6 +43,7 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/DescribeFleetUtilizationResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeScalingPoliciesRequest.h
   include/tencentcloud/gse/v20191112/model/DeleteFleetRequest.h
+  include/tencentcloud/gse/v20191112/model/TimerScalingPolicy.h
   include/tencentcloud/gse/v20191112/model/DetachCcnInstancesResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeFleetPortSettingsResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeUserQuotasRequest.h
@@ -69,9 +70,11 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/ResolveAliasResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeInstancesExtendResponse.h
   include/tencentcloud/gse/v20191112/model/Event.h
-  include/tencentcloud/gse/v20191112/model/UpdateRuntimeConfigurationResponse.h
+  include/tencentcloud/gse/v20191112/model/PutTimerScalingPolicyRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeCcnInstancesResponse.h
   include/tencentcloud/gse/v20191112/model/AssetSupportSys.h
+  include/tencentcloud/gse/v20191112/model/DeleteTimerScalingPolicyResponse.h
+  include/tencentcloud/gse/v20191112/model/DescribeTimerScalingPoliciesRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeInstanceLimitResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeAssetResponse.h
   include/tencentcloud/gse/v20191112/model/PlacedPlayerSession.h
@@ -96,12 +99,13 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/DescribeFleetCapacityRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeCcnInstancesRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeFleetStatisticDetailsResponse.h
-  include/tencentcloud/gse/v20191112/model/UpdateGameServerSessionQueueRequest.h
+  include/tencentcloud/gse/v20191112/model/DeleteTimerScalingPolicyRequest.h
   include/tencentcloud/gse/v20191112/model/JoinGameServerSessionResponse.h
   include/tencentcloud/gse/v20191112/model/AssetCredentials.h
   include/tencentcloud/gse/v20191112/model/TargetConfiguration.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionPlacementRequest.h
   include/tencentcloud/gse/v20191112/model/GameServerSessionQueueDestination.h
+  include/tencentcloud/gse/v20191112/model/UpdateGameServerSessionQueueRequest.h
   include/tencentcloud/gse/v20191112/model/FleetCapacity.h
   include/tencentcloud/gse/v20191112/model/SetServerWeightRequest.h
   include/tencentcloud/gse/v20191112/model/GetGameServerSessionLogUrlResponse.h
@@ -110,6 +114,7 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementRequest.h
   include/tencentcloud/gse/v20191112/model/InstanceTypeInfo.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionPlacementResponse.h
+  include/tencentcloud/gse/v20191112/model/UpdateRuntimeConfigurationResponse.h
   include/tencentcloud/gse/v20191112/model/CreateAliasResponse.h
   include/tencentcloud/gse/v20191112/model/ResourceCreationLimitPolicy.h
   include/tencentcloud/gse/v20191112/model/ListFleetsRequest.h
@@ -130,10 +135,13 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/CreateGameServerSessionQueueResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeInstanceTypesRequest.h
   include/tencentcloud/gse/v20191112/model/PlayerLatency.h
+  include/tencentcloud/gse/v20191112/model/SetServerReservedResponse.h
   include/tencentcloud/gse/v20191112/model/StopGameServerSessionPlacementRequest.h
   include/tencentcloud/gse/v20191112/model/UpdateFleetNameResponse.h
+  include/tencentcloud/gse/v20191112/model/TimerFleetCapacity.h
   include/tencentcloud/gse/v20191112/model/DescribeAliasRequest.h
   include/tencentcloud/gse/v20191112/model/CreateAliasRequest.h
+  include/tencentcloud/gse/v20191112/model/TimerValue.h
   include/tencentcloud/gse/v20191112/model/CopyFleetResponse.h
   include/tencentcloud/gse/v20191112/model/UpdateGameServerSessionRequest.h
   include/tencentcloud/gse/v20191112/model/ListAliasesRequest.h
@@ -146,13 +154,14 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/DescribeInstancesRequest.h
   include/tencentcloud/gse/v20191112/model/QuotaResource.h
   include/tencentcloud/gse/v20191112/model/DescribeFleetStatisticFlowsResponse.h
-  include/tencentcloud/gse/v20191112/model/InstanceCounts.h
-  include/tencentcloud/gse/v20191112/model/UpdateFleetNameRequest.h
+  include/tencentcloud/gse/v20191112/model/DiskInfo.h
+  include/tencentcloud/gse/v20191112/model/TimerConfiguration.h
   include/tencentcloud/gse/v20191112/model/CreateFleetResponse.h
   include/tencentcloud/gse/v20191112/model/Filter.h
   include/tencentcloud/gse/v20191112/model/UpdateFleetAttributesResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeFleetUtilizationRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeInstanceTypesResponse.h
+  include/tencentcloud/gse/v20191112/model/StartFleetActionsResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionDetailsRequest.h
   include/tencentcloud/gse/v20191112/model/GameServerSession.h
   include/tencentcloud/gse/v20191112/model/PlayerLatencyPolicy.h
@@ -164,13 +173,15 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/DescribeAssetRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeInstancesExtendRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionsResponse.h
-  include/tencentcloud/gse/v20191112/model/StartFleetActionsResponse.h
+  include/tencentcloud/gse/v20191112/model/InstanceCounts.h
   include/tencentcloud/gse/v20191112/model/UpdateBucketAccelerateOptResponse.h
   include/tencentcloud/gse/v20191112/model/JoinGameServerSessionRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeUserQuotasResponse.h
   include/tencentcloud/gse/v20191112/model/GetUploadFederationTokenRequest.h
+  include/tencentcloud/gse/v20191112/model/DescribeTimerScalingPoliciesResponse.h
   include/tencentcloud/gse/v20191112/model/CopyFleetRequest.h
   include/tencentcloud/gse/v20191112/model/SearchGameServerSessionsResponse.h
+  include/tencentcloud/gse/v20191112/model/PutTimerScalingPolicyResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeFleetEventsResponse.h
   include/tencentcloud/gse/v20191112/model/RoutingStrategy.h
   include/tencentcloud/gse/v20191112/model/DescribeFleetCapacityResponse.h
@@ -181,6 +192,7 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/PlayerSession.h
   include/tencentcloud/gse/v20191112/model/PutScalingPolicyResponse.h
   include/tencentcloud/gse/v20191112/model/CreateGameServerSessionQueueRequest.h
+  include/tencentcloud/gse/v20191112/model/UpdateFleetNameRequest.h
   include/tencentcloud/gse/v20191112/model/Alias.h
   include/tencentcloud/gse/v20191112/model/DescribeRuntimeConfigurationRequest.h
   include/tencentcloud/gse/v20191112/model/RuntimeConfiguration.h
@@ -192,6 +204,7 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/UpdateFleetCapacityRequest.h
   include/tencentcloud/gse/v20191112/model/FleetStatisticDetail.h
   include/tencentcloud/gse/v20191112/model/JoinGameServerSessionBatchResponse.h
+  include/tencentcloud/gse/v20191112/model/SetServerReservedRequest.h
   include/tencentcloud/gse/v20191112/model/InstanceExtend.h
   include/tencentcloud/gse/v20191112/model/PutScalingPolicyRequest.h
   include/tencentcloud/gse/v20191112/model/StopGameServerSessionPlacementResponse.h
@@ -224,6 +237,7 @@ set(gse_src
   src/v20191112/model/DescribeFleetUtilizationResponse.cpp
   src/v20191112/model/DescribeScalingPoliciesRequest.cpp
   src/v20191112/model/DeleteFleetRequest.cpp
+  src/v20191112/model/TimerScalingPolicy.cpp
   src/v20191112/model/DetachCcnInstancesResponse.cpp
   src/v20191112/model/DescribeFleetPortSettingsResponse.cpp
   src/v20191112/model/DescribeUserQuotasRequest.cpp
@@ -250,9 +264,11 @@ set(gse_src
   src/v20191112/model/ResolveAliasResponse.cpp
   src/v20191112/model/DescribeInstancesExtendResponse.cpp
   src/v20191112/model/Event.cpp
-  src/v20191112/model/UpdateRuntimeConfigurationResponse.cpp
+  src/v20191112/model/PutTimerScalingPolicyRequest.cpp
   src/v20191112/model/DescribeCcnInstancesResponse.cpp
   src/v20191112/model/AssetSupportSys.cpp
+  src/v20191112/model/DeleteTimerScalingPolicyResponse.cpp
+  src/v20191112/model/DescribeTimerScalingPoliciesRequest.cpp
   src/v20191112/model/DescribeInstanceLimitResponse.cpp
   src/v20191112/model/DescribeAssetResponse.cpp
   src/v20191112/model/PlacedPlayerSession.cpp
@@ -277,12 +293,13 @@ set(gse_src
   src/v20191112/model/DescribeFleetCapacityRequest.cpp
   src/v20191112/model/DescribeCcnInstancesRequest.cpp
   src/v20191112/model/DescribeFleetStatisticDetailsResponse.cpp
-  src/v20191112/model/UpdateGameServerSessionQueueRequest.cpp
+  src/v20191112/model/DeleteTimerScalingPolicyRequest.cpp
   src/v20191112/model/JoinGameServerSessionResponse.cpp
   src/v20191112/model/AssetCredentials.cpp
   src/v20191112/model/TargetConfiguration.cpp
   src/v20191112/model/DescribeGameServerSessionPlacementRequest.cpp
   src/v20191112/model/GameServerSessionQueueDestination.cpp
+  src/v20191112/model/UpdateGameServerSessionQueueRequest.cpp
   src/v20191112/model/FleetCapacity.cpp
   src/v20191112/model/SetServerWeightRequest.cpp
   src/v20191112/model/GetGameServerSessionLogUrlResponse.cpp
@@ -291,6 +308,7 @@ set(gse_src
   src/v20191112/model/StartGameServerSessionPlacementRequest.cpp
   src/v20191112/model/InstanceTypeInfo.cpp
   src/v20191112/model/DescribeGameServerSessionPlacementResponse.cpp
+  src/v20191112/model/UpdateRuntimeConfigurationResponse.cpp
   src/v20191112/model/CreateAliasResponse.cpp
   src/v20191112/model/ResourceCreationLimitPolicy.cpp
   src/v20191112/model/ListFleetsRequest.cpp
@@ -311,10 +329,13 @@ set(gse_src
   src/v20191112/model/CreateGameServerSessionQueueResponse.cpp
   src/v20191112/model/DescribeInstanceTypesRequest.cpp
   src/v20191112/model/PlayerLatency.cpp
+  src/v20191112/model/SetServerReservedResponse.cpp
   src/v20191112/model/StopGameServerSessionPlacementRequest.cpp
   src/v20191112/model/UpdateFleetNameResponse.cpp
+  src/v20191112/model/TimerFleetCapacity.cpp
   src/v20191112/model/DescribeAliasRequest.cpp
   src/v20191112/model/CreateAliasRequest.cpp
+  src/v20191112/model/TimerValue.cpp
   src/v20191112/model/CopyFleetResponse.cpp
   src/v20191112/model/UpdateGameServerSessionRequest.cpp
   src/v20191112/model/ListAliasesRequest.cpp
@@ -327,13 +348,14 @@ set(gse_src
   src/v20191112/model/DescribeInstancesRequest.cpp
   src/v20191112/model/QuotaResource.cpp
   src/v20191112/model/DescribeFleetStatisticFlowsResponse.cpp
-  src/v20191112/model/InstanceCounts.cpp
-  src/v20191112/model/UpdateFleetNameRequest.cpp
+  src/v20191112/model/DiskInfo.cpp
+  src/v20191112/model/TimerConfiguration.cpp
   src/v20191112/model/CreateFleetResponse.cpp
   src/v20191112/model/Filter.cpp
   src/v20191112/model/UpdateFleetAttributesResponse.cpp
   src/v20191112/model/DescribeFleetUtilizationRequest.cpp
   src/v20191112/model/DescribeInstanceTypesResponse.cpp
+  src/v20191112/model/StartFleetActionsResponse.cpp
   src/v20191112/model/DescribeGameServerSessionDetailsRequest.cpp
   src/v20191112/model/GameServerSession.cpp
   src/v20191112/model/PlayerLatencyPolicy.cpp
@@ -345,13 +367,15 @@ set(gse_src
   src/v20191112/model/DescribeAssetRequest.cpp
   src/v20191112/model/DescribeInstancesExtendRequest.cpp
   src/v20191112/model/DescribeGameServerSessionsResponse.cpp
-  src/v20191112/model/StartFleetActionsResponse.cpp
+  src/v20191112/model/InstanceCounts.cpp
   src/v20191112/model/UpdateBucketAccelerateOptResponse.cpp
   src/v20191112/model/JoinGameServerSessionRequest.cpp
   src/v20191112/model/DescribeUserQuotasResponse.cpp
   src/v20191112/model/GetUploadFederationTokenRequest.cpp
+  src/v20191112/model/DescribeTimerScalingPoliciesResponse.cpp
   src/v20191112/model/CopyFleetRequest.cpp
   src/v20191112/model/SearchGameServerSessionsResponse.cpp
+  src/v20191112/model/PutTimerScalingPolicyResponse.cpp
   src/v20191112/model/DescribeFleetEventsResponse.cpp
   src/v20191112/model/RoutingStrategy.cpp
   src/v20191112/model/DescribeFleetCapacityResponse.cpp
@@ -362,6 +386,7 @@ set(gse_src
   src/v20191112/model/PlayerSession.cpp
   src/v20191112/model/PutScalingPolicyResponse.cpp
   src/v20191112/model/CreateGameServerSessionQueueRequest.cpp
+  src/v20191112/model/UpdateFleetNameRequest.cpp
   src/v20191112/model/Alias.cpp
   src/v20191112/model/DescribeRuntimeConfigurationRequest.cpp
   src/v20191112/model/RuntimeConfiguration.cpp
@@ -373,6 +398,7 @@ set(gse_src
   src/v20191112/model/UpdateFleetCapacityRequest.cpp
   src/v20191112/model/FleetStatisticDetail.cpp
   src/v20191112/model/JoinGameServerSessionBatchResponse.cpp
+  src/v20191112/model/SetServerReservedRequest.cpp
   src/v20191112/model/InstanceExtend.cpp
   src/v20191112/model/PutScalingPolicyRequest.cpp
   src/v20191112/model/StopGameServerSessionPlacementResponse.cpp

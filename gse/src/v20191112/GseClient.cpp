@@ -599,6 +599,49 @@ GseClient::DeleteScalingPolicyOutcomeCallable GseClient::DeleteScalingPolicyCall
     return task->get_future();
 }
 
+GseClient::DeleteTimerScalingPolicyOutcome GseClient::DeleteTimerScalingPolicy(const DeleteTimerScalingPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTimerScalingPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTimerScalingPolicyResponse rsp = DeleteTimerScalingPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTimerScalingPolicyOutcome(rsp);
+        else
+            return DeleteTimerScalingPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTimerScalingPolicyOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DeleteTimerScalingPolicyAsync(const DeleteTimerScalingPolicyRequest& request, const DeleteTimerScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTimerScalingPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DeleteTimerScalingPolicyOutcomeCallable GseClient::DeleteTimerScalingPolicyCallable(const DeleteTimerScalingPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTimerScalingPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTimerScalingPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::DescribeAliasOutcome GseClient::DescribeAlias(const DescribeAliasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAlias");
@@ -1631,6 +1674,49 @@ GseClient::DescribeScalingPoliciesOutcomeCallable GseClient::DescribeScalingPoli
     return task->get_future();
 }
 
+GseClient::DescribeTimerScalingPoliciesOutcome GseClient::DescribeTimerScalingPolicies(const DescribeTimerScalingPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimerScalingPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimerScalingPoliciesResponse rsp = DescribeTimerScalingPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimerScalingPoliciesOutcome(rsp);
+        else
+            return DescribeTimerScalingPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimerScalingPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeTimerScalingPoliciesAsync(const DescribeTimerScalingPoliciesRequest& request, const DescribeTimerScalingPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTimerScalingPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeTimerScalingPoliciesOutcomeCallable GseClient::DescribeTimerScalingPoliciesCallable(const DescribeTimerScalingPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTimerScalingPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTimerScalingPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::DescribeUserQuotaOutcome GseClient::DescribeUserQuota(const DescribeUserQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserQuota");
@@ -2147,6 +2233,49 @@ GseClient::PutScalingPolicyOutcomeCallable GseClient::PutScalingPolicyCallable(c
     return task->get_future();
 }
 
+GseClient::PutTimerScalingPolicyOutcome GseClient::PutTimerScalingPolicy(const PutTimerScalingPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutTimerScalingPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutTimerScalingPolicyResponse rsp = PutTimerScalingPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutTimerScalingPolicyOutcome(rsp);
+        else
+            return PutTimerScalingPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return PutTimerScalingPolicyOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::PutTimerScalingPolicyAsync(const PutTimerScalingPolicyRequest& request, const PutTimerScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutTimerScalingPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::PutTimerScalingPolicyOutcomeCallable GseClient::PutTimerScalingPolicyCallable(const PutTimerScalingPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutTimerScalingPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->PutTimerScalingPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::ResolveAliasOutcome GseClient::ResolveAlias(const ResolveAliasRequest &request)
 {
     auto outcome = MakeRequest(request, "ResolveAlias");
@@ -2226,6 +2355,49 @@ GseClient::SearchGameServerSessionsOutcomeCallable GseClient::SearchGameServerSe
         [this, request]()
         {
             return this->SearchGameServerSessions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::SetServerReservedOutcome GseClient::SetServerReserved(const SetServerReservedRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetServerReserved");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetServerReservedResponse rsp = SetServerReservedResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetServerReservedOutcome(rsp);
+        else
+            return SetServerReservedOutcome(o.GetError());
+    }
+    else
+    {
+        return SetServerReservedOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::SetServerReservedAsync(const SetServerReservedRequest& request, const SetServerReservedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetServerReserved(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::SetServerReservedOutcomeCallable GseClient::SetServerReservedCallable(const SetServerReservedRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetServerReservedOutcome()>>(
+        [this, request]()
+        {
+            return this->SetServerReserved(request);
         }
     );
 

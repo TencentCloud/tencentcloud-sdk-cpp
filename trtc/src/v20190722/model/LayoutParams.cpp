@@ -29,7 +29,8 @@ LayoutParams::LayoutParams() :
     m_mainVideoRightAlignHasBeenSet(false),
     m_mixVideoUidsHasBeenSet(false),
     m_presetLayoutConfigHasBeenSet(false),
-    m_placeHolderModeHasBeenSet(false)
+    m_placeHolderModeHasBeenSet(false),
+    m_pureAudioHoldPlaceModeHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
         m_placeHolderModeHasBeenSet = true;
     }
 
+    if (value.HasMember("PureAudioHoldPlaceMode") && !value["PureAudioHoldPlaceMode"].IsNull())
+    {
+        if (!value["PureAudioHoldPlaceMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `LayoutParams.PureAudioHoldPlaceMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pureAudioHoldPlaceMode = value["PureAudioHoldPlaceMode"].GetUint64();
+        m_pureAudioHoldPlaceModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +231,14 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "PlaceHolderMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_placeHolderMode, allocator);
+    }
+
+    if (m_pureAudioHoldPlaceModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PureAudioHoldPlaceMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pureAudioHoldPlaceMode, allocator);
     }
 
 }
@@ -351,5 +370,21 @@ void LayoutParams::SetPlaceHolderMode(const uint64_t& _placeHolderMode)
 bool LayoutParams::PlaceHolderModeHasBeenSet() const
 {
     return m_placeHolderModeHasBeenSet;
+}
+
+uint64_t LayoutParams::GetPureAudioHoldPlaceMode() const
+{
+    return m_pureAudioHoldPlaceMode;
+}
+
+void LayoutParams::SetPureAudioHoldPlaceMode(const uint64_t& _pureAudioHoldPlaceMode)
+{
+    m_pureAudioHoldPlaceMode = _pureAudioHoldPlaceMode;
+    m_pureAudioHoldPlaceModeHasBeenSet = true;
+}
+
+bool LayoutParams::PureAudioHoldPlaceModeHasBeenSet() const
+{
+    return m_pureAudioHoldPlaceModeHasBeenSet;
 }
 

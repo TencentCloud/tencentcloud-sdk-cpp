@@ -152,6 +152,24 @@ namespace TencentCloud
                      */
                     bool AppNameHasBeenSet() const;
 
+                    /**
+                     * 获取服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     * @return ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     */
+                    std::string GetServiceName() const;
+
+                    /**
+                     * 设置服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     * @param ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     */
+                    void SetServiceName(const std::string& _serviceName);
+
+                    /**
+                     * 判断参数 ServiceName 是否已赋值
+                     * @return ServiceName 是否已赋值
+                     */
+                    bool ServiceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +206,12 @@ namespace TencentCloud
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
+
+                    /**
+                     * 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     */
+                    std::string m_serviceName;
+                    bool m_serviceNameHasBeenSet;
 
                 };
             }

@@ -29,7 +29,9 @@ Instance::Instance() :
     m_operatingSystemHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_weightHasBeenSet(false),
+    m_reserveValueHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,26 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Instance.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetInt64();
+        m_weightHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReserveValue") && !value["ReserveValue"].IsNull())
+    {
+        if (!value["ReserveValue"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Instance.ReserveValue` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_reserveValue = value["ReserveValue"].GetInt64();
+        m_reserveValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +209,22 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_reserveValueHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReserveValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reserveValue, allocator);
     }
 
 }
@@ -318,5 +356,37 @@ void Instance::SetCreateTime(const string& _createTime)
 bool Instance::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+int64_t Instance::GetWeight() const
+{
+    return m_weight;
+}
+
+void Instance::SetWeight(const int64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool Instance::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
+}
+
+int64_t Instance::GetReserveValue() const
+{
+    return m_reserveValue;
+}
+
+void Instance::SetReserveValue(const int64_t& _reserveValue)
+{
+    m_reserveValue = _reserveValue;
+    m_reserveValueHasBeenSet = true;
+}
+
+bool Instance::ReserveValueHasBeenSet() const
+{
+    return m_reserveValueHasBeenSet;
 }
 

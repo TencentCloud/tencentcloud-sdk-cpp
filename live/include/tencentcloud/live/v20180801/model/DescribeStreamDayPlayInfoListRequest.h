@@ -118,6 +118,54 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取可选值：
+Mainland：查询国内数据，
+Oversea：则查询国外数据，
+默认：查询国内+国外的数据。
+                     * @return MainlandOrOversea 可选值：
+Mainland：查询国内数据，
+Oversea：则查询国外数据，
+默认：查询国内+国外的数据。
+                     */
+                    std::string GetMainlandOrOversea() const;
+
+                    /**
+                     * 设置可选值：
+Mainland：查询国内数据，
+Oversea：则查询国外数据，
+默认：查询国内+国外的数据。
+                     * @param MainlandOrOversea 可选值：
+Mainland：查询国内数据，
+Oversea：则查询国外数据，
+默认：查询国内+国外的数据。
+                     */
+                    void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
+
+                    /**
+                     * 判断参数 MainlandOrOversea 是否已赋值
+                     * @return MainlandOrOversea 是否已赋值
+                     */
+                    bool MainlandOrOverseaHasBeenSet() const;
+
+                    /**
+                     * 获取服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     * @return ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     */
+                    std::string GetServiceName() const;
+
+                    /**
+                     * 设置服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     * @param ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     */
+                    void SetServiceName(const std::string& _serviceName);
+
+                    /**
+                     * 判断参数 ServiceName 是否已赋值
+                     * @return ServiceName 是否已赋值
+                     */
+                    bool ServiceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +192,21 @@ namespace TencentCloud
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 可选值：
+Mainland：查询国内数据，
+Oversea：则查询国外数据，
+默认：查询国内+国外的数据。
+                     */
+                    std::string m_mainlandOrOversea;
+                    bool m_mainlandOrOverseaHasBeenSet;
+
+                    /**
+                     * 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     */
+                    std::string m_serviceName;
+                    bool m_serviceNameHasBeenSet;
 
                 };
             }

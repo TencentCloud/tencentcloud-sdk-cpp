@@ -28,7 +28,8 @@ DescribeStreamPlayInfoListRequest::DescribeStreamPlayInfoListRequest() :
     m_endTimeHasBeenSet(false),
     m_playDomainHasBeenSet(false),
     m_streamNameHasBeenSet(false),
-    m_appNameHasBeenSet(false)
+    m_appNameHasBeenSet(false),
+    m_serviceNameHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string DescribeStreamPlayInfoListRequest::ToJsonString() const
         string key = "AppName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_appName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_serviceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void DescribeStreamPlayInfoListRequest::SetAppName(const string& _appName)
 bool DescribeStreamPlayInfoListRequest::AppNameHasBeenSet() const
 {
     return m_appNameHasBeenSet;
+}
+
+string DescribeStreamPlayInfoListRequest::GetServiceName() const
+{
+    return m_serviceName;
+}
+
+void DescribeStreamPlayInfoListRequest::SetServiceName(const string& _serviceName)
+{
+    m_serviceName = _serviceName;
+    m_serviceNameHasBeenSet = true;
+}
+
+bool DescribeStreamPlayInfoListRequest::ServiceNameHasBeenSet() const
+{
+    return m_serviceNameHasBeenSet;
 }
 
 

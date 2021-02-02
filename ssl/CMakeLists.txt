@@ -20,23 +20,30 @@ set(ssl_public_header
 
 set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/ApplyCertificateResponse.h
+  include/tencentcloud/ssl/v20191205/model/ManagerInfo.h
   include/tencentcloud/ssl/v20191205/model/CompleteCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DeleteCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsResponse.h
   include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationRequest.h
   include/tencentcloud/ssl/v20191205/model/DownloadCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/ReplaceCertificateResponse.h
+  include/tencentcloud/ssl/v20191205/model/SubmitAuditManagerResponse.h
   include/tencentcloud/ssl/v20191205/model/DownloadCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/CancelCertificateOrderRequest.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateProjectResponse.h
   include/tencentcloud/ssl/v20191205/model/Certificates.h
   include/tencentcloud/ssl/v20191205/model/CertificateExtra.h
+  include/tencentcloud/ssl/v20191205/model/CompanyInfo.h
+  include/tencentcloud/ssl/v20191205/model/DescribeManagersResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateResponse.h
-  include/tencentcloud/ssl/v20191205/model/OperationLog.h
   include/tencentcloud/ssl/v20191205/model/UploadCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/UploadConfirmLetterRequest.h
+  include/tencentcloud/ssl/v20191205/model/OperationLog.h
+  include/tencentcloud/ssl/v20191205/model/VerifyManagerResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateDetailRequest.h
   include/tencentcloud/ssl/v20191205/model/Tags.h
+  include/tencentcloud/ssl/v20191205/model/SubmitAuditManagerRequest.h
+  include/tencentcloud/ssl/v20191205/model/DeleteManagerRequest.h
   include/tencentcloud/ssl/v20191205/model/ApplyCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/ReplaceCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/UploadRevokeLetterResponse.h
@@ -51,6 +58,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DvAuths.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateAliasRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateRequest.h
+  include/tencentcloud/ssl/v20191205/model/DescribeManagerDetailRequest.h
   include/tencentcloud/ssl/v20191205/model/DvAuthDetail.h
   include/tencentcloud/ssl/v20191205/model/ProjectInfo.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsRequest.h
@@ -59,12 +67,16 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeCertificatesResponse.h
   include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationResponse.h
   include/tencentcloud/ssl/v20191205/model/UploadConfirmLetterResponse.h
+  include/tencentcloud/ssl/v20191205/model/DeleteManagerResponse.h
+  include/tencentcloud/ssl/v20191205/model/VerifyManagerRequest.h
   include/tencentcloud/ssl/v20191205/model/UploadCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/CheckCertificateChainRequest.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateAliasResponse.h
-  include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationRequest.h
+  include/tencentcloud/ssl/v20191205/model/DescribeManagerDetailResponse.h
   include/tencentcloud/ssl/v20191205/model/SubmittedData.h
+  include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificatesRequest.h
+  include/tencentcloud/ssl/v20191205/model/DescribeManagersRequest.h
   include/tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationResponse.h
   include/tencentcloud/ssl/v20191205/model/RevokeCertificateRequest.h
@@ -73,23 +85,30 @@ set(ssl_public_header_model
 set(ssl_src
   src/v20191205/SslClient.cpp
   src/v20191205/model/ApplyCertificateResponse.cpp
+  src/v20191205/model/ManagerInfo.cpp
   src/v20191205/model/CompleteCertificateRequest.cpp
   src/v20191205/model/DeleteCertificateRequest.cpp
   src/v20191205/model/DescribeCertificateOperateLogsResponse.cpp
   src/v20191205/model/CommitCertificateInformationRequest.cpp
   src/v20191205/model/DownloadCertificateResponse.cpp
   src/v20191205/model/ReplaceCertificateResponse.cpp
+  src/v20191205/model/SubmitAuditManagerResponse.cpp
   src/v20191205/model/DownloadCertificateRequest.cpp
   src/v20191205/model/CancelCertificateOrderRequest.cpp
   src/v20191205/model/ModifyCertificateProjectResponse.cpp
   src/v20191205/model/Certificates.cpp
   src/v20191205/model/CertificateExtra.cpp
+  src/v20191205/model/CompanyInfo.cpp
+  src/v20191205/model/DescribeManagersResponse.cpp
   src/v20191205/model/DescribeCertificateResponse.cpp
-  src/v20191205/model/OperationLog.cpp
   src/v20191205/model/UploadCertificateRequest.cpp
   src/v20191205/model/UploadConfirmLetterRequest.cpp
+  src/v20191205/model/OperationLog.cpp
+  src/v20191205/model/VerifyManagerResponse.cpp
   src/v20191205/model/DescribeCertificateDetailRequest.cpp
   src/v20191205/model/Tags.cpp
+  src/v20191205/model/SubmitAuditManagerRequest.cpp
+  src/v20191205/model/DeleteManagerRequest.cpp
   src/v20191205/model/ApplyCertificateRequest.cpp
   src/v20191205/model/ReplaceCertificateRequest.cpp
   src/v20191205/model/UploadRevokeLetterResponse.cpp
@@ -104,6 +123,7 @@ set(ssl_src
   src/v20191205/model/DvAuths.cpp
   src/v20191205/model/ModifyCertificateAliasRequest.cpp
   src/v20191205/model/DescribeCertificateRequest.cpp
+  src/v20191205/model/DescribeManagerDetailRequest.cpp
   src/v20191205/model/DvAuthDetail.cpp
   src/v20191205/model/ProjectInfo.cpp
   src/v20191205/model/DescribeCertificateOperateLogsRequest.cpp
@@ -112,12 +132,16 @@ set(ssl_src
   src/v20191205/model/DescribeCertificatesResponse.cpp
   src/v20191205/model/CommitCertificateInformationResponse.cpp
   src/v20191205/model/UploadConfirmLetterResponse.cpp
+  src/v20191205/model/DeleteManagerResponse.cpp
+  src/v20191205/model/VerifyManagerRequest.cpp
   src/v20191205/model/UploadCertificateResponse.cpp
   src/v20191205/model/CheckCertificateChainRequest.cpp
   src/v20191205/model/ModifyCertificateAliasResponse.cpp
-  src/v20191205/model/SubmitCertificateInformationRequest.cpp
+  src/v20191205/model/DescribeManagerDetailResponse.cpp
   src/v20191205/model/SubmittedData.cpp
+  src/v20191205/model/SubmitCertificateInformationRequest.cpp
   src/v20191205/model/DescribeCertificatesRequest.cpp
+  src/v20191205/model/DescribeManagersRequest.cpp
   src/v20191205/model/CompleteCertificateResponse.cpp
   src/v20191205/model/SubmitCertificateInformationResponse.cpp
   src/v20191205/model/RevokeCertificateRequest.cpp

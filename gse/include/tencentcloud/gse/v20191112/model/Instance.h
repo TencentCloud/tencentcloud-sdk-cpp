@@ -222,6 +222,50 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Weight 实例权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetWeight() const;
+
+                    /**
+                     * 设置实例权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Weight 实例权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWeight(const int64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     */
+                    bool WeightHasBeenSet() const;
+
+                    /**
+                     * 获取实例是否保留, 1-保留，0-不保留,默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReserveValue 实例是否保留, 1-保留，0-不保留,默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetReserveValue() const;
+
+                    /**
+                     * 设置实例是否保留, 1-保留，0-不保留,默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReserveValue 实例是否保留, 1-保留，0-不保留,默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReserveValue(const int64_t& _reserveValue);
+
+                    /**
+                     * 判断参数 ReserveValue 是否已赋值
+                     * @return ReserveValue 是否已赋值
+                     */
+                    bool ReserveValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +323,20 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 实例权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_weight;
+                    bool m_weightHasBeenSet;
+
+                    /**
+                     * 实例是否保留, 1-保留，0-不保留,默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_reserveValue;
+                    bool m_reserveValueHasBeenSet;
 
                 };
             }

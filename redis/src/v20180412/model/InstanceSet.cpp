@@ -66,7 +66,11 @@ InstanceSet::InstanceSet() :
     m_vip6HasBeenSet(false),
     m_remainBandwidthDurationHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
-    m_monitorVersionHasBeenSet(false)
+    m_monitorVersionHasBeenSet(false),
+    m_clientLimitMinHasBeenSet(false),
+    m_clientLimitMaxHasBeenSet(false),
+    m_nodeSetHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -548,6 +552,56 @@ CoreInternalOutcome InstanceSet::Deserialize(const Value &value)
         m_monitorVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientLimitMin") && !value["ClientLimitMin"].IsNull())
+    {
+        if (!value["ClientLimitMin"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.ClientLimitMin` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientLimitMin = value["ClientLimitMin"].GetInt64();
+        m_clientLimitMinHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClientLimitMax") && !value["ClientLimitMax"].IsNull())
+    {
+        if (!value["ClientLimitMax"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.ClientLimitMax` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientLimitMax = value["ClientLimitMax"].GetInt64();
+        m_clientLimitMaxHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeSet") && !value["NodeSet"].IsNull())
+    {
+        if (!value["NodeSet"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceSet.NodeSet` is not array type"));
+
+        const Value &tmpValue = value["NodeSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RedisNodeInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_nodeSet.push_back(item);
+        }
+        m_nodeSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -932,6 +986,45 @@ void InstanceSet::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "MonitorVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_monitorVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientLimitMinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientLimitMin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientLimitMin, allocator);
+    }
+
+    if (m_clientLimitMaxHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientLimitMax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientLimitMax, allocator);
+    }
+
+    if (m_nodeSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeSet.begin(); itr != m_nodeSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1655,5 +1748,69 @@ void InstanceSet::SetMonitorVersion(const string& _monitorVersion)
 bool InstanceSet::MonitorVersionHasBeenSet() const
 {
     return m_monitorVersionHasBeenSet;
+}
+
+int64_t InstanceSet::GetClientLimitMin() const
+{
+    return m_clientLimitMin;
+}
+
+void InstanceSet::SetClientLimitMin(const int64_t& _clientLimitMin)
+{
+    m_clientLimitMin = _clientLimitMin;
+    m_clientLimitMinHasBeenSet = true;
+}
+
+bool InstanceSet::ClientLimitMinHasBeenSet() const
+{
+    return m_clientLimitMinHasBeenSet;
+}
+
+int64_t InstanceSet::GetClientLimitMax() const
+{
+    return m_clientLimitMax;
+}
+
+void InstanceSet::SetClientLimitMax(const int64_t& _clientLimitMax)
+{
+    m_clientLimitMax = _clientLimitMax;
+    m_clientLimitMaxHasBeenSet = true;
+}
+
+bool InstanceSet::ClientLimitMaxHasBeenSet() const
+{
+    return m_clientLimitMaxHasBeenSet;
+}
+
+vector<RedisNodeInfo> InstanceSet::GetNodeSet() const
+{
+    return m_nodeSet;
+}
+
+void InstanceSet::SetNodeSet(const vector<RedisNodeInfo>& _nodeSet)
+{
+    m_nodeSet = _nodeSet;
+    m_nodeSetHasBeenSet = true;
+}
+
+bool InstanceSet::NodeSetHasBeenSet() const
+{
+    return m_nodeSetHasBeenSet;
+}
+
+string InstanceSet::GetRegion() const
+{
+    return m_region;
+}
+
+void InstanceSet::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool InstanceSet::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

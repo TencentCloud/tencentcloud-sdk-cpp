@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool DeviceNameHasBeenSet() const;
 
+                    /**
+                     * 获取设备是否启用，0禁用状态1启用状态，默认不区分
+                     * @return EnableState 设备是否启用，0禁用状态1启用状态，默认不区分
+                     */
+                    uint64_t GetEnableState() const;
+
+                    /**
+                     * 设置设备是否启用，0禁用状态1启用状态，默认不区分
+                     * @param EnableState 设备是否启用，0禁用状态1启用状态，默认不区分
+                     */
+                    void SetEnableState(const uint64_t& _enableState);
+
+                    /**
+                     * 判断参数 EnableState 是否已赋值
+                     * @return EnableState 是否已赋值
+                     */
+                    bool EnableStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 设备是否启用，0禁用状态1启用状态，默认不区分
+                     */
+                    uint64_t m_enableState;
+                    bool m_enableStateHasBeenSet;
 
                 };
             }

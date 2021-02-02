@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/redis/v20180412/model/InstanceNode.h>
 #include <tencentcloud/redis/v20180412/model/InstanceTagInfo.h>
+#include <tencentcloud/redis/v20180412/model/RedisNodeInfo.h>
 
 
 namespace TencentCloud
@@ -906,6 +907,94 @@ namespace TencentCloud
                      */
                     bool MonitorVersionHasBeenSet() const;
 
+                    /**
+                     * 获取客户端最大连接数可设置的最小值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientLimitMin 客户端最大连接数可设置的最小值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetClientLimitMin() const;
+
+                    /**
+                     * 设置客户端最大连接数可设置的最小值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClientLimitMin 客户端最大连接数可设置的最小值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClientLimitMin(const int64_t& _clientLimitMin);
+
+                    /**
+                     * 判断参数 ClientLimitMin 是否已赋值
+                     * @return ClientLimitMin 是否已赋值
+                     */
+                    bool ClientLimitMinHasBeenSet() const;
+
+                    /**
+                     * 获取客户端最大连接数可设置的最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientLimitMax 客户端最大连接数可设置的最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetClientLimitMax() const;
+
+                    /**
+                     * 设置客户端最大连接数可设置的最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClientLimitMax 客户端最大连接数可设置的最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClientLimitMax(const int64_t& _clientLimitMax);
+
+                    /**
+                     * 判断参数 ClientLimitMax 是否已赋值
+                     * @return ClientLimitMax 是否已赋值
+                     */
+                    bool ClientLimitMaxHasBeenSet() const;
+
+                    /**
+                     * 获取实例的节点详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeSet 实例的节点详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RedisNodeInfo> GetNodeSet() const;
+
+                    /**
+                     * 设置实例的节点详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodeSet 实例的节点详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodeSet(const std::vector<RedisNodeInfo>& _nodeSet);
+
+                    /**
+                     * 判断参数 NodeSet 是否已赋值
+                     * @return NodeSet 是否已赋值
+                     */
+                    bool NodeSetHasBeenSet() const;
+
+                    /**
+                     * 获取实例所在的地域信息，比如ap-guangzhou
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 实例所在的地域信息，比如ap-guangzhou
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置实例所在的地域信息，比如ap-guangzhou
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Region 实例所在的地域信息，比如ap-guangzhou
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1189,6 +1278,34 @@ namespace TencentCloud
                      */
                     std::string m_monitorVersion;
                     bool m_monitorVersionHasBeenSet;
+
+                    /**
+                     * 客户端最大连接数可设置的最小值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clientLimitMin;
+                    bool m_clientLimitMinHasBeenSet;
+
+                    /**
+                     * 客户端最大连接数可设置的最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clientLimitMax;
+                    bool m_clientLimitMaxHasBeenSet;
+
+                    /**
+                     * 实例的节点详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RedisNodeInfo> m_nodeSet;
+                    bool m_nodeSetHasBeenSet;
+
+                    /**
+                     * 实例所在的地域信息，比如ap-guangzhou
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

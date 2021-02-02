@@ -341,6 +341,49 @@ SslClient::DeleteCertificateOutcomeCallable SslClient::DeleteCertificateCallable
     return task->get_future();
 }
 
+SslClient::DeleteManagerOutcome SslClient::DeleteManager(const DeleteManagerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteManager");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteManagerResponse rsp = DeleteManagerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteManagerOutcome(rsp);
+        else
+            return DeleteManagerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteManagerOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DeleteManagerAsync(const DeleteManagerRequest& request, const DeleteManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteManager(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::DeleteManagerOutcomeCallable SslClient::DeleteManagerCallable(const DeleteManagerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteManagerOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteManager(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::DescribeCertificateOutcome SslClient::DescribeCertificate(const DescribeCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCertificate");
@@ -506,6 +549,92 @@ SslClient::DescribeCertificatesOutcomeCallable SslClient::DescribeCertificatesCa
         [this, request]()
         {
             return this->DescribeCertificates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SslClient::DescribeManagerDetailOutcome SslClient::DescribeManagerDetail(const DescribeManagerDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeManagerDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeManagerDetailResponse rsp = DescribeManagerDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeManagerDetailOutcome(rsp);
+        else
+            return DescribeManagerDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeManagerDetailOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DescribeManagerDetailAsync(const DescribeManagerDetailRequest& request, const DescribeManagerDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeManagerDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::DescribeManagerDetailOutcomeCallable SslClient::DescribeManagerDetailCallable(const DescribeManagerDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeManagerDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeManagerDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SslClient::DescribeManagersOutcome SslClient::DescribeManagers(const DescribeManagersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeManagers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeManagersResponse rsp = DescribeManagersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeManagersOutcome(rsp);
+        else
+            return DescribeManagersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeManagersOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DescribeManagersAsync(const DescribeManagersRequest& request, const DescribeManagersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeManagers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::DescribeManagersOutcomeCallable SslClient::DescribeManagersCallable(const DescribeManagersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeManagersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeManagers(request);
         }
     );
 
@@ -728,6 +857,49 @@ SslClient::RevokeCertificateOutcomeCallable SslClient::RevokeCertificateCallable
     return task->get_future();
 }
 
+SslClient::SubmitAuditManagerOutcome SslClient::SubmitAuditManager(const SubmitAuditManagerRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitAuditManager");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitAuditManagerResponse rsp = SubmitAuditManagerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitAuditManagerOutcome(rsp);
+        else
+            return SubmitAuditManagerOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitAuditManagerOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::SubmitAuditManagerAsync(const SubmitAuditManagerRequest& request, const SubmitAuditManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitAuditManager(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::SubmitAuditManagerOutcomeCallable SslClient::SubmitAuditManagerCallable(const SubmitAuditManagerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitAuditManagerOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitAuditManager(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::SubmitCertificateInformationOutcome SslClient::SubmitCertificateInformation(const SubmitCertificateInformationRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitCertificateInformation");
@@ -893,6 +1065,49 @@ SslClient::UploadRevokeLetterOutcomeCallable SslClient::UploadRevokeLetterCallab
         [this, request]()
         {
             return this->UploadRevokeLetter(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SslClient::VerifyManagerOutcome SslClient::VerifyManager(const VerifyManagerRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyManager");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyManagerResponse rsp = VerifyManagerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyManagerOutcome(rsp);
+        else
+            return VerifyManagerOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyManagerOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::VerifyManagerAsync(const VerifyManagerRequest& request, const VerifyManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyManager(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::VerifyManagerOutcomeCallable SslClient::VerifyManagerCallable(const VerifyManagerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyManagerOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyManager(request);
         }
     );
 

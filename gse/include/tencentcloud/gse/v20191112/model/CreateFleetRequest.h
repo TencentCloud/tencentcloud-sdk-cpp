@@ -25,6 +25,7 @@
 #include <tencentcloud/gse/v20191112/model/ResourceCreationLimitPolicy.h>
 #include <tencentcloud/gse/v20191112/model/RuntimeConfiguration.h>
 #include <tencentcloud/gse/v20191112/model/Tag.h>
+#include <tencentcloud/gse/v20191112/model/DiskInfo.h>
 
 
 namespace TencentCloud
@@ -280,6 +281,42 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位
+                     * @return SystemDiskInfo 系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位
+                     */
+                    DiskInfo GetSystemDiskInfo() const;
+
+                    /**
+                     * 设置系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位
+                     * @param SystemDiskInfo 系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位
+                     */
+                    void SetSystemDiskInfo(const DiskInfo& _systemDiskInfo);
+
+                    /**
+                     * 判断参数 SystemDiskInfo 是否已赋值
+                     * @return SystemDiskInfo 是否已赋值
+                     */
+                    bool SystemDiskInfoHasBeenSet() const;
+
+                    /**
+                     * 获取数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位
+                     * @return DataDiskInfo 数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位
+                     */
+                    std::vector<DiskInfo> GetDataDiskInfo() const;
+
+                    /**
+                     * 设置数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位
+                     * @param DataDiskInfo 数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位
+                     */
+                    void SetDataDiskInfo(const std::vector<DiskInfo>& _dataDiskInfo);
+
+                    /**
+                     * 判断参数 DataDiskInfo 是否已赋值
+                     * @return DataDiskInfo 是否已赋值
+                     */
+                    bool DataDiskInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +396,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位
+                     */
+                    DiskInfo m_systemDiskInfo;
+                    bool m_systemDiskInfoHasBeenSet;
+
+                    /**
+                     * 数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位
+                     */
+                    std::vector<DiskInfo> m_dataDiskInfo;
+                    bool m_dataDiskInfoHasBeenSet;
 
                 };
             }

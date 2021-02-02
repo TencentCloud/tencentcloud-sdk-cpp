@@ -24,7 +24,10 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeLivePackageInfoRequest::DescribeLivePackageInfoRequest() :
-    m_packageTypeHasBeenSet(false)
+    m_packageTypeHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_pageNumHasBeenSet(false),
+    m_pageSizeHasBeenSet(false)
 {
 }
 
@@ -41,6 +44,30 @@ string DescribeLivePackageInfoRequest::ToJsonString() const
         string key = "PackageType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_packageType, allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PageNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNum, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
     }
 
 
@@ -65,6 +92,54 @@ void DescribeLivePackageInfoRequest::SetPackageType(const int64_t& _packageType)
 bool DescribeLivePackageInfoRequest::PackageTypeHasBeenSet() const
 {
     return m_packageTypeHasBeenSet;
+}
+
+string DescribeLivePackageInfoRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeLivePackageInfoRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeLivePackageInfoRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+int64_t DescribeLivePackageInfoRequest::GetPageNum() const
+{
+    return m_pageNum;
+}
+
+void DescribeLivePackageInfoRequest::SetPageNum(const int64_t& _pageNum)
+{
+    m_pageNum = _pageNum;
+    m_pageNumHasBeenSet = true;
+}
+
+bool DescribeLivePackageInfoRequest::PageNumHasBeenSet() const
+{
+    return m_pageNumHasBeenSet;
+}
+
+int64_t DescribeLivePackageInfoRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeLivePackageInfoRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeLivePackageInfoRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
 }
 
 

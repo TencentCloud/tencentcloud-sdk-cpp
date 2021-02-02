@@ -49,6 +49,8 @@
 #include <tencentcloud/gse/v20191112/model/DeleteGameServerSessionQueueResponse.h>
 #include <tencentcloud/gse/v20191112/model/DeleteScalingPolicyRequest.h>
 #include <tencentcloud/gse/v20191112/model/DeleteScalingPolicyResponse.h>
+#include <tencentcloud/gse/v20191112/model/DeleteTimerScalingPolicyRequest.h>
+#include <tencentcloud/gse/v20191112/model/DeleteTimerScalingPolicyResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeAliasRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeAliasResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeAssetRequest.h>
@@ -97,6 +99,8 @@
 #include <tencentcloud/gse/v20191112/model/DescribeRuntimeConfigurationResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeScalingPoliciesRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeScalingPoliciesResponse.h>
+#include <tencentcloud/gse/v20191112/model/DescribeTimerScalingPoliciesRequest.h>
+#include <tencentcloud/gse/v20191112/model/DescribeTimerScalingPoliciesResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeUserQuotaRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeUserQuotaResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeUserQuotasRequest.h>
@@ -121,10 +125,14 @@
 #include <tencentcloud/gse/v20191112/model/ListFleetsResponse.h>
 #include <tencentcloud/gse/v20191112/model/PutScalingPolicyRequest.h>
 #include <tencentcloud/gse/v20191112/model/PutScalingPolicyResponse.h>
+#include <tencentcloud/gse/v20191112/model/PutTimerScalingPolicyRequest.h>
+#include <tencentcloud/gse/v20191112/model/PutTimerScalingPolicyResponse.h>
 #include <tencentcloud/gse/v20191112/model/ResolveAliasRequest.h>
 #include <tencentcloud/gse/v20191112/model/ResolveAliasResponse.h>
 #include <tencentcloud/gse/v20191112/model/SearchGameServerSessionsRequest.h>
 #include <tencentcloud/gse/v20191112/model/SearchGameServerSessionsResponse.h>
+#include <tencentcloud/gse/v20191112/model/SetServerReservedRequest.h>
+#include <tencentcloud/gse/v20191112/model/SetServerReservedResponse.h>
 #include <tencentcloud/gse/v20191112/model/SetServerWeightRequest.h>
 #include <tencentcloud/gse/v20191112/model/SetServerWeightResponse.h>
 #include <tencentcloud/gse/v20191112/model/StartFleetActionsRequest.h>
@@ -210,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteScalingPolicyResponse> DeleteScalingPolicyOutcome;
                 typedef std::future<DeleteScalingPolicyOutcome> DeleteScalingPolicyOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DeleteScalingPolicyRequest&, DeleteScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScalingPolicyAsyncHandler;
+                typedef Outcome<Error, Model::DeleteTimerScalingPolicyResponse> DeleteTimerScalingPolicyOutcome;
+                typedef std::future<DeleteTimerScalingPolicyOutcome> DeleteTimerScalingPolicyOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DeleteTimerScalingPolicyRequest&, DeleteTimerScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTimerScalingPolicyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAliasResponse> DescribeAliasOutcome;
                 typedef std::future<DescribeAliasOutcome> DescribeAliasOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeAliasRequest&, DescribeAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAliasAsyncHandler;
@@ -282,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeScalingPoliciesResponse> DescribeScalingPoliciesOutcome;
                 typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeScalingPoliciesRequest&, DescribeScalingPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingPoliciesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTimerScalingPoliciesResponse> DescribeTimerScalingPoliciesOutcome;
+                typedef std::future<DescribeTimerScalingPoliciesOutcome> DescribeTimerScalingPoliciesOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DescribeTimerScalingPoliciesRequest&, DescribeTimerScalingPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimerScalingPoliciesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUserQuotaResponse> DescribeUserQuotaOutcome;
                 typedef std::future<DescribeUserQuotaOutcome> DescribeUserQuotaOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeUserQuotaRequest&, DescribeUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserQuotaAsyncHandler;
@@ -318,12 +332,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PutScalingPolicyResponse> PutScalingPolicyOutcome;
                 typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::PutScalingPolicyRequest&, PutScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutScalingPolicyAsyncHandler;
+                typedef Outcome<Error, Model::PutTimerScalingPolicyResponse> PutTimerScalingPolicyOutcome;
+                typedef std::future<PutTimerScalingPolicyOutcome> PutTimerScalingPolicyOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::PutTimerScalingPolicyRequest&, PutTimerScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutTimerScalingPolicyAsyncHandler;
                 typedef Outcome<Error, Model::ResolveAliasResponse> ResolveAliasOutcome;
                 typedef std::future<ResolveAliasOutcome> ResolveAliasOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::ResolveAliasRequest&, ResolveAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResolveAliasAsyncHandler;
                 typedef Outcome<Error, Model::SearchGameServerSessionsResponse> SearchGameServerSessionsOutcome;
                 typedef std::future<SearchGameServerSessionsOutcome> SearchGameServerSessionsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::SearchGameServerSessionsRequest&, SearchGameServerSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchGameServerSessionsAsyncHandler;
+                typedef Outcome<Error, Model::SetServerReservedResponse> SetServerReservedOutcome;
+                typedef std::future<SetServerReservedOutcome> SetServerReservedOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::SetServerReservedRequest&, SetServerReservedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetServerReservedAsyncHandler;
                 typedef Outcome<Error, Model::SetServerWeightResponse> SetServerWeightOutcome;
                 typedef std::future<SetServerWeightOutcome> SetServerWeightOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::SetServerWeightRequest&, SetServerWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetServerWeightAsyncHandler;
@@ -506,6 +526,16 @@ namespace TencentCloud
                 DeleteScalingPolicyOutcome DeleteScalingPolicy(const Model::DeleteScalingPolicyRequest &request);
                 void DeleteScalingPolicyAsync(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteScalingPolicyOutcomeCallable DeleteScalingPolicyCallable(const Model::DeleteScalingPolicyRequest& request);
+
+                /**
+                 *本接口（DeleteTimerScalingPolicy）用于删除fleet下的定时器。
+
+                 * @param req DeleteTimerScalingPolicyRequest
+                 * @return DeleteTimerScalingPolicyOutcome
+                 */
+                DeleteTimerScalingPolicyOutcome DeleteTimerScalingPolicy(const Model::DeleteTimerScalingPolicyRequest &request);
+                void DeleteTimerScalingPolicyAsync(const Model::DeleteTimerScalingPolicyRequest& request, const DeleteTimerScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTimerScalingPolicyOutcomeCallable DeleteTimerScalingPolicyCallable(const Model::DeleteTimerScalingPolicyRequest& request);
 
                 /**
                  *本接口（DescribeAlias）用于获取别名详情。
@@ -724,6 +754,16 @@ namespace TencentCloud
                 DescribeScalingPoliciesOutcomeCallable DescribeScalingPoliciesCallable(const Model::DescribeScalingPoliciesRequest& request);
 
                 /**
+                 *本接口（DescribeTimerScalingPolicies）用于查询fleet下的定时器列表。可以通过fleetid，定时器名称分页查询。
+
+                 * @param req DescribeTimerScalingPoliciesRequest
+                 * @return DescribeTimerScalingPoliciesOutcome
+                 */
+                DescribeTimerScalingPoliciesOutcome DescribeTimerScalingPolicies(const Model::DescribeTimerScalingPoliciesRequest &request);
+                void DescribeTimerScalingPoliciesAsync(const Model::DescribeTimerScalingPoliciesRequest& request, const DescribeTimerScalingPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimerScalingPoliciesOutcomeCallable DescribeTimerScalingPoliciesCallable(const Model::DescribeTimerScalingPoliciesRequest& request);
+
+                /**
                  *本接口（DescribeUserQuota）获取用户单个模块配额。
                  * @param req DescribeUserQuotaRequest
                  * @return DescribeUserQuotaOutcome
@@ -930,6 +970,18 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 PutScalingPolicyOutcomeCallable PutScalingPolicyCallable(const Model::PutScalingPolicyRequest& request);
 
                 /**
+                 *本接口（PutTimerScalingPolicy）用于给fleet创建或更新定时器。
+
+填写字段timer_id，表示更新；不填字段timer_id表示新增。
+
+                 * @param req PutTimerScalingPolicyRequest
+                 * @return PutTimerScalingPolicyOutcome
+                 */
+                PutTimerScalingPolicyOutcome PutTimerScalingPolicy(const Model::PutTimerScalingPolicyRequest &request);
+                void PutTimerScalingPolicyAsync(const Model::PutTimerScalingPolicyRequest& request, const PutTimerScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutTimerScalingPolicyOutcomeCallable PutTimerScalingPolicyCallable(const Model::PutTimerScalingPolicyRequest& request);
+
+                /**
                  *本接口（ResolveAlias）用于获取别名当前指向的fleetId。
                  * @param req ResolveAliasRequest
                  * @return ResolveAliasOutcome
@@ -946,6 +998,18 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 SearchGameServerSessionsOutcome SearchGameServerSessions(const Model::SearchGameServerSessionsRequest &request);
                 void SearchGameServerSessionsAsync(const Model::SearchGameServerSessionsRequest& request, const SearchGameServerSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchGameServerSessionsOutcomeCallable SearchGameServerSessionsCallable(const Model::SearchGameServerSessionsRequest& request);
+
+                /**
+                 *本接口（SetServerReserved）用于将异常的实例标记为保留，用于问题排查。
+
+字段ReserveValue：0默认值，不保留；1 保留
+
+                 * @param req SetServerReservedRequest
+                 * @return SetServerReservedOutcome
+                 */
+                SetServerReservedOutcome SetServerReserved(const Model::SetServerReservedRequest &request);
+                void SetServerReservedAsync(const Model::SetServerReservedRequest& request, const SetServerReservedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetServerReservedOutcomeCallable SetServerReservedCallable(const Model::SetServerReservedRequest& request);
 
                 /**
                  *本接口（SetServerWeight）用于设置服务器权重。

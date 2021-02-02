@@ -28,7 +28,8 @@ DescribeDevicesRequest::DescribeDevicesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_firmwareVersionHasBeenSet(false),
-    m_deviceNameHasBeenSet(false)
+    m_deviceNameHasBeenSet(false),
+    m_enableStateHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string DescribeDevicesRequest::ToJsonString() const
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableStateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableState";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableState, allocator);
     }
 
 
@@ -165,6 +174,22 @@ void DescribeDevicesRequest::SetDeviceName(const string& _deviceName)
 bool DescribeDevicesRequest::DeviceNameHasBeenSet() const
 {
     return m_deviceNameHasBeenSet;
+}
+
+uint64_t DescribeDevicesRequest::GetEnableState() const
+{
+    return m_enableState;
+}
+
+void DescribeDevicesRequest::SetEnableState(const uint64_t& _enableState)
+{
+    m_enableState = _enableState;
+    m_enableStateHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::EnableStateHasBeenSet() const
+{
+    return m_enableStateHasBeenSet;
 }
 
 

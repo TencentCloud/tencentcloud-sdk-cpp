@@ -28,7 +28,8 @@ UploadCertificateRequest::UploadCertificateRequest() :
     m_certificatePrivateKeyHasBeenSet(false),
     m_certificateTypeHasBeenSet(false),
     m_aliasHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_certificateUseHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string UploadCertificateRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_certificateUseHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CertificateUse";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_certificateUse.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void UploadCertificateRequest::SetProjectId(const uint64_t& _projectId)
 bool UploadCertificateRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string UploadCertificateRequest::GetCertificateUse() const
+{
+    return m_certificateUse;
+}
+
+void UploadCertificateRequest::SetCertificateUse(const string& _certificateUse)
+{
+    m_certificateUse = _certificateUse;
+    m_certificateUseHasBeenSet = true;
+}
+
+bool UploadCertificateRequest::CertificateUseHasBeenSet() const
+{
+    return m_certificateUseHasBeenSet;
 }
 
 

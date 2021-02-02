@@ -37,7 +37,8 @@ NetworkInterface::NetworkInterface() :
     m_createdTimeHasBeenSet(false),
     m_ipv6AddressSetHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_eniTypeHasBeenSet(false)
+    m_eniTypeHasBeenSet(false),
+    m_businessHasBeenSet(false)
 {
 }
 
@@ -246,6 +247,16 @@ CoreInternalOutcome NetworkInterface::Deserialize(const Value &value)
         m_eniTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Business") && !value["Business"].IsNull())
+    {
+        if (!value["Business"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NetworkInterface.Business` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_business = string(value["Business"].GetString());
+        m_businessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -406,6 +417,14 @@ void NetworkInterface::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "EniType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eniType, allocator);
+    }
+
+    if (m_businessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Business";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_business.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -665,5 +684,21 @@ void NetworkInterface::SetEniType(const uint64_t& _eniType)
 bool NetworkInterface::EniTypeHasBeenSet() const
 {
     return m_eniTypeHasBeenSet;
+}
+
+string NetworkInterface::GetBusiness() const
+{
+    return m_business;
+}
+
+void NetworkInterface::SetBusiness(const string& _business)
+{
+    m_business = _business;
+    m_businessHasBeenSet = true;
+}
+
+bool NetworkInterface::BusinessHasBeenSet() const
+{
+    return m_businessHasBeenSet;
 }
 

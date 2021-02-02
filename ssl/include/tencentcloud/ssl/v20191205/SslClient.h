@@ -37,6 +37,8 @@
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DeleteManagerRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DeleteManagerResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateDetailRequest.h>
@@ -45,6 +47,10 @@
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificatesRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificatesResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeManagerDetailRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeManagerDetailResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeManagersRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeManagersResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DownloadCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DownloadCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateAliasRequest.h>
@@ -55,6 +61,8 @@
 #include <tencentcloud/ssl/v20191205/model/ReplaceCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/RevokeCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/RevokeCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/SubmitAuditManagerRequest.h>
+#include <tencentcloud/ssl/v20191205/model/SubmitAuditManagerResponse.h>
 #include <tencentcloud/ssl/v20191205/model/SubmitCertificateInformationRequest.h>
 #include <tencentcloud/ssl/v20191205/model/SubmitCertificateInformationResponse.h>
 #include <tencentcloud/ssl/v20191205/model/UploadCertificateRequest.h>
@@ -63,6 +71,8 @@
 #include <tencentcloud/ssl/v20191205/model/UploadConfirmLetterResponse.h>
 #include <tencentcloud/ssl/v20191205/model/UploadRevokeLetterRequest.h>
 #include <tencentcloud/ssl/v20191205/model/UploadRevokeLetterResponse.h>
+#include <tencentcloud/ssl/v20191205/model/VerifyManagerRequest.h>
+#include <tencentcloud/ssl/v20191205/model/VerifyManagerResponse.h>
 
 
 namespace TencentCloud
@@ -98,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteCertificateResponse> DeleteCertificateOutcome;
                 typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DeleteCertificateRequest&, DeleteCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCertificateAsyncHandler;
+                typedef Outcome<Error, Model::DeleteManagerResponse> DeleteManagerOutcome;
+                typedef std::future<DeleteManagerOutcome> DeleteManagerOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DeleteManagerRequest&, DeleteManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteManagerAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCertificateResponse> DescribeCertificateOutcome;
                 typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeCertificateRequest&, DescribeCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateAsyncHandler;
@@ -110,6 +123,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCertificatesResponse> DescribeCertificatesOutcome;
                 typedef std::future<DescribeCertificatesOutcome> DescribeCertificatesOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeCertificatesRequest&, DescribeCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeManagerDetailResponse> DescribeManagerDetailOutcome;
+                typedef std::future<DescribeManagerDetailOutcome> DescribeManagerDetailOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeManagerDetailRequest&, DescribeManagerDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeManagerDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeManagersResponse> DescribeManagersOutcome;
+                typedef std::future<DescribeManagersOutcome> DescribeManagersOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeManagersRequest&, DescribeManagersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeManagersAsyncHandler;
                 typedef Outcome<Error, Model::DownloadCertificateResponse> DownloadCertificateOutcome;
                 typedef std::future<DownloadCertificateOutcome> DownloadCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DownloadCertificateRequest&, DownloadCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadCertificateAsyncHandler;
@@ -125,6 +144,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RevokeCertificateResponse> RevokeCertificateOutcome;
                 typedef std::future<RevokeCertificateOutcome> RevokeCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::RevokeCertificateRequest&, RevokeCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeCertificateAsyncHandler;
+                typedef Outcome<Error, Model::SubmitAuditManagerResponse> SubmitAuditManagerOutcome;
+                typedef std::future<SubmitAuditManagerOutcome> SubmitAuditManagerOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::SubmitAuditManagerRequest&, SubmitAuditManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAuditManagerAsyncHandler;
                 typedef Outcome<Error, Model::SubmitCertificateInformationResponse> SubmitCertificateInformationOutcome;
                 typedef std::future<SubmitCertificateInformationOutcome> SubmitCertificateInformationOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::SubmitCertificateInformationRequest&, SubmitCertificateInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitCertificateInformationAsyncHandler;
@@ -137,6 +159,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UploadRevokeLetterResponse> UploadRevokeLetterOutcome;
                 typedef std::future<UploadRevokeLetterOutcome> UploadRevokeLetterOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::UploadRevokeLetterRequest&, UploadRevokeLetterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadRevokeLetterAsyncHandler;
+                typedef Outcome<Error, Model::VerifyManagerResponse> VerifyManagerOutcome;
+                typedef std::future<VerifyManagerOutcome> VerifyManagerOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::VerifyManagerRequest&, VerifyManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyManagerAsyncHandler;
 
 
 
@@ -204,6 +229,15 @@ namespace TencentCloud
                 DeleteCertificateOutcomeCallable DeleteCertificateCallable(const Model::DeleteCertificateRequest& request);
 
                 /**
+                 *删除管理人
+                 * @param req DeleteManagerRequest
+                 * @return DeleteManagerOutcome
+                 */
+                DeleteManagerOutcome DeleteManager(const Model::DeleteManagerRequest &request);
+                void DeleteManagerAsync(const Model::DeleteManagerRequest& request, const DeleteManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteManagerOutcomeCallable DeleteManagerCallable(const Model::DeleteManagerRequest& request);
+
+                /**
                  *本接口（DescribeCertificate）用于获取证书信息。
                  * @param req DescribeCertificateRequest
                  * @return DescribeCertificateOutcome
@@ -238,6 +272,24 @@ namespace TencentCloud
                 DescribeCertificatesOutcome DescribeCertificates(const Model::DescribeCertificatesRequest &request);
                 void DescribeCertificatesAsync(const Model::DescribeCertificatesRequest& request, const DescribeCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCertificatesOutcomeCallable DescribeCertificatesCallable(const Model::DescribeCertificatesRequest& request);
+
+                /**
+                 *查询管理人详情
+                 * @param req DescribeManagerDetailRequest
+                 * @return DescribeManagerDetailOutcome
+                 */
+                DescribeManagerDetailOutcome DescribeManagerDetail(const Model::DescribeManagerDetailRequest &request);
+                void DescribeManagerDetailAsync(const Model::DescribeManagerDetailRequest& request, const DescribeManagerDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeManagerDetailOutcomeCallable DescribeManagerDetailCallable(const Model::DescribeManagerDetailRequest& request);
+
+                /**
+                 *查询管理人列表
+                 * @param req DescribeManagersRequest
+                 * @return DescribeManagersOutcome
+                 */
+                DescribeManagersOutcome DescribeManagers(const Model::DescribeManagersRequest &request);
+                void DescribeManagersAsync(const Model::DescribeManagersRequest& request, const DescribeManagersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeManagersOutcomeCallable DescribeManagersCallable(const Model::DescribeManagersRequest& request);
 
                 /**
                  *本接口（DownloadCertificate）用于下载证书。
@@ -285,6 +337,15 @@ namespace TencentCloud
                 RevokeCertificateOutcomeCallable RevokeCertificateCallable(const Model::RevokeCertificateRequest& request);
 
                 /**
+                 *重新提交审核管理人
+                 * @param req SubmitAuditManagerRequest
+                 * @return SubmitAuditManagerOutcome
+                 */
+                SubmitAuditManagerOutcome SubmitAuditManager(const Model::SubmitAuditManagerRequest &request);
+                void SubmitAuditManagerAsync(const Model::SubmitAuditManagerRequest& request, const SubmitAuditManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitAuditManagerOutcomeCallable SubmitAuditManagerCallable(const Model::SubmitAuditManagerRequest& request);
+
+                /**
                  *提交证书资料。输入参数信息可以分多次提交，但提交的证书资料应最低限度保持完整。
                  * @param req SubmitCertificateInformationRequest
                  * @return SubmitCertificateInformationOutcome
@@ -319,6 +380,15 @@ namespace TencentCloud
                 UploadRevokeLetterOutcome UploadRevokeLetter(const Model::UploadRevokeLetterRequest &request);
                 void UploadRevokeLetterAsync(const Model::UploadRevokeLetterRequest& request, const UploadRevokeLetterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadRevokeLetterOutcomeCallable UploadRevokeLetterCallable(const Model::UploadRevokeLetterRequest& request);
+
+                /**
+                 *重新核验管理人
+                 * @param req VerifyManagerRequest
+                 * @return VerifyManagerOutcome
+                 */
+                VerifyManagerOutcome VerifyManager(const Model::VerifyManagerRequest &request);
+                void VerifyManagerAsync(const Model::VerifyManagerRequest& request, const VerifyManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyManagerOutcomeCallable VerifyManagerCallable(const Model::VerifyManagerRequest& request);
 
             };
         }

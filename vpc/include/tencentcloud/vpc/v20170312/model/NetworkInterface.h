@@ -362,6 +362,28 @@ namespace TencentCloud
                      */
                     bool EniTypeHasBeenSet() const;
 
+                    /**
+                     * 获取网卡绑定的子机类型：cvm，eks。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Business 网卡绑定的子机类型：cvm，eks。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBusiness() const;
+
+                    /**
+                     * 设置网卡绑定的子机类型：cvm，eks。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Business 网卡绑定的子机类型：cvm，eks。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBusiness(const std::string& _business);
+
+                    /**
+                     * 判断参数 Business 是否已赋值
+                     * @return Business 是否已赋值
+                     */
+                    bool BusinessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -465,6 +487,13 @@ namespace TencentCloud
                      */
                     uint64_t m_eniType;
                     bool m_eniTypeHasBeenSet;
+
+                    /**
+                     * 网卡绑定的子机类型：cvm，eks。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_business;
+                    bool m_businessHasBeenSet;
 
                 };
             }

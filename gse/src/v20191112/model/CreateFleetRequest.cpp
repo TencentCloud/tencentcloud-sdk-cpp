@@ -36,7 +36,9 @@ CreateFleetRequest::CreateFleetRequest() :
     m_runtimeConfigurationHasBeenSet(false),
     m_subNetIdHasBeenSet(false),
     m_gameServerSessionProtectionTimeLimitHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_systemDiskInfoHasBeenSet(false),
+    m_dataDiskInfoHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,30 @@ string CreateFleetRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_systemDiskInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SystemDiskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_systemDiskInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dataDiskInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataDiskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataDiskInfo.begin(); itr != m_dataDiskInfo.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -381,6 +407,38 @@ void CreateFleetRequest::SetTags(const vector<Tag>& _tags)
 bool CreateFleetRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+DiskInfo CreateFleetRequest::GetSystemDiskInfo() const
+{
+    return m_systemDiskInfo;
+}
+
+void CreateFleetRequest::SetSystemDiskInfo(const DiskInfo& _systemDiskInfo)
+{
+    m_systemDiskInfo = _systemDiskInfo;
+    m_systemDiskInfoHasBeenSet = true;
+}
+
+bool CreateFleetRequest::SystemDiskInfoHasBeenSet() const
+{
+    return m_systemDiskInfoHasBeenSet;
+}
+
+vector<DiskInfo> CreateFleetRequest::GetDataDiskInfo() const
+{
+    return m_dataDiskInfo;
+}
+
+void CreateFleetRequest::SetDataDiskInfo(const vector<DiskInfo>& _dataDiskInfo)
+{
+    m_dataDiskInfo = _dataDiskInfo;
+    m_dataDiskInfoHasBeenSet = true;
+}
+
+bool CreateFleetRequest::DataDiskInfoHasBeenSet() const
+{
+    return m_dataDiskInfoHasBeenSet;
 }
 
 

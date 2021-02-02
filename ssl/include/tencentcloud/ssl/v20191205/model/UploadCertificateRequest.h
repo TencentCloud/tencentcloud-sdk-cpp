@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”
+                     * @return CertificateUse 证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”
+                     */
+                    std::string GetCertificateUse() const;
+
+                    /**
+                     * 设置证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”
+                     * @param CertificateUse 证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”
+                     */
+                    void SetCertificateUse(const std::string& _certificateUse);
+
+                    /**
+                     * 判断参数 CertificateUse 是否已赋值
+                     * @return CertificateUse 是否已赋值
+                     */
+                    bool CertificateUseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”
+                     */
+                    std::string m_certificateUse;
+                    bool m_certificateUseHasBeenSet;
 
                 };
             }

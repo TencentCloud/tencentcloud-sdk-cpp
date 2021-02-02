@@ -38,7 +38,9 @@ FleetAttributes::FleetAttributes() :
     m_terminationTimeHasBeenSet(false),
     m_gameServerSessionProtectionTimeLimitHasBeenSet(false),
     m_billingStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dataDiskInfoHasBeenSet(false),
+    m_systemDiskInfoHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,43 @@ CoreInternalOutcome FleetAttributes::Deserialize(const Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("DataDiskInfo") && !value["DataDiskInfo"].IsNull())
+    {
+        if (!value["DataDiskInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `FleetAttributes.DataDiskInfo` is not array type"));
+
+        const Value &tmpValue = value["DataDiskInfo"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DiskInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataDiskInfo.push_back(item);
+        }
+        m_dataDiskInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("SystemDiskInfo") && !value["SystemDiskInfo"].IsNull())
+    {
+        if (!value["SystemDiskInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `FleetAttributes.SystemDiskInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_systemDiskInfo.Deserialize(value["SystemDiskInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_systemDiskInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -391,6 +430,30 @@ void FleetAttributes::ToJsonObject(Value &value, Document::AllocatorType& alloca
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dataDiskInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataDiskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataDiskInfo.begin(); itr != m_dataDiskInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_systemDiskInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SystemDiskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_systemDiskInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -666,5 +729,37 @@ void FleetAttributes::SetTags(const vector<Tag>& _tags)
 bool FleetAttributes::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<DiskInfo> FleetAttributes::GetDataDiskInfo() const
+{
+    return m_dataDiskInfo;
+}
+
+void FleetAttributes::SetDataDiskInfo(const vector<DiskInfo>& _dataDiskInfo)
+{
+    m_dataDiskInfo = _dataDiskInfo;
+    m_dataDiskInfoHasBeenSet = true;
+}
+
+bool FleetAttributes::DataDiskInfoHasBeenSet() const
+{
+    return m_dataDiskInfoHasBeenSet;
+}
+
+DiskInfo FleetAttributes::GetSystemDiskInfo() const
+{
+    return m_systemDiskInfo;
+}
+
+void FleetAttributes::SetSystemDiskInfo(const DiskInfo& _systemDiskInfo)
+{
+    m_systemDiskInfo = _systemDiskInfo;
+    m_systemDiskInfoHasBeenSet = true;
+}
+
+bool FleetAttributes::SystemDiskInfoHasBeenSet() const
+{
+    return m_systemDiskInfoHasBeenSet;
 }
 

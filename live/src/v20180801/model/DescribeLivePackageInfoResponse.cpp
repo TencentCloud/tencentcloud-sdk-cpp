@@ -26,7 +26,11 @@ using namespace std;
 
 DescribeLivePackageInfoResponse::DescribeLivePackageInfoResponse() :
     m_livePackageInfoListHasBeenSet(false),
-    m_packageBillModeHasBeenSet(false)
+    m_packageBillModeHasBeenSet(false),
+    m_totalPageHasBeenSet(false),
+    m_totalNumHasBeenSet(false),
+    m_pageNumHasBeenSet(false),
+    m_pageSizeHasBeenSet(false)
 {
 }
 
@@ -94,6 +98,46 @@ CoreInternalOutcome DescribeLivePackageInfoResponse::Deserialize(const string &p
         m_packageBillModeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalPage") && !rsp["TotalPage"].IsNull())
+    {
+        if (!rsp["TotalPage"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TotalPage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalPage = rsp["TotalPage"].GetInt64();
+        m_totalPageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalNum") && !rsp["TotalNum"].IsNull())
+    {
+        if (!rsp["TotalNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TotalNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalNum = rsp["TotalNum"].GetInt64();
+        m_totalNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PageNum") && !rsp["PageNum"].IsNull())
+    {
+        if (!rsp["PageNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PageNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageNum = rsp["PageNum"].GetInt64();
+        m_pageNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PageSize") && !rsp["PageSize"].IsNull())
+    {
+        if (!rsp["PageSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageSize = rsp["PageSize"].GetInt64();
+        m_pageSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +161,46 @@ int64_t DescribeLivePackageInfoResponse::GetPackageBillMode() const
 bool DescribeLivePackageInfoResponse::PackageBillModeHasBeenSet() const
 {
     return m_packageBillModeHasBeenSet;
+}
+
+int64_t DescribeLivePackageInfoResponse::GetTotalPage() const
+{
+    return m_totalPage;
+}
+
+bool DescribeLivePackageInfoResponse::TotalPageHasBeenSet() const
+{
+    return m_totalPageHasBeenSet;
+}
+
+int64_t DescribeLivePackageInfoResponse::GetTotalNum() const
+{
+    return m_totalNum;
+}
+
+bool DescribeLivePackageInfoResponse::TotalNumHasBeenSet() const
+{
+    return m_totalNumHasBeenSet;
+}
+
+int64_t DescribeLivePackageInfoResponse::GetPageNum() const
+{
+    return m_pageNum;
+}
+
+bool DescribeLivePackageInfoResponse::PageNumHasBeenSet() const
+{
+    return m_pageNumHasBeenSet;
+}
+
+int64_t DescribeLivePackageInfoResponse::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+bool DescribeLivePackageInfoResponse::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
 }
 
 

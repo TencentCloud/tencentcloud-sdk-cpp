@@ -27,7 +27,9 @@ DescribeStreamDayPlayInfoListRequest::DescribeStreamDayPlayInfoListRequest() :
     m_dayTimeHasBeenSet(false),
     m_playDomainHasBeenSet(false),
     m_pageNumHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_mainlandOrOverseaHasBeenSet(false),
+    m_serviceNameHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,22 @@ string DescribeStreamDayPlayInfoListRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_mainlandOrOverseaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MainlandOrOversea";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_mainlandOrOversea.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_serviceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +158,38 @@ void DescribeStreamDayPlayInfoListRequest::SetPageSize(const uint64_t& _pageSize
 bool DescribeStreamDayPlayInfoListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeStreamDayPlayInfoListRequest::GetMainlandOrOversea() const
+{
+    return m_mainlandOrOversea;
+}
+
+void DescribeStreamDayPlayInfoListRequest::SetMainlandOrOversea(const string& _mainlandOrOversea)
+{
+    m_mainlandOrOversea = _mainlandOrOversea;
+    m_mainlandOrOverseaHasBeenSet = true;
+}
+
+bool DescribeStreamDayPlayInfoListRequest::MainlandOrOverseaHasBeenSet() const
+{
+    return m_mainlandOrOverseaHasBeenSet;
+}
+
+string DescribeStreamDayPlayInfoListRequest::GetServiceName() const
+{
+    return m_serviceName;
+}
+
+void DescribeStreamDayPlayInfoListRequest::SetServiceName(const string& _serviceName)
+{
+    m_serviceName = _serviceName;
+    m_serviceNameHasBeenSet = true;
+}
+
+bool DescribeStreamDayPlayInfoListRequest::ServiceNameHasBeenSet() const
+{
+    return m_serviceNameHasBeenSet;
 }
 
 

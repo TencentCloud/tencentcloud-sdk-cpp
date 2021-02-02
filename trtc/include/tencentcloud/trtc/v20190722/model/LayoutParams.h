@@ -192,6 +192,24 @@ namespace TencentCloud
                      */
                     bool PlaceHolderModeHasBeenSet() const;
 
+                    /**
+                     * 获取悬浮模板、九宫格、屏幕分享模板生效，用于控制纯音频上行是否占用画面布局位置。设置为0是代表后台默认处理方式，悬浮小画面占布局位置，九宫格画面占布局位置、屏幕分享小画面不占布局位置；设置为1时代表纯音频上行占布局位置；设置为2时代表纯音频上行不占布局位置。默认为0。
+                     * @return PureAudioHoldPlaceMode 悬浮模板、九宫格、屏幕分享模板生效，用于控制纯音频上行是否占用画面布局位置。设置为0是代表后台默认处理方式，悬浮小画面占布局位置，九宫格画面占布局位置、屏幕分享小画面不占布局位置；设置为1时代表纯音频上行占布局位置；设置为2时代表纯音频上行不占布局位置。默认为0。
+                     */
+                    uint64_t GetPureAudioHoldPlaceMode() const;
+
+                    /**
+                     * 设置悬浮模板、九宫格、屏幕分享模板生效，用于控制纯音频上行是否占用画面布局位置。设置为0是代表后台默认处理方式，悬浮小画面占布局位置，九宫格画面占布局位置、屏幕分享小画面不占布局位置；设置为1时代表纯音频上行占布局位置；设置为2时代表纯音频上行不占布局位置。默认为0。
+                     * @param PureAudioHoldPlaceMode 悬浮模板、九宫格、屏幕分享模板生效，用于控制纯音频上行是否占用画面布局位置。设置为0是代表后台默认处理方式，悬浮小画面占布局位置，九宫格画面占布局位置、屏幕分享小画面不占布局位置；设置为1时代表纯音频上行占布局位置；设置为2时代表纯音频上行不占布局位置。默认为0。
+                     */
+                    void SetPureAudioHoldPlaceMode(const uint64_t& _pureAudioHoldPlaceMode);
+
+                    /**
+                     * 判断参数 PureAudioHoldPlaceMode 是否已赋值
+                     * @return PureAudioHoldPlaceMode 是否已赋值
+                     */
+                    bool PureAudioHoldPlaceModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +259,12 @@ namespace TencentCloud
                      */
                     uint64_t m_placeHolderMode;
                     bool m_placeHolderModeHasBeenSet;
+
+                    /**
+                     * 悬浮模板、九宫格、屏幕分享模板生效，用于控制纯音频上行是否占用画面布局位置。设置为0是代表后台默认处理方式，悬浮小画面占布局位置，九宫格画面占布局位置、屏幕分享小画面不占布局位置；设置为1时代表纯音频上行占布局位置；设置为2时代表纯音频上行不占布局位置。默认为0。
+                     */
+                    uint64_t m_pureAudioHoldPlaceMode;
+                    bool m_pureAudioHoldPlaceModeHasBeenSet;
 
                 };
             }

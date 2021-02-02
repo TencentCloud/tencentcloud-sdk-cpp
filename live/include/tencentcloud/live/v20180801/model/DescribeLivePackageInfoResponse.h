@@ -89,6 +89,62 @@ namespace TencentCloud
                      */
                     bool PackageBillModeHasBeenSet() const;
 
+                    /**
+                     * 获取总页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalPage 总页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotalPage() const;
+
+                    /**
+                     * 判断参数 TotalPage 是否已赋值
+                     * @return TotalPage 是否已赋值
+                     */
+                    bool TotalPageHasBeenSet() const;
+
+                    /**
+                     * 获取数据总条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalNum 数据总条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotalNum() const;
+
+                    /**
+                     * 判断参数 TotalNum 是否已赋值
+                     * @return TotalNum 是否已赋值
+                     */
+                    bool TotalNumHasBeenSet() const;
+
+                    /**
+                     * 获取当前页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PageNum 当前页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPageNum() const;
+
+                    /**
+                     * 判断参数 PageNum 是否已赋值
+                     * @return PageNum 是否已赋值
+                     */
+                    bool PageNumHasBeenSet() const;
+
+                    /**
+                     * 获取当前每页数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PageSize 当前每页数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     */
+                    bool PageSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +169,34 @@ namespace TencentCloud
                      */
                     int64_t m_packageBillMode;
                     bool m_packageBillModeHasBeenSet;
+
+                    /**
+                     * 总页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalPage;
+                    bool m_totalPageHasBeenSet;
+
+                    /**
+                     * 数据总条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalNum;
+                    bool m_totalNumHasBeenSet;
+
+                    /**
+                     * 当前页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_pageNum;
+                    bool m_pageNumHasBeenSet;
+
+                    /**
+                     * 当前每页数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
 
                 };
             }
