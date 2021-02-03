@@ -22,7 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 InstanceConfs::InstanceConfs() :
-    m_dailyInspectionHasBeenSet(false)
+    m_dailyInspectionHasBeenSet(false),
+    m_overviewDisplayHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,16 @@ CoreInternalOutcome InstanceConfs::Deserialize(const Value &value)
         m_dailyInspectionHasBeenSet = true;
     }
 
+    if (value.HasMember("OverviewDisplay") && !value["OverviewDisplay"].IsNull())
+    {
+        if (!value["OverviewDisplay"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceConfs.OverviewDisplay` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_overviewDisplay = string(value["OverviewDisplay"].GetString());
+        m_overviewDisplayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +65,14 @@ void InstanceConfs::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "DailyInspection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_dailyInspection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_overviewDisplayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OverviewDisplay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_overviewDisplay.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -73,5 +92,21 @@ void InstanceConfs::SetDailyInspection(const string& _dailyInspection)
 bool InstanceConfs::DailyInspectionHasBeenSet() const
 {
     return m_dailyInspectionHasBeenSet;
+}
+
+string InstanceConfs::GetOverviewDisplay() const
+{
+    return m_overviewDisplay;
+}
+
+void InstanceConfs::SetOverviewDisplay(const string& _overviewDisplay)
+{
+    m_overviewDisplay = _overviewDisplay;
+    m_overviewDisplayHasBeenSet = true;
+}
+
+bool InstanceConfs::OverviewDisplayHasBeenSet() const
+{
+    return m_overviewDisplayHasBeenSet;
 }
 

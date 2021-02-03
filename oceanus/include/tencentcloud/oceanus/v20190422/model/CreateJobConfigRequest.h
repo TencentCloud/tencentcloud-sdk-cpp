@@ -206,6 +206,24 @@ namespace TencentCloud
                      */
                     bool COSBucketHasBeenSet() const;
 
+                    /**
+                     * 获取是否采集作业日志
+                     * @return LogCollect 是否采集作业日志
+                     */
+                    bool GetLogCollect() const;
+
+                    /**
+                     * 设置是否采集作业日志
+                     * @param LogCollect 是否采集作业日志
+                     */
+                    void SetLogCollect(const bool& _logCollect);
+
+                    /**
+                     * 判断参数 LogCollect 是否已赋值
+                     * @return LogCollect 是否已赋值
+                     */
+                    bool LogCollectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +279,12 @@ namespace TencentCloud
                      */
                     std::string m_cOSBucket;
                     bool m_cOSBucketHasBeenSet;
+
+                    /**
+                     * 是否采集作业日志
+                     */
+                    bool m_logCollect;
+                    bool m_logCollectHasBeenSet;
 
                 };
             }

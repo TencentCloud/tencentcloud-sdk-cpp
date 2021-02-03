@@ -172,6 +172,42 @@ namespace TencentCloud
                      */
                     bool KeywordsHasBeenSet() const;
 
+                    /**
+                     * 获取宽
+                     * @return Width 宽
+                     */
+                    int64_t GetWidth() const;
+
+                    /**
+                     * 设置宽
+                     * @param Width 宽
+                     */
+                    void SetWidth(const int64_t& _width);
+
+                    /**
+                     * 判断参数 Width 是否已赋值
+                     * @return Width 是否已赋值
+                     */
+                    bool WidthHasBeenSet() const;
+
+                    /**
+                     * 获取高
+                     * @return Height 高
+                     */
+                    int64_t GetHeight() const;
+
+                    /**
+                     * 设置高
+                     * @param Height 高
+                     */
+                    void SetHeight(const int64_t& _height);
+
+                    /**
+                     * 判断参数 Height 是否已赋值
+                     * @return Height 是否已赋值
+                     */
+                    bool HeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +251,18 @@ namespace TencentCloud
                      */
                     std::string m_keywords;
                     bool m_keywordsHasBeenSet;
+
+                    /**
+                     * 宽
+                     */
+                    int64_t m_width;
+                    bool m_widthHasBeenSet;
+
+                    /**
+                     * 高
+                     */
+                    int64_t m_height;
+                    bool m_heightHasBeenSet;
 
                 };
             }

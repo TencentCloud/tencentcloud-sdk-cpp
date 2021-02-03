@@ -35,7 +35,8 @@ EvaluationRequest::EvaluationRequest() :
     m_enableDispMidresultHasBeenSet(false),
     m_enablePdfRecognizeHasBeenSet(false),
     m_pdfPageIndexHasBeenSet(false),
-    m_laTexHasBeenSet(false)
+    m_laTexHasBeenSet(false),
+    m_rejectVagueArithmeticHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string EvaluationRequest::ToJsonString() const
         string key = "LaTex";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_laTex, allocator);
+    }
+
+    if (m_rejectVagueArithmeticHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RejectVagueArithmetic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rejectVagueArithmetic, allocator);
     }
 
 
@@ -340,6 +349,22 @@ void EvaluationRequest::SetLaTex(const int64_t& _laTex)
 bool EvaluationRequest::LaTexHasBeenSet() const
 {
     return m_laTexHasBeenSet;
+}
+
+bool EvaluationRequest::GetRejectVagueArithmetic() const
+{
+    return m_rejectVagueArithmetic;
+}
+
+void EvaluationRequest::SetRejectVagueArithmetic(const bool& _rejectVagueArithmetic)
+{
+    m_rejectVagueArithmetic = _rejectVagueArithmetic;
+    m_rejectVagueArithmeticHasBeenSet = true;
+}
+
+bool EvaluationRequest::RejectVagueArithmeticHasBeenSet() const
+{
+    return m_rejectVagueArithmeticHasBeenSet;
 }
 
 

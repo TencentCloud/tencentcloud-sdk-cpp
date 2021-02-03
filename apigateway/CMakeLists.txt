@@ -163,6 +163,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/BindSubDomainRequest.h
   include/tencentcloud/apigateway/v20180808/model/IPStrategyApiStatus.h
   include/tencentcloud/apigateway/v20180808/model/CreateIPStrategyResponse.h
+  include/tencentcloud/apigateway/v20180808/model/AttachedApiInfo.h
   include/tencentcloud/apigateway/v20180808/model/BindIPStrategyRequest.h
   include/tencentcloud/apigateway/v20180808/model/MicroServiceReq.h
   include/tencentcloud/apigateway/v20180808/model/ErrorCodes.h
@@ -347,6 +348,7 @@ set(apigateway_src
   src/v20180808/model/BindSubDomainRequest.cpp
   src/v20180808/model/IPStrategyApiStatus.cpp
   src/v20180808/model/CreateIPStrategyResponse.cpp
+  src/v20180808/model/AttachedApiInfo.cpp
   src/v20180808/model/BindIPStrategyRequest.cpp
   src/v20180808/model/MicroServiceReq.cpp
   src/v20180808/model/ErrorCodes.cpp

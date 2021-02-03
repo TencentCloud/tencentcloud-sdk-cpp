@@ -25,8 +25,8 @@ using namespace std;
 
 DetectBodyRequest::DetectBodyRequest() :
     m_imageHasBeenSet(false),
-    m_urlHasBeenSet(false),
     m_maxBodyNumHasBeenSet(false),
+    m_urlHasBeenSet(false),
     m_attributesOptionsHasBeenSet(false)
 {
 }
@@ -46,20 +46,20 @@ string DetectBodyRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_urlHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Url";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_maxBodyNumHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "MaxBodyNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxBodyNum, allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_attributesOptionsHasBeenSet)
@@ -95,22 +95,6 @@ bool DetectBodyRequest::ImageHasBeenSet() const
     return m_imageHasBeenSet;
 }
 
-string DetectBodyRequest::GetUrl() const
-{
-    return m_url;
-}
-
-void DetectBodyRequest::SetUrl(const string& _url)
-{
-    m_url = _url;
-    m_urlHasBeenSet = true;
-}
-
-bool DetectBodyRequest::UrlHasBeenSet() const
-{
-    return m_urlHasBeenSet;
-}
-
 uint64_t DetectBodyRequest::GetMaxBodyNum() const
 {
     return m_maxBodyNum;
@@ -125,6 +109,22 @@ void DetectBodyRequest::SetMaxBodyNum(const uint64_t& _maxBodyNum)
 bool DetectBodyRequest::MaxBodyNumHasBeenSet() const
 {
     return m_maxBodyNumHasBeenSet;
+}
+
+string DetectBodyRequest::GetUrl() const
+{
+    return m_url;
+}
+
+void DetectBodyRequest::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool DetectBodyRequest::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 
 AttributesOptions DetectBodyRequest::GetAttributesOptions() const

@@ -40,6 +40,49 @@ DbbrainClient::DbbrainClient(const Credential &credential, const string &region,
 }
 
 
+DbbrainClient::AddUserContactOutcome DbbrainClient::AddUserContact(const AddUserContactRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddUserContact");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddUserContactResponse rsp = AddUserContactResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddUserContactOutcome(rsp);
+        else
+            return AddUserContactOutcome(o.GetError());
+    }
+    else
+    {
+        return AddUserContactOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::AddUserContactAsync(const AddUserContactRequest& request, const AddUserContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddUserContact(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::AddUserContactOutcomeCallable DbbrainClient::AddUserContactCallable(const AddUserContactRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddUserContactOutcome()>>(
+        [this, request]()
+        {
+            return this->AddUserContact(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::CreateDBDiagReportTaskOutcome DbbrainClient::CreateDBDiagReportTask(const CreateDBDiagReportTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDBDiagReportTask");
@@ -119,6 +162,49 @@ DbbrainClient::CreateMailProfileOutcomeCallable DbbrainClient::CreateMailProfile
         [this, request]()
         {
             return this->CreateMailProfile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::CreateSchedulerMailProfileOutcome DbbrainClient::CreateSchedulerMailProfile(const CreateSchedulerMailProfileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSchedulerMailProfile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSchedulerMailProfileResponse rsp = CreateSchedulerMailProfileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSchedulerMailProfileOutcome(rsp);
+        else
+            return CreateSchedulerMailProfileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSchedulerMailProfileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateSchedulerMailProfileAsync(const CreateSchedulerMailProfileRequest& request, const CreateSchedulerMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSchedulerMailProfile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateSchedulerMailProfileOutcomeCallable DbbrainClient::CreateSchedulerMailProfileCallable(const CreateSchedulerMailProfileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSchedulerMailProfileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSchedulerMailProfile(request);
         }
     );
 
@@ -420,6 +506,135 @@ DbbrainClient::DescribeDBSpaceStatusOutcomeCallable DbbrainClient::DescribeDBSpa
         [this, request]()
         {
             return this->DescribeDBSpaceStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeDiagDBInstancesOutcome DbbrainClient::DescribeDiagDBInstances(const DescribeDiagDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDiagDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDiagDBInstancesResponse rsp = DescribeDiagDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDiagDBInstancesOutcome(rsp);
+        else
+            return DescribeDiagDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDiagDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDiagDBInstancesAsync(const DescribeDiagDBInstancesRequest& request, const DescribeDiagDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDiagDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDiagDBInstancesOutcomeCallable DbbrainClient::DescribeDiagDBInstancesCallable(const DescribeDiagDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDiagDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDiagDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeHealthScoreOutcome DbbrainClient::DescribeHealthScore(const DescribeHealthScoreRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHealthScore");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHealthScoreResponse rsp = DescribeHealthScoreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHealthScoreOutcome(rsp);
+        else
+            return DescribeHealthScoreOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHealthScoreOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeHealthScoreAsync(const DescribeHealthScoreRequest& request, const DescribeHealthScoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHealthScore(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeHealthScoreOutcomeCallable DbbrainClient::DescribeHealthScoreCallable(const DescribeHealthScoreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHealthScoreOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHealthScore(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeMailProfileOutcome DbbrainClient::DescribeMailProfile(const DescribeMailProfileRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMailProfile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMailProfileResponse rsp = DescribeMailProfileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMailProfileOutcome(rsp);
+        else
+            return DescribeMailProfileOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMailProfileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeMailProfileAsync(const DescribeMailProfileRequest& request, const DescribeMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMailProfile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeMailProfileOutcomeCallable DbbrainClient::DescribeMailProfileCallable(const DescribeMailProfileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMailProfileOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMailProfile(request);
         }
     );
 

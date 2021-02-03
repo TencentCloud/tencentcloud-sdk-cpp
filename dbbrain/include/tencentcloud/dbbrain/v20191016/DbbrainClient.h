@@ -23,10 +23,14 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/dbbrain/v20191016/model/AddUserContactRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/AddUserContactResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportTaskRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateMailProfileResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/CreateSchedulerMailProfileRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/CreateSchedulerMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateSecurityAuditLogExportTaskRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateSecurityAuditLogExportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DeleteSecurityAuditLogExportTasksRequest.h>
@@ -41,6 +45,12 @@
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBDiagHistoryResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBSpaceStatusRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBSpaceStatusResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeDiagDBInstancesRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeDiagDBInstancesResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeHealthScoreRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeHealthScoreResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeMailProfileRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogDownloadUrlsRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogDownloadUrlsResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogExportTasksRequest.h>
@@ -69,12 +79,18 @@ namespace TencentCloud
                 DbbrainClient(const Credential &credential, const std::string &region);
                 DbbrainClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AddUserContactResponse> AddUserContactOutcome;
+                typedef std::future<AddUserContactOutcome> AddUserContactOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::AddUserContactRequest&, AddUserContactOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserContactAsyncHandler;
                 typedef Outcome<Error, Model::CreateDBDiagReportTaskResponse> CreateDBDiagReportTaskOutcome;
                 typedef std::future<CreateDBDiagReportTaskOutcome> CreateDBDiagReportTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateDBDiagReportTaskRequest&, CreateDBDiagReportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBDiagReportTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateMailProfileResponse> CreateMailProfileOutcome;
                 typedef std::future<CreateMailProfileOutcome> CreateMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateMailProfileRequest&, CreateMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMailProfileAsyncHandler;
+                typedef Outcome<Error, Model::CreateSchedulerMailProfileResponse> CreateSchedulerMailProfileOutcome;
+                typedef std::future<CreateSchedulerMailProfileOutcome> CreateSchedulerMailProfileOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateSchedulerMailProfileRequest&, CreateSchedulerMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSchedulerMailProfileAsyncHandler;
                 typedef Outcome<Error, Model::CreateSecurityAuditLogExportTaskResponse> CreateSecurityAuditLogExportTaskOutcome;
                 typedef std::future<CreateSecurityAuditLogExportTaskOutcome> CreateSecurityAuditLogExportTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateSecurityAuditLogExportTaskRequest&, CreateSecurityAuditLogExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityAuditLogExportTaskAsyncHandler;
@@ -96,6 +112,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDBSpaceStatusResponse> DescribeDBSpaceStatusOutcome;
                 typedef std::future<DescribeDBSpaceStatusOutcome> DescribeDBSpaceStatusOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBSpaceStatusRequest&, DescribeDBSpaceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSpaceStatusAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDiagDBInstancesResponse> DescribeDiagDBInstancesOutcome;
+                typedef std::future<DescribeDiagDBInstancesOutcome> DescribeDiagDBInstancesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDiagDBInstancesRequest&, DescribeDiagDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagDBInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeHealthScoreResponse> DescribeHealthScoreOutcome;
+                typedef std::future<DescribeHealthScoreOutcome> DescribeHealthScoreOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeHealthScoreRequest&, DescribeHealthScoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthScoreAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMailProfileResponse> DescribeMailProfileOutcome;
+                typedef std::future<DescribeMailProfileOutcome> DescribeMailProfileOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeMailProfileRequest&, DescribeMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMailProfileAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSecurityAuditLogDownloadUrlsResponse> DescribeSecurityAuditLogDownloadUrlsOutcome;
                 typedef std::future<DescribeSecurityAuditLogDownloadUrlsOutcome> DescribeSecurityAuditLogDownloadUrlsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSecurityAuditLogDownloadUrlsRequest&, DescribeSecurityAuditLogDownloadUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAuditLogDownloadUrlsAsyncHandler;
@@ -121,6 +146,15 @@ namespace TencentCloud
 
 
                 /**
+                 *添加邮件接收联系人的姓名， 邮件地址，返回值为添加成功的联系人id。Region统一选择广州。
+                 * @param req AddUserContactRequest
+                 * @return AddUserContactOutcome
+                 */
+                AddUserContactOutcome AddUserContact(const Model::AddUserContactRequest &request);
+                void AddUserContactAsync(const Model::AddUserContactRequest& request, const AddUserContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddUserContactOutcomeCallable AddUserContactCallable(const Model::AddUserContactRequest& request);
+
+                /**
                  *创建健康报告，并可以选择是否发送邮件。
                  * @param req CreateDBDiagReportTaskRequest
                  * @return CreateDBDiagReportTaskOutcome
@@ -130,13 +164,22 @@ namespace TencentCloud
                 CreateDBDiagReportTaskOutcomeCallable CreateDBDiagReportTaskCallable(const Model::CreateDBDiagReportTaskRequest& request);
 
                 /**
-                 *创建邮件配置。其中入参ProfileType表示所创建配置的类型，ProfileType 取值包括：dbScan_mail_configuration（数据库巡检邮件配置）、scheduler_mail_configuration（定期生成邮件配置）。
+                 *创建邮件配置。其中入参ProfileType表示所创建配置的类型，ProfileType 取值包括：dbScan_mail_configuration（数据库巡检邮件配置）、scheduler_mail_configuration（定期生成健康报告的邮件发送配置）。Region统一选择广州，和实例所属地域无关。
                  * @param req CreateMailProfileRequest
                  * @return CreateMailProfileOutcome
                  */
                 CreateMailProfileOutcome CreateMailProfile(const Model::CreateMailProfileRequest &request);
                 void CreateMailProfileAsync(const Model::CreateMailProfileRequest& request, const CreateMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMailProfileOutcomeCallable CreateMailProfileCallable(const Model::CreateMailProfileRequest& request);
+
+                /**
+                 *该接口用于创建定期生成健康报告并邮件发送的配置，将健康报告的定期生成时间作为参数传入（周一至周日），用于设置健康报告的定期生成时间，同时保存相应的定期邮件发送的配置。
+                 * @param req CreateSchedulerMailProfileRequest
+                 * @return CreateSchedulerMailProfileOutcome
+                 */
+                CreateSchedulerMailProfileOutcome CreateSchedulerMailProfile(const Model::CreateSchedulerMailProfileRequest &request);
+                void CreateSchedulerMailProfileAsync(const Model::CreateSchedulerMailProfileRequest& request, const CreateSchedulerMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSchedulerMailProfileOutcomeCallable CreateSchedulerMailProfileCallable(const Model::CreateSchedulerMailProfileRequest& request);
 
                 /**
                  *创建安全审计日志导出任务。
@@ -200,6 +243,33 @@ namespace TencentCloud
                 DescribeDBSpaceStatusOutcome DescribeDBSpaceStatus(const Model::DescribeDBSpaceStatusRequest &request);
                 void DescribeDBSpaceStatusAsync(const Model::DescribeDBSpaceStatusRequest& request, const DescribeDBSpaceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBSpaceStatusOutcomeCallable DescribeDBSpaceStatusCallable(const Model::DescribeDBSpaceStatusRequest& request);
+
+                /**
+                 *获取实例信息列表。Region统一选择广州。
+                 * @param req DescribeDiagDBInstancesRequest
+                 * @return DescribeDiagDBInstancesOutcome
+                 */
+                DescribeDiagDBInstancesOutcome DescribeDiagDBInstances(const Model::DescribeDiagDBInstancesRequest &request);
+                void DescribeDiagDBInstancesAsync(const Model::DescribeDiagDBInstancesRequest& request, const DescribeDiagDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDiagDBInstancesOutcomeCallable DescribeDiagDBInstancesCallable(const Model::DescribeDiagDBInstancesRequest& request);
+
+                /**
+                 *根据实例ID获取指定时间段（30分钟）的健康得分，以及异常扣分项。
+                 * @param req DescribeHealthScoreRequest
+                 * @return DescribeHealthScoreOutcome
+                 */
+                DescribeHealthScoreOutcome DescribeHealthScore(const Model::DescribeHealthScoreRequest &request);
+                void DescribeHealthScoreAsync(const Model::DescribeHealthScoreRequest& request, const DescribeHealthScoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHealthScoreOutcomeCallable DescribeHealthScoreCallable(const Model::DescribeHealthScoreRequest& request);
+
+                /**
+                 *获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。Region统一选择广州。
+                 * @param req DescribeMailProfileRequest
+                 * @return DescribeMailProfileOutcome
+                 */
+                DescribeMailProfileOutcome DescribeMailProfile(const Model::DescribeMailProfileRequest &request);
+                void DescribeMailProfileAsync(const Model::DescribeMailProfileRequest& request, const DescribeMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMailProfileOutcomeCallable DescribeMailProfileCallable(const Model::DescribeMailProfileRequest& request);
 
                 /**
                  *查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。

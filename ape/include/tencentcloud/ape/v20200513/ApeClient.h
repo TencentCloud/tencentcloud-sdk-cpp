@@ -27,10 +27,14 @@
 #include <tencentcloud/ape/v20200513/model/BatchDescribeOrderCertificateResponse.h>
 #include <tencentcloud/ape/v20200513/model/BatchDescribeOrderImageRequest.h>
 #include <tencentcloud/ape/v20200513/model/BatchDescribeOrderImageResponse.h>
+#include <tencentcloud/ape/v20200513/model/CreateOrderAndDownloadsRequest.h>
+#include <tencentcloud/ape/v20200513/model/CreateOrderAndDownloadsResponse.h>
 #include <tencentcloud/ape/v20200513/model/CreateOrderAndPayRequest.h>
 #include <tencentcloud/ape/v20200513/model/CreateOrderAndPayResponse.h>
 #include <tencentcloud/ape/v20200513/model/DescribeAuthUsersRequest.h>
 #include <tencentcloud/ape/v20200513/model/DescribeAuthUsersResponse.h>
+#include <tencentcloud/ape/v20200513/model/DescribeDownloadInfosRequest.h>
+#include <tencentcloud/ape/v20200513/model/DescribeDownloadInfosResponse.h>
 #include <tencentcloud/ape/v20200513/model/DescribeImageRequest.h>
 #include <tencentcloud/ape/v20200513/model/DescribeImageResponse.h>
 #include <tencentcloud/ape/v20200513/model/DescribeImagesRequest.h>
@@ -55,12 +59,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BatchDescribeOrderImageResponse> BatchDescribeOrderImageOutcome;
                 typedef std::future<BatchDescribeOrderImageOutcome> BatchDescribeOrderImageOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::BatchDescribeOrderImageRequest&, BatchDescribeOrderImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDescribeOrderImageAsyncHandler;
+                typedef Outcome<Error, Model::CreateOrderAndDownloadsResponse> CreateOrderAndDownloadsOutcome;
+                typedef std::future<CreateOrderAndDownloadsOutcome> CreateOrderAndDownloadsOutcomeCallable;
+                typedef std::function<void(const ApeClient*, const Model::CreateOrderAndDownloadsRequest&, CreateOrderAndDownloadsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrderAndDownloadsAsyncHandler;
                 typedef Outcome<Error, Model::CreateOrderAndPayResponse> CreateOrderAndPayOutcome;
                 typedef std::future<CreateOrderAndPayOutcome> CreateOrderAndPayOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::CreateOrderAndPayRequest&, CreateOrderAndPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrderAndPayAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAuthUsersResponse> DescribeAuthUsersOutcome;
                 typedef std::future<DescribeAuthUsersOutcome> DescribeAuthUsersOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::DescribeAuthUsersRequest&, DescribeAuthUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthUsersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDownloadInfosResponse> DescribeDownloadInfosOutcome;
+                typedef std::future<DescribeDownloadInfosOutcome> DescribeDownloadInfosOutcomeCallable;
+                typedef std::function<void(const ApeClient*, const Model::DescribeDownloadInfosRequest&, DescribeDownloadInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDownloadInfosAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImageResponse> DescribeImageOutcome;
                 typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::DescribeImageRequest&, DescribeImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAsyncHandler;
@@ -89,6 +99,15 @@ namespace TencentCloud
                 BatchDescribeOrderImageOutcomeCallable BatchDescribeOrderImageCallable(const Model::BatchDescribeOrderImageRequest& request);
 
                 /**
+                 *核销图片，获取原图URL地址
+                 * @param req CreateOrderAndDownloadsRequest
+                 * @return CreateOrderAndDownloadsOutcome
+                 */
+                CreateOrderAndDownloadsOutcome CreateOrderAndDownloads(const Model::CreateOrderAndDownloadsRequest &request);
+                void CreateOrderAndDownloadsAsync(const Model::CreateOrderAndDownloadsRequest& request, const CreateOrderAndDownloadsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrderAndDownloadsOutcomeCallable CreateOrderAndDownloadsCallable(const Model::CreateOrderAndDownloadsRequest& request);
+
+                /**
                  *购买一张图片并且支付
                  * @param req CreateOrderAndPayRequest
                  * @return CreateOrderAndPayOutcome
@@ -105,6 +124,15 @@ namespace TencentCloud
                 DescribeAuthUsersOutcome DescribeAuthUsers(const Model::DescribeAuthUsersRequest &request);
                 void DescribeAuthUsersAsync(const Model::DescribeAuthUsersRequest& request, const DescribeAuthUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuthUsersOutcomeCallable DescribeAuthUsersCallable(const Model::DescribeAuthUsersRequest& request);
+
+                /**
+                 *获取用户图片下载记录
+                 * @param req DescribeDownloadInfosRequest
+                 * @return DescribeDownloadInfosOutcome
+                 */
+                DescribeDownloadInfosOutcome DescribeDownloadInfos(const Model::DescribeDownloadInfosRequest &request);
+                void DescribeDownloadInfosAsync(const Model::DescribeDownloadInfosRequest& request, const DescribeDownloadInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDownloadInfosOutcomeCallable DescribeDownloadInfosCallable(const Model::DescribeDownloadInfosRequest& request);
 
                 /**
                  *根据ID查询一张图片的详细信息

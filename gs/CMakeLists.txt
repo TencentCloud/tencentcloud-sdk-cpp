@@ -23,12 +23,14 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/SaveGameArchiveResponse.h
   include/tencentcloud/gs/v20191118/model/SwitchGameArchiveRequest.h
   include/tencentcloud/gs/v20191118/model/TrylockWorkerResponse.h
-  include/tencentcloud/gs/v20191118/model/StopGameResponse.h
+  include/tencentcloud/gs/v20191118/model/DescribeInstancesCountResponse.h
+  include/tencentcloud/gs/v20191118/model/CreateSessionRequest.h
   include/tencentcloud/gs/v20191118/model/CreateSessionResponse.h
+  include/tencentcloud/gs/v20191118/model/DescribeInstancesCountRequest.h
   include/tencentcloud/gs/v20191118/model/SaveGameArchiveRequest.h
   include/tencentcloud/gs/v20191118/model/TrylockWorkerRequest.h
   include/tencentcloud/gs/v20191118/model/SwitchGameArchiveResponse.h
-  include/tencentcloud/gs/v20191118/model/CreateSessionRequest.h
+  include/tencentcloud/gs/v20191118/model/StopGameResponse.h
   )
 
 set(gs_src
@@ -37,12 +39,14 @@ set(gs_src
   src/v20191118/model/SaveGameArchiveResponse.cpp
   src/v20191118/model/SwitchGameArchiveRequest.cpp
   src/v20191118/model/TrylockWorkerResponse.cpp
-  src/v20191118/model/StopGameResponse.cpp
+  src/v20191118/model/DescribeInstancesCountResponse.cpp
+  src/v20191118/model/CreateSessionRequest.cpp
   src/v20191118/model/CreateSessionResponse.cpp
+  src/v20191118/model/DescribeInstancesCountRequest.cpp
   src/v20191118/model/SaveGameArchiveRequest.cpp
   src/v20191118/model/TrylockWorkerRequest.cpp
   src/v20191118/model/SwitchGameArchiveResponse.cpp
-  src/v20191118/model/CreateSessionRequest.cpp
+  src/v20191118/model/StopGameResponse.cpp
   )
 
 set(gs_include

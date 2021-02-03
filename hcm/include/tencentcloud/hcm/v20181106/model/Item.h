@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别的算式是否正确
-                     * @return Item 识别的算式是否正确
+                     * 获取识别的算式是否正确，算式运算结果: ‘YES’:正确 ‘NO’: 错误 ‘NA’: 非法参数
+                     * @return Item 识别的算式是否正确，算式运算结果: ‘YES’:正确 ‘NO’: 错误 ‘NA’: 非法参数
                      */
                     std::string GetItem() const;
 
                     /**
-                     * 设置识别的算式是否正确
-                     * @param Item 识别的算式是否正确
+                     * 设置识别的算式是否正确，算式运算结果: ‘YES’:正确 ‘NO’: 错误 ‘NA’: 非法参数
+                     * @param Item 识别的算式是否正确，算式运算结果: ‘YES’:正确 ‘NO’: 错误 ‘NA’: 非法参数
                      */
                     void SetItem(const std::string& _item);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool ItemHasBeenSet() const;
 
                     /**
-                     * 获取识别的算式
-                     * @return ItemString 识别的算式
+                     * 获取识别出的算式，识别出的文本行字符串
+                     * @return ItemString 识别出的算式，识别出的文本行字符串
                      */
                     std::string GetItemString() const;
 
                     /**
-                     * 设置识别的算式
-                     * @param ItemString 识别的算式
+                     * 设置识别出的算式，识别出的文本行字符串
+                     * @param ItemString 识别出的算式，识别出的文本行字符串
                      */
                     void SetItemString(const std::string& _itemString);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool ItemStringHasBeenSet() const;
 
                     /**
-                     * 获取识别的算式在图片上的位置信息
-                     * @return ItemCoord 识别的算式在图片上的位置信息
+                     * 获取识别的算式在图片上的位置信息，文本行在旋转纠正之后的图像中的像素坐 标，表示为(左上角 x, 左上角 y，宽 width， 高 height)
+                     * @return ItemCoord 识别的算式在图片上的位置信息，文本行在旋转纠正之后的图像中的像素坐 标，表示为(左上角 x, 左上角 y，宽 width， 高 height)
                      */
                     ItemCoord GetItemCoord() const;
 
                     /**
-                     * 设置识别的算式在图片上的位置信息
-                     * @param ItemCoord 识别的算式在图片上的位置信息
+                     * 设置识别的算式在图片上的位置信息，文本行在旋转纠正之后的图像中的像素坐 标，表示为(左上角 x, 左上角 y，宽 width， 高 height)
+                     * @param ItemCoord 识别的算式在图片上的位置信息，文本行在旋转纠正之后的图像中的像素坐 标，表示为(左上角 x, 左上角 y，宽 width， 高 height)
                      */
                     void SetItemCoord(const ItemCoord& _itemCoord);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool ItemCoordHasBeenSet() const;
 
                     /**
-                     * 获取推荐的答案，暂不支持多个关系运算符、无关系运算符、单位换算错题的推荐答案返回。
-                     * @return Answer 推荐的答案，暂不支持多个关系运算符、无关系运算符、单位换算错题的推荐答案返回。
+                     * 获取错题推荐答案，算式运算结果正确返回为 ""，算式运算结果错误返回推荐答案 (注:暂不支持多个关系运算符(如 1<10<7)、 无关系运算符(如 frac(1,2)+frac(2,3))、单 位换算(如 1 元=100 角)错题的推荐答案 返回)
+                     * @return Answer 错题推荐答案，算式运算结果正确返回为 ""，算式运算结果错误返回推荐答案 (注:暂不支持多个关系运算符(如 1<10<7)、 无关系运算符(如 frac(1,2)+frac(2,3))、单 位换算(如 1 元=100 角)错题的推荐答案 返回)
                      */
                     std::string GetAnswer() const;
 
                     /**
-                     * 设置推荐的答案，暂不支持多个关系运算符、无关系运算符、单位换算错题的推荐答案返回。
-                     * @param Answer 推荐的答案，暂不支持多个关系运算符、无关系运算符、单位换算错题的推荐答案返回。
+                     * 设置错题推荐答案，算式运算结果正确返回为 ""，算式运算结果错误返回推荐答案 (注:暂不支持多个关系运算符(如 1<10<7)、 无关系运算符(如 frac(1,2)+frac(2,3))、单 位换算(如 1 元=100 角)错题的推荐答案 返回)
+                     * @param Answer 错题推荐答案，算式运算结果正确返回为 ""，算式运算结果错误返回推荐答案 (注:暂不支持多个关系运算符(如 1<10<7)、 无关系运算符(如 frac(1,2)+frac(2,3))、单 位换算(如 1 元=100 角)错题的推荐答案 返回)
                      */
                     void SetAnswer(const std::string& _answer);
 
@@ -163,28 +163,50 @@ namespace TencentCloud
                      */
                     bool ItemConfHasBeenSet() const;
 
+                    /**
+                     * 获取用于标识题目 id，如果有若干算式属于同一 题，则其对应的 id 相同。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QuestionId 用于标识题目 id，如果有若干算式属于同一 题，则其对应的 id 相同。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetQuestionId() const;
+
+                    /**
+                     * 设置用于标识题目 id，如果有若干算式属于同一 题，则其对应的 id 相同。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QuestionId 用于标识题目 id，如果有若干算式属于同一 题，则其对应的 id 相同。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQuestionId(const std::string& _questionId);
+
+                    /**
+                     * 判断参数 QuestionId 是否已赋值
+                     * @return QuestionId 是否已赋值
+                     */
+                    bool QuestionIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 识别的算式是否正确
+                     * 识别的算式是否正确，算式运算结果: ‘YES’:正确 ‘NO’: 错误 ‘NA’: 非法参数
                      */
                     std::string m_item;
                     bool m_itemHasBeenSet;
 
                     /**
-                     * 识别的算式
+                     * 识别出的算式，识别出的文本行字符串
                      */
                     std::string m_itemString;
                     bool m_itemStringHasBeenSet;
 
                     /**
-                     * 识别的算式在图片上的位置信息
+                     * 识别的算式在图片上的位置信息，文本行在旋转纠正之后的图像中的像素坐 标，表示为(左上角 x, 左上角 y，宽 width， 高 height)
                      */
                     ItemCoord m_itemCoord;
                     bool m_itemCoordHasBeenSet;
 
                     /**
-                     * 推荐的答案，暂不支持多个关系运算符、无关系运算符、单位换算错题的推荐答案返回。
+                     * 错题推荐答案，算式运算结果正确返回为 ""，算式运算结果错误返回推荐答案 (注:暂不支持多个关系运算符(如 1<10<7)、 无关系运算符(如 frac(1,2)+frac(2,3))、单 位换算(如 1 元=100 角)错题的推荐答案 返回)
                      */
                     std::string m_answer;
                     bool m_answerHasBeenSet;
@@ -202,6 +224,13 @@ namespace TencentCloud
                      */
                     double m_itemConf;
                     bool m_itemConfHasBeenSet;
+
+                    /**
+                     * 用于标识题目 id，如果有若干算式属于同一 题，则其对应的 id 相同。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_questionId;
+                    bool m_questionIdHasBeenSet;
 
                 };
             }

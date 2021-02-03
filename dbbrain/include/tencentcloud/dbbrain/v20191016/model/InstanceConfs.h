@@ -64,6 +64,24 @@ namespace TencentCloud
                      */
                     bool DailyInspectionHasBeenSet() const;
 
+                    /**
+                     * 获取实例概览开关，Yes/No。
+                     * @return OverviewDisplay 实例概览开关，Yes/No。
+                     */
+                    std::string GetOverviewDisplay() const;
+
+                    /**
+                     * 设置实例概览开关，Yes/No。
+                     * @param OverviewDisplay 实例概览开关，Yes/No。
+                     */
+                    void SetOverviewDisplay(const std::string& _overviewDisplay);
+
+                    /**
+                     * 判断参数 OverviewDisplay 是否已赋值
+                     * @return OverviewDisplay 是否已赋值
+                     */
+                    bool OverviewDisplayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +89,12 @@ namespace TencentCloud
                      */
                     std::string m_dailyInspection;
                     bool m_dailyInspectionHasBeenSet;
+
+                    /**
+                     * 实例概览开关，Yes/No。
+                     */
+                    std::string m_overviewDisplay;
+                    bool m_overviewDisplayHasBeenSet;
 
                 };
             }

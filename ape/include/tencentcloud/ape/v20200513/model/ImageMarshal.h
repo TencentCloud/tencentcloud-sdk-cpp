@@ -190,6 +190,60 @@ namespace TencentCloud
                      */
                     bool IsVipHasBeenSet() const;
 
+                    /**
+                     * 获取授权范围id
+                     * @return LicenseScopeId 授权范围id
+                     */
+                    int64_t GetLicenseScopeId() const;
+
+                    /**
+                     * 设置授权范围id
+                     * @param LicenseScopeId 授权范围id
+                     */
+                    void SetLicenseScopeId(const int64_t& _licenseScopeId);
+
+                    /**
+                     * 判断参数 LicenseScopeId 是否已赋值
+                     * @return LicenseScopeId 是否已赋值
+                     */
+                    bool LicenseScopeIdHasBeenSet() const;
+
+                    /**
+                     * 获取尺寸
+                     * @return DimensionsName 尺寸
+                     */
+                    std::string GetDimensionsName() const;
+
+                    /**
+                     * 设置尺寸
+                     * @param DimensionsName 尺寸
+                     */
+                    void SetDimensionsName(const std::string& _dimensionsName);
+
+                    /**
+                     * 判断参数 DimensionsName 是否已赋值
+                     * @return DimensionsName 是否已赋值
+                     */
+                    bool DimensionsNameHasBeenSet() const;
+
+                    /**
+                     * 获取尺寸id
+                     * @return DimensionsNameId 尺寸id
+                     */
+                    int64_t GetDimensionsNameId() const;
+
+                    /**
+                     * 设置尺寸id
+                     * @param DimensionsNameId 尺寸id
+                     */
+                    void SetDimensionsNameId(const int64_t& _dimensionsNameId);
+
+                    /**
+                     * 判断参数 DimensionsNameId 是否已赋值
+                     * @return DimensionsNameId 是否已赋值
+                     */
+                    bool DimensionsNameIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +293,24 @@ namespace TencentCloud
                      */
                     bool m_isVip;
                     bool m_isVipHasBeenSet;
+
+                    /**
+                     * 授权范围id
+                     */
+                    int64_t m_licenseScopeId;
+                    bool m_licenseScopeIdHasBeenSet;
+
+                    /**
+                     * 尺寸
+                     */
+                    std::string m_dimensionsName;
+                    bool m_dimensionsNameHasBeenSet;
+
+                    /**
+                     * 尺寸id
+                     */
+                    int64_t m_dimensionsNameId;
+                    bool m_dimensionsNameIdHasBeenSet;
 
                 };
             }

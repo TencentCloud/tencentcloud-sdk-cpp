@@ -31,7 +31,14 @@ DescribeImageResponse::DescribeImageResponse() :
     m_previewUrlHasBeenSet(false),
     m_thumbUrlHasBeenSet(false),
     m_vendorHasBeenSet(false),
-    m_marshalsHasBeenSet(false)
+    m_marshalsHasBeenSet(false),
+    m_widthHasBeenSet(false),
+    m_heightHasBeenSet(false),
+    m_imageFormatHasBeenSet(false),
+    m_imageSenseTypeHasBeenSet(false),
+    m_keywordsHasBeenSet(false),
+    m_layeredGalleryIdHasBeenSet(false),
+    m_orientationHasBeenSet(false)
 {
 }
 
@@ -149,6 +156,76 @@ CoreInternalOutcome DescribeImageResponse::Deserialize(const string &payload)
         m_marshalsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Width") && !rsp["Width"].IsNull())
+    {
+        if (!rsp["Width"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Width` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_width = rsp["Width"].GetInt64();
+        m_widthHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Height") && !rsp["Height"].IsNull())
+    {
+        if (!rsp["Height"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Height` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_height = rsp["Height"].GetInt64();
+        m_heightHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ImageFormat") && !rsp["ImageFormat"].IsNull())
+    {
+        if (!rsp["ImageFormat"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageFormat = string(rsp["ImageFormat"].GetString());
+        m_imageFormatHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ImageSenseType") && !rsp["ImageSenseType"].IsNull())
+    {
+        if (!rsp["ImageSenseType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageSenseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageSenseType = string(rsp["ImageSenseType"].GetString());
+        m_imageSenseTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Keywords") && !rsp["Keywords"].IsNull())
+    {
+        if (!rsp["Keywords"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Keywords` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keywords = string(rsp["Keywords"].GetString());
+        m_keywordsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LayeredGalleryId") && !rsp["LayeredGalleryId"].IsNull())
+    {
+        if (!rsp["LayeredGalleryId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `LayeredGalleryId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_layeredGalleryId = rsp["LayeredGalleryId"].GetInt64();
+        m_layeredGalleryIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Orientation") && !rsp["Orientation"].IsNull())
+    {
+        if (!rsp["Orientation"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Orientation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orientation = string(rsp["Orientation"].GetString());
+        m_orientationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +299,76 @@ vector<ImageMarshal> DescribeImageResponse::GetMarshals() const
 bool DescribeImageResponse::MarshalsHasBeenSet() const
 {
     return m_marshalsHasBeenSet;
+}
+
+int64_t DescribeImageResponse::GetWidth() const
+{
+    return m_width;
+}
+
+bool DescribeImageResponse::WidthHasBeenSet() const
+{
+    return m_widthHasBeenSet;
+}
+
+int64_t DescribeImageResponse::GetHeight() const
+{
+    return m_height;
+}
+
+bool DescribeImageResponse::HeightHasBeenSet() const
+{
+    return m_heightHasBeenSet;
+}
+
+string DescribeImageResponse::GetImageFormat() const
+{
+    return m_imageFormat;
+}
+
+bool DescribeImageResponse::ImageFormatHasBeenSet() const
+{
+    return m_imageFormatHasBeenSet;
+}
+
+string DescribeImageResponse::GetImageSenseType() const
+{
+    return m_imageSenseType;
+}
+
+bool DescribeImageResponse::ImageSenseTypeHasBeenSet() const
+{
+    return m_imageSenseTypeHasBeenSet;
+}
+
+string DescribeImageResponse::GetKeywords() const
+{
+    return m_keywords;
+}
+
+bool DescribeImageResponse::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
+}
+
+int64_t DescribeImageResponse::GetLayeredGalleryId() const
+{
+    return m_layeredGalleryId;
+}
+
+bool DescribeImageResponse::LayeredGalleryIdHasBeenSet() const
+{
+    return m_layeredGalleryIdHasBeenSet;
+}
+
+string DescribeImageResponse::GetOrientation() const
+{
+    return m_orientation;
+}
+
+bool DescribeImageResponse::OrientationHasBeenSet() const
+{
+    return m_orientationHasBeenSet;
 }
 
 

@@ -127,6 +127,90 @@ namespace TencentCloud
                      */
                     bool MarshalsHasBeenSet() const;
 
+                    /**
+                     * 获取宽
+                     * @return Width 宽
+                     */
+                    int64_t GetWidth() const;
+
+                    /**
+                     * 判断参数 Width 是否已赋值
+                     * @return Width 是否已赋值
+                     */
+                    bool WidthHasBeenSet() const;
+
+                    /**
+                     * 获取高
+                     * @return Height 高
+                     */
+                    int64_t GetHeight() const;
+
+                    /**
+                     * 判断参数 Height 是否已赋值
+                     * @return Height 是否已赋值
+                     */
+                    bool HeightHasBeenSet() const;
+
+                    /**
+                     * 获取图片格式 jpg/eps/psd/...
+                     * @return ImageFormat 图片格式 jpg/eps/psd/...
+                     */
+                    std::string GetImageFormat() const;
+
+                    /**
+                     * 判断参数 ImageFormat 是否已赋值
+                     * @return ImageFormat 是否已赋值
+                     */
+                    bool ImageFormatHasBeenSet() const;
+
+                    /**
+                     * 获取图片类型 摄影图片、插画、漫画、图表、矢量、psd、全景、gif、模板
+                     * @return ImageSenseType 图片类型 摄影图片、插画、漫画、图表、矢量、psd、全景、gif、模板
+                     */
+                    std::string GetImageSenseType() const;
+
+                    /**
+                     * 判断参数 ImageSenseType 是否已赋值
+                     * @return ImageSenseType 是否已赋值
+                     */
+                    bool ImageSenseTypeHasBeenSet() const;
+
+                    /**
+                     * 获取关键词，多关键词用空格分隔
+                     * @return Keywords 关键词，多关键词用空格分隔
+                     */
+                    std::string GetKeywords() const;
+
+                    /**
+                     * 判断参数 Keywords 是否已赋值
+                     * @return Keywords 是否已赋值
+                     */
+                    bool KeywordsHasBeenSet() const;
+
+                    /**
+                     * 获取分层图库id
+                     * @return LayeredGalleryId 分层图库id
+                     */
+                    int64_t GetLayeredGalleryId() const;
+
+                    /**
+                     * 判断参数 LayeredGalleryId 是否已赋值
+                     * @return LayeredGalleryId 是否已赋值
+                     */
+                    bool LayeredGalleryIdHasBeenSet() const;
+
+                    /**
+                     * 获取构图方式：horizontal:横图、vertical:竖图、square:方图
+                     * @return Orientation 构图方式：horizontal:横图、vertical:竖图、square:方图
+                     */
+                    std::string GetOrientation() const;
+
+                    /**
+                     * 判断参数 Orientation 是否已赋值
+                     * @return Orientation 是否已赋值
+                     */
+                    bool OrientationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +254,48 @@ namespace TencentCloud
                      */
                     std::vector<ImageMarshal> m_marshals;
                     bool m_marshalsHasBeenSet;
+
+                    /**
+                     * 宽
+                     */
+                    int64_t m_width;
+                    bool m_widthHasBeenSet;
+
+                    /**
+                     * 高
+                     */
+                    int64_t m_height;
+                    bool m_heightHasBeenSet;
+
+                    /**
+                     * 图片格式 jpg/eps/psd/...
+                     */
+                    std::string m_imageFormat;
+                    bool m_imageFormatHasBeenSet;
+
+                    /**
+                     * 图片类型 摄影图片、插画、漫画、图表、矢量、psd、全景、gif、模板
+                     */
+                    std::string m_imageSenseType;
+                    bool m_imageSenseTypeHasBeenSet;
+
+                    /**
+                     * 关键词，多关键词用空格分隔
+                     */
+                    std::string m_keywords;
+                    bool m_keywordsHasBeenSet;
+
+                    /**
+                     * 分层图库id
+                     */
+                    int64_t m_layeredGalleryId;
+                    bool m_layeredGalleryIdHasBeenSet;
+
+                    /**
+                     * 构图方式：horizontal:横图、vertical:竖图、square:方图
+                     */
+                    std::string m_orientation;
+                    bool m_orientationHasBeenSet;
 
                 };
             }

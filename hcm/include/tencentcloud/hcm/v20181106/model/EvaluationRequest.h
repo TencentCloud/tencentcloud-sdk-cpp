@@ -258,6 +258,24 @@ namespace TencentCloud
                      */
                     bool LaTexHasBeenSet() const;
 
+                    /**
+                     * 获取用于选择是否拒绝模糊题 目。打开则丢弃模糊题目， 不进行后续的判题返回结 果。
+                     * @return RejectVagueArithmetic 用于选择是否拒绝模糊题 目。打开则丢弃模糊题目， 不进行后续的判题返回结 果。
+                     */
+                    bool GetRejectVagueArithmetic() const;
+
+                    /**
+                     * 设置用于选择是否拒绝模糊题 目。打开则丢弃模糊题目， 不进行后续的判题返回结 果。
+                     * @param RejectVagueArithmetic 用于选择是否拒绝模糊题 目。打开则丢弃模糊题目， 不进行后续的判题返回结 果。
+                     */
+                    void SetRejectVagueArithmetic(const bool& _rejectVagueArithmetic);
+
+                    /**
+                     * 判断参数 RejectVagueArithmetic 是否已赋值
+                     * @return RejectVagueArithmetic 是否已赋值
+                     */
+                    bool RejectVagueArithmeticHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +349,12 @@ namespace TencentCloud
                      */
                     int64_t m_laTex;
                     bool m_laTexHasBeenSet;
+
+                    /**
+                     * 用于选择是否拒绝模糊题 目。打开则丢弃模糊题目， 不进行后续的判题返回结 果。
+                     */
+                    bool m_rejectVagueArithmetic;
+                    bool m_rejectVagueArithmeticHasBeenSet;
 
                 };
             }

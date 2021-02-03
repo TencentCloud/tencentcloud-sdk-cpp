@@ -32,7 +32,8 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_defaultParallelismHasBeenSet(false),
     m_propertiesHasBeenSet(false),
     m_autoDeleteHasBeenSet(false),
-    m_cOSBucketHasBeenSet(false)
+    m_cOSBucketHasBeenSet(false),
+    m_logCollectHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,14 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "COSBucket";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_cOSBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logCollectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogCollect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_logCollect, allocator);
     }
 
 
@@ -279,6 +288,22 @@ void CreateJobConfigRequest::SetCOSBucket(const string& _cOSBucket)
 bool CreateJobConfigRequest::COSBucketHasBeenSet() const
 {
     return m_cOSBucketHasBeenSet;
+}
+
+bool CreateJobConfigRequest::GetLogCollect() const
+{
+    return m_logCollect;
+}
+
+void CreateJobConfigRequest::SetLogCollect(const bool& _logCollect)
+{
+    m_logCollect = _logCollect;
+    m_logCollectHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::LogCollectHasBeenSet() const
+{
+    return m_logCollectHasBeenSet;
 }
 
 

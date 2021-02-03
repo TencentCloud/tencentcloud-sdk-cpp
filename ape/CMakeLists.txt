@@ -19,39 +19,51 @@ set(ape_public_header
   )
 
 set(ape_public_header_model
+  include/tencentcloud/ape/v20200513/model/DescribeImagesRequest.h
   include/tencentcloud/ape/v20200513/model/BatchDescribeOrderCertificateRequest.h
   include/tencentcloud/ape/v20200513/model/BatchDescribeOrderImageResponse.h
   include/tencentcloud/ape/v20200513/model/ImageItem.h
   include/tencentcloud/ape/v20200513/model/DescribeImagesResponse.h
-  include/tencentcloud/ape/v20200513/model/DescribeAuthUsersRequest.h
+  include/tencentcloud/ape/v20200513/model/ImageInfo.h
+  include/tencentcloud/ape/v20200513/model/CreateOrderAndDownloadsRequest.h
   include/tencentcloud/ape/v20200513/model/ImageMarshal.h
   include/tencentcloud/ape/v20200513/model/BatchDescribeOrderCertificateResponse.h
   include/tencentcloud/ape/v20200513/model/DescribeImageResponse.h
   include/tencentcloud/ape/v20200513/model/DescribeAuthUsersResponse.h
+  include/tencentcloud/ape/v20200513/model/DownloadInfo.h
   include/tencentcloud/ape/v20200513/model/AuthInfo.h
   include/tencentcloud/ape/v20200513/model/DescribeImageRequest.h
+  include/tencentcloud/ape/v20200513/model/DescribeDownloadInfosResponse.h
   include/tencentcloud/ape/v20200513/model/CreateOrderAndPayResponse.h
-  include/tencentcloud/ape/v20200513/model/DescribeImagesRequest.h
+  include/tencentcloud/ape/v20200513/model/DescribeAuthUsersRequest.h
+  include/tencentcloud/ape/v20200513/model/DescribeDownloadInfosRequest.h
   include/tencentcloud/ape/v20200513/model/CreateOrderAndPayRequest.h
+  include/tencentcloud/ape/v20200513/model/CreateOrderAndDownloadsResponse.h
   include/tencentcloud/ape/v20200513/model/BatchDescribeOrderImageRequest.h
   )
 
 set(ape_src
   src/v20200513/ApeClient.cpp
+  src/v20200513/model/DescribeImagesRequest.cpp
   src/v20200513/model/BatchDescribeOrderCertificateRequest.cpp
   src/v20200513/model/BatchDescribeOrderImageResponse.cpp
   src/v20200513/model/ImageItem.cpp
   src/v20200513/model/DescribeImagesResponse.cpp
-  src/v20200513/model/DescribeAuthUsersRequest.cpp
+  src/v20200513/model/ImageInfo.cpp
+  src/v20200513/model/CreateOrderAndDownloadsRequest.cpp
   src/v20200513/model/ImageMarshal.cpp
   src/v20200513/model/BatchDescribeOrderCertificateResponse.cpp
   src/v20200513/model/DescribeImageResponse.cpp
   src/v20200513/model/DescribeAuthUsersResponse.cpp
+  src/v20200513/model/DownloadInfo.cpp
   src/v20200513/model/AuthInfo.cpp
   src/v20200513/model/DescribeImageRequest.cpp
+  src/v20200513/model/DescribeDownloadInfosResponse.cpp
   src/v20200513/model/CreateOrderAndPayResponse.cpp
-  src/v20200513/model/DescribeImagesRequest.cpp
+  src/v20200513/model/DescribeAuthUsersRequest.cpp
+  src/v20200513/model/DescribeDownloadInfosRequest.cpp
   src/v20200513/model/CreateOrderAndPayRequest.cpp
+  src/v20200513/model/CreateOrderAndDownloadsResponse.cpp
   src/v20200513/model/BatchDescribeOrderImageRequest.cpp
   )
 

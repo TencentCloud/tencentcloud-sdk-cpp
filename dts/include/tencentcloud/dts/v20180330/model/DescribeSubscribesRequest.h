@@ -259,6 +259,24 @@ namespace TencentCloud
                      */
                     bool TagFiltersHasBeenSet() const;
 
+                    /**
+                     * 获取订阅实例版本;txdts-旧版数据订阅，kafka-kafka版本数据订阅
+                     * @return SubscribeVersion 订阅实例版本;txdts-旧版数据订阅，kafka-kafka版本数据订阅
+                     */
+                    std::string GetSubscribeVersion() const;
+
+                    /**
+                     * 设置订阅实例版本;txdts-旧版数据订阅，kafka-kafka版本数据订阅
+                     * @param SubscribeVersion 订阅实例版本;txdts-旧版数据订阅，kafka-kafka版本数据订阅
+                     */
+                    void SetSubscribeVersion(const std::string& _subscribeVersion);
+
+                    /**
+                     * 判断参数 SubscribeVersion 是否已赋值
+                     * @return SubscribeVersion 是否已赋值
+                     */
+                    bool SubscribeVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +350,12 @@ namespace TencentCloud
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
+
+                    /**
+                     * 订阅实例版本;txdts-旧版数据订阅，kafka-kafka版本数据订阅
+                     */
+                    std::string m_subscribeVersion;
+                    bool m_subscribeVersionHasBeenSet;
 
                 };
             }

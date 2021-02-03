@@ -1,0 +1,164 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/dbbrain/v20191016/model/IssueTypeInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Dbbrain::V20191016::Model;
+using namespace rapidjson;
+using namespace std;
+
+IssueTypeInfo::IssueTypeInfo() :
+    m_issueTypeHasBeenSet(false),
+    m_eventsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome IssueTypeInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("IssueType") && !value["IssueType"].IsNull())
+    {
+        if (!value["IssueType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IssueTypeInfo.IssueType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issueType = string(value["IssueType"].GetString());
+        m_issueTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Events") && !value["Events"].IsNull())
+    {
+        if (!value["Events"].IsArray())
+            return CoreInternalOutcome(Error("response `IssueTypeInfo.Events` is not array type"));
+
+        const Value &tmpValue = value["Events"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EventInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_events.push_back(item);
+        }
+        m_eventsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalCount") && !value["TotalCount"].IsNull())
+    {
+        if (!value["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `IssueTypeInfo.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = value["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void IssueTypeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_issueTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IssueType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_issueType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Events";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_events.begin(); itr != m_events.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+}
+
+
+string IssueTypeInfo::GetIssueType() const
+{
+    return m_issueType;
+}
+
+void IssueTypeInfo::SetIssueType(const string& _issueType)
+{
+    m_issueType = _issueType;
+    m_issueTypeHasBeenSet = true;
+}
+
+bool IssueTypeInfo::IssueTypeHasBeenSet() const
+{
+    return m_issueTypeHasBeenSet;
+}
+
+vector<EventInfo> IssueTypeInfo::GetEvents() const
+{
+    return m_events;
+}
+
+void IssueTypeInfo::SetEvents(const vector<EventInfo>& _events)
+{
+    m_events = _events;
+    m_eventsHasBeenSet = true;
+}
+
+bool IssueTypeInfo::EventsHasBeenSet() const
+{
+    return m_eventsHasBeenSet;
+}
+
+int64_t IssueTypeInfo::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+void IssueTypeInfo::SetTotalCount(const int64_t& _totalCount)
+{
+    m_totalCount = _totalCount;
+    m_totalCountHasBeenSet = true;
+}
+
+bool IssueTypeInfo::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+

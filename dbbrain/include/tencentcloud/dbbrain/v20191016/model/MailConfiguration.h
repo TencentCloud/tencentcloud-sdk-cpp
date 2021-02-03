@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool SendMailHasBeenSet() const;
 
                     /**
-                     * 获取地域配置, 如["ap-guangzhou", "ap-shanghai"]。
-                     * @return Region 地域配置, 如["ap-guangzhou", "ap-shanghai"]。
+                     * 获取地域配置, 如["ap-guangzhou", "ap-shanghai"]。巡检的邮件发送模版，配置需要发送巡检邮件的地域；订阅的邮件发送模版，配置当前订阅实例的所属地域。
+                     * @return Region 地域配置, 如["ap-guangzhou", "ap-shanghai"]。巡检的邮件发送模版，配置需要发送巡检邮件的地域；订阅的邮件发送模版，配置当前订阅实例的所属地域。
                      */
                     std::vector<std::string> GetRegion() const;
 
                     /**
-                     * 设置地域配置, 如["ap-guangzhou", "ap-shanghai"]。
-                     * @param Region 地域配置, 如["ap-guangzhou", "ap-shanghai"]。
+                     * 设置地域配置, 如["ap-guangzhou", "ap-shanghai"]。巡检的邮件发送模版，配置需要发送巡检邮件的地域；订阅的邮件发送模版，配置当前订阅实例的所属地域。
+                     * @param Region 地域配置, 如["ap-guangzhou", "ap-shanghai"]。巡检的邮件发送模版，配置需要发送巡检邮件的地域；订阅的邮件发送模版，配置当前订阅实例的所属地域。
                      */
                     void SetRegion(const std::vector<std::string>& _region);
 
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_sendMailHasBeenSet;
 
                     /**
-                     * 地域配置, 如["ap-guangzhou", "ap-shanghai"]。
+                     * 地域配置, 如["ap-guangzhou", "ap-shanghai"]。巡检的邮件发送模版，配置需要发送巡检邮件的地域；订阅的邮件发送模版，配置当前订阅实例的所属地域。
                      */
                     std::vector<std::string> m_region;
                     bool m_regionHasBeenSet;

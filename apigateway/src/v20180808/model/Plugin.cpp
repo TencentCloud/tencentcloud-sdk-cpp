@@ -28,7 +28,9 @@ Plugin::Plugin() :
     m_pluginDataHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_modifiedTimeHasBeenSet(false)
+    m_modifiedTimeHasBeenSet(false),
+    m_attachedApiTotalCountHasBeenSet(false),
+    m_attachedApisHasBeenSet(false)
 {
 }
 
@@ -107,6 +109,36 @@ CoreInternalOutcome Plugin::Deserialize(const Value &value)
         m_modifiedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AttachedApiTotalCount") && !value["AttachedApiTotalCount"].IsNull())
+    {
+        if (!value["AttachedApiTotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Plugin.AttachedApiTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_attachedApiTotalCount = value["AttachedApiTotalCount"].GetInt64();
+        m_attachedApiTotalCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AttachedApis") && !value["AttachedApis"].IsNull())
+    {
+        if (!value["AttachedApis"].IsArray())
+            return CoreInternalOutcome(Error("response `Plugin.AttachedApis` is not array type"));
+
+        const Value &tmpValue = value["AttachedApis"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AttachedApiInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_attachedApis.push_back(item);
+        }
+        m_attachedApisHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +200,29 @@ void Plugin::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "ModifiedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_modifiedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attachedApiTotalCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachedApiTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_attachedApiTotalCount, allocator);
+    }
+
+    if (m_attachedApisHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachedApis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_attachedApis.begin(); itr != m_attachedApis.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -283,5 +338,37 @@ void Plugin::SetModifiedTime(const string& _modifiedTime)
 bool Plugin::ModifiedTimeHasBeenSet() const
 {
     return m_modifiedTimeHasBeenSet;
+}
+
+int64_t Plugin::GetAttachedApiTotalCount() const
+{
+    return m_attachedApiTotalCount;
+}
+
+void Plugin::SetAttachedApiTotalCount(const int64_t& _attachedApiTotalCount)
+{
+    m_attachedApiTotalCount = _attachedApiTotalCount;
+    m_attachedApiTotalCountHasBeenSet = true;
+}
+
+bool Plugin::AttachedApiTotalCountHasBeenSet() const
+{
+    return m_attachedApiTotalCountHasBeenSet;
+}
+
+vector<AttachedApiInfo> Plugin::GetAttachedApis() const
+{
+    return m_attachedApis;
+}
+
+void Plugin::SetAttachedApis(const vector<AttachedApiInfo>& _attachedApis)
+{
+    m_attachedApis = _attachedApis;
+    m_attachedApisHasBeenSet = true;
+}
+
+bool Plugin::AttachedApisHasBeenSet() const
+{
+    return m_attachedApisHasBeenSet;
 }
 

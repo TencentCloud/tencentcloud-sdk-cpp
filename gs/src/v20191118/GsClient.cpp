@@ -83,6 +83,49 @@ GsClient::CreateSessionOutcomeCallable GsClient::CreateSessionCallable(const Cre
     return task->get_future();
 }
 
+GsClient::DescribeInstancesCountOutcome GsClient::DescribeInstancesCount(const DescribeInstancesCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesCountResponse rsp = DescribeInstancesCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesCountOutcome(rsp);
+        else
+            return DescribeInstancesCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesCountOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DescribeInstancesCountAsync(const DescribeInstancesCountRequest& request, const DescribeInstancesCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DescribeInstancesCountOutcomeCallable GsClient::DescribeInstancesCountCallable(const DescribeInstancesCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesCountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::SaveGameArchiveOutcome GsClient::SaveGameArchive(const SaveGameArchiveRequest &request)
 {
     auto outcome = MakeRequest(request, "SaveGameArchive");

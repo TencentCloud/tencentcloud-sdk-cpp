@@ -28,7 +28,9 @@ ImageItem::ImageItem() :
     m_previewUrlHasBeenSet(false),
     m_thumbUrlHasBeenSet(false),
     m_vendorHasBeenSet(false),
-    m_keywordsHasBeenSet(false)
+    m_keywordsHasBeenSet(false),
+    m_widthHasBeenSet(false),
+    m_heightHasBeenSet(false)
 {
 }
 
@@ -107,6 +109,26 @@ CoreInternalOutcome ImageItem::Deserialize(const Value &value)
         m_keywordsHasBeenSet = true;
     }
 
+    if (value.HasMember("Width") && !value["Width"].IsNull())
+    {
+        if (!value["Width"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ImageItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_width = value["Width"].GetInt64();
+        m_widthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Height") && !value["Height"].IsNull())
+    {
+        if (!value["Height"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ImageItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_height = value["Height"].GetInt64();
+        m_heightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +190,22 @@ void ImageItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Keywords";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_keywords.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_widthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Width";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_width, allocator);
+    }
+
+    if (m_heightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Height";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_height, allocator);
     }
 
 }
@@ -283,5 +321,37 @@ void ImageItem::SetKeywords(const string& _keywords)
 bool ImageItem::KeywordsHasBeenSet() const
 {
     return m_keywordsHasBeenSet;
+}
+
+int64_t ImageItem::GetWidth() const
+{
+    return m_width;
+}
+
+void ImageItem::SetWidth(const int64_t& _width)
+{
+    m_width = _width;
+    m_widthHasBeenSet = true;
+}
+
+bool ImageItem::WidthHasBeenSet() const
+{
+    return m_widthHasBeenSet;
+}
+
+int64_t ImageItem::GetHeight() const
+{
+    return m_height;
+}
+
+void ImageItem::SetHeight(const int64_t& _height)
+{
+    m_height = _height;
+    m_heightHasBeenSet = true;
+}
+
+bool ImageItem::HeightHasBeenSet() const
+{
+    return m_heightHasBeenSet;
 }
 

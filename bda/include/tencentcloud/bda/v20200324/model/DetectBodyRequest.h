@@ -46,11 +46,11 @@ namespace TencentCloud
                     /**
                      * 获取人体图片 Base64 数据。
 图片 base64 编码后大小不可超过5M。
-图片分辨率不得超过 2048*2048。
+图片分辨率不得超过 1920 * 1080 。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      * @return Image 人体图片 Base64 数据。
 图片 base64 编码后大小不可超过5M。
-图片分辨率不得超过 2048*2048。
+图片分辨率不得超过 1920 * 1080 。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     std::string GetImage() const;
@@ -58,11 +58,11 @@ namespace TencentCloud
                     /**
                      * 设置人体图片 Base64 数据。
 图片 base64 编码后大小不可超过5M。
-图片分辨率不得超过 2048*2048。
+图片分辨率不得超过 1920 * 1080 。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      * @param Image 人体图片 Base64 数据。
 图片 base64 编码后大小不可超过5M。
-图片分辨率不得超过 2048*2048。
+图片分辨率不得超过 1920 * 1080 。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     void SetImage(const std::string& _image);
@@ -72,48 +72,6 @@ namespace TencentCloud
                      * @return Image 是否已赋值
                      */
                     bool ImageHasBeenSet() const;
-
-                    /**
-                     * 获取人体图片 Url 。
-Url、Image必须提供一个，如果都提供，只使用 Url。
-图片 base64 编码后大小不可超过5M。 
-图片分辨率不得超过 2048*2048。
-图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
-非腾讯云存储的Url速度和稳定性可能受一定影响。 
-支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @return Url 人体图片 Url 。
-Url、Image必须提供一个，如果都提供，只使用 Url。
-图片 base64 编码后大小不可超过5M。 
-图片分辨率不得超过 2048*2048。
-图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
-非腾讯云存储的Url速度和稳定性可能受一定影响。 
-支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     */
-                    std::string GetUrl() const;
-
-                    /**
-                     * 设置人体图片 Url 。
-Url、Image必须提供一个，如果都提供，只使用 Url。
-图片 base64 编码后大小不可超过5M。 
-图片分辨率不得超过 2048*2048。
-图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
-非腾讯云存储的Url速度和稳定性可能受一定影响。 
-支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Url 人体图片 Url 。
-Url、Image必须提供一个，如果都提供，只使用 Url。
-图片 base64 编码后大小不可超过5M。 
-图片分辨率不得超过 2048*2048。
-图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
-非腾讯云存储的Url速度和稳定性可能受一定影响。 
-支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     */
-                    void SetUrl(const std::string& _url);
-
-                    /**
-                     * 判断参数 Url 是否已赋值
-                     * @return Url 是否已赋值
-                     */
-                    bool UrlHasBeenSet() const;
 
                     /**
                      * 获取最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。
@@ -132,6 +90,48 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      * @return MaxBodyNum 是否已赋值
                      */
                     bool MaxBodyNumHasBeenSet() const;
+
+                    /**
+                     * 获取人体图片 Url 。
+Url、Image必须提供一个，如果都提供，只使用 Url。
+图片 base64 编码后大小不可超过5M。 
+图片分辨率不得超过 1920 * 1080 。
+图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
+非腾讯云存储的Url速度和稳定性可能受一定影响。 
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * @return Url 人体图片 Url 。
+Url、Image必须提供一个，如果都提供，只使用 Url。
+图片 base64 编码后大小不可超过5M。 
+图片分辨率不得超过 1920 * 1080 。
+图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
+非腾讯云存储的Url速度和稳定性可能受一定影响。 
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置人体图片 Url 。
+Url、Image必须提供一个，如果都提供，只使用 Url。
+图片 base64 编码后大小不可超过5M。 
+图片分辨率不得超过 1920 * 1080 。
+图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
+非腾讯云存储的Url速度和稳定性可能受一定影响。 
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * @param Url 人体图片 Url 。
+Url、Image必须提供一个，如果都提供，只使用 Url。
+图片 base64 编码后大小不可超过5M。 
+图片分辨率不得超过 1920 * 1080 。
+图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
+非腾讯云存储的Url速度和稳定性可能受一定影响。 
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     */
+                    bool UrlHasBeenSet() const;
 
                     /**
                      * 获取是否返回年龄、性别、朝向等属性。 
@@ -176,29 +176,29 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                     /**
                      * 人体图片 Base64 数据。
 图片 base64 编码后大小不可超过5M。
-图片分辨率不得超过 2048*2048。
+图片分辨率不得超过 1920 * 1080 。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
 
                     /**
+                     * 最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。
+                     */
+                    uint64_t m_maxBodyNum;
+                    bool m_maxBodyNumHasBeenSet;
+
+                    /**
                      * 人体图片 Url 。
 Url、Image必须提供一个，如果都提供，只使用 Url。
 图片 base64 编码后大小不可超过5M。 
-图片分辨率不得超过 2048*2048。
+图片分辨率不得超过 1920 * 1080 。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
-
-                    /**
-                     * 最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。
-                     */
-                    uint64_t m_maxBodyNum;
-                    bool m_maxBodyNumHasBeenSet;
 
                     /**
                      * 是否返回年龄、性别、朝向等属性。 

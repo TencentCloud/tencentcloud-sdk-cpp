@@ -35,7 +35,8 @@ DescribeSubscribesRequest::DescribeSubscribesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_orderDirectionHasBeenSet(false),
-    m_tagFiltersHasBeenSet(false)
+    m_tagFiltersHasBeenSet(false),
+    m_subscribeVersionHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,14 @@ string DescribeSubscribesRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subscribeVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubscribeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subscribeVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -357,6 +366,22 @@ void DescribeSubscribesRequest::SetTagFilters(const vector<TagFilter>& _tagFilte
 bool DescribeSubscribesRequest::TagFiltersHasBeenSet() const
 {
     return m_tagFiltersHasBeenSet;
+}
+
+string DescribeSubscribesRequest::GetSubscribeVersion() const
+{
+    return m_subscribeVersion;
+}
+
+void DescribeSubscribesRequest::SetSubscribeVersion(const string& _subscribeVersion)
+{
+    m_subscribeVersion = _subscribeVersion;
+    m_subscribeVersionHasBeenSet = true;
+}
+
+bool DescribeSubscribesRequest::SubscribeVersionHasBeenSet() const
+{
+    return m_subscribeVersionHasBeenSet;
 }
 
 

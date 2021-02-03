@@ -126,6 +126,49 @@ ApeClient::BatchDescribeOrderImageOutcomeCallable ApeClient::BatchDescribeOrderI
     return task->get_future();
 }
 
+ApeClient::CreateOrderAndDownloadsOutcome ApeClient::CreateOrderAndDownloads(const CreateOrderAndDownloadsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrderAndDownloads");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrderAndDownloadsResponse rsp = CreateOrderAndDownloadsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrderAndDownloadsOutcome(rsp);
+        else
+            return CreateOrderAndDownloadsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrderAndDownloadsOutcome(outcome.GetError());
+    }
+}
+
+void ApeClient::CreateOrderAndDownloadsAsync(const CreateOrderAndDownloadsRequest& request, const CreateOrderAndDownloadsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrderAndDownloads(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApeClient::CreateOrderAndDownloadsOutcomeCallable ApeClient::CreateOrderAndDownloadsCallable(const CreateOrderAndDownloadsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrderAndDownloadsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrderAndDownloads(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApeClient::CreateOrderAndPayOutcome ApeClient::CreateOrderAndPay(const CreateOrderAndPayRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOrderAndPay");
@@ -205,6 +248,49 @@ ApeClient::DescribeAuthUsersOutcomeCallable ApeClient::DescribeAuthUsersCallable
         [this, request]()
         {
             return this->DescribeAuthUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApeClient::DescribeDownloadInfosOutcome ApeClient::DescribeDownloadInfos(const DescribeDownloadInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDownloadInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDownloadInfosResponse rsp = DescribeDownloadInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDownloadInfosOutcome(rsp);
+        else
+            return DescribeDownloadInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDownloadInfosOutcome(outcome.GetError());
+    }
+}
+
+void ApeClient::DescribeDownloadInfosAsync(const DescribeDownloadInfosRequest& request, const DescribeDownloadInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDownloadInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApeClient::DescribeDownloadInfosOutcomeCallable ApeClient::DescribeDownloadInfosCallable(const DescribeDownloadInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDownloadInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDownloadInfos(request);
         }
     );
 

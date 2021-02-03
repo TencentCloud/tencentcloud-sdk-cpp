@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/apigateway/v20180808/model/AttachedApiInfo.h>
 
 
 namespace TencentCloud
@@ -176,6 +177,50 @@ namespace TencentCloud
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取插件绑定的API总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttachedApiTotalCount 插件绑定的API总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAttachedApiTotalCount() const;
+
+                    /**
+                     * 设置插件绑定的API总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttachedApiTotalCount 插件绑定的API总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttachedApiTotalCount(const int64_t& _attachedApiTotalCount);
+
+                    /**
+                     * 判断参数 AttachedApiTotalCount 是否已赋值
+                     * @return AttachedApiTotalCount 是否已赋值
+                     */
+                    bool AttachedApiTotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取插件绑定的API信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttachedApis 插件绑定的API信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AttachedApiInfo> GetAttachedApis() const;
+
+                    /**
+                     * 设置插件绑定的API信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttachedApis 插件绑定的API信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttachedApis(const std::vector<AttachedApiInfo>& _attachedApis);
+
+                    /**
+                     * 判断参数 AttachedApis 是否已赋值
+                     * @return AttachedApis 是否已赋值
+                     */
+                    bool AttachedApisHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +265,20 @@ namespace TencentCloud
                      */
                     std::string m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
+
+                    /**
+                     * 插件绑定的API总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_attachedApiTotalCount;
+                    bool m_attachedApiTotalCountHasBeenSet;
+
+                    /**
+                     * 插件绑定的API信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AttachedApiInfo> m_attachedApis;
+                    bool m_attachedApisHasBeenSet;
 
                 };
             }

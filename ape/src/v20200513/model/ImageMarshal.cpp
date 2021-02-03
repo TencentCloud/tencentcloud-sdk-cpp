@@ -29,7 +29,10 @@ ImageMarshal::ImageMarshal() :
     m_formatHasBeenSet(false),
     m_priceHasBeenSet(false),
     m_licenseScopeHasBeenSet(false),
-    m_isVipHasBeenSet(false)
+    m_isVipHasBeenSet(false),
+    m_licenseScopeIdHasBeenSet(false),
+    m_dimensionsNameHasBeenSet(false),
+    m_dimensionsNameIdHasBeenSet(false)
 {
 }
 
@@ -118,6 +121,36 @@ CoreInternalOutcome ImageMarshal::Deserialize(const Value &value)
         m_isVipHasBeenSet = true;
     }
 
+    if (value.HasMember("LicenseScopeId") && !value["LicenseScopeId"].IsNull())
+    {
+        if (!value["LicenseScopeId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ImageMarshal.LicenseScopeId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseScopeId = value["LicenseScopeId"].GetInt64();
+        m_licenseScopeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DimensionsName") && !value["DimensionsName"].IsNull())
+    {
+        if (!value["DimensionsName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageMarshal.DimensionsName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dimensionsName = string(value["DimensionsName"].GetString());
+        m_dimensionsNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DimensionsNameId") && !value["DimensionsNameId"].IsNull())
+    {
+        if (!value["DimensionsNameId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ImageMarshal.DimensionsNameId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dimensionsNameId = value["DimensionsNameId"].GetInt64();
+        m_dimensionsNameIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +220,30 @@ void ImageMarshal::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "IsVip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isVip, allocator);
+    }
+
+    if (m_licenseScopeIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LicenseScopeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licenseScopeId, allocator);
+    }
+
+    if (m_dimensionsNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DimensionsName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_dimensionsName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dimensionsNameIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DimensionsNameId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dimensionsNameId, allocator);
     }
 
 }
@@ -318,5 +375,53 @@ void ImageMarshal::SetIsVip(const bool& _isVip)
 bool ImageMarshal::IsVipHasBeenSet() const
 {
     return m_isVipHasBeenSet;
+}
+
+int64_t ImageMarshal::GetLicenseScopeId() const
+{
+    return m_licenseScopeId;
+}
+
+void ImageMarshal::SetLicenseScopeId(const int64_t& _licenseScopeId)
+{
+    m_licenseScopeId = _licenseScopeId;
+    m_licenseScopeIdHasBeenSet = true;
+}
+
+bool ImageMarshal::LicenseScopeIdHasBeenSet() const
+{
+    return m_licenseScopeIdHasBeenSet;
+}
+
+string ImageMarshal::GetDimensionsName() const
+{
+    return m_dimensionsName;
+}
+
+void ImageMarshal::SetDimensionsName(const string& _dimensionsName)
+{
+    m_dimensionsName = _dimensionsName;
+    m_dimensionsNameHasBeenSet = true;
+}
+
+bool ImageMarshal::DimensionsNameHasBeenSet() const
+{
+    return m_dimensionsNameHasBeenSet;
+}
+
+int64_t ImageMarshal::GetDimensionsNameId() const
+{
+    return m_dimensionsNameId;
+}
+
+void ImageMarshal::SetDimensionsNameId(const int64_t& _dimensionsNameId)
+{
+    m_dimensionsNameId = _dimensionsNameId;
+    m_dimensionsNameIdHasBeenSet = true;
+}
+
+bool ImageMarshal::DimensionsNameIdHasBeenSet() const
+{
+    return m_dimensionsNameIdHasBeenSet;
 }
 

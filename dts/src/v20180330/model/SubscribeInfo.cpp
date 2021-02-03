@@ -44,7 +44,8 @@ SubscribeInfo::SubscribeInfo() :
     m_statusHasBeenSet(false),
     m_sdkConsumedTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_subscribeVersionHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,16 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const Value &value)
         m_autoRenewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("SubscribeVersion") && !value["SubscribeVersion"].IsNull())
+    {
+        if (!value["SubscribeVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubscribeInfo.SubscribeVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscribeVersion = string(value["SubscribeVersion"].GetString());
+        m_subscribeVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -489,6 +500,14 @@ void SubscribeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_subscribeVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubscribeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subscribeVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -860,5 +879,21 @@ void SubscribeInfo::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 bool SubscribeInfo::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+string SubscribeInfo::GetSubscribeVersion() const
+{
+    return m_subscribeVersion;
+}
+
+void SubscribeInfo::SetSubscribeVersion(const string& _subscribeVersion)
+{
+    m_subscribeVersion = _subscribeVersion;
+    m_subscribeVersionHasBeenSet = true;
+}
+
+bool SubscribeInfo::SubscribeVersionHasBeenSet() const
+{
+    return m_subscribeVersionHasBeenSet;
 }
 

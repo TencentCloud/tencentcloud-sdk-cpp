@@ -27,7 +27,8 @@ Item::Item() :
     m_itemCoordHasBeenSet(false),
     m_answerHasBeenSet(false),
     m_expressionTypeHasBeenSet(false),
-    m_itemConfHasBeenSet(false)
+    m_itemConfHasBeenSet(false),
+    m_questionIdHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,16 @@ CoreInternalOutcome Item::Deserialize(const Value &value)
         m_itemConfHasBeenSet = true;
     }
 
+    if (value.HasMember("QuestionId") && !value["QuestionId"].IsNull())
+    {
+        if (!value["QuestionId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Item.QuestionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_questionId = string(value["QuestionId"].GetString());
+        m_questionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -157,6 +168,14 @@ void Item::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "ItemConf";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_itemConf, allocator);
+    }
+
+    if (m_questionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QuestionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_questionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -256,5 +275,21 @@ void Item::SetItemConf(const double& _itemConf)
 bool Item::ItemConfHasBeenSet() const
 {
     return m_itemConfHasBeenSet;
+}
+
+string Item::GetQuestionId() const
+{
+    return m_questionId;
+}
+
+void Item::SetQuestionId(const string& _questionId)
+{
+    m_questionId = _questionId;
+    m_questionIdHasBeenSet = true;
+}
+
+bool Item::QuestionIdHasBeenSet() const
+{
+    return m_questionIdHasBeenSet;
 }
 

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/gs/v20191118/model/CreateSessionRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateSessionResponse.h>
+#include <tencentcloud/gs/v20191118/model/DescribeInstancesCountRequest.h>
+#include <tencentcloud/gs/v20191118/model/DescribeInstancesCountResponse.h>
 #include <tencentcloud/gs/v20191118/model/SaveGameArchiveRequest.h>
 #include <tencentcloud/gs/v20191118/model/SaveGameArchiveResponse.h>
 #include <tencentcloud/gs/v20191118/model/StopGameRequest.h>
@@ -50,6 +52,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateSessionResponse> CreateSessionOutcome;
                 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateSessionRequest&, CreateSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSessionAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstancesCountResponse> DescribeInstancesCountOutcome;
+                typedef std::future<DescribeInstancesCountOutcome> DescribeInstancesCountOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DescribeInstancesCountRequest&, DescribeInstancesCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesCountAsyncHandler;
                 typedef Outcome<Error, Model::SaveGameArchiveResponse> SaveGameArchiveOutcome;
                 typedef std::future<SaveGameArchiveOutcome> SaveGameArchiveOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::SaveGameArchiveRequest&, SaveGameArchiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveGameArchiveAsyncHandler;
@@ -73,6 +78,15 @@ namespace TencentCloud
                 CreateSessionOutcome CreateSession(const Model::CreateSessionRequest &request);
                 void CreateSessionAsync(const Model::CreateSessionRequest& request, const CreateSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSessionOutcomeCallable CreateSessionCallable(const Model::CreateSessionRequest& request);
+
+                /**
+                 *获取实例总数和运行数
+                 * @param req DescribeInstancesCountRequest
+                 * @return DescribeInstancesCountOutcome
+                 */
+                DescribeInstancesCountOutcome DescribeInstancesCount(const Model::DescribeInstancesCountRequest &request);
+                void DescribeInstancesCountAsync(const Model::DescribeInstancesCountRequest& request, const DescribeInstancesCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesCountOutcomeCallable DescribeInstancesCountCallable(const Model::DescribeInstancesCountRequest& request);
 
                 /**
                  *保存游戏存档

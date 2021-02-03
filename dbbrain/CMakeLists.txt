@@ -19,10 +19,15 @@ set(dbbrain_public_header
   )
 
 set(dbbrain_public_header_model
+  include/tencentcloud/dbbrain/v20191016/model/TableSpaceTimeSeries.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsRequest.h
+  include/tencentcloud/dbbrain/v20191016/model/HealthScoreInfo.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTableTimeSeriesResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/CreateSchedulerMailProfileRequest.h
   include/tencentcloud/dbbrain/v20191016/model/ContactItem.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeHealthScoreResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBDiagHistoryResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeDiagDBInstancesRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBSpaceStatusRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeAllUserContactResponse.h
   include/tencentcloud/dbbrain/v20191016/model/TimeSlice.h
@@ -32,7 +37,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20191016/model/MonitorFloatMetric.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogDownloadUrlsRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogExportTasksRequest.h
-  include/tencentcloud/dbbrain/v20191016/model/TableSpaceTimeSeries.h
+  include/tencentcloud/dbbrain/v20191016/model/AddUserContactRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeAllUserGroupResponse.h
   include/tencentcloud/dbbrain/v20191016/model/SchemaItem.h
   include/tencentcloud/dbbrain/v20191016/model/CreateMailProfileResponse.h
@@ -44,37 +49,52 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBDiagEventResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBDiagHistoryRequest.h
   include/tencentcloud/dbbrain/v20191016/model/GroupItem.h
+  include/tencentcloud/dbbrain/v20191016/model/InstanceInfo.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTableTimeSeriesRequest.h
+  include/tencentcloud/dbbrain/v20191016/model/AddUserContactResponse.h
   include/tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportTaskResponse.h
   include/tencentcloud/dbbrain/v20191016/model/MonitorMetricSeriesData.h
   include/tencentcloud/dbbrain/v20191016/model/ModifyDiagDBInstanceConfResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DiagHistoryEventItem.h
   include/tencentcloud/dbbrain/v20191016/model/DeleteSecurityAuditLogExportTasksRequest.h
-  include/tencentcloud/dbbrain/v20191016/model/SecLogExportTaskInfo.h
+  include/tencentcloud/dbbrain/v20191016/model/CreateSchedulerMailProfileResponse.h
   include/tencentcloud/dbbrain/v20191016/model/SlowLogTopSqlItem.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTopSqlsResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/SecLogExportTaskInfo.h
   include/tencentcloud/dbbrain/v20191016/model/CreateMailProfileRequest.h
   include/tencentcloud/dbbrain/v20191016/model/MonitorFloatMetricSeriesData.h
   include/tencentcloud/dbbrain/v20191016/model/MailConfiguration.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTopSqlsRequest.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeMailProfileResponse.h
   include/tencentcloud/dbbrain/v20191016/model/TableSpaceData.h
-  include/tencentcloud/dbbrain/v20191016/model/CreateSecurityAuditLogExportTaskResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogDownloadUrlsResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/EventInfo.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeMailProfileRequest.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeHealthScoreRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DeleteSecurityAuditLogExportTasksResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/IssueTypeInfo.h
   include/tencentcloud/dbbrain/v20191016/model/InstanceConfs.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeDiagDBInstancesResponse.h
   include/tencentcloud/dbbrain/v20191016/model/ProfileInfo.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeAllUserGroupRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogExportTasksResponse.h
-  include/tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogDownloadUrlsResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/CreateSecurityAuditLogExportTaskResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/UserProfile.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesResponse.h
   )
 
 set(dbbrain_src
   src/v20191016/DbbrainClient.cpp
+  src/v20191016/model/TableSpaceTimeSeries.cpp
   src/v20191016/model/DescribeSlowLogTimeSeriesStatsRequest.cpp
+  src/v20191016/model/HealthScoreInfo.cpp
   src/v20191016/model/DescribeTopSpaceTableTimeSeriesResponse.cpp
+  src/v20191016/model/CreateSchedulerMailProfileRequest.cpp
   src/v20191016/model/ContactItem.cpp
+  src/v20191016/model/DescribeHealthScoreResponse.cpp
   src/v20191016/model/DescribeDBDiagHistoryResponse.cpp
+  src/v20191016/model/DescribeDiagDBInstancesRequest.cpp
   src/v20191016/model/DescribeDBSpaceStatusRequest.cpp
   src/v20191016/model/DescribeAllUserContactResponse.cpp
   src/v20191016/model/TimeSlice.cpp
@@ -84,7 +104,7 @@ set(dbbrain_src
   src/v20191016/model/MonitorFloatMetric.cpp
   src/v20191016/model/DescribeSecurityAuditLogDownloadUrlsRequest.cpp
   src/v20191016/model/DescribeSecurityAuditLogExportTasksRequest.cpp
-  src/v20191016/model/TableSpaceTimeSeries.cpp
+  src/v20191016/model/AddUserContactRequest.cpp
   src/v20191016/model/DescribeAllUserGroupResponse.cpp
   src/v20191016/model/SchemaItem.cpp
   src/v20191016/model/CreateMailProfileResponse.cpp
@@ -96,28 +116,38 @@ set(dbbrain_src
   src/v20191016/model/DescribeDBDiagEventResponse.cpp
   src/v20191016/model/DescribeDBDiagHistoryRequest.cpp
   src/v20191016/model/GroupItem.cpp
+  src/v20191016/model/InstanceInfo.cpp
   src/v20191016/model/DescribeTopSpaceTableTimeSeriesRequest.cpp
+  src/v20191016/model/AddUserContactResponse.cpp
   src/v20191016/model/CreateDBDiagReportTaskResponse.cpp
   src/v20191016/model/MonitorMetricSeriesData.cpp
   src/v20191016/model/ModifyDiagDBInstanceConfResponse.cpp
   src/v20191016/model/DiagHistoryEventItem.cpp
   src/v20191016/model/DeleteSecurityAuditLogExportTasksRequest.cpp
-  src/v20191016/model/SecLogExportTaskInfo.cpp
+  src/v20191016/model/CreateSchedulerMailProfileResponse.cpp
   src/v20191016/model/SlowLogTopSqlItem.cpp
   src/v20191016/model/DescribeSlowLogTopSqlsResponse.cpp
+  src/v20191016/model/SecLogExportTaskInfo.cpp
   src/v20191016/model/CreateMailProfileRequest.cpp
   src/v20191016/model/MonitorFloatMetricSeriesData.cpp
   src/v20191016/model/MailConfiguration.cpp
   src/v20191016/model/DescribeSlowLogTopSqlsRequest.cpp
+  src/v20191016/model/DescribeMailProfileResponse.cpp
   src/v20191016/model/TableSpaceData.cpp
-  src/v20191016/model/CreateSecurityAuditLogExportTaskResponse.cpp
+  src/v20191016/model/DescribeSecurityAuditLogDownloadUrlsResponse.cpp
+  src/v20191016/model/EventInfo.cpp
+  src/v20191016/model/DescribeMailProfileRequest.cpp
+  src/v20191016/model/DescribeHealthScoreRequest.cpp
   src/v20191016/model/DeleteSecurityAuditLogExportTasksResponse.cpp
+  src/v20191016/model/IssueTypeInfo.cpp
   src/v20191016/model/InstanceConfs.cpp
+  src/v20191016/model/DescribeDiagDBInstancesResponse.cpp
   src/v20191016/model/ProfileInfo.cpp
   src/v20191016/model/DescribeAllUserGroupRequest.cpp
   src/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.cpp
   src/v20191016/model/DescribeSecurityAuditLogExportTasksResponse.cpp
-  src/v20191016/model/DescribeSecurityAuditLogDownloadUrlsResponse.cpp
+  src/v20191016/model/CreateSecurityAuditLogExportTaskResponse.cpp
+  src/v20191016/model/UserProfile.cpp
   src/v20191016/model/DescribeTopSpaceTablesResponse.cpp
   )
 
