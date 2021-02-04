@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL。
-                     * @return Product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL。
+                     * 获取服务产品类型，固定值：mysql。
+                     * @return Product 服务产品类型，固定值：mysql。
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL。
-                     * @param Product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL。
+                     * 设置服务产品类型，固定值：mysql。
+                     * @param Product 服务产品类型，固定值：mysql。
                      */
                     void SetProduct(const std::string& _product);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL。
+                     * 服务产品类型，固定值：mysql。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

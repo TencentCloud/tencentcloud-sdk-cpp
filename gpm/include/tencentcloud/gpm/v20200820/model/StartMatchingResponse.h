@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取请求 id 长度 128。
-                     * @return MatchTicketId 请求 id 长度 128。
+                     * 获取匹配票据 ID长度 128。
+                     * @return MatchTicketId 匹配票据 ID长度 128。
                      */
                     std::string GetMatchTicketId() const;
 
@@ -75,7 +75,7 @@ namespace TencentCloud
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * 请求 id 长度 128。
+                     * 匹配票据 ID长度 128。
                      */
                     std::string m_matchTicketId;
                     bool m_matchTicketIdHasBeenSet;

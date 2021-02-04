@@ -43,9 +43,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总金额
+                     * 获取原始总金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCost 总金额
+                     * @return TotalCost 原始总金额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetTotalCost() const;
@@ -99,9 +99,9 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取原始总金额
+                     * 获取应付总金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginalCost 原始总金额
+                     * @return OriginalCost 应付总金额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetOriginalCost() const;
@@ -115,7 +115,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总金额
+                     * 原始总金额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_totalCost;
@@ -143,7 +143,7 @@ namespace TencentCloud
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 原始总金额
+                     * 应付总金额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_originalCost;

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MatchCodeHasBeenSet() const;
 
                     /**
-                     * 获取要取消的匹配请求 Id
-                     * @return MatchTicketId 要取消的匹配请求 Id
+                     * 获取要取消的匹配匹配票据 ID
+                     * @return MatchTicketId 要取消的匹配匹配票据 ID
                      */
                     std::string GetMatchTicketId() const;
 
                     /**
-                     * 设置要取消的匹配请求 Id
-                     * @param MatchTicketId 要取消的匹配请求 Id
+                     * 设置要取消的匹配匹配票据 ID
+                     * @param MatchTicketId 要取消的匹配匹配票据 ID
                      */
                     void SetMatchTicketId(const std::string& _matchTicketId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_matchCodeHasBeenSet;
 
                     /**
-                     * 要取消的匹配请求 Id
+                     * 要取消的匹配匹配票据 ID
                      */
                     std::string m_matchTicketId;
                     bool m_matchTicketIdHasBeenSet;

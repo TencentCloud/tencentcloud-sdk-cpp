@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求结果列表
+                     * 获取匹配票据列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MatchTickets 请求结果列表
+                     * @return MatchTickets 匹配票据列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MatchTicket> GetMatchTickets() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求结果列表
+                     * 匹配票据列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MatchTicket> m_matchTickets;

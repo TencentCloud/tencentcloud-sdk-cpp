@@ -28,6 +28,7 @@
 #include <tencentcloud/tcb/v20180608/model/CloudBaseEsInfo.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseRunSideSpec.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseSecurityContext.h>
+#include <tencentcloud/tcb/v20180608/model/CloudRunServiceVolume.h>
 
 
 namespace TencentCloud
@@ -679,6 +680,24 @@ namespace TencentCloud
                      */
                     bool SecurityHasBeenSet() const;
 
+                    /**
+                     * 获取服务磁盘挂载
+                     * @return ServiceVolumes 服务磁盘挂载
+                     */
+                    std::vector<CloudRunServiceVolume> GetServiceVolumes() const;
+
+                    /**
+                     * 设置服务磁盘挂载
+                     * @param ServiceVolumes 服务磁盘挂载
+                     */
+                    void SetServiceVolumes(const std::vector<CloudRunServiceVolume>& _serviceVolumes);
+
+                    /**
+                     * 判断参数 ServiceVolumes 是否已赋值
+                     * @return ServiceVolumes 是否已赋值
+                     */
+                    bool ServiceVolumesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -890,6 +909,12 @@ namespace TencentCloud
                      */
                     CloudBaseSecurityContext m_security;
                     bool m_securityHasBeenSet;
+
+                    /**
+                     * 服务磁盘挂载
+                     */
+                    std::vector<CloudRunServiceVolume> m_serviceVolumes;
+                    bool m_serviceVolumesHasBeenSet;
 
                 };
             }

@@ -58,7 +58,8 @@ CreateCloudBaseRunServerVersionRequest::CreateCloudBaseRunServerVersionRequest()
     m_serverPathHasBeenSet(false),
     m_imageReuseKeyHasBeenSet(false),
     m_sidecarSpecsHasBeenSet(false),
-    m_securityHasBeenSet(false)
+    m_securityHasBeenSet(false),
+    m_serviceVolumesHasBeenSet(false)
 {
 }
 
@@ -366,6 +367,21 @@ string CreateCloudBaseRunServerVersionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_security.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_serviceVolumesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceVolumes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceVolumes.begin(); itr != m_serviceVolumes.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -934,6 +950,22 @@ void CreateCloudBaseRunServerVersionRequest::SetSecurity(const CloudBaseSecurity
 bool CreateCloudBaseRunServerVersionRequest::SecurityHasBeenSet() const
 {
     return m_securityHasBeenSet;
+}
+
+vector<CloudRunServiceVolume> CreateCloudBaseRunServerVersionRequest::GetServiceVolumes() const
+{
+    return m_serviceVolumes;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetServiceVolumes(const vector<CloudRunServiceVolume>& _serviceVolumes)
+{
+    m_serviceVolumes = _serviceVolumes;
+    m_serviceVolumesHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::ServiceVolumesHasBeenSet() const
+{
+    return m_serviceVolumesHasBeenSet;
 }
 
 

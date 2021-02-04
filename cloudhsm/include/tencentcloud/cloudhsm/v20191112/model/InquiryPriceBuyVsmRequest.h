@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取商品的时间单位
-                     * @return TimeUnit 商品的时间单位
+                     * 获取商品的时间单位，m表示月，y表示年
+                     * @return TimeUnit 商品的时间单位，m表示月，y表示年
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置商品的时间单位
-                     * @param TimeUnit 商品的时间单位
+                     * 设置商品的时间单位，m表示月，y表示年
+                     * @param TimeUnit 商品的时间单位，m表示月，y表示年
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 商品的时间单位
+                     * 商品的时间单位，m表示月，y表示年
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;

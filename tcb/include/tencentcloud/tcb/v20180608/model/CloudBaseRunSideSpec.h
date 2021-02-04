@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseSecurityContext.h>
+#include <tencentcloud/tcb/v20180608/model/CloudBaseRunVolumeMount.h>
 
 
 namespace TencentCloud
@@ -223,6 +224,28 @@ namespace TencentCloud
                      */
                     bool SecurityHasBeenSet() const;
 
+                    /**
+                     * 获取挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VolumeMountInfos 挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CloudBaseRunVolumeMount> GetVolumeMountInfos() const;
+
+                    /**
+                     * 设置挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VolumeMountInfos 挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVolumeMountInfos(const std::vector<CloudBaseRunVolumeMount>& _volumeMountInfos);
+
+                    /**
+                     * 判断参数 VolumeMountInfos 是否已赋值
+                     * @return VolumeMountInfos 是否已赋值
+                     */
+                    bool VolumeMountInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +303,13 @@ namespace TencentCloud
                      */
                     CloudBaseSecurityContext m_security;
                     bool m_securityHasBeenSet;
+
+                    /**
+                     * 挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CloudBaseRunVolumeMount> m_volumeMountInfos;
+                    bool m_volumeMountInfosHasBeenSet;
 
                 };
             }

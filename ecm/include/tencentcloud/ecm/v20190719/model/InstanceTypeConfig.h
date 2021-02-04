@@ -196,6 +196,50 @@ namespace TencentCloud
                      */
                     bool ExtInfoHasBeenSet() const;
 
+                    /**
+                     * 获取GPU卡数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Vgpu GPU卡数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetVgpu() const;
+
+                    /**
+                     * 设置GPU卡数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Vgpu GPU卡数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVgpu(const double& _vgpu);
+
+                    /**
+                     * 判断参数 Vgpu 是否已赋值
+                     * @return Vgpu 是否已赋值
+                     */
+                    bool VgpuHasBeenSet() const;
+
+                    /**
+                     * 获取GPU型号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GpuModelName GPU型号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGpuModelName() const;
+
+                    /**
+                     * 设置GPU型号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GpuModelName GPU型号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGpuModelName(const std::string& _gpuModelName);
+
+                    /**
+                     * 判断参数 GpuModelName 是否已赋值
+                     * @return GpuModelName 是否已赋值
+                     */
+                    bool GpuModelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +290,20 @@ namespace TencentCloud
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;
+
+                    /**
+                     * GPU卡数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_vgpu;
+                    bool m_vgpuHasBeenSet;
+
+                    /**
+                     * GPU型号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gpuModelName;
+                    bool m_gpuModelNameHasBeenSet;
 
                 };
             }

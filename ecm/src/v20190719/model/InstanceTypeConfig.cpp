@@ -29,7 +29,9 @@ InstanceTypeConfig::InstanceTypeConfig() :
     m_frequencyHasBeenSet(false),
     m_cpuModelNameHasBeenSet(false),
     m_instanceFamilyTypeConfigHasBeenSet(false),
-    m_extInfoHasBeenSet(false)
+    m_extInfoHasBeenSet(false),
+    m_vgpuHasBeenSet(false),
+    m_gpuModelNameHasBeenSet(false)
 {
 }
 
@@ -132,6 +134,26 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const Value &value)
         m_extInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Vgpu") && !value["Vgpu"].IsNull())
+    {
+        if (!value["Vgpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeConfig.Vgpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_vgpu = value["Vgpu"].GetDouble();
+        m_vgpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("GpuModelName") && !value["GpuModelName"].IsNull())
+    {
+        if (!value["GpuModelName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeConfig.GpuModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuModelName = string(value["GpuModelName"].GetString());
+        m_gpuModelNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +225,22 @@ void InstanceTypeConfig::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "ExtInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_extInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vgpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Vgpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vgpu, allocator);
+    }
+
+    if (m_gpuModelNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GpuModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gpuModelName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +372,37 @@ void InstanceTypeConfig::SetExtInfo(const string& _extInfo)
 bool InstanceTypeConfig::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
+}
+
+double InstanceTypeConfig::GetVgpu() const
+{
+    return m_vgpu;
+}
+
+void InstanceTypeConfig::SetVgpu(const double& _vgpu)
+{
+    m_vgpu = _vgpu;
+    m_vgpuHasBeenSet = true;
+}
+
+bool InstanceTypeConfig::VgpuHasBeenSet() const
+{
+    return m_vgpuHasBeenSet;
+}
+
+string InstanceTypeConfig::GetGpuModelName() const
+{
+    return m_gpuModelName;
+}
+
+void InstanceTypeConfig::SetGpuModelName(const string& _gpuModelName)
+{
+    m_gpuModelName = _gpuModelName;
+    m_gpuModelNameHasBeenSet = true;
+}
+
+bool InstanceTypeConfig::GpuModelNameHasBeenSet() const
+{
+    return m_gpuModelNameHasBeenSet;
 }
 

@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取资源状态
-                     * @return Status 资源状态
+                     * 获取资源状态，1表示资源为正常，2表示资源处于隔离状态
+                     * @return Status 资源状态，1表示资源为正常，2表示资源处于隔离状态
                      */
                     int64_t GetStatus() const;
 
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取资源类型
-                     * @return VsmType 资源类型
+                     * 获取资源类型，17表示EVSM，33表示GVSM，49表示SVSM
+                     * @return VsmType 资源类型，17表示EVSM，33表示GVSM，49表示SVSM
                      */
                     int64_t GetVsmType() const;
 
@@ -141,8 +141,8 @@ namespace TencentCloud
                     bool VsmTypeHasBeenSet() const;
 
                     /**
-                     * 获取地域Id
-                     * @return RegionId 地域Id
+                     * 获取地域Id，返回腾讯云地域代码，如广州为1，北京为8
+                     * @return RegionId 地域Id，返回腾讯云地域代码，如广州为1，北京为8
                      */
                     int64_t GetRegionId() const;
 
@@ -153,8 +153,8 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取区域Id
-                     * @return ZoneId 区域Id
+                     * 获取区域Id，返回腾讯云每个地域的可用区代码
+                     * @return ZoneId 区域Id，返回腾讯云每个地域的可用区代码
                      */
                     int64_t GetZoneId() const;
 
@@ -345,7 +345,7 @@ namespace TencentCloud
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 资源状态
+                     * 资源状态，1表示资源为正常，2表示资源处于隔离状态
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -375,19 +375,19 @@ namespace TencentCloud
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 资源类型
+                     * 资源类型，17表示EVSM，33表示GVSM，49表示SVSM
                      */
                     int64_t m_vsmType;
                     bool m_vsmTypeHasBeenSet;
 
                     /**
-                     * 地域Id
+                     * 地域Id，返回腾讯云地域代码，如广州为1，北京为8
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 区域Id
+                     * 区域Id，返回腾讯云每个地域的可用区代码
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;

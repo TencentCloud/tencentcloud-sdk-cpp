@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求 id 列表, 列表长度 128。
-                     * @return MatchTicketIds 请求 id 列表, 列表长度 128。
+                     * 获取匹配票据 ID列表, 列表长度 12。
+                     * @return MatchTicketIds 匹配票据 ID列表, 列表长度 12。
                      */
                     std::vector<MTicket> GetMatchTicketIds() const;
 
                     /**
-                     * 设置请求 id 列表, 列表长度 128。
-                     * @param MatchTicketIds 请求 id 列表, 列表长度 128。
+                     * 设置匹配票据 ID列表, 列表长度 12。
+                     * @param MatchTicketIds 匹配票据 ID列表, 列表长度 12。
                      */
                     void SetMatchTicketIds(const std::vector<MTicket>& _matchTicketIds);
 
@@ -64,7 +64,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求 id 列表, 列表长度 128。
+                     * 匹配票据 ID列表, 列表长度 12。
                      */
                     std::vector<MTicket> m_matchTicketIds;
                     bool m_matchTicketIdsHasBeenSet;

@@ -29,7 +29,8 @@ CloudBaseRunSideSpec::CloudBaseRunSideSpec() :
     m_initialDelaySecondsHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memHasBeenSet(false),
-    m_securityHasBeenSet(false)
+    m_securityHasBeenSet(false),
+    m_volumeMountInfosHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,26 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const Value &value)
         m_securityHasBeenSet = true;
     }
 
+    if (value.HasMember("VolumeMountInfos") && !value["VolumeMountInfos"].IsNull())
+    {
+        if (!value["VolumeMountInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.VolumeMountInfos` is not array type"));
+
+        const Value &tmpValue = value["VolumeMountInfos"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudBaseRunVolumeMount item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_volumeMountInfos.push_back(item);
+        }
+        m_volumeMountInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -195,6 +216,21 @@ void CloudBaseRunSideSpec::ToJsonObject(Value &value, Document::AllocatorType& a
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_security.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_volumeMountInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VolumeMountInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumeMountInfos.begin(); itr != m_volumeMountInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -326,5 +362,21 @@ void CloudBaseRunSideSpec::SetSecurity(const CloudBaseSecurityContext& _security
 bool CloudBaseRunSideSpec::SecurityHasBeenSet() const
 {
     return m_securityHasBeenSet;
+}
+
+vector<CloudBaseRunVolumeMount> CloudBaseRunSideSpec::GetVolumeMountInfos() const
+{
+    return m_volumeMountInfos;
+}
+
+void CloudBaseRunSideSpec::SetVolumeMountInfos(const vector<CloudBaseRunVolumeMount>& _volumeMountInfos)
+{
+    m_volumeMountInfos = _volumeMountInfos;
+    m_volumeMountInfosHasBeenSet = true;
+}
+
+bool CloudBaseRunSideSpec::VolumeMountInfosHasBeenSet() const
+{
+    return m_volumeMountInfosHasBeenSet;
 }
 

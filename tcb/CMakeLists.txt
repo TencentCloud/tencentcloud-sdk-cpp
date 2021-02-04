@@ -119,6 +119,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyEndUserResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h
+  include/tencentcloud/tcb/v20180608/model/CloudRunServiceVolume.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseProjectVersion.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h
@@ -231,6 +232,7 @@ set(tcb_src
   src/v20180608/model/CreateCloudBaseRunResourceRequest.cpp
   src/v20180608/model/ModifyEndUserResponse.cpp
   src/v20180608/model/DescribeAuthDomainsRequest.cpp
+  src/v20180608/model/CloudRunServiceVolume.cpp
   src/v20180608/model/CloudBaseProjectVersion.cpp
   src/v20180608/model/DescribeDatabaseACLResponse.cpp
   src/v20180608/model/ModifyEnvRequest.cpp
