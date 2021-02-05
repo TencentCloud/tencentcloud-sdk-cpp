@@ -212,6 +212,49 @@ IotexplorerClient::CreateDeviceOutcomeCallable IotexplorerClient::CreateDeviceCa
     return task->get_future();
 }
 
+IotexplorerClient::CreateLoRaFrequencyOutcome IotexplorerClient::CreateLoRaFrequency(const CreateLoRaFrequencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLoRaFrequency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLoRaFrequencyResponse rsp = CreateLoRaFrequencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLoRaFrequencyOutcome(rsp);
+        else
+            return CreateLoRaFrequencyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLoRaFrequencyOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateLoRaFrequencyAsync(const CreateLoRaFrequencyRequest& request, const CreateLoRaFrequencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLoRaFrequency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateLoRaFrequencyOutcomeCallable IotexplorerClient::CreateLoRaFrequencyCallable(const CreateLoRaFrequencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLoRaFrequencyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLoRaFrequency(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateLoRaGatewayOutcome IotexplorerClient::CreateLoRaGateway(const CreateLoRaGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLoRaGateway");
@@ -420,6 +463,49 @@ IotexplorerClient::DeleteDeviceOutcomeCallable IotexplorerClient::DeleteDeviceCa
         [this, request]()
         {
             return this->DeleteDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DeleteLoRaFrequencyOutcome IotexplorerClient::DeleteLoRaFrequency(const DeleteLoRaFrequencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLoRaFrequency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLoRaFrequencyResponse rsp = DeleteLoRaFrequencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLoRaFrequencyOutcome(rsp);
+        else
+            return DeleteLoRaFrequencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLoRaFrequencyOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteLoRaFrequencyAsync(const DeleteLoRaFrequencyRequest& request, const DeleteLoRaFrequencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLoRaFrequency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DeleteLoRaFrequencyOutcomeCallable IotexplorerClient::DeleteLoRaFrequencyCallable(const DeleteLoRaFrequencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLoRaFrequencyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLoRaFrequency(request);
         }
     );
 
@@ -721,6 +807,49 @@ IotexplorerClient::DescribeDeviceDataHistoryOutcomeCallable IotexplorerClient::D
         [this, request]()
         {
             return this->DescribeDeviceDataHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeLoRaFrequencyOutcome IotexplorerClient::DescribeLoRaFrequency(const DescribeLoRaFrequencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoRaFrequency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoRaFrequencyResponse rsp = DescribeLoRaFrequencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoRaFrequencyOutcome(rsp);
+        else
+            return DescribeLoRaFrequencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoRaFrequencyOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeLoRaFrequencyAsync(const DescribeLoRaFrequencyRequest& request, const DescribeLoRaFrequencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLoRaFrequency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeLoRaFrequencyOutcomeCallable IotexplorerClient::DescribeLoRaFrequencyCallable(const DescribeLoRaFrequencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLoRaFrequencyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLoRaFrequency(request);
         }
     );
 
@@ -1237,6 +1366,49 @@ IotexplorerClient::ListEventHistoryOutcomeCallable IotexplorerClient::ListEventH
         [this, request]()
         {
             return this->ListEventHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::ModifyLoRaFrequencyOutcome IotexplorerClient::ModifyLoRaFrequency(const ModifyLoRaFrequencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLoRaFrequency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLoRaFrequencyResponse rsp = ModifyLoRaFrequencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLoRaFrequencyOutcome(rsp);
+        else
+            return ModifyLoRaFrequencyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLoRaFrequencyOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyLoRaFrequencyAsync(const ModifyLoRaFrequencyRequest& request, const ModifyLoRaFrequencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLoRaFrequency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ModifyLoRaFrequencyOutcomeCallable IotexplorerClient::ModifyLoRaFrequencyCallable(const ModifyLoRaFrequencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLoRaFrequencyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLoRaFrequency(request);
         }
     );
 

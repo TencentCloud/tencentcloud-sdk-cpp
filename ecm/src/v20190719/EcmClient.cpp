@@ -4039,6 +4039,49 @@ EcmClient::ModifyModuleSecurityGroupsOutcomeCallable EcmClient::ModifyModuleSecu
     return task->get_future();
 }
 
+EcmClient::ModifyPrivateIpAddressesAttributeOutcome EcmClient::ModifyPrivateIpAddressesAttribute(const ModifyPrivateIpAddressesAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPrivateIpAddressesAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPrivateIpAddressesAttributeResponse rsp = ModifyPrivateIpAddressesAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPrivateIpAddressesAttributeOutcome(rsp);
+        else
+            return ModifyPrivateIpAddressesAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPrivateIpAddressesAttributeOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyPrivateIpAddressesAttributeAsync(const ModifyPrivateIpAddressesAttributeRequest& request, const ModifyPrivateIpAddressesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPrivateIpAddressesAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyPrivateIpAddressesAttributeOutcomeCallable EcmClient::ModifyPrivateIpAddressesAttributeCallable(const ModifyPrivateIpAddressesAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPrivateIpAddressesAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPrivateIpAddressesAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ModifyRouteTableAttributeOutcome EcmClient::ModifyRouteTableAttribute(const ModifyRouteTableAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRouteTableAttribute");

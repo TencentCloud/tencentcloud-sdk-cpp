@@ -26,7 +26,8 @@ using namespace std;
 TerminateInstancesRequest::TerminateInstancesRequest() :
     m_instanceIdSetHasBeenSet(false),
     m_terminateDelayHasBeenSet(false),
-    m_terminateTimeHasBeenSet(false)
+    m_terminateTimeHasBeenSet(false),
+    m_associatedResourceDestroyHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string TerminateInstancesRequest::ToJsonString() const
         string key = "TerminateTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_terminateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_associatedResourceDestroyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AssociatedResourceDestroy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_associatedResourceDestroy, allocator);
     }
 
 
@@ -120,6 +129,22 @@ void TerminateInstancesRequest::SetTerminateTime(const string& _terminateTime)
 bool TerminateInstancesRequest::TerminateTimeHasBeenSet() const
 {
     return m_terminateTimeHasBeenSet;
+}
+
+bool TerminateInstancesRequest::GetAssociatedResourceDestroy() const
+{
+    return m_associatedResourceDestroy;
+}
+
+void TerminateInstancesRequest::SetAssociatedResourceDestroy(const bool& _associatedResourceDestroy)
+{
+    m_associatedResourceDestroy = _associatedResourceDestroy;
+    m_associatedResourceDestroyHasBeenSet = true;
+}
+
+bool TerminateInstancesRequest::AssociatedResourceDestroyHasBeenSet() const
+{
+    return m_associatedResourceDestroyHasBeenSet;
 }
 
 

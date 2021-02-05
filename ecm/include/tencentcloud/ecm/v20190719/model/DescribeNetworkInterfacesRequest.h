@@ -160,14 +160,14 @@ is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取ECM 地域
-                     * @return EcmRegion ECM 地域
+                     * 获取ECM 地域，形如ap-xian-ecm。
+                     * @return EcmRegion ECM 地域，形如ap-xian-ecm。
                      */
                     std::string GetEcmRegion() const;
 
                     /**
-                     * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * 设置ECM 地域，形如ap-xian-ecm。
+                     * @param EcmRegion ECM 地域，形如ap-xian-ecm。
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
@@ -215,7 +215,7 @@ is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网
                     bool m_limitHasBeenSet;
 
                     /**
-                     * ECM 地域
+                     * ECM 地域，形如ap-xian-ecm。
                      */
                     std::string m_ecmRegion;
                     bool m_ecmRegionHasBeenSet;

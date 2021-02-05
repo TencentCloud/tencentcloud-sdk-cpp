@@ -209,6 +209,8 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleNetworkResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleSecurityGroupsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleSecurityGroupsResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyPrivateIpAddressesAttributeRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyPrivateIpAddressesAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyRouteTableAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyRouteTableAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifySecurityGroupAttributeRequest.h>
@@ -550,6 +552,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyModuleSecurityGroupsResponse> ModifyModuleSecurityGroupsOutcome;
                 typedef std::future<ModifyModuleSecurityGroupsOutcome> ModifyModuleSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyModuleSecurityGroupsRequest&, ModifyModuleSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::ModifyPrivateIpAddressesAttributeResponse> ModifyPrivateIpAddressesAttributeOutcome;
+                typedef std::future<ModifyPrivateIpAddressesAttributeOutcome> ModifyPrivateIpAddressesAttributeOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyPrivateIpAddressesAttributeRequest&, ModifyPrivateIpAddressesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrivateIpAddressesAttributeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyRouteTableAttributeResponse> ModifyRouteTableAttributeOutcome;
                 typedef std::future<ModifyRouteTableAttributeOutcome> ModifyRouteTableAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyRouteTableAttributeRequest&, ModifyRouteTableAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouteTableAttributeAsyncHandler;
@@ -1486,6 +1491,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyModuleSecurityGroupsOutcome ModifyModuleSecurityGroups(const Model::ModifyModuleSecurityGroupsRequest &request);
                 void ModifyModuleSecurityGroupsAsync(const Model::ModifyModuleSecurityGroupsRequest& request, const ModifyModuleSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyModuleSecurityGroupsOutcomeCallable ModifyModuleSecurityGroupsCallable(const Model::ModifyModuleSecurityGroupsRequest& request);
+
+                /**
+                 *用于修改弹性网卡内网IP属性。
+                 * @param req ModifyPrivateIpAddressesAttributeRequest
+                 * @return ModifyPrivateIpAddressesAttributeOutcome
+                 */
+                ModifyPrivateIpAddressesAttributeOutcome ModifyPrivateIpAddressesAttribute(const Model::ModifyPrivateIpAddressesAttributeRequest &request);
+                void ModifyPrivateIpAddressesAttributeAsync(const Model::ModifyPrivateIpAddressesAttributeRequest& request, const ModifyPrivateIpAddressesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPrivateIpAddressesAttributeOutcomeCallable ModifyPrivateIpAddressesAttributeCallable(const Model::ModifyPrivateIpAddressesAttributeRequest& request);
 
                 /**
                  *修改路由表属性

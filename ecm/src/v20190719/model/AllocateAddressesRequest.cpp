@@ -28,7 +28,10 @@ AllocateAddressesRequest::AllocateAddressesRequest() :
     m_addressCountHasBeenSet(false),
     m_internetServiceProviderHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,30 @@ string AllocateAddressesRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkInterfaceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NetworkInterfaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_networkInterfaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateIpAddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PrivateIpAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_privateIpAddress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -172,6 +199,54 @@ void AllocateAddressesRequest::SetTags(const vector<Tag>& _tags)
 bool AllocateAddressesRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void AllocateAddressesRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetNetworkInterfaceId() const
+{
+    return m_networkInterfaceId;
+}
+
+void AllocateAddressesRequest::SetNetworkInterfaceId(const string& _networkInterfaceId)
+{
+    m_networkInterfaceId = _networkInterfaceId;
+    m_networkInterfaceIdHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::NetworkInterfaceIdHasBeenSet() const
+{
+    return m_networkInterfaceIdHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetPrivateIpAddress() const
+{
+    return m_privateIpAddress;
+}
+
+void AllocateAddressesRequest::SetPrivateIpAddress(const string& _privateIpAddress)
+{
+    m_privateIpAddress = _privateIpAddress;
+    m_privateIpAddressHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::PrivateIpAddressHasBeenSet() const
+{
+    return m_privateIpAddressHasBeenSet;
 }
 
 

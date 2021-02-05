@@ -31,6 +31,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteProjectRequest.h>
@@ -55,6 +59,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProjectRequest.h>
@@ -79,6 +85,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaFrequencyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h>
@@ -123,6 +131,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
+                typedef Outcome<Error, Model::CreateLoRaFrequencyResponse> CreateLoRaFrequencyOutcome;
+                typedef std::future<CreateLoRaFrequencyOutcome> CreateLoRaFrequencyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateLoRaFrequencyRequest&, CreateLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoRaFrequencyAsyncHandler;
                 typedef Outcome<Error, Model::CreateLoRaGatewayResponse> CreateLoRaGatewayOutcome;
                 typedef std::future<CreateLoRaGatewayOutcome> CreateLoRaGatewayOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateLoRaGatewayRequest&, CreateLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoRaGatewayAsyncHandler;
@@ -138,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLoRaFrequencyResponse> DeleteLoRaFrequencyOutcome;
+                typedef std::future<DeleteLoRaFrequencyOutcome> DeleteLoRaFrequencyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteLoRaFrequencyRequest&, DeleteLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoRaFrequencyAsyncHandler;
                 typedef Outcome<Error, Model::DeleteLoRaGatewayResponse> DeleteLoRaGatewayOutcome;
                 typedef std::future<DeleteLoRaGatewayOutcome> DeleteLoRaGatewayOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteLoRaGatewayRequest&, DeleteLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoRaGatewayAsyncHandler;
@@ -159,6 +173,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDeviceDataHistoryResponse> DescribeDeviceDataHistoryOutcome;
                 typedef std::future<DescribeDeviceDataHistoryOutcome> DescribeDeviceDataHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceDataHistoryRequest&, DescribeDeviceDataHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceDataHistoryAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLoRaFrequencyResponse> DescribeLoRaFrequencyOutcome;
+                typedef std::future<DescribeLoRaFrequencyOutcome> DescribeLoRaFrequencyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeLoRaFrequencyRequest&, DescribeLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoRaFrequencyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeModelDefinitionResponse> DescribeModelDefinitionOutcome;
                 typedef std::future<DescribeModelDefinitionOutcome> DescribeModelDefinitionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeModelDefinitionRequest&, DescribeModelDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelDefinitionAsyncHandler;
@@ -195,6 +212,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListEventHistoryResponse> ListEventHistoryOutcome;
                 typedef std::future<ListEventHistoryOutcome> ListEventHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListEventHistoryRequest&, ListEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEventHistoryAsyncHandler;
+                typedef Outcome<Error, Model::ModifyLoRaFrequencyResponse> ModifyLoRaFrequencyOutcome;
+                typedef std::future<ModifyLoRaFrequencyOutcome> ModifyLoRaFrequencyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyLoRaFrequencyRequest&, ModifyLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoRaFrequencyAsyncHandler;
                 typedef Outcome<Error, Model::ModifyLoRaGatewayResponse> ModifyLoRaGatewayOutcome;
                 typedef std::future<ModifyLoRaGatewayOutcome> ModifyLoRaGatewayOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyLoRaGatewayRequest&, ModifyLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoRaGatewayAsyncHandler;
@@ -262,6 +282,15 @@ namespace TencentCloud
                 CreateDeviceOutcomeCallable CreateDeviceCallable(const Model::CreateDeviceRequest& request);
 
                 /**
+                 *创建 LoRa 自定义频点
+                 * @param req CreateLoRaFrequencyRequest
+                 * @return CreateLoRaFrequencyOutcome
+                 */
+                CreateLoRaFrequencyOutcome CreateLoRaFrequency(const Model::CreateLoRaFrequencyRequest &request);
+                void CreateLoRaFrequencyAsync(const Model::CreateLoRaFrequencyRequest& request, const CreateLoRaFrequencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLoRaFrequencyOutcomeCallable CreateLoRaFrequencyCallable(const Model::CreateLoRaFrequencyRequest& request);
+
+                /**
                  *创建新 LoRa 网关设备接口
                  * @param req CreateLoRaGatewayRequest
                  * @return CreateLoRaGatewayOutcome
@@ -305,6 +334,15 @@ namespace TencentCloud
                 DeleteDeviceOutcome DeleteDevice(const Model::DeleteDeviceRequest &request);
                 void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request);
+
+                /**
+                 *提供删除LoRa自定义频点的能力
+                 * @param req DeleteLoRaFrequencyRequest
+                 * @return DeleteLoRaFrequencyOutcome
+                 */
+                DeleteLoRaFrequencyOutcome DeleteLoRaFrequency(const Model::DeleteLoRaFrequencyRequest &request);
+                void DeleteLoRaFrequencyAsync(const Model::DeleteLoRaFrequencyRequest& request, const DeleteLoRaFrequencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLoRaFrequencyOutcomeCallable DeleteLoRaFrequencyCallable(const Model::DeleteLoRaFrequencyRequest& request);
 
                 /**
                  *删除  LoRa 网关的接口
@@ -368,6 +406,15 @@ namespace TencentCloud
                 DescribeDeviceDataHistoryOutcome DescribeDeviceDataHistory(const Model::DescribeDeviceDataHistoryRequest &request);
                 void DescribeDeviceDataHistoryAsync(const Model::DescribeDeviceDataHistoryRequest& request, const DescribeDeviceDataHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceDataHistoryOutcomeCallable DescribeDeviceDataHistoryCallable(const Model::DescribeDeviceDataHistoryRequest& request);
+
+                /**
+                 *提供查询LoRa自定义频点详情的能力
+                 * @param req DescribeLoRaFrequencyRequest
+                 * @return DescribeLoRaFrequencyOutcome
+                 */
+                DescribeLoRaFrequencyOutcome DescribeLoRaFrequency(const Model::DescribeLoRaFrequencyRequest &request);
+                void DescribeLoRaFrequencyAsync(const Model::DescribeLoRaFrequencyRequest& request, const DescribeLoRaFrequencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoRaFrequencyOutcomeCallable DescribeLoRaFrequencyCallable(const Model::DescribeLoRaFrequencyRequest& request);
 
                 /**
                  *查询产品配置的数据模板信息
@@ -476,6 +523,15 @@ namespace TencentCloud
                 ListEventHistoryOutcome ListEventHistory(const Model::ListEventHistoryRequest &request);
                 void ListEventHistoryAsync(const Model::ListEventHistoryRequest& request, const ListEventHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListEventHistoryOutcomeCallable ListEventHistoryCallable(const Model::ListEventHistoryRequest& request);
+
+                /**
+                 *修改LoRa自定义频点
+                 * @param req ModifyLoRaFrequencyRequest
+                 * @return ModifyLoRaFrequencyOutcome
+                 */
+                ModifyLoRaFrequencyOutcome ModifyLoRaFrequency(const Model::ModifyLoRaFrequencyRequest &request);
+                void ModifyLoRaFrequencyAsync(const Model::ModifyLoRaFrequencyRequest& request, const ModifyLoRaFrequencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLoRaFrequencyOutcomeCallable ModifyLoRaFrequencyCallable(const Model::ModifyLoRaFrequencyRequest& request);
 
                 /**
                  *修改 LoRa 网关信息

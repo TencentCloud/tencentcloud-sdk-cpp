@@ -96,6 +96,32 @@ namespace TencentCloud
                      */
                     bool TerminateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否关联删除已绑定的弹性网卡和弹性IP，默认为true。
+当为true时，一并删除弹性网卡和弹性IP；
+当为false时，只销毁主机，保留弹性网卡和弹性IP。
+                     * @return AssociatedResourceDestroy 是否关联删除已绑定的弹性网卡和弹性IP，默认为true。
+当为true时，一并删除弹性网卡和弹性IP；
+当为false时，只销毁主机，保留弹性网卡和弹性IP。
+                     */
+                    bool GetAssociatedResourceDestroy() const;
+
+                    /**
+                     * 设置是否关联删除已绑定的弹性网卡和弹性IP，默认为true。
+当为true时，一并删除弹性网卡和弹性IP；
+当为false时，只销毁主机，保留弹性网卡和弹性IP。
+                     * @param AssociatedResourceDestroy 是否关联删除已绑定的弹性网卡和弹性IP，默认为true。
+当为true时，一并删除弹性网卡和弹性IP；
+当为false时，只销毁主机，保留弹性网卡和弹性IP。
+                     */
+                    void SetAssociatedResourceDestroy(const bool& _associatedResourceDestroy);
+
+                    /**
+                     * 判断参数 AssociatedResourceDestroy 是否已赋值
+                     * @return AssociatedResourceDestroy 是否已赋值
+                     */
+                    bool AssociatedResourceDestroyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +141,14 @@ namespace TencentCloud
                      */
                     std::string m_terminateTime;
                     bool m_terminateTimeHasBeenSet;
+
+                    /**
+                     * 是否关联删除已绑定的弹性网卡和弹性IP，默认为true。
+当为true时，一并删除弹性网卡和弹性IP；
+当为false时，只销毁主机，保留弹性网卡和弹性IP。
+                     */
+                    bool m_associatedResourceDestroy;
+                    bool m_associatedResourceDestroyHasBeenSet;
 
                 };
             }

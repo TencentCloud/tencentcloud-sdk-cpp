@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ModuleIdHasBeenSet() const;
 
                     /**
-                     * 获取是否禁止分配外网ip
-                     * @return DisableWanIp 是否禁止分配外网ip
+                     * 获取是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.
+                     * @return DisableWanIp 是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.
                      */
                     bool GetDisableWanIp() const;
 
                     /**
-                     * 设置是否禁止分配外网ip
-                     * @param DisableWanIp 是否禁止分配外网ip
+                     * 设置是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.
+                     * @param DisableWanIp 是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.
                      */
                     void SetDisableWanIp(const bool& _disableWanIp);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_moduleIdHasBeenSet;
 
                     /**
-                     * 是否禁止分配外网ip
+                     * 是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.
                      */
                     bool m_disableWanIp;
                     bool m_disableWanIpHasBeenSet;

@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ECM_V20190719_MODEL_DETACHNETWORKINTERFACEREQUEST_H_
-#define TENCENTCLOUD_ECM_V20190719_MODEL_DETACHNETWORKINTERFACEREQUEST_H_
+#ifndef TENCENTCLOUD_ECM_V20190719_MODEL_MODIFYPRIVATEIPADDRESSESATTRIBUTEREQUEST_H_
+#define TENCENTCLOUD_ECM_V20190719_MODEL_MODIFYPRIVATEIPADDRESSESATTRIBUTEREQUEST_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ecm/v20190719/model/PrivateIpAddressSpecification.h>
 
 
 namespace TencentCloud
@@ -32,13 +33,13 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DetachNetworkInterface请求参数结构体
+                * ModifyPrivateIpAddressesAttribute请求参数结构体
                 */
-                class DetachNetworkInterfaceRequest : public AbstractModel
+                class ModifyPrivateIpAddressesAttributeRequest : public AbstractModel
                 {
                 public:
-                    DetachNetworkInterfaceRequest();
-                    ~DetachNetworkInterfaceRequest() = default;
+                    ModifyPrivateIpAddressesAttributeRequest();
+                    ~ModifyPrivateIpAddressesAttributeRequest() = default;
                     std::string ToJsonString() const;
 
 
@@ -61,32 +62,32 @@ namespace TencentCloud
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID。形如：ein-hcs7jkg4
-                     * @return InstanceId 实例ID。形如：ein-hcs7jkg4
+                     * 获取指定的内网IP信息。
+                     * @return PrivateIpAddresses 指定的内网IP信息。
                      */
-                    std::string GetInstanceId() const;
+                    std::vector<PrivateIpAddressSpecification> GetPrivateIpAddresses() const;
 
                     /**
-                     * 设置实例ID。形如：ein-hcs7jkg4
-                     * @param InstanceId 实例ID。形如：ein-hcs7jkg4
+                     * 设置指定的内网IP信息。
+                     * @param PrivateIpAddresses 指定的内网IP信息。
                      */
-                    void SetInstanceId(const std::string& _instanceId);
+                    void SetPrivateIpAddresses(const std::vector<PrivateIpAddressSpecification>& _privateIpAddresses);
 
                     /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
+                     * 判断参数 PrivateIpAddresses 是否已赋值
+                     * @return PrivateIpAddresses 是否已赋值
                      */
-                    bool InstanceIdHasBeenSet() const;
+                    bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取ECM 地域，形如ap-xian-ecm。
-                     * @return EcmRegion ECM 地域，形如ap-xian-ecm。
+                     * 获取ECM 节点Region信息，形如ap-xian-ecm。
+                     * @return EcmRegion ECM 节点Region信息，形如ap-xian-ecm。
                      */
                     std::string GetEcmRegion() const;
 
                     /**
-                     * 设置ECM 地域，形如ap-xian-ecm。
-                     * @param EcmRegion ECM 地域，形如ap-xian-ecm。
+                     * 设置ECM 节点Region信息，形如ap-xian-ecm。
+                     * @param EcmRegion ECM 节点Region信息，形如ap-xian-ecm。
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
@@ -105,13 +106,13 @@ namespace TencentCloud
                     bool m_networkInterfaceIdHasBeenSet;
 
                     /**
-                     * 实例ID。形如：ein-hcs7jkg4
+                     * 指定的内网IP信息。
                      */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
+                    std::vector<PrivateIpAddressSpecification> m_privateIpAddresses;
+                    bool m_privateIpAddressesHasBeenSet;
 
                     /**
-                     * ECM 地域，形如ap-xian-ecm。
+                     * ECM 节点Region信息，形如ap-xian-ecm。
                      */
                     std::string m_ecmRegion;
                     bool m_ecmRegionHasBeenSet;
@@ -122,4 +123,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ECM_V20190719_MODEL_DETACHNETWORKINTERFACEREQUEST_H_
+#endif // !TENCENTCLOUD_ECM_V20190719_MODEL_MODIFYPRIVATEIPADDRESSESATTRIBUTEREQUEST_H_

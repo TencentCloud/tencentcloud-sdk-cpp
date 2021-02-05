@@ -129,6 +129,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/TaskOutput.h
   include/tencentcloud/ecm/v20190719/model/ModuleCounter.h
   include/tencentcloud/ecm/v20190719/model/ReplaceSecurityGroupPolicyResponse.h
+  include/tencentcloud/ecm/v20190719/model/ModifyPrivateIpAddressesAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/ReplaceRoutesResponse.h
   include/tencentcloud/ecm/v20190719/model/RuleHealth.h
   include/tencentcloud/ecm/v20190719/model/Listener.h
@@ -260,6 +261,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/PeakNetwork.h
   include/tencentcloud/ecm/v20190719/model/DescribeCustomImageTaskRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeSecurityGroupAssociationStatisticsResponse.h
+  include/tencentcloud/ecm/v20190719/model/ModifyPrivateIpAddressesAttributeRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeTargetsResponse.h
   include/tencentcloud/ecm/v20190719/model/ImageOsList.h
   include/tencentcloud/ecm/v20190719/model/InstanceOperator.h
@@ -453,6 +455,7 @@ set(ecm_src
   src/v20190719/model/TaskOutput.cpp
   src/v20190719/model/ModuleCounter.cpp
   src/v20190719/model/ReplaceSecurityGroupPolicyResponse.cpp
+  src/v20190719/model/ModifyPrivateIpAddressesAttributeResponse.cpp
   src/v20190719/model/ReplaceRoutesResponse.cpp
   src/v20190719/model/RuleHealth.cpp
   src/v20190719/model/Listener.cpp
@@ -584,6 +587,7 @@ set(ecm_src
   src/v20190719/model/PeakNetwork.cpp
   src/v20190719/model/DescribeCustomImageTaskRequest.cpp
   src/v20190719/model/DescribeSecurityGroupAssociationStatisticsResponse.cpp
+  src/v20190719/model/ModifyPrivateIpAddressesAttributeRequest.cpp
   src/v20190719/model/DescribeTargetsResponse.cpp
   src/v20190719/model/ImageOsList.cpp
   src/v20190719/model/InstanceOperator.cpp

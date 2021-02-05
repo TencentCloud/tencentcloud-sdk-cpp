@@ -489,7 +489,7 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DemoteServiceUsagePlanOutcomeCallable DemoteServiceUsagePlanCallable(const Model::DemoteServiceUsagePlanRequest& request);
 
                 /**
-                 *本接口（DescribeApi）用于查询用户部署于 API 网关的 API 接口的详细信息。​
+                 *本接口（DescribeApi）用于查询用户 API 网关的 API 接口的详细信息。​
                  * @param req DescribeApiRequest
                  * @return DescribeApiOutcome
                  */
