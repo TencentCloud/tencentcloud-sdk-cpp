@@ -1,0 +1,201 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_IOTVIDEO_V20201215_MODEL_DEVICEINFO_H_
+#define TENCENTCLOUD_IOTVIDEO_V20201215_MODEL_DEVICEINFO_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Iotvideo
+    {
+        namespace V20201215
+        {
+            namespace Model
+            {
+                /**
+                * 设备详细信息
+                */
+                class DeviceInfo : public AbstractModel
+                {
+                public:
+                    DeviceInfo();
+                    ~DeviceInfo() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取设备名
+                     * @return DeviceName 设备名
+                     */
+                    std::string GetDeviceName() const;
+
+                    /**
+                     * 设置设备名
+                     * @param DeviceName 设备名
+                     */
+                    void SetDeviceName(const std::string& _deviceName);
+
+                    /**
+                     * 判断参数 DeviceName 是否已赋值
+                     * @return DeviceName 是否已赋值
+                     */
+                    bool DeviceNameHasBeenSet() const;
+
+                    /**
+                     * 获取设备是否在线，0不在线，1在线，2获取失败，3未激活
+                     * @return Online 设备是否在线，0不在线，1在线，2获取失败，3未激活
+                     */
+                    uint64_t GetOnline() const;
+
+                    /**
+                     * 设置设备是否在线，0不在线，1在线，2获取失败，3未激活
+                     * @param Online 设备是否在线，0不在线，1在线，2获取失败，3未激活
+                     */
+                    void SetOnline(const uint64_t& _online);
+
+                    /**
+                     * 判断参数 Online 是否已赋值
+                     * @return Online 是否已赋值
+                     */
+                    bool OnlineHasBeenSet() const;
+
+                    /**
+                     * 获取设备最后上线时间
+                     * @return LoginTime 设备最后上线时间
+                     */
+                    uint64_t GetLoginTime() const;
+
+                    /**
+                     * 设置设备最后上线时间
+                     * @param LoginTime 设备最后上线时间
+                     */
+                    void SetLoginTime(const uint64_t& _loginTime);
+
+                    /**
+                     * 判断参数 LoginTime 是否已赋值
+                     * @return LoginTime 是否已赋值
+                     */
+                    bool LoginTimeHasBeenSet() const;
+
+                    /**
+                     * 获取设备密钥
+                     * @return DevicePsk 设备密钥
+                     */
+                    std::string GetDevicePsk() const;
+
+                    /**
+                     * 设置设备密钥
+                     * @param DevicePsk 设备密钥
+                     */
+                    void SetDevicePsk(const std::string& _devicePsk);
+
+                    /**
+                     * 判断参数 DevicePsk 是否已赋值
+                     * @return DevicePsk 是否已赋值
+                     */
+                    bool DevicePskHasBeenSet() const;
+
+                    /**
+                     * 获取设备启用状态
+                     * @return EnableState 设备启用状态
+                     */
+                    uint64_t GetEnableState() const;
+
+                    /**
+                     * 设置设备启用状态
+                     * @param EnableState 设备启用状态
+                     */
+                    void SetEnableState(const uint64_t& _enableState);
+
+                    /**
+                     * 判断参数 EnableState 是否已赋值
+                     * @return EnableState 是否已赋值
+                     */
+                    bool EnableStateHasBeenSet() const;
+
+                    /**
+                     * 获取设备过期时间
+                     * @return ExpireTime 设备过期时间
+                     */
+                    uint64_t GetExpireTime() const;
+
+                    /**
+                     * 设置设备过期时间
+                     * @param ExpireTime 设备过期时间
+                     */
+                    void SetExpireTime(const uint64_t& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 设备名
+                     */
+                    std::string m_deviceName;
+                    bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 设备是否在线，0不在线，1在线，2获取失败，3未激活
+                     */
+                    uint64_t m_online;
+                    bool m_onlineHasBeenSet;
+
+                    /**
+                     * 设备最后上线时间
+                     */
+                    uint64_t m_loginTime;
+                    bool m_loginTimeHasBeenSet;
+
+                    /**
+                     * 设备密钥
+                     */
+                    std::string m_devicePsk;
+                    bool m_devicePskHasBeenSet;
+
+                    /**
+                     * 设备启用状态
+                     */
+                    uint64_t m_enableState;
+                    bool m_enableStateHasBeenSet;
+
+                    /**
+                     * 设备过期时间
+                     */
+                    uint64_t m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_IOTVIDEO_V20201215_MODEL_DEVICEINFO_H_

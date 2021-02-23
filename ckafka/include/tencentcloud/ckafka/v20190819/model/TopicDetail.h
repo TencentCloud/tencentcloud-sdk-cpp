@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ckafka/v20190819/model/Config.h>
+#include <tencentcloud/ckafka/v20190819/model/TopicRetentionTimeConfigRsp.h>
 
 
 namespace TencentCloud
@@ -275,6 +276,28 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取消息保留时间配置(用于动态配置变更记录)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetentionTimeConfig 消息保留时间配置(用于动态配置变更记录)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TopicRetentionTimeConfigRsp GetRetentionTimeConfig() const;
+
+                    /**
+                     * 设置消息保留时间配置(用于动态配置变更记录)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RetentionTimeConfig 消息保留时间配置(用于动态配置变更记录)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRetentionTimeConfig(const TopicRetentionTimeConfigRsp& _retentionTimeConfig);
+
+                    /**
+                     * 判断参数 RetentionTimeConfig 是否已赋值
+                     * @return RetentionTimeConfig 是否已赋值
+                     */
+                    bool RetentionTimeConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -351,6 +374,13 @@ namespace TencentCloud
                      */
                     Config m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 消息保留时间配置(用于动态配置变更记录)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TopicRetentionTimeConfigRsp m_retentionTimeConfig;
+                    bool m_retentionTimeConfigHasBeenSet;
 
                 };
             }

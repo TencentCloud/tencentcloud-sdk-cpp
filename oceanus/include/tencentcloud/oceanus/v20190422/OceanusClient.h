@@ -33,6 +33,8 @@
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteTableConfigRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h>
@@ -70,6 +72,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteTableConfigResponse> DeleteTableConfigOutcome;
                 typedef std::future<DeleteTableConfigOutcome> DeleteTableConfigOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DeleteTableConfigRequest&, DeleteTableConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeJobConfigsResponse> DescribeJobConfigsOutcome;
+                typedef std::future<DescribeJobConfigsOutcome> DescribeJobConfigsOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeJobConfigsRequest&, DescribeJobConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobConfigsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeJobsResponse> DescribeJobsOutcome;
                 typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobsRequest&, DescribeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobsAsyncHandler;
@@ -129,6 +134,15 @@ namespace TencentCloud
                 DeleteTableConfigOutcome DeleteTableConfig(const Model::DeleteTableConfigRequest &request);
                 void DeleteTableConfigAsync(const Model::DeleteTableConfigRequest& request, const DeleteTableConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTableConfigOutcomeCallable DeleteTableConfigCallable(const Model::DeleteTableConfigRequest& request);
+
+                /**
+                 *查询作业配置列表，一次最多查询100个
+                 * @param req DescribeJobConfigsRequest
+                 * @return DescribeJobConfigsOutcome
+                 */
+                DescribeJobConfigsOutcome DescribeJobConfigs(const Model::DescribeJobConfigsRequest &request);
+                void DescribeJobConfigsAsync(const Model::DescribeJobConfigsRequest& request, const DescribeJobConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobConfigsOutcomeCallable DescribeJobConfigsCallable(const Model::DescribeJobConfigsRequest& request);
 
                 /**
                  *查询作业

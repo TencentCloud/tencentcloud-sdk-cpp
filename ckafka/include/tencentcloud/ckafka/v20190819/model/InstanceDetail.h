@@ -456,6 +456,116 @@ namespace TencentCloud
                      */
                     bool CvmHasBeenSet() const;
 
+                    /**
+                     * 获取ckafka实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceType ckafka实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置ckafka实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceType ckafka实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskType 磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDiskType() const;
+
+                    /**
+                     * 设置磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiskType 磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiskType(const std::string& _diskType);
+
+                    /**
+                     * 判断参数 DiskType 是否已赋值
+                     * @return DiskType 是否已赋值
+                     */
+                    bool DiskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取当前规格最大Topic数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxTopicNumber 当前规格最大Topic数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxTopicNumber() const;
+
+                    /**
+                     * 设置当前规格最大Topic数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxTopicNumber 当前规格最大Topic数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxTopicNumber(const int64_t& _maxTopicNumber);
+
+                    /**
+                     * 判断参数 MaxTopicNumber 是否已赋值
+                     * @return MaxTopicNumber 是否已赋值
+                     */
+                    bool MaxTopicNumberHasBeenSet() const;
+
+                    /**
+                     * 获取当前规格最大Partition数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxPartitionNumber 当前规格最大Partition数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxPartitionNumber() const;
+
+                    /**
+                     * 设置当前规格最大Partition数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxPartitionNumber 当前规格最大Partition数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxPartitionNumber(const int64_t& _maxPartitionNumber);
+
+                    /**
+                     * 判断参数 MaxPartitionNumber 是否已赋值
+                     * @return MaxPartitionNumber 是否已赋值
+                     */
+                    bool MaxPartitionNumberHasBeenSet() const;
+
+                    /**
+                     * 获取计划升级配置时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RebalanceTime 计划升级配置时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRebalanceTime() const;
+
+                    /**
+                     * 设置计划升级配置时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RebalanceTime 计划升级配置时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRebalanceTime(const std::string& _rebalanceTime);
+
+                    /**
+                     * 判断参数 RebalanceTime 是否已赋值
+                     * @return RebalanceTime 是否已赋值
+                     */
+                    bool RebalanceTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -592,6 +702,41 @@ namespace TencentCloud
                      */
                     int64_t m_cvm;
                     bool m_cvmHasBeenSet;
+
+                    /**
+                     * ckafka实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_diskType;
+                    bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * 当前规格最大Topic数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxTopicNumber;
+                    bool m_maxTopicNumberHasBeenSet;
+
+                    /**
+                     * 当前规格最大Partition数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxPartitionNumber;
+                    bool m_maxPartitionNumberHasBeenSet;
+
+                    /**
+                     * 计划升级配置时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rebalanceTime;
+                    bool m_rebalanceTimeHasBeenSet;
 
                 };
             }

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除规则对应的id值 669872
-                     * @return Id 删除规则对应的id值 669872
+                     * 获取删除规则对应的id值, 对应获取规则列表接口的Id 值
+                     * @return Id 删除规则对应的id值, 对应获取规则列表接口的Id 值
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置删除规则对应的id值 669872
-                     * @param Id 删除规则对应的id值 669872
+                     * 设置删除规则对应的id值, 对应获取规则列表接口的Id 值
+                     * @param Id 删除规则对应的id值, 对应获取规则列表接口的Id 值
                      */
                     void SetId(const uint64_t& _id);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EdgeIdHasBeenSet() const;
 
                     /**
-                     * 获取NAT地域
-                     * @return Area NAT地域
+                     * 获取NAT地域， 如ap-shanghai/ap-guangzhou/ap-chongqing等
+                     * @return Area NAT地域， 如ap-shanghai/ap-guangzhou/ap-chongqing等
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置NAT地域
-                     * @param Area NAT地域
+                     * 设置NAT地域， 如ap-shanghai/ap-guangzhou/ap-chongqing等
+                     * @param Area NAT地域， 如ap-shanghai/ap-guangzhou/ap-chongqing等
                      */
                     void SetArea(const std::string& _area);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 删除规则对应的id值 669872
+                     * 删除规则对应的id值, 对应获取规则列表接口的Id 值
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_edgeIdHasBeenSet;
 
                     /**
-                     * NAT地域
+                     * NAT地域， 如ap-shanghai/ap-guangzhou/ap-chongqing等
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

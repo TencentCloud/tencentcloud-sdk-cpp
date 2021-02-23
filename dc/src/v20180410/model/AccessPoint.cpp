@@ -30,7 +30,8 @@ AccessPoint::AccessPoint() :
     m_regionIdHasBeenSet(false),
     m_availablePortTypeHasBeenSet(false),
     m_coordinateHasBeenSet(false),
-    m_cityHasBeenSet(false)
+    m_cityHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,16 @@ CoreInternalOutcome AccessPoint::Deserialize(const Value &value)
         m_cityHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AccessPoint.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +241,14 @@ void AccessPoint::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "City";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_city.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -377,5 +396,21 @@ void AccessPoint::SetCity(const string& _city)
 bool AccessPoint::CityHasBeenSet() const
 {
     return m_cityHasBeenSet;
+}
+
+string AccessPoint::GetArea() const
+{
+    return m_area;
+}
+
+void AccessPoint::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool AccessPoint::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 

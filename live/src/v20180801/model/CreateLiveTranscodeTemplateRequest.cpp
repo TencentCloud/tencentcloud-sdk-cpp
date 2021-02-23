@@ -30,8 +30,8 @@ CreateLiveTranscodeTemplateRequest::CreateLiveTranscodeTemplateRequest() :
     m_audioBitrateHasBeenSet(false),
     m_vcodecHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_widthHasBeenSet(false),
     m_needVideoHasBeenSet(false),
+    m_widthHasBeenSet(false),
     m_needAudioHasBeenSet(false),
     m_heightHasBeenSet(false),
     m_fpsHasBeenSet(false),
@@ -102,20 +102,20 @@ string CreateLiveTranscodeTemplateRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_widthHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Width";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_width, allocator);
-    }
-
     if (m_needVideoHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "NeedVideo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needVideo, allocator);
+    }
+
+    if (m_widthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Width";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_width, allocator);
     }
 
     if (m_needAudioHasBeenSet)
@@ -318,22 +318,6 @@ bool CreateLiveTranscodeTemplateRequest::DescriptionHasBeenSet() const
     return m_descriptionHasBeenSet;
 }
 
-int64_t CreateLiveTranscodeTemplateRequest::GetWidth() const
-{
-    return m_width;
-}
-
-void CreateLiveTranscodeTemplateRequest::SetWidth(const int64_t& _width)
-{
-    m_width = _width;
-    m_widthHasBeenSet = true;
-}
-
-bool CreateLiveTranscodeTemplateRequest::WidthHasBeenSet() const
-{
-    return m_widthHasBeenSet;
-}
-
 int64_t CreateLiveTranscodeTemplateRequest::GetNeedVideo() const
 {
     return m_needVideo;
@@ -348,6 +332,22 @@ void CreateLiveTranscodeTemplateRequest::SetNeedVideo(const int64_t& _needVideo)
 bool CreateLiveTranscodeTemplateRequest::NeedVideoHasBeenSet() const
 {
     return m_needVideoHasBeenSet;
+}
+
+int64_t CreateLiveTranscodeTemplateRequest::GetWidth() const
+{
+    return m_width;
+}
+
+void CreateLiveTranscodeTemplateRequest::SetWidth(const int64_t& _width)
+{
+    m_width = _width;
+    m_widthHasBeenSet = true;
+}
+
+bool CreateLiveTranscodeTemplateRequest::WidthHasBeenSet() const
+{
+    return m_widthHasBeenSet;
 }
 
 int64_t CreateLiveTranscodeTemplateRequest::GetNeedAudio() const

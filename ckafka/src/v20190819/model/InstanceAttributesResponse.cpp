@@ -49,7 +49,8 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_maxGroupNumHasBeenSet(false),
     m_cvmHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_featuresHasBeenSet(false)
+    m_featuresHasBeenSet(false),
+    m_retentionTimeConfigHasBeenSet(false)
 {
 }
 
@@ -371,6 +372,23 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const Value &value)
         m_featuresHasBeenSet = true;
     }
 
+    if (value.HasMember("RetentionTimeConfig") && !value["RetentionTimeConfig"].IsNull())
+    {
+        if (!value["RetentionTimeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `InstanceAttributesResponse.RetentionTimeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_retentionTimeConfig.Deserialize(value["RetentionTimeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_retentionTimeConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -625,6 +643,15 @@ void InstanceAttributesResponse::ToJsonObject(Value &value, Document::AllocatorT
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_retentionTimeConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RetentionTimeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_retentionTimeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1076,5 +1103,21 @@ void InstanceAttributesResponse::SetFeatures(const vector<string>& _features)
 bool InstanceAttributesResponse::FeaturesHasBeenSet() const
 {
     return m_featuresHasBeenSet;
+}
+
+DynamicRetentionTime InstanceAttributesResponse::GetRetentionTimeConfig() const
+{
+    return m_retentionTimeConfig;
+}
+
+void InstanceAttributesResponse::SetRetentionTimeConfig(const DynamicRetentionTime& _retentionTimeConfig)
+{
+    m_retentionTimeConfig = _retentionTimeConfig;
+    m_retentionTimeConfigHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::RetentionTimeConfigHasBeenSet() const
+{
+    return m_retentionTimeConfigHasBeenSet;
 }
 

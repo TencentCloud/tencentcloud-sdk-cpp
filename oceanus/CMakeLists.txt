@@ -21,6 +21,7 @@ set(oceanus_public_header
 set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/CreateResourceRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobRequest.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceRefDetail.h
   include/tencentcloud/oceanus/v20190422/model/StopJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobResponse.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
@@ -40,11 +41,14 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Property.h
   include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/RunJobDescription.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h
   include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
   include/tencentcloud/oceanus/v20190422/model/ResourceRef.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/JobV1.h
+  include/tencentcloud/oceanus/v20190422/model/JobConfig.h
   include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h
   )
 
@@ -52,6 +56,7 @@ set(oceanus_src
   src/v20190422/OceanusClient.cpp
   src/v20190422/model/CreateResourceRequest.cpp
   src/v20190422/model/CreateJobRequest.cpp
+  src/v20190422/model/ResourceRefDetail.cpp
   src/v20190422/model/StopJobsRequest.cpp
   src/v20190422/model/CreateJobResponse.cpp
   src/v20190422/model/RunJobsRequest.cpp
@@ -71,11 +76,14 @@ set(oceanus_src
   src/v20190422/model/DescribeJobsResponse.cpp
   src/v20190422/model/Property.cpp
   src/v20190422/model/DescribeSystemResourcesRequest.cpp
+  src/v20190422/model/DescribeJobConfigsRequest.cpp
   src/v20190422/model/RunJobDescription.cpp
+  src/v20190422/model/DescribeJobConfigsResponse.cpp
   src/v20190422/model/ResourceLoc.cpp
   src/v20190422/model/ResourceRef.cpp
   src/v20190422/model/DescribeJobsRequest.cpp
   src/v20190422/model/JobV1.cpp
+  src/v20190422/model/JobConfig.cpp
   src/v20190422/model/DescribeSystemResourcesResponse.cpp
   )
 

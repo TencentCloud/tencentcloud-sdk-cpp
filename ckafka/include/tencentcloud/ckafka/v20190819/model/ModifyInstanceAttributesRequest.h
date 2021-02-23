@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesConfig.h>
+#include <tencentcloud/ckafka/v20190819/model/DynamicRetentionTime.h>
 
 
 namespace TencentCloud
@@ -115,6 +116,42 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取动态消息保留策略配置
+                     * @return DynamicRetentionConfig 动态消息保留策略配置
+                     */
+                    DynamicRetentionTime GetDynamicRetentionConfig() const;
+
+                    /**
+                     * 设置动态消息保留策略配置
+                     * @param DynamicRetentionConfig 动态消息保留策略配置
+                     */
+                    void SetDynamicRetentionConfig(const DynamicRetentionTime& _dynamicRetentionConfig);
+
+                    /**
+                     * 判断参数 DynamicRetentionConfig 是否已赋值
+                     * @return DynamicRetentionConfig 是否已赋值
+                     */
+                    bool DynamicRetentionConfigHasBeenSet() const;
+
+                    /**
+                     * 获取修改升配置rebalance时间
+                     * @return RebalanceTime 修改升配置rebalance时间
+                     */
+                    int64_t GetRebalanceTime() const;
+
+                    /**
+                     * 设置修改升配置rebalance时间
+                     * @param RebalanceTime 修改升配置rebalance时间
+                     */
+                    void SetRebalanceTime(const int64_t& _rebalanceTime);
+
+                    /**
+                     * 判断参数 RebalanceTime 是否已赋值
+                     * @return RebalanceTime 是否已赋值
+                     */
+                    bool RebalanceTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +177,18 @@ namespace TencentCloud
                      */
                     ModifyInstanceAttributesConfig m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 动态消息保留策略配置
+                     */
+                    DynamicRetentionTime m_dynamicRetentionConfig;
+                    bool m_dynamicRetentionConfigHasBeenSet;
+
+                    /**
+                     * 修改升配置rebalance时间
+                     */
+                    int64_t m_rebalanceTime;
+                    bool m_rebalanceTimeHasBeenSet;
 
                 };
             }

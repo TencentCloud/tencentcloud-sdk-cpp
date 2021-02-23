@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeConfigResponse::DescribeConfigResponse() :
     m_networkStorageRangeHasBeenSet(false),
-    m_imageWhiteSetHasBeenSet(false)
+    m_imageWhiteSetHasBeenSet(false),
+    m_instanceNetworkLimitConfigsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,26 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
         m_imageWhiteSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceNetworkLimitConfigs") && !rsp["InstanceNetworkLimitConfigs"].IsNull())
+    {
+        if (!rsp["InstanceNetworkLimitConfigs"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceNetworkLimitConfigs` is not array type"));
+
+        const Value &tmpValue = rsp["InstanceNetworkLimitConfigs"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceNetworkLimitConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceNetworkLimitConfigs.push_back(item);
+        }
+        m_instanceNetworkLimitConfigsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +138,16 @@ vector<string> DescribeConfigResponse::GetImageWhiteSet() const
 bool DescribeConfigResponse::ImageWhiteSetHasBeenSet() const
 {
     return m_imageWhiteSetHasBeenSet;
+}
+
+vector<InstanceNetworkLimitConfig> DescribeConfigResponse::GetInstanceNetworkLimitConfigs() const
+{
+    return m_instanceNetworkLimitConfigs;
+}
+
+bool DescribeConfigResponse::InstanceNetworkLimitConfigsHasBeenSet() const
+{
+    return m_instanceNetworkLimitConfigsHasBeenSet;
 }
 
 

@@ -61,6 +61,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateAclResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateTopicRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteAclResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DynamicRetentionTime.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRouteRequest.h
   include/tencentcloud/ckafka/v20190819/model/InstanceConfigDO.h
   include/tencentcloud/ckafka/v20190819/model/UserResponse.h
@@ -110,6 +111,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateTopicIpWhiteListRequest.h
   include/tencentcloud/ckafka/v20190819/model/Route.h
   include/tencentcloud/ckafka/v20190819/model/Acl.h
+  include/tencentcloud/ckafka/v20190819/model/TopicRetentionTimeConfigRsp.h
   include/tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateTopicResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h
@@ -165,6 +167,7 @@ set(ckafka_src
   src/v20190819/model/CreateAclResponse.cpp
   src/v20190819/model/CreateTopicRequest.cpp
   src/v20190819/model/DeleteAclResponse.cpp
+  src/v20190819/model/DynamicRetentionTime.cpp
   src/v20190819/model/DescribeRouteRequest.cpp
   src/v20190819/model/InstanceConfigDO.cpp
   src/v20190819/model/UserResponse.cpp
@@ -214,6 +217,7 @@ set(ckafka_src
   src/v20190819/model/CreateTopicIpWhiteListRequest.cpp
   src/v20190819/model/Route.cpp
   src/v20190819/model/Acl.cpp
+  src/v20190819/model/TopicRetentionTimeConfigRsp.cpp
   src/v20190819/model/ModifyTopicAttributesRequest.cpp
   src/v20190819/model/CreateTopicResponse.cpp
   src/v20190819/model/CreateInstancePreRequest.cpp

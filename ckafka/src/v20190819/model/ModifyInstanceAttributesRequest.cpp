@@ -27,7 +27,9 @@ ModifyInstanceAttributesRequest::ModifyInstanceAttributesRequest() :
     m_instanceIdHasBeenSet(false),
     m_msgRetentionTimeHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_dynamicRetentionConfigHasBeenSet(false),
+    m_rebalanceTimeHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,23 @@ string ModifyInstanceAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_config.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dynamicRetentionConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DynamicRetentionConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_dynamicRetentionConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_rebalanceTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RebalanceTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rebalanceTime, allocator);
     }
 
 
@@ -141,6 +160,38 @@ void ModifyInstanceAttributesRequest::SetConfig(const ModifyInstanceAttributesCo
 bool ModifyInstanceAttributesRequest::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+DynamicRetentionTime ModifyInstanceAttributesRequest::GetDynamicRetentionConfig() const
+{
+    return m_dynamicRetentionConfig;
+}
+
+void ModifyInstanceAttributesRequest::SetDynamicRetentionConfig(const DynamicRetentionTime& _dynamicRetentionConfig)
+{
+    m_dynamicRetentionConfig = _dynamicRetentionConfig;
+    m_dynamicRetentionConfigHasBeenSet = true;
+}
+
+bool ModifyInstanceAttributesRequest::DynamicRetentionConfigHasBeenSet() const
+{
+    return m_dynamicRetentionConfigHasBeenSet;
+}
+
+int64_t ModifyInstanceAttributesRequest::GetRebalanceTime() const
+{
+    return m_rebalanceTime;
+}
+
+void ModifyInstanceAttributesRequest::SetRebalanceTime(const int64_t& _rebalanceTime)
+{
+    m_rebalanceTime = _rebalanceTime;
+    m_rebalanceTimeHasBeenSet = true;
+}
+
+bool ModifyInstanceAttributesRequest::RebalanceTimeHasBeenSet() const
+{
+    return m_rebalanceTimeHasBeenSet;
 }
 
 

@@ -55,6 +55,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DeleteSubnetResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyAddressesBandwidthResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeSubnetsResponse.h
+  include/tencentcloud/ecm/v20190719/model/Tag.h
   include/tencentcloud/ecm/v20190719/model/RunInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/ReleaseAddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeLoadBalancersRequest.h
@@ -304,7 +305,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/AssignPrivateIpAddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesPasswordRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyImageAttributeRequest.h
-  include/tencentcloud/ecm/v20190719/model/Tag.h
+  include/tencentcloud/ecm/v20190719/model/InstanceNetworkLimitConfig.h
   include/tencentcloud/ecm/v20190719/model/OperatorAction.h
   include/tencentcloud/ecm/v20190719/model/CreateVpcRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateLoadBalancerResponse.h
@@ -381,6 +382,7 @@ set(ecm_src
   src/v20190719/model/DeleteSubnetResponse.cpp
   src/v20190719/model/ModifyAddressesBandwidthResponse.cpp
   src/v20190719/model/DescribeSubnetsResponse.cpp
+  src/v20190719/model/Tag.cpp
   src/v20190719/model/RunInstancesRequest.cpp
   src/v20190719/model/ReleaseAddressesRequest.cpp
   src/v20190719/model/DescribeLoadBalancersRequest.cpp
@@ -630,7 +632,7 @@ set(ecm_src
   src/v20190719/model/AssignPrivateIpAddressesRequest.cpp
   src/v20190719/model/ResetInstancesPasswordRequest.cpp
   src/v20190719/model/ModifyImageAttributeRequest.cpp
-  src/v20190719/model/Tag.cpp
+  src/v20190719/model/InstanceNetworkLimitConfig.cpp
   src/v20190719/model/OperatorAction.cpp
   src/v20190719/model/CreateVpcRequest.cpp
   src/v20190719/model/CreateLoadBalancerResponse.cpp

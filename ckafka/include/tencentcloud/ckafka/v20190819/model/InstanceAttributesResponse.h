@@ -27,6 +27,7 @@
 #include <tencentcloud/ckafka/v20190819/model/VipEntity.h>
 #include <tencentcloud/ckafka/v20190819/model/InstanceConfigDO.h>
 #include <tencentcloud/ckafka/v20190819/model/Tag.h>
+#include <tencentcloud/ckafka/v20190819/model/DynamicRetentionTime.h>
 
 
 namespace TencentCloud
@@ -520,17 +521,17 @@ namespace TencentCloud
                     bool MaxGroupNumHasBeenSet() const;
 
                     /**
-                     * 获取售卖类型
+                     * 获取售卖类型,0:标准版,1:专业版
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cvm 售卖类型
+                     * @return Cvm 售卖类型,0:标准版,1:专业版
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetCvm() const;
 
                     /**
-                     * 设置售卖类型
+                     * 设置售卖类型,0:标准版,1:专业版
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cvm 售卖类型
+                     * @param Cvm 售卖类型,0:标准版,1:专业版
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCvm(const int64_t& _cvm);
@@ -584,6 +585,28 @@ namespace TencentCloud
                      * @return Features 是否已赋值
                      */
                     bool FeaturesHasBeenSet() const;
+
+                    /**
+                     * 获取动态消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetentionTimeConfig 动态消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DynamicRetentionTime GetRetentionTimeConfig() const;
+
+                    /**
+                     * 设置动态消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RetentionTimeConfig 动态消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRetentionTimeConfig(const DynamicRetentionTime& _retentionTimeConfig);
+
+                    /**
+                     * 判断参数 RetentionTimeConfig 是否已赋值
+                     * @return RetentionTimeConfig 是否已赋值
+                     */
+                    bool RetentionTimeConfigHasBeenSet() const;
 
                 private:
 
@@ -743,7 +766,7 @@ namespace TencentCloud
                     bool m_maxGroupNumHasBeenSet;
 
                     /**
-                     * 售卖类型
+                     * 售卖类型,0:标准版,1:专业版
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cvm;
@@ -762,6 +785,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_features;
                     bool m_featuresHasBeenSet;
+
+                    /**
+                     * 动态消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DynamicRetentionTime m_retentionTimeConfig;
+                    bool m_retentionTimeConfigHasBeenSet;
 
                 };
             }

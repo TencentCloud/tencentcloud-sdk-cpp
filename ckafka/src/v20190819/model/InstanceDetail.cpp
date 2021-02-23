@@ -43,7 +43,12 @@ InstanceDetail::InstanceDetail() :
     m_tagsHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
-    m_cvmHasBeenSet(false)
+    m_cvmHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_diskTypeHasBeenSet(false),
+    m_maxTopicNumberHasBeenSet(false),
+    m_maxPartitionNumberHasBeenSet(false),
+    m_rebalanceTimeHasBeenSet(false)
 {
 }
 
@@ -295,6 +300,56 @@ CoreInternalOutcome InstanceDetail::Deserialize(const Value &value)
         m_cvmHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceDetail.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskType") && !value["DiskType"].IsNull())
+    {
+        if (!value["DiskType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceDetail.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskType = string(value["DiskType"].GetString());
+        m_diskTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxTopicNumber") && !value["MaxTopicNumber"].IsNull())
+    {
+        if (!value["MaxTopicNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceDetail.MaxTopicNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxTopicNumber = value["MaxTopicNumber"].GetInt64();
+        m_maxTopicNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxPartitionNumber") && !value["MaxPartitionNumber"].IsNull())
+    {
+        if (!value["MaxPartitionNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceDetail.MaxPartitionNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxPartitionNumber = value["MaxPartitionNumber"].GetInt64();
+        m_maxPartitionNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("RebalanceTime") && !value["RebalanceTime"].IsNull())
+    {
+        if (!value["RebalanceTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceDetail.RebalanceTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rebalanceTime = string(value["RebalanceTime"].GetString());
+        m_rebalanceTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -495,6 +550,46 @@ void InstanceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Cvm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cvm, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_diskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxTopicNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxTopicNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxTopicNumber, allocator);
+    }
+
+    if (m_maxPartitionNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxPartitionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxPartitionNumber, allocator);
+    }
+
+    if (m_rebalanceTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RebalanceTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_rebalanceTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -850,5 +945,85 @@ void InstanceDetail::SetCvm(const int64_t& _cvm)
 bool InstanceDetail::CvmHasBeenSet() const
 {
     return m_cvmHasBeenSet;
+}
+
+string InstanceDetail::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void InstanceDetail::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool InstanceDetail::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+string InstanceDetail::GetDiskType() const
+{
+    return m_diskType;
+}
+
+void InstanceDetail::SetDiskType(const string& _diskType)
+{
+    m_diskType = _diskType;
+    m_diskTypeHasBeenSet = true;
+}
+
+bool InstanceDetail::DiskTypeHasBeenSet() const
+{
+    return m_diskTypeHasBeenSet;
+}
+
+int64_t InstanceDetail::GetMaxTopicNumber() const
+{
+    return m_maxTopicNumber;
+}
+
+void InstanceDetail::SetMaxTopicNumber(const int64_t& _maxTopicNumber)
+{
+    m_maxTopicNumber = _maxTopicNumber;
+    m_maxTopicNumberHasBeenSet = true;
+}
+
+bool InstanceDetail::MaxTopicNumberHasBeenSet() const
+{
+    return m_maxTopicNumberHasBeenSet;
+}
+
+int64_t InstanceDetail::GetMaxPartitionNumber() const
+{
+    return m_maxPartitionNumber;
+}
+
+void InstanceDetail::SetMaxPartitionNumber(const int64_t& _maxPartitionNumber)
+{
+    m_maxPartitionNumber = _maxPartitionNumber;
+    m_maxPartitionNumberHasBeenSet = true;
+}
+
+bool InstanceDetail::MaxPartitionNumberHasBeenSet() const
+{
+    return m_maxPartitionNumberHasBeenSet;
+}
+
+string InstanceDetail::GetRebalanceTime() const
+{
+    return m_rebalanceTime;
+}
+
+void InstanceDetail::SetRebalanceTime(const string& _rebalanceTime)
+{
+    m_rebalanceTime = _rebalanceTime;
+    m_rebalanceTimeHasBeenSet = true;
+}
+
+bool InstanceDetail::RebalanceTimeHasBeenSet() const
+{
+    return m_rebalanceTimeHasBeenSet;
 }
 

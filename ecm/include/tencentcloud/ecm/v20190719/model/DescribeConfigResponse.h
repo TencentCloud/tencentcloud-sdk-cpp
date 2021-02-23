@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ecm/v20190719/model/NetworkStorageRange.h>
+#include <tencentcloud/ecm/v20190719/model/InstanceNetworkLimitConfig.h>
 
 
 namespace TencentCloud
@@ -56,9 +57,9 @@ namespace TencentCloud
                     bool NetworkStorageRangeHasBeenSet() const;
 
                     /**
-                     * 获取镜像操作系统白名单
+                     * 获取镜像操作系统白名单。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageWhiteSet 镜像操作系统白名单
+                     * @return ImageWhiteSet 镜像操作系统白名单。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetImageWhiteSet() const;
@@ -69,6 +70,20 @@ namespace TencentCloud
                      */
                     bool ImageWhiteSetHasBeenSet() const;
 
+                    /**
+                     * 获取网络限额信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceNetworkLimitConfigs 网络限额信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceNetworkLimitConfig> GetInstanceNetworkLimitConfigs() const;
+
+                    /**
+                     * 判断参数 InstanceNetworkLimitConfigs 是否已赋值
+                     * @return InstanceNetworkLimitConfigs 是否已赋值
+                     */
+                    bool InstanceNetworkLimitConfigsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -78,11 +93,18 @@ namespace TencentCloud
                     bool m_networkStorageRangeHasBeenSet;
 
                     /**
-                     * 镜像操作系统白名单
+                     * 镜像操作系统白名单。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_imageWhiteSet;
                     bool m_imageWhiteSetHasBeenSet;
+
+                    /**
+                     * 网络限额信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceNetworkLimitConfig> m_instanceNetworkLimitConfigs;
+                    bool m_instanceNetworkLimitConfigsHasBeenSet;
 
                 };
             }

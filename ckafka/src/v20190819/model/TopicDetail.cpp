@@ -33,7 +33,8 @@ TopicDetail::TopicDetail() :
     m_forwardCosBucketHasBeenSet(false),
     m_forwardStatusHasBeenSet(false),
     m_forwardIntervalHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_retentionTimeConfigHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,23 @@ CoreInternalOutcome TopicDetail::Deserialize(const Value &value)
         m_configHasBeenSet = true;
     }
 
+    if (value.HasMember("RetentionTimeConfig") && !value["RetentionTimeConfig"].IsNull())
+    {
+        if (!value["RetentionTimeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TopicDetail.RetentionTimeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_retentionTimeConfig.Deserialize(value["RetentionTimeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_retentionTimeConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -271,6 +289,15 @@ void TopicDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_config.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_retentionTimeConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RetentionTimeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_retentionTimeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -466,5 +493,21 @@ void TopicDetail::SetConfig(const Config& _config)
 bool TopicDetail::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+TopicRetentionTimeConfigRsp TopicDetail::GetRetentionTimeConfig() const
+{
+    return m_retentionTimeConfig;
+}
+
+void TopicDetail::SetRetentionTimeConfig(const TopicRetentionTimeConfigRsp& _retentionTimeConfig)
+{
+    m_retentionTimeConfig = _retentionTimeConfig;
+    m_retentionTimeConfigHasBeenSet = true;
+}
+
+bool TopicDetail::RetentionTimeConfigHasBeenSet() const
+{
+    return m_retentionTimeConfigHasBeenSet;
 }
 

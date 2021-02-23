@@ -187,6 +187,24 @@ origin: 保持原始编码格式
                     bool DescriptionHasBeenSet() const;
 
                     /**
+                     * 获取是否保留视频，0：否，1：是。默认1。
+                     * @return NeedVideo 是否保留视频，0：否，1：是。默认1。
+                     */
+                    int64_t GetNeedVideo() const;
+
+                    /**
+                     * 设置是否保留视频，0：否，1：是。默认1。
+                     * @param NeedVideo 是否保留视频，0：否，1：是。默认1。
+                     */
+                    void SetNeedVideo(const int64_t& _needVideo);
+
+                    /**
+                     * 判断参数 NeedVideo 是否已赋值
+                     * @return NeedVideo 是否已赋值
+                     */
+                    bool NeedVideoHasBeenSet() const;
+
+                    /**
                      * 获取宽，默认0。
 范围[0-3000]
 数值必须是2的倍数，0是原始宽度
@@ -213,24 +231,6 @@ origin: 保持原始编码格式
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取是否保留视频，0：否，1：是。默认1。
-                     * @return NeedVideo 是否保留视频，0：否，1：是。默认1。
-                     */
-                    int64_t GetNeedVideo() const;
-
-                    /**
-                     * 设置是否保留视频，0：否，1：是。默认1。
-                     * @param NeedVideo 是否保留视频，0：否，1：是。默认1。
-                     */
-                    void SetNeedVideo(const int64_t& _needVideo);
-
-                    /**
-                     * 判断参数 NeedVideo 是否已赋值
-                     * @return NeedVideo 是否已赋值
-                     */
-                    bool NeedVideoHasBeenSet() const;
-
-                    /**
                      * 获取是否保留音频，0：否，1：是。默认1。
                      * @return NeedAudio 是否保留音频，0：否，1：是。默认1。
                      */
@@ -251,20 +251,20 @@ origin: 保持原始编码格式
                     /**
                      * 获取高，默认0。
 范围[0-3000]
-数值必须是2的倍数，0是原始宽度
+数值必须是2的倍数，0是原始高度。
                      * @return Height 高，默认0。
 范围[0-3000]
-数值必须是2的倍数，0是原始宽度
+数值必须是2的倍数，0是原始高度。
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置高，默认0。
 范围[0-3000]
-数值必须是2的倍数，0是原始宽度
+数值必须是2的倍数，0是原始高度。
                      * @param Height 高，默认0。
 范围[0-3000]
-数值必须是2的倍数，0是原始宽度
+数值必须是2的倍数，0是原始高度。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -558,18 +558,18 @@ origin: 保持原始编码格式
                     bool m_descriptionHasBeenSet;
 
                     /**
+                     * 是否保留视频，0：否，1：是。默认1。
+                     */
+                    int64_t m_needVideo;
+                    bool m_needVideoHasBeenSet;
+
+                    /**
                      * 宽，默认0。
 范围[0-3000]
 数值必须是2的倍数，0是原始宽度
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
-
-                    /**
-                     * 是否保留视频，0：否，1：是。默认1。
-                     */
-                    int64_t m_needVideo;
-                    bool m_needVideoHasBeenSet;
 
                     /**
                      * 是否保留音频，0：否，1：是。默认1。
@@ -580,7 +580,7 @@ origin: 保持原始编码格式
                     /**
                      * 高，默认0。
 范围[0-3000]
-数值必须是2的倍数，0是原始宽度
+数值必须是2的倍数，0是原始高度。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

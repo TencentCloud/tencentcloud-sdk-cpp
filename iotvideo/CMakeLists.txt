@@ -16,6 +16,7 @@
 
 set(iotvideo_public_header
   include/tencentcloud/iotvideo/v20191126/IotvideoClient.h
+  include/tencentcloud/iotvideo/v20201215/IotvideoClient.h
   )
 
 set(iotvideo_public_header_model
@@ -168,10 +169,74 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/RechargeRecord.h
   include/tencentcloud/iotvideo/v20191126/model/VersionData.h
   include/tencentcloud/iotvideo/v20191126/model/DevicesData.h
+  include/tencentcloud/iotvideo/v20201215/model/DeleteProductRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceDataHistoryRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/EventHistoryItem.h
+  include/tencentcloud/iotvideo/v20201215/model/CreateForwardRuleRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/SetForwardAuthResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/SetForwardAuthRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DeviceDataHistoryItem.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeBatchsRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeCategoryResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeModelDefinitionResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/CreateBatchRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/ImportModelDefinitionRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceActionHistoryResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/VideoBatch.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceCommLogResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DeleteDeviceRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DeleteProductResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeProductsRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceEventHistoryResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceActionHistoryRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/ImportModelDefinitionResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDevicesResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/ModifyProductResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/ProductTemplate.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeBatchResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/ModifyProductRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/ModifyModelDefinitionRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeBatchsResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DeleteForwardRuleRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceEventHistoryRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeForwardRuleResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeBatchRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/ModifyForwardRuleRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeCategoryRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceCommLogRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/CreateProductResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceDataHistoryResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDevicesRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/VideoProduct.h
+  include/tencentcloud/iotvideo/v20201215/model/ActionHistory.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeModelDefinitionRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/ModifyForwardRuleResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/CheckForwardAuthResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeProductResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceDataResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/ModifyDeviceResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeForwardRuleRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DeleteForwardRuleResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeProductRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeProductsResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/CheckForwardAuthRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/CreateProductRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceDataRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DeleteDeviceResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DeviceInfo.h
+  include/tencentcloud/iotvideo/v20201215/model/ModifyModelDefinitionResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/CreateForwardRuleResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/ModifyDeviceRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/DeviceCommLogItem.h
+  include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/ProductModelDefinition.h
+  include/tencentcloud/iotvideo/v20201215/model/CreateBatchResponse.h
   )
 
 set(iotvideo_src
   src/v20191126/IotvideoClient.cpp
+  src/v20201215/IotvideoClient.cpp
   src/v20191126/model/DescribeRechargeRecordsResponse.cpp
   src/v20191126/model/UploadOtaVersionResponse.cpp
   src/v20191126/model/CreateGencodeResponse.cpp
@@ -321,6 +386,69 @@ set(iotvideo_src
   src/v20191126/model/RechargeRecord.cpp
   src/v20191126/model/VersionData.cpp
   src/v20191126/model/DevicesData.cpp
+  src/v20201215/model/DeleteProductRequest.cpp
+  src/v20201215/model/DescribeDeviceDataHistoryRequest.cpp
+  src/v20201215/model/EventHistoryItem.cpp
+  src/v20201215/model/CreateForwardRuleRequest.cpp
+  src/v20201215/model/SetForwardAuthResponse.cpp
+  src/v20201215/model/SetForwardAuthRequest.cpp
+  src/v20201215/model/DeviceDataHistoryItem.cpp
+  src/v20201215/model/DescribeBatchsRequest.cpp
+  src/v20201215/model/DescribeCategoryResponse.cpp
+  src/v20201215/model/DescribeModelDefinitionResponse.cpp
+  src/v20201215/model/CreateBatchRequest.cpp
+  src/v20201215/model/ImportModelDefinitionRequest.cpp
+  src/v20201215/model/DescribeDeviceActionHistoryResponse.cpp
+  src/v20201215/model/VideoBatch.cpp
+  src/v20201215/model/DescribeDeviceCommLogResponse.cpp
+  src/v20201215/model/DeleteDeviceRequest.cpp
+  src/v20201215/model/DeleteProductResponse.cpp
+  src/v20201215/model/DescribeProductsRequest.cpp
+  src/v20201215/model/DescribeDeviceEventHistoryResponse.cpp
+  src/v20201215/model/DescribeDeviceActionHistoryRequest.cpp
+  src/v20201215/model/ImportModelDefinitionResponse.cpp
+  src/v20201215/model/DescribeDevicesResponse.cpp
+  src/v20201215/model/ModifyProductResponse.cpp
+  src/v20201215/model/ProductTemplate.cpp
+  src/v20201215/model/DescribeBatchResponse.cpp
+  src/v20201215/model/ModifyProductRequest.cpp
+  src/v20201215/model/ModifyModelDefinitionRequest.cpp
+  src/v20201215/model/DescribeBatchsResponse.cpp
+  src/v20201215/model/DeleteForwardRuleRequest.cpp
+  src/v20201215/model/DescribeDeviceEventHistoryRequest.cpp
+  src/v20201215/model/DescribeDeviceRequest.cpp
+  src/v20201215/model/DescribeForwardRuleResponse.cpp
+  src/v20201215/model/DescribeBatchRequest.cpp
+  src/v20201215/model/ModifyForwardRuleRequest.cpp
+  src/v20201215/model/DescribeCategoryRequest.cpp
+  src/v20201215/model/DescribeDeviceCommLogRequest.cpp
+  src/v20201215/model/CreateProductResponse.cpp
+  src/v20201215/model/DescribeDeviceDataHistoryResponse.cpp
+  src/v20201215/model/DescribeDevicesRequest.cpp
+  src/v20201215/model/VideoProduct.cpp
+  src/v20201215/model/ActionHistory.cpp
+  src/v20201215/model/DescribeModelDefinitionRequest.cpp
+  src/v20201215/model/ModifyForwardRuleResponse.cpp
+  src/v20201215/model/CheckForwardAuthResponse.cpp
+  src/v20201215/model/DescribeProductResponse.cpp
+  src/v20201215/model/DescribeDeviceDataResponse.cpp
+  src/v20201215/model/ModifyDeviceResponse.cpp
+  src/v20201215/model/DescribeForwardRuleRequest.cpp
+  src/v20201215/model/DeleteForwardRuleResponse.cpp
+  src/v20201215/model/DescribeProductRequest.cpp
+  src/v20201215/model/DescribeProductsResponse.cpp
+  src/v20201215/model/CheckForwardAuthRequest.cpp
+  src/v20201215/model/CreateProductRequest.cpp
+  src/v20201215/model/DescribeDeviceDataRequest.cpp
+  src/v20201215/model/DeleteDeviceResponse.cpp
+  src/v20201215/model/DeviceInfo.cpp
+  src/v20201215/model/ModifyModelDefinitionResponse.cpp
+  src/v20201215/model/CreateForwardRuleResponse.cpp
+  src/v20201215/model/ModifyDeviceRequest.cpp
+  src/v20201215/model/DeviceCommLogItem.cpp
+  src/v20201215/model/DescribeDeviceResponse.cpp
+  src/v20201215/model/ProductModelDefinition.cpp
+  src/v20201215/model/CreateBatchResponse.cpp
   )
 
 set(iotvideo_include
@@ -349,9 +477,9 @@ target_link_libraries(iotvideo
   core)
 
 #install(FILES ${iotvideo_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/iotvideo/v20191126)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/iotvideo/v20201215)
 #install(FILES ${iotvideo_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/iotvideo/v20191126/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/iotvideo/v20201215/model)
 install(DIRECTORY ${iotvideo_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 
