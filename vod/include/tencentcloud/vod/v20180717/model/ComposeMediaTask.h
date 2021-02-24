@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/ComposeMediaTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/ComposeMediaTaskOutput.h>
+#include <tencentcloud/vod/v20180717/model/MediaMetaData.h>
 
 
 namespace TencentCloud
@@ -180,6 +181,28 @@ namespace TencentCloud
                      */
                     bool OutputHasBeenSet() const;
 
+                    /**
+                     * 获取原始视频的元信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetaData 原始视频的元信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaMetaData GetMetaData() const;
+
+                    /**
+                     * 设置原始视频的元信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetaData 原始视频的元信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetaData(const MediaMetaData& _metaData);
+
+                    /**
+                     * 判断参数 MetaData 是否已赋值
+                     * @return MetaData 是否已赋值
+                     */
+                    bool MetaDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -223,6 +246,13 @@ namespace TencentCloud
                      */
                     ComposeMediaTaskOutput m_output;
                     bool m_outputHasBeenSet;
+
+                    /**
+                     * 原始视频的元信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaMetaData m_metaData;
+                    bool m_metaDataHasBeenSet;
 
                 };
             }

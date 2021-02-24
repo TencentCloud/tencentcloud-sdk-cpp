@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool DiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取所属的独享集群ID。
+                     * @return CdcId 所属的独享集群ID。
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置所属的独享集群ID。
+                     * @param CdcId 所属的独享集群ID。
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * 所属的独享集群ID。
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

@@ -28,6 +28,7 @@ PullUploadTask::PullUploadTask() :
     m_messageHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_mediaBasicInfoHasBeenSet(false),
+    m_metaDataHasBeenSet(false),
     m_fileUrlHasBeenSet(false),
     m_procedureTaskIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
@@ -105,6 +106,23 @@ CoreInternalOutcome PullUploadTask::Deserialize(const Value &value)
         }
 
         m_mediaBasicInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetaData") && !value["MetaData"].IsNull())
+    {
+        if (!value["MetaData"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `PullUploadTask.MetaData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_metaDataHasBeenSet = true;
     }
 
     if (value.HasMember("FileUrl") && !value["FileUrl"].IsNull())
@@ -201,6 +219,15 @@ void PullUploadTask::ToJsonObject(Value &value, Document::AllocatorType& allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_mediaBasicInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_metaDataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_metaData.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_fileUrlHasBeenSet)
@@ -332,6 +359,22 @@ void PullUploadTask::SetMediaBasicInfo(const MediaBasicInfo& _mediaBasicInfo)
 bool PullUploadTask::MediaBasicInfoHasBeenSet() const
 {
     return m_mediaBasicInfoHasBeenSet;
+}
+
+MediaMetaData PullUploadTask::GetMetaData() const
+{
+    return m_metaData;
+}
+
+void PullUploadTask::SetMetaData(const MediaMetaData& _metaData)
+{
+    m_metaData = _metaData;
+    m_metaDataHasBeenSet = true;
+}
+
+bool PullUploadTask::MetaDataHasBeenSet() const
+{
+    return m_metaDataHasBeenSet;
 }
 
 string PullUploadTask::GetFileUrl() const

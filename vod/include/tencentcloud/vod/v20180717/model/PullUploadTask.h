@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/MediaBasicInfo.h>
+#include <tencentcloud/vod/v20180717/model/MediaMetaData.h>
 
 
 namespace TencentCloud
@@ -180,6 +181,24 @@ namespace TencentCloud
                     bool MediaBasicInfoHasBeenSet() const;
 
                     /**
+                     * 获取原始视频的元信息。
+                     * @return MetaData 原始视频的元信息。
+                     */
+                    MediaMetaData GetMetaData() const;
+
+                    /**
+                     * 设置原始视频的元信息。
+                     * @param MetaData 原始视频的元信息。
+                     */
+                    void SetMetaData(const MediaMetaData& _metaData);
+
+                    /**
+                     * 判断参数 MetaData 是否已赋值
+                     * @return MetaData 是否已赋值
+                     */
+                    bool MetaDataHasBeenSet() const;
+
+                    /**
                      * 获取转拉上传完成后生成的播放地址。
                      * @return FileUrl 转拉上传完成后生成的播放地址。
                      */
@@ -294,6 +313,12 @@ namespace TencentCloud
                      */
                     MediaBasicInfo m_mediaBasicInfo;
                     bool m_mediaBasicInfoHasBeenSet;
+
+                    /**
+                     * 原始视频的元信息。
+                     */
+                    MediaMetaData m_metaData;
+                    bool m_metaDataHasBeenSet;
 
                     /**
                      * 转拉上传完成后生成的播放地址。

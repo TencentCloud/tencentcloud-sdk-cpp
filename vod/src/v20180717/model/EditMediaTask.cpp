@@ -30,7 +30,8 @@ EditMediaTask::EditMediaTask() :
     m_outputHasBeenSet(false),
     m_procedureTaskIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_metaDataHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,23 @@ CoreInternalOutcome EditMediaTask::Deserialize(const Value &value)
         m_sessionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("MetaData") && !value["MetaData"].IsNull())
+    {
+        if (!value["MetaData"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaTask.MetaData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_metaDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +240,15 @@ void EditMediaTask::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaDataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_metaData.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -369,5 +396,21 @@ void EditMediaTask::SetSessionId(const string& _sessionId)
 bool EditMediaTask::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+MediaMetaData EditMediaTask::GetMetaData() const
+{
+    return m_metaData;
+}
+
+void EditMediaTask::SetMetaData(const MediaMetaData& _metaData)
+{
+    m_metaData = _metaData;
+    m_metaDataHasBeenSet = true;
+}
+
+bool EditMediaTask::MetaDataHasBeenSet() const
+{
+    return m_metaDataHasBeenSet;
 }
 

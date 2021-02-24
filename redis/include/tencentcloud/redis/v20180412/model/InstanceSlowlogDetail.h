@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool ExecuteTimeHasBeenSet() const;
 
+                    /**
+                     * 获取节点ID
+                     * @return Node 节点ID
+                     */
+                    std::string GetNode() const;
+
+                    /**
+                     * 设置节点ID
+                     * @param Node 节点ID
+                     */
+                    void SetNode(const std::string& _node);
+
+                    /**
+                     * 判断参数 Node 是否已赋值
+                     * @return Node 是否已赋值
+                     */
+                    bool NodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     std::string m_executeTime;
                     bool m_executeTimeHasBeenSet;
+
+                    /**
+                     * 节点ID
+                     */
+                    std::string m_node;
+                    bool m_nodeHasBeenSet;
 
                 };
             }

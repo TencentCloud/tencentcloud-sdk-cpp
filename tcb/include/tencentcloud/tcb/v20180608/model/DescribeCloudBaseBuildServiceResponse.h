@@ -119,6 +119,20 @@ namespace TencentCloud
                      */
                     bool DownloadHeadersHasBeenSet() const;
 
+                    /**
+                     * 获取下载链接是否过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutDate 下载链接是否过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetOutDate() const;
+
+                    /**
+                     * 判断参数 OutDate 是否已赋值
+                     * @return OutDate 是否已赋值
+                     */
+                    bool OutDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -158,6 +172,13 @@ namespace TencentCloud
                      */
                     std::vector<KVPair> m_downloadHeaders;
                     bool m_downloadHeadersHasBeenSet;
+
+                    /**
+                     * 下载链接是否过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_outDate;
+                    bool m_outDateHasBeenSet;
 
                 };
             }

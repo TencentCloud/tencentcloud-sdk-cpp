@@ -30,7 +30,8 @@ InstanceIntegerParam::InstanceIntegerParam() :
     m_tipsHasBeenSet(false),
     m_minHasBeenSet(false),
     m_maxHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_unitHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Unit") && !value["Unit"].IsNull())
+    {
+        if (!value["Unit"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceIntegerParam.Unit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unit = string(value["Unit"].GetString());
+        m_unitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void InstanceIntegerParam::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_unitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Unit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_unit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void InstanceIntegerParam::SetStatus(const int64_t& _status)
 bool InstanceIntegerParam::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string InstanceIntegerParam::GetUnit() const
+{
+    return m_unit;
+}
+
+void InstanceIntegerParam::SetUnit(const string& _unit)
+{
+    m_unit = _unit;
+    m_unitHasBeenSet = true;
+}
+
+bool InstanceIntegerParam::UnitHasBeenSet() const
+{
+    return m_unitHasBeenSet;
 }
 

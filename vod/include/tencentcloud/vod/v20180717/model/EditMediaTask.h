@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaTaskOutput.h>
+#include <tencentcloud/vod/v20180717/model/MediaMetaData.h>
 
 
 namespace TencentCloud
@@ -238,6 +239,24 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取原始视频的元信息。
+                     * @return MetaData 原始视频的元信息。
+                     */
+                    MediaMetaData GetMetaData() const;
+
+                    /**
+                     * 设置原始视频的元信息。
+                     * @param MetaData 原始视频的元信息。
+                     */
+                    void SetMetaData(const MediaMetaData& _metaData);
+
+                    /**
+                     * 判断参数 MetaData 是否已赋值
+                     * @return MetaData 是否已赋值
+                     */
+                    bool MetaDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -300,6 +319,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 原始视频的元信息。
+                     */
+                    MediaMetaData m_metaData;
+                    bool m_metaDataHasBeenSet;
 
                 };
             }

@@ -27,7 +27,8 @@ ComposeMediaTask::ComposeMediaTask() :
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_metaDataHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,23 @@ CoreInternalOutcome ComposeMediaTask::Deserialize(const Value &value)
         m_outputHasBeenSet = true;
     }
 
+    if (value.HasMember("MetaData") && !value["MetaData"].IsNull())
+    {
+        if (!value["MetaData"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ComposeMediaTask.MetaData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_metaDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +183,15 @@ void ComposeMediaTask::ToJsonObject(Value &value, Document::AllocatorType& alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_output.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_metaDataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_metaData.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -264,5 +291,21 @@ void ComposeMediaTask::SetOutput(const ComposeMediaTaskOutput& _output)
 bool ComposeMediaTask::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+MediaMetaData ComposeMediaTask::GetMetaData() const
+{
+    return m_metaData;
+}
+
+void ComposeMediaTask::SetMetaData(const MediaMetaData& _metaData)
+{
+    m_metaData = _metaData;
+    m_metaDataHasBeenSet = true;
+}
+
+bool ComposeMediaTask::MetaDataHasBeenSet() const
+{
+    return m_metaDataHasBeenSet;
 }
 

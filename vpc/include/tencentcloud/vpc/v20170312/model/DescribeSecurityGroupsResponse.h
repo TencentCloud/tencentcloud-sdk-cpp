@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组对象。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupSet 安全组对象。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityGroup> GetSecurityGroupSet() const;
 
@@ -71,6 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 安全组对象。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityGroup> m_securityGroupSet;
                     bool m_securityGroupSetHasBeenSet;

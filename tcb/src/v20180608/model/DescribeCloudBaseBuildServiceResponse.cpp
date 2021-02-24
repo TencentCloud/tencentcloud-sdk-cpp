@@ -30,7 +30,8 @@ DescribeCloudBaseBuildServiceResponse::DescribeCloudBaseBuildServiceResponse() :
     m_packageNameHasBeenSet(false),
     m_packageVersionHasBeenSet(false),
     m_downloadUrlHasBeenSet(false),
-    m_downloadHeadersHasBeenSet(false)
+    m_downloadHeadersHasBeenSet(false),
+    m_outDateHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome DescribeCloudBaseBuildServiceResponse::Deserialize(const str
         m_downloadHeadersHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OutDate") && !rsp["OutDate"].IsNull())
+    {
+        if (!rsp["OutDate"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `OutDate` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_outDate = rsp["OutDate"].GetBool();
+        m_outDateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +222,16 @@ vector<KVPair> DescribeCloudBaseBuildServiceResponse::GetDownloadHeaders() const
 bool DescribeCloudBaseBuildServiceResponse::DownloadHeadersHasBeenSet() const
 {
     return m_downloadHeadersHasBeenSet;
+}
+
+bool DescribeCloudBaseBuildServiceResponse::GetOutDate() const
+{
+    return m_outDate;
+}
+
+bool DescribeCloudBaseBuildServiceResponse::OutDateHasBeenSet() const
+{
+    return m_outDateHasBeenSet;
 }
 
 

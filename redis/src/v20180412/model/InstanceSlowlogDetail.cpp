@@ -26,7 +26,8 @@ InstanceSlowlogDetail::InstanceSlowlogDetail() :
     m_clientHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_commandLineHasBeenSet(false),
-    m_executeTimeHasBeenSet(false)
+    m_executeTimeHasBeenSet(false),
+    m_nodeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome InstanceSlowlogDetail::Deserialize(const Value &value)
         m_executeTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Node") && !value["Node"].IsNull())
+    {
+        if (!value["Node"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSlowlogDetail.Node` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_node = string(value["Node"].GetString());
+        m_nodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void InstanceSlowlogDetail::ToJsonObject(Value &value, Document::AllocatorType& 
         string key = "ExecuteTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_executeTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Node";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_node.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void InstanceSlowlogDetail::SetExecuteTime(const string& _executeTime)
 bool InstanceSlowlogDetail::ExecuteTimeHasBeenSet() const
 {
     return m_executeTimeHasBeenSet;
+}
+
+string InstanceSlowlogDetail::GetNode() const
+{
+    return m_node;
+}
+
+void InstanceSlowlogDetail::SetNode(const string& _node)
+{
+    m_node = _node;
+    m_nodeHasBeenSet = true;
+}
+
+bool InstanceSlowlogDetail::NodeHasBeenSet() const
+{
+    return m_nodeHasBeenSet;
 }
 

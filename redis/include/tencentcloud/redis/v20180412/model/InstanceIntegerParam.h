@@ -208,6 +208,28 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取参数单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Unit 参数单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUnit() const;
+
+                    /**
+                     * 设置参数单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Unit 参数单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUnit(const std::string& _unit);
+
+                    /**
+                     * 判断参数 Unit 是否已赋值
+                     * @return Unit 是否已赋值
+                     */
+                    bool UnitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +285,13 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 参数单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_unit;
+                    bool m_unitHasBeenSet;
 
                 };
             }

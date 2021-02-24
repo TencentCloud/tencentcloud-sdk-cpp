@@ -29,7 +29,8 @@ DataDisk::DataDisk() :
     m_snapshotIdHasBeenSet(false),
     m_encryptHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_throughputPerformanceHasBeenSet(false)
+    m_throughputPerformanceHasBeenSet(false),
+    m_cdcIdHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome DataDisk::Deserialize(const Value &value)
         m_throughputPerformanceHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DataDisk.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void DataDisk::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "ThroughputPerformance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_throughputPerformance, allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void DataDisk::SetThroughputPerformance(const int64_t& _throughputPerformance)
 bool DataDisk::ThroughputPerformanceHasBeenSet() const
 {
     return m_throughputPerformanceHasBeenSet;
+}
+
+string DataDisk::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void DataDisk::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool DataDisk::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 

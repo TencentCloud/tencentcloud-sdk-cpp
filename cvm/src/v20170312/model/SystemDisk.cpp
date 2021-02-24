@@ -24,7 +24,8 @@ using namespace std;
 SystemDisk::SystemDisk() :
     m_diskTypeHasBeenSet(false),
     m_diskIdHasBeenSet(false),
-    m_diskSizeHasBeenSet(false)
+    m_diskSizeHasBeenSet(false),
+    m_cdcIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome SystemDisk::Deserialize(const Value &value)
         m_diskSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SystemDisk.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void SystemDisk::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void SystemDisk::SetDiskSize(const int64_t& _diskSize)
 bool SystemDisk::DiskSizeHasBeenSet() const
 {
     return m_diskSizeHasBeenSet;
+}
+
+string SystemDisk::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void SystemDisk::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool SystemDisk::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 
