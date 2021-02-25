@@ -28,7 +28,8 @@ CameraZones::CameraZones() :
     m_cameraIpHasBeenSet(false),
     m_cameraStateHasBeenSet(false),
     m_zonesHasBeenSet(false),
-    m_pixelHasBeenSet(false)
+    m_pixelHasBeenSet(false),
+    m_rTSPHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome CameraZones::Deserialize(const Value &value)
         m_pixelHasBeenSet = true;
     }
 
+    if (value.HasMember("RTSP") && !value["RTSP"].IsNull())
+    {
+        if (!value["RTSP"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CameraZones.RTSP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rTSP = string(value["RTSP"].GetString());
+        m_rTSPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -185,6 +196,14 @@ void CameraZones::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "Pixel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_pixel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rTSPHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RTSP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_rTSP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -300,5 +319,21 @@ void CameraZones::SetPixel(const string& _pixel)
 bool CameraZones::PixelHasBeenSet() const
 {
     return m_pixelHasBeenSet;
+}
+
+string CameraZones::GetRTSP() const
+{
+    return m_rTSP;
+}
+
+void CameraZones::SetRTSP(const string& _rTSP)
+{
+    m_rTSP = _rTSP;
+    m_rTSPHasBeenSet = true;
+}
+
+bool CameraZones::RTSPHasBeenSet() const
+{
+    return m_rTSPHasBeenSet;
 }
 

@@ -113,6 +113,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/DescribeRunLogResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeStorageServiceRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeStorageServiceResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/DescribeStreamRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/DescribeStreamResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeTraceIdsRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeTraceIdsResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DescribeTraceStatusRequest.h>
@@ -300,6 +302,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeStorageServiceResponse> DescribeStorageServiceOutcome;
                 typedef std::future<DescribeStorageServiceOutcome> DescribeStorageServiceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeStorageServiceRequest&, DescribeStorageServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStorageServiceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeStreamResponse> DescribeStreamOutcome;
+                typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeStreamRequest&, DescribeStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTraceIdsResponse> DescribeTraceIdsOutcome;
                 typedef std::future<DescribeTraceIdsOutcome> DescribeTraceIdsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeTraceIdsRequest&, DescribeTraceIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceIdsAsyncHandler;
@@ -771,6 +776,15 @@ namespace TencentCloud
                 DescribeStorageServiceOutcome DescribeStorageService(const Model::DescribeStorageServiceRequest &request);
                 void DescribeStorageServiceAsync(const Model::DescribeStorageServiceRequest& request, const DescribeStorageServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStorageServiceOutcomeCallable DescribeStorageServiceCallable(const Model::DescribeStorageServiceRequest& request);
+
+                /**
+                 *请求设备直播流地址
+                 * @param req DescribeStreamRequest
+                 * @return DescribeStreamOutcome
+                 */
+                DescribeStreamOutcome DescribeStream(const Model::DescribeStreamRequest &request);
+                void DescribeStreamAsync(const Model::DescribeStreamRequest& request, const DescribeStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamOutcomeCallable DescribeStreamCallable(const Model::DescribeStreamRequest& request);
 
                 /**
                  *本接口（DescribeTraceIds）用于查询设备日志跟踪白名单。

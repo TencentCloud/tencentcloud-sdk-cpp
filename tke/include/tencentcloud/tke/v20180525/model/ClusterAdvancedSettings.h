@@ -323,6 +323,42 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                      */
                     bool RuntimeVersionHasBeenSet() const;
 
+                    /**
+                     * 获取是否开节点podCIDR大小的自定义模式
+                     * @return EnableCustomizedPodCIDR 是否开节点podCIDR大小的自定义模式
+                     */
+                    bool GetEnableCustomizedPodCIDR() const;
+
+                    /**
+                     * 设置是否开节点podCIDR大小的自定义模式
+                     * @param EnableCustomizedPodCIDR 是否开节点podCIDR大小的自定义模式
+                     */
+                    void SetEnableCustomizedPodCIDR(const bool& _enableCustomizedPodCIDR);
+
+                    /**
+                     * 判断参数 EnableCustomizedPodCIDR 是否已赋值
+                     * @return EnableCustomizedPodCIDR 是否已赋值
+                     */
+                    bool EnableCustomizedPodCIDRHasBeenSet() const;
+
+                    /**
+                     * 获取自定义模式下的基础pod数量
+                     * @return BasePodNumber 自定义模式下的基础pod数量
+                     */
+                    int64_t GetBasePodNumber() const;
+
+                    /**
+                     * 设置自定义模式下的基础pod数量
+                     * @param BasePodNumber 自定义模式下的基础pod数量
+                     */
+                    void SetBasePodNumber(const int64_t& _basePodNumber);
+
+                    /**
+                     * 判断参数 BasePodNumber 是否已赋值
+                     * @return BasePodNumber 是否已赋值
+                     */
+                    bool BasePodNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -414,6 +450,18 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                      */
                     std::string m_runtimeVersion;
                     bool m_runtimeVersionHasBeenSet;
+
+                    /**
+                     * 是否开节点podCIDR大小的自定义模式
+                     */
+                    bool m_enableCustomizedPodCIDR;
+                    bool m_enableCustomizedPodCIDRHasBeenSet;
+
+                    /**
+                     * 自定义模式下的基础pod数量
+                     */
+                    int64_t m_basePodNumber;
+                    bool m_basePodNumberHasBeenSet;
 
                 };
             }

@@ -37,6 +37,8 @@
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceTokenRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceTokenResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateInternalEndpointDnsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateInternalEndpointDnsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateNamespaceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateNamespaceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateNamespacePersonalRequest.h>
@@ -63,6 +65,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceTokenRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceTokenResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteInternalEndpointDnsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteInternalEndpointDnsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespaceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespaceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalRequest.h>
@@ -97,6 +101,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstancesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstancesResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeInternalEndpointDnsStatusRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeInternalEndpointDnsStatusResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInternalEndpointsRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInternalEndpointsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeNamespacePersonalRequest.h>
@@ -184,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateInstanceTokenResponse> CreateInstanceTokenOutcome;
                 typedef std::future<CreateInstanceTokenOutcome> CreateInstanceTokenOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateInstanceTokenRequest&, CreateInstanceTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceTokenAsyncHandler;
+                typedef Outcome<Error, Model::CreateInternalEndpointDnsResponse> CreateInternalEndpointDnsOutcome;
+                typedef std::future<CreateInternalEndpointDnsOutcome> CreateInternalEndpointDnsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateInternalEndpointDnsRequest&, CreateInternalEndpointDnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInternalEndpointDnsAsyncHandler;
                 typedef Outcome<Error, Model::CreateNamespaceResponse> CreateNamespaceOutcome;
                 typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateNamespaceRequest&, CreateNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespaceAsyncHandler;
@@ -223,6 +232,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteInstanceTokenResponse> DeleteInstanceTokenOutcome;
                 typedef std::future<DeleteInstanceTokenOutcome> DeleteInstanceTokenOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteInstanceTokenRequest&, DeleteInstanceTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceTokenAsyncHandler;
+                typedef Outcome<Error, Model::DeleteInternalEndpointDnsResponse> DeleteInternalEndpointDnsOutcome;
+                typedef std::future<DeleteInternalEndpointDnsOutcome> DeleteInternalEndpointDnsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteInternalEndpointDnsRequest&, DeleteInternalEndpointDnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInternalEndpointDnsAsyncHandler;
                 typedef Outcome<Error, Model::DeleteNamespaceResponse> DeleteNamespaceOutcome;
                 typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteNamespaceRequest&, DeleteNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAsyncHandler;
@@ -274,6 +286,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInternalEndpointDnsStatusResponse> DescribeInternalEndpointDnsStatusOutcome;
+                typedef std::future<DescribeInternalEndpointDnsStatusOutcome> DescribeInternalEndpointDnsStatusOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeInternalEndpointDnsStatusRequest&, DescribeInternalEndpointDnsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInternalEndpointDnsStatusAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInternalEndpointsResponse> DescribeInternalEndpointsOutcome;
                 typedef std::future<DescribeInternalEndpointsOutcome> DescribeInternalEndpointsOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeInternalEndpointsRequest&, DescribeInternalEndpointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInternalEndpointsAsyncHandler;
@@ -419,6 +434,15 @@ namespace TencentCloud
                 CreateInstanceTokenOutcomeCallable CreateInstanceTokenCallable(const Model::CreateInstanceTokenRequest& request);
 
                 /**
+                 *创建tcr内网私有域名解析
+                 * @param req CreateInternalEndpointDnsRequest
+                 * @return CreateInternalEndpointDnsOutcome
+                 */
+                CreateInternalEndpointDnsOutcome CreateInternalEndpointDns(const Model::CreateInternalEndpointDnsRequest &request);
+                void CreateInternalEndpointDnsAsync(const Model::CreateInternalEndpointDnsRequest& request, const CreateInternalEndpointDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInternalEndpointDnsOutcomeCallable CreateInternalEndpointDnsCallable(const Model::CreateInternalEndpointDnsRequest& request);
+
+                /**
                  *用于在企业版中创建命名空间
                  * @param req CreateNamespaceRequest
                  * @return CreateNamespaceOutcome
@@ -534,6 +558,15 @@ namespace TencentCloud
                 DeleteInstanceTokenOutcome DeleteInstanceToken(const Model::DeleteInstanceTokenRequest &request);
                 void DeleteInstanceTokenAsync(const Model::DeleteInstanceTokenRequest& request, const DeleteInstanceTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstanceTokenOutcomeCallable DeleteInstanceTokenCallable(const Model::DeleteInstanceTokenRequest& request);
+
+                /**
+                 *删除tcr内网私有域名解析
+                 * @param req DeleteInternalEndpointDnsRequest
+                 * @return DeleteInternalEndpointDnsOutcome
+                 */
+                DeleteInternalEndpointDnsOutcome DeleteInternalEndpointDns(const Model::DeleteInternalEndpointDnsRequest &request);
+                void DeleteInternalEndpointDnsAsync(const Model::DeleteInternalEndpointDnsRequest& request, const DeleteInternalEndpointDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInternalEndpointDnsOutcomeCallable DeleteInternalEndpointDnsCallable(const Model::DeleteInternalEndpointDnsRequest& request);
 
                 /**
                  *删除命名空间
@@ -687,6 +720,15 @@ namespace TencentCloud
                 DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
                 void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *批量查询vpc是否已经添加私有域名解析
+                 * @param req DescribeInternalEndpointDnsStatusRequest
+                 * @return DescribeInternalEndpointDnsStatusOutcome
+                 */
+                DescribeInternalEndpointDnsStatusOutcome DescribeInternalEndpointDnsStatus(const Model::DescribeInternalEndpointDnsStatusRequest &request);
+                void DescribeInternalEndpointDnsStatusAsync(const Model::DescribeInternalEndpointDnsStatusRequest& request, const DescribeInternalEndpointDnsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInternalEndpointDnsStatusOutcomeCallable DescribeInternalEndpointDnsStatusCallable(const Model::DescribeInternalEndpointDnsStatusRequest& request);
 
                 /**
                  *查询实例内网访问VPC链接

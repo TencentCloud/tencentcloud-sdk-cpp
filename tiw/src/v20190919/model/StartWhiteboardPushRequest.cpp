@@ -33,7 +33,8 @@ StartWhiteboardPushRequest::StartWhiteboardPushRequest() :
     m_autoManageBackupHasBeenSet(false),
     m_backupHasBeenSet(false),
     m_autoRecordHasBeenSet(false),
-    m_extraDataHasBeenSet(false)
+    m_extraDataHasBeenSet(false),
+    m_privateMapKeyHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,14 @@ string StartWhiteboardPushRequest::ToJsonString() const
         string key = "ExtraData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_extraData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateMapKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PrivateMapKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_privateMapKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -292,6 +301,22 @@ void StartWhiteboardPushRequest::SetExtraData(const string& _extraData)
 bool StartWhiteboardPushRequest::ExtraDataHasBeenSet() const
 {
     return m_extraDataHasBeenSet;
+}
+
+string StartWhiteboardPushRequest::GetPrivateMapKey() const
+{
+    return m_privateMapKey;
+}
+
+void StartWhiteboardPushRequest::SetPrivateMapKey(const string& _privateMapKey)
+{
+    m_privateMapKey = _privateMapKey;
+    m_privateMapKeyHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::PrivateMapKeyHasBeenSet() const
+{
+    return m_privateMapKeyHasBeenSet;
 }
 
 

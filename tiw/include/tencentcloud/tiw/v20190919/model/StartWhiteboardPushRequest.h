@@ -256,6 +256,24 @@ namespace TencentCloud
                      */
                     bool ExtraDataHasBeenSet() const;
 
+                    /**
+                     * 获取TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
+                     * @return PrivateMapKey TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
+                     */
+                    std::string GetPrivateMapKey() const;
+
+                    /**
+                     * 设置TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
+                     * @param PrivateMapKey TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
+                     */
+                    void SetPrivateMapKey(const std::string& _privateMapKey);
+
+                    /**
+                     * 判断参数 PrivateMapKey 是否已赋值
+                     * @return PrivateMapKey 是否已赋值
+                     */
+                    bool PrivateMapKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -325,6 +343,12 @@ namespace TencentCloud
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
+
+                    /**
+                     * TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
+                     */
+                    std::string m_privateMapKey;
+                    bool m_privateMapKeyHasBeenSet;
 
                 };
             }

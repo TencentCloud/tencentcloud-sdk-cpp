@@ -341,6 +341,49 @@ TcrClient::CreateInstanceTokenOutcomeCallable TcrClient::CreateInstanceTokenCall
     return task->get_future();
 }
 
+TcrClient::CreateInternalEndpointDnsOutcome TcrClient::CreateInternalEndpointDns(const CreateInternalEndpointDnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInternalEndpointDns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInternalEndpointDnsResponse rsp = CreateInternalEndpointDnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInternalEndpointDnsOutcome(rsp);
+        else
+            return CreateInternalEndpointDnsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInternalEndpointDnsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateInternalEndpointDnsAsync(const CreateInternalEndpointDnsRequest& request, const CreateInternalEndpointDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInternalEndpointDns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateInternalEndpointDnsOutcomeCallable TcrClient::CreateInternalEndpointDnsCallable(const CreateInternalEndpointDnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInternalEndpointDnsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInternalEndpointDns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::CreateNamespaceOutcome TcrClient::CreateNamespace(const CreateNamespaceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNamespace");
@@ -893,6 +936,49 @@ TcrClient::DeleteInstanceTokenOutcomeCallable TcrClient::DeleteInstanceTokenCall
         [this, request]()
         {
             return this->DeleteInstanceToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DeleteInternalEndpointDnsOutcome TcrClient::DeleteInternalEndpointDns(const DeleteInternalEndpointDnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInternalEndpointDns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInternalEndpointDnsResponse rsp = DeleteInternalEndpointDnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInternalEndpointDnsOutcome(rsp);
+        else
+            return DeleteInternalEndpointDnsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInternalEndpointDnsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteInternalEndpointDnsAsync(const DeleteInternalEndpointDnsRequest& request, const DeleteInternalEndpointDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInternalEndpointDns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteInternalEndpointDnsOutcomeCallable TcrClient::DeleteInternalEndpointDnsCallable(const DeleteInternalEndpointDnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInternalEndpointDnsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInternalEndpointDns(request);
         }
     );
 
@@ -1624,6 +1710,49 @@ TcrClient::DescribeInstancesOutcomeCallable TcrClient::DescribeInstancesCallable
         [this, request]()
         {
             return this->DescribeInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeInternalEndpointDnsStatusOutcome TcrClient::DescribeInternalEndpointDnsStatus(const DescribeInternalEndpointDnsStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInternalEndpointDnsStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInternalEndpointDnsStatusResponse rsp = DescribeInternalEndpointDnsStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInternalEndpointDnsStatusOutcome(rsp);
+        else
+            return DescribeInternalEndpointDnsStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInternalEndpointDnsStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeInternalEndpointDnsStatusAsync(const DescribeInternalEndpointDnsStatusRequest& request, const DescribeInternalEndpointDnsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInternalEndpointDnsStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeInternalEndpointDnsStatusOutcomeCallable TcrClient::DescribeInternalEndpointDnsStatusCallable(const DescribeInternalEndpointDnsStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInternalEndpointDnsStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInternalEndpointDnsStatus(request);
         }
     );
 

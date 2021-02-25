@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ump/v20200918/model/MultiBizWarning.h>
 
 
 namespace TencentCloud
@@ -180,6 +181,24 @@ namespace TencentCloud
                      */
                     bool ImageHasBeenSet() const;
 
+                    /**
+                     * 获取告警列表
+                     * @return Warnings 告警列表
+                     */
+                    std::vector<MultiBizWarning> GetWarnings() const;
+
+                    /**
+                     * 设置告警列表
+                     * @param Warnings 告警列表
+                     */
+                    void SetWarnings(const std::vector<MultiBizWarning>& _warnings);
+
+                    /**
+                     * 判断参数 Warnings 是否已赋值
+                     * @return Warnings 是否已赋值
+                     */
+                    bool WarningsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -226,6 +245,12 @@ namespace TencentCloud
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
+
+                    /**
+                     * 告警列表
+                     */
+                    std::vector<MultiBizWarning> m_warnings;
+                    bool m_warningsHasBeenSet;
 
                 };
             }

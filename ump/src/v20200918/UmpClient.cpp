@@ -83,6 +83,49 @@ UmpClient::CreateCameraAlertsOutcomeCallable UmpClient::CreateCameraAlertsCallab
     return task->get_future();
 }
 
+UmpClient::CreateCameraStateOutcome UmpClient::CreateCameraState(const CreateCameraStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCameraState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCameraStateResponse rsp = CreateCameraStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCameraStateOutcome(rsp);
+        else
+            return CreateCameraStateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCameraStateOutcome(outcome.GetError());
+    }
+}
+
+void UmpClient::CreateCameraStateAsync(const CreateCameraStateRequest& request, const CreateCameraStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCameraState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+UmpClient::CreateCameraStateOutcomeCallable UmpClient::CreateCameraStateCallable(const CreateCameraStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCameraStateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCameraState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 UmpClient::CreateCaptureOutcome UmpClient::CreateCapture(const CreateCaptureRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCapture");
@@ -592,6 +635,92 @@ UmpClient::DescribeZonesOutcomeCallable UmpClient::DescribeZonesCallable(const D
         [this, request]()
         {
             return this->DescribeZones(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+UmpClient::ModifyMultiBizConfigOutcome UmpClient::ModifyMultiBizConfig(const ModifyMultiBizConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMultiBizConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMultiBizConfigResponse rsp = ModifyMultiBizConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMultiBizConfigOutcome(rsp);
+        else
+            return ModifyMultiBizConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMultiBizConfigOutcome(outcome.GetError());
+    }
+}
+
+void UmpClient::ModifyMultiBizConfigAsync(const ModifyMultiBizConfigRequest& request, const ModifyMultiBizConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMultiBizConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+UmpClient::ModifyMultiBizConfigOutcomeCallable UmpClient::ModifyMultiBizConfigCallable(const ModifyMultiBizConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMultiBizConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMultiBizConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+UmpClient::ReportServiceRegisterOutcome UmpClient::ReportServiceRegister(const ReportServiceRegisterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportServiceRegister");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportServiceRegisterResponse rsp = ReportServiceRegisterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportServiceRegisterOutcome(rsp);
+        else
+            return ReportServiceRegisterOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportServiceRegisterOutcome(outcome.GetError());
+    }
+}
+
+void UmpClient::ReportServiceRegisterAsync(const ReportServiceRegisterRequest& request, const ReportServiceRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportServiceRegister(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+UmpClient::ReportServiceRegisterOutcomeCallable UmpClient::ReportServiceRegisterCallable(const ReportServiceRegisterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportServiceRegisterOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportServiceRegister(request);
         }
     );
 

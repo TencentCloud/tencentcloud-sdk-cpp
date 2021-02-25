@@ -95,6 +95,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExportMachinesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExportMachinesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeGeneralStatRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeGeneralStatResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeHistoryAccountsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeHistoryAccountsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImpactedHostsRequest.h>
@@ -359,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeExportMachinesResponse> DescribeExportMachinesOutcome;
                 typedef std::future<DescribeExportMachinesOutcome> DescribeExportMachinesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeExportMachinesRequest&, DescribeExportMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportMachinesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeGeneralStatResponse> DescribeGeneralStatOutcome;
+                typedef std::future<DescribeGeneralStatOutcome> DescribeGeneralStatOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeGeneralStatRequest&, DescribeGeneralStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralStatAsyncHandler;
                 typedef Outcome<Error, Model::DescribeHistoryAccountsResponse> DescribeHistoryAccountsOutcome;
                 typedef std::future<DescribeHistoryAccountsOutcome> DescribeHistoryAccountsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeHistoryAccountsRequest&, DescribeHistoryAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryAccountsAsyncHandler;
@@ -898,6 +903,15 @@ namespace TencentCloud
                 DescribeExportMachinesOutcome DescribeExportMachines(const Model::DescribeExportMachinesRequest &request);
                 void DescribeExportMachinesAsync(const Model::DescribeExportMachinesRequest& request, const DescribeExportMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExportMachinesOutcomeCallable DescribeExportMachinesCallable(const Model::DescribeExportMachinesRequest& request);
+
+                /**
+                 *获取主机安全相关统计
+                 * @param req DescribeGeneralStatRequest
+                 * @return DescribeGeneralStatOutcome
+                 */
+                DescribeGeneralStatOutcome DescribeGeneralStat(const Model::DescribeGeneralStatRequest &request);
+                void DescribeGeneralStatAsync(const Model::DescribeGeneralStatRequest& request, const DescribeGeneralStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGeneralStatOutcomeCallable DescribeGeneralStatCallable(const Model::DescribeGeneralStatRequest& request);
 
                 /**
                  *本接口 (DescribeHistoryAccounts) 用于获取帐号变更历史列表数据。

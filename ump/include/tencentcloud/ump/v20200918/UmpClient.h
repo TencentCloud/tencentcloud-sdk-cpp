@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ump/v20200918/model/CreateCameraAlertsRequest.h>
 #include <tencentcloud/ump/v20200918/model/CreateCameraAlertsResponse.h>
+#include <tencentcloud/ump/v20200918/model/CreateCameraStateRequest.h>
+#include <tencentcloud/ump/v20200918/model/CreateCameraStateResponse.h>
 #include <tencentcloud/ump/v20200918/model/CreateCaptureRequest.h>
 #include <tencentcloud/ump/v20200918/model/CreateCaptureResponse.h>
 #include <tencentcloud/ump/v20200918/model/CreateMultiBizAlertRequest.h>
@@ -49,6 +51,10 @@
 #include <tencentcloud/ump/v20200918/model/DescribeTasksResponse.h>
 #include <tencentcloud/ump/v20200918/model/DescribeZonesRequest.h>
 #include <tencentcloud/ump/v20200918/model/DescribeZonesResponse.h>
+#include <tencentcloud/ump/v20200918/model/ModifyMultiBizConfigRequest.h>
+#include <tencentcloud/ump/v20200918/model/ModifyMultiBizConfigResponse.h>
+#include <tencentcloud/ump/v20200918/model/ReportServiceRegisterRequest.h>
+#include <tencentcloud/ump/v20200918/model/ReportServiceRegisterResponse.h>
 #include <tencentcloud/ump/v20200918/model/SearchImageRequest.h>
 #include <tencentcloud/ump/v20200918/model/SearchImageResponse.h>
 
@@ -68,6 +74,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateCameraAlertsResponse> CreateCameraAlertsOutcome;
                 typedef std::future<CreateCameraAlertsOutcome> CreateCameraAlertsOutcomeCallable;
                 typedef std::function<void(const UmpClient*, const Model::CreateCameraAlertsRequest&, CreateCameraAlertsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCameraAlertsAsyncHandler;
+                typedef Outcome<Error, Model::CreateCameraStateResponse> CreateCameraStateOutcome;
+                typedef std::future<CreateCameraStateOutcome> CreateCameraStateOutcomeCallable;
+                typedef std::function<void(const UmpClient*, const Model::CreateCameraStateRequest&, CreateCameraStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCameraStateAsyncHandler;
                 typedef Outcome<Error, Model::CreateCaptureResponse> CreateCaptureOutcome;
                 typedef std::future<CreateCaptureOutcome> CreateCaptureOutcomeCallable;
                 typedef std::function<void(const UmpClient*, const Model::CreateCaptureRequest&, CreateCaptureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCaptureAsyncHandler;
@@ -104,6 +113,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
                 typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
                 typedef std::function<void(const UmpClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
+                typedef Outcome<Error, Model::ModifyMultiBizConfigResponse> ModifyMultiBizConfigOutcome;
+                typedef std::future<ModifyMultiBizConfigOutcome> ModifyMultiBizConfigOutcomeCallable;
+                typedef std::function<void(const UmpClient*, const Model::ModifyMultiBizConfigRequest&, ModifyMultiBizConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMultiBizConfigAsyncHandler;
+                typedef Outcome<Error, Model::ReportServiceRegisterResponse> ReportServiceRegisterOutcome;
+                typedef std::future<ReportServiceRegisterOutcome> ReportServiceRegisterOutcomeCallable;
+                typedef std::function<void(const UmpClient*, const Model::ReportServiceRegisterRequest&, ReportServiceRegisterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportServiceRegisterAsyncHandler;
                 typedef Outcome<Error, Model::SearchImageResponse> SearchImageOutcome;
                 typedef std::future<SearchImageOutcome> SearchImageOutcomeCallable;
                 typedef std::function<void(const UmpClient*, const Model::SearchImageRequest&, SearchImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchImageAsyncHandler;
@@ -120,6 +135,15 @@ namespace TencentCloud
                 CreateCameraAlertsOutcome CreateCameraAlerts(const Model::CreateCameraAlertsRequest &request);
                 void CreateCameraAlertsAsync(const Model::CreateCameraAlertsRequest& request, const CreateCameraAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCameraAlertsOutcomeCallable CreateCameraAlertsCallable(const Model::CreateCameraAlertsRequest& request);
+
+                /**
+                 *上报当前场内所有相机的当前状态
+                 * @param req CreateCameraStateRequest
+                 * @return CreateCameraStateOutcome
+                 */
+                CreateCameraStateOutcome CreateCameraState(const Model::CreateCameraStateRequest &request);
+                void CreateCameraStateAsync(const Model::CreateCameraStateRequest& request, const CreateCameraStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCameraStateOutcomeCallable CreateCameraStateCallable(const Model::CreateCameraStateRequest& request);
 
                 /**
                  *场内抓拍上报接口
@@ -230,6 +254,24 @@ mac为空返回对应GroupCode和MallId全量配置
                 DescribeZonesOutcome DescribeZones(const Model::DescribeZonesRequest &request);
                 void DescribeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
+
+                /**
+                 *集团广场的多经点位配置更新
+                 * @param req ModifyMultiBizConfigRequest
+                 * @return ModifyMultiBizConfigOutcome
+                 */
+                ModifyMultiBizConfigOutcome ModifyMultiBizConfig(const Model::ModifyMultiBizConfigRequest &request);
+                void ModifyMultiBizConfigAsync(const Model::ModifyMultiBizConfigRequest& request, const ModifyMultiBizConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMultiBizConfigOutcomeCallable ModifyMultiBizConfigCallable(const Model::ModifyMultiBizConfigRequest& request);
+
+                /**
+                 *上报服务注册自身的服务地址作为回调地址, 用于信息回传。
+                 * @param req ReportServiceRegisterRequest
+                 * @return ReportServiceRegisterOutcome
+                 */
+                ReportServiceRegisterOutcome ReportServiceRegister(const Model::ReportServiceRegisterRequest &request);
+                void ReportServiceRegisterAsync(const Model::ReportServiceRegisterRequest& request, const ReportServiceRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportServiceRegisterOutcomeCallable ReportServiceRegisterCallable(const Model::ReportServiceRegisterRequest& request);
 
                 /**
                  *以图搜图

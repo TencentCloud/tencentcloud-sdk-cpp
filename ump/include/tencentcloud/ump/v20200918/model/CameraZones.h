@@ -129,21 +129,49 @@ namespace TencentCloud
 
                     /**
                      * 获取摄像头状态:
-0: 异常
-1: 正常
+0: 异常 (不再使用)
+1: 正常 (不再使用)
+10: 初始化
+11: 未知状态 (因服务内部错误产生)
+12: 网络异常
+13: 未授权
+14: 相机App异常
+15: 相机取流异常
+16: 正常
                      * @return CameraState 摄像头状态:
-0: 异常
-1: 正常
+0: 异常 (不再使用)
+1: 正常 (不再使用)
+10: 初始化
+11: 未知状态 (因服务内部错误产生)
+12: 网络异常
+13: 未授权
+14: 相机App异常
+15: 相机取流异常
+16: 正常
                      */
                     int64_t GetCameraState() const;
 
                     /**
                      * 设置摄像头状态:
-0: 异常
-1: 正常
+0: 异常 (不再使用)
+1: 正常 (不再使用)
+10: 初始化
+11: 未知状态 (因服务内部错误产生)
+12: 网络异常
+13: 未授权
+14: 相机App异常
+15: 相机取流异常
+16: 正常
                      * @param CameraState 摄像头状态:
-0: 异常
-1: 正常
+0: 异常 (不再使用)
+1: 正常 (不再使用)
+10: 初始化
+11: 未知状态 (因服务内部错误产生)
+12: 网络异常
+13: 未授权
+14: 相机App异常
+15: 相机取流异常
+16: 正常
                      */
                     void SetCameraState(const int64_t& _cameraState);
 
@@ -201,6 +229,28 @@ namespace TencentCloud
                      */
                     bool PixelHasBeenSet() const;
 
+                    /**
+                     * 获取相机Rtsp地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RTSP 相机Rtsp地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRTSP() const;
+
+                    /**
+                     * 设置相机Rtsp地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RTSP 相机Rtsp地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRTSP(const std::string& _rTSP);
+
+                    /**
+                     * 判断参数 RTSP 是否已赋值
+                     * @return RTSP 是否已赋值
+                     */
+                    bool RTSPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -231,8 +281,15 @@ namespace TencentCloud
 
                     /**
                      * 摄像头状态:
-0: 异常
-1: 正常
+0: 异常 (不再使用)
+1: 正常 (不再使用)
+10: 初始化
+11: 未知状态 (因服务内部错误产生)
+12: 网络异常
+13: 未授权
+14: 相机App异常
+15: 相机取流异常
+16: 正常
                      */
                     int64_t m_cameraState;
                     bool m_cameraStateHasBeenSet;
@@ -251,6 +308,13 @@ namespace TencentCloud
                      */
                     std::string m_pixel;
                     bool m_pixelHasBeenSet;
+
+                    /**
+                     * 相机Rtsp地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rTSP;
+                    bool m_rTSPHasBeenSet;
 
                 };
             }

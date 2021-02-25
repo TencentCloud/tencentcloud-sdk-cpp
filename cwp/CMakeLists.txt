@@ -59,7 +59,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribePrivilegeRulesRequest.h
   include/tencentcloud/cwp/v20180228/model/BruteAttack.h
   include/tencentcloud/cwp/v20180228/model/DescribeOpenPortsRequest.h
-  include/tencentcloud/cwp/v20180228/model/DescribeImpactedHostsRequest.h
+  include/tencentcloud/cwp/v20180228/model/DeleteBashRulesResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAgentVulsRequest.h
   include/tencentcloud/cwp/v20180228/model/NonLocalLoginPlace.h
@@ -144,6 +144,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/CreateOpenPortTaskResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeMachineListRequest.h
   include/tencentcloud/cwp/v20180228/model/EditBashRuleRequest.h
+  include/tencentcloud/cwp/v20180228/model/SwitchBashRulesRequest.h
   include/tencentcloud/cwp/v20180228/model/DeletePrivilegeEventsResponse.h
   include/tencentcloud/cwp/v20180228/model/InquiryPriceOpenProVersionPrepaidResponse.h
   include/tencentcloud/cwp/v20180228/model/PrivilegeEscalationProcess.h
@@ -197,6 +198,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeProcessesRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteUsualLoginPlacesRequest.h
   include/tencentcloud/cwp/v20180228/model/WeeklyReport.h
+  include/tencentcloud/cwp/v20180228/model/DescribeGeneralStatRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeOpenPortTaskStatusRequest.h
   include/tencentcloud/cwp/v20180228/model/Filter.h
   include/tencentcloud/cwp/v20180228/model/DeleteLoginWhiteListResponse.h
@@ -241,14 +243,14 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/Component.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAgentVulsResponse.h
-  include/tencentcloud/cwp/v20180228/model/SwitchBashRulesRequest.h
+  include/tencentcloud/cwp/v20180228/model/DescribeGeneralStatResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeProcessStatisticsRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteMachineTagResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeHistoryAccountsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeSecurityEventsCntResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeMachineInfoResponse.h
   include/tencentcloud/cwp/v20180228/model/OpenProVersionRequest.h
-  include/tencentcloud/cwp/v20180228/model/DeleteBashRulesResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeImpactedHostsRequest.h
   include/tencentcloud/cwp/v20180228/model/IgnoreImpactedHostsResponse.h
   include/tencentcloud/cwp/v20180228/model/DeleteBashEventsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeComponentsResponse.h
@@ -323,7 +325,7 @@ set(cwp_src
   src/v20180228/model/DescribePrivilegeRulesRequest.cpp
   src/v20180228/model/BruteAttack.cpp
   src/v20180228/model/DescribeOpenPortsRequest.cpp
-  src/v20180228/model/DescribeImpactedHostsRequest.cpp
+  src/v20180228/model/DeleteBashRulesResponse.cpp
   src/v20180228/model/DescribeScanMalwareScheduleRequest.cpp
   src/v20180228/model/DescribeAgentVulsRequest.cpp
   src/v20180228/model/NonLocalLoginPlace.cpp
@@ -408,6 +410,7 @@ set(cwp_src
   src/v20180228/model/CreateOpenPortTaskResponse.cpp
   src/v20180228/model/DescribeMachineListRequest.cpp
   src/v20180228/model/EditBashRuleRequest.cpp
+  src/v20180228/model/SwitchBashRulesRequest.cpp
   src/v20180228/model/DeletePrivilegeEventsResponse.cpp
   src/v20180228/model/InquiryPriceOpenProVersionPrepaidResponse.cpp
   src/v20180228/model/PrivilegeEscalationProcess.cpp
@@ -461,6 +464,7 @@ set(cwp_src
   src/v20180228/model/DescribeProcessesRequest.cpp
   src/v20180228/model/DeleteUsualLoginPlacesRequest.cpp
   src/v20180228/model/WeeklyReport.cpp
+  src/v20180228/model/DescribeGeneralStatRequest.cpp
   src/v20180228/model/DescribeOpenPortTaskStatusRequest.cpp
   src/v20180228/model/Filter.cpp
   src/v20180228/model/DeleteLoginWhiteListResponse.cpp
@@ -505,14 +509,14 @@ set(cwp_src
   src/v20180228/model/Component.cpp
   src/v20180228/model/DescribeVulsRequest.cpp
   src/v20180228/model/DescribeAgentVulsResponse.cpp
-  src/v20180228/model/SwitchBashRulesRequest.cpp
+  src/v20180228/model/DescribeGeneralStatResponse.cpp
   src/v20180228/model/DescribeProcessStatisticsRequest.cpp
   src/v20180228/model/DeleteMachineTagResponse.cpp
   src/v20180228/model/DescribeHistoryAccountsRequest.cpp
   src/v20180228/model/DescribeSecurityEventsCntResponse.cpp
   src/v20180228/model/DescribeMachineInfoResponse.cpp
   src/v20180228/model/OpenProVersionRequest.cpp
-  src/v20180228/model/DeleteBashRulesResponse.cpp
+  src/v20180228/model/DescribeImpactedHostsRequest.cpp
   src/v20180228/model/IgnoreImpactedHostsResponse.cpp
   src/v20180228/model/DeleteBashEventsRequest.cpp
   src/v20180228/model/DescribeComponentsResponse.cpp

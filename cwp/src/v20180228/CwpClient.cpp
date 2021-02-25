@@ -1588,6 +1588,49 @@ CwpClient::DescribeExportMachinesOutcomeCallable CwpClient::DescribeExportMachin
     return task->get_future();
 }
 
+CwpClient::DescribeGeneralStatOutcome CwpClient::DescribeGeneralStat(const DescribeGeneralStatRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGeneralStat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGeneralStatResponse rsp = DescribeGeneralStatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGeneralStatOutcome(rsp);
+        else
+            return DescribeGeneralStatOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGeneralStatOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeGeneralStatAsync(const DescribeGeneralStatRequest& request, const DescribeGeneralStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGeneralStat(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeGeneralStatOutcomeCallable CwpClient::DescribeGeneralStatCallable(const DescribeGeneralStatRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGeneralStatOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGeneralStat(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeHistoryAccountsOutcome CwpClient::DescribeHistoryAccounts(const DescribeHistoryAccountsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHistoryAccounts");

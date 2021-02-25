@@ -35,7 +35,9 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_auditLogsetIdHasBeenSet(false),
     m_auditLogTopicIdHasBeenSet(false),
     m_vpcCniTypeHasBeenSet(false),
-    m_runtimeVersionHasBeenSet(false)
+    m_runtimeVersionHasBeenSet(false),
+    m_enableCustomizedPodCIDRHasBeenSet(false),
+    m_basePodNumberHasBeenSet(false)
 {
 }
 
@@ -191,6 +193,26 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
         m_runtimeVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableCustomizedPodCIDR") && !value["EnableCustomizedPodCIDR"].IsNull())
+    {
+        if (!value["EnableCustomizedPodCIDR"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.EnableCustomizedPodCIDR` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableCustomizedPodCIDR = value["EnableCustomizedPodCIDR"].GetBool();
+        m_enableCustomizedPodCIDRHasBeenSet = true;
+    }
+
+    if (value.HasMember("BasePodNumber") && !value["BasePodNumber"].IsNull())
+    {
+        if (!value["BasePodNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.BasePodNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_basePodNumber = value["BasePodNumber"].GetInt64();
+        m_basePodNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -309,6 +331,22 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
         string key = "RuntimeVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCustomizedPodCIDRHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableCustomizedPodCIDR";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableCustomizedPodCIDR, allocator);
+    }
+
+    if (m_basePodNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BasePodNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_basePodNumber, allocator);
     }
 
 }
@@ -536,5 +574,37 @@ void ClusterAdvancedSettings::SetRuntimeVersion(const string& _runtimeVersion)
 bool ClusterAdvancedSettings::RuntimeVersionHasBeenSet() const
 {
     return m_runtimeVersionHasBeenSet;
+}
+
+bool ClusterAdvancedSettings::GetEnableCustomizedPodCIDR() const
+{
+    return m_enableCustomizedPodCIDR;
+}
+
+void ClusterAdvancedSettings::SetEnableCustomizedPodCIDR(const bool& _enableCustomizedPodCIDR)
+{
+    m_enableCustomizedPodCIDR = _enableCustomizedPodCIDR;
+    m_enableCustomizedPodCIDRHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::EnableCustomizedPodCIDRHasBeenSet() const
+{
+    return m_enableCustomizedPodCIDRHasBeenSet;
+}
+
+int64_t ClusterAdvancedSettings::GetBasePodNumber() const
+{
+    return m_basePodNumber;
+}
+
+void ClusterAdvancedSettings::SetBasePodNumber(const int64_t& _basePodNumber)
+{
+    m_basePodNumber = _basePodNumber;
+    m_basePodNumberHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::BasePodNumberHasBeenSet() const
+{
+    return m_basePodNumberHasBeenSet;
 }
 

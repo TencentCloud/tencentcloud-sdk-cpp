@@ -1975,6 +1975,49 @@ IotvideoClient::DescribeStorageServiceOutcomeCallable IotvideoClient::DescribeSt
     return task->get_future();
 }
 
+IotvideoClient::DescribeStreamOutcome IotvideoClient::DescribeStream(const DescribeStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamResponse rsp = DescribeStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamOutcome(rsp);
+        else
+            return DescribeStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeStreamOutcomeCallable IotvideoClient::DescribeStreamCallable(const DescribeStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeTraceIdsOutcome IotvideoClient::DescribeTraceIds(const DescribeTraceIdsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTraceIds");

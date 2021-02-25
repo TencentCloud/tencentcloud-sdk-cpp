@@ -19,6 +19,7 @@ set(ump_public_header
   )
 
 set(ump_public_header_model
+  include/tencentcloud/ump/v20200918/model/ModifyMultiBizConfigResponse.h
   include/tencentcloud/ump/v20200918/model/CreateMultiBizAlertResponse.h
   include/tencentcloud/ump/v20200918/model/CameraConfig.h
   include/tencentcloud/ump/v20200918/model/CreateServerStateResponse.h
@@ -35,16 +36,20 @@ set(ump_public_header_model
   include/tencentcloud/ump/v20200918/model/TaskContent.h
   include/tencentcloud/ump/v20200918/model/SearchImageResponse.h
   include/tencentcloud/ump/v20200918/model/CreateProgramStateResponse.h
+  include/tencentcloud/ump/v20200918/model/ServiceRegisterInfo.h
   include/tencentcloud/ump/v20200918/model/DescribeTasksRequest.h
   include/tencentcloud/ump/v20200918/model/SearchImageRequest.h
   include/tencentcloud/ump/v20200918/model/DeleteMultiBizAlertResponse.h
-  include/tencentcloud/ump/v20200918/model/SearchResult.h
+  include/tencentcloud/ump/v20200918/model/ReportServiceRegisterRequest.h
   include/tencentcloud/ump/v20200918/model/DescribeImageResponse.h
   include/tencentcloud/ump/v20200918/model/CreateCameraAlertAlert.h
+  include/tencentcloud/ump/v20200918/model/ReportServiceRegisterResponse.h
   include/tencentcloud/ump/v20200918/model/DiskInfo.h
-  include/tencentcloud/ump/v20200918/model/DeleteTaskResponse.h
+  include/tencentcloud/ump/v20200918/model/CreateCameraStateResponse.h
+  include/tencentcloud/ump/v20200918/model/CreateMultiBizAlertRequest.h
   include/tencentcloud/ump/v20200918/model/CreateProgramStateRequest.h
   include/tencentcloud/ump/v20200918/model/DescribeMultiBizBaseImageRequest.h
+  include/tencentcloud/ump/v20200918/model/MultiBizWarningInfo.h
   include/tencentcloud/ump/v20200918/model/Task.h
   include/tencentcloud/ump/v20200918/model/ZoneConfig.h
   include/tencentcloud/ump/v20200918/model/ProgramStateItem.h
@@ -53,21 +58,27 @@ set(ump_public_header_model
   include/tencentcloud/ump/v20200918/model/DescribeMultiBizBaseImageResponse.h
   include/tencentcloud/ump/v20200918/model/DescribeImageRequest.h
   include/tencentcloud/ump/v20200918/model/ZoneArea.h
+  include/tencentcloud/ump/v20200918/model/SearchResult.h
+  include/tencentcloud/ump/v20200918/model/CameraState.h
   include/tencentcloud/ump/v20200918/model/CreateCaptureRequest.h
   include/tencentcloud/ump/v20200918/model/CreateCameraAlertsMoveAlert.h
+  include/tencentcloud/ump/v20200918/model/CreateCameraStateRequest.h
   include/tencentcloud/ump/v20200918/model/DescribeCamerasResponse.h
-  include/tencentcloud/ump/v20200918/model/Point.h
   include/tencentcloud/ump/v20200918/model/DescribeConfigResponse.h
-  include/tencentcloud/ump/v20200918/model/CreateMultiBizAlertRequest.h
+  include/tencentcloud/ump/v20200918/model/DeleteTaskResponse.h
   include/tencentcloud/ump/v20200918/model/DescribeZonesResponse.h
+  include/tencentcloud/ump/v20200918/model/ModifyMultiBizConfigRequest.h
   include/tencentcloud/ump/v20200918/model/CameraZones.h
   include/tencentcloud/ump/v20200918/model/CreateCameraAlertsCoverAlert.h
   include/tencentcloud/ump/v20200918/model/BunkZone.h
+  include/tencentcloud/ump/v20200918/model/Point.h
   include/tencentcloud/ump/v20200918/model/CreateServerStateRequest.h
+  include/tencentcloud/ump/v20200918/model/MultiBizWarning.h
   )
 
 set(ump_src
   src/v20200918/UmpClient.cpp
+  src/v20200918/model/ModifyMultiBizConfigResponse.cpp
   src/v20200918/model/CreateMultiBizAlertResponse.cpp
   src/v20200918/model/CameraConfig.cpp
   src/v20200918/model/CreateServerStateResponse.cpp
@@ -84,16 +95,20 @@ set(ump_src
   src/v20200918/model/TaskContent.cpp
   src/v20200918/model/SearchImageResponse.cpp
   src/v20200918/model/CreateProgramStateResponse.cpp
+  src/v20200918/model/ServiceRegisterInfo.cpp
   src/v20200918/model/DescribeTasksRequest.cpp
   src/v20200918/model/SearchImageRequest.cpp
   src/v20200918/model/DeleteMultiBizAlertResponse.cpp
-  src/v20200918/model/SearchResult.cpp
+  src/v20200918/model/ReportServiceRegisterRequest.cpp
   src/v20200918/model/DescribeImageResponse.cpp
   src/v20200918/model/CreateCameraAlertAlert.cpp
+  src/v20200918/model/ReportServiceRegisterResponse.cpp
   src/v20200918/model/DiskInfo.cpp
-  src/v20200918/model/DeleteTaskResponse.cpp
+  src/v20200918/model/CreateCameraStateResponse.cpp
+  src/v20200918/model/CreateMultiBizAlertRequest.cpp
   src/v20200918/model/CreateProgramStateRequest.cpp
   src/v20200918/model/DescribeMultiBizBaseImageRequest.cpp
+  src/v20200918/model/MultiBizWarningInfo.cpp
   src/v20200918/model/Task.cpp
   src/v20200918/model/ZoneConfig.cpp
   src/v20200918/model/ProgramStateItem.cpp
@@ -102,17 +117,22 @@ set(ump_src
   src/v20200918/model/DescribeMultiBizBaseImageResponse.cpp
   src/v20200918/model/DescribeImageRequest.cpp
   src/v20200918/model/ZoneArea.cpp
+  src/v20200918/model/SearchResult.cpp
+  src/v20200918/model/CameraState.cpp
   src/v20200918/model/CreateCaptureRequest.cpp
   src/v20200918/model/CreateCameraAlertsMoveAlert.cpp
+  src/v20200918/model/CreateCameraStateRequest.cpp
   src/v20200918/model/DescribeCamerasResponse.cpp
-  src/v20200918/model/Point.cpp
   src/v20200918/model/DescribeConfigResponse.cpp
-  src/v20200918/model/CreateMultiBizAlertRequest.cpp
+  src/v20200918/model/DeleteTaskResponse.cpp
   src/v20200918/model/DescribeZonesResponse.cpp
+  src/v20200918/model/ModifyMultiBizConfigRequest.cpp
   src/v20200918/model/CameraZones.cpp
   src/v20200918/model/CreateCameraAlertsCoverAlert.cpp
   src/v20200918/model/BunkZone.cpp
+  src/v20200918/model/Point.cpp
   src/v20200918/model/CreateServerStateRequest.cpp
+  src/v20200918/model/MultiBizWarning.cpp
   )
 
 set(ump_include

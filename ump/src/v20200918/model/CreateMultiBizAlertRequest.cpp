@@ -30,7 +30,8 @@ CreateMultiBizAlertRequest::CreateMultiBizAlertRequest() :
     m_cameraIdHasBeenSet(false),
     m_captureTimeHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_imageHasBeenSet(false)
+    m_imageHasBeenSet(false),
+    m_warningsHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,21 @@ string CreateMultiBizAlertRequest::ToJsonString() const
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_warningsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Warnings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_warnings.begin(); itr != m_warnings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -215,6 +231,22 @@ void CreateMultiBizAlertRequest::SetImage(const string& _image)
 bool CreateMultiBizAlertRequest::ImageHasBeenSet() const
 {
     return m_imageHasBeenSet;
+}
+
+vector<MultiBizWarning> CreateMultiBizAlertRequest::GetWarnings() const
+{
+    return m_warnings;
+}
+
+void CreateMultiBizAlertRequest::SetWarnings(const vector<MultiBizWarning>& _warnings)
+{
+    m_warnings = _warnings;
+    m_warningsHasBeenSet = true;
+}
+
+bool CreateMultiBizAlertRequest::WarningsHasBeenSet() const
+{
+    return m_warningsHasBeenSet;
 }
 
 
