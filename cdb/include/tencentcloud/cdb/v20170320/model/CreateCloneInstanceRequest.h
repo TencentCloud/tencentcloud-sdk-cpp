@@ -314,14 +314,14 @@ namespace TencentCloud
                     bool BackupZoneHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例类型。支持值包括： "HA" - 高可用版实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为高可用版。
-                     * @return DeviceType 克隆实例类型。支持值包括： "HA" - 高可用版实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为高可用版。
+                     * 获取克隆实例类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为通用型。
+                     * @return DeviceType 克隆实例类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为通用型。
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置克隆实例类型。支持值包括： "HA" - 高可用版实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为高可用版。
-                     * @param DeviceType 克隆实例类型。支持值包括： "HA" - 高可用版实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为高可用版。
+                     * 设置克隆实例类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为通用型。
+                     * @param DeviceType 克隆实例类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为通用型。
                      */
                     void SetDeviceType(const std::string& _deviceType);
 
@@ -330,6 +330,24 @@ namespace TencentCloud
                      * @return DeviceType 是否已赋值
                      */
                     bool DeviceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取新克隆实例节点数。如果需要克隆出三节点实例， 请将该值设置为3 或指定 BackupZone 参数。如果需要克隆出两节点实例，请将该值设置为2。默认克隆出两节点实例。
+                     * @return InstanceNodes 新克隆实例节点数。如果需要克隆出三节点实例， 请将该值设置为3 或指定 BackupZone 参数。如果需要克隆出两节点实例，请将该值设置为2。默认克隆出两节点实例。
+                     */
+                    int64_t GetInstanceNodes() const;
+
+                    /**
+                     * 设置新克隆实例节点数。如果需要克隆出三节点实例， 请将该值设置为3 或指定 BackupZone 参数。如果需要克隆出两节点实例，请将该值设置为2。默认克隆出两节点实例。
+                     * @param InstanceNodes 新克隆实例节点数。如果需要克隆出三节点实例， 请将该值设置为3 或指定 BackupZone 参数。如果需要克隆出两节点实例，请将该值设置为2。默认克隆出两节点实例。
+                     */
+                    void SetInstanceNodes(const int64_t& _instanceNodes);
+
+                    /**
+                     * 判断参数 InstanceNodes 是否已赋值
+                     * @return InstanceNodes 是否已赋值
+                     */
+                    bool InstanceNodesHasBeenSet() const;
 
                 private:
 
@@ -424,10 +442,16 @@ namespace TencentCloud
                     bool m_backupZoneHasBeenSet;
 
                     /**
-                     * 克隆实例类型。支持值包括： "HA" - 高可用版实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为高可用版。
+                     * 克隆实例类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为通用型。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
+
+                    /**
+                     * 新克隆实例节点数。如果需要克隆出三节点实例， 请将该值设置为3 或指定 BackupZone 参数。如果需要克隆出两节点实例，请将该值设置为2。默认克隆出两节点实例。
+                     */
+                    int64_t m_instanceNodes;
+                    bool m_instanceNodesHasBeenSet;
 
                 };
             }

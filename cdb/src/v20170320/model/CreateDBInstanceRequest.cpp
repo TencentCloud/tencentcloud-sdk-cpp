@@ -52,7 +52,9 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_clientTokenHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
-    m_alarmPolicyListHasBeenSet(false)
+    m_alarmPolicyListHasBeenSet(false),
+    m_instanceNodesHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -318,6 +320,22 @@ string CreateDBInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_instanceNodesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceNodes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceNodes, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
     }
 
 
@@ -790,6 +808,38 @@ void CreateDBInstanceRequest::SetAlarmPolicyList(const vector<int64_t>& _alarmPo
 bool CreateDBInstanceRequest::AlarmPolicyListHasBeenSet() const
 {
     return m_alarmPolicyListHasBeenSet;
+}
+
+int64_t CreateDBInstanceRequest::GetInstanceNodes() const
+{
+    return m_instanceNodes;
+}
+
+void CreateDBInstanceRequest::SetInstanceNodes(const int64_t& _instanceNodes)
+{
+    m_instanceNodes = _instanceNodes;
+    m_instanceNodesHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::InstanceNodesHasBeenSet() const
+{
+    return m_instanceNodesHasBeenSet;
+}
+
+int64_t CreateDBInstanceRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void CreateDBInstanceRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 
 

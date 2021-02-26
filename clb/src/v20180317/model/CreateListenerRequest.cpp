@@ -35,7 +35,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_sniSwitchHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
     m_sessionTypeHasBeenSet(false),
-    m_keepaliveEnableHasBeenSet(false)
+    m_keepaliveEnableHasBeenSet(false),
+    m_endPortHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,14 @@ string CreateListenerRequest::ToJsonString() const
         string key = "KeepaliveEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_keepaliveEnable, allocator);
+    }
+
+    if (m_endPortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndPort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endPort, allocator);
     }
 
 
@@ -352,6 +361,22 @@ void CreateListenerRequest::SetKeepaliveEnable(const int64_t& _keepaliveEnable)
 bool CreateListenerRequest::KeepaliveEnableHasBeenSet() const
 {
     return m_keepaliveEnableHasBeenSet;
+}
+
+uint64_t CreateListenerRequest::GetEndPort() const
+{
+    return m_endPort;
+}
+
+void CreateListenerRequest::SetEndPort(const uint64_t& _endPort)
+{
+    m_endPort = _endPort;
+    m_endPortHasBeenSet = true;
+}
+
+bool CreateListenerRequest::EndPortHasBeenSet() const
+{
+    return m_endPortHasBeenSet;
 }
 
 

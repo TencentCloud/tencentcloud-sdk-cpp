@@ -407,14 +407,14 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取RO实例数据库引擎版本，可能返回值：5.1、5.5、5.6和5.7
-                     * @return EngineVersion RO实例数据库引擎版本，可能返回值：5.1、5.5、5.6和5.7
+                     * 获取RO实例数据库引擎版本，可能返回值：5.1、5.5、5.6、5.7、8.0
+                     * @return EngineVersion RO实例数据库引擎版本，可能返回值：5.1、5.5、5.6、5.7、8.0
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置RO实例数据库引擎版本，可能返回值：5.1、5.5、5.6和5.7
-                     * @param EngineVersion RO实例数据库引擎版本，可能返回值：5.1、5.5、5.6和5.7
+                     * 设置RO实例数据库引擎版本，可能返回值：5.1、5.5、5.6、5.7、8.0
+                     * @param EngineVersion RO实例数据库引擎版本，可能返回值：5.1、5.5、5.6、5.7、8.0
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
 
@@ -583,7 +583,7 @@ namespace TencentCloud
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * RO实例数据库引擎版本，可能返回值：5.1、5.5、5.6和5.7
+                     * RO实例数据库引擎版本，可能返回值：5.1、5.5、5.6、5.7、8.0
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;

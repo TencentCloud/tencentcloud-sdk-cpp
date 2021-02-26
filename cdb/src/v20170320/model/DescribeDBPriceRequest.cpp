@@ -32,7 +32,9 @@ DescribeDBPriceRequest::DescribeDBPriceRequest() :
     m_periodHasBeenSet(false),
     m_instanceRoleHasBeenSet(false),
     m_protectModeHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
+    m_deviceTypeHasBeenSet(false),
+    m_instanceNodesHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,22 @@ string DescribeDBPriceRequest::ToJsonString() const
         string key = "DeviceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNodesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceNodes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceNodes, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
     }
 
 
@@ -265,6 +283,38 @@ void DescribeDBPriceRequest::SetDeviceType(const string& _deviceType)
 bool DescribeDBPriceRequest::DeviceTypeHasBeenSet() const
 {
     return m_deviceTypeHasBeenSet;
+}
+
+int64_t DescribeDBPriceRequest::GetInstanceNodes() const
+{
+    return m_instanceNodes;
+}
+
+void DescribeDBPriceRequest::SetInstanceNodes(const int64_t& _instanceNodes)
+{
+    m_instanceNodes = _instanceNodes;
+    m_instanceNodesHasBeenSet = true;
+}
+
+bool DescribeDBPriceRequest::InstanceNodesHasBeenSet() const
+{
+    return m_instanceNodesHasBeenSet;
+}
+
+int64_t DescribeDBPriceRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void DescribeDBPriceRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool DescribeDBPriceRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 
 

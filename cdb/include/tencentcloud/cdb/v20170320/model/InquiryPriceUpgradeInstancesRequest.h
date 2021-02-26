@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool ProtectModeHasBeenSet() const;
 
                     /**
-                     * 获取部署策略，取值范围：HA-高可用版
-                     * @return DeviceType 部署策略，取值范围：HA-高可用版
+                     * 获取实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC" - 基础版实例。 不指定则默认为通用型实例。
+                     * @return DeviceType 实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC" - 基础版实例。 不指定则默认为通用型实例。
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置部署策略，取值范围：HA-高可用版
-                     * @param DeviceType 部署策略，取值范围：HA-高可用版
+                     * 设置实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC" - 基础版实例。 不指定则默认为通用型实例。
+                     * @param DeviceType 实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC" - 基础版实例。 不指定则默认为通用型实例。
                      */
                     void SetDeviceType(const std::string& _deviceType);
 
@@ -149,6 +149,24 @@ namespace TencentCloud
                      * @return DeviceType 是否已赋值
                      */
                     bool DeviceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例节点数。对于 RO 和 基础版实例， 该值默认为1。 如果需要询价三节点实例， 请将该值设置为3。其余主实例该值默认为2。
+                     * @return InstanceNodes 实例节点数。对于 RO 和 基础版实例， 该值默认为1。 如果需要询价三节点实例， 请将该值设置为3。其余主实例该值默认为2。
+                     */
+                    int64_t GetInstanceNodes() const;
+
+                    /**
+                     * 设置实例节点数。对于 RO 和 基础版实例， 该值默认为1。 如果需要询价三节点实例， 请将该值设置为3。其余主实例该值默认为2。
+                     * @param InstanceNodes 实例节点数。对于 RO 和 基础版实例， 该值默认为1。 如果需要询价三节点实例， 请将该值设置为3。其余主实例该值默认为2。
+                     */
+                    void SetInstanceNodes(const int64_t& _instanceNodes);
+
+                    /**
+                     * 判断参数 InstanceNodes 是否已赋值
+                     * @return InstanceNodes 是否已赋值
+                     */
+                    bool InstanceNodesHasBeenSet() const;
 
                 private:
 
@@ -183,10 +201,16 @@ namespace TencentCloud
                     bool m_protectModeHasBeenSet;
 
                     /**
-                     * 部署策略，取值范围：HA-高可用版
+                     * 实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC" - 基础版实例。 不指定则默认为通用型实例。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
+
+                    /**
+                     * 实例节点数。对于 RO 和 基础版实例， 该值默认为1。 如果需要询价三节点实例， 请将该值设置为3。其余主实例该值默认为2。
+                     */
+                    int64_t m_instanceNodes;
+                    bool m_instanceNodesHasBeenSet;
 
                 };
             }

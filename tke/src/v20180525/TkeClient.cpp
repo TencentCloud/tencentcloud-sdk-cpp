@@ -2018,6 +2018,49 @@ TkeClient::DescribePrometheusAgentsOutcomeCallable TkeClient::DescribePrometheus
     return task->get_future();
 }
 
+TkeClient::DescribePrometheusAlertHistoryOutcome TkeClient::DescribePrometheusAlertHistory(const DescribePrometheusAlertHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusAlertHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusAlertHistoryResponse rsp = DescribePrometheusAlertHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusAlertHistoryOutcome(rsp);
+        else
+            return DescribePrometheusAlertHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusAlertHistoryOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePrometheusAlertHistoryAsync(const DescribePrometheusAlertHistoryRequest& request, const DescribePrometheusAlertHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusAlertHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePrometheusAlertHistoryOutcomeCallable TkeClient::DescribePrometheusAlertHistoryCallable(const DescribePrometheusAlertHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusAlertHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusAlertHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribePrometheusAlertRuleOutcome TkeClient::DescribePrometheusAlertRule(const DescribePrometheusAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusAlertRule");

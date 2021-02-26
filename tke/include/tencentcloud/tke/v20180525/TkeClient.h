@@ -115,6 +115,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusAgentsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusAlertHistoryRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribePrometheusAlertHistoryResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusAlertRuleRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusAlertRuleResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePrometheusOverviewsRequest.h>
@@ -307,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePrometheusAgentsResponse> DescribePrometheusAgentsOutcome;
                 typedef std::future<DescribePrometheusAgentsOutcome> DescribePrometheusAgentsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribePrometheusAgentsRequest&, DescribePrometheusAgentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAgentsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePrometheusAlertHistoryResponse> DescribePrometheusAlertHistoryOutcome;
+                typedef std::future<DescribePrometheusAlertHistoryOutcome> DescribePrometheusAlertHistoryOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribePrometheusAlertHistoryRequest&, DescribePrometheusAlertHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAlertHistoryAsyncHandler;
                 typedef Outcome<Error, Model::DescribePrometheusAlertRuleResponse> DescribePrometheusAlertRuleOutcome;
                 typedef std::future<DescribePrometheusAlertRuleOutcome> DescribePrometheusAlertRuleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribePrometheusAlertRuleRequest&, DescribePrometheusAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAlertRuleAsyncHandler;
@@ -783,6 +788,15 @@ namespace TencentCloud
                 DescribePrometheusAgentsOutcome DescribePrometheusAgents(const Model::DescribePrometheusAgentsRequest &request);
                 void DescribePrometheusAgentsAsync(const Model::DescribePrometheusAgentsRequest& request, const DescribePrometheusAgentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePrometheusAgentsOutcomeCallable DescribePrometheusAgentsCallable(const Model::DescribePrometheusAgentsRequest& request);
+
+                /**
+                 *获取告警历史
+                 * @param req DescribePrometheusAlertHistoryRequest
+                 * @return DescribePrometheusAlertHistoryOutcome
+                 */
+                DescribePrometheusAlertHistoryOutcome DescribePrometheusAlertHistory(const Model::DescribePrometheusAlertHistoryRequest &request);
+                void DescribePrometheusAlertHistoryAsync(const Model::DescribePrometheusAlertHistoryRequest& request, const DescribePrometheusAlertHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusAlertHistoryOutcomeCallable DescribePrometheusAlertHistoryCallable(const Model::DescribePrometheusAlertHistoryRequest& request);
 
                 /**
                  *获取告警规则列表

@@ -29,7 +29,8 @@ InquiryPriceUpgradeInstancesRequest::InquiryPriceUpgradeInstancesRequest() :
     m_volumeHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_protectModeHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
+    m_deviceTypeHasBeenSet(false),
+    m_instanceNodesHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string InquiryPriceUpgradeInstancesRequest::ToJsonString() const
         string key = "DeviceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNodesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceNodes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceNodes, allocator);
     }
 
 
@@ -190,6 +199,22 @@ void InquiryPriceUpgradeInstancesRequest::SetDeviceType(const string& _deviceTyp
 bool InquiryPriceUpgradeInstancesRequest::DeviceTypeHasBeenSet() const
 {
     return m_deviceTypeHasBeenSet;
+}
+
+int64_t InquiryPriceUpgradeInstancesRequest::GetInstanceNodes() const
+{
+    return m_instanceNodes;
+}
+
+void InquiryPriceUpgradeInstancesRequest::SetInstanceNodes(const int64_t& _instanceNodes)
+{
+    m_instanceNodes = _instanceNodes;
+    m_instanceNodesHasBeenSet = true;
+}
+
+bool InquiryPriceUpgradeInstancesRequest::InstanceNodesHasBeenSet() const
+{
+    return m_instanceNodesHasBeenSet;
 }
 
 

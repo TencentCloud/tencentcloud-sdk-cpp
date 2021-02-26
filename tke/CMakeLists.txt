@@ -53,6 +53,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeExistedInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/Tag.h
   include/tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h
+  include/tencentcloud/tke/v20180525/model/PrometheusAlertHistoryItem.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusTemplateSyncTarget.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesRequest.h
@@ -80,7 +81,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ExtensionAddon.h
   include/tencentcloud/tke/v20180525/model/RegionInstance.h
   include/tencentcloud/tke/v20180525/model/Label.h
-  include/tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertHistoryRequest.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusTemplateSyncRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipResponse.h
@@ -156,6 +157,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterAdvancedSettings.h
   include/tencentcloud/tke/v20180525/model/AcquireClusterAdminRoleResponse.h
+  include/tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateResponse.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusTemplateResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplateSyncRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipRequest.h
@@ -198,6 +200,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceUpgradePreCheckResultItem.h
+  include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertHistoryResponse.h
   include/tencentcloud/tke/v20180525/model/ExistedInstancesPara.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroupAttribute.h
@@ -254,6 +257,7 @@ set(tke_src
   src/v20180525/model/DescribeExistedInstancesRequest.cpp
   src/v20180525/model/Tag.cpp
   src/v20180525/model/DescribeRegionsResponse.cpp
+  src/v20180525/model/PrometheusAlertHistoryItem.cpp
   src/v20180525/model/CreateClusterRouteResponse.cpp
   src/v20180525/model/PrometheusTemplateSyncTarget.cpp
   src/v20180525/model/DescribePrometheusTemplatesRequest.cpp
@@ -281,7 +285,7 @@ set(tke_src
   src/v20180525/model/ExtensionAddon.cpp
   src/v20180525/model/RegionInstance.cpp
   src/v20180525/model/Label.cpp
-  src/v20180525/model/ModifyPrometheusTemplateResponse.cpp
+  src/v20180525/model/DescribePrometheusAlertHistoryRequest.cpp
   src/v20180525/model/DeletePrometheusTemplateSyncRequest.cpp
   src/v20180525/model/DescribePrometheusTemplatesResponse.cpp
   src/v20180525/model/DeleteClusterEndpointVipResponse.cpp
@@ -357,6 +361,7 @@ set(tke_src
   src/v20180525/model/CreateClusterNodePoolRequest.cpp
   src/v20180525/model/ClusterAdvancedSettings.cpp
   src/v20180525/model/AcquireClusterAdminRoleResponse.cpp
+  src/v20180525/model/ModifyPrometheusTemplateResponse.cpp
   src/v20180525/model/DeletePrometheusTemplateResponse.cpp
   src/v20180525/model/DescribePrometheusTemplateSyncRequest.cpp
   src/v20180525/model/DeleteClusterEndpointVipRequest.cpp
@@ -399,6 +404,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterRouteTablesResponse.cpp
   src/v20180525/model/DescribeRouteTableConflictsRequest.cpp
   src/v20180525/model/InstanceUpgradePreCheckResultItem.cpp
+  src/v20180525/model/DescribePrometheusAlertHistoryResponse.cpp
   src/v20180525/model/ExistedInstancesPara.cpp
   src/v20180525/model/DescribeClusterAsGroupOptionResponse.cpp
   src/v20180525/model/ClusterAsGroupAttribute.cpp

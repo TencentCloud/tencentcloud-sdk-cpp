@@ -264,6 +264,24 @@ namespace TencentCloud
                      */
                     bool KeepaliveEnableHasBeenSet() const;
 
+                    /**
+                     * 获取创建端口段监听器时必须传入此参数，用以标识结束端口。同时，入参Ports只允许传入一个成员，用以标识开始端口。【如果您需要体验端口段功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】。
+                     * @return EndPort 创建端口段监听器时必须传入此参数，用以标识结束端口。同时，入参Ports只允许传入一个成员，用以标识开始端口。【如果您需要体验端口段功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】。
+                     */
+                    uint64_t GetEndPort() const;
+
+                    /**
+                     * 设置创建端口段监听器时必须传入此参数，用以标识结束端口。同时，入参Ports只允许传入一个成员，用以标识开始端口。【如果您需要体验端口段功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】。
+                     * @param EndPort 创建端口段监听器时必须传入此参数，用以标识结束端口。同时，入参Ports只允许传入一个成员，用以标识开始端口。【如果您需要体验端口段功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】。
+                     */
+                    void SetEndPort(const uint64_t& _endPort);
+
+                    /**
+                     * 判断参数 EndPort 是否已赋值
+                     * @return EndPort 是否已赋值
+                     */
+                    bool EndPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,6 +356,12 @@ namespace TencentCloud
                      */
                     int64_t m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;
+
+                    /**
+                     * 创建端口段监听器时必须传入此参数，用以标识结束端口。同时，入参Ports只允许传入一个成员，用以标识开始端口。【如果您需要体验端口段功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】。
+                     */
+                    uint64_t m_endPort;
+                    bool m_endPortHasBeenSet;
 
                 };
             }

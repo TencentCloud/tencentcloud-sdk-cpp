@@ -1,0 +1,149 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_SQLSERVER_V20180328_MODEL_CREATEINCREMENTALMIGRATIONREQUEST_H_
+#define TENCENTCLOUD_SQLSERVER_V20180328_MODEL_CREATEINCREMENTALMIGRATIONREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Sqlserver
+    {
+        namespace V20180328
+        {
+            namespace Model
+            {
+                /**
+                * CreateIncrementalMigration请求参数结构体
+                */
+                class CreateIncrementalMigrationRequest : public AbstractModel
+                {
+                public:
+                    CreateIncrementalMigrationRequest();
+                    ~CreateIncrementalMigrationRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取导入目标实例ID
+                     * @return InstanceId 导入目标实例ID
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置导入目标实例ID
+                     * @param InstanceId 导入目标实例ID
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取备份导入任务ID，由CreateBackupMigration接口返回
+                     * @return BackupMigrationId 备份导入任务ID，由CreateBackupMigration接口返回
+                     */
+                    std::string GetBackupMigrationId() const;
+
+                    /**
+                     * 设置备份导入任务ID，由CreateBackupMigration接口返回
+                     * @param BackupMigrationId 备份导入任务ID，由CreateBackupMigration接口返回
+                     */
+                    void SetBackupMigrationId(const std::string& _backupMigrationId);
+
+                    /**
+                     * 判断参数 BackupMigrationId 是否已赋值
+                     * @return BackupMigrationId 是否已赋值
+                     */
+                    bool BackupMigrationIdHasBeenSet() const;
+
+                    /**
+                     * 获取增量备份文件，全量备份任务UploadType是COS_URL时这里填URL，是COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库
+                     * @return BackupFiles 增量备份文件，全量备份任务UploadType是COS_URL时这里填URL，是COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库
+                     */
+                    std::vector<std::string> GetBackupFiles() const;
+
+                    /**
+                     * 设置增量备份文件，全量备份任务UploadType是COS_URL时这里填URL，是COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库
+                     * @param BackupFiles 增量备份文件，全量备份任务UploadType是COS_URL时这里填URL，是COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库
+                     */
+                    void SetBackupFiles(const std::vector<std::string>& _backupFiles);
+
+                    /**
+                     * 判断参数 BackupFiles 是否已赋值
+                     * @return BackupFiles 是否已赋值
+                     */
+                    bool BackupFilesHasBeenSet() const;
+
+                    /**
+                     * 获取是否需要恢复，NO-不需要，YES-需要，默认不需要
+                     * @return IsRecovery 是否需要恢复，NO-不需要，YES-需要，默认不需要
+                     */
+                    std::string GetIsRecovery() const;
+
+                    /**
+                     * 设置是否需要恢复，NO-不需要，YES-需要，默认不需要
+                     * @param IsRecovery 是否需要恢复，NO-不需要，YES-需要，默认不需要
+                     */
+                    void SetIsRecovery(const std::string& _isRecovery);
+
+                    /**
+                     * 判断参数 IsRecovery 是否已赋值
+                     * @return IsRecovery 是否已赋值
+                     */
+                    bool IsRecoveryHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 导入目标实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 备份导入任务ID，由CreateBackupMigration接口返回
+                     */
+                    std::string m_backupMigrationId;
+                    bool m_backupMigrationIdHasBeenSet;
+
+                    /**
+                     * 增量备份文件，全量备份任务UploadType是COS_URL时这里填URL，是COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库
+                     */
+                    std::vector<std::string> m_backupFiles;
+                    bool m_backupFilesHasBeenSet;
+
+                    /**
+                     * 是否需要恢复，NO-不需要，YES-需要，默认不需要
+                     */
+                    std::string m_isRecovery;
+                    bool m_isRecoveryHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_SQLSERVER_V20180328_MODEL_CREATEINCREMENTALMIGRATIONREQUEST_H_
