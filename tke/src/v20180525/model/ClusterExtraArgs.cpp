@@ -24,7 +24,8 @@ using namespace std;
 ClusterExtraArgs::ClusterExtraArgs() :
     m_kubeAPIServerHasBeenSet(false),
     m_kubeControllerManagerHasBeenSet(false),
-    m_kubeSchedulerHasBeenSet(false)
+    m_kubeSchedulerHasBeenSet(false),
+    m_etcdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ CoreInternalOutcome ClusterExtraArgs::Deserialize(const Value &value)
         m_kubeSchedulerHasBeenSet = true;
     }
 
+    if (value.HasMember("Etcd") && !value["Etcd"].IsNull())
+    {
+        if (!value["Etcd"].IsArray())
+            return CoreInternalOutcome(Error("response `ClusterExtraArgs.Etcd` is not array type"));
+
+        const Value &tmpValue = value["Etcd"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_etcd.push_back((*itr).GetString());
+        }
+        m_etcdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -113,6 +127,19 @@ void ClusterExtraArgs::ToJsonObject(Value &value, Document::AllocatorType& alloc
         value.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_kubeScheduler.begin(); itr != m_kubeScheduler.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_etcdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Etcd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_etcd.begin(); itr != m_etcd.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -167,5 +194,21 @@ void ClusterExtraArgs::SetKubeScheduler(const vector<string>& _kubeScheduler)
 bool ClusterExtraArgs::KubeSchedulerHasBeenSet() const
 {
     return m_kubeSchedulerHasBeenSet;
+}
+
+vector<string> ClusterExtraArgs::GetEtcd() const
+{
+    return m_etcd;
+}
+
+void ClusterExtraArgs::SetEtcd(const vector<string>& _etcd)
+{
+    m_etcd = _etcd;
+    m_etcdHasBeenSet = true;
+}
+
+bool ClusterExtraArgs::EtcdHasBeenSet() const
+{
+    return m_etcdHasBeenSet;
 }
 

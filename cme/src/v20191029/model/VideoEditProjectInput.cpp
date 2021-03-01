@@ -22,6 +22,7 @@ using namespace rapidjson;
 using namespace std;
 
 VideoEditProjectInput::VideoEditProjectInput() :
+    m_aspectRatioHasBeenSet(false),
     m_videoEditTemplateIdHasBeenSet(false),
     m_initTracksHasBeenSet(false)
 {
@@ -31,6 +32,16 @@ CoreInternalOutcome VideoEditProjectInput::Deserialize(const Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("AspectRatio") && !value["AspectRatio"].IsNull())
+    {
+        if (!value["AspectRatio"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VideoEditProjectInput.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aspectRatio = string(value["AspectRatio"].GetString());
+        m_aspectRatioHasBeenSet = true;
+    }
 
     if (value.HasMember("VideoEditTemplateId") && !value["VideoEditTemplateId"].IsNull())
     {
@@ -69,6 +80,14 @@ CoreInternalOutcome VideoEditProjectInput::Deserialize(const Value &value)
 void VideoEditProjectInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
+    if (m_aspectRatioHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AspectRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_videoEditTemplateIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -94,6 +113,22 @@ void VideoEditProjectInput::ToJsonObject(Value &value, Document::AllocatorType& 
 
 }
 
+
+string VideoEditProjectInput::GetAspectRatio() const
+{
+    return m_aspectRatio;
+}
+
+void VideoEditProjectInput::SetAspectRatio(const string& _aspectRatio)
+{
+    m_aspectRatio = _aspectRatio;
+    m_aspectRatioHasBeenSet = true;
+}
+
+bool VideoEditProjectInput::AspectRatioHasBeenSet() const
+{
+    return m_aspectRatioHasBeenSet;
+}
 
 string VideoEditProjectInput::GetVideoEditTemplateId() const
 {

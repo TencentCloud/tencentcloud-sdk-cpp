@@ -80,6 +80,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/DescribeEditingTaskResultResponse.h
   include/tencentcloud/ie/v20200304/model/QualityControlInfoTaskResult.h
   include/tencentcloud/ie/v20200304/model/MediaQualityRestorationTaskResult.h
+  include/tencentcloud/ie/v20200304/model/HiddenMarkInfo.h
   include/tencentcloud/ie/v20200304/model/MediaCuttingOutForm.h
   include/tencentcloud/ie/v20200304/model/StopMediaQualityRestorationTaskRequest.h
   include/tencentcloud/ie/v20200304/model/DescribeQualityControlTaskResultResponse.h
@@ -181,6 +182,7 @@ set(ie_src
   src/v20200304/model/DescribeEditingTaskResultResponse.cpp
   src/v20200304/model/QualityControlInfoTaskResult.cpp
   src/v20200304/model/MediaQualityRestorationTaskResult.cpp
+  src/v20200304/model/HiddenMarkInfo.cpp
   src/v20200304/model/MediaCuttingOutForm.cpp
   src/v20200304/model/StopMediaQualityRestorationTaskRequest.cpp
   src/v20200304/model/DescribeQualityControlTaskResultResponse.cpp

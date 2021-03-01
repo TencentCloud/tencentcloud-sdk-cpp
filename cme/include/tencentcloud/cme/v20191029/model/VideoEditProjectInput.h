@@ -48,6 +48,40 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16；</li>
+<li>2:1。</li>
+默认值 16:9 。
+                     * @return AspectRatio 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16；</li>
+<li>2:1。</li>
+默认值 16:9 。
+                     */
+                    std::string GetAspectRatio() const;
+
+                    /**
+                     * 设置画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16；</li>
+<li>2:1。</li>
+默认值 16:9 。
+                     * @param AspectRatio 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16；</li>
+<li>2:1。</li>
+默认值 16:9 。
+                     */
+                    void SetAspectRatio(const std::string& _aspectRatio);
+
+                    /**
+                     * 判断参数 AspectRatio 是否已赋值
+                     * @return AspectRatio 是否已赋值
+                     */
+                    bool AspectRatioHasBeenSet() const;
+
+                    /**
                      * 获取视频编辑模板媒体 ID ，通过模板媒体导入项目轨道数据时填写。
                      * @return VideoEditTemplateId 视频编辑模板媒体 ID ，通过模板媒体导入项目轨道数据时填写。
                      */
@@ -88,6 +122,16 @@ namespace TencentCloud
                     bool InitTracksHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16；</li>
+<li>2:1。</li>
+默认值 16:9 。
+                     */
+                    std::string m_aspectRatio;
+                    bool m_aspectRatioHasBeenSet;
 
                     /**
                      * 视频编辑模板媒体 ID ，通过模板媒体导入项目轨道数据时填写。

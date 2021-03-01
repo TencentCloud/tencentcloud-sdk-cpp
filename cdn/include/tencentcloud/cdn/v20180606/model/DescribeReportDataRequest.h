@@ -44,13 +44,25 @@ namespace TencentCloud
 
                     /**
                      * 获取查询起始时间：yyyy-MM-dd
+当报表类型为daily，起始时间和结束时间必须为同一天
+当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
+当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
                      * @return StartTime 查询起始时间：yyyy-MM-dd
+当报表类型为daily，起始时间和结束时间必须为同一天
+当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
+当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询起始时间：yyyy-MM-dd
+当报表类型为daily，起始时间和结束时间必须为同一天
+当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
+当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
                      * @param StartTime 查询起始时间：yyyy-MM-dd
+当报表类型为daily，起始时间和结束时间必须为同一天
+当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
+当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -62,13 +74,25 @@ namespace TencentCloud
 
                     /**
                      * 获取查询结束时间：yyyy-MM-dd
+当报表类型为daily，起始时间和结束时间必须为同一天
+当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
+当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
                      * @return EndTime 查询结束时间：yyyy-MM-dd
+当报表类型为daily，起始时间和结束时间必须为同一天
+当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
+当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间：yyyy-MM-dd
+当报表类型为daily，起始时间和结束时间必须为同一天
+当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
+当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
                      * @param EndTime 查询结束时间：yyyy-MM-dd
+当报表类型为daily，起始时间和结束时间必须为同一天
+当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
+当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -192,12 +216,18 @@ overseas：中国境外
 
                     /**
                      * 查询起始时间：yyyy-MM-dd
+当报表类型为daily，起始时间和结束时间必须为同一天
+当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
+当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 查询结束时间：yyyy-MM-dd
+当报表类型为daily，起始时间和结束时间必须为同一天
+当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
+当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

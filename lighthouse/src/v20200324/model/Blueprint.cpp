@@ -32,7 +32,10 @@ Blueprint::Blueprint() :
     m_blueprintTypeHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_requiredSystemDiskSizeHasBeenSet(false),
-    m_blueprintStateHasBeenSet(false)
+    m_blueprintStateHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
+    m_blueprintNameHasBeenSet(false),
+    m_supportAutomationToolsHasBeenSet(false)
 {
 }
 
@@ -151,6 +154,36 @@ CoreInternalOutcome Blueprint::Deserialize(const Value &value)
         m_blueprintStateHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
+    {
+        if (!value["CreatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Blueprint.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdTime = string(value["CreatedTime"].GetString());
+        m_createdTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BlueprintName") && !value["BlueprintName"].IsNull())
+    {
+        if (!value["BlueprintName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Blueprint.BlueprintName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_blueprintName = string(value["BlueprintName"].GetString());
+        m_blueprintNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportAutomationTools") && !value["SupportAutomationTools"].IsNull())
+    {
+        if (!value["SupportAutomationTools"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Blueprint.SupportAutomationTools` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportAutomationTools = value["SupportAutomationTools"].GetBool();
+        m_supportAutomationToolsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +277,30 @@ void Blueprint::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "BlueprintState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_blueprintState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_blueprintNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BlueprintName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_blueprintName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportAutomationToolsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SupportAutomationTools";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportAutomationTools, allocator);
     }
 
 }
@@ -423,5 +480,53 @@ void Blueprint::SetBlueprintState(const string& _blueprintState)
 bool Blueprint::BlueprintStateHasBeenSet() const
 {
     return m_blueprintStateHasBeenSet;
+}
+
+string Blueprint::GetCreatedTime() const
+{
+    return m_createdTime;
+}
+
+void Blueprint::SetCreatedTime(const string& _createdTime)
+{
+    m_createdTime = _createdTime;
+    m_createdTimeHasBeenSet = true;
+}
+
+bool Blueprint::CreatedTimeHasBeenSet() const
+{
+    return m_createdTimeHasBeenSet;
+}
+
+string Blueprint::GetBlueprintName() const
+{
+    return m_blueprintName;
+}
+
+void Blueprint::SetBlueprintName(const string& _blueprintName)
+{
+    m_blueprintName = _blueprintName;
+    m_blueprintNameHasBeenSet = true;
+}
+
+bool Blueprint::BlueprintNameHasBeenSet() const
+{
+    return m_blueprintNameHasBeenSet;
+}
+
+bool Blueprint::GetSupportAutomationTools() const
+{
+    return m_supportAutomationTools;
+}
+
+void Blueprint::SetSupportAutomationTools(const bool& _supportAutomationTools)
+{
+    m_supportAutomationTools = _supportAutomationTools;
+    m_supportAutomationToolsHasBeenSet = true;
+}
+
+bool Blueprint::SupportAutomationToolsHasBeenSet() const
+{
+    return m_supportAutomationToolsHasBeenSet;
 }
 

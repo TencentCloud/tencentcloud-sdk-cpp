@@ -47,6 +47,40 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16；</li>
+<li>2:1。</li>
+默认值 16:9 。
+                     * @return AspectRatio 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16；</li>
+<li>2:1。</li>
+默认值 16:9 。
+                     */
+                    std::string GetAspectRatio() const;
+
+                    /**
+                     * 设置画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16；</li>
+<li>2:1。</li>
+默认值 16:9 。
+                     * @param AspectRatio 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16；</li>
+<li>2:1。</li>
+默认值 16:9 。
+                     */
+                    void SetAspectRatio(const std::string& _aspectRatio);
+
+                    /**
+                     * 判断参数 AspectRatio 是否已赋值
+                     * @return AspectRatio 是否已赋值
+                     */
+                    bool AspectRatioHasBeenSet() const;
+
+                    /**
                      * 获取视频拆条处理模型，不填则默认为手工分割视频。取值 ：
 <li>AI.GameHighlights.PUBG：和平精英集锦 ;</li>
 <li>AI.GameHighlights.Honor OfKings：王者荣耀集锦 ;</li>
@@ -89,6 +123,16 @@ namespace TencentCloud
                     bool ProcessModelHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16；</li>
+<li>2:1。</li>
+默认值 16:9 。
+                     */
+                    std::string m_aspectRatio;
+                    bool m_aspectRatioHasBeenSet;
 
                     /**
                      * 视频拆条处理模型，不填则默认为手工分割视频。取值 ：

@@ -45,172 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：8个字符。</li>
-<li>数组长度限制：10。</li>
-                     * @return Tags 标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：8个字符。</li>
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<std::string> GetTags() const;
-
-                    /**
-                     * 设置标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：8个字符。</li>
-<li>数组长度限制：10。</li>
-                     * @param Tags 标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：8个字符。</li>
-<li>数组长度限制：10。</li>
-                     */
-                    void SetTags(const std::vector<std::string>& _tags);
-
-                    /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
-                     */
-                    bool TagsHasBeenSet() const;
-
-                    /**
-                     * 获取分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
-<li>数组长度限制：10。</li>
-                     * @return ClassIds 分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<int64_t> GetClassIds() const;
-
-                    /**
-                     * 设置分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
-<li>数组长度限制：10。</li>
-                     * @param ClassIds 分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
-<li>数组长度限制：10。</li>
-                     */
-                    void SetClassIds(const std::vector<int64_t>& _classIds);
-
-                    /**
-                     * 判断参数 ClassIds 是否已赋值
-                     * @return ClassIds 是否已赋值
-                     */
-                    bool ClassIdsHasBeenSet() const;
-
-                    /**
-                     * 获取推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     * @return StreamIds 推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<std::string> GetStreamIds() const;
-
-                    /**
-                     * 设置推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     * @param StreamIds 推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     */
-                    void SetStreamIds(const std::vector<std::string>& _streamIds);
-
-                    /**
-                     * 判断参数 StreamIds 是否已赋值
-                     * @return StreamIds 是否已赋值
-                     */
-                    bool StreamIdsHasBeenSet() const;
-
-                    /**
-                     * 获取直播录制文件的唯一标识。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     * @return Vids 直播录制文件的唯一标识。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<std::string> GetVids() const;
-
-                    /**
-                     * 设置直播录制文件的唯一标识。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     * @param Vids 直播录制文件的唯一标识。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     */
-                    void SetVids(const std::vector<std::string>& _vids);
-
-                    /**
-                     * 判断参数 Vids 是否已赋值
-                     * @return Vids 是否已赋值
-                     */
-                    bool VidsHasBeenSet() const;
-
-                    /**
-                     * 获取媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-<li>数组长度限制：10。</li>
-                     * @return SourceTypes 媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<std::string> GetSourceTypes() const;
-
-                    /**
-                     * 设置媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-<li>数组长度限制：10。</li>
-                     * @param SourceTypes 媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-<li>数组长度限制：10。</li>
-                     */
-                    void SetSourceTypes(const std::vector<std::string>& _sourceTypes);
-
-                    /**
-                     * 判断参数 SourceTypes 是否已赋值
-                     * @return SourceTypes 是否已赋值
-                     */
-                    bool SourceTypesHasBeenSet() const;
-
-                    /**
-                     * 获取文件类型。匹配集合中的任意元素：
-<li>Video: 视频文件</li>
-<li>Audio: 音频文件</li>
-<li>Image: 图片文件</li>
-                     * @return Categories 文件类型。匹配集合中的任意元素：
-<li>Video: 视频文件</li>
-<li>Audio: 音频文件</li>
-<li>Image: 图片文件</li>
-                     */
-                    std::vector<std::string> GetCategories() const;
-
-                    /**
-                     * 设置文件类型。匹配集合中的任意元素：
-<li>Video: 视频文件</li>
-<li>Audio: 音频文件</li>
-<li>Image: 图片文件</li>
-                     * @param Categories 文件类型。匹配集合中的任意元素：
-<li>Video: 视频文件</li>
-<li>Audio: 音频文件</li>
-<li>Image: 图片文件</li>
-                     */
-                    void SetCategories(const std::vector<std::string>& _categories);
-
-                    /**
-                     * 判断参数 Categories 是否已赋值
-                     * @return Categories 是否已赋值
-                     */
-                    bool CategoriesHasBeenSet() const;
-
-                    /**
-                     * 获取匹配创建时间在此时间段内的文件。
-<li>包含所指定的头尾时间点。</li>
-                     * @return CreateTime 匹配创建时间在此时间段内的文件。
-<li>包含所指定的头尾时间点。</li>
-                     */
-                    TimeRange GetCreateTime() const;
-
-                    /**
-                     * 设置匹配创建时间在此时间段内的文件。
-<li>包含所指定的头尾时间点。</li>
-                     * @param CreateTime 匹配创建时间在此时间段内的文件。
-<li>包含所指定的头尾时间点。</li>
-                     */
-                    void SetCreateTime(const TimeRange& _createTime);
-
-                    /**
-                     * 判断参数 CreateTime 是否已赋值
-                     * @return CreateTime 是否已赋值
-                     */
-                    bool CreateTimeHasBeenSet() const;
-
-                    /**
                      * 获取文件 ID 集合，匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
 <li>单个 ID 长度限制：40个字符。</li>
@@ -289,20 +123,20 @@ namespace TencentCloud
                     bool NamePrefixesHasBeenSet() const;
 
                     /**
-                     * 获取文件描述集合，匹配集合中的任意元素。
+                     * 获取文件描述集合，模糊匹配媒体文件的描述，匹配度越高，排序越优先。
 <li>单个描述长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
-                     * @return Descriptions 文件描述集合，匹配集合中的任意元素。
+                     * @return Descriptions 文件描述集合，模糊匹配媒体文件的描述，匹配度越高，排序越优先。
 <li>单个描述长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     std::vector<std::string> GetDescriptions() const;
 
                     /**
-                     * 设置文件描述集合，匹配集合中的任意元素。
+                     * 设置文件描述集合，模糊匹配媒体文件的描述，匹配度越高，排序越优先。
 <li>单个描述长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
-                     * @param Descriptions 文件描述集合，匹配集合中的任意元素。
+                     * @param Descriptions 文件描述集合，模糊匹配媒体文件的描述，匹配度越高，排序越优先。
 <li>单个描述长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      */
@@ -313,6 +147,172 @@ namespace TencentCloud
                      * @return Descriptions 是否已赋值
                      */
                     bool DescriptionsHasBeenSet() const;
+
+                    /**
+                     * 获取分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
+<li>数组长度限制：10。</li>
+                     * @return ClassIds 分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<int64_t> GetClassIds() const;
+
+                    /**
+                     * 设置分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
+<li>数组长度限制：10。</li>
+                     * @param ClassIds 分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
+<li>数组长度限制：10。</li>
+                     */
+                    void SetClassIds(const std::vector<int64_t>& _classIds);
+
+                    /**
+                     * 判断参数 ClassIds 是否已赋值
+                     * @return ClassIds 是否已赋值
+                     */
+                    bool ClassIdsHasBeenSet() const;
+
+                    /**
+                     * 获取标签集合，匹配集合中任意元素。
+<li>单个标签长度限制：8个字符。</li>
+<li>数组长度限制：10。</li>
+                     * @return Tags 标签集合，匹配集合中任意元素。
+<li>单个标签长度限制：8个字符。</li>
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> GetTags() const;
+
+                    /**
+                     * 设置标签集合，匹配集合中任意元素。
+<li>单个标签长度限制：8个字符。</li>
+<li>数组长度限制：10。</li>
+                     * @param Tags 标签集合，匹配集合中任意元素。
+<li>单个标签长度限制：8个字符。</li>
+<li>数组长度限制：10。</li>
+                     */
+                    void SetTags(const std::vector<std::string>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取文件类型。匹配集合中的任意元素：
+<li>Video: 视频文件</li>
+<li>Audio: 音频文件</li>
+<li>Image: 图片文件</li>
+                     * @return Categories 文件类型。匹配集合中的任意元素：
+<li>Video: 视频文件</li>
+<li>Audio: 音频文件</li>
+<li>Image: 图片文件</li>
+                     */
+                    std::vector<std::string> GetCategories() const;
+
+                    /**
+                     * 设置文件类型。匹配集合中的任意元素：
+<li>Video: 视频文件</li>
+<li>Audio: 音频文件</li>
+<li>Image: 图片文件</li>
+                     * @param Categories 文件类型。匹配集合中的任意元素：
+<li>Video: 视频文件</li>
+<li>Audio: 音频文件</li>
+<li>Image: 图片文件</li>
+                     */
+                    void SetCategories(const std::vector<std::string>& _categories);
+
+                    /**
+                     * 判断参数 Categories 是否已赋值
+                     * @return Categories 是否已赋值
+                     */
+                    bool CategoriesHasBeenSet() const;
+
+                    /**
+                     * 获取媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+<li>数组长度限制：10。</li>
+                     * @return SourceTypes 媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> GetSourceTypes() const;
+
+                    /**
+                     * 设置媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+<li>数组长度限制：10。</li>
+                     * @param SourceTypes 媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+<li>数组长度限制：10。</li>
+                     */
+                    void SetSourceTypes(const std::vector<std::string>& _sourceTypes);
+
+                    /**
+                     * 判断参数 SourceTypes 是否已赋值
+                     * @return SourceTypes 是否已赋值
+                     */
+                    bool SourceTypesHasBeenSet() const;
+
+                    /**
+                     * 获取推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     * @return StreamIds 推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> GetStreamIds() const;
+
+                    /**
+                     * 设置推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     * @param StreamIds 推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    void SetStreamIds(const std::vector<std::string>& _streamIds);
+
+                    /**
+                     * 判断参数 StreamIds 是否已赋值
+                     * @return StreamIds 是否已赋值
+                     */
+                    bool StreamIdsHasBeenSet() const;
+
+                    /**
+                     * 获取直播录制文件的唯一标识。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     * @return Vids 直播录制文件的唯一标识。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> GetVids() const;
+
+                    /**
+                     * 设置直播录制文件的唯一标识。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     * @param Vids 直播录制文件的唯一标识。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    void SetVids(const std::vector<std::string>& _vids);
+
+                    /**
+                     * 判断参数 Vids 是否已赋值
+                     * @return Vids 是否已赋值
+                     */
+                    bool VidsHasBeenSet() const;
+
+                    /**
+                     * 获取匹配创建时间在此时间段内的文件。
+<li>包含所指定的头尾时间点。</li>
+                     * @return CreateTime 匹配创建时间在此时间段内的文件。
+<li>包含所指定的头尾时间点。</li>
+                     */
+                    TimeRange GetCreateTime() const;
+
+                    /**
+                     * 设置匹配创建时间在此时间段内的文件。
+<li>包含所指定的头尾时间点。</li>
+                     * @param CreateTime 匹配创建时间在此时间段内的文件。
+<li>包含所指定的头尾时间点。</li>
+                     */
+                    void SetCreateTime(const TimeRange& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取排序方式。
@@ -461,6 +461,50 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
+                     * 获取（不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
+搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
+                     * @return Text （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
+搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
+                     */
+                    std::string GetText() const;
+
+                    /**
+                     * 设置（不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
+搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
+                     * @param Text （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
+搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
+                     */
+                    void SetText(const std::string& _text);
+
+                    /**
+                     * 判断参数 Text 是否已赋值
+                     * @return Text 是否已赋值
+                     */
+                    bool TextHasBeenSet() const;
+
+                    /**
+                     * 获取（不推荐：应使用 SourceTypes 替代）
+媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+                     * @return SourceType （不推荐：应使用 SourceTypes 替代）
+媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 设置（不推荐：应使用 SourceTypes 替代）
+媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+                     * @param SourceType （不推荐：应使用 SourceTypes 替代）
+媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+                     */
+                    void SetSourceType(const std::string& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
+                    /**
                      * 获取（不推荐：应使用 StreamIds 替代）
 推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
                      * @return StreamId （不推荐：应使用 StreamIds 替代）
@@ -503,28 +547,6 @@ namespace TencentCloud
                      * @return Vid 是否已赋值
                      */
                     bool VidHasBeenSet() const;
-
-                    /**
-                     * 获取（不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
-搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
-                     * @return Text （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
-搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
-                     */
-                    std::string GetText() const;
-
-                    /**
-                     * 设置（不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
-搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
-                     * @param Text （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
-搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
-                     */
-                    void SetText(const std::string& _text);
-
-                    /**
-                     * 判断参数 Text 是否已赋值
-                     * @return Text 是否已赋值
-                     */
-                    bool TextHasBeenSet() const;
 
                     /**
                      * 获取（不推荐：应使用 CreateTime 替代）
@@ -594,81 +616,7 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
-                    /**
-                     * 获取（不推荐：应使用 SourceTypes 替代）
-媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-                     * @return SourceType （不推荐：应使用 SourceTypes 替代）
-媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-                     */
-                    std::string GetSourceType() const;
-
-                    /**
-                     * 设置（不推荐：应使用 SourceTypes 替代）
-媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-                     * @param SourceType （不推荐：应使用 SourceTypes 替代）
-媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-                     */
-                    void SetSourceType(const std::string& _sourceType);
-
-                    /**
-                     * 判断参数 SourceType 是否已赋值
-                     * @return SourceType 是否已赋值
-                     */
-                    bool SourceTypeHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：8个字符。</li>
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<std::string> m_tags;
-                    bool m_tagsHasBeenSet;
-
-                    /**
-                     * 分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<int64_t> m_classIds;
-                    bool m_classIdsHasBeenSet;
-
-                    /**
-                     * 推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<std::string> m_streamIds;
-                    bool m_streamIdsHasBeenSet;
-
-                    /**
-                     * 直播录制文件的唯一标识。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<std::string> m_vids;
-                    bool m_vidsHasBeenSet;
-
-                    /**
-                     * 媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<std::string> m_sourceTypes;
-                    bool m_sourceTypesHasBeenSet;
-
-                    /**
-                     * 文件类型。匹配集合中的任意元素：
-<li>Video: 视频文件</li>
-<li>Audio: 音频文件</li>
-<li>Image: 图片文件</li>
-                     */
-                    std::vector<std::string> m_categories;
-                    bool m_categoriesHasBeenSet;
-
-                    /**
-                     * 匹配创建时间在此时间段内的文件。
-<li>包含所指定的头尾时间点。</li>
-                     */
-                    TimeRange m_createTime;
-                    bool m_createTimeHasBeenSet;
 
                     /**
                      * 文件 ID 集合，匹配集合中的任意元素。
@@ -695,12 +643,64 @@ namespace TencentCloud
                     bool m_namePrefixesHasBeenSet;
 
                     /**
-                     * 文件描述集合，匹配集合中的任意元素。
+                     * 文件描述集合，模糊匹配媒体文件的描述，匹配度越高，排序越优先。
 <li>单个描述长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     std::vector<std::string> m_descriptions;
                     bool m_descriptionsHasBeenSet;
+
+                    /**
+                     * 分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<int64_t> m_classIds;
+                    bool m_classIdsHasBeenSet;
+
+                    /**
+                     * 标签集合，匹配集合中任意元素。
+<li>单个标签长度限制：8个字符。</li>
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 文件类型。匹配集合中的任意元素：
+<li>Video: 视频文件</li>
+<li>Audio: 音频文件</li>
+<li>Image: 图片文件</li>
+                     */
+                    std::vector<std::string> m_categories;
+                    bool m_categoriesHasBeenSet;
+
+                    /**
+                     * 媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> m_sourceTypes;
+                    bool m_sourceTypesHasBeenSet;
+
+                    /**
+                     * 推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> m_streamIds;
+                    bool m_streamIdsHasBeenSet;
+
+                    /**
+                     * 直播录制文件的唯一标识。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> m_vids;
+                    bool m_vidsHasBeenSet;
+
+                    /**
+                     * 匹配创建时间在此时间段内的文件。
+<li>包含所指定的头尾时间点。</li>
+                     */
+                    TimeRange m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                     /**
                      * 排序方式。
@@ -747,6 +747,20 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
+                     * （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
+搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
+                     */
+                    std::string m_text;
+                    bool m_textHasBeenSet;
+
+                    /**
+                     * （不推荐：应使用 SourceTypes 替代）
+媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
+
+                    /**
                      * （不推荐：应使用 StreamIds 替代）
 推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
                      */
@@ -759,13 +773,6 @@ namespace TencentCloud
                      */
                     std::string m_vid;
                     bool m_vidHasBeenSet;
-
-                    /**
-                     * （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
-搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
-                     */
-                    std::string m_text;
-                    bool m_textHasBeenSet;
 
                     /**
                      * （不推荐：应使用 CreateTime 替代）
@@ -786,13 +793,6 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
-
-                    /**
-                     * （不推荐：应使用 SourceTypes 替代）
-媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-                     */
-                    std::string m_sourceType;
-                    bool m_sourceTypeHasBeenSet;
 
                 };
             }

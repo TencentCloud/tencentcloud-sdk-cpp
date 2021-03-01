@@ -62,7 +62,8 @@ InstanceInfo::InstanceInfo() :
     m_zoneNameHasBeenSet(false),
     m_deviceClassHasBeenSet(false),
     m_deployGroupIdHasBeenSet(false),
-    m_zoneIdHasBeenSet(false)
+    m_zoneIdHasBeenSet(false),
+    m_instanceNodesHasBeenSet(false)
 {
 }
 
@@ -522,6 +523,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const Value &value)
         m_zoneIdHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceNodes") && !value["InstanceNodes"].IsNull())
+    {
+        if (!value["InstanceNodes"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.InstanceNodes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceNodes = value["InstanceNodes"].GetInt64();
+        m_instanceNodesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -872,6 +883,14 @@ void InstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneId, allocator);
+    }
+
+    if (m_instanceNodesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceNodes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceNodes, allocator);
     }
 
 }
@@ -1531,5 +1550,21 @@ void InstanceInfo::SetZoneId(const int64_t& _zoneId)
 bool InstanceInfo::ZoneIdHasBeenSet() const
 {
     return m_zoneIdHasBeenSet;
+}
+
+int64_t InstanceInfo::GetInstanceNodes() const
+{
+    return m_instanceNodes;
+}
+
+void InstanceInfo::SetInstanceNodes(const int64_t& _instanceNodes)
+{
+    m_instanceNodes = _instanceNodes;
+    m_instanceNodesHasBeenSet = true;
+}
+
+bool InstanceInfo::InstanceNodesHasBeenSet() const
+{
+    return m_instanceNodesHasBeenSet;
 }
 

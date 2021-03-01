@@ -234,9 +234,11 @@ Block 确认违规
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取图片结果
+                     * 获取视频中截帧审核的结果。
+数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageSegments 图片结果
+                     * @return ImageSegments 视频中截帧审核的结果。
+数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageSegments> GetImageSegments() const;
@@ -248,9 +250,11 @@ Block 确认违规
                     bool ImageSegmentsHasBeenSet() const;
 
                     /**
-                     * 获取音频结果
+                     * 获取视频中音频审核的结果。
+数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AudioSegments 音频结果
+                     * @return AudioSegments 视频中音频审核的结果。
+数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioSegments> GetAudioSegments() const;
@@ -393,14 +397,16 @@ Block 确认违规
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 图片结果
+                     * 视频中截帧审核的结果。
+数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageSegments> m_imageSegments;
                     bool m_imageSegmentsHasBeenSet;
 
                     /**
-                     * 音频结果
+                     * 视频中音频审核的结果。
+数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioSegments> m_audioSegments;

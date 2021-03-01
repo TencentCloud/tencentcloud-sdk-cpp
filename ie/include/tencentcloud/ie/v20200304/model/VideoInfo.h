@@ -27,6 +27,7 @@
 #include <tencentcloud/ie/v20200304/model/PicMarkInfoItem.h>
 #include <tencentcloud/ie/v20200304/model/DarInfo.h>
 #include <tencentcloud/ie/v20200304/model/VideoEnhance.h>
+#include <tencentcloud/ie/v20200304/model/HiddenMarkInfo.h>
 
 
 namespace TencentCloud
@@ -389,6 +390,24 @@ hlg。
                      */
                     bool VideoEnhanceHasBeenSet() const;
 
+                    /**
+                     * 获取数字水印参数信息。
+                     * @return HiddenMarkInfo 数字水印参数信息。
+                     */
+                    HiddenMarkInfo GetHiddenMarkInfo() const;
+
+                    /**
+                     * 设置数字水印参数信息。
+                     * @param HiddenMarkInfo 数字水印参数信息。
+                     */
+                    void SetHiddenMarkInfo(const HiddenMarkInfo& _hiddenMarkInfo);
+
+                    /**
+                     * 判断参数 HiddenMarkInfo 是否已赋值
+                     * @return HiddenMarkInfo 是否已赋值
+                     */
+                    bool HiddenMarkInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -493,6 +512,12 @@ hlg。
                      */
                     VideoEnhance m_videoEnhance;
                     bool m_videoEnhanceHasBeenSet;
+
+                    /**
+                     * 数字水印参数信息。
+                     */
+                    HiddenMarkInfo m_hiddenMarkInfo;
+                    bool m_hiddenMarkInfoHasBeenSet;
 
                 };
             }

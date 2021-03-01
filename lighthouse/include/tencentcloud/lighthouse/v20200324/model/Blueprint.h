@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像 ID  ，是 blueprint 的唯一标识。
-                     * @return BlueprintId 镜像 ID  ，是 blueprint 的唯一标识。
+                     * 获取镜像 ID  ，是 Blueprint 的唯一标识。
+                     * @return BlueprintId 镜像 ID  ，是 Blueprint 的唯一标识。
                      */
                     std::string GetBlueprintId() const;
 
                     /**
-                     * 设置镜像 ID  ，是 blueprint 的唯一标识。
-                     * @param BlueprintId 镜像 ID  ，是 blueprint 的唯一标识。
+                     * 设置镜像 ID  ，是 Blueprint 的唯一标识。
+                     * @param BlueprintId 镜像 ID  ，是 Blueprint 的唯一标识。
                      */
                     void SetBlueprintId(const std::string& _blueprintId);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool PlatformTypeHasBeenSet() const;
 
                     /**
-                     * 获取镜像类型，如 APP_OS、PURE_OS。
-                     * @return BlueprintType 镜像类型，如 APP_OS、PURE_OS。
+                     * 获取镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * @return BlueprintType 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
                      */
                     std::string GetBlueprintType() const;
 
                     /**
-                     * 设置镜像类型，如 APP_OS、PURE_OS。
-                     * @param BlueprintType 镜像类型，如 APP_OS、PURE_OS。
+                     * 设置镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * @param BlueprintType 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
                      */
                     void SetBlueprintType(const std::string& _blueprintType);
 
@@ -244,10 +244,72 @@ namespace TencentCloud
                      */
                     bool BlueprintStateHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取镜像名称。
+                     * @return BlueprintName 镜像名称。
+                     */
+                    std::string GetBlueprintName() const;
+
+                    /**
+                     * 设置镜像名称。
+                     * @param BlueprintName 镜像名称。
+                     */
+                    void SetBlueprintName(const std::string& _blueprintName);
+
+                    /**
+                     * 判断参数 BlueprintName 是否已赋值
+                     * @return BlueprintName 是否已赋值
+                     */
+                    bool BlueprintNameHasBeenSet() const;
+
+                    /**
+                     * 获取镜像是否支持自动化助手。
+                     * @return SupportAutomationTools 镜像是否支持自动化助手。
+                     */
+                    bool GetSupportAutomationTools() const;
+
+                    /**
+                     * 设置镜像是否支持自动化助手。
+                     * @param SupportAutomationTools 镜像是否支持自动化助手。
+                     */
+                    void SetSupportAutomationTools(const bool& _supportAutomationTools);
+
+                    /**
+                     * 判断参数 SupportAutomationTools 是否已赋值
+                     * @return SupportAutomationTools 是否已赋值
+                     */
+                    bool SupportAutomationToolsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 镜像 ID  ，是 blueprint 的唯一标识。
+                     * 镜像 ID  ，是 Blueprint 的唯一标识。
                      */
                     std::string m_blueprintId;
                     bool m_blueprintIdHasBeenSet;
@@ -289,7 +351,7 @@ namespace TencentCloud
                     bool m_platformTypeHasBeenSet;
 
                     /**
-                     * 镜像类型，如 APP_OS、PURE_OS。
+                     * 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
                      */
                     std::string m_blueprintType;
                     bool m_blueprintTypeHasBeenSet;
@@ -311,6 +373,26 @@ namespace TencentCloud
                      */
                     std::string m_blueprintState;
                     bool m_blueprintStateHasBeenSet;
+
+                    /**
+                     * 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 镜像名称。
+                     */
+                    std::string m_blueprintName;
+                    bool m_blueprintNameHasBeenSet;
+
+                    /**
+                     * 镜像是否支持自动化助手。
+                     */
+                    bool m_supportAutomationTools;
+                    bool m_supportAutomationToolsHasBeenSet;
 
                 };
             }

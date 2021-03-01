@@ -112,6 +112,28 @@ namespace TencentCloud
                      */
                     bool KubeSchedulerHasBeenSet() const;
 
+                    /**
+                     * 获取etcd自定义参数，只支持独立集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Etcd etcd自定义参数，只支持独立集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetEtcd() const;
+
+                    /**
+                     * 设置etcd自定义参数，只支持独立集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Etcd etcd自定义参数，只支持独立集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEtcd(const std::vector<std::string>& _etcd);
+
+                    /**
+                     * 判断参数 Etcd 是否已赋值
+                     * @return Etcd 是否已赋值
+                     */
+                    bool EtcdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +156,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_kubeScheduler;
                     bool m_kubeSchedulerHasBeenSet;
+
+                    /**
+                     * etcd自定义参数，只支持独立集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_etcd;
+                    bool m_etcdHasBeenSet;
 
                 };
             }

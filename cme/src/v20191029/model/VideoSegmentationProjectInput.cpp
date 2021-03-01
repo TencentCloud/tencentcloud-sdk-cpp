@@ -22,6 +22,7 @@ using namespace rapidjson;
 using namespace std;
 
 VideoSegmentationProjectInput::VideoSegmentationProjectInput() :
+    m_aspectRatioHasBeenSet(false),
     m_processModelHasBeenSet(false)
 {
 }
@@ -30,6 +31,16 @@ CoreInternalOutcome VideoSegmentationProjectInput::Deserialize(const Value &valu
 {
     string requestId = "";
 
+
+    if (value.HasMember("AspectRatio") && !value["AspectRatio"].IsNull())
+    {
+        if (!value["AspectRatio"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VideoSegmentationProjectInput.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aspectRatio = string(value["AspectRatio"].GetString());
+        m_aspectRatioHasBeenSet = true;
+    }
 
     if (value.HasMember("ProcessModel") && !value["ProcessModel"].IsNull())
     {
@@ -48,6 +59,14 @@ CoreInternalOutcome VideoSegmentationProjectInput::Deserialize(const Value &valu
 void VideoSegmentationProjectInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
+    if (m_aspectRatioHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AspectRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_processModelHasBeenSet)
     {
         Value iKey(kStringType);
@@ -58,6 +77,22 @@ void VideoSegmentationProjectInput::ToJsonObject(Value &value, Document::Allocat
 
 }
 
+
+string VideoSegmentationProjectInput::GetAspectRatio() const
+{
+    return m_aspectRatio;
+}
+
+void VideoSegmentationProjectInput::SetAspectRatio(const string& _aspectRatio)
+{
+    m_aspectRatio = _aspectRatio;
+    m_aspectRatioHasBeenSet = true;
+}
+
+bool VideoSegmentationProjectInput::AspectRatioHasBeenSet() const
+{
+    return m_aspectRatioHasBeenSet;
+}
 
 string VideoSegmentationProjectInput::GetProcessModel() const
 {

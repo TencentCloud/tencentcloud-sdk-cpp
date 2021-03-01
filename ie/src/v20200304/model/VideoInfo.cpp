@@ -33,7 +33,8 @@ VideoInfo::VideoInfo() :
     m_picMarkInfoHasBeenSet(false),
     m_darInfoHasBeenSet(false),
     m_hdrHasBeenSet(false),
-    m_videoEnhanceHasBeenSet(false)
+    m_videoEnhanceHasBeenSet(false),
+    m_hiddenMarkInfoHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,23 @@ CoreInternalOutcome VideoInfo::Deserialize(const Value &value)
         m_videoEnhanceHasBeenSet = true;
     }
 
+    if (value.HasMember("HiddenMarkInfo") && !value["HiddenMarkInfo"].IsNull())
+    {
+        if (!value["HiddenMarkInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `VideoInfo.HiddenMarkInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hiddenMarkInfo.Deserialize(value["HiddenMarkInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hiddenMarkInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +314,15 @@ void VideoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_videoEnhance.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hiddenMarkInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HiddenMarkInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_hiddenMarkInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -491,5 +518,21 @@ void VideoInfo::SetVideoEnhance(const VideoEnhance& _videoEnhance)
 bool VideoInfo::VideoEnhanceHasBeenSet() const
 {
     return m_videoEnhanceHasBeenSet;
+}
+
+HiddenMarkInfo VideoInfo::GetHiddenMarkInfo() const
+{
+    return m_hiddenMarkInfo;
+}
+
+void VideoInfo::SetHiddenMarkInfo(const HiddenMarkInfo& _hiddenMarkInfo)
+{
+    m_hiddenMarkInfo = _hiddenMarkInfo;
+    m_hiddenMarkInfoHasBeenSet = true;
+}
+
+bool VideoInfo::HiddenMarkInfoHasBeenSet() const
+{
+    return m_hiddenMarkInfoHasBeenSet;
 }
 

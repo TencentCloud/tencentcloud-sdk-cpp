@@ -821,6 +821,28 @@ namespace TencentCloud
                      */
                     bool ZoneIdHasBeenSet() const;
 
+                    /**
+                     * 获取节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceNodes 节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInstanceNodes() const;
+
+                    /**
+                     * 设置节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceNodes 节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceNodes(const int64_t& _instanceNodes);
+
+                    /**
+                     * 判断参数 InstanceNodes 是否已赋值
+                     * @return InstanceNodes 是否已赋值
+                     */
+                    bool InstanceNodesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1076,6 +1098,13 @@ namespace TencentCloud
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 节点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_instanceNodes;
+                    bool m_instanceNodesHasBeenSet;
 
                 };
             }
