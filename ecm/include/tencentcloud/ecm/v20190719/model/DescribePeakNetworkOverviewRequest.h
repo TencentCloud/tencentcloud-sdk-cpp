@@ -121,6 +121,24 @@ region和area只应填写一个。
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取统计周期，单位秒。取值60/300。
+                     * @return Period 统计周期，单位秒。取值60/300。
+                     */
+                    int64_t GetPeriod() const;
+
+                    /**
+                     * 设置统计周期，单位秒。取值60/300。
+                     * @param Period 统计周期，单位秒。取值60/300。
+                     */
+                    void SetPeriod(const int64_t& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     */
+                    bool PeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,6 +164,12 @@ region和area只应填写一个。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 统计周期，单位秒。取值60/300。
+                     */
+                    int64_t m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

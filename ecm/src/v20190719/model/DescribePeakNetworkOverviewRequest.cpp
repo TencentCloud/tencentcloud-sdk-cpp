@@ -26,7 +26,8 @@ using namespace std;
 DescribePeakNetworkOverviewRequest::DescribePeakNetworkOverviewRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,14 @@ string DescribePeakNetworkOverviewRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
     }
 
 
@@ -122,6 +131,22 @@ void DescribePeakNetworkOverviewRequest::SetFilters(const vector<Filter>& _filte
 bool DescribePeakNetworkOverviewRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+int64_t DescribePeakNetworkOverviewRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void DescribePeakNetworkOverviewRequest::SetPeriod(const int64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool DescribePeakNetworkOverviewRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 

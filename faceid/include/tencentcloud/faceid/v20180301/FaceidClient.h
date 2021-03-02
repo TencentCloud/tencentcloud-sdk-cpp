@@ -211,7 +211,8 @@ namespace TencentCloud
                 CheckIdCardInformationOutcomeCallable CheckIdCardInformationCallable(const Model::CheckIdCardInformationRequest& request);
 
                 /**
-                 *本接口用于校验手机号和姓名的真实性和一致性。
+                 *手机号二要素核验接口用于校验手机号和姓名的真实性和一致性，支持的手机号段详情请查阅<a href="https://cloud.tencent.com/document/product/1007/46063">运营商类</a>文档。
+
                  * @param req CheckPhoneAndNameRequest
                  * @return CheckPhoneAndNameOutcome
                  */
@@ -383,7 +384,7 @@ namespace TencentCloud
                 MobileStatusOutcomeCallable MobileStatusCallable(const Model::MobileStatusRequest& request);
 
                 /**
-                 *本接口用于校验手机号、姓名和身份证号的真实性和一致性。
+                 *本接口用于校验手机号、姓名和身份证号的真实性和一致性。支持的手机号段详情请查阅<a href="https://cloud.tencent.com/document/product/1007/46063">运营商类</a>文档。
                  * @param req PhoneVerificationRequest
                  * @return PhoneVerificationOutcome
                  */

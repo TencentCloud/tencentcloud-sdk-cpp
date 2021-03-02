@@ -24,7 +24,8 @@ using namespace std;
 PeakNetwork::PeakNetwork() :
     m_recordTimeHasBeenSet(false),
     m_peakInNetworkHasBeenSet(false),
-    m_peakOutNetworkHasBeenSet(false)
+    m_peakOutNetworkHasBeenSet(false),
+    m_chargeNetworkHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome PeakNetwork::Deserialize(const Value &value)
         m_peakOutNetworkHasBeenSet = true;
     }
 
+    if (value.HasMember("ChargeNetwork") && !value["ChargeNetwork"].IsNull())
+    {
+        if (!value["ChargeNetwork"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PeakNetwork.ChargeNetwork` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chargeNetwork = string(value["ChargeNetwork"].GetString());
+        m_chargeNetworkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void PeakNetwork::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "PeakOutNetwork";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_peakOutNetwork.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chargeNetworkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ChargeNetwork";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_chargeNetwork.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void PeakNetwork::SetPeakOutNetwork(const string& _peakOutNetwork)
 bool PeakNetwork::PeakOutNetworkHasBeenSet() const
 {
     return m_peakOutNetworkHasBeenSet;
+}
+
+string PeakNetwork::GetChargeNetwork() const
+{
+    return m_chargeNetwork;
+}
+
+void PeakNetwork::SetChargeNetwork(const string& _chargeNetwork)
+{
+    m_chargeNetwork = _chargeNetwork;
+    m_chargeNetworkHasBeenSet = true;
+}
+
+bool PeakNetwork::ChargeNetworkHasBeenSet() const
+{
+    return m_chargeNetworkHasBeenSet;
 }
 

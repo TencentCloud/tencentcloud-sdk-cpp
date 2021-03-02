@@ -26,7 +26,8 @@ Outbound::Outbound() :
     m_cidrIpHasBeenSet(false),
     m_portRangeHasBeenSet(false),
     m_ipProtocolHasBeenSet(false),
-    m_dirHasBeenSet(false)
+    m_dirHasBeenSet(false),
+    m_descHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome Outbound::Deserialize(const Value &value)
         m_dirHasBeenSet = true;
     }
 
+    if (value.HasMember("Desc") && !value["Desc"].IsNull())
+    {
+        if (!value["Desc"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Outbound.Desc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_desc = string(value["Desc"].GetString());
+        m_descHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void Outbound::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Dir";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_dir.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Desc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_desc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void Outbound::SetDir(const string& _dir)
 bool Outbound::DirHasBeenSet() const
 {
     return m_dirHasBeenSet;
+}
+
+string Outbound::GetDesc() const
+{
+    return m_desc;
+}
+
+void Outbound::SetDesc(const string& _desc)
+{
+    m_desc = _desc;
+    m_descHasBeenSet = true;
+}
+
+bool Outbound::DescHasBeenSet() const
+{
+    return m_descHasBeenSet;
 }
 

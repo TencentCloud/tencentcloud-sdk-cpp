@@ -25,7 +25,8 @@ using namespace std;
 
 DisassociateSecurityGroupsRequest::DisassociateSecurityGroupsRequest() :
     m_securityGroupIdHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_forReadonlyInstanceHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string DisassociateSecurityGroupsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_forReadonlyInstanceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForReadonlyInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forReadonlyInstance, allocator);
     }
 
 
@@ -95,6 +104,22 @@ void DisassociateSecurityGroupsRequest::SetInstanceIds(const vector<string>& _in
 bool DisassociateSecurityGroupsRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+bool DisassociateSecurityGroupsRequest::GetForReadonlyInstance() const
+{
+    return m_forReadonlyInstance;
+}
+
+void DisassociateSecurityGroupsRequest::SetForReadonlyInstance(const bool& _forReadonlyInstance)
+{
+    m_forReadonlyInstance = _forReadonlyInstance;
+    m_forReadonlyInstanceHasBeenSet = true;
+}
+
+bool DisassociateSecurityGroupsRequest::ForReadonlyInstanceHasBeenSet() const
+{
+    return m_forReadonlyInstanceHasBeenSet;
 }
 
 

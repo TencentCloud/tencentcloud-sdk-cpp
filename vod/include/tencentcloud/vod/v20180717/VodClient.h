@@ -117,6 +117,10 @@
 #include <tencentcloud/vod/v20180717/model/DescribeCdnLogsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDailyMediaPlayStatRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDailyMediaPlayStatResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDailyMostPlayedStatRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDailyMostPlayedStatResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateRequest.h>
@@ -380,6 +384,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeContentReviewTemplatesResponse> DescribeContentReviewTemplatesOutcome;
                 typedef std::future<DescribeContentReviewTemplatesOutcome> DescribeContentReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeContentReviewTemplatesRequest&, DescribeContentReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentReviewTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDailyMediaPlayStatResponse> DescribeDailyMediaPlayStatOutcome;
+                typedef std::future<DescribeDailyMediaPlayStatOutcome> DescribeDailyMediaPlayStatOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeDailyMediaPlayStatRequest&, DescribeDailyMediaPlayStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDailyMediaPlayStatAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDailyMostPlayedStatResponse> DescribeDailyMostPlayedStatOutcome;
+                typedef std::future<DescribeDailyMostPlayedStatOutcome> DescribeDailyMostPlayedStatOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeDailyMostPlayedStatRequest&, DescribeDailyMostPlayedStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDailyMostPlayedStatAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDailyPlayStatFileListResponse> DescribeDailyPlayStatFileListOutcome;
                 typedef std::future<DescribeDailyPlayStatFileListOutcome> DescribeDailyPlayStatFileListOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeDailyPlayStatFileListRequest&, DescribeDailyPlayStatFileListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDailyPlayStatFileListAsyncHandler;
@@ -995,6 +1005,30 @@ namespace TencentCloud
                 DescribeContentReviewTemplatesOutcome DescribeContentReviewTemplates(const Model::DescribeContentReviewTemplatesRequest &request);
                 void DescribeContentReviewTemplatesAsync(const Model::DescribeContentReviewTemplatesRequest& request, const DescribeContentReviewTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeContentReviewTemplatesOutcomeCallable DescribeContentReviewTemplatesCallable(const Model::DescribeContentReviewTemplatesRequest& request);
+
+                /**
+                 *该接口用于查询指定日期范围内每天的播放统计数据。
+* 可以查询最近30天的播放统计数据。
+                 * @param req DescribeDailyMediaPlayStatRequest
+                 * @return DescribeDailyMediaPlayStatOutcome
+                 */
+                DescribeDailyMediaPlayStatOutcome DescribeDailyMediaPlayStat(const Model::DescribeDailyMediaPlayStatRequest &request);
+                void DescribeDailyMediaPlayStatAsync(const Model::DescribeDailyMediaPlayStatRequest& request, const DescribeDailyMediaPlayStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDailyMediaPlayStatOutcomeCallable DescribeDailyMediaPlayStatCallable(const Model::DescribeDailyMediaPlayStatRequest& request);
+
+                /**
+                 *该接口用于查询每日播放Top100 的媒体文件的播放统计数据。
+* 可以查询最近30天的播放统计数据。
+* 可以按播放次数或者播放流量查询。
+* 播放次数统计说明：
+    1. HLS 文件：访问 M3U8 文件时统计播放次数；访问 TS 文件不统计播放次数。
+    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。
+                 * @param req DescribeDailyMostPlayedStatRequest
+                 * @return DescribeDailyMostPlayedStatOutcome
+                 */
+                DescribeDailyMostPlayedStatOutcome DescribeDailyMostPlayedStat(const Model::DescribeDailyMostPlayedStatRequest &request);
+                void DescribeDailyMostPlayedStatAsync(const Model::DescribeDailyMostPlayedStatRequest& request, const DescribeDailyMostPlayedStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDailyMostPlayedStatOutcomeCallable DescribeDailyMostPlayedStatCallable(const Model::DescribeDailyMostPlayedStatRequest& request);
 
                 /**
                  *该接口用于查询播放统计文件的下载地址。

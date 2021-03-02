@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool PeakOutNetworkHasBeenSet() const;
 
+                    /**
+                     * 获取计费带宽。单位bps
+                     * @return ChargeNetwork 计费带宽。单位bps
+                     */
+                    std::string GetChargeNetwork() const;
+
+                    /**
+                     * 设置计费带宽。单位bps
+                     * @param ChargeNetwork 计费带宽。单位bps
+                     */
+                    void SetChargeNetwork(const std::string& _chargeNetwork);
+
+                    /**
+                     * 判断参数 ChargeNetwork 是否已赋值
+                     * @return ChargeNetwork 是否已赋值
+                     */
+                    bool ChargeNetworkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_peakOutNetwork;
                     bool m_peakOutNetworkHasBeenSet;
+
+                    /**
+                     * 计费带宽。单位bps
+                     */
+                    std::string m_chargeNetwork;
+                    bool m_chargeNetworkHasBeenSet;
 
                 };
             }

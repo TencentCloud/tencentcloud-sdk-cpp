@@ -298,6 +298,92 @@ CccClient::DescribeSeatUserListOutcomeCallable CccClient::DescribeSeatUserListCa
     return task->get_future();
 }
 
+CccClient::DescribeSkillGroupInfoListOutcome CccClient::DescribeSkillGroupInfoList(const DescribeSkillGroupInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSkillGroupInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSkillGroupInfoListResponse rsp = DescribeSkillGroupInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSkillGroupInfoListOutcome(rsp);
+        else
+            return DescribeSkillGroupInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSkillGroupInfoListOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeSkillGroupInfoListAsync(const DescribeSkillGroupInfoListRequest& request, const DescribeSkillGroupInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSkillGroupInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeSkillGroupInfoListOutcomeCallable CccClient::DescribeSkillGroupInfoListCallable(const DescribeSkillGroupInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSkillGroupInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSkillGroupInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DescribeStaffInfoListOutcome CccClient::DescribeStaffInfoList(const DescribeStaffInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStaffInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStaffInfoListResponse rsp = DescribeStaffInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStaffInfoListOutcome(rsp);
+        else
+            return DescribeStaffInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStaffInfoListOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeStaffInfoListAsync(const DescribeStaffInfoListRequest& request, const DescribeStaffInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStaffInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeStaffInfoListOutcomeCallable CccClient::DescribeStaffInfoListCallable(const DescribeStaffInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStaffInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStaffInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeTelCallInfoOutcome CccClient::DescribeTelCallInfo(const DescribeTelCallInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTelCallInfo");

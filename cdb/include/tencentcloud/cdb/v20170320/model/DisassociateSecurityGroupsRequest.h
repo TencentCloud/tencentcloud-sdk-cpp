@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * @return ForReadonlyInstance 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     */
+                    bool GetForReadonlyInstance() const;
+
+                    /**
+                     * 设置当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * @param ForReadonlyInstance 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     */
+                    void SetForReadonlyInstance(const bool& _forReadonlyInstance);
+
+                    /**
+                     * 判断参数 ForReadonlyInstance 是否已赋值
+                     * @return ForReadonlyInstance 是否已赋值
+                     */
+                    bool ForReadonlyInstanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     */
+                    bool m_forReadonlyInstance;
+                    bool m_forReadonlyInstanceHasBeenSet;
 
                 };
             }

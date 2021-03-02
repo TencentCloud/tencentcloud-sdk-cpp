@@ -585,6 +585,24 @@ namespace TencentCloud
                      */
                     bool CpuHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。
+                     * @return AutoSyncFlag 是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。
+                     */
+                    int64_t GetAutoSyncFlag() const;
+
+                    /**
+                     * 设置是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。
+                     * @param AutoSyncFlag 是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。
+                     */
+                    void SetAutoSyncFlag(const int64_t& _autoSyncFlag);
+
+                    /**
+                     * 判断参数 AutoSyncFlag 是否已赋值
+                     * @return AutoSyncFlag 是否已赋值
+                     */
+                    bool AutoSyncFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -766,6 +784,12 @@ namespace TencentCloud
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
+
+                    /**
+                     * 是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。
+                     */
+                    int64_t m_autoSyncFlag;
+                    bool m_autoSyncFlagHasBeenSet;
 
                 };
             }

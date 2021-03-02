@@ -262,14 +262,14 @@ namespace TencentCloud
                     bool SuccessOperatorHasBeenSet() const;
 
                     /**
-                     * 获取判断任务成功率的阈值，如99.99
-                     * @return SuccessRatio 判断任务成功率的阈值，如99.99
+                     * 获取判断任务成功率的阈值，如100
+                     * @return SuccessRatio 判断任务成功率的阈值，如100
                      */
                     std::string GetSuccessRatio() const;
 
                     /**
-                     * 设置判断任务成功率的阈值，如99.99
-                     * @param SuccessRatio 判断任务成功率的阈值，如99.99
+                     * 设置判断任务成功率的阈值，如100
+                     * @param SuccessRatio 判断任务成功率的阈值，如100
                      */
                     void SetSuccessRatio(const std::string& _successRatio);
 
@@ -390,7 +390,7 @@ namespace TencentCloud
                     bool m_successOperatorHasBeenSet;
 
                     /**
-                     * 判断任务成功率的阈值，如99.99
+                     * 判断任务成功率的阈值，如100
                      */
                     std::string m_successRatio;
                     bool m_successRatioHasBeenSet;

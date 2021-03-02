@@ -35,6 +35,10 @@
 #include <tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeSeatUserListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeSeatUserListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeStaffInfoListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeStaffInfoListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h>
@@ -71,6 +75,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSeatUserListResponse> DescribeSeatUserListOutcome;
                 typedef std::future<DescribeSeatUserListOutcome> DescribeSeatUserListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeSeatUserListRequest&, DescribeSeatUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSeatUserListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSkillGroupInfoListResponse> DescribeSkillGroupInfoListOutcome;
+                typedef std::future<DescribeSkillGroupInfoListOutcome> DescribeSkillGroupInfoListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeSkillGroupInfoListRequest&, DescribeSkillGroupInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillGroupInfoListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeStaffInfoListResponse> DescribeStaffInfoListOutcome;
+                typedef std::future<DescribeStaffInfoListOutcome> DescribeStaffInfoListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeStaffInfoListRequest&, DescribeStaffInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStaffInfoListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTelCallInfoResponse> DescribeTelCallInfoOutcome;
                 typedef std::future<DescribeTelCallInfoOutcome> DescribeTelCallInfoOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelCallInfoRequest&, DescribeTelCallInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelCallInfoAsyncHandler;
@@ -133,6 +143,24 @@ namespace TencentCloud
                 DescribeSeatUserListOutcome DescribeSeatUserList(const Model::DescribeSeatUserListRequest &request);
                 void DescribeSeatUserListAsync(const Model::DescribeSeatUserListRequest& request, const DescribeSeatUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSeatUserListOutcomeCallable DescribeSeatUserListCallable(const Model::DescribeSeatUserListRequest& request);
+
+                /**
+                 *获取技能组信息列表
+                 * @param req DescribeSkillGroupInfoListRequest
+                 * @return DescribeSkillGroupInfoListOutcome
+                 */
+                DescribeSkillGroupInfoListOutcome DescribeSkillGroupInfoList(const Model::DescribeSkillGroupInfoListRequest &request);
+                void DescribeSkillGroupInfoListAsync(const Model::DescribeSkillGroupInfoListRequest& request, const DescribeSkillGroupInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSkillGroupInfoListOutcomeCallable DescribeSkillGroupInfoListCallable(const Model::DescribeSkillGroupInfoListRequest& request);
+
+                /**
+                 *获取坐席信息列表
+                 * @param req DescribeStaffInfoListRequest
+                 * @return DescribeStaffInfoListOutcome
+                 */
+                DescribeStaffInfoListOutcome DescribeStaffInfoList(const Model::DescribeStaffInfoListRequest &request);
+                void DescribeStaffInfoListAsync(const Model::DescribeStaffInfoListRequest& request, const DescribeStaffInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStaffInfoListOutcomeCallable DescribeStaffInfoListCallable(const Model::DescribeStaffInfoListRequest& request);
 
                 /**
                  *按实例获取电话消耗统计

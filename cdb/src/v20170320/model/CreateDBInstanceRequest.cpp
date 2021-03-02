@@ -54,7 +54,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_paramTemplateIdHasBeenSet(false),
     m_alarmPolicyListHasBeenSet(false),
     m_instanceNodesHasBeenSet(false),
-    m_cpuHasBeenSet(false)
+    m_cpuHasBeenSet(false),
+    m_autoSyncFlagHasBeenSet(false)
 {
 }
 
@@ -336,6 +337,14 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_autoSyncFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoSyncFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoSyncFlag, allocator);
     }
 
 
@@ -840,6 +849,22 @@ void CreateDBInstanceRequest::SetCpu(const int64_t& _cpu)
 bool CreateDBInstanceRequest::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+int64_t CreateDBInstanceRequest::GetAutoSyncFlag() const
+{
+    return m_autoSyncFlag;
+}
+
+void CreateDBInstanceRequest::SetAutoSyncFlag(const int64_t& _autoSyncFlag)
+{
+    m_autoSyncFlag = _autoSyncFlag;
+    m_autoSyncFlagHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::AutoSyncFlagHasBeenSet() const
+{
+    return m_autoSyncFlagHasBeenSet;
 }
 
 

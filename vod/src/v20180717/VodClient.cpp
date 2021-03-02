@@ -2061,6 +2061,92 @@ VodClient::DescribeContentReviewTemplatesOutcomeCallable VodClient::DescribeCont
     return task->get_future();
 }
 
+VodClient::DescribeDailyMediaPlayStatOutcome VodClient::DescribeDailyMediaPlayStat(const DescribeDailyMediaPlayStatRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDailyMediaPlayStat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDailyMediaPlayStatResponse rsp = DescribeDailyMediaPlayStatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDailyMediaPlayStatOutcome(rsp);
+        else
+            return DescribeDailyMediaPlayStatOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDailyMediaPlayStatOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeDailyMediaPlayStatAsync(const DescribeDailyMediaPlayStatRequest& request, const DescribeDailyMediaPlayStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDailyMediaPlayStat(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeDailyMediaPlayStatOutcomeCallable VodClient::DescribeDailyMediaPlayStatCallable(const DescribeDailyMediaPlayStatRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDailyMediaPlayStatOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDailyMediaPlayStat(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DescribeDailyMostPlayedStatOutcome VodClient::DescribeDailyMostPlayedStat(const DescribeDailyMostPlayedStatRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDailyMostPlayedStat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDailyMostPlayedStatResponse rsp = DescribeDailyMostPlayedStatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDailyMostPlayedStatOutcome(rsp);
+        else
+            return DescribeDailyMostPlayedStatOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDailyMostPlayedStatOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeDailyMostPlayedStatAsync(const DescribeDailyMostPlayedStatRequest& request, const DescribeDailyMostPlayedStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDailyMostPlayedStat(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeDailyMostPlayedStatOutcomeCallable VodClient::DescribeDailyMostPlayedStatCallable(const DescribeDailyMostPlayedStatRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDailyMostPlayedStatOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDailyMostPlayedStat(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeDailyPlayStatFileListOutcome VodClient::DescribeDailyPlayStatFileList(const DescribeDailyPlayStatFileListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDailyPlayStatFileList");
