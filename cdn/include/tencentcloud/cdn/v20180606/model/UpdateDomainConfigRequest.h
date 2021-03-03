@@ -55,6 +55,7 @@
 #include <tencentcloud/cdn/v20180606/model/Ipv6Access.h>
 #include <tencentcloud/cdn/v20180606/model/OfflineCache.h>
 #include <tencentcloud/cdn/v20180606/model/OriginCombine.h>
+#include <tencentcloud/cdn/v20180606/model/Quic.h>
 
 
 namespace TencentCloud
@@ -806,6 +807,24 @@ global：全球加速
                      */
                     bool OriginCombineHasBeenSet() const;
 
+                    /**
+                     * 获取QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * @return Quic QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     */
+                    Quic GetQuic() const;
+
+                    /**
+                     * 设置QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * @param Quic QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     */
+                    void SetQuic(const Quic& _quic);
+
+                    /**
+                     * 判断参数 Quic 是否已赋值
+                     * @return Quic 是否已赋值
+                     */
+                    bool QuicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1048,6 +1067,12 @@ global：全球加速
                      */
                     OriginCombine m_originCombine;
                     bool m_originCombineHasBeenSet;
+
+                    /**
+                     * QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     */
+                    Quic m_quic;
+                    bool m_quicHasBeenSet;
 
                 };
             }

@@ -27,6 +27,8 @@
 #include <tencentcloud/asw/v20200722/model/CreateFlowServiceResponse.h>
 #include <tencentcloud/asw/v20200722/model/DescribeExecutionRequest.h>
 #include <tencentcloud/asw/v20200722/model/DescribeExecutionResponse.h>
+#include <tencentcloud/asw/v20200722/model/DescribeExecutionHistoryRequest.h>
+#include <tencentcloud/asw/v20200722/model/DescribeExecutionHistoryResponse.h>
 #include <tencentcloud/asw/v20200722/model/DescribeExecutionsRequest.h>
 #include <tencentcloud/asw/v20200722/model/DescribeExecutionsResponse.h>
 #include <tencentcloud/asw/v20200722/model/DescribeFlowServiceDetailRequest.h>
@@ -57,6 +59,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeExecutionResponse> DescribeExecutionOutcome;
                 typedef std::future<DescribeExecutionOutcome> DescribeExecutionOutcomeCallable;
                 typedef std::function<void(const AswClient*, const Model::DescribeExecutionRequest&, DescribeExecutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExecutionAsyncHandler;
+                typedef Outcome<Error, Model::DescribeExecutionHistoryResponse> DescribeExecutionHistoryOutcome;
+                typedef std::future<DescribeExecutionHistoryOutcome> DescribeExecutionHistoryOutcomeCallable;
+                typedef std::function<void(const AswClient*, const Model::DescribeExecutionHistoryRequest&, DescribeExecutionHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExecutionHistoryAsyncHandler;
                 typedef Outcome<Error, Model::DescribeExecutionsResponse> DescribeExecutionsOutcome;
                 typedef std::future<DescribeExecutionsOutcome> DescribeExecutionsOutcomeCallable;
                 typedef std::function<void(const AswClient*, const Model::DescribeExecutionsRequest&, DescribeExecutionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExecutionsAsyncHandler;
@@ -92,6 +97,15 @@ namespace TencentCloud
                 DescribeExecutionOutcome DescribeExecution(const Model::DescribeExecutionRequest &request);
                 void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExecutionOutcomeCallable DescribeExecutionCallable(const Model::DescribeExecutionRequest& request);
+
+                /**
+                 *一次执行会有很多步骤，经过很多节点，这个接口描述某一次执行的事件的历史
+                 * @param req DescribeExecutionHistoryRequest
+                 * @return DescribeExecutionHistoryOutcome
+                 */
+                DescribeExecutionHistoryOutcome DescribeExecutionHistory(const Model::DescribeExecutionHistoryRequest &request);
+                void DescribeExecutionHistoryAsync(const Model::DescribeExecutionHistoryRequest& request, const DescribeExecutionHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExecutionHistoryOutcomeCallable DescribeExecutionHistoryCallable(const Model::DescribeExecutionHistoryRequest& request);
 
                 /**
                  *对状态机的执行历史进行描述.

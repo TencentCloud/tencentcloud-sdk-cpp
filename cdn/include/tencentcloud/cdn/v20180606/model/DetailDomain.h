@@ -64,6 +64,8 @@
 #include <tencentcloud/cdn/v20180606/model/AdvanceConfig.h>
 #include <tencentcloud/cdn/v20180606/model/OfflineCache.h>
 #include <tencentcloud/cdn/v20180606/model/OriginCombine.h>
+#include <tencentcloud/cdn/v20180606/model/PostSize.h>
+#include <tencentcloud/cdn/v20180606/model/Quic.h>
 
 
 namespace TencentCloud
@@ -1334,6 +1336,50 @@ off：不支持
                      */
                     bool OriginCombineHasBeenSet() const;
 
+                    /**
+                     * 获取POST上传配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PostMaxSize POST上传配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PostSize GetPostMaxSize() const;
+
+                    /**
+                     * 设置POST上传配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PostMaxSize POST上传配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPostMaxSize(const PostSize& _postMaxSize);
+
+                    /**
+                     * 判断参数 PostMaxSize 是否已赋值
+                     * @return PostMaxSize 是否已赋值
+                     */
+                    bool PostMaxSizeHasBeenSet() const;
+
+                    /**
+                     * 获取Quic配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Quic Quic配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Quic GetQuic() const;
+
+                    /**
+                     * 设置Quic配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Quic Quic配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQuic(const Quic& _quic);
+
+                    /**
+                     * 判断参数 Quic 是否已赋值
+                     * @return Quic 是否已赋值
+                     */
+                    bool QuicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1728,6 +1774,20 @@ off：不支持
                      */
                     OriginCombine m_originCombine;
                     bool m_originCombineHasBeenSet;
+
+                    /**
+                     * POST上传配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PostSize m_postMaxSize;
+                    bool m_postMaxSizeHasBeenSet;
+
+                    /**
+                     * Quic配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Quic m_quic;
+                    bool m_quicHasBeenSet;
 
                 };
             }

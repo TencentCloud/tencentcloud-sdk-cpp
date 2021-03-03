@@ -40,7 +40,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeWeeklyReportBruteAttacksRequest.h
   include/tencentcloud/cwp/v20180228/model/CreateUsualLoginPlacesRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeProcessTaskStatusRequest.h
-  include/tencentcloud/cwp/v20180228/model/RegionInfo.h
+  include/tencentcloud/cwp/v20180228/model/DescribeAttackVulTypeListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulScanResultResponse.h
   include/tencentcloud/cwp/v20180228/model/ModifyAlarmAttributeRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAttackLogsRequest.h
@@ -54,6 +54,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/WeeklyReportMalware.h
   include/tencentcloud/cwp/v20180228/model/CreateBaselineStrategyRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeSecurityTrendsRequest.h
+  include/tencentcloud/cwp/v20180228/model/DescribeAttackVulTypeListResponse.h
   include/tencentcloud/cwp/v20180228/model/Account.h
   include/tencentcloud/cwp/v20180228/model/DescribeReverseShellEventsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribePrivilegeRulesRequest.h
@@ -158,6 +159,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeWeeklyReportMalwaresRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBruteAttacksResponse.h
+  include/tencentcloud/cwp/v20180228/model/RegionInfo.h
   include/tencentcloud/cwp/v20180228/model/ExportNonlocalLoginPlacesResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeOverviewStatisticsRequest.h
@@ -306,7 +308,7 @@ set(cwp_src
   src/v20180228/model/DescribeWeeklyReportBruteAttacksRequest.cpp
   src/v20180228/model/CreateUsualLoginPlacesRequest.cpp
   src/v20180228/model/DescribeProcessTaskStatusRequest.cpp
-  src/v20180228/model/RegionInfo.cpp
+  src/v20180228/model/DescribeAttackVulTypeListRequest.cpp
   src/v20180228/model/DescribeVulScanResultResponse.cpp
   src/v20180228/model/ModifyAlarmAttributeRequest.cpp
   src/v20180228/model/DescribeAttackLogsRequest.cpp
@@ -320,6 +322,7 @@ set(cwp_src
   src/v20180228/model/WeeklyReportMalware.cpp
   src/v20180228/model/CreateBaselineStrategyRequest.cpp
   src/v20180228/model/DescribeSecurityTrendsRequest.cpp
+  src/v20180228/model/DescribeAttackVulTypeListResponse.cpp
   src/v20180228/model/Account.cpp
   src/v20180228/model/DescribeReverseShellEventsResponse.cpp
   src/v20180228/model/DescribePrivilegeRulesRequest.cpp
@@ -424,6 +427,7 @@ set(cwp_src
   src/v20180228/model/DescribeAttackLogInfoRequest.cpp
   src/v20180228/model/DescribeWeeklyReportMalwaresRequest.cpp
   src/v20180228/model/DescribeBruteAttacksResponse.cpp
+  src/v20180228/model/RegionInfo.cpp
   src/v20180228/model/ExportNonlocalLoginPlacesResponse.cpp
   src/v20180228/model/DescribeComponentStatisticsRequest.cpp
   src/v20180228/model/DescribeOverviewStatisticsRequest.cpp

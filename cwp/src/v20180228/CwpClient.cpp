@@ -1287,6 +1287,49 @@ CwpClient::DescribeAttackLogsOutcomeCallable CwpClient::DescribeAttackLogsCallab
     return task->get_future();
 }
 
+CwpClient::DescribeAttackVulTypeListOutcome CwpClient::DescribeAttackVulTypeList(const DescribeAttackVulTypeListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAttackVulTypeList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAttackVulTypeListResponse rsp = DescribeAttackVulTypeListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAttackVulTypeListOutcome(rsp);
+        else
+            return DescribeAttackVulTypeListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAttackVulTypeListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAttackVulTypeListAsync(const DescribeAttackVulTypeListRequest& request, const DescribeAttackVulTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAttackVulTypeList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAttackVulTypeListOutcomeCallable CwpClient::DescribeAttackVulTypeListCallable(const DescribeAttackVulTypeListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAttackVulTypeListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAttackVulTypeList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeBashEventsOutcome CwpClient::DescribeBashEvents(const DescribeBashEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBashEvents");

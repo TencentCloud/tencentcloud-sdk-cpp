@@ -24,7 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 ExportAttackLogsRequest::ExportAttackLogsRequest() :
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_uuidHasBeenSet(false),
+    m_quuidHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,22 @@ string ExportAttackLogsRequest::ToJsonString() const
         }
     }
 
+    if (m_uuidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quuidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Quuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_quuid.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -72,6 +90,38 @@ void ExportAttackLogsRequest::SetFilters(const vector<Filters>& _filters)
 bool ExportAttackLogsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string ExportAttackLogsRequest::GetUuid() const
+{
+    return m_uuid;
+}
+
+void ExportAttackLogsRequest::SetUuid(const string& _uuid)
+{
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
+}
+
+bool ExportAttackLogsRequest::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
+}
+
+string ExportAttackLogsRequest::GetQuuid() const
+{
+    return m_quuid;
+}
+
+void ExportAttackLogsRequest::SetQuuid(const string& _quuid)
+{
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
+}
+
+bool ExportAttackLogsRequest::QuuidHasBeenSet() const
+{
+    return m_quuidHasBeenSet;
 }
 
 

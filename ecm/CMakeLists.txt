@@ -48,6 +48,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeSubnetsRequest.h
   include/tencentcloud/ecm/v20190719/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/ecm/v20190719/model/StartInstancesRequest.h
+  include/tencentcloud/ecm/v20190719/model/ImageLimitConfig.h
   include/tencentcloud/ecm/v20190719/model/HaVip.h
   include/tencentcloud/ecm/v20190719/model/RouteConflict.h
   include/tencentcloud/ecm/v20190719/model/SetLoadBalancerSecurityGroupsResponse.h
@@ -375,6 +376,7 @@ set(ecm_src
   src/v20190719/model/DescribeSubnetsRequest.cpp
   src/v20190719/model/AssociateSecurityGroupsRequest.cpp
   src/v20190719/model/StartInstancesRequest.cpp
+  src/v20190719/model/ImageLimitConfig.cpp
   src/v20190719/model/HaVip.cpp
   src/v20190719/model/RouteConflict.cpp
   src/v20190719/model/SetLoadBalancerSecurityGroupsResponse.cpp

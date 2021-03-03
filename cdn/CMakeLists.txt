@@ -65,6 +65,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/UpdateImageConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/DisableCachesRequest.h
   include/tencentcloud/cdn/v20180606/model/AdvancedAuthenticationTypeD.h
+  include/tencentcloud/cdn/v20180606/model/StartCdnDomainResponse.h
   include/tencentcloud/cdn/v20180606/model/CompressionRule.h
   include/tencentcloud/cdn/v20180606/model/GuetzliAdapter.h
   include/tencentcloud/cdn/v20180606/model/UpdateScdnDomainResponse.h
@@ -158,6 +159,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsRequest.h
   include/tencentcloud/cdn/v20180606/model/ListDiagnoseReportRequest.h
   include/tencentcloud/cdn/v20180606/model/ScdnWafConfig.h
+  include/tencentcloud/cdn/v20180606/model/PostSize.h
   include/tencentcloud/cdn/v20180606/model/Cache.h
   include/tencentcloud/cdn/v20180606/model/DiagnoseData.h
   include/tencentcloud/cdn/v20180606/model/DescribeOriginDataRequest.h
@@ -224,7 +226,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/RegionMapRelation.h
   include/tencentcloud/cdn/v20180606/model/PurgePathCacheRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportResponse.h
-  include/tencentcloud/cdn/v20180606/model/StartCdnDomainResponse.h
+  include/tencentcloud/cdn/v20180606/model/Quic.h
   include/tencentcloud/cdn/v20180606/model/CdnData.h
   include/tencentcloud/cdn/v20180606/model/PurgeUrlsCacheRequest.h
   include/tencentcloud/cdn/v20180606/model/StartCdnDomainRequest.h
@@ -335,6 +337,7 @@ set(cdn_src
   src/v20180606/model/UpdateImageConfigRequest.cpp
   src/v20180606/model/DisableCachesRequest.cpp
   src/v20180606/model/AdvancedAuthenticationTypeD.cpp
+  src/v20180606/model/StartCdnDomainResponse.cpp
   src/v20180606/model/CompressionRule.cpp
   src/v20180606/model/GuetzliAdapter.cpp
   src/v20180606/model/UpdateScdnDomainResponse.cpp
@@ -428,6 +431,7 @@ set(cdn_src
   src/v20180606/model/ManageClsTopicDomainsRequest.cpp
   src/v20180606/model/ListDiagnoseReportRequest.cpp
   src/v20180606/model/ScdnWafConfig.cpp
+  src/v20180606/model/PostSize.cpp
   src/v20180606/model/Cache.cpp
   src/v20180606/model/DiagnoseData.cpp
   src/v20180606/model/DescribeOriginDataRequest.cpp
@@ -494,7 +498,7 @@ set(cdn_src
   src/v20180606/model/RegionMapRelation.cpp
   src/v20180606/model/PurgePathCacheRequest.cpp
   src/v20180606/model/DescribeDiagnoseReportResponse.cpp
-  src/v20180606/model/StartCdnDomainResponse.cpp
+  src/v20180606/model/Quic.cpp
   src/v20180606/model/CdnData.cpp
   src/v20180606/model/PurgeUrlsCacheRequest.cpp
   src/v20180606/model/StartCdnDomainRequest.cpp

@@ -62,7 +62,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_originAuthenticationHasBeenSet(false),
     m_ipv6AccessHasBeenSet(false),
     m_offlineCacheHasBeenSet(false),
-    m_originCombineHasBeenSet(false)
+    m_originCombineHasBeenSet(false),
+    m_quicHasBeenSet(false)
 {
 }
 
@@ -422,6 +423,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_originCombine.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_quicHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Quic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_quic.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1054,6 +1064,22 @@ void UpdateDomainConfigRequest::SetOriginCombine(const OriginCombine& _originCom
 bool UpdateDomainConfigRequest::OriginCombineHasBeenSet() const
 {
     return m_originCombineHasBeenSet;
+}
+
+Quic UpdateDomainConfigRequest::GetQuic() const
+{
+    return m_quic;
+}
+
+void UpdateDomainConfigRequest::SetQuic(const Quic& _quic)
+{
+    m_quic = _quic;
+    m_quicHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::QuicHasBeenSet() const
+{
+    return m_quicHasBeenSet;
 }
 
 

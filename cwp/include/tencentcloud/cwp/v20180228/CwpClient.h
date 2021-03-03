@@ -81,6 +81,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAttackVulTypeListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAttackVulTypeListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashRulesRequest.h>
@@ -340,6 +342,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAttackLogsResponse> DescribeAttackLogsOutcome;
                 typedef std::future<DescribeAttackLogsOutcome> DescribeAttackLogsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackLogsRequest&, DescribeAttackLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackLogsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAttackVulTypeListResponse> DescribeAttackVulTypeListOutcome;
+                typedef std::future<DescribeAttackVulTypeListOutcome> DescribeAttackVulTypeListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAttackVulTypeListRequest&, DescribeAttackVulTypeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackVulTypeListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBashEventsResponse> DescribeBashEventsOutcome;
                 typedef std::future<DescribeBashEventsOutcome> DescribeBashEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBashEventsRequest&, DescribeBashEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBashEventsAsyncHandler;
@@ -840,6 +845,15 @@ namespace TencentCloud
                 DescribeAttackLogsOutcome DescribeAttackLogs(const Model::DescribeAttackLogsRequest &request);
                 void DescribeAttackLogsAsync(const Model::DescribeAttackLogsRequest& request, const DescribeAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAttackLogsOutcomeCallable DescribeAttackLogsCallable(const Model::DescribeAttackLogsRequest& request);
+
+                /**
+                 *获取网络攻击威胁类型列表
+                 * @param req DescribeAttackVulTypeListRequest
+                 * @return DescribeAttackVulTypeListOutcome
+                 */
+                DescribeAttackVulTypeListOutcome DescribeAttackVulTypeList(const Model::DescribeAttackVulTypeListRequest &request);
+                void DescribeAttackVulTypeListAsync(const Model::DescribeAttackVulTypeListRequest& request, const DescribeAttackVulTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAttackVulTypeListOutcomeCallable DescribeAttackVulTypeListCallable(const Model::DescribeAttackVulTypeListRequest& request);
 
                 /**
                  *获取高危命令列表

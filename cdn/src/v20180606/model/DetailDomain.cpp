@@ -75,7 +75,9 @@ DetailDomain::DetailDomain() :
     m_ipv6AccessHasBeenSet(false),
     m_advanceSetHasBeenSet(false),
     m_offlineCacheHasBeenSet(false),
-    m_originCombineHasBeenSet(false)
+    m_originCombineHasBeenSet(false),
+    m_postMaxSizeHasBeenSet(false),
+    m_quicHasBeenSet(false)
 {
 }
 
@@ -913,6 +915,40 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_originCombineHasBeenSet = true;
     }
 
+    if (value.HasMember("PostMaxSize") && !value["PostMaxSize"].IsNull())
+    {
+        if (!value["PostMaxSize"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.PostMaxSize` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_postMaxSize.Deserialize(value["PostMaxSize"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_postMaxSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Quic") && !value["Quic"].IsNull())
+    {
+        if (!value["Quic"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.Quic` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_quic.Deserialize(value["Quic"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_quicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1407,6 +1443,24 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_originCombine.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_postMaxSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PostMaxSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_postMaxSize.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_quicHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Quic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_quic.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2274,5 +2328,37 @@ void DetailDomain::SetOriginCombine(const OriginCombine& _originCombine)
 bool DetailDomain::OriginCombineHasBeenSet() const
 {
     return m_originCombineHasBeenSet;
+}
+
+PostSize DetailDomain::GetPostMaxSize() const
+{
+    return m_postMaxSize;
+}
+
+void DetailDomain::SetPostMaxSize(const PostSize& _postMaxSize)
+{
+    m_postMaxSize = _postMaxSize;
+    m_postMaxSizeHasBeenSet = true;
+}
+
+bool DetailDomain::PostMaxSizeHasBeenSet() const
+{
+    return m_postMaxSizeHasBeenSet;
+}
+
+Quic DetailDomain::GetQuic() const
+{
+    return m_quic;
+}
+
+void DetailDomain::SetQuic(const Quic& _quic)
+{
+    m_quic = _quic;
+    m_quicHasBeenSet = true;
+}
+
+bool DetailDomain::QuicHasBeenSet() const
+{
+    return m_quicHasBeenSet;
 }
 

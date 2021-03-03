@@ -27,7 +27,8 @@ using namespace std;
 DescribeConfigResponse::DescribeConfigResponse() :
     m_networkStorageRangeHasBeenSet(false),
     m_imageWhiteSetHasBeenSet(false),
-    m_instanceNetworkLimitConfigsHasBeenSet(false)
+    m_instanceNetworkLimitConfigsHasBeenSet(false),
+    m_imageLimitsHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,23 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
         m_instanceNetworkLimitConfigsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageLimits") && !rsp["ImageLimits"].IsNull())
+    {
+        if (!rsp["ImageLimits"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ImageLimits` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageLimits.Deserialize(rsp["ImageLimits"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageLimitsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +166,16 @@ vector<InstanceNetworkLimitConfig> DescribeConfigResponse::GetInstanceNetworkLim
 bool DescribeConfigResponse::InstanceNetworkLimitConfigsHasBeenSet() const
 {
     return m_instanceNetworkLimitConfigsHasBeenSet;
+}
+
+ImageLimitConfig DescribeConfigResponse::GetImageLimits() const
+{
+    return m_imageLimits;
+}
+
+bool DescribeConfigResponse::ImageLimitsHasBeenSet() const
+{
+    return m_imageLimitsHasBeenSet;
 }
 
 

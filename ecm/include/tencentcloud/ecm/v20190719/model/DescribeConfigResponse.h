@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ecm/v20190719/model/NetworkStorageRange.h>
 #include <tencentcloud/ecm/v20190719/model/InstanceNetworkLimitConfig.h>
+#include <tencentcloud/ecm/v20190719/model/ImageLimitConfig.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,20 @@ namespace TencentCloud
                      */
                     bool InstanceNetworkLimitConfigsHasBeenSet() const;
 
+                    /**
+                     * 获取镜像限额信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageLimits 镜像限额信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageLimitConfig GetImageLimits() const;
+
+                    /**
+                     * 判断参数 ImageLimits 是否已赋值
+                     * @return ImageLimits 是否已赋值
+                     */
+                    bool ImageLimitsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +120,13 @@ namespace TencentCloud
                      */
                     std::vector<InstanceNetworkLimitConfig> m_instanceNetworkLimitConfigs;
                     bool m_instanceNetworkLimitConfigsHasBeenSet;
+
+                    /**
+                     * 镜像限额信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageLimitConfig m_imageLimits;
+                    bool m_imageLimitsHasBeenSet;
 
                 };
             }

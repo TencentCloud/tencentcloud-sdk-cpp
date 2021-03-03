@@ -29,7 +29,8 @@ DescribeSlowLogPatternsRequest::DescribeSlowLogPatternsRequest() :
     m_endTimeHasBeenSet(false),
     m_slowMSHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_formatHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string DescribeSlowLogPatternsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_formatHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Format";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_format.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void DescribeSlowLogPatternsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeSlowLogPatternsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeSlowLogPatternsRequest::GetFormat() const
+{
+    return m_format;
+}
+
+void DescribeSlowLogPatternsRequest::SetFormat(const string& _format)
+{
+    m_format = _format;
+    m_formatHasBeenSet = true;
+}
+
+bool DescribeSlowLogPatternsRequest::FormatHasBeenSet() const
+{
+    return m_formatHasBeenSet;
 }
 
 

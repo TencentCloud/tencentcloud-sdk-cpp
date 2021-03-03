@@ -1244,6 +1244,49 @@ SqlserverClient::DescribeCrossRegionZoneOutcomeCallable SqlserverClient::Describ
     return task->get_future();
 }
 
+SqlserverClient::DescribeDBCharsetsOutcome SqlserverClient::DescribeDBCharsets(const DescribeDBCharsetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBCharsets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBCharsetsResponse rsp = DescribeDBCharsetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBCharsetsOutcome(rsp);
+        else
+            return DescribeDBCharsetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBCharsetsOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeDBCharsetsAsync(const DescribeDBCharsetsRequest& request, const DescribeDBCharsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBCharsets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeDBCharsetsOutcomeCallable SqlserverClient::DescribeDBCharsetsCallable(const DescribeDBCharsetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBCharsetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBCharsets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::DescribeDBInstancesOutcome SqlserverClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstances");

@@ -79,6 +79,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeBackupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionZoneRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeCrossRegionZoneResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDBCharsetsRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDBCharsetsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBSecurityGroupsRequest.h>
@@ -297,6 +299,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCrossRegionZoneResponse> DescribeCrossRegionZoneOutcome;
                 typedef std::future<DescribeCrossRegionZoneOutcome> DescribeCrossRegionZoneOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeCrossRegionZoneRequest&, DescribeCrossRegionZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossRegionZoneAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDBCharsetsResponse> DescribeDBCharsetsOutcome;
+                typedef std::future<DescribeDBCharsetsOutcome> DescribeDBCharsetsOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeDBCharsetsRequest&, DescribeDBCharsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCharsetsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
@@ -731,6 +736,15 @@ namespace TencentCloud
                 DescribeCrossRegionZoneOutcome DescribeCrossRegionZone(const Model::DescribeCrossRegionZoneRequest &request);
                 void DescribeCrossRegionZoneAsync(const Model::DescribeCrossRegionZoneRequest& request, const DescribeCrossRegionZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCrossRegionZoneOutcomeCallable DescribeCrossRegionZoneCallable(const Model::DescribeCrossRegionZoneRequest& request);
+
+                /**
+                 *本接口（DescribeDBCharsets）用于查询实例支持的数据库字符集。
+                 * @param req DescribeDBCharsetsRequest
+                 * @return DescribeDBCharsetsOutcome
+                 */
+                DescribeDBCharsetsOutcome DescribeDBCharsets(const Model::DescribeDBCharsetsRequest &request);
+                void DescribeDBCharsetsAsync(const Model::DescribeDBCharsetsRequest& request, const DescribeDBCharsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCharsetsOutcomeCallable DescribeDBCharsetsCallable(const Model::DescribeDBCharsetsRequest& request);
 
                 /**
                  *本接口(DescribeDBInstances)用于查询实例列表。

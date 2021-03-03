@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool StrategyTypeHasBeenSet() const;
 
                     /**
-                     * 获取策略详情。
-                     * @return StrategyData 策略详情。
+                     * 获取策略详情，多个ip 使用\n 分隔符分开。
+                     * @return StrategyData 策略详情，多个ip 使用\n 分隔符分开。
                      */
                     std::string GetStrategyData() const;
 
                     /**
-                     * 设置策略详情。
-                     * @param StrategyData 策略详情。
+                     * 设置策略详情，多个ip 使用\n 分隔符分开。
+                     * @param StrategyData 策略详情，多个ip 使用\n 分隔符分开。
                      */
                     void SetStrategyData(const std::string& _strategyData);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_strategyTypeHasBeenSet;
 
                     /**
-                     * 策略详情。
+                     * 策略详情，多个ip 使用\n 分隔符分开。
                      */
                     std::string m_strategyData;
                     bool m_strategyDataHasBeenSet;

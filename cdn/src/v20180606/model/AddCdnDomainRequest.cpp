@@ -56,7 +56,8 @@ AddCdnDomainRequest::AddCdnDomainRequest() :
     m_originPullTimeoutHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_ipv6AccessHasBeenSet(false),
-    m_offlineCacheHasBeenSet(false)
+    m_offlineCacheHasBeenSet(false),
+    m_quicHasBeenSet(false)
 {
 }
 
@@ -364,6 +365,15 @@ string AddCdnDomainRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_offlineCache.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_quicHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Quic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_quic.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -900,6 +910,22 @@ void AddCdnDomainRequest::SetOfflineCache(const OfflineCache& _offlineCache)
 bool AddCdnDomainRequest::OfflineCacheHasBeenSet() const
 {
     return m_offlineCacheHasBeenSet;
+}
+
+Quic AddCdnDomainRequest::GetQuic() const
+{
+    return m_quic;
+}
+
+void AddCdnDomainRequest::SetQuic(const Quic& _quic)
+{
+    m_quic = _quic;
+    m_quicHasBeenSet = true;
+}
+
+bool AddCdnDomainRequest::QuicHasBeenSet() const
+{
+    return m_quicHasBeenSet;
 }
 
 

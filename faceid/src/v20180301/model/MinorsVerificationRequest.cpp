@@ -27,7 +27,8 @@ MinorsVerificationRequest::MinorsVerificationRequest() :
     m_typeHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_idCardHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,15 @@ string MinorsVerificationRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -140,6 +150,22 @@ void MinorsVerificationRequest::SetName(const string& _name)
 bool MinorsVerificationRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+Encryption MinorsVerificationRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void MinorsVerificationRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool MinorsVerificationRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

@@ -126,6 +126,49 @@ AswClient::DescribeExecutionOutcomeCallable AswClient::DescribeExecutionCallable
     return task->get_future();
 }
 
+AswClient::DescribeExecutionHistoryOutcome AswClient::DescribeExecutionHistory(const DescribeExecutionHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExecutionHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExecutionHistoryResponse rsp = DescribeExecutionHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExecutionHistoryOutcome(rsp);
+        else
+            return DescribeExecutionHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExecutionHistoryOutcome(outcome.GetError());
+    }
+}
+
+void AswClient::DescribeExecutionHistoryAsync(const DescribeExecutionHistoryRequest& request, const DescribeExecutionHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExecutionHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AswClient::DescribeExecutionHistoryOutcomeCallable AswClient::DescribeExecutionHistoryCallable(const DescribeExecutionHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExecutionHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExecutionHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AswClient::DescribeExecutionsOutcome AswClient::DescribeExecutions(const DescribeExecutionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExecutions");
