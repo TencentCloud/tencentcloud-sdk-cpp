@@ -47,6 +47,8 @@
 #include <tencentcloud/scf/v20180416/model/DeleteReservedConcurrencyConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteTriggerRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteTriggerResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetAccountRequest.h>
+#include <tencentcloud/scf/v20180416/model/GetAccountResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetAliasRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetAliasResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionRequest.h>
@@ -149,6 +151,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteTriggerResponse> DeleteTriggerOutcome;
                 typedef std::future<DeleteTriggerOutcome> DeleteTriggerOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteTriggerRequest&, DeleteTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTriggerAsyncHandler;
+                typedef Outcome<Error, Model::GetAccountResponse> GetAccountOutcome;
+                typedef std::future<GetAccountOutcome> GetAccountOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::GetAccountRequest&, GetAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountAsyncHandler;
                 typedef Outcome<Error, Model::GetAliasResponse> GetAliasOutcome;
                 typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetAliasRequest&, GetAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAliasAsyncHandler;
@@ -344,6 +349,15 @@ namespace TencentCloud
                 DeleteTriggerOutcome DeleteTrigger(const Model::DeleteTriggerRequest &request);
                 void DeleteTriggerAsync(const Model::DeleteTriggerRequest& request, const DeleteTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTriggerOutcomeCallable DeleteTriggerCallable(const Model::DeleteTriggerRequest& request);
+
+                /**
+                 *获取账户信息
+                 * @param req GetAccountRequest
+                 * @return GetAccountOutcome
+                 */
+                GetAccountOutcome GetAccount(const Model::GetAccountRequest &request);
+                void GetAccountAsync(const Model::GetAccountRequest& request, const GetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAccountOutcomeCallable GetAccountCallable(const Model::GetAccountRequest& request);
 
                 /**
                  *获取别名的详细信息，包括名称、描述、版本、路由信息等。

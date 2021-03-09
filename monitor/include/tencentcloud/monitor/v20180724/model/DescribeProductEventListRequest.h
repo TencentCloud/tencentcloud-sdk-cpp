@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool EventNameHasBeenSet() const;
 
                     /**
-                     * 获取影响对象，比如ins-19708ino
-                     * @return InstanceId 影响对象，比如ins-19708ino
+                     * 获取影响对象，比如"ins-19708ino"
+                     * @return InstanceId 影响对象，比如"ins-19708ino"
                      */
                     std::vector<std::string> GetInstanceId() const;
 
                     /**
-                     * 设置影响对象，比如ins-19708ino
-                     * @param InstanceId 影响对象，比如ins-19708ino
+                     * 设置影响对象，比如"ins-19708ino"
+                     * @param InstanceId 影响对象，比如"ins-19708ino"
                      */
                     void SetInstanceId(const std::vector<std::string>& _instanceId);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取地域过滤，比如gz
-                     * @return RegionList 地域过滤，比如gz
+                     * 获取产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
+                     * @return RegionList 产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
                      */
                     std::vector<std::string> GetRegionList() const;
 
                     /**
-                     * 设置地域过滤，比如gz
-                     * @param RegionList 地域过滤，比如gz
+                     * 设置产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
+                     * @param RegionList 产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
                      */
                     void SetRegionList(const std::vector<std::string>& _regionList);
 
@@ -334,7 +334,7 @@ namespace TencentCloud
                     bool m_eventNameHasBeenSet;
 
                     /**
-                     * 影响对象，比如ins-19708ino
+                     * 影响对象，比如"ins-19708ino"
                      */
                     std::vector<std::string> m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -346,7 +346,7 @@ namespace TencentCloud
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 地域过滤，比如gz
+                     * 产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
                      */
                     std::vector<std::string> m_regionList;
                     bool m_regionListHasBeenSet;

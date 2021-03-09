@@ -30,6 +30,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/ModifyClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesRequest.h
   include/tencentcloud/tdmq/v20200217/model/PartitionsTopic.h
+  include/tencentcloud/tdmq/v20200217/model/SendBatchMessagesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeBindClustersRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h
@@ -38,6 +39,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/BindCluster.h
   include/tencentcloud/tdmq/v20200217/model/ModifyClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateTopicResponse.h
+  include/tencentcloud/tdmq/v20200217/model/SendMessagesRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeClusterDetailRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsRequest.h
@@ -52,6 +54,8 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/Tag.h
   include/tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeProducersResponse.h
+  include/tencentcloud/tdmq/v20200217/model/SendBatchMessagesRequest.h
+  include/tencentcloud/tdmq/v20200217/model/SendMessagesResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateTopicRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeTopicsRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsResponse.h
@@ -94,6 +98,7 @@ set(tdmq_src
   src/v20200217/model/ModifyClusterRequest.cpp
   src/v20200217/model/DescribeEnvironmentAttributesRequest.cpp
   src/v20200217/model/PartitionsTopic.cpp
+  src/v20200217/model/SendBatchMessagesResponse.cpp
   src/v20200217/model/DescribeBindClustersRequest.cpp
   src/v20200217/model/CreateClusterResponse.cpp
   src/v20200217/model/DescribeTopicsResponse.cpp
@@ -102,6 +107,7 @@ set(tdmq_src
   src/v20200217/model/BindCluster.cpp
   src/v20200217/model/ModifyClusterResponse.cpp
   src/v20200217/model/CreateTopicResponse.cpp
+  src/v20200217/model/SendMessagesRequest.cpp
   src/v20200217/model/DescribeClusterDetailRequest.cpp
   src/v20200217/model/DescribeEnvironmentsResponse.cpp
   src/v20200217/model/DescribeEnvironmentsRequest.cpp
@@ -116,6 +122,8 @@ set(tdmq_src
   src/v20200217/model/Tag.cpp
   src/v20200217/model/DescribeSubscriptionsResponse.cpp
   src/v20200217/model/DescribeProducersResponse.cpp
+  src/v20200217/model/SendBatchMessagesRequest.cpp
+  src/v20200217/model/SendMessagesResponse.cpp
   src/v20200217/model/CreateTopicRequest.cpp
   src/v20200217/model/DescribeTopicsRequest.cpp
   src/v20200217/model/DeleteEnvironmentsResponse.cpp

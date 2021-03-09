@@ -771,6 +771,49 @@ TcbClient::DescribeCloudBaseRunServerVersionOutcomeCallable TcbClient::DescribeC
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseRunVersionOutcome TcbClient::DescribeCloudBaseRunVersion(const DescribeCloudBaseRunVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunVersionResponse rsp = DescribeCloudBaseRunVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunVersionOutcome(rsp);
+        else
+            return DescribeCloudBaseRunVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunVersionAsync(const DescribeCloudBaseRunVersionRequest& request, const DescribeCloudBaseRunVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunVersionOutcomeCallable TcbClient::DescribeCloudBaseRunVersionCallable(const DescribeCloudBaseRunVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeCloudBaseRunVersionSnapshotOutcome TcbClient::DescribeCloudBaseRunVersionSnapshot(const DescribeCloudBaseRunVersionSnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseRunVersionSnapshot");

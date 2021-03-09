@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ForceRestartHasBeenSet() const;
 
+                    /**
+                     * 获取是否重新安装
+                     * @return ForceUpdate 是否重新安装
+                     */
+                    bool GetForceUpdate() const;
+
+                    /**
+                     * 设置是否重新安装
+                     * @param ForceUpdate 是否重新安装
+                     */
+                    void SetForceUpdate(const bool& _forceUpdate);
+
+                    /**
+                     * 判断参数 ForceUpdate 是否已赋值
+                     * @return ForceUpdate 是否已赋值
+                     */
+                    bool ForceUpdateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     bool m_forceRestart;
                     bool m_forceRestartHasBeenSet;
+
+                    /**
+                     * 是否重新安装
+                     */
+                    bool m_forceUpdate;
+                    bool m_forceUpdateHasBeenSet;
 
                 };
             }

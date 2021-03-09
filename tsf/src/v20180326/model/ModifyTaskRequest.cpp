@@ -128,8 +128,14 @@ string ModifyTaskRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "ShardArguments";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_shardArguments.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_shardArguments.begin(); itr != m_shardArguments.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_advanceSettingsHasBeenSet)
@@ -333,12 +339,12 @@ bool ModifyTaskRequest::ShardCountHasBeenSet() const
     return m_shardCountHasBeenSet;
 }
 
-ShardArgument ModifyTaskRequest::GetShardArguments() const
+vector<ShardArgument> ModifyTaskRequest::GetShardArguments() const
 {
     return m_shardArguments;
 }
 
-void ModifyTaskRequest::SetShardArguments(const ShardArgument& _shardArguments)
+void ModifyTaskRequest::SetShardArguments(const vector<ShardArgument>& _shardArguments)
 {
     m_shardArguments = _shardArguments;
     m_shardArgumentsHasBeenSet = true;

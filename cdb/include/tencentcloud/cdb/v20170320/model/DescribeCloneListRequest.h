@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分页查询时的偏移量。
-                     * @return Offset 分页查询时的偏移量。
+                     * 获取分页查询时的偏移量，默认值为0。
+                     * @return Offset 分页查询时的偏移量，默认值为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询时的偏移量。
-                     * @param Offset 分页查询时的偏移量。
+                     * 设置分页查询时的偏移量，默认值为0。
+                     * @param Offset 分页查询时的偏移量，默认值为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页查询时的每页条目数。
-                     * @return Limit 分页查询时的每页条目数。
+                     * 获取分页查询时的每页条目数，默认值为20。
+                     * @return Limit 分页查询时的每页条目数，默认值为20。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询时的每页条目数。
-                     * @param Limit 分页查询时的每页条目数。
+                     * 设置分页查询时的每页条目数，默认值为20。
+                     * @param Limit 分页查询时的每页条目数，默认值为20。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 分页查询时的偏移量。
+                     * 分页查询时的偏移量，默认值为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页查询时的每页条目数。
+                     * 分页查询时的每页条目数，默认值为20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

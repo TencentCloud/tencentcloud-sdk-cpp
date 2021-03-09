@@ -556,6 +556,49 @@ ScfClient::DeleteTriggerOutcomeCallable ScfClient::DeleteTriggerCallable(const D
     return task->get_future();
 }
 
+ScfClient::GetAccountOutcome ScfClient::GetAccount(const GetAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAccountResponse rsp = GetAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAccountOutcome(rsp);
+        else
+            return GetAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAccountOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::GetAccountAsync(const GetAccountRequest& request, const GetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::GetAccountOutcomeCallable ScfClient::GetAccountCallable(const GetAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::GetAliasOutcome ScfClient::GetAlias(const GetAliasRequest &request)
 {
     auto outcome = MakeRequest(request, "GetAlias");

@@ -67,6 +67,10 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/SendBatchMessagesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/SendBatchMessagesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/SendMessagesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/SendMessagesResponse.h>
 
 
 namespace TencentCloud
@@ -147,6 +151,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ResetMsgSubOffsetByTimestampResponse> ResetMsgSubOffsetByTimestampOutcome;
                 typedef std::future<ResetMsgSubOffsetByTimestampOutcome> ResetMsgSubOffsetByTimestampOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ResetMsgSubOffsetByTimestampRequest&, ResetMsgSubOffsetByTimestampOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetMsgSubOffsetByTimestampAsyncHandler;
+                typedef Outcome<Error, Model::SendBatchMessagesResponse> SendBatchMessagesOutcome;
+                typedef std::future<SendBatchMessagesOutcome> SendBatchMessagesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::SendBatchMessagesRequest&, SendBatchMessagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendBatchMessagesAsyncHandler;
+                typedef Outcome<Error, Model::SendMessagesResponse> SendMessagesOutcome;
+                typedef std::future<SendMessagesOutcome> SendMessagesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::SendMessagesRequest&, SendMessagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMessagesAsyncHandler;
 
 
 
@@ -347,6 +357,24 @@ namespace TencentCloud
                 ResetMsgSubOffsetByTimestampOutcome ResetMsgSubOffsetByTimestamp(const Model::ResetMsgSubOffsetByTimestampRequest &request);
                 void ResetMsgSubOffsetByTimestampAsync(const Model::ResetMsgSubOffsetByTimestampRequest& request, const ResetMsgSubOffsetByTimestampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetMsgSubOffsetByTimestampOutcomeCallable ResetMsgSubOffsetByTimestampCallable(const Model::ResetMsgSubOffsetByTimestampRequest& request);
+
+                /**
+                 *批量发送消息
+                 * @param req SendBatchMessagesRequest
+                 * @return SendBatchMessagesOutcome
+                 */
+                SendBatchMessagesOutcome SendBatchMessages(const Model::SendBatchMessagesRequest &request);
+                void SendBatchMessagesAsync(const Model::SendBatchMessagesRequest& request, const SendBatchMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendBatchMessagesOutcomeCallable SendBatchMessagesCallable(const Model::SendBatchMessagesRequest& request);
+
+                /**
+                 *发送单条消息
+                 * @param req SendMessagesRequest
+                 * @return SendMessagesOutcome
+                 */
+                SendMessagesOutcome SendMessages(const Model::SendMessagesRequest &request);
+                void SendMessagesAsync(const Model::SendMessagesRequest& request, const SendMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendMessagesOutcomeCallable SendMessagesCallable(const Model::SendMessagesRequest& request);
 
             };
         }

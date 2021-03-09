@@ -211,13 +211,13 @@ namespace TencentCloud
                      * 获取分片参数
                      * @return ShardArguments 分片参数
                      */
-                    ShardArgument GetShardArguments() const;
+                    std::vector<ShardArgument> GetShardArguments() const;
 
                     /**
                      * 设置分片参数
                      * @param ShardArguments 分片参数
                      */
-                    void SetShardArguments(const ShardArgument& _shardArguments);
+                    void SetShardArguments(const std::vector<ShardArgument>& _shardArguments);
 
                     /**
                      * 判断参数 ShardArguments 是否已赋值
@@ -392,7 +392,7 @@ namespace TencentCloud
                     /**
                      * 分片参数
                      */
-                    ShardArgument m_shardArguments;
+                    std::vector<ShardArgument> m_shardArguments;
                     bool m_shardArgumentsHasBeenSet;
 
                     /**

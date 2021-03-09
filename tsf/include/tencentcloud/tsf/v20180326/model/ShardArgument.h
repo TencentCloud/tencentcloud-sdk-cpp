@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分片参数 KEY，整形
-                     * @return ShardKey 分片参数 KEY，整形
+                     * 获取分片参数 KEY，整形, 范围 [1,1000]
+                     * @return ShardKey 分片参数 KEY，整形, 范围 [1,1000]
                      */
                     uint64_t GetShardKey() const;
 
                     /**
-                     * 设置分片参数 KEY，整形
-                     * @param ShardKey 分片参数 KEY，整形
+                     * 设置分片参数 KEY，整形, 范围 [1,1000]
+                     * @param ShardKey 分片参数 KEY，整形, 范围 [1,1000]
                      */
                     void SetShardKey(const uint64_t& _shardKey);
 
@@ -89,7 +89,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分片参数 KEY，整形
+                     * 分片参数 KEY，整形, 范围 [1,1000]
                      */
                     uint64_t m_shardKey;
                     bool m_shardKeyHasBeenSet;

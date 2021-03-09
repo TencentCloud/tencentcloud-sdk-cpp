@@ -28,7 +28,8 @@ LiveRealTimeClipResponse::LiveRealTimeClipResponse() :
     m_urlHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_vodTaskIdHasBeenSet(false),
-    m_metaDataHasBeenSet(false)
+    m_metaDataHasBeenSet(false),
+    m_segmentSetHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,26 @@ CoreInternalOutcome LiveRealTimeClipResponse::Deserialize(const string &payload)
         m_metaDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SegmentSet") && !rsp["SegmentSet"].IsNull())
+    {
+        if (!rsp["SegmentSet"].IsArray())
+            return CoreInternalOutcome(Error("response `SegmentSet` is not array type"));
+
+        const Value &tmpValue = rsp["SegmentSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LiveRealTimeClipMediaSegmentInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_segmentSet.push_back(item);
+        }
+        m_segmentSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +177,16 @@ MediaMetaData LiveRealTimeClipResponse::GetMetaData() const
 bool LiveRealTimeClipResponse::MetaDataHasBeenSet() const
 {
     return m_metaDataHasBeenSet;
+}
+
+vector<LiveRealTimeClipMediaSegmentInfo> LiveRealTimeClipResponse::GetSegmentSet() const
+{
+    return m_segmentSet;
+}
+
+bool LiveRealTimeClipResponse::SegmentSetHasBeenSet() const
+{
+    return m_segmentSetHasBeenSet;
 }
 
 

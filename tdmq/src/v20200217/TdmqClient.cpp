@@ -986,3 +986,89 @@ TdmqClient::ResetMsgSubOffsetByTimestampOutcomeCallable TdmqClient::ResetMsgSubO
     return task->get_future();
 }
 
+TdmqClient::SendBatchMessagesOutcome TdmqClient::SendBatchMessages(const SendBatchMessagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendBatchMessages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendBatchMessagesResponse rsp = SendBatchMessagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendBatchMessagesOutcome(rsp);
+        else
+            return SendBatchMessagesOutcome(o.GetError());
+    }
+    else
+    {
+        return SendBatchMessagesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::SendBatchMessagesAsync(const SendBatchMessagesRequest& request, const SendBatchMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendBatchMessages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::SendBatchMessagesOutcomeCallable TdmqClient::SendBatchMessagesCallable(const SendBatchMessagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendBatchMessagesOutcome()>>(
+        [this, request]()
+        {
+            return this->SendBatchMessages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::SendMessagesOutcome TdmqClient::SendMessages(const SendMessagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendMessages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendMessagesResponse rsp = SendMessagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendMessagesOutcome(rsp);
+        else
+            return SendMessagesOutcome(o.GetError());
+    }
+    else
+    {
+        return SendMessagesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::SendMessagesAsync(const SendMessagesRequest& request, const SendMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendMessages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::SendMessagesOutcomeCallable TdmqClient::SendMessagesCallable(const SendMessagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendMessagesOutcome()>>(
+        [this, request]()
+        {
+            return this->SendMessages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

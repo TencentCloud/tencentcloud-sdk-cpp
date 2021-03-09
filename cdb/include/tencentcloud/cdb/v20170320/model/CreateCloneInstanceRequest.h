@@ -224,14 +224,14 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取实例Cpu核数，需要不低于克隆源实例。
-                     * @return Cpu 实例Cpu核数，需要不低于克隆源实例。
+                     * 获取实例Cpu核数，需要不低于克隆源实例，默认和源实例相同。
+                     * @return Cpu 实例Cpu核数，需要不低于克隆源实例，默认和源实例相同。
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置实例Cpu核数，需要不低于克隆源实例。
-                     * @param Cpu 实例Cpu核数，需要不低于克隆源实例。
+                     * 设置实例Cpu核数，需要不低于克隆源实例，默认和源实例相同。
+                     * @param Cpu 实例Cpu核数，需要不低于克隆源实例，默认和源实例相同。
                      */
                     void SetCpu(const int64_t& _cpu);
 
@@ -412,7 +412,7 @@ namespace TencentCloud
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 实例Cpu核数，需要不低于克隆源实例。
+                     * 实例Cpu核数，需要不低于克隆源实例，默认和源实例相同。
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;

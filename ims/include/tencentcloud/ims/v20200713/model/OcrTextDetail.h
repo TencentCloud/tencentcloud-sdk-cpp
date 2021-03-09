@@ -177,6 +177,24 @@ namespace TencentCloud
                      */
                     bool LocationHasBeenSet() const;
 
+                    /**
+                     * 获取OCR文本识别置信度
+                     * @return Rate OCR文本识别置信度
+                     */
+                    uint64_t GetRate() const;
+
+                    /**
+                     * 设置OCR文本识别置信度
+                     * @param Rate OCR文本识别置信度
+                     */
+                    void SetRate(const uint64_t& _rate);
+
+                    /**
+                     * 判断参数 Rate 是否已赋值
+                     * @return Rate 是否已赋值
+                     */
+                    bool RateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +239,12 @@ namespace TencentCloud
                      */
                     Location m_location;
                     bool m_locationHasBeenSet;
+
+                    /**
+                     * OCR文本识别置信度
+                     */
+                    uint64_t m_rate;
+                    bool m_rateHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ OcrTextDetail::OcrTextDetail() :
     m_libNameHasBeenSet(false),
     m_keywordsHasBeenSet(false),
     m_scoreHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_rateHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome OcrTextDetail::Deserialize(const Value &value)
         m_locationHasBeenSet = true;
     }
 
+    if (value.HasMember("Rate") && !value["Rate"].IsNull())
+    {
+        if (!value["Rate"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `OcrTextDetail.Rate` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rate = value["Rate"].GetUint64();
+        m_rateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void OcrTextDetail::ToJsonObject(Value &value, Document::AllocatorType& allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_location.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Rate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rate, allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void OcrTextDetail::SetLocation(const Location& _location)
 bool OcrTextDetail::LocationHasBeenSet() const
 {
     return m_locationHasBeenSet;
+}
+
+uint64_t OcrTextDetail::GetRate() const
+{
+    return m_rate;
+}
+
+void OcrTextDetail::SetRate(const uint64_t& _rate)
+{
+    m_rate = _rate;
+    m_rateHasBeenSet = true;
+}
+
+bool OcrTextDetail::RateHasBeenSet() const
+{
+    return m_rateHasBeenSet;
 }
 

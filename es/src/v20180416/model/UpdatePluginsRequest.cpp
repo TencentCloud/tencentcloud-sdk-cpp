@@ -27,7 +27,8 @@ UpdatePluginsRequest::UpdatePluginsRequest() :
     m_instanceIdHasBeenSet(false),
     m_installPluginListHasBeenSet(false),
     m_removePluginListHasBeenSet(false),
-    m_forceRestartHasBeenSet(false)
+    m_forceRestartHasBeenSet(false),
+    m_forceUpdateHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,14 @@ string UpdatePluginsRequest::ToJsonString() const
         string key = "ForceRestart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceRestart, allocator);
+    }
+
+    if (m_forceUpdateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForceUpdate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceUpdate, allocator);
     }
 
 
@@ -150,6 +159,22 @@ void UpdatePluginsRequest::SetForceRestart(const bool& _forceRestart)
 bool UpdatePluginsRequest::ForceRestartHasBeenSet() const
 {
     return m_forceRestartHasBeenSet;
+}
+
+bool UpdatePluginsRequest::GetForceUpdate() const
+{
+    return m_forceUpdate;
+}
+
+void UpdatePluginsRequest::SetForceUpdate(const bool& _forceUpdate)
+{
+    m_forceUpdate = _forceUpdate;
+    m_forceUpdateHasBeenSet = true;
+}
+
+bool UpdatePluginsRequest::ForceUpdateHasBeenSet() const
+{
+    return m_forceUpdateHasBeenSet;
 }
 
 

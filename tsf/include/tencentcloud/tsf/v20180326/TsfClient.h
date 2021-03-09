@@ -215,6 +215,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleGroupsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleNamespacesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleNamespacesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeTaskDetailRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUploadInfoRequest.h>
@@ -607,6 +609,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSimpleNamespacesResponse> DescribeSimpleNamespacesOutcome;
                 typedef std::future<DescribeSimpleNamespacesOutcome> DescribeSimpleNamespacesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeSimpleNamespacesRequest&, DescribeSimpleNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSimpleNamespacesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
+                typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTaskLastStatusResponse> DescribeTaskLastStatusOutcome;
                 typedef std::future<DescribeTaskLastStatusOutcome> DescribeTaskLastStatusOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeTaskLastStatusRequest&, DescribeTaskLastStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLastStatusAsyncHandler;
@@ -1610,6 +1615,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeSimpleNamespacesOutcome DescribeSimpleNamespaces(const Model::DescribeSimpleNamespacesRequest &request);
                 void DescribeSimpleNamespacesAsync(const Model::DescribeSimpleNamespacesRequest& request, const DescribeSimpleNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSimpleNamespacesOutcomeCallable DescribeSimpleNamespacesCallable(const Model::DescribeSimpleNamespacesRequest& request);
+
+                /**
+                 *查询任务详情
+                 * @param req DescribeTaskDetailRequest
+                 * @return DescribeTaskDetailOutcome
+                 */
+                DescribeTaskDetailOutcome DescribeTaskDetail(const Model::DescribeTaskDetailRequest &request);
+                void DescribeTaskDetailAsync(const Model::DescribeTaskDetailRequest& request, const DescribeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskDetailOutcomeCallable DescribeTaskDetailCallable(const Model::DescribeTaskDetailRequest& request);
 
                 /**
                  *查询任务最近一次执行状态
