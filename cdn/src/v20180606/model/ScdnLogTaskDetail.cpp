@@ -32,7 +32,8 @@ ScdnLogTaskDetail::ScdnLogTaskDetail() :
     m_taskIDHasBeenSet(false),
     m_attackTypeHasBeenSet(false),
     m_defenceModeHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
+    m_conditionsHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const Value &value)
         m_conditionsHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -261,6 +272,14 @@ void ScdnLogTaskDetail::ToJsonObject(Value &value, Document::AllocatorType& allo
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -440,5 +459,21 @@ void ScdnLogTaskDetail::SetConditions(const vector<ScdnEventLogConditions>& _con
 bool ScdnLogTaskDetail::ConditionsHasBeenSet() const
 {
     return m_conditionsHasBeenSet;
+}
+
+string ScdnLogTaskDetail::GetArea() const
+{
+    return m_area;
+}
+
+void ScdnLogTaskDetail::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool ScdnLogTaskDetail::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 

@@ -33,7 +33,8 @@ AllocateAddressesRequest::AllocateAddressesRequest() :
     m_anycastZoneHasBeenSet(false),
     m_applicableForCLBHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_bandwidthPackageIdHasBeenSet(false)
+    m_bandwidthPackageIdHasBeenSet(false),
+    m_addressNameHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string AllocateAddressesRequest::ToJsonString() const
         string key = "BandwidthPackageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_bandwidthPackageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AddressName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_addressName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -298,6 +307,22 @@ void AllocateAddressesRequest::SetBandwidthPackageId(const string& _bandwidthPac
 bool AllocateAddressesRequest::BandwidthPackageIdHasBeenSet() const
 {
     return m_bandwidthPackageIdHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetAddressName() const
+{
+    return m_addressName;
+}
+
+void AllocateAddressesRequest::SetAddressName(const string& _addressName)
+{
+    m_addressName = _addressName;
+    m_addressNameHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::AddressNameHasBeenSet() const
+{
+    return m_addressNameHasBeenSet;
 }
 
 

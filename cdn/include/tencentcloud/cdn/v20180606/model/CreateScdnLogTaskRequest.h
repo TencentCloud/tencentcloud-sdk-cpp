@@ -331,6 +331,42 @@ DefenceMode 映射如下：
                      */
                     bool ConditionsHasBeenSet() const;
 
+                    /**
+                     * 获取来源产品 cdn ecdn
+                     * @return Source 来源产品 cdn ecdn
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置来源产品 cdn ecdn
+                     * @param Source 来源产品 cdn ecdn
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     */
+                    bool SourceHasBeenSet() const;
+
+                    /**
+                     * 获取地域：mainland 或 overseas
+                     * @return Area 地域：mainland 或 overseas
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置地域：mainland 或 overseas
+                     * @param Area 地域：mainland 或 overseas
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -419,6 +455,18 @@ DefenceMode 映射如下：
                      */
                     std::vector<ScdnEventLogConditions> m_conditions;
                     bool m_conditionsHasBeenSet;
+
+                    /**
+                     * 来源产品 cdn ecdn
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
+
+                    /**
+                     * 地域：mainland 或 overseas
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

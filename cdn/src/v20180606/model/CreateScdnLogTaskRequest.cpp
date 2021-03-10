@@ -33,7 +33,9 @@ CreateScdnLogTaskRequest::CreateScdnLogTaskRequest() :
     m_ipHasBeenSet(false),
     m_domainsHasBeenSet(false),
     m_attackTypesHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
+    m_conditionsHasBeenSet(false),
+    m_sourceHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,22 @@ string CreateScdnLogTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -307,6 +325,38 @@ void CreateScdnLogTaskRequest::SetConditions(const vector<ScdnEventLogConditions
 bool CreateScdnLogTaskRequest::ConditionsHasBeenSet() const
 {
     return m_conditionsHasBeenSet;
+}
+
+string CreateScdnLogTaskRequest::GetSource() const
+{
+    return m_source;
+}
+
+void CreateScdnLogTaskRequest::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool CreateScdnLogTaskRequest::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
+}
+
+string CreateScdnLogTaskRequest::GetArea() const
+{
+    return m_area;
+}
+
+void CreateScdnLogTaskRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool CreateScdnLogTaskRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

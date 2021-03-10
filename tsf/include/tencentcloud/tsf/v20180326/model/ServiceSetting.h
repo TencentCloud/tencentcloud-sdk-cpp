@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0:公网 1:集群内访问 2：NodePort
+                     * 获取0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccessType 0:公网 1:集群内访问 2：NodePort
+                     * @return AccessType 0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetAccessType() const;
 
                     /**
-                     * 设置0:公网 1:集群内访问 2：NodePort
+                     * 设置0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessType 0:公网 1:集群内访问 2：NodePort
+                     * @param AccessType 0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAccessType(const int64_t& _accessType);
@@ -116,7 +116,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 0:公网 1:集群内访问 2：NodePort
+                     * 0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_accessType;

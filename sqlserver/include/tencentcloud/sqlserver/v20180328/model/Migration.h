@@ -197,14 +197,14 @@ namespace TencentCloud
                     bool BackupFilesHasBeenSet() const;
 
                     /**
-                     * 获取迁移任务状态，
-                     * @return Status 迁移任务状态，
+                     * 获取迁移任务状态，2-创建完成，7-全量导入中，8-等待增量，9-导入成功，10-导入失败，12-增量导入中
+                     * @return Status 迁移任务状态，2-创建完成，7-全量导入中，8-等待增量，9-导入成功，10-导入失败，12-增量导入中
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置迁移任务状态，
-                     * @param Status 迁移任务状态，
+                     * 设置迁移任务状态，2-创建完成，7-全量导入中，8-等待增量，9-导入成功，10-导入失败，12-增量导入中
+                     * @param Status 迁移任务状态，2-创建完成，7-全量导入中，8-等待增量，9-导入成功，10-导入失败，12-增量导入中
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -396,7 +396,7 @@ namespace TencentCloud
                     bool m_backupFilesHasBeenSet;
 
                     /**
-                     * 迁移任务状态，
+                     * 迁移任务状态，2-创建完成，7-全量导入中，8-等待增量，9-导入成功，10-导入失败，12-增量导入中
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

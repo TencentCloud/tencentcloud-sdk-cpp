@@ -19,6 +19,7 @@ set(cam_public_header
   )
 
 set(cam_public_header_model
+  include/tencentcloud/cam/v20190116/model/SubAccountUser.h
   include/tencentcloud/cam/v20190116/model/GetUserResponse.h
   include/tencentcloud/cam/v20190116/model/ListAccessKeysRequest.h
   include/tencentcloud/cam/v20190116/model/SetMfaFlagResponse.h
@@ -43,6 +44,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/GetGroupRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteRoleResponse.h
   include/tencentcloud/cam/v20190116/model/PolicyVersionItem.h
+  include/tencentcloud/cam/v20190116/model/DescribeSubAccountsRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteUserPermissionsBoundaryRequest.h
   include/tencentcloud/cam/v20190116/model/ListSAMLProvidersRequest.h
   include/tencentcloud/cam/v20190116/model/ListGroupsRequest.h
@@ -145,6 +147,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListUsersForGroupResponse.h
   include/tencentcloud/cam/v20190116/model/PolicyVersionDetail.h
   include/tencentcloud/cam/v20190116/model/AddUserResponse.h
+  include/tencentcloud/cam/v20190116/model/DescribeSubAccountsResponse.h
   include/tencentcloud/cam/v20190116/model/ListEntitiesForPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/AddUserToGroupResponse.h
   include/tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h
@@ -162,6 +165,7 @@ set(cam_public_header_model
 
 set(cam_src
   src/v20190116/CamClient.cpp
+  src/v20190116/model/SubAccountUser.cpp
   src/v20190116/model/GetUserResponse.cpp
   src/v20190116/model/ListAccessKeysRequest.cpp
   src/v20190116/model/SetMfaFlagResponse.cpp
@@ -186,6 +190,7 @@ set(cam_src
   src/v20190116/model/GetGroupRequest.cpp
   src/v20190116/model/DeleteRoleResponse.cpp
   src/v20190116/model/PolicyVersionItem.cpp
+  src/v20190116/model/DescribeSubAccountsRequest.cpp
   src/v20190116/model/DeleteUserPermissionsBoundaryRequest.cpp
   src/v20190116/model/ListSAMLProvidersRequest.cpp
   src/v20190116/model/ListGroupsRequest.cpp
@@ -288,6 +293,7 @@ set(cam_src
   src/v20190116/model/ListUsersForGroupResponse.cpp
   src/v20190116/model/PolicyVersionDetail.cpp
   src/v20190116/model/AddUserResponse.cpp
+  src/v20190116/model/DescribeSubAccountsResponse.cpp
   src/v20190116/model/ListEntitiesForPolicyResponse.cpp
   src/v20190116/model/AddUserToGroupResponse.cpp
   src/v20190116/model/AttachUserPolicyResponse.cpp

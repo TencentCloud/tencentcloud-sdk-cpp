@@ -71,6 +71,8 @@
 #include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagCollRequest.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagCollResponse.h>
+#include <tencentcloud/cam/v20190116/model/DescribeSubAccountsRequest.h>
+#include <tencentcloud/cam/v20190116/model/DescribeSubAccountsResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/DetachGroupPolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachRolePolicyRequest.h>
@@ -231,6 +233,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSafeAuthFlagCollResponse> DescribeSafeAuthFlagCollOutcome;
                 typedef std::future<DescribeSafeAuthFlagCollOutcome> DescribeSafeAuthFlagCollOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DescribeSafeAuthFlagCollRequest&, DescribeSafeAuthFlagCollOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafeAuthFlagCollAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSubAccountsResponse> DescribeSubAccountsOutcome;
+                typedef std::future<DescribeSubAccountsOutcome> DescribeSubAccountsOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DescribeSubAccountsRequest&, DescribeSubAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubAccountsAsyncHandler;
                 typedef Outcome<Error, Model::DetachGroupPolicyResponse> DetachGroupPolicyOutcome;
                 typedef std::future<DetachGroupPolicyOutcome> DetachGroupPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DetachGroupPolicyRequest&, DetachGroupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachGroupPolicyAsyncHandler;
@@ -560,6 +565,15 @@ namespace TencentCloud
                 DescribeSafeAuthFlagCollOutcome DescribeSafeAuthFlagColl(const Model::DescribeSafeAuthFlagCollRequest &request);
                 void DescribeSafeAuthFlagCollAsync(const Model::DescribeSafeAuthFlagCollRequest& request, const DescribeSafeAuthFlagCollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSafeAuthFlagCollOutcomeCallable DescribeSafeAuthFlagCollCallable(const Model::DescribeSafeAuthFlagCollRequest& request);
+
+                /**
+                 *通过子用户UIN列表查询子用户
+                 * @param req DescribeSubAccountsRequest
+                 * @return DescribeSubAccountsOutcome
+                 */
+                DescribeSubAccountsOutcome DescribeSubAccounts(const Model::DescribeSubAccountsRequest &request);
+                void DescribeSubAccountsAsync(const Model::DescribeSubAccountsRequest& request, const DescribeSubAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubAccountsOutcomeCallable DescribeSubAccountsCallable(const Model::DescribeSubAccountsRequest& request);
 
                 /**
                  *本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。

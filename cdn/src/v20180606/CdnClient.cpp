@@ -212,6 +212,49 @@ CdnClient::CreateEdgePackTaskOutcomeCallable CdnClient::CreateEdgePackTaskCallab
     return task->get_future();
 }
 
+CdnClient::CreateScdnFailedLogTaskOutcome CdnClient::CreateScdnFailedLogTask(const CreateScdnFailedLogTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScdnFailedLogTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScdnFailedLogTaskResponse rsp = CreateScdnFailedLogTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScdnFailedLogTaskOutcome(rsp);
+        else
+            return CreateScdnFailedLogTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScdnFailedLogTaskOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::CreateScdnFailedLogTaskAsync(const CreateScdnFailedLogTaskRequest& request, const CreateScdnFailedLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateScdnFailedLogTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::CreateScdnFailedLogTaskOutcomeCallable CdnClient::CreateScdnFailedLogTaskCallable(const CreateScdnFailedLogTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateScdnFailedLogTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateScdnFailedLogTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::CreateScdnLogTaskOutcome CdnClient::CreateScdnLogTask(const CreateScdnLogTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScdnLogTask");

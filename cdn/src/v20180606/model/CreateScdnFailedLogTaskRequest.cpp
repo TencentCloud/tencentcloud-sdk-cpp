@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksRequest.h>
+#include <tencentcloud/cdn/v20180606/model/CreateScdnFailedLogTaskRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,25 +23,25 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace rapidjson;
 using namespace std;
 
-ListScdnLogTasksRequest::ListScdnLogTasksRequest() :
-    m_sourceHasBeenSet(false),
+CreateScdnFailedLogTaskRequest::CreateScdnFailedLogTaskRequest() :
+    m_taskIdHasBeenSet(false),
     m_areaHasBeenSet(false)
 {
 }
 
-string ListScdnLogTasksRequest::ToJsonString() const
+string CreateScdnFailedLogTaskRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_sourceHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Source";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_source.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_areaHasBeenSet)
@@ -60,34 +60,34 @@ string ListScdnLogTasksRequest::ToJsonString() const
 }
 
 
-string ListScdnLogTasksRequest::GetSource() const
+string CreateScdnFailedLogTaskRequest::GetTaskId() const
 {
-    return m_source;
+    return m_taskId;
 }
 
-void ListScdnLogTasksRequest::SetSource(const string& _source)
+void CreateScdnFailedLogTaskRequest::SetTaskId(const string& _taskId)
 {
-    m_source = _source;
-    m_sourceHasBeenSet = true;
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
 }
 
-bool ListScdnLogTasksRequest::SourceHasBeenSet() const
+bool CreateScdnFailedLogTaskRequest::TaskIdHasBeenSet() const
 {
-    return m_sourceHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
-string ListScdnLogTasksRequest::GetArea() const
+string CreateScdnFailedLogTaskRequest::GetArea() const
 {
     return m_area;
 }
 
-void ListScdnLogTasksRequest::SetArea(const string& _area)
+void CreateScdnFailedLogTaskRequest::SetArea(const string& _area)
 {
     m_area = _area;
     m_areaHasBeenSet = true;
 }
 
-bool ListScdnLogTasksRequest::AreaHasBeenSet() const
+bool CreateScdnFailedLogTaskRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
 }

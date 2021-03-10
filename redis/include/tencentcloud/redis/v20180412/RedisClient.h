@@ -428,7 +428,7 @@ namespace TencentCloud
                 DescribeBackupUrlOutcomeCallable DescribeBackupUrlCallable(const Model::DescribeBackupUrlRequest& request);
 
                 /**
-                 *查询Redis实例列表信息
+                 *查询Redis实例列表信息。该接口已废弃。
                  * @param req DescribeCommonDBInstancesRequest
                  * @return DescribeCommonDBInstancesOutcome
                  */

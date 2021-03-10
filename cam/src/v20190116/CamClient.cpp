@@ -1072,6 +1072,49 @@ CamClient::DescribeSafeAuthFlagCollOutcomeCallable CamClient::DescribeSafeAuthFl
     return task->get_future();
 }
 
+CamClient::DescribeSubAccountsOutcome CamClient::DescribeSubAccounts(const DescribeSubAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubAccountsResponse rsp = DescribeSubAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubAccountsOutcome(rsp);
+        else
+            return DescribeSubAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubAccountsOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DescribeSubAccountsAsync(const DescribeSubAccountsRequest& request, const DescribeSubAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubAccounts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DescribeSubAccountsOutcomeCallable CamClient::DescribeSubAccountsCallable(const DescribeSubAccountsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubAccountsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubAccounts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DetachGroupPolicyOutcome CamClient::DetachGroupPolicy(const DetachGroupPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DetachGroupPolicy");

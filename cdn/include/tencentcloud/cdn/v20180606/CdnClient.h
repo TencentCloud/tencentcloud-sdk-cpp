@@ -31,6 +31,8 @@
 #include <tencentcloud/cdn/v20180606/model/CreateDiagnoseUrlResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateEdgePackTaskRequest.h>
 #include <tencentcloud/cdn/v20180606/model/CreateEdgePackTaskResponse.h>
+#include <tencentcloud/cdn/v20180606/model/CreateScdnFailedLogTaskRequest.h>
+#include <tencentcloud/cdn/v20180606/model/CreateScdnFailedLogTaskResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskRequest.h>
 #include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateVerifyRecordRequest.h>
@@ -169,6 +171,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateEdgePackTaskResponse> CreateEdgePackTaskOutcome;
                 typedef std::future<CreateEdgePackTaskOutcome> CreateEdgePackTaskOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::CreateEdgePackTaskRequest&, CreateEdgePackTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgePackTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateScdnFailedLogTaskResponse> CreateScdnFailedLogTaskOutcome;
+                typedef std::future<CreateScdnFailedLogTaskOutcome> CreateScdnFailedLogTaskOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::CreateScdnFailedLogTaskRequest&, CreateScdnFailedLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScdnFailedLogTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateScdnLogTaskResponse> CreateScdnLogTaskOutcome;
                 typedef std::future<CreateScdnLogTaskOutcome> CreateScdnLogTaskOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::CreateScdnLogTaskRequest&, CreateScdnLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScdnLogTaskAsyncHandler;
@@ -375,6 +380,15 @@ namespace TencentCloud
                 CreateEdgePackTaskOutcome CreateEdgePackTask(const Model::CreateEdgePackTaskRequest &request);
                 void CreateEdgePackTaskAsync(const Model::CreateEdgePackTaskRequest& request, const CreateEdgePackTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEdgePackTaskOutcomeCallable CreateEdgePackTaskCallable(const Model::CreateEdgePackTaskRequest& request);
+
+                /**
+                 *CreateScdnFailedLogTask 用于重试创建失败的事件日志任务
+                 * @param req CreateScdnFailedLogTaskRequest
+                 * @return CreateScdnFailedLogTaskOutcome
+                 */
+                CreateScdnFailedLogTaskOutcome CreateScdnFailedLogTask(const Model::CreateScdnFailedLogTaskRequest &request);
+                void CreateScdnFailedLogTaskAsync(const Model::CreateScdnFailedLogTaskRequest& request, const CreateScdnFailedLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateScdnFailedLogTaskOutcomeCallable CreateScdnFailedLogTaskCallable(const Model::CreateScdnFailedLogTaskRequest& request);
 
                 /**
                  *CreateScdnLogTask 用于创建事件日志任务

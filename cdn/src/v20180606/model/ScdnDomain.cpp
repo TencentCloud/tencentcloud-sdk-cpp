@@ -30,7 +30,8 @@ ScdnDomain::ScdnDomain() :
     m_ddosHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_aclRuleNumbersHasBeenSet(false),
-    m_botHasBeenSet(false)
+    m_botHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome ScdnDomain::Deserialize(const Value &value)
         m_botHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ScdnDomain.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void ScdnDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Bot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_bot.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void ScdnDomain::SetBot(const string& _bot)
 bool ScdnDomain::BotHasBeenSet() const
 {
     return m_botHasBeenSet;
+}
+
+string ScdnDomain::GetArea() const
+{
+    return m_area;
+}
+
+void ScdnDomain::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool ScdnDomain::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 

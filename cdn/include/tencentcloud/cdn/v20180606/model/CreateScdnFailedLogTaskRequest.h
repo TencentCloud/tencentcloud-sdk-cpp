@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_LISTSCDNLOGTASKSREQUEST_H_
-#define TENCENTCLOUD_CDN_V20180606_MODEL_LISTSCDNLOGTASKSREQUEST_H_
+#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_CREATESCDNFAILEDLOGTASKREQUEST_H_
+#define TENCENTCLOUD_CDN_V20180606_MODEL_CREATESCDNFAILEDLOGTASKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,43 +32,43 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ListScdnLogTasks请求参数结构体
+                * CreateScdnFailedLogTask请求参数结构体
                 */
-                class ListScdnLogTasksRequest : public AbstractModel
+                class CreateScdnFailedLogTaskRequest : public AbstractModel
                 {
                 public:
-                    ListScdnLogTasksRequest();
-                    ~ListScdnLogTasksRequest() = default;
+                    CreateScdnFailedLogTaskRequest();
+                    ~CreateScdnFailedLogTaskRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取产品来源 cdn/ecdn
-                     * @return Source 产品来源 cdn/ecdn
+                     * 获取重试失败任务的taskID
+                     * @return TaskId 重试失败任务的taskID
                      */
-                    std::string GetSource() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 设置产品来源 cdn/ecdn
-                     * @param Source 产品来源 cdn/ecdn
+                     * 设置重试失败任务的taskID
+                     * @param TaskId 重试失败任务的taskID
                      */
-                    void SetSource(const std::string& _source);
+                    void SetTaskId(const std::string& _taskId);
 
                     /**
-                     * 判断参数 Source 是否已赋值
-                     * @return Source 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      */
-                    bool SourceHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取地域：mainland 或 overseas 为空表示查询所有地域
-                     * @return Area 地域：mainland 或 overseas 为空表示查询所有地域
+                     * 获取地域：mainland或overseas
+                     * @return Area 地域：mainland或overseas
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置地域：mainland 或 overseas 为空表示查询所有地域
-                     * @param Area 地域：mainland 或 overseas 为空表示查询所有地域
+                     * 设置地域：mainland或overseas
+                     * @param Area 地域：mainland或overseas
                      */
                     void SetArea(const std::string& _area);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品来源 cdn/ecdn
+                     * 重试失败任务的taskID
                      */
-                    std::string m_source;
-                    bool m_sourceHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                     /**
-                     * 地域：mainland 或 overseas 为空表示查询所有地域
+                     * 地域：mainland或overseas
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
@@ -98,4 +98,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_LISTSCDNLOGTASKSREQUEST_H_
+#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_CREATESCDNFAILEDLOGTASKREQUEST_H_

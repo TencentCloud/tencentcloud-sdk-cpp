@@ -26,7 +26,9 @@ ScdnWafConfig::ScdnWafConfig() :
     m_modeHasBeenSet(false),
     m_errorPageHasBeenSet(false),
     m_webShellSwitchHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_levelHasBeenSet(false),
+    m_subRuleSwitchHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,36 @@ CoreInternalOutcome ScdnWafConfig::Deserialize(const Value &value)
         m_rulesHasBeenSet = true;
     }
 
+    if (value.HasMember("Level") && !value["Level"].IsNull())
+    {
+        if (!value["Level"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ScdnWafConfig.Level` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_level = value["Level"].GetInt64();
+        m_levelHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubRuleSwitch") && !value["SubRuleSwitch"].IsNull())
+    {
+        if (!value["SubRuleSwitch"].IsArray())
+            return CoreInternalOutcome(Error("response `ScdnWafConfig.SubRuleSwitch` is not array type"));
+
+        const Value &tmpValue = value["SubRuleSwitch"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WafSubRuleStatus item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_subRuleSwitch.push_back(item);
+        }
+        m_subRuleSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -151,6 +183,29 @@ void ScdnWafConfig::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
         int i=0;
         for (auto itr = m_rules.begin(); itr != m_rules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_levelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_level, allocator);
+    }
+
+    if (m_subRuleSwitchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubRuleSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subRuleSwitch.begin(); itr != m_subRuleSwitch.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -238,5 +293,37 @@ void ScdnWafConfig::SetRules(const vector<ScdnWafRule>& _rules)
 bool ScdnWafConfig::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+int64_t ScdnWafConfig::GetLevel() const
+{
+    return m_level;
+}
+
+void ScdnWafConfig::SetLevel(const int64_t& _level)
+{
+    m_level = _level;
+    m_levelHasBeenSet = true;
+}
+
+bool ScdnWafConfig::LevelHasBeenSet() const
+{
+    return m_levelHasBeenSet;
+}
+
+vector<WafSubRuleStatus> ScdnWafConfig::GetSubRuleSwitch() const
+{
+    return m_subRuleSwitch;
+}
+
+void ScdnWafConfig::SetSubRuleSwitch(const vector<WafSubRuleStatus>& _subRuleSwitch)
+{
+    m_subRuleSwitch = _subRuleSwitch;
+    m_subRuleSwitchHasBeenSet = true;
+}
+
+bool ScdnWafConfig::SubRuleSwitchHasBeenSet() const
+{
+    return m_subRuleSwitchHasBeenSet;
 }
 

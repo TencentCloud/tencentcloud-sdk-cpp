@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/ScdnErrorPage.h>
 #include <tencentcloud/cdn/v20180606/model/ScdnWafRule.h>
+#include <tencentcloud/cdn/v20180606/model/WafSubRuleStatus.h>
 
 
 namespace TencentCloud
@@ -154,6 +155,50 @@ namespace TencentCloud
                      */
                     bool RulesHasBeenSet() const;
 
+                    /**
+                     * 获取waf规则等级，可取100|200|300
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Level waf规则等级，可取100|200|300
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetLevel() const;
+
+                    /**
+                     * 设置waf规则等级，可取100|200|300
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Level waf规则等级，可取100|200|300
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLevel(const int64_t& _level);
+
+                    /**
+                     * 判断参数 Level 是否已赋值
+                     * @return Level 是否已赋值
+                     */
+                    bool LevelHasBeenSet() const;
+
+                    /**
+                     * 获取waf子规则开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubRuleSwitch waf子规则开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<WafSubRuleStatus> GetSubRuleSwitch() const;
+
+                    /**
+                     * 设置waf子规则开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubRuleSwitch waf子规则开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubRuleSwitch(const std::vector<WafSubRuleStatus>& _subRuleSwitch);
+
+                    /**
+                     * 判断参数 SubRuleSwitch 是否已赋值
+                     * @return SubRuleSwitch 是否已赋值
+                     */
+                    bool SubRuleSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +234,20 @@ namespace TencentCloud
                      */
                     std::vector<ScdnWafRule> m_rules;
                     bool m_rulesHasBeenSet;
+
+                    /**
+                     * waf规则等级，可取100|200|300
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_level;
+                    bool m_levelHasBeenSet;
+
+                    /**
+                     * waf子规则开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<WafSubRuleStatus> m_subRuleSwitch;
+                    bool m_subRuleSwitchHasBeenSet;
 
                 };
             }

@@ -14,42 +14,38 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksRequest.h>
+#include <tencentcloud/cam/v20190116/model/DescribeSubAccountsRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cdn::V20180606::Model;
+using namespace TencentCloud::Cam::V20190116::Model;
 using namespace rapidjson;
 using namespace std;
 
-ListScdnLogTasksRequest::ListScdnLogTasksRequest() :
-    m_sourceHasBeenSet(false),
-    m_areaHasBeenSet(false)
+DescribeSubAccountsRequest::DescribeSubAccountsRequest() :
+    m_filterSubAccountUinHasBeenSet(false)
 {
 }
 
-string ListScdnLogTasksRequest::ToJsonString() const
+string DescribeSubAccountsRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_sourceHasBeenSet)
+    if (m_filterSubAccountUinHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Source";
+        string key = "FilterSubAccountUin";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_source.c_str(), allocator).Move(), allocator);
-    }
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
-    if (m_areaHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Area";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+        for (auto itr = m_filterSubAccountUin.begin(); itr != m_filterSubAccountUin.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -60,36 +56,20 @@ string ListScdnLogTasksRequest::ToJsonString() const
 }
 
 
-string ListScdnLogTasksRequest::GetSource() const
+vector<uint64_t> DescribeSubAccountsRequest::GetFilterSubAccountUin() const
 {
-    return m_source;
+    return m_filterSubAccountUin;
 }
 
-void ListScdnLogTasksRequest::SetSource(const string& _source)
+void DescribeSubAccountsRequest::SetFilterSubAccountUin(const vector<uint64_t>& _filterSubAccountUin)
 {
-    m_source = _source;
-    m_sourceHasBeenSet = true;
+    m_filterSubAccountUin = _filterSubAccountUin;
+    m_filterSubAccountUinHasBeenSet = true;
 }
 
-bool ListScdnLogTasksRequest::SourceHasBeenSet() const
+bool DescribeSubAccountsRequest::FilterSubAccountUinHasBeenSet() const
 {
-    return m_sourceHasBeenSet;
-}
-
-string ListScdnLogTasksRequest::GetArea() const
-{
-    return m_area;
-}
-
-void ListScdnLogTasksRequest::SetArea(const string& _area)
-{
-    m_area = _area;
-    m_areaHasBeenSet = true;
-}
-
-bool ListScdnLogTasksRequest::AreaHasBeenSet() const
-{
-    return m_areaHasBeenSet;
+    return m_filterSubAccountUinHasBeenSet;
 }
 
 

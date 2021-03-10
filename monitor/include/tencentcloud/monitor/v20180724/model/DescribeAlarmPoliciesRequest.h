@@ -133,14 +133,18 @@ namespace TencentCloud
                     bool MonitorTypesHasBeenSet() const;
 
                     /**
-                     * 获取根据命名空间过滤
-                     * @return Namespaces 根据命名空间过滤
+                     * 获取根据命名空间过滤，不同策略类型的值详见
+[策略类型列表](https://cloud.tencent.com/document/product/248/50397)
+                     * @return Namespaces 根据命名空间过滤，不同策略类型的值详见
+[策略类型列表](https://cloud.tencent.com/document/product/248/50397)
                      */
                     std::vector<std::string> GetNamespaces() const;
 
                     /**
-                     * 设置根据命名空间过滤
-                     * @param Namespaces 根据命名空间过滤
+                     * 设置根据命名空间过滤，不同策略类型的值详见
+[策略类型列表](https://cloud.tencent.com/document/product/248/50397)
+                     * @param Namespaces 根据命名空间过滤，不同策略类型的值详见
+[策略类型列表](https://cloud.tencent.com/document/product/248/50397)
                      */
                     void SetNamespaces(const std::vector<std::string>& _namespaces);
 
@@ -151,14 +155,46 @@ namespace TencentCloud
                     bool NamespacesHasBeenSet() const;
 
                     /**
-                     * 获取告警对象列表
-                     * @return Dimensions 告警对象列表
+                     * 获取告警对象列表，外层数组，对应多个实例
+内层数组，每个数组对应一个实例，里面的object对应的是这个实例的维度信息。格式为
+[
+	[{"name":"unInstanceId","value":"ins-qr888845g"}],
+	[{"name":"unInstanceId","value":"ins-qr8d555g"}]
+	...
+]
+不同云产品参数示例详见
+[维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
+                     * @return Dimensions 告警对象列表，外层数组，对应多个实例
+内层数组，每个数组对应一个实例，里面的object对应的是这个实例的维度信息。格式为
+[
+	[{"name":"unInstanceId","value":"ins-qr888845g"}],
+	[{"name":"unInstanceId","value":"ins-qr8d555g"}]
+	...
+]
+不同云产品参数示例详见
+[维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
                      */
                     std::string GetDimensions() const;
 
                     /**
-                     * 设置告警对象列表
-                     * @param Dimensions 告警对象列表
+                     * 设置告警对象列表，外层数组，对应多个实例
+内层数组，每个数组对应一个实例，里面的object对应的是这个实例的维度信息。格式为
+[
+	[{"name":"unInstanceId","value":"ins-qr888845g"}],
+	[{"name":"unInstanceId","value":"ins-qr8d555g"}]
+	...
+]
+不同云产品参数示例详见
+[维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
+                     * @param Dimensions 告警对象列表，外层数组，对应多个实例
+内层数组，每个数组对应一个实例，里面的object对应的是这个实例的维度信息。格式为
+[
+	[{"name":"unInstanceId","value":"ins-qr888845g"}],
+	[{"name":"unInstanceId","value":"ins-qr8d555g"}]
+	...
+]
+不同云产品参数示例详见
+[维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
                      */
                     void SetDimensions(const std::string& _dimensions);
 
@@ -169,14 +205,18 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取根据接收人搜索
-                     * @return ReceiverUids 根据接收人搜索
+                     * 获取根据接收人的uid搜索，需要调用访问管理的api查询。详见
+[拉取子用户](https://cloud.tencent.com/document/product/598/34587)
+                     * @return ReceiverUids 根据接收人的uid搜索，需要调用访问管理的api查询。详见
+[拉取子用户](https://cloud.tencent.com/document/product/598/34587)
                      */
                     std::vector<int64_t> GetReceiverUids() const;
 
                     /**
-                     * 设置根据接收人搜索
-                     * @param ReceiverUids 根据接收人搜索
+                     * 设置根据接收人的uid搜索，需要调用访问管理的api查询。详见
+[拉取子用户](https://cloud.tencent.com/document/product/598/34587)
+                     * @param ReceiverUids 根据接收人的uid搜索，需要调用访问管理的api查询。详见
+[拉取子用户](https://cloud.tencent.com/document/product/598/34587)
                      */
                     void SetReceiverUids(const std::vector<int64_t>& _receiverUids);
 
@@ -187,14 +227,18 @@ namespace TencentCloud
                     bool ReceiverUidsHasBeenSet() const;
 
                     /**
-                     * 获取根据接收组搜索
-                     * @return ReceiverGroups 根据接收组搜索
+                     * 获取根据接收组的uid搜索，需要调用访问管理的api查询，详见
+[查询用户组列表](https://cloud.tencent.com/document/product/598/34589)
+                     * @return ReceiverGroups 根据接收组的uid搜索，需要调用访问管理的api查询，详见
+[查询用户组列表](https://cloud.tencent.com/document/product/598/34589)
                      */
                     std::vector<int64_t> GetReceiverGroups() const;
 
                     /**
-                     * 设置根据接收组搜索
-                     * @param ReceiverGroups 根据接收组搜索
+                     * 设置根据接收组的uid搜索，需要调用访问管理的api查询，详见
+[查询用户组列表](https://cloud.tencent.com/document/product/598/34589)
+                     * @param ReceiverGroups 根据接收组的uid搜索，需要调用访问管理的api查询，详见
+[查询用户组列表](https://cloud.tencent.com/document/product/598/34589)
                      */
                     void SetReceiverGroups(const std::vector<int64_t>& _receiverGroups);
 
@@ -223,14 +267,14 @@ namespace TencentCloud
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return Field 排序字段
+                     * 获取排序字段，例如按照最后修改时间排序，Field: "UpdateTime"
+                     * @return Field 排序字段，例如按照最后修改时间排序，Field: "UpdateTime"
                      */
                     std::string GetField() const;
 
                     /**
-                     * 设置排序字段
-                     * @param Field 排序字段
+                     * 设置排序字段，例如按照最后修改时间排序，Field: "UpdateTime"
+                     * @param Field 排序字段，例如按照最后修改时间排序，Field: "UpdateTime"
                      */
                     void SetField(const std::string& _field);
 
@@ -259,14 +303,18 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取项目id数组
-                     * @return ProjectIds 项目id数组
+                     * 获取策略所属项目的id数组，可在此页面查看
+[项目管理](https://console.cloud.tencent.com/project)
+                     * @return ProjectIds 策略所属项目的id数组，可在此页面查看
+[项目管理](https://console.cloud.tencent.com/project)
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
-                     * 设置项目id数组
-                     * @param ProjectIds 项目id数组
+                     * 设置策略所属项目的id数组，可在此页面查看
+[项目管理](https://console.cloud.tencent.com/project)
+                     * @param ProjectIds 策略所属项目的id数组，可在此页面查看
+[项目管理](https://console.cloud.tencent.com/project)
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
 
@@ -277,14 +325,18 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取告警通知id列表
-                     * @return NoticeIds 告警通知id列表
+                     * 获取通知模版的id列表，可查询通知模版列表获取。
+[查询通知模板列表](https://cloud.tencent.com/document/product/248/51280)
+                     * @return NoticeIds 通知模版的id列表，可查询通知模版列表获取。
+[查询通知模板列表](https://cloud.tencent.com/document/product/248/51280)
                      */
                     std::vector<std::string> GetNoticeIds() const;
 
                     /**
-                     * 设置告警通知id列表
-                     * @param NoticeIds 告警通知id列表
+                     * 设置通知模版的id列表，可查询通知模版列表获取。
+[查询通知模板列表](https://cloud.tencent.com/document/product/248/51280)
+                     * @param NoticeIds 通知模版的id列表，可查询通知模版列表获取。
+[查询通知模板列表](https://cloud.tencent.com/document/product/248/51280)
                      */
                     void SetNoticeIds(const std::vector<std::string>& _noticeIds);
 
@@ -313,14 +365,14 @@ namespace TencentCloud
                     bool RuleTypesHasBeenSet() const;
 
                     /**
-                     * 获取启停，1：启用   0：停止
-                     * @return Enable 启停，1：启用   0：停止
+                     * 获取告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]
+                     * @return Enable 告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]
                      */
                     std::vector<int64_t> GetEnable() const;
 
                     /**
-                     * 设置启停，1：启用   0：停止
-                     * @param Enable 启停，1：启用   0：停止
+                     * 设置告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]
+                     * @param Enable 告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]
                      */
                     void SetEnable(const std::vector<int64_t>& _enable);
 
@@ -381,25 +433,36 @@ namespace TencentCloud
                     bool m_monitorTypesHasBeenSet;
 
                     /**
-                     * 根据命名空间过滤
+                     * 根据命名空间过滤，不同策略类型的值详见
+[策略类型列表](https://cloud.tencent.com/document/product/248/50397)
                      */
                     std::vector<std::string> m_namespaces;
                     bool m_namespacesHasBeenSet;
 
                     /**
-                     * 告警对象列表
+                     * 告警对象列表，外层数组，对应多个实例
+内层数组，每个数组对应一个实例，里面的object对应的是这个实例的维度信息。格式为
+[
+	[{"name":"unInstanceId","value":"ins-qr888845g"}],
+	[{"name":"unInstanceId","value":"ins-qr8d555g"}]
+	...
+]
+不同云产品参数示例详见
+[维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
                      */
                     std::string m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 根据接收人搜索
+                     * 根据接收人的uid搜索，需要调用访问管理的api查询。详见
+[拉取子用户](https://cloud.tencent.com/document/product/598/34587)
                      */
                     std::vector<int64_t> m_receiverUids;
                     bool m_receiverUidsHasBeenSet;
 
                     /**
-                     * 根据接收组搜索
+                     * 根据接收组的uid搜索，需要调用访问管理的api查询，详见
+[查询用户组列表](https://cloud.tencent.com/document/product/598/34589)
                      */
                     std::vector<int64_t> m_receiverGroups;
                     bool m_receiverGroupsHasBeenSet;
@@ -411,7 +474,7 @@ namespace TencentCloud
                     bool m_policyTypeHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * 排序字段，例如按照最后修改时间排序，Field: "UpdateTime"
                      */
                     std::string m_field;
                     bool m_fieldHasBeenSet;
@@ -423,13 +486,15 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 项目id数组
+                     * 策略所属项目的id数组，可在此页面查看
+[项目管理](https://console.cloud.tencent.com/project)
                      */
                     std::vector<int64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 告警通知id列表
+                     * 通知模版的id列表，可查询通知模版列表获取。
+[查询通知模板列表](https://cloud.tencent.com/document/product/248/51280)
                      */
                     std::vector<std::string> m_noticeIds;
                     bool m_noticeIdsHasBeenSet;
@@ -441,7 +506,7 @@ namespace TencentCloud
                     bool m_ruleTypesHasBeenSet;
 
                     /**
-                     * 启停，1：启用   0：停止
+                     * 告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]
                      */
                     std::vector<int64_t> m_enable;
                     bool m_enableHasBeenSet;

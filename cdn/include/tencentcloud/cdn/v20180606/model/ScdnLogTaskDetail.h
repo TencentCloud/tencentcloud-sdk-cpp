@@ -365,6 +365,28 @@ DefenceMode映射如下：
                      */
                     bool ConditionsHasBeenSet() const;
 
+                    /**
+                     * 获取mainland或overseas
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Area mainland或overseas
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置mainland或overseas
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Area mainland或overseas
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -462,6 +484,13 @@ DefenceMode映射如下：
                      */
                     std::vector<ScdnEventLogConditions> m_conditions;
                     bool m_conditionsHasBeenSet;
+
+                    /**
+                     * mainland或overseas
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }
