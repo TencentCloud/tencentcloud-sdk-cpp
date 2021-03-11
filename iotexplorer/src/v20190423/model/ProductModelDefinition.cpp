@@ -26,7 +26,8 @@ ProductModelDefinition::ProductModelDefinition() :
     m_modelDefineHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_categoryModelHasBeenSet(false)
+    m_categoryModelHasBeenSet(false),
+    m_netTypeModelHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome ProductModelDefinition::Deserialize(const Value &value)
         m_categoryModelHasBeenSet = true;
     }
 
+    if (value.HasMember("NetTypeModel") && !value["NetTypeModel"].IsNull())
+    {
+        if (!value["NetTypeModel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProductModelDefinition.NetTypeModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_netTypeModel = string(value["NetTypeModel"].GetString());
+        m_netTypeModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void ProductModelDefinition::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "CategoryModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_categoryModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_netTypeModelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NetTypeModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_netTypeModel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void ProductModelDefinition::SetCategoryModel(const string& _categoryModel)
 bool ProductModelDefinition::CategoryModelHasBeenSet() const
 {
     return m_categoryModelHasBeenSet;
+}
+
+string ProductModelDefinition::GetNetTypeModel() const
+{
+    return m_netTypeModel;
+}
+
+void ProductModelDefinition::SetNetTypeModel(const string& _netTypeModel)
+{
+    m_netTypeModel = _netTypeModel;
+    m_netTypeModelHasBeenSet = true;
+}
+
+bool ProductModelDefinition::NetTypeModelHasBeenSet() const
+{
+    return m_netTypeModelHasBeenSet;
 }
 

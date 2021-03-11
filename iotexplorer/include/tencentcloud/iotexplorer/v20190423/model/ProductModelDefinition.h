@@ -140,6 +140,28 @@ namespace TencentCloud
                      */
                     bool CategoryModelHasBeenSet() const;
 
+                    /**
+                     * 获取产品的连接类型的模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetTypeModel 产品的连接类型的模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNetTypeModel() const;
+
+                    /**
+                     * 设置产品的连接类型的模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetTypeModel 产品的连接类型的模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetTypeModel(const std::string& _netTypeModel);
+
+                    /**
+                     * 判断参数 NetTypeModel 是否已赋值
+                     * @return NetTypeModel 是否已赋值
+                     */
+                    bool NetTypeModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -172,6 +194,13 @@ namespace TencentCloud
                      */
                     std::string m_categoryModel;
                     bool m_categoryModelHasBeenSet;
+
+                    /**
+                     * 产品的连接类型的模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_netTypeModel;
+                    bool m_netTypeModelHasBeenSet;
 
                 };
             }
