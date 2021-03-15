@@ -78,6 +78,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/SecurityGroup.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseTableRequest.h
   include/tencentcloud/dcdb/v20180411/model/OpenDBExtranetAccessResponse.h
+  include/tencentcloud/dcdb/v20180411/model/KillSessionRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseObjectsResponse.h
   include/tencentcloud/dcdb/v20180411/model/TableColumn.h
   include/tencentcloud/dcdb/v20180411/model/SecurityGroupBound.h
@@ -95,6 +96,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeRequest.h
   include/tencentcloud/dcdb/v20180411/model/CloseDBExtranetAccessResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionRequest.h
+  include/tencentcloud/dcdb/v20180411/model/KillSessionResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabasesResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h
@@ -195,6 +197,7 @@ set(dcdb_src
   src/v20180411/model/SecurityGroup.cpp
   src/v20180411/model/DescribeDatabaseTableRequest.cpp
   src/v20180411/model/OpenDBExtranetAccessResponse.cpp
+  src/v20180411/model/KillSessionRequest.cpp
   src/v20180411/model/DescribeDatabaseObjectsResponse.cpp
   src/v20180411/model/TableColumn.cpp
   src/v20180411/model/SecurityGroupBound.cpp
@@ -212,6 +215,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDBSyncModeRequest.cpp
   src/v20180411/model/CloseDBExtranetAccessResponse.cpp
   src/v20180411/model/ModifyAccountDescriptionRequest.cpp
+  src/v20180411/model/KillSessionResponse.cpp
   src/v20180411/model/DescribeProjectsRequest.cpp
   src/v20180411/model/DescribeDatabasesResponse.cpp
   src/v20180411/model/DescribeOrdersRequest.cpp

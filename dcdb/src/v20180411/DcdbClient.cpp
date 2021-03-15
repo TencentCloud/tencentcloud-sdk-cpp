@@ -1416,6 +1416,49 @@ DcdbClient::InitDCDBInstancesOutcomeCallable DcdbClient::InitDCDBInstancesCallab
     return task->get_future();
 }
 
+DcdbClient::KillSessionOutcome DcdbClient::KillSession(const KillSessionRequest &request)
+{
+    auto outcome = MakeRequest(request, "KillSession");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        KillSessionResponse rsp = KillSessionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return KillSessionOutcome(rsp);
+        else
+            return KillSessionOutcome(o.GetError());
+    }
+    else
+    {
+        return KillSessionOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::KillSessionAsync(const KillSessionRequest& request, const KillSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->KillSession(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::KillSessionOutcomeCallable DcdbClient::KillSessionCallable(const KillSessionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<KillSessionOutcome()>>(
+        [this, request]()
+        {
+            return this->KillSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::ModifyAccountDescriptionOutcome DcdbClient::ModifyAccountDescription(const ModifyAccountDescriptionRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccountDescription");

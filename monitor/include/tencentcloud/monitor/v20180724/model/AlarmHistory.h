@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/InstanceGroups.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmHistoryMetric.h>
 
 
 namespace TencentCloud
@@ -443,6 +444,28 @@ namespace TencentCloud
                      */
                     bool PolicyExistsHasBeenSet() const;
 
+                    /**
+                     * 获取指标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricsInfo 指标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AlarmHistoryMetric> GetMetricsInfo() const;
+
+                    /**
+                     * 设置指标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetricsInfo 指标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetricsInfo(const std::vector<AlarmHistoryMetric>& _metricsInfo);
+
+                    /**
+                     * 判断参数 MetricsInfo 是否已赋值
+                     * @return MetricsInfo 是否已赋值
+                     */
+                    bool MetricsInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -576,6 +599,13 @@ namespace TencentCloud
                      */
                     int64_t m_policyExists;
                     bool m_policyExistsHasBeenSet;
+
+                    /**
+                     * 指标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AlarmHistoryMetric> m_metricsInfo;
+                    bool m_metricsInfoHasBeenSet;
 
                 };
             }

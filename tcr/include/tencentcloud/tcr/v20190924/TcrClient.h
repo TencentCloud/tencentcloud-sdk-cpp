@@ -129,6 +129,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ManageExternalEndpointRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ManageExternalEndpointResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ManageImageLifecycleGlobalPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ManageImageLifecycleGlobalPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ManageInternalEndpointRequest.h>
@@ -328,6 +330,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DuplicateImagePersonalResponse> DuplicateImagePersonalOutcome;
                 typedef std::future<DuplicateImagePersonalOutcome> DuplicateImagePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DuplicateImagePersonalRequest&, DuplicateImagePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DuplicateImagePersonalAsyncHandler;
+                typedef Outcome<Error, Model::ManageExternalEndpointResponse> ManageExternalEndpointOutcome;
+                typedef std::future<ManageExternalEndpointOutcome> ManageExternalEndpointOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ManageExternalEndpointRequest&, ManageExternalEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageExternalEndpointAsyncHandler;
                 typedef Outcome<Error, Model::ManageImageLifecycleGlobalPersonalResponse> ManageImageLifecycleGlobalPersonalOutcome;
                 typedef std::future<ManageImageLifecycleGlobalPersonalOutcome> ManageImageLifecycleGlobalPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ManageImageLifecycleGlobalPersonalRequest&, ManageImageLifecycleGlobalPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageImageLifecycleGlobalPersonalAsyncHandler;
@@ -846,6 +851,15 @@ namespace TencentCloud
                 DuplicateImagePersonalOutcome DuplicateImagePersonal(const Model::DuplicateImagePersonalRequest &request);
                 void DuplicateImagePersonalAsync(const Model::DuplicateImagePersonalRequest& request, const DuplicateImagePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DuplicateImagePersonalOutcomeCallable DuplicateImagePersonalCallable(const Model::DuplicateImagePersonalRequest& request);
+
+                /**
+                 *管理实例公网访问
+                 * @param req ManageExternalEndpointRequest
+                 * @return ManageExternalEndpointOutcome
+                 */
+                ManageExternalEndpointOutcome ManageExternalEndpoint(const Model::ManageExternalEndpointRequest &request);
+                void ManageExternalEndpointAsync(const Model::ManageExternalEndpointRequest& request, const ManageExternalEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ManageExternalEndpointOutcomeCallable ManageExternalEndpointCallable(const Model::ManageExternalEndpointRequest& request);
 
                 /**
                  *用于设置个人版全局镜像版本自动清理策略

@@ -2319,6 +2319,49 @@ TcrClient::DuplicateImagePersonalOutcomeCallable TcrClient::DuplicateImagePerson
     return task->get_future();
 }
 
+TcrClient::ManageExternalEndpointOutcome TcrClient::ManageExternalEndpoint(const ManageExternalEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "ManageExternalEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ManageExternalEndpointResponse rsp = ManageExternalEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ManageExternalEndpointOutcome(rsp);
+        else
+            return ManageExternalEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return ManageExternalEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ManageExternalEndpointAsync(const ManageExternalEndpointRequest& request, const ManageExternalEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ManageExternalEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::ManageExternalEndpointOutcomeCallable TcrClient::ManageExternalEndpointCallable(const ManageExternalEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ManageExternalEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->ManageExternalEndpoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::ManageImageLifecycleGlobalPersonalOutcome TcrClient::ManageImageLifecycleGlobalPersonal(const ManageImageLifecycleGlobalPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "ManageImageLifecycleGlobalPersonal");

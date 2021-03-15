@@ -43,7 +43,8 @@ AlarmHistory::AlarmHistory() :
     m_alarmTypeHasBeenSet(false),
     m_eventIdHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_policyExistsHasBeenSet(false)
+    m_policyExistsHasBeenSet(false),
+    m_metricsInfoHasBeenSet(false)
 {
 }
 
@@ -291,6 +292,26 @@ CoreInternalOutcome AlarmHistory::Deserialize(const Value &value)
         m_policyExistsHasBeenSet = true;
     }
 
+    if (value.HasMember("MetricsInfo") && !value["MetricsInfo"].IsNull())
+    {
+        if (!value["MetricsInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `AlarmHistory.MetricsInfo` is not array type"));
+
+        const Value &tmpValue = value["MetricsInfo"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AlarmHistoryMetric item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metricsInfo.push_back(item);
+        }
+        m_metricsInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -494,6 +515,21 @@ void AlarmHistory::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "PolicyExists";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_policyExists, allocator);
+    }
+
+    if (m_metricsInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetricsInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metricsInfo.begin(); itr != m_metricsInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -849,5 +885,21 @@ void AlarmHistory::SetPolicyExists(const int64_t& _policyExists)
 bool AlarmHistory::PolicyExistsHasBeenSet() const
 {
     return m_policyExistsHasBeenSet;
+}
+
+vector<AlarmHistoryMetric> AlarmHistory::GetMetricsInfo() const
+{
+    return m_metricsInfo;
+}
+
+void AlarmHistory::SetMetricsInfo(const vector<AlarmHistoryMetric>& _metricsInfo)
+{
+    m_metricsInfo = _metricsInfo;
+    m_metricsInfoHasBeenSet = true;
+}
+
+bool AlarmHistory::MetricsInfoHasBeenSet() const
+{
+    return m_metricsInfoHasBeenSet;
 }
 

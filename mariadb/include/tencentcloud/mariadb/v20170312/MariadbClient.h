@@ -93,6 +93,8 @@
 #include <tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/InitDBInstancesRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/InitDBInstancesResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/KillSessionRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/KillSessionResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyAccountDescriptionRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyAccountDescriptionResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyBackupTimeRequest.h>
@@ -236,6 +238,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::InitDBInstancesResponse> InitDBInstancesOutcome;
                 typedef std::future<InitDBInstancesOutcome> InitDBInstancesOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::InitDBInstancesRequest&, InitDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitDBInstancesAsyncHandler;
+                typedef Outcome<Error, Model::KillSessionResponse> KillSessionOutcome;
+                typedef std::future<KillSessionOutcome> KillSessionOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::KillSessionRequest&, KillSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillSessionAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAccountDescriptionResponse> ModifyAccountDescriptionOutcome;
                 typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyAccountDescriptionRequest&, ModifyAccountDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
@@ -593,6 +598,15 @@ namespace TencentCloud
                 InitDBInstancesOutcome InitDBInstances(const Model::InitDBInstancesRequest &request);
                 void InitDBInstancesAsync(const Model::InitDBInstancesRequest& request, const InitDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InitDBInstancesOutcomeCallable InitDBInstancesCallable(const Model::InitDBInstancesRequest& request);
+
+                /**
+                 *本接口（KillSession）用于杀死指定会话。
+                 * @param req KillSessionRequest
+                 * @return KillSessionOutcome
+                 */
+                KillSessionOutcome KillSession(const Model::KillSessionRequest &request);
+                void KillSessionAsync(const Model::KillSessionRequest& request, const KillSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                KillSessionOutcomeCallable KillSessionCallable(const Model::KillSessionRequest& request);
 
                 /**
                  *本接口（ModifyAccountDescription）用于修改云数据库账号备注。

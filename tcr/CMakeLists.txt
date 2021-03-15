@@ -20,6 +20,7 @@ set(tcr_public_header
 
 set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DuplicateImagePersonalRequest.h
+  include/tencentcloud/tcr/v20190924/model/ManageExternalEndpointRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImagePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/WebhookTarget.h
@@ -162,6 +163,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeFavorRepositoryPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/CheckInstanceNameResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryAccessPersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/ManageExternalEndpointResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateInstanceTokenRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalRequest.h
@@ -201,6 +203,7 @@ set(tcr_public_header_model
 set(tcr_src
   src/v20190924/TcrClient.cpp
   src/v20190924/model/DuplicateImagePersonalRequest.cpp
+  src/v20190924/model/ManageExternalEndpointRequest.cpp
   src/v20190924/model/DescribeImagePersonalResponse.cpp
   src/v20190924/model/DescribeUserQuotaPersonalRequest.cpp
   src/v20190924/model/WebhookTarget.cpp
@@ -343,6 +346,7 @@ set(tcr_src
   src/v20190924/model/DescribeFavorRepositoryPersonalResponse.cpp
   src/v20190924/model/CheckInstanceNameResponse.cpp
   src/v20190924/model/ModifyRepositoryAccessPersonalResponse.cpp
+  src/v20190924/model/ManageExternalEndpointResponse.cpp
   src/v20190924/model/ModifyApplicationTriggerPersonalRequest.cpp
   src/v20190924/model/CreateInstanceTokenRequest.cpp
   src/v20190924/model/ModifyUserPasswordPersonalRequest.cpp
