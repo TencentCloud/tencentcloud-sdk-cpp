@@ -84,14 +84,38 @@ namespace TencentCloud
                     bool CommandIdHasBeenSet() const;
 
                     /**
-                     * 获取执行活动状态。
-                     * @return InvocationStatus 执行活动状态。
+                     * 获取执行任务状态。取值范围：
+<li> PENDING：等待下发 
+<li> RUNNING：命令运行中
+<li> SUCCESS：命令成功
+<li> FAILED：命令失败
+<li> TIMEOUT：命令超时
+<li> PARTIAL_FAILED：命令部分失败
+                     * @return InvocationStatus 执行任务状态。取值范围：
+<li> PENDING：等待下发 
+<li> RUNNING：命令运行中
+<li> SUCCESS：命令成功
+<li> FAILED：命令失败
+<li> TIMEOUT：命令超时
+<li> PARTIAL_FAILED：命令部分失败
                      */
                     std::string GetInvocationStatus() const;
 
                     /**
-                     * 设置执行活动状态。
-                     * @param InvocationStatus 执行活动状态。
+                     * 设置执行任务状态。取值范围：
+<li> PENDING：等待下发 
+<li> RUNNING：命令运行中
+<li> SUCCESS：命令成功
+<li> FAILED：命令失败
+<li> TIMEOUT：命令超时
+<li> PARTIAL_FAILED：命令部分失败
+                     * @param InvocationStatus 执行任务状态。取值范围：
+<li> PENDING：等待下发 
+<li> RUNNING：命令运行中
+<li> SUCCESS：命令成功
+<li> FAILED：命令失败
+<li> TIMEOUT：命令超时
+<li> PARTIAL_FAILED：命令部分失败
                      */
                     void SetInvocationStatus(const std::string& _invocationStatus);
 
@@ -224,7 +248,13 @@ namespace TencentCloud
                     bool m_commandIdHasBeenSet;
 
                     /**
-                     * 执行活动状态。
+                     * 执行任务状态。取值范围：
+<li> PENDING：等待下发 
+<li> RUNNING：命令运行中
+<li> SUCCESS：命令成功
+<li> FAILED：命令失败
+<li> TIMEOUT：命令超时
+<li> PARTIAL_FAILED：命令部分失败
                      */
                     std::string m_invocationStatus;
                     bool m_invocationStatusHasBeenSet;

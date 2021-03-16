@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过32个字符。
-                     * @return TopicName 主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过32个字符。
+                     * 获取主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
+                     * @return TopicName 主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过32个字符。
-                     * @param TopicName 主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过32个字符。
+                     * 设置主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
+                     * @param TopicName 主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
                      */
                     void SetTopicName(const std::string& _topicName);
 
@@ -179,7 +179,7 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * 主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过32个字符。
+                     * 主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

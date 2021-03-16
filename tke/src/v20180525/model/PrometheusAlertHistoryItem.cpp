@@ -24,7 +24,11 @@ using namespace std;
 PrometheusAlertHistoryItem::PrometheusAlertHistoryItem() :
     m_ruleNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_ruleItemHasBeenSet(false),
+    m_topicIdHasBeenSet(false),
+    m_topicNameHasBeenSet(false)
 {
 }
 
@@ -63,6 +67,46 @@ CoreInternalOutcome PrometheusAlertHistoryItem::Deserialize(const Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("State") && !value["State"].IsNull())
+    {
+        if (!value["State"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.State` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_state = string(value["State"].GetString());
+        m_stateHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleItem") && !value["RuleItem"].IsNull())
+    {
+        if (!value["RuleItem"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.RuleItem` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleItem = string(value["RuleItem"].GetString());
+        m_ruleItemHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicId") && !value["TopicId"].IsNull())
+    {
+        if (!value["TopicId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicId = string(value["TopicId"].GetString());
+        m_topicIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicName") && !value["TopicName"].IsNull())
+    {
+        if (!value["TopicName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicName = string(value["TopicName"].GetString());
+        m_topicNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +136,38 @@ void PrometheusAlertHistoryItem::ToJsonObject(Value &value, Document::AllocatorT
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleItemHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RuleItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_ruleItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_topicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TopicName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +219,69 @@ void PrometheusAlertHistoryItem::SetContent(const string& _content)
 bool PrometheusAlertHistoryItem::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string PrometheusAlertHistoryItem::GetState() const
+{
+    return m_state;
+}
+
+void PrometheusAlertHistoryItem::SetState(const string& _state)
+{
+    m_state = _state;
+    m_stateHasBeenSet = true;
+}
+
+bool PrometheusAlertHistoryItem::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
+}
+
+string PrometheusAlertHistoryItem::GetRuleItem() const
+{
+    return m_ruleItem;
+}
+
+void PrometheusAlertHistoryItem::SetRuleItem(const string& _ruleItem)
+{
+    m_ruleItem = _ruleItem;
+    m_ruleItemHasBeenSet = true;
+}
+
+bool PrometheusAlertHistoryItem::RuleItemHasBeenSet() const
+{
+    return m_ruleItemHasBeenSet;
+}
+
+string PrometheusAlertHistoryItem::GetTopicId() const
+{
+    return m_topicId;
+}
+
+void PrometheusAlertHistoryItem::SetTopicId(const string& _topicId)
+{
+    m_topicId = _topicId;
+    m_topicIdHasBeenSet = true;
+}
+
+bool PrometheusAlertHistoryItem::TopicIdHasBeenSet() const
+{
+    return m_topicIdHasBeenSet;
+}
+
+string PrometheusAlertHistoryItem::GetTopicName() const
+{
+    return m_topicName;
+}
+
+void PrometheusAlertHistoryItem::SetTopicName(const string& _topicName)
+{
+    m_topicName = _topicName;
+    m_topicNameHasBeenSet = true;
+}
+
+bool PrometheusAlertHistoryItem::TopicNameHasBeenSet() const
+{
+    return m_topicNameHasBeenSet;
 }
 

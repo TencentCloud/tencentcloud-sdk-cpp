@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/faceid/v20180301/model/Encryption.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,24 @@ namespace TencentCloud
                      */
                     bool CertTypeHasBeenSet() const;
 
+                    /**
+                     * 获取敏感数据加密信息。对传入信息（姓名、身份证号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @return Encryption 敏感数据加密信息。对传入信息（姓名、身份证号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     */
+                    Encryption GetEncryption() const;
+
+                    /**
+                     * 设置敏感数据加密信息。对传入信息（姓名、身份证号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param Encryption 敏感数据加密信息。对传入信息（姓名、身份证号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     */
+                    void SetEncryption(const Encryption& _encryption);
+
+                    /**
+                     * 判断参数 Encryption 是否已赋值
+                     * @return Encryption 是否已赋值
+                     */
+                    bool EncryptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +163,12 @@ namespace TencentCloud
                      */
                     int64_t m_certType;
                     bool m_certTypeHasBeenSet;
+
+                    /**
+                     * 敏感数据加密信息。对传入信息（姓名、身份证号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     */
+                    Encryption m_encryption;
+                    bool m_encryptionHasBeenSet;
 
                 };
             }

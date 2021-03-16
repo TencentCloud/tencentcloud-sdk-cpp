@@ -100,6 +100,94 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取告警状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return State 告警状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetState() const;
+
+                    /**
+                     * 设置告警状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param State 告警状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetState(const std::string& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     */
+                    bool StateHasBeenSet() const;
+
+                    /**
+                     * 获取触发的规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleItem 触发的规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRuleItem() const;
+
+                    /**
+                     * 设置触发的规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleItem 触发的规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleItem(const std::string& _ruleItem);
+
+                    /**
+                     * 判断参数 RuleItem 是否已赋值
+                     * @return RuleItem 是否已赋值
+                     */
+                    bool RuleItemHasBeenSet() const;
+
+                    /**
+                     * 获取告警渠道的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicId 告警渠道的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTopicId() const;
+
+                    /**
+                     * 设置告警渠道的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TopicId 告警渠道的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTopicId(const std::string& _topicId);
+
+                    /**
+                     * 判断参数 TopicId 是否已赋值
+                     * @return TopicId 是否已赋值
+                     */
+                    bool TopicIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警渠道的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicName 告警渠道的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTopicName() const;
+
+                    /**
+                     * 设置告警渠道的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TopicName 告警渠道的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTopicName(const std::string& _topicName);
+
+                    /**
+                     * 判断参数 TopicName 是否已赋值
+                     * @return TopicName 是否已赋值
+                     */
+                    bool TopicNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +207,34 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 告警状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_state;
+                    bool m_stateHasBeenSet;
+
+                    /**
+                     * 触发的规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleItem;
+                    bool m_ruleItemHasBeenSet;
+
+                    /**
+                     * 告警渠道的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicId;
+                    bool m_topicIdHasBeenSet;
+
+                    /**
+                     * 告警渠道的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicName;
+                    bool m_topicNameHasBeenSet;
 
                 };
             }

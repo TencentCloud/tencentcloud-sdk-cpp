@@ -1,0 +1,220 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageEventsRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Iotvideo::V20201215::Model;
+using namespace rapidjson;
+using namespace std;
+
+DescribeCloudStorageEventsRequest::DescribeCloudStorageEventsRequest() :
+    m_productIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_contextHasBeenSet(false),
+    m_sizeHasBeenSet(false),
+    m_eventIdHasBeenSet(false)
+{
+}
+
+string DescribeCloudStorageEventsRequest::ToJsonString() const
+{
+    Document d;
+    d.SetObject();
+    Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_productIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_contextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Context";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_context.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Size";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_size, allocator);
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_eventId.c_str(), allocator).Move(), allocator);
+    }
+
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string DescribeCloudStorageEventsRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void DescribeCloudStorageEventsRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+string DescribeCloudStorageEventsRequest::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void DescribeCloudStorageEventsRequest::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsRequest::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageEventsRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeCloudStorageEventsRequest::SetStartTime(const uint64_t& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageEventsRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeCloudStorageEventsRequest::SetEndTime(const uint64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+string DescribeCloudStorageEventsRequest::GetContext() const
+{
+    return m_context;
+}
+
+void DescribeCloudStorageEventsRequest::SetContext(const string& _context)
+{
+    m_context = _context;
+    m_contextHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsRequest::ContextHasBeenSet() const
+{
+    return m_contextHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageEventsRequest::GetSize() const
+{
+    return m_size;
+}
+
+void DescribeCloudStorageEventsRequest::SetSize(const uint64_t& _size)
+{
+    m_size = _size;
+    m_sizeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsRequest::SizeHasBeenSet() const
+{
+    return m_sizeHasBeenSet;
+}
+
+string DescribeCloudStorageEventsRequest::GetEventId() const
+{
+    return m_eventId;
+}
+
+void DescribeCloudStorageEventsRequest::SetEventId(const string& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsRequest::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
+}
+
+

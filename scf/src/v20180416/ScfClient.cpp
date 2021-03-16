@@ -728,6 +728,49 @@ ScfClient::GetFunctionAddressOutcomeCallable ScfClient::GetFunctionAddressCallab
     return task->get_future();
 }
 
+ScfClient::GetFunctionEventInvokeConfigOutcome ScfClient::GetFunctionEventInvokeConfig(const GetFunctionEventInvokeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFunctionEventInvokeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFunctionEventInvokeConfigResponse rsp = GetFunctionEventInvokeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFunctionEventInvokeConfigOutcome(rsp);
+        else
+            return GetFunctionEventInvokeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFunctionEventInvokeConfigOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::GetFunctionEventInvokeConfigAsync(const GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFunctionEventInvokeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::GetFunctionEventInvokeConfigOutcomeCallable ScfClient::GetFunctionEventInvokeConfigCallable(const GetFunctionEventInvokeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFunctionEventInvokeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFunctionEventInvokeConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::GetFunctionLogsOutcome ScfClient::GetFunctionLogs(const GetFunctionLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetFunctionLogs");
@@ -1667,6 +1710,49 @@ ScfClient::UpdateFunctionConfigurationOutcomeCallable ScfClient::UpdateFunctionC
         [this, request]()
         {
             return this->UpdateFunctionConfiguration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::UpdateFunctionEventInvokeConfigOutcome ScfClient::UpdateFunctionEventInvokeConfig(const UpdateFunctionEventInvokeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateFunctionEventInvokeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateFunctionEventInvokeConfigResponse rsp = UpdateFunctionEventInvokeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateFunctionEventInvokeConfigOutcome(rsp);
+        else
+            return UpdateFunctionEventInvokeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateFunctionEventInvokeConfigOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::UpdateFunctionEventInvokeConfigAsync(const UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateFunctionEventInvokeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::UpdateFunctionEventInvokeConfigOutcomeCallable ScfClient::UpdateFunctionEventInvokeConfigCallable(const UpdateFunctionEventInvokeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateFunctionEventInvokeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateFunctionEventInvokeConfig(request);
         }
     );
 

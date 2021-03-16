@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeTagsRequest::DescribeTagsRequest() :
     m_machineTypeHasBeenSet(false),
-    m_machineRegionHasBeenSet(false)
+    m_machineRegionHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,21 @@ string DescribeTagsRequest::ToJsonString() const
         string key = "MachineRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_machineRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -90,6 +106,22 @@ void DescribeTagsRequest::SetMachineRegion(const string& _machineRegion)
 bool DescribeTagsRequest::MachineRegionHasBeenSet() const
 {
     return m_machineRegionHasBeenSet;
+}
+
+vector<Filters> DescribeTagsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeTagsRequest::SetFilters(const vector<Filters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeTagsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

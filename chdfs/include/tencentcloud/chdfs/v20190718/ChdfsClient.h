@@ -171,7 +171,9 @@ namespace TencentCloud
 
 
                 /**
-                 *创建权限组。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+创建权限组。
                  * @param req CreateAccessGroupRequest
                  * @return CreateAccessGroupOutcome
                  */
@@ -180,7 +182,9 @@ namespace TencentCloud
                 CreateAccessGroupOutcomeCallable CreateAccessGroupCallable(const Model::CreateAccessGroupRequest& request);
 
                 /**
-                 *批量创建权限规则，权限规则ID和创建时间无需填写。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+批量创建权限规则，权限规则ID和创建时间无需填写。
                  * @param req CreateAccessRulesRequest
                  * @return CreateAccessRulesOutcome
                  */
@@ -189,7 +193,9 @@ namespace TencentCloud
                 CreateAccessRulesOutcomeCallable CreateAccessRulesCallable(const Model::CreateAccessRulesRequest& request);
 
                 /**
-                 *创建文件系统（异步）。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+创建文件系统（异步）。
                  * @param req CreateFileSystemRequest
                  * @return CreateFileSystemOutcome
                  */
@@ -198,7 +204,9 @@ namespace TencentCloud
                 CreateFileSystemOutcomeCallable CreateFileSystemCallable(const Model::CreateFileSystemRequest& request);
 
                 /**
-                 *批量创建生命周期规则，生命周期规则ID和创建时间无需填写。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+批量创建生命周期规则，生命周期规则ID和创建时间无需填写。
                  * @param req CreateLifeCycleRulesRequest
                  * @return CreateLifeCycleRulesOutcome
                  */
@@ -207,7 +215,9 @@ namespace TencentCloud
                 CreateLifeCycleRulesOutcomeCallable CreateLifeCycleRulesCallable(const Model::CreateLifeCycleRulesRequest& request);
 
                 /**
-                 *创建文件系统挂载点，仅限于创建成功的文件系统。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+创建文件系统挂载点，仅限于创建成功的文件系统。
                  * @param req CreateMountPointRequest
                  * @return CreateMountPointOutcome
                  */
@@ -216,7 +226,9 @@ namespace TencentCloud
                 CreateMountPointOutcomeCallable CreateMountPointCallable(const Model::CreateMountPointRequest& request);
 
                 /**
-                 *批量创建回热任务，回热任务ID、状态和创建时间无需填写。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+批量创建回热任务，回热任务ID、状态和创建时间无需填写。
                  * @param req CreateRestoreTasksRequest
                  * @return CreateRestoreTasksOutcome
                  */
@@ -225,7 +237,9 @@ namespace TencentCloud
                 CreateRestoreTasksOutcomeCallable CreateRestoreTasksCallable(const Model::CreateRestoreTasksRequest& request);
 
                 /**
-                 *删除权限组。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+删除权限组。
                  * @param req DeleteAccessGroupRequest
                  * @return DeleteAccessGroupOutcome
                  */
@@ -234,7 +248,9 @@ namespace TencentCloud
                 DeleteAccessGroupOutcomeCallable DeleteAccessGroupCallable(const Model::DeleteAccessGroupRequest& request);
 
                 /**
-                 *批量删除权限规则。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+批量删除权限规则。
                  * @param req DeleteAccessRulesRequest
                  * @return DeleteAccessRulesOutcome
                  */
@@ -243,7 +259,9 @@ namespace TencentCloud
                 DeleteAccessRulesOutcomeCallable DeleteAccessRulesCallable(const Model::DeleteAccessRulesRequest& request);
 
                 /**
-                 *删除文件系统，不允许删除非空文件系统。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+删除文件系统，不允许删除非空文件系统。
                  * @param req DeleteFileSystemRequest
                  * @return DeleteFileSystemOutcome
                  */
@@ -252,7 +270,9 @@ namespace TencentCloud
                 DeleteFileSystemOutcomeCallable DeleteFileSystemCallable(const Model::DeleteFileSystemRequest& request);
 
                 /**
-                 *批量删除生命周期规则。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+批量删除生命周期规则。
                  * @param req DeleteLifeCycleRulesRequest
                  * @return DeleteLifeCycleRulesOutcome
                  */
@@ -261,7 +281,9 @@ namespace TencentCloud
                 DeleteLifeCycleRulesOutcomeCallable DeleteLifeCycleRulesCallable(const Model::DeleteLifeCycleRulesRequest& request);
 
                 /**
-                 *删除挂载点。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+删除挂载点。
                  * @param req DeleteMountPointRequest
                  * @return DeleteMountPointOutcome
                  */
@@ -270,7 +292,9 @@ namespace TencentCloud
                 DeleteMountPointOutcomeCallable DeleteMountPointCallable(const Model::DeleteMountPointRequest& request);
 
                 /**
-                 *查看权限组列表。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+查看权限组列表。
                  * @param req DescribeAccessGroupsRequest
                  * @return DescribeAccessGroupsOutcome
                  */
@@ -279,7 +303,9 @@ namespace TencentCloud
                 DescribeAccessGroupsOutcomeCallable DescribeAccessGroupsCallable(const Model::DescribeAccessGroupsRequest& request);
 
                 /**
-                 *通过权限组ID查看权限规则列表。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+通过权限组ID查看权限规则列表。
                  * @param req DescribeAccessRulesRequest
                  * @return DescribeAccessRulesOutcome
                  */
@@ -288,7 +314,9 @@ namespace TencentCloud
                 DescribeAccessRulesOutcomeCallable DescribeAccessRulesCallable(const Model::DescribeAccessRulesRequest& request);
 
                 /**
-                 *查看文件系统详细信息。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+查看文件系统详细信息。
                  * @param req DescribeFileSystemRequest
                  * @return DescribeFileSystemOutcome
                  */
@@ -297,7 +325,9 @@ namespace TencentCloud
                 DescribeFileSystemOutcomeCallable DescribeFileSystemCallable(const Model::DescribeFileSystemRequest& request);
 
                 /**
-                 *查看文件系统列表。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+查看文件系统列表。
                  * @param req DescribeFileSystemsRequest
                  * @return DescribeFileSystemsOutcome
                  */
@@ -306,7 +336,9 @@ namespace TencentCloud
                 DescribeFileSystemsOutcomeCallable DescribeFileSystemsCallable(const Model::DescribeFileSystemsRequest& request);
 
                 /**
-                 *通过文件系统ID查看生命周期规则列表。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+通过文件系统ID查看生命周期规则列表。
                  * @param req DescribeLifeCycleRulesRequest
                  * @return DescribeLifeCycleRulesOutcome
                  */
@@ -315,7 +347,9 @@ namespace TencentCloud
                 DescribeLifeCycleRulesOutcomeCallable DescribeLifeCycleRulesCallable(const Model::DescribeLifeCycleRulesRequest& request);
 
                 /**
-                 *查看挂载点详细信息。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+查看挂载点详细信息。
                  * @param req DescribeMountPointRequest
                  * @return DescribeMountPointOutcome
                  */
@@ -324,7 +358,9 @@ namespace TencentCloud
                 DescribeMountPointOutcomeCallable DescribeMountPointCallable(const Model::DescribeMountPointRequest& request);
 
                 /**
-                 *通过文件系统ID或者权限组ID查看挂载点列表。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+通过文件系统ID或者权限组ID查看挂载点列表。
                  * @param req DescribeMountPointsRequest
                  * @return DescribeMountPointsOutcome
                  */
@@ -333,7 +369,9 @@ namespace TencentCloud
                 DescribeMountPointsOutcomeCallable DescribeMountPointsCallable(const Model::DescribeMountPointsRequest& request);
 
                 /**
-                 *通过文件系统ID查看资源标签列表。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+通过文件系统ID查看资源标签列表。
                  * @param req DescribeResourceTagsRequest
                  * @return DescribeResourceTagsOutcome
                  */
@@ -342,7 +380,9 @@ namespace TencentCloud
                 DescribeResourceTagsOutcomeCallable DescribeResourceTagsCallable(const Model::DescribeResourceTagsRequest& request);
 
                 /**
-                 *通过文件系统ID查看回热任务列表。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+通过文件系统ID查看回热任务列表。
                  * @param req DescribeRestoreTasksRequest
                  * @return DescribeRestoreTasksOutcome
                  */
@@ -351,7 +391,9 @@ namespace TencentCloud
                 DescribeRestoreTasksOutcomeCallable DescribeRestoreTasksCallable(const Model::DescribeRestoreTasksRequest& request);
 
                 /**
-                 *修改权限组属性。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+修改权限组属性。
                  * @param req ModifyAccessGroupRequest
                  * @return ModifyAccessGroupOutcome
                  */
@@ -360,7 +402,9 @@ namespace TencentCloud
                 ModifyAccessGroupOutcomeCallable ModifyAccessGroupCallable(const Model::ModifyAccessGroupRequest& request);
 
                 /**
-                 *批量修改权限规则属性，需要指定权限规则ID，支持修改权限规则地址、访问模式和优先级。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+批量修改权限规则属性，需要指定权限规则ID，支持修改权限规则地址、访问模式和优先级。
                  * @param req ModifyAccessRulesRequest
                  * @return ModifyAccessRulesOutcome
                  */
@@ -369,7 +413,9 @@ namespace TencentCloud
                 ModifyAccessRulesOutcomeCallable ModifyAccessRulesCallable(const Model::ModifyAccessRulesRequest& request);
 
                 /**
-                 *修改文件系统属性，仅限于创建成功的文件系统。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+修改文件系统属性，仅限于创建成功的文件系统。
                  * @param req ModifyFileSystemRequest
                  * @return ModifyFileSystemOutcome
                  */
@@ -378,7 +424,9 @@ namespace TencentCloud
                 ModifyFileSystemOutcomeCallable ModifyFileSystemCallable(const Model::ModifyFileSystemRequest& request);
 
                 /**
-                 *批量修改生命周期规则属性，需要指定生命周期规则ID，支持修改生命周期规则名称、路径、转换列表和状态。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+批量修改生命周期规则属性，需要指定生命周期规则ID，支持修改生命周期规则名称、路径、转换列表和状态。
                  * @param req ModifyLifeCycleRulesRequest
                  * @return ModifyLifeCycleRulesOutcome
                  */
@@ -387,7 +435,9 @@ namespace TencentCloud
                 ModifyLifeCycleRulesOutcomeCallable ModifyLifeCycleRulesCallable(const Model::ModifyLifeCycleRulesRequest& request);
 
                 /**
-                 *修改挂载点属性。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+修改挂载点属性。
                  * @param req ModifyMountPointRequest
                  * @return ModifyMountPointOutcome
                  */
@@ -396,7 +446,9 @@ namespace TencentCloud
                 ModifyMountPointOutcomeCallable ModifyMountPointCallable(const Model::ModifyMountPointRequest& request);
 
                 /**
-                 *修改资源标签列表，全量覆盖。
+                 *云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。
+
+修改资源标签列表，全量覆盖。
                  * @param req ModifyResourceTagsRequest
                  * @return ModifyResourceTagsOutcome
                  */

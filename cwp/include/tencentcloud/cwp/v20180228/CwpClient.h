@@ -143,6 +143,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityDynamicsRequest.h>
@@ -241,6 +243,8 @@
 #include <tencentcloud/cwp/v20180228/model/UntrustMaliciousRequestResponse.h>
 #include <tencentcloud/cwp/v20180228/model/UntrustMalwaresRequest.h>
 #include <tencentcloud/cwp/v20180228/model/UntrustMalwaresResponse.h>
+#include <tencentcloud/cwp/v20180228/model/UpdateBaselineStrategyRequest.h>
+#include <tencentcloud/cwp/v20180228/model/UpdateBaselineStrategyResponse.h>
 
 
 namespace TencentCloud
@@ -435,6 +439,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeReverseShellRulesResponse> DescribeReverseShellRulesOutcome;
                 typedef std::future<DescribeReverseShellRulesOutcome> DescribeReverseShellRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeReverseShellRulesRequest&, DescribeReverseShellRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellRulesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRiskDnsListResponse> DescribeRiskDnsListOutcome;
+                typedef std::future<DescribeRiskDnsListOutcome> DescribeRiskDnsListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRiskDnsListRequest&, DescribeRiskDnsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskDnsListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeScanMalwareScheduleResponse> DescribeScanMalwareScheduleOutcome;
                 typedef std::future<DescribeScanMalwareScheduleOutcome> DescribeScanMalwareScheduleOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeScanMalwareScheduleRequest&, DescribeScanMalwareScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanMalwareScheduleAsyncHandler;
@@ -582,6 +589,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UntrustMalwaresResponse> UntrustMalwaresOutcome;
                 typedef std::future<UntrustMalwaresOutcome> UntrustMalwaresOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::UntrustMalwaresRequest&, UntrustMalwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UntrustMalwaresAsyncHandler;
+                typedef Outcome<Error, Model::UpdateBaselineStrategyResponse> UpdateBaselineStrategyOutcome;
+                typedef std::future<UpdateBaselineStrategyOutcome> UpdateBaselineStrategyOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::UpdateBaselineStrategyRequest&, UpdateBaselineStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBaselineStrategyAsyncHandler;
 
 
 
@@ -1127,6 +1137,15 @@ namespace TencentCloud
                 DescribeReverseShellRulesOutcomeCallable DescribeReverseShellRulesCallable(const Model::DescribeReverseShellRulesRequest& request);
 
                 /**
+                 *入侵检测，获取恶意请求列表
+                 * @param req DescribeRiskDnsListRequest
+                 * @return DescribeRiskDnsListOutcome
+                 */
+                DescribeRiskDnsListOutcome DescribeRiskDnsList(const Model::DescribeRiskDnsListRequest &request);
+                void DescribeRiskDnsListAsync(const Model::DescribeRiskDnsListRequest& request, const DescribeRiskDnsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRiskDnsListOutcomeCallable DescribeRiskDnsListCallable(const Model::DescribeRiskDnsListRequest& request);
+
+                /**
                  *查询木马扫描进度
                  * @param req DescribeScanMalwareScheduleRequest
                  * @return DescribeScanMalwareScheduleOutcome
@@ -1568,6 +1587,15 @@ namespace TencentCloud
                 UntrustMalwaresOutcome UntrustMalwares(const Model::UntrustMalwaresRequest &request);
                 void UntrustMalwaresAsync(const Model::UntrustMalwaresRequest& request, const UntrustMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UntrustMalwaresOutcomeCallable UntrustMalwaresCallable(const Model::UntrustMalwaresRequest& request);
+
+                /**
+                 *根据基线策略id更新策略信息
+                 * @param req UpdateBaselineStrategyRequest
+                 * @return UpdateBaselineStrategyOutcome
+                 */
+                UpdateBaselineStrategyOutcome UpdateBaselineStrategy(const Model::UpdateBaselineStrategyRequest &request);
+                void UpdateBaselineStrategyAsync(const Model::UpdateBaselineStrategyRequest& request, const UpdateBaselineStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateBaselineStrategyOutcomeCallable UpdateBaselineStrategyCallable(const Model::UpdateBaselineStrategyRequest& request);
 
             };
         }

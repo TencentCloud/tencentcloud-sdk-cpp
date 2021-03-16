@@ -30,7 +30,8 @@ DetectAuthRequest::DetectAuthRequest() :
     m_nameHasBeenSet(false),
     m_redirectUrlHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_imageBase64HasBeenSet(false)
+    m_imageBase64HasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,15 @@ string DetectAuthRequest::ToJsonString() const
         string key = "ImageBase64";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -215,6 +225,22 @@ void DetectAuthRequest::SetImageBase64(const string& _imageBase64)
 bool DetectAuthRequest::ImageBase64HasBeenSet() const
 {
     return m_imageBase64HasBeenSet;
+}
+
+Encryption DetectAuthRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void DetectAuthRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool DetectAuthRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

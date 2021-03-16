@@ -687,6 +687,28 @@ notInService       不在服务区
                      */
                     bool QueuedSkillGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取会话 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionId 会话 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置会话 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionId 会话 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     */
+                    bool SessionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -882,6 +904,13 @@ notInService       不在服务区
                      */
                     int64_t m_queuedSkillGroupId;
                     bool m_queuedSkillGroupIdHasBeenSet;
+
+                    /**
+                     * 会话 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                 };
             }

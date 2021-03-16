@@ -1287,6 +1287,49 @@ TcrClient::DescribeApplicationTriggerPersonalOutcomeCallable TcrClient::Describe
     return task->get_future();
 }
 
+TcrClient::DescribeExternalEndpointStatusOutcome TcrClient::DescribeExternalEndpointStatus(const DescribeExternalEndpointStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalEndpointStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalEndpointStatusResponse rsp = DescribeExternalEndpointStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalEndpointStatusOutcome(rsp);
+        else
+            return DescribeExternalEndpointStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalEndpointStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeExternalEndpointStatusAsync(const DescribeExternalEndpointStatusRequest& request, const DescribeExternalEndpointStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExternalEndpointStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeExternalEndpointStatusOutcomeCallable TcrClient::DescribeExternalEndpointStatusCallable(const DescribeExternalEndpointStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExternalEndpointStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExternalEndpointStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DescribeFavorRepositoryPersonalOutcome TcrClient::DescribeFavorRepositoryPersonal(const DescribeFavorRepositoryPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFavorRepositoryPersonal");

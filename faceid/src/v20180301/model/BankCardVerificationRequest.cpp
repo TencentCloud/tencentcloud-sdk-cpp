@@ -27,7 +27,8 @@ BankCardVerificationRequest::BankCardVerificationRequest() :
     m_idCardHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_bankCardHasBeenSet(false),
-    m_certTypeHasBeenSet(false)
+    m_certTypeHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,15 @@ string BankCardVerificationRequest::ToJsonString() const
         string key = "CertType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_certType, allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -140,6 +150,22 @@ void BankCardVerificationRequest::SetCertType(const int64_t& _certType)
 bool BankCardVerificationRequest::CertTypeHasBeenSet() const
 {
     return m_certTypeHasBeenSet;
+}
+
+Encryption BankCardVerificationRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void BankCardVerificationRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool BankCardVerificationRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

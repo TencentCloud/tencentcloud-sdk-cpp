@@ -126,6 +126,49 @@ IotvideoClient::CreateBatchOutcomeCallable IotvideoClient::CreateBatchCallable(c
     return task->get_future();
 }
 
+IotvideoClient::CreateCloudStorageOutcome IotvideoClient::CreateCloudStorage(const CreateCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudStorageResponse rsp = CreateCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudStorageOutcome(rsp);
+        else
+            return CreateCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateCloudStorageAsync(const CreateCloudStorageRequest& request, const CreateCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateCloudStorageOutcomeCallable IotvideoClient::CreateCloudStorageCallable(const CreateCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::CreateForwardRuleOutcome IotvideoClient::CreateForwardRule(const CreateForwardRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateForwardRule");
@@ -463,6 +506,221 @@ IotvideoClient::DescribeCategoryOutcomeCallable IotvideoClient::DescribeCategory
         [this, request]()
         {
             return this->DescribeCategory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeCloudStorageOutcome IotvideoClient::DescribeCloudStorage(const DescribeCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageResponse rsp = DescribeCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageOutcome(rsp);
+        else
+            return DescribeCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCloudStorageAsync(const DescribeCloudStorageRequest& request, const DescribeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCloudStorageOutcomeCallable IotvideoClient::DescribeCloudStorageCallable(const DescribeCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeCloudStorageDateOutcome IotvideoClient::DescribeCloudStorageDate(const DescribeCloudStorageDateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageDate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageDateResponse rsp = DescribeCloudStorageDateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageDateOutcome(rsp);
+        else
+            return DescribeCloudStorageDateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageDateOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCloudStorageDateAsync(const DescribeCloudStorageDateRequest& request, const DescribeCloudStorageDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageDate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCloudStorageDateOutcomeCallable IotvideoClient::DescribeCloudStorageDateCallable(const DescribeCloudStorageDateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageDateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageDate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeCloudStorageEventsOutcome IotvideoClient::DescribeCloudStorageEvents(const DescribeCloudStorageEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageEventsResponse rsp = DescribeCloudStorageEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageEventsOutcome(rsp);
+        else
+            return DescribeCloudStorageEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageEventsOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCloudStorageEventsAsync(const DescribeCloudStorageEventsRequest& request, const DescribeCloudStorageEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCloudStorageEventsOutcomeCallable IotvideoClient::DescribeCloudStorageEventsCallable(const DescribeCloudStorageEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeCloudStorageThumbnailOutcome IotvideoClient::DescribeCloudStorageThumbnail(const DescribeCloudStorageThumbnailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageThumbnail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageThumbnailResponse rsp = DescribeCloudStorageThumbnailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageThumbnailOutcome(rsp);
+        else
+            return DescribeCloudStorageThumbnailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageThumbnailOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCloudStorageThumbnailAsync(const DescribeCloudStorageThumbnailRequest& request, const DescribeCloudStorageThumbnailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageThumbnail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCloudStorageThumbnailOutcomeCallable IotvideoClient::DescribeCloudStorageThumbnailCallable(const DescribeCloudStorageThumbnailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageThumbnailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageThumbnail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeCloudStorageTimeOutcome IotvideoClient::DescribeCloudStorageTime(const DescribeCloudStorageTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageTimeResponse rsp = DescribeCloudStorageTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageTimeOutcome(rsp);
+        else
+            return DescribeCloudStorageTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageTimeOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCloudStorageTimeAsync(const DescribeCloudStorageTimeRequest& request, const DescribeCloudStorageTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCloudStorageTimeOutcomeCallable IotvideoClient::DescribeCloudStorageTimeCallable(const DescribeCloudStorageTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageTime(request);
         }
     );
 

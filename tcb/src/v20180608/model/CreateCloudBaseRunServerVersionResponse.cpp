@@ -26,7 +26,8 @@ using namespace std;
 
 CreateCloudBaseRunServerVersionResponse::CreateCloudBaseRunServerVersionResponse() :
     m_resultHasBeenSet(false),
-    m_versionNameHasBeenSet(false)
+    m_versionNameHasBeenSet(false),
+    m_runIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome CreateCloudBaseRunServerVersionResponse::Deserialize(const s
         m_versionNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RunId") && !rsp["RunId"].IsNull())
+    {
+        if (!rsp["RunId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RunId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runId = string(rsp["RunId"].GetString());
+        m_runIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,16 @@ string CreateCloudBaseRunServerVersionResponse::GetVersionName() const
 bool CreateCloudBaseRunServerVersionResponse::VersionNameHasBeenSet() const
 {
     return m_versionNameHasBeenSet;
+}
+
+string CreateCloudBaseRunServerVersionResponse::GetRunId() const
+{
+    return m_runId;
+}
+
+bool CreateCloudBaseRunServerVersionResponse::RunIdHasBeenSet() const
+{
+    return m_runIdHasBeenSet;
 }
 
 

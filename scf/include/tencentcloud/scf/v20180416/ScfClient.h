@@ -55,6 +55,8 @@
 #include <tencentcloud/scf/v20180416/model/GetFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionAddressRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionAddressResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetFunctionEventInvokeConfigRequest.h>
+#include <tencentcloud/scf/v20180416/model/GetFunctionEventInvokeConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionLogsRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionLogsResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetLayerVersionRequest.h>
@@ -99,6 +101,8 @@
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationResponse.h>
+#include <tencentcloud/scf/v20180416/model/UpdateFunctionEventInvokeConfigRequest.h>
+#include <tencentcloud/scf/v20180416/model/UpdateFunctionEventInvokeConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateNamespaceRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateNamespaceResponse.h>
 
@@ -163,6 +167,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetFunctionAddressResponse> GetFunctionAddressOutcome;
                 typedef std::future<GetFunctionAddressOutcome> GetFunctionAddressOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetFunctionAddressRequest&, GetFunctionAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionAddressAsyncHandler;
+                typedef Outcome<Error, Model::GetFunctionEventInvokeConfigResponse> GetFunctionEventInvokeConfigOutcome;
+                typedef std::future<GetFunctionEventInvokeConfigOutcome> GetFunctionEventInvokeConfigOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::GetFunctionEventInvokeConfigRequest&, GetFunctionEventInvokeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionEventInvokeConfigAsyncHandler;
                 typedef Outcome<Error, Model::GetFunctionLogsResponse> GetFunctionLogsOutcome;
                 typedef std::future<GetFunctionLogsOutcome> GetFunctionLogsOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetFunctionLogsRequest&, GetFunctionLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionLogsAsyncHandler;
@@ -229,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdateFunctionConfigurationResponse> UpdateFunctionConfigurationOutcome;
                 typedef std::future<UpdateFunctionConfigurationOutcome> UpdateFunctionConfigurationOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateFunctionConfigurationRequest&, UpdateFunctionConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionConfigurationAsyncHandler;
+                typedef Outcome<Error, Model::UpdateFunctionEventInvokeConfigResponse> UpdateFunctionEventInvokeConfigOutcome;
+                typedef std::future<UpdateFunctionEventInvokeConfigOutcome> UpdateFunctionEventInvokeConfigOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::UpdateFunctionEventInvokeConfigRequest&, UpdateFunctionEventInvokeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionEventInvokeConfigAsyncHandler;
                 typedef Outcome<Error, Model::UpdateNamespaceResponse> UpdateNamespaceOutcome;
                 typedef std::future<UpdateNamespaceOutcome> UpdateNamespaceOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateNamespaceRequest&, UpdateNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNamespaceAsyncHandler;
@@ -385,6 +395,15 @@ namespace TencentCloud
                 GetFunctionAddressOutcome GetFunctionAddress(const Model::GetFunctionAddressRequest &request);
                 void GetFunctionAddressAsync(const Model::GetFunctionAddressRequest& request, const GetFunctionAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetFunctionAddressOutcomeCallable GetFunctionAddressCallable(const Model::GetFunctionAddressRequest& request);
+
+                /**
+                 *获取函数异步重试配置，包括重试次数和消息保留时间
+                 * @param req GetFunctionEventInvokeConfigRequest
+                 * @return GetFunctionEventInvokeConfigOutcome
+                 */
+                GetFunctionEventInvokeConfigOutcome GetFunctionEventInvokeConfig(const Model::GetFunctionEventInvokeConfigRequest &request);
+                void GetFunctionEventInvokeConfigAsync(const Model::GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFunctionEventInvokeConfigOutcomeCallable GetFunctionEventInvokeConfigCallable(const Model::GetFunctionEventInvokeConfigRequest& request);
 
                 /**
                  *该接口根据指定的日志查询条件返回函数运行日志。
@@ -583,6 +602,15 @@ namespace TencentCloud
                 UpdateFunctionConfigurationOutcome UpdateFunctionConfiguration(const Model::UpdateFunctionConfigurationRequest &request);
                 void UpdateFunctionConfigurationAsync(const Model::UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateFunctionConfigurationOutcomeCallable UpdateFunctionConfigurationCallable(const Model::UpdateFunctionConfigurationRequest& request);
+
+                /**
+                 *更新函数的异步重试配置，包括重试次数和消息保留时间
+                 * @param req UpdateFunctionEventInvokeConfigRequest
+                 * @return UpdateFunctionEventInvokeConfigOutcome
+                 */
+                UpdateFunctionEventInvokeConfigOutcome UpdateFunctionEventInvokeConfig(const Model::UpdateFunctionEventInvokeConfigRequest &request);
+                void UpdateFunctionEventInvokeConfigAsync(const Model::UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateFunctionEventInvokeConfigOutcomeCallable UpdateFunctionEventInvokeConfigCallable(const Model::UpdateFunctionEventInvokeConfigRequest& request);
 
                 /**
                  *更新命名空间

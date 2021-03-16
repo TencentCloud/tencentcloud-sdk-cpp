@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)
-                     * @return Uuid 客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * 获取客户端ID(IsGlobal为0时，Uuid或Hostip必填一个)
+                     * @return Uuid 客户端ID(IsGlobal为0时，Uuid或Hostip必填一个)
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)
-                     * @param Uuid 客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * 设置客户端ID(IsGlobal为0时，Uuid或Hostip必填一个)
+                     * @param Uuid 客户端ID(IsGlobal为0时，Uuid或Hostip必填一个)
                      */
                     void SetUuid(const std::string& _uuid);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取主机IP(IsGlobal为1时，Uuid或Hostip必填一个)
-                     * @return Hostip 主机IP(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * 获取主机IP(IsGlobal为0时，Uuid或Hostip必填一个)
+                     * @return Hostip 主机IP(IsGlobal为0时，Uuid或Hostip必填一个)
                      */
                     std::string GetHostip() const;
 
                     /**
-                     * 设置主机IP(IsGlobal为1时，Uuid或Hostip必填一个)
-                     * @param Hostip 主机IP(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * 设置主机IP(IsGlobal为0时，Uuid或Hostip必填一个)
+                     * @param Hostip 主机IP(IsGlobal为0时，Uuid或Hostip必填一个)
                      */
                     void SetHostip(const std::string& _hostip);
 
@@ -195,13 +195,13 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * 客户端ID(IsGlobal为0时，Uuid或Hostip必填一个)
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 主机IP(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * 主机IP(IsGlobal为0时，Uuid或Hostip必填一个)
                      */
                     std::string m_hostip;
                     bool m_hostipHasBeenSet;

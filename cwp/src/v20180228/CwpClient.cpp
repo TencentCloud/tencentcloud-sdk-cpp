@@ -2620,6 +2620,49 @@ CwpClient::DescribeReverseShellRulesOutcomeCallable CwpClient::DescribeReverseSh
     return task->get_future();
 }
 
+CwpClient::DescribeRiskDnsListOutcome CwpClient::DescribeRiskDnsList(const DescribeRiskDnsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskDnsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskDnsListResponse rsp = DescribeRiskDnsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskDnsListOutcome(rsp);
+        else
+            return DescribeRiskDnsListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskDnsListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRiskDnsListAsync(const DescribeRiskDnsListRequest& request, const DescribeRiskDnsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskDnsList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeRiskDnsListOutcomeCallable CwpClient::DescribeRiskDnsListCallable(const DescribeRiskDnsListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskDnsListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskDnsList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeScanMalwareScheduleOutcome CwpClient::DescribeScanMalwareSchedule(const DescribeScanMalwareScheduleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScanMalwareSchedule");
@@ -4720,6 +4763,49 @@ CwpClient::UntrustMalwaresOutcomeCallable CwpClient::UntrustMalwaresCallable(con
         [this, request]()
         {
             return this->UntrustMalwares(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::UpdateBaselineStrategyOutcome CwpClient::UpdateBaselineStrategy(const UpdateBaselineStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateBaselineStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateBaselineStrategyResponse rsp = UpdateBaselineStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateBaselineStrategyOutcome(rsp);
+        else
+            return UpdateBaselineStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateBaselineStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::UpdateBaselineStrategyAsync(const UpdateBaselineStrategyRequest& request, const UpdateBaselineStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateBaselineStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::UpdateBaselineStrategyOutcomeCallable CwpClient::UpdateBaselineStrategyCallable(const UpdateBaselineStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateBaselineStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateBaselineStrategy(request);
         }
     );
 

@@ -44,7 +44,8 @@ TelCdrInfo::TelCdrInfo() :
     m_startTimestampHasBeenSet(false),
     m_queuedTimestampHasBeenSet(false),
     m_postIVRKeyPressedHasBeenSet(false),
-    m_queuedSkillGroupIdHasBeenSet(false)
+    m_queuedSkillGroupIdHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -313,6 +314,16 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const Value &value)
         m_queuedSkillGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TelCdrInfo.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(value["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -522,6 +533,14 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "QueuedSkillGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_queuedSkillGroupId, allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -893,5 +912,21 @@ void TelCdrInfo::SetQueuedSkillGroupId(const int64_t& _queuedSkillGroupId)
 bool TelCdrInfo::QueuedSkillGroupIdHasBeenSet() const
 {
     return m_queuedSkillGroupIdHasBeenSet;
+}
+
+string TelCdrInfo::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void TelCdrInfo::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool TelCdrInfo::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 

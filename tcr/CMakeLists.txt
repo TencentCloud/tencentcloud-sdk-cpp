@@ -56,7 +56,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/NamespaceInfo.h
   include/tencentcloud/tcr/v20190924/model/RenewInstanceRequest.h
   include/tencentcloud/tcr/v20190924/model/Limit.h
-  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesRequest.h
+  include/tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteRepositoryResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImagePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/RegistryCondition.h
@@ -79,6 +79,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeRepositoryOwnerPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/VpcPrivateDomainStatus.h
   include/tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerResponse.h
+  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/RepoIsExistResp.h
   include/tencentcloud/tcr/v20190924/model/TcrImageInfo.h
@@ -136,6 +137,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/BatchDeleteRepositoryPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/TriggerInvokeCondition.h
   include/tencentcloud/tcr/v20190924/model/ValidateRepositoryExistPersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusResponse.h
   include/tencentcloud/tcr/v20190924/model/NamespaceIsExistsResp.h
   include/tencentcloud/tcr/v20190924/model/DescribeInstancesRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateInternalEndpointDnsRequest.h
@@ -239,7 +241,7 @@ set(tcr_src
   src/v20190924/model/NamespaceInfo.cpp
   src/v20190924/model/RenewInstanceRequest.cpp
   src/v20190924/model/Limit.cpp
-  src/v20190924/model/DescribeReplicationInstancesRequest.cpp
+  src/v20190924/model/DescribeExternalEndpointStatusRequest.cpp
   src/v20190924/model/DeleteRepositoryResponse.cpp
   src/v20190924/model/DeleteImagePersonalResponse.cpp
   src/v20190924/model/RegistryCondition.cpp
@@ -262,6 +264,7 @@ set(tcr_src
   src/v20190924/model/DescribeRepositoryOwnerPersonalResponse.cpp
   src/v20190924/model/VpcPrivateDomainStatus.cpp
   src/v20190924/model/ModifyWebhookTriggerResponse.cpp
+  src/v20190924/model/DescribeReplicationInstancesRequest.cpp
   src/v20190924/model/CreateImageLifecyclePersonalResponse.cpp
   src/v20190924/model/RepoIsExistResp.cpp
   src/v20190924/model/TcrImageInfo.cpp
@@ -319,6 +322,7 @@ set(tcr_src
   src/v20190924/model/BatchDeleteRepositoryPersonalRequest.cpp
   src/v20190924/model/TriggerInvokeCondition.cpp
   src/v20190924/model/ValidateRepositoryExistPersonalResponse.cpp
+  src/v20190924/model/DescribeExternalEndpointStatusResponse.cpp
   src/v20190924/model/NamespaceIsExistsResp.cpp
   src/v20190924/model/DescribeInstancesRequest.cpp
   src/v20190924/model/CreateInternalEndpointDnsRequest.cpp

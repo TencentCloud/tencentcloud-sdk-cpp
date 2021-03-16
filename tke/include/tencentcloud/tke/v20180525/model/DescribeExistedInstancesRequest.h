@@ -169,6 +169,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取根据多个实例IP进行过滤
+                     * @return IpAddresses 根据多个实例IP进行过滤
+                     */
+                    std::vector<std::string> GetIpAddresses() const;
+
+                    /**
+                     * 设置根据多个实例IP进行过滤
+                     * @param IpAddresses 根据多个实例IP进行过滤
+                     */
+                    void SetIpAddresses(const std::vector<std::string>& _ipAddresses);
+
+                    /**
+                     * 判断参数 IpAddresses 是否已赋值
+                     * @return IpAddresses 是否已赋值
+                     */
+                    bool IpAddressesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 根据多个实例IP进行过滤
+                     */
+                    std::vector<std::string> m_ipAddresses;
+                    bool m_ipAddressesHasBeenSet;
 
                 };
             }

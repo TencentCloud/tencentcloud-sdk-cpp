@@ -27,6 +27,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/CheckForwardAuthResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateBatchRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateBatchResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/CreateCloudStorageRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/CreateCloudStorageResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateForwardRuleRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateForwardRuleResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateProductRequest.h>
@@ -43,6 +45,16 @@
 #include <tencentcloud/iotvideo/v20201215/model/DescribeBatchsResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeCategoryRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeCategoryResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageDateRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageDateResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageEventsRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageEventsResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageThumbnailRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageThumbnailResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageTimeRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageTimeResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceActionHistoryRequest.h>
@@ -97,6 +109,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateBatchResponse> CreateBatchOutcome;
                 typedef std::future<CreateBatchOutcome> CreateBatchOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateBatchRequest&, CreateBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchAsyncHandler;
+                typedef Outcome<Error, Model::CreateCloudStorageResponse> CreateCloudStorageOutcome;
+                typedef std::future<CreateCloudStorageOutcome> CreateCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateCloudStorageRequest&, CreateCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudStorageAsyncHandler;
                 typedef Outcome<Error, Model::CreateForwardRuleResponse> CreateForwardRuleOutcome;
                 typedef std::future<CreateForwardRuleOutcome> CreateForwardRuleOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateForwardRuleRequest&, CreateForwardRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardRuleAsyncHandler;
@@ -121,6 +136,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCategoryResponse> DescribeCategoryOutcome;
                 typedef std::future<DescribeCategoryOutcome> DescribeCategoryOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeCategoryRequest&, DescribeCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCategoryAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudStorageResponse> DescribeCloudStorageOutcome;
+                typedef std::future<DescribeCloudStorageOutcome> DescribeCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageRequest&, DescribeCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudStorageDateResponse> DescribeCloudStorageDateOutcome;
+                typedef std::future<DescribeCloudStorageDateOutcome> DescribeCloudStorageDateOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageDateRequest&, DescribeCloudStorageDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageDateAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudStorageEventsResponse> DescribeCloudStorageEventsOutcome;
+                typedef std::future<DescribeCloudStorageEventsOutcome> DescribeCloudStorageEventsOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageEventsRequest&, DescribeCloudStorageEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageEventsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudStorageThumbnailResponse> DescribeCloudStorageThumbnailOutcome;
+                typedef std::future<DescribeCloudStorageThumbnailOutcome> DescribeCloudStorageThumbnailOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageThumbnailRequest&, DescribeCloudStorageThumbnailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageThumbnailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudStorageTimeResponse> DescribeCloudStorageTimeOutcome;
+                typedef std::future<DescribeCloudStorageTimeOutcome> DescribeCloudStorageTimeOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageTimeRequest&, DescribeCloudStorageTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageTimeAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
                 typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
@@ -194,6 +224,15 @@ namespace TencentCloud
                 CreateBatchOutcomeCallable CreateBatchCallable(const Model::CreateBatchRequest& request);
 
                 /**
+                 *开通云存服务
+                 * @param req CreateCloudStorageRequest
+                 * @return CreateCloudStorageOutcome
+                 */
+                CreateCloudStorageOutcome CreateCloudStorage(const Model::CreateCloudStorageRequest &request);
+                void CreateCloudStorageAsync(const Model::CreateCloudStorageRequest& request, const CreateCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudStorageOutcomeCallable CreateCloudStorageCallable(const Model::CreateCloudStorageRequest& request);
+
+                /**
                  *创建转发规则
                  * @param req CreateForwardRuleRequest
                  * @return CreateForwardRuleOutcome
@@ -264,6 +303,51 @@ namespace TencentCloud
                 DescribeCategoryOutcome DescribeCategory(const Model::DescribeCategoryRequest &request);
                 void DescribeCategoryAsync(const Model::DescribeCategoryRequest& request, const DescribeCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCategoryOutcomeCallable DescribeCategoryCallable(const Model::DescribeCategoryRequest& request);
+
+                /**
+                 *获取设备云存服务详情
+                 * @param req DescribeCloudStorageRequest
+                 * @return DescribeCloudStorageOutcome
+                 */
+                DescribeCloudStorageOutcome DescribeCloudStorage(const Model::DescribeCloudStorageRequest &request);
+                void DescribeCloudStorageAsync(const Model::DescribeCloudStorageRequest& request, const DescribeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageOutcomeCallable DescribeCloudStorageCallable(const Model::DescribeCloudStorageRequest& request);
+
+                /**
+                 *获取具有云存的日期
+                 * @param req DescribeCloudStorageDateRequest
+                 * @return DescribeCloudStorageDateOutcome
+                 */
+                DescribeCloudStorageDateOutcome DescribeCloudStorageDate(const Model::DescribeCloudStorageDateRequest &request);
+                void DescribeCloudStorageDateAsync(const Model::DescribeCloudStorageDateRequest& request, const DescribeCloudStorageDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageDateOutcomeCallable DescribeCloudStorageDateCallable(const Model::DescribeCloudStorageDateRequest& request);
+
+                /**
+                 *拉取云存事件列表
+                 * @param req DescribeCloudStorageEventsRequest
+                 * @return DescribeCloudStorageEventsOutcome
+                 */
+                DescribeCloudStorageEventsOutcome DescribeCloudStorageEvents(const Model::DescribeCloudStorageEventsRequest &request);
+                void DescribeCloudStorageEventsAsync(const Model::DescribeCloudStorageEventsRequest& request, const DescribeCloudStorageEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageEventsOutcomeCallable DescribeCloudStorageEventsCallable(const Model::DescribeCloudStorageEventsRequest& request);
+
+                /**
+                 *拉取云存事件缩略图
+                 * @param req DescribeCloudStorageThumbnailRequest
+                 * @return DescribeCloudStorageThumbnailOutcome
+                 */
+                DescribeCloudStorageThumbnailOutcome DescribeCloudStorageThumbnail(const Model::DescribeCloudStorageThumbnailRequest &request);
+                void DescribeCloudStorageThumbnailAsync(const Model::DescribeCloudStorageThumbnailRequest& request, const DescribeCloudStorageThumbnailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageThumbnailOutcomeCallable DescribeCloudStorageThumbnailCallable(const Model::DescribeCloudStorageThumbnailRequest& request);
+
+                /**
+                 *获取某一天云存时间轴
+                 * @param req DescribeCloudStorageTimeRequest
+                 * @return DescribeCloudStorageTimeOutcome
+                 */
+                DescribeCloudStorageTimeOutcome DescribeCloudStorageTime(const Model::DescribeCloudStorageTimeRequest &request);
+                void DescribeCloudStorageTimeAsync(const Model::DescribeCloudStorageTimeRequest& request, const DescribeCloudStorageTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageTimeOutcomeCallable DescribeCloudStorageTimeCallable(const Model::DescribeCloudStorageTimeRequest& request);
 
                 /**
                  *查看设备详情

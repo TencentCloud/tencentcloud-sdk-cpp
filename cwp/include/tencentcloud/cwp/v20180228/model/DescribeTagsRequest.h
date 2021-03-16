@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/Filters.h>
 
 
 namespace TencentCloud
@@ -86,6 +87,48 @@ namespace TencentCloud
                      */
                     bool MachineRegionHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件。
+<li>Keywords - String - 是否必填：否 - 查询关键字(机器名称/机器IP </li>
+<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装 | SHUTDOWN 已关机）</li>
+<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>
+<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+每个过滤条件只支持一个值，暂不支持多个值“或”关系查询
+                     * @return Filters 过滤条件。
+<li>Keywords - String - 是否必填：否 - 查询关键字(机器名称/机器IP </li>
+<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装 | SHUTDOWN 已关机）</li>
+<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>
+<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+每个过滤条件只支持一个值，暂不支持多个值“或”关系查询
+                     */
+                    std::vector<Filters> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件。
+<li>Keywords - String - 是否必填：否 - 查询关键字(机器名称/机器IP </li>
+<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装 | SHUTDOWN 已关机）</li>
+<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>
+<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+每个过滤条件只支持一个值，暂不支持多个值“或”关系查询
+                     * @param Filters 过滤条件。
+<li>Keywords - String - 是否必填：否 - 查询关键字(机器名称/机器IP </li>
+<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装 | SHUTDOWN 已关机）</li>
+<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>
+<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+每个过滤条件只支持一个值，暂不支持多个值“或”关系查询
+                     */
+                    void SetFilters(const std::vector<Filters>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +144,18 @@ namespace TencentCloud
                      */
                     std::string m_machineRegion;
                     bool m_machineRegionHasBeenSet;
+
+                    /**
+                     * 过滤条件。
+<li>Keywords - String - 是否必填：否 - 查询关键字(机器名称/机器IP </li>
+<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装 | SHUTDOWN 已关机）</li>
+<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>
+<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>
+<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
+每个过滤条件只支持一个值，暂不支持多个值“或”关系查询
+                     */
+                    std::vector<Filters> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

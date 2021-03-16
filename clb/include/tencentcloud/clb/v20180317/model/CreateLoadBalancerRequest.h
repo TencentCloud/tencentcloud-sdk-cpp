@@ -69,14 +69,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerTypeHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1
-                     * @return Forward 负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1
+                     * 获取负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1。
+                     * @return Forward 负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1。
                      */
                     int64_t GetForward() const;
 
                     /**
-                     * 设置负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1
-                     * @param Forward 负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1
+                     * 设置负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1。
+                     * @param Forward 负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1。
                      */
                     void SetForward(const int64_t& _forward);
 
@@ -221,14 +221,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool MasterZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1
-                     * @return ZoneId 仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1
+                     * 获取仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。
+                     * @return ZoneId 仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1
-                     * @param ZoneId 仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1
+                     * 设置仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。
+                     * @param ZoneId 仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -275,14 +275,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool VipIspHasBeenSet() const;
 
                     /**
-                     * 获取购买负载均衡同时，给负载均衡打上标签
-                     * @return Tags 购买负载均衡同时，给负载均衡打上标签
+                     * 获取购买负载均衡同时，给负载均衡打上标签。
+                     * @return Tags 购买负载均衡同时，给负载均衡打上标签。
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
-                     * 设置购买负载均衡同时，给负载均衡打上标签
-                     * @param Tags 购买负载均衡同时，给负载均衡打上标签
+                     * 设置购买负载均衡同时，给负载均衡打上标签。
+                     * @param Tags 购买负载均衡同时，给负载均衡打上标签。
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
 
@@ -293,14 +293,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取指定Vip申请负载均衡
-                     * @return Vip 指定Vip申请负载均衡
+                     * 获取指定Vip申请负载均衡。
+                     * @return Vip 指定Vip申请负载均衡。
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置指定Vip申请负载均衡
-                     * @param Vip 指定Vip申请负载均衡
+                     * 设置指定Vip申请负载均衡。
+                     * @param Vip 指定Vip申请负载均衡。
                      */
                     void SetVip(const std::string& _vip);
 
@@ -311,14 +311,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）
-                     * @return BandwidthPackageId 带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）
+                     * 获取带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）。
+                     * @return BandwidthPackageId 带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）。
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
-                     * 设置带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）
-                     * @param BandwidthPackageId 带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）
+                     * 设置带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）。
+                     * @param BandwidthPackageId 带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）。
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
 
@@ -329,14 +329,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取独占集群信息
-                     * @return ExclusiveCluster 独占集群信息
+                     * 获取独占集群信息。
+                     * @return ExclusiveCluster 独占集群信息。
                      */
                     ExclusiveCluster GetExclusiveCluster() const;
 
                     /**
-                     * 设置独占集群信息
-                     * @param ExclusiveCluster 独占集群信息
+                     * 设置独占集群信息。
+                     * @param ExclusiveCluster 独占集群信息。
                      */
                     void SetExclusiveCluster(const ExclusiveCluster& _exclusiveCluster);
 
@@ -419,14 +419,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ClusterTagHasBeenSet() const;
 
                     /**
-                     * 获取EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP
-                     * @return EipAddressId EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP
+                     * 获取EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。
+                     * @return EipAddressId EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。
                      */
                     std::string GetEipAddressId() const;
 
                     /**
-                     * 设置EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP
-                     * @param EipAddressId EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP
+                     * 设置EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。
+                     * @param EipAddressId EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。
                      */
                     void SetEipAddressId(const std::string& _eipAddressId);
 
@@ -446,7 +446,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_loadBalancerTypeHasBeenSet;
 
                     /**
-                     * 负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1
+                     * 负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1。
                      */
                     int64_t m_forward;
                     bool m_forwardHasBeenSet;
@@ -496,7 +496,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_masterZoneIdHasBeenSet;
 
                     /**
-                     * 仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1
+                     * 仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
@@ -514,25 +514,25 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_vipIspHasBeenSet;
 
                     /**
-                     * 购买负载均衡同时，给负载均衡打上标签
+                     * 购买负载均衡同时，给负载均衡打上标签。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 指定Vip申请负载均衡
+                     * 指定Vip申请负载均衡。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）
+                     * 带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）。
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;
 
                     /**
-                     * 独占集群信息
+                     * 独占集群信息。
                      */
                     ExclusiveCluster m_exclusiveCluster;
                     bool m_exclusiveClusterHasBeenSet;
@@ -562,7 +562,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_clusterTagHasBeenSet;
 
                     /**
-                     * EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP
+                     * EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。
                      */
                     std::string m_eipAddressId;
                     bool m_eipAddressIdHasBeenSet;

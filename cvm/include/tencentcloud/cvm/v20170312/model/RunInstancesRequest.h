@@ -382,14 +382,14 @@ namespace TencentCloud
                     bool DisasterRecoverGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云服务器实例。
-                     * @return TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云服务器实例。
+                     * 获取标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。
+                     * @return TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。
                      */
                     std::vector<TagSpecification> GetTagSpecification() const;
 
                     /**
-                     * 设置标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云服务器实例。
-                     * @param TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云服务器实例。
+                     * 设置标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。
+                     * @param TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。
                      */
                     void SetTagSpecification(const std::vector<TagSpecification>& _tagSpecification);
 
@@ -617,7 +617,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_disasterRecoverGroupIdsHasBeenSet;
 
                     /**
-                     * 标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云服务器实例。
+                     * 标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。
                      */
                     std::vector<TagSpecification> m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;

@@ -81,6 +81,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeFavorRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeFavorRepositoryPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImageFilterPersonalRequest.h>
@@ -258,6 +260,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeApplicationTriggerPersonalResponse> DescribeApplicationTriggerPersonalOutcome;
                 typedef std::future<DescribeApplicationTriggerPersonalOutcome> DescribeApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeApplicationTriggerPersonalRequest&, DescribeApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationTriggerPersonalAsyncHandler;
+                typedef Outcome<Error, Model::DescribeExternalEndpointStatusResponse> DescribeExternalEndpointStatusOutcome;
+                typedef std::future<DescribeExternalEndpointStatusOutcome> DescribeExternalEndpointStatusOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeExternalEndpointStatusRequest&, DescribeExternalEndpointStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalEndpointStatusAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFavorRepositoryPersonalResponse> DescribeFavorRepositoryPersonalOutcome;
                 typedef std::future<DescribeFavorRepositoryPersonalOutcome> DescribeFavorRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeFavorRepositoryPersonalRequest&, DescribeFavorRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFavorRepositoryPersonalAsyncHandler;
@@ -635,6 +640,15 @@ namespace TencentCloud
                 DescribeApplicationTriggerPersonalOutcome DescribeApplicationTriggerPersonal(const Model::DescribeApplicationTriggerPersonalRequest &request);
                 void DescribeApplicationTriggerPersonalAsync(const Model::DescribeApplicationTriggerPersonalRequest& request, const DescribeApplicationTriggerPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationTriggerPersonalOutcomeCallable DescribeApplicationTriggerPersonalCallable(const Model::DescribeApplicationTriggerPersonalRequest& request);
+
+                /**
+                 *查询实例公网访问入口状态
+                 * @param req DescribeExternalEndpointStatusRequest
+                 * @return DescribeExternalEndpointStatusOutcome
+                 */
+                DescribeExternalEndpointStatusOutcome DescribeExternalEndpointStatus(const Model::DescribeExternalEndpointStatusRequest &request);
+                void DescribeExternalEndpointStatusAsync(const Model::DescribeExternalEndpointStatusRequest& request, const DescribeExternalEndpointStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExternalEndpointStatusOutcomeCallable DescribeExternalEndpointStatusCallable(const Model::DescribeExternalEndpointStatusRequest& request);
 
                 /**
                  *查询个人收藏仓库

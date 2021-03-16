@@ -70,6 +70,20 @@ namespace TencentCloud
                      */
                     bool VersionNameHasBeenSet() const;
 
+                    /**
+                     * 获取操作记录id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunId 操作记录id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRunId() const;
+
+                    /**
+                     * 判断参数 RunId 是否已赋值
+                     * @return RunId 是否已赋值
+                     */
+                    bool RunIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,13 @@ namespace TencentCloud
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
+
+                    /**
+                     * 操作记录id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_runId;
+                    bool m_runIdHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ DescribeExistedInstancesRequest::DescribeExistedInstancesRequest() :
     m_vagueIpAddressHasBeenSet(false),
     m_vagueInstanceNameHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_ipAddressesHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,19 @@ string DescribeExistedInstancesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_ipAddressesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IpAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipAddresses.begin(); itr != m_ipAddresses.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -227,6 +241,22 @@ void DescribeExistedInstancesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeExistedInstancesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> DescribeExistedInstancesRequest::GetIpAddresses() const
+{
+    return m_ipAddresses;
+}
+
+void DescribeExistedInstancesRequest::SetIpAddresses(const vector<string>& _ipAddresses)
+{
+    m_ipAddresses = _ipAddresses;
+    m_ipAddressesHasBeenSet = true;
+}
+
+bool DescribeExistedInstancesRequest::IpAddressesHasBeenSet() const
+{
+    return m_ipAddressesHasBeenSet;
 }
 
 

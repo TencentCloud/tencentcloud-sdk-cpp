@@ -64,6 +64,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAgentVulsRequest.h
   include/tencentcloud/cwp/v20180228/model/NonLocalLoginPlace.h
+  include/tencentcloud/cwp/v20180228/model/DescribeRiskDnsListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeExportMachinesRequest.h
   include/tencentcloud/cwp/v20180228/model/CreateProcessTaskResponse.h
   include/tencentcloud/cwp/v20180228/model/SecurityDynamic.h
@@ -92,7 +93,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/OpenProVersionPrepaidRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyLoginWhiteListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeTagsResponse.h
-  include/tencentcloud/cwp/v20180228/model/OpenPort.h
+  include/tencentcloud/cwp/v20180228/model/DescribeRiskDnsListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeProVersionInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/CreateProcessTaskRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteMaliciousRequestsResponse.h
@@ -140,6 +141,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeNonlocalLoginPlacesResponse.h
   include/tencentcloud/cwp/v20180228/model/DeleteReverseShellRulesResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportMalwaresResponse.h
+  include/tencentcloud/cwp/v20180228/model/UpdateBaselineStrategyResponse.h
   include/tencentcloud/cwp/v20180228/model/UntrustMalwaresResponse.h
   include/tencentcloud/cwp/v20180228/model/DeletePrivilegeRulesResponse.h
   include/tencentcloud/cwp/v20180228/model/CreateOpenPortTaskResponse.h
@@ -172,6 +174,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeProVersionInfoResponse.h
   include/tencentcloud/cwp/v20180228/model/DeleteTagsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeSecurityEventsCntRequest.h
+  include/tencentcloud/cwp/v20180228/model/UpdateBaselineStrategyRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteBruteAttacksRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeWeeklyReportVulsRequest.h
   include/tencentcloud/cwp/v20180228/model/AddLoginWhiteListResponse.h
@@ -190,6 +193,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DeleteReverseShellEventsResponse.h
   include/tencentcloud/cwp/v20180228/model/DeletePrivilegeEventsRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteBashRulesRequest.h
+  include/tencentcloud/cwp/v20180228/model/OpenPort.h
   include/tencentcloud/cwp/v20180228/model/CloseProVersionResponse.h
   include/tencentcloud/cwp/v20180228/model/DeleteAttackLogsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeOpenPortsResponse.h
@@ -332,6 +336,7 @@ set(cwp_src
   src/v20180228/model/DescribeScanMalwareScheduleRequest.cpp
   src/v20180228/model/DescribeAgentVulsRequest.cpp
   src/v20180228/model/NonLocalLoginPlace.cpp
+  src/v20180228/model/DescribeRiskDnsListResponse.cpp
   src/v20180228/model/DescribeExportMachinesRequest.cpp
   src/v20180228/model/CreateProcessTaskResponse.cpp
   src/v20180228/model/SecurityDynamic.cpp
@@ -360,7 +365,7 @@ set(cwp_src
   src/v20180228/model/OpenProVersionPrepaidRequest.cpp
   src/v20180228/model/ModifyLoginWhiteListResponse.cpp
   src/v20180228/model/DescribeTagsResponse.cpp
-  src/v20180228/model/OpenPort.cpp
+  src/v20180228/model/DescribeRiskDnsListRequest.cpp
   src/v20180228/model/DescribeProVersionInfoRequest.cpp
   src/v20180228/model/CreateProcessTaskRequest.cpp
   src/v20180228/model/DeleteMaliciousRequestsResponse.cpp
@@ -408,6 +413,7 @@ set(cwp_src
   src/v20180228/model/DescribeNonlocalLoginPlacesResponse.cpp
   src/v20180228/model/DeleteReverseShellRulesResponse.cpp
   src/v20180228/model/ExportMalwaresResponse.cpp
+  src/v20180228/model/UpdateBaselineStrategyResponse.cpp
   src/v20180228/model/UntrustMalwaresResponse.cpp
   src/v20180228/model/DeletePrivilegeRulesResponse.cpp
   src/v20180228/model/CreateOpenPortTaskResponse.cpp
@@ -440,6 +446,7 @@ set(cwp_src
   src/v20180228/model/DescribeProVersionInfoResponse.cpp
   src/v20180228/model/DeleteTagsResponse.cpp
   src/v20180228/model/DescribeSecurityEventsCntRequest.cpp
+  src/v20180228/model/UpdateBaselineStrategyRequest.cpp
   src/v20180228/model/DeleteBruteAttacksRequest.cpp
   src/v20180228/model/DescribeWeeklyReportVulsRequest.cpp
   src/v20180228/model/AddLoginWhiteListResponse.cpp
@@ -458,6 +465,7 @@ set(cwp_src
   src/v20180228/model/DeleteReverseShellEventsResponse.cpp
   src/v20180228/model/DeletePrivilegeEventsRequest.cpp
   src/v20180228/model/DeleteBashRulesRequest.cpp
+  src/v20180228/model/OpenPort.cpp
   src/v20180228/model/CloseProVersionResponse.cpp
   src/v20180228/model/DeleteAttackLogsRequest.cpp
   src/v20180228/model/DescribeOpenPortsResponse.cpp
