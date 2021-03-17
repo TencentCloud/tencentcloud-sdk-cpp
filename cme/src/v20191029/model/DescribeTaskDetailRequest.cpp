@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeTaskDetailRequest::DescribeTaskDetailRequest() :
     m_platformHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeTaskDetailRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeTaskDetailRequest::SetTaskId(const string& _taskId)
 bool DescribeTaskDetailRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string DescribeTaskDetailRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void DescribeTaskDetailRequest::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool DescribeTaskDetailRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

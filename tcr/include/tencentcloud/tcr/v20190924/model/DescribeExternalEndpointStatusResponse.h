@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开启公网访问状态，包括开启中，开启成功以及关闭和更新失败等
-                     * @return Status 开启公网访问状态，包括开启中，开启成功以及关闭和更新失败等
+                     * 获取开启公网访问状态，开启中（Opening）、已开启（Opened）、关闭（Closed）
+                     * @return Status 开启公网访问状态，开启中（Opening）、已开启（Opened）、关闭（Closed）
                      */
                     std::string GetStatus() const;
 
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开启公网访问状态，包括开启中，开启成功以及关闭和更新失败等
+                     * 开启公网访问状态，开启中（Opening）、已开启（Opened）、关闭（Closed）
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

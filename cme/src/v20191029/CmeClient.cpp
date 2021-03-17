@@ -1631,6 +1631,49 @@ CmeClient::MoveClassOutcomeCallable CmeClient::MoveClassCallable(const MoveClass
     return task->get_future();
 }
 
+CmeClient::MoveResourceOutcome CmeClient::MoveResource(const MoveResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "MoveResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MoveResourceResponse rsp = MoveResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MoveResourceOutcome(rsp);
+        else
+            return MoveResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return MoveResourceOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::MoveResourceAsync(const MoveResourceRequest& request, const MoveResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MoveResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::MoveResourceOutcomeCallable CmeClient::MoveResourceCallable(const MoveResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MoveResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->MoveResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmeClient::RevokeResourceAuthorizationOutcome CmeClient::RevokeResourceAuthorization(const RevokeResourceAuthorizationRequest &request)
 {
     auto outcome = MakeRequest(request, "RevokeResourceAuthorization");

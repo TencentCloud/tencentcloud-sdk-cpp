@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TeamIdHasBeenSet() const;
 
                     /**
-                     * 获取成员 ID 列表，限指定30个指定成员。
-                     * @return MemberIds 成员 ID 列表，限指定30个指定成员。
+                     * 获取成员 ID 列表，限指定30个指定成员。如不填，则返回指定团队下的所有成员。
+                     * @return MemberIds 成员 ID 列表，限指定30个指定成员。如不填，则返回指定团队下的所有成员。
                      */
                     std::vector<std::string> GetMemberIds() const;
 
                     /**
-                     * 设置成员 ID 列表，限指定30个指定成员。
-                     * @param MemberIds 成员 ID 列表，限指定30个指定成员。
+                     * 设置成员 ID 列表，限指定30个指定成员。如不填，则返回指定团队下的所有成员。
+                     * @param MemberIds 成员 ID 列表，限指定30个指定成员。如不填，则返回指定团队下的所有成员。
                      */
                     void SetMemberIds(const std::vector<std::string>& _memberIds);
 
@@ -165,7 +165,7 @@ namespace TencentCloud
                     bool m_teamIdHasBeenSet;
 
                     /**
-                     * 成员 ID 列表，限指定30个指定成员。
+                     * 成员 ID 列表，限指定30个指定成员。如不填，则返回指定团队下的所有成员。
                      */
                     std::vector<std::string> m_memberIds;
                     bool m_memberIdsHasBeenSet;

@@ -99,6 +99,18 @@ namespace TencentCloud
                      */
                     bool ImageLimitsHasBeenSet() const;
 
+                    /**
+                     * 获取默认是否IP直通，用于模块创建，虚机购买等具有直通参数场景时的默认参数。
+                     * @return DefaultIPDirect 默认是否IP直通，用于模块创建，虚机购买等具有直通参数场景时的默认参数。
+                     */
+                    bool GetDefaultIPDirect() const;
+
+                    /**
+                     * 判断参数 DefaultIPDirect 是否已赋值
+                     * @return DefaultIPDirect 是否已赋值
+                     */
+                    bool DefaultIPDirectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -127,6 +139,12 @@ namespace TencentCloud
                      */
                     ImageLimitConfig m_imageLimits;
                     bool m_imageLimitsHasBeenSet;
+
+                    /**
+                     * 默认是否IP直通，用于模块创建，虚机购买等具有直通参数场景时的默认参数。
+                     */
+                    bool m_defaultIPDirect;
+                    bool m_defaultIPDirectHasBeenSet;
 
                 };
             }

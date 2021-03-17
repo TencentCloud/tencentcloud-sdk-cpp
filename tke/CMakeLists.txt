@@ -83,6 +83,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/Label.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertHistoryRequest.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusTemplateSyncRequest.h
+  include/tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipResponse.h
   include/tencentcloud/tke/v20180525/model/SyncPrometheusTemplateRequest.h
@@ -191,6 +192,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTargetsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTargetsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailRequest.h
+  include/tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionRequest.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusTemplateSyncResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteTableRequest.h
   include/tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolRequest.h
@@ -287,6 +289,7 @@ set(tke_src
   src/v20180525/model/Label.cpp
   src/v20180525/model/DescribePrometheusAlertHistoryRequest.cpp
   src/v20180525/model/DeletePrometheusTemplateSyncRequest.cpp
+  src/v20180525/model/SetNodePoolNodeProtectionResponse.cpp
   src/v20180525/model/DescribePrometheusTemplatesResponse.cpp
   src/v20180525/model/DeleteClusterEndpointVipResponse.cpp
   src/v20180525/model/SyncPrometheusTemplateRequest.cpp
@@ -395,6 +398,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusTargetsRequest.cpp
   src/v20180525/model/DescribePrometheusTargetsResponse.cpp
   src/v20180525/model/DescribeClusterNodePoolDetailRequest.cpp
+  src/v20180525/model/SetNodePoolNodeProtectionRequest.cpp
   src/v20180525/model/DeletePrometheusTemplateSyncResponse.cpp
   src/v20180525/model/CreateClusterRouteTableRequest.cpp
   src/v20180525/model/RemoveNodeFromNodePoolRequest.cpp

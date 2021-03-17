@@ -729,6 +729,72 @@ namespace TencentCloud
                      */
                     bool HealthCheckSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取程序包类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PackageType 程序包类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPackageType() const;
+
+                    /**
+                     * 设置程序包类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PackageType 程序包类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPackageType(const std::string& _packageType);
+
+                    /**
+                     * 判断参数 PackageType 是否已赋值
+                     * @return PackageType 是否已赋值
+                     */
+                    bool PackageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取启动脚本 base64编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartScript 启动脚本 base64编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStartScript() const;
+
+                    /**
+                     * 设置启动脚本 base64编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartScript 启动脚本 base64编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartScript(const std::string& _startScript);
+
+                    /**
+                     * 判断参数 StartScript 是否已赋值
+                     * @return StartScript 是否已赋值
+                     */
+                    bool StartScriptHasBeenSet() const;
+
+                    /**
+                     * 获取停止脚本 base64编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StopScript 停止脚本 base64编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStopScript() const;
+
+                    /**
+                     * 设置停止脚本 base64编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StopScript 停止脚本 base64编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStopScript(const std::string& _stopScript);
+
+                    /**
+                     * 判断参数 StopScript 是否已赋值
+                     * @return StopScript 是否已赋值
+                     */
+                    bool StopScriptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -947,6 +1013,27 @@ namespace TencentCloud
                      */
                     HealthCheckSettings m_healthCheckSettings;
                     bool m_healthCheckSettingsHasBeenSet;
+
+                    /**
+                     * 程序包类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_packageType;
+                    bool m_packageTypeHasBeenSet;
+
+                    /**
+                     * 启动脚本 base64编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startScript;
+                    bool m_startScriptHasBeenSet;
+
+                    /**
+                     * 停止脚本 base64编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_stopScript;
+                    bool m_stopScriptHasBeenSet;
 
                 };
             }

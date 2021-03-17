@@ -99,14 +99,26 @@ namespace TencentCloud
                     bool AspectRatioSetHasBeenSet() const;
 
                     /**
-                     * 获取项目类别集合。
-                     * @return CategorySet 项目类别集合。
+                     * 获取项目类别，取值有：
+<li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
+                     * @return CategorySet 项目类别，取值有：
+<li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
                      */
                     std::vector<std::string> GetCategorySet() const;
 
                     /**
-                     * 设置项目类别集合。
-                     * @param CategorySet 项目类别集合。
+                     * 设置项目类别，取值有：
+<li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
+                     * @param CategorySet 项目类别，取值有：
+<li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
                      */
                     void SetCategorySet(const std::vector<std::string>& _categorySet);
 
@@ -196,6 +208,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。
+                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。
+                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,7 +247,10 @@ namespace TencentCloud
                     bool m_aspectRatioSetHasBeenSet;
 
                     /**
-                     * 项目类别集合。
+                     * 项目类别，取值有：
+<li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
                      */
                     std::vector<std::string> m_categorySet;
                     bool m_categorySetHasBeenSet;
@@ -247,6 +280,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

@@ -97,6 +97,8 @@
 #include <tencentcloud/cme/v20191029/model/ModifyTeamMemberResponse.h>
 #include <tencentcloud/cme/v20191029/model/MoveClassRequest.h>
 #include <tencentcloud/cme/v20191029/model/MoveClassResponse.h>
+#include <tencentcloud/cme/v20191029/model/MoveResourceRequest.h>
+#include <tencentcloud/cme/v20191029/model/MoveResourceResponse.h>
 #include <tencentcloud/cme/v20191029/model/RevokeResourceAuthorizationRequest.h>
 #include <tencentcloud/cme/v20191029/model/RevokeResourceAuthorizationResponse.h>
 #include <tencentcloud/cme/v20191029/model/SearchMaterialRequest.h>
@@ -226,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::MoveClassResponse> MoveClassOutcome;
                 typedef std::future<MoveClassOutcome> MoveClassOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::MoveClassRequest&, MoveClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MoveClassAsyncHandler;
+                typedef Outcome<Error, Model::MoveResourceResponse> MoveResourceOutcome;
+                typedef std::future<MoveResourceOutcome> MoveResourceOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::MoveResourceRequest&, MoveResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MoveResourceAsyncHandler;
                 typedef Outcome<Error, Model::RevokeResourceAuthorizationResponse> RevokeResourceAuthorizationOutcome;
                 typedef std::future<RevokeResourceAuthorizationOutcome> RevokeResourceAuthorizationOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::RevokeResourceAuthorizationRequest&, RevokeResourceAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeResourceAuthorizationAsyncHandler;
@@ -304,7 +309,7 @@ namespace TencentCloud
                 DeleteLoginStatusOutcomeCallable DeleteLoginStatusCallable(const Model::DeleteLoginStatusRequest& request);
 
                 /**
-                 *根据素材 Id 删除素材。
+                 *根据媒体 Id 删除媒体。
                  * @param req DeleteMaterialRequest
                  * @return DeleteMaterialOutcome
                  */
@@ -369,7 +374,7 @@ namespace TencentCloud
                 DescribeLoginStatusOutcomeCallable DescribeLoginStatusCallable(const Model::DescribeLoginStatusRequest& request);
 
                 /**
-                 *根据素材 Id 批量获取素材详情。
+                 *根据媒体 Id 批量获取媒体详情。
                  * @param req DescribeMaterialsRequest
                  * @return DescribeMaterialsOutcome
                  */
@@ -408,7 +413,7 @@ namespace TencentCloud
                 DescribeResourceAuthorizationOutcomeCallable DescribeResourceAuthorizationCallable(const Model::DescribeResourceAuthorizationRequest& request);
 
                 /**
-                 *获取共享空间。当实体A对实体B授权某资源以后，实体B的共享空间就会增加实体A。
+                 *获取共享空间。当个人或团队A对个人或团队B授权某资源以后，个人或团队B的共享空间就会增加个人或团队A。
                  * @param req DescribeSharedSpaceRequest
                  * @return DescribeSharedSpaceOutcome
                  */
@@ -482,7 +487,7 @@ namespace TencentCloud
                 ExportVideoEditProjectOutcomeCallable ExportVideoEditProjectCallable(const Model::ExportVideoEditProjectRequest& request);
 
                 /**
-                 *平铺分类路径下及其子分类下的所有素材。
+                 *平铺分类路径下及其子分类下的所有媒体基础信息。
                  * @param req FlattenListMediaRequest
                  * @return FlattenListMediaOutcome
                  */
@@ -502,7 +507,7 @@ namespace TencentCloud
                 GenerateVideoSegmentationSchemeByAiOutcomeCallable GenerateVideoSegmentationSchemeByAiCallable(const Model::GenerateVideoSegmentationSchemeByAiRequest& request);
 
                 /**
-                 *资源所属实体对目标实体授予目标资源的相应权限。
+                 *资源归属者对目标个人或团队授予目标资源的相应权限。
                  * @param req GrantResourceAuthorizationRequest
                  * @return GrantResourceAuthorizationOutcome
                  */
@@ -529,7 +534,7 @@ namespace TencentCloud
                 ImportMediaToProjectOutcomeCallable ImportMediaToProjectCallable(const Model::ImportMediaToProjectRequest& request);
 
                 /**
-                 * 浏览当前分类路径下的资源，包括素材和子分类。
+                 * 浏览当前分类路径下的资源，包括媒体文件和子分类，返回媒资基础信息和分类信息。
                  * @param req ListMediaRequest
                  * @return ListMediaOutcome
                  */
@@ -538,7 +543,7 @@ namespace TencentCloud
                 ListMediaOutcomeCallable ListMediaCallable(const Model::ListMediaRequest& request);
 
                 /**
-                 *修改素材信息，支持修改素材名称、分类路径、标签等信息。
+                 *修改媒体信息，支持修改媒体名称、分类路径、标签等信息。
                  * @param req ModifyMaterialRequest
                  * @return ModifyMaterialOutcome
                  */
@@ -576,13 +581,30 @@ namespace TencentCloud
 
                 /**
                  *移动某一个分类到另外一个分类下，也可用于分类重命名。
-<li>如果 SourceClassPath = /素材/视频/NBA，DestinationClassPath = /素材/视频/篮球，当 DestinationClassPath 不存在时候，操作结果为重命名 ClassPath，如果 DestinationClassPath 存在时候，操作结果为产生新目录 /素材/视频/篮球/NBA。</li>
+如果 SourceClassPath = /素材/视频/NBA，DestinationClassPath = /素材/视频/篮球
+<li>当 DestinationClassPath 不存在时候，操作结果为重命名 ClassPath；</li>
+<li>当 DestinationClassPath 存在时候，操作结果为产生新目录 /素材/视频/篮球/NBA</li>
                  * @param req MoveClassRequest
                  * @return MoveClassOutcome
                  */
                 MoveClassOutcome MoveClass(const Model::MoveClassRequest &request);
                 void MoveClassAsync(const Model::MoveClassRequest& request, const MoveClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 MoveClassOutcomeCallable MoveClassCallable(const Model::MoveClassRequest& request);
+
+                /**
+                 *移动资源，支持跨个人或团队移动媒体以及分类。如果填写了Operator，则需要校验用户对媒体和分类资源的访问以及写权限。
+<li>当原始资源为媒体时，该接口效果为将该媒体移动到目标分类下面；</li>
+<li>当原始资源为分类时，该接口效果为将原始分类移动到目标分类或者是重命名。</li>
+ 如果 SourceResource.Resource.Id = /素材/视频/NBA，DestinationResource.Resource.Id= /素材/视频/篮球 
+<li>当 DestinationResource.Resource.Id 不存在时候且原始资源与目标资源归属相同，操作结果为重命名原始分类；</li>
+<li>当 DestinationResource.Resource.Id 存在时候，操作结果为产生新目录 /素材/视频/篮球/NBA</li>
+
+                 * @param req MoveResourceRequest
+                 * @return MoveResourceOutcome
+                 */
+                MoveResourceOutcome MoveResource(const Model::MoveResourceRequest &request);
+                void MoveResourceAsync(const Model::MoveResourceRequest& request, const MoveResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MoveResourceOutcomeCallable MoveResourceCallable(const Model::MoveResourceRequest& request);
 
                 /**
                  * 资源所属实体对目标实体回收目标资源的相应权限，若原本没有相应权限则不产生变更。
@@ -594,7 +616,7 @@ namespace TencentCloud
                 RevokeResourceAuthorizationOutcomeCallable RevokeResourceAuthorizationCallable(const Model::RevokeResourceAuthorizationRequest& request);
 
                 /**
-                 *根据检索条件搜索素材，返回素材的基本信息。
+                 *根据检索条件搜索媒体，返回媒体的基本信息。
                  * @param req SearchMaterialRequest
                  * @return SearchMaterialOutcome
                  */

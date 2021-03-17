@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/ServiceConfig.h>
 
 
 namespace TencentCloud
@@ -310,6 +311,28 @@ namespace TencentCloud
                      */
                     bool ApplicationRemarkNameHasBeenSet() const;
 
+                    /**
+                     * 获取服务配置信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceConfigList 服务配置信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServiceConfig> GetServiceConfigList() const;
+
+                    /**
+                     * 设置服务配置信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServiceConfigList 服务配置信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServiceConfigList(const std::vector<ServiceConfig>& _serviceConfigList);
+
+                    /**
+                     * 判断参数 ServiceConfigList 是否已赋值
+                     * @return ServiceConfigList 是否已赋值
+                     */
+                    bool ServiceConfigListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +418,13 @@ namespace TencentCloud
                      */
                     std::string m_applicationRemarkName;
                     bool m_applicationRemarkNameHasBeenSet;
+
+                    /**
+                     * 服务配置信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServiceConfig> m_serviceConfigList;
+                    bool m_serviceConfigListHasBeenSet;
 
                 };
             }

@@ -83,11 +83,11 @@ namespace TencentCloud
                     bool SearchScopesHasBeenSet() const;
 
                     /**
-                     * 获取素材类型，取值：
+                     * 获取媒体类型，取值：
 <li>AUDIO：音频；</li>
 <li>VIDEO：视频 ；</li>
 <li>IMAGE：图片。</li>
-                     * @return MaterialTypes 素材类型，取值：
+                     * @return MaterialTypes 媒体类型，取值：
 <li>AUDIO：音频；</li>
 <li>VIDEO：视频 ；</li>
 <li>IMAGE：图片。</li>
@@ -95,11 +95,11 @@ namespace TencentCloud
                     std::vector<std::string> GetMaterialTypes() const;
 
                     /**
-                     * 设置素材类型，取值：
+                     * 设置媒体类型，取值：
 <li>AUDIO：音频；</li>
 <li>VIDEO：视频 ；</li>
 <li>IMAGE：图片。</li>
-                     * @param MaterialTypes 素材类型，取值：
+                     * @param MaterialTypes 媒体类型，取值：
 <li>AUDIO：音频；</li>
 <li>VIDEO：视频 ；</li>
 <li>IMAGE：图片。</li>
@@ -113,14 +113,14 @@ namespace TencentCloud
                     bool MaterialTypesHasBeenSet() const;
 
                     /**
-                     * 获取搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
-                     * @return Text 搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
+                     * 获取搜索文本，模糊匹配媒体名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
+                     * @return Text 搜索文本，模糊匹配媒体名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
-                     * @param Text 搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
+                     * 设置搜索文本，模糊匹配媒体名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
+                     * @param Text 搜索文本，模糊匹配媒体名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
                      */
                     void SetText(const std::string& _text);
 
@@ -149,14 +149,14 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取按素材时长检索，单位s。
-                     * @return DurationRange 按素材时长检索，单位s。
+                     * 获取按媒体时长检索，单位s。
+                     * @return DurationRange 按媒体时长检索，单位s。
                      */
                     IntegerRange GetDurationRange() const;
 
                     /**
-                     * 设置按素材时长检索，单位s。
-                     * @param DurationRange 按素材时长检索，单位s。
+                     * 设置按媒体时长检索，单位s。
+                     * @param DurationRange 按媒体时长检索，单位s。
                      */
                     void SetDurationRange(const IntegerRange& _durationRange);
 
@@ -167,14 +167,14 @@ namespace TencentCloud
                     bool DurationRangeHasBeenSet() const;
 
                     /**
-                     * 获取按照素材创建时间检索。
-                     * @return CreateTimeRange 按照素材创建时间检索。
+                     * 获取按照媒体创建时间检索。
+                     * @return CreateTimeRange 按照媒体创建时间检索。
                      */
                     TimeRange GetCreateTimeRange() const;
 
                     /**
-                     * 设置按照素材创建时间检索。
-                     * @param CreateTimeRange 按照素材创建时间检索。
+                     * 设置按照媒体创建时间检索。
+                     * @param CreateTimeRange 按照媒体创建时间检索。
                      */
                     void SetCreateTimeRange(const TimeRange& _createTimeRange);
 
@@ -257,14 +257,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 获取操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
+                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 设置操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
+                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -289,7 +289,7 @@ namespace TencentCloud
                     bool m_searchScopesHasBeenSet;
 
                     /**
-                     * 素材类型，取值：
+                     * 媒体类型，取值：
 <li>AUDIO：音频；</li>
 <li>VIDEO：视频 ；</li>
 <li>IMAGE：图片。</li>
@@ -298,7 +298,7 @@ namespace TencentCloud
                     bool m_materialTypesHasBeenSet;
 
                     /**
-                     * 搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
+                     * 搜索文本，模糊匹配媒体名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
@@ -310,13 +310,13 @@ namespace TencentCloud
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 按素材时长检索，单位s。
+                     * 按媒体时长检索，单位s。
                      */
                     IntegerRange m_durationRange;
                     bool m_durationRangeHasBeenSet;
 
                     /**
-                     * 按照素材创建时间检索。
+                     * 按照媒体创建时间检索。
                      */
                     TimeRange m_createTimeRange;
                     bool m_createTimeRangeHasBeenSet;
@@ -346,7 +346,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

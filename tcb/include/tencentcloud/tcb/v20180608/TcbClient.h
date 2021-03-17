@@ -77,6 +77,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePostpayFreeQuotasRequest.h>
@@ -196,6 +198,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEnvsResponse> DescribeEnvsOutcome;
                 typedef std::future<DescribeEnvsOutcome> DescribeEnvsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvsRequest&, DescribeEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeExtensionUploadInfoResponse> DescribeExtensionUploadInfoOutcome;
+                typedef std::future<DescribeExtensionUploadInfoOutcome> DescribeExtensionUploadInfoOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeExtensionUploadInfoRequest&, DescribeExtensionUploadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtensionUploadInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeExtraPkgBillingInfoResponse> DescribeExtraPkgBillingInfoOutcome;
                 typedef std::future<DescribeExtraPkgBillingInfoOutcome> DescribeExtraPkgBillingInfoOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeExtraPkgBillingInfoRequest&, DescribeExtraPkgBillingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtraPkgBillingInfoAsyncHandler;
@@ -477,6 +482,15 @@ namespace TencentCloud
                 DescribeEnvsOutcome DescribeEnvs(const Model::DescribeEnvsRequest &request);
                 void DescribeEnvsAsync(const Model::DescribeEnvsRequest& request, const DescribeEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvsOutcomeCallable DescribeEnvsCallable(const Model::DescribeEnvsRequest& request);
+
+                /**
+                 *描述扩展上传文件信息
+                 * @param req DescribeExtensionUploadInfoRequest
+                 * @return DescribeExtensionUploadInfoOutcome
+                 */
+                DescribeExtensionUploadInfoOutcome DescribeExtensionUploadInfo(const Model::DescribeExtensionUploadInfoRequest &request);
+                void DescribeExtensionUploadInfoAsync(const Model::DescribeExtensionUploadInfoRequest& request, const DescribeExtensionUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtensionUploadInfoOutcomeCallable DescribeExtensionUploadInfoCallable(const Model::DescribeExtensionUploadInfoRequest& request);
 
                 /**
                  *获取增值包计费相关信息

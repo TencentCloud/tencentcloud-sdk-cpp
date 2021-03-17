@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取被授权目标实体。
-                     * @return Authorizee 被授权目标实体。
+                     * 获取被授权目标,，个人或团队。
+                     * @return Authorizee 被授权目标,，个人或团队。
                      */
                     Entity GetAuthorizee() const;
 
                     /**
-                     * 设置被授权目标实体。
-                     * @param Authorizee 被授权目标实体。
+                     * 设置被授权目标,，个人或团队。
+                     * @param Authorizee 被授权目标,，个人或团队。
                      */
                     void SetAuthorizee(const Entity& _authorizee);
 
@@ -106,7 +106,7 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 被授权目标实体。
+                     * 被授权目标,，个人或团队。
                      */
                     Entity m_authorizee;
                     bool m_authorizeeHasBeenSet;

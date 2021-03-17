@@ -29,8 +29,10 @@ MaterialBasicInfo::MaterialBasicInfo() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_classPathHasBeenSet(false),
-    m_tagInfoSetHasBeenSet(false),
-    m_previewUrlHasBeenSet(false)
+    m_presetTagSetHasBeenSet(false),
+    m_tagSetHasBeenSet(false),
+    m_previewUrlHasBeenSet(false),
+    m_tagInfoSetHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,49 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const Value &value)
         m_classPathHasBeenSet = true;
     }
 
+    if (value.HasMember("PresetTagSet") && !value["PresetTagSet"].IsNull())
+    {
+        if (!value["PresetTagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.PresetTagSet` is not array type"));
+
+        const Value &tmpValue = value["PresetTagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PresetTagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_presetTagSet.push_back(item);
+        }
+        m_presetTagSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tagSet.push_back((*itr).GetString());
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreviewUrl") && !value["PreviewUrl"].IsNull())
+    {
+        if (!value["PreviewUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewUrl = string(value["PreviewUrl"].GetString());
+        m_previewUrlHasBeenSet = true;
+    }
+
     if (value.HasMember("TagInfoSet") && !value["TagInfoSet"].IsNull())
     {
         if (!value["TagInfoSet"].IsArray())
@@ -134,16 +179,6 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const Value &value)
             m_tagInfoSet.push_back(item);
         }
         m_tagInfoSetHasBeenSet = true;
-    }
-
-    if (value.HasMember("PreviewUrl") && !value["PreviewUrl"].IsNull())
-    {
-        if (!value["PreviewUrl"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_previewUrl = string(value["PreviewUrl"].GetString());
-        m_previewUrlHasBeenSet = true;
     }
 
 
@@ -210,6 +245,42 @@ void MaterialBasicInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
         value.AddMember(iKey, Value(m_classPath.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_presetTagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PresetTagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_presetTagSet.begin(); itr != m_presetTagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_previewUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PreviewUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_previewUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tagInfoSetHasBeenSet)
     {
         Value iKey(kStringType);
@@ -223,14 +294,6 @@ void MaterialBasicInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_previewUrlHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PreviewUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_previewUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -348,20 +411,36 @@ bool MaterialBasicInfo::ClassPathHasBeenSet() const
     return m_classPathHasBeenSet;
 }
 
-vector<MaterialTagInfo> MaterialBasicInfo::GetTagInfoSet() const
+vector<PresetTagInfo> MaterialBasicInfo::GetPresetTagSet() const
 {
-    return m_tagInfoSet;
+    return m_presetTagSet;
 }
 
-void MaterialBasicInfo::SetTagInfoSet(const vector<MaterialTagInfo>& _tagInfoSet)
+void MaterialBasicInfo::SetPresetTagSet(const vector<PresetTagInfo>& _presetTagSet)
 {
-    m_tagInfoSet = _tagInfoSet;
-    m_tagInfoSetHasBeenSet = true;
+    m_presetTagSet = _presetTagSet;
+    m_presetTagSetHasBeenSet = true;
 }
 
-bool MaterialBasicInfo::TagInfoSetHasBeenSet() const
+bool MaterialBasicInfo::PresetTagSetHasBeenSet() const
 {
-    return m_tagInfoSetHasBeenSet;
+    return m_presetTagSetHasBeenSet;
+}
+
+vector<string> MaterialBasicInfo::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void MaterialBasicInfo::SetTagSet(const vector<string>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 
 string MaterialBasicInfo::GetPreviewUrl() const
@@ -378,5 +457,21 @@ void MaterialBasicInfo::SetPreviewUrl(const string& _previewUrl)
 bool MaterialBasicInfo::PreviewUrlHasBeenSet() const
 {
     return m_previewUrlHasBeenSet;
+}
+
+vector<MaterialTagInfo> MaterialBasicInfo::GetTagInfoSet() const
+{
+    return m_tagInfoSet;
+}
+
+void MaterialBasicInfo::SetTagInfoSet(const vector<MaterialTagInfo>& _tagInfoSet)
+{
+    m_tagInfoSet = _tagInfoSet;
+    m_tagInfoSetHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::TagInfoSetHasBeenSet() const
+{
+    return m_tagInfoSetHasBeenSet;
 }
 

@@ -58,7 +58,8 @@ Instance::Instance() :
     m_serviceSidecarStatusHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
 }
 
@@ -437,6 +438,16 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_reasonHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentVersion") && !value["AgentVersion"].IsNull())
+    {
+        if (!value["AgentVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.AgentVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentVersion = string(value["AgentVersion"].GetString());
+        m_agentVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -738,6 +749,14 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Reason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AgentVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_agentVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1333,5 +1352,21 @@ void Instance::SetReason(const string& _reason)
 bool Instance::ReasonHasBeenSet() const
 {
     return m_reasonHasBeenSet;
+}
+
+string Instance::GetAgentVersion() const
+{
+    return m_agentVersion;
+}
+
+void Instance::SetAgentVersion(const string& _agentVersion)
+{
+    m_agentVersion = _agentVersion;
+    m_agentVersionHasBeenSet = true;
+}
+
+bool Instance::AgentVersionHasBeenSet() const
+{
+    return m_agentVersionHasBeenSet;
 }
 

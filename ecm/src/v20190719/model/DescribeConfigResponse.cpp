@@ -28,7 +28,8 @@ DescribeConfigResponse::DescribeConfigResponse() :
     m_networkStorageRangeHasBeenSet(false),
     m_imageWhiteSetHasBeenSet(false),
     m_instanceNetworkLimitConfigsHasBeenSet(false),
-    m_imageLimitsHasBeenSet(false)
+    m_imageLimitsHasBeenSet(false),
+    m_defaultIPDirectHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,16 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
         m_imageLimitsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DefaultIPDirect") && !rsp["DefaultIPDirect"].IsNull())
+    {
+        if (!rsp["DefaultIPDirect"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DefaultIPDirect` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultIPDirect = rsp["DefaultIPDirect"].GetBool();
+        m_defaultIPDirectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -176,6 +187,16 @@ ImageLimitConfig DescribeConfigResponse::GetImageLimits() const
 bool DescribeConfigResponse::ImageLimitsHasBeenSet() const
 {
     return m_imageLimitsHasBeenSet;
+}
+
+bool DescribeConfigResponse::GetDefaultIPDirect() const
+{
+    return m_defaultIPDirect;
+}
+
+bool DescribeConfigResponse::DefaultIPDirectHasBeenSet() const
+{
+    return m_defaultIPDirectHasBeenSet;
 }
 
 

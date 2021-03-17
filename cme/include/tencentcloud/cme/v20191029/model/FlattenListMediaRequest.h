@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取素材分类路径，例如填写"/a/b"，则代表平铺该分类路径下及其子分类路径下的素材信息。
-                     * @return ClassPath 素材分类路径，例如填写"/a/b"，则代表平铺该分类路径下及其子分类路径下的素材信息。
+                     * 获取媒体分类路径，例如填写"/a/b"，则代表平铺该分类路径下及其子分类路径下的媒体信息。
+                     * @return ClassPath 媒体分类路径，例如填写"/a/b"，则代表平铺该分类路径下及其子分类路径下的媒体信息。
                      */
                     std::string GetClassPath() const;
 
                     /**
-                     * 设置素材分类路径，例如填写"/a/b"，则代表平铺该分类路径下及其子分类路径下的素材信息。
-                     * @param ClassPath 素材分类路径，例如填写"/a/b"，则代表平铺该分类路径下及其子分类路径下的素材信息。
+                     * 设置媒体分类路径，例如填写"/a/b"，则代表平铺该分类路径下及其子分类路径下的媒体信息。
+                     * @param ClassPath 媒体分类路径，例如填写"/a/b"，则代表平铺该分类路径下及其子分类路径下的媒体信息。
                      */
                     void SetClassPath(const std::string& _classPath);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取素材路径的归属者。
-                     * @return Owner 素材路径的归属者。
+                     * 获取媒体分类的归属者。
+                     * @return Owner 媒体分类的归属者。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置素材路径的归属者。
-                     * @param Owner 素材路径的归属者。
+                     * 设置媒体分类的归属者。
+                     * @param Owner 媒体分类的归属者。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 获取操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
+                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 设置操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
+                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -160,13 +160,13 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 素材分类路径，例如填写"/a/b"，则代表平铺该分类路径下及其子分类路径下的素材信息。
+                     * 媒体分类路径，例如填写"/a/b"，则代表平铺该分类路径下及其子分类路径下的媒体信息。
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;
 
                     /**
-                     * 素材路径的归属者。
+                     * 媒体分类的归属者。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

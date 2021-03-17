@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取素材 ID 列表，N 从 0 开始取值，最大 19。
-                     * @return MaterialIds 素材 ID 列表，N 从 0 开始取值，最大 19。
+                     * 获取媒体 ID 列表，N 从 0 开始取值，最大 19。
+                     * @return MaterialIds 媒体 ID 列表，N 从 0 开始取值，最大 19。
                      */
                     std::vector<std::string> GetMaterialIds() const;
 
                     /**
-                     * 设置素材 ID 列表，N 从 0 开始取值，最大 19。
-                     * @param MaterialIds 素材 ID 列表，N 从 0 开始取值，最大 19。
+                     * 设置媒体 ID 列表，N 从 0 开始取值，最大 19。
+                     * @param MaterialIds 媒体 ID 列表，N 从 0 开始取值，最大 19。
                      */
                     void SetMaterialIds(const std::vector<std::string>& _materialIds);
 
@@ -106,14 +106,14 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 获取操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。
+                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 设置操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。
+                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -132,7 +132,7 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 素材 ID 列表，N 从 0 开始取值，最大 19。
+                     * 媒体 ID 列表，N 从 0 开始取值，最大 19。
                      */
                     std::vector<std::string> m_materialIds;
                     bool m_materialIdsHasBeenSet;
@@ -146,7 +146,7 @@ namespace TencentCloud
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

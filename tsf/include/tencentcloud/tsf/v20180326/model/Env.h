@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取服务端口
-                     * @return Value 服务端口
+                     * 获取环境变量值
+                     * @return Value 环境变量值
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置服务端口
-                     * @param Value 服务端口
+                     * 设置环境变量值
+                     * @param Value 环境变量值
                      */
                     void SetValue(const std::string& _value);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 服务端口
+                     * 环境变量值
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

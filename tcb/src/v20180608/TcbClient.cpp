@@ -1201,6 +1201,49 @@ TcbClient::DescribeEnvsOutcomeCallable TcbClient::DescribeEnvsCallable(const Des
     return task->get_future();
 }
 
+TcbClient::DescribeExtensionUploadInfoOutcome TcbClient::DescribeExtensionUploadInfo(const DescribeExtensionUploadInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtensionUploadInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtensionUploadInfoResponse rsp = DescribeExtensionUploadInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtensionUploadInfoOutcome(rsp);
+        else
+            return DescribeExtensionUploadInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtensionUploadInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeExtensionUploadInfoAsync(const DescribeExtensionUploadInfoRequest& request, const DescribeExtensionUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExtensionUploadInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeExtensionUploadInfoOutcomeCallable TcbClient::DescribeExtensionUploadInfoCallable(const DescribeExtensionUploadInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExtensionUploadInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExtensionUploadInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeExtraPkgBillingInfoOutcome TcbClient::DescribeExtraPkgBillingInfo(const DescribeExtraPkgBillingInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExtraPkgBillingInfo");

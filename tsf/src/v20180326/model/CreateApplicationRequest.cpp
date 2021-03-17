@@ -31,7 +31,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_applicationLogConfigHasBeenSet(false),
     m_applicationResourceTypeHasBeenSet(false),
     m_applicationRuntimeTypeHasBeenSet(false),
-    m_programIdHasBeenSet(false)
+    m_programIdHasBeenSet(false),
+    m_serviceConfigListHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,21 @@ string CreateApplicationRequest::ToJsonString() const
         string key = "ProgramId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_programId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceConfigListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceConfigList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceConfigList.begin(); itr != m_serviceConfigList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -240,6 +256,22 @@ void CreateApplicationRequest::SetProgramId(const string& _programId)
 bool CreateApplicationRequest::ProgramIdHasBeenSet() const
 {
     return m_programIdHasBeenSet;
+}
+
+vector<ServiceConfig> CreateApplicationRequest::GetServiceConfigList() const
+{
+    return m_serviceConfigList;
+}
+
+void CreateApplicationRequest::SetServiceConfigList(const vector<ServiceConfig>& _serviceConfigList)
+{
+    m_serviceConfigList = _serviceConfigList;
+    m_serviceConfigListHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::ServiceConfigListHasBeenSet() const
+{
+    return m_serviceConfigListHasBeenSet;
 }
 
 

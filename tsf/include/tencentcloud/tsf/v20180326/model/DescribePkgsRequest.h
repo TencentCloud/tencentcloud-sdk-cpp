@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool RepositoryIdHasBeenSet() const;
 
+                    /**
+                     * 获取程序包类型数组支持（fatjar jar war tar.gz zip）
+                     * @return PackageTypeList 程序包类型数组支持（fatjar jar war tar.gz zip）
+                     */
+                    std::vector<std::string> GetPackageTypeList() const;
+
+                    /**
+                     * 设置程序包类型数组支持（fatjar jar war tar.gz zip）
+                     * @param PackageTypeList 程序包类型数组支持（fatjar jar war tar.gz zip）
+                     */
+                    void SetPackageTypeList(const std::vector<std::string>& _packageTypeList);
+
+                    /**
+                     * 判断参数 PackageTypeList 是否已赋值
+                     * @return PackageTypeList 是否已赋值
+                     */
+                    bool PackageTypeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_repositoryId;
                     bool m_repositoryIdHasBeenSet;
+
+                    /**
+                     * 程序包类型数组支持（fatjar jar war tar.gz zip）
+                     */
+                    std::vector<std::string> m_packageTypeList;
+                    bool m_packageTypeListHasBeenSet;
 
                 };
             }

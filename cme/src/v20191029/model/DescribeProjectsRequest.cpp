@@ -31,7 +31,8 @@ DescribeProjectsRequest::DescribeProjectsRequest() :
     m_sortHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string DescribeProjectsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -257,6 +266,22 @@ void DescribeProjectsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeProjectsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeProjectsRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void DescribeProjectsRequest::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool DescribeProjectsRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

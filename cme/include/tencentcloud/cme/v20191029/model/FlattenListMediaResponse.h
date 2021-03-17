@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取该分类路径下及其子分类下的所有素材。
-                     * @return MaterialInfoSet 该分类路径下及其子分类下的所有素材。
+                     * 获取该分类路径下及其子分类下的所有媒体基础信息列表。
+                     * @return MaterialInfoSet 该分类路径下及其子分类下的所有媒体基础信息列表。
                      */
                     std::vector<MaterialInfo> GetMaterialInfoSet() const;
 
@@ -76,7 +76,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 该分类路径下及其子分类下的所有素材。
+                     * 该分类路径下及其子分类下的所有媒体基础信息列表。
                      */
                     std::vector<MaterialInfo> m_materialInfoSet;
                     bool m_materialInfoSetHasBeenSet;

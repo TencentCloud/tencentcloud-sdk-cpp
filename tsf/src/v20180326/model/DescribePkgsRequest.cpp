@@ -31,7 +31,8 @@ DescribePkgsRequest::DescribePkgsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_repositoryTypeHasBeenSet(false),
-    m_repositoryIdHasBeenSet(false)
+    m_repositoryIdHasBeenSet(false),
+    m_packageTypeListHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,19 @@ string DescribePkgsRequest::ToJsonString() const
         string key = "RepositoryId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_repositoryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageTypeListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PackageTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_packageTypeList.begin(); itr != m_packageTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -240,6 +254,22 @@ void DescribePkgsRequest::SetRepositoryId(const string& _repositoryId)
 bool DescribePkgsRequest::RepositoryIdHasBeenSet() const
 {
     return m_repositoryIdHasBeenSet;
+}
+
+vector<string> DescribePkgsRequest::GetPackageTypeList() const
+{
+    return m_packageTypeList;
+}
+
+void DescribePkgsRequest::SetPackageTypeList(const vector<string>& _packageTypeList)
+{
+    m_packageTypeList = _packageTypeList;
+    m_packageTypeListHasBeenSet = true;
+}
+
+bool DescribePkgsRequest::PackageTypeListHasBeenSet() const
+{
+    return m_packageTypeListHasBeenSet;
 }
 
 

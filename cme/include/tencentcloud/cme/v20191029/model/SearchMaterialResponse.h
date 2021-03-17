@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取素材信息，仅返回基础信息。
-                     * @return MaterialInfoSet 素材信息，仅返回基础信息。
+                     * 获取媒体信息，仅返回基础信息。
+                     * @return MaterialInfoSet 媒体信息，仅返回基础信息。
                      */
                     std::vector<MaterialInfo> GetMaterialInfoSet() const;
 
@@ -76,7 +76,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 素材信息，仅返回基础信息。
+                     * 媒体信息，仅返回基础信息。
                      */
                     std::vector<MaterialInfo> m_materialInfoSet;
                     bool m_materialInfoSetHasBeenSet;

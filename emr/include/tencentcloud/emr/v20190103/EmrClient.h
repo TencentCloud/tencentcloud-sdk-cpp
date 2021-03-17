@@ -27,10 +27,14 @@
 #include <tencentcloud/emr/v20190103/model/CreateInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h>
+#include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h>
+#include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceRequest.h>
@@ -67,12 +71,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClusterNodesResponse> DescribeClusterNodesOutcome;
                 typedef std::future<DescribeClusterNodesOutcome> DescribeClusterNodesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeClusterNodesRequest&, DescribeClusterNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNodesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceRenewNodesResponse> DescribeInstanceRenewNodesOutcome;
+                typedef std::future<DescribeInstanceRenewNodesOutcome> DescribeInstanceRenewNodesOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeInstanceRenewNodesRequest&, DescribeInstanceRenewNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceRenewNodesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeJobFlowResponse> DescribeJobFlowOutcome;
                 typedef std::future<DescribeJobFlowOutcome> DescribeJobFlowOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeJobFlowRequest&, DescribeJobFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobFlowAsyncHandler;
+                typedef Outcome<Error, Model::InquirePriceRenewEmrResponse> InquirePriceRenewEmrOutcome;
+                typedef std::future<InquirePriceRenewEmrOutcome> InquirePriceRenewEmrOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::InquirePriceRenewEmrRequest&, InquirePriceRenewEmrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewEmrAsyncHandler;
                 typedef Outcome<Error, Model::InquiryPriceCreateInstanceResponse> InquiryPriceCreateInstanceOutcome;
                 typedef std::future<InquiryPriceCreateInstanceOutcome> InquiryPriceCreateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquiryPriceCreateInstanceRequest&, InquiryPriceCreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateInstanceAsyncHandler;
@@ -119,6 +129,15 @@ namespace TencentCloud
                 DescribeClusterNodesOutcomeCallable DescribeClusterNodesCallable(const Model::DescribeClusterNodesRequest& request);
 
                 /**
+                 *预付费集群隔离后续费资源查询
+                 * @param req DescribeInstanceRenewNodesRequest
+                 * @return DescribeInstanceRenewNodesOutcome
+                 */
+                DescribeInstanceRenewNodesOutcome DescribeInstanceRenewNodes(const Model::DescribeInstanceRenewNodesRequest &request);
+                void DescribeInstanceRenewNodesAsync(const Model::DescribeInstanceRenewNodesRequest& request, const DescribeInstanceRenewNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceRenewNodesOutcomeCallable DescribeInstanceRenewNodesCallable(const Model::DescribeInstanceRenewNodesRequest& request);
+
+                /**
                  *查询EMR实例
                  * @param req DescribeInstancesRequest
                  * @return DescribeInstancesOutcome
@@ -135,6 +154,15 @@ namespace TencentCloud
                 DescribeJobFlowOutcome DescribeJobFlow(const Model::DescribeJobFlowRequest &request);
                 void DescribeJobFlowAsync(const Model::DescribeJobFlowRequest& request, const DescribeJobFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJobFlowOutcomeCallable DescribeJobFlowCallable(const Model::DescribeJobFlowRequest& request);
+
+                /**
+                 *集群续费询价。
+                 * @param req InquirePriceRenewEmrRequest
+                 * @return InquirePriceRenewEmrOutcome
+                 */
+                InquirePriceRenewEmrOutcome InquirePriceRenewEmr(const Model::InquirePriceRenewEmrRequest &request);
+                void InquirePriceRenewEmrAsync(const Model::InquirePriceRenewEmrRequest& request, const InquirePriceRenewEmrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceRenewEmrOutcomeCallable InquirePriceRenewEmrCallable(const Model::InquirePriceRenewEmrRequest& request);
 
                 /**
                  *创建实例询价

@@ -29,10 +29,20 @@
 #include <tencentcloud/tbaas/v20180416/model/BlockByNumberHandlerResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/CreateChaincodeAndInstallForUserRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/CreateChaincodeAndInstallForUserResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/DeployDynamicBcosContractRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/DeployDynamicBcosContractResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/DeployDynamicContractHandlerRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/DeployDynamicContractHandlerResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/DownloadUserCertRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/DownloadUserCertResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBcosBlockByNumberRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBcosBlockByNumberResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBcosBlockListRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBcosBlockListResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBcosTransByHashRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBcosTransByHashResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBcosTransListRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBcosTransListResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetBlockListRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetBlockListResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetBlockListHandlerRequest.h>
@@ -67,6 +77,8 @@
 #include <tencentcloud/tbaas/v20180416/model/InitializeChaincodeForUserResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/InvokeBcosTransRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/InvokeBcosTransResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/SendTransactionHandlerRequest.h>
@@ -98,12 +110,27 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateChaincodeAndInstallForUserResponse> CreateChaincodeAndInstallForUserOutcome;
                 typedef std::future<CreateChaincodeAndInstallForUserOutcome> CreateChaincodeAndInstallForUserOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::CreateChaincodeAndInstallForUserRequest&, CreateChaincodeAndInstallForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChaincodeAndInstallForUserAsyncHandler;
+                typedef Outcome<Error, Model::DeployDynamicBcosContractResponse> DeployDynamicBcosContractOutcome;
+                typedef std::future<DeployDynamicBcosContractOutcome> DeployDynamicBcosContractOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::DeployDynamicBcosContractRequest&, DeployDynamicBcosContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployDynamicBcosContractAsyncHandler;
                 typedef Outcome<Error, Model::DeployDynamicContractHandlerResponse> DeployDynamicContractHandlerOutcome;
                 typedef std::future<DeployDynamicContractHandlerOutcome> DeployDynamicContractHandlerOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::DeployDynamicContractHandlerRequest&, DeployDynamicContractHandlerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployDynamicContractHandlerAsyncHandler;
                 typedef Outcome<Error, Model::DownloadUserCertResponse> DownloadUserCertOutcome;
                 typedef std::future<DownloadUserCertOutcome> DownloadUserCertOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::DownloadUserCertRequest&, DownloadUserCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadUserCertAsyncHandler;
+                typedef Outcome<Error, Model::GetBcosBlockByNumberResponse> GetBcosBlockByNumberOutcome;
+                typedef std::future<GetBcosBlockByNumberOutcome> GetBcosBlockByNumberOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetBcosBlockByNumberRequest&, GetBcosBlockByNumberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBcosBlockByNumberAsyncHandler;
+                typedef Outcome<Error, Model::GetBcosBlockListResponse> GetBcosBlockListOutcome;
+                typedef std::future<GetBcosBlockListOutcome> GetBcosBlockListOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetBcosBlockListRequest&, GetBcosBlockListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBcosBlockListAsyncHandler;
+                typedef Outcome<Error, Model::GetBcosTransByHashResponse> GetBcosTransByHashOutcome;
+                typedef std::future<GetBcosTransByHashOutcome> GetBcosTransByHashOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetBcosTransByHashRequest&, GetBcosTransByHashOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBcosTransByHashAsyncHandler;
+                typedef Outcome<Error, Model::GetBcosTransListResponse> GetBcosTransListOutcome;
+                typedef std::future<GetBcosTransListOutcome> GetBcosTransListOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetBcosTransListRequest&, GetBcosTransListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBcosTransListAsyncHandler;
                 typedef Outcome<Error, Model::GetBlockListResponse> GetBlockListOutcome;
                 typedef std::future<GetBlockListOutcome> GetBlockListOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetBlockListRequest&, GetBlockListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBlockListAsyncHandler;
@@ -155,6 +182,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::InvokeResponse> InvokeOutcome;
                 typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::InvokeRequest&, InvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeAsyncHandler;
+                typedef Outcome<Error, Model::InvokeBcosTransResponse> InvokeBcosTransOutcome;
+                typedef std::future<InvokeBcosTransOutcome> InvokeBcosTransOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::InvokeBcosTransRequest&, InvokeBcosTransOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeBcosTransAsyncHandler;
                 typedef Outcome<Error, Model::QueryResponse> QueryOutcome;
                 typedef std::future<QueryOutcome> QueryOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::QueryRequest&, QueryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAsyncHandler;
@@ -198,6 +228,15 @@ namespace TencentCloud
                 CreateChaincodeAndInstallForUserOutcomeCallable CreateChaincodeAndInstallForUserCallable(const Model::CreateChaincodeAndInstallForUserRequest& request);
 
                 /**
+                 *动态部署并发布Bcos合约
+                 * @param req DeployDynamicBcosContractRequest
+                 * @return DeployDynamicBcosContractOutcome
+                 */
+                DeployDynamicBcosContractOutcome DeployDynamicBcosContract(const Model::DeployDynamicBcosContractRequest &request);
+                void DeployDynamicBcosContractAsync(const Model::DeployDynamicBcosContractRequest& request, const DeployDynamicBcosContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployDynamicBcosContractOutcomeCallable DeployDynamicBcosContractCallable(const Model::DeployDynamicBcosContractRequest& request);
+
+                /**
                  *动态部署合约
                  * @param req DeployDynamicContractHandlerRequest
                  * @return DeployDynamicContractHandlerOutcome
@@ -214,6 +253,42 @@ namespace TencentCloud
                 DownloadUserCertOutcome DownloadUserCert(const Model::DownloadUserCertRequest &request);
                 void DownloadUserCertAsync(const Model::DownloadUserCertRequest& request, const DownloadUserCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadUserCertOutcomeCallable DownloadUserCertCallable(const Model::DownloadUserCertRequest& request);
+
+                /**
+                 *使用块高查询Bcos区块信息
+                 * @param req GetBcosBlockByNumberRequest
+                 * @return GetBcosBlockByNumberOutcome
+                 */
+                GetBcosBlockByNumberOutcome GetBcosBlockByNumber(const Model::GetBcosBlockByNumberRequest &request);
+                void GetBcosBlockByNumberAsync(const Model::GetBcosBlockByNumberRequest& request, const GetBcosBlockByNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetBcosBlockByNumberOutcomeCallable GetBcosBlockByNumberCallable(const Model::GetBcosBlockByNumberRequest& request);
+
+                /**
+                 *Bcos分页查询当前群组下的区块列表
+                 * @param req GetBcosBlockListRequest
+                 * @return GetBcosBlockListOutcome
+                 */
+                GetBcosBlockListOutcome GetBcosBlockList(const Model::GetBcosBlockListRequest &request);
+                void GetBcosBlockListAsync(const Model::GetBcosBlockListRequest& request, const GetBcosBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetBcosBlockListOutcomeCallable GetBcosBlockListCallable(const Model::GetBcosBlockListRequest& request);
+
+                /**
+                 *Bcos根据交易哈希查看交易详细信息
+                 * @param req GetBcosTransByHashRequest
+                 * @return GetBcosTransByHashOutcome
+                 */
+                GetBcosTransByHashOutcome GetBcosTransByHash(const Model::GetBcosTransByHashRequest &request);
+                void GetBcosTransByHashAsync(const Model::GetBcosTransByHashRequest& request, const GetBcosTransByHashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetBcosTransByHashOutcomeCallable GetBcosTransByHashCallable(const Model::GetBcosTransByHashRequest& request);
+
+                /**
+                 *Bcos分页查询当前群组的交易信息列表
+                 * @param req GetBcosTransListRequest
+                 * @return GetBcosTransListOutcome
+                 */
+                GetBcosTransListOutcome GetBcosTransList(const Model::GetBcosTransListRequest &request);
+                void GetBcosTransListAsync(const Model::GetBcosTransListRequest& request, const GetBcosTransListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetBcosTransListOutcomeCallable GetBcosTransListCallable(const Model::GetBcosTransListRequest& request);
 
                 /**
                  *查看当前网络下的所有区块列表，分页展示
@@ -367,6 +442,15 @@ namespace TencentCloud
                 InvokeOutcome Invoke(const Model::InvokeRequest &request);
                 void InvokeAsync(const Model::InvokeRequest& request, const InvokeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InvokeOutcomeCallable InvokeCallable(const Model::InvokeRequest& request);
+
+                /**
+                 *执行Bcos交易，支持动态部署的合约
+                 * @param req InvokeBcosTransRequest
+                 * @return InvokeBcosTransOutcome
+                 */
+                InvokeBcosTransOutcome InvokeBcosTrans(const Model::InvokeBcosTransRequest &request);
+                void InvokeBcosTransAsync(const Model::InvokeBcosTransRequest& request, const InvokeBcosTransAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeBcosTransOutcomeCallable InvokeBcosTransCallable(const Model::InvokeBcosTransRequest& request);
 
                 /**
                  *查询交易

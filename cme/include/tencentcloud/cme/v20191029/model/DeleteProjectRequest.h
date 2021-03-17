@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取操作者。填写用户的 Id，用于标识调用者及校验对项目删除操作权限。
+                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验对项目删除操作权限。
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置操作者。填写用户的 Id，用于标识调用者及校验对项目删除操作权限。
+                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验对项目删除操作权限。
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 操作者。填写用户的 Id，用于标识调用者及校验对项目删除操作权限。
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

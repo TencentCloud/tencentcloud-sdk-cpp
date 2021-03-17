@@ -27,7 +27,9 @@ SubAccountUser::SubAccountUser() :
     m_uidHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+    m_userTypeHasBeenSet(false),
+    m_lastLoginIpHasBeenSet(false),
+    m_lastLoginTimeHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,26 @@ CoreInternalOutcome SubAccountUser::Deserialize(const Value &value)
         m_userTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("LastLoginIp") && !value["LastLoginIp"].IsNull())
+    {
+        if (!value["LastLoginIp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubAccountUser.LastLoginIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastLoginIp = string(value["LastLoginIp"].GetString());
+        m_lastLoginIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastLoginTime") && !value["LastLoginTime"].IsNull())
+    {
+        if (!value["LastLoginTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubAccountUser.LastLoginTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastLoginTime = string(value["LastLoginTime"].GetString());
+        m_lastLoginTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +171,22 @@ void SubAccountUser::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_userType, allocator);
+    }
+
+    if (m_lastLoginIpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LastLoginIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_lastLoginIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastLoginTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LastLoginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_lastLoginTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +286,37 @@ void SubAccountUser::SetUserType(const uint64_t& _userType)
 bool SubAccountUser::UserTypeHasBeenSet() const
 {
     return m_userTypeHasBeenSet;
+}
+
+string SubAccountUser::GetLastLoginIp() const
+{
+    return m_lastLoginIp;
+}
+
+void SubAccountUser::SetLastLoginIp(const string& _lastLoginIp)
+{
+    m_lastLoginIp = _lastLoginIp;
+    m_lastLoginIpHasBeenSet = true;
+}
+
+bool SubAccountUser::LastLoginIpHasBeenSet() const
+{
+    return m_lastLoginIpHasBeenSet;
+}
+
+string SubAccountUser::GetLastLoginTime() const
+{
+    return m_lastLoginTime;
+}
+
+void SubAccountUser::SetLastLoginTime(const string& _lastLoginTime)
+{
+    m_lastLoginTime = _lastLoginTime;
+    m_lastLoginTimeHasBeenSet = true;
+}
+
+bool SubAccountUser::LastLoginTimeHasBeenSet() const
+{
+    return m_lastLoginTimeHasBeenSet;
 }
 

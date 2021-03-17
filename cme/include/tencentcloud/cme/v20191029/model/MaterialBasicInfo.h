@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/Entity.h>
+#include <tencentcloud/cme/v20191029/model/PresetTagInfo.h>
 #include <tencentcloud/cme/v20191029/model/MaterialTagInfo.h>
 
 
@@ -37,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 素材基本信息。
+                * 媒体基本信息。
                 */
                 class MaterialBasicInfo : public AbstractModel
                 {
@@ -49,14 +50,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取素材 Id。
-                     * @return MaterialId 素材 Id。
+                     * 获取媒体 Id。
+                     * @return MaterialId 媒体 Id。
                      */
                     std::string GetMaterialId() const;
 
                     /**
-                     * 设置素材 Id。
-                     * @param MaterialId 素材 Id。
+                     * 设置媒体 Id。
+                     * @param MaterialId 媒体 Id。
                      */
                     void SetMaterialId(const std::string& _materialId);
 
@@ -67,14 +68,34 @@ namespace TencentCloud
                     bool MaterialIdHasBeenSet() const;
 
                     /**
-                     * 获取素材类型，取值为：音频（AUDIO）、视频（VIDEO）、图片（IMAGE）、链接（LINK）、字幕 （SUBTITLE）、转场（TRANSITION）、滤镜（FILTER）、文本文字（TEXT）、图文动效（TEXT_IMAGE）。
-                     * @return MaterialType 素材类型，取值为：音频（AUDIO）、视频（VIDEO）、图片（IMAGE）、链接（LINK）、字幕 （SUBTITLE）、转场（TRANSITION）、滤镜（FILTER）、文本文字（TEXT）、图文动效（TEXT_IMAGE）。
+                     * 获取媒体类型，取值为：
+<li> AUDIO :音频;</li>
+<li> VIDEO :视频;</li>
+<li> IMAGE :图片;</li>
+<li> LINK  :链接.</li>
+<li> OTHER : 其他.</li>
+                     * @return MaterialType 媒体类型，取值为：
+<li> AUDIO :音频;</li>
+<li> VIDEO :视频;</li>
+<li> IMAGE :图片;</li>
+<li> LINK  :链接.</li>
+<li> OTHER : 其他.</li>
                      */
                     std::string GetMaterialType() const;
 
                     /**
-                     * 设置素材类型，取值为：音频（AUDIO）、视频（VIDEO）、图片（IMAGE）、链接（LINK）、字幕 （SUBTITLE）、转场（TRANSITION）、滤镜（FILTER）、文本文字（TEXT）、图文动效（TEXT_IMAGE）。
-                     * @param MaterialType 素材类型，取值为：音频（AUDIO）、视频（VIDEO）、图片（IMAGE）、链接（LINK）、字幕 （SUBTITLE）、转场（TRANSITION）、滤镜（FILTER）、文本文字（TEXT）、图文动效（TEXT_IMAGE）。
+                     * 设置媒体类型，取值为：
+<li> AUDIO :音频;</li>
+<li> VIDEO :视频;</li>
+<li> IMAGE :图片;</li>
+<li> LINK  :链接.</li>
+<li> OTHER : 其他.</li>
+                     * @param MaterialType 媒体类型，取值为：
+<li> AUDIO :音频;</li>
+<li> VIDEO :视频;</li>
+<li> IMAGE :图片;</li>
+<li> LINK  :链接.</li>
+<li> OTHER : 其他.</li>
                      */
                     void SetMaterialType(const std::string& _materialType);
 
@@ -85,14 +106,14 @@ namespace TencentCloud
                     bool MaterialTypeHasBeenSet() const;
 
                     /**
-                     * 获取素材归属实体。
-                     * @return Owner 素材归属实体。
+                     * 获取媒体归属实体。
+                     * @return Owner 媒体归属实体。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置素材归属实体。
-                     * @param Owner 素材归属实体。
+                     * 设置媒体归属实体。
+                     * @param Owner 媒体归属实体。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -103,14 +124,14 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取素材名称。
-                     * @return Name 素材名称。
+                     * 获取媒体名称。
+                     * @return Name 媒体名称。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置素材名称。
-                     * @param Name 素材名称。
+                     * 设置媒体名称。
+                     * @param Name 媒体名称。
                      */
                     void SetName(const std::string& _name);
 
@@ -121,14 +142,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取素材文件的创建时间，使用 ISO 日期格式。
-                     * @return CreateTime 素材文件的创建时间，使用 ISO 日期格式。
+                     * 获取媒体文件的创建时间，使用 ISO 日期格式。
+                     * @return CreateTime 媒体文件的创建时间，使用 ISO 日期格式。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置素材文件的创建时间，使用 ISO 日期格式。
-                     * @param CreateTime 素材文件的创建时间，使用 ISO 日期格式。
+                     * 设置媒体文件的创建时间，使用 ISO 日期格式。
+                     * @param CreateTime 媒体文件的创建时间，使用 ISO 日期格式。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -139,14 +160,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取素材文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
-                     * @return UpdateTime 素材文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
+                     * 获取媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
+                     * @return UpdateTime 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置素材文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
-                     * @param UpdateTime 素材文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
+                     * 设置媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
+                     * @param UpdateTime 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -157,14 +178,14 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取素材的分类目录路径。
-                     * @return ClassPath 素材的分类目录路径。
+                     * 获取媒体的分类路径。
+                     * @return ClassPath 媒体的分类路径。
                      */
                     std::string GetClassPath() const;
 
                     /**
-                     * 设置素材的分类目录路径。
-                     * @param ClassPath 素材的分类目录路径。
+                     * 设置媒体的分类路径。
+                     * @param ClassPath 媒体的分类路径。
                      */
                     void SetClassPath(const std::string& _classPath);
 
@@ -175,17 +196,75 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取素材绑定的标签信息列表 。
+                     * 获取预置标签列表。
+                     * @return PresetTagSet 预置标签列表。
+                     */
+                    std::vector<PresetTagInfo> GetPresetTagSet() const;
+
+                    /**
+                     * 设置预置标签列表。
+                     * @param PresetTagSet 预置标签列表。
+                     */
+                    void SetPresetTagSet(const std::vector<PresetTagInfo>& _presetTagSet);
+
+                    /**
+                     * 判断参数 PresetTagSet 是否已赋值
+                     * @return PresetTagSet 是否已赋值
+                     */
+                    bool PresetTagSetHasBeenSet() const;
+
+                    /**
+                     * 获取人工标签列表。
+                     * @return TagSet 人工标签列表。
+                     */
+                    std::vector<std::string> GetTagSet() const;
+
+                    /**
+                     * 设置人工标签列表。
+                     * @param TagSet 人工标签列表。
+                     */
+                    void SetTagSet(const std::vector<std::string>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     */
+                    bool TagSetHasBeenSet() const;
+
+                    /**
+                     * 获取媒体文件的预览图。
+                     * @return PreviewUrl 媒体文件的预览图。
+                     */
+                    std::string GetPreviewUrl() const;
+
+                    /**
+                     * 设置媒体文件的预览图。
+                     * @param PreviewUrl 媒体文件的预览图。
+                     */
+                    void SetPreviewUrl(const std::string& _previewUrl);
+
+                    /**
+                     * 判断参数 PreviewUrl 是否已赋值
+                     * @return PreviewUrl 是否已赋值
+                     */
+                    bool PreviewUrlHasBeenSet() const;
+
+                    /**
+                     * 获取媒体绑定的标签信息列表 。
+该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagInfoSet 素材绑定的标签信息列表 。
+                     * @return TagInfoSet 媒体绑定的标签信息列表 。
+该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MaterialTagInfo> GetTagInfoSet() const;
 
                     /**
-                     * 设置素材绑定的标签信息列表 。
+                     * 设置媒体绑定的标签信息列表 。
+该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagInfoSet 素材绑定的标签信息列表 。
+                     * @param TagInfoSet 媒体绑定的标签信息列表 。
+该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTagInfoSet(const std::vector<MaterialTagInfo>& _tagInfoSet);
@@ -196,80 +275,80 @@ namespace TencentCloud
                      */
                     bool TagInfoSetHasBeenSet() const;
 
-                    /**
-                     * 获取素材媒体文件的预览图。
-                     * @return PreviewUrl 素材媒体文件的预览图。
-                     */
-                    std::string GetPreviewUrl() const;
-
-                    /**
-                     * 设置素材媒体文件的预览图。
-                     * @param PreviewUrl 素材媒体文件的预览图。
-                     */
-                    void SetPreviewUrl(const std::string& _previewUrl);
-
-                    /**
-                     * 判断参数 PreviewUrl 是否已赋值
-                     * @return PreviewUrl 是否已赋值
-                     */
-                    bool PreviewUrlHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 素材 Id。
+                     * 媒体 Id。
                      */
                     std::string m_materialId;
                     bool m_materialIdHasBeenSet;
 
                     /**
-                     * 素材类型，取值为：音频（AUDIO）、视频（VIDEO）、图片（IMAGE）、链接（LINK）、字幕 （SUBTITLE）、转场（TRANSITION）、滤镜（FILTER）、文本文字（TEXT）、图文动效（TEXT_IMAGE）。
+                     * 媒体类型，取值为：
+<li> AUDIO :音频;</li>
+<li> VIDEO :视频;</li>
+<li> IMAGE :图片;</li>
+<li> LINK  :链接.</li>
+<li> OTHER : 其他.</li>
                      */
                     std::string m_materialType;
                     bool m_materialTypeHasBeenSet;
 
                     /**
-                     * 素材归属实体。
+                     * 媒体归属实体。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 素材名称。
+                     * 媒体名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 素材文件的创建时间，使用 ISO 日期格式。
+                     * 媒体文件的创建时间，使用 ISO 日期格式。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 素材文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
+                     * 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 素材的分类目录路径。
+                     * 媒体的分类路径。
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;
 
                     /**
-                     * 素材绑定的标签信息列表 。
+                     * 预置标签列表。
+                     */
+                    std::vector<PresetTagInfo> m_presetTagSet;
+                    bool m_presetTagSetHasBeenSet;
+
+                    /**
+                     * 人工标签列表。
+                     */
+                    std::vector<std::string> m_tagSet;
+                    bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 媒体文件的预览图。
+                     */
+                    std::string m_previewUrl;
+                    bool m_previewUrlHasBeenSet;
+
+                    /**
+                     * 媒体绑定的标签信息列表 。
+该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MaterialTagInfo> m_tagInfoSet;
                     bool m_tagInfoSetHasBeenSet;
-
-                    /**
-                     * 素材媒体文件的预览图。
-                     */
-                    std::string m_previewUrl;
-                    bool m_previewUrlHasBeenSet;
 
                 };
             }

@@ -169,6 +169,49 @@ TbaasClient::CreateChaincodeAndInstallForUserOutcomeCallable TbaasClient::Create
     return task->get_future();
 }
 
+TbaasClient::DeployDynamicBcosContractOutcome TbaasClient::DeployDynamicBcosContract(const DeployDynamicBcosContractRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeployDynamicBcosContract");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployDynamicBcosContractResponse rsp = DeployDynamicBcosContractResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployDynamicBcosContractOutcome(rsp);
+        else
+            return DeployDynamicBcosContractOutcome(o.GetError());
+    }
+    else
+    {
+        return DeployDynamicBcosContractOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::DeployDynamicBcosContractAsync(const DeployDynamicBcosContractRequest& request, const DeployDynamicBcosContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeployDynamicBcosContract(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::DeployDynamicBcosContractOutcomeCallable TbaasClient::DeployDynamicBcosContractCallable(const DeployDynamicBcosContractRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeployDynamicBcosContractOutcome()>>(
+        [this, request]()
+        {
+            return this->DeployDynamicBcosContract(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::DeployDynamicContractHandlerOutcome TbaasClient::DeployDynamicContractHandler(const DeployDynamicContractHandlerRequest &request)
 {
     auto outcome = MakeRequest(request, "DeployDynamicContractHandler");
@@ -248,6 +291,178 @@ TbaasClient::DownloadUserCertOutcomeCallable TbaasClient::DownloadUserCertCallab
         [this, request]()
         {
             return this->DownloadUserCert(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetBcosBlockByNumberOutcome TbaasClient::GetBcosBlockByNumber(const GetBcosBlockByNumberRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetBcosBlockByNumber");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetBcosBlockByNumberResponse rsp = GetBcosBlockByNumberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetBcosBlockByNumberOutcome(rsp);
+        else
+            return GetBcosBlockByNumberOutcome(o.GetError());
+    }
+    else
+    {
+        return GetBcosBlockByNumberOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetBcosBlockByNumberAsync(const GetBcosBlockByNumberRequest& request, const GetBcosBlockByNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetBcosBlockByNumber(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetBcosBlockByNumberOutcomeCallable TbaasClient::GetBcosBlockByNumberCallable(const GetBcosBlockByNumberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetBcosBlockByNumberOutcome()>>(
+        [this, request]()
+        {
+            return this->GetBcosBlockByNumber(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetBcosBlockListOutcome TbaasClient::GetBcosBlockList(const GetBcosBlockListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetBcosBlockList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetBcosBlockListResponse rsp = GetBcosBlockListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetBcosBlockListOutcome(rsp);
+        else
+            return GetBcosBlockListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetBcosBlockListOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetBcosBlockListAsync(const GetBcosBlockListRequest& request, const GetBcosBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetBcosBlockList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetBcosBlockListOutcomeCallable TbaasClient::GetBcosBlockListCallable(const GetBcosBlockListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetBcosBlockListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetBcosBlockList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetBcosTransByHashOutcome TbaasClient::GetBcosTransByHash(const GetBcosTransByHashRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetBcosTransByHash");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetBcosTransByHashResponse rsp = GetBcosTransByHashResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetBcosTransByHashOutcome(rsp);
+        else
+            return GetBcosTransByHashOutcome(o.GetError());
+    }
+    else
+    {
+        return GetBcosTransByHashOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetBcosTransByHashAsync(const GetBcosTransByHashRequest& request, const GetBcosTransByHashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetBcosTransByHash(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetBcosTransByHashOutcomeCallable TbaasClient::GetBcosTransByHashCallable(const GetBcosTransByHashRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetBcosTransByHashOutcome()>>(
+        [this, request]()
+        {
+            return this->GetBcosTransByHash(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetBcosTransListOutcome TbaasClient::GetBcosTransList(const GetBcosTransListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetBcosTransList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetBcosTransListResponse rsp = GetBcosTransListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetBcosTransListOutcome(rsp);
+        else
+            return GetBcosTransListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetBcosTransListOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetBcosTransListAsync(const GetBcosTransListRequest& request, const GetBcosTransListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetBcosTransList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetBcosTransListOutcomeCallable TbaasClient::GetBcosTransListCallable(const GetBcosTransListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetBcosTransListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetBcosTransList(request);
         }
     );
 
@@ -979,6 +1194,49 @@ TbaasClient::InvokeOutcomeCallable TbaasClient::InvokeCallable(const InvokeReque
         [this, request]()
         {
             return this->Invoke(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::InvokeBcosTransOutcome TbaasClient::InvokeBcosTrans(const InvokeBcosTransRequest &request)
+{
+    auto outcome = MakeRequest(request, "InvokeBcosTrans");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InvokeBcosTransResponse rsp = InvokeBcosTransResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InvokeBcosTransOutcome(rsp);
+        else
+            return InvokeBcosTransOutcome(o.GetError());
+    }
+    else
+    {
+        return InvokeBcosTransOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::InvokeBcosTransAsync(const InvokeBcosTransRequest& request, const InvokeBcosTransAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InvokeBcosTrans(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::InvokeBcosTransOutcomeCallable TbaasClient::InvokeBcosTransCallable(const InvokeBcosTransRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InvokeBcosTransOutcome()>>(
+        [this, request]()
+        {
+            return this->InvokeBcosTrans(request);
         }
     );
 

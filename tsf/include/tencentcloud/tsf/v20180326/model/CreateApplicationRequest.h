@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/ServiceConfig.h>
 
 
 namespace TencentCloud
@@ -186,6 +187,24 @@ namespace TencentCloud
                      */
                     bool ProgramIdHasBeenSet() const;
 
+                    /**
+                     * 获取服务配置信息列表
+                     * @return ServiceConfigList 服务配置信息列表
+                     */
+                    std::vector<ServiceConfig> GetServiceConfigList() const;
+
+                    /**
+                     * 设置服务配置信息列表
+                     * @param ServiceConfigList 服务配置信息列表
+                     */
+                    void SetServiceConfigList(const std::vector<ServiceConfig>& _serviceConfigList);
+
+                    /**
+                     * 判断参数 ServiceConfigList 是否已赋值
+                     * @return ServiceConfigList 是否已赋值
+                     */
+                    bool ServiceConfigListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +254,12 @@ namespace TencentCloud
                      */
                     std::string m_programId;
                     bool m_programIdHasBeenSet;
+
+                    /**
+                     * 服务配置信息列表
+                     */
+                    std::vector<ServiceConfig> m_serviceConfigList;
+                    bool m_serviceConfigListHasBeenSet;
 
                 };
             }

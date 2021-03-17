@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 获取操作者。填写用户的 Id，用于标识调用者及校验分类创建权限。
+                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验分类创建权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 设置操作者。填写用户的 Id，用于标识调用者及校验分类创建权限。
+                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验分类创建权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_classPathHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 操作者。填写用户的 Id，用于标识调用者及校验分类创建权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

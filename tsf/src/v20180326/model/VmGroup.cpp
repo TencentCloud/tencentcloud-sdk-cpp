@@ -52,7 +52,10 @@ VmGroup::VmGroup() :
     m_deployExeModeHasBeenSet(false),
     m_deployWaitTimeHasBeenSet(false),
     m_enableHealthCheckHasBeenSet(false),
-    m_healthCheckSettingsHasBeenSet(false)
+    m_healthCheckSettingsHasBeenSet(false),
+    m_packageTypeHasBeenSet(false),
+    m_startScriptHasBeenSet(false),
+    m_stopScriptHasBeenSet(false)
 {
 }
 
@@ -381,6 +384,36 @@ CoreInternalOutcome VmGroup::Deserialize(const Value &value)
         m_healthCheckSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("PackageType") && !value["PackageType"].IsNull())
+    {
+        if (!value["PackageType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.PackageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageType = string(value["PackageType"].GetString());
+        m_packageTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartScript") && !value["StartScript"].IsNull())
+    {
+        if (!value["StartScript"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.StartScript` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startScript = string(value["StartScript"].GetString());
+        m_startScriptHasBeenSet = true;
+    }
+
+    if (value.HasMember("StopScript") && !value["StopScript"].IsNull())
+    {
+        if (!value["StopScript"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.StopScript` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stopScript = string(value["StopScript"].GetString());
+        m_stopScriptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -640,6 +673,30 @@ void VmGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_healthCheckSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_packageTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PackageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_packageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startScriptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartScript";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stopScriptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StopScript";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_stopScript.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1139,5 +1196,53 @@ void VmGroup::SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSett
 bool VmGroup::HealthCheckSettingsHasBeenSet() const
 {
     return m_healthCheckSettingsHasBeenSet;
+}
+
+string VmGroup::GetPackageType() const
+{
+    return m_packageType;
+}
+
+void VmGroup::SetPackageType(const string& _packageType)
+{
+    m_packageType = _packageType;
+    m_packageTypeHasBeenSet = true;
+}
+
+bool VmGroup::PackageTypeHasBeenSet() const
+{
+    return m_packageTypeHasBeenSet;
+}
+
+string VmGroup::GetStartScript() const
+{
+    return m_startScript;
+}
+
+void VmGroup::SetStartScript(const string& _startScript)
+{
+    m_startScript = _startScript;
+    m_startScriptHasBeenSet = true;
+}
+
+bool VmGroup::StartScriptHasBeenSet() const
+{
+    return m_startScriptHasBeenSet;
+}
+
+string VmGroup::GetStopScript() const
+{
+    return m_stopScript;
+}
+
+void VmGroup::SetStopScript(const string& _stopScript)
+{
+    m_stopScript = _stopScript;
+    m_stopScriptHasBeenSet = true;
+}
+
+bool VmGroup::StopScriptHasBeenSet() const
+{
+    return m_stopScriptHasBeenSet;
 }
 

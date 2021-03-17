@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取资源所属实体。
-                     * @return Owner 资源所属实体。
+                     * 获取资源归属者，个人或者团队。
+                     * @return Owner 资源归属者，个人或者团队。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置资源所属实体。
-                     * @param Owner 资源所属实体。
+                     * 设置资源归属者，个人或者团队。
+                     * @param Owner 资源归属者，个人或者团队。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool ResourcesHasBeenSet() const;
 
                     /**
-                     * 获取被授权目标实体。
-                     * @return Authorizees 被授权目标实体。
+                     * 获取被授权目标，个人或者团队。
+                     * @return Authorizees 被授权目标，个人或者团队。
                      */
                     std::vector<Entity> GetAuthorizees() const;
 
                     /**
-                     * 设置被授权目标实体。
-                     * @param Authorizees 被授权目标实体。
+                     * 设置被授权目标，个人或者团队。
+                     * @param Authorizees 被授权目标，个人或者团队。
                      */
                     void SetAuthorizees(const std::vector<Entity>& _authorizees);
 
@@ -118,12 +118,12 @@ namespace TencentCloud
 
                     /**
                      * 获取详细授权值。 取值有：
-<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>
+<li>R：可读，可以浏览媒体，但不能使用该媒体文件（将其添加到 Project），或复制到自己的媒资库中</li>
 <li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>
 <li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>
 <li>W：可修改、删除媒资。</li>
                      * @return Permissions 详细授权值。 取值有：
-<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>
+<li>R：可读，可以浏览媒体，但不能使用该媒体文件（将其添加到 Project），或复制到自己的媒资库中</li>
 <li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>
 <li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>
 <li>W：可修改、删除媒资。</li>
@@ -132,12 +132,12 @@ namespace TencentCloud
 
                     /**
                      * 设置详细授权值。 取值有：
-<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>
+<li>R：可读，可以浏览媒体，但不能使用该媒体文件（将其添加到 Project），或复制到自己的媒资库中</li>
 <li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>
 <li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>
 <li>W：可修改、删除媒资。</li>
                      * @param Permissions 详细授权值。 取值有：
-<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>
+<li>R：可读，可以浏览媒体，但不能使用该媒体文件（将其添加到 Project），或复制到自己的媒资库中</li>
 <li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>
 <li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>
 <li>W：可修改、删除媒资。</li>
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 资源所属实体。
+                     * 资源归属者，个人或者团队。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
@@ -189,14 +189,14 @@ namespace TencentCloud
                     bool m_resourcesHasBeenSet;
 
                     /**
-                     * 被授权目标实体。
+                     * 被授权目标，个人或者团队。
                      */
                     std::vector<Entity> m_authorizees;
                     bool m_authorizeesHasBeenSet;
 
                     /**
                      * 详细授权值。 取值有：
-<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>
+<li>R：可读，可以浏览媒体，但不能使用该媒体文件（将其添加到 Project），或复制到自己的媒资库中</li>
 <li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>
 <li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>
 <li>W：可修改、删除媒资。</li>

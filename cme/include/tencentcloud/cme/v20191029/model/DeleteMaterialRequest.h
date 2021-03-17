@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取素材 Id。
-                     * @return MaterialId 素材 Id。
+                     * 获取媒体 Id。
+                     * @return MaterialId 媒体 Id。
                      */
                     std::string GetMaterialId() const;
 
                     /**
-                     * 设置素材 Id。
-                     * @param MaterialId 素材 Id。
+                     * 设置媒体 Id。
+                     * @param MaterialId 媒体 Id。
                      */
                     void SetMaterialId(const std::string& _materialId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool MaterialIdHasBeenSet() const;
 
                     /**
-                     * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 获取操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。
+                     * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 设置操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。
+                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 素材 Id。
+                     * 媒体 Id。
                      */
                     std::string m_materialId;
                     bool m_materialIdHasBeenSet;
 
                     /**
-                     * 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

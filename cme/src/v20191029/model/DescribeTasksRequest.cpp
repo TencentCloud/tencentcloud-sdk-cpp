@@ -29,7 +29,8 @@ DescribeTasksRequest::DescribeTasksRequest() :
     m_taskTypeSetHasBeenSet(false),
     m_statusSetHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,14 @@ string DescribeTasksRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -200,6 +209,22 @@ void DescribeTasksRequest::SetLimit(const uint64_t& _limit)
 bool DescribeTasksRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeTasksRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void DescribeTasksRequest::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

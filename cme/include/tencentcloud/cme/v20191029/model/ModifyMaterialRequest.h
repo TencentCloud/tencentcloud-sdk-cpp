@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取素材 Id。
-                     * @return MaterialId 素材 Id。
+                     * 获取媒体 Id。
+                     * @return MaterialId 媒体 Id。
                      */
                     std::string GetMaterialId() const;
 
                     /**
-                     * 设置素材 Id。
-                     * @param MaterialId 素材 Id。
+                     * 设置媒体 Id。
+                     * @param MaterialId 媒体 Id。
                      */
                     void SetMaterialId(const std::string& _materialId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool MaterialIdHasBeenSet() const;
 
                     /**
-                     * 获取素材归属。
-                     * @return Owner 素材归属。
+                     * 获取媒体或分类路径归属。
+                     * @return Owner 媒体或分类路径归属。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置素材归属。
-                     * @param Owner 素材归属。
+                     * 设置媒体或分类路径归属。
+                     * @param Owner 媒体或分类路径归属。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取素材名称，不能超过30个字符。
-                     * @return Name 素材名称，不能超过30个字符。
+                     * 获取媒体名称，不能超过30个字符。
+                     * @return Name 媒体名称，不能超过30个字符。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置素材名称，不能超过30个字符。
-                     * @param Name 素材名称，不能超过30个字符。
+                     * 设置媒体名称，不能超过30个字符。
+                     * @param Name 媒体名称，不能超过30个字符。
                      */
                     void SetName(const std::string& _name);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取素材分类路径，例如填写"/a/b"，则代表该素材存储的路径为"/a/b"。
-                     * @return ClassPath 素材分类路径，例如填写"/a/b"，则代表该素材存储的路径为"/a/b"。
+                     * 获取媒体分类路径，例如填写"/a/b"，则代表该媒体存储的路径为"/a/b"。若修改分类路径，则 Owner 字段必填。
+                     * @return ClassPath 媒体分类路径，例如填写"/a/b"，则代表该媒体存储的路径为"/a/b"。若修改分类路径，则 Owner 字段必填。
                      */
                     std::string GetClassPath() const;
 
                     /**
-                     * 设置素材分类路径，例如填写"/a/b"，则代表该素材存储的路径为"/a/b"。
-                     * @param ClassPath 素材分类路径，例如填写"/a/b"，则代表该素材存储的路径为"/a/b"。
+                     * 设置媒体分类路径，例如填写"/a/b"，则代表该媒体存储的路径为"/a/b"。若修改分类路径，则 Owner 字段必填。
+                     * @param ClassPath 媒体分类路径，例如填写"/a/b"，则代表该媒体存储的路径为"/a/b"。若修改分类路径，则 Owner 字段必填。
                      */
                     void SetClassPath(const std::string& _classPath);
 
@@ -160,25 +160,25 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 素材 Id。
+                     * 媒体 Id。
                      */
                     std::string m_materialId;
                     bool m_materialIdHasBeenSet;
 
                     /**
-                     * 素材归属。
+                     * 媒体或分类路径归属。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 素材名称，不能超过30个字符。
+                     * 媒体名称，不能超过30个字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 素材分类路径，例如填写"/a/b"，则代表该素材存储的路径为"/a/b"。
+                     * 媒体分类路径，例如填写"/a/b"，则代表该媒体存储的路径为"/a/b"。若修改分类路径，则 Owner 字段必填。
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;

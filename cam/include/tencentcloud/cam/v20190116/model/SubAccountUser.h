@@ -158,6 +158,46 @@ namespace TencentCloud
                      */
                     bool UserTypeHasBeenSet() const;
 
+                    /**
+                     * 获取最近登录IP
+                     * @return LastLoginIp 最近登录IP
+                     */
+                    std::string GetLastLoginIp() const;
+
+                    /**
+                     * 设置最近登录IP
+                     * @param LastLoginIp 最近登录IP
+                     */
+                    void SetLastLoginIp(const std::string& _lastLoginIp);
+
+                    /**
+                     * 判断参数 LastLoginIp 是否已赋值
+                     * @return LastLoginIp 是否已赋值
+                     */
+                    bool LastLoginIpHasBeenSet() const;
+
+                    /**
+                     * 获取最近登录时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastLoginTime 最近登录时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLastLoginTime() const;
+
+                    /**
+                     * 设置最近登录时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LastLoginTime 最近登录时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLastLoginTime(const std::string& _lastLoginTime);
+
+                    /**
+                     * 判断参数 LastLoginTime 是否已赋值
+                     * @return LastLoginTime 是否已赋值
+                     */
+                    bool LastLoginTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -196,6 +236,19 @@ namespace TencentCloud
                      */
                     uint64_t m_userType;
                     bool m_userTypeHasBeenSet;
+
+                    /**
+                     * 最近登录IP
+                     */
+                    std::string m_lastLoginIp;
+                    bool m_lastLoginIpHasBeenSet;
+
+                    /**
+                     * 最近登录时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastLoginTime;
+                    bool m_lastLoginTimeHasBeenSet;
 
                 };
             }

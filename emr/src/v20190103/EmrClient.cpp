@@ -126,6 +126,49 @@ EmrClient::DescribeClusterNodesOutcomeCallable EmrClient::DescribeClusterNodesCa
     return task->get_future();
 }
 
+EmrClient::DescribeInstanceRenewNodesOutcome EmrClient::DescribeInstanceRenewNodes(const DescribeInstanceRenewNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceRenewNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceRenewNodesResponse rsp = DescribeInstanceRenewNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceRenewNodesOutcome(rsp);
+        else
+            return DescribeInstanceRenewNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceRenewNodesOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeInstanceRenewNodesAsync(const DescribeInstanceRenewNodesRequest& request, const DescribeInstanceRenewNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceRenewNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeInstanceRenewNodesOutcomeCallable EmrClient::DescribeInstanceRenewNodesCallable(const DescribeInstanceRenewNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceRenewNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceRenewNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeInstancesOutcome EmrClient::DescribeInstances(const DescribeInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstances");
@@ -205,6 +248,49 @@ EmrClient::DescribeJobFlowOutcomeCallable EmrClient::DescribeJobFlowCallable(con
         [this, request]()
         {
             return this->DescribeJobFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::InquirePriceRenewEmrOutcome EmrClient::InquirePriceRenewEmr(const InquirePriceRenewEmrRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceRenewEmr");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceRenewEmrResponse rsp = InquirePriceRenewEmrResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceRenewEmrOutcome(rsp);
+        else
+            return InquirePriceRenewEmrOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceRenewEmrOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::InquirePriceRenewEmrAsync(const InquirePriceRenewEmrRequest& request, const InquirePriceRenewEmrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceRenewEmr(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::InquirePriceRenewEmrOutcomeCallable EmrClient::InquirePriceRenewEmrCallable(const InquirePriceRenewEmrRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceRenewEmrOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceRenewEmr(request);
         }
     );
 

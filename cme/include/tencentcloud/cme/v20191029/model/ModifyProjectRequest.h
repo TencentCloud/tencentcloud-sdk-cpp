@@ -124,14 +124,14 @@ namespace TencentCloud
                     bool AspectRatioHasBeenSet() const;
 
                     /**
-                     * 获取归属者。
-                     * @return Owner 归属者。
+                     * 获取项目归属者。
+                     * @return Owner 项目归属者。
                      */
                     Entity GetOwner() const;
 
                     /**
-                     * 设置归属者。
-                     * @param Owner 归属者。
+                     * 设置项目归属者。
+                     * @param Owner 项目归属者。
                      */
                     void SetOwner(const Entity& _owner);
 
@@ -170,7 +170,7 @@ namespace TencentCloud
                     bool m_aspectRatioHasBeenSet;
 
                     /**
-                     * 归属者。
+                     * 项目归属者。
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;

@@ -33,7 +33,8 @@ ApplicationForPage::ApplicationForPage() :
     m_applicationResourceTypeHasBeenSet(false),
     m_applicationRuntimeTypeHasBeenSet(false),
     m_apigatewayServiceIdHasBeenSet(false),
-    m_applicationRemarkNameHasBeenSet(false)
+    m_applicationRemarkNameHasBeenSet(false),
+    m_serviceConfigListHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,26 @@ CoreInternalOutcome ApplicationForPage::Deserialize(const Value &value)
         m_applicationRemarkNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceConfigList") && !value["ServiceConfigList"].IsNull())
+    {
+        if (!value["ServiceConfigList"].IsArray())
+            return CoreInternalOutcome(Error("response `ApplicationForPage.ServiceConfigList` is not array type"));
+
+        const Value &tmpValue = value["ServiceConfigList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ServiceConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serviceConfigList.push_back(item);
+        }
+        m_serviceConfigListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +284,21 @@ void ApplicationForPage::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "ApplicationRemarkName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_applicationRemarkName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceConfigListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceConfigList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceConfigList.begin(); itr != m_serviceConfigList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -458,5 +494,21 @@ void ApplicationForPage::SetApplicationRemarkName(const string& _applicationRema
 bool ApplicationForPage::ApplicationRemarkNameHasBeenSet() const
 {
     return m_applicationRemarkNameHasBeenSet;
+}
+
+vector<ServiceConfig> ApplicationForPage::GetServiceConfigList() const
+{
+    return m_serviceConfigList;
+}
+
+void ApplicationForPage::SetServiceConfigList(const vector<ServiceConfig>& _serviceConfigList)
+{
+    m_serviceConfigList = _serviceConfigList;
+    m_serviceConfigListHasBeenSet = true;
+}
+
+bool ApplicationForPage::ServiceConfigListHasBeenSet() const
+{
+    return m_serviceConfigListHasBeenSet;
 }
 

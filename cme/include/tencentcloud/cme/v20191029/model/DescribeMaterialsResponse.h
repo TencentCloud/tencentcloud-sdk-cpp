@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取素材列表信息。
-                     * @return MaterialInfoSet 素材列表信息。
+                     * 获取媒体列表信息。
+                     * @return MaterialInfoSet 媒体列表信息。
                      */
                     std::vector<MaterialInfo> GetMaterialInfoSet() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 素材列表信息。
+                     * 媒体列表信息。
                      */
                     std::vector<MaterialInfo> m_materialInfoSet;
                     bool m_materialInfoSetHasBeenSet;

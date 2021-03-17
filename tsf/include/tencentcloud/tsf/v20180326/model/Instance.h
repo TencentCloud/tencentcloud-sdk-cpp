@@ -860,6 +860,28 @@ namespace TencentCloud
                      */
                     bool ReasonHasBeenSet() const;
 
+                    /**
+                     * 获取agent版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentVersion agent版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAgentVersion() const;
+
+                    /**
+                     * 设置agent版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AgentVersion agent版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAgentVersion(const std::string& _agentVersion);
+
+                    /**
+                     * 判断参数 AgentVersion 是否已赋值
+                     * @return AgentVersion 是否已赋值
+                     */
+                    bool AgentVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1120,6 +1142,13 @@ namespace TencentCloud
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
+
+                    /**
+                     * agent版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_agentVersion;
+                    bool m_agentVersionHasBeenSet;
 
                 };
             }

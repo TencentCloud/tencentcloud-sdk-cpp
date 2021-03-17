@@ -26,7 +26,8 @@ MaterialInfo::MaterialInfo() :
     m_videoMaterialHasBeenSet(false),
     m_audioMaterialHasBeenSet(false),
     m_imageMaterialHasBeenSet(false),
-    m_linkMaterialHasBeenSet(false)
+    m_linkMaterialHasBeenSet(false),
+    m_otherMaterialHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,23 @@ CoreInternalOutcome MaterialInfo::Deserialize(const Value &value)
         m_linkMaterialHasBeenSet = true;
     }
 
+    if (value.HasMember("OtherMaterial") && !value["OtherMaterial"].IsNull())
+    {
+        if (!value["OtherMaterial"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MaterialInfo.OtherMaterial` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_otherMaterial.Deserialize(value["OtherMaterial"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_otherMaterialHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -170,6 +188,15 @@ void MaterialInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_linkMaterial.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_otherMaterialHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OtherMaterial";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_otherMaterial.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -253,5 +280,21 @@ void MaterialInfo::SetLinkMaterial(const LinkMaterial& _linkMaterial)
 bool MaterialInfo::LinkMaterialHasBeenSet() const
 {
     return m_linkMaterialHasBeenSet;
+}
+
+OtherMaterial MaterialInfo::GetOtherMaterial() const
+{
+    return m_otherMaterial;
+}
+
+void MaterialInfo::SetOtherMaterial(const OtherMaterial& _otherMaterial)
+{
+    m_otherMaterial = _otherMaterial;
+    m_otherMaterialHasBeenSet = true;
+}
+
+bool MaterialInfo::OtherMaterialHasBeenSet() const
+{
+    return m_otherMaterialHasBeenSet;
 }
 

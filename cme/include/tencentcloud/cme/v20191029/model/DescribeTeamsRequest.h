@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取团队 ID 列表，限30个。
-                     * @return TeamIds 团队 ID 列表，限30个。
+                     * 获取团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。
+                     * @return TeamIds 团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。
                      */
                     std::vector<std::string> GetTeamIds() const;
 
                     /**
-                     * 设置团队 ID 列表，限30个。
-                     * @param TeamIds 团队 ID 列表，限30个。
+                     * 设置团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。
+                     * @param TeamIds 团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。
                      */
                     void SetTeamIds(const std::vector<std::string>& _teamIds);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 团队 ID 列表，限30个。
+                     * 团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。
                      */
                     std::vector<std::string> m_teamIds;
                     bool m_teamIdsHasBeenSet;

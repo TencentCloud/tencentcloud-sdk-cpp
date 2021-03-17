@@ -259,6 +259,42 @@ namespace TencentCloud
                      */
                     bool DeployWaitTimeHasBeenSet() const;
 
+                    /**
+                     * 获取启动脚本 base64编码
+                     * @return StartScript 启动脚本 base64编码
+                     */
+                    std::string GetStartScript() const;
+
+                    /**
+                     * 设置启动脚本 base64编码
+                     * @param StartScript 启动脚本 base64编码
+                     */
+                    void SetStartScript(const std::string& _startScript);
+
+                    /**
+                     * 判断参数 StartScript 是否已赋值
+                     * @return StartScript 是否已赋值
+                     */
+                    bool StartScriptHasBeenSet() const;
+
+                    /**
+                     * 获取停止脚本 base64编码
+                     * @return StopScript 停止脚本 base64编码
+                     */
+                    std::string GetStopScript() const;
+
+                    /**
+                     * 设置停止脚本 base64编码
+                     * @param StopScript 停止脚本 base64编码
+                     */
+                    void SetStopScript(const std::string& _stopScript);
+
+                    /**
+                     * 判断参数 StopScript 是否已赋值
+                     * @return StopScript 是否已赋值
+                     */
+                    bool StopScriptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +368,18 @@ namespace TencentCloud
                      */
                     uint64_t m_deployWaitTime;
                     bool m_deployWaitTimeHasBeenSet;
+
+                    /**
+                     * 启动脚本 base64编码
+                     */
+                    std::string m_startScript;
+                    bool m_startScriptHasBeenSet;
+
+                    /**
+                     * 停止脚本 base64编码
+                     */
+                    std::string m_stopScript;
+                    bool m_stopScriptHasBeenSet;
 
                 };
             }

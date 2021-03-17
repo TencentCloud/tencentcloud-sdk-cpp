@@ -35,7 +35,9 @@ DeployGroupRequest::DeployGroupRequest() :
     m_deployBetaEnableHasBeenSet(false),
     m_deployBatchHasBeenSet(false),
     m_deployExeModeHasBeenSet(false),
-    m_deployWaitTimeHasBeenSet(false)
+    m_deployWaitTimeHasBeenSet(false),
+    m_startScriptHasBeenSet(false),
+    m_stopScriptHasBeenSet(false)
 {
 }
 
@@ -146,6 +148,22 @@ string DeployGroupRequest::ToJsonString() const
         string key = "DeployWaitTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deployWaitTime, allocator);
+    }
+
+    if (m_startScriptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartScript";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_startScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stopScriptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StopScript";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_stopScript.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -346,6 +364,38 @@ void DeployGroupRequest::SetDeployWaitTime(const uint64_t& _deployWaitTime)
 bool DeployGroupRequest::DeployWaitTimeHasBeenSet() const
 {
     return m_deployWaitTimeHasBeenSet;
+}
+
+string DeployGroupRequest::GetStartScript() const
+{
+    return m_startScript;
+}
+
+void DeployGroupRequest::SetStartScript(const string& _startScript)
+{
+    m_startScript = _startScript;
+    m_startScriptHasBeenSet = true;
+}
+
+bool DeployGroupRequest::StartScriptHasBeenSet() const
+{
+    return m_startScriptHasBeenSet;
+}
+
+string DeployGroupRequest::GetStopScript() const
+{
+    return m_stopScript;
+}
+
+void DeployGroupRequest::SetStopScript(const string& _stopScript)
+{
+    m_stopScript = _stopScript;
+    m_stopScriptHasBeenSet = true;
+}
+
+bool DeployGroupRequest::StopScriptHasBeenSet() const
+{
+    return m_stopScriptHasBeenSet;
 }
 
 

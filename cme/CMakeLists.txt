@@ -87,6 +87,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DescribeClassRequest.h
   include/tencentcloud/cme/v20191029/model/DescribeSharedSpaceResponse.h
   include/tencentcloud/cme/v20191029/model/MediaMetaData.h
+  include/tencentcloud/cme/v20191029/model/MoveResourceResponse.h
   include/tencentcloud/cme/v20191029/model/MoveClassRequest.h
   include/tencentcloud/cme/v20191029/model/DeleteTeamMembersResponse.h
   include/tencentcloud/cme/v20191029/model/MoveClassResponse.h
@@ -99,9 +100,11 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/ModifyTeamMemberRequest.h
   include/tencentcloud/cme/v20191029/model/CreateTeamRequest.h
   include/tencentcloud/cme/v20191029/model/MaterialBasicInfo.h
+  include/tencentcloud/cme/v20191029/model/ResourceInfo.h
   include/tencentcloud/cme/v20191029/model/JoinTeamInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeResourceAuthorizationRequest.h
   include/tencentcloud/cme/v20191029/model/CreateClassResponse.h
+  include/tencentcloud/cme/v20191029/model/OtherMaterial.h
   include/tencentcloud/cme/v20191029/model/VideoStreamInfo.h
   include/tencentcloud/cme/v20191029/model/AddTeamMemberRequest.h
   include/tencentcloud/cme/v20191029/model/ExportVideoEditProjectResponse.h
@@ -111,6 +114,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DeleteLoginStatusRequest.h
   include/tencentcloud/cme/v20191029/model/GenerateVideoSegmentationSchemeByAiRequest.h
   include/tencentcloud/cme/v20191029/model/DeleteTeamMembersRequest.h
+  include/tencentcloud/cme/v20191029/model/MoveResourceRequest.h
   include/tencentcloud/cme/v20191029/model/DescribePlatformsRequest.h
   include/tencentcloud/cme/v20191029/model/SearchScope.h
   include/tencentcloud/cme/v20191029/model/VideoMaterial.h
@@ -133,6 +137,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/LoginStatusInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeClassResponse.h
   include/tencentcloud/cme/v20191029/model/GenerateVideoSegmentationSchemeByAiResponse.h
+  include/tencentcloud/cme/v20191029/model/PresetTagInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeSharedSpaceRequest.h
   include/tencentcloud/cme/v20191029/model/KuaishouPublishInfo.h
   include/tencentcloud/cme/v20191029/model/TaskBaseInfo.h
@@ -217,6 +222,7 @@ set(cme_src
   src/v20191029/model/DescribeClassRequest.cpp
   src/v20191029/model/DescribeSharedSpaceResponse.cpp
   src/v20191029/model/MediaMetaData.cpp
+  src/v20191029/model/MoveResourceResponse.cpp
   src/v20191029/model/MoveClassRequest.cpp
   src/v20191029/model/DeleteTeamMembersResponse.cpp
   src/v20191029/model/MoveClassResponse.cpp
@@ -229,9 +235,11 @@ set(cme_src
   src/v20191029/model/ModifyTeamMemberRequest.cpp
   src/v20191029/model/CreateTeamRequest.cpp
   src/v20191029/model/MaterialBasicInfo.cpp
+  src/v20191029/model/ResourceInfo.cpp
   src/v20191029/model/JoinTeamInfo.cpp
   src/v20191029/model/DescribeResourceAuthorizationRequest.cpp
   src/v20191029/model/CreateClassResponse.cpp
+  src/v20191029/model/OtherMaterial.cpp
   src/v20191029/model/VideoStreamInfo.cpp
   src/v20191029/model/AddTeamMemberRequest.cpp
   src/v20191029/model/ExportVideoEditProjectResponse.cpp
@@ -241,6 +249,7 @@ set(cme_src
   src/v20191029/model/DeleteLoginStatusRequest.cpp
   src/v20191029/model/GenerateVideoSegmentationSchemeByAiRequest.cpp
   src/v20191029/model/DeleteTeamMembersRequest.cpp
+  src/v20191029/model/MoveResourceRequest.cpp
   src/v20191029/model/DescribePlatformsRequest.cpp
   src/v20191029/model/SearchScope.cpp
   src/v20191029/model/VideoMaterial.cpp
@@ -263,6 +272,7 @@ set(cme_src
   src/v20191029/model/LoginStatusInfo.cpp
   src/v20191029/model/DescribeClassResponse.cpp
   src/v20191029/model/GenerateVideoSegmentationSchemeByAiResponse.cpp
+  src/v20191029/model/PresetTagInfo.cpp
   src/v20191029/model/DescribeSharedSpaceRequest.cpp
   src/v20191029/model/KuaishouPublishInfo.cpp
   src/v20191029/model/TaskBaseInfo.cpp

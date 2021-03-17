@@ -2749,6 +2749,49 @@ TkeClient::RemoveNodeFromNodePoolOutcomeCallable TkeClient::RemoveNodeFromNodePo
     return task->get_future();
 }
 
+TkeClient::SetNodePoolNodeProtectionOutcome TkeClient::SetNodePoolNodeProtection(const SetNodePoolNodeProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetNodePoolNodeProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetNodePoolNodeProtectionResponse rsp = SetNodePoolNodeProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetNodePoolNodeProtectionOutcome(rsp);
+        else
+            return SetNodePoolNodeProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return SetNodePoolNodeProtectionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::SetNodePoolNodeProtectionAsync(const SetNodePoolNodeProtectionRequest& request, const SetNodePoolNodeProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetNodePoolNodeProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::SetNodePoolNodeProtectionOutcomeCallable TkeClient::SetNodePoolNodeProtectionCallable(const SetNodePoolNodeProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetNodePoolNodeProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->SetNodePoolNodeProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::SyncPrometheusTemplateOutcome TkeClient::SyncPrometheusTemplate(const SyncPrometheusTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "SyncPrometheusTemplate");

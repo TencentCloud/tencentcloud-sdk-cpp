@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的素材记录总数。
-                     * @return MaterialTotalCount 符合条件的素材记录总数。
+                     * 获取符合条件的媒体记录总数。
+                     * @return MaterialTotalCount 符合条件的媒体记录总数。
                      */
                     int64_t GetMaterialTotalCount() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool MaterialTotalCountHasBeenSet() const;
 
                     /**
-                     * 获取浏览分类路径下的素材列表信息。
-                     * @return MaterialInfoSet 浏览分类路径下的素材列表信息。
+                     * 获取浏览分类路径下的媒体列表信息。
+                     * @return MaterialInfoSet 浏览分类路径下的媒体列表信息。
                      */
                     std::vector<MaterialInfo> GetMaterialInfoSet() const;
 
@@ -83,13 +83,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的素材记录总数。
+                     * 符合条件的媒体记录总数。
                      */
                     int64_t m_materialTotalCount;
                     bool m_materialTotalCountHasBeenSet;
 
                     /**
-                     * 浏览分类路径下的素材列表信息。
+                     * 浏览分类路径下的媒体列表信息。
                      */
                     std::vector<MaterialInfo> m_materialInfoSet;
                     bool m_materialInfoSetHasBeenSet;
