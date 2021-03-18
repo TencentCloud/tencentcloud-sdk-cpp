@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询的负载均衡实例 ID列表
-                     * @return LoadBalancerIds 要查询的负载均衡实例 ID列表
+                     * 获取要查询的负载均衡实例ID列表。
+                     * @return LoadBalancerIds 要查询的负载均衡实例ID列表。
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
-                     * 设置要查询的负载均衡实例 ID列表
-                     * @param LoadBalancerIds 要查询的负载均衡实例 ID列表
+                     * 设置要查询的负载均衡实例ID列表。
+                     * @param LoadBalancerIds 要查询的负载均衡实例ID列表。
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的负载均衡实例 ID列表
+                     * 要查询的负载均衡实例ID列表。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;

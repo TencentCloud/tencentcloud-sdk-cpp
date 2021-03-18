@@ -210,7 +210,9 @@ namespace TencentCloud
                 ApplyUserCertOutcomeCallable ApplyUserCertCallable(const Model::ApplyUserCertRequest& request);
 
                 /**
-                 *Bcos根据块高查询区块信息
+                 *版本升级
+
+Bcos根据块高查询区块信息
                  * @param req BlockByNumberHandlerRequest
                  * @return BlockByNumberHandlerOutcome
                  */
@@ -237,7 +239,9 @@ namespace TencentCloud
                 DeployDynamicBcosContractOutcomeCallable DeployDynamicBcosContractCallable(const Model::DeployDynamicBcosContractRequest& request);
 
                 /**
-                 *动态部署合约
+                 *版本升级
+
+动态部署合约
                  * @param req DeployDynamicContractHandlerRequest
                  * @return DeployDynamicContractHandlerOutcome
                  */
@@ -300,7 +304,9 @@ namespace TencentCloud
                 GetBlockListOutcomeCallable GetBlockListCallable(const Model::GetBlockListRequest& request);
 
                 /**
-                 *Bcos分页查询当前群组下的区块列表
+                 *版本升级
+
+Bcos分页查询当前群组下的区块列表
                  * @param req GetBlockListHandlerRequest
                  * @return GetBlockListHandlerOutcome
                  */
@@ -399,7 +405,9 @@ namespace TencentCloud
                 GetPeerLogForUserOutcomeCallable GetPeerLogForUserCallable(const Model::GetPeerLogForUserRequest& request);
 
                 /**
-                 *Bcos根据交易哈希查看交易详细信息
+                 *版本升级
+
+Bcos根据交易哈希查看交易详细信息
                  * @param req GetTransByHashHandlerRequest
                  * @return GetTransByHashHandlerOutcome
                  */
@@ -408,7 +416,9 @@ namespace TencentCloud
                 GetTransByHashHandlerOutcomeCallable GetTransByHashHandlerCallable(const Model::GetTransByHashHandlerRequest& request);
 
                 /**
-                 *Bcos分页查询当前群组的交易信息列表
+                 *版本升级
+
+Bcos分页查询当前群组的交易信息列表
                  * @param req GetTransListHandlerRequest
                  * @return GetTransListHandlerOutcome
                  */
@@ -462,7 +472,9 @@ namespace TencentCloud
                 QueryOutcomeCallable QueryCallable(const Model::QueryRequest& request);
 
                 /**
-                 *Bcos发送交易
+                 *版本升级
+
+Bcos发送交易
                  * @param req SendTransactionHandlerRequest
                  * @return SendTransactionHandlerOutcome
                  */
@@ -480,7 +492,9 @@ namespace TencentCloud
                 SrvInvokeOutcomeCallable SrvInvokeCallable(const Model::SrvInvokeRequest& request);
 
                 /**
-                 *根据动态部署的合约发送交易
+                 *版本升级
+
+根据动态部署的合约发送交易
                  * @param req TransByDynamicContractHandlerRequest
                  * @return TransByDynamicContractHandlerOutcome
                  */

@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取解绑失败的监听器ID
-                     * @return FailListenerIdSet 解绑失败的监听器ID
+                     * 获取解绑失败的监听器ID。
+                     * @return FailListenerIdSet 解绑失败的监听器ID。
                      */
                     std::vector<std::string> GetFailListenerIdSet() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 解绑失败的监听器ID
+                     * 解绑失败的监听器ID。
                      */
                     std::vector<std::string> m_failListenerIdSet;
                     bool m_failListenerIdSetHasBeenSet;

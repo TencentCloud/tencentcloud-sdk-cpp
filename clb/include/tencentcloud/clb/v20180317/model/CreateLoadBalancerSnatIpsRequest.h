@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡唯一性Id，如lb-12345678
-                     * @return LoadBalancerId 负载均衡唯一性Id，如lb-12345678
+                     * 获取负载均衡唯一性ID，例如：lb-12345678。
+                     * @return LoadBalancerId 负载均衡唯一性ID，例如：lb-12345678。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡唯一性Id，如lb-12345678
-                     * @param LoadBalancerId 负载均衡唯一性Id，如lb-12345678
+                     * 设置负载均衡唯一性ID，例如：lb-12345678。
+                     * @param LoadBalancerId 负载均衡唯一性ID，例如：lb-12345678。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取添加SnatIp信息，可指定Ip申请，或者指定子网自动申请
-                     * @return SnatIps 添加SnatIp信息，可指定Ip申请，或者指定子网自动申请
+                     * 获取添加SnatIp信息，可指定IP申请，或者指定子网自动申请。
+                     * @return SnatIps 添加SnatIp信息，可指定IP申请，或者指定子网自动申请。
                      */
                     std::vector<SnatIp> GetSnatIps() const;
 
                     /**
-                     * 设置添加SnatIp信息，可指定Ip申请，或者指定子网自动申请
-                     * @param SnatIps 添加SnatIp信息，可指定Ip申请，或者指定子网自动申请
+                     * 设置添加SnatIp信息，可指定IP申请，或者指定子网自动申请。
+                     * @param SnatIps 添加SnatIp信息，可指定IP申请，或者指定子网自动申请。
                      */
                     void SetSnatIps(const std::vector<SnatIp>& _snatIps);
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡唯一性Id，如lb-12345678
+                     * 负载均衡唯一性ID，例如：lb-12345678。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 添加SnatIp信息，可指定Ip申请，或者指定子网自动申请
+                     * 添加SnatIp信息，可指定IP申请，或者指定子网自动申请。
                      */
                     std::vector<SnatIp> m_snatIps;
                     bool m_snatIpsHasBeenSet;

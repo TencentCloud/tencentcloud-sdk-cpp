@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取返回负载均衡列表起始偏移量，默认0
-                     * @return Offset 返回负载均衡列表起始偏移量，默认0
+                     * 获取返回负载均衡列表起始偏移量，默认0。
+                     * @return Offset 返回负载均衡列表起始偏移量，默认0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置返回负载均衡列表起始偏移量，默认0
-                     * @param Offset 返回负载均衡列表起始偏移量，默认0
+                     * 设置返回负载均衡列表起始偏移量，默认0。
+                     * @param Offset 返回负载均衡列表起始偏移量，默认0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -182,7 +182,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 返回负载均衡列表起始偏移量，默认0
+                     * 返回负载均衡列表起始偏移量，默认0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

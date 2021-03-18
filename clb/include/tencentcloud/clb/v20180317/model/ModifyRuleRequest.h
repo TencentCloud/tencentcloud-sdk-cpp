@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID
-                     * @return LoadBalancerId 负载均衡实例 ID
+                     * 获取负载均衡实例 ID。
+                     * @return LoadBalancerId 负载均衡实例 ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * 设置负载均衡实例 ID。
+                     * @param LoadBalancerId 负载均衡实例 ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器 ID
-                     * @return ListenerId 负载均衡监听器 ID
+                     * 获取负载均衡监听器 ID。
+                     * @return ListenerId 负载均衡监听器 ID。
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置负载均衡监听器 ID
-                     * @param ListenerId 负载均衡监听器 ID
+                     * 设置负载均衡监听器 ID。
+                     * @param ListenerId 负载均衡监听器 ID。
                      */
                     void SetListenerId(const std::string& _listenerId);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool LocationIdHasBeenSet() const;
 
                     /**
-                     * 获取转发规则的新的转发路径，如不需修改Url，则不需提供此参数
-                     * @return Url 转发规则的新的转发路径，如不需修改Url，则不需提供此参数
+                     * 获取转发规则的新的转发路径，如不需修改Url，则不需提供此参数。
+                     * @return Url 转发规则的新的转发路径，如不需修改Url，则不需提供此参数。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置转发规则的新的转发路径，如不需修改Url，则不需提供此参数
-                     * @param Url 转发规则的新的转发路径，如不需修改Url，则不需提供此参数
+                     * 设置转发规则的新的转发路径，如不需修改Url，则不需提供此参数。
+                     * @param Url 转发规则的新的转发路径，如不需修改Url，则不需提供此参数。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取健康检查信息
-                     * @return HealthCheck 健康检查信息
+                     * 获取健康检查信息。
+                     * @return HealthCheck 健康检查信息。
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
-                     * 设置健康检查信息
-                     * @param HealthCheck 健康检查信息
+                     * 设置健康检查信息。
+                     * @param HealthCheck 健康检查信息。
                      */
                     void SetHealthCheck(const HealthCheck& _healthCheck);
 
@@ -156,14 +156,14 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间
-                     * @return SessionExpireTime 会话保持时间
+                     * 获取会话保持时间。
+                     * @return SessionExpireTime 会话保持时间。
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置会话保持时间
-                     * @param SessionExpireTime 会话保持时间
+                     * 设置会话保持时间。
+                     * @param SessionExpireTime 会话保持时间。
                      */
                     void SetSessionExpireTime(const int64_t& _sessionExpireTime);
 
@@ -174,14 +174,14 @@ namespace TencentCloud
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC
-                     * @return ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC
+                     * 获取负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。
+                     * @return ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。
                      */
                     std::string GetForwardType() const;
 
                     /**
-                     * 设置负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC
-                     * @param ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC
+                     * 设置负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。
+                     * @param ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。
                      */
                     void SetForwardType(const std::string& _forwardType);
 
@@ -192,14 +192,14 @@ namespace TencentCloud
                     bool ForwardTypeHasBeenSet() const;
 
                     /**
-                     * 获取TRPC被调服务器路由，ForwardType为TRPC时必填
-                     * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填
+                     * 获取TRPC被调服务器路由，ForwardType为TRPC时必填。
+                     * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。
                      */
                     std::string GetTrpcCallee() const;
 
                     /**
-                     * 设置TRPC被调服务器路由，ForwardType为TRPC时必填
-                     * @param TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填
+                     * 设置TRPC被调服务器路由，ForwardType为TRPC时必填。
+                     * @param TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。
                      */
                     void SetTrpcCallee(const std::string& _trpcCallee);
 
@@ -210,14 +210,14 @@ namespace TencentCloud
                     bool TrpcCalleeHasBeenSet() const;
 
                     /**
-                     * 获取TRPC调用服务接口，ForwardType为TRPC时必填
-                     * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填
+                     * 获取TRPC调用服务接口，ForwardType为TRPC时必填。
+                     * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。
                      */
                     std::string GetTrpcFunc() const;
 
                     /**
-                     * 设置TRPC调用服务接口，ForwardType为TRPC时必填
-                     * @param TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填
+                     * 设置TRPC调用服务接口，ForwardType为TRPC时必填。
+                     * @param TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。
                      */
                     void SetTrpcFunc(const std::string& _trpcFunc);
 
@@ -230,13 +230,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID
+                     * 负载均衡实例 ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器 ID
+                     * 负载均衡监听器 ID。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
@@ -248,13 +248,13 @@ namespace TencentCloud
                     bool m_locationIdHasBeenSet;
 
                     /**
-                     * 转发规则的新的转发路径，如不需修改Url，则不需提供此参数
+                     * 转发规则的新的转发路径，如不需修改Url，则不需提供此参数。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 健康检查信息
+                     * 健康检查信息。
                      */
                     HealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
@@ -267,25 +267,25 @@ namespace TencentCloud
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 会话保持时间
+                     * 会话保持时间。
                      */
                     int64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;
 
                     /**
-                     * 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC
+                     * 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。
                      */
                     std::string m_forwardType;
                     bool m_forwardTypeHasBeenSet;
 
                     /**
-                     * TRPC被调服务器路由，ForwardType为TRPC时必填
+                     * TRPC被调服务器路由，ForwardType为TRPC时必填。
                      */
                     std::string m_trpcCallee;
                     bool m_trpcCalleeHasBeenSet;
 
                     /**
-                     * TRPC调用服务接口，ForwardType为TRPC时必填
+                     * TRPC调用服务接口，ForwardType为TRPC时必填。
                      */
                     std::string m_trpcFunc;
                     bool m_trpcFuncHasBeenSet;

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID
-                     * @return LoadBalancerId 负载均衡实例 ID
+                     * 获取负载均衡实例ID。
+                     * @return LoadBalancerId 负载均衡实例ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * 设置负载均衡实例ID。
+                     * @param LoadBalancerId 负载均衡实例ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器 ID
-                     * @return ListenerId 负载均衡监听器 ID
+                     * 获取负载均衡监听器ID。
+                     * @return ListenerId 负载均衡监听器ID。
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置负载均衡监听器 ID
-                     * @param ListenerId 负载均衡监听器 ID
+                     * 设置负载均衡监听器ID。
+                     * @param ListenerId 负载均衡监听器ID。
                      */
                     void SetListenerId(const std::string& _listenerId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取待绑定的后端服务列表，数组长度最大支持20
-                     * @return Targets 待绑定的后端服务列表，数组长度最大支持20
+                     * 获取待绑定的后端服务列表，数组长度最大支持20。
+                     * @return Targets 待绑定的后端服务列表，数组长度最大支持20。
                      */
                     std::vector<Target> GetTargets() const;
 
                     /**
-                     * 设置待绑定的后端服务列表，数组长度最大支持20
-                     * @param Targets 待绑定的后端服务列表，数组长度最大支持20
+                     * 设置待绑定的后端服务列表，数组长度最大支持20。
+                     * @param Targets 待绑定的后端服务列表，数组长度最大支持20。
                      */
                     void SetTargets(const std::vector<Target>& _targets);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool TargetsHasBeenSet() const;
 
                     /**
-                     * 获取转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一
-                     * @return LocationId 转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一
+                     * 获取转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一。
+                     * @return LocationId 转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一。
                      */
                     std::string GetLocationId() const;
 
                     /**
-                     * 设置转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一
-                     * @param LocationId 转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一
+                     * 设置转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一。
+                     * @param LocationId 转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一。
                      */
                     void SetLocationId(const std::string& _locationId);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool LocationIdHasBeenSet() const;
 
                     /**
-                     * 获取目标转发规则的域名，提供LocationId参数时本参数不生效
-                     * @return Domain 目标转发规则的域名，提供LocationId参数时本参数不生效
+                     * 获取目标转发规则的域名，提供LocationId参数时本参数不生效。
+                     * @return Domain 目标转发规则的域名，提供LocationId参数时本参数不生效。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置目标转发规则的域名，提供LocationId参数时本参数不生效
-                     * @param Domain 目标转发规则的域名，提供LocationId参数时本参数不生效
+                     * 设置目标转发规则的域名，提供LocationId参数时本参数不生效。
+                     * @param Domain 目标转发规则的域名，提供LocationId参数时本参数不生效。
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取目标转发规则的URL，提供LocationId参数时本参数不生效
-                     * @return Url 目标转发规则的URL，提供LocationId参数时本参数不生效
+                     * 获取目标转发规则的URL，提供LocationId参数时本参数不生效。
+                     * @return Url 目标转发规则的URL，提供LocationId参数时本参数不生效。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置目标转发规则的URL，提供LocationId参数时本参数不生效
-                     * @param Url 目标转发规则的URL，提供LocationId参数时本参数不生效
+                     * 设置目标转发规则的URL，提供LocationId参数时本参数不生效。
+                     * @param Url 目标转发规则的URL，提供LocationId参数时本参数不生效。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -154,37 +154,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID
+                     * 负载均衡实例ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器 ID
+                     * 负载均衡监听器ID。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 待绑定的后端服务列表，数组长度最大支持20
+                     * 待绑定的后端服务列表，数组长度最大支持20。
                      */
                     std::vector<Target> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
-                     * 转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一
+                     * 转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一。
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;
 
                     /**
-                     * 目标转发规则的域名，提供LocationId参数时本参数不生效
+                     * 目标转发规则的域名，提供LocationId参数时本参数不生效。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 目标转发规则的URL，提供LocationId参数时本参数不生效
+                     * 目标转发规则的URL，提供LocationId参数时本参数不生效。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

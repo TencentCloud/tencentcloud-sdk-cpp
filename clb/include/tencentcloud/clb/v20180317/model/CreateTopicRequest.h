@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题的名字
-                     * @return TopicName 日志主题的名字
+                     * 获取日志主题的名称。
+                     * @return TopicName 日志主题的名称。
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置日志主题的名字
-                     * @param TopicName 日志主题的名字
+                     * 设置日志主题的名称。
+                     * @param TopicName 日志主题的名称。
                      */
                     void SetTopicName(const std::string& _topicName);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取主题分区 partition个数，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
-                     * @return PartitionCount 主题分区 partition个数，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * 获取主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * @return PartitionCount 主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
                      */
                     uint64_t GetPartitionCount() const;
 
                     /**
-                     * 设置主题分区 partition个数，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
-                     * @param PartitionCount 主题分区 partition个数，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * 设置主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * @param PartitionCount 主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
                      */
                     void SetPartitionCount(const uint64_t& _partitionCount);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题的名字
+                     * 日志主题的名称。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 主题分区 partition个数，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * 主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
                      */
                     uint64_t m_partitionCount;
                     bool m_partitionCountHasBeenSet;

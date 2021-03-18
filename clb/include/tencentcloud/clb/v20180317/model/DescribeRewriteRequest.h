@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例ID
-                     * @return LoadBalancerId 负载均衡实例ID
+                     * 获取负载均衡实例ID。
+                     * @return LoadBalancerId 负载均衡实例ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例ID
-                     * @param LoadBalancerId 负载均衡实例ID
+                     * 设置负载均衡实例ID。
+                     * @param LoadBalancerId 负载均衡实例ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器ID数组
-                     * @return SourceListenerIds 负载均衡监听器ID数组
+                     * 获取负载均衡监听器ID数组。
+                     * @return SourceListenerIds 负载均衡监听器ID数组。
                      */
                     std::vector<std::string> GetSourceListenerIds() const;
 
                     /**
-                     * 设置负载均衡监听器ID数组
-                     * @param SourceListenerIds 负载均衡监听器ID数组
+                     * 设置负载均衡监听器ID数组。
+                     * @param SourceListenerIds 负载均衡监听器ID数组。
                      */
                     void SetSourceListenerIds(const std::vector<std::string>& _sourceListenerIds);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool SourceListenerIdsHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡转发规则的ID数组
-                     * @return SourceLocationIds 负载均衡转发规则的ID数组
+                     * 获取负载均衡转发规则的ID数组。
+                     * @return SourceLocationIds 负载均衡转发规则的ID数组。
                      */
                     std::vector<std::string> GetSourceLocationIds() const;
 
                     /**
-                     * 设置负载均衡转发规则的ID数组
-                     * @param SourceLocationIds 负载均衡转发规则的ID数组
+                     * 设置负载均衡转发规则的ID数组。
+                     * @param SourceLocationIds 负载均衡转发规则的ID数组。
                      */
                     void SetSourceLocationIds(const std::vector<std::string>& _sourceLocationIds);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例ID
+                     * 负载均衡实例ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器ID数组
+                     * 负载均衡监听器ID数组。
                      */
                     std::vector<std::string> m_sourceListenerIds;
                     bool m_sourceListenerIdsHasBeenSet;
 
                     /**
-                     * 负载均衡转发规则的ID数组
+                     * 负载均衡转发规则的ID数组。
                      */
                     std::vector<std::string> m_sourceLocationIds;
                     bool m_sourceLocationIdsHasBeenSet;

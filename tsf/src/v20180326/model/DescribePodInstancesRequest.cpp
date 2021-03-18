@@ -26,7 +26,8 @@ using namespace std;
 DescribePodInstancesRequest::DescribePodInstancesRequest() :
     m_groupIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_podNameListHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,19 @@ string DescribePodInstancesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_podNameListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PodNameList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_podNameList.begin(); itr != m_podNameList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -115,6 +129,22 @@ void DescribePodInstancesRequest::SetLimit(const int64_t& _limit)
 bool DescribePodInstancesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> DescribePodInstancesRequest::GetPodNameList() const
+{
+    return m_podNameList;
+}
+
+void DescribePodInstancesRequest::SetPodNameList(const vector<string>& _podNameList)
+{
+    m_podNameList = _podNameList;
+    m_podNameListHasBeenSet = true;
+}
+
+bool DescribePodInstancesRequest::PodNameListHasBeenSet() const
+{
+    return m_podNameListHasBeenSet;
 }
 
 

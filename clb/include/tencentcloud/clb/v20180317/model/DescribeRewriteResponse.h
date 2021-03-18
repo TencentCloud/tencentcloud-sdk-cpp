@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取重定向转发规则构成的数组，若无重定向规则，则返回空数组
-                     * @return RewriteSet 重定向转发规则构成的数组，若无重定向规则，则返回空数组
+                     * 获取重定向转发规则构成的数组，若无重定向规则，则返回空数组。
+                     * @return RewriteSet 重定向转发规则构成的数组，若无重定向规则，则返回空数组。
                      */
                     std::vector<RuleOutput> GetRewriteSet() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 重定向转发规则构成的数组，若无重定向规则，则返回空数组
+                     * 重定向转发规则构成的数组，若无重定向规则，则返回空数组。
                      */
                     std::vector<RuleOutput> m_rewriteSet;
                     bool m_rewriteSetHasBeenSet;

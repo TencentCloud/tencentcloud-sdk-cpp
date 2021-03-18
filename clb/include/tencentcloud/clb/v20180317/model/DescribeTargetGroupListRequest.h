@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组ID数组
-                     * @return TargetGroupIds 目标组ID数组
+                     * 获取目标组ID数组。
+                     * @return TargetGroupIds 目标组ID数组。
                      */
                     std::vector<std::string> GetTargetGroupIds() const;
 
                     /**
-                     * 设置目标组ID数组
-                     * @param TargetGroupIds 目标组ID数组
+                     * 设置目标组ID数组。
+                     * @param TargetGroupIds 目标组ID数组。
                      */
                     void SetTargetGroupIds(const std::vector<std::string>& _targetGroupIds);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool TargetGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID，
-                     * @return Filters 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID，
+                     * 获取过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID。
+                     * @return Filters 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID。
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID，
-                     * @param Filters 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID，
+                     * 设置过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID。
+                     * @param Filters 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取显示的偏移起始量
-                     * @return Offset 显示的偏移起始量
+                     * 获取显示的偏移起始量。
+                     * @return Offset 显示的偏移起始量。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置显示的偏移起始量
-                     * @param Offset 显示的偏移起始量
+                     * 设置显示的偏移起始量。
+                     * @param Offset 显示的偏移起始量。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取显示条数限制，默认为20
-                     * @return Limit 显示条数限制，默认为20
+                     * 获取显示条数限制，默认为20。
+                     * @return Limit 显示条数限制，默认为20。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置显示条数限制，默认为20
-                     * @param Limit 显示条数限制，默认为20
+                     * 设置显示条数限制，默认为20。
+                     * @param Limit 显示条数限制，默认为20。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -118,25 +118,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组ID数组
+                     * 目标组ID数组。
                      */
                     std::vector<std::string> m_targetGroupIds;
                     bool m_targetGroupIdsHasBeenSet;
 
                     /**
-                     * 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID，
+                     * 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 显示的偏移起始量
+                     * 显示的偏移起始量。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 显示条数限制，默认为20
+                     * 显示条数限制，默认为20。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

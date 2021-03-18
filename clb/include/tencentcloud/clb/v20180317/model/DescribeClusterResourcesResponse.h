@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群中资源列表
-                     * @return ClusterResourceSet 集群中资源列表
+                     * 获取集群中资源列表。
+                     * @return ClusterResourceSet 集群中资源列表。
                      */
                     std::vector<ClusterResource> GetClusterResourceSet() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool ClusterResourceSetHasBeenSet() const;
 
                     /**
-                     * 获取集群中资源总数
-                     * @return TotalCount 集群中资源总数
+                     * 获取集群中资源总数。
+                     * @return TotalCount 集群中资源总数。
                      */
                     uint64_t GetTotalCount() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群中资源列表
+                     * 集群中资源列表。
                      */
                     std::vector<ClusterResource> m_clusterResourceSet;
                     bool m_clusterResourceSetHasBeenSet;
 
                     /**
-                     * 集群中资源总数
+                     * 集群中资源总数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建的监听器的唯一标识数组
-                     * @return ListenerIds 创建的监听器的唯一标识数组
+                     * 获取创建的监听器的唯一标识数组。
+                     * @return ListenerIds 创建的监听器的唯一标识数组。
                      */
                     std::vector<std::string> GetListenerIds() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建的监听器的唯一标识数组
+                     * 创建的监听器的唯一标识数组。
                      */
                     std::vector<std::string> m_listenerIds;
                     bool m_listenerIdsHasBeenSet;

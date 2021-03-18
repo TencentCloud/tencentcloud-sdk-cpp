@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取过滤字段
+                     * @return PodNameList 过滤字段
+                     */
+                    std::vector<std::string> GetPodNameList() const;
+
+                    /**
+                     * 设置过滤字段
+                     * @param PodNameList 过滤字段
+                     */
+                    void SetPodNameList(const std::vector<std::string>& _podNameList);
+
+                    /**
+                     * 判断参数 PodNameList 是否已赋值
+                     * @return PodNameList 是否已赋值
+                     */
+                    bool PodNameListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 过滤字段
+                     */
+                    std::vector<std::string> m_podNameList;
+                    bool m_podNameListHasBeenSet;
 
                 };
             }

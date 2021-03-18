@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回集群列表数目，默认20，最大值100
-                     * @return Limit 返回集群列表数目，默认20，最大值100
+                     * 获取返回集群列表数目，默认值为20，最大值为100。
+                     * @return Limit 返回集群列表数目，默认值为20，最大值为100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回集群列表数目，默认20，最大值100
-                     * @param Limit 返回集群列表数目，默认20，最大值100
+                     * 设置返回集群列表数目，默认值为20，最大值为100。
+                     * @param Limit 返回集群列表数目，默认值为20，最大值为100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取返回集群列表起始偏移量，默认0
-                     * @return Offset 返回集群列表起始偏移量，默认0
+                     * 获取返回集群列表起始偏移量，默认为0。
+                     * @return Offset 返回集群列表起始偏移量，默认为0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置返回集群列表起始偏移量，默认0
-                     * @param Offset 返回集群列表起始偏移量，默认0
+                     * 设置返回集群列表起始偏移量，默认为0。
+                     * @param Offset 返回集群列表起始偏移量，默认为0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -136,13 +136,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回集群列表数目，默认20，最大值100
+                     * 返回集群列表数目，默认值为20，最大值为100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 返回集群列表起始偏移量，默认0
+                     * 返回集群列表起始偏移量，默认为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

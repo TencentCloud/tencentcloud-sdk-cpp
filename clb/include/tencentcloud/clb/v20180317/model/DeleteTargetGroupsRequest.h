@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组的ID数组
-                     * @return TargetGroupIds 目标组的ID数组
+                     * 获取目标组的ID数组。
+                     * @return TargetGroupIds 目标组的ID数组。
                      */
                     std::vector<std::string> GetTargetGroupIds() const;
 
                     /**
-                     * 设置目标组的ID数组
-                     * @param TargetGroupIds 目标组的ID数组
+                     * 设置目标组的ID数组。
+                     * @param TargetGroupIds 目标组的ID数组。
                      */
                     void SetTargetGroupIds(const std::vector<std::string>& _targetGroupIds);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组的ID数组
+                     * 目标组的ID数组。
                      */
                     std::vector<std::string> m_targetGroupIds;
                     bool m_targetGroupIdsHasBeenSet;

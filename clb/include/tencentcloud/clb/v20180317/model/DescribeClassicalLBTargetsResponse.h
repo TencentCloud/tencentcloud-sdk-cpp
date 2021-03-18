@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取后端服务列表
+                     * 获取后端服务列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Targets 后端服务列表
+                     * @return Targets 后端服务列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClassicalTarget> GetTargets() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 后端服务列表
+                     * 后端服务列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClassicalTarget> m_targets;

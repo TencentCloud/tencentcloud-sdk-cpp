@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡相关信息列表
-                     * @return LoadBalancerInfoList 负载均衡相关信息列表
+                     * 获取负载均衡相关信息列表。
+                     * @return LoadBalancerInfoList 负载均衡相关信息列表。
                      */
                     std::vector<ClassicalLoadBalancerInfo> GetLoadBalancerInfoList() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡相关信息列表
+                     * 负载均衡相关信息列表。
                      */
                     std::vector<ClassicalLoadBalancerInfo> m_loadBalancerInfoList;
                     bool m_loadBalancerInfoListHasBeenSet;

@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID
-                     * @return LoadBalancerId 负载均衡实例 ID
+                     * 获取负载均衡实例 ID。
+                     * @return LoadBalancerId 负载均衡实例 ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * 设置负载均衡实例 ID。
+                     * @param LoadBalancerId 负载均衡实例 ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取要将监听器创建到哪些端口，每个端口对应一个新的监听器
-                     * @return Ports 要将监听器创建到哪些端口，每个端口对应一个新的监听器
+                     * 获取要将监听器创建到哪些端口，每个端口对应一个新的监听器。
+                     * @return Ports 要将监听器创建到哪些端口，每个端口对应一个新的监听器。
                      */
                     std::vector<int64_t> GetPorts() const;
 
                     /**
-                     * 设置要将监听器创建到哪些端口，每个端口对应一个新的监听器
-                     * @param Ports 要将监听器创建到哪些端口，每个端口对应一个新的监听器
+                     * 设置要将监听器创建到哪些端口，每个端口对应一个新的监听器。
+                     * @param Ports 要将监听器创建到哪些端口，每个端口对应一个新的监听器。
                      */
                     void SetPorts(const std::vector<int64_t>& _ports);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool PortsHasBeenSet() const;
 
                     /**
-                     * 获取监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）
-                     * @return Protocol 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）
+                     * 获取监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。
+                     * @return Protocol 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）
-                     * @param Protocol 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）
+                     * 设置监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。
+                     * @param Protocol 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数
-                     * @return ListenerNames 要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数
+                     * 获取要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数。
+                     * @return ListenerNames 要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数。
                      */
                     std::vector<std::string> GetListenerNames() const;
 
                     /**
-                     * 设置要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数
-                     * @param ListenerNames 要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数
+                     * 设置要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数。
+                     * @param ListenerNames 要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数。
                      */
                     void SetListenerNames(const std::vector<std::string>& _listenerNames);
 
@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool ListenerNamesHasBeenSet() const;
 
                     /**
-                     * 获取健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器
-                     * @return HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器
+                     * 获取健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
+                     * @return HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
-                     * 设置健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器
-                     * @param HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器
+                     * 设置健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
+                     * @param HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
                      */
                     void SetHealthCheck(const HealthCheck& _healthCheck);
 
@@ -247,14 +247,14 @@ namespace TencentCloud
                     bool SessionTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭
-                     * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭
+                     * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。
+                     * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。
                      */
                     int64_t GetKeepaliveEnable() const;
 
                     /**
-                     * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭
-                     * @param KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭
+                     * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。
+                     * @param KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。
                      */
                     void SetKeepaliveEnable(const int64_t& _keepaliveEnable);
 
@@ -285,31 +285,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID
+                     * 负载均衡实例 ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 要将监听器创建到哪些端口，每个端口对应一个新的监听器
+                     * 要将监听器创建到哪些端口，每个端口对应一个新的监听器。
                      */
                     std::vector<int64_t> m_ports;
                     bool m_portsHasBeenSet;
 
                     /**
-                     * 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）
+                     * 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数
+                     * 要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数。
                      */
                     std::vector<std::string> m_listenerNames;
                     bool m_listenerNamesHasBeenSet;
 
                     /**
-                     * 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器
+                     * 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
                      */
                     HealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
@@ -352,7 +352,7 @@ namespace TencentCloud
                     bool m_sessionTypeHasBeenSet;
 
                     /**
-                     * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭
+                     * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。
                      */
                     int64_t m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组ID
-                     * @return TargetGroupId 目标组ID
+                     * 获取目标组ID。
+                     * @return TargetGroupId 目标组ID。
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
-                     * 设置目标组ID
-                     * @param TargetGroupId 目标组ID
+                     * 设置目标组ID。
+                     * @param TargetGroupId 目标组ID。
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取待修改权重的服务器数组
-                     * @return TargetGroupInstances 待修改权重的服务器数组
+                     * 获取待修改权重的服务器数组。
+                     * @return TargetGroupInstances 待修改权重的服务器数组。
                      */
                     std::vector<TargetGroupInstance> GetTargetGroupInstances() const;
 
                     /**
-                     * 设置待修改权重的服务器数组
-                     * @param TargetGroupInstances 待修改权重的服务器数组
+                     * 设置待修改权重的服务器数组。
+                     * @param TargetGroupInstances 待修改权重的服务器数组。
                      */
                     void SetTargetGroupInstances(const std::vector<TargetGroupInstance>& _targetGroupInstances);
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组ID
+                     * 目标组ID。
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 待修改权重的服务器数组
+                     * 待修改权重的服务器数组。
                      */
                     std::vector<TargetGroupInstance> m_targetGroupInstances;
                     bool m_targetGroupInstancesHasBeenSet;

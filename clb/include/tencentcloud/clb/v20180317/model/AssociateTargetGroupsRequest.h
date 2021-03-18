@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取绑定的关系数组
-                     * @return Associations 绑定的关系数组
+                     * 获取绑定的关系数组。
+                     * @return Associations 绑定的关系数组。
                      */
                     std::vector<TargetGroupAssociation> GetAssociations() const;
 
                     /**
-                     * 设置绑定的关系数组
-                     * @param Associations 绑定的关系数组
+                     * 设置绑定的关系数组。
+                     * @param Associations 绑定的关系数组。
                      */
                     void SetAssociations(const std::vector<TargetGroupAssociation>& _associations);
 
@@ -64,7 +64,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 绑定的关系数组
+                     * 绑定的关系数组。
                      */
                     std::vector<TargetGroupAssociation> m_associations;
                     bool m_associationsHasBeenSet;

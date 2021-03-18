@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID
-                     * @return LoadBalancerId 负载均衡实例 ID
+                     * 获取负载均衡实例ID。
+                     * @return LoadBalancerId 负载均衡实例ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * 设置负载均衡实例ID。
+                     * @param LoadBalancerId 负载均衡实例ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器 ID列表
-                     * @return ListenerIds 监听器 ID列表
+                     * 获取监听器ID列表。
+                     * @return ListenerIds 监听器ID列表。
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
-                     * 设置监听器 ID列表
-                     * @param ListenerIds 监听器 ID列表
+                     * 设置监听器ID列表。
+                     * @param ListenerIds 监听器ID列表。
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ListenerIdsHasBeenSet() const;
 
                     /**
-                     * 获取监听器协议类型
-                     * @return Protocol 监听器协议类型
+                     * 获取监听器协议类型。
+                     * @return Protocol 监听器协议类型。
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置监听器协议类型
-                     * @param Protocol 监听器协议类型
+                     * 设置监听器协议类型。
+                     * @param Protocol 监听器协议类型。
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取监听器端口
-                     * @return Port 监听器端口
+                     * 获取监听器端口。
+                     * @return Port 监听器端口。
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置监听器端口
-                     * @param Port 监听器端口
+                     * 设置监听器端口。
+                     * @param Port 监听器端口。
                      */
                     void SetPort(const int64_t& _port);
 
@@ -117,25 +117,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID
+                     * 负载均衡实例ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 监听器 ID列表
+                     * 监听器ID列表。
                      */
                     std::vector<std::string> m_listenerIds;
                     bool m_listenerIdsHasBeenSet;
 
                     /**
-                     * 监听器协议类型
+                     * 监听器协议类型。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 监听器端口
+                     * 监听器端口。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

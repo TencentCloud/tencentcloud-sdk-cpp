@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID
-                     * @return LoadBalancerId 负载均衡实例 ID
+                     * 获取负载均衡实例ID。
+                     * @return LoadBalancerId 负载均衡实例ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * 设置负载均衡实例ID。
+                     * @param LoadBalancerId 负载均衡实例ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器 ID
-                     * @return ListenerId 负载均衡监听器 ID
+                     * 获取负载均衡监听器ID。
+                     * @return ListenerId 负载均衡监听器ID。
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置负载均衡监听器 ID
-                     * @param ListenerId 负载均衡监听器 ID
+                     * 设置负载均衡监听器ID。
+                     * @param ListenerId 负载均衡监听器ID。
                      */
                     void SetListenerId(const std::string& _listenerId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取域名（必须是已经创建的转发规则下的域名）
-                     * @return Domain 域名（必须是已经创建的转发规则下的域名）
+                     * 获取域名（必须是已经创建的转发规则下的域名）。
+                     * @return Domain 域名（必须是已经创建的转发规则下的域名）。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名（必须是已经创建的转发规则下的域名）
-                     * @param Domain 域名（必须是已经创建的转发规则下的域名）
+                     * 设置域名（必须是已经创建的转发规则下的域名）。
+                     * @param Domain 域名（必须是已经创建的转发规则下的域名）。
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取要修改的新域名
-                     * @return NewDomain 要修改的新域名
+                     * 获取要修改的新域名。
+                     * @return NewDomain 要修改的新域名。
                      */
                     std::string GetNewDomain() const;
 
                     /**
-                     * 设置要修改的新域名
-                     * @param NewDomain 要修改的新域名
+                     * 设置要修改的新域名。
+                     * @param NewDomain 要修改的新域名。
                      */
                     void SetNewDomain(const std::string& _newDomain);
 
@@ -190,25 +190,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID
+                     * 负载均衡实例ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器 ID
+                     * 负载均衡监听器ID。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 域名（必须是已经创建的转发规则下的域名）
+                     * 域名（必须是已经创建的转发规则下的域名）。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 要修改的新域名
+                     * 要修改的新域名。
                      */
                     std::string m_newDomain;
                     bool m_newDomainHasBeenSet;

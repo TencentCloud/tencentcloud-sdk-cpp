@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取IdList
+                     * @return MicroserviceIdList IdList
+                     */
+                    std::vector<std::string> GetMicroserviceIdList() const;
+
+                    /**
+                     * 设置IdList
+                     * @param MicroserviceIdList IdList
+                     */
+                    void SetMicroserviceIdList(const std::vector<std::string>& _microserviceIdList);
+
+                    /**
+                     * 判断参数 MicroserviceIdList 是否已赋值
+                     * @return MicroserviceIdList 是否已赋值
+                     */
+                    bool MicroserviceIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * IdList
+                     */
+                    std::vector<std::string> m_microserviceIdList;
+                    bool m_microserviceIdListHasBeenSet;
 
                 };
             }

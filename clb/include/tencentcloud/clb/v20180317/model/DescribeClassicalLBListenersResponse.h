@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监听器列表
+                     * 获取监听器列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Listeners 监听器列表
+                     * @return Listeners 监听器列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClassicalListener> GetListeners() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监听器列表
+                     * 监听器列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClassicalListener> m_listeners;

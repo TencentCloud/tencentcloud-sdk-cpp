@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组的ID
-                     * @return TargetGroupId 目标组的ID
+                     * 获取目标组的ID。
+                     * @return TargetGroupId 目标组的ID。
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
-                     * 设置目标组的ID
-                     * @param TargetGroupId 目标组的ID
+                     * 设置目标组的ID。
+                     * @param TargetGroupId 目标组的ID。
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取目标组的新名称
-                     * @return TargetGroupName 目标组的新名称
+                     * 获取目标组的新名称。
+                     * @return TargetGroupName 目标组的新名称。
                      */
                     std::string GetTargetGroupName() const;
 
                     /**
-                     * 设置目标组的新名称
-                     * @param TargetGroupName 目标组的新名称
+                     * 设置目标组的新名称。
+                     * @param TargetGroupName 目标组的新名称。
                      */
                     void SetTargetGroupName(const std::string& _targetGroupName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TargetGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取目标组的新默认端口
-                     * @return Port 目标组的新默认端口
+                     * 获取目标组的新默认端口。
+                     * @return Port 目标组的新默认端口。
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置目标组的新默认端口
-                     * @param Port 目标组的新默认端口
+                     * 设置目标组的新默认端口。
+                     * @param Port 目标组的新默认端口。
                      */
                     void SetPort(const uint64_t& _port);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组的ID
+                     * 目标组的ID。
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 目标组的新名称
+                     * 目标组的新名称。
                      */
                     std::string m_targetGroupName;
                     bool m_targetGroupNameHasBeenSet;
 
                     /**
-                     * 目标组的新默认端口
+                     * 目标组的新默认端口。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;

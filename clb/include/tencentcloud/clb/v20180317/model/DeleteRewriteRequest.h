@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例ID
-                     * @return LoadBalancerId 负载均衡实例ID
+                     * 获取负载均衡实例ID。
+                     * @return LoadBalancerId 负载均衡实例ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例ID
-                     * @param LoadBalancerId 负载均衡实例ID
+                     * 设置负载均衡实例ID。
+                     * @param LoadBalancerId 负载均衡实例ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取源监听器ID
-                     * @return SourceListenerId 源监听器ID
+                     * 获取源监听器ID。
+                     * @return SourceListenerId 源监听器ID。
                      */
                     std::string GetSourceListenerId() const;
 
                     /**
-                     * 设置源监听器ID
-                     * @param SourceListenerId 源监听器ID
+                     * 设置源监听器ID。
+                     * @param SourceListenerId 源监听器ID。
                      */
                     void SetSourceListenerId(const std::string& _sourceListenerId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool SourceListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取目标监听器ID
-                     * @return TargetListenerId 目标监听器ID
+                     * 获取目标监听器ID。
+                     * @return TargetListenerId 目标监听器ID。
                      */
                     std::string GetTargetListenerId() const;
 
                     /**
-                     * 设置目标监听器ID
-                     * @param TargetListenerId 目标监听器ID
+                     * 设置目标监听器ID。
+                     * @param TargetListenerId 目标监听器ID。
                      */
                     void SetTargetListenerId(const std::string& _targetListenerId);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool TargetListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取转发规则之间的重定向关系
-                     * @return RewriteInfos 转发规则之间的重定向关系
+                     * 获取转发规则之间的重定向关系。
+                     * @return RewriteInfos 转发规则之间的重定向关系。
                      */
                     std::vector<RewriteLocationMap> GetRewriteInfos() const;
 
                     /**
-                     * 设置转发规则之间的重定向关系
-                     * @param RewriteInfos 转发规则之间的重定向关系
+                     * 设置转发规则之间的重定向关系。
+                     * @param RewriteInfos 转发规则之间的重定向关系。
                      */
                     void SetRewriteInfos(const std::vector<RewriteLocationMap>& _rewriteInfos);
 
@@ -118,25 +118,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例ID
+                     * 负载均衡实例ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 源监听器ID
+                     * 源监听器ID。
                      */
                     std::string m_sourceListenerId;
                     bool m_sourceListenerIdHasBeenSet;
 
                     /**
-                     * 目标监听器ID
+                     * 目标监听器ID。
                      */
                     std::string m_targetListenerId;
                     bool m_targetListenerIdHasBeenSet;
 
                     /**
-                     * 转发规则之间的重定向关系
+                     * 转发规则之间的重定向关系。
                      */
                     std::vector<RewriteLocationMap> m_rewriteInfos;
                     bool m_rewriteInfosHasBeenSet;

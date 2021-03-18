@@ -30,7 +30,8 @@ DescribeEcdnDomainStatisticsRequest::DescribeEcdnDomainStatisticsRequest() :
     m_domainsHasBeenSet(false),
     m_projectsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string DescribeEcdnDomainStatisticsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -230,6 +239,22 @@ void DescribeEcdnDomainStatisticsRequest::SetLimit(const int64_t& _limit)
 bool DescribeEcdnDomainStatisticsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeEcdnDomainStatisticsRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeEcdnDomainStatisticsRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeEcdnDomainStatisticsRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

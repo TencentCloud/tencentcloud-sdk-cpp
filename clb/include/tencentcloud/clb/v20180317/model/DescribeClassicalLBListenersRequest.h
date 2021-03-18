@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID
-                     * @return LoadBalancerId 负载均衡实例 ID
+                     * 获取负载均衡实例ID。
+                     * @return LoadBalancerId 负载均衡实例ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * 设置负载均衡实例ID。
+                     * @param LoadBalancerId 负载均衡实例ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器ID列表
-                     * @return ListenerIds 负载均衡监听器ID列表
+                     * 获取负载均衡监听器ID列表。
+                     * @return ListenerIds 负载均衡监听器ID列表。
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
-                     * 设置负载均衡监听器ID列表
-                     * @param ListenerIds 负载均衡监听器ID列表
+                     * 设置负载均衡监听器ID列表。
+                     * @param ListenerIds 负载均衡监听器ID列表。
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ListenerIdsHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听的协议, 'TCP', 'UDP', 'HTTP', 'HTTPS'
-                     * @return Protocol 负载均衡监听的协议, 'TCP', 'UDP', 'HTTP', 'HTTPS'
+                     * 获取负载均衡监听的协议：'TCP', 'UDP', 'HTTP', 'HTTPS'。
+                     * @return Protocol 负载均衡监听的协议：'TCP', 'UDP', 'HTTP', 'HTTPS'。
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置负载均衡监听的协议, 'TCP', 'UDP', 'HTTP', 'HTTPS'
-                     * @param Protocol 负载均衡监听的协议, 'TCP', 'UDP', 'HTTP', 'HTTPS'
+                     * 设置负载均衡监听的协议：'TCP', 'UDP', 'HTTP', 'HTTPS'。
+                     * @param Protocol 负载均衡监听的协议：'TCP', 'UDP', 'HTTP', 'HTTPS'。
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听端口， 范围[1-65535]
-                     * @return ListenerPort 负载均衡监听端口， 范围[1-65535]
+                     * 获取负载均衡监听端口，范围为[1-65535]。
+                     * @return ListenerPort 负载均衡监听端口，范围为[1-65535]。
                      */
                     int64_t GetListenerPort() const;
 
                     /**
-                     * 设置负载均衡监听端口， 范围[1-65535]
-                     * @param ListenerPort 负载均衡监听端口， 范围[1-65535]
+                     * 设置负载均衡监听端口，范围为[1-65535]。
+                     * @param ListenerPort 负载均衡监听端口，范围为[1-65535]。
                      */
                     void SetListenerPort(const int64_t& _listenerPort);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ListenerPortHasBeenSet() const;
 
                     /**
-                     * 获取监听器的状态，0 表示创建中，1 表示运行中
-                     * @return Status 监听器的状态，0 表示创建中，1 表示运行中
+                     * 获取监听器的状态，0：创建中，1：运行中。
+                     * @return Status 监听器的状态，0：创建中，1：运行中。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置监听器的状态，0 表示创建中，1 表示运行中
-                     * @param Status 监听器的状态，0 表示创建中，1 表示运行中
+                     * 设置监听器的状态，0：创建中，1：运行中。
+                     * @param Status 监听器的状态，0：创建中，1：运行中。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -135,31 +135,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID
+                     * 负载均衡实例ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器ID列表
+                     * 负载均衡监听器ID列表。
                      */
                     std::vector<std::string> m_listenerIds;
                     bool m_listenerIdsHasBeenSet;
 
                     /**
-                     * 负载均衡监听的协议, 'TCP', 'UDP', 'HTTP', 'HTTPS'
+                     * 负载均衡监听的协议：'TCP', 'UDP', 'HTTP', 'HTTPS'。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 负载均衡监听端口， 范围[1-65535]
+                     * 负载均衡监听端口，范围为[1-65535]。
                      */
                     int64_t m_listenerPort;
                     bool m_listenerPortHasBeenSet;
 
                     /**
-                     * 监听器的状态，0 表示创建中，1 表示运行中
+                     * 监听器的状态，0：创建中，1：运行中。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

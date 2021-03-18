@@ -87,50 +87,26 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计指标名称。flux：流量，单位为 byte
+                     * 获取统计指标名称:
+flux：流量，单位为 byte
 bandwidth：带宽，单位为 bps
 request：请求数，单位为 次
-delay：响应时间，单位为ms
-static_request ： 静态请求数，单位为 次
-static_flux：静态流量，单位为 byte
-static_bandwidth ： 静态带宽，单位为 bps
-dynamic_request：动态请求数，单位为 次
-dynamic_flux：动态流量，单位为 byte
-dynamic_bandwidth：动态带宽，单位为 bps
-                     * @return Metrics 统计指标名称。flux：流量，单位为 byte
+                     * @return Metrics 统计指标名称:
+flux：流量，单位为 byte
 bandwidth：带宽，单位为 bps
 request：请求数，单位为 次
-delay：响应时间，单位为ms
-static_request ： 静态请求数，单位为 次
-static_flux：静态流量，单位为 byte
-static_bandwidth ： 静态带宽，单位为 bps
-dynamic_request：动态请求数，单位为 次
-dynamic_flux：动态流量，单位为 byte
-dynamic_bandwidth：动态带宽，单位为 bps
                      */
                     std::vector<std::string> GetMetrics() const;
 
                     /**
-                     * 设置统计指标名称。flux：流量，单位为 byte
+                     * 设置统计指标名称:
+flux：流量，单位为 byte
 bandwidth：带宽，单位为 bps
 request：请求数，单位为 次
-delay：响应时间，单位为ms
-static_request ： 静态请求数，单位为 次
-static_flux：静态流量，单位为 byte
-static_bandwidth ： 静态带宽，单位为 bps
-dynamic_request：动态请求数，单位为 次
-dynamic_flux：动态流量，单位为 byte
-dynamic_bandwidth：动态带宽，单位为 bps
-                     * @param Metrics 统计指标名称。flux：流量，单位为 byte
+                     * @param Metrics 统计指标名称:
+flux：流量，单位为 byte
 bandwidth：带宽，单位为 bps
 request：请求数，单位为 次
-delay：响应时间，单位为ms
-static_request ： 静态请求数，单位为 次
-static_flux：静态流量，单位为 byte
-static_bandwidth ： 静态带宽，单位为 bps
-dynamic_request：动态请求数，单位为 次
-dynamic_flux：动态流量，单位为 byte
-dynamic_bandwidth：动态带宽，单位为 bps
                      */
                     void SetMetrics(const std::vector<std::string>& _metrics);
 
@@ -216,6 +192,40 @@ dynamic_bandwidth：动态带宽，单位为 bps
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取统计区域:
+mainland: 境内
+oversea: 境外
+global: 全部
+默认 global
+                     * @return Area 统计区域:
+mainland: 境内
+oversea: 境外
+global: 全部
+默认 global
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置统计区域:
+mainland: 境内
+oversea: 境外
+global: 全部
+默认 global
+                     * @param Area 统计区域:
+mainland: 境内
+oversea: 境外
+global: 全部
+默认 global
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,16 +243,10 @@ dynamic_bandwidth：动态带宽，单位为 bps
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 统计指标名称。flux：流量，单位为 byte
+                     * 统计指标名称:
+flux：流量，单位为 byte
 bandwidth：带宽，单位为 bps
 request：请求数，单位为 次
-delay：响应时间，单位为ms
-static_request ： 静态请求数，单位为 次
-static_flux：静态流量，单位为 byte
-static_bandwidth ： 静态带宽，单位为 bps
-dynamic_request：动态请求数，单位为 次
-dynamic_flux：动态流量，单位为 byte
-dynamic_bandwidth：动态带宽，单位为 bps
                      */
                     std::vector<std::string> m_metrics;
                     bool m_metricsHasBeenSet;
@@ -271,6 +275,16 @@ dynamic_bandwidth：动态带宽，单位为 bps
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 统计区域:
+mainland: 境内
+oversea: 境外
+global: 全部
+默认 global
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

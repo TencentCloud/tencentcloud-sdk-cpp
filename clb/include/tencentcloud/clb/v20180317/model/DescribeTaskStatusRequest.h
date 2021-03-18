@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求ID，即接口返回的 RequestId 参数
-                     * @return TaskId 请求ID，即接口返回的 RequestId 参数
+                     * 获取请求ID，即接口返回的 RequestId 参数。
+                     * @return TaskId 请求ID，即接口返回的 RequestId 参数。
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置请求ID，即接口返回的 RequestId 参数
-                     * @param TaskId 请求ID，即接口返回的 RequestId 参数
+                     * 设置请求ID，即接口返回的 RequestId 参数。
+                     * @param TaskId 请求ID，即接口返回的 RequestId 参数。
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求ID，即接口返回的 RequestId 参数
+                     * 请求ID，即接口返回的 RequestId 参数。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

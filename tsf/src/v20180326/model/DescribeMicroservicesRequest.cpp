@@ -30,7 +30,8 @@ DescribeMicroservicesRequest::DescribeMicroservicesRequest() :
     m_orderTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_microserviceIdListHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,19 @@ string DescribeMicroservicesRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_status.begin(); itr != m_status.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_microserviceIdListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MicroserviceIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_microserviceIdList.begin(); itr != m_microserviceIdList.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -220,6 +234,22 @@ void DescribeMicroservicesRequest::SetStatus(const vector<string>& _status)
 bool DescribeMicroservicesRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<string> DescribeMicroservicesRequest::GetMicroserviceIdList() const
+{
+    return m_microserviceIdList;
+}
+
+void DescribeMicroservicesRequest::SetMicroserviceIdList(const vector<string>& _microserviceIdList)
+{
+    m_microserviceIdList = _microserviceIdList;
+    m_microserviceIdListHasBeenSet = true;
+}
+
+bool DescribeMicroservicesRequest::MicroserviceIdListHasBeenSet() const
+{
+    return m_microserviceIdListHasBeenSet;
 }
 
 

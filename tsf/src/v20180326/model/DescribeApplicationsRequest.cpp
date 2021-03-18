@@ -31,7 +31,8 @@ DescribeApplicationsRequest::DescribeApplicationsRequest() :
     m_limitHasBeenSet(false),
     m_applicationTypeHasBeenSet(false),
     m_microserviceTypeHasBeenSet(false),
-    m_applicationResourceTypeListHasBeenSet(false)
+    m_applicationResourceTypeListHasBeenSet(false),
+    m_applicationIdListHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,19 @@ string DescribeApplicationsRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_applicationResourceTypeList.begin(); itr != m_applicationResourceTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_applicationIdListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_applicationIdList.begin(); itr != m_applicationIdList.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -245,6 +259,22 @@ void DescribeApplicationsRequest::SetApplicationResourceTypeList(const vector<st
 bool DescribeApplicationsRequest::ApplicationResourceTypeListHasBeenSet() const
 {
     return m_applicationResourceTypeListHasBeenSet;
+}
+
+vector<string> DescribeApplicationsRequest::GetApplicationIdList() const
+{
+    return m_applicationIdList;
+}
+
+void DescribeApplicationsRequest::SetApplicationIdList(const vector<string>& _applicationIdList)
+{
+    m_applicationIdList = _applicationIdList;
+    m_applicationIdListHasBeenSet = true;
+}
+
+bool DescribeApplicationsRequest::ApplicationIdListHasBeenSet() const
+{
+    return m_applicationIdListHasBeenSet;
 }
 
 

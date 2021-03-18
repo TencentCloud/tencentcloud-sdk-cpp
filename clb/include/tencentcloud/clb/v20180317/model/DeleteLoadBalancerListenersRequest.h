@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID
-                     * @return LoadBalancerId 负载均衡实例 ID
+                     * 获取负载均衡实例ID。
+                     * @return LoadBalancerId 负载均衡实例ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * 设置负载均衡实例ID。
+                     * @param LoadBalancerId 负载均衡实例ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器
-                     * @return ListenerIds 指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器
+                     * 获取指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器。
+                     * @return ListenerIds 指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器。
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
-                     * 设置指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器
-                     * @param ListenerIds 指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器
+                     * 设置指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器。
+                     * @param ListenerIds 指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器。
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID
+                     * 负载均衡实例ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器
+                     * 指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器。
                      */
                     std::vector<std::string> m_listenerIds;
                     bool m_listenerIdsHasBeenSet;

@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool ApplicationResourceTypeListHasBeenSet() const;
 
+                    /**
+                     * 获取IdList
+                     * @return ApplicationIdList IdList
+                     */
+                    std::vector<std::string> GetApplicationIdList() const;
+
+                    /**
+                     * 设置IdList
+                     * @param ApplicationIdList IdList
+                     */
+                    void SetApplicationIdList(const std::vector<std::string>& _applicationIdList);
+
+                    /**
+                     * 判断参数 ApplicationIdList 是否已赋值
+                     * @return ApplicationIdList 是否已赋值
+                     */
+                    bool ApplicationIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_applicationResourceTypeList;
                     bool m_applicationResourceTypeListHasBeenSet;
+
+                    /**
+                     * IdList
+                     */
+                    std::vector<std::string> m_applicationIdList;
+                    bool m_applicationIdListHasBeenSet;
 
                 };
             }

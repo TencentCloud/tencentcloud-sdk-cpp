@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID
-                     * @return LoadBalancerId 负载均衡实例 ID
+                     * 获取负载均衡实例ID。
+                     * @return LoadBalancerId 负载均衡实例ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * 设置负载均衡实例ID。
+                     * @param LoadBalancerId 负载均衡实例ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器 ID
-                     * @return ListenerId 负载均衡监听器 ID
+                     * 获取负载均衡监听器ID。
+                     * @return ListenerId 负载均衡监听器ID。
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置负载均衡监听器 ID
-                     * @param ListenerId 负载均衡监听器 ID
+                     * 设置负载均衡监听器ID。
+                     * @param ListenerId 负载均衡监听器ID。
                      */
                     void SetListenerId(const std::string& _listenerId);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取新的监听器名称
-                     * @return ListenerName 新的监听器名称
+                     * 获取新的监听器名称。
+                     * @return ListenerName 新的监听器名称。
                      */
                     std::string GetListenerName() const;
 
                     /**
-                     * 设置新的监听器名称
-                     * @param ListenerName 新的监听器名称
+                     * 设置新的监听器名称。
+                     * @param ListenerName 新的监听器名称。
                      */
                     void SetListenerName(const std::string& _listenerName);
 
@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器
-                     * @return HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器
+                     * 获取健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
+                     * @return HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
-                     * 设置健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器
-                     * @param HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器
+                     * 设置健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
+                     * @param HealthCheck 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
                      */
                     void SetHealthCheck(const HealthCheck& _healthCheck);
 
@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器
-                     * @return Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器
+                     * 获取证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。
+                     * @return Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
-                     * 设置证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器
-                     * @param Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器
+                     * 设置证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。
+                     * @param Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。
                      */
                     void SetCertificate(const CertificateInput& _certificate);
 
@@ -175,14 +175,14 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI
-                     * @return SniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI
+                     * 获取是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
+                     * @return SniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
                      */
                     int64_t GetSniSwitch() const;
 
                     /**
-                     * 设置是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI
-                     * @param SniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI
+                     * 设置是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
+                     * @param SniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
                      */
                     void SetSniSwitch(const int64_t& _sniSwitch);
 
@@ -193,14 +193,14 @@ namespace TencentCloud
                     bool SniSwitchHasBeenSet() const;
 
                     /**
-                     * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
-                     * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
+                     * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
                      */
                     int64_t GetKeepaliveEnable() const;
 
                     /**
-                     * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
-                     * @param KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
+                     * @param KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
                      */
                     void SetKeepaliveEnable(const int64_t& _keepaliveEnable);
 
@@ -213,19 +213,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID
+                     * 负载均衡实例ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器 ID
+                     * 负载均衡监听器ID。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 新的监听器名称
+                     * 新的监听器名称。
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
@@ -237,13 +237,13 @@ namespace TencentCloud
                     bool m_sessionExpireTimeHasBeenSet;
 
                     /**
-                     * 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器
+                     * 健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。
                      */
                     HealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器
+                     * 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。
                      */
                     CertificateInput m_certificate;
                     bool m_certificateHasBeenSet;
@@ -256,13 +256,13 @@ namespace TencentCloud
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI
+                     * 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
                      */
                     int64_t m_sniSwitch;
                     bool m_sniSwitchHasBeenSet;
 
                     /**
-                     * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器
+                     * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
                      */
                     int64_t m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;

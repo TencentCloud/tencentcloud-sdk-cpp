@@ -29,7 +29,8 @@ DescribeEcdnStatisticsRequest::DescribeEcdnStatisticsRequest() :
     m_metricsHasBeenSet(false),
     m_intervalHasBeenSet(false),
     m_domainsHasBeenSet(false),
-    m_projectsHasBeenSet(false)
+    m_projectsHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string DescribeEcdnStatisticsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -205,6 +214,22 @@ void DescribeEcdnStatisticsRequest::SetProjects(const vector<int64_t>& _projects
 bool DescribeEcdnStatisticsRequest::ProjectsHasBeenSet() const
 {
     return m_projectsHasBeenSet;
+}
+
+string DescribeEcdnStatisticsRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeEcdnStatisticsRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeEcdnStatisticsRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

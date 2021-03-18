@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监听器后端绑定的机器信息
+                     * 获取监听器后端绑定的机器信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Listeners 监听器后端绑定的机器信息
+                     * @return Listeners 监听器后端绑定的机器信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ListenerBackend> GetListeners() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监听器后端绑定的机器信息
+                     * 监听器后端绑定的机器信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ListenerBackend> m_listeners;

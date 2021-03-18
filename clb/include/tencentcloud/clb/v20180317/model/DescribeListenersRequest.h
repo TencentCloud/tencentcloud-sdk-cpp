@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID
-                     * @return LoadBalancerId 负载均衡实例 ID
+                     * 获取负载均衡实例ID。
+                     * @return LoadBalancerId 负载均衡实例ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * 设置负载均衡实例ID。
+                     * @param LoadBalancerId 负载均衡实例ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取要查询的负载均衡监听器 ID数组
-                     * @return ListenerIds 要查询的负载均衡监听器 ID数组
+                     * 获取要查询的负载均衡监听器ID数组。
+                     * @return ListenerIds 要查询的负载均衡监听器ID数组。
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
-                     * 设置要查询的负载均衡监听器 ID数组
-                     * @param ListenerIds 要查询的负载均衡监听器 ID数组
+                     * 设置要查询的负载均衡监听器ID数组。
+                     * @param ListenerIds 要查询的负载均衡监听器ID数组。
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ListenerIdsHasBeenSet() const;
 
                     /**
-                     * 获取要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL
-                     * @return Protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL
+                     * 获取要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
+                     * @return Protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL
-                     * @param Protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL
+                     * 设置要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
+                     * @param Protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取要查询的监听器的端口
-                     * @return Port 要查询的监听器的端口
+                     * 获取要查询的监听器的端口。
+                     * @return Port 要查询的监听器的端口。
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置要查询的监听器的端口
-                     * @param Port 要查询的监听器的端口
+                     * 设置要查询的监听器的端口。
+                     * @param Port 要查询的监听器的端口。
                      */
                     void SetPort(const int64_t& _port);
 
@@ -117,25 +117,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID
+                     * 负载均衡实例ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 要查询的负载均衡监听器 ID数组
+                     * 要查询的负载均衡监听器ID数组。
                      */
                     std::vector<std::string> m_listenerIds;
                     bool m_listenerIdsHasBeenSet;
 
                     /**
-                     * 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL
+                     * 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 要查询的监听器的端口
+                     * 要查询的监听器的端口。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

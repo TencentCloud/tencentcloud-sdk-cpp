@@ -1,0 +1,170 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/iotvideoindustry/v20201201/model/GetVideoListByConRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
+using namespace rapidjson;
+using namespace std;
+
+GetVideoListByConRequest::GetVideoListByConRequest() :
+    m_deviceIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_latestDayHasBeenSet(false),
+    m_dateHasBeenSet(false)
+{
+}
+
+string GetVideoListByConRequest::ToJsonString() const
+{
+    Document d;
+    d.SetObject();
+    Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_deviceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_latestDayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LatestDay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_latestDay, allocator);
+    }
+
+    if (m_dateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Date";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+    }
+
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string GetVideoListByConRequest::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void GetVideoListByConRequest::SetDeviceId(const string& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool GetVideoListByConRequest::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
+}
+
+int64_t GetVideoListByConRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void GetVideoListByConRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool GetVideoListByConRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t GetVideoListByConRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void GetVideoListByConRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool GetVideoListByConRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t GetVideoListByConRequest::GetLatestDay() const
+{
+    return m_latestDay;
+}
+
+void GetVideoListByConRequest::SetLatestDay(const int64_t& _latestDay)
+{
+    m_latestDay = _latestDay;
+    m_latestDayHasBeenSet = true;
+}
+
+bool GetVideoListByConRequest::LatestDayHasBeenSet() const
+{
+    return m_latestDayHasBeenSet;
+}
+
+string GetVideoListByConRequest::GetDate() const
+{
+    return m_date;
+}
+
+void GetVideoListByConRequest::SetDate(const string& _date)
+{
+    m_date = _date;
+    m_dateHasBeenSet = true;
+}
+
+bool GetVideoListByConRequest::DateHasBeenSet() const
+{
+    return m_dateHasBeenSet;
+}
+
+
