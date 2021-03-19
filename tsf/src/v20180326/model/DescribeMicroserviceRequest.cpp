@@ -26,7 +26,8 @@ using namespace std;
 DescribeMicroserviceRequest::DescribeMicroserviceRequest() :
     m_microserviceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_groupIdsHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,19 @@ string DescribeMicroserviceRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_groupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -115,6 +129,22 @@ void DescribeMicroserviceRequest::SetLimit(const int64_t& _limit)
 bool DescribeMicroserviceRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> DescribeMicroserviceRequest::GetGroupIds() const
+{
+    return m_groupIds;
+}
+
+void DescribeMicroserviceRequest::SetGroupIds(const vector<string>& _groupIds)
+{
+    m_groupIds = _groupIds;
+    m_groupIdsHasBeenSet = true;
+}
+
+bool DescribeMicroserviceRequest::GroupIdsHasBeenSet() const
+{
+    return m_groupIdsHasBeenSet;
 }
 
 

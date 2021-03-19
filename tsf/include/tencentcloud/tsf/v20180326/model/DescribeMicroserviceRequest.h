@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取可选，根据部署组ID进行过滤
+                     * @return GroupIds 可选，根据部署组ID进行过滤
+                     */
+                    std::vector<std::string> GetGroupIds() const;
+
+                    /**
+                     * 设置可选，根据部署组ID进行过滤
+                     * @param GroupIds 可选，根据部署组ID进行过滤
+                     */
+                    void SetGroupIds(const std::vector<std::string>& _groupIds);
+
+                    /**
+                     * 判断参数 GroupIds 是否已赋值
+                     * @return GroupIds 是否已赋值
+                     */
+                    bool GroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 可选，根据部署组ID进行过滤
+                     */
+                    std::vector<std::string> m_groupIds;
+                    bool m_groupIdsHasBeenSet;
 
                 };
             }

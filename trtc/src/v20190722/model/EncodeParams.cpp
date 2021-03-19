@@ -31,7 +31,8 @@ EncodeParams::EncodeParams() :
     m_videoFramerateHasBeenSet(false),
     m_videoGopHasBeenSet(false),
     m_backgroundColorHasBeenSet(false),
-    m_backgroundImageIdHasBeenSet(false)
+    m_backgroundImageIdHasBeenSet(false),
+    m_audioCodecHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome EncodeParams::Deserialize(const Value &value)
         m_backgroundImageIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioCodec") && !value["AudioCodec"].IsNull())
+    {
+        if (!value["AudioCodec"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `EncodeParams.AudioCodec` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioCodec = value["AudioCodec"].GetUint64();
+        m_audioCodecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +236,14 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "BackgroundImageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backgroundImageId, allocator);
+    }
+
+    if (m_audioCodecHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AudioCodec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audioCodec, allocator);
     }
 
 }
@@ -388,5 +407,21 @@ void EncodeParams::SetBackgroundImageId(const uint64_t& _backgroundImageId)
 bool EncodeParams::BackgroundImageIdHasBeenSet() const
 {
     return m_backgroundImageIdHasBeenSet;
+}
+
+uint64_t EncodeParams::GetAudioCodec() const
+{
+    return m_audioCodec;
+}
+
+void EncodeParams::SetAudioCodec(const uint64_t& _audioCodec)
+{
+    m_audioCodec = _audioCodec;
+    m_audioCodecHasBeenSet = true;
+}
+
+bool EncodeParams::AudioCodecHasBeenSet() const
+{
+    return m_audioCodecHasBeenSet;
 }
 

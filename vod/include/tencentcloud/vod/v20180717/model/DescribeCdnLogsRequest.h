@@ -97,6 +97,42 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
+                     * 获取分页拉取的最大返回结果数。默认值：100；最大值：1000。
+                     * @return Limit 分页拉取的最大返回结果数。默认值：100；最大值：1000。
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置分页拉取的最大返回结果数。默认值：100；最大值：1000。
+                     * @param Limit 分页拉取的最大返回结果数。默认值：100；最大值：1000。
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页拉取的起始偏移量。默认值：0。
+                     * @return Offset 分页拉取的起始偏移量。默认值：0。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置分页拉取的起始偏移量。默认值：0。
+                     * @param Offset 分页拉取的起始偏移量。默认值：0。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      */
@@ -133,6 +169,18 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 分页拉取的最大返回结果数。默认值：100；最大值：1000。
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页拉取的起始偏移量。默认值：0。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                     /**
                      * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。

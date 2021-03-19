@@ -79,6 +79,24 @@ namespace TencentCloud
                      */
                     bool FirewallRulesHasBeenSet() const;
 
+                    /**
+                     * 获取防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。
+                     * @return FirewallVersion 防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。
+                     */
+                    uint64_t GetFirewallVersion() const;
+
+                    /**
+                     * 设置防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。
+                     * @param FirewallVersion 防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。
+                     */
+                    void SetFirewallVersion(const uint64_t& _firewallVersion);
+
+                    /**
+                     * 判断参数 FirewallVersion 是否已赋值
+                     * @return FirewallVersion 是否已赋值
+                     */
+                    bool FirewallVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +110,12 @@ namespace TencentCloud
                      */
                     std::vector<FirewallRule> m_firewallRules;
                     bool m_firewallRulesHasBeenSet;
+
+                    /**
+                     * 防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。
+                     */
+                    uint64_t m_firewallVersion;
+                    bool m_firewallVersionHasBeenSet;
 
                 };
             }

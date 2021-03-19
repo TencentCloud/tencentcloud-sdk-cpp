@@ -41,7 +41,8 @@ Machine::Machine() :
     m_regionInfoHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
     m_licenseStatusHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_hasAssetScanHasBeenSet(false)
 {
 }
 
@@ -267,6 +268,16 @@ CoreInternalOutcome Machine::Deserialize(const Value &value)
         m_projectIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HasAssetScan") && !value["HasAssetScan"].IsNull())
+    {
+        if (!value["HasAssetScan"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Machine.HasAssetScan` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasAssetScan = value["HasAssetScan"].GetUint64();
+        m_hasAssetScanHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -440,6 +451,14 @@ void Machine::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_hasAssetScanHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HasAssetScan";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasAssetScan, allocator);
     }
 
 }
@@ -763,5 +782,21 @@ void Machine::SetProjectId(const int64_t& _projectId)
 bool Machine::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+uint64_t Machine::GetHasAssetScan() const
+{
+    return m_hasAssetScan;
+}
+
+void Machine::SetHasAssetScan(const uint64_t& _hasAssetScan)
+{
+    m_hasAssetScan = _hasAssetScan;
+    m_hasAssetScanHasBeenSet = true;
+}
+
+bool Machine::HasAssetScanHasBeenSet() const
+{
+    return m_hasAssetScanHasBeenSet;
 }
 

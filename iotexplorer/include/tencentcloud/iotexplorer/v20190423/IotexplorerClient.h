@@ -59,6 +59,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionRequest.h>
@@ -85,6 +87,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayRequest.h>
@@ -105,6 +109,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareResponse.h>
 
 
 namespace TencentCloud
@@ -173,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDeviceDataHistoryResponse> DescribeDeviceDataHistoryOutcome;
                 typedef std::future<DescribeDeviceDataHistoryOutcome> DescribeDeviceDataHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceDataHistoryRequest&, DescribeDeviceDataHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceDataHistoryAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFirmwareTaskResponse> DescribeFirmwareTaskOutcome;
+                typedef std::future<DescribeFirmwareTaskOutcome> DescribeFirmwareTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTaskRequest&, DescribeFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLoRaFrequencyResponse> DescribeLoRaFrequencyOutcome;
                 typedef std::future<DescribeLoRaFrequencyOutcome> DescribeLoRaFrequencyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeLoRaFrequencyRequest&, DescribeLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoRaFrequencyAsyncHandler;
@@ -212,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListEventHistoryResponse> ListEventHistoryOutcome;
                 typedef std::future<ListEventHistoryOutcome> ListEventHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListEventHistoryRequest&, ListEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEventHistoryAsyncHandler;
+                typedef Outcome<Error, Model::ListFirmwaresResponse> ListFirmwaresOutcome;
+                typedef std::future<ListFirmwaresOutcome> ListFirmwaresOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ListFirmwaresRequest&, ListFirmwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFirmwaresAsyncHandler;
                 typedef Outcome<Error, Model::ModifyLoRaFrequencyResponse> ModifyLoRaFrequencyOutcome;
                 typedef std::future<ModifyLoRaFrequencyOutcome> ModifyLoRaFrequencyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyLoRaFrequencyRequest&, ModifyLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoRaFrequencyAsyncHandler;
@@ -242,6 +256,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SearchTopicRuleResponse> SearchTopicRuleOutcome;
                 typedef std::future<SearchTopicRuleOutcome> SearchTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchTopicRuleRequest&, SearchTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchTopicRuleAsyncHandler;
+                typedef Outcome<Error, Model::UpdateFirmwareResponse> UpdateFirmwareOutcome;
+                typedef std::future<UpdateFirmwareOutcome> UpdateFirmwareOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UpdateFirmwareRequest&, UpdateFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFirmwareAsyncHandler;
+                typedef Outcome<Error, Model::UploadFirmwareResponse> UploadFirmwareOutcome;
+                typedef std::future<UploadFirmwareOutcome> UploadFirmwareOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
 
 
 
@@ -408,6 +428,15 @@ namespace TencentCloud
                 DescribeDeviceDataHistoryOutcomeCallable DescribeDeviceDataHistoryCallable(const Model::DescribeDeviceDataHistoryRequest& request);
 
                 /**
+                 *查询固件升级任务列表
+                 * @param req DescribeFirmwareTaskRequest
+                 * @return DescribeFirmwareTaskOutcome
+                 */
+                DescribeFirmwareTaskOutcome DescribeFirmwareTask(const Model::DescribeFirmwareTaskRequest &request);
+                void DescribeFirmwareTaskAsync(const Model::DescribeFirmwareTaskRequest& request, const DescribeFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareTaskOutcomeCallable DescribeFirmwareTaskCallable(const Model::DescribeFirmwareTaskRequest& request);
+
+                /**
                  *提供查询LoRa自定义频点详情的能力
                  * @param req DescribeLoRaFrequencyRequest
                  * @return DescribeLoRaFrequencyOutcome
@@ -525,6 +554,15 @@ namespace TencentCloud
                 ListEventHistoryOutcomeCallable ListEventHistoryCallable(const Model::ListEventHistoryRequest& request);
 
                 /**
+                 *本接口（ListFirmwares）用于获取固件列表 
+                 * @param req ListFirmwaresRequest
+                 * @return ListFirmwaresOutcome
+                 */
+                ListFirmwaresOutcome ListFirmwares(const Model::ListFirmwaresRequest &request);
+                void ListFirmwaresAsync(const Model::ListFirmwaresRequest& request, const ListFirmwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListFirmwaresOutcomeCallable ListFirmwaresCallable(const Model::ListFirmwaresRequest& request);
+
+                /**
                  *修改LoRa自定义频点
                  * @param req ModifyLoRaFrequencyRequest
                  * @return ModifyLoRaFrequencyOutcome
@@ -613,6 +651,24 @@ namespace TencentCloud
                 SearchTopicRuleOutcome SearchTopicRule(const Model::SearchTopicRuleRequest &request);
                 void SearchTopicRuleAsync(const Model::SearchTopicRuleRequest& request, const SearchTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchTopicRuleOutcomeCallable SearchTopicRuleCallable(const Model::SearchTopicRuleRequest& request);
+
+                /**
+                 *本接口（UpdateFirmware）用于对指定设备发起固件升级请求 
+                 * @param req UpdateFirmwareRequest
+                 * @return UpdateFirmwareOutcome
+                 */
+                UpdateFirmwareOutcome UpdateFirmware(const Model::UpdateFirmwareRequest &request);
+                void UpdateFirmwareAsync(const Model::UpdateFirmwareRequest& request, const UpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateFirmwareOutcomeCallable UpdateFirmwareCallable(const Model::UpdateFirmwareRequest& request);
+
+                /**
+                 *本接口（UploadFirmware）用于上传设备固件至平台
+                 * @param req UploadFirmwareRequest
+                 * @return UploadFirmwareOutcome
+                 */
+                UploadFirmwareOutcome UploadFirmware(const Model::UploadFirmwareRequest &request);
+                void UploadFirmwareAsync(const Model::UploadFirmwareRequest& request, const UploadFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadFirmwareOutcomeCallable UploadFirmwareCallable(const Model::UploadFirmwareRequest& request);
 
             };
         }

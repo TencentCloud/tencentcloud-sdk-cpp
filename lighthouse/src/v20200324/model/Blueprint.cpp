@@ -35,7 +35,8 @@ Blueprint::Blueprint() :
     m_blueprintStateHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_blueprintNameHasBeenSet(false),
-    m_supportAutomationToolsHasBeenSet(false)
+    m_supportAutomationToolsHasBeenSet(false),
+    m_requiredMemorySizeHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,16 @@ CoreInternalOutcome Blueprint::Deserialize(const Value &value)
         m_supportAutomationToolsHasBeenSet = true;
     }
 
+    if (value.HasMember("RequiredMemorySize") && !value["RequiredMemorySize"].IsNull())
+    {
+        if (!value["RequiredMemorySize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Blueprint.RequiredMemorySize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_requiredMemorySize = value["RequiredMemorySize"].GetInt64();
+        m_requiredMemorySizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +312,14 @@ void Blueprint::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "SupportAutomationTools";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportAutomationTools, allocator);
+    }
+
+    if (m_requiredMemorySizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RequiredMemorySize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_requiredMemorySize, allocator);
     }
 
 }
@@ -528,5 +547,21 @@ void Blueprint::SetSupportAutomationTools(const bool& _supportAutomationTools)
 bool Blueprint::SupportAutomationToolsHasBeenSet() const
 {
     return m_supportAutomationToolsHasBeenSet;
+}
+
+int64_t Blueprint::GetRequiredMemorySize() const
+{
+    return m_requiredMemorySize;
+}
+
+void Blueprint::SetRequiredMemorySize(const int64_t& _requiredMemorySize)
+{
+    m_requiredMemorySize = _requiredMemorySize;
+    m_requiredMemorySizeHasBeenSet = true;
+}
+
+bool Blueprint::RequiredMemorySizeHasBeenSet() const
+{
+    return m_requiredMemorySizeHasBeenSet;
 }
 

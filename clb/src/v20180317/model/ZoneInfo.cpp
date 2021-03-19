@@ -24,7 +24,9 @@ using namespace std;
 ZoneInfo::ZoneInfo() :
     m_zoneIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_zoneNameHasBeenSet(false)
+    m_zoneNameHasBeenSet(false),
+    m_zoneRegionHasBeenSet(false),
+    m_localZoneHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,26 @@ CoreInternalOutcome ZoneInfo::Deserialize(const Value &value)
         m_zoneNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneRegion") && !value["ZoneRegion"].IsNull())
+    {
+        if (!value["ZoneRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneRegion = string(value["ZoneRegion"].GetString());
+        m_zoneRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("LocalZone") && !value["LocalZone"].IsNull())
+    {
+        if (!value["LocalZone"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ZoneInfo.LocalZone` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_localZone = value["LocalZone"].GetBool();
+        m_localZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +114,22 @@ void ZoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_zoneRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_localZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LocalZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_localZone, allocator);
     }
 
 }
@@ -143,5 +181,37 @@ void ZoneInfo::SetZoneName(const string& _zoneName)
 bool ZoneInfo::ZoneNameHasBeenSet() const
 {
     return m_zoneNameHasBeenSet;
+}
+
+string ZoneInfo::GetZoneRegion() const
+{
+    return m_zoneRegion;
+}
+
+void ZoneInfo::SetZoneRegion(const string& _zoneRegion)
+{
+    m_zoneRegion = _zoneRegion;
+    m_zoneRegionHasBeenSet = true;
+}
+
+bool ZoneInfo::ZoneRegionHasBeenSet() const
+{
+    return m_zoneRegionHasBeenSet;
+}
+
+bool ZoneInfo::GetLocalZone() const
+{
+    return m_localZone;
+}
+
+void ZoneInfo::SetLocalZone(const bool& _localZone)
+{
+    m_localZone = _localZone;
+    m_localZoneHasBeenSet = true;
+}
+
+bool ZoneInfo::LocalZoneHasBeenSet() const
+{
+    return m_localZoneHasBeenSet;
 }
 

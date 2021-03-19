@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeFirewallRulesResponse::DescribeFirewallRulesResponse() :
     m_totalCountHasBeenSet(false),
-    m_firewallRuleSetHasBeenSet(false)
+    m_firewallRuleSetHasBeenSet(false),
+    m_firewallVersionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeFirewallRulesResponse::Deserialize(const string &pay
         m_firewallRuleSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FirewallVersion") && !rsp["FirewallVersion"].IsNull())
+    {
+        if (!rsp["FirewallVersion"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `FirewallVersion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_firewallVersion = rsp["FirewallVersion"].GetUint64();
+        m_firewallVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,16 @@ vector<FirewallRuleInfo> DescribeFirewallRulesResponse::GetFirewallRuleSet() con
 bool DescribeFirewallRulesResponse::FirewallRuleSetHasBeenSet() const
 {
     return m_firewallRuleSetHasBeenSet;
+}
+
+uint64_t DescribeFirewallRulesResponse::GetFirewallVersion() const
+{
+    return m_firewallVersion;
+}
+
+bool DescribeFirewallRulesResponse::FirewallVersionHasBeenSet() const
+{
+    return m_firewallVersionHasBeenSet;
 }
 
 

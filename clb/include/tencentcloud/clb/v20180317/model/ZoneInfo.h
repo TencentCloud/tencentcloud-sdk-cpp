@@ -112,6 +112,50 @@ namespace TencentCloud
                      */
                     bool ZoneNameHasBeenSet() const;
 
+                    /**
+                     * 获取可用区所属地域，如：ap-guangzhou
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneRegion 可用区所属地域，如：ap-guangzhou
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZoneRegion() const;
+
+                    /**
+                     * 设置可用区所属地域，如：ap-guangzhou
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneRegion 可用区所属地域，如：ap-guangzhou
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneRegion(const std::string& _zoneRegion);
+
+                    /**
+                     * 判断参数 ZoneRegion 是否已赋值
+                     * @return ZoneRegion 是否已赋值
+                     */
+                    bool ZoneRegionHasBeenSet() const;
+
+                    /**
+                     * 获取可用区是否是LocalZone可用区，如：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalZone 可用区是否是LocalZone可用区，如：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetLocalZone() const;
+
+                    /**
+                     * 设置可用区是否是LocalZone可用区，如：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LocalZone 可用区是否是LocalZone可用区，如：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocalZone(const bool& _localZone);
+
+                    /**
+                     * 判断参数 LocalZone 是否已赋值
+                     * @return LocalZone 是否已赋值
+                     */
+                    bool LocalZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +178,20 @@ namespace TencentCloud
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 可用区所属地域，如：ap-guangzhou
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneRegion;
+                    bool m_zoneRegionHasBeenSet;
+
+                    /**
+                     * 可用区是否是LocalZone可用区，如：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_localZone;
+                    bool m_localZoneHasBeenSet;
 
                 };
             }

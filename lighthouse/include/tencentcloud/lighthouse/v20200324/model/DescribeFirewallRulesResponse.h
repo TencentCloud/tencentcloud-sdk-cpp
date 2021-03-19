@@ -67,6 +67,18 @@ namespace TencentCloud
                      */
                     bool FirewallRuleSetHasBeenSet() const;
 
+                    /**
+                     * 获取防火墙版本号。
+                     * @return FirewallVersion 防火墙版本号。
+                     */
+                    uint64_t GetFirewallVersion() const;
+
+                    /**
+                     * 判断参数 FirewallVersion 是否已赋值
+                     * @return FirewallVersion 是否已赋值
+                     */
+                    bool FirewallVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +92,12 @@ namespace TencentCloud
                      */
                     std::vector<FirewallRuleInfo> m_firewallRuleSet;
                     bool m_firewallRuleSetHasBeenSet;
+
+                    /**
+                     * 防火墙版本号。
+                     */
+                    uint64_t m_firewallVersion;
+                    bool m_firewallVersionHasBeenSet;
 
                 };
             }

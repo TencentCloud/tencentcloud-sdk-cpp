@@ -27,6 +27,8 @@ DescribeCdnLogsRequest::DescribeCdnLogsRequest() :
     m_domainNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -60,6 +62,22 @@ string DescribeCdnLogsRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -124,6 +142,38 @@ void DescribeCdnLogsRequest::SetEndTime(const string& _endTime)
 bool DescribeCdnLogsRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+uint64_t DescribeCdnLogsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeCdnLogsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeCdnLogsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeCdnLogsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeCdnLogsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeCdnLogsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 uint64_t DescribeCdnLogsRequest::GetSubAppId() const

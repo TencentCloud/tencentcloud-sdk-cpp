@@ -304,6 +304,24 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                      */
                     bool PublishedToVbcHasBeenSet() const;
 
+                    /**
+                     * 获取路由策略创建时间
+                     * @return CreatedTime 路由策略创建时间
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置路由策略创建时间
+                     * @param CreatedTime 路由策略创建时间
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -386,6 +404,12 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                      */
                     bool m_publishedToVbc;
                     bool m_publishedToVbcHasBeenSet;
+
+                    /**
+                     * 路由策略创建时间
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
 
                 };
             }

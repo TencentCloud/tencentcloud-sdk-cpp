@@ -88,11 +88,11 @@ namespace TencentCloud
                      * 获取主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
-<li>MACHINE_STOPPED: 已关机</li>
+<li>SHUTDOWN: 已关机</li>
                      * @return MachineStatus 主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
-<li>MACHINE_STOPPED: 已关机</li>
+<li>SHUTDOWN: 已关机</li>
                      */
                     std::string GetMachineStatus() const;
 
@@ -100,11 +100,11 @@ namespace TencentCloud
                      * 设置主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
-<li>MACHINE_STOPPED: 已关机</li>
+<li>SHUTDOWN: 已关机</li>
                      * @param MachineStatus 主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
-<li>MACHINE_STOPPED: 已关机</li>
+<li>SHUTDOWN: 已关机</li>
                      */
                     void SetMachineStatus(const std::string& _machineStatus);
 
@@ -448,6 +448,24 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否有资产扫描接口，0无，1有
+                     * @return HasAssetScan 是否有资产扫描接口，0无，1有
+                     */
+                    uint64_t GetHasAssetScan() const;
+
+                    /**
+                     * 设置是否有资产扫描接口，0无，1有
+                     * @param HasAssetScan 是否有资产扫描接口，0无，1有
+                     */
+                    void SetHasAssetScan(const uint64_t& _hasAssetScan);
+
+                    /**
+                     * 判断参数 HasAssetScan 是否已赋值
+                     * @return HasAssetScan 是否已赋值
+                     */
+                    bool HasAssetScanHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,7 +484,7 @@ namespace TencentCloud
                      * 主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
-<li>MACHINE_STOPPED: 已关机</li>
+<li>SHUTDOWN: 已关机</li>
                      */
                     std::string m_machineStatus;
                     bool m_machineStatusHasBeenSet;
@@ -579,6 +597,12 @@ namespace TencentCloud
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 是否有资产扫描接口，0无，1有
+                     */
+                    uint64_t m_hasAssetScan;
+                    bool m_hasAssetScanHasBeenSet;
 
                 };
             }

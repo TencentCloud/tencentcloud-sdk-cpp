@@ -32,7 +32,8 @@ Route::Route() :
     m_routeTableIdHasBeenSet(false),
     m_destinationIpv6CidrBlockHasBeenSet(false),
     m_routeItemIdHasBeenSet(false),
-    m_publishedToVbcHasBeenSet(false)
+    m_publishedToVbcHasBeenSet(false),
+    m_createdTimeHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome Route::Deserialize(const Value &value)
         m_publishedToVbcHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
+    {
+        if (!value["CreatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Route.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdTime = string(value["CreatedTime"].GetString());
+        m_createdTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +255,14 @@ void Route::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "PublishedToVbc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publishedToVbc, allocator);
+    }
+
+    if (m_createdTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -423,5 +442,21 @@ void Route::SetPublishedToVbc(const bool& _publishedToVbc)
 bool Route::PublishedToVbcHasBeenSet() const
 {
     return m_publishedToVbcHasBeenSet;
+}
+
+string Route::GetCreatedTime() const
+{
+    return m_createdTime;
+}
+
+void Route::SetCreatedTime(const string& _createdTime)
+{
+    m_createdTime = _createdTime;
+    m_createdTimeHasBeenSet = true;
+}
+
+bool Route::CreatedTimeHasBeenSet() const
+{
+    return m_createdTimeHasBeenSet;
 }
 

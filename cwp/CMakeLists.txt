@@ -21,7 +21,7 @@ set(cwp_public_header
 set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeMalwareInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyAutoOpenProVersionConfigRequest.h
-  include/tencentcloud/cwp/v20180228/model/DescribeProcessTaskStatusResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeMachineOsListRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportReverseShellEventsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeBashRulesRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportBashEventsRequest.h
@@ -32,7 +32,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeTagsRequest.h
   include/tencentcloud/cwp/v20180228/model/AddMachineTagResponse.h
   include/tencentcloud/cwp/v20180228/model/UsualPlace.h
-  include/tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesRequest.h
+  include/tencentcloud/cwp/v20180228/model/DescribeProcessTaskStatusResponse.h
   include/tencentcloud/cwp/v20180228/model/SetBashEventsStatusRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAccountsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeReverseShellEventsRequest.h
@@ -73,7 +73,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeNonlocalLoginPlacesRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteMachineTagRequest.h
   include/tencentcloud/cwp/v20180228/model/CreateBaselineStrategyResponse.h
-  include/tencentcloud/cwp/v20180228/model/DescribeTagMachinesRequest.h
+  include/tencentcloud/cwp/v20180228/model/DescribeMaliciousRequestsResponse.h
   include/tencentcloud/cwp/v20180228/model/ReverseShellRule.h
   include/tencentcloud/cwp/v20180228/model/OpenPortStatistics.h
   include/tencentcloud/cwp/v20180228/model/DescribeExportMachinesResponse.h
@@ -99,6 +99,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DeleteMaliciousRequestsResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportBruteAttacksResponse.h
   include/tencentcloud/cwp/v20180228/model/EditReverseShellRuleResponse.h
+  include/tencentcloud/cwp/v20180228/model/OsName.h
   include/tencentcloud/cwp/v20180228/model/ExportBruteAttacksRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteMachineResponse.h
   include/tencentcloud/cwp/v20180228/model/DeleteLoginWhiteListRequest.h
@@ -213,6 +214,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/OpenProVersionPrepaidResponse.h
   include/tencentcloud/cwp/v20180228/model/MisAlarmNonlocalLoginPlacesResponse.h
   include/tencentcloud/cwp/v20180228/model/DeleteMalwaresResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeTagMachinesRequest.h
   include/tencentcloud/cwp/v20180228/model/ChargePrepaid.h
   include/tencentcloud/cwp/v20180228/model/DescribeWeeklyReportNonlocalLoginPlacesRequest.h
   include/tencentcloud/cwp/v20180228/model/RecoverMalwaresResponse.h
@@ -222,6 +224,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeVulScanResultRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribePrivilegeEventsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeWeeklyReportMalwaresResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeSecurityDynamicsRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportBashEventsResponse.h
   include/tencentcloud/cwp/v20180228/model/ImpactedHost.h
@@ -270,7 +273,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DeleteReverseShellEventsRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyAutoOpenProVersionConfigResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportReverseShellEventsRequest.h
-  include/tencentcloud/cwp/v20180228/model/DescribeMaliciousRequestsResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeMachineOsListResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportAttackLogsResponse.h
   include/tencentcloud/cwp/v20180228/model/EditTagsResponse.h
   include/tencentcloud/cwp/v20180228/model/IgnoreImpactedHostsRequest.h
@@ -293,7 +296,7 @@ set(cwp_src
   src/v20180228/CwpClient.cpp
   src/v20180228/model/DescribeMalwareInfoRequest.cpp
   src/v20180228/model/ModifyAutoOpenProVersionConfigRequest.cpp
-  src/v20180228/model/DescribeProcessTaskStatusResponse.cpp
+  src/v20180228/model/DescribeMachineOsListRequest.cpp
   src/v20180228/model/ExportReverseShellEventsResponse.cpp
   src/v20180228/model/DescribeBashRulesRequest.cpp
   src/v20180228/model/ExportBashEventsRequest.cpp
@@ -304,7 +307,7 @@ set(cwp_src
   src/v20180228/model/DescribeTagsRequest.cpp
   src/v20180228/model/AddMachineTagResponse.cpp
   src/v20180228/model/UsualPlace.cpp
-  src/v20180228/model/DescribeReverseShellRulesRequest.cpp
+  src/v20180228/model/DescribeProcessTaskStatusResponse.cpp
   src/v20180228/model/SetBashEventsStatusRequest.cpp
   src/v20180228/model/DescribeAccountsRequest.cpp
   src/v20180228/model/DescribeReverseShellEventsRequest.cpp
@@ -345,7 +348,7 @@ set(cwp_src
   src/v20180228/model/DescribeNonlocalLoginPlacesRequest.cpp
   src/v20180228/model/DeleteMachineTagRequest.cpp
   src/v20180228/model/CreateBaselineStrategyResponse.cpp
-  src/v20180228/model/DescribeTagMachinesRequest.cpp
+  src/v20180228/model/DescribeMaliciousRequestsResponse.cpp
   src/v20180228/model/ReverseShellRule.cpp
   src/v20180228/model/OpenPortStatistics.cpp
   src/v20180228/model/DescribeExportMachinesResponse.cpp
@@ -371,6 +374,7 @@ set(cwp_src
   src/v20180228/model/DeleteMaliciousRequestsResponse.cpp
   src/v20180228/model/ExportBruteAttacksResponse.cpp
   src/v20180228/model/EditReverseShellRuleResponse.cpp
+  src/v20180228/model/OsName.cpp
   src/v20180228/model/ExportBruteAttacksRequest.cpp
   src/v20180228/model/DeleteMachineResponse.cpp
   src/v20180228/model/DeleteLoginWhiteListRequest.cpp
@@ -485,6 +489,7 @@ set(cwp_src
   src/v20180228/model/OpenProVersionPrepaidResponse.cpp
   src/v20180228/model/MisAlarmNonlocalLoginPlacesResponse.cpp
   src/v20180228/model/DeleteMalwaresResponse.cpp
+  src/v20180228/model/DescribeTagMachinesRequest.cpp
   src/v20180228/model/ChargePrepaid.cpp
   src/v20180228/model/DescribeWeeklyReportNonlocalLoginPlacesRequest.cpp
   src/v20180228/model/RecoverMalwaresResponse.cpp
@@ -494,6 +499,7 @@ set(cwp_src
   src/v20180228/model/DescribeVulScanResultRequest.cpp
   src/v20180228/model/DescribePrivilegeEventsRequest.cpp
   src/v20180228/model/DescribeWeeklyReportMalwaresResponse.cpp
+  src/v20180228/model/DescribeReverseShellRulesRequest.cpp
   src/v20180228/model/DescribeSecurityDynamicsRequest.cpp
   src/v20180228/model/ExportBashEventsResponse.cpp
   src/v20180228/model/ImpactedHost.cpp
@@ -542,7 +548,7 @@ set(cwp_src
   src/v20180228/model/DeleteReverseShellEventsRequest.cpp
   src/v20180228/model/ModifyAutoOpenProVersionConfigResponse.cpp
   src/v20180228/model/ExportReverseShellEventsRequest.cpp
-  src/v20180228/model/DescribeMaliciousRequestsResponse.cpp
+  src/v20180228/model/DescribeMachineOsListResponse.cpp
   src/v20180228/model/ExportAttackLogsResponse.cpp
   src/v20180228/model/EditTagsResponse.cpp
   src/v20180228/model/IgnoreImpactedHostsRequest.cpp

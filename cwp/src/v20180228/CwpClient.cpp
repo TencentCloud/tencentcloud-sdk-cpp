@@ -1889,6 +1889,49 @@ CwpClient::DescribeMachineListOutcomeCallable CwpClient::DescribeMachineListCall
     return task->get_future();
 }
 
+CwpClient::DescribeMachineOsListOutcome CwpClient::DescribeMachineOsList(const DescribeMachineOsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMachineOsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMachineOsListResponse rsp = DescribeMachineOsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMachineOsListOutcome(rsp);
+        else
+            return DescribeMachineOsListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMachineOsListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeMachineOsListAsync(const DescribeMachineOsListRequest& request, const DescribeMachineOsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMachineOsList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeMachineOsListOutcomeCallable CwpClient::DescribeMachineOsListCallable(const DescribeMachineOsListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMachineOsListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMachineOsList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeMachinesOutcome CwpClient::DescribeMachines(const DescribeMachinesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMachines");

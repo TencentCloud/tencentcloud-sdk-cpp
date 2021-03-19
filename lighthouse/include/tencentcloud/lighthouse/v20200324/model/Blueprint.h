@@ -306,6 +306,24 @@ namespace TencentCloud
                      */
                     bool SupportAutomationToolsHasBeenSet() const;
 
+                    /**
+                     * 获取镜像所需内存大小, 单位: GB
+                     * @return RequiredMemorySize 镜像所需内存大小, 单位: GB
+                     */
+                    int64_t GetRequiredMemorySize() const;
+
+                    /**
+                     * 设置镜像所需内存大小, 单位: GB
+                     * @param RequiredMemorySize 镜像所需内存大小, 单位: GB
+                     */
+                    void SetRequiredMemorySize(const int64_t& _requiredMemorySize);
+
+                    /**
+                     * 判断参数 RequiredMemorySize 是否已赋值
+                     * @return RequiredMemorySize 是否已赋值
+                     */
+                    bool RequiredMemorySizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -393,6 +411,12 @@ namespace TencentCloud
                      */
                     bool m_supportAutomationTools;
                     bool m_supportAutomationToolsHasBeenSet;
+
+                    /**
+                     * 镜像所需内存大小, 单位: GB
+                     */
+                    int64_t m_requiredMemorySize;
+                    bool m_requiredMemorySizeHasBeenSet;
 
                 };
             }

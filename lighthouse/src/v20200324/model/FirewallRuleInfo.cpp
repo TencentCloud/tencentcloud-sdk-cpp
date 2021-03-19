@@ -24,7 +24,10 @@ using namespace std;
 FirewallRuleInfo::FirewallRuleInfo() :
     m_appTypeHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_cidrBlockHasBeenSet(false),
+    m_actionHasBeenSet(false),
+    m_firewallRuleDescriptionHasBeenSet(false)
 {
 }
 
@@ -63,6 +66,36 @@ CoreInternalOutcome FirewallRuleInfo::Deserialize(const Value &value)
         m_portHasBeenSet = true;
     }
 
+    if (value.HasMember("CidrBlock") && !value["CidrBlock"].IsNull())
+    {
+        if (!value["CidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FirewallRuleInfo.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cidrBlock = string(value["CidrBlock"].GetString());
+        m_cidrBlockHasBeenSet = true;
+    }
+
+    if (value.HasMember("Action") && !value["Action"].IsNull())
+    {
+        if (!value["Action"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FirewallRuleInfo.Action` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_action = string(value["Action"].GetString());
+        m_actionHasBeenSet = true;
+    }
+
+    if (value.HasMember("FirewallRuleDescription") && !value["FirewallRuleDescription"].IsNull())
+    {
+        if (!value["FirewallRuleDescription"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FirewallRuleInfo.FirewallRuleDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firewallRuleDescription = string(value["FirewallRuleDescription"].GetString());
+        m_firewallRuleDescriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +125,30 @@ void FirewallRuleInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_port.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cidrBlockHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Action";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_action.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firewallRuleDescriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FirewallRuleDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_firewallRuleDescription.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +200,53 @@ void FirewallRuleInfo::SetPort(const string& _port)
 bool FirewallRuleInfo::PortHasBeenSet() const
 {
     return m_portHasBeenSet;
+}
+
+string FirewallRuleInfo::GetCidrBlock() const
+{
+    return m_cidrBlock;
+}
+
+void FirewallRuleInfo::SetCidrBlock(const string& _cidrBlock)
+{
+    m_cidrBlock = _cidrBlock;
+    m_cidrBlockHasBeenSet = true;
+}
+
+bool FirewallRuleInfo::CidrBlockHasBeenSet() const
+{
+    return m_cidrBlockHasBeenSet;
+}
+
+string FirewallRuleInfo::GetAction() const
+{
+    return m_action;
+}
+
+void FirewallRuleInfo::SetAction(const string& _action)
+{
+    m_action = _action;
+    m_actionHasBeenSet = true;
+}
+
+bool FirewallRuleInfo::ActionHasBeenSet() const
+{
+    return m_actionHasBeenSet;
+}
+
+string FirewallRuleInfo::GetFirewallRuleDescription() const
+{
+    return m_firewallRuleDescription;
+}
+
+void FirewallRuleInfo::SetFirewallRuleDescription(const string& _firewallRuleDescription)
+{
+    m_firewallRuleDescription = _firewallRuleDescription;
+    m_firewallRuleDescriptionHasBeenSet = true;
+}
+
+bool FirewallRuleInfo::FirewallRuleDescriptionHasBeenSet() const
+{
+    return m_firewallRuleDescriptionHasBeenSet;
 }
 

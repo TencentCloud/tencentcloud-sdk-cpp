@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool AudioSampleRateHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流音频码率。取值范围[8,500]，单位为Kbps。
-                     * @return AudioBitrate 混流-输出流音频码率。取值范围[8,500]，单位为Kbps。
+                     * 获取混流-输出流音频码率。取值范围[8,500]，单位为kbps。
+                     * @return AudioBitrate 混流-输出流音频码率。取值范围[8,500]，单位为kbps。
                      */
                     uint64_t GetAudioBitrate() const;
 
                     /**
-                     * 设置混流-输出流音频码率。取值范围[8,500]，单位为Kbps。
-                     * @param AudioBitrate 混流-输出流音频码率。取值范围[8,500]，单位为Kbps。
+                     * 设置混流-输出流音频码率。取值范围[8,500]，单位为kbps。
+                     * @param AudioBitrate 混流-输出流音频码率。取值范围[8,500]，单位为kbps。
                      */
                     void SetAudioBitrate(const uint64_t& _audioBitrate);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool VideoHeightHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。
-                     * @return VideoBitrate 混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。
+                     * 获取混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。
+                     * @return VideoBitrate 混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。
                      */
                     uint64_t GetVideoBitrate() const;
 
                     /**
-                     * 设置混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。
-                     * @param VideoBitrate 混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。
+                     * 设置混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。
+                     * @param VideoBitrate 混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。
                      */
                     void SetVideoBitrate(const uint64_t& _videoBitrate);
 
@@ -191,14 +191,42 @@ namespace TencentCloud
                     bool VideoGopHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流背景色。
-                     * @return BackgroundColor 混流-输出流背景色。
+                     * 获取混流-输出流背景色，取值是十进制整数。常用的颜色有：
+红色：0xff0000，对应的十进制整数是16724736。
+黄色：0xffff00。对应的十进制整数是16776960。
+绿色：0x33cc00。对应的十进制整数是3394560。
+蓝色：0x0066ff。对应的十进制整数是26367。
+黑色：0x000000。对应的十进制整数是0。
+白色：0xFFFFFF。对应的十进制整数是16777215。
+灰色：0x999999。对应的十进制整数是10066329。
+                     * @return BackgroundColor 混流-输出流背景色，取值是十进制整数。常用的颜色有：
+红色：0xff0000，对应的十进制整数是16724736。
+黄色：0xffff00。对应的十进制整数是16776960。
+绿色：0x33cc00。对应的十进制整数是3394560。
+蓝色：0x0066ff。对应的十进制整数是26367。
+黑色：0x000000。对应的十进制整数是0。
+白色：0xFFFFFF。对应的十进制整数是16777215。
+灰色：0x999999。对应的十进制整数是10066329。
                      */
                     uint64_t GetBackgroundColor() const;
 
                     /**
-                     * 设置混流-输出流背景色。
-                     * @param BackgroundColor 混流-输出流背景色。
+                     * 设置混流-输出流背景色，取值是十进制整数。常用的颜色有：
+红色：0xff0000，对应的十进制整数是16724736。
+黄色：0xffff00。对应的十进制整数是16776960。
+绿色：0x33cc00。对应的十进制整数是3394560。
+蓝色：0x0066ff。对应的十进制整数是26367。
+黑色：0x000000。对应的十进制整数是0。
+白色：0xFFFFFF。对应的十进制整数是16777215。
+灰色：0x999999。对应的十进制整数是10066329。
+                     * @param BackgroundColor 混流-输出流背景色，取值是十进制整数。常用的颜色有：
+红色：0xff0000，对应的十进制整数是16724736。
+黄色：0xffff00。对应的十进制整数是16776960。
+绿色：0x33cc00。对应的十进制整数是3394560。
+蓝色：0x0066ff。对应的十进制整数是26367。
+黑色：0x000000。对应的十进制整数是0。
+白色：0xFFFFFF。对应的十进制整数是16777215。
+灰色：0x999999。对应的十进制整数是10066329。
                      */
                     void SetBackgroundColor(const uint64_t& _backgroundColor);
 
@@ -226,6 +254,24 @@ namespace TencentCloud
                      */
                     bool BackgroundImageIdHasBeenSet() const;
 
+                    /**
+                     * 获取混流-输出流音频编码类型，取值范围[0,1, 2]，0为LC-AAC，1为HE-AAC，2为HE-AACv2。默认值为0。当音频编码设置为HE-AACv2时，只支持输出流音频声道数为双声道。HE-AAC和HE-AACv2支持的输出流音频采样率范围为[48000, 44100, 32000, 24000, 16000]
+                     * @return AudioCodec 混流-输出流音频编码类型，取值范围[0,1, 2]，0为LC-AAC，1为HE-AAC，2为HE-AACv2。默认值为0。当音频编码设置为HE-AACv2时，只支持输出流音频声道数为双声道。HE-AAC和HE-AACv2支持的输出流音频采样率范围为[48000, 44100, 32000, 24000, 16000]
+                     */
+                    uint64_t GetAudioCodec() const;
+
+                    /**
+                     * 设置混流-输出流音频编码类型，取值范围[0,1, 2]，0为LC-AAC，1为HE-AAC，2为HE-AACv2。默认值为0。当音频编码设置为HE-AACv2时，只支持输出流音频声道数为双声道。HE-AAC和HE-AACv2支持的输出流音频采样率范围为[48000, 44100, 32000, 24000, 16000]
+                     * @param AudioCodec 混流-输出流音频编码类型，取值范围[0,1, 2]，0为LC-AAC，1为HE-AAC，2为HE-AACv2。默认值为0。当音频编码设置为HE-AACv2时，只支持输出流音频声道数为双声道。HE-AAC和HE-AACv2支持的输出流音频采样率范围为[48000, 44100, 32000, 24000, 16000]
+                     */
+                    void SetAudioCodec(const uint64_t& _audioCodec);
+
+                    /**
+                     * 判断参数 AudioCodec 是否已赋值
+                     * @return AudioCodec 是否已赋值
+                     */
+                    bool AudioCodecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,7 +281,7 @@ namespace TencentCloud
                     bool m_audioSampleRateHasBeenSet;
 
                     /**
-                     * 混流-输出流音频码率。取值范围[8,500]，单位为Kbps。
+                     * 混流-输出流音频码率。取值范围[8,500]，单位为kbps。
                      */
                     uint64_t m_audioBitrate;
                     bool m_audioBitrateHasBeenSet;
@@ -259,7 +305,7 @@ namespace TencentCloud
                     bool m_videoHeightHasBeenSet;
 
                     /**
-                     * 混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。
+                     * 混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。
                      */
                     uint64_t m_videoBitrate;
                     bool m_videoBitrateHasBeenSet;
@@ -277,7 +323,14 @@ namespace TencentCloud
                     bool m_videoGopHasBeenSet;
 
                     /**
-                     * 混流-输出流背景色。
+                     * 混流-输出流背景色，取值是十进制整数。常用的颜色有：
+红色：0xff0000，对应的十进制整数是16724736。
+黄色：0xffff00。对应的十进制整数是16776960。
+绿色：0x33cc00。对应的十进制整数是3394560。
+蓝色：0x0066ff。对应的十进制整数是26367。
+黑色：0x000000。对应的十进制整数是0。
+白色：0xFFFFFF。对应的十进制整数是16777215。
+灰色：0x999999。对应的十进制整数是10066329。
                      */
                     uint64_t m_backgroundColor;
                     bool m_backgroundColorHasBeenSet;
@@ -287,6 +340,12 @@ namespace TencentCloud
                      */
                     uint64_t m_backgroundImageId;
                     bool m_backgroundImageIdHasBeenSet;
+
+                    /**
+                     * 混流-输出流音频编码类型，取值范围[0,1, 2]，0为LC-AAC，1为HE-AAC，2为HE-AACv2。默认值为0。当音频编码设置为HE-AACv2时，只支持输出流音频声道数为双声道。HE-AAC和HE-AACv2支持的输出流音频采样率范围为[48000, 44100, 32000, 24000, 16000]
+                     */
+                    uint64_t m_audioCodec;
+                    bool m_audioCodecHasBeenSet;
 
                 };
             }

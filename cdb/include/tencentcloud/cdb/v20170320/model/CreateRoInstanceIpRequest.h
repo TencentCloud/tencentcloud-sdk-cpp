@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc描述符，例如：vpc-xxx,如果传了该字段则UniqSubnetId必传
-                     * @return UniqVpcId vpc描述符，例如：vpc-xxx,如果传了该字段则UniqSubnetId必传
+                     * 获取vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传
+                     * @return UniqVpcId vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置vpc描述符，例如：vpc-xxx,如果传了该字段则UniqSubnetId必传
-                     * @param UniqVpcId vpc描述符，例如：vpc-xxx,如果传了该字段则UniqSubnetId必传
+                     * 设置vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传
+                     * @param UniqVpcId vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
-                     * vpc描述符，例如：vpc-xxx,如果传了该字段则UniqSubnetId必传
+                     * vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;

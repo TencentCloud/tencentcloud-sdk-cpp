@@ -814,6 +814,49 @@ IotexplorerClient::DescribeDeviceDataHistoryOutcomeCallable IotexplorerClient::D
     return task->get_future();
 }
 
+IotexplorerClient::DescribeFirmwareTaskOutcome IotexplorerClient::DescribeFirmwareTask(const DescribeFirmwareTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirmwareTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirmwareTaskResponse rsp = DescribeFirmwareTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirmwareTaskOutcome(rsp);
+        else
+            return DescribeFirmwareTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirmwareTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeFirmwareTaskAsync(const DescribeFirmwareTaskRequest& request, const DescribeFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirmwareTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeFirmwareTaskOutcomeCallable IotexplorerClient::DescribeFirmwareTaskCallable(const DescribeFirmwareTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirmwareTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirmwareTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeLoRaFrequencyOutcome IotexplorerClient::DescribeLoRaFrequency(const DescribeLoRaFrequencyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLoRaFrequency");
@@ -1373,6 +1416,49 @@ IotexplorerClient::ListEventHistoryOutcomeCallable IotexplorerClient::ListEventH
     return task->get_future();
 }
 
+IotexplorerClient::ListFirmwaresOutcome IotexplorerClient::ListFirmwares(const ListFirmwaresRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListFirmwares");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListFirmwaresResponse rsp = ListFirmwaresResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListFirmwaresOutcome(rsp);
+        else
+            return ListFirmwaresOutcome(o.GetError());
+    }
+    else
+    {
+        return ListFirmwaresOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ListFirmwaresAsync(const ListFirmwaresRequest& request, const ListFirmwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListFirmwares(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ListFirmwaresOutcomeCallable IotexplorerClient::ListFirmwaresCallable(const ListFirmwaresRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListFirmwaresOutcome()>>(
+        [this, request]()
+        {
+            return this->ListFirmwares(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::ModifyLoRaFrequencyOutcome IotexplorerClient::ModifyLoRaFrequency(const ModifyLoRaFrequencyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLoRaFrequency");
@@ -1796,6 +1882,92 @@ IotexplorerClient::SearchTopicRuleOutcomeCallable IotexplorerClient::SearchTopic
         [this, request]()
         {
             return this->SearchTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::UpdateFirmwareOutcome IotexplorerClient::UpdateFirmware(const UpdateFirmwareRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateFirmware");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateFirmwareResponse rsp = UpdateFirmwareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateFirmwareOutcome(rsp);
+        else
+            return UpdateFirmwareOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateFirmwareOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::UpdateFirmwareAsync(const UpdateFirmwareRequest& request, const UpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateFirmware(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::UpdateFirmwareOutcomeCallable IotexplorerClient::UpdateFirmwareCallable(const UpdateFirmwareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateFirmwareOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateFirmware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::UploadFirmwareOutcome IotexplorerClient::UploadFirmware(const UploadFirmwareRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadFirmware");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadFirmwareResponse rsp = UploadFirmwareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadFirmwareOutcome(rsp);
+        else
+            return UploadFirmwareOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadFirmwareOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::UploadFirmwareAsync(const UploadFirmwareRequest& request, const UploadFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadFirmware(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::UploadFirmwareOutcomeCallable IotexplorerClient::UploadFirmwareCallable(const UploadFirmwareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadFirmwareOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadFirmware(request);
         }
     );
 

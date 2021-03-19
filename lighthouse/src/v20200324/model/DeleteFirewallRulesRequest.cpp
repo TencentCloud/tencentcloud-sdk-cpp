@@ -25,7 +25,8 @@ using namespace std;
 
 DeleteFirewallRulesRequest::DeleteFirewallRulesRequest() :
     m_instanceIdHasBeenSet(false),
-    m_firewallRulesHasBeenSet(false)
+    m_firewallRulesHasBeenSet(false),
+    m_firewallVersionHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,14 @@ string DeleteFirewallRulesRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_firewallVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FirewallVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_firewallVersion, allocator);
     }
 
 
@@ -97,6 +106,22 @@ void DeleteFirewallRulesRequest::SetFirewallRules(const vector<FirewallRule>& _f
 bool DeleteFirewallRulesRequest::FirewallRulesHasBeenSet() const
 {
     return m_firewallRulesHasBeenSet;
+}
+
+uint64_t DeleteFirewallRulesRequest::GetFirewallVersion() const
+{
+    return m_firewallVersion;
+}
+
+void DeleteFirewallRulesRequest::SetFirewallVersion(const uint64_t& _firewallVersion)
+{
+    m_firewallVersion = _firewallVersion;
+    m_firewallVersionHasBeenSet = true;
+}
+
+bool DeleteFirewallRulesRequest::FirewallVersionHasBeenSet() const
+{
+    return m_firewallVersionHasBeenSet;
 }
 
 

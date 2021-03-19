@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 门神子规则开关状态
+                * Waf子规则开关状态
                 */
                 class WafSubRuleStatus : public AbstractModel
                 {

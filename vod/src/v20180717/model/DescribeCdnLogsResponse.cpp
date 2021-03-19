@@ -25,8 +25,9 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeCdnLogsResponse::DescribeCdnLogsResponse() :
-    m_domesticCdnLogsHasBeenSet(false),
-    m_overseaCdnLogsHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_overseaCdnLogsHasBeenSet(false),
+    m_domesticCdnLogsHasBeenSet(false)
 {
 }
 
@@ -64,24 +65,14 @@ CoreInternalOutcome DescribeCdnLogsResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("DomesticCdnLogs") && !rsp["DomesticCdnLogs"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["DomesticCdnLogs"].IsArray())
-            return CoreInternalOutcome(Error("response `DomesticCdnLogs` is not array type"));
-
-        const Value &tmpValue = rsp["DomesticCdnLogs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["TotalCount"].IsUint64())
         {
-            CdnLogInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_domesticCdnLogs.push_back(item);
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_domesticCdnLogsHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
     if (rsp.HasMember("OverseaCdnLogs") && !rsp["OverseaCdnLogs"].IsNull())
@@ -104,19 +95,39 @@ CoreInternalOutcome DescribeCdnLogsResponse::Deserialize(const string &payload)
         m_overseaCdnLogsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DomesticCdnLogs") && !rsp["DomesticCdnLogs"].IsNull())
+    {
+        if (!rsp["DomesticCdnLogs"].IsArray())
+            return CoreInternalOutcome(Error("response `DomesticCdnLogs` is not array type"));
+
+        const Value &tmpValue = rsp["DomesticCdnLogs"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CdnLogInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_domesticCdnLogs.push_back(item);
+        }
+        m_domesticCdnLogsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 
-vector<CdnLogInfo> DescribeCdnLogsResponse::GetDomesticCdnLogs() const
+uint64_t DescribeCdnLogsResponse::GetTotalCount() const
 {
-    return m_domesticCdnLogs;
+    return m_totalCount;
 }
 
-bool DescribeCdnLogsResponse::DomesticCdnLogsHasBeenSet() const
+bool DescribeCdnLogsResponse::TotalCountHasBeenSet() const
 {
-    return m_domesticCdnLogsHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
 vector<CdnLogInfo> DescribeCdnLogsResponse::GetOverseaCdnLogs() const
@@ -127,6 +138,16 @@ vector<CdnLogInfo> DescribeCdnLogsResponse::GetOverseaCdnLogs() const
 bool DescribeCdnLogsResponse::OverseaCdnLogsHasBeenSet() const
 {
     return m_overseaCdnLogsHasBeenSet;
+}
+
+vector<CdnLogInfo> DescribeCdnLogsResponse::GetDomesticCdnLogs() const
+{
+    return m_domesticCdnLogs;
+}
+
+bool DescribeCdnLogsResponse::DomesticCdnLogsHasBeenSet() const
+{
+    return m_domesticCdnLogsHasBeenSet;
 }
 
 

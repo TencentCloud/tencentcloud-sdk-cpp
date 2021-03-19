@@ -44,18 +44,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取国内CDN节点的日志下载列表。
+                     * 获取日志下载链接总数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DomesticCdnLogs 国内CDN节点的日志下载列表。
+                     * @return TotalCount 日志下载链接总数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<CdnLogInfo> GetDomesticCdnLogs() const;
+                    uint64_t GetTotalCount() const;
 
                     /**
-                     * 判断参数 DomesticCdnLogs 是否已赋值
-                     * @return DomesticCdnLogs 是否已赋值
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
                      */
-                    bool DomesticCdnLogsHasBeenSet() const;
+                    bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。
@@ -71,14 +71,28 @@ namespace TencentCloud
                      */
                     bool OverseaCdnLogsHasBeenSet() const;
 
+                    /**
+                     * 获取国内CDN节点的日志下载列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DomesticCdnLogs 国内CDN节点的日志下载列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CdnLogInfo> GetDomesticCdnLogs() const;
+
+                    /**
+                     * 判断参数 DomesticCdnLogs 是否已赋值
+                     * @return DomesticCdnLogs 是否已赋值
+                     */
+                    bool DomesticCdnLogsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 国内CDN节点的日志下载列表。
+                     * 日志下载链接总数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<CdnLogInfo> m_domesticCdnLogs;
-                    bool m_domesticCdnLogsHasBeenSet;
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                     /**
                      * 海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。
@@ -86,6 +100,13 @@ namespace TencentCloud
                      */
                     std::vector<CdnLogInfo> m_overseaCdnLogs;
                     bool m_overseaCdnLogsHasBeenSet;
+
+                    /**
+                     * 国内CDN节点的日志下载列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CdnLogInfo> m_domesticCdnLogs;
+                    bool m_domesticCdnLogsHasBeenSet;
 
                 };
             }
