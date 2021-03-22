@@ -26,7 +26,8 @@ using namespace std;
 DescribeInstancesExtendRequest::DescribeInstancesExtendRequest() :
     m_fleetIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_ipAddressHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DescribeInstancesExtendRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_ipAddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IpAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_ipAddress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DescribeInstancesExtendRequest::SetLimit(const int64_t& _limit)
 bool DescribeInstancesExtendRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeInstancesExtendRequest::GetIpAddress() const
+{
+    return m_ipAddress;
+}
+
+void DescribeInstancesExtendRequest::SetIpAddress(const string& _ipAddress)
+{
+    m_ipAddress = _ipAddress;
+    m_ipAddressHasBeenSet = true;
+}
+
+bool DescribeInstancesExtendRequest::IpAddressHasBeenSet() const
+{
+    return m_ipAddressHasBeenSet;
 }
 
 

@@ -34,7 +34,8 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_internetAccessibleHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
-    m_instanceMarketOptionsHasBeenSet(false)
+    m_instanceMarketOptionsHasBeenSet(false),
+    m_diskTypePolicyHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,14 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_instanceMarketOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_diskTypePolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskTypePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_diskTypePolicy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -328,6 +337,22 @@ void ModifyLaunchConfigurationAttributesRequest::SetInstanceMarketOptions(const 
 bool ModifyLaunchConfigurationAttributesRequest::InstanceMarketOptionsHasBeenSet() const
 {
     return m_instanceMarketOptionsHasBeenSet;
+}
+
+string ModifyLaunchConfigurationAttributesRequest::GetDiskTypePolicy() const
+{
+    return m_diskTypePolicy;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetDiskTypePolicy(const string& _diskTypePolicy)
+{
+    m_diskTypePolicy = _diskTypePolicy;
+    m_diskTypePolicyHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::DiskTypePolicyHasBeenSet() const
+{
+    return m_diskTypePolicyHasBeenSet;
 }
 
 

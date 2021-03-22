@@ -71,6 +71,8 @@
 #include <tencentcloud/cme/v20191029/model/DescribeTeamsResponse.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataRequest.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataResponse.h>
+#include <tencentcloud/cme/v20191029/model/ExportVideoByTemplateRequest.h>
+#include <tencentcloud/cme/v20191029/model/ExportVideoByTemplateResponse.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoByVideoSegmentationDataRequest.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoByVideoSegmentationDataResponse.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoEditProjectRequest.h>
@@ -189,6 +191,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ExportVideoByEditorTrackDataResponse> ExportVideoByEditorTrackDataOutcome;
                 typedef std::future<ExportVideoByEditorTrackDataOutcome> ExportVideoByEditorTrackDataOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::ExportVideoByEditorTrackDataRequest&, ExportVideoByEditorTrackDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVideoByEditorTrackDataAsyncHandler;
+                typedef Outcome<Error, Model::ExportVideoByTemplateResponse> ExportVideoByTemplateOutcome;
+                typedef std::future<ExportVideoByTemplateOutcome> ExportVideoByTemplateOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::ExportVideoByTemplateRequest&, ExportVideoByTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVideoByTemplateAsyncHandler;
                 typedef Outcome<Error, Model::ExportVideoByVideoSegmentationDataResponse> ExportVideoByVideoSegmentationDataOutcome;
                 typedef std::future<ExportVideoByVideoSegmentationDataOutcome> ExportVideoByVideoSegmentationDataOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::ExportVideoByVideoSegmentationDataRequest&, ExportVideoByVideoSegmentationDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVideoByVideoSegmentationDataAsyncHandler;
@@ -467,6 +472,15 @@ namespace TencentCloud
                 ExportVideoByEditorTrackDataOutcome ExportVideoByEditorTrackData(const Model::ExportVideoByEditorTrackDataRequest &request);
                 void ExportVideoByEditorTrackDataAsync(const Model::ExportVideoByEditorTrackDataRequest& request, const ExportVideoByEditorTrackDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExportVideoByEditorTrackDataOutcomeCallable ExportVideoByEditorTrackDataCallable(const Model::ExportVideoByEditorTrackDataRequest& request);
+
+                /**
+                 *使用视频编辑模板直接导出视频。
+                 * @param req ExportVideoByTemplateRequest
+                 * @return ExportVideoByTemplateOutcome
+                 */
+                ExportVideoByTemplateOutcome ExportVideoByTemplate(const Model::ExportVideoByTemplateRequest &request);
+                void ExportVideoByTemplateAsync(const Model::ExportVideoByTemplateRequest& request, const ExportVideoByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportVideoByTemplateOutcomeCallable ExportVideoByTemplateCallable(const Model::ExportVideoByTemplateRequest& request);
 
                 /**
                  *使用视频智能拆条数据导出视频，将指定的视频拆条片段导出为一个视频。

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TicketHasBeenSet() const;
 
                     /**
-                     * 获取用户操作来源的外网 IP
-                     * @return UserIp 用户操作来源的外网 IP
+                     * 获取透传业务侧获取到的验证码使用者的IP
+                     * @return UserIp 透传业务侧获取到的验证码使用者的IP
                      */
                     std::string GetUserIp() const;
 
                     /**
-                     * 设置用户操作来源的外网 IP
-                     * @param UserIp 用户操作来源的外网 IP
+                     * 设置透传业务侧获取到的验证码使用者的IP
+                     * @param UserIp 透传业务侧获取到的验证码使用者的IP
                      */
                     void SetUserIp(const std::string& _userIp);
 
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_ticketHasBeenSet;
 
                     /**
-                     * 用户操作来源的外网 IP
+                     * 透传业务侧获取到的验证码使用者的IP
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;

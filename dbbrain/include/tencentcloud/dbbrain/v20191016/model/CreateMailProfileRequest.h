@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取配置绑定的实例ID，当配置级别为"Instance"时需要传入，只能为一个实例。
-                     * @return BindInstanceIds 配置绑定的实例ID，当配置级别为"Instance"时需要传入，只能为一个实例。
+                     * 获取配置绑定的实例ID，当配置级别为"Instance"时需要传入且只能为一个实例；当配置级别为“User”时，此参数不填。
+                     * @return BindInstanceIds 配置绑定的实例ID，当配置级别为"Instance"时需要传入且只能为一个实例；当配置级别为“User”时，此参数不填。
                      */
                     std::vector<std::string> GetBindInstanceIds() const;
 
                     /**
-                     * 设置配置绑定的实例ID，当配置级别为"Instance"时需要传入，只能为一个实例。
-                     * @param BindInstanceIds 配置绑定的实例ID，当配置级别为"Instance"时需要传入，只能为一个实例。
+                     * 设置配置绑定的实例ID，当配置级别为"Instance"时需要传入且只能为一个实例；当配置级别为“User”时，此参数不填。
+                     * @param BindInstanceIds 配置绑定的实例ID，当配置级别为"Instance"时需要传入且只能为一个实例；当配置级别为“User”时，此参数不填。
                      */
                     void SetBindInstanceIds(const std::vector<std::string>& _bindInstanceIds);
 
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_productHasBeenSet;
 
                     /**
-                     * 配置绑定的实例ID，当配置级别为"Instance"时需要传入，只能为一个实例。
+                     * 配置绑定的实例ID，当配置级别为"Instance"时需要传入且只能为一个实例；当配置级别为“User”时，此参数不填。
                      */
                     std::vector<std::string> m_bindInstanceIds;
                     bool m_bindInstanceIdsHasBeenSet;

@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool OrderTypeHasBeenSet() const;
 
+                    /**
+                     * 获取网关实体ID
+                     * @return GatewayInstanceId 网关实体ID
+                     */
+                    std::string GetGatewayInstanceId() const;
+
+                    /**
+                     * 设置网关实体ID
+                     * @param GatewayInstanceId 网关实体ID
+                     */
+                    void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
+
+                    /**
+                     * 判断参数 GatewayInstanceId 是否已赋值
+                     * @return GatewayInstanceId 是否已赋值
+                     */
+                    bool GatewayInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
+
+                    /**
+                     * 网关实体ID
+                     */
+                    std::string m_gatewayInstanceId;
+                    bool m_gatewayInstanceIdHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ DescribeApiGroupsRequest::DescribeApiGroupsRequest() :
     m_authTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_orderByHasBeenSet(false),
-    m_orderTypeHasBeenSet(false)
+    m_orderTypeHasBeenSet(false),
+    m_gatewayInstanceIdHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string DescribeApiGroupsRequest::ToJsonString() const
         string key = "OrderType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_orderType, allocator);
+    }
+
+    if (m_gatewayInstanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GatewayInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_gatewayInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +249,22 @@ void DescribeApiGroupsRequest::SetOrderType(const int64_t& _orderType)
 bool DescribeApiGroupsRequest::OrderTypeHasBeenSet() const
 {
     return m_orderTypeHasBeenSet;
+}
+
+string DescribeApiGroupsRequest::GetGatewayInstanceId() const
+{
+    return m_gatewayInstanceId;
+}
+
+void DescribeApiGroupsRequest::SetGatewayInstanceId(const string& _gatewayInstanceId)
+{
+    m_gatewayInstanceId = _gatewayInstanceId;
+    m_gatewayInstanceIdHasBeenSet = true;
+}
+
+bool DescribeApiGroupsRequest::GatewayInstanceIdHasBeenSet() const
+{
+    return m_gatewayInstanceIdHasBeenSet;
 }
 
 

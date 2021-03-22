@@ -27,7 +27,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_fleetIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_ipAddressHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string DescribeInstancesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_ipAddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IpAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_ipAddress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void DescribeInstancesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeInstancesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeInstancesRequest::GetIpAddress() const
+{
+    return m_ipAddress;
+}
+
+void DescribeInstancesRequest::SetIpAddress(const string& _ipAddress)
+{
+    m_ipAddress = _ipAddress;
+    m_ipAddressHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::IpAddressHasBeenSet() const
+{
+    return m_ipAddressHasBeenSet;
 }
 
 

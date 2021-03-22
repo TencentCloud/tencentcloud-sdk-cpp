@@ -556,6 +556,49 @@ TcrClient::CreateRepositoryPersonalOutcomeCallable TcrClient::CreateRepositoryPe
     return task->get_future();
 }
 
+TcrClient::CreateSecurityPolicyOutcome TcrClient::CreateSecurityPolicy(const CreateSecurityPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSecurityPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSecurityPolicyResponse rsp = CreateSecurityPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSecurityPolicyOutcome(rsp);
+        else
+            return CreateSecurityPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSecurityPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateSecurityPolicyAsync(const CreateSecurityPolicyRequest& request, const CreateSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSecurityPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateSecurityPolicyOutcomeCallable TcrClient::CreateSecurityPolicyCallable(const CreateSecurityPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSecurityPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSecurityPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::CreateUserPersonalOutcome TcrClient::CreateUserPersonal(const CreateUserPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUserPersonal");
@@ -1151,6 +1194,49 @@ TcrClient::DeleteRepositoryPersonalOutcomeCallable TcrClient::DeleteRepositoryPe
         [this, request]()
         {
             return this->DeleteRepositoryPersonal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DeleteSecurityPolicyOutcome TcrClient::DeleteSecurityPolicy(const DeleteSecurityPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSecurityPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSecurityPolicyResponse rsp = DeleteSecurityPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSecurityPolicyOutcome(rsp);
+        else
+            return DeleteSecurityPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSecurityPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteSecurityPolicyAsync(const DeleteSecurityPolicyRequest& request, const DeleteSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSecurityPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteSecurityPolicyOutcomeCallable TcrClient::DeleteSecurityPolicyCallable(const DeleteSecurityPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSecurityPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSecurityPolicy(request);
         }
     );
 
@@ -2190,6 +2276,49 @@ TcrClient::DescribeRepositoryPersonalOutcomeCallable TcrClient::DescribeReposito
     return task->get_future();
 }
 
+TcrClient::DescribeSecurityPoliciesOutcome TcrClient::DescribeSecurityPolicies(const DescribeSecurityPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityPoliciesResponse rsp = DescribeSecurityPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityPoliciesOutcome(rsp);
+        else
+            return DescribeSecurityPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeSecurityPoliciesAsync(const DescribeSecurityPoliciesRequest& request, const DescribeSecurityPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeSecurityPoliciesOutcomeCallable TcrClient::DescribeSecurityPoliciesCallable(const DescribeSecurityPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DescribeUserQuotaPersonalOutcome TcrClient::DescribeUserQuotaPersonal(const DescribeUserQuotaPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserQuotaPersonal");
@@ -2742,6 +2871,49 @@ TcrClient::ModifyRepositoryInfoPersonalOutcomeCallable TcrClient::ModifyReposito
         [this, request]()
         {
             return this->ModifyRepositoryInfoPersonal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::ModifySecurityPolicyOutcome TcrClient::ModifySecurityPolicy(const ModifySecurityPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecurityPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecurityPolicyResponse rsp = ModifySecurityPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecurityPolicyOutcome(rsp);
+        else
+            return ModifySecurityPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecurityPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ModifySecurityPolicyAsync(const ModifySecurityPolicyRequest& request, const ModifySecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecurityPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::ModifySecurityPolicyOutcomeCallable TcrClient::ModifySecurityPolicyCallable(const ModifySecurityPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecurityPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecurityPolicy(request);
         }
     );
 

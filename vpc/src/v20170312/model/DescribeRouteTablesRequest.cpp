@@ -24,8 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeRouteTablesRequest::DescribeRouteTablesRequest() :
-    m_routeTableIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_routeTableIdsHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -37,19 +37,6 @@ string DescribeRouteTablesRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_routeTableIdsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "RouteTableIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_routeTableIds.begin(); itr != m_routeTableIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
 
     if (m_filtersHasBeenSet)
     {
@@ -63,6 +50,19 @@ string DescribeRouteTablesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_routeTableIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RouteTableIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_routeTableIds.begin(); itr != m_routeTableIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -90,22 +90,6 @@ string DescribeRouteTablesRequest::ToJsonString() const
 }
 
 
-vector<string> DescribeRouteTablesRequest::GetRouteTableIds() const
-{
-    return m_routeTableIds;
-}
-
-void DescribeRouteTablesRequest::SetRouteTableIds(const vector<string>& _routeTableIds)
-{
-    m_routeTableIds = _routeTableIds;
-    m_routeTableIdsHasBeenSet = true;
-}
-
-bool DescribeRouteTablesRequest::RouteTableIdsHasBeenSet() const
-{
-    return m_routeTableIdsHasBeenSet;
-}
-
 vector<Filter> DescribeRouteTablesRequest::GetFilters() const
 {
     return m_filters;
@@ -120,6 +104,22 @@ void DescribeRouteTablesRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeRouteTablesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<string> DescribeRouteTablesRequest::GetRouteTableIds() const
+{
+    return m_routeTableIds;
+}
+
+void DescribeRouteTablesRequest::SetRouteTableIds(const vector<string>& _routeTableIds)
+{
+    m_routeTableIds = _routeTableIds;
+    m_routeTableIdsHasBeenSet = true;
+}
+
+bool DescribeRouteTablesRequest::RouteTableIdsHasBeenSet() const
+{
+    return m_routeTableIdsHasBeenSet;
 }
 
 string DescribeRouteTablesRequest::GetOffset() const

@@ -47,6 +47,8 @@
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateSecurityPolicyRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateSecurityPolicyResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateUserPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateUserPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateWebhookTriggerRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteSecurityPolicyRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteSecurityPolicyResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalRequest.h>
@@ -123,6 +127,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeRepositoryOwnerPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeRepositoryPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeSecurityPoliciesRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeSecurityPoliciesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerRequest.h>
@@ -149,6 +155,8 @@
 #include <tencentcloud/tcr/v20190924/model/ModifyRepositoryAccessPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyRepositoryInfoPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyRepositoryInfoPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ModifySecurityPolicyRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ModifySecurityPolicyResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerRequest.h>
@@ -209,6 +217,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateRepositoryPersonalResponse> CreateRepositoryPersonalOutcome;
                 typedef std::future<CreateRepositoryPersonalOutcome> CreateRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateRepositoryPersonalRequest&, CreateRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryPersonalAsyncHandler;
+                typedef Outcome<Error, Model::CreateSecurityPolicyResponse> CreateSecurityPolicyOutcome;
+                typedef std::future<CreateSecurityPolicyOutcome> CreateSecurityPolicyOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateSecurityPolicyRequest&, CreateSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityPolicyAsyncHandler;
                 typedef Outcome<Error, Model::CreateUserPersonalResponse> CreateUserPersonalOutcome;
                 typedef std::future<CreateUserPersonalOutcome> CreateUserPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateUserPersonalRequest&, CreateUserPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserPersonalAsyncHandler;
@@ -251,6 +262,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteRepositoryPersonalResponse> DeleteRepositoryPersonalOutcome;
                 typedef std::future<DeleteRepositoryPersonalOutcome> DeleteRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteRepositoryPersonalRequest&, DeleteRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryPersonalAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSecurityPolicyResponse> DeleteSecurityPolicyOutcome;
+                typedef std::future<DeleteSecurityPolicyOutcome> DeleteSecurityPolicyOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteSecurityPolicyRequest&, DeleteSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityPolicyAsyncHandler;
                 typedef Outcome<Error, Model::DeleteWebhookTriggerResponse> DeleteWebhookTriggerOutcome;
                 typedef std::future<DeleteWebhookTriggerOutcome> DeleteWebhookTriggerOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteWebhookTriggerRequest&, DeleteWebhookTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWebhookTriggerAsyncHandler;
@@ -323,6 +337,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRepositoryPersonalResponse> DescribeRepositoryPersonalOutcome;
                 typedef std::future<DescribeRepositoryPersonalOutcome> DescribeRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeRepositoryPersonalRequest&, DescribeRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRepositoryPersonalAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSecurityPoliciesResponse> DescribeSecurityPoliciesOutcome;
+                typedef std::future<DescribeSecurityPoliciesOutcome> DescribeSecurityPoliciesOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeSecurityPoliciesRequest&, DescribeSecurityPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityPoliciesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUserQuotaPersonalResponse> DescribeUserQuotaPersonalOutcome;
                 typedef std::future<DescribeUserQuotaPersonalOutcome> DescribeUserQuotaPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeUserQuotaPersonalRequest&, DescribeUserQuotaPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserQuotaPersonalAsyncHandler;
@@ -362,6 +379,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyRepositoryInfoPersonalResponse> ModifyRepositoryInfoPersonalOutcome;
                 typedef std::future<ModifyRepositoryInfoPersonalOutcome> ModifyRepositoryInfoPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyRepositoryInfoPersonalRequest&, ModifyRepositoryInfoPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRepositoryInfoPersonalAsyncHandler;
+                typedef Outcome<Error, Model::ModifySecurityPolicyResponse> ModifySecurityPolicyOutcome;
+                typedef std::future<ModifySecurityPolicyOutcome> ModifySecurityPolicyOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ModifySecurityPolicyRequest&, ModifySecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityPolicyAsyncHandler;
                 typedef Outcome<Error, Model::ModifyUserPasswordPersonalResponse> ModifyUserPasswordPersonalOutcome;
                 typedef std::future<ModifyUserPasswordPersonalOutcome> ModifyUserPasswordPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyUserPasswordPersonalRequest&, ModifyUserPasswordPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserPasswordPersonalAsyncHandler;
@@ -489,6 +509,15 @@ namespace TencentCloud
                 CreateRepositoryPersonalOutcomeCallable CreateRepositoryPersonalCallable(const Model::CreateRepositoryPersonalRequest& request);
 
                 /**
+                 *创建实例公网访问白名单策略
+                 * @param req CreateSecurityPolicyRequest
+                 * @return CreateSecurityPolicyOutcome
+                 */
+                CreateSecurityPolicyOutcome CreateSecurityPolicy(const Model::CreateSecurityPolicyRequest &request);
+                void CreateSecurityPolicyAsync(const Model::CreateSecurityPolicyRequest& request, const CreateSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityPolicyOutcomeCallable CreateSecurityPolicyCallable(const Model::CreateSecurityPolicyRequest& request);
+
+                /**
                  *创建个人用户
                  * @param req CreateUserPersonalRequest
                  * @return CreateUserPersonalOutcome
@@ -613,6 +642,15 @@ namespace TencentCloud
                 DeleteRepositoryPersonalOutcome DeleteRepositoryPersonal(const Model::DeleteRepositoryPersonalRequest &request);
                 void DeleteRepositoryPersonalAsync(const Model::DeleteRepositoryPersonalRequest& request, const DeleteRepositoryPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRepositoryPersonalOutcomeCallable DeleteRepositoryPersonalCallable(const Model::DeleteRepositoryPersonalRequest& request);
+
+                /**
+                 *删除实例公网访问白名单策略
+                 * @param req DeleteSecurityPolicyRequest
+                 * @return DeleteSecurityPolicyOutcome
+                 */
+                DeleteSecurityPolicyOutcome DeleteSecurityPolicy(const Model::DeleteSecurityPolicyRequest &request);
+                void DeleteSecurityPolicyAsync(const Model::DeleteSecurityPolicyRequest& request, const DeleteSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityPolicyOutcomeCallable DeleteSecurityPolicyCallable(const Model::DeleteSecurityPolicyRequest& request);
 
                 /**
                  *删除触发器
@@ -831,6 +869,15 @@ namespace TencentCloud
                 DescribeRepositoryPersonalOutcomeCallable DescribeRepositoryPersonalCallable(const Model::DescribeRepositoryPersonalRequest& request);
 
                 /**
+                 *查询实例公网访问白名单策略
+                 * @param req DescribeSecurityPoliciesRequest
+                 * @return DescribeSecurityPoliciesOutcome
+                 */
+                DescribeSecurityPoliciesOutcome DescribeSecurityPolicies(const Model::DescribeSecurityPoliciesRequest &request);
+                void DescribeSecurityPoliciesAsync(const Model::DescribeSecurityPoliciesRequest& request, const DescribeSecurityPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityPoliciesOutcomeCallable DescribeSecurityPoliciesCallable(const Model::DescribeSecurityPoliciesRequest& request);
+
+                /**
                  *查询个人用户配额
                  * @param req DescribeUserQuotaPersonalRequest
                  * @return DescribeUserQuotaPersonalOutcome
@@ -946,6 +993,15 @@ namespace TencentCloud
                 ModifyRepositoryInfoPersonalOutcome ModifyRepositoryInfoPersonal(const Model::ModifyRepositoryInfoPersonalRequest &request);
                 void ModifyRepositoryInfoPersonalAsync(const Model::ModifyRepositoryInfoPersonalRequest& request, const ModifyRepositoryInfoPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRepositoryInfoPersonalOutcomeCallable ModifyRepositoryInfoPersonalCallable(const Model::ModifyRepositoryInfoPersonalRequest& request);
+
+                /**
+                 *更新实例公网访问白名单
+                 * @param req ModifySecurityPolicyRequest
+                 * @return ModifySecurityPolicyOutcome
+                 */
+                ModifySecurityPolicyOutcome ModifySecurityPolicy(const Model::ModifySecurityPolicyRequest &request);
+                void ModifySecurityPolicyAsync(const Model::ModifySecurityPolicyRequest& request, const ModifySecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityPolicyOutcomeCallable ModifySecurityPolicyCallable(const Model::ModifySecurityPolicyRequest& request);
 
                 /**
                  *修改个人用户登录密码

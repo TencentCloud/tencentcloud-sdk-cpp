@@ -205,6 +205,68 @@ namespace TencentCloud
                     bool BackupHasBeenSet() const;
 
                     /**
+                     * 获取TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
+                     * @return PrivateMapKey TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
+                     */
+                    std::string GetPrivateMapKey() const;
+
+                    /**
+                     * 设置TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
+                     * @param PrivateMapKey TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
+                     */
+                    void SetPrivateMapKey(const std::string& _privateMapKey);
+
+                    /**
+                     * 判断参数 PrivateMapKey 是否已赋值
+                     * @return PrivateMapKey 是否已赋值
+                     */
+                    bool PrivateMapKeyHasBeenSet() const;
+
+                    /**
+                     * 获取白板推流视频帧率，取值范围[0, 30]，默认20fps
+                     * @return VideoFPS 白板推流视频帧率，取值范围[0, 30]，默认20fps
+                     */
+                    int64_t GetVideoFPS() const;
+
+                    /**
+                     * 设置白板推流视频帧率，取值范围[0, 30]，默认20fps
+                     * @param VideoFPS 白板推流视频帧率，取值范围[0, 30]，默认20fps
+                     */
+                    void SetVideoFPS(const int64_t& _videoFPS);
+
+                    /**
+                     * 判断参数 VideoFPS 是否已赋值
+                     * @return VideoFPS 是否已赋值
+                     */
+                    bool VideoFPSHasBeenSet() const;
+
+                    /**
+                     * 获取白板推流码率， 取值范围[0, 2000]，默认1200kbps。
+
+这里的码率设置是一个参考值，实际推流的时候使用的是动态码率，所以真实码率不会固定为指定值，会在指定值附近波动。
+                     * @return VideoBitrate 白板推流码率， 取值范围[0, 2000]，默认1200kbps。
+
+这里的码率设置是一个参考值，实际推流的时候使用的是动态码率，所以真实码率不会固定为指定值，会在指定值附近波动。
+                     */
+                    int64_t GetVideoBitrate() const;
+
+                    /**
+                     * 设置白板推流码率， 取值范围[0, 2000]，默认1200kbps。
+
+这里的码率设置是一个参考值，实际推流的时候使用的是动态码率，所以真实码率不会固定为指定值，会在指定值附近波动。
+                     * @param VideoBitrate 白板推流码率， 取值范围[0, 2000]，默认1200kbps。
+
+这里的码率设置是一个参考值，实际推流的时候使用的是动态码率，所以真实码率不会固定为指定值，会在指定值附近波动。
+                     */
+                    void SetVideoBitrate(const int64_t& _videoBitrate);
+
+                    /**
+                     * 判断参数 VideoBitrate 是否已赋值
+                     * @return VideoBitrate 是否已赋值
+                     */
+                    bool VideoBitrateHasBeenSet() const;
+
+                    /**
                      * 获取在实时音视频云端录制模式选择为 `指定用户录制` 模式的时候是否自动录制白板推流。
 
 默认在实时音视频的云端录制模式选择为 `指定用户录制` 模式的情况下，不会自动进行白板推流录制，如果希望进行白板推流录制，请将此参数设置为true。
@@ -239,6 +301,164 @@ namespace TencentCloud
                     bool AutoRecordHasBeenSet() const;
 
                     /**
+                     * 获取指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
+
+限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
+
+此字段设置后，不管`AutoRecord`字段取值如何，都将自动进行白板推流录制。
+
+默认RecordId生成规则如下：
+urlencode(SdkAppID_RoomID_PushUserID)
+
+例如：
+SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
+那么：RecordId = 12345678_12345_push_user_1
+                     * @return UserDefinedRecordId 指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
+
+限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
+
+此字段设置后，不管`AutoRecord`字段取值如何，都将自动进行白板推流录制。
+
+默认RecordId生成规则如下：
+urlencode(SdkAppID_RoomID_PushUserID)
+
+例如：
+SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
+那么：RecordId = 12345678_12345_push_user_1
+                     */
+                    std::string GetUserDefinedRecordId() const;
+
+                    /**
+                     * 设置指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
+
+限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
+
+此字段设置后，不管`AutoRecord`字段取值如何，都将自动进行白板推流录制。
+
+默认RecordId生成规则如下：
+urlencode(SdkAppID_RoomID_PushUserID)
+
+例如：
+SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
+那么：RecordId = 12345678_12345_push_user_1
+                     * @param UserDefinedRecordId 指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
+
+限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
+
+此字段设置后，不管`AutoRecord`字段取值如何，都将自动进行白板推流录制。
+
+默认RecordId生成规则如下：
+urlencode(SdkAppID_RoomID_PushUserID)
+
+例如：
+SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
+那么：RecordId = 12345678_12345_push_user_1
+                     */
+                    void SetUserDefinedRecordId(const std::string& _userDefinedRecordId);
+
+                    /**
+                     * 判断参数 UserDefinedRecordId 是否已赋值
+                     * @return UserDefinedRecordId 是否已赋值
+                     */
+                    bool UserDefinedRecordIdHasBeenSet() const;
+
+                    /**
+                     * 获取在实时音视频旁路推流模式选择为`指定用户旁路`模式的时候，是否自动旁路白板推流。
+
+默认在实时音视频的旁路推流模式选择为 `指定用户旁路` 模式的情况下，不会自动旁路白板推流，如果希望旁路白板推流，请将此参数设置为true。
+
+如果实时音视频的旁路推流模式选择为 `全局自动旁路` 模式，可忽略此参数。
+                     * @return AutoPublish 在实时音视频旁路推流模式选择为`指定用户旁路`模式的时候，是否自动旁路白板推流。
+
+默认在实时音视频的旁路推流模式选择为 `指定用户旁路` 模式的情况下，不会自动旁路白板推流，如果希望旁路白板推流，请将此参数设置为true。
+
+如果实时音视频的旁路推流模式选择为 `全局自动旁路` 模式，可忽略此参数。
+                     */
+                    bool GetAutoPublish() const;
+
+                    /**
+                     * 设置在实时音视频旁路推流模式选择为`指定用户旁路`模式的时候，是否自动旁路白板推流。
+
+默认在实时音视频的旁路推流模式选择为 `指定用户旁路` 模式的情况下，不会自动旁路白板推流，如果希望旁路白板推流，请将此参数设置为true。
+
+如果实时音视频的旁路推流模式选择为 `全局自动旁路` 模式，可忽略此参数。
+                     * @param AutoPublish 在实时音视频旁路推流模式选择为`指定用户旁路`模式的时候，是否自动旁路白板推流。
+
+默认在实时音视频的旁路推流模式选择为 `指定用户旁路` 模式的情况下，不会自动旁路白板推流，如果希望旁路白板推流，请将此参数设置为true。
+
+如果实时音视频的旁路推流模式选择为 `全局自动旁路` 模式，可忽略此参数。
+                     */
+                    void SetAutoPublish(const bool& _autoPublish);
+
+                    /**
+                     * 判断参数 AutoPublish 是否已赋值
+                     * @return AutoPublish 是否已赋值
+                     */
+                    bool AutoPublishHasBeenSet() const;
+
+                    /**
+                     * 获取指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
+
+限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
+
+此字段设置后，不管`AutoPublish`字段取值如何，都将自动旁路白板推流。
+
+默认StreamID生成规则如下：
+urlencode(SdkAppID_RoomID_PushUserID_main)
+
+例如：
+SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
+那么：StreamID = 12345678_12345_push_user_1_main
+                     * @return UserDefinedStreamId 指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
+
+限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
+
+此字段设置后，不管`AutoPublish`字段取值如何，都将自动旁路白板推流。
+
+默认StreamID生成规则如下：
+urlencode(SdkAppID_RoomID_PushUserID_main)
+
+例如：
+SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
+那么：StreamID = 12345678_12345_push_user_1_main
+                     */
+                    std::string GetUserDefinedStreamId() const;
+
+                    /**
+                     * 设置指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
+
+限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
+
+此字段设置后，不管`AutoPublish`字段取值如何，都将自动旁路白板推流。
+
+默认StreamID生成规则如下：
+urlencode(SdkAppID_RoomID_PushUserID_main)
+
+例如：
+SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
+那么：StreamID = 12345678_12345_push_user_1_main
+                     * @param UserDefinedStreamId 指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
+
+限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
+
+此字段设置后，不管`AutoPublish`字段取值如何，都将自动旁路白板推流。
+
+默认StreamID生成规则如下：
+urlencode(SdkAppID_RoomID_PushUserID_main)
+
+例如：
+SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
+那么：StreamID = 12345678_12345_push_user_1_main
+                     */
+                    void SetUserDefinedStreamId(const std::string& _userDefinedStreamId);
+
+                    /**
+                     * 判断参数 UserDefinedStreamId 是否已赋值
+                     * @return UserDefinedStreamId 是否已赋值
+                     */
+                    bool UserDefinedStreamIdHasBeenSet() const;
+
+                    /**
                      * 获取内部参数，不需要关注此参数
                      * @return ExtraData 内部参数，不需要关注此参数
                      */
@@ -255,24 +475,6 @@ namespace TencentCloud
                      * @return ExtraData 是否已赋值
                      */
                     bool ExtraDataHasBeenSet() const;
-
-                    /**
-                     * 获取TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
-                     * @return PrivateMapKey TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
-                     */
-                    std::string GetPrivateMapKey() const;
-
-                    /**
-                     * 设置TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
-                     * @param PrivateMapKey TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
-                     */
-                    void SetPrivateMapKey(const std::string& _privateMapKey);
-
-                    /**
-                     * 判断参数 PrivateMapKey 是否已赋值
-                     * @return PrivateMapKey 是否已赋值
-                     */
-                    bool PrivateMapKeyHasBeenSet() const;
 
                 private:
 
@@ -329,6 +531,26 @@ namespace TencentCloud
                     bool m_backupHasBeenSet;
 
                     /**
+                     * TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
+                     */
+                    std::string m_privateMapKey;
+                    bool m_privateMapKeyHasBeenSet;
+
+                    /**
+                     * 白板推流视频帧率，取值范围[0, 30]，默认20fps
+                     */
+                    int64_t m_videoFPS;
+                    bool m_videoFPSHasBeenSet;
+
+                    /**
+                     * 白板推流码率， 取值范围[0, 2000]，默认1200kbps。
+
+这里的码率设置是一个参考值，实际推流的时候使用的是动态码率，所以真实码率不会固定为指定值，会在指定值附近波动。
+                     */
+                    int64_t m_videoBitrate;
+                    bool m_videoBitrateHasBeenSet;
+
+                    /**
                      * 在实时音视频云端录制模式选择为 `指定用户录制` 模式的时候是否自动录制白板推流。
 
 默认在实时音视频的云端录制模式选择为 `指定用户录制` 模式的情况下，不会自动进行白板推流录制，如果希望进行白板推流录制，请将此参数设置为true。
@@ -339,16 +561,54 @@ namespace TencentCloud
                     bool m_autoRecordHasBeenSet;
 
                     /**
+                     * 指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 "userdefinerecordid" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。
+
+限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
+
+此字段设置后，不管`AutoRecord`字段取值如何，都将自动进行白板推流录制。
+
+默认RecordId生成规则如下：
+urlencode(SdkAppID_RoomID_PushUserID)
+
+例如：
+SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
+那么：RecordId = 12345678_12345_push_user_1
+                     */
+                    std::string m_userDefinedRecordId;
+                    bool m_userDefinedRecordIdHasBeenSet;
+
+                    /**
+                     * 在实时音视频旁路推流模式选择为`指定用户旁路`模式的时候，是否自动旁路白板推流。
+
+默认在实时音视频的旁路推流模式选择为 `指定用户旁路` 模式的情况下，不会自动旁路白板推流，如果希望旁路白板推流，请将此参数设置为true。
+
+如果实时音视频的旁路推流模式选择为 `全局自动旁路` 模式，可忽略此参数。
+                     */
+                    bool m_autoPublish;
+                    bool m_autoPublishHasBeenSet;
+
+                    /**
+                     * 指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。
+
+限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。
+
+此字段设置后，不管`AutoPublish`字段取值如何，都将自动旁路白板推流。
+
+默认StreamID生成规则如下：
+urlencode(SdkAppID_RoomID_PushUserID_main)
+
+例如：
+SdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1
+那么：StreamID = 12345678_12345_push_user_1_main
+                     */
+                    std::string m_userDefinedStreamId;
+                    bool m_userDefinedStreamIdHasBeenSet;
+
+                    /**
                      * 内部参数，不需要关注此参数
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
-
-                    /**
-                     * TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。
-                     */
-                    std::string m_privateMapKey;
-                    bool m_privateMapKeyHasBeenSet;
 
                 };
             }

@@ -1072,6 +1072,49 @@ CmeClient::ExportVideoByEditorTrackDataOutcomeCallable CmeClient::ExportVideoByE
     return task->get_future();
 }
 
+CmeClient::ExportVideoByTemplateOutcome CmeClient::ExportVideoByTemplate(const ExportVideoByTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportVideoByTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportVideoByTemplateResponse rsp = ExportVideoByTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportVideoByTemplateOutcome(rsp);
+        else
+            return ExportVideoByTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportVideoByTemplateOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::ExportVideoByTemplateAsync(const ExportVideoByTemplateRequest& request, const ExportVideoByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportVideoByTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::ExportVideoByTemplateOutcomeCallable CmeClient::ExportVideoByTemplateCallable(const ExportVideoByTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportVideoByTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportVideoByTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmeClient::ExportVideoByVideoSegmentationDataOutcome CmeClient::ExportVideoByVideoSegmentationData(const ExportVideoByVideoSegmentationDataRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportVideoByVideoSegmentationData");

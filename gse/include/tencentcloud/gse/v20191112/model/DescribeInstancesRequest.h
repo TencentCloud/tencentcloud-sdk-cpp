@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取CVM实例公网IP
+                     * @return IpAddress CVM实例公网IP
+                     */
+                    std::string GetIpAddress() const;
+
+                    /**
+                     * 设置CVM实例公网IP
+                     * @param IpAddress CVM实例公网IP
+                     */
+                    void SetIpAddress(const std::string& _ipAddress);
+
+                    /**
+                     * 判断参数 IpAddress 是否已赋值
+                     * @return IpAddress 是否已赋值
+                     */
+                    bool IpAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * CVM实例公网IP
+                     */
+                    std::string m_ipAddress;
+                    bool m_ipAddressHasBeenSet;
 
                 };
             }

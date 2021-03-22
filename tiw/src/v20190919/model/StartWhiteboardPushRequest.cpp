@@ -32,9 +32,14 @@ StartWhiteboardPushRequest::StartWhiteboardPushRequest() :
     m_autoStopTimeoutHasBeenSet(false),
     m_autoManageBackupHasBeenSet(false),
     m_backupHasBeenSet(false),
+    m_privateMapKeyHasBeenSet(false),
+    m_videoFPSHasBeenSet(false),
+    m_videoBitrateHasBeenSet(false),
     m_autoRecordHasBeenSet(false),
-    m_extraDataHasBeenSet(false),
-    m_privateMapKeyHasBeenSet(false)
+    m_userDefinedRecordIdHasBeenSet(false),
+    m_autoPublishHasBeenSet(false),
+    m_userDefinedStreamIdHasBeenSet(false),
+    m_extraDataHasBeenSet(false)
 {
 }
 
@@ -111,6 +116,30 @@ string StartWhiteboardPushRequest::ToJsonString() const
         m_backup.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_privateMapKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PrivateMapKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_privateMapKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_videoFPSHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VideoFPS";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_videoFPS, allocator);
+    }
+
+    if (m_videoBitrateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VideoBitrate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_videoBitrate, allocator);
+    }
+
     if (m_autoRecordHasBeenSet)
     {
         Value iKey(kStringType);
@@ -119,20 +148,36 @@ string StartWhiteboardPushRequest::ToJsonString() const
         d.AddMember(iKey, m_autoRecord, allocator);
     }
 
+    if (m_userDefinedRecordIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserDefinedRecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_userDefinedRecordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoPublishHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoPublish";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoPublish, allocator);
+    }
+
+    if (m_userDefinedStreamIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserDefinedStreamId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_userDefinedStreamId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_extraDataHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "ExtraData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_extraData.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_privateMapKeyHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PrivateMapKey";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_privateMapKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +316,54 @@ bool StartWhiteboardPushRequest::BackupHasBeenSet() const
     return m_backupHasBeenSet;
 }
 
+string StartWhiteboardPushRequest::GetPrivateMapKey() const
+{
+    return m_privateMapKey;
+}
+
+void StartWhiteboardPushRequest::SetPrivateMapKey(const string& _privateMapKey)
+{
+    m_privateMapKey = _privateMapKey;
+    m_privateMapKeyHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::PrivateMapKeyHasBeenSet() const
+{
+    return m_privateMapKeyHasBeenSet;
+}
+
+int64_t StartWhiteboardPushRequest::GetVideoFPS() const
+{
+    return m_videoFPS;
+}
+
+void StartWhiteboardPushRequest::SetVideoFPS(const int64_t& _videoFPS)
+{
+    m_videoFPS = _videoFPS;
+    m_videoFPSHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::VideoFPSHasBeenSet() const
+{
+    return m_videoFPSHasBeenSet;
+}
+
+int64_t StartWhiteboardPushRequest::GetVideoBitrate() const
+{
+    return m_videoBitrate;
+}
+
+void StartWhiteboardPushRequest::SetVideoBitrate(const int64_t& _videoBitrate)
+{
+    m_videoBitrate = _videoBitrate;
+    m_videoBitrateHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::VideoBitrateHasBeenSet() const
+{
+    return m_videoBitrateHasBeenSet;
+}
+
 bool StartWhiteboardPushRequest::GetAutoRecord() const
 {
     return m_autoRecord;
@@ -287,6 +380,54 @@ bool StartWhiteboardPushRequest::AutoRecordHasBeenSet() const
     return m_autoRecordHasBeenSet;
 }
 
+string StartWhiteboardPushRequest::GetUserDefinedRecordId() const
+{
+    return m_userDefinedRecordId;
+}
+
+void StartWhiteboardPushRequest::SetUserDefinedRecordId(const string& _userDefinedRecordId)
+{
+    m_userDefinedRecordId = _userDefinedRecordId;
+    m_userDefinedRecordIdHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::UserDefinedRecordIdHasBeenSet() const
+{
+    return m_userDefinedRecordIdHasBeenSet;
+}
+
+bool StartWhiteboardPushRequest::GetAutoPublish() const
+{
+    return m_autoPublish;
+}
+
+void StartWhiteboardPushRequest::SetAutoPublish(const bool& _autoPublish)
+{
+    m_autoPublish = _autoPublish;
+    m_autoPublishHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::AutoPublishHasBeenSet() const
+{
+    return m_autoPublishHasBeenSet;
+}
+
+string StartWhiteboardPushRequest::GetUserDefinedStreamId() const
+{
+    return m_userDefinedStreamId;
+}
+
+void StartWhiteboardPushRequest::SetUserDefinedStreamId(const string& _userDefinedStreamId)
+{
+    m_userDefinedStreamId = _userDefinedStreamId;
+    m_userDefinedStreamIdHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::UserDefinedStreamIdHasBeenSet() const
+{
+    return m_userDefinedStreamIdHasBeenSet;
+}
+
 string StartWhiteboardPushRequest::GetExtraData() const
 {
     return m_extraData;
@@ -301,22 +442,6 @@ void StartWhiteboardPushRequest::SetExtraData(const string& _extraData)
 bool StartWhiteboardPushRequest::ExtraDataHasBeenSet() const
 {
     return m_extraDataHasBeenSet;
-}
-
-string StartWhiteboardPushRequest::GetPrivateMapKey() const
-{
-    return m_privateMapKey;
-}
-
-void StartWhiteboardPushRequest::SetPrivateMapKey(const string& _privateMapKey)
-{
-    m_privateMapKey = _privateMapKey;
-    m_privateMapKeyHasBeenSet = true;
-}
-
-bool StartWhiteboardPushRequest::PrivateMapKeyHasBeenSet() const
-{
-    return m_privateMapKeyHasBeenSet;
 }
 
 

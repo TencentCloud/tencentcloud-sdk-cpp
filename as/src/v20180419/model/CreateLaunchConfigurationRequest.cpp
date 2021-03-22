@@ -43,7 +43,8 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_camRoleNameHasBeenSet(false),
     m_hostNameSettingsHasBeenSet(false),
     m_instanceNameSettingsHasBeenSet(false),
-    m_instanceChargePrepaidHasBeenSet(false)
+    m_instanceChargePrepaidHasBeenSet(false),
+    m_diskTypePolicyHasBeenSet(false)
 {
 }
 
@@ -244,6 +245,14 @@ string CreateLaunchConfigurationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_diskTypePolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskTypePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_diskTypePolicy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -572,6 +581,22 @@ void CreateLaunchConfigurationRequest::SetInstanceChargePrepaid(const InstanceCh
 bool CreateLaunchConfigurationRequest::InstanceChargePrepaidHasBeenSet() const
 {
     return m_instanceChargePrepaidHasBeenSet;
+}
+
+string CreateLaunchConfigurationRequest::GetDiskTypePolicy() const
+{
+    return m_diskTypePolicy;
+}
+
+void CreateLaunchConfigurationRequest::SetDiskTypePolicy(const string& _diskTypePolicy)
+{
+    m_diskTypePolicy = _diskTypePolicy;
+    m_diskTypePolicyHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::DiskTypePolicyHasBeenSet() const
+{
+    return m_diskTypePolicyHasBeenSet;
 }
 
 

@@ -79,14 +79,22 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取云存套餐ID
-                     * @return PackageId 云存套餐ID
+                     * 获取云存套餐ID：
+yc1m3d：全时3天存储月套餐。
+ye1m3d：事件3天存储套餐。
+                     * @return PackageId 云存套餐ID：
+yc1m3d：全时3天存储月套餐。
+ye1m3d：事件3天存储套餐。
                      */
                     std::string GetPackageId() const;
 
                     /**
-                     * 设置云存套餐ID
-                     * @param PackageId 云存套餐ID
+                     * 设置云存套餐ID：
+yc1m3d：全时3天存储月套餐。
+ye1m3d：事件3天存储套餐。
+                     * @param PackageId 云存套餐ID：
+yc1m3d：全时3天存储月套餐。
+ye1m3d：事件3天存储套餐。
                      */
                     void SetPackageId(const std::string& _packageId);
 
@@ -111,7 +119,9 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 云存套餐ID
+                     * 云存套餐ID：
+yc1m3d：全时3天存储月套餐。
+ye1m3d：事件3天存储套餐。
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;

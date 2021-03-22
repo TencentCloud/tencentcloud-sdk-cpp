@@ -28,7 +28,8 @@ CreateApiGroupRequest::CreateApiGroupRequest() :
     m_groupContextHasBeenSet(false),
     m_authTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_groupTypeHasBeenSet(false)
+    m_groupTypeHasBeenSet(false),
+    m_gatewayInstanceIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateApiGroupRequest::ToJsonString() const
         string key = "GroupType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_groupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayInstanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GatewayInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_gatewayInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateApiGroupRequest::SetGroupType(const string& _groupType)
 bool CreateApiGroupRequest::GroupTypeHasBeenSet() const
 {
     return m_groupTypeHasBeenSet;
+}
+
+string CreateApiGroupRequest::GetGatewayInstanceId() const
+{
+    return m_gatewayInstanceId;
+}
+
+void CreateApiGroupRequest::SetGatewayInstanceId(const string& _gatewayInstanceId)
+{
+    m_gatewayInstanceId = _gatewayInstanceId;
+    m_gatewayInstanceIdHasBeenSet = true;
+}
+
+bool CreateApiGroupRequest::GatewayInstanceIdHasBeenSet() const
+{
+    return m_gatewayInstanceIdHasBeenSet;
 }
 
 

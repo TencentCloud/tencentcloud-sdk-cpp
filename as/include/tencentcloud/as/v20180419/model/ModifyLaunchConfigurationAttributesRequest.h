@@ -303,6 +303,32 @@ namespace TencentCloud
                      */
                     bool InstanceMarketOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取云盘类型选择策略，取值范围：
+<br><li>ORIGINAL：使用设置的云盘类型。
+<br><li>AUTOMATIC：自动选择当前可用的云盘类型。
+                     * @return DiskTypePolicy 云盘类型选择策略，取值范围：
+<br><li>ORIGINAL：使用设置的云盘类型。
+<br><li>AUTOMATIC：自动选择当前可用的云盘类型。
+                     */
+                    std::string GetDiskTypePolicy() const;
+
+                    /**
+                     * 设置云盘类型选择策略，取值范围：
+<br><li>ORIGINAL：使用设置的云盘类型。
+<br><li>AUTOMATIC：自动选择当前可用的云盘类型。
+                     * @param DiskTypePolicy 云盘类型选择策略，取值范围：
+<br><li>ORIGINAL：使用设置的云盘类型。
+<br><li>AUTOMATIC：自动选择当前可用的云盘类型。
+                     */
+                    void SetDiskTypePolicy(const std::string& _diskTypePolicy);
+
+                    /**
+                     * 判断参数 DiskTypePolicy 是否已赋值
+                     * @return DiskTypePolicy 是否已赋值
+                     */
+                    bool DiskTypePolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -385,6 +411,14 @@ namespace TencentCloud
                      */
                     InstanceMarketOptionsRequest m_instanceMarketOptions;
                     bool m_instanceMarketOptionsHasBeenSet;
+
+                    /**
+                     * 云盘类型选择策略，取值范围：
+<br><li>ORIGINAL：使用设置的云盘类型。
+<br><li>AUTOMATIC：自动选择当前可用的云盘类型。
+                     */
+                    std::string m_diskTypePolicy;
+                    bool m_diskTypePolicyHasBeenSet;
 
                 };
             }
