@@ -26,6 +26,7 @@ using namespace std;
 CreateRecordPlanRequest::CreateRecordPlanRequest() :
     m_nameHasBeenSet(false),
     m_timeTemplateIdHasBeenSet(false),
+    m_eventIdHasBeenSet(false),
     m_devicesHasBeenSet(false)
 {
 }
@@ -51,6 +52,14 @@ string CreateRecordPlanRequest::ToJsonString() const
         string key = "TimeTemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_timeTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_eventId, allocator);
     }
 
     if (m_devicesHasBeenSet)
@@ -106,6 +115,22 @@ void CreateRecordPlanRequest::SetTimeTemplateId(const string& _timeTemplateId)
 bool CreateRecordPlanRequest::TimeTemplateIdHasBeenSet() const
 {
     return m_timeTemplateIdHasBeenSet;
+}
+
+int64_t CreateRecordPlanRequest::GetEventId() const
+{
+    return m_eventId;
+}
+
+void CreateRecordPlanRequest::SetEventId(const int64_t& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool CreateRecordPlanRequest::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
 }
 
 vector<DeviceItem> CreateRecordPlanRequest::GetDevices() const

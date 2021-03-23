@@ -29,7 +29,9 @@ CreateCommandRequest::CreateCommandRequest() :
     m_descriptionHasBeenSet(false),
     m_commandTypeHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_enableParameterHasBeenSet(false),
+    m_defaultParametersHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,22 @@ string CreateCommandRequest::ToJsonString() const
         string key = "Timeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeout, allocator);
+    }
+
+    if (m_enableParameterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableParameter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableParameter, allocator);
+    }
+
+    if (m_defaultParametersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DefaultParameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +208,38 @@ void CreateCommandRequest::SetTimeout(const uint64_t& _timeout)
 bool CreateCommandRequest::TimeoutHasBeenSet() const
 {
     return m_timeoutHasBeenSet;
+}
+
+bool CreateCommandRequest::GetEnableParameter() const
+{
+    return m_enableParameter;
+}
+
+void CreateCommandRequest::SetEnableParameter(const bool& _enableParameter)
+{
+    m_enableParameter = _enableParameter;
+    m_enableParameterHasBeenSet = true;
+}
+
+bool CreateCommandRequest::EnableParameterHasBeenSet() const
+{
+    return m_enableParameterHasBeenSet;
+}
+
+string CreateCommandRequest::GetDefaultParameters() const
+{
+    return m_defaultParameters;
+}
+
+void CreateCommandRequest::SetDefaultParameters(const string& _defaultParameters)
+{
+    m_defaultParameters = _defaultParameters;
+    m_defaultParametersHasBeenSet = true;
+}
+
+bool CreateCommandRequest::DefaultParametersHasBeenSet() const
+{
+    return m_defaultParametersHasBeenSet;
 }
 
 

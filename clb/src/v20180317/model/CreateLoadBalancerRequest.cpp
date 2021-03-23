@@ -44,6 +44,7 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_snatProHasBeenSet(false),
     m_snatIpsHasBeenSet(false),
     m_clusterTagHasBeenSet(false),
+    m_slaveZoneIdHasBeenSet(false),
     m_eipAddressIdHasBeenSet(false)
 {
 }
@@ -229,6 +230,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "ClusterTag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clusterTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_slaveZoneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SlaveZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_slaveZoneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eipAddressIdHasBeenSet)
@@ -565,6 +574,22 @@ void CreateLoadBalancerRequest::SetClusterTag(const string& _clusterTag)
 bool CreateLoadBalancerRequest::ClusterTagHasBeenSet() const
 {
     return m_clusterTagHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetSlaveZoneId() const
+{
+    return m_slaveZoneId;
+}
+
+void CreateLoadBalancerRequest::SetSlaveZoneId(const string& _slaveZoneId)
+{
+    m_slaveZoneId = _slaveZoneId;
+    m_slaveZoneIdHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::SlaveZoneIdHasBeenSet() const
+{
+    return m_slaveZoneIdHasBeenSet;
 }
 
 string CreateLoadBalancerRequest::GetEipAddressId() const

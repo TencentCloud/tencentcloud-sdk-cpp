@@ -29,6 +29,8 @@
 #include <tencentcloud/tsf/v20180326/model/AddInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/BindApiGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/BindApiGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/BindPluginRequest.h>
+#include <tencentcloud/tsf/v20180326/model/BindPluginResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ChangeApiUsableStatusRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ChangeApiUsableStatusResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ContinueRunFailedTaskBatchRequest.h>
@@ -173,6 +175,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupUseDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeGroupsWithPluginRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeGroupsWithPluginResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageRepositoryRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageRepositoryResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageTagsRequest.h>
@@ -193,6 +197,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribePathRewritesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePkgsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePkgsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePluginInstancesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePluginInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePodInstancesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePodInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePublicConfigRequest.h>
@@ -358,6 +364,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BindApiGroupResponse> BindApiGroupOutcome;
                 typedef std::future<BindApiGroupOutcome> BindApiGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::BindApiGroupRequest&, BindApiGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindApiGroupAsyncHandler;
+                typedef Outcome<Error, Model::BindPluginResponse> BindPluginOutcome;
+                typedef std::future<BindPluginOutcome> BindPluginOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::BindPluginRequest&, BindPluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindPluginAsyncHandler;
                 typedef Outcome<Error, Model::ChangeApiUsableStatusResponse> ChangeApiUsableStatusOutcome;
                 typedef std::future<ChangeApiUsableStatusOutcome> ChangeApiUsableStatusOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ChangeApiUsableStatusRequest&, ChangeApiUsableStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeApiUsableStatusAsyncHandler;
@@ -574,6 +583,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeGroupsResponse> DescribeGroupsOutcome;
                 typedef std::future<DescribeGroupsOutcome> DescribeGroupsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeGroupsRequest&, DescribeGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeGroupsWithPluginResponse> DescribeGroupsWithPluginOutcome;
+                typedef std::future<DescribeGroupsWithPluginOutcome> DescribeGroupsWithPluginOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeGroupsWithPluginRequest&, DescribeGroupsWithPluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupsWithPluginAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImageRepositoryResponse> DescribeImageRepositoryOutcome;
                 typedef std::future<DescribeImageRepositoryOutcome> DescribeImageRepositoryOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeImageRepositoryRequest&, DescribeImageRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRepositoryAsyncHandler;
@@ -604,6 +616,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePkgsResponse> DescribePkgsOutcome;
                 typedef std::future<DescribePkgsOutcome> DescribePkgsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribePkgsRequest&, DescribePkgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePkgsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePluginInstancesResponse> DescribePluginInstancesOutcome;
+                typedef std::future<DescribePluginInstancesOutcome> DescribePluginInstancesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribePluginInstancesRequest&, DescribePluginInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DescribePodInstancesResponse> DescribePodInstancesOutcome;
                 typedef std::future<DescribePodInstancesOutcome> DescribePodInstancesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribePodInstancesRequest&, DescribePodInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePodInstancesAsyncHandler;
@@ -846,6 +861,15 @@ namespace TencentCloud
                 BindApiGroupOutcome BindApiGroup(const Model::BindApiGroupRequest &request);
                 void BindApiGroupAsync(const Model::BindApiGroupRequest& request, const BindApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindApiGroupOutcomeCallable BindApiGroupCallable(const Model::BindApiGroupRequest& request);
+
+                /**
+                 *插件与网关分组/API批量绑定
+                 * @param req BindPluginRequest
+                 * @return BindPluginOutcome
+                 */
+                BindPluginOutcome BindPlugin(const Model::BindPluginRequest &request);
+                void BindPluginAsync(const Model::BindPluginRequest& request, const BindPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindPluginOutcomeCallable BindPluginCallable(const Model::BindPluginRequest& request);
 
                 /**
                  *启用或禁用API
@@ -1498,6 +1522,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeGroupsOutcomeCallable DescribeGroupsCallable(const Model::DescribeGroupsRequest& request);
 
                 /**
+                 *查询某个插件下绑定或未绑定的API分组
+                 * @param req DescribeGroupsWithPluginRequest
+                 * @return DescribeGroupsWithPluginOutcome
+                 */
+                DescribeGroupsWithPluginOutcome DescribeGroupsWithPlugin(const Model::DescribeGroupsWithPluginRequest &request);
+                void DescribeGroupsWithPluginAsync(const Model::DescribeGroupsWithPluginRequest& request, const DescribeGroupsWithPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGroupsWithPluginOutcomeCallable DescribeGroupsWithPluginCallable(const Model::DescribeGroupsWithPluginRequest& request);
+
+                /**
                  *镜像仓库列表 
                  * @param req DescribeImageRepositoryRequest
                  * @return DescribeImageRepositoryOutcome
@@ -1586,6 +1619,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribePkgsOutcome DescribePkgs(const Model::DescribePkgsRequest &request);
                 void DescribePkgsAsync(const Model::DescribePkgsRequest& request, const DescribePkgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePkgsOutcomeCallable DescribePkgsCallable(const Model::DescribePkgsRequest& request);
+
+                /**
+                 *分页查询网关分组/API绑定（或未绑定）的插件列表
+                 * @param req DescribePluginInstancesRequest
+                 * @return DescribePluginInstancesOutcome
+                 */
+                DescribePluginInstancesOutcome DescribePluginInstances(const Model::DescribePluginInstancesRequest &request);
+                void DescribePluginInstancesAsync(const Model::DescribePluginInstancesRequest& request, const DescribePluginInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePluginInstancesOutcomeCallable DescribePluginInstancesCallable(const Model::DescribePluginInstancesRequest& request);
 
                 /**
                  *获取部署组实例列表

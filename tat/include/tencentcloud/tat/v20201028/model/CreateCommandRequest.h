@@ -150,6 +150,66 @@ namespace TencentCloud
                      */
                     bool TimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用自定义参数功能。
+一旦创建，此值不提供修改。
+默认值：false。
+                     * @return EnableParameter 是否启用自定义参数功能。
+一旦创建，此值不提供修改。
+默认值：false。
+                     */
+                    bool GetEnableParameter() const;
+
+                    /**
+                     * 设置是否启用自定义参数功能。
+一旦创建，此值不提供修改。
+默认值：false。
+                     * @param EnableParameter 是否启用自定义参数功能。
+一旦创建，此值不提供修改。
+默认值：false。
+                     */
+                    void SetEnableParameter(const bool& _enableParameter);
+
+                    /**
+                     * 判断参数 EnableParameter 是否已赋值
+                     * @return EnableParameter 是否已赋值
+                     */
+                    bool EnableParameterHasBeenSet() const;
+
+                    /**
+                     * 获取启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+自定义参数最多20个。
+自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
+                     * @return DefaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+自定义参数最多20个。
+自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
+                     */
+                    std::string GetDefaultParameters() const;
+
+                    /**
+                     * 设置启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+自定义参数最多20个。
+自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
+                     * @param DefaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+自定义参数最多20个。
+自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
+                     */
+                    void SetDefaultParameters(const std::string& _defaultParameters);
+
+                    /**
+                     * 判断参数 DefaultParameters 是否已赋值
+                     * @return DefaultParameters 是否已赋值
+                     */
+                    bool DefaultParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +247,24 @@ namespace TencentCloud
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;
+
+                    /**
+                     * 是否启用自定义参数功能。
+一旦创建，此值不提供修改。
+默认值：false。
+                     */
+                    bool m_enableParameter;
+                    bool m_enableParameterHasBeenSet;
+
+                    /**
+                     * 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+自定义参数最多20个。
+自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
+                     */
+                    std::string m_defaultParameters;
+                    bool m_defaultParametersHasBeenSet;
 
                 };
             }

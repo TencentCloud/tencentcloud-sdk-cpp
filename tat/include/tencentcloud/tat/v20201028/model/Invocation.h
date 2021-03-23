@@ -233,6 +233,42 @@ namespace TencentCloud
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取自定义参数取值。
+                     * @return Parameters 自定义参数取值。
+                     */
+                    std::string GetParameters() const;
+
+                    /**
+                     * 设置自定义参数取值。
+                     * @param Parameters 自定义参数取值。
+                     */
+                    void SetParameters(const std::string& _parameters);
+
+                    /**
+                     * 判断参数 Parameters 是否已赋值
+                     * @return Parameters 是否已赋值
+                     */
+                    bool ParametersHasBeenSet() const;
+
+                    /**
+                     * 获取自定义参数的默认取值。
+                     * @return DefaultParameters 自定义参数的默认取值。
+                     */
+                    std::string GetDefaultParameters() const;
+
+                    /**
+                     * 设置自定义参数的默认取值。
+                     * @param DefaultParameters 自定义参数的默认取值。
+                     */
+                    void SetDefaultParameters(const std::string& _defaultParameters);
+
+                    /**
+                     * 判断参数 DefaultParameters 是否已赋值
+                     * @return DefaultParameters 是否已赋值
+                     */
+                    bool DefaultParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,6 +330,18 @@ namespace TencentCloud
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
+
+                    /**
+                     * 自定义参数取值。
+                     */
+                    std::string m_parameters;
+                    bool m_parametersHasBeenSet;
+
+                    /**
+                     * 自定义参数的默认取值。
+                     */
+                    std::string m_defaultParameters;
+                    bool m_defaultParametersHasBeenSet;
 
                 };
             }

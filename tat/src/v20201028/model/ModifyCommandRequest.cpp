@@ -30,7 +30,8 @@ ModifyCommandRequest::ModifyCommandRequest() :
     m_contentHasBeenSet(false),
     m_commandTypeHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_defaultParametersHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string ModifyCommandRequest::ToJsonString() const
         string key = "Timeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeout, allocator);
+    }
+
+    if (m_defaultParametersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DefaultParameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void ModifyCommandRequest::SetTimeout(const uint64_t& _timeout)
 bool ModifyCommandRequest::TimeoutHasBeenSet() const
 {
     return m_timeoutHasBeenSet;
+}
+
+string ModifyCommandRequest::GetDefaultParameters() const
+{
+    return m_defaultParameters;
+}
+
+void ModifyCommandRequest::SetDefaultParameters(const string& _defaultParameters)
+{
+    m_defaultParameters = _defaultParameters;
+    m_defaultParametersHasBeenSet = true;
+}
+
+bool ModifyCommandRequest::DefaultParametersHasBeenSet() const
+{
+    return m_defaultParametersHasBeenSet;
 }
 
 

@@ -27,7 +27,8 @@ using namespace std;
 GeneralFastOCRResponse::GeneralFastOCRResponse() :
     m_textDetectionsHasBeenSet(false),
     m_languageHasBeenSet(false),
-    m_angelHasBeenSet(false)
+    m_angelHasBeenSet(false),
+    m_pdfPageSizeHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome GeneralFastOCRResponse::Deserialize(const string &payload)
         m_angelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PdfPageSize") && !rsp["PdfPageSize"].IsNull())
+    {
+        if (!rsp["PdfPageSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PdfPageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pdfPageSize = rsp["PdfPageSize"].GetInt64();
+        m_pdfPageSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +149,16 @@ double GeneralFastOCRResponse::GetAngel() const
 bool GeneralFastOCRResponse::AngelHasBeenSet() const
 {
     return m_angelHasBeenSet;
+}
+
+int64_t GeneralFastOCRResponse::GetPdfPageSize() const
+{
+    return m_pdfPageSize;
+}
+
+bool GeneralFastOCRResponse::PdfPageSizeHasBeenSet() const
+{
+    return m_pdfPageSizeHasBeenSet;
 }
 
 

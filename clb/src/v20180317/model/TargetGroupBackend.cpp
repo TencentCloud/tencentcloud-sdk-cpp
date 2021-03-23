@@ -31,7 +31,8 @@ TargetGroupBackend::TargetGroupBackend() :
     m_privateIpAddressesHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_registeredTimeHasBeenSet(false),
-    m_eniIdHasBeenSet(false)
+    m_eniIdHasBeenSet(false),
+    m_zoneIdHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const Value &value)
         m_eniIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TargetGroupBackend.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = value["ZoneId"].GetUint64();
+        m_zoneIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void TargetGroupBackend::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "EniId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_eniId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneId, allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void TargetGroupBackend::SetEniId(const string& _eniId)
 bool TargetGroupBackend::EniIdHasBeenSet() const
 {
     return m_eniIdHasBeenSet;
+}
+
+uint64_t TargetGroupBackend::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void TargetGroupBackend::SetZoneId(const uint64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool TargetGroupBackend::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
 }
 

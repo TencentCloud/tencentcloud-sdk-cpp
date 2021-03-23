@@ -98,6 +98,24 @@ namespace TencentCloud
                     bool TimeTemplateIdHasBeenSet() const;
 
                     /**
+                     * 获取触发录制的事件 1：全部
+                     * @return EventId 触发录制的事件 1：全部
+                     */
+                    int64_t GetEventId() const;
+
+                    /**
+                     * 设置触发录制的事件 1：全部
+                     * @param EventId 触发录制的事件 1：全部
+                     */
+                    void SetEventId(const int64_t& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     */
+                    bool EventIdHasBeenSet() const;
+
+                    /**
                      * 获取录制设备列表
                      * @return Devices 录制设备列表
                      */
@@ -114,6 +132,32 @@ namespace TencentCloud
                      * @return Devices 是否已赋值
                      */
                     bool DevicesHasBeenSet() const;
+
+                    /**
+                     * 获取是否更新绑定此录制计划的设备列表
+0 - 不更新
+1 - 更新，如果Devices参数为空则清空设备列表，Devices不为空则全量更新设备列表
+                     * @return IsModifyDevices 是否更新绑定此录制计划的设备列表
+0 - 不更新
+1 - 更新，如果Devices参数为空则清空设备列表，Devices不为空则全量更新设备列表
+                     */
+                    int64_t GetIsModifyDevices() const;
+
+                    /**
+                     * 设置是否更新绑定此录制计划的设备列表
+0 - 不更新
+1 - 更新，如果Devices参数为空则清空设备列表，Devices不为空则全量更新设备列表
+                     * @param IsModifyDevices 是否更新绑定此录制计划的设备列表
+0 - 不更新
+1 - 更新，如果Devices参数为空则清空设备列表，Devices不为空则全量更新设备列表
+                     */
+                    void SetIsModifyDevices(const int64_t& _isModifyDevices);
+
+                    /**
+                     * 判断参数 IsModifyDevices 是否已赋值
+                     * @return IsModifyDevices 是否已赋值
+                     */
+                    bool IsModifyDevicesHasBeenSet() const;
 
                 private:
 
@@ -136,10 +180,24 @@ namespace TencentCloud
                     bool m_timeTemplateIdHasBeenSet;
 
                     /**
+                     * 触发录制的事件 1：全部
+                     */
+                    int64_t m_eventId;
+                    bool m_eventIdHasBeenSet;
+
+                    /**
                      * 录制设备列表
                      */
                     std::vector<DeviceItem> m_devices;
                     bool m_devicesHasBeenSet;
+
+                    /**
+                     * 是否更新绑定此录制计划的设备列表
+0 - 不更新
+1 - 更新，如果Devices参数为空则清空设备列表，Devices不为空则全量更新设备列表
+                     */
+                    int64_t m_isModifyDevices;
+                    bool m_isModifyDevicesHasBeenSet;
 
                 };
             }

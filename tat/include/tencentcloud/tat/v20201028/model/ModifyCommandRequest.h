@@ -168,6 +168,44 @@ namespace TencentCloud
                      */
                     bool TimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+采取整体全覆盖式修改，即修改时必须提供所有新默认值。
+必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。
+key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+自定义参数最多20个。
+自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
+                     * @return DefaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+采取整体全覆盖式修改，即修改时必须提供所有新默认值。
+必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。
+key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+自定义参数最多20个。
+自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
+                     */
+                    std::string GetDefaultParameters() const;
+
+                    /**
+                     * 设置启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+采取整体全覆盖式修改，即修改时必须提供所有新默认值。
+必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。
+key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+自定义参数最多20个。
+自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
+                     * @param DefaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+采取整体全覆盖式修改，即修改时必须提供所有新默认值。
+必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。
+key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+自定义参数最多20个。
+自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
+                     */
+                    void SetDefaultParameters(const std::string& _defaultParameters);
+
+                    /**
+                     * 判断参数 DefaultParameters 是否已赋值
+                     * @return DefaultParameters 是否已赋值
+                     */
+                    bool DefaultParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +249,17 @@ namespace TencentCloud
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;
+
+                    /**
+                     * 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+采取整体全覆盖式修改，即修改时必须提供所有新默认值。
+必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。
+key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+自定义参数最多20个。
+自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
+                     */
+                    std::string m_defaultParameters;
+                    bool m_defaultParametersHasBeenSet;
 
                 };
             }

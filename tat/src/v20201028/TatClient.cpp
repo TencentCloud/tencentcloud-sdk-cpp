@@ -427,6 +427,49 @@ TatClient::ModifyCommandOutcomeCallable TatClient::ModifyCommandCallable(const M
     return task->get_future();
 }
 
+TatClient::PreviewReplacedCommandContentOutcome TatClient::PreviewReplacedCommandContent(const PreviewReplacedCommandContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "PreviewReplacedCommandContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PreviewReplacedCommandContentResponse rsp = PreviewReplacedCommandContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PreviewReplacedCommandContentOutcome(rsp);
+        else
+            return PreviewReplacedCommandContentOutcome(o.GetError());
+    }
+    else
+    {
+        return PreviewReplacedCommandContentOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::PreviewReplacedCommandContentAsync(const PreviewReplacedCommandContentRequest& request, const PreviewReplacedCommandContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PreviewReplacedCommandContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::PreviewReplacedCommandContentOutcomeCallable TatClient::PreviewReplacedCommandContentCallable(const PreviewReplacedCommandContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PreviewReplacedCommandContentOutcome()>>(
+        [this, request]()
+        {
+            return this->PreviewReplacedCommandContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TatClient::RunCommandOutcome TatClient::RunCommand(const RunCommandRequest &request)
 {
     auto outcome = MakeRequest(request, "RunCommand");

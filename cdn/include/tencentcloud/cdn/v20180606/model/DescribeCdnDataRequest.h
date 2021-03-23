@@ -99,7 +99,10 @@ namespace TencentCloud
 flux：流量，单位为 byte
 bandwidth：带宽，单位为 bps
 request：请求数，单位为 次
-fluxHitRate：流量命中率，单位为 %
+hitRequest：命中请求数，单位为 次
+requestHitRate：请求命中率，单位为 %，保留小数点后两位
+hitFlux：命中流量，单位为byte
+fluxHitRate：流量命中率，单位为 %，保留小数点后两位
 statusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 个
 2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 个
 3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 个
@@ -110,7 +113,10 @@ statusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 �
 flux：流量，单位为 byte
 bandwidth：带宽，单位为 bps
 request：请求数，单位为 次
-fluxHitRate：流量命中率，单位为 %
+hitRequest：命中请求数，单位为 次
+requestHitRate：请求命中率，单位为 %，保留小数点后两位
+hitFlux：命中流量，单位为byte
+fluxHitRate：流量命中率，单位为 %，保留小数点后两位
 statusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 个
 2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 个
 3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 个
@@ -125,7 +131,10 @@ statusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 �
 flux：流量，单位为 byte
 bandwidth：带宽，单位为 bps
 request：请求数，单位为 次
-fluxHitRate：流量命中率，单位为 %
+hitRequest：命中请求数，单位为 次
+requestHitRate：请求命中率，单位为 %，保留小数点后两位
+hitFlux：命中流量，单位为byte
+fluxHitRate：流量命中率，单位为 %，保留小数点后两位
 statusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 个
 2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 个
 3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 个
@@ -136,7 +145,10 @@ statusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 �
 flux：流量，单位为 byte
 bandwidth：带宽，单位为 bps
 request：请求数，单位为 次
-fluxHitRate：流量命中率，单位为 %
+hitRequest：命中请求数，单位为 次
+requestHitRate：请求命中率，单位为 %，保留小数点后两位
+hitFlux：命中流量，单位为byte
+fluxHitRate：流量命中率，单位为 %，保留小数点后两位
 statusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 个
 2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 个
 3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 个
@@ -469,7 +481,10 @@ client：指定查询客户端地区（用户请求终端所在地区）数据
 flux：流量，单位为 byte
 bandwidth：带宽，单位为 bps
 request：请求数，单位为 次
-fluxHitRate：流量命中率，单位为 %
+hitRequest：命中请求数，单位为 次
+requestHitRate：请求命中率，单位为 %，保留小数点后两位
+hitFlux：命中流量，单位为byte
+fluxHitRate：流量命中率，单位为 %，保留小数点后两位
 statusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 个
 2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 个
 3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 个

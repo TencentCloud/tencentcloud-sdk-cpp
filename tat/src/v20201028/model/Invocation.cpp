@@ -30,7 +30,9 @@ Invocation::Invocation() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false)
+    m_updatedTimeHasBeenSet(false),
+    m_parametersHasBeenSet(false),
+    m_defaultParametersHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome Invocation::Deserialize(const Value &value)
         m_updatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Parameters") && !value["Parameters"].IsNull())
+    {
+        if (!value["Parameters"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Invocation.Parameters` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parameters = string(value["Parameters"].GetString());
+        m_parametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultParameters") && !value["DefaultParameters"].IsNull())
+    {
+        if (!value["DefaultParameters"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Invocation.DefaultParameters` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultParameters = string(value["DefaultParameters"].GetString());
+        m_defaultParametersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -223,6 +245,22 @@ void Invocation::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "UpdatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updatedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parametersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Parameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_parameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultParametersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DefaultParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -370,5 +408,37 @@ void Invocation::SetUpdatedTime(const string& _updatedTime)
 bool Invocation::UpdatedTimeHasBeenSet() const
 {
     return m_updatedTimeHasBeenSet;
+}
+
+string Invocation::GetParameters() const
+{
+    return m_parameters;
+}
+
+void Invocation::SetParameters(const string& _parameters)
+{
+    m_parameters = _parameters;
+    m_parametersHasBeenSet = true;
+}
+
+bool Invocation::ParametersHasBeenSet() const
+{
+    return m_parametersHasBeenSet;
+}
+
+string Invocation::GetDefaultParameters() const
+{
+    return m_defaultParameters;
+}
+
+void Invocation::SetDefaultParameters(const string& _defaultParameters)
+{
+    m_defaultParameters = _defaultParameters;
+    m_defaultParametersHasBeenSet = true;
+}
+
+bool Invocation::DefaultParametersHasBeenSet() const
+{
+    return m_defaultParametersHasBeenSet;
 }
 

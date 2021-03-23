@@ -208,6 +208,42 @@ namespace TencentCloud
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用自定义参数功能。
+                     * @return EnableParameter 是否启用自定义参数功能。
+                     */
+                    bool GetEnableParameter() const;
+
+                    /**
+                     * 设置是否启用自定义参数功能。
+                     * @param EnableParameter 是否启用自定义参数功能。
+                     */
+                    void SetEnableParameter(const bool& _enableParameter);
+
+                    /**
+                     * 判断参数 EnableParameter 是否已赋值
+                     * @return EnableParameter 是否已赋值
+                     */
+                    bool EnableParameterHasBeenSet() const;
+
+                    /**
+                     * 获取自定义参数的默认取值。
+                     * @return DefaultParameters 自定义参数的默认取值。
+                     */
+                    std::string GetDefaultParameters() const;
+
+                    /**
+                     * 设置自定义参数的默认取值。
+                     * @param DefaultParameters 自定义参数的默认取值。
+                     */
+                    void SetDefaultParameters(const std::string& _defaultParameters);
+
+                    /**
+                     * 判断参数 DefaultParameters 是否已赋值
+                     * @return DefaultParameters 是否已赋值
+                     */
+                    bool DefaultParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +299,18 @@ namespace TencentCloud
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
+
+                    /**
+                     * 是否启用自定义参数功能。
+                     */
+                    bool m_enableParameter;
+                    bool m_enableParameterHasBeenSet;
+
+                    /**
+                     * 自定义参数的默认取值。
+                     */
+                    std::string m_defaultParameters;
+                    bool m_defaultParametersHasBeenSet;
 
                 };
             }

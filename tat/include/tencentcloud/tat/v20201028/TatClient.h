@@ -41,6 +41,8 @@
 #include <tencentcloud/tat/v20201028/model/InvokeCommandResponse.h>
 #include <tencentcloud/tat/v20201028/model/ModifyCommandRequest.h>
 #include <tencentcloud/tat/v20201028/model/ModifyCommandResponse.h>
+#include <tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentRequest.h>
+#include <tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentResponse.h>
 #include <tencentcloud/tat/v20201028/model/RunCommandRequest.h>
 #include <tencentcloud/tat/v20201028/model/RunCommandResponse.h>
 
@@ -84,6 +86,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyCommandResponse> ModifyCommandOutcome;
                 typedef std::future<ModifyCommandOutcome> ModifyCommandOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::ModifyCommandRequest&, ModifyCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCommandAsyncHandler;
+                typedef Outcome<Error, Model::PreviewReplacedCommandContentResponse> PreviewReplacedCommandContentOutcome;
+                typedef std::future<PreviewReplacedCommandContentOutcome> PreviewReplacedCommandContentOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::PreviewReplacedCommandContentRequest&, PreviewReplacedCommandContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PreviewReplacedCommandContentAsyncHandler;
                 typedef Outcome<Error, Model::RunCommandResponse> RunCommandOutcome;
                 typedef std::future<RunCommandOutcome> RunCommandOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::RunCommandRequest&, RunCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunCommandAsyncHandler;
@@ -176,6 +181,15 @@ namespace TencentCloud
                 ModifyCommandOutcome ModifyCommand(const Model::ModifyCommandRequest &request);
                 void ModifyCommandAsync(const Model::ModifyCommandRequest& request, const ModifyCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCommandOutcomeCallable ModifyCommandCallable(const Model::ModifyCommandRequest& request);
+
+                /**
+                 *此接口用于预览自定义参数替换后的命令内容。不会触发真实执行。
+                 * @param req PreviewReplacedCommandContentRequest
+                 * @return PreviewReplacedCommandContentOutcome
+                 */
+                PreviewReplacedCommandContentOutcome PreviewReplacedCommandContent(const Model::PreviewReplacedCommandContentRequest &request);
+                void PreviewReplacedCommandContentAsync(const Model::PreviewReplacedCommandContentRequest& request, const PreviewReplacedCommandContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PreviewReplacedCommandContentOutcomeCallable PreviewReplacedCommandContentCallable(const Model::PreviewReplacedCommandContentRequest& request);
 
                 /**
                  *执行命令，调用成功返回执行活动ID（inv-xxxxxxxx），每个执行活动内部有一个或多个执行任务（invt-xxxxxxxx），每个执行任务代表命令在一台 CVM 或一台 Lighthouse 上的执行记录。

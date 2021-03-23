@@ -23,7 +23,8 @@ using namespace std;
 
 FlightInvoiceInfo::FlightInvoiceInfo() :
     m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_rowHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome FlightInvoiceInfo::Deserialize(const Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Row") && !value["Row"].IsNull())
+    {
+        if (!value["Row"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `FlightInvoiceInfo.Row` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_row = value["Row"].GetInt64();
+        m_rowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void FlightInvoiceInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rowHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Row";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_row, allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void FlightInvoiceInfo::SetValue(const string& _value)
 bool FlightInvoiceInfo::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+int64_t FlightInvoiceInfo::GetRow() const
+{
+    return m_row;
+}
+
+void FlightInvoiceInfo::SetRow(const int64_t& _row)
+{
+    m_row = _row;
+    m_rowHasBeenSet = true;
+}
+
+bool FlightInvoiceInfo::RowHasBeenSet() const
+{
+    return m_rowHasBeenSet;
 }
 

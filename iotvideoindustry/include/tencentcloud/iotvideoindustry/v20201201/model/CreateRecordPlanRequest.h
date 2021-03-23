@@ -80,6 +80,24 @@ namespace TencentCloud
                     bool TimeTemplateIdHasBeenSet() const;
 
                     /**
+                     * 获取触发录制的事件类别 1:全部
+                     * @return EventId 触发录制的事件类别 1:全部
+                     */
+                    int64_t GetEventId() const;
+
+                    /**
+                     * 设置触发录制的事件类别 1:全部
+                     * @param EventId 触发录制的事件类别 1:全部
+                     */
+                    void SetEventId(const int64_t& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     */
+                    bool EventIdHasBeenSet() const;
+
+                    /**
                      * 获取该录制计划绑定的设备列表
                      * @return Devices 该录制计划绑定的设备列表
                      */
@@ -110,6 +128,12 @@ namespace TencentCloud
                      */
                     std::string m_timeTemplateId;
                     bool m_timeTemplateIdHasBeenSet;
+
+                    /**
+                     * 触发录制的事件类别 1:全部
+                     */
+                    int64_t m_eventId;
+                    bool m_eventIdHasBeenSet;
 
                     /**
                      * 该录制计划绑定的设备列表

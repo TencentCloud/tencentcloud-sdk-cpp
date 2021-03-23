@@ -419,6 +419,28 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ClusterTagHasBeenSet() const;
 
                     /**
+                     * 获取仅适用于公网负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1
+注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 DescribeMasterZones 接口查询一个地域的主/备可用区的列表。
+                     * @return SlaveZoneId 仅适用于公网负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1
+注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 DescribeMasterZones 接口查询一个地域的主/备可用区的列表。
+                     */
+                    std::string GetSlaveZoneId() const;
+
+                    /**
+                     * 设置仅适用于公网负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1
+注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 DescribeMasterZones 接口查询一个地域的主/备可用区的列表。
+                     * @param SlaveZoneId 仅适用于公网负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1
+注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 DescribeMasterZones 接口查询一个地域的主/备可用区的列表。
+                     */
+                    void SetSlaveZoneId(const std::string& _slaveZoneId);
+
+                    /**
+                     * 判断参数 SlaveZoneId 是否已赋值
+                     * @return SlaveZoneId 是否已赋值
+                     */
+                    bool SlaveZoneIdHasBeenSet() const;
+
+                    /**
                      * 获取EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。
                      * @return EipAddressId EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。
                      */
@@ -560,6 +582,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_clusterTag;
                     bool m_clusterTagHasBeenSet;
+
+                    /**
+                     * 仅适用于公网负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1
+注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 DescribeMasterZones 接口查询一个地域的主/备可用区的列表。
+                     */
+                    std::string m_slaveZoneId;
+                    bool m_slaveZoneIdHasBeenSet;
 
                     /**
                      * EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。

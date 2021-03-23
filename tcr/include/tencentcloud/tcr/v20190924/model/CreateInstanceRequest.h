@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool TagSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型，0表示按量计费，1表示预付费，当前版本只支持后付费，默认为按量计费
-                     * @return RegistryChargeType 实例计费类型，0表示按量计费，1表示预付费，当前版本只支持后付费，默认为按量计费
+                     * 获取实例计费类型，0表示按量计费，1表示预付费，默认为按量计费
+                     * @return RegistryChargeType 实例计费类型，0表示按量计费，1表示预付费，默认为按量计费
                      */
                     int64_t GetRegistryChargeType() const;
 
                     /**
-                     * 设置实例计费类型，0表示按量计费，1表示预付费，当前版本只支持后付费，默认为按量计费
-                     * @param RegistryChargeType 实例计费类型，0表示按量计费，1表示预付费，当前版本只支持后付费，默认为按量计费
+                     * 设置实例计费类型，0表示按量计费，1表示预付费，默认为按量计费
+                     * @param RegistryChargeType 实例计费类型，0表示按量计费，1表示预付费，默认为按量计费
                      */
                     void SetRegistryChargeType(const int64_t& _registryChargeType);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_tagSpecificationHasBeenSet;
 
                     /**
-                     * 实例计费类型，0表示按量计费，1表示预付费，当前版本只支持后付费，默认为按量计费
+                     * 实例计费类型，0表示按量计费，1表示预付费，默认为按量计费
                      */
                     int64_t m_registryChargeType;
                     bool m_registryChargeTypeHasBeenSet;

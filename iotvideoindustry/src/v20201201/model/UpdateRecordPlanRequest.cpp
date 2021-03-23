@@ -27,7 +27,9 @@ UpdateRecordPlanRequest::UpdateRecordPlanRequest() :
     m_planIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_timeTemplateIdHasBeenSet(false),
-    m_devicesHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_devicesHasBeenSet(false),
+    m_isModifyDevicesHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,14 @@ string UpdateRecordPlanRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_timeTemplateId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_eventIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_eventId, allocator);
+    }
+
     if (m_devicesHasBeenSet)
     {
         Value iKey(kStringType);
@@ -75,6 +85,14 @@ string UpdateRecordPlanRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isModifyDevicesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsModifyDevices";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isModifyDevices, allocator);
     }
 
 
@@ -133,6 +151,22 @@ bool UpdateRecordPlanRequest::TimeTemplateIdHasBeenSet() const
     return m_timeTemplateIdHasBeenSet;
 }
 
+int64_t UpdateRecordPlanRequest::GetEventId() const
+{
+    return m_eventId;
+}
+
+void UpdateRecordPlanRequest::SetEventId(const int64_t& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool UpdateRecordPlanRequest::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
+}
+
 vector<DeviceItem> UpdateRecordPlanRequest::GetDevices() const
 {
     return m_devices;
@@ -147,6 +181,22 @@ void UpdateRecordPlanRequest::SetDevices(const vector<DeviceItem>& _devices)
 bool UpdateRecordPlanRequest::DevicesHasBeenSet() const
 {
     return m_devicesHasBeenSet;
+}
+
+int64_t UpdateRecordPlanRequest::GetIsModifyDevices() const
+{
+    return m_isModifyDevices;
+}
+
+void UpdateRecordPlanRequest::SetIsModifyDevices(const int64_t& _isModifyDevices)
+{
+    m_isModifyDevices = _isModifyDevices;
+    m_isModifyDevicesHasBeenSet = true;
+}
+
+bool UpdateRecordPlanRequest::IsModifyDevicesHasBeenSet() const
+{
+    return m_isModifyDevicesHasBeenSet;
 }
 
 

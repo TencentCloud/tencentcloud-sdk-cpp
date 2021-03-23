@@ -169,6 +169,49 @@ TsfClient::BindApiGroupOutcomeCallable TsfClient::BindApiGroupCallable(const Bin
     return task->get_future();
 }
 
+TsfClient::BindPluginOutcome TsfClient::BindPlugin(const BindPluginRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindPlugin");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindPluginResponse rsp = BindPluginResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindPluginOutcome(rsp);
+        else
+            return BindPluginOutcome(o.GetError());
+    }
+    else
+    {
+        return BindPluginOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::BindPluginAsync(const BindPluginRequest& request, const BindPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindPlugin(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::BindPluginOutcomeCallable TsfClient::BindPluginCallable(const BindPluginRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindPluginOutcome()>>(
+        [this, request]()
+        {
+            return this->BindPlugin(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::ChangeApiUsableStatusOutcome TsfClient::ChangeApiUsableStatus(const ChangeApiUsableStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ChangeApiUsableStatus");
@@ -3265,6 +3308,49 @@ TsfClient::DescribeGroupsOutcomeCallable TsfClient::DescribeGroupsCallable(const
     return task->get_future();
 }
 
+TsfClient::DescribeGroupsWithPluginOutcome TsfClient::DescribeGroupsWithPlugin(const DescribeGroupsWithPluginRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupsWithPlugin");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupsWithPluginResponse rsp = DescribeGroupsWithPluginResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupsWithPluginOutcome(rsp);
+        else
+            return DescribeGroupsWithPluginOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupsWithPluginOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeGroupsWithPluginAsync(const DescribeGroupsWithPluginRequest& request, const DescribeGroupsWithPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupsWithPlugin(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeGroupsWithPluginOutcomeCallable TsfClient::DescribeGroupsWithPluginCallable(const DescribeGroupsWithPluginRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupsWithPluginOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupsWithPlugin(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeImageRepositoryOutcome TsfClient::DescribeImageRepository(const DescribeImageRepositoryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImageRepository");
@@ -3688,6 +3774,49 @@ TsfClient::DescribePkgsOutcomeCallable TsfClient::DescribePkgsCallable(const Des
         [this, request]()
         {
             return this->DescribePkgs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribePluginInstancesOutcome TsfClient::DescribePluginInstances(const DescribePluginInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePluginInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePluginInstancesResponse rsp = DescribePluginInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePluginInstancesOutcome(rsp);
+        else
+            return DescribePluginInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePluginInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribePluginInstancesAsync(const DescribePluginInstancesRequest& request, const DescribePluginInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePluginInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribePluginInstancesOutcomeCallable TsfClient::DescribePluginInstancesCallable(const DescribePluginInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePluginInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePluginInstances(request);
         }
     );
 

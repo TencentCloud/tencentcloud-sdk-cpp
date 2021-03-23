@@ -19,13 +19,14 @@ set(tat_public_header
   )
 
 set(tat_public_header_model
-  include/tencentcloud/tat/v20201028/model/TaskResult.h
+  include/tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentResponse.h
   include/tencentcloud/tat/v20201028/model/CreateCommandResponse.h
   include/tencentcloud/tat/v20201028/model/AutomationAgentInfo.h
   include/tencentcloud/tat/v20201028/model/RunCommandRequest.h
   include/tencentcloud/tat/v20201028/model/DescribeInvocationTasksRequest.h
   include/tencentcloud/tat/v20201028/model/Invocation.h
   include/tencentcloud/tat/v20201028/model/CommandDocument.h
+  include/tencentcloud/tat/v20201028/model/TaskResult.h
   include/tencentcloud/tat/v20201028/model/ModifyCommandResponse.h
   include/tencentcloud/tat/v20201028/model/RegionInfo.h
   include/tencentcloud/tat/v20201028/model/DeleteCommandResponse.h
@@ -35,6 +36,7 @@ set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/ModifyCommandRequest.h
   include/tencentcloud/tat/v20201028/model/DescribeCommandsRequest.h
   include/tencentcloud/tat/v20201028/model/DescribeInvocationsRequest.h
+  include/tencentcloud/tat/v20201028/model/PreviewReplacedCommandContentRequest.h
   include/tencentcloud/tat/v20201028/model/Filter.h
   include/tencentcloud/tat/v20201028/model/DescribeInvocationsResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeInvocationTasksResponse.h
@@ -52,13 +54,14 @@ set(tat_public_header_model
 
 set(tat_src
   src/v20201028/TatClient.cpp
-  src/v20201028/model/TaskResult.cpp
+  src/v20201028/model/PreviewReplacedCommandContentResponse.cpp
   src/v20201028/model/CreateCommandResponse.cpp
   src/v20201028/model/AutomationAgentInfo.cpp
   src/v20201028/model/RunCommandRequest.cpp
   src/v20201028/model/DescribeInvocationTasksRequest.cpp
   src/v20201028/model/Invocation.cpp
   src/v20201028/model/CommandDocument.cpp
+  src/v20201028/model/TaskResult.cpp
   src/v20201028/model/ModifyCommandResponse.cpp
   src/v20201028/model/RegionInfo.cpp
   src/v20201028/model/DeleteCommandResponse.cpp
@@ -68,6 +71,7 @@ set(tat_src
   src/v20201028/model/ModifyCommandRequest.cpp
   src/v20201028/model/DescribeCommandsRequest.cpp
   src/v20201028/model/DescribeInvocationsRequest.cpp
+  src/v20201028/model/PreviewReplacedCommandContentRequest.cpp
   src/v20201028/model/Filter.cpp
   src/v20201028/model/DescribeInvocationsResponse.cpp
   src/v20201028/model/DescribeInvocationTasksResponse.cpp

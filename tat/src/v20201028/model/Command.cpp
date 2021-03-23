@@ -30,7 +30,9 @@ Command::Command() :
     m_workingDirectoryHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false)
+    m_updatedTimeHasBeenSet(false),
+    m_enableParameterHasBeenSet(false),
+    m_defaultParametersHasBeenSet(false)
 {
 }
 
@@ -129,6 +131,26 @@ CoreInternalOutcome Command::Deserialize(const Value &value)
         m_updatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableParameter") && !value["EnableParameter"].IsNull())
+    {
+        if (!value["EnableParameter"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Command.EnableParameter` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableParameter = value["EnableParameter"].GetBool();
+        m_enableParameterHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultParameters") && !value["DefaultParameters"].IsNull())
+    {
+        if (!value["DefaultParameters"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Command.DefaultParameters` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultParameters = string(value["DefaultParameters"].GetString());
+        m_defaultParametersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +228,22 @@ void Command::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "UpdatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updatedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableParameterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableParameter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableParameter, allocator);
+    }
+
+    if (m_defaultParametersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DefaultParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +391,37 @@ void Command::SetUpdatedTime(const string& _updatedTime)
 bool Command::UpdatedTimeHasBeenSet() const
 {
     return m_updatedTimeHasBeenSet;
+}
+
+bool Command::GetEnableParameter() const
+{
+    return m_enableParameter;
+}
+
+void Command::SetEnableParameter(const bool& _enableParameter)
+{
+    m_enableParameter = _enableParameter;
+    m_enableParameterHasBeenSet = true;
+}
+
+bool Command::EnableParameterHasBeenSet() const
+{
+    return m_enableParameterHasBeenSet;
+}
+
+string Command::GetDefaultParameters() const
+{
+    return m_defaultParameters;
+}
+
+void Command::SetDefaultParameters(const string& _defaultParameters)
+{
+    m_defaultParameters = _defaultParameters;
+    m_defaultParametersHasBeenSet = true;
+}
+
+bool Command::DefaultParametersHasBeenSet() const
+{
+    return m_defaultParametersHasBeenSet;
 }
 

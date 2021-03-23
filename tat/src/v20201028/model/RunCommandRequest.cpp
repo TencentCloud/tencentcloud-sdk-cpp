@@ -31,7 +31,10 @@ RunCommandRequest::RunCommandRequest() :
     m_commandTypeHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_saveCommandHasBeenSet(false)
+    m_saveCommandHasBeenSet(false),
+    m_enableParameterHasBeenSet(false),
+    m_defaultParametersHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
@@ -109,6 +112,30 @@ string RunCommandRequest::ToJsonString() const
         string key = "SaveCommand";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_saveCommand, allocator);
+    }
+
+    if (m_enableParameterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableParameter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableParameter, allocator);
+    }
+
+    if (m_defaultParametersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DefaultParameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parametersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Parameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_parameters.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -245,6 +272,54 @@ void RunCommandRequest::SetSaveCommand(const bool& _saveCommand)
 bool RunCommandRequest::SaveCommandHasBeenSet() const
 {
     return m_saveCommandHasBeenSet;
+}
+
+bool RunCommandRequest::GetEnableParameter() const
+{
+    return m_enableParameter;
+}
+
+void RunCommandRequest::SetEnableParameter(const bool& _enableParameter)
+{
+    m_enableParameter = _enableParameter;
+    m_enableParameterHasBeenSet = true;
+}
+
+bool RunCommandRequest::EnableParameterHasBeenSet() const
+{
+    return m_enableParameterHasBeenSet;
+}
+
+string RunCommandRequest::GetDefaultParameters() const
+{
+    return m_defaultParameters;
+}
+
+void RunCommandRequest::SetDefaultParameters(const string& _defaultParameters)
+{
+    m_defaultParameters = _defaultParameters;
+    m_defaultParametersHasBeenSet = true;
+}
+
+bool RunCommandRequest::DefaultParametersHasBeenSet() const
+{
+    return m_defaultParametersHasBeenSet;
+}
+
+string RunCommandRequest::GetParameters() const
+{
+    return m_parameters;
+}
+
+void RunCommandRequest::SetParameters(const string& _parameters)
+{
+    m_parameters = _parameters;
+    m_parametersHasBeenSet = true;
+}
+
+bool RunCommandRequest::ParametersHasBeenSet() const
+{
+    return m_parametersHasBeenSet;
 }
 
 

@@ -246,6 +246,28 @@ namespace TencentCloud
                      */
                     bool EniIdHasBeenSet() const;
 
+                    /**
+                     * 获取后端服务的可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneId 后端服务的可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetZoneId() const;
+
+                    /**
+                     * 设置后端服务的可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneId 后端服务的可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneId(const uint64_t& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,6 +334,13 @@ namespace TencentCloud
                      */
                     std::string m_eniId;
                     bool m_eniIdHasBeenSet;
+
+                    /**
+                     * 后端服务的可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 
 InvokeCommandRequest::InvokeCommandRequest() :
     m_commandIdHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string InvokeCommandRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_parametersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Parameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_parameters.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -95,6 +104,22 @@ void InvokeCommandRequest::SetInstanceIds(const vector<string>& _instanceIds)
 bool InvokeCommandRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string InvokeCommandRequest::GetParameters() const
+{
+    return m_parameters;
+}
+
+void InvokeCommandRequest::SetParameters(const string& _parameters)
+{
+    m_parameters = _parameters;
+    m_parametersHasBeenSet = true;
+}
+
+bool InvokeCommandRequest::ParametersHasBeenSet() const
+{
+    return m_parametersHasBeenSet;
 }
 
 
