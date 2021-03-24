@@ -14,24 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/TransferCloudStorageResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Dcdb::V20180411::Model;
+using namespace TencentCloud::Iotvideo::V20201215::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeDBSyncModeResponse::DescribeDBSyncModeResponse() :
-    m_syncModeHasBeenSet(false),
-    m_isModifyingHasBeenSet(false),
-    m_currentSyncModeHasBeenSet(false)
+TransferCloudStorageResponse::TransferCloudStorageResponse()
 {
 }
 
-CoreInternalOutcome DescribeDBSyncModeResponse::Deserialize(const string &payload)
+CoreInternalOutcome TransferCloudStorageResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -65,69 +62,9 @@ CoreInternalOutcome DescribeDBSyncModeResponse::Deserialize(const string &payloa
     }
 
 
-    if (rsp.HasMember("SyncMode") && !rsp["SyncMode"].IsNull())
-    {
-        if (!rsp["SyncMode"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `SyncMode` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_syncMode = rsp["SyncMode"].GetInt64();
-        m_syncModeHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("IsModifying") && !rsp["IsModifying"].IsNull())
-    {
-        if (!rsp["IsModifying"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `IsModifying` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_isModifying = rsp["IsModifying"].GetInt64();
-        m_isModifyingHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("CurrentSyncMode") && !rsp["CurrentSyncMode"].IsNull())
-    {
-        if (!rsp["CurrentSyncMode"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `CurrentSyncMode` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_currentSyncMode = rsp["CurrentSyncMode"].GetInt64();
-        m_currentSyncModeHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-int64_t DescribeDBSyncModeResponse::GetSyncMode() const
-{
-    return m_syncMode;
-}
-
-bool DescribeDBSyncModeResponse::SyncModeHasBeenSet() const
-{
-    return m_syncModeHasBeenSet;
-}
-
-int64_t DescribeDBSyncModeResponse::GetIsModifying() const
-{
-    return m_isModifying;
-}
-
-bool DescribeDBSyncModeResponse::IsModifyingHasBeenSet() const
-{
-    return m_isModifyingHasBeenSet;
-}
-
-int64_t DescribeDBSyncModeResponse::GetCurrentSyncMode() const
-{
-    return m_currentSyncMode;
-}
-
-bool DescribeDBSyncModeResponse::CurrentSyncModeHasBeenSet() const
-{
-    return m_currentSyncModeHasBeenSet;
-}
 
 

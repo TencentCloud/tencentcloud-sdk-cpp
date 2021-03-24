@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool SearchValueHasBeenSet() const;
 
                     /**
-                     * 获取每页条数
-                     * @return Limit 每页条数
+                     * 获取每页条数，默认为10
+                     * @return Limit 每页条数，默认为10
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页条数
-                     * @param Limit 每页条数
+                     * 设置每页条数，默认为10
+                     * @param Limit 每页条数，默认为10
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移值
-                     * @return Offset 偏移值
+                     * 获取偏移值，默认为0
+                     * @return Offset 偏移值，默认为0
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移值
-                     * @param Offset 偏移值
+                     * 设置偏移值，默认为0
+                     * @param Offset 偏移值，默认为0
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取'': 全部，'0'：筛选停用规则，'1'：筛选启用规则
-                     * @return Status '': 全部，'0'：筛选停用规则，'1'：筛选启用规则
+                     * 获取状态，'': 全部，'0'：筛选停用规则，'1'：筛选启用规则
+                     * @return Status 状态，'': 全部，'0'：筛选停用规则，'1'：筛选启用规则
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置'': 全部，'0'：筛选停用规则，'1'：筛选启用规则
-                     * @param Status '': 全部，'0'：筛选停用规则，'1'：筛选启用规则
+                     * 设置状态，'': 全部，'0'：筛选停用规则，'1'：筛选启用规则
+                     * @param Status 状态，'': 全部，'0'：筛选停用规则，'1'：筛选启用规则
                      */
                     void SetStatus(const std::string& _status);
 
@@ -189,19 +189,19 @@ namespace TencentCloud
                     bool m_searchValueHasBeenSet;
 
                     /**
-                     * 每页条数
+                     * 每页条数，默认为10
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移值
+                     * 偏移值，默认为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * '': 全部，'0'：筛选停用规则，'1'：筛选启用规则
+                     * 状态，'': 全部，'0'：筛选停用规则，'1'：筛选启用规则
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

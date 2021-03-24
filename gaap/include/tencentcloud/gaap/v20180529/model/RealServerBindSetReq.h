@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * RealServerBindSetReq
+                * 绑定的源站信息
                 */
                 class RealServerBindSetReq : public AbstractModel
                 {
@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool RealServerWeightHasBeenSet() const;
 
+                    /**
+                     * 获取源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器
+                     * @return RealServerFailoverRole 源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器
+                     */
+                    std::string GetRealServerFailoverRole() const;
+
+                    /**
+                     * 设置源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器
+                     * @param RealServerFailoverRole 源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器
+                     */
+                    void SetRealServerFailoverRole(const std::string& _realServerFailoverRole);
+
+                    /**
+                     * 判断参数 RealServerFailoverRole 是否已赋值
+                     * @return RealServerFailoverRole 是否已赋值
+                     */
+                    bool RealServerFailoverRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     uint64_t m_realServerWeight;
                     bool m_realServerWeightHasBeenSet;
+
+                    /**
+                     * 源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器
+                     */
+                    std::string m_realServerFailoverRole;
+                    bool m_realServerFailoverRoleHasBeenSet;
 
                 };
             }

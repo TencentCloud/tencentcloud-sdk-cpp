@@ -302,10 +302,12 @@ namespace TencentCloud
 取值范围:
 "ACTIVITY": 活动套餐,
 "NORMAL": 普通套餐
+"CAREFREE": 无忧套餐
                      * @return BundleDisplayLabel 套餐展示标签.
 取值范围:
 "ACTIVITY": 活动套餐,
 "NORMAL": 普通套餐
+"CAREFREE": 无忧套餐
                      */
                     std::string GetBundleDisplayLabel() const;
 
@@ -314,10 +316,12 @@ namespace TencentCloud
 取值范围:
 "ACTIVITY": 活动套餐,
 "NORMAL": 普通套餐
+"CAREFREE": 无忧套餐
                      * @param BundleDisplayLabel 套餐展示标签.
 取值范围:
 "ACTIVITY": 活动套餐,
 "NORMAL": 普通套餐
+"CAREFREE": 无忧套餐
                      */
                     void SetBundleDisplayLabel(const std::string& _bundleDisplayLabel);
 
@@ -416,6 +420,7 @@ namespace TencentCloud
 取值范围:
 "ACTIVITY": 活动套餐,
 "NORMAL": 普通套餐
+"CAREFREE": 无忧套餐
                      */
                     std::string m_bundleDisplayLabel;
                     bool m_bundleDisplayLabelHasBeenSet;

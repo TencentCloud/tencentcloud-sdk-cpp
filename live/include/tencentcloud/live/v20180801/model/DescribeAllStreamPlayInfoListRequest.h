@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool QueryTimeHasBeenSet() const;
 
+                    /**
+                     * 获取播放域名列表，若不填，表示总体数据。
+                     * @return PlayDomains 播放域名列表，若不填，表示总体数据。
+                     */
+                    std::vector<std::string> GetPlayDomains() const;
+
+                    /**
+                     * 设置播放域名列表，若不填，表示总体数据。
+                     * @param PlayDomains 播放域名列表，若不填，表示总体数据。
+                     */
+                    void SetPlayDomains(const std::vector<std::string>& _playDomains);
+
+                    /**
+                     * 判断参数 PlayDomains 是否已赋值
+                     * @return PlayDomains 是否已赋值
+                     */
+                    bool PlayDomainsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_queryTime;
                     bool m_queryTimeHasBeenSet;
+
+                    /**
+                     * 播放域名列表，若不填，表示总体数据。
+                     */
+                    std::vector<std::string> m_playDomains;
+                    bool m_playDomainsHasBeenSet;
 
                 };
             }

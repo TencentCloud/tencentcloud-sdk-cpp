@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备类型
-                     * @return Device 设备类型
+                     * 获取设备类型（废弃）
+                     * @return Device 设备类型（废弃）
                      */
                     std::string GetDevice() const;
 
                     /**
-                     * 设置设备类型
-                     * @param Device 设备类型
+                     * 设置设备类型（废弃）
+                     * @param Device 设备类型（废弃）
                      */
                     void SetDevice(const std::string& _device);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DeviceHasBeenSet() const;
 
                     /**
-                     * 获取售卖规格描述
-                     * @return Type 售卖规格描述
+                     * 获取售卖规格描述（废弃）
+                     * @return Type 售卖规格描述（废弃）
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置售卖规格描述
-                     * @param Type 售卖规格描述
+                     * 设置售卖规格描述（废弃）
+                     * @param Type 售卖规格描述（废弃）
                      */
                     void SetType(const std::string& _type);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取实例类型
-                     * @return CdbType 实例类型
+                     * 获取实例类型（废弃）
+                     * @return CdbType 实例类型（废弃）
                      */
                     std::string GetCdbType() const;
 
                     /**
-                     * 设置实例类型
-                     * @param CdbType 实例类型
+                     * 设置实例类型（废弃）
+                     * @param CdbType 实例类型（废弃）
                      */
                     void SetCdbType(const std::string& _cdbType);
 
@@ -263,14 +263,14 @@ namespace TencentCloud
                     bool InfoHasBeenSet() const;
 
                     /**
-                     * 获取状态值
-                     * @return Status 状态值
+                     * 获取状态值，0 表示该规格对外售卖
+                     * @return Status 状态值，0 表示该规格对外售卖
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态值
-                     * @param Status 状态值
+                     * 设置状态值，0 表示该规格对外售卖
+                     * @param Status 状态值，0 表示该规格对外售卖
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -281,14 +281,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取标签值
-                     * @return Tag 标签值
+                     * 获取标签值（废弃）
+                     * @return Tag 标签值（废弃）
                      */
                     int64_t GetTag() const;
 
                     /**
-                     * 设置标签值
-                     * @param Tag 标签值
+                     * 设置标签值（废弃）
+                     * @param Tag 标签值（废弃）
                      */
                     void SetTag(const int64_t& _tag);
 
@@ -298,22 +298,66 @@ namespace TencentCloud
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型，可能的取值范围有：UNIVERSAL (通用型), EXCLUSIVE (独享型), BASIC (基础型)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceType 实例类型，可能的取值范围有：UNIVERSAL (通用型), EXCLUSIVE (独享型), BASIC (基础型)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置实例类型，可能的取值范围有：UNIVERSAL (通用型), EXCLUSIVE (独享型), BASIC (基础型)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeviceType 实例类型，可能的取值范围有：UNIVERSAL (通用型), EXCLUSIVE (独享型), BASIC (基础型)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例类型描述，可能的取值范围有：通用型， 独享型， 基础型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceTypeName 实例类型描述，可能的取值范围有：通用型， 独享型， 基础型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeviceTypeName() const;
+
+                    /**
+                     * 设置实例类型描述，可能的取值范围有：通用型， 独享型， 基础型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeviceTypeName 实例类型描述，可能的取值范围有：通用型， 独享型， 基础型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeviceTypeName(const std::string& _deviceTypeName);
+
+                    /**
+                     * 判断参数 DeviceTypeName 是否已赋值
+                     * @return DeviceTypeName 是否已赋值
+                     */
+                    bool DeviceTypeNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 设备类型
+                     * 设备类型（废弃）
                      */
                     std::string m_device;
                     bool m_deviceHasBeenSet;
 
                     /**
-                     * 售卖规格描述
+                     * 售卖规格描述（废弃）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 实例类型
+                     * 实例类型（废弃）
                      */
                     std::string m_cdbType;
                     bool m_cdbTypeHasBeenSet;
@@ -373,16 +417,30 @@ namespace TencentCloud
                     bool m_infoHasBeenSet;
 
                     /**
-                     * 状态值
+                     * 状态值，0 表示该规格对外售卖
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 标签值
+                     * 标签值（废弃）
                      */
                     int64_t m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 实例类型，可能的取值范围有：UNIVERSAL (通用型), EXCLUSIVE (独享型), BASIC (基础型)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
+
+                    /**
+                     * 实例类型描述，可能的取值范围有：通用型， 独享型， 基础型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceTypeName;
+                    bool m_deviceTypeNameHasBeenSet;
 
                 };
             }

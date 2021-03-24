@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取0：后插，1：前插，2：中插
-                     * @return Type 0：后插，1：前插，2：中插
+                     * 获取插入类型，0：后插，1：前插，2：中插
+                     * @return Type 插入类型，0：后插，1：前插，2：中插
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置0：后插，1：前插，2：中插
-                     * @param Type 0：后插，1：前插，2：中插
+                     * 设置插入类型，0：后插，1：前插，2：中插
+                     * @param Type 插入类型，0：后插，1：前插，2：中插
                      */
                     void SetType(const uint64_t& _type);
 
@@ -130,7 +130,7 @@ namespace TencentCloud
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 0：后插，1：前插，2：中插
+                     * 插入类型，0：后插，1：前插，2：中插
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

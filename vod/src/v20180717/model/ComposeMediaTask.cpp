@@ -28,7 +28,9 @@ ComposeMediaTask::ComposeMediaTask() :
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_outputHasBeenSet(false),
-    m_metaDataHasBeenSet(false)
+    m_metaDataHasBeenSet(false),
+    m_sessionContextHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome ComposeMediaTask::Deserialize(const Value &value)
         m_metaDataHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionContext") && !value["SessionContext"].IsNull())
+    {
+        if (!value["SessionContext"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ComposeMediaTask.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionContext = string(value["SessionContext"].GetString());
+        m_sessionContextHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ComposeMediaTask.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(value["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -192,6 +214,22 @@ void ComposeMediaTask::ToJsonObject(Value &value, Document::AllocatorType& alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_metaData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sessionContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -307,5 +345,37 @@ void ComposeMediaTask::SetMetaData(const MediaMetaData& _metaData)
 bool ComposeMediaTask::MetaDataHasBeenSet() const
 {
     return m_metaDataHasBeenSet;
+}
+
+string ComposeMediaTask::GetSessionContext() const
+{
+    return m_sessionContext;
+}
+
+void ComposeMediaTask::SetSessionContext(const string& _sessionContext)
+{
+    m_sessionContext = _sessionContext;
+    m_sessionContextHasBeenSet = true;
+}
+
+bool ComposeMediaTask::SessionContextHasBeenSet() const
+{
+    return m_sessionContextHasBeenSet;
+}
+
+string ComposeMediaTask::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void ComposeMediaTask::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool ComposeMediaTask::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 

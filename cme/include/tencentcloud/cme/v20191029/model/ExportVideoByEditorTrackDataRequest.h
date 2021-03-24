@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ExportDestinationHasBeenSet() const;
 
                     /**
-                     * 获取在线编辑轨道数据。
-                     * @return TrackData 在线编辑轨道数据。
+                     * 获取在线编辑轨道数据。轨道数据相关介绍，请查看 [视频合成协议](https://cloud.tencent.com/document/product/1156/51225)。
+                     * @return TrackData 在线编辑轨道数据。轨道数据相关介绍，请查看 [视频合成协议](https://cloud.tencent.com/document/product/1156/51225)。
                      */
                     std::string GetTrackData() const;
 
                     /**
-                     * 设置在线编辑轨道数据。
-                     * @param TrackData 在线编辑轨道数据。
+                     * 设置在线编辑轨道数据。轨道数据相关介绍，请查看 [视频合成协议](https://cloud.tencent.com/document/product/1156/51225)。
+                     * @param TrackData 在线编辑轨道数据。轨道数据相关介绍，请查看 [视频合成协议](https://cloud.tencent.com/document/product/1156/51225)。
                      */
                     void SetTrackData(const std::string& _trackData);
 
@@ -216,7 +216,7 @@ namespace TencentCloud
                     bool m_exportDestinationHasBeenSet;
 
                     /**
-                     * 在线编辑轨道数据。
+                     * 在线编辑轨道数据。轨道数据相关介绍，请查看 [视频合成协议](https://cloud.tencent.com/document/product/1156/51225)。
                      */
                     std::string m_trackData;
                     bool m_trackDataHasBeenSet;

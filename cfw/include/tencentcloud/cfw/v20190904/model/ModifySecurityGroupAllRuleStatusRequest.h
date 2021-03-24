@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EdgeIdHasBeenSet() const;
 
                     /**
-                     * 获取NAT地域
-                     * @return Area NAT地域
+                     * 获取NAT地域, 腾讯云地域的英文简写
+                     * @return Area NAT地域, 腾讯云地域的英文简写
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置NAT地域
-                     * @param Area NAT地域
+                     * 设置NAT地域, 腾讯云地域的英文简写
+                     * @param Area NAT地域, 腾讯云地域的英文简写
                      */
                     void SetArea(const std::string& _area);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_edgeIdHasBeenSet;
 
                     /**
-                     * NAT地域
+                     * NAT地域, 腾讯云地域的英文简写
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

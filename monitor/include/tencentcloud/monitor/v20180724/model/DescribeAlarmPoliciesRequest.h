@@ -383,14 +383,14 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取是否未配置通知规则，1：未配置，0：配置
-                     * @return NotBindingNoticeRule 是否未配置通知规则，1：未配置，0：配置
+                     * 获取传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。
+                     * @return NotBindingNoticeRule 传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。
                      */
                     int64_t GetNotBindingNoticeRule() const;
 
                     /**
-                     * 设置是否未配置通知规则，1：未配置，0：配置
-                     * @param NotBindingNoticeRule 是否未配置通知规则，1：未配置，0：配置
+                     * 设置传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。
+                     * @param NotBindingNoticeRule 传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。
                      */
                     void SetNotBindingNoticeRule(const int64_t& _notBindingNoticeRule);
 
@@ -512,7 +512,7 @@ namespace TencentCloud
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 是否未配置通知规则，1：未配置，0：配置
+                     * 传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。
                      */
                     int64_t m_notBindingNoticeRule;
                     bool m_notBindingNoticeRuleHasBeenSet;

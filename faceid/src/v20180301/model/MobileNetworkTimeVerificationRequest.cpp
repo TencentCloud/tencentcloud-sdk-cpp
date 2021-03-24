@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 MobileNetworkTimeVerificationRequest::MobileNetworkTimeVerificationRequest() :
-    m_mobileHasBeenSet(false)
+    m_mobileHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,15 @@ string MobileNetworkTimeVerificationRequest::ToJsonString() const
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -65,6 +75,22 @@ void MobileNetworkTimeVerificationRequest::SetMobile(const string& _mobile)
 bool MobileNetworkTimeVerificationRequest::MobileHasBeenSet() const
 {
     return m_mobileHasBeenSet;
+}
+
+Encryption MobileNetworkTimeVerificationRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void MobileNetworkTimeVerificationRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool MobileNetworkTimeVerificationRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

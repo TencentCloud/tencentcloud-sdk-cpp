@@ -14,43 +14,42 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/faceid/v20180301/model/MobileStatusRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/ResetCloudStorageRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Faceid::V20180301::Model;
+using namespace TencentCloud::Iotvideo::V20201215::Model;
 using namespace rapidjson;
 using namespace std;
 
-MobileStatusRequest::MobileStatusRequest() :
-    m_mobileHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+ResetCloudStorageRequest::ResetCloudStorageRequest() :
+    m_productIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false)
 {
 }
 
-string MobileStatusRequest::ToJsonString() const
+string ResetCloudStorageRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_mobileHasBeenSet)
+    if (m_productIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Mobile";
+        string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_mobile.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_encryptionHasBeenSet)
+    if (m_deviceNameHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Encryption";
+        string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_encryption.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -61,36 +60,36 @@ string MobileStatusRequest::ToJsonString() const
 }
 
 
-string MobileStatusRequest::GetMobile() const
+string ResetCloudStorageRequest::GetProductId() const
 {
-    return m_mobile;
+    return m_productId;
 }
 
-void MobileStatusRequest::SetMobile(const string& _mobile)
+void ResetCloudStorageRequest::SetProductId(const string& _productId)
 {
-    m_mobile = _mobile;
-    m_mobileHasBeenSet = true;
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
 }
 
-bool MobileStatusRequest::MobileHasBeenSet() const
+bool ResetCloudStorageRequest::ProductIdHasBeenSet() const
 {
-    return m_mobileHasBeenSet;
+    return m_productIdHasBeenSet;
 }
 
-Encryption MobileStatusRequest::GetEncryption() const
+string ResetCloudStorageRequest::GetDeviceName() const
 {
-    return m_encryption;
+    return m_deviceName;
 }
 
-void MobileStatusRequest::SetEncryption(const Encryption& _encryption)
+void ResetCloudStorageRequest::SetDeviceName(const string& _deviceName)
 {
-    m_encryption = _encryption;
-    m_encryptionHasBeenSet = true;
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
 }
 
-bool MobileStatusRequest::EncryptionHasBeenSet() const
+bool ResetCloudStorageRequest::DeviceNameHasBeenSet() const
 {
-    return m_encryptionHasBeenSet;
+    return m_deviceNameHasBeenSet;
 }
 
 

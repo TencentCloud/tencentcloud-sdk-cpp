@@ -2018,6 +2018,49 @@ IotvideoClient::ModifyProductOutcomeCallable IotvideoClient::ModifyProductCallab
     return task->get_future();
 }
 
+IotvideoClient::ResetCloudStorageOutcome IotvideoClient::ResetCloudStorage(const ResetCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetCloudStorageResponse rsp = ResetCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetCloudStorageOutcome(rsp);
+        else
+            return ResetCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ResetCloudStorageAsync(const ResetCloudStorageRequest& request, const ResetCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ResetCloudStorageOutcomeCallable IotvideoClient::ResetCloudStorageCallable(const ResetCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetCloudStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::RetryDeviceFirmwareTaskOutcome IotvideoClient::RetryDeviceFirmwareTask(const RetryDeviceFirmwareTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "RetryDeviceFirmwareTask");
@@ -2097,6 +2140,49 @@ IotvideoClient::SetForwardAuthOutcomeCallable IotvideoClient::SetForwardAuthCall
         [this, request]()
         {
             return this->SetForwardAuth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::TransferCloudStorageOutcome IotvideoClient::TransferCloudStorage(const TransferCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "TransferCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TransferCloudStorageResponse rsp = TransferCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TransferCloudStorageOutcome(rsp);
+        else
+            return TransferCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return TransferCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::TransferCloudStorageAsync(const TransferCloudStorageRequest& request, const TransferCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TransferCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::TransferCloudStorageOutcomeCallable IotvideoClient::TransferCloudStorageCallable(const TransferCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TransferCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->TransferCloudStorage(request);
         }
     );
 

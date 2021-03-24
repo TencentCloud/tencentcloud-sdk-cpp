@@ -240,6 +240,24 @@ namespace TencentCloud
                      */
                     bool ClientIPMethodHasBeenSet() const;
 
+                    /**
+                     * 获取源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
+                     * @return FailoverSwitch 源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
+                     */
+                    int64_t GetFailoverSwitch() const;
+
+                    /**
+                     * 设置源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
+                     * @param FailoverSwitch 源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
+                     */
+                    void SetFailoverSwitch(const int64_t& _failoverSwitch);
+
+                    /**
+                     * 判断参数 FailoverSwitch 是否已赋值
+                     * @return FailoverSwitch 是否已赋值
+                     */
+                    bool FailoverSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +325,12 @@ namespace TencentCloud
                      */
                     int64_t m_clientIPMethod;
                     bool m_clientIPMethodHasBeenSet;
+
+                    /**
+                     * 源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启
+                     */
+                    int64_t m_failoverSwitch;
+                    bool m_failoverSwitchHasBeenSet;
 
                 };
             }

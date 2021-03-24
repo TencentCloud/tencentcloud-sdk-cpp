@@ -66,6 +66,18 @@ namespace TencentCloud
                      */
                     bool IsModifyingHasBeenSet() const;
 
+                    /**
+                     * 获取当前复制方式，0 异步，1 同步
+                     * @return CurrentSyncMode 当前复制方式，0 异步，1 同步
+                     */
+                    int64_t GetCurrentSyncMode() const;
+
+                    /**
+                     * 判断参数 CurrentSyncMode 是否已赋值
+                     * @return CurrentSyncMode 是否已赋值
+                     */
+                    bool CurrentSyncModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +91,12 @@ namespace TencentCloud
                      */
                     int64_t m_isModifying;
                     bool m_isModifyingHasBeenSet;
+
+                    /**
+                     * 当前复制方式，0 异步，1 同步
+                     */
+                    int64_t m_currentSyncMode;
+                    bool m_currentSyncModeHasBeenSet;
 
                 };
             }

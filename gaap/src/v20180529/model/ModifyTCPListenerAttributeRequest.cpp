@@ -31,7 +31,8 @@ ModifyTCPListenerAttributeRequest::ModifyTCPListenerAttributeRequest() :
     m_schedulerHasBeenSet(false),
     m_delayLoopHasBeenSet(false),
     m_connectTimeoutHasBeenSet(false),
-    m_healthCheckHasBeenSet(false)
+    m_healthCheckHasBeenSet(false),
+    m_failoverSwitchHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string ModifyTCPListenerAttributeRequest::ToJsonString() const
         string key = "HealthCheck";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_healthCheck, allocator);
+    }
+
+    if (m_failoverSwitchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FailoverSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_failoverSwitch, allocator);
     }
 
 
@@ -240,6 +249,22 @@ void ModifyTCPListenerAttributeRequest::SetHealthCheck(const uint64_t& _healthCh
 bool ModifyTCPListenerAttributeRequest::HealthCheckHasBeenSet() const
 {
     return m_healthCheckHasBeenSet;
+}
+
+uint64_t ModifyTCPListenerAttributeRequest::GetFailoverSwitch() const
+{
+    return m_failoverSwitch;
+}
+
+void ModifyTCPListenerAttributeRequest::SetFailoverSwitch(const uint64_t& _failoverSwitch)
+{
+    m_failoverSwitch = _failoverSwitch;
+    m_failoverSwitchHasBeenSet = true;
+}
+
+bool ModifyTCPListenerAttributeRequest::FailoverSwitchHasBeenSet() const
+{
+    return m_failoverSwitchHasBeenSet;
 }
 
 

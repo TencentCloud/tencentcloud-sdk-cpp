@@ -34,7 +34,8 @@ CreateTCPListenersRequest::CreateTCPListenersRequest() :
     m_delayLoopHasBeenSet(false),
     m_connectTimeoutHasBeenSet(false),
     m_realServerPortsHasBeenSet(false),
-    m_clientIPMethodHasBeenSet(false)
+    m_clientIPMethodHasBeenSet(false),
+    m_failoverSwitchHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,14 @@ string CreateTCPListenersRequest::ToJsonString() const
         string key = "ClientIPMethod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_clientIPMethod, allocator);
+    }
+
+    if (m_failoverSwitchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FailoverSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_failoverSwitch, allocator);
     }
 
 
@@ -325,6 +334,22 @@ void CreateTCPListenersRequest::SetClientIPMethod(const int64_t& _clientIPMethod
 bool CreateTCPListenersRequest::ClientIPMethodHasBeenSet() const
 {
     return m_clientIPMethodHasBeenSet;
+}
+
+int64_t CreateTCPListenersRequest::GetFailoverSwitch() const
+{
+    return m_failoverSwitch;
+}
+
+void CreateTCPListenersRequest::SetFailoverSwitch(const int64_t& _failoverSwitch)
+{
+    m_failoverSwitch = _failoverSwitch;
+    m_failoverSwitchHasBeenSet = true;
+}
+
+bool CreateTCPListenersRequest::FailoverSwitchHasBeenSet() const
+{
+    return m_failoverSwitchHasBeenSet;
 }
 
 

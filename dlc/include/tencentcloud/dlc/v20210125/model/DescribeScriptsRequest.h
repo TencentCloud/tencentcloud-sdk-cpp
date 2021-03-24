@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取按字段爱旭，支持如下字段类型，update-time
-                     * @return SortBy 按字段爱旭，支持如下字段类型，update-time
+                     * 获取按字段排序，支持如下字段类型，update-time
+                     * @return SortBy 按字段排序，支持如下字段类型，update-time
                      */
                     std::string GetSortBy() const;
 
                     /**
-                     * 设置按字段爱旭，支持如下字段类型，update-time
-                     * @param SortBy 按字段爱旭，支持如下字段类型，update-time
+                     * 设置按字段排序，支持如下字段类型，update-time
+                     * @param SortBy 按字段排序，支持如下字段类型，update-time
                      */
                     void SetSortBy(const std::string& _sortBy);
 
@@ -156,7 +156,7 @@ script-name-keyword - String - （过滤条件）数据表名称,形如：script
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 按字段爱旭，支持如下字段类型，update-time
+                     * 按字段排序，支持如下字段类型，update-time
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;

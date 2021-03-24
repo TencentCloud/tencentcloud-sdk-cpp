@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取IP搜索列表，可选，当不为空时表示安装IP搜索资源；
-                     * @return IpList IP搜索列表，可选，当不为空时表示安装IP搜索资源；
+                     * 获取IP搜索列表，可选，当不为空时表示按照IP搜索资源；
+                     * @return IpList IP搜索列表，可选，当不为空时表示按照IP搜索资源；
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
-                     * 设置IP搜索列表，可选，当不为空时表示安装IP搜索资源；
-                     * @param IpList IP搜索列表，可选，当不为空时表示安装IP搜索资源；
+                     * 设置IP搜索列表，可选，当不为空时表示按照IP搜索资源；
+                     * @param IpList IP搜索列表，可选，当不为空时表示按照IP搜索资源；
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
@@ -310,7 +310,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * IP搜索列表，可选，当不为空时表示安装IP搜索资源；
+                     * IP搜索列表，可选，当不为空时表示按照IP搜索资源；
                      */
                     std::vector<std::string> m_ipList;
                     bool m_ipListHasBeenSet;

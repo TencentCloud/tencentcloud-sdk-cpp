@@ -97,18 +97,22 @@ namespace TencentCloud
                     bool EniLBIpHasBeenSet() const;
 
                     /**
-                     * 获取true：use instance name as subdomain
-false: use instancename+"-vpc" as subdomain
-                     * @return UsePublicDomain true：use instance name as subdomain
-false: use instancename+"-vpc" as subdomain
+                     * 获取true：为默认域名，公网域名一致
+false: 使用vpc域名
+默认为vpc域名
+                     * @return UsePublicDomain true：为默认域名，公网域名一致
+false: 使用vpc域名
+默认为vpc域名
                      */
                     bool GetUsePublicDomain() const;
 
                     /**
-                     * 设置true：use instance name as subdomain
-false: use instancename+"-vpc" as subdomain
-                     * @param UsePublicDomain true：use instance name as subdomain
-false: use instancename+"-vpc" as subdomain
+                     * 设置true：为默认域名，公网域名一致
+false: 使用vpc域名
+默认为vpc域名
+                     * @param UsePublicDomain true：为默认域名，公网域名一致
+false: 使用vpc域名
+默认为vpc域名
                      */
                     void SetUsePublicDomain(const bool& _usePublicDomain);
 
@@ -139,8 +143,9 @@ false: use instancename+"-vpc" as subdomain
                     bool m_eniLBIpHasBeenSet;
 
                     /**
-                     * true：use instance name as subdomain
-false: use instancename+"-vpc" as subdomain
+                     * true：为默认域名，公网域名一致
+false: 使用vpc域名
+默认为vpc域名
                      */
                     bool m_usePublicDomain;
                     bool m_usePublicDomainHasBeenSet;

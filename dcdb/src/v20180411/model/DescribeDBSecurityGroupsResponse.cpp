@@ -25,7 +25,9 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeDBSecurityGroupsResponse::DescribeDBSecurityGroupsResponse() :
-    m_groupsHasBeenSet(false)
+    m_groupsHasBeenSet(false),
+    m_vIPHasBeenSet(false),
+    m_vPortHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,26 @@ CoreInternalOutcome DescribeDBSecurityGroupsResponse::Deserialize(const string &
         m_groupsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VIP") && !rsp["VIP"].IsNull())
+    {
+        if (!rsp["VIP"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vIP = string(rsp["VIP"].GetString());
+        m_vIPHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VPort") && !rsp["VPort"].IsNull())
+    {
+        if (!rsp["VPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `VPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vPort = rsp["VPort"].GetInt64();
+        m_vPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +118,26 @@ vector<SecurityGroup> DescribeDBSecurityGroupsResponse::GetGroups() const
 bool DescribeDBSecurityGroupsResponse::GroupsHasBeenSet() const
 {
     return m_groupsHasBeenSet;
+}
+
+string DescribeDBSecurityGroupsResponse::GetVIP() const
+{
+    return m_vIP;
+}
+
+bool DescribeDBSecurityGroupsResponse::VIPHasBeenSet() const
+{
+    return m_vIPHasBeenSet;
+}
+
+int64_t DescribeDBSecurityGroupsResponse::GetVPort() const
+{
+    return m_vPort;
+}
+
+bool DescribeDBSecurityGroupsResponse::VPortHasBeenSet() const
+{
+    return m_vPortHasBeenSet;
 }
 
 

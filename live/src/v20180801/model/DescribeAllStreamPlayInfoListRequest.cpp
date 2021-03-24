@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeAllStreamPlayInfoListRequest::DescribeAllStreamPlayInfoListRequest() :
-    m_queryTimeHasBeenSet(false)
+    m_queryTimeHasBeenSet(false),
+    m_playDomainsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,19 @@ string DescribeAllStreamPlayInfoListRequest::ToJsonString() const
         string key = "QueryTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_queryTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_playDomainsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PlayDomains";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_playDomains.begin(); itr != m_playDomains.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -65,6 +79,22 @@ void DescribeAllStreamPlayInfoListRequest::SetQueryTime(const string& _queryTime
 bool DescribeAllStreamPlayInfoListRequest::QueryTimeHasBeenSet() const
 {
     return m_queryTimeHasBeenSet;
+}
+
+vector<string> DescribeAllStreamPlayInfoListRequest::GetPlayDomains() const
+{
+    return m_playDomains;
+}
+
+void DescribeAllStreamPlayInfoListRequest::SetPlayDomains(const vector<string>& _playDomains)
+{
+    m_playDomains = _playDomains;
+    m_playDomainsHasBeenSet = true;
+}
+
+bool DescribeAllStreamPlayInfoListRequest::PlayDomainsHasBeenSet() const
+{
+    return m_playDomainsHasBeenSet;
 }
 
 

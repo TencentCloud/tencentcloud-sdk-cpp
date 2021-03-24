@@ -35,7 +35,9 @@ SellConfig::SellConfig() :
     m_iopsHasBeenSet(false),
     m_infoHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false),
+    m_deviceTypeNameHasBeenSet(false)
 {
 }
 
@@ -184,6 +186,26 @@ CoreInternalOutcome SellConfig::Deserialize(const Value &value)
         m_tagHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceType") && !value["DeviceType"].IsNull())
+    {
+        if (!value["DeviceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SellConfig.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceType = string(value["DeviceType"].GetString());
+        m_deviceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceTypeName") && !value["DeviceTypeName"].IsNull())
+    {
+        if (!value["DeviceTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SellConfig.DeviceTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceTypeName = string(value["DeviceTypeName"].GetString());
+        m_deviceTypeNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +323,22 @@ void SellConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tag, allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceTypeNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deviceTypeName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -528,5 +566,37 @@ void SellConfig::SetTag(const int64_t& _tag)
 bool SellConfig::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+string SellConfig::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void SellConfig::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool SellConfig::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
+}
+
+string SellConfig::GetDeviceTypeName() const
+{
+    return m_deviceTypeName;
+}
+
+void SellConfig::SetDeviceTypeName(const string& _deviceTypeName)
+{
+    m_deviceTypeName = _deviceTypeName;
+    m_deviceTypeNameHasBeenSet = true;
+}
+
+bool SellConfig::DeviceTypeNameHasBeenSet() const
+{
+    return m_deviceTypeNameHasBeenSet;
 }
 

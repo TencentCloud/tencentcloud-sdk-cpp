@@ -115,10 +115,14 @@
 #include <tencentcloud/iotvideo/v20201215/model/ModifyModelDefinitionResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyProductRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyProductResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/ResetCloudStorageRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/ResetCloudStorageResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/RetryDeviceFirmwareTaskRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/RetryDeviceFirmwareTaskResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/SetForwardAuthRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/SetForwardAuthResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/TransferCloudStorageRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/TransferCloudStorageResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/UploadFirmwareRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/UploadFirmwareResponse.h>
 
@@ -273,12 +277,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyProductResponse> ModifyProductOutcome;
                 typedef std::future<ModifyProductOutcome> ModifyProductOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ModifyProductRequest&, ModifyProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProductAsyncHandler;
+                typedef Outcome<Error, Model::ResetCloudStorageResponse> ResetCloudStorageOutcome;
+                typedef std::future<ResetCloudStorageOutcome> ResetCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ResetCloudStorageRequest&, ResetCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageAsyncHandler;
                 typedef Outcome<Error, Model::RetryDeviceFirmwareTaskResponse> RetryDeviceFirmwareTaskOutcome;
                 typedef std::future<RetryDeviceFirmwareTaskOutcome> RetryDeviceFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::RetryDeviceFirmwareTaskRequest&, RetryDeviceFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryDeviceFirmwareTaskAsyncHandler;
                 typedef Outcome<Error, Model::SetForwardAuthResponse> SetForwardAuthOutcome;
                 typedef std::future<SetForwardAuthOutcome> SetForwardAuthOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::SetForwardAuthRequest&, SetForwardAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetForwardAuthAsyncHandler;
+                typedef Outcome<Error, Model::TransferCloudStorageResponse> TransferCloudStorageOutcome;
+                typedef std::future<TransferCloudStorageOutcome> TransferCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::TransferCloudStorageRequest&, TransferCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferCloudStorageAsyncHandler;
                 typedef Outcome<Error, Model::UploadFirmwareResponse> UploadFirmwareOutcome;
                 typedef std::future<UploadFirmwareOutcome> UploadFirmwareOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
@@ -700,6 +710,15 @@ namespace TencentCloud
                 ModifyProductOutcomeCallable ModifyProductCallable(const Model::ModifyProductRequest& request);
 
                 /**
+                 *重置云存服务
+                 * @param req ResetCloudStorageRequest
+                 * @return ResetCloudStorageOutcome
+                 */
+                ResetCloudStorageOutcome ResetCloudStorage(const Model::ResetCloudStorageRequest &request);
+                void ResetCloudStorageAsync(const Model::ResetCloudStorageRequest& request, const ResetCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetCloudStorageOutcomeCallable ResetCloudStorageCallable(const Model::ResetCloudStorageRequest& request);
+
+                /**
                  *本接口用于重试设备升级任务
                  * @param req RetryDeviceFirmwareTaskRequest
                  * @return RetryDeviceFirmwareTaskOutcome
@@ -716,6 +735,15 @@ namespace TencentCloud
                 SetForwardAuthOutcome SetForwardAuth(const Model::SetForwardAuthRequest &request);
                 void SetForwardAuthAsync(const Model::SetForwardAuthRequest& request, const SetForwardAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetForwardAuthOutcomeCallable SetForwardAuthCallable(const Model::SetForwardAuthRequest& request);
+
+                /**
+                 *转移云存服务
+                 * @param req TransferCloudStorageRequest
+                 * @return TransferCloudStorageOutcome
+                 */
+                TransferCloudStorageOutcome TransferCloudStorage(const Model::TransferCloudStorageRequest &request);
+                void TransferCloudStorageAsync(const Model::TransferCloudStorageRequest& request, const TransferCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferCloudStorageOutcomeCallable TransferCloudStorageCallable(const Model::TransferCloudStorageRequest& request);
 
                 /**
                  *本接口（UploadFirmware）用于上传设备固件信息 
