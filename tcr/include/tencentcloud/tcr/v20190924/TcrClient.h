@@ -143,6 +143,8 @@
 #include <tencentcloud/tcr/v20190924/model/ManageImageLifecycleGlobalPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ManageInternalEndpointRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ManageInternalEndpointResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ManageReplicationRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ManageReplicationResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceTokenRequest.h>
@@ -361,6 +363,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ManageInternalEndpointResponse> ManageInternalEndpointOutcome;
                 typedef std::future<ManageInternalEndpointOutcome> ManageInternalEndpointOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ManageInternalEndpointRequest&, ManageInternalEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageInternalEndpointAsyncHandler;
+                typedef Outcome<Error, Model::ManageReplicationResponse> ManageReplicationOutcome;
+                typedef std::future<ManageReplicationOutcome> ManageReplicationOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ManageReplicationRequest&, ManageReplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageReplicationAsyncHandler;
                 typedef Outcome<Error, Model::ModifyApplicationTriggerPersonalResponse> ModifyApplicationTriggerPersonalOutcome;
                 typedef std::future<ModifyApplicationTriggerPersonalOutcome> ModifyApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyApplicationTriggerPersonalRequest&, ModifyApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationTriggerPersonalAsyncHandler;
@@ -939,6 +944,15 @@ namespace TencentCloud
                 ManageInternalEndpointOutcome ManageInternalEndpoint(const Model::ManageInternalEndpointRequest &request);
                 void ManageInternalEndpointAsync(const Model::ManageInternalEndpointRequest& request, const ManageInternalEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ManageInternalEndpointOutcomeCallable ManageInternalEndpointCallable(const Model::ManageInternalEndpointRequest& request);
+
+                /**
+                 *管理实例同步
+                 * @param req ManageReplicationRequest
+                 * @return ManageReplicationOutcome
+                 */
+                ManageReplicationOutcome ManageReplication(const Model::ManageReplicationRequest &request);
+                void ManageReplicationAsync(const Model::ManageReplicationRequest& request, const ManageReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ManageReplicationOutcomeCallable ManageReplicationCallable(const Model::ManageReplicationRequest& request);
 
                 /**
                  *用于修改应用更新触发器

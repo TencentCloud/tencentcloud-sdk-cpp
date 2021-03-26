@@ -128,14 +128,14 @@ task-sql-keyword - String - （SQL语句关键字）取值形如：DROP TABLE。
                     bool SortByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，desc表示正序，asc表示反序
-                     * @return Sorting 排序方式，desc表示正序，asc表示反序
+                     * 获取排序方式，desc表示正序，asc表示反序， 默认为asc。
+                     * @return Sorting 排序方式，desc表示正序，asc表示反序， 默认为asc。
                      */
                     std::string GetSorting() const;
 
                     /**
-                     * 设置排序方式，desc表示正序，asc表示反序
-                     * @param Sorting 排序方式，desc表示正序，asc表示反序
+                     * 设置排序方式，desc表示正序，asc表示反序， 默认为asc。
+                     * @param Sorting 排序方式，desc表示正序，asc表示反序， 默认为asc。
                      */
                     void SetSorting(const std::string& _sorting);
 
@@ -146,14 +146,14 @@ task-sql-keyword - String - （SQL语句关键字）取值形如：DROP TABLE。
                     bool SortingHasBeenSet() const;
 
                     /**
-                     * 获取起始时间点，格式为yyyy-mm-dd HH:MM:SS。
-                     * @return StartTime 起始时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 获取起始时间点，格式为yyyy-mm-dd HH:MM:SS。默认为45天前的当前时刻
+                     * @return StartTime 起始时间点，格式为yyyy-mm-dd HH:MM:SS。默认为45天前的当前时刻
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始时间点，格式为yyyy-mm-dd HH:MM:SS。
-                     * @param StartTime 起始时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 设置起始时间点，格式为yyyy-mm-dd HH:MM:SS。默认为45天前的当前时刻
+                     * @param StartTime 起始时间点，格式为yyyy-mm-dd HH:MM:SS。默认为45天前的当前时刻
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -164,14 +164,14 @@ task-sql-keyword - String - （SQL语句关键字）取值形如：DROP TABLE。
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。
-                     * @return EndTime 结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。
+                     * 获取结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻
+                     * @return EndTime 结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。
-                     * @param EndTime 结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。
+                     * 设置结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻
+                     * @param EndTime 结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -211,19 +211,19 @@ task-sql-keyword - String - （SQL语句关键字）取值形如：DROP TABLE。
                     bool m_sortByHasBeenSet;
 
                     /**
-                     * 排序方式，desc表示正序，asc表示反序
+                     * 排序方式，desc表示正序，asc表示反序， 默认为asc。
                      */
                     std::string m_sorting;
                     bool m_sortingHasBeenSet;
 
                     /**
-                     * 起始时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 起始时间点，格式为yyyy-mm-dd HH:MM:SS。默认为45天前的当前时刻
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。
+                     * 结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

@@ -2448,6 +2448,49 @@ VodClient::DescribePersonSamplesOutcomeCallable VodClient::DescribePersonSamples
     return task->get_future();
 }
 
+VodClient::DescribePrepaidProductsOutcome VodClient::DescribePrepaidProducts(const DescribePrepaidProductsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrepaidProducts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrepaidProductsResponse rsp = DescribePrepaidProductsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrepaidProductsOutcome(rsp);
+        else
+            return DescribePrepaidProductsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrepaidProductsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribePrepaidProductsAsync(const DescribePrepaidProductsRequest& request, const DescribePrepaidProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrepaidProducts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribePrepaidProductsOutcomeCallable VodClient::DescribePrepaidProductsCallable(const DescribePrepaidProductsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrepaidProductsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrepaidProducts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeProcedureTemplatesOutcome VodClient::DescribeProcedureTemplates(const DescribeProcedureTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProcedureTemplates");

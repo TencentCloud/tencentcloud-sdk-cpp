@@ -43,6 +43,10 @@
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetEidResultRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetEidResultResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetEidTokenRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetEidTokenResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetFaceIdResultRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetFaceIdResultResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetFaceIdTokenRequest.h>
@@ -117,6 +121,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetDetectInfoEnhancedResponse> GetDetectInfoEnhancedOutcome;
                 typedef std::future<GetDetectInfoEnhancedOutcome> GetDetectInfoEnhancedOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetDetectInfoEnhancedRequest&, GetDetectInfoEnhancedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDetectInfoEnhancedAsyncHandler;
+                typedef Outcome<Error, Model::GetEidResultResponse> GetEidResultOutcome;
+                typedef std::future<GetEidResultOutcome> GetEidResultOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetEidResultRequest&, GetEidResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEidResultAsyncHandler;
+                typedef Outcome<Error, Model::GetEidTokenResponse> GetEidTokenOutcome;
+                typedef std::future<GetEidTokenOutcome> GetEidTokenOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetEidTokenRequest&, GetEidTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEidTokenAsyncHandler;
                 typedef Outcome<Error, Model::GetFaceIdResultResponse> GetFaceIdResultOutcome;
                 typedef std::future<GetFaceIdResultOutcome> GetFaceIdResultOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetFaceIdResultRequest&, GetFaceIdResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceIdResultAsyncHandler;
@@ -255,6 +265,24 @@ namespace TencentCloud
                 GetDetectInfoEnhancedOutcome GetDetectInfoEnhanced(const Model::GetDetectInfoEnhancedRequest &request);
                 void GetDetectInfoEnhancedAsync(const Model::GetDetectInfoEnhancedRequest& request, const GetDetectInfoEnhancedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetDetectInfoEnhancedOutcomeCallable GetDetectInfoEnhancedCallable(const Model::GetDetectInfoEnhancedRequest& request);
+
+                /**
+                 *完成验证后，用EidToken调用本接口获取结果信息，EidToken生成后三天内（3\*24\*3,600秒）可多次拉取。
+                 * @param req GetEidResultRequest
+                 * @return GetEidResultOutcome
+                 */
+                GetEidResultOutcome GetEidResult(const Model::GetEidResultRequest &request);
+                void GetEidResultAsync(const Model::GetEidResultRequest& request, const GetEidResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetEidResultOutcomeCallable GetEidResultCallable(const Model::GetEidResultRequest& request);
+
+                /**
+                 *每次调用人脸核身小程序服务前，需先调用本接口获取EidToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。
+                 * @param req GetEidTokenRequest
+                 * @return GetEidTokenOutcome
+                 */
+                GetEidTokenOutcome GetEidToken(const Model::GetEidTokenRequest &request);
+                void GetEidTokenAsync(const Model::GetEidTokenRequest& request, const GetEidTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetEidTokenOutcomeCallable GetEidTokenCallable(const Model::GetEidTokenRequest& request);
 
                 /**
                  *完成验证后，用FaceIdToken调用本接口获取结果信息，FaceIdToken生成后三天内（3\*24\*3,600秒）可多次拉取。

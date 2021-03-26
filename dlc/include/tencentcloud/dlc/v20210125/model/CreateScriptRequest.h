@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool SQLStatementHasBeenSet() const;
 
                     /**
-                     * 获取脚本描述,
-                     * @return ScriptDesc 脚本描述,
+                     * 获取脚本描述， 不能超过50个字符
+                     * @return ScriptDesc 脚本描述， 不能超过50个字符
                      */
                     std::string GetScriptDesc() const;
 
                     /**
-                     * 设置脚本描述,
-                     * @param ScriptDesc 脚本描述,
+                     * 设置脚本描述， 不能超过50个字符
+                     * @param ScriptDesc 脚本描述， 不能超过50个字符
                      */
                     void SetScriptDesc(const std::string& _scriptDesc);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_sQLStatementHasBeenSet;
 
                     /**
-                     * 脚本描述,
+                     * 脚本描述， 不能超过50个字符
                      */
                     std::string m_scriptDesc;
                     bool m_scriptDescHasBeenSet;

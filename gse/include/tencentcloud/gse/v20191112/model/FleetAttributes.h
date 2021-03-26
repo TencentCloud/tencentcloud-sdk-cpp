@@ -27,6 +27,7 @@
 #include <tencentcloud/gse/v20191112/model/ResourceCreationLimitPolicy.h>
 #include <tencentcloud/gse/v20191112/model/Tag.h>
 #include <tencentcloud/gse/v20191112/model/DiskInfo.h>
+#include <tencentcloud/gse/v20191112/model/RelatedCcnInfo.h>
 
 
 namespace TencentCloud
@@ -455,6 +456,28 @@ namespace TencentCloud
                      */
                     bool SystemDiskInfoHasBeenSet() const;
 
+                    /**
+                     * 获取云联网相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RelatedCcnInfos 云联网相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RelatedCcnInfo> GetRelatedCcnInfos() const;
+
+                    /**
+                     * 设置云联网相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RelatedCcnInfos 云联网相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRelatedCcnInfos(const std::vector<RelatedCcnInfo>& _relatedCcnInfos);
+
+                    /**
+                     * 判断参数 RelatedCcnInfos 是否已赋值
+                     * @return RelatedCcnInfos 是否已赋值
+                     */
+                    bool RelatedCcnInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -586,6 +609,13 @@ namespace TencentCloud
                      */
                     DiskInfo m_systemDiskInfo;
                     bool m_systemDiskInfoHasBeenSet;
+
+                    /**
+                     * 云联网相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RelatedCcnInfo> m_relatedCcnInfos;
+                    bool m_relatedCcnInfosHasBeenSet;
 
                 };
             }

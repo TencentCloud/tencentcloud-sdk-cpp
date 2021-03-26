@@ -26,6 +26,7 @@
 #include <tencentcloud/gse/v20191112/model/RuntimeConfiguration.h>
 #include <tencentcloud/gse/v20191112/model/Tag.h>
 #include <tencentcloud/gse/v20191112/model/DiskInfo.h>
+#include <tencentcloud/gse/v20191112/model/CcnInfo.h>
 
 
 namespace TencentCloud
@@ -282,14 +283,14 @@ namespace TencentCloud
                     bool SelectedScalingTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否选择云联网：CCN_SELECTED 或者 CCN_UNSELECTED；默认是 CCN_UNSELECTED
-                     * @return SelectedCcnType 是否选择云联网：CCN_SELECTED 或者 CCN_UNSELECTED；默认是 CCN_UNSELECTED
+                     * 获取是否选择云联网：CCN_SELECTED_BEFORE_CREATE（创建前关联）， CCN_SELECTED_AFTER_CREATE（创建后关联）或者 CCN_UNSELECTED（不关联）；默认是 CCN_UNSELECTED
+                     * @return SelectedCcnType 是否选择云联网：CCN_SELECTED_BEFORE_CREATE（创建前关联）， CCN_SELECTED_AFTER_CREATE（创建后关联）或者 CCN_UNSELECTED（不关联）；默认是 CCN_UNSELECTED
                      */
                     std::string GetSelectedCcnType() const;
 
                     /**
-                     * 设置是否选择云联网：CCN_SELECTED 或者 CCN_UNSELECTED；默认是 CCN_UNSELECTED
-                     * @param SelectedCcnType 是否选择云联网：CCN_SELECTED 或者 CCN_UNSELECTED；默认是 CCN_UNSELECTED
+                     * 设置是否选择云联网：CCN_SELECTED_BEFORE_CREATE（创建前关联）， CCN_SELECTED_AFTER_CREATE（创建后关联）或者 CCN_UNSELECTED（不关联）；默认是 CCN_UNSELECTED
+                     * @param SelectedCcnType 是否选择云联网：CCN_SELECTED_BEFORE_CREATE（创建前关联）， CCN_SELECTED_AFTER_CREATE（创建后关联）或者 CCN_UNSELECTED（不关联）；默认是 CCN_UNSELECTED
                      */
                     void SetSelectedCcnType(const std::string& _selectedCcnType);
 
@@ -370,6 +371,24 @@ namespace TencentCloud
                      * @return SelectedTimerType 是否已赋值
                      */
                     bool SelectedTimerTypeHasBeenSet() const;
+
+                    /**
+                     * 获取云联网信息，包含对应的账号信息及所属id
+                     * @return CcnInfos 云联网信息，包含对应的账号信息及所属id
+                     */
+                    std::vector<CcnInfo> GetCcnInfos() const;
+
+                    /**
+                     * 设置云联网信息，包含对应的账号信息及所属id
+                     * @param CcnInfos 云联网信息，包含对应的账号信息及所属id
+                     */
+                    void SetCcnInfos(const std::vector<CcnInfo>& _ccnInfos);
+
+                    /**
+                     * 判断参数 CcnInfos 是否已赋值
+                     * @return CcnInfos 是否已赋值
+                     */
+                    bool CcnInfosHasBeenSet() const;
 
                 private:
 
@@ -452,7 +471,7 @@ namespace TencentCloud
                     bool m_selectedScalingTypeHasBeenSet;
 
                     /**
-                     * 是否选择云联网：CCN_SELECTED 或者 CCN_UNSELECTED；默认是 CCN_UNSELECTED
+                     * 是否选择云联网：CCN_SELECTED_BEFORE_CREATE（创建前关联）， CCN_SELECTED_AFTER_CREATE（创建后关联）或者 CCN_UNSELECTED（不关联）；默认是 CCN_UNSELECTED
                      */
                     std::string m_selectedCcnType;
                     bool m_selectedCcnTypeHasBeenSet;
@@ -480,6 +499,12 @@ namespace TencentCloud
                      */
                     std::string m_selectedTimerType;
                     bool m_selectedTimerTypeHasBeenSet;
+
+                    /**
+                     * 云联网信息，包含对应的账号信息及所属id
+                     */
+                    std::vector<CcnInfo> m_ccnInfos;
+                    bool m_ccnInfosHasBeenSet;
 
                 };
             }

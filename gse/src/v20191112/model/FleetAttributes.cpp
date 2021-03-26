@@ -40,7 +40,8 @@ FleetAttributes::FleetAttributes() :
     m_billingStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_dataDiskInfoHasBeenSet(false),
-    m_systemDiskInfoHasBeenSet(false)
+    m_systemDiskInfoHasBeenSet(false),
+    m_relatedCcnInfosHasBeenSet(false)
 {
 }
 
@@ -276,6 +277,26 @@ CoreInternalOutcome FleetAttributes::Deserialize(const Value &value)
         m_systemDiskInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("RelatedCcnInfos") && !value["RelatedCcnInfos"].IsNull())
+    {
+        if (!value["RelatedCcnInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `FleetAttributes.RelatedCcnInfos` is not array type"));
+
+        const Value &tmpValue = value["RelatedCcnInfos"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RelatedCcnInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_relatedCcnInfos.push_back(item);
+        }
+        m_relatedCcnInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -454,6 +475,21 @@ void FleetAttributes::ToJsonObject(Value &value, Document::AllocatorType& alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_systemDiskInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_relatedCcnInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RelatedCcnInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_relatedCcnInfos.begin(); itr != m_relatedCcnInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -761,5 +797,21 @@ void FleetAttributes::SetSystemDiskInfo(const DiskInfo& _systemDiskInfo)
 bool FleetAttributes::SystemDiskInfoHasBeenSet() const
 {
     return m_systemDiskInfoHasBeenSet;
+}
+
+vector<RelatedCcnInfo> FleetAttributes::GetRelatedCcnInfos() const
+{
+    return m_relatedCcnInfos;
+}
+
+void FleetAttributes::SetRelatedCcnInfos(const vector<RelatedCcnInfo>& _relatedCcnInfos)
+{
+    m_relatedCcnInfos = _relatedCcnInfos;
+    m_relatedCcnInfosHasBeenSet = true;
+}
+
+bool FleetAttributes::RelatedCcnInfosHasBeenSet() const
+{
+    return m_relatedCcnInfosHasBeenSet;
 }
 

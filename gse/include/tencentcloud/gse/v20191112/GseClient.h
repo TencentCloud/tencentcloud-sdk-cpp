@@ -69,6 +69,8 @@
 #include <tencentcloud/gse/v20191112/model/DescribeFleetEventsResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetPortSettingsRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetPortSettingsResponse.h>
+#include <tencentcloud/gse/v20191112/model/DescribeFleetRelatedResourcesRequest.h>
+#include <tencentcloud/gse/v20191112/model/DescribeFleetRelatedResourcesResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetStatisticDetailsRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetStatisticDetailsResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeFleetStatisticFlowsRequest.h>
@@ -107,6 +109,8 @@
 #include <tencentcloud/gse/v20191112/model/DescribeUserQuotasResponse.h>
 #include <tencentcloud/gse/v20191112/model/DetachCcnInstancesRequest.h>
 #include <tencentcloud/gse/v20191112/model/DetachCcnInstancesResponse.h>
+#include <tencentcloud/gse/v20191112/model/GetGameServerInstanceLogUrlRequest.h>
+#include <tencentcloud/gse/v20191112/model/GetGameServerInstanceLogUrlResponse.h>
 #include <tencentcloud/gse/v20191112/model/GetGameServerSessionLogUrlRequest.h>
 #include <tencentcloud/gse/v20191112/model/GetGameServerSessionLogUrlResponse.h>
 #include <tencentcloud/gse/v20191112/model/GetInstanceAccessRequest.h>
@@ -248,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeFleetPortSettingsResponse> DescribeFleetPortSettingsOutcome;
                 typedef std::future<DescribeFleetPortSettingsOutcome> DescribeFleetPortSettingsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeFleetPortSettingsRequest&, DescribeFleetPortSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetPortSettingsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFleetRelatedResourcesResponse> DescribeFleetRelatedResourcesOutcome;
+                typedef std::future<DescribeFleetRelatedResourcesOutcome> DescribeFleetRelatedResourcesOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DescribeFleetRelatedResourcesRequest&, DescribeFleetRelatedResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetRelatedResourcesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFleetStatisticDetailsResponse> DescribeFleetStatisticDetailsOutcome;
                 typedef std::future<DescribeFleetStatisticDetailsOutcome> DescribeFleetStatisticDetailsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeFleetStatisticDetailsRequest&, DescribeFleetStatisticDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetStatisticDetailsAsyncHandler;
@@ -305,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetachCcnInstancesResponse> DetachCcnInstancesOutcome;
                 typedef std::future<DetachCcnInstancesOutcome> DetachCcnInstancesOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DetachCcnInstancesRequest&, DetachCcnInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachCcnInstancesAsyncHandler;
+                typedef Outcome<Error, Model::GetGameServerInstanceLogUrlResponse> GetGameServerInstanceLogUrlOutcome;
+                typedef std::future<GetGameServerInstanceLogUrlOutcome> GetGameServerInstanceLogUrlOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::GetGameServerInstanceLogUrlRequest&, GetGameServerInstanceLogUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGameServerInstanceLogUrlAsyncHandler;
                 typedef Outcome<Error, Model::GetGameServerSessionLogUrlResponse> GetGameServerSessionLogUrlOutcome;
                 typedef std::future<GetGameServerSessionLogUrlOutcome> GetGameServerSessionLogUrlOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::GetGameServerSessionLogUrlRequest&, GetGameServerSessionLogUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGameServerSessionLogUrlAsyncHandler;
@@ -619,6 +629,15 @@ namespace TencentCloud
                 DescribeFleetPortSettingsOutcomeCallable DescribeFleetPortSettingsCallable(const Model::DescribeFleetPortSettingsRequest& request);
 
                 /**
+                 *本接口（DescribeFleetRelatedResources）用于获取与游戏服务器舰队关联的资源信息，如别名、队列
+                 * @param req DescribeFleetRelatedResourcesRequest
+                 * @return DescribeFleetRelatedResourcesOutcome
+                 */
+                DescribeFleetRelatedResourcesOutcome DescribeFleetRelatedResources(const Model::DescribeFleetRelatedResourcesRequest &request);
+                void DescribeFleetRelatedResourcesAsync(const Model::DescribeFleetRelatedResourcesRequest& request, const DescribeFleetRelatedResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFleetRelatedResourcesOutcomeCallable DescribeFleetRelatedResourcesCallable(const Model::DescribeFleetRelatedResourcesRequest& request);
+
+                /**
                  *本接口（DescribeFleetStatisticDetails）用于查询服务部署统计详情。
                  * @param req DescribeFleetStatisticDetailsRequest
                  * @return DescribeFleetStatisticDetailsOutcome
@@ -789,6 +808,15 @@ namespace TencentCloud
                 DetachCcnInstancesOutcome DetachCcnInstances(const Model::DetachCcnInstancesRequest &request);
                 void DetachCcnInstancesAsync(const Model::DetachCcnInstancesRequest& request, const DetachCcnInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachCcnInstancesOutcomeCallable DetachCcnInstancesCallable(const Model::DetachCcnInstancesRequest& request);
+
+                /**
+                 *本接口用于获取游戏服务器实例的日志URL。
+                 * @param req GetGameServerInstanceLogUrlRequest
+                 * @return GetGameServerInstanceLogUrlOutcome
+                 */
+                GetGameServerInstanceLogUrlOutcome GetGameServerInstanceLogUrl(const Model::GetGameServerInstanceLogUrlRequest &request);
+                void GetGameServerInstanceLogUrlAsync(const Model::GetGameServerInstanceLogUrlRequest& request, const GetGameServerInstanceLogUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetGameServerInstanceLogUrlOutcomeCallable GetGameServerInstanceLogUrlCallable(const Model::GetGameServerInstanceLogUrlRequest& request);
 
                 /**
                  *本接口（GetGameServerSessionLogUrl）用于获取游戏服务器会话的日志URL。

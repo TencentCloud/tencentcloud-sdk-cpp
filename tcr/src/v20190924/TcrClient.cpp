@@ -2620,6 +2620,49 @@ TcrClient::ManageInternalEndpointOutcomeCallable TcrClient::ManageInternalEndpoi
     return task->get_future();
 }
 
+TcrClient::ManageReplicationOutcome TcrClient::ManageReplication(const ManageReplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ManageReplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ManageReplicationResponse rsp = ManageReplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ManageReplicationOutcome(rsp);
+        else
+            return ManageReplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return ManageReplicationOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ManageReplicationAsync(const ManageReplicationRequest& request, const ManageReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ManageReplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::ManageReplicationOutcomeCallable TcrClient::ManageReplicationCallable(const ManageReplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ManageReplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->ManageReplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::ModifyApplicationTriggerPersonalOutcome TcrClient::ModifyApplicationTriggerPersonal(const ModifyApplicationTriggerPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApplicationTriggerPersonal");

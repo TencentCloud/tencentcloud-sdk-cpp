@@ -26,6 +26,7 @@
 #include <tencentcloud/gse/v20191112/model/RuntimeConfiguration.h>
 #include <tencentcloud/gse/v20191112/model/Tag.h>
 #include <tencentcloud/gse/v20191112/model/DiskInfo.h>
+#include <tencentcloud/gse/v20191112/model/CcnInfo.h>
 
 
 namespace TencentCloud
@@ -317,6 +318,24 @@ namespace TencentCloud
                      */
                     bool DataDiskInfoHasBeenSet() const;
 
+                    /**
+                     * 获取云联网信息，包含对应的账号信息及所属id
+                     * @return CcnInfos 云联网信息，包含对应的账号信息及所属id
+                     */
+                    std::vector<CcnInfo> GetCcnInfos() const;
+
+                    /**
+                     * 设置云联网信息，包含对应的账号信息及所属id
+                     * @param CcnInfos 云联网信息，包含对应的账号信息及所属id
+                     */
+                    void SetCcnInfos(const std::vector<CcnInfo>& _ccnInfos);
+
+                    /**
+                     * 判断参数 CcnInfos 是否已赋值
+                     * @return CcnInfos 是否已赋值
+                     */
+                    bool CcnInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -408,6 +427,12 @@ namespace TencentCloud
                      */
                     std::vector<DiskInfo> m_dataDiskInfo;
                     bool m_dataDiskInfoHasBeenSet;
+
+                    /**
+                     * 云联网信息，包含对应的账号信息及所属id
+                     */
+                    std::vector<CcnInfo> m_ccnInfos;
+                    bool m_ccnInfosHasBeenSet;
 
                 };
             }

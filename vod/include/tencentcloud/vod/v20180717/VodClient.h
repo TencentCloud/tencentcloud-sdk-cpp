@@ -135,6 +135,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeMediaProcessUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribePersonSamplesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribePersonSamplesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribePrepaidProductsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribePrepaidProductsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeReviewDetailsRequest.h>
@@ -411,6 +413,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePersonSamplesResponse> DescribePersonSamplesOutcome;
                 typedef std::future<DescribePersonSamplesOutcome> DescribePersonSamplesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribePersonSamplesRequest&, DescribePersonSamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePersonSamplesAsyncHandler;
+                typedef Outcome<Error, Model::DescribePrepaidProductsResponse> DescribePrepaidProductsOutcome;
+                typedef std::future<DescribePrepaidProductsOutcome> DescribePrepaidProductsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribePrepaidProductsRequest&, DescribePrepaidProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrepaidProductsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeProcedureTemplatesResponse> DescribeProcedureTemplatesOutcome;
                 typedef std::future<DescribeProcedureTemplatesOutcome> DescribeProcedureTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeProcedureTemplatesRequest&, DescribeProcedureTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProcedureTemplatesAsyncHandler;
@@ -1112,6 +1117,17 @@ namespace TencentCloud
                 DescribePersonSamplesOutcome DescribePersonSamples(const Model::DescribePersonSamplesRequest &request);
                 void DescribePersonSamplesAsync(const Model::DescribePersonSamplesRequest& request, const DescribePersonSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePersonSamplesOutcomeCallable DescribePersonSamplesCallable(const Model::DescribePersonSamplesRequest& request);
+
+                /**
+                 *该接口可以查询用户已经购买的预付费商品的信息，包括：
+    1. 商品的类型、生效和失效日期。
+    2. 商品中每种资源的额度和剩余额度。
+                 * @param req DescribePrepaidProductsRequest
+                 * @return DescribePrepaidProductsOutcome
+                 */
+                DescribePrepaidProductsOutcome DescribePrepaidProducts(const Model::DescribePrepaidProductsRequest &request);
+                void DescribePrepaidProductsAsync(const Model::DescribePrepaidProductsRequest& request, const DescribePrepaidProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrepaidProductsOutcomeCallable DescribePrepaidProductsCallable(const Model::DescribePrepaidProductsRequest& request);
 
                 /**
                  *根据任务流模板名字，获取任务流模板详情列表。

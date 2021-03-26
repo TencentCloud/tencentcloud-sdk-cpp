@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool RepositoryNameHasBeenSet() const;
 
                     /**
-                     * 获取指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像
-                     * @return ImageVersion 指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像
+                     * 获取指定镜像版本进行查找，当前为模糊搜索
+                     * @return ImageVersion 指定镜像版本进行查找，当前为模糊搜索
                      */
                     std::string GetImageVersion() const;
 
                     /**
-                     * 设置指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像
-                     * @param ImageVersion 指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像
+                     * 设置指定镜像版本进行查找，当前为模糊搜索
+                     * @param ImageVersion 指定镜像版本进行查找，当前为模糊搜索
                      */
                     void SetImageVersion(const std::string& _imageVersion);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_repositoryNameHasBeenSet;
 
                     /**
-                     * 指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像
+                     * 指定镜像版本进行查找，当前为模糊搜索
                      */
                     std::string m_imageVersion;
                     bool m_imageVersionHasBeenSet;

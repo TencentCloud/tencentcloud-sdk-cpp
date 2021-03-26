@@ -47,6 +47,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/MediaSnapshotByTimeOffsetItem.h
   include/tencentcloud/vod/v20180717/model/ModifySampleSnapshotTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/AiReviewPoliticalOcrTaskInput.h
+  include/tencentcloud/vod/v20180717/model/DescribePrepaidProductsRequest.h
   include/tencentcloud/vod/v20180717/model/MediaInputInfo.h
   include/tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h
   include/tencentcloud/vod/v20180717/model/TempCertificate.h
@@ -135,6 +136,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/PornAsrReviewTemplateInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/MediaAnimatedGraphicsInfo.h
   include/tencentcloud/vod/v20180717/model/DescribeSnapshotByTimeOffsetTemplatesRequest.h
+  include/tencentcloud/vod/v20180717/model/ProductInstance.h
   include/tencentcloud/vod/v20180717/model/CdnLogInfo.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrFullTextResultInput.h
   include/tencentcloud/vod/v20180717/model/MediaMiniProgramReviewInfoItem.h
@@ -142,6 +144,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/OcrFullTextConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/ProcessMediaByProcedureRequest.h
   include/tencentcloud/vod/v20180717/model/MediaImageSpriteInfo.h
+  include/tencentcloud/vod/v20180717/model/ProductInstanceRecource.h
   include/tencentcloud/vod/v20180717/model/MediaProcessTaskAnimatedGraphicResult.h
   include/tencentcloud/vod/v20180717/model/ProcessMediaResponse.h
   include/tencentcloud/vod/v20180717/model/CreateWordSamplesResponse.h
@@ -360,6 +363,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ClipFileInfo2017.h
   include/tencentcloud/vod/v20180717/model/StatDataItem.h
   include/tencentcloud/vod/v20180717/model/MediaSourceData.h
+  include/tencentcloud/vod/v20180717/model/DescribePrepaidProductsResponse.h
   include/tencentcloud/vod/v20180717/model/ProhibitedAsrReviewTemplateInfo.h
   include/tencentcloud/vod/v20180717/model/PushUrlCacheRequest.h
   include/tencentcloud/vod/v20180717/model/CreateAIAnalysisTemplateResponse.h
@@ -567,6 +571,7 @@ set(vod_src
   src/v20180717/model/MediaSnapshotByTimeOffsetItem.cpp
   src/v20180717/model/ModifySampleSnapshotTemplateRequest.cpp
   src/v20180717/model/AiReviewPoliticalOcrTaskInput.cpp
+  src/v20180717/model/DescribePrepaidProductsRequest.cpp
   src/v20180717/model/MediaInputInfo.cpp
   src/v20180717/model/CreateImageSpriteTask2017.cpp
   src/v20180717/model/TempCertificate.cpp
@@ -655,6 +660,7 @@ set(vod_src
   src/v20180717/model/PornAsrReviewTemplateInfoForUpdate.cpp
   src/v20180717/model/MediaAnimatedGraphicsInfo.cpp
   src/v20180717/model/DescribeSnapshotByTimeOffsetTemplatesRequest.cpp
+  src/v20180717/model/ProductInstance.cpp
   src/v20180717/model/CdnLogInfo.cpp
   src/v20180717/model/AiRecognitionTaskAsrFullTextResultInput.cpp
   src/v20180717/model/MediaMiniProgramReviewInfoItem.cpp
@@ -662,6 +668,7 @@ set(vod_src
   src/v20180717/model/OcrFullTextConfigureInfoForUpdate.cpp
   src/v20180717/model/ProcessMediaByProcedureRequest.cpp
   src/v20180717/model/MediaImageSpriteInfo.cpp
+  src/v20180717/model/ProductInstanceRecource.cpp
   src/v20180717/model/MediaProcessTaskAnimatedGraphicResult.cpp
   src/v20180717/model/ProcessMediaResponse.cpp
   src/v20180717/model/CreateWordSamplesResponse.cpp
@@ -880,6 +887,7 @@ set(vod_src
   src/v20180717/model/ClipFileInfo2017.cpp
   src/v20180717/model/StatDataItem.cpp
   src/v20180717/model/MediaSourceData.cpp
+  src/v20180717/model/DescribePrepaidProductsResponse.cpp
   src/v20180717/model/ProhibitedAsrReviewTemplateInfo.cpp
   src/v20180717/model/PushUrlCacheRequest.cpp
   src/v20180717/model/CreateAIAnalysisTemplateResponse.cpp

@@ -41,7 +41,8 @@ CopyFleetRequest::CopyFleetRequest() :
     m_tagsHasBeenSet(false),
     m_systemDiskInfoHasBeenSet(false),
     m_dataDiskInfoHasBeenSet(false),
-    m_selectedTimerTypeHasBeenSet(false)
+    m_selectedTimerTypeHasBeenSet(false),
+    m_ccnInfosHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,21 @@ string CopyFleetRequest::ToJsonString() const
         string key = "SelectedTimerType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_selectedTimerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ccnInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CcnInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ccnInfos.begin(); itr != m_ccnInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -514,6 +530,22 @@ void CopyFleetRequest::SetSelectedTimerType(const string& _selectedTimerType)
 bool CopyFleetRequest::SelectedTimerTypeHasBeenSet() const
 {
     return m_selectedTimerTypeHasBeenSet;
+}
+
+vector<CcnInfo> CopyFleetRequest::GetCcnInfos() const
+{
+    return m_ccnInfos;
+}
+
+void CopyFleetRequest::SetCcnInfos(const vector<CcnInfo>& _ccnInfos)
+{
+    m_ccnInfos = _ccnInfos;
+    m_ccnInfosHasBeenSet = true;
+}
+
+bool CopyFleetRequest::CcnInfosHasBeenSet() const
+{
+    return m_ccnInfosHasBeenSet;
 }
 
 

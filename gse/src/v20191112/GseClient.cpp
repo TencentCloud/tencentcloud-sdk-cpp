@@ -1029,6 +1029,49 @@ GseClient::DescribeFleetPortSettingsOutcomeCallable GseClient::DescribeFleetPort
     return task->get_future();
 }
 
+GseClient::DescribeFleetRelatedResourcesOutcome GseClient::DescribeFleetRelatedResources(const DescribeFleetRelatedResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFleetRelatedResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFleetRelatedResourcesResponse rsp = DescribeFleetRelatedResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFleetRelatedResourcesOutcome(rsp);
+        else
+            return DescribeFleetRelatedResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFleetRelatedResourcesOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeFleetRelatedResourcesAsync(const DescribeFleetRelatedResourcesRequest& request, const DescribeFleetRelatedResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFleetRelatedResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeFleetRelatedResourcesOutcomeCallable GseClient::DescribeFleetRelatedResourcesCallable(const DescribeFleetRelatedResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFleetRelatedResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFleetRelatedResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::DescribeFleetStatisticDetailsOutcome GseClient::DescribeFleetStatisticDetails(const DescribeFleetStatisticDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFleetStatisticDetails");
@@ -1839,6 +1882,49 @@ GseClient::DetachCcnInstancesOutcomeCallable GseClient::DetachCcnInstancesCallab
         [this, request]()
         {
             return this->DetachCcnInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::GetGameServerInstanceLogUrlOutcome GseClient::GetGameServerInstanceLogUrl(const GetGameServerInstanceLogUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetGameServerInstanceLogUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetGameServerInstanceLogUrlResponse rsp = GetGameServerInstanceLogUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetGameServerInstanceLogUrlOutcome(rsp);
+        else
+            return GetGameServerInstanceLogUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return GetGameServerInstanceLogUrlOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::GetGameServerInstanceLogUrlAsync(const GetGameServerInstanceLogUrlRequest& request, const GetGameServerInstanceLogUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetGameServerInstanceLogUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::GetGameServerInstanceLogUrlOutcomeCallable GseClient::GetGameServerInstanceLogUrlCallable(const GetGameServerInstanceLogUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetGameServerInstanceLogUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->GetGameServerInstanceLogUrl(request);
         }
     );
 

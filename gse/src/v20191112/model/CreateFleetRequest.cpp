@@ -38,7 +38,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_gameServerSessionProtectionTimeLimitHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_systemDiskInfoHasBeenSet(false),
-    m_dataDiskInfoHasBeenSet(false)
+    m_dataDiskInfoHasBeenSet(false),
+    m_ccnInfosHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,21 @@ string CreateFleetRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_dataDiskInfo.begin(); itr != m_dataDiskInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ccnInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CcnInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ccnInfos.begin(); itr != m_ccnInfos.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -439,6 +455,22 @@ void CreateFleetRequest::SetDataDiskInfo(const vector<DiskInfo>& _dataDiskInfo)
 bool CreateFleetRequest::DataDiskInfoHasBeenSet() const
 {
     return m_dataDiskInfoHasBeenSet;
+}
+
+vector<CcnInfo> CreateFleetRequest::GetCcnInfos() const
+{
+    return m_ccnInfos;
+}
+
+void CreateFleetRequest::SetCcnInfos(const vector<CcnInfo>& _ccnInfos)
+{
+    m_ccnInfos = _ccnInfos;
+    m_ccnInfosHasBeenSet = true;
+}
+
+bool CreateFleetRequest::CcnInfosHasBeenSet() const
+{
+    return m_ccnInfosHasBeenSet;
 }
 
 
