@@ -43,6 +43,8 @@
 #include <tencentcloud/tcr/v20190924/model/CreateNamespaceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateNamespacePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateNamespacePersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateReplicationInstanceRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateReplicationInstanceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalRequest.h>
@@ -213,6 +215,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateNamespacePersonalResponse> CreateNamespacePersonalOutcome;
                 typedef std::future<CreateNamespacePersonalOutcome> CreateNamespacePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateNamespacePersonalRequest&, CreateNamespacePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespacePersonalAsyncHandler;
+                typedef Outcome<Error, Model::CreateReplicationInstanceResponse> CreateReplicationInstanceOutcome;
+                typedef std::future<CreateReplicationInstanceOutcome> CreateReplicationInstanceOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateReplicationInstanceRequest&, CreateReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReplicationInstanceAsyncHandler;
                 typedef Outcome<Error, Model::CreateRepositoryResponse> CreateRepositoryOutcome;
                 typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateRepositoryRequest&, CreateRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryAsyncHandler;
@@ -494,6 +499,15 @@ namespace TencentCloud
                 CreateNamespacePersonalOutcome CreateNamespacePersonal(const Model::CreateNamespacePersonalRequest &request);
                 void CreateNamespacePersonalAsync(const Model::CreateNamespacePersonalRequest& request, const CreateNamespacePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNamespacePersonalOutcomeCallable CreateNamespacePersonalCallable(const Model::CreateNamespacePersonalRequest& request);
+
+                /**
+                 *创建从实例
+                 * @param req CreateReplicationInstanceRequest
+                 * @return CreateReplicationInstanceOutcome
+                 */
+                CreateReplicationInstanceOutcome CreateReplicationInstance(const Model::CreateReplicationInstanceRequest &request);
+                void CreateReplicationInstanceAsync(const Model::CreateReplicationInstanceRequest& request, const CreateReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateReplicationInstanceOutcomeCallable CreateReplicationInstanceCallable(const Model::CreateReplicationInstanceRequest& request);
 
                 /**
                  *用于企业版创建镜像仓库

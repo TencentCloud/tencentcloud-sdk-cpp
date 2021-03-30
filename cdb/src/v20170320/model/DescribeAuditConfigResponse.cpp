@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeAuditConfigResponse::DescribeAuditConfigResponse() :
     m_logExpireDayHasBeenSet(false),
-    m_logTypeHasBeenSet(false)
+    m_logTypeHasBeenSet(false),
+    m_isClosingHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DescribeAuditConfigResponse::Deserialize(const string &paylo
         m_logTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsClosing") && !rsp["IsClosing"].IsNull())
+    {
+        if (!rsp["IsClosing"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IsClosing` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isClosing = string(rsp["IsClosing"].GetString());
+        m_isClosingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,16 @@ string DescribeAuditConfigResponse::GetLogType() const
 bool DescribeAuditConfigResponse::LogTypeHasBeenSet() const
 {
     return m_logTypeHasBeenSet;
+}
+
+string DescribeAuditConfigResponse::GetIsClosing() const
+{
+    return m_isClosing;
+}
+
+bool DescribeAuditConfigResponse::IsClosingHasBeenSet() const
+{
+    return m_isClosingHasBeenSet;
 }
 
 

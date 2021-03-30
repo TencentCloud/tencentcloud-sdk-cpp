@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，默认0
+                     * @return Offset 偏移量，默认0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量，默认0
+                     * @param Offset 偏移量，默认0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，默认0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -23,7 +23,8 @@ using namespace std;
 
 AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_definitionHasBeenSet(false),
-    m_watermarkSetHasBeenSet(false)
+    m_watermarkSetHasBeenSet(false),
+    m_subtitleSetHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,19 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const Value &
         m_watermarkSetHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleSet") && !value["SubtitleSet"].IsNull())
+    {
+        if (!value["SubtitleSet"].IsArray())
+            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.SubtitleSet` is not array type"));
+
+        const Value &tmpValue = value["SubtitleSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_subtitleSet.push_back((*itr).GetString());
+        }
+        m_subtitleSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +103,19 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(Value &value, Document::All
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_subtitleSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubtitleSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_subtitleSet.begin(); itr != m_subtitleSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -125,5 +152,21 @@ void AdaptiveDynamicStreamingTaskInput::SetWatermarkSet(const vector<WatermarkIn
 bool AdaptiveDynamicStreamingTaskInput::WatermarkSetHasBeenSet() const
 {
     return m_watermarkSetHasBeenSet;
+}
+
+vector<string> AdaptiveDynamicStreamingTaskInput::GetSubtitleSet() const
+{
+    return m_subtitleSet;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetSubtitleSet(const vector<string>& _subtitleSet)
+{
+    m_subtitleSet = _subtitleSet;
+    m_subtitleSetHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::SubtitleSetHasBeenSet() const
+{
+    return m_subtitleSetHasBeenSet;
 }
 

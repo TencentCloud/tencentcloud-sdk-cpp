@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeDatabasesResponse::DescribeDatabasesResponse() :
     m_totalCountHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_databaseListHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,26 @@ CoreInternalOutcome DescribeDatabasesResponse::Deserialize(const string &payload
         m_itemsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DatabaseList") && !rsp["DatabaseList"].IsNull())
+    {
+        if (!rsp["DatabaseList"].IsArray())
+            return CoreInternalOutcome(Error("response `DatabaseList` is not array type"));
+
+        const Value &tmpValue = rsp["DatabaseList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DatabasesWithCharacterLists item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_databaseList.push_back(item);
+        }
+        m_databaseListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +131,16 @@ vector<string> DescribeDatabasesResponse::GetItems() const
 bool DescribeDatabasesResponse::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+vector<DatabasesWithCharacterLists> DescribeDatabasesResponse::GetDatabaseList() const
+{
+    return m_databaseList;
+}
+
+bool DescribeDatabasesResponse::DatabaseListHasBeenSet() const
+{
+    return m_databaseListHasBeenSet;
 }
 
 

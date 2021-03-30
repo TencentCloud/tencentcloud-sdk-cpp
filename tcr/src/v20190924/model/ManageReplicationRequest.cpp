@@ -27,7 +27,8 @@ ManageReplicationRequest::ManageReplicationRequest() :
     m_sourceRegistryIdHasBeenSet(false),
     m_destinationRegistryIdHasBeenSet(false),
     m_ruleHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_destinationRegionIdHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,14 @@ string ManageReplicationRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationRegionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DestinationRegionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_destinationRegionId, allocator);
     }
 
 
@@ -141,6 +150,22 @@ void ManageReplicationRequest::SetDescription(const string& _description)
 bool ManageReplicationRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+uint64_t ManageReplicationRequest::GetDestinationRegionId() const
+{
+    return m_destinationRegionId;
+}
+
+void ManageReplicationRequest::SetDestinationRegionId(const uint64_t& _destinationRegionId)
+{
+    m_destinationRegionId = _destinationRegionId;
+    m_destinationRegionIdHasBeenSet = true;
+}
+
+bool ManageReplicationRequest::DestinationRegionIdHasBeenSet() const
+{
+    return m_destinationRegionIdHasBeenSet;
 }
 
 

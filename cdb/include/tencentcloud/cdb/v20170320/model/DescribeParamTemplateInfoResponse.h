@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取参数模板描述
-                     * @return EngineVersion 参数模板描述
+                     * 获取参数模板对应实例版本
+                     * @return EngineVersion 参数模板对应实例版本
                      */
                     std::string GetEngineVersion() const;
 
@@ -103,6 +103,18 @@ namespace TencentCloud
                      */
                     bool ItemsHasBeenSet() const;
 
+                    /**
+                     * 获取参数模板描述
+                     * @return Description 参数模板描述
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -118,7 +130,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 参数模板描述
+                     * 参数模板对应实例版本
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
@@ -134,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<ParameterDetail> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 参数模板描述
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

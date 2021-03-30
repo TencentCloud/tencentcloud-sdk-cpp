@@ -115,6 +115,24 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取目标实例的地域ID，如广州是1
+                     * @return DestinationRegionId 目标实例的地域ID，如广州是1
+                     */
+                    uint64_t GetDestinationRegionId() const;
+
+                    /**
+                     * 设置目标实例的地域ID，如广州是1
+                     * @param DestinationRegionId 目标实例的地域ID，如广州是1
+                     */
+                    void SetDestinationRegionId(const uint64_t& _destinationRegionId);
+
+                    /**
+                     * 判断参数 DestinationRegionId 是否已赋值
+                     * @return DestinationRegionId 是否已赋值
+                     */
+                    bool DestinationRegionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 目标实例的地域ID，如广州是1
+                     */
+                    uint64_t m_destinationRegionId;
+                    bool m_destinationRegionIdHasBeenSet;
 
                 };
             }

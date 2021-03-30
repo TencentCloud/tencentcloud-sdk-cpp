@@ -24,7 +24,8 @@ using namespace std;
 ImageInfo::ImageInfo() :
     m_imageIdHasBeenSet(false),
     m_licenseScopeIdHasBeenSet(false),
-    m_dimensionsNameIdHasBeenSet(false)
+    m_dimensionsNameIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome ImageInfo::Deserialize(const Value &value)
         m_dimensionsNameIdHasBeenSet = true;
     }
 
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void ImageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "DimensionsNameId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dimensionsNameId, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void ImageInfo::SetDimensionsNameId(const int64_t& _dimensionsNameId)
 bool ImageInfo::DimensionsNameIdHasBeenSet() const
 {
     return m_dimensionsNameIdHasBeenSet;
+}
+
+string ImageInfo::GetUserId() const
+{
+    return m_userId;
+}
+
+void ImageInfo::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool ImageInfo::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 

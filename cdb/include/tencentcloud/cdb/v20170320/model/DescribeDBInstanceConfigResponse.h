@@ -82,7 +82,9 @@ namespace TencentCloud
 
                     /**
                      * 获取备库的配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveConfig 备库的配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlaveConfig GetSlaveConfig() const;
 
@@ -94,7 +96,9 @@ namespace TencentCloud
 
                     /**
                      * 获取强同步实例第二备库的配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupConfig 强同步实例第二备库的配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BackupConfig GetBackupConfig() const;
 
@@ -103,6 +107,18 @@ namespace TencentCloud
                      * @return BackupConfig 是否已赋值
                      */
                     bool BackupConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否切换备库。
+                     * @return Switched 是否切换备库。
+                     */
+                    bool GetSwitched() const;
+
+                    /**
+                     * 判断参数 Switched 是否已赋值
+                     * @return Switched 是否已赋值
+                     */
+                    bool SwitchedHasBeenSet() const;
 
                 private:
 
@@ -126,15 +142,23 @@ namespace TencentCloud
 
                     /**
                      * 备库的配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlaveConfig m_slaveConfig;
                     bool m_slaveConfigHasBeenSet;
 
                     /**
                      * 强同步实例第二备库的配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BackupConfig m_backupConfig;
                     bool m_backupConfigHasBeenSet;
+
+                    /**
+                     * 是否切换备库。
+                     */
+                    bool m_switched;
+                    bool m_switchedHasBeenSet;
 
                 };
             }

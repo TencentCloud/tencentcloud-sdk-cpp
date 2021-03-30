@@ -80,14 +80,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取是否全时录制，即7*24小时录制
-                     * @return IsAllWeek 是否全时录制，即7*24小时录制
+                     * 获取是否全时录制，即7*24小时录制。
+0：非全时录制；1：全时录制。默认1
+                     * @return IsAllWeek 是否全时录制，即7*24小时录制。
+0：非全时录制；1：全时录制。默认1
                      */
                     int64_t GetIsAllWeek() const;
 
                     /**
-                     * 设置是否全时录制，即7*24小时录制
-                     * @param IsAllWeek 是否全时录制，即7*24小时录制
+                     * 设置是否全时录制，即7*24小时录制。
+0：非全时录制；1：全时录制。默认1
+                     * @param IsAllWeek 是否全时录制，即7*24小时录制。
+0：非全时录制；1：全时录制。默认1
                      */
                     void SetIsAllWeek(const int64_t& _isAllWeek);
 
@@ -130,7 +134,8 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 是否全时录制，即7*24小时录制
+                     * 是否全时录制，即7*24小时录制。
+0：非全时录制；1：全时录制。默认1
                      */
                     int64_t m_isAllWeek;
                     bool m_isAllWeekHasBeenSet;

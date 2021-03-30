@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool DimensionsNameIdHasBeenSet() const;
 
+                    /**
+                     * 获取平台用户标识
+                     * @return UserId 平台用户标识
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置平台用户标识
+                     * @param UserId 平台用户标识
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     int64_t m_dimensionsNameId;
                     bool m_dimensionsNameIdHasBeenSet;
+
+                    /**
+                     * 平台用户标识
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

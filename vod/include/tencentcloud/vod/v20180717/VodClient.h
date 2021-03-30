@@ -123,6 +123,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeDailyMostPlayedStatResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDrmDataKeyRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDrmDataKeyResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageProcessingTemplatesRequest.h>
@@ -159,6 +161,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeTasksResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTranscodeTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTranscodeTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeVodDomainsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeVodDomainsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWordSamplesRequest.h>
@@ -395,6 +399,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDailyPlayStatFileListResponse> DescribeDailyPlayStatFileListOutcome;
                 typedef std::future<DescribeDailyPlayStatFileListOutcome> DescribeDailyPlayStatFileListOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeDailyPlayStatFileListRequest&, DescribeDailyPlayStatFileListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDailyPlayStatFileListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDrmDataKeyResponse> DescribeDrmDataKeyOutcome;
+                typedef std::future<DescribeDrmDataKeyOutcome> DescribeDrmDataKeyOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeDrmDataKeyRequest&, DescribeDrmDataKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrmDataKeyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEventsStateResponse> DescribeEventsStateOutcome;
                 typedef std::future<DescribeEventsStateOutcome> DescribeEventsStateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeEventsStateRequest&, DescribeEventsStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsStateAsyncHandler;
@@ -449,6 +456,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTranscodeTemplatesResponse> DescribeTranscodeTemplatesOutcome;
                 typedef std::future<DescribeTranscodeTemplatesOutcome> DescribeTranscodeTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeTranscodeTemplatesRequest&, DescribeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVodDomainsResponse> DescribeVodDomainsOutcome;
+                typedef std::future<DescribeVodDomainsOutcome> DescribeVodDomainsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeVodDomainsRequest&, DescribeVodDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeWatermarkTemplatesResponse> DescribeWatermarkTemplatesOutcome;
                 typedef std::future<DescribeWatermarkTemplatesOutcome> DescribeWatermarkTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeWatermarkTemplatesRequest&, DescribeWatermarkTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWatermarkTemplatesAsyncHandler;
@@ -1052,6 +1062,16 @@ namespace TencentCloud
                 DescribeDailyPlayStatFileListOutcomeCallable DescribeDailyPlayStatFileListCallable(const Model::DescribeDailyPlayStatFileListRequest& request);
 
                 /**
+                 *本 API 是 [旧版本加密](https://cloud.tencent.com/document/product/266/9638) 中[DescribeDrmDataKey 的 API 2017 接口](https://cloud.tencent.com/document/product/266/9643)的升级版本。
+如果您是新接入点播加密的用户，不要使用该 API。请参考[视频加密综述](https://cloud.tencent.com/document/product/266/45552)使用。
+                 * @param req DescribeDrmDataKeyRequest
+                 * @return DescribeDrmDataKeyOutcome
+                 */
+                DescribeDrmDataKeyOutcome DescribeDrmDataKey(const Model::DescribeDrmDataKeyRequest &request);
+                void DescribeDrmDataKeyAsync(const Model::DescribeDrmDataKeyRequest& request, const DescribeDrmDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDrmDataKeyOutcomeCallable DescribeDrmDataKeyCallable(const Model::DescribeDrmDataKeyRequest& request);
+
+                /**
                  ** 该接口用于业务服务器获取 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) 事件通知的状态。
 
                  * @param req DescribeEventsStateRequest
@@ -1238,6 +1258,15 @@ namespace TencentCloud
                 DescribeTranscodeTemplatesOutcome DescribeTranscodeTemplates(const Model::DescribeTranscodeTemplatesRequest &request);
                 void DescribeTranscodeTemplatesAsync(const Model::DescribeTranscodeTemplatesRequest& request, const DescribeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTranscodeTemplatesOutcomeCallable DescribeTranscodeTemplatesCallable(const Model::DescribeTranscodeTemplatesRequest& request);
+
+                /**
+                 *该接口用于查询点播域名信息列表。
+                 * @param req DescribeVodDomainsRequest
+                 * @return DescribeVodDomainsOutcome
+                 */
+                DescribeVodDomainsOutcome DescribeVodDomains(const Model::DescribeVodDomainsRequest &request);
+                void DescribeVodDomainsAsync(const Model::DescribeVodDomainsRequest& request, const DescribeVodDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVodDomainsOutcomeCallable DescribeVodDomainsCallable(const Model::DescribeVodDomainsRequest& request);
 
                 /**
                  *查询用户自定义水印模板，支持根据条件，分页查询。

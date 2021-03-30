@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取设备类型
+                     * 获取设备类型；2：IPC
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeviceType 设备类型
+                     * @return DeviceType 设备类型；2：IPC
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDeviceType() const;
 
                     /**
-                     * 设置设备类型
+                     * 设置设备类型；2：IPC
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceType 设备类型
+                     * @param DeviceType 设备类型；2：IPC
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeviceType(const int64_t& _deviceType);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取设备状态
+                     * 获取设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 设备状态
+                     * @return Status 设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置设备状态
+                     * 设置设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 设备状态
+                     * @param Status 设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const int64_t& _status);
@@ -223,17 +223,17 @@ namespace TencentCloud
                     bool DeviceCodeHasBeenSet() const;
 
                     /**
-                     * 获取是否存在录像
+                     * 获取是否存在录像,，0:不存在；1：存在
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsRecord 是否存在录像
+                     * @return IsRecord 是否存在录像,，0:不存在；1：存在
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetIsRecord() const;
 
                     /**
-                     * 设置是否存在录像
+                     * 设置是否存在录像,，0:不存在；1：存在
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsRecord 是否存在录像
+                     * @param IsRecord 是否存在录像,，0:不存在；1：存在
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIsRecord(const int64_t& _isRecord);
@@ -254,14 +254,14 @@ namespace TencentCloud
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 设备类型
+                     * 设备类型；2：IPC
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 设备状态
+                     * 设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
@@ -303,7 +303,7 @@ namespace TencentCloud
                     bool m_deviceCodeHasBeenSet;
 
                     /**
-                     * 是否存在录像
+                     * 是否存在录像,，0:不存在；1：存在
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isRecord;

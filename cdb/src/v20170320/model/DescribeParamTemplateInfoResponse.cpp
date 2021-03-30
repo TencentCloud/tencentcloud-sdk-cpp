@@ -29,7 +29,8 @@ DescribeParamTemplateInfoResponse::DescribeParamTemplateInfoResponse() :
     m_nameHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_totalCountHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome DescribeParamTemplateInfoResponse::Deserialize(const string 
         m_itemsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Description") && !rsp["Description"].IsNull())
+    {
+        if (!rsp["Description"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(rsp["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +191,16 @@ vector<ParameterDetail> DescribeParamTemplateInfoResponse::GetItems() const
 bool DescribeParamTemplateInfoResponse::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+string DescribeParamTemplateInfoResponse::GetDescription() const
+{
+    return m_description;
+}
+
+bool DescribeParamTemplateInfoResponse::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

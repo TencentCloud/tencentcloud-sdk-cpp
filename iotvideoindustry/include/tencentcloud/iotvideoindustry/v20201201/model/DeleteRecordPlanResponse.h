@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作结果
-                     * @return Status 操作结果
+                     * 获取操作结果，OK：成功，其他：失败
+                     * @return Status 操作结果，OK：成功，其他：失败
                      */
                     std::string GetStatus() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作结果
+                     * 操作结果，OK：成功，其他：失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

@@ -43,9 +43,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作结果
+                     * 获取操作结果,“OK”表示成功，其他表示失败。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 操作结果
+                     * @return Status 操作结果,“OK”表示成功，其他表示失败。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatus() const;
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作结果
+                     * 操作结果,“OK”表示成功，其他表示失败。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;

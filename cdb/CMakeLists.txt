@@ -262,7 +262,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DeleteDeployGroupsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeSlowLogDataRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditConfigResponse.h
-  include/tencentcloud/cdb/v20170320/model/ModifyAccountDescriptionResponse.h
+  include/tencentcloud/cdb/v20170320/model/DatabasesWithCharacterLists.h
   include/tencentcloud/cdb/v20170320/model/UpgradeDBInstanceResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateAuditLogFileRequest.h
   include/tencentcloud/cdb/v20170320/model/DeleteAuditLogFileRequest.h
@@ -289,6 +289,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/cdb/v20170320/model/DeleteAccountsRequest.h
   include/tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesRequest.h
+  include/tencentcloud/cdb/v20170320/model/ModifyAccountDescriptionResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountPrivilegesRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountsResponse.h
   include/tencentcloud/cdb/v20170320/model/OpenWanServiceRequest.h
@@ -563,7 +564,7 @@ set(cdb_src
   src/v20170320/model/DeleteDeployGroupsRequest.cpp
   src/v20170320/model/DescribeSlowLogDataRequest.cpp
   src/v20170320/model/DescribeAuditConfigResponse.cpp
-  src/v20170320/model/ModifyAccountDescriptionResponse.cpp
+  src/v20170320/model/DatabasesWithCharacterLists.cpp
   src/v20170320/model/UpgradeDBInstanceResponse.cpp
   src/v20170320/model/CreateAuditLogFileRequest.cpp
   src/v20170320/model/DeleteAuditLogFileRequest.cpp
@@ -590,6 +591,7 @@ set(cdb_src
   src/v20170320/model/DisassociateSecurityGroupsRequest.cpp
   src/v20170320/model/DeleteAccountsRequest.cpp
   src/v20170320/model/OfflineIsolatedInstancesRequest.cpp
+  src/v20170320/model/ModifyAccountDescriptionResponse.cpp
   src/v20170320/model/DescribeAccountPrivilegesRequest.cpp
   src/v20170320/model/DescribeAccountsResponse.cpp
   src/v20170320/model/OpenWanServiceRequest.cpp

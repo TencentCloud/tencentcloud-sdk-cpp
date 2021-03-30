@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeProjectSecurityGroupsResponse::DescribeProjectSecurityGroupsResponse() :
-    m_groupsHasBeenSet(false)
+    m_groupsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeProjectSecurityGroupsResponse::Deserialize(const str
         m_groupsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<SecurityGroup> DescribeProjectSecurityGroupsResponse::GetGroups() const
 bool DescribeProjectSecurityGroupsResponse::GroupsHasBeenSet() const
 {
     return m_groupsHasBeenSet;
+}
+
+int64_t DescribeProjectSecurityGroupsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeProjectSecurityGroupsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

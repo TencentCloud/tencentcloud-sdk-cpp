@@ -34,6 +34,7 @@
 #include <tencentcloud/vod/v20180717/model/MediaKeyFrameDescInfo.h>
 #include <tencentcloud/vod/v20180717/model/MediaAdaptiveDynamicStreamingInfo.h>
 #include <tencentcloud/vod/v20180717/model/MediaMiniProgramReviewInfo.h>
+#include <tencentcloud/vod/v20180717/model/MediaSubtitleInfo.h>
 
 
 namespace TencentCloud
@@ -277,6 +278,28 @@ namespace TencentCloud
                     bool MiniProgramReviewInfoHasBeenSet() const;
 
                     /**
+                     * 获取字幕信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubtitleInfo 字幕信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaSubtitleInfo GetSubtitleInfo() const;
+
+                    /**
+                     * 设置字幕信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubtitleInfo 字幕信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubtitleInfo(const MediaSubtitleInfo& _subtitleInfo);
+
+                    /**
+                     * 判断参数 SubtitleInfo 是否已赋值
+                     * @return SubtitleInfo 是否已赋值
+                     */
+                    bool SubtitleInfoHasBeenSet() const;
+
+                    /**
                      * 获取媒体文件唯一标识 ID。
                      * @return FileId 媒体文件唯一标识 ID。
                      */
@@ -365,6 +388,13 @@ namespace TencentCloud
                      */
                     MediaMiniProgramReviewInfo m_miniProgramReviewInfo;
                     bool m_miniProgramReviewInfoHasBeenSet;
+
+                    /**
+                     * 字幕信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaSubtitleInfo m_subtitleInfo;
+                    bool m_subtitleInfoHasBeenSet;
 
                     /**
                      * 媒体文件唯一标识 ID。

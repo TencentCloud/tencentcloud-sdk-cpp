@@ -68,6 +68,18 @@ namespace TencentCloud
                      */
                     bool LogTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否正在关闭审计。目前支持的值包括："false"-否，"true"-是
+                     * @return IsClosing 是否正在关闭审计。目前支持的值包括："false"-否，"true"-是
+                     */
+                    std::string GetIsClosing() const;
+
+                    /**
+                     * 判断参数 IsClosing 是否已赋值
+                     * @return IsClosing 是否已赋值
+                     */
+                    bool IsClosingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -82,6 +94,12 @@ namespace TencentCloud
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
+
+                    /**
+                     * 是否正在关闭审计。目前支持的值包括："false"-否，"true"-是
+                     */
+                    std::string m_isClosing;
+                    bool m_isClosingHasBeenSet;
 
                 };
             }

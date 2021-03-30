@@ -32,6 +32,7 @@ MediaInfo::MediaInfo() :
     m_keyFrameDescInfoHasBeenSet(false),
     m_adaptiveDynamicStreamingInfoHasBeenSet(false),
     m_miniProgramReviewInfoHasBeenSet(false),
+    m_subtitleInfoHasBeenSet(false),
     m_fileIdHasBeenSet(false)
 {
 }
@@ -211,6 +212,23 @@ CoreInternalOutcome MediaInfo::Deserialize(const Value &value)
         m_miniProgramReviewInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleInfo") && !value["SubtitleInfo"].IsNull())
+    {
+        if (!value["SubtitleInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MediaInfo.SubtitleInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subtitleInfo.Deserialize(value["SubtitleInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subtitleInfoHasBeenSet = true;
+    }
+
     if (value.HasMember("FileId") && !value["FileId"].IsNull())
     {
         if (!value["FileId"].IsString())
@@ -316,6 +334,15 @@ void MediaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_miniProgramReviewInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subtitleInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubtitleInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_subtitleInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_fileIdHasBeenSet)
@@ -487,6 +514,22 @@ void MediaInfo::SetMiniProgramReviewInfo(const MediaMiniProgramReviewInfo& _mini
 bool MediaInfo::MiniProgramReviewInfoHasBeenSet() const
 {
     return m_miniProgramReviewInfoHasBeenSet;
+}
+
+MediaSubtitleInfo MediaInfo::GetSubtitleInfo() const
+{
+    return m_subtitleInfo;
+}
+
+void MediaInfo::SetSubtitleInfo(const MediaSubtitleInfo& _subtitleInfo)
+{
+    m_subtitleInfo = _subtitleInfo;
+    m_subtitleInfoHasBeenSet = true;
+}
+
+bool MediaInfo::SubtitleInfoHasBeenSet() const
+{
+    return m_subtitleInfoHasBeenSet;
 }
 
 string MediaInfo::GetFileId() const

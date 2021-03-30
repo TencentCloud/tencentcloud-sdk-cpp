@@ -29,7 +29,8 @@ DescribeDBInstanceConfigResponse::DescribeDBInstanceConfigResponse() :
     m_deployModeHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_slaveConfigHasBeenSet(false),
-    m_backupConfigHasBeenSet(false)
+    m_backupConfigHasBeenSet(false),
+    m_switchedHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,16 @@ CoreInternalOutcome DescribeDBInstanceConfigResponse::Deserialize(const string &
         m_backupConfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Switched") && !rsp["Switched"].IsNull())
+    {
+        if (!rsp["Switched"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Switched` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_switched = rsp["Switched"].GetBool();
+        m_switchedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,16 @@ BackupConfig DescribeDBInstanceConfigResponse::GetBackupConfig() const
 bool DescribeDBInstanceConfigResponse::BackupConfigHasBeenSet() const
 {
     return m_backupConfigHasBeenSet;
+}
+
+bool DescribeDBInstanceConfigResponse::GetSwitched() const
+{
+    return m_switched;
+}
+
+bool DescribeDBInstanceConfigResponse::SwitchedHasBeenSet() const
+{
+    return m_switchedHasBeenSet;
 }
 
 

@@ -1,0 +1,322 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/mongodb/v20190725/model/BackupDownloadTask.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Mongodb::V20190725::Model;
+using namespace rapidjson;
+using namespace std;
+
+BackupDownloadTask::BackupDownloadTask() :
+    m_createTimeHasBeenSet(false),
+    m_backupNameHasBeenSet(false),
+    m_replicaSetIdHasBeenSet(false),
+    m_backupSizeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_percentHasBeenSet(false),
+    m_timeSpendHasBeenSet(false),
+    m_urlHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome BackupDownloadTask::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupDownloadTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupName") && !value["BackupName"].IsNull())
+    {
+        if (!value["BackupName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupDownloadTask.BackupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupName = string(value["BackupName"].GetString());
+        m_backupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReplicaSetId") && !value["ReplicaSetId"].IsNull())
+    {
+        if (!value["ReplicaSetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupDownloadTask.ReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_replicaSetId = string(value["ReplicaSetId"].GetString());
+        m_replicaSetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupSize") && !value["BackupSize"].IsNull())
+    {
+        if (!value["BackupSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `BackupDownloadTask.BackupSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupSize = value["BackupSize"].GetInt64();
+        m_backupSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `BackupDownloadTask.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Percent") && !value["Percent"].IsNull())
+    {
+        if (!value["Percent"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `BackupDownloadTask.Percent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_percent = value["Percent"].GetInt64();
+        m_percentHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeSpend") && !value["TimeSpend"].IsNull())
+    {
+        if (!value["TimeSpend"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `BackupDownloadTask.TimeSpend` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeSpend = value["TimeSpend"].GetInt64();
+        m_timeSpendHasBeenSet = true;
+    }
+
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupDownloadTask.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void BackupDownloadTask::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_backupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_replicaSetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReplicaSetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_replicaSetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupSize, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_percentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Percent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_percent, allocator);
+    }
+
+    if (m_timeSpendHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TimeSpend";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeSpend, allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string BackupDownloadTask::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void BackupDownloadTask::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool BackupDownloadTask::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string BackupDownloadTask::GetBackupName() const
+{
+    return m_backupName;
+}
+
+void BackupDownloadTask::SetBackupName(const string& _backupName)
+{
+    m_backupName = _backupName;
+    m_backupNameHasBeenSet = true;
+}
+
+bool BackupDownloadTask::BackupNameHasBeenSet() const
+{
+    return m_backupNameHasBeenSet;
+}
+
+string BackupDownloadTask::GetReplicaSetId() const
+{
+    return m_replicaSetId;
+}
+
+void BackupDownloadTask::SetReplicaSetId(const string& _replicaSetId)
+{
+    m_replicaSetId = _replicaSetId;
+    m_replicaSetIdHasBeenSet = true;
+}
+
+bool BackupDownloadTask::ReplicaSetIdHasBeenSet() const
+{
+    return m_replicaSetIdHasBeenSet;
+}
+
+int64_t BackupDownloadTask::GetBackupSize() const
+{
+    return m_backupSize;
+}
+
+void BackupDownloadTask::SetBackupSize(const int64_t& _backupSize)
+{
+    m_backupSize = _backupSize;
+    m_backupSizeHasBeenSet = true;
+}
+
+bool BackupDownloadTask::BackupSizeHasBeenSet() const
+{
+    return m_backupSizeHasBeenSet;
+}
+
+int64_t BackupDownloadTask::GetStatus() const
+{
+    return m_status;
+}
+
+void BackupDownloadTask::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool BackupDownloadTask::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+int64_t BackupDownloadTask::GetPercent() const
+{
+    return m_percent;
+}
+
+void BackupDownloadTask::SetPercent(const int64_t& _percent)
+{
+    m_percent = _percent;
+    m_percentHasBeenSet = true;
+}
+
+bool BackupDownloadTask::PercentHasBeenSet() const
+{
+    return m_percentHasBeenSet;
+}
+
+int64_t BackupDownloadTask::GetTimeSpend() const
+{
+    return m_timeSpend;
+}
+
+void BackupDownloadTask::SetTimeSpend(const int64_t& _timeSpend)
+{
+    m_timeSpend = _timeSpend;
+    m_timeSpendHasBeenSet = true;
+}
+
+bool BackupDownloadTask::TimeSpendHasBeenSet() const
+{
+    return m_timeSpendHasBeenSet;
+}
+
+string BackupDownloadTask::GetUrl() const
+{
+    return m_url;
+}
+
+void BackupDownloadTask::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool BackupDownloadTask::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
+}
+

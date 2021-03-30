@@ -1,0 +1,328 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/vod/v20180717/model/DomainDetailInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Vod::V20180717::Model;
+using namespace rapidjson;
+using namespace std;
+
+DomainDetailInfo::DomainDetailInfo() :
+    m_domainHasBeenSet(false),
+    m_accelerateAreaInfosHasBeenSet(false),
+    m_deployStatusHasBeenSet(false),
+    m_hTTPSConfigHasBeenSet(false),
+    m_urlSignatureAuthPolicyHasBeenSet(false),
+    m_refererAuthPolicyHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome DomainDetailInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainDetailInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccelerateAreaInfos") && !value["AccelerateAreaInfos"].IsNull())
+    {
+        if (!value["AccelerateAreaInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `DomainDetailInfo.AccelerateAreaInfos` is not array type"));
+
+        const Value &tmpValue = value["AccelerateAreaInfos"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AccelerateAreaInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_accelerateAreaInfos.push_back(item);
+        }
+        m_accelerateAreaInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployStatus") && !value["DeployStatus"].IsNull())
+    {
+        if (!value["DeployStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainDetailInfo.DeployStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployStatus = string(value["DeployStatus"].GetString());
+        m_deployStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("HTTPSConfig") && !value["HTTPSConfig"].IsNull())
+    {
+        if (!value["HTTPSConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DomainDetailInfo.HTTPSConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hTTPSConfig.Deserialize(value["HTTPSConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hTTPSConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("UrlSignatureAuthPolicy") && !value["UrlSignatureAuthPolicy"].IsNull())
+    {
+        if (!value["UrlSignatureAuthPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DomainDetailInfo.UrlSignatureAuthPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_urlSignatureAuthPolicy.Deserialize(value["UrlSignatureAuthPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_urlSignatureAuthPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("RefererAuthPolicy") && !value["RefererAuthPolicy"].IsNull())
+    {
+        if (!value["RefererAuthPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DomainDetailInfo.RefererAuthPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_refererAuthPolicy.Deserialize(value["RefererAuthPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_refererAuthPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainDetailInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void DomainDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accelerateAreaInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccelerateAreaInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accelerateAreaInfos.begin(); itr != m_accelerateAreaInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deployStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deployStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hTTPSConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HTTPSConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_hTTPSConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_urlSignatureAuthPolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UrlSignatureAuthPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_urlSignatureAuthPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_refererAuthPolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RefererAuthPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_refererAuthPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string DomainDetailInfo::GetDomain() const
+{
+    return m_domain;
+}
+
+void DomainDetailInfo::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DomainDetailInfo::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+vector<AccelerateAreaInfo> DomainDetailInfo::GetAccelerateAreaInfos() const
+{
+    return m_accelerateAreaInfos;
+}
+
+void DomainDetailInfo::SetAccelerateAreaInfos(const vector<AccelerateAreaInfo>& _accelerateAreaInfos)
+{
+    m_accelerateAreaInfos = _accelerateAreaInfos;
+    m_accelerateAreaInfosHasBeenSet = true;
+}
+
+bool DomainDetailInfo::AccelerateAreaInfosHasBeenSet() const
+{
+    return m_accelerateAreaInfosHasBeenSet;
+}
+
+string DomainDetailInfo::GetDeployStatus() const
+{
+    return m_deployStatus;
+}
+
+void DomainDetailInfo::SetDeployStatus(const string& _deployStatus)
+{
+    m_deployStatus = _deployStatus;
+    m_deployStatusHasBeenSet = true;
+}
+
+bool DomainDetailInfo::DeployStatusHasBeenSet() const
+{
+    return m_deployStatusHasBeenSet;
+}
+
+DomainHTTPSConfig DomainDetailInfo::GetHTTPSConfig() const
+{
+    return m_hTTPSConfig;
+}
+
+void DomainDetailInfo::SetHTTPSConfig(const DomainHTTPSConfig& _hTTPSConfig)
+{
+    m_hTTPSConfig = _hTTPSConfig;
+    m_hTTPSConfigHasBeenSet = true;
+}
+
+bool DomainDetailInfo::HTTPSConfigHasBeenSet() const
+{
+    return m_hTTPSConfigHasBeenSet;
+}
+
+UrlSignatureAuthPolicy DomainDetailInfo::GetUrlSignatureAuthPolicy() const
+{
+    return m_urlSignatureAuthPolicy;
+}
+
+void DomainDetailInfo::SetUrlSignatureAuthPolicy(const UrlSignatureAuthPolicy& _urlSignatureAuthPolicy)
+{
+    m_urlSignatureAuthPolicy = _urlSignatureAuthPolicy;
+    m_urlSignatureAuthPolicyHasBeenSet = true;
+}
+
+bool DomainDetailInfo::UrlSignatureAuthPolicyHasBeenSet() const
+{
+    return m_urlSignatureAuthPolicyHasBeenSet;
+}
+
+RefererAuthPolicy DomainDetailInfo::GetRefererAuthPolicy() const
+{
+    return m_refererAuthPolicy;
+}
+
+void DomainDetailInfo::SetRefererAuthPolicy(const RefererAuthPolicy& _refererAuthPolicy)
+{
+    m_refererAuthPolicy = _refererAuthPolicy;
+    m_refererAuthPolicyHasBeenSet = true;
+}
+
+bool DomainDetailInfo::RefererAuthPolicyHasBeenSet() const
+{
+    return m_refererAuthPolicyHasBeenSet;
+}
+
+string DomainDetailInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DomainDetailInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DomainDetailInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+

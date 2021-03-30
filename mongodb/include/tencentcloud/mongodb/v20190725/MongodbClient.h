@@ -27,6 +27,8 @@
 #include <tencentcloud/mongodb/v20190725/model/AssignProjectResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateBackupDownloadTaskRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateBackupDownloadTaskResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourRequest.h>
@@ -35,6 +37,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupAccessRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupAccessResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeCurrentOpRequest.h>
@@ -93,6 +97,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateBackupDBInstanceResponse> CreateBackupDBInstanceOutcome;
                 typedef std::future<CreateBackupDBInstanceOutcome> CreateBackupDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateBackupDBInstanceRequest&, CreateBackupDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupDBInstanceAsyncHandler;
+                typedef Outcome<Error, Model::CreateBackupDownloadTaskResponse> CreateBackupDownloadTaskOutcome;
+                typedef std::future<CreateBackupDownloadTaskOutcome> CreateBackupDownloadTaskOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CreateBackupDownloadTaskRequest&, CreateBackupDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupDownloadTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateDBInstanceResponse> CreateDBInstanceOutcome;
                 typedef std::future<CreateDBInstanceOutcome> CreateDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceRequest&, CreateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceAsyncHandler;
@@ -105,6 +112,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBackupAccessResponse> DescribeBackupAccessOutcome;
                 typedef std::future<DescribeBackupAccessOutcome> DescribeBackupAccessOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeBackupAccessRequest&, DescribeBackupAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupAccessAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBackupDownloadTaskResponse> DescribeBackupDownloadTaskOutcome;
+                typedef std::future<DescribeBackupDownloadTaskOutcome> DescribeBackupDownloadTaskOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeBackupDownloadTaskRequest&, DescribeBackupDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDownloadTaskAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClientConnectionsResponse> DescribeClientConnectionsOutcome;
                 typedef std::future<DescribeClientConnectionsOutcome> DescribeClientConnectionsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeClientConnectionsRequest&, DescribeClientConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientConnectionsAsyncHandler;
@@ -185,6 +195,15 @@ namespace TencentCloud
                 CreateBackupDBInstanceOutcomeCallable CreateBackupDBInstanceCallable(const Model::CreateBackupDBInstanceRequest& request);
 
                 /**
+                 *本接口用来创建某个备份文件的下载任务
+                 * @param req CreateBackupDownloadTaskRequest
+                 * @return CreateBackupDownloadTaskOutcome
+                 */
+                CreateBackupDownloadTaskOutcome CreateBackupDownloadTask(const Model::CreateBackupDownloadTaskRequest &request);
+                void CreateBackupDownloadTaskAsync(const Model::CreateBackupDownloadTaskRequest& request, const CreateBackupDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBackupDownloadTaskOutcomeCallable CreateBackupDownloadTaskCallable(const Model::CreateBackupDownloadTaskRequest& request);
+
+                /**
                  *本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。
                  * @param req CreateDBInstanceRequest
                  * @return CreateDBInstanceOutcome
@@ -219,6 +238,15 @@ namespace TencentCloud
                 DescribeBackupAccessOutcome DescribeBackupAccess(const Model::DescribeBackupAccessRequest &request);
                 void DescribeBackupAccessAsync(const Model::DescribeBackupAccessRequest& request, const DescribeBackupAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupAccessOutcomeCallable DescribeBackupAccessCallable(const Model::DescribeBackupAccessRequest& request);
+
+                /**
+                 *查询备份下载任务信息
+                 * @param req DescribeBackupDownloadTaskRequest
+                 * @return DescribeBackupDownloadTaskOutcome
+                 */
+                DescribeBackupDownloadTaskOutcome DescribeBackupDownloadTask(const Model::DescribeBackupDownloadTaskRequest &request);
+                void DescribeBackupDownloadTaskAsync(const Model::DescribeBackupDownloadTaskRequest& request, const DescribeBackupDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupDownloadTaskOutcomeCallable DescribeBackupDownloadTaskCallable(const Model::DescribeBackupDownloadTaskRequest& request);
 
                 /**
                  *本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。
