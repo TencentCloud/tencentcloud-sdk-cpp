@@ -29,7 +29,8 @@ GetDetectInfoEnhancedRequest::GetDetectInfoEnhancedRequest() :
     m_infoTypeHasBeenSet(false),
     m_bestFramesCountHasBeenSet(false),
     m_isCutIdCardImageHasBeenSet(false),
-    m_isNeedIdCardAvatarHasBeenSet(false)
+    m_isNeedIdCardAvatarHasBeenSet(false),
+    m_isEncryptHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string GetDetectInfoEnhancedRequest::ToJsonString() const
         string key = "IsNeedIdCardAvatar";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isNeedIdCardAvatar, allocator);
+    }
+
+    if (m_isEncryptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsEncrypt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isEncrypt, allocator);
     }
 
 
@@ -190,6 +199,22 @@ void GetDetectInfoEnhancedRequest::SetIsNeedIdCardAvatar(const bool& _isNeedIdCa
 bool GetDetectInfoEnhancedRequest::IsNeedIdCardAvatarHasBeenSet() const
 {
     return m_isNeedIdCardAvatarHasBeenSet;
+}
+
+bool GetDetectInfoEnhancedRequest::GetIsEncrypt() const
+{
+    return m_isEncrypt;
+}
+
+void GetDetectInfoEnhancedRequest::SetIsEncrypt(const bool& _isEncrypt)
+{
+    m_isEncrypt = _isEncrypt;
+    m_isEncryptHasBeenSet = true;
+}
+
+bool GetDetectInfoEnhancedRequest::IsEncryptHasBeenSet() const
+{
+    return m_isEncryptHasBeenSet;
 }
 
 

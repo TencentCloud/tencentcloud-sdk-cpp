@@ -502,6 +502,50 @@ namespace TencentCloud
                      */
                     bool FailTypeHasBeenSet() const;
 
+                    /**
+                     * 获取私有仓库地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RepoUrl 私有仓库地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRepoUrl() const;
+
+                    /**
+                     * 设置私有仓库地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RepoUrl 私有仓库地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRepoUrl(const std::string& _repoUrl);
+
+                    /**
+                     * 判断参数 RepoUrl 是否已赋值
+                     * @return RepoUrl 是否已赋值
+                     */
+                    bool RepoUrlHasBeenSet() const;
+
+                    /**
+                     * 获取是否私有仓库代码变更触发自动部署
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoDeployOnCodeChange 是否私有仓库代码变更触发自动部署
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAutoDeployOnCodeChange() const;
+
+                    /**
+                     * 设置是否私有仓库代码变更触发自动部署
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoDeployOnCodeChange 是否私有仓库代码变更触发自动部署
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoDeployOnCodeChange(const bool& _autoDeployOnCodeChange);
+
+                    /**
+                     * 判断参数 AutoDeployOnCodeChange 是否已赋值
+                     * @return AutoDeployOnCodeChange 是否已赋值
+                     */
+                    bool AutoDeployOnCodeChangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -645,6 +689,20 @@ namespace TencentCloud
                      */
                     std::string m_failType;
                     bool m_failTypeHasBeenSet;
+
+                    /**
+                     * 私有仓库地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_repoUrl;
+                    bool m_repoUrlHasBeenSet;
+
+                    /**
+                     * 是否私有仓库代码变更触发自动部署
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoDeployOnCodeChange;
+                    bool m_autoDeployOnCodeChangeHasBeenSet;
 
                 };
             }

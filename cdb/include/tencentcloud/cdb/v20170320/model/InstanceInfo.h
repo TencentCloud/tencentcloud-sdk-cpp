@@ -823,17 +823,13 @@ namespace TencentCloud
 
                     /**
                      * 获取节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNodes 节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetInstanceNodes() const;
 
                     /**
                      * 设置节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param InstanceNodes 节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceNodes(const int64_t& _instanceNodes);
 
@@ -1101,7 +1097,6 @@ namespace TencentCloud
 
                     /**
                      * 节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceNodes;
                     bool m_instanceNodesHasBeenSet;

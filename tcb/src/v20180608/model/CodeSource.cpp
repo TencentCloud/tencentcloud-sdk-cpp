@@ -28,7 +28,8 @@ CodeSource::CodeSource() :
     m_workDirHasBeenSet(false),
     m_codingPackageNameHasBeenSet(false),
     m_codingPackageVersionHasBeenSet(false),
-    m_rawCodeHasBeenSet(false)
+    m_rawCodeHasBeenSet(false),
+    m_branchHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome CodeSource::Deserialize(const Value &value)
         m_rawCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("Branch") && !value["Branch"].IsNull())
+    {
+        if (!value["Branch"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CodeSource.Branch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_branch = string(value["Branch"].GetString());
+        m_branchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void CodeSource::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "RawCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_rawCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_branchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Branch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_branch.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void CodeSource::SetRawCode(const string& _rawCode)
 bool CodeSource::RawCodeHasBeenSet() const
 {
     return m_rawCodeHasBeenSet;
+}
+
+string CodeSource::GetBranch() const
+{
+    return m_branch;
+}
+
+void CodeSource::SetBranch(const string& _branch)
+{
+    m_branch = _branch;
+    m_branchHasBeenSet = true;
+}
+
+bool CodeSource::BranchHasBeenSet() const
+{
+    return m_branchHasBeenSet;
 }
 

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/as/v20180419/model/AttachInstancesRequest.h>
 #include <tencentcloud/as/v20180419/model/AttachInstancesResponse.h>
+#include <tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesRequest.h>
+#include <tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesResponse.h>
 #include <tencentcloud/as/v20180419/model/CompleteLifecycleActionRequest.h>
 #include <tencentcloud/as/v20180419/model/CompleteLifecycleActionResponse.h>
 #include <tencentcloud/as/v20180419/model/CreateAutoScalingGroupRequest.h>
@@ -130,6 +132,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AttachInstancesResponse> AttachInstancesOutcome;
                 typedef std::future<AttachInstancesOutcome> AttachInstancesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::AttachInstancesRequest&, AttachInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachInstancesAsyncHandler;
+                typedef Outcome<Error, Model::ClearLaunchConfigurationAttributesResponse> ClearLaunchConfigurationAttributesOutcome;
+                typedef std::future<ClearLaunchConfigurationAttributesOutcome> ClearLaunchConfigurationAttributesOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::ClearLaunchConfigurationAttributesRequest&, ClearLaunchConfigurationAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearLaunchConfigurationAttributesAsyncHandler;
                 typedef Outcome<Error, Model::CompleteLifecycleActionResponse> CompleteLifecycleActionOutcome;
                 typedef std::future<CompleteLifecycleActionOutcome> CompleteLifecycleActionOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::CompleteLifecycleActionRequest&, CompleteLifecycleActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompleteLifecycleActionAsyncHandler;
@@ -274,6 +279,15 @@ namespace TencentCloud
                 AttachInstancesOutcome AttachInstances(const Model::AttachInstancesRequest &request);
                 void AttachInstancesAsync(const Model::AttachInstancesRequest& request, const AttachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachInstancesOutcomeCallable AttachInstancesCallable(const Model::AttachInstancesRequest& request);
+
+                /**
+                 *本接口（ClearLaunchConfigurationAttributes）用于将启动配置内的特定属性完全清空。
+                 * @param req ClearLaunchConfigurationAttributesRequest
+                 * @return ClearLaunchConfigurationAttributesOutcome
+                 */
+                ClearLaunchConfigurationAttributesOutcome ClearLaunchConfigurationAttributes(const Model::ClearLaunchConfigurationAttributesRequest &request);
+                void ClearLaunchConfigurationAttributesAsync(const Model::ClearLaunchConfigurationAttributesRequest& request, const ClearLaunchConfigurationAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClearLaunchConfigurationAttributesOutcomeCallable ClearLaunchConfigurationAttributesCallable(const Model::ClearLaunchConfigurationAttributesRequest& request);
 
                 /**
                  *本接口（CompleteLifecycleAction）用于完成生命周期动作。

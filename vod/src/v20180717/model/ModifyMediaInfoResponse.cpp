@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 ModifyMediaInfoResponse::ModifyMediaInfoResponse() :
-    m_coverUrlHasBeenSet(false)
+    m_coverUrlHasBeenSet(false),
+    m_addedSubtitleSetHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome ModifyMediaInfoResponse::Deserialize(const string &payload)
         m_coverUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AddedSubtitleSet") && !rsp["AddedSubtitleSet"].IsNull())
+    {
+        if (!rsp["AddedSubtitleSet"].IsArray())
+            return CoreInternalOutcome(Error("response `AddedSubtitleSet` is not array type"));
+
+        const Value &tmpValue = rsp["AddedSubtitleSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MediaSubtitleItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_addedSubtitleSet.push_back(item);
+        }
+        m_addedSubtitleSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +107,16 @@ string ModifyMediaInfoResponse::GetCoverUrl() const
 bool ModifyMediaInfoResponse::CoverUrlHasBeenSet() const
 {
     return m_coverUrlHasBeenSet;
+}
+
+vector<MediaSubtitleItem> ModifyMediaInfoResponse::GetAddedSubtitleSet() const
+{
+    return m_addedSubtitleSet;
+}
+
+bool ModifyMediaInfoResponse::AddedSubtitleSetHasBeenSet() const
+{
+    return m_addedSubtitleSetHasBeenSet;
 }
 
 

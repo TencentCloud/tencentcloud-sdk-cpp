@@ -867,6 +867,50 @@ namespace TencentCloud
                      */
                     bool HardwareResourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否浮动规格，1是，0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDynamicSpec 是否浮动规格，1是，0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsDynamicSpec() const;
+
+                    /**
+                     * 设置是否浮动规格，1是，0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsDynamicSpec 是否浮动规格，1是，0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsDynamicSpec(const int64_t& _isDynamicSpec);
+
+                    /**
+                     * 判断参数 IsDynamicSpec 是否已赋值
+                     * @return IsDynamicSpec 是否已赋值
+                     */
+                    bool IsDynamicSpecHasBeenSet() const;
+
+                    /**
+                     * 获取浮动规格值json字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DynamicPodSpec 浮动规格值json字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDynamicPodSpec() const;
+
+                    /**
+                     * 设置浮动规格值json字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DynamicPodSpec 浮动规格值json字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDynamicPodSpec(const std::string& _dynamicPodSpec);
+
+                    /**
+                     * 判断参数 DynamicPodSpec 是否已赋值
+                     * @return DynamicPodSpec 是否已赋值
+                     */
+                    bool DynamicPodSpecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1128,6 +1172,20 @@ namespace TencentCloud
                      */
                     std::string m_hardwareResourceType;
                     bool m_hardwareResourceTypeHasBeenSet;
+
+                    /**
+                     * 是否浮动规格，1是，0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isDynamicSpec;
+                    bool m_isDynamicSpecHasBeenSet;
+
+                    /**
+                     * 浮动规格值json字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dynamicPodSpec;
+                    bool m_dynamicPodSpecHasBeenSet;
 
                 };
             }

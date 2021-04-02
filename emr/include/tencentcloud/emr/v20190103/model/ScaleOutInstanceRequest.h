@@ -24,6 +24,7 @@
 #include <tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
 #include <tencentcloud/emr/v20190103/model/PodSpec.h>
+#include <tencentcloud/emr/v20190103/model/PodParameter.h>
 
 
 namespace TencentCloud
@@ -419,6 +420,42 @@ namespace TencentCloud
                      */
                     bool YarnNodeLabelHasBeenSet() const;
 
+                    /**
+                     * 获取POD自定义权限和自定义参数
+                     * @return PodParameter POD自定义权限和自定义参数
+                     */
+                    PodParameter GetPodParameter() const;
+
+                    /**
+                     * 设置POD自定义权限和自定义参数
+                     * @param PodParameter POD自定义权限和自定义参数
+                     */
+                    void SetPodParameter(const PodParameter& _podParameter);
+
+                    /**
+                     * 判断参数 PodParameter 是否已赋值
+                     * @return PodParameter 是否已赋值
+                     */
+                    bool PodParameterHasBeenSet() const;
+
+                    /**
+                     * 获取扩容的Master节点的数量。
+                     * @return MasterCount 扩容的Master节点的数量。
+                     */
+                    uint64_t GetMasterCount() const;
+
+                    /**
+                     * 设置扩容的Master节点的数量。
+                     * @param MasterCount 扩容的Master节点的数量。
+                     */
+                    void SetMasterCount(const uint64_t& _masterCount);
+
+                    /**
+                     * 判断参数 MasterCount 是否已赋值
+                     * @return MasterCount 是否已赋值
+                     */
+                    bool MasterCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -542,6 +579,18 @@ namespace TencentCloud
                      */
                     std::string m_yarnNodeLabel;
                     bool m_yarnNodeLabelHasBeenSet;
+
+                    /**
+                     * POD自定义权限和自定义参数
+                     */
+                    PodParameter m_podParameter;
+                    bool m_podParameterHasBeenSet;
+
+                    /**
+                     * 扩容的Master节点的数量。
+                     */
+                    uint64_t m_masterCount;
+                    bool m_masterCountHasBeenSet;
 
                 };
             }

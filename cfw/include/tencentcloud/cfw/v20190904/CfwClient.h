@@ -39,6 +39,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeRuleOverviewRequest.h>
@@ -53,6 +55,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeTableStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcRuleOverviewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcRuleOverviewResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusRequest.h>
@@ -69,6 +73,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyTableStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RunSyncAssetRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RunSyncAssetResponse.h>
+#include <tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleResponse.h>
 
 
 namespace TencentCloud
@@ -107,6 +113,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAssociatedInstanceListResponse> DescribeAssociatedInstanceListOutcome;
                 typedef std::future<DescribeAssociatedInstanceListOutcome> DescribeAssociatedInstanceListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAssociatedInstanceListRequest&, DescribeAssociatedInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssociatedInstanceListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCfwEipsResponse> DescribeCfwEipsOutcome;
+                typedef std::future<DescribeCfwEipsOutcome> DescribeCfwEipsOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwEipsRequest&, DescribeCfwEipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwEipsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNatRuleOverviewResponse> DescribeNatRuleOverviewOutcome;
                 typedef std::future<DescribeNatRuleOverviewOutcome> DescribeNatRuleOverviewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatRuleOverviewRequest&, DescribeNatRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatRuleOverviewAsyncHandler;
@@ -128,6 +137,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeVpcRuleOverviewResponse> DescribeVpcRuleOverviewOutcome;
                 typedef std::future<DescribeVpcRuleOverviewOutcome> DescribeVpcRuleOverviewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeVpcRuleOverviewRequest&, DescribeVpcRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcRuleOverviewAsyncHandler;
+                typedef Outcome<Error, Model::ExpandCfwVerticalResponse> ExpandCfwVerticalOutcome;
+                typedef std::future<ExpandCfwVerticalOutcome> ExpandCfwVerticalOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ExpandCfwVerticalRequest&, ExpandCfwVerticalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExpandCfwVerticalAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAcRuleResponse> ModifyAcRuleOutcome;
                 typedef std::future<ModifyAcRuleOutcome> ModifyAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAcRuleRequest&, ModifyAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAcRuleAsyncHandler;
@@ -152,6 +164,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RunSyncAssetResponse> RunSyncAssetOutcome;
                 typedef std::future<RunSyncAssetOutcome> RunSyncAssetOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RunSyncAssetRequest&, RunSyncAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunSyncAssetAsyncHandler;
+                typedef Outcome<Error, Model::SetNatFwDnatRuleResponse> SetNatFwDnatRuleOutcome;
+                typedef std::future<SetNatFwDnatRuleOutcome> SetNatFwDnatRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::SetNatFwDnatRuleRequest&, SetNatFwDnatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNatFwDnatRuleAsyncHandler;
 
 
 
@@ -228,6 +243,15 @@ namespace TencentCloud
                 DescribeAssociatedInstanceListOutcomeCallable DescribeAssociatedInstanceListCallable(const Model::DescribeAssociatedInstanceListRequest& request);
 
                 /**
+                 *查询防火墙弹性公网ip
+                 * @param req DescribeCfwEipsRequest
+                 * @return DescribeCfwEipsOutcome
+                 */
+                DescribeCfwEipsOutcome DescribeCfwEips(const Model::DescribeCfwEipsRequest &request);
+                void DescribeCfwEipsAsync(const Model::DescribeCfwEipsRequest& request, const DescribeCfwEipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwEipsOutcomeCallable DescribeCfwEipsCallable(const Model::DescribeCfwEipsRequest& request);
+
+                /**
                  *nat规则列表概况
                  * @param req DescribeNatRuleOverviewRequest
                  * @return DescribeNatRuleOverviewOutcome
@@ -289,6 +313,15 @@ namespace TencentCloud
                 DescribeVpcRuleOverviewOutcome DescribeVpcRuleOverview(const Model::DescribeVpcRuleOverviewRequest &request);
                 void DescribeVpcRuleOverviewAsync(const Model::DescribeVpcRuleOverviewRequest& request, const DescribeVpcRuleOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVpcRuleOverviewOutcomeCallable DescribeVpcRuleOverviewCallable(const Model::DescribeVpcRuleOverviewRequest& request);
+
+                /**
+                 *防火墙垂直扩容
+                 * @param req ExpandCfwVerticalRequest
+                 * @return ExpandCfwVerticalOutcome
+                 */
+                ExpandCfwVerticalOutcome ExpandCfwVertical(const Model::ExpandCfwVerticalRequest &request);
+                void ExpandCfwVerticalAsync(const Model::ExpandCfwVerticalRequest& request, const ExpandCfwVerticalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExpandCfwVerticalOutcomeCallable ExpandCfwVerticalCallable(const Model::ExpandCfwVerticalRequest& request);
 
                 /**
                  *修改规则
@@ -361,6 +394,15 @@ namespace TencentCloud
                 RunSyncAssetOutcome RunSyncAsset(const Model::RunSyncAssetRequest &request);
                 void RunSyncAssetAsync(const Model::RunSyncAssetRequest& request, const RunSyncAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunSyncAssetOutcomeCallable RunSyncAssetCallable(const Model::RunSyncAssetRequest& request);
+
+                /**
+                 *配置防火墙Dnat规则
+                 * @param req SetNatFwDnatRuleRequest
+                 * @return SetNatFwDnatRuleOutcome
+                 */
+                SetNatFwDnatRuleOutcome SetNatFwDnatRule(const Model::SetNatFwDnatRuleRequest &request);
+                void SetNatFwDnatRuleAsync(const Model::SetNatFwDnatRuleRequest& request, const SetNatFwDnatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetNatFwDnatRuleOutcomeCallable SetNatFwDnatRuleCallable(const Model::SetNatFwDnatRuleRequest& request);
 
             };
         }

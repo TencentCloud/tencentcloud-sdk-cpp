@@ -64,6 +64,24 @@ namespace TencentCloud
                      */
                     bool DeleteStreamHasBeenSet() const;
 
+                    /**
+                     * 获取Flv 参数，目前支持add_keyframe_index
+                     * @return FlvFlags Flv 参数，目前支持add_keyframe_index
+                     */
+                    std::string GetFlvFlags() const;
+
+                    /**
+                     * 设置Flv 参数，目前支持add_keyframe_index
+                     * @param FlvFlags Flv 参数，目前支持add_keyframe_index
+                     */
+                    void SetFlvFlags(const std::string& _flvFlags);
+
+                    /**
+                     * 判断参数 FlvFlags 是否已赋值
+                     * @return FlvFlags 是否已赋值
+                     */
+                    bool FlvFlagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +89,12 @@ namespace TencentCloud
                      */
                     std::string m_deleteStream;
                     bool m_deleteStreamHasBeenSet;
+
+                    /**
+                     * Flv 参数，目前支持add_keyframe_index
+                     */
+                    std::string m_flvFlags;
+                    bool m_flvFlagsHasBeenSet;
 
                 };
             }

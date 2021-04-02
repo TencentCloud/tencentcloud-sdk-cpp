@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否按ipv6过滤
-                     * @return Ipv6Enable 是否按ipv6过滤
+                     * 获取不为0，表示查询支持ipv6的机器
+                     * @return Ipv6Enable 不为0，表示查询支持ipv6的机器
                      */
                     int64_t GetIpv6Enable() const;
 
                     /**
-                     * 设置是否按ipv6过滤
-                     * @param Ipv6Enable 是否按ipv6过滤
+                     * 设置不为0，表示查询支持ipv6的机器
+                     * @param Ipv6Enable 不为0，表示查询支持ipv6的机器
                      */
                     void SetIpv6Enable(const int64_t& _ipv6Enable);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否按ipv6过滤
+                     * 不为0，表示查询支持ipv6的机器
                      */
                     int64_t m_ipv6Enable;
                     bool m_ipv6EnableHasBeenSet;

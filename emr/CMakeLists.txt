@@ -48,13 +48,15 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h
   include/tencentcloud/emr/v20190103/model/CreateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h
+  include/tencentcloud/emr/v20190103/model/PodParameter.h
+  include/tencentcloud/emr/v20190103/model/MetaDbInfo.h
   include/tencentcloud/emr/v20190103/model/Execution.h
   include/tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/Tag.h
   include/tencentcloud/emr/v20190103/model/Placement.h
   include/tencentcloud/emr/v20190103/model/SearchItem.h
-  include/tencentcloud/emr/v20190103/model/MetaDbInfo.h
+  include/tencentcloud/emr/v20190103/model/DynamicPodSpec.h
   include/tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h
   include/tencentcloud/emr/v20190103/model/CustomMetaInfo.h
   include/tencentcloud/emr/v20190103/model/DiskSpec.h
@@ -116,13 +118,15 @@ set(emr_src
   src/v20190103/model/PreExecuteFileSettings.cpp
   src/v20190103/model/CreateInstanceRequest.cpp
   src/v20190103/model/InquirePriceRenewEmrRequest.cpp
+  src/v20190103/model/PodParameter.cpp
+  src/v20190103/model/MetaDbInfo.cpp
   src/v20190103/model/Execution.cpp
   src/v20190103/model/DescribeInstancesResponse.cpp
   src/v20190103/model/InquiryPriceScaleOutInstanceRequest.cpp
   src/v20190103/model/Tag.cpp
   src/v20190103/model/Placement.cpp
   src/v20190103/model/SearchItem.cpp
-  src/v20190103/model/MetaDbInfo.cpp
+  src/v20190103/model/DynamicPodSpec.cpp
   src/v20190103/model/DescribeInstancesRequest.cpp
   src/v20190103/model/CustomMetaInfo.cpp
   src/v20190103/model/DiskSpec.cpp

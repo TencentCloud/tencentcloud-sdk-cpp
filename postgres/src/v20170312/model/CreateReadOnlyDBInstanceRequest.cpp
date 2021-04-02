@@ -42,7 +42,8 @@ CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest() :
     m_nameHasBeenSet(false),
     m_needSupportIpv6HasBeenSet(false),
     m_readOnlyGroupIdHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -209,6 +210,19 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_tagList.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -521,6 +535,22 @@ void CreateReadOnlyDBInstanceRequest::SetTagList(const Tag& _tagList)
 bool CreateReadOnlyDBInstanceRequest::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+vector<string> CreateReadOnlyDBInstanceRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateReadOnlyDBInstanceRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstanceRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

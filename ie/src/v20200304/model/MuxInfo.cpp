@@ -22,7 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 MuxInfo::MuxInfo() :
-    m_deleteStreamHasBeenSet(false)
+    m_deleteStreamHasBeenSet(false),
+    m_flvFlagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,16 @@ CoreInternalOutcome MuxInfo::Deserialize(const Value &value)
         m_deleteStreamHasBeenSet = true;
     }
 
+    if (value.HasMember("FlvFlags") && !value["FlvFlags"].IsNull())
+    {
+        if (!value["FlvFlags"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MuxInfo.FlvFlags` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flvFlags = string(value["FlvFlags"].GetString());
+        m_flvFlagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +65,14 @@ void MuxInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "DeleteStream";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_deleteStream.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flvFlagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FlvFlags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_flvFlags.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -73,5 +92,21 @@ void MuxInfo::SetDeleteStream(const string& _deleteStream)
 bool MuxInfo::DeleteStreamHasBeenSet() const
 {
     return m_deleteStreamHasBeenSet;
+}
+
+string MuxInfo::GetFlvFlags() const
+{
+    return m_flvFlags;
+}
+
+void MuxInfo::SetFlvFlags(const string& _flvFlags)
+{
+    m_flvFlags = _flvFlags;
+    m_flvFlagsHasBeenSet = true;
+}
+
+bool MuxInfo::FlvFlagsHasBeenSet() const
+{
+    return m_flvFlagsHasBeenSet;
 }
 

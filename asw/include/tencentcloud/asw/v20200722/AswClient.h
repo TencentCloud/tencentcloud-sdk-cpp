@@ -39,6 +39,8 @@
 #include <tencentcloud/asw/v20200722/model/ModifyFlowServiceResponse.h>
 #include <tencentcloud/asw/v20200722/model/StartExecutionRequest.h>
 #include <tencentcloud/asw/v20200722/model/StartExecutionResponse.h>
+#include <tencentcloud/asw/v20200722/model/StopExecutionRequest.h>
+#include <tencentcloud/asw/v20200722/model/StopExecutionResponse.h>
 
 
 namespace TencentCloud
@@ -77,6 +79,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StartExecutionResponse> StartExecutionOutcome;
                 typedef std::future<StartExecutionOutcome> StartExecutionOutcomeCallable;
                 typedef std::function<void(const AswClient*, const Model::StartExecutionRequest&, StartExecutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartExecutionAsyncHandler;
+                typedef Outcome<Error, Model::StopExecutionResponse> StopExecutionOutcome;
+                typedef std::future<StopExecutionOutcome> StopExecutionOutcomeCallable;
+                typedef std::function<void(const AswClient*, const Model::StopExecutionRequest&, StopExecutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopExecutionAsyncHandler;
 
 
 
@@ -151,6 +156,15 @@ namespace TencentCloud
                 StartExecutionOutcome StartExecution(const Model::StartExecutionRequest &request);
                 void StartExecutionAsync(const Model::StartExecutionRequest& request, const StartExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartExecutionOutcomeCallable StartExecutionCallable(const Model::StartExecutionRequest& request);
+
+                /**
+                 *终止某个状态机
+                 * @param req StopExecutionRequest
+                 * @return StopExecutionOutcome
+                 */
+                StopExecutionOutcome StopExecution(const Model::StopExecutionRequest &request);
+                void StopExecutionAsync(const Model::StopExecutionRequest& request, const StopExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopExecutionOutcomeCallable StopExecutionCallable(const Model::StopExecutionRequest& request);
 
             };
         }

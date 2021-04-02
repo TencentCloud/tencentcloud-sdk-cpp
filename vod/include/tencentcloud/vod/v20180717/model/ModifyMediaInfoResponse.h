@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/MediaSubtitleItem.h>
 
 
 namespace TencentCloud
@@ -56,6 +57,18 @@ namespace TencentCloud
                      */
                     bool CoverUrlHasBeenSet() const;
 
+                    /**
+                     * 获取新增的字幕信息。
+                     * @return AddedSubtitleSet 新增的字幕信息。
+                     */
+                    std::vector<MediaSubtitleItem> GetAddedSubtitleSet() const;
+
+                    /**
+                     * 判断参数 AddedSubtitleSet 是否已赋值
+                     * @return AddedSubtitleSet 是否已赋值
+                     */
+                    bool AddedSubtitleSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +77,12 @@ namespace TencentCloud
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;
+
+                    /**
+                     * 新增的字幕信息。
+                     */
+                    std::vector<MediaSubtitleItem> m_addedSubtitleSet;
+                    bool m_addedSubtitleSetHasBeenSet;
 
                 };
             }

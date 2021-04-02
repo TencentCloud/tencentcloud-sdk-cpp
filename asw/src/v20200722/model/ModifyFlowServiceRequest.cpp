@@ -31,7 +31,8 @@ ModifyFlowServiceRequest::ModifyFlowServiceRequest() :
     m_isNewRoleHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_roleResourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_enableCLSHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string ModifyFlowServiceRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCLSHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableCLS";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCLS, allocator);
     }
 
 
@@ -240,6 +249,22 @@ void ModifyFlowServiceRequest::SetDescription(const string& _description)
 bool ModifyFlowServiceRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+bool ModifyFlowServiceRequest::GetEnableCLS() const
+{
+    return m_enableCLS;
+}
+
+void ModifyFlowServiceRequest::SetEnableCLS(const bool& _enableCLS)
+{
+    m_enableCLS = _enableCLS;
+    m_enableCLSHasBeenSet = true;
+}
+
+bool ModifyFlowServiceRequest::EnableCLSHasBeenSet() const
+{
+    return m_enableCLSHasBeenSet;
 }
 
 

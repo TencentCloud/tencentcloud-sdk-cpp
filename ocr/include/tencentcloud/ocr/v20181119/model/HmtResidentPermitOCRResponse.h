@@ -140,6 +140,30 @@ namespace TencentCloud
                      */
                     bool AuthorityHasBeenSet() const;
 
+                    /**
+                     * 获取签发次数
+                     * @return VisaNum 签发次数
+                     */
+                    std::string GetVisaNum() const;
+
+                    /**
+                     * 判断参数 VisaNum 是否已赋值
+                     * @return VisaNum 是否已赋值
+                     */
+                    bool VisaNumHasBeenSet() const;
+
+                    /**
+                     * 获取通行证号码
+                     * @return PassNo 通行证号码
+                     */
+                    std::string GetPassNo() const;
+
+                    /**
+                     * 判断参数 PassNo 是否已赋值
+                     * @return PassNo 是否已赋值
+                     */
+                    bool PassNoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -190,6 +214,18 @@ namespace TencentCloud
                      */
                     std::string m_authority;
                     bool m_authorityHasBeenSet;
+
+                    /**
+                     * 签发次数
+                     */
+                    std::string m_visaNum;
+                    bool m_visaNumHasBeenSet;
+
+                    /**
+                     * 通行证号码
+                     */
+                    std::string m_passNo;
+                    bool m_passNoHasBeenSet;
 
                 };
             }

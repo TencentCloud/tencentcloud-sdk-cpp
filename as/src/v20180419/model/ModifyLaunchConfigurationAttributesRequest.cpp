@@ -35,7 +35,9 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
-    m_diskTypePolicyHasBeenSet(false)
+    m_diskTypePolicyHasBeenSet(false),
+    m_systemDiskHasBeenSet(false),
+    m_dataDisksHasBeenSet(false)
 {
 }
 
@@ -153,6 +155,30 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
         string key = "DiskTypePolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_diskTypePolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_systemDiskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SystemDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_systemDisk.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dataDisksHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataDisks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataDisks.begin(); itr != m_dataDisks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -353,6 +379,38 @@ void ModifyLaunchConfigurationAttributesRequest::SetDiskTypePolicy(const string&
 bool ModifyLaunchConfigurationAttributesRequest::DiskTypePolicyHasBeenSet() const
 {
     return m_diskTypePolicyHasBeenSet;
+}
+
+SystemDisk ModifyLaunchConfigurationAttributesRequest::GetSystemDisk() const
+{
+    return m_systemDisk;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetSystemDisk(const SystemDisk& _systemDisk)
+{
+    m_systemDisk = _systemDisk;
+    m_systemDiskHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::SystemDiskHasBeenSet() const
+{
+    return m_systemDiskHasBeenSet;
+}
+
+vector<DataDisk> ModifyLaunchConfigurationAttributesRequest::GetDataDisks() const
+{
+    return m_dataDisks;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetDataDisks(const vector<DataDisk>& _dataDisks)
+{
+    m_dataDisks = _dataDisks;
+    m_dataDisksHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::DataDisksHasBeenSet() const
+{
+    return m_dataDisksHasBeenSet;
 }
 
 

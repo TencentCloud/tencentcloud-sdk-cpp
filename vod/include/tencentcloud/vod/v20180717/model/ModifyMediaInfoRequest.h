@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/MediaKeyFrameDescItem.h>
+#include <tencentcloud/vod/v20180717/model/MediaSubtitleInput.h>
 
 
 namespace TencentCloud
@@ -268,6 +269,64 @@ namespace TencentCloud
                     bool ClearTagsHasBeenSet() const;
 
                     /**
+                     * 获取新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     * @return AddSubtitles 新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     */
+                    std::vector<MediaSubtitleInput> GetAddSubtitles() const;
+
+                    /**
+                     * 设置新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     * @param AddSubtitles 新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     */
+                    void SetAddSubtitles(const std::vector<MediaSubtitleInput>& _addSubtitles);
+
+                    /**
+                     * 判断参数 AddSubtitles 是否已赋值
+                     * @return AddSubtitles 是否已赋值
+                     */
+                    bool AddSubtitlesHasBeenSet() const;
+
+                    /**
+                     * 获取待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     * @return DeleteSubtitleIds 待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     */
+                    std::vector<std::string> GetDeleteSubtitleIds() const;
+
+                    /**
+                     * 设置待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     * @param DeleteSubtitleIds 待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     */
+                    void SetDeleteSubtitleIds(const std::vector<std::string>& _deleteSubtitleIds);
+
+                    /**
+                     * 判断参数 DeleteSubtitleIds 是否已赋值
+                     * @return DeleteSubtitleIds 是否已赋值
+                     */
+                    bool DeleteSubtitleIdsHasBeenSet() const;
+
+                    /**
+                     * 获取取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。
+同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。
+                     * @return ClearSubtitles 取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。
+同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。
+                     */
+                    int64_t GetClearSubtitles() const;
+
+                    /**
+                     * 设置取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。
+同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。
+                     * @param ClearSubtitles 取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。
+同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。
+                     */
+                    void SetClearSubtitles(const int64_t& _clearSubtitles);
+
+                    /**
+                     * 判断参数 ClearSubtitles 是否已赋值
+                     * @return ClearSubtitles 是否已赋值
+                     */
+                    bool ClearSubtitlesHasBeenSet() const;
+
+                    /**
                      * 获取点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      */
@@ -360,6 +419,25 @@ namespace TencentCloud
                      */
                     int64_t m_clearTags;
                     bool m_clearTagsHasBeenSet;
+
+                    /**
+                     * 新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     */
+                    std::vector<MediaSubtitleInput> m_addSubtitles;
+                    bool m_addSubtitlesHasBeenSet;
+
+                    /**
+                     * 待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     */
+                    std::vector<std::string> m_deleteSubtitleIds;
+                    bool m_deleteSubtitleIdsHasBeenSet;
+
+                    /**
+                     * 取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。
+同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。
+                     */
+                    int64_t m_clearSubtitles;
+                    bool m_clearSubtitlesHasBeenSet;
 
                     /**
                      * 点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。

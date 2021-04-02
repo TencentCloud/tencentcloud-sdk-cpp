@@ -52,7 +52,8 @@ DBInstance::DBInstance() :
     m_tagListHasBeenSet(false),
     m_masterDBInstanceIdHasBeenSet(false),
     m_readOnlyInstanceNumHasBeenSet(false),
-    m_statusInReadonlyGroupHasBeenSet(false)
+    m_statusInReadonlyGroupHasBeenSet(false),
+    m_offlineTimeHasBeenSet(false)
 {
 }
 
@@ -391,6 +392,16 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_statusInReadonlyGroupHasBeenSet = true;
     }
 
+    if (value.HasMember("OfflineTime") && !value["OfflineTime"].IsNull())
+    {
+        if (!value["OfflineTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_offlineTime = string(value["OfflineTime"].GetString());
+        m_offlineTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -658,6 +669,14 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "StatusInReadonlyGroup";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_statusInReadonlyGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offlineTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OfflineTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_offlineTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1157,5 +1176,21 @@ void DBInstance::SetStatusInReadonlyGroup(const string& _statusInReadonlyGroup)
 bool DBInstance::StatusInReadonlyGroupHasBeenSet() const
 {
     return m_statusInReadonlyGroupHasBeenSet;
+}
+
+string DBInstance::GetOfflineTime() const
+{
+    return m_offlineTime;
+}
+
+void DBInstance::SetOfflineTime(const string& _offlineTime)
+{
+    m_offlineTime = _offlineTime;
+    m_offlineTimeHasBeenSet = true;
+}
+
+bool DBInstance::OfflineTimeHasBeenSet() const
+{
+    return m_offlineTimeHasBeenSet;
 }
 

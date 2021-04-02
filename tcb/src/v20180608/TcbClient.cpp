@@ -642,6 +642,49 @@ TcbClient::DescribeCloudBaseProjectLatestVersionListOutcomeCallable TcbClient::D
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseProjectVersionListOutcome TcbClient::DescribeCloudBaseProjectVersionList(const DescribeCloudBaseProjectVersionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseProjectVersionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseProjectVersionListResponse rsp = DescribeCloudBaseProjectVersionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseProjectVersionListOutcome(rsp);
+        else
+            return DescribeCloudBaseProjectVersionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseProjectVersionListOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseProjectVersionListAsync(const DescribeCloudBaseProjectVersionListRequest& request, const DescribeCloudBaseProjectVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseProjectVersionList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseProjectVersionListOutcomeCallable TcbClient::DescribeCloudBaseProjectVersionListCallable(const DescribeCloudBaseProjectVersionListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseProjectVersionListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseProjectVersionList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeCloudBaseRunResourceOutcome TcbClient::DescribeCloudBaseRunResource(const DescribeCloudBaseRunResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseRunResource");

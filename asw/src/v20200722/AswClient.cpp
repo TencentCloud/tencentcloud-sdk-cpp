@@ -384,3 +384,46 @@ AswClient::StartExecutionOutcomeCallable AswClient::StartExecutionCallable(const
     return task->get_future();
 }
 
+AswClient::StopExecutionOutcome AswClient::StopExecution(const StopExecutionRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopExecution");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopExecutionResponse rsp = StopExecutionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopExecutionOutcome(rsp);
+        else
+            return StopExecutionOutcome(o.GetError());
+    }
+    else
+    {
+        return StopExecutionOutcome(outcome.GetError());
+    }
+}
+
+void AswClient::StopExecutionAsync(const StopExecutionRequest& request, const StopExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopExecution(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AswClient::StopExecutionOutcomeCallable AswClient::StopExecutionCallable(const StopExecutionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopExecutionOutcome()>>(
+        [this, request]()
+        {
+            return this->StopExecution(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

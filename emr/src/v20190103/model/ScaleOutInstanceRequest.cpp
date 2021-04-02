@@ -42,7 +42,9 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_podSpecHasBeenSet(false),
     m_clickHouseClusterNameHasBeenSet(false),
     m_clickHouseClusterTypeHasBeenSet(false),
-    m_yarnNodeLabelHasBeenSet(false)
+    m_yarnNodeLabelHasBeenSet(false),
+    m_podParameterHasBeenSet(false),
+    m_masterCountHasBeenSet(false)
 {
 }
 
@@ -238,6 +240,23 @@ string ScaleOutInstanceRequest::ToJsonString() const
         string key = "YarnNodeLabel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_yarnNodeLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podParameterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PodParameter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_podParameter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_masterCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MasterCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_masterCount, allocator);
     }
 
 
@@ -550,6 +569,38 @@ void ScaleOutInstanceRequest::SetYarnNodeLabel(const string& _yarnNodeLabel)
 bool ScaleOutInstanceRequest::YarnNodeLabelHasBeenSet() const
 {
     return m_yarnNodeLabelHasBeenSet;
+}
+
+PodParameter ScaleOutInstanceRequest::GetPodParameter() const
+{
+    return m_podParameter;
+}
+
+void ScaleOutInstanceRequest::SetPodParameter(const PodParameter& _podParameter)
+{
+    m_podParameter = _podParameter;
+    m_podParameterHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::PodParameterHasBeenSet() const
+{
+    return m_podParameterHasBeenSet;
+}
+
+uint64_t ScaleOutInstanceRequest::GetMasterCount() const
+{
+    return m_masterCount;
+}
+
+void ScaleOutInstanceRequest::SetMasterCount(const uint64_t& _masterCount)
+{
+    m_masterCount = _masterCount;
+    m_masterCountHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::MasterCountHasBeenSet() const
+{
+    return m_masterCountHasBeenSet;
 }
 
 

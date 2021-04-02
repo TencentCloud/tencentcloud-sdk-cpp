@@ -27,7 +27,8 @@ IdCardOCRVerificationRequest::IdCardOCRVerificationRequest() :
     m_idCardHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,15 @@ string IdCardOCRVerificationRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -140,6 +150,22 @@ void IdCardOCRVerificationRequest::SetImageUrl(const string& _imageUrl)
 bool IdCardOCRVerificationRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+Encryption IdCardOCRVerificationRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void IdCardOCRVerificationRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool IdCardOCRVerificationRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

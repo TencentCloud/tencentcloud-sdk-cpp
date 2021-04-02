@@ -34,7 +34,9 @@ CreateAndDeployCloudBaseProjectRequest::CreateAndDeployCloudBaseProjectRequest()
     m_addonConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_networkConfigHasBeenSet(false),
-    m_freeQuotaHasBeenSet(false)
+    m_freeQuotaHasBeenSet(false),
+    m_autoDeployOnCodeChangeHasBeenSet(false),
+    m_repoUrlHasBeenSet(false)
 {
 }
 
@@ -144,6 +146,22 @@ string CreateAndDeployCloudBaseProjectRequest::ToJsonString() const
         string key = "FreeQuota";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_freeQuota.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoDeployOnCodeChangeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoDeployOnCodeChange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoDeployOnCodeChange, allocator);
+    }
+
+    if (m_repoUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepoUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_repoUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -328,6 +346,38 @@ void CreateAndDeployCloudBaseProjectRequest::SetFreeQuota(const string& _freeQuo
 bool CreateAndDeployCloudBaseProjectRequest::FreeQuotaHasBeenSet() const
 {
     return m_freeQuotaHasBeenSet;
+}
+
+bool CreateAndDeployCloudBaseProjectRequest::GetAutoDeployOnCodeChange() const
+{
+    return m_autoDeployOnCodeChange;
+}
+
+void CreateAndDeployCloudBaseProjectRequest::SetAutoDeployOnCodeChange(const bool& _autoDeployOnCodeChange)
+{
+    m_autoDeployOnCodeChange = _autoDeployOnCodeChange;
+    m_autoDeployOnCodeChangeHasBeenSet = true;
+}
+
+bool CreateAndDeployCloudBaseProjectRequest::AutoDeployOnCodeChangeHasBeenSet() const
+{
+    return m_autoDeployOnCodeChangeHasBeenSet;
+}
+
+string CreateAndDeployCloudBaseProjectRequest::GetRepoUrl() const
+{
+    return m_repoUrl;
+}
+
+void CreateAndDeployCloudBaseProjectRequest::SetRepoUrl(const string& _repoUrl)
+{
+    m_repoUrl = _repoUrl;
+    m_repoUrlHasBeenSet = true;
+}
+
+bool CreateAndDeployCloudBaseProjectRequest::RepoUrlHasBeenSet() const
+{
+    return m_repoUrlHasBeenSet;
 }
 
 

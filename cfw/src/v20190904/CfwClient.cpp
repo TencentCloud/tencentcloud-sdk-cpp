@@ -384,6 +384,49 @@ CfwClient::DescribeAssociatedInstanceListOutcomeCallable CfwClient::DescribeAsso
     return task->get_future();
 }
 
+CfwClient::DescribeCfwEipsOutcome CfwClient::DescribeCfwEips(const DescribeCfwEipsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwEips");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwEipsResponse rsp = DescribeCfwEipsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwEipsOutcome(rsp);
+        else
+            return DescribeCfwEipsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwEipsOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwEipsAsync(const DescribeCfwEipsRequest& request, const DescribeCfwEipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCfwEips(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeCfwEipsOutcomeCallable CfwClient::DescribeCfwEipsCallable(const DescribeCfwEipsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCfwEipsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCfwEips(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeNatRuleOverviewOutcome CfwClient::DescribeNatRuleOverview(const DescribeNatRuleOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatRuleOverview");
@@ -678,6 +721,49 @@ CfwClient::DescribeVpcRuleOverviewOutcomeCallable CfwClient::DescribeVpcRuleOver
         [this, request]()
         {
             return this->DescribeVpcRuleOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::ExpandCfwVerticalOutcome CfwClient::ExpandCfwVertical(const ExpandCfwVerticalRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExpandCfwVertical");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExpandCfwVerticalResponse rsp = ExpandCfwVerticalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExpandCfwVerticalOutcome(rsp);
+        else
+            return ExpandCfwVerticalOutcome(o.GetError());
+    }
+    else
+    {
+        return ExpandCfwVerticalOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ExpandCfwVerticalAsync(const ExpandCfwVerticalRequest& request, const ExpandCfwVerticalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExpandCfwVertical(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ExpandCfwVerticalOutcomeCallable CfwClient::ExpandCfwVerticalCallable(const ExpandCfwVerticalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExpandCfwVerticalOutcome()>>(
+        [this, request]()
+        {
+            return this->ExpandCfwVertical(request);
         }
     );
 
@@ -1022,6 +1108,49 @@ CfwClient::RunSyncAssetOutcomeCallable CfwClient::RunSyncAssetCallable(const Run
         [this, request]()
         {
             return this->RunSyncAsset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::SetNatFwDnatRuleOutcome CfwClient::SetNatFwDnatRule(const SetNatFwDnatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetNatFwDnatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetNatFwDnatRuleResponse rsp = SetNatFwDnatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetNatFwDnatRuleOutcome(rsp);
+        else
+            return SetNatFwDnatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return SetNatFwDnatRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::SetNatFwDnatRuleAsync(const SetNatFwDnatRuleRequest& request, const SetNatFwDnatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetNatFwDnatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::SetNatFwDnatRuleOutcomeCallable CfwClient::SetNatFwDnatRuleCallable(const SetNatFwDnatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetNatFwDnatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->SetNatFwDnatRule(request);
         }
     );
 

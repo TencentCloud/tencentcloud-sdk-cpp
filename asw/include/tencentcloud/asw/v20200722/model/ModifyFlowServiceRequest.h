@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许日志投递
+                     * @return EnableCLS 是否允许日志投递
+                     */
+                    bool GetEnableCLS() const;
+
+                    /**
+                     * 设置是否允许日志投递
+                     * @param EnableCLS 是否允许日志投递
+                     */
+                    void SetEnableCLS(const bool& _enableCLS);
+
+                    /**
+                     * 判断参数 EnableCLS 是否已赋值
+                     * @return EnableCLS 是否已赋值
+                     */
+                    bool EnableCLSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 是否允许日志投递
+                     */
+                    bool m_enableCLS;
+                    bool m_enableCLSHasBeenSet;
 
                 };
             }

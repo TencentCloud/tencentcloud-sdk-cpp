@@ -29,7 +29,9 @@ PodSpec::PodSpec() :
     m_memoryHasBeenSet(false),
     m_dataVolumesHasBeenSet(false),
     m_cpuTypeHasBeenSet(false),
-    m_podVolumesHasBeenSet(false)
+    m_podVolumesHasBeenSet(false),
+    m_isDynamicSpecHasBeenSet(false),
+    m_dynamicPodSpecHasBeenSet(false)
 {
 }
 
@@ -131,6 +133,33 @@ CoreInternalOutcome PodSpec::Deserialize(const Value &value)
         m_podVolumesHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDynamicSpec") && !value["IsDynamicSpec"].IsNull())
+    {
+        if (!value["IsDynamicSpec"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PodSpec.IsDynamicSpec` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDynamicSpec = value["IsDynamicSpec"].GetUint64();
+        m_isDynamicSpecHasBeenSet = true;
+    }
+
+    if (value.HasMember("DynamicPodSpec") && !value["DynamicPodSpec"].IsNull())
+    {
+        if (!value["DynamicPodSpec"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `PodSpec.DynamicPodSpec` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dynamicPodSpec.Deserialize(value["DynamicPodSpec"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dynamicPodSpecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -212,6 +241,23 @@ void PodSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isDynamicSpecHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsDynamicSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDynamicSpec, allocator);
+    }
+
+    if (m_dynamicPodSpecHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DynamicPodSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_dynamicPodSpec.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -343,5 +389,37 @@ void PodSpec::SetPodVolumes(const vector<PodVolume>& _podVolumes)
 bool PodSpec::PodVolumesHasBeenSet() const
 {
     return m_podVolumesHasBeenSet;
+}
+
+uint64_t PodSpec::GetIsDynamicSpec() const
+{
+    return m_isDynamicSpec;
+}
+
+void PodSpec::SetIsDynamicSpec(const uint64_t& _isDynamicSpec)
+{
+    m_isDynamicSpec = _isDynamicSpec;
+    m_isDynamicSpecHasBeenSet = true;
+}
+
+bool PodSpec::IsDynamicSpecHasBeenSet() const
+{
+    return m_isDynamicSpecHasBeenSet;
+}
+
+DynamicPodSpec PodSpec::GetDynamicPodSpec() const
+{
+    return m_dynamicPodSpec;
+}
+
+void PodSpec::SetDynamicPodSpec(const DynamicPodSpec& _dynamicPodSpec)
+{
+    m_dynamicPodSpec = _dynamicPodSpec;
+    m_dynamicPodSpecHasBeenSet = true;
+}
+
+bool PodSpec::DynamicPodSpecHasBeenSet() const
+{
+    return m_dynamicPodSpecHasBeenSet;
 }
 

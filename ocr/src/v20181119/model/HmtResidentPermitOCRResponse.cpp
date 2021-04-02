@@ -32,7 +32,9 @@ HmtResidentPermitOCRResponse::HmtResidentPermitOCRResponse() :
     m_idCardNoHasBeenSet(false),
     m_cardTypeHasBeenSet(false),
     m_validDateHasBeenSet(false),
-    m_authorityHasBeenSet(false)
+    m_authorityHasBeenSet(false),
+    m_visaNumHasBeenSet(false),
+    m_passNoHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
         m_authorityHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VisaNum") && !rsp["VisaNum"].IsNull())
+    {
+        if (!rsp["VisaNum"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VisaNum` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_visaNum = string(rsp["VisaNum"].GetString());
+        m_visaNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PassNo") && !rsp["PassNo"].IsNull())
+    {
+        if (!rsp["PassNo"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PassNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_passNo = string(rsp["PassNo"].GetString());
+        m_passNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -233,6 +255,26 @@ string HmtResidentPermitOCRResponse::GetAuthority() const
 bool HmtResidentPermitOCRResponse::AuthorityHasBeenSet() const
 {
     return m_authorityHasBeenSet;
+}
+
+string HmtResidentPermitOCRResponse::GetVisaNum() const
+{
+    return m_visaNum;
+}
+
+bool HmtResidentPermitOCRResponse::VisaNumHasBeenSet() const
+{
+    return m_visaNumHasBeenSet;
+}
+
+string HmtResidentPermitOCRResponse::GetPassNo() const
+{
+    return m_passNo;
+}
+
+bool HmtResidentPermitOCRResponse::PassNoHasBeenSet() const
+{
+    return m_passNoHasBeenSet;
 }
 
 

@@ -22,8 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 FaceRect::FaceRect() :
-    m_xHasBeenSet(false),
     m_yHasBeenSet(false),
+    m_xHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false)
 {
@@ -34,16 +34,6 @@ CoreInternalOutcome FaceRect::Deserialize(const Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("X") && !value["X"].IsNull())
-    {
-        if (!value["X"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `FaceRect.X` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_x = value["X"].GetInt64();
-        m_xHasBeenSet = true;
-    }
-
     if (value.HasMember("Y") && !value["Y"].IsNull())
     {
         if (!value["Y"].IsInt64())
@@ -52,6 +42,16 @@ CoreInternalOutcome FaceRect::Deserialize(const Value &value)
         }
         m_y = value["Y"].GetInt64();
         m_yHasBeenSet = true;
+    }
+
+    if (value.HasMember("X") && !value["X"].IsNull())
+    {
+        if (!value["X"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `FaceRect.X` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_x = value["X"].GetInt64();
+        m_xHasBeenSet = true;
     }
 
     if (value.HasMember("Width") && !value["Width"].IsNull())
@@ -81,20 +81,20 @@ CoreInternalOutcome FaceRect::Deserialize(const Value &value)
 void FaceRect::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_xHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "X";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_x, allocator);
-    }
-
     if (m_yHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "Y";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_y, allocator);
+    }
+
+    if (m_xHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "X";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_x, allocator);
     }
 
     if (m_widthHasBeenSet)
@@ -116,22 +116,6 @@ void FaceRect::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 }
 
 
-int64_t FaceRect::GetX() const
-{
-    return m_x;
-}
-
-void FaceRect::SetX(const int64_t& _x)
-{
-    m_x = _x;
-    m_xHasBeenSet = true;
-}
-
-bool FaceRect::XHasBeenSet() const
-{
-    return m_xHasBeenSet;
-}
-
 int64_t FaceRect::GetY() const
 {
     return m_y;
@@ -146,6 +130,22 @@ void FaceRect::SetY(const int64_t& _y)
 bool FaceRect::YHasBeenSet() const
 {
     return m_yHasBeenSet;
+}
+
+int64_t FaceRect::GetX() const
+{
+    return m_x;
+}
+
+void FaceRect::SetX(const int64_t& _x)
+{
+    m_x = _x;
+    m_xHasBeenSet = true;
+}
+
+bool FaceRect::XHasBeenSet() const
+{
+    return m_xHasBeenSet;
 }
 
 int64_t FaceRect::GetWidth() const

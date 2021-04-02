@@ -31,6 +31,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/CreatePaiInstanceResponse.h
   include/tencentcloud/as/v20180419/model/CreateLaunchConfigurationResponse.h
   include/tencentcloud/as/v20180419/model/CreateLifecycleHookResponse.h
+  include/tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesResponse.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingGroupsResponse.h
   include/tencentcloud/as/v20180419/model/CreatePaiInstanceRequest.h
   include/tencentcloud/as/v20180419/model/SystemDisk.h
@@ -124,6 +125,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/DescribeNotificationConfigurationsRequest.h
   include/tencentcloud/as/v20180419/model/LifecycleHook.h
   include/tencentcloud/as/v20180419/model/ForwardLoadBalancer.h
+  include/tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesRequest.h
   include/tencentcloud/as/v20180419/model/PreviewPaiDomainNameResponse.h
   include/tencentcloud/as/v20180419/model/DeleteAutoScalingGroupRequest.h
   include/tencentcloud/as/v20180419/model/RemoveInstancesRequest.h
@@ -158,6 +160,7 @@ set(as_src
   src/v20180419/model/CreatePaiInstanceResponse.cpp
   src/v20180419/model/CreateLaunchConfigurationResponse.cpp
   src/v20180419/model/CreateLifecycleHookResponse.cpp
+  src/v20180419/model/ClearLaunchConfigurationAttributesResponse.cpp
   src/v20180419/model/DescribeAutoScalingGroupsResponse.cpp
   src/v20180419/model/CreatePaiInstanceRequest.cpp
   src/v20180419/model/SystemDisk.cpp
@@ -251,6 +254,7 @@ set(as_src
   src/v20180419/model/DescribeNotificationConfigurationsRequest.cpp
   src/v20180419/model/LifecycleHook.cpp
   src/v20180419/model/ForwardLoadBalancer.cpp
+  src/v20180419/model/ClearLaunchConfigurationAttributesRequest.cpp
   src/v20180419/model/PreviewPaiDomainNameResponse.cpp
   src/v20180419/model/DeleteAutoScalingGroupRequest.cpp
   src/v20180419/model/RemoveInstancesRequest.cpp

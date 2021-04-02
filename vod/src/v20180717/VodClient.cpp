@@ -83,6 +83,49 @@ VodClient::ApplyUploadOutcomeCallable VodClient::ApplyUploadCallable(const Apply
     return task->get_future();
 }
 
+VodClient::AttachMediaSubtitlesOutcome VodClient::AttachMediaSubtitles(const AttachMediaSubtitlesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachMediaSubtitles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachMediaSubtitlesResponse rsp = AttachMediaSubtitlesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachMediaSubtitlesOutcome(rsp);
+        else
+            return AttachMediaSubtitlesOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachMediaSubtitlesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::AttachMediaSubtitlesAsync(const AttachMediaSubtitlesRequest& request, const AttachMediaSubtitlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachMediaSubtitles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::AttachMediaSubtitlesOutcomeCallable VodClient::AttachMediaSubtitlesCallable(const AttachMediaSubtitlesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachMediaSubtitlesOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachMediaSubtitles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CommitUploadOutcome VodClient::CommitUpload(const CommitUploadRequest &request)
 {
     auto outcome = MakeRequest(request, "CommitUpload");

@@ -153,6 +153,36 @@ namespace TencentCloud
                      */
                     bool DenoiseHasBeenSet() const;
 
+                    /**
+                     * 获取开启添加静音，可选项：
+0：不开启，
+1：开启，
+默认不开启
+                     * @return EnableMuteAudio 开启添加静音，可选项：
+0：不开启，
+1：开启，
+默认不开启
+                     */
+                    int64_t GetEnableMuteAudio() const;
+
+                    /**
+                     * 设置开启添加静音，可选项：
+0：不开启，
+1：开启，
+默认不开启
+                     * @param EnableMuteAudio 开启添加静音，可选项：
+0：不开启，
+1：开启，
+默认不开启
+                     */
+                    void SetEnableMuteAudio(const int64_t& _enableMuteAudio);
+
+                    /**
+                     * 判断参数 EnableMuteAudio 是否已赋值
+                     * @return EnableMuteAudio 是否已赋值
+                     */
+                    bool EnableMuteAudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +218,15 @@ namespace TencentCloud
                      */
                     Denoise m_denoise;
                     bool m_denoiseHasBeenSet;
+
+                    /**
+                     * 开启添加静音，可选项：
+0：不开启，
+1：开启，
+默认不开启
+                     */
+                    int64_t m_enableMuteAudio;
+                    bool m_enableMuteAudioHasBeenSet;
 
                 };
             }

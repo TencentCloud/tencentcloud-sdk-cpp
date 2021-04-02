@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 人脸框位置
+                * 人脸框信息
                 */
                 class FaceRect : public AbstractModel
                 {
@@ -45,24 +45,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取人脸框左上角横坐标。
-                     * @return X 人脸框左上角横坐标。
-                     */
-                    int64_t GetX() const;
-
-                    /**
-                     * 设置人脸框左上角横坐标。
-                     * @param X 人脸框左上角横坐标。
-                     */
-                    void SetX(const int64_t& _x);
-
-                    /**
-                     * 判断参数 X 是否已赋值
-                     * @return X 是否已赋值
-                     */
-                    bool XHasBeenSet() const;
 
                     /**
                      * 获取人脸框左上角纵坐标。
@@ -81,6 +63,24 @@ namespace TencentCloud
                      * @return Y 是否已赋值
                      */
                     bool YHasBeenSet() const;
+
+                    /**
+                     * 获取人脸框左上角横坐标。
+                     * @return X 人脸框左上角横坐标。
+                     */
+                    int64_t GetX() const;
+
+                    /**
+                     * 设置人脸框左上角横坐标。
+                     * @param X 人脸框左上角横坐标。
+                     */
+                    void SetX(const int64_t& _x);
+
+                    /**
+                     * 判断参数 X 是否已赋值
+                     * @return X 是否已赋值
+                     */
+                    bool XHasBeenSet() const;
 
                     /**
                      * 获取人脸框宽度。
@@ -121,16 +121,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人脸框左上角横坐标。
-                     */
-                    int64_t m_x;
-                    bool m_xHasBeenSet;
-
-                    /**
                      * 人脸框左上角纵坐标。
                      */
                     int64_t m_y;
                     bool m_yHasBeenSet;
+
+                    /**
+                     * 人脸框左上角横坐标。
+                     */
+                    int64_t m_x;
+                    bool m_xHasBeenSet;
 
                     /**
                      * 人脸框宽度。

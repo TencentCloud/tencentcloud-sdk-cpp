@@ -28,7 +28,8 @@ GetDetectInfoEnhancedResponse::GetDetectInfoEnhancedResponse() :
     m_textHasBeenSet(false),
     m_idCardDataHasBeenSet(false),
     m_bestFrameHasBeenSet(false),
-    m_videoDataHasBeenSet(false)
+    m_videoDataHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,23 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
         m_videoDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Encryption") && !rsp["Encryption"].IsNull())
+    {
+        if (!rsp["Encryption"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Encryption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_encryption.Deserialize(rsp["Encryption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_encryptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -177,6 +195,16 @@ DetectInfoVideoData GetDetectInfoEnhancedResponse::GetVideoData() const
 bool GetDetectInfoEnhancedResponse::VideoDataHasBeenSet() const
 {
     return m_videoDataHasBeenSet;
+}
+
+Encryption GetDetectInfoEnhancedResponse::GetEncryption() const
+{
+    return m_encryption;
+}
+
+bool GetDetectInfoEnhancedResponse::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

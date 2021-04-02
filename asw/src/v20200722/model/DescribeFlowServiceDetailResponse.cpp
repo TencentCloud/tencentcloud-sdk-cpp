@@ -32,7 +32,10 @@ DescribeFlowServiceDetailResponse::DescribeFlowServiceDetailResponse() :
     m_typeHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_flowServiceChineseNameHasBeenSet(false)
+    m_flowServiceChineseNameHasBeenSet(false),
+    m_enableCLSHasBeenSet(false),
+    m_cLSUrlHasBeenSet(false),
+    m_flowInputHasBeenSet(false)
 {
 }
 
@@ -150,6 +153,36 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
         m_flowServiceChineseNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EnableCLS") && !rsp["EnableCLS"].IsNull())
+    {
+        if (!rsp["EnableCLS"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `EnableCLS` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableCLS = rsp["EnableCLS"].GetBool();
+        m_enableCLSHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CLSUrl") && !rsp["CLSUrl"].IsNull())
+    {
+        if (!rsp["CLSUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CLSUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cLSUrl = string(rsp["CLSUrl"].GetString());
+        m_cLSUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FlowInput") && !rsp["FlowInput"].IsNull())
+    {
+        if (!rsp["FlowInput"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FlowInput` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowInput = string(rsp["FlowInput"].GetString());
+        m_flowInputHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -233,6 +266,36 @@ string DescribeFlowServiceDetailResponse::GetFlowServiceChineseName() const
 bool DescribeFlowServiceDetailResponse::FlowServiceChineseNameHasBeenSet() const
 {
     return m_flowServiceChineseNameHasBeenSet;
+}
+
+bool DescribeFlowServiceDetailResponse::GetEnableCLS() const
+{
+    return m_enableCLS;
+}
+
+bool DescribeFlowServiceDetailResponse::EnableCLSHasBeenSet() const
+{
+    return m_enableCLSHasBeenSet;
+}
+
+string DescribeFlowServiceDetailResponse::GetCLSUrl() const
+{
+    return m_cLSUrl;
+}
+
+bool DescribeFlowServiceDetailResponse::CLSUrlHasBeenSet() const
+{
+    return m_cLSUrlHasBeenSet;
+}
+
+string DescribeFlowServiceDetailResponse::GetFlowInput() const
+{
+    return m_flowInput;
+}
+
+bool DescribeFlowServiceDetailResponse::FlowInputHasBeenSet() const
+{
+    return m_flowInputHasBeenSet;
 }
 
 

@@ -40,7 +40,8 @@ PushQualityData::PushQualityData() :
     m_audioTsHasBeenSet(false),
     m_metaVideoRateHasBeenSet(false),
     m_metaAudioRateHasBeenSet(false),
-    m_mateFpsHasBeenSet(false)
+    m_mateFpsHasBeenSet(false),
+    m_streamParamHasBeenSet(false)
 {
 }
 
@@ -239,6 +240,16 @@ CoreInternalOutcome PushQualityData::Deserialize(const Value &value)
         m_mateFpsHasBeenSet = true;
     }
 
+    if (value.HasMember("StreamParam") && !value["StreamParam"].IsNull())
+    {
+        if (!value["StreamParam"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushQualityData.StreamParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_streamParam = string(value["StreamParam"].GetString());
+        m_streamParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -396,6 +407,14 @@ void PushQualityData::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "MateFps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mateFps, allocator);
+    }
+
+    if (m_streamParamHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StreamParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_streamParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -703,5 +722,21 @@ void PushQualityData::SetMateFps(const uint64_t& _mateFps)
 bool PushQualityData::MateFpsHasBeenSet() const
 {
     return m_mateFpsHasBeenSet;
+}
+
+string PushQualityData::GetStreamParam() const
+{
+    return m_streamParam;
+}
+
+void PushQualityData::SetStreamParam(const string& _streamParam)
+{
+    m_streamParam = _streamParam;
+    m_streamParamHasBeenSet = true;
+}
+
+bool PushQualityData::StreamParamHasBeenSet() const
+{
+    return m_streamParamHasBeenSet;
 }
 

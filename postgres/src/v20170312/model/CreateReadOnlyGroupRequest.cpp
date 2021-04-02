@@ -33,7 +33,8 @@ CreateReadOnlyGroupRequest::CreateReadOnlyGroupRequest() :
     m_replayLatencyEliminateHasBeenSet(false),
     m_maxReplayLagHasBeenSet(false),
     m_maxReplayLatencyHasBeenSet(false),
-    m_minDelayEliminateReserveHasBeenSet(false)
+    m_minDelayEliminateReserveHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,19 @@ string CreateReadOnlyGroupRequest::ToJsonString() const
         string key = "MinDelayEliminateReserve";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_minDelayEliminateReserve, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -290,6 +304,22 @@ void CreateReadOnlyGroupRequest::SetMinDelayEliminateReserve(const uint64_t& _mi
 bool CreateReadOnlyGroupRequest::MinDelayEliminateReserveHasBeenSet() const
 {
     return m_minDelayEliminateReserveHasBeenSet;
+}
+
+vector<string> CreateReadOnlyGroupRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateReadOnlyGroupRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateReadOnlyGroupRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

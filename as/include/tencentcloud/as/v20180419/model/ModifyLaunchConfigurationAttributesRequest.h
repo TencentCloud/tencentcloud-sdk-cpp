@@ -24,6 +24,8 @@
 #include <tencentcloud/as/v20180419/model/InternetAccessible.h>
 #include <tencentcloud/as/v20180419/model/InstanceChargePrepaid.h>
 #include <tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h>
+#include <tencentcloud/as/v20180419/model/SystemDisk.h>
+#include <tencentcloud/as/v20180419/model/DataDisk.h>
 
 
 namespace TencentCloud
@@ -329,6 +331,42 @@ namespace TencentCloud
                      */
                     bool DiskTypePolicyHasBeenSet() const;
 
+                    /**
+                     * 获取实例系统盘配置信息。
+                     * @return SystemDisk 实例系统盘配置信息。
+                     */
+                    SystemDisk GetSystemDisk() const;
+
+                    /**
+                     * 设置实例系统盘配置信息。
+                     * @param SystemDisk 实例系统盘配置信息。
+                     */
+                    void SetSystemDisk(const SystemDisk& _systemDisk);
+
+                    /**
+                     * 判断参数 SystemDisk 是否已赋值
+                     * @return SystemDisk 是否已赋值
+                     */
+                    bool SystemDiskHasBeenSet() const;
+
+                    /**
+                     * 获取实例数据盘配置信息。最多支持指定11块数据盘。采取整体修改，因此请提供修改后的全部值。
+                     * @return DataDisks 实例数据盘配置信息。最多支持指定11块数据盘。采取整体修改，因此请提供修改后的全部值。
+                     */
+                    std::vector<DataDisk> GetDataDisks() const;
+
+                    /**
+                     * 设置实例数据盘配置信息。最多支持指定11块数据盘。采取整体修改，因此请提供修改后的全部值。
+                     * @param DataDisks 实例数据盘配置信息。最多支持指定11块数据盘。采取整体修改，因此请提供修改后的全部值。
+                     */
+                    void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
+
+                    /**
+                     * 判断参数 DataDisks 是否已赋值
+                     * @return DataDisks 是否已赋值
+                     */
+                    bool DataDisksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -419,6 +457,18 @@ namespace TencentCloud
                      */
                     std::string m_diskTypePolicy;
                     bool m_diskTypePolicyHasBeenSet;
+
+                    /**
+                     * 实例系统盘配置信息。
+                     */
+                    SystemDisk m_systemDisk;
+                    bool m_systemDiskHasBeenSet;
+
+                    /**
+                     * 实例数据盘配置信息。最多支持指定11块数据盘。采取整体修改，因此请提供修改后的全部值。
+                     */
+                    std::vector<DataDisk> m_dataDisks;
+                    bool m_dataDisksHasBeenSet;
 
                 };
             }

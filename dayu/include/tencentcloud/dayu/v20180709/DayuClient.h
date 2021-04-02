@@ -87,6 +87,8 @@
 #include <tencentcloud/dayu/v20180709/model/DescribeBasicCCThresholdResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBasicDeviceThresholdRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBasicDeviceThresholdResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeBizHttpStatusRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeBizHttpStatusResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBizTrendRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBizTrendResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCAlarmThresholdRequest.h>
@@ -355,6 +357,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBasicDeviceThresholdResponse> DescribeBasicDeviceThresholdOutcome;
                 typedef std::future<DescribeBasicDeviceThresholdOutcome> DescribeBasicDeviceThresholdOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeBasicDeviceThresholdRequest&, DescribeBasicDeviceThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBasicDeviceThresholdAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBizHttpStatusResponse> DescribeBizHttpStatusOutcome;
+                typedef std::future<DescribeBizHttpStatusOutcome> DescribeBizHttpStatusOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeBizHttpStatusRequest&, DescribeBizHttpStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizHttpStatusAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBizTrendResponse> DescribeBizTrendOutcome;
                 typedef std::future<DescribeBizTrendOutcome> DescribeBizTrendOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeBizTrendRequest&, DescribeBizTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTrendAsyncHandler;
@@ -883,6 +888,15 @@ namespace TencentCloud
                 DescribeBasicDeviceThresholdOutcome DescribeBasicDeviceThreshold(const Model::DescribeBasicDeviceThresholdRequest &request);
                 void DescribeBasicDeviceThresholdAsync(const Model::DescribeBasicDeviceThresholdRequest& request, const DescribeBasicDeviceThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBasicDeviceThresholdOutcomeCallable DescribeBasicDeviceThresholdCallable(const Model::DescribeBasicDeviceThresholdRequest& request);
+
+                /**
+                 *获取业务流量状态码统计
+                 * @param req DescribeBizHttpStatusRequest
+                 * @return DescribeBizHttpStatusOutcome
+                 */
+                DescribeBizHttpStatusOutcome DescribeBizHttpStatus(const Model::DescribeBizHttpStatusRequest &request);
+                void DescribeBizHttpStatusAsync(const Model::DescribeBizHttpStatusRequest& request, const DescribeBizHttpStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBizHttpStatusOutcomeCallable DescribeBizHttpStatusCallable(const Model::DescribeBizHttpStatusRequest& request);
 
                 /**
                  *获取业务流量曲线

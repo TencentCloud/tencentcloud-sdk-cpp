@@ -58,7 +58,9 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_destroyableHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_autoFlagHasBeenSet(false),
-    m_hardwareResourceTypeHasBeenSet(false)
+    m_hardwareResourceTypeHasBeenSet(false),
+    m_isDynamicSpecHasBeenSet(false),
+    m_dynamicPodSpecHasBeenSet(false)
 {
 }
 
@@ -464,6 +466,26 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const Value &value)
         m_hardwareResourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDynamicSpec") && !value["IsDynamicSpec"].IsNull())
+    {
+        if (!value["IsDynamicSpec"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `NodeHardwareInfo.IsDynamicSpec` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDynamicSpec = value["IsDynamicSpec"].GetInt64();
+        m_isDynamicSpecHasBeenSet = true;
+    }
+
+    if (value.HasMember("DynamicPodSpec") && !value["DynamicPodSpec"].IsNull())
+    {
+        if (!value["DynamicPodSpec"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NodeHardwareInfo.DynamicPodSpec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dynamicPodSpec = string(value["DynamicPodSpec"].GetString());
+        m_dynamicPodSpecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -780,6 +802,22 @@ void NodeHardwareInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "HardwareResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_hardwareResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDynamicSpecHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsDynamicSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDynamicSpec, allocator);
+    }
+
+    if (m_dynamicPodSpecHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DynamicPodSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_dynamicPodSpec.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1375,5 +1413,37 @@ void NodeHardwareInfo::SetHardwareResourceType(const string& _hardwareResourceTy
 bool NodeHardwareInfo::HardwareResourceTypeHasBeenSet() const
 {
     return m_hardwareResourceTypeHasBeenSet;
+}
+
+int64_t NodeHardwareInfo::GetIsDynamicSpec() const
+{
+    return m_isDynamicSpec;
+}
+
+void NodeHardwareInfo::SetIsDynamicSpec(const int64_t& _isDynamicSpec)
+{
+    m_isDynamicSpec = _isDynamicSpec;
+    m_isDynamicSpecHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::IsDynamicSpecHasBeenSet() const
+{
+    return m_isDynamicSpecHasBeenSet;
+}
+
+string NodeHardwareInfo::GetDynamicPodSpec() const
+{
+    return m_dynamicPodSpec;
+}
+
+void NodeHardwareInfo::SetDynamicPodSpec(const string& _dynamicPodSpec)
+{
+    m_dynamicPodSpec = _dynamicPodSpec;
+    m_dynamicPodSpecHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::DynamicPodSpecHasBeenSet() const
+{
+    return m_dynamicPodSpecHasBeenSet;
 }
 

@@ -40,7 +40,9 @@ CloudBaseProjectVersion::CloudBaseProjectVersion() :
     m_tagsHasBeenSet(false),
     m_networkConfigHasBeenSet(false),
     m_extensionIdHasBeenSet(false),
-    m_failTypeHasBeenSet(false)
+    m_failTypeHasBeenSet(false),
+    m_repoUrlHasBeenSet(false),
+    m_autoDeployOnCodeChangeHasBeenSet(false)
 {
 }
 
@@ -259,6 +261,26 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const Value &value)
         m_failTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RepoUrl") && !value["RepoUrl"].IsNull())
+    {
+        if (!value["RepoUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.RepoUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repoUrl = string(value["RepoUrl"].GetString());
+        m_repoUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoDeployOnCodeChange") && !value["AutoDeployOnCodeChange"].IsNull())
+    {
+        if (!value["AutoDeployOnCodeChange"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.AutoDeployOnCodeChange` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoDeployOnCodeChange = value["AutoDeployOnCodeChange"].GetBool();
+        m_autoDeployOnCodeChangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -429,6 +451,22 @@ void CloudBaseProjectVersion::ToJsonObject(Value &value, Document::AllocatorType
         string key = "FailType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_failType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repoUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RepoUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_repoUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoDeployOnCodeChangeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoDeployOnCodeChange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoDeployOnCodeChange, allocator);
     }
 
 }
@@ -736,5 +774,37 @@ void CloudBaseProjectVersion::SetFailType(const string& _failType)
 bool CloudBaseProjectVersion::FailTypeHasBeenSet() const
 {
     return m_failTypeHasBeenSet;
+}
+
+string CloudBaseProjectVersion::GetRepoUrl() const
+{
+    return m_repoUrl;
+}
+
+void CloudBaseProjectVersion::SetRepoUrl(const string& _repoUrl)
+{
+    m_repoUrl = _repoUrl;
+    m_repoUrlHasBeenSet = true;
+}
+
+bool CloudBaseProjectVersion::RepoUrlHasBeenSet() const
+{
+    return m_repoUrlHasBeenSet;
+}
+
+bool CloudBaseProjectVersion::GetAutoDeployOnCodeChange() const
+{
+    return m_autoDeployOnCodeChange;
+}
+
+void CloudBaseProjectVersion::SetAutoDeployOnCodeChange(const bool& _autoDeployOnCodeChange)
+{
+    m_autoDeployOnCodeChange = _autoDeployOnCodeChange;
+    m_autoDeployOnCodeChangeHasBeenSet = true;
+}
+
+bool CloudBaseProjectVersion::AutoDeployOnCodeChangeHasBeenSet() const
+{
+    return m_autoDeployOnCodeChangeHasBeenSet;
 }
 

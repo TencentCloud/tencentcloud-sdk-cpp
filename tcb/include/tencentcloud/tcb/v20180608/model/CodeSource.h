@@ -200,6 +200,28 @@ namespace TencentCloud
                      */
                     bool RawCodeHasBeenSet() const;
 
+                    /**
+                     * 获取代码分支
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Branch 代码分支
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBranch() const;
+
+                    /**
+                     * 设置代码分支
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Branch 代码分支
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBranch(const std::string& _branch);
+
+                    /**
+                     * 判断参数 Branch 是否已赋值
+                     * @return Branch 是否已赋值
+                     */
+                    bool BranchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +272,13 @@ namespace TencentCloud
                      */
                     std::string m_rawCode;
                     bool m_rawCodeHasBeenSet;
+
+                    /**
+                     * 代码分支
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_branch;
+                    bool m_branchHasBeenSet;
 
                 };
             }

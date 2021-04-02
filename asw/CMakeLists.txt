@@ -38,6 +38,8 @@ set(asw_public_header_model
   include/tencentcloud/asw/v20200722/model/DescribeExecutionsResponse.h
   include/tencentcloud/asw/v20200722/model/ModifyFlowServiceRequest.h
   include/tencentcloud/asw/v20200722/model/DescribeFlowServiceDetailRequest.h
+  include/tencentcloud/asw/v20200722/model/StopExecutionResponse.h
+  include/tencentcloud/asw/v20200722/model/StopExecutionRequest.h
   )
 
 set(asw_src
@@ -61,6 +63,8 @@ set(asw_src
   src/v20200722/model/DescribeExecutionsResponse.cpp
   src/v20200722/model/ModifyFlowServiceRequest.cpp
   src/v20200722/model/DescribeFlowServiceDetailRequest.cpp
+  src/v20200722/model/StopExecutionResponse.cpp
+  src/v20200722/model/StopExecutionRequest.cpp
   )
 
 set(asw_include

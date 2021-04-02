@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/PodVolume.h>
+#include <tencentcloud/emr/v20190103/model/DynamicPodSpec.h>
 
 
 namespace TencentCloud
@@ -191,6 +192,46 @@ namespace TencentCloud
                      */
                     bool PodVolumesHasBeenSet() const;
 
+                    /**
+                     * 获取是否浮动规格，1是，0否
+                     * @return IsDynamicSpec 是否浮动规格，1是，0否
+                     */
+                    uint64_t GetIsDynamicSpec() const;
+
+                    /**
+                     * 设置是否浮动规格，1是，0否
+                     * @param IsDynamicSpec 是否浮动规格，1是，0否
+                     */
+                    void SetIsDynamicSpec(const uint64_t& _isDynamicSpec);
+
+                    /**
+                     * 判断参数 IsDynamicSpec 是否已赋值
+                     * @return IsDynamicSpec 是否已赋值
+                     */
+                    bool IsDynamicSpecHasBeenSet() const;
+
+                    /**
+                     * 获取浮动规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DynamicPodSpec 浮动规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DynamicPodSpec GetDynamicPodSpec() const;
+
+                    /**
+                     * 设置浮动规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DynamicPodSpec 浮动规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDynamicPodSpec(const DynamicPodSpec& _dynamicPodSpec);
+
+                    /**
+                     * 判断参数 DynamicPodSpec 是否已赋值
+                     * @return DynamicPodSpec 是否已赋值
+                     */
+                    bool DynamicPodSpecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +281,19 @@ namespace TencentCloud
                      */
                     std::vector<PodVolume> m_podVolumes;
                     bool m_podVolumesHasBeenSet;
+
+                    /**
+                     * 是否浮动规格，1是，0否
+                     */
+                    uint64_t m_isDynamicSpec;
+                    bool m_isDynamicSpecHasBeenSet;
+
+                    /**
+                     * 浮动规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DynamicPodSpec m_dynamicPodSpec;
+                    bool m_dynamicPodSpecHasBeenSet;
 
                 };
             }

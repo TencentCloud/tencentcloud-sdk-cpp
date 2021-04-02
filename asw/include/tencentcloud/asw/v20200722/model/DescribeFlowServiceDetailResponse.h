@@ -146,6 +146,48 @@ namespace TencentCloud
                      */
                     bool FlowServiceChineseNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启日志CLS服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableCLS 是否开启日志CLS服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableCLS() const;
+
+                    /**
+                     * 判断参数 EnableCLS 是否已赋值
+                     * @return EnableCLS 是否已赋值
+                     */
+                    bool EnableCLSHasBeenSet() const;
+
+                    /**
+                     * 获取CLS日志查看地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CLSUrl CLS日志查看地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCLSUrl() const;
+
+                    /**
+                     * 判断参数 CLSUrl 是否已赋值
+                     * @return CLSUrl 是否已赋值
+                     */
+                    bool CLSUrlHasBeenSet() const;
+
+                    /**
+                     * 获取工作流提示输入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowInput 工作流提示输入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFlowInput() const;
+
+                    /**
+                     * 判断参数 FlowInput 是否已赋值
+                     * @return FlowInput 是否已赋值
+                     */
+                    bool FlowInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -199,6 +241,27 @@ namespace TencentCloud
                      */
                     std::string m_flowServiceChineseName;
                     bool m_flowServiceChineseNameHasBeenSet;
+
+                    /**
+                     * 是否开启日志CLS服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableCLS;
+                    bool m_enableCLSHasBeenSet;
+
+                    /**
+                     * CLS日志查看地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cLSUrl;
+                    bool m_cLSUrlHasBeenSet;
+
+                    /**
+                     * 工作流提示输入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flowInput;
+                    bool m_flowInputHasBeenSet;
 
                 };
             }

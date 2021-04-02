@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加入中节的点数量
-                     * @return Joining 加入中节的点数量
+                     * 获取加入中的节点数量
+                     * @return Joining 加入中的节点数量
                      */
                     int64_t GetJoining() const;
 
                     /**
-                     * 设置加入中节的点数量
-                     * @param Joining 加入中节的点数量
+                     * 设置加入中的节点数量
+                     * @param Joining 加入中的节点数量
                      */
                     void SetJoining(const int64_t& _joining);
 
@@ -121,7 +121,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加入中节的点数量
+                     * 加入中的节点数量
                      */
                     int64_t m_joining;
                     bool m_joiningHasBeenSet;

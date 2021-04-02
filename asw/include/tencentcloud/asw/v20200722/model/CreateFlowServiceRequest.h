@@ -168,6 +168,42 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启CLS日志投递功能
+                     * @return EnableCLS 是否开启CLS日志投递功能
+                     */
+                    bool GetEnableCLS() const;
+
+                    /**
+                     * 设置是否开启CLS日志投递功能
+                     * @param EnableCLS 是否开启CLS日志投递功能
+                     */
+                    void SetEnableCLS(const bool& _enableCLS);
+
+                    /**
+                     * 判断参数 EnableCLS 是否已赋值
+                     * @return EnableCLS 是否已赋值
+                     */
+                    bool EnableCLSHasBeenSet() const;
+
+                    /**
+                     * 获取该状态机的默认输入
+                     * @return Input 该状态机的默认输入
+                     */
+                    std::string GetInput() const;
+
+                    /**
+                     * 设置该状态机的默认输入
+                     * @param Input 该状态机的默认输入
+                     */
+                    void SetInput(const std::string& _input);
+
+                    /**
+                     * 判断参数 Input 是否已赋值
+                     * @return Input 是否已赋值
+                     */
+                    bool InputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +247,18 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 是否开启CLS日志投递功能
+                     */
+                    bool m_enableCLS;
+                    bool m_enableCLSHasBeenSet;
+
+                    /**
+                     * 该状态机的默认输入
+                     */
+                    std::string m_input;
+                    bool m_inputHasBeenSet;
 
                 };
             }

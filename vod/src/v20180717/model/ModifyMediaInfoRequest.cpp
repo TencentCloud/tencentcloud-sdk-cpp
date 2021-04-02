@@ -36,6 +36,9 @@ ModifyMediaInfoRequest::ModifyMediaInfoRequest() :
     m_addTagsHasBeenSet(false),
     m_deleteTagsHasBeenSet(false),
     m_clearTagsHasBeenSet(false),
+    m_addSubtitlesHasBeenSet(false),
+    m_deleteSubtitleIdsHasBeenSet(false),
+    m_clearSubtitlesHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -163,6 +166,42 @@ string ModifyMediaInfoRequest::ToJsonString() const
         string key = "ClearTags";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_clearTags, allocator);
+    }
+
+    if (m_addSubtitlesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AddSubtitles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addSubtitles.begin(); itr != m_addSubtitles.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deleteSubtitleIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeleteSubtitleIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_deleteSubtitleIds.begin(); itr != m_deleteSubtitleIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_clearSubtitlesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClearSubtitles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clearSubtitles, allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -371,6 +410,54 @@ void ModifyMediaInfoRequest::SetClearTags(const int64_t& _clearTags)
 bool ModifyMediaInfoRequest::ClearTagsHasBeenSet() const
 {
     return m_clearTagsHasBeenSet;
+}
+
+vector<MediaSubtitleInput> ModifyMediaInfoRequest::GetAddSubtitles() const
+{
+    return m_addSubtitles;
+}
+
+void ModifyMediaInfoRequest::SetAddSubtitles(const vector<MediaSubtitleInput>& _addSubtitles)
+{
+    m_addSubtitles = _addSubtitles;
+    m_addSubtitlesHasBeenSet = true;
+}
+
+bool ModifyMediaInfoRequest::AddSubtitlesHasBeenSet() const
+{
+    return m_addSubtitlesHasBeenSet;
+}
+
+vector<string> ModifyMediaInfoRequest::GetDeleteSubtitleIds() const
+{
+    return m_deleteSubtitleIds;
+}
+
+void ModifyMediaInfoRequest::SetDeleteSubtitleIds(const vector<string>& _deleteSubtitleIds)
+{
+    m_deleteSubtitleIds = _deleteSubtitleIds;
+    m_deleteSubtitleIdsHasBeenSet = true;
+}
+
+bool ModifyMediaInfoRequest::DeleteSubtitleIdsHasBeenSet() const
+{
+    return m_deleteSubtitleIdsHasBeenSet;
+}
+
+int64_t ModifyMediaInfoRequest::GetClearSubtitles() const
+{
+    return m_clearSubtitles;
+}
+
+void ModifyMediaInfoRequest::SetClearSubtitles(const int64_t& _clearSubtitles)
+{
+    m_clearSubtitles = _clearSubtitles;
+    m_clearSubtitlesHasBeenSet = true;
+}
+
+bool ModifyMediaInfoRequest::ClearSubtitlesHasBeenSet() const
+{
+    return m_clearSubtitlesHasBeenSet;
 }
 
 uint64_t ModifyMediaInfoRequest::GetSubAppId() const

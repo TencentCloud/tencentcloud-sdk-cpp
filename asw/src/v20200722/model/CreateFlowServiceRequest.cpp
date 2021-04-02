@@ -30,7 +30,9 @@ CreateFlowServiceRequest::CreateFlowServiceRequest() :
     m_typeHasBeenSet(false),
     m_flowServiceChineseNameHasBeenSet(false),
     m_roleResourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_enableCLSHasBeenSet(false),
+    m_inputHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,22 @@ string CreateFlowServiceRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCLSHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableCLS";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCLS, allocator);
+    }
+
+    if (m_inputHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Input";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_input.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +233,38 @@ void CreateFlowServiceRequest::SetDescription(const string& _description)
 bool CreateFlowServiceRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+bool CreateFlowServiceRequest::GetEnableCLS() const
+{
+    return m_enableCLS;
+}
+
+void CreateFlowServiceRequest::SetEnableCLS(const bool& _enableCLS)
+{
+    m_enableCLS = _enableCLS;
+    m_enableCLSHasBeenSet = true;
+}
+
+bool CreateFlowServiceRequest::EnableCLSHasBeenSet() const
+{
+    return m_enableCLSHasBeenSet;
+}
+
+string CreateFlowServiceRequest::GetInput() const
+{
+    return m_input;
+}
+
+void CreateFlowServiceRequest::SetInput(const string& _input)
+{
+    m_input = _input;
+    m_inputHasBeenSet = true;
+}
+
+bool CreateFlowServiceRequest::InputHasBeenSet() const
+{
+    return m_inputHasBeenSet;
 }
 
 

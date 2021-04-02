@@ -384,6 +384,49 @@ PartnersClient::DescribeAgentClientsOutcomeCallable PartnersClient::DescribeAgen
     return task->get_future();
 }
 
+PartnersClient::DescribeAgentDealsByCacheOutcome PartnersClient::DescribeAgentDealsByCache(const DescribeAgentDealsByCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentDealsByCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentDealsByCacheResponse rsp = DescribeAgentDealsByCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentDealsByCacheOutcome(rsp);
+        else
+            return DescribeAgentDealsByCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentDealsByCacheOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeAgentDealsByCacheAsync(const DescribeAgentDealsByCacheRequest& request, const DescribeAgentDealsByCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentDealsByCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeAgentDealsByCacheOutcomeCallable PartnersClient::DescribeAgentDealsByCacheCallable(const DescribeAgentDealsByCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentDealsByCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentDealsByCache(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeAgentDealsCacheOutcome PartnersClient::DescribeAgentDealsCache(const DescribeAgentDealsCacheRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgentDealsCache");

@@ -25,6 +25,7 @@
 #include <tencentcloud/faceid/v20180301/model/DetectInfoIdCardData.h>
 #include <tencentcloud/faceid/v20180301/model/DetectInfoBestFrame.h>
 #include <tencentcloud/faceid/v20180301/model/DetectInfoVideoData.h>
+#include <tencentcloud/faceid/v20180301/model/Encryption.h>
 
 
 namespace TencentCloud
@@ -102,6 +103,20 @@ namespace TencentCloud
                      */
                     bool VideoDataHasBeenSet() const;
 
+                    /**
+                     * 获取敏感数据加密信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Encryption 敏感数据加密信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Encryption GetEncryption() const;
+
+                    /**
+                     * 判断参数 Encryption 是否已赋值
+                     * @return Encryption 是否已赋值
+                     */
+                    bool EncryptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -131,6 +146,13 @@ namespace TencentCloud
                      */
                     DetectInfoVideoData m_videoData;
                     bool m_videoDataHasBeenSet;
+
+                    /**
+                     * 敏感数据加密信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Encryption m_encryption;
+                    bool m_encryptionHasBeenSet;
 
                 };
             }

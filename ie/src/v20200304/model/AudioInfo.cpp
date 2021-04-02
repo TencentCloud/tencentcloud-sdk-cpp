@@ -26,7 +26,8 @@ AudioInfo::AudioInfo() :
     m_codecHasBeenSet(false),
     m_channelHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
-    m_denoiseHasBeenSet(false)
+    m_denoiseHasBeenSet(false),
+    m_enableMuteAudioHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,16 @@ CoreInternalOutcome AudioInfo::Deserialize(const Value &value)
         m_denoiseHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableMuteAudio") && !value["EnableMuteAudio"].IsNull())
+    {
+        if (!value["EnableMuteAudio"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `AudioInfo.EnableMuteAudio` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableMuteAudio = value["EnableMuteAudio"].GetInt64();
+        m_enableMuteAudioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +149,14 @@ void AudioInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_denoise.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enableMuteAudioHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableMuteAudio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableMuteAudio, allocator);
     }
 
 }
@@ -221,5 +240,21 @@ void AudioInfo::SetDenoise(const Denoise& _denoise)
 bool AudioInfo::DenoiseHasBeenSet() const
 {
     return m_denoiseHasBeenSet;
+}
+
+int64_t AudioInfo::GetEnableMuteAudio() const
+{
+    return m_enableMuteAudio;
+}
+
+void AudioInfo::SetEnableMuteAudio(const int64_t& _enableMuteAudio)
+{
+    m_enableMuteAudio = _enableMuteAudio;
+    m_enableMuteAudioHasBeenSet = true;
+}
+
+bool AudioInfo::EnableMuteAudioHasBeenSet() const
+{
+    return m_enableMuteAudioHasBeenSet;
 }
 

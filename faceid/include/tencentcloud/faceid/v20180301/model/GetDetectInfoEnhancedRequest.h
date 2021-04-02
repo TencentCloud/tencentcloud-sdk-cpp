@@ -158,6 +158,24 @@ namespace TencentCloud
                      */
                     bool IsNeedIdCardAvatarHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     * @return IsEncrypt 是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     */
+                    bool GetIsEncrypt() const;
+
+                    /**
+                     * 设置是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     * @param IsEncrypt 是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     */
+                    void SetIsEncrypt(const bool& _isEncrypt);
+
+                    /**
+                     * 判断参数 IsEncrypt 是否已赋值
+                     * @return IsEncrypt 是否已赋值
+                     */
+                    bool IsEncryptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +215,12 @@ namespace TencentCloud
                      */
                     bool m_isNeedIdCardAvatar;
                     bool m_isNeedIdCardAvatarHasBeenSet;
+
+                    /**
+                     * 是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     */
+                    bool m_isEncrypt;
+                    bool m_isEncryptHasBeenSet;
 
                 };
             }

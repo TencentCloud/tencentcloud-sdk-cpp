@@ -39,6 +39,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentClientGradeResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentClientsRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentClientsResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentDealsCacheRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentDealsCacheResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsRequest.h>
@@ -95,6 +97,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAgentClientsResponse> DescribeAgentClientsOutcome;
                 typedef std::future<DescribeAgentClientsOutcome> DescribeAgentClientsOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentClientsRequest&, DescribeAgentClientsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentClientsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAgentDealsByCacheResponse> DescribeAgentDealsByCacheOutcome;
+                typedef std::future<DescribeAgentDealsByCacheOutcome> DescribeAgentDealsByCacheOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeAgentDealsByCacheRequest&, DescribeAgentDealsByCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentDealsByCacheAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAgentDealsCacheResponse> DescribeAgentDealsCacheOutcome;
                 typedef std::future<DescribeAgentDealsCacheOutcome> DescribeAgentDealsCacheOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentDealsCacheRequest&, DescribeAgentDealsCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentDealsCacheAsyncHandler;
@@ -199,6 +204,16 @@ namespace TencentCloud
 
                 /**
                  *供超大型代理商（代客数量>=3000 ）拉取缓存的全量客户订单。
+                 * @param req DescribeAgentDealsByCacheRequest
+                 * @return DescribeAgentDealsByCacheOutcome
+                 */
+                DescribeAgentDealsByCacheOutcome DescribeAgentDealsByCache(const Model::DescribeAgentDealsByCacheRequest &request);
+                void DescribeAgentDealsByCacheAsync(const Model::DescribeAgentDealsByCacheRequest& request, const DescribeAgentDealsByCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentDealsByCacheOutcomeCallable DescribeAgentDealsByCacheCallable(const Model::DescribeAgentDealsByCacheRequest& request);
+
+                /**
+                 *【该接口将逐步下线，请切换使用升级版本DescribeAgentDealsByCache】供超大型代理商（代客数量>=3000 ）拉取缓存的全量客户订单。
+
                  * @param req DescribeAgentDealsCacheRequest
                  * @return DescribeAgentDealsCacheOutcome
                  */

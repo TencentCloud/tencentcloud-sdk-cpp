@@ -39,6 +39,7 @@ SearchMediaRequest::SearchMediaRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_storageRegionsHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_textHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
@@ -228,6 +229,19 @@ string SearchMediaRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_storageRegionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StorageRegions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_storageRegions.begin(); itr != m_storageRegions.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -535,6 +549,22 @@ void SearchMediaRequest::SetFilters(const vector<string>& _filters)
 bool SearchMediaRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<string> SearchMediaRequest::GetStorageRegions() const
+{
+    return m_storageRegions;
+}
+
+void SearchMediaRequest::SetStorageRegions(const vector<string>& _storageRegions)
+{
+    m_storageRegions = _storageRegions;
+    m_storageRegionsHasBeenSet = true;
+}
+
+bool SearchMediaRequest::StorageRegionsHasBeenSet() const
+{
+    return m_storageRegionsHasBeenSet;
 }
 
 uint64_t SearchMediaRequest::GetSubAppId() const

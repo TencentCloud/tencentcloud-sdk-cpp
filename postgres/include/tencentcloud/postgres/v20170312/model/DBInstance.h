@@ -622,6 +622,28 @@ namespace TencentCloud
                      */
                     bool StatusInReadonlyGroupHasBeenSet() const;
 
+                    /**
+                     * 获取下线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OfflineTime 下线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOfflineTime() const;
+
+                    /**
+                     * 设置下线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OfflineTime 下线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOfflineTime(const std::string& _offlineTime);
+
+                    /**
+                     * 判断参数 OfflineTime 是否已赋值
+                     * @return OfflineTime 是否已赋值
+                     */
+                    bool OfflineTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -813,6 +835,13 @@ namespace TencentCloud
                      */
                     std::string m_statusInReadonlyGroup;
                     bool m_statusInReadonlyGroupHasBeenSet;
+
+                    /**
+                     * 下线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_offlineTime;
+                    bool m_offlineTimeHasBeenSet;
 
                 };
             }

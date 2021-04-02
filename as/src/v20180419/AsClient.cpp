@@ -83,6 +83,49 @@ AsClient::AttachInstancesOutcomeCallable AsClient::AttachInstancesCallable(const
     return task->get_future();
 }
 
+AsClient::ClearLaunchConfigurationAttributesOutcome AsClient::ClearLaunchConfigurationAttributes(const ClearLaunchConfigurationAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ClearLaunchConfigurationAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ClearLaunchConfigurationAttributesResponse rsp = ClearLaunchConfigurationAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ClearLaunchConfigurationAttributesOutcome(rsp);
+        else
+            return ClearLaunchConfigurationAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ClearLaunchConfigurationAttributesOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::ClearLaunchConfigurationAttributesAsync(const ClearLaunchConfigurationAttributesRequest& request, const ClearLaunchConfigurationAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ClearLaunchConfigurationAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::ClearLaunchConfigurationAttributesOutcomeCallable AsClient::ClearLaunchConfigurationAttributesCallable(const ClearLaunchConfigurationAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ClearLaunchConfigurationAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->ClearLaunchConfigurationAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::CompleteLifecycleActionOutcome AsClient::CompleteLifecycleAction(const CompleteLifecycleActionRequest &request)
 {
     auto outcome = MakeRequest(request, "CompleteLifecycleAction");

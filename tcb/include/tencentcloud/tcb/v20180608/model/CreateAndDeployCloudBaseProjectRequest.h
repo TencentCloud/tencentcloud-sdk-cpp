@@ -242,6 +242,42 @@ namespace TencentCloud
                      */
                     bool FreeQuotaHasBeenSet() const;
 
+                    /**
+                     * 获取是否代码变更触发自动部署
+                     * @return AutoDeployOnCodeChange 是否代码变更触发自动部署
+                     */
+                    bool GetAutoDeployOnCodeChange() const;
+
+                    /**
+                     * 设置是否代码变更触发自动部署
+                     * @param AutoDeployOnCodeChange 是否代码变更触发自动部署
+                     */
+                    void SetAutoDeployOnCodeChange(const bool& _autoDeployOnCodeChange);
+
+                    /**
+                     * 判断参数 AutoDeployOnCodeChange 是否已赋值
+                     * @return AutoDeployOnCodeChange 是否已赋值
+                     */
+                    bool AutoDeployOnCodeChangeHasBeenSet() const;
+
+                    /**
+                     * 获取私有仓库地址
+                     * @return RepoUrl 私有仓库地址
+                     */
+                    std::string GetRepoUrl() const;
+
+                    /**
+                     * 设置私有仓库地址
+                     * @param RepoUrl 私有仓库地址
+                     */
+                    void SetRepoUrl(const std::string& _repoUrl);
+
+                    /**
+                     * 判断参数 RepoUrl 是否已赋值
+                     * @return RepoUrl 是否已赋值
+                     */
+                    bool RepoUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +345,18 @@ namespace TencentCloud
                      */
                     std::string m_freeQuota;
                     bool m_freeQuotaHasBeenSet;
+
+                    /**
+                     * 是否代码变更触发自动部署
+                     */
+                    bool m_autoDeployOnCodeChange;
+                    bool m_autoDeployOnCodeChangeHasBeenSet;
+
+                    /**
+                     * 私有仓库地址
+                     */
+                    std::string m_repoUrl;
+                    bool m_repoUrlHasBeenSet;
 
                 };
             }

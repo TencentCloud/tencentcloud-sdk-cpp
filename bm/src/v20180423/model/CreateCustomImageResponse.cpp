@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 CreateCustomImageResponse::CreateCustomImageResponse() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_imageIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CreateCustomImageResponse::Deserialize(const string &payload
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageId") && !rsp["ImageId"].IsNull())
+    {
+        if (!rsp["ImageId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageId = string(rsp["ImageId"].GetString());
+        m_imageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ uint64_t CreateCustomImageResponse::GetTaskId() const
 bool CreateCustomImageResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string CreateCustomImageResponse::GetImageId() const
+{
+    return m_imageId;
+}
+
+bool CreateCustomImageResponse::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
 }
 
 

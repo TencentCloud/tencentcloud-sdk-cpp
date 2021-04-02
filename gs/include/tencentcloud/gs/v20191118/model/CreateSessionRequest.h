@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool GameIdHasBeenSet() const;
 
                     /**
-                     * 获取游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等
-                     * @return GameRegion 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等
+                     * 获取【已废弃】只在TrylockWorker时生效
+                     * @return GameRegion 【已废弃】只在TrylockWorker时生效
                      */
                     std::string GetGameRegion() const;
 
                     /**
-                     * 设置游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等
-                     * @param GameRegion 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等
+                     * 设置【已废弃】只在TrylockWorker时生效
+                     * @param GameRegion 【已废弃】只在TrylockWorker时生效
                      */
                     void SetGameRegion(const std::string& _gameRegion);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool GameParasHasBeenSet() const;
 
                     /**
-                     * 获取分辨率,，可设置为1080p或720p
-                     * @return Resolution 分辨率,，可设置为1080p或720p
+                     * 获取分辨率,，可设置为1080p或720p或1920x1080格式
+                     * @return Resolution 分辨率,，可设置为1080p或720p或1920x1080格式
                      */
                     std::string GetResolution() const;
 
                     /**
-                     * 设置分辨率,，可设置为1080p或720p
-                     * @param Resolution 分辨率,，可设置为1080p或720p
+                     * 设置分辨率,，可设置为1080p或720p或1920x1080格式
+                     * @param Resolution 分辨率,，可设置为1080p或720p或1920x1080格式
                      */
                     void SetResolution(const std::string& _resolution);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取【废弃】资源池编号
-                     * @return SetNo 【废弃】资源池编号
+                     * 获取【已废弃】
+                     * @return SetNo 【已废弃】
                      */
                     uint64_t GetSetNo() const;
 
                     /**
-                     * 设置【废弃】资源池编号
-                     * @param SetNo 【废弃】资源池编号
+                     * 设置【已废弃】
+                     * @param SetNo 【已废弃】
                      */
                     void SetSetNo(const uint64_t& _setNo);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool SetNoHasBeenSet() const;
 
                     /**
-                     * 获取单位Mbps，固定码率，后端不动态调整(MaxBitrate和MinBitrate将无效)
-                     * @return Bitrate 单位Mbps，固定码率，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * 获取单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * @return Bitrate 单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
                      */
                     uint64_t GetBitrate() const;
 
                     /**
-                     * 设置单位Mbps，固定码率，后端不动态调整(MaxBitrate和MinBitrate将无效)
-                     * @param Bitrate 单位Mbps，固定码率，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * 设置单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * @param Bitrate 单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
                      */
                     void SetBitrate(const uint64_t& _bitrate);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取单位Mbps，动态调整最大码率
-                     * @return MaxBitrate 单位Mbps，动态调整最大码率
+                     * 获取单位Mbps，动态调整最大码率，有一定浮动范围
+                     * @return MaxBitrate 单位Mbps，动态调整最大码率，有一定浮动范围
                      */
                     uint64_t GetMaxBitrate() const;
 
                     /**
-                     * 设置单位Mbps，动态调整最大码率
-                     * @param MaxBitrate 单位Mbps，动态调整最大码率
+                     * 设置单位Mbps，动态调整最大码率，有一定浮动范围
+                     * @param MaxBitrate 单位Mbps，动态调整最大码率，有一定浮动范围
                      */
                     void SetMaxBitrate(const uint64_t& _maxBitrate);
 
@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool MaxBitrateHasBeenSet() const;
 
                     /**
-                     * 获取单位Mbps，动态调整最小码率
-                     * @return MinBitrate 单位Mbps，动态调整最小码率
+                     * 获取单位Mbps，动态调整最小码率，有一定浮动范围
+                     * @return MinBitrate 单位Mbps，动态调整最小码率，有一定浮动范围
                      */
                     uint64_t GetMinBitrate() const;
 
                     /**
-                     * 设置单位Mbps，动态调整最小码率
-                     * @param MinBitrate 单位Mbps，动态调整最小码率
+                     * 设置单位Mbps，动态调整最小码率，有一定浮动范围
+                     * @param MinBitrate 单位Mbps，动态调整最小码率，有一定浮动范围
                      */
                     void SetMinBitrate(const uint64_t& _minBitrate);
 
@@ -259,14 +259,14 @@ namespace TencentCloud
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取游戏用户IP，用于就近调度，例如125.127.178.228
-                     * @return UserIp 游戏用户IP，用于就近调度，例如125.127.178.228
+                     * 获取【已废弃】只在TrylockWorker时生效
+                     * @return UserIp 【已废弃】只在TrylockWorker时生效
                      */
                     std::string GetUserIp() const;
 
                     /**
-                     * 设置游戏用户IP，用于就近调度，例如125.127.178.228
-                     * @param UserIp 游戏用户IP，用于就近调度，例如125.127.178.228
+                     * 设置【已废弃】只在TrylockWorker时生效
+                     * @param UserIp 【已废弃】只在TrylockWorker时生效
                      */
                     void SetUserIp(const std::string& _userIp);
 
@@ -277,14 +277,14 @@ namespace TencentCloud
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取优化项，便于客户灰度开启新的优化项，默认为0
-                     * @return Optimization 优化项，便于客户灰度开启新的优化项，默认为0
+                     * 获取【已废弃】优化项，便于客户灰度开启新的优化项，默认为0
+                     * @return Optimization 【已废弃】优化项，便于客户灰度开启新的优化项，默认为0
                      */
                     uint64_t GetOptimization() const;
 
                     /**
-                     * 设置优化项，便于客户灰度开启新的优化项，默认为0
-                     * @param Optimization 优化项，便于客户灰度开启新的优化项，默认为0
+                     * 设置【已废弃】优化项，便于客户灰度开启新的优化项，默认为0
+                     * @param Optimization 【已废弃】优化项，便于客户灰度开启新的优化项，默认为0
                      */
                     void SetOptimization(const uint64_t& _optimization);
 
@@ -295,14 +295,14 @@ namespace TencentCloud
                     bool OptimizationHasBeenSet() const;
 
                     /**
-                     * 获取【多人云游】游戏主机用户ID
-                     * @return HostUserId 【多人云游】游戏主机用户ID
+                     * 获取【互动云游】游戏主机用户ID
+                     * @return HostUserId 【互动云游】游戏主机用户ID
                      */
                     std::string GetHostUserId() const;
 
                     /**
-                     * 设置【多人云游】游戏主机用户ID
-                     * @param HostUserId 【多人云游】游戏主机用户ID
+                     * 设置【互动云游】游戏主机用户ID
+                     * @param HostUserId 【互动云游】游戏主机用户ID
                      */
                     void SetHostUserId(const std::string& _hostUserId);
 
@@ -313,14 +313,14 @@ namespace TencentCloud
                     bool HostUserIdHasBeenSet() const;
 
                     /**
-                     * 获取【多人云游】角色；Player表示玩家；Viewer表示观察者
-                     * @return Role 【多人云游】角色；Player表示玩家；Viewer表示观察者
+                     * 获取【互动云游】角色；Player表示玩家；Viewer表示观察者
+                     * @return Role 【互动云游】角色；Player表示玩家；Viewer表示观察者
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置【多人云游】角色；Player表示玩家；Viewer表示观察者
-                     * @param Role 【多人云游】角色；Player表示玩家；Viewer表示观察者
+                     * 设置【互动云游】角色；Player表示玩家；Viewer表示观察者
+                     * @param Role 【互动云游】角色；Player表示玩家；Viewer表示观察者
                      */
                     void SetRole(const std::string& _role);
 
@@ -369,7 +369,7 @@ namespace TencentCloud
                     bool m_gameIdHasBeenSet;
 
                     /**
-                     * 游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等
+                     * 【已废弃】只在TrylockWorker时生效
                      */
                     std::string m_gameRegion;
                     bool m_gameRegionHasBeenSet;
@@ -381,7 +381,7 @@ namespace TencentCloud
                     bool m_gameParasHasBeenSet;
 
                     /**
-                     * 分辨率,，可设置为1080p或720p
+                     * 分辨率,，可设置为1080p或720p或1920x1080格式
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
@@ -393,25 +393,25 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 【废弃】资源池编号
+                     * 【已废弃】
                      */
                     uint64_t m_setNo;
                     bool m_setNoHasBeenSet;
 
                     /**
-                     * 单位Mbps，固定码率，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * 单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
                      */
                     uint64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * 单位Mbps，动态调整最大码率
+                     * 单位Mbps，动态调整最大码率，有一定浮动范围
                      */
                     uint64_t m_maxBitrate;
                     bool m_maxBitrateHasBeenSet;
 
                     /**
-                     * 单位Mbps，动态调整最小码率
+                     * 单位Mbps，动态调整最小码率，有一定浮动范围
                      */
                     uint64_t m_minBitrate;
                     bool m_minBitrateHasBeenSet;
@@ -423,25 +423,25 @@ namespace TencentCloud
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 游戏用户IP，用于就近调度，例如125.127.178.228
+                     * 【已废弃】只在TrylockWorker时生效
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * 优化项，便于客户灰度开启新的优化项，默认为0
+                     * 【已废弃】优化项，便于客户灰度开启新的优化项，默认为0
                      */
                     uint64_t m_optimization;
                     bool m_optimizationHasBeenSet;
 
                     /**
-                     * 【多人云游】游戏主机用户ID
+                     * 【互动云游】游戏主机用户ID
                      */
                     std::string m_hostUserId;
                     bool m_hostUserIdHasBeenSet;
 
                     /**
-                     * 【多人云游】角色；Player表示玩家；Viewer表示观察者
+                     * 【互动云游】角色；Player表示玩家；Viewer表示观察者
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
