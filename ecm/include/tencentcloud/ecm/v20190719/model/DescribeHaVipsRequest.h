@@ -96,14 +96,14 @@ subnet-id - String - HAVIP所在子网ID。
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量。
-                     * @return Offset 偏移量。
+                     * 获取偏移量，默认值是0。
+                     * @return Offset 偏移量，默认值是0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * 设置偏移量，默认值是0。
+                     * @param Offset 偏移量，默认值是0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -114,14 +114,14 @@ subnet-id - String - HAVIP所在子网ID。
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量。
-                     * @return Limit 返回数量。
+                     * 获取返回数量，默认值是20，最大是100。
+                     * @return Limit 返回数量，默认值是20，最大是100。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量。
-                     * @param Limit 返回数量。
+                     * 设置返回数量，默认值是20，最大是100。
+                     * @param Limit 返回数量，默认值是20，最大是100。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -168,13 +168,13 @@ subnet-id - String - HAVIP所在子网ID。
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量。
+                     * 偏移量，默认值是0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量。
+                     * 返回数量，默认值是20，最大是100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

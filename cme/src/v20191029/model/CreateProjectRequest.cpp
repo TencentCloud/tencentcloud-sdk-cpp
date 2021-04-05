@@ -33,7 +33,8 @@ CreateProjectRequest::CreateProjectRequest() :
     m_switcherProjectInputHasBeenSet(false),
     m_liveStreamClipProjectInputHasBeenSet(false),
     m_videoEditProjectInputHasBeenSet(false),
-    m_videoSegmentationProjectInputHasBeenSet(false)
+    m_videoSegmentationProjectInputHasBeenSet(false),
+    m_streamConnectProjectInputHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,15 @@ string CreateProjectRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_videoSegmentationProjectInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_streamConnectProjectInputHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StreamConnectProjectInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_streamConnectProjectInput.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -295,6 +305,22 @@ void CreateProjectRequest::SetVideoSegmentationProjectInput(const VideoSegmentat
 bool CreateProjectRequest::VideoSegmentationProjectInputHasBeenSet() const
 {
     return m_videoSegmentationProjectInputHasBeenSet;
+}
+
+StreamConnectProjectInput CreateProjectRequest::GetStreamConnectProjectInput() const
+{
+    return m_streamConnectProjectInput;
+}
+
+void CreateProjectRequest::SetStreamConnectProjectInput(const StreamConnectProjectInput& _streamConnectProjectInput)
+{
+    m_streamConnectProjectInput = _streamConnectProjectInput;
+    m_streamConnectProjectInputHasBeenSet = true;
+}
+
+bool CreateProjectRequest::StreamConnectProjectInputHasBeenSet() const
+{
+    return m_streamConnectProjectInputHasBeenSet;
 }
 
 

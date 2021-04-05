@@ -25,7 +25,8 @@ MediaTrackItem::MediaTrackItem() :
     m_typeHasBeenSet(false),
     m_videoItemHasBeenSet(false),
     m_audioItemHasBeenSet(false),
-    m_emptyItemHasBeenSet(false)
+    m_emptyItemHasBeenSet(false),
+    m_transitionItemHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,23 @@ CoreInternalOutcome MediaTrackItem::Deserialize(const Value &value)
         m_emptyItemHasBeenSet = true;
     }
 
+    if (value.HasMember("TransitionItem") && !value["TransitionItem"].IsNull())
+    {
+        if (!value["TransitionItem"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MediaTrackItem.TransitionItem` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_transitionItem.Deserialize(value["TransitionItem"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_transitionItemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -135,6 +153,15 @@ void MediaTrackItem::ToJsonObject(Value &value, Document::AllocatorType& allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_emptyItem.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_transitionItemHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TransitionItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_transitionItem.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -202,5 +229,21 @@ void MediaTrackItem::SetEmptyItem(const EmptyTrackItem& _emptyItem)
 bool MediaTrackItem::EmptyItemHasBeenSet() const
 {
     return m_emptyItemHasBeenSet;
+}
+
+MediaTransitionItem MediaTrackItem::GetTransitionItem() const
+{
+    return m_transitionItem;
+}
+
+void MediaTrackItem::SetTransitionItem(const MediaTransitionItem& _transitionItem)
+{
+    m_transitionItem = _transitionItem;
+    m_transitionItemHasBeenSet = true;
+}
+
+bool MediaTrackItem::TransitionItemHasBeenSet() const
+{
+    return m_transitionItemHasBeenSet;
 }
 

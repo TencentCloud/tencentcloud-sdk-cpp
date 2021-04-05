@@ -27,6 +27,7 @@
 #include <tencentcloud/cme/v20191029/model/VideoTrackItem.h>
 #include <tencentcloud/cme/v20191029/model/AudioTrackItem.h>
 #include <tencentcloud/cme/v20191029/model/EmptyTrackItem.h>
+#include <tencentcloud/cme/v20191029/model/MediaTransitionItem.h>
 
 
 namespace TencentCloud
@@ -51,25 +52,29 @@ namespace TencentCloud
 
                     /**
                      * 获取片段类型。取值有：
-<li>Video：视频片段。</li>
-<li>Audio：音频片段。</li>
-<li>Empty：空白片段。</li>
+<li>Video：视频片段；</li>
+<li>Audio：音频片段；</li>
+<li>Empty：空白片段；</li>
+<li>Transition：转场。</li>
                      * @return Type 片段类型。取值有：
-<li>Video：视频片段。</li>
-<li>Audio：音频片段。</li>
-<li>Empty：空白片段。</li>
+<li>Video：视频片段；</li>
+<li>Audio：音频片段；</li>
+<li>Empty：空白片段；</li>
+<li>Transition：转场。</li>
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置片段类型。取值有：
-<li>Video：视频片段。</li>
-<li>Audio：音频片段。</li>
-<li>Empty：空白片段。</li>
+<li>Video：视频片段；</li>
+<li>Audio：音频片段；</li>
+<li>Empty：空白片段；</li>
+<li>Transition：转场。</li>
                      * @param Type 片段类型。取值有：
-<li>Video：视频片段。</li>
-<li>Audio：音频片段。</li>
-<li>Empty：空白片段。</li>
+<li>Video：视频片段；</li>
+<li>Audio：音频片段；</li>
+<li>Empty：空白片段；</li>
+<li>Transition：转场。</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -137,13 +142,32 @@ namespace TencentCloud
                      */
                     bool EmptyItemHasBeenSet() const;
 
+                    /**
+                     * 获取转场，当 Type = Transition 时有效。
+                     * @return TransitionItem 转场，当 Type = Transition 时有效。
+                     */
+                    MediaTransitionItem GetTransitionItem() const;
+
+                    /**
+                     * 设置转场，当 Type = Transition 时有效。
+                     * @param TransitionItem 转场，当 Type = Transition 时有效。
+                     */
+                    void SetTransitionItem(const MediaTransitionItem& _transitionItem);
+
+                    /**
+                     * 判断参数 TransitionItem 是否已赋值
+                     * @return TransitionItem 是否已赋值
+                     */
+                    bool TransitionItemHasBeenSet() const;
+
                 private:
 
                     /**
                      * 片段类型。取值有：
-<li>Video：视频片段。</li>
-<li>Audio：音频片段。</li>
-<li>Empty：空白片段。</li>
+<li>Video：视频片段；</li>
+<li>Audio：音频片段；</li>
+<li>Empty：空白片段；</li>
+<li>Transition：转场。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -166,6 +190,12 @@ namespace TencentCloud
                      */
                     EmptyTrackItem m_emptyItem;
                     bool m_emptyItemHasBeenSet;
+
+                    /**
+                     * 转场，当 Type = Transition 时有效。
+                     */
+                    MediaTransitionItem m_transitionItem;
+                    bool m_transitionItemHasBeenSet;
 
                 };
             }

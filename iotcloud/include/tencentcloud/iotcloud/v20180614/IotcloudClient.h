@@ -61,6 +61,10 @@
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceClientKeyRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceClientKeyResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceResourceRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceResourceResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceResourcesRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceResourcesResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceShadowRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceShadowResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDevicesRequest.h>
@@ -83,12 +87,20 @@
 #include <tencentcloud/iotcloud/v20180614/model/DescribeMultiDevTaskResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeMultiDevicesRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeMultiDevicesResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeProductResourceRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeProductResourceResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeProductResourcesRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeProductResourcesResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeProductTaskRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeProductTaskResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeProductTasksRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeProductTasksResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeProductsRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeProductsResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribePushResourceTaskStatisticsRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribePushResourceTaskStatisticsResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeResourceTasksRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeResourceTasksResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeTaskRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeTaskResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeTasksRequest.h>
@@ -99,6 +111,8 @@
 #include <tencentcloud/iotcloud/v20180614/model/EditFirmwareResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/EnableTopicRuleRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/EnableTopicRuleResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/GetUserResourceInfoRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/GetUserResourceInfoResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishAsDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishAsDeviceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishBroadcastMessageRequest.h>
@@ -196,6 +210,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDeviceClientKeyResponse> DescribeDeviceClientKeyOutcome;
                 typedef std::future<DescribeDeviceClientKeyOutcome> DescribeDeviceClientKeyOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeDeviceClientKeyRequest&, DescribeDeviceClientKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceClientKeyAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDeviceResourceResponse> DescribeDeviceResourceOutcome;
+                typedef std::future<DescribeDeviceResourceOutcome> DescribeDeviceResourceOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeDeviceResourceRequest&, DescribeDeviceResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceResourceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDeviceResourcesResponse> DescribeDeviceResourcesOutcome;
+                typedef std::future<DescribeDeviceResourcesOutcome> DescribeDeviceResourcesOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeDeviceResourcesRequest&, DescribeDeviceResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceResourcesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDeviceShadowResponse> DescribeDeviceShadowOutcome;
                 typedef std::future<DescribeDeviceShadowOutcome> DescribeDeviceShadowOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeDeviceShadowRequest&, DescribeDeviceShadowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceShadowAsyncHandler;
@@ -229,6 +249,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeMultiDevicesResponse> DescribeMultiDevicesOutcome;
                 typedef std::future<DescribeMultiDevicesOutcome> DescribeMultiDevicesOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeMultiDevicesRequest&, DescribeMultiDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiDevicesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeProductResourceResponse> DescribeProductResourceOutcome;
+                typedef std::future<DescribeProductResourceOutcome> DescribeProductResourceOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeProductResourceRequest&, DescribeProductResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductResourceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeProductResourcesResponse> DescribeProductResourcesOutcome;
+                typedef std::future<DescribeProductResourcesOutcome> DescribeProductResourcesOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeProductResourcesRequest&, DescribeProductResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductResourcesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeProductTaskResponse> DescribeProductTaskOutcome;
                 typedef std::future<DescribeProductTaskOutcome> DescribeProductTaskOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeProductTaskRequest&, DescribeProductTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductTaskAsyncHandler;
@@ -238,6 +264,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeProductsResponse> DescribeProductsOutcome;
                 typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeProductsRequest&, DescribeProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePushResourceTaskStatisticsResponse> DescribePushResourceTaskStatisticsOutcome;
+                typedef std::future<DescribePushResourceTaskStatisticsOutcome> DescribePushResourceTaskStatisticsOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribePushResourceTaskStatisticsRequest&, DescribePushResourceTaskStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePushResourceTaskStatisticsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeResourceTasksResponse> DescribeResourceTasksOutcome;
+                typedef std::future<DescribeResourceTasksOutcome> DescribeResourceTasksOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeResourceTasksRequest&, DescribeResourceTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceTasksAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTaskResponse> DescribeTaskOutcome;
                 typedef std::future<DescribeTaskOutcome> DescribeTaskOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeTaskRequest&, DescribeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskAsyncHandler;
@@ -253,6 +285,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EnableTopicRuleResponse> EnableTopicRuleOutcome;
                 typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::EnableTopicRuleRequest&, EnableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTopicRuleAsyncHandler;
+                typedef Outcome<Error, Model::GetUserResourceInfoResponse> GetUserResourceInfoOutcome;
+                typedef std::future<GetUserResourceInfoOutcome> GetUserResourceInfoOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::GetUserResourceInfoRequest&, GetUserResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserResourceInfoAsyncHandler;
                 typedef Outcome<Error, Model::PublishAsDeviceResponse> PublishAsDeviceOutcome;
                 typedef std::future<PublishAsDeviceOutcome> PublishAsDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::PublishAsDeviceRequest&, PublishAsDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishAsDeviceAsyncHandler;
@@ -467,6 +502,24 @@ namespace TencentCloud
                 DescribeDeviceClientKeyOutcomeCallable DescribeDeviceClientKeyCallable(const Model::DescribeDeviceClientKeyRequest& request);
 
                 /**
+                 *本接口（DescribeDeviceResource）用于查询设备资源详情。 
+                 * @param req DescribeDeviceResourceRequest
+                 * @return DescribeDeviceResourceOutcome
+                 */
+                DescribeDeviceResourceOutcome DescribeDeviceResource(const Model::DescribeDeviceResourceRequest &request);
+                void DescribeDeviceResourceAsync(const Model::DescribeDeviceResourceRequest& request, const DescribeDeviceResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceResourceOutcomeCallable DescribeDeviceResourceCallable(const Model::DescribeDeviceResourceRequest& request);
+
+                /**
+                 *本接口（DescribeDeviceResources）用于查询设备资源列表。 
+                 * @param req DescribeDeviceResourcesRequest
+                 * @return DescribeDeviceResourcesOutcome
+                 */
+                DescribeDeviceResourcesOutcome DescribeDeviceResources(const Model::DescribeDeviceResourcesRequest &request);
+                void DescribeDeviceResourcesAsync(const Model::DescribeDeviceResourcesRequest& request, const DescribeDeviceResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceResourcesOutcomeCallable DescribeDeviceResourcesCallable(const Model::DescribeDeviceResourcesRequest& request);
+
+                /**
                  *本接口（DescribeDeviceShadow）用于查询虚拟设备信息。 
                  * @param req DescribeDeviceShadowRequest
                  * @return DescribeDeviceShadowOutcome
@@ -566,6 +619,24 @@ namespace TencentCloud
                 DescribeMultiDevicesOutcomeCallable DescribeMultiDevicesCallable(const Model::DescribeMultiDevicesRequest& request);
 
                 /**
+                 *本接口（DescribeProductResource）用于查询产品资源详情。 
+                 * @param req DescribeProductResourceRequest
+                 * @return DescribeProductResourceOutcome
+                 */
+                DescribeProductResourceOutcome DescribeProductResource(const Model::DescribeProductResourceRequest &request);
+                void DescribeProductResourceAsync(const Model::DescribeProductResourceRequest& request, const DescribeProductResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductResourceOutcomeCallable DescribeProductResourceCallable(const Model::DescribeProductResourceRequest& request);
+
+                /**
+                 *本接口（DescribeProductResources）用于查询产品资源列表。 
+                 * @param req DescribeProductResourcesRequest
+                 * @return DescribeProductResourcesOutcome
+                 */
+                DescribeProductResourcesOutcome DescribeProductResources(const Model::DescribeProductResourcesRequest &request);
+                void DescribeProductResourcesAsync(const Model::DescribeProductResourcesRequest& request, const DescribeProductResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductResourcesOutcomeCallable DescribeProductResourcesCallable(const Model::DescribeProductResourcesRequest& request);
+
+                /**
                  *本接口（DescribeProductTask）用于查看产品级别的任务信息
                  * @param req DescribeProductTaskRequest
                  * @return DescribeProductTaskOutcome
@@ -591,6 +662,24 @@ namespace TencentCloud
                 DescribeProductsOutcome DescribeProducts(const Model::DescribeProductsRequest &request);
                 void DescribeProductsAsync(const Model::DescribeProductsRequest& request, const DescribeProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request);
+
+                /**
+                 *查询推送资源任务统计信息
+                 * @param req DescribePushResourceTaskStatisticsRequest
+                 * @return DescribePushResourceTaskStatisticsOutcome
+                 */
+                DescribePushResourceTaskStatisticsOutcome DescribePushResourceTaskStatistics(const Model::DescribePushResourceTaskStatisticsRequest &request);
+                void DescribePushResourceTaskStatisticsAsync(const Model::DescribePushResourceTaskStatisticsRequest& request, const DescribePushResourceTaskStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePushResourceTaskStatisticsOutcomeCallable DescribePushResourceTaskStatisticsCallable(const Model::DescribePushResourceTaskStatisticsRequest& request);
+
+                /**
+                 *查询资源推送任务列表
+                 * @param req DescribeResourceTasksRequest
+                 * @return DescribeResourceTasksOutcome
+                 */
+                DescribeResourceTasksOutcome DescribeResourceTasks(const Model::DescribeResourceTasksRequest &request);
+                void DescribeResourceTasksAsync(const Model::DescribeResourceTasksRequest& request, const DescribeResourceTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceTasksOutcomeCallable DescribeResourceTasksCallable(const Model::DescribeResourceTasksRequest& request);
 
                 /**
                  *本接口（DescribeTask）用于查询一个已创建任务的详情，任务保留一个月 
@@ -636,6 +725,15 @@ namespace TencentCloud
                 EnableTopicRuleOutcome EnableTopicRule(const Model::EnableTopicRuleRequest &request);
                 void EnableTopicRuleAsync(const Model::EnableTopicRuleRequest& request, const EnableTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableTopicRuleOutcomeCallable EnableTopicRuleCallable(const Model::EnableTopicRuleRequest& request);
+
+                /**
+                 *本接口（GetUserResourceInfo）用于查询用户资源使用信息。
+                 * @param req GetUserResourceInfoRequest
+                 * @return GetUserResourceInfoOutcome
+                 */
+                GetUserResourceInfoOutcome GetUserResourceInfo(const Model::GetUserResourceInfoRequest &request);
+                void GetUserResourceInfoAsync(const Model::GetUserResourceInfoRequest& request, const GetUserResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetUserResourceInfoOutcomeCallable GetUserResourceInfoCallable(const Model::GetUserResourceInfoRequest& request);
 
                 /**
                  *模拟lora类型的设备端向服务器端发送消息

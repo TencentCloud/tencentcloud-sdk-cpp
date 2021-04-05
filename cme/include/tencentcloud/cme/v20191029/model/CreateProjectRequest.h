@@ -26,6 +26,7 @@
 #include <tencentcloud/cme/v20191029/model/LiveStreamClipProjectInput.h>
 #include <tencentcloud/cme/v20191029/model/VideoEditProjectInput.h>
 #include <tencentcloud/cme/v20191029/model/VideoSegmentationProjectInput.h>
+#include <tencentcloud/cme/v20191029/model/StreamConnectProjectInput.h>
 
 
 namespace TencentCloud
@@ -70,10 +71,12 @@ namespace TencentCloud
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
+<li>STREAM_CONNECT：云转推。</li>
                      * @return Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
+<li>STREAM_CONNECT：云转推。</li>
                      */
                     std::string GetCategory() const;
 
@@ -82,10 +85,12 @@ namespace TencentCloud
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
+<li>STREAM_CONNECT：云转推。</li>
                      * @param Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
+<li>STREAM_CONNECT：云转推。</li>
                      */
                     void SetCategory(const std::string& _category);
 
@@ -243,6 +248,24 @@ namespace TencentCloud
                      */
                     bool VideoSegmentationProjectInputHasBeenSet() const;
 
+                    /**
+                     * 获取云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。
+                     * @return StreamConnectProjectInput 云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。
+                     */
+                    StreamConnectProjectInput GetStreamConnectProjectInput() const;
+
+                    /**
+                     * 设置云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。
+                     * @param StreamConnectProjectInput 云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。
+                     */
+                    void SetStreamConnectProjectInput(const StreamConnectProjectInput& _streamConnectProjectInput);
+
+                    /**
+                     * 判断参数 StreamConnectProjectInput 是否已赋值
+                     * @return StreamConnectProjectInput 是否已赋值
+                     */
+                    bool StreamConnectProjectInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,6 +279,7 @@ namespace TencentCloud
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
+<li>STREAM_CONNECT：云转推。</li>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
@@ -308,6 +332,12 @@ namespace TencentCloud
                      */
                     VideoSegmentationProjectInput m_videoSegmentationProjectInput;
                     bool m_videoSegmentationProjectInputHasBeenSet;
+
+                    /**
+                     * 云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。
+                     */
+                    StreamConnectProjectInput m_streamConnectProjectInput;
+                    bool m_streamConnectProjectInputHasBeenSet;
 
                 };
             }
