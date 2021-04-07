@@ -43,6 +43,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeTelSessionRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h>
 
 
 namespace TencentCloud
@@ -87,6 +89,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTelCdrResponse> DescribeTelCdrOutcome;
                 typedef std::future<DescribeTelCdrOutcome> DescribeTelCdrOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelCdrRequest&, DescribeTelCdrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelCdrAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTelSessionResponse> DescribeTelSessionOutcome;
+                typedef std::future<DescribeTelSessionOutcome> DescribeTelSessionOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeTelSessionRequest&, DescribeTelSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelSessionAsyncHandler;
 
 
 
@@ -179,6 +184,15 @@ namespace TencentCloud
                 DescribeTelCdrOutcome DescribeTelCdr(const Model::DescribeTelCdrRequest &request);
                 void DescribeTelCdrAsync(const Model::DescribeTelCdrRequest& request, const DescribeTelCdrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTelCdrOutcomeCallable DescribeTelCdrCallable(const Model::DescribeTelCdrRequest& request);
+
+                /**
+                 *获取 PSTN 会话信息
+                 * @param req DescribeTelSessionRequest
+                 * @return DescribeTelSessionOutcome
+                 */
+                DescribeTelSessionOutcome DescribeTelSession(const Model::DescribeTelSessionRequest &request);
+                void DescribeTelSessionAsync(const Model::DescribeTelSessionRequest& request, const DescribeTelSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTelSessionOutcomeCallable DescribeTelSessionCallable(const Model::DescribeTelSessionRequest& request);
 
             };
         }

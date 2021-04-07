@@ -470,3 +470,46 @@ CccClient::DescribeTelCdrOutcomeCallable CccClient::DescribeTelCdrCallable(const
     return task->get_future();
 }
 
+CccClient::DescribeTelSessionOutcome CccClient::DescribeTelSession(const DescribeTelSessionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTelSession");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTelSessionResponse rsp = DescribeTelSessionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTelSessionOutcome(rsp);
+        else
+            return DescribeTelSessionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTelSessionOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeTelSessionAsync(const DescribeTelSessionRequest& request, const DescribeTelSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTelSession(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeTelSessionOutcomeCallable CccClient::DescribeTelSessionCallable(const DescribeTelSessionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTelSessionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTelSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

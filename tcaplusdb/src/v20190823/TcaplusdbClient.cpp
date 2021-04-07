@@ -212,6 +212,49 @@ TcaplusdbClient::CreateClusterOutcomeCallable TcaplusdbClient::CreateClusterCall
     return task->get_future();
 }
 
+TcaplusdbClient::CreateSnapshotsOutcome TcaplusdbClient::CreateSnapshots(const CreateSnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSnapshotsResponse rsp = CreateSnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSnapshotsOutcome(rsp);
+        else
+            return CreateSnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::CreateSnapshotsAsync(const CreateSnapshotsRequest& request, const CreateSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::CreateSnapshotsOutcomeCallable TcaplusdbClient::CreateSnapshotsCallable(const CreateSnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSnapshots(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::CreateTableGroupOutcome TcaplusdbClient::CreateTableGroup(const CreateTableGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTableGroup");
@@ -377,6 +420,49 @@ TcaplusdbClient::DeleteIdlFilesOutcomeCallable TcaplusdbClient::DeleteIdlFilesCa
         [this, request]()
         {
             return this->DeleteIdlFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::DeleteSnapshotsOutcome TcaplusdbClient::DeleteSnapshots(const DeleteSnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSnapshotsResponse rsp = DeleteSnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSnapshotsOutcome(rsp);
+        else
+            return DeleteSnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DeleteSnapshotsAsync(const DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DeleteSnapshotsOutcomeCallable TcaplusdbClient::DeleteSnapshotsCallable(const DeleteSnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSnapshots(request);
         }
     );
 
@@ -721,6 +807,49 @@ TcaplusdbClient::DescribeRegionsOutcomeCallable TcaplusdbClient::DescribeRegions
         [this, request]()
         {
             return this->DescribeRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::DescribeSnapshotsOutcome TcaplusdbClient::DescribeSnapshots(const DescribeSnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotsResponse rsp = DescribeSnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotsOutcome(rsp);
+        else
+            return DescribeSnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DescribeSnapshotsOutcomeCallable TcaplusdbClient::DescribeSnapshotsCallable(const DescribeSnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshots(request);
         }
     );
 
@@ -1115,6 +1244,49 @@ TcaplusdbClient::EnableRestProxyOutcomeCallable TcaplusdbClient::EnableRestProxy
     return task->get_future();
 }
 
+TcaplusdbClient::ImportSnapshotsOutcome TcaplusdbClient::ImportSnapshots(const ImportSnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportSnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportSnapshotsResponse rsp = ImportSnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportSnapshotsOutcome(rsp);
+        else
+            return ImportSnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportSnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::ImportSnapshotsAsync(const ImportSnapshotsRequest& request, const ImportSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportSnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::ImportSnapshotsOutcomeCallable TcaplusdbClient::ImportSnapshotsCallable(const ImportSnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportSnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportSnapshots(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::ModifyClusterMachineOutcome TcaplusdbClient::ModifyClusterMachine(const ModifyClusterMachineRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterMachine");
@@ -1280,6 +1452,49 @@ TcaplusdbClient::ModifyClusterTagsOutcomeCallable TcaplusdbClient::ModifyCluster
         [this, request]()
         {
             return this->ModifyClusterTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::ModifySnapshotsOutcome TcaplusdbClient::ModifySnapshots(const ModifySnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySnapshotsResponse rsp = ModifySnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySnapshotsOutcome(rsp);
+        else
+            return ModifySnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::ModifySnapshotsAsync(const ModifySnapshotsRequest& request, const ModifySnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::ModifySnapshotsOutcomeCallable TcaplusdbClient::ModifySnapshotsCallable(const ModifySnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySnapshots(request);
         }
     );
 

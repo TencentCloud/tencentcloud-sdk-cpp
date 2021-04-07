@@ -365,6 +365,50 @@ namespace TencentCloud
                      */
                     bool ImageIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DesiredPodNum 集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDesiredPodNum() const;
+
+                    /**
+                     * 设置集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DesiredPodNum 集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDesiredPodNum(const int64_t& _desiredPodNum);
+
+                    /**
+                     * 判断参数 DesiredPodNum 是否已赋值
+                     * @return DesiredPodNum 是否已赋值
+                     */
+                    bool DesiredPodNumHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义脚本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserScript 用户自定义脚本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserScript() const;
+
+                    /**
+                     * 设置用户自定义脚本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserScript 用户自定义脚本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserScript(const std::string& _userScript);
+
+                    /**
+                     * 判断参数 UserScript 是否已赋值
+                     * @return UserScript 是否已赋值
+                     */
+                    bool UserScriptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -469,6 +513,20 @@ namespace TencentCloud
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
+
+                    /**
+                     * 集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_desiredPodNum;
+                    bool m_desiredPodNumHasBeenSet;
+
+                    /**
+                     * 用户自定义脚本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userScript;
+                    bool m_userScriptHasBeenSet;
 
                 };
             }

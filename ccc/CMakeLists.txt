@@ -26,6 +26,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CreateStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeIMCdrsResponse.h
+  include/tencentcloud/ccc/v20200210/model/DescribeTelSessionRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h
   include/tencentcloud/ccc/v20200210/model/TelCdrInfo.h
   include/tencentcloud/ccc/v20200210/model/StaffInfo.h
@@ -35,6 +36,8 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListResponse.h
   include/tencentcloud/ccc/v20200210/model/IMCdrInfo.h
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h
+  include/tencentcloud/ccc/v20200210/model/PSTNSession.h
+  include/tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffInfoListRequest.h
   include/tencentcloud/ccc/v20200210/model/SkillGroupInfoItem.h
   include/tencentcloud/ccc/v20200210/model/ServeParticipant.h
@@ -61,6 +64,7 @@ set(ccc_src
   src/v20200210/model/CreateStaffResponse.cpp
   src/v20200210/model/DescribeTelCdrResponse.cpp
   src/v20200210/model/DescribeIMCdrsResponse.cpp
+  src/v20200210/model/DescribeTelSessionRequest.cpp
   src/v20200210/model/DescribeIMCdrsRequest.cpp
   src/v20200210/model/TelCdrInfo.cpp
   src/v20200210/model/StaffInfo.cpp
@@ -70,6 +74,8 @@ set(ccc_src
   src/v20200210/model/DescribePSTNActiveSessionListResponse.cpp
   src/v20200210/model/IMCdrInfo.cpp
   src/v20200210/model/DescribeChatMessagesRequest.cpp
+  src/v20200210/model/PSTNSession.cpp
+  src/v20200210/model/DescribeTelSessionResponse.cpp
   src/v20200210/model/DescribeStaffInfoListRequest.cpp
   src/v20200210/model/SkillGroupInfoItem.cpp
   src/v20200210/model/ServeParticipant.cpp

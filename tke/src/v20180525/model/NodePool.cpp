@@ -37,7 +37,9 @@ NodePool::NodePool() :
     m_desiredNodesNumHasBeenSet(false),
     m_nodePoolOsHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
+    m_imageIdHasBeenSet(false),
+    m_desiredPodNumHasBeenSet(false),
+    m_userScriptHasBeenSet(false)
 {
 }
 
@@ -233,6 +235,26 @@ CoreInternalOutcome NodePool::Deserialize(const Value &value)
         m_imageIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DesiredPodNum") && !value["DesiredPodNum"].IsNull())
+    {
+        if (!value["DesiredPodNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `NodePool.DesiredPodNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_desiredPodNum = value["DesiredPodNum"].GetInt64();
+        m_desiredPodNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserScript") && !value["UserScript"].IsNull())
+    {
+        if (!value["UserScript"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NodePool.UserScript` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userScript = string(value["UserScript"].GetString());
+        m_userScriptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -381,6 +403,22 @@ void NodePool::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_desiredPodNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DesiredPodNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_desiredPodNum, allocator);
+    }
+
+    if (m_userScriptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserScript";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_userScript.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -640,5 +678,37 @@ void NodePool::SetImageId(const string& _imageId)
 bool NodePool::ImageIdHasBeenSet() const
 {
     return m_imageIdHasBeenSet;
+}
+
+int64_t NodePool::GetDesiredPodNum() const
+{
+    return m_desiredPodNum;
+}
+
+void NodePool::SetDesiredPodNum(const int64_t& _desiredPodNum)
+{
+    m_desiredPodNum = _desiredPodNum;
+    m_desiredPodNumHasBeenSet = true;
+}
+
+bool NodePool::DesiredPodNumHasBeenSet() const
+{
+    return m_desiredPodNumHasBeenSet;
+}
+
+string NodePool::GetUserScript() const
+{
+    return m_userScript;
+}
+
+void NodePool::SetUserScript(const string& _userScript)
+{
+    m_userScript = _userScript;
+    m_userScriptHasBeenSet = true;
+}
+
+bool NodePool::UserScriptHasBeenSet() const
+{
+    return m_userScriptHasBeenSet;
 }
 

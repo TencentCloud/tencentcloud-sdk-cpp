@@ -27,6 +27,7 @@ MaterialInfo::MaterialInfo() :
     m_audioMaterialHasBeenSet(false),
     m_imageMaterialHasBeenSet(false),
     m_linkMaterialHasBeenSet(false),
+    m_videoEditTemplateMaterialHasBeenSet(false),
     m_otherMaterialHasBeenSet(false)
 {
 }
@@ -121,6 +122,23 @@ CoreInternalOutcome MaterialInfo::Deserialize(const Value &value)
         m_linkMaterialHasBeenSet = true;
     }
 
+    if (value.HasMember("VideoEditTemplateMaterial") && !value["VideoEditTemplateMaterial"].IsNull())
+    {
+        if (!value["VideoEditTemplateMaterial"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MaterialInfo.VideoEditTemplateMaterial` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoEditTemplateMaterial.Deserialize(value["VideoEditTemplateMaterial"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoEditTemplateMaterialHasBeenSet = true;
+    }
+
     if (value.HasMember("OtherMaterial") && !value["OtherMaterial"].IsNull())
     {
         if (!value["OtherMaterial"].IsObject())
@@ -188,6 +206,15 @@ void MaterialInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_linkMaterial.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoEditTemplateMaterialHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VideoEditTemplateMaterial";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_videoEditTemplateMaterial.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_otherMaterialHasBeenSet)
@@ -280,6 +307,22 @@ void MaterialInfo::SetLinkMaterial(const LinkMaterial& _linkMaterial)
 bool MaterialInfo::LinkMaterialHasBeenSet() const
 {
     return m_linkMaterialHasBeenSet;
+}
+
+VideoEditTemplateMaterial MaterialInfo::GetVideoEditTemplateMaterial() const
+{
+    return m_videoEditTemplateMaterial;
+}
+
+void MaterialInfo::SetVideoEditTemplateMaterial(const VideoEditTemplateMaterial& _videoEditTemplateMaterial)
+{
+    m_videoEditTemplateMaterial = _videoEditTemplateMaterial;
+    m_videoEditTemplateMaterialHasBeenSet = true;
+}
+
+bool MaterialInfo::VideoEditTemplateMaterialHasBeenSet() const
+{
+    return m_videoEditTemplateMaterialHasBeenSet;
 }
 
 OtherMaterial MaterialInfo::GetOtherMaterial() const

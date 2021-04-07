@@ -258,6 +258,24 @@ namespace TencentCloud
                      */
                     bool SignLawHasBeenSet() const;
 
+                    /**
+                     * 获取物理专线带宽
+                     * @return Bandwidth 物理专线带宽
+                     */
+                    uint64_t GetBandwidth() const;
+
+                    /**
+                     * 设置物理专线带宽
+                     * @param Bandwidth 物理专线带宽
+                     */
+                    void SetBandwidth(const uint64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     */
+                    bool BandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +349,12 @@ namespace TencentCloud
                      */
                     bool m_signLaw;
                     bool m_signLawHasBeenSet;
+
+                    /**
+                     * 物理专线带宽
+                     */
+                    uint64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
 
                 };
             }

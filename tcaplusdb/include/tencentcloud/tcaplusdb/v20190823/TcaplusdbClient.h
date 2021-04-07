@@ -31,6 +31,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateBackupResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateClusterRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateClusterResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/CreateSnapshotsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/CreateSnapshotsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateTableGroupRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateTableGroupResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateTablesRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteClusterResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteIdlFilesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteIdlFilesResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteSnapshotsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteSnapshotsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableGroupRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableGroupResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableIndexRequest.h>
@@ -55,6 +59,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeMachineResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeSnapshotsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeSnapshotsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupTagsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupTagsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupsRequest.h>
@@ -73,6 +79,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DisableRestProxyResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/EnableRestProxyRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/EnableRestProxyResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ImportSnapshotsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ImportSnapshotsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterMachineRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterMachineResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameRequest.h>
@@ -81,6 +89,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterPasswordResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterTagsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterTagsResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifySnapshotsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifySnapshotsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupNameRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupNameResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupTagsRequest.h>
@@ -127,6 +137,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+                typedef Outcome<Error, Model::CreateSnapshotsResponse> CreateSnapshotsOutcome;
+                typedef std::future<CreateSnapshotsOutcome> CreateSnapshotsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::CreateSnapshotsRequest&, CreateSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotsAsyncHandler;
                 typedef Outcome<Error, Model::CreateTableGroupResponse> CreateTableGroupOutcome;
                 typedef std::future<CreateTableGroupOutcome> CreateTableGroupOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::CreateTableGroupRequest&, CreateTableGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTableGroupAsyncHandler;
@@ -139,6 +152,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteIdlFilesResponse> DeleteIdlFilesOutcome;
                 typedef std::future<DeleteIdlFilesOutcome> DeleteIdlFilesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DeleteIdlFilesRequest&, DeleteIdlFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIdlFilesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSnapshotsResponse> DeleteSnapshotsOutcome;
+                typedef std::future<DeleteSnapshotsOutcome> DeleteSnapshotsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DeleteSnapshotsRequest&, DeleteSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotsAsyncHandler;
                 typedef Outcome<Error, Model::DeleteTableGroupResponse> DeleteTableGroupOutcome;
                 typedef std::future<DeleteTableGroupOutcome> DeleteTableGroupOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DeleteTableGroupRequest&, DeleteTableGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableGroupAsyncHandler;
@@ -163,6 +179,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSnapshotsResponse> DescribeSnapshotsOutcome;
+                typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeSnapshotsRequest&, DescribeSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTableGroupTagsResponse> DescribeTableGroupTagsOutcome;
                 typedef std::future<DescribeTableGroupTagsOutcome> DescribeTableGroupTagsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeTableGroupTagsRequest&, DescribeTableGroupTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableGroupTagsAsyncHandler;
@@ -190,6 +209,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EnableRestProxyResponse> EnableRestProxyOutcome;
                 typedef std::future<EnableRestProxyOutcome> EnableRestProxyOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::EnableRestProxyRequest&, EnableRestProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableRestProxyAsyncHandler;
+                typedef Outcome<Error, Model::ImportSnapshotsResponse> ImportSnapshotsOutcome;
+                typedef std::future<ImportSnapshotsOutcome> ImportSnapshotsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::ImportSnapshotsRequest&, ImportSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportSnapshotsAsyncHandler;
                 typedef Outcome<Error, Model::ModifyClusterMachineResponse> ModifyClusterMachineOutcome;
                 typedef std::future<ModifyClusterMachineOutcome> ModifyClusterMachineOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyClusterMachineRequest&, ModifyClusterMachineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterMachineAsyncHandler;
@@ -202,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyClusterTagsResponse> ModifyClusterTagsOutcome;
                 typedef std::future<ModifyClusterTagsOutcome> ModifyClusterTagsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyClusterTagsRequest&, ModifyClusterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterTagsAsyncHandler;
+                typedef Outcome<Error, Model::ModifySnapshotsResponse> ModifySnapshotsOutcome;
+                typedef std::future<ModifySnapshotsOutcome> ModifySnapshotsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::ModifySnapshotsRequest&, ModifySnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotsAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTableGroupNameResponse> ModifyTableGroupNameOutcome;
                 typedef std::future<ModifyTableGroupNameOutcome> ModifyTableGroupNameOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyTableGroupNameRequest&, ModifyTableGroupNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableGroupNameAsyncHandler;
@@ -272,6 +297,15 @@ namespace TencentCloud
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
 
                 /**
+                 *构造表格过去时间点的快照
+                 * @param req CreateSnapshotsRequest
+                 * @return CreateSnapshotsOutcome
+                 */
+                CreateSnapshotsOutcome CreateSnapshots(const Model::CreateSnapshotsRequest &request);
+                void CreateSnapshotsAsync(const Model::CreateSnapshotsRequest& request, const CreateSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSnapshotsOutcomeCallable CreateSnapshotsCallable(const Model::CreateSnapshotsRequest& request);
+
+                /**
                  *在TcaplusDB集群下创建表格组
                  * @param req CreateTableGroupRequest
                  * @return CreateTableGroupOutcome
@@ -306,6 +340,15 @@ namespace TencentCloud
                 DeleteIdlFilesOutcome DeleteIdlFiles(const Model::DeleteIdlFilesRequest &request);
                 void DeleteIdlFilesAsync(const Model::DeleteIdlFilesRequest& request, const DeleteIdlFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteIdlFilesOutcomeCallable DeleteIdlFilesCallable(const Model::DeleteIdlFilesRequest& request);
+
+                /**
+                 *删除表格的快照
+                 * @param req DeleteSnapshotsRequest
+                 * @return DeleteSnapshotsOutcome
+                 */
+                DeleteSnapshotsOutcome DeleteSnapshots(const Model::DeleteSnapshotsRequest &request);
+                void DeleteSnapshotsAsync(const Model::DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSnapshotsOutcomeCallable DeleteSnapshotsCallable(const Model::DeleteSnapshotsRequest& request);
 
                 /**
                  *删除表格组
@@ -378,6 +421,15 @@ namespace TencentCloud
                 DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest &request);
                 void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
+
+                /**
+                 *查询快照列表
+                 * @param req DescribeSnapshotsRequest
+                 * @return DescribeSnapshotsOutcome
+                 */
+                DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest &request);
+                void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request);
 
                 /**
                  *获取表格组关联的标签列表
@@ -461,6 +513,15 @@ namespace TencentCloud
                 EnableRestProxyOutcomeCallable EnableRestProxyCallable(const Model::EnableRestProxyRequest& request);
 
                 /**
+                 *将快照数据导入到新表或当前表
+                 * @param req ImportSnapshotsRequest
+                 * @return ImportSnapshotsOutcome
+                 */
+                ImportSnapshotsOutcome ImportSnapshots(const Model::ImportSnapshotsRequest &request);
+                void ImportSnapshotsAsync(const Model::ImportSnapshotsRequest& request, const ImportSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportSnapshotsOutcomeCallable ImportSnapshotsCallable(const Model::ImportSnapshotsRequest& request);
+
+                /**
                  *修改独占集群机器
                  * @param req ModifyClusterMachineRequest
                  * @return ModifyClusterMachineOutcome
@@ -495,6 +556,15 @@ namespace TencentCloud
                 ModifyClusterTagsOutcome ModifyClusterTags(const Model::ModifyClusterTagsRequest &request);
                 void ModifyClusterTagsAsync(const Model::ModifyClusterTagsRequest& request, const ModifyClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterTagsOutcomeCallable ModifyClusterTagsCallable(const Model::ModifyClusterTagsRequest& request);
+
+                /**
+                 *修改表格快照的过期时间
+                 * @param req ModifySnapshotsRequest
+                 * @return ModifySnapshotsOutcome
+                 */
+                ModifySnapshotsOutcome ModifySnapshots(const Model::ModifySnapshotsRequest &request);
+                void ModifySnapshotsAsync(const Model::ModifySnapshotsRequest& request, const ModifySnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySnapshotsOutcomeCallable ModifySnapshotsCallable(const Model::ModifySnapshotsRequest& request);
 
                 /**
                  *修改TcaplusDB表格组名称

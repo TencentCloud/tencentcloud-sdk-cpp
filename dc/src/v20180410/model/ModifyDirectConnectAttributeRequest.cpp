@@ -35,7 +35,8 @@ ModifyDirectConnectAttributeRequest::ModifyDirectConnectAttributeRequest() :
     m_customerContactNumberHasBeenSet(false),
     m_faultReportContactPersonHasBeenSet(false),
     m_faultReportContactNumberHasBeenSet(false),
-    m_signLawHasBeenSet(false)
+    m_signLawHasBeenSet(false),
+    m_bandwidthHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string ModifyDirectConnectAttributeRequest::ToJsonString() const
         string key = "SignLaw";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_signLaw, allocator);
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bandwidth, allocator);
     }
 
 
@@ -340,6 +349,22 @@ void ModifyDirectConnectAttributeRequest::SetSignLaw(const bool& _signLaw)
 bool ModifyDirectConnectAttributeRequest::SignLawHasBeenSet() const
 {
     return m_signLawHasBeenSet;
+}
+
+uint64_t ModifyDirectConnectAttributeRequest::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void ModifyDirectConnectAttributeRequest::SetBandwidth(const uint64_t& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool ModifyDirectConnectAttributeRequest::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
 }
 
 

@@ -29,6 +29,7 @@
 #include <tencentcloud/cme/v20191029/model/AudioMaterial.h>
 #include <tencentcloud/cme/v20191029/model/ImageMaterial.h>
 #include <tencentcloud/cme/v20191029/model/LinkMaterial.h>
+#include <tencentcloud/cme/v20191029/model/VideoEditTemplateMaterial.h>
 #include <tencentcloud/cme/v20191029/model/OtherMaterial.h>
 
 
@@ -159,6 +160,28 @@ namespace TencentCloud
                     bool LinkMaterialHasBeenSet() const;
 
                     /**
+                     * 获取模板媒体信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VideoEditTemplateMaterial 模板媒体信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VideoEditTemplateMaterial GetVideoEditTemplateMaterial() const;
+
+                    /**
+                     * 设置模板媒体信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VideoEditTemplateMaterial 模板媒体信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVideoEditTemplateMaterial(const VideoEditTemplateMaterial& _videoEditTemplateMaterial);
+
+                    /**
+                     * 判断参数 VideoEditTemplateMaterial 是否已赋值
+                     * @return VideoEditTemplateMaterial 是否已赋值
+                     */
+                    bool VideoEditTemplateMaterialHasBeenSet() const;
+
+                    /**
                      * 获取其他类型媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherMaterial 其他类型媒体信息。
@@ -215,6 +238,13 @@ namespace TencentCloud
                      */
                     LinkMaterial m_linkMaterial;
                     bool m_linkMaterialHasBeenSet;
+
+                    /**
+                     * 模板媒体信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VideoEditTemplateMaterial m_videoEditTemplateMaterial;
+                    bool m_videoEditTemplateMaterialHasBeenSet;
 
                     /**
                      * 其他类型媒体信息。
