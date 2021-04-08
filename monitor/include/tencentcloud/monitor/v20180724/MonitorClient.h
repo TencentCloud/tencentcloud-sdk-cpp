@@ -441,7 +441,7 @@ namespace TencentCloud
                 DescribeAllNamespacesOutcomeCallable DescribeAllNamespacesCallable(const Model::DescribeAllNamespacesRequest& request);
 
                 /**
-                 *获取基础指标详情
+                 *获取基础指标属性
                  * @param req DescribeBaseMetricsRequest
                  * @return DescribeBaseMetricsOutcome
                  */

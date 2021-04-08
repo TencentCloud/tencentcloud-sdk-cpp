@@ -20,7 +20,9 @@ set(lighthouse_public_header
 
 set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/CreateBlueprintRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/LoginSettings.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceTrafficPackage.h
@@ -28,14 +30,18 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/Instance.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/TrafficPackage.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h
   include/tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/Blueprint.h
+  include/tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h
   include/tencentcloud/lighthouse/v20200324/model/Price.h
-  include/tencentcloud/lighthouse/v20200324/model/Bundle.h
   include/tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/Bundle.h
+  include/tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InstancePrice.h
@@ -43,23 +49,36 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/Filter.h
-  include/tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/FirewallRule.h
+  include/tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/FirewallRuleInfo.h
   include/tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InternetAccessible.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/Snapshot.h
   include/tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h
   )
 
 set(lighthouse_src
   src/v20200324/LighthouseClient.cpp
   src/v20200324/model/DescribeBlueprintsResponse.cpp
-  src/v20200324/model/DescribeInstancesTrafficPackagesRequest.cpp
+  src/v20200324/model/ApplyInstanceSnapshotResponse.cpp
+  src/v20200324/model/ApplyInstanceSnapshotRequest.cpp
+  src/v20200324/model/CreateBlueprintRequest.cpp
   src/v20200324/model/DeleteFirewallRulesRequest.cpp
   src/v20200324/model/LoginSettings.cpp
   src/v20200324/model/InstanceTrafficPackage.cpp
@@ -67,14 +86,18 @@ set(lighthouse_src
   src/v20200324/model/Instance.cpp
   src/v20200324/model/DescribeInstancesTrafficPackagesResponse.cpp
   src/v20200324/model/TrafficPackage.cpp
+  src/v20200324/model/ModifySnapshotAttributeResponse.cpp
   src/v20200324/model/RebootInstancesResponse.cpp
   src/v20200324/model/DescribeBundlesRequest.cpp
   src/v20200324/model/Blueprint.cpp
+  src/v20200324/model/ResetInstanceResponse.cpp
   src/v20200324/model/Price.cpp
-  src/v20200324/model/Bundle.cpp
   src/v20200324/model/StartInstancesRequest.cpp
+  src/v20200324/model/Bundle.cpp
+  src/v20200324/model/CreateInstanceSnapshotResponse.cpp
+  src/v20200324/model/ModifyBlueprintAttributeRequest.cpp
   src/v20200324/model/DeleteFirewallRulesResponse.cpp
-  src/v20200324/model/RebootInstancesRequest.cpp
+  src/v20200324/model/DeleteSnapshotsRequest.cpp
   src/v20200324/model/DescribeBlueprintsRequest.cpp
   src/v20200324/model/DescribeInstancesResponse.cpp
   src/v20200324/model/InstancePrice.cpp
@@ -82,16 +105,27 @@ set(lighthouse_src
   src/v20200324/model/ResetInstanceRequest.cpp
   src/v20200324/model/DescribeBundlesResponse.cpp
   src/v20200324/model/DescribeInstancesRequest.cpp
+  src/v20200324/model/DeleteSnapshotsResponse.cpp
+  src/v20200324/model/RebootInstancesRequest.cpp
   src/v20200324/model/Filter.cpp
-  src/v20200324/model/ResetInstanceResponse.cpp
+  src/v20200324/model/DescribeSnapshotsResponse.cpp
+  src/v20200324/model/DescribeInstancesTrafficPackagesRequest.cpp
+  src/v20200324/model/DeleteBlueprintsResponse.cpp
   src/v20200324/model/CreateFirewallRulesRequest.cpp
   src/v20200324/model/DescribeFirewallRulesRequest.cpp
   src/v20200324/model/DescribeFirewallRulesResponse.cpp
   src/v20200324/model/FirewallRule.cpp
+  src/v20200324/model/DeleteBlueprintsRequest.cpp
+  src/v20200324/model/ModifyBlueprintAttributeResponse.cpp
+  src/v20200324/model/DescribeSnapshotsRequest.cpp
   src/v20200324/model/FirewallRuleInfo.cpp
   src/v20200324/model/CreateFirewallRulesResponse.cpp
   src/v20200324/model/StopInstancesResponse.cpp
   src/v20200324/model/InternetAccessible.cpp
+  src/v20200324/model/ModifySnapshotAttributeRequest.cpp
+  src/v20200324/model/CreateBlueprintResponse.cpp
+  src/v20200324/model/CreateInstanceSnapshotRequest.cpp
+  src/v20200324/model/Snapshot.cpp
   src/v20200324/model/StopInstancesRequest.cpp
   )
 

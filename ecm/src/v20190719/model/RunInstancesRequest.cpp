@@ -39,7 +39,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_dataDiskSizeHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_systemDiskSizeHasBeenSet(false),
-    m_internetMaxBandwidthInHasBeenSet(false)
+    m_internetMaxBandwidthInHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,14 @@ string RunInstancesRequest::ToJsonString() const
         string key = "InternetMaxBandwidthIn";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_internetMaxBandwidthIn, allocator);
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceChargeType, allocator);
     }
 
 
@@ -460,6 +469,22 @@ void RunInstancesRequest::SetInternetMaxBandwidthIn(const int64_t& _internetMaxB
 bool RunInstancesRequest::InternetMaxBandwidthInHasBeenSet() const
 {
     return m_internetMaxBandwidthInHasBeenSet;
+}
+
+int64_t RunInstancesRequest::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void RunInstancesRequest::SetInstanceChargeType(const int64_t& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool RunInstancesRequest::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
 }
 
 

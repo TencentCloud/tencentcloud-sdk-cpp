@@ -513,6 +513,49 @@ TcbClient::DeleteEndUserOutcomeCallable TcbClient::DeleteEndUserCallable(const D
     return task->get_future();
 }
 
+TcbClient::DeleteWxGatewayRouteOutcome TcbClient::DeleteWxGatewayRoute(const DeleteWxGatewayRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWxGatewayRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWxGatewayRouteResponse rsp = DeleteWxGatewayRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWxGatewayRouteOutcome(rsp);
+        else
+            return DeleteWxGatewayRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWxGatewayRouteOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteWxGatewayRouteAsync(const DeleteWxGatewayRouteRequest& request, const DeleteWxGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWxGatewayRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DeleteWxGatewayRouteOutcomeCallable TcbClient::DeleteWxGatewayRouteCallable(const DeleteWxGatewayRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWxGatewayRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWxGatewayRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeAuthDomainsOutcome TcbClient::DescribeAuthDomains(const DescribeAuthDomainsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAuthDomains");
@@ -1624,6 +1667,49 @@ TcbClient::EstablishCloudBaseRunServerOutcomeCallable TcbClient::EstablishCloudB
         [this, request]()
         {
             return this->EstablishCloudBaseRunServer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::EstablishWxGatewayRouteOutcome TcbClient::EstablishWxGatewayRoute(const EstablishWxGatewayRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "EstablishWxGatewayRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EstablishWxGatewayRouteResponse rsp = EstablishWxGatewayRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EstablishWxGatewayRouteOutcome(rsp);
+        else
+            return EstablishWxGatewayRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return EstablishWxGatewayRouteOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::EstablishWxGatewayRouteAsync(const EstablishWxGatewayRouteRequest& request, const EstablishWxGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EstablishWxGatewayRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::EstablishWxGatewayRouteOutcomeCallable TcbClient::EstablishWxGatewayRouteCallable(const EstablishWxGatewayRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EstablishWxGatewayRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->EstablishWxGatewayRoute(request);
         }
     );
 

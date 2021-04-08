@@ -26,9 +26,9 @@ using namespace std;
 CreateAclRequest::CreateAclRequest() :
     m_instanceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
     m_operationHasBeenSet(false),
     m_permissionTypeHasBeenSet(false),
+    m_resourceNameHasBeenSet(false),
     m_hostHasBeenSet(false),
     m_principalHasBeenSet(false)
 {
@@ -57,14 +57,6 @@ string CreateAclRequest::ToJsonString() const
         d.AddMember(iKey, m_resourceType, allocator);
     }
 
-    if (m_resourceNameHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ResourceName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_operationHasBeenSet)
     {
         Value iKey(kStringType);
@@ -79,6 +71,14 @@ string CreateAclRequest::ToJsonString() const
         string key = "PermissionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_permissionType, allocator);
+    }
+
+    if (m_resourceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hostHasBeenSet)
@@ -137,22 +137,6 @@ bool CreateAclRequest::ResourceTypeHasBeenSet() const
     return m_resourceTypeHasBeenSet;
 }
 
-string CreateAclRequest::GetResourceName() const
-{
-    return m_resourceName;
-}
-
-void CreateAclRequest::SetResourceName(const string& _resourceName)
-{
-    m_resourceName = _resourceName;
-    m_resourceNameHasBeenSet = true;
-}
-
-bool CreateAclRequest::ResourceNameHasBeenSet() const
-{
-    return m_resourceNameHasBeenSet;
-}
-
 int64_t CreateAclRequest::GetOperation() const
 {
     return m_operation;
@@ -183,6 +167,22 @@ void CreateAclRequest::SetPermissionType(const int64_t& _permissionType)
 bool CreateAclRequest::PermissionTypeHasBeenSet() const
 {
     return m_permissionTypeHasBeenSet;
+}
+
+string CreateAclRequest::GetResourceName() const
+{
+    return m_resourceName;
+}
+
+void CreateAclRequest::SetResourceName(const string& _resourceName)
+{
+    m_resourceName = _resourceName;
+    m_resourceNameHasBeenSet = true;
+}
+
+bool CreateAclRequest::ResourceNameHasBeenSet() const
+{
+    return m_resourceNameHasBeenSet;
 }
 
 string CreateAclRequest::GetHost() const

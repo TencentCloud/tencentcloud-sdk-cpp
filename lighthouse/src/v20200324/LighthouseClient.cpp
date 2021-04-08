@@ -40,6 +40,92 @@ LighthouseClient::LighthouseClient(const Credential &credential, const string &r
 }
 
 
+LighthouseClient::ApplyInstanceSnapshotOutcome LighthouseClient::ApplyInstanceSnapshot(const ApplyInstanceSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyInstanceSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyInstanceSnapshotResponse rsp = ApplyInstanceSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyInstanceSnapshotOutcome(rsp);
+        else
+            return ApplyInstanceSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyInstanceSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ApplyInstanceSnapshotAsync(const ApplyInstanceSnapshotRequest& request, const ApplyInstanceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyInstanceSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ApplyInstanceSnapshotOutcomeCallable LighthouseClient::ApplyInstanceSnapshotCallable(const ApplyInstanceSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyInstanceSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyInstanceSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::CreateBlueprintOutcome LighthouseClient::CreateBlueprint(const CreateBlueprintRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBlueprint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBlueprintResponse rsp = CreateBlueprintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBlueprintOutcome(rsp);
+        else
+            return CreateBlueprintOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBlueprintOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::CreateBlueprintAsync(const CreateBlueprintRequest& request, const CreateBlueprintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBlueprint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::CreateBlueprintOutcomeCallable LighthouseClient::CreateBlueprintCallable(const CreateBlueprintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBlueprintOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBlueprint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::CreateFirewallRulesOutcome LighthouseClient::CreateFirewallRules(const CreateFirewallRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFirewallRules");
@@ -83,6 +169,92 @@ LighthouseClient::CreateFirewallRulesOutcomeCallable LighthouseClient::CreateFir
     return task->get_future();
 }
 
+LighthouseClient::CreateInstanceSnapshotOutcome LighthouseClient::CreateInstanceSnapshot(const CreateInstanceSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstanceSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceSnapshotResponse rsp = CreateInstanceSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceSnapshotOutcome(rsp);
+        else
+            return CreateInstanceSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::CreateInstanceSnapshotAsync(const CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInstanceSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::CreateInstanceSnapshotOutcomeCallable LighthouseClient::CreateInstanceSnapshotCallable(const CreateInstanceSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInstanceSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInstanceSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DeleteBlueprintsOutcome LighthouseClient::DeleteBlueprints(const DeleteBlueprintsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBlueprints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBlueprintsResponse rsp = DeleteBlueprintsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBlueprintsOutcome(rsp);
+        else
+            return DeleteBlueprintsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBlueprintsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DeleteBlueprintsAsync(const DeleteBlueprintsRequest& request, const DeleteBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBlueprints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DeleteBlueprintsOutcomeCallable LighthouseClient::DeleteBlueprintsCallable(const DeleteBlueprintsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBlueprintsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBlueprints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DeleteFirewallRulesOutcome LighthouseClient::DeleteFirewallRules(const DeleteFirewallRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteFirewallRules");
@@ -119,6 +291,49 @@ LighthouseClient::DeleteFirewallRulesOutcomeCallable LighthouseClient::DeleteFir
         [this, request]()
         {
             return this->DeleteFirewallRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DeleteSnapshotsOutcome LighthouseClient::DeleteSnapshots(const DeleteSnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSnapshotsResponse rsp = DeleteSnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSnapshotsOutcome(rsp);
+        else
+            return DeleteSnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DeleteSnapshotsAsync(const DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DeleteSnapshotsOutcomeCallable LighthouseClient::DeleteSnapshotsCallable(const DeleteSnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSnapshots(request);
         }
     );
 
@@ -334,6 +549,135 @@ LighthouseClient::DescribeInstancesTrafficPackagesOutcomeCallable LighthouseClie
         [this, request]()
         {
             return this->DescribeInstancesTrafficPackages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeSnapshotsOutcome LighthouseClient::DescribeSnapshots(const DescribeSnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotsResponse rsp = DescribeSnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotsOutcome(rsp);
+        else
+            return DescribeSnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeSnapshotsOutcomeCallable LighthouseClient::DescribeSnapshotsCallable(const DescribeSnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshots(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ModifyBlueprintAttributeOutcome LighthouseClient::ModifyBlueprintAttribute(const ModifyBlueprintAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBlueprintAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBlueprintAttributeResponse rsp = ModifyBlueprintAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBlueprintAttributeOutcome(rsp);
+        else
+            return ModifyBlueprintAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBlueprintAttributeOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyBlueprintAttributeAsync(const ModifyBlueprintAttributeRequest& request, const ModifyBlueprintAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBlueprintAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyBlueprintAttributeOutcomeCallable LighthouseClient::ModifyBlueprintAttributeCallable(const ModifyBlueprintAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBlueprintAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBlueprintAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ModifySnapshotAttributeOutcome LighthouseClient::ModifySnapshotAttribute(const ModifySnapshotAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySnapshotAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySnapshotAttributeResponse rsp = ModifySnapshotAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySnapshotAttributeOutcome(rsp);
+        else
+            return ModifySnapshotAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySnapshotAttributeOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifySnapshotAttributeAsync(const ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySnapshotAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifySnapshotAttributeOutcomeCallable LighthouseClient::ModifySnapshotAttributeCallable(const ModifySnapshotAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySnapshotAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySnapshotAttribute(request);
         }
     );
 

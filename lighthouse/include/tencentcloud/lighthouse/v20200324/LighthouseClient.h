@@ -23,10 +23,20 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h>
@@ -37,6 +47,12 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h>
@@ -59,12 +75,27 @@ namespace TencentCloud
                 LighthouseClient(const Credential &credential, const std::string &region);
                 LighthouseClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::ApplyInstanceSnapshotResponse> ApplyInstanceSnapshotOutcome;
+                typedef std::future<ApplyInstanceSnapshotOutcome> ApplyInstanceSnapshotOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ApplyInstanceSnapshotRequest&, ApplyInstanceSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyInstanceSnapshotAsyncHandler;
+                typedef Outcome<Error, Model::CreateBlueprintResponse> CreateBlueprintOutcome;
+                typedef std::future<CreateBlueprintOutcome> CreateBlueprintOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateBlueprintRequest&, CreateBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlueprintAsyncHandler;
                 typedef Outcome<Error, Model::CreateFirewallRulesResponse> CreateFirewallRulesOutcome;
                 typedef std::future<CreateFirewallRulesOutcome> CreateFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateFirewallRulesRequest&, CreateFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallRulesAsyncHandler;
+                typedef Outcome<Error, Model::CreateInstanceSnapshotResponse> CreateInstanceSnapshotOutcome;
+                typedef std::future<CreateInstanceSnapshotOutcome> CreateInstanceSnapshotOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateInstanceSnapshotRequest&, CreateInstanceSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceSnapshotAsyncHandler;
+                typedef Outcome<Error, Model::DeleteBlueprintsResponse> DeleteBlueprintsOutcome;
+                typedef std::future<DeleteBlueprintsOutcome> DeleteBlueprintsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DeleteBlueprintsRequest&, DeleteBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlueprintsAsyncHandler;
                 typedef Outcome<Error, Model::DeleteFirewallRulesResponse> DeleteFirewallRulesOutcome;
                 typedef std::future<DeleteFirewallRulesOutcome> DeleteFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DeleteFirewallRulesRequest&, DeleteFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallRulesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSnapshotsResponse> DeleteSnapshotsOutcome;
+                typedef std::future<DeleteSnapshotsOutcome> DeleteSnapshotsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DeleteSnapshotsRequest&, DeleteSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBlueprintsResponse> DescribeBlueprintsOutcome;
                 typedef std::future<DescribeBlueprintsOutcome> DescribeBlueprintsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintsRequest&, DescribeBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintsAsyncHandler;
@@ -80,6 +111,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesTrafficPackagesResponse> DescribeInstancesTrafficPackagesOutcome;
                 typedef std::future<DescribeInstancesTrafficPackagesOutcome> DescribeInstancesTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesTrafficPackagesRequest&, DescribeInstancesTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesTrafficPackagesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSnapshotsResponse> DescribeSnapshotsOutcome;
+                typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeSnapshotsRequest&, DescribeSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotsAsyncHandler;
+                typedef Outcome<Error, Model::ModifyBlueprintAttributeResponse> ModifyBlueprintAttributeOutcome;
+                typedef std::future<ModifyBlueprintAttributeOutcome> ModifyBlueprintAttributeOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyBlueprintAttributeRequest&, ModifyBlueprintAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlueprintAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifySnapshotAttributeResponse> ModifySnapshotAttributeOutcome;
+                typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifySnapshotAttributeRequest&, ModifySnapshotAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotAttributeAsyncHandler;
                 typedef Outcome<Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
@@ -94,6 +134,27 @@ namespace TencentCloud
                 typedef std::function<void(const LighthouseClient*, const Model::StopInstancesRequest&, StopInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
 
 
+
+                /**
+                 *本接口（ApplyInstanceSnapshot）用于回滚指定实例的系统盘快照。
+<li>仅支持回滚到原系统盘。</li>
+<li>用于回滚的快照必须处于 NORMAL 状态。快照状态可以通 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。</li>
+<li>回滚快照时，实例的状态必须为 STOPPED 或 RUNNING，可通过 DescribeInstances 接口查询实例状态。处于 RUNNING 状态的实例会强制关机，然后回滚快照。</li>
+                 * @param req ApplyInstanceSnapshotRequest
+                 * @return ApplyInstanceSnapshotOutcome
+                 */
+                ApplyInstanceSnapshotOutcome ApplyInstanceSnapshot(const Model::ApplyInstanceSnapshotRequest &request);
+                void ApplyInstanceSnapshotAsync(const Model::ApplyInstanceSnapshotRequest& request, const ApplyInstanceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyInstanceSnapshotOutcomeCallable ApplyInstanceSnapshotCallable(const Model::ApplyInstanceSnapshotRequest& request);
+
+                /**
+                 *本接口 (CreateBlueprint) 用于创建镜像。
+                 * @param req CreateBlueprintRequest
+                 * @return CreateBlueprintOutcome
+                 */
+                CreateBlueprintOutcome CreateBlueprint(const Model::CreateBlueprintRequest &request);
+                void CreateBlueprintAsync(const Model::CreateBlueprintRequest& request, const CreateBlueprintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBlueprintOutcomeCallable CreateBlueprintCallable(const Model::CreateBlueprintRequest& request);
 
                 /**
                  *本接口（CreateFirewallRules）用于在实例上添加防火墙规则。
@@ -115,6 +176,24 @@ namespace TencentCloud
                 CreateFirewallRulesOutcomeCallable CreateFirewallRulesCallable(const Model::CreateFirewallRulesRequest& request);
 
                 /**
+                 *本接口（CreateInstanceSnapshot）用于创建指定实例的系统盘快照。
+                 * @param req CreateInstanceSnapshotRequest
+                 * @return CreateInstanceSnapshotOutcome
+                 */
+                CreateInstanceSnapshotOutcome CreateInstanceSnapshot(const Model::CreateInstanceSnapshotRequest &request);
+                void CreateInstanceSnapshotAsync(const Model::CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstanceSnapshotOutcomeCallable CreateInstanceSnapshotCallable(const Model::CreateInstanceSnapshotRequest& request);
+
+                /**
+                 *本接口 (DeleteBlueprints) 用于删除镜像。
+                 * @param req DeleteBlueprintsRequest
+                 * @return DeleteBlueprintsOutcome
+                 */
+                DeleteBlueprintsOutcome DeleteBlueprints(const Model::DeleteBlueprintsRequest &request);
+                void DeleteBlueprintsAsync(const Model::DeleteBlueprintsRequest& request, const DeleteBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBlueprintsOutcomeCallable DeleteBlueprintsCallable(const Model::DeleteBlueprintsRequest& request);
+
+                /**
                  *本接口（DeleteFirewallRules）用于删除实例的防火墙规则。
 
 * FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接删除指定的规则。
@@ -131,6 +210,16 @@ namespace TencentCloud
                 DeleteFirewallRulesOutcome DeleteFirewallRules(const Model::DeleteFirewallRulesRequest &request);
                 void DeleteFirewallRulesAsync(const Model::DeleteFirewallRulesRequest& request, const DeleteFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFirewallRulesOutcomeCallable DeleteFirewallRulesCallable(const Model::DeleteFirewallRulesRequest& request);
+
+                /**
+                 *本接口（DeleteSnapshots）用于删除快照。
+快照必须处于 NORMAL 状态，快照状态可以通过 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。
+                 * @param req DeleteSnapshotsRequest
+                 * @return DeleteSnapshotsOutcome
+                 */
+                DeleteSnapshotsOutcome DeleteSnapshots(const Model::DeleteSnapshotsRequest &request);
+                void DeleteSnapshotsAsync(const Model::DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSnapshotsOutcomeCallable DeleteSnapshotsCallable(const Model::DeleteSnapshotsRequest& request);
 
                 /**
                  *本接口（DescribeBlueprints）用于查询镜像信息。
@@ -181,6 +270,34 @@ namespace TencentCloud
                 DescribeInstancesTrafficPackagesOutcome DescribeInstancesTrafficPackages(const Model::DescribeInstancesTrafficPackagesRequest &request);
                 void DescribeInstancesTrafficPackagesAsync(const Model::DescribeInstancesTrafficPackagesRequest& request, const DescribeInstancesTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesTrafficPackagesOutcomeCallable DescribeInstancesTrafficPackagesCallable(const Model::DescribeInstancesTrafficPackagesRequest& request);
+
+                /**
+                 *本接口（DescribeSnapshots）用于查询快照的详细信息。
+                 * @param req DescribeSnapshotsRequest
+                 * @return DescribeSnapshotsOutcome
+                 */
+                DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest &request);
+                void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request);
+
+                /**
+                 *本接口 (ModifyBlueprintAttribute) 用于修改镜像属性。
+                 * @param req ModifyBlueprintAttributeRequest
+                 * @return ModifyBlueprintAttributeOutcome
+                 */
+                ModifyBlueprintAttributeOutcome ModifyBlueprintAttribute(const Model::ModifyBlueprintAttributeRequest &request);
+                void ModifyBlueprintAttributeAsync(const Model::ModifyBlueprintAttributeRequest& request, const ModifyBlueprintAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBlueprintAttributeOutcomeCallable ModifyBlueprintAttributeCallable(const Model::ModifyBlueprintAttributeRequest& request);
+
+                /**
+                 *本接口（ModifySnapshotAttribute）用于修改指定快照的属性。
+<li>“快照名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为提交工单或是进行快照管理操作的依据。</li>
+                 * @param req ModifySnapshotAttributeRequest
+                 * @return ModifySnapshotAttributeOutcome
+                 */
+                ModifySnapshotAttributeOutcome ModifySnapshotAttribute(const Model::ModifySnapshotAttributeRequest &request);
+                void ModifySnapshotAttributeAsync(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySnapshotAttributeOutcomeCallable ModifySnapshotAttributeCallable(const Model::ModifySnapshotAttributeRequest& request);
 
                 /**
                  *本接口（RebootInstances）用于重启实例。

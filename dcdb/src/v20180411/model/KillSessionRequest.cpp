@@ -26,7 +26,8 @@ using namespace std;
 KillSessionRequest::KillSessionRequest() :
     m_instanceIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_shardIdHasBeenSet(false)
+    m_shardIdHasBeenSet(false),
+    m_shardSerialIdHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string KillSessionRequest::ToJsonString() const
         string key = "ShardId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_shardId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shardSerialIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ShardSerialId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_shardSerialId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -120,6 +129,22 @@ void KillSessionRequest::SetShardId(const string& _shardId)
 bool KillSessionRequest::ShardIdHasBeenSet() const
 {
     return m_shardIdHasBeenSet;
+}
+
+string KillSessionRequest::GetShardSerialId() const
+{
+    return m_shardSerialId;
+}
+
+void KillSessionRequest::SetShardSerialId(const string& _shardSerialId)
+{
+    m_shardSerialId = _shardSerialId;
+    m_shardSerialIdHasBeenSet = true;
+}
+
+bool KillSessionRequest::ShardSerialIdHasBeenSet() const
+{
+    return m_shardSerialIdHasBeenSet;
 }
 
 

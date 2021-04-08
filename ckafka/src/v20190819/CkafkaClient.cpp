@@ -341,6 +341,49 @@ CkafkaClient::DeleteAclOutcomeCallable CkafkaClient::DeleteAclCallable(const Del
     return task->get_future();
 }
 
+CkafkaClient::DeleteAclRuleOutcome CkafkaClient::DeleteAclRule(const DeleteAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAclRuleResponse rsp = DeleteAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAclRuleOutcome(rsp);
+        else
+            return DeleteAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DeleteAclRuleAsync(const DeleteAclRuleRequest& request, const DeleteAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DeleteAclRuleOutcomeCallable CkafkaClient::DeleteAclRuleCallable(const DeleteAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAclRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DeleteTopicOutcome CkafkaClient::DeleteTopic(const DeleteTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTopic");

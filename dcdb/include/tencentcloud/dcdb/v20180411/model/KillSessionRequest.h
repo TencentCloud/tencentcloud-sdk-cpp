@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取分片ID
-                     * @return ShardId 分片ID
+                     * 获取分片ID，与ShardSerialId设置一个
+                     * @return ShardId 分片ID，与ShardSerialId设置一个
                      */
                     std::string GetShardId() const;
 
                     /**
-                     * 设置分片ID
-                     * @param ShardId 分片ID
+                     * 设置分片ID，与ShardSerialId设置一个
+                     * @param ShardId 分片ID，与ShardSerialId设置一个
                      */
                     void SetShardId(const std::string& _shardId);
 
@@ -95,6 +95,24 @@ namespace TencentCloud
                      * @return ShardId 是否已赋值
                      */
                     bool ShardIdHasBeenSet() const;
+
+                    /**
+                     * 获取分片序列ID，与ShardId设置一个
+                     * @return ShardSerialId 分片序列ID，与ShardId设置一个
+                     */
+                    std::string GetShardSerialId() const;
+
+                    /**
+                     * 设置分片序列ID，与ShardId设置一个
+                     * @param ShardSerialId 分片序列ID，与ShardId设置一个
+                     */
+                    void SetShardSerialId(const std::string& _shardSerialId);
+
+                    /**
+                     * 判断参数 ShardSerialId 是否已赋值
+                     * @return ShardSerialId 是否已赋值
+                     */
+                    bool ShardSerialIdHasBeenSet() const;
 
                 private:
 
@@ -111,10 +129,16 @@ namespace TencentCloud
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 分片ID
+                     * 分片ID，与ShardSerialId设置一个
                      */
                     std::string m_shardId;
                     bool m_shardIdHasBeenSet;
+
+                    /**
+                     * 分片序列ID，与ShardId设置一个
+                     */
+                    std::string m_shardSerialId;
+                    bool m_shardSerialIdHasBeenSet;
 
                 };
             }

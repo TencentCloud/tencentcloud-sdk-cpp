@@ -45,6 +45,8 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteEndUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteEndUserResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h>
@@ -97,6 +99,8 @@
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerRequest.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerResponse.h>
+#include <tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEndUserRequest.h>
@@ -152,6 +156,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteEndUserResponse> DeleteEndUserOutcome;
                 typedef std::future<DeleteEndUserOutcome> DeleteEndUserOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteEndUserRequest&, DeleteEndUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEndUserAsyncHandler;
+                typedef Outcome<Error, Model::DeleteWxGatewayRouteResponse> DeleteWxGatewayRouteOutcome;
+                typedef std::future<DeleteWxGatewayRouteOutcome> DeleteWxGatewayRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteWxGatewayRouteRequest&, DeleteWxGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWxGatewayRouteAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAuthDomainsResponse> DescribeAuthDomainsOutcome;
                 typedef std::future<DescribeAuthDomainsOutcome> DescribeAuthDomainsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeAuthDomainsRequest&, DescribeAuthDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthDomainsAsyncHandler;
@@ -230,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EstablishCloudBaseRunServerResponse> EstablishCloudBaseRunServerOutcome;
                 typedef std::future<EstablishCloudBaseRunServerOutcome> EstablishCloudBaseRunServerOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::EstablishCloudBaseRunServerRequest&, EstablishCloudBaseRunServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstablishCloudBaseRunServerAsyncHandler;
+                typedef Outcome<Error, Model::EstablishWxGatewayRouteResponse> EstablishWxGatewayRouteOutcome;
+                typedef std::future<EstablishWxGatewayRouteOutcome> EstablishWxGatewayRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::EstablishWxGatewayRouteRequest&, EstablishWxGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstablishWxGatewayRouteAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDatabaseACLResponse> ModifyDatabaseACLOutcome;
                 typedef std::future<ModifyDatabaseACLOutcome> ModifyDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyDatabaseACLRequest&, ModifyDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseACLAsyncHandler;
@@ -343,6 +353,15 @@ namespace TencentCloud
                 DeleteEndUserOutcome DeleteEndUser(const Model::DeleteEndUserRequest &request);
                 void DeleteEndUserAsync(const Model::DeleteEndUserRequest& request, const DeleteEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEndUserOutcomeCallable DeleteEndUserCallable(const Model::DeleteEndUserRequest& request);
+
+                /**
+                 *删除安全网关路由
+                 * @param req DeleteWxGatewayRouteRequest
+                 * @return DeleteWxGatewayRouteOutcome
+                 */
+                DeleteWxGatewayRouteOutcome DeleteWxGatewayRoute(const Model::DeleteWxGatewayRouteRequest &request);
+                void DeleteWxGatewayRouteAsync(const Model::DeleteWxGatewayRouteRequest& request, const DeleteWxGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWxGatewayRouteOutcomeCallable DeleteWxGatewayRouteCallable(const Model::DeleteWxGatewayRouteRequest& request);
 
                 /**
                  *获取安全域名列表
@@ -580,6 +599,15 @@ namespace TencentCloud
                 EstablishCloudBaseRunServerOutcome EstablishCloudBaseRunServer(const Model::EstablishCloudBaseRunServerRequest &request);
                 void EstablishCloudBaseRunServerAsync(const Model::EstablishCloudBaseRunServerRequest& request, const EstablishCloudBaseRunServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EstablishCloudBaseRunServerOutcomeCallable EstablishCloudBaseRunServerCallable(const Model::EstablishCloudBaseRunServerRequest& request);
+
+                /**
+                 *创建或修改安全网关路由
+                 * @param req EstablishWxGatewayRouteRequest
+                 * @return EstablishWxGatewayRouteOutcome
+                 */
+                EstablishWxGatewayRouteOutcome EstablishWxGatewayRoute(const Model::EstablishWxGatewayRouteRequest &request);
+                void EstablishWxGatewayRouteAsync(const Model::EstablishWxGatewayRouteRequest& request, const EstablishWxGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EstablishWxGatewayRouteOutcomeCallable EstablishWxGatewayRouteCallable(const Model::EstablishWxGatewayRouteRequest& request);
 
                 /**
                  *修改数据库权限

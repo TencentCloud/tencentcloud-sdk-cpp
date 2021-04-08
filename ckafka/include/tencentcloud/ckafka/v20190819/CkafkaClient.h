@@ -37,6 +37,8 @@
 #include <tencentcloud/ckafka/v20190819/model/CreateUserResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteAclRuleRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteAclRuleResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteTopicRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteTopicIpWhiteListRequest.h>
@@ -114,6 +116,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteAclResponse> DeleteAclOutcome;
                 typedef std::future<DeleteAclOutcome> DeleteAclOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteAclRequest&, DeleteAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAclAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAclRuleResponse> DeleteAclRuleOutcome;
+                typedef std::future<DeleteAclRuleOutcome> DeleteAclRuleOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteAclRuleRequest&, DeleteAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAclRuleAsyncHandler;
                 typedef Outcome<Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
@@ -242,6 +247,15 @@ namespace TencentCloud
                 DeleteAclOutcome DeleteAcl(const Model::DeleteAclRequest &request);
                 void DeleteAclAsync(const Model::DeleteAclRequest& request, const DeleteAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAclOutcomeCallable DeleteAclCallable(const Model::DeleteAclRequest& request);
+
+                /**
+                 *删除ACL规则
+                 * @param req DeleteAclRuleRequest
+                 * @return DeleteAclRuleOutcome
+                 */
+                DeleteAclRuleOutcome DeleteAclRule(const Model::DeleteAclRuleRequest &request);
+                void DeleteAclRuleAsync(const Model::DeleteAclRuleRequest& request, const DeleteAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAclRuleOutcomeCallable DeleteAclRuleCallable(const Model::DeleteAclRuleRequest& request);
 
                 /**
                  *删除ckafka主题

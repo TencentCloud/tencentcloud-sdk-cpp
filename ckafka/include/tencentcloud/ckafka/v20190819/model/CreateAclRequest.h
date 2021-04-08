@@ -79,24 +79,6 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
-                     * @return ResourceName 资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
-                     */
-                    std::string GetResourceName() const;
-
-                    /**
-                     * 设置资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
-                     * @param ResourceName 资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
-                     */
-                    void SetResourceName(const std::string& _resourceName);
-
-                    /**
-                     * 判断参数 ResourceName 是否已赋值
-                     * @return ResourceName 是否已赋值
-                     */
-                    bool ResourceNameHasBeenSet() const;
-
-                    /**
                      * 获取Acl操作方式，(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS)
                      * @return Operation Acl操作方式，(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS)
                      */
@@ -133,6 +115,24 @@ namespace TencentCloud
                     bool PermissionTypeHasBeenSet() const;
 
                     /**
+                     * 获取资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
+                     * @return ResourceName 资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
+                     */
+                    std::string GetResourceName() const;
+
+                    /**
+                     * 设置资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
+                     * @param ResourceName 资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
+                     */
+                    void SetResourceName(const std::string& _resourceName);
+
+                    /**
+                     * 判断参数 ResourceName 是否已赋值
+                     * @return ResourceName 是否已赋值
+                     */
+                    bool ResourceNameHasBeenSet() const;
+
+                    /**
                      * 获取默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
                      * @return Host 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
                      */
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-                     * @return Principal 用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * 获取用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。
+                     * @return Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。
                      */
                     std::string GetPrincipal() const;
 
                     /**
-                     * 设置用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-                     * @param Principal 用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * 设置用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。
+                     * @param Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。
                      */
                     void SetPrincipal(const std::string& _principal);
 
@@ -183,12 +183,6 @@ namespace TencentCloud
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
-                     */
-                    std::string m_resourceName;
-                    bool m_resourceNameHasBeenSet;
-
-                    /**
                      * Acl操作方式，(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS)
                      */
                     int64_t m_operation;
@@ -201,13 +195,19 @@ namespace TencentCloud
                     bool m_permissionTypeHasBeenSet;
 
                     /**
+                     * 资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
+                     */
+                    std::string m_resourceName;
+                    bool m_resourceNameHasBeenSet;
+
+                    /**
                      * 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。
                      */
                     std::string m_principal;
                     bool m_principalHasBeenSet;
