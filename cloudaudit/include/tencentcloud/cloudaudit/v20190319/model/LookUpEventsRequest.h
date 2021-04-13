@@ -44,24 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
-                     */
-                    int64_t GetEndTime() const;
-
-                    /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
-                     */
-                    void SetEndTime(const int64_t& _endTime);
-
-                    /**
-                     * 判断参数 EndTime 是否已赋值
-                     * @return EndTime 是否已赋值
-                     */
-                    bool EndTimeHasBeenSet() const;
-
-                    /**
                      * 获取开始时间
                      * @return StartTime 开始时间
                      */
@@ -80,6 +62,24 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
+                     * 获取结束时间
+                     * @return EndTime 结束时间
+                     */
+                    int64_t GetEndTime() const;
+
+                    /**
+                     * 设置结束时间
+                     * @param EndTime 结束时间
+                     */
+                    void SetEndTime(const int64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
                      * 获取检索条件
                      * @return LookupAttributes 检索条件
                      */
@@ -96,6 +96,24 @@ namespace TencentCloud
                      * @return LookupAttributes 是否已赋值
                      */
                     bool LookupAttributesHasBeenSet() const;
+
+                    /**
+                     * 获取查看更多日志的凭证
+                     * @return NextToken 查看更多日志的凭证
+                     */
+                    std::string GetNextToken() const;
+
+                    /**
+                     * 设置查看更多日志的凭证
+                     * @param NextToken 查看更多日志的凭证
+                     */
+                    void SetNextToken(const std::string& _nextToken);
+
+                    /**
+                     * 判断参数 NextToken 是否已赋值
+                     * @return NextToken 是否已赋值
+                     */
+                    bool NextTokenHasBeenSet() const;
 
                     /**
                      * 获取返回日志的最大条数
@@ -133,31 +151,7 @@ namespace TencentCloud
                      */
                     bool ModeHasBeenSet() const;
 
-                    /**
-                     * 获取查看更多日志的凭证
-                     * @return NextToken 查看更多日志的凭证
-                     */
-                    std::string GetNextToken() const;
-
-                    /**
-                     * 设置查看更多日志的凭证
-                     * @param NextToken 查看更多日志的凭证
-                     */
-                    void SetNextToken(const std::string& _nextToken);
-
-                    /**
-                     * 判断参数 NextToken 是否已赋值
-                     * @return NextToken 是否已赋值
-                     */
-                    bool NextTokenHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 结束时间
-                     */
-                    int64_t m_endTime;
-                    bool m_endTimeHasBeenSet;
 
                     /**
                      * 开始时间
@@ -166,10 +160,22 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
+                     * 结束时间
+                     */
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
                      * 检索条件
                      */
                     std::vector<LookupAttribute> m_lookupAttributes;
                     bool m_lookupAttributesHasBeenSet;
+
+                    /**
+                     * 查看更多日志的凭证
+                     */
+                    std::string m_nextToken;
+                    bool m_nextTokenHasBeenSet;
 
                     /**
                      * 返回日志的最大条数
@@ -182,12 +188,6 @@ namespace TencentCloud
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
-
-                    /**
-                     * 查看更多日志的凭证
-                     */
-                    std::string m_nextToken;
-                    bool m_nextTokenHasBeenSet;
 
                 };
             }

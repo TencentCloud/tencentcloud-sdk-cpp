@@ -25,7 +25,19 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeAccountBalanceResponse::DescribeAccountBalanceResponse() :
-    m_balanceHasBeenSet(false)
+    m_balanceHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_realBalanceHasBeenSet(false),
+    m_cashAccountBalanceHasBeenSet(false),
+    m_incomeIntoAccountBalanceHasBeenSet(false),
+    m_presentAccountBalanceHasBeenSet(false),
+    m_freezeAmountHasBeenSet(false),
+    m_oweAmountHasBeenSet(false),
+    m_isAllowArrearsHasBeenSet(false),
+    m_isCreditLimitedHasBeenSet(false),
+    m_creditAmountHasBeenSet(false),
+    m_creditBalanceHasBeenSet(false),
+    m_realCreditBalanceHasBeenSet(false)
 {
 }
 
@@ -73,6 +85,126 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
         m_balanceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Uin") && !rsp["Uin"].IsNull())
+    {
+        if (!rsp["Uin"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = rsp["Uin"].GetUint64();
+        m_uinHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RealBalance") && !rsp["RealBalance"].IsNull())
+    {
+        if (!rsp["RealBalance"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `RealBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_realBalance = rsp["RealBalance"].GetDouble();
+        m_realBalanceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CashAccountBalance") && !rsp["CashAccountBalance"].IsNull())
+    {
+        if (!rsp["CashAccountBalance"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `CashAccountBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cashAccountBalance = rsp["CashAccountBalance"].GetDouble();
+        m_cashAccountBalanceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IncomeIntoAccountBalance") && !rsp["IncomeIntoAccountBalance"].IsNull())
+    {
+        if (!rsp["IncomeIntoAccountBalance"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `IncomeIntoAccountBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_incomeIntoAccountBalance = rsp["IncomeIntoAccountBalance"].GetDouble();
+        m_incomeIntoAccountBalanceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PresentAccountBalance") && !rsp["PresentAccountBalance"].IsNull())
+    {
+        if (!rsp["PresentAccountBalance"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `PresentAccountBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_presentAccountBalance = rsp["PresentAccountBalance"].GetDouble();
+        m_presentAccountBalanceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FreezeAmount") && !rsp["FreezeAmount"].IsNull())
+    {
+        if (!rsp["FreezeAmount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `FreezeAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_freezeAmount = rsp["FreezeAmount"].GetDouble();
+        m_freezeAmountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OweAmount") && !rsp["OweAmount"].IsNull())
+    {
+        if (!rsp["OweAmount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `OweAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_oweAmount = rsp["OweAmount"].GetDouble();
+        m_oweAmountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsAllowArrears") && !rsp["IsAllowArrears"].IsNull())
+    {
+        if (!rsp["IsAllowArrears"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `IsAllowArrears` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAllowArrears = rsp["IsAllowArrears"].GetBool();
+        m_isAllowArrearsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsCreditLimited") && !rsp["IsCreditLimited"].IsNull())
+    {
+        if (!rsp["IsCreditLimited"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `IsCreditLimited` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCreditLimited = rsp["IsCreditLimited"].GetBool();
+        m_isCreditLimitedHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CreditAmount") && !rsp["CreditAmount"].IsNull())
+    {
+        if (!rsp["CreditAmount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `CreditAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_creditAmount = rsp["CreditAmount"].GetDouble();
+        m_creditAmountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CreditBalance") && !rsp["CreditBalance"].IsNull())
+    {
+        if (!rsp["CreditBalance"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `CreditBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_creditBalance = rsp["CreditBalance"].GetDouble();
+        m_creditBalanceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RealCreditBalance") && !rsp["RealCreditBalance"].IsNull())
+    {
+        if (!rsp["RealCreditBalance"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `RealCreditBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_realCreditBalance = rsp["RealCreditBalance"].GetDouble();
+        m_realCreditBalanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +218,126 @@ int64_t DescribeAccountBalanceResponse::GetBalance() const
 bool DescribeAccountBalanceResponse::BalanceHasBeenSet() const
 {
     return m_balanceHasBeenSet;
+}
+
+uint64_t DescribeAccountBalanceResponse::GetUin() const
+{
+    return m_uin;
+}
+
+bool DescribeAccountBalanceResponse::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+double DescribeAccountBalanceResponse::GetRealBalance() const
+{
+    return m_realBalance;
+}
+
+bool DescribeAccountBalanceResponse::RealBalanceHasBeenSet() const
+{
+    return m_realBalanceHasBeenSet;
+}
+
+double DescribeAccountBalanceResponse::GetCashAccountBalance() const
+{
+    return m_cashAccountBalance;
+}
+
+bool DescribeAccountBalanceResponse::CashAccountBalanceHasBeenSet() const
+{
+    return m_cashAccountBalanceHasBeenSet;
+}
+
+double DescribeAccountBalanceResponse::GetIncomeIntoAccountBalance() const
+{
+    return m_incomeIntoAccountBalance;
+}
+
+bool DescribeAccountBalanceResponse::IncomeIntoAccountBalanceHasBeenSet() const
+{
+    return m_incomeIntoAccountBalanceHasBeenSet;
+}
+
+double DescribeAccountBalanceResponse::GetPresentAccountBalance() const
+{
+    return m_presentAccountBalance;
+}
+
+bool DescribeAccountBalanceResponse::PresentAccountBalanceHasBeenSet() const
+{
+    return m_presentAccountBalanceHasBeenSet;
+}
+
+double DescribeAccountBalanceResponse::GetFreezeAmount() const
+{
+    return m_freezeAmount;
+}
+
+bool DescribeAccountBalanceResponse::FreezeAmountHasBeenSet() const
+{
+    return m_freezeAmountHasBeenSet;
+}
+
+double DescribeAccountBalanceResponse::GetOweAmount() const
+{
+    return m_oweAmount;
+}
+
+bool DescribeAccountBalanceResponse::OweAmountHasBeenSet() const
+{
+    return m_oweAmountHasBeenSet;
+}
+
+bool DescribeAccountBalanceResponse::GetIsAllowArrears() const
+{
+    return m_isAllowArrears;
+}
+
+bool DescribeAccountBalanceResponse::IsAllowArrearsHasBeenSet() const
+{
+    return m_isAllowArrearsHasBeenSet;
+}
+
+bool DescribeAccountBalanceResponse::GetIsCreditLimited() const
+{
+    return m_isCreditLimited;
+}
+
+bool DescribeAccountBalanceResponse::IsCreditLimitedHasBeenSet() const
+{
+    return m_isCreditLimitedHasBeenSet;
+}
+
+double DescribeAccountBalanceResponse::GetCreditAmount() const
+{
+    return m_creditAmount;
+}
+
+bool DescribeAccountBalanceResponse::CreditAmountHasBeenSet() const
+{
+    return m_creditAmountHasBeenSet;
+}
+
+double DescribeAccountBalanceResponse::GetCreditBalance() const
+{
+    return m_creditBalance;
+}
+
+bool DescribeAccountBalanceResponse::CreditBalanceHasBeenSet() const
+{
+    return m_creditBalanceHasBeenSet;
+}
+
+double DescribeAccountBalanceResponse::GetRealCreditBalance() const
+{
+    return m_realCreditBalance;
+}
+
+bool DescribeAccountBalanceResponse::RealCreditBalanceHasBeenSet() const
+{
+    return m_realCreditBalanceHasBeenSet;
 }
 
 

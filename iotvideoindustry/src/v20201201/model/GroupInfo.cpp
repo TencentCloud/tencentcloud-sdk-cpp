@@ -29,7 +29,9 @@ GroupInfo::GroupInfo() :
     m_parentIdHasBeenSet(false),
     m_groupDescribeHasBeenSet(false),
     m_extraInformationHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_groupStatusHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,26 @@ CoreInternalOutcome GroupInfo::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupStatus") && !value["GroupStatus"].IsNull())
+    {
+        if (!value["GroupStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `GroupInfo.GroupStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupStatus = value["GroupStatus"].GetInt64();
+        m_groupStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Error") && !value["Error"].IsNull())
+    {
+        if (!value["Error"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `GroupInfo.Error` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_error = string(value["Error"].GetString());
+        m_errorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +209,22 @@ void GroupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_groupStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_groupStatus, allocator);
+    }
+
+    if (m_errorHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Error";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_error.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +356,37 @@ void GroupInfo::SetCreateTime(const int64_t& _createTime)
 bool GroupInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+int64_t GroupInfo::GetGroupStatus() const
+{
+    return m_groupStatus;
+}
+
+void GroupInfo::SetGroupStatus(const int64_t& _groupStatus)
+{
+    m_groupStatus = _groupStatus;
+    m_groupStatusHasBeenSet = true;
+}
+
+bool GroupInfo::GroupStatusHasBeenSet() const
+{
+    return m_groupStatusHasBeenSet;
+}
+
+string GroupInfo::GetError() const
+{
+    return m_error;
+}
+
+void GroupInfo::SetError(const string& _error)
+{
+    m_error = _error;
+    m_errorHasBeenSet = true;
+}
+
+bool GroupInfo::ErrorHasBeenSet() const
+{
+    return m_errorHasBeenSet;
 }
 

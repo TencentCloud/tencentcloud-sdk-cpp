@@ -2276,6 +2276,49 @@ EcmClient::DescribeModuleDetailOutcomeCallable EcmClient::DescribeModuleDetailCa
     return task->get_future();
 }
 
+EcmClient::DescribeMonthPeakNetworkOutcome EcmClient::DescribeMonthPeakNetwork(const DescribeMonthPeakNetworkRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMonthPeakNetwork");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMonthPeakNetworkResponse rsp = DescribeMonthPeakNetworkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMonthPeakNetworkOutcome(rsp);
+        else
+            return DescribeMonthPeakNetworkOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMonthPeakNetworkOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeMonthPeakNetworkAsync(const DescribeMonthPeakNetworkRequest& request, const DescribeMonthPeakNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMonthPeakNetwork(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeMonthPeakNetworkOutcomeCallable EcmClient::DescribeMonthPeakNetworkCallable(const DescribeMonthPeakNetworkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMonthPeakNetworkOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMonthPeakNetwork(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeNetworkInterfacesOutcome EcmClient::DescribeNetworkInterfaces(const DescribeNetworkInterfacesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNetworkInterfaces");

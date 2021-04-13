@@ -125,6 +125,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/DisableDeviceStreamResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DisableOtaVersionRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/DisableOtaVersionResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/ModifyDeviceRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/ModifyDeviceResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/ModifyDeviceActionRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/ModifyDeviceActionResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/ModifyDevicePropertyRequest.h>
@@ -320,6 +322,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DisableOtaVersionResponse> DisableOtaVersionOutcome;
                 typedef std::future<DisableOtaVersionOutcome> DisableOtaVersionOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DisableOtaVersionRequest&, DisableOtaVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableOtaVersionAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDeviceResponse> ModifyDeviceOutcome;
+                typedef std::future<ModifyDeviceOutcome> ModifyDeviceOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ModifyDeviceRequest&, ModifyDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDeviceActionResponse> ModifyDeviceActionOutcome;
                 typedef std::future<ModifyDeviceActionOutcome> ModifyDeviceActionOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ModifyDeviceActionRequest&, ModifyDeviceActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceActionAsyncHandler;
@@ -830,6 +835,15 @@ namespace TencentCloud
                 DisableOtaVersionOutcome DisableOtaVersion(const Model::DisableOtaVersionRequest &request);
                 void DisableOtaVersionAsync(const Model::DisableOtaVersionRequest& request, const DisableOtaVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableOtaVersionOutcomeCallable DisableOtaVersionCallable(const Model::DisableOtaVersionRequest& request);
+
+                /**
+                 *修改设备信息
+                 * @param req ModifyDeviceRequest
+                 * @return ModifyDeviceOutcome
+                 */
+                ModifyDeviceOutcome ModifyDevice(const Model::ModifyDeviceRequest &request);
+                void ModifyDeviceAsync(const Model::ModifyDeviceRequest& request, const ModifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeviceOutcomeCallable ModifyDeviceCallable(const Model::ModifyDeviceRequest& request);
 
                 /**
                  *本接口（ModifyDeviceAction）用于修改设备物模型的行为（Action）。

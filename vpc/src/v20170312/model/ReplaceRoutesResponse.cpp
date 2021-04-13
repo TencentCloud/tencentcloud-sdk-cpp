@@ -24,7 +24,9 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace rapidjson;
 using namespace std;
 
-ReplaceRoutesResponse::ReplaceRoutesResponse()
+ReplaceRoutesResponse::ReplaceRoutesResponse() :
+    m_oldRouteSetHasBeenSet(false),
+    m_newRouteSetHasBeenSet(false)
 {
 }
 
@@ -62,9 +64,69 @@ CoreInternalOutcome ReplaceRoutesResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("OldRouteSet") && !rsp["OldRouteSet"].IsNull())
+    {
+        if (!rsp["OldRouteSet"].IsArray())
+            return CoreInternalOutcome(Error("response `OldRouteSet` is not array type"));
+
+        const Value &tmpValue = rsp["OldRouteSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Route item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_oldRouteSet.push_back(item);
+        }
+        m_oldRouteSetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NewRouteSet") && !rsp["NewRouteSet"].IsNull())
+    {
+        if (!rsp["NewRouteSet"].IsArray())
+            return CoreInternalOutcome(Error("response `NewRouteSet` is not array type"));
+
+        const Value &tmpValue = rsp["NewRouteSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Route item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_newRouteSet.push_back(item);
+        }
+        m_newRouteSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<Route> ReplaceRoutesResponse::GetOldRouteSet() const
+{
+    return m_oldRouteSet;
+}
+
+bool ReplaceRoutesResponse::OldRouteSetHasBeenSet() const
+{
+    return m_oldRouteSetHasBeenSet;
+}
+
+vector<Route> ReplaceRoutesResponse::GetNewRouteSet() const
+{
+    return m_newRouteSet;
+}
+
+bool ReplaceRoutesResponse::NewRouteSetHasBeenSet() const
+{
+    return m_newRouteSetHasBeenSet;
+}
 
 

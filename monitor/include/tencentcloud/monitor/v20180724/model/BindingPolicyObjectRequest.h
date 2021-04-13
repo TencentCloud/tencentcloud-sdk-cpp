@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略组id，如传入PolicyId则该字段可传入任意值
-                     * @return GroupId 策略组id，如传入PolicyId则该字段可传入任意值
+                     * 获取策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
+                     * @return GroupId 策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略组id，如传入PolicyId则该字段可传入任意值
-                     * @param GroupId 策略组id，如传入PolicyId则该字段可传入任意值
+                     * 设置策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
+                     * @param GroupId 策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
                      */
                     void SetGroupId(const int64_t& _groupId);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取告警策略ID，使用此字段时GroupId可传入任意值
-                     * @return PolicyId 告警策略ID，使用此字段时GroupId可传入任意值
+                     * 获取告警策略ID，使用此字段时 GroupId 会被忽略
+                     * @return PolicyId 告警策略ID，使用此字段时 GroupId 会被忽略
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置告警策略ID，使用此字段时GroupId可传入任意值
-                     * @param PolicyId 告警策略ID，使用此字段时GroupId可传入任意值
+                     * 设置告警策略ID，使用此字段时 GroupId 会被忽略
+                     * @param PolicyId 告警策略ID，使用此字段时 GroupId 会被忽略
                      */
                     void SetPolicyId(const std::string& _policyId);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略组id，如传入PolicyId则该字段可传入任意值
+                     * 策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 告警策略ID，使用此字段时GroupId可传入任意值
+                     * 告警策略ID，使用此字段时 GroupId 会被忽略
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;

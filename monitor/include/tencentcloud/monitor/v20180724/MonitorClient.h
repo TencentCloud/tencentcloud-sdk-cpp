@@ -562,7 +562,7 @@ namespace TencentCloud
                 ModifyAlarmNoticeOutcomeCallable ModifyAlarmNoticeCallable(const Model::ModifyAlarmNoticeRequest& request);
 
                 /**
-                 *编辑告警策略触发条件
+                 *修改告警策略触发条件
                  * @param req ModifyAlarmPolicyConditionRequest
                  * @return ModifyAlarmPolicyConditionOutcome
                  */

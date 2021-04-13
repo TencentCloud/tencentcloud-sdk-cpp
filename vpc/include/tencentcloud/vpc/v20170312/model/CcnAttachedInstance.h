@@ -292,6 +292,24 @@ namespace TencentCloud
                      */
                     bool InstanceAreaHasBeenSet() const;
 
+                    /**
+                     * 获取备注
+                     * @return Description 备注
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置备注
+                     * @param Description 备注
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +389,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceArea;
                     bool m_instanceAreaHasBeenSet;
+
+                    /**
+                     * 备注
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

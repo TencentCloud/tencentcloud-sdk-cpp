@@ -31,6 +31,7 @@ CreateAlarmPolicyRequest::CreateAlarmPolicyRequest() :
     m_remarkHasBeenSet(false),
     m_enableHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_conditionTemplateIdHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_eventConditionHasBeenSet(false),
     m_noticeIdsHasBeenSet(false),
@@ -99,6 +100,14 @@ string CreateAlarmPolicyRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_conditionTemplateIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ConditionTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_conditionTemplateId, allocator);
     }
 
     if (m_conditionHasBeenSet)
@@ -265,6 +274,22 @@ void CreateAlarmPolicyRequest::SetProjectId(const int64_t& _projectId)
 bool CreateAlarmPolicyRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+int64_t CreateAlarmPolicyRequest::GetConditionTemplateId() const
+{
+    return m_conditionTemplateId;
+}
+
+void CreateAlarmPolicyRequest::SetConditionTemplateId(const int64_t& _conditionTemplateId)
+{
+    m_conditionTemplateId = _conditionTemplateId;
+    m_conditionTemplateIdHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::ConditionTemplateIdHasBeenSet() const
+{
+    return m_conditionTemplateIdHasBeenSet;
 }
 
 AlarmPolicyCondition CreateAlarmPolicyRequest::GetCondition() const

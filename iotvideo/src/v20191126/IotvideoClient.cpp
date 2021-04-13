@@ -2233,6 +2233,49 @@ IotvideoClient::DisableOtaVersionOutcomeCallable IotvideoClient::DisableOtaVersi
     return task->get_future();
 }
 
+IotvideoClient::ModifyDeviceOutcome IotvideoClient::ModifyDevice(const ModifyDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceResponse rsp = ModifyDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceOutcome(rsp);
+        else
+            return ModifyDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ModifyDeviceAsync(const ModifyDeviceRequest& request, const ModifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ModifyDeviceOutcomeCallable IotvideoClient::ModifyDeviceCallable(const ModifyDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::ModifyDeviceActionOutcome IotvideoClient::ModifyDeviceAction(const ModifyDeviceActionRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDeviceAction");

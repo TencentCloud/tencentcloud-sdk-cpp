@@ -25,7 +25,8 @@ using namespace std;
 
 CreateClsLogSetRequest::CreateClsLogSetRequest() :
     m_periodHasBeenSet(false),
-    m_logsetNameHasBeenSet(false)
+    m_logsetNameHasBeenSet(false),
+    m_logsetTypeHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateClsLogSetRequest::ToJsonString() const
         string key = "LogsetName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_logsetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logsetTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogsetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_logsetType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateClsLogSetRequest::SetLogsetName(const string& _logsetName)
 bool CreateClsLogSetRequest::LogsetNameHasBeenSet() const
 {
     return m_logsetNameHasBeenSet;
+}
+
+string CreateClsLogSetRequest::GetLogsetType() const
+{
+    return m_logsetType;
+}
+
+void CreateClsLogSetRequest::SetLogsetType(const string& _logsetType)
+{
+    m_logsetType = _logsetType;
+    m_logsetTypeHasBeenSet = true;
+}
+
+bool CreateClsLogSetRequest::LogsetTypeHasBeenSet() const
+{
+    return m_logsetTypeHasBeenSet;
 }
 
 

@@ -99,6 +99,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateHaVipResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateIp6TranslatorsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateIp6TranslatorsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateLocalGatewayRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateLocalGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNatGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNatGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNatGatewayDestinationIpPortTranslationNatRuleRequest.h>
@@ -159,6 +161,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteHaVipResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteIp6TranslatorsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteIp6TranslatorsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteLocalGatewayRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteLocalGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNatGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNatGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest.h>
@@ -253,6 +257,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeIpGeolocationDatabaseUrlResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIpGeolocationInfosRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIpGeolocationInfosResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeLocalGatewayRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeLocalGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesRequest.h>
@@ -377,6 +383,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyAssistantCidrResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyBandwidthPackageAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyBandwidthPackageAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyCcnAttachedInstancesAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyCcnAttachedInstancesAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnRegionBandwidthLimitsTypeRequest.h>
@@ -401,6 +409,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyIp6TranslatorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyIpv6AddressesAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyIpv6AddressesAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyLocalGatewayRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyLocalGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayDestinationIpPortTranslationNatRuleRequest.h>
@@ -613,6 +623,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateIp6TranslatorsResponse> CreateIp6TranslatorsOutcome;
                 typedef std::future<CreateIp6TranslatorsOutcome> CreateIp6TranslatorsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateIp6TranslatorsRequest&, CreateIp6TranslatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIp6TranslatorsAsyncHandler;
+                typedef Outcome<Error, Model::CreateLocalGatewayResponse> CreateLocalGatewayOutcome;
+                typedef std::future<CreateLocalGatewayOutcome> CreateLocalGatewayOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateLocalGatewayRequest&, CreateLocalGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLocalGatewayAsyncHandler;
                 typedef Outcome<Error, Model::CreateNatGatewayResponse> CreateNatGatewayOutcome;
                 typedef std::future<CreateNatGatewayOutcome> CreateNatGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateNatGatewayRequest&, CreateNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatGatewayAsyncHandler;
@@ -703,6 +716,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteIp6TranslatorsResponse> DeleteIp6TranslatorsOutcome;
                 typedef std::future<DeleteIp6TranslatorsOutcome> DeleteIp6TranslatorsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteIp6TranslatorsRequest&, DeleteIp6TranslatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIp6TranslatorsAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLocalGatewayResponse> DeleteLocalGatewayOutcome;
+                typedef std::future<DeleteLocalGatewayOutcome> DeleteLocalGatewayOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteLocalGatewayRequest&, DeleteLocalGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLocalGatewayAsyncHandler;
                 typedef Outcome<Error, Model::DeleteNatGatewayResponse> DeleteNatGatewayOutcome;
                 typedef std::future<DeleteNatGatewayOutcome> DeleteNatGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteNatGatewayRequest&, DeleteNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNatGatewayAsyncHandler;
@@ -844,6 +860,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeIpGeolocationInfosResponse> DescribeIpGeolocationInfosOutcome;
                 typedef std::future<DescribeIpGeolocationInfosOutcome> DescribeIpGeolocationInfosOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeIpGeolocationInfosRequest&, DescribeIpGeolocationInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpGeolocationInfosAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLocalGatewayResponse> DescribeLocalGatewayOutcome;
+                typedef std::future<DescribeLocalGatewayOutcome> DescribeLocalGatewayOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeLocalGatewayRequest&, DescribeLocalGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLocalGatewayAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse> DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome;
                 typedef std::future<DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome> DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest&, DescribeNatGatewayDestinationIpPortTranslationNatRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayDestinationIpPortTranslationNatRulesAsyncHandler;
@@ -1030,6 +1049,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyBandwidthPackageAttributeResponse> ModifyBandwidthPackageAttributeOutcome;
                 typedef std::future<ModifyBandwidthPackageAttributeOutcome> ModifyBandwidthPackageAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyBandwidthPackageAttributeRequest&, ModifyBandwidthPackageAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBandwidthPackageAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCcnAttachedInstancesAttributeResponse> ModifyCcnAttachedInstancesAttributeOutcome;
+                typedef std::future<ModifyCcnAttachedInstancesAttributeOutcome> ModifyCcnAttachedInstancesAttributeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyCcnAttachedInstancesAttributeRequest&, ModifyCcnAttachedInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCcnAttachedInstancesAttributeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyCcnAttributeResponse> ModifyCcnAttributeOutcome;
                 typedef std::future<ModifyCcnAttributeOutcome> ModifyCcnAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyCcnAttributeRequest&, ModifyCcnAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCcnAttributeAsyncHandler;
@@ -1066,6 +1088,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyIpv6AddressesAttributeResponse> ModifyIpv6AddressesAttributeOutcome;
                 typedef std::future<ModifyIpv6AddressesAttributeOutcome> ModifyIpv6AddressesAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyIpv6AddressesAttributeRequest&, ModifyIpv6AddressesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpv6AddressesAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyLocalGatewayResponse> ModifyLocalGatewayOutcome;
+                typedef std::future<ModifyLocalGatewayOutcome> ModifyLocalGatewayOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyLocalGatewayRequest&, ModifyLocalGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLocalGatewayAsyncHandler;
                 typedef Outcome<Error, Model::ModifyNatGatewayAttributeResponse> ModifyNatGatewayAttributeOutcome;
                 typedef std::future<ModifyNatGatewayAttributeOutcome> ModifyNatGatewayAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyNatGatewayAttributeRequest&, ModifyNatGatewayAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatGatewayAttributeAsyncHandler;
@@ -1592,6 +1617,15 @@ namespace TencentCloud
                 CreateIp6TranslatorsOutcomeCallable CreateIp6TranslatorsCallable(const Model::CreateIp6TranslatorsRequest& request);
 
                 /**
+                 *该接口用于创建用于CDC的本地网关。
+                 * @param req CreateLocalGatewayRequest
+                 * @return CreateLocalGatewayOutcome
+                 */
+                CreateLocalGatewayOutcome CreateLocalGateway(const Model::CreateLocalGatewayRequest &request);
+                void CreateLocalGatewayAsync(const Model::CreateLocalGatewayRequest& request, const CreateLocalGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLocalGatewayOutcomeCallable CreateLocalGatewayCallable(const Model::CreateLocalGatewayRequest& request);
+
+                /**
                  *本接口(CreateNatGateway)用于创建NAT网关。
                  * @param req CreateNatGatewayRequest
                  * @return CreateNatGatewayOutcome
@@ -1922,6 +1956,15 @@ namespace TencentCloud
                 DeleteIp6TranslatorsOutcome DeleteIp6Translators(const Model::DeleteIp6TranslatorsRequest &request);
                 void DeleteIp6TranslatorsAsync(const Model::DeleteIp6TranslatorsRequest& request, const DeleteIp6TranslatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteIp6TranslatorsOutcomeCallable DeleteIp6TranslatorsCallable(const Model::DeleteIp6TranslatorsRequest& request);
+
+                /**
+                 *该接口用于删除CDC的本地网关。
+                 * @param req DeleteLocalGatewayRequest
+                 * @return DeleteLocalGatewayOutcome
+                 */
+                DeleteLocalGatewayOutcome DeleteLocalGateway(const Model::DeleteLocalGatewayRequest &request);
+                void DeleteLocalGatewayAsync(const Model::DeleteLocalGatewayRequest& request, const DeleteLocalGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLocalGatewayOutcomeCallable DeleteLocalGatewayCallable(const Model::DeleteLocalGatewayRequest& request);
 
                 /**
                  *本接口（DeleteNatGateway）用于删除NAT网关。
@@ -2361,6 +2404,15 @@ namespace TencentCloud
                 DescribeIpGeolocationInfosOutcome DescribeIpGeolocationInfos(const Model::DescribeIpGeolocationInfosRequest &request);
                 void DescribeIpGeolocationInfosAsync(const Model::DescribeIpGeolocationInfosRequest& request, const DescribeIpGeolocationInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIpGeolocationInfosOutcomeCallable DescribeIpGeolocationInfosCallable(const Model::DescribeIpGeolocationInfosRequest& request);
+
+                /**
+                 *该接口用于查询CDC的本地网关。
+                 * @param req DescribeLocalGatewayRequest
+                 * @return DescribeLocalGatewayOutcome
+                 */
+                DescribeLocalGatewayOutcome DescribeLocalGateway(const Model::DescribeLocalGatewayRequest &request);
+                void DescribeLocalGatewayAsync(const Model::DescribeLocalGatewayRequest& request, const DescribeLocalGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLocalGatewayOutcomeCallable DescribeLocalGatewayCallable(const Model::DescribeLocalGatewayRequest& request);
 
                 /**
                  *本接口（DescribeNatGatewayDestinationIpPortTranslationNatRules）用于查询NAT网关端口转发规则对象数组。
@@ -2966,6 +3018,15 @@ LimitTypes取值范围：
                 ModifyBandwidthPackageAttributeOutcomeCallable ModifyBandwidthPackageAttributeCallable(const Model::ModifyBandwidthPackageAttributeRequest& request);
 
                 /**
+                 *修改CCN关联实例属性，目前仅修改备注description
+                 * @param req ModifyCcnAttachedInstancesAttributeRequest
+                 * @return ModifyCcnAttachedInstancesAttributeOutcome
+                 */
+                ModifyCcnAttachedInstancesAttributeOutcome ModifyCcnAttachedInstancesAttribute(const Model::ModifyCcnAttachedInstancesAttributeRequest &request);
+                void ModifyCcnAttachedInstancesAttributeAsync(const Model::ModifyCcnAttachedInstancesAttributeRequest& request, const ModifyCcnAttachedInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCcnAttachedInstancesAttributeOutcomeCallable ModifyCcnAttachedInstancesAttributeCallable(const Model::ModifyCcnAttachedInstancesAttributeRequest& request);
+
+                /**
                  *本接口（ModifyCcnAttribute）用于修改云联网（CCN）的相关属性。
                  * @param req ModifyCcnAttributeRequest
                  * @return ModifyCcnAttributeOutcome
@@ -3073,6 +3134,15 @@ LimitTypes取值范围：
                 ModifyIpv6AddressesAttributeOutcome ModifyIpv6AddressesAttribute(const Model::ModifyIpv6AddressesAttributeRequest &request);
                 void ModifyIpv6AddressesAttributeAsync(const Model::ModifyIpv6AddressesAttributeRequest& request, const ModifyIpv6AddressesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIpv6AddressesAttributeOutcomeCallable ModifyIpv6AddressesAttributeCallable(const Model::ModifyIpv6AddressesAttributeRequest& request);
+
+                /**
+                 *该接口用于修改CDC的本地网关。
+                 * @param req ModifyLocalGatewayRequest
+                 * @return ModifyLocalGatewayOutcome
+                 */
+                ModifyLocalGatewayOutcome ModifyLocalGateway(const Model::ModifyLocalGatewayRequest &request);
+                void ModifyLocalGatewayAsync(const Model::ModifyLocalGatewayRequest& request, const ModifyLocalGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLocalGatewayOutcomeCallable ModifyLocalGatewayCallable(const Model::ModifyLocalGatewayRequest& request);
 
                 /**
                  *本接口（ModifyNatGatewayAttribute）用于修改NAT网关的属性。

@@ -266,6 +266,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取分组状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupStatus 分组状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetGroupStatus() const;
+
+                    /**
+                     * 设置分组状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupStatus 分组状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupStatus(const int64_t& _groupStatus);
+
+                    /**
+                     * 判断参数 GroupStatus 是否已赋值
+                     * @return GroupStatus 是否已赋值
+                     */
+                    bool GroupStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +359,13 @@ namespace TencentCloud
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 分组状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_groupStatus;
+                    bool m_groupStatusHasBeenSet;
 
                 };
             }

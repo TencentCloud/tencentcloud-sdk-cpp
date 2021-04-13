@@ -27,7 +27,8 @@ DescribeGroupDevicesRequest::DescribeGroupDevicesRequest() :
     m_groupIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_nickNameHasBeenSet(false)
+    m_nickNameHasBeenSet(false),
+    m_recordableHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string DescribeGroupDevicesRequest::ToJsonString() const
         string key = "NickName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_nickName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Recordable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_recordable, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void DescribeGroupDevicesRequest::SetNickName(const string& _nickName)
 bool DescribeGroupDevicesRequest::NickNameHasBeenSet() const
 {
     return m_nickNameHasBeenSet;
+}
+
+int64_t DescribeGroupDevicesRequest::GetRecordable() const
+{
+    return m_recordable;
+}
+
+void DescribeGroupDevicesRequest::SetRecordable(const int64_t& _recordable)
+{
+    m_recordable = _recordable;
+    m_recordableHasBeenSet = true;
+}
+
+bool DescribeGroupDevicesRequest::RecordableHasBeenSet() const
+{
+    return m_recordableHasBeenSet;
 }
 
 

@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标名
+                     * 获取指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetricName 指标名
+                     * @return MetricName 指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标名
+                     * 设置指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricName 指标名
+                     * @param MetricName 指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取秒数 统计周期
+                     * 获取秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Period 秒数 统计周期
+                     * @return Period 秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置秒数 统计周期
+                     * 设置秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Period 秒数 统计周期
+                     * @param Period 秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPeriod(const int64_t& _period);
@@ -110,6 +110,7 @@ cycle_increase=环比增长
 cycle_decrease=环比下降
 cycle_wave=环比波动
 re=正则匹配
+支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 英文运算符
 intelligent=无阈值智能检测
@@ -129,6 +130,7 @@ cycle_increase=环比增长
 cycle_decrease=环比下降
 cycle_wave=环比波动
 re=正则匹配
+支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOperator() const;
@@ -152,6 +154,7 @@ cycle_increase=环比增长
 cycle_decrease=环比下降
 cycle_wave=环比波动
 re=正则匹配
+支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Operator 英文运算符
 intelligent=无阈值智能检测
@@ -171,6 +174,7 @@ cycle_increase=环比增长
 cycle_decrease=环比下降
 cycle_wave=环比波动
 re=正则匹配
+支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOperator(const std::string& _operator);
@@ -182,17 +186,17 @@ re=正则匹配
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取阈值
+                     * 获取阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 阈值
+                     * @return Value 阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置阈值
+                     * 设置阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 阈值
+                     * @param Value 阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValue(const std::string& _value);
@@ -204,17 +208,17 @@ re=正则匹配
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取周期数 持续通知周期 1=持续1个周期 2=持续2个周期...
+                     * 获取周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ContinuePeriod 周期数 持续通知周期 1=持续1个周期 2=持续2个周期...
+                     * @return ContinuePeriod 周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetContinuePeriod() const;
 
                     /**
-                     * 设置周期数 持续通知周期 1=持续1个周期 2=持续2个周期...
+                     * 设置周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContinuePeriod 周期数 持续通知周期 1=持续1个周期 2=持续2个周期...
+                     * @param ContinuePeriod 周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetContinuePeriod(const int64_t& _continuePeriod);
@@ -336,17 +340,17 @@ re=正则匹配
                     bool UnitHasBeenSet() const;
 
                     /**
-                     * 获取触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值
+                     * 获取触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleType 触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值
+                     * @return RuleType 触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRuleType() const;
 
                     /**
-                     * 设置触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值
+                     * 设置触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleType 触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值
+                     * @param RuleType 触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRuleType(const std::string& _ruleType);
@@ -360,14 +364,14 @@ re=正则匹配
                 private:
 
                     /**
-                     * 指标名
+                     * 指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 秒数 统计周期
+                     * 秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_period;
@@ -392,20 +396,21 @@ cycle_increase=环比增长
 cycle_decrease=环比下降
 cycle_wave=环比波动
 re=正则匹配
+支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 阈值
+                     * 阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 周期数 持续通知周期 1=持续1个周期 2=持续2个周期...
+                     * 周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_continuePeriod;
@@ -447,7 +452,7 @@ re=正则匹配
                     bool m_unitHasBeenSet;
 
                     /**
-                     * 触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值
+                     * 触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleType;

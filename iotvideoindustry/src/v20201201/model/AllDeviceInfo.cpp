@@ -30,7 +30,8 @@ AllDeviceInfo::AllDeviceInfo() :
     m_nickNameHasBeenSet(false),
     m_groupPathHasBeenSet(false),
     m_deviceCodeHasBeenSet(false),
-    m_isRecordHasBeenSet(false)
+    m_isRecordHasBeenSet(false),
+    m_recordableHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const Value &value)
         m_isRecordHasBeenSet = true;
     }
 
+    if (value.HasMember("Recordable") && !value["Recordable"].IsNull())
+    {
+        if (!value["Recordable"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `AllDeviceInfo.Recordable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordable = value["Recordable"].GetInt64();
+        m_recordableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void AllDeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "IsRecord";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isRecord, allocator);
+    }
+
+    if (m_recordableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Recordable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordable, allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void AllDeviceInfo::SetIsRecord(const int64_t& _isRecord)
 bool AllDeviceInfo::IsRecordHasBeenSet() const
 {
     return m_isRecordHasBeenSet;
+}
+
+int64_t AllDeviceInfo::GetRecordable() const
+{
+    return m_recordable;
+}
+
+void AllDeviceInfo::SetRecordable(const int64_t& _recordable)
+{
+    m_recordable = _recordable;
+    m_recordableHasBeenSet = true;
+}
+
+bool AllDeviceInfo::RecordableHasBeenSet() const
+{
+    return m_recordableHasBeenSet;
 }
 

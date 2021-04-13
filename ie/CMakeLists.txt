@@ -61,6 +61,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/CallbackInfo.h
   include/tencentcloud/ie/v20200304/model/SectionTime.h
   include/tencentcloud/ie/v20200304/model/SubtitleRec.h
+  include/tencentcloud/ie/v20200304/model/ResultVideoInfo.h
   include/tencentcloud/ie/v20200304/model/PicMarkInfoItem.h
   include/tencentcloud/ie/v20200304/model/MediaJoiningInfo.h
   include/tencentcloud/ie/v20200304/model/DescribeMediaQualityRestorationTaskRusultRequest.h
@@ -90,6 +91,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/StripTaskResult.h
   include/tencentcloud/ie/v20200304/model/HighlightsEditingInfo.h
   include/tencentcloud/ie/v20200304/model/FileInfo.h
+  include/tencentcloud/ie/v20200304/model/ResultAudioInfo.h
   include/tencentcloud/ie/v20200304/model/OpeningEndingTaskResult.h
   include/tencentcloud/ie/v20200304/model/VideoEnhance.h
   include/tencentcloud/ie/v20200304/model/QualityControlResultItems.h
@@ -98,6 +100,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/CoverTaskResult.h
   include/tencentcloud/ie/v20200304/model/TagTaskResult.h
   include/tencentcloud/ie/v20200304/model/CosInfo.h
+  include/tencentcloud/ie/v20200304/model/MediaResultInfo.h
   include/tencentcloud/ie/v20200304/model/FrameTagResult.h
   include/tencentcloud/ie/v20200304/model/MediaCuttingTimeInfo.h
   include/tencentcloud/ie/v20200304/model/TargetInfo.h
@@ -163,6 +166,7 @@ set(ie_src
   src/v20200304/model/CallbackInfo.cpp
   src/v20200304/model/SectionTime.cpp
   src/v20200304/model/SubtitleRec.cpp
+  src/v20200304/model/ResultVideoInfo.cpp
   src/v20200304/model/PicMarkInfoItem.cpp
   src/v20200304/model/MediaJoiningInfo.cpp
   src/v20200304/model/DescribeMediaQualityRestorationTaskRusultRequest.cpp
@@ -192,6 +196,7 @@ set(ie_src
   src/v20200304/model/StripTaskResult.cpp
   src/v20200304/model/HighlightsEditingInfo.cpp
   src/v20200304/model/FileInfo.cpp
+  src/v20200304/model/ResultAudioInfo.cpp
   src/v20200304/model/OpeningEndingTaskResult.cpp
   src/v20200304/model/VideoEnhance.cpp
   src/v20200304/model/QualityControlResultItems.cpp
@@ -200,6 +205,7 @@ set(ie_src
   src/v20200304/model/CoverTaskResult.cpp
   src/v20200304/model/TagTaskResult.cpp
   src/v20200304/model/CosInfo.cpp
+  src/v20200304/model/MediaResultInfo.cpp
   src/v20200304/model/FrameTagResult.cpp
   src/v20200304/model/MediaCuttingTimeInfo.cpp
   src/v20200304/model/TargetInfo.cpp

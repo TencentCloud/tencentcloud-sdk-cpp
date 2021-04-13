@@ -26,6 +26,7 @@ using namespace std;
 ModifyAlarmPolicyConditionRequest::ModifyAlarmPolicyConditionRequest() :
     m_moduleHasBeenSet(false),
     m_policyIdHasBeenSet(false),
+    m_conditionTemplateIdHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_eventConditionHasBeenSet(false)
 {
@@ -52,6 +53,14 @@ string ModifyAlarmPolicyConditionRequest::ToJsonString() const
         string key = "PolicyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_conditionTemplateIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ConditionTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_conditionTemplateId, allocator);
     }
 
     if (m_conditionHasBeenSet)
@@ -110,6 +119,22 @@ void ModifyAlarmPolicyConditionRequest::SetPolicyId(const string& _policyId)
 bool ModifyAlarmPolicyConditionRequest::PolicyIdHasBeenSet() const
 {
     return m_policyIdHasBeenSet;
+}
+
+int64_t ModifyAlarmPolicyConditionRequest::GetConditionTemplateId() const
+{
+    return m_conditionTemplateId;
+}
+
+void ModifyAlarmPolicyConditionRequest::SetConditionTemplateId(const int64_t& _conditionTemplateId)
+{
+    m_conditionTemplateId = _conditionTemplateId;
+    m_conditionTemplateIdHasBeenSet = true;
+}
+
+bool ModifyAlarmPolicyConditionRequest::ConditionTemplateIdHasBeenSet() const
+{
+    return m_conditionTemplateIdHasBeenSet;
 }
 
 AlarmPolicyCondition ModifyAlarmPolicyConditionRequest::GetCondition() const

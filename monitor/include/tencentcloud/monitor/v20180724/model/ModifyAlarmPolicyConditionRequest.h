@@ -81,6 +81,24 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
+                     * 获取触发条件模板 Id，可不传
+                     * @return ConditionTemplateId 触发条件模板 Id，可不传
+                     */
+                    int64_t GetConditionTemplateId() const;
+
+                    /**
+                     * 设置触发条件模板 Id，可不传
+                     * @param ConditionTemplateId 触发条件模板 Id，可不传
+                     */
+                    void SetConditionTemplateId(const int64_t& _conditionTemplateId);
+
+                    /**
+                     * 判断参数 ConditionTemplateId 是否已赋值
+                     * @return ConditionTemplateId 是否已赋值
+                     */
+                    bool ConditionTemplateIdHasBeenSet() const;
+
+                    /**
                      * 获取指标触发条件
                      * @return Condition 指标触发条件
                      */
@@ -129,6 +147,12 @@ namespace TencentCloud
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
+
+                    /**
+                     * 触发条件模板 Id，可不传
+                     */
+                    int64_t m_conditionTemplateId;
+                    bool m_conditionTemplateIdHasBeenSet;
 
                     /**
                      * 指标触发条件

@@ -100,14 +100,14 @@ namespace TencentCloud
                     bool MonitorTypeHasBeenSet() const;
 
                     /**
-                     * 获取告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
-                     * @return Namespace 告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     * 获取告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得，例如 cvm_device
+                     * @return Namespace 告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得，例如 cvm_device
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
-                     * @param Namespace 告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     * 设置告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得，例如 cvm_device
+                     * @param Namespace 告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得，例如 cvm_device
                      */
                     void SetNamespace(const std::string& _namespace);
 
@@ -154,14 +154,14 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取项目 Id -1=无项目 0=默认项目，可不传 默认为-1
-                     * @return ProjectId 项目 Id -1=无项目 0=默认项目，可不传 默认为-1
+                     * 获取项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。
+                     * @return ProjectId 项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目 Id -1=无项目 0=默认项目，可不传 默认为-1
-                     * @param ProjectId 项目 Id -1=无项目 0=默认项目，可不传 默认为-1
+                     * 设置项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。
+                     * @param ProjectId 项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -172,14 +172,32 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取指标触发条件
-                     * @return Condition 指标触发条件
+                     * 获取触发条件模板 Id ，可不传
+                     * @return ConditionTemplateId 触发条件模板 Id ，可不传
+                     */
+                    int64_t GetConditionTemplateId() const;
+
+                    /**
+                     * 设置触发条件模板 Id ，可不传
+                     * @param ConditionTemplateId 触发条件模板 Id ，可不传
+                     */
+                    void SetConditionTemplateId(const int64_t& _conditionTemplateId);
+
+                    /**
+                     * 判断参数 ConditionTemplateId 是否已赋值
+                     * @return ConditionTemplateId 是否已赋值
+                     */
+                    bool ConditionTemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * @return Condition 指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
                      */
                     AlarmPolicyCondition GetCondition() const;
 
                     /**
-                     * 设置指标触发条件
-                     * @param Condition 指标触发条件
+                     * 设置指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * @param Condition 指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
                      */
                     void SetCondition(const AlarmPolicyCondition& _condition);
 
@@ -190,14 +208,14 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取事件触发条件
-                     * @return EventCondition 事件触发条件
+                     * 获取事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。
+                     * @return EventCondition 事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。
                      */
                     AlarmPolicyEventCondition GetEventCondition() const;
 
                     /**
-                     * 设置事件触发条件
-                     * @param EventCondition 事件触发条件
+                     * 设置事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。
+                     * @param EventCondition 事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。
                      */
                     void SetEventCondition(const AlarmPolicyEventCondition& _eventCondition);
 
@@ -208,14 +226,14 @@ namespace TencentCloud
                     bool EventConditionHasBeenSet() const;
 
                     /**
-                     * 获取通知规则 Id 列表，由 DescribeAlarmNotices 获得
-                     * @return NoticeIds 通知规则 Id 列表，由 DescribeAlarmNotices 获得
+                     * 获取通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得
+                     * @return NoticeIds 通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得
                      */
                     std::vector<std::string> GetNoticeIds() const;
 
                     /**
-                     * 设置通知规则 Id 列表，由 DescribeAlarmNotices 获得
-                     * @param NoticeIds 通知规则 Id 列表，由 DescribeAlarmNotices 获得
+                     * 设置通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得
+                     * @param NoticeIds 通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得
                      */
                     void SetNoticeIds(const std::vector<std::string>& _noticeIds);
 
@@ -264,7 +282,7 @@ namespace TencentCloud
                     bool m_monitorTypeHasBeenSet;
 
                     /**
-                     * 告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     * 告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得，例如 cvm_device
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
@@ -282,25 +300,31 @@ namespace TencentCloud
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 项目 Id -1=无项目 0=默认项目，可不传 默认为-1
+                     * 项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 指标触发条件
+                     * 触发条件模板 Id ，可不传
+                     */
+                    int64_t m_conditionTemplateId;
+                    bool m_conditionTemplateIdHasBeenSet;
+
+                    /**
+                     * 指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
                      */
                     AlarmPolicyCondition m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 事件触发条件
+                     * 事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。
                      */
                     AlarmPolicyEventCondition m_eventCondition;
                     bool m_eventConditionHasBeenSet;
 
                     /**
-                     * 通知规则 Id 列表，由 DescribeAlarmNotices 获得
+                     * 通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得
                      */
                     std::vector<std::string> m_noticeIds;
                     bool m_noticeIdsHasBeenSet;

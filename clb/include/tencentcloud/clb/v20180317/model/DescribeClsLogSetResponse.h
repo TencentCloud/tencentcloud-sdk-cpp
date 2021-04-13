@@ -54,6 +54,18 @@ namespace TencentCloud
                      */
                     bool LogsetIdHasBeenSet() const;
 
+                    /**
+                     * 获取健康检查日志集的 ID。
+                     * @return HealthLogsetId 健康检查日志集的 ID。
+                     */
+                    std::string GetHealthLogsetId() const;
+
+                    /**
+                     * 判断参数 HealthLogsetId 是否已赋值
+                     * @return HealthLogsetId 是否已赋值
+                     */
+                    bool HealthLogsetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +73,12 @@ namespace TencentCloud
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
+
+                    /**
+                     * 健康检查日志集的 ID。
+                     */
+                    std::string m_healthLogsetId;
+                    bool m_healthLogsetIdHasBeenSet;
 
                 };
             }

@@ -57,10 +57,14 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateInvoiceResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateInvoiceV2Request.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateInvoiceV2Response.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateMerchantRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceV2Request.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceV2Response.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateSinglePayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateSinglePayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateTransferBatchRequest.h>
@@ -117,6 +121,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryInvoiceV2Request.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryInvoiceV2Response.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberBindRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberBindResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionRequest.h>
@@ -244,12 +250,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateInvoiceResponse> CreateInvoiceOutcome;
                 typedef std::future<CreateInvoiceOutcome> CreateInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateInvoiceRequest&, CreateInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInvoiceAsyncHandler;
+                typedef Outcome<Error, Model::CreateInvoiceV2Response> CreateInvoiceV2Outcome;
+                typedef std::future<CreateInvoiceV2Outcome> CreateInvoiceV2OutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateInvoiceV2Request&, CreateInvoiceV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInvoiceV2AsyncHandler;
                 typedef Outcome<Error, Model::CreateMerchantResponse> CreateMerchantOutcome;
                 typedef std::future<CreateMerchantOutcome> CreateMerchantOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateMerchantRequest&, CreateMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMerchantAsyncHandler;
                 typedef Outcome<Error, Model::CreateRedInvoiceResponse> CreateRedInvoiceOutcome;
                 typedef std::future<CreateRedInvoiceOutcome> CreateRedInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateRedInvoiceRequest&, CreateRedInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRedInvoiceAsyncHandler;
+                typedef Outcome<Error, Model::CreateRedInvoiceV2Response> CreateRedInvoiceV2Outcome;
+                typedef std::future<CreateRedInvoiceV2Outcome> CreateRedInvoiceV2OutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateRedInvoiceV2Request&, CreateRedInvoiceV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRedInvoiceV2AsyncHandler;
                 typedef Outcome<Error, Model::CreateSinglePayResponse> CreateSinglePayOutcome;
                 typedef std::future<CreateSinglePayOutcome> CreateSinglePayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateSinglePayRequest&, CreateSinglePayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSinglePayAsyncHandler;
@@ -334,6 +346,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryInvoiceResponse> QueryInvoiceOutcome;
                 typedef std::future<QueryInvoiceOutcome> QueryInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryInvoiceRequest&, QueryInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryInvoiceAsyncHandler;
+                typedef Outcome<Error, Model::QueryInvoiceV2Response> QueryInvoiceV2Outcome;
+                typedef std::future<QueryInvoiceV2Outcome> QueryInvoiceV2OutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryInvoiceV2Request&, QueryInvoiceV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryInvoiceV2AsyncHandler;
                 typedef Outcome<Error, Model::QueryMemberBindResponse> QueryMemberBindOutcome;
                 typedef std::future<QueryMemberBindOutcome> QueryMemberBindOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMemberBindRequest&, QueryMemberBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemberBindAsyncHandler;
@@ -592,6 +607,15 @@ namespace TencentCloud
                 CreateInvoiceOutcomeCallable CreateInvoiceCallable(const Model::CreateInvoiceRequest& request);
 
                 /**
+                 *智慧零售-发票开具V2
+                 * @param req CreateInvoiceV2Request
+                 * @return CreateInvoiceV2Outcome
+                 */
+                CreateInvoiceV2Outcome CreateInvoiceV2(const Model::CreateInvoiceV2Request &request);
+                void CreateInvoiceV2Async(const Model::CreateInvoiceV2Request& request, const CreateInvoiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInvoiceV2OutcomeCallable CreateInvoiceV2Callable(const Model::CreateInvoiceV2Request& request);
+
+                /**
                  *智慧零售-商户注册
                  * @param req CreateMerchantRequest
                  * @return CreateMerchantOutcome
@@ -608,6 +632,15 @@ namespace TencentCloud
                 CreateRedInvoiceOutcome CreateRedInvoice(const Model::CreateRedInvoiceRequest &request);
                 void CreateRedInvoiceAsync(const Model::CreateRedInvoiceRequest& request, const CreateRedInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRedInvoiceOutcomeCallable CreateRedInvoiceCallable(const Model::CreateRedInvoiceRequest& request);
+
+                /**
+                 *智慧零售-发票红冲V2
+                 * @param req CreateRedInvoiceV2Request
+                 * @return CreateRedInvoiceV2Outcome
+                 */
+                CreateRedInvoiceV2Outcome CreateRedInvoiceV2(const Model::CreateRedInvoiceV2Request &request);
+                void CreateRedInvoiceV2Async(const Model::CreateRedInvoiceV2Request& request, const CreateRedInvoiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRedInvoiceV2OutcomeCallable CreateRedInvoiceV2Callable(const Model::CreateRedInvoiceV2Request& request);
 
                 /**
                  *银企直连-单笔支付接口
@@ -860,6 +893,15 @@ namespace TencentCloud
                 QueryInvoiceOutcome QueryInvoice(const Model::QueryInvoiceRequest &request);
                 void QueryInvoiceAsync(const Model::QueryInvoiceRequest& request, const QueryInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryInvoiceOutcomeCallable QueryInvoiceCallable(const Model::QueryInvoiceRequest& request);
+
+                /**
+                 *智慧零售-发票查询V2
+                 * @param req QueryInvoiceV2Request
+                 * @return QueryInvoiceV2Outcome
+                 */
+                QueryInvoiceV2Outcome QueryInvoiceV2(const Model::QueryInvoiceV2Request &request);
+                void QueryInvoiceV2Async(const Model::QueryInvoiceV2Request& request, const QueryInvoiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryInvoiceV2OutcomeCallable QueryInvoiceV2Callable(const Model::QueryInvoiceV2Request& request);
 
                 /**
                  *会员绑定信息查询。查询标志为“单个会员”的情况下，返回该会员的有效的绑定账户信息。

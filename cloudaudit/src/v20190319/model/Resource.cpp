@@ -22,8 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 Resource::Resource() :
-    m_resourceNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
 }
 
@@ -31,16 +31,6 @@ CoreInternalOutcome Resource::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("ResourceName") && !value["ResourceName"].IsNull())
-    {
-        if (!value["ResourceName"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Resource.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_resourceName = string(value["ResourceName"].GetString());
-        m_resourceNameHasBeenSet = true;
-    }
 
     if (value.HasMember("ResourceType") && !value["ResourceType"].IsNull())
     {
@@ -52,20 +42,22 @@ CoreInternalOutcome Resource::Deserialize(const Value &value)
         m_resourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceName") && !value["ResourceName"].IsNull())
+    {
+        if (!value["ResourceName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Resource.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceName = string(value["ResourceName"].GetString());
+        m_resourceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Resource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_resourceNameHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ResourceName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_resourceTypeHasBeenSet)
     {
@@ -75,24 +67,16 @@ void Resource::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         value.AddMember(iKey, Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_resourceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string Resource::GetResourceName() const
-{
-    return m_resourceName;
-}
-
-void Resource::SetResourceName(const string& _resourceName)
-{
-    m_resourceName = _resourceName;
-    m_resourceNameHasBeenSet = true;
-}
-
-bool Resource::ResourceNameHasBeenSet() const
-{
-    return m_resourceNameHasBeenSet;
-}
 
 string Resource::GetResourceType() const
 {
@@ -108,5 +92,21 @@ void Resource::SetResourceType(const string& _resourceType)
 bool Resource::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+string Resource::GetResourceName() const
+{
+    return m_resourceName;
+}
+
+void Resource::SetResourceName(const string& _resourceName)
+{
+    m_resourceName = _resourceName;
+    m_resourceNameHasBeenSet = true;
+}
+
+bool Resource::ResourceNameHasBeenSet() const
+{
+    return m_resourceNameHasBeenSet;
 }
 

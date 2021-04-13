@@ -244,6 +244,42 @@ namespace TencentCloud
                      */
                     bool DefaultParametersHasBeenSet() const;
 
+                    /**
+                     * 获取命令的结构化描述。公共命令有值，用户命令为空字符串。
+                     * @return FormattedDescription 命令的结构化描述。公共命令有值，用户命令为空字符串。
+                     */
+                    std::string GetFormattedDescription() const;
+
+                    /**
+                     * 设置命令的结构化描述。公共命令有值，用户命令为空字符串。
+                     * @param FormattedDescription 命令的结构化描述。公共命令有值，用户命令为空字符串。
+                     */
+                    void SetFormattedDescription(const std::string& _formattedDescription);
+
+                    /**
+                     * 判断参数 FormattedDescription 是否已赋值
+                     * @return FormattedDescription 是否已赋值
+                     */
+                    bool FormattedDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取命令创建者。TAT 代表公共命令，USER 代表个人命令。
+                     * @return CreatedBy 命令创建者。TAT 代表公共命令，USER 代表个人命令。
+                     */
+                    std::string GetCreatedBy() const;
+
+                    /**
+                     * 设置命令创建者。TAT 代表公共命令，USER 代表个人命令。
+                     * @param CreatedBy 命令创建者。TAT 代表公共命令，USER 代表个人命令。
+                     */
+                    void SetCreatedBy(const std::string& _createdBy);
+
+                    /**
+                     * 判断参数 CreatedBy 是否已赋值
+                     * @return CreatedBy 是否已赋值
+                     */
+                    bool CreatedByHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +347,18 @@ namespace TencentCloud
                      */
                     std::string m_defaultParameters;
                     bool m_defaultParametersHasBeenSet;
+
+                    /**
+                     * 命令的结构化描述。公共命令有值，用户命令为空字符串。
+                     */
+                    std::string m_formattedDescription;
+                    bool m_formattedDescriptionHasBeenSet;
+
+                    /**
+                     * 命令创建者。TAT 代表公共命令，USER 代表个人命令。
+                     */
+                    std::string m_createdBy;
+                    bool m_createdByHasBeenSet;
 
                 };
             }

@@ -771,6 +771,49 @@ CpdpClient::CreateInvoiceOutcomeCallable CpdpClient::CreateInvoiceCallable(const
     return task->get_future();
 }
 
+CpdpClient::CreateInvoiceV2Outcome CpdpClient::CreateInvoiceV2(const CreateInvoiceV2Request &request)
+{
+    auto outcome = MakeRequest(request, "CreateInvoiceV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInvoiceV2Response rsp = CreateInvoiceV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInvoiceV2Outcome(rsp);
+        else
+            return CreateInvoiceV2Outcome(o.GetError());
+    }
+    else
+    {
+        return CreateInvoiceV2Outcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateInvoiceV2Async(const CreateInvoiceV2Request& request, const CreateInvoiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInvoiceV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateInvoiceV2OutcomeCallable CpdpClient::CreateInvoiceV2Callable(const CreateInvoiceV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInvoiceV2Outcome()>>(
+        [this, request]()
+        {
+            return this->CreateInvoiceV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::CreateMerchantOutcome CpdpClient::CreateMerchant(const CreateMerchantRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMerchant");
@@ -850,6 +893,49 @@ CpdpClient::CreateRedInvoiceOutcomeCallable CpdpClient::CreateRedInvoiceCallable
         [this, request]()
         {
             return this->CreateRedInvoice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::CreateRedInvoiceV2Outcome CpdpClient::CreateRedInvoiceV2(const CreateRedInvoiceV2Request &request)
+{
+    auto outcome = MakeRequest(request, "CreateRedInvoiceV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRedInvoiceV2Response rsp = CreateRedInvoiceV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRedInvoiceV2Outcome(rsp);
+        else
+            return CreateRedInvoiceV2Outcome(o.GetError());
+    }
+    else
+    {
+        return CreateRedInvoiceV2Outcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateRedInvoiceV2Async(const CreateRedInvoiceV2Request& request, const CreateRedInvoiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRedInvoiceV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateRedInvoiceV2OutcomeCallable CpdpClient::CreateRedInvoiceV2Callable(const CreateRedInvoiceV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRedInvoiceV2Outcome()>>(
+        [this, request]()
+        {
+            return this->CreateRedInvoiceV2(request);
         }
     );
 
@@ -2054,6 +2140,49 @@ CpdpClient::QueryInvoiceOutcomeCallable CpdpClient::QueryInvoiceCallable(const Q
         [this, request]()
         {
             return this->QueryInvoice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryInvoiceV2Outcome CpdpClient::QueryInvoiceV2(const QueryInvoiceV2Request &request)
+{
+    auto outcome = MakeRequest(request, "QueryInvoiceV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryInvoiceV2Response rsp = QueryInvoiceV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryInvoiceV2Outcome(rsp);
+        else
+            return QueryInvoiceV2Outcome(o.GetError());
+    }
+    else
+    {
+        return QueryInvoiceV2Outcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryInvoiceV2Async(const QueryInvoiceV2Request& request, const QueryInvoiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryInvoiceV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryInvoiceV2OutcomeCallable CpdpClient::QueryInvoiceV2Callable(const QueryInvoiceV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryInvoiceV2Outcome()>>(
+        [this, request]()
+        {
+            return this->QueryInvoiceV2(request);
         }
     );
 

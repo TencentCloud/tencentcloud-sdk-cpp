@@ -25,8 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 ListKeyAliasByRegionResponse::ListKeyAliasByRegionResponse() :
-    m_keyMetadatasHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_keyMetadatasHasBeenSet(false)
 {
 }
 
@@ -64,6 +64,16 @@ CoreInternalOutcome ListKeyAliasByRegionResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
     if (rsp.HasMember("KeyMetadatas") && !rsp["KeyMetadatas"].IsNull())
     {
         if (!rsp["KeyMetadatas"].IsArray())
@@ -84,30 +94,10 @@ CoreInternalOutcome ListKeyAliasByRegionResponse::Deserialize(const string &payl
         m_keyMetadatasHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-vector<KeyMetadata> ListKeyAliasByRegionResponse::GetKeyMetadatas() const
-{
-    return m_keyMetadatas;
-}
-
-bool ListKeyAliasByRegionResponse::KeyMetadatasHasBeenSet() const
-{
-    return m_keyMetadatasHasBeenSet;
-}
 
 int64_t ListKeyAliasByRegionResponse::GetTotalCount() const
 {
@@ -117,6 +107,16 @@ int64_t ListKeyAliasByRegionResponse::GetTotalCount() const
 bool ListKeyAliasByRegionResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<KeyMetadata> ListKeyAliasByRegionResponse::GetKeyMetadatas() const
+{
+    return m_keyMetadatas;
+}
+
+bool ListKeyAliasByRegionResponse::KeyMetadatasHasBeenSet() const
+{
+    return m_keyMetadatasHasBeenSet;
 }
 
 

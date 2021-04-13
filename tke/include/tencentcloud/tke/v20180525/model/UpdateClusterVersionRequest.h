@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/ClusterExtraArgs.h>
 
 
 namespace TencentCloud
@@ -79,6 +80,24 @@ namespace TencentCloud
                     bool DstVersionHasBeenSet() const;
 
                     /**
+                     * 获取集群自定义参数
+                     * @return ExtraArgs 集群自定义参数
+                     */
+                    ClusterExtraArgs GetExtraArgs() const;
+
+                    /**
+                     * 设置集群自定义参数
+                     * @param ExtraArgs 集群自定义参数
+                     */
+                    void SetExtraArgs(const ClusterExtraArgs& _extraArgs);
+
+                    /**
+                     * 判断参数 ExtraArgs 是否已赋值
+                     * @return ExtraArgs 是否已赋值
+                     */
+                    bool ExtraArgsHasBeenSet() const;
+
+                    /**
                      * 获取可容忍的最大不可用pod数目
                      * @return MaxNotReadyPercent 可容忍的最大不可用pod数目
                      */
@@ -127,6 +146,12 @@ namespace TencentCloud
                      */
                     std::string m_dstVersion;
                     bool m_dstVersionHasBeenSet;
+
+                    /**
+                     * 集群自定义参数
+                     */
+                    ClusterExtraArgs m_extraArgs;
+                    bool m_extraArgsHasBeenSet;
 
                     /**
                      * 可容忍的最大不可用pod数目

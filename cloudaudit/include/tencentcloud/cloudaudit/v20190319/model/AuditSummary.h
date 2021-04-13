@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跟踪集名称
-                     * @return AuditName 跟踪集名称
-                     */
-                    std::string GetAuditName() const;
-
-                    /**
-                     * 设置跟踪集名称
-                     * @param AuditName 跟踪集名称
-                     */
-                    void SetAuditName(const std::string& _auditName);
-
-                    /**
-                     * 判断参数 AuditName 是否已赋值
-                     * @return AuditName 是否已赋值
-                     */
-                    bool AuditNameHasBeenSet() const;
-
-                    /**
                      * 获取跟踪集状态，1：开启，0：关闭
                      * @return AuditStatus 跟踪集状态，1：开启，0：关闭
                      */
@@ -101,6 +83,24 @@ namespace TencentCloud
                     bool CosBucketNameHasBeenSet() const;
 
                     /**
+                     * 获取跟踪集名称
+                     * @return AuditName 跟踪集名称
+                     */
+                    std::string GetAuditName() const;
+
+                    /**
+                     * 设置跟踪集名称
+                     * @param AuditName 跟踪集名称
+                     */
+                    void SetAuditName(const std::string& _auditName);
+
+                    /**
+                     * 判断参数 AuditName 是否已赋值
+                     * @return AuditName 是否已赋值
+                     */
+                    bool AuditNameHasBeenSet() const;
+
+                    /**
                      * 获取日志前缀
                      * @return LogFilePrefix 日志前缀
                      */
@@ -121,12 +121,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 跟踪集名称
-                     */
-                    std::string m_auditName;
-                    bool m_auditNameHasBeenSet;
-
-                    /**
                      * 跟踪集状态，1：开启，0：关闭
                      */
                     int64_t m_auditStatus;
@@ -137,6 +131,12 @@ namespace TencentCloud
                      */
                     std::string m_cosBucketName;
                     bool m_cosBucketNameHasBeenSet;
+
+                    /**
+                     * 跟踪集名称
+                     */
+                    std::string m_auditName;
+                    bool m_auditNameHasBeenSet;
 
                     /**
                      * 日志前缀

@@ -98,6 +98,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取需要增加到的CDC实例ID。
+                     * @return CdcId 需要增加到的CDC实例ID。
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置需要增加到的CDC实例ID。
+                     * @param CdcId 需要增加到的CDC实例ID。
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -117,6 +135,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 需要增加到的CDC实例ID。
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

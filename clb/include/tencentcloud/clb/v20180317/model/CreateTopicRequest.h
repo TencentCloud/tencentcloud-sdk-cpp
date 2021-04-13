@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool PartitionCountHasBeenSet() const;
 
+                    /**
+                     * 获取日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * @return TopicType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     */
+                    std::string GetTopicType() const;
+
+                    /**
+                     * 设置日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * @param TopicType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     */
+                    void SetTopicType(const std::string& _topicType);
+
+                    /**
+                     * 判断参数 TopicType 是否已赋值
+                     * @return TopicType 是否已赋值
+                     */
+                    bool TopicTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     uint64_t m_partitionCount;
                     bool m_partitionCountHasBeenSet;
+
+                    /**
+                     * 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     */
+                    std::string m_topicType;
+                    bool m_topicTypeHasBeenSet;
 
                 };
             }

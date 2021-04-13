@@ -25,7 +25,8 @@ using namespace std;
 
 CreateTopicRequest::CreateTopicRequest() :
     m_topicNameHasBeenSet(false),
-    m_partitionCountHasBeenSet(false)
+    m_partitionCountHasBeenSet(false),
+    m_topicTypeHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "PartitionCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_partitionCount, allocator);
+    }
+
+    if (m_topicTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TopicType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_topicType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateTopicRequest::SetPartitionCount(const uint64_t& _partitionCount)
 bool CreateTopicRequest::PartitionCountHasBeenSet() const
 {
     return m_partitionCountHasBeenSet;
+}
+
+string CreateTopicRequest::GetTopicType() const
+{
+    return m_topicType;
+}
+
+void CreateTopicRequest::SetTopicType(const string& _topicType)
+{
+    m_topicType = _topicType;
+    m_topicTypeHasBeenSet = true;
+}
+
+bool CreateTopicRequest::TopicTypeHasBeenSet() const
+{
+    return m_topicTypeHasBeenSet;
 }
 
 

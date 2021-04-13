@@ -1674,6 +1674,49 @@ VpcClient::CreateIp6TranslatorsOutcomeCallable VpcClient::CreateIp6TranslatorsCa
     return task->get_future();
 }
 
+VpcClient::CreateLocalGatewayOutcome VpcClient::CreateLocalGateway(const CreateLocalGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLocalGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLocalGatewayResponse rsp = CreateLocalGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLocalGatewayOutcome(rsp);
+        else
+            return CreateLocalGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLocalGatewayOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateLocalGatewayAsync(const CreateLocalGatewayRequest& request, const CreateLocalGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLocalGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateLocalGatewayOutcomeCallable VpcClient::CreateLocalGatewayCallable(const CreateLocalGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLocalGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLocalGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateNatGatewayOutcome VpcClient::CreateNatGateway(const CreateNatGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNatGateway");
@@ -2957,6 +3000,49 @@ VpcClient::DeleteIp6TranslatorsOutcomeCallable VpcClient::DeleteIp6TranslatorsCa
         [this, request]()
         {
             return this->DeleteIp6Translators(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteLocalGatewayOutcome VpcClient::DeleteLocalGateway(const DeleteLocalGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLocalGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLocalGatewayResponse rsp = DeleteLocalGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLocalGatewayOutcome(rsp);
+        else
+            return DeleteLocalGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLocalGatewayOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteLocalGatewayAsync(const DeleteLocalGatewayRequest& request, const DeleteLocalGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLocalGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteLocalGatewayOutcomeCallable VpcClient::DeleteLocalGatewayCallable(const DeleteLocalGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLocalGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLocalGateway(request);
         }
     );
 
@@ -4978,6 +5064,49 @@ VpcClient::DescribeIpGeolocationInfosOutcomeCallable VpcClient::DescribeIpGeoloc
         [this, request]()
         {
             return this->DescribeIpGeolocationInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeLocalGatewayOutcome VpcClient::DescribeLocalGateway(const DescribeLocalGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLocalGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLocalGatewayResponse rsp = DescribeLocalGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLocalGatewayOutcome(rsp);
+        else
+            return DescribeLocalGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLocalGatewayOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeLocalGatewayAsync(const DescribeLocalGatewayRequest& request, const DescribeLocalGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLocalGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeLocalGatewayOutcomeCallable VpcClient::DescribeLocalGatewayCallable(const DescribeLocalGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLocalGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLocalGateway(request);
         }
     );
 
@@ -7651,6 +7780,49 @@ VpcClient::ModifyBandwidthPackageAttributeOutcomeCallable VpcClient::ModifyBandw
     return task->get_future();
 }
 
+VpcClient::ModifyCcnAttachedInstancesAttributeOutcome VpcClient::ModifyCcnAttachedInstancesAttribute(const ModifyCcnAttachedInstancesAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCcnAttachedInstancesAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCcnAttachedInstancesAttributeResponse rsp = ModifyCcnAttachedInstancesAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCcnAttachedInstancesAttributeOutcome(rsp);
+        else
+            return ModifyCcnAttachedInstancesAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCcnAttachedInstancesAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyCcnAttachedInstancesAttributeAsync(const ModifyCcnAttachedInstancesAttributeRequest& request, const ModifyCcnAttachedInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCcnAttachedInstancesAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyCcnAttachedInstancesAttributeOutcomeCallable VpcClient::ModifyCcnAttachedInstancesAttributeCallable(const ModifyCcnAttachedInstancesAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCcnAttachedInstancesAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCcnAttachedInstancesAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyCcnAttributeOutcome VpcClient::ModifyCcnAttribute(const ModifyCcnAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCcnAttribute");
@@ -8160,6 +8332,49 @@ VpcClient::ModifyIpv6AddressesAttributeOutcomeCallable VpcClient::ModifyIpv6Addr
         [this, request]()
         {
             return this->ModifyIpv6AddressesAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyLocalGatewayOutcome VpcClient::ModifyLocalGateway(const ModifyLocalGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLocalGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLocalGatewayResponse rsp = ModifyLocalGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLocalGatewayOutcome(rsp);
+        else
+            return ModifyLocalGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLocalGatewayOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyLocalGatewayAsync(const ModifyLocalGatewayRequest& request, const ModifyLocalGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLocalGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyLocalGatewayOutcomeCallable VpcClient::ModifyLocalGatewayCallable(const ModifyLocalGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLocalGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLocalGateway(request);
         }
     );
 

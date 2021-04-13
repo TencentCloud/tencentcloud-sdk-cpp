@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool BackupNameHasBeenSet() const;
 
                     /**
-                     * 获取指定要查询任务的时间范围，StartTime指定开始时间
-                     * @return StartTime 指定要查询任务的时间范围，StartTime指定开始时间
+                     * 获取指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间
+                     * @return StartTime 指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置指定要查询任务的时间范围，StartTime指定开始时间
-                     * @param StartTime 指定要查询任务的时间范围，StartTime指定开始时间
+                     * 设置指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间
+                     * @param StartTime 指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取指定要查询任务的时间范围，StartTime指定结束时间
-                     * @return EndTime 指定要查询任务的时间范围，StartTime指定结束时间
+                     * 获取指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间
+                     * @return EndTime 指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置指定要查询任务的时间范围，StartTime指定结束时间
-                     * @param EndTime 指定要查询任务的时间范围，StartTime指定结束时间
+                     * 设置指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间
+                     * @param EndTime 指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool OrderByTypeHasBeenSet() const;
 
                     /**
-                     * 获取根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
-                     * @return Status 根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 获取根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试。不填默认返回所有类型
+                     * @return Status 根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试。不填默认返回所有类型
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
-                     * 设置根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
-                     * @param Status 根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 设置根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试。不填默认返回所有类型
+                     * @param Status 根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试。不填默认返回所有类型
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
 
@@ -219,13 +219,13 @@ namespace TencentCloud
                     bool m_backupNameHasBeenSet;
 
                     /**
-                     * 指定要查询任务的时间范围，StartTime指定开始时间
+                     * 指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 指定要查询任务的时间范围，StartTime指定结束时间
+                     * 指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_orderByTypeHasBeenSet;
 
                     /**
-                     * 根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试。不填默认返回所有类型
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;

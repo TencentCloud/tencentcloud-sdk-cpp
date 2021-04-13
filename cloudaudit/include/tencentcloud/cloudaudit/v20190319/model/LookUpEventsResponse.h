@@ -44,8 +44,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取查看更多日志的凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NextToken 查看更多日志的凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNextToken() const;
+
+                    /**
+                     * 判断参数 NextToken 是否已赋值
+                     * @return NextToken 是否已赋值
+                     */
+                    bool NextTokenHasBeenSet() const;
+
+                    /**
                      * 获取日志集合
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events 日志集合
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Event> GetEvents() const;
 
@@ -57,7 +73,9 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集合是否结束
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListOver 日志集合是否结束
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetListOver() const;
 
@@ -67,37 +85,28 @@ namespace TencentCloud
                      */
                     bool ListOverHasBeenSet() const;
 
-                    /**
-                     * 获取查看更多日志的凭证
-                     * @return NextToken 查看更多日志的凭证
-                     */
-                    std::string GetNextToken() const;
-
-                    /**
-                     * 判断参数 NextToken 是否已赋值
-                     * @return NextToken 是否已赋值
-                     */
-                    bool NextTokenHasBeenSet() const;
-
                 private:
 
                     /**
+                     * 查看更多日志的凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nextToken;
+                    bool m_nextTokenHasBeenSet;
+
+                    /**
                      * 日志集合
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Event> m_events;
                     bool m_eventsHasBeenSet;
 
                     /**
                      * 日志集合是否结束
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_listOver;
                     bool m_listOverHasBeenSet;
-
-                    /**
-                     * 查看更多日志的凭证
-                     */
-                    std::string m_nextToken;
-                    bool m_nextTokenHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ie/v20200304/model/MediaResultInfo.h>
 
 
 namespace TencentCloud
@@ -68,6 +69,50 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取文件大小，部分任务支持，单位：字节
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileSize 文件大小，部分任务支持，单位：字节
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFileSize() const;
+
+                    /**
+                     * 设置文件大小，部分任务支持，单位：字节
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FileSize 文件大小，部分任务支持，单位：字节
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFileSize(const uint64_t& _fileSize);
+
+                    /**
+                     * 判断参数 FileSize 是否已赋值
+                     * @return FileSize 是否已赋值
+                     */
+                    bool FileSizeHasBeenSet() const;
+
+                    /**
+                     * 获取媒体信息，对于媒体文件，部分任务支持返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MediaInfo 媒体信息，对于媒体文件，部分任务支持返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaResultInfo GetMediaInfo() const;
+
+                    /**
+                     * 设置媒体信息，对于媒体文件，部分任务支持返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MediaInfo 媒体信息，对于媒体文件，部分任务支持返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMediaInfo(const MediaResultInfo& _mediaInfo);
+
+                    /**
+                     * 判断参数 MediaInfo 是否已赋值
+                     * @return MediaInfo 是否已赋值
+                     */
+                    bool MediaInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -76,6 +121,20 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 文件大小，部分任务支持，单位：字节
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_fileSize;
+                    bool m_fileSizeHasBeenSet;
+
+                    /**
+                     * 媒体信息，对于媒体文件，部分任务支持返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaResultInfo m_mediaInfo;
+                    bool m_mediaInfoHasBeenSet;
 
                 };
             }

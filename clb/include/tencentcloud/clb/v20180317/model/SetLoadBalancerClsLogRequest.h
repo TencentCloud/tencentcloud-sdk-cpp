@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID
-                     * @return LoadBalancerId 负载均衡实例 ID
+                     * 获取负载均衡实例 ID。
+                     * @return LoadBalancerId 负载均衡实例 ID。
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * 设置负载均衡实例 ID。
+                     * @param LoadBalancerId 负载均衡实例 ID。
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取日志服务(CLS)的日志集ID
-                     * @return LogSetId 日志服务(CLS)的日志集ID
+                     * 获取日志服务(CLS)的日志集ID。
+                     * @return LogSetId 日志服务(CLS)的日志集ID。
                      */
                     std::string GetLogSetId() const;
 
                     /**
-                     * 设置日志服务(CLS)的日志集ID
-                     * @param LogSetId 日志服务(CLS)的日志集ID
+                     * 设置日志服务(CLS)的日志集ID。
+                     * @param LogSetId 日志服务(CLS)的日志集ID。
                      */
                     void SetLogSetId(const std::string& _logSetId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LogSetIdHasBeenSet() const;
 
                     /**
-                     * 获取日志服务(CLS)的日志主题ID
-                     * @return LogTopicId 日志服务(CLS)的日志主题ID
+                     * 获取日志服务(CLS)的日志主题ID。
+                     * @return LogTopicId 日志服务(CLS)的日志主题ID。
                      */
                     std::string GetLogTopicId() const;
 
                     /**
-                     * 设置日志服务(CLS)的日志主题ID
-                     * @param LogTopicId 日志服务(CLS)的日志主题ID
+                     * 设置日志服务(CLS)的日志主题ID。
+                     * @param LogTopicId 日志服务(CLS)的日志主题ID。
                      */
                     void SetLogTopicId(const std::string& _logTopicId);
 
@@ -96,25 +96,49 @@ namespace TencentCloud
                      */
                     bool LogTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * @return LogType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     */
+                    std::string GetLogType() const;
+
+                    /**
+                     * 设置日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * @param LogType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     */
+                    void SetLogType(const std::string& _logType);
+
+                    /**
+                     * 判断参数 LogType 是否已赋值
+                     * @return LogType 是否已赋值
+                     */
+                    bool LogTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 负载均衡实例 ID
+                     * 负载均衡实例 ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 日志服务(CLS)的日志集ID
+                     * 日志服务(CLS)的日志集ID。
                      */
                     std::string m_logSetId;
                     bool m_logSetIdHasBeenSet;
 
                     /**
-                     * 日志服务(CLS)的日志主题ID
+                     * 日志服务(CLS)的日志主题ID。
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;
+
+                    /**
+                     * 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     */
+                    std::string m_logType;
+                    bool m_logTypeHasBeenSet;
 
                 };
             }

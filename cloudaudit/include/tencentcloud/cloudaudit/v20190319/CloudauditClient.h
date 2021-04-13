@@ -29,6 +29,8 @@
 #include <tencentcloud/cloudaudit/v20190319/model/DeleteAuditResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/DescribeAuditRequest.h>
 #include <tencentcloud/cloudaudit/v20190319/model/DescribeAuditResponse.h>
+#include <tencentcloud/cloudaudit/v20190319/model/DescribeEventsRequest.h>
+#include <tencentcloud/cloudaudit/v20190319/model/DescribeEventsResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/GetAttributeKeyRequest.h>
 #include <tencentcloud/cloudaudit/v20190319/model/GetAttributeKeyResponse.h>
 #include <tencentcloud/cloudaudit/v20190319/model/InquireAuditCreditRequest.h>
@@ -72,6 +74,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAuditResponse> DescribeAuditOutcome;
                 typedef std::future<DescribeAuditOutcome> DescribeAuditOutcomeCallable;
                 typedef std::function<void(const CloudauditClient*, const Model::DescribeAuditRequest&, DescribeAuditOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEventsResponse> DescribeEventsOutcome;
+                typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
+                typedef std::function<void(const CloudauditClient*, const Model::DescribeEventsRequest&, DescribeEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsAsyncHandler;
                 typedef Outcome<Error, Model::GetAttributeKeyResponse> GetAttributeKeyOutcome;
                 typedef std::future<GetAttributeKeyOutcome> GetAttributeKeyOutcomeCallable;
                 typedef std::function<void(const CloudauditClient*, const Model::GetAttributeKeyRequest&, GetAttributeKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAttributeKeyAsyncHandler;
@@ -135,6 +140,15 @@ namespace TencentCloud
                 DescribeAuditOutcome DescribeAudit(const Model::DescribeAuditRequest &request);
                 void DescribeAuditAsync(const Model::DescribeAuditRequest& request, const DescribeAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuditOutcomeCallable DescribeAuditCallable(const Model::DescribeAuditRequest& request);
+
+                /**
+                 *查询云审计日志
+                 * @param req DescribeEventsRequest
+                 * @return DescribeEventsOutcome
+                 */
+                DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest &request);
+                void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request);
 
                 /**
                  *查询AttributeKey的有效取值范围

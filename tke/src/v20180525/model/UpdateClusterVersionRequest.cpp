@@ -26,6 +26,7 @@ using namespace std;
 UpdateClusterVersionRequest::UpdateClusterVersionRequest() :
     m_clusterIdHasBeenSet(false),
     m_dstVersionHasBeenSet(false),
+    m_extraArgsHasBeenSet(false),
     m_maxNotReadyPercentHasBeenSet(false),
     m_skipPreCheckHasBeenSet(false)
 {
@@ -52,6 +53,15 @@ string UpdateClusterVersionRequest::ToJsonString() const
         string key = "DstVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_dstVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraArgsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtraArgs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_extraArgs.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_maxNotReadyPercentHasBeenSet)
@@ -108,6 +118,22 @@ void UpdateClusterVersionRequest::SetDstVersion(const string& _dstVersion)
 bool UpdateClusterVersionRequest::DstVersionHasBeenSet() const
 {
     return m_dstVersionHasBeenSet;
+}
+
+ClusterExtraArgs UpdateClusterVersionRequest::GetExtraArgs() const
+{
+    return m_extraArgs;
+}
+
+void UpdateClusterVersionRequest::SetExtraArgs(const ClusterExtraArgs& _extraArgs)
+{
+    m_extraArgs = _extraArgs;
+    m_extraArgsHasBeenSet = true;
+}
+
+bool UpdateClusterVersionRequest::ExtraArgsHasBeenSet() const
+{
+    return m_extraArgsHasBeenSet;
 }
 
 double UpdateClusterVersionRequest::GetMaxNotReadyPercent() const

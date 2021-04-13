@@ -28,7 +28,8 @@ CreateSubnetRequest::CreateSubnetRequest() :
     m_subnetNameHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_cdcIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,14 @@ string CreateSubnetRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -172,6 +181,22 @@ void CreateSubnetRequest::SetTags(const vector<Tag>& _tags)
 bool CreateSubnetRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateSubnetRequest::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void CreateSubnetRequest::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool CreateSubnetRequest::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 
 

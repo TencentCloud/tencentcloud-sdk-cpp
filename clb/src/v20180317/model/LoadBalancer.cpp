@@ -70,7 +70,9 @@ LoadBalancer::LoadBalancer() :
     m_clusterTagHasBeenSet(false),
     m_mixIpTargetHasBeenSet(false),
     m_zonesHasBeenSet(false),
-    m_nfvInfoHasBeenSet(false)
+    m_nfvInfoHasBeenSet(false),
+    m_healthLogSetIdHasBeenSet(false),
+    m_healthLogTopicIdHasBeenSet(false)
 {
 }
 
@@ -650,6 +652,26 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_nfvInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthLogSetId") && !value["HealthLogSetId"].IsNull())
+    {
+        if (!value["HealthLogSetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.HealthLogSetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthLogSetId = string(value["HealthLogSetId"].GetString());
+        m_healthLogSetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthLogTopicId") && !value["HealthLogTopicId"].IsNull())
+    {
+        if (!value["HealthLogTopicId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.HealthLogTopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthLogTopicId = string(value["HealthLogTopicId"].GetString());
+        m_healthLogTopicIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1089,6 +1111,22 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "NfvInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_nfvInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthLogSetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthLogSetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_healthLogSetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthLogTopicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthLogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_healthLogTopicId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1876,5 +1914,37 @@ void LoadBalancer::SetNfvInfo(const string& _nfvInfo)
 bool LoadBalancer::NfvInfoHasBeenSet() const
 {
     return m_nfvInfoHasBeenSet;
+}
+
+string LoadBalancer::GetHealthLogSetId() const
+{
+    return m_healthLogSetId;
+}
+
+void LoadBalancer::SetHealthLogSetId(const string& _healthLogSetId)
+{
+    m_healthLogSetId = _healthLogSetId;
+    m_healthLogSetIdHasBeenSet = true;
+}
+
+bool LoadBalancer::HealthLogSetIdHasBeenSet() const
+{
+    return m_healthLogSetIdHasBeenSet;
+}
+
+string LoadBalancer::GetHealthLogTopicId() const
+{
+    return m_healthLogTopicId;
+}
+
+void LoadBalancer::SetHealthLogTopicId(const string& _healthLogTopicId)
+{
+    m_healthLogTopicId = _healthLogTopicId;
+    m_healthLogTopicIdHasBeenSet = true;
+}
+
+bool LoadBalancer::HealthLogTopicIdHasBeenSet() const
+{
+    return m_healthLogTopicIdHasBeenSet;
 }
 

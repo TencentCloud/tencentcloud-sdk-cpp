@@ -24,7 +24,8 @@ using namespace std;
 CcnInstance::CcnInstance() :
     m_instanceIdHasBeenSet(false),
     m_instanceRegionHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome CcnInstance::Deserialize(const Value &value)
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CcnInstance.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void CcnInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void CcnInstance::SetInstanceType(const string& _instanceType)
 bool CcnInstance::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+string CcnInstance::GetDescription() const
+{
+    return m_description;
+}
+
+void CcnInstance::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CcnInstance::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

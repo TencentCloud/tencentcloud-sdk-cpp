@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源名称
-                     * @return ResourceName 资源名称
-                     */
-                    std::string GetResourceName() const;
-
-                    /**
-                     * 设置资源名称
-                     * @param ResourceName 资源名称
-                     */
-                    void SetResourceName(const std::string& _resourceName);
-
-                    /**
-                     * 判断参数 ResourceName 是否已赋值
-                     * @return ResourceName 是否已赋值
-                     */
-                    bool ResourceNameHasBeenSet() const;
-
-                    /**
                      * 获取资源类型
                      * @return ResourceType 资源类型
                      */
@@ -82,19 +64,42 @@ namespace TencentCloud
                      */
                     bool ResourceTypeHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取资源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceName 资源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourceName() const;
 
                     /**
-                     * 资源名称
+                     * 设置资源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceName 资源名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_resourceName;
-                    bool m_resourceNameHasBeenSet;
+                    void SetResourceName(const std::string& _resourceName);
+
+                    /**
+                     * 判断参数 ResourceName 是否已赋值
+                     * @return ResourceName 是否已赋值
+                     */
+                    bool ResourceNameHasBeenSet() const;
+
+                private:
 
                     /**
                      * 资源类型
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 资源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceName;
+                    bool m_resourceNameHasBeenSet;
 
                 };
             }

@@ -127,6 +127,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeModuleResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeModuleDetailRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeModuleDetailResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeMonthPeakNetworkRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeMonthPeakNetworkResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeNetworkInterfacesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeNetworkInterfacesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeNodeRequest.h>
@@ -429,6 +431,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeModuleDetailResponse> DescribeModuleDetailOutcome;
                 typedef std::future<DescribeModuleDetailOutcome> DescribeModuleDetailOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeModuleDetailRequest&, DescribeModuleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModuleDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMonthPeakNetworkResponse> DescribeMonthPeakNetworkOutcome;
+                typedef std::future<DescribeMonthPeakNetworkOutcome> DescribeMonthPeakNetworkOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeMonthPeakNetworkRequest&, DescribeMonthPeakNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonthPeakNetworkAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNetworkInterfacesResponse> DescribeNetworkInterfacesOutcome;
                 typedef std::future<DescribeNetworkInterfacesOutcome> DescribeNetworkInterfacesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeNetworkInterfacesRequest&, DescribeNetworkInterfacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkInterfacesAsyncHandler;
@@ -1115,6 +1120,15 @@ namespace TencentCloud
                 DescribeModuleDetailOutcome DescribeModuleDetail(const Model::DescribeModuleDetailRequest &request);
                 void DescribeModuleDetailAsync(const Model::DescribeModuleDetailRequest& request, const DescribeModuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeModuleDetailOutcomeCallable DescribeModuleDetailCallable(const Model::DescribeModuleDetailRequest& request);
+
+                /**
+                 *获取客户节点上的出入带宽月峰和计费带宽信息
+                 * @param req DescribeMonthPeakNetworkRequest
+                 * @return DescribeMonthPeakNetworkOutcome
+                 */
+                DescribeMonthPeakNetworkOutcome DescribeMonthPeakNetwork(const Model::DescribeMonthPeakNetworkRequest &request);
+                void DescribeMonthPeakNetworkAsync(const Model::DescribeMonthPeakNetworkRequest& request, const DescribeMonthPeakNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMonthPeakNetworkOutcomeCallable DescribeMonthPeakNetworkCallable(const Model::DescribeMonthPeakNetworkRequest& request);
 
                 /**
                  *查询弹性网卡列表

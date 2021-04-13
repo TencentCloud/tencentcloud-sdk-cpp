@@ -22,11 +22,11 @@ using namespace rapidjson;
 using namespace std;
 
 AttributeKeyDetail::AttributeKeyDetail() :
-    m_labelHasBeenSet(false),
     m_labelTypeHasBeenSet(false),
-    m_orderHasBeenSet(false),
     m_starterHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_valueHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
@@ -34,16 +34,6 @@ CoreInternalOutcome AttributeKeyDetail::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Label") && !value["Label"].IsNull())
-    {
-        if (!value["Label"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `AttributeKeyDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_label = string(value["Label"].GetString());
-        m_labelHasBeenSet = true;
-    }
 
     if (value.HasMember("LabelType") && !value["LabelType"].IsNull())
     {
@@ -53,16 +43,6 @@ CoreInternalOutcome AttributeKeyDetail::Deserialize(const Value &value)
         }
         m_labelType = string(value["LabelType"].GetString());
         m_labelTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("Order") && !value["Order"].IsNull())
-    {
-        if (!value["Order"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `AttributeKeyDetail.Order` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_order = value["Order"].GetInt64();
-        m_orderHasBeenSet = true;
     }
 
     if (value.HasMember("Starter") && !value["Starter"].IsNull())
@@ -75,6 +55,16 @@ CoreInternalOutcome AttributeKeyDetail::Deserialize(const Value &value)
         m_starterHasBeenSet = true;
     }
 
+    if (value.HasMember("Order") && !value["Order"].IsNull())
+    {
+        if (!value["Order"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `AttributeKeyDetail.Order` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_order = value["Order"].GetInt64();
+        m_orderHasBeenSet = true;
+    }
+
     if (value.HasMember("Value") && !value["Value"].IsNull())
     {
         if (!value["Value"].IsString())
@@ -85,6 +75,16 @@ CoreInternalOutcome AttributeKeyDetail::Deserialize(const Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Label") && !value["Label"].IsNull())
+    {
+        if (!value["Label"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AttributeKeyDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(value["Label"].GetString());
+        m_labelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,28 +92,12 @@ CoreInternalOutcome AttributeKeyDetail::Deserialize(const Value &value)
 void AttributeKeyDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_labelHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Label";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_labelTypeHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "LabelType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_labelType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_orderHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Order";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_order, allocator);
     }
 
     if (m_starterHasBeenSet)
@@ -124,6 +108,14 @@ void AttributeKeyDetail::ToJsonObject(Value &value, Document::AllocatorType& all
         value.AddMember(iKey, Value(m_starter.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_orderHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_order, allocator);
+    }
+
     if (m_valueHasBeenSet)
     {
         Value iKey(kStringType);
@@ -132,24 +124,16 @@ void AttributeKeyDetail::ToJsonObject(Value &value, Document::AllocatorType& all
         value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_labelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string AttributeKeyDetail::GetLabel() const
-{
-    return m_label;
-}
-
-void AttributeKeyDetail::SetLabel(const string& _label)
-{
-    m_label = _label;
-    m_labelHasBeenSet = true;
-}
-
-bool AttributeKeyDetail::LabelHasBeenSet() const
-{
-    return m_labelHasBeenSet;
-}
 
 string AttributeKeyDetail::GetLabelType() const
 {
@@ -165,22 +149,6 @@ void AttributeKeyDetail::SetLabelType(const string& _labelType)
 bool AttributeKeyDetail::LabelTypeHasBeenSet() const
 {
     return m_labelTypeHasBeenSet;
-}
-
-int64_t AttributeKeyDetail::GetOrder() const
-{
-    return m_order;
-}
-
-void AttributeKeyDetail::SetOrder(const int64_t& _order)
-{
-    m_order = _order;
-    m_orderHasBeenSet = true;
-}
-
-bool AttributeKeyDetail::OrderHasBeenSet() const
-{
-    return m_orderHasBeenSet;
 }
 
 string AttributeKeyDetail::GetStarter() const
@@ -199,6 +167,22 @@ bool AttributeKeyDetail::StarterHasBeenSet() const
     return m_starterHasBeenSet;
 }
 
+int64_t AttributeKeyDetail::GetOrder() const
+{
+    return m_order;
+}
+
+void AttributeKeyDetail::SetOrder(const int64_t& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool AttributeKeyDetail::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
 string AttributeKeyDetail::GetValue() const
 {
     return m_value;
@@ -213,5 +197,21 @@ void AttributeKeyDetail::SetValue(const string& _value)
 bool AttributeKeyDetail::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string AttributeKeyDetail::GetLabel() const
+{
+    return m_label;
+}
+
+void AttributeKeyDetail::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool AttributeKeyDetail::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
 }
 

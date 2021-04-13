@@ -43,16 +43,40 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跟踪集名称。
-                     * @return AuditName 跟踪集名称。
+                     * 获取是否开启cmq消息通知。1：是，0：否。
+                     * @return IsEnableCmqNotify 是否开启cmq消息通知。1：是，0：否。
                      */
-                    std::string GetAuditName() const;
+                    int64_t GetIsEnableCmqNotify() const;
 
                     /**
-                     * 判断参数 AuditName 是否已赋值
-                     * @return AuditName 是否已赋值
+                     * 判断参数 IsEnableCmqNotify 是否已赋值
+                     * @return IsEnableCmqNotify 是否已赋值
                      */
-                    bool AuditNameHasBeenSet() const;
+                    bool IsEnableCmqNotifyHasBeenSet() const;
+
+                    /**
+                     * 获取管理事件读写属性，1：只读，2：只写，3：全部
+                     * @return ReadWriteAttribute 管理事件读写属性，1：只读，2：只写，3：全部
+                     */
+                    int64_t GetReadWriteAttribute() const;
+
+                    /**
+                     * 判断参数 ReadWriteAttribute 是否已赋值
+                     * @return ReadWriteAttribute 是否已赋值
+                     */
+                    bool ReadWriteAttributeHasBeenSet() const;
+
+                    /**
+                     * 获取CMK的全局唯一标识符。
+                     * @return KeyId CMK的全局唯一标识符。
+                     */
+                    std::string GetKeyId() const;
+
+                    /**
+                     * 判断参数 KeyId 是否已赋值
+                     * @return KeyId 是否已赋值
+                     */
+                    bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取跟踪集状态，1：开启，0：停止。
@@ -67,40 +91,16 @@ namespace TencentCloud
                     bool AuditStatusHasBeenSet() const;
 
                     /**
-                     * 获取队列名称。
-                     * @return CmqQueueName 队列名称。
+                     * 获取跟踪集名称。
+                     * @return AuditName 跟踪集名称。
                      */
-                    std::string GetCmqQueueName() const;
+                    std::string GetAuditName() const;
 
                     /**
-                     * 判断参数 CmqQueueName 是否已赋值
-                     * @return CmqQueueName 是否已赋值
+                     * 判断参数 AuditName 是否已赋值
+                     * @return AuditName 是否已赋值
                      */
-                    bool CmqQueueNameHasBeenSet() const;
-
-                    /**
-                     * 获取队列所在地域。
-                     * @return CmqRegion 队列所在地域。
-                     */
-                    std::string GetCmqRegion() const;
-
-                    /**
-                     * 判断参数 CmqRegion 是否已赋值
-                     * @return CmqRegion 是否已赋值
-                     */
-                    bool CmqRegionHasBeenSet() const;
-
-                    /**
-                     * 获取cos存储桶名称。
-                     * @return CosBucketName cos存储桶名称。
-                     */
-                    std::string GetCosBucketName() const;
-
-                    /**
-                     * 判断参数 CosBucketName 是否已赋值
-                     * @return CosBucketName 是否已赋值
-                     */
-                    bool CosBucketNameHasBeenSet() const;
+                    bool AuditNameHasBeenSet() const;
 
                     /**
                      * 获取cos存储桶所在地域。
@@ -115,40 +115,16 @@ namespace TencentCloud
                     bool CosRegionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启cmq消息通知。1：是，0：否。
-                     * @return IsEnableCmqNotify 是否开启cmq消息通知。1：是，0：否。
+                     * 获取队列名称。
+                     * @return CmqQueueName 队列名称。
                      */
-                    int64_t GetIsEnableCmqNotify() const;
+                    std::string GetCmqQueueName() const;
 
                     /**
-                     * 判断参数 IsEnableCmqNotify 是否已赋值
-                     * @return IsEnableCmqNotify 是否已赋值
+                     * 判断参数 CmqQueueName 是否已赋值
+                     * @return CmqQueueName 是否已赋值
                      */
-                    bool IsEnableCmqNotifyHasBeenSet() const;
-
-                    /**
-                     * 获取是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
-                     * @return IsEnableKmsEncry 是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
-                     */
-                    int64_t GetIsEnableKmsEncry() const;
-
-                    /**
-                     * 判断参数 IsEnableKmsEncry 是否已赋值
-                     * @return IsEnableKmsEncry 是否已赋值
-                     */
-                    bool IsEnableKmsEncryHasBeenSet() const;
-
-                    /**
-                     * 获取CMK的全局唯一标识符。
-                     * @return KeyId CMK的全局唯一标识符。
-                     */
-                    std::string GetKeyId() const;
-
-                    /**
-                     * 判断参数 KeyId 是否已赋值
-                     * @return KeyId 是否已赋值
-                     */
-                    bool KeyIdHasBeenSet() const;
+                    bool CmqQueueNameHasBeenSet() const;
 
                     /**
                      * 获取CMK别名。
@@ -175,6 +151,42 @@ namespace TencentCloud
                     bool KmsRegionHasBeenSet() const;
 
                     /**
+                     * 获取是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     * @return IsEnableKmsEncry 是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     */
+                    int64_t GetIsEnableKmsEncry() const;
+
+                    /**
+                     * 判断参数 IsEnableKmsEncry 是否已赋值
+                     * @return IsEnableKmsEncry 是否已赋值
+                     */
+                    bool IsEnableKmsEncryHasBeenSet() const;
+
+                    /**
+                     * 获取cos存储桶名称。
+                     * @return CosBucketName cos存储桶名称。
+                     */
+                    std::string GetCosBucketName() const;
+
+                    /**
+                     * 判断参数 CosBucketName 是否已赋值
+                     * @return CosBucketName 是否已赋值
+                     */
+                    bool CosBucketNameHasBeenSet() const;
+
+                    /**
+                     * 获取队列所在地域。
+                     * @return CmqRegion 队列所在地域。
+                     */
+                    std::string GetCmqRegion() const;
+
+                    /**
+                     * 判断参数 CmqRegion 是否已赋值
+                     * @return CmqRegion 是否已赋值
+                     */
+                    bool CmqRegionHasBeenSet() const;
+
+                    /**
                      * 获取日志前缀。
                      * @return LogFilePrefix 日志前缀。
                      */
@@ -186,55 +198,7 @@ namespace TencentCloud
                      */
                     bool LogFilePrefixHasBeenSet() const;
 
-                    /**
-                     * 获取管理事件读写属性，1：只读，2：只写，3：全部
-                     * @return ReadWriteAttribute 管理事件读写属性，1：只读，2：只写，3：全部
-                     */
-                    int64_t GetReadWriteAttribute() const;
-
-                    /**
-                     * 判断参数 ReadWriteAttribute 是否已赋值
-                     * @return ReadWriteAttribute 是否已赋值
-                     */
-                    bool ReadWriteAttributeHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 跟踪集名称。
-                     */
-                    std::string m_auditName;
-                    bool m_auditNameHasBeenSet;
-
-                    /**
-                     * 跟踪集状态，1：开启，0：停止。
-                     */
-                    int64_t m_auditStatus;
-                    bool m_auditStatusHasBeenSet;
-
-                    /**
-                     * 队列名称。
-                     */
-                    std::string m_cmqQueueName;
-                    bool m_cmqQueueNameHasBeenSet;
-
-                    /**
-                     * 队列所在地域。
-                     */
-                    std::string m_cmqRegion;
-                    bool m_cmqRegionHasBeenSet;
-
-                    /**
-                     * cos存储桶名称。
-                     */
-                    std::string m_cosBucketName;
-                    bool m_cosBucketNameHasBeenSet;
-
-                    /**
-                     * cos存储桶所在地域。
-                     */
-                    std::string m_cosRegion;
-                    bool m_cosRegionHasBeenSet;
 
                     /**
                      * 是否开启cmq消息通知。1：是，0：否。
@@ -243,16 +207,40 @@ namespace TencentCloud
                     bool m_isEnableCmqNotifyHasBeenSet;
 
                     /**
-                     * 是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     * 管理事件读写属性，1：只读，2：只写，3：全部
                      */
-                    int64_t m_isEnableKmsEncry;
-                    bool m_isEnableKmsEncryHasBeenSet;
+                    int64_t m_readWriteAttribute;
+                    bool m_readWriteAttributeHasBeenSet;
 
                     /**
                      * CMK的全局唯一标识符。
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
+
+                    /**
+                     * 跟踪集状态，1：开启，0：停止。
+                     */
+                    int64_t m_auditStatus;
+                    bool m_auditStatusHasBeenSet;
+
+                    /**
+                     * 跟踪集名称。
+                     */
+                    std::string m_auditName;
+                    bool m_auditNameHasBeenSet;
+
+                    /**
+                     * cos存储桶所在地域。
+                     */
+                    std::string m_cosRegion;
+                    bool m_cosRegionHasBeenSet;
+
+                    /**
+                     * 队列名称。
+                     */
+                    std::string m_cmqQueueName;
+                    bool m_cmqQueueNameHasBeenSet;
 
                     /**
                      * CMK别名。
@@ -267,16 +255,28 @@ namespace TencentCloud
                     bool m_kmsRegionHasBeenSet;
 
                     /**
+                     * 是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     */
+                    int64_t m_isEnableKmsEncry;
+                    bool m_isEnableKmsEncryHasBeenSet;
+
+                    /**
+                     * cos存储桶名称。
+                     */
+                    std::string m_cosBucketName;
+                    bool m_cosBucketNameHasBeenSet;
+
+                    /**
+                     * 队列所在地域。
+                     */
+                    std::string m_cmqRegion;
+                    bool m_cmqRegionHasBeenSet;
+
+                    /**
                      * 日志前缀。
                      */
                     std::string m_logFilePrefix;
                     bool m_logFilePrefixHasBeenSet;
-
-                    /**
-                     * 管理事件读写属性，1：只读，2：只写，3：全部
-                     */
-                    int64_t m_readWriteAttribute;
-                    bool m_readWriteAttributeHasBeenSet;
 
                 };
             }

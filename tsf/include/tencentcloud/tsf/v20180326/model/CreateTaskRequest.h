@@ -82,14 +82,14 @@ namespace TencentCloud
                     bool TaskContentHasBeenSet() const;
 
                     /**
-                     * 获取执行类型，UNICAST/BROADCAST
-                     * @return ExecuteType 执行类型，UNICAST/BROADCAST
+                     * 获取执行类型，unicast/broadcast
+                     * @return ExecuteType 执行类型，unicast/broadcast
                      */
                     std::string GetExecuteType() const;
 
                     /**
-                     * 设置执行类型，UNICAST/BROADCAST
-                     * @param ExecuteType 执行类型，UNICAST/BROADCAST
+                     * 设置执行类型，unicast/broadcast
+                     * @param ExecuteType 执行类型，unicast/broadcast
                      */
                     void SetExecuteType(const std::string& _executeType);
 
@@ -100,14 +100,14 @@ namespace TencentCloud
                     bool ExecuteTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
-                     * @return TaskType 任务类型
+                     * 获取任务类型,java
+                     * @return TaskType 任务类型,java
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型
-                     * @param TaskType 任务类型
+                     * 设置任务类型,java
+                     * @param TaskType 任务类型,java
                      */
                     void SetTaskType(const std::string& _taskType);
 
@@ -330,13 +330,13 @@ namespace TencentCloud
                     bool m_taskContentHasBeenSet;
 
                     /**
-                     * 执行类型，UNICAST/BROADCAST
+                     * 执行类型，unicast/broadcast
                      */
                     std::string m_executeType;
                     bool m_executeTypeHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * 任务类型,java
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;

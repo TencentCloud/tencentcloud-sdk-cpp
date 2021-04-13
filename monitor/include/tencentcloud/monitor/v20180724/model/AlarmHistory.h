@@ -355,14 +355,14 @@ namespace TencentCloud
                     bool NoticeWaysHasBeenSet() const;
 
                     /**
-                     * 获取兼容告警1.0策略组 Id
-                     * @return OriginId 兼容告警1.0策略组 Id
+                     * 获取可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID
+                     * @return OriginId 可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID
                      */
                     std::string GetOriginId() const;
 
                     /**
-                     * 设置兼容告警1.0策略组 Id
-                     * @param OriginId 兼容告警1.0策略组 Id
+                     * 设置可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID
+                     * @param OriginId 可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID
                      */
                     void SetOriginId(const std::string& _originId);
 
@@ -571,7 +571,7 @@ namespace TencentCloud
                     bool m_noticeWaysHasBeenSet;
 
                     /**
-                     * 兼容告警1.0策略组 Id
+                     * 可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID
                      */
                     std::string m_originId;
                     bool m_originIdHasBeenSet;

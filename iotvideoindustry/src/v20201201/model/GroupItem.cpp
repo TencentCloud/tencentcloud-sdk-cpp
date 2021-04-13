@@ -31,7 +31,8 @@ GroupItem::GroupItem() :
     m_subGroupNumHasBeenSet(false),
     m_extraInformationHasBeenSet(false),
     m_groupTypeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_groupStatusHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome GroupItem::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupStatus") && !value["GroupStatus"].IsNull())
+    {
+        if (!value["GroupStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `GroupItem.GroupStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupStatus = value["GroupStatus"].GetInt64();
+        m_groupStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +236,14 @@ void GroupItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_groupStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_groupStatus, allocator);
     }
 
 }
@@ -388,5 +407,21 @@ void GroupItem::SetCreateTime(const int64_t& _createTime)
 bool GroupItem::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+int64_t GroupItem::GetGroupStatus() const
+{
+    return m_groupStatus;
+}
+
+void GroupItem::SetGroupStatus(const int64_t& _groupStatus)
+{
+    m_groupStatus = _groupStatus;
+    m_groupStatusHasBeenSet = true;
+}
+
+bool GroupItem::GroupStatusHasBeenSet() const
+{
+    return m_groupStatusHasBeenSet;
 }
 

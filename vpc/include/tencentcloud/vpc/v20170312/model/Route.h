@@ -74,7 +74,8 @@ SSLVPN：sslvpn网关；
 NAT：NAT网关; 
 NORMAL_CVM：普通云服务器；
 EIP：云服务器的公网IP；
-CCN：云联网。
+CCN：云联网；
+LOCAL_GATEWAY：本地网关。
                      * @return GatewayType 下一跳类型，目前我们支持的类型有：
 CVM：公网网关类型的云服务器；
 VPN：VPN网关；
@@ -84,7 +85,8 @@ SSLVPN：sslvpn网关；
 NAT：NAT网关; 
 NORMAL_CVM：普通云服务器；
 EIP：云服务器的公网IP；
-CCN：云联网。
+CCN：云联网；
+LOCAL_GATEWAY：本地网关。
                      */
                     std::string GetGatewayType() const;
 
@@ -98,7 +100,8 @@ SSLVPN：sslvpn网关；
 NAT：NAT网关; 
 NORMAL_CVM：普通云服务器；
 EIP：云服务器的公网IP；
-CCN：云联网。
+CCN：云联网；
+LOCAL_GATEWAY：本地网关。
                      * @param GatewayType 下一跳类型，目前我们支持的类型有：
 CVM：公网网关类型的云服务器；
 VPN：VPN网关；
@@ -108,7 +111,8 @@ SSLVPN：sslvpn网关；
 NAT：NAT网关; 
 NORMAL_CVM：普通云服务器；
 EIP：云服务器的公网IP；
-CCN：云联网。
+CCN：云联网；
+LOCAL_GATEWAY：本地网关。
                      */
                     void SetGatewayType(const std::string& _gatewayType);
 
@@ -340,7 +344,8 @@ SSLVPN：sslvpn网关；
 NAT：NAT网关; 
 NORMAL_CVM：普通云服务器；
 EIP：云服务器的公网IP；
-CCN：云联网。
+CCN：云联网；
+LOCAL_GATEWAY：本地网关。
                      */
                     std::string m_gatewayType;
                     bool m_gatewayTypeHasBeenSet;

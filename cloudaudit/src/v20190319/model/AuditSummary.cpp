@@ -22,9 +22,9 @@ using namespace rapidjson;
 using namespace std;
 
 AuditSummary::AuditSummary() :
-    m_auditNameHasBeenSet(false),
     m_auditStatusHasBeenSet(false),
     m_cosBucketNameHasBeenSet(false),
+    m_auditNameHasBeenSet(false),
     m_logFilePrefixHasBeenSet(false)
 {
 }
@@ -33,16 +33,6 @@ CoreInternalOutcome AuditSummary::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("AuditName") && !value["AuditName"].IsNull())
-    {
-        if (!value["AuditName"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `AuditSummary.AuditName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_auditName = string(value["AuditName"].GetString());
-        m_auditNameHasBeenSet = true;
-    }
 
     if (value.HasMember("AuditStatus") && !value["AuditStatus"].IsNull())
     {
@@ -64,6 +54,16 @@ CoreInternalOutcome AuditSummary::Deserialize(const Value &value)
         m_cosBucketNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AuditName") && !value["AuditName"].IsNull())
+    {
+        if (!value["AuditName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AuditSummary.AuditName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_auditName = string(value["AuditName"].GetString());
+        m_auditNameHasBeenSet = true;
+    }
+
     if (value.HasMember("LogFilePrefix") && !value["LogFilePrefix"].IsNull())
     {
         if (!value["LogFilePrefix"].IsString())
@@ -81,14 +81,6 @@ CoreInternalOutcome AuditSummary::Deserialize(const Value &value)
 void AuditSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_auditNameHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "AuditName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_auditName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_auditStatusHasBeenSet)
     {
         Value iKey(kStringType);
@@ -105,6 +97,14 @@ void AuditSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator
         value.AddMember(iKey, Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_auditNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AuditName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_auditName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_logFilePrefixHasBeenSet)
     {
         Value iKey(kStringType);
@@ -115,22 +115,6 @@ void AuditSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
 }
 
-
-string AuditSummary::GetAuditName() const
-{
-    return m_auditName;
-}
-
-void AuditSummary::SetAuditName(const string& _auditName)
-{
-    m_auditName = _auditName;
-    m_auditNameHasBeenSet = true;
-}
-
-bool AuditSummary::AuditNameHasBeenSet() const
-{
-    return m_auditNameHasBeenSet;
-}
 
 int64_t AuditSummary::GetAuditStatus() const
 {
@@ -162,6 +146,22 @@ void AuditSummary::SetCosBucketName(const string& _cosBucketName)
 bool AuditSummary::CosBucketNameHasBeenSet() const
 {
     return m_cosBucketNameHasBeenSet;
+}
+
+string AuditSummary::GetAuditName() const
+{
+    return m_auditName;
+}
+
+void AuditSummary::SetAuditName(const string& _auditName)
+{
+    m_auditName = _auditName;
+    m_auditNameHasBeenSet = true;
+}
+
+bool AuditSummary::AuditNameHasBeenSet() const
+{
+    return m_auditNameHasBeenSet;
 }
 
 string AuditSummary::GetLogFilePrefix() const

@@ -317,6 +317,50 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取CDC实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdcId CDC实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置CDC实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CdcId CDC实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     */
+                    bool CdcIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否是CDC所属子网。0:否 1:是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsCdcSubnet 是否是CDC所属子网。0:否 1:是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsCdcSubnet() const;
+
+                    /**
+                     * 设置是否是CDC所属子网。0:否 1:是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsCdcSubnet 是否是CDC所属子网。0:否 1:是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsCdcSubnet(const int64_t& _isCdcSubnet);
+
+                    /**
+                     * 判断参数 IsCdcSubnet 是否已赋值
+                     * @return IsCdcSubnet 是否已赋值
+                     */
+                    bool IsCdcSubnetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -408,6 +452,20 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * CDC实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * 是否是CDC所属子网。0:否 1:是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isCdcSubnet;
+                    bool m_isCdcSubnetHasBeenSet;
 
                 };
             }

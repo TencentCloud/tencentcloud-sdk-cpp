@@ -25,19 +25,19 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeAuditResponse::DescribeAuditResponse() :
-    m_auditNameHasBeenSet(false),
-    m_auditStatusHasBeenSet(false),
-    m_cmqQueueNameHasBeenSet(false),
-    m_cmqRegionHasBeenSet(false),
-    m_cosBucketNameHasBeenSet(false),
-    m_cosRegionHasBeenSet(false),
     m_isEnableCmqNotifyHasBeenSet(false),
-    m_isEnableKmsEncryHasBeenSet(false),
+    m_readWriteAttributeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
+    m_auditStatusHasBeenSet(false),
+    m_auditNameHasBeenSet(false),
+    m_cosRegionHasBeenSet(false),
+    m_cmqQueueNameHasBeenSet(false),
     m_kmsAliasHasBeenSet(false),
     m_kmsRegionHasBeenSet(false),
-    m_logFilePrefixHasBeenSet(false),
-    m_readWriteAttributeHasBeenSet(false)
+    m_isEnableKmsEncryHasBeenSet(false),
+    m_cosBucketNameHasBeenSet(false),
+    m_cmqRegionHasBeenSet(false),
+    m_logFilePrefixHasBeenSet(false)
 {
 }
 
@@ -75,14 +75,34 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("AuditName") && !rsp["AuditName"].IsNull())
+    if (rsp.HasMember("IsEnableCmqNotify") && !rsp["IsEnableCmqNotify"].IsNull())
     {
-        if (!rsp["AuditName"].IsString())
+        if (!rsp["IsEnableCmqNotify"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuditName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `IsEnableCmqNotify` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_auditName = string(rsp["AuditName"].GetString());
-        m_auditNameHasBeenSet = true;
+        m_isEnableCmqNotify = rsp["IsEnableCmqNotify"].GetInt64();
+        m_isEnableCmqNotifyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ReadWriteAttribute") && !rsp["ReadWriteAttribute"].IsNull())
+    {
+        if (!rsp["ReadWriteAttribute"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ReadWriteAttribute` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readWriteAttribute = rsp["ReadWriteAttribute"].GetInt64();
+        m_readWriteAttributeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("KeyId") && !rsp["KeyId"].IsNull())
+    {
+        if (!rsp["KeyId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `KeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyId = string(rsp["KeyId"].GetString());
+        m_keyIdHasBeenSet = true;
     }
 
     if (rsp.HasMember("AuditStatus") && !rsp["AuditStatus"].IsNull())
@@ -95,34 +115,14 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
         m_auditStatusHasBeenSet = true;
     }
 
-    if (rsp.HasMember("CmqQueueName") && !rsp["CmqQueueName"].IsNull())
+    if (rsp.HasMember("AuditName") && !rsp["AuditName"].IsNull())
     {
-        if (!rsp["CmqQueueName"].IsString())
+        if (!rsp["AuditName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqQueueName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AuditName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_cmqQueueName = string(rsp["CmqQueueName"].GetString());
-        m_cmqQueueNameHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("CmqRegion") && !rsp["CmqRegion"].IsNull())
-    {
-        if (!rsp["CmqRegion"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cmqRegion = string(rsp["CmqRegion"].GetString());
-        m_cmqRegionHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("CosBucketName") && !rsp["CosBucketName"].IsNull())
-    {
-        if (!rsp["CosBucketName"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `CosBucketName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cosBucketName = string(rsp["CosBucketName"].GetString());
-        m_cosBucketNameHasBeenSet = true;
+        m_auditName = string(rsp["AuditName"].GetString());
+        m_auditNameHasBeenSet = true;
     }
 
     if (rsp.HasMember("CosRegion") && !rsp["CosRegion"].IsNull())
@@ -135,34 +135,14 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
         m_cosRegionHasBeenSet = true;
     }
 
-    if (rsp.HasMember("IsEnableCmqNotify") && !rsp["IsEnableCmqNotify"].IsNull())
+    if (rsp.HasMember("CmqQueueName") && !rsp["CmqQueueName"].IsNull())
     {
-        if (!rsp["IsEnableCmqNotify"].IsInt64())
+        if (!rsp["CmqQueueName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IsEnableCmqNotify` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `CmqQueueName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_isEnableCmqNotify = rsp["IsEnableCmqNotify"].GetInt64();
-        m_isEnableCmqNotifyHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("IsEnableKmsEncry") && !rsp["IsEnableKmsEncry"].IsNull())
-    {
-        if (!rsp["IsEnableKmsEncry"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `IsEnableKmsEncry` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_isEnableKmsEncry = rsp["IsEnableKmsEncry"].GetInt64();
-        m_isEnableKmsEncryHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("KeyId") && !rsp["KeyId"].IsNull())
-    {
-        if (!rsp["KeyId"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `KeyId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_keyId = string(rsp["KeyId"].GetString());
-        m_keyIdHasBeenSet = true;
+        m_cmqQueueName = string(rsp["CmqQueueName"].GetString());
+        m_cmqQueueNameHasBeenSet = true;
     }
 
     if (rsp.HasMember("KmsAlias") && !rsp["KmsAlias"].IsNull())
@@ -185,6 +165,36 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
         m_kmsRegionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsEnableKmsEncry") && !rsp["IsEnableKmsEncry"].IsNull())
+    {
+        if (!rsp["IsEnableKmsEncry"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `IsEnableKmsEncry` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isEnableKmsEncry = rsp["IsEnableKmsEncry"].GetInt64();
+        m_isEnableKmsEncryHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CosBucketName") && !rsp["CosBucketName"].IsNull())
+    {
+        if (!rsp["CosBucketName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CosBucketName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosBucketName = string(rsp["CosBucketName"].GetString());
+        m_cosBucketNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CmqRegion") && !rsp["CmqRegion"].IsNull())
+    {
+        if (!rsp["CmqRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmqRegion = string(rsp["CmqRegion"].GetString());
+        m_cmqRegionHasBeenSet = true;
+    }
+
     if (rsp.HasMember("LogFilePrefix") && !rsp["LogFilePrefix"].IsNull())
     {
         if (!rsp["LogFilePrefix"].IsString())
@@ -195,29 +205,39 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
         m_logFilePrefixHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ReadWriteAttribute") && !rsp["ReadWriteAttribute"].IsNull())
-    {
-        if (!rsp["ReadWriteAttribute"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `ReadWriteAttribute` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_readWriteAttribute = rsp["ReadWriteAttribute"].GetInt64();
-        m_readWriteAttributeHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 
-string DescribeAuditResponse::GetAuditName() const
+int64_t DescribeAuditResponse::GetIsEnableCmqNotify() const
 {
-    return m_auditName;
+    return m_isEnableCmqNotify;
 }
 
-bool DescribeAuditResponse::AuditNameHasBeenSet() const
+bool DescribeAuditResponse::IsEnableCmqNotifyHasBeenSet() const
 {
-    return m_auditNameHasBeenSet;
+    return m_isEnableCmqNotifyHasBeenSet;
+}
+
+int64_t DescribeAuditResponse::GetReadWriteAttribute() const
+{
+    return m_readWriteAttribute;
+}
+
+bool DescribeAuditResponse::ReadWriteAttributeHasBeenSet() const
+{
+    return m_readWriteAttributeHasBeenSet;
+}
+
+string DescribeAuditResponse::GetKeyId() const
+{
+    return m_keyId;
+}
+
+bool DescribeAuditResponse::KeyIdHasBeenSet() const
+{
+    return m_keyIdHasBeenSet;
 }
 
 int64_t DescribeAuditResponse::GetAuditStatus() const
@@ -230,34 +250,14 @@ bool DescribeAuditResponse::AuditStatusHasBeenSet() const
     return m_auditStatusHasBeenSet;
 }
 
-string DescribeAuditResponse::GetCmqQueueName() const
+string DescribeAuditResponse::GetAuditName() const
 {
-    return m_cmqQueueName;
+    return m_auditName;
 }
 
-bool DescribeAuditResponse::CmqQueueNameHasBeenSet() const
+bool DescribeAuditResponse::AuditNameHasBeenSet() const
 {
-    return m_cmqQueueNameHasBeenSet;
-}
-
-string DescribeAuditResponse::GetCmqRegion() const
-{
-    return m_cmqRegion;
-}
-
-bool DescribeAuditResponse::CmqRegionHasBeenSet() const
-{
-    return m_cmqRegionHasBeenSet;
-}
-
-string DescribeAuditResponse::GetCosBucketName() const
-{
-    return m_cosBucketName;
-}
-
-bool DescribeAuditResponse::CosBucketNameHasBeenSet() const
-{
-    return m_cosBucketNameHasBeenSet;
+    return m_auditNameHasBeenSet;
 }
 
 string DescribeAuditResponse::GetCosRegion() const
@@ -270,34 +270,14 @@ bool DescribeAuditResponse::CosRegionHasBeenSet() const
     return m_cosRegionHasBeenSet;
 }
 
-int64_t DescribeAuditResponse::GetIsEnableCmqNotify() const
+string DescribeAuditResponse::GetCmqQueueName() const
 {
-    return m_isEnableCmqNotify;
+    return m_cmqQueueName;
 }
 
-bool DescribeAuditResponse::IsEnableCmqNotifyHasBeenSet() const
+bool DescribeAuditResponse::CmqQueueNameHasBeenSet() const
 {
-    return m_isEnableCmqNotifyHasBeenSet;
-}
-
-int64_t DescribeAuditResponse::GetIsEnableKmsEncry() const
-{
-    return m_isEnableKmsEncry;
-}
-
-bool DescribeAuditResponse::IsEnableKmsEncryHasBeenSet() const
-{
-    return m_isEnableKmsEncryHasBeenSet;
-}
-
-string DescribeAuditResponse::GetKeyId() const
-{
-    return m_keyId;
-}
-
-bool DescribeAuditResponse::KeyIdHasBeenSet() const
-{
-    return m_keyIdHasBeenSet;
+    return m_cmqQueueNameHasBeenSet;
 }
 
 string DescribeAuditResponse::GetKmsAlias() const
@@ -320,6 +300,36 @@ bool DescribeAuditResponse::KmsRegionHasBeenSet() const
     return m_kmsRegionHasBeenSet;
 }
 
+int64_t DescribeAuditResponse::GetIsEnableKmsEncry() const
+{
+    return m_isEnableKmsEncry;
+}
+
+bool DescribeAuditResponse::IsEnableKmsEncryHasBeenSet() const
+{
+    return m_isEnableKmsEncryHasBeenSet;
+}
+
+string DescribeAuditResponse::GetCosBucketName() const
+{
+    return m_cosBucketName;
+}
+
+bool DescribeAuditResponse::CosBucketNameHasBeenSet() const
+{
+    return m_cosBucketNameHasBeenSet;
+}
+
+string DescribeAuditResponse::GetCmqRegion() const
+{
+    return m_cmqRegion;
+}
+
+bool DescribeAuditResponse::CmqRegionHasBeenSet() const
+{
+    return m_cmqRegionHasBeenSet;
+}
+
 string DescribeAuditResponse::GetLogFilePrefix() const
 {
     return m_logFilePrefix;
@@ -328,16 +338,6 @@ string DescribeAuditResponse::GetLogFilePrefix() const
 bool DescribeAuditResponse::LogFilePrefixHasBeenSet() const
 {
     return m_logFilePrefixHasBeenSet;
-}
-
-int64_t DescribeAuditResponse::GetReadWriteAttribute() const
-{
-    return m_readWriteAttribute;
-}
-
-bool DescribeAuditResponse::ReadWriteAttributeHasBeenSet() const
-{
-    return m_readWriteAttributeHasBeenSet;
 }
 
 

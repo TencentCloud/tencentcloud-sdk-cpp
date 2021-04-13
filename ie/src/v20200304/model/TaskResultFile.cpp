@@ -22,7 +22,9 @@ using namespace rapidjson;
 using namespace std;
 
 TaskResultFile::TaskResultFile() :
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_fileSizeHasBeenSet(false),
+    m_mediaInfoHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,33 @@ CoreInternalOutcome TaskResultFile::Deserialize(const Value &value)
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
+    {
+        if (!value["FileSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TaskResultFile.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSize = value["FileSize"].GetUint64();
+        m_fileSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MediaInfo") && !value["MediaInfo"].IsNull())
+    {
+        if (!value["MediaInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TaskResultFile.MediaInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mediaInfo.Deserialize(value["MediaInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mediaInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +83,23 @@ void TaskResultFile::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FileSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileSize, allocator);
+    }
+
+    if (m_mediaInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MediaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_mediaInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -73,5 +119,37 @@ void TaskResultFile::SetUrl(const string& _url)
 bool TaskResultFile::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+uint64_t TaskResultFile::GetFileSize() const
+{
+    return m_fileSize;
+}
+
+void TaskResultFile::SetFileSize(const uint64_t& _fileSize)
+{
+    m_fileSize = _fileSize;
+    m_fileSizeHasBeenSet = true;
+}
+
+bool TaskResultFile::FileSizeHasBeenSet() const
+{
+    return m_fileSizeHasBeenSet;
+}
+
+MediaResultInfo TaskResultFile::GetMediaInfo() const
+{
+    return m_mediaInfo;
+}
+
+void TaskResultFile::SetMediaInfo(const MediaResultInfo& _mediaInfo)
+{
+    m_mediaInfo = _mediaInfo;
+    m_mediaInfoHasBeenSet = true;
+}
+
+bool TaskResultFile::MediaInfoHasBeenSet() const
+{
+    return m_mediaInfoHasBeenSet;
 }
 

@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool LogsetNameHasBeenSet() const;
 
+                    /**
+                     * 获取日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * @return LogsetType 日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     */
+                    std::string GetLogsetType() const;
+
+                    /**
+                     * 设置日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * @param LogsetType 日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     */
+                    void SetLogsetType(const std::string& _logsetType);
+
+                    /**
+                     * 判断参数 LogsetType 是否已赋值
+                     * @return LogsetType 是否已赋值
+                     */
+                    bool LogsetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;
+
+                    /**
+                     * 日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     */
+                    std::string m_logsetType;
+                    bool m_logsetTypeHasBeenSet;
 
                 };
             }

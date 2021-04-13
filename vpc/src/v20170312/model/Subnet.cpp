@@ -36,7 +36,9 @@ Subnet::Subnet() :
     m_networkAclIdHasBeenSet(false),
     m_isRemoteVpcSnatHasBeenSet(false),
     m_totalIpAddressCountHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_cdcIdHasBeenSet(false),
+    m_isCdcSubnetHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,26 @@ CoreInternalOutcome Subnet::Deserialize(const Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Subnet.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCdcSubnet") && !value["IsCdcSubnet"].IsNull())
+    {
+        if (!value["IsCdcSubnet"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Subnet.IsCdcSubnet` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCdcSubnet = value["IsCdcSubnet"].GetInt64();
+        m_isCdcSubnetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -337,6 +359,22 @@ void Subnet::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cdcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCdcSubnetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsCdcSubnet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCdcSubnet, allocator);
     }
 
 }
@@ -580,5 +618,37 @@ void Subnet::SetTagSet(const vector<Tag>& _tagSet)
 bool Subnet::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+string Subnet::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void Subnet::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool Subnet::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
+}
+
+int64_t Subnet::GetIsCdcSubnet() const
+{
+    return m_isCdcSubnet;
+}
+
+void Subnet::SetIsCdcSubnet(const int64_t& _isCdcSubnet)
+{
+    m_isCdcSubnet = _isCdcSubnet;
+    m_isCdcSubnetHasBeenSet = true;
+}
+
+bool Subnet::IsCdcSubnetHasBeenSet() const
+{
+    return m_isCdcSubnetHasBeenSet;
 }
 

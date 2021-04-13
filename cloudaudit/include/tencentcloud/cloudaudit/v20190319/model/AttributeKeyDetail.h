@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取中文标签
-                     * @return Label 中文标签
-                     */
-                    std::string GetLabel() const;
-
-                    /**
-                     * 设置中文标签
-                     * @param Label 中文标签
-                     */
-                    void SetLabel(const std::string& _label);
-
-                    /**
-                     * 判断参数 Label 是否已赋值
-                     * @return Label 是否已赋值
-                     */
-                    bool LabelHasBeenSet() const;
-
-                    /**
                      * 获取输入框类型
                      * @return LabelType 输入框类型
                      */
@@ -81,24 +63,6 @@ namespace TencentCloud
                      * @return LabelType 是否已赋值
                      */
                     bool LabelTypeHasBeenSet() const;
-
-                    /**
-                     * 获取展示排序
-                     * @return Order 展示排序
-                     */
-                    int64_t GetOrder() const;
-
-                    /**
-                     * 设置展示排序
-                     * @param Order 展示排序
-                     */
-                    void SetOrder(const int64_t& _order);
-
-                    /**
-                     * 判断参数 Order 是否已赋值
-                     * @return Order 是否已赋值
-                     */
-                    bool OrderHasBeenSet() const;
 
                     /**
                      * 获取初始化展示
@@ -119,6 +83,24 @@ namespace TencentCloud
                     bool StarterHasBeenSet() const;
 
                     /**
+                     * 获取展示排序
+                     * @return Order 展示排序
+                     */
+                    int64_t GetOrder() const;
+
+                    /**
+                     * 设置展示排序
+                     * @param Order 展示排序
+                     */
+                    void SetOrder(const int64_t& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
                      * 获取AttributeKey值
                      * @return Value AttributeKey值
                      */
@@ -136,13 +118,25 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取中文标签
+                     * @return Label 中文标签
+                     */
+                    std::string GetLabel() const;
 
                     /**
-                     * 中文标签
+                     * 设置中文标签
+                     * @param Label 中文标签
                      */
-                    std::string m_label;
-                    bool m_labelHasBeenSet;
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     */
+                    bool LabelHasBeenSet() const;
+
+                private:
 
                     /**
                      * 输入框类型
@@ -151,22 +145,28 @@ namespace TencentCloud
                     bool m_labelTypeHasBeenSet;
 
                     /**
-                     * 展示排序
-                     */
-                    int64_t m_order;
-                    bool m_orderHasBeenSet;
-
-                    /**
                      * 初始化展示
                      */
                     std::string m_starter;
                     bool m_starterHasBeenSet;
 
                     /**
+                     * 展示排序
+                     */
+                    int64_t m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
                      * AttributeKey值
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 中文标签
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
 
                 };
             }

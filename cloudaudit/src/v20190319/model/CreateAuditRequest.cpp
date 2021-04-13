@@ -24,19 +24,19 @@ using namespace rapidjson;
 using namespace std;
 
 CreateAuditRequest::CreateAuditRequest() :
-    m_auditNameHasBeenSet(false),
-    m_cosBucketNameHasBeenSet(false),
-    m_cosRegionHasBeenSet(false),
-    m_isCreateNewBucketHasBeenSet(false),
     m_isEnableCmqNotifyHasBeenSet(false),
     m_readWriteAttributeHasBeenSet(false),
-    m_cmqQueueNameHasBeenSet(false),
-    m_cmqRegionHasBeenSet(false),
-    m_isCreateNewQueueHasBeenSet(false),
-    m_isEnableKmsEncryHasBeenSet(false),
+    m_auditNameHasBeenSet(false),
+    m_cosRegionHasBeenSet(false),
+    m_isCreateNewBucketHasBeenSet(false),
+    m_cosBucketNameHasBeenSet(false),
     m_keyIdHasBeenSet(false),
+    m_cmqQueueNameHasBeenSet(false),
     m_kmsRegionHasBeenSet(false),
-    m_logFilePrefixHasBeenSet(false)
+    m_isEnableKmsEncryHasBeenSet(false),
+    m_cmqRegionHasBeenSet(false),
+    m_logFilePrefixHasBeenSet(false),
+    m_isCreateNewQueueHasBeenSet(false)
 {
 }
 
@@ -47,20 +47,28 @@ string CreateAuditRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_isEnableCmqNotifyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsEnableCmqNotify";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isEnableCmqNotify, allocator);
+    }
+
+    if (m_readWriteAttributeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReadWriteAttribute";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_readWriteAttribute, allocator);
+    }
+
     if (m_auditNameHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "AuditName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_auditName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_cosBucketNameHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "CosBucketName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosRegionHasBeenSet)
@@ -79,52 +87,12 @@ string CreateAuditRequest::ToJsonString() const
         d.AddMember(iKey, m_isCreateNewBucket, allocator);
     }
 
-    if (m_isEnableCmqNotifyHasBeenSet)
+    if (m_cosBucketNameHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "IsEnableCmqNotify";
+        string key = "CosBucketName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_isEnableCmqNotify, allocator);
-    }
-
-    if (m_readWriteAttributeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ReadWriteAttribute";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_readWriteAttribute, allocator);
-    }
-
-    if (m_cmqQueueNameHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "CmqQueueName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cmqQueueName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_cmqRegionHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "CmqRegion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_isCreateNewQueueHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "IsCreateNewQueue";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_isCreateNewQueue, allocator);
-    }
-
-    if (m_isEnableKmsEncryHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "IsEnableKmsEncry";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_isEnableKmsEncry, allocator);
+        d.AddMember(iKey, Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyIdHasBeenSet)
@@ -135,12 +103,36 @@ string CreateAuditRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_keyId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_cmqQueueNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CmqQueueName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cmqQueueName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_kmsRegionHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "KmsRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_kmsRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isEnableKmsEncryHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsEnableKmsEncry";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isEnableKmsEncry, allocator);
+    }
+
+    if (m_cmqRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CmqRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logFilePrefixHasBeenSet)
@@ -151,6 +143,14 @@ string CreateAuditRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_logFilePrefix.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_isCreateNewQueueHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsCreateNewQueue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isCreateNewQueue, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -158,6 +158,38 @@ string CreateAuditRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t CreateAuditRequest::GetIsEnableCmqNotify() const
+{
+    return m_isEnableCmqNotify;
+}
+
+void CreateAuditRequest::SetIsEnableCmqNotify(const int64_t& _isEnableCmqNotify)
+{
+    m_isEnableCmqNotify = _isEnableCmqNotify;
+    m_isEnableCmqNotifyHasBeenSet = true;
+}
+
+bool CreateAuditRequest::IsEnableCmqNotifyHasBeenSet() const
+{
+    return m_isEnableCmqNotifyHasBeenSet;
+}
+
+int64_t CreateAuditRequest::GetReadWriteAttribute() const
+{
+    return m_readWriteAttribute;
+}
+
+void CreateAuditRequest::SetReadWriteAttribute(const int64_t& _readWriteAttribute)
+{
+    m_readWriteAttribute = _readWriteAttribute;
+    m_readWriteAttributeHasBeenSet = true;
+}
+
+bool CreateAuditRequest::ReadWriteAttributeHasBeenSet() const
+{
+    return m_readWriteAttributeHasBeenSet;
+}
 
 string CreateAuditRequest::GetAuditName() const
 {
@@ -173,22 +205,6 @@ void CreateAuditRequest::SetAuditName(const string& _auditName)
 bool CreateAuditRequest::AuditNameHasBeenSet() const
 {
     return m_auditNameHasBeenSet;
-}
-
-string CreateAuditRequest::GetCosBucketName() const
-{
-    return m_cosBucketName;
-}
-
-void CreateAuditRequest::SetCosBucketName(const string& _cosBucketName)
-{
-    m_cosBucketName = _cosBucketName;
-    m_cosBucketNameHasBeenSet = true;
-}
-
-bool CreateAuditRequest::CosBucketNameHasBeenSet() const
-{
-    return m_cosBucketNameHasBeenSet;
 }
 
 string CreateAuditRequest::GetCosRegion() const
@@ -223,100 +239,20 @@ bool CreateAuditRequest::IsCreateNewBucketHasBeenSet() const
     return m_isCreateNewBucketHasBeenSet;
 }
 
-int64_t CreateAuditRequest::GetIsEnableCmqNotify() const
+string CreateAuditRequest::GetCosBucketName() const
 {
-    return m_isEnableCmqNotify;
+    return m_cosBucketName;
 }
 
-void CreateAuditRequest::SetIsEnableCmqNotify(const int64_t& _isEnableCmqNotify)
+void CreateAuditRequest::SetCosBucketName(const string& _cosBucketName)
 {
-    m_isEnableCmqNotify = _isEnableCmqNotify;
-    m_isEnableCmqNotifyHasBeenSet = true;
+    m_cosBucketName = _cosBucketName;
+    m_cosBucketNameHasBeenSet = true;
 }
 
-bool CreateAuditRequest::IsEnableCmqNotifyHasBeenSet() const
+bool CreateAuditRequest::CosBucketNameHasBeenSet() const
 {
-    return m_isEnableCmqNotifyHasBeenSet;
-}
-
-int64_t CreateAuditRequest::GetReadWriteAttribute() const
-{
-    return m_readWriteAttribute;
-}
-
-void CreateAuditRequest::SetReadWriteAttribute(const int64_t& _readWriteAttribute)
-{
-    m_readWriteAttribute = _readWriteAttribute;
-    m_readWriteAttributeHasBeenSet = true;
-}
-
-bool CreateAuditRequest::ReadWriteAttributeHasBeenSet() const
-{
-    return m_readWriteAttributeHasBeenSet;
-}
-
-string CreateAuditRequest::GetCmqQueueName() const
-{
-    return m_cmqQueueName;
-}
-
-void CreateAuditRequest::SetCmqQueueName(const string& _cmqQueueName)
-{
-    m_cmqQueueName = _cmqQueueName;
-    m_cmqQueueNameHasBeenSet = true;
-}
-
-bool CreateAuditRequest::CmqQueueNameHasBeenSet() const
-{
-    return m_cmqQueueNameHasBeenSet;
-}
-
-string CreateAuditRequest::GetCmqRegion() const
-{
-    return m_cmqRegion;
-}
-
-void CreateAuditRequest::SetCmqRegion(const string& _cmqRegion)
-{
-    m_cmqRegion = _cmqRegion;
-    m_cmqRegionHasBeenSet = true;
-}
-
-bool CreateAuditRequest::CmqRegionHasBeenSet() const
-{
-    return m_cmqRegionHasBeenSet;
-}
-
-int64_t CreateAuditRequest::GetIsCreateNewQueue() const
-{
-    return m_isCreateNewQueue;
-}
-
-void CreateAuditRequest::SetIsCreateNewQueue(const int64_t& _isCreateNewQueue)
-{
-    m_isCreateNewQueue = _isCreateNewQueue;
-    m_isCreateNewQueueHasBeenSet = true;
-}
-
-bool CreateAuditRequest::IsCreateNewQueueHasBeenSet() const
-{
-    return m_isCreateNewQueueHasBeenSet;
-}
-
-int64_t CreateAuditRequest::GetIsEnableKmsEncry() const
-{
-    return m_isEnableKmsEncry;
-}
-
-void CreateAuditRequest::SetIsEnableKmsEncry(const int64_t& _isEnableKmsEncry)
-{
-    m_isEnableKmsEncry = _isEnableKmsEncry;
-    m_isEnableKmsEncryHasBeenSet = true;
-}
-
-bool CreateAuditRequest::IsEnableKmsEncryHasBeenSet() const
-{
-    return m_isEnableKmsEncryHasBeenSet;
+    return m_cosBucketNameHasBeenSet;
 }
 
 string CreateAuditRequest::GetKeyId() const
@@ -335,6 +271,22 @@ bool CreateAuditRequest::KeyIdHasBeenSet() const
     return m_keyIdHasBeenSet;
 }
 
+string CreateAuditRequest::GetCmqQueueName() const
+{
+    return m_cmqQueueName;
+}
+
+void CreateAuditRequest::SetCmqQueueName(const string& _cmqQueueName)
+{
+    m_cmqQueueName = _cmqQueueName;
+    m_cmqQueueNameHasBeenSet = true;
+}
+
+bool CreateAuditRequest::CmqQueueNameHasBeenSet() const
+{
+    return m_cmqQueueNameHasBeenSet;
+}
+
 string CreateAuditRequest::GetKmsRegion() const
 {
     return m_kmsRegion;
@@ -351,6 +303,38 @@ bool CreateAuditRequest::KmsRegionHasBeenSet() const
     return m_kmsRegionHasBeenSet;
 }
 
+int64_t CreateAuditRequest::GetIsEnableKmsEncry() const
+{
+    return m_isEnableKmsEncry;
+}
+
+void CreateAuditRequest::SetIsEnableKmsEncry(const int64_t& _isEnableKmsEncry)
+{
+    m_isEnableKmsEncry = _isEnableKmsEncry;
+    m_isEnableKmsEncryHasBeenSet = true;
+}
+
+bool CreateAuditRequest::IsEnableKmsEncryHasBeenSet() const
+{
+    return m_isEnableKmsEncryHasBeenSet;
+}
+
+string CreateAuditRequest::GetCmqRegion() const
+{
+    return m_cmqRegion;
+}
+
+void CreateAuditRequest::SetCmqRegion(const string& _cmqRegion)
+{
+    m_cmqRegion = _cmqRegion;
+    m_cmqRegionHasBeenSet = true;
+}
+
+bool CreateAuditRequest::CmqRegionHasBeenSet() const
+{
+    return m_cmqRegionHasBeenSet;
+}
+
 string CreateAuditRequest::GetLogFilePrefix() const
 {
     return m_logFilePrefix;
@@ -365,6 +349,22 @@ void CreateAuditRequest::SetLogFilePrefix(const string& _logFilePrefix)
 bool CreateAuditRequest::LogFilePrefixHasBeenSet() const
 {
     return m_logFilePrefixHasBeenSet;
+}
+
+int64_t CreateAuditRequest::GetIsCreateNewQueue() const
+{
+    return m_isCreateNewQueue;
+}
+
+void CreateAuditRequest::SetIsCreateNewQueue(const int64_t& _isCreateNewQueue)
+{
+    m_isCreateNewQueue = _isCreateNewQueue;
+    m_isCreateNewQueueHasBeenSet = true;
+}
+
+bool CreateAuditRequest::IsCreateNewQueueHasBeenSet() const
+{
+    return m_isCreateNewQueueHasBeenSet;
 }
 
 

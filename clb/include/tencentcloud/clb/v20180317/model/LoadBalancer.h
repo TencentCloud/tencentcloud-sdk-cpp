@@ -1120,6 +1120,50 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool NfvInfoHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡日志服务(CLS)的健康检查日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthLogSetId 负载均衡日志服务(CLS)的健康检查日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHealthLogSetId() const;
+
+                    /**
+                     * 设置负载均衡日志服务(CLS)的健康检查日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HealthLogSetId 负载均衡日志服务(CLS)的健康检查日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHealthLogSetId(const std::string& _healthLogSetId);
+
+                    /**
+                     * 判断参数 HealthLogSetId 是否已赋值
+                     * @return HealthLogSetId 是否已赋值
+                     */
+                    bool HealthLogSetIdHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡日志服务(CLS)的健康检查日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthLogTopicId 负载均衡日志服务(CLS)的健康检查日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHealthLogTopicId() const;
+
+                    /**
+                     * 设置负载均衡日志服务(CLS)的健康检查日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HealthLogTopicId 负载均衡日志服务(CLS)的健康检查日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHealthLogTopicId(const std::string& _healthLogTopicId);
+
+                    /**
+                     * 判断参数 HealthLogTopicId 是否已赋值
+                     * @return HealthLogTopicId 是否已赋值
+                     */
+                    bool HealthLogTopicIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1461,6 +1505,20 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_nfvInfo;
                     bool m_nfvInfoHasBeenSet;
+
+                    /**
+                     * 负载均衡日志服务(CLS)的健康检查日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_healthLogSetId;
+                    bool m_healthLogSetIdHasBeenSet;
+
+                    /**
+                     * 负载均衡日志服务(CLS)的健康检查日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_healthLogTopicId;
+                    bool m_healthLogTopicIdHasBeenSet;
 
                 };
             }

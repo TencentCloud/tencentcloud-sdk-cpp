@@ -44,18 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取密钥别名
-                     * @return KeyMetadatas 密钥别名
-                     */
-                    std::vector<KeyMetadata> GetKeyMetadatas() const;
-
-                    /**
-                     * 判断参数 KeyMetadatas 是否已赋值
-                     * @return KeyMetadatas 是否已赋值
-                     */
-                    bool KeyMetadatasHasBeenSet() const;
-
-                    /**
                      * 获取CMK的总数量
                      * @return TotalCount CMK的总数量
                      */
@@ -67,19 +55,31 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取密钥别名
+                     * @return KeyMetadatas 密钥别名
+                     */
+                    std::vector<KeyMetadata> GetKeyMetadatas() const;
 
                     /**
-                     * 密钥别名
+                     * 判断参数 KeyMetadatas 是否已赋值
+                     * @return KeyMetadatas 是否已赋值
                      */
-                    std::vector<KeyMetadata> m_keyMetadatas;
-                    bool m_keyMetadatasHasBeenSet;
+                    bool KeyMetadatasHasBeenSet() const;
+
+                private:
 
                     /**
                      * CMK的总数量
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 密钥别名
+                     */
+                    std::vector<KeyMetadata> m_keyMetadatas;
+                    bool m_keyMetadatasHasBeenSet;
 
                 };
             }

@@ -48,40 +48,58 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源对
-                     * @return Resources 资源对
+                     * 获取日志ID
+                     * @return EventId 日志ID
                      */
-                    Resource GetResources() const;
+                    std::string GetEventId() const;
 
                     /**
-                     * 设置资源对
-                     * @param Resources 资源对
+                     * 设置日志ID
+                     * @param EventId 日志ID
                      */
-                    void SetResources(const Resource& _resources);
+                    void SetEventId(const std::string& _eventId);
 
                     /**
-                     * 判断参数 Resources 是否已赋值
-                     * @return Resources 是否已赋值
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
                      */
-                    bool ResourcesHasBeenSet() const;
+                    bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取主账号ID
-                     * @return AccountID 主账号ID
+                     * 获取用户名
+                     * @return Username 用户名
                      */
-                    int64_t GetAccountID() const;
+                    std::string GetUsername() const;
 
                     /**
-                     * 设置主账号ID
-                     * @param AccountID 主账号ID
+                     * 设置用户名
+                     * @param Username 用户名
                      */
-                    void SetAccountID(const int64_t& _accountID);
+                    void SetUsername(const std::string& _username);
 
                     /**
-                     * 判断参数 AccountID 是否已赋值
-                     * @return AccountID 是否已赋值
+                     * 判断参数 Username 是否已赋值
+                     * @return Username 是否已赋值
                      */
-                    bool AccountIDHasBeenSet() const;
+                    bool UsernameHasBeenSet() const;
+
+                    /**
+                     * 获取事件时间
+                     * @return EventTime 事件时间
+                     */
+                    std::string GetEventTime() const;
+
+                    /**
+                     * 设置事件时间
+                     * @param EventTime 事件时间
+                     */
+                    void SetEventTime(const std::string& _eventTime);
+
+                    /**
+                     * 判断参数 EventTime 是否已赋值
+                     * @return EventTime 是否已赋值
+                     */
+                    bool EventTimeHasBeenSet() const;
 
                     /**
                      * 获取日志详情
@@ -102,6 +120,24 @@ namespace TencentCloud
                     bool CloudAuditEventHasBeenSet() const;
 
                     /**
+                     * 获取资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * @return ResourceTypeCn 资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     */
+                    std::string GetResourceTypeCn() const;
+
+                    /**
+                     * 设置资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * @param ResourceTypeCn 资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     */
+                    void SetResourceTypeCn(const std::string& _resourceTypeCn);
+
+                    /**
+                     * 判断参数 ResourceTypeCn 是否已赋值
+                     * @return ResourceTypeCn 是否已赋值
+                     */
+                    bool ResourceTypeCnHasBeenSet() const;
+
+                    /**
                      * 获取鉴权错误码
                      * @return ErrorCode 鉴权错误码
                      */
@@ -118,24 +154,6 @@ namespace TencentCloud
                      * @return ErrorCode 是否已赋值
                      */
                     bool ErrorCodeHasBeenSet() const;
-
-                    /**
-                     * 获取日志ID
-                     * @return EventId 日志ID
-                     */
-                    std::string GetEventId() const;
-
-                    /**
-                     * 设置日志ID
-                     * @param EventId 日志ID
-                     */
-                    void SetEventId(const std::string& _eventId);
-
-                    /**
-                     * 判断参数 EventId 是否已赋值
-                     * @return EventId 是否已赋值
-                     */
-                    bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取事件名称
@@ -156,40 +174,26 @@ namespace TencentCloud
                     bool EventNameHasBeenSet() const;
 
                     /**
-                     * 获取事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
-                     * @return EventNameCn 事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * 获取证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecretId 证书ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetEventNameCn() const;
+                    std::string GetSecretId() const;
 
                     /**
-                     * 设置事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
-                     * @param EventNameCn 事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * 设置证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecretId 证书ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetEventNameCn(const std::string& _eventNameCn);
+                    void SetSecretId(const std::string& _secretId);
 
                     /**
-                     * 判断参数 EventNameCn 是否已赋值
-                     * @return EventNameCn 是否已赋值
+                     * 判断参数 SecretId 是否已赋值
+                     * @return SecretId 是否已赋值
                      */
-                    bool EventNameCnHasBeenSet() const;
-
-                    /**
-                     * 获取事件地域
-                     * @return EventRegion 事件地域
-                     */
-                    std::string GetEventRegion() const;
-
-                    /**
-                     * 设置事件地域
-                     * @param EventRegion 事件地域
-                     */
-                    void SetEventRegion(const std::string& _eventRegion);
-
-                    /**
-                     * 判断参数 EventRegion 是否已赋值
-                     * @return EventRegion 是否已赋值
-                     */
-                    bool EventRegionHasBeenSet() const;
+                    bool SecretIdHasBeenSet() const;
 
                     /**
                      * 获取请求来源
@@ -208,24 +212,6 @@ namespace TencentCloud
                      * @return EventSource 是否已赋值
                      */
                     bool EventSourceHasBeenSet() const;
-
-                    /**
-                     * 获取事件时间
-                     * @return EventTime 事件时间
-                     */
-                    std::string GetEventTime() const;
-
-                    /**
-                     * 设置事件时间
-                     * @param EventTime 事件时间
-                     */
-                    void SetEventTime(const std::string& _eventTime);
-
-                    /**
-                     * 判断参数 EventTime 是否已赋值
-                     * @return EventTime 是否已赋值
-                     */
-                    bool EventTimeHasBeenSet() const;
 
                     /**
                      * 获取请求ID
@@ -264,50 +250,36 @@ namespace TencentCloud
                     bool ResourceRegionHasBeenSet() const;
 
                     /**
-                     * 获取资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
-                     * @return ResourceTypeCn 资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * 获取主账号ID
+                     * @return AccountID 主账号ID
                      */
-                    std::string GetResourceTypeCn() const;
+                    int64_t GetAccountID() const;
 
                     /**
-                     * 设置资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
-                     * @param ResourceTypeCn 资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * 设置主账号ID
+                     * @param AccountID 主账号ID
                      */
-                    void SetResourceTypeCn(const std::string& _resourceTypeCn);
+                    void SetAccountID(const int64_t& _accountID);
 
                     /**
-                     * 判断参数 ResourceTypeCn 是否已赋值
-                     * @return ResourceTypeCn 是否已赋值
+                     * 判断参数 AccountID 是否已赋值
+                     * @return AccountID 是否已赋值
                      */
-                    bool ResourceTypeCnHasBeenSet() const;
-
-                    /**
-                     * 获取证书ID
-                     * @return SecretId 证书ID
-                     */
-                    std::string GetSecretId() const;
-
-                    /**
-                     * 设置证书ID
-                     * @param SecretId 证书ID
-                     */
-                    void SetSecretId(const std::string& _secretId);
-
-                    /**
-                     * 判断参数 SecretId 是否已赋值
-                     * @return SecretId 是否已赋值
-                     */
-                    bool SecretIdHasBeenSet() const;
+                    bool AccountIDHasBeenSet() const;
 
                     /**
                      * 获取源IP
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceIPAddress 源IP
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSourceIPAddress() const;
 
                     /**
                      * 设置源IP
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param SourceIPAddress 源IP
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSourceIPAddress(const std::string& _sourceIPAddress);
 
@@ -318,48 +290,60 @@ namespace TencentCloud
                     bool SourceIPAddressHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return Username 用户名
+                     * 获取事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * @return EventNameCn 事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
                      */
-                    std::string GetUsername() const;
+                    std::string GetEventNameCn() const;
 
                     /**
-                     * 设置用户名
-                     * @param Username 用户名
+                     * 设置事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * @param EventNameCn 事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
                      */
-                    void SetUsername(const std::string& _username);
+                    void SetEventNameCn(const std::string& _eventNameCn);
 
                     /**
-                     * 判断参数 Username 是否已赋值
-                     * @return Username 是否已赋值
+                     * 判断参数 EventNameCn 是否已赋值
+                     * @return EventNameCn 是否已赋值
                      */
-                    bool UsernameHasBeenSet() const;
+                    bool EventNameCnHasBeenSet() const;
+
+                    /**
+                     * 获取资源对
+                     * @return Resources 资源对
+                     */
+                    Resource GetResources() const;
+
+                    /**
+                     * 设置资源对
+                     * @param Resources 资源对
+                     */
+                    void SetResources(const Resource& _resources);
+
+                    /**
+                     * 判断参数 Resources 是否已赋值
+                     * @return Resources 是否已赋值
+                     */
+                    bool ResourcesHasBeenSet() const;
+
+                    /**
+                     * 获取事件地域
+                     * @return EventRegion 事件地域
+                     */
+                    std::string GetEventRegion() const;
+
+                    /**
+                     * 设置事件地域
+                     * @param EventRegion 事件地域
+                     */
+                    void SetEventRegion(const std::string& _eventRegion);
+
+                    /**
+                     * 判断参数 EventRegion 是否已赋值
+                     * @return EventRegion 是否已赋值
+                     */
+                    bool EventRegionHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 资源对
-                     */
-                    Resource m_resources;
-                    bool m_resourcesHasBeenSet;
-
-                    /**
-                     * 主账号ID
-                     */
-                    int64_t m_accountID;
-                    bool m_accountIDHasBeenSet;
-
-                    /**
-                     * 日志详情
-                     */
-                    std::string m_cloudAuditEvent;
-                    bool m_cloudAuditEventHasBeenSet;
-
-                    /**
-                     * 鉴权错误码
-                     */
-                    int64_t m_errorCode;
-                    bool m_errorCodeHasBeenSet;
 
                     /**
                      * 日志ID
@@ -368,34 +352,53 @@ namespace TencentCloud
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 事件名称
+                     * 用户名
                      */
-                    std::string m_eventName;
-                    bool m_eventNameHasBeenSet;
-
-                    /**
-                     * 事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
-                     */
-                    std::string m_eventNameCn;
-                    bool m_eventNameCnHasBeenSet;
-
-                    /**
-                     * 事件地域
-                     */
-                    std::string m_eventRegion;
-                    bool m_eventRegionHasBeenSet;
-
-                    /**
-                     * 请求来源
-                     */
-                    std::string m_eventSource;
-                    bool m_eventSourceHasBeenSet;
+                    std::string m_username;
+                    bool m_usernameHasBeenSet;
 
                     /**
                      * 事件时间
                      */
                     std::string m_eventTime;
                     bool m_eventTimeHasBeenSet;
+
+                    /**
+                     * 日志详情
+                     */
+                    std::string m_cloudAuditEvent;
+                    bool m_cloudAuditEventHasBeenSet;
+
+                    /**
+                     * 资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     */
+                    std::string m_resourceTypeCn;
+                    bool m_resourceTypeCnHasBeenSet;
+
+                    /**
+                     * 鉴权错误码
+                     */
+                    int64_t m_errorCode;
+                    bool m_errorCodeHasBeenSet;
+
+                    /**
+                     * 事件名称
+                     */
+                    std::string m_eventName;
+                    bool m_eventNameHasBeenSet;
+
+                    /**
+                     * 证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_secretId;
+                    bool m_secretIdHasBeenSet;
+
+                    /**
+                     * 请求来源
+                     */
+                    std::string m_eventSource;
+                    bool m_eventSourceHasBeenSet;
 
                     /**
                      * 请求ID
@@ -410,28 +413,35 @@ namespace TencentCloud
                     bool m_resourceRegionHasBeenSet;
 
                     /**
-                     * 资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * 主账号ID
                      */
-                    std::string m_resourceTypeCn;
-                    bool m_resourceTypeCnHasBeenSet;
-
-                    /**
-                     * 证书ID
-                     */
-                    std::string m_secretId;
-                    bool m_secretIdHasBeenSet;
+                    int64_t m_accountID;
+                    bool m_accountIDHasBeenSet;
 
                     /**
                      * 源IP
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceIPAddress;
                     bool m_sourceIPAddressHasBeenSet;
 
                     /**
-                     * 用户名
+                     * 事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
                      */
-                    std::string m_username;
-                    bool m_usernameHasBeenSet;
+                    std::string m_eventNameCn;
+                    bool m_eventNameCnHasBeenSet;
+
+                    /**
+                     * 资源对
+                     */
+                    Resource m_resources;
+                    bool m_resourcesHasBeenSet;
+
+                    /**
+                     * 事件地域
+                     */
+                    std::string m_eventRegion;
+                    bool m_eventRegionHasBeenSet;
 
                 };
             }

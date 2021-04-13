@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取规格有效标志，取值：0-停止售卖，1-开放售卖
-                     * @return Cpu 规格有效标志，取值：0-停止售卖，1-开放售卖
+                     * 获取计算资源规格，单位为CPU核心数
+                     * @return Cpu 计算资源规格，单位为CPU核心数
                      */
                     uint64_t GetCpu() const;
 
                     /**
-                     * 设置规格有效标志，取值：0-停止售卖，1-开放售卖
-                     * @param Cpu 规格有效标志，取值：0-停止售卖，1-开放售卖
+                     * 设置计算资源规格，单位为CPU核心数
+                     * @param Cpu 计算资源规格，单位为CPU核心数
                      */
                     void SetCpu(const uint64_t& _cpu);
 
@@ -439,7 +439,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 规格有效标志，取值：0-停止售卖，1-开放售卖
+                     * 计算资源规格，单位为CPU核心数
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;

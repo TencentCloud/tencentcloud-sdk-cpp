@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cmq地域
-                     * @return CmqRegion cmq地域
-                     */
-                    std::string GetCmqRegion() const;
-
-                    /**
-                     * 设置cmq地域
-                     * @param CmqRegion cmq地域
-                     */
-                    void SetCmqRegion(const std::string& _cmqRegion);
-
-                    /**
-                     * 判断参数 CmqRegion 是否已赋值
-                     * @return CmqRegion 是否已赋值
-                     */
-                    bool CmqRegionHasBeenSet() const;
-
-                    /**
                      * 获取地域描述
                      * @return CmqRegionName 地域描述
                      */
@@ -82,19 +64,37 @@ namespace TencentCloud
                      */
                     bool CmqRegionNameHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取cmq地域
+                     * @return CmqRegion cmq地域
+                     */
+                    std::string GetCmqRegion() const;
 
                     /**
-                     * cmq地域
+                     * 设置cmq地域
+                     * @param CmqRegion cmq地域
                      */
-                    std::string m_cmqRegion;
-                    bool m_cmqRegionHasBeenSet;
+                    void SetCmqRegion(const std::string& _cmqRegion);
+
+                    /**
+                     * 判断参数 CmqRegion 是否已赋值
+                     * @return CmqRegion 是否已赋值
+                     */
+                    bool CmqRegionHasBeenSet() const;
+
+                private:
 
                     /**
                      * 地域描述
                      */
                     std::string m_cmqRegionName;
                     bool m_cmqRegionNameHasBeenSet;
+
+                    /**
+                     * cmq地域
+                     */
+                    std::string m_cmqRegion;
+                    bool m_cmqRegionHasBeenSet;
 
                 };
             }

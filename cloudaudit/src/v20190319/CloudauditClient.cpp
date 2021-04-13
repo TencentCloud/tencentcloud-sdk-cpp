@@ -169,6 +169,49 @@ CloudauditClient::DescribeAuditOutcomeCallable CloudauditClient::DescribeAuditCa
     return task->get_future();
 }
 
+CloudauditClient::DescribeEventsOutcome CloudauditClient::DescribeEvents(const DescribeEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventsResponse rsp = DescribeEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventsOutcome(rsp);
+        else
+            return DescribeEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventsOutcome(outcome.GetError());
+    }
+}
+
+void CloudauditClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudauditClient::DescribeEventsOutcomeCallable CloudauditClient::DescribeEventsCallable(const DescribeEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CloudauditClient::GetAttributeKeyOutcome CloudauditClient::GetAttributeKey(const GetAttributeKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "GetAttributeKey");

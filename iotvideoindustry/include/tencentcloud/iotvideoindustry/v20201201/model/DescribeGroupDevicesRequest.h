@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool NickNameHasBeenSet() const;
 
+                    /**
+                     * 获取过滤不可录制设备
+                     * @return Recordable 过滤不可录制设备
+                     */
+                    int64_t GetRecordable() const;
+
+                    /**
+                     * 设置过滤不可录制设备
+                     * @param Recordable 过滤不可录制设备
+                     */
+                    void SetRecordable(const int64_t& _recordable);
+
+                    /**
+                     * 判断参数 Recordable 是否已赋值
+                     * @return Recordable 是否已赋值
+                     */
+                    bool RecordableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
+
+                    /**
+                     * 过滤不可录制设备
+                     */
+                    int64_t m_recordable;
+                    bool m_recordableHasBeenSet;
 
                 };
             }

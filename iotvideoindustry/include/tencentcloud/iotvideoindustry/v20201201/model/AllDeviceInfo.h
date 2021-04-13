@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool IsRecordHasBeenSet() const;
 
+                    /**
+                     * 获取该设备是否可录制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Recordable 该设备是否可录制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRecordable() const;
+
+                    /**
+                     * 设置该设备是否可录制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Recordable 该设备是否可录制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRecordable(const int64_t& _recordable);
+
+                    /**
+                     * 判断参数 Recordable 是否已赋值
+                     * @return Recordable 是否已赋值
+                     */
+                    bool RecordableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +330,13 @@ namespace TencentCloud
                      */
                     int64_t m_isRecord;
                     bool m_isRecordHasBeenSet;
+
+                    /**
+                     * 该设备是否可录制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_recordable;
+                    bool m_recordableHasBeenSet;
 
                 };
             }

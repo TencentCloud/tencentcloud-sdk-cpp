@@ -26,7 +26,8 @@ using namespace std;
 SetLoadBalancerClsLogRequest::SetLoadBalancerClsLogRequest() :
     m_loadBalancerIdHasBeenSet(false),
     m_logSetIdHasBeenSet(false),
-    m_logTopicIdHasBeenSet(false)
+    m_logTopicIdHasBeenSet(false),
+    m_logTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string SetLoadBalancerClsLogRequest::ToJsonString() const
         string key = "LogTopicId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_logTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_logType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void SetLoadBalancerClsLogRequest::SetLogTopicId(const string& _logTopicId)
 bool SetLoadBalancerClsLogRequest::LogTopicIdHasBeenSet() const
 {
     return m_logTopicIdHasBeenSet;
+}
+
+string SetLoadBalancerClsLogRequest::GetLogType() const
+{
+    return m_logType;
+}
+
+void SetLoadBalancerClsLogRequest::SetLogType(const string& _logType)
+{
+    m_logType = _logType;
+    m_logTypeHasBeenSet = true;
+}
+
+bool SetLoadBalancerClsLogRequest::LogTypeHasBeenSet() const
+{
+    return m_logTypeHasBeenSet;
 }
 
 

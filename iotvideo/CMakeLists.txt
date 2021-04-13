@@ -125,6 +125,8 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/DeleteMessageQueueRequest.h
   include/tencentcloud/iotvideo/v20191126/model/CreateUsrTokenRequest.h
   include/tencentcloud/iotvideo/v20191126/model/RunDeviceRequest.h
+  include/tencentcloud/iotvideo/v20191126/model/RunOtaVersionResponse.h
+  include/tencentcloud/iotvideo/v20191126/model/ModifyDeviceRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeDeviceModelResponse.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeStorageServiceRequest.h
   include/tencentcloud/iotvideo/v20191126/model/ProductBase.h
@@ -141,7 +143,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/CreateAnonymousAccessTokenRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DeliverStorageServiceRequest.h
   include/tencentcloud/iotvideo/v20191126/model/RunDeviceStreamResponse.h
-  include/tencentcloud/iotvideo/v20191126/model/RunOtaVersionResponse.h
+  include/tencentcloud/iotvideo/v20191126/model/ModifyDeviceResponse.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeDeviceModelRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeLogsResponse.h
   include/tencentcloud/iotvideo/v20191126/model/ModifyDeviceActionResponse.h
@@ -401,6 +403,8 @@ set(iotvideo_src
   src/v20191126/model/DeleteMessageQueueRequest.cpp
   src/v20191126/model/CreateUsrTokenRequest.cpp
   src/v20191126/model/RunDeviceRequest.cpp
+  src/v20191126/model/RunOtaVersionResponse.cpp
+  src/v20191126/model/ModifyDeviceRequest.cpp
   src/v20191126/model/DescribeDeviceModelResponse.cpp
   src/v20191126/model/DescribeStorageServiceRequest.cpp
   src/v20191126/model/ProductBase.cpp
@@ -417,7 +421,7 @@ set(iotvideo_src
   src/v20191126/model/CreateAnonymousAccessTokenRequest.cpp
   src/v20191126/model/DeliverStorageServiceRequest.cpp
   src/v20191126/model/RunDeviceStreamResponse.cpp
-  src/v20191126/model/RunOtaVersionResponse.cpp
+  src/v20191126/model/ModifyDeviceResponse.cpp
   src/v20191126/model/DescribeDeviceModelRequest.cpp
   src/v20191126/model/DescribeLogsResponse.cpp
   src/v20191126/model/ModifyDeviceActionResponse.cpp

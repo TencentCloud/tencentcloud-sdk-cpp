@@ -22,8 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 CmqRegionInfo::CmqRegionInfo() :
-    m_cmqRegionHasBeenSet(false),
-    m_cmqRegionNameHasBeenSet(false)
+    m_cmqRegionNameHasBeenSet(false),
+    m_cmqRegionHasBeenSet(false)
 {
 }
 
@@ -31,16 +31,6 @@ CoreInternalOutcome CmqRegionInfo::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("CmqRegion") && !value["CmqRegion"].IsNull())
-    {
-        if (!value["CmqRegion"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `CmqRegionInfo.CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cmqRegion = string(value["CmqRegion"].GetString());
-        m_cmqRegionHasBeenSet = true;
-    }
 
     if (value.HasMember("CmqRegionName") && !value["CmqRegionName"].IsNull())
     {
@@ -52,20 +42,22 @@ CoreInternalOutcome CmqRegionInfo::Deserialize(const Value &value)
         m_cmqRegionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CmqRegion") && !value["CmqRegion"].IsNull())
+    {
+        if (!value["CmqRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CmqRegionInfo.CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmqRegion = string(value["CmqRegion"].GetString());
+        m_cmqRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void CmqRegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_cmqRegionHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "CmqRegion";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_cmqRegionNameHasBeenSet)
     {
@@ -75,24 +67,16 @@ void CmqRegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         value.AddMember(iKey, Value(m_cmqRegionName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_cmqRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CmqRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string CmqRegionInfo::GetCmqRegion() const
-{
-    return m_cmqRegion;
-}
-
-void CmqRegionInfo::SetCmqRegion(const string& _cmqRegion)
-{
-    m_cmqRegion = _cmqRegion;
-    m_cmqRegionHasBeenSet = true;
-}
-
-bool CmqRegionInfo::CmqRegionHasBeenSet() const
-{
-    return m_cmqRegionHasBeenSet;
-}
 
 string CmqRegionInfo::GetCmqRegionName() const
 {
@@ -108,5 +92,21 @@ void CmqRegionInfo::SetCmqRegionName(const string& _cmqRegionName)
 bool CmqRegionInfo::CmqRegionNameHasBeenSet() const
 {
     return m_cmqRegionNameHasBeenSet;
+}
+
+string CmqRegionInfo::GetCmqRegion() const
+{
+    return m_cmqRegion;
+}
+
+void CmqRegionInfo::SetCmqRegion(const string& _cmqRegion)
+{
+    m_cmqRegion = _cmqRegion;
+    m_cmqRegionHasBeenSet = true;
+}
+
+bool CmqRegionInfo::CmqRegionHasBeenSet() const
+{
+    return m_cmqRegionHasBeenSet;
 }
 

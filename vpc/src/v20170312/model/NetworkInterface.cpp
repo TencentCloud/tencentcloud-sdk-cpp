@@ -38,7 +38,8 @@ NetworkInterface::NetworkInterface() :
     m_ipv6AddressSetHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_eniTypeHasBeenSet(false),
-    m_businessHasBeenSet(false)
+    m_businessHasBeenSet(false),
+    m_cdcIdHasBeenSet(false)
 {
 }
 
@@ -257,6 +258,16 @@ CoreInternalOutcome NetworkInterface::Deserialize(const Value &value)
         m_businessHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NetworkInterface.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -425,6 +436,14 @@ void NetworkInterface::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "Business";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_business.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -700,5 +719,21 @@ void NetworkInterface::SetBusiness(const string& _business)
 bool NetworkInterface::BusinessHasBeenSet() const
 {
     return m_businessHasBeenSet;
+}
+
+string NetworkInterface::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void NetworkInterface::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool NetworkInterface::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 

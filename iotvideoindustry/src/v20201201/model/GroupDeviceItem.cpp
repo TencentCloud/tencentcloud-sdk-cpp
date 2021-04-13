@@ -29,7 +29,8 @@ GroupDeviceItem::GroupDeviceItem() :
     m_deviceTypeHasBeenSet(false),
     m_rTSPUrlHasBeenSet(false),
     m_deviceCodeHasBeenSet(false),
-    m_isRecordHasBeenSet(false)
+    m_isRecordHasBeenSet(false),
+    m_recordableHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome GroupDeviceItem::Deserialize(const Value &value)
         m_isRecordHasBeenSet = true;
     }
 
+    if (value.HasMember("Recordable") && !value["Recordable"].IsNull())
+    {
+        if (!value["Recordable"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `GroupDeviceItem.Recordable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordable = value["Recordable"].GetInt64();
+        m_recordableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void GroupDeviceItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "IsRecord";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isRecord, allocator);
+    }
+
+    if (m_recordableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Recordable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordable, allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void GroupDeviceItem::SetIsRecord(const int64_t& _isRecord)
 bool GroupDeviceItem::IsRecordHasBeenSet() const
 {
     return m_isRecordHasBeenSet;
+}
+
+int64_t GroupDeviceItem::GetRecordable() const
+{
+    return m_recordable;
+}
+
+void GroupDeviceItem::SetRecordable(const int64_t& _recordable)
+{
+    m_recordable = _recordable;
+    m_recordableHasBeenSet = true;
+}
+
+bool GroupDeviceItem::RecordableHasBeenSet() const
+{
+    return m_recordableHasBeenSet;
 }
 

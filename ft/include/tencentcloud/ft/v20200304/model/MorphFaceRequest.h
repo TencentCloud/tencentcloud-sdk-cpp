@@ -152,14 +152,14 @@ Url、Image必须提供一个，如果都提供，只使用 Url。图片存储�
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取视频类型，取值[0,2]，其中0为MP4，1为GIF，2为MOV。目前仅支持MP4格式，默认为MP4格式
-                     * @return OutputType 视频类型，取值[0,2]，其中0为MP4，1为GIF，2为MOV。目前仅支持MP4格式，默认为MP4格式
+                     * 获取视频类型，取值0。目前仅支持MP4格式，默认为MP4格式
+                     * @return OutputType 视频类型，取值0。目前仅支持MP4格式，默认为MP4格式
                      */
                     int64_t GetOutputType() const;
 
                     /**
-                     * 设置视频类型，取值[0,2]，其中0为MP4，1为GIF，2为MOV。目前仅支持MP4格式，默认为MP4格式
-                     * @param OutputType 视频类型，取值[0,2]，其中0为MP4，1为GIF，2为MOV。目前仅支持MP4格式，默认为MP4格式
+                     * 设置视频类型，取值0。目前仅支持MP4格式，默认为MP4格式
+                     * @param OutputType 视频类型，取值0。目前仅支持MP4格式，默认为MP4格式
                      */
                     void SetOutputType(const int64_t& _outputType);
 
@@ -241,7 +241,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。图片存储�
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 视频类型，取值[0,2]，其中0为MP4，1为GIF，2为MOV。目前仅支持MP4格式，默认为MP4格式
+                     * 视频类型，取值0。目前仅支持MP4格式，默认为MP4格式
                      */
                     int64_t m_outputType;
                     bool m_outputTypeHasBeenSet;

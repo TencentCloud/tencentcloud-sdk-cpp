@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeClsLogSetResponse::DescribeClsLogSetResponse() :
-    m_logsetIdHasBeenSet(false)
+    m_logsetIdHasBeenSet(false),
+    m_healthLogsetIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome DescribeClsLogSetResponse::Deserialize(const string &payload
         m_logsetIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HealthLogsetId") && !rsp["HealthLogsetId"].IsNull())
+    {
+        if (!rsp["HealthLogsetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HealthLogsetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthLogsetId = string(rsp["HealthLogsetId"].GetString());
+        m_healthLogsetIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ string DescribeClsLogSetResponse::GetLogsetId() const
 bool DescribeClsLogSetResponse::LogsetIdHasBeenSet() const
 {
     return m_logsetIdHasBeenSet;
+}
+
+string DescribeClsLogSetResponse::GetHealthLogsetId() const
+{
+    return m_healthLogsetId;
+}
+
+bool DescribeClsLogSetResponse::HealthLogsetIdHasBeenSet() const
+{
+    return m_healthLogsetIdHasBeenSet;
 }
 
 

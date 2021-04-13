@@ -25,9 +25,9 @@ using namespace rapidjson;
 using namespace std;
 
 LookUpEventsResponse::LookUpEventsResponse() :
+    m_nextTokenHasBeenSet(false),
     m_eventsHasBeenSet(false),
-    m_listOverHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_listOverHasBeenSet(false)
 {
 }
 
@@ -65,6 +65,16 @@ CoreInternalOutcome LookUpEventsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("NextToken") && !rsp["NextToken"].IsNull())
+    {
+        if (!rsp["NextToken"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NextToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextToken = string(rsp["NextToken"].GetString());
+        m_nextTokenHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Events") && !rsp["Events"].IsNull())
     {
         if (!rsp["Events"].IsArray())
@@ -95,20 +105,20 @@ CoreInternalOutcome LookUpEventsResponse::Deserialize(const string &payload)
         m_listOverHasBeenSet = true;
     }
 
-    if (rsp.HasMember("NextToken") && !rsp["NextToken"].IsNull())
-    {
-        if (!rsp["NextToken"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `NextToken` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_nextToken = string(rsp["NextToken"].GetString());
-        m_nextTokenHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
+
+string LookUpEventsResponse::GetNextToken() const
+{
+    return m_nextToken;
+}
+
+bool LookUpEventsResponse::NextTokenHasBeenSet() const
+{
+    return m_nextTokenHasBeenSet;
+}
 
 vector<Event> LookUpEventsResponse::GetEvents() const
 {
@@ -128,16 +138,6 @@ bool LookUpEventsResponse::GetListOver() const
 bool LookUpEventsResponse::ListOverHasBeenSet() const
 {
     return m_listOverHasBeenSet;
-}
-
-string LookUpEventsResponse::GetNextToken() const
-{
-    return m_nextToken;
-}
-
-bool LookUpEventsResponse::NextTokenHasBeenSet() const
-{
-    return m_nextTokenHasBeenSet;
 }
 
 

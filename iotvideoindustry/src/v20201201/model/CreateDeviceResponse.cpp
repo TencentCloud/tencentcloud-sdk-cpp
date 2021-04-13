@@ -26,7 +26,8 @@ using namespace std;
 
 CreateDeviceResponse::CreateDeviceResponse() :
     m_deviceCodeHasBeenSet(false),
-    m_deviceIdHasBeenSet(false)
+    m_deviceIdHasBeenSet(false),
+    m_virtualGroupIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
         m_deviceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VirtualGroupId") && !rsp["VirtualGroupId"].IsNull())
+    {
+        if (!rsp["VirtualGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VirtualGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_virtualGroupId = string(rsp["VirtualGroupId"].GetString());
+        m_virtualGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,16 @@ string CreateDeviceResponse::GetDeviceId() const
 bool CreateDeviceResponse::DeviceIdHasBeenSet() const
 {
     return m_deviceIdHasBeenSet;
+}
+
+string CreateDeviceResponse::GetVirtualGroupId() const
+{
+    return m_virtualGroupId;
+}
+
+bool CreateDeviceResponse::VirtualGroupIdHasBeenSet() const
+{
+    return m_virtualGroupIdHasBeenSet;
 }
 
 

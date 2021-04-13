@@ -24,12 +24,12 @@ using namespace rapidjson;
 using namespace std;
 
 LookUpEventsRequest::LookUpEventsRequest() :
-    m_endTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_lookupAttributesHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
     m_maxResultsHasBeenSet(false),
-    m_modeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -40,20 +40,20 @@ string LookUpEventsRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_endTimeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "EndTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_endTime, allocator);
-    }
-
     if (m_startTimeHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
     }
 
     if (m_lookupAttributesHasBeenSet)
@@ -69,6 +69,14 @@ string LookUpEventsRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nextTokenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NextToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_nextToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxResultsHasBeenSet)
@@ -87,14 +95,6 @@ string LookUpEventsRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_nextTokenHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "NextToken";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_nextToken.c_str(), allocator).Move(), allocator);
-    }
-
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -102,22 +102,6 @@ string LookUpEventsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t LookUpEventsRequest::GetEndTime() const
-{
-    return m_endTime;
-}
-
-void LookUpEventsRequest::SetEndTime(const int64_t& _endTime)
-{
-    m_endTime = _endTime;
-    m_endTimeHasBeenSet = true;
-}
-
-bool LookUpEventsRequest::EndTimeHasBeenSet() const
-{
-    return m_endTimeHasBeenSet;
-}
 
 int64_t LookUpEventsRequest::GetStartTime() const
 {
@@ -135,6 +119,22 @@ bool LookUpEventsRequest::StartTimeHasBeenSet() const
     return m_startTimeHasBeenSet;
 }
 
+int64_t LookUpEventsRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void LookUpEventsRequest::SetEndTime(const int64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool LookUpEventsRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
 vector<LookupAttribute> LookUpEventsRequest::GetLookupAttributes() const
 {
     return m_lookupAttributes;
@@ -149,6 +149,22 @@ void LookUpEventsRequest::SetLookupAttributes(const vector<LookupAttribute>& _lo
 bool LookUpEventsRequest::LookupAttributesHasBeenSet() const
 {
     return m_lookupAttributesHasBeenSet;
+}
+
+string LookUpEventsRequest::GetNextToken() const
+{
+    return m_nextToken;
+}
+
+void LookUpEventsRequest::SetNextToken(const string& _nextToken)
+{
+    m_nextToken = _nextToken;
+    m_nextTokenHasBeenSet = true;
+}
+
+bool LookUpEventsRequest::NextTokenHasBeenSet() const
+{
+    return m_nextTokenHasBeenSet;
 }
 
 int64_t LookUpEventsRequest::GetMaxResults() const
@@ -181,22 +197,6 @@ void LookUpEventsRequest::SetMode(const string& _mode)
 bool LookUpEventsRequest::ModeHasBeenSet() const
 {
     return m_modeHasBeenSet;
-}
-
-string LookUpEventsRequest::GetNextToken() const
-{
-    return m_nextToken;
-}
-
-void LookUpEventsRequest::SetNextToken(const string& _nextToken)
-{
-    m_nextToken = _nextToken;
-    m_nextTokenHasBeenSet = true;
-}
-
-bool LookUpEventsRequest::NextTokenHasBeenSet() const
-{
-    return m_nextTokenHasBeenSet;
 }
 
 

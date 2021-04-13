@@ -32,7 +32,9 @@ Command::Command() :
     m_createdTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
     m_enableParameterHasBeenSet(false),
-    m_defaultParametersHasBeenSet(false)
+    m_defaultParametersHasBeenSet(false),
+    m_formattedDescriptionHasBeenSet(false),
+    m_createdByHasBeenSet(false)
 {
 }
 
@@ -151,6 +153,26 @@ CoreInternalOutcome Command::Deserialize(const Value &value)
         m_defaultParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("FormattedDescription") && !value["FormattedDescription"].IsNull())
+    {
+        if (!value["FormattedDescription"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Command.FormattedDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_formattedDescription = string(value["FormattedDescription"].GetString());
+        m_formattedDescriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedBy") && !value["CreatedBy"].IsNull())
+    {
+        if (!value["CreatedBy"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Command.CreatedBy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdBy = string(value["CreatedBy"].GetString());
+        m_createdByHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +266,22 @@ void Command::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "DefaultParameters";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formattedDescriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FormattedDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_formattedDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdByHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreatedBy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createdBy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -423,5 +461,37 @@ void Command::SetDefaultParameters(const string& _defaultParameters)
 bool Command::DefaultParametersHasBeenSet() const
 {
     return m_defaultParametersHasBeenSet;
+}
+
+string Command::GetFormattedDescription() const
+{
+    return m_formattedDescription;
+}
+
+void Command::SetFormattedDescription(const string& _formattedDescription)
+{
+    m_formattedDescription = _formattedDescription;
+    m_formattedDescriptionHasBeenSet = true;
+}
+
+bool Command::FormattedDescriptionHasBeenSet() const
+{
+    return m_formattedDescriptionHasBeenSet;
+}
+
+string Command::GetCreatedBy() const
+{
+    return m_createdBy;
+}
+
+void Command::SetCreatedBy(const string& _createdBy)
+{
+    m_createdBy = _createdBy;
+    m_createdByHasBeenSet = true;
+}
+
+bool Command::CreatedByHasBeenSet() const
+{
+    return m_createdByHasBeenSet;
 }
 

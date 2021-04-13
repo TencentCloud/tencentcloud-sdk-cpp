@@ -190,6 +190,50 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取分组状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupStatus 分组状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetGroupStatus() const;
+
+                    /**
+                     * 设置分组状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupStatus 分组状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupStatus(const int64_t& _groupStatus);
+
+                    /**
+                     * 判断参数 GroupStatus 是否已赋值
+                     * @return GroupStatus 是否已赋值
+                     */
+                    bool GroupStatusHasBeenSet() const;
+
+                    /**
+                     * 获取设备不存在时产生的错误
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Error 设备不存在时产生的错误
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetError() const;
+
+                    /**
+                     * 设置设备不存在时产生的错误
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Error 设备不存在时产生的错误
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetError(const std::string& _error);
+
+                    /**
+                     * 判断参数 Error 是否已赋值
+                     * @return Error 是否已赋值
+                     */
+                    bool ErrorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +283,20 @@ namespace TencentCloud
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 分组状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_groupStatus;
+                    bool m_groupStatusHasBeenSet;
+
+                    /**
+                     * 设备不存在时产生的错误
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_error;
+                    bool m_errorHasBeenSet;
 
                 };
             }
