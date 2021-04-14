@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人脸核身流程的标识，调用DetectAuth接口时生成。
-                     * @return EidToken 人脸核身流程的标识，调用DetectAuth接口时生成。
+                     * 获取人脸核身流程的标识，调用GetEidToken接口时生成的。
+                     * @return EidToken 人脸核身流程的标识，调用GetEidToken接口时生成的。
                      */
                     std::string GetEidToken() const;
 
                     /**
-                     * 设置人脸核身流程的标识，调用DetectAuth接口时生成。
-                     * @param EidToken 人脸核身流程的标识，调用DetectAuth接口时生成。
+                     * 设置人脸核身流程的标识，调用GetEidToken接口时生成的。
+                     * @param EidToken 人脸核身流程的标识，调用GetEidToken接口时生成的。
                      */
                     void SetEidToken(const std::string& _eidToken);
 
@@ -107,7 +107,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人脸核身流程的标识，调用DetectAuth接口时生成。
+                     * 人脸核身流程的标识，调用GetEidToken接口时生成的。
                      */
                     std::string m_eidToken;
                     bool m_eidTokenHasBeenSet;

@@ -43,8 +43,14 @@
 #include <tencentcloud/ame/v20190916/model/DescribePackagesResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeStationsRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeStationsResponse.h>
+#include <tencentcloud/ame/v20190916/model/ModifyMusicOnShelvesRequest.h>
+#include <tencentcloud/ame/v20190916/model/ModifyMusicOnShelvesResponse.h>
+#include <tencentcloud/ame/v20190916/model/PutMusicOnTheShelvesRequest.h>
+#include <tencentcloud/ame/v20190916/model/PutMusicOnTheShelvesResponse.h>
 #include <tencentcloud/ame/v20190916/model/ReportDataRequest.h>
 #include <tencentcloud/ame/v20190916/model/ReportDataResponse.h>
+#include <tencentcloud/ame/v20190916/model/TakeMusicOffShelvesRequest.h>
+#include <tencentcloud/ame/v20190916/model/TakeMusicOffShelvesResponse.h>
 
 
 namespace TencentCloud
@@ -89,9 +95,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeStationsResponse> DescribeStationsOutcome;
                 typedef std::future<DescribeStationsOutcome> DescribeStationsOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeStationsRequest&, DescribeStationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStationsAsyncHandler;
+                typedef Outcome<Error, Model::ModifyMusicOnShelvesResponse> ModifyMusicOnShelvesOutcome;
+                typedef std::future<ModifyMusicOnShelvesOutcome> ModifyMusicOnShelvesOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::ModifyMusicOnShelvesRequest&, ModifyMusicOnShelvesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMusicOnShelvesAsyncHandler;
+                typedef Outcome<Error, Model::PutMusicOnTheShelvesResponse> PutMusicOnTheShelvesOutcome;
+                typedef std::future<PutMusicOnTheShelvesOutcome> PutMusicOnTheShelvesOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::PutMusicOnTheShelvesRequest&, PutMusicOnTheShelvesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutMusicOnTheShelvesAsyncHandler;
                 typedef Outcome<Error, Model::ReportDataResponse> ReportDataOutcome;
                 typedef std::future<ReportDataOutcome> ReportDataOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::ReportDataRequest&, ReportDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportDataAsyncHandler;
+                typedef Outcome<Error, Model::TakeMusicOffShelvesResponse> TakeMusicOffShelvesOutcome;
+                typedef std::future<TakeMusicOffShelvesOutcome> TakeMusicOffShelvesOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::TakeMusicOffShelvesRequest&, TakeMusicOffShelvesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TakeMusicOffShelvesAsyncHandler;
 
 
 
@@ -186,6 +201,24 @@ namespace TencentCloud
                 DescribeStationsOutcomeCallable DescribeStationsCallable(const Model::DescribeStationsRequest& request);
 
                 /**
+                 *根据资源方，需要变更的参数，请求该接口进行变更，为空的参数默认为无变更
+                 * @param req ModifyMusicOnShelvesRequest
+                 * @return ModifyMusicOnShelvesOutcome
+                 */
+                ModifyMusicOnShelvesOutcome ModifyMusicOnShelves(const Model::ModifyMusicOnShelvesRequest &request);
+                void ModifyMusicOnShelvesAsync(const Model::ModifyMusicOnShelvesRequest& request, const ModifyMusicOnShelvesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMusicOnShelvesOutcomeCallable ModifyMusicOnShelvesCallable(const Model::ModifyMusicOnShelvesRequest& request);
+
+                /**
+                 *根据资源方所传歌曲信息，进行歌曲上架，多个歌曲同时请求时，需构造复合结构进行请求
+                 * @param req PutMusicOnTheShelvesRequest
+                 * @return PutMusicOnTheShelvesOutcome
+                 */
+                PutMusicOnTheShelvesOutcome PutMusicOnTheShelves(const Model::PutMusicOnTheShelvesRequest &request);
+                void PutMusicOnTheShelvesAsync(const Model::PutMusicOnTheShelvesRequest& request, const PutMusicOnTheShelvesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutMusicOnTheShelvesOutcomeCallable PutMusicOnTheShelvesCallable(const Model::PutMusicOnTheShelvesRequest& request);
+
+                /**
                  *客户上报用户数据功能，为了更好地为用户提供优质服务
                  * @param req ReportDataRequest
                  * @return ReportDataOutcome
@@ -193,6 +226,15 @@ namespace TencentCloud
                 ReportDataOutcome ReportData(const Model::ReportDataRequest &request);
                 void ReportDataAsync(const Model::ReportDataRequest& request, const ReportDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReportDataOutcomeCallable ReportDataCallable(const Model::ReportDataRequest& request);
+
+                /**
+                 *根据资源方所传MusicId进行将歌曲进行下架，多个MusicId使用逗号隔开
+                 * @param req TakeMusicOffShelvesRequest
+                 * @return TakeMusicOffShelvesOutcome
+                 */
+                TakeMusicOffShelvesOutcome TakeMusicOffShelves(const Model::TakeMusicOffShelvesRequest &request);
+                void TakeMusicOffShelvesAsync(const Model::TakeMusicOffShelvesRequest& request, const TakeMusicOffShelvesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TakeMusicOffShelvesOutcomeCallable TakeMusicOffShelvesCallable(const Model::TakeMusicOffShelvesRequest& request);
 
             };
         }

@@ -104,14 +104,14 @@ namespace TencentCloud
                     bool ClusterInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取LifeState 状态
-                     * @return LifeState LifeState 状态
+                     * 获取LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted
+                     * @return LifeState LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted
                      */
                     std::string GetLifeState() const;
 
                     /**
-                     * 设置LifeState 状态
-                     * @param LifeState LifeState 状态
+                     * 设置LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted
+                     * @param LifeState LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted
                      */
                     void SetLifeState(const std::string& _lifeState);
 
@@ -430,7 +430,7 @@ namespace TencentCloud
                     bool m_clusterInstanceIdHasBeenSet;
 
                     /**
-                     * LifeState 状态
+                     * LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted
                      */
                     std::string m_lifeState;
                     bool m_lifeStateHasBeenSet;

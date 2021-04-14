@@ -19,72 +19,98 @@ set(oceanus_public_header
   )
 
 set(oceanus_public_header_model
+  include/tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResourceRefDetail.h
   include/tencentcloud/oceanus/v20190422/model/StopJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/StopJobDescription.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h
-  include/tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h
+  include/tencentcloud/oceanus/v20190422/model/Property.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigRequest.h
   include/tencentcloud/oceanus/v20190422/model/SystemResourceItem.h
-  include/tencentcloud/oceanus/v20190422/model/StopJobsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeResourceRelatedJobsRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceConfigItem.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResourceLocParam.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Filter.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h
-  include/tencentcloud/oceanus/v20190422/model/Property.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceItem.h
+  include/tencentcloud/oceanus/v20190422/model/StopJobsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/RunJobDescription.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h
-  include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeResourceRelatedJobsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceRefJobInfo.h
   include/tencentcloud/oceanus/v20190422/model/ResourceRef.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/JobV1.h
   include/tencentcloud/oceanus/v20190422/model/JobConfig.h
-  include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsRequest.h
   )
 
 set(oceanus_src
   src/v20190422/OceanusClient.cpp
+  src/v20190422/model/DescribeResourceConfigsResponse.cpp
   src/v20190422/model/CreateResourceRequest.cpp
   src/v20190422/model/CreateJobRequest.cpp
   src/v20190422/model/ResourceRefDetail.cpp
   src/v20190422/model/StopJobsRequest.cpp
   src/v20190422/model/CreateJobResponse.cpp
+  src/v20190422/model/ResourceLoc.cpp
   src/v20190422/model/RunJobsRequest.cpp
   src/v20190422/model/StopJobDescription.cpp
   src/v20190422/model/DeleteTableConfigResponse.cpp
   src/v20190422/model/CreateResourceConfigResponse.cpp
   src/v20190422/model/CreateJobConfigRequest.cpp
   src/v20190422/model/CreateResourceConfigRequest.cpp
-  src/v20190422/model/CreateResourceResponse.cpp
+  src/v20190422/model/Property.cpp
   src/v20190422/model/DeleteTableConfigRequest.cpp
   src/v20190422/model/SystemResourceItem.cpp
-  src/v20190422/model/StopJobsResponse.cpp
+  src/v20190422/model/DescribeResourceRelatedJobsRequest.cpp
+  src/v20190422/model/DeleteResourcesResponse.cpp
   src/v20190422/model/CreateJobConfigResponse.cpp
+  src/v20190422/model/ResourceConfigItem.cpp
+  src/v20190422/model/DescribeResourcesRequest.cpp
   src/v20190422/model/ResourceLocParam.cpp
+  src/v20190422/model/DeleteResourceConfigsRequest.cpp
   src/v20190422/model/RunJobsResponse.cpp
   src/v20190422/model/Filter.cpp
+  src/v20190422/model/DeleteResourcesRequest.cpp
   src/v20190422/model/DescribeJobsResponse.cpp
-  src/v20190422/model/Property.cpp
+  src/v20190422/model/ResourceItem.cpp
+  src/v20190422/model/StopJobsResponse.cpp
+  src/v20190422/model/CreateResourceResponse.cpp
   src/v20190422/model/DescribeSystemResourcesRequest.cpp
   src/v20190422/model/DescribeJobConfigsRequest.cpp
+  src/v20190422/model/DescribeResourcesResponse.cpp
   src/v20190422/model/RunJobDescription.cpp
   src/v20190422/model/DescribeJobConfigsResponse.cpp
-  src/v20190422/model/ResourceLoc.cpp
+  src/v20190422/model/DeleteResourceConfigsResponse.cpp
+  src/v20190422/model/DescribeResourceRelatedJobsResponse.cpp
+  src/v20190422/model/DescribeSystemResourcesResponse.cpp
+  src/v20190422/model/ResourceRefJobInfo.cpp
   src/v20190422/model/ResourceRef.cpp
   src/v20190422/model/DescribeJobsRequest.cpp
   src/v20190422/model/JobV1.cpp
   src/v20190422/model/JobConfig.cpp
-  src/v20190422/model/DescribeSystemResourcesResponse.cpp
+  src/v20190422/model/DescribeResourceConfigsRequest.cpp
   )
 
 set(oceanus_include

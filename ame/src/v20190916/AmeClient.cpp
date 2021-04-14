@@ -470,6 +470,92 @@ AmeClient::DescribeStationsOutcomeCallable AmeClient::DescribeStationsCallable(c
     return task->get_future();
 }
 
+AmeClient::ModifyMusicOnShelvesOutcome AmeClient::ModifyMusicOnShelves(const ModifyMusicOnShelvesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMusicOnShelves");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMusicOnShelvesResponse rsp = ModifyMusicOnShelvesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMusicOnShelvesOutcome(rsp);
+        else
+            return ModifyMusicOnShelvesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMusicOnShelvesOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::ModifyMusicOnShelvesAsync(const ModifyMusicOnShelvesRequest& request, const ModifyMusicOnShelvesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMusicOnShelves(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::ModifyMusicOnShelvesOutcomeCallable AmeClient::ModifyMusicOnShelvesCallable(const ModifyMusicOnShelvesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMusicOnShelvesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMusicOnShelves(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AmeClient::PutMusicOnTheShelvesOutcome AmeClient::PutMusicOnTheShelves(const PutMusicOnTheShelvesRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutMusicOnTheShelves");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutMusicOnTheShelvesResponse rsp = PutMusicOnTheShelvesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutMusicOnTheShelvesOutcome(rsp);
+        else
+            return PutMusicOnTheShelvesOutcome(o.GetError());
+    }
+    else
+    {
+        return PutMusicOnTheShelvesOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::PutMusicOnTheShelvesAsync(const PutMusicOnTheShelvesRequest& request, const PutMusicOnTheShelvesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutMusicOnTheShelves(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::PutMusicOnTheShelvesOutcomeCallable AmeClient::PutMusicOnTheShelvesCallable(const PutMusicOnTheShelvesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutMusicOnTheShelvesOutcome()>>(
+        [this, request]()
+        {
+            return this->PutMusicOnTheShelves(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::ReportDataOutcome AmeClient::ReportData(const ReportDataRequest &request)
 {
     auto outcome = MakeRequest(request, "ReportData");
@@ -506,6 +592,49 @@ AmeClient::ReportDataOutcomeCallable AmeClient::ReportDataCallable(const ReportD
         [this, request]()
         {
             return this->ReportData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AmeClient::TakeMusicOffShelvesOutcome AmeClient::TakeMusicOffShelves(const TakeMusicOffShelvesRequest &request)
+{
+    auto outcome = MakeRequest(request, "TakeMusicOffShelves");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TakeMusicOffShelvesResponse rsp = TakeMusicOffShelvesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TakeMusicOffShelvesOutcome(rsp);
+        else
+            return TakeMusicOffShelvesOutcome(o.GetError());
+    }
+    else
+    {
+        return TakeMusicOffShelvesOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::TakeMusicOffShelvesAsync(const TakeMusicOffShelvesRequest& request, const TakeMusicOffShelvesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TakeMusicOffShelves(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::TakeMusicOffShelvesOutcomeCallable AmeClient::TakeMusicOffShelvesCallable(const TakeMusicOffShelvesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TakeMusicOffShelvesOutcome()>>(
+        [this, request]()
+        {
+            return this->TakeMusicOffShelves(request);
         }
     );
 

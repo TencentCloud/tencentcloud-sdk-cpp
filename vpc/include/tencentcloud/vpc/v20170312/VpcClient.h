@@ -133,6 +133,12 @@
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointServiceRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointServiceResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointServiceWhiteListRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointServiceWhiteListResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpnConnectionRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpnConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpnGatewayRequest.h>
@@ -191,6 +197,12 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointServiceRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointServiceResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointServiceWhiteListRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointServiceWhiteListResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpnConnectionRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpnConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpnGatewayRequest.h>
@@ -301,6 +313,12 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTemplateLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTemplateLimitsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointServiceRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointServiceResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointServiceWhiteListRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointServiceWhiteListResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcInstancesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcIpv6AddressesRequest.h>
@@ -343,6 +361,8 @@
 #include <tencentcloud/vpc/v20170312/model/DisassociateNetworkAclSubnetsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateNetworkInterfaceSecurityGroupsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateNetworkInterfaceSecurityGroupsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DisassociateVpcEndPointSecurityGroupsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DisassociateVpcEndPointSecurityGroupsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DownloadCustomerGatewayConfigurationRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DownloadCustomerGatewayConfigurationResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableCcnRoutesRequest.h>
@@ -351,6 +371,8 @@
 #include <tencentcloud/vpc/v20170312/model/EnableGatewayFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/EnableVpcEndPointConnectRequest.h>
+#include <tencentcloud/vpc/v20170312/model/EnableVpcEndPointConnectResponse.h>
 #include <tencentcloud/vpc/v20170312/model/GetCcnRegionBandwidthLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/GetCcnRegionBandwidthLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/HaVipAssociateAddressIpRequest.h>
@@ -441,6 +463,12 @@
 #include <tencentcloud/vpc/v20170312/model/ModifySubnetAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointServiceAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointServiceAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointServiceWhiteListRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointServiceWhiteListResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnConnectionAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnConnectionAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayAttributeRequest.h>
@@ -674,6 +702,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateVpcResponse> CreateVpcOutcome;
                 typedef std::future<CreateVpcOutcome> CreateVpcOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateVpcRequest&, CreateVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcAsyncHandler;
+                typedef Outcome<Error, Model::CreateVpcEndPointResponse> CreateVpcEndPointOutcome;
+                typedef std::future<CreateVpcEndPointOutcome> CreateVpcEndPointOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateVpcEndPointRequest&, CreateVpcEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcEndPointAsyncHandler;
+                typedef Outcome<Error, Model::CreateVpcEndPointServiceResponse> CreateVpcEndPointServiceOutcome;
+                typedef std::future<CreateVpcEndPointServiceOutcome> CreateVpcEndPointServiceOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateVpcEndPointServiceRequest&, CreateVpcEndPointServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcEndPointServiceAsyncHandler;
+                typedef Outcome<Error, Model::CreateVpcEndPointServiceWhiteListResponse> CreateVpcEndPointServiceWhiteListOutcome;
+                typedef std::future<CreateVpcEndPointServiceWhiteListOutcome> CreateVpcEndPointServiceWhiteListOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateVpcEndPointServiceWhiteListRequest&, CreateVpcEndPointServiceWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcEndPointServiceWhiteListAsyncHandler;
                 typedef Outcome<Error, Model::CreateVpnConnectionResponse> CreateVpnConnectionOutcome;
                 typedef std::future<CreateVpnConnectionOutcome> CreateVpnConnectionOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateVpnConnectionRequest&, CreateVpnConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpnConnectionAsyncHandler;
@@ -761,6 +798,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteVpcResponse> DeleteVpcOutcome;
                 typedef std::future<DeleteVpcOutcome> DeleteVpcOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteVpcRequest&, DeleteVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcAsyncHandler;
+                typedef Outcome<Error, Model::DeleteVpcEndPointResponse> DeleteVpcEndPointOutcome;
+                typedef std::future<DeleteVpcEndPointOutcome> DeleteVpcEndPointOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteVpcEndPointRequest&, DeleteVpcEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcEndPointAsyncHandler;
+                typedef Outcome<Error, Model::DeleteVpcEndPointServiceResponse> DeleteVpcEndPointServiceOutcome;
+                typedef std::future<DeleteVpcEndPointServiceOutcome> DeleteVpcEndPointServiceOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteVpcEndPointServiceRequest&, DeleteVpcEndPointServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcEndPointServiceAsyncHandler;
+                typedef Outcome<Error, Model::DeleteVpcEndPointServiceWhiteListResponse> DeleteVpcEndPointServiceWhiteListOutcome;
+                typedef std::future<DeleteVpcEndPointServiceWhiteListOutcome> DeleteVpcEndPointServiceWhiteListOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteVpcEndPointServiceWhiteListRequest&, DeleteVpcEndPointServiceWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcEndPointServiceWhiteListAsyncHandler;
                 typedef Outcome<Error, Model::DeleteVpnConnectionResponse> DeleteVpnConnectionOutcome;
                 typedef std::future<DeleteVpnConnectionOutcome> DeleteVpnConnectionOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteVpnConnectionRequest&, DeleteVpnConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpnConnectionAsyncHandler;
@@ -926,6 +972,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTemplateLimitsResponse> DescribeTemplateLimitsOutcome;
                 typedef std::future<DescribeTemplateLimitsOutcome> DescribeTemplateLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTemplateLimitsRequest&, DescribeTemplateLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateLimitsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVpcEndPointResponse> DescribeVpcEndPointOutcome;
+                typedef std::future<DescribeVpcEndPointOutcome> DescribeVpcEndPointOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeVpcEndPointRequest&, DescribeVpcEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcEndPointAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVpcEndPointServiceResponse> DescribeVpcEndPointServiceOutcome;
+                typedef std::future<DescribeVpcEndPointServiceOutcome> DescribeVpcEndPointServiceOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeVpcEndPointServiceRequest&, DescribeVpcEndPointServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcEndPointServiceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVpcEndPointServiceWhiteListResponse> DescribeVpcEndPointServiceWhiteListOutcome;
+                typedef std::future<DescribeVpcEndPointServiceWhiteListOutcome> DescribeVpcEndPointServiceWhiteListOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeVpcEndPointServiceWhiteListRequest&, DescribeVpcEndPointServiceWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcEndPointServiceWhiteListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeVpcInstancesResponse> DescribeVpcInstancesOutcome;
                 typedef std::future<DescribeVpcInstancesOutcome> DescribeVpcInstancesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeVpcInstancesRequest&, DescribeVpcInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcInstancesAsyncHandler;
@@ -989,6 +1044,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DisassociateNetworkInterfaceSecurityGroupsResponse> DisassociateNetworkInterfaceSecurityGroupsOutcome;
                 typedef std::future<DisassociateNetworkInterfaceSecurityGroupsOutcome> DisassociateNetworkInterfaceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisassociateNetworkInterfaceSecurityGroupsRequest&, DisassociateNetworkInterfaceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateNetworkInterfaceSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DisassociateVpcEndPointSecurityGroupsResponse> DisassociateVpcEndPointSecurityGroupsOutcome;
+                typedef std::future<DisassociateVpcEndPointSecurityGroupsOutcome> DisassociateVpcEndPointSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DisassociateVpcEndPointSecurityGroupsRequest&, DisassociateVpcEndPointSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateVpcEndPointSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DownloadCustomerGatewayConfigurationResponse> DownloadCustomerGatewayConfigurationOutcome;
                 typedef std::future<DownloadCustomerGatewayConfigurationOutcome> DownloadCustomerGatewayConfigurationOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DownloadCustomerGatewayConfigurationRequest&, DownloadCustomerGatewayConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadCustomerGatewayConfigurationAsyncHandler;
@@ -1001,6 +1059,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EnableRoutesResponse> EnableRoutesOutcome;
                 typedef std::future<EnableRoutesOutcome> EnableRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::EnableRoutesRequest&, EnableRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableRoutesAsyncHandler;
+                typedef Outcome<Error, Model::EnableVpcEndPointConnectResponse> EnableVpcEndPointConnectOutcome;
+                typedef std::future<EnableVpcEndPointConnectOutcome> EnableVpcEndPointConnectOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::EnableVpcEndPointConnectRequest&, EnableVpcEndPointConnectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcEndPointConnectAsyncHandler;
                 typedef Outcome<Error, Model::GetCcnRegionBandwidthLimitsResponse> GetCcnRegionBandwidthLimitsOutcome;
                 typedef std::future<GetCcnRegionBandwidthLimitsOutcome> GetCcnRegionBandwidthLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::GetCcnRegionBandwidthLimitsRequest&, GetCcnRegionBandwidthLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCcnRegionBandwidthLimitsAsyncHandler;
@@ -1136,6 +1197,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyVpcAttributeResponse> ModifyVpcAttributeOutcome;
                 typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpcAttributeRequest&, ModifyVpcAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyVpcEndPointAttributeResponse> ModifyVpcEndPointAttributeOutcome;
+                typedef std::future<ModifyVpcEndPointAttributeOutcome> ModifyVpcEndPointAttributeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyVpcEndPointAttributeRequest&, ModifyVpcEndPointAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcEndPointAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyVpcEndPointServiceAttributeResponse> ModifyVpcEndPointServiceAttributeOutcome;
+                typedef std::future<ModifyVpcEndPointServiceAttributeOutcome> ModifyVpcEndPointServiceAttributeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyVpcEndPointServiceAttributeRequest&, ModifyVpcEndPointServiceAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcEndPointServiceAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyVpcEndPointServiceWhiteListResponse> ModifyVpcEndPointServiceWhiteListOutcome;
+                typedef std::future<ModifyVpcEndPointServiceWhiteListOutcome> ModifyVpcEndPointServiceWhiteListOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyVpcEndPointServiceWhiteListRequest&, ModifyVpcEndPointServiceWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcEndPointServiceWhiteListAsyncHandler;
                 typedef Outcome<Error, Model::ModifyVpnConnectionAttributeResponse> ModifyVpnConnectionAttributeOutcome;
                 typedef std::future<ModifyVpnConnectionAttributeOutcome> ModifyVpnConnectionAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpnConnectionAttributeRequest&, ModifyVpnConnectionAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpnConnectionAttributeAsyncHandler;
@@ -1824,6 +1894,33 @@ namespace TencentCloud
                 CreateVpcOutcomeCallable CreateVpcCallable(const Model::CreateVpcRequest& request);
 
                 /**
+                 *创建终端节点。
+                 * @param req CreateVpcEndPointRequest
+                 * @return CreateVpcEndPointOutcome
+                 */
+                CreateVpcEndPointOutcome CreateVpcEndPoint(const Model::CreateVpcEndPointRequest &request);
+                void CreateVpcEndPointAsync(const Model::CreateVpcEndPointRequest& request, const CreateVpcEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVpcEndPointOutcomeCallable CreateVpcEndPointCallable(const Model::CreateVpcEndPointRequest& request);
+
+                /**
+                 *创建终端节点服务。
+                 * @param req CreateVpcEndPointServiceRequest
+                 * @return CreateVpcEndPointServiceOutcome
+                 */
+                CreateVpcEndPointServiceOutcome CreateVpcEndPointService(const Model::CreateVpcEndPointServiceRequest &request);
+                void CreateVpcEndPointServiceAsync(const Model::CreateVpcEndPointServiceRequest& request, const CreateVpcEndPointServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVpcEndPointServiceOutcomeCallable CreateVpcEndPointServiceCallable(const Model::CreateVpcEndPointServiceRequest& request);
+
+                /**
+                 *创建终端服务白名单。
+                 * @param req CreateVpcEndPointServiceWhiteListRequest
+                 * @return CreateVpcEndPointServiceWhiteListOutcome
+                 */
+                CreateVpcEndPointServiceWhiteListOutcome CreateVpcEndPointServiceWhiteList(const Model::CreateVpcEndPointServiceWhiteListRequest &request);
+                void CreateVpcEndPointServiceWhiteListAsync(const Model::CreateVpcEndPointServiceWhiteListRequest& request, const CreateVpcEndPointServiceWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVpcEndPointServiceWhiteListOutcomeCallable CreateVpcEndPointServiceWhiteListCallable(const Model::CreateVpcEndPointServiceWhiteListRequest& request);
+
+                /**
                  *本接口（CreateVpnConnection）用于创建VPN通道。
                  * @param req CreateVpnConnectionRequest
                  * @return CreateVpnConnectionOutcome
@@ -2101,6 +2198,35 @@ namespace TencentCloud
                 DeleteVpcOutcome DeleteVpc(const Model::DeleteVpcRequest &request);
                 void DeleteVpcAsync(const Model::DeleteVpcRequest& request, const DeleteVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteVpcOutcomeCallable DeleteVpcCallable(const Model::DeleteVpcRequest& request);
+
+                /**
+                 *删除终端节点。
+                 * @param req DeleteVpcEndPointRequest
+                 * @return DeleteVpcEndPointOutcome
+                 */
+                DeleteVpcEndPointOutcome DeleteVpcEndPoint(const Model::DeleteVpcEndPointRequest &request);
+                void DeleteVpcEndPointAsync(const Model::DeleteVpcEndPointRequest& request, const DeleteVpcEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVpcEndPointOutcomeCallable DeleteVpcEndPointCallable(const Model::DeleteVpcEndPointRequest& request);
+
+                /**
+                 *删除终端节点服务。
+
+
+                 * @param req DeleteVpcEndPointServiceRequest
+                 * @return DeleteVpcEndPointServiceOutcome
+                 */
+                DeleteVpcEndPointServiceOutcome DeleteVpcEndPointService(const Model::DeleteVpcEndPointServiceRequest &request);
+                void DeleteVpcEndPointServiceAsync(const Model::DeleteVpcEndPointServiceRequest& request, const DeleteVpcEndPointServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVpcEndPointServiceOutcomeCallable DeleteVpcEndPointServiceCallable(const Model::DeleteVpcEndPointServiceRequest& request);
+
+                /**
+                 *删除终端节点服务白名单。
+                 * @param req DeleteVpcEndPointServiceWhiteListRequest
+                 * @return DeleteVpcEndPointServiceWhiteListOutcome
+                 */
+                DeleteVpcEndPointServiceWhiteListOutcome DeleteVpcEndPointServiceWhiteList(const Model::DeleteVpcEndPointServiceWhiteListRequest &request);
+                void DeleteVpcEndPointServiceWhiteListAsync(const Model::DeleteVpcEndPointServiceWhiteListRequest& request, const DeleteVpcEndPointServiceWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVpcEndPointServiceWhiteListOutcomeCallable DeleteVpcEndPointServiceWhiteListCallable(const Model::DeleteVpcEndPointServiceWhiteListRequest& request);
 
                 /**
                  *本接口(DeleteVpnConnection)用于删除VPN通道。
@@ -2604,6 +2730,33 @@ namespace TencentCloud
                 DescribeTemplateLimitsOutcomeCallable DescribeTemplateLimitsCallable(const Model::DescribeTemplateLimitsRequest& request);
 
                 /**
+                 *查询终端节点列表。
+                 * @param req DescribeVpcEndPointRequest
+                 * @return DescribeVpcEndPointOutcome
+                 */
+                DescribeVpcEndPointOutcome DescribeVpcEndPoint(const Model::DescribeVpcEndPointRequest &request);
+                void DescribeVpcEndPointAsync(const Model::DescribeVpcEndPointRequest& request, const DescribeVpcEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpcEndPointOutcomeCallable DescribeVpcEndPointCallable(const Model::DescribeVpcEndPointRequest& request);
+
+                /**
+                 *查询终端节点服务列表。
+                 * @param req DescribeVpcEndPointServiceRequest
+                 * @return DescribeVpcEndPointServiceOutcome
+                 */
+                DescribeVpcEndPointServiceOutcome DescribeVpcEndPointService(const Model::DescribeVpcEndPointServiceRequest &request);
+                void DescribeVpcEndPointServiceAsync(const Model::DescribeVpcEndPointServiceRequest& request, const DescribeVpcEndPointServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpcEndPointServiceOutcomeCallable DescribeVpcEndPointServiceCallable(const Model::DescribeVpcEndPointServiceRequest& request);
+
+                /**
+                 *查询终端节点服务的服务白名单列表。
+                 * @param req DescribeVpcEndPointServiceWhiteListRequest
+                 * @return DescribeVpcEndPointServiceWhiteListOutcome
+                 */
+                DescribeVpcEndPointServiceWhiteListOutcome DescribeVpcEndPointServiceWhiteList(const Model::DescribeVpcEndPointServiceWhiteListRequest &request);
+                void DescribeVpcEndPointServiceWhiteListAsync(const Model::DescribeVpcEndPointServiceWhiteListRequest& request, const DescribeVpcEndPointServiceWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpcEndPointServiceWhiteListOutcomeCallable DescribeVpcEndPointServiceWhiteListCallable(const Model::DescribeVpcEndPointServiceWhiteListRequest& request);
+
+                /**
                  * 本接口（DescribeVpcInstances）用于查询VPC下的云主机实例列表。
                  * @param req DescribeVpcInstancesRequest
                  * @return DescribeVpcInstancesOutcome
@@ -2829,6 +2982,15 @@ LimitTypes取值范围：
                 DisassociateNetworkInterfaceSecurityGroupsOutcomeCallable DisassociateNetworkInterfaceSecurityGroupsCallable(const Model::DisassociateNetworkInterfaceSecurityGroupsRequest& request);
 
                 /**
+                 *终端节点解绑安全组。
+                 * @param req DisassociateVpcEndPointSecurityGroupsRequest
+                 * @return DisassociateVpcEndPointSecurityGroupsOutcome
+                 */
+                DisassociateVpcEndPointSecurityGroupsOutcome DisassociateVpcEndPointSecurityGroups(const Model::DisassociateVpcEndPointSecurityGroupsRequest &request);
+                void DisassociateVpcEndPointSecurityGroupsAsync(const Model::DisassociateVpcEndPointSecurityGroupsRequest& request, const DisassociateVpcEndPointSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateVpcEndPointSecurityGroupsOutcomeCallable DisassociateVpcEndPointSecurityGroupsCallable(const Model::DisassociateVpcEndPointSecurityGroupsRequest& request);
+
+                /**
                  *本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。
                  * @param req DownloadCustomerGatewayConfigurationRequest
                  * @return DownloadCustomerGatewayConfigurationOutcome
@@ -2865,6 +3027,15 @@ LimitTypes取值范围：
                 EnableRoutesOutcome EnableRoutes(const Model::EnableRoutesRequest &request);
                 void EnableRoutesAsync(const Model::EnableRoutesRequest& request, const EnableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableRoutesOutcomeCallable EnableRoutesCallable(const Model::EnableRoutesRequest& request);
+
+                /**
+                 *是否接受终端节点连接请求。
+                 * @param req EnableVpcEndPointConnectRequest
+                 * @return EnableVpcEndPointConnectOutcome
+                 */
+                EnableVpcEndPointConnectOutcome EnableVpcEndPointConnect(const Model::EnableVpcEndPointConnectRequest &request);
+                void EnableVpcEndPointConnectAsync(const Model::EnableVpcEndPointConnectRequest& request, const EnableVpcEndPointConnectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableVpcEndPointConnectOutcomeCallable EnableVpcEndPointConnectCallable(const Model::EnableVpcEndPointConnectRequest& request);
 
                 /**
                  *本接口（GetCcnRegionBandwidthLimits）用于查询云联网相关地域带宽信息，其中预付费模式的云联网仅支持地域间限速，后付费模式的云联网支持地域间限速和地域出口限速。
@@ -3295,6 +3466,35 @@ LimitTypes取值范围：
                 ModifyVpcAttributeOutcome ModifyVpcAttribute(const Model::ModifyVpcAttributeRequest &request);
                 void ModifyVpcAttributeAsync(const Model::ModifyVpcAttributeRequest& request, const ModifyVpcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVpcAttributeOutcomeCallable ModifyVpcAttributeCallable(const Model::ModifyVpcAttributeRequest& request);
+
+                /**
+                 *修改终端节点属性。
+                 * @param req ModifyVpcEndPointAttributeRequest
+                 * @return ModifyVpcEndPointAttributeOutcome
+                 */
+                ModifyVpcEndPointAttributeOutcome ModifyVpcEndPointAttribute(const Model::ModifyVpcEndPointAttributeRequest &request);
+                void ModifyVpcEndPointAttributeAsync(const Model::ModifyVpcEndPointAttributeRequest& request, const ModifyVpcEndPointAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVpcEndPointAttributeOutcomeCallable ModifyVpcEndPointAttributeCallable(const Model::ModifyVpcEndPointAttributeRequest& request);
+
+                /**
+                 *修改终端节点服务属性。
+
+
+                 * @param req ModifyVpcEndPointServiceAttributeRequest
+                 * @return ModifyVpcEndPointServiceAttributeOutcome
+                 */
+                ModifyVpcEndPointServiceAttributeOutcome ModifyVpcEndPointServiceAttribute(const Model::ModifyVpcEndPointServiceAttributeRequest &request);
+                void ModifyVpcEndPointServiceAttributeAsync(const Model::ModifyVpcEndPointServiceAttributeRequest& request, const ModifyVpcEndPointServiceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVpcEndPointServiceAttributeOutcomeCallable ModifyVpcEndPointServiceAttributeCallable(const Model::ModifyVpcEndPointServiceAttributeRequest& request);
+
+                /**
+                 *修改终端节点服务白名单属性。
+                 * @param req ModifyVpcEndPointServiceWhiteListRequest
+                 * @return ModifyVpcEndPointServiceWhiteListOutcome
+                 */
+                ModifyVpcEndPointServiceWhiteListOutcome ModifyVpcEndPointServiceWhiteList(const Model::ModifyVpcEndPointServiceWhiteListRequest &request);
+                void ModifyVpcEndPointServiceWhiteListAsync(const Model::ModifyVpcEndPointServiceWhiteListRequest& request, const ModifyVpcEndPointServiceWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVpcEndPointServiceWhiteListOutcomeCallable ModifyVpcEndPointServiceWhiteListCallable(const Model::ModifyVpcEndPointServiceWhiteListRequest& request);
 
                 /**
                  *本接口（ModifyVpnConnectionAttribute）用于修改VPN通道。

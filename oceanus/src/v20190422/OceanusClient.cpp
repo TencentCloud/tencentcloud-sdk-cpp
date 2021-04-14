@@ -212,6 +212,92 @@ OceanusClient::CreateResourceConfigOutcomeCallable OceanusClient::CreateResource
     return task->get_future();
 }
 
+OceanusClient::DeleteResourceConfigsOutcome OceanusClient::DeleteResourceConfigs(const DeleteResourceConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteResourceConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteResourceConfigsResponse rsp = DeleteResourceConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteResourceConfigsOutcome(rsp);
+        else
+            return DeleteResourceConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteResourceConfigsOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DeleteResourceConfigsAsync(const DeleteResourceConfigsRequest& request, const DeleteResourceConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteResourceConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DeleteResourceConfigsOutcomeCallable OceanusClient::DeleteResourceConfigsCallable(const DeleteResourceConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteResourceConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteResourceConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::DeleteResourcesOutcome OceanusClient::DeleteResources(const DeleteResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteResourcesResponse rsp = DeleteResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteResourcesOutcome(rsp);
+        else
+            return DeleteResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteResourcesOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DeleteResourcesAsync(const DeleteResourcesRequest& request, const DeleteResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DeleteResourcesOutcomeCallable OceanusClient::DeleteResourcesCallable(const DeleteResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::DeleteTableConfigOutcome OceanusClient::DeleteTableConfig(const DeleteTableConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTableConfig");
@@ -334,6 +420,135 @@ OceanusClient::DescribeJobsOutcomeCallable OceanusClient::DescribeJobsCallable(c
         [this, request]()
         {
             return this->DescribeJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::DescribeResourceConfigsOutcome OceanusClient::DescribeResourceConfigs(const DescribeResourceConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceConfigsResponse rsp = DescribeResourceConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceConfigsOutcome(rsp);
+        else
+            return DescribeResourceConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceConfigsOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeResourceConfigsAsync(const DescribeResourceConfigsRequest& request, const DescribeResourceConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DescribeResourceConfigsOutcomeCallable OceanusClient::DescribeResourceConfigsCallable(const DescribeResourceConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::DescribeResourceRelatedJobsOutcome OceanusClient::DescribeResourceRelatedJobs(const DescribeResourceRelatedJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceRelatedJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceRelatedJobsResponse rsp = DescribeResourceRelatedJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceRelatedJobsOutcome(rsp);
+        else
+            return DescribeResourceRelatedJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceRelatedJobsOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeResourceRelatedJobsAsync(const DescribeResourceRelatedJobsRequest& request, const DescribeResourceRelatedJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceRelatedJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DescribeResourceRelatedJobsOutcomeCallable OceanusClient::DescribeResourceRelatedJobsCallable(const DescribeResourceRelatedJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceRelatedJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceRelatedJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::DescribeResourcesOutcome OceanusClient::DescribeResources(const DescribeResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourcesResponse rsp = DescribeResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourcesOutcome(rsp);
+        else
+            return DescribeResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourcesOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeResourcesAsync(const DescribeResourcesRequest& request, const DescribeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DescribeResourcesOutcomeCallable OceanusClient::DescribeResourcesCallable(const DescribeResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResources(request);
         }
     );
 

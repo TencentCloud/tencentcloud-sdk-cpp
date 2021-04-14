@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InvocationTypeHasBeenSet() const;
 
                     /**
-                     * 获取触发函数的版本号
-                     * @return Qualifier 触发函数的版本号
+                     * 获取触发函数的版本号或别名
+                     * @return Qualifier 触发函数的版本号或别名
                      */
                     std::string GetQualifier() const;
 
                     /**
-                     * 设置触发函数的版本号
-                     * @param Qualifier 触发函数的版本号
+                     * 设置触发函数的版本号或别名
+                     * @param Qualifier 触发函数的版本号或别名
                      */
                     void SetQualifier(const std::string& _qualifier);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ClientContextHasBeenSet() const;
 
                     /**
-                     * 获取同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的logMsg字段会包含对应的函数执行日志
-                     * @return LogType 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的logMsg字段会包含对应的函数执行日志
+                     * 获取同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
+                     * @return LogType 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的logMsg字段会包含对应的函数执行日志
-                     * @param LogType 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的logMsg字段会包含对应的函数执行日志
+                     * 设置同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
+                     * @param LogType 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
                      */
                     void SetLogType(const std::string& _logType);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_invocationTypeHasBeenSet;
 
                     /**
-                     * 触发函数的版本号
+                     * 触发函数的版本号或别名
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_clientContextHasBeenSet;
 
                     /**
-                     * 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的logMsg字段会包含对应的函数执行日志
+                     * 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;

@@ -31,12 +31,22 @@
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteResourcesRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteTableConfigRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeResourceRelatedJobsRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeResourceRelatedJobsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeResourcesRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeResourcesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsRequest.h>
@@ -69,6 +79,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateResourceConfigResponse> CreateResourceConfigOutcome;
                 typedef std::future<CreateResourceConfigOutcome> CreateResourceConfigOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateResourceConfigRequest&, CreateResourceConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceConfigAsyncHandler;
+                typedef Outcome<Error, Model::DeleteResourceConfigsResponse> DeleteResourceConfigsOutcome;
+                typedef std::future<DeleteResourceConfigsOutcome> DeleteResourceConfigsOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DeleteResourceConfigsRequest&, DeleteResourceConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceConfigsAsyncHandler;
+                typedef Outcome<Error, Model::DeleteResourcesResponse> DeleteResourcesOutcome;
+                typedef std::future<DeleteResourcesOutcome> DeleteResourcesOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DeleteResourcesRequest&, DeleteResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourcesAsyncHandler;
                 typedef Outcome<Error, Model::DeleteTableConfigResponse> DeleteTableConfigOutcome;
                 typedef std::future<DeleteTableConfigOutcome> DeleteTableConfigOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DeleteTableConfigRequest&, DeleteTableConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableConfigAsyncHandler;
@@ -78,6 +94,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeJobsResponse> DescribeJobsOutcome;
                 typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobsRequest&, DescribeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeResourceConfigsResponse> DescribeResourceConfigsOutcome;
+                typedef std::future<DescribeResourceConfigsOutcome> DescribeResourceConfigsOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeResourceConfigsRequest&, DescribeResourceConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceConfigsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeResourceRelatedJobsResponse> DescribeResourceRelatedJobsOutcome;
+                typedef std::future<DescribeResourceRelatedJobsOutcome> DescribeResourceRelatedJobsOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeResourceRelatedJobsRequest&, DescribeResourceRelatedJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceRelatedJobsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeResourcesResponse> DescribeResourcesOutcome;
+                typedef std::future<DescribeResourcesOutcome> DescribeResourcesOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeResourcesRequest&, DescribeResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSystemResourcesResponse> DescribeSystemResourcesOutcome;
                 typedef std::future<DescribeSystemResourcesOutcome> DescribeSystemResourcesOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeSystemResourcesRequest&, DescribeSystemResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSystemResourcesAsyncHandler;
@@ -127,6 +152,24 @@ namespace TencentCloud
                 CreateResourceConfigOutcomeCallable CreateResourceConfigCallable(const Model::CreateResourceConfigRequest& request);
 
                 /**
+                 *删除资源版本
+                 * @param req DeleteResourceConfigsRequest
+                 * @return DeleteResourceConfigsOutcome
+                 */
+                DeleteResourceConfigsOutcome DeleteResourceConfigs(const Model::DeleteResourceConfigsRequest &request);
+                void DeleteResourceConfigsAsync(const Model::DeleteResourceConfigsRequest& request, const DeleteResourceConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteResourceConfigsOutcomeCallable DeleteResourceConfigsCallable(const Model::DeleteResourceConfigsRequest& request);
+
+                /**
+                 *删除资源接口
+                 * @param req DeleteResourcesRequest
+                 * @return DeleteResourcesOutcome
+                 */
+                DeleteResourcesOutcome DeleteResources(const Model::DeleteResourcesRequest &request);
+                void DeleteResourcesAsync(const Model::DeleteResourcesRequest& request, const DeleteResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteResourcesOutcomeCallable DeleteResourcesCallable(const Model::DeleteResourcesRequest& request);
+
+                /**
                  *删除作业表配置
                  * @param req DeleteTableConfigRequest
                  * @return DeleteTableConfigOutcome
@@ -152,6 +195,33 @@ namespace TencentCloud
                 DescribeJobsOutcome DescribeJobs(const Model::DescribeJobsRequest &request);
                 void DescribeJobsAsync(const Model::DescribeJobsRequest& request, const DescribeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJobsOutcomeCallable DescribeJobsCallable(const Model::DescribeJobsRequest& request);
+
+                /**
+                 *描述资源配置接口
+                 * @param req DescribeResourceConfigsRequest
+                 * @return DescribeResourceConfigsOutcome
+                 */
+                DescribeResourceConfigsOutcome DescribeResourceConfigs(const Model::DescribeResourceConfigsRequest &request);
+                void DescribeResourceConfigsAsync(const Model::DescribeResourceConfigsRequest& request, const DescribeResourceConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceConfigsOutcomeCallable DescribeResourceConfigsCallable(const Model::DescribeResourceConfigsRequest& request);
+
+                /**
+                 *获取资源关联作业信息
+                 * @param req DescribeResourceRelatedJobsRequest
+                 * @return DescribeResourceRelatedJobsOutcome
+                 */
+                DescribeResourceRelatedJobsOutcome DescribeResourceRelatedJobs(const Model::DescribeResourceRelatedJobsRequest &request);
+                void DescribeResourceRelatedJobsAsync(const Model::DescribeResourceRelatedJobsRequest& request, const DescribeResourceRelatedJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceRelatedJobsOutcomeCallable DescribeResourceRelatedJobsCallable(const Model::DescribeResourceRelatedJobsRequest& request);
+
+                /**
+                 *描述资源接口
+                 * @param req DescribeResourcesRequest
+                 * @return DescribeResourcesOutcome
+                 */
+                DescribeResourcesOutcome DescribeResources(const Model::DescribeResourcesRequest &request);
+                void DescribeResourcesAsync(const Model::DescribeResourcesRequest& request, const DescribeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcesOutcomeCallable DescribeResourcesCallable(const Model::DescribeResourcesRequest& request);
 
                 /**
                  *描述系统资源接口

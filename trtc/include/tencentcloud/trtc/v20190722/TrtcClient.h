@@ -23,8 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/trtc/v20190722/model/CreatePictureRequest.h>
+#include <tencentcloud/trtc/v20190722/model/CreatePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DeletePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAbnormalEventRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAbnormalEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h>
@@ -33,6 +37,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeDetailEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribePictureRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityRequest.h>
@@ -53,6 +59,8 @@
 #include <tencentcloud/trtc/v20190722/model/DismissRoomResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdResponse.h>
+#include <tencentcloud/trtc/v20190722/model/ModifyPictureRequest.h>
+#include <tencentcloud/trtc/v20190722/model/ModifyPictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserRequest.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdRequest.h>
@@ -79,9 +87,15 @@ namespace TencentCloud
                 TrtcClient(const Credential &credential, const std::string &region);
                 TrtcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreatePictureResponse> CreatePictureOutcome;
+                typedef std::future<CreatePictureOutcome> CreatePictureOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::CreatePictureRequest&, CreatePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePictureAsyncHandler;
                 typedef Outcome<Error, Model::CreateTroubleInfoResponse> CreateTroubleInfoOutcome;
                 typedef std::future<CreateTroubleInfoOutcome> CreateTroubleInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreateTroubleInfoRequest&, CreateTroubleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTroubleInfoAsyncHandler;
+                typedef Outcome<Error, Model::DeletePictureResponse> DeletePictureOutcome;
+                typedef std::future<DeletePictureOutcome> DeletePictureOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DeletePictureRequest&, DeletePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePictureAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAbnormalEventResponse> DescribeAbnormalEventOutcome;
                 typedef std::future<DescribeAbnormalEventOutcome> DescribeAbnormalEventOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeAbnormalEventRequest&, DescribeAbnormalEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAbnormalEventAsyncHandler;
@@ -94,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeHistoryScaleResponse> DescribeHistoryScaleOutcome;
                 typedef std::future<DescribeHistoryScaleOutcome> DescribeHistoryScaleOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeHistoryScaleRequest&, DescribeHistoryScaleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryScaleAsyncHandler;
+                typedef Outcome<Error, Model::DescribePictureResponse> DescribePictureOutcome;
+                typedef std::future<DescribePictureOutcome> DescribePictureOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribePictureRequest&, DescribePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePictureAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRealtimeNetworkResponse> DescribeRealtimeNetworkOutcome;
                 typedef std::future<DescribeRealtimeNetworkOutcome> DescribeRealtimeNetworkOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRealtimeNetworkRequest&, DescribeRealtimeNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeNetworkAsyncHandler;
@@ -124,6 +141,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DismissRoomByStrRoomIdResponse> DismissRoomByStrRoomIdOutcome;
                 typedef std::future<DismissRoomByStrRoomIdOutcome> DismissRoomByStrRoomIdOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DismissRoomByStrRoomIdRequest&, DismissRoomByStrRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomByStrRoomIdAsyncHandler;
+                typedef Outcome<Error, Model::ModifyPictureResponse> ModifyPictureOutcome;
+                typedef std::future<ModifyPictureOutcome> ModifyPictureOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::ModifyPictureRequest&, ModifyPictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPictureAsyncHandler;
                 typedef Outcome<Error, Model::RemoveUserResponse> RemoveUserOutcome;
                 typedef std::future<RemoveUserOutcome> RemoveUserOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::RemoveUserRequest&, RemoveUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserAsyncHandler;
@@ -146,6 +166,15 @@ namespace TencentCloud
 
 
                 /**
+                 *上传图片
+                 * @param req CreatePictureRequest
+                 * @return CreatePictureOutcome
+                 */
+                CreatePictureOutcome CreatePicture(const Model::CreatePictureRequest &request);
+                void CreatePictureAsync(const Model::CreatePictureRequest& request, const CreatePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePictureOutcomeCallable CreatePictureCallable(const Model::CreatePictureRequest& request);
+
+                /**
                  *创建异常信息
                  * @param req CreateTroubleInfoRequest
                  * @return CreateTroubleInfoOutcome
@@ -153,6 +182,15 @@ namespace TencentCloud
                 CreateTroubleInfoOutcome CreateTroubleInfo(const Model::CreateTroubleInfoRequest &request);
                 void CreateTroubleInfoAsync(const Model::CreateTroubleInfoRequest& request, const CreateTroubleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTroubleInfoOutcomeCallable CreateTroubleInfoCallable(const Model::CreateTroubleInfoRequest& request);
+
+                /**
+                 *删除图片
+                 * @param req DeletePictureRequest
+                 * @return DeletePictureOutcome
+                 */
+                DeletePictureOutcome DeletePicture(const Model::DeletePictureRequest &request);
+                void DeletePictureAsync(const Model::DeletePictureRequest& request, const DeletePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePictureOutcomeCallable DeletePictureCallable(const Model::DeletePictureRequest& request);
 
                 /**
                  *查询SDKAppID下用户的异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询15天内数据，查询起止时间不超过1个小时。支持跨天查询。异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916
@@ -190,6 +228,15 @@ namespace TencentCloud
                 DescribeHistoryScaleOutcome DescribeHistoryScale(const Model::DescribeHistoryScaleRequest &request);
                 void DescribeHistoryScaleAsync(const Model::DescribeHistoryScaleRequest& request, const DescribeHistoryScaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeHistoryScaleOutcomeCallable DescribeHistoryScaleCallable(const Model::DescribeHistoryScaleRequest& request);
+
+                /**
+                 *查询某图片相关参数。
+                 * @param req DescribePictureRequest
+                 * @return DescribePictureOutcome
+                 */
+                DescribePictureOutcome DescribePicture(const Model::DescribePictureRequest &request);
+                void DescribePictureAsync(const Model::DescribePictureRequest& request, const DescribePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePictureOutcomeCallable DescribePictureCallable(const Model::DescribePictureRequest& request);
 
                 /**
                  *查询sdkappid维度下每分钟实时网络状态，包括上行丢包与下行丢包。可查询24小时内数据，查询起止时间不低于1分钟，不超过1个小时。
@@ -295,6 +342,15 @@ namespace TencentCloud
                 DismissRoomByStrRoomIdOutcome DismissRoomByStrRoomId(const Model::DismissRoomByStrRoomIdRequest &request);
                 void DismissRoomByStrRoomIdAsync(const Model::DismissRoomByStrRoomIdRequest& request, const DismissRoomByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DismissRoomByStrRoomIdOutcomeCallable DismissRoomByStrRoomIdCallable(const Model::DismissRoomByStrRoomIdRequest& request);
+
+                /**
+                 *修改图片相关参数。
+                 * @param req ModifyPictureRequest
+                 * @return ModifyPictureOutcome
+                 */
+                ModifyPictureOutcome ModifyPicture(const Model::ModifyPictureRequest &request);
+                void ModifyPictureAsync(const Model::ModifyPictureRequest& request, const ModifyPictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPictureOutcomeCallable ModifyPictureCallable(const Model::ModifyPictureRequest& request);
 
                 /**
                  *接口说明：将用户从房间移出，适用于主播/房主/管理员踢人等场景。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。
