@@ -34,7 +34,8 @@ JobConfig::JobConfig() :
     m_creatorUinHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_cOSBucketHasBeenSet(false),
-    m_logCollectHasBeenSet(false)
+    m_logCollectHasBeenSet(false),
+    m_maxParallelismHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome JobConfig::Deserialize(const Value &value)
         m_logCollectHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxParallelism") && !value["MaxParallelism"].IsNull())
+    {
+        if (!value["MaxParallelism"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `JobConfig.MaxParallelism` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxParallelism = value["MaxParallelism"].GetUint64();
+        m_maxParallelismHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +327,14 @@ void JobConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "LogCollect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_logCollect, allocator);
+    }
+
+    if (m_maxParallelismHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxParallelism";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxParallelism, allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void JobConfig::SetLogCollect(const int64_t& _logCollect)
 bool JobConfig::LogCollectHasBeenSet() const
 {
     return m_logCollectHasBeenSet;
+}
+
+uint64_t JobConfig::GetMaxParallelism() const
+{
+    return m_maxParallelism;
+}
+
+void JobConfig::SetMaxParallelism(const uint64_t& _maxParallelism)
+{
+    m_maxParallelism = _maxParallelism;
+    m_maxParallelismHasBeenSet = true;
+}
+
+bool JobConfig::MaxParallelismHasBeenSet() const
+{
+    return m_maxParallelismHasBeenSet;
 }
 

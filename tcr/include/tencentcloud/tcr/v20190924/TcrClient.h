@@ -137,6 +137,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DownloadHelmChartRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DownloadHelmChartResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ManageExternalEndpointRequest.h>
@@ -356,6 +358,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeWebhookTriggerLogResponse> DescribeWebhookTriggerLogOutcome;
                 typedef std::future<DescribeWebhookTriggerLogOutcome> DescribeWebhookTriggerLogOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeWebhookTriggerLogRequest&, DescribeWebhookTriggerLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebhookTriggerLogAsyncHandler;
+                typedef Outcome<Error, Model::DownloadHelmChartResponse> DownloadHelmChartOutcome;
+                typedef std::future<DownloadHelmChartOutcome> DownloadHelmChartOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DownloadHelmChartRequest&, DownloadHelmChartOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadHelmChartAsyncHandler;
                 typedef Outcome<Error, Model::DuplicateImagePersonalResponse> DuplicateImagePersonalOutcome;
                 typedef std::future<DuplicateImagePersonalOutcome> DuplicateImagePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DuplicateImagePersonalRequest&, DuplicateImagePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DuplicateImagePersonalAsyncHandler;
@@ -922,6 +927,15 @@ namespace TencentCloud
                 DescribeWebhookTriggerLogOutcome DescribeWebhookTriggerLog(const Model::DescribeWebhookTriggerLogRequest &request);
                 void DescribeWebhookTriggerLogAsync(const Model::DescribeWebhookTriggerLogRequest& request, const DescribeWebhookTriggerLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWebhookTriggerLogOutcomeCallable DescribeWebhookTriggerLogCallable(const Model::DescribeWebhookTriggerLogRequest& request);
+
+                /**
+                 *用于在TCR中下载helm chart
+                 * @param req DownloadHelmChartRequest
+                 * @return DownloadHelmChartOutcome
+                 */
+                DownloadHelmChartOutcome DownloadHelmChart(const Model::DownloadHelmChartRequest &request);
+                void DownloadHelmChartAsync(const Model::DownloadHelmChartRequest& request, const DownloadHelmChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadHelmChartOutcomeCallable DownloadHelmChartCallable(const Model::DownloadHelmChartRequest& request);
 
                 /**
                  *用于在个人版镜像仓库中复制镜像版本

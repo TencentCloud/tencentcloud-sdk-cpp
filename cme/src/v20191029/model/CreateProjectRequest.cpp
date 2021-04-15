@@ -34,7 +34,8 @@ CreateProjectRequest::CreateProjectRequest() :
     m_liveStreamClipProjectInputHasBeenSet(false),
     m_videoEditProjectInputHasBeenSet(false),
     m_videoSegmentationProjectInputHasBeenSet(false),
-    m_streamConnectProjectInputHasBeenSet(false)
+    m_streamConnectProjectInputHasBeenSet(false),
+    m_recordReplayProjectInputHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,15 @@ string CreateProjectRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_streamConnectProjectInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_recordReplayProjectInputHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RecordReplayProjectInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_recordReplayProjectInput.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -321,6 +331,22 @@ void CreateProjectRequest::SetStreamConnectProjectInput(const StreamConnectProje
 bool CreateProjectRequest::StreamConnectProjectInputHasBeenSet() const
 {
     return m_streamConnectProjectInputHasBeenSet;
+}
+
+RecordReplayProjectInput CreateProjectRequest::GetRecordReplayProjectInput() const
+{
+    return m_recordReplayProjectInput;
+}
+
+void CreateProjectRequest::SetRecordReplayProjectInput(const RecordReplayProjectInput& _recordReplayProjectInput)
+{
+    m_recordReplayProjectInput = _recordReplayProjectInput;
+    m_recordReplayProjectInputHasBeenSet = true;
+}
+
+bool CreateProjectRequest::RecordReplayProjectInputHasBeenSet() const
+{
+    return m_recordReplayProjectInputHasBeenSet;
 }
 
 

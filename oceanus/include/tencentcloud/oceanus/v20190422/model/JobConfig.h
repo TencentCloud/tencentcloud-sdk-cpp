@@ -322,6 +322,28 @@ namespace TencentCloud
                      */
                     bool LogCollectHasBeenSet() const;
 
+                    /**
+                     * 获取作业的最大并行度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxParallelism 作业的最大并行度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMaxParallelism() const;
+
+                    /**
+                     * 设置作业的最大并行度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxParallelism 作业的最大并行度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxParallelism(const uint64_t& _maxParallelism);
+
+                    /**
+                     * 判断参数 MaxParallelism 是否已赋值
+                     * @return MaxParallelism 是否已赋值
+                     */
+                    bool MaxParallelismHasBeenSet() const;
+
                 private:
 
                     /**
@@ -411,6 +433,13 @@ namespace TencentCloud
                      */
                     int64_t m_logCollect;
                     bool m_logCollectHasBeenSet;
+
+                    /**
+                     * 作业的最大并行度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_maxParallelism;
+                    bool m_maxParallelismHasBeenSet;
 
                 };
             }

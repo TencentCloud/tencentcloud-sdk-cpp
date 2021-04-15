@@ -2491,6 +2491,49 @@ TcrClient::DescribeWebhookTriggerLogOutcomeCallable TcrClient::DescribeWebhookTr
     return task->get_future();
 }
 
+TcrClient::DownloadHelmChartOutcome TcrClient::DownloadHelmChart(const DownloadHelmChartRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadHelmChart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadHelmChartResponse rsp = DownloadHelmChartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadHelmChartOutcome(rsp);
+        else
+            return DownloadHelmChartOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadHelmChartOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DownloadHelmChartAsync(const DownloadHelmChartRequest& request, const DownloadHelmChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadHelmChart(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DownloadHelmChartOutcomeCallable TcrClient::DownloadHelmChartCallable(const DownloadHelmChartRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadHelmChartOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadHelmChart(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DuplicateImagePersonalOutcome TcrClient::DuplicateImagePersonal(const DuplicateImagePersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DuplicateImagePersonal");

@@ -28,6 +28,7 @@ ExportVideoEditProjectRequest::ExportVideoEditProjectRequest() :
     m_projectIdHasBeenSet(false),
     m_definitionHasBeenSet(false),
     m_exportDestinationHasBeenSet(false),
+    m_coverDataHasBeenSet(false),
     m_cMEExportInfoHasBeenSet(false),
     m_vODExportInfoHasBeenSet(false),
     m_operatorHasBeenSet(false)
@@ -71,6 +72,14 @@ string ExportVideoEditProjectRequest::ToJsonString() const
         string key = "ExportDestination";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_exportDestination.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coverDataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CoverData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_coverData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cMEExportInfoHasBeenSet)
@@ -169,6 +178,22 @@ void ExportVideoEditProjectRequest::SetExportDestination(const string& _exportDe
 bool ExportVideoEditProjectRequest::ExportDestinationHasBeenSet() const
 {
     return m_exportDestinationHasBeenSet;
+}
+
+string ExportVideoEditProjectRequest::GetCoverData() const
+{
+    return m_coverData;
+}
+
+void ExportVideoEditProjectRequest::SetCoverData(const string& _coverData)
+{
+    m_coverData = _coverData;
+    m_coverDataHasBeenSet = true;
+}
+
+bool ExportVideoEditProjectRequest::CoverDataHasBeenSet() const
+{
+    return m_coverDataHasBeenSet;
 }
 
 CMEExportInfo ExportVideoEditProjectRequest::GetCMEExportInfo() const

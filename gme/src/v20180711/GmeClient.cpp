@@ -384,6 +384,49 @@ GmeClient::ModifyAppStatusOutcomeCallable GmeClient::ModifyAppStatusCallable(con
     return task->get_future();
 }
 
+GmeClient::ModifyRoomInfoOutcome GmeClient::ModifyRoomInfo(const ModifyRoomInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoomInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoomInfoResponse rsp = ModifyRoomInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoomInfoOutcome(rsp);
+        else
+            return ModifyRoomInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoomInfoOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::ModifyRoomInfoAsync(const ModifyRoomInfoRequest& request, const ModifyRoomInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoomInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::ModifyRoomInfoOutcomeCallable GmeClient::ModifyRoomInfoCallable(const ModifyRoomInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoomInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoomInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::ScanVoiceOutcome GmeClient::ScanVoice(const ScanVoiceRequest &request)
 {
     auto outcome = MakeRequest(request, "ScanVoice");

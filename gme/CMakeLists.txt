@@ -42,10 +42,12 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeResponse.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterInfo.h
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h
+  include/tencentcloud/gme/v20180711/model/ModifyRoomInfoResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResult.h
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h
   include/tencentcloud/gme/v20180711/model/VoiceFilter.h
   include/tencentcloud/gme/v20180711/model/ScanDetail.h
+  include/tencentcloud/gme/v20180711/model/ModifyRoomInfoRequest.h
   include/tencentcloud/gme/v20180711/model/CreateAppRequest.h
   include/tencentcloud/gme/v20180711/model/RealtimeSpeechConf.h
   include/tencentcloud/gme/v20180711/model/ScanVoiceResult.h
@@ -84,10 +86,12 @@ set(gme_src
   src/v20180711/model/DescribeUserInAndOutTimeResponse.cpp
   src/v20180711/model/VoiceFilterInfo.cpp
   src/v20180711/model/DescribeFilterResultResponse.cpp
+  src/v20180711/model/ModifyRoomInfoResponse.cpp
   src/v20180711/model/DescribeScanResult.cpp
   src/v20180711/model/DescribeFilterResultListRequest.cpp
   src/v20180711/model/VoiceFilter.cpp
   src/v20180711/model/ScanDetail.cpp
+  src/v20180711/model/ModifyRoomInfoRequest.cpp
   src/v20180711/model/CreateAppRequest.cpp
   src/v20180711/model/RealtimeSpeechConf.cpp
   src/v20180711/model/ScanVoiceResult.cpp

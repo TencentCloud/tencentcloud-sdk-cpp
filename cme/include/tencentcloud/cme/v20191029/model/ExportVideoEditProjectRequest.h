@@ -137,6 +137,24 @@ namespace TencentCloud
                     bool ExportDestinationHasBeenSet() const;
 
                     /**
+                     * 获取视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。
+                     * @return CoverData 视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。
+                     */
+                    std::string GetCoverData() const;
+
+                    /**
+                     * 设置视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。
+                     * @param CoverData 视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。
+                     */
+                    void SetCoverData(const std::string& _coverData);
+
+                    /**
+                     * 判断参数 CoverData 是否已赋值
+                     * @return CoverData 是否已赋值
+                     */
+                    bool CoverDataHasBeenSet() const;
+
+                    /**
                      * 获取导出的云剪媒体信息。指定 ExportDestination = CME 时有效。
                      * @return CMEExportInfo 导出的云剪媒体信息。指定 ExportDestination = CME 时有效。
                      */
@@ -220,6 +238,12 @@ namespace TencentCloud
                      */
                     std::string m_exportDestination;
                     bool m_exportDestinationHasBeenSet;
+
+                    /**
+                     * 视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。
+                     */
+                    std::string m_coverData;
+                    bool m_coverDataHasBeenSet;
 
                     /**
                      * 导出的云剪媒体信息。指定 ExportDestination = CME 时有效。

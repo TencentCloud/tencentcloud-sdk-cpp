@@ -114,6 +114,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/CreateClassResponse.h
   include/tencentcloud/cme/v20191029/model/SlotInfo.h
   include/tencentcloud/cme/v20191029/model/MediaReplacementInfo.h
+  include/tencentcloud/cme/v20191029/model/RecordReplayProjectInput.h
   include/tencentcloud/cme/v20191029/model/VideoStreamInfo.h
   include/tencentcloud/cme/v20191029/model/AddTeamMemberRequest.h
   include/tencentcloud/cme/v20191029/model/ExportVideoEditProjectResponse.h
@@ -262,6 +263,7 @@ set(cme_src
   src/v20191029/model/CreateClassResponse.cpp
   src/v20191029/model/SlotInfo.cpp
   src/v20191029/model/MediaReplacementInfo.cpp
+  src/v20191029/model/RecordReplayProjectInput.cpp
   src/v20191029/model/VideoStreamInfo.cpp
   src/v20191029/model/AddTeamMemberRequest.cpp
   src/v20191029/model/ExportVideoEditProjectResponse.cpp

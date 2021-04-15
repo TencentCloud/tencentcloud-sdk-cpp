@@ -27,6 +27,7 @@
 #include <tencentcloud/cme/v20191029/model/VideoEditProjectInput.h>
 #include <tencentcloud/cme/v20191029/model/VideoSegmentationProjectInput.h>
 #include <tencentcloud/cme/v20191029/model/StreamConnectProjectInput.h>
+#include <tencentcloud/cme/v20191029/model/RecordReplayProjectInput.h>
 
 
 namespace TencentCloud
@@ -72,11 +73,13 @@ namespace TencentCloud
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
+<li>RECORD_REPLAY：录制回放。</li>
                      * @return Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
+<li>RECORD_REPLAY：录制回放。</li>
                      */
                     std::string GetCategory() const;
 
@@ -86,11 +89,13 @@ namespace TencentCloud
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
+<li>RECORD_REPLAY：录制回放。</li>
                      * @param Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
+<li>RECORD_REPLAY：录制回放。</li>
                      */
                     void SetCategory(const std::string& _category);
 
@@ -266,6 +271,24 @@ namespace TencentCloud
                      */
                     bool StreamConnectProjectInputHasBeenSet() const;
 
+                    /**
+                     * 获取录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。
+                     * @return RecordReplayProjectInput 录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。
+                     */
+                    RecordReplayProjectInput GetRecordReplayProjectInput() const;
+
+                    /**
+                     * 设置录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。
+                     * @param RecordReplayProjectInput 录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。
+                     */
+                    void SetRecordReplayProjectInput(const RecordReplayProjectInput& _recordReplayProjectInput);
+
+                    /**
+                     * 判断参数 RecordReplayProjectInput 是否已赋值
+                     * @return RecordReplayProjectInput 是否已赋值
+                     */
+                    bool RecordReplayProjectInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +303,7 @@ namespace TencentCloud
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
+<li>RECORD_REPLAY：录制回放。</li>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
@@ -338,6 +362,12 @@ namespace TencentCloud
                      */
                     StreamConnectProjectInput m_streamConnectProjectInput;
                     bool m_streamConnectProjectInputHasBeenSet;
+
+                    /**
+                     * 录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。
+                     */
+                    RecordReplayProjectInput m_recordReplayProjectInput;
+                    bool m_recordReplayProjectInputHasBeenSet;
 
                 };
             }

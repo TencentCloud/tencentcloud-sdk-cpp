@@ -32,6 +32,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/TriggerInvokePara.h
   include/tencentcloud/tcr/v20190924/model/DescribeNamespacesResponse.h
   include/tencentcloud/tcr/v20190924/model/TriggerLogResp.h
+  include/tencentcloud/tcr/v20190924/model/DownloadHelmChartRequest.h
   include/tencentcloud/tcr/v20190924/model/TagInfoResp.h
   include/tencentcloud/tcr/v20190924/model/CreateInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteInstanceTokenRequest.h
@@ -61,6 +62,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteRepositoryResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImagePersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/DownloadHelmChartResponse.h
   include/tencentcloud/tcr/v20190924/model/ManageReplicationRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.h
@@ -232,6 +234,7 @@ set(tcr_src
   src/v20190924/model/TriggerInvokePara.cpp
   src/v20190924/model/DescribeNamespacesResponse.cpp
   src/v20190924/model/TriggerLogResp.cpp
+  src/v20190924/model/DownloadHelmChartRequest.cpp
   src/v20190924/model/TagInfoResp.cpp
   src/v20190924/model/CreateInstanceResponse.cpp
   src/v20190924/model/DeleteInstanceTokenRequest.cpp
@@ -261,6 +264,7 @@ set(tcr_src
   src/v20190924/model/DescribeExternalEndpointStatusRequest.cpp
   src/v20190924/model/DeleteRepositoryResponse.cpp
   src/v20190924/model/DeleteImagePersonalResponse.cpp
+  src/v20190924/model/DownloadHelmChartResponse.cpp
   src/v20190924/model/ManageReplicationRequest.cpp
   src/v20190924/model/DeleteWebhookTriggerResponse.cpp
   src/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.cpp
