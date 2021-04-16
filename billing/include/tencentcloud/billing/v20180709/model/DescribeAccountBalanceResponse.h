@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云账户信息中的”展示可用余额”字段，单位为"分"
-                     * @return Balance 云账户信息中的”展示可用余额”字段，单位为"分"
+                     * 获取接口做过变更,为兼容老接口,本字段与RealBalance相同,为当前真实可用余额,单位 分
+                     * @return Balance 接口做过变更,为兼容老接口,本字段与RealBalance相同,为当前真实可用余额,单位 分
                      */
                     int64_t GetBalance() const;
 
@@ -67,8 +67,8 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取当前真实可用余额
-                     * @return RealBalance 当前真实可用余额
+                     * 获取当前真实可用余额,单位 分
+                     * @return RealBalance 当前真实可用余额,单位 分
                      */
                     double GetRealBalance() const;
 
@@ -79,8 +79,8 @@ namespace TencentCloud
                     bool RealBalanceHasBeenSet() const;
 
                     /**
-                     * 获取现金账户余额
-                     * @return CashAccountBalance 现金账户余额
+                     * 获取现金账户余额,单位 分
+                     * @return CashAccountBalance 现金账户余额,单位 分
                      */
                     double GetCashAccountBalance() const;
 
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool CashAccountBalanceHasBeenSet() const;
 
                     /**
-                     * 获取收益转入账户余额
-                     * @return IncomeIntoAccountBalance 收益转入账户余额
+                     * 获取收益转入账户余额,单位 分
+                     * @return IncomeIntoAccountBalance 收益转入账户余额,单位 分
                      */
                     double GetIncomeIntoAccountBalance() const;
 
@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool IncomeIntoAccountBalanceHasBeenSet() const;
 
                     /**
-                     * 获取赠送账户余额
-                     * @return PresentAccountBalance 赠送账户余额
+                     * 获取赠送账户余额,单位 分
+                     * @return PresentAccountBalance 赠送账户余额,单位 分
                      */
                     double GetPresentAccountBalance() const;
 
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool PresentAccountBalanceHasBeenSet() const;
 
                     /**
-                     * 获取冻结金额
-                     * @return FreezeAmount 冻结金额
+                     * 获取冻结金额,单位 分
+                     * @return FreezeAmount 冻结金额,单位 分
                      */
                     double GetFreezeAmount() const;
 
@@ -127,8 +127,8 @@ namespace TencentCloud
                     bool FreezeAmountHasBeenSet() const;
 
                     /**
-                     * 获取欠费金额
-                     * @return OweAmount 欠费金额
+                     * 获取欠费金额,单位 分
+                     * @return OweAmount 欠费金额,单位 分
                      */
                     double GetOweAmount() const;
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云账户信息中的”展示可用余额”字段，单位为"分"
+                     * 接口做过变更,为兼容老接口,本字段与RealBalance相同,为当前真实可用余额,单位 分
                      */
                     int64_t m_balance;
                     bool m_balanceHasBeenSet;
@@ -213,37 +213,37 @@ namespace TencentCloud
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 当前真实可用余额
+                     * 当前真实可用余额,单位 分
                      */
                     double m_realBalance;
                     bool m_realBalanceHasBeenSet;
 
                     /**
-                     * 现金账户余额
+                     * 现金账户余额,单位 分
                      */
                     double m_cashAccountBalance;
                     bool m_cashAccountBalanceHasBeenSet;
 
                     /**
-                     * 收益转入账户余额
+                     * 收益转入账户余额,单位 分
                      */
                     double m_incomeIntoAccountBalance;
                     bool m_incomeIntoAccountBalanceHasBeenSet;
 
                     /**
-                     * 赠送账户余额
+                     * 赠送账户余额,单位 分
                      */
                     double m_presentAccountBalance;
                     bool m_presentAccountBalanceHasBeenSet;
 
                     /**
-                     * 冻结金额
+                     * 冻结金额,单位 分
                      */
                     double m_freezeAmount;
                     bool m_freezeAmountHasBeenSet;
 
                     /**
-                     * 欠费金额
+                     * 欠费金额,单位 分
                      */
                     double m_oweAmount;
                     bool m_oweAmountHasBeenSet;

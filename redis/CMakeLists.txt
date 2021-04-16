@@ -54,6 +54,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/RegionConf.h
   include/tencentcloud/redis/v20180412/model/BigKeyInfo.h
   include/tencentcloud/redis/v20180412/model/RenewInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/UpgradeVersionToMultiAvailabilityZonesResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceMultiParam.h
@@ -90,6 +91,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTookDistResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceBackupsResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceIntegerParam.h
+  include/tencentcloud/redis/v20180412/model/UpgradeVersionToMultiAvailabilityZonesRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTookDistRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceTextParam.h
@@ -227,6 +229,7 @@ set(redis_src
   src/v20180412/model/RegionConf.cpp
   src/v20180412/model/BigKeyInfo.cpp
   src/v20180412/model/RenewInstanceRequest.cpp
+  src/v20180412/model/UpgradeVersionToMultiAvailabilityZonesResponse.cpp
   src/v20180412/model/DescribeInstanceParamRecordsResponse.cpp
   src/v20180412/model/ModifyAutoBackupConfigRequest.cpp
   src/v20180412/model/InstanceMultiParam.cpp
@@ -263,6 +266,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceMonitorTookDistResponse.cpp
   src/v20180412/model/DescribeInstanceBackupsResponse.cpp
   src/v20180412/model/InstanceIntegerParam.cpp
+  src/v20180412/model/UpgradeVersionToMultiAvailabilityZonesRequest.cpp
   src/v20180412/model/DescribeInstanceMonitorTookDistRequest.cpp
   src/v20180412/model/ModifyMaintenanceWindowRequest.cpp
   src/v20180412/model/InstanceTextParam.cpp

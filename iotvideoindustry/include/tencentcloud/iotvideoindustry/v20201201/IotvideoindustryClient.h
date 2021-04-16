@@ -59,6 +59,8 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupDevicesResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupsRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupsResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordStreamResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSIPServerRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSIPServerResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticDetailsRequest.h>
@@ -67,6 +69,8 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticSummaryResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSubGroupsRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/DescribeSubGroupsResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetRecordDatesByDevRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetRecordDatesByDevResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/GetRecordPlanByDevRequest.h>
@@ -159,6 +163,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeGroupsResponse> DescribeGroupsOutcome;
                 typedef std::future<DescribeGroupsOutcome> DescribeGroupsOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeGroupsRequest&, DescribeGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRecordStreamResponse> DescribeRecordStreamOutcome;
+                typedef std::future<DescribeRecordStreamOutcome> DescribeRecordStreamOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeRecordStreamRequest&, DescribeRecordStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStreamAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSIPServerResponse> DescribeSIPServerOutcome;
                 typedef std::future<DescribeSIPServerOutcome> DescribeSIPServerOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeSIPServerRequest&, DescribeSIPServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSIPServerAsyncHandler;
@@ -171,6 +178,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSubGroupsResponse> DescribeSubGroupsOutcome;
                 typedef std::future<DescribeSubGroupsOutcome> DescribeSubGroupsOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeSubGroupsRequest&, DescribeSubGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVideoListResponse> DescribeVideoListOutcome;
+                typedef std::future<DescribeVideoListOutcome> DescribeVideoListOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::DescribeVideoListRequest&, DescribeVideoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoListAsyncHandler;
                 typedef Outcome<Error, Model::GetRecordDatesByDevResponse> GetRecordDatesByDevOutcome;
                 typedef std::future<GetRecordDatesByDevOutcome> GetRecordDatesByDevOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::GetRecordDatesByDevRequest&, GetRecordDatesByDevOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRecordDatesByDevAsyncHandler;
@@ -374,6 +384,18 @@ namespace TencentCloud
                 DescribeGroupsOutcomeCallable DescribeGroupsCallable(const Model::DescribeGroupsRequest& request);
 
                 /**
+                 *获取回放视频流(NVR录制用)
+RecordId和StartTime/EndTime互斥
+当存在RecordId时，StartTime和EndTime无效
+当RecordId为空，StartTime和EndTime生效
+                 * @param req DescribeRecordStreamRequest
+                 * @return DescribeRecordStreamOutcome
+                 */
+                DescribeRecordStreamOutcome DescribeRecordStream(const Model::DescribeRecordStreamRequest &request);
+                void DescribeRecordStreamAsync(const Model::DescribeRecordStreamRequest& request, const DescribeRecordStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordStreamOutcomeCallable DescribeRecordStreamCallable(const Model::DescribeRecordStreamRequest& request);
+
+                /**
                  *本接口用于获取SIP服务器相关配置，用户可以通过这些配置项，将设备通过GB28181协议注册到本服务。
                  * @param req DescribeSIPServerRequest
                  * @return DescribeSIPServerOutcome
@@ -408,6 +430,15 @@ namespace TencentCloud
                 DescribeSubGroupsOutcome DescribeSubGroups(const Model::DescribeSubGroupsRequest &request);
                 void DescribeSubGroupsAsync(const Model::DescribeSubGroupsRequest& request, const DescribeSubGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSubGroupsOutcomeCallable DescribeSubGroupsCallable(const Model::DescribeSubGroupsRequest& request);
+
+                /**
+                 *根据时间获取回放文件列表(云端录制用)
+                 * @param req DescribeVideoListRequest
+                 * @return DescribeVideoListOutcome
+                 */
+                DescribeVideoListOutcome DescribeVideoList(const Model::DescribeVideoListRequest &request);
+                void DescribeVideoListAsync(const Model::DescribeVideoListRequest& request, const DescribeVideoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoListOutcomeCallable DescribeVideoListCallable(const Model::DescribeVideoListRequest& request);
 
                 /**
                  *本接口(GetRecordDatesByDev)用于查询设备含有录像文件的日期列表。

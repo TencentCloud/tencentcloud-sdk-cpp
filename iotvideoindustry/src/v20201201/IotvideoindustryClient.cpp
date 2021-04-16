@@ -814,6 +814,49 @@ IotvideoindustryClient::DescribeGroupsOutcomeCallable IotvideoindustryClient::De
     return task->get_future();
 }
 
+IotvideoindustryClient::DescribeRecordStreamOutcome IotvideoindustryClient::DescribeRecordStream(const DescribeRecordStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordStreamResponse rsp = DescribeRecordStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordStreamOutcome(rsp);
+        else
+            return DescribeRecordStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordStreamOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoindustryClient::DescribeRecordStreamAsync(const DescribeRecordStreamRequest& request, const DescribeRecordStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoindustryClient::DescribeRecordStreamOutcomeCallable IotvideoindustryClient::DescribeRecordStreamCallable(const DescribeRecordStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoindustryClient::DescribeSIPServerOutcome IotvideoindustryClient::DescribeSIPServer(const DescribeSIPServerRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSIPServer");
@@ -979,6 +1022,49 @@ IotvideoindustryClient::DescribeSubGroupsOutcomeCallable IotvideoindustryClient:
         [this, request]()
         {
             return this->DescribeSubGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoindustryClient::DescribeVideoListOutcome IotvideoindustryClient::DescribeVideoList(const DescribeVideoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoListResponse rsp = DescribeVideoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoListOutcome(rsp);
+        else
+            return DescribeVideoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoListOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoindustryClient::DescribeVideoListAsync(const DescribeVideoListRequest& request, const DescribeVideoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoindustryClient::DescribeVideoListOutcomeCallable IotvideoindustryClient::DescribeVideoListCallable(const DescribeVideoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoList(request);
         }
     );
 

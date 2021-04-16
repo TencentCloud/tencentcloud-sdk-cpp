@@ -2749,3 +2749,46 @@ RedisClient::UpgradeInstanceVersionOutcomeCallable RedisClient::UpgradeInstanceV
     return task->get_future();
 }
 
+RedisClient::UpgradeVersionToMultiAvailabilityZonesOutcome RedisClient::UpgradeVersionToMultiAvailabilityZones(const UpgradeVersionToMultiAvailabilityZonesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeVersionToMultiAvailabilityZones");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeVersionToMultiAvailabilityZonesResponse rsp = UpgradeVersionToMultiAvailabilityZonesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeVersionToMultiAvailabilityZonesOutcome(rsp);
+        else
+            return UpgradeVersionToMultiAvailabilityZonesOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeVersionToMultiAvailabilityZonesOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::UpgradeVersionToMultiAvailabilityZonesAsync(const UpgradeVersionToMultiAvailabilityZonesRequest& request, const UpgradeVersionToMultiAvailabilityZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeVersionToMultiAvailabilityZones(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::UpgradeVersionToMultiAvailabilityZonesOutcomeCallable RedisClient::UpgradeVersionToMultiAvailabilityZonesCallable(const UpgradeVersionToMultiAvailabilityZonesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeVersionToMultiAvailabilityZonesOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeVersionToMultiAvailabilityZones(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

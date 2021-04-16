@@ -3480,6 +3480,92 @@ CpdpClient::UnifiedOrderOutcomeCallable CpdpClient::UnifiedOrderCallable(const U
     return task->get_future();
 }
 
+CpdpClient::UploadTaxListOutcome CpdpClient::UploadTaxList(const UploadTaxListRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadTaxList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadTaxListResponse rsp = UploadTaxListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadTaxListOutcome(rsp);
+        else
+            return UploadTaxListOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadTaxListOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::UploadTaxListAsync(const UploadTaxListRequest& request, const UploadTaxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadTaxList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::UploadTaxListOutcomeCallable CpdpClient::UploadTaxListCallable(const UploadTaxListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadTaxListOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadTaxList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::UploadTaxPaymentOutcome CpdpClient::UploadTaxPayment(const UploadTaxPaymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadTaxPayment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadTaxPaymentResponse rsp = UploadTaxPaymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadTaxPaymentOutcome(rsp);
+        else
+            return UploadTaxPaymentOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadTaxPaymentOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::UploadTaxPaymentAsync(const UploadTaxPaymentRequest& request, const UploadTaxPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadTaxPayment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::UploadTaxPaymentOutcomeCallable CpdpClient::UploadTaxPaymentCallable(const UploadTaxPaymentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadTaxPaymentOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadTaxPayment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::WithdrawCashMembershipOutcome CpdpClient::WithdrawCashMembership(const WithdrawCashMembershipRequest &request)
 {
     auto outcome = MakeRequest(request, "WithdrawCashMembership");

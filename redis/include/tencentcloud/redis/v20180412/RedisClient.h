@@ -149,6 +149,8 @@
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeVersionToMultiAvailabilityZonesRequest.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeVersionToMultiAvailabilityZonesResponse.h>
 
 
 namespace TencentCloud
@@ -352,6 +354,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpgradeInstanceVersionResponse> UpgradeInstanceVersionOutcome;
                 typedef std::future<UpgradeInstanceVersionOutcome> UpgradeInstanceVersionOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceVersionRequest&, UpgradeInstanceVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceVersionAsyncHandler;
+                typedef Outcome<Error, Model::UpgradeVersionToMultiAvailabilityZonesResponse> UpgradeVersionToMultiAvailabilityZonesOutcome;
+                typedef std::future<UpgradeVersionToMultiAvailabilityZonesOutcome> UpgradeVersionToMultiAvailabilityZonesOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::UpgradeVersionToMultiAvailabilityZonesRequest&, UpgradeVersionToMultiAvailabilityZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeVersionToMultiAvailabilityZonesAsyncHandler;
 
 
 
@@ -921,6 +926,15 @@ namespace TencentCloud
                 UpgradeInstanceVersionOutcome UpgradeInstanceVersion(const Model::UpgradeInstanceVersionRequest &request);
                 void UpgradeInstanceVersionAsync(const Model::UpgradeInstanceVersionRequest& request, const UpgradeInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeInstanceVersionOutcomeCallable UpgradeInstanceVersionCallable(const Model::UpgradeInstanceVersionRequest& request);
+
+                /**
+                 *升级实例支持多AZ
+                 * @param req UpgradeVersionToMultiAvailabilityZonesRequest
+                 * @return UpgradeVersionToMultiAvailabilityZonesOutcome
+                 */
+                UpgradeVersionToMultiAvailabilityZonesOutcome UpgradeVersionToMultiAvailabilityZones(const Model::UpgradeVersionToMultiAvailabilityZonesRequest &request);
+                void UpgradeVersionToMultiAvailabilityZonesAsync(const Model::UpgradeVersionToMultiAvailabilityZonesRequest& request, const UpgradeVersionToMultiAvailabilityZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeVersionToMultiAvailabilityZonesOutcomeCallable UpgradeVersionToMultiAvailabilityZonesCallable(const Model::UpgradeVersionToMultiAvailabilityZonesRequest& request);
 
             };
         }

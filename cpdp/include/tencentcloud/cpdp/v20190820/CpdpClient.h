@@ -183,6 +183,10 @@
 #include <tencentcloud/cpdp/v20190820/model/UnbindRelateAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadTaxListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadTaxListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadTaxPaymentRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadTaxPaymentResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/WithdrawCashMembershipRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/WithdrawCashMembershipResponse.h>
 
@@ -439,6 +443,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UnifiedOrderResponse> UnifiedOrderOutcome;
                 typedef std::future<UnifiedOrderOutcome> UnifiedOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UnifiedOrderRequest&, UnifiedOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnifiedOrderAsyncHandler;
+                typedef Outcome<Error, Model::UploadTaxListResponse> UploadTaxListOutcome;
+                typedef std::future<UploadTaxListOutcome> UploadTaxListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::UploadTaxListRequest&, UploadTaxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTaxListAsyncHandler;
+                typedef Outcome<Error, Model::UploadTaxPaymentResponse> UploadTaxPaymentOutcome;
+                typedef std::future<UploadTaxPaymentOutcome> UploadTaxPaymentOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::UploadTaxPaymentRequest&, UploadTaxPaymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTaxPaymentAsyncHandler;
                 typedef Outcome<Error, Model::WithdrawCashMembershipResponse> WithdrawCashMembershipOutcome;
                 typedef std::future<WithdrawCashMembershipOutcome> WithdrawCashMembershipOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::WithdrawCashMembershipRequest&, WithdrawCashMembershipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawCashMembershipAsyncHandler;
@@ -1173,6 +1183,24 @@ namespace TencentCloud
                 UnifiedOrderOutcome UnifiedOrder(const Model::UnifiedOrderRequest &request);
                 void UnifiedOrderAsync(const Model::UnifiedOrderRequest& request, const UnifiedOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnifiedOrderOutcomeCallable UnifiedOrderCallable(const Model::UnifiedOrderRequest& request);
+
+                /**
+                 *直播平台-上传代理商完税列表
+                 * @param req UploadTaxListRequest
+                 * @return UploadTaxListOutcome
+                 */
+                UploadTaxListOutcome UploadTaxList(const Model::UploadTaxListRequest &request);
+                void UploadTaxListAsync(const Model::UploadTaxListRequest& request, const UploadTaxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadTaxListOutcomeCallable UploadTaxListCallable(const Model::UploadTaxListRequest& request);
+
+                /**
+                 *直播平台-上传代理商完税证明
+                 * @param req UploadTaxPaymentRequest
+                 * @return UploadTaxPaymentOutcome
+                 */
+                UploadTaxPaymentOutcome UploadTaxPayment(const Model::UploadTaxPaymentRequest &request);
+                void UploadTaxPaymentAsync(const Model::UploadTaxPaymentRequest& request, const UploadTaxPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadTaxPaymentOutcomeCallable UploadTaxPaymentCallable(const Model::UploadTaxPaymentRequest& request);
 
                 /**
                  *会员提现-不验证。此接口受理会员发起的提现申请。会员子账户的可提现余额、可用余额会减少，市场的资金汇总账户(监管账户)会减少相应的发生金额，提现到会员申请的收款账户。		
