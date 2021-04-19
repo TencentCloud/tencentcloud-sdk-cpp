@@ -1072,6 +1072,49 @@ PostgresClient::DestroyDBInstanceOutcomeCallable PostgresClient::DestroyDBInstan
     return task->get_future();
 }
 
+PostgresClient::DisIsolateDBInstancesOutcome PostgresClient::DisIsolateDBInstances(const DisIsolateDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisIsolateDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisIsolateDBInstancesResponse rsp = DisIsolateDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisIsolateDBInstancesOutcome(rsp);
+        else
+            return DisIsolateDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DisIsolateDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DisIsolateDBInstancesAsync(const DisIsolateDBInstancesRequest& request, const DisIsolateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisIsolateDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DisIsolateDBInstancesOutcomeCallable PostgresClient::DisIsolateDBInstancesCallable(const DisIsolateDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisIsolateDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DisIsolateDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::InitDBInstancesOutcome PostgresClient::InitDBInstances(const InitDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "InitDBInstances");
@@ -1237,6 +1280,49 @@ PostgresClient::InquiryPriceUpgradeDBInstanceOutcomeCallable PostgresClient::Inq
         [this, request]()
         {
             return this->InquiryPriceUpgradeDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::IsolateDBInstancesOutcome PostgresClient::IsolateDBInstances(const IsolateDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolateDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolateDBInstancesResponse rsp = IsolateDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolateDBInstancesOutcome(rsp);
+        else
+            return IsolateDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolateDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::IsolateDBInstancesAsync(const IsolateDBInstancesRequest& request, const IsolateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IsolateDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::IsolateDBInstancesOutcomeCallable PostgresClient::IsolateDBInstancesCallable(const IsolateDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IsolateDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->IsolateDBInstances(request);
         }
     );
 

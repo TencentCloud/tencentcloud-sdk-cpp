@@ -27,6 +27,8 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DescribeApplicationDataRequest.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterRequest.h
   include/tencentcloud/gme/v20180711/model/VoiceMessageStatisticsItem.h
+  include/tencentcloud/gme/v20180711/model/RoomUser.h
+  include/tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h
   include/tencentcloud/gme/v20180711/model/RealTimeSpeechStatisticsItem.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterResponse.h
@@ -39,6 +41,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/Task.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterStatisticsItem.h
   include/tencentcloud/gme/v20180711/model/StatisticsItem.h
+  include/tencentcloud/gme/v20180711/model/DescribeRoomInfoResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeResponse.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterInfo.h
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h
@@ -71,6 +74,8 @@ set(gme_src
   src/v20180711/model/DescribeApplicationDataRequest.cpp
   src/v20180711/model/VoiceFilterRequest.cpp
   src/v20180711/model/VoiceMessageStatisticsItem.cpp
+  src/v20180711/model/RoomUser.cpp
+  src/v20180711/model/DescribeRoomInfoRequest.cpp
   src/v20180711/model/DescribeScanResultListRequest.cpp
   src/v20180711/model/RealTimeSpeechStatisticsItem.cpp
   src/v20180711/model/VoiceFilterResponse.cpp
@@ -83,6 +88,7 @@ set(gme_src
   src/v20180711/model/Task.cpp
   src/v20180711/model/VoiceFilterStatisticsItem.cpp
   src/v20180711/model/StatisticsItem.cpp
+  src/v20180711/model/DescribeRoomInfoResponse.cpp
   src/v20180711/model/DescribeUserInAndOutTimeResponse.cpp
   src/v20180711/model/VoiceFilterInfo.cpp
   src/v20180711/model/DescribeFilterResultResponse.cpp

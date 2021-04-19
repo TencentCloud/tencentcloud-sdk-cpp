@@ -33,6 +33,8 @@
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h>
+#include <tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeRoomInfoResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeScanResultListResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeRequest.h>
@@ -74,6 +76,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeFilterResultListResponse> DescribeFilterResultListOutcome;
                 typedef std::future<DescribeFilterResultListOutcome> DescribeFilterResultListOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeFilterResultListRequest&, DescribeFilterResultListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilterResultListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRoomInfoResponse> DescribeRoomInfoOutcome;
+                typedef std::future<DescribeRoomInfoOutcome> DescribeRoomInfoOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeRoomInfoRequest&, DescribeRoomInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeScanResultListResponse> DescribeScanResultListOutcome;
                 typedef std::future<DescribeScanResultListOutcome> DescribeScanResultListOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeScanResultListRequest&, DescribeScanResultListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanResultListAsyncHandler;
@@ -139,6 +144,15 @@ namespace TencentCloud
                 DescribeFilterResultListOutcome DescribeFilterResultList(const Model::DescribeFilterResultListRequest &request);
                 void DescribeFilterResultListAsync(const Model::DescribeFilterResultListRequest& request, const DescribeFilterResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFilterResultListOutcomeCallable DescribeFilterResultListCallable(const Model::DescribeFilterResultListRequest& request);
+
+                /**
+                 *获取房间内用户信息
+                 * @param req DescribeRoomInfoRequest
+                 * @return DescribeRoomInfoOutcome
+                 */
+                DescribeRoomInfoOutcome DescribeRoomInfo(const Model::DescribeRoomInfoRequest &request);
+                void DescribeRoomInfoAsync(const Model::DescribeRoomInfoRequest& request, const DescribeRoomInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoomInfoOutcomeCallable DescribeRoomInfoCallable(const Model::DescribeRoomInfoRequest& request);
 
                 /**
                  *本接口(DescribeScanResultList)用于查询语音检测结果，查询任务列表最多支持100个。

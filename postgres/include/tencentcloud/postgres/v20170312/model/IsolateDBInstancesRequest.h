@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_POSTGRES_V20170312_MODEL_DESTROYDBINSTANCEREQUEST_H_
-#define TENCENTCLOUD_POSTGRES_V20170312_MODEL_DESTROYDBINSTANCEREQUEST_H_
+#ifndef TENCENTCLOUD_POSTGRES_V20170312_MODEL_ISOLATEDBINSTANCESREQUEST_H_
+#define TENCENTCLOUD_POSTGRES_V20170312_MODEL_ISOLATEDBINSTANCESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,41 +32,41 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DestroyDBInstance请求参数结构体
+                * IsolateDBInstances请求参数结构体
                 */
-                class DestroyDBInstanceRequest : public AbstractModel
+                class IsolateDBInstancesRequest : public AbstractModel
                 {
                 public:
-                    DestroyDBInstanceRequest();
-                    ~DestroyDBInstanceRequest() = default;
+                    IsolateDBInstancesRequest();
+                    ~IsolateDBInstancesRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取待下线实例ID
-                     * @return DBInstanceId 待下线实例ID
+                     * 获取实例ID集合
+                     * @return DBInstanceIdSet 实例ID集合
                      */
-                    std::string GetDBInstanceId() const;
+                    std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
-                     * 设置待下线实例ID
-                     * @param DBInstanceId 待下线实例ID
+                     * 设置实例ID集合
+                     * @param DBInstanceIdSet 实例ID集合
                      */
-                    void SetDBInstanceId(const std::string& _dBInstanceId);
+                    void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
 
                     /**
-                     * 判断参数 DBInstanceId 是否已赋值
-                     * @return DBInstanceId 是否已赋值
+                     * 判断参数 DBInstanceIdSet 是否已赋值
+                     * @return DBInstanceIdSet 是否已赋值
                      */
-                    bool DBInstanceIdHasBeenSet() const;
+                    bool DBInstanceIdSetHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 待下线实例ID
+                     * 实例ID集合
                      */
-                    std::string m_dBInstanceId;
-                    bool m_dBInstanceIdHasBeenSet;
+                    std::vector<std::string> m_dBInstanceIdSet;
+                    bool m_dBInstanceIdSetHasBeenSet;
 
                 };
             }
@@ -74,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_POSTGRES_V20170312_MODEL_DESTROYDBINSTANCEREQUEST_H_
+#endif // !TENCENTCLOUD_POSTGRES_V20170312_MODEL_ISOLATEDBINSTANCESREQUEST_H_

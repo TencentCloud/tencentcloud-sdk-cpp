@@ -27,7 +27,8 @@ DescribeVideoListRequest::DescribeVideoListRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_deviceIdHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string DescribeVideoListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_deviceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void DescribeVideoListRequest::SetLimit(const int64_t& _limit)
 bool DescribeVideoListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeVideoListRequest::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void DescribeVideoListRequest::SetDeviceId(const string& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool DescribeVideoListRequest::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
 }
 
 

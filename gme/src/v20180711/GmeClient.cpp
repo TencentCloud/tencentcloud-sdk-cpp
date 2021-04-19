@@ -255,6 +255,49 @@ GmeClient::DescribeFilterResultListOutcomeCallable GmeClient::DescribeFilterResu
     return task->get_future();
 }
 
+GmeClient::DescribeRoomInfoOutcome GmeClient::DescribeRoomInfo(const DescribeRoomInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoomInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoomInfoResponse rsp = DescribeRoomInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoomInfoOutcome(rsp);
+        else
+            return DescribeRoomInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoomInfoOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeRoomInfoAsync(const DescribeRoomInfoRequest& request, const DescribeRoomInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoomInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeRoomInfoOutcomeCallable GmeClient::DescribeRoomInfoCallable(const DescribeRoomInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoomInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoomInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::DescribeScanResultListOutcome GmeClient::DescribeScanResultList(const DescribeScanResultListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScanResultList");

@@ -50,6 +50,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeOrdersResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesResponse.h
+  include/tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/ServerlessDBInstanceNetInfo.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyAccountRemarkResponse.h
@@ -73,8 +74,10 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyGroupRequest.h
   include/tencentcloud/postgres/v20170312/model/CloseServerlessDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/RestartDBInstanceRequest.h
+  include/tencentcloud/postgres/v20170312/model/IsolateDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceUpgradeDBInstanceRequest.h
+  include/tencentcloud/postgres/v20170312/model/IsolateDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceRenewDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/ErrLogDetail.h
@@ -86,6 +89,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DeleteReadOnlyGroupRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBBackupsRequest.h
   include/tencentcloud/postgres/v20170312/model/Filter.h
+  include/tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessRequest.h
   include/tencentcloud/postgres/v20170312/model/SlowlogDetail.h
   include/tencentcloud/postgres/v20170312/model/RemoveDBInstanceFromReadOnlyGroupRequest.h
@@ -157,6 +161,7 @@ set(postgres_src
   src/v20170312/model/CreateReadOnlyDBInstanceResponse.cpp
   src/v20170312/model/DescribeOrdersResponse.cpp
   src/v20170312/model/InquiryPriceCreateDBInstancesResponse.cpp
+  src/v20170312/model/DisIsolateDBInstancesRequest.cpp
   src/v20170312/model/ServerlessDBInstanceNetInfo.cpp
   src/v20170312/model/DescribeDBInstancesRequest.cpp
   src/v20170312/model/ModifyAccountRemarkResponse.cpp
@@ -180,8 +185,10 @@ set(postgres_src
   src/v20170312/model/CreateReadOnlyGroupRequest.cpp
   src/v20170312/model/CloseServerlessDBExtranetAccessResponse.cpp
   src/v20170312/model/RestartDBInstanceRequest.cpp
+  src/v20170312/model/IsolateDBInstancesResponse.cpp
   src/v20170312/model/OpenDBExtranetAccessResponse.cpp
   src/v20170312/model/InquiryPriceUpgradeDBInstanceRequest.cpp
+  src/v20170312/model/IsolateDBInstancesRequest.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
   src/v20170312/model/InquiryPriceRenewDBInstanceResponse.cpp
   src/v20170312/model/ErrLogDetail.cpp
@@ -193,6 +200,7 @@ set(postgres_src
   src/v20170312/model/DeleteReadOnlyGroupRequest.cpp
   src/v20170312/model/DescribeDBBackupsRequest.cpp
   src/v20170312/model/Filter.cpp
+  src/v20170312/model/DisIsolateDBInstancesResponse.cpp
   src/v20170312/model/OpenDBExtranetAccessRequest.cpp
   src/v20170312/model/SlowlogDetail.cpp
   src/v20170312/model/RemoveDBInstanceFromReadOnlyGroupRequest.cpp

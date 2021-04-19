@@ -71,6 +71,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeZonesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DestroyDBInstanceRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DestroyDBInstanceResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/InitDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/InitDBInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesRequest.h>
@@ -79,6 +81,8 @@
 #include <tencentcloud/postgres/v20170312/model/InquiryPriceRenewDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/InquiryPriceUpgradeDBInstanceRequest.h>
 #include <tencentcloud/postgres/v20170312/model/InquiryPriceUpgradeDBInstanceResponse.h>
+#include <tencentcloud/postgres/v20170312/model/IsolateDBInstancesRequest.h>
+#include <tencentcloud/postgres/v20170312/model/IsolateDBInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyAccountRemarkRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyAccountRemarkResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameRequest.h>
@@ -193,6 +197,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DestroyDBInstanceResponse> DestroyDBInstanceOutcome;
                 typedef std::future<DestroyDBInstanceOutcome> DestroyDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DestroyDBInstanceRequest&, DestroyDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyDBInstanceAsyncHandler;
+                typedef Outcome<Error, Model::DisIsolateDBInstancesResponse> DisIsolateDBInstancesOutcome;
+                typedef std::future<DisIsolateDBInstancesOutcome> DisIsolateDBInstancesOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DisIsolateDBInstancesRequest&, DisIsolateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisIsolateDBInstancesAsyncHandler;
                 typedef Outcome<Error, Model::InitDBInstancesResponse> InitDBInstancesOutcome;
                 typedef std::future<InitDBInstancesOutcome> InitDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::InitDBInstancesRequest&, InitDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitDBInstancesAsyncHandler;
@@ -205,6 +212,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::InquiryPriceUpgradeDBInstanceResponse> InquiryPriceUpgradeDBInstanceOutcome;
                 typedef std::future<InquiryPriceUpgradeDBInstanceOutcome> InquiryPriceUpgradeDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::InquiryPriceUpgradeDBInstanceRequest&, InquiryPriceUpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceUpgradeDBInstanceAsyncHandler;
+                typedef Outcome<Error, Model::IsolateDBInstancesResponse> IsolateDBInstancesOutcome;
+                typedef std::future<IsolateDBInstancesOutcome> IsolateDBInstancesOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::IsolateDBInstancesRequest&, IsolateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDBInstancesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAccountRemarkResponse> ModifyAccountRemarkOutcome;
                 typedef std::future<ModifyAccountRemarkOutcome> ModifyAccountRemarkOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyAccountRemarkRequest&, ModifyAccountRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountRemarkAsyncHandler;
@@ -458,13 +468,22 @@ namespace TencentCloud
                 DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
 
                 /**
-                 *本接口 (DestroyDBInstance) 用于销毁指定DBInstanceId对应的实例。当前仅适用于按量计费实例。
+                 *本接口 (DestroyDBInstance) 用于彻底下线指定DBInstanceId对应的实例，下线后实例数据将彻底删除，无法找回，只能下线隔离中的实例。
                  * @param req DestroyDBInstanceRequest
                  * @return DestroyDBInstanceOutcome
                  */
                 DestroyDBInstanceOutcome DestroyDBInstance(const Model::DestroyDBInstanceRequest &request);
                 void DestroyDBInstanceAsync(const Model::DestroyDBInstanceRequest& request, const DestroyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyDBInstanceOutcomeCallable DestroyDBInstanceCallable(const Model::DestroyDBInstanceRequest& request);
+
+                /**
+                 *本接口（DisIsolateDBInstances）用于解隔离实例
+                 * @param req DisIsolateDBInstancesRequest
+                 * @return DisIsolateDBInstancesOutcome
+                 */
+                DisIsolateDBInstancesOutcome DisIsolateDBInstances(const Model::DisIsolateDBInstancesRequest &request);
+                void DisIsolateDBInstancesAsync(const Model::DisIsolateDBInstancesRequest& request, const DisIsolateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisIsolateDBInstancesOutcomeCallable DisIsolateDBInstancesCallable(const Model::DisIsolateDBInstancesRequest& request);
 
                 /**
                  *本接口 (InitDBInstances) 用于初始化云数据库PostgreSQL实例。
@@ -501,6 +520,15 @@ namespace TencentCloud
                 InquiryPriceUpgradeDBInstanceOutcome InquiryPriceUpgradeDBInstance(const Model::InquiryPriceUpgradeDBInstanceRequest &request);
                 void InquiryPriceUpgradeDBInstanceAsync(const Model::InquiryPriceUpgradeDBInstanceRequest& request, const InquiryPriceUpgradeDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceUpgradeDBInstanceOutcomeCallable InquiryPriceUpgradeDBInstanceCallable(const Model::InquiryPriceUpgradeDBInstanceRequest& request);
+
+                /**
+                 *本接口（IsolateDBInstances）用于隔离实例
+                 * @param req IsolateDBInstancesRequest
+                 * @return IsolateDBInstancesOutcome
+                 */
+                IsolateDBInstancesOutcome IsolateDBInstances(const Model::IsolateDBInstancesRequest &request);
+                void IsolateDBInstancesAsync(const Model::IsolateDBInstancesRequest& request, const IsolateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateDBInstancesOutcomeCallable IsolateDBInstancesCallable(const Model::IsolateDBInstancesRequest& request);
 
                 /**
                  *本接口（ModifyAccountRemark）用于修改帐号备注。

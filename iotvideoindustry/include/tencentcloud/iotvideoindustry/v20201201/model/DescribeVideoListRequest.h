@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取设备Id
+                     * @return DeviceId 设备Id
+                     */
+                    std::string GetDeviceId() const;
+
+                    /**
+                     * 设置设备Id
+                     * @param DeviceId 设备Id
+                     */
+                    void SetDeviceId(const std::string& _deviceId);
+
+                    /**
+                     * 判断参数 DeviceId 是否已赋值
+                     * @return DeviceId 是否已赋值
+                     */
+                    bool DeviceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 设备Id
+                     */
+                    std::string m_deviceId;
+                    bool m_deviceIdHasBeenSet;
 
                 };
             }
