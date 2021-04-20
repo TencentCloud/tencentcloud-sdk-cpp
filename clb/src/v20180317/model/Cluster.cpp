@@ -42,7 +42,8 @@ Cluster::Cluster() :
     m_idleResourceCountHasBeenSet(false),
     m_loadBalanceDirectorCountHasBeenSet(false),
     m_ispHasBeenSet(false),
-    m_clustersZoneHasBeenSet(false)
+    m_clustersZoneHasBeenSet(false),
+    m_clustersVersionHasBeenSet(false)
 {
 }
 
@@ -268,6 +269,16 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
         m_clustersZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("ClustersVersion") && !value["ClustersVersion"].IsNull())
+    {
+        if (!value["ClustersVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.ClustersVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clustersVersion = string(value["ClustersVersion"].GetString());
+        m_clustersVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -442,6 +453,14 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_clustersZone.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_clustersVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClustersVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clustersVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -781,5 +800,21 @@ void Cluster::SetClustersZone(const ClustersZone& _clustersZone)
 bool Cluster::ClustersZoneHasBeenSet() const
 {
     return m_clustersZoneHasBeenSet;
+}
+
+string Cluster::GetClustersVersion() const
+{
+    return m_clustersVersion;
+}
+
+void Cluster::SetClustersVersion(const string& _clustersVersion)
+{
+    m_clustersVersion = _clustersVersion;
+    m_clustersVersionHasBeenSet = true;
+}
+
+bool Cluster::ClustersVersionHasBeenSet() const
+{
+    return m_clustersVersionHasBeenSet;
 }
 

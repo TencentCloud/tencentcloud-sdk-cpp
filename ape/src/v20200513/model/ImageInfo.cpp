@@ -25,7 +25,9 @@ ImageInfo::ImageInfo() :
     m_imageIdHasBeenSet(false),
     m_licenseScopeIdHasBeenSet(false),
     m_dimensionsNameIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_downloadPriceHasBeenSet(false),
+    m_downloadTypeHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,26 @@ CoreInternalOutcome ImageInfo::Deserialize(const Value &value)
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DownloadPrice") && !value["DownloadPrice"].IsNull())
+    {
+        if (!value["DownloadPrice"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ImageInfo.DownloadPrice` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_downloadPrice = value["DownloadPrice"].GetUint64();
+        m_downloadPriceHasBeenSet = true;
+    }
+
+    if (value.HasMember("DownloadType") && !value["DownloadType"].IsNull())
+    {
+        if (!value["DownloadType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageInfo.DownloadType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_downloadType = string(value["DownloadType"].GetString());
+        m_downloadTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +133,22 @@ void ImageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_downloadPriceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DownloadPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_downloadPrice, allocator);
+    }
+
+    if (m_downloadTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DownloadType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_downloadType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +216,37 @@ void ImageInfo::SetUserId(const string& _userId)
 bool ImageInfo::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+uint64_t ImageInfo::GetDownloadPrice() const
+{
+    return m_downloadPrice;
+}
+
+void ImageInfo::SetDownloadPrice(const uint64_t& _downloadPrice)
+{
+    m_downloadPrice = _downloadPrice;
+    m_downloadPriceHasBeenSet = true;
+}
+
+bool ImageInfo::DownloadPriceHasBeenSet() const
+{
+    return m_downloadPriceHasBeenSet;
+}
+
+string ImageInfo::GetDownloadType() const
+{
+    return m_downloadType;
+}
+
+void ImageInfo::SetDownloadType(const string& _downloadType)
+{
+    m_downloadType = _downloadType;
+    m_downloadTypeHasBeenSet = true;
+}
+
+bool ImageInfo::DownloadTypeHasBeenSet() const
+{
+    return m_downloadTypeHasBeenSet;
 }
 

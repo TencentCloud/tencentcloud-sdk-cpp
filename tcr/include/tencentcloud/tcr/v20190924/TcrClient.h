@@ -51,6 +51,10 @@
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSecurityPolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSecurityPolicyResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateTagRetentionExecutionRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateTagRetentionExecutionResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateTagRetentionRuleRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateTagRetentionRuleResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateUserPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateUserPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateWebhookTriggerRequest.h>
@@ -81,6 +85,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteSecurityPolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteSecurityPolicyResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalRequest.h>
@@ -131,6 +137,12 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeRepositoryPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeSecurityPoliciesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeSecurityPoliciesResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionTaskRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionTaskResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionRulesRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionRulesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerRequest.h>
@@ -163,6 +175,8 @@
 #include <tencentcloud/tcr/v20190924/model/ModifyRepositoryInfoPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifySecurityPolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifySecurityPolicyResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyTagRetentionRuleRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyTagRetentionRuleResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerRequest.h>
@@ -229,6 +243,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateSecurityPolicyResponse> CreateSecurityPolicyOutcome;
                 typedef std::future<CreateSecurityPolicyOutcome> CreateSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateSecurityPolicyRequest&, CreateSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityPolicyAsyncHandler;
+                typedef Outcome<Error, Model::CreateTagRetentionExecutionResponse> CreateTagRetentionExecutionOutcome;
+                typedef std::future<CreateTagRetentionExecutionOutcome> CreateTagRetentionExecutionOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateTagRetentionExecutionRequest&, CreateTagRetentionExecutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagRetentionExecutionAsyncHandler;
+                typedef Outcome<Error, Model::CreateTagRetentionRuleResponse> CreateTagRetentionRuleOutcome;
+                typedef std::future<CreateTagRetentionRuleOutcome> CreateTagRetentionRuleOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateTagRetentionRuleRequest&, CreateTagRetentionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagRetentionRuleAsyncHandler;
                 typedef Outcome<Error, Model::CreateUserPersonalResponse> CreateUserPersonalOutcome;
                 typedef std::future<CreateUserPersonalOutcome> CreateUserPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateUserPersonalRequest&, CreateUserPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserPersonalAsyncHandler;
@@ -274,6 +294,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteSecurityPolicyResponse> DeleteSecurityPolicyOutcome;
                 typedef std::future<DeleteSecurityPolicyOutcome> DeleteSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteSecurityPolicyRequest&, DeleteSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityPolicyAsyncHandler;
+                typedef Outcome<Error, Model::DeleteTagRetentionRuleResponse> DeleteTagRetentionRuleOutcome;
+                typedef std::future<DeleteTagRetentionRuleOutcome> DeleteTagRetentionRuleOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteTagRetentionRuleRequest&, DeleteTagRetentionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagRetentionRuleAsyncHandler;
                 typedef Outcome<Error, Model::DeleteWebhookTriggerResponse> DeleteWebhookTriggerOutcome;
                 typedef std::future<DeleteWebhookTriggerOutcome> DeleteWebhookTriggerOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteWebhookTriggerRequest&, DeleteWebhookTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWebhookTriggerAsyncHandler;
@@ -349,6 +372,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSecurityPoliciesResponse> DescribeSecurityPoliciesOutcome;
                 typedef std::future<DescribeSecurityPoliciesOutcome> DescribeSecurityPoliciesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeSecurityPoliciesRequest&, DescribeSecurityPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityPoliciesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTagRetentionExecutionResponse> DescribeTagRetentionExecutionOutcome;
+                typedef std::future<DescribeTagRetentionExecutionOutcome> DescribeTagRetentionExecutionOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeTagRetentionExecutionRequest&, DescribeTagRetentionExecutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagRetentionExecutionAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTagRetentionExecutionTaskResponse> DescribeTagRetentionExecutionTaskOutcome;
+                typedef std::future<DescribeTagRetentionExecutionTaskOutcome> DescribeTagRetentionExecutionTaskOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeTagRetentionExecutionTaskRequest&, DescribeTagRetentionExecutionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagRetentionExecutionTaskAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTagRetentionRulesResponse> DescribeTagRetentionRulesOutcome;
+                typedef std::future<DescribeTagRetentionRulesOutcome> DescribeTagRetentionRulesOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeTagRetentionRulesRequest&, DescribeTagRetentionRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagRetentionRulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUserQuotaPersonalResponse> DescribeUserQuotaPersonalOutcome;
                 typedef std::future<DescribeUserQuotaPersonalOutcome> DescribeUserQuotaPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeUserQuotaPersonalRequest&, DescribeUserQuotaPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserQuotaPersonalAsyncHandler;
@@ -397,6 +429,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifySecurityPolicyResponse> ModifySecurityPolicyOutcome;
                 typedef std::future<ModifySecurityPolicyOutcome> ModifySecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifySecurityPolicyRequest&, ModifySecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityPolicyAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTagRetentionRuleResponse> ModifyTagRetentionRuleOutcome;
+                typedef std::future<ModifyTagRetentionRuleOutcome> ModifyTagRetentionRuleOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ModifyTagRetentionRuleRequest&, ModifyTagRetentionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTagRetentionRuleAsyncHandler;
                 typedef Outcome<Error, Model::ModifyUserPasswordPersonalResponse> ModifyUserPasswordPersonalOutcome;
                 typedef std::future<ModifyUserPasswordPersonalOutcome> ModifyUserPasswordPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyUserPasswordPersonalRequest&, ModifyUserPasswordPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserPasswordPersonalAsyncHandler;
@@ -542,6 +577,24 @@ namespace TencentCloud
                 CreateSecurityPolicyOutcomeCallable CreateSecurityPolicyCallable(const Model::CreateSecurityPolicyRequest& request);
 
                 /**
+                 *手动执行版本保留
+                 * @param req CreateTagRetentionExecutionRequest
+                 * @return CreateTagRetentionExecutionOutcome
+                 */
+                CreateTagRetentionExecutionOutcome CreateTagRetentionExecution(const Model::CreateTagRetentionExecutionRequest &request);
+                void CreateTagRetentionExecutionAsync(const Model::CreateTagRetentionExecutionRequest& request, const CreateTagRetentionExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTagRetentionExecutionOutcomeCallable CreateTagRetentionExecutionCallable(const Model::CreateTagRetentionExecutionRequest& request);
+
+                /**
+                 *创建版本保留规则
+                 * @param req CreateTagRetentionRuleRequest
+                 * @return CreateTagRetentionRuleOutcome
+                 */
+                CreateTagRetentionRuleOutcome CreateTagRetentionRule(const Model::CreateTagRetentionRuleRequest &request);
+                void CreateTagRetentionRuleAsync(const Model::CreateTagRetentionRuleRequest& request, const CreateTagRetentionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTagRetentionRuleOutcomeCallable CreateTagRetentionRuleCallable(const Model::CreateTagRetentionRuleRequest& request);
+
+                /**
                  *创建个人用户
                  * @param req CreateUserPersonalRequest
                  * @return CreateUserPersonalOutcome
@@ -675,6 +728,15 @@ namespace TencentCloud
                 DeleteSecurityPolicyOutcome DeleteSecurityPolicy(const Model::DeleteSecurityPolicyRequest &request);
                 void DeleteSecurityPolicyAsync(const Model::DeleteSecurityPolicyRequest& request, const DeleteSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSecurityPolicyOutcomeCallable DeleteSecurityPolicyCallable(const Model::DeleteSecurityPolicyRequest& request);
+
+                /**
+                 *删除版本保留规则
+                 * @param req DeleteTagRetentionRuleRequest
+                 * @return DeleteTagRetentionRuleOutcome
+                 */
+                DeleteTagRetentionRuleOutcome DeleteTagRetentionRule(const Model::DeleteTagRetentionRuleRequest &request);
+                void DeleteTagRetentionRuleAsync(const Model::DeleteTagRetentionRuleRequest& request, const DeleteTagRetentionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTagRetentionRuleOutcomeCallable DeleteTagRetentionRuleCallable(const Model::DeleteTagRetentionRuleRequest& request);
 
                 /**
                  *删除触发器
@@ -902,6 +964,33 @@ namespace TencentCloud
                 DescribeSecurityPoliciesOutcomeCallable DescribeSecurityPoliciesCallable(const Model::DescribeSecurityPoliciesRequest& request);
 
                 /**
+                 *查询版本保留执行记录
+                 * @param req DescribeTagRetentionExecutionRequest
+                 * @return DescribeTagRetentionExecutionOutcome
+                 */
+                DescribeTagRetentionExecutionOutcome DescribeTagRetentionExecution(const Model::DescribeTagRetentionExecutionRequest &request);
+                void DescribeTagRetentionExecutionAsync(const Model::DescribeTagRetentionExecutionRequest& request, const DescribeTagRetentionExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTagRetentionExecutionOutcomeCallable DescribeTagRetentionExecutionCallable(const Model::DescribeTagRetentionExecutionRequest& request);
+
+                /**
+                 *查询版本保留执行任务
+                 * @param req DescribeTagRetentionExecutionTaskRequest
+                 * @return DescribeTagRetentionExecutionTaskOutcome
+                 */
+                DescribeTagRetentionExecutionTaskOutcome DescribeTagRetentionExecutionTask(const Model::DescribeTagRetentionExecutionTaskRequest &request);
+                void DescribeTagRetentionExecutionTaskAsync(const Model::DescribeTagRetentionExecutionTaskRequest& request, const DescribeTagRetentionExecutionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTagRetentionExecutionTaskOutcomeCallable DescribeTagRetentionExecutionTaskCallable(const Model::DescribeTagRetentionExecutionTaskRequest& request);
+
+                /**
+                 *查询版本保留规则
+                 * @param req DescribeTagRetentionRulesRequest
+                 * @return DescribeTagRetentionRulesOutcome
+                 */
+                DescribeTagRetentionRulesOutcome DescribeTagRetentionRules(const Model::DescribeTagRetentionRulesRequest &request);
+                void DescribeTagRetentionRulesAsync(const Model::DescribeTagRetentionRulesRequest& request, const DescribeTagRetentionRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTagRetentionRulesOutcomeCallable DescribeTagRetentionRulesCallable(const Model::DescribeTagRetentionRulesRequest& request);
+
+                /**
                  *查询个人用户配额
                  * @param req DescribeUserQuotaPersonalRequest
                  * @return DescribeUserQuotaPersonalOutcome
@@ -1044,6 +1133,15 @@ namespace TencentCloud
                 ModifySecurityPolicyOutcome ModifySecurityPolicy(const Model::ModifySecurityPolicyRequest &request);
                 void ModifySecurityPolicyAsync(const Model::ModifySecurityPolicyRequest& request, const ModifySecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySecurityPolicyOutcomeCallable ModifySecurityPolicyCallable(const Model::ModifySecurityPolicyRequest& request);
+
+                /**
+                 *更新版本保留规则
+                 * @param req ModifyTagRetentionRuleRequest
+                 * @return ModifyTagRetentionRuleOutcome
+                 */
+                ModifyTagRetentionRuleOutcome ModifyTagRetentionRule(const Model::ModifyTagRetentionRuleRequest &request);
+                void ModifyTagRetentionRuleAsync(const Model::ModifyTagRetentionRuleRequest& request, const ModifyTagRetentionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTagRetentionRuleOutcomeCallable ModifyTagRetentionRuleCallable(const Model::ModifyTagRetentionRuleRequest& request);
 
                 /**
                  *修改个人用户登录密码

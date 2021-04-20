@@ -118,6 +118,58 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取平台用户下载图片购买的价格(单位:分)
+                     * @return DownloadPrice 平台用户下载图片购买的价格(单位:分)
+                     */
+                    uint64_t GetDownloadPrice() const;
+
+                    /**
+                     * 设置平台用户下载图片购买的价格(单位:分)
+                     * @param DownloadPrice 平台用户下载图片购买的价格(单位:分)
+                     */
+                    void SetDownloadPrice(const uint64_t& _downloadPrice);
+
+                    /**
+                     * 判断参数 DownloadPrice 是否已赋值
+                     * @return DownloadPrice 是否已赋值
+                     */
+                    bool DownloadPriceHasBeenSet() const;
+
+                    /**
+                     * 获取下载类型。匹配集合中的任意元素：
+<li>Single: 单张购买下载</li>
+<li>BasicEnterpriseMember: 企业基础会员下载</li>
+<li>AdvancedEnterpriseMember: 企业高级会员下载</li>
+<li>DistinguishedEnterpriseMember: 企业尊享会员下载</li>
+                     * @return DownloadType 下载类型。匹配集合中的任意元素：
+<li>Single: 单张购买下载</li>
+<li>BasicEnterpriseMember: 企业基础会员下载</li>
+<li>AdvancedEnterpriseMember: 企业高级会员下载</li>
+<li>DistinguishedEnterpriseMember: 企业尊享会员下载</li>
+                     */
+                    std::string GetDownloadType() const;
+
+                    /**
+                     * 设置下载类型。匹配集合中的任意元素：
+<li>Single: 单张购买下载</li>
+<li>BasicEnterpriseMember: 企业基础会员下载</li>
+<li>AdvancedEnterpriseMember: 企业高级会员下载</li>
+<li>DistinguishedEnterpriseMember: 企业尊享会员下载</li>
+                     * @param DownloadType 下载类型。匹配集合中的任意元素：
+<li>Single: 单张购买下载</li>
+<li>BasicEnterpriseMember: 企业基础会员下载</li>
+<li>AdvancedEnterpriseMember: 企业高级会员下载</li>
+<li>DistinguishedEnterpriseMember: 企业尊享会员下载</li>
+                     */
+                    void SetDownloadType(const std::string& _downloadType);
+
+                    /**
+                     * 判断参数 DownloadType 是否已赋值
+                     * @return DownloadType 是否已赋值
+                     */
+                    bool DownloadTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +195,22 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 平台用户下载图片购买的价格(单位:分)
+                     */
+                    uint64_t m_downloadPrice;
+                    bool m_downloadPriceHasBeenSet;
+
+                    /**
+                     * 下载类型。匹配集合中的任意元素：
+<li>Single: 单张购买下载</li>
+<li>BasicEnterpriseMember: 企业基础会员下载</li>
+<li>AdvancedEnterpriseMember: 企业高级会员下载</li>
+<li>DistinguishedEnterpriseMember: 企业尊享会员下载</li>
+                     */
+                    std::string m_downloadType;
+                    bool m_downloadTypeHasBeenSet;
 
                 };
             }

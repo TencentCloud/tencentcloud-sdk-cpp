@@ -647,6 +647,94 @@ namespace TencentCloud
                      */
                     bool SignLawHasBeenSet() const;
 
+                    /**
+                     * 获取物理专线是否为LocalZone
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalZone 物理专线是否为LocalZone
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetLocalZone() const;
+
+                    /**
+                     * 设置物理专线是否为LocalZone
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LocalZone 物理专线是否为LocalZone
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocalZone(const bool& _localZone);
+
+                    /**
+                     * 判断参数 LocalZone 是否已赋值
+                     * @return LocalZone 是否已赋值
+                     */
+                    bool LocalZoneHasBeenSet() const;
+
+                    /**
+                     * 获取该物理专线下vlan 0的专线通道数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VlanZeroDirectConnectTunnelCount 该物理专线下vlan 0的专线通道数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetVlanZeroDirectConnectTunnelCount() const;
+
+                    /**
+                     * 设置该物理专线下vlan 0的专线通道数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VlanZeroDirectConnectTunnelCount 该物理专线下vlan 0的专线通道数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVlanZeroDirectConnectTunnelCount(const uint64_t& _vlanZeroDirectConnectTunnelCount);
+
+                    /**
+                     * 判断参数 VlanZeroDirectConnectTunnelCount 是否已赋值
+                     * @return VlanZeroDirectConnectTunnelCount 是否已赋值
+                     */
+                    bool VlanZeroDirectConnectTunnelCountHasBeenSet() const;
+
+                    /**
+                     * 获取该物理专线下非vlan 0的专线通道数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OtherVlanDirectConnectTunnelCount 该物理专线下非vlan 0的专线通道数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetOtherVlanDirectConnectTunnelCount() const;
+
+                    /**
+                     * 设置该物理专线下非vlan 0的专线通道数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OtherVlanDirectConnectTunnelCount 该物理专线下非vlan 0的专线通道数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOtherVlanDirectConnectTunnelCount(const uint64_t& _otherVlanDirectConnectTunnelCount);
+
+                    /**
+                     * 判断参数 OtherVlanDirectConnectTunnelCount 是否已赋值
+                     * @return OtherVlanDirectConnectTunnelCount 是否已赋值
+                     */
+                    bool OtherVlanDirectConnectTunnelCountHasBeenSet() const;
+
+                    /**
+                     * 获取物理专线最小带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MinBandwidth 物理专线最小带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMinBandwidth() const;
+
+                    /**
+                     * 设置物理专线最小带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MinBandwidth 物理专线最小带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMinBandwidth(const uint64_t& _minBandwidth);
+
+                    /**
+                     * 判断参数 MinBandwidth 是否已赋值
+                     * @return MinBandwidth 是否已赋值
+                     */
+                    bool MinBandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -840,6 +928,34 @@ namespace TencentCloud
                      */
                     bool m_signLaw;
                     bool m_signLawHasBeenSet;
+
+                    /**
+                     * 物理专线是否为LocalZone
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_localZone;
+                    bool m_localZoneHasBeenSet;
+
+                    /**
+                     * 该物理专线下vlan 0的专线通道数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vlanZeroDirectConnectTunnelCount;
+                    bool m_vlanZeroDirectConnectTunnelCountHasBeenSet;
+
+                    /**
+                     * 该物理专线下非vlan 0的专线通道数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_otherVlanDirectConnectTunnelCount;
+                    bool m_otherVlanDirectConnectTunnelCountHasBeenSet;
+
+                    /**
+                     * 物理专线最小带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_minBandwidth;
+                    bool m_minBandwidthHasBeenSet;
 
                 };
             }

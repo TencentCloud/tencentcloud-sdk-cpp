@@ -49,7 +49,11 @@ DirectConnect::DirectConnect() :
     m_idcCityHasBeenSet(false),
     m_chargeStateHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_signLawHasBeenSet(false)
+    m_signLawHasBeenSet(false),
+    m_localZoneHasBeenSet(false),
+    m_vlanZeroDirectConnectTunnelCountHasBeenSet(false),
+    m_otherVlanDirectConnectTunnelCountHasBeenSet(false),
+    m_minBandwidthHasBeenSet(false)
 {
 }
 
@@ -348,6 +352,46 @@ CoreInternalOutcome DirectConnect::Deserialize(const Value &value)
         m_signLawHasBeenSet = true;
     }
 
+    if (value.HasMember("LocalZone") && !value["LocalZone"].IsNull())
+    {
+        if (!value["LocalZone"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnect.LocalZone` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_localZone = value["LocalZone"].GetBool();
+        m_localZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("VlanZeroDirectConnectTunnelCount") && !value["VlanZeroDirectConnectTunnelCount"].IsNull())
+    {
+        if (!value["VlanZeroDirectConnectTunnelCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnect.VlanZeroDirectConnectTunnelCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vlanZeroDirectConnectTunnelCount = value["VlanZeroDirectConnectTunnelCount"].GetUint64();
+        m_vlanZeroDirectConnectTunnelCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("OtherVlanDirectConnectTunnelCount") && !value["OtherVlanDirectConnectTunnelCount"].IsNull())
+    {
+        if (!value["OtherVlanDirectConnectTunnelCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnect.OtherVlanDirectConnectTunnelCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_otherVlanDirectConnectTunnelCount = value["OtherVlanDirectConnectTunnelCount"].GetUint64();
+        m_otherVlanDirectConnectTunnelCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinBandwidth") && !value["MinBandwidth"].IsNull())
+    {
+        if (!value["MinBandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnect.MinBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minBandwidth = value["MinBandwidth"].GetUint64();
+        m_minBandwidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -584,6 +628,38 @@ void DirectConnect::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "SignLaw";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_signLaw, allocator);
+    }
+
+    if (m_localZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LocalZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_localZone, allocator);
+    }
+
+    if (m_vlanZeroDirectConnectTunnelCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VlanZeroDirectConnectTunnelCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vlanZeroDirectConnectTunnelCount, allocator);
+    }
+
+    if (m_otherVlanDirectConnectTunnelCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OtherVlanDirectConnectTunnelCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_otherVlanDirectConnectTunnelCount, allocator);
+    }
+
+    if (m_minBandwidthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MinBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minBandwidth, allocator);
     }
 
 }
@@ -1035,5 +1111,69 @@ void DirectConnect::SetSignLaw(const bool& _signLaw)
 bool DirectConnect::SignLawHasBeenSet() const
 {
     return m_signLawHasBeenSet;
+}
+
+bool DirectConnect::GetLocalZone() const
+{
+    return m_localZone;
+}
+
+void DirectConnect::SetLocalZone(const bool& _localZone)
+{
+    m_localZone = _localZone;
+    m_localZoneHasBeenSet = true;
+}
+
+bool DirectConnect::LocalZoneHasBeenSet() const
+{
+    return m_localZoneHasBeenSet;
+}
+
+uint64_t DirectConnect::GetVlanZeroDirectConnectTunnelCount() const
+{
+    return m_vlanZeroDirectConnectTunnelCount;
+}
+
+void DirectConnect::SetVlanZeroDirectConnectTunnelCount(const uint64_t& _vlanZeroDirectConnectTunnelCount)
+{
+    m_vlanZeroDirectConnectTunnelCount = _vlanZeroDirectConnectTunnelCount;
+    m_vlanZeroDirectConnectTunnelCountHasBeenSet = true;
+}
+
+bool DirectConnect::VlanZeroDirectConnectTunnelCountHasBeenSet() const
+{
+    return m_vlanZeroDirectConnectTunnelCountHasBeenSet;
+}
+
+uint64_t DirectConnect::GetOtherVlanDirectConnectTunnelCount() const
+{
+    return m_otherVlanDirectConnectTunnelCount;
+}
+
+void DirectConnect::SetOtherVlanDirectConnectTunnelCount(const uint64_t& _otherVlanDirectConnectTunnelCount)
+{
+    m_otherVlanDirectConnectTunnelCount = _otherVlanDirectConnectTunnelCount;
+    m_otherVlanDirectConnectTunnelCountHasBeenSet = true;
+}
+
+bool DirectConnect::OtherVlanDirectConnectTunnelCountHasBeenSet() const
+{
+    return m_otherVlanDirectConnectTunnelCountHasBeenSet;
+}
+
+uint64_t DirectConnect::GetMinBandwidth() const
+{
+    return m_minBandwidth;
+}
+
+void DirectConnect::SetMinBandwidth(const uint64_t& _minBandwidth)
+{
+    m_minBandwidth = _minBandwidth;
+    m_minBandwidthHasBeenSet = true;
+}
+
+bool DirectConnect::MinBandwidthHasBeenSet() const
+{
+    return m_minBandwidthHasBeenSet;
 }
 

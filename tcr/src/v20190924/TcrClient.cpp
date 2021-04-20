@@ -642,6 +642,92 @@ TcrClient::CreateSecurityPolicyOutcomeCallable TcrClient::CreateSecurityPolicyCa
     return task->get_future();
 }
 
+TcrClient::CreateTagRetentionExecutionOutcome TcrClient::CreateTagRetentionExecution(const CreateTagRetentionExecutionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTagRetentionExecution");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTagRetentionExecutionResponse rsp = CreateTagRetentionExecutionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTagRetentionExecutionOutcome(rsp);
+        else
+            return CreateTagRetentionExecutionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTagRetentionExecutionOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateTagRetentionExecutionAsync(const CreateTagRetentionExecutionRequest& request, const CreateTagRetentionExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTagRetentionExecution(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateTagRetentionExecutionOutcomeCallable TcrClient::CreateTagRetentionExecutionCallable(const CreateTagRetentionExecutionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTagRetentionExecutionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTagRetentionExecution(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::CreateTagRetentionRuleOutcome TcrClient::CreateTagRetentionRule(const CreateTagRetentionRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTagRetentionRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTagRetentionRuleResponse rsp = CreateTagRetentionRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTagRetentionRuleOutcome(rsp);
+        else
+            return CreateTagRetentionRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTagRetentionRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateTagRetentionRuleAsync(const CreateTagRetentionRuleRequest& request, const CreateTagRetentionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTagRetentionRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateTagRetentionRuleOutcomeCallable TcrClient::CreateTagRetentionRuleCallable(const CreateTagRetentionRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTagRetentionRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTagRetentionRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::CreateUserPersonalOutcome TcrClient::CreateUserPersonal(const CreateUserPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUserPersonal");
@@ -1280,6 +1366,49 @@ TcrClient::DeleteSecurityPolicyOutcomeCallable TcrClient::DeleteSecurityPolicyCa
         [this, request]()
         {
             return this->DeleteSecurityPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DeleteTagRetentionRuleOutcome TcrClient::DeleteTagRetentionRule(const DeleteTagRetentionRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTagRetentionRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTagRetentionRuleResponse rsp = DeleteTagRetentionRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTagRetentionRuleOutcome(rsp);
+        else
+            return DeleteTagRetentionRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTagRetentionRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteTagRetentionRuleAsync(const DeleteTagRetentionRuleRequest& request, const DeleteTagRetentionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTagRetentionRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteTagRetentionRuleOutcomeCallable TcrClient::DeleteTagRetentionRuleCallable(const DeleteTagRetentionRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTagRetentionRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTagRetentionRule(request);
         }
     );
 
@@ -2362,6 +2491,135 @@ TcrClient::DescribeSecurityPoliciesOutcomeCallable TcrClient::DescribeSecurityPo
     return task->get_future();
 }
 
+TcrClient::DescribeTagRetentionExecutionOutcome TcrClient::DescribeTagRetentionExecution(const DescribeTagRetentionExecutionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTagRetentionExecution");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTagRetentionExecutionResponse rsp = DescribeTagRetentionExecutionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTagRetentionExecutionOutcome(rsp);
+        else
+            return DescribeTagRetentionExecutionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTagRetentionExecutionOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeTagRetentionExecutionAsync(const DescribeTagRetentionExecutionRequest& request, const DescribeTagRetentionExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTagRetentionExecution(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeTagRetentionExecutionOutcomeCallable TcrClient::DescribeTagRetentionExecutionCallable(const DescribeTagRetentionExecutionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTagRetentionExecutionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTagRetentionExecution(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeTagRetentionExecutionTaskOutcome TcrClient::DescribeTagRetentionExecutionTask(const DescribeTagRetentionExecutionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTagRetentionExecutionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTagRetentionExecutionTaskResponse rsp = DescribeTagRetentionExecutionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTagRetentionExecutionTaskOutcome(rsp);
+        else
+            return DescribeTagRetentionExecutionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTagRetentionExecutionTaskOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeTagRetentionExecutionTaskAsync(const DescribeTagRetentionExecutionTaskRequest& request, const DescribeTagRetentionExecutionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTagRetentionExecutionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeTagRetentionExecutionTaskOutcomeCallable TcrClient::DescribeTagRetentionExecutionTaskCallable(const DescribeTagRetentionExecutionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTagRetentionExecutionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTagRetentionExecutionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeTagRetentionRulesOutcome TcrClient::DescribeTagRetentionRules(const DescribeTagRetentionRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTagRetentionRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTagRetentionRulesResponse rsp = DescribeTagRetentionRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTagRetentionRulesOutcome(rsp);
+        else
+            return DescribeTagRetentionRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTagRetentionRulesOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeTagRetentionRulesAsync(const DescribeTagRetentionRulesRequest& request, const DescribeTagRetentionRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTagRetentionRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeTagRetentionRulesOutcomeCallable TcrClient::DescribeTagRetentionRulesCallable(const DescribeTagRetentionRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTagRetentionRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTagRetentionRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DescribeUserQuotaPersonalOutcome TcrClient::DescribeUserQuotaPersonal(const DescribeUserQuotaPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserQuotaPersonal");
@@ -3043,6 +3301,49 @@ TcrClient::ModifySecurityPolicyOutcomeCallable TcrClient::ModifySecurityPolicyCa
         [this, request]()
         {
             return this->ModifySecurityPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::ModifyTagRetentionRuleOutcome TcrClient::ModifyTagRetentionRule(const ModifyTagRetentionRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTagRetentionRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTagRetentionRuleResponse rsp = ModifyTagRetentionRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTagRetentionRuleOutcome(rsp);
+        else
+            return ModifyTagRetentionRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTagRetentionRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ModifyTagRetentionRuleAsync(const ModifyTagRetentionRuleRequest& request, const ModifyTagRetentionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTagRetentionRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::ModifyTagRetentionRuleOutcomeCallable TcrClient::ModifyTagRetentionRuleCallable(const ModifyTagRetentionRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTagRetentionRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTagRetentionRule(request);
         }
     );
 

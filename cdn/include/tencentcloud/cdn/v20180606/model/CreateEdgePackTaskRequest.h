@@ -79,24 +79,6 @@ namespace TencentCloud
                     bool CosUriFromHasBeenSet() const;
 
                     /**
-                     * 获取拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
-                     * @return CosUriTo 拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
-                     */
-                    std::string GetCosUriTo() const;
-
-                    /**
-                     * 设置拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
-                     * @param CosUriTo 拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
-                     */
-                    void SetCosUriTo(const std::string& _cosUriTo);
-
-                    /**
-                     * 判断参数 CosUriTo 是否已赋值
-                     * @return CosUriTo 是否已赋值
-                     */
-                    bool CosUriToHasBeenSet() const;
-
-                    /**
                      * 获取BlockID 的值, WALLE为1903654775(0x71777777)，VasDolly为2282837503(0x881155ff),传0或不传时默认为 WALLE 方案
                      * @return BlockID BlockID 的值, WALLE为1903654775(0x71777777)，VasDolly为2282837503(0x881155ff),传0或不传时默认为 WALLE 方案
                      */
@@ -114,6 +96,24 @@ namespace TencentCloud
                      */
                     bool BlockIDHasBeenSet() const;
 
+                    /**
+                     * 获取拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
+                     * @return CosUriTo 拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
+                     */
+                    std::string GetCosUriTo() const;
+
+                    /**
+                     * 设置拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
+                     * @param CosUriTo 拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
+                     */
+                    void SetCosUriTo(const std::string& _cosUriTo);
+
+                    /**
+                     * 判断参数 CosUriTo 是否已赋值
+                     * @return CosUriTo 是否已赋值
+                     */
+                    bool CosUriToHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,16 +129,16 @@ namespace TencentCloud
                     bool m_cosUriFromHasBeenSet;
 
                     /**
-                     * 拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
-                     */
-                    std::string m_cosUriTo;
-                    bool m_cosUriToHasBeenSet;
-
-                    /**
                      * BlockID 的值, WALLE为1903654775(0x71777777)，VasDolly为2282837503(0x881155ff),传0或不传时默认为 WALLE 方案
                      */
                     uint64_t m_blockID;
                     bool m_blockIDHasBeenSet;
+
+                    /**
+                     * 拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
+                     */
+                    std::string m_cosUriTo;
+                    bool m_cosUriToHasBeenSet;
 
                 };
             }

@@ -26,8 +26,8 @@ using namespace std;
 CreateEdgePackTaskRequest::CreateEdgePackTaskRequest() :
     m_cosBucketHasBeenSet(false),
     m_cosUriFromHasBeenSet(false),
-    m_cosUriToHasBeenSet(false),
-    m_blockIDHasBeenSet(false)
+    m_blockIDHasBeenSet(false),
+    m_cosUriToHasBeenSet(false)
 {
 }
 
@@ -54,20 +54,20 @@ string CreateEdgePackTaskRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_cosUriFrom.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_cosUriToHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "CosUriTo";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cosUriTo.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_blockIDHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "BlockID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_blockID, allocator);
+    }
+
+    if (m_cosUriToHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosUriTo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cosUriTo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -110,22 +110,6 @@ bool CreateEdgePackTaskRequest::CosUriFromHasBeenSet() const
     return m_cosUriFromHasBeenSet;
 }
 
-string CreateEdgePackTaskRequest::GetCosUriTo() const
-{
-    return m_cosUriTo;
-}
-
-void CreateEdgePackTaskRequest::SetCosUriTo(const string& _cosUriTo)
-{
-    m_cosUriTo = _cosUriTo;
-    m_cosUriToHasBeenSet = true;
-}
-
-bool CreateEdgePackTaskRequest::CosUriToHasBeenSet() const
-{
-    return m_cosUriToHasBeenSet;
-}
-
 uint64_t CreateEdgePackTaskRequest::GetBlockID() const
 {
     return m_blockID;
@@ -140,6 +124,22 @@ void CreateEdgePackTaskRequest::SetBlockID(const uint64_t& _blockID)
 bool CreateEdgePackTaskRequest::BlockIDHasBeenSet() const
 {
     return m_blockIDHasBeenSet;
+}
+
+string CreateEdgePackTaskRequest::GetCosUriTo() const
+{
+    return m_cosUriTo;
+}
+
+void CreateEdgePackTaskRequest::SetCosUriTo(const string& _cosUriTo)
+{
+    m_cosUriTo = _cosUriTo;
+    m_cosUriToHasBeenSet = true;
+}
+
+bool CreateEdgePackTaskRequest::CosUriToHasBeenSet() const
+{
+    return m_cosUriToHasBeenSet;
 }
 
 
