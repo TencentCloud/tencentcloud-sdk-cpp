@@ -406,6 +406,78 @@ namespace TencentCloud
                      */
                     bool RowsSentRatioHasBeenSet() const;
 
+                    /**
+                     * 获取平均执行时间
+                     * @return QueryTimeAvg 平均执行时间
+                     */
+                    double GetQueryTimeAvg() const;
+
+                    /**
+                     * 设置平均执行时间
+                     * @param QueryTimeAvg 平均执行时间
+                     */
+                    void SetQueryTimeAvg(const double& _queryTimeAvg);
+
+                    /**
+                     * 判断参数 QueryTimeAvg 是否已赋值
+                     * @return QueryTimeAvg 是否已赋值
+                     */
+                    bool QueryTimeAvgHasBeenSet() const;
+
+                    /**
+                     * 获取平均返回行数
+                     * @return RowsSentAvg 平均返回行数
+                     */
+                    double GetRowsSentAvg() const;
+
+                    /**
+                     * 设置平均返回行数
+                     * @param RowsSentAvg 平均返回行数
+                     */
+                    void SetRowsSentAvg(const double& _rowsSentAvg);
+
+                    /**
+                     * 判断参数 RowsSentAvg 是否已赋值
+                     * @return RowsSentAvg 是否已赋值
+                     */
+                    bool RowsSentAvgHasBeenSet() const;
+
+                    /**
+                     * 获取平均锁等待时间
+                     * @return LockTimeAvg 平均锁等待时间
+                     */
+                    double GetLockTimeAvg() const;
+
+                    /**
+                     * 设置平均锁等待时间
+                     * @param LockTimeAvg 平均锁等待时间
+                     */
+                    void SetLockTimeAvg(const double& _lockTimeAvg);
+
+                    /**
+                     * 判断参数 LockTimeAvg 是否已赋值
+                     * @return LockTimeAvg 是否已赋值
+                     */
+                    bool LockTimeAvgHasBeenSet() const;
+
+                    /**
+                     * 获取平均扫描行数
+                     * @return RowsExaminedAvg 平均扫描行数
+                     */
+                    double GetRowsExaminedAvg() const;
+
+                    /**
+                     * 设置平均扫描行数
+                     * @param RowsExaminedAvg 平均扫描行数
+                     */
+                    void SetRowsExaminedAvg(const double& _rowsExaminedAvg);
+
+                    /**
+                     * 判断参数 RowsExaminedAvg 是否已赋值
+                     * @return RowsExaminedAvg 是否已赋值
+                     */
+                    bool RowsExaminedAvgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -527,6 +599,30 @@ namespace TencentCloud
                      */
                     double m_rowsSentRatio;
                     bool m_rowsSentRatioHasBeenSet;
+
+                    /**
+                     * 平均执行时间
+                     */
+                    double m_queryTimeAvg;
+                    bool m_queryTimeAvgHasBeenSet;
+
+                    /**
+                     * 平均返回行数
+                     */
+                    double m_rowsSentAvg;
+                    bool m_rowsSentAvgHasBeenSet;
+
+                    /**
+                     * 平均锁等待时间
+                     */
+                    double m_lockTimeAvg;
+                    bool m_lockTimeAvgHasBeenSet;
+
+                    /**
+                     * 平均扫描行数
+                     */
+                    double m_rowsExaminedAvg;
+                    bool m_rowsExaminedAvgHasBeenSet;
 
                 };
             }

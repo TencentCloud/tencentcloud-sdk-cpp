@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取返回的Top表数量，最大值为20，默认为最大值。
-                     * @return Limit 返回的Top表数量，最大值为20，默认为最大值。
+                     * 获取返回的Top表数量，最大值为100，默认为20。
+                     * @return Limit 返回的Top表数量，最大值为100，默认为20。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回的Top表数量，最大值为20，默认为最大值。
-                     * @param Limit 返回的Top表数量，最大值为20，默认为最大值。
+                     * 设置返回的Top表数量，最大值为100，默认为20。
+                     * @param Limit 返回的Top表数量，最大值为100，默认为20。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 返回的Top表数量，最大值为20，默认为最大值。
+                     * 返回的Top表数量，最大值为100，默认为20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

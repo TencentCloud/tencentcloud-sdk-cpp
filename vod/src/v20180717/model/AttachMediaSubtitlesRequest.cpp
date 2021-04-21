@@ -27,7 +27,8 @@ AttachMediaSubtitlesRequest::AttachMediaSubtitlesRequest() :
     m_fileIdHasBeenSet(false),
     m_operationHasBeenSet(false),
     m_adaptiveDynamicStreamingDefinitionHasBeenSet(false),
-    m_subtitleIdsHasBeenSet(false)
+    m_subtitleIdsHasBeenSet(false),
+    m_subAppIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,14 @@ string AttachMediaSubtitlesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -145,6 +154,22 @@ void AttachMediaSubtitlesRequest::SetSubtitleIds(const vector<string>& _subtitle
 bool AttachMediaSubtitlesRequest::SubtitleIdsHasBeenSet() const
 {
     return m_subtitleIdsHasBeenSet;
+}
+
+uint64_t AttachMediaSubtitlesRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void AttachMediaSubtitlesRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool AttachMediaSubtitlesRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 

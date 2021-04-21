@@ -52,6 +52,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DBBackupTimeConfig.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBLogFilesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageResponse.h
+  include/tencentcloud/mariadb/v20170312/model/NodeInfo.h
   include/tencentcloud/mariadb/v20170312/model/DescribeOrdersResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/ResetAccountPasswordRequest.h
@@ -114,6 +115,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/InstanceSpec.h
   include/tencentcloud/mariadb/v20170312/model/DescribeFlowRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateAccountResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodResponse.h
   include/tencentcloud/mariadb/v20170312/model/RegionInfo.h
@@ -135,6 +137,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstancesProjectRequest.h
   include/tencentcloud/mariadb/v20170312/model/FlushBinlogRequest.h
   include/tencentcloud/mariadb/v20170312/model/MonitorData.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodResponse.h
   include/tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceRequest.h
@@ -176,6 +179,7 @@ set(mariadb_src
   src/v20170312/model/DBBackupTimeConfig.cpp
   src/v20170312/model/DescribeDBLogFilesRequest.cpp
   src/v20170312/model/DescribeDBResourceUsageResponse.cpp
+  src/v20170312/model/NodeInfo.cpp
   src/v20170312/model/DescribeOrdersResponse.cpp
   src/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20170312/model/ResetAccountPasswordRequest.cpp
@@ -238,6 +242,7 @@ set(mariadb_src
   src/v20170312/model/InstanceSpec.cpp
   src/v20170312/model/DescribeFlowRequest.cpp
   src/v20170312/model/DescribeDBPerformanceResponse.cpp
+  src/v20170312/model/DescribeInstanceNodeInfoRequest.cpp
   src/v20170312/model/CreateAccountResponse.cpp
   src/v20170312/model/DescribeLogFileRetentionPeriodResponse.cpp
   src/v20170312/model/RegionInfo.cpp
@@ -259,6 +264,7 @@ set(mariadb_src
   src/v20170312/model/ModifyDBInstancesProjectRequest.cpp
   src/v20170312/model/FlushBinlogRequest.cpp
   src/v20170312/model/MonitorData.cpp
+  src/v20170312/model/DescribeInstanceNodeInfoResponse.cpp
   src/v20170312/model/ModifyLogFileRetentionPeriodResponse.cpp
   src/v20170312/model/DisassociateSecurityGroupsResponse.cpp
   src/v20170312/model/DescribeDBPerformanceRequest.cpp

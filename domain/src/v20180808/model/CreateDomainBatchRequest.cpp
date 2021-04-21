@@ -28,7 +28,8 @@ CreateDomainBatchRequest::CreateDomainBatchRequest() :
     m_periodHasBeenSet(false),
     m_domainsHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_packageResourceIdHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string CreateDomainBatchRequest::ToJsonString() const
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_packageResourceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PackageResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_packageResourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -170,6 +179,22 @@ void CreateDomainBatchRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 bool CreateDomainBatchRequest::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+string CreateDomainBatchRequest::GetPackageResourceId() const
+{
+    return m_packageResourceId;
+}
+
+void CreateDomainBatchRequest::SetPackageResourceId(const string& _packageResourceId)
+{
+    m_packageResourceId = _packageResourceId;
+    m_packageResourceIdHasBeenSet = true;
+}
+
+bool CreateDomainBatchRequest::PackageResourceIdHasBeenSet() const
+{
+    return m_packageResourceIdHasBeenSet;
 }
 
 

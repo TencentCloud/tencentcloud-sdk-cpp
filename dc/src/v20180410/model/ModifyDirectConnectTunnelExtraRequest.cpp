@@ -38,7 +38,8 @@ ModifyDirectConnectTunnelExtraRequest::ModifyDirectConnectTunnelExtraRequest() :
     m_bfdInfoHasBeenSet(false),
     m_nqaInfoHasBeenSet(false),
     m_iPv6EnableHasBeenSet(false),
-    m_customerIDCRoutesHasBeenSet(false)
+    m_customerIDCRoutesHasBeenSet(false),
+    m_jumboEnableHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,14 @@ string ModifyDirectConnectTunnelExtraRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_jumboEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "JumboEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_jumboEnable, allocator);
     }
 
 
@@ -426,6 +435,22 @@ void ModifyDirectConnectTunnelExtraRequest::SetCustomerIDCRoutes(const vector<Ro
 bool ModifyDirectConnectTunnelExtraRequest::CustomerIDCRoutesHasBeenSet() const
 {
     return m_customerIDCRoutesHasBeenSet;
+}
+
+int64_t ModifyDirectConnectTunnelExtraRequest::GetJumboEnable() const
+{
+    return m_jumboEnable;
+}
+
+void ModifyDirectConnectTunnelExtraRequest::SetJumboEnable(const int64_t& _jumboEnable)
+{
+    m_jumboEnable = _jumboEnable;
+    m_jumboEnableHasBeenSet = true;
+}
+
+bool ModifyDirectConnectTunnelExtraRequest::JumboEnableHasBeenSet() const
+{
+    return m_jumboEnableHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeVideoListResponse::DescribeVideoListResponse() :
     m_totalCountHasBeenSet(false),
-    m_videoListHasBeenSet(false)
+    m_videoListHasBeenSet(false),
+    m_recordListHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,26 @@ CoreInternalOutcome DescribeVideoListResponse::Deserialize(const string &payload
         m_videoListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecordList") && !rsp["RecordList"].IsNull())
+    {
+        if (!rsp["RecordList"].IsArray())
+            return CoreInternalOutcome(Error("response `RecordList` is not array type"));
+
+        const Value &tmpValue = rsp["RecordList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RecordTaskItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recordList.push_back(item);
+        }
+        m_recordListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -114,6 +135,16 @@ RecordTaskItem DescribeVideoListResponse::GetVideoList() const
 bool DescribeVideoListResponse::VideoListHasBeenSet() const
 {
     return m_videoListHasBeenSet;
+}
+
+vector<RecordTaskItem> DescribeVideoListResponse::GetRecordList() const
+{
+    return m_recordList;
+}
+
+bool DescribeVideoListResponse::RecordListHasBeenSet() const
+{
+    return m_recordListHasBeenSet;
 }
 
 

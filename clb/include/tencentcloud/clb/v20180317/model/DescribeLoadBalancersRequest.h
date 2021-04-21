@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID。
-                     * @return LoadBalancerIds 负载均衡实例 ID。
+                     * 获取负载均衡实例ID。
+                     * @return LoadBalancerIds 负载均衡实例ID。
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
-                     * 设置负载均衡实例 ID。
-                     * @param LoadBalancerIds 负载均衡实例 ID。
+                     * 设置负载均衡实例ID。
+                     * @param LoadBalancerIds 负载均衡实例ID。
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
@@ -192,14 +192,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool BackendPrivateIpsHasBeenSet() const;
 
                     /**
-                     * 获取数据偏移量，默认为 0。
-                     * @return Offset 数据偏移量，默认为 0。
+                     * 获取数据偏移量，默认为0。
+                     * @return Offset 数据偏移量，默认为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置数据偏移量，默认为 0。
-                     * @param Offset 数据偏移量，默认为 0。
+                     * 设置数据偏移量，默认为0。
+                     * @param Offset 数据偏移量，默认为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -340,14 +340,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID，如 sg-m1cc9123
-                     * @return SecurityGroup 安全组ID，如 sg-m1cc9123
+                     * 获取安全组ID，如 sg-m1cc****。
+                     * @return SecurityGroup 安全组ID，如 sg-m1cc****。
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
-                     * 设置安全组ID，如 sg-m1cc9123
-                     * @param SecurityGroup 安全组ID，如 sg-m1cc9123
+                     * 设置安全组ID，如 sg-m1cc****。
+                     * @param SecurityGroup 安全组ID，如 sg-m1cc****。
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
 
@@ -358,14 +358,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool SecurityGroupHasBeenSet() const;
 
                     /**
-                     * 获取主可用区ID，如 ："100001" （对应的是广州一区）
-                     * @return MasterZone 主可用区ID，如 ："100001" （对应的是广州一区）
+                     * 获取主可用区ID，如 ："100001" （对应的是广州一区）。
+                     * @return MasterZone 主可用区ID，如 ："100001" （对应的是广州一区）。
                      */
                     std::string GetMasterZone() const;
 
                     /**
-                     * 设置主可用区ID，如 ："100001" （对应的是广州一区）
-                     * @param MasterZone 主可用区ID，如 ："100001" （对应的是广州一区）
+                     * 设置主可用区ID，如 ："100001" （对应的是广州一区）。
+                     * @param MasterZone 主可用区ID，如 ："100001" （对应的是广州一区）。
                      */
                     void SetMasterZone(const std::string& _masterZone);
 
@@ -382,12 +382,16 @@ OPEN：公网属性， INTERNAL：内网属性。
 <li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>
 <li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
+<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
+<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
                      * @return Filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：
 <li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括"BANDWIDTH_PREPAID","TRAFFIC_POSTPAID_BY_HOUR","BANDWIDTH_POSTPAID_BY_HOUR","BANDWIDTH_PACKAGE"。</li>
 <li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ："100001" （对应的是广州一区）。</li>
 <li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>
 <li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
+<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
+<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -398,12 +402,16 @@ OPEN：公网属性， INTERNAL：内网属性。
 <li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>
 <li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
+<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
+<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
                      * @param Filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：
 <li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括"BANDWIDTH_PREPAID","TRAFFIC_POSTPAID_BY_HOUR","BANDWIDTH_POSTPAID_BY_HOUR","BANDWIDTH_PACKAGE"。</li>
 <li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ："100001" （对应的是广州一区）。</li>
 <li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>
 <li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
+<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
+<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -416,7 +424,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                 private:
 
                     /**
-                     * 负载均衡实例 ID。
+                     * 负载均衡实例ID。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;
@@ -465,7 +473,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_backendPrivateIpsHasBeenSet;
 
                     /**
-                     * 数据偏移量，默认为 0。
+                     * 数据偏移量，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -514,13 +522,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 安全组ID，如 sg-m1cc9123
+                     * 安全组ID，如 sg-m1cc****。
                      */
                     std::string m_securityGroup;
                     bool m_securityGroupHasBeenSet;
 
                     /**
-                     * 主可用区ID，如 ："100001" （对应的是广州一区）
+                     * 主可用区ID，如 ："100001" （对应的是广州一区）。
                      */
                     std::string m_masterZone;
                     bool m_masterZoneHasBeenSet;
@@ -532,6 +540,8 @@ OPEN：公网属性， INTERNAL：内网属性。
 <li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>
 <li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
+<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
+<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

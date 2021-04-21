@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取付费模式 0手动在线付费，1使用余额付费
-                     * @return PayMode 付费模式 0手动在线付费，1使用余额付费
+                     * 获取付费模式 0手动在线付费，1使用余额付费，2使用特惠包
+                     * @return PayMode 付费模式 0手动在线付费，1使用余额付费，2使用特惠包
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置付费模式 0手动在线付费，1使用余额付费
-                     * @param PayMode 付费模式 0手动在线付费，1使用余额付费
+                     * 设置付费模式 0手动在线付费，1使用余额付费，2使用特惠包
+                     * @param PayMode 付费模式 0手动在线付费，1使用余额付费，2使用特惠包
                      */
                     void SetPayMode(const int64_t& _payMode);
 
@@ -140,6 +140,24 @@ namespace TencentCloud
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取使用的特惠包ID，PayMode为2时必填
+                     * @return PackageResourceId 使用的特惠包ID，PayMode为2时必填
+                     */
+                    std::string GetPackageResourceId() const;
+
+                    /**
+                     * 设置使用的特惠包ID，PayMode为2时必填
+                     * @param PackageResourceId 使用的特惠包ID，PayMode为2时必填
+                     */
+                    void SetPackageResourceId(const std::string& _packageResourceId);
+
+                    /**
+                     * 判断参数 PackageResourceId 是否已赋值
+                     * @return PackageResourceId 是否已赋值
+                     */
+                    bool PackageResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,7 +179,7 @@ namespace TencentCloud
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 付费模式 0手动在线付费，1使用余额付费
+                     * 付费模式 0手动在线付费，1使用余额付费，2使用特惠包
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
@@ -173,6 +191,12 @@ namespace TencentCloud
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 使用的特惠包ID，PayMode为2时必填
+                     */
+                    std::string m_packageResourceId;
+                    bool m_packageResourceIdHasBeenSet;
 
                 };
             }

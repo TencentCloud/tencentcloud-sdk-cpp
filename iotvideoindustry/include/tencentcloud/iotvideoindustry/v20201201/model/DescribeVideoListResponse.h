@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取录像详情列表
-                     * @return VideoList 录像详情列表
+                     * 获取已废弃
+                     * @return VideoList 已废弃
                      */
                     RecordTaskItem GetVideoList() const;
 
@@ -66,6 +66,18 @@ namespace TencentCloud
                      * @return VideoList 是否已赋值
                      */
                     bool VideoListHasBeenSet() const;
+
+                    /**
+                     * 获取录像详情列表
+                     * @return RecordList 录像详情列表
+                     */
+                    std::vector<RecordTaskItem> GetRecordList() const;
+
+                    /**
+                     * 判断参数 RecordList 是否已赋值
+                     * @return RecordList 是否已赋值
+                     */
+                    bool RecordListHasBeenSet() const;
 
                 private:
 
@@ -76,10 +88,16 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 录像详情列表
+                     * 已废弃
                      */
                     RecordTaskItem m_videoList;
                     bool m_videoListHasBeenSet;
+
+                    /**
+                     * 录像详情列表
+                     */
+                    std::vector<RecordTaskItem> m_recordList;
+                    bool m_recordListHasBeenSet;
 
                 };
             }

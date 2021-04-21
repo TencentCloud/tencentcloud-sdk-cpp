@@ -27,6 +27,8 @@
 #include <tencentcloud/dbbrain/v20191016/model/AddUserContactResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportTaskRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportTaskResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportUrlRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportUrlResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/CreateSchedulerMailProfileRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBDiagEventResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBDiagHistoryRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBDiagHistoryResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeDBDiagReportTasksRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeDBDiagReportTasksResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBSpaceStatusRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDBSpaceStatusResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeDiagDBInstancesRequest.h>
@@ -59,6 +63,12 @@
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTopSqlsRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTopSqlsResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogUserHostStatsRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeSlowLogUserHostStatsResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceSchemaTimeSeriesRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceSchemaTimeSeriesResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceSchemasRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceSchemasResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTableTimeSeriesRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTableTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesRequest.h>
@@ -85,6 +95,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateDBDiagReportTaskResponse> CreateDBDiagReportTaskOutcome;
                 typedef std::future<CreateDBDiagReportTaskOutcome> CreateDBDiagReportTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateDBDiagReportTaskRequest&, CreateDBDiagReportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBDiagReportTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateDBDiagReportUrlResponse> CreateDBDiagReportUrlOutcome;
+                typedef std::future<CreateDBDiagReportUrlOutcome> CreateDBDiagReportUrlOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateDBDiagReportUrlRequest&, CreateDBDiagReportUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBDiagReportUrlAsyncHandler;
                 typedef Outcome<Error, Model::CreateMailProfileResponse> CreateMailProfileOutcome;
                 typedef std::future<CreateMailProfileOutcome> CreateMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateMailProfileRequest&, CreateMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMailProfileAsyncHandler;
@@ -109,6 +122,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDBDiagHistoryResponse> DescribeDBDiagHistoryOutcome;
                 typedef std::future<DescribeDBDiagHistoryOutcome> DescribeDBDiagHistoryOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagHistoryRequest&, DescribeDBDiagHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagHistoryAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDBDiagReportTasksResponse> DescribeDBDiagReportTasksOutcome;
+                typedef std::future<DescribeDBDiagReportTasksOutcome> DescribeDBDiagReportTasksOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagReportTasksRequest&, DescribeDBDiagReportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagReportTasksAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBSpaceStatusResponse> DescribeDBSpaceStatusOutcome;
                 typedef std::future<DescribeDBSpaceStatusOutcome> DescribeDBSpaceStatusOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBSpaceStatusRequest&, DescribeDBSpaceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSpaceStatusAsyncHandler;
@@ -133,6 +149,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSlowLogTopSqlsResponse> DescribeSlowLogTopSqlsOutcome;
                 typedef std::future<DescribeSlowLogTopSqlsOutcome> DescribeSlowLogTopSqlsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSlowLogTopSqlsRequest&, DescribeSlowLogTopSqlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogTopSqlsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSlowLogUserHostStatsResponse> DescribeSlowLogUserHostStatsOutcome;
+                typedef std::future<DescribeSlowLogUserHostStatsOutcome> DescribeSlowLogUserHostStatsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeSlowLogUserHostStatsRequest&, DescribeSlowLogUserHostStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogUserHostStatsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTopSpaceSchemaTimeSeriesResponse> DescribeTopSpaceSchemaTimeSeriesOutcome;
+                typedef std::future<DescribeTopSpaceSchemaTimeSeriesOutcome> DescribeTopSpaceSchemaTimeSeriesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceSchemaTimeSeriesRequest&, DescribeTopSpaceSchemaTimeSeriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceSchemaTimeSeriesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTopSpaceSchemasResponse> DescribeTopSpaceSchemasOutcome;
+                typedef std::future<DescribeTopSpaceSchemasOutcome> DescribeTopSpaceSchemasOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceSchemasRequest&, DescribeTopSpaceSchemasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceSchemasAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTopSpaceTableTimeSeriesResponse> DescribeTopSpaceTableTimeSeriesOutcome;
                 typedef std::future<DescribeTopSpaceTableTimeSeriesOutcome> DescribeTopSpaceTableTimeSeriesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceTableTimeSeriesRequest&, DescribeTopSpaceTableTimeSeriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceTableTimeSeriesAsyncHandler;
@@ -162,6 +187,15 @@ namespace TencentCloud
                 CreateDBDiagReportTaskOutcome CreateDBDiagReportTask(const Model::CreateDBDiagReportTaskRequest &request);
                 void CreateDBDiagReportTaskAsync(const Model::CreateDBDiagReportTaskRequest& request, const CreateDBDiagReportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBDiagReportTaskOutcomeCallable CreateDBDiagReportTaskCallable(const Model::CreateDBDiagReportTaskRequest& request);
+
+                /**
+                 *创建健康报告的浏览地址。
+                 * @param req CreateDBDiagReportUrlRequest
+                 * @return CreateDBDiagReportUrlOutcome
+                 */
+                CreateDBDiagReportUrlOutcome CreateDBDiagReportUrl(const Model::CreateDBDiagReportUrlRequest &request);
+                void CreateDBDiagReportUrlAsync(const Model::CreateDBDiagReportUrlRequest& request, const CreateDBDiagReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDBDiagReportUrlOutcomeCallable CreateDBDiagReportUrlCallable(const Model::CreateDBDiagReportUrlRequest& request);
 
                 /**
                  *创建邮件配置。其中入参ProfileType表示所创建配置的类型，ProfileType 取值包括：dbScan_mail_configuration（数据库巡检邮件配置）、scheduler_mail_configuration（定期生成健康报告的邮件发送配置）。Region统一选择广州，和实例所属地域无关。
@@ -236,6 +270,15 @@ namespace TencentCloud
                 DescribeDBDiagHistoryOutcomeCallable DescribeDBDiagHistoryCallable(const Model::DescribeDBDiagHistoryRequest& request);
 
                 /**
+                 *查询健康报告生成任务列表。
+                 * @param req DescribeDBDiagReportTasksRequest
+                 * @return DescribeDBDiagReportTasksOutcome
+                 */
+                DescribeDBDiagReportTasksOutcome DescribeDBDiagReportTasks(const Model::DescribeDBDiagReportTasksRequest &request);
+                void DescribeDBDiagReportTasksAsync(const Model::DescribeDBDiagReportTasksRequest& request, const DescribeDBDiagReportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBDiagReportTasksOutcomeCallable DescribeDBDiagReportTasksCallable(const Model::DescribeDBDiagReportTasksRequest& request);
+
+                /**
                  *获取指定时间段内的实例空间使用概览，包括磁盘增长量(MB)、磁盘剩余(MB)、磁盘总量(MB)及预计可用天数。
                  * @param req DescribeDBSpaceStatusRequest
                  * @return DescribeDBSpaceStatusOutcome
@@ -306,6 +349,33 @@ namespace TencentCloud
                 DescribeSlowLogTopSqlsOutcome DescribeSlowLogTopSqls(const Model::DescribeSlowLogTopSqlsRequest &request);
                 void DescribeSlowLogTopSqlsAsync(const Model::DescribeSlowLogTopSqlsRequest& request, const DescribeSlowLogTopSqlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSlowLogTopSqlsOutcomeCallable DescribeSlowLogTopSqlsCallable(const Model::DescribeSlowLogTopSqlsRequest& request);
+
+                /**
+                 *获取慢日志来源地址统计分布图。
+                 * @param req DescribeSlowLogUserHostStatsRequest
+                 * @return DescribeSlowLogUserHostStatsOutcome
+                 */
+                DescribeSlowLogUserHostStatsOutcome DescribeSlowLogUserHostStats(const Model::DescribeSlowLogUserHostStatsRequest &request);
+                void DescribeSlowLogUserHostStatsAsync(const Model::DescribeSlowLogUserHostStatsRequest& request, const DescribeSlowLogUserHostStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSlowLogUserHostStatsOutcomeCallable DescribeSlowLogUserHostStatsCallable(const Model::DescribeSlowLogUserHostStatsRequest& request);
+
+                /**
+                 *获取实例占用空间最大的前几个库在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。
+                 * @param req DescribeTopSpaceSchemaTimeSeriesRequest
+                 * @return DescribeTopSpaceSchemaTimeSeriesOutcome
+                 */
+                DescribeTopSpaceSchemaTimeSeriesOutcome DescribeTopSpaceSchemaTimeSeries(const Model::DescribeTopSpaceSchemaTimeSeriesRequest &request);
+                void DescribeTopSpaceSchemaTimeSeriesAsync(const Model::DescribeTopSpaceSchemaTimeSeriesRequest& request, const DescribeTopSpaceSchemaTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopSpaceSchemaTimeSeriesOutcomeCallable DescribeTopSpaceSchemaTimeSeriesCallable(const Model::DescribeTopSpaceSchemaTimeSeriesRequest& request);
+
+                /**
+                 *获取实例Top库的实时空间统计信息，默认返回按大小排序。
+                 * @param req DescribeTopSpaceSchemasRequest
+                 * @return DescribeTopSpaceSchemasOutcome
+                 */
+                DescribeTopSpaceSchemasOutcome DescribeTopSpaceSchemas(const Model::DescribeTopSpaceSchemasRequest &request);
+                void DescribeTopSpaceSchemasAsync(const Model::DescribeTopSpaceSchemasRequest& request, const DescribeTopSpaceSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopSpaceSchemasOutcomeCallable DescribeTopSpaceSchemasCallable(const Model::DescribeTopSpaceSchemasRequest& request);
 
                 /**
                  *获取实例占用空间最大的前几张表在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。

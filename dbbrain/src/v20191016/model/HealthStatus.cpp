@@ -1,0 +1,199 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/dbbrain/v20191016/model/HealthStatus.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Dbbrain::V20191016::Model;
+using namespace rapidjson;
+using namespace std;
+
+HealthStatus::HealthStatus() :
+    m_healthScoreHasBeenSet(false),
+    m_healthLevelHasBeenSet(false),
+    m_scoreLostHasBeenSet(false),
+    m_scoreDetailsHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome HealthStatus::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("HealthScore") && !value["HealthScore"].IsNull())
+    {
+        if (!value["HealthScore"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `HealthStatus.HealthScore` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthScore = value["HealthScore"].GetInt64();
+        m_healthScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthLevel") && !value["HealthLevel"].IsNull())
+    {
+        if (!value["HealthLevel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HealthStatus.HealthLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthLevel = string(value["HealthLevel"].GetString());
+        m_healthLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScoreLost") && !value["ScoreLost"].IsNull())
+    {
+        if (!value["ScoreLost"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `HealthStatus.ScoreLost` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scoreLost = value["ScoreLost"].GetInt64();
+        m_scoreLostHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScoreDetails") && !value["ScoreDetails"].IsNull())
+    {
+        if (!value["ScoreDetails"].IsArray())
+            return CoreInternalOutcome(Error("response `HealthStatus.ScoreDetails` is not array type"));
+
+        const Value &tmpValue = value["ScoreDetails"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ScoreDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_scoreDetails.push_back(item);
+        }
+        m_scoreDetailsHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void HealthStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_healthScoreHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_healthScore, allocator);
+    }
+
+    if (m_healthLevelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_healthLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scoreLostHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ScoreLost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scoreLost, allocator);
+    }
+
+    if (m_scoreDetailsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ScoreDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_scoreDetails.begin(); itr != m_scoreDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+}
+
+
+int64_t HealthStatus::GetHealthScore() const
+{
+    return m_healthScore;
+}
+
+void HealthStatus::SetHealthScore(const int64_t& _healthScore)
+{
+    m_healthScore = _healthScore;
+    m_healthScoreHasBeenSet = true;
+}
+
+bool HealthStatus::HealthScoreHasBeenSet() const
+{
+    return m_healthScoreHasBeenSet;
+}
+
+string HealthStatus::GetHealthLevel() const
+{
+    return m_healthLevel;
+}
+
+void HealthStatus::SetHealthLevel(const string& _healthLevel)
+{
+    m_healthLevel = _healthLevel;
+    m_healthLevelHasBeenSet = true;
+}
+
+bool HealthStatus::HealthLevelHasBeenSet() const
+{
+    return m_healthLevelHasBeenSet;
+}
+
+int64_t HealthStatus::GetScoreLost() const
+{
+    return m_scoreLost;
+}
+
+void HealthStatus::SetScoreLost(const int64_t& _scoreLost)
+{
+    m_scoreLost = _scoreLost;
+    m_scoreLostHasBeenSet = true;
+}
+
+bool HealthStatus::ScoreLostHasBeenSet() const
+{
+    return m_scoreLostHasBeenSet;
+}
+
+vector<ScoreDetail> HealthStatus::GetScoreDetails() const
+{
+    return m_scoreDetails;
+}
+
+void HealthStatus::SetScoreDetails(const vector<ScoreDetail>& _scoreDetails)
+{
+    m_scoreDetails = _scoreDetails;
+    m_scoreDetailsHasBeenSet = true;
+}
+
+bool HealthStatus::ScoreDetailsHasBeenSet() const
+{
+    return m_scoreDetailsHasBeenSet;
+}
+

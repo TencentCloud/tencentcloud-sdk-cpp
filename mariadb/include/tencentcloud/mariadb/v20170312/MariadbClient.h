@@ -69,6 +69,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeFlowRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeFlowResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeOrdersRequest.h>
@@ -202,6 +204,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeFlowResponse> DescribeFlowOutcome;
                 typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeFlowRequest&, DescribeFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceNodeInfoResponse> DescribeInstanceNodeInfoOutcome;
+                typedef std::future<DescribeInstanceNodeInfoOutcome> DescribeInstanceNodeInfoOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeInstanceNodeInfoRequest&, DescribeInstanceNodeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceNodeInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLogFileRetentionPeriodResponse> DescribeLogFileRetentionPeriodOutcome;
                 typedef std::future<DescribeLogFileRetentionPeriodOutcome> DescribeLogFileRetentionPeriodOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeLogFileRetentionPeriodRequest&, DescribeLogFileRetentionPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogFileRetentionPeriodAsyncHandler;
@@ -489,6 +494,15 @@ namespace TencentCloud
                 DescribeFlowOutcome DescribeFlow(const Model::DescribeFlowRequest &request);
                 void DescribeFlowAsync(const Model::DescribeFlowRequest& request, const DescribeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlowOutcomeCallable DescribeFlowCallable(const Model::DescribeFlowRequest& request);
+
+                /**
+                 *本接口（DescribeInstanceNodeInfo）用于获取数据库实例主备节点信息
+                 * @param req DescribeInstanceNodeInfoRequest
+                 * @return DescribeInstanceNodeInfoOutcome
+                 */
+                DescribeInstanceNodeInfoOutcome DescribeInstanceNodeInfo(const Model::DescribeInstanceNodeInfoRequest &request);
+                void DescribeInstanceNodeInfoAsync(const Model::DescribeInstanceNodeInfoRequest& request, const DescribeInstanceNodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceNodeInfoOutcomeCallable DescribeInstanceNodeInfoCallable(const Model::DescribeInstanceNodeInfoRequest& request);
 
                 /**
                  *本接口(DescribeLogFileRetentionPeriod)用于查看数据库备份日志的备份天数的设置情况。

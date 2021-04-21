@@ -320,6 +320,32 @@ namespace TencentCloud
                      */
                     bool CustomerIDCRoutesHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启巨帧
+1：开启
+0：不开启
+                     * @return JumboEnable 是否开启巨帧
+1：开启
+0：不开启
+                     */
+                    int64_t GetJumboEnable() const;
+
+                    /**
+                     * 设置是否开启巨帧
+1：开启
+0：不开启
+                     * @param JumboEnable 是否开启巨帧
+1：开启
+0：不开启
+                     */
+                    void SetJumboEnable(const int64_t& _jumboEnable);
+
+                    /**
+                     * 判断参数 JumboEnable 是否已赋值
+                     * @return JumboEnable 是否已赋值
+                     */
+                    bool JumboEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -412,6 +438,14 @@ namespace TencentCloud
                      */
                     std::vector<RouteFilterPrefix> m_customerIDCRoutes;
                     bool m_customerIDCRoutesHasBeenSet;
+
+                    /**
+                     * 是否开启巨帧
+1：开启
+0：不开启
+                     */
+                    int64_t m_jumboEnable;
+                    bool m_jumboEnableHasBeenSet;
 
                 };
             }

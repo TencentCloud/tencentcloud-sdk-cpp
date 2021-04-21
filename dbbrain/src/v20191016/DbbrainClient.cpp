@@ -126,6 +126,49 @@ DbbrainClient::CreateDBDiagReportTaskOutcomeCallable DbbrainClient::CreateDBDiag
     return task->get_future();
 }
 
+DbbrainClient::CreateDBDiagReportUrlOutcome DbbrainClient::CreateDBDiagReportUrl(const CreateDBDiagReportUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDBDiagReportUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDBDiagReportUrlResponse rsp = CreateDBDiagReportUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDBDiagReportUrlOutcome(rsp);
+        else
+            return CreateDBDiagReportUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDBDiagReportUrlOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateDBDiagReportUrlAsync(const CreateDBDiagReportUrlRequest& request, const CreateDBDiagReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDBDiagReportUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateDBDiagReportUrlOutcomeCallable DbbrainClient::CreateDBDiagReportUrlCallable(const CreateDBDiagReportUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDBDiagReportUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDBDiagReportUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::CreateMailProfileOutcome DbbrainClient::CreateMailProfile(const CreateMailProfileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMailProfile");
@@ -470,6 +513,49 @@ DbbrainClient::DescribeDBDiagHistoryOutcomeCallable DbbrainClient::DescribeDBDia
     return task->get_future();
 }
 
+DbbrainClient::DescribeDBDiagReportTasksOutcome DbbrainClient::DescribeDBDiagReportTasks(const DescribeDBDiagReportTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBDiagReportTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBDiagReportTasksResponse rsp = DescribeDBDiagReportTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBDiagReportTasksOutcome(rsp);
+        else
+            return DescribeDBDiagReportTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBDiagReportTasksOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBDiagReportTasksAsync(const DescribeDBDiagReportTasksRequest& request, const DescribeDBDiagReportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBDiagReportTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBDiagReportTasksOutcomeCallable DbbrainClient::DescribeDBDiagReportTasksCallable(const DescribeDBDiagReportTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBDiagReportTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBDiagReportTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeDBSpaceStatusOutcome DbbrainClient::DescribeDBSpaceStatus(const DescribeDBSpaceStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBSpaceStatus");
@@ -807,6 +893,135 @@ DbbrainClient::DescribeSlowLogTopSqlsOutcomeCallable DbbrainClient::DescribeSlow
         [this, request]()
         {
             return this->DescribeSlowLogTopSqls(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeSlowLogUserHostStatsOutcome DbbrainClient::DescribeSlowLogUserHostStats(const DescribeSlowLogUserHostStatsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlowLogUserHostStats");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlowLogUserHostStatsResponse rsp = DescribeSlowLogUserHostStatsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlowLogUserHostStatsOutcome(rsp);
+        else
+            return DescribeSlowLogUserHostStatsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlowLogUserHostStatsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeSlowLogUserHostStatsAsync(const DescribeSlowLogUserHostStatsRequest& request, const DescribeSlowLogUserHostStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlowLogUserHostStats(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeSlowLogUserHostStatsOutcomeCallable DbbrainClient::DescribeSlowLogUserHostStatsCallable(const DescribeSlowLogUserHostStatsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlowLogUserHostStatsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlowLogUserHostStats(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeTopSpaceSchemaTimeSeriesOutcome DbbrainClient::DescribeTopSpaceSchemaTimeSeries(const DescribeTopSpaceSchemaTimeSeriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopSpaceSchemaTimeSeries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopSpaceSchemaTimeSeriesResponse rsp = DescribeTopSpaceSchemaTimeSeriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopSpaceSchemaTimeSeriesOutcome(rsp);
+        else
+            return DescribeTopSpaceSchemaTimeSeriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopSpaceSchemaTimeSeriesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeTopSpaceSchemaTimeSeriesAsync(const DescribeTopSpaceSchemaTimeSeriesRequest& request, const DescribeTopSpaceSchemaTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopSpaceSchemaTimeSeries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeTopSpaceSchemaTimeSeriesOutcomeCallable DbbrainClient::DescribeTopSpaceSchemaTimeSeriesCallable(const DescribeTopSpaceSchemaTimeSeriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopSpaceSchemaTimeSeriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopSpaceSchemaTimeSeries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeTopSpaceSchemasOutcome DbbrainClient::DescribeTopSpaceSchemas(const DescribeTopSpaceSchemasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopSpaceSchemas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopSpaceSchemasResponse rsp = DescribeTopSpaceSchemasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopSpaceSchemasOutcome(rsp);
+        else
+            return DescribeTopSpaceSchemasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopSpaceSchemasOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeTopSpaceSchemasAsync(const DescribeTopSpaceSchemasRequest& request, const DescribeTopSpaceSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopSpaceSchemas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeTopSpaceSchemasOutcomeCallable DbbrainClient::DescribeTopSpaceSchemasCallable(const DescribeTopSpaceSchemasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopSpaceSchemasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopSpaceSchemas(request);
         }
     );
 

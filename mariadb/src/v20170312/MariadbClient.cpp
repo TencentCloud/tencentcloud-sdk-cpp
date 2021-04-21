@@ -1029,6 +1029,49 @@ MariadbClient::DescribeFlowOutcomeCallable MariadbClient::DescribeFlowCallable(c
     return task->get_future();
 }
 
+MariadbClient::DescribeInstanceNodeInfoOutcome MariadbClient::DescribeInstanceNodeInfo(const DescribeInstanceNodeInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceNodeInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceNodeInfoResponse rsp = DescribeInstanceNodeInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceNodeInfoOutcome(rsp);
+        else
+            return DescribeInstanceNodeInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceNodeInfoOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DescribeInstanceNodeInfoAsync(const DescribeInstanceNodeInfoRequest& request, const DescribeInstanceNodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceNodeInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DescribeInstanceNodeInfoOutcomeCallable MariadbClient::DescribeInstanceNodeInfoCallable(const DescribeInstanceNodeInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceNodeInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceNodeInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::DescribeLogFileRetentionPeriodOutcome MariadbClient::DescribeLogFileRetentionPeriod(const DescribeLogFileRetentionPeriodRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogFileRetentionPeriod");

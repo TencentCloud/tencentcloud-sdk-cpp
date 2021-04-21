@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeLiveForbidStreamListRequest::DescribeLiveForbidStreamListRequest() :
     m_pageNumHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_streamNameHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeLiveForbidStreamListRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_streamNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StreamName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_streamName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeLiveForbidStreamListRequest::SetPageSize(const int64_t& _pageSize)
 bool DescribeLiveForbidStreamListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeLiveForbidStreamListRequest::GetStreamName() const
+{
+    return m_streamName;
+}
+
+void DescribeLiveForbidStreamListRequest::SetStreamName(const string& _streamName)
+{
+    m_streamName = _streamName;
+    m_streamNameHasBeenSet = true;
+}
+
+bool DescribeLiveForbidStreamListRequest::StreamNameHasBeenSet() const
+{
+    return m_streamNameHasBeenSet;
 }
 
 

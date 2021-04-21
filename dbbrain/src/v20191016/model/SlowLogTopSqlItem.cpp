@@ -41,7 +41,11 @@ SlowLogTopSqlItem::SlowLogTopSqlItem() :
     m_queryTimeRatioHasBeenSet(false),
     m_lockTimeRatioHasBeenSet(false),
     m_rowsExaminedRatioHasBeenSet(false),
-    m_rowsSentRatioHasBeenSet(false)
+    m_rowsSentRatioHasBeenSet(false),
+    m_queryTimeAvgHasBeenSet(false),
+    m_rowsSentAvgHasBeenSet(false),
+    m_lockTimeAvgHasBeenSet(false),
+    m_rowsExaminedAvgHasBeenSet(false)
 {
 }
 
@@ -250,6 +254,46 @@ CoreInternalOutcome SlowLogTopSqlItem::Deserialize(const Value &value)
         m_rowsSentRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("QueryTimeAvg") && !value["QueryTimeAvg"].IsNull())
+    {
+        if (!value["QueryTimeAvg"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `SlowLogTopSqlItem.QueryTimeAvg` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_queryTimeAvg = value["QueryTimeAvg"].GetDouble();
+        m_queryTimeAvgHasBeenSet = true;
+    }
+
+    if (value.HasMember("RowsSentAvg") && !value["RowsSentAvg"].IsNull())
+    {
+        if (!value["RowsSentAvg"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `SlowLogTopSqlItem.RowsSentAvg` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_rowsSentAvg = value["RowsSentAvg"].GetDouble();
+        m_rowsSentAvgHasBeenSet = true;
+    }
+
+    if (value.HasMember("LockTimeAvg") && !value["LockTimeAvg"].IsNull())
+    {
+        if (!value["LockTimeAvg"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `SlowLogTopSqlItem.LockTimeAvg` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockTimeAvg = value["LockTimeAvg"].GetDouble();
+        m_lockTimeAvgHasBeenSet = true;
+    }
+
+    if (value.HasMember("RowsExaminedAvg") && !value["RowsExaminedAvg"].IsNull())
+    {
+        if (!value["RowsExaminedAvg"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `SlowLogTopSqlItem.RowsExaminedAvg` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_rowsExaminedAvg = value["RowsExaminedAvg"].GetDouble();
+        m_rowsExaminedAvgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -415,6 +459,38 @@ void SlowLogTopSqlItem::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "RowsSentRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rowsSentRatio, allocator);
+    }
+
+    if (m_queryTimeAvgHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QueryTimeAvg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_queryTimeAvg, allocator);
+    }
+
+    if (m_rowsSentAvgHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RowsSentAvg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rowsSentAvg, allocator);
+    }
+
+    if (m_lockTimeAvgHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LockTimeAvg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lockTimeAvg, allocator);
+    }
+
+    if (m_rowsExaminedAvgHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RowsExaminedAvg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rowsExaminedAvg, allocator);
     }
 
 }
@@ -738,5 +814,69 @@ void SlowLogTopSqlItem::SetRowsSentRatio(const double& _rowsSentRatio)
 bool SlowLogTopSqlItem::RowsSentRatioHasBeenSet() const
 {
     return m_rowsSentRatioHasBeenSet;
+}
+
+double SlowLogTopSqlItem::GetQueryTimeAvg() const
+{
+    return m_queryTimeAvg;
+}
+
+void SlowLogTopSqlItem::SetQueryTimeAvg(const double& _queryTimeAvg)
+{
+    m_queryTimeAvg = _queryTimeAvg;
+    m_queryTimeAvgHasBeenSet = true;
+}
+
+bool SlowLogTopSqlItem::QueryTimeAvgHasBeenSet() const
+{
+    return m_queryTimeAvgHasBeenSet;
+}
+
+double SlowLogTopSqlItem::GetRowsSentAvg() const
+{
+    return m_rowsSentAvg;
+}
+
+void SlowLogTopSqlItem::SetRowsSentAvg(const double& _rowsSentAvg)
+{
+    m_rowsSentAvg = _rowsSentAvg;
+    m_rowsSentAvgHasBeenSet = true;
+}
+
+bool SlowLogTopSqlItem::RowsSentAvgHasBeenSet() const
+{
+    return m_rowsSentAvgHasBeenSet;
+}
+
+double SlowLogTopSqlItem::GetLockTimeAvg() const
+{
+    return m_lockTimeAvg;
+}
+
+void SlowLogTopSqlItem::SetLockTimeAvg(const double& _lockTimeAvg)
+{
+    m_lockTimeAvg = _lockTimeAvg;
+    m_lockTimeAvgHasBeenSet = true;
+}
+
+bool SlowLogTopSqlItem::LockTimeAvgHasBeenSet() const
+{
+    return m_lockTimeAvgHasBeenSet;
+}
+
+double SlowLogTopSqlItem::GetRowsExaminedAvg() const
+{
+    return m_rowsExaminedAvg;
+}
+
+void SlowLogTopSqlItem::SetRowsExaminedAvg(const double& _rowsExaminedAvg)
+{
+    m_rowsExaminedAvg = _rowsExaminedAvg;
+    m_rowsExaminedAvgHasBeenSet = true;
+}
+
+bool SlowLogTopSqlItem::RowsExaminedAvgHasBeenSet() const
+{
+    return m_rowsExaminedAvgHasBeenSet;
 }
 
