@@ -26,7 +26,8 @@ ServiceEnvironmentStrategy::ServiceEnvironmentStrategy() :
     m_urlHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_versionNameHasBeenSet(false),
-    m_strategyHasBeenSet(false)
+    m_strategyHasBeenSet(false),
+    m_maxStrategyHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome ServiceEnvironmentStrategy::Deserialize(const Value &value)
         m_strategyHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxStrategy") && !value["MaxStrategy"].IsNull())
+    {
+        if (!value["MaxStrategy"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ServiceEnvironmentStrategy.MaxStrategy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxStrategy = value["MaxStrategy"].GetInt64();
+        m_maxStrategyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void ServiceEnvironmentStrategy::ToJsonObject(Value &value, Document::AllocatorT
         string key = "Strategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_strategy, allocator);
+    }
+
+    if (m_maxStrategyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxStrategy, allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void ServiceEnvironmentStrategy::SetStrategy(const int64_t& _strategy)
 bool ServiceEnvironmentStrategy::StrategyHasBeenSet() const
 {
     return m_strategyHasBeenSet;
+}
+
+int64_t ServiceEnvironmentStrategy::GetMaxStrategy() const
+{
+    return m_maxStrategy;
+}
+
+void ServiceEnvironmentStrategy::SetMaxStrategy(const int64_t& _maxStrategy)
+{
+    m_maxStrategy = _maxStrategy;
+    m_maxStrategyHasBeenSet = true;
+}
+
+bool ServiceEnvironmentStrategy::MaxStrategyHasBeenSet() const
+{
+    return m_maxStrategyHasBeenSet;
 }
 

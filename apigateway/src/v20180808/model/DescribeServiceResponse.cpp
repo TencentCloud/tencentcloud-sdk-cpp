@@ -45,7 +45,10 @@ DescribeServiceResponse::DescribeServiceResponse() :
     m_ipVersionHasBeenSet(false),
     m_userTypeHasBeenSet(false),
     m_setIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_setTypeHasBeenSet(false)
 {
 }
 
@@ -329,6 +332,36 @@ CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
         m_tagsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    {
+        if (!rsp["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InstanceName") && !rsp["InstanceName"].IsNull())
+    {
+        if (!rsp["InstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceName = string(rsp["InstanceName"].GetString());
+        m_instanceNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SetType") && !rsp["SetType"].IsNull())
+    {
+        if (!rsp["SetType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_setType = string(rsp["SetType"].GetString());
+        m_setTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -542,6 +575,36 @@ vector<Tag> DescribeServiceResponse::GetTags() const
 bool DescribeServiceResponse::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string DescribeServiceResponse::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+bool DescribeServiceResponse::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string DescribeServiceResponse::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+bool DescribeServiceResponse::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+string DescribeServiceResponse::GetSetType() const
+{
+    return m_setType;
+}
+
+bool DescribeServiceResponse::SetTypeHasBeenSet() const
+{
+    return m_setTypeHasBeenSet;
 }
 
 

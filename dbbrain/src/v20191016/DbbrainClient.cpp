@@ -1115,6 +1115,49 @@ DbbrainClient::DescribeTopSpaceTablesOutcomeCallable DbbrainClient::DescribeTopS
     return task->get_future();
 }
 
+DbbrainClient::DescribeUserSqlAdviceOutcome DbbrainClient::DescribeUserSqlAdvice(const DescribeUserSqlAdviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserSqlAdvice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserSqlAdviceResponse rsp = DescribeUserSqlAdviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserSqlAdviceOutcome(rsp);
+        else
+            return DescribeUserSqlAdviceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserSqlAdviceOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeUserSqlAdviceAsync(const DescribeUserSqlAdviceRequest& request, const DescribeUserSqlAdviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserSqlAdvice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeUserSqlAdviceOutcomeCallable DbbrainClient::DescribeUserSqlAdviceCallable(const DescribeUserSqlAdviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserSqlAdviceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserSqlAdvice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::ModifyDiagDBInstanceConfOutcome DbbrainClient::ModifyDiagDBInstanceConf(const ModifyDiagDBInstanceConfRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDiagDBInstanceConf");

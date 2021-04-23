@@ -25,9 +25,9 @@ using namespace std;
 
 CreateProjectRequest::CreateProjectRequest() :
     m_platformHasBeenSet(false),
-    m_categoryHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
+    m_categoryHasBeenSet(false),
     m_aspectRatioHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_switcherProjectInputHasBeenSet(false),
@@ -54,14 +54,6 @@ string CreateProjectRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_platform.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_categoryHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Category";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_category.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_nameHasBeenSet)
     {
         Value iKey(kStringType);
@@ -77,6 +69,14 @@ string CreateProjectRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_owner.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_category.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aspectRatioHasBeenSet)
@@ -173,22 +173,6 @@ bool CreateProjectRequest::PlatformHasBeenSet() const
     return m_platformHasBeenSet;
 }
 
-string CreateProjectRequest::GetCategory() const
-{
-    return m_category;
-}
-
-void CreateProjectRequest::SetCategory(const string& _category)
-{
-    m_category = _category;
-    m_categoryHasBeenSet = true;
-}
-
-bool CreateProjectRequest::CategoryHasBeenSet() const
-{
-    return m_categoryHasBeenSet;
-}
-
 string CreateProjectRequest::GetName() const
 {
     return m_name;
@@ -219,6 +203,22 @@ void CreateProjectRequest::SetOwner(const Entity& _owner)
 bool CreateProjectRequest::OwnerHasBeenSet() const
 {
     return m_ownerHasBeenSet;
+}
+
+string CreateProjectRequest::GetCategory() const
+{
+    return m_category;
+}
+
+void CreateProjectRequest::SetCategory(const string& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool CreateProjectRequest::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
 }
 
 string CreateProjectRequest::GetAspectRatio() const

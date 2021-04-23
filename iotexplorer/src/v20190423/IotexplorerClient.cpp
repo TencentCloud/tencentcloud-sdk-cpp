@@ -1158,6 +1158,49 @@ IotexplorerClient::EnableTopicRuleOutcomeCallable IotexplorerClient::EnableTopic
     return task->get_future();
 }
 
+IotexplorerClient::GetCOSURLOutcome IotexplorerClient::GetCOSURL(const GetCOSURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCOSURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCOSURLResponse rsp = GetCOSURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCOSURLOutcome(rsp);
+        else
+            return GetCOSURLOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCOSURLOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetCOSURLAsync(const GetCOSURLRequest& request, const GetCOSURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCOSURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetCOSURLOutcomeCallable IotexplorerClient::GetCOSURLCallable(const GetCOSURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCOSURLOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCOSURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::GetDeviceListOutcome IotexplorerClient::GetDeviceList(const GetDeviceListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetDeviceList");

@@ -82,6 +82,28 @@ namespace TencentCloud
                      */
                     bool QuotaHasBeenSet() const;
 
+                    /**
+                     * 获取限流最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxQuota 限流最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxQuota() const;
+
+                    /**
+                     * 设置限流最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxQuota 限流最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxQuota(const int64_t& _maxQuota);
+
+                    /**
+                     * 判断参数 MaxQuota 是否已赋值
+                     * @return MaxQuota 是否已赋值
+                     */
+                    bool MaxQuotaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +117,13 @@ namespace TencentCloud
                      */
                     int64_t m_quota;
                     bool m_quotaHasBeenSet;
+
+                    /**
+                     * 限流最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxQuota;
+                    bool m_maxQuotaHasBeenSet;
 
                 };
             }

@@ -90,6 +90,28 @@ namespace TencentCloud
                      */
                     bool AllowCopyHasBeenSet() const;
 
+                    /**
+                     * 获取取值范围[0,1]
+填1时，透传原始流的sei
+                     * @return PassInputSei 取值范围[0,1]
+填1时，透传原始流的sei
+                     */
+                    int64_t GetPassInputSei() const;
+
+                    /**
+                     * 设置取值范围[0,1]
+填1时，透传原始流的sei
+                     * @param PassInputSei 取值范围[0,1]
+填1时，透传原始流的sei
+                     */
+                    void SetPassInputSei(const int64_t& _passInputSei);
+
+                    /**
+                     * 判断参数 PassInputSei 是否已赋值
+                     * @return PassInputSei 是否已赋值
+                     */
+                    bool PassInputSeiHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +127,13 @@ namespace TencentCloud
                      */
                     int64_t m_allowCopy;
                     bool m_allowCopyHasBeenSet;
+
+                    /**
+                     * 取值范围[0,1]
+填1时，透传原始流的sei
+                     */
+                    int64_t m_passInputSei;
+                    bool m_passInputSeiHasBeenSet;
 
                 };
             }

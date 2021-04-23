@@ -37,7 +37,9 @@ Service::Service() :
     m_innerHttpPortHasBeenSet(false),
     m_innerSubDomainHasBeenSet(false),
     m_tradeIsolateStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_setTypeHasBeenSet(false)
 {
 }
 
@@ -222,6 +224,26 @@ CoreInternalOutcome Service::Deserialize(const Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Service.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SetType") && !value["SetType"].IsNull())
+    {
+        if (!value["SetType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Service.SetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_setType = string(value["SetType"].GetString());
+        m_setTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -372,6 +394,22 @@ void Service::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_setTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SetType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_setType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -631,5 +669,37 @@ void Service::SetTags(const vector<Tag>& _tags)
 bool Service::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string Service::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void Service::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool Service::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string Service::GetSetType() const
+{
+    return m_setType;
+}
+
+void Service::SetSetType(const string& _setType)
+{
+    m_setType = _setType;
+    m_setTypeHasBeenSet = true;
+}
+
+bool Service::SetTypeHasBeenSet() const
+{
+    return m_setTypeHasBeenSet;
 }
 

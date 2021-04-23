@@ -212,6 +212,92 @@ ApigatewayClient::BindSubDomainOutcomeCallable ApigatewayClient::BindSubDomainCa
     return task->get_future();
 }
 
+ApigatewayClient::BuildAPIDocOutcome ApigatewayClient::BuildAPIDoc(const BuildAPIDocRequest &request)
+{
+    auto outcome = MakeRequest(request, "BuildAPIDoc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BuildAPIDocResponse rsp = BuildAPIDocResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BuildAPIDocOutcome(rsp);
+        else
+            return BuildAPIDocOutcome(o.GetError());
+    }
+    else
+    {
+        return BuildAPIDocOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::BuildAPIDocAsync(const BuildAPIDocRequest& request, const BuildAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BuildAPIDoc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::BuildAPIDocOutcomeCallable ApigatewayClient::BuildAPIDocCallable(const BuildAPIDocRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BuildAPIDocOutcome()>>(
+        [this, request]()
+        {
+            return this->BuildAPIDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::CreateAPIDocOutcome ApigatewayClient::CreateAPIDoc(const CreateAPIDocRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAPIDoc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAPIDocResponse rsp = CreateAPIDocResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAPIDocOutcome(rsp);
+        else
+            return CreateAPIDocOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAPIDocOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::CreateAPIDocAsync(const CreateAPIDocRequest& request, const CreateAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAPIDoc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::CreateAPIDocOutcomeCallable ApigatewayClient::CreateAPIDocCallable(const CreateAPIDocRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAPIDocOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAPIDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::CreateApiOutcome ApigatewayClient::CreateApi(const CreateApiRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApi");
@@ -420,6 +506,49 @@ ApigatewayClient::CreateUsagePlanOutcomeCallable ApigatewayClient::CreateUsagePl
         [this, request]()
         {
             return this->CreateUsagePlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DeleteAPIDocOutcome ApigatewayClient::DeleteAPIDoc(const DeleteAPIDocRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAPIDoc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAPIDocResponse rsp = DeleteAPIDocResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAPIDocOutcome(rsp);
+        else
+            return DeleteAPIDocOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAPIDocOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DeleteAPIDocAsync(const DeleteAPIDocRequest& request, const DeleteAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAPIDoc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DeleteAPIDocOutcomeCallable ApigatewayClient::DeleteAPIDocCallable(const DeleteAPIDocRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAPIDocOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAPIDoc(request);
         }
     );
 
@@ -721,6 +850,92 @@ ApigatewayClient::DemoteServiceUsagePlanOutcomeCallable ApigatewayClient::Demote
         [this, request]()
         {
             return this->DemoteServiceUsagePlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DescribeAPIDocDetailOutcome ApigatewayClient::DescribeAPIDocDetail(const DescribeAPIDocDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAPIDocDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAPIDocDetailResponse rsp = DescribeAPIDocDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAPIDocDetailOutcome(rsp);
+        else
+            return DescribeAPIDocDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAPIDocDetailOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeAPIDocDetailAsync(const DescribeAPIDocDetailRequest& request, const DescribeAPIDocDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAPIDocDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeAPIDocDetailOutcomeCallable ApigatewayClient::DescribeAPIDocDetailCallable(const DescribeAPIDocDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAPIDocDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAPIDocDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DescribeAPIDocsOutcome ApigatewayClient::DescribeAPIDocs(const DescribeAPIDocsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAPIDocs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAPIDocsResponse rsp = DescribeAPIDocsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAPIDocsOutcome(rsp);
+        else
+            return DescribeAPIDocsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAPIDocsOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeAPIDocsAsync(const DescribeAPIDocsRequest& request, const DescribeAPIDocsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAPIDocs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeAPIDocsOutcomeCallable ApigatewayClient::DescribeAPIDocsCallable(const DescribeAPIDocsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAPIDocsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAPIDocs(request);
         }
     );
 
@@ -1889,6 +2104,49 @@ ApigatewayClient::GenerateApiDocumentOutcomeCallable ApigatewayClient::GenerateA
     return task->get_future();
 }
 
+ApigatewayClient::ModifyAPIDocOutcome ApigatewayClient::ModifyAPIDoc(const ModifyAPIDocRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAPIDoc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAPIDocResponse rsp = ModifyAPIDocResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAPIDocOutcome(rsp);
+        else
+            return ModifyAPIDocOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAPIDocOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::ModifyAPIDocAsync(const ModifyAPIDocRequest& request, const ModifyAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAPIDoc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::ModifyAPIDocOutcomeCallable ApigatewayClient::ModifyAPIDocCallable(const ModifyAPIDocRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAPIDocOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAPIDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::ModifyApiOutcome ApigatewayClient::ModifyApi(const ModifyApiRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApi");
@@ -2269,6 +2527,49 @@ ApigatewayClient::ReleaseServiceOutcomeCallable ApigatewayClient::ReleaseService
         [this, request]()
         {
             return this->ReleaseService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::ResetAPIDocPasswordOutcome ApigatewayClient::ResetAPIDocPassword(const ResetAPIDocPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetAPIDocPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetAPIDocPasswordResponse rsp = ResetAPIDocPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetAPIDocPasswordOutcome(rsp);
+        else
+            return ResetAPIDocPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetAPIDocPasswordOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::ResetAPIDocPasswordAsync(const ResetAPIDocPasswordRequest& request, const ResetAPIDocPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetAPIDocPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::ResetAPIDocPasswordOutcomeCallable ApigatewayClient::ResetAPIDocPasswordCallable(const ResetAPIDocPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetAPIDocPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetAPIDocPassword(request);
         }
     );
 

@@ -26,7 +26,8 @@ using namespace std;
 CreateUsrTokenRequest::CreateUsrTokenRequest() :
     m_accessIdHasBeenSet(false),
     m_uniqueIdHasBeenSet(false),
-    m_ttlMinutesHasBeenSet(false)
+    m_ttlMinutesHasBeenSet(false),
+    m_oldAccessTokenHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string CreateUsrTokenRequest::ToJsonString() const
         string key = "TtlMinutes";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ttlMinutes, allocator);
+    }
+
+    if (m_oldAccessTokenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OldAccessToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_oldAccessToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void CreateUsrTokenRequest::SetTtlMinutes(const uint64_t& _ttlMinutes)
 bool CreateUsrTokenRequest::TtlMinutesHasBeenSet() const
 {
     return m_ttlMinutesHasBeenSet;
+}
+
+string CreateUsrTokenRequest::GetOldAccessToken() const
+{
+    return m_oldAccessToken;
+}
+
+void CreateUsrTokenRequest::SetOldAccessToken(const string& _oldAccessToken)
+{
+    m_oldAccessToken = _oldAccessToken;
+    m_oldAccessTokenHasBeenSet = true;
+}
+
+bool CreateUsrTokenRequest::OldAccessTokenHasBeenSet() const
+{
+    return m_oldAccessTokenHasBeenSet;
 }
 
 

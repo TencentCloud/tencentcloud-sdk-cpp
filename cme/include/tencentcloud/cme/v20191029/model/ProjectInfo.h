@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/Entity.h>
+#include <tencentcloud/cme/v20191029/model/StreamConnectProjectInfo.h>
 
 
 namespace TencentCloud
@@ -102,15 +103,13 @@ namespace TencentCloud
                     bool AspectRatioHasBeenSet() const;
 
                     /**
-                     * 获取项目类别，取值：
-项目类别，取值有：
+                     * 获取项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
-                     * @return Category 项目类别，取值：
-项目类别，取值有：
+                     * @return Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
@@ -120,15 +119,13 @@ namespace TencentCloud
                     std::string GetCategory() const;
 
                     /**
-                     * 设置项目类别，取值：
-项目类别，取值有：
+                     * 设置项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
-                     * @param Category 项目类别，取值：
-项目类别，取值有：
+                     * @param Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
@@ -178,6 +175,28 @@ namespace TencentCloud
                      * @return CoverUrl 是否已赋值
                      */
                     bool CoverUrlHasBeenSet() const;
+
+                    /**
+                     * 获取云转推项目信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StreamConnectProjectInfo 云转推项目信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StreamConnectProjectInfo GetStreamConnectProjectInfo() const;
+
+                    /**
+                     * 设置云转推项目信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StreamConnectProjectInfo 云转推项目信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStreamConnectProjectInfo(const StreamConnectProjectInfo& _streamConnectProjectInfo);
+
+                    /**
+                     * 判断参数 StreamConnectProjectInfo 是否已赋值
+                     * @return StreamConnectProjectInfo 是否已赋值
+                     */
+                    bool StreamConnectProjectInfoHasBeenSet() const;
 
                     /**
                      * 获取项目创建时间，格式按照 ISO 8601 标准表示。
@@ -236,8 +255,7 @@ namespace TencentCloud
                     bool m_aspectRatioHasBeenSet;
 
                     /**
-                     * 项目类别，取值：
-项目类别，取值有：
+                     * 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
@@ -258,6 +276,13 @@ namespace TencentCloud
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;
+
+                    /**
+                     * 云转推项目信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StreamConnectProjectInfo m_streamConnectProjectInfo;
+                    bool m_streamConnectProjectInfoHasBeenSet;
 
                     /**
                      * 项目创建时间，格式按照 ISO 8601 标准表示。

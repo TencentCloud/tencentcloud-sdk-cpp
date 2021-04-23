@@ -21,6 +21,7 @@ set(tiw_public_header
 set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/Canvas.h
   include/tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackKeyRequest.h
+  include/tencentcloud/tiw/v20190919/model/TimeValue.h
   include/tencentcloud/tiw/v20190919/model/LayoutParams.h
   include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/StreamControl.h
@@ -29,12 +30,13 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/StartWhiteboardPushRequest.h
   include/tencentcloud/tiw/v20190919/model/OmittedDuration.h
   include/tencentcloud/tiw/v20190919/model/DescribeWhiteboardPushRequest.h
-  include/tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeQualityMetricsResponse.h
   include/tencentcloud/tiw/v20190919/model/ResumeOnlineRecordResponse.h
   include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackKeyResponse.h
   include/tencentcloud/tiw/v20190919/model/WhiteboardPushBackupParam.h
   include/tencentcloud/tiw/v20190919/model/StartOnlineRecordRequest.h
+  include/tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/StartWhiteboardPushResponse.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackResponse.h
@@ -63,7 +65,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h
   include/tencentcloud/tiw/v20190919/model/StreamLayout.h
-  include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeQualityMetricsRequest.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyRequest.h
   include/tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackRequest.h
@@ -79,12 +81,14 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/PauseOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/StopWhiteboardPushResponse.h
+  include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackResponse.h
   )
 
 set(tiw_src
   src/v20190919/TiwClient.cpp
   src/v20190919/model/Canvas.cpp
   src/v20190919/model/SetWhiteboardPushCallbackKeyRequest.cpp
+  src/v20190919/model/TimeValue.cpp
   src/v20190919/model/LayoutParams.cpp
   src/v20190919/model/SetVideoGenerationTaskCallbackRequest.cpp
   src/v20190919/model/StreamControl.cpp
@@ -93,12 +97,13 @@ set(tiw_src
   src/v20190919/model/StartWhiteboardPushRequest.cpp
   src/v20190919/model/OmittedDuration.cpp
   src/v20190919/model/DescribeWhiteboardPushRequest.cpp
-  src/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.cpp
+  src/v20190919/model/DescribeQualityMetricsResponse.cpp
   src/v20190919/model/ResumeOnlineRecordResponse.cpp
   src/v20190919/model/SetVideoGenerationTaskCallbackResponse.cpp
   src/v20190919/model/SetWhiteboardPushCallbackKeyResponse.cpp
   src/v20190919/model/WhiteboardPushBackupParam.cpp
   src/v20190919/model/StartOnlineRecordRequest.cpp
+  src/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.cpp
   src/v20190919/model/StartWhiteboardPushResponse.cpp
   src/v20190919/model/DescribeOnlineRecordCallbackRequest.cpp
   src/v20190919/model/DescribeOnlineRecordCallbackResponse.cpp
@@ -127,7 +132,7 @@ set(tiw_src
   src/v20190919/model/DescribeTranscodeRequest.cpp
   src/v20190919/model/DescribeTranscodeResponse.cpp
   src/v20190919/model/StreamLayout.cpp
-  src/v20190919/model/SetOnlineRecordCallbackResponse.cpp
+  src/v20190919/model/DescribeQualityMetricsRequest.cpp
   src/v20190919/model/SetOnlineRecordCallbackKeyRequest.cpp
   src/v20190919/model/CreateVideoGenerationTaskRequest.cpp
   src/v20190919/model/DescribeTranscodeCallbackRequest.cpp
@@ -143,6 +148,7 @@ set(tiw_src
   src/v20190919/model/DescribeVideoGenerationTaskCallbackRequest.cpp
   src/v20190919/model/PauseOnlineRecordRequest.cpp
   src/v20190919/model/StopWhiteboardPushResponse.cpp
+  src/v20190919/model/SetOnlineRecordCallbackResponse.cpp
   )
 
 set(tiw_include

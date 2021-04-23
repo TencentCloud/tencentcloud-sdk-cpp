@@ -23,7 +23,8 @@ using namespace std;
 
 CommonMixControlParams::CommonMixControlParams() :
     m_useMixCropCenterHasBeenSet(false),
-    m_allowCopyHasBeenSet(false)
+    m_allowCopyHasBeenSet(false),
+    m_passInputSeiHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome CommonMixControlParams::Deserialize(const Value &value)
         m_allowCopyHasBeenSet = true;
     }
 
+    if (value.HasMember("PassInputSei") && !value["PassInputSei"].IsNull())
+    {
+        if (!value["PassInputSei"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CommonMixControlParams.PassInputSei` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_passInputSei = value["PassInputSei"].GetInt64();
+        m_passInputSeiHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void CommonMixControlParams::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "AllowCopy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allowCopy, allocator);
+    }
+
+    if (m_passInputSeiHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PassInputSei";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_passInputSei, allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void CommonMixControlParams::SetAllowCopy(const int64_t& _allowCopy)
 bool CommonMixControlParams::AllowCopyHasBeenSet() const
 {
     return m_allowCopyHasBeenSet;
+}
+
+int64_t CommonMixControlParams::GetPassInputSei() const
+{
+    return m_passInputSei;
+}
+
+void CommonMixControlParams::SetPassInputSei(const int64_t& _passInputSei)
+{
+    m_passInputSei = _passInputSei;
+    m_passInputSeiHasBeenSet = true;
+}
+
+bool CommonMixControlParams::PassInputSeiHasBeenSet() const
+{
+    return m_passInputSeiHasBeenSet;
 }
 

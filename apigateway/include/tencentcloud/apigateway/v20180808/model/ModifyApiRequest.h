@@ -181,14 +181,14 @@ namespace TencentCloud
                     bool ApiTypeHasBeenSet() const;
 
                     /**
-                     * 获取API 鉴权类型。支持SECRET、NONE、OAUTH。默认为NONE。
-                     * @return AuthType API 鉴权类型。支持SECRET、NONE、OAUTH。默认为NONE。
+                     * 获取API 鉴权类型。支持SECRET、NONE、OAUTH、APP。默认为NONE。
+                     * @return AuthType API 鉴权类型。支持SECRET、NONE、OAUTH、APP。默认为NONE。
                      */
                     std::string GetAuthType() const;
 
                     /**
-                     * 设置API 鉴权类型。支持SECRET、NONE、OAUTH。默认为NONE。
-                     * @param AuthType API 鉴权类型。支持SECRET、NONE、OAUTH。默认为NONE。
+                     * 设置API 鉴权类型。支持SECRET、NONE、OAUTH、APP。默认为NONE。
+                     * @param AuthType API 鉴权类型。支持SECRET、NONE、OAUTH、APP。默认为NONE。
                      */
                     void SetAuthType(const std::string& _authType);
 
@@ -963,7 +963,7 @@ namespace TencentCloud
                     bool m_apiTypeHasBeenSet;
 
                     /**
-                     * API 鉴权类型。支持SECRET、NONE、OAUTH。默认为NONE。
+                     * API 鉴权类型。支持SECRET、NONE、OAUTH、APP。默认为NONE。
                      */
                     std::string m_authType;
                     bool m_authTypeHasBeenSet;

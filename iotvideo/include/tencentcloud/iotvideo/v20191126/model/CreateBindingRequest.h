@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ForceBindHasBeenSet() const;
 
+                    /**
+                     * 获取设备昵称
+                     * @return Nick 设备昵称
+                     */
+                    std::string GetNick() const;
+
+                    /**
+                     * 设置设备昵称
+                     * @param Nick 设备昵称
+                     */
+                    void SetNick(const std::string& _nick);
+
+                    /**
+                     * 判断参数 Nick 是否已赋值
+                     * @return Nick 是否已赋值
+                     */
+                    bool NickHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     bool m_forceBind;
                     bool m_forceBindHasBeenSet;
+
+                    /**
+                     * 设备昵称
+                     */
+                    std::string m_nick;
+                    bool m_nickHasBeenSet;
 
                 };
             }

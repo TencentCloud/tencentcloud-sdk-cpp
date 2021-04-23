@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool TtlMinutesHasBeenSet() const;
 
+                    /**
+                     * 获取旧的AccessToken。续期Token时，此参数为必须。
+                     * @return OldAccessToken 旧的AccessToken。续期Token时，此参数为必须。
+                     */
+                    std::string GetOldAccessToken() const;
+
+                    /**
+                     * 设置旧的AccessToken。续期Token时，此参数为必须。
+                     * @param OldAccessToken 旧的AccessToken。续期Token时，此参数为必须。
+                     */
+                    void SetOldAccessToken(const std::string& _oldAccessToken);
+
+                    /**
+                     * 判断参数 OldAccessToken 是否已赋值
+                     * @return OldAccessToken 是否已赋值
+                     */
+                    bool OldAccessTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     uint64_t m_ttlMinutes;
                     bool m_ttlMinutesHasBeenSet;
+
+                    /**
+                     * 旧的AccessToken。续期Token时，此参数为必须。
+                     */
+                    std::string m_oldAccessToken;
+                    bool m_oldAccessTokenHasBeenSet;
 
                 };
             }

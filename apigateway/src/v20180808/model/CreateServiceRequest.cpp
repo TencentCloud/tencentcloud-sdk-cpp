@@ -32,7 +32,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_ipVersionHasBeenSet(false),
     m_setServerNameHasBeenSet(false),
     m_appIdTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,14 @@ string CreateServiceRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -277,6 +286,22 @@ void CreateServiceRequest::SetTags(const vector<Tag>& _tags)
 bool CreateServiceRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateServiceRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreateServiceRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreateServiceRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

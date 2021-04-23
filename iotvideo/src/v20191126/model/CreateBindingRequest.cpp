@@ -27,7 +27,8 @@ CreateBindingRequest::CreateBindingRequest() :
     m_accessIdHasBeenSet(false),
     m_tidHasBeenSet(false),
     m_roleHasBeenSet(false),
-    m_forceBindHasBeenSet(false)
+    m_forceBindHasBeenSet(false),
+    m_nickHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string CreateBindingRequest::ToJsonString() const
         string key = "ForceBind";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceBind, allocator);
+    }
+
+    if (m_nickHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Nick";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_nick.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void CreateBindingRequest::SetForceBind(const bool& _forceBind)
 bool CreateBindingRequest::ForceBindHasBeenSet() const
 {
     return m_forceBindHasBeenSet;
+}
+
+string CreateBindingRequest::GetNick() const
+{
+    return m_nick;
+}
+
+void CreateBindingRequest::SetNick(const string& _nick)
+{
+    m_nick = _nick;
+    m_nickHasBeenSet = true;
+}
+
+bool CreateBindingRequest::NickHasBeenSet() const
+{
+    return m_nickHasBeenSet;
 }
 
 

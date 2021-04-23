@@ -28,6 +28,7 @@ ProjectInfo::ProjectInfo() :
     m_categoryHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_coverUrlHasBeenSet(false),
+    m_streamConnectProjectInfoHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -105,6 +106,23 @@ CoreInternalOutcome ProjectInfo::Deserialize(const Value &value)
         m_coverUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("StreamConnectProjectInfo") && !value["StreamConnectProjectInfo"].IsNull())
+    {
+        if (!value["StreamConnectProjectInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ProjectInfo.StreamConnectProjectInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_streamConnectProjectInfo.Deserialize(value["StreamConnectProjectInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_streamConnectProjectInfoHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -179,6 +197,15 @@ void ProjectInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "CoverUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_coverUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_streamConnectProjectInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StreamConnectProjectInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_streamConnectProjectInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -294,6 +321,22 @@ void ProjectInfo::SetCoverUrl(const string& _coverUrl)
 bool ProjectInfo::CoverUrlHasBeenSet() const
 {
     return m_coverUrlHasBeenSet;
+}
+
+StreamConnectProjectInfo ProjectInfo::GetStreamConnectProjectInfo() const
+{
+    return m_streamConnectProjectInfo;
+}
+
+void ProjectInfo::SetStreamConnectProjectInfo(const StreamConnectProjectInfo& _streamConnectProjectInfo)
+{
+    m_streamConnectProjectInfo = _streamConnectProjectInfo;
+    m_streamConnectProjectInfoHasBeenSet = true;
+}
+
+bool ProjectInfo::StreamConnectProjectInfoHasBeenSet() const
+{
+    return m_streamConnectProjectInfoHasBeenSet;
 }
 
 string ProjectInfo::GetCreateTime() const

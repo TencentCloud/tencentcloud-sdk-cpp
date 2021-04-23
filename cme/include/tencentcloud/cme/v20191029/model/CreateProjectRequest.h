@@ -68,6 +68,42 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
+                     * 获取项目名称，不可超过30个字符。
+                     * @return Name 项目名称，不可超过30个字符。
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置项目名称，不可超过30个字符。
+                     * @param Name 项目名称，不可超过30个字符。
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取项目归属者。
+                     * @return Owner 项目归属者。
+                     */
+                    Entity GetOwner() const;
+
+                    /**
+                     * 设置项目归属者。
+                     * @param Owner 项目归属者。
+                     */
+                    void SetOwner(const Entity& _owner);
+
+                    /**
+                     * 判断参数 Owner 是否已赋值
+                     * @return Owner 是否已赋值
+                     */
+                    bool OwnerHasBeenSet() const;
+
+                    /**
                      * 获取项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
@@ -104,42 +140,6 @@ namespace TencentCloud
                      * @return Category 是否已赋值
                      */
                     bool CategoryHasBeenSet() const;
-
-                    /**
-                     * 获取项目名称，不可超过30个字符。
-                     * @return Name 项目名称，不可超过30个字符。
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置项目名称，不可超过30个字符。
-                     * @param Name 项目名称，不可超过30个字符。
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
-                     * 获取项目归属者。
-                     * @return Owner 项目归属者。
-                     */
-                    Entity GetOwner() const;
-
-                    /**
-                     * 设置项目归属者。
-                     * @param Owner 项目归属者。
-                     */
-                    void SetOwner(const Entity& _owner);
-
-                    /**
-                     * 判断参数 Owner 是否已赋值
-                     * @return Owner 是否已赋值
-                     */
-                    bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取画布宽高比。
@@ -298,17 +298,6 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 项目类别，取值有：
-<li>VIDEO_EDIT：视频编辑。</li>
-<li>SWITCHER：导播台。</li>
-<li>VIDEO_SEGMENTATION：视频拆条。</li>
-<li>STREAM_CONNECT：云转推。</li>
-<li>RECORD_REPLAY：录制回放。</li>
-                     */
-                    std::string m_category;
-                    bool m_categoryHasBeenSet;
-
-                    /**
                      * 项目名称，不可超过30个字符。
                      */
                     std::string m_name;
@@ -319,6 +308,17 @@ namespace TencentCloud
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
+
+                    /**
+                     * 项目类别，取值有：
+<li>VIDEO_EDIT：视频编辑。</li>
+<li>SWITCHER：导播台。</li>
+<li>VIDEO_SEGMENTATION：视频拆条。</li>
+<li>STREAM_CONNECT：云转推。</li>
+<li>RECORD_REPLAY：录制回放。</li>
+                     */
+                    std::string m_category;
+                    bool m_categoryHasBeenSet;
 
                     /**
                      * 画布宽高比。

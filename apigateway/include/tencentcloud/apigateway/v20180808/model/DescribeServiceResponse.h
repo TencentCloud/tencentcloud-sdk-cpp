@@ -311,6 +311,48 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取独享实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 独享实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取独享实例name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceName 独享实例name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SetType 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSetType() const;
+
+                    /**
+                     * 判断参数 SetType 是否已赋值
+                     * @return SetType 是否已赋值
+                     */
+                    bool SetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -445,6 +487,27 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 独享实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 独享实例name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_setType;
+                    bool m_setTypeHasBeenSet;
 
                 };
             }

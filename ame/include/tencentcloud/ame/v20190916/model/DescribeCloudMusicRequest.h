@@ -61,14 +61,18 @@ namespace TencentCloud
                     bool MusicIdHasBeenSet() const;
 
                     /**
-                     * 获取歌曲类型，请填写：MP3-320K-FTD
-                     * @return MusicType 歌曲类型，请填写：MP3-320K-FTD
+                     * 获取MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
+MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
+                     * @return MusicType MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
+MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
                      */
                     std::string GetMusicType() const;
 
                     /**
-                     * 设置歌曲类型，请填写：MP3-320K-FTD
-                     * @param MusicType 歌曲类型，请填写：MP3-320K-FTD
+                     * 设置MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
+MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
+                     * @param MusicType MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
+MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
                      */
                     void SetMusicType(const std::string& _musicType);
 
@@ -87,7 +91,8 @@ namespace TencentCloud
                     bool m_musicIdHasBeenSet;
 
                     /**
-                     * 歌曲类型，请填写：MP3-320K-FTD
+                     * MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
+MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
                      */
                     std::string m_musicType;
                     bool m_musicTypeHasBeenSet;

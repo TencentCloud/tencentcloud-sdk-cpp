@@ -73,6 +73,8 @@
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTableTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeUserSqlAdviceRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeUserSqlAdviceResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/ModifyDiagDBInstanceConfRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/ModifyDiagDBInstanceConfResponse.h>
 
@@ -164,6 +166,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTopSpaceTablesResponse> DescribeTopSpaceTablesOutcome;
                 typedef std::future<DescribeTopSpaceTablesOutcome> DescribeTopSpaceTablesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceTablesRequest&, DescribeTopSpaceTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceTablesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeUserSqlAdviceResponse> DescribeUserSqlAdviceOutcome;
+                typedef std::future<DescribeUserSqlAdviceOutcome> DescribeUserSqlAdviceOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeUserSqlAdviceRequest&, DescribeUserSqlAdviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserSqlAdviceAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDiagDBInstanceConfResponse> ModifyDiagDBInstanceConfOutcome;
                 typedef std::future<ModifyDiagDBInstanceConfOutcome> ModifyDiagDBInstanceConfOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::ModifyDiagDBInstanceConfRequest&, ModifyDiagDBInstanceConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiagDBInstanceConfAsyncHandler;
@@ -394,6 +399,15 @@ namespace TencentCloud
                 DescribeTopSpaceTablesOutcome DescribeTopSpaceTables(const Model::DescribeTopSpaceTablesRequest &request);
                 void DescribeTopSpaceTablesAsync(const Model::DescribeTopSpaceTablesRequest& request, const DescribeTopSpaceTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopSpaceTablesOutcomeCallable DescribeTopSpaceTablesCallable(const Model::DescribeTopSpaceTablesRequest& request);
+
+                /**
+                 *获取SQL优化建议。
+                 * @param req DescribeUserSqlAdviceRequest
+                 * @return DescribeUserSqlAdviceOutcome
+                 */
+                DescribeUserSqlAdviceOutcome DescribeUserSqlAdvice(const Model::DescribeUserSqlAdviceRequest &request);
+                void DescribeUserSqlAdviceAsync(const Model::DescribeUserSqlAdviceRequest& request, const DescribeUserSqlAdviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserSqlAdviceOutcomeCallable DescribeUserSqlAdviceCallable(const Model::DescribeUserSqlAdviceRequest& request);
 
                 /**
                  *修改实例巡检开关。

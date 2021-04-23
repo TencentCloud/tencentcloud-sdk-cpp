@@ -140,6 +140,28 @@ namespace TencentCloud
                      */
                     bool StrategyHasBeenSet() const;
 
+                    /**
+                     * 获取最大限流值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxStrategy 最大限流值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxStrategy() const;
+
+                    /**
+                     * 设置最大限流值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxStrategy 最大限流值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxStrategy(const int64_t& _maxStrategy);
+
+                    /**
+                     * 判断参数 MaxStrategy 是否已赋值
+                     * @return MaxStrategy 是否已赋值
+                     */
+                    bool MaxStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -172,6 +194,13 @@ namespace TencentCloud
                      */
                     int64_t m_strategy;
                     bool m_strategyHasBeenSet;
+
+                    /**
+                     * 最大限流值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxStrategy;
+                    bool m_maxStrategyHasBeenSet;
 
                 };
             }

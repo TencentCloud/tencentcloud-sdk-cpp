@@ -212,6 +212,49 @@ TiwClient::DescribeOnlineRecordCallbackOutcomeCallable TiwClient::DescribeOnline
     return task->get_future();
 }
 
+TiwClient::DescribeQualityMetricsOutcome TiwClient::DescribeQualityMetrics(const DescribeQualityMetricsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQualityMetrics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQualityMetricsResponse rsp = DescribeQualityMetricsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQualityMetricsOutcome(rsp);
+        else
+            return DescribeQualityMetricsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQualityMetricsOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeQualityMetricsAsync(const DescribeQualityMetricsRequest& request, const DescribeQualityMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeQualityMetrics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeQualityMetricsOutcomeCallable TiwClient::DescribeQualityMetricsCallable(const DescribeQualityMetricsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeQualityMetricsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeQualityMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::DescribeTranscodeOutcome TiwClient::DescribeTranscode(const DescribeTranscodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTranscode");

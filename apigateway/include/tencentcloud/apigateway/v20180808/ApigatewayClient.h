@@ -31,6 +31,10 @@
 #include <tencentcloud/apigateway/v20180808/model/BindSecretIdsResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/BindSubDomainRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/BindSubDomainResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/BuildAPIDocRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/BuildAPIDocResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/CreateAPIDocRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/CreateAPIDocResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateApiRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateApiResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateApiKeyRequest.h>
@@ -41,6 +45,8 @@
 #include <tencentcloud/apigateway/v20180808/model/CreateServiceResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateUsagePlanRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateUsagePlanResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DeleteAPIDocRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DeleteAPIDocResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteApiRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteApiResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteApiKeyRequest.h>
@@ -55,6 +61,10 @@
 #include <tencentcloud/apigateway/v20180808/model/DeleteUsagePlanResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DemoteServiceUsagePlanRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DemoteServiceUsagePlanResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeAPIDocDetailRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeAPIDocDetailResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeAPIDocsRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeAPIDocsResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiEnvironmentStrategyRequest.h>
@@ -109,6 +119,8 @@
 #include <tencentcloud/apigateway/v20180808/model/EnableApiKeyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/GenerateApiDocumentRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/GenerateApiDocumentResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/ModifyAPIDocRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/ModifyAPIDocResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyApiRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyApiResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyApiEnvironmentStrategyRequest.h>
@@ -127,6 +139,8 @@
 #include <tencentcloud/apigateway/v20180808/model/ModifyUsagePlanResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ReleaseServiceRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/ReleaseServiceResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/ResetAPIDocPasswordRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/ResetAPIDocPasswordResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/UnBindEnvironmentRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/UnBindEnvironmentResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/UnBindIPStrategyRequest.h>
@@ -167,6 +181,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BindSubDomainResponse> BindSubDomainOutcome;
                 typedef std::future<BindSubDomainOutcome> BindSubDomainOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::BindSubDomainRequest&, BindSubDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindSubDomainAsyncHandler;
+                typedef Outcome<Error, Model::BuildAPIDocResponse> BuildAPIDocOutcome;
+                typedef std::future<BuildAPIDocOutcome> BuildAPIDocOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::BuildAPIDocRequest&, BuildAPIDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BuildAPIDocAsyncHandler;
+                typedef Outcome<Error, Model::CreateAPIDocResponse> CreateAPIDocOutcome;
+                typedef std::future<CreateAPIDocOutcome> CreateAPIDocOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::CreateAPIDocRequest&, CreateAPIDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAPIDocAsyncHandler;
                 typedef Outcome<Error, Model::CreateApiResponse> CreateApiOutcome;
                 typedef std::future<CreateApiOutcome> CreateApiOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::CreateApiRequest&, CreateApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApiAsyncHandler;
@@ -182,6 +202,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateUsagePlanResponse> CreateUsagePlanOutcome;
                 typedef std::future<CreateUsagePlanOutcome> CreateUsagePlanOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::CreateUsagePlanRequest&, CreateUsagePlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUsagePlanAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAPIDocResponse> DeleteAPIDocOutcome;
+                typedef std::future<DeleteAPIDocOutcome> DeleteAPIDocOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DeleteAPIDocRequest&, DeleteAPIDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAPIDocAsyncHandler;
                 typedef Outcome<Error, Model::DeleteApiResponse> DeleteApiOutcome;
                 typedef std::future<DeleteApiOutcome> DeleteApiOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DeleteApiRequest&, DeleteApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApiAsyncHandler;
@@ -203,6 +226,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DemoteServiceUsagePlanResponse> DemoteServiceUsagePlanOutcome;
                 typedef std::future<DemoteServiceUsagePlanOutcome> DemoteServiceUsagePlanOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DemoteServiceUsagePlanRequest&, DemoteServiceUsagePlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DemoteServiceUsagePlanAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAPIDocDetailResponse> DescribeAPIDocDetailOutcome;
+                typedef std::future<DescribeAPIDocDetailOutcome> DescribeAPIDocDetailOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribeAPIDocDetailRequest&, DescribeAPIDocDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAPIDocDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAPIDocsResponse> DescribeAPIDocsOutcome;
+                typedef std::future<DescribeAPIDocsOutcome> DescribeAPIDocsOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribeAPIDocsRequest&, DescribeAPIDocsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAPIDocsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeApiResponse> DescribeApiOutcome;
                 typedef std::future<DescribeApiOutcome> DescribeApiOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeApiRequest&, DescribeApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiAsyncHandler;
@@ -284,6 +313,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GenerateApiDocumentResponse> GenerateApiDocumentOutcome;
                 typedef std::future<GenerateApiDocumentOutcome> GenerateApiDocumentOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::GenerateApiDocumentRequest&, GenerateApiDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateApiDocumentAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAPIDocResponse> ModifyAPIDocOutcome;
+                typedef std::future<ModifyAPIDocOutcome> ModifyAPIDocOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::ModifyAPIDocRequest&, ModifyAPIDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAPIDocAsyncHandler;
                 typedef Outcome<Error, Model::ModifyApiResponse> ModifyApiOutcome;
                 typedef std::future<ModifyApiOutcome> ModifyApiOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::ModifyApiRequest&, ModifyApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiAsyncHandler;
@@ -311,6 +343,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ReleaseServiceResponse> ReleaseServiceOutcome;
                 typedef std::future<ReleaseServiceOutcome> ReleaseServiceOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::ReleaseServiceRequest&, ReleaseServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseServiceAsyncHandler;
+                typedef Outcome<Error, Model::ResetAPIDocPasswordResponse> ResetAPIDocPasswordOutcome;
+                typedef std::future<ResetAPIDocPasswordOutcome> ResetAPIDocPasswordOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::ResetAPIDocPasswordRequest&, ResetAPIDocPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAPIDocPasswordAsyncHandler;
                 typedef Outcome<Error, Model::UnBindEnvironmentResponse> UnBindEnvironmentOutcome;
                 typedef std::future<UnBindEnvironmentOutcome> UnBindEnvironmentOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::UnBindEnvironmentRequest&, UnBindEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindEnvironmentAsyncHandler;
@@ -376,6 +411,24 @@ API 网关中每个服务都会提供一个默认的域名供用户调用，但�
                 BindSubDomainOutcomeCallable BindSubDomainCallable(const Model::BindSubDomainRequest& request);
 
                 /**
+                 *构建 API 文档
+                 * @param req BuildAPIDocRequest
+                 * @return BuildAPIDocOutcome
+                 */
+                BuildAPIDocOutcome BuildAPIDoc(const Model::BuildAPIDocRequest &request);
+                void BuildAPIDocAsync(const Model::BuildAPIDocRequest& request, const BuildAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BuildAPIDocOutcomeCallable BuildAPIDocCallable(const Model::BuildAPIDocRequest& request);
+
+                /**
+                 *创建 API 文档
+                 * @param req CreateAPIDocRequest
+                 * @return CreateAPIDocOutcome
+                 */
+                CreateAPIDocOutcome CreateAPIDoc(const Model::CreateAPIDocRequest &request);
+                void CreateAPIDocAsync(const Model::CreateAPIDocRequest& request, const CreateAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAPIDocOutcomeCallable CreateAPIDocCallable(const Model::CreateAPIDocRequest& request);
+
+                /**
                  *本接口（CreateApi）用于创建 API 接口，创建 API 前，用户需要先创建服务，每个 API 都有自己归属的服务。
                  * @param req CreateApiRequest
                  * @return CreateApiOutcome
@@ -421,6 +474,15 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 CreateUsagePlanOutcome CreateUsagePlan(const Model::CreateUsagePlanRequest &request);
                 void CreateUsagePlanAsync(const Model::CreateUsagePlanRequest& request, const CreateUsagePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUsagePlanOutcomeCallable CreateUsagePlanCallable(const Model::CreateUsagePlanRequest& request);
+
+                /**
+                 *删除 API 文档
+                 * @param req DeleteAPIDocRequest
+                 * @return DeleteAPIDocOutcome
+                 */
+                DeleteAPIDocOutcome DeleteAPIDoc(const Model::DeleteAPIDocRequest &request);
+                void DeleteAPIDocAsync(const Model::DeleteAPIDocRequest& request, const DeleteAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAPIDocOutcomeCallable DeleteAPIDocCallable(const Model::DeleteAPIDocRequest& request);
 
                 /**
                  *本接口（DeleteApi）用于删除已经创建的API。
@@ -487,6 +549,24 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DemoteServiceUsagePlanOutcome DemoteServiceUsagePlan(const Model::DemoteServiceUsagePlanRequest &request);
                 void DemoteServiceUsagePlanAsync(const Model::DemoteServiceUsagePlanRequest& request, const DemoteServiceUsagePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DemoteServiceUsagePlanOutcomeCallable DemoteServiceUsagePlanCallable(const Model::DemoteServiceUsagePlanRequest& request);
+
+                /**
+                 *查询 API 文档详情
+                 * @param req DescribeAPIDocDetailRequest
+                 * @return DescribeAPIDocDetailOutcome
+                 */
+                DescribeAPIDocDetailOutcome DescribeAPIDocDetail(const Model::DescribeAPIDocDetailRequest &request);
+                void DescribeAPIDocDetailAsync(const Model::DescribeAPIDocDetailRequest& request, const DescribeAPIDocDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAPIDocDetailOutcomeCallable DescribeAPIDocDetailCallable(const Model::DescribeAPIDocDetailRequest& request);
+
+                /**
+                 *查询 API 文档列表
+                 * @param req DescribeAPIDocsRequest
+                 * @return DescribeAPIDocsOutcome
+                 */
+                DescribeAPIDocsOutcome DescribeAPIDocs(const Model::DescribeAPIDocsRequest &request);
+                void DescribeAPIDocsAsync(const Model::DescribeAPIDocsRequest& request, const DescribeAPIDocsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAPIDocsOutcomeCallable DescribeAPIDocsCallable(const Model::DescribeAPIDocsRequest& request);
 
                 /**
                  *本接口（DescribeApi）用于查询用户 API 网关的 API 接口的详细信息。​
@@ -742,6 +822,15 @@ API 网关可绑定自定义域名到服务，用于服务调用。此接口用�
                 GenerateApiDocumentOutcomeCallable GenerateApiDocumentCallable(const Model::GenerateApiDocumentRequest& request);
 
                 /**
+                 *修改 API 文档
+                 * @param req ModifyAPIDocRequest
+                 * @return ModifyAPIDocOutcome
+                 */
+                ModifyAPIDocOutcome ModifyAPIDoc(const Model::ModifyAPIDocRequest &request);
+                void ModifyAPIDocAsync(const Model::ModifyAPIDocRequest& request, const ModifyAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAPIDocOutcomeCallable ModifyAPIDocCallable(const Model::ModifyAPIDocRequest& request);
+
+                /**
                  *本接口（ModifyApi）用于修改 API 接口，可调用此接口对已经配置的 API 接口进行编辑修改。修改后的 API 需要重新发布 API 所在的服务到对应环境方能生效。
                  * @param req ModifyApiRequest
                  * @return ModifyApiOutcome
@@ -822,6 +911,15 @@ API 网关的服务创建后，需要发布到某个环境方生效后，使用�
                 ReleaseServiceOutcome ReleaseService(const Model::ReleaseServiceRequest &request);
                 void ReleaseServiceAsync(const Model::ReleaseServiceRequest& request, const ReleaseServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReleaseServiceOutcomeCallable ReleaseServiceCallable(const Model::ReleaseServiceRequest& request);
+
+                /**
+                 *重置API文档密码
+                 * @param req ResetAPIDocPasswordRequest
+                 * @return ResetAPIDocPasswordOutcome
+                 */
+                ResetAPIDocPasswordOutcome ResetAPIDocPassword(const Model::ResetAPIDocPasswordRequest &request);
+                void ResetAPIDocPasswordAsync(const Model::ResetAPIDocPasswordRequest& request, const ResetAPIDocPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetAPIDocPasswordOutcomeCallable ResetAPIDocPasswordCallable(const Model::ResetAPIDocPasswordRequest& request);
 
                 /**
                  *本接口（UnBindEnvironment）用于将使用计划从特定环境解绑。

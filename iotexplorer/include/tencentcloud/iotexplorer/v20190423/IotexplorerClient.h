@@ -75,6 +75,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetCOSURLRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetCOSURLResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h>
@@ -205,6 +207,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EnableTopicRuleResponse> EnableTopicRuleOutcome;
                 typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::EnableTopicRuleRequest&, EnableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTopicRuleAsyncHandler;
+                typedef Outcome<Error, Model::GetCOSURLResponse> GetCOSURLOutcome;
+                typedef std::future<GetCOSURLOutcome> GetCOSURLOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetCOSURLRequest&, GetCOSURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCOSURLAsyncHandler;
                 typedef Outcome<Error, Model::GetDeviceListResponse> GetDeviceListOutcome;
                 typedef std::future<GetDeviceListOutcome> GetDeviceListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetDeviceListRequest&, GetDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceListAsyncHandler;
@@ -498,6 +503,15 @@ namespace TencentCloud
                 EnableTopicRuleOutcome EnableTopicRule(const Model::EnableTopicRuleRequest &request);
                 void EnableTopicRuleAsync(const Model::EnableTopicRuleRequest& request, const EnableTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableTopicRuleOutcomeCallable EnableTopicRuleCallable(const Model::EnableTopicRuleRequest& request);
+
+                /**
+                 *本接口（GetCOSURL）用于获取固件存储在COS的URL 
+                 * @param req GetCOSURLRequest
+                 * @return GetCOSURLOutcome
+                 */
+                GetCOSURLOutcome GetCOSURL(const Model::GetCOSURLRequest &request);
+                void GetCOSURLAsync(const Model::GetCOSURLRequest& request, const GetCOSURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCOSURLOutcomeCallable GetCOSURLCallable(const Model::GetCOSURLRequest& request);
 
                 /**
                  *用于查询某个产品下的设备列表

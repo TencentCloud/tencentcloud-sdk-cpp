@@ -30,9 +30,11 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20191016/model/ContactItem.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeHealthScoreResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBDiagHistoryResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/ScoreItem.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDiagDBInstancesRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBSpaceStatusRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeAllUserContactResponse.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeUserSqlAdviceResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceSchemasRequest.h
   include/tencentcloud/dbbrain/v20191016/model/ModifyDiagDBInstanceConfRequest.h
   include/tencentcloud/dbbrain/v20191016/model/MonitorMetric.h
@@ -46,7 +48,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20191016/model/SchemaItem.h
   include/tencentcloud/dbbrain/v20191016/model/CreateMailProfileResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesRequest.h
-  include/tencentcloud/dbbrain/v20191016/model/SchemaSpaceData.h
+  include/tencentcloud/dbbrain/v20191016/model/ProfileInfo.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeAllUserContactRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDBDiagEventRequest.h
   include/tencentcloud/dbbrain/v20191016/model/CreateSecurityAuditLogExportTaskRequest.h
@@ -91,14 +93,14 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20191016/model/InstanceConfs.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeDiagDBInstancesResponse.h
   include/tencentcloud/dbbrain/v20191016/model/HealthStatus.h
-  include/tencentcloud/dbbrain/v20191016/model/ProfileInfo.h
+  include/tencentcloud/dbbrain/v20191016/model/DescribeUserSqlAdviceRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeAllUserGroupRequest.h
   include/tencentcloud/dbbrain/v20191016/model/CreateDBDiagReportUrlRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogExportTasksResponse.h
   include/tencentcloud/dbbrain/v20191016/model/CreateSecurityAuditLogExportTaskResponse.h
   include/tencentcloud/dbbrain/v20191016/model/UserProfile.h
-  include/tencentcloud/dbbrain/v20191016/model/ScoreItem.h
+  include/tencentcloud/dbbrain/v20191016/model/SchemaSpaceData.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceTablesResponse.h
   )
 
@@ -115,9 +117,11 @@ set(dbbrain_src
   src/v20191016/model/ContactItem.cpp
   src/v20191016/model/DescribeHealthScoreResponse.cpp
   src/v20191016/model/DescribeDBDiagHistoryResponse.cpp
+  src/v20191016/model/ScoreItem.cpp
   src/v20191016/model/DescribeDiagDBInstancesRequest.cpp
   src/v20191016/model/DescribeDBSpaceStatusRequest.cpp
   src/v20191016/model/DescribeAllUserContactResponse.cpp
+  src/v20191016/model/DescribeUserSqlAdviceResponse.cpp
   src/v20191016/model/DescribeTopSpaceSchemasRequest.cpp
   src/v20191016/model/ModifyDiagDBInstanceConfRequest.cpp
   src/v20191016/model/MonitorMetric.cpp
@@ -131,7 +135,7 @@ set(dbbrain_src
   src/v20191016/model/SchemaItem.cpp
   src/v20191016/model/CreateMailProfileResponse.cpp
   src/v20191016/model/DescribeTopSpaceTablesRequest.cpp
-  src/v20191016/model/SchemaSpaceData.cpp
+  src/v20191016/model/ProfileInfo.cpp
   src/v20191016/model/DescribeAllUserContactRequest.cpp
   src/v20191016/model/DescribeDBDiagEventRequest.cpp
   src/v20191016/model/CreateSecurityAuditLogExportTaskRequest.cpp
@@ -176,14 +180,14 @@ set(dbbrain_src
   src/v20191016/model/InstanceConfs.cpp
   src/v20191016/model/DescribeDiagDBInstancesResponse.cpp
   src/v20191016/model/HealthStatus.cpp
-  src/v20191016/model/ProfileInfo.cpp
+  src/v20191016/model/DescribeUserSqlAdviceRequest.cpp
   src/v20191016/model/DescribeAllUserGroupRequest.cpp
   src/v20191016/model/CreateDBDiagReportUrlRequest.cpp
   src/v20191016/model/DescribeSlowLogTimeSeriesStatsResponse.cpp
   src/v20191016/model/DescribeSecurityAuditLogExportTasksResponse.cpp
   src/v20191016/model/CreateSecurityAuditLogExportTaskResponse.cpp
   src/v20191016/model/UserProfile.cpp
-  src/v20191016/model/ScoreItem.cpp
+  src/v20191016/model/SchemaSpaceData.cpp
   src/v20191016/model/DescribeTopSpaceTablesResponse.cpp
   )
 

@@ -40,6 +40,92 @@ TseClient::TseClient(const Credential &credential, const string &region, const C
 }
 
 
+TseClient::DescribeSREInstanceAccessAddressOutcome TseClient::DescribeSREInstanceAccessAddress(const DescribeSREInstanceAccessAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSREInstanceAccessAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSREInstanceAccessAddressResponse rsp = DescribeSREInstanceAccessAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSREInstanceAccessAddressOutcome(rsp);
+        else
+            return DescribeSREInstanceAccessAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSREInstanceAccessAddressOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeSREInstanceAccessAddressAsync(const DescribeSREInstanceAccessAddressRequest& request, const DescribeSREInstanceAccessAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSREInstanceAccessAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeSREInstanceAccessAddressOutcomeCallable TseClient::DescribeSREInstanceAccessAddressCallable(const DescribeSREInstanceAccessAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSREInstanceAccessAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSREInstanceAccessAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeSREInstancesOutcome TseClient::DescribeSREInstances(const DescribeSREInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSREInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSREInstancesResponse rsp = DescribeSREInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSREInstancesOutcome(rsp);
+        else
+            return DescribeSREInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSREInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeSREInstancesAsync(const DescribeSREInstancesRequest& request, const DescribeSREInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSREInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeSREInstancesOutcomeCallable TseClient::DescribeSREInstancesCallable(const DescribeSREInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSREInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSREInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::ManageConfigOutcome TseClient::ManageConfig(const ManageConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ManageConfig");

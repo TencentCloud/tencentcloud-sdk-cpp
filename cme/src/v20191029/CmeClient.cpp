@@ -1330,6 +1330,49 @@ CmeClient::GrantResourceAuthorizationOutcomeCallable CmeClient::GrantResourceAut
     return task->get_future();
 }
 
+CmeClient::HandleStreamConnectProjectOutcome CmeClient::HandleStreamConnectProject(const HandleStreamConnectProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "HandleStreamConnectProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        HandleStreamConnectProjectResponse rsp = HandleStreamConnectProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return HandleStreamConnectProjectOutcome(rsp);
+        else
+            return HandleStreamConnectProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return HandleStreamConnectProjectOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::HandleStreamConnectProjectAsync(const HandleStreamConnectProjectRequest& request, const HandleStreamConnectProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->HandleStreamConnectProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::HandleStreamConnectProjectOutcomeCallable CmeClient::HandleStreamConnectProjectCallable(const HandleStreamConnectProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<HandleStreamConnectProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->HandleStreamConnectProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmeClient::ImportMaterialOutcome CmeClient::ImportMaterial(const ImportMaterialRequest &request)
 {
     auto outcome = MakeRequest(request, "ImportMaterial");

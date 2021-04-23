@@ -31,6 +31,8 @@
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeQualityMetricsRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeQualityMetricsResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackRequest.h>
@@ -97,6 +99,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeOnlineRecordCallbackResponse> DescribeOnlineRecordCallbackOutcome;
                 typedef std::future<DescribeOnlineRecordCallbackOutcome> DescribeOnlineRecordCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeOnlineRecordCallbackRequest&, DescribeOnlineRecordCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOnlineRecordCallbackAsyncHandler;
+                typedef Outcome<Error, Model::DescribeQualityMetricsResponse> DescribeQualityMetricsOutcome;
+                typedef std::future<DescribeQualityMetricsOutcome> DescribeQualityMetricsOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeQualityMetricsRequest&, DescribeQualityMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityMetricsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTranscodeResponse> DescribeTranscodeOutcome;
                 typedef std::future<DescribeTranscodeOutcome> DescribeTranscodeOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeTranscodeRequest&, DescribeTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeAsyncHandler;
@@ -195,6 +200,15 @@ namespace TencentCloud
                 DescribeOnlineRecordCallbackOutcome DescribeOnlineRecordCallback(const Model::DescribeOnlineRecordCallbackRequest &request);
                 void DescribeOnlineRecordCallbackAsync(const Model::DescribeOnlineRecordCallbackRequest& request, const DescribeOnlineRecordCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOnlineRecordCallbackOutcomeCallable DescribeOnlineRecordCallbackCallable(const Model::DescribeOnlineRecordCallbackRequest& request);
+
+                /**
+                 *查询互动白板质量数据
+                 * @param req DescribeQualityMetricsRequest
+                 * @return DescribeQualityMetricsOutcome
+                 */
+                DescribeQualityMetricsOutcome DescribeQualityMetrics(const Model::DescribeQualityMetricsRequest &request);
+                void DescribeQualityMetricsAsync(const Model::DescribeQualityMetricsRequest& request, const DescribeQualityMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQualityMetricsOutcomeCallable DescribeQualityMetricsCallable(const Model::DescribeQualityMetricsRequest& request);
 
                 /**
                  *查询文档转码任务的执行进度与转码结果

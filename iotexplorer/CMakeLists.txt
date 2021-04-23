@@ -69,6 +69,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/FirmwareInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/TopicRuleInfo.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetCOSURLRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateProjectRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h
@@ -76,6 +77,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/PublishMessageRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UploadFirmwareRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetCOSURLResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/EventHistoryItem.h
@@ -179,6 +181,7 @@ set(iotexplorer_src
   src/v20190423/model/FirmwareInfo.cpp
   src/v20190423/model/DisableTopicRuleResponse.cpp
   src/v20190423/model/TopicRuleInfo.cpp
+  src/v20190423/model/GetCOSURLRequest.cpp
   src/v20190423/model/CreateProjectRequest.cpp
   src/v20190423/model/DescribeDeviceResponse.cpp
   src/v20190423/model/ListFirmwaresRequest.cpp
@@ -186,6 +189,7 @@ set(iotexplorer_src
   src/v20190423/model/PublishMessageRequest.cpp
   src/v20190423/model/UploadFirmwareRequest.cpp
   src/v20190423/model/GetDeviceListRequest.cpp
+  src/v20190423/model/GetCOSURLResponse.cpp
   src/v20190423/model/GetTopicRuleListResponse.cpp
   src/v20190423/model/DisableTopicRuleRequest.cpp
   src/v20190423/model/EventHistoryItem.cpp

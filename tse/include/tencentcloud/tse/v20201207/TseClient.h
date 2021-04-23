@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeSREInstancesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h>
 #include <tencentcloud/tse/v20201207/model/ManageConfigRequest.h>
 #include <tencentcloud/tse/v20201207/model/ManageConfigResponse.h>
 
@@ -39,11 +43,35 @@ namespace TencentCloud
                 TseClient(const Credential &credential, const std::string &region);
                 TseClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::DescribeSREInstanceAccessAddressResponse> DescribeSREInstanceAccessAddressOutcome;
+                typedef std::future<DescribeSREInstanceAccessAddressOutcome> DescribeSREInstanceAccessAddressOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeSREInstanceAccessAddressRequest&, DescribeSREInstanceAccessAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSREInstanceAccessAddressAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSREInstancesResponse> DescribeSREInstancesOutcome;
+                typedef std::future<DescribeSREInstancesOutcome> DescribeSREInstancesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeSREInstancesRequest&, DescribeSREInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSREInstancesAsyncHandler;
                 typedef Outcome<Error, Model::ManageConfigResponse> ManageConfigOutcome;
                 typedef std::future<ManageConfigOutcome> ManageConfigOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ManageConfigRequest&, ManageConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageConfigAsyncHandler;
 
 
+
+                /**
+                 *查询微服务注册引擎实例访问地址
+                 * @param req DescribeSREInstanceAccessAddressRequest
+                 * @return DescribeSREInstanceAccessAddressOutcome
+                 */
+                DescribeSREInstanceAccessAddressOutcome DescribeSREInstanceAccessAddress(const Model::DescribeSREInstanceAccessAddressRequest &request);
+                void DescribeSREInstanceAccessAddressAsync(const Model::DescribeSREInstanceAccessAddressRequest& request, const DescribeSREInstanceAccessAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSREInstanceAccessAddressOutcomeCallable DescribeSREInstanceAccessAddressCallable(const Model::DescribeSREInstanceAccessAddressRequest& request);
+
+                /**
+                 *用于查询微服务注册中心实例列表
+                 * @param req DescribeSREInstancesRequest
+                 * @return DescribeSREInstancesOutcome
+                 */
+                DescribeSREInstancesOutcome DescribeSREInstances(const Model::DescribeSREInstancesRequest &request);
+                void DescribeSREInstancesAsync(const Model::DescribeSREInstancesRequest& request, const DescribeSREInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSREInstancesOutcomeCallable DescribeSREInstancesCallable(const Model::DescribeSREInstancesRequest& request);
 
                 /**
                  *管理配置

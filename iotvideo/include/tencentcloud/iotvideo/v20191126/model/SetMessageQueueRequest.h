@@ -86,6 +86,7 @@ namespace TencentCloud
 3.控制状态变更
 4.状态信息变更
 5.事件发布
+6.系统事件
                      * @return MsgType 消息类型,整型值（0-31）之间以“,”分隔
 0：在线状态变更
 1.固件版本变更
@@ -93,6 +94,7 @@ namespace TencentCloud
 3.控制状态变更
 4.状态信息变更
 5.事件发布
+6.系统事件
                      */
                     std::string GetMsgType() const;
 
@@ -104,6 +106,7 @@ namespace TencentCloud
 3.控制状态变更
 4.状态信息变更
 5.事件发布
+6.系统事件
                      * @param MsgType 消息类型,整型值（0-31）之间以“,”分隔
 0：在线状态变更
 1.固件版本变更
@@ -111,6 +114,7 @@ namespace TencentCloud
 3.控制状态变更
 4.状态信息变更
 5.事件发布
+6.系统事件
                      */
                     void SetMsgType(const std::string& _msgType);
 
@@ -196,6 +200,7 @@ namespace TencentCloud
 3.控制状态变更
 4.状态信息变更
 5.事件发布
+6.系统事件
                      */
                     std::string m_msgType;
                     bool m_msgTypeHasBeenSet;
