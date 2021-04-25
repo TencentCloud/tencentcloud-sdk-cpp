@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h>
+#include <tencentcloud/api/v20201106/model/DescribeZonesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Api::V20201106::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeClusterEndpointStatusResponse::DescribeClusterEndpointStatusResponse() :
-    m_statusHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+DescribeZonesResponse::DescribeZonesResponse() :
+    m_totalCountHasBeenSet(false),
+    m_zoneSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeZonesResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +64,34 @@ CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const str
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Status"].IsString())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_status = string(rsp["Status"].GetString());
-        m_statusHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    if (rsp.HasMember("ZoneSet") && !rsp["ZoneSet"].IsNull())
     {
-        if (!rsp["ErrorMsg"].IsString())
+        if (!rsp["ZoneSet"].IsArray())
+            return CoreInternalOutcome(Error("response `ZoneSet` is not array type"));
+
+        const Value &tmpValue = rsp["ZoneSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            ZoneInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_zoneSet.push_back(item);
         }
-        m_errorMsg = string(rsp["ErrorMsg"].GetString());
-        m_errorMsgHasBeenSet = true;
+        m_zoneSetHasBeenSet = true;
     }
 
 
@@ -89,24 +99,24 @@ CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const str
 }
 
 
-string DescribeClusterEndpointStatusResponse::GetStatus() const
+uint64_t DescribeZonesResponse::GetTotalCount() const
 {
-    return m_status;
+    return m_totalCount;
 }
 
-bool DescribeClusterEndpointStatusResponse::StatusHasBeenSet() const
+bool DescribeZonesResponse::TotalCountHasBeenSet() const
 {
-    return m_statusHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-string DescribeClusterEndpointStatusResponse::GetErrorMsg() const
+vector<ZoneInfo> DescribeZonesResponse::GetZoneSet() const
 {
-    return m_errorMsg;
+    return m_zoneSet;
 }
 
-bool DescribeClusterEndpointStatusResponse::ErrorMsgHasBeenSet() const
+bool DescribeZonesResponse::ZoneSetHasBeenSet() const
 {
-    return m_errorMsgHasBeenSet;
+    return m_zoneSetHasBeenSet;
 }
 
 

@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunEnvResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeClusterEndpointStatusResponse::DescribeClusterEndpointStatusResponse() :
-    m_statusHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+CreateWxCloudBaseRunEnvResponse::CreateWxCloudBaseRunEnvResponse() :
+    m_envIdHasBeenSet(false),
+    m_tranIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateWxCloudBaseRunEnvResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +64,24 @@ CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const str
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("EnvId") && !rsp["EnvId"].IsNull())
     {
-        if (!rsp["Status"].IsString())
+        if (!rsp["EnvId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `EnvId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_status = string(rsp["Status"].GetString());
-        m_statusHasBeenSet = true;
+        m_envId = string(rsp["EnvId"].GetString());
+        m_envIdHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    if (rsp.HasMember("TranId") && !rsp["TranId"].IsNull())
     {
-        if (!rsp["ErrorMsg"].IsString())
+        if (!rsp["TranId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TranId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_errorMsg = string(rsp["ErrorMsg"].GetString());
-        m_errorMsgHasBeenSet = true;
+        m_tranId = string(rsp["TranId"].GetString());
+        m_tranIdHasBeenSet = true;
     }
 
 
@@ -89,24 +89,24 @@ CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const str
 }
 
 
-string DescribeClusterEndpointStatusResponse::GetStatus() const
+string CreateWxCloudBaseRunEnvResponse::GetEnvId() const
 {
-    return m_status;
+    return m_envId;
 }
 
-bool DescribeClusterEndpointStatusResponse::StatusHasBeenSet() const
+bool CreateWxCloudBaseRunEnvResponse::EnvIdHasBeenSet() const
 {
-    return m_statusHasBeenSet;
+    return m_envIdHasBeenSet;
 }
 
-string DescribeClusterEndpointStatusResponse::GetErrorMsg() const
+string CreateWxCloudBaseRunEnvResponse::GetTranId() const
 {
-    return m_errorMsg;
+    return m_tranId;
 }
 
-bool DescribeClusterEndpointStatusResponse::ErrorMsgHasBeenSet() const
+bool CreateWxCloudBaseRunEnvResponse::TranIdHasBeenSet() const
 {
-    return m_errorMsgHasBeenSet;
+    return m_tranIdHasBeenSet;
 }
 
 

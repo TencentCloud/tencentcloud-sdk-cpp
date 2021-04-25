@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeClusterEndpointStatusResponse::DescribeClusterEndpointStatusResponse() :
-    m_statusHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+DescribeWxCloudBaseRunEnvsResponse::DescribeWxCloudBaseRunEnvsResponse() :
+    m_envListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeWxCloudBaseRunEnvsResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +63,24 @@ CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const str
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("EnvList") && !rsp["EnvList"].IsNull())
     {
-        if (!rsp["Status"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = string(rsp["Status"].GetString());
-        m_statusHasBeenSet = true;
-    }
+        if (!rsp["EnvList"].IsArray())
+            return CoreInternalOutcome(Error("response `EnvList` is not array type"));
 
-    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
-    {
-        if (!rsp["ErrorMsg"].IsString())
+        const Value &tmpValue = rsp["EnvList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            EnvInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_envList.push_back(item);
         }
-        m_errorMsg = string(rsp["ErrorMsg"].GetString());
-        m_errorMsgHasBeenSet = true;
+        m_envListHasBeenSet = true;
     }
 
 
@@ -89,24 +88,14 @@ CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const str
 }
 
 
-string DescribeClusterEndpointStatusResponse::GetStatus() const
+vector<EnvInfo> DescribeWxCloudBaseRunEnvsResponse::GetEnvList() const
 {
-    return m_status;
+    return m_envList;
 }
 
-bool DescribeClusterEndpointStatusResponse::StatusHasBeenSet() const
+bool DescribeWxCloudBaseRunEnvsResponse::EnvListHasBeenSet() const
 {
-    return m_statusHasBeenSet;
-}
-
-string DescribeClusterEndpointStatusResponse::GetErrorMsg() const
-{
-    return m_errorMsg;
-}
-
-bool DescribeClusterEndpointStatusResponse::ErrorMsgHasBeenSet() const
-{
-    return m_errorMsgHasBeenSet;
+    return m_envListHasBeenSet;
 }
 
 

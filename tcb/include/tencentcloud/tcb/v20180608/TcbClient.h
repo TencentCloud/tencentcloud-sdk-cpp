@@ -41,6 +41,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreatePostpayPackageResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteEndUserRequest.h>
@@ -93,6 +95,10 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSmsQuotasRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSmsQuotasResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
@@ -150,6 +156,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateStaticStoreResponse> CreateStaticStoreOutcome;
                 typedef std::future<CreateStaticStoreOutcome> CreateStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateStaticStoreRequest&, CreateStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStaticStoreAsyncHandler;
+                typedef Outcome<Error, Model::CreateWxCloudBaseRunEnvResponse> CreateWxCloudBaseRunEnvOutcome;
+                typedef std::future<CreateWxCloudBaseRunEnvOutcome> CreateWxCloudBaseRunEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateWxCloudBaseRunEnvRequest&, CreateWxCloudBaseRunEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWxCloudBaseRunEnvAsyncHandler;
                 typedef Outcome<Error, Model::DeleteCloudBaseProjectLatestVersionResponse> DeleteCloudBaseProjectLatestVersionOutcome;
                 typedef std::future<DeleteCloudBaseProjectLatestVersionOutcome> DeleteCloudBaseProjectLatestVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteCloudBaseProjectLatestVersionRequest&, DeleteCloudBaseProjectLatestVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudBaseProjectLatestVersionAsyncHandler;
@@ -228,6 +237,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSmsQuotasResponse> DescribeSmsQuotasOutcome;
                 typedef std::future<DescribeSmsQuotasOutcome> DescribeSmsQuotasOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeSmsQuotasRequest&, DescribeSmsQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmsQuotasAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWxCloudBaseRunEnvsResponse> DescribeWxCloudBaseRunEnvsOutcome;
+                typedef std::future<DescribeWxCloudBaseRunEnvsOutcome> DescribeWxCloudBaseRunEnvsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeWxCloudBaseRunEnvsRequest&, DescribeWxCloudBaseRunEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWxCloudBaseRunEnvsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWxCloudBaseRunSubNetsResponse> DescribeWxCloudBaseRunSubNetsOutcome;
+                typedef std::future<DescribeWxCloudBaseRunSubNetsOutcome> DescribeWxCloudBaseRunSubNetsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeWxCloudBaseRunSubNetsRequest&, DescribeWxCloudBaseRunSubNetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWxCloudBaseRunSubNetsAsyncHandler;
                 typedef Outcome<Error, Model::DestroyEnvResponse> DestroyEnvOutcome;
                 typedef std::future<DestroyEnvOutcome> DestroyEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyEnvRequest&, DestroyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyEnvAsyncHandler;
@@ -335,6 +350,15 @@ namespace TencentCloud
                 CreateStaticStoreOutcome CreateStaticStore(const Model::CreateStaticStoreRequest &request);
                 void CreateStaticStoreAsync(const Model::CreateStaticStoreRequest& request, const CreateStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateStaticStoreOutcomeCallable CreateStaticStoreCallable(const Model::CreateStaticStoreRequest& request);
+
+                /**
+                 *创建微信云托管
+                 * @param req CreateWxCloudBaseRunEnvRequest
+                 * @return CreateWxCloudBaseRunEnvOutcome
+                 */
+                CreateWxCloudBaseRunEnvOutcome CreateWxCloudBaseRunEnv(const Model::CreateWxCloudBaseRunEnvRequest &request);
+                void CreateWxCloudBaseRunEnvAsync(const Model::CreateWxCloudBaseRunEnvRequest& request, const CreateWxCloudBaseRunEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWxCloudBaseRunEnvOutcomeCallable CreateWxCloudBaseRunEnvCallable(const Model::CreateWxCloudBaseRunEnvRequest& request);
 
                 /**
                  *删除云项目
@@ -572,6 +596,24 @@ namespace TencentCloud
                 DescribeSmsQuotasOutcome DescribeSmsQuotas(const Model::DescribeSmsQuotasRequest &request);
                 void DescribeSmsQuotasAsync(const Model::DescribeSmsQuotasRequest& request, const DescribeSmsQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSmsQuotasOutcomeCallable DescribeSmsQuotasCallable(const Model::DescribeSmsQuotasRequest& request);
+
+                /**
+                 *查询微信云托管环境信息
+                 * @param req DescribeWxCloudBaseRunEnvsRequest
+                 * @return DescribeWxCloudBaseRunEnvsOutcome
+                 */
+                DescribeWxCloudBaseRunEnvsOutcome DescribeWxCloudBaseRunEnvs(const Model::DescribeWxCloudBaseRunEnvsRequest &request);
+                void DescribeWxCloudBaseRunEnvsAsync(const Model::DescribeWxCloudBaseRunEnvsRequest& request, const DescribeWxCloudBaseRunEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWxCloudBaseRunEnvsOutcomeCallable DescribeWxCloudBaseRunEnvsCallable(const Model::DescribeWxCloudBaseRunEnvsRequest& request);
+
+                /**
+                 *查询微信云托管子网
+                 * @param req DescribeWxCloudBaseRunSubNetsRequest
+                 * @return DescribeWxCloudBaseRunSubNetsOutcome
+                 */
+                DescribeWxCloudBaseRunSubNetsOutcome DescribeWxCloudBaseRunSubNets(const Model::DescribeWxCloudBaseRunSubNetsRequest &request);
+                void DescribeWxCloudBaseRunSubNetsAsync(const Model::DescribeWxCloudBaseRunSubNetsRequest& request, const DescribeWxCloudBaseRunSubNetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWxCloudBaseRunSubNetsOutcomeCallable DescribeWxCloudBaseRunSubNetsCallable(const Model::DescribeWxCloudBaseRunSubNetsRequest& request);
 
                 /**
                  *销毁环境

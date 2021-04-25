@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeClusterEndpointStatusResponse::DescribeClusterEndpointStatusResponse() :
-    m_statusHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+DescribeWxCloudBaseRunSubNetsResponse::DescribeWxCloudBaseRunSubNetsResponse() :
+    m_subNetIdsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeWxCloudBaseRunSubNetsResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +63,17 @@ CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const str
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("SubNetIds") && !rsp["SubNetIds"].IsNull())
     {
-        if (!rsp["Status"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = string(rsp["Status"].GetString());
-        m_statusHasBeenSet = true;
-    }
+        if (!rsp["SubNetIds"].IsArray())
+            return CoreInternalOutcome(Error("response `SubNetIds` is not array type"));
 
-    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
-    {
-        if (!rsp["ErrorMsg"].IsString())
+        const Value &tmpValue = rsp["SubNetIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            m_subNetIds.push_back((*itr).GetString());
         }
-        m_errorMsg = string(rsp["ErrorMsg"].GetString());
-        m_errorMsgHasBeenSet = true;
+        m_subNetIdsHasBeenSet = true;
     }
 
 
@@ -89,24 +81,14 @@ CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const str
 }
 
 
-string DescribeClusterEndpointStatusResponse::GetStatus() const
+vector<string> DescribeWxCloudBaseRunSubNetsResponse::GetSubNetIds() const
 {
-    return m_status;
+    return m_subNetIds;
 }
 
-bool DescribeClusterEndpointStatusResponse::StatusHasBeenSet() const
+bool DescribeWxCloudBaseRunSubNetsResponse::SubNetIdsHasBeenSet() const
 {
-    return m_statusHasBeenSet;
-}
-
-string DescribeClusterEndpointStatusResponse::GetErrorMsg() const
-{
-    return m_errorMsg;
-}
-
-bool DescribeClusterEndpointStatusResponse::ErrorMsgHasBeenSet() const
-{
-    return m_errorMsgHasBeenSet;
+    return m_subNetIdsHasBeenSet;
 }
 
 

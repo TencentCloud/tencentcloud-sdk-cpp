@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool ExecEndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取命令最终输出被截断的字节数。
+                     * @return Dropped 命令最终输出被截断的字节数。
+                     */
+                    uint64_t GetDropped() const;
+
+                    /**
+                     * 设置命令最终输出被截断的字节数。
+                     * @param Dropped 命令最终输出被截断的字节数。
+                     */
+                    void SetDropped(const uint64_t& _dropped);
+
+                    /**
+                     * 判断参数 Dropped 是否已赋值
+                     * @return Dropped 是否已赋值
+                     */
+                    bool DroppedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_execEndTime;
                     bool m_execEndTimeHasBeenSet;
+
+                    /**
+                     * 命令最终输出被截断的字节数。
+                     */
+                    uint64_t m_dropped;
+                    bool m_droppedHasBeenSet;
 
                 };
             }

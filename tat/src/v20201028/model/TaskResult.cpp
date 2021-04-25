@@ -25,7 +25,8 @@ TaskResult::TaskResult() :
     m_exitCodeHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_execStartTimeHasBeenSet(false),
-    m_execEndTimeHasBeenSet(false)
+    m_execEndTimeHasBeenSet(false),
+    m_droppedHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome TaskResult::Deserialize(const Value &value)
         m_execEndTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Dropped") && !value["Dropped"].IsNull())
+    {
+        if (!value["Dropped"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TaskResult.Dropped` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dropped = value["Dropped"].GetUint64();
+        m_droppedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void TaskResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "ExecEndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_execEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_droppedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Dropped";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dropped, allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void TaskResult::SetExecEndTime(const string& _execEndTime)
 bool TaskResult::ExecEndTimeHasBeenSet() const
 {
     return m_execEndTimeHasBeenSet;
+}
+
+uint64_t TaskResult::GetDropped() const
+{
+    return m_dropped;
+}
+
+void TaskResult::SetDropped(const uint64_t& _dropped)
+{
+    m_dropped = _dropped;
+    m_droppedHasBeenSet = true;
+}
+
+bool TaskResult::DroppedHasBeenSet() const
+{
+    return m_droppedHasBeenSet;
 }
 

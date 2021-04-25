@@ -37,6 +37,8 @@
 #include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameResponse.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthRequest.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthResponse.h>
+#include <tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationRequest.h>
+#include <tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetActionSequenceRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetActionSequenceResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoRequest.h>
@@ -112,6 +114,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetectAuthResponse> DetectAuthOutcome;
                 typedef std::future<DetectAuthOutcome> DetectAuthOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::DetectAuthRequest&, DetectAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectAuthAsyncHandler;
+                typedef Outcome<Error, Model::EncryptedPhoneVerificationResponse> EncryptedPhoneVerificationOutcome;
+                typedef std::future<EncryptedPhoneVerificationOutcome> EncryptedPhoneVerificationOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::EncryptedPhoneVerificationRequest&, EncryptedPhoneVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EncryptedPhoneVerificationAsyncHandler;
                 typedef Outcome<Error, Model::GetActionSequenceResponse> GetActionSequenceOutcome;
                 typedef std::future<GetActionSequenceOutcome> GetActionSequenceOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetActionSequenceRequest&, GetActionSequenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetActionSequenceAsyncHandler;
@@ -238,6 +243,15 @@ namespace TencentCloud
                 DetectAuthOutcome DetectAuth(const Model::DetectAuthRequest &request);
                 void DetectAuthAsync(const Model::DetectAuthRequest& request, const DetectAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectAuthOutcomeCallable DetectAuthCallable(const Model::DetectAuthRequest& request);
+
+                /**
+                 *本接口用于校验手机号、姓名和身份证号的真实性和一致性，入参支持MD5加密传输。
+                 * @param req EncryptedPhoneVerificationRequest
+                 * @return EncryptedPhoneVerificationOutcome
+                 */
+                EncryptedPhoneVerificationOutcome EncryptedPhoneVerification(const Model::EncryptedPhoneVerificationRequest &request);
+                void EncryptedPhoneVerificationAsync(const Model::EncryptedPhoneVerificationRequest& request, const EncryptedPhoneVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EncryptedPhoneVerificationOutcomeCallable EncryptedPhoneVerificationCallable(const Model::EncryptedPhoneVerificationRequest& request);
 
                 /**
                  *使用动作活体检测模式前，需调用本接口获取动作顺序。

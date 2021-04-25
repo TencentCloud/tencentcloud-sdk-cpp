@@ -28,7 +28,8 @@ DescribeCloudStorageEventsResponse::DescribeCloudStorageEventsResponse() :
     m_eventsHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_listoverHasBeenSet(false),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_videoURLHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DescribeCloudStorageEventsResponse::Deserialize(const string
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VideoURL") && !rsp["VideoURL"].IsNull())
+    {
+        if (!rsp["VideoURL"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VideoURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoURL = string(rsp["VideoURL"].GetString());
+        m_videoURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -159,6 +170,16 @@ uint64_t DescribeCloudStorageEventsResponse::GetTotal() const
 bool DescribeCloudStorageEventsResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+string DescribeCloudStorageEventsResponse::GetVideoURL() const
+{
+    return m_videoURL;
+}
+
+bool DescribeCloudStorageEventsResponse::VideoURLHasBeenSet() const
+{
+    return m_videoURLHasBeenSet;
 }
 
 

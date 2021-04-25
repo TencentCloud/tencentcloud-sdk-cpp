@@ -91,6 +91,18 @@ namespace TencentCloud
                      */
                     bool TotalHasBeenSet() const;
 
+                    /**
+                     * 获取视频播放URL
+                     * @return VideoURL 视频播放URL
+                     */
+                    std::string GetVideoURL() const;
+
+                    /**
+                     * 判断参数 VideoURL 是否已赋值
+                     * @return VideoURL 是否已赋值
+                     */
+                    bool VideoURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +128,12 @@ namespace TencentCloud
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
+
+                    /**
+                     * 视频播放URL
+                     */
+                    std::string m_videoURL;
+                    bool m_videoURLHasBeenSet;
 
                 };
             }

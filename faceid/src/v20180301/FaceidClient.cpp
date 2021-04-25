@@ -341,6 +341,49 @@ FaceidClient::DetectAuthOutcomeCallable FaceidClient::DetectAuthCallable(const D
     return task->get_future();
 }
 
+FaceidClient::EncryptedPhoneVerificationOutcome FaceidClient::EncryptedPhoneVerification(const EncryptedPhoneVerificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "EncryptedPhoneVerification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EncryptedPhoneVerificationResponse rsp = EncryptedPhoneVerificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EncryptedPhoneVerificationOutcome(rsp);
+        else
+            return EncryptedPhoneVerificationOutcome(o.GetError());
+    }
+    else
+    {
+        return EncryptedPhoneVerificationOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::EncryptedPhoneVerificationAsync(const EncryptedPhoneVerificationRequest& request, const EncryptedPhoneVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EncryptedPhoneVerification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::EncryptedPhoneVerificationOutcomeCallable FaceidClient::EncryptedPhoneVerificationCallable(const EncryptedPhoneVerificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EncryptedPhoneVerificationOutcome()>>(
+        [this, request]()
+        {
+            return this->EncryptedPhoneVerification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::GetActionSequenceOutcome FaceidClient::GetActionSequence(const GetActionSequenceRequest &request)
 {
     auto outcome = MakeRequest(request, "GetActionSequence");

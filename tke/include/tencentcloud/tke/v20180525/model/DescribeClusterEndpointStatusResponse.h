@@ -56,6 +56,20 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取开启访问入口失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorMsg 开启访问入口失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetErrorMsg() const;
+
+                    /**
+                     * 判断参数 ErrorMsg 是否已赋值
+                     * @return ErrorMsg 是否已赋值
+                     */
+                    bool ErrorMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +78,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 开启访问入口失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errorMsg;
+                    bool m_errorMsgHasBeenSet;
 
                 };
             }

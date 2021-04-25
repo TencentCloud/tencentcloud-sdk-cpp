@@ -80,7 +80,9 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/LivenessCompareRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectDetail.h
   include/tencentcloud/faceid/v20180301/model/GetFaceIdResultResponse.h
+  include/tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/GetRealNameAuthResultResponse.h
+  include/tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationResponse.h
   )
 
 set(faceid_src
@@ -146,7 +148,9 @@ set(faceid_src
   src/v20180301/model/LivenessCompareRequest.cpp
   src/v20180301/model/DetectDetail.cpp
   src/v20180301/model/GetFaceIdResultResponse.cpp
+  src/v20180301/model/EncryptedPhoneVerificationRequest.cpp
   src/v20180301/model/GetRealNameAuthResultResponse.cpp
+  src/v20180301/model/EncryptedPhoneVerificationResponse.cpp
   )
 
 set(faceid_include

@@ -427,6 +427,49 @@ TcbClient::CreateStaticStoreOutcomeCallable TcbClient::CreateStaticStoreCallable
     return task->get_future();
 }
 
+TcbClient::CreateWxCloudBaseRunEnvOutcome TcbClient::CreateWxCloudBaseRunEnv(const CreateWxCloudBaseRunEnvRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWxCloudBaseRunEnv");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWxCloudBaseRunEnvResponse rsp = CreateWxCloudBaseRunEnvResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWxCloudBaseRunEnvOutcome(rsp);
+        else
+            return CreateWxCloudBaseRunEnvOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWxCloudBaseRunEnvOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateWxCloudBaseRunEnvAsync(const CreateWxCloudBaseRunEnvRequest& request, const CreateWxCloudBaseRunEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWxCloudBaseRunEnv(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CreateWxCloudBaseRunEnvOutcomeCallable TcbClient::CreateWxCloudBaseRunEnvCallable(const CreateWxCloudBaseRunEnvRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWxCloudBaseRunEnvOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWxCloudBaseRunEnv(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DeleteCloudBaseProjectLatestVersionOutcome TcbClient::DeleteCloudBaseProjectLatestVersion(const DeleteCloudBaseProjectLatestVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudBaseProjectLatestVersion");
@@ -1538,6 +1581,92 @@ TcbClient::DescribeSmsQuotasOutcomeCallable TcbClient::DescribeSmsQuotasCallable
         [this, request]()
         {
             return this->DescribeSmsQuotas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeWxCloudBaseRunEnvsOutcome TcbClient::DescribeWxCloudBaseRunEnvs(const DescribeWxCloudBaseRunEnvsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWxCloudBaseRunEnvs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWxCloudBaseRunEnvsResponse rsp = DescribeWxCloudBaseRunEnvsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWxCloudBaseRunEnvsOutcome(rsp);
+        else
+            return DescribeWxCloudBaseRunEnvsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWxCloudBaseRunEnvsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeWxCloudBaseRunEnvsAsync(const DescribeWxCloudBaseRunEnvsRequest& request, const DescribeWxCloudBaseRunEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWxCloudBaseRunEnvs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeWxCloudBaseRunEnvsOutcomeCallable TcbClient::DescribeWxCloudBaseRunEnvsCallable(const DescribeWxCloudBaseRunEnvsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWxCloudBaseRunEnvsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWxCloudBaseRunEnvs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeWxCloudBaseRunSubNetsOutcome TcbClient::DescribeWxCloudBaseRunSubNets(const DescribeWxCloudBaseRunSubNetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWxCloudBaseRunSubNets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWxCloudBaseRunSubNetsResponse rsp = DescribeWxCloudBaseRunSubNetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWxCloudBaseRunSubNetsOutcome(rsp);
+        else
+            return DescribeWxCloudBaseRunSubNetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWxCloudBaseRunSubNetsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeWxCloudBaseRunSubNetsAsync(const DescribeWxCloudBaseRunSubNetsRequest& request, const DescribeWxCloudBaseRunSubNetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWxCloudBaseRunSubNets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeWxCloudBaseRunSubNetsOutcomeCallable TcbClient::DescribeWxCloudBaseRunSubNetsCallable(const DescribeWxCloudBaseRunSubNetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWxCloudBaseRunSubNetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWxCloudBaseRunSubNets(request);
         }
     );
 

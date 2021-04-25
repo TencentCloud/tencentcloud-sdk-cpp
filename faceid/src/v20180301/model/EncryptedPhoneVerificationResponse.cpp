@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h>
+#include <tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeClusterEndpointStatusResponse::DescribeClusterEndpointStatusResponse() :
-    m_statusHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+EncryptedPhoneVerificationResponse::EncryptedPhoneVerificationResponse() :
+    m_resultHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome EncryptedPhoneVerificationResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +64,24 @@ CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const str
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["Status"].IsString())
+        if (!rsp["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_status = string(rsp["Status"].GetString());
-        m_statusHasBeenSet = true;
+        m_result = string(rsp["Result"].GetString());
+        m_resultHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    if (rsp.HasMember("Description") && !rsp["Description"].IsNull())
     {
-        if (!rsp["ErrorMsg"].IsString())
+        if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_errorMsg = string(rsp["ErrorMsg"].GetString());
-        m_errorMsgHasBeenSet = true;
+        m_description = string(rsp["Description"].GetString());
+        m_descriptionHasBeenSet = true;
     }
 
 
@@ -89,24 +89,24 @@ CoreInternalOutcome DescribeClusterEndpointStatusResponse::Deserialize(const str
 }
 
 
-string DescribeClusterEndpointStatusResponse::GetStatus() const
+string EncryptedPhoneVerificationResponse::GetResult() const
 {
-    return m_status;
+    return m_result;
 }
 
-bool DescribeClusterEndpointStatusResponse::StatusHasBeenSet() const
+bool EncryptedPhoneVerificationResponse::ResultHasBeenSet() const
 {
-    return m_statusHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
-string DescribeClusterEndpointStatusResponse::GetErrorMsg() const
+string EncryptedPhoneVerificationResponse::GetDescription() const
 {
-    return m_errorMsg;
+    return m_description;
 }
 
-bool DescribeClusterEndpointStatusResponse::ErrorMsgHasBeenSet() const
+bool EncryptedPhoneVerificationResponse::DescriptionHasBeenSet() const
 {
-    return m_errorMsgHasBeenSet;
+    return m_descriptionHasBeenSet;
 }
 
 
