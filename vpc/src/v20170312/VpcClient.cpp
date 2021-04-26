@@ -9156,6 +9156,49 @@ VpcClient::ModifyNetworkInterfaceAttributeOutcomeCallable VpcClient::ModifyNetwo
     return task->get_future();
 }
 
+VpcClient::ModifyNetworkInterfaceQosOutcome VpcClient::ModifyNetworkInterfaceQos(const ModifyNetworkInterfaceQosRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNetworkInterfaceQos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNetworkInterfaceQosResponse rsp = ModifyNetworkInterfaceQosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNetworkInterfaceQosOutcome(rsp);
+        else
+            return ModifyNetworkInterfaceQosOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNetworkInterfaceQosOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyNetworkInterfaceQosAsync(const ModifyNetworkInterfaceQosRequest& request, const ModifyNetworkInterfaceQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNetworkInterfaceQos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyNetworkInterfaceQosOutcomeCallable VpcClient::ModifyNetworkInterfaceQosCallable(const ModifyNetworkInterfaceQosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNetworkInterfaceQosOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNetworkInterfaceQos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyPrivateIpAddressesAttributeOutcome VpcClient::ModifyPrivateIpAddressesAttribute(const ModifyPrivateIpAddressesAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPrivateIpAddressesAttribute");

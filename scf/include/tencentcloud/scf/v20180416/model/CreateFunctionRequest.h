@@ -428,6 +428,42 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启异步属性，TRUE 为开启，FALSE为关闭
+                     * @return AsyncRunEnable 是否开启异步属性，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string GetAsyncRunEnable() const;
+
+                    /**
+                     * 设置是否开启异步属性，TRUE 为开启，FALSE为关闭
+                     * @param AsyncRunEnable 是否开启异步属性，TRUE 为开启，FALSE为关闭
+                     */
+                    void SetAsyncRunEnable(const std::string& _asyncRunEnable);
+
+                    /**
+                     * 判断参数 AsyncRunEnable 是否已赋值
+                     * @return AsyncRunEnable 是否已赋值
+                     */
+                    bool AsyncRunEnableHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启事件追踪，TRUE 为开启，FALSE为关闭
+                     * @return TraceEnable 是否开启事件追踪，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string GetTraceEnable() const;
+
+                    /**
+                     * 设置是否开启事件追踪，TRUE 为开启，FALSE为关闭
+                     * @param TraceEnable 是否开启事件追踪，TRUE 为开启，FALSE为关闭
+                     */
+                    void SetTraceEnable(const std::string& _traceEnable);
+
+                    /**
+                     * 判断参数 TraceEnable 是否已赋值
+                     * @return TraceEnable 是否已赋值
+                     */
+                    bool TraceEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -555,6 +591,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否开启异步属性，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string m_asyncRunEnable;
+                    bool m_asyncRunEnableHasBeenSet;
+
+                    /**
+                     * 是否开启事件追踪，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string m_traceEnable;
+                    bool m_traceEnableHasBeenSet;
 
                 };
             }

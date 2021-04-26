@@ -25,7 +25,8 @@ RegionInfo::RegionInfo() :
     m_regionHasBeenSet(false),
     m_regionNameHasBeenSet(false),
     m_regionIdHasBeenSet(false),
-    m_regionCodeHasBeenSet(false)
+    m_regionCodeHasBeenSet(false),
+    m_regionNameEnHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome RegionInfo::Deserialize(const Value &value)
         m_regionCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionNameEn") && !value["RegionNameEn"].IsNull())
+    {
+        if (!value["RegionNameEn"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RegionInfo.RegionNameEn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionNameEn = string(value["RegionNameEn"].GetString());
+        m_regionNameEnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void RegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "RegionCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_regionCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionNameEnHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegionNameEn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_regionNameEn.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void RegionInfo::SetRegionCode(const string& _regionCode)
 bool RegionInfo::RegionCodeHasBeenSet() const
 {
     return m_regionCodeHasBeenSet;
+}
+
+string RegionInfo::GetRegionNameEn() const
+{
+    return m_regionNameEn;
+}
+
+void RegionInfo::SetRegionNameEn(const string& _regionNameEn)
+{
+    m_regionNameEn = _regionNameEn;
+    m_regionNameEnHasBeenSet = true;
+}
+
+bool RegionInfo::RegionNameEnHasBeenSet() const
+{
+    return m_regionNameEnHasBeenSet;
 }
 

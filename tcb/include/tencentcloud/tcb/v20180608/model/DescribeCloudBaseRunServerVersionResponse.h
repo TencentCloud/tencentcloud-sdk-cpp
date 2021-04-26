@@ -291,9 +291,9 @@ namespace TencentCloud
                     bool UploadTypeHasBeenSet() const;
 
                     /**
-                     * 获取Repo的类型(coding/gitlab/github/coding)
+                     * 获取Repo的类型(gitlab/github/coding)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RepoType Repo的类型(coding/gitlab/github/coding)
+                     * @return RepoType Repo的类型(gitlab/github/coding)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRepoType() const;
@@ -599,7 +599,7 @@ namespace TencentCloud
                     bool m_uploadTypeHasBeenSet;
 
                     /**
-                     * Repo的类型(coding/gitlab/github/coding)
+                     * Repo的类型(gitlab/github/coding)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repoType;

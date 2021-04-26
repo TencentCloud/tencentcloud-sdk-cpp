@@ -111,6 +111,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeMachineListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMachineOsListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMachineOsListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeMachineRegionsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeMachineRegionsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMachinesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMachinesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMaliciousRequestsRequest.h>
@@ -393,6 +395,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeMachineOsListResponse> DescribeMachineOsListOutcome;
                 typedef std::future<DescribeMachineOsListOutcome> DescribeMachineOsListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeMachineOsListRequest&, DescribeMachineOsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineOsListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMachineRegionsResponse> DescribeMachineRegionsOutcome;
+                typedef std::future<DescribeMachineRegionsOutcome> DescribeMachineRegionsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeMachineRegionsRequest&, DescribeMachineRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineRegionsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMachinesResponse> DescribeMachinesOutcome;
                 typedef std::future<DescribeMachinesOutcome> DescribeMachinesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeMachinesRequest&, DescribeMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachinesAsyncHandler;
@@ -995,6 +1000,15 @@ namespace TencentCloud
                 DescribeMachineOsListOutcome DescribeMachineOsList(const Model::DescribeMachineOsListRequest &request);
                 void DescribeMachineOsListAsync(const Model::DescribeMachineOsListRequest& request, const DescribeMachineOsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMachineOsListOutcomeCallable DescribeMachineOsListCallable(const Model::DescribeMachineOsListRequest& request);
+
+                /**
+                 *获取机器地域列表
+                 * @param req DescribeMachineRegionsRequest
+                 * @return DescribeMachineRegionsOutcome
+                 */
+                DescribeMachineRegionsOutcome DescribeMachineRegions(const Model::DescribeMachineRegionsRequest &request);
+                void DescribeMachineRegionsAsync(const Model::DescribeMachineRegionsRequest& request, const DescribeMachineRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMachineRegionsOutcomeCallable DescribeMachineRegionsCallable(const Model::DescribeMachineRegionsRequest& request);
 
                 /**
                  *本接口 (DescribeMachines) 用于获取区域主机列表。

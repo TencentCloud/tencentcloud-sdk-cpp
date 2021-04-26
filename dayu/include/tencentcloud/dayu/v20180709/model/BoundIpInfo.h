@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取运营商，0：电信；1：联通；2：移动；5：BGP
+                     * @return IspCode 运营商，0：电信；1：联通；2：移动；5：BGP
+                     */
+                    uint64_t GetIspCode() const;
+
+                    /**
+                     * 设置运营商，0：电信；1：联通；2：移动；5：BGP
+                     * @param IspCode 运营商，0：电信；1：联通；2：移动；5：BGP
+                     */
+                    void SetIspCode(const uint64_t& _ispCode);
+
+                    /**
+                     * 判断参数 IspCode 是否已赋值
+                     * @return IspCode 是否已赋值
+                     */
+                    bool IspCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 运营商，0：电信；1：联通；2：移动；5：BGP
+                     */
+                    uint64_t m_ispCode;
+                    bool m_ispCodeHasBeenSet;
 
                 };
             }

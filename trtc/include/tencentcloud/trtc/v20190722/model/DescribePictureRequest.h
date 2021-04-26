@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id
-                     * @return SdkAppId 应用id
+                     * 获取应用ID
+                     * @return SdkAppId 应用ID
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用id
-                     * @param SdkAppId 应用id
+                     * 设置应用ID
+                     * @param SdkAppId 应用ID
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取图片id,不传时返回该应用下所有图片
-                     * @return PictureId 图片id,不传时返回该应用下所有图片
+                     * 获取图片ID，不填时返回该应用下所有图片
+                     * @return PictureId 图片ID，不填时返回该应用下所有图片
                      */
                     uint64_t GetPictureId() const;
 
                     /**
-                     * 设置图片id,不传时返回该应用下所有图片
-                     * @param PictureId 图片id,不传时返回该应用下所有图片
+                     * 设置图片ID，不填时返回该应用下所有图片
+                     * @param PictureId 图片ID，不填时返回该应用下所有图片
                      */
                     void SetPictureId(const uint64_t& _pictureId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PictureIdHasBeenSet() const;
 
                     /**
-                     * 获取每页数量
-                     * @return PageSize 每页数量
+                     * 获取每页数量，不填时默认为10
+                     * @return PageSize 每页数量，不填时默认为10
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数量
-                     * @param PageSize 每页数量
+                     * 设置每页数量，不填时默认为10
+                     * @param PageSize 每页数量，不填时默认为10
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageNo 页码
+                     * 获取页码，不填时默认为1
+                     * @return PageNo 页码，不填时默认为1
                      */
                     uint64_t GetPageNo() const;
 
                     /**
-                     * 设置页码
-                     * @param PageNo 页码
+                     * 设置页码，不填时默认为1
+                     * @param PageNo 页码，不填时默认为1
                      */
                     void SetPageNo(const uint64_t& _pageNo);
 
@@ -117,25 +117,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id
+                     * 应用ID
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 图片id,不传时返回该应用下所有图片
+                     * 图片ID，不填时返回该应用下所有图片
                      */
                     uint64_t m_pictureId;
                     bool m_pictureIdHasBeenSet;
 
                     /**
-                     * 每页数量
+                     * 每页数量，不填时默认为10
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 页码
+                     * 页码，不填时默认为1
                      */
                     uint64_t m_pageNo;
                     bool m_pageNoHasBeenSet;

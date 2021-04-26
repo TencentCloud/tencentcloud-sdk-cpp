@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool WatermarkSetHasBeenSet() const;
 
                     /**
-                     * 获取字幕列表，元素为字幕 ID，支持多个字幕，最大可支持10个。
-                     * @return SubtitleSet 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持10个。
+                     * 获取字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
+                     * @return SubtitleSet 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
                      */
                     std::vector<std::string> GetSubtitleSet() const;
 
                     /**
-                     * 设置字幕列表，元素为字幕 ID，支持多个字幕，最大可支持10个。
-                     * @param SubtitleSet 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持10个。
+                     * 设置字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
+                     * @param SubtitleSet 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
                      */
                     void SetSubtitleSet(const std::vector<std::string>& _subtitleSet);
 
@@ -116,7 +116,7 @@ namespace TencentCloud
                     bool m_watermarkSetHasBeenSet;
 
                     /**
-                     * 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持10个。
+                     * 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
                      */
                     std::vector<std::string> m_subtitleSet;
                     bool m_subtitleSetHasBeenSet;

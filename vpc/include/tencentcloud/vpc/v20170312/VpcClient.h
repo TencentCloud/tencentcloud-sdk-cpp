@@ -447,6 +447,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyNetworkAclEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNetworkInterfaceAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyNetworkInterfaceQosRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyNetworkInterfaceQosResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyPrivateIpAddressesAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyPrivateIpAddressesAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableAttributeRequest.h>
@@ -1173,6 +1175,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyNetworkInterfaceAttributeResponse> ModifyNetworkInterfaceAttributeOutcome;
                 typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyNetworkInterfaceAttributeRequest&, ModifyNetworkInterfaceAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkInterfaceAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyNetworkInterfaceQosResponse> ModifyNetworkInterfaceQosOutcome;
+                typedef std::future<ModifyNetworkInterfaceQosOutcome> ModifyNetworkInterfaceQosOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyNetworkInterfaceQosRequest&, ModifyNetworkInterfaceQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkInterfaceQosAsyncHandler;
                 typedef Outcome<Error, Model::ModifyPrivateIpAddressesAttributeResponse> ModifyPrivateIpAddressesAttributeOutcome;
                 typedef std::future<ModifyPrivateIpAddressesAttributeOutcome> ModifyPrivateIpAddressesAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyPrivateIpAddressesAttributeRequest&, ModifyPrivateIpAddressesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrivateIpAddressesAttributeAsyncHandler;
@@ -3379,6 +3384,15 @@ LimitTypes取值范围：
                 ModifyNetworkInterfaceAttributeOutcome ModifyNetworkInterfaceAttribute(const Model::ModifyNetworkInterfaceAttributeRequest &request);
                 void ModifyNetworkInterfaceAttributeAsync(const Model::ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNetworkInterfaceAttributeOutcomeCallable ModifyNetworkInterfaceAttributeCallable(const Model::ModifyNetworkInterfaceAttributeRequest& request);
+
+                /**
+                 *修改弹性网卡服务质量
+                 * @param req ModifyNetworkInterfaceQosRequest
+                 * @return ModifyNetworkInterfaceQosOutcome
+                 */
+                ModifyNetworkInterfaceQosOutcome ModifyNetworkInterfaceQos(const Model::ModifyNetworkInterfaceQosRequest &request);
+                void ModifyNetworkInterfaceQosAsync(const Model::ModifyNetworkInterfaceQosRequest& request, const ModifyNetworkInterfaceQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNetworkInterfaceQosOutcomeCallable ModifyNetworkInterfaceQosCallable(const Model::ModifyNetworkInterfaceQosRequest& request);
 
                 /**
                  *本接口（ModifyPrivateIpAddressesAttribute）用于修改弹性网卡内网IP属性。

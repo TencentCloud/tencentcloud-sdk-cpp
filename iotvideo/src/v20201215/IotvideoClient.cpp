@@ -1674,6 +1674,49 @@ IotvideoClient::EditFirmwareOutcomeCallable IotvideoClient::EditFirmwareCallable
     return task->get_future();
 }
 
+IotvideoClient::GenerateSignedVideoURLOutcome IotvideoClient::GenerateSignedVideoURL(const GenerateSignedVideoURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateSignedVideoURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateSignedVideoURLResponse rsp = GenerateSignedVideoURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateSignedVideoURLOutcome(rsp);
+        else
+            return GenerateSignedVideoURLOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateSignedVideoURLOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::GenerateSignedVideoURLAsync(const GenerateSignedVideoURLRequest& request, const GenerateSignedVideoURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateSignedVideoURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::GenerateSignedVideoURLOutcomeCallable IotvideoClient::GenerateSignedVideoURLCallable(const GenerateSignedVideoURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateSignedVideoURLOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateSignedVideoURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::GetAllFirmwareVersionOutcome IotvideoClient::GetAllFirmwareVersion(const GetAllFirmwareVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "GetAllFirmwareVersion");

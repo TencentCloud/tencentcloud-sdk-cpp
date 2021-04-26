@@ -44,7 +44,9 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_publicNetConfigHasBeenSet(false),
     m_cfsConfigHasBeenSet(false),
     m_initTimeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_asyncRunEnableHasBeenSet(false),
+    m_traceEnableHasBeenSet(false)
 {
 }
 
@@ -241,6 +243,22 @@ string CreateFunctionRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_asyncRunEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AsyncRunEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_asyncRunEnable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_traceEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TraceEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_traceEnable.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -585,6 +603,38 @@ void CreateFunctionRequest::SetTags(const vector<Tag>& _tags)
 bool CreateFunctionRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateFunctionRequest::GetAsyncRunEnable() const
+{
+    return m_asyncRunEnable;
+}
+
+void CreateFunctionRequest::SetAsyncRunEnable(const string& _asyncRunEnable)
+{
+    m_asyncRunEnable = _asyncRunEnable;
+    m_asyncRunEnableHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::AsyncRunEnableHasBeenSet() const
+{
+    return m_asyncRunEnableHasBeenSet;
+}
+
+string CreateFunctionRequest::GetTraceEnable() const
+{
+    return m_traceEnable;
+}
+
+void CreateFunctionRequest::SetTraceEnable(const string& _traceEnable)
+{
+    m_traceEnable = _traceEnable;
+    m_traceEnableHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::TraceEnableHasBeenSet() const
+{
+    return m_traceEnableHasBeenSet;
 }
 
 

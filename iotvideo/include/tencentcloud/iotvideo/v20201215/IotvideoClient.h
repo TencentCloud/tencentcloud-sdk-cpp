@@ -99,6 +99,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/DescribeProductsResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/EditFirmwareRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/EditFirmwareResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/GenerateSignedVideoURLRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/GenerateSignedVideoURLResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/GetAllFirmwareVersionRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/GetAllFirmwareVersionResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/GetFirmwareURLRequest.h>
@@ -253,6 +255,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EditFirmwareResponse> EditFirmwareOutcome;
                 typedef std::future<EditFirmwareOutcome> EditFirmwareOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::EditFirmwareRequest&, EditFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditFirmwareAsyncHandler;
+                typedef Outcome<Error, Model::GenerateSignedVideoURLResponse> GenerateSignedVideoURLOutcome;
+                typedef std::future<GenerateSignedVideoURLOutcome> GenerateSignedVideoURLOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::GenerateSignedVideoURLRequest&, GenerateSignedVideoURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateSignedVideoURLAsyncHandler;
                 typedef Outcome<Error, Model::GetAllFirmwareVersionResponse> GetAllFirmwareVersionOutcome;
                 typedef std::future<GetAllFirmwareVersionOutcome> GetAllFirmwareVersionOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::GetAllFirmwareVersionRequest&, GetAllFirmwareVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAllFirmwareVersionAsyncHandler;
@@ -636,6 +641,15 @@ namespace TencentCloud
                 EditFirmwareOutcome EditFirmware(const Model::EditFirmwareRequest &request);
                 void EditFirmwareAsync(const Model::EditFirmwareRequest& request, const EditFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EditFirmwareOutcomeCallable EditFirmwareCallable(const Model::EditFirmwareRequest& request);
+
+                /**
+                 *获取视频防盗链播放URL
+                 * @param req GenerateSignedVideoURLRequest
+                 * @return GenerateSignedVideoURLOutcome
+                 */
+                GenerateSignedVideoURLOutcome GenerateSignedVideoURL(const Model::GenerateSignedVideoURLRequest &request);
+                void GenerateSignedVideoURLAsync(const Model::GenerateSignedVideoURLRequest& request, const GenerateSignedVideoURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateSignedVideoURLOutcomeCallable GenerateSignedVideoURLCallable(const Model::GenerateSignedVideoURLRequest& request);
 
                 /**
                  *本接口（GetAllFirmwareVersion）用于获取所有的版本列表 

@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool RegionCodeHasBeenSet() const;
 
+                    /**
+                     * 获取地域英文名
+                     * @return RegionNameEn 地域英文名
+                     */
+                    std::string GetRegionNameEn() const;
+
+                    /**
+                     * 设置地域英文名
+                     * @param RegionNameEn 地域英文名
+                     */
+                    void SetRegionNameEn(const std::string& _regionNameEn);
+
+                    /**
+                     * 判断参数 RegionNameEn 是否已赋值
+                     * @return RegionNameEn 是否已赋值
+                     */
+                    bool RegionNameEnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_regionCode;
                     bool m_regionCodeHasBeenSet;
+
+                    /**
+                     * 地域英文名
+                     */
+                    std::string m_regionNameEn;
+                    bool m_regionNameEnHasBeenSet;
 
                 };
             }

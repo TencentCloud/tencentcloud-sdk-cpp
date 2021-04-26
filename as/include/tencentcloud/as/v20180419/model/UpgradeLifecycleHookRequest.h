@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool DefaultResultHasBeenSet() const;
 
                     /**
-                     * 获取生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒
-                     * @return HeartbeatTimeout 生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒
+                     * 获取生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到7200秒，默认值为300秒
+                     * @return HeartbeatTimeout 生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到7200秒，默认值为300秒
                      */
                     int64_t GetHeartbeatTimeout() const;
 
                     /**
-                     * 设置生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒
-                     * @param HeartbeatTimeout 生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒
+                     * 设置生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到7200秒，默认值为300秒
+                     * @param HeartbeatTimeout 生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到7200秒，默认值为300秒
                      */
                     void SetHeartbeatTimeout(const int64_t& _heartbeatTimeout);
 
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_defaultResultHasBeenSet;
 
                     /**
-                     * 生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒
+                     * 生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到7200秒，默认值为300秒
                      */
                     int64_t m_heartbeatTimeout;
                     bool m_heartbeatTimeoutHasBeenSet;

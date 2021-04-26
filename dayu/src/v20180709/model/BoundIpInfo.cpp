@@ -25,7 +25,8 @@ BoundIpInfo::BoundIpInfo() :
     m_ipHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_ispCodeHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome BoundIpInfo::Deserialize(const Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IspCode") && !value["IspCode"].IsNull())
+    {
+        if (!value["IspCode"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BoundIpInfo.IspCode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ispCode = value["IspCode"].GetUint64();
+        m_ispCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void BoundIpInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ispCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IspCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ispCode, allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void BoundIpInfo::SetInstanceId(const string& _instanceId)
 bool BoundIpInfo::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+uint64_t BoundIpInfo::GetIspCode() const
+{
+    return m_ispCode;
+}
+
+void BoundIpInfo::SetIspCode(const uint64_t& _ispCode)
+{
+    m_ispCode = _ispCode;
+    m_ispCodeHasBeenSet = true;
+}
+
+bool BoundIpInfo::IspCodeHasBeenSet() const
+{
+    return m_ispCodeHasBeenSet;
 }
 
